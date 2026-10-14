@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unior",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-14",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-triennali/culture-antiche-e-archeologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1/6666",
@@ -782,128 +782,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unior-l-1-culture-antiche-e-archeologia-asia-africa-e-mediterraneo-0000824",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "1/67",
-     "nome": "Letteratura Italiana",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "L-FIL-LET/10",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Cappelli Guido Maria",
-      "De Blasi Margherita"
-     ],
-     "url": "https://coursecatalogue.unior.it/insegnamenti/2026/279/2025/9999?coorte=2025",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-17",
-       "iscrizioni_al": "2026-11-01",
-       "docenti": "CAPPELLI GUIDO MARIA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-12",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-18",
-       "iscrizioni_al": "2026-11-02",
-       "docenti": "DE BLASI MARGHERITA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-20",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-26",
-       "iscrizioni_al": "2027-01-10",
-       "docenti": "CAPPELLI GUIDO MARIA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-27",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-02",
-       "iscrizioni_al": "2027-01-17",
-       "docenti": "DE BLASI MARGHERITA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-17",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-23",
-       "iscrizioni_al": "2027-02-07",
-       "docenti": "CAPPELLI GUIDO MARIA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-18",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-24",
-       "iscrizioni_al": "2027-02-08",
-       "docenti": "DE BLASI MARGHERITA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-16",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-19",
-       "iscrizioni_al": "2027-03-06",
-       "docenti": "DE BLASI MARGHERITA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-17",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-20",
-       "iscrizioni_al": "2027-03-07",
-       "docenti": "CAPPELLI GUIDO MARIA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://coursecatalogue.unior.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unior-l-1-culture-antiche-e-archeologia-asia-africa-e-mediterraneo-1-67",
      "stato_esami": "completo"
     },
     {
@@ -2763,6 +2641,129 @@
      "modalita_esame": "orale",
      "id": "unior-l-1-culture-antiche-e-archeologia-asia-africa-e-mediterraneo-0000971",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1/67",
+     "nome": "Letteratura Italiana",
+     "anno": 2,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "L-FIL-LET/10",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Cappelli Guido Maria",
+      "De Blasi Margherita"
+     ],
+     "url": "https://coursecatalogue.unior.it/insegnamenti/2026/279/2025/9999?coorte=2025",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-17",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "CAPPELLI GUIDO MARIA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-18",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "DE BLASI MARGHERITA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-26",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "CAPPELLI GUIDO MARIA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-02",
+       "iscrizioni_al": "2027-01-17",
+       "docenti": "DE BLASI MARGHERITA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-23",
+       "iscrizioni_al": "2027-02-07",
+       "docenti": "CAPPELLI GUIDO MARIA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-24",
+       "iscrizioni_al": "2027-02-08",
+       "docenti": "DE BLASI MARGHERITA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-19",
+       "iscrizioni_al": "2027-03-06",
+       "docenti": "DE BLASI MARGHERITA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-17",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-20",
+       "iscrizioni_al": "2027-03-07",
+       "docenti": "CAPPELLI GUIDO MARIA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://coursecatalogue.unior.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unior-l-1-culture-antiche-e-archeologia-asia-africa-e-mediterraneo-1-67",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://coursecatalogue.unior.it/insegnamenti/2024/279/2023/9999?coorte=2024"
     },
     {
      "codice": "0000608",
@@ -8058,7 +8059,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-triennali/lingue-e-culture-comparate",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "0000803",
@@ -27290,76 +27291,6 @@
      "stato_esami": "completo"
     },
     {
-     "codice": "1/1050",
-     "nome": "Lingua Sanscrita I",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 9,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://coursecatalogue.unior.it/insegnamenti/2028/1990/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-09",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "scritto e orale",
-       "iscrizioni_dal": "2026-10-15",
-       "iscrizioni_al": "2026-10-30",
-       "docenti": "SFERRA FRANCESCO DE SIMINI FLORINDA SACCONE MARGHERITA SERENA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-18",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "scritto e orale",
-       "iscrizioni_dal": "2026-12-24",
-       "iscrizioni_al": "2027-01-08",
-       "docenti": "SFERRA FRANCESCO DE SIMINI FLORINDA SACCONE MARGHERITA SERENA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-19",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "scritto e orale",
-       "iscrizioni_dal": "2027-01-25",
-       "iscrizioni_al": "2027-02-09",
-       "docenti": "SFERRA FRANCESCO DE SIMINI FLORINDA SACCONE MARGHERITA SERENA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-25",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "scritto e orale",
-       "iscrizioni_dal": "2027-02-28",
-       "iscrizioni_al": "2027-03-15",
-       "docenti": "SFERRA FRANCESCO DE SIMINI FLORINDA SACCONE MARGHERITA SERENA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://coursecatalogue.unior.it",
-     "verificato_il": "2026-10-04",
-     "id": "unior-l-11-lingue-e-culture-comparate-1-1050",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "1/263",
      "nome": "Lingua Serbo-croata III",
      "anno": 3,
@@ -28347,76 +28278,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "0000263",
-     "nome": "Storia della Cina",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 9,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://coursecatalogue.unior.it/insegnamenti/2028/8429/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-17",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-23",
-       "iscrizioni_al": "2026-11-07",
-       "docenti": "BRUSADELLI FEDERICO GUIDA DONATELLA TRAPANI ANNA CHIARA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-28",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-03",
-       "iscrizioni_al": "2027-01-18",
-       "docenti": "BRUSADELLI FEDERICO GUIDA DONATELLA TRAPANI ANNA CHIARA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-19",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-25",
-       "iscrizioni_al": "2027-02-09",
-       "docenti": "BRUSADELLI FEDERICO GUIDA DONATELLA TRAPANI ANNA CHIARA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-22",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-25",
-       "iscrizioni_al": "2027-03-12",
-       "docenti": "BRUSADELLI FEDERICO GUIDA DONATELLA TRAPANI ANNA CHIARA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://coursecatalogue.unior.it",
-     "verificato_il": "2026-10-04",
-     "id": "unior-l-11-lingue-e-culture-comparate-0000263",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "0001284",
      "nome": "Storia della Filosofia",
      "anno": 3,
@@ -28597,76 +28458,6 @@
      "id": "unior-l-11-lingue-e-culture-comparate-0001290",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "0000244",
-     "nome": "Storia e Civilta' Dell'estremo Oriente",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 9,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://coursecatalogue.unior.it/insegnamenti/2028/8424/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-09",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-15",
-       "iscrizioni_al": "2026-10-30",
-       "docenti": "CARIOTI PATRIZIA FOLLACO GALA MARIA GHIDINI CHIARA IACCARINO UBALDO",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-18",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-24",
-       "iscrizioni_al": "2027-01-08",
-       "docenti": "CARIOTI PATRIZIA FOLLACO GALA MARIA GHIDINI CHIARA IACCARINO UBALDO",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-08",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-14",
-       "iscrizioni_al": "2027-01-29",
-       "docenti": "CARIOTI PATRIZIA FOLLACO GALA MARIA GHIDINI CHIARA IACCARINO UBALDO",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-11",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-14",
-       "iscrizioni_al": "2027-03-01",
-       "docenti": "CARIOTI PATRIZIA FOLLACO GALA MARIA GHIDINI CHIARA IACCARINO UBALDO",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://coursecatalogue.unior.it",
-     "verificato_il": "2026-10-04",
-     "id": "unior-l-11-lingue-e-culture-comparate-0000244",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
     },
     {
      "codice": "0000481",
@@ -29935,6 +29726,77 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "0000263",
+     "nome": "Storia della Cina",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://coursecatalogue.unior.it/insegnamenti/2028/8429/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-23",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": "BRUSADELLI FEDERICO GUIDA DONATELLA TRAPANI ANNA CHIARA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-03",
+       "iscrizioni_al": "2027-01-18",
+       "docenti": "BRUSADELLI FEDERICO GUIDA DONATELLA TRAPANI ANNA CHIARA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-19",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-25",
+       "iscrizioni_al": "2027-02-09",
+       "docenti": "BRUSADELLI FEDERICO GUIDA DONATELLA TRAPANI ANNA CHIARA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-22",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-25",
+       "iscrizioni_al": "2027-03-12",
+       "docenti": "BRUSADELLI FEDERICO GUIDA DONATELLA TRAPANI ANNA CHIARA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://coursecatalogue.unior.it",
+     "verificato_il": "2026-10-04",
+     "id": "unior-l-11-lingue-e-culture-comparate-0000263",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://coursecatalogue.unior.it/insegnamenti/2026/8429/2023/9999?coorte=2024"
+    },
+    {
      "codice": "2/282",
      "nome": "Letteratura Russa II",
      "anno": 3,
@@ -30006,6 +29868,148 @@
      "modalita_esame": "orale",
      "id": "unior-l-11-lingue-e-culture-comparate-2-282",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "0000244",
+     "nome": "Storia e Civilta' Dell'estremo Oriente",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://coursecatalogue.unior.it/insegnamenti/2028/8424/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": "CARIOTI PATRIZIA FOLLACO GALA MARIA GHIDINI CHIARA IACCARINO UBALDO",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-24",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "CARIOTI PATRIZIA FOLLACO GALA MARIA GHIDINI CHIARA IACCARINO UBALDO",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-14",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "CARIOTI PATRIZIA FOLLACO GALA MARIA GHIDINI CHIARA IACCARINO UBALDO",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-14",
+       "iscrizioni_al": "2027-03-01",
+       "docenti": "CARIOTI PATRIZIA FOLLACO GALA MARIA GHIDINI CHIARA IACCARINO UBALDO",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://coursecatalogue.unior.it",
+     "verificato_il": "2026-10-04",
+     "id": "unior-l-11-lingue-e-culture-comparate-0000244",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://coursecatalogue.unior.it/insegnamenti/2026/8424/2023/9999?coorte=2024"
+    },
+    {
+     "codice": "1/1050",
+     "nome": "Lingua Sanscrita I",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://coursecatalogue.unior.it/insegnamenti/2028/1990/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": "SFERRA FRANCESCO DE SIMINI FLORINDA SACCONE MARGHERITA SERENA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-12-24",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "SFERRA FRANCESCO DE SIMINI FLORINDA SACCONE MARGHERITA SERENA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-19",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-25",
+       "iscrizioni_al": "2027-02-09",
+       "docenti": "SFERRA FRANCESCO DE SIMINI FLORINDA SACCONE MARGHERITA SERENA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-25",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-02-28",
+       "iscrizioni_al": "2027-03-15",
+       "docenti": "SFERRA FRANCESCO DE SIMINI FLORINDA SACCONE MARGHERITA SERENA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://coursecatalogue.unior.it",
+     "verificato_il": "2026-10-04",
+     "id": "unior-l-11-lingue-e-culture-comparate-1-1050",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://coursecatalogue.unior.it/insegnamenti/2026/1990/2023/9999?coorte=2024"
     }
    ],
    "ammissione": {
@@ -30034,7 +30038,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-triennali/lingue-e-culture-orientali-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1/06666",
@@ -43135,7 +43139,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-triennali/lingue-letterature-e-culture",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "0000588",
@@ -50979,7 +50983,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-triennali/mediazione-linguistica-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1/68",
@@ -61308,7 +61312,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-triennali/scienze-politiche-e-relazioni",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "0000839",
@@ -70722,7 +70726,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-magistrali/archeologia-asia-africa-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "0000448",
@@ -83768,7 +83772,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-magistrali/letterature-e-culture",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "0000373",
@@ -102166,7 +102170,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-magistrali/lingua-e-cultura-italiana",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1/6666",
@@ -103001,141 +103005,6 @@
      "modalita_esame": "orale",
      "id": "unior-lm-14-lingua-e-cultura-italiana-per-stranieri-0000967",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "2/09",
-     "nome": "Teatro Moderno e Contemporaneo",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "L-ART/05",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Mango Lorenzo",
-      "Margiotta Salvatore"
-     ],
-     "url": "https://coursecatalogue.unior.it/insegnamenti/2026/7118/2025/9999?coorte=2025",
-     "libri": [
-      {
-       "titolo": "Lorenzo Mango, Il Novecento del teatro. Una storia, Carocci, Roma, 2019 Dispense a cura del docente",
-       "autori": null,
-       "editore": "Carocci",
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Lorenzo Mango, Il Novecento del teatro. Una storia, Carocci, Roma, 2019 Dispense a cura del docente"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-17",
-       "iscrizioni_al": "2026-11-01",
-       "docenti": "MANGO LORENZO MORVILLO MARIA SOMMAIOLO PAOLO VALENTINO MIMMA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-17",
-       "iscrizioni_al": "2026-11-01",
-       "docenti": "MARGIOTTA SALVATORE",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-26",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-01",
-       "iscrizioni_al": "2027-01-16",
-       "docenti": "MANGO LORENZO MORVILLO MARIA SOMMAIOLO PAOLO VALENTINO MIMMA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-27",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-02",
-       "iscrizioni_al": "2027-01-17",
-       "docenti": "MARGIOTTA SALVATORE",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-16",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-22",
-       "iscrizioni_al": "2027-02-06",
-       "docenti": "MANGO LORENZO MORVILLO MARIA SOMMAIOLO PAOLO VALENTINO MIMMA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-16",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-22",
-       "iscrizioni_al": "2027-02-06",
-       "docenti": "MARGIOTTA SALVATORE",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-17",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-20",
-       "iscrizioni_al": "2027-03-07",
-       "docenti": "MANGO LORENZO MORVILLO MARIA SOMMAIOLO PAOLO VALENTINO MIMMA",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-17",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-20",
-       "iscrizioni_al": "2027-03-07",
-       "docenti": "MARGIOTTA SALVATORE",
-       "note": null,
-       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://coursecatalogue.unior.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unior-lm-14-lingua-e-cultura-italiana-per-stranieri-2-09",
-     "stato_esami": "completo"
     },
     {
      "codice": "0000159",
@@ -104880,6 +104749,142 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "2/09",
+     "nome": "Teatro Moderno e Contemporaneo",
+     "anno": 2,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "L-ART/05",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Mango Lorenzo",
+      "Margiotta Salvatore"
+     ],
+     "url": "https://coursecatalogue.unior.it/insegnamenti/2026/7118/2025/9999?coorte=2025",
+     "libri": [
+      {
+       "titolo": "Lorenzo Mango, Il Novecento del teatro. Una storia, Carocci, Roma, 2019 Dispense a cura del docente",
+       "autori": null,
+       "editore": "Carocci",
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Lorenzo Mango, Il Novecento del teatro. Una storia, Carocci, Roma, 2019 Dispense a cura del docente"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-17",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "MANGO LORENZO MORVILLO MARIA SOMMAIOLO PAOLO VALENTINO MIMMA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-17",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "MARGIOTTA SALVATORE",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-01-16",
+       "docenti": "MANGO LORENZO MORVILLO MARIA SOMMAIOLO PAOLO VALENTINO MIMMA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-02",
+       "iscrizioni_al": "2027-01-17",
+       "docenti": "MARGIOTTA SALVATORE",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-22",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "MANGO LORENZO MORVILLO MARIA SOMMAIOLO PAOLO VALENTINO MIMMA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-22",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "MARGIOTTA SALVATORE",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-17",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-20",
+       "iscrizioni_al": "2027-03-07",
+       "docenti": "MANGO LORENZO MORVILLO MARIA SOMMAIOLO PAOLO VALENTINO MIMMA",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-17",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-20",
+       "iscrizioni_al": "2027-03-07",
+       "docenti": "MARGIOTTA SALVATORE",
+       "note": null,
+       "fonte": "https://unior.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://coursecatalogue.unior.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unior-lm-14-lingua-e-cultura-italiana-per-stranieri-2-09",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://coursecatalogue.unior.it/insegnamenti/2024/7118/2020/9999?coorte=2024"
+    },
+    {
      "codice": "0001042",
      "nome": "Culture Giuridiche e Storia dei Diritti in Italia",
      "anno": 2,
@@ -105296,7 +105301,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-magistrali/lingue-e-comunicazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "0001073",
@@ -109224,7 +109229,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-magistrali/lingue-e-culture-dellasia-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1/05555",
@@ -126349,7 +126354,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-magistrali/lingue-e-letterature-europee",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2/002",
@@ -134543,7 +134548,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/offerta-formativa/lauree-magistrali/relazioni-e-istituzioni-dellasia-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "0001117",
@@ -142371,7 +142376,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-magistrali/relazioni-internazionali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "0000414",
@@ -146727,7 +146732,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/offerta-formativa/lauree-magistrali/saperi-umanistici-e-tecnologie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1/F",
@@ -151638,7 +151643,7 @@
    "url": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/corsi-di-studio/lauree-magistrali/traduzione-specialistica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2/004",

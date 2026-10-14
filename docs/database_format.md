@@ -145,6 +145,7 @@ nell'onboarding senza scaricare i file per ateneo.
           "anno": 1,                    // anno di corso (1..durata_anni)
           "periodo": "1",               // semestre: "1" | "2" | "annuale" | null (dalle date del periodo, se pubblicate) | testo libero
           "periodo_inizio": "01/10/2026", "periodo_fine": "31/01/2027",  // dal catalogo, se pubblicati
+          "periodo_fonte": "https://…",  // facoltativo: pagina ufficiale che dice il periodo (può essere di un altro a.a./coorte dello stesso insegnamento); da adapters/periodi.py
           "cfu": 10,
           "ssd": "MAT/05",
           "obbligatorio": true,         // false = a scelta
@@ -296,7 +297,9 @@ creati o modificati dallo studente non vengono mai toccati.
     "<id insegnamento>": {
       "origine": "indice",
       "fonte": "Indice di «Titolo», Autori, Editore, edizione, anno (ISBN …)",
-      "moduli": [{"nome": "Limiti e continuità", "argomenti": ["Limiti di funzioni", "…"]}]
+      "moduli": [{"nome": "Limiti e continuità", "argomenti": ["Limiti di funzioni", "…"]}],
+      "programma": [{"nome": "Limiti e continuità di funzioni reali", "argomenti": []}],
+      "fonte_programma": "https://…/insegnamenti/2026/…"
     }
   }
 }
@@ -308,6 +311,21 @@ creati o modificati dallo studente non vengono mai toccati.
   obbligatori), pubblicato dall'editore o da un catalogo di biblioteca;
 - `programma`: voci del programma ufficiale pubblicato dall'ateneo (la `fonte`
   contiene l'URL della scheda).
+
+Campi facoltativi (i file senza restano validi):
+- `programma`: voci del programma ufficiale, stesso formato di `moduli`
+  (`nome`, `argomenti`); presente quando i `moduli` vengono dall'indice di un
+  libro (`origine` `indice` o `libreria`) e l'ateneo pubblica anche il programma;
+- `fonte_programma`: URL della scheda con il programma.
+
+Argomenti d'esame: l'app riempie il campo «Argomenti» dell'esame finale con
+`programma` se c'è, altrimenti con `moduli` se `origine` è `programma`,
+altrimenti lo lascia vuoto: l'indice di un libro non diventa mai argomento
+d'esame (resta solo come moduli di Studio). Il testo ha una riga per modulo,
+«• Modulo: argomento, argomento» (solo «• Modulo» senza argomenti), al massimo
+8000 caratteri (oltre, le ultime righe diventano «…»). Lo studente può
+modificarlo: «Aggiorna database» aggiorna solo i campi che non ha toccato
+(vedi [datapack_format.md](datapack_format.md)).
 
 Solo titoli, sempre in italiano; nessun argomento aggiunto o dedotto. Gli
 insegnamenti senza indice né programma pubblicato non compaiono. L'app scarica il

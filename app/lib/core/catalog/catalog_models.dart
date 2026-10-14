@@ -912,13 +912,49 @@ class ModuloCatalogo {
   }
 }
 
+/// Valori di `origine` in `moduli/<ateneo>.json`.
+abstract final class OrigineModuli {
+  /// Indice di un libro di riferimento consultato (anche se il campo manca).
+  static const libreria = 'libreria';
+
+  /// Indice di un libro del programma.
+  static const indice = 'indice';
+
+  /// Programma ufficiale pubblicato dall'ateneo.
+  static const programma = 'programma';
+}
+
 /// Moduli proposti per un insegnamento e da dove vengono.
 class ModuliInsegnamento {
-  const ModuliInsegnamento({required this.moduli, this.fonte});
+  const ModuliInsegnamento({
+    required this.moduli,
+    this.fonte,
+    this.origine = OrigineModuli.libreria,
+    this.programma = const [],
+    this.fonteProgramma,
+  });
+
+  /// Moduli di Studio (indice di un libro o programma, vedi [origine]).
   final List<ModuloCatalogo> moduli;
 
   /// Per esempio l'indice del libro di riferimento.
   final String? fonte;
+
+  /// Da dove vengono i [moduli] (vedi [OrigineModuli]).
+  final String origine;
+
+  /// Programma ufficiale dell'insegnamento, presente quando i [moduli]
+  /// vengono dall'indice di un libro e l'ateneo pubblica anche il programma.
+  final List<ModuloCatalogo> programma;
+
+  /// URL della scheda con il [programma].
+  final String? fonteProgramma;
+
+  /// Argomenti d'esame ufficiali: il [programma] se c'è, altrimenti i
+  /// [moduli] se vengono dal programma; mai l'indice di un libro (vuoto).
+  List<ModuloCatalogo> get argomentiEsame => programma.isNotEmpty
+      ? programma
+      : (origine == OrigineModuli.programma ? moduli : const []);
 }
 
 /// Moduli di studio proposti per gli insegnamenti di un ateneo
@@ -940,10 +976,17 @@ class ModuliAteneo {
         final moduli = [
           for (final x in _maps(vm['moduli'])) ?ModuloCatalogo.fromJson(x),
         ];
-        if (moduli.isEmpty) continue;
+        // `programma` e `fonte_programma` sono facoltativi (file precedenti)
+        final programma = [
+          for (final x in _maps(vm['programma'])) ?ModuloCatalogo.fromJson(x),
+        ];
+        if (moduli.isEmpty && programma.isEmpty) continue;
         out[e.key.toString()] = ModuliInsegnamento(
           moduli: moduli,
           fonte: asString(vm['fonte']),
+          origine: asString(vm['origine']) ?? OrigineModuli.libreria,
+          programma: programma,
+          fonteProgramma: asString(vm['fonte_programma']),
         );
       }
     }

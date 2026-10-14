@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "luiss",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-14",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://undergraduate.luiss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "BA03",
@@ -1799,7 +1799,7 @@
    "url": "https://undergraduate.luiss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "I40",
@@ -6473,7 +6473,7 @@
    "url": "https://undergraduate.luiss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "857",
@@ -8550,7 +8550,7 @@
    "url": "https://undergraduate.luiss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "GL01",
@@ -10303,7 +10303,7 @@
    "url": "https://undergraduate.luiss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "AIM01",
@@ -11706,7 +11706,7 @@
    "url": "https://undergraduate.luiss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "AN2",
@@ -13967,7 +13967,7 @@
    "url": "https://undergraduate.luiss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "LABSP01",
@@ -16760,7 +16760,7 @@
    "url": "https://graduate.luiss.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IT05",
@@ -18786,7 +18786,7 @@
    "url": "https://www.luiss.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CERTGEN1",
@@ -19376,7 +19376,7 @@
    "url": "https://graduate.luiss.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CERTGEN1",
@@ -20796,7 +20796,7 @@
    "url": "https://graduate.luiss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CERTGEN1",
@@ -21697,7 +21697,7 @@
    "url": "https://graduate.luiss.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CERTGEN1",
@@ -21741,28 +21741,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "luiss-lm-77-global-management-and-politics-certgen2",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "GMP16",
-     "nome": "International Managerial Economics And Business",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": "ECON-07/A",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26366/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://luiss.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "luiss-lm-77-global-management-and-politics-gmp16",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -21863,6 +21841,29 @@
      "modalita_esame": "orale",
      "id": "luiss-lm-77-global-management-and-politics-gmp17",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "GMP16",
+     "nome": "International Managerial Economics And Business",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": "ECON-07/A",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26366/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://luiss.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "luiss-lm-77-global-management-and-politics-gmp16",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26366/2026/9999?coorte=2026"
     },
     {
      "codice": "GMP02",
@@ -23958,7 +23959,7 @@
    "url": "https://graduate.luiss.it/",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -23977,7 +23978,7 @@
    "url": "https://graduate.luiss.it/it/course/international-relations",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CERTGEN1",
@@ -26042,7 +26043,7 @@
    "url": "https://graduate.luiss.it/it/course/management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IT05",
@@ -27832,39 +27833,8 @@
    "url": "https://graduate.luiss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "MRKITA",
-     "nome": "Analisi del Comportamento del Consumatore",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": "ECON-07/A",
-     "obbligatorio": true,
-     "curriculum": "1 anno MARKETING ANALYTICS AND DATA SCIENCE (ENG) - da orientamento ITALIANO, 1 anno MARKETING ANALYTICS AND DATA SCIENCE (ITA) - da orientamento ITALIANO, 1 anno MARKETING STRATEGY, MANAGEMENT AND COMMUNICATION (ENG) - da orientamento ITALIANO, 1 anno MARKETING STRATEGY, MANAGEMENT AND COMMUNICATION (ITA) - da orientamento ITALIANO, 1 anno ORIENTAMENTO ITALIANO, 1 anno MARKETING ANALYTICS AND DATA SCIENCE (ENG) - da orientamento INGLESE, 1 anno MARKETING ANALYTICS AND DATA SCIENCE (ITA) - da orientamento INGLESE, MANAGEMENT AND COMMUNICATION (ENG) - da orientamento INGLESE, MANAGEMENT AND COMMUNICATION (ITA) - da orientamento INGLESE, 1 anno ORIENTAMENTO INGLESE",
-     "docenti": [],
-     "url": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26202/2026/2?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://luiss.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "luiss-lm-77-marketing-mrkita",
-     "stato_esami": "da_aggiungere",
-     "varianti": [
-      {
-       "lingua": "en",
-       "codice": "MRKENG",
-       "nome": "Consumer Behavior Analysis",
-       "url": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26201/2026/2?coorte=2026",
-       "modalita_esame": "orale"
-      }
-     ]
-    },
     {
      "codice": "CERTGEN1",
      "nome": "Certificate 1",
@@ -28167,6 +28137,38 @@
      "modalita_esame": "orale",
      "id": "luiss-lm-77-marketing-mrk15",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "MRKITA",
+     "nome": "Analisi del Comportamento del Consumatore",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": "ECON-07/A",
+     "obbligatorio": true,
+     "curriculum": "1 anno MARKETING ANALYTICS AND DATA SCIENCE (ENG) - da orientamento ITALIANO, 1 anno MARKETING ANALYTICS AND DATA SCIENCE (ITA) - da orientamento ITALIANO, 1 anno MARKETING STRATEGY, MANAGEMENT AND COMMUNICATION (ENG) - da orientamento ITALIANO, 1 anno MARKETING STRATEGY, MANAGEMENT AND COMMUNICATION (ITA) - da orientamento ITALIANO, 1 anno ORIENTAMENTO ITALIANO, 1 anno MARKETING ANALYTICS AND DATA SCIENCE (ENG) - da orientamento INGLESE, 1 anno MARKETING ANALYTICS AND DATA SCIENCE (ITA) - da orientamento INGLESE, MANAGEMENT AND COMMUNICATION (ENG) - da orientamento INGLESE, MANAGEMENT AND COMMUNICATION (ITA) - da orientamento INGLESE, 1 anno ORIENTAMENTO INGLESE",
+     "docenti": [],
+     "url": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26202/2026/2?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://luiss.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "luiss-lm-77-marketing-mrkita",
+     "stato_esami": "da_aggiungere",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "MRKENG",
+       "nome": "Consumer Behavior Analysis",
+       "url": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26201/2026/2?coorte=2026",
+       "modalita_esame": "orale"
+      }
+     ],
+     "periodo_fonte": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26202/2026/2?coorte=2026"
     },
     {
      "codice": "MRK05",
@@ -28562,18 +28564,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Introduzione all'apprendimento statistico. Con applicazioni in R di Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani. Piccin-Nuova Libraria, 2020."
-      },
-      {
-       "titolo": "Introduzione all'apprendimento statistico. Con applicazioni in R di Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani. Piccin-Nuova Libraria, 2020. Versione in inglese disponibile online:",
-       "autori": null,
-       "editore": "Robert Tibshirani. Piccin-Nuova Libraria",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Introduzione all'apprendimento statistico. Con applicazioni in R di Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani. Piccin-Nuova Libraria, 2020. Versione in inglese disponibile online:"
       }
      ],
      "esami": [],
@@ -30468,7 +30458,7 @@
    "url": "https://graduate.luiss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CERTGEN1",
@@ -30534,50 +30524,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "luiss-lm-77-strategic-management-m219",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "SMITA",
-     "nome": "Metodi Quantitativi e Dinamiche Industriali",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": "STAT-01/A",
-     "obbligatorio": true,
-     "curriculum": "1 anno - Orientamento ITALIANO, 1 anno - STRATEGIC MANAGEMENT & CONSULTING (ITA) - da orientamento ITALIANO, 1 anno STRATEGIC MANAGEMENT & CONSULTING (ENG) - da orientamento ITALIANO, 1 anno SUSTAINABILITY & CIRCULAR ECONOMY - da orientamento ITALIANO, 1 anno TECHNOLOGY STRATEGY - da orientamento ITALIANO",
-     "docenti": [],
-     "url": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26300/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://luiss.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "luiss-lm-77-strategic-management-smita",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "SMENG",
-     "nome": "Quantitative Methods And Industry Dynamics",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": "STAT-01/A",
-     "obbligatorio": true,
-     "curriculum": "1 anno - Orientamento INGLESE, 1 anno STRATEGIC MANAGEMENT & CONSULTING (ENG) - da orientamento INGLESE, 1 anno STRATEGIC MANAGEMENT & CONSULTING (ITA) - da orientamento INGLESE, 1 anno SUSTAINABILITY & CIRCULAR ECONOMY - da orientamento INGLESE",
-     "docenti": [],
-     "url": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26299/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://luiss.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "luiss-lm-77-strategic-management-smeng",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -30760,6 +30706,29 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "SMITA",
+     "nome": "Metodi Quantitativi e Dinamiche Industriali",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": "STAT-01/A",
+     "obbligatorio": true,
+     "curriculum": "1 anno - Orientamento ITALIANO, 1 anno - STRATEGIC MANAGEMENT & CONSULTING (ITA) - da orientamento ITALIANO, 1 anno STRATEGIC MANAGEMENT & CONSULTING (ENG) - da orientamento ITALIANO, 1 anno SUSTAINABILITY & CIRCULAR ECONOMY - da orientamento ITALIANO, 1 anno TECHNOLOGY STRATEGY - da orientamento ITALIANO",
+     "docenti": [],
+     "url": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26300/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://luiss.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "luiss-lm-77-strategic-management-smita",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26300/2026/9999?coorte=2026"
+    },
+    {
      "codice": "SMIS10IT",
      "nome": "Metodi Quantitativi per il Management",
      "anno": 1,
@@ -30891,6 +30860,29 @@
      "modalita_esame": "orale",
      "id": "luiss-lm-77-strategic-management-smis09it",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "SMENG",
+     "nome": "Quantitative Methods And Industry Dynamics",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": "STAT-01/A",
+     "obbligatorio": true,
+     "curriculum": "1 anno - Orientamento INGLESE, 1 anno STRATEGIC MANAGEMENT & CONSULTING (ENG) - da orientamento INGLESE, 1 anno STRATEGIC MANAGEMENT & CONSULTING (ITA) - da orientamento INGLESE, 1 anno SUSTAINABILITY & CIRCULAR ECONOMY - da orientamento INGLESE",
+     "docenti": [],
+     "url": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26299/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://luiss.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "luiss-lm-77-strategic-management-smeng",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://luiss.coursecatalogue.cineca.it/insegnamenti/2026/26299/2026/9999?coorte=2026"
     },
     {
      "codice": "SMIS10",
@@ -33377,7 +33369,7 @@
    "url": "https://undergraduate.luiss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "I48",

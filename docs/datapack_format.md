@@ -152,5 +152,19 @@ la spunta = tieni / con la X = rimuovi, colonna `books.catalog_choice`) non vien
 libro rimosso non ricompare; un libro modificato a mano (`books.user_edited`)
 non viene più aggiornato. Negli esami un campo `null` nel pack non cancella il
 valore già presente (es. la data scelta dallo studente).
+
+Argomenti e materiali degli esami: se il pack contiene `topics` o
+`studyMaterials` (anche `null` o `[]`), l'app salva il valore importato accanto
+al campo (`exams.imported_topics`, `exams.imported_study_materials`). A un nuovo
+import il campo si aggiorna solo se è ancora uguale al valore importato l'ultima
+volta (o vuoto e mai riempito): se lo studente l'ha scritto, modificato o
+svuotato resta il suo. Un pack senza queste chiavi non li tocca. Il catalogo
+pubblico (`catalog_datapack.dart`) li mette nell'esame finale di ogni
+insegnamento: `topics` dal programma ufficiale (`moduli/<ateneo>.json`, vedi
+[database_format.md](database_format.md)), una riga per modulo «• Modulo:
+argomento, argomento»; `studyMaterials` dai libri dell'insegnamento, uno per
+libro («Autori — Titolo (Editore, anno)», oppure la citazione del syllabus),
+prima gli obbligatori, poi i consigliati, poi gli altri. Le prove in itinere
+non li hanno.
 Un libro con `"downloaded": true` diventa «posseduto» anche se era già
 nell'app come «da procurare».

@@ -4,6 +4,7 @@
 library;
 
 import '../../utils/parse.dart';
+import '../constants/text_limits.dart';
 import '../theme/university_colors.dart';
 import 'catalog_models.dart';
 import 'catalog_search.dart';
@@ -55,15 +56,110 @@ Map<String, Object?> _university(Ateneo a) => {
   'website': a.sito,
 };
 
+/// Testo di un libro per «Materiali da studiare»: «Autori — Titolo
+/// (Editore, anno)»; la citazione del syllabus così com'è se autori,
+/// editore e anno non sono separati.
+String libroComeMateriale(LibroCatalogo l) {
+  String? pulito(String? s) {
+    final t = s?.replaceAll(RegExp(r'\s+'), ' ').trim();
+    return t == null || t.isEmpty ? null : t;
+  }
+
+  final autori = pulito(l.autori);
+  final editore = pulito(l.editore);
+  final citazione = pulito(l.citazione);
+  if (autori == null &&
+      editore == null &&
+      l.anno == null &&
+      citazione != null) {
+    return citazione;
+  }
+  final dettagli = [?editore, if (l.anno != null) '${l.anno}'].join(', ');
+  return [
+    if (autori != null) '$autori — ',
+    pulito(l.titolo) ?? l.titolo,
+    if (dettagli.isNotEmpty) ' ($dettagli)',
+  ].join();
+}
+
+/// «Materiali da studiare» dell'esame finale: un elemento per libro, prima
+/// gli obbligatori, poi i consigliati, poi quelli senza indicazione.
+List<String> materialiDaStudiare(List<LibroCatalogo> libri) {
+  int rank(LibroCatalogo l) => switch (l.obbligatorio) {
+    true => 0,
+    false => 1,
+    null => 2,
+  };
+  final ordinati = [...libri.indexed]
+    ..sort((a, b) {
+      final r = rank(a.$2).compareTo(rank(b.$2));
+      return r != 0 ? r : a.$1.compareTo(b.$1);
+    });
+  final out = <String>[];
+  for (final (_, l) in ordinati) {
+    final t = libroComeMateriale(l);
+    if (t.isNotEmpty && !out.contains(t)) out.add(t);
+  }
+  return out;
+}
+
+/// «Argomenti» dell'esame finale dal programma ufficiale
+/// ([ModuliInsegnamento.argomentiEsame]): una riga per modulo, «• Modulo:
+/// argomento, argomento» (solo «• Modulo» se non ha argomenti). Oltre
+/// [TextLimits.examTopics] le ultime righe si tolgono e resta «…». null se
+/// il database non ha il programma (mai l'indice di un libro).
+String? argomentiEsame(ModuliInsegnamento? moduli) {
+  final lista = moduli?.argomentiEsame ?? const <ModuloCatalogo>[];
+  final righe = <String>[];
+  for (final m in lista) {
+    final nome = m.nome.trim();
+    final argomenti = [
+      for (final a in m.argomenti)
+        if (a.trim().isNotEmpty) a.trim(),
+    ];
+    if (nome.isEmpty && argomenti.isEmpty) continue;
+    righe.add(
+      argomenti.isEmpty
+          ? '• $nome'
+          : (nome.isEmpty
+                ? '• ${argomenti.join(', ')}'
+                : '• $nome: ${argomenti.join(', ')}'),
+    );
+  }
+  if (righe.isEmpty) return null;
+  const max = TextLimits.examTopics;
+  final testo = righe.join('\n');
+  if (testo.length <= max) return testo;
+  // righe intere finché c'è posto per «\n…»
+  final tenute = <String>[];
+  var len = 0;
+  for (final r in righe) {
+    final next = len + (tenute.isEmpty ? 0 : 1) + r.length;
+    if (next + 2 > max) break;
+    tenute.add(r);
+    len = next;
+  }
+  // la prima riga da sola supera il limite: tagliata
+  if (tenute.isEmpty) return '${righe.first.substring(0, max - 1)}…';
+  return [...tenute, '…'].join('\n');
+}
+
 /// Data pack con l'ateneo, il corso di laurea e **tutti** gli insegnamenti
 /// del piano (tutti gli anni), con libri, esame finale, prove in itinere e
 /// appelli noti. Gli insegnamenti senza dati restano presenti con
 /// `booksStatus`/`examsStatus` = "da_aggiungere".
+///
+/// L'esame finale ha sempre `topics` (dal programma ufficiale in [moduli],
+/// `moduli/<ateneo>.json`) e `studyMaterials` (i libri dell'insegnamento),
+/// anche vuoti: l'importer li scrive solo se lo studente non li ha
+/// modificati. Le prove in itinere non li hanno (il database non dà
+/// argomenti o materiali specifici per le singole prove).
 Map<String, Object?> catalogToDataPack({
   required Ateneo ateneo,
   required CorsoDettaglio corso,
   String? aggiornatoIl,
   DateTime? now,
+  ModuliAteneo? moduli,
 }) {
   final a = ateneo.id;
   final source = CatalogIds.source(a);
@@ -110,6 +206,8 @@ Map<String, Object?> catalogToDataPack({
       'examType':
           ins.modalitaEsame ??
           appelli.map((e) => e.modalita).nonNulls.firstOrNull,
+      'topics': argomentiEsame(moduli?.insegnamenti[ins.id]),
+      'studyMaterials': materialiDaStudiare(ins.libri),
       'source': source,
     });
 

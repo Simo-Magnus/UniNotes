@@ -572,7 +572,7 @@ class _ExamFormPageState extends State<ExamFormPage> {
         controller: _topics,
         minLines: 2,
         maxLines: 8,
-        maxLength: TextLimits.notes,
+        maxLength: TextLimits.examTopics,
         decoration: const InputDecoration(
           labelText: 'Argomenti oggetto della prova',
           alignLabelWithHint: true,

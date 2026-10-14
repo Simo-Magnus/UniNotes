@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unite",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-14",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,30 +21,8 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Biotechnology_L_2",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "A000772",
-     "nome": "In-depth Study And Foreign Knowledge: Level B Italian",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "GLOT-01/B",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7584/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unite.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unite-l-2-biotechnology-a000772",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "A000774",
      "nome": "Ofa Chemistry",
@@ -245,6 +223,29 @@
      "modalita_esame": "orale",
      "id": "unite-l-2-biotechnology-a000714",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000772",
+     "nome": "In-depth Study And Foreign Knowledge: Level B Italian",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "GLOT-01/B",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7584/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unite.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unite-l-2-biotechnology-a000772",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unite.coursecatalogue.cineca.it/insegnamenti/2025/7584/2025/9999?coorte=2025"
     },
     {
      "codice": "A000715",
@@ -781,28 +782,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "A000773",
-     "nome": "From The Function Of The Reproductive System To Biotechnology",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "VET/01",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7585/2025/9999?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unite.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unite-l-2-biotechnology-a000773",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "A000718",
      "nome": "Analytical Chemistry",
      "anno": 2,
@@ -1049,6 +1028,29 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "A000773",
+     "nome": "From The Function Of The Reproductive System To Biotechnology",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "VET/01",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7585/2025/9999?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unite.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unite-l-2-biotechnology-a000773",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unite.coursecatalogue.cineca.it/insegnamenti/2025/7585/2025/9999?coorte=2025"
+    },
+    {
      "codice": "A000723",
      "nome": "Genetics And Genetics Laboratories",
      "anno": 2,
@@ -1291,30 +1293,8 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Biotecnologie_L2",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "A000312",
-     "nome": "Competenze Trasversali per la Sostenibilita’ e il Kaizen",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "PSIC-01/A",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7205/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unite.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unite-l-2-biotecnologie-a000312",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "6272",
      "nome": "Corso di Formazione Sulla Sicurezza in Laboratorio",
@@ -1357,28 +1337,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unite-l-2-biotecnologie-1642",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "A000772",
-     "nome": "In-depth Study And Foreign Knowledge: Level B Italian",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "GLOT-01/B",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7584/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unite.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unite-l-2-biotecnologie-a000772",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -2249,6 +2207,29 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "A000772",
+     "nome": "In-depth Study And Foreign Knowledge: Level B Italian",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "GLOT-01/B",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7584/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unite.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unite-l-2-biotecnologie-a000772",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unite.coursecatalogue.cineca.it/insegnamenti/2025/7584/2025/9999?coorte=2025"
+    },
+    {
      "codice": "A000715",
      "nome": "Microbiology",
      "anno": 1,
@@ -2749,6 +2730,29 @@
      ]
     },
     {
+     "codice": "A000312",
+     "nome": "Competenze Trasversali per la Sostenibilita’ e il Kaizen",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "PSIC-01/A",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7205/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unite.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unite-l-2-biotecnologie-a000312",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unite.coursecatalogue.cineca.it/insegnamenti/2025/7205/2025/9999?coorte=2025"
+    },
+    {
      "codice": "A000751",
      "nome": "Italian Language",
      "anno": 1,
@@ -3076,28 +3080,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unite-l-2-biotecnologie-a000315",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "A000773",
-     "nome": "From The Function Of The Reproductive System To Biotechnology",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "VET/01",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7585/2025/9999?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unite.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unite-l-2-biotecnologie-a000773",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -3680,6 +3662,29 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "A000773",
+     "nome": "From The Function Of The Reproductive System To Biotechnology",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "VET/01",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7585/2025/9999?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unite.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unite-l-2-biotecnologie-a000773",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unite.coursecatalogue.cineca.it/insegnamenti/2025/7585/2025/9999?coorte=2025"
+    },
+    {
      "codice": "A000797",
      "nome": "Genetica e Laboratori di Genetica",
      "anno": 2,
@@ -4082,7 +4087,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A000775",
@@ -4718,7 +4723,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Diritto_dell_Ambiente_e_dell_Energia_L14",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "5442",
@@ -6767,7 +6772,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/DAMS_L3",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A000338",
@@ -9040,7 +9045,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Economia_L18",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1327",
@@ -11682,7 +11687,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Scienze_e_tecnologie_alimentari_L26",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "6272",
@@ -12988,7 +12993,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Scienze_Tecnologie_della_Comunicazione_L20",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A000338",
@@ -15039,7 +15044,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Scienze_Gastronomiche_per_la_Sostenibilita_L_GASTR",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "6272",
@@ -16118,7 +16123,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Scienze_politiche_L36",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "6171",
@@ -19617,7 +19622,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Servizi_Giuridici_L14",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A000338",
@@ -23030,7 +23035,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Turismo_Sostenibile_L15",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "5820",
@@ -23996,52 +24001,6 @@
      "stato_esami": "completo"
     },
     {
-     "codice": "A000300",
-     "nome": "Diritto Privato del Turismo",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2028/7208/2026/2?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-13",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-28",
-       "iscrizioni_al": "2026-10-11",
-       "docenti": "RAMETTA RAFFAELLA",
-       "note": null,
-       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-01",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-16",
-       "iscrizioni_al": "2026-11-29",
-       "docenti": "RAMETTA RAFFAELLA",
-       "note": null,
-       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unite.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "unite-l-15-turismo-sostenibile-a000300",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "A000316",
      "nome": "Esame a Scelta III Anno",
      "anno": 3,
@@ -24061,52 +24020,6 @@
      "id": "unite-l-15-turismo-sostenibile-a000316",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "A000304",
-     "nome": "Management per le Imprese Turistiche",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": "PIANO DI STUDIO COORTE 2026 TERRITORIO E PATRIMONIO CULTURALE",
-     "docenti": [],
-     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2028/7212/2026/1?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-12",
-       "ora": "13:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-27",
-       "iscrizioni_al": "2026-10-10",
-       "docenti": "GIAMPIETRO MIRIAM",
-       "note": null,
-       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-11",
-       "ora": "13:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-26",
-       "iscrizioni_al": "2026-12-09",
-       "docenti": "GIAMPIETRO MIRIAM",
-       "note": null,
-       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unite.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "unite-l-15-turismo-sostenibile-a000304",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
     },
     {
      "codice": "A001298",
@@ -24235,6 +24148,53 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "A000304",
+     "nome": "Management per le Imprese Turistiche",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": "PIANO DI STUDIO COORTE 2026 TERRITORIO E PATRIMONIO CULTURALE",
+     "docenti": [],
+     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2028/7212/2026/1?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-12",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-27",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "GIAMPIETRO MIRIAM",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-26",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "GIAMPIETRO MIRIAM",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unite.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "unite-l-15-turismo-sostenibile-a000304",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unite.coursecatalogue.cineca.it/insegnamenti/2025/7212/2025/9999?coorte=2025"
+    },
+    {
      "codice": "A000307",
      "nome": "Storia Dell'ambiente e del Territorio",
      "anno": 3,
@@ -24282,6 +24242,53 @@
      "modalita_esame": "orale",
      "id": "unite-l-15-turismo-sostenibile-a000307",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "A000300",
+     "nome": "Diritto Privato del Turismo",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2028/7208/2026/2?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-11",
+       "docenti": "RAMETTA RAFFAELLA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-16",
+       "iscrizioni_al": "2026-11-29",
+       "docenti": "RAMETTA RAFFAELLA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unite.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "unite-l-15-turismo-sostenibile-a000300",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unite.coursecatalogue.cineca.it/insegnamenti/2025/7208/2025/9999?coorte=2025"
     }
    ],
    "curricula": [
@@ -24314,7 +24321,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/TBA_L38",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "6272",
@@ -26390,30 +26397,8 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Scienze_Tecnologie_della_Comunicazione_L20",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "A000312",
-     "nome": "Competenze Trasversali per la Sostenibilita’ e il Kaizen",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 4,
-     "ssd": "PSIC-01/A",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7205/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unite.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unite-l-26-viticoltura-ed-enologia-a000312",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "6272",
      "nome": "Corso di Formazione Sulla Sicurezza in Laboratorio",
@@ -26779,6 +26764,29 @@
      "modalita_esame": "orale",
      "id": "unite-l-26-viticoltura-ed-enologia-a000639",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "A000312",
+     "nome": "Competenze Trasversali per la Sostenibilita’ e il Kaizen",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 4,
+     "ssd": "PSIC-01/A",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7205/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unite.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unite-l-26-viticoltura-ed-enologia-a000312",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unite.coursecatalogue.cineca.it/insegnamenti/2025/7205/2025/9999?coorte=2025"
     },
     {
      "codice": "5856",
@@ -27582,7 +27590,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Biotecnologie_avanzate_LM9",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "6272",
@@ -28096,28 +28104,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "A000312",
-     "nome": "Competenze Trasversali per la Sostenibilita’ e il Kaizen",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 4,
-     "ssd": "PSIC-01/A",
-     "obbligatorio": false,
-     "curriculum": "PIANO DI STUDIO PERCORSO GENOMICA APPLICATA, PIANO DI STUDIO PERCORSO PROTEOMICA E METABOLOMICA",
-     "docenti": [],
-     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7205/2025/1?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unite.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unite-lm-9-biotecnologie-avanzate-a000312",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "3855",
      "nome": "Prova Finale",
      "anno": 2,
@@ -28322,6 +28308,29 @@
      "modalita_esame": "orale",
      "id": "unite-lm-9-biotecnologie-avanzate-a001005",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000312",
+     "nome": "Competenze Trasversali per la Sostenibilita’ e il Kaizen",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 4,
+     "ssd": "PSIC-01/A",
+     "obbligatorio": false,
+     "curriculum": "PIANO DI STUDIO PERCORSO GENOMICA APPLICATA, PIANO DI STUDIO PERCORSO PROTEOMICA E METABOLOMICA",
+     "docenti": [],
+     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7205/2025/1?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unite.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unite-lm-9-biotecnologie-avanzate-a000312",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unite.coursecatalogue.cineca.it/insegnamenti/2025/7205/2025/1?coorte=2025"
     },
     {
      "codice": "A000690",
@@ -28710,7 +28719,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Comunicazione_Marketing_e_Innovazione_Digitale_LM_59",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "5253",
@@ -30029,7 +30038,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/DESI_LM-SC-GIUR_LM-77",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "5660",
@@ -31020,30 +31029,8 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Food_Science_and_Technology_LM70",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "A000312",
-     "nome": "Competenze Trasversali per la Sostenibilita’ e il Kaizen",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 4,
-     "ssd": "PSIC-01/A",
-     "obbligatorio": false,
-     "curriculum": "COURSE STRUCTURE 2026 SUSTAINABLE FOOD SYSTEMS, COURSE STRUCTURE 2026 FOOD PROCESS INNOVATION & DIGITALISATION",
-     "docenti": [],
-     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7205/2026/1?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unite.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unite-lm-70-food-science-and-technology-a000312",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "A000973",
      "nome": "Chemical Analysis Of Foods And Chemometrics",
@@ -31396,6 +31383,29 @@
      "modalita_esame": "orale",
      "id": "unite-lm-70-food-science-and-technology-a000974",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000312",
+     "nome": "Competenze Trasversali per la Sostenibilita’ e il Kaizen",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 4,
+     "ssd": "PSIC-01/A",
+     "obbligatorio": false,
+     "curriculum": "COURSE STRUCTURE 2026 SUSTAINABLE FOOD SYSTEMS, COURSE STRUCTURE 2026 FOOD PROCESS INNOVATION & DIGITALISATION",
+     "docenti": [],
+     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7205/2026/1?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unite.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unite-lm-70-food-science-and-technology-a000312",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unite.coursecatalogue.cineca.it/insegnamenti/2025/7205/2025/1?coorte=2025"
     },
     {
      "codice": "A001352",
@@ -32355,7 +32365,7 @@
    "url": "https://www.unite.it/UniTE/Corsi_di_studio/Media_Arti_Culture_e_Spettacolo_LM_65",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A000470",
@@ -34109,7 +34119,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Politiche_internazionali_e_della_sostenibilita_LM62",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "7009",
@@ -35809,7 +35819,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Reproductive_Biotechnologies_LM9",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "6272",
@@ -36592,7 +36602,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Scienze_delle_amministrazioni_LM63",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "6583",
@@ -38419,30 +38429,8 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Scienze_delle_produzioni_animali_sostenibili_L86",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "A000312",
-     "nome": "Competenze Trasversali per la Sostenibilita’ e il Kaizen",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 4,
-     "ssd": "PSIC-01/A",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7205/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unite.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unite-lm-86-scienze-delle-produzioni-animali-sostenibili-a000312",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "6272",
      "nome": "Corso di Formazione Sulla Sicurezza in Laboratorio",
@@ -38923,6 +38911,29 @@
      "modalita_esame": "orale",
      "id": "unite-lm-86-scienze-delle-produzioni-animali-sostenibili-a001258",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000312",
+     "nome": "Competenze Trasversali per la Sostenibilita’ e il Kaizen",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 4,
+     "ssd": "PSIC-01/A",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7205/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unite.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unite-lm-86-scienze-delle-produzioni-animali-sostenibili-a000312",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unite.coursecatalogue.cineca.it/insegnamenti/2025/7205/2025/9999?coorte=2025"
     },
     {
      "codice": "7025",
@@ -39844,7 +39855,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Giurisprudenza_LMG01",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A000338",
@@ -42390,7 +42401,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Giurisprudenza_LMG01",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A000338",
@@ -42934,113 +42945,6 @@
    "fonte": "https://unite.coursecatalogue.cineca.it",
    "verificato_il": "2026-10-04",
    "insegnamenti": [
-    {
-     "codice": "7061",
-     "nome": "Abilita' Linguistiche",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "LINGUA",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/6953/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-05",
-       "ora": "15:45",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-12",
-       "iscrizioni_al": "2026-10-01",
-       "docenti": "MARRONI MICHELA",
-       "note": null,
-       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-08",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-10",
-       "iscrizioni_al": "2026-10-04",
-       "docenti": "MAZZARA SABRINA",
-       "note": null,
-       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-02",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-06",
-       "iscrizioni_al": "2026-10-29",
-       "docenti": "MARRONI MICHELA",
-       "note": null,
-       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-05",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-11",
-       "iscrizioni_al": "2026-11-03",
-       "docenti": "MAZZARA SABRINA",
-       "note": null,
-       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-12",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-09",
-       "iscrizioni_al": "2026-11-08",
-       "docenti": "MAZZARA SABRINA",
-       "note": null,
-       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-30",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-03",
-       "iscrizioni_al": "2026-11-26",
-       "docenti": "MARRONI MICHELA",
-       "note": null,
-       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-03",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-13",
-       "iscrizioni_al": "2026-11-29",
-       "docenti": "MAZZARA SABRINA",
-       "note": null,
-       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unite.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unite-lmg-01-giurisprudenza-sede-avezzano-7061",
-     "stato_esami": "completo"
-    },
     {
      "codice": "A000338",
      "nome": "Ofa Comprensione del Testo e Conoscenza della Lingua Italiana",
@@ -43646,6 +43550,114 @@
      "modalita_esame": "orale",
      "id": "unite-lmg-01-giurisprudenza-sede-avezzano-2449",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "7061",
+     "nome": "Abilita' Linguistiche",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "01/03/2027",
+     "periodo_fine": "11/06/2027",
+     "cfu": 3,
+     "ssd": "LINGUA",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/6953/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "15:45",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-12",
+       "iscrizioni_al": "2026-10-01",
+       "docenti": "MARRONI MICHELA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-10",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "MAZZARA SABRINA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": "MARRONI MICHELA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-11",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "MAZZARA SABRINA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": "MAZZARA SABRINA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-30",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-03",
+       "iscrizioni_al": "2026-11-26",
+       "docenti": "MARRONI MICHELA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-13",
+       "iscrizioni_al": "2026-11-29",
+       "docenti": "MAZZARA SABRINA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unite.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unite-lmg-01-giurisprudenza-sede-avezzano-7061",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/6953/2026/9999?coorte=2026"
     },
     {
      "codice": "1075",
@@ -45478,7 +45490,7 @@
    "url": "https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Medicina_Veterinaria_L42",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "6272",

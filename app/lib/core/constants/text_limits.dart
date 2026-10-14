@@ -30,6 +30,10 @@ abstract final class TextLimits {
   static const shortNote = 500;
   static const notes = 2000;
   static const longText = 4000;
+
+  /// Argomenti di una prova: i programmi ufficiali importati dal database
+  /// superano spesso le 2000 battute (oltre il 99% sta in 8000).
+  static const examTopics = 8000;
   static const url = 2048;
   static const hexColor = 7;
 

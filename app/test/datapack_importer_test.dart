@@ -123,6 +123,119 @@ void main() {
     expect(x['notes'], 'mia nota');
   });
 
+  group('argomenti e materiali degli esami', () {
+    Map<String, Object?> pack({
+      Object? topics = 'Limiti',
+      Object? materials = const ['Libro A'],
+      bool withKeys = true,
+    }) => {
+      'format': 'university-manager-datapack',
+      'version': 1,
+      'universities': [
+        {
+          'id': 'polito',
+          'name': 'Politecnico di Torino',
+          'shortName': 'P',
+          'color': '#1565C0',
+        },
+      ],
+      'courses': [
+        {
+          'externalId': 'polito:course:A',
+          'universityId': 'polito',
+          'name': 'Analisi I',
+        },
+      ],
+      'exams': [
+        {
+          'externalId': 'polito:exam:A',
+          'courseExternalId': 'polito:course:A',
+          'kind': 'final',
+          if (withKeys) 'topics': topics,
+          if (withKeys) 'studyMaterials': materials,
+        },
+      ],
+    };
+
+    Future<Map<String, Object?>> exam() async =>
+        (await db.db.query('exams')).single;
+
+    test('riempimento e aggiornamento dei campi non toccati', () async {
+      await importer.importMap(pack(), exclusionPatterns: const []);
+      var x = await exam();
+      expect(x['topics'], 'Limiti');
+      expect(x['study_materials'], '["Libro A"]');
+      expect(x['imported_topics'], 'Limiti');
+      expect(x['imported_study_materials'], '["Libro A"]');
+      await importer.importMap(
+        pack(topics: 'Limiti e derivate', materials: ['Libro A', 'Libro B']),
+        exclusionPatterns: const [],
+      );
+      x = await exam();
+      expect(x['topics'], 'Limiti e derivate');
+      expect(x['study_materials'], '["Libro A","Libro B"]');
+      // il database non ha più i dati: i campi non toccati si svuotano
+      await importer.importMap(
+        pack(topics: null, materials: const []),
+        exclusionPatterns: const [],
+      );
+      x = await exam();
+      expect(x['topics'], isNull);
+      expect(x['study_materials'], isNull);
+    });
+
+    test('le modifiche dello studente non si sovrascrivono', () async {
+      await importer.importMap(pack(), exclusionPatterns: const []);
+      await db.db.update('exams', {
+        'topics': 'I miei argomenti',
+        'study_materials': '["Mie slide"]',
+      });
+      await importer.importMap(
+        pack(topics: 'Nuovo programma', materials: ['Libro B']),
+        exclusionPatterns: const [],
+      );
+      var x = await exam();
+      expect(x['topics'], 'I miei argomenti');
+      expect(x['study_materials'], '["Mie slide"]');
+      expect(x['imported_topics'], 'Nuovo programma');
+      // svuotati dallo studente: restano vuoti
+      await db.db.update('exams', {'topics': null, 'study_materials': null});
+      await importer.importMap(
+        pack(topics: 'Altro programma', materials: ['Libro C']),
+        exclusionPatterns: const [],
+      );
+      x = await exam();
+      expect(x['topics'], isNull);
+      expect(x['study_materials'], isNull);
+      // un pack senza le chiavi non li tocca
+      await db.db.update('exams', {'topics': 'Scritto a mano'});
+      await importer.importMap(
+        pack(withKeys: false),
+        exclusionPatterns: const [],
+      );
+      x = await exam();
+      expect(x['topics'], 'Scritto a mano');
+      expect(x['imported_topics'], 'Altro programma');
+    });
+
+    test('esami già importati prima: i campi vuoti si riempiono, quelli '
+        'scritti dallo studente restano', () async {
+      // come un account esistente: esame senza argomenti, materiali scritti
+      await importer.importMap(
+        pack(withKeys: false),
+        exclusionPatterns: const [],
+      );
+      await db.db.update('exams', {'study_materials': '["Mie slide"]'});
+      var x = await exam();
+      expect(x['topics'], isNull);
+      expect(x['imported_topics'], isNull);
+      await importer.importMap(pack(), exclusionPatterns: const []);
+      x = await exam();
+      expect(x['topics'], 'Limiti');
+      expect(x['study_materials'], '["Mie slide"]');
+    });
+  });
+
   test('libro segnato come posseduto in un aggiornamento', () async {
     Map<String, Object?> book(String id, bool? downloaded) => {
       'externalId': id,

@@ -460,6 +460,10 @@ class DataPackImporter {
         continue;
       }
       final materials = x['studyMaterials'];
+      final newTopics = asString(x['topics']);
+      final newMaterials = materials is List && materials.isNotEmpty
+          ? jsonEncode(materials.map((e) => e.toString()).toList())
+          : null;
       final date = asDateTime(x['date']);
       final data = <String, Object?>{
         'course_id': courseId,
@@ -470,32 +474,70 @@ class DataPackImporter {
         'location': asString(x['location']),
         'exam_type': asString(x['examType']),
         'cfu': asDouble(x['cfu']),
-        'topics': asString(x['topics']),
-        'study_materials': materials is List && materials.isNotEmpty
-            ? jsonEncode(materials.map((e) => e.toString()).toList())
-            : null,
         'source': asString(x['source']),
       };
       final existing = await txn.query(
         'exams',
-        columns: ['id', 'notes', 'imported_notes'],
+        columns: [
+          'id',
+          'notes',
+          'imported_notes',
+          'topics',
+          'imported_topics',
+          'study_materials',
+          'imported_study_materials',
+        ],
         where: 'external_id = ?',
         whereArgs: [ext],
       );
       final newNotes = asString(x['notes']);
       data['imported_notes'] = newNotes;
+      // Argomenti e materiali: il valore importato resta accanto al campo
+      // (imported_*), così si riconosce se lo studente l'ha cambiato. Solo i
+      // pack che li indicano (anche vuoti) li toccano.
+      final hasTopics = x.containsKey('topics');
+      final hasMaterials = x.containsKey('studyMaterials');
+      if (existing.isEmpty) {
+        if (hasTopics) {
+          data['topics'] = newTopics;
+          data['imported_topics'] = newTopics;
+        }
+        if (hasMaterials) {
+          data['study_materials'] = newMaterials;
+          data['imported_study_materials'] = newMaterials;
+        }
+      }
       if (existing.isNotEmpty) {
         // status, grade, laude restano quelli dell'utente; le note si
         // aggiornano solo se l'utente non le ha modificate. Un campo
         // sconosciuto nel pack (null) non cancella quello già presente (es.
         // data scelta dallo studente, CFU corretti a mano).
-        final cur = existing.first['notes'];
-        if (cur == null || cur == existing.first['imported_notes']) {
+        final row = existing.first;
+        final cur = row['notes'];
+        if (cur == null || cur == row['imported_notes']) {
           data['notes'] = newNotes;
         }
-        data.removeWhere(
-          (k, v) => v == null && k != 'notes' && k != 'imported_notes',
-        );
+        // Argomenti e materiali si aggiornano solo se il campo è ancora
+        // quello messo dall'import (o vuoto e mai riempito): se lo studente
+        // li ha scritti, cambiati o svuotati restano i suoi.
+        final keep = {'notes', 'imported_notes'};
+        if (hasTopics) {
+          if (row['topics'] == row['imported_topics']) {
+            data['topics'] = newTopics;
+            keep.add('topics');
+          }
+          data['imported_topics'] = newTopics;
+          keep.add('imported_topics');
+        }
+        if (hasMaterials) {
+          if (row['study_materials'] == row['imported_study_materials']) {
+            data['study_materials'] = newMaterials;
+            keep.add('study_materials');
+          }
+          data['imported_study_materials'] = newMaterials;
+          keep.add('imported_study_materials');
+        }
+        data.removeWhere((k, v) => v == null && !keep.contains(k));
         await txn.update(
           'exams',
           data,

@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unicampania",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-13",
+ "aggiornato_il": "2026-10-14",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.medicinasperimentale.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-assistenza-sanitaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424221",
@@ -826,7 +826,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/biotecnologie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A4605",
@@ -2615,7 +2615,7 @@
    "url": "http://www.letterebeniculturali.unicampania.it/didattica/offerta-formativa/corsi-di-laurea-triennale/conservazione-dei-beni-culturali.html",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422739",
@@ -8704,7 +8704,7 @@
    "url": "http://www.matfis.unicampania.it/didattica/corsi-di-studio/data-analytics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422435",
@@ -11163,7 +11163,7 @@
    "url": "http://www.architettura.unicampania.it/didattica/corsi-di-studio/design-e-comunicazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424360",
@@ -15247,7 +15247,7 @@
    "url": "http://www.architettura.unicampania.it/didattica/corsi-di-studio/design-per-la-moda",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424360",
@@ -19296,7 +19296,7 @@
    "url": "https://www.economia.unicampania.it/didattica/corsi-di-studio/economia-aziendale",
    "stato": "completo",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A071011",
@@ -22338,7 +22338,7 @@
    "url": "https://www.economia.unicampania.it/didattica/corsi-di-studio/economia-e-commercio",
    "stato": "completo",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A0909",
@@ -24536,7 +24536,7 @@
    "url": "http://www.matfis.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-fisica",
    "stato": "completo",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A3501",
@@ -26178,7 +26178,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A6502",
@@ -27512,7 +27512,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A6502",
@@ -27997,8 +27997,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot"
+   ]
   },
   {
    "id": "unicampania-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1634735",
@@ -28016,7 +28015,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A6502",
@@ -28501,8 +28500,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot"
+   ]
   },
   {
    "id": "unicampania-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
@@ -28520,7 +28518,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/igiene-dentale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A8402",
@@ -29631,7 +29629,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A5003",
@@ -31470,7 +31468,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A5003",
@@ -31871,8 +31869,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf"
+   ]
   },
   {
    "id": "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1629057",
@@ -31890,7 +31887,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A5003",
@@ -32291,8 +32288,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf"
+   ]
   },
   {
    "id": "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1629054",
@@ -32310,7 +32306,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A5003",
@@ -32711,8 +32707,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf"
+   ]
   },
   {
    "id": "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1629053",
@@ -32730,7 +32725,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A5003",
@@ -33131,8 +33126,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf"
+   ]
   },
   {
    "id": "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628949",
@@ -33150,7 +33144,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A5003",
@@ -33551,8 +33545,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf"
+   ]
   },
   {
    "id": "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628884",
@@ -33570,7 +33563,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A5003",
@@ -33971,8 +33964,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf"
+   ]
   },
   {
    "id": "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628950",
@@ -33990,7 +33982,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A5003",
@@ -34391,8 +34383,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf"
+   ]
   },
   {
    "id": "unicampania-l-9-ingegneria-aerospaziale-meccanica-energetica",
@@ -34410,7 +34401,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/ingegneria-aerospaziale-meccanica-energetica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A14004",
@@ -39625,7 +39616,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/ingegneria-biomedica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A13111",
@@ -42006,7 +41997,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/257",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A425623",
@@ -45928,7 +45919,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/ingegneria-elettronica-e-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A13050",
@@ -49570,7 +49561,7 @@
    "url": "https://www.ingegneria.unicampania.it/didattica/corsi-di-studio/ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A14004",
@@ -52541,7 +52532,7 @@
    "url": "https://www.letterebeniculturali.unicampania.it/didattica/corsi-di-studio/lettere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422968",
@@ -55092,101 +55083,6 @@
      "stato_esami": "completo"
     },
     {
-     "codice": "A2540",
-     "nome": "Drammaturgia Dell'eta' Moderna",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": "L-ART/05",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Paologiovanni Maione"
-     ],
-     "url": "https://www.letterebeniculturali.unicampania.it/dipartimento/docenti?MATRICOLA=077697&COD_UNITA=A2540&COD_ATTIVITA=A2540&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=L-ART/05&CFU=6.00&COD_CORSO_STUDIO=A25",
-     "libri": [
-      {
-       "titolo": "FRANCO CARMELO GRECO, La scena illustrata: teatro, pittura e città a Napoli nell’Ottocento, Napoli, Pironti, 1995",
-       "autori": null,
-       "editore": null,
-       "anno": 1995,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
-       "citazione": "FRANCO CARMELO GRECO, La scena illustrata: teatro, pittura e città a Napoli nell’Ottocento, Napoli, Pironti, 1995"
-      },
-      {
-       "titolo": "Rossini & Napoli: di questa luce un raggio, a cura di Antonio Caroccia, Francesco Cotticelli e Paologiovanni Maione, Napoli, Edizioni San Pietro a Majella, 2020",
-       "autori": null,
-       "editore": "a cura di Antonio Caroccia",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
-       "citazione": "Rossini & Napoli: di questa luce un raggio, a cura di Antonio Caroccia, Francesco Cotticelli e Paologiovanni Maione, Napoli, Edizioni San Pietro a Majella, 2020"
-      },
-      {
-       "titolo": "Danza e ballo a Napoli: un dialogo con l’Europa, a cura di Paologiovanni Maione e Maria Venuso, Napoli, Turchini Edizioni, 2021 (da studiare i saggi di: Maria Venuso, Roberta Albano – Rosa Cafiero, Annamaria Corea, Elena Cervellati, Noretta Nori, Ornella Di Tondo, Paologiovanni Maione – Francesca Se",
-       "autori": null,
-       "editore": "Turchini Edizioni",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
-       "citazione": "Danza e ballo a Napoli: un dialogo con l’Europa, a cura di Paologiovanni Maione e Maria Venuso, Napoli, Turchini Edizioni, 2021 (da studiare i saggi di: Maria Venuso, Roberta Albano – Rosa Cafiero, Annamaria Corea, Elena Cervellati, Noretta Nori, Ornella Di Tondo, Paologiovanni Maione – Francesca Seller, Rossella Gaglione – Domenico Prebenna)"
-      },
-      {
-       "titolo": "Donizetti, il comico, la farsa, a cura di Francesco Cotticelli, Federico Fornoni e Paologiovanni Maione, Lucca, LIM, 2025 (da studiare i saggi di: Francesco Bellotto, Federico Fornoni, Luca Zoppelli, Candida Billie Mantica, Lucia Bottinelli – Paolo De Matteis, Ruben Vernazza, Sara Amoresano – Lorenz",
-       "autori": null,
-       "editore": null,
-       "anno": 2025,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
-       "citazione": "Donizetti, il comico, la farsa, a cura di Francesco Cotticelli, Federico Fornoni e Paologiovanni Maione, Lucca, LIM, 2025 (da studiare i saggi di: Francesco Bellotto, Federico Fornoni, Luca Zoppelli, Candida Billie Mantica, Lucia Bottinelli – Paolo De Matteis, Ruben Vernazza, Sara Amoresano – Lorenzo Corrado)"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-12",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-17",
-       "iscrizioni_al": "2026-10-05",
-       "docenti": "MAIONE PAOLOGIOVANNI CARMOSINO DANIELA PORCIANI ELENA SIELO FRANCESCO",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-12",
-       "ora": null,
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-22",
-       "iscrizioni_al": "2026-11-05",
-       "docenti": "MAIONE PAOLOGIOVANNI CARMOSINO DANIELA PORCIANI ELENA SIELO FRANCESCO",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://www.letterebeniculturali.unicampania.it/didattica/corsi-di-studio/lettere/10-didattica/4665-lettere-insegnamenti-erogati-2026-2027",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "id": "unicampania-l-10-lettere-a2540",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "A425014",
      "nome": "Advanced English Skills",
      "anno": 3,
@@ -56766,6 +56662,102 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "A2540",
+     "nome": "Drammaturgia Dell'eta' Moderna",
+     "anno": 3,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "L-ART/05",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Paologiovanni Maione"
+     ],
+     "url": "https://www.letterebeniculturali.unicampania.it/dipartimento/docenti?MATRICOLA=077697&COD_UNITA=A2540&COD_ATTIVITA=A2540&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=L-ART/05&CFU=6.00&COD_CORSO_STUDIO=A25",
+     "libri": [
+      {
+       "titolo": "FRANCO CARMELO GRECO, La scena illustrata: teatro, pittura e città a Napoli nell’Ottocento, Napoli, Pironti, 1995",
+       "autori": null,
+       "editore": null,
+       "anno": 1995,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
+       "citazione": "FRANCO CARMELO GRECO, La scena illustrata: teatro, pittura e città a Napoli nell’Ottocento, Napoli, Pironti, 1995"
+      },
+      {
+       "titolo": "Rossini & Napoli: di questa luce un raggio, a cura di Antonio Caroccia, Francesco Cotticelli e Paologiovanni Maione, Napoli, Edizioni San Pietro a Majella, 2020",
+       "autori": null,
+       "editore": "a cura di Antonio Caroccia",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
+       "citazione": "Rossini & Napoli: di questa luce un raggio, a cura di Antonio Caroccia, Francesco Cotticelli e Paologiovanni Maione, Napoli, Edizioni San Pietro a Majella, 2020"
+      },
+      {
+       "titolo": "Danza e ballo a Napoli: un dialogo con l’Europa, a cura di Paologiovanni Maione e Maria Venuso, Napoli, Turchini Edizioni, 2021 (da studiare i saggi di: Maria Venuso, Roberta Albano – Rosa Cafiero, Annamaria Corea, Elena Cervellati, Noretta Nori, Ornella Di Tondo, Paologiovanni Maione – Francesca Se",
+       "autori": null,
+       "editore": "Turchini Edizioni",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
+       "citazione": "Danza e ballo a Napoli: un dialogo con l’Europa, a cura di Paologiovanni Maione e Maria Venuso, Napoli, Turchini Edizioni, 2021 (da studiare i saggi di: Maria Venuso, Roberta Albano – Rosa Cafiero, Annamaria Corea, Elena Cervellati, Noretta Nori, Ornella Di Tondo, Paologiovanni Maione – Francesca Seller, Rossella Gaglione – Domenico Prebenna)"
+      },
+      {
+       "titolo": "Donizetti, il comico, la farsa, a cura di Francesco Cotticelli, Federico Fornoni e Paologiovanni Maione, Lucca, LIM, 2025 (da studiare i saggi di: Francesco Bellotto, Federico Fornoni, Luca Zoppelli, Candida Billie Mantica, Lucia Bottinelli – Paolo De Matteis, Ruben Vernazza, Sara Amoresano – Lorenz",
+       "autori": null,
+       "editore": null,
+       "anno": 2025,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
+       "citazione": "Donizetti, il comico, la farsa, a cura di Francesco Cotticelli, Federico Fornoni e Paologiovanni Maione, Lucca, LIM, 2025 (da studiare i saggi di: Francesco Bellotto, Federico Fornoni, Luca Zoppelli, Candida Billie Mantica, Lucia Bottinelli – Paolo De Matteis, Ruben Vernazza, Sara Amoresano – Lorenzo Corrado)"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-12",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-17",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "MAIONE PAOLOGIOVANNI CARMOSINO DANIELA PORCIANI ELENA SIELO FRANCESCO",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": null,
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": "MAIONE PAOLOGIOVANNI CARMOSINO DANIELA PORCIANI ELENA SIELO FRANCESCO",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.letterebeniculturali.unicampania.it/didattica/corsi-di-studio/lettere/10-didattica/4665-lettere-insegnamenti-erogati-2026-2027",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "id": "unicampania-l-10-lettere-a2540",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://www.letterebeniculturali.unicampania.it/dipartimento/docenti?MATRICOLA=077697&COD_UNITA=A2540&COD_ATTIVITA=A2540&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=L-ART/05&CFU=6.00&COD_CORSO_STUDIO=A25"
+    },
+    {
      "codice": "A423543",
      "nome": "Epigrafia Latina",
      "anno": 3,
@@ -57312,7 +57304,7 @@
    "url": "http://www.salutementaleefisica.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-logopedia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A7102",
@@ -59525,7 +59517,7 @@
    "url": "http://www.salutementaleefisica.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-logopedia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A7102",
@@ -59863,8 +59855,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis"
+   ]
   },
   {
    "id": "unicampania-l-35-matematica",
@@ -59882,7 +59873,7 @@
    "url": "http://www.matfis.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-matematica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A421880",
@@ -61863,7 +61854,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422396",
@@ -62558,7 +62549,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/ortottica-e-assistenza-oftalmologica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A7604",
@@ -63662,7 +63653,7 @@
    "url": "http://www.dipdbc.unicampania.it/didattica/corsi-di-studio/ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A6102",
@@ -64896,7 +64887,7 @@
    "url": "https://www.distabif.unicampania.it/didattica/corsi-di-studio/scienze-agrarie-e-forestali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A423249",
@@ -66612,7 +66603,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/scienze-ambientali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "76049",
@@ -67983,7 +67974,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/scienze-biologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A3664",
@@ -69756,7 +69747,7 @@
    "url": "http://www.giurisprudenza.unicampania.it/didattica/corsi-di-studio/scienze-dei-servizi-giuridici",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422016",
@@ -72019,7 +72010,7 @@
    "url": "https://www.scienzepolitiche.unicampania.it/didattica/corsi-di-studio/scienze-del-turismo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424881",
@@ -75617,7 +75608,7 @@
    "url": "http://www.architettura.unicampania.it/didattica/corsi-di-studio/scienze-e-tecniche-dell-edilizia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424404",
@@ -81163,7 +81154,7 @@
    "url": "http://www.psicologia.unicampania.it/didattica/corsi-di-studio/scienze-e-tecniche-psicologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A2995",
@@ -82627,101 +82618,6 @@
      "stato_esami": "completo"
     },
     {
-     "codice": "A425580",
-     "nome": "Neuropsicologia dell'invecchiamento fisiologico e patologico",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": "M-PSI/02",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Alfonsina D'iorio"
-     ],
-     "url": "http://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=706168&COD_UNITA=A425580&COD_ATTIVITA=A425580&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=M-PSI/02&CFU=6.00&COD_CORSO_STUDIO=A29",
-     "libri": [
-      {
-       "titolo": "Neuropsicologia delle demenze",
-       "autori": "Bolognini, N., & Pagano, S.",
-       "editore": "Il Mulino",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
-       "citazione": "Bolognini, N., & Pagano, S. (a cura di). (2022). Neuropsicologia delle demenze. Il Mulino. (Capitoli: 1-10, 12-13)"
-      },
-      {
-       "titolo": "Psicologia dell’invecchiamento e della longevità",
-       "autori": "De Beni, R., & Borella, E.",
-       "editore": "Il Mulino",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
-       "citazione": "De Beni, R., & Borella, E. (2021). Psicologia dell’invecchiamento e della longevità. Il Mulino. (Capitoli: 1, 4, 11, 13, 15, 16)"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-28",
-       "ora": "16:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-07",
-       "iscrizioni_al": "2026-10-21",
-       "docenti": "D'IORIO ALFONSINA BAIANO CHIARA DI BENEDETTO GIOVANNI LUCA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-15",
-       "ora": "16:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-24",
-       "iscrizioni_al": "2026-12-08",
-       "docenti": "D'IORIO ALFONSINA BAIANO CHIARA DI BENEDETTO GIOVANNI LUCA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-20",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-12-30",
-       "iscrizioni_al": "2027-01-13",
-       "docenti": "D'IORIO ALFONSINA BAIANO CHIARA DI BENEDETTO GIOVANNI LUCA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-09",
-       "ora": "16:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-02-16",
-       "iscrizioni_al": "2027-03-02",
-       "docenti": "D'IORIO ALFONSINA BAIANO CHIARA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "http://www.psicologia.unicampania.it/didattica/corsi-di-studio/scienze-e-tecniche-psicologiche",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "id": "unicampania-l-24-scienze-e-tecniche-psicologiche-a425580",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "A423506",
      "nome": "Modelli e processi formativi",
      "anno": 3,
@@ -83958,6 +83854,102 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "A425580",
+     "nome": "Neuropsicologia dell'invecchiamento fisiologico e patologico",
+     "anno": 3,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "M-PSI/02",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Alfonsina D'iorio"
+     ],
+     "url": "http://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=706168&COD_UNITA=A425580&COD_ATTIVITA=A425580&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=M-PSI/02&CFU=6.00&COD_CORSO_STUDIO=A29",
+     "libri": [
+      {
+       "titolo": "Neuropsicologia delle demenze",
+       "autori": "Bolognini, N., & Pagano, S.",
+       "editore": "Il Mulino",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
+       "citazione": "Bolognini, N., & Pagano, S. (a cura di). (2022). Neuropsicologia delle demenze. Il Mulino. (Capitoli: 1-10, 12-13)"
+      },
+      {
+       "titolo": "Psicologia dell’invecchiamento e della longevità",
+       "autori": "De Beni, R., & Borella, E.",
+       "editore": "Il Mulino",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
+       "citazione": "De Beni, R., & Borella, E. (2021). Psicologia dell’invecchiamento e della longevità. Il Mulino. (Capitoli: 1, 4, 11, 13, 15, 16)"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-21",
+       "docenti": "D'IORIO ALFONSINA BAIANO CHIARA DI BENEDETTO GIOVANNI LUCA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-24",
+       "iscrizioni_al": "2026-12-08",
+       "docenti": "D'IORIO ALFONSINA BAIANO CHIARA DI BENEDETTO GIOVANNI LUCA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-13",
+       "docenti": "D'IORIO ALFONSINA BAIANO CHIARA DI BENEDETTO GIOVANNI LUCA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-09",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-02-16",
+       "iscrizioni_al": "2027-03-02",
+       "docenti": "D'IORIO ALFONSINA BAIANO CHIARA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "http://www.psicologia.unicampania.it/didattica/corsi-di-studio/scienze-e-tecniche-psicologiche",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "id": "unicampania-l-24-scienze-e-tecniche-psicologiche-a425580",
+     "stato_esami": "completo",
+     "periodo_fonte": "http://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=706168&COD_UNITA=A425580&COD_ATTIVITA=A425580&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PSI/02&CFU=6.00&COD_CORSO_STUDIO=A29"
+    },
+    {
      "codice": "A425932",
      "nome": "Processi di gruppo e influenza sociale",
      "anno": 3,
@@ -84273,7 +84265,7 @@
    "url": "https://www.scienzepolitiche.unicampania.it/didattica/corsi-di-studio/scienze-politiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "B40G01",
@@ -87522,7 +87514,7 @@
    "url": "http://www.salutementaleefisica.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecnica-della-riabilitazione-psichiatrica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A7302",
@@ -88387,7 +88379,7 @@
    "url": "http://www.medicinasperimentale.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lavoro",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422098",
@@ -89431,7 +89423,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422811",
@@ -90634,7 +90626,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422811",
@@ -90951,8 +90943,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession"
+   ]
   },
   {
    "id": "unicampania-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession-1634739",
@@ -90970,7 +90961,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422811",
@@ -91287,8 +91278,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession"
+   ]
   },
   {
    "id": "unicampania-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
@@ -91306,7 +91296,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-radiologia-medica-per-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424500",
@@ -92418,7 +92408,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-radiologia-medica-per-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424500",
@@ -92756,8 +92746,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab"
+   ]
   },
   {
    "id": "unicampania-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1634741",
@@ -92775,7 +92764,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-radiologia-medica-per-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424500",
@@ -93113,8 +93102,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab"
+   ]
   },
   {
    "id": "unicampania-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1634742",
@@ -93132,7 +93120,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-radiologia-medica-per-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424500",
@@ -93470,8 +93458,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "unicampania-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab"
+   ]
   },
   {
    "id": "unicampania-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil",
@@ -93489,7 +93476,7 @@
    "url": "http://www.salutementaleefisica.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A7402",
@@ -95876,7 +95863,7 @@
    "url": "https://www.letterebeniculturali.unicampania.it/didattica/corsi-di-studio/magistrale-in-archeologia-e-storia-dell-arte",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422963",
@@ -99032,7 +99019,7 @@
    "url": "https://www.architettura.unicampania.it/didattica/corsi-di-studio/magistrale-in-architettura-rigenerazione-dell-ambiente-costruito-in-lingua-inglese",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424392",
@@ -103901,7 +103888,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/magistrale-in-biologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A425640",
@@ -105444,7 +105431,7 @@
    "url": "https://www.matfis.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-in-data-science",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A423688",
@@ -106836,7 +106823,7 @@
    "url": "http://www.architettura.unicampania.it/didattica/corsi-di-studio/magistrale-in-design-per-l-innovazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424360",
@@ -112370,7 +112357,7 @@
    "url": "https://www.giurisprudenza.unicampania.it/cds-diritto-della-sicurezza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424328",
@@ -113203,7 +113190,7 @@
    "url": "http://www.economia.unicampania.it/didattica/corsi-di-studio/magistrale-in-economia-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A425535",
@@ -116423,7 +116410,7 @@
    "url": "https://www.economia.unicampania.it/didattica/corsi-di-studio/magistrale-in-economia-finanza-e-mercati",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424448",
@@ -119230,7 +119217,7 @@
    "url": "http://www.letterebeniculturali.unicampania.it/didattica/corsi-di-studio/magistrale-in-filologia-classica-e-moderna",
    "stato": "completo",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A2804",
@@ -121264,7 +121251,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-aerospaziale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A15016",
@@ -122991,7 +122978,7 @@
    "url": "https://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-biomedica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A425147",
@@ -123577,7 +123564,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/259",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424148",
@@ -129087,7 +129074,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-elettronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A17017",
@@ -130920,7 +130907,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424856",
@@ -132654,7 +132641,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A423396",
@@ -133955,7 +133942,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-meccanica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A19003",
@@ -136445,7 +136432,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-per-l-energia-e-l-ambiente",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A425943",
@@ -139123,7 +139110,7 @@
    "url": "http://www.matfis.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-in-matematica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422255",
@@ -141120,7 +141107,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/magistrale-in-lingua-inglese-molecular-biotechnology",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422841",
@@ -141881,7 +141868,7 @@
    "url": "https://www.matfis.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-in-physics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424480",
@@ -142751,7 +142738,7 @@
    "url": "https://www.scienzepolitiche.unicampania.it/didattica/corsi-di-studio/magistrale-in-progettazione-e-gestione-dei-sistemi-turistici",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A42C105",
@@ -145556,7 +145543,7 @@
    "url": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424453",
@@ -146487,198 +146474,54 @@
      "stato_esami": "completo"
     },
     {
-     "codice": "A424788",
-     "nome": "Cancellando il confine tra organismo e macchina. la biotecnologia in azione o la manipolazione infinita",
+     "codice": "A425893",
+     "nome": "Bip International Leadership Skills Training",
      "anno": 2,
-     "periodo": null,
-     "cfu": 3,
-     "ssd": "M-PED/01",
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "PSIC-03/B",
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
-      "Vasco D'agnese"
+      "Alessandro Lo Presti"
      ],
-     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=058758&COD_UNITA=A424788&COD_ATTIVITA=A424788&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=M-PED/01&CFU=3.00&COD_CORSO_STUDIO=V32",
+     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=059295&COD_UNITA=A425893&COD_ATTIVITA=A425893&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=PSIC-03/B&CFU=6.00&COD_CORSO_STUDIO=V32",
      "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-28",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-07",
-       "iscrizioni_al": "2026-10-21",
-       "docenti": "D'AGNESE VASCO",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-10",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-19",
-       "iscrizioni_al": "2026-12-03",
-       "docenti": "D'AGNESE VASCO",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-27",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-01-06",
-       "iscrizioni_al": "2027-01-20",
-       "docenti": "D'AGNESE VASCO",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-17",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-02-24",
-       "iscrizioni_al": "2027-03-10",
-       "docenti": "D'AGNESE VASCO",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
+     "esami": [],
      "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
-     "id": "unicampania-lm-51-psicologia-applicata-a424788",
-     "stato_esami": "completo"
+     "id": "unicampania-lm-51-psicologia-applicata-a425893",
+     "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "A424460",
-     "nome": "Filosofia dell'educazione",
+     "codice": "A425891",
+     "nome": "Coping With Traumatic Experiences Workshop",
      "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": "M-PED/01",
+     "periodo": "1",
+     "cfu": 3,
+     "ssd": "PSIC-03/B",
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
-      "Vasco D'agnese"
+      "Piotr Janusz Mamcarz"
      ],
-     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=058758&COD_UNITA=A424460&COD_ATTIVITA=A424460&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PED/01&CFU=6.00&COD_CORSO_STUDIO=V32",
+     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=910972&COD_UNITA=A425891&COD_ATTIVITA=A425891&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=PSIC-03/B&CFU=3.00&COD_CORSO_STUDIO=V32",
      "libri": [
       {
-       "titolo": "J. Dewey, Esperienza e natura, Mursia. A. Arsena, Il valore dell'ipotesi nella metodologia sperimentale. V. d'Agnese, Undergoing, Mistery and Half-Knowledge. John Dewey's Disquieting Side. Studies in Philosophy and Education, 35, 2016. Slides del corso.",
+       "titolo": "Briere, J. N., & Scott, C. (2014). Principles of trauma therapy: A guide to symptoms, evaluation, and treatment (2nd ed., DSM-5 update). Thousand Oaks: Sage (capitoli da 1 a 4 e capitolo 6).",
        "autori": null,
        "editore": null,
-       "anno": 2016,
+       "anno": 2014,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "J. Dewey, Esperienza e natura, Mursia. A. Arsena, Il valore dell'ipotesi nella metodologia sperimentale. V. d'Agnese, Undergoing, Mistery and Half-Knowledge. John Dewey's Disquieting Side. Studies in Philosophy and Education, 35, 2016. Slides del corso."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-28",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-07",
-       "iscrizioni_al": "2026-10-21",
-       "docenti": "D'AGNESE VASCO ABBATE GIAMMICHELE SAVASTANO ROSARIA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+       "citazione": "Briere, J. N., & Scott, C. (2014). Principles of trauma therapy: A guide to symptoms, evaluation, and treatment (2nd ed., DSM-5 update). Thousand Oaks: Sage (capitoli da 1 a 4 e capitolo 6)."
       },
       {
-       "tipo": "appello",
-       "data": "2026-12-10",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-19",
-       "iscrizioni_al": "2026-12-03",
-       "docenti": "D'AGNESE VASCO ABBATE GIAMMICHELE SAVASTANO ROSARIA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-27",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-01-06",
-       "iscrizioni_al": "2027-01-20",
-       "docenti": "D'AGNESE VASCO ABBATE GIAMMICHELE SAVASTANO ROSARIA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-17",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-02-24",
-       "iscrizioni_al": "2027-03-10",
-       "docenti": "D'AGNESE VASCO ABBATE GIAMMICHELE SAVASTANO ROSARIA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "id": "unicampania-lm-51-psicologia-applicata-a424460",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "A424461",
-     "nome": "Interventi Psicologici Nelle Patologie Croniche",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": "M-PSI/08",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Alda Troncone"
-     ],
-     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=059071&COD_UNITA=A424461&COD_ATTIVITA=A424461&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PSI/08&CFU=6.00&COD_CORSO_STUDIO=V32",
-     "libri": [
-      {
-       "titolo": "Le malattie croniche nel ciclo della vita",
-       "autori": "De Carlo, N.A., Senatore Pilleri, R.",
-       "editore": "Franco Angeli",
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "De Carlo, N.A., Senatore Pilleri, R., (2012). Le malattie croniche nel ciclo della vita. Milano: Franco Angeli (cap. 1-10)"
-      },
-      {
-       "titolo": "Consiglio Nazionale Ordine degli Psicologi. Il Ruolo Dello Psicologo nel Piano Nazionale Cronicità; Quaderni CNOP: Rome, Italy, 2019; Volume 2 (disponibile al link: https://www.psy.it/wp-content/uploads/2019/05/Il-ruolo-dello-psicologo-nel-piano-nazionale-cronicit%C3%A0-1.pdf)",
-       "autori": null,
-       "editore": null,
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Consiglio Nazionale Ordine degli Psicologi. Il Ruolo Dello Psicologo nel Piano Nazionale Cronicità; Quaderni CNOP: Rome, Italy, 2019; Volume 2 (disponibile al link: https://www.psy.it/wp-content/uploads/2019/05/Il-ruolo-dello-psicologo-nel-piano-nazionale-cronicit%C3%A0-1.pdf)"
-      },
-      {
-       "titolo": "Lugoboni et al., 2004. Migliorare la compliance in medicina interna: il colloquio motivazionale. Ann Ital Med Int 19( 3), 155-162",
+       "titolo": "Tedeschi, R. G., & Calhoun, L. G. (2004). Posttraumatic growth: Conceptual foundations and empirical evidence. Psychological Inquiry, 15(1), 1-18.",
        "autori": null,
        "editore": null,
        "anno": 2004,
@@ -146687,70 +146530,93 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Lugoboni et al., 2004. Migliorare la compliance in medicina interna: il colloquio motivazionale. Ann Ital Med Int 19( 3), 155-162"
+       "citazione": "Tedeschi, R. G., & Calhoun, L. G. (2004). Posttraumatic growth: Conceptual foundations and empirical evidence. Psychological Inquiry, 15(1), 1-18."
+      },
+      {
+       "titolo": "Bonanno, G. A. (2004). Loss, trauma, and human resilience: Have we underestimated the human capacity to thrive after extremely aversive events? American Psychologist, 59(1), 20-28.",
+       "autori": null,
+       "editore": null,
+       "anno": 2004,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Bonanno, G. A. (2004). Loss, trauma, and human resilience: Have we underestimated the human capacity to thrive after extremely aversive events? American Psychologist, 59(1), 20-28."
+      },
+      {
+       "titolo": "Saranno inoltre distribuite tutte le slide presentate a lezione, come dispense, unitamente alle schede di lavoro, ai protocolli e ai materiali di caso utilizzati nelle esercitazioni.",
+       "autori": null,
+       "editore": "come dispense",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Saranno inoltre distribuite tutte le slide presentate a lezione, come dispense, unitamente alle schede di lavoro, ai protocolli e ai materiali di caso utilizzati nelle esercitazioni."
+      },
+      {
+       "titolo": "Man's search for meaning",
+       "autori": "Frankl, V. E.",
+       "editore": "Beacon Press",
+       "anno": 2006,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Frankl, V. E. (2006). Man's search for meaning. Boston: Beacon Press."
+      },
+      {
+       "titolo": "Ordinary magic: Resilience in development",
+       "autori": "Masten, A. S.",
+       "editore": "Guilford Press",
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Masten, A. S. (2014). Ordinary magic: Resilience in development. New York: Guilford Press."
+      },
+      {
+       "titolo": "Effective treatments for PTSD (3rd ed.)",
+       "autori": "Forbes, D., Bisson, J. I., Monson, C. M., & Berliner, L.",
+       "editore": "Guilford Press",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Forbes, D., Bisson, J. I., Monson, C. M., & Berliner, L. (Eds.) (2020). Effective treatments for PTSD (3rd ed.). New York: Guilford Press."
+      },
+      {
+       "titolo": "Weathers, F. W., et al. (2013). PTSD Checklist for DSM-5 (PCL-5) e Clinician-Administered PTSD Scale for DSM-5 (CAPS-5). National Center for PTSD (materiali di dominio pubblico, utilizzati in aula a soli fini esercitativi).",
+       "autori": null,
+       "editore": null,
+       "anno": 2013,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Weathers, F. W., et al. (2013). PTSD Checklist for DSM-5 (PCL-5) e Clinician-Administered PTSD Scale for DSM-5 (CAPS-5). National Center for PTSD (materiali di dominio pubblico, utilizzati in aula a soli fini esercitativi)."
       }
      ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-13",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-22",
-       "iscrizioni_al": "2026-10-06",
-       "docenti": "TRONCONE ALDA BORRIELLO ANNA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-01",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-10",
-       "iscrizioni_al": "2026-11-24",
-       "docenti": "TRONCONE ALDA BORRIELLO ANNA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-26",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-01-05",
-       "iscrizioni_al": "2027-01-19",
-       "docenti": "TRONCONE ALDA BORRIELLO ANNA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-02",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-02-09",
-       "iscrizioni_al": "2027-02-23",
-       "docenti": "TRONCONE ALDA BORRIELLO ANNA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
+     "esami": [],
      "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
-     "id": "unicampania-lm-51-psicologia-applicata-a424461",
-     "stato_esami": "completo"
+     "id": "unicampania-lm-51-psicologia-applicata-a425891",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "A424009",
      "nome": "Psicologia del pregiudizio e della discriminazione",
      "anno": 2,
-     "periodo": null,
+     "periodo": "1",
      "cfu": 6,
      "ssd": "M-PSI/05",
      "obbligatorio": null,
@@ -146827,203 +146693,49 @@
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unicampania-lm-51-psicologia-applicata-a424009",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "periodo_fonte": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=077582&COD_UNITA=A424009&COD_ATTIVITA=A424009&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=M-PSI/05&CFU=6.00&COD_CORSO_STUDIO=V32"
     },
     {
-     "codice": "A424462",
-     "nome": "Psicologia dello Sviluppo applicata ai contesti educativi",
+     "codice": "A425894",
+     "nome": "Psiconcologia:interventi Psicologici in Ambito Oncologico",
      "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": "M-PSI/04",
+     "periodo": "1",
+     "cfu": 3,
+     "ssd": "PSIC-04/B",
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
-      "Gaetana Affuso"
+      "Alda Troncone",
+      "Maria Ciccarelli"
      ],
-     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=084256&COD_UNITA=A424462&COD_ATTIVITA=A424462&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PSI/04&CFU=6.00&COD_CORSO_STUDIO=V32",
+     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=059071&COD_UNITA=A425894&COD_ATTIVITA=A425894&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=PSIC-04/B&CFU=3.00&COD_CORSO_STUDIO=V32",
      "libri": [
       {
-       "titolo": "Competenze e aree di intervento – Il Mulino 2019.",
-       "autori": null,
-       "editore": "Competenze e aree di intervento – Il Mulino 2019",
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Competenze e aree di intervento – Il Mulino 2019."
-      },
-      {
-       "titolo": "Gian Vittorio Caprara - Maria Gerbino - B. Paula Luengo Kanacri - Giovanni Maria Vecchio - Educare alla prosocialità. Teorie e buone prassi – Pearson, 2014.",
+       "titolo": "Società Italiana di Psico-Oncologia [SIPO]. (2011). Standard, opzioni e raccomandazioni per una buona pratica psico-oncologica. Seconda edizione. Giornale Italiano di Psico-Oncologia, 13 (2), 61-108. https://www.siponazionale.it/pdf_2015/LineeGuida_SIPO_2015.pdf",
        "autori": null,
        "editore": null,
-       "anno": 2014,
+       "anno": 2011,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Gian Vittorio Caprara - Maria Gerbino - B. Paula Luengo Kanacri - Giovanni Maria Vecchio - Educare alla prosocialità. Teorie e buone prassi – Pearson, 2014."
-      },
-      {
-       "titolo": "Approcci universali, selettivi e indicati - Il Mulino, 2017",
-       "autori": null,
-       "editore": "selettivi e indicati - Il Mulino",
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Approcci universali, selettivi e indicati - Il Mulino, 2017"
+       "citazione": "Società Italiana di Psico-Oncologia [SIPO]. (2011). Standard, opzioni e raccomandazioni per una buona pratica psico-oncologica. Seconda edizione. Giornale Italiano di Psico-Oncologia, 13 (2), 61-108. https://www.siponazionale.it/pdf_2015/LineeGuida_SIPO_2015.pdf"
       }
      ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-04",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-13",
-       "iscrizioni_al": "2026-11-27",
-       "docenti": "AFFUSO GAETANA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-15",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-12-25",
-       "iscrizioni_al": "2027-01-08",
-       "docenti": "AFFUSO GAETANA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-05",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-02-12",
-       "iscrizioni_al": "2027-02-26",
-       "docenti": "AFFUSO GAETANA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-29",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-03-08",
-       "iscrizioni_al": "2027-03-22",
-       "docenti": "AFFUSO GAETANA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
+     "esami": [],
      "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
-     "id": "unicampania-lm-51-psicologia-applicata-a424462",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "A424469",
-     "nome": "Psicologia giuridica e investigativa e laboratorio",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": "M-PSI/05",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Anna Sorrentino"
-     ],
-     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=067962&COD_UNITA=A424469&COD_ATTIVITA=A424469&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PSI/05&CFU=6.00&COD_CORSO_STUDIO=V32",
-     "libri": [
-      {
-       "titolo": "Gulotta, G. (2020). Compendio di Psicologia Giuridico-Forense, Criminale e Investigativa. Milano, Guiffré Di questo testo sono da studiare i seguenti capitoli: I, V, VI, VII, VIII, X, XII, XIV, XV, XVI, XVIII",
-       "autori": null,
-       "editore": null,
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "dal programma dell'a.a. 2025/26 (scheda collegata dal piano dell'ateneo)",
-       "citazione": "Gulotta, G. (2020). Compendio di Psicologia Giuridico-Forense, Criminale e Investigativa. Milano, Guiffré Di questo testo sono da studiare i seguenti capitoli: I, V, VI, VII, VIII, X, XII, XIV, XV, XVI, XVIII"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-21",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-30",
-       "iscrizioni_al": "2026-10-14",
-       "docenti": "SORRENTINO ANNA SANTAMATO MARGHERITA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-17",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-26",
-       "iscrizioni_al": "2026-12-10",
-       "docenti": "SORRENTINO ANNA SANTAMATO MARGHERITA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-19",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-12-29",
-       "iscrizioni_al": "2027-01-12",
-       "docenti": "SORRENTINO ANNA SANTAMATO MARGHERITA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-10",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-02-17",
-       "iscrizioni_al": "2027-03-03",
-       "docenti": "SORRENTINO ANNA SANTAMATO MARGHERITA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "id": "unicampania-lm-51-psicologia-applicata-a424469",
-     "stato_esami": "completo"
+     "id": "unicampania-lm-51-psicologia-applicata-a425894",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "A424459",
      "nome": "Salute Mentale e Riabilitazione Psicosociale",
      "anno": 2,
-     "periodo": null,
+     "periodo": "1",
      "cfu": 6,
      "ssd": "MED/25",
      "obbligatorio": null,
@@ -147124,13 +146836,14 @@
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unicampania-lm-51-psicologia-applicata-a424459",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "periodo_fonte": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=057970&COD_UNITA=A424459&COD_ATTIVITA=A424459&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=MED/25&CFU=6.00&COD_CORSO_STUDIO=V32"
     },
     {
      "codice": "A424466",
      "nome": "Selezione e valutazione delle risorse umane",
      "anno": 2,
-     "periodo": null,
+     "periodo": "1",
      "cfu": 6,
      "ssd": "M-PSI/06",
      "obbligatorio": null,
@@ -147219,13 +146932,14 @@
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unicampania-lm-51-psicologia-applicata-a424466",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "periodo_fonte": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=059295&COD_UNITA=A424466&COD_ATTIVITA=A424466&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=M-PSI/06&CFU=6.00&COD_CORSO_STUDIO=V32"
     },
     {
      "codice": "A424465",
      "nome": "Sociologia del potere e delle organizzazioni",
      "anno": 2,
-     "periodo": null,
+     "periodo": "1",
      "cfu": 6,
      "ssd": "SPS/11",
      "obbligatorio": null,
@@ -147398,348 +147112,8 @@
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unicampania-lm-51-psicologia-applicata-a424465",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "A424467",
-     "nome": "Stress e benessere nei luoghi di lavoro e laboratorio",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": "M-PSI/06",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Paola Spagnoli"
-     ],
-     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=059396&COD_UNITA=A424467&COD_ATTIVITA=A424467&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PSI/06&CFU=6.00&COD_CORSO_STUDIO=V32",
-     "libri": [
-      {
-       "titolo": "Stress e rischi psicosociali nelle organizzazioni",
-       "autori": "Balducci, C., Fraccaroli, F.",
-       "editore": "Il mulino",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Balducci, C., Fraccaroli, F. (2022) Stress e rischi psicosociali nelle organizzazioni. Il mulino, Bologna."
-      },
-      {
-       "titolo": "Piccoli fallimenti e grandi disastri",
-       "autori": "Reason, J.",
-       "editore": "Hirelia Edizioni",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Reason, J. (2016) Piccoli fallimenti e grandi disastri, Hirelia Edizioni."
-      },
-      {
-       "titolo": "Lavorare troppo",
-       "autori": "Spagnoli, P., Balducci, C.",
-       "editore": "Il Mulino Bologna",
-       "anno": 2024,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Spagnoli, P., Balducci, C. (2024) Lavorare troppo. Il Mulino Bologna"
-      },
-      {
-       "titolo": "Giovanni Di Stefano & Maria Gaudiino (2019) Workaholism and work engagement: how are they similar? How are they different? A systematic review and meta-analysis, European Journal of Work and Organizational Psychology, 28:3, 329-347, DOI: 10.1080/1359432X.2019.1590337",
-       "autori": null,
-       "editore": null,
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Giovanni Di Stefano & Maria Gaudiino (2019) Workaholism and work engagement: how are they similar? How are they different? A systematic review and meta-analysis, European Journal of Work and Organizational Psychology, 28:3, 329-347, DOI: 10.1080/1359432X.2019.1590337"
-      },
-      {
-       "titolo": "Clark MA, Michel JS, Zhdanova L, Pui SY, Baltes BB. All Work and No Play? A Meta-Analytic Examination of the Correlates and Outcomes of Workaholism. Journal of Management. 2016;42(7):1836-1873. doi:10.1177/0149206314522301",
-       "autori": null,
-       "editore": null,
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Clark MA, Michel JS, Zhdanova L, Pui SY, Baltes BB. All Work and No Play? A Meta-Analytic Examination of the Correlates and Outcomes of Workaholism. Journal of Management. 2016;42(7):1836-1873. doi:10.1177/0149206314522301"
-      },
-      {
-       "titolo": "Knight, C., Patterson, M., and Dawson, J. (2017) Building work engagement: A systematic review and meta-analysis investigating the effectiveness of work engagement interventions. J. Organiz. Behav., 38: 792– 812. doi: 10.1002/job.2167.",
-       "autori": null,
-       "editore": null,
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Knight, C., Patterson, M., and Dawson, J. (2017) Building work engagement: A systematic review and meta-analysis investigating the effectiveness of work engagement interventions. J. Organiz. Behav., 38: 792– 812. doi: 10.1002/job.2167."
-      },
-      {
-       "titolo": "Verkuil B, Atasayi S, Molendijk ML (2015) Workplace Bullying and Mental Health: A Meta-Analysis on Cross-Sectional and Longitudinal Data. PLoS ONE 10(8): e0135225. https://doi.org/10.1371/journal.pone.0135225",
-       "autori": null,
-       "editore": null,
-       "anno": 2015,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Verkuil B, Atasayi S, Molendijk ML (2015) Workplace Bullying and Mental Health: A Meta-Analysis on Cross-Sectional and Longitudinal Data. PLoS ONE 10(8): e0135225. https://doi.org/10.1371/journal.pone.0135225"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-12",
-       "ora": "14:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-21",
-       "iscrizioni_al": "2026-10-05",
-       "docenti": "SPAGNOLI PAOLA BUONO CARMELA MOLINARO DANILA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-14",
-       "ora": "14:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-23",
-       "iscrizioni_al": "2026-12-07",
-       "docenti": "SPAGNOLI PAOLA BUONO CARMELA MOLINARO DANILA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-28",
-       "ora": "12:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-01-07",
-       "iscrizioni_al": "2027-01-21",
-       "docenti": "SPAGNOLI PAOLA BUONO CARMELA MOLINARO DANILA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-03",
-       "ora": "12:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-02-10",
-       "iscrizioni_al": "2027-02-24",
-       "docenti": "SPAGNOLI PAOLA BUONO CARMELA MOLINARO DANILA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-24",
-       "ora": "14:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-03-03",
-       "iscrizioni_al": "2027-03-17",
-       "docenti": "SPAGNOLI PAOLA BUONO CARMELA MOLINARO DANILA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "id": "unicampania-lm-51-psicologia-applicata-a424467",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "A425893",
-     "nome": "Bip International Leadership Skills Training",
-     "anno": 2,
-     "periodo": "1",
-     "cfu": 6,
-     "ssd": "PSIC-03/B",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Alessandro Lo Presti"
-     ],
-     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=059295&COD_UNITA=A425893&COD_ATTIVITA=A425893&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=PSIC-03/B&CFU=6.00&COD_CORSO_STUDIO=V32",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "id": "unicampania-lm-51-psicologia-applicata-a425893",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "A425891",
-     "nome": "Coping With Traumatic Experiences Workshop",
-     "anno": 2,
-     "periodo": "1",
-     "cfu": 3,
-     "ssd": "PSIC-03/B",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Piotr Janusz Mamcarz"
-     ],
-     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=910972&COD_UNITA=A425891&COD_ATTIVITA=A425891&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=PSIC-03/B&CFU=3.00&COD_CORSO_STUDIO=V32",
-     "libri": [
-      {
-       "titolo": "Briere, J. N., & Scott, C. (2014). Principles of trauma therapy: A guide to symptoms, evaluation, and treatment (2nd ed., DSM-5 update). Thousand Oaks: Sage (capitoli da 1 a 4 e capitolo 6).",
-       "autori": null,
-       "editore": null,
-       "anno": 2014,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Briere, J. N., & Scott, C. (2014). Principles of trauma therapy: A guide to symptoms, evaluation, and treatment (2nd ed., DSM-5 update). Thousand Oaks: Sage (capitoli da 1 a 4 e capitolo 6)."
-      },
-      {
-       "titolo": "Tedeschi, R. G., & Calhoun, L. G. (2004). Posttraumatic growth: Conceptual foundations and empirical evidence. Psychological Inquiry, 15(1), 1-18.",
-       "autori": null,
-       "editore": null,
-       "anno": 2004,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Tedeschi, R. G., & Calhoun, L. G. (2004). Posttraumatic growth: Conceptual foundations and empirical evidence. Psychological Inquiry, 15(1), 1-18."
-      },
-      {
-       "titolo": "Bonanno, G. A. (2004). Loss, trauma, and human resilience: Have we underestimated the human capacity to thrive after extremely aversive events? American Psychologist, 59(1), 20-28.",
-       "autori": null,
-       "editore": null,
-       "anno": 2004,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Bonanno, G. A. (2004). Loss, trauma, and human resilience: Have we underestimated the human capacity to thrive after extremely aversive events? American Psychologist, 59(1), 20-28."
-      },
-      {
-       "titolo": "Saranno inoltre distribuite tutte le slide presentate a lezione, come dispense, unitamente alle schede di lavoro, ai protocolli e ai materiali di caso utilizzati nelle esercitazioni.",
-       "autori": null,
-       "editore": "come dispense",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Saranno inoltre distribuite tutte le slide presentate a lezione, come dispense, unitamente alle schede di lavoro, ai protocolli e ai materiali di caso utilizzati nelle esercitazioni."
-      },
-      {
-       "titolo": "Man's search for meaning",
-       "autori": "Frankl, V. E.",
-       "editore": "Beacon Press",
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Frankl, V. E. (2006). Man's search for meaning. Boston: Beacon Press."
-      },
-      {
-       "titolo": "Ordinary magic: Resilience in development",
-       "autori": "Masten, A. S.",
-       "editore": "Guilford Press",
-       "anno": 2014,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Masten, A. S. (2014). Ordinary magic: Resilience in development. New York: Guilford Press."
-      },
-      {
-       "titolo": "Effective treatments for PTSD (3rd ed.)",
-       "autori": "Forbes, D., Bisson, J. I., Monson, C. M., & Berliner, L.",
-       "editore": "Guilford Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Forbes, D., Bisson, J. I., Monson, C. M., & Berliner, L. (Eds.) (2020). Effective treatments for PTSD (3rd ed.). New York: Guilford Press."
-      },
-      {
-       "titolo": "Weathers, F. W., et al. (2013). PTSD Checklist for DSM-5 (PCL-5) e Clinician-Administered PTSD Scale for DSM-5 (CAPS-5). National Center for PTSD (materiali di dominio pubblico, utilizzati in aula a soli fini esercitativi).",
-       "autori": null,
-       "editore": null,
-       "anno": 2013,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Weathers, F. W., et al. (2013). PTSD Checklist for DSM-5 (PCL-5) e Clinician-Administered PTSD Scale for DSM-5 (CAPS-5). National Center for PTSD (materiali di dominio pubblico, utilizzati in aula a soli fini esercitativi)."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "id": "unicampania-lm-51-psicologia-applicata-a425891",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "A425894",
-     "nome": "Psiconcologia:interventi Psicologici in Ambito Oncologico",
-     "anno": 2,
-     "periodo": "1",
-     "cfu": 3,
-     "ssd": "PSIC-04/B",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Alda Troncone",
-      "Maria Ciccarelli"
-     ],
-     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=059071&COD_UNITA=A425894&COD_ATTIVITA=A425894&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=PSIC-04/B&CFU=3.00&COD_CORSO_STUDIO=V32",
-     "libri": [
-      {
-       "titolo": "Società Italiana di Psico-Oncologia [SIPO]. (2011). Standard, opzioni e raccomandazioni per una buona pratica psico-oncologica. Seconda edizione. Giornale Italiano di Psico-Oncologia, 13 (2), 61-108. https://www.siponazionale.it/pdf_2015/LineeGuida_SIPO_2015.pdf",
-       "autori": null,
-       "editore": null,
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Società Italiana di Psico-Oncologia [SIPO]. (2011). Standard, opzioni e raccomandazioni per una buona pratica psico-oncologica. Seconda edizione. Giornale Italiano di Psico-Oncologia, 13 (2), 61-108. https://www.siponazionale.it/pdf_2015/LineeGuida_SIPO_2015.pdf"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "id": "unicampania-lm-51-psicologia-applicata-a425894",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo",
+     "periodo_fonte": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=059405&COD_UNITA=A424465&COD_ATTIVITA=A424465&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=SPS/11&CFU=6.00&COD_CORSO_STUDIO=V32"
     },
     {
      "codice": "A425892",
@@ -147896,6 +147270,161 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "A424788",
+     "nome": "Cancellando il confine tra organismo e macchina. la biotecnologia in azione o la manipolazione infinita",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 3,
+     "ssd": "M-PED/01",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Vasco D'agnese"
+     ],
+     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=058758&COD_UNITA=A424788&COD_ATTIVITA=A424788&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=M-PED/01&CFU=3.00&COD_CORSO_STUDIO=V32",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-21",
+       "docenti": "D'AGNESE VASCO",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-19",
+       "iscrizioni_al": "2026-12-03",
+       "docenti": "D'AGNESE VASCO",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-01-06",
+       "iscrizioni_al": "2027-01-20",
+       "docenti": "D'AGNESE VASCO",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-17",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-02-24",
+       "iscrizioni_al": "2027-03-10",
+       "docenti": "D'AGNESE VASCO",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "id": "unicampania-lm-51-psicologia-applicata-a424788",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=058758&COD_UNITA=A424788&COD_ATTIVITA=A424788&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PED/01&CFU=3.00&COD_CORSO_STUDIO=V32"
+    },
+    {
+     "codice": "A424460",
+     "nome": "Filosofia dell'educazione",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "M-PED/01",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Vasco D'agnese"
+     ],
+     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=058758&COD_UNITA=A424460&COD_ATTIVITA=A424460&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PED/01&CFU=6.00&COD_CORSO_STUDIO=V32",
+     "libri": [
+      {
+       "titolo": "J. Dewey, Esperienza e natura, Mursia. A. Arsena, Il valore dell'ipotesi nella metodologia sperimentale. V. d'Agnese, Undergoing, Mistery and Half-Knowledge. John Dewey's Disquieting Side. Studies in Philosophy and Education, 35, 2016. Slides del corso.",
+       "autori": null,
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "J. Dewey, Esperienza e natura, Mursia. A. Arsena, Il valore dell'ipotesi nella metodologia sperimentale. V. d'Agnese, Undergoing, Mistery and Half-Knowledge. John Dewey's Disquieting Side. Studies in Philosophy and Education, 35, 2016. Slides del corso."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-21",
+       "docenti": "D'AGNESE VASCO ABBATE GIAMMICHELE SAVASTANO ROSARIA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-19",
+       "iscrizioni_al": "2026-12-03",
+       "docenti": "D'AGNESE VASCO ABBATE GIAMMICHELE SAVASTANO ROSARIA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-01-06",
+       "iscrizioni_al": "2027-01-20",
+       "docenti": "D'AGNESE VASCO ABBATE GIAMMICHELE SAVASTANO ROSARIA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-17",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-02-24",
+       "iscrizioni_al": "2027-03-10",
+       "docenti": "D'AGNESE VASCO ABBATE GIAMMICHELE SAVASTANO ROSARIA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "id": "unicampania-lm-51-psicologia-applicata-a424460",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=058758&COD_UNITA=A424460&COD_ATTIVITA=A424460&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=M-PED/01&CFU=6.00&COD_CORSO_STUDIO=V32"
+    },
+    {
      "codice": "A425028",
      "nome": "Il teatro e le sue applicazioni in campo riabilitativo e psicosociale",
      "anno": 2,
@@ -147977,6 +147506,114 @@
      "stato_libri": "completo",
      "id": "unicampania-lm-51-psicologia-applicata-a425028",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "A424461",
+     "nome": "Interventi Psicologici Nelle Patologie Croniche",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "M-PSI/08",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Alda Troncone"
+     ],
+     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=059071&COD_UNITA=A424461&COD_ATTIVITA=A424461&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PSI/08&CFU=6.00&COD_CORSO_STUDIO=V32",
+     "libri": [
+      {
+       "titolo": "Le malattie croniche nel ciclo della vita",
+       "autori": "De Carlo, N.A., Senatore Pilleri, R.",
+       "editore": "Franco Angeli",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "De Carlo, N.A., Senatore Pilleri, R., (2012). Le malattie croniche nel ciclo della vita. Milano: Franco Angeli (cap. 1-10)"
+      },
+      {
+       "titolo": "Consiglio Nazionale Ordine degli Psicologi. Il Ruolo Dello Psicologo nel Piano Nazionale Cronicità; Quaderni CNOP: Rome, Italy, 2019; Volume 2 (disponibile al link: https://www.psy.it/wp-content/uploads/2019/05/Il-ruolo-dello-psicologo-nel-piano-nazionale-cronicit%C3%A0-1.pdf)",
+       "autori": null,
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Consiglio Nazionale Ordine degli Psicologi. Il Ruolo Dello Psicologo nel Piano Nazionale Cronicità; Quaderni CNOP: Rome, Italy, 2019; Volume 2 (disponibile al link: https://www.psy.it/wp-content/uploads/2019/05/Il-ruolo-dello-psicologo-nel-piano-nazionale-cronicit%C3%A0-1.pdf)"
+      },
+      {
+       "titolo": "Lugoboni et al., 2004. Migliorare la compliance in medicina interna: il colloquio motivazionale. Ann Ital Med Int 19( 3), 155-162",
+       "autori": null,
+       "editore": null,
+       "anno": 2004,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Lugoboni et al., 2004. Migliorare la compliance in medicina interna: il colloquio motivazionale. Ann Ital Med Int 19( 3), 155-162"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "TRONCONE ALDA BORRIELLO ANNA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-10",
+       "iscrizioni_al": "2026-11-24",
+       "docenti": "TRONCONE ALDA BORRIELLO ANNA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-01-05",
+       "iscrizioni_al": "2027-01-19",
+       "docenti": "TRONCONE ALDA BORRIELLO ANNA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-02",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-02-09",
+       "iscrizioni_al": "2027-02-23",
+       "docenti": "TRONCONE ALDA BORRIELLO ANNA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "id": "unicampania-lm-51-psicologia-applicata-a424461",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=059071&COD_UNITA=A424461&COD_ATTIVITA=A424461&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=M-PSI/08&CFU=6.00&COD_CORSO_STUDIO=V32"
     },
     {
      "codice": "A425465",
@@ -148215,6 +147852,366 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "A424462",
+     "nome": "Psicologia dello Sviluppo applicata ai contesti educativi",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "M-PSI/04",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Gaetana Affuso"
+     ],
+     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=084256&COD_UNITA=A424462&COD_ATTIVITA=A424462&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PSI/04&CFU=6.00&COD_CORSO_STUDIO=V32",
+     "libri": [
+      {
+       "titolo": "Competenze e aree di intervento – Il Mulino 2019.",
+       "autori": null,
+       "editore": "Competenze e aree di intervento – Il Mulino 2019",
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Competenze e aree di intervento – Il Mulino 2019."
+      },
+      {
+       "titolo": "Gian Vittorio Caprara - Maria Gerbino - B. Paula Luengo Kanacri - Giovanni Maria Vecchio - Educare alla prosocialità. Teorie e buone prassi – Pearson, 2014.",
+       "autori": null,
+       "editore": null,
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Gian Vittorio Caprara - Maria Gerbino - B. Paula Luengo Kanacri - Giovanni Maria Vecchio - Educare alla prosocialità. Teorie e buone prassi – Pearson, 2014."
+      },
+      {
+       "titolo": "Approcci universali, selettivi e indicati - Il Mulino, 2017",
+       "autori": null,
+       "editore": "selettivi e indicati - Il Mulino",
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Approcci universali, selettivi e indicati - Il Mulino, 2017"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-04",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-13",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "AFFUSO GAETANA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-25",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "AFFUSO GAETANA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-05",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-02-12",
+       "iscrizioni_al": "2027-02-26",
+       "docenti": "AFFUSO GAETANA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-29",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-03-08",
+       "iscrizioni_al": "2027-03-22",
+       "docenti": "AFFUSO GAETANA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "id": "unicampania-lm-51-psicologia-applicata-a424462",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=084256&COD_UNITA=A424462&COD_ATTIVITA=A424462&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=M-PSI/04&CFU=6.00&COD_CORSO_STUDIO=V32"
+    },
+    {
+     "codice": "A424469",
+     "nome": "Psicologia giuridica e investigativa e laboratorio",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "M-PSI/05",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Anna Sorrentino"
+     ],
+     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=067962&COD_UNITA=A424469&COD_ATTIVITA=A424469&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PSI/05&CFU=6.00&COD_CORSO_STUDIO=V32",
+     "libri": [
+      {
+       "titolo": "Gulotta, G. (2020). Compendio di Psicologia Giuridico-Forense, Criminale e Investigativa. Milano, Guiffré Di questo testo sono da studiare i seguenti capitoli: I, V, VI, VII, VIII, X, XII, XIV, XV, XVI, XVIII",
+       "autori": null,
+       "editore": null,
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "dal programma dell'a.a. 2025/26 (scheda collegata dal piano dell'ateneo)",
+       "citazione": "Gulotta, G. (2020). Compendio di Psicologia Giuridico-Forense, Criminale e Investigativa. Milano, Guiffré Di questo testo sono da studiare i seguenti capitoli: I, V, VI, VII, VIII, X, XII, XIV, XV, XVI, XVIII"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-30",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "SORRENTINO ANNA SANTAMATO MARGHERITA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-26",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": "SORRENTINO ANNA SANTAMATO MARGHERITA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-12",
+       "docenti": "SORRENTINO ANNA SANTAMATO MARGHERITA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-10",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-02-17",
+       "iscrizioni_al": "2027-03-03",
+       "docenti": "SORRENTINO ANNA SANTAMATO MARGHERITA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "id": "unicampania-lm-51-psicologia-applicata-a424469",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=067962&COD_UNITA=A424469&COD_ATTIVITA=A424469&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=M-PSI/05&CFU=6.00&COD_CORSO_STUDIO=V32"
+    },
+    {
+     "codice": "A424467",
+     "nome": "Stress e benessere nei luoghi di lavoro e laboratorio",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "M-PSI/06",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Paola Spagnoli"
+     ],
+     "url": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=059396&COD_UNITA=A424467&COD_ATTIVITA=A424467&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PSI/06&CFU=6.00&COD_CORSO_STUDIO=V32",
+     "libri": [
+      {
+       "titolo": "Stress e rischi psicosociali nelle organizzazioni",
+       "autori": "Balducci, C., Fraccaroli, F.",
+       "editore": "Il mulino",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Balducci, C., Fraccaroli, F. (2022) Stress e rischi psicosociali nelle organizzazioni. Il mulino, Bologna."
+      },
+      {
+       "titolo": "Piccoli fallimenti e grandi disastri",
+       "autori": "Reason, J.",
+       "editore": "Hirelia Edizioni",
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Reason, J. (2016) Piccoli fallimenti e grandi disastri, Hirelia Edizioni."
+      },
+      {
+       "titolo": "Lavorare troppo",
+       "autori": "Spagnoli, P., Balducci, C.",
+       "editore": "Il Mulino Bologna",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Spagnoli, P., Balducci, C. (2024) Lavorare troppo. Il Mulino Bologna"
+      },
+      {
+       "titolo": "Giovanni Di Stefano & Maria Gaudiino (2019) Workaholism and work engagement: how are they similar? How are they different? A systematic review and meta-analysis, European Journal of Work and Organizational Psychology, 28:3, 329-347, DOI: 10.1080/1359432X.2019.1590337",
+       "autori": null,
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Giovanni Di Stefano & Maria Gaudiino (2019) Workaholism and work engagement: how are they similar? How are they different? A systematic review and meta-analysis, European Journal of Work and Organizational Psychology, 28:3, 329-347, DOI: 10.1080/1359432X.2019.1590337"
+      },
+      {
+       "titolo": "Clark MA, Michel JS, Zhdanova L, Pui SY, Baltes BB. All Work and No Play? A Meta-Analytic Examination of the Correlates and Outcomes of Workaholism. Journal of Management. 2016;42(7):1836-1873. doi:10.1177/0149206314522301",
+       "autori": null,
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Clark MA, Michel JS, Zhdanova L, Pui SY, Baltes BB. All Work and No Play? A Meta-Analytic Examination of the Correlates and Outcomes of Workaholism. Journal of Management. 2016;42(7):1836-1873. doi:10.1177/0149206314522301"
+      },
+      {
+       "titolo": "Knight, C., Patterson, M., and Dawson, J. (2017) Building work engagement: A systematic review and meta-analysis investigating the effectiveness of work engagement interventions. J. Organiz. Behav., 38: 792– 812. doi: 10.1002/job.2167.",
+       "autori": null,
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Knight, C., Patterson, M., and Dawson, J. (2017) Building work engagement: A systematic review and meta-analysis investigating the effectiveness of work engagement interventions. J. Organiz. Behav., 38: 792– 812. doi: 10.1002/job.2167."
+      },
+      {
+       "titolo": "Verkuil B, Atasayi S, Molendijk ML (2015) Workplace Bullying and Mental Health: A Meta-Analysis on Cross-Sectional and Longitudinal Data. PLoS ONE 10(8): e0135225. https://doi.org/10.1371/journal.pone.0135225",
+       "autori": null,
+       "editore": null,
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Verkuil B, Atasayi S, Molendijk ML (2015) Workplace Bullying and Mental Health: A Meta-Analysis on Cross-Sectional and Longitudinal Data. PLoS ONE 10(8): e0135225. https://doi.org/10.1371/journal.pone.0135225"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-12",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-21",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "SPAGNOLI PAOLA BUONO CARMELA MOLINARO DANILA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2026-12-07",
+       "docenti": "SPAGNOLI PAOLA BUONO CARMELA MOLINARO DANILA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-01-07",
+       "iscrizioni_al": "2027-01-21",
+       "docenti": "SPAGNOLI PAOLA BUONO CARMELA MOLINARO DANILA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-03",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-02-10",
+       "iscrizioni_al": "2027-02-24",
+       "docenti": "SPAGNOLI PAOLA BUONO CARMELA MOLINARO DANILA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-24",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-03-03",
+       "iscrizioni_al": "2027-03-17",
+       "docenti": "SPAGNOLI PAOLA BUONO CARMELA MOLINARO DANILA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "id": "unicampania-lm-51-psicologia-applicata-a424467",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=059396&COD_UNITA=A424467&COD_ATTIVITA=A424467&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=M-PSI/06&CFU=6.00&COD_CORSO_STUDIO=V32"
+    },
+    {
      "codice": "A425027",
      "nome": "Uso di software per la ricerca psicosociale",
      "anno": 2,
@@ -148329,7 +148326,7 @@
    "url": "http://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-clinica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A425899",
@@ -149267,171 +149264,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "A425068",
-     "nome": "Laboratorio modelli di misura",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 2,
-     "ssd": "M-PSI/03",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Vincenzo Paolo Senese"
-     ],
-     "url": "http://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=058635&COD_UNITA=A425068&COD_ATTIVITA=A425068&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=M-PSI/03&CFU=2.00&COD_CORSO_STUDIO=B30",
-     "libri": [
-      {
-       "titolo": "Modelli statistici per le scienze sociali (Seconda edizione)",
-       "autori": "Gallucci, M., Leone, L., Berlingeri, M.",
-       "editore": "Pearson Italia",
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Gallucci, M., Leone, L., Berlingeri, M. (2017). Modelli statistici per le scienze sociali (Seconda edizione). Milano-Torino, Pearson Italia. [Capp. 1, 2, 12 e 13]"
-      }
-     ],
-     "esami": [],
-     "fonte": "http://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-clinica",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "id": "unicampania-lm-51-psicologia-clinico-dinamica-a425068",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "A422646",
-     "nome": "Psicologia Clinica ed Elementi di Psicoterapia",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 10,
-     "ssd": "M-PSI/08",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Paolo Cotrufo"
-     ],
-     "url": "http://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=058177&COD_UNITA=A422648&COD_ATTIVITA=A422646&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PSI/08&CFU=8.00&COD_CORSO_STUDIO=A30",
-     "libri": [
-      {
-       "titolo": "I fondamenti della tecnica psicoanalitica",
-       "autori": "R.H. Etchegoyen (1986)",
-       "editore": null,
-       "anno": 1986,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "dal programma dell'a.a. 2025/26 (scheda collegata dal piano dell'ateneo)",
-       "citazione": "R.H. Etchegoyen (1986) \"I fondamenti della tecnica psicoanalitica\" Astrolabio. Di questo testo vanno studiati i seguenti capitoli: 4, 5, 7, 8, 9, 21, 24, 25, 32, 38."
-      },
-      {
-       "titolo": "Sessualità umana. Perversa, polimorfa pervasiva",
-       "autori": "P. Cotrufo & R. Tuccillo (2023)",
-       "editore": null,
-       "anno": 2023,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "dal programma dell'a.a. 2025/26 (scheda collegata dal piano dell'ateneo)",
-       "citazione": "P. Cotrufo & R. Tuccillo (2023) \"Sessualità umana. Perversa, polimorfa pervasiva\" Franco Angeli. Di questo testo vanno studiati 4 capitoli a scelta dello studente."
-      },
-      {
-       "titolo": "Mia madre odia le carote",
-       "autori": "P. Cotrufo, Zoe",
-       "editore": null,
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "dal programma dell'a.a. 2025/26 (scheda collegata dal piano dell'ateneo)",
-       "citazione": "P. Cotrufo, Zoe: “Mia madre odia le carote” Mimesis Ed. (2016)"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-13",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-22",
-       "iscrizioni_al": "2026-10-06",
-       "docenti": "COTRUFO PAOLO",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-13",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-22",
-       "iscrizioni_al": "2026-10-06",
-       "docenti": "COTRUFO PAOLO CELLA STEFANIA CICCARELLI MARIA",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": null,
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-20",
-       "iscrizioni_al": "2026-11-03",
-       "docenti": "COTRUFO PAOLO",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-01",
-       "ora": null,
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-10",
-       "iscrizioni_al": "2026-11-24",
-       "docenti": "COTRUFO PAOLO",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-28",
-       "ora": null,
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-01-07",
-       "iscrizioni_al": "2027-01-21",
-       "docenti": "COTRUFO PAOLO",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-02",
-       "ora": null,
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-02-09",
-       "iscrizioni_al": "2027-02-23",
-       "docenti": "COTRUFO PAOLO",
-       "note": null,
-       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "http://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-clinica",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "id": "unicampania-lm-51-psicologia-clinico-dinamica-a422646",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "A425546",
      "nome": "Consultazione Psicodinamica",
      "anno": 2,
@@ -149525,6 +149357,41 @@
      "stato_libri": "completo",
      "id": "unicampania-lm-51-psicologia-clinico-dinamica-a425546",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A425068",
+     "nome": "Laboratorio modelli di misura",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 2,
+     "ssd": "M-PSI/03",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Vincenzo Paolo Senese"
+     ],
+     "url": "http://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=058635&COD_UNITA=A425068&COD_ATTIVITA=A425068&CODICE_PARTIZIONE=N0&AA_OFFERTA=2026&SETTORE=M-PSI/03&CFU=2.00&COD_CORSO_STUDIO=B30",
+     "libri": [
+      {
+       "titolo": "Modelli statistici per le scienze sociali (Seconda edizione)",
+       "autori": "Gallucci, M., Leone, L., Berlingeri, M.",
+       "editore": "Pearson Italia",
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Gallucci, M., Leone, L., Berlingeri, M. (2017). Modelli statistici per le scienze sociali (Seconda edizione). Milano-Torino, Pearson Italia. [Capp. 1, 2, 12 e 13]"
+      }
+     ],
+     "esami": [],
+     "fonte": "http://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-clinica",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "id": "unicampania-lm-51-psicologia-clinico-dinamica-a425068",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "http://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=058635&COD_UNITA=A425068&COD_ATTIVITA=A425068&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PSI/03&CFU=2.00&COD_CORSO_STUDIO=B30"
     },
     {
      "codice": "A422645",
@@ -149761,6 +149628,138 @@
      "stato_libri": "da_aggiungere",
      "id": "unicampania-lm-51-psicologia-clinico-dinamica-a425067",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "A422646",
+     "nome": "Psicologia Clinica ed Elementi di Psicoterapia",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 10,
+     "ssd": "M-PSI/08",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Paolo Cotrufo"
+     ],
+     "url": "http://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=058177&COD_UNITA=A422648&COD_ATTIVITA=A422646&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=M-PSI/08&CFU=8.00&COD_CORSO_STUDIO=A30",
+     "libri": [
+      {
+       "titolo": "I fondamenti della tecnica psicoanalitica",
+       "autori": "R.H. Etchegoyen (1986)",
+       "editore": null,
+       "anno": 1986,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "dal programma dell'a.a. 2025/26 (scheda collegata dal piano dell'ateneo)",
+       "citazione": "R.H. Etchegoyen (1986) \"I fondamenti della tecnica psicoanalitica\" Astrolabio. Di questo testo vanno studiati i seguenti capitoli: 4, 5, 7, 8, 9, 21, 24, 25, 32, 38."
+      },
+      {
+       "titolo": "Sessualità umana. Perversa, polimorfa pervasiva",
+       "autori": "P. Cotrufo & R. Tuccillo (2023)",
+       "editore": null,
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "dal programma dell'a.a. 2025/26 (scheda collegata dal piano dell'ateneo)",
+       "citazione": "P. Cotrufo & R. Tuccillo (2023) \"Sessualità umana. Perversa, polimorfa pervasiva\" Franco Angeli. Di questo testo vanno studiati 4 capitoli a scelta dello studente."
+      },
+      {
+       "titolo": "Mia madre odia le carote",
+       "autori": "P. Cotrufo, Zoe",
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "dal programma dell'a.a. 2025/26 (scheda collegata dal piano dell'ateneo)",
+       "citazione": "P. Cotrufo, Zoe: “Mia madre odia le carote” Mimesis Ed. (2016)"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "COTRUFO PAOLO",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "COTRUFO PAOLO CELLA STEFANIA CICCARELLI MARIA",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "COTRUFO PAOLO",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-10",
+       "iscrizioni_al": "2026-11-24",
+       "docenti": "COTRUFO PAOLO",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-01-07",
+       "iscrizioni_al": "2027-01-21",
+       "docenti": "COTRUFO PAOLO",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-02",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-02-09",
+       "iscrizioni_al": "2027-02-23",
+       "docenti": "COTRUFO PAOLO",
+       "note": null,
+       "fonte": "https://unicampania.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "http://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-clinica",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "id": "unicampania-lm-51-psicologia-clinico-dinamica-a422646",
+     "stato_esami": "completo",
+     "periodo_fonte": "http://www.psicologia.unicampania.it/dipartimento/docenti?MATRICOLA=058177&COD_UNITA=A422648&COD_ATTIVITA=A422646&CODICE_PARTIZIONE=N0&AA_OFFERTA=2023&SETTORE=M-PSI/08&CFU=8.00&COD_CORSO_STUDIO=A30"
     }
    ],
    "url_catalogo": "http://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-clinica"
@@ -149781,7 +149780,7 @@
    "url": "http://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-dei-processi-cognitivi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A423331",
@@ -152172,7 +152171,7 @@
    "url": "https://www.scienzepolitiche.unicampania.it/didattica/corsi-di-studio/magistrale-in-relazioni-ed-organizzazioni-internazionali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A421559",
@@ -155344,7 +155343,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/magistrale-in-scienze-degli-alimenti-e-della-nutrizione-umana",
    "stato": "completo",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A9401",
@@ -156611,7 +156610,7 @@
    "url": "https://www.scienzepolitiche.unicampania.it/didattica/corsi-di-studio/magistrale-in-scienza-della-politica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424742",
@@ -158330,7 +158329,7 @@
    "url": "https://www.scienzepolitiche.unicampania.it/didattica/corsi-di-studio/magistrale-in-scienze-e-tecniche-delle-amministrazioni-pubbliche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "B7613C",
@@ -160103,7 +160102,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/magistrale-in-scienze-e-tecnologie-per-l-ambiente-e-territorio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A425688",
@@ -160982,7 +160981,7 @@
    "url": "http://www.medicinasperimentale.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-in-scienze-infermieristiche-e-ostetriche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A426025",
@@ -161319,7 +161318,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/scienze-riabilitative-delle-professioni-sanitarie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A425174",
@@ -161728,7 +161727,7 @@
    "url": "http://www.architettura.unicampania.it/didattica/corsi-di-studio/architettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A423737",
@@ -170740,7 +170739,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/magistrale-a-ciclo-unico-in-farmacia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422709",
@@ -172778,7 +172777,7 @@
    "url": "https://www.giurisprudenza.unicampania.it/cds-giurisprudenza-online",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424285",
@@ -174017,7 +174016,7 @@
    "url": "http://www.giurisprudenza.unicampania.it/didattica/corsi-di-studio/magistrale-a-ciclo-unico-in-giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A425484",
@@ -175865,7 +175864,7 @@
    "url": "http://www.damss.unicampania.it/didattica/cds/corsi-di-studio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A425668",
@@ -180479,7 +180478,7 @@
    "url": "http://www.medicinasperimentale.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-a-ciclo-unico-in-medicina-e-chirurgia-sede-di-napoli",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A422709",
@@ -183601,7 +183600,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-a-ciclo-unico-in-medicina-e-chirurgia-in-lingua-inglese-medicine-and-surgery-in-english",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A425562",
@@ -185880,7 +185879,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/medicina-e-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A425266",
@@ -186227,7 +186226,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/magistrale-in-odontoiatria-e-protesi-dentaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A425690",
@@ -187337,7 +187336,7 @@
    "url": "https://www.letterebeniculturali.unicampania.it/didattica/corsi-di-studio/magistrale-a-ciclo-unico-in-scienze-della-formazione-primaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A424937",

@@ -8,6 +8,7 @@ import 'package:university_notes/core/catalog/catalog_models.dart';
 import 'package:university_notes/core/catalog/catalog_service.dart';
 import 'package:university_notes/core/catalog/path_setup.dart';
 import 'package:university_notes/core/constants/enums.dart';
+import 'package:university_notes/core/constants/text_limits.dart';
 import 'package:university_notes/core/database/app_database.dart';
 import 'package:university_notes/core/services/app_services.dart';
 import 'package:university_notes/core/theme/university_colors.dart';
@@ -28,8 +29,57 @@ Future<AppServices> _services({Map<String, String> remote = const {}}) async {
 
 Map<String, String> _remote({
   List<Map<String, Object?>> extraBooks = const [],
+  Map<String, Object?>? moduli,
 }) => {
   'corsi/polito.json': jsonEncode(corsiPolitoFixture(extraBooks: extraBooks)),
+  if (moduli != null) 'moduli/polito.json': jsonEncode(moduli),
+};
+
+const _analisi = 'polito-l8-ingegneria-informatica-01rkcpl';
+const _fisica = 'polito-l8-ingegneria-informatica-02fisica';
+const _algo = 'polito-l8-ingegneria-informatica-03algo';
+
+/// `moduli/polito.json`: Analisi con indice del libro e programma ufficiale,
+/// Fisica con il solo programma, Algoritmi con il solo indice del libro.
+Map<String, Object?> _moduli({String limiti = 'Limiti di funzioni'}) => {
+  'schema': 1,
+  'universita_id': 'polito',
+  'insegnamenti': {
+    _analisi: {
+      'origine': 'indice',
+      'fonte': 'Indice di «Analisi Matematica 1»',
+      'moduli': [
+        {
+          'nome': 'Cap. 1 Numeri reali',
+          'argomenti': ['1.1 Assiomi'],
+        },
+      ],
+      'programma': [
+        {
+          'nome': 'Limiti',
+          'argomenti': [limiti, 'Successioni'],
+        },
+        {'nome': 'Derivate', 'argomenti': <String>[]},
+      ],
+      'fonte_programma': 'https://didattica.polito.it/01RKCPL',
+    },
+    _fisica: {
+      'origine': 'programma',
+      'fonte': "Programma ufficiale dell'insegnamento",
+      'moduli': [
+        {'nome': 'Cinematica', 'argomenti': <String>[]},
+      ],
+    },
+    _algo: {
+      'origine': 'indice',
+      'moduli': [
+        {
+          'nome': 'Cap. 1 Ricorsione',
+          'argomenti': ['1.1 Esempi'],
+        },
+      ],
+    },
+  },
 };
 
 PathSelection _selection({int year = 1}) => PathSelection(
@@ -139,56 +189,53 @@ void main() {
     },
   );
 
-  test(
-    'scelta del corso: scarica i dati dell\'ateneo; cambio d\'ateneo: '
-    'quelli del precedente si eliminano',
-    () async {
-      final db = await AppDatabase.openInMemory();
-      addTearDown(db.close);
-      final cache = Directory.systemTemp.createTempSync('datapack_cache');
-      addTearDown(() => cache.deleteSync(recursive: true));
-      final requests = <Uri>[];
-      final s = AppServices(
-        db,
-        catalog: fakeCatalog(
-          SettingsRepository(db),
-          cacheDir: cache,
-          requests: requests,
-          remote: {
-            ..._remote(),
-            'sessioni/polito.json': jsonEncode({
-              'schema': 1,
-              'universita_id': 'polito',
-            }),
-          },
-        ),
-      );
-      final r = await PathSetupService(s).apply(_selection());
-      expect(r.imported, isTrue);
-      expect(r.senzaRete, isFalse);
-      expect(File('${cache.path}/corsi/polito.json').existsSync(), isTrue);
-      expect(File('${cache.path}/sessioni/polito.json').existsSync(), isTrue);
-      // solo i file di PoliTO (più meta.json)
-      expect(
-        requests.every(
-          (u) => u.path.endsWith('/polito.json') || u.path.endsWith('meta.json'),
-        ),
-        isTrue,
-      );
+  test('scelta del corso: scarica i dati dell\'ateneo; cambio d\'ateneo: '
+      'quelli del precedente si eliminano', () async {
+    final db = await AppDatabase.openInMemory();
+    addTearDown(db.close);
+    final cache = Directory.systemTemp.createTempSync('datapack_cache');
+    addTearDown(() => cache.deleteSync(recursive: true));
+    final requests = <Uri>[];
+    final s = AppServices(
+      db,
+      catalog: fakeCatalog(
+        SettingsRepository(db),
+        cacheDir: cache,
+        requests: requests,
+        remote: {
+          ..._remote(),
+          'sessioni/polito.json': jsonEncode({
+            'schema': 1,
+            'universita_id': 'polito',
+          }),
+        },
+      ),
+    );
+    final r = await PathSetupService(s).apply(_selection());
+    expect(r.imported, isTrue);
+    expect(r.senzaRete, isFalse);
+    expect(File('${cache.path}/corsi/polito.json').existsSync(), isTrue);
+    expect(File('${cache.path}/sessioni/polito.json').existsSync(), isTrue);
+    // solo i file di PoliTO (più meta.json)
+    expect(
+      requests.every(
+        (u) => u.path.endsWith('/polito.json') || u.path.endsWith('meta.json'),
+      ),
+      isTrue,
+    );
 
-      // nuovo ateneo (corso a mano): i dati di PoliTO escono dalla cache
-      await PathSetupService(s).apply(
-        PathSelection(
-          ateneo: _universita.byId('unimib')!,
-          tipo: TipoCorso.l,
-          manualName: 'Psicologia',
-          year: 1,
-        ),
-      );
-      expect(File('${cache.path}/corsi/polito.json').existsSync(), isFalse);
-      expect(File('${cache.path}/sessioni/polito.json').existsSync(), isFalse);
-    },
-  );
+    // nuovo ateneo (corso a mano): i dati di PoliTO escono dalla cache
+    await PathSetupService(s).apply(
+      PathSelection(
+        ateneo: _universita.byId('unimib')!,
+        tipo: TipoCorso.l,
+        manualName: 'Psicologia',
+        year: 1,
+      ),
+    );
+    expect(File('${cache.path}/corsi/polito.json').existsSync(), isFalse);
+    expect(File('${cache.path}/sessioni/polito.json').existsSync(), isFalse);
+  });
 
   test(
     'offline dopo il download: il piano si reimporta dalla copia salvata',
@@ -318,6 +365,168 @@ void main() {
         (await s.exams.all()).where((e) => e.kind == ExamKind.finalExam),
         hasLength(4),
       );
+    },
+  );
+
+  test('moduli: origine, programma e fonte_programma facoltativi', () {
+    final m = ModuliAteneo.fromJson(_moduli());
+    final analisi = m.insegnamenti[_analisi]!;
+    expect(analisi.origine, OrigineModuli.indice);
+    expect(analisi.moduli.single.nome, 'Cap. 1 Numeri reali');
+    expect(analisi.programma.map((x) => x.nome), ['Limiti', 'Derivate']);
+    expect(analisi.fonteProgramma, 'https://didattica.polito.it/01RKCPL');
+    expect(analisi.argomentiEsame, same(analisi.programma));
+    final fisica = m.insegnamenti[_fisica]!;
+    expect(fisica.programma, isEmpty);
+    expect(fisica.argomentiEsame.single.nome, 'Cinematica');
+    // l'indice di un libro non è mai argomento d'esame
+    expect(m.insegnamenti[_algo]!.argomentiEsame, isEmpty);
+    // file precedenti: senza origine = libreria, senza programma
+    final vecchio = ModuliAteneo.fromJson({
+      'universita_id': 'polito',
+      'insegnamenti': {
+        'x': {
+          'moduli': [
+            {'nome': 'A'},
+          ],
+        },
+        'vuoto': {'moduli': <Object>[]},
+      },
+    });
+    expect(vecchio.insegnamenti.keys, ['x']);
+    expect(vecchio.insegnamenti['x']!.origine, OrigineModuli.libreria);
+    expect(vecchio.insegnamenti['x']!.programma, isEmpty);
+    expect(vecchio.insegnamenti['x']!.fonteProgramma, isNull);
+    expect(vecchio.insegnamenti['x']!.argomentiEsame, isEmpty);
+  });
+
+  test('esame finale: argomenti dal programma, materiali dai libri', () {
+    final corso = CorsiAteneo.fromJson(
+      corsiPolitoFixture(
+        extraBooks: [
+          {
+            'titolo': 'Analisi Matematica 1',
+            'citazione': 'M. Bramanti, Esercitazioni di Analisi 1, Esculapio',
+          },
+          {
+            'titolo': 'Calcolo',
+            'autori': 'Adams',
+            'editore': 'CEA',
+            'tipo': 'obbligatorio',
+          },
+        ],
+      ),
+    ).corsi.single;
+    final pack = catalogToDataPack(
+      ateneo: _universita.byId('polito')!,
+      corso: corso,
+      moduli: ModuliAteneo.fromJson(_moduli()),
+    );
+    final exams = [for (final e in pack['exams'] as List) e as Map];
+    Map finale(String id) => exams.singleWhere(
+      (e) => e['externalId'] == CatalogIds.finalExam('polito', id),
+    );
+    final analisi = finale(_analisi);
+    // il programma, non l'indice del libro
+    expect(
+      analisi['topics'],
+      '• Limiti: Limiti di funzioni, Successioni\n• Derivate',
+    );
+    // prima gli obbligatori, poi i consigliati, poi gli altri
+    expect(analisi['studyMaterials'], [
+      'Bramanti, Pagani, Salsa — Analisi Matematica 1 (Zanichelli, 2014)',
+      'Adams — Calcolo (CEA)',
+      'Esercizi di Analisi',
+      'M. Bramanti, Esercitazioni di Analisi 1, Esculapio',
+    ]);
+    expect(finale(_fisica)['topics'], '• Cinematica');
+    expect(finale(_fisica)['studyMaterials'], isEmpty);
+    // solo l'indice del libro: nessun argomento d'esame
+    expect(finale(_algo)['topics'], isNull);
+    // le prove in itinere restano vuote
+    final midterm = exams.singleWhere((e) => e['kind'] == 'midterm');
+    expect(midterm.containsKey('topics'), isFalse);
+    expect(midterm.containsKey('studyMaterials'), isFalse);
+    // senza file dei moduli: argomenti vuoti, materiali comunque
+    final senza = catalogToDataPack(
+      ateneo: _universita.byId('polito')!,
+      corso: corso,
+    );
+    final a2 = (senza['exams'] as List).first as Map;
+    expect(a2['topics'], isNull);
+    expect(a2['studyMaterials'], hasLength(4));
+  });
+
+  test('argomenti troppo lunghi: si tolgono le ultime righe', () {
+    final lungo = ModuliInsegnamento(
+      moduli: const [],
+      origine: OrigineModuli.programma,
+      programma: [
+        for (var i = 0; i < 400; i++)
+          ModuloCatalogo(nome: 'Modulo $i', argomenti: const ['uno', 'due']),
+      ],
+    );
+    final t = argomentiEsame(lungo)!;
+    expect(t.length, lessThanOrEqualTo(TextLimits.examTopics));
+    expect(t.startsWith('• Modulo 0: uno, due\n'), isTrue);
+    expect(t.endsWith('\n…'), isTrue);
+    expect(argomentiEsame(null), isNull);
+  });
+
+  test(
+    "import e «Aggiorna database»: argomenti e materiali dell'esame si "
+    'riempiono e si aggiornano solo se lo studente non li ha toccati',
+    () async {
+      final s = await _services(remote: _remote(moduli: _moduli()));
+      addTearDown(s.database.close);
+      await PathSetupService(s).apply(_selection());
+      s.profile.value = await s.profiles.load();
+      Future<Exam> finale(String id) async => (await s.exams.all()).singleWhere(
+        (e) => e.externalId == CatalogIds.finalExam('polito', id),
+      );
+      final analisi = await finale(_analisi);
+      expect(analisi.topics, startsWith('• Limiti: Limiti di funzioni'));
+      expect(analisi.studyMaterials, hasLength(2));
+      final fisica = await finale(_fisica);
+      expect(fisica.topics, '• Cinematica');
+      expect((await finale(_algo)).topics, isNull);
+      // la prova in itinere resta vuota
+      final midterm = (await s.exams.all()).singleWhere(
+        (e) => e.kind == ExamKind.midterm,
+      );
+      expect(midterm.topics, isNull);
+      expect(midterm.studyMaterials, isEmpty);
+
+      // lo studente riscrive gli argomenti di Analisi e i materiali di Fisica
+      await s.exams.update(analisi.copyWith(topics: 'I miei argomenti'));
+      await s.exams.update(fisica.copyWith(studyMaterials: ['Mie slide']));
+
+      // «Aggiorna database» con programma e libri cambiati
+      final s2 = AppServices(
+        s.database,
+        catalog: fakeCatalog(
+          s.settings,
+          remote: _remote(
+            moduli: _moduli(limiti: 'Limiti notevoli'),
+            extraBooks: [
+              {'titolo': 'Nuovo eserciziario', 'tipo': 'consigliato'},
+            ],
+          ),
+        ),
+      )..profile.value = s.profile.value;
+      expect((await PathSetupService(s2).refresh()).imported, isTrue);
+
+      final a2 = await finale(_analisi);
+      expect(a2.topics, 'I miei argomenti');
+      // materiali non toccati: aggiornati con il libro nuovo
+      expect(a2.studyMaterials, [
+        'Bramanti, Pagani, Salsa — Analisi Matematica 1 (Zanichelli, 2014)',
+        'Esercizi di Analisi',
+        'Nuovo eserciziario',
+      ]);
+      final f2 = await finale(_fisica);
+      expect(f2.studyMaterials, ['Mie slide']);
+      expect(f2.topics, '• Cinematica');
     },
   );
 

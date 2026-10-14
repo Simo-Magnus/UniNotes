@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "units",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-13",
+ "aggiornato_il": "2026-10-14",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://lauree.units.it/1-assitenza-sanitaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1028ME",
@@ -2021,7 +2021,7 @@
    "url": "https://lauree.units.it/1-chimica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "008CT",
@@ -3642,7 +3642,7 @@
    "url": "https://lauree.units.it/1-interlinguistica-applicata",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "015SL",
@@ -10811,7 +10811,7 @@
    "url": "https://lauree.units.it/1-interlinguistica-applicata-professioni-giuridiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "540SL",
@@ -14605,7 +14605,7 @@
    "url": "https://lauree.units.it/1-dietistica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1031ME",
@@ -16600,7 +16600,7 @@
    "url": "https://lauree.units.it/1-storia-filosofia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "301LE",
@@ -23594,7 +23594,7 @@
    "url": "https://degree.units.it/en/0320107323400001",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "004MG",
@@ -24490,30 +24490,8 @@
    "url": "http://corsi.units.it/ec01/economia-gestione-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "580EC",
-     "nome": "Business English",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": true,
-     "curriculum": "BUSINESS AND MANAGEMENT",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118422/2026/3?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "scritto e orale congiunti",
-     "id": "units-l-18-economia-e-gestione-aziendale-580ec",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "645EC",
      "nome": "Lingua Inglese (livello B2)",
@@ -24868,6 +24846,29 @@
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-l-18-economia-e-gestione-aziendale-015ec",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "580EC",
+     "nome": "Business English",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": "BUSINESS AND MANAGEMENT",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118422/2026/3?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "scritto e orale congiunti",
+     "id": "units-l-18-economia-e-gestione-aziendale-580ec",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/118422/2016/3?coorte=2022"
     },
     {
      "codice": "565EC",
@@ -26183,53 +26184,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "023EC",
-     "nome": "Business English",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 5,
-     "ssd": "L-LIN/12",
-     "obbligatorio": false,
-     "curriculum": "comune",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/112731/2016/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Market Leader Upper Intermediate Coursework",
-       "autori": "Mascull, B. & Wright, L.",
-       "editore": "Oxford University Press",
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Mascull, B. & Wright, L. (2011). Market Leader Upper Intermediate Coursework, 3rd edition, Oxford University Press. (compulsory)"
-      },
-      {
-       "titolo": "Business English Dictionary (Oxford) ISBN: 978-0-19-431617-0 (suggested)",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780194316170",
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Business English Dictionary (Oxford) ISBN: 978-0-19-431617-0 (suggested)"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "id": "units-l-18-economia-e-gestione-aziendale-023ec",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
-     "modalita_esame": "scritto e orale congiunti"
-    },
-    {
      "codice": "581EC",
      "nome": "English C1-level",
      "anno": 3,
@@ -26510,28 +26464,6 @@
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-l-18-economia-e-gestione-aziendale-552ec",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "modalita_esame": "orale"
-    },
-    {
-     "codice": "570EC",
-     "nome": "Traineeship",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 5,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": "BUSINESS AND MANAGEMENT",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/117133/2016/3?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "id": "units-l-18-economia-e-gestione-aziendale-570ec",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "modalita_esame": "orale"
@@ -27461,6 +27393,54 @@
      "modalita_esame": "orale"
     },
     {
+     "codice": "023EC",
+     "nome": "Business English",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 5,
+     "ssd": "L-LIN/12",
+     "obbligatorio": false,
+     "curriculum": "comune",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/112731/2016/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Market Leader Upper Intermediate Coursework",
+       "autori": "Mascull, B. & Wright, L.",
+       "editore": "Oxford University Press",
+       "anno": 2011,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Mascull, B. & Wright, L. (2011). Market Leader Upper Intermediate Coursework, 3rd edition, Oxford University Press. (compulsory)"
+      },
+      {
+       "titolo": "Business English Dictionary (Oxford) ISBN: 978-0-19-431617-0 (suggested)",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780194316170",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Business English Dictionary (Oxford) ISBN: 978-0-19-431617-0 (suggested)"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "id": "units-l-18-economia-e-gestione-aziendale-023ec",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere",
+     "modalita_esame": "scritto e orale congiunti",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/112731/2016/9999?coorte=2022"
+    },
+    {
      "codice": "012EC",
      "nome": "Calcolo delle Probabilita'",
      "anno": 3,
@@ -28318,98 +28298,27 @@
      "modalita_esame": "orale"
     },
     {
-     "codice": "021EC",
-     "nome": "French",
-     "anno": null,
-     "periodo": null,
+     "codice": "570EC",
+     "nome": "Traineeship",
+     "anno": 3,
+     "periodo": "annuale",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 5,
-     "ssd": "L-LIN/04",
+     "ssd": "NN",
      "obbligatorio": false,
      "curriculum": "BUSINESS AND MANAGEMENT",
      "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/112587/2016/3?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Testo adottato : Le nouveau TAXI!1 livello A1, Edizione Hachette, 2008 : il libro dello studente con DVD-ROM + l’eserciziario. (Livre de l’élève avec CD-ROM A1 + Cahier des activités) [ISBN 9782011555489 + ISBN 9782011555496].",
-       "autori": null,
-       "editore": null,
-       "anno": 2008,
-       "edizione": null,
-       "isbn": "9782011555489",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": "Dal programma dell'a.a. 2021/22: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Testo adottato : Le nouveau TAXI!1 livello A1, Edizione Hachette, 2008 : il libro dello studente con DVD-ROM + l’eserciziario. (Livre de l’élève avec CD-ROM A1 + Cahier des activités) [ISBN 9782011555489 + ISBN 9782011555496]."
-      }
-     ],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/117133/2016/3?coorte=2024",
+     "libri": [],
      "esami": [],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
+     "id": "units-l-18-economia-e-gestione-aziendale-570ec",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "units-l-18-economia-e-gestione-aziendale-021ec",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "020EC",
-     "nome": "German",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 5,
-     "ssd": "L-LIN/14",
-     "obbligatorio": false,
-     "curriculum": "BUSINESS AND MANAGEMENT",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/112586/2016/3?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Becker, Norbert, Jörg Braunert, and K. Heinz Eisfeld. Dialog Beruf 2: Deutsch als Fremdsprache für die Grundstufe. Vol. 2. Hueber Verlag, 1998.",
-       "autori": null,
-       "editore": null,
-       "anno": 1998,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Becker, Norbert, Jörg Braunert, and K. Heinz Eisfeld. Dialog Beruf 2: Deutsch als Fremdsprache für die Grundstufe. Vol. 2. Hueber Verlag, 1998."
-      },
-      {
-       "titolo": "Macaire, Dominique, and Gerd Nicolas. Wirtschaftsdeutsch für anfänger: grundstufe. Vol. 2. Klett, 1995.",
-       "autori": null,
-       "editore": null,
-       "anno": 1995,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Macaire, Dominique, and Gerd Nicolas. Wirtschaftsdeutsch für anfänger: grundstufe. Vol. 2. Klett, 1995."
-      },
-      {
-       "titolo": "Nikolas G. Wirtschaftsdeutsch für Anfänger. Lehrbuch. Grundstufe/Aufbaukurs.",
-       "autori": "Macaire, D",
-       "editore": null,
-       "anno": 1998,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Macaire, D. \"Nikolas G. Wirtschaftsdeutsch für Anfänger. Lehrbuch. Grundstufe/Aufbaukurs.\" Ernst Klett International, Stuttgart 313 (1998)."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "units-l-18-economia-e-gestione-aziendale-020ec",
-     "stato_esami": "da_aggiungere"
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/117133/2016/3?coorte=2022"
     },
     {
      "codice": "107EC",
@@ -28587,10 +28496,120 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "085EC",
+     "nome": "Economia e Gestione delle Imprese Commerciali",
+     "anno": null,
+     "periodo": "1",
+     "periodo_inizio": "23/09/2024 00:00:00",
+     "periodo_fine": "20/12/2024 00:00:00",
+     "cfu": 6,
+     "ssd": "SECS-P/08",
+     "obbligatorio": false,
+     "curriculum": "GESTIONE AZIENDALE",
+     "docenti": [
+      "Balzano Marco",
+      "Gomiero Lucio"
+     ],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/114480/2016/2?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Retail Management: A Strategic Approach (13th Edition) Barry R. Berman, Joel R. Evans and Patrali M. Chatterjee GE. Pearson Education",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Retail Management: A Strategic Approach (13th Edition) Barry R. Berman, Joel R. Evans and Patrali M. Chatterjee GE. Pearson Education"
+      },
+      {
+       "titolo": "RETAIL MARKETING (1st Edition) Sean Ennis, Mario Risso, Marcello Sansone, Francesco Scafarto. McGraw Hill Education. Materiale a cura dei docenti su Moodle.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "RETAIL MARKETING (1st Edition) Sean Ennis, Mario Risso, Marcello Sansone, Francesco Scafarto. McGraw Hill Education. Materiale a cura dei docenti su Moodle."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "units-l-18-economia-e-gestione-aziendale-085ec",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "020EC",
+     "nome": "German",
+     "anno": null,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 5,
+     "ssd": "L-LIN/14",
+     "obbligatorio": false,
+     "curriculum": "BUSINESS AND MANAGEMENT",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/112586/2016/3?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Becker, Norbert, Jörg Braunert, and K. Heinz Eisfeld. Dialog Beruf 2: Deutsch als Fremdsprache für die Grundstufe. Vol. 2. Hueber Verlag, 1998.",
+       "autori": null,
+       "editore": null,
+       "anno": 1998,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Becker, Norbert, Jörg Braunert, and K. Heinz Eisfeld. Dialog Beruf 2: Deutsch als Fremdsprache für die Grundstufe. Vol. 2. Hueber Verlag, 1998."
+      },
+      {
+       "titolo": "Macaire, Dominique, and Gerd Nicolas. Wirtschaftsdeutsch für anfänger: grundstufe. Vol. 2. Klett, 1995.",
+       "autori": null,
+       "editore": null,
+       "anno": 1995,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Macaire, Dominique, and Gerd Nicolas. Wirtschaftsdeutsch für anfänger: grundstufe. Vol. 2. Klett, 1995."
+      },
+      {
+       "titolo": "Nikolas G. Wirtschaftsdeutsch für Anfänger. Lehrbuch. Grundstufe/Aufbaukurs.",
+       "autori": "Macaire, D",
+       "editore": null,
+       "anno": 1998,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Macaire, D. \"Nikolas G. Wirtschaftsdeutsch für Anfänger. Lehrbuch. Grundstufe/Aufbaukurs.\" Ernst Klett International, Stuttgart 313 (1998)."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "units-l-18-economia-e-gestione-aziendale-020ec",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/112586/2016/3?coorte=2022"
+    },
+    {
      "codice": "022EC",
      "nome": "Spanish",
      "anno": null,
-     "periodo": null,
+     "periodo": "1",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 5,
@@ -28643,48 +28662,34 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-18-economia-e-gestione-aziendale-022ec",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/112588/2016/3?coorte=2022"
     },
     {
-     "codice": "085EC",
-     "nome": "Economia e Gestione delle Imprese Commerciali",
+     "codice": "021EC",
+     "nome": "French",
      "anno": null,
-     "periodo": "1",
-     "periodo_inizio": "23/09/2024 00:00:00",
-     "periodo_fine": "20/12/2024 00:00:00",
-     "cfu": 6,
-     "ssd": "SECS-P/08",
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 5,
+     "ssd": "L-LIN/04",
      "obbligatorio": false,
-     "curriculum": "GESTIONE AZIENDALE",
-     "docenti": [
-      "Balzano Marco",
-      "Gomiero Lucio"
-     ],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/114480/2016/2?coorte=2024",
+     "curriculum": "BUSINESS AND MANAGEMENT",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/112587/2016/3?coorte=2024",
      "libri": [
       {
-       "titolo": "Retail Management: A Strategic Approach (13th Edition) Barry R. Berman, Joel R. Evans and Patrali M. Chatterjee GE. Pearson Education",
+       "titolo": "Testo adottato : Le nouveau TAXI!1 livello A1, Edizione Hachette, 2008 : il libro dello studente con DVD-ROM + l’eserciziario. (Livre de l’élève avec CD-ROM A1 + Cahier des activités) [ISBN 9782011555489 + ISBN 9782011555496].",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2008,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9782011555489",
        "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Retail Management: A Strategic Approach (13th Edition) Barry R. Berman, Joel R. Evans and Patrali M. Chatterjee GE. Pearson Education"
-      },
-      {
-       "titolo": "RETAIL MARKETING (1st Edition) Sean Ennis, Mario Risso, Marcello Sansone, Francesco Scafarto. McGraw Hill Education. Materiale a cura dei docenti su Moodle.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "RETAIL MARKETING (1st Edition) Sean Ennis, Mario Risso, Marcello Sansone, Francesco Scafarto. McGraw Hill Education. Materiale a cura dei docenti su Moodle."
+       "tipo": "obbligatorio",
+       "note": "Dal programma dell'a.a. 2021/22: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Testo adottato : Le nouveau TAXI!1 livello A1, Edizione Hachette, 2008 : il libro dello studente con DVD-ROM + l’eserciziario. (Livre de l’élève avec CD-ROM A1 + Cahier des activités) [ISBN 9782011555489 + ISBN 9782011555496]."
       }
      ],
      "esami": [],
@@ -28692,8 +28697,9 @@
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
-     "id": "units-l-18-economia-e-gestione-aziendale-085ec",
-     "stato_esami": "da_aggiungere"
+     "id": "units-l-18-economia-e-gestione-aziendale-021ec",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/112587/2016/3?coorte=2022"
     },
     {
      "codice": "119EC",
@@ -28766,30 +28772,8 @@
    "url": "https://lauree.units.it/1-economia-internazionale-finanza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "580EC",
-     "nome": "Business English",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": true,
-     "curriculum": "ECONOMICS AND FINANCIAL MARKETS",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118422/2026/2?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "scritto e orale congiunti",
-     "id": "units-l-33-economia-internazionale-e-mercati-finanziari-580ec",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "645EC",
      "nome": "Lingua Inglese (livello B2)",
@@ -29144,6 +29128,29 @@
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-l-33-economia-internazionale-e-mercati-finanziari-015ec",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "580EC",
+     "nome": "Business English",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": "ECONOMICS AND FINANCIAL MARKETS",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118422/2026/2?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "scritto e orale congiunti",
+     "id": "units-l-33-economia-internazionale-e-mercati-finanziari-580ec",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/118422/2016/2?coorte=2022"
     },
     {
      "codice": "565EC",
@@ -30142,53 +30149,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "023EC",
-     "nome": "Business English",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 5,
-     "ssd": "L-LIN/12",
-     "obbligatorio": false,
-     "curriculum": "comune",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/112731/2016/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Market Leader Upper Intermediate Coursework",
-       "autori": "Mascull, B. & Wright, L.",
-       "editore": "Oxford University Press",
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Mascull, B. & Wright, L. (2011). Market Leader Upper Intermediate Coursework, 3rd edition, Oxford University Press. (compulsory)"
-      },
-      {
-       "titolo": "Business English Dictionary (Oxford) ISBN: 978-0-19-431617-0 (suggested)",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780194316170",
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Business English Dictionary (Oxford) ISBN: 978-0-19-431617-0 (suggested)"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "id": "units-l-33-economia-internazionale-e-mercati-finanziari-023ec",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
-     "modalita_esame": "scritto e orale congiunti"
-    },
-    {
      "codice": "581EC",
      "nome": "English C1-level",
      "anno": 3,
@@ -30469,28 +30429,6 @@
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-l-33-economia-internazionale-e-mercati-finanziari-552ec",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "modalita_esame": "orale"
-    },
-    {
-     "codice": "570EC",
-     "nome": "Traineeship",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 5,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": "ECONOMICS AND FINANCIAL MARKETS",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/117133/2016/2?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "id": "units-l-33-economia-internazionale-e-mercati-finanziari-570ec",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "modalita_esame": "orale"
@@ -31596,6 +31534,54 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "023EC",
+     "nome": "Business English",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 5,
+     "ssd": "L-LIN/12",
+     "obbligatorio": false,
+     "curriculum": "comune",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/112731/2016/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Market Leader Upper Intermediate Coursework",
+       "autori": "Mascull, B. & Wright, L.",
+       "editore": "Oxford University Press",
+       "anno": 2011,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Mascull, B. & Wright, L. (2011). Market Leader Upper Intermediate Coursework, 3rd edition, Oxford University Press. (compulsory)"
+      },
+      {
+       "titolo": "Business English Dictionary (Oxford) ISBN: 978-0-19-431617-0 (suggested)",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780194316170",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Business English Dictionary (Oxford) ISBN: 978-0-19-431617-0 (suggested)"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "id": "units-l-33-economia-internazionale-e-mercati-finanziari-023ec",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere",
+     "modalita_esame": "scritto e orale congiunti",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/112731/2016/9999?coorte=2022"
+    },
+    {
      "codice": "153EC",
      "nome": "Data Analytics",
      "anno": 3,
@@ -32477,98 +32463,27 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "021EC",
-     "nome": "French",
-     "anno": null,
-     "periodo": null,
+     "codice": "570EC",
+     "nome": "Traineeship",
+     "anno": 3,
+     "periodo": "annuale",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 5,
-     "ssd": "L-LIN/04",
+     "ssd": "NN",
      "obbligatorio": false,
      "curriculum": "ECONOMICS AND FINANCIAL MARKETS",
      "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/112587/2016/2?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Testo adottato : Le nouveau TAXI!1 livello A1, Edizione Hachette, 2008 : il libro dello studente con DVD-ROM + l’eserciziario. (Livre de l’élève avec CD-ROM A1 + Cahier des activités) [ISBN 9782011555489 + ISBN 9782011555496].",
-       "autori": null,
-       "editore": null,
-       "anno": 2008,
-       "edizione": null,
-       "isbn": "9782011555489",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": "Dal programma dell'a.a. 2021/22: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Testo adottato : Le nouveau TAXI!1 livello A1, Edizione Hachette, 2008 : il libro dello studente con DVD-ROM + l’eserciziario. (Livre de l’élève avec CD-ROM A1 + Cahier des activités) [ISBN 9782011555489 + ISBN 9782011555496]."
-      }
-     ],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/117133/2016/2?coorte=2024",
+     "libri": [],
      "esami": [],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
+     "id": "units-l-33-economia-internazionale-e-mercati-finanziari-570ec",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "units-l-33-economia-internazionale-e-mercati-finanziari-021ec",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "020EC",
-     "nome": "German",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 5,
-     "ssd": "L-LIN/14",
-     "obbligatorio": false,
-     "curriculum": "ECONOMICS AND FINANCIAL MARKETS",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/112586/2016/2?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Becker, Norbert, Jörg Braunert, and K. Heinz Eisfeld. Dialog Beruf 2: Deutsch als Fremdsprache für die Grundstufe. Vol. 2. Hueber Verlag, 1998.",
-       "autori": null,
-       "editore": null,
-       "anno": 1998,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Becker, Norbert, Jörg Braunert, and K. Heinz Eisfeld. Dialog Beruf 2: Deutsch als Fremdsprache für die Grundstufe. Vol. 2. Hueber Verlag, 1998."
-      },
-      {
-       "titolo": "Macaire, Dominique, and Gerd Nicolas. Wirtschaftsdeutsch für anfänger: grundstufe. Vol. 2. Klett, 1995.",
-       "autori": null,
-       "editore": null,
-       "anno": 1995,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Macaire, Dominique, and Gerd Nicolas. Wirtschaftsdeutsch für anfänger: grundstufe. Vol. 2. Klett, 1995."
-      },
-      {
-       "titolo": "Nikolas G. Wirtschaftsdeutsch für Anfänger. Lehrbuch. Grundstufe/Aufbaukurs.",
-       "autori": "Macaire, D",
-       "editore": null,
-       "anno": 1998,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Macaire, D. \"Nikolas G. Wirtschaftsdeutsch für Anfänger. Lehrbuch. Grundstufe/Aufbaukurs.\" Ernst Klett International, Stuttgart 313 (1998)."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "units-l-33-economia-internazionale-e-mercati-finanziari-020ec",
-     "stato_esami": "da_aggiungere"
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/117133/2016/3?coorte=2022"
     },
     {
      "codice": "107EC",
@@ -32746,10 +32661,70 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "020EC",
+     "nome": "German",
+     "anno": null,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 5,
+     "ssd": "L-LIN/14",
+     "obbligatorio": false,
+     "curriculum": "ECONOMICS AND FINANCIAL MARKETS",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/112586/2016/2?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Becker, Norbert, Jörg Braunert, and K. Heinz Eisfeld. Dialog Beruf 2: Deutsch als Fremdsprache für die Grundstufe. Vol. 2. Hueber Verlag, 1998.",
+       "autori": null,
+       "editore": null,
+       "anno": 1998,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Becker, Norbert, Jörg Braunert, and K. Heinz Eisfeld. Dialog Beruf 2: Deutsch als Fremdsprache für die Grundstufe. Vol. 2. Hueber Verlag, 1998."
+      },
+      {
+       "titolo": "Macaire, Dominique, and Gerd Nicolas. Wirtschaftsdeutsch für anfänger: grundstufe. Vol. 2. Klett, 1995.",
+       "autori": null,
+       "editore": null,
+       "anno": 1995,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Macaire, Dominique, and Gerd Nicolas. Wirtschaftsdeutsch für anfänger: grundstufe. Vol. 2. Klett, 1995."
+      },
+      {
+       "titolo": "Nikolas G. Wirtschaftsdeutsch für Anfänger. Lehrbuch. Grundstufe/Aufbaukurs.",
+       "autori": "Macaire, D",
+       "editore": null,
+       "anno": 1998,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Macaire, D. \"Nikolas G. Wirtschaftsdeutsch für Anfänger. Lehrbuch. Grundstufe/Aufbaukurs.\" Ernst Klett International, Stuttgart 313 (1998)."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "units-l-33-economia-internazionale-e-mercati-finanziari-020ec",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/112586/2016/2?coorte=2022"
+    },
+    {
      "codice": "022EC",
      "nome": "Spanish",
      "anno": null,
-     "periodo": null,
+     "periodo": "1",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 5,
@@ -32802,7 +32777,44 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-33-economia-internazionale-e-mercati-finanziari-022ec",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/112588/2016/2?coorte=2022"
+    },
+    {
+     "codice": "021EC",
+     "nome": "French",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 5,
+     "ssd": "L-LIN/04",
+     "obbligatorio": false,
+     "curriculum": "ECONOMICS AND FINANCIAL MARKETS",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/112587/2016/2?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Testo adottato : Le nouveau TAXI!1 livello A1, Edizione Hachette, 2008 : il libro dello studente con DVD-ROM + l’eserciziario. (Livre de l’élève avec CD-ROM A1 + Cahier des activités) [ISBN 9782011555489 + ISBN 9782011555496].",
+       "autori": null,
+       "editore": null,
+       "anno": 2008,
+       "edizione": null,
+       "isbn": "9782011555489",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": "Dal programma dell'a.a. 2021/22: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Testo adottato : Le nouveau TAXI!1 livello A1, Edizione Hachette, 2008 : il libro dello studente con DVD-ROM + l’eserciziario. (Livre de l’élève avec CD-ROM A1 + Cahier des activités) [ISBN 9782011555489 + ISBN 9782011555496]."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "units-l-33-economia-internazionale-e-mercati-finanziari-021ec",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/112587/2016/2?coorte=2022"
     },
     {
      "codice": "119EC",
@@ -32874,7 +32886,7 @@
    "url": "http://lauree.units.it/1-fisica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "011DF",
@@ -35377,7 +35389,7 @@
    "url": "https://lauree.units.it/1-fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1031ME",
@@ -37554,7 +37566,7 @@
    "url": "https://lauree.units.it/1-geologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "002MG",
@@ -39499,7 +39511,7 @@
    "url": "https://lauree.units.it/1-igiene-dentale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1031ME",
@@ -42313,7 +42325,7 @@
    "url": "https://lauree.units.it/it/0320106204800001-1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1031ME",
@@ -45196,7 +45208,7 @@
    "url": "https://lauree.units.it/1-infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1031ME",
@@ -49786,30 +49798,8 @@
    "url": "https://lauree.units.it/1-ingegneria-civile-ambientale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "135IN",
-     "nome": "Lingua Inglese (pari a Livello B2)",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118442/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "units-l-7-ingegneria-civile-e-ambientale-135in",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "001IN",
      "nome": "Analisi Matematica I",
@@ -50052,6 +50042,29 @@
      "modalita_esame": "orale",
      "id": "units-l-7-ingegneria-civile-e-ambientale-014in",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "135IN",
+     "nome": "Lingua Inglese (pari a Livello B2)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118442/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "units-l-7-ingegneria-civile-e-ambientale-135in",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/118442/2010/9999?coorte=2022"
     },
     {
      "codice": "129IN",
@@ -52472,30 +52485,8 @@
    "url": "https://lauree.units.it/1-ingegneria-elettronica-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "135IN",
-     "nome": "Lingua Inglese (pari a Livello B2)",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": true,
-     "curriculum": "BIOMEDICA, ELETTRONICA E INTERNET OF THINGS, INFORMATICA",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118442/2026/1?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "units-l-8-ingegneria-elettronica-e-informatica-135in",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "001IN",
      "nome": "Analisi Matematica I",
@@ -52738,6 +52729,29 @@
      "modalita_esame": "orale",
      "id": "units-l-8-ingegneria-elettronica-e-informatica-014in",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "135IN",
+     "nome": "Lingua Inglese (pari a Livello B2)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": "BIOMEDICA, ELETTRONICA E INTERNET OF THINGS, INFORMATICA",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118442/2026/1?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "units-l-8-ingegneria-elettronica-e-informatica-135in",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/118442/2016/5?coorte=2022"
     },
     {
      "codice": "176IN",
@@ -56380,53 +56394,6 @@
      "stato_esami": "completo"
     },
     {
-     "codice": "118IN",
-     "nome": "Precorso di Matematica",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "MAT/05",
-     "obbligatorio": false,
-     "curriculum": "comune",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/117474/2016/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Maurizio Trombetta. CORSO INTRODUTTIVO DI MATEMATICA.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2021/22: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Maurizio Trombetta. CORSO INTRODUTTIVO DI MATEMATICA."
-      },
-      {
-       "titolo": "Richard Courant; Herbert Robbins. CHE COS'E' LA MATEMATICA. Bollati Boringhieri.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2021/22: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": "Richard Courant; Herbert Robbins. CHE COS'E' LA MATEMATICA. Bollati Boringhieri."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "units-l-8-ingegneria-elettronica-e-informatica-118in",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "016MI",
      "nome": "Elettronica",
      "anno": null,
@@ -56633,6 +56600,54 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "118IN",
+     "nome": "Precorso di Matematica",
+     "anno": null,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "MAT/05",
+     "obbligatorio": false,
+     "curriculum": "comune",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/117474/2016/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Maurizio Trombetta. CORSO INTRODUTTIVO DI MATEMATICA.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2021/22: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Maurizio Trombetta. CORSO INTRODUTTIVO DI MATEMATICA."
+      },
+      {
+       "titolo": "Richard Courant; Herbert Robbins. CHE COS'E' LA MATEMATICA. Bollati Boringhieri.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2021/22: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": "Richard Courant; Herbert Robbins. CHE COS'E' LA MATEMATICA. Bollati Boringhieri."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "units-l-8-ingegneria-elettronica-e-informatica-118in",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2021/117474/2016/9999?coorte=2021"
+    },
+    {
      "codice": "142IN",
      "nome": "Reti di Calcolatori",
      "anno": null,
@@ -56777,30 +56792,8 @@
    "url": "https://lauree.units.it/1-ingegneria-industriale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "135IN",
-     "nome": "Lingua Inglese (pari a Livello B2)",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": true,
-     "curriculum": "ENERGIA ELETTRICA E DEI SISTEMI, GESTIONALE, MATERIALI E PROCESSI CHIMICI, MECCANICA",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118442/2026/1?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "units-l-9-ingegneria-industriale-135in",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "008IN",
      "nome": "Analisi Matematica I",
@@ -56948,6 +56941,29 @@
      "modalita_esame": "orale",
      "id": "units-l-9-ingegneria-industriale-004in",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "135IN",
+     "nome": "Lingua Inglese (pari a Livello B2)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": "ENERGIA ELETTRICA E DEI SISTEMI, GESTIONALE, MATERIALI E PROCESSI CHIMICI, MECCANICA",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118442/2026/1?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "units-l-9-ingegneria-industriale-135in",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/118442/2014/1?coorte=2022"
     },
     {
      "codice": "006IN",
@@ -60014,30 +60030,8 @@
    "url": "https://lauree.units.it/1-ingegneria-navale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "135IN",
-     "nome": "Lingua Inglese (pari a Livello B2)",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118442/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "units-l-9-ingegneria-navale-135in",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "008IN",
      "nome": "Analisi Matematica I",
@@ -60185,6 +60179,29 @@
      "modalita_esame": "orale",
      "id": "units-l-9-ingegneria-navale-004in",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "135IN",
+     "nome": "Lingua Inglese (pari a Livello B2)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118442/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "units-l-9-ingegneria-navale-135in",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/118442/2020/9999?coorte=2022"
     },
     {
      "codice": "129IN",
@@ -62681,7 +62698,7 @@
    "url": "https://lauree.units.it/1-ai-data-analytics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "285SM",
@@ -64827,7 +64844,7 @@
    "url": "https://lauree.units.it/1-lettere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "013LE",
@@ -71711,7 +71728,7 @@
    "url": "https://lauree.units.it/1-lingue-letterature-straniere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "270LE",
@@ -78031,7 +78048,7 @@
    "url": "https://lauree.units.it/1-logopedia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1022ME",
@@ -81748,7 +81765,7 @@
    "url": "https://lauree.units.it/1-matematica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "002MG",
@@ -84637,28 +84654,6 @@
      "modalita_esame": "orale"
     },
     {
-     "codice": "139SM",
-     "nome": "Introduzione alla Teoria delle Reti Neurali",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "FIS/01",
-     "obbligatorio": false,
-     "curriculum": "comune",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/114220/2017/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "units-l-35-matematica-139sm",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "244SM",
      "nome": "Corso Propedeutico",
      "anno": null,
@@ -84795,6 +84790,29 @@
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-l-35-matematica-264sm",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "139SM",
+     "nome": "Introduzione alla Teoria delle Reti Neurali",
+     "anno": null,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "FIS/01",
+     "obbligatorio": false,
+     "curriculum": "comune",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/114220/2017/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "units-l-35-matematica-139sm",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/114220/2017/9999?coorte=2022"
     },
     {
      "codice": "233SM",
@@ -85002,7 +85020,7 @@
    "url": "https://lauree.units.it/1-scienze-educazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "129SF",
@@ -88121,43 +88139,8 @@
    "url": "https://lauree.units.it/1-psicologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "059PS",
-     "nome": "Lingua Inglese (livello B2)",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "L-LIN/12",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/118829/2023/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": " English for Everyone, Grammatica Completa, Gribaudo Editore",
-       "autori": null,
-       "editore": "Gribaudo Editore",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2025/26 non riporta la bibliografia",
-       "citazione": " English for Everyone, Grammatica Completa, Gribaudo Editore"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "scritto",
-     "id": "units-l-24-scienze-e-tecniche-psicologiche-059ps",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "041PS",
      "nome": "Biologia e Genetica",
@@ -88440,6 +88423,42 @@
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-l-24-scienze-e-tecniche-psicologiche-066ps",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "059PS",
+     "nome": "Lingua Inglese (livello B2)",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/118829/2023/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": " English for Everyone, Grammatica Completa, Gribaudo Editore",
+       "autori": null,
+       "editore": "Gribaudo Editore",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2025/26 non riporta la bibliografia",
+       "citazione": " English for Everyone, Grammatica Completa, Gribaudo Editore"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "scritto",
+     "id": "units-l-24-scienze-e-tecniche-psicologiche-059ps",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/118829/2020/9999?coorte=2022"
     },
     {
      "codice": "042PS-3",
@@ -90014,41 +90033,6 @@
      "modalita_esame": "scritto"
     },
     {
-     "codice": "058PS",
-     "nome": "Lingua Inglese (liv. B1 Avanzato)",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "L-LIN/12",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/118827/2023/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": " English for Everyone, Grammatica Completa, Gribaudo Editore",
-       "autori": null,
-       "editore": "Gribaudo Editore",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
-       "citazione": " English for Everyone, Grammatica Completa, Gribaudo Editore"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "scritto e orale congiunti",
-     "id": "units-l-24-scienze-e-tecniche-psicologiche-058ps",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "062PS",
      "nome": "Lo Sviluppo Cognitivo Tipico e Atipico",
      "anno": null,
@@ -90194,6 +90178,42 @@
      "modalita_esame": "scritto",
      "id": "units-l-24-scienze-e-tecniche-psicologiche-018ps",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "058PS",
+     "nome": "Lingua Inglese (liv. B1 Avanzato)",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/118827/2023/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": " English for Everyone, Grammatica Completa, Gribaudo Editore",
+       "autori": null,
+       "editore": "Gribaudo Editore",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2024/25 non riporta la bibliografia",
+       "citazione": " English for Everyone, Grammatica Completa, Gribaudo Editore"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "scritto e orale congiunti",
+     "id": "units-l-24-scienze-e-tecniche-psicologiche-058ps",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/118827/2020/9999?coorte=2022"
     }
    ],
    "ammissione": {
@@ -90224,30 +90244,8 @@
    "url": "https://lauree.units.it/1-biologia-biotecnologie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "017SV",
-     "nome": "Lingua Inglese (liv. B1 Avanzato)",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": true,
-     "curriculum": "STB BIOTECNOLOGIE, STB SCIENZE BIOLOGICHE",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118122/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "units-l-13-l-2-scienze-e-tecnologie-biologiche-017sv",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "012SV",
      "nome": "Lingua Inglese (livello B2)",
@@ -90661,6 +90659,29 @@
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-l-13-l-2-scienze-e-tecnologie-biologiche-011sm",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "017SV",
+     "nome": "Lingua Inglese (liv. B1 Avanzato)",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": "STB BIOTECNOLOGIE, STB SCIENZE BIOLOGICHE",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118122/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "units-l-13-l-2-scienze-e-tecnologie-biologiche-017sv",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/118122/2021/9999?coorte=2022"
     },
     {
      "codice": "025SV",
@@ -91110,89 +91131,6 @@
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-l-13-l-2-scienze-e-tecnologie-biologiche-192sm",
      "stato_esami": "completo"
-    },
-    {
-     "codice": "022FA",
-     "nome": "Igiene",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "MED/42",
-     "obbligatorio": true,
-     "curriculum": "BIOTECNOLOGIE, SCIENZE BIOLOGICHE",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/115218/2023/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Igiene, Medicina Preventiva e Sanità Pubblica. Ricciardi W., Boccia S. et al., Ed. Idelson-Gnocchi 2021.",
-       "autori": null,
-       "editore": "Ed. Idelson-Gnocchi 2021",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Igiene, Medicina Preventiva e Sanità Pubblica. Ricciardi W., Boccia S. et al., Ed. Idelson-Gnocchi 2021."
-      },
-      {
-       "titolo": "Igiene, Medicina Preventiva e Sanità Pubblica. Barbuti S et al., Ed. Edises 2022",
-       "autori": null,
-       "editore": "Ed. Edises 2022",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Igiene, Medicina Preventiva e Sanità Pubblica. Barbuti S et al., Ed. Edises 2022"
-      },
-      {
-       "titolo": "Igiene, Medicina Preventiva e Sanità Pubblica. Marinelli P., Liguori G. et al. Ed. Piccin 2002.",
-       "autori": null,
-       "editore": "Liguori G. et al. Ed. Piccin 2002",
-       "anno": 2002,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Igiene, Medicina Preventiva e Sanità Pubblica. Marinelli P., Liguori G. et al. Ed. Piccin 2002."
-      },
-      {
-       "titolo": "Igiene. Meloni C.- Pelissero G. Casa ed. Ambrosiana 2007.",
-       "autori": null,
-       "editore": "Igiene. Meloni C.- Pelissero G. Casa ed. Ambrosiana 2007",
-       "anno": 2007,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Igiene. Meloni C.- Pelissero G. Casa ed. Ambrosiana 2007."
-      },
-      {
-       "titolo": "Igiene per le lauree delle professioni sanitarie. Meloni C. et al. Casa ed. Ambrosiana 2009.",
-       "autori": null,
-       "editore": null,
-       "anno": 2009,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Igiene per le lauree delle professioni sanitarie. Meloni C. et al. Casa ed. Ambrosiana 2009."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "units-l-13-l-2-scienze-e-tecnologie-biologiche-022fa",
-     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "PFINE",
@@ -91665,6 +91603,90 @@
      "stato_libri": "completo",
      "stato_esami": "completo",
      "modalita_esame": "scritto"
+    },
+    {
+     "codice": "022FA",
+     "nome": "Igiene",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "MED/42",
+     "obbligatorio": true,
+     "curriculum": "BIOTECNOLOGIE, SCIENZE BIOLOGICHE",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/115218/2023/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Igiene, Medicina Preventiva e Sanità Pubblica. Ricciardi W., Boccia S. et al., Ed. Idelson-Gnocchi 2021.",
+       "autori": null,
+       "editore": "Ed. Idelson-Gnocchi 2021",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Igiene, Medicina Preventiva e Sanità Pubblica. Ricciardi W., Boccia S. et al., Ed. Idelson-Gnocchi 2021."
+      },
+      {
+       "titolo": "Igiene, Medicina Preventiva e Sanità Pubblica. Barbuti S et al., Ed. Edises 2022",
+       "autori": null,
+       "editore": "Ed. Edises 2022",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Igiene, Medicina Preventiva e Sanità Pubblica. Barbuti S et al., Ed. Edises 2022"
+      },
+      {
+       "titolo": "Igiene, Medicina Preventiva e Sanità Pubblica. Marinelli P., Liguori G. et al. Ed. Piccin 2002.",
+       "autori": null,
+       "editore": "Liguori G. et al. Ed. Piccin 2002",
+       "anno": 2002,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Igiene, Medicina Preventiva e Sanità Pubblica. Marinelli P., Liguori G. et al. Ed. Piccin 2002."
+      },
+      {
+       "titolo": "Igiene. Meloni C.- Pelissero G. Casa ed. Ambrosiana 2007.",
+       "autori": null,
+       "editore": "Igiene. Meloni C.- Pelissero G. Casa ed. Ambrosiana 2007",
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Igiene. Meloni C.- Pelissero G. Casa ed. Ambrosiana 2007."
+      },
+      {
+       "titolo": "Igiene per le lauree delle professioni sanitarie. Meloni C. et al. Casa ed. Ambrosiana 2009.",
+       "autori": null,
+       "editore": null,
+       "anno": 2009,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Igiene per le lauree delle professioni sanitarie. Meloni C. et al. Casa ed. Ambrosiana 2009."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "units-l-13-l-2-scienze-e-tecnologie-biologiche-022fa",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/115218/2023/9999?coorte=2023"
     },
     {
      "codice": "210SM",
@@ -92370,7 +92392,7 @@
    "url": "https://lauree.units.it/it/0320106203200001",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "019SV",
@@ -94688,7 +94710,7 @@
    "url": "https://lauree.units.it/1-scienze-internazionali-diplomatiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "596SP",
@@ -96855,7 +96877,7 @@
    "url": "https://lauree.units.it/1-scienze-politiche-amministrazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "104SP",
@@ -99811,7 +99833,7 @@
    "url": "https://lauree.units.it/1-servizio-sociale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "298SF",
@@ -102157,7 +102179,7 @@
    "url": "https://lauree.units.it/1-statistica-finanza-assicurazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "645EC",
@@ -102761,165 +102783,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "621EC",
-     "nome": "Apprendimento Statistico e Machine Learning",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 9,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2028/119313/2026/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "James G., Witten D. , Hastie T, Tibshirani R",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27: la scheda non è pubblicata nel catalogo",
-       "citazione": "James G., Witten D. , Hastie T, Tibshirani R"
-      },
-      {
-       "titolo": "An Introduction to Statistical Learning, Second Edition. Springer 2021. (testo iprincipale) Può essere scaricato liberamente da",
-       "autori": null,
-       "editore": null,
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27: la scheda non è pubblicata nel catalogo",
-       "citazione": "An Introduction to Statistical Learning, Second Edition. Springer 2021. (testo iprincipale) Può essere scaricato liberamente da"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "id": "units-l-41-statistica-per-lassicurazione-e-business-analytics-621ec",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "023EC",
-     "nome": "Business English",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 5,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2028/112731/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "id": "units-l-41-statistica-per-lassicurazione-e-business-analytics-023ec",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "058EC",
-     "nome": "Demografia",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2028/113309/2026/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Introduzione alla demografia",
-       "autori": "M. Livi Bacci",
-       "editore": "Loescher Editore",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda non è pubblicata nel catalogo",
-       "citazione": "M. Livi Bacci, “Introduzione alla demografia”, Loescher Editore."
-      },
-      {
-       "titolo": "Demography. Measuring and Modeling Population Processes",
-       "autori": "S. Preston, P. Heuveline, M. Guillot",
-       "editore": "John Wiley and Sons Ltd",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda non è pubblicata nel catalogo",
-       "citazione": "S. Preston, P. Heuveline, M. Guillot, “Demography. Measuring and Modeling Population Processes”, John Wiley and Sons Ltd."
-      },
-      {
-       "titolo": "Hunt, A. and Blake, D. (2014). A General Procedure for Constructing Mortality Models. North American Actuarial Journal, 18(1): 116–138.",
-       "autori": null,
-       "editore": null,
-       "anno": 2014,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda non è pubblicata nel catalogo",
-       "citazione": "Hunt, A. and Blake, D. (2014). A General Procedure for Constructing Mortality Models. North American Actuarial Journal, 18(1): 116–138."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "id": "units-l-41-statistica-per-lassicurazione-e-business-analytics-058ec",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "655EC",
-     "nome": "Economia delle Assicurazioni e Politiche di Welfare",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": "PERCORSO \"FINANZA, ASSICURAZIONE E RISK MANAGEMENT\"",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2028/120784/2026/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Insurance Economics",
-       "autori": "Peter Zweifel, Roland Eisen, David L. Eckles 2021",
-       "editore": null,
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27: la scheda non è pubblicata nel catalogo",
-       "citazione": "Peter Zweifel, Roland Eisen, David L. Eckles 2021. \"Insurance Economics”. II Edition. Springer Texts in Business and Economics, Springer. Capitoli: 1,2,3,6,7,8"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "id": "units-l-41-statistica-per-lassicurazione-e-business-analytics-655ec",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "148EC",
      "nome": "Finanza Quantitativa",
      "anno": 3,
@@ -103130,99 +102993,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "055EC",
-     "nome": "Serie Storiche Economiche",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2028/113312/2026/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Parte I: Giovannini E. (2006) Le statistiche economiche, Il Mulino.",
-       "autori": null,
-       "editore": "Il Mulino",
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27: la scheda non è pubblicata nel catalogo",
-       "citazione": "Parte I: Giovannini E. (2006) Le statistiche economiche, Il Mulino."
-      },
-      {
-       "titolo": "Parte II: Di Fonzo T., Lisi F. (2012) Serie storiche economiche, Carocci.",
-       "autori": null,
-       "editore": "Carocci",
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27: la scheda non è pubblicata nel catalogo",
-       "citazione": "Parte II: Di Fonzo T., Lisi F. (2012) Serie storiche economiche, Carocci."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-05",
-       "ora": "11:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-26",
-       "iscrizioni_al": "2026-10-30",
-       "docenti": "MILLO GIOVANNI",
-       "note": null,
-       "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "id": "units-l-41-statistica-per-lassicurazione-e-business-analytics-055ec",
-     "stato_libri": "completo",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "569EC",
-     "nome": "Statistical Methods With Application To Finance",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": "PERCORSO \"FINANZA, ASSICURAZIONE E RISK MANAGEMENT\"",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2028/117132/2026/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "J. Danielsson (2011) Financial Risk Forecasting, Wiley Finance R.S. Tsay (2013) An introduction to the analysis of financial data with R, Wiley and Sons D. Ruppert, D.S. Matteson (2015), Statistics and Data Analysis for Financial Engineering, 2nd edition, Springer (supplementary reading) Additional",
-       "autori": null,
-       "editore": null,
-       "anno": 2015,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": "Dal programma dell'a.a. 2026/27: la scheda non è pubblicata nel catalogo",
-       "citazione": "J. Danielsson (2011) Financial Risk Forecasting, Wiley Finance R.S. Tsay (2013) An introduction to the analysis of financial data with R, Wiley and Sons D. Ruppert, D.S. Matteson (2015), Statistics and Data Analysis for Financial Engineering, 2nd edition, Springer (supplementary reading) Additional material (slides, exercises, recordings) will be available via the Moodle page of the course."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "id": "units-l-41-statistica-per-lassicurazione-e-business-analytics-569ec",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "150EC",
      "nome": "Strategia di Raccolta e Analisi dei Dati e Inferenza Causale",
      "anno": 3,
@@ -103284,6 +103054,264 @@
      "id": "units-l-41-statistica-per-lassicurazione-e-business-analytics-552ec",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "621EC",
+     "nome": "Apprendimento Statistico e Machine Learning",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2028/119313/2026/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "James G., Witten D. , Hastie T, Tibshirani R",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27: la scheda non è pubblicata nel catalogo",
+       "citazione": "James G., Witten D. , Hastie T, Tibshirani R"
+      },
+      {
+       "titolo": "An Introduction to Statistical Learning, Second Edition. Springer 2021. (testo iprincipale) Può essere scaricato liberamente da",
+       "autori": null,
+       "editore": null,
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27: la scheda non è pubblicata nel catalogo",
+       "citazione": "An Introduction to Statistical Learning, Second Edition. Springer 2021. (testo iprincipale) Può essere scaricato liberamente da"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "id": "units-l-41-statistica-per-lassicurazione-e-business-analytics-621ec",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/119313/2023/2?coorte=2024"
+    },
+    {
+     "codice": "055EC",
+     "nome": "Serie Storiche Economiche",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2028/113312/2026/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Parte I: Giovannini E. (2006) Le statistiche economiche, Il Mulino.",
+       "autori": null,
+       "editore": "Il Mulino",
+       "anno": 2006,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27: la scheda non è pubblicata nel catalogo",
+       "citazione": "Parte I: Giovannini E. (2006) Le statistiche economiche, Il Mulino."
+      },
+      {
+       "titolo": "Parte II: Di Fonzo T., Lisi F. (2012) Serie storiche economiche, Carocci.",
+       "autori": null,
+       "editore": "Carocci",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27: la scheda non è pubblicata nel catalogo",
+       "citazione": "Parte II: Di Fonzo T., Lisi F. (2012) Serie storiche economiche, Carocci."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-26",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": "MILLO GIOVANNI",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "id": "units-l-41-statistica-per-lassicurazione-e-business-analytics-055ec",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/113312/2016/1?coorte=2024"
+    },
+    {
+     "codice": "023EC",
+     "nome": "Business English",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 5,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2028/112731/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "id": "units-l-41-statistica-per-lassicurazione-e-business-analytics-023ec",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/112731/2016/9999?coorte=2022"
+    },
+    {
+     "codice": "058EC",
+     "nome": "Demografia",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2028/113309/2026/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Introduzione alla demografia",
+       "autori": "M. Livi Bacci",
+       "editore": "Loescher Editore",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda non è pubblicata nel catalogo",
+       "citazione": "M. Livi Bacci, “Introduzione alla demografia”, Loescher Editore."
+      },
+      {
+       "titolo": "Demography. Measuring and Modeling Population Processes",
+       "autori": "S. Preston, P. Heuveline, M. Guillot",
+       "editore": "John Wiley and Sons Ltd",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda non è pubblicata nel catalogo",
+       "citazione": "S. Preston, P. Heuveline, M. Guillot, “Demography. Measuring and Modeling Population Processes”, John Wiley and Sons Ltd."
+      },
+      {
+       "titolo": "Hunt, A. and Blake, D. (2014). A General Procedure for Constructing Mortality Models. North American Actuarial Journal, 18(1): 116–138.",
+       "autori": null,
+       "editore": null,
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda non è pubblicata nel catalogo",
+       "citazione": "Hunt, A. and Blake, D. (2014). A General Procedure for Constructing Mortality Models. North American Actuarial Journal, 18(1): 116–138."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "id": "units-l-41-statistica-per-lassicurazione-e-business-analytics-058ec",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/113309/2016/9999?coorte=2024"
+    },
+    {
+     "codice": "655EC",
+     "nome": "Economia delle Assicurazioni e Politiche di Welfare",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "PERCORSO \"FINANZA, ASSICURAZIONE E RISK MANAGEMENT\"",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2028/120784/2026/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Insurance Economics",
+       "autori": "Peter Zweifel, Roland Eisen, David L. Eckles 2021",
+       "editore": null,
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27: la scheda non è pubblicata nel catalogo",
+       "citazione": "Peter Zweifel, Roland Eisen, David L. Eckles 2021. \"Insurance Economics”. II Edition. Springer Texts in Business and Economics, Springer. Capitoli: 1,2,3,6,7,8"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "id": "units-l-41-statistica-per-lassicurazione-e-business-analytics-655ec",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/120784/2016/1?coorte=2024"
+    },
+    {
+     "codice": "569EC",
+     "nome": "Statistical Methods With Application To Finance",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "PERCORSO \"FINANZA, ASSICURAZIONE E RISK MANAGEMENT\"",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2028/117132/2026/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "J. Danielsson (2011) Financial Risk Forecasting, Wiley Finance R.S. Tsay (2013) An introduction to the analysis of financial data with R, Wiley and Sons D. Ruppert, D.S. Matteson (2015), Statistics and Data Analysis for Financial Engineering, 2nd edition, Springer (supplementary reading) Additional",
+       "autori": null,
+       "editore": null,
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dal programma dell'a.a. 2026/27: la scheda non è pubblicata nel catalogo",
+       "citazione": "J. Danielsson (2011) Financial Risk Forecasting, Wiley Finance R.S. Tsay (2013) An introduction to the analysis of financial data with R, Wiley and Sons D. Ruppert, D.S. Matteson (2015), Statistics and Data Analysis for Financial Engineering, 2nd edition, Springer (supplementary reading) Additional material (slides, exercises, recordings) will be available via the Moodle page of the course."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "id": "units-l-41-statistica-per-lassicurazione-e-business-analytics-569ec",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/117132/2016/3?coorte=2024"
     }
    ],
    "curricula": [
@@ -103318,7 +103346,7 @@
    "url": "https://lauree.units.it/1-psichiatria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1031ME",
@@ -105823,7 +105851,7 @@
    "url": "https://lauree.units.it/1-prevenzione-lavoro",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1028ME",
@@ -108244,7 +108272,7 @@
    "url": "https://corsi.units.it/me13/tecniche-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1143ME",
@@ -108939,27 +108967,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "476ME",
-     "nome": "Laboratorio 2",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 1,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2027/117837/2026/9999?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "id": "units-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession-476me",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "1348ME",
      "nome": "Scienze Cliniche",
      "anno": 2,
@@ -109000,6 +109007,28 @@
      "id": "units-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession-339me",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "476ME",
+     "nome": "Laboratorio 2",
+     "anno": 2,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 1,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2027/117837/2026/9999?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "id": "units-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession-476me",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/117837/2015/9999?coorte=2024"
     },
     {
      "codice": "PFINE",
@@ -109738,7 +109767,7 @@
    "url": "https://corsi.units.it/me14/tecniche-radiologia-medica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1022ME",
@@ -110653,74 +110682,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "503ME",
-     "nome": "Diagnostica per Immagini in Rm",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 7,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2027/117803/2026/9999?coorte=2025",
-     "libri": [
-      {
-       "titolo": "Basi Fisiche della Risonanza Magnetica A.Desgrez, J.Bittoun, I.Idy-Peretti, Masson, Milano, 1992 The Essential Physics of Medical Imaging J.T. Bushberg, J.A. Seibert, E. M. Leidholdt Jr, J. M. Boone Wolters Kluwer Health, 4th Edition, 2020",
-       "autori": null,
-       "editore": "J. M. Boone Wolters Kluwer Health",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda non è pubblicata nel catalogo",
-       "citazione": "Basi Fisiche della Risonanza Magnetica A.Desgrez, J.Bittoun, I.Idy-Peretti, Masson, Milano, 1992 The Essential Physics of Medical Imaging J.T. Bushberg, J.A. Seibert, E. M. Leidholdt Jr, J. M. Boone Wolters Kluwer Health, 4th Edition, 2020"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "id": "units-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-503me",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "504ME",
-     "nome": "Diagnostica per Immagini in Tc",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 7,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2027/117804/2026/9999?coorte=2025",
-     "libri": [
-      {
-       "titolo": "Golfieri R et al., Manuale di TC per TSRM, Poletto Editore",
-       "autori": null,
-       "editore": "Poletto Editore",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda non è pubblicata nel catalogo",
-       "citazione": "Golfieri R et al., Manuale di TC per TSRM, Poletto Editore"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "id": "units-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-504me",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "1124ME",
      "nome": "Il Tirocinio Curricolare Nelle Grandi Macchine (tc/rm)",
      "anno": 2,
@@ -110763,10 +110724,31 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "1125ME",
+     "nome": "Tirocinio II",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 28,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2027/120856/2026/9999?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "id": "units-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1125me",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "1122ME",
      "nome": "Mezzi di Contrasto in Diagnostica per Immagini",
      "anno": 2,
-     "periodo": null,
+     "periodo": "1",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 5,
@@ -110855,13 +110837,14 @@
      "verificato_il": "2026-10-13",
      "id": "units-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1122me",
      "stato_libri": "completo",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/120853/2024/9999?coorte=2024"
     },
     {
      "codice": "1123ME",
      "nome": "Tecniche di Diagnostica per Immagini Specialistiche",
      "anno": 2,
-     "periodo": null,
+     "periodo": "1",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
@@ -110901,28 +110884,78 @@
      "verificato_il": "2026-10-13",
      "id": "units-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1123me",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/120854/2024/9999?coorte=2024"
     },
     {
-     "codice": "1125ME",
-     "nome": "Tirocinio II",
+     "codice": "503ME",
+     "nome": "Diagnostica per Immagini in Rm",
      "anno": 2,
-     "periodo": null,
+     "periodo": "annuale",
      "periodo_inizio": null,
      "periodo_fine": null,
-     "cfu": 28,
+     "cfu": 7,
      "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2027/120856/2026/9999?coorte=2025",
-     "libri": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2027/117803/2026/9999?coorte=2025",
+     "libri": [
+      {
+       "titolo": "Basi Fisiche della Risonanza Magnetica A.Desgrez, J.Bittoun, I.Idy-Peretti, Masson, Milano, 1992 The Essential Physics of Medical Imaging J.T. Bushberg, J.A. Seibert, E. M. Leidholdt Jr, J. M. Boone Wolters Kluwer Health, 4th Edition, 2020",
+       "autori": null,
+       "editore": "J. M. Boone Wolters Kluwer Health",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda non è pubblicata nel catalogo",
+       "citazione": "Basi Fisiche della Risonanza Magnetica A.Desgrez, J.Bittoun, I.Idy-Peretti, Masson, Milano, 1992 The Essential Physics of Medical Imaging J.T. Bushberg, J.A. Seibert, E. M. Leidholdt Jr, J. M. Boone Wolters Kluwer Health, 4th Edition, 2020"
+      }
+     ],
      "esami": [],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
-     "id": "units-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1125me",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "id": "units-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-503me",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/117803/2024/9999?coorte=2024"
+    },
+    {
+     "codice": "504ME",
+     "nome": "Diagnostica per Immagini in Tc",
+     "anno": 2,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 7,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2027/117804/2026/9999?coorte=2025",
+     "libri": [
+      {
+       "titolo": "Golfieri R et al., Manuale di TC per TSRM, Poletto Editore",
+       "autori": null,
+       "editore": "Poletto Editore",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda non è pubblicata nel catalogo",
+       "citazione": "Golfieri R et al., Manuale di TC per TSRM, Poletto Editore"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "id": "units-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-504me",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/117804/2024/9999?coorte=2024"
     },
     {
      "codice": "PFINE",
@@ -111591,7 +111624,7 @@
    "url": "https://lauree.units.it/2-biotecnologie-mediche-diagnostiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "981SV",
@@ -113349,7 +113382,7 @@
    "url": "https://lauree.units.it/2-chimica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "056CM",
@@ -115720,7 +115753,7 @@
    "url": "https://degree.units.it/2-computer-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "502MI",
@@ -117834,7 +117867,7 @@
    "url": "https://lauree.units.it/2-servizi-educativi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "174LM",
@@ -118970,7 +119003,7 @@
    "url": "https://degree.units.it/2-data-science-ai",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "579SM",
@@ -121653,41 +121686,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "372SM",
-     "nome": "Data Science For Insurance",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "SECS-S/01",
-     "obbligatorio": false,
-     "curriculum": "DATA SCIENCE AND ARTIFICIAL INTELLIGENCE FOR ECONOMY AND SOCIETY",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/119095/2025/3?coorte=2025",
-     "libri": [
-      {
-       "titolo": "J. McNeil, R. Frey, and P. Embrechts, “Quantitative Risk Management: Concepts, Techniques and Tools’’ (2015), Revised Edition, Princeton Series in Finance",
-       "autori": null,
-       "editore": "Princeton Series in Finance",
-       "anno": 2015,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
-       "citazione": "J. McNeil, R. Frey, and P. Embrechts, “Quantitative Risk Management: Concepts, Techniques and Tools’’ (2015), Revised Edition, Princeton Series in Finance"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "units-lm-data-data-science-and-artificial-intelligence-372sm",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "483SM",
      "nome": "Preparatory Course",
      "anno": null,
@@ -121723,6 +121721,42 @@
      "modalita_esame": "orale",
      "id": "units-lm-data-data-science-and-artificial-intelligence-483sm",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "372SM",
+     "nome": "Data Science For Insurance",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "SECS-S/01",
+     "obbligatorio": false,
+     "curriculum": "DATA SCIENCE AND ARTIFICIAL INTELLIGENCE FOR ECONOMY AND SOCIETY",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/119095/2025/3?coorte=2025",
+     "libri": [
+      {
+       "titolo": "J. McNeil, R. Frey, and P. Embrechts, “Quantitative Risk Management: Concepts, Techniques and Tools’’ (2015), Revised Edition, Princeton Series in Finance",
+       "autori": null,
+       "editore": "Princeton Series in Finance",
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
+       "citazione": "J. McNeil, R. Frey, and P. Embrechts, “Quantitative Risk Management: Concepts, Techniques and Tools’’ (2015), Revised Edition, Princeton Series in Finance"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "units-lm-data-data-science-and-artificial-intelligence-372sm",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/119095/2023/4?coorte=2024"
     }
    ],
    "curricula": [
@@ -121760,7 +121794,7 @@
    "url": "https://lauree.units.it/2-diplomazia-cooperazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "633SP",
@@ -124097,7 +124131,7 @@
    "url": "https://lauree.units.it/2-ecologia-sostenibilita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "949SV",
@@ -125910,7 +125944,7 @@
    "url": "https://lauree.units.it/2-economia-ambiente-sviluppo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "658EC",
@@ -126454,28 +126488,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-56-economia-ambiente-e-sviluppo-552ec",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "570EC",
-     "nome": "Traineeship",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": "ENVIRONMENTAL ECONOMICS",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/117133/2025/2?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "units-lm-56-economia-ambiente-e-sviluppo-570ec",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -127811,6 +127823,29 @@
      "modalita_esame": "scritto",
      "id": "units-lm-56-economia-ambiente-e-sviluppo-635ec",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "570EC",
+     "nome": "Traineeship",
+     "anno": 2,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": "ENVIRONMENTAL ECONOMICS",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/117133/2025/2?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "units-lm-56-economia-ambiente-e-sviluppo-570ec",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/117133/2016/3?coorte=2022"
     }
    ],
    "curricula": [
@@ -127845,7 +127880,7 @@
    "url": "https://degree.units.it/2-engineering-energy-transition",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "587MI",
@@ -130342,7 +130377,7 @@
    "url": "https://degree.units.it/2-digital-ecological-social-transition",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "189SP",
@@ -131709,7 +131744,7 @@
    "url": "https://lauree.units.it/2-filosofia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "270LE",
@@ -133501,7 +133536,7 @@
    "url": "http://lauree.units.it/2-fisica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "973MG",
@@ -139192,7 +139227,7 @@
    "url": "https://lauree.units.it/2-genomica-funzionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "981SV",
@@ -140638,7 +140673,7 @@
    "url": "https://degree.units.it/2-geophysics-geodata",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "394SM",
@@ -144520,7 +144555,7 @@
    "url": "https://lauree.units.it/2-geoscienze",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "408SM",
@@ -147430,7 +147465,7 @@
    "url": "https://lauree.units.it/2-ingegneria-civile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "476MI",
@@ -149731,7 +149766,7 @@
    "url": "https://lauree.units.it/2-ingegneria-clinica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "395MI-1",
@@ -151666,7 +151701,7 @@
    "url": "https://lauree.units.it/2-ingegneria-energia-sistemi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "454MI",
@@ -155134,7 +155169,7 @@
    "url": "https://lauree.units.it/2-ingegneria-meccanica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "499MI",
@@ -157213,7 +157248,7 @@
    "url": "https://lauree.units.it/2-ingegneria-navale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "381MI",
@@ -158756,7 +158791,7 @@
    "url": "https://lauree.units.it/2-lingue-letterature-straniere-turismo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "271LE",
@@ -163391,7 +163426,7 @@
    "url": "https://lauree.units.it/2-marketing-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "624EC",
@@ -164778,7 +164813,7 @@
    "url": "https://degree.units.it/2-materials-chemical-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "569MI",
@@ -165343,28 +165378,6 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-22-lm-53-materials-and-chemical-engineering-for-nano-bio-and-sustaina-563mi",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "425MI",
-     "nome": "Lingua Italiana",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 3,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/119460/2025/1?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "units-lm-22-lm-53-materials-and-chemical-engineering-for-nano-bio-and-sustaina-425mi",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -167610,6 +167623,29 @@
      "modalita_esame": "orale",
      "id": "units-lm-22-lm-53-materials-and-chemical-engineering-for-nano-bio-and-sustaina-419mi-2",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "425MI",
+     "nome": "Lingua Italiana",
+     "anno": 2,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/119460/2025/1?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "units-lm-22-lm-53-materials-and-chemical-engineering-for-nano-bio-and-sustaina-425mi",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/119460/2022/9999?coorte=2022"
     }
    ],
    "curricula": [
@@ -167646,7 +167682,7 @@
    "url": "https://degree.units.it/2-mathematics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "538SM",
@@ -171473,7 +171509,7 @@
    "url": "https://degree.units.it/2-neurosciences",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "600SM",
@@ -173103,7 +173139,7 @@
    "url": "https://lauree.units.it/2-psicologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "923PS",
@@ -174694,7 +174730,7 @@
    "url": "https://lauree.units.it/it/0320107335200001",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "913PS-2",
@@ -177086,7 +177122,7 @@
    "url": "https://lauree.units.it/2-scienze-governo-politiche-pubbliche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "138SP",
@@ -179339,7 +179375,7 @@
    "url": "https://lauree.units.it/2-scienze-marine-costiere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "919SM",
@@ -181190,7 +181226,7 @@
    "url": "https://lauree.units.it/it/0320107311000002",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1156ME",
@@ -181988,7 +182024,7 @@
    "url": "https://lauree.units.it/2-statistica-attuariale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "621EC",
@@ -182342,41 +182378,6 @@
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-lm-83-scienze-statistiche-e-attuariali-556ec",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "372SM",
-     "nome": "Data Science For Insurance",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "SECS-S/01",
-     "obbligatorio": false,
-     "curriculum": "DATA SCIENCE PER L'ASSICURAZIONE E LA FINANZA",
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/119095/2025/2?coorte=2025",
-     "libri": [
-      {
-       "titolo": "J. McNeil, R. Frey, and P. Embrechts, “Quantitative Risk Management: Concepts, Techniques and Tools’’ (2015), Revised Edition, Princeton Series in Finance",
-       "autori": null,
-       "editore": "Princeton Series in Finance",
-       "anno": 2015,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
-       "citazione": "J. McNeil, R. Frey, and P. Embrechts, “Quantitative Risk Management: Concepts, Techniques and Tools’’ (2015), Revised Edition, Princeton Series in Finance"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "units-lm-83-scienze-statistiche-e-attuariali-372sm",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -183276,6 +183277,42 @@
      "modalita_esame": "orale",
      "id": "units-lm-83-scienze-statistiche-e-attuariali-639ec",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "372SM",
+     "nome": "Data Science For Insurance",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "SECS-S/01",
+     "obbligatorio": false,
+     "curriculum": "DATA SCIENCE PER L'ASSICURAZIONE E LA FINANZA",
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/119095/2025/2?coorte=2025",
+     "libri": [
+      {
+       "titolo": "J. McNeil, R. Frey, and P. Embrechts, “Quantitative Risk Management: Concepts, Techniques and Tools’’ (2015), Revised Edition, Princeton Series in Finance",
+       "autori": null,
+       "editore": "Princeton Series in Finance",
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
+       "citazione": "J. McNeil, R. Frey, and P. Embrechts, “Quantitative Risk Management: Concepts, Techniques and Tools’’ (2015), Revised Edition, Princeton Series in Finance"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "units-lm-83-scienze-statistiche-e-attuariali-372sm",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/119095/2023/1?coorte=2025"
     },
     {
      "codice": "452SM",
@@ -184806,7 +184843,7 @@
    "url": "https://lauree.units.it/2-servizio-sociale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "289SF",
@@ -186079,7 +186116,7 @@
    "url": "https://lauree.units.it/2-strategia-consulenza-logistica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "624EC",
@@ -187631,7 +187668,7 @@
    "url": "https://lauree.units.it/2-storia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "PFIN",
@@ -193126,7 +193163,7 @@
    "url": "https://lauree.units.it/2-traduzione-interpretazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "293SL",
@@ -198670,7 +198707,7 @@
    "url": "https://lauree.units.it/1-architettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "004AR",
@@ -207292,28 +207329,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "023AR",
-     "nome": "Workshop Integrati di Progettazione",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 2,
-     "ssd": "ICAR/14",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/115236/2018/9999?coorte=2022",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "scritto e orale congiunti",
-     "id": "units-lm-4-c-u-architettura-023ar",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "048AR",
      "nome": "Disegno Industriale",
      "anno": null,
@@ -207507,6 +207522,29 @@
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-lm-4-c-u-architettura-038ar",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "023AR",
+     "nome": "Workshop Integrati di Progettazione",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 2,
+     "ssd": "ICAR/14",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/115236/2018/9999?coorte=2022",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "scritto e orale congiunti",
+     "id": "units-lm-4-c-u-architettura-023ar",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/115236/2018/9999?coorte=2022"
     },
     {
      "codice": "086AR",
@@ -208417,7 +208455,7 @@
    "url": "https://lauree.units.it/1-chimica-tecnologie-farmaceutiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "120FA",
@@ -212879,7 +212917,7 @@
    "url": "https://lauree.units.it/1-farmacia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "116FA",
@@ -217332,7 +217370,7 @@
    "url": "https://lauree.units.it/1-giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "004GI",
@@ -221359,7 +221397,7 @@
    "url": "https://lauree.units.it/1-medicina-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1224ME",
@@ -226754,30 +226792,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "977ME",
-     "nome": "Inglese",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 8,
-     "ssd": "L-LIN/12",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Filingeri Julia"
-     ],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/113429/2015/9999?coorte=2021",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "units-lm-41-medicina-e-chirurgia-977me",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "855ME",
      "nome": "Violenza Alle Donne ed Ai Minori: Una Questione di Salute Pubblica",
      "anno": null,
@@ -229635,6 +229649,31 @@
      "modalita_esame": "orale",
      "id": "units-lm-41-medicina-e-chirurgia-743me",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "977ME",
+     "nome": "Inglese",
+     "anno": null,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 8,
+     "ssd": "L-LIN/12",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Filingeri Julia"
+     ],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/113429/2015/9999?coorte=2021",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "units-lm-41-medicina-e-chirurgia-977me",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2021/113429/2015/9999?coorte=2021"
     }
    ],
    "ammissione": {
@@ -229665,7 +229704,7 @@
    "url": "https://lauree.units.it/1-odontoiatria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1268ME",
@@ -234729,7 +234768,7 @@
    "url": "https://lauree.units.it/1-formazione-primaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "328SF",
@@ -238766,53 +238805,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "412SF",
-     "nome": "Laboratorio di Lingua Inglese I Anno",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 2,
-     "ssd": "L-LIN/12",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2023/119471/2022/9999?coorte=2022",
-     "libri": [
-      {
-       "titolo": "Email English (2nd ed.)",
-       "autori": "Emmerson P.",
-       "editore": "Macmillan Publishers Limited",
-       "anno": 2013,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2023/24 non riporta la bibliografia",
-       "citazione": "Emmerson P. (2013) Email English (2nd ed.). London: Macmillan Publishers Limited (o edizioni successive)"
-      },
-      {
-       "titolo": "Grammar and Vocabulary for the Real World",
-       "autori": "J. Hird",
-       "editore": "Oxford University Press",
-       "anno": 2015,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2022/23: la scheda 2023/24 non riporta la bibliografia",
-       "citazione": "J. Hird, Grammar and Vocabulary for the Real World, Oxford University Press, 2015."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://units.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "units-lm-85-bis-scienze-della-formazione-primaria-412sf",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "419SF",
      "nome": "Laboratorio di Lingua Inglese II Anno",
      "anno": null,
@@ -238855,6 +238847,54 @@
      "modalita_esame": "orale",
      "id": "units-lm-85-bis-scienze-della-formazione-primaria-428sf",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "412SF",
+     "nome": "Laboratorio di Lingua Inglese I Anno",
+     "anno": null,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 2,
+     "ssd": "L-LIN/12",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2023/119471/2022/9999?coorte=2022",
+     "libri": [
+      {
+       "titolo": "Email English (2nd ed.)",
+       "autori": "Emmerson P.",
+       "editore": "Macmillan Publishers Limited",
+       "anno": 2013,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2023/24 non riporta la bibliografia",
+       "citazione": "Emmerson P. (2013) Email English (2nd ed.). London: Macmillan Publishers Limited (o edizioni successive)"
+      },
+      {
+       "titolo": "Grammar and Vocabulary for the Real World",
+       "autori": "J. Hird",
+       "editore": "Oxford University Press",
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2022/23: la scheda 2023/24 non riporta la bibliografia",
+       "citazione": "J. Hird, Grammar and Vocabulary for the Real World, Oxford University Press, 2015."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://units.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "units-lm-85-bis-scienze-della-formazione-primaria-412sf",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/119471/2022/9999?coorte=2022"
     },
     {
      "codice": "OFA-SF10",

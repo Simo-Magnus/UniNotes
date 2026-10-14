@@ -181,9 +181,8 @@ void main() {
     // niente card delle sessioni d'esame
     expect(find.text("Sessioni d'esame"), findsNothing);
     expect(find.text('Calendario delle sessioni'), findsNothing);
-    final booked = (await tester.runAsync(s.exams.all))!.singleWhere(
-      (e) => e.status == ExamStatus.booked,
-    );
+    final booked = (await tester.runAsync(s.exams.all))!
+        .singleWhere((e) => e.status == ExamStatus.booked);
     await tester.tap(find.byKey(ValueKey('exam-status-${booked.id}')));
     await tester.pumpAndSettle();
     // due sole scelte
@@ -200,9 +199,8 @@ void main() {
     expect(after.status, ExamStatus.taken);
 
     // dettaglio: niente «Modifica», argomenti modificabili toccandoli
-    final midterm = (await tester.runAsync(s.exams.all))!.singleWhere(
-      (e) => e.kind == ExamKind.midterm,
-    );
+    final midterm = (await tester.runAsync(s.exams.all))!
+        .singleWhere((e) => e.kind == ExamKind.midterm);
     await _pump(
       tester,
       s,
@@ -225,6 +223,57 @@ void main() {
     }
     final edited = (await tester.runAsync(() => s.exams.byId(midterm.id!)))!;
     expect(edited.topics, 'Integrali');
+    await tester.runAsync(() => s.database.close());
+  });
+
+  testWidgets('Esami: argomenti e materiali riempiti dal database', (
+    tester,
+  ) async {
+    final s = (await tester.runAsync(_seed))!;
+    final courseId = (await tester.runAsync(s.courses.all))!.first.id!;
+    // esame finale come lo crea il catalogo (catalogToDataPack)
+    final id = (await tester.runAsync(
+      () => s.exams.save(
+        Exam(
+          courseId: courseId,
+          externalId: 'polito:exam:01rkcpl',
+          topics:
+              '• Limiti: Limiti di funzioni, Successioni\n'
+              '• Derivate\n'
+              '• Integrali: Integrale di Riemann',
+          studyMaterials: const [
+            'Bramanti, Pagani, Salsa — Analisi Matematica 1 (Zanichelli, 2014)',
+            'Esercizi di Analisi',
+          ],
+        ),
+      ),
+    ))!;
+    await _pump(
+      tester,
+      s,
+      Scaffold(body: ExamDetailView(examId: id)),
+      size: const Size(420, 1600),
+    );
+    expect(find.text('Argomenti'), findsOneWidget);
+    expect(find.textContaining('• Limiti: Limiti di funzioni'), findsOneWidget);
+    expect(find.textContaining('• Derivate'), findsOneWidget);
+    expect(find.text('Tocca per aggiungere gli argomenti.'), findsNothing);
+    expect(find.text('Materiali da studiare'), findsOneWidget);
+    expect(
+      find.text(
+        'Bramanti, Pagani, Salsa — Analisi Matematica 1 (Zanichelli, 2014)',
+      ),
+      findsOneWidget,
+    );
+    expect(find.text('Esercizi di Analisi'), findsOneWidget);
+    expect(find.text('Tocca per aggiungere i materiali.'), findsNothing);
+    // gli argomenti importati si modificano come quelli scritti a mano
+    await tester.tap(find.byKey(const Key('detail-topics')));
+    await tester.pump();
+    final field = tester.widget<TextField>(
+      find.byKey(const Key('detail-topics-field')),
+    );
+    expect(field.controller!.text, startsWith('• Limiti'));
     await tester.runAsync(() => s.database.close());
   });
 

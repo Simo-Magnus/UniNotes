@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unimore",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-13",
+ "aggiornato_il": "2026-10-14",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.dce.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/corso-di-laurea-analisi-dei-dati-limpresa-e-la",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA DCE",
@@ -1132,7 +1132,7 @@
    "url": "https://www.bmn.unimore.it/it/didattica/corsi-di-laurea/assistenza-sanitaria/homepage",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "AS_8",
@@ -2130,7 +2130,7 @@
    "url": "https://www.dsv.unimore.it/it/didattica/corsi-di-laurea-triennale/BIOTECH",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA-MAT",
@@ -4185,30 +4185,8 @@
    "url": "https://www.dscg.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/corso-di-laurea-chimica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "OFA",
-     "nome": "Verifica Preparazione Iniziale",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": "NN",
-     "obbligatorio": true,
-     "curriculum": "Curriculum applicativo APPROVATO, Curriculum applicativo DA APPROVARE, Curriculum metodologico APPROVATO, Curriculum metodologico DA APPROVARE, Percorso comune",
-     "docenti": [],
-     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/1?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unimore.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unimore-l-27-chimica-ofa",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "C210-006",
      "nome": "Introduzione al Laboratorio di Chimica",
@@ -4573,6 +4551,29 @@
      "modalita_esame": "orale",
      "id": "unimore-l-27-chimica-c210-005",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "OFA",
+     "nome": "Verifica Preparazione Iniziale",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": "NN",
+     "obbligatorio": true,
+     "curriculum": "Curriculum applicativo APPROVATO, Curriculum applicativo DA APPROVARE, Curriculum metodologico APPROVATO, Curriculum metodologico DA APPROVARE, Percorso comune",
+     "docenti": [],
+     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/1?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimore.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimore-l-27-chimica-ofa",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026"
     },
     {
      "codice": "MN2-09173",
@@ -5597,30 +5598,8 @@
    "url": "https://www.dscg.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/corso-di-laurea-chimica-verde-e-sostenibile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "OFA",
-     "nome": "Verifica Preparazione Iniziale",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": "NN",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unimore.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unimore-l-27-chimica-verde-e-sostenibile-ofa",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "CVS-0001",
      "nome": "Chimica Generale con Laboratorio",
@@ -6048,6 +6027,29 @@
      "modalita_esame": "orale",
      "id": "unimore-l-27-chimica-verde-e-sostenibile-cvs-0007",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "OFA",
+     "nome": "Verifica Preparazione Iniziale",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": "NN",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimore.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimore-l-27-chimica-verde-e-sostenibile-ofa",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026"
     },
     {
      "codice": "CVS-0009",
@@ -6920,7 +6922,7 @@
    "url": "https://www.bmn.unimore.it/it/didattica/corsi-di-laurea/dietistica/dietistica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "DIET270_05",
@@ -8431,13 +8433,13 @@
    "url": "http://www.digitaleducation.unimore.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "EDDE_43",
      "nome": "Obblighi Formativi Aggiuntivi (digital Education)",
      "anno": 1,
-     "periodo": null,
+     "periodo": "2",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 0,
@@ -8453,7 +8455,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "scritto",
      "id": "unimore-l-19-digital-education-edde-43",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2025/25922/2025/10002?coorte=2025"
     },
     {
      "codice": "83-312-001",
@@ -9573,7 +9576,7 @@
    "url": "https://www.dce.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/corso-di-laurea-digital-marketing-dm",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA-DCE",
@@ -10756,7 +10759,7 @@
    "url": "https://www.economia.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/economia-aziendale-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CLEAM-02",
@@ -13181,7 +13184,7 @@
    "url": "https://www.economia.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/economia-e-finanza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CLEF-02",
@@ -15870,7 +15873,7 @@
    "url": "https://www.economia.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/economia-e-marketing-internazionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CLEMI-07",
@@ -18454,30 +18457,8 @@
    "url": "http://www.fim.unimore.it/site/home/didattica/corsi-di-studio-in-fisica/laurea-triennale.html",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "OFA",
-     "nome": "Verifica Preparazione Iniziale",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": "NN",
-     "obbligatorio": true,
-     "curriculum": "Piano pre-approvato dal CdS, Piano proposto da sottoporre ad approvazione",
-     "docenti": [],
-     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unimore.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unimore-l-30-fisica-ofa",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "F211-009",
      "nome": "Analisi Matematica 1",
@@ -18899,6 +18880,29 @@
      "modalita_esame": "orale",
      "stato_esami": "completo",
      "id": "unimore-l-30-fisica-f211-005"
+    },
+    {
+     "codice": "OFA",
+     "nome": "Verifica Preparazione Iniziale",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": "NN",
+     "obbligatorio": true,
+     "curriculum": "Piano pre-approvato dal CdS, Piano proposto da sottoporre ad approvazione",
+     "docenti": [],
+     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimore.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimore-l-30-fisica-ofa",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026"
     },
     {
      "codice": "MN2-06518",
@@ -19826,7 +19830,7 @@
    "url": "https://www.chimomo.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "14-401-009",
@@ -21137,13 +21141,13 @@
    "url": "https://www.chimomo.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/igiene-dentale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CLID270_01",
      "nome": "Fisica, Statistica ed Informatica",
      "anno": 1,
-     "periodo": null,
+     "periodo": "1",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 8,
@@ -21159,7 +21163,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unimore-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-clid270-01",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2025/20921/2015/9999?coorte=2025"
     },
     {
      "codice": "CLID270_10",
@@ -22263,7 +22268,7 @@
    "url": "https://www.bmn.unimore.it/it/didattica/corsi-di-laurea/infermieristica-sede-di-modena/infermieristica-sede-di-modena",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "14-408-011",
@@ -24188,7 +24193,7 @@
    "url": "https://www.unimore.it/it/didattica/corsi-di-studio/infermieristica-re",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "INFRE27025",
@@ -26342,30 +26347,8 @@
    "url": "https://www.fim.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "OFA",
-     "nome": "Verifica Preparazione Iniziale",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": "NN",
-     "obbligatorio": true,
-     "curriculum": "Curriculum Fondamenti e problem solving APPROVATO, Curriculum Fondamenti e problem solving PROPOSTO, Curriculum Sistemi e programmazione APPROVATO, Curriculum Sistemi e programmazione PROPOSTO",
-     "docenti": [],
-     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/2?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unimore.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unimore-l-31-informatica-ofa",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "16-315-001",
      "nome": "Algebra Lineare",
@@ -26781,6 +26764,29 @@
      "modalita_esame": "orale",
      "id": "unimore-l-31-informatica-mn1-1141",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "OFA",
+     "nome": "Verifica Preparazione Iniziale",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": "NN",
+     "obbligatorio": true,
+     "curriculum": "Curriculum Fondamenti e problem solving APPROVATO, Curriculum Fondamenti e problem solving PROPOSTO, Curriculum Sistemi e programmazione APPROVATO, Curriculum Sistemi e programmazione PROPOSTO",
+     "docenti": [],
+     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/2?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimore.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimore-l-31-informatica-ofa",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026"
     },
     {
      "codice": "MN1-639",
@@ -27897,7 +27903,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/ingegneria-civile-e-ambientale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA-ING",
@@ -28975,7 +28981,7 @@
      "codice": "MN2-00224",
      "nome": "Diritto del Lavoro",
      "anno": 3,
-     "periodo": null,
+     "periodo": "1",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
@@ -29028,7 +29034,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "stato_esami": "completo",
-     "id": "unimore-l-7-ingegneria-civile-e-ambientale-mn2-00224"
+     "id": "unimore-l-7-ingegneria-civile-e-ambientale-mn2-00224",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2025/422/2022/10002?coorte=2024"
     },
     {
      "codice": "M 11067",
@@ -29955,7 +29962,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/ingegneria-del-veicolo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "VEIC-002R",
@@ -31937,7 +31944,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/ingegneria-elettronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA-ING",
@@ -33520,7 +33527,7 @@
    "url": "https://www.dismi.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IG-006",
@@ -35503,7 +35510,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/ingegneria-informatica-sede-di-mantova",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA-ING",
@@ -36606,7 +36613,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/ingegneria-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA-ING",
@@ -37529,7 +37536,7 @@
      "codice": "MN2-00224",
      "nome": "Diritto del Lavoro",
      "anno": 3,
-     "periodo": null,
+     "periodo": "1",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
@@ -37582,7 +37589,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "stato_esami": "completo",
-     "id": "unimore-l-8-ingegneria-informatica-1629941-mn2-00224"
+     "id": "unimore-l-8-ingegneria-informatica-1629941-mn2-00224",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2025/422/2022/10002?coorte=2024"
     },
     {
      "codice": "INF-37",
@@ -38086,7 +38094,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/ingegneria-meccanica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MECC-003R",
@@ -40280,7 +40288,7 @@
    "url": "https://www.dismi.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/ingegneria-meccatronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IM-001",
@@ -41735,7 +41743,7 @@
    "url": "https://www.dslc.unimore.it/it/didattica/corsi-di-laurea/lingue-e-culture-europee",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "LCE-000002",
@@ -44797,7 +44805,7 @@
    "url": "https://www.smechimai.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/logopedia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "LOGO270_36",
@@ -46314,7 +46322,7 @@
    "url": "https://www.dce.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/corso-di-laurea-marketing-e-organizzazione-dimpresa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA-SCE",
@@ -47356,7 +47364,7 @@
    "url": "https://www.fim.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/matematica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MN1-1027",
@@ -48477,7 +48485,7 @@
    "url": "https://www.smechimai.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OST_270_10",
@@ -49786,7 +49794,7 @@
    "url": "https://www.dsv.unimore.it/it/didattica/corsi-di-laurea-triennale/SBIO",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA-MAT",
@@ -51238,55 +51246,8 @@
    "url": "https://www.giurisprudenza.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/scienze-dei-servizi-giuridici-ssg",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "OFA_GIURI",
-     "nome": "Obblighi Formativi Aggiuntivi",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": "GIUR-05/A, GIUR-01/A, GIUR-15/A, GIUR-17/A, GIUR-16/A",
-     "obbligatorio": true,
-     "curriculum": "Consulente del lavoro e di relazioni industriali, Funzionario delle pubbliche amministrazioni e delle istituzioni europee ed internazionali, Operatore giuridico d'impresa e del terzo settore, Operatore giuridico-informatico e delle nuove tecnologie",
-     "docenti": [],
-     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/19504/2026/1?coorte=2026",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-01",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-11-02",
-       "iscrizioni_al": "2026-11-27",
-       "docenti": "SANGUINETTI ANDREA",
-       "note": null,
-       "fonte": "https://unimore.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-11",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-12-02",
-       "iscrizioni_al": "2027-01-07",
-       "docenti": "SANGUINETTI ANDREA",
-       "note": null,
-       "fonte": "https://unimore.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unimore.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "scritto",
-     "stato_esami": "completo",
-     "id": "unimore-l-14-scienze-dei-servizi-giuridici-ofa-giuri"
-    },
     {
      "codice": "SSG-02",
      "nome": "Diritto Costituzionale",
@@ -51648,6 +51609,54 @@
      "modalita_esame": "orale",
      "stato_esami": "completo",
      "id": "unimore-l-14-scienze-dei-servizi-giuridici-ssg-06"
+    },
+    {
+     "codice": "OFA_GIURI",
+     "nome": "Obblighi Formativi Aggiuntivi",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": "GIUR-05/A, GIUR-01/A, GIUR-15/A, GIUR-17/A, GIUR-16/A",
+     "obbligatorio": true,
+     "curriculum": "Consulente del lavoro e di relazioni industriali, Funzionario delle pubbliche amministrazioni e delle istituzioni europee ed internazionali, Operatore giuridico d'impresa e del terzo settore, Operatore giuridico-informatico e delle nuove tecnologie",
+     "docenti": [],
+     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/19504/2026/1?coorte=2026",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-02",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "SANGUINETTI ANDREA",
+       "note": null,
+       "fonte": "https://unimore.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-02",
+       "iscrizioni_al": "2027-01-07",
+       "docenti": "SANGUINETTI ANDREA",
+       "note": null,
+       "fonte": "https://unimore.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unimore.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "scritto",
+     "stato_esami": "completo",
+     "id": "unimore-l-14-scienze-dei-servizi-giuridici-ofa-giuri",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/19504/2026/3?coorte=2026"
     },
     {
      "codice": "SSG-09",
@@ -54488,7 +54497,7 @@
    "url": "https://desu.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/corso-di-laurea-scienze-delleducazione-il-nido-e-le",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SCED3 36",
@@ -56651,7 +56660,7 @@
    "url": "https://www.dce.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/corso-di-laurea-scienze-della-comunicazione-sco",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA-SCE",
@@ -58326,7 +58335,7 @@
    "url": "https://www.bmn.unimore.it/it/didattica/corsi-di-laurea/scienze-e-tecniche-psicologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA_STPSI1",
@@ -59643,7 +59652,7 @@
    "url": "https://www.dsv.unimore.it/it/didattica/corsi-di-laurea-triennale/STAA",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "STAA57",
@@ -60851,30 +60860,8 @@
    "url": "https://www.dscg.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/corso-di-laurea-scienze-geologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "OFA",
-     "nome": "Verifica Preparazione Iniziale",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": "NN",
-     "obbligatorio": true,
-     "curriculum": "Piano APPROVATO, Piano PROPOSTO da approvare",
-     "docenti": [],
-     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unimore.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unimore-l-34-scienze-geologiche-ofa",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "MN1-339",
      "nome": "Chimica Generale",
@@ -61303,6 +61290,29 @@
      "modalita_esame": "orale",
      "id": "unimore-l-34-scienze-geologiche-g213-009",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "OFA",
+     "nome": "Verifica Preparazione Iniziale",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": "NN",
+     "obbligatorio": true,
+     "curriculum": "Piano APPROVATO, Piano PROPOSTO da approvare",
+     "docenti": [],
+     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimore.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimore-l-34-scienze-geologiche-ofa",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026"
     },
     {
      "codice": "G213-015",
@@ -62100,30 +62110,8 @@
    "url": "http://www.scienzenaturali.unimore.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "OFA",
-     "nome": "Verifica Preparazione Iniziale",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": "NN",
-     "obbligatorio": true,
-     "curriculum": "Piano APPROVATO, Piano PROPOSTO da approvare",
-     "docenti": [],
-     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unimore.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unimore-l-32-scienze-naturali-ofa",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "MN1-922",
      "nome": "Anatomia Comparata con Elementi di Citologia e Istologia Animale",
@@ -62438,6 +62426,29 @@
      "modalita_esame": "orale",
      "id": "unimore-l-32-scienze-naturali-cn2-00286",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "OFA",
+     "nome": "Verifica Preparazione Iniziale",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": "NN",
+     "obbligatorio": true,
+     "curriculum": "Piano APPROVATO, Piano PROPOSTO da approvare",
+     "docenti": [],
+     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimore.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimore-l-32-scienze-naturali-ofa",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21204/2026/9999?coorte=2026"
     },
     {
      "codice": "CN2-00638",
@@ -63402,7 +63413,7 @@
    "url": "https://www.giurisprudenza.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/scienze-strategiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "NSS18",
@@ -64828,7 +64839,7 @@
    "url": "https://www.dslc.unimore.it/it/didattica/corsi-di-laurea/storia-e-culture-contemporanee",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SCC-000005",
@@ -66877,7 +66888,7 @@
    "url": "https://www.bmn.unimore.it/it/didattica/corsi-di-laurea/tecnica-della-riabilitazione-psichiatrica/homepage",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TRP_270_16",
@@ -69121,7 +69132,7 @@
    "url": "https://www.bmn.unimore.it/it/didattica/corsi-di-laurea/tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "14-406-006",
@@ -70053,7 +70064,7 @@
    "url": "https://www.cdltlb.unimore.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "14-405-019",
@@ -71368,7 +71379,7 @@
    "url": "https://www.smechimai.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/tecniche-di-radiologia-medica-immagini-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "RAD_270_02",
@@ -72469,7 +72480,7 @@
    "url": "https://www.smechimai.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/terapia-occupazionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TO_270_32",
@@ -73906,7 +73917,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/advanced-automotive-engineering-english",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "AAE-004RBO",
@@ -77008,7 +77019,7 @@
    "url": "https://www.economia.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/analisi-dei-dati-leconomia-e-il",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ADEM-01",
@@ -78188,7 +78199,7 @@
    "url": "https://www.dslc.unimore.it/it/didattica/corsi-di-laurea-magistrale/antropologia-e-storia-del-mondo-contemporaneo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ASMC-00041",
@@ -79478,7 +79489,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/artificial-intelligence-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "20-373-002",
@@ -80539,7 +80550,7 @@
    "url": "https://www.unimore.it/it/didattica/corsi-di-studio/bioingegneria-linnovazione-medicina",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "BIOING_4",
@@ -81760,7 +81771,7 @@
    "url": "https://www.dsv.unimore.it/it/didattica/corsi-di-laurea-magistrale/BIOS",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "BIOS-0001",
@@ -84301,7 +84312,7 @@
    "url": "https://www.dsv.unimore.it/it/didattica/corsi-di-laurea-magistrale/BTM",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "BMF-20",
@@ -85611,7 +85622,7 @@
    "url": "https://www.dsv.unimore.it/it/didattica/corsi-di-laurea-magistrale/CSA",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CSA11",
@@ -86625,7 +86636,7 @@
    "url": "http://www.S4EDU.unimore.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "DCS60-001",
@@ -87745,7 +87756,7 @@
    "url": "https://www.dismi.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/digital-automation-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "DAE-003",
@@ -88848,7 +88859,7 @@
    "url": "https://www.economia.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/direzione-e-consulenza-dimpresa-dci",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "DCI-03",
@@ -89942,7 +89953,7 @@
    "url": "https://www.dce.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/corso-di-laurea-magistrale-economia-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "EDISO12C1",
@@ -90478,7 +90489,7 @@
    "url": "https://www.economia.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/economia-politiche-pubbliche-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "EPPS-01",
@@ -91444,7 +91455,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/electronics-engineering-english-taught",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "EE-001R",
@@ -92736,7 +92747,7 @@
    "url": "https://www.dismi.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IE-001",
@@ -93454,7 +93465,7 @@
    "url": "https://www.economia.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/finanza-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FM-03",
@@ -94582,7 +94593,7 @@
    "url": "https://www.dscg.unimore.it/it/didattica/corsi-di-laurea-magistrali-informazioni-generali/corso-di-laurea-geoscienze-georischi-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "GGG74-003",
@@ -95611,13 +95622,13 @@
    "url": "https://www.fim.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "262-033",
      "nome": "Sistemi Complessi",
      "anno": 1,
-     "periodo": null,
+     "periodo": "2",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
@@ -95633,7 +95644,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unimore-lm-18-informatica-262-033",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2025/25282/2025/9999?coorte=2025"
     },
     {
      "codice": "262-024",
@@ -96668,7 +96680,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/ingegneria-civile-e-ambientale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CAM-012R",
@@ -98426,7 +98438,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/ingegneria-dei-materiali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "20-372-002",
@@ -99616,7 +99628,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/ingegneria-del-veicolo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IVM-003R",
@@ -101328,7 +101340,7 @@
    "url": "https://www.dismi.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IGM-014",
@@ -102915,7 +102927,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/ingegneria-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "20-362-002",
@@ -104118,7 +104130,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/ingegneria-meccanica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IMM-002R",
@@ -105382,7 +105394,7 @@
    "url": "https://www.dismi.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/ingegneria-meccatronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1-361-001",
@@ -106312,7 +106324,7 @@
    "url": "https://www.economia.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/international-management-im",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IM-04",
@@ -107149,7 +107161,7 @@
    "url": "https://www.unimore.it/it/didattica/corsi-di-studio/languages-communication-international-enterprises-and-organizations",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "LCF-000018",
@@ -108855,7 +108867,7 @@
    "url": "https://unimore.coursecatalogue.cineca.it/corsi/2026/11020",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "LCC-00041",
@@ -110580,7 +110592,7 @@
    "url": "https://www.dce.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/corso-di-laurea-magistrale-management-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MCI12CI05",
@@ -111578,52 +111590,8 @@
    "url": "https://www.fim.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/matematica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "M263-065",
-     "nome": "Fondamenti di Algebra e Geometria",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "MATH-01/B",
-     "obbligatorio": false,
-     "curriculum": "Curriculum generale",
-     "docenti": [],
-     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/28653/2026/1?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unimore.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unimore-lm-40-matematica-m263-065",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "M263-066",
-     "nome": "Fondamenti di Logica e Analisi Matematica",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "MATH-01/B",
-     "obbligatorio": false,
-     "curriculum": "Curriculum generale",
-     "docenti": [],
-     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/28654/2026/1?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unimore.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unimore-lm-40-matematica-m263-066",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "M263-067",
      "nome": "Fondamenti di Matematica",
@@ -112388,6 +112356,52 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "M263-065",
+     "nome": "Fondamenti di Algebra e Geometria",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "MATH-01/B",
+     "obbligatorio": false,
+     "curriculum": "Curriculum generale",
+     "docenti": [],
+     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/28653/2026/1?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimore.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimore-lm-40-matematica-m263-065",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2025/28653/2025/10000?coorte=2025"
+    },
+    {
+     "codice": "M263-066",
+     "nome": "Fondamenti di Logica e Analisi Matematica",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "MATH-01/B",
+     "obbligatorio": false,
+     "curriculum": "Curriculum generale",
+     "docenti": [],
+     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/28654/2026/1?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimore.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimore-lm-40-matematica-m263-066",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2025/28654/2025/10000?coorte=2025"
+    },
+    {
      "codice": "MN1-306",
      "nome": "Algebra Superiore",
      "anno": 2,
@@ -113150,7 +113164,7 @@
    "url": "https://www.des.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/media-education-le-discipline-0",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MEDLE-001",
@@ -113956,7 +113970,7 @@
    "url": "http://www.fim.unimore.it/site/home/didattica/corsi-di-studio-in-fisica/laurea-magistrale.html",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "P268-045",
@@ -115380,7 +115394,7 @@
    "url": "https://www.dce.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/corso-di-laurea-magistrale-pubblicita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "PECI06C23",
@@ -116580,7 +116594,7 @@
    "url": "https://www.economia.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/relazioni-di-lavoro-rl",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "RL-02",
@@ -117176,7 +117190,7 @@
    "url": "https://www.chimomo.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/corso-di-laurea-magistrale-salute-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ST_51",
@@ -117736,7 +117750,7 @@
    "url": "https://www.dscg.unimore.it/it/didattica/corsi-di-laurea-magistrali-informazioni-generali/corso-di-laurea-scienze-chimiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MN1-1255",
@@ -119005,7 +119019,7 @@
    "url": "https://www.bmn.unimore.it/it/didattica/corsi-di-laurea-magistrale/scienze-infermieristiche-ed-ostetriche-sede-di-reggio-emilia-0",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "14-363-001",
@@ -119585,7 +119599,7 @@
    "url": "https://unimore.coursecatalogue.cineca.it/corsi/2026/11031",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "14-365-008",
@@ -120043,13 +120057,13 @@
    "url": "https://www.desu.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/scienze-pedagogiche-laurea-magistrale-3",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SPED3 03",
      "nome": "Pedagogia Dell'inclusione",
      "anno": 1,
-     "periodo": null,
+     "periodo": "2",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
@@ -120065,29 +120079,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unimore-lm-85-scienze-pedagogiche-sped3-03",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "SPED3 09",
-     "nome": "Teorie e Metodi Educativi + Storia Sociale dei Processi di Alfabetizzazione",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 14,
-     "ssd": "PAED-01/B, PAED-01/A",
-     "obbligatorio": true,
-     "curriculum": "Progettazione pedagogica per l'inclusione sociale",
-     "docenti": [],
-     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/28631/2026/3?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unimore.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unimore-lm-85-scienze-pedagogiche-sped3-09",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2025/27955/2025/10001?coorte=2025"
     },
     {
      "codice": "SPED1",
@@ -121308,6 +121301,29 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "SPED3 09",
+     "nome": "Teorie e Metodi Educativi + Storia Sociale dei Processi di Alfabetizzazione",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 14,
+     "ssd": "PAED-01/B, PAED-01/A",
+     "obbligatorio": true,
+     "curriculum": "Progettazione pedagogica per l'inclusione sociale",
+     "docenti": [],
+     "url": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/28631/2026/3?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimore.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimore-lm-85-scienze-pedagogiche-sped3-09",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2025/28631/2025/10002?coorte=2025"
+    },
+    {
      "codice": "SPED25 16",
      "nome": "Prova Finale",
      "anno": 2,
@@ -121876,7 +121892,7 @@
    "url": "https://www.dsv.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/sistemi-biotecnologicii",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "BIND-0002",
@@ -122789,7 +122805,7 @@
    "url": "https://www.dsv.unimore.it/it/didattica/corsi-di-laurea-magistrale/SISTA",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SB-75",
@@ -123975,7 +123991,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/sustainable-industrial-engineering-sede",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SIE-002R",
@@ -124671,7 +124687,7 @@
    "url": "https://desu.unimore.it/it/didattica/corsi-di-laurea-magistrale-informazioni-generali/teorie-e-metodologie-del-digital",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TMDL-0106",
@@ -125897,7 +125913,7 @@
    "url": "https://www.dsv.unimore.it/it/didattica/corsi-di-laurea-magistrale-ciclo-unico/CTF",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA_BIO",
@@ -129074,7 +129090,7 @@
    "url": "https://www.dsv.unimore.it/it/didattica/corsi-di-laurea-magistrale-ciclo-unico/FARM",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FARMA-0003",
@@ -132300,7 +132316,7 @@
    "url": "https://www.giurisprudenza.unimore.it/it/didattica/corsi-di-laurea-magistrale-ciclo-unico-informazioni-generali/lmg",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA_GIURI",
@@ -137063,7 +137079,7 @@
    "url": "https://www.bmn.unimore.it/it/didattica/corsi-di-laurea-magistrale-ciclo-unico/cdl-medicina",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "M_270_007",
@@ -140545,7 +140561,7 @@
    "url": "https://www.chimomo.unimore.it/it/didattica/corsi-di-laurea-magistrale-ciclo-unico-informazioni-generali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "14-362-011",
@@ -141829,7 +141845,7 @@
    "url": "https://desu.unimore.it/it/didattica/corsi-di-laurea-magistrale-ciclo-unico-informazioni-generali/scienze-della-formazione-0",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SFP 50",
@@ -144380,7 +144396,7 @@
    "url": "https://www.ingmo.unimore.it/it/didattica/corsi-di-laurea-professionalizzanti-informazioni-generali/costruzioni-e-gestione-del",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OFA-ING",
@@ -144999,7 +145015,7 @@
      "codice": "MN2-00224",
      "nome": "Diritto del Lavoro",
      "anno": 3,
-     "periodo": null,
+     "periodo": "1",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
@@ -145052,13 +145068,14 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "stato_esami": "completo",
-     "id": "unimore-l-p01-costruzioni-e-gestione-del-territorio-mn2-00224"
+     "id": "unimore-l-p01-costruzioni-e-gestione-del-territorio-mn2-00224",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2025/422/2022/10002?coorte=2024"
     },
     {
      "codice": "INF-19",
      "nome": "Inglese Avanzato",
      "anno": 3,
-     "periodo": null,
+     "periodo": "2",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 3,
@@ -145074,7 +145091,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unimore-l-p01-costruzioni-e-gestione-del-territorio-inf-19",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unimore.coursecatalogue.cineca.it/insegnamenti/2026/21063/2018/10001?coorte=2024"
     },
     {
      "codice": "LP2-016",
@@ -145415,7 +145433,7 @@
    "url": "https://www.dismi.unimore.it/it/didattica/corsi-di-laurea-informazioni-generali/tecnologie-lindustra-intelligente",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FA-028",

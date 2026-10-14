@@ -6,7 +6,7 @@
 /// luoghi pubblici stanno in place_personal, separate da places.
 library;
 
-const int kSchemaVersion = 10;
+const int kSchemaVersion = 11;
 
 /// Tabelle con dati personali, in ordine di dipendenza (usato da backup).
 const List<String> kPersonalTables = [
@@ -406,6 +406,16 @@ const List<String> kMigrationV9 = [
 const List<String> kMigrationV10 = [
   'ALTER TABLE attachments ADD COLUMN kinds TEXT',
   'ALTER TABLE modules ADD COLUMN notes TEXT',
+];
+
+/// v11: argomenti e materiali da studiare importati dal database per l'esame
+/// (programma ufficiale e libri dell'insegnamento). Il valore importato resta
+/// accanto al campo: «Aggiorna database» lo aggiorna solo finché lo studente
+/// non l'ha cambiato. Le righe esistenti partono da null: i campi vuoti si
+/// riempiono al prossimo import, quelli già scritti dallo studente restano.
+const List<String> kMigrationV11 = [
+  'ALTER TABLE exams ADD COLUMN imported_topics TEXT',
+  'ALTER TABLE exams ADD COLUMN imported_study_materials TEXT',
 ];
 
 /// Categorie di luogo predefinite (dato pubblico, aggiornabile).

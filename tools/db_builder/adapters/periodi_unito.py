@@ -24,6 +24,14 @@ from . import cineca_catalogue
 from .unibo import Client, _testo
 from .unito_campusnet import _assoluto, _host, elenco, HOST_EXTRA
 
+
+def moduli(s: str, pagina: str) -> list[str]:
+    """Pagine dei «Moduli didattici» di un corso integrato (non quelle di «Mutuato da»)."""
+    out: list[str] = []
+    for m in re.finditer(r'<H2 id="a_moduli_\w+">.*?</H2>(.*?)</dd>', s, re.S | re.I):
+        out += re.findall(r'href="([^"]*corsi\.pl/Show\?_id=\w+)"', m.group(1), re.I)
+    return list(dict.fromkeys(_assoluto(h, pagina) for h in out))
+
 PERIODO = re.compile(r"<span>(?:Periodo|Period)</span></dt>\s*<dd[^>]*>(.*?)</dd>", re.S | re.I)
 ANNO_ACC = re.compile(r"(?:Anno accademico|Academic year)\s*</span></dt>\s*<dd[^>]*>\s*(\d{4}/\d{4})", re.S | re.I)
 ORDINALE = {"primo": 1, "secondo": 2, "terzo": 3, "quarto": 4, "quinto": 5, "sesto": 6}
@@ -163,16 +171,31 @@ def fetch_periodi(uid: str = "unito", log=print) -> dict[str, dict]:
         return list(dict.fromkeys(v["url"] for _, v in voci))[:6]
 
     corso_di = {i["id"]: c_["id"] for c_ in corsi for i in c_.get("insegnamenti") or []}
-    lette: dict[str, str | None] = {}
+    lette: dict[str, tuple[str | None, list[str]]] = {}
 
-    def periodo_pagina(u: str) -> str | None:
+    def pagina(u: str) -> tuple[str | None, list[str]]:
+        """(semestre, pagine dei moduli se la scheda è di un corso integrato senza il campo «Periodo»)."""
         if u not in lette:
             try:
                 r = c.get(u)
-                lette[u] = leggi_periodo(r.text) if r else None
+                if not r:
+                    lette[u] = (None, [])
+                else:
+                    lette[u] = (leggi_periodo(r.text), [] if PERIODO.search(r.text) else moduli(r.text, u))
             except Exception:  # noqa: BLE001
-                lette[u] = None
+                lette[u] = (None, [])
         return lette[u]
+
+    def periodo_pagina(u: str) -> str | None:
+        return pagina(u)[0]
+
+    def da_moduli(u: str) -> tuple[str, str] | None:
+        """Corso integrato: se tutti i moduli (con il campo «Periodo») hanno lo stesso semestre vale per il corso."""
+        mods = pagina(u)[1]
+        vals = [(periodo_pagina(v), v) for v in mods]
+        if mods and all(p for p, _ in vals) and len({p for p, _ in vals}) == 1:
+            return vals[0]
+        return None
 
     def risolvi(m: dict) -> tuple[str, dict | None]:
         u = m.get("url_sito") or ""
@@ -182,6 +205,10 @@ def fetch_periodi(uid: str = "unito", log=print) -> dict[str, dict]:
             t = periodo_pagina(p)
             if t:
                 return m["id"], {"periodo": t, "fonte": p}
+        for p in pagine:
+            r = da_moduli(p)
+            if r:
+                return m["id"], {"periodo": r[0], "fonte": r[1]}
         return m["id"], None
 
     out: dict[str, dict] = {}

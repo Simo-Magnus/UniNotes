@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unicz",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-14",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.sfn.unicz.it/corso_studio/biotecnologie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A003596",
@@ -1468,7 +1468,7 @@
    "url": "https://www.medicina.unicz.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A004947",
@@ -2040,7 +2040,7 @@
      "codice": "A004499",
      "nome": "Strumenti per lo Studio della Composizione Corporea",
      "anno": null,
-     "periodo": null,
+     "periodo": "2",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 1,
@@ -2058,7 +2058,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unicz-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista-a004499",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/23290/2013/9999?coorte=2024"
     },
     {
      "codice": "A001366",
@@ -2635,7 +2636,7 @@
    "url": "https://medicina.unicz.it/corso_studio/dietistica",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -2654,7 +2655,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/economia_aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A000449",
@@ -5156,7 +5157,7 @@
    "url": "https://medicina.unicz.it/corso_studio/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "32890",
@@ -5759,50 +5760,6 @@
      "stato_esami": "completo"
     },
     {
-     "codice": "A004486",
-     "nome": "Gestione Infermieristica delle Emorragie Digestive",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 1,
-     "ssd": "MED/12",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/23277/2010/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unicz-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-a004486",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "A004664",
-     "nome": "Innovazione Tecnologiche e Applicazioni di Machine Learning nel Contesto Riabilitativo",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 1,
-     "ssd": "MED/50",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/23294/2010/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unicz-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-a004664",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "A003019",
      "nome": "La Preservazione della Fertilità Nei Pazienti Oncologici",
      "anno": null,
@@ -5825,10 +5782,56 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "A004486",
+     "nome": "Gestione Infermieristica delle Emorragie Digestive",
+     "anno": null,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 1,
+     "ssd": "MED/12",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/23277/2010/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unicz.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unicz-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-a004486",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/23277/2010/9999?coorte=2025"
+    },
+    {
+     "codice": "A004664",
+     "nome": "Innovazione Tecnologiche e Applicazioni di Machine Learning nel Contesto Riabilitativo",
+     "anno": null,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 1,
+     "ssd": "MED/50",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/23294/2010/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unicz.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unicz-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-a004664",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/23294/2010/9999?coorte=2025"
+    },
+    {
      "codice": "A004492",
      "nome": "Medicina del Dolore: Dal Sintomo alla Cura",
      "anno": null,
-     "periodo": null,
+     "periodo": "2",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 1,
@@ -5844,7 +5847,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unicz-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-a004492",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/23283/2010/9999?coorte=2025"
     },
     {
      "codice": "A001035",
@@ -6310,7 +6314,7 @@
    "url": "https://medicina.unicz.it/corso_studio/igiene_dentale",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -6329,7 +6333,7 @@
    "url": "https://medicina.unicz.it/corso_studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A004774",
@@ -7798,7 +7802,7 @@
    "url": "https://medicina.unicz.it/corso_studio/interateneo",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -7817,7 +7821,7 @@
    "url": "https://medicina.unicz.it/corso_studio/ingegneria_informatica_biomedica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ING0027",
@@ -8479,30 +8483,8 @@
    "url": "https://medicina.unicz.it/corso_studio/logopedia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "A004493",
-     "nome": "Assistenza Sanitaria Dell'atleta",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 1,
-     "ssd": "MED/34",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/23284/2010/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unicz-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis-a004493",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "A004494",
      "nome": "Buone Pratiche per la Sorveglianza e il Controllo Dell'antimicrobico-resistenza",
@@ -8661,7 +8643,7 @@
      "codice": "A004492",
      "nome": "Medicina del Dolore: Dal Sintomo alla Cura",
      "anno": null,
-     "periodo": null,
+     "periodo": "2",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 1,
@@ -8677,7 +8659,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unicz-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis-a004492",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/23283/2010/9999?coorte=2025"
     },
     {
      "codice": "A004485",
@@ -8920,6 +8903,29 @@
      "modalita_esame": "orale",
      "id": "unicz-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis-a004499",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A004493",
+     "nome": "Assistenza Sanitaria Dell'atleta",
+     "anno": null,
+     "periodo": "annuale",
+     "periodo_inizio": "01/04/2025",
+     "periodo_fine": "30/09/2025",
+     "cfu": 1,
+     "ssd": "MED/34",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/23284/2010/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unicz.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unicz-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis-a004493",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/23284/2010/9999?coorte=2024"
     }
    ],
    "ammissione": {
@@ -8950,7 +8956,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/oapp",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A006231",
@@ -12494,96 +12500,8 @@
    "url": "https://medicina.unicz.it/corso_studio/ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "A003203",
-     "nome": "C.i. Organizzazione della Professione Ostetrica, Deodontologia e Competenze",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "MED/47, MED/42",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22470/2024/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unicz-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-a003203",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "A003209",
-     "nome": "C.i. Percorsi Assistenziali in Ostetricia e Ginecologia",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "MED/47, MED/38",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22474/2024/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unicz-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-a003209",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "A003206",
-     "nome": "Fisiopatologia Ginecologica",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "MED/47",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22471/2024/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unicz-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-a003206",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "A003207",
-     "nome": "Fisiopatologia Ostetrica",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "MED/47",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22472/2024/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unicz-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-a003207",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "A003208",
      "nome": "Tirocinio II Anno I Semestre",
@@ -12640,6 +12558,98 @@
      "modalita_esame": "orale",
      "id": "unicz-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-a003215",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "A003203",
+     "nome": "C.i. Organizzazione della Professione Ostetrica, Deodontologia e Competenze",
+     "anno": 2,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "MED/47, MED/42",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22470/2024/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unicz.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unicz-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-a003203",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/22470/2024/9999?coorte=2025"
+    },
+    {
+     "codice": "A003206",
+     "nome": "Fisiopatologia Ginecologica",
+     "anno": 2,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "MED/47",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22471/2024/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unicz.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unicz-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-a003206",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/22471/2024/9999?coorte=2025"
+    },
+    {
+     "codice": "A003207",
+     "nome": "Fisiopatologia Ostetrica",
+     "anno": 2,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "MED/47",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22472/2024/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unicz.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unicz-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-a003207",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/22472/2024/9999?coorte=2025"
+    },
+    {
+     "codice": "A003209",
+     "nome": "C.i. Percorsi Assistenziali in Ostetricia e Ginecologia",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "MED/47, MED/38",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22474/2024/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unicz.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unicz-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-a003209",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/22474/2024/9999?coorte=2025"
     },
     {
      "codice": "A003212",
@@ -13340,7 +13350,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -13359,7 +13369,7 @@
    "url": "https://medicina.unicz.it/corso_studio/scienze_tecniche_psicologia_cognitiva",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -13378,7 +13388,7 @@
    "url": "https://www.sfn.unicz.it/corso_studio/scienze_tecnologie_cosmetiche",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -13397,7 +13407,7 @@
    "url": "https://www.sfn.unicz.it/corso_studio/stpa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "A002864",
@@ -14010,7 +14020,7 @@
    "url": "https://medicina.unicz.it/corso_studio/scienze_motorie_sportive",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "PS00598",
@@ -14289,28 +14299,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "A005862",
-     "nome": "Attività Fisica e Malattie Croniche Non Trasmissibili: Un Connubio Perfetto",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0.5,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/24266/2017/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unicz-l-22-scienze-motorie-e-sportive-a005862",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "A005865",
      "nome": "Attività Fisica e Malattie Croniche Non Trasmissibili: Un Connubio Perfetto",
      "anno": null,
@@ -14515,7 +14503,7 @@
      "codice": "A005854",
      "nome": "Fare Impresa Nello Sport: Modelli, Strumenti e Testimonianze",
      "anno": null,
-     "periodo": null,
+     "periodo": "1",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 0.5,
@@ -14534,7 +14522,8 @@
      "stato_esami": "da_aggiungere",
      "codici_alternativi": [
       "A005855"
-     ]
+     ],
+     "periodo_fonte": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/24237/2017/9999?coorte=2025"
     },
     {
      "codice": "A005735",
@@ -14716,6 +14705,29 @@
      "modalita_esame": "orale",
      "id": "unicz-l-22-scienze-motorie-e-sportive-a006240",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A005862",
+     "nome": "Attività Fisica e Malattie Croniche Non Trasmissibili: Un Connubio Perfetto",
+     "anno": null,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0.5,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/24266/2017/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unicz.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unicz-l-22-scienze-motorie-e-sportive-a005862",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/24266/2017/9999?coorte=2025"
     },
     {
      "codice": "PS00558",
@@ -15644,7 +15656,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/Sociologia_e_Servizio_Sociale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L4000044",
@@ -18519,7 +18531,7 @@
    "url": "https://medicina.unicz.it/corso_studio/tecniche_laboratorio_biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "32233",
@@ -18765,7 +18777,7 @@
    "url": "https://medicina.unicz.it/corso_studio/tecniche_neurofisiopatologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "32929",
@@ -19065,7 +19077,7 @@
    "url": "https://medicina.unicz.it/corso_studio/radiologia_medica_radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "32481",
@@ -20255,7 +20267,7 @@
    "url": "https://www.sfn.unicz.it/corso_studio/biotecnologie_innovative_salute",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20274,7 +20286,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20293,7 +20305,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20312,7 +20324,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/healthcare_management",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20331,7 +20343,7 @@
    "url": "https://medicina.unicz.it/corso_studio/ingegneria_biomedica",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20350,7 +20362,7 @@
    "url": "https://medicina.unicz.it/corso_studio/psicologia_cognitiva_neuroscienze",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20369,7 +20381,7 @@
    "url": "https://medicina.unicz.it/corso_studio/psicologia_forense_criminologia",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20388,7 +20400,7 @@
    "url": "https://www.sfn.unicz.it/corso_studio/scienze_chimiche_e_cosmetiche",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20407,7 +20419,7 @@
    "url": "https://medicina.unicz.it/corso_studio/lm_scienze_prof_sanitarie_tecniche_diagnostiche",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20426,7 +20438,7 @@
    "url": "https://www.medicina.unicz.it/corso_studio/scienze_tecniche_sport",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20445,7 +20457,7 @@
    "url": "https://medicina.unicz.it/corso_studio/scienze_infermieristiche_ostetriche",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20464,7 +20476,7 @@
    "url": "https://ust.edu.al/en/home-ust/",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20483,7 +20495,7 @@
    "url": "https://www.medicina.unicz.it/corso_studio/scienze_riabilitative_prof_sanitarie",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20502,7 +20514,7 @@
    "url": "https://www.sfn.unicz.it/corso_studio/farmacia",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20521,7 +20533,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/giurisprudenza",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20540,7 +20552,7 @@
    "url": "https://medicina.unicz.it/corso_studio/medicina_chirurgia",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20559,7 +20571,7 @@
    "url": "https://medicina.unicz.it/corso_studio/medicina_chirurgia_interateneo",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20578,7 +20590,7 @@
    "url": "https://medicina.unicz.it/corso_studio/odontoiatria_protesi_dentaria",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20597,7 +20609,7 @@
    "url": "https://medicina.unicz.it/corso_studio/scienze_formazione_primaria",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   }
  ]

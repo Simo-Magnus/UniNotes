@@ -539,7 +539,7 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
               autofocus: true,
               minLines: 2,
               maxLines: 12,
-              maxLength: TextLimits.notes,
+              maxLength: TextLimits.examTopics,
               textCapitalization: TextCapitalization.sentences,
               decoration: InputDecoration(
                 hintText: 'Argomenti oggetto della prova',

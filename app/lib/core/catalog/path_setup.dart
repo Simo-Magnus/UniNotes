@@ -190,9 +190,16 @@ class PathSetupService {
   /// (`moduli/<ateneo>.json`, per esempio i capitoli del libro di
   /// riferimento) per gli insegnamenti che non hanno ancora moduli.
   /// Restituisce quanti insegnamenti sono stati precompilati.
-  Future<int> prefillModules(String ateneoId, {bool remote = false}) async {
-    final file = await _s.catalog.moduli(ateneoId, remote: remote);
-    final data = file?.data.insegnamenti;
+  /// [moduli]: il file già letto (es. da [importPlan]), così non si
+  /// rilegge.
+  Future<int> prefillModules(
+    String ateneoId, {
+    bool remote = false,
+    ModuliAteneo? moduli,
+  }) async {
+    final data =
+        (moduli ?? (await _s.catalog.moduli(ateneoId, remote: remote))?.data)
+            ?.insegnamenti;
     if (data == null || data.isEmpty) return 0;
     final done = {
       for (final x in (await _s.settings.get(prefilledKey) ?? '').split('\n'))
@@ -205,7 +212,8 @@ class PathSetupService {
       if (c.id == null || ext == null || !ext.startsWith(prefix)) continue;
       if (done.contains(ext)) continue;
       final proposti = data[ext.substring(prefix.length)];
-      if (proposti == null) continue;
+      // solo il programma per gli argomenti d'esame, nessun modulo di Studio
+      if (proposti == null || proposti.moduli.isEmpty) continue;
       if ((await _s.study.modules(c.id!)).isNotEmpty) {
         done.add(ext);
         continue;
@@ -362,17 +370,25 @@ class PathSetupService {
       );
     }
     final before = {for (final c in await _s.courses.all()) c.id: c};
+    // moduli e programmi già scaricati con gli altri file dell'ateneo: danno
+    // gli argomenti d'esame e i moduli di Studio (facoltativi)
+    ModuliAteneo? moduli;
+    try {
+      moduli = (await _s.catalog.moduli(a.id))?.data;
+    } catch (_) {
+      moduli = null;
+    }
     final pack = catalogToDataPack(
       ateneo: a,
       corso: corso,
       aggiornatoIl: file!.data.aggiornatoIl,
       now: now,
+      moduli: moduli,
     );
     final report = await _importMap(pack);
     await retireStaleCourses(a.id, corso);
     try {
-      // moduli già scaricati con gli altri file dell'ateneo
-      await prefillModules(a.id);
+      await prefillModules(a.id, moduli: moduli);
     } catch (_) {
       // i moduli proposti sono facoltativi
     }
