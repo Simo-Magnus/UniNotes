@@ -1,0 +1,314 @@
+{
+ "universita_id": "unibocconi",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Corsi di laurea triennali (3-y Degree Programs)",
+   "fonte": "https://didattica.unibocconi.it/feed_front/allegati/Notes_3y_Degree_Programs_2026-202720260507152448.pdf",
+   "sessioni": [
+    {
+     "nome": "Periodo I – prime prove parziali (I semestre)",
+     "inizio": "2026-10-19",
+     "fine": "2026-10-28",
+     "note": "Anche 1 appello degli insegnamenti del II semestre 2025/26"
+    },
+    {
+     "nome": "Periodo II – sessione di dicembre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-22",
+     "note": "Appello anticipato aperto a tutti solo per 1-2 insegnamenti obbligatori per corso/anno (e alcuni a scelta), in sostituzione del primo periodo di gennaio; per gli altri riservato a studenti in scambio/stage"
+    },
+    {
+     "nome": "Periodo II – sessione invernale 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-19",
+     "note": null
+    },
+    {
+     "nome": "Periodo II – sessione invernale 2",
+     "inizio": "2027-01-20",
+     "fine": "2027-02-02",
+     "note": "Anche secondi parziali alternativi del I semestre"
+    },
+    {
+     "nome": "Periodo III – prime prove parziali (II semestre)",
+     "inizio": "2027-03-18",
+     "fine": "2027-04-03",
+     "note": null
+    },
+    {
+     "nome": "Periodo IV – sessione estiva 1",
+     "inizio": "2027-05-17",
+     "fine": "2027-06-01",
+     "note": null
+    },
+    {
+     "nome": "Periodo IV – sessione estiva 2",
+     "inizio": "2027-06-03",
+     "fine": "2027-06-23",
+     "note": "Anche secondi parziali alternativi del II semestre"
+    },
+    {
+     "nome": "Periodo IV – sessione estiva 3",
+     "inizio": "2027-06-24",
+     "fine": "2027-07-10",
+     "note": null
+    },
+    {
+     "nome": "Periodo V – sessione di recupero",
+     "inizio": "2027-08-24",
+     "fine": "2027-09-04",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibocconi-l-18-business-world-bachelor-in-business",
+    "unibocconi-l-18-economia-aziendale-e-management",
+    "unibocconi-l-18-economia-e-management-per-arte-cultura-e-comunicazione-econo",
+    "unibocconi-l-33-economic-and-social-sciences",
+    "unibocconi-l-33-economics-management-and-computer-science",
+    "unibocconi-l-14-global-law",
+    "unibocconi-l-33-international-economics-and-finance",
+    "unibocconi-l-18-international-economics-and-management",
+    "unibocconi-l-36-international-politics-and-government",
+    "unibocconi-l-35-mathematical-and-computing-sciences-for-artificial-intellige"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea magistrale biennali (2-y Degree Programs, esclusi IM/MM I anno e doppi titoli con PoliMi/Hunimed)",
+   "fonte": "https://didattica.unibocconi.it/feed_front/allegati/2y_Degree_Programs_except_for_IM_and_MM_2026-2027_b20260507152641.pdf",
+   "sessioni": [
+    {
+     "nome": "Periodo I – prime prove parziali (I semestre)",
+     "inizio": "2026-10-19",
+     "fine": "2026-10-27",
+     "note": null
+    },
+    {
+     "nome": "Periodo II – sessione di dicembre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-22",
+     "note": "Appello aperto a tutti per 1-2 insegnamenti obbligatori del I anno; per gli altri riservato a studenti in scambio/stage"
+    },
+    {
+     "nome": "Periodo II – sessione invernale 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-19",
+     "note": null
+    },
+    {
+     "nome": "Periodo II – sessione invernale 2",
+     "inizio": "2027-01-20",
+     "fine": "2027-02-02",
+     "note": null
+    },
+    {
+     "nome": "Periodo III – prime prove parziali (II semestre)",
+     "inizio": "2027-03-18",
+     "fine": "2027-04-03",
+     "note": null
+    },
+    {
+     "nome": "Periodo IV – sessione estiva 1",
+     "inizio": "2027-05-17",
+     "fine": "2027-06-01",
+     "note": null
+    },
+    {
+     "nome": "Periodo IV – sessione estiva 2",
+     "inizio": "2027-06-03",
+     "fine": "2027-06-23",
+     "note": null
+    },
+    {
+     "nome": "Periodo V – sessione di recupero",
+     "inizio": "2027-08-24",
+     "fine": "2027-09-04",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibocconi-lm-77-accounting-and-financial-management",
+    "unibocconi-lm-18-artificial-intelligence",
+    "unibocconi-lm-82-data-science-and-business-analytics",
+    "unibocconi-lm-56-economic-and-social-sciences",
+    "unibocconi-lm-77-economics-and-management-in-arts-culture-media-and-entertain",
+    "unibocconi-lm-77-economics-and-management-of-government-and-international-org",
+    "unibocconi-lm-16-finance",
+    "unibocconi-lm-sc-giur-global-law-for-organizations-business-enterprises-and-instit",
+    "unibocconi-lm-56-innovation-technology-and-entrepreneurship",
+    "unibocconi-lm-62-politics-and-policy-analysis"
+   ]
+  },
+  {
+   "ambito": "Laurea magistrale in International Management e Marketing Management (I anno; il II anno segue il calendario delle magistrali biennali)",
+   "fonte": "https://didattica.unibocconi.it/feed_front/allegati/Notes_Master_of_Science_in_IM_and_MM_2026-27_cc20260507153028.pdf",
+   "sessioni": [
+    {
+     "nome": "Periodo I – appello del primo bimestre",
+     "inizio": "2026-10-19",
+     "fine": "2026-10-24",
+     "note": null
+    },
+    {
+     "nome": "Periodo II – appello del secondo bimestre",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Periodo II – sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-19",
+     "note": null
+    },
+    {
+     "nome": "Periodo III – prime prove parziali (II semestre)",
+     "inizio": "2027-03-18",
+     "fine": "2027-04-03",
+     "note": null
+    },
+    {
+     "nome": "Periodo IV – sessione estiva 1",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-26",
+     "note": "Appello del primo bimestre del II semestre"
+    },
+    {
+     "nome": "Periodo IV – sessione estiva 2",
+     "inizio": "2027-05-27",
+     "fine": "2027-06-12",
+     "note": null
+    },
+    {
+     "nome": "Periodo V – sessione di recupero",
+     "inizio": "2027-08-24",
+     "fine": "2027-09-04",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibocconi-lm-77-international-management",
+    "unibocconi-lm-77-marketing-management"
+   ]
+  },
+  {
+   "ambito": "Lauree magistrali in Cyber Risk Strategy and Governance e Transformative Sustainability (con Politecnico di Milano; insegnamenti Bocconi)",
+   "fonte": "https://didattica.unibocconi.it/feed_front/allegati/Notes_CY_TS_2y20260724162234._Degree_Program_2026-2027_ENG",
+   "sessioni": [
+    {
+     "nome": "Periodo I – prime prove parziali (I semestre)",
+     "inizio": "2026-10-19",
+     "fine": "2026-10-27",
+     "note": null
+    },
+    {
+     "nome": "Periodo II – sessione di dicembre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Periodo II – sessione invernale 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-19",
+     "note": null
+    },
+    {
+     "nome": "Periodo II – sessione invernale 2",
+     "inizio": "2027-01-20",
+     "fine": "2027-02-02",
+     "note": null
+    },
+    {
+     "nome": "Periodo III – prime prove parziali (II semestre)",
+     "inizio": "2027-03-18",
+     "fine": "2027-04-03",
+     "note": "Solo II anno"
+    },
+    {
+     "nome": "Periodo IV – sessione estiva 1",
+     "inizio": "2027-05-17",
+     "fine": "2027-06-01",
+     "note": "Solo II anno"
+    },
+    {
+     "nome": "Periodo IV – sessione estiva 2",
+     "inizio": "2027-06-03",
+     "fine": "2027-06-23",
+     "note": "Solo II anno"
+    },
+    {
+     "nome": "Periodo V – sessione di recupero",
+     "inizio": "2027-08-24",
+     "fine": "2027-09-04",
+     "note": "Gli esami degli insegnamenti PoliMi seguono il calendario del Politecnico"
+    }
+   ],
+   "corsi": [
+    "unibocconi-lm-91-cyber-risk-strategy-and-governance",
+    "unibocconi-lm-76-transformative-sustainability"
+   ]
+  },
+  {
+   "ambito": "Laurea magistrale a ciclo unico in Giurisprudenza (5-y Degree Program [Law])",
+   "fonte": "https://didattica.unibocconi.it/feed_front/allegati/Notes_5y_Degree_Program_2026-2027_CM20260507153311.pdf",
+   "sessioni": [
+    {
+     "nome": "Periodo I – prime prove parziali (I semestre)",
+     "inizio": "2026-10-19",
+     "fine": "2026-10-27",
+     "note": "Anche 1 appello degli insegnamenti del II semestre 2025/26"
+    },
+    {
+     "nome": "Periodo II – sessione di dicembre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-22",
+     "note": "Appello aperto a tutti per 1-2 insegnamenti obbligatori per anno; per gli altri riservato a studenti in scambio/stage/Moot"
+    },
+    {
+     "nome": "Periodo II – sessione invernale 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-19",
+     "note": null
+    },
+    {
+     "nome": "Periodo II – sessione invernale 2",
+     "inizio": "2027-01-20",
+     "fine": "2027-02-02",
+     "note": null
+    },
+    {
+     "nome": "Periodo III – prime prove parziali (II semestre)",
+     "inizio": "2027-03-18",
+     "fine": "2027-04-07",
+     "note": null
+    },
+    {
+     "nome": "Periodo IV – sessione estiva 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-15",
+     "note": null
+    },
+    {
+     "nome": "Periodo IV – sessione estiva 2",
+     "inizio": "2027-06-16",
+     "fine": "2027-07-10",
+     "note": null
+    },
+    {
+     "nome": "Periodo V – sessione di recupero",
+     "inizio": "2027-08-24",
+     "fine": "2027-09-04",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibocconi-lmg-01-giurisprudenza"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

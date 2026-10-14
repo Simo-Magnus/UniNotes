@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_background">#FF02060F</color>
+    <!-- Widget della schermata Home, tema scuro: vetro scuro semitrasparente,
+         testo chiaro, accento azzurro. -->
+    <color name="widget_background">#E6081221</color>
+    <color name="widget_border">#33A0CDFF</color>
+    <color name="widget_text">#FFF3F7FB</color>
+    <color name="widget_text_muted">#FF8FA9C4</color>
+    <color name="widget_accent">#FF38BDF8</color>
+    <color name="widget_badge">#2638BDF8</color>
+    <color name="widget_record_top">#FFFFB064</color>
+    <color name="widget_record_bottom">#FFE86F08</color>
+    <color name="widget_on_record">#FF1A0B00</color>
+</resources>

@@ -1,0 +1,240 @@
+{
+ "universita_id": "unime",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Economia",
+   "fonte": "https://economia-banca-e-finanza.cdl.unime.it/sites/cdl06/files/2026-09/Calendario%20Didattico%20AA%202026_2027%20%281%29.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-19",
+     "note": "1° appello - 1ª sessione"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-02",
+     "note": "2° appello - 1ª sessione"
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-02-08",
+     "fine": "2027-02-19",
+     "note": "3° appello - 1ª sessione"
+    },
+    {
+     "nome": "Appello riservato",
+     "inizio": "2027-05-03",
+     "fine": "2027-05-07",
+     "note": "Riservato a fuori corso e iscritti all'ultimo anno"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-06-15",
+     "note": "1° appello - 2ª sessione"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-21",
+     "fine": "2027-06-29",
+     "note": "2° appello - 2ª sessione"
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-12",
+     "note": "3° appello - 2ª sessione"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "3ª sessione, 1 appello"
+    },
+    {
+     "nome": "Sessione di novembre",
+     "inizio": "2027-11-22",
+     "fine": "2027-11-26",
+     "note": "4ª sessione, 1 appello"
+    }
+   ],
+   "corsi": [
+    "unime-l-18-economia-aziendale",
+    "unime-l-33-economia-banca-e-finanza",
+    "unime-l-18-management-d-impresa",
+    "unime-lm-77-digital-transformation-and-innovation-management",
+    "unime-lm-56-metodi-quantitativi-per-l-economia-e-la-finanza"
+   ]
+  },
+  {
+   "ambito": "Ateneo (calendario didattico generale UniME 2026/27; alcuni Dipartimenti possono avere calendari diversi)",
+   "fonte": "https://international.unime.it/sites/sten/files/2026-08/UniME_Educational_Calendar_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Esami semestre aperto 1",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-10",
+     "note": "Esami del semestre aperto"
+    },
+    {
+     "nome": "Esami semestre aperto 2",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-11",
+     "note": "Esami del semestre aperto"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-12",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Esami riservati",
+     "inizio": "2027-05-03",
+     "fine": "2027-05-07",
+     "note": "Riservati a fuori corso, iscritti all'ultimo anno e specifiche categorie di studenti provenienti dal semestre aperto"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-09",
+     "note": null
+    },
+    {
+     "nome": "Esami riservati ai non laureandi",
+     "inizio": "2027-07-12",
+     "fine": "2027-07-16",
+     "note": "Esami riservati agli studenti non laureandi nella sessione di luglio"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione di novembre",
+     "inizio": "2027-11-22",
+     "fine": "2027-11-26",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unime-l-1-archeologia-e-storia-dell-arte",
+    "unime-l-33-big-data-per-le-scienze-economiche",
+    "unime-l-2-biotecnologie",
+    "unime-l-27-chimica",
+    "unime-l-14-consulente-del-lavoro-e-scienze-dei-servizi-giuridici",
+    "unime-l-14-consulente-del-lavoro-e-scienze-dei-servizi-giuridici-replic",
+    "unime-l-3-discipline-delle-arti-della-musica-e-dello-spettacolo",
+    "unime-l-5-filosofia",
+    "unime-l-30-fisica",
+    "unime-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "unime-l-23-heritage-innovation-engineering",
+    "unime-l-snt1-infermieristica",
+    "unime-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "unime-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628948",
+    "unime-l-31-informatica",
+    "unime-l-8-ingegneria-biomedica",
+    "unime-l-7-ingegneria-civile",
+    "unime-l-8-ingegneria-elettronica-e-informatica",
+    "unime-l-9-ingegneria-gestionale",
+    "unime-l-9-ingegneria-industriale",
+    "unime-l-10-lettere",
+    "unime-l-11-l-12-lingue-letterature-straniere-e-tecniche-della-mediazione-lin",
+    "unime-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+    "unime-l-13-marine-biology-and-blue-biotechnologies",
+    "unime-l-35-matematica",
+    "unime-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes",
+    "unime-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+    "unime-l-32-scienze-ambientali-marine-e-terrestri",
+    "unime-l-13-scienze-biologiche",
+    "unime-l-39-scienze-del-servizio-sociale",
+    "unime-l-15-scienze-del-turismo-della-cultura-e-dell-impresa",
+    "unime-l-16-scienze-dell-amministrazione-e-dell-organizzazione",
+    "unime-l-16-scienze-dell-amministrazione-e-dell-organizzazione-replica-s",
+    "unime-l-19-l-20-scienze-della-formazione-e-della-comunicazione",
+    "unime-l-19-l-20-scienze-della-formazione-e-della-comunicazione-replica-noto",
+    "unime-l-20-scienze-dellinformazione-tecniche-giornalistiche-e-social-me",
+    "unime-l-24-scienze-e-tecniche-psicologiche",
+    "unime-l-24-scienze-e-tecniche-psicologiche-cliniche-e-preventive",
+    "unime-l-24-scienze-e-tecniche-psicologiche-replica-noto",
+    "unime-l-25-scienze-e-tecnologie-agrarie-per-la-transizione-ecologica",
+    "unime-l-28-scienze-e-tecnologie-della-navigazione",
+    "unime-l-26-scienze-gastronomiche",
+    "unime-l-26-scienze-gastronomiche-replica-noto",
+    "unime-l-22-scienze-motorie-sport-e-salute",
+    "unime-l-29-scienze-nutraceutiche-e-alimenti-funzionali",
+    "unime-l-36-scienze-politiche-e-delle-relazioni-internazionali",
+    "unime-l-38-scienze-tecnologie-e-sicurezza-delle-produzioni-animali",
+    "unime-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr",
+    "unime-l-snt3-tecniche-audioprotesiche",
+    "unime-l-snt3-tecniche-audioprotesiche-abilitante-alla-professione-sanitar",
+    "unime-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+    "unime-l-snt3-tecniche-di-laboratorio-biomedico",
+    "unime-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+    "unime-l-snt3-tecniche-di-neurofisiopatologia",
+    "unime-l-snt3-tecniche-di-neurofisiopatologia-abilitante-alla-professione",
+    "unime-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+    "unime-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil",
+    "unime-l-14-transnational-and-european-legal-studies",
+    "unime-lm-21-bioingegneria",
+    "unime-lm-6-biologia-della-salute-delle-tecnologie-applicate-e-della-nut",
+    "unime-lm-6-biologia-ed-ecologia-dell-ambiente-marino-costiero",
+    "unime-lm-9-biotecnologie-mediche",
+    "unime-lm-9-biotecnologie-veterinarie",
+    "unime-lm-54-chimica",
+    "unime-lm-14-civilta-letteraria-dell-italia-medievale-e-moderna",
+    "unime-lm-55-lm-92-cognitive-science-and-theory-of-communication",
+    "unime-lm-19-comunicazione-digitale-e-linguaggi-del-giornalismo",
+    "unime-lm-77-consulenza-e-gestione-di-impresa",
+    "unime-lm-data-data-science",
+    "unime-lm-77-digital-transformation-e-innovation-management",
+    "unime-lm-sc-giur-diritto-dell-innovazione-e-della-sostenibilita",
+    "unime-lm-32-engineering-in-computer-science",
+    "unime-lm-78-filosofia-contemporanea",
+    "unime-lm-79-geophysical-sciences-for-seismic-risk",
+    "unime-lm-52-global-security-studies",
+    "unime-lm-23-ingegneria-civile",
+    "unime-lm-29-ingegneria-elettronica-per-l-industria",
+    "unime-lm-31-ingegneria-gestionale",
+    "unime-lm-33-ingegneria-meccanica",
+    "unime-lm-40-matematica",
+    "unime-lm-17-physics",
+    "unime-lm-51-psicologia-clinica-e-della-salute-nel-ciclo-di-vita-abilitan",
+    "unime-lm-51-psicologia-e-neuroscienze-cognitive",
+    "unime-lm-52-relazioni-internazionali",
+    "unime-lm-61-scienze-dell-alimentazione-e-nutrizione-umana",
+    "unime-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche",
+    "unime-lm-63-scienze-delle-pubbliche-amministrazioni",
+    "unime-lm-72-scienze-e-logistica-del-trasporto-marittimo-ed-aereo",
+    "unime-lm-67-scienze-e-tecniche-delle-attivita-motorie-preventive-e-adatt",
+    "unime-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+    "unime-lm-85-scienze-pedagogiche",
+    "unime-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie",
+    "unime-lm-84-scienze-storiche-societa-culture-e-istituzioni-d-europa",
+    "unime-lm-87-lm-88-servizio-sociale-politiche-sociali-e-studi-sociologici-e-ric",
+    "unime-lm-86-sicurezza-qualita-e-sostenibilita-delle-produzioni-animali",
+    "unime-lm-2-lm-15-tradizione-classica-e-archeologia-del-mediterraneo",
+    "unime-lm-37-traduzione-didattica-e-relazioni-culturali-per-le-lingue-e-l",
+    "unime-lm-49-lm-65-turismo-e-spettacolo",
+    "unime-lm-13-chimica-e-tecnologia-farmaceutiche",
+    "unime-lm-13-farmacia",
+    "unime-lmg-01-giurisprudenza",
+    "unime-lmg-01-giurisprudenza-replica-siracusa",
+    "unime-lm-41-medicina-e-chirurgia",
+    "unime-lm-41-medicina-e-chirurgia-1628987",
+    "unime-lm-42-medicina-veterinaria",
+    "unime-lm-41-medicine-and-surgery",
+    "unime-lm-46-odontoiatria-e-protesi-dentaria",
+    "unime-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "Date lette dal calendario didattico grafico di Ateneo 2026/27 (celle colorate «Esami»); la settimana 23-27/11/2026 è l'appello di novembre dell'a.a. 2025/26 e non è inclusa. Il Dipartimento di Economia pubblica un proprio calendario 2026/27, usato per i suoi corsi; gli altri Dipartimenti verificati (es. DiCAM) hanno online solo il calendario 2025/26, quindi per tutti gli altri corsi vale il calendario di Ateneo. Corsi senza Dipartimento dichiarato sul sito (schede Cineca) assegnati al calendario di Ateneo."
+}

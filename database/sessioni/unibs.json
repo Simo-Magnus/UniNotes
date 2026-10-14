@@ -1,0 +1,1230 @@
+{
+ "universita_id": "unibs",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Economia e Management (DEM)",
+   "fonte": "https://www.unibs.it/sites/default/files/2026-06/CALENDARIO%20DIDATTICO%20DEM%20%20a.a.%202026-2027%20-%20Approvato%20nel%20CCSA%20del%2026%20maggio%202026%20-%20Versione%20riassuntiva%20NEW.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-21",
+     "fine": "2027-02-26",
+     "note": "Due appelli per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-08",
+     "fine": "2027-07-13",
+     "note": "Due appelli per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-30",
+     "note": "Due appelli per tutti gli insegnamenti"
+    }
+   ],
+   "corsi": [
+    "unibs-l-18-banca-e-finanza",
+    "unibs-l-18-business-and-economics",
+    "unibs-l-33-economia-e-analisi-dei-dati",
+    "unibs-l-18-economia-e-gestione-aziendale",
+    "unibs-l-18-economia-e-gestione-delle-imprese-culturali-e-creative",
+    "unibs-lm-data-analytics-and-data-science-for-economics-and-management",
+    "unibs-lm-77-consulenza-aziendale-e-libera-professione",
+    "unibs-lm-56-finanza-e-risk-management",
+    "unibs-lm-77-management",
+    "unibs-lm-77-marketing-per-il-made-in-italy"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Giurisprudenza — Giurisprudenza c.u., Consulente del lavoro e giurista d'impresa, Scienze giuridiche dell'innovazione e della sostenibilità",
+   "fonte": "https://www.unibs.it/sites/default/files/2026-03/Calendario%20accademico%202026_2027_versione%2016.01%20%281%29.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "3 appelli distanziati di almeno 2 settimane"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-23",
+     "note": "3 appelli distanziati di almeno 2 settimane"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": "2 appelli distanziati di almeno 2 settimane"
+    }
+   ],
+   "corsi": [
+    "unibs-l-14-consulente-del-lavoro-e-giurista-d-impresa",
+    "unibs-lmg-01-giurisprudenza",
+    "unibs-lm-sc-giur-scienze-giuridiche-dell-innovazione-e-della-sostenibilita"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Governo delle amministrazioni pubbliche",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-04/03%20-%20Calendario%20anno%20accademico%2026-27%20SGIS%20e%20CLGI%20GAP%20-%20Allegato%202%20GAP.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-21",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-08",
+     "fine": "2027-07-13",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-30",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unibs-lm-63-governo-delle-amministrazioni-pubbliche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze politiche e sociali",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-03/Calendario%20accademico%202026_2027_SPeS.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-21",
+     "fine": "2027-02-28",
+     "note": "2 appelli distanziati di almeno 2 settimane"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-17",
+     "note": "2 appelli distanziati di almeno 2 settimane"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": "2 appelli distanziati di almeno 2 settimane"
+    }
+   ],
+   "corsi": [
+    "unibs-l-36-scienze-politiche-e-sociali"
+   ]
+  },
+  {
+   "ambito": "CCSA di Ingegneria Industriale (DIMI)",
+   "fonte": "https://www.unibs.it/sites/default/files/2026-05/cal_26_27_standard_CCSA_25_5_26_pubblicato.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione d'esame riservata",
+     "inizio": "2026-11-09",
+     "fine": "2026-11-20",
+     "note": "Riservata agli studenti prossimi alla laurea"
+    },
+    {
+     "nome": "Sessione d'esame del primo semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Due appelli per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Appello di Pasqua",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-03",
+     "note": "Un appello; interruzione delle lezioni"
+    },
+    {
+     "nome": "Sessione d'esame del secondo semestre",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-23",
+     "note": "Due appelli; prolungamento automatico (senza nuovi appelli) fino alla chiusura di Ferragosto"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Un appello; data di fine indicata come puramente indicativa"
+    }
+   ],
+   "corsi": [
+    "unibs-l-p03-tecniche-industriali-di-prodotto-e-di-processo",
+    "unibs-l-9-l-8-ingegneria-dell-automazione-industriale",
+    "unibs-l-9-ingegneria-gestionale",
+    "unibs-l-9-ingegneria-meccanica-e-dei-materiali",
+    "unibs-lm-25-ingegneria-dell-automazione-industriale",
+    "unibs-lm-31-ingegneria-gestionale",
+    "unibs-lm-33-ingegneria-meccanica",
+    "unibs-lm-33-ingegneria-per-l-innovazione-dei-materiali-e-del-prodotto"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria dell'Informazione (DII)",
+   "fonte": "https://www.unibs.it/sites/default/files/2026-04/cal_26_27_DII_pubblicato.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione d'esame riservata",
+     "inizio": "2026-11-09",
+     "fine": "2026-11-20",
+     "note": "Riservata agli studenti prossimi alla laurea"
+    },
+    {
+     "nome": "Sessione d'esame del primo semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Due appelli per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Appello di Pasqua",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-03",
+     "note": "Un appello; interruzione delle lezioni"
+    },
+    {
+     "nome": "Sessione d'esame del secondo semestre",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-23",
+     "note": "Due appelli; prolungamento automatico (senza nuovi appelli) fino alla chiusura di Ferragosto"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Un appello; data di fine indicata come puramente indicativa"
+    }
+   ],
+   "corsi": [
+    "unibs-l-8-ingegneria-elettronica-e-delle-telecomunicazioni",
+    "unibs-l-8-ingegneria-fisica-e-matematica",
+    "unibs-l-8-ingegneria-informatica",
+    "unibs-l-8-ingegneria-delle-tecnologie-per-l-impresa-digitale",
+    "unibs-l-8-ingegneria-medica",
+    "unibs-lm-29-ingegneria-elettronica",
+    "unibs-lm-32-ingegneria-informatica"
+   ]
+  },
+  {
+   "ambito": "CCSA di Ingegneria Civile e Ambientale (DICATAM)",
+   "fonte": "https://www.unibs.it/sites/default/files/2026-04/Calendario%20didattico%20dei%20corsi%20di%20studio%20afferenti%20al%20CCSA%20di%20Ingegneria%20Civile%20e%20Ambientale.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione d'esame riservata",
+     "inizio": "2026-11-09",
+     "fine": "2026-11-20",
+     "note": "Riservata agli studenti prossimi alla laurea"
+    },
+    {
+     "nome": "Sessione d'esame del primo semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Due appelli per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Appello di Pasqua",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "Un appello; interruzione delle lezioni"
+    },
+    {
+     "nome": "Sessione d'esame del secondo semestre",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-23",
+     "note": "Due appelli; prolungamento automatico (senza nuovi appelli) fino alla chiusura di Ferragosto"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Un appello; data di fine indicata come puramente indicativa"
+    }
+   ],
+   "corsi": [
+    "unibs-l-7-ingegneria-civile",
+    "unibs-l-7-ingegneria-per-l-ambiente-e-il-territorio",
+    "unibs-lm-23-ingegneria-civile",
+    "unibs-lm-35-ingegneria-per-l-ambiente-e-il-territorio",
+    "unibs-lm-35-civil-and-environmental-engineering-ingegneria-civile-e-ambi"
+   ]
+  },
+  {
+   "ambito": "CCSA di Scienze e Tecnologie Agrarie (DICATAM)",
+   "fonte": "https://www.unibs.it/sites/default/files/2026-04/Calendario%20didattico%20dei%20corsi%20di%20studio%20afferenti%20al%20CCSA%20di%20Scienze%20e%20Tecnologie%20Agrarie.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione d'esame riservata",
+     "inizio": "2026-11-09",
+     "fine": "2026-11-20",
+     "note": "Riservata a immatricolati 2025/26 e laureandi, solo per il CdL in Sistemi agricoli sostenibili"
+    },
+    {
+     "nome": "Sessione d'esame del primo semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Due appelli per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Appello di Pasqua",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "Un appello; interruzione delle lezioni"
+    },
+    {
+     "nome": "Sessione d'esame del secondo semestre",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-23",
+     "note": "Due appelli; prolungamento automatico (senza nuovi appelli) fino alla chiusura di Ferragosto"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Un appello; data di fine indicata come puramente indicativa"
+    }
+   ],
+   "corsi": [
+    "unibs-l-25-sistemi-agricoli-sostenibili",
+    "unibs-lm-69-tecnologie-per-la-transizione-ecologica-in-agricoltura"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Ingegneria edile-architettura",
+   "fonte": "https://www.unibs.it/sites/default/files/2026-04/Calendario%20didattico%20del%20corso%20di%20studio%20in%20Ingegneria%20Edile%20-%20Architettura.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione d'esame riservata",
+     "inizio": "2026-11-09",
+     "fine": "2026-11-20",
+     "note": "Riservata agli studenti prossimi alla laurea"
+    },
+    {
+     "nome": "Sessione d'esame del primo semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Due appelli per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Appello di Pasqua",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "Un appello; interruzione delle lezioni"
+    },
+    {
+     "nome": "Sessione d'esame del secondo semestre",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-23",
+     "note": "Due appelli; prolungamento automatico (senza nuovi appelli) fino alla chiusura di Ferragosto"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Un appello; data di fine indicata come puramente indicativa"
+    }
+   ],
+   "corsi": [
+    "unibs-lm-4-c-u-ingegneria-edile-architettura"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche dell'edilizia",
+   "fonte": "https://www.unibs.it/sites/default/files/2026-05/Calendario%20didattico%20del%20corso%20di%20studio%20in%20Tecniche%20dell%27Edilizia.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione d'esame riservata",
+     "inizio": "2026-11-09",
+     "fine": "2026-11-20",
+     "note": "Riservata agli studenti prossimi alla laurea"
+    },
+    {
+     "nome": "Sessione d'esame del primo semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Due appelli per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Appello di Pasqua",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "Un appello; interruzione delle lezioni"
+    },
+    {
+     "nome": "Sessione d'esame del secondo semestre",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-23",
+     "note": "Due appelli; prolungamento automatico (senza nuovi appelli) fino alla chiusura di Ferragosto"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Un appello; data di fine indicata come puramente indicativa"
+    }
+   ],
+   "corsi": [
+    "unibs-l-p01-tecniche-dell-edilizia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Assistenza sanitaria",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-05/Calendario%20Didattico%20Assistenza%20Sanitaria%202026-27%20ok.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-23",
+     "note": "Recupero dell'a.a. 2025/26 (1 appello)"
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-15",
+     "fine": "2027-03-25",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-09",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unibs-l-snt4-assistenza-sanitaria-abilitante-alla-professione-sanitaria-d",
+    "unibs-l-snt4-assistenza-sanitaria-abilitante-alla-professione-sanitaria-d-1627269"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Biotecnologie",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-06/calendario%20BIOTEC%202026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2026-12-14",
+     "fine": "2027-01-06",
+     "note": null
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-19",
+     "note": "Escluso il 15 febbraio"
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "Esclusi 26 e 29 marzo"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-17",
+     "fine": "2027-06-04",
+     "note": "Solo 3° anno"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-09",
+     "note": "1° e 2° anno"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibs-l-2-biotecnologie"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Dietistica",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-07/proposta%20calendario%20didattico%20dietistica%202026%202027%20agg..pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2026-12-21",
+     "fine": "2026-12-23",
+     "note": "Recupero dell'a.a. 2025/26 (1 appello)"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-25",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-16",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unibs-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Educazione professionale",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-06/Calendario%20didattico%202026-27%20Educazione%20professionale.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "Recupero dell'a.a. 2025/26 (1 appello)"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione primaverile",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-25",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-16",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unibs-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar",
+    "unibs-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar-1627399"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Fisioterapia",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-05/CALENDARIO%20DIDATTICO%20FISIOT%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2026-12-16",
+     "fine": "2026-12-23",
+     "note": "Recupero dell'a.a. 2025/26 (1 appello; giorni 16, 17, 18, 21, 22, 23 dicembre)"
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-02",
+     "note": "1 appello, solo insegnamenti del 1° semestre"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-09",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unibs-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "unibs-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1627321",
+    "unibs-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1627152"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Igiene dentale",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-05/Calendario%20didattico%202026-27%20Igiene%20Dentale.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione ordinaria di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-26",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-25",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione speciale natalizia",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione di recupero di febbraio",
+     "inizio": "2028-02-07",
+     "fine": "2028-02-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibs-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Infermieristica (tutte le sedi)",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-05/Calendario%20Didattico%202026-27%20Infermieristica%20ok.pdf",
+   "sessioni": [
+    {
+     "nome": "Prolungamento della sessione autunnale",
+     "inizio": "2026-12-21",
+     "fine": "2026-12-23",
+     "note": "Recupero dell'a.a. 2025/26: appello unico per la sola verbalizzazione di «Orientamento alla professione» e «Attività a scelta»"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-05",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Prolungamento della sessione invernale",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-09",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Prolungamento della sessione autunnale",
+     "inizio": "2027-12-20",
+     "fine": "2027-12-22",
+     "note": "Appello unico per la sola verbalizzazione di «Orientamento alla professione» e «Attività a scelta»"
+    }
+   ],
+   "corsi": [
+    "unibs-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "unibs-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628229",
+    "unibs-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1626886",
+    "unibs-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628002",
+    "unibs-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628415",
+    "unibs-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628296",
+    "unibs-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628776"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Ortottica ed assistenza oftalmologica",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-05/Calendario%20didattico%202026-27%20Ortottica%20P.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "Recupero dell'a.a. 2025/26 (1 appello)"
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-09",
+     "note": "1 appello, solo 1° semestre"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-16",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-31",
+     "fine": "2027-09-24",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unibs-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Ostetricia",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-05/Calendario%20Didattico%202026-27%20Ostetricia%20P.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "Recupero dell'a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-25",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria per tirocinio",
+     "inizio": "2027-09-20",
+     "fine": "2027-10-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibs-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze motorie",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-06/CalendarioDidattico_08636_2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "Recupero dell'a.a. 2025/26 e precedenti (2° e 3° anno)"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione pasquale 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione pasquale 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-02",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2027-12-16",
+     "fine": "2027-12-22",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2028-01-31",
+     "fine": "2028-02-25",
+     "note": "Recupero a.a. 2026/27 (2 appelli)"
+    }
+   ],
+   "corsi": [
+    "unibs-l-22-scienze-motorie"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecnica della riabilitazione psichiatrica",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-05/Calendario%20didattico%202026-27%20TRP.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-23",
+     "note": "Recupero dell'a.a. 2025/26 (1 appello)"
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-22",
+     "fine": "2027-07-17",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unibs-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche della prevenzione nell'ambiente e nei luoghi di lavoro",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-05/CALENDARIO%20DIDATTICO%20TPALL%202026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-23",
+     "note": "Recupero dell'a.a. 2025/26 (1 appello)"
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "1 appello, esclusi i giorni delle vacanze pasquali"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-16",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unibs-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche di laboratorio biomedico",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-05/CdS%20TLB%20Calendario%20attivit%C3%A0%20didattica%202026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-16",
+     "fine": "2026-12-23",
+     "note": "Recupero dell'a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "Anche sessione straordinaria a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione primaverile",
+     "inizio": "2027-03-19",
+     "fine": "2027-03-25",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-09",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibs-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche di radiologia medica, per immagini e radioterapia",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-05/Calendario%20didattico%202026-2027%20TRMIR%20ok.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-16",
+     "fine": "2026-12-23",
+     "note": "Recupero dell'a.a. 2025/26 (1 appello; giorni 16, 17, 18, 19, 22, 23 dicembre)"
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli (anche recupero a.a. 2025/26)"
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-19",
+     "fine": "2027-03-25",
+     "note": "1 appello; giorni 19, 22, 23, 24, 25 marzo (anche recupero a.a. 2025/26)"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-02",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-12-17",
+     "fine": "2027-12-23",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unibs-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Odontoiatria e protesi dentaria",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-05/Calendario%20didattico%202026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione ordinaria di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione periodo pasquale",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-25",
+     "note": null
+    },
+    {
+     "nome": "Sessione ordinaria estiva",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione di recupero di settembre",
+     "inizio": "2027-09-06",
+     "fine": "2027-10-01",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibs-lm-46-odontoiatria-e-protesi-dentaria"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Biotecnologie mediche",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-06/calendario%20BIOTEC%20MEDICHE%202026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2026-12-14",
+     "fine": "2027-01-06",
+     "note": "1° anno: solo prove parziali"
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-19",
+     "note": "Escluso il 15 febbraio"
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "Esclusi 26 e 29 marzo"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-03",
+     "fine": "2027-07-23",
+     "note": "2° anno (per i laureandi della sessione estiva: 3 maggio - 11 giugno)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-23",
+     "note": "1° anno"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibs-lm-9-biotecnologie-mediche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienza del movimento per la salute ed il benessere",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-06/CalendarioDidattico_08649_08646_2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "Recupero dell'a.a. 2025/26 e precedenti (2° anno)"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione pasquale 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione pasquale 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-02",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2027-12-16",
+     "fine": "2027-12-22",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2028-01-31",
+     "fine": "2028-02-25",
+     "note": "Recupero a.a. 2026/27 (2 appelli)"
+    }
+   ],
+   "corsi": [
+    "unibs-lm-67-scienza-del-movimento-per-la-salute-ed-il-benessere"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze infermieristiche e ostetriche",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-05/CALENDARIO%20didattico%202026.27%20CLMSIO%20Profilo%20Inferm..pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-25",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-02",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unibs-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicina e chirurgia",
+   "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-07/Calendario%20Didattico%2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione natalizia",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "Dal II al VI anno (1 appello)"
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "Dal II al VI anno (2 appelli)"
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-19",
+     "fine": "2027-03-25",
+     "note": "19 marzo e dal 22 al 25 marzo; per il I anno solo prove parziali"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unibs-lm-41-medicina-e-chirurgia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Farmacia",
+   "fonte": "https://corsi.unibs.it/it/laurea-magistrale-ciclo-unico/medicina/farmacia/studiare",
+   "sessioni": [
+    {
+     "nome": "Sessione di dicembre",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-23",
+     "note": "Sessione dell'a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli se a fine insegnamento, altrimenti almeno 1"
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-25",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-30",
+     "note": "Dal I al IV anno; per il V anno dal 7 giugno"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-08-30",
+     "fine": "2027-10-01",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unibs-lm-13-farmacia"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "Diversi calendari di area medica indicano le sessioni di recupero 2028 e alcune sessioni natalizie 2027 solo come «da programmare» per l'a.a. 2027/28: non sono riportate. Il I anno di Medicina e chirurgia segue il semestre filtro (esami su pagina dedicata)."
+}

@@ -1,0 +1,1436 @@
+{
+ "universita_id": "unipi",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-12",
+ "calendari": [
+  {
+   "ambito": "Scuola di Ingegneria",
+   "fonte": "https://www.ing.unipi.it/it/studenti/lezioni-ed-esami/calendario-didattico/2026-2027",
+   "sessioni": [
+    {
+     "nome": "Appelli straordinari I semestre",
+     "inizio": "2026-10-26",
+     "fine": "2026-11-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-14",
+     "fine": "2027-01-20",
+     "note": "I appello: 14-19/12/2026 solo per insegnamenti del primo anno, oppure 7-20/01/2027; nessun esame dal 21/12/2026 al 06/01/2027"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-26",
+     "fine": "2027-02-08",
+     "note": "II appello"
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-02-15",
+     "fine": "2027-02-26",
+     "note": "III appello"
+    },
+    {
+     "nome": "Appelli straordinari II semestre",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-30",
+     "note": "Esami sospesi dal 26 al 30 marzo 2027"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-06-21",
+     "note": "IV appello"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-09",
+     "note": "V appello"
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-07-19",
+     "fine": "2027-07-30",
+     "note": "VI appello"
+    },
+    {
+     "nome": "Sessione estiva 4",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-17",
+     "note": "VII appello"
+    }
+   ],
+   "corsi": [
+    "unipi-l-9-ingegneria-aerospaziale",
+    "unipi-l-8-ingegneria-biomedica",
+    "unipi-l-9-ingegneria-chimica",
+    "unipi-l-7-l-23-ingegneria-civile-ambientale-e-edile",
+    "unipi-l-9-ingegneria-dell-energia",
+    "unipi-l-8-ingegneria-delle-telecomunicazioni",
+    "unipi-l-8-ingegneria-elettronica",
+    "unipi-l-9-ingegneria-gestionale",
+    "unipi-l-8-ingegneria-informatica",
+    "unipi-l-9-ingegneria-meccanica",
+    "unipi-l-4-l-9-ingegneria-per-il-design-industriale",
+    "unipi-lm-32-artificial-intelligence-and-data-engineering",
+    "unipi-lm-21-bionics-engineering",
+    "unipi-lm-27-communications-engineering",
+    "unipi-lm-32-computer-engineering",
+    "unipi-lm-33-engineering-of-paper-and-cardboard",
+    "unipi-lm-20-ingegneria-aerospaziale",
+    "unipi-lm-21-ingegneria-biomedica",
+    "unipi-lm-22-ingegneria-chimica",
+    "unipi-lm-33-ingegneria-dei-veicoli",
+    "unipi-lm-23-ingegneria-delle-infrastrutture-civili-e-dell-ambiente",
+    "unipi-lm-28-ingegneria-elettrica",
+    "unipi-lm-29-ingegneria-elettronica",
+    "unipi-lm-30-ingegneria-energetica",
+    "unipi-lm-31-ingegneria-gestionale",
+    "unipi-lm-33-ingegneria-meccanica",
+    "unipi-lm-25-ingegneria-robotica-e-dell-automazione",
+    "unipi-lm-23-lm-24-ingegneria-strutturale-e-edile",
+    "unipi-lm-53-materials-and-nanotechnology",
+    "unipi-lm-30-nuclear-engineering",
+    "unipi-lm-4-c-u-ingegneria-edile-architettura",
+    "unipi-l-p03-tecniche-per-la-meccanica-e-la-produzione",
+    "unipi-l-p01-tecniche-per-le-costruzioni-civili-e-la-gestione-del-territo",
+    "unipi-l-8-digital-technologies-engineering",
+    "unipi-lm-66-cybersecurity"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Chimica e Chimica Industriale",
+   "fonte": "https://www.dcci.unipi.it/images/didattica/calendari/calendario_didattico_dcci_2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione (magistrali)",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": "Solo per insegnamenti del primo anno delle lauree magistrali"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2026-12-01",
+     "fine": "2026-12-23",
+     "note": "Solo per insegnamenti del primo anno, studenti della coorte 2025/26"
+    },
+    {
+     "nome": "Esami e prove in itinere",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "Primo anno della triennale in Chimica: nessuna sessione invernale (periodo didattico unico fino al 16/04/2027)"
+    },
+    {
+     "nome": "Sessione primaverile 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-25",
+     "note": null
+    },
+    {
+     "nome": "Sessione primaverile 2",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione primaverile-estiva (I anno Chimica)",
+     "inizio": "2027-04-19",
+     "fine": "2027-07-30",
+     "note": "Solo primo anno della triennale in Chimica"
+    },
+    {
+     "nome": "Appelli su richiesta III anno",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-28",
+     "note": "Per studenti del III anno che non frequentano il tirocinio"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-l-27-chimica",
+    "unipi-l-27-chimica-per-l-industria-e-l-ambiente",
+    "unipi-lm-54-chimica",
+    "unipi-lm-71-chimica-industriale"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Biologia",
+   "fonte": "https://www.biologia.unipi.it/calendario-didattico-natamb.html",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario facoltativo",
+     "inizio": "2026-10-05",
+     "fine": "2026-10-16",
+     "note": "Riservato (fuori corso, lavoratori, laureandi e altre categorie); senza sospensione didattica"
+    },
+    {
+     "nome": "Appello straordinario obbligatorio",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-13",
+     "note": "Riservato; senza sospensione didattica"
+    },
+    {
+     "nome": "Appello straordinario facoltativo",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-18",
+     "note": "Riservato; senza sospensione didattica"
+    },
+    {
+     "nome": "I e II appello",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Appello straordinario obbligatorio",
+     "inizio": "2027-03-01",
+     "fine": "2027-03-12",
+     "note": "Riservato; senza sospensione didattica"
+    },
+    {
+     "nome": "III appello",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-09",
+     "note": null
+    },
+    {
+     "nome": "Appello straordinario facoltativo",
+     "inizio": "2027-05-03",
+     "fine": "2027-05-14",
+     "note": "Riservato; senza sospensione didattica"
+    },
+    {
+     "nome": "IV appello",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-02",
+     "note": null
+    },
+    {
+     "nome": "V appello",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "VI appello",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-l-2-biotecnologie",
+    "unipi-l-13-scienze-biologiche",
+    "unipi-l-32-scienze-naturali-ed-ambientali",
+    "unipi-lm-6-biologia-applicata-alla-biomedicina",
+    "unipi-lm-6-biologia-marina",
+    "unipi-lm-6-biologia-molecolare-e-cellulare",
+    "unipi-lm-9-biotechnologies-and-applied-artificial-intelligence-for-heal",
+    "unipi-lm-8-biotecnologie-molecolari",
+    "unipi-lm-60-lm-6-conservazione-ed-evoluzione",
+    "unipi-lm-6-neuroscience"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze della Terra",
+   "fonte": "https://www.dst.unipi.it/calendario-accademico-geol.html",
+   "sessioni": [
+    {
+     "nome": "I appello straordinario",
+     "inizio": "2026-11-09",
+     "fine": "2026-11-13",
+     "note": "Riservato a lavoratori, genitori, corsi singoli, fuori corso, ripetenti, studenti con disabilità/DSA"
+    },
+    {
+     "nome": "I e II appello",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "II appello straordinario",
+     "inizio": "2027-03-08",
+     "fine": "2027-03-12",
+     "note": "Riservato"
+    },
+    {
+     "nome": "III appello",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-09",
+     "note": null
+    },
+    {
+     "nome": "IV appello",
+     "inizio": "2027-06-07",
+     "fine": "2027-06-30",
+     "note": null
+    },
+    {
+     "nome": "V appello",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "VI appello",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-l-34-geology",
+    "unipi-l-34-scienze-geologiche",
+    "unipi-lm-79-exploration-and-applied-geophysics",
+    "unipi-lm-75-scienze-dell-ambiente-e-del-clima",
+    "unipi-lm-74-scienze-e-tecnologie-geologiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Matematica",
+   "fonte": "https://www.dm.unipi.it/didattica/lezioni-esami/calendario-delle-attivita-didattiche/calendario-delle-attivita-didattiche-a-a-2026-27/",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2026-11-02",
+     "fine": "2026-12-05",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Appelli invernali",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2027-04-05",
+     "fine": "2027-05-07",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Appelli estivi",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": "2-3 appelli; scritti entro il 23 luglio"
+    },
+    {
+     "nome": "Appelli autunnali",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-21",
+     "note": "1-2 appelli; scritti entro il 17 settembre"
+    }
+   ],
+   "corsi": [
+    "unipi-l-35-matematica",
+    "unipi-lm-40-matematica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Fisica (L-30)",
+   "fonte": "https://docs.google.com/spreadsheets/d/1zDP8O9Z0IkKLTY1VwOEedO5p-L1jAWy2xvF-6dOkOpA/edit?usp=drive_link",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria (sabati di novembre)",
+     "inizio": "2026-11-07",
+     "fine": "2026-11-28",
+     "note": "Solo i sabati 7, 14, 21 e 28 novembre"
+    },
+    {
+     "nome": "Esami (II anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-29",
+     "note": "Solo II anno"
+    },
+    {
+     "nome": "Esami (III anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "Solo III anno"
+    },
+    {
+     "nome": "Sessione straordinaria di aprile",
+     "inizio": "2027-04-03",
+     "fine": "2027-04-24",
+     "note": "3-6 e 10-13 aprile; per il I e II anno anche i sabati 17 e 24 aprile"
+    },
+    {
+     "nome": "Esami (I anno)",
+     "inizio": "2027-04-26",
+     "fine": "2027-07-30",
+     "note": "Solo I anno"
+    },
+    {
+     "nome": "Esami (II anno)",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-30",
+     "note": "Solo II anno"
+    },
+    {
+     "nome": "Esami (III anno) 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-18",
+     "note": "Solo III anno"
+    },
+    {
+     "nome": "Esami (III anno) 2",
+     "inizio": "2027-06-22",
+     "fine": "2027-07-23",
+     "note": "Solo III anno"
+    },
+    {
+     "nome": "Esami (III anno) 3",
+     "inizio": "2027-07-27",
+     "fine": "2027-07-30",
+     "note": "Solo III anno"
+    },
+    {
+     "nome": "Esami di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "I e III anno fino al 16/09, II anno fino al 17/09"
+    }
+   ],
+   "corsi": [
+    "unipi-l-30-fisica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Fisica (LM-17)",
+   "fonte": "https://docs.google.com/spreadsheets/d/1zDP8O9Z0IkKLTY1VwOEedO5p-L1jAWy2xvF-6dOkOpA/edit?usp=drive_link",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria (sabati di novembre)",
+     "inizio": "2026-11-07",
+     "fine": "2026-11-28",
+     "note": "Solo i sabati 7, 14, 21 e 28 novembre"
+    },
+    {
+     "nome": "Esami 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di aprile",
+     "inizio": "2027-04-03",
+     "fine": "2027-04-13",
+     "note": "3-6 e 10-13 aprile"
+    },
+    {
+     "nome": "Esami 2",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-18",
+     "note": null
+    },
+    {
+     "nome": "Esami 3",
+     "inizio": "2027-06-22",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Esami 4",
+     "inizio": "2027-07-27",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Esami 5",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-16",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-lm-17-fisica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Informatica (L-31)",
+   "fonte": "https://didattica.di.unipi.it/laurea-in-informatica/calendario-lezioni-ed-esami-a-a-2026-227/",
+   "sessioni": [
+    {
+     "nome": "Primo appello straordinario",
+     "inizio": "2026-10-19",
+     "fine": "2026-11-14",
+     "note": "Senza sospensione delle lezioni; solo lavoratori, fuori corso, genitori e studentesse in maternità"
+    },
+    {
+     "nome": "Primo appello ordinario",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": null
+    },
+    {
+     "nome": "Secondo appello ordinario",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-29",
+     "note": "Primo anno fino al 22/01, secondo e terzo anno fino al 29/01"
+    },
+    {
+     "nome": "Secondo appello straordinario",
+     "inizio": "2027-03-01",
+     "fine": "2027-03-24",
+     "note": "Senza sospensione delle lezioni; categorie riservate"
+    },
+    {
+     "nome": "Terzo, quarto e quinto appello ordinario",
+     "inizio": "2027-05-03",
+     "fine": "2027-07-30",
+     "note": "Primo anno dal 03/05, secondo e terzo anno dal 10/05"
+    },
+    {
+     "nome": "Sesto appello ordinario",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-l-31-informatica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Informatica – Corsi di laurea magistrale",
+   "fonte": "https://didattica.di.unipi.it/en/master-programme-in-computer-science/academic-calendar-2026-2027/",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-10-19",
+     "fine": "2026-11-14",
+     "note": "Senza sospensione delle lezioni; categorie riservate"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-11",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-01",
+     "fine": "2027-03-24",
+     "note": "Senza sospensione delle lezioni; categorie riservate"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unipi-lm-18-computer-science",
+    "unipi-lm-18-lm-data-data-science-and-business-informatics",
+    "unipi-lm-18-informatics-for-digital-health"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Filologia, Letteratura e Linguistica",
+   "fonte": "https://www.fileli.unipi.it/didattica/calendario-accademico/anno-accademico-2026-2027/",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2026-12-15",
+     "fine": "2026-12-21",
+     "note": "Per lavoratori, genitori, fuori corso, corsi singoli e altre categorie"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "2 appelli (nel calendario indicata come «Sessione esami invernale 2025-2026»)"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-04-08",
+     "fine": "2027-04-14",
+     "note": "1 appello, rivolta a tutte le tipologie di studenti"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unipi-l-10-informatica-umanistica",
+    "unipi-l-10-lettere",
+    "unipi-l-11-lingue-letterature-e-comunicazione-interculturale",
+    "unipi-lm-15-filologia-e-storia-dell-antichita",
+    "unipi-lm-43-informatica-umanistica",
+    "unipi-lm-14-italianistica",
+    "unipi-lm-37-lingue-letterature-e-filologie-euro-americane",
+    "unipi-lm-39-linguistica-e-traduzione"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Civiltà e Forme del Sapere",
+   "fonte": "https://www.cfs.unipi.it/studiare-a-cfs/calendario-accademico/",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2026-12-15",
+     "fine": "2026-12-18",
+     "note": "Solo per studenti iscritti al I anno nell'a.a. 2025/26 (esclusi gli esami del I semestre 2026/27)"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Recupero primaverile",
+     "inizio": "2027-04-08",
+     "fine": "2027-04-14",
+     "note": "1 appello; aperto a tutti per i corsi completati entro il 14/12/2026"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-16",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unipi-l-3-l-20-discipline-dello-spettacolo-e-della-comunicazione",
+    "unipi-l-5-filosofia",
+    "unipi-l-1-scienze-dei-beni-culturali",
+    "unipi-l-37-scienze-per-la-pace-cooperazione-internazionale-e-trasformaz",
+    "unipi-l-42-storia",
+    "unipi-lm-2-archeologia",
+    "unipi-lm-92-comunicazione-media-tecnologie",
+    "unipi-lm-78-filosofia-e-forme-del-sapere",
+    "unipi-lm-81-scienze-per-la-pace-trasformazione-dei-conflitti-e-cooperazi",
+    "unipi-lm-89-storia-dell-arte",
+    "unipi-lm-84-storia-e-civilta",
+    "unipi-lm-2-studi-orientali-ed-egittologici",
+    "unipi-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Giurisprudenza",
+   "fonte": "https://www.jus.unipi.it/didattica/calendario-didattico/anno-accademico-a-a-2026-2027/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-22",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-12",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Appello riservato",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "1 appello per lavoratori, genitori, fuori corso ed Erasmus incoming"
+    },
+    {
+     "nome": "Appello di maggio",
+     "inizio": "2027-05-24",
+     "fine": "2027-05-31",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": "3 appelli (il secondo è un prolungamento del primo)"
+    },
+    {
+     "nome": "Appello di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Appello riservato",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-30",
+     "note": "1 appello per lavoratori, genitori, fuori corso"
+    }
+   ],
+   "corsi": [
+    "unipi-l-14-diritto-dell-impresa-del-lavoro-e-delle-pubbliche-amministra",
+    "unipi-lm-sc-giur-diritto-dell-innovazione-per-l-impresa-e-le-istituzioni",
+    "unipi-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Politiche",
+   "fonte": "https://www.sp.unipi.it/it/calendario-didattico-anno-accademico-2026-2027/",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-28",
+     "note": "Riservato alle categorie dell'art. 23 quater c. 2 del Regolamento didattico di Ateneo"
+    },
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-06",
+     "note": null
+    },
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-30",
+     "note": "Riservato"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-05",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-14",
+     "fine": "2027-06-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-17",
+     "note": null
+    },
+    {
+     "nome": "Appello di settembre",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-l-39-scienze-del-servizio-sociale",
+    "unipi-l-36-scienze-politiche",
+    "unipi-lm-59-comunicazione-d-impresa-e-politica-delle-risorse-umane",
+    "unipi-lm-87-gestione-e-innovazione-dei-servizi-sociali-imprenditorialita",
+    "unipi-lm-62-istituzioni-politica-e-societa",
+    "unipi-lm-52-unione-europea-processi-globali-e-sostenibilita-dello-svilup"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Farmacia",
+   "fonte": "https://www.farm.unipi.it/wp-content/uploads/2026/05/Calendario-didattico_2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Appello per lavoratori, genitori e fuori corso",
+     "inizio": "2026-10-01",
+     "fine": "2026-12-15",
+     "note": "Almeno 1 appello"
+    },
+    {
+     "nome": "Appello riservato immatricolati 2025/26",
+     "inizio": "2026-12-16",
+     "fine": "2026-12-18",
+     "note": "1 appello per ogni esame del primo anno"
+    },
+    {
+     "nome": "I periodo esami",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "Almeno 2 appelli"
+    },
+    {
+     "nome": "Periodo esami in primavera 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-25",
+     "note": "Almeno 1 appello nei due periodi"
+    },
+    {
+     "nome": "Periodo esami in primavera 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-03",
+     "note": null
+    },
+    {
+     "nome": "Appello per lavoratori, genitori e fuori corso",
+     "inizio": "2027-04-19",
+     "fine": "2027-05-29",
+     "note": "Almeno 1 appello"
+    },
+    {
+     "nome": "II periodo esami",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "Almeno 2 appelli"
+    },
+    {
+     "nome": "III periodo esami",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-25",
+     "note": "Almeno 1 appello"
+    }
+   ],
+   "corsi": [
+    "unipi-l-29-scienze-dei-prodotti-erboristici-e-della-salute",
+    "unipi-lm-61-scienze-della-nutrizione-umana",
+    "unipi-lm-13-chimica-e-tecnologia-farmaceutiche",
+    "unipi-lm-13-farmacia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze del Turismo (L-15)",
+   "fonte": "https://www.laureainturismo.it/corso-di-laurea-triennale-in-scienze-del-turismo-calendario/",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria di novembre 2025/26",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-20",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di aprile",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di novembre",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-19",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-l-15-scienze-del-turismo"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Progettazione e gestione dei sistemi turistici (LM-49)",
+   "fonte": "https://www.laureainturismo.it/corso-di-laurea-magistrale-in-progettazione-e-gestione-dei-sistemi-turistici-mediterranei-calendario/",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria di novembre 2025/26",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-20",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di aprile",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di novembre",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-19",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-lm-49-progettazione-e-gestione-dei-sistemi-turistici-e-degli-event"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia e Management",
+   "fonte": "https://www.ec.unipi.it/wp-content/uploads/2026/07/Calendario_attivita_didattiche_2026_2027_Bozza-1-1.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-10",
+     "fine": "2027-02-19",
+     "note": "Calendario didattico 2026/27 del Dipartimento (file indicato come «Bozza», pubblicato nella pagina Calendario didattico & Orario lezioni); finestra 1-14/09/2026 esclusa perché riferita all'a.a. precedente; prove in itinere 2-6/11/2026"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-30",
+     "note": "Prove in itinere 1-7/04/2027"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-14",
+     "note": "Ulteriore appello nel periodo 1-14 settembre 2027"
+    }
+   ],
+   "corsi": [
+    "unipi-l-18-banca-finanza-e-mercati-finanziari",
+    "unipi-l-18-economia-aziendale",
+    "unipi-l-33-economia-e-commercio",
+    "unipi-l-18-management-for-business-and-economics",
+    "unipi-lm-77-banca-finanza-aziendale-e-mercati-finanziari",
+    "unipi-lm-77-consulenza-professionale-alle-aziende",
+    "unipi-lm-77-digital-intelligence-and-change-management",
+    "unipi-lm-56-economics",
+    "unipi-lm-77-marketing-e-ricerche-di-mercato",
+    "unipi-lm-77-strategia-management-e-controllo"
+   ]
+  },
+  {
+   "ambito": "Polo Universitario Sistemi Logistici di Livorno – Corso di laurea in Economia e legislazione dei sistemi logistici (L-18)",
+   "fonte": "https://polologistica.unipi.it/offerta-formativa/triennale/calendario-didattico-orario-lezioni-calendario-esami/",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario di novembre",
+     "inizio": "2026-11-01",
+     "fine": "2026-11-30",
+     "note": "Solo categorie di studenti aventi diritto, su domanda"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-23",
+     "note": "Insegnamenti del II semestre dal 18/01/2027"
+    },
+    {
+     "nome": "Appello straordinario di aprile",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "Solo categorie di studenti aventi diritto, su domanda"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-30",
+     "note": "Insegnamenti del I semestre dal 14/06/2027"
+    },
+    {
+     "nome": "Appello di settembre",
+     "inizio": "2027-09-03",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-l-18-economia-e-legislazione-dei-sistemi-logistici"
+   ]
+  },
+  {
+   "ambito": "Polo Universitario Sistemi Logistici di Livorno – Corso di laurea magistrale in Management e controllo dei processi logistici (LM-77)",
+   "fonte": "https://polologistica.unipi.it/offerta-formativa/magistrale/orario-lezioni/",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario di novembre",
+     "inizio": "2026-11-01",
+     "fine": "2026-11-30",
+     "note": "Solo categorie di studenti aventi diritto, su domanda"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-23",
+     "note": "Insegnamenti del II semestre dal 18/01/2027"
+    },
+    {
+     "nome": "Appello straordinario di aprile",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "Solo categorie di studenti aventi diritto, su domanda"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-30",
+     "note": "Insegnamenti del I semestre dal 14/06/2027"
+    },
+    {
+     "nome": "Appello di settembre",
+     "inizio": "2027-09-03",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-lm-77-management-e-controllo-dei-processi-logistici"
+   ]
+  },
+  {
+   "ambito": "Scuola di Medicina – Corsi di laurea magistrale a ciclo unico in Medicina e Chirurgia e in Odontoiatria e Protesi dentaria",
+   "fonte": "https://www.med.unipi.it/wp-content/uploads/2026/07/calendario_aa_2026-2027-MED-e-ODO.pdf",
+   "sessioni": [
+    {
+     "nome": "I appello riservato (RdA)",
+     "inizio": "2026-10-24",
+     "fine": "2026-11-07",
+     "note": "Riservato ai sensi del Regolamento didattico di Ateneo; calendario approvato sotto condizione di corrispondenza con il calendario generale di Ateneo"
+    },
+    {
+     "nome": "I appello straordinario",
+     "inizio": "2026-12-16",
+     "fine": "2026-12-23",
+     "note": null
+    },
+    {
+     "nome": "I sessione d'esame",
+     "inizio": "2027-01-30",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "II appello riservato (RdA)",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-10",
+     "note": "Riservato ai sensi del Regolamento didattico di Ateneo"
+    },
+    {
+     "nome": "II appello straordinario",
+     "inizio": "2027-04-30",
+     "fine": "2027-05-08",
+     "note": null
+    },
+    {
+     "nome": "II sessione d'esame",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "III sessione d'esame",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-lm-41-medicina-e-chirurgia",
+    "unipi-lm-46-odontoiatria-e-protesi-dentaria"
+   ]
+  },
+  {
+   "ambito": "Scuola di Medicina – Corsi di laurea delle Professioni sanitarie (Classi I, II, III e IV)",
+   "fonte": "https://www.med.unipi.it/wp-content/uploads/2026/09/IFE_calen_did_aa_2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "I appello straordinario",
+     "inizio": "2026-11-19",
+     "fine": "2026-11-30",
+     "note": "Calendario unico pubblicato per i CdS delle professioni sanitarie delle classi I-IV (allegato alla pagina di Infermieristica); assegnato ai corsi triennali senza calendario proprio"
+    },
+    {
+     "nome": "I sessione d'esame",
+     "inizio": "2027-01-30",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "II appello straordinario",
+     "inizio": "2027-04-22",
+     "fine": "2027-05-08",
+     "note": null
+    },
+    {
+     "nome": "II sessione d'esame",
+     "inizio": "2027-06-26",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "III sessione d'esame",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "unipi-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+    "unipi-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar",
+    "unipi-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "unipi-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+    "unipi-l-snt2-podologia-abilitante-alla-professione-sanitaria-di-podologo",
+    "unipi-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr",
+    "unipi-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil",
+    "unipi-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista",
+    "unipi-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+    "unipi-l-snt3-tecniche-audiometriche",
+    "unipi-l-snt3-tecniche-audiometriche-abilitante-alla-professione-sanitaria",
+    "unipi-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+    "unipi-l-snt3-tecniche-di-neurofisiopatologia",
+    "unipi-l-snt3-tecniche-di-neurofisiopatologia-abilitante-alla-professione",
+    "unipi-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+    "unipi-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche audioprotesiche",
+   "fonte": "https://www.med.unipi.it/wp-content/uploads/2026/07/Calendario-didattico-TDP-2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "I appello straordinario",
+     "inizio": "2026-11-19",
+     "fine": "2026-11-30",
+     "note": "Non per gli studenti del primo anno"
+    },
+    {
+     "nome": "I sessione d'esame",
+     "inizio": "2027-01-30",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "II appello straordinario",
+     "inizio": "2027-04-23",
+     "fine": "2027-05-08",
+     "note": "Non per gli studenti del primo anno"
+    },
+    {
+     "nome": "II sessione d'esame",
+     "inizio": "2027-06-26",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "III sessione d'esame",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-l-snt3-tecniche-audioprotesiche-abilitante-alla-professione-sanitar"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze infermieristiche e ostetriche (profilo infermieristico)",
+   "fonte": "https://www.med.unipi.it/wp-content/uploads/2026/09/WIO_calen_did_aa_2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "I appello straordinario",
+     "inizio": "2026-11-19",
+     "fine": "2026-11-30",
+     "note": "Stesse date per I e II anno"
+    },
+    {
+     "nome": "I sessione d'esame",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "II appello straordinario",
+     "inizio": "2027-04-26",
+     "fine": "2027-05-08",
+     "note": null
+    },
+    {
+     "nome": "II sessione d'esame",
+     "inizio": "2027-06-26",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "III sessione d'esame",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze riabilitative delle professioni sanitarie",
+   "fonte": "https://www.med.unipi.it/wp-content/uploads/2026/09/WRB_calen_did_aa_2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "I appello straordinario",
+     "inizio": "2026-11-19",
+     "fine": "2026-11-30",
+     "note": "Stesse date per I e II anno"
+    },
+    {
+     "nome": "I sessione d'esame",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "II appello straordinario",
+     "inizio": "2027-04-26",
+     "fine": "2027-05-08",
+     "note": null
+    },
+    {
+     "nome": "II sessione d'esame",
+     "inizio": "2027-06-26",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "III sessione d'esame",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Agrarie, Alimentari e Agro-ambientali",
+   "fonte": "https://esami.unipi.it/calendario.php",
+   "sessioni": [
+    {
+     "nome": "Sessione di dicembre",
+     "inizio": "2026-12-01",
+     "fine": "2026-12-18",
+     "note": "Riservata agli studenti delle lauree triennali iscritti nel 2025/26"
+    },
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-03-01",
+     "fine": "2027-05-31",
+     "note": "Riservata a studenti lavoratori, genitori, fuori corso e altre categorie"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-05-31",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipi-lm-7-lm-70-biosicurezza-e-qualita-degli-alimenti",
+    "unipi-lm-7-biotecnologie-vegetali-e-microbiche",
+    "unipi-lm-69-progettazione-e-gestione-del-verde-urbano-e-del-paesaggio",
+    "unipi-l-25-scienze-agrarie",
+    "unipi-l-26-scienze-degli-alimenti",
+    "unipi-lm-69-sistemi-agricoli-sostenibili",
+    "unipi-l-26-viticoltura-ed-enologia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze motorie (L-22)",
+   "fonte": "https://www.med.unipi.it/wp-content/uploads/2026/10/00_SMO_appelli_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Primo appello straordinario",
+     "inizio": "2026-11-19",
+     "fine": "2026-11-30",
+     "note": "Un appello"
+    },
+    {
+     "nome": "Sessione di gennaio-febbraio",
+     "inizio": "2027-01-30",
+     "fine": "2027-02-27",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "Secondo appello straordinario",
+     "inizio": "2027-04-23",
+     "fine": "2027-05-08",
+     "note": "Un appello"
+    },
+    {
+     "nome": "Sessione di giugno-luglio",
+     "inizio": "2027-06-26",
+     "fine": "2027-07-31",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Due appelli"
+    }
+   ],
+   "corsi": [
+    "unipi-l-22-scienze-motorie"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze e tecniche delle attività motorie preventive e adattate (LM-67)",
+   "fonte": "https://www.med.unipi.it/wp-content/uploads/2026/10/00_WMO_esami_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Primo appello straordinario",
+     "inizio": "2026-11-19",
+     "fine": "2026-11-30",
+     "note": "Un appello"
+    },
+    {
+     "nome": "Sessione di gennaio-febbraio",
+     "inizio": "2027-01-30",
+     "fine": "2027-02-27",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "Secondo appello straordinario",
+     "inizio": "2027-04-23",
+     "fine": "2027-05-08",
+     "note": "Un appello"
+    },
+    {
+     "nome": "Sessione di giugno-luglio",
+     "inizio": "2027-06-26",
+     "fine": "2027-07-31",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Due appelli"
+    }
+   ],
+   "corsi": [
+    "unipi-lm-67-scienze-e-tecniche-delle-attivita-motorie-preventive-e-adatt"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze infermieristiche e ostetriche (profilo ostetrico)",
+   "fonte": "https://www.med.unipi.it/wp-content/uploads/2026/09/0_WIPO_esami_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-27",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "Sessione di aprile-maggio",
+     "inizio": "2027-04-26",
+     "fine": "2027-05-08",
+     "note": "Un appello"
+    },
+    {
+     "nome": "Sessione di giugno-luglio",
+     "inizio": "2027-06-26",
+     "fine": "2027-07-31",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Due appelli"
+    }
+   ],
+   "corsi": [
+    "unipi-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-ostetrico"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Lingua e cultura italiana per stranieri (L-10, on line, Consorzio ICoN)",
+   "fonte": "https://laurea.italicon.it/it/calendario-didattico-26-27",
+   "sessioni": [
+    {
+     "nome": "Sessione d'esame del primo semestre",
+     "inizio": "2027-01-20",
+     "fine": "2027-02-05",
+     "note": "Iscrizione agli esami dal 25 novembre al 10 dicembre 2026; date che potrebbero subire lievi modifiche"
+    },
+    {
+     "nome": "Sessione d'esame del secondo semestre",
+     "inizio": "2027-06-25",
+     "fine": "2027-07-12",
+     "note": "Iscrizione agli esami dal 15 al 31 maggio 2027; date che potrebbero subire lievi modifiche"
+    }
+   ],
+   "corsi": [
+    "unipi-l-10-lingua-e-cultura-italiana-per-stranieri"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unipi-l-24-scienze-e-tecniche-di-psicologia-clinica-e-sperimentale",
+  "unipi-l-38-scienze-e-tecnologie-delle-produzioni-animali",
+  "unipi-l-38-tecniche-di-allevamento-animale-ed-educazione-cinofila",
+  "unipi-l-9-ingegneria-navale",
+  "unipi-l-ds-scienze-marittime-e-navali",
+  "unipi-lm-42-medicina-veterinaria",
+  "unipi-lm-51-psicologia-clinica-e-scienze-comportamentali",
+  "unipi-lm-86-sistemi-zootecnici-sostenibili",
+  "unipi-lm-ds-scienze-marittime-e-navali",
+  "unipi-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-intensive",
+  "unipi-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-intensive-wici-lm",
+  "unipi-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-primarie",
+  "unipi-lmg-01-giurisprudenza-1634621"
+ ],
+ "mancanti": "UniPi non ha un calendario d'esami di Ateneo: ogni Dipartimento/Scuola/corso pubblica il proprio. Cybersecurity (LM-66, interdipartimentale) è assegnato alla Scuola di Ingegneria (la pagina «Academic Calendar» del corso rimanda a quel calendario); i corsi triennali delle professioni sanitarie al calendario unico della Scuola di Medicina (Tecniche audioprotesiche ha un calendario proprio). Agraria: date delle sessioni dal «Calendario sessioni» del portale esami di Ateneo (esami.unipi.it, Dipartimento di Scienze Agrarie), il calendario del sito indica solo i mesi. Ancora scoperti (verificato il 12/10/2026): Scienze Veterinarie (Medicina veterinaria, Scienze e tecnologie delle produzioni animali, Tecniche di allevamento animale ed educazione cinofila, Sistemi zootecnici sostenibili): la pagina vet.unipi.it/calendario-degli-esami/ ha solo le date d'esame 2025-2026 e il calendario didattico solo i periodi di lezione; il portale esami ha solo sessioni mensili di ottobre e novembre 2026. Psicologia (L-24, LM-51): le pagine dei corsi su med.unipi.it rimandano solo al portale esami (nel portale solo l'appello straordinario di novembre 2026). LM in Scienze infermieristiche specialistiche (cure intensive ed emergenza, cure primarie): nessun calendario esami 2026/27 sulle pagine della Scuola di Medicina. Corsi dell'Accademia Navale di Livorno (Ingegneria navale, Scienze marittime e navali L e LM, Giurisprudenza): nessun calendario delle sessioni pubblicato."
+}

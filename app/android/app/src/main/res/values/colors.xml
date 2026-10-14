@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_background">#FF02060F</color>
+    <!-- Widget della schermata Home, tema chiaro del sistema (vetro chiaro,
+         azzurro dell'app; i colori scuri sono in values-night). -->
+    <color name="widget_background">#F2F4F9FF</color>
+    <color name="widget_border">#1A0F2A4D</color>
+    <color name="widget_text">#FF0B1726</color>
+    <color name="widget_text_muted">#FF5B708A</color>
+    <color name="widget_accent">#FF0369A1</color>
+    <color name="widget_badge">#1F0369A1</color>
+    <color name="widget_record_top">#FFFFB064</color>
+    <color name="widget_record_bottom">#FFE86F08</color>
+    <color name="widget_on_record">#FF1A0B00</color>
+</resources>

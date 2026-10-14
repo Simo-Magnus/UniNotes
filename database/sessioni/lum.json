@@ -1,0 +1,67 @@
+{
+ "universita_id": "lum",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Scienze Giuridiche e dell'Impresa",
+   "fonte": "https://www.lum.it/wp-content/uploads/2026/10/CALENDARIO-GENERALE-2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "Prosecuzione e termine della sessione invernale"
+    },
+    {
+     "nome": "Sessione straordinaria 1",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": "Sessione straordinaria di aprile"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-20",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria 2",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": "Sessione straordinaria di novembre"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-12-06",
+     "fine": "2027-12-17",
+     "note": "Inizio della sessione invernale, come indicato nel calendario generale 2026/2027 (settembre 2026 - gennaio 2028)"
+    }
+   ],
+   "corsi": [
+    "lum-lmg-01-giurisprudenza"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "lum-l-18-business-economics-and-organization",
+  "lum-l-18-economia-e-gestione-aziendale",
+  "lum-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "lum-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "lum-l-8-ingegneria-biomedica",
+  "lum-l-9-ingegneria-gestionale",
+  "lum-lm-77-economia-e-management",
+  "lum-lm-31-ingegneria-gestionale",
+  "lum-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "lum-lm-41-medicina-e-chirurgia",
+  "lum-lm-41-medicina-e-chirurgia-replica-casamassima",
+  "lum-lm-46-odontoiatria-e-protesi-dentaria"
+ ],
+ "mancanti": "LUM pubblica calendari per Dipartimento. Per il 2026/27 è online solo il calendario generale del Dipartimento di Scienze Giuridiche e dell'Impresa (Giurisprudenza). Ricontrollati il 2026-10-11 la libreria media del sito (ricerca «calendario», «sessioni», «esami», «2026-2027», «26-27»), le pagine dei corsi e dei dipartimenti: Dipartimento di Management, Finanza e Tecnologia (L-18, BEO, LM-77) e Dipartimento di Ingegneria (L-8, L-9, LM-31) rimandano solo ai fogli Google «Programmazione date esami 25-26» / «Date esami Ingegneria a.a. 25-26»; i regolamenti didattici 2026/27 (L-9, LM-31, Ingegneria biomedica) non fissano date delle sessioni. Dipartimento di Medicina e Chirurgia (Medicina, Odontoiatria, Infermieristica, Fisioterapia, Scienze infermieristiche): «Calendario esami» rimanda all'agenda Easystaff/Esse3 (singoli appelli), l'ultimo calendario didattico pubblicato è quello 2025/26 (https://www.lum.it/wp-content/uploads/2025/11/Calendario-Didattico-CdL-MED-a.a.-2025-26.pdf); il regolamento di Medicina 2026/27 indica le sessioni solo in settimane (invernale settimane 3-8, estiva 24-30, autunnale 35-38), senza date."
+}

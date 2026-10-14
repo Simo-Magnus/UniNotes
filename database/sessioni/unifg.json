@@ -1,0 +1,334 @@
+{
+ "universita_id": "unifg",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Scienze Agrarie, Alimenti, Risorse Naturali e Ingegneria (DAFNE)",
+   "fonte": "https://www.agraria.unifg.it/sites/st05/files/2026-07/calendario%20didattico%20DAFNE%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli per insegnamenti pregressi 1",
+     "inizio": "2026-10-05",
+     "fine": "2026-10-09",
+     "note": "Sospensione delle lezioni con appelli d'esame per insegnamenti pregressi"
+    },
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "3 date d'appello"
+    },
+    {
+     "nome": "Appelli per insegnamenti pregressi 2",
+     "inizio": "2027-05-03",
+     "fine": "2027-05-07",
+     "note": "Sospensione delle lezioni con appelli d'esame per insegnamenti pregressi"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "3 date d'appello"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "1 data d'appello"
+    }
+   ],
+   "corsi": [
+    "unifg-l-2-biotecnologie",
+    "unifg-l-gastr-cultura-e-sostenibilita-della-enogastronomia",
+    "unifg-l-8-ingegneria-della-trasformazione-digitale",
+    "unifg-l-9-ingegneria-gestionale",
+    "unifg-l-25-scienze-e-tecnologie-agrarie",
+    "unifg-l-26-scienze-e-tecnologie-alimentari",
+    "unifg-lm-9-lm-61-scienze-biotecnologiche-degli-alimenti-e-della-nutrizione-um",
+    "unifg-lm-69-scienze-e-tecnologie-agrarie",
+    "unifg-lm-70-scienze-e-tecnologie-alimentari"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia",
+   "fonte": "https://www.economia.unifg.it/sites/st01/files/2026-07/calendario%20didattico%20a.a.%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-01-26",
+     "fine": "2027-02-05",
+     "note": null
+    },
+    {
+     "nome": "Sessione di marzo",
+     "inizio": "2027-03-15",
+     "fine": "2027-03-24",
+     "note": "Con sospensione delle attività didattiche"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-18",
+     "fine": "2027-05-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-14",
+     "fine": "2027-06-25",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-09",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-10-01",
+     "fine": "2027-10-08",
+     "note": "Con sospensione delle attività didattiche"
+    }
+   ],
+   "corsi": [
+    "unifg-l-33-economia",
+    "unifg-l-18-economia-aziendale",
+    "unifg-lm-56-lm-77-banca-finanza-e-mercati",
+    "unifg-lm-77-economia-aziendale",
+    "unifg-lm-91-innovazione-digitale-e-comunicazione",
+    "unifg-lm-56-lm-76-green-and-digital-economy"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Sociali",
+   "fonte": "https://www.scienzesociali.unifg.it/sites/st07/files/2026-07/Allegato_Calendario%20didattico%20a.a.%202026-2027%20%281%29%20%281%29.docx.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione di ottobre 2026",
+     "inizio": "2026-10-01",
+     "fine": "2026-10-09",
+     "note": "Con sospensione delle attività didattiche"
+    },
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-01-26",
+     "fine": "2027-02-05",
+     "note": null
+    },
+    {
+     "nome": "Sessione di marzo",
+     "inizio": "2027-03-15",
+     "fine": "2027-03-24",
+     "note": "Con sospensione delle attività didattiche"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-18",
+     "fine": "2027-05-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-14",
+     "fine": "2027-06-25",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-09",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-10-01",
+     "fine": "2027-10-08",
+     "note": "Con sospensione delle attività didattiche"
+    }
+   ],
+   "corsi": [
+    "unifg-l-33-economia-e-management",
+    "unifg-l-20-comunicazione-relazioni-pubbliche-e-tecnologie-digitali",
+    "unifg-l-14-l-18-manager-e-giurista-dimpresa",
+    "unifg-l-39-scienze-del-servizio-sociale-professionale",
+    "unifg-lm-81-sviluppo-e-innovazione-sociale",
+    "unifg-lm-77-imprenditorialita-e-management-internazionale",
+    "unifg-lm-59-comunicazione-per-le-imprese-e-le-istituzioni-pubbliche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Giurisprudenza",
+   "fonte": "https://www.giurisprudenza.unifg.it/sites/st02/files/2026-07/Calendario%20tipo%20Unifg_Giurisprudenza%20CDD%202026-27%20%281%29%20%281%29.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-18",
+     "note": "Sessione autunnale 2026/27, 1 appello (stesse date per la sessione straordinaria 2025/26)"
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "Sessione autunnale 2026/27, 3 appelli (stesse date per la sessione straordinaria 2025/26)"
+    },
+    {
+     "nome": "Sessione straordinaria 2025/26",
+     "inizio": "2027-03-13",
+     "fine": "2027-03-24",
+     "note": "1 appello riservato a chi ha presentato domanda di laurea per la II sessione straordinaria 2025/26 ed è in debito di un solo esame"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-11",
+     "note": "Sessione estiva 2026/27, 4 appelli"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "Sessione estiva 2026/27, 1 appello"
+    }
+   ],
+   "corsi": [
+    "unifg-lmg-01-giurisprudenza",
+    "unifg-l-14-esperto-in-gestione-delle-risorse-umane-e-consulente-del-lav",
+    "unifg-l-14-scienze-investigative",
+    "unifg-lm-sc-giur-diritto-e-gestione-dei-servizi-sanitari",
+    "unifg-lm-sc-giur-scienze-giuridiche-della-sicurezza"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Studi Umanistici (DISTUM)",
+   "fonte": "https://www.studiumanistici.unifg.it/sites/st06/files/2026-09/calendario-didattico-distum-aa-26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-18",
+     "note": "Periodo d'appello del calendario (il calendario elenca solo gli «Appelli», senza nome di sessione)"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-01",
+     "note": "Periodo d'appello del calendario (il calendario elenca solo gli «Appelli», senza nome di sessione)"
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-19",
+     "note": "Periodo d'appello del calendario (il calendario elenca solo gli «Appelli», senza nome di sessione)"
+    },
+    {
+     "nome": "Sessione invernale 4",
+     "inizio": "2027-03-03",
+     "fine": "2027-03-10",
+     "note": "Periodo d'appello del calendario (il calendario elenca solo gli «Appelli», senza nome di sessione)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-04",
+     "note": "Periodo d'appello del calendario (il calendario elenca solo gli «Appelli», senza nome di sessione)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-09",
+     "fine": "2027-06-16",
+     "note": "Periodo d'appello del calendario (il calendario elenca solo gli «Appelli», senza nome di sessione)"
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-06-21",
+     "fine": "2027-06-28",
+     "note": "Periodo d'appello del calendario (il calendario elenca solo gli «Appelli», senza nome di sessione)"
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-13",
+     "note": "Periodo d'appello del calendario (il calendario elenca solo gli «Appelli», senza nome di sessione)"
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-10-04",
+     "fine": "2027-10-13",
+     "note": "Periodo d'appello del calendario (il calendario elenca solo gli «Appelli», senza nome di sessione)"
+    }
+   ],
+   "corsi": [
+    "unifg-l-10-lettere",
+    "unifg-l-11-lingue-e-culture-straniere",
+    "unifg-l-1-patrimonio-e-turismo-culturale",
+    "unifg-l-19-scienze-dell-educazione-e-della-formazione",
+    "unifg-l-24-scienze-e-tecniche-psicologiche",
+    "unifg-lm-14-lm-15-filologia-letterature-e-storia",
+    "unifg-lm-38-lingue-e-culture-per-la-comunicazione-internazionale",
+    "unifg-lm-51-psicologia-scolastica",
+    "unifg-lm-50-lm-85-scienze-pedagogiche-e-della-progettazione-educativa",
+    "unifg-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unifg-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista",
+  "unifg-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "unifg-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+  "unifg-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "unifg-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630993",
+  "unifg-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630994",
+  "unifg-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630995",
+  "unifg-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630996",
+  "unifg-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+  "unifg-l-13-scienze-biologiche",
+  "unifg-l-22-scienze-delle-attivita-motorie-e-sportive",
+  "unifg-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+  "unifg-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "unifg-lm-6-clinical-and-experimental-biology",
+  "unifg-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche",
+  "unifg-lm-67-scienze-e-tecniche-delle-attivita-motorie-preventive-e-adatt",
+  "unifg-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "unifg-lm-41-medicina-e-chirurgia",
+  "unifg-lm-46-odontoiatria-e-protesi-dentaria"
+ ],
+ "mancanti": "Area medica (Dipartimenti di Medicina Clinica e Sperimentale e di Scienze Mediche e Chirurgiche: Medicina, Odontoiatria, professioni sanitarie, Scienze biologiche, Scienze motorie, Clinical and Experimental Biology): sul sito www.medicina.unifg.it la pagina «Calendario didattico» (https://www.medicina.unifg.it/it/servizi/segreteria-didattica/calendario-didattico) pubblica ancora solo il «Calendario didattico Area Medica a.a. 2025/2026» (https://www.medicina.unifg.it/sites/st03/files/2025-09/Calendario%20didattico%20Area%20Medica%20a.a.%202025_2026%20.pdf), che cita per dicembre 2026 solo una «Sessione Dicembre 2026» dell'a.a. 2025/26 senza giorni. Secondo giro (11/10/2026): pagina «Calendario esami» (rimanda ai calendari Cineca per anno di corso, senza periodi di sessione), avvisi di inizio lezioni 2026/27, pagine dei corsi su www.unifg.it, regolamenti dei corsi (2025) e pagina Regolamenti del sito: nessun calendario 2026/27 con le sessioni d'esame. Il calendario DISTUM aggiornato (settembre 2026) corregge la fine delle lezioni del I semestre al 18/12/2026."
+}

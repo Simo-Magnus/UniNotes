@@ -1,0 +1,97 @@
+{
+ "universita_id": "uniecampus",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo (tutti i corsi, ordinamenti DM 270/04 e DM 1648-1649/23)",
+   "fonte": "https://www.uniecampus.it/fileadmin/user_upload/calendari/2026-27/Calendario_Sessioni_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2026-09-07",
+     "fine": "2026-10-24",
+     "note": null
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2026-10-26",
+     "fine": "2026-12-12",
+     "note": null
+    },
+    {
+     "nome": "Terza sessione 1",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-19",
+     "note": "Pausa dal 20/12/2026 al 10/01/2027"
+    },
+    {
+     "nome": "Terza sessione 2",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-20",
+     "note": "Ripresa dopo la pausa natalizia"
+    },
+    {
+     "nome": "Quarta sessione",
+     "inizio": "2027-02-22",
+     "fine": "2027-04-10",
+     "note": null
+    },
+    {
+     "nome": "Quinta sessione",
+     "inizio": "2027-04-12",
+     "fine": "2027-05-29",
+     "note": null
+    },
+    {
+     "nome": "Sesta sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniecampus-l-3-design-e-discipline-della-moda",
+    "uniecampus-l-33-economia",
+    "uniecampus-l-33-economia-dm-1648-23",
+    "uniecampus-l-7-ingegneria-civile-e-ambientale",
+    "uniecampus-l-9-ingegneria-industriale",
+    "uniecampus-l-8-ingegneria-informatica-e-dell-automazione",
+    "uniecampus-l-10-letteratura-arte-musica-e-spettacolo",
+    "uniecampus-l-11-lingue-e-culture-europee-e-del-resto-del-mondo",
+    "uniecampus-l-13-scienze-biologiche",
+    "uniecampus-l-15-scienze-del-turismo-per-il-management-e-i-beni-culturali",
+    "uniecampus-l-19-scienze-dell-educazione-e-della-formazione",
+    "uniecampus-l-20-scienze-della-comunicazione",
+    "uniecampus-l-22-scienze-delle-attivita-motorie-e-sportive",
+    "uniecampus-l-24-scienze-e-tecniche-psicologiche",
+    "uniecampus-l-36-scienze-politiche-e-sociali",
+    "uniecampus-l-14-servizi-giuridici",
+    "uniecampus-lm-23-ingegneria-civile",
+    "uniecampus-lm-23-ingegneria-civile-dm-1649-23",
+    "uniecampus-lm-33-ingegneria-industriale",
+    "uniecampus-lm-33-ingegneria-industriale-dm-1649-23",
+    "uniecampus-lm-32-ingegneria-informatica-e-dell-automazione",
+    "uniecampus-lm-32-ingegneria-informatica-e-dell-automazione-dm-1649-23",
+    "uniecampus-lm-14-letteratura-lingua-e-cultura-italiana",
+    "uniecampus-lm-14-letteratura-lingua-e-cultura-italiana-dm-1649-23",
+    "uniecampus-lm-37-lingue-e-letterature-moderne-e-traduzione-interculturale",
+    "uniecampus-lm-37-lingue-e-letterature-moderne-e-traduzione-interculturale-dm",
+    "uniecampus-lm-51-psicologia",
+    "uniecampus-lm-51-psicologia-dm-1649-23",
+    "uniecampus-lm-56-scienze-dell-economia",
+    "uniecampus-lm-56-scienze-dell-economia-dm-1649-23",
+    "uniecampus-lm-67-scienze-dell-esercizio-fisico-per-il-benessere-e-la-salute",
+    "uniecampus-lm-67-scienze-dell-esercizio-fisico-per-il-benessere-e-la-salute-d",
+    "uniecampus-lm-61-scienze-della-nutrizione-umana",
+    "uniecampus-lm-61-scienze-della-nutrizione-umana-dm-1649-23",
+    "uniecampus-lm-85-scienze-pedagogiche",
+    "uniecampus-lm-85-scienze-pedagogiche-dm-1649-23",
+    "uniecampus-lmg-01-giurisprudenza",
+    "uniecampus-lmg-01-giurisprudenza-dm-1649-23"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

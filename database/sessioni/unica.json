@@ -1,0 +1,343 @@
+{
+ "universita_id": "unica",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Facoltà di Biologia e Farmacia",
+   "fonte": "https://web.unica.it/unica/protected/546254/0/def/ref/GNC278046/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-11",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unica-l-13-biologia",
+    "unica-l-2-biotecnologie-farmaceutiche",
+    "unica-l-2-biotecnologie-marine-e-degli-ecosistemi-acquatici",
+    "unica-l-32-scienze-ambientali-e-naturali",
+    "unica-l-29-scienze-tossicologiche-e-controllo-di-qualita",
+    "unica-lm-9-advanced-biotechnology",
+    "unica-lm-6-bio-ecologia-marina",
+    "unica-lm-6-biologia-cellulare-e-molecolare",
+    "unica-lm-60-conservazione-e-gestione-della-natura-e-dell-ambiente",
+    "unica-lm-6-neuropsicobiologia",
+    "unica-lm-61-scienze-degli-alimenti-e-della-nutrizione",
+    "unica-lm-75-tossicologia-ambientale-e-forense",
+    "unica-lm-13-chimica-e-tecnologia-farmaceutiche",
+    "unica-lm-13-farmacia"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Ingegneria e Architettura",
+   "fonte": "https://web.unica.it/unica/it/fac_ingarch_s5_ss2.page",
+   "sessioni": [
+    {
+     "nome": "Esami primo periodo",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "Anche eventuale seconda prova parziale"
+    },
+    {
+     "nome": "Esami secondo periodo",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Anche eventuale seconda prova parziale"
+    },
+    {
+     "nome": "Esami terzo periodo",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unica-l-8-l-9-ingegneria-biomedica",
+    "unica-l-9-ingegneria-chimica-per-l-innovazione-e-la-sostenibilita-dei",
+    "unica-l-7-ingegneria-civile",
+    "unica-l-9-ingegneria-dellenergia-elettrica-per-lo-sviluppo-sostenibile",
+    "unica-l-8-ingegneria-elettronica-informatica-e-delle-telecomunicazioni",
+    "unica-l-9-ingegneria-meccanica-e-gestionale",
+    "unica-l-9-ingegneria-navale",
+    "unica-l-7-ingegneria-per-l-ambiente-e-il-territorio",
+    "unica-l-17-scienze-dell-architettura",
+    "unica-lm-4-architettura",
+    "unica-lm-32-computer-engineering-cybersecurity-and-artificial-intelligen",
+    "unica-lm-35-ingegneria-ambientale-per-lo-sviluppo-sostenibile",
+    "unica-lm-21-ingegneria-biomedica",
+    "unica-lm-22-ingegneria-chimica-e-dei-processi-biotecnologici",
+    "unica-lm-23-ingegneria-civile",
+    "unica-lm-27-ingegneria-delle-tecnologie-per-internet",
+    "unica-lm-28-ingegneria-elettrica",
+    "unica-lm-29-ingegneria-elettronica",
+    "unica-lm-30-ingegneria-energetica",
+    "unica-lm-31-ingegneria-gestionale",
+    "unica-lm-33-ingegneria-meccanica",
+    "unica-l-p01-tecniche-per-ledilizia-e-il-territorio",
+    "unica-l-p03-tecnologie-industriali-elettriche-e-aeronautiche"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze",
+   "fonte": "https://web.unica.it/unica/it/fac_scienze_71.page",
+   "sessioni": [
+    {
+     "nome": "Esami 1° semestre",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Esami 2° semestre 1",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Esami 2° semestre 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unica-l-27-chimica",
+    "unica-l-30-fisica",
+    "unica-l-34-geologia",
+    "unica-l-31-informatica",
+    "unica-l-31-informatica-applicata-e-data-analytics",
+    "unica-l-35-matematica",
+    "unica-lm-17-fisica",
+    "unica-lm-18-informatica",
+    "unica-lm-40-matematica",
+    "unica-lm-54-scienze-chimiche",
+    "unica-lm-74-scienze-e-tecnologie-geologiche"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze Economiche, Giuridiche e Politiche - Corsi economici triennali (SEA)",
+   "fonte": "https://web.unica.it/unica/protected/544185/0/def/ref/GNC350799/",
+   "sessioni": [
+    {
+     "nome": "Esami intermedi 1",
+     "inizio": "2026-11-05",
+     "fine": "2026-11-14",
+     "note": "Esami finali anni precedenti, finali degli insegnamenti da 6 CFU del 1° semestre già erogati, intermedi del 1° semestre"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "Esami intermedi 2",
+     "inizio": "2027-04-08",
+     "fine": "2027-04-17",
+     "note": "Esami finali anni precedenti, finali degli insegnamenti da 6 CFU del 2° semestre già erogati, intermedi del 2° semestre"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unica-l-18-economia-aziendale-management",
+    "unica-l-33-economia-e-finanza",
+    "unica-l-18-economia-e-gestione-aziendale",
+    "unica-l-15-management-delle-destinazioni-e-del-turismo-culturale"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze Economiche, Giuridiche e Politiche - Corsi economici magistrali (SEA)",
+   "fonte": "https://web.unica.it/unica/protected/544186/0/def/ref/GNC350799/",
+   "sessioni": [
+    {
+     "nome": "Esami intermedi 1",
+     "inizio": "2026-11-05",
+     "fine": "2026-11-14",
+     "note": "Esami finali anni precedenti, finali degli insegnamenti da 6 CFU del 1° semestre già erogati, intermedi del 1° semestre"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "Esami intermedi 2",
+     "inizio": "2027-04-08",
+     "fine": "2027-04-17",
+     "note": "Esami finali anni precedenti, finali degli insegnamenti da 6 CFU del 2° semestre già erogati, intermedi del 2° semestre"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unica-lm-data-data-science",
+    "unica-lm-56-economia-finanza-e-analisi-dei-dati",
+    "unica-lm-77-economia-manageriale",
+    "unica-lm-77-international-management",
+    "unica-lm-76-management-del-turismo-e-della-sostenibilita"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze Economiche, Giuridiche e Politiche - Corsi giuridici",
+   "fonte": "https://web.unica.it/unica/protected/544273/0/def/ref/GNC350803/",
+   "sessioni": [
+    {
+     "nome": "Esami riservati ai fuori corso 1",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-30",
+     "note": "Mese di novembre 2026"
+    },
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-21",
+     "note": "Dal 9 dicembre iniziano gli esami dei corsi da 6 e 9 CFU del I semestre"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-27",
+     "note": "Gli iscritti al 1° anno possono sostenere esami da gennaio 2027"
+    },
+    {
+     "nome": "Esami riservati ai fuori corso 2",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "Mese di aprile 2027"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-31",
+     "note": "Dal 17 maggio iniziano gli esami dei corsi da 6 e 9 CFU del II semestre"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unica-l-14-scienze-dei-servizi-giuridici",
+    "unica-lm-sc-giur-diritto-dello-sviluppo-sostenibile-e-dell-innovazione",
+    "unica-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze Economiche, Giuridiche e Politiche - Corsi politici (SPOL)",
+   "fonte": "https://web.unica.it/unica/protected/544188/0/def/ref/GNC350807/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-21",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-27",
+     "note": "3 appelli per tutti gli insegnamenti tra gennaio e febbraio"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unica-l-16-scienze-dell-amministrazione-e-dell-organizzazione",
+    "unica-l-36-scienze-politiche",
+    "unica-l-39-servizio-sociale-e-innovazione",
+    "unica-lm-59-lm-62-innovazione-sociale-e-comunicazione",
+    "unica-lm-52-relazioni-internazionali",
+    "unica-lm-63-scienze-delle-pubbliche-amministrazioni"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unica-l-snt4-assistenza-sanitaria-abilitante-alla-professione-sanitaria-d",
+  "unica-l-1-beni-culturali-archeologici-storico-artistici-e-archivistici",
+  "unica-l-3-cinema-musiche-teatro",
+  "unica-l-5-filosofia",
+  "unica-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "unica-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "unica-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1627288",
+  "unica-l-10-lettere",
+  "unica-l-20-lingue-e-comunicazione",
+  "unica-l-11-l-12-lingue-e-culture-per-la-mediazione-linguistica",
+  "unica-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+  "unica-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+  "unica-l-19-scienze-dell-educazione-e-della-formazione",
+  "unica-l-20-scienze-della-comunicazione",
+  "unica-l-22-scienze-delle-attivita-motorie-e-sportive",
+  "unica-l-24-scienze-e-tecniche-psicologiche",
+  "unica-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr",
+  "unica-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+  "unica-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+  "unica-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "unica-lm-2-archeologia",
+  "unica-lm-67-attivita-motorie-preventive-e-adattate",
+  "unica-lm-14-lm-15-filologie-e-letterature-classiche-e-moderne",
+  "unica-lm-78-filosofia-e-forme-del-sapere",
+  "unica-lm-19-giornalismo-e-informazione-web",
+  "unica-lm-37-lingue-e-letterature-moderne-europee-e-americane",
+  "unica-lm-65-produzione-multimediale",
+  "unica-lm-51-psicologia-clinica-della-salute-giuridica-e-forense",
+  "unica-lm-85-scienze-pedagogiche-e-dei-processi-formativi",
+  "unica-lm-89-storia-dell-arte",
+  "unica-lm-84-storia-e-societa",
+  "unica-lm-94-traduzione-specialistica-e-interpretazione-di-conferenza",
+  "unica-lmr-02-conservazione-e-restauro-dei-beni-culturali-abilitante-ai-se",
+  "unica-lm-41-medicina-e-chirurgia",
+  "unica-lm-41-medicine-and-surgery",
+  "unica-lm-46-odontoiatria-e-protesi-dentaria",
+  "unica-lm-85-bis-scienze-della-formazione-primaria"
+ ],
+ "mancanti": "UniCa: il calendario accademico di Ateneo 2026/27 non indica sessioni d'esame; ogni Facoltà pubblica il proprio calendario didattico. Le Facoltà di Medicina e Chirurgia e di Studi Umanistici dichiarano di non avere un calendario didattico proprio e rimandano al calendario accademico di Ateneo, che non contiene periodi d'esame: i loro corsi restano scoperti. Le date di Biologia e Farmacia e dei calendari SEA/GIUR/SPOL sono lette dai calendari grafici (celle colorate «Esami di profitto»). Facoltà assegnata in base al portale dei corsi; per 5 corsi senza indicazione (Scienze e tecniche psicologiche, Ingegneria delle tecnologie per Internet, Scienze e tecnologie geologiche, Scienze pedagogiche, Tossicologia ambientale e forense) dedotta dal codice del corso nel portale web.unica.it. Secondo giro (2026-10-11), nessun corso aggiunto: ricontrollate per tutti i corsi scoperti le pagine «Calendario didattico», «Esami», «Calendari e orari» e «Calendario attività» dei CdS su web.unica.it. Medicina e Chirurgia e professioni sanitarie: «La Facoltà non predispone un proprio Calendario didattico specifico» (rimando al calendario di Ateneo, senza periodi d'esame); la pagina «Esami» dà solo regole (almeno 6 appelli, appelli fuori corso ottobre-dicembre e marzo-maggio) e il Regolamento didattico 2026/27 di Medicina indica solo i mesi (sessioni di febbraio, giugno, settembre). Studi Umanistici: stessa dicitura; la pagina «Esami» indica solo i mesi degli appelli (delibera di Facoltà 13/06/2013: gennaio, febbraio, maggio, giugno, luglio, …) e rimanda all'AgendaWeb EasyStaff; il Regolamento didattico 2026/27 di Lettere non indica periodi. Corsi con pagina solo su people.unica.it o coursecatalogue (Filosofia, Scienze dell'educazione, Scienze e tecniche psicologiche, Assistenza sanitaria e Infermieristica nuove sedi) non hanno calendari delle sessioni."
+}

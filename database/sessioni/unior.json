@@ -1,0 +1,69 @@
+{
+ "universita_id": "unior",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://www.unior.it/it/studia-con-noi/didattica/frequentare/esami-di-profitto",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "2 appelli per gli insegnamenti del primo semestre (esclusi gli insegnamenti di lingua straniera, esami annuali)"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-24",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione di novembre",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-19",
+     "note": "1 appello aperto a tutti gli studenti"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-18",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione di marzo",
+     "inizio": "2028-03-13",
+     "fine": "2028-03-24",
+     "note": "1 appello aperto a tutti gli studenti"
+    }
+   ],
+   "corsi": [
+    "unior-l-1-culture-antiche-e-archeologia-asia-africa-e-mediterraneo",
+    "unior-l-11-lingue-e-culture-comparate",
+    "unior-l-11-lingue-e-culture-orientali-e-africane",
+    "unior-l-11-lingue-letterature-e-culture-dell-europa-e-delle-americhe",
+    "unior-l-12-mediazione-linguistica-e-culturale",
+    "unior-l-36-scienze-politiche-e-relazioni-internazionali",
+    "unior-lm-2-archeologia-asia-africa-e-mediterraneo",
+    "unior-lm-37-letterature-e-culture-comparate",
+    "unior-lm-14-lingua-e-cultura-italiana-per-stranieri",
+    "unior-lm-38-lingue-e-comunicazione-interculturale-in-area-euromediterran",
+    "unior-lm-36-lingue-e-culture-dell-asia-e-dell-africa",
+    "unior-lm-37-lingue-e-letterature-europee-e-americane",
+    "unior-lm-52-relazioni-e-istituzioni-dell-asia-e-dell-africa",
+    "unior-lm-52-relazioni-internazionali",
+    "unior-lm-43-saperi-umanistici-e-tecnologie-digitali",
+    "unior-lm-94-traduzione-specialistica"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

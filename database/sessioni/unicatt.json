@@ -1,0 +1,1913 @@
+{
+ "universita_id": "unicatt",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Facoltà di Economia – Milano (corsi semestrali)",
+   "fonte": "https://studenticattolica.unicatt.it/calendario%2026-27%20Economia.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-11",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-18-economia-e-gestione-aziendale",
+    "unicatt-l-33-economia-delle-imprese-e-dei-mercati",
+    "unicatt-l-18-economia-e-legislazione-d-impresa",
+    "unicatt-l-18-economia-delle-aziende-artistiche-culturali-e-creative",
+    "unicatt-lm-56-economia",
+    "unicatt-lm-77-direzione-e-consulenza-aziendale",
+    "unicatt-lm-77-economia-e-legislazione-d-impresa",
+    "unicatt-lm-77-management-per-l-impresa",
+    "unicatt-lm-77-mercati-e-strategie-d-impresa",
+    "unicatt-lm-76-management-dellarte-della-cultura-e-della-creativita"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Economia – Milano, corsi trimestrali (corsi in inglese; Interfacoltà Economia–Scienze matematiche)",
+   "fonte": "https://studenticattolica.unicatt.it/calendario%2026-27%20Economia%20corsi%20trimestrali.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione I trimestre",
+     "inizio": "2026-11-16",
+     "fine": "2026-12-05",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Appelli di dicembre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-19",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione II trimestre 1",
+     "inizio": "2027-03-15",
+     "fine": "2027-03-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione II trimestre 2",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-17",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva (III trimestre)",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-11",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-18-economics-and-management",
+    "unicatt-lm-77-management",
+    "unicatt-lm-77-innovation-and-technology-management",
+    "unicatt-lm-82-data-analytics-for-business"
+   ]
+  },
+  {
+   "ambito": "Interfacoltà Lettere e filosofia–Economia (CIMO) – Milano",
+   "fonte": "https://studenticattolica.unicatt.it/calendario%2026-27%20CIMO.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-18",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-19-lm-59-comunicazione-per-l-impresa-i-media-e-le-organizzazioni-comp"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Lettere e filosofia – Milano",
+   "fonte": "https://studenticattolica.unicatt.it/calendario%2026-27%20Lettere%20e%20filosofia.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-25",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-1-scienze-dei-beni-culturali",
+    "unicatt-l-10-lettere",
+    "unicatt-l-5-filosofia",
+    "unicatt-l-20-linguaggi-dei-media",
+    "unicatt-lm-14-filologia-moderna",
+    "unicatt-lm-15-scienze-dell-antichita",
+    "unicatt-lm-2-lm-89-archeologia-e-storia-dell-arte",
+    "unicatt-lm-78-filosofia"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Psicologia – Milano",
+   "fonte": "https://studenticattolica.unicatt.it/calendario%2026-27%20Psicologia.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-25",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-24-scienze-e-tecniche-psicologiche",
+    "unicatt-lm-51-psicologia-clinica-e-della-salute-persona-relazioni-famiglia",
+    "unicatt-lm-51-psicologia-dello-sviluppo-e-dei-processi-di-tutela",
+    "unicatt-lm-51-psicologia-per-il-benessere-empowerment-riabilitazione-e-tec",
+    "unicatt-lm-51-psicologia-per-le-organizzazioni-risorse-umane-marketing-e-c"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze bancarie, finanziarie e assicurative – Milano",
+   "fonte": "https://studenticattolica.unicatt.it/calendario%2026-27%20Scienze%20bancarie.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli di dicembre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-19",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-06",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-17",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-04",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-18-economia-dei-mercati-e-degli-intermediari-finanziari",
+    "unicatt-lm-77-economia-dei-mercati-e-degli-intermediari-finanziari",
+    "unicatt-lm-77-banking-and-finance",
+    "unicatt-lm-83-actuarial-sciences-risk-and-data-analysis",
+    "unicatt-lm-90-european-studies-in-investor-relations-and-financial-communi"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze della formazione – Milano",
+   "fonte": "https://studenticattolica.unicatt.it/calendario%2026-27%20Scienze%20della%20formazione.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-25",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-19-scienze-dell-educazione-e-della-formazione",
+    "unicatt-lm-85-bis-scienze-della-formazione-primaria",
+    "unicatt-lm-50-consulenza-pedagogica-per-la-disabilita-e-la-marginalita",
+    "unicatt-lm-85-scienze-pedagogiche-e-servizi-alla-persona",
+    "unicatt-lm-93-digital-learning-e-media-education",
+    "unicatt-l-22-scienze-motorie-e-dello-sport",
+    "unicatt-lm-67-lm-68-scienze-e-tecniche-del-benessere-e-dello-sport"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze linguistiche e letterature straniere – Milano",
+   "fonte": "https://studenticattolica.unicatt.it/calendario%2026-27%20Scienze%20linguistiche.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-06",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-25",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-12-scienze-linguistiche",
+    "unicatt-l-12-scienze-linguistiche-per-le-relazioni-internazionali",
+    "unicatt-lm-37-lingue-letterature-e-culture-straniere",
+    "unicatt-lm-38-scienze-linguistiche",
+    "unicatt-lm-39-linguistic-computing"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze politiche e sociali – Milano",
+   "fonte": "https://studenticattolica.unicatt.it/calendario%2026-27%20Scienze%20politiche.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-25",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-20-comunicazione-e-societa",
+    "unicatt-l-36-scienze-politiche-e-delle-relazioni-internazionali",
+    "unicatt-l-39-scienze-del-servizio-sociale",
+    "unicatt-l-40-sociologia",
+    "unicatt-lm-52-politiche-europee-ed-internazionali",
+    "unicatt-lm-63-politiche-pubbliche",
+    "unicatt-lm-81-politiche-per-la-cooperazione-internazionale-allo-sviluppo",
+    "unicatt-lm-87-lavoro-sociale-e-servizi-per-le-famiglie-i-minori-e-le-comun",
+    "unicatt-lm-88-gestione-del-lavoro-e-comunicazione-per-le-organizzazioni"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Giurisprudenza – Milano",
+   "fonte": "https://studenticattolica.unicatt.it/calendario%2026-27%20Giurisprudenza.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (I anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-06",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione invernale (anni successivi)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-13",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-10",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-10-02",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-lmg-01-giurisprudenza",
+    "unicatt-l-14-servizi-giuridici-per-limpresa-il-lavoro-e-le-pubbliche-ammi"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Psicologia, Lettere e filosofia, Scienze della formazione – Brescia",
+   "fonte": "https://studenticattolica.unicatt.it/Psico.%20Let.%20Form.%20IF%20Let.-Sc.ling%2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-25",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-24-scienze-e-tecniche-psicologiche-replica-brescia",
+    "unicatt-lm-51-psicologia-degli-interventi-clinici-gruppi-organizzazioni-co",
+    "unicatt-l-10-lettere-replica-brescia",
+    "unicatt-lm-14-filologia-moderna-replica-brescia",
+    "unicatt-l-15-tourism-management-sostenibilita-e-valorizzazione-del-territ",
+    "unicatt-l-3-discipline-delle-arti-dei-media-e-dello-spettacolo",
+    "unicatt-lm-19-gestione-di-contenuti-digitali-per-i-media-le-imprese-e-i-pa",
+    "unicatt-l-19-scienze-dell-educazione-e-della-formazione-replica-brescia",
+    "unicatt-lm-85-bis-scienze-della-formazione-primaria-replica-brescia",
+    "unicatt-lm-50-progettazione-pedagogica-e-formazione-delle-risorse-umane"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze linguistiche e letterature straniere – Brescia",
+   "fonte": "https://studenticattolica.unicatt.it/Scienze%20linguistiche%2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-06",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-23",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-25",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-12-scienze-linguistiche-replica-brescia",
+    "unicatt-lm-38-scienze-linguistiche-replica-brescia"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze politiche e sociali – Brescia",
+   "fonte": "https://studenticattolica.unicatt.it/Sc.%20politiche%20e%20sociali%2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-25",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-36-scienze-politiche-e-delle-relazioni-internazionali-replica-b",
+    "unicatt-l-39-scienze-del-servizio-sociale-replica-brescia",
+    "unicatt-lm-87-lavoro-sociale-e-coordinamento-di-servizi-per-immigrazione-p",
+    "unicatt-lm-88-gestione-del-lavoro-e-comunicazione-per-le-organizzazioni-re"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze matematiche, fisiche e naturali e Interfacoltà SMFN–Scienze bancarie – Brescia",
+   "fonte": "https://studenticattolica.unicatt.it/SSMMFFNN%20-%20IF%20SSMMFFNN-Sc.%20bancarie%2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-27",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-30",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-35-matematica",
+    "unicatt-lm-40-matematica",
+    "unicatt-lm-17-physics",
+    "unicatt-lm-91-artificial-intelligence-for-banking-and-finance"
+   ]
+  },
+  {
+   "ambito": "Interfacoltà Scienze bancarie–Economia e giurisprudenza – Brescia",
+   "fonte": "https://studenticattolica.unicatt.it/IF%20Sc.bancarie-Eco.%20e%20giuri.%2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli di dicembre",
+     "inizio": "2026-12-07",
+     "fine": "2026-12-19",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-06",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-17",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-04",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-18-business-and-finance"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Economia e giurisprudenza – Piacenza e Cremona",
+   "fonte": "https://studenticattolica.unicatt.it/calendario_economia_pc_cr_2026.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli di dicembre",
+     "inizio": "2026-12-07",
+     "fine": "2026-12-18",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-05",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-16",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-18-economia-aziendale",
+    "unicatt-l-18-economia-aziendale-replica-cremona",
+    "unicatt-l-18-economia-e-management-per-la-sostenibilita",
+    "unicatt-lm-77-banking-e-consulting",
+    "unicatt-lm-77-gestione-d-azienda",
+    "unicatt-lm-77-global-business-management",
+    "unicatt-lm-77-management-e-innovazione-digitale",
+    "unicatt-lmg-01-giurisprudenza-1634163",
+    "unicatt-lm-77-food-marketing-e-strategie-commerciali"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze agrarie, alimentari e ambientali – Piacenza e Cremona",
+   "fonte": "https://studenticattolica.unicatt.it/calendario_Scienze_agrarie_pc_cr_2026.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-12",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Appelli di marzo-aprile",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-16",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-25-scienze-e-tecnologie-agrarie",
+    "unicatt-l-26-scienze-e-tecnologie-alimentari",
+    "unicatt-l-26-scienze-e-tecnologie-alimentari-replica-cremona",
+    "unicatt-lm-69-agricoltura-sostenibile-e-di-precisione",
+    "unicatt-lm-69-agricultural-and-food-economics",
+    "unicatt-lm-70-food-processing-innovation-and-tradition",
+    "unicatt-lm-70-scienze-e-tecnologie-alimentari"
+   ]
+  },
+  {
+   "ambito": "Interfacoltà Psicologia–Scienze agrarie (Cremona): LM Consumer Behaviour",
+   "fonte": "https://studenticattolica.unicatt.it/calendario_scienze_agrarie_psico_cr_2026.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-23",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-51-consumer-behaviour-psychology-applied-to-food-health-and-env"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze della formazione – Piacenza",
+   "fonte": "https://studenticattolica.unicatt.it/calendario_Scienze_formazione_pc_2026.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-01",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-23",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": "Date lette dal calendario a griglia (giorni marcati E = esami)"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-19-scienze-dell-educazione-e-della-formazione-replica-piacenza",
+    "unicatt-lm-85-bis-scienze-della-formazione-primaria-replica-piacenza",
+    "unicatt-lm-50-progettazione-pedagogica-e-coordinamento-dei-servizi-per-lin"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Economia – Roma: Economia e gestione d'azienda",
+   "fonte": "https://studenticattolica.unicatt.it/LT%20Economia%20%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-23",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-18-economia-e-gestione-d-azienda"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Economia – Roma: lauree magistrali",
+   "fonte": "https://studenticattolica.unicatt.it/LM%20Economia%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-23",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-77-management-imprese-e-mercati",
+    "unicatt-lm-77-direzione-e-consulenza-aziendale-replica-roma"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Economia – Roma: Healthcare Management",
+   "fonte": "https://studenticattolica.unicatt.it/HEMA%20Economia%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-23",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-77-healthcare-management"
+   ]
+  },
+  {
+   "ambito": "Medicina e chirurgia – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Medicina%20e%20chirurgia%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria di Natale",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione riservata VI anno",
+     "inizio": "2027-05-03",
+     "fine": "2027-06-11",
+     "note": "Solo esami del VI anno di corso"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-41-medicina-e-chirurgia"
+   ]
+  },
+  {
+   "ambito": "Medicina e chirurgia a indirizzo tecnologico – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Medicina%20e%20chirurgia%20a%20indirizzo%20tecnologico%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria di Natale",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-21",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-23",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-41-medicina-e-chirurgia-a-indirizzo-tecnologico"
+   ]
+  },
+  {
+   "ambito": "Medicine and Surgery – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Medicine%20and%20surgery%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria di Natale",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-21",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (I-V anno)",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27, studenti dal I al V anno"
+    },
+    {
+     "nome": "Sessione invernale (VI anno)",
+     "inizio": "2027-02-08",
+     "fine": "2027-03-05",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27, studenti del VI anno"
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione riservata VI anno",
+     "inizio": "2027-05-03",
+     "fine": "2027-05-28",
+     "note": "Solo esami del VI anno di corso"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-41-medicine-and-surgery"
+   ]
+  },
+  {
+   "ambito": "Medicine and Surgery – Bolzano (Scuola Provinciale Superiore di Sanità)",
+   "fonte": "https://studenticattolica.unicatt.it/Bolzano-%20Medicine%20and%20surgery%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria di Natale",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-21",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-41-medicine-and-surgery-replica-bolzano"
+   ]
+  },
+  {
+   "ambito": "Odontoiatria e protesi dentaria – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Odontoiatria%20e%20protesi%20dentaria%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria di Natale",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-46-odontoiatria-e-protesi-dentaria"
+   ]
+  },
+  {
+   "ambito": "Farmacia – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Farmacia%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria di Natale",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-13-farmacia"
+   ]
+  },
+  {
+   "ambito": "Biotecnologie per la medicina personalizzata – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/LM%20Biotecnologie%20per%20la%20medicina%20personalizzata%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria di Natale",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-20",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-09",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-9-biotecnologie-per-la-medicina-personalizzata"
+   ]
+  },
+  {
+   "ambito": "Scienze e tecnologie cosmetologiche – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Scienze%20e%20tecnologie%20cosmetologiche%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-29-scienze-e-tecnologie-cosmetologiche"
+   ]
+  },
+  {
+   "ambito": "Dietistica – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Dietistica%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista"
+   ]
+  },
+  {
+   "ambito": "Dietistica – Bolzano (Claudiana)",
+   "fonte": "https://studenticattolica.unicatt.it/Bolzano%20-%20Dietistica%20%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista-1633510"
+   ]
+  },
+  {
+   "ambito": "Fisioterapia – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Fisioterapia%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot"
+   ]
+  },
+  {
+   "ambito": "Fisioterapia – Viterbo",
+   "fonte": "https://studenticattolica.unicatt.it/Viterbo%20-%20Fisioterapia%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1633401"
+   ]
+  },
+  {
+   "ambito": "Infermieristica, Fisioterapia, Tecniche di radiologia – Potenza e Villa d'Agri",
+   "fonte": "https://studenticattolica.unicatt.it/Potenza%20e%20Villa%20d%20Agri%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1633400",
+    "unicatt-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630289",
+    "unicatt-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630290",
+    "unicatt-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1633508"
+   ]
+  },
+  {
+   "ambito": "Igiene dentale – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Igiene%20dentale%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie"
+   ]
+  },
+  {
+   "ambito": "Igiene dentale – Bolzano (Claudiana)",
+   "fonte": "https://studenticattolica.unicatt.it/Bolzano%20-%20Igiene%20dentale%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-1633504"
+   ]
+  },
+  {
+   "ambito": "Infermieristica – Roma (UCSC, San Filippo Neri, Istituto Padre Luigi Tezza)",
+   "fonte": "https://studenticattolica.unicatt.it/Infermieristica%2026_27%20-%20Roma.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-23",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "unicatt-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630287"
+   ]
+  },
+  {
+   "ambito": "Infermieristica – Brescia (Fondazione Poliambulanza)",
+   "fonte": "https://studenticattolica.unicatt.it/Brescia%20-%20Infermieristica%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-23",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630288"
+   ]
+  },
+  {
+   "ambito": "Infermieristica – Torino (Cottolengo)",
+   "fonte": "https://studenticattolica.unicatt.it/Torino%20-%20Infermieristica%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-20",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-30",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630286"
+   ]
+  },
+  {
+   "ambito": "Logopedia – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Logopedia%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis"
+   ]
+  },
+  {
+   "ambito": "Logopedia – Bolzano (Claudiana)",
+   "fonte": "https://studenticattolica.unicatt.it/Bolzano%20-%20Logopedia%20%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis-1633511"
+   ]
+  },
+  {
+   "ambito": "Ortottica ed assistenza oftalmologica – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Ortottica%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di Pasqua 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes"
+   ]
+  },
+  {
+   "ambito": "Ostetricia – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Ostetricia%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric"
+   ]
+  },
+  {
+   "ambito": "Ostetricia – Bolzano (Claudiana)",
+   "fonte": "https://studenticattolica.unicatt.it/Bolzano%20-%20Ostetricia%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-1633506"
+   ]
+  },
+  {
+   "ambito": "Tecniche della prevenzione nell'ambiente e nei luoghi di lavoro – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Tecniche%20della%20prevenzione%20nellambiente%20e%20nei%20luoghi%20di%20lavoro%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav"
+   ]
+  },
+  {
+   "ambito": "Tecniche di fisiopatologia cardiocircolatoria e perfusione cardiovascolare – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Tecniche%20di%20fisiopatologia%20cardiocircolatoria%20e%20perfusione%20cardiovascolare%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt3-tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-c"
+   ]
+  },
+  {
+   "ambito": "Tecniche di laboratorio biomedico – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Tecniche%20di%20laboratorio%20biomedico%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession"
+   ]
+  },
+  {
+   "ambito": "Tecniche di radiologia medica, per immagini e radioterapia – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Tecniche%20di%20radiologia%20medica%20per%20immagini%20e%20radioterapia%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab"
+   ]
+  },
+  {
+   "ambito": "Terapia della neuro e psicomotricità dell'età evolutiva – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/Terapia%20della%20neuro%20e%20psicomotricita%20delleta%20evolutiva%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil"
+   ]
+  },
+  {
+   "ambito": "Terapia occupazionale – Bolzano (Claudiana)",
+   "fonte": "https://studenticattolica.unicatt.it/Bolzano%20-%20Terapia%20occupazionale%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-27",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27; stesse date nel calendario della sede di Moncrivello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-17",
+     "note": "Seconda sessione a.a. 2026/27; stesse date nel calendario della sede di Moncrivello"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27; stesse date nel calendario della sede di Moncrivello"
+    }
+   ],
+   "corsi": [
+    "unicatt-l-snt2-terapia-occupazionale-abilitante-alla-professione-sanitaria"
+   ]
+  },
+  {
+   "ambito": "Scienze infermieristiche e ostetriche – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/LM%20Scienze%20infermieristiche%20e%20ostetriche%2026_27%20-%20Roma.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-20",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-09",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic"
+   ]
+  },
+  {
+   "ambito": "Scienze infermieristiche e ostetriche – Torino (Cottolengo)",
+   "fonte": "https://studenticattolica.unicatt.it/Torino%20-%20Scienze%20infermieristiche%20e%20ostetriche%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-20",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-09",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-snt1-scienze-infermieristiche-e-ostetriche-replica-scienze-inferm"
+   ]
+  },
+  {
+   "ambito": "Scienze riabilitative delle professioni sanitarie – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/LM%20Scienze%20riabilitative%20delle%20professioni%20sanitarie%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-20",
+     "note": "Sessione straordinaria a.a. 2025/26 e prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-16",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie"
+   ]
+  },
+  {
+   "ambito": "Psicologia clinica e della salute: dall'ospedale al territorio – Roma",
+   "fonte": "https://studenticattolica.unicatt.it/LM%20Psicologia%20clinica%20e%20della%20salute%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-20",
+     "note": "Prima sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-16",
+     "note": "Seconda sessione a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-25",
+     "note": "Terza sessione a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unicatt-lm-51-psicologia-clinica-e-della-salute-dallospedale-al-territorio"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "Assegnazione dei corsi ai calendari di Facoltà fatta in base alla Facoltà e alla sede indicate nelle pagine dei corsi su unicatt.it. Per la Facoltà di Economia di Milano il calendario «corsi trimestrali» è stato attribuito ai corsi erogati in inglese (Economics and Management, Management, Innovation and Technology Management, Data Analytics for Business): l'attribuzione è dedotta, la pagina dei calendari non elenca i corsi. Dietistica REPLICA (id 1633510) è stata attribuita alla sede di Bolzano (unica replica con calendario dedicato). Esclusi gli appelli riservati a laureandi/fuori corso (es. novembre 2026 e marzo 2027 a Piacenza-Cremona) e le sessioni di settembre-ottobre 2026, che appartengono all'a.a. 2025/26."
+}

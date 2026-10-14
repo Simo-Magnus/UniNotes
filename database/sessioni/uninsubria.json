@@ -1,0 +1,302 @@
+{
+ "universita_id": "uninsubria",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://www.uninsubria.it/ateneo/sedi-e-orari/calendario-accademico/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione unica",
+     "inizio": "2026-12-01",
+     "fine": "2028-03-31",
+     "note": "Di norma dal 1° dicembre al 31 marzo dell'anno accademico successivo; almeno 6 appelli ordinari per insegnamento a 15 giorni di distanza. Le date dei singoli appelli sono stabilite dai Corsi di studio"
+    }
+   ],
+   "corsi": [
+    "uninsubria-l-27-chimica-e-chimica-industriale",
+    "uninsubria-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar",
+    "uninsubria-l-30-fisica",
+    "uninsubria-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "uninsubria-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+    "uninsubria-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "uninsubria-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630240",
+    "uninsubria-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630241",
+    "uninsubria-l-35-matematica",
+    "uninsubria-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+    "uninsubria-l-32-scienze-dell-ambiente-e-della-natura",
+    "uninsubria-l-22-scienze-motorie",
+    "uninsubria-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+    "uninsubria-l-snt3-tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-c",
+    "uninsubria-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+    "uninsubria-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+    "uninsubria-lm-54-chimica",
+    "uninsubria-lm-17-fisica",
+    "uninsubria-lm-39-linguaggi-e-competenze-per-la-formazione",
+    "uninsubria-lm-40-matematica",
+    "uninsubria-lm-75-scienze-ambientali",
+    "uninsubria-lm-67-scienze-delle-attivita-motorie-preventive-ed-adattate",
+    "uninsubria-lm-13-farmacia",
+    "uninsubria-lm-41-medicina-e-chirurgia",
+    "uninsubria-lm-46-odontoiatria-e-protesi-dentaria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Umane e dell'Innovazione per il Territorio (DiSUIT)",
+   "fonte": "https://www.uninsubria.it/ateneo/sedi-e-orari/calendario-accademico/calendario-didattico-disuit",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uninsubria-l-20-scienze-della-comunicazione",
+    "uninsubria-lm-92-scienze-e-tecniche-della-comunicazione"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia (DiECO) – CdLM Global Entrepreneurship Economics and Management",
+   "fonte": "https://www.uninsubria.it/ateneo/sedi-e-orari/calendario-accademico/calendario-didattico-dieco",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "Nel calendario «al 07/01/2027 al 12/02/2027»"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uninsubria-lm-77-global-entrepreneurship-economics-and-management-geem"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia (DiECO) – CdL Economia e Management dell'Innovazione e della Sostenibilità e CdLM Economia, Diritto e Finanza d'Impresa",
+   "fonte": "https://www.uninsubria.it/ateneo/sedi-e-orari/calendario-accademico/calendario-didattico-dieco",
+   "sessioni": [
+    {
+     "nome": "Prove intermedie e appelli di fine 1° ciclo",
+     "inizio": "2026-10-26",
+     "fine": "2026-10-30",
+     "note": "1ª prova intermedia (solo CLEM) e appelli di fine ciclo"
+    },
+    {
+     "nome": "Prove intermedie",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "2ª prova intermedia"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Prove intermedie",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-09",
+     "note": "1ª prova intermedia"
+    },
+    {
+     "nome": "Prove intermedie",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-11",
+     "note": "2ª prova intermedia"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uninsubria-l-18-l-33-economia-e-management-dell-innovazione-e-della-sostenibilita",
+    "uninsubria-lm-77-economia-diritto-e-finanza-d-impresa"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia (DiECO) – CdL Economia e Management dell'Innovazione e della Sostenibilità, Digitale Integrato",
+   "fonte": "https://www.uninsubria.it/ateneo/sedi-e-orari/calendario-accademico/calendario-didattico-dieco",
+   "sessioni": [
+    {
+     "nome": "Prove intermedie",
+     "inizio": "2026-10-26",
+     "fine": "2026-10-30",
+     "note": "1ª prova intermedia"
+    },
+    {
+     "nome": "Prove intermedie",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "2ª prova intermedia"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Prove intermedie",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-09",
+     "note": "1ª prova intermedia"
+    },
+    {
+     "nome": "Prove intermedie",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-11",
+     "note": "2ª prova intermedia"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uninsubria-l-18-l-33-economia-e-management-dell-innovazione-e-della-sostenibilita-1630217"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Biotecnologie e Scienze della Vita (DBSV)",
+   "fonte": "https://www.uninsubria.it/ateneo/sedi-e-orari/calendario-accademico/calendario-didattico-dbsv",
+   "sessioni": [
+    {
+     "nome": "Pausa didattica con appelli",
+     "inizio": "2026-11-16",
+     "fine": "2026-11-20",
+     "note": "Per iscritti al II anno e fuori corso delle magistrali e al II-III anno e fuori corso delle triennali; esclusi gli iscritti al I anno"
+    },
+    {
+     "nome": "Appelli I semestre",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Pausa didattica con appelli",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-06",
+     "note": null
+    },
+    {
+     "nome": "Appelli II semestre",
+     "inizio": "2027-06-21",
+     "fine": "2027-09-18",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uninsubria-l-2-biotecnologie",
+    "uninsubria-l-13-scienze-biologiche",
+    "uninsubria-lm-6-biologia-e-sostenibilita",
+    "uninsubria-lm-6-biomedical-sciences",
+    "uninsubria-lm-8-biotechnology-for-the-bio-based-and-health-industry"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Diritto, Economia e Culture (DiDEC)",
+   "fonte": "https://www.uninsubria.it/ateneo/sedi-e-orari/calendario-accademico/calendario-didattico-didec",
+   "sessioni": [
+    {
+     "nome": "Sessione esami",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "3 appelli, tutti i CdS"
+    },
+    {
+     "nome": "Sessione esami 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": "4 appelli, tutti i CdS"
+    },
+    {
+     "nome": "Sessione esami 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "1 appello, tutti i CdS"
+    }
+   ],
+   "corsi": [
+    "uninsubria-lmg-01-giurisprudenza",
+    "uninsubria-lmg-01-giurisprudenza-replica-varese",
+    "uninsubria-l-15-scienze-del-turismo",
+    "uninsubria-lm-38-lingue-moderne-per-la-comunicazione-e-la-cooperazione-intern",
+    "uninsubria-lm-49-hospitality-for-sustainable-tourism-development"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Teoriche e Applicate (DiSTA)",
+   "fonte": "https://www.uninsubria.it/ateneo/sedi-e-orari/calendario-accademico/calendario-didattico-dista",
+   "sessioni": [
+    {
+     "nome": "I pausa didattica",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Periodo senza lezioni previsto dal calendario (il calendario non lo qualifica espressamente come sessione d'esame)"
+    },
+    {
+     "nome": "II pausa didattica",
+     "inizio": "2027-05-31",
+     "fine": "2027-09-18",
+     "note": "Escluso agosto; periodo senza lezioni previsto dal calendario (non qualificato espressamente come sessione d'esame)"
+    }
+   ],
+   "corsi": [
+    "uninsubria-l-31-informatica",
+    "uninsubria-l-31-informatica-replica-como",
+    "uninsubria-l-7-ingegneria-per-la-sicurezza-del-lavoro-e-dell-ambiente",
+    "uninsubria-l-12-scienze-della-mediazione-interlinguistica-e-interculturale",
+    "uninsubria-l-42-storia-e-storie-del-mondo-contemporaneo",
+    "uninsubria-l-p01-tecniche-digitali-per-lambiente-e-le-costruzioni",
+    "uninsubria-lm-18-informatica",
+    "uninsubria-lm-35-ingegneria-ambientale-e-per-la-sostenibilita-degli-ambienti"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "Il calendario di Ateneo prevede una sessione unica d'esami (di norma 1° dicembre - 31 marzo dell'anno successivo) e rimanda ai calendari dei Dipartimenti. DiSAT (Chimica, Fisica, Matematica, Scienze ambientali, Farmacia) pubblica solo le lezioni, Medicina e professioni sanitarie, Scienze motorie e LM-39 rimandano alla bacheca appelli Esse3: per questi vale la regola di Ateneo. Per DiDEC sono previste anche sessioni straordinarie per Giurisprudenza nella «prima settimana di ottobre 2026» e nella «prima settimana di marzo 2027», senza date esatte (non riportate)."
+}

@@ -1,0 +1,108 @@
+{
+ "universita_id": "unicampus",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Facoltà Dipartimentale di Medicina e Chirurgia (Medicina, Odontoiatria, Professioni sanitarie)",
+   "fonte": "https://www.unicampus.it/news/calendario-accademico-2026-2027/",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-27",
+     "note": "Per il I anno delle lauree magistrali in Scienze Infermieristiche: dal 2027-02-01 al 2027-02-27"
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": "VI anno di Medicina e Chirurgia: dal 2027-04-26; VI anno di Medicine and Surgery: dal 2027-03-29"
+    },
+    {
+     "nome": "Terza sessione (recupero)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unicampus-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "unicampus-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "unicampus-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+    "unicampus-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+    "unicampus-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+    "unicampus-lm-snt1-scienze-infermieristiche-ed-ostetriche",
+    "unicampus-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-primarie",
+    "unicampus-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie",
+    "unicampus-lm-41-medicina-e-chirurgia",
+    "unicampus-lm-41-medicine-and-surgery",
+    "unicampus-lm-41-medicine-and-surgery-medtech",
+    "unicampus-lm-46-odontoiatria-e-protesi-dentaria"
+   ]
+  },
+  {
+   "ambito": "Facoltà Dipartimentale di Ingegneria",
+   "fonte": "https://www.unicampus.it/news/calendario-accademico-2026-2027/",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Terza sessione (recupero)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unicampus-l-8-biomedical-engineering",
+    "unicampus-l-9-corso-di-laurea-in-ingegneria-industriale",
+    "unicampus-l-9-ingegneria-industriale",
+    "unicampus-lm-21-ingegneria-biomedica",
+    "unicampus-lm-22-ingegneria-chimica-per-lo-sviluppo-sostenibile",
+    "unicampus-lm-32-ingegneria-dei-sistemi-intelligenti"
+   ]
+  },
+  {
+   "ambito": "Facoltà Dipartimentale di Scienze e Tecnologie per lo Sviluppo Sostenibile e One Health (Scienze e Bio-Tecnologie)",
+   "fonte": "https://www.unicampus.it/news/calendario-accademico-2026-2027/",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-03-06",
+     "note": "Laurea in Scienze dell'Alimentazione: fino al 2027-02-27; lauree magistrali I anno: dal 2027-01-25 al 2027-03-06; II anno: dal 2027-01-07 al 2027-03-06"
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Terza sessione (recupero)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unicampus-l-13-scienze-dell-alimentazione-e-della-nutrizione-umana",
+    "unicampus-lm-6-bio-scienze-per-lalimentazione-la-nutrizione-e-la-salute",
+    "unicampus-lm-70-scienze-e-tecnologie-alimentari-e-food-design"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

@@ -1,0 +1,824 @@
+{
+ "schema": 1,
+ "anno_accademico": "2026/27",
+ "versione": "2026.10.13",
+ "generato_il": "2026-10-13T06:59:25Z",
+ "atenei": {
+  "hunimed": {
+   "corsi": 15,
+   "insegnamenti": 135,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/hunimed.json",
+   "sha256": "c478bb38e1d6ecc68e568287dffa2ecd99600f80603e82af6ab3c1f20786d107"
+  },
+  "iulm": {
+   "corsi": 15,
+   "insegnamenti": 656,
+   "libri": 3,
+   "esami": 0,
+   "file": "corsi/iulm.json",
+   "sha256": "ecdd0261d08af6ef0ad3d5c58960b27332cddd41406069c026e9130127801c7d"
+  },
+  "unibz": {
+   "corsi": 29,
+   "insegnamenti": 850,
+   "libri": 1971,
+   "esami": 0,
+   "file": "corsi/unibz.json",
+   "sha256": "31a5cff2cc84b949608e8ccf9712bd44f11820a66f15535a54a1e5df8de37bbb"
+  },
+  "unilink": {
+   "corsi": 57,
+   "insegnamenti": 1243,
+   "libri": 640,
+   "esami": 446,
+   "file": "corsi/unilink.json",
+   "sha256": "ae88511bff39f42a345c94448682a0df787575f92ea8d04ae910cd1c04330d7b"
+  },
+  "liuc": {
+   "corsi": 7,
+   "insegnamenti": 392,
+   "libri": 68,
+   "esami": 240,
+   "file": "corsi/liuc.json",
+   "sha256": "8fb5fdc3780c15a7bb6044c8f3c05f5116312f3fa885aec0179ed555816e0262"
+  },
+  "luiss": {
+   "corsi": 19,
+   "insegnamenti": 1080,
+   "libri": 591,
+   "esami": 0,
+   "file": "corsi/luiss.json",
+   "sha256": "970fd13da28bb22af0ab5c2a3e87304cd1f3a8509af531ff723d4e70baf55d21"
+  },
+  "lum": {
+   "corsi": 13,
+   "insegnamenti": 327,
+   "libri": 130,
+   "esami": 71,
+   "file": "corsi/lum.json",
+   "sha256": "358086759d62601806c5712c66a1f29dd0ebdd677f2ae08b3f7776494c41750d"
+  },
+  "lumsa": {
+   "corsi": 26,
+   "insegnamenti": 1187,
+   "libri": 1059,
+   "esami": 787,
+   "file": "corsi/lumsa.json",
+   "sha256": "a4fbb028b26490f174db70c609b842ad1cf3ff326639813c5a79c1aaff67a19c"
+  },
+  "unicamillus": {
+   "corsi": 12,
+   "insegnamenti": 82,
+   "libri": 89,
+   "esami": 0,
+   "file": "corsi/unicamillus.json",
+   "sha256": "5d92598806bece822ec96fd4bd46b376fc7c104797c69e3aac286268b05f99bb"
+  },
+  "unineuromed": {
+   "corsi": 3,
+   "insegnamenti": 74,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/unineuromed.json",
+   "sha256": "ba7e3cdb226489556cda476d5b24d182d886ae9ca68054be8e382aae1f865cc0"
+  },
+  "unicampus": {
+   "corsi": 21,
+   "insegnamenti": 763,
+   "libri": 1254,
+   "esami": 0,
+   "file": "corsi/unicampus.json",
+   "sha256": "9d0c01e891813d0e38961e14f00500842fc5ef3f5c09d38ea937480e12924eee"
+  },
+  "unicatt": {
+   "corsi": 138,
+   "insegnamenti": 4994,
+   "libri": 25726,
+   "esami": 5499,
+   "file": "corsi/unicatt.json",
+   "sha256": "54315da06951c85b30f0606db72f08677a71d077a02ae0e92ddb899887a2ed8e"
+  },
+  "unibocconi": {
+   "corsi": 25,
+   "insegnamenti": 3215,
+   "libri": 5225,
+   "esami": 14603,
+   "file": "corsi/unibocconi.json",
+   "sha256": "6786027d4372af3b176944d4c3215e41aec7f12977a4d9443381d065ba4308be"
+  },
+  "unisg": {
+   "corsi": 4,
+   "insegnamenti": 125,
+   "libri": 234,
+   "esami": 3,
+   "file": "corsi/unisg.json",
+   "sha256": "003a3106af484d4aaf5b2dd22632bd4a2cf0fda38741ed44d3e9d93c2600a3ef"
+  },
+  "universitaeuropea": {
+   "corsi": 10,
+   "insegnamenti": 192,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/universitaeuropea.json",
+   "sha256": "b25128dbcd4fea43576bad9ec29740143a7359ffdf1d9ec4df2ee8057c7bc961"
+  },
+  "unint": {
+   "corsi": 9,
+   "insegnamenti": 715,
+   "libri": 1730,
+   "esami": 0,
+   "file": "corsi/unint.json",
+   "sha256": "5bdaff1007bfd9dedbc4551c691882232db144f6fc5fcf76f402d54c67aef352"
+  },
+  "unikore": {
+   "corsi": 37,
+   "insegnamenti": 991,
+   "libri": 1414,
+   "esami": 0,
+   "file": "corsi/unikore.json",
+   "sha256": "1f6debf41070084b1d23deff51dc24fccde04cb3364dca7a6dccf12ea42da3a4"
+  },
+  "unisob": {
+   "corsi": 18,
+   "insegnamenti": 861,
+   "libri": 4215,
+   "esami": 683,
+   "file": "corsi/unisob.json",
+   "sha256": "390f347c54e5756b0632122da6d596080192284abf85a7c92ed48e8a3ef0d5ae"
+  },
+  "univda": {
+   "corsi": 6,
+   "insegnamenti": 338,
+   "libri": 869,
+   "esami": 9,
+   "file": "corsi/univda.json",
+   "sha256": "94c644e8d3df524540e0263dc15237986dec42dac32a1924a639b7272e5d8a48"
+  },
+  "unidarc": {
+   "corsi": 3,
+   "insegnamenti": 75,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/unidarc.json",
+   "sha256": "78058085dd3f8bdde6934c53e424b34930221b41b042ec60f0a5f33cfb1dc314"
+  },
+  "unisr": {
+   "corsi": 27,
+   "insegnamenti": 930,
+   "libri": 2,
+   "esami": 2581,
+   "file": "corsi/unisr.json",
+   "sha256": "d32f9c49dc81f11210e7b7c848b9542bb30095a061200bfa5c9ba495e813d4bb"
+  },
+  "casd": {
+   "corsi": 0,
+   "insegnamenti": 0,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/casd.json",
+   "sha256": "615835a124ca82cb7b31fed853cc202dbe593ef1790069f69907b519090b3ca7"
+  },
+  "iasa": {
+   "corsi": 0,
+   "insegnamenti": 0,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/iasa.json",
+   "sha256": "6d8c3a11cedb145871e1d45c03d3aa23c14044b8f6c971a378e7b331fec157db"
+  },
+  "iuss": {
+   "corsi": 0,
+   "insegnamenti": 0,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/iuss.json",
+   "sha256": "d9762815b817831826d544e81da7103beffb74285891c0c5798c32fccaead32c"
+  },
+  "imt": {
+   "corsi": 0,
+   "insegnamenti": 0,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/imt.json",
+   "sha256": "17f3b81872f07d42eb3c3e66e363979835d3bd9d2ce93c894138a6714090a408"
+  },
+  "sissa": {
+   "corsi": 0,
+   "insegnamenti": 0,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/sissa.json",
+   "sha256": "569ac159213df4c9af82f25196f365b01cac338f317a53f390e710e8501633d5"
+  },
+  "sns": {
+   "corsi": 0,
+   "insegnamenti": 0,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/sns.json",
+   "sha256": "e503a477ca2e7f622fa7aa04ff144b3ffae48c8a8d345ca38754b25890dc5676"
+  },
+  "ssm": {
+   "corsi": 0,
+   "insegnamenti": 0,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/ssm.json",
+   "sha256": "97a70fe0dce39554b8475c061d4913e31642ed6c5353926db9c64dc44d6c286d"
+  },
+  "santanna": {
+   "corsi": 0,
+   "insegnamenti": 0,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/santanna.json",
+   "sha256": "aba081c5644856c90d46ab678f769c940334412bce4fc286fd814d15306936e0"
+  },
+  "gssi": {
+   "corsi": 0,
+   "insegnamenti": 0,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/gssi.json",
+   "sha256": "f717461f48f9620d7a8e3be410514d6e814d8e09e61541bd858b2434302e7f27"
+  },
+  "poliba": {
+   "corsi": 40,
+   "insegnamenti": 954,
+   "libri": 1777,
+   "esami": 0,
+   "file": "corsi/poliba.json",
+   "sha256": "3cebb938c49c639d3f1c485111feb4cb66121470fcf6b722f3c084dcc321c3db"
+  },
+  "polimi": {
+   "corsi": 76,
+   "insegnamenti": 5236,
+   "libri": 20314,
+   "esami": 1331,
+   "file": "corsi/polimi.json",
+   "sha256": "bb2f5f00bff23629e01ea8188b436032c5b0e458150dd44150cc87f6206a0b26"
+  },
+  "polito": {
+   "corsi": 57,
+   "insegnamenti": 4380,
+   "libri": 14282,
+   "esami": 1197,
+   "file": "corsi/polito.json",
+   "sha256": "5e2cfda77bf89849cc4e9d618039e0745f9cb486db8f93b783872da14b05e396"
+  },
+  "unimol": {
+   "corsi": 45,
+   "insegnamenti": 901,
+   "libri": 373,
+   "esami": 306,
+   "file": "corsi/unimol.json",
+   "sha256": "3a37e81927e0d9582a1aa54d20300f74cd4d482fda3a13d91457474d7d2881df"
+  },
+  "uniupo": {
+   "corsi": 54,
+   "insegnamenti": 1589,
+   "libri": 3052,
+   "esami": 2081,
+   "file": "corsi/uniupo.json",
+   "sha256": "9ed00403564d00fc1f6ef84698c220d8b2bb299927597f8f963dba1267771b4e"
+  },
+  "unisalento": {
+   "corsi": 78,
+   "insegnamenti": 1705,
+   "libri": 3445,
+   "esami": 1185,
+   "file": "corsi/unisalento.json",
+   "sha256": "28d254ae3e7546480bcceb907125da20afe1c53c45ff549a74367178bd08c387"
+  },
+  "unisannio": {
+   "corsi": 23,
+   "insegnamenti": 676,
+   "libri": 1159,
+   "esami": 1621,
+   "file": "corsi/unisannio.json",
+   "sha256": "8535b7652814f7c2062d74622a0842a9606d671fc19ebf9a2ba6502576cb0222"
+  },
+  "uninsubria": {
+   "corsi": 49,
+   "insegnamenti": 2323,
+   "libri": 5758,
+   "esami": 1787,
+   "file": "corsi/uninsubria.json",
+   "sha256": "4e8a3fc6c774e1de8f06d14f27e09523cc5a6a6bc7c0c2ac42b08e0d4876d398"
+  },
+  "unibas": {
+   "corsi": 36,
+   "insegnamenti": 1058,
+   "libri": 895,
+   "esami": 802,
+   "file": "corsi/unibas.json",
+   "sha256": "9518395aebb3592562bf5a371f7ea96f700ad73b33f4ebfcf8f4448675fd45ac"
+  },
+  "unicampania": {
+   "corsi": 92,
+   "insegnamenti": 2478,
+   "libri": 5498,
+   "esami": 5337,
+   "file": "corsi/unicampania.json",
+   "sha256": "f89c57a76a5b2614baec7c636b4457f5d51aabe2674aa708c1942ca9f8f41219"
+  },
+  "unitus": {
+   "corsi": 44,
+   "insegnamenti": 482,
+   "libri": 1690,
+   "esami": 0,
+   "file": "corsi/unitus.json",
+   "sha256": "f7ac44ea268fd0c4da8b26746150ea85c7fc5e5595ce65b3cd42e4cd5aa55041"
+  },
+  "univaq": {
+   "corsi": 74,
+   "insegnamenti": 2411,
+   "libri": 3717,
+   "esami": 894,
+   "file": "corsi/univaq.json",
+   "sha256": "3ac26d5039750496124896b36a333a1752f27c7fb25d70a93de650ccbf6a6962"
+  },
+  "uniba": {
+   "corsi": 156,
+   "insegnamenti": 5041,
+   "libri": 7220,
+   "esami": 20065,
+   "file": "corsi/uniba.json",
+   "sha256": "91773c1a48adb2e6a84bdfbeceeca57c57ef0549439eaf6ddef0363f6f009445"
+  },
+  "unibg": {
+   "corsi": 56,
+   "insegnamenti": 2926,
+   "libri": 10094,
+   "esami": 5850,
+   "file": "corsi/unibg.json",
+   "sha256": "b357228942323b1d6975309e97b3ab0e27bf374012fe6664f8eb204264518ebc"
+  },
+  "unibo": {
+   "corsi": 256,
+   "insegnamenti": 14337,
+   "libri": 48997,
+   "esami": 23918,
+   "file": "corsi/unibo.json",
+   "sha256": "a2652aa56fbf1987f6e74268f8822592a3ad9a97b3cdca267a353334042ee75a"
+  },
+  "unibs": {
+   "corsi": 69,
+   "insegnamenti": 5080,
+   "libri": 9932,
+   "esami": 4141,
+   "file": "corsi/unibs.json",
+   "sha256": "3c9042e93ce962b4e639f2f2d807db75d3cedadfc8abca911c54899743012bdd"
+  },
+  "unica": {
+   "corsi": 103,
+   "insegnamenti": 4431,
+   "libri": 12487,
+   "esami": 8524,
+   "file": "corsi/unica.json",
+   "sha256": "bdc62fe1c29e4f804be2efcab681cee2b398654e9de6895370025e4d42008d05"
+  },
+  "unicam": {
+   "corsi": 33,
+   "insegnamenti": 972,
+   "libri": 177,
+   "esami": 2452,
+   "file": "corsi/unicam.json",
+   "sha256": "2511c802e4ed0ecba8f2e39cc776d9ce077b218d38a82666a2f4f0154f7b79db"
+  },
+  "unicas": {
+   "corsi": 38,
+   "insegnamenti": 379,
+   "libri": 500,
+   "esami": 175,
+   "file": "corsi/unicas.json",
+   "sha256": "d587950a49f26bb9990899541e01998c0c8f2efcadf6a543033c7f758c0ca895"
+  },
+  "unict": {
+   "corsi": 115,
+   "insegnamenti": 2612,
+   "libri": 8825,
+   "esami": 2896,
+   "file": "corsi/unict.json",
+   "sha256": "8525e6129dafaabb9e23da1844ce36bb472a02a1661dc6f6de55ff750f48d2f7"
+  },
+  "unicz": {
+   "corsi": 41,
+   "insegnamenti": 743,
+   "libri": 47,
+   "esami": 131,
+   "file": "corsi/unicz.json",
+   "sha256": "8e4cf96ee76fe0d3828de1a349d69fe11c80c75fc54475dfc39538f40dc1535a"
+  },
+  "unich": {
+   "corsi": 77,
+   "insegnamenti": 2894,
+   "libri": 8117,
+   "esami": 6576,
+   "file": "corsi/unich.json",
+   "sha256": "755366bcd1d62a6194fb0e0b62409cf583d223e713cb0543594c8ccdd2a329e8"
+  },
+  "unife": {
+   "corsi": 79,
+   "insegnamenti": 2767,
+   "libri": 4141,
+   "esami": 10472,
+   "file": "corsi/unife.json",
+   "sha256": "bc053a9517f7cd07ebd2bb3eafef8f974b7b7c7c04234d30c32ee1f481b4da92"
+  },
+  "unifi": {
+   "corsi": 152,
+   "insegnamenti": 5668,
+   "libri": 15538,
+   "esami": 14215,
+   "file": "corsi/unifi.json",
+   "sha256": "aec627341fa7240cc50660b904bdc76d9c4d9917acb94124a574a5fd0fec38d7"
+  },
+  "unifg": {
+   "corsi": 56,
+   "insegnamenti": 2287,
+   "libri": 1279,
+   "esami": 2148,
+   "file": "corsi/unifg.json",
+   "sha256": "4221521d410d43e5911583a70de4e01b2ff23d12a13cf4cfe83ee9698fbfdde0"
+  },
+  "unige": {
+   "corsi": 148,
+   "insegnamenti": 8042,
+   "libri": 19823,
+   "esami": 15931,
+   "file": "corsi/unige.json",
+   "sha256": "666d7306d0629b3ae1cad1ebefbdfb2f852134391b75ced8073c4e5db4a9b120"
+  },
+  "unimc": {
+   "corsi": 38,
+   "insegnamenti": 1453,
+   "libri": 3599,
+   "esami": 2257,
+   "file": "corsi/unimc.json",
+   "sha256": "f927b635eb3717609fd3955cbc3060b106e2173d186ad2a44c0e5547d069a8fa"
+  },
+  "unime": {
+   "corsi": 113,
+   "insegnamenti": 3194,
+   "libri": 4147,
+   "esami": 3187,
+   "file": "corsi/unime.json",
+   "sha256": "82df600057bc37c39145e2ccb4ae02fa16c25a445d1bfbb3c989942611c778f7"
+  },
+  "unimib": {
+   "corsi": 88,
+   "insegnamenti": 2804,
+   "libri": 7926,
+   "esami": 4840,
+   "file": "corsi/unimib.json",
+   "sha256": "46709f9b9f83978db2738458503fd103067e37cc06f63d9b3c9af7ee0414decf"
+  },
+  "unimi": {
+   "corsi": 175,
+   "insegnamenti": 7592,
+   "libri": 13369,
+   "esami": 5838,
+   "file": "corsi/unimi.json",
+   "sha256": "138795183e7d9907c741d212c9ae57d8951a1f4694c5283cdd75caa74bdf0918"
+  },
+  "unimore": {
+   "corsi": 96,
+   "insegnamenti": 3032,
+   "libri": 3947,
+   "esami": 1608,
+   "file": "corsi/unimore.json",
+   "sha256": "a96a7c7c61d2ccb21db12fddbcc53be8120de7d76560b3f79fa1d66b31ed5d27"
+  },
+  "unipd": {
+   "corsi": 236,
+   "insegnamenti": 8892,
+   "libri": 19028,
+   "esami": 18776,
+   "file": "corsi/unipd.json",
+   "sha256": "975898b66db1e154bc8207251aca68aa005187535accc57a75cef5432c6c48a4"
+  },
+  "unipa": {
+   "corsi": 188,
+   "insegnamenti": 6344,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/unipa.json",
+   "sha256": "6bf716ddcdbe7b13e47e10fd25bbc62dc4cef7f2e641fc63d67c1dd571da35b9"
+  },
+  "unipr": {
+   "corsi": 107,
+   "insegnamenti": 3185,
+   "libri": 5645,
+   "esami": 3832,
+   "file": "corsi/unipr.json",
+   "sha256": "30f2a940518ba015e008ebe73057d26b3775bbe9f693dcd1ba3f8e2362a6da76"
+  },
+  "unipv": {
+   "corsi": 104,
+   "insegnamenti": 4541,
+   "libri": 12235,
+   "esami": 16108,
+   "file": "corsi/unipv.json",
+   "sha256": "e4e160ec4d3ab3820b89dad13471345beafe037a2747e45b5892b699602c63ab"
+  },
+  "unipg": {
+   "corsi": 100,
+   "insegnamenti": 3227,
+   "libri": 7274,
+   "esami": 2865,
+   "file": "corsi/unipg.json",
+   "sha256": "a974c761a2d1a8a47b5ff68bba223ee6d6c471063c24ed648e21c91c26fbbb45"
+  },
+  "unipi": {
+   "corsi": 156,
+   "insegnamenti": 7306,
+   "libri": 17359,
+   "esami": 7008,
+   "file": "corsi/unipi.json",
+   "sha256": "89e8afeda593fd618cd6b396df3a49cf9e278400ce683aacab1e23a8409ea408"
+  },
+  "unirc": {
+   "corsi": 26,
+   "insegnamenti": 908,
+   "libri": 1156,
+   "esami": 1209,
+   "file": "corsi/unirc.json",
+   "sha256": "9fdd594eb7abbecd17f8e1aa01b7f655320c0bb3a9d6cf2042706ccb4c382158"
+  },
+  "uniroma3": {
+   "corsi": 86,
+   "insegnamenti": 1053,
+   "libri": 5898,
+   "esami": 0,
+   "file": "corsi/uniroma3.json",
+   "sha256": "35418d59c0556d44cc462822754a7cbc6497ea9ecf5beaec24f423b79bccf5a0"
+  },
+  "uniroma4": {
+   "corsi": 8,
+   "insegnamenti": 375,
+   "libri": 401,
+   "esami": 0,
+   "file": "corsi/uniroma4.json",
+   "sha256": "1025b1b3971774794ea16c016b2e27c8f8058ed1eccd7eb914ca615f0d82ecf4"
+  },
+  "uniroma1": {
+   "corsi": 312,
+   "insegnamenti": 10532,
+   "libri": 21711,
+   "esami": 56833,
+   "file": "corsi/uniroma1.json",
+   "sha256": "fe5b838ca2d371dad4b2afe3095df6a6198dab15f4610e24ba0c0113bc86f80b"
+  },
+  "uniroma2": {
+   "corsi": 123,
+   "insegnamenti": 6236,
+   "libri": 12673,
+   "esami": 804,
+   "file": "corsi/uniroma2.json",
+   "sha256": "0100231243620df4f28dd344c17b2f6b676655a6a5b665c3b5199c977404a379"
+  },
+  "unisa": {
+   "corsi": 102,
+   "insegnamenti": 3514,
+   "libri": 7990,
+   "esami": 2820,
+   "file": "corsi/unisa.json",
+   "sha256": "26602e5a98f9deea3c2559ebe3bb73be36057e384bcfdad7e8b7107e74652b14"
+  },
+  "uniss": {
+   "corsi": 78,
+   "insegnamenti": 2810,
+   "libri": 6739,
+   "esami": 5977,
+   "file": "corsi/uniss.json",
+   "sha256": "82ba2ad6bd596f3e5510ffc45dd6afe02090d2eafb9bb06e2d359696ae5d1ed5"
+  },
+  "unisi": {
+   "corsi": 79,
+   "insegnamenti": 1623,
+   "libri": 1694,
+   "esami": 1657,
+   "file": "corsi/unisi.json",
+   "sha256": "6316047c47f534cb60ebb374bd8fd5f2a7d24f5d7894a692613f755272a737b8"
+  },
+  "unite": {
+   "corsi": 27,
+   "insegnamenti": 801,
+   "libri": 1168,
+   "esami": 1083,
+   "file": "corsi/unite.json",
+   "sha256": "ca28a3f34135391555653988a7bc24d3aa4ac892176afae4e36fca779eda00d7"
+  },
+  "unito": {
+   "corsi": 193,
+   "insegnamenti": 8359,
+   "libri": 29760,
+   "esami": 30284,
+   "file": "corsi/unito.json",
+   "sha256": "13f3c2f9195bce356c62b9633ef3687f55673541c662af2126859e4f4b1b39bb"
+  },
+  "unitn": {
+   "corsi": 85,
+   "insegnamenti": 3542,
+   "libri": 10243,
+   "esami": 357,
+   "file": "corsi/unitn.json",
+   "sha256": "5db7b25c0aee68ad2c8749435f3776cc3c9807195842828154805f0bff762198"
+  },
+  "units": {
+   "corsi": 80,
+   "insegnamenti": 3578,
+   "libri": 9993,
+   "esami": 2229,
+   "file": "corsi/units.json",
+   "sha256": "22623b69484665e76275ef4869e278b2709b4a7553080e4a992905ab4593cdf6"
+  },
+  "uniud": {
+   "corsi": 77,
+   "insegnamenti": 2572,
+   "libri": 5702,
+   "esami": 3853,
+   "file": "corsi/uniud.json",
+   "sha256": "67348f5f3769312de1262f5e02af4772764a2a85f85a9feff81f89802e32bf4e"
+  },
+  "uniurb": {
+   "corsi": 43,
+   "insegnamenti": 1392,
+   "libri": 4058,
+   "esami": 123,
+   "file": "corsi/uniurb.json",
+   "sha256": "1fc4cc225ccf32a2c7a0af61dc565c2df639ddd834d86326d758aa15d97662c9"
+  },
+  "unive": {
+   "corsi": 64,
+   "insegnamenti": 2208,
+   "libri": 10166,
+   "esami": 51,
+   "file": "corsi/unive.json",
+   "sha256": "88cfd5644434d454f2205e86a49c5d9b0026fc6c2fc5357fd6a4fed9a1ae69da"
+  },
+  "univr": {
+   "corsi": 92,
+   "insegnamenti": 2194,
+   "libri": 3696,
+   "esami": 406,
+   "file": "corsi/univr.json",
+   "sha256": "decaad644750188e10827f0a58ea236c9aafae2c8ef57ed7b3cff31d46198f07"
+  },
+  "unina": {
+   "corsi": 182,
+   "insegnamenti": 6591,
+   "libri": 14590,
+   "esami": 4384,
+   "file": "corsi/unina.json",
+   "sha256": "d892db4821f9c215491390191e4af73c13e3e72c5445d3406943503f3c017a65"
+  },
+  "unior": {
+   "corsi": 16,
+   "insegnamenti": 1767,
+   "libri": 1973,
+   "esami": 7265,
+   "file": "corsi/unior.json",
+   "sha256": "c5ee142624de7231baff4610254b1483f6f3fe499d69495eea8ed9eb53aae5ed"
+  },
+  "uniparthenope": {
+   "corsi": 39,
+   "insegnamenti": 709,
+   "libri": 652,
+   "esami": 907,
+   "file": "corsi/uniparthenope.json",
+   "sha256": "ba3fb8daaf3a6b0f0df40210a9431c9832ad07e9aaec6b76bd1cf60aef1eb233"
+  },
+  "unical": {
+   "corsi": 84,
+   "insegnamenti": 1062,
+   "libri": 2154,
+   "esami": 447,
+   "file": "corsi/unical.json",
+   "sha256": "967258455e32c7fdab1471dc2df00af9d95294d3541c250afcdf8a07d5ea50d8"
+  },
+  "iuav": {
+   "corsi": 18,
+   "insegnamenti": 594,
+   "libri": 1996,
+   "esami": 0,
+   "file": "corsi/iuav.json",
+   "sha256": "1732bc2bb9beb6db5ed3c68bfeb32e32ba2dc7dd69a2845f5ff5810653577723"
+  },
+  "unistrapg": {
+   "corsi": 7,
+   "insegnamenti": 83,
+   "libri": 0,
+   "esami": 82,
+   "file": "corsi/unistrapg.json",
+   "sha256": "bf622d02dee79a4e3c4089be946bc23fe45eef507c4f9f3ab9bfa692a66ca96f"
+  },
+  "unistrasi": {
+   "corsi": 8,
+   "insegnamenti": 319,
+   "libri": 0,
+   "esami": 239,
+   "file": "corsi/unistrasi.json",
+   "sha256": "7d2cde36ce419d2f46f0c3604cad591efec253d3944bcbad270f09ba909d1886"
+  },
+  "univpm": {
+   "corsi": 73,
+   "insegnamenti": 1596,
+   "libri": 1879,
+   "esami": 2911,
+   "file": "corsi/univpm.json",
+   "sha256": "dca088b7019f4a8ed1165df48f9198fac42a82fc8ef4c878fb59a711a65b9fcd"
+  },
+  "uniecampus": {
+   "corsi": 38,
+   "insegnamenti": 1469,
+   "libri": 0,
+   "esami": 195,
+   "file": "corsi/uniecampus.json",
+   "sha256": "013aa9e8443a456d8dd063b80f3eb0ee3beb39ded6494f411ec9c911bd421dbb"
+  },
+  "unifortunato": {
+   "corsi": 11,
+   "insegnamenti": 94,
+   "libri": 137,
+   "esami": 0,
+   "file": "corsi/unifortunato.json",
+   "sha256": "013620f6e58a78ec185f9e3ab525f6938944773b5f0b88c4c272837135583410"
+  },
+  "unidav": {
+   "corsi": 2,
+   "insegnamenti": 52,
+   "libri": 0,
+   "esami": 20,
+   "file": "corsi/unidav.json",
+   "sha256": "4ea29ccba718a1f86fdf6d14770da0cc5b0f811d7680c2936cba9c132a62b093"
+  },
+  "uniroma5": {
+   "corsi": 15,
+   "insegnamenti": 424,
+   "libri": 464,
+   "esami": 0,
+   "file": "corsi/uniroma5.json",
+   "sha256": "b0c162ce5072df7fdcd8664f467b6cf83bf1b1d4edb6d699a644cd01f59d7cd3"
+  },
+  "unimercatorum": {
+   "corsi": 20,
+   "insegnamenti": 436,
+   "libri": 263,
+   "esami": 0,
+   "file": "corsi/unimercatorum.json",
+   "sha256": "cc40cea9c2b5bfcb0c61060cb0e4d613233e7eb5da9bd347e29e50e2fa9ccff6"
+  },
+  "iul": {
+   "corsi": 6,
+   "insegnamenti": 48,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/iul.json",
+   "sha256": "80cc67422ef74a0091d54c50bfb9bf2e60eac98cf62de6c469eaca8e29ab9197"
+  },
+  "uninettuno": {
+   "corsi": 15,
+   "insegnamenti": 19,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/uninettuno.json",
+   "sha256": "e2ad5dba105bba911cca68e2fb8fd806f38b9182a82578a5e3b4e0ff73819d91"
+  },
+  "unimarconi": {
+   "corsi": 20,
+   "insegnamenti": 413,
+   "libri": 0,
+   "esami": 222,
+   "file": "corsi/unimarconi.json",
+   "sha256": "4675bd709b10d3d5d3dd47a760035fd2aabd490245737d9a4ce308460939a88d"
+  },
+  "unicusano": {
+   "corsi": 27,
+   "insegnamenti": 492,
+   "libri": 0,
+   "esami": 0,
+   "file": "corsi/unicusano.json",
+   "sha256": "5b5fb5bab82a6b474fe154e053f301b9a59bbf28bc48759bb4255e6b0e852e10"
+  },
+  "unipegaso": {
+   "corsi": 14,
+   "insegnamenti": 371,
+   "libri": 2,
+   "esami": 0,
+   "file": "corsi/unipegaso.json",
+   "sha256": "b593e47b5bb79996ea5890c9dff59e371cb133b26e747f5f1a6572416875bd95"
+  },
+  "unitelma": {
+   "corsi": 11,
+   "insegnamenti": 102,
+   "libri": 34,
+   "esami": 0,
+   "file": "corsi/unitelma.json",
+   "sha256": "e277b09f79ece8287eaf583fe42ff2b2c0c591c39e96bb1f367b956524fd7daa"
+  }
+ }
+}

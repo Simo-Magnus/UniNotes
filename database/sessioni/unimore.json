@@ -1,0 +1,626 @@
+{
+ "universita_id": "unimore",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Facoltà di Medicina e Chirurgia – Medicina e Chirurgia",
+   "fonte": "https://www.medicina.unimore.it/it/didattica/appelli-desame",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-17",
+     "fine": "2027-02-26",
+     "note": "Per gli insegnamenti del VI anno almeno un appello al mese da dicembre 2026 a maggio 2027 (studenti del VI anno e fuori corso)"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-lm-41-medicina-e-chirurgia"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Medicina e Chirurgia – Infermieristica (sede di Modena)",
+   "fonte": "https://www.medicina.unimore.it/it/didattica/appelli-desame",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-11-23",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Medicina e Chirurgia – Infermieristica (sede di Reggio Emilia)",
+   "fonte": "https://www.medicina.unimore.it/it/didattica/appelli-desame",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-08-06",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-28",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1631901"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Medicina e Chirurgia – Dietistica",
+   "fonte": "https://www.medicina.unimore.it/it/didattica/appelli-desame",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Medicina e Chirurgia – Odontoiatria, Digital Education e altri corsi delle professioni sanitarie",
+   "fonte": "https://www.medicina.unimore.it/it/didattica/appelli-desame",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-lm-46-odontoiatria-e-protesi-dentaria",
+    "unimore-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "unimore-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+    "unimore-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+    "unimore-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+    "unimore-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+    "unimore-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr",
+    "unimore-l-19-digital-education",
+    "unimore-l-snt4-assistenza-sanitaria-abilitante-alla-professione-sanitaria-d",
+    "unimore-l-snt2-terapia-occupazionale-abilitante-alla-professione-sanitaria",
+    "unimore-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+    "unimore-l-snt3-tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-c"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Medicina e Chirurgia – Scienze infermieristiche e ostetriche (LM/SNT1, sede di Reggio Emilia)",
+   "fonte": "https://www.medicina.unimore.it/it/didattica/appelli-desame",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (I anno)",
+     "inizio": "2027-02-15",
+     "fine": "2027-03-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (II anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (I anno)",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (II anno)",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Medicina e Chirurgia – Salute e Sport (LM-67)",
+   "fonte": "https://www.medicina.unimore.it/it/didattica/appelli-desame",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (I anno)",
+     "inizio": "2027-01-25",
+     "fine": "2027-03-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (II anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-lm-67-salute-e-sport"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia Marco Biagi",
+   "fonte": "https://www.economia.unimore.it/it/didattica/organizzazione-didattica/calendario-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-17",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-03",
+     "fine": "2027-07-30",
+     "note": "3 appelli; dal 2027-05-24 per I e II anno delle triennali e I anno delle magistrali, dal 2027-05-03 per III anno triennali e II anno magistrali"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-21",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unimore-l-18-economia-aziendale-e-management",
+    "unimore-l-33-economia-e-finanza",
+    "unimore-l-18-economia-e-marketing-internazionale",
+    "unimore-lm-56-lm-77-analisi-dei-dati-per-l-economia-e-il-management",
+    "unimore-lm-77-direzione-e-consulenza-di-impresa",
+    "unimore-lm-56-economia-politiche-pubbliche-e-sostenibilita",
+    "unimore-lm-16-lm-77-finanza-e-management",
+    "unimore-lm-77-international-management",
+    "unimore-lm-77-relazioni-di-lavoro"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Comunicazione ed Economia (Reggio Emilia)",
+   "fonte": "https://www.dce.unimore.it/it/didattica/organizzazione-didattica/calendario-delle-attivita",
+   "sessioni": [
+    {
+     "nome": "Sessione d'esame (interruzione del I semestre)",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-13",
+     "note": "Un appello per gli insegnamenti dell'a.a. 2025/26 e prove intermedie facoltative"
+    },
+    {
+     "nome": "Sessione straordinaria – anticipo estiva",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-l-41-analisi-dei-dati-per-l-impresa-e-la-finanza",
+    "unimore-l-18-digital-marketing",
+    "unimore-l-18-marketing-e-organizzazione-d-impresa",
+    "unimore-l-20-scienze-della-comunicazione",
+    "unimore-lm-77-lm-63-economia-e-diritto-per-la-sostenibilita-delle-organizzazioni",
+    "unimore-lm-77-management-e-comunicazione-d-impresa",
+    "unimore-lm-59-pubblicita-comunicazione-digitale-e-creativita-d-impresa"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze della Vita",
+   "fonte": "https://www.dsv.unimore.it/node/208",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-21",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-09-14",
+     "note": "Date indicate dal Dipartimento come ipotetiche"
+    }
+   ],
+   "corsi": [
+    "unimore-l-2-biotecnologie",
+    "unimore-l-13-scienze-biologiche",
+    "unimore-l-25-l-26-scienze-e-tecnologie-agrarie-e-degli-alimenti",
+    "unimore-lm-6-bioscienze",
+    "unimore-lm-9-biotecnologie-mediche",
+    "unimore-lm-70-controllo-e-sicurezza-degli-alimenti",
+    "unimore-lm-8-sistemi-biotecnologici-per-lo-sviluppo-sostenibile",
+    "unimore-lm-69-sostenibilita-integrata-dei-sistemi-agricoli",
+    "unimore-lm-13-chimica-e-tecnologia-farmaceutiche",
+    "unimore-lm-13-farmacia"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria Enzo Ferrari",
+   "fonte": "https://www.ingmo.unimore.it/it/didattica/organizzazione-didattica/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Esami del primo semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-23",
+     "note": null
+    },
+    {
+     "nome": "Esami del secondo semestre",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-l-7-ingegneria-civile-e-ambientale",
+    "unimore-l-9-ingegneria-del-veicolo",
+    "unimore-l-8-ingegneria-elettronica",
+    "unimore-l-8-ingegneria-informatica",
+    "unimore-l-8-ingegneria-informatica-1629941",
+    "unimore-l-9-ingegneria-meccanica",
+    "unimore-lm-33-advanced-automotive-engineering",
+    "unimore-lm-32-artificial-intelligence-engineering",
+    "unimore-lm-29-electronics-engineering",
+    "unimore-lm-23-lm-35-ingegneria-civile-e-ambientale",
+    "unimore-lm-53-ingegneria-dei-materiali",
+    "unimore-lm-33-ingegneria-del-veicolo",
+    "unimore-lm-32-ingegneria-informatica",
+    "unimore-lm-33-ingegneria-meccanica",
+    "unimore-lm-33-sustainable-industrial-engineering",
+    "unimore-l-p01-costruzioni-e-gestione-del-territorio"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze e Metodi dell'Ingegneria (Reggio Emilia)",
+   "fonte": "https://www.dismi.unimore.it/it/didattica/organizzazione-didattica/calendario-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Esami e prove in itinere (I semestre)",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": "Esami degli anni precedenti e prove in itinere"
+    },
+    {
+     "nome": "Anticipo sessione estiva / straordinaria a.a. 2025/26 – 1",
+     "inizio": "2026-12-21",
+     "fine": "2026-12-23",
+     "note": null
+    },
+    {
+     "nome": "Anticipo sessione estiva / straordinaria a.a. 2025/26 – 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Esami e prove in itinere (II semestre)",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": "Esami degli anni precedenti e prove in itinere"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-l-9-l-8-ingegneria-gestionale",
+    "unimore-l-9-l-8-ingegneria-meccatronica",
+    "unimore-lm-25-digital-automation-engineering",
+    "unimore-lm-30-energy-engineering",
+    "unimore-lm-31-ingegneria-gestionale",
+    "unimore-lm-33-ingegneria-meccatronica",
+    "unimore-l-p03-tecnologie-per-l-industria-intelligente"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Studi Linguistici e Culturali",
+   "fonte": "https://www.dslc.unimore.it/it/didattica/organizzazione-didattica/calendario-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Esami – primo periodo",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Esami – secondo periodo",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": "La pagina riporta «30/07/2026», evidente refuso per il 2027"
+    },
+    {
+     "nome": "Esami – sessione di settembre",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-l-12-lingue-e-culture-europee",
+    "unimore-l-42-storia-e-culture-contemporanee",
+    "unimore-lm-1-lm-84-antropologia-e-storia-del-mondo-contemporaneo",
+    "unimore-lm-37-lingue-e-traduzione-per-le-arti-e-i-media",
+    "unimore-lm-38-languages-for-communication-in-international-enterprises-and"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Giurisprudenza",
+   "fonte": "https://www.giurisprudenza.unimore.it/it/didattica/organizzazione-didattica/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria autunnale (a.a. 2025/26)",
+     "inizio": "2026-10-26",
+     "fine": "2026-10-28",
+     "note": "Riservata a fuori corso e laureandi, max 1 appello"
+    },
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "Appelli per gli a.a. 2025/26 e 2026/27"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-18",
+     "fine": "2027-01-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-02-15",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-05-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-14",
+     "fine": "2027-06-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-09",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-13",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale a.a. 2026/27 – 1",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale a.a. 2026/27 – 2",
+     "inizio": "2028-01-17",
+     "fine": "2028-01-21",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale a.a. 2026/27 – 3",
+     "inizio": "2028-02-14",
+     "fine": "2028-02-18",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-l-14-scienze-dei-servizi-giuridici",
+    "unimore-l-ds-scienze-strategiche",
+    "unimore-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Educazione e Scienze Umane",
+   "fonte": "https://www.desu.unimore.it/it/didattica/organizzazione-didattica/calendario-appelli-desame",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "Straordinaria a.a. 2025/26 e anticipo della sessione estiva 2026/27"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-03-15",
+     "fine": "2027-03-19",
+     "note": "Per studenti all'ultimo anno nel 2025/26 e fuori corso; non obbligatoria per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-18",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-l-19-scienze-dell-educazione-per-il-nido-e-le-professioni-socio-p",
+    "unimore-lm-85-scienze-pedagogiche",
+    "unimore-lm-93-teorie-e-metodologie-del-digital-learning",
+    "unimore-lm-85-bis-scienze-della-formazione-primaria",
+    "unimore-lm-43-media-education-per-le-discipline-letterarie-e-l-editoria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Biomediche, Metaboliche e Neuroscienze – Scienze e tecniche psicologiche (L-24, Reggio Emilia)",
+   "fonte": "https://www.bmn.unimore.it/it/didattica/corsi-di-laurea/scienze-e-tecniche-psicologiche",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "Nella pagina del corso il riquadro è intitolato «Calendario degli esami A.A. 2025/2026», ma le date (2027) seguono il calendario lezioni 2026/27 e sono quelle dell'a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-l-24-scienze-e-tecniche-psicologiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Biomediche, Metaboliche e Neuroscienze – Scienze infermieristiche specialistiche nelle cure primarie e infermieristica di famiglia e comunità (LM/SNT1, sede di Modena)",
+   "fonte": "https://www.bmn.unimore.it/it/didattica/corsi-di-laurea-magistrale/scienze-infermieristiche-specialistiche-nelle-cure-primarie-3",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-02-15",
+     "fine": "2027-03-31",
+     "note": "Sessioni del I anno (corso di nuova attivazione 2026/27); coincidono con la riga «Scienze infermieristiche e ostetriche Modena – 1 anno» della tabella 2026/27 della Facoltà di Medicina"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimore-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-primarie"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unimore-l-27-chimica",
+  "unimore-l-27-chimica-verde-e-sostenibile",
+  "unimore-l-30-fisica",
+  "unimore-l-31-informatica",
+  "unimore-l-35-matematica",
+  "unimore-l-34-scienze-geologiche",
+  "unimore-l-32-scienze-naturali",
+  "unimore-lm-21-bioingegneria-per-l-innovazione-in-medicina",
+  "unimore-lm-60-didattica-e-comunicazione-delle-scienze",
+  "unimore-lm-74-geoscienze-georischi-e-georisorse",
+  "unimore-lm-18-informatica",
+  "unimore-lm-40-matematica",
+  "unimore-lm-17-physics-fisica",
+  "unimore-lm-54-scienze-chimiche"
+ ],
+ "mancanti": "Senza date di sessione 2026/27 pubblicate: Dipartimento di Scienze Chimiche e Geologiche (Chimica, Chimica verde e sostenibile, Scienze geologiche, Scienze naturali, LM Scienze chimiche, LM Geoscienze georischi e georisorse, LM Didattica e comunicazione delle scienze: la pagina «Calendario attività didattiche 2026/27» dà solo i semestri; il sito di Scienze naturali indica appelli «indicativamente» tra inizio gennaio e fine febbraio e tra inizio giugno e fine settembre, senza date) e Dipartimento di Scienze Fisiche, Informatiche e Matematiche (Fisica, Informatica, Matematica LT e LM, LM Physics: calendario con soli semestri; la pagina appelli dice genericamente «gennaio-febbraio e giugno-settembre»). Bioingegneria per l'innovazione in medicina (LM-21, Dip. BMN): la pagina del corso indica «calendario esami in programmazione» (il documento allegato riguarda ancora la sessione di gennaio-febbraio 2026). Per questi corsi gli appelli sono solo su Esse3. Secondo giro (2026-10-11): ricontrollate pagine dei singoli corsi DSCG/FIM, sito di Scienze naturali, sito S4EDU, pagine regolamento e ricerca web, senza nuove date. Aggiunti Scienze e tecniche psicologiche (sessioni sulla pagina del corso BMN, con titolo «A.A. 2025/2026» ma date dell'a.a. 2026/27) e Scienze infermieristiche specialistiche nelle cure primarie (nuovo corso della sede di Modena, sessioni del I anno dalla pagina «Didattica» del corso). Il calendario DSV indica come «ipotetica» la sessione estiva."
+}

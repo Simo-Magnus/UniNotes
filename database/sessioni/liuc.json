@@ -1,0 +1,36 @@
+{
+ "universita_id": "liuc",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://www.liuc.it/wp-content/uploads/ACADEMIC-CALENDAR-2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Esami per studenti frequentanti (1° semestre)",
+     "inizio": "2026-09-07",
+     "fine": "2026-12-23",
+     "note": "Periodo unico «corsi ed esami per studenti frequentanti» del 1° semestre (lezioni ed esami insieme)"
+    },
+    {
+     "nome": "Esami per studenti frequentanti (2° semestre)",
+     "inizio": "2027-02-22",
+     "fine": "2027-05-28",
+     "note": "Periodo unico «corsi ed esami per studenti frequentanti» del 2° semestre (lezioni ed esami insieme)"
+    }
+   ],
+   "corsi": [
+    "liuc-l-18-economia-e-management",
+    "liuc-l-9-ingegneria-gestionale",
+    "liuc-l-9-ingegneria-gestionale-classe-l-9-r",
+    "liuc-lm-77-economia-management-e-governance",
+    "liuc-lm-77-economia-management-e-governance-classe-lm-77-r",
+    "liuc-lm-31-ingegneria-gestionale",
+    "liuc-lm-31-ingegneria-gestionale-classe-lm-31"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "Il calendario accademico 2026-27 (solo in inglese) indica per gli appelli di recupero/non frequentanti solo i mesi; le date dei singoli appelli sono su MyLIUC (area riservata). Nessuna sessione autunnale indicata. Periodi indicati solo per mese (non come date): Sessione invernale (Ateneo): Esami per non frequentanti e appelli di recupero; il calendario indica solo i mesi (gennaio e febbraio 2027) | Sessione estiva (Ateneo): Esami per non frequentanti e appelli di recupero; il calendario indica solo i mesi (giugno e luglio 2027)"
+}

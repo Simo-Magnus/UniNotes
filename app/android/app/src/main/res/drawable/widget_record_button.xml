@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pulsante «Registra»: arancione, il colore delle azioni dello studente. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <gradient
+        android:angle="270"
+        android:startColor="@color/widget_record_top"
+        android:endColor="@color/widget_record_bottom" />
+</shape>

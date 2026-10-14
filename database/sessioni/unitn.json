@@ -1,0 +1,923 @@
+{
+ "universita_id": "unitn",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-13",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Economia e Management (DEM)",
+   "fonte": "https://www.economia.unitn.it/3386/calendario-accademico-e-lauree-aa-2026/27",
+   "sessioni": [
+    {
+     "nome": "Anticipo di data (I semestre)",
+     "inizio": "2026-12-16",
+     "fine": "2026-12-22",
+     "note": "Giorni 16, 17, 18, 21, 22 dicembre; sostituisce l'appello di fine semestre ove previsto"
+    },
+    {
+     "nome": "Sessione fine 1° semestre",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-29",
+     "note": "Un appello per i corsi del I semestre senza anticipo di data"
+    },
+    {
+     "nome": "Sessione di recupero invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-19",
+     "note": "Recupero per gli insegnamenti 2025/26 e un appello per quelli del I semestre 2026/27"
+    },
+    {
+     "nome": "Sessione fine 2° semestre",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-23",
+     "note": "Un appello per i corsi del II semestre senza anticipo di data"
+    },
+    {
+     "nome": "Sessione di recupero estiva",
+     "inizio": "2027-06-24",
+     "fine": "2027-07-14",
+     "note": "Recupero per tutti gli insegnamenti 2026/27"
+    },
+    {
+     "nome": "Sessione di recupero autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "Recupero per tutti gli insegnamenti 2026/27"
+    }
+   ],
+   "corsi": [
+    "unitn-l-18-amministrazione-aziendale-e-diritto",
+    "unitn-l-33-l-18-economia-e-management",
+    "unitn-l-18-gestione-aziendale",
+    "unitn-lm-56-economia-comportamentale-e-applicata",
+    "unitn-lm-77-economia-e-legislazione-d-impresa",
+    "unitn-lm-16-finanza",
+    "unitn-lm-77-innovation-management-management-dell-innovazione",
+    "unitn-lm-77-international-management-management-internazionale",
+    "unitn-lm-77-management-1627991",
+    "unitn-lm-77-management-della-sostenibilita-e-del-turismo"
+   ]
+  },
+  {
+   "ambito": "European Master in Business Studies (EMBS) — Dipartimento di Economia e Management",
+   "fonte": "https://www.economia.unitn.it/3386/calendario-accademico-e-lauree-aa-2026/27",
+   "sessioni": [
+    {
+     "nome": "Sessione del 1° semestre",
+     "inizio": "2026-12-01",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Esami di recupero sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-29",
+     "note": null
+    },
+    {
+     "nome": "Esami di recupero",
+     "inizio": "2027-03-01",
+     "fine": "2027-06-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unitn-lm-77-management",
+    "unitn-lm-77-management-embs"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Lettere e Filosofia",
+   "fonte": "https://www.lettere.unitn.it/alfresco/download/workspace/SpacesStore/69d7f63e-42a4-42cd-97f6-3e42a422cdc2/Calendario_aa_2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria (appello facoltativo)",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-22",
+     "note": "Un appello facoltativo"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-13",
+     "note": "Due appelli obbligatori"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": "Due appelli obbligatori e uno facoltativo"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Un appello obbligatorio, salvo deroghe per l'ambito di Lingue"
+    }
+   ],
+   "corsi": [
+    "unitn-l-1-beni-culturali",
+    "unitn-l-5-filosofia",
+    "unitn-l-10-lettere-e-storia",
+    "unitn-l-11-lingue-moderne",
+    "unitn-lm-45-culture-e-beni-musicali",
+    "unitn-lm-78-filosofia-e-linguaggi-della-modernita",
+    "unitn-lm-37-letterature-euroamericane-traduzione-e-critica-letteraria",
+    "unitn-lm-38-lingue-moderne-nel-turismo-e-nella-cooperazione-internaziona",
+    "unitn-lm-89-storia-dell-arte-e-studi-museali",
+    "unitn-lm-14-filologia-e-critica-letteraria",
+    "unitn-lm-84-scienze-storiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Fisica",
+   "fonte": "https://corsi.unitn.it/sites/cds/files/2026-03/calendario-accademico-fisica-26-27-testuale.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-10",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-08",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unitn-l-30-fisica",
+    "unitn-lm-17-physics"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Matematica",
+   "fonte": "https://corsi.unitn.it/sites/cds/files/2026-07/calendario-accademico-dipartimento-matematica-26-27_0.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli invernali",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-24",
+     "note": "Periodo letto dal calendario grafico (celle «Appelli di esame»)"
+    },
+    {
+     "nome": "Appelli estivi",
+     "inizio": "2027-06-10",
+     "fine": "2027-07-30",
+     "note": "Periodo letto dal calendario grafico"
+    },
+    {
+     "nome": "Appelli di fine estate",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-08",
+     "note": "Periodo letto dal calendario grafico"
+    }
+   ],
+   "corsi": [
+    "unitn-l-35-matematica",
+    "unitn-lm-40-matematica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Biologia Cellulare, Computazionale e Integrata (CIBIO)",
+   "fonte": "https://corsi.unitn.it/sites/cds/files/2026-03/calendario-accademico-cibio-26-27-ita.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-10",
+     "fine": "2027-09-08",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unitn-l-2-scienze-e-tecnologie-biomolecolari",
+    "unitn-lm-9-cellular-and-molecular-biotechnology",
+    "unitn-lm-8-quantitative-and-computational-biology"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria e Scienza dell'Informazione (DISI)",
+   "fonte": "https://www.disi.unitn.it/it/bachelor-student/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (I semestre)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva-autunnale (II semestre)",
+     "inizio": "2027-06-10",
+     "fine": "2027-09-08",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unitn-l-31-informatica",
+    "unitn-l-8-ingegneria-informatica-delle-comunicazioni-ed-elettronica",
+    "unitn-lm-32-artificial-intelligence-systems",
+    "unitn-lm-18-computer-science",
+    "unitn-lm-27-information-engineering"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria Industriale (DII)",
+   "fonte": "https://www.dii.unitn.it/alfresco/download/workspace/SpacesStore/5cd7e616-c497-4cf3-97e6-16c4979cf32e/Calendario_accademico_2026-27_DII_accessibile_IT-ENG.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-10",
+     "fine": "2027-09-08",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unitn-l-9-ingegneria-industriale",
+    "unitn-lm-53-materials-engineering",
+    "unitn-lm-33-intelligent-mechatronics-engineering",
+    "unitn-lm-31-management-and-industrial-systems-engineering",
+    "unitn-lm-21-bioengineering-for-personalized-medicine"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria Civile, Ambientale e Meccanica (DICAM)",
+   "fonte": "https://www.dicam.unitn.it/alfresco/download/workspace/SpacesStore/f70e0d17-2be2-4f7d-8e0d-172be2cf7d7b/Cal%20Accademico_DICAM%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli invernali",
+     "inizio": "2027-01-12",
+     "fine": "2027-02-19",
+     "note": "Periodo letto dal calendario grafico (celle «Appelli di esame»)"
+    },
+    {
+     "nome": "Appelli estivi",
+     "inizio": "2027-06-16",
+     "fine": "2027-07-30",
+     "note": "Periodo letto dal calendario grafico"
+    },
+    {
+     "nome": "Appelli di fine estate",
+     "inizio": "2027-08-23",
+     "fine": "2027-08-31",
+     "note": "Il calendario grafico termina al 31 agosto; la pagina del dipartimento indica la sessione «agosto - settembre 2027»"
+    }
+   ],
+   "corsi": [
+    "unitn-l-7-ingegneria-civile",
+    "unitn-l-7-ingegneria-per-l-ambiente-e-il-territorio",
+    "unitn-lm-23-ingegneria-civile",
+    "unitn-lm-35-ingegneria-per-l-ambiente-e-il-territorio",
+    "unitn-lm-17-meteorologia-ambientale-e-fisica-del-clima",
+    "unitn-lm-4-c-u-ingegneria-edile-architettura"
+   ]
+  },
+  {
+   "ambito": "LM Energy Engineering (UniTrento – unibz), sede UniTrento",
+   "fonte": "https://www.dicam.unitn.it/alfresco/download/workspace/SpacesStore/bff5c656-9ea7-4cb7-b5c6-569ea7ccb7de/Cal%20Accademico%2026_27%20LM-30_UniTN_unibz.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli invernali",
+     "inizio": "2027-01-12",
+     "fine": "2027-02-19",
+     "note": "Periodo letto dal calendario grafico (celle «Appelli di esame»)"
+    },
+    {
+     "nome": "Appelli estivi",
+     "inizio": "2027-06-16",
+     "fine": "2027-07-30",
+     "note": "Periodo letto dal calendario grafico"
+    },
+    {
+     "nome": "Appelli di fine estate",
+     "inizio": "2027-08-23",
+     "fine": "2027-08-31",
+     "note": "Il calendario grafico termina al 31 agosto; la pagina del dipartimento indica la sessione «agosto - settembre 2027»"
+    }
+   ],
+   "corsi": [
+    "unitn-lm-30-energy-engineering"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Giurisprudenza — LM a ciclo unico in Giurisprudenza",
+   "fonte": "https://www.giurisprudenza.unitn.it/367/calendario-accademico-laurea-magistrale-a-ciclo-unico-in-giurisprudenza",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-20",
+     "note": "1 appello per fuori corso e in attesa di laurea"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-13",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-31",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unitn-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Giurisprudenza — Comparative, European and International Legal Studies (CEILS)",
+   "fonte": "https://www.giurisprudenza.unitn.it/en/4446/academic-calendar-ceils-programme",
+   "sessioni": [
+    {
+     "nome": "Sessione I semestre 1",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione I semestre 2",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-05",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione II semestre",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-04",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione II semestre e recupero I semestre",
+     "inizio": "2027-06-14",
+     "fine": "2027-06-25",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di recupero II semestre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione per iscritti oltre il 3° anno e fuori corso",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-20",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unitn-l-14-studi-giuridici-comparati-europei-e-internazionali"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Giurisprudenza — Global Law Making (GLAM)",
+   "fonte": "https://www.giurisprudenza.unitn.it/en/4613/academic-calendar-glam-programme",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-05",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-05-28",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unitn-lm-sc-giur-global-law-making"
+   ]
+  },
+  {
+   "ambito": "School of International Studies — MEIS (European and International Studies)",
+   "fonte": "https://www.sis.unitn.it/19/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Winter session",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-05",
+     "note": null
+    },
+    {
+     "nome": "Summer session",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Autumn session",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "Resit"
+    }
+   ],
+   "corsi": [
+    "unitn-lm-52-european-and-international-studies-studi-europei-e-internazi"
+   ]
+  },
+  {
+   "ambito": "School of International Studies — MISS (International Security Studies)",
+   "fonte": "https://www.sis.unitn.it/19/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Winter session",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-05",
+     "note": "Per il 2° anno dal 9 dicembre 2026"
+    },
+    {
+     "nome": "Summer session",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Autumn session",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "Resit"
+    }
+   ],
+   "corsi": [
+    "unitn-lm-52-studi-sulla-sicurezza-internazionale"
+   ]
+  },
+  {
+   "ambito": "School of International Studies — IMSISS (Security, Intelligence and Strategic Studies)",
+   "fonte": "https://www.sis.unitn.it/19/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Winter session",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-05",
+     "note": "Solo per studenti immatricolati nel 2024/25"
+    },
+    {
+     "nome": "Summer session",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Autumn session",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "Resit"
+    }
+   ],
+   "corsi": [
+    "unitn-lm-52-sicurezza-intelligence-e-studi-strategici"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Psicologia e Scienze Cognitive",
+   "fonte": "https://www.cogsci.unitn.it/studiare/calendari",
+   "sessioni": [
+    {
+     "nome": "Pre-appelli aggiuntivi",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "Eventuali pre-appelli aggiuntivi e recupero lezioni"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-16",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unitn-l-24-scienze-e-tecniche-di-psicologia-cognitiva",
+    "unitn-lm-51-psicologia",
+    "unitn-l-20-interfacce-e-tecnologie-della-comunicazione",
+    "unitn-l-22-scienze-motorie-sport-e-benessere",
+    "unitn-lm-55-human-computer-interaction-interazione-persona-macchina",
+    "unitn-lm-55-cognitive-science-scienze-cognitive"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Educazione professionale (Dipartimento di Psicologia e Scienze Cognitive)",
+   "fonte": "https://www.cogsci.unitn.it/studiare/calendari",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-12",
+     "note": "1° e 2° anno; per il 3° anno dal 29 gennaio 2027"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-16",
+     "note": "3° anno; per il 1° e 2° anno dal 7 giugno 2027"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-16",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unitn-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Viticoltura ed enologia",
+   "fonte": "https://corsi.unitn.it/sites/cds/files/2026-07/calendario-accademico-viticoltura-enologia-26-27-1.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-26",
+     "note": "1° e 2° anno; per il 3° anno dal 25 gennaio 2027"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unitn-l-25-viticoltura-ed-enologia"
+   ]
+  },
+  {
+   "ambito": "LM Agrifood Innovation Management",
+   "fonte": "https://corsi.unitn.it/sites/cds/files/2026-07/academic-calendar-master-agrifood-innovation-management-26-27_0.pdf",
+   "sessioni": [
+    {
+     "nome": "Winter session",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Summer session",
+     "inizio": "2027-06-14",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unitn-lm-69-agrifood-innovation-management"
+   ]
+  },
+  {
+   "ambito": "LM a ciclo unico in Medicina e chirurgia",
+   "fonte": "https://corsi.unitn.it/sites/cds/files/2026-07/calendario-lmcu-medicina-chirurgia-26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli invernali",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Periodo letto dal calendario grafico; 27-29 gennaio sessione di laurea; l'11 gennaio prove d'esame del semestre filtro"
+    },
+    {
+     "nome": "Appelli di aprile",
+     "inizio": "2027-04-28",
+     "fine": "2027-04-30",
+     "note": "Periodo letto dal calendario grafico"
+    },
+    {
+     "nome": "Appelli estivi",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "Periodo letto dal calendario grafico; 7-9 luglio sessione di laurea"
+    },
+    {
+     "nome": "Appelli di fine estate",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": "Periodo letto dal calendario grafico"
+    }
+   ],
+   "corsi": [
+    "unitn-lm-41-medicina-e-chirurgia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche di radiologia medica, per immagini e radioterapia (Scuola Interateneo di Medicina e Chirurgia)",
+   "fonte": "https://corsi.unitn.it/sites/cds/files/2026-07/calendario-accademico-tecniche-radiologia-immagini-26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione esami 1° anno (1)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-05",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 1° anno (2)",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 1° anno (3)",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-30",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 1° anno (4)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 2° anno (1)",
+     "inizio": "2026-11-30",
+     "fine": "2026-12-04",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 2° anno (2)",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-22",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 2° anno (3)",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-15",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 2° anno (4)",
+     "inizio": "2027-05-10",
+     "fine": "2027-05-28",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 2° anno (5)",
+     "inizio": "2027-06-03",
+     "fine": "2027-06-18",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 3° anno (1)",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 3° anno (2)",
+     "inizio": "2027-05-24",
+     "fine": "2027-05-28",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 3° anno (3)",
+     "inizio": "2027-06-30",
+     "fine": "2027-07-30",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 3° anno (4)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    }
+   ],
+   "corsi": [
+    "unitn-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche di laboratorio biomedico (Scuola Interateneo di Medicina e Chirurgia)",
+   "fonte": "https://corsi.unitn.it/sites/cds/files/2026-07/calendario-accademico-tecniche-laboratorio-biomedico-26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione esami 1° anno (1)",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-29",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 1° anno (2)",
+     "inizio": "2027-05-10",
+     "fine": "2027-05-28",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 1° anno (3)",
+     "inizio": "2027-07-12",
+     "fine": "2027-07-30",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 1° anno (4)",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 2° anno (1)",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-22",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 2° anno (2)",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-22",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 2° anno (3)",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-02",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 2° anno (4)",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 3° anno (1)",
+     "inizio": "2027-02-08",
+     "fine": "2027-02-19",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 3° anno (2)",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-28",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 3° anno (3)",
+     "inizio": "2027-07-19",
+     "fine": "2027-07-30",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 3° anno (4)",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    }
+   ],
+   "corsi": [
+    "unitn-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche della prevenzione nell'ambiente e nei luoghi di lavoro (Scuola Interateneo di Medicina e Chirurgia)",
+   "fonte": "https://corsi.unitn.it/sites/cds/files/2026-07/calendario-accademico-tecniche-prevenzione-luoghi-lavoro-26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione esami 1° anno (1)",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-29",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 1° anno (2)",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-30",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 1° anno (3)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 2° anno (1)",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-22",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 2° anno (2)",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-20",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 2° anno (3)",
+     "inizio": "2027-06-03",
+     "fine": "2027-06-30",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 2° anno (4)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 3° anno (1)",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-22",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 3° anno (2)",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-20",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 3° anno (3)",
+     "inizio": "2027-04-26",
+     "fine": "2027-05-21",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato"
+    },
+    {
+     "nome": "Sessione esami 3° anno (4)",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-30",
+     "note": "Periodo letto dal calendario accademico grafico (giorni marcati «esami» = sessione esami) per l'anno di corso indicato; il calendario segna inoltre un singolo giorno d'esame per il 3° anno l'11 ottobre 2027"
+    }
+   ],
+   "corsi": [
+    "unitn-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unitn-a011-fi-discipline-letterarie-e-latino",
+  "unitn-a013-fi-discipline-letterarie-latino-e-greco",
+  "unitn-a012-fi-discipline-letterarie-nell-istruzione-secondaria-di-i-e-ii-g",
+  "unitn-a018-fi-filosofia-e-scienze-umane",
+  "unitn-a019-fi-filosofia-e-storia",
+  "unitn-ab22-fi-lingue-e-culture-straniere-nell-istruzione-secondaria-di-i-e",
+  "unitn-ad22-fi-lingue-e-culture-straniere-nell-istruzione-secondaria-di-i-e",
+  "unitn-a027-fi-matematica-e-fisica",
+  "unitn-a028-fi-matematica-e-scienze",
+  "unitn-a041-fi-scienze-e-tecnologie-informatiche",
+  "unitn-a050-fi-scienze-naturali-chimiche-e-biologiche",
+  "unitn-l-39-servizio-sociale",
+  "unitn-l-40-sociologia",
+  "unitn-l-36-studi-internazionali",
+  "unitn-lm-data-data-science",
+  "unitn-lm-62-global-affairs-geopolitics-and-sustainability",
+  "unitn-lm-87-metodologia-organizzazione-e-valutazione-dei-servizi-sociali",
+  "unitn-lm-88-organizzazione-societa-e-tecnologia",
+  "unitn-lm-88-sociology-and-social-research-sociologia-e-ricerca-sociale"
+ ],
+ "mancanti": "Terzo giro (13/10/2026). Dipartimento di Sociologia e Ricerca Sociale (7 corsi + Data Science, che ha sede nel Dipartimento e rimanda alla sua Guida): la pagina Calendario accademico (https://www.sociologia.unitn.it/220/calendario-accademico), la pagina Calendario esami (https://www.sociologia.unitn.it/calendario-esami) e la Guida studenti DSRS 2026-27 (https://www.sociologia.unitn.it/111/guida-studenti) indicano le sessioni solo per mesi (gennaio-febbraio, giugno-luglio, agosto-settembre 2027): sono state inserite con inizio/fine = primo/ultimo giorno dei mesi e una nota che lo dice. Scoperti: i 11 percorsi di formazione iniziale degli insegnanti (60 CFU): https://formazioneinsegnanti.unitn.it pubblica piani di studio e orari solo nell'area riservata Moodle (login), nessun calendario d'esame pubblico per il 2026/27. "
+}

@@ -1,0 +1,50 @@
+{
+ "universita_id": "iulm",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://www.iulm.it/wps/wcm/connect/iulm/d692f6cc-1fc4-4149-8645-0231a52100fb/Calendario+didattico+2026_2027.pdf?MOD=AJPERES",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-08",
+     "fine": "2027-02-13",
+     "note": "3 appelli; vale anche come IV sessione a.a. 2025/26 per gli studenti in debito d'esami. Date confermate dal Regolamento didattico 2026-2027"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-24",
+     "fine": "2027-09-18",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "iulm-l-3-arti-ed-eventi-culturali",
+    "iulm-l-20-comunicazione-d-impresa-e-relazioni-pubbliche",
+    "iulm-l-20-comunicazione-media-e-pubblicita",
+    "iulm-l-11-lingue-cultura-e-comunicazione-digitale",
+    "iulm-l-12-mediazione-interpretariato-e-comunicazione-interculturale",
+    "iulm-l-3-moda-e-industrie-creative",
+    "iulm-l-15-turismo-management-e-cultura",
+    "iulm-lm-89-arte-valorizzazione-e-mercato",
+    "iulm-lm-92-fashion-communication-and-luxury-strategies",
+    "iulm-lm-49-hospitality-and-tourism-management",
+    "iulm-lm-91-intelligenza-artificiale-impresa-e-societa",
+    "iulm-lm-59-marketing-consumi-e-comunicazione",
+    "iulm-lm-59-strategic-communication",
+    "iulm-lm-65-televisione-cinema-e-new-media",
+    "iulm-lm-94-traduzione-interpretariato-e-comunicazione-digitale"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

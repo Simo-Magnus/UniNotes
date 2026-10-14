@@ -1,0 +1,95 @@
+{
+ "universita_id": "poliba",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ingegneria (corsi di laurea dei dipartimenti di ingegneria)",
+   "fonte": "https://www.poliba.it/sites/default/files/Calendario%20didattico/Calendario-AA%2026-27%20-%20ING.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-26",
+     "note": "Periodo esami dopo il I semestre"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-08-06",
+     "note": "Periodo esami dopo il II semestre"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": "Periodo esami dopo l'interruzione per le vacanze estive (9-20 agosto 2027)"
+    }
+   ],
+   "corsi": [
+    "poliba-l-7-ingegneria-civile-e-ambientale",
+    "poliba-l-7-ingegneria-civile-e-ambientale-replica-curriculum-taranto",
+    "poliba-l-9-l-8-ingegneria-dei-sistemi-aerospaziali",
+    "poliba-l-8-ingegneria-dei-sistemi-medicali",
+    "poliba-l-8-ingegneria-della-creativita-digitale",
+    "poliba-l-9-ingegneria-dellenergia-elettrica",
+    "poliba-l-23-ingegneria-edile",
+    "poliba-l-8-ingegneria-elettronica-e-delle-tecnologie-internet",
+    "poliba-l-9-ingegneria-gestionale",
+    "poliba-l-9-ingegneria-industriale-e-dei-sistemi-navali",
+    "poliba-l-8-ingegneria-informatica-e-dell-automazione",
+    "poliba-l-8-ingegneria-informatica-e-dell-automazione-replica-taranto",
+    "poliba-l-9-ingegneria-meccanica",
+    "poliba-l-9-management-engineering-for-innovation",
+    "poliba-lm-25-automation-and-robotics-engineering",
+    "poliba-lm-32-computer-science-engineering",
+    "poliba-lm-29-electronics-engineering",
+    "poliba-lm-23-ingegneria-civile",
+    "poliba-lm-24-ingegneria-dei-sistemi-edilizi",
+    "poliba-lm-24-ingegneria-dei-sistemi-edilizi-d-m-270-04",
+    "poliba-lm-21-ingegneria-dei-sistemi-medicali",
+    "poliba-lm-26-ingegneria-della-mobilita-sostenibile",
+    "poliba-lm-28-ingegneria-elettrica",
+    "poliba-lm-28-ingegneria-elettrica-d-m-270-04",
+    "poliba-lm-30-ingegneria-energetica",
+    "poliba-lm-31-ingegneria-gestionale",
+    "poliba-lm-31-ingegneria-gestionale-d-m-270-04",
+    "poliba-lm-32-ingegneria-informatica-d-m-270-04",
+    "poliba-lm-33-ingegneria-meccanica",
+    "poliba-lm-33-ingegneria-meccanica-d-m-270-04",
+    "poliba-lm-35-ingegneria-per-l-ambiente-e-il-territorio",
+    "poliba-lm-35-ingegneria-per-l-ambiente-e-il-territorio-replica-curriculum",
+    "poliba-lm-33-mechanical-engineering",
+    "poliba-lm-27-telecommunications-and-internet-technologies-engineering",
+    "poliba-lm-data-trasformazione-digitale",
+    "poliba-l-p01-costruzioni-e-gestione-ambientale-e-territoriale"
+   ]
+  },
+  {
+   "ambito": "Architettura e Design",
+   "fonte": "https://www.poliba.it/sites/default/files/Calendario%20didattico/Architettura-Design-2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": "Periodo esami dopo il I semestre (preceduto da esoneri/workshop 11-22 gennaio 2027)"
+    },
+    {
+     "nome": "Sessione estiva e autunnale",
+     "inizio": "2027-06-28",
+     "fine": "2027-09-17",
+     "note": "Periodo esami unico indicato dal calendario dopo il II semestre (preceduto da esoneri/workshop 14-25 giugno 2027)"
+    }
+   ],
+   "corsi": [
+    "poliba-l-17-architecture-sciences-for-heritage",
+    "poliba-l-4-design",
+    "poliba-lm-12-design-for-cultural-and-productive-context",
+    "poliba-lm-4-c-u-architettura"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

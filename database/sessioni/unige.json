@@ -1,0 +1,900 @@
+{
+ "universita_id": "unige",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-12",
+ "calendari": [
+  {
+   "ambito": "Scuola Politecnica - corsi di Ingegneria (calendario comune pubblicato sulle pagine dei corsi)",
+   "fonte": "https://corsi.unige.it/corsi/11878/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria d'autunno",
+     "inizio": "2026-10-14",
+     "fine": "2026-10-15",
+     "note": "solo per studenti non frequentanti (sospensione didattica per sedute di laurea)"
+    },
+    {
+     "nome": "Sessione ordinaria del primo semestre",
+     "inizio": "2026-12-21",
+     "fine": "2027-02-19",
+     "note": "esclusi 4 e 5 gennaio 2027"
+    },
+    {
+     "nome": "Sessione straordinaria di primavera",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": "solo per studenti non frequentanti"
+    },
+    {
+     "nome": "Sessione ordinaria del secondo semestre",
+     "inizio": "2027-05-31",
+     "fine": "2027-09-17",
+     "note": "esclusi dal 9 al 22 agosto (la pagina indica per refuso 2026)"
+    }
+   ],
+   "corsi": [
+    "unige-l-8-ingegneria-biomedica",
+    "unige-l-9-ingegneria-chimica-e-di-processo",
+    "unige-l-7-ingegneria-civile-edile-e-ambientale",
+    "unige-l-9-ingegneria-dellenergia",
+    "unige-l-9-ingegneria-elettrica",
+    "unige-l-8-ingegneria-elettronica-e-tecnologie-dell-informazione",
+    "unige-l-9-ingegneria-gestionale",
+    "unige-l-9-ingegneria-meccanica",
+    "unige-l-9-ingegneria-meccanica-per-l-automazione",
+    "unige-l-9-ingegneria-navale",
+    "unige-l-28-maritime-science-and-technology",
+    "unige-lm-21-bioengineering",
+    "unige-lm-24-building-engineering",
+    "unige-lm-32-computer-engineering",
+    "unige-lm-92-digital-humanities-interactive-systems-and-digital-media",
+    "unige-lm-92-digital-humanities-interactive-systems-and-digital-media-rep",
+    "unige-lm-28-electrical-engineering-for-energy-transition",
+    "unige-lm-29-electronic-engineering",
+    "unige-lm-30-energy-engineering",
+    "unige-lm-26-engineering-for-natural-risk-management",
+    "unige-lm-ds-engineering-technology-for-strategy-and-security",
+    "unige-lm-35-environmental-engineering",
+    "unige-lm-22-ingegneria-chimica-e-di-processo",
+    "unige-lm-23-ingegneria-civile",
+    "unige-lm-31-ingegneria-gestionale",
+    "unige-lm-33-ingegneria-meccanica-energia-e-aeronautica",
+    "unige-lm-33-ingegneria-meccanica-progettazione-e-produzione",
+    "unige-lm-34-ingegneria-navale",
+    "unige-lm-27-internet-and-multimedia-engineering",
+    "unige-lm-32-robotics-engineering",
+    "unige-lm-26-safe-transport-and-logistics-engineering",
+    "unige-l-8-computer-engineering",
+    "unige-l-8-ingegneria-informatica",
+    "unige-l-gastr-scienze-e-culture-agroalimentari-del-mediterraneo"
+   ]
+  },
+  {
+   "ambito": "Scuola Politecnica - corsi di Architettura e Design (e Ingegneria nautica)",
+   "fonte": "https://corsi.unige.it/corsi/11870/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "Sessione ordinaria del primo semestre",
+     "inizio": "2026-12-21",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione ordinaria del secondo semestre",
+     "inizio": "2027-05-31",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unige-l-4-design-del-prodotto-e-della-comunicazione",
+    "unige-l-17-scienze-dell-architettura",
+    "unige-lm-4-architettura",
+    "unige-lm-3-architettura-del-paesaggio",
+    "unige-lm-12-design-prodotto-evento",
+    "unige-l-4-design-del-prodotto-nautico",
+    "unige-l-9-ingegneria-nautica",
+    "unige-lm-12-design-navale-e-nautico",
+    "unige-lm-34-yacht-design",
+    "unige-lm-4-architectural-composition"
+   ]
+  },
+  {
+   "ambito": "Dipartimenti DAFIST e DIRAAS (Scuola di Scienze Umanistiche)",
+   "fonte": "https://corsi.unige.it/corsi/11866/studenti-calendario-esami",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-22",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Pre-appello sessione estiva",
+     "inizio": "2027-05-10",
+     "fine": "2027-05-21",
+     "note": "opzionale, secondo le disposizioni dei singoli corsi"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-23",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unige-l-1-conservazione-dei-beni-culturali",
+    "unige-l-5-filosofia",
+    "unige-l-10-lettere",
+    "unige-l-42-storia",
+    "unige-lm-2-archeologie-professione-e-saperi-archeopes",
+    "unige-lm-15-filologia-e-scienze-dell-antichita",
+    "unige-lm-14-letterature-moderne-e-spettacolo",
+    "unige-lm-78-metodologie-filosofiche",
+    "unige-lm-84-scienze-storiche",
+    "unige-lm-89-storia-dell-arte-e-valorizzazione-del-patrimonio-artistico"
+   ]
+  },
+  {
+   "ambito": "Corsi di Lingue (Dipartimento di Lingue e Culture Moderne)",
+   "fonte": "https://corsi.unige.it/corsi/11884/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-12",
+     "note": "esami scritti di esercitazioni linguistiche dal 18 al 26 gennaio"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": "scritti di esercitazioni linguistiche dal 31 maggio all'11 giugno; tutti gli altri esami dal 14 giugno al 30 luglio"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-28",
+     "note": "scritti di esercitazioni linguistiche dal 1 al 9 settembre (la pagina indica per refuso 2026)"
+    }
+   ],
+   "corsi": [
+    "unige-l-11-lingue-e-culture-moderne",
+    "unige-l-12-teorie-e-tecniche-della-mediazione-interlinguistica",
+    "unige-lm-38-lingue-e-comunicazione-interculturale-per-le-istituzioni-e-l",
+    "unige-lm-37-lingue-e-letterature-moderne-per-linsegnamento-leditoria-e-i"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Giurisprudenza",
+   "fonte": "https://corsi.unige.it/corsi/11864/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-22",
+     "note": "1° appello della sessione invernale"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-12",
+     "note": "due appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-23",
+     "note": "quattro appelli"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "un appello"
+    }
+   ],
+   "corsi": [
+    "unige-lmg-01-giurisprudenza",
+    "unige-lmg-01-giurisprudenza-replica-sede-imperia",
+    "unige-l-14-l-18-diritto-ed-economia-delle-imprese",
+    "unige-l-14-servizi-legali-all-impresa-e-alla-pubblica-amministrazione",
+    "unige-l-39-servizio-sociale",
+    "unige-lm-87-servizio-sociale-e-politiche-sociali"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Politiche e Internazionali (DISPI)",
+   "fonte": "https://dispi.unige.it/sites/dispi.unige.it/files/2026-06/Calendario%20didattico%2026.27_0.docx",
+   "sessioni": [
+    {
+     "nome": "Sessione di dicembre 2026",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "I appello"
+    },
+    {
+     "nome": "Sessione invernale 2027",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-05",
+     "note": "I appello 11-22 gennaio, II appello 25 gennaio-5 febbraio"
+    },
+    {
+     "nome": "Sessione estiva 2027",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-23",
+     "note": "I appello 24 maggio-11 giugno, II 21 giugno-2 luglio, III 5-23 luglio"
+    },
+    {
+     "nome": "Sessione di settembre 2027",
+     "inizio": "2027-09-02",
+     "fine": "2027-09-09",
+     "note": "I appello"
+    },
+    {
+     "nome": "Sessione di dicembre 2027",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-17",
+     "note": "I appello (riportata nel calendario didattico 2026/2027)"
+    },
+    {
+     "nome": "Sessione invernale 2028",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-04",
+     "note": "due appelli (riportata nel calendario didattico 2026/2027)"
+    }
+   ],
+   "corsi": [
+    "unige-l-36-politiche-governance-e-informazione-dello-sport",
+    "unige-l-16-scienze-dell-amministrazione-e-della-politica",
+    "unige-l-36-scienze-internazionali-e-diplomatiche",
+    "unige-lm-19-media-informazione-ed-editoria",
+    "unige-lm-63-amministrazione-e-politiche-pubbliche",
+    "unige-lm-52-relazioni-internazionali"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia (DIEC) - corsi di Genova",
+   "fonte": "https://economia.unige.it/sites/economia.unige.it/files/2026-06/calendario%20didattico%20a.a.%202026-27%20Corsi%20di%20studio%20GE.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-19",
+     "note": "3 appelli: 14/12-15/1, 18/1-29/1, 1/2-19/2"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-16",
+     "note": "3 appelli: 31/5-11/6, 14/6-25/6, 28/6-16/7"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "appello unico per ogni materia"
+    }
+   ],
+   "corsi": [
+    "unige-l-18-economia-aziendale",
+    "unige-l-18-economia-delle-aziende-marittime-della-logistica-e-dei-trasp",
+    "unige-l-33-scienze-economiche-e-finanziarie",
+    "unige-lm-77-amministrazione-finanza-e-controllo",
+    "unige-lm-77-economia-e-management-marittimo-e-portuale",
+    "unige-lm-56-economics-data-science",
+    "unige-lm-77-management",
+    "unige-lm-77-management-for-energy-and-environmental-transition-meet"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze del Turismo: impresa, cultura e territorio (sede di Imperia)",
+   "fonte": "https://economia.unige.it/sites/economia.unige.it/files/2026-06/calendario%20didattico%20a.a.%202026-27%20Scienze%20del%20Turismo%20IM.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-19",
+     "note": "3 appelli: 14/12-15/1, 18/1-29/1, 1/2-19/2"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-16",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unige-l-15-scienze-del-turismo-impresa-cultura-e-territorio"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze della Formazione (DISFOR) - corsi di area educativa",
+   "fonte": "https://disfor.unige.it/didattica/esami-calendario-esami",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-13",
+     "note": "tre appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-31",
+     "note": "quattro appelli"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-11",
+     "note": "un appello"
+    }
+   ],
+   "corsi": [
+    "unige-l-19-scienze-dell-educazione-e-della-formazione",
+    "unige-lm-85-scienze-pedagogiche-per-la-progettazione-la-consulenza-e-il",
+    "unige-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze della Formazione (DISFOR) - Psicologia, Media comunicazione e società, Valorizzazione dei territori",
+   "fonte": "https://disfor.unige.it/didattica/esami-calendario-esami",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-13",
+     "note": "tre appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-15",
+     "note": "tre appelli"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-11",
+     "note": "un appello"
+    }
+   ],
+   "corsi": [
+    "unige-l-24-scienze-e-tecniche-psicologiche",
+    "unige-lm-51-psicologia",
+    "unige-l-20-media-comunicazione-e-societa",
+    "unige-lm-80-valorizzazione-dei-territori-e-turismi-sostenibili"
+   ]
+  },
+  {
+   "ambito": "Corsi di Scienze biologiche, geologiche, ambientali e Restauro (DISTAV)",
+   "fonte": "https://corsi.unige.it/corsi/11898/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "Esami del primo semestre",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Esami del secondo semestre",
+     "inizio": "2027-06-14",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unige-l-32-scienze-ambientali-e-naturali",
+    "unige-l-13-scienze-biologiche",
+    "unige-l-34-scienze-geologiche",
+    "unige-lm-6-biologia-applicata-e-sperimentale",
+    "unige-lm-6-biologia-ed-ecologia-marina",
+    "unige-lm-60-global-change-e-gestione-sostenibile-della-natura",
+    "unige-lm-11-metodologie-per-la-conservazione-e-il-restauro-dei-beni-cult",
+    "unige-lm-74-scienze-geologiche"
+   ]
+  },
+  {
+   "ambito": "Corsi di Fisica",
+   "fonte": "https://corsi.unige.it/corsi/11895/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unige-l-30-fisica",
+    "unige-lm-17-fisica"
+   ]
+  },
+  {
+   "ambito": "Corsi di Matematica",
+   "fonte": "https://corsi.unige.it/corsi/11897/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unige-l-35-matematica",
+    "unige-lm-40-matematica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Statistica matematica e trattamento informatico dei dati (SMID)",
+   "fonte": "https://corsi.unige.it/corsi/11900/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "primo e secondo anno; per il terzo anno dal 14 dicembre 2026 al 19 febbraio 2027"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-09-17",
+     "note": "primo e secondo anno; per il terzo anno dal 10 maggio al 17 settembre 2027"
+    }
+   ],
+   "corsi": [
+    "unige-l-35-statistica-matematica-e-trattamento-informatico-dei-dati-smi"
+   ]
+  },
+  {
+   "ambito": "Corsi di Informatica (DIBRIS)",
+   "fonte": "https://corsi.unige.it/corsi/11896/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unige-l-31-informatica",
+    "unige-lm-18-computer-science"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienza dei Materiali",
+   "fonte": "https://corsi.unige.it/corsi/11968/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unige-l-sc-mat-scienza-dei-materiali"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Chimica e Tecnologie Chimiche",
+   "fonte": "https://servizionline.unige.it/unige/stampa_manifesto/MF/2026/11894.html",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-02-22",
+     "fine": "2027-02-26",
+     "note": "solo per esami di insegnamenti del III anno; un ulteriore appello tra mercoledì e venerdì della settimana dopo Pasqua"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "esiste anche una finestra per il III anno fino al 4 giugno 2027, con inizio indicato per refuso al 17 maggio 2026"
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-09-20",
+     "fine": "2027-10-08",
+     "note": "solo per esami di insegnamenti del III anno"
+    }
+   ],
+   "corsi": [
+    "unige-l-27-chimica-e-tecnologie-chimiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze Chimiche",
+   "fonte": "https://servizionline.unige.it/unige/stampa_manifesto/MF/2026/11909.html",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-08",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unige-lm-54-scienze-chimiche"
+   ]
+  },
+  {
+   "ambito": "Corsi di Farmacia e Chimica e Tecnologia Farmaceutiche",
+   "fonte": "https://corsi.unige.it/corsi/11947/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione pasquale",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 2028",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-11",
+     "note": "riportata nel calendario del corso 2026/27"
+    }
+   ],
+   "corsi": [
+    "unige-lm-13-farmacia",
+    "unige-lm-13-chimica-e-tecnologia-farmaceutiche"
+   ]
+  },
+  {
+   "ambito": "Laurea professionalizzante in Tecnologie industriali",
+   "fonte": "https://corsi.unige.it/corsi/11429/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "Esami e attività laboratoriali - I anno, I bimestre",
+     "inizio": "2026-10-05",
+     "fine": "2026-11-06",
+     "note": null
+    },
+    {
+     "nome": "Esami e attività laboratoriali - I anno, II bimestre",
+     "inizio": "2026-11-30",
+     "fine": "2027-01-08",
+     "note": null
+    },
+    {
+     "nome": "Esami e attività laboratoriali - I anno, III bimestre",
+     "inizio": "2027-02-15",
+     "fine": "2027-04-16",
+     "note": null
+    },
+    {
+     "nome": "Esami e attività laboratoriali - I anno, IV bimestre",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-27",
+     "note": null
+    },
+    {
+     "nome": "Esami e attività laboratoriali - II anno, I bimestre",
+     "inizio": "2026-10-19",
+     "fine": "2027-01-08",
+     "note": null
+    },
+    {
+     "nome": "Esami e attività laboratoriali - II anno, II bimestre",
+     "inizio": "2027-03-15",
+     "fine": "2027-08-31",
+     "note": "il terzo anno è dedicato al tirocinio"
+    }
+   ],
+   "corsi": [
+    "unige-l-p03-tecnologie-industriali"
+   ]
+  },
+  {
+   "ambito": "Laurea professionalizzante in Tecnologie per l'edilizia e il territorio",
+   "fonte": "https://corsi.unige.it/corsi/11428/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "Esami e attività laboratoriali - I anno, I bimestre",
+     "inizio": "2026-10-05",
+     "fine": "2026-11-06",
+     "note": null
+    },
+    {
+     "nome": "Esami e attività laboratoriali - I anno, II bimestre",
+     "inizio": "2026-11-30",
+     "fine": "2027-01-08",
+     "note": null
+    },
+    {
+     "nome": "Esami e attività laboratoriali - I anno, III bimestre",
+     "inizio": "2027-02-15",
+     "fine": "2027-04-16",
+     "note": null
+    },
+    {
+     "nome": "Esami e attività laboratoriali - I anno, IV bimestre",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-27",
+     "note": null
+    },
+    {
+     "nome": "Esami e attività laboratoriali - II anno, I bimestre",
+     "inizio": "2026-10-19",
+     "fine": "2027-01-08",
+     "note": null
+    },
+    {
+     "nome": "Esami e attività laboratoriali - II anno, II bimestre",
+     "inizio": "2027-03-15",
+     "fine": "2027-08-31",
+     "note": "il terzo anno è dedicato al tirocinio"
+    }
+   ],
+   "corsi": [
+    "unige-l-p01-tecnologie-per-l-edilizia-e-il-territorio"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicina e Chirurgia (Scuola di Scienze Mediche e Farmaceutiche)",
+   "fonte": "https://corsi.unige.it/sites/corsi.unige.it/files/2026-09/APPELLI%20PRIMO%20ANNO%2026_27%2011887.pdf",
+   "sessioni": [
+    {
+     "nome": "1ª sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione per fuori corso",
+     "inizio": "2027-03-01",
+     "fine": "2027-05-29",
+     "note": "Riservata a studenti oltre la durata normale o ripetenti senza obbligo di frequenza"
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unige-lm-41-medicina-e-chirurgia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Odontoiatria e Protesi Dentaria (Scuola di Scienze Mediche e Farmaceutiche)",
+   "fonte": "https://corsi.unige.it/corsi/11888/studenti-orario",
+   "sessioni": [
+    {
+     "nome": "1ª sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-28",
+     "note": "Per il 2°-6° anno; prove aggiuntive al termine dei corsi integrati di ogni semestre per i frequentanti in corso"
+    },
+    {
+     "nome": "Sessione per fuori corso",
+     "inizio": "2027-03-01",
+     "fine": "2027-05-29",
+     "note": "Riservata a studenti oltre la durata normale o ripetenti senza obbligo di frequenza"
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unige-lm-46-odontoiatria-e-protesi-dentaria"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Biotecnologie (L-2)",
+   "fonte": "https://servizionline.unige.it/unige/stampa_manifesto/RD/2026/11893.pdf",
+   "sessioni": [
+    {
+     "nome": "1ª sessione",
+     "inizio": "2027-01-16",
+     "fine": "2027-02-28",
+     "note": "Il Regolamento didattico 2026/27 indica giorno e mese senza anno; nell'a.a. 2026/27 la sessione cade nel 2027"
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-06-16",
+     "fine": "2027-09-30",
+     "note": "Il Regolamento didattico 2026/27 indica giorno e mese senza anno; nell'a.a. 2026/27 la sessione cade nel 2027; almeno un appello a settembre"
+    }
+   ],
+   "corsi": [
+    "unige-l-2-biotecnologie"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Medical-Pharmaceutical Biotechnology (LM-9)",
+   "fonte": "https://servizionline.unige.it/unige/stampa_manifesto/RD/2026/11922.pdf",
+   "sessioni": [
+    {
+     "nome": "1ª sessione",
+     "inizio": "2027-01-16",
+     "fine": "2027-02-28",
+     "note": "Il Regolamento didattico 2026/27 indica giorno e mese senza anno; nell'a.a. 2026/27 la sessione cade nel 2027"
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-06-16",
+     "fine": "2027-09-30",
+     "note": "Il Regolamento didattico 2026/27 indica giorno e mese senza anno; nell'a.a. 2026/27 la sessione cade nel 2027; almeno un appello a settembre"
+    }
+   ],
+   "corsi": [
+    "unige-lm-9-medical-pharmaceutical-biotechnology"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Sustainable Polymer and Process Chemistry (SMART)",
+   "fonte": "https://servizionline.unige.it/unige/stampa_manifesto/MF/2026/11950.html",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "Nella settimana dopo Pasqua appelli aggiuntivi su richiesta degli studenti (lezioni sospese)"
+    }
+   ],
+   "corsi": [
+    "unige-lm-71-sustainable-polymer-and-process-chemistry"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unige-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista",
+  "unige-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar",
+  "unige-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "unige-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1630447",
+  "unige-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+  "unige-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "unige-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628944",
+  "unige-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628942",
+  "unige-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628941",
+  "unige-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628939",
+  "unige-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628937",
+  "unige-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628933",
+  "unige-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+  "unige-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes",
+  "unige-l-snt4-osteopatia",
+  "unige-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+  "unige-l-snt2-podologia-abilitante-alla-professione-sanitaria-di-podologo",
+  "unige-l-22-scienze-motorie-sport-e-salute",
+  "unige-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr",
+  "unige-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+  "unige-l-snt3-tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-c",
+  "unige-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+  "unige-l-snt3-tecniche-di-neurofisiopatologia-abilitante-alla-professione",
+  "unige-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "unige-l-snt3-tecniche-ortopediche-abilitante-alla-professione-sanitaria-d",
+  "unige-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil",
+  "unige-lm-sc-mat-advanced-materials-science-and-technology",
+  "unige-lm-snt4-scienze-delle-professioni-sanitarie-della-prevenzione",
+  "unige-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche",
+  "unige-lm-67-scienze-e-tecniche-dell-attivita-motoria-preventiva-e-adatta",
+  "unige-lm-68-scienze-e-tecniche-dello-sport",
+  "unige-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "unige-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-neonatali",
+  "unige-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-primarie",
+  "unige-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie"
+ ],
+ "mancanti": "Secondo giro (2026-10-11): aggiunti Medicina e Chirurgia (sessioni dai prospetti appelli 2026/27 del CdS), Odontoiatria (tabella «Esami di profitto» della pagina del corso) e i due corsi di Biotecnologie (L-2, LM-9: periodi delle sessioni fissati nel Regolamento didattico 2026/27). Ancora scoperti: professioni sanitarie triennali e magistrali (incl. Osteopatia e le due magistrali infermieristiche specialistiche senza pagina del corso nel database) e Scienze motorie (L-22, LM-67, LM-68): i Regolamenti didattici 2026/27 indicano solo i mesi (1ª sessione gennaio-febbraio, 2ª giugno-luglio, 3ª settembre), le pagine «Calendario esami» non hanno prospetti 2026/27 e le pagine «Orario» riportano solo le sospensioni di Ateneo e i calendari delle lezioni. Advanced Materials Science and Technology: la pagina Orario (https://corsi.unige.it/corsi/11967/studenti-orario) dà solo i periodi di lezione e dice che gli appelli si fissano in qualunque giorno senza lezioni, senza finestre di sessione (terzo giro, 2026-10-12). Sustainable Polymer and Process Chemistry aggiunto il 2026-10-12 dal Manifesto 2026/27 (finestre degli appelli). Durante il secondo giro servizionline.unige.it ha smesso di rispondere (timeout, poi host non risolto) mentre si scaricavano gli ultimi regolamenti (11887, 11888, 11975): non ritentato."
+}

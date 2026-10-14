@@ -1,0 +1,683 @@
+{
+ "universita_id": "univaq",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Ingegneria e Scienze dell'Informazione e Matematica (DISIM)",
+   "fonte": "https://www.disim.univaq.it/page.php?page_id=197",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "Coincide con il prolungamento della III sessione 2025/26; 3 appelli (2 per gli insegnamenti con prove parziali)"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-23",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-15",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": "Riservata a fuori corso, ripetenti dell'ultimo anno e laureandi di dicembre 2027; attivata su richiesta"
+    }
+   ],
+   "corsi": [
+    "univaq-l-31-informatica",
+    "univaq-l-8-ingegneria-dell-informazione",
+    "univaq-l-35-matematica",
+    "univaq-lm-25-control-systems-and-automation-engineering",
+    "univaq-lm-data-data-science-applicata",
+    "univaq-lm-18-informatica",
+    "univaq-lm-32-ingegneria-informatica",
+    "univaq-lm-44-ingegneria-matematica",
+    "univaq-lm-40-matematica",
+    "univaq-lm-44-mathematical-modelling",
+    "univaq-lm-27-telecommunications-engineering-advanced-technologies-and-ser"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria Civile, Edile-Architettura e Ambientale (DICEAA)",
+   "fonte": "https://www.ing.univaq.it/studenti/sessioni_esame.php",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario a.a. 2025/26",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": "Riservato a fuori corso, ripetenti e iscritti all'ultimo anno con tutte le frequenze"
+    },
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Appello straordinario a.a. 2026/27",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-05",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "univaq-l-7-ingegneria-civile",
+    "univaq-lm-23-ingegneria-delle-infrastrutture",
+    "univaq-lm-23-ingegneria-delle-strutture-e-delle-costruzioni",
+    "univaq-lm-35-ingegneria-per-l-ambiente-ed-il-territorio",
+    "univaq-lm-4-c-u-ingegneria-edile-architettura",
+    "univaq-l-p01-tecniche-della-protezione-civile-e-sicurezza-del-territorio"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria Industriale e dell'Informazione e di Economia (DIIIE) – corsi di Ingegneria",
+   "fonte": "https://www.ing.univaq.it/studenti/sessioni_esame.php",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario a.a. 2025/26",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": "Riservato a fuori corso, ripetenti e iscritti all'ultimo anno con tutte le frequenze"
+    },
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-23",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Appello straordinario a.a. 2026/27",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-05",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "univaq-l-9-ingegneria-industriale",
+    "univaq-lm-22-ingegneria-chimica",
+    "univaq-lm-28-ingegneria-elettrica",
+    "univaq-lm-29-ingegneria-elettronica",
+    "univaq-lm-31-ingegneria-gestionale",
+    "univaq-lm-33-ingegneria-meccanica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria Industriale e dell'Informazione e di Economia (DIIIE) – corsi di Economia",
+   "fonte": "https://ec.univaq.it/index.php?id=3354",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario a.a. 2025/26",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": "Riservato a fuori corso, ripetenti e iscritti all'ultimo anno con tutte le frequenze"
+    },
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "univaq-l-18-economia-e-amministrazione-delle-imprese",
+    "univaq-l-14-operatore-giuridico-d-impresa",
+    "univaq-lm-77-amministrazione-economia-e-finanza"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Umane",
+   "fonte": "https://scienzeumane.univaq.it/index.php?id=4366",
+   "sessioni": [
+    {
+     "nome": "Sessione fuori corso",
+     "inizio": "2026-11-13",
+     "fine": "2026-11-17",
+     "note": "Unico appello per tutti i corsi di studio"
+    },
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-02",
+     "note": "Ultimi appelli 2025/26 e primi 2026/27"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-02-08",
+     "fine": "2027-02-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-07",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria (solo Scienze della formazione primaria)",
+     "inizio": "2027-05-24",
+     "fine": "2027-05-28",
+     "note": "Solo per i laureandi della sessione straordinaria di giugno"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-14",
+     "fine": "2027-06-25",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-09",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-07-12",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-17",
+     "note": "Unico appello"
+    }
+   ],
+   "corsi": [
+    "univaq-l-5-filosofia-e-teoria-dei-processi-comunicativi",
+    "univaq-l-10-lettere",
+    "univaq-l-12-mediazione-linguistica-e-culturale",
+    "univaq-l-39-scienze-del-servizio-sociale",
+    "univaq-l-19-scienze-dell-educazione-e-della-formazione",
+    "univaq-lm-89-arte-e-patrimonio-culturale",
+    "univaq-lm-78-filosofia",
+    "univaq-lm-38-lingue-e-culture-per-la-comunicazione-e-la-cooperazione-inte",
+    "univaq-lm-87-progettazione-di-servizi-sociali-e-interventi-educativi",
+    "univaq-lm-14-studi-letterari-e-culturali",
+    "univaq-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Fisiche e Chimiche – Fisica (L-30, LM-17)",
+   "fonte": "https://dsfc.univaq.it/images/2026/Calendario_didattico_AA_2026_2027_fisica.pdf",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "Prima sessione per i corsi del I semestre, in sovrapposizione con il prolungamento della III sessione 2025/26"
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Per tutti i corsi"
+    },
+    {
+     "nome": "Terza sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "Prolungata a gennaio–febbraio 2028"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": "Riservata a laureandi di dicembre, fuori corso e iscritti all'ultimo anno con tutte le frequenze"
+    }
+   ],
+   "corsi": [
+    "univaq-l-30-fisica",
+    "univaq-lm-17-fisica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Fisiche e Chimiche – Atmospheric Science and Technology for Meteorology and Climate (LM-17)",
+   "fonte": "https://dsfc.univaq.it/images/2026/Calendario_didattico_AA_2026_2027_lmast4mc.pdf",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "Prima sessione per i corsi del I semestre, in sovrapposizione con il prolungamento della III sessione 2025/26"
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-23",
+     "note": "Per tutti i corsi"
+    },
+    {
+     "nome": "Terza sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "Prolungata a gennaio–febbraio 2028"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-10-18",
+     "fine": "2027-10-29",
+     "note": "Riservata a laureandi di dicembre, fuori corso e iscritti all'ultimo anno con tutte le frequenze"
+    }
+   ],
+   "corsi": [
+    "univaq-lm-17-atmospheric-science-and-technology-for-meteorology-and-clima"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Fisiche e Chimiche – Chimica (L-27, LM-54)",
+   "fonte": "https://dsfc.univaq.it/images/2026/Calendario_didattico_AA_2026_2027_chimica.pdf",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "Prima sessione per i corsi del I semestre, in sovrapposizione con il prolungamento della III sessione 2025/26"
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "Per tutti i corsi"
+    },
+    {
+     "nome": "Terza sessione",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-23",
+     "note": "Prolungata a gennaio–febbraio 2028"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": "Riservata a laureandi di dicembre, fuori corso e iscritti all'ultimo anno con tutte le frequenze"
+    }
+   ],
+   "corsi": [
+    "univaq-l-27-chimica",
+    "univaq-lm-54-scienze-chimiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento MeSVA – Area medica (Medicina, Odontoiatria, professioni sanitarie)",
+   "fonte": "https://mesva.univaq.it/sites/default/xfilema/mesva/AREA%20MEDICA%20-%20CALENDARIO%20DIDATTICO%20A.A.%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli; gli esami del semestre filtro di Medicina e Odontoiatria si tengono in 2 date nazionali (dicembre 2026 e gennaio 2027)"
+    },
+    {
+     "nome": "Prolungamento sessione invernale",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "1 appello, esclusi i giorni delle vacanze pasquali"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-08",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Prolungamento sessione autunnale",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-22",
+     "note": null
+    },
+    {
+     "nome": "Ultima sessione",
+     "inizio": "2028-02-01",
+     "fine": "2028-02-29",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "univaq-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+    "univaq-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "univaq-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628614",
+    "univaq-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-d3v",
+    "univaq-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+    "univaq-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes",
+    "univaq-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+    "univaq-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr",
+    "univaq-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+    "univaq-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil",
+    "univaq-lm-snt4-scienze-delle-professioni-sanitarie-della-prevenzione",
+    "univaq-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+    "univaq-lm-41-medicina-e-chirurgia",
+    "univaq-lm-46-odontoiatria-e-protesi-dentaria",
+    "univaq-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-intensive"
+   ]
+  },
+  {
+   "ambito": "Dipartimento MeSVA – Area scienze biologiche",
+   "fonte": "https://mesva.univaq.it/sites/default/xfilema/mesva/AREA%20SCIENZE%20BIOLOGICHE%20-%20CALENDARIO%20DIDATTICO%20A.A.%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione riservata",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": "Iscritti all'ultimo anno senza debiti di frequenza e fuori corso; prevista anche una sessione straordinaria ad aprile 2027 con date da stabilire"
+    },
+    {
+     "nome": "Ultima sessione",
+     "inizio": "2028-02-01",
+     "fine": "2028-02-29",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "univaq-l-13-scienze-biologiche",
+    "univaq-lm-6-bioscienze",
+    "univaq-lm-6-neurosciences"
+   ]
+  },
+  {
+   "ambito": "Dipartimento MeSVA – Area scienze ambientali",
+   "fonte": "https://mesva.univaq.it/sites/default/xfilema/mesva/AREA%20SCIENZE%20AMBIENTALI%20-%20CALENDARIO%20DIDATTICO%20A.A.%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione riservata",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": "Iscritti all'ultimo anno senza debiti di frequenza e fuori corso; previsto anche un appello ad aprile o maggio su richiesta"
+    },
+    {
+     "nome": "Ultima sessione",
+     "inizio": "2028-02-01",
+     "fine": "2028-02-29",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "univaq-l-32-scienze-ambientali",
+    "univaq-lm-6-lm-75-biologia-ambientale-e-gestione-degli-ecosistemi"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze cliniche applicate e biotecnologiche (DISCAB) – Area delle Biotecnologie",
+   "fonte": "https://discab.univaq.it/fileadmin/user_upload/DISCAB/Dati_Web/Calendari_Didattici_2026-27/AREA_DELLE_BIOTECNOLOGIE_agg_07-10-2026-CALENDARIO_DIDATTICO_A.A._2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione riservata ai laureandi di dicembre",
+     "inizio": "2026-11-25",
+     "fine": "2026-12-03",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Prolungamento sessione invernale",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-11",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Prolungamento sessione autunnale",
+     "inizio": "2027-12-15",
+     "fine": "2027-12-22",
+     "note": "Riservato agli studenti senza debiti di frequenza e ai fuori corso; 1 appello"
+    },
+    {
+     "nome": "Ultima sessione",
+     "inizio": "2028-02-01",
+     "fine": "2028-02-29",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione riservata ai laureandi di aprile",
+     "inizio": "2028-03-17",
+     "fine": "2028-03-24",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Prolungamento ultima sessione",
+     "inizio": "2028-04-19",
+     "fine": "2028-04-21",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "univaq-l-2-biotecnologie",
+    "univaq-lm-9-biotecnologie-mediche-e-farmaceutiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze cliniche applicate e biotecnologiche (DISCAB) – Area medica (professioni sanitarie)",
+   "fonte": "https://discab.univaq.it/fileadmin/user_upload/DISCAB/Dati_Web/Calendari_Didattici_2026-27/AREA_MEDICA_-_CALENDARIO_DIDATTICO_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Prolungamento sessione invernale",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "1 appello, esclusi i giorni delle vacanze pasquali"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-08",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Prolungamento sessione autunnale",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-22",
+     "note": null
+    },
+    {
+     "nome": "Ultima sessione",
+     "inizio": "2028-02-01",
+     "fine": "2028-02-29",
+     "note": "2 appelli; fuori corso e studenti con tutte le frequenze possono sostenere esami anche negli ultimi 5 giorni lavorativi dei mesi senza sessione, su richiesta al docente"
+    }
+   ],
+   "corsi": [
+    "univaq-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "univaq-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+    "univaq-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+    "univaq-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche",
+    "univaq-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze cliniche applicate e biotecnologiche (DISCAB) – Area della Psicologia",
+   "fonte": "https://discab.univaq.it/fileadmin/user_upload/DISCAB/Dati_Web/Calendari_Didattici_2026-27/AREA_PSICOLOGIA_-_CALENDARIO_DIDATTICO_A.A._2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Appelli riservati ai fuori corso (aprile)",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-16",
+     "note": "Aperto anche agli iscritti al 2° anno (in corso) della laurea magistrale"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-01",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Appelli riservati ai fuori corso (novembre)",
+     "inizio": "2027-11-15",
+     "fine": "2027-11-19",
+     "note": null
+    },
+    {
+     "nome": "Ultima sessione",
+     "inizio": "2028-02-01",
+     "fine": "2028-02-29",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "univaq-l-24-scienze-e-tecniche-psicologiche",
+    "univaq-lm-51-psicologia-clinica-applicata-e-degli-interventi"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze cliniche applicate e biotecnologiche (DISCAB) – Area delle Scienze motorie",
+   "fonte": "https://discab.univaq.it/fileadmin/user_upload/DISCAB/Dati_Web/Calendari_Didattici_2026-27/AREA_DELLE_SCIENZE_MOTORIE-CALENDARIO_DIDATTICO_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "Per gli insegnamenti del I semestre, 2 appelli; in sovrapposizione con il prolungamento della terza sessione 2025/26. Gli appelli straordinari del 22–24 marzo 2027 riguardano l'a.a. 2025/26 e non sono riportati"
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": "Per tutti gli insegnamenti, 3 appelli (un quarto a discrezione del docente)"
+    },
+    {
+     "nome": "Terza sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Terza sessione (prolungamento)",
+     "inizio": "2028-02-01",
+     "fine": "2028-02-29",
+     "note": "2 appelli, in sovrapposizione con la prima sessione 2027/28"
+    }
+   ],
+   "corsi": [
+    "univaq-l-22-scienze-motorie-e-sportive",
+    "univaq-lm-68-scienza-e-tecnica-dello-sport",
+    "univaq-lm-67-scienze-motorie-preventive-e-adattative"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "Nessun corso scoperto. Al secondo giro: i quattro calendari didattici 2026/27 del DISCAB (aree Biotecnologie, Medica, Psicologia, Scienze motorie) sono pubblicati sulle pagine «Calendario didattico» di ciascuna area. La LM/SNT1 in Scienze infermieristiche specialistiche nelle cure intensive e nell'emergenza è del Dipartimento MeSVA (catalogo dei corsi univaq.coursecatalogue.cineca.it, corso 10542) ed è assegnata al calendario dell'Area medica MeSVA, che vale per i corsi di area medica del dipartimento. Il corso di Infermieristica (anche sede di Teramo) è attribuito all'Area medica del MeSVA."
+}

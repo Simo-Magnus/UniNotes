@@ -1,0 +1,71 @@
+{
+ "universita_id": "unibas",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://portale.unibas.it/site/home/studenti/manifesto-degli-studi/documento50606.html",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-03-31",
+     "note": "Tre sessioni di esami di profitto con almeno sei appelli complessivi (almeno cinque per gli esami con prova scritta e orale)"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-04-01",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-24",
+     "fine": "2027-12-22",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibas-l-2-biotecnologie",
+    "unibas-l-27-chimica",
+    "unibas-l-18-economia-aziendale",
+    "unibas-l-7-ingegneria-civile-e-ambientale",
+    "unibas-l-8-ingegneria-informatica-e-delle-tecnologie-dellinformazione",
+    "unibas-l-9-ingegneria-meccanica",
+    "unibas-l-35-matematica",
+    "unibas-l-1-operatore-dei-beni-culturali",
+    "unibas-l-19-scienze-dell-educazione-e-della-formazione",
+    "unibas-l-31-scienze-e-tecnologie-informatiche",
+    "unibas-l-21-l-25-scienze-e-tecnologie-per-il-verde-urbano-il-paesaggio-e-le-f",
+    "unibas-l-34-scienze-geologiche-ambientali",
+    "unibas-l-25-l-26-sistemi-agroalimentari-sostenibili",
+    "unibas-l-10-studi-umanistici",
+    "unibas-l-25-tecnologie-agrarie",
+    "unibas-l-26-tecnologie-alimentari",
+    "unibas-lm-2-lm-89-archeologia-e-storia-dell-arte",
+    "unibas-lm-9-biotecnologie-per-la-diagnostica-medica-farmaceutica-e-veter",
+    "unibas-lm-56-economia-e-management",
+    "unibas-lm-14-lm-15-filologia-classica-e-moderna",
+    "unibas-lm-74-geologia-ambiente-e-rischi",
+    "unibas-lm-23-ingegneria-civile",
+    "unibas-lm-32-ingegneria-informatica-e-delle-tecnologie-dell-informazione",
+    "unibas-lm-33-ingegneria-meccanica",
+    "unibas-lm-35-ingegneria-per-l-ambiente-e-il-territorio",
+    "unibas-lm-40-matematica",
+    "unibas-lm-1-lm-80-scienze-antropologiche-e-geografiche-per-i-patrimoni-cultura",
+    "unibas-lm-54-scienze-chimiche",
+    "unibas-lm-69-scienze-e-tecnologie-agrarie",
+    "unibas-lm-70-scienze-e-tecnologie-alimentari",
+    "unibas-lm-73-scienze-forestali-e-ambientali",
+    "unibas-lm-84-storia-e-civilta-europee",
+    "unibas-lm-4-c-u-architettura",
+    "unibas-lm-13-farmacia",
+    "unibas-lm-41-medicina-e-chirurgia",
+    "unibas-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

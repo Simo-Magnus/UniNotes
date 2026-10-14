@@ -1,0 +1,316 @@
+{
+ "universita_id": "unimc",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Studi umanistici",
+   "fonte": "https://studiumanistici.unimc.it/it/didattica/organizzazione-della-didattica/CALENDARIO202627.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-05",
+     "note": "Due appelli; solo per gli insegnamenti del primo semestre"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-16",
+     "note": "Tre appelli; per i soli scritti di lingue straniere (L-11, LM-37, L-12, LM-38) inizio anticipato al 3 maggio 2027"
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-09-06",
+     "fine": "2027-10-01",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-12-06",
+     "fine": "2027-12-17",
+     "note": "Un appello (dicembre 2027, relativo all'a.a. 2026/27)"
+    },
+    {
+     "nome": "Sessione autunnale 3",
+     "inizio": "2028-01-10",
+     "fine": "2028-01-31",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-03-06",
+     "fine": "2028-03-10",
+     "note": "Un appello, riservato a fuori corso, laureandi dell'ultimo anno e iscritti ai corsi singoli"
+    }
+   ],
+   "corsi": [
+    "unimc-l-10-lettere",
+    "unimc-l-11-lingue-e-culture-straniere-occidentali-e-orientali",
+    "unimc-l-12-mediazione-linguistica-per-l-impresa-internazionale-e-i-medi",
+    "unimc-l-5-filosofia",
+    "unimc-lm-14-lm-15-letterature-filologie-linguaggi",
+    "unimc-lm-37-lingue-culture-e-traduzione-letteraria",
+    "unimc-lm-38-lingue-moderne-per-la-comunicazione-e-la-cooperazione-intern",
+    "unimc-lm-78-scienze-filosofiche",
+    "unimc-lm-84-storie-spazi-civilta",
+    "unimc-lm-2-archeologia-e-sviluppo-dei-territori",
+    "unimc-lm-5-progettazione-gestione-e-conservazione-di-archivi-digitali-n"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze della formazione, dei beni culturali e del turismo",
+   "fonte": "https://sfbct.unimc.it/it/didattica/organizzazione-della-didattica/calendario-didattico/USD_CdS_All_CalendarioDidattico_a.a.202627.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-22",
+     "note": "Sessione valida per l'a.a. 2025/26 e 2026/27"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-05",
+     "note": "Nel PDF la data di fine è scritta «05.02.202]»"
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-02-08",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-26",
+     "fine": "2027-06-08",
+     "note": "Sospensione il 2 giugno 2027"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-09",
+     "fine": "2027-06-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-06-23",
+     "fine": "2027-07-06",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-09-13",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimc-l-1-l-15-beni-culturali-e-turismo",
+    "unimc-l-19-scienze-dell-educazione-e-della-formazione",
+    "unimc-l-22-scienze-motorie-e-sportive-per-linclusione",
+    "unimc-lm-49-international-tourism-and-destination-management",
+    "unimc-lm-85-scienze-pedagogiche",
+    "unimc-lm-85-bis-scienze-della-formazione-primaria",
+    "unimc-lm-89-management-dei-beni-culturali"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia e diritto",
+   "fonte": "https://economiaediritto.unimc.it/it/didattica/offerta-didattica/calendario-esami-lezioni/All.5.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli di dicembre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-18",
+     "note": "Appello di sessione invernale a.a. 2025/26 e 2026/27"
+    },
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-15",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-18",
+     "fine": "2027-01-29",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-17",
+     "fine": "2027-06-04",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-06-25",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimc-l-18-economia-e-management",
+    "unimc-l-33-economia-e-marketing-per-la-sostenibilita",
+    "unimc-l-41-data-analysis-per-le-scienze-sociali",
+    "unimc-lm-16-finanza-e-mercati",
+    "unimc-lm-77-management-e-marketing-internazionale"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze politiche, della comunicazione e delle relazioni internazionali",
+   "fonte": "https://spocri.unimc.it/it/didattica/offerta_didattica/calendario-didattico/CalDid_2627_SPOCRI.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli di dicembre",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "Sessione invernale: insegnamenti del 1° semestre 2026/27 e tutti quelli del 2025/26"
+    },
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-15",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-18",
+     "fine": "2027-01-29",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-04",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-06-25",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimc-l-20-scienze-della-comunicazione",
+    "unimc-l-36-scienze-politiche-e-relazioni-internazionali",
+    "unimc-lm-19-comunicazione-e-culture-digitali",
+    "unimc-lm-52-international-relations",
+    "unimc-lm-62-politiche-per-la-sostenibilita-e-l-innovazione-digitale"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Giurisprudenza",
+   "fonte": "https://giurisprudenza.unimc.it/it/didattica/offerta-didattica/calendario-didattico/copy_of_All.6_Calendariodidattico202627.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli di dicembre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-15",
+     "note": "Appello valido anche per l'a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-15",
+     "note": "Appello valido anche per l'a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-05",
+     "note": "Appello valido anche per l'a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-10",
+     "fine": "2027-05-14",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-03",
+     "fine": "2027-06-09",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-06-21",
+     "fine": "2027-06-25",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 4",
+     "inizio": "2027-07-12",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimc-l-14-international-european-and-comparative-legal-studies-iecols",
+    "unimc-l-14-scienze-per-i-servizi-giuridici",
+    "unimc-l-39-teorie-culture-e-tecniche-per-il-servizio-sociale",
+    "unimc-lm-sc-giur-governance-dell-amministrazione-pubblica-e-delle-organizzazi",
+    "unimc-lm-87-politiche-e-programmazione-dei-servizi-alla-persona",
+    "unimc-lmg-01-giurisprudenza"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unimc-sab-5203-beni-storici-artistici",
+  "unimc-a041-fi-scienze-e-tecnologie-informatiche",
+  "unimc-a045-fi-scienze-economico-aziendali",
+  "unimc-a046-fi-scienze-giuridico-economiche"
+ ],
+ "mancanti": "Non sono corsi di laurea e non hanno un calendario di sessioni: SAB-5203 Beni storici artistici (scuola di specializzazione) e i percorsi di formazione insegnanti A041-FI, A045-FI, A046-FI. Escluse le sessioni straordinarie riservate dell'a.a. 2025/26 che cadono nel 2026/27 (SFBCT 08-12/03/2027, Economia e diritto 09-13/03/2027, SPOCRI 01-12/03/2027, Giurisprudenza 22-26/02/2027) e l'appello di novembre 2026 di Economia e diritto riservato ai preiscritti alle magistrali. Attribuzione dei corsi ai Dipartimenti dedotta dalle pagine dei corsi su corsi.unimc.it (LM-5 Archivi digitali risulta legato sia a Studi umanistici sia a SFBCT: attribuito a Studi umanistici). Secondo giro (11/10/2026): i quattro restanti non sono corsi di laurea, nessun calendario di sessioni da cercare."
+}

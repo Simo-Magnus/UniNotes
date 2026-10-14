@@ -1,0 +1,363 @@
+{
+ "universita_id": "uniroma2",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Macroarea di Ingegneria",
+   "fonte": "https://ing.uniroma2.it/orario/esami/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "Almeno due appelli per insegnamento"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-23",
+     "note": "Almeno due appelli per insegnamento"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": "Almeno due appelli per insegnamento"
+    }
+   ],
+   "corsi": [
+    "uniroma2-l-9-engineering-sciences",
+    "uniroma2-l-7-ingegneria-civile-e-ambientale",
+    "uniroma2-l-23-ingegneria-dell-edilizia",
+    "uniroma2-l-8-ingegneria-di-internet",
+    "uniroma2-l-8-ingegneria-elettronica",
+    "uniroma2-l-8-ingegneria-informatica",
+    "uniroma2-l-9-ingegneria-gestionale",
+    "uniroma2-l-9-ingegneria-gestionale-1627324",
+    "uniroma2-l-9-ingegneria-meccanica",
+    "uniroma2-l-9-ingegneria-medica",
+    "uniroma2-l-9-ingegneria-per-lenergia-e-lambiente",
+    "uniroma2-lm-27-ict-and-internet-engineering-ingegneria-di-internet-e-delle",
+    "uniroma2-lm-23-ingegneria-civile",
+    "uniroma2-lm-25-ingegneria-dell-automazione",
+    "uniroma2-lm-24-ingegneria-e-tecniche-del-costruire",
+    "uniroma2-lm-29-ingegneria-elettronica",
+    "uniroma2-lm-29-mechatronics-engineering",
+    "uniroma2-lm-30-ingegneria-energetica",
+    "uniroma2-lm-31-ingegneria-gestionale",
+    "uniroma2-lm-32-ingegneria-informatica",
+    "uniroma2-lm-33-ingegneria-meccanica",
+    "uniroma2-lm-21-ingegneria-medica",
+    "uniroma2-lm-35-ingegneria-per-l-ambiente-e-il-territorio",
+    "uniroma2-lm-71-chemical-nano-engineering",
+    "uniroma2-lm-4-c-u-ingegneria-edile-architettura"
+   ]
+  },
+  {
+   "ambito": "Macroarea di Economia",
+   "fonte": "https://economia.uniroma2.it/programmazione-didattica-a-a-2026-2027",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-10-26",
+     "fine": "2026-10-30",
+     "note": "Un appello per gli insegnamenti del primo modulo del primo semestre"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-22",
+     "note": "Un appello per gli insegnamenti del secondo modulo o di entrambi i moduli del primo semestre"
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Due appelli per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Sessione estiva anticipata 1",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": "Un appello per gli insegnamenti del primo modulo del secondo semestre"
+    },
+    {
+     "nome": "Sessione estiva anticipata 2",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-04",
+     "note": "Un appello per gli insegnamenti del secondo modulo o di entrambi i moduli del secondo semestre"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-16",
+     "note": "Due appelli per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "Un appello per tutti gli insegnamenti"
+    }
+   ],
+   "corsi": [
+    "uniroma2-l-18-l-33-business-administration-economics",
+    "uniroma2-l-33-economia-e-finanza",
+    "uniroma2-l-18-economia-e-management",
+    "uniroma2-lm-77-business-administration-gestione-d-impresa",
+    "uniroma2-lm-77-economia-e-management",
+    "uniroma2-lm-56-economia-dei-mercati-e-degli-intermediari-finanziari",
+    "uniroma2-lm-56-economics-economia",
+    "uniroma2-lm-90-european-economy-and-business-law",
+    "uniroma2-lm-16-finance-and-banking-finanza-e-banca"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Giurisprudenza (anche Scienze dell'amministrazione e delle relazioni internazionali)",
+   "fonte": "http://giurisprudenza.uniroma2.it/wp-content/uploads/2026/09/Calendario-accademico-2026-2027-1.pdf",
+   "sessioni": [
+    {
+     "nome": "Ripresa sessione autunnale 2025/26",
+     "inizio": "2026-12-07",
+     "fine": "2026-12-18",
+     "note": "Sessione dell'a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-10",
+     "fine": "2027-07-23",
+     "note": "Nel calendario l'etichetta riporta «estiva 2025-2026»"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": "Il calendario indica l'interruzione della sessione autunnale dopo il 24 settembre"
+    }
+   ],
+   "corsi": [
+    "uniroma2-lmg-01-giurisprudenza",
+    "uniroma2-l-14-diritto-innovazione-tecnologica-e-sostenibilita",
+    "uniroma2-l-36-scienze-dell-amministrazione-e-delle-relazioni-internazional"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea in Chimica, Chimica applicata e laurea magistrale in Chimica (Macroarea di Scienze)",
+   "fonte": "https://scienze.uniroma2.it/2022/calendario-degli-esami-l-27/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale/estiva anticipata",
+     "inizio": "2027-01-18",
+     "fine": "2027-03-07",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniroma2-l-27-chimica",
+    "uniroma2-l-27-chimica-applicata",
+    "uniroma2-lm-54-chimica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Biotecnologie (Macroarea di Scienze)",
+   "fonte": "https://scienze.uniroma2.it/2022/esami-l-02/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale/estiva anticipata",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-26",
+     "note": "Il sito riporta come fine «26.02.2026» (refuso per 2027)"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniroma2-l-2-biotecnologie"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Biotecnologie mediche (Area di Medicina e Chirurgia)",
+   "fonte": "https://btm.med.uniroma2.it/home-page/didattica/calendario-esami/",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario autunnale",
+     "inizio": "2026-12-14",
+     "fine": "2027-01-04",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "Eventuali prove in itinere a gennaio 2027"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-31",
+     "note": "La pagina riporta «03 giugno – 31 luglio 2026» (refuso per 2027: il PDF del calendario esami 2026-2027 colloca gli appelli estivi a giugno-luglio 2027)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniroma2-lm-9-biotecnologie-mediche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Global Governance (calendario accademico del corso)",
+   "fonte": "https://economia.uniroma2.it/ba/globalgovernance/Students-agenda/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale – I turno (solo GG3)",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-15",
+     "note": "Solo studenti del 3° anno"
+    },
+    {
+     "nome": "Sessione invernale – I turno (GG1 e GG2)",
+     "inizio": "2027-01-18",
+     "fine": "2027-01-22",
+     "note": "Studenti del 1° e 2° anno"
+    },
+    {
+     "nome": "Sessione invernale – II turno (solo GG3)",
+     "inizio": "2027-01-25",
+     "fine": "2027-01-29",
+     "note": "Solo studenti del 3° anno"
+    },
+    {
+     "nome": "Sessione invernale – II turno (GG1 e GG2)",
+     "inizio": "2027-02-08",
+     "fine": "2027-02-12",
+     "note": "Studenti del 1° e 2° anno; le sessioni estiva e autunnale 2026/27 non sono ancora nel calendario del corso"
+    }
+   ],
+   "corsi": [
+    "uniroma2-l-16-global-governance"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "uniroma2-l-1-beni-culturali-archeologici-artistici-musicali-e-dello-spett",
+  "uniroma2-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista",
+  "uniroma2-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar",
+  "uniroma2-l-5-filosofia",
+  "uniroma2-l-30-fisica",
+  "uniroma2-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "uniroma2-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+  "uniroma2-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "uniroma2-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1627474",
+  "uniroma2-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1627475",
+  "uniroma2-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1627476",
+  "uniroma2-l-31-informatica",
+  "uniroma2-l-10-lettere",
+  "uniroma2-l-11-lingue-e-letterature-moderne",
+  "uniroma2-l-11-lingue-nella-societa-dell-informazione",
+  "uniroma2-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+  "uniroma2-l-35-matematica",
+  "uniroma2-l-35-metodi-e-modelli-per-data-science",
+  "uniroma2-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes",
+  "uniroma2-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+  "uniroma2-l-snt2-podologia-abilitante-alla-professione-sanitaria-di-podologo",
+  "uniroma2-l-24-psicologia-generale-dello-sviluppo-del-genere-e-del-comporta",
+  "uniroma2-l-sc-mat-scienza-dei-materiali",
+  "uniroma2-l-13-scienze-biologiche",
+  "uniroma2-l-15-scienze-del-turismo",
+  "uniroma2-l-19-scienze-dell-educazione-e-della-formazione",
+  "uniroma2-l-20-scienze-della-comunicazione",
+  "uniroma2-l-35-scienze-e-tecnologie-per-i-media",
+  "uniroma2-l-22-scienze-motorie",
+  "uniroma2-l-42-storia-societa-e-culture",
+  "uniroma2-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr",
+  "uniroma2-l-snt3-tecniche-audioprotesiche-abilitante-alla-professione-sanitar",
+  "uniroma2-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+  "uniroma2-l-snt3-tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-c",
+  "uniroma2-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+  "uniroma2-l-snt3-tecniche-di-neurofisiopatologia-abilitante-alla-professione",
+  "uniroma2-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "uniroma2-l-snt3-tecniche-ortopediche-abilitante-alla-professione-sanitaria-d",
+  "uniroma2-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil",
+  "uniroma2-l-15-turismo-enogastronomico",
+  "uniroma2-lm-2-lm-15-archeologia-filologia-letterature-e-storia-dell-antichita",
+  "uniroma2-lm-89-art-history-in-rome-from-late-antiquity-to-the-present",
+  "uniroma2-lm-6-bioinformatica",
+  "uniroma2-lm-6-biologia-ambientale",
+  "uniroma2-lm-6-biologia-cellulare-molecolare-e-ricerca-biomedica",
+  "uniroma2-lm-8-biotechnology-for-industry-and-health",
+  "uniroma2-lm-7-biotecnologie-agrarie",
+  "uniroma2-lm-19-comunicazione-e-intelligenza-artificiale",
+  "uniroma2-lm-43-digital-humanities-comunicazione-lingue-patrimonio-culturale",
+  "uniroma2-lm-14-filologia-moderna",
+  "uniroma2-lm-78-filosofia",
+  "uniroma2-lm-17-fisica",
+  "uniroma2-lm-18-informatica",
+  "uniroma2-lm-39-lingua-e-cultura-italiana-a-stranieri-per-l-accoglienza-e-l",
+  "uniroma2-lm-37-lingue-e-letterature-europee-e-americane",
+  "uniroma2-lm-40-matematica-pura-e-applicata",
+  "uniroma2-lm-45-lm-65-musica-e-spettacolo",
+  "uniroma2-lm-51-psicologia-e-salute-mentale-nel-ciclo-di-vita",
+  "uniroma2-lm-sc-mat-scienza-e-tecnologia-dei-materiali",
+  "uniroma2-lm-61-scienze-della-nutrizione-umana",
+  "uniroma2-lm-84-scienze-della-storia-e-del-documento",
+  "uniroma2-lm-snt4-scienze-delle-professioni-sanitarie-della-prevenzione",
+  "uniroma2-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche",
+  "uniroma2-lm-67-scienze-e-tecniche-delle-attivita-motorie-preventive-e-adatt",
+  "uniroma2-lm-68-scienze-e-tecniche-dello-sport",
+  "uniroma2-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "uniroma2-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-intensive",
+  "uniroma2-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-neonatali",
+  "uniroma2-lm-85-scienze-pedagogiche",
+  "uniroma2-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie",
+  "uniroma2-lm-68-sport-and-health-promotion",
+  "uniroma2-lm-89-storia-dell-arte",
+  "uniroma2-lm-49-tourism-strategy-cultural-heritage-and-made-in-italy",
+  "uniroma2-lmr-02-conservazione-e-restauro-dei-beni-culturali-abilitante-ai-se",
+  "uniroma2-lm-41-medicina-e-chirurgia",
+  "uniroma2-lm-42-medicina-veterinaria",
+  "uniroma2-lm-41-medicine-and-surgery",
+  "uniroma2-lm-41-medicine-and-surgery-1627392",
+  "uniroma2-lm-46-odontoiatria-e-protesi-dentaria",
+  "uniroma2-lm-13-pharmacy"
+ ],
+ "mancanti": "Il calendario accademico di Ateneo 2026/27 (agg. 29/09/2026) indica solo chiusure e sospensioni; le sessioni sono fissate da Macroarea/CdS. Secondo giro (11/10/2026): aggiunti Biotecnologie mediche (LM-9, calendario esami 2026/27 del CdS) e Global Governance (solo sessione invernale; estiva e autunnale non ancora pubblicate). Ancora scoperti: Macroarea di Lettere e Filosofia (pagina «Calendario lezioni ed esami» e segreteria studenti con il solo calendario esami 2025/26; i siti dei CdS rimandano al calendario di Macroarea); Macroarea di Scienze tranne Chimica, Biotecnologie: Fisica, Scienza dei materiali, Biologia, Bioinformatica, Biotechnology, Biotecnologie agrarie, LM-17, LM-53 riportano ancora le finestre 2025/26; Matematica, Data Science, Scienze e tecnologie per i media e LM-40 (dip. di Matematica: solo calendari 2025/26), Informatica L-31/LM-18 (solo date 2025/26); Area di Medicina e Chirurgia: Medicina e chirurgia (IT ed EN), Odontoiatria, Veterinaria, Pharmacy (solo calendari esami 2025/26), professioni sanitarie L/SNT e LM/SNT (i regolamenti didattici 2026 indicano solo i mesi: febbraio, giugno/luglio, settembre e gennaio), Ostetricia (solo sessione settembre 2026), Scienze della nutrizione umana (calendario 2026/27 con le sole date degli appelli, senza finestre di sessione), Sport and Health Promotion; Psicologia L-24 e LM-51 (solo calendario lezioni 2026/27 ed esami 2025/26); Scienze motorie L-22, LM-67, LM-68 (ultimi calendari: sessione autunnale 2026)."
+}

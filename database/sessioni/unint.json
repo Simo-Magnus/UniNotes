@@ -1,0 +1,44 @@
+{
+ "universita_id": "unint",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://www.unint.eu/info-per/calendario-accademico-2026-2027/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-13",
+     "note": "La divisione degli appelli è stabilita dai singoli corsi di studio"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-03",
+     "note": "La divisione degli appelli è stabilita dai singoli corsi di studio"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-25",
+     "note": "La divisione degli appelli è stabilita dai singoli corsi di studio"
+    }
+   ],
+   "corsi": [
+    "unint-l-18-economia-internazionale-e-management-digitale",
+    "unint-l-12-lingue-per-l-interpretariato-e-la-traduzione",
+    "unint-l-36-scienze-politiche-sicurezza-internazionale-e-criminalita",
+    "unint-lm-77-economia-e-management-internazionale",
+    "unint-lm-32-ingegneria-informatica-per-tecnologie-immersive-e-intelligen",
+    "unint-lm-94-interpretariato-e-traduzione",
+    "unint-lm-52-investigazione-criminalita-e-sicurezza-internazionale",
+    "unint-lm-37-lingue-per-la-didattica-innovativa-e-linterculturalita",
+    "unint-lm-51-psicologia-dei-processi-di-apprendimento-e-di-inclusione"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

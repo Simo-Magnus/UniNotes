@@ -1,0 +1,477 @@
+{
+ "universita_id": "unitus",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento DISTU – CdS L-10, L-11, LM-14, LM-37",
+   "fonte": "https://www.unitus.it/wp-content/uploads/2026/09/Calrndario-accademico-2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "3 appelli, almeno 1 a luglio"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-17",
+     "note": "Riservata, 1 appello"
+    }
+   ],
+   "corsi": [
+    "unitus-l-11-lingue-e-culture-moderne",
+    "unitus-lm-37-lingue-e-culture-per-la-comunicazione-internazionale",
+    "unitus-l-10-lettere-moderne",
+    "unitus-lm-14-filologia-moderna"
+   ]
+  },
+  {
+   "ambito": "Dipartimento DISTU – CdS L-1 e LM-2/LM-89 (Polo Beni Culturali)",
+   "fonte": "https://www.unitus.it/wp-content/uploads/2026/09/Calrndario-accademico-2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-26",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "3 appelli, almeno 1 a luglio"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-15",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-17",
+     "note": "Riservata, 1 appello"
+    }
+   ],
+   "corsi": [
+    "unitus-l-1-scienze-dei-beni-culturali-e-digital-heritage",
+    "unitus-lm-2-lm-89-archeologia-e-storia-dell-arte-tutela-e-valorizzazione"
+   ]
+  },
+  {
+   "ambito": "Dipartimento DIKE – CdS L-19, L-20, LM-5, LM-85, LM-90, LM-91, LMG/01",
+   "fonte": "https://www.unitus.it/wp-content/uploads/2026/07/Calendario-Didattico-2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-26",
+     "note": "3 appelli, aperta a tutti gli studenti"
+    },
+    {
+     "nome": "Sessione straordinaria di aprile",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": "Riservata agli studenti cui mancano al massimo 18 CFU al titolo (esclusa la prova finale)"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione straordinaria novembre/dicembre",
+     "inizio": "2027-11-29",
+     "fine": "2027-12-03",
+     "note": "Riservata agli studenti cui mancano al massimo 18 CFU al titolo"
+    }
+   ],
+   "corsi": [
+    "unitus-l-19-scienze-dell-educazione",
+    "unitus-l-20-comunicazione-tecnologie-e-culture-digitali",
+    "unitus-lm-5-archival-science-and-ai",
+    "unitus-lm-85-scienze-pedagogiche-per-le-istituzioni-educative-e-sociali",
+    "unitus-lm-90-security-and-human-rights",
+    "unitus-lm-91-informazione-digitale",
+    "unitus-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Dipartimento DEIM – Area economica (L-18, LM-76, LM-77)",
+   "fonte": "https://www.unitus.it/wp-content/uploads/2026/07/CALENDARIO-ACCADEMICO-area-economica-26_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale / estiva anticipata",
+     "inizio": "2026-12-18",
+     "fine": "2027-02-12",
+     "note": "3 appelli (1 nella settimana 18-23/12, obbligatorio per il primo anno L-18)"
+    },
+    {
+     "nome": "Appello riservato I anno LM",
+     "inizio": "2027-02-15",
+     "fine": "2027-02-26",
+     "note": "1 appello per gli iscritti al I anno delle LM; nel calendario «dal 15/02 al 29/02»"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": "1 appello per laureandi e fuori corso"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-23",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": "1 appello per laureandi e fuori corso"
+    }
+   ],
+   "corsi": [
+    "unitus-l-18-economia-aziendale",
+    "unitus-l-18-economia-aziendale-replica",
+    "unitus-lm-76-circular-economy",
+    "unitus-lm-77-economia-management-e-finanza"
+   ]
+  },
+  {
+   "ambito": "Area Scienze Politiche (L-36, LM-62)",
+   "fonte": "https://www.unitus.it/wp-content/uploads/2026/09/CALENDARIO-ACCADEMICO-Area-Scienze-politiche-L_36-e-LM_62-a.a.-2026_2027-.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria (solo L-36)",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione straordinaria di dicembre (solo LM-62)",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-16",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione invernale - estiva anticipata",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-12",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": "1 appello per laureandi e fuori corso"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-23",
+     "note": "3 appelli; nel calendario la data finale è troncata («23/0»)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-05",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unitus-l-36-scienze-politiche-e-delle-relazioni-internazionali",
+    "unitus-lm-62-scienze-della-politica-della-sicurezza-internazionale-e-dell"
+   ]
+  },
+  {
+   "ambito": "Dipartimento DIBAF",
+   "fonte": "https://www.unitus.it/dipartimenti/dibaf/didattica/calendari-dibaf/calendario-accademico-dibaf/",
+   "sessioni": [
+    {
+     "nome": "I sessione invernale",
+     "inizio": "2027-01-14",
+     "fine": "2027-02-26",
+     "note": "Tre appelli; vale anche come ultima sessione invernale 2025/26"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-29",
+     "note": "Studenti fuori corso e laureandi"
+    },
+    {
+     "nome": "II sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "Tre appelli"
+    },
+    {
+     "nome": "III sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": "Due appelli"
+    }
+   ],
+   "corsi": [
+    "unitus-l-2-biotecnologie",
+    "unitus-l-21-progettazione-del-paesaggio-e-del-territorio",
+    "unitus-l-25-scienze-forestali-e-ambientali",
+    "unitus-l-26-tecnologie-alimentari-ed-enologiche",
+    "unitus-lm-8-biotecnologie-industriali-per-la-salute-e-il-benessere"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Conservazione e restauro dei beni culturali (LMR/02)",
+   "fonte": "https://www.unitus.it/wp-content/uploads/2026/09/2026_27calendario-didattico-restauro-1.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria di dicembre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione straordinaria di aprile",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-29",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "3 appelli, di cui uno a luglio"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-10-15",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unitus-lmr-02-conservazione-e-restauro-dei-beni-culturali-abilitante-ai-se"
+   ]
+  },
+  {
+   "ambito": "Dipartimento DAFNE",
+   "fonte": "https://www.unitus.it/dipartimenti/dafne/didattica/calendari-dafne/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unitus-l-25-scienze-agrarie-e-ambientali",
+    "unitus-l-25-scienze-della-montagna-e-dell-agricoltura",
+    "unitus-lm-73-conservazione-e-restauro-dell-ambiente-e-delle-foreste",
+    "unitus-lm-73-forestry-and-environmental-sciences",
+    "unitus-lm-7-plant-biotechnology-for-food-and-global-health",
+    "unitus-lm-69-lm-73-science-and-technologies-for-agriculture-and-mountain-areas",
+    "unitus-lm-69-scienze-agrarie-e-ambientali"
+   ]
+  },
+  {
+   "ambito": "Dipartimento DEB – CdS L-13 Scienze biologiche, L-13 Scienze biologiche ambientali, L-32, LM-6 Biologia sperimentale e bioinformatica, LM-6 Marine Biology and Ecology, LM-61",
+   "fonte": "https://www.unitus.it/wp-content/uploads/2026/04/F-DEB_CALENDARIO-didattico-2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Anticipata estiva",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Anticipata estiva (fuori corso, laureandi e ultimo anno)",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": "Solo per fuori corso, laureandi e iscritti all'ultimo anno di corso"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "I sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": null
+    },
+    {
+     "nome": "II sessione autunnale",
+     "inizio": "2027-11-15",
+     "fine": "2027-11-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unitus-l-13-scienze-biologiche",
+    "unitus-l-13-scienze-biologiche-ambientali",
+    "unitus-l-32-scienze-naturali-e-ambientali",
+    "unitus-lm-6-biologia-sperimentale-e-bioinformatica",
+    "unitus-lm-6-marine-biology-and-ecology",
+    "unitus-lm-61-scienze-dellalimentazione-e-della-nutrizione-umana"
+   ]
+  },
+  {
+   "ambito": "Dipartimento DEIM – Area Ingegneria, Design e Bioedilizia (L-9, L-4, L-P01, LM-33)",
+   "fonte": "https://docs.google.com/document/d/e/2PACX-1vQxJEZfgGf1Ji7mMu7-wBr49mrBkH-bSizsSu7uW6DHQIKRY85uORu511dsZANMsw/pub",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Documento «Calendario Accademico 2026/27 – Area Ingegneria» pubblicato dal DEIM e collegato dalla pagina ufficiale"
+    },
+    {
+     "nome": "Sessione straordinaria (LM-33, I anno)",
+     "inizio": "2027-02-22",
+     "fine": "2027-02-26",
+     "note": "Solo per il I anno della LM-33"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-18",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unitus-l-9-ingegneria-industriale",
+    "unitus-l-4-design",
+    "unitus-l-p01-tecniche-per-la-bioedilizia",
+    "unitus-lm-33-mechanical-engineering"
+   ]
+  },
+  {
+   "ambito": "Dipartimento DEIM – Area Scienze motorie (L-22, LM-68)",
+   "fonte": "https://docs.google.com/document/d/e/2PACX-1vSgVef7WTXUiic16J93HZCP0BW7EDISWNt65zB3M_1b9CoYjngWoexWn4B5zaJsnsdt8aHDQ5suqwtO/pub",
+   "sessioni": [
+    {
+     "nome": "Sessione estiva anticipata",
+     "inizio": "2027-01-25",
+     "fine": "2027-03-05",
+     "note": "Documento «Calendario Accademico 2026/27 – CCS Sport» pubblicato dal DEIM e collegato come «Corsi di Area Scienze motorie» dalla pagina ufficiale"
+    },
+    {
+     "nome": "Sessione straordinaria (facoltativa)",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Nel documento indicata come «Sessione d'esami»"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": "Periodo d'esami di agosto-settembre 2027, senza nome nel documento"
+    },
+    {
+     "nome": "Sessione straordinaria (obbligatoria)",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2028-01-24",
+     "fine": "2028-03-03",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unitus-l-22-sport-benessere-e-attivita-motoria-in-ambiente-naturale",
+    "unitus-lm-68-scienze-e-tecnologie-per-la-performance-sportiva"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "Unitus non ha un calendario d'esami di Ateneo con date: la pagina «Calendario Accademico» di Ateneo indica solo mesi (invernale: tre appelli tra inizio gennaio e fine febbraio 2027; estiva: tre appelli tra fine maggio e fine luglio 2027; autunnale: due appelli a settembre); ogni Dipartimento o area pubblica il proprio. Il calendario «integrato» di agosto 2026 (uploads/2026/08) per LM-2/LM-89 è superato dal calendario DISTU di settembre 2026, che è quello usato. Secondo giro (2026-10-11): aggiunti il calendario accademico DEB 2026/27 (PDF di aprile 2026, prima non trovato: nella pagina esami c'erano solo calendari 2025/26) e i calendari DEIM 2026/27 delle aree Ingegneria/Design/Bioedilizia e Scienze motorie, pubblicati come documenti Google collegati dalla pagina ufficiale dei calendari DEIM. LM-68 Scienze e tecnologie per la performance sportiva (interateneo con il Foro Italico, sede amministrativa DEIM) è assegnata al calendario DEIM «Corsi di Area Scienze motorie» (intestato «CCS - Sport»), l'unico pubblicato per quell'area. Nessun corso scoperto."
+}

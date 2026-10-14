@@ -1,0 +1,618 @@
+{
+ "universita_id": "uniss",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Scienze Umanistiche e Sociali (DUMAS)",
+   "fonte": "https://dumas.uniss.it/sites/st10/files/2026-09/CalendarioAccademico2026-2027_def_10luglio.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione ordinaria gennaio-febbraio",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "2 appelli + 1 appello di lettorato"
+    },
+    {
+     "nome": "Sessione ordinaria maggio-luglio",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-16",
+     "note": "3 appelli + 2 appelli di lettorato"
+    },
+    {
+     "nome": "Sessione ordinaria di settembre",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": "1 appello + 1 appello di lettorato"
+    },
+    {
+     "nome": "Sessione straordinaria di lettorato",
+     "inizio": "2027-11-15",
+     "fine": "2027-11-26",
+     "note": "Riservata ad appelli di lingua straniera (lettorato)"
+    },
+    {
+     "nome": "Sessione ordinaria gennaio-febbraio 2028",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-18",
+     "note": "2 appelli + 1 appello di lettorato"
+    }
+   ],
+   "corsi": [
+    "uniss-l-12-mediazione-linguistica-e-culturale",
+    "uniss-l-24-scienze-e-tecniche-psicologiche-dei-processi-cognitivi",
+    "uniss-l-6-scienze-territoriali-per-la-cultura-e-l-ambiente",
+    "uniss-l-6-progettazione-gestione-e-promozione-turistica-di-itinerari-d",
+    "uniss-l-39-servizio-sociale",
+    "uniss-l-15-sviluppo-turistico-e-territori-digitali",
+    "uniss-l-15-lingue-culture-e-tecniche-per-il-turismo",
+    "uniss-lm-14-lettere-filologia-moderna-e-industria-culturale",
+    "uniss-lm-38-lingue-e-letterature-straniere-per-la-mediazione-culturale-e",
+    "uniss-lm-87-servizio-sociale-e-politiche-sociali"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Storia, Scienze dell'Uomo e della Formazione (DiSSUF)",
+   "fonte": "https://www.dissuf.uniss.it/it/didattica/calendario-didattico-dissuf",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "Nella stessa finestra si svolge la sessione straordinaria dell'a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-21",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniss-l-20-comunicazione-pubblica-e-professioni-dell-informazione",
+    "uniss-l-10-lettere",
+    "uniss-l-1-scienze-dei-beni-culturali",
+    "uniss-l-19-scienze-dell-educazione",
+    "uniss-lm-2-lm-84-archeologia-e-scienze-storiche",
+    "uniss-lm-78-lm-85-scienze-filosofiche-e-pedagogiche",
+    "uniss-lm-2-archeologia",
+    "uniss-lm-78-scienze-storiche-e-filosofiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Economiche e Aziendali (DiSEA) – sede di Sassari e LM Innovation Management for Sustainable Tourism",
+   "fonte": "https://disea.uniss.it/it/i-nostri-corsi/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Appelli di novembre",
+     "inizio": "2026-11-08",
+     "fine": "2026-11-13",
+     "note": "Solo per insegnamenti del 1° semestre che hanno concluso le lezioni (primo dei 3 appelli)"
+    },
+    {
+     "nome": "Sessione gennaio-febbraio",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "Insegnamenti del 1° semestre: appelli successivi; 2° semestre: almeno 2 appelli"
+    },
+    {
+     "nome": "Appelli di aprile",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": "Solo per insegnamenti del 2° semestre che hanno concluso le lezioni"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Almeno un appello per tutti gli insegnamenti"
+    }
+   ],
+   "corsi": [
+    "uniss-l-18-economia-e-management",
+    "uniss-l-18-l-33-economia-impresa-e-sostenibilita",
+    "uniss-lm-56-economia",
+    "uniss-lm-77-economia-aziendale",
+    "uniss-lm-77-innovation-management-for-sustainable-tourism"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Economiche e Aziendali (DiSEA) – CdL Economia e management del turismo, sede di Olbia",
+   "fonte": "https://disea.uniss.it/it/i-nostri-corsi/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Appelli 1° slot",
+     "inizio": "2026-12-01",
+     "fine": "2026-12-18",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Appelli 2° slot",
+     "inizio": "2027-03-08",
+     "fine": "2027-03-25",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Appelli 3° slot",
+     "inizio": "2027-05-17",
+     "fine": "2027-06-05",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "2 appelli per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-08",
+     "note": "2 appelli per tutti gli insegnamenti"
+    }
+   ],
+   "corsi": [
+    "uniss-l-18-economia-e-management-del-turismo"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Infermieristica (Sassari e Olbia)",
+   "fonte": "https://sdr.medicinachirurgia.uniss.it/sites/st03/files/2026-06/All.%20B1%20Regolamente%20Didattico%20INF%20SS%20e%20Olbia%2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Minimo 2 appelli (Regolamento didattico 2026/27)"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-15",
+     "fine": "2027-07-31",
+     "note": "Minimo 2 appelli (Regolamento didattico 2026/27)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Minimo 2 appelli (Regolamento didattico 2026/27)"
+    }
+   ],
+   "corsi": [
+    "uniss-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "uniss-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1634332"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Fisioterapia",
+   "fonte": "https://sdr.medicinachirurgia.uniss.it/sites/st03/files/2026-06/Manifesto-degli-Studi-2026-2027-Fisioterapia-versione%20aggiornata.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Minimo 2 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-06",
+     "fine": "2027-07-31",
+     "note": "Minimo 2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Minimo 2 appelli"
+    }
+   ],
+   "corsi": [
+    "uniss-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Ostetricia",
+   "fonte": "https://sdr.medicinachirurgia.uniss.it/sites/st03/files/2026-06/Manifesto%20Ostetricia%202026-27%20CORRETTO.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "Minimo 2 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-17",
+     "fine": "2027-07-30",
+     "note": "Minimo 2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Minimo 2 appelli"
+    }
+   ],
+   "corsi": [
+    "uniss-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche di radiologia medica, per immagini e radioterapia",
+   "fonte": "https://sdr.medicinachirurgia.uniss.it/sites/st03/files/2026-06/manifesto_degli_studi_trmir_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Minimo 2 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-15",
+     "fine": "2027-07-31",
+     "note": "Minimo 2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-29",
+     "note": "Minimo 2 appelli"
+    }
+   ],
+   "corsi": [
+    "uniss-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche di laboratorio biomedico",
+   "fonte": "https://sdr.medicinachirurgia.uniss.it/sites/st03/files/2026-06/manifesto_tlb_2026-2027-Aggiornato%20Maggio%202026.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Minimo 2 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "Minimo 2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Minimo 2 appelli"
+    }
+   ],
+   "corsi": [
+    "uniss-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze infermieristiche e ostetriche",
+   "fonte": "https://sdr.medicinachirurgia.uniss.it/sites/st03/files/2026-06/Manifesto%20Scienze%20Infermieristiche%20e%20Ostetriche%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Minimo 2 appelli. Il database elenca il corso due volte (sede di Sassari e profilo infermieristico): stesso manifesto"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-19",
+     "fine": "2027-07-31",
+     "note": "Minimo 2 appelli. Il database elenca il corso due volte (sede di Sassari e profilo infermieristico): stesso manifesto"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Minimo 2 appelli. Il database elenca il corso due volte (sede di Sassari e profilo infermieristico): stesso manifesto"
+    }
+   ],
+   "corsi": [
+    "uniss-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+    "uniss-lm-snt1-scienze-infermieristiche-e-ostetriche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Biotecnologie e analisi bioinformatiche",
+   "fonte": "https://sdr.medicinachirurgia.uniss.it/sites/st03/files/2026-06/manifesto_btab_2026_27_CORRETTO.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-10",
+     "fine": "2027-07-10",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Due appelli"
+    }
+   ],
+   "corsi": [
+    "uniss-l-2-biotecnologie-e-analisi-bioinformatiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze biologiche",
+   "fonte": "https://sdr.medicinachirurgia.uniss.it/sites/st03/files/2026-06/manifesto_l13_2026-2027_0.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Due appelli. Il documento (a.a. 2026/27) indica giorno e mese senza anno: le sessioni di febbraio-settembre sono quelle del 2027"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-10",
+     "fine": "2027-07-10",
+     "note": "Due appelli. Il documento (a.a. 2026/27) indica giorno e mese senza anno: le sessioni di febbraio-settembre sono quelle del 2027"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Due appelli. Il documento (a.a. 2026/27) indica giorno e mese senza anno: le sessioni di febbraio-settembre sono quelle del 2027"
+    }
+   ],
+   "corsi": [
+    "uniss-l-13-scienze-biologiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze motorie, sportive e benessere dell'uomo",
+   "fonte": "https://sdr.medicinachirurgia.uniss.it/sites/st03/files/2026-06/Manifesto%20degli%20Studi%20Immatricolati%20aa%202026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Minimo 2 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-15",
+     "fine": "2027-07-10",
+     "note": "Minimo 2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Minimo 2 appelli"
+    }
+   ],
+   "corsi": [
+    "uniss-l-22-scienze-motorie-sportive-e-benessere-dell-uomo"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Chimica e tecnologia farmaceutiche",
+   "fonte": "https://sdr.medicinachirurgia.uniss.it/sites/st03/files/2026-06/Manifesto%20CTF%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Due appelli. Il documento (a.a. 2026/27) indica giorno e mese senza anno: le sessioni di febbraio-settembre sono quelle del 2027"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-15",
+     "fine": "2027-07-31",
+     "note": "Due appelli. Il Regolamento CTF 2026/27 indica invece 15 giugno-15 luglio. Il documento (a.a. 2026/27) indica giorno e mese senza anno: le sessioni di febbraio-settembre sono quelle del 2027"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Due appelli. Il documento (a.a. 2026/27) indica giorno e mese senza anno: le sessioni di febbraio-settembre sono quelle del 2027"
+    }
+   ],
+   "corsi": [
+    "uniss-lm-13-chimica-e-tecnologia-farmaceutiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Farmacia",
+   "fonte": "https://sdr.medicinachirurgia.uniss.it/sites/st03/files/2026-06/Manifesto%20Farmacia%202026-2027_finale_0.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Due appelli. Il documento (a.a. 2026/27) indica giorno e mese senza anno: le sessioni di febbraio-settembre sono quelle del 2027"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-15",
+     "fine": "2027-07-31",
+     "note": "Due appelli. Il documento (a.a. 2026/27) indica giorno e mese senza anno: le sessioni di febbraio-settembre sono quelle del 2027"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Due appelli. Il documento (a.a. 2026/27) indica giorno e mese senza anno: le sessioni di febbraio-settembre sono quelle del 2027"
+    }
+   ],
+   "corsi": [
+    "uniss-lm-13-farmacia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicina e chirurgia",
+   "fonte": "https://sdr.medicinachirurgia.uniss.it/sites/st03/files/2026-06/LM41%20manifesto%2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione ordinaria invernale",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Minimo 2 appelli. Il manifesto dice che le sessioni «sono fissate generalmente» in questi periodi. Il documento (a.a. 2026/27) indica giorno e mese senza anno: le sessioni di febbraio-settembre sono quelle del 2027"
+    },
+    {
+     "nome": "Sessione ordinaria estiva",
+     "inizio": "2027-06-10",
+     "fine": "2027-07-31",
+     "note": "Minimo 2 appelli. Il documento (a.a. 2026/27) indica giorno e mese senza anno: le sessioni di febbraio-settembre sono quelle del 2027"
+    },
+    {
+     "nome": "Sessione ordinaria autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Minimo 2 appelli. Il documento (a.a. 2026/27) indica giorno e mese senza anno: le sessioni di febbraio-settembre sono quelle del 2027"
+    }
+   ],
+   "corsi": [
+    "uniss-lm-41-medicina-e-chirurgia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Chimica (Dipartimento di Scienze chimiche, fisiche, matematiche e naturali)",
+   "fonte": "https://www.dcf.uniss.it/sites/st05/files/2026-06/L27%20Manifesto%20degli%20studi%202026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "1a sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "2a sessione",
+     "inizio": "2027-06-15",
+     "fine": "2027-07-15",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "3a sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Due appelli"
+    }
+   ],
+   "corsi": [
+    "uniss-l-27-chimica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze chimiche (Dipartimento di Scienze chimiche, fisiche, matematiche e naturali)",
+   "fonte": "https://www.dcf.uniss.it/sites/st05/files/2026-06/LM%2054%20manifesto%20degli%20studi%202026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "1a sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "2a sessione",
+     "inizio": "2027-06-15",
+     "fine": "2027-07-15",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "3a sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Due appelli"
+    }
+   ],
+   "corsi": [
+    "uniss-lm-54-scienze-chimiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria – CdL Ingegneria informatica e Ingegneria industriale",
+   "fonte": "https://ingegneria.uniss.it/sites/st12/files/2026-07/Manifesto26_27%20ING%20INF.pdf",
+   "sessioni": [
+    {
+     "nome": "1a sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "Due appelli. Stesse date nel manifesto 2026/27 di Ingegneria industriale"
+    },
+    {
+     "nome": "2a sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-16",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "3a sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Due appelli"
+    }
+   ],
+   "corsi": [
+    "uniss-l-8-ingegneria-informatica",
+    "uniss-l-9-ingegneria-industriale"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "uniss-l-4-design",
+  "uniss-l-25-scienze-agro-zootecniche",
+  "uniss-l-25-l-38-scienze-agro-zootecniche-e-tecnologie-delle-produzioni-anima",
+  "uniss-l-gastr-l-26-scienze-degli-alimenti-e-della-cultura-enogastronomica-medit",
+  "uniss-l-14-scienze-dei-servizi-giuridici",
+  "uniss-l-17-scienze-dell-architettura-e-del-progetto",
+  "uniss-l-25-scienze-e-tecnologie-agrarie",
+  "uniss-l-25-scienze-forestali-e-ambientali",
+  "uniss-l-32-scienze-naturali",
+  "uniss-l-36-scienze-politiche",
+  "uniss-l-ds-scienze-strategiche-e-giuridiche-della-difesa-e-della-sicure",
+  "uniss-l-snt3-tecniche-audiometriche-abilitante-alla-professione-sanitaria",
+  "uniss-l-26-tecnologie-viticole-enologiche-alimentari",
+  "uniss-l-21-urbanistica-progetto-ambientale-della-citta-e-del-territorio",
+  "uniss-l-26-viticoltura-ed-enologia",
+  "uniss-lm-4-architettura",
+  "uniss-lm-6-biologia",
+  "uniss-lm-6-biomedical-sciences-for-one-health",
+  "uniss-lm-9-biotechnology-for-human-and-animal-health",
+  "uniss-lm-9-biotecnologie-sanitarie-mediche-e-veterinarie",
+  "uniss-lm-75-environmental-conservation-restoration-and-sustainability",
+  "uniss-lm-75-gestione-dell-ambiente-e-del-territorio",
+  "uniss-lm-48-pianificazione-e-politiche-per-la-citta-l-ambiente-e-il-paes",
+  "uniss-lm-70-qualita-e-sicurezza-dei-prodotti-alimentari",
+  "uniss-lm-61-scienze-dell-alimentazione-salute-e-benessere-dell-uomo",
+  "uniss-lm-62-lm-sc-giur-scienze-della-governance-digitale-e-internazionale",
+  "uniss-lm-86-scienze-delle-produzioni-zootecniche",
+  "uniss-lm-62-scienze-politiche-e-giuridiche-per-l-amministrazione",
+  "uniss-lm-69-sistemi-agrari",
+  "uniss-lm-73-sistemi-forestali-e-ambientali",
+  "uniss-lm-73-sistemi-forestali-mediterranei",
+  "uniss-lm-86-wildlife-management-conservation-and-control",
+  "uniss-lmg-01-giurisprudenza",
+  "uniss-lm-42-medicina-veterinaria",
+  "uniss-lm-46-odontoiatria-e-protesi-dentaria",
+  "uniss-l-p02-orticoltura-e-florovivaismo"
+ ],
+ "mancanti": "Uniss non ha un calendario d'esami di Ateneo: ogni Dipartimento o corso pubblica il proprio, spesso dentro il manifesto o il regolamento didattico 2026/27 del corso. Restano scoperti: Agraria (L-25, L-26, L-25/L-38, L-GASTR/L-26, L-P02, LM-69, LM-70, LM-73, LM-86): la pagina «Calendario didattico» del Dipartimento e i regolamenti dei corsi sono ancora quelli del 2025/26 e i manifesti 2026/27 non indicano le sessioni; Architettura, design e urbanistica (L-4, L-17, L-21, LM-4, LM-48): sul sito del Dipartimento c'è solo il calendario accademico 2025/26 (sessioni indicate per mese) e l'orario delle lezioni 2026/27; Scienze naturali (L-32), Environmental Conservation, Restoration and Sustainability e Gestione dell'ambiente e del territorio (LM-75): manifesti e regolamenti 2026/27 senza sessioni, solo calendari esami 2025/26; Medicina veterinaria (LM-42), Biotechnology for human and animal health / Biotecnologie sanitarie mediche e veterinarie (LM-9) e Wildlife Management (LM-86): solo calendari esami dell'anno solare 2026 (singoli appelli) e orari del I semestre 2026/27 con «spazi appelli straordinari» di dicembre, senza periodi di sessione 2026/27; Giurisprudenza, Scienze dei servizi giuridici, Scienze politiche, Scienze strategiche (L/DS) e lauree magistrali LM-62: i manifesti 2026/27 non indicano le sessioni e il Dipartimento pubblica solo i mesi; area medica senza date nel manifesto 2026/27: Biologia (LM-6, solo «periodi di sospensione»), Biomedical Sciences for One Health (LM-6), Scienze dell'alimentazione (LM-61, solo calendario esami 2025/26), Tecniche audiometriche (solo calendario esami 2025/26), Odontoiatria (solo mesi: febbraio, giugno, luglio, settembre, novembre/dicembre). Per Scienze biologiche, CTF, Farmacia e Medicina il manifesto 2026/27 indica giorno e mese senza anno (riferiti al 2027, vedi note). Periodi indicati solo per mese (non come date): Sessione giugno-luglio (Dipartimento di Scienze Economiche e Aziendali (DiSEA) – sede di Sassari e LM Innovation Management for Sustainable Tourism): Il calendario indica solo i mesi (giugno e luglio 2027)"
+}

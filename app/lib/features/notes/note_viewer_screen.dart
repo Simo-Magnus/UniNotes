@@ -1,0 +1,262 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../core/feedback/motion.dart';
+import '../../core/services/app_services.dart';
+import '../../models/course.dart';
+import '../../widgets/common.dart';
+import 'formula_dialog.dart';
+import 'markdown_view.dart';
+import 'notes_actions.dart';
+import 'notes_store.dart';
+import '../../core/constants/text_limits.dart';
+
+Future<void> openNote(
+  BuildContext context,
+  Course course,
+  NoteFile note, {
+  String? query,
+}) => Navigator.of(context).push(
+  MaterialPageRoute<void>(
+    builder: (_) => NoteViewerScreen(course: course, note: note, query: query),
+  ),
+);
+
+Future<void> openNoteEditor(
+  BuildContext context,
+  Course course, {
+  NoteFile? note,
+}) async {
+  await Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      fullscreenDialog: true,
+      builder: (_) => NoteEditorScreen(course: course, note: note),
+    ),
+  );
+  if (context.mounted) context.read<AppServices>().revision.bump();
+}
+
+/// Lettura di trascrizioni, riassunti e appunti (Markdown formattato).
+class NoteViewerScreen extends StatefulWidget {
+  const NoteViewerScreen({
+    super.key,
+    required this.course,
+    required this.note,
+    this.query,
+  });
+  final Course course;
+  final NoteFile note;
+
+  /// Testo da cercare all'apertura.
+  final String? query;
+
+  @override
+  State<NoteViewerScreen> createState() => _NoteViewerScreenState();
+}
+
+class _NoteViewerScreenState extends State<NoteViewerScreen> {
+  late Future<String> _text = widget.note.file.readAsString();
+  final _view = GlobalKey<SearchableMarkdownViewState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.note.name, overflow: TextOverflow.ellipsis),
+        actions: [
+          IconButton(
+            tooltip: 'Trova nel testo (Ctrl+F)',
+            icon: const Icon(Icons.search),
+            onPressed: () => _view.currentState?.openFind(),
+          ),
+          IconButton(
+            tooltip: 'Modifica',
+            icon: const Icon(Icons.edit_outlined),
+            onPressed: () async {
+              await openNoteEditor(context, widget.course, note: widget.note);
+              setState(() => _text = widget.note.file.readAsString());
+            },
+          ),
+          // una risposta dell'AI non si rimanda all'AI
+          if (widget.note.folder != NoteFolder.ai)
+            IconButton(
+              tooltip: 'Apri nell\'AI di riferimento',
+              icon: const Icon(Icons.open_in_new),
+              onPressed: () =>
+                  openNoteInAi(context, widget.course, widget.note),
+            ),
+          IconButton(
+            tooltip: 'Esporta PDF',
+            icon: const Icon(Icons.picture_as_pdf_outlined),
+            onPressed: () =>
+                exportPdf(context, widget.note, subtitle: widget.course.name),
+          ),
+          IconButton(
+            tooltip: 'Condividi',
+            icon: const Icon(Icons.ios_share),
+            onPressed: () => shareNote(context, widget.note),
+          ),
+        ],
+      ),
+      body: FutureBuilder<String>(
+        future: _text,
+        builder: (context, snap) {
+          if (snap.hasError) {
+            return EmptyState(
+              icon: Icons.error_outline,
+              message: 'Impossibile leggere il file: ${snap.error}',
+            );
+          }
+          if (!snap.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          return Align(
+            alignment: Alignment.topCenter,
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 820),
+              child: SearchableMarkdownView(
+                snap.data!,
+                key: _view,
+                initialQuery: widget.query,
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+/// Editor semplice in Markdown (nuovo appunto o modifica).
+class NoteEditorScreen extends StatefulWidget {
+  const NoteEditorScreen({super.key, required this.course, this.note});
+  final Course course;
+  final NoteFile? note;
+
+  @override
+  State<NoteEditorScreen> createState() => _NoteEditorScreenState();
+}
+
+class _NoteEditorScreenState extends State<NoteEditorScreen> {
+  final _title = TextEditingController();
+  final _body = TextEditingController();
+  bool _loaded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    final n = widget.note;
+    if (n == null) {
+      _title.text = NotesStore.lessonBaseName(DateTime.now())
+          .replaceFirst('Lezione', 'Appunti');
+      _loaded = true;
+    } else {
+      _title.text = n.name;
+      n.file.readAsString().then((t) {
+        if (!mounted) return;
+        setState(() {
+          _body.text = t;
+          _loaded = true;
+        });
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _title.dispose();
+    _body.dispose();
+    super.dispose();
+  }
+
+  Future<void> _save() async {
+    final s = context.read<AppServices>();
+    final n = widget.note;
+    if (n != null) {
+      await n.file.writeAsString(_body.text);
+    } else {
+      await s.notes.writeText(
+        widget.course,
+        NoteFolder.notes,
+        _title.text,
+        _body.text,
+      );
+    }
+    if (!mounted) return;
+    final messenger = ScaffoldMessenger.maybeOf(context);
+    Navigator.pop(context);
+    if (messenger != null && messenger.mounted) {
+      showSuccessSnack(
+        messenger.context,
+        'Appunto salvato.',
+        messenger: messenger,
+      );
+    }
+  }
+
+  /// «Inserisci formula»: LaTeX con l'anteprima dal vivo, al cursore.
+  Future<void> _formula() async {
+    final sel = _body.selection;
+    final selected = sel.isValid && !sel.isCollapsed
+        ? sel.textInside(_body.text)
+        : '';
+    final f = await showFormulaDialog(context, initial: selected);
+    if (f == null || !mounted) return;
+    setState(() => insertFormula(_body, f));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.note == null ? 'Nuovo appunto' : 'Modifica'),
+        actions: [
+          IconButton(
+            tooltip: 'Inserisci formula',
+            icon: const Icon(Icons.functions),
+            onPressed: _loaded ? _formula : null,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 8),
+            child: Pressable(
+              child: FilledButton(
+                onPressed: _loaded ? _save : null,
+                child: const Text('Salva'),
+              ),
+            ),
+          ),
+        ],
+      ),
+      body: !_loaded
+          ? const Center(child: CircularProgressIndicator())
+          : Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  if (widget.note == null)
+                    TextField(
+                      controller: _title,
+                      inputFormatters: TextLimits.max(TextLimits.noteTitle),
+                      decoration: const InputDecoration(labelText: 'Titolo'),
+                    ),
+                  const SizedBox(height: 12),
+                  Expanded(
+                    child: TextField(
+                      controller: _body,
+                      expands: true,
+                      maxLines: null,
+                      textAlignVertical: TextAlignVertical.top,
+                      decoration: const InputDecoration(
+                        hintText:
+                            'Scrivi in Markdown: # titolo, **grassetto**, '
+                            '==evidenziato==, - elenco, formule \$x^2\$',
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+    );
+  }
+}

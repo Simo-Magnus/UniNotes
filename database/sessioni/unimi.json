@@ -1,0 +1,469 @@
+{
+ "universita_id": "unimi",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Facoltà di Studi Umanistici (corsi di laurea in Lettere, Filosofia, Storia, Beni culturali, Lingue, Musica, Editoria, ecc.)",
+   "fonte": "https://filosofia.cdl.unimi.it/sites/lc22/files/2026-07/Calendario%20didattico%20Studi%20Umanistici%202026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-29",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "IV sessione",
+     "inizio": "2027-05-17",
+     "fine": "2027-06-04",
+     "note": null
+    },
+    {
+     "nome": "V sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-06-29",
+     "note": null
+    },
+    {
+     "nome": "VI sessione",
+     "inizio": "2027-06-30",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "VII sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimi-l-1-scienze-dei-beni-culturali",
+    "unimi-l-10-lettere",
+    "unimi-l-11-lingue-e-letterature-moderne",
+    "unimi-l-20-scienze-umanistiche-per-la-comunicazione",
+    "unimi-l-42-storia",
+    "unimi-l-5-filosofia",
+    "unimi-l-6-geografia-ambiente-e-territorio",
+    "unimi-lm-14-lettere-moderne",
+    "unimi-lm-2-archeologia",
+    "unimi-lm-37-lingue-e-letterature-per-la-formazione-la-critica-e-la-tradu",
+    "unimi-lm-37-lm-65-teatro-arti-letterature-studi-internazionali-sullintermedial",
+    "unimi-lm-45-musica-culture-media-performance",
+    "unimi-lm-55-human-centered-artificial-intelligence",
+    "unimi-lm-78-scienze-filosofiche",
+    "unimi-lm-84-cultural-intellectual-and-visual-history",
+    "unimi-lm-84-scienze-storiche",
+    "unimi-lm-89-storia-e-critica-dell-arte",
+    "unimi-lm-92-editoria-culture-della-comunicazione-e-della-moda",
+    "unimi-lm-15-filologia-letterature-e-storia-dell-antichita"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze Politiche, Economiche e Sociali (SPES) - didattica a trimestri",
+   "fonte": "https://ces.cdl.unimi.it/sites/lb17/files/2026-07/Calendario%20didattico%20SPES%2026-27_0.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione di ottobre-novembre",
+     "inizio": "2026-10-19",
+     "fine": "2026-11-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione di dicembre 1",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-12",
+     "note": "Esami sospesi il 14, 15, 16 dicembre 2026 e il 21, 22, 23 luglio 2027; in alcune sessioni gli appelli sono riferiti all'a.a. 2025/26 (vedi tabella per trimestre nel calendario)"
+    },
+    {
+     "nome": "Sessione di dicembre 2",
+     "inizio": "2026-12-17",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione di gennaio",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione di aprile",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione di maggio-giugno",
+     "inizio": "2027-05-03",
+     "fine": "2027-06-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione di giugno",
+     "inizio": "2027-06-19",
+     "fine": "2027-06-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione di luglio 1",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-20",
+     "note": null
+    },
+    {
+     "nome": "Sessione di luglio 2",
+     "inizio": "2027-07-24",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimi-l-16-management-delle-organizzazioni-e-del-lavoro",
+    "unimi-l-16-management-governance-e-innovazione-nel-pubblico-e-nel-socio",
+    "unimi-l-18-l-33-economia-e-management",
+    "unimi-l-20-comunicazione-e-societa",
+    "unimi-l-33-economics-behavior-data-and-policy",
+    "unimi-l-36-international-politics-law-and-economics",
+    "unimi-l-36-scienze-internazionali-e-istituzioni-europee",
+    "unimi-l-36-scienze-politiche",
+    "unimi-l-37-scienze-sociali-per-la-globalizzazione",
+    "unimi-lm-16-finance-and-economics",
+    "unimi-lm-52-relazioni-internazionali",
+    "unimi-lm-56-lm-62-economics-and-political-science",
+    "unimi-lm-59-comunicazione-pubblica-e-d-impresa",
+    "unimi-lm-62-global-politics-and-society",
+    "unimi-lm-62-lm-78-politics-philosophy-and-public-affairs",
+    "unimi-lm-62-lm-88-computational-social-and-political-science",
+    "unimi-lm-62-scienze-politiche-e-di-governo",
+    "unimi-lm-63-amministrazioni-e-politiche-pubbliche",
+    "unimi-lm-77-management-of-human-resources-people-data-and-intelligent-te",
+    "unimi-lm-77-management-of-innovation-and-entrepreneurship",
+    "unimi-lm-90-migration-studies-and-new-societies"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Giurisprudenza",
+   "fonte": "https://giurisprudenza.cdl.unimi.it/sites/la41/files/2026-04/Calendario%20didattico%20a.a.%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-26",
+     "note": "Quattro appelli per ogni materia"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": "Tre appelli per ogni materia"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "Un appello per ogni materia"
+    }
+   ],
+   "corsi": [
+    "unimi-l-14-scienze-dei-servizi-giuridici",
+    "unimi-lm-77-economia-aziendale-diritto-e-governance-dimpresa",
+    "unimi-lm-sc-giur-law-and-sustainable-development",
+    "unimi-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Lingue, Letterature, Culture e Mediazioni (Mediazione linguistica e culturale; Lingue e culture per la comunicazione e la cooperazione internazionale)",
+   "fonte": "https://mediazione.cdl.unimi.it/sites/lk01/files/2026-05/Calendario%20didattico%20a.a.%202026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-14",
+     "note": "Esami scritti di Lingue"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-12",
+     "note": "Esami orali"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-04",
+     "note": "Esami scritti di Lingue"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Esami orali"
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-09",
+     "note": "Esami scritti di Lingue"
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-09-10",
+     "fine": "2027-09-24",
+     "note": "Esami orali"
+    }
+   ],
+   "corsi": [
+    "unimi-l-12-mediazione-linguistica-e-culturale-applicata-all-ambito-econ",
+    "unimi-lm-38-lingue-e-culture-per-la-comunicazione-e-la-cooperazione-inte"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Management delle Aziende Sanitarie e del Settore Salute (MASS) - didattica a trimestri",
+   "fonte": "https://mass.cdl.unimi.it/sites/lk08/files/2026-06/Calendario%20didattico%20MASS%2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione di ottobre-novembre",
+     "inizio": "2026-10-24",
+     "fine": "2026-11-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione di dicembre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione di gennaio",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione di marzo",
+     "inizio": "2027-03-08",
+     "fine": "2027-03-25",
+     "note": null
+    },
+    {
+     "nome": "Sessione di maggio-giugno",
+     "inizio": "2027-05-03",
+     "fine": "2027-06-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione di giugno",
+     "inizio": "2027-06-14",
+     "fine": "2027-06-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione di luglio",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimi-lm-77-management-delle-aziende-sanitarie-e-del-settore-salute"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Ancient Civilizations for the Contemporary World (ACCW)",
+   "fonte": "https://ancient-civilization.cdl.unimi.it/sites/lc38/files/2026-07/Academic%20Calendar%20ACCW%202026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-03-12",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-15",
+     "fine": "2027-07-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-08",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unimi-l-1-ancient-civilizations-for-the-contemporary-world"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Ortottica ed assistenza oftalmologica (Manifesto degli studi 2026/27, sezione «Sessioni d'esame»)",
+   "fonte": "https://apps.unimi.it/files/manifesti/ita_manifesto_D69of6_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Slittamento al 10 ottobre per gli studenti del I e del II anno. Il manifesto indica anche la I sessione (invernale) «dalla fine dei corsi del I semestre al 28 febbraio» (slittamento entro il 10 marzo) e la II sessione (estiva) «dalla fine dei corsi del II semestre al 31 luglio», senza data di inizio: non riportate come date"
+    }
+   ],
+   "corsi": [
+    "unimi-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unimi-l-25-agricoltura-sostenibile",
+  "unimi-l-38-allevamento-e-benessere-degli-animali-d-affezione",
+  "unimi-l-snt4-assistenza-sanitaria-abilitante-alla-professione-sanitaria-d",
+  "unimi-l-43-beni-culturali-scienze-tecnologie-e-diagnostica",
+  "unimi-l-2-biotecnologia",
+  "unimi-l-2-biotecnologie-mediche",
+  "unimi-l-27-chimica",
+  "unimi-l-27-chimica-industriale",
+  "unimi-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista",
+  "unimi-l-18-economia-aziendale",
+  "unimi-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar",
+  "unimi-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar-1630042",
+  "unimi-l-30-fisica",
+  "unimi-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "unimi-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630104",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630100",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630102",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630101",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630107",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630108",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630109",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630110",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630111",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630112",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630113",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630114",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630115",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630103",
+  "unimi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630106",
+  "unimi-l-31-informatica",
+  "unimi-l-31-informatica-musicale",
+  "unimi-l-31-informatica-per-la-comunicazione-digitale",
+  "unimi-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+  "unimi-l-35-matematica",
+  "unimi-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+  "unimi-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-1628803",
+  "unimi-l-snt2-podologia-abilitante-alla-professione-sanitaria-di-podologo",
+  "unimi-l-25-produzione-e-protezione-delle-piante-e-dei-sistemi-del-verde",
+  "unimi-l-32-scienze-ambientali-e-politiche-per-la-sostenibilita",
+  "unimi-l-13-scienze-biologiche",
+  "unimi-l-29-scienze-dei-prodotti-naturali-per-la-salute",
+  "unimi-l-26-scienze-della-ristorazione-e-distribuzione-degli-alimenti",
+  "unimi-l-38-scienze-delle-produzioni-animali",
+  "unimi-l-26-scienze-e-tecnologie-per-alimenti-sostenibili",
+  "unimi-l-34-scienze-geologiche",
+  "unimi-l-22-scienze-motorie-sport-e-salute",
+  "unimi-l-32-scienze-naturali",
+  "unimi-l-24-scienze-psicologiche-per-la-prevenzione-e-la-cura",
+  "unimi-l-31-sicurezza-dei-sistemi-e-delle-reti-informatiche",
+  "unimi-l-31-sicurezza-informatica-e-intelligenza-artificiale",
+  "unimi-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr",
+  "unimi-l-snt3-tecniche-audiometriche-abilitante-alla-professione-sanitaria",
+  "unimi-l-snt3-tecniche-audioprotesiche-abilitante-alla-professione-sanitar",
+  "unimi-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+  "unimi-l-snt3-tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-c",
+  "unimi-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+  "unimi-l-snt3-tecniche-di-neurofisiopatologia-abilitante-alla-professione",
+  "unimi-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "unimi-l-snt3-tecniche-ortopediche-abilitante-alla-professione-sanitaria-d",
+  "unimi-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil",
+  "unimi-l-snt2-terapia-occupazionale-abilitante-alla-professione-sanitaria",
+  "unimi-l-29-tossicologia-per-la-sicurezza-umana-e-ambientale",
+  "unimi-l-25-valorizzazione-e-tutela-dell-ambiente-e-del-territorio-monta",
+  "unimi-l-25-viticoltura-ed-enologia",
+  "unimi-lm-61-alimentazione-e-nutrizione-umana",
+  "unimi-lm-48-lm-80-analisi-pianificazione-e-gestione-sostenibile-del-territorio",
+  "unimi-lm-6-biodiversita-ed-evoluzione-biologica",
+  "unimi-lm-60-biogeoscienze-analisi-degli-ecosistemi-e-comunicazione-delle",
+  "unimi-lm-8-bioinformatics-for-computational-genomics",
+  "unimi-lm-6-biologia-applicata-alla-ricerca-biomedica",
+  "unimi-lm-6-biologia-applicata-alle-scienze-della-nutrizione",
+  "unimi-lm-9-biomedical-omics",
+  "unimi-lm-7-biotechnology-for-the-bioeconomy",
+  "unimi-lm-9-biotecnologie-del-farmaco",
+  "unimi-lm-71-cosmetic-industrial-science",
+  "unimi-lm-data-data-science-for-economics-and-health",
+  "unimi-lm-76-environmental-and-food-economics",
+  "unimi-lm-75-environmental-change-and-global-sustainability",
+  "unimi-lm-17-fisica",
+  "unimi-lm-79-geophysics",
+  "unimi-lm-69-global-environment-and-development",
+  "unimi-lm-18-informatica",
+  "unimi-lm-40-matematica",
+  "unimi-lm-9-medical-biotechnology-and-molecular-medicine",
+  "unimi-lm-6-molecular-biology-of-the-cell",
+  "unimi-lm-8-molecular-biotechnology-and-bioinformatics",
+  "unimi-lm-51-neuropsicologia-clinica-e-sperimentale",
+  "unimi-lm-6-plant-science",
+  "unimi-lm-51-psicologia-in-sanita",
+  "unimi-lm-8-quantitative-biology",
+  "unimi-lm-9-safety-assessment-of-xenobiotics-and-biotechnological-produc",
+  "unimi-lm-67-scienza-dell-attivita-motoria-preventiva-e-adattata",
+  "unimi-lm-68-scienza-tecnica-e-didattica-dello-sport",
+  "unimi-lm-69-scienze-agrarie-per-la-sostenibilita",
+  "unimi-lm-9-scienze-biotecnologiche-veterinarie",
+  "unimi-lm-54-scienze-chimiche",
+  "unimi-lm-55-scienze-cognitive-e-processi-decisionali",
+  "unimi-lm-69-scienze-della-produzione-e-protezione-delle-piante",
+  "unimi-lm-74-scienze-della-terra",
+  "unimi-lm-snt4-scienze-delle-professioni-sanitarie-della-prevenzione",
+  "unimi-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-assistenziali",
+  "unimi-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche",
+  "unimi-lm-70-scienze-e-tecnologie-alimentari",
+  "unimi-lm-86-scienze-e-tecnologie-delle-produzioni-animali",
+  "unimi-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "unimi-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-ostetrico",
+  "unimi-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-intensive",
+  "unimi-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-neonatali",
+  "unimi-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-primarie",
+  "unimi-lm-11-scienze-per-la-conservazione-e-la-diagnostica-dei-beni-cultu",
+  "unimi-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie",
+  "unimi-lm-66-sicurezza-informatica",
+  "unimi-lm-71-sustainable-industrial-chemistry",
+  "unimi-lm-73-sustainable-natural-resource-management",
+  "unimi-lm-73-valorization-and-sustainable-development-of-mountain-areas",
+  "unimi-lm-13-chimica-e-tecnologia-farmaceutiche",
+  "unimi-lm-13-farmacia",
+  "unimi-lm-41-medicina-e-chirurgia",
+  "unimi-lm-41-medicina-e-chirurgia-1630806",
+  "unimi-lm-41-medicina-e-chirurgia-1630807",
+  "unimi-lm-41-medicina-e-chirurgia-1630808",
+  "unimi-lm-42-medicina-veterinaria",
+  "unimi-lm-46-odontoiatria-e-protesi-dentaria",
+  "unimi-l-p02-sistemi-digitali-in-agricoltura"
+ ],
+ "mancanti": "Secondo giro (11/10/2026): ricontrollate per tutti i corsi scoperti le pagine «Calendari e orari», «Appelli esame» e «Manifesto e altri documenti» dei siti dei corsi (*.cdl.unimi.it) e i manifesti degli studi 2026/27 (apps.unimi.it/files/manifesti/…_2027.pdf), oltre alla pagina di Ateneo «Calendario degli appelli» e al calendario accademico. Per i corsi delle Facoltà di Scienze e Tecnologie, Scienze agrarie e alimentari, Medicina e Chirurgia (professioni sanitarie, Psicologia, Odontoiatria, Medicina), Medicina veterinaria, Scienze del farmaco, Scienze motorie e per i corsi online non è pubblicato alcun periodo di sessione d'esame 2026/27 con date: le pagine riportano solo periodi di lezione, sospensioni per prove in itinere (es. 16-20 novembre 2026, 26-30 aprile 2027) e il numero di appelli per mese (Veterinaria, Allevamento e benessere degli animali d'affezione, Produzioni animali, Biotecnologie veterinarie: gennaio, febbraio, giugno, luglio, settembre…); i manifesti rinviano al calendario degli appelli su Unimia (date dei singoli appelli, non sessioni) o indicano solo i mesi (es. Dietistica: «gennaio-febbraio, giugno-luglio, settembre-ottobre»; Chimica e Chimica industriale: almeno un appello in febbraio, giugno, luglio, settembre e gennaio). Analisi, pianificazione e gestione sostenibile del territorio indica solo che il periodo 17 maggio-11 giugno 2027 è dedicato ad appelli e laboratori (non una sessione completa: lasciato scoperto). Matematica pubblica solo il calendario del corso EMB/Syllabus. Il calendario di Studi Umanistici vale anche per le versioni inglesi (Humanities) usate da HCAI e Cultural, Intellectual and Visual History; il calendario SPES vale anche per la versione inglese dei corsi in lingua inglese. Ortottica: dal manifesto è riportata solo la III sessione (le altre non hanno data di inizio)."
+}

@@ -1,0 +1,286 @@
+name: App
+
+# Analisi, test e build di UniNotes per Windows, macOS, Android e iOS.
+# Le build non firmate servono per provare l'app; per la pubblicazione negli
+# store servono i secret di firma del repository.
+on:
+  push:
+    branches: ["**"]
+    paths:
+      - "app/**"
+      - "database/**"
+      - "tools/db_builder/sync_assets.py"
+      - ".github/workflows/app.yml"
+    tags: ["v*"]
+  pull_request:
+    paths: ["app/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: app-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  FLUTTER_VERSION: "3.47.5"
+
+jobs:
+  test:
+    name: Analisi e test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v7
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+
+  android:
+    name: Android (APK + AAB)
+    needs: test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      # NDK, whisper.cpp, ffmpeg e librerie video occupano molto spazio: si
+      # tolgono dal runner gli strumenti che non servono (.NET, Haskell, CodeQL…).
+      - name: Libera spazio su disco
+        working-directory: /
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /opt/hostedtoolcache/CodeQL \
+            /usr/local/share/boost /usr/local/lib/node_modules /opt/microsoft /usr/share/swift
+          sudo docker image prune -af > /dev/null 2>&1 || true
+          df -h /
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      # Solo i file comuni (atenei, indice dei corsi, meta, corsi sostituiti:
+      # circa 1 MB). I dati di ogni ateneo l'app li scarica da internet per
+      # l'ateneo scelto: niente --completo, la build resta leggera.
+      - name: Elenco degli atenei e dei corsi nell'app (i dati dell'ateneo si scaricano)
+        shell: bash
+        run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
+      - name: Licenze Android SDK e NDK (richiesto da whisper_ggml)
+        run: |
+          SDKM="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          yes | "$SDKM" --licenses > /dev/null || true
+          "$SDKM" --install "ndk;29.0.13113456" > /dev/null
+      - name: Chiave di firma (se configurata nei secret)
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          if [ -n "$KEYSTORE_B64" ]; then
+            echo "$KEYSTORE_B64" | base64 -d > android/app/upload-keystore.jks
+            printf "storePassword=%s\nkeyPassword=%s\nkeyAlias=%s\nstoreFile=upload-keystore.jks\n" \
+              "$KEYSTORE_PASSWORD" "$KEY_PASSWORD" "$KEY_ALIAS" > android/key.properties
+          fi
+      # APK per GitHub Releases (link alle donazioni), uno per processore così
+      # ognuno contiene solo le sue librerie native; AAB per Google Play (senza):
+      # lì è lo store a mandare a ogni telefono la parte giusta.
+      - run: flutter build apk --release --split-per-abi --target-platform android-arm,android-arm64,android-x64 --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_ANDROID_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_ANDROID }} --dart-define=DONATIONS=link
+      - run: flutter build appbundle --release --target-platform android-arm,android-arm64,android-x64 --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_ANDROID_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_ANDROID }} --dart-define=STORE=play
+      - uses: actions/upload-artifact@v7
+        with:
+          name: uninotes-android
+          retention-days: 3
+          path: |
+            app/build/app/outputs/flutter-apk/app-*-release.apk
+            app/build/app/outputs/bundle/release/app-release.aab
+
+  windows:
+    name: Windows
+    needs: test
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v7
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      # Solo i file comuni (atenei, indice dei corsi, meta, corsi sostituiti:
+      # circa 1 MB). I dati di ogni ateneo l'app li scarica da internet per
+      # l'ateneo scelto: niente --completo, la build resta leggera.
+      - name: Elenco degli atenei e dei corsi nell'app (i dati dell'ateneo si scaricano)
+        shell: bash
+        run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
+      - run: flutter build windows --release --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link
+      - name: Comprimi
+        shell: pwsh
+        run: Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath uninotes-windows.zip
+      - uses: actions/upload-artifact@v7
+        with:
+          name: uninotes-windows
+          retention-days: 3
+          path: app/uninotes-windows.zip
+
+  macos:
+    name: macOS
+    needs: test
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v7
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      # Solo i file comuni (atenei, indice dei corsi, meta, corsi sostituiti:
+      # circa 1 MB). I dati di ogni ateneo l'app li scarica da internet per
+      # l'ateneo scelto: niente --completo, la build resta leggera.
+      - name: Elenco degli atenei e dei corsi nell'app (i dati dell'ateneo si scaricano)
+        shell: bash
+        run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
+      - run: flutter build macos --release --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link
+      - name: Comprimi
+        run: |
+          cd build/macos/Build/Products/Release
+          ditto -c -k --keepParent "UniNotes.app" "$GITHUB_WORKSPACE/app/uninotes-macos.zip"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: uninotes-macos
+          retention-days: 3
+          path: app/uninotes-macos.zip
+
+  ios:
+    name: iOS (non firmata)
+    needs: test
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v7
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      # Solo i file comuni (atenei, indice dei corsi, meta, corsi sostituiti:
+      # circa 1 MB). I dati di ogni ateneo l'app li scarica da internet per
+      # l'ateneo scelto: niente --completo, la build resta leggera.
+      - name: Elenco degli atenei e dei corsi nell'app (i dati dell'ateneo si scaricano)
+        shell: bash
+        run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
+      - run: flutter build ios --release --no-codesign --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_IOS_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_IOS }}
+      - name: Comprimi (IPA non firmato, da firmare con il proprio account Apple)
+        run: |
+          mkdir -p Payload && cp -R build/ios/iphoneos/Runner.app Payload/
+          zip -qr uninotes-ios-unsigned.ipa Payload
+      - uses: actions/upload-artifact@v7
+        with:
+          name: uninotes-ios-unsigned
+          retention-days: 3
+          path: app/uninotes-ios-unsigned.ipa
+
+  # «Ultima build»: a ogni modifica del ramo principale una release di prova
+  # (sempre la stessa, sostituita) con i file di tutte le piattaforme,
+  # scaricabili da chiunque senza account GitHub.
+  ultima-build:
+    name: Ultima build (release scaricabile)
+    if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    needs: [android, windows, macos, ios]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          path: dist
+      - name: File con nomi chiari
+        run: |
+          mkdir out
+          # arm64: quasi tutti i telefoni (stesso nome di prima, i link restano validi)
+          cp dist/uninotes-android/flutter-apk/app-arm64-v8a-release.apk out/UniNotes-android.apk
+          cp dist/uninotes-android/flutter-apk/app-armeabi-v7a-release.apk out/UniNotes-android-32bit.apk
+          cp dist/uninotes-android/flutter-apk/app-x86_64-release.apk out/UniNotes-android-x86_64.apk
+          cp dist/uninotes-windows/uninotes-windows.zip out/UniNotes-windows.zip
+          cp dist/uninotes-macos/uninotes-macos.zip out/UniNotes-macos.zip
+          cp dist/uninotes-ios-unsigned/uninotes-ios-unsigned.ipa out/UniNotes-ios-non-firmata.ipa
+      - name: Sostituisci la release «ultima-build»
+        run: gh release delete ultima-build --repo "$GITHUB_REPOSITORY" --cleanup-tag --yes || true
+      - uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ultima-build
+          target_commitish: ${{ github.sha }}
+          name: Ultima build (versione di prova)
+          prerelease: true
+          make_latest: false
+          body: |
+            Versione di prova creata automaticamente dall'ultima modifica (commit ${{ github.sha }}).
+            Non è firmata: Windows e macOS mostrano un avviso al primo avvio.
+
+            - **Windows**: `UniNotes-windows.zip` → estrai la cartella e apri `uninotes.exe`.
+            - **macOS**: `UniNotes-macos.zip` → estrai, sposta UniNotes in Applicazioni, primo avvio con clic destro → Apri.
+            - **Android**: `UniNotes-android.apk` (quasi tutti i telefoni, processore a 64 bit) → apri il file sul telefono e consenti l'installazione.
+              Telefoni vecchi a 32 bit: `UniNotes-android-32bit.apk`; Chromebook ed emulatori x86: `UniNotes-android-x86_64.apk`.
+            - **iPhone/iPad**: `UniNotes-ios-non-firmata.ipa` → va firmata con il proprio account Apple (es. Sideloadly o AltStore).
+
+            Istruzioni complete: [INSTALLAZIONE.md](https://github.com/${{ github.repository }}/blob/${{ github.sha }}/INSTALLAZIONE.md)
+          files: out/*
+      # Le versioni vecchie non restano: si eliminano gli artefatti delle build
+      # precedenti (la versione aggiornata è nella release «ultima-build»).
+      - name: Elimina le versioni vecchie
+        run: |
+          gh api --paginate "repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" \
+            --jq '.artifacts[] | select(.workflow_run.id != '"$GITHUB_RUN_ID"') | .id' |
+          while read -r id; do
+            gh api -X DELETE "repos/$GITHUB_REPOSITORY/actions/artifacts/$id" || true
+          done
+
+  release:
+    name: Release (solo tag v*)
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [android, windows, macos, ios]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          path: dist
+      - uses: softprops/action-gh-release@v3
+        with:
+          # i tag con "-" (es. v2026.9.0-beta.1) sono versioni di prova
+          prerelease: ${{ contains(github.ref_name, '-') }}
+          generate_release_notes: true
+          body: |
+            Come installare ogni versione: [INSTALLAZIONE.md](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/INSTALLAZIONE.md)
+          files: |
+            dist/uninotes-android/flutter-apk/app-*-release.apk
+            dist/uninotes-windows/uninotes-windows.zip
+            dist/uninotes-macos/uninotes-macos.zip
+            dist/uninotes-ios-unsigned/uninotes-ios-unsigned.ipa

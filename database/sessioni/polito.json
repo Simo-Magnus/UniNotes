@@ -1,0 +1,130 @@
+{
+ "universita_id": "polito",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo – corsi di laurea (I livello)",
+   "fonte": "https://didattica.polito.it/guida/2027/it/calendario_tematico?cds=458&sdu=80",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-20",
+     "note": "Insegnamenti del 1° periodo: 2 appelli (18 gen–2 feb e 3–20 feb 2027); insegnamenti del 2° periodo: 1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-17",
+     "note": "Insegnamenti del 2° periodo: 2 appelli (14–29 giu e 30 giu–17 lug 2027); insegnamenti del 1° periodo: 1 appello (7–29 giu 2027)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-19",
+     "note": "1 appello per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Sessione primaverile (riservata)",
+     "inizio": "2027-04-12",
+     "fine": "2027-05-05",
+     "note": "Riservata agli iscritti a una laurea di I livello senza debiti di frequenza; un solo esame, insegnamenti del 1° periodo"
+    },
+    {
+     "nome": "Sessione autunnale (riservata)",
+     "inizio": "2027-10-11",
+     "fine": "2027-11-05",
+     "note": "Riservata agli iscritti a una laurea di I livello senza debiti di frequenza; un solo esame, insegnamenti del 2° periodo"
+    }
+   ],
+   "corsi": [
+    "polito-l-17-architettura",
+    "polito-l-7-civil-and-environmental-engineering",
+    "polito-l-4-design-e-comunicazione",
+    "polito-l-8-electronic-and-communications-engineering",
+    "polito-l-9-ingegneria-aerospaziale",
+    "polito-l-9-ingegneria-biomedica",
+    "polito-l-9-ingegneria-chimica-e-alimentare",
+    "polito-l-7-ingegneria-civile",
+    "polito-l-9-ingegneria-dei-materiali",
+    "polito-l-8-ingegneria-del-cinema-e-dei-media-digitali",
+    "polito-l-9-ingegneria-dell-autoveicolo",
+    "polito-l-9-ingegneria-della-produzione-industriale",
+    "polito-l-23-ingegneria-edile",
+    "polito-l-9-ingegneria-elettrica",
+    "polito-l-8-ingegneria-elettronica",
+    "polito-l-9-ingegneria-energetica",
+    "polito-l-8-ingegneria-fisica",
+    "polito-l-8-l-9-ingegneria-gestionale",
+    "polito-l-8-ingegneria-informatica",
+    "polito-l-9-ingegneria-meccanica",
+    "polito-l-7-ingegneria-per-l-ambiente-e-il-territorio",
+    "polito-l-35-matematica-per-l-ingegneria",
+    "polito-l-21-pianificazione-territoriale-urbanistica-e-paesaggistico-ambi",
+    "polito-l-p03-tecnologie-per-l-industria-manifatturiera"
+   ]
+  },
+  {
+   "ambito": "Ateneo – corsi di laurea magistrale",
+   "fonte": "https://didattica.polito.it/guida/2027/it/calendario_tematico?cds=464&sdu=32",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-20",
+     "note": "Insegnamenti del 1° periodo: 2 appelli (18 gen–2 feb e 3–20 feb 2027); insegnamenti del 2° periodo: 1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-17",
+     "note": "Insegnamenti del 2° periodo: 2 appelli (14–29 giu e 30 giu–17 lug 2027); insegnamenti del 1° periodo: 1 appello (7–29 giu 2027)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-19",
+     "note": "1 appello per tutti gli insegnamenti"
+    }
+   ],
+   "corsi": [
+    "polito-lm-4-architettura-costruzione-citta",
+    "polito-lm-3-architettura-del-paesaggio",
+    "polito-lm-4-architettura-per-il-patrimonio",
+    "polito-lm-4-architettura-per-la-sostenibilita",
+    "polito-lm-33-automotive-engineering",
+    "polito-lm-27-communications-engineering",
+    "polito-lm-32-lm-66-cybersecurity-engineering",
+    "polito-lm-32-data-science-and-engineering",
+    "polito-lm-12-design-sistemico",
+    "polito-lm-91-digital-skills-for-sustainable-societal-transitions",
+    "polito-lm-35-georesources-and-geoenergy-engineering",
+    "polito-lm-27-ict-engineering-for-smart-societies",
+    "polito-lm-20-ingegneria-aerospaziale",
+    "polito-lm-21-ingegneria-biomedica",
+    "polito-lm-22-ingegneria-chimica-e-dei-processi-sostenibili",
+    "polito-lm-23-ingegneria-civile",
+    "polito-lm-53-ingegneria-dei-materiali-per-l-industria-4-0",
+    "polito-lm-32-ingegneria-del-cinema-e-dei-media-digitali",
+    "polito-lm-33-ingegneria-della-produzione-industriale-e-dell-innovazione-t",
+    "polito-lm-24-ingegneria-edile",
+    "polito-lm-28-ingegneria-elettrica",
+    "polito-lm-29-ingegneria-elettronica",
+    "polito-lm-30-ingegneria-energetica-e-nucleare",
+    "polito-lm-31-ingegneria-gestionale",
+    "polito-lm-32-ingegneria-informatica",
+    "polito-lm-44-ingegneria-matematica",
+    "polito-lm-33-ingegneria-meccanica",
+    "polito-lm-35-ingegneria-per-l-ambiente-e-il-territorio",
+    "polito-lm-25-mechatronic-engineering",
+    "polito-lm-29-nanotechnologies-for-icts",
+    "polito-lm-44-physics-of-complex-systems",
+    "polito-lm-48-pianificazione-urbanistica-e-territoriale",
+    "polito-lm-29-quantum-engineering"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

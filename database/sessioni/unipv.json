@@ -1,0 +1,689 @@
+{
+ "universita_id": "unipv",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Giurisprudenza",
+   "fonte": "https://giurisprudenza.cdl.unipv.it/sites/cdl03/files/2026-05/All.%20p.%20n.%202%20_Calendario%20didattico%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione del I semestre 1",
+     "inizio": "2026-12-15",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione del I semestre 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di aprile",
+     "inizio": "2027-04-08",
+     "fine": "2027-04-30",
+     "note": "riservata a ripetenti, iscritti all'ultimo anno che abbiano la frequenza e studenti lavoratori"
+    },
+    {
+     "nome": "Sessione del II semestre 1",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione del II semestre 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di ottobre",
+     "inizio": "2027-10-01",
+     "fine": "2027-10-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipv-lmg-01-giurisprudenza",
+    "unipv-l-14-scienze-dei-servizi-giuridici",
+    "unipv-l-14-scienze-giuridiche-della-prevenzione-e-della-sicurezza",
+    "unipv-lm-sc-giur-diritto-della-prevenzione-dell-innovazione-e-della-sicurezza"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze giuridiche e innovazione (interateneo Pavia - Milano-Bicocca)",
+   "fonte": "https://scienzegiuridicheinnovazione.cdl.unipv.it/sites/cdl102/files/2026-05/All.%20p.%20n.%202_Calendario%20didattico%20Scienze%20giuridiche%20e%20innovazione%20a.a.%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione del I semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione del II semestre 1",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione del II semestre 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unipv-l-14-scienze-giuridiche-e-innovazione"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Politiche e Sociali",
+   "fonte": "https://scienzepolitichesociali.dip.unipv.it/sites/dip11/files/2026-06/1)4.2.1%20all_Calendario%20didattico%20a.a.%202026%202027%20(3).pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione d'esame invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami straordinaria",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione d'esame estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione d'esami autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipv-l-36-scienze-politiche-e-delle-relazioni-internazionali",
+    "unipv-l-20-comunicazione-innovazione-multimedialita",
+    "unipv-l-16-social-sciences-for-global-challenges",
+    "unipv-lm-59-comunicazione-digitale",
+    "unipv-lm-63-governo-amministrazione-e-territorio",
+    "unipv-lm-52-studi-dell-africa-e-dell-asia",
+    "unipv-lm-52-sviluppo-economico-e-relazioni-internazionali",
+    "unipv-lm-62-world-politics-and-international-relations"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Economiche e Aziendali",
+   "fonte": "https://economiaemanagement.dip.unipv.it/sites/dip10/files/2026-04/Calendario%20attivit%C3%A0%20didattiche%20a.a.%202026-27_0.pdf",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-13",
+     "note": "due appelli gennaio-febbraio"
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-30",
+     "note": "due appelli maggio-fine giugno"
+    },
+    {
+     "nome": "Terza sessione",
+     "inizio": "2027-07-01",
+     "fine": "2027-09-18",
+     "note": "due appelli luglio-settembre, con sospensione dal 1 al 31 agosto"
+    }
+   ],
+   "corsi": [
+    "unipv-l-18-amministrazione-e-governance",
+    "unipv-l-33-economia",
+    "unipv-l-18-management",
+    "unipv-lm-77-economia-e-gestione-delle-imprese",
+    "unipv-lm-77-economia-e-legislazione-d-impresa",
+    "unipv-lm-56-economics-and-data-analysis-for-industry-and-policy",
+    "unipv-lm-16-finance",
+    "unipv-lm-77-international-business-and-entrepreneurship"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Studi Umanistici - corsi di Filosofia, Lettere e lauree magistrali collegate",
+   "fonte": "https://studiumanistici.dip.unipv.it/sites/dip02/files/2026-03/Calendario%20didattico%2026-27_approv.%20CdD%2021.01.26%20%284%29.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unipv-l-5-filosofia",
+    "unipv-l-10-lettere",
+    "unipv-lm-78-filosofia",
+    "unipv-lm-14-filologia-moderna",
+    "unipv-lm-15-antichita-classiche-e-orientali",
+    "unipv-lm-65-scritture-e-progetti-per-le-arti-visive-e-performative",
+    "unipv-lm-89-storia-e-valorizzazione-dei-beni-culturali",
+    "unipv-lm-84-storia-globale-delle-civilta-e-dei-territori"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Studi Umanistici - corsi di Lingue e culture moderne e lauree magistrali collegate",
+   "fonte": "https://studiumanistici.dip.unipv.it/sites/dip02/files/2026-03/Calendario%20didattico%2026-27_approv.%20CdD%2021.01.26%20%284%29.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-20",
+     "note": "3 appelli; prove propedeutiche di lingua dal 7 al 16 gennaio"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "3 appelli; prove propedeutiche di lingua dal 31 maggio al 12 giugno"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-18",
+     "note": "1 appello; prove propedeutiche di lingua dal 25 agosto al 4 settembre"
+    }
+   ],
+   "corsi": [
+    "unipv-l-11-lingue-e-culture-moderne",
+    "unipv-lm-37-lingue-e-letterature-per-la-comunicazione-interculturale",
+    "unipv-lm-39-linguistica-teorica-applicata-e-delle-lingue-moderne"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale The Ancient Mediterranean World (Dipartimento di Studi Umanistici)",
+   "fonte": "https://ancientmediterraneanworld.cdl.unipv.it/sites/cdl73/files/2026-09/teaching%20calendar%20a.y.%202026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Winter session",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Summer session",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-31",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Autumn session",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello; il PDF riporta per refuso 'September 189', il calendario del Dipartimento indica il 18 settembre"
+    }
+   ],
+   "corsi": [
+    "unipv-lm-2-the-ancient-mediterranean-world-history-archaeology-and-art"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Musicologia e Beni Culturali (Cremona)",
+   "fonte": "https://mbc.dip.unipv.it/it/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-19",
+     "note": "due appelli"
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-31",
+     "note": "tre appelli; la pagina indica per refuso '31/07/2026' come fine. Per i laboratori di restauro la prima sessione è dal 1 al 31 luglio 2027"
+    },
+    {
+     "nome": "Terza sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "un appello"
+    }
+   ],
+   "corsi": [
+    "unipv-l-3-musicologia",
+    "unipv-l-1-l-10-scienze-letterarie-e-dei-beni-culturali",
+    "unipv-lm-45-musicologia",
+    "unipv-lm-89-metodi-e-tecnologie-per-la-storia-dellarte",
+    "unipv-lmr-02-conservazione-e-restauro-dei-beni-culturali-abilitante-ai-se"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Biologia e Biotecnologie - corsi del Consiglio didattico di Scienze Biotecnologiche",
+   "fonte": "https://dbb.dip.unipv.it/en/education/class-schedule",
+   "sessioni": [
+    {
+     "nome": "Winter session",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-28",
+     "note": null
+    },
+    {
+     "nome": "Summer session",
+     "inizio": "2027-06-15",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Autumn session",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-22",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipv-l-2-biotecnologie",
+    "unipv-lm-8-biotecnologie-avanzate"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Biologia e Biotecnologie - corsi del Consiglio didattico di Scienze Biologiche",
+   "fonte": "https://dbb.dip.unipv.it/en/education/class-schedule",
+   "sessioni": [
+    {
+     "nome": "Winter session",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-28",
+     "note": null
+    },
+    {
+     "nome": "Summer session",
+     "inizio": "2027-06-15",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Autumn session",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipv-l-13-scienze-biologiche",
+    "unipv-lm-6-biologia-sperimentale-ed-applicata",
+    "unipv-lm-6-molecular-biology-and-genetics",
+    "unipv-lm-6-neurobiology"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze del Sistema Nervoso e del Comportamento - corsi di Psicologia",
+   "fonte": "https://stp.cdl.unipv.it/it/studiare/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-12",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-23",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unipv-l-24-scienze-e-tecniche-psicologiche",
+    "unipv-lm-51-psicologia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Chimica",
+   "fonte": "https://chimicalt.cdl.unipv.it/it/studiare/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione del I semestre",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione del II semestre",
+     "inizio": "2027-06-14",
+     "fine": "2027-09-24",
+     "note": "con sospensione dal 2 al 23 agosto"
+    }
+   ],
+   "corsi": [
+    "unipv-l-27-chimica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Chimica",
+   "fonte": "https://chimicalm.cdl.unipv.it/it/studiare/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione del I semestre",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione del II semestre",
+     "inizio": "2027-06-14",
+     "fine": "2027-09-24",
+     "note": "con sospensione dal 2 al 23 agosto"
+    }
+   ],
+   "corsi": [
+    "unipv-lm-54-chimica"
+   ]
+  },
+  {
+   "ambito": "Corsi di Fisica (calendario delle attività didattiche 2026/2027)",
+   "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vS7YE8n5o7IxlkabeettsLoFUbwmNQTuO_N0TWnERvYNP5ZygpMoJD3UzXf_Qa31vX9ovd5RJP1a2t4/pubhtml",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-26",
+     "note": "giorni d'esame da lunedì a venerdì"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "giorni d'esame da lunedì a venerdì"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "giorni d'esame da lunedì a venerdì"
+    }
+   ],
+   "corsi": [
+    "unipv-l-30-fisica",
+    "unipv-lm-17-scienze-fisiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze della Terra e dell'Ambiente - Scienze Geologiche e Geoscienze per lo sviluppo sostenibile",
+   "fonte": "https://geologia.cdl.unipv.it/it/studiare/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipv-l-34-scienze-geologiche",
+    "unipv-lm-74-geoscienze-per-lo-sviluppo-sostenibile"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze della Terra e dell'Ambiente - Scienze naturali e ambientali e Conservazione della biodiversità",
+   "fonte": "https://natura.cdl.unipv.it/it/studiare/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-16",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipv-l-32-scienze-naturali-e-ambientali",
+    "unipv-lm-60-conservazione-della-biodiversita-didattica-e-comunicazione-s"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicine and Surgery (Harvey)",
+   "fonte": "https://medicineandsurgeryharvey.cdl.unipv.it/en/study/teaching-calendar",
+   "sessioni": [
+    {
+     "nome": "Exams - first semester",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Exams - second semester",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Recover session",
+     "inizio": "2027-12-01",
+     "fine": "2027-12-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipv-lm-41-medicine-and-surgery"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Lifelong well-being and healthy aging",
+   "fonte": "https://lifeline.cdl.unipv.it/en/study/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Exams - 1st semester",
+     "inizio": "2027-01-18",
+     "fine": "2027-03-05",
+     "note": null
+    },
+    {
+     "nome": "Exams - 2nd semester",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Recovering exam session 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Recovering exam session 2",
+     "inizio": "2027-12-01",
+     "fine": "2027-12-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipv-lm-9-lifelong-well-being-and-healthy-aging"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Medical and Pharmaceutical Biotechnologies",
+   "fonte": "https://medicalpharmaceuticalbiotechnologies.cdl.unipv.it/en/study/teaching-calendar",
+   "sessioni": [
+    {
+     "nome": "Exams - first semester",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Exams - second semester",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Recover exam session 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Recover exam session 2",
+     "inizio": "2027-12-01",
+     "fine": "2027-12-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipv-lm-9-medical-and-pharmaceutical-biotechnologies"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Ingegneria (Dipartimenti di Ingegneria Industriale e dell'Informazione e di Ingegneria Civile e Architettura)",
+   "fonte": "http://webing.unipv.eu/didattica/appelli-desame/",
+   "sessioni": [
+    {
+     "nome": "1ª sessione esami",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "appelli in fase di definizione"
+    },
+    {
+     "nome": "Appelli straordinari",
+     "inizio": "2027-03-15",
+     "fine": "2027-04-16",
+     "note": "riservati a chi ha già frequentato l'ultimo anno (o il primo semestre del 2° anno delle magistrali)"
+    },
+    {
+     "nome": "2ª sessione esami",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione esami",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipv-l-8-bioingegneria",
+    "unipv-l-8-ingegneria-elettronica-e-informatica",
+    "unipv-l-9-ingegneria-industriale",
+    "unipv-l-7-ingegneria-civile-e-ambientale",
+    "unipv-lm-21-bioingegneria",
+    "unipv-lm-32-computer-engineering",
+    "unipv-lm-28-electrical-engineering",
+    "unipv-lm-29-electronic-engineering",
+    "unipv-lm-25-industrial-automation-engineering",
+    "unipv-lm-23-ingegneria-civile",
+    "unipv-lm-44-ingegneria-computazionale-e-modellistica-per-materiali-strut",
+    "unipv-lm-35-ingegneria-per-l-ambiente-e-il-territorio",
+    "unipv-lm-4-c-u-ingegneria-edile-architettura",
+    "unipv-l-p01-tecnologie-digitali-per-le-costruzioni-lambiente-e-il-territ",
+    "unipv-lm-23-civil-engineering-for-mitigation-of-risk-from-natural-hazard"
+   ]
+  },
+  {
+   "ambito": "Ateneo (calendario didattico di Ateneo: finestre entro cui i Dipartimenti fissano le sessioni)",
+   "fonte": "https://portale.unipv.it/sites/default/files/2026-04/Calendario%20didattico%20a.a.%202026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Esami del 1° semestre",
+     "inizio": "2026-12-01",
+     "fine": "2027-03-13",
+     "note": "finestra massima di Ateneo; date effettive deliberate dal Dipartimento"
+    },
+    {
+     "nome": "Esami del 2° semestre 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-31",
+     "note": "finestra massima di Ateneo; date effettive deliberate dal Dipartimento"
+    },
+    {
+     "nome": "Esami del 2° semestre 2",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-30",
+     "note": "finestra massima di Ateneo; sessioni di recupero a libera scelta dei Dipartimenti"
+    }
+   ],
+   "corsi": [
+    "unipv-l-31-artificial-intelligence",
+    "unipv-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista",
+    "unipv-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "unipv-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+    "unipv-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "unipv-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630284",
+    "unipv-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630285",
+    "unipv-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630283",
+    "unipv-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+    "unipv-l-35-matematica",
+    "unipv-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+    "unipv-l-22-scienze-motorie",
+    "unipv-l-22-scienze-motorie-replica-voghera",
+    "unipv-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr",
+    "unipv-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+    "unipv-l-snt3-tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-c",
+    "unipv-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+    "unipv-l-snt3-tecniche-di-neurofisiopatologia-abilitante-alla-professione",
+    "unipv-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+    "unipv-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil",
+    "unipv-lm-69-agri-food-sustainability",
+    "unipv-lm-38-european-languages-cultures-and-societies-in-contact",
+    "unipv-lm-8-industrial-nanobiotechnologies-for-pharmaceuticals",
+    "unipv-lm-40-matematica",
+    "unipv-lm-51-psychology-neuroscience-and-human-sciences",
+    "unipv-lm-67-scienze-e-tecniche-delle-attivita-motorie-preventive-e-adatt",
+    "unipv-lm-68-scienze-e-tecniche-dello-sport",
+    "unipv-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+    "unipv-lm-13-chimica-e-tecnologia-farmaceutiche",
+    "unipv-lm-13-farmacia",
+    "unipv-lm-41-medicina-e-chirurgia",
+    "unipv-lm-46-odontoiatria-e-protesi-dentaria"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "Per i corsi assegnati al calendario di Ateneo (Matematica, Artificial intelligence, Farmacia e CTF, Scienze motorie, Medicina e Chirurgia Golgi, Odontoiatria, professioni sanitarie, Psychology Neuroscience and Human Sciences, Agri-food sustainability, Industrial nanobiotechnologies, European Languages) non è stato trovato un calendario 2026/27 del Dipartimento/corso con le date delle sessioni: valgono le finestre di Ateneo. Secondo giro: Civil Engineering for Mitigation of Risk from Natural Hazards assegnato al calendario della Facoltà di Ingegneria: la pagina 'Exams schedule' del corso (https://civrisk.cdl.unipv.it/en/study/exams-schedule) indica che gli insegnamenti semestrali seguono il calendario esami ufficiale della Facoltà di Ingegneria, mentre per gli insegnamenti mensili (ciclici) l'esame si tiene a fine corso con data comunicata dal docente. Il regolamento 2026/27 su gestionedidattica.unipv.it non ha risposto (timeout)."
+}

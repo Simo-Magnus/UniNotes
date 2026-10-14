@@ -1,0 +1,47 @@
+{
+ "universita_id": "iul",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://www.iuline.it/wp-content/uploads/2026/08/Calendario_Didattico_a.a._2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione di esami",
+     "inizio": "2027-02-01",
+     "fine": "2027-03-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione di esami",
+     "inizio": "2027-04-07",
+     "fine": "2027-05-07",
+     "note": "1 appello"
+    },
+    {
+     "nome": "III sessione di esami",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "IV sessione di esami",
+     "inizio": "2027-08-30",
+     "fine": "2027-10-29",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "iul-l-20-comunicazione-innovativa-multimediale-e-digitale",
+    "iul-l-33-economia-management-e-mercati-internazionali",
+    "iul-l-19-scienze-e-tecniche-dell-educazione-e-dei-servizi-per-l-infan",
+    "iul-l-22-scienze-motorie-pratica-e-gestione-delle-attivita-sportive",
+    "iul-l-24-scienze-psicologiche-delle-risorse-umane-delle-organizzazion",
+    "iul-lm-57-innovazione-educativa-e-apprendimento-permanente-nella-forma"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

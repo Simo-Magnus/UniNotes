@@ -1,0 +1,884 @@
+{
+ "universita_id": "unipg",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Giurisprudenza",
+   "fonte": "https://giurisprudenza.unipg.it/didattica/esami",
+   "sessioni": [
+    {
+     "nome": "Sessione di dicembre",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione di gennaio",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-15",
+     "note": null
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-05",
+     "note": null
+    },
+    {
+     "nome": "Sessione di aprile",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-06",
+     "note": null
+    },
+    {
+     "nome": "Sessione di maggio",
+     "inizio": "2027-05-24",
+     "fine": "2027-05-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione di giugno",
+     "inizio": "2027-06-14",
+     "fine": "2027-06-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione di luglio",
+     "inizio": "2027-07-12",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-13",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Appello straordinario di ottobre",
+     "inizio": "2027-10-25",
+     "fine": "2027-10-29",
+     "note": "Riservato agli studenti fuori corso, senza sospensione delle attività didattiche"
+    }
+   ],
+   "corsi": [
+    "unipg-l-14-scienze-dei-servizi-giuridici",
+    "unipg-lm-90-integrazione-giuridica-europea-e-diritti-umani",
+    "unipg-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Politiche",
+   "fonte": "https://scipol.unipg.it/files/generale/documenti/calendari/calendariodidattica_2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Appello di novembre",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": "Pausa didattica con appello d'esame"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Appelli di marzo-aprile",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "Pausa didattica con appelli d'esame"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipg-l-20-scienze-della-comunicazione",
+    "unipg-l-36-scienze-politiche-e-relazioni-internazionali",
+    "unipg-l-39-servizio-sociale",
+    "unipg-lm-59-comunicazione-digitale-e-d-impresa",
+    "unipg-lm-62-lm-63-governo-e-amministrazione",
+    "unipg-lm-87-politiche-sociali-sistemi-di-welfare-e-terzo-settore",
+    "unipg-lm-52-relazioni-internazionali"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Filosofia, Scienze Sociali, Umane e della Formazione (FISSUF)",
+   "fonte": "https://fissuf.unipg.it/files/didattica_organigrammi_e_piani_di_studio/calendari_didattici/calendario_a.a._2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-14",
+     "note": "3 appelli: 07-17/01, 22-31/01, 05-14/02/2027"
+    },
+    {
+     "nome": "Sessione straordinaria di aprile",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-09",
+     "note": "Aperta a tutti, solo per insegnamenti le cui lezioni sono già concluse"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-09",
+     "note": "3 appelli: 31/05-11/06, 14-25/06, 28/06-09/07/2027"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": "2 appelli: 23/08-02/09, 06-17/09/2027"
+    }
+   ],
+   "corsi": [
+    "unipg-l-24-l-5-filosofia-e-scienze-e-tecniche-psicologiche",
+    "unipg-l-19-scienze-dell-educazione",
+    "unipg-l-40-scienze-per-l-investigazione-e-la-sicurezza",
+    "unipg-lm-85-consulenza-pedagogica-e-coordinamento-di-interventi-formativ",
+    "unipg-lm-78-filosofia-ed-etica-delle-relazioni",
+    "unipg-lm-88-lm-1-scienze-socioantropologiche-per-l-integrazione-e-la-sicurezz",
+    "unipg-lm-51-valutazione-del-funzionamento-individuale-in-psicologia-clin",
+    "unipg-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Lettere - Lingue, Letterature e Civiltà Antiche e Moderne",
+   "fonte": "https://lettere.unipg.it/files/docs/26-27_calendario-didattico_2.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "3 appelli distinti con intervallo di almeno 2 settimane"
+    },
+    {
+     "nome": "Appello supplementare",
+     "inizio": "2027-05-24",
+     "fine": "2027-05-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "3 appelli, almeno 1 entro il 15/06/2027"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Esami riservati ai fuori corso",
+     "inizio": "2027-10-18",
+     "fine": "2027-10-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipg-l-1-beni-culturali",
+    "unipg-l-10-lettere",
+    "unipg-l-11-lingue-e-culture-straniere",
+    "unipg-lm-2-lm-89-archeologia-e-storia-dell-arte",
+    "unipg-lm-37-languages-comparative-literatures-and-intercultural-translat",
+    "unipg-lm-14-studi-italiani-classici-e-storia-europea"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Agrarie, Alimentari e Ambientali (DSA3)",
+   "fonte": "https://dsa3.unipg.it/didattica/studente-iscritto/calendario-esami",
+   "sessioni": [
+    {
+     "nome": "Appello di dicembre",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "1 appello per gli insegnamenti del I semestre, solo per gli iscritti al 2° e 3° anno LT e al 1° e 2° anno LM"
+    },
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "3 appelli per gli insegnamenti del I semestre"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-20",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2028-01-07",
+     "fine": "2028-02-18",
+     "note": "3 appelli per gli insegnamenti del II semestre"
+    },
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2028-02-07",
+     "fine": "2028-02-18",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unipg-l-26-economia-e-cultura-dell-alimentazione",
+    "unipg-l-25-scienze-agrarie-e-ambientali",
+    "unipg-l-26-scienze-e-tecnologie-agro-alimentari",
+    "unipg-lm-69-agricoltura-sostenibile",
+    "unipg-lm-7-agricultural-and-environmental-biotechnology",
+    "unipg-lm-76-management-e-cultura-italiana-del-cibo",
+    "unipg-lm-86-scienze-zootecniche",
+    "unipg-lm-70-tecnologie-e-biotecnologie-degli-alimenti"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Farmaceutiche - CdL in Controllo di Qualità dei Prodotti per la Salute",
+   "fonte": "https://dsf.unipg.it/files/clmquasal/calendario_accademico_quasal_26_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-20",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipg-l-29-controllo-di-qualita-dei-prodotti-per-la-salute"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Farmaceutiche - CdLM in Chimica e Tecnologia Farmaceutiche",
+   "fonte": "https://dsf.unipg.it/files/clmctf/2026-27/calendario_delle_attivita.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-14",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-17",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipg-lm-13-chimica-e-tecnologia-farmaceutiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Farmaceutiche - CdLM in Farmacia",
+   "fonte": "https://dsf.unipg.it/files/clmfarm/2026-27/frm_calendario_delle_attivita_2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-14",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-17",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipg-lm-13-farmacia"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Farmaceutiche - CdLM in Biotecnologie Farmaceutiche",
+   "fonte": "https://dsf.unipg.it/files/clmbiotecnfarm/2026-27/cdlm_bf_calendario_attivita_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-14",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-15",
+     "fine": "2027-07-31",
+     "note": "Nel PDF indicata come «15 giugno 2026 - 31 luglio 2026», refuso evidente sull'anno"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-02",
+     "fine": "2027-09-27",
+     "note": "Nel PDF indicata come «02 settembre 2026 - 27 settembre 2026», refuso evidente sull'anno"
+    }
+   ],
+   "corsi": [
+    "unipg-lm-9-biotecnologie-farmaceutiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Farmaceutiche - CdLM in Scienze dell'Alimentazione e della Nutrizione Umana",
+   "fonte": "https://dsf.unipg.it/files/clmsanu/2026-27/calendario_accademico_sanu_aa_2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-14",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-17",
+     "fine": "2027-09-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipg-lm-61-scienze-della-alimentazione-e-della-nutrizione-umana"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Fisica e Geologia - CdL in Fisica",
+   "fonte": "https://fisgeo.unipg.it/didattica/corso-di-laurea-in-fisica/calendario-degli-esami-fisica",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-27",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-31",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unipg-l-30-fisica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Fisica e Geologia - CdLM in Fisica",
+   "fonte": "https://fisgeo.unipg.it/didattica/corso-di-laurea-magistrale-in-fisica/calendario-degli-esami-magistrale-in-fisica",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-27",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-31",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unipg-lm-17-fisica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Fisica e Geologia - CdL interclasse in Scienze della Terra e dell'Ambiente (STA)",
+   "fonte": "https://fisgeo.unipg.it/didattica/laurea-interclasse-in-scienze-della-terra-e-dellambiente-sta/calendario-degli-esami-laurea-interclasse-in-scienze-della-terra-e-dellambiente-sta",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione di aprile",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-24",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unipg-l-34-l-32-scienze-della-terra-e-dell-ambiente"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Chimica, Biologia e Biotecnologie - CdL in Chimica",
+   "fonte": "https://www.dcbb.unipg.it/images/DOCS/Academic_calendar_2026-2027_Chemistry.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione supplementare",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "Unica sessione con giorni indicati («22, 23, 24, 31 Mar. 2027 - 1, 2 Apr. 2027»); le sessioni invernale (gennaio-febbraio 2027), estiva (giugno-luglio 2027) e autunnale (settembre 2027) sono indicate solo per mese"
+    }
+   ],
+   "corsi": [
+    "unipg-l-27-chimica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Chimica, Biologia e Biotecnologie - CdLM in Scienze Chimiche",
+   "fonte": "https://www.dcbb.unipg.it/images/DOCS/Academic_calendar_2026-2027_Chemical_Sciences.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione supplementare",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "Unica sessione con giorni indicati («22, 23, 24, 31 Mar. 2027 - 1, 2 Apr. 2027»); le sessioni invernale (gennaio-febbraio 2027), estiva (giugno-luglio 2027) e autunnale (settembre 2027) sono indicate solo per mese"
+    }
+   ],
+   "corsi": [
+    "unipg-lm-54-scienze-chimiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia (sedi di Perugia, Assisi e Terni)",
+   "fonte": "https://econ.unipg.it/files/docs/manifesti/manifestodeglistudi_2026_2027pdf.pdf",
+   "sessioni": [
+    {
+     "nome": "Appello di dicembre",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-21",
+     "note": "Solo per gli insegnamenti del primo semestre che anticipano a dicembre uno degli appelli della sessione invernale (lezioni concluse entro l'11 dicembre). Stesso calendario nei manifesti 2026/27 delle sedi di Assisi e Terni"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "3 appelli per tutte le materie, salvo quelle con appello a dicembre"
+    },
+    {
+     "nome": "Appello di aprile (pausa didattica)",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-09",
+     "note": "1 appello per tutti gli insegnamenti; per gli studenti in corso: esami degli anni precedenti, del primo semestre e del secondo semestre già concluso"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-23",
+     "note": "3 appelli per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "1 appello per tutti gli insegnamenti"
+    }
+   ],
+   "corsi": [
+    "unipg-l-18-l-33-economia-aziendale",
+    "unipg-lm-77-economia-e-management",
+    "unipg-lm-77-amministrazione-finanza-e-controllo",
+    "unipg-lm-16-lm-83-quantitative-finance-and-data-science-for-economics",
+    "unipg-l-18-economia-e-management-del-turismo",
+    "unipg-l-18-scienze-economiche-e-aziendali",
+    "unipg-lm-77-economia-e-management-dello-sviluppo-sostenibile"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicina e chirurgia (Perugia e Terni)",
+   "fonte": "https://dimec.unipg.it/files/docs/sezioni/sezione-cdlm-medicina-e-chirurgia/documenti/calendario-accademico-2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Appello pre-natalizio",
+     "inizio": "2026-12-18",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "Appello straordinario pasquale",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Appelli riservati a fuori corso e assimilati: 30 marzo-2 aprile, 26-30 aprile, 24-28 maggio, 25-29 ottobre, 24-30 novembre 2027"
+    }
+   ],
+   "corsi": [
+    "unipg-lm-41-medicina-e-chirurgia",
+    "unipg-lm-41-medicina-e-chirurgia-replica-terni"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Infermieristica – sede di Perugia",
+   "fonte": "https://dimec.unipg.it/files/docs/sezioni/sezione-cdl-infermieristica-perugia/documenti/didattica/calendario-accademico-2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione ordinaria/straordinaria di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione ordinaria estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione ordinaria autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipg-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Infermieristica – sede di Foligno",
+   "fonte": "https://dimec.unipg.it/files/docs/sezioni/sezione-cdl-infermieristica-foligno/documenti/programmazione_didattica_primo_anno_a.a.26.27-1.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione (1° e 2° anno)",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "Programmazione didattica 2026/27 per anno di corso: 1° anno (fonte), 2° anno, 3° anno"
+    },
+    {
+     "nome": "I sessione (3° anno)",
+     "inizio": "2027-03-01",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "II sessione (1° anno)",
+     "inizio": "2027-06-01",
+     "fine": "2027-06-30",
+     "note": null
+    },
+    {
+     "nome": "II sessione (2° e 3° anno)",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria (1° e 2° anno)",
+     "inizio": "2028-01-25",
+     "fine": "2028-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria (3° anno)",
+     "inizio": "2028-02-04",
+     "fine": "2028-03-02",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipg-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628436"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche della prevenzione nell'ambiente e nei luoghi di lavoro",
+   "fonte": "https://dimec.unipg.it/files/docs/sezioni/sezione-cdl-tepal/documenti/calendario-accademico-2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione ordinaria/straordinaria di gennaio/febbraio",
+     "inizio": "2027-01-12",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione ordinaria estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione ordinaria autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipg-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche di laboratorio biomedico",
+   "fonte": "https://dimec.unipg.it/files/docs/sezioni/sezione-cdl-tecniche-di-laboratorio-biomedico/documenti/calendario-accademico-_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione ordinaria/straordinaria di gennaio/febbraio",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione ordinaria estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione ordinaria autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-10-01",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipg-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze motorie e sportive",
+   "fonte": "https://dimec.unipg.it/files/docs/sezioni/sezione-cdl-in-scienze-motorie-e-sportive/documenti/calendario_orario_appelli_2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli di febbraio (1° e 2° appello)",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "Finestre 1-14 e 15-26 febbraio 2027"
+    },
+    {
+     "nome": "Appelli di giugno-luglio (3°-5° appello)",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-20",
+     "note": "Finestre 1-15 giugno, 16-30 giugno, 1-20 luglio 2027"
+    },
+    {
+     "nome": "Appelli di settembre (6° e 7° appello)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Finestre 1-15 e 16-30 settembre 2027"
+    },
+    {
+     "nome": "Appello di dicembre (8° appello)",
+     "inizio": "2027-12-09",
+     "fine": "2027-12-16",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipg-l-22-scienze-motorie-e-sportive"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale interclasse in Scienze e tecniche dello sport e delle attività motorie preventive e adattate (LM-67/68)",
+   "fonte": "https://dimec.unipg.it/files/docs/sezioni/sezione-cdlm-scienze-tecniche-dello-sport-attivita-motorie-preventive-adattate/documenti/nuovo-calendario-esami-ordinari-lm92.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "Finestre 1-12 e 15-26 febbraio. Il calendario esami 2026/27 indica giorno e mese senza anno (riferiti al 2027)"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": "Finestre 1-15 giugno, 16-30 giugno, 1-15 luglio, 16-30 luglio"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Finestre 1-15 e 16-30 settembre; il calendario riporta anche una colonna «1-20 nov» senza anno"
+    }
+   ],
+   "corsi": [
+    "unipg-lm-67-lm-68-scienze-e-tecniche-dello-sport-e-delle-attivita-motorie-prev"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicina veterinaria",
+   "fonte": "https://medvet.unipg.it/files/lm-42/orario_lezioni/2026-2027/lineeguidastesuraorariolezioniecalendarioesami_2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli straordinari di dicembre",
+     "inizio": "2026-12-07",
+     "fine": "2026-12-18",
+     "note": "Aperti a tutti gli studenti"
+    },
+    {
+     "nome": "I sessione (insegnamenti del I semestre)",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "Dal 2° al 5° anno; per il 1° anno (semestre filtro) la I sessione è «da definire»"
+    },
+    {
+     "nome": "Appelli straordinari di marzo",
+     "inizio": "2027-03-01",
+     "fine": "2027-03-24",
+     "note": "Riservati a studenti del 5° anno e fuori corso"
+    },
+    {
+     "nome": "Periodo peri-pasquale",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "Dal 2° al 5° anno"
+    },
+    {
+     "nome": "Appelli straordinari di maggio",
+     "inizio": "2027-05-03",
+     "fine": "2027-05-28",
+     "note": "Riservati a studenti del 5° anno e fuori corso"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    },
+    {
+     "nome": "III sessione (insegnamenti del II semestre)",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-18",
+     "note": "Comprende l'appello straordinario aperto a tutti dal 7 al 18 febbraio 2028"
+    }
+   ],
+   "corsi": [
+    "unipg-lm-42-medicina-veterinaria"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unipg-l-2-biotecnologie",
+  "unipg-l-4-design",
+  "unipg-l-8-l-9-engineering-management",
+  "unipg-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "unipg-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628435",
+  "unipg-l-31-informatica",
+  "unipg-l-7-ingegneria-civile-e-ambientale",
+  "unipg-l-9-ingegneria-industriale",
+  "unipg-l-8-ingegneria-informatica-ed-elettronica",
+  "unipg-l-9-ingegneria-meccanica",
+  "unipg-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+  "unipg-l-35-matematica",
+  "unipg-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+  "unipg-l-30-ottica-e-optometria",
+  "unipg-l-38-produzioni-animali",
+  "unipg-l-13-scienze-biologiche",
+  "unipg-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "unipg-lm-6-biologia",
+  "unipg-lm-8-biotecnologie-molecolari-e-industriali",
+  "unipg-lm-23-civil-engineering",
+  "unipg-lm-31-engineering-management",
+  "unipg-lm-74-geology-for-energy-resources",
+  "unipg-lm-18-informatica",
+  "unipg-lm-35-ingegneria-ambientale-per-lo-sviluppo-sostenibile-e-la-tutel",
+  "unipg-lm-53-ingegneria-dei-materiali-e-dei-processi-sostenibili",
+  "unipg-lm-26-ingegneria-della-sicurezza-per-il-territorio-e-il-costruito",
+  "unipg-lm-29-ingegneria-elettronica",
+  "unipg-lm-33-ingegneria-industriale",
+  "unipg-lm-32-ingegneria-informatica-e-robotica",
+  "unipg-lm-33-ingegneria-meccanica",
+  "unipg-lm-40-matematica",
+  "unipg-lm-12-planet-life-design",
+  "unipg-lm-9-scienze-biotecnologiche-mediche-veterinarie-e-forensi",
+  "unipg-lm-74-scienze-della-terra-per-la-gestione-dei-rischi-e-dell-ambien",
+  "unipg-lm-60-scienze-e-tecnologie-naturalistiche-e-ambientali",
+  "unipg-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "unipg-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie",
+  "unipg-lm-4-c-u-ingegneria-edile-architettura",
+  "unipg-lm-46-odontoiatria-e-protesi-dentaria",
+  "unipg-l-p03-metodologie-per-prodotto-e-processo",
+  "unipg-l-p03-programmazione-e-gestione-di-sistemi-informatici",
+  "unipg-l-p01-tecniche-digitali-per-la-gestione-sostenibile-delle-costruzi"
+ ],
+ "mancanti": "UniPG non ha un calendario d'esami di Ateneo: ogni Dipartimento o corso pubblica il proprio. Restano scoperti: Dipartimento di Ingegneria e Dipartimento di Ingegneria Civile ed Ambientale (solo tabelle delle date d'appello 2026/27 per insegnamento, senza periodi di sessione; dica.unipg.it non risponde, timeout); Dipartimento di Matematica e Informatica (calendario attività didattiche fermo al 2025/26; i possibili file 2026/27 rispondono 403); Dipartimento di Chimica, Biologia e Biotecnologie per Biotecnologie, Scienze biologiche, LM Biologia, LM Biotecnologie molecolari e industriali, LM Scienze e tecnologie naturalistiche e Metodologie per prodotto e processo (solo calendari 2026/27 delle date d'appello per insegnamento, o calendari fermi al 2024/25); Dipartimento di Fisica e Geologia per Ottica e optometria e le LM-74 (solo date dei singoli appelli); Produzioni animali (L-38): il calendario esami 2026/27 indica solo i mesi delle sessioni; Dipartimento di Medicina e Chirurgia: Fisioterapia, Logopedia (il regolamento 2026 prevede 4 sessioni senza date), Ostetricia (calendario delle attività solo grafico, senza date), Infermieristica Terni, Tecniche di radiologia medica (solo calendario 2024/25), Odontoiatria (solo date per insegnamento), LM Scienze infermieristiche e ostetriche, LM Scienze riabilitative e LM-9 Scienze biotecnologiche mediche, veterinarie e forensi (nessun calendario 2026/27 trovato sulle pagine dei corsi). Nota: econ.unipg.it non è raggiungibile con curl (certificato TLS segnalato come revocato); le pagine e i manifesti sono stati letti con WebFetch."
+}

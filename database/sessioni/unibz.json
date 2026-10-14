@@ -1,0 +1,88 @@
+{
+ "universita_id": "unibz",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://guide.unibz.it/assets/life-on-campus/academic-calendar/academic-calendar-2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria (dicembre)",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-23",
+     "note": "Sessione straordinaria: attivabile dalle singole Facoltà, anche solo per alcuni corsi o esami"
+    },
+    {
+     "nome": "Sessione invernale (ordinaria)",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-20",
+     "note": "Per il 1° anno preferibilmente dal 25/01 al 13/02/2027, per evitare sovrapposizioni con gli esami di lingua"
+    },
+    {
+     "nome": "Sessione straordinaria (esami di progetto DES)",
+     "inizio": "2027-03-02",
+     "fine": "2027-03-02",
+     "note": "Solo esami di progetto della Facoltà di Design e Arti"
+    },
+    {
+     "nome": "Sessione straordinaria (maggio)",
+     "inizio": "2027-05-12",
+     "fine": "2027-05-22",
+     "note": "Attivabile dalle singole Facoltà"
+    },
+    {
+     "nome": "Sessione estiva (ordinaria)",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-10",
+     "note": "Per la Facoltà di Economia (ECO) dal 15/06/2027"
+    },
+    {
+     "nome": "Sessione autunnale (ordinaria)",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-25",
+     "note": "Per il 1° anno preferibilmente dal 23/08 all'11/09/2027"
+    },
+    {
+     "nome": "Sessione straordinaria (esami di progetto DES)",
+     "inizio": "2027-09-28",
+     "fine": "2027-09-28",
+     "note": "Solo esami di progetto della Facoltà di Design e Arti"
+    }
+   ],
+   "corsi": [
+    "unibz-l-25-agricoltura-sostenibile-e-gestione-forestale-in-ambiente-mon",
+    "unibz-l-4-design-e-arti",
+    "unibz-l-18-economia-e-management",
+    "unibz-l-33-economia-politica-ed-etica",
+    "unibz-l-31-informatica",
+    "unibz-l-31-informatica-e-management-delle-aziende-digitali",
+    "unibz-l-8-ingegneria-elettronica-e-dell-informazione",
+    "unibz-l-9-ingegneria-industriale-meccanica",
+    "unibz-l-18-management-del-turismo-dello-sport-e-degli-eventi",
+    "unibz-l-26-scienze-alimentari-ed-enogastronomiche",
+    "unibz-l-19-scienze-dell-educazione",
+    "unibz-l-20-scienze-della-comunicazione-e-cultura",
+    "unibz-l-39-servizio-sociale",
+    "unibz-lm-77-accounting-e-finanza",
+    "unibz-lm-65-critical-creative-practices",
+    "unibz-lm-data-data-analytics-for-economics-and-management",
+    "unibz-lm-12-eco-social-design",
+    "unibz-lm-77-entrepreneurship-and-innovation",
+    "unibz-lm-73-gestione-sostenibile-dell-ambiente-montano",
+    "unibz-lm-18-informatica-per-la-data-science",
+    "unibz-lm-18-ingegneria-del-software",
+    "unibz-lm-30-ingegneria-energetica",
+    "unibz-lm-33-ingegneria-industriale-meccanica",
+    "unibz-lm-87-lavoro-sociale-e-politiche-sociali",
+    "unibz-lm-63-politiche-pubbliche-e-governance-innovativa",
+    "unibz-lm-70-scienze-degli-alimenti-per-l-innovazione-e-l-autenticita",
+    "unibz-lm-69-sistemi-agricoli-intelligenti-e-sostenibili-in-aree-montane",
+    "unibz-lm-32-smart-technologies-for-sports-and-health",
+    "unibz-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "Il calendario precisa che per i corsi offerti in cooperazione con altri atenei (LM interateneo LM-30, LM-33, LM-70, LM-73) sono possibili deroghe; per gli esami di tirocinio della LM-85 bis ogni ufficio tirocinio fissa 3 sessioni durante l'anno, non pubblicate nel calendario di ateneo."
+}

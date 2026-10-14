@@ -1,0 +1,121 @@
+{
+ "universita_id": "unisannio",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Ingegneria (DING)",
+   "fonte": "https://www.unisannio.it/sites/default/files/2026-06/Calendario%20didattico%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Periodo di valutazione I semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "Di norma 2 appelli per insegnamento"
+    },
+    {
+     "nome": "Periodo di valutazione II semestre",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Di norma 2 appelli per insegnamento. Ulteriore periodo di valutazione (1 appello) dal 1° settembre 2027 fino al giorno precedente l'inizio delle lezioni dell'a.a. 2027/28 (data di fine non ancora fissata)"
+    }
+   ],
+   "corsi": [
+    "unisannio-l-7-ingegneria-civile",
+    "unisannio-l-8-ingegneria-elettronica-e-biomedica",
+    "unisannio-l-9-ingegneria-energetica",
+    "unisannio-l-8-ingegneria-informatica",
+    "unisannio-lm-29-electronics-engineering-for-automation-and-sensing",
+    "unisannio-lm-23-ingegneria-civile",
+    "unisannio-lm-30-ingegneria-energetica",
+    "unisannio-lm-32-ingegneria-informatica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Diritto, Economia, Management e Metodi Quantitativi (DEMM)",
+   "fonte": "https://www.unisannio.it/sites/default/files/ateneo/documenti/Calendario_didattico_DEMM_2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione ordinaria di dicembre",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "sessione d'esami ordinaria con interruzione delle lezioni (dopo il termine del 1° semestre breve)"
+    },
+    {
+     "nome": "Sessione straordinaria aggiuntiva di gennaio",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-15",
+     "note": "solo insegnamenti del 1° anno, senza interruzione delle lezioni"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-05",
+     "note": "sessione d'esami ordinaria con interruzione delle lezioni"
+    },
+    {
+     "nome": "Sessione straordinaria di marzo",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-25",
+     "note": "con interruzione delle lezioni"
+    },
+    {
+     "nome": "Sessione straordinaria aggiuntiva di aprile",
+     "inizio": "2027-04-26",
+     "fine": "2027-04-30",
+     "note": "senza interruzione delle lezioni; riservata a studenti con non più di 2 esami di profitto da sostenere e CFU di altre attività/tirocinio già maturati"
+    },
+    {
+     "nome": "Sessione ordinaria di maggio",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-21",
+     "note": "con interruzione delle lezioni (dopo il termine del 2° semestre breve)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-09",
+     "note": "1° appello"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-07-12",
+     "fine": "2027-07-23",
+     "note": "2° appello"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-10",
+     "note": "sessione d'esami ordinaria"
+    },
+    {
+     "nome": "Sessione straordinaria di ottobre",
+     "inizio": "2027-10-18",
+     "fine": "2027-10-22",
+     "note": "con interruzione delle lezioni"
+    }
+   ],
+   "corsi": [
+    "unisannio-l-18-economia-aziendale",
+    "unisannio-l-18-economia-bancaria-e-finanziaria",
+    "unisannio-l-16-scienze-dell-amministrazione-digitale",
+    "unisannio-l-41-statistica-per-le-assicurazioni-e-la-finanza",
+    "unisannio-lm-77-economia-e-management",
+    "unisannio-lm-83-scienze-statistiche-e-attuariali",
+    "unisannio-lmg-01-giurisprudenza"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unisannio-l-2-biotecnologie",
+  "unisannio-l-13-scienze-biologiche",
+  "unisannio-l-34-scienze-geologiche",
+  "unisannio-l-22-scienze-motorie-per-lo-sport-e-la-salute",
+  "unisannio-l-32-scienze-naturali-geologiche-e-ambientali",
+  "unisannio-lm-6-biologia",
+  "unisannio-lm-9-biotecnologie-per-la-salute",
+  "unisannio-lm-74-geotecnologie-per-le-risorse-l-ambiente-e-i-rischi"
+ ],
+ "mancanti": "Calendario DEMM 2026/27: è un calendario grafico a colori senza date testuali; le finestre sono state lette dalle celle colorate secondo la legenda del PDF ufficiale (colori estratti dal PDF e controllati sulla resa grafica). Escluse le sessioni di settembre (7-11/09/2026) e ottobre 2026 (19-23/10/2026), che appartengono all'a.a. 2025/26 come mostrano i calendari delle sessioni 2025/26 per corso; escluse anche le sessioni per il recupero degli OFA. Il calendario di dipartimento vale per tutti i corsi DEMM (Giurisprudenza, Economia aziendale, Economia bancaria e finanziaria, Scienze dell'amministrazione digitale, Statistica per le assicurazioni e la finanza, Economia e management, Scienze statistiche e attuariali); i calendari delle sessioni per singolo corso sono ancora quelli 2025/26. Dipartimento DST (Biotecnologie, Scienze biologiche, Scienze geologiche, Scienze motorie, Scienze naturali, Biologia, Biotecnologie per la salute, Geotecnologie): la pagina «Calendario esami» rimanda solo alla bacheca appelli di Esse3, le pagine dei corsi e gli orari 2026/27 non riportano le sessioni. Il Regolamento didattico DST indica solo i periodi generici (sessione anticipata a dicembre, invernale tra i due semestri, estiva dalla fine del 2° semestre a fine settembre), senza date."
+}

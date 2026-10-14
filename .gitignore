@@ -1,0 +1,19 @@
+.dart_tool/
+build/
+.idea/
+.vscode/
+*.iml
+__pycache__/
+.venv/
+.DS_Store
+database/contrib/auto/
+data/raw/probe/
+# file per ateneo negli asset: solo nelle build locali (sync_assets.py --completo); le build pubblicate li scaricano nell'app
+app/assets/database/corsi/*.json*
+app/assets/database/sessioni/*.json
+app/assets/database/moduli/*.json
+data/verifica_db.json
+data/verifica_fonti.json
+
+# tabella libri per insegnamento: oltre 100 MB, nel repository va la copia .csv.gz
+docs/libri/libri_obbligatori_per_insegnamento.csv

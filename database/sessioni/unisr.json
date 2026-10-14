@@ -1,0 +1,802 @@
+{
+ "universita_id": "unisr",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Facoltà di Filosofia (Filosofia, Filosofia del mondo contemporaneo, Teoria e storia delle arti e dell'immagine)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-Facoltà-di-Filosofia-a.a.2026-2027/bcf84c69-b9ab-4869-b8e9-497dddd64816/346a6fa7-196f-437f-80af-5407ad6dbe83.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2028-01-24",
+     "fine": "2028-02-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisr-l-5-filosofia",
+    "unisr-lm-78-filosofia-del-mondo-contemporaneo",
+    "unisr-lm-89-teoria-e-storia-delle-arti-e-dell-immagine"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze e Tecniche Psicologiche (Facoltà di Psicologia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-Corso-di-Laurea-in-Scienze-e-tecniche-Psicologiche-a.a.2026-2027/1487f461-01a0-4562-9584-0d084334e38b/85e3e4a9-557c-47d3-993a-911383786262.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-09",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-15",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisr-l-24-scienze-e-tecniche-psicologiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Psicologia (Facoltà di Psicologia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-Corso-di-Laurea-Magistrale-in-Psicologia-a.a.2026-2027/1487f461-01a0-4562-9584-0d084334e38b/6449c390-c560-4197-9467-c1a8383f3cf8.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (I anno)",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (II anno)",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (I anno)",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-09",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (II anno)",
+     "inizio": "2027-06-03",
+     "fine": "2027-06-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-25",
+     "fine": "2027-09-17",
+     "note": "I e II anno"
+    }
+   ],
+   "corsi": [
+    "unisr-lm-51-psicologia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Cognitive Psychology in Health Communication / Psicologia cognitiva nella comunicazione della salute (Facoltà di Psicologia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-Corso-di-Laurea-Magistrale-in-Psicologia-cognitiva-in-comunicazione-della-salute-a.a.2026-2027/1487f461-01a0-4562-9584-0d084334e38b/1263270b-441b-4146-b918-3eb17e7a9f42.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-04",
+     "fine": "2027-01-29",
+     "note": "I e II anno"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-06-18",
+     "note": "I e II anno"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-25",
+     "fine": "2027-09-17",
+     "note": "I e II anno"
+    }
+   ],
+   "corsi": [
+    "unisr-lm-51-cognitive-psychology-in-health-communication",
+    "unisr-lm-51-corso-di-laurea-magistrale-in-psicologia-cognitiva-nella-com"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Medicina e Chirurgia - CdS 1 (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-2026-2027-Corso-di-Laurea-Magistrale-in-Medicina-e-Chirurgia-1/687de006-7d8a-4182-ae09-90e50f0d1543/7ffaa989-a21b-4ef1-a6c1-8cddcbe23990.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (I anno)",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (II-VI anno)",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione facoltativa",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-09",
+     "note": "I-VI anno"
+    },
+    {
+     "nome": "Sessione estiva (VI anno)",
+     "inizio": "2027-06-03",
+     "fine": "2027-06-11",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (I-VI anno)",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "I-VI anno"
+    }
+   ],
+   "corsi": [
+    "unisr-lm-41-medicina-e-chirurgia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Medicina e Chirurgia - CdS 2 (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-2026-2027-Corso-di-Laurea-Magistrale-in-Medicina-e-Chirurgia-2/687de006-7d8a-4182-ae09-90e50f0d1543/0eef239f-763e-453b-b872-138e96a69ec0.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (I anno)",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (II-III anno)",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione facoltativa",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-09",
+     "note": "I-III anno"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-30",
+     "note": "I-III anno"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "I-III anno"
+    }
+   ],
+   "corsi": [
+    "unisr-lm-41-medicina-e-chirurgia-replica-1",
+    "unisr-lm-41-corso-di-laurea-magistrale-in-medicina-e-chirurgia-2"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Medicina e Chirurgia - CdS 3 (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-2026-2027-Corso-di-Laurea-Magistrale-in-Medicina-e-Chirurgia-3/687de006-7d8a-4182-ae09-90e50f0d1543/8e34bc0a-6d1e-4fa8-8456-858a64c50901.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (I anno)",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (II-III anno)",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione facoltativa",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-09",
+     "note": "I-III anno"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-30",
+     "note": "I-III anno"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "I-III anno"
+    }
+   ],
+   "corsi": [
+    "unisr-lm-41-medicina-e-chirurgia-replica-2"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale International Medical Doctor Program (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/IMDP_Academic-Calendar-Y.A.-2026-2027/53101209-5475-4765-8e92-ce010668b3be/c87f9594-588b-4db5-be2c-01920ab650dc.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (VI anno)",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (I anno)",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (II-VI anno)",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione facoltativa",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-09",
+     "note": "I-VI anno"
+    },
+    {
+     "nome": "Sessione primaverile (VI anno)",
+     "inizio": "2027-05-03",
+     "fine": "2027-05-07",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-30",
+     "note": "I-VI anno"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "I-VI anno"
+    }
+   ],
+   "corsi": [
+    "unisr-lm-41-medicine-and-surgery"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Odontoiatria e Protesi Dentaria (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-Corso-di-Laurea-Magistrale-in-Odontoiatria-e-Protesi-dentaria-2026-2027/7af57319-1065-4726-930c-788c8c812342/3f321ec1-3928-4dcc-8c5a-e1fb105f4d1b.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (VI anno)",
+     "inizio": "2026-12-14",
+     "fine": "2027-01-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (I-V anno)",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-30",
+     "note": "I-V anno"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "I-V anno"
+    },
+    {
+     "nome": "Esami di recupero (VI anno)",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-11",
+     "note": null
+    },
+    {
+     "nome": "Esami di recupero (II-V anno)",
+     "inizio": "2027-01-25",
+     "fine": "2027-01-29",
+     "note": null
+    },
+    {
+     "nome": "Esami di recupero (I-V anno)",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-02",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisr-lm-46-odontoiatria-e-protesi-dentaria"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Infermieristica (Facoltà di Medicina e Chirurgia); calendario unico pubblicato per il CdL, applicato anche alla sede di Ponte San Pietro",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-A.A.-2026-2027/167b5b6a-2f21-40e6-a73d-f52a82076264/73e4a03a-2d37-4aab-bfdb-5915df0df714.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (III anno)",
+     "inizio": "2026-12-09",
+     "fine": "2027-01-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (I anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (II anno)",
+     "inizio": "2027-02-18",
+     "fine": "2027-03-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (II anno)",
+     "inizio": "2027-05-17",
+     "fine": "2027-06-25",
+     "note": "Nel PDF l'inizio è indicato come 17/05/2026, refuso evidente (lezioni del II semestre fino al 07/05/2027)"
+    },
+    {
+     "nome": "Sessione estiva (III anno)",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (I anno)",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-30",
+     "note": "Nel PDF la fine è indicata come 30/07/2026, refuso evidente"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-01",
+     "note": "I, II e III anno"
+    }
+   ],
+   "corsi": [
+    "unisr-l-snt1-corso-di-laurea-in-infermieristica",
+    "unisr-l-snt1-corso-di-laurea-in-infermieristica-2",
+    "unisr-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "unisr-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1627929"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Fisioterapia (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-CdL-Fisioterapia-a.a.-2026-2027/891210e2-68bd-43d8-9c81-c30eee3f5d22/ec167c84-4088-4a76-bc82-e5e1a440061c.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione autunnale (I anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-26",
+     "note": "Periodo di gennaio così denominato («Autunnale») nel calendario"
+    },
+    {
+     "nome": "Sessione autunnale (II-III anno)",
+     "inizio": "2027-01-27",
+     "fine": "2027-02-19",
+     "note": "Periodo di gennaio-febbraio così denominato («Autunnale») nel calendario"
+    },
+    {
+     "nome": "Sessione estiva (I anno)",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (III anno)",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (II anno)",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Esami di recupero (I anno) 1",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-30",
+     "note": null
+    },
+    {
+     "nome": "Esami di recupero (I anno) 2",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Esami di recupero (I anno) 3",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Esami di recupero (II e III anno) 1",
+     "inizio": "2027-05-03",
+     "fine": "2027-05-31",
+     "note": null
+    },
+    {
+     "nome": "Esami di recupero (II e III anno) 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisr-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Igiene Dentale (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-Igiene-Dentale_2026_2027/161273a8-3e21-4385-a655-9c1288f53f59/0c46ffb8-35a9-4177-a2e8-c2325aeae1ca.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "I, II e III anno"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-30",
+     "note": "I, II e III anno"
+    },
+    {
+     "nome": "Esami di recupero 1",
+     "inizio": "2027-01-25",
+     "fine": "2027-01-29",
+     "note": "I, II e III anno"
+    },
+    {
+     "nome": "Esami di recupero 2",
+     "inizio": "2027-06-24",
+     "fine": "2027-06-30",
+     "note": "I, II e III anno"
+    }
+   ],
+   "corsi": [
+    "unisr-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Osteopatia (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-Corso-di-Laurea-in-Osteopatia-2026-2027/ce400c7f-7a46-4549-9428-69422a3921e6/a0633a8b-07c8-4081-b1d9-e32bc84466cb.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-29",
+     "note": "I e II anno"
+    },
+    {
+     "nome": "Sessione estiva (I anno) 1",
+     "inizio": "2027-05-10",
+     "fine": "2027-06-04",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (II anno) 1",
+     "inizio": "2027-05-17",
+     "fine": "2027-06-11",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-07-19",
+     "fine": "2027-07-31",
+     "note": "I e II anno"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "I e II anno"
+    }
+   ],
+   "corsi": [
+    "unisr-l-snt4-osteopatia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Ostetricia (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-Corso-di-Laurea-in-Ostetricia-2026-2027/2c33b886-ae74-4a6c-b98c-c6db2d903575/e15f82ee-7049-4886-aab6-d665365aa26c.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (I anno)",
+     "inizio": "2026-12-09",
+     "fine": "2027-01-15",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (III anno)",
+     "inizio": "2027-02-08",
+     "fine": "2027-03-05",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (II anno)",
+     "inizio": "2027-03-01",
+     "fine": "2027-03-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (I anno)",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (III anno)",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (II anno)",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-31",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisr-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Ricerca Biotecnologica in Medicina (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-A.A.-2026-2027/e0d9c057-ebd6-4142-b8be-fed92be78b0b/2d310925-2083-4c5f-96d6-6ef7ca0f68f4.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2026-09-01",
+     "fine": "2026-09-30",
+     "note": "Periodo di settembre 2026 riportato nel calendario 2026/2027"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-05",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisr-l-2-ricerca-biotecnologica-in-medicina"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche di Radiologia Medica per Immagini e Radioterapia (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-A.A.-2026-2027/0cf74da9-6cde-4bee-97e3-1246d3daf17a/be65d963-b3c6-47a4-97bf-1c03d50883fa.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-29",
+     "note": "I e II anno"
+    },
+    {
+     "nome": "Sessione estiva (I anno)",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (II anno)",
+     "inizio": "2027-06-08",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "I e II anno"
+    }
+   ],
+   "corsi": [
+    "unisr-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Biotechnology for Innovative Therapeutics (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Academic-calendar-A.Y.-2026-2027/5c7e3330-cb84-4052-a3b7-15aa3a19f64e/07b7ee44-1124-4b56-ab1d-5afb61ac3f9a.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2026-09-01",
+     "fine": "2026-09-30",
+     "note": "Autumn session di settembre 2026 riportata nell'Academic calendar 2026/2027"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisr-lm-9-biotechnology-for-innovative-therapeutics"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Health Informatics (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Academic-Calendar-Corso-di-Laurea-Magistrale-in-Health-Informatics-2026-2027/c20434d8-86f6-4f5f-9217-52ddbb6fe202/35540eaf-f0f1-4687-8e4a-0acf28beec81.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-05",
+     "note": "I e II anno"
+    },
+    {
+     "nome": "Esami di recupero",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-09",
+     "note": "I e II anno"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-09",
+     "note": "I e II anno"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "I e II anno"
+    }
+   ],
+   "corsi": [
+    "unisr-lm-18-health-informatics"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze Infermieristiche e Ostetriche (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-Corso-di-Laurea-Magistrale-in-Scienze-Infermieristiche-ed-Ostetriche-2026-2027/8f3d7784-b0da-431c-98fd-9d0b0f147ce1/11c38a28-baab-4255-95ec-ffede681e6a7.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "I e II anno"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "I e II anno"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "I e II anno"
+    }
+   ],
+   "corsi": [
+    "unisr-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze Riabilitative delle Professioni Sanitarie (Facoltà di Medicina e Chirurgia)",
+   "fonte": "https://www.unisr.it/attachments/Calendario-Accademico-Corso-di-Laurea-Magistrale-in-Scienze-Riabilitative-Professioni-sanitarie-2026-2027/8ca2b032-131b-4267-9b75-e4f1239739c2/18ac1a85-f6f8-4bd8-af8a-7b94a3b15c25.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (II anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-29",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (I anno)",
+     "inizio": "2027-02-22",
+     "fine": "2027-03-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-03",
+     "fine": "2027-07-30",
+     "note": "I e II anno"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "I e II anno"
+    }
+   ],
+   "corsi": [
+    "unisr-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "UniSR pubblica un calendario didattico per ogni corso (o per Facoltà, nel caso di Filosofia). Infermieristica: un solo calendario per il CdL, assegnato anche alla sede di Ponte San Pietro; due date dell'Infermieristica hanno un refuso sull'anno, corretto e segnalato in nota. Medicina e Chirurgia: i calendari CdS 1, 2 e 3 sono stati abbinati rispettivamente al corso principale, alla replica 1 (insieme al «Corso di Laurea Magistrale in Medicina e Chirurgia 2») e alla replica 2; le date d'esame dei tre canali coincidono per gli anni I-III."
+}

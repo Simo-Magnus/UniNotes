@@ -1,0 +1,72 @@
+{
+ "universita_id": "luiss",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://www.luiss.it/it/ateneo/luiss-life/calendario-accademico/calendario-accademico-20262027",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-19",
+     "note": "Un solo appello per le materie del I semestre"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-30",
+     "note": "Ulteriori appelli per le materie del I semestre e retake, secondo le regole del corso di laurea"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-10",
+     "fine": "2027-05-22",
+     "note": "Un solo appello per le materie del II semestre"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-26",
+     "note": "Ulteriori appelli e retake; la pagina indica «sabato 27 giugno 2027» per questa finestra ma «sabato 26 giugno 2027» come fine della sessione estiva"
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-08-25",
+     "fine": "2027-09-04",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-13",
+     "note": "Solo per studenti iscritti nel 2026/27 al III anno delle triennali, al II delle magistrali, al V del ciclo unico e fuori corso"
+    }
+   ],
+   "corsi": [
+    "luiss-l-18-business-administration",
+    "luiss-l-18-economia-e-management",
+    "luiss-l-33-economics-and-business",
+    "luiss-l-14-global-law",
+    "luiss-l-18-management-and-artificial-intelligence",
+    "luiss-l-36-politics-philosophy-and-economics",
+    "luiss-l-36-scienze-politiche",
+    "luiss-lm-77-amministrazione-finanza-e-controllo",
+    "luiss-lm-data-data-science-and-management",
+    "luiss-lm-56-economia-istituzioni-e-mercati-finanziari",
+    "luiss-lm-77-finance",
+    "luiss-lm-77-global-management-and-politics",
+    "luiss-lm-62-government-and-public-affairs",
+    "luiss-lm-62-government-public-affairs",
+    "luiss-lm-52-international-relations",
+    "luiss-lm-77-management",
+    "luiss-lm-77-marketing",
+    "luiss-lm-77-strategic-management",
+    "luiss-lmg-01-giurisprudenza"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

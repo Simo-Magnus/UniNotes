@@ -1,0 +1,1001 @@
+{
+ "universita_id": "unipr",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Ingegneria e Architettura - corsi di studio dell'area dell'Ingegneria",
+   "fonte": "https://dia.unipr.it/sites/dia/files/2026-06/Calendario%20attivit%C3%A0%20didattiche%20ingegneria%2026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2026-12-21",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione primaverile 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": "Appelli a discrezione del docente"
+    },
+    {
+     "nome": "Sessione primaverile 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "Appelli a discrezione del docente"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-06",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipr-l-7-ingegneria-civile-e-ambientale",
+    "unipr-l-8-ingegneria-delle-tecnologie-informatiche",
+    "unipr-l-9-ingegneria-gestionale",
+    "unipr-l-9-ingegneria-gestionale-1628674",
+    "unipr-l-8-ingegneria-informatica-elettronica-e-delle-telecomunicazioni",
+    "unipr-l-9-ingegneria-meccanica",
+    "unipr-l-p01-costruzioni-infrastrutture-e-territorio",
+    "unipr-lm-27-communication-engineering",
+    "unipr-lm-29-electronic-engineering-for-intelligent-vehicles",
+    "unipr-lm-35-environmental-engineering-for-risk-mitigation",
+    "unipr-lm-23-ingegneria-civile",
+    "unipr-lm-29-ingegneria-elettronica",
+    "unipr-lm-31-ingegneria-gestionale",
+    "unipr-lm-32-ingegneria-informatica",
+    "unipr-lm-33-ingegneria-meccanica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Architettura e Città Sostenibili (LM-4)",
+   "fonte": "https://dia.unipr.it/sites/dia/files/2026-06/Caldendario%20attivit%C3%A0%20Corso%20di%20Laurea%20%20Magistrale%20Architettura%20e%20Citt%C3%A0%20Sostenibili%202026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2026-12-21",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione primaverile 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": "Appelli a discrezione del docente"
+    },
+    {
+     "nome": "Sessione primaverile 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "Appelli a discrezione del docente"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-06",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipr-lm-4-architettura-e-citta-sostenibili"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Architettura Rigenerazione Sostenibilità (L-17)",
+   "fonte": "https://dia.unipr.it/sites/dia/files/2026-06/Calendario%20date%20attivit%C3%A0%20Architettura%20Rigenerazione%20Sostenibilit%C3%A0%20%202026_2027_0.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2026-12-21",
+     "fine": "2027-02-19",
+     "note": "Per il I anno il calendario indica l'inizio da mercoledì 14 gennaio (anno stampato 2026)"
+    },
+    {
+     "nome": "Sessione primaverile 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": "Appelli a discrezione del docente"
+    },
+    {
+     "nome": "Sessione primaverile 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "Appelli a discrezione del docente"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-06",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipr-l-17-architettura-rigenerazione-sostenibilita"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Design Sostenibile per il Sistema Alimentare (L-4) - sede UNIPR",
+   "fonte": "https://dia.unipr.it/sites/dia/files/2026-06/CALENDARIO%20ATTIVITA%27%20DIDATTICHE%20%20Design%20Sostenibile%20per%20il%20Sistema%20Alimentare%202026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Sede UNIPR; sede Politecnico di Torino 11/01-20/02/2027"
+    },
+    {
+     "nome": "Sessione primaverile 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": "Appelli a discrezione del docente"
+    },
+    {
+     "nome": "Sessione primaverile 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "Appelli a discrezione del docente"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-23",
+     "note": "Sede UNIPR; sede Politecnico di Torino 07/06-17/07/2027"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": "Sede UNIPR; sede Politecnico di Torino 30/08-18/09/2027"
+    }
+   ],
+   "corsi": [
+    "unipr-l-4-design-sostenibile-per-il-sistema-alimentare"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Discipline Umanistiche, Sociali e delle Imprese Culturali - ambito umanistico",
+   "fonte": "https://dusic.unipr.it/didattica/calendario-delle-attivita-didattiche/ambito-umanistico",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-09",
+     "fine": "2027-02-12",
+     "note": "Tre appelli, per insegnamenti del I semestre 2026/27 e anni precedenti"
+    },
+    {
+     "nome": "Sessione primaverile",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "Un appello, per insegnamenti del I semestre 2026/27 e anni precedenti"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-23",
+     "note": "Tre appelli, tutti gli insegnamenti"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "Un appello, non accessibile agli immatricolati 2027/28"
+    }
+   ],
+   "corsi": [
+    "unipr-l-1-beni-artistici-librari-e-dello-spettacolo",
+    "unipr-l-11-civilta-e-lingue-straniere-moderne",
+    "unipr-l-20-comunicazione-e-media-contemporanei-per-le-industrie-creativ",
+    "unipr-l-10-lettere",
+    "unipr-l-19-scienze-dell-educazione-e-dei-processi-formativi",
+    "unipr-l-5-studi-filosofici",
+    "unipr-lm-78-filosofia",
+    "unipr-lm-19-giornalismo-cultura-editoriale-comunicazione-ambientale-e-mu",
+    "unipr-lm-14-lm-15-lettere-classiche-e-moderne",
+    "unipr-lm-39-language-sciences-and-cultural-studies-for-special-needs",
+    "unipr-lm-50-progettazione-e-coordinamento-dei-servizi-educativi",
+    "unipr-lm-65-lm-89-storia-critica-e-linguaggi-delle-arti-e-dello-spettacolo"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Discipline Umanistiche, Sociali e delle Imprese Culturali - ambito psicologico (LM Psicologia dell'intervento clinico e sociale)",
+   "fonte": "https://dusic.unipr.it/didattica/calendario-delle-attivita-didattiche/ambito-psicologico",
+   "sessioni": [
+    {
+     "nome": "Appello di fine I semestre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-21",
+     "note": "Un appello per ogni insegnamento della LM attivo nell'anno"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Appello di fine II semestre",
+     "inizio": "2027-05-10",
+     "fine": "2027-05-28",
+     "note": "Un appello per ogni insegnamento della LM attivo nell'anno"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipr-lm-51-psicologia-dell-intervento-clinico-e-sociale"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Economiche e Aziendali",
+   "fonte": "https://sea.unipr.it/sites/sea/files/2026-06/calendario%20didattico%20a.a.%2026-27_CdD_15_aprile_2026.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-11",
+     "fine": "2026-12-22",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-05",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-09",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unipr-l-18-economia-e-management",
+    "unipr-l-18-economia-e-management-delle-filiere-alimentari-sostenibili",
+    "unipr-lm-77-amministrazione-e-direzione-aziendale",
+    "unipr-lm-77-financial-management-per-imprese-mercati-e-intermediari",
+    "unipr-lm-77-international-business-and-development",
+    "unipr-lm-77-trade-e-consumer-marketing",
+    "unipr-lm-77-economics-and-management-of-sustainable-food-system",
+    "unipr-lm-data-data-science-for-management"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Giurisprudenza, Studi Politici e Internazionali",
+   "fonte": "https://gspi.unipr.it/sites/gspi/files/2026-03/Calendario%20accademico%202026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-14",
+     "fine": "2027-01-22",
+     "note": "Due appelli obbligatori, di cui uno a dicembre"
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-15",
+     "fine": "2027-02-26",
+     "note": "Un appello; lezioni sospese"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-16",
+     "note": "Tre appelli"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "Un appello"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": "Un appello per tutti i corsi; lezioni sospese"
+    }
+   ],
+   "corsi": [
+    "unipr-lmg-01-giurisprudenza",
+    "unipr-lm-sc-giur-global-food-law-sustainability-challenges-and-innovation",
+    "unipr-l-36-scienze-politiche-e-delle-relazioni-internazionali",
+    "unipr-lm-52-global-politics-e-relazioni-internazionali",
+    "unipr-l-39-servizio-sociale",
+    "unipr-lm-87-programmazione-e-gestione-dei-servizi-sociali",
+    "unipr-lm-63-innovazione-organizzativa-digitale-e-amministrativa-della-p"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Chimiche, della Vita e della Sostenibilità Ambientale (SCVSA) - calendario comune pubblicato sulle pagine dei CdS",
+   "fonte": "https://corsi.unipr.it/it/cdl-bio/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria autunnale",
+     "inizio": "2026-11-25",
+     "fine": "2026-11-27",
+     "note": "Per prove in itinere ed esami; con sospensione delle lezioni (triennali: escluso il I anno; magistrali: solo il II anno)"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-21",
+     "fine": "2027-02-26",
+     "note": "Corsi del 1° semestre"
+    },
+    {
+     "nome": "Sessione straordinaria primaverile",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "Per prove in itinere ed esami, senza sospensione delle lezioni"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Corsi del 1° e del 2° semestre"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": "Corsi del 1° e del 2° semestre; per i corsi del 2° semestre è previsto anche un appello a febbraio 2028 (date non indicate)"
+    }
+   ],
+   "corsi": [
+    "unipr-l-13-biologia",
+    "unipr-l-2-biotecnologie",
+    "unipr-l-27-chimica",
+    "unipr-l-sc-mat-scienza-dei-materiali",
+    "unipr-l-32-scienze-della-natura-e-dell-ambiente",
+    "unipr-l-34-scienze-geologiche",
+    "unipr-lm-8-biotecnologie-genomiche-molecolari-e-industriali",
+    "unipr-lm-54-chimica",
+    "unipr-lm-71-chimica-industriale",
+    "unipr-lm-6-ecologia-ed-etologia-per-la-conservazione-della-natura",
+    "unipr-lm-6-scienze-biomediche-traslazionali",
+    "unipr-lm-6-scienze-biomolecolari-genomiche-e-cellulari",
+    "unipr-lm-75-scienze-e-tecnologie-per-l-ambiente-e-le-risorse",
+    "unipr-lm-74-scienze-geologiche-applicate-alla-sostenibilita-ambientale",
+    "unipr-lm-sc-mat-functional-and-sustainable-materials"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Matematica (L-35)",
+   "fonte": "https://corsi.unipr.it/it/cdl-mate/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria autunnale",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-04",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione primaverile straordinaria",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipr-l-35-matematica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Matematica (LM-40)",
+   "fonte": "https://corsi.unipr.it/it/cdlm-mate/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria autunnale",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-04",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria primaverile",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipr-lm-40-matematica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Fisica (L-30)",
+   "fonte": "https://corsi.unipr.it/it/cdl-fis/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-08",
+     "note": "Segue la sessione autunnale dal 23/08/2027 fino all'inizio delle lezioni dell'a.a. successivo (data di fine non indicata)"
+    }
+   ],
+   "corsi": [
+    "unipr-l-30-fisica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Fisica (LM-17)",
+   "fonte": "https://corsi.unipr.it/it/cdlm-fis/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-08-06",
+     "note": "Segue la sessione autunnale dal 23/08/2027 fino all'inizio delle lezioni dell'a.a. successivo (data di fine non indicata)"
+    }
+   ],
+   "corsi": [
+    "unipr-lm-17-fisica"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea in Informatica (L-31) e Scienze Informatiche (LM-18)",
+   "fonte": "https://corsi.unipr.it/it/cdl-info/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria autunnale",
+     "inizio": "2026-11-03",
+     "fine": "2026-11-08",
+     "note": "Prove intermedie o appelli straordinari"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria primaverile",
+     "inizio": "2027-04-19",
+     "fine": "2027-04-23",
+     "note": "Prove intermedie o appelli straordinari"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-08",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipr-l-31-informatica",
+    "unipr-lm-18-scienze-informatiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Medico-Veterinarie - calendario comune pubblicato sulle pagine dei CdS",
+   "fonte": "https://corsi.unipr.it/it/cdlm-mv/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-21",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Prolungamento sessione anticipata",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-04",
+     "note": "1 appello"
+    },
+    {
+     "nome": "I sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-08",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-12",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-11-03",
+     "fine": "2027-11-05",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Prolungamento II sessione",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-23",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unipr-l-38-scienze-animali",
+    "unipr-lm-86-produzioni-animali-innovative-e-sostenibili",
+    "unipr-l-p02-tecnologie-e-gestione-dellimpresa-casearia",
+    "unipr-lm-42-medicina-veterinaria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Medicina e Chirurgia - Infermieristica, Ostetricia, LM Scienze infermieristiche e ostetriche, LM Biotecnologie Mediche, Veterinarie e Farmaceutiche (pagine dei CdS)",
+   "fonte": "https://corsi.unipr.it/it/cdl-infe/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale/anticipata",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Riservata agli insegnamenti del I semestre dell'a.a. in corso e degli anni precedenti"
+    },
+    {
+     "nome": "Sessione primaverile",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva/autunnale",
+     "inizio": "2027-06-15",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione di dicembre",
+     "inizio": "2027-12-20",
+     "fine": "2027-12-23",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipr-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "unipr-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628774",
+    "unipr-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628773",
+    "unipr-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+    "unipr-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+    "unipr-lm-9-biotecnologie-mediche-veterinarie-e-farmaceutiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Medicina e Chirurgia - Scienze motorie (L-22, LM-67) e Scienze e Tecniche Psicologiche (L-24) (pagine dei CdS)",
+   "fonte": "https://corsi.unipr.it/it/cdl-smss/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione primaverile",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "Il calendario indica anche una sessione a febbraio 2027 senza date precise"
+    },
+    {
+     "nome": "Sessione estiva/autunnale",
+     "inizio": "2027-06-15",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione di dicembre",
+     "inizio": "2027-12-20",
+     "fine": "2027-12-23",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipr-l-22-scienze-motorie-sport-e-salute",
+    "unipr-lm-67-scienze-e-tecniche-delle-attivita-motorie-preventive-e-adatt",
+    "unipr-l-24-scienze-e-tecniche-psicologiche-per-le-sfide-contemporanee"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Global Studies for Sustainable Local and International Development and Cooperation (L-37)",
+   "fonte": "https://corsi.unipr.it/it/cdl-globals/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-09-03",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipr-l-37-global-studies-for-sustainable-local-and-international-devel"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Interprete di Lingua dei Segni Italiana e LIST (L-12)",
+   "fonte": "https://corsi.unipr.it/it/cdl-inlist/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-09",
+     "fine": "2027-02-12",
+     "note": "Tre appelli, per gli insegnamenti del I semestre 2026/27 e degli anni precedenti"
+    },
+    {
+     "nome": "Sessione primaverile",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "Tre appelli, per gli insegnamenti del I semestre 2026/27 e degli anni precedenti"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-23",
+     "note": "Tre appelli, tutti gli insegnamenti"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "Un appello, non accessibile agli immatricolati 2027/28; sessione straordinaria da definire"
+    }
+   ],
+   "corsi": [
+    "unipr-l-12-interprete-di-lingua-dei-segni-italiana-e-di-lingua-dei-segn"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Advanced Molecular Sciences for Health Products (LM-54)",
+   "fonte": "https://corsi.unipr.it/it/cdlm-amshp/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-03-05",
+     "note": "3 appelli; I anno dal 25/01/2027, II anno dal 07/01/2027"
+    },
+    {
+     "nome": "Sessione primaverile riservata",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "1 appello riservato"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale riservata",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-30",
+     "note": "1 appello riservato"
+    }
+   ],
+   "corsi": [
+    "unipr-lm-54-advanced-molecular-sciences-for-health-products"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Chimica e Tecnologia Farmaceutiche (LM-13)",
+   "fonte": "https://corsi.unipr.it/it/cdlm-ctf/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione primaverile riservata",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "1 appello riservato"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale riservata",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-30",
+     "note": "1 appello riservato"
+    }
+   ],
+   "corsi": [
+    "unipr-lm-13-chimica-e-tecnologia-farmaceutiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Farmacia (LM-13)",
+   "fonte": "https://corsi.unipr.it/it/cdlm-farma/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione di dicembre",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-23",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione primaverile riservata",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "1 appello riservato"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione autunnale riservata",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-30",
+     "note": "1 appello riservato"
+    }
+   ],
+   "corsi": [
+    "unipr-lm-13-farmacia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze della Nutrizione Umana (LM-61)",
+   "fonte": "https://corsi.unipr.it/it/cdlm-snu/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "I anno dal 25/01/2027, II anno dal 07/01/2027"
+    },
+    {
+     "nome": "Sessione straordinaria riservata 1",
+     "inizio": "2027-03-01",
+     "fine": "2027-06-04",
+     "note": "Riservata a laureandi e fuoricorso, a discrezione dei docenti"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "Aperta a tutti gli studenti, a discrezione dei docenti"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-06",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria riservata 2",
+     "inizio": "2027-09-27",
+     "fine": "2027-12-17",
+     "note": "Riservata a laureandi e fuoricorso, a discrezione dei docenti"
+    }
+   ],
+   "corsi": [
+    "unipr-lm-61-scienze-della-nutrizione-umana"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze e Tecnologie Alimentari (LM-70)",
+   "fonte": "https://corsi.unipr.it/it/cdlm-sta/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria primaverile",
+     "inizio": "2027-03-01",
+     "fine": "2027-06-04",
+     "note": null
+    },
+    {
+     "nome": "Sessione per corsi del 1° semestre",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-06",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria autunnale",
+     "inizio": "2027-09-27",
+     "fine": "2027-12-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unipr-lm-70-scienze-e-tecnologie-alimentari"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea professionalizzante in Qualità e Approvvigionamento di Materie Prime per l'Agro-Alimentare (L-P02)",
+   "fonte": "https://corsi.unipr.it/it/cdl-quam/calendario-delle-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-09-03",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-11-29",
+     "fine": "2027-12-23",
+     "note": "Appello riservato ai ripetenti"
+    }
+   ],
+   "corsi": [
+    "unipr-l-p02-qualita-e-approvvigionamento-di-materie-prime-per-l-agro-ali"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unipr-l-snt3-dental-hygiene",
+  "unipr-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar",
+  "unipr-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "unipr-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1628775",
+  "unipr-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+  "unipr-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes",
+  "unipr-l-26-scienze-e-tecnologie-alimentari",
+  "unipr-l-26-scienze-gastronomiche",
+  "unipr-l-snt3-tecniche-audioprotesiche-abilitante-alla-professione-sanitar",
+  "unipr-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+  "unipr-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+  "unipr-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "unipr-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil",
+  "unipr-lm-70-food-safety-and-food-risk-management",
+  "unipr-lm-51-psychobiology-and-cognitive-neuroscience",
+  "unipr-lm-68-lm-47-scienze-tecniche-e-management-dello-sport-e-delle-organizzaz",
+  "unipr-lm-41-medicina-e-chirurgia",
+  "unipr-lm-41-medicine-and-surgery",
+  "unipr-lm-46-odontoiatria-e-protesi-dentaria"
+ ],
+ "mancanti": "Pagine 'Calendario delle attività didattiche' dei CdS su corsi.unipr.it lette col browser l'11/10/2026 (nessun CAPTCHA). Ancora scoperti: (1) corsi del Dipartimento di Medicina e Chirurgia che pubblicano le sessioni solo nel PDF di dipartimento 'Approvazione Calendario Didattico 2026-2027' (DD 1134 del 03/08/2026, es. https://corsi.unipr.it/sites/default/files/2026-08/DD%201134%20P.%200256609%2003-08-26%20-%20Allegato%20I%20-%20Approvazione%20Calendario%20Didattico%202026-2027.pdf): Medicina e Chirurgia, Medicine and Surgery, Odontoiatria, Fisioterapia (e replica Piacenza), Logopedia, Ortottica, Tecniche di radiologia medica; (2) CdS che rimandano solo ad Agenda Studenti senza periodi di sessione: Dental Hygiene, Educazione professionale, Tecniche audioprotesiche, Tecniche della prevenzione, Tecniche di laboratorio biomedico, Terapia della neuro e psicomotricità; LM Scienze, Tecniche e Management dello Sport ('in fase di definizione'); (3) Dipartimento SAF, calendario 2026/27 solo in PDF: Scienze e Tecnologie Alimentari L-26 (https://corsi.unipr.it/sites/default/files/2026-06/Calendario%20didattico%202026-27_triennali.pdf), Scienze Gastronomiche (https://corsi.unipr.it/sites/default/files/2026-06/Calendario%20didattico%202026-27_triennali_0.pdf), Food Safety and Food Risk Management (https://corsi.unipr.it/sites/default/files/2026-06/Academic%20calendar%20LM70%20FSFRM%2026-27.pdf); (4) Psychobiology and Cognitive Neuroscience: pubblicato solo il calendario 2025/26. Assegnazione ai dipartimenti GSPI e DUSIC dedotta dall'afferenza dei corsi (LM-87, LM-63 e LM-52 attribuiti a GSPI); Data Science for Management attribuito al calendario SEA perché la pagina del CdS rimanda al calendario del Dipartimento SEA."
+}

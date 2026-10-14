@@ -1,0 +1,32 @@
+# Pagina di download (GitHub Pages): pubblica la cartella sito/ a ogni modifica.
+name: Pagina di download
+
+on:
+  push:
+    branches: [main]
+    paths: ["sito/**", ".github/workflows/pagina.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pagina
+  cancel-in-progress: true
+
+jobs:
+  pubblica:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: sito
+      - id: deploy
+        uses: actions/deploy-pages@v5

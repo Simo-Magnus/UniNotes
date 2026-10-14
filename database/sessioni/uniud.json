@@ -1,0 +1,429 @@
+{
+ "universita_id": "uniud",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento Politecnico di Ingegneria e Architettura (corsi di ingegneria e architettura)",
+   "fonte": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/ingegneria-meccanica/studiare/orario-lezioni/calendario-accademico_aa_26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "Stesse date nei calendari pubblicati per ciascun corso, compresi Ingegneria industriale per la sostenibilità ambientale e Industrial Engineering for Sustainable Manufacturing (calendario-accademico_aa_26-27.pdf nelle rispettive pagine «Orario delle lezioni»); in quelli di Ingegneria industriale per l'energia e di Industrial Engineering for Sustainable Manufacturing la fine è stampata come 26/02/2026, refuso"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniud-l-17-scienze-dell-architettura",
+    "uniud-l-7-ingegneria-civile-e-ambientale",
+    "uniud-l-8-ingegneria-elettronica",
+    "uniud-l-8-l-9-ingegneria-gestionale",
+    "uniud-l-9-ingegneria-industriale-per-lenergia",
+    "uniud-l-9-ingegneria-meccanica",
+    "uniud-l-p01-tecniche-dell-edilizia-e-del-territorio",
+    "uniud-lm-23-ingegneria-civile",
+    "uniud-lm-29-ingegneria-elettronica",
+    "uniud-lm-31-ingegneria-gestionale",
+    "uniud-lm-33-ingegneria-meccanica",
+    "uniud-lm-35-ingegneria-ambientale-per-la-resilienza-territoriale",
+    "uniud-lm-4-architettura",
+    "uniud-l-9-ingegneria-industriale-per-la-sostenibilita-ambientale",
+    "uniud-lm-31-lm-33-industrial-engineering-for-sustainable-manufacturing"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Agroalimentari, Ambientali e Animali (DI4A)",
+   "fonte": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea/scienze-agrarie/studiare/orario-lezioni",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-09-24",
+     "note": "Sessione unica estiva-autunnale come indicata dal calendario"
+    }
+   ],
+   "corsi": [
+    "uniud-l-25-scienze-agrarie",
+    "uniud-l-25-viticoltura-ed-enologia",
+    "uniud-l-26-scienze-e-tecnologie-alimentari",
+    "uniud-l-32-scienze-per-l-ambiente-e-la-natura",
+    "uniud-l-gastr-scienza-e-cultura-del-cibo",
+    "uniud-lm-69-scienze-e-tecnologie-agrarie",
+    "uniud-lm-7-lm-9-biotecnologie-molecolari",
+    "uniud-lm-70-scienze-e-tecnologie-alimentari",
+    "uniud-lm-75-scienze-e-tecnologie-sostenibili-per-l-ambiente",
+    "uniud-lm-86-tutela-e-benessere-animale",
+    "uniud-l-38-allevamento-e-salute-animale",
+    "uniud-lm-gastr-scienza-ed-economia-del-cibo"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Studi Umanistici e del Patrimonio Culturale (DIUM) - corsi di lettere, beni culturali, filosofia, turismo culturale",
+   "fonte": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea/lettere/studiare/orario-lezioni",
+   "sessioni": [
+    {
+     "nome": "I sessione 1",
+     "inizio": "2026-12-21",
+     "fine": "2026-12-23",
+     "note": null
+    },
+    {
+     "nome": "I sessione 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "II sessione 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-08-06",
+     "note": null
+    },
+    {
+     "nome": "II sessione 2",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniud-l-1-beni-culturali",
+    "uniud-l-10-lettere",
+    "uniud-l-15-scienze-e-tecniche-del-turismo-culturale",
+    "uniud-l-5-filosofia-e-trasformazione-digitale",
+    "uniud-lm-14-italianistica",
+    "uniud-lm-15-lm-2-archeologia-e-culture-dell-antichita",
+    "uniud-lm-49-gestione-del-turismo-culturale-e-degli-eventi",
+    "uniud-lm-65-scienze-del-patrimonio-audiovisivo-e-dell-educazione-ai-medi",
+    "uniud-lm-89-storia-dell-arte"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea DAMS - Discipline dell'audiovisivo, dei media e dello spettacolo (L-3)",
+   "fonte": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea/dams/studiare/orario-lezioni",
+   "sessioni": [
+    {
+     "nome": "Sessione I semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione II semestre",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-15",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Matematiche, Informatiche e Fisiche (DMIF)",
+   "fonte": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea/informatica/studiare/orario-lezioni",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Terza sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniud-l-20-l-31-tecnologie-digitali-e-comunicazione-per-le-industrie-creativ",
+    "uniud-l-31-informatica",
+    "uniud-l-31-internet-of-things-big-data-machine-learning",
+    "uniud-l-35-matematica",
+    "uniud-lm-18-artificial-intelligence-cybersecurity",
+    "uniud-lm-18-informatica",
+    "uniud-lm-18-lm-19-comunicazione-multimediale-e-tecnologie-dell-informazione",
+    "uniud-lm-40-matematica"
+   ]
+  },
+  {
+   "ambito": "Area economica (Dipartimento di Scienze Economiche e Statistiche); stesse sessioni pubblicate anche nelle pagine dei corsi Economia aziendale (https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/economia-aziendale/studiare/laurea-economia-aziendale) e Management & Business Analytics (https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/management-business-analytics/study/laurea-management-business-analytics)",
+   "fonte": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/banca-finanza/studiare/orario-lezioni",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "Due appelli per gli insegnamenti del 1° semestre, uno per quelli del 2° semestre"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-16",
+     "note": "Due appelli per gli insegnamenti del 1° semestre, tre per quelli del 2° semestre"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Un appello per tutti gli insegnamenti"
+    }
+   ],
+   "corsi": [
+    "uniud-l-18-banca-e-finanza",
+    "uniud-l-33-economia-e-commercio",
+    "uniud-lm-56-economics-scienze-economiche",
+    "uniud-lm-77-banca-e-finanza",
+    "uniud-lm-77-economia-aziendale",
+    "uniud-lm-77-international-marketing-management-and-organization",
+    "uniud-l-18-economia-aziendale",
+    "uniud-l-18-management-business-analytics"
+   ]
+  },
+  {
+   "ambito": "Corsi di lingue, mediazione e traduzione (L-11, L-12 Mediazione culturale, LM-37, LM-94); Mediazione culturale pubblica le stesse sessioni su https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea/mediazione-culturale/studiare/laurea-mediazione-culturale",
+   "fonte": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea/lingue-e-letterature-straniere/studiare/orario-lezioni",
+   "sessioni": [
+    {
+     "nome": "Sessione I semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-05",
+     "note": null
+    },
+    {
+     "nome": "Sessione II semestre",
+     "inizio": "2027-05-10",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniud-l-11-lingue-e-letterature-straniere",
+    "uniud-lm-37-lingue-e-letterature-europee-ed-extraeuropee",
+    "uniud-lm-94-traduzione-e-mediazione-culturale",
+    "uniud-l-12-mediazione-culturale"
+   ]
+  },
+  {
+   "ambito": "Corsi di comunicazione (L-20 Relazioni pubbliche, LM-59)",
+   "fonte": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea/relazioni-pubbliche/studiare/orario-lezioni",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-01",
+     "note": null
+    },
+    {
+     "nome": "IV sessione",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-18",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniud-l-20-relazioni-pubbliche",
+    "uniud-lm-59-comunicazione-integrata-per-le-imprese-e-le-organizzazioni"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Scienze della formazione primaria (LM-85 bis)",
+   "fonte": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/magistrale-ciclo-unico/scienze-formazione/studiare/orario-lezioni",
+   "sessioni": [
+    {
+     "nome": "Sessione I semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione II semestre",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-12-20",
+     "fine": "2028-02-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniud-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  },
+  {
+   "ambito": "Area giuridica (Dipartimento di Scienze Giuridiche); stesse sessioni pubblicate anche per Cittadinanza, istituzioni e politiche europee (LM-90) su https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/scienze-giuridiche/laurea-magistrale/cittadinanza-istituzioni-e-politiche-europee/studiare/orario-lezioni",
+   "fonte": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/scienze-giuridiche/magistrale-ciclo-unico/giurisprudenza/corso/giurisprudenza/studiare/orario-lezioni",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-12",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-16",
+     "note": "3 appelli; la pagina riporta \"16.07.20267\", refuso per 16.07.2027"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "1 appello; 1 o 2 appelli aggiuntivi facoltativi a novembre e/o aprile"
+    }
+   ],
+   "corsi": [
+    "uniud-lmg-01-giurisprudenza",
+    "uniud-l-14-diritto-per-le-imprese-e-le-istituzioni",
+    "uniud-lm-63-diritto-per-l-innovazione-di-imprese-e-pubbliche-amministraz",
+    "uniud-lm-90-cittadinanza-istituzioni-e-politiche-europee"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze dell'educazione (L-19)",
+   "fonte": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea/scienze-dell-educazione/studiare/orario-lezioni",
+   "sessioni": [
+    {
+     "nome": "Sessione I semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione II semestre",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-18",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniud-l-19-scienze-dell-educazione"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicina e chirurgia (LM-41) - solo appelli del semestre aperto (filtro) del 1° anno; per gli altri anni la pagina del corso indica soltanto che «gli esami si svolgono nei periodi di sospensione delle lezioni», senza date di sessione",
+   "fonte": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea-magistrale-ciclo-unico/medicina-e-chirurgia/studiare/didattica-semestre-aperto-2026-2027",
+   "sessioni": [
+    {
+     "nome": "Semestre aperto - appello 1",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-10",
+     "note": "Esami dei 3 insegnamenti del semestre filtro, stessa data in tutte le università"
+    },
+    {
+     "nome": "Semestre aperto - appello 2",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-11",
+     "note": "Esami dei 3 insegnamenti del semestre filtro, stessa data in tutte le università"
+    }
+   ],
+   "corsi": [
+    "uniud-lm-41-medicina-e-chirurgia"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "uniud-l-2-biotecnologie",
+  "uniud-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar",
+  "uniud-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-782",
+  "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1634365",
+  "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-771",
+  "uniud-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+  "uniud-l-22-scienze-motorie",
+  "uniud-lm-67-scienze-e-tecniche-delle-attivita-motorie-preventive-e-adatt",
+  "uniud-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic"
+ ],
+ "mancanti": "Secondo giro (11/10/2026): aggiunti Ingegneria industriale per la sostenibilità ambientale e Industrial Engineering for Sustainable Manufacturing al calendario del Dipartimento Politecnico (stesso calendario-accademico_aa_26-27.pdf), Economia aziendale e Management & Business Analytics all'area economica, Mediazione culturale ai corsi di lingue, Cittadinanza istituzioni e politiche europee all'area giuridica (stesse date pubblicate sulle rispettive pagine «Orario delle lezioni»), Scienze dell'educazione con calendario proprio e Medicina e chirurgia con i soli due appelli nazionali del semestre filtro. Ancora scoperti: Biotecnologie (la pagina 2026/27 dice solo che gli appelli si svolgono nel periodo di sospensione delle lezioni e rimanda a Esse3); Scienze motorie (L-22) e Scienze e tecniche delle attività motorie preventive e adattate (LM-67) (le pagine riportano solo i semestri e rimandano alle strutture didattiche, regolamento 2026/27 senza date di sessione); professioni sanitarie del Dipartimento di Medicina: Infermieristica (Udine, Pordenone e replica), Ostetricia, Scienze infermieristiche e ostetriche pubblicano solo calendari degli appelli per singolo insegnamento o pianificazioni annuali a diagramma, senza finestre di sessione; Educazione professionale e Fisioterapia indicano solo periodi didattici e di tirocinio. Le date dei singoli appelli non sono state usate per ricavare sessioni. Medicina e chirurgia: per gli anni successivi al primo nessuna data di sessione 2026/27."
+}

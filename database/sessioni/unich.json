@@ -1,0 +1,799 @@
+{
+ "universita_id": "unich",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Scuola delle Scienze Economiche, Aziendali, Giuridiche e Sociologiche (SEAGS)",
+   "fonte": "https://scuolaeconomia.unich.it/pagina-calendario-didattico-569",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-20",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-19",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unich-l-18-business-administration",
+    "unich-l-33-economics-and-finance",
+    "unich-l-14-servizi-giuridici-per-l-impresa",
+    "unich-lm-77-business-administration",
+    "unich-lm-56-economia-e-business-analytics",
+    "unich-lm-56-economics-and-finance",
+    "unich-lm-sc-giur-scienze-giuridiche-per-l-internazionalizzazione-e-l-innovazi"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Economia e Informatica per l'Impresa (CLEII, Scuola SEAGS)",
+   "fonte": "https://cleii.unich.it/pagina-calendario-didattico-108",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-20",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-24",
+     "note": "Il calendario della Scuola SEAGS indica inizio il 31/05/2027"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-19",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unich-l-33-economia-e-informatica-per-l-impresa"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Economia e Management (CLEM, Dipartimento di Economia Aziendale)",
+   "fonte": "https://clem.unich.it/documenti/__0__uda/__2126__dea/__2127__corsi_di_studio/__2225__clem/-%20Calendario%20attivit%C3%A0%20didattiche%20CLEM%20a-a%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-13",
+     "note": "Sessioni I e II (anticipata 2026/27; straordinaria 2025/26), 2 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-17",
+     "note": "Sessioni III-V, 3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "Sessione VI: 1 appello per gli insegnamenti del I semestre, 2 per quelli del II semestre"
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-12-09",
+     "fine": "2027-12-23",
+     "note": "Sessione VII, 1 appello"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-12",
+     "note": "Sessioni VIII e IX, 2 appelli"
+    }
+   ],
+   "corsi": [
+    "unich-l-18-economia-e-management"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Economia e Management (CLEMAM, Dipartimento di Economia Aziendale)",
+   "fonte": "https://dea.unich.it/documenti/__0__uda/__2126__dea/__2127__corsi_di_studio/__2226__clemam/-%20Calendario%20attivit%C3%A0%20didattiche%20CLEMAM%20a-a%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata 1",
+     "inizio": "2026-11-16",
+     "fine": "2027-01-09",
+     "note": "Straordinaria a.a. 2025/26 e anticipata a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione anticipata 2",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-03",
+     "note": "Straordinaria a.a. 2025/26 e anticipata a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-11-15",
+     "fine": "2027-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-02-28",
+     "fine": "2028-03-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unich-lm-77-economia-e-management"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Digital Marketing (DIMA, Dipartimento di Economia Aziendale)",
+   "fonte": "https://dima.unich.it/documenti/__0__uda/__2126__dea/__2127__corsi_di_studio/__3221__dima/-%20Calendario%20attivit%C3%A0%20didattiche%20DIMA%20a-a%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata 1",
+     "inizio": "2026-11-16",
+     "fine": "2027-01-09",
+     "note": "Straordinaria a.a. 2025/26 e anticipata a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione anticipata 2",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-03",
+     "note": "Straordinaria a.a. 2025/26 e anticipata a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-11-15",
+     "fine": "2027-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-02-28",
+     "fine": "2028-03-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unich-lm-77-digital-marketing"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze Pedagogiche (LMSP)",
+   "fonte": "https://lmsp.unich.it/pagina-calendario-didattico-20242025-1876",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-04",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-11-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-12-01",
+     "fine": "2028-03-31",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unich-lm-85-scienze-pedagogiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Lettere, Arti e Scienze Sociali (Lettere, Beni culturali, Filologia, Beni archeologici e storico-artistici, Studi storici)",
+   "fonte": "https://www.dilass.unich.it/sites/st06/files/calendario_didattico_26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-27",
+     "note": "Solo per i corsi tenuti nel primo semestre"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-01",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unich-l-10-lettere",
+    "unich-l-1-beni-culturali",
+    "unich-lm-14-lm-15-filologia-linguistica-e-tradizioni-letterarie",
+    "unich-lm-2-lm-89-beni-archeologici-e-storico-artistici",
+    "unich-lm-5-lm-84-studi-storici-e-patrimonio-scrittorio-dall-antichita-all-eta"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Filosofiche, Pedagogiche e Sociali: Filosofia e Scienze dell'educazione, Scienze filosofiche, Servizio sociale, Politiche e management per il welfare",
+   "fonte": "https://www.disfipes.unich.it/sites/st10/files/new_calendario_didattico_26.27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-27",
+     "note": "Per gli iscritti 2026/27, concomitante con la sessione straordinaria degli iscritti 2025/26"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-29",
+     "note": "Per gli iscritti 2026/27 (anticipata per gli iscritti 2027/28)"
+    }
+   ],
+   "corsi": [
+    "unich-l-19-l-5-filosofia-e-scienze-dell-educazione",
+    "unich-lm-78-scienze-filosofiche",
+    "unich-l-39-servizio-sociale",
+    "unich-lm-87-politiche-e-management-per-il-welfare"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea in Sociologia e Criminologia e in Ricerca Sociale, Politiche della Sicurezza e Criminalità (sede di Chieti)",
+   "fonte": "https://sec.unich.it/documenti/__0__uda/__7774__disfipeq/__7775__corsi_di_studio/__1281__soccri/CALENDARIO%20DIDATTICO%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unich-l-40-sociologia-e-criminologia",
+    "unich-lm-62-lm-88-ricerca-sociale-politiche-della-sicurezza-e-criminalita"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Psicologia (Scienze e tecniche psicologiche, Psicologia clinica e della salute, Psicologia giuridica e criminologica, Psychology of Well-Being and Performance)",
+   "fonte": "https://dipsi.unich.it/sites/st05/files/calendario_2026-2028.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-23",
+     "note": "1° appello invernale"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-06",
+     "note": "2° appello invernale"
+    },
+    {
+     "nome": "Appello aggiuntivo",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-21",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-06-19",
+     "note": "1° appello estivo"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-10",
+     "note": "2° appello estivo"
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-11",
+     "note": "1° appello autunnale (dal calendario 2027-28 dello stesso documento)"
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-09-20",
+     "fine": "2027-09-25",
+     "note": "2° appello autunnale"
+    },
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2028-02-21",
+     "fine": "2028-03-04",
+     "note": "Riservato ai laureandi della sessione straordinaria 2026/27 con al massimo 3 esami in pendenza"
+    }
+   ],
+   "corsi": [
+    "unich-l-24-scienze-e-tecniche-psicologiche",
+    "unich-lm-51-psicologia-clinica-e-della-salute",
+    "unich-lm-51-psicologia-giuridica-e-criminologica",
+    "unich-lm-51-psychology-of-well-being-and-performance"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Psicologia (LMPSI)",
+   "fonte": "https://psicologia.unich.it/documenti/__0__uda/__24686__dipsi/__24687__corsi_di_studio/__4609__lmpsi/DIDATTICA/Calendario%20didattico/calendario_2026-2028.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-23",
+     "note": "1° appello invernale"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-06",
+     "note": "2° appello invernale"
+    },
+    {
+     "nome": "Appello aggiuntivo",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-21",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-06-19",
+     "note": "1° appello estivo"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-10",
+     "note": "2° appello estivo"
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-11",
+     "note": "1° appello autunnale (dal calendario 2027-28 dello stesso documento)"
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-09-20",
+     "fine": "2027-09-25",
+     "note": "2° appello autunnale"
+    },
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2028-02-21",
+     "fine": "2028-03-04",
+     "note": "Riservato ai laureandi della sessione straordinaria 2026/27 con al massimo 3 esami in pendenza"
+    }
+   ],
+   "corsi": [
+    "unich-lm-51-psicologia"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Farmacia - CdLM in Farmacia",
+   "fonte": "https://www.farmacia.unich.it/sites/st04/files/2026-08/GUIDA%20ALLO%20STUDIO%202026-2027_1.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione autunnale riservata",
+     "inizio": "2026-10-01",
+     "fine": "2026-10-20",
+     "note": "Riservata agli studenti ripetenti e fuori corso (su richiesta e previa verifica della segreteria)"
+    },
+    {
+     "nome": "Sessione estiva riservata",
+     "inizio": "2027-03-01",
+     "fine": "2027-03-31",
+     "note": "Riservata agli studenti ripetenti e fuori corso"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-20",
+     "fine": "2027-05-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-16",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-11-01",
+     "fine": "2027-11-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione anticipata/straordinaria",
+     "inizio": "2028-02-01",
+     "fine": "2028-02-28",
+     "note": "La guida indica sia la sessione anticipata sia la straordinaria nel periodo 01-28 febbraio 2028; gli appelli di febbraio valgono come anticipata per gli insegnamenti dell'anno in corso e come straordinaria per quelli degli anni precedenti"
+    }
+   ],
+   "corsi": [
+    "unich-lm-13-farmacia"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Farmacia - CdLM in Chimica e tecnologia farmaceutiche, CdL TESTA, CdLM in Scienze e tecnologie cosmetiche (STECOS)",
+   "fonte": "https://www.farmacia.unich.it/sites/st04/files/2026-08/GUIDA%20ALLO%20STUDIO%202026-2027_1.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione autunnale riservata",
+     "inizio": "2026-10-01",
+     "fine": "2026-10-20",
+     "note": "Riservata agli studenti ripetenti e fuori corso (su richiesta e previa verifica della segreteria)"
+    },
+    {
+     "nome": "Sessione estiva riservata 1",
+     "inizio": "2027-03-01",
+     "fine": "2027-03-31",
+     "note": "Riservata agli studenti ripetenti e fuori corso"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-14",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva riservata 2",
+     "inizio": "2027-05-01",
+     "fine": "2027-05-31",
+     "note": "Riservata agli studenti ripetenti e fuori corso"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-16",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-11-01",
+     "fine": "2027-11-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione anticipata/straordinaria",
+     "inizio": "2028-02-01",
+     "fine": "2028-02-28",
+     "note": "La guida indica sia la sessione anticipata sia la straordinaria nel periodo 01-28 febbraio 2028; gli appelli di febbraio valgono come anticipata per gli insegnamenti dell'anno in corso e come straordinaria per quelli degli anni precedenti"
+    }
+   ],
+   "corsi": [
+    "unich-lm-13-chimica-e-tecnologia-farmaceutiche",
+    "unich-l-29-tecnologie-eco-sostenibili-e-tossicologia-ambientale",
+    "unich-lm-71-scienze-e-tecnologie-cosmetiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Ingegneria Edile e dell'Ambiente Costruito (L-23, Dipartimento di Ingegneria e Geologia)",
+   "fonte": "https://idcl23.unich.it/documenti/__0__uda/__12729__ingeo/__12730__corsi_di_studio/__18393__idcl23/documents/CALENDARIO%2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-28",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione fuori corso 1",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-30",
+     "note": "1 appello riservato ai fuori corso"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione fuori corso 2",
+     "inizio": "2027-11-15",
+     "fine": "2027-11-30",
+     "note": "1 appello riservato ai fuori corso"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-28",
+     "note": "3 appelli, fissati dopo l'inizio delle lezioni dell'anno successivo"
+    }
+   ],
+   "corsi": [
+    "unich-l-23-ingegneria-edile-e-dellambiente-costruito"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Ingegneria delle Costruzioni (LM-24, Dipartimento di Ingegneria e Geologia), che Universitaly chiama Building Engineering",
+   "fonte": "https://idcl23.unich.it/documenti/__0__uda/__12729__ingeo/__12730__corsi_di_studio/__18393__idcl23/documents/CALENDARIO%2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-28",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione fuori corso 1",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-30",
+     "note": "1 appello riservato ai fuori corso"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione fuori corso 2",
+     "inizio": "2027-11-15",
+     "fine": "2027-11-30",
+     "note": "1 appello riservato ai fuori corso"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-10",
+     "fine": "2028-03-31",
+     "note": "3 appelli, fissati dopo l'inizio delle lezioni dell'anno successivo"
+    }
+   ],
+   "corsi": [
+    "unich-lm-24-building-engineering"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Ingegneria Biomedica (L-9)",
+   "fonte": "https://www.ingeo.unich.it/documenti/__0__uda/__12729__ingeo/__12730__corsi_di_studio/__18391__ibl9/documents/Calendario%20accademico%202627.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-28",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione fuori corso 1",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-30",
+     "note": "1 appello riservato ai fuori corso"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione fuori corso 2",
+     "inizio": "2027-11-15",
+     "fine": "2027-11-30",
+     "note": "1 appello riservato ai fuori corso"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-28",
+     "note": "3 appelli, fissati dopo l'inizio delle lezioni dell'anno successivo"
+    }
+   ],
+   "corsi": [
+    "unich-l-9-ingegneria-biomedica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Ingegneria Biomedica (LM-21)",
+   "fonte": "https://www.ingeo.unich.it/documenti/__0__uda/__12729__ingeo/__12730__corsi_di_studio/__18392__iblm21/Calendario%20AA%202026_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-28",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione fuori corso 1",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-30",
+     "note": "1 appello riservato ai fuori corso"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione fuori corso 2",
+     "inizio": "2027-11-15",
+     "fine": "2027-11-30",
+     "note": "1 appello riservato ai fuori corso"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-10",
+     "fine": "2028-03-31",
+     "note": "3 appelli, fissati dopo l'inizio delle lezioni dell'anno successivo"
+    }
+   ],
+   "corsi": [
+    "unich-lm-21-ingegneria-biomedica"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unich-l-snt4-assistenza-sanitaria-abilitante-alla-professione-sanitaria-d",
+  "unich-l-41-data-analytics-per-leconomia-e-la-societa",
+  "unich-l-4-design",
+  "unich-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista",
+  "unich-l-33-economia-imprese-e-mercati-finanziari",
+  "unich-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "unich-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+  "unich-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "unich-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1633023",
+  "unich-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1633051",
+  "unich-l-11-lingue-e-letterature-straniere",
+  "unich-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+  "unich-l-12-mediazione-linguistica-e-comunicazione-interculturale",
+  "unich-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes",
+  "unich-l-snt4-osteopatia",
+  "unich-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+  "unich-l-21-scienze-dell-habitat-sostenibile",
+  "unich-l-22-scienze-delle-attivita-motorie-e-sportive",
+  "unich-l-34-scienze-geologiche",
+  "unich-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+  "unich-l-snt3-tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-c",
+  "unich-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+  "unich-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "unich-l-snt2-terapia-occupazionale-abilitante-alla-professione-sanitaria",
+  "unich-lm-9-biotecnologie-avanzate",
+  "unich-lm-12-eco-design-inclusivo",
+  "unich-lm-56-economia-del-turismo-e-della-cultura",
+  "unich-lm-56-economia-e-scienze-comportamentali",
+  "unich-lm-snt2-health-professions-of-rehabilitation-sciences",
+  "unich-lm-37-lingue-letterature-e-culture-moderne",
+  "unich-lm-38-lingue-straniere-per-l-impresa-e-la-cooperazione-internazion",
+  "unich-lm-74-planetary-sciences",
+  "unich-lm-55-scienze-cognitive-computazionali",
+  "unich-lm-61-scienze-dell-alimentazione-e-salute",
+  "unich-lm-67-scienze-e-tecniche-delle-attivita-motorie-preventive-e-adatt",
+  "unich-lm-74-scienze-geologiche-per-i-rischi-le-risorse-e-lambiente",
+  "unich-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "unich-lm-4-c-u-architettura",
+  "unich-lm-41-medicina-e-chirurgia",
+  "unich-lm-46-odontoiatria-e-protesi-dentaria",
+  "unich-l-p01-professioni-tecniche-per-l-edilizia-e-il-territorio"
+ ],
+ "mancanti": "UdA non ha un calendario d'esami unico: ogni Scuola, Dipartimento o corso pubblica il proprio. Secondo giro (2026-10-11): Psychology of Well-Being and Performance (LM-51) aggiunto al calendario del Dipartimento di Psicologia (la pagina del corso pubblica come «Calendario Didattico 2026-2028» lo stesso PDF del Dipartimento, calendario_2026-2028_0.pdf, identico). Ancora scoperti: Scuola di Medicina e Scienze della Salute (Medicina, Odontoiatria, professioni sanitarie, Osteopatia, Biotecnologie avanzate, Scienze dell'alimentazione, Scienze motorie L-22 e LM-67, magistrali sanitarie): le pagine dei corsi su unich.it («Calendario lezioni») rimandano solo ai calendari UniversityPlanner per anno e agli appelli Esse3, senza finestre di sessione; la pagina www.med.unich.it/didattica risponde 403 (non ritentato). Dipartimento di Lingue (L-11, L-12, LM-37, LM-38): solo orario lezioni e appelli Esse3. Dipartimento di Architettura (Design, Architettura, Eco Design Inclusivo, Habitat sostenibile): la pagina «Calendario e Orario Lezioni» ha solo i calendari UniversityPlanner e un vecchio calendario 2022/23. DISEGS (Data Analytics, Economia imprese e mercati finanziari, Economia del turismo e della cultura, Economia e scienze comportamentali): le pagine «Calendario didattico» dei corsi sono ferme al 2025/26 o a.a. precedenti. Scienze geologiche (L-34, LM-74): pubblicato solo il «Calendario accademico 2025/2026». Planetary Sciences (LM-74): la pagina «Academic Calendar» riporta i periodi di lezione 2026/27 ma le sessioni d'esame elencate sono quelle dell'a.a. 2025/26 (es. Special session 23/02-31/03/2026), quindi escluse. Professioni tecniche per l'edilizia (L-P01) e Scienze cognitive computazionali (LM-55): solo calendari delle lezioni. Il calendario 2026/27 L-40/LM-62-88 sul sito DiSFiPeS ha un link rotto; usata la copia sul sito del corso."
+}

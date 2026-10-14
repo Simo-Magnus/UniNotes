@@ -1,0 +1,49 @@
+{
+ "universita_id": "unistrasi",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://www.unistrasi.it/1/470/2181/Calendario_dei_corsi_e_degli_esami.htm",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": "due appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "due appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": "due appelli"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-11-15",
+     "fine": "2027-11-19",
+     "note": "un appello"
+    }
+   ],
+   "corsi": [
+    "unistrasi-l-10-lingua-e-cultura-italiana",
+    "unistrasi-l-12-mediazione-linguistica-e-culturale",
+    "unistrasi-l-1-patrimoni-culturali-archeologia-e-storia-dell-arte-del-mondo",
+    "unistrasi-l-11-plurilinguismo-traduzione-e-interpretazione",
+    "unistrasi-lm-2-lm-89-archeologie-e-storie-dellarte",
+    "unistrasi-lm-14-lettere-didattica-editoria",
+    "unistrasi-lm-38-linguaggi-cooperazione-e-diversita",
+    "unistrasi-lm-39-scienze-linguistiche-e-comunicazione-interculturale"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

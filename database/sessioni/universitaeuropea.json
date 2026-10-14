@@ -1,0 +1,150 @@
+{
+ "universita_id": "universitaeuropea",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Corso di laurea in Giurisprudenza",
+   "fonte": "https://www.uer.it/giurisprudenza/didattica/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-13",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-19",
+     "fine": "2027-07-10",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "universitaeuropea-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea in Economia",
+   "fonte": "https://www.uer.it/economia/didattica/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-13",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-19",
+     "fine": "2027-07-10",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "universitaeuropea-l-18-economia-e-gestione-aziendale",
+    "universitaeuropea-lm-56-economia-e-management-dell-innovazione"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea in Psicologia",
+   "fonte": "https://www.uer.it/psicologia/didattica/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-13",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-19",
+     "fine": "2027-07-10",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "universitaeuropea-l-24-scienze-e-tecniche-psicologiche",
+    "universitaeuropea-lm-51-psicologia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze della formazione primaria",
+   "fonte": "https://www.uer.it/scienze-formazione-primaria/didattica/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-13",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-19",
+     "fine": "2027-07-10",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "universitaeuropea-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Medicina e Chirurgia",
+   "fonte": "https://www.uer.it/medicina/didattica/",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-13",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-16",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "universitaeuropea-lm-41-medicina-e-chirurgia"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "universitaeuropea-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "universitaeuropea-l-15-turismo-e-valorizzazione-del-territorio",
+  "universitaeuropea-lm-43-lm-91-management-della-transizione-digitale"
+ ],
+ "mancanti": "Letto dalle pagine «Didattica» di uer.it nel browser. Fisioterapia indica le sessioni solo per mese (gennaio/febbraio, giugno/luglio, settembre); Turismo e Management della transizione digitale pubblicano le date 2026/27 solo in PDF, non ancora letti. Le sessioni di settembre e dicembre 2026 appartengono all'a.a. 2025/26 e non sono incluse."
+}

@@ -1,0 +1,1405 @@
+{
+ "universita_id": "unife",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Corso di laurea in Scienze biologiche",
+   "fonte": "https://corsi.unife.it/it/biologia/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-08-08",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-13-scienze-biologiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Biotecnologie",
+   "fonte": "https://corsi.unife.it/it/biotecnologie/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-08-08",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-2-biotecnologie"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Biologia molecolare, genomica e biodiversità",
+   "fonte": "https://corsi.unife.it/it/lm-biologia-molecolare/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-08-08",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-6-biologia-molecolare-genomica-e-biodiversita"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Biotecnologie industriali dei biofarmaci, cosmetici e nutraceutici",
+   "fonte": "https://corsi.unife.it/it/lm-biotecnologie-industriali/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-08-08",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-8-biotecnologie-industriali-dei-biofarmaci-cosmetici-e-nutrace",
+    "unife-lm-8-biotecnologie-industriali-dei-biofarmaci-cosmetici-e-nutrace-3179-25"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Chimica",
+   "fonte": "https://corsi.unife.it/it/chimica/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-27-chimica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze chimiche",
+   "fonte": "https://corsi.unife.it/it/lm-scienzechimiche/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-54-scienze-chimiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Chimica e tecnologia farmaceutiche",
+   "fonte": "https://corsi.unife.it/it/lm-ctf/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-13-chimica-e-tecnologia-farmaceutiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Farmacia",
+   "fonte": "https://corsi.unife.it/it/lm-farmacia/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-13-farmacia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecnologie agrarie e gestione sostenibile degli agroecosistemi",
+   "fonte": "https://corsi.unife.it/it/tecnologie-agrarie/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-25-tecnologie-agrarie-e-gestione-sostenibile-degli-agroecosiste"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Biotecnologie agrarie per la filiera agro-alimentare",
+   "fonte": "https://corsi.unife.it/it/lm-biotec-agrarie/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-7-biotecnologie-agrarie-per-la-filiera-agro-alimentare"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Comunicazione digitale",
+   "fonte": "https://corsi.unife.it/it/comunicazione-digitale/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-20-comunicazione-digitale"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze e tecnologie della comunicazione",
+   "fonte": "https://corsi.unife.it/it/comunicazione/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-20-scienze-e-tecnologie-della-comunicazione"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Filosofia e società contemporanea",
+   "fonte": "https://corsi.unife.it/it/filosofia-societa/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-5-filosofia-e-societa-contemporanea"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Manager degli itinerari culturali",
+   "fonte": "https://corsi.unife.it/it/itinerari-culturali/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-15-manager-degli-itinerari-culturali"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Lingue e letterature moderne",
+   "fonte": "https://corsi.unife.it/it/lingue/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-11-lingue-e-letterature-moderne"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Lettere, arti e archeologia",
+   "fonte": "https://corsi.unife.it/it/lettere/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-10-lettere-arti-e-archeologia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze dell'educazione",
+   "fonte": "https://corsi.unife.it/it/scienze-educazione/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-19-scienze-dell-educazione"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Filologie e letterature medievali e moderne",
+   "fonte": "https://corsi.unife.it/it/lm-filologia/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-14-filologie-e-letterature-medievali-e-moderne"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Lingue e letterature straniere",
+   "fonte": "https://corsi.unife.it/it/lm-lingue/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-37-lingue-e-letterature-straniere"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Quaternario, preistoria e archeologia",
+   "fonte": "https://corsi.unife.it/it/lm-preistoria/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-2-quaternario-preistoria-e-archeologia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Formazione, comunicazione e cittadinanza digitale",
+   "fonte": "https://corsi.unife.it/it/lm-formazione-comunicazione-digitale/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-93-formazione-comunicazione-e-cittadinanza-digitale"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Dietistica",
+   "fonte": "https://corsi.unife.it/it/dietistica/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria (di recupero)",
+     "inizio": "2028-01-15",
+     "fine": "2028-02-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Igiene dentale",
+   "fonte": "https://corsi.unife.it/it/igienedentale/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria (di recupero)",
+     "inizio": "2028-01-15",
+     "fine": "2028-02-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche di laboratorio biomedico",
+   "fonte": "https://corsi.unife.it/it/tec-laboratoriobiomedico/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria (di recupero)",
+     "inizio": "2028-01-15",
+     "fine": "2028-02-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche di radiologia medica, per immagini e radioterapia",
+   "fonte": "https://corsi.unife.it/it/tec-radiologiamedica/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria (di recupero)",
+     "inizio": "2028-01-15",
+     "fine": "2028-02-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Fisioterapia (Ferrara e Bolzano)",
+   "fonte": "https://corsi.unife.it/it/fisioterapia/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria (di recupero)",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "unife-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1627052",
+    "unife-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1053"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Logopedia",
+   "fonte": "https://corsi.unife.it/it/logopedia/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria (di recupero)",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Ortottica ed assistenza oftalmologica",
+   "fonte": "https://corsi.unife.it/it/ortottica/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria (di recupero)",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecnica della riabilitazione psichiatrica",
+   "fonte": "https://corsi.unife.it/it/tec-riabilitazionepsichiatrica/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria (di recupero)",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Economia",
+   "fonte": "https://corsi.unife.it/it/economia/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-18-l-33-economia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Economia e management per la creazione di valore",
+   "fonte": "https://corsi.unife.it/it/lm-economia/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-77-economia-e-management-per-la-creazione-di-valore"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia e management: lauree magistrali Small Business Management in International Markets e Green Economy and Sustainable Transitions",
+   "fonte": "https://www.unife.it/it/internazionale/venire/soggiorno/prima-di-arrivare/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-77-small-business-management-in-international-markets",
+    "unife-lm-56-green-economy-and-sustainable-transitions"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Fisica",
+   "fonte": "https://corsi.unife.it/it/fisica/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-30-fisica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Physics",
+   "fonte": "https://www.unife.it/it/internazionale/venire/soggiorno/prima-di-arrivare/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-17-physics"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Informatica",
+   "fonte": "https://corsi.unife.it/it/informatica/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-18",
+     "fine": "2027-02-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-08-10",
+     "note": "La pagina «Esami» del corso indica come fine il 3 agosto 2027"
+    }
+   ],
+   "corsi": [
+    "unife-l-31-informatica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Intelligenza artificiale, data science e big data",
+   "fonte": "https://corsi.unife.it/it/lm-ia/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-18",
+     "fine": "2027-02-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-08-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-18-lm-32-intelligenza-artificiale-data-science-e-big-data"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Matematica",
+   "fonte": "https://corsi.unife.it/it/matematica/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-35-matematica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Matematica",
+   "fonte": "https://corsi.unife.it/it/lm-matematica/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-40-matematica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Design del prodotto industriale",
+   "fonte": "https://corsi.unife.it/it/design/studiare/didattica/esami",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (I anno)",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (dal II anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-4-design-del-prodotto-industriale"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Architettura",
+   "fonte": "https://corsi.unife.it/it/lm-architettura/studiare/didattica/esami",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale (I anno)",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (dal II anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-4-c-u-architettura"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Design di prodotto e servizio per la cultura e la salute",
+   "fonte": "https://corsi.unife.it/it/lm-design-prodotto-servizio/studiare/didattica/esami",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-12-design-di-prodotto-e-servizio-per-la-cultura-e-la-salute"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Giurisprudenza (Ferrara)",
+   "fonte": "https://corsi.unife.it/it/lm-giurisprudenza/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario regolamentato 1",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-21",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Appello straordinario regolamentato 2",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Giurisprudenza (Rovigo)",
+   "fonte": "https://corsi.unife.it/it/lm-giurisprudenza-rovigo/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario regolamentato 1",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-21",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Appello straordinario regolamentato 2",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lmg-01-giurisprudenza-1626931",
+    "unife-lmg-01-giurisprudenza-sede-di-rovigo"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze giuridiche della sicurezza e della prevenzione",
+   "fonte": "https://corsi.unife.it/it/scienze-giuridiche/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario regolamentato 1",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-21",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Appello straordinario regolamentato 2",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-28",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-14-scienze-giuridiche-della-sicurezza-e-della-prevenzione"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea in Infermieristica (Ferrara, Adria, Pieve di Cento), Ostetricia, Biotecnologie mediche, LM Biotecnologie per la medicina traslazionale",
+   "fonte": "https://www.unife.it/it/internazionale/venire/soggiorno/prima-di-arrivare/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-28",
+     "note": "Periodo indicato sulla pagina del corso senza anno («15 gennaio - 28 febbraio»); anno confermato dalla pagina di Ateneo per studenti internazionali"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": "Periodo indicato sulla pagina del corso senza anno («15 gennaio - 28 febbraio»); anno confermato dalla pagina di Ateneo per studenti internazionali"
+    },
+    {
+     "nome": "Sessione autunnale (di recupero)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Periodo «1 - 30 settembre» indicato sulla pagina del corso senza anno"
+    }
+   ],
+   "corsi": [
+    "unife-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "unife-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1627047",
+    "unife-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1627037",
+    "unife-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-3125",
+    "unife-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1057",
+    "unife-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+    "unife-l-2-biotecnologie-mediche",
+    "unife-lm-9-biotecnologie-per-la-medicina-traslazionale"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea magistrale a ciclo unico in Medicina e chirurgia e in Odontoiatria e protesi dentaria",
+   "fonte": "https://www.unife.it/it/internazionale/venire/soggiorno/prima-di-arrivare/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-28",
+     "note": "Prima sessione"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": "Seconda sessione"
+    },
+    {
+     "nome": "Sessione autunnale (di recupero)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-lm-41-medicina-e-chirurgia",
+    "unife-lm-46-odontoiatria-e-protesi-dentaria"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea in Scienze motorie e magistrale in Scienze e tecniche dell'attività motoria preventiva e adattata",
+   "fonte": "https://corsi.unife.it/it/scienze-motorie/studiare/didattica/esami",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-28",
+     "note": "Pagina «Esami», sezione a.a. 2026/27 (date indicate senza anno)"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-22-scienze-motorie",
+    "unife-lm-67-scienze-e-tecniche-dell-attivita-motoria-preventiva-e-adatta"
+   ]
+  },
+  {
+   "ambito": "Lauree magistrali delle professioni sanitarie (Scienze infermieristiche e ostetriche, Scienze riabilitative, Tecniche diagnostiche)",
+   "fonte": "https://corsi.unife.it/it/lm-infermieristica/studiare/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Primo periodo d'esame",
+     "inizio": "2027-01-07",
+     "fine": "2027-03-31",
+     "note": "Periodi indicati sulla pagina del corso senza anno (07/01-31/03, 01/04-31/07, 01/09-22/12); il secondo periodo di recupero (07/01-31/03 dell'anno successivo) non è riportato"
+    },
+    {
+     "nome": "Secondo periodo d'esame",
+     "inizio": "2027-04-01",
+     "fine": "2027-07-31",
+     "note": "Periodi indicati sulla pagina del corso senza anno (07/01-31/03, 01/04-31/07, 01/09-22/12); il secondo periodo di recupero (07/01-31/03 dell'anno successivo) non è riportato"
+    },
+    {
+     "nome": "Primo periodo di recupero",
+     "inizio": "2027-09-01",
+     "fine": "2027-12-22",
+     "note": "Periodi indicati sulla pagina del corso senza anno (07/01-31/03, 01/04-31/07, 01/09-22/12); il secondo periodo di recupero (07/01-31/03 dell'anno successivo) non è riportato"
+    }
+   ],
+   "corsi": [
+    "unife-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+    "unife-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie",
+    "unife-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze e politiche per l'ambiente (Dipartimento di Scienze dell'ambiente e della prevenzione)",
+   "fonte": "https://www.unife.it/it/internazionale/venire/soggiorno/prima-di-arrivare/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unife-l-32-scienze-e-politiche-per-lambiente"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unife-l-7-ingegneria-civile-e-ambientale",
+  "unife-l-8-ingegneria-elettronica-e-informatica",
+  "unife-l-8-l-9-ingegneria-gestionale",
+  "unife-l-9-ingegneria-meccanica",
+  "unife-l-24-psicologia-per-la-salute",
+  "unife-l-13-scienze-biologiche-per-la-salute",
+  "unife-l-34-scienze-geologiche",
+  "unife-l-22-scienze-motorie-per-la-salute",
+  "unife-lm-23-ingegneria-civile",
+  "unife-lm-29-ingegneria-elettronica-per-l-ict",
+  "unife-lm-32-ingegneria-informatica-e-dell-automazione",
+  "unife-lm-32-ingegneria-informatica-e-dellautomazione",
+  "unife-lm-33-ingegneria-meccanica",
+  "unife-lm-74-scienze-geologiche-georisorse-e-territorio"
+ ],
+ "mancanti": "Unife pubblica le sessioni sulle pagine dei singoli corsi (corsi.unife.it/<corso>/studiare/didattica/calendario); per alcuni corsi si è usata la pagina di Ateneo per studenti internazionali (https://www.unife.it/it/internazionale/venire/soggiorno/prima-di-arrivare/calendario). Senza date: i corsi del Dipartimento di Ingegneria (il periodo d'esame va «da fine lezioni a inizio semestre successivo», senza date) e Scienze geologiche (LT e LM, stessa formula); Scienze biologiche per la salute, Scienze motorie per la salute e Psicologia per la salute (sessioni 2026/27 «in definizione»). Sessioni autunnali senza data di fine (non riportate): Scienze biologiche, Biotecnologie, LM Biologia molecolare, LM Biotecnologie industriali (dal 01/09/2027 al venerdì prima dell'inizio delle lezioni 2027/28); Informatica e LM Intelligenza artificiale (dal 25/08/2027 all'inizio delle lezioni 2027/28); Matematica LT e LM (dal 25/08/2027 all'inizio delle lezioni 2027/28); Scienze e politiche per l'ambiente (dal 01/09/2027 al venerdì prima dell'inizio delle lezioni 2027/28). Non riportate le sessioni straordinarie di recupero di gennaio-febbraio 2028 indicate senza anno (Infermieristica, Ostetricia, Medicina, Scienze motorie). Secondo giro (2026-10-11): ricontrollate le pagine «Calendario didattico» ed «Esami» di tutti i corsi scoperti, le pagine «esami/esami» delle LM di Ingegneria e Geologia, la pagina di Ateneo per studenti internazionali (aggiornata al 14/04/2026) e i «Percorso di formazione» 2026 dei corsi «per la salute»: per Ingegneria e Scienze geologiche resta solo la formula «il periodo di esami inizia da fine lezioni ad inizio semestre successivo» (date non ricavabili senza stime); Psicologia per la salute, Scienze biologiche per la salute e Scienze motorie per la salute hanno ancora le sessioni 2026/27 «in corso di definizione»."
+}

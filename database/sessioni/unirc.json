@@ -1,0 +1,201 @@
+{
+ "universita_id": "unirc",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Ingegneria dell'Informazione, delle Infrastrutture e dell'Energia Sostenibile (DIIES)",
+   "fonte": "https://www.unirc.it/ateneo/dipartimenti/dipartimento-di-ingegneria-dellinformazione-delle-infrastrutture-e-dellenergia-sostenibile-diies/studiare-al-diies/calendario-accademico",
+   "sessioni": [
+    {
+     "nome": "Sessione d'esame",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione d'esame",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione d'esame",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione d'esame",
+     "inizio": "2027-12-20",
+     "fine": "2028-02-18",
+     "note": "Previste anche sessioni straordinarie ad aprile 2027 e novembre 2027 (date non indicate), con i requisiti del Manifesto"
+    }
+   ],
+   "corsi": [
+    "unirc-l-8-ingegneria-elettronica-e-biomedica",
+    "unirc-l-8-ingegneria-informatica-e-delle-telecomunicazioni",
+    "unirc-lm-29-ingegneria-elettronica-e-biomedica",
+    "unirc-lm-27-ingegneria-informatica-e-dei-sistemi-per-le-telecomunicazion"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria Civile, dell'Energia, dell'Ambiente e dei Materiali (DICEAM)",
+   "fonte": "https://www.unirc.it/ateneo/dipartimenti/dipartimento-di-ingegneria-civile-dellenergia-dellambiente-e-dei-materiali-diceam/studiare-al-diceam/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione ordinaria",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-19",
+     "note": "3 sedute"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "1 seduta, riservata a categorie di studenti (debito limitato di CFU, mobilità, fuori corso, part-time)"
+    },
+    {
+     "nome": "Sessione ordinaria",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": "3 sedute (2 per i corsi del I semestre e dell'a.a. precedente)"
+    },
+    {
+     "nome": "Sessione ordinaria",
+     "inizio": "2027-09-06",
+     "fine": "2027-10-08",
+     "note": "2 sedute"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-11-15",
+     "fine": "2027-11-26",
+     "note": "1 seduta, riservata"
+    },
+    {
+     "nome": "Sessione ordinaria",
+     "inizio": "2027-12-13",
+     "fine": "2028-02-18",
+     "note": "2 sedute"
+    }
+   ],
+   "corsi": [
+    "unirc-l-7-ingegneria-civile-e-ambientale-per-lo-sviluppo-sostenibile",
+    "unirc-l-9-ingegneria-gestionale",
+    "unirc-l-9-ingegneria-meccanica",
+    "unirc-lm-23-ingegneria-civile",
+    "unirc-lm-30-lm-35-ingegneria-per-la-gestione-sostenibile-dell-ambiente-e-dell"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Architettura e Design (dAeD)",
+   "fonte": "https://www.unirc.it/sites/default/files/2026-09/Calendario%20didattico%20a.a.%202026_27%20%28unico%29_dAeD_CdAeD_0.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione per studenti fuori corso",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": "Solo su richiesta degli studenti fuori corso"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-05",
+     "note": "I appello 14/12/2026-08/01/2027; II appello 11-22/01/2027; III appello 25/01-05/02/2027"
+    },
+    {
+     "nome": "Sessione per studenti fuori corso",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": "Solo su richiesta degli studenti fuori corso"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-09",
+     "note": "I appello 31/05-11/06/2027; II appello 28/06-09/07/2027. Il calendario 2026/27 copre il periodo agosto 2026-luglio 2027: le date della sessione autunnale 2027 non sono ancora indicate"
+    }
+   ],
+   "corsi": [
+    "unirc-l-4-design",
+    "unirc-lm-12-design-per-le-culture-mediterranee-prodotto-spazio-comunicaz",
+    "unirc-lm-4-c-u-architettura"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Agraria",
+   "fonte": "https://www.unirc.it/ateneo/dipartimenti/dipartimento-di-agraria/studiare-agraria/calendario-accademico",
+   "sessioni": [
+    {
+     "nome": "1° periodo (sessione invernale)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "3 appelli; per il 1° anno delle triennali dal 25/01 al 27/02/2027. Sessioni straordinarie: un appello al mese in ottobre, novembre, dicembre 2026 e marzo, aprile, maggio 2027 (date non indicate)"
+    },
+    {
+     "nome": "2° periodo (sessione estiva)",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "3° periodo (sessione autunnale)",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unirc-l-2-biotecnologie-per-la-sostenibilita",
+    "unirc-l-25-scienze-e-tecnologie-agrarie",
+    "unirc-l-26-scienze-e-tecnologie-alimentari-e-gastronomiche",
+    "unirc-l-25-scienze-forestali-e-ambientali",
+    "unirc-lm-73-gestione-sostenibile-del-territorio-forestale-e-montano",
+    "unirc-lm-70-scienze-della-qualita-e-sicurezza-dei-prodotti-alimentari",
+    "unirc-lm-69-scienze-delle-produzioni-agrarie-mediterranee"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Giurisprudenza, Economia e Scienze Umane (DiGiES)",
+   "fonte": "https://www.unirc.it/ateneo/dipartimenti/dipartimento-di-giurisprudenza-economia-e-scienze-umane-digies/studiare-al-digies/calendario-accademico",
+   "sessioni": [
+    {
+     "nome": "II appello",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-12",
+     "note": "Il I appello è a dicembre 2026, una settimana dopo la fine delle lezioni di ciascun corso (date non fissate)"
+    },
+    {
+     "nome": "III appello",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-31",
+     "note": "Il IV appello è a giugno 2027 (date non fissate)"
+    },
+    {
+     "nome": "V appello",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-09",
+     "note": null
+    },
+    {
+     "nome": "VI appello",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-17",
+     "note": "Gli appelli straordinari del 7-16 gennaio e 1-6 marzo 2027 sono riferiti all'a.a. 2025/26"
+    }
+   ],
+   "corsi": [
+    "unirc-l-19-scienze-dell-educazione-e-della-formazione",
+    "unirc-l-33-scienze-economiche",
+    "unirc-l-22-scienze-motorie-e-diritto-dello-sport",
+    "unirc-lm-56-economia",
+    "unirc-lm-50-progettazione-pedagogica-e-gestione-dei-servizi-educativi-pe",
+    "unirc-lmg-01-giurisprudenza",
+    "unirc-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

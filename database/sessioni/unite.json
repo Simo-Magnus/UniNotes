@@ -1,0 +1,276 @@
+{
+ "universita_id": "unite",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Giurisprudenza",
+   "fonte": "https://www.unite.it/UniTE/Corsi_di_studio/Calendario_didattico_Giurisprudenza",
+   "sessioni": [
+    {
+     "nome": "I periodo ordinario",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": "I appello 25/01-05/02/2027, II appello 15-26/02/2027"
+    },
+    {
+     "nome": "Appello di marzo",
+     "inizio": "2027-03-08",
+     "fine": "2027-03-12",
+     "note": null
+    },
+    {
+     "nome": "Appello di aprile",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": null
+    },
+    {
+     "nome": "Appello di maggio",
+     "inizio": "2027-05-10",
+     "fine": "2027-05-21",
+     "note": null
+    },
+    {
+     "nome": "II periodo ordinario",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-16",
+     "note": "Appelli 14-25/06 e 05-16/07/2027"
+    },
+    {
+     "nome": "III periodo ordinario",
+     "inizio": "2027-09-13",
+     "fine": "2027-10-01",
+     "note": "Appelli 13-17/09 e 27/09-01/10/2027"
+    },
+    {
+     "nome": "III periodo ordinario (novembre)",
+     "inizio": "2027-11-03",
+     "fine": "2027-11-12",
+     "note": null
+    },
+    {
+     "nome": "III periodo ordinario (dicembre)",
+     "inizio": "2027-11-29",
+     "fine": "2027-12-03",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unite-l-14-diritto-dell-ambiente-e-dell-energia",
+    "unite-l-14-servizi-giuridici",
+    "unite-lm-sc-giur-lm-77-diritto-economia-e-strategia-d-impresa",
+    "unite-lmg-01-giurisprudenza",
+    "unite-lmg-01-giurisprudenza-replica-avezzano",
+    "unite-lmg-01-giurisprudenza-sede-avezzano"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze politiche",
+   "fonte": "https://www.unite.it/UniTE/Dipartimenti_HP/Scienze_politiche/Calendario_didattico_Scienze_Politiche",
+   "sessioni": [
+    {
+     "nome": "I periodo ordinario",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "Appelli 11-22/01, 25/01-05/02, 08-19/02/2027"
+    },
+    {
+     "nome": "I periodo ordinario (aprile)",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": null
+    },
+    {
+     "nome": "II periodo ordinario",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-16",
+     "note": "Appelli 07-18/06, 21/06-02/07, 05-16/07/2027"
+    },
+    {
+     "nome": "III periodo ordinario",
+     "inizio": "2027-09-13",
+     "fine": "2027-09-25",
+     "note": null
+    },
+    {
+     "nome": "III periodo ordinario (ottobre)",
+     "inizio": "2027-10-05",
+     "fine": "2027-10-15",
+     "note": null
+    },
+    {
+     "nome": "III periodo ordinario (dicembre)",
+     "inizio": "2027-12-01",
+     "fine": "2027-12-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unite-l-18-economia",
+    "unite-l-36-scienze-politiche",
+    "unite-l-15-turismo-sostenibile",
+    "unite-lm-62-politiche-internazionali-e-della-sostenibilita",
+    "unite-lm-63-scienze-delle-amministrazioni",
+    "unite-l-18-business-management"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze della comunicazione",
+   "fonte": "https://www.unite.it/UniTE/Dipartimenti_HP/Dipartimento_di_Scienze_della_Comunicazione/Calendario_didattico_3",
+   "sessioni": [
+    {
+     "nome": "I periodo ordinario",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "Appelli 18-29/01 e 01-19/02/2027"
+    },
+    {
+     "nome": "I periodo ordinario (aprile)",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-09",
+     "note": null
+    },
+    {
+     "nome": "II periodo ordinario",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-16",
+     "note": "Appelli 01-12/06, 14-25/06, 28/06-16/07/2027"
+    },
+    {
+     "nome": "III periodo ordinario",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": "Appelli 01-10/09 e 13-24/09/2027"
+    },
+    {
+     "nome": "III periodo ordinario (ottobre-novembre)",
+     "inizio": "2027-10-25",
+     "fine": "2027-11-05",
+     "note": null
+    },
+    {
+     "nome": "III periodo ordinario (dicembre)",
+     "inizio": "2027-12-06",
+     "fine": "2027-12-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unite-l-3-discipline-delle-arti-della-musica-e-dello-spettacolo",
+    "unite-l-20-scienze-e-tecnologie-della-comunicazione",
+    "unite-lm-59-comunicazione-marketing-e-innovazione-digitale",
+    "unite-lm-65-media-arti-culture-e-spettacolo"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Bioscienze e tecnologie agro-alimentari e ambientali",
+   "fonte": "https://www.unite.it/UniTE/Dipartimenti_HP/Bioscienze_e_tecnologie_agro-alimentari_e_ambientali/Calendario_didattico_4",
+   "sessioni": [
+    {
+     "nome": "I periodo ordinario",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": "Appelli 25-29/01, 01-09/02 (non per Biotecnologie I anno N.O.), 22-26/02/2027"
+    },
+    {
+     "nome": "II periodo ordinario (solo laureandi di luglio)",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-21",
+     "note": null
+    },
+    {
+     "nome": "II periodo ordinario",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-23",
+     "note": "Appelli 07-18/06, 28/06-09/07, 15-23/07/2027 (nella pagina è scritto «23 luglio 2026», refuso)"
+    },
+    {
+     "nome": "III periodo ordinario",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-24",
+     "note": "Appelli 06-10/09 (per Food Science and Technology 30/08-03/09) e 20-24/09/2027"
+    },
+    {
+     "nome": "III periodo ordinario (solo laureandi di dicembre)",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": null
+    },
+    {
+     "nome": "III periodo ordinario (dicembre)",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-21",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unite-l-2-biotechnology",
+    "unite-l-2-biotecnologie",
+    "unite-l-26-scienze-e-tecnologie-alimentari",
+    "unite-l-gastr-scienze-gastronomiche-per-la-sostenibilita",
+    "unite-l-26-viticoltura-ed-enologia",
+    "unite-lm-9-biotecnologie-avanzate",
+    "unite-lm-9-reproductive-biotechnologies",
+    "unite-lm-70-food-science-and-technology"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicina veterinaria",
+   "fonte": "https://www.unite.it/UniTE/Dipartimenti_HP/Medicina_veterinaria/Calendario_didattico_Medicina_veterinaria/Calendario_didattico_Corso_di_laurea_magistrale_in_Medicina_veterinaria",
+   "sessioni": [
+    {
+     "nome": "Primo periodo ordinario",
+     "inizio": "2027-01-08",
+     "fine": "2027-04-30",
+     "note": null
+    },
+    {
+     "nome": "Secondo periodo ordinario",
+     "inizio": "2027-05-03",
+     "fine": "2027-07-30",
+     "note": "Esami del 2° semestre dal 07/06 (1° anno) o dal 31/05/2027 (2°-4° anno)"
+    },
+    {
+     "nome": "Terzo periodo ordinario",
+     "inizio": "2027-09-01",
+     "fine": "2027-12-23",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unite-lm-42-medicina-veterinaria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Medicina veterinaria – Tutela e benessere animale, Scienze delle produzioni animali sostenibili",
+   "fonte": "https://www.unite.it/UniTE/Dipartimenti_HP/Medicina_veterinaria/Calendario_didattico_Medicina_veterinaria/Calendario_didattico_Tutela_e_Benessere_Animale",
+   "sessioni": [
+    {
+     "nome": "Primo periodo ordinario",
+     "inizio": "2027-01-11",
+     "fine": "2027-04-30",
+     "note": "Esami del semestre appena concluso dal 25/01 (1° anno) o dal 18/01/2027 (anni successivi)"
+    },
+    {
+     "nome": "Secondo periodo ordinario",
+     "inizio": "2027-05-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Terzo periodo ordinario",
+     "inizio": "2027-09-01",
+     "fine": "2027-12-23",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unite-l-38-tutela-e-benessere-animale",
+    "unite-lm-86-scienze-delle-produzioni-animali-sostenibili"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "Business Management (L-18, in inglese): assegnato al calendario del Dipartimento di Scienze politiche, che fissa i periodi d'esame per i corsi del Dipartimento; la pagina del corso (https://www.unite.it/UniTE/Didattica/Corsi_di_studio/Business_Management_L18) e il catalogo Cineca indicano come struttura il Department of Political Science."
+}

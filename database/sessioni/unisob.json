@@ -1,0 +1,83 @@
+{
+ "universita_id": "unisob",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://www.unisob.na.it/ateneo/calendario.htm?vr=1",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata 1",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-22",
+     "note": "Sessione straordinaria a.a. 2025/26 e anticipata a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione anticipata 2",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-12",
+     "note": "Sessione straordinaria a.a. 2025/26 e anticipata a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione anticipata 3",
+     "inizio": "2027-02-15",
+     "fine": "2027-03-05",
+     "note": "Sessione straordinaria a.a. 2025/26 e anticipata a.a. 2026/27"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-11",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-09",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-07-12",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-21",
+     "note": null
+    },
+    {
+     "nome": "Sessione invernale (straordinaria)",
+     "inizio": "2027-12-09",
+     "fine": "2027-12-17",
+     "note": "Straordinaria a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unisob-l-18-economia-aziendale-e-green-economy",
+    "unisob-l-11-lingue-e-culture-moderne",
+    "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia",
+    "unisob-l-39-scienze-del-servizio-sociale-diritti-e-inclusione",
+    "unisob-l-19-scienze-dell-educazione",
+    "unisob-l-20-scienze-della-comunicazione",
+    "unisob-l-24-scienze-e-tecniche-di-psicologia-cognitiva",
+    "unisob-lm-59-comunicazione-pubblica-e-d-impresa",
+    "unisob-lm-57-lm-85-consulenza-pedagogica",
+    "unisob-lm-43-digital-humanities-beni-culturali-e-materie-letterarie",
+    "unisob-lm-77-economia-management-e-sostenibilita",
+    "unisob-lm-38-lingue-moderne-per-la-comunicazione-e-la-cooperazione-intern",
+    "unisob-lm-49-management-del-turismo",
+    "unisob-lm-87-programmazione-amministrazione-e-gestione-delle-politiche-e",
+    "unisob-lm-51-psicologia-risorse-umane-ergonomia-cognitiva-neuroscienze-co",
+    "unisob-lmr-02-conservazione-e-restauro-dei-beni-culturali-abilitante-ai-se",
+    "unisob-lmg-01-giurisprudenza",
+    "unisob-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "Non riportate la seduta dell'8-15 aprile 2027 (straordinaria a.a. 2025/26, riservata a chi era all'ultimo anno nel 2025/26 con una sola attività mancante) e le sedute della Prova pratica valutativa LM-51 (giugno e ottobre 2027, febbraio e aprile 2028), che non sono sessioni d'esame di profitto."
+}

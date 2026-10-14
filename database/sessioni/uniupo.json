@@ -1,0 +1,250 @@
+{
+ "universita_id": "uniupo",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Studi per l'Economia e l'Impresa (DiSEI, Novara)",
+   "fonte": "https://disei.uniupo.it/media/24299/download",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "3 appelli (7-21 gennaio, 25 gennaio-5 febbraio, 8-19 febbraio); per il 1° anno solo insegnamenti del 1° semestre"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-06-30",
+     "note": "2 appelli (3-16 e 17-30 giugno)"
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-16",
+     "note": "1° appello; esclusi gli studenti che si laureano a luglio 2027"
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-17",
+     "note": "2° appello"
+    }
+   ],
+   "corsi": [
+    "uniupo-l-18-economia-aziendale",
+    "uniupo-l-15-progettazione-e-management-del-turismo",
+    "uniupo-lm-77-amministrazione-professione-e-persone",
+    "uniupo-lm-77-management-economia-e-finanza",
+    "uniupo-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Giurisprudenza e Scienze Politiche, Economiche e Sociali (DiGSPES, Alessandria)",
+   "fonte": "https://digspes.uniupo.it/it/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "3 appelli; sessione straordinaria a.a. 2025/2026 e anticipata a.a. 2026/2027 (la pagina Esami di profitto indica invece dal 12 gennaio)"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-16",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-07-19",
+     "fine": "2027-09-24",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "uniupo-l-36-scienze-politiche-e-dell-amministrazione",
+    "uniupo-l-39-servizio-sociale",
+    "uniupo-lm-63-lm-87-amministrazione-servizi-e-territorio",
+    "uniupo-lm-56-economia-e-management",
+    "uniupo-lmg-01-giurisprudenza-1629136",
+    "uniupo-l-18-economia-aziendale-replica-alessandria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Studi Umanistici (DiSUm, Vercelli)",
+   "fonte": "https://disum.uniupo.it/it/didattica/calendario/esami-di-profitto-calendario-appelli",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": "sessione invernale e straordinaria a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione primaverile",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-06",
+     "note": "limitatamente agli insegnamenti del 1° semestre e straordinaria a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-11-15",
+     "fine": "2027-11-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-24",
+     "fine": "2028-02-25",
+     "note": "straordinaria a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "uniupo-l-5-filosofia-e-comunicazione",
+    "uniupo-l-10-lettere",
+    "uniupo-l-11-lingue-straniere-moderne",
+    "uniupo-lm-14-filologia-e-patrimonio-culturale",
+    "uniupo-lm-78-lm-62-filosofia-politica-e-studi-culturali",
+    "uniupo-lm-37-lm-49-lingue-culture-turismo"
+   ]
+  },
+  {
+   "ambito": "Dipartimento per lo Sviluppo Sostenibile e la Transizione Ecologica (DiSSTE, Vercelli)",
+   "fonte": "https://disste.uniupo.it/it/didattica/calendario/esami-di-profitto",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": "sessione invernale e straordinaria 2025-26"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-11-15",
+     "fine": "2027-11-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-24",
+     "fine": "2028-02-25",
+     "note": "straordinaria 2026-27"
+    }
+   ],
+   "corsi": [
+    "uniupo-l-27-chimica-verde",
+    "uniupo-l-32-gestione-ambientale-e-sviluppo-sostenibile",
+    "uniupo-l-18-management-for-sustainability",
+    "uniupo-lm-81-disaster-and-health-crisis-management",
+    "uniupo-lm-6-food-health-and-environment"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze del Farmaco (DSF, Novara)",
+   "fonte": "https://dsf.uniupo.it/it/didattica/calendario",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria e anticipata",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "sessione straordinaria 2025-26 e anticipata 2026-27"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-08-06",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-31",
+     "fine": "2028-03-03",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniupo-lm-13-farmacia",
+    "uniupo-lm-13-chimica-e-tecnologia-farmaceutiche",
+    "uniupo-lm-9-biotecnologie-farmaceutiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze e Innovazione Tecnologica (DiSIT, Alessandria e Vercelli)",
+   "fonte": "https://disit.uniupo.it/it/didattica/calendario/calendario-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria e anticipata",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": "appelli della sessione straordinaria a.a. 2025/2026 e anticipata a.a. 2026/2027; le sessioni estiva e autunnale 2027 non sono ancora pubblicate"
+    }
+   ],
+   "corsi": [
+    "uniupo-l-27-chimica",
+    "uniupo-l-30-fisica-applicata",
+    "uniupo-l-31-informatica",
+    "uniupo-l-31-informatica-replica-vercelli",
+    "uniupo-l-13-scienze-biologiche",
+    "uniupo-l-13-scienze-biologiche-replica-vercelli",
+    "uniupo-lm-6-biologia",
+    "uniupo-lm-18-lm-91-intelligenza-artificiale-e-innovazione-digitale",
+    "uniupo-lm-54-scienze-chimiche"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "uniupo-l-2-biotecnologie",
+  "uniupo-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar",
+  "uniupo-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "uniupo-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1629249",
+  "uniupo-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1629250",
+  "uniupo-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+  "uniupo-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "uniupo-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1629842",
+  "uniupo-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1629845",
+  "uniupo-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1629844",
+  "uniupo-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1629843",
+  "uniupo-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1629841",
+  "uniupo-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+  "uniupo-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "uniupo-lm-9-medical-biotechnology",
+  "uniupo-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "uniupo-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-intensive",
+  "uniupo-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-primarie",
+  "uniupo-lm-41-medicina-e-chirurgia",
+  "uniupo-lm-41-medicina-e-chirurgia-replica-alessandria"
+ ],
+ "mancanti": "Scuola di Medicina (Medicina e Chirurgia Novara/Alessandria, professioni sanitarie, Educazione professionale, Biotecnologie, Medical Biotechnology, lauree magistrali infermieristiche): nessun calendario delle sessioni 2026/27 con date. La pagina «Calendario degli esami» (https://scuolamed.uniupo.it/it/didattica/calendario/calendario-degli-esami) rimanda solo agli elenchi ESSE3 dei singoli appelli e a fogli Google di appelli degli anni precedenti (Medicina: appelli fino al 27/02/2026; Biotecnologie: ultimo foglio a.a. 2025/26 con sessioni 2026). Secondo giro (11/10/2026): pagine dei singoli corsi, pagina «Esami di laurea», pagina inglese «Exam Calendar», pagine Calendario del DiMET (vuota) e calendario accademico di Ateneo 2026/27 (solo festività e sospensioni: https://www.uniupo.it/sites/default/files/All.%201%20-%20Calendario%20accademico%202026-2027.xlsx%20-%20Foglio1.pdf). I regolamenti didattici coorte 2026/27 della Scuola (https://scuolamed.uniupo.it/it/didattica/corsi-di-laurea/regolamenti-dei-corsi-di-laurea-laurea-magistrale-laurea-magistrale-ciclo-unico) indicano solo i mesi, senza giorni: professioni sanitarie, Infermieristica ed Educazione professionale gennaio/febbraio, giugno/luglio e settembre; Medicina e Chirurgia sessione ordinaria gennaio/febbraio e giugno/luglio con recuperi in giugno, luglio, agosto, settembre e gennaio/febbraio successivi; Biotecnologie gennaio/febbraio e giugno/luglio; lauree magistrali infermieristiche gennaio/febbraio, giugno/luglio, recupero a settembre. DiSIT: la pagina «Calendario attività didattiche» (aggiornata il 07/10/2026) pubblica per il 2026/27 solo la sessione straordinaria/anticipata 25/01-26/02/2027; mancano estiva e autunnale 2027. Economia aziendale (replica Alessandria) assegnata al calendario DiGSPES perché i suoi appelli sono pubblicati insieme a quelli del DiGSPES."
+}

@@ -1,0 +1,1436 @@
+{
+ "universita_id": "unisa",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-13",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Scienze del Patrimonio Culturale (DISPAC) - corsi di beni culturali, arti, filosofia, archeologia, archivistica, spettacolo",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/1869/calendario-didattico-2026-27-agg.-18-06-26.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2026-12-07",
+     "fine": "2027-02-12",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2028-01-07",
+     "fine": "2028-02-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisa-l-1-scienze-dei-beni-culturali",
+    "unisa-l-3-discipline-delle-arti-visive-della-musica-e-dello-spettacolo",
+    "unisa-l-5-filosofia",
+    "unisa-lm-2-archeologia-e-culture-antiche",
+    "unisa-lm-5-gestione-e-valorizzazione-degli-archivi-e-delle-biblioteche",
+    "unisa-lm-65-scienze-dello-spettacolo-e-della-produzione-multimediale",
+    "unisa-lm-78-filosofia",
+    "unisa-lm-89-storia-e-critica-d-arte"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Umane, Filosofiche e della Formazione - corsi di educazione, formazione, scienze motorie e psicologia",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/2463/calendario-attivita-didattiche-a.a.-2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "3 appelli distanziati di almeno 12 giorni"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-16",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di recupero 1",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-17",
+     "note": "1 appello riservato agli studenti in debito di un solo esame per la sessione di laurea di gennaio 2028"
+    },
+    {
+     "nome": "Sessione di recupero 2",
+     "inizio": "2028-01-03",
+     "fine": "2028-02-18",
+     "note": "3 appelli; settimana 17-21 gennaio 2028 non disponibile"
+    }
+   ],
+   "corsi": [
+    "unisa-l-19-scienze-dell-educazione",
+    "unisa-l-22-scienze-delle-attivita-motorie-sportive-e-dell-educazione-ps",
+    "unisa-lm-51-psicologia-dell-intervento-nei-contesti-clinici-sportivi-e-f",
+    "unisa-lm-57-scienze-dell-educazione-permanente-e-della-formazione-contin",
+    "unisa-lm-68-scienze-della-valutazione-motorio-sportiva-e-tecniche-di-ana",
+    "unisa-lm-85-bis-scienze-della-formazione-primaria",
+    "unisa-lm-85-scienze-pedagogiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria Industriale (DIIn) - CODIMEG e CODIC (ingegneria gestionale, meccanica, chimica, alimentare)",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/4381/calendario-didattico-aa-2026-27-codimeg-anni-successivi-al-1-.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-04",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-08-31",
+     "fine": "2027-09-24",
+     "note": "Per il I anno dal 30 agosto 2027"
+    }
+   ],
+   "corsi": [
+    "unisa-l-9-ingegneria-gestionale",
+    "unisa-l-9-ingegneria-meccanica",
+    "unisa-lm-31-ingegneria-gestionale",
+    "unisa-lm-33-ingegneria-meccanica",
+    "unisa-lm-33-smart-industry-engineering",
+    "unisa-l-9-ingegneria-chimica",
+    "unisa-lm-22-food-engineering",
+    "unisa-lm-22-ingegneria-chimica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria Industriale (DIIn) - CdS Ingegneria Elettronica (L e LM)",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/4384/calendario-elettronica-26-27-def.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-04",
+     "fine": "2027-02-26",
+     "note": "Per II e III anno L e per la LM anche 21-23 dicembre 2026"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Per il I anno L dal 14 giugno 2027"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisa-l-8-ingegneria-elettronica",
+    "unisa-lm-29-ingegneria-elettronica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria Civile (L-7, L-P01, LM-4 c.u., LM-23, LM-35)",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/2906/calendario-delle-attivita-didattiche-e-delle-sedute-di-laurea-a.a.-2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Pre-appello",
+     "inizio": "2026-12-16",
+     "fine": "2026-12-23",
+     "note": "Appello straordinario riservato agli studenti in corso iscritti agli anni successivi al primo"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisa-l-7-ingegneria-civile",
+    "unisa-l-p01-tecniche-per-l-edilizia-e-il-territorio",
+    "unisa-lm-23-ingegneria-civile",
+    "unisa-lm-35-ingegneria-per-l-ambiente-e-il-territorio",
+    "unisa-lm-4-c-u-ingegneria-edile-architettura",
+    "unisa-l-7-ingegneria-civile-per-l-ambiente-ed-il-territorio"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria dell'Informazione ed Elettrica e Matematica Applicata (DIEM) - Consiglio didattico di Ingegneria Informatica",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/2856/calendario-attivita-didattiche-diem-2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Per il III anno L fino al 26 febbraio 2027"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Per il III anno L dal 17 maggio, per il II anno LM dal 24 maggio 2027"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "Per il II anno LM fino al 17 settembre 2027"
+    }
+   ],
+   "corsi": [
+    "unisa-l-8-ingegneria-dell-informazione-per-la-medicina-digitale",
+    "unisa-l-8-ingegneria-informatica",
+    "unisa-lm-28-electrical-engineering-for-digital-energy",
+    "unisa-lm-32-information-engineering-for-digital-medicine",
+    "unisa-lm-32-ingegneria-informatica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Fisica - CdS in Fisica (L-30, LM-17)",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/2361/calendario-didattico.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "2 appelli (un terzo per gli insegnamenti del I semestre del I anno)"
+    },
+    {
+     "nome": "Sessione di aprile",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-31",
+     "note": "3 appelli per la triennale, 2 per la magistrale"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di novembre",
+     "inizio": "2027-11-03",
+     "fine": "2027-11-30",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unisa-l-30-fisica",
+    "unisa-lm-17-fisica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze e Nanotecnologie per la Sostenibilità (L-30)",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/8804/calendario-didattico-2026-27-ita.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "2 appelli (un terzo per gli insegnamenti del I semestre del I anno)"
+    },
+    {
+     "nome": "Sessione di aprile",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-31",
+     "note": "3 appelli per la triennale, 2 per la magistrale"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di novembre",
+     "inizio": "2027-11-03",
+     "fine": "2027-11-30",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unisa-l-30-scienze-e-nanotecnologie-per-la-sostenibilita"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Nanotechnology and Physics for Sustainability (LM-17)",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/11660/course-calendar-2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione di aprile",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-31",
+     "note": "2 appelli; il PDF riporta \"May 31 - July 31, 2026\", refuso per 2027 (stesse date del calendario italiano del Dipartimento)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-24",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di novembre",
+     "inizio": "2027-11-03",
+     "fine": "2027-11-30",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unisa-lm-17-nanotechnology-and-physics-for-sustainability"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Chimica (L-27)",
+   "fonte": "https://corsi.unisa.it/chimica/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Appello straordinario di primavera",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-30",
+     "note": "1 appello"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Appello straordinario di novembre",
+     "inizio": "2027-11-01",
+     "fine": "2027-11-30",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Appello straordinario di dicembre",
+     "inizio": "2027-12-01",
+     "fine": "2027-12-22",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unisa-l-27-chimica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Chimica (LM-54)",
+   "fonte": "https://corsi.unisa.it/chimica-magistrale/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Appello straordinario di primavera",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-30",
+     "note": "1 appello"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Appello straordinario di novembre",
+     "inizio": "2027-11-01",
+     "fine": "2027-11-30",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Appello straordinario di dicembre",
+     "inizio": "2027-12-01",
+     "fine": "2027-12-22",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unisa-lm-54-chimica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze Biologiche (L-13)",
+   "fonte": "https://corsi.unisa.it/scienze-biologiche/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Appello straordinario di aprile",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "Riservato a fuori corso (e, per la LM, al II anno in corso)"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Appello straordinario di novembre",
+     "inizio": "2027-11-01",
+     "fine": "2027-11-30",
+     "note": "Riservato a fuori corso e ultimo anno non frequentanti"
+    },
+    {
+     "nome": "Appello straordinario di dicembre",
+     "inizio": "2027-12-01",
+     "fine": "2027-12-22",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unisa-l-13-scienze-biologiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Biologia (LM-6)",
+   "fonte": "https://corsi.unisa.it/biologia/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Appello straordinario di aprile",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "Riservato a fuori corso (e, per la LM, al II anno in corso)"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Appello straordinario di novembre",
+     "inizio": "2027-11-01",
+     "fine": "2027-11-30",
+     "note": "Riservato a fuori corso e ultimo anno non frequentanti"
+    },
+    {
+     "nome": "Appello straordinario di dicembre",
+     "inizio": "2027-12-01",
+     "fine": "2027-12-22",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unisa-lm-6-biologia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze Ambientali (L-32)",
+   "fonte": "https://corsi.unisa.it/scienze-ambientali/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "Sessione prima",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "1° appello straordinario",
+     "inizio": "2027-05-20",
+     "fine": "2027-05-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione seconda",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione terza",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "2° appello straordinario",
+     "inizio": "2027-10-04",
+     "fine": "2027-10-29",
+     "note": null
+    },
+    {
+     "nome": "3° appello straordinario",
+     "inizio": "2027-12-10",
+     "fine": "2027-12-22",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisa-l-32-scienze-ambientali"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze Ambientali (LM-75)",
+   "fonte": "https://corsi.unisa.it/scienze-ambientali-magistrale/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "Sessione prima",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-28",
+     "note": null
+    },
+    {
+     "nome": "1° appello straordinario",
+     "inizio": "2027-05-20",
+     "fine": "2027-05-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione seconda",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione terza",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "2° appello straordinario",
+     "inizio": "2027-10-01",
+     "fine": "2027-10-10",
+     "note": null
+    },
+    {
+     "nome": "3° appello straordinario",
+     "inizio": "2027-12-10",
+     "fine": "2027-12-22",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisa-lm-75-scienze-ambientali"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea in Informatica (L-31, LM-18)",
+   "fonte": "https://corsi.unisa.it/informatica/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Preappello 7-22 gennaio (corsi del I semestre), I appello 25 gennaio-5 febbraio, II appello 8-19 febbraio"
+    },
+    {
+     "nome": "Appello straordinario di marzo",
+     "inizio": "2027-03-08",
+     "fine": "2027-03-19",
+     "note": "Riservato a fuori corso e studenti con CFU sufficienti"
+    },
+    {
+     "nome": "Appello straordinario di aprile",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-23",
+     "note": "Riservato a fuori corso e studenti con CFU sufficienti"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Preappello 7-24 giugno (corsi del II semestre), I appello 25 giugno-14 luglio, II appello 15-30 luglio"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unisa-l-31-informatica",
+    "unisa-lm-18-informatica"
+   ]
+  },
+  {
+   "ambito": "Consiglio Didattico di Scienze della Comunicazione",
+   "fonte": "https://corsi.unisa.it/scienze-della-comunicazione/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "Appello di dicembre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-18",
+     "note": "1 appello esami ordinari/recupero"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-31",
+     "note": "1 appello; studenti in regola con le tasse"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-23",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-20",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unisa-l-20-scienze-della-comunicazione",
+    "unisa-lm-77-digital-marketing",
+    "unisa-l-18-marketing-e-digital-business",
+    "unisa-lm-59-lm-92-corporate-communication-marketing-innovation-e-media-digital"
+   ]
+  },
+  {
+   "ambito": "Consiglio Didattico di Scienze Politiche",
+   "fonte": "https://corsi.unisa.it/scienze-politiche-e-relazioni-Internazionali/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "Appello di dicembre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-18",
+     "note": "1 appello esami ordinari/recupero"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-31",
+     "note": "1 appello; studenti in regola con le tasse"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-23",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-20",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unisa-l-36-scienze-politiche-e-delle-relazioni-internazionali",
+    "unisa-lm-49-management-dei-sistemi-turistici-per-lo-sviluppo-sostenibile",
+    "unisa-lm-62-politiche-territoriali-e-cooperazione-internazionale"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea in Lettere e magistrali di area filologica e linguistica (L-10, LM-14, LM-15)",
+   "fonte": "https://corsi.unisa.it/lettere/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria di gennaio",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-11",
+     "note": "Giorni 7, 8 e 11 gennaio; riservata a fuori corso e studenti a cui mancano esami per 12 CFU"
+    },
+    {
+     "nome": "Prima sessione 1",
+     "inizio": "2027-01-12",
+     "fine": "2027-01-29",
+     "note": "I appello"
+    },
+    {
+     "nome": "Prima sessione 2",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-19",
+     "note": "II appello"
+    },
+    {
+     "nome": "Sessione straordinaria di marzo",
+     "inizio": "2027-03-24",
+     "fine": "2027-03-24",
+     "note": "Riservata"
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-30",
+     "note": "3 appelli: 24-31 maggio, 1-30 giugno, 1-30 luglio"
+    },
+    {
+     "nome": "Terza sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-22",
+     "note": "Esami degli anni accademici precedenti"
+    }
+   ],
+   "corsi": [
+    "unisa-l-10-lettere",
+    "unisa-lm-14-filologia-moderna",
+    "unisa-lm-14-linguistica-e-didattica-dell-italiano-nel-contesto-internazi",
+    "unisa-lm-15-filologia-letterature-e-storia-dell-antichita"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea in Lingue (L-11, LM-37)",
+   "fonte": "https://corsi.unisa.it/lingue-e-culture-straniere/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "Prima sessione 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-13",
+     "note": "Esami scritti di lingua straniera"
+    },
+    {
+     "nome": "Prima sessione 2",
+     "inizio": "2027-01-14",
+     "fine": "2027-01-29",
+     "note": "I appello"
+    },
+    {
+     "nome": "Prima sessione 3",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-19",
+     "note": "II appello"
+    },
+    {
+     "nome": "Sessione straordinaria di marzo",
+     "inizio": "2027-03-24",
+     "fine": "2027-03-24",
+     "note": "Riservata"
+    },
+    {
+     "nome": "Sessione straordinaria di maggio",
+     "inizio": "2027-05-21",
+     "fine": "2027-05-28",
+     "note": "Riservata"
+    },
+    {
+     "nome": "Seconda sessione 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-07",
+     "note": "Esami scritti di lingua straniera"
+    },
+    {
+     "nome": "Seconda sessione 2",
+     "inizio": "2027-06-08",
+     "fine": "2027-07-30",
+     "note": "2/3 appelli"
+    },
+    {
+     "nome": "Terza sessione 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-07",
+     "note": "Esami scritti di lingua straniera"
+    },
+    {
+     "nome": "Terza sessione 2",
+     "inizio": "2027-09-08",
+     "fine": "2027-09-20",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-22",
+     "note": "Esami degli anni accademici precedenti"
+    }
+   ],
+   "corsi": [
+    "unisa-l-11-lingue-e-culture-straniere",
+    "unisa-lm-37-lingue-e-letterature-moderne"
+   ]
+  },
+  {
+   "ambito": "Corsi di Servizio sociale (L-39, LM-87)",
+   "fonte": "https://corsi.unisa.it/scienze-del-servizio-sociale/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione riservata a fuori corso",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-25",
+     "note": null
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisa-l-39-scienze-del-servizio-sociale",
+    "unisa-lm-87-organizzazione-valutazione-e-supervisione-dei-servizi-social"
+   ]
+  },
+  {
+   "ambito": "Corsi di Sociologia e Management delle attività sportive (L-40, LM-47)",
+   "fonte": "https://corsi.unisa.it/sociologia/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione riservata a fuori corso",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-25",
+     "note": null
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisa-l-40-sociologia",
+    "unisa-lm-47-management-delle-attivita-sportive-e-motorie-per-il-benesser"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Economiche e Statistiche (DISES) – Scienze del Turismo, Economia Aziendale, Economia e Commercio, Economia (LM-56)",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/3388/calendario-appelli-2026-27-cd-ec-eit130626.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-09",
+     "fine": "2027-02-12",
+     "note": "Appelli 09-23/12/2026, 07-15/01, 18-29/01, 01-12/02/2027; il II appello (07-15/01) è riservato ai corsi del I semestre"
+    },
+    {
+     "nome": "Appello di recupero",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-26",
+     "note": "Riservato agli studenti fuori corso iscritti all'a.a. 2026/2027"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-09",
+     "note": "Appelli 24/05-04/06, 14-25/06, 28/06-09/07/2027; il II appello (14-25/06) è riservato ai corsi del II semestre"
+    },
+    {
+     "nome": "Sessione estiva – appello di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisa-l-15-scienze-del-turismo",
+    "unisa-l-18-economia-aziendale",
+    "unisa-l-33-economia-e-commercio",
+    "unisa-lm-56-economia"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Economiche e Statistiche (DISES) – Scienze dell'Amministrazione e dell'Organizzazione, Economia Governo e Amministrazione",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/1922/calendario-appelli-2026-27-cdsg-230626.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-09",
+     "fine": "2027-02-12",
+     "note": "Appelli 09-23/12/2026, 07-15/01, 18-29/01, 01-12/02/2027"
+    },
+    {
+     "nome": "Appello di recupero",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-09",
+     "note": "Appelli 24/05-04/06, 14-25/06, 28/06-09/07/2027"
+    },
+    {
+     "nome": "Sessione estiva – appello di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisa-l-16-scienze-dell-amministrazione-e-dell-organizzazione",
+    "unisa-lm-56-lm-63-economia-governo-e-amministrazione"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Economiche e Statistiche (DISES) – Statistica e Metodi Computazionali, Scienze Statistiche per la Finanza",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/11405/calendario-appelli-2026-27-cdstat-230626.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-09",
+     "fine": "2027-02-12",
+     "note": "Appelli 09-23/12/2026, 07-15/01, 18-29/01, 01-12/02/2027; il II appello (07-15/01) è riservato ai corsi del I semestre; il III appello (18-29/01) è riservato agli studenti fuori corso"
+    },
+    {
+     "nome": "Appello di recupero",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-26",
+     "note": "Riservato agli studenti fuori corso iscritti all'a.a. 2026/2027"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-09",
+     "note": "Appelli 24/05-04/06, 14-25/06, 28/06-09/07/2027; il II appello (14-25/06) è riservato ai corsi del II semestre; il III appello (28/06-09/07) è riservato agli studenti fuori corso"
+    },
+    {
+     "nome": "Sessione estiva – appello di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisa-l-41-statistica-e-metodi-computazionali",
+    "unisa-lm-83-scienze-statistiche-per-la-finanza"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea in Economia e Management (L-18), Studi Diplomatici (L-36), Consulenza e Management Aziendale (LM-77), Data Science e Gestione dell'Innovazione (LM-Data), Global Studies and EU (LM-52)",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/2166/calendario-lezioni-appelli-e-sedute-di-laurea-26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2026-12-09",
+     "fine": "2027-02-12",
+     "note": "I appello 9-18/12/2026, II appello 7-15/01/2027, III appello 1-12/02/2027"
+    },
+    {
+     "nome": "I sessione – IV appello",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-16",
+     "note": "Lezioni sospese per esami"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-23",
+     "note": "I appello 31/05-11/06, II appello 21/06-02/07, III appello 12-23/07/2027"
+    },
+    {
+     "nome": "II sessione – IV appello",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisa-l-18-economia-e-management",
+    "unisa-l-36-studi-diplomatici-internazionali-e-sulla-sicurezza-globale",
+    "unisa-lm-77-consulenza-e-management-aziendale",
+    "unisa-lm-data-data-science-e-gestione-dell-innovazione",
+    "unisa-lm-52-studi-globali-e-ue"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Matematica (L-35)",
+   "fonte": "https://corsi.unisa.it/matematica/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "I appello ordinario",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-29",
+     "note": "Un appello per insegnamento"
+    },
+    {
+     "nome": "II appello ordinario",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": "Un appello per insegnamento"
+    },
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "Riservato a studenti fuori corso o in corso con almeno 120 CFU"
+    },
+    {
+     "nome": "III appello ordinario",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-02",
+     "note": null
+    },
+    {
+     "nome": "IV appello ordinario",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "V appello ordinario",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-20",
+     "note": null
+    },
+    {
+     "nome": "VI appello ordinario",
+     "inizio": "2027-10-25",
+     "fine": "2027-11-19",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisa-l-35-matematica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Matematica (LM-40)",
+   "fonte": "https://corsi.unisa.it/matematica-magistrale/didattica/calendari",
+   "sessioni": [
+    {
+     "nome": "I appello ordinario",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-29",
+     "note": "Un appello per insegnamento"
+    },
+    {
+     "nome": "II appello ordinario",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "III appello ordinario",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": null
+    },
+    {
+     "nome": "IV appello ordinario",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-02",
+     "note": null
+    },
+    {
+     "nome": "V appello ordinario",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "VI appello ordinario",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-20",
+     "note": null
+    },
+    {
+     "nome": "VII appello ordinario",
+     "inizio": "2027-10-25",
+     "fine": "2027-11-19",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unisa-lm-40-matematica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Farmacia (DIFARMA) - Farmacia, Chimica e tecnologia farmaceutiche, Tecniche erboristiche, Farmaceutica e nutraceutica animale, Agraria (L-25, LM-69)",
+   "fonte": "https://corsi.unisa.it/uploads/rescue/499/2260/calendario-esami-sessioni-ordinarie-aa-26-27-1.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-02-26",
+     "note": "Il calendario indica solo i mesi (gennaio-febbraio 2027): le date sono il primo e l'ultimo appello pubblicato nella tabella (due appelli a sessione; il PDF elenca analiticamente i corsi di Farmacia e di CTF)"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-09",
+     "fine": "2027-07-28",
+     "note": "Il calendario indica solo i mesi (giugno-luglio 2027): le date sono il primo e l'ultimo appello pubblicato nella tabella (due appelli a sessione; il PDF elenca analiticamente i corsi di Farmacia e di CTF)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "Il calendario indica solo i mesi (settembre 2027): le date sono il primo e l'ultimo appello pubblicato nella tabella (due appelli a sessione; il PDF elenca analiticamente i corsi di Farmacia e di CTF); un solo appello"
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-22",
+     "note": "Il calendario indica solo i mesi (dicembre 2027): le date sono il primo e l'ultimo appello pubblicato nella tabella (due appelli a sessione; il PDF elenca analiticamente i corsi di Farmacia e di CTF); un solo appello"
+    }
+   ],
+   "corsi": [
+    "unisa-lm-13-farmacia",
+    "unisa-lm-13-chimica-e-tecnologia-farmaceutiche",
+    "unisa-l-29-tecniche-erboristiche",
+    "unisa-l-29-farmaceutica-e-nutraceutica-animale",
+    "unisa-l-25-gestione-e-valorizzazione-delle-risorse-agrarie-e-delle-aree",
+    "unisa-lm-69-innovazioni-per-le-produzioni-agrarie-mediterranee"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Giurisprudenza (LMG/01)",
+   "fonte": "https://corsi.unisa.it/giurisprudenza/didattica/calendari",
+   "corsi": [
+    "unisa-lmg-01-giurisprudenza"
+   ],
+   "sessioni": [
+    {
+     "nome": "Prima sessione 1",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-22",
+     "note": "appello ordinario aperto a tutti"
+    },
+    {
+     "nome": "Prima sessione 2",
+     "inizio": "2027-01-25",
+     "fine": "2027-01-29",
+     "note": "appello riservato a fuori corso e iscritti ad anni successivi al primo (esami di insegnamenti di anni precedenti)"
+    },
+    {
+     "nome": "Prima sessione 3",
+     "inizio": "2027-02-08",
+     "fine": "2027-02-19",
+     "note": "appello ordinario aperto a tutti"
+    },
+    {
+     "nome": "Seconda sessione 1",
+     "inizio": "2027-06-14",
+     "fine": "2027-06-25",
+     "note": "appello ordinario aperto a tutti"
+    },
+    {
+     "nome": "Seconda sessione 2",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-09",
+     "note": "appello riservato a fuori corso e iscritti ad anni successivi al primo"
+    },
+    {
+     "nome": "Seconda sessione 3",
+     "inizio": "2027-07-12",
+     "fine": "2027-07-23",
+     "note": "appello ordinario aperto a tutti"
+    },
+    {
+     "nome": "Seconda sessione 4",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-17",
+     "note": "appello ordinario aperto a tutti"
+    },
+    {
+     "nome": "Sessione di recupero 1",
+     "inizio": "2027-10-18",
+     "fine": "2027-10-29",
+     "note": "solo esami fondamentali (di base e caratterizzanti)"
+    },
+    {
+     "nome": "Sessione di recupero 2",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-17",
+     "note": "solo esami fondamentali (di base e caratterizzanti)"
+    }
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Giurista d'impresa e delle nuove tecnologie (L-14)",
+   "fonte": "https://corsi.unisa.it/giurista-d-impresa-e-delle-nuove-tecnologie/didattica/calendari",
+   "corsi": [
+    "unisa-l-14-giurista-d-impresa-e-delle-nuove-tecnologie"
+   ],
+   "sessioni": [
+    {
+     "nome": "Prima sessione 1",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-22",
+     "note": "appello ordinario aperto a tutti"
+    },
+    {
+     "nome": "Prima sessione 2",
+     "inizio": "2027-01-25",
+     "fine": "2027-01-29",
+     "note": "appello riservato a fuori corso e iscritti ad anni successivi al primo (esami di insegnamenti di anni precedenti)"
+    },
+    {
+     "nome": "Prima sessione 3",
+     "inizio": "2027-02-08",
+     "fine": "2027-02-19",
+     "note": "appello ordinario aperto a tutti"
+    },
+    {
+     "nome": "Seconda sessione 1",
+     "inizio": "2027-06-14",
+     "fine": "2027-06-25",
+     "note": "appello ordinario aperto a tutti"
+    },
+    {
+     "nome": "Seconda sessione 2",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-09",
+     "note": "appello riservato a fuori corso e iscritti ad anni successivi al primo"
+    },
+    {
+     "nome": "Seconda sessione 3",
+     "inizio": "2027-07-12",
+     "fine": "2027-07-23",
+     "note": "appello ordinario aperto a tutti"
+    },
+    {
+     "nome": "Seconda sessione 4",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-17",
+     "note": "appello ordinario aperto a tutti"
+    },
+    {
+     "nome": "Sessione di recupero 1",
+     "inizio": "2027-10-18",
+     "fine": "2027-10-29",
+     "note": "solo esami fondamentali (di base e caratterizzanti)"
+    },
+    {
+     "nome": "Sessione di recupero 2",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-17",
+     "note": "solo esami fondamentali (di base e caratterizzanti)"
+    }
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Sociologia del Cambiamento Ambientale e Digitale (LM-88)",
+   "fonte": "https://corsi.unisa.it/sociologia-del-cambiamento-ambientale-e-digitale/didattica/calendari",
+   "corsi": [
+    "unisa-lm-88-sociologia-del-cambiamento-ambientale-e-digitale"
+   ],
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria 1",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di recupero 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "la pagina riporta «Al 19 febbraio 2026», refuso per 2027"
+    },
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione riservata a fuori corso",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-25",
+     "note": null
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione straordinaria 2",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di recupero 2",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-25",
+     "note": null
+    }
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unisa-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-ostetrico",
+  "unisa-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+  "unisa-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632598",
+  "unisa-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+  "unisa-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "unisa-lm-41-medicina-e-chirurgia",
+  "unisa-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "unisa-l-37-science-management-and-politics-in-global-health",
+  "unisa-sab-5201-beni-archeologici",
+  "unisa-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "unisa-lm-66-sicurezza-informatica-e-tecnologie-cloud",
+  "unisa-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "unisa-lm-46-odontoiatria-e-protesi-dentaria"
+ ],
+ "mancanti": "Pubblicati per il 2026/27 solo calendari dei mesi o dell'a.a. 2025/26, o nessun calendario, per: Medicina e chirurgia e Odontoiatria (https://corsi.unisa.it/medicina-e-chirurgia/didattica/calendari e https://corsi.unisa.it/odontoiatria-protesi-dentaria/didattica/calendari: calendari esami giugno-dicembre 2025/26 e orari 2026/27); professioni sanitarie, Infermieristica (anche la replica) e Ostetricia, Fisioterapia, TLB, TRM e le lauree magistrali SNT1 (pagine «Calendario Lezioni ed Appelli» dei corsi: calendari appelli 2025/26); Sicurezza informatica e tecnologie cloud (https://corsi.unisa.it/sicurezza-informatica-e-tecnologie-cloud/didattica/calendari: tabella dei periodi solo 2025/26); Politiche territoriali: assegnato al calendario del Consiglio Didattico di Scienze Politiche (stesso consiglio indicato nella pagina del corso); Science, Management and Politics in Global Health (https://corsi.unisa.it/science-management-and-politics-in-global-health/didattica/calendari: solo i mesi delle sessioni, senza date); Beni archeologici (scuola di specializzazione, nessun calendario sulle pagine consultate)."
+}

@@ -1,0 +1,321 @@
+{
+ "universita_id": "univpm",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Facoltà di Economia «Giorgio Fuà»",
+   "fonte": "https://www.econ.univpm.it/sites/www.econ.univpm.it/files/economia/CalAttDid27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-21",
+     "note": "1° appello"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-22",
+     "fine": "2027-02-05",
+     "note": "2° appello (solo materie del I semestre)"
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-02-06",
+     "fine": "2027-02-20",
+     "note": "3° appello"
+    },
+    {
+     "nome": "Post-appello invernale",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-20",
+     "note": "Riservato ai fuori corso del 3° anno delle lauree e del 2° anno delle magistrali"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-06-15",
+     "note": "1° appello"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-16",
+     "fine": "2027-07-01",
+     "note": "2° appello"
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-07-02",
+     "fine": "2027-07-17",
+     "note": "3° appello (solo materie del II semestre)"
+    },
+    {
+     "nome": "Sessione autunnale 1",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-04",
+     "note": "1° appello"
+    },
+    {
+     "nome": "Sessione autunnale 2",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-18",
+     "note": "2° appello"
+    },
+    {
+     "nome": "Post-appello autunnale",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-20",
+     "note": "Riservato ai fuori corso del 3° anno delle lauree e del 2° anno delle magistrali e ai laureandi di dicembre"
+    }
+   ],
+   "corsi": [
+    "univpm-l-33-l-18-digital-economics-and-business",
+    "univpm-l-18-economia-aziendale",
+    "univpm-l-33-economia-e-commercio",
+    "univpm-l-18-management-per-la-valorizzazione-sostenibile-delle-aziende-e",
+    "univpm-lm-data-data-science-for-economics-business-and-finance",
+    "univpm-lm-77-economia-e-management",
+    "univpm-lm-56-international-economics-and-commerce",
+    "univpm-lm-77-management-pubblico-e-dei-sistemi-socio-sanitari",
+    "univpm-lm-16-scienze-economiche-e-finanziarie",
+    "univpm-lm-77-sustainability-management-and-circular-economy"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze della Vita e dell'Ambiente (DiSVA) – Lauree triennali",
+   "fonte": "https://www.disva.univpm.it/sites/default/files/2026-03/Calendario%20lezioni%20esami%202026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-06",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-09",
+     "note": "Con sospensione di tutte le lezioni"
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-01",
+     "fine": "2028-02-29",
+     "note": "Il calendario indica solo «Gennaio - Febbraio 2028»"
+    }
+   ],
+   "corsi": [
+    "univpm-l-32-environmental-sciences-and-civil-protection",
+    "univpm-l-32-scienze-ambientali-e-protezione-civile",
+    "univpm-l-13-scienze-biologiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze della Vita e dell'Ambiente (DiSVA) – Lauree magistrali",
+   "fonte": "https://www.disva.univpm.it/sites/default/files/2026-03/Calendario%20lezioni%20esami%202026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-06",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-09",
+     "note": "Con sospensione di tutte le lezioni"
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-01",
+     "fine": "2028-02-29",
+     "note": "Il calendario indica solo «Gennaio - Febbraio 2028»"
+    }
+   ],
+   "corsi": [
+    "univpm-lm-6-biologia-molecolare-e-applicata",
+    "univpm-lm-75-environmental-hazard-and-disaster-risk-management",
+    "univpm-lm-6-marine-biology",
+    "univpm-lm-61-scienze-della-nutrizione-e-dell-alimentazione"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Agrarie, Alimentari ed Ambientali (D3A)",
+   "fonte": "https://www.d3a.univpm.it/sites/www.d3a.univpm.it/files/d3a/news_didattica/new2026/Calendario%20didattico%202026-27%20CdD%2011.03.2026.pdf",
+   "sessioni": [
+    {
+     "nome": "Prove di verifica 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "Anche sessione straordinaria a.a. 2025/26"
+    },
+    {
+     "nome": "Prove di verifica 2",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-31",
+     "note": null
+    },
+    {
+     "nome": "Prove di verifica 3",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "univpm-l-25-scienze-e-tecnologie-agrarie",
+    "univpm-l-26-scienze-e-tecnologie-alimentari",
+    "univpm-l-25-scienze-forestali-e-ambientali",
+    "univpm-l-25-sistemi-agricoli-innovativi",
+    "univpm-lm-70-food-and-beverage-innovation-and-management",
+    "univpm-lm-69-scienze-agrarie-e-del-territorio",
+    "univpm-lm-73-scienze-e-tecnologie-forestali-e-ambientali"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Medicina e Chirurgia",
+   "fonte": "https://www.medicina.univpm.it/sites/www.medicina.univpm.it/files/didattica/Calendario%20didattico%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-11",
+     "note": "Esami di anni precedenti, riservata agli studenti dei CdLM a ciclo unico; in orario pomeridiano"
+    },
+    {
+     "nome": "Prolungamento III sessione 2025/26",
+     "inizio": "2026-11-30",
+     "fine": "2026-12-12",
+     "note": "Lezioni teoriche sospese salvo il I anno"
+    },
+    {
+     "nome": "I sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-27",
+     "note": "Lezioni teoriche sospese"
+    },
+    {
+     "nome": "Prolungamento I sessione",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-24",
+     "note": "Lezioni teoriche sospese"
+    },
+    {
+     "nome": "Esami di recupero",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-22",
+     "note": "Esami di anni precedenti; solo insegnamenti del primo semestre"
+    },
+    {
+     "nome": "Appello laureandi Medicina e Chirurgia",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-05",
+     "note": "Solo laureandi del CdLMCU in Medicina e Chirurgia (appello 24-29/05 e prolungamento 31/05-05/06)"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-24",
+     "fine": "2027-07-22",
+     "note": "Lezioni teoriche sospese; deroga per laureandi di Odontoiatria e delle magistrali"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-18",
+     "note": null
+    },
+    {
+     "nome": "Sessione di recupero",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-11",
+     "note": "Riservata agli studenti dei CdLM a ciclo unico"
+    },
+    {
+     "nome": "Prolungamento III sessione",
+     "inizio": "2027-11-30",
+     "fine": "2027-12-12",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "univpm-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista",
+    "univpm-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar",
+    "univpm-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "univpm-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1627918",
+    "univpm-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+    "univpm-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "univpm-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628876",
+    "univpm-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628931",
+    "univpm-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628918",
+    "univpm-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628927",
+    "univpm-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+    "univpm-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis-1627919",
+    "univpm-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+    "univpm-l-22-scienze-motorie-per-la-salute-e-l-invecchiamento-attivo-heal",
+    "univpm-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+    "univpm-l-snt3-tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-c",
+    "univpm-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+    "univpm-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+    "univpm-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1627920",
+    "univpm-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil",
+    "univpm-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+    "univpm-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-intensive",
+    "univpm-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-primarie",
+    "univpm-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie",
+    "univpm-lm-41-medicina-e-chirurgia",
+    "univpm-lm-41-medicine-and-surgery",
+    "univpm-lm-46-odontoiatria-e-protesi-dentaria"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "univpm-l-8-ingegneria-biomedica",
+  "univpm-l-7-ingegneria-civile-e-ambientale",
+  "univpm-l-8-ingegneria-dellinformazione-per-videogame-e-realta-virtuale",
+  "univpm-l-23-ingegneria-edile",
+  "univpm-l-8-ingegneria-elettronica-e-delle-tecnologie-digitali",
+  "univpm-l-9-l-8-ingegneria-gestionale",
+  "univpm-l-8-ingegneria-informatica-e-dell-automazione",
+  "univpm-l-9-ingegneria-meccanica",
+  "univpm-l-9-ingegneria-per-la-sostenibilita-industriale",
+  "univpm-lm-21-biomedical-engineering",
+  "univpm-lm-35-environmental-engineering",
+  "univpm-lm-30-green-industrial-engineering",
+  "univpm-lm-23-ingegneria-civile",
+  "univpm-lm-33-ingegneria-delle-infrastrutture-energetiche-e-della-logistic",
+  "univpm-lm-24-ingegneria-edile",
+  "univpm-lm-29-ingegneria-elettronica",
+  "univpm-lm-31-ingegneria-gestionale",
+  "univpm-lm-32-ingegneria-informatica-e-dell-automazione",
+  "univpm-lm-33-ingegneria-meccanica",
+  "univpm-lm-4-c-u-ingegneria-edile-architettura",
+  "univpm-l-p03-sistemi-industriali-e-dell-informazione",
+  "univpm-l-p01-tecniche-della-costruzione-e-gestione-del-territorio"
+ ],
+ "mancanti": "Univpm non ha un calendario d'esami di Ateneo: ogni Facoltà/Dipartimento pubblica il proprio. Facoltà di Ingegneria scoperta: per il 2026/27 è pubblicato solo il calendario delle lezioni, mentre la pagina «Calendario esami profitto» riguarda l'a.a. 2025/26. Per Medicina è usato il calendario della sede di Ancona (esiste anche un calendario per la sede di Pesaro). Secondo giro (11/10/2026): la Facoltà di Ingegneria pubblica il «Calendario lezioni a.a. 2026/2027» (cicli I 21/09/26-11/12/26 e II 22/02/27-21/05/27, senza sessioni d'esame); la pagina calendario-esami-profitto-2025 riguarda l'a.a. 2025/26 (sessioni dal 15/12/2025 all'a.a. 2026/27, non riportate) e non esiste ancora la pagina 2026; gli appelli per corso sono solo su ESSE3."
+}

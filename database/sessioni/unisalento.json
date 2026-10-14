@@ -1,0 +1,298 @@
+{
+ "universita_id": "unisalento",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Scienze Umane e Sociali",
+   "fonte": "https://www.scienzeumanesociali.unisalento.it/documents/1356337/3638677/Calendario+Didattico+26_27_DSUS.pdf/e7f0fca1-47cb-47ff-73ad-5ed3c439da77",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "tre appelli ordinari (sessione coincidente a.a. 2025/2026 e 2026/2027)"
+    },
+    {
+     "nome": "Appello di primavera",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "un appello ordinario, senza sospensione didattica"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "tre appelli ordinari (secondo appello entro il 2 luglio)"
+    },
+    {
+     "nome": "Appello di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "un appello ordinario"
+    },
+    {
+     "nome": "Appello di novembre",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-05",
+     "note": "un appello ordinario, con sospensione didattica"
+    }
+   ],
+   "corsi": [
+    "unisalento-l-19-educazione-sociale-e-tecniche-dell-intervento-educativo",
+    "unisalento-l-24-scienza-e-tecniche-psicologiche",
+    "unisalento-l-36-scienze-politiche-e-delle-relazioni-internazionali",
+    "unisalento-l-39-servizio-sociale",
+    "unisalento-l-40-sociologia",
+    "unisalento-lm-data-data-science-per-le-scienze-umane-e-sociali",
+    "unisalento-lm-50-consulenza-pedagogica-e-progettazione-dei-processi-formativi",
+    "unisalento-lm-51-psicologia-dell-intervento-nei-contesti-relazionali-e-social",
+    "unisalento-lm-62-studi-geopolitici-e-internazionali",
+    "unisalento-lm-81-scienze-per-la-cooperazione-internazionale",
+    "unisalento-lm-85-bis-scienze-della-formazione-primaria",
+    "unisalento-lm-87-servizi-sociali-politiche-pubbliche-e-diritti-umani",
+    "unisalento-lm-88-sociologia-e-ricerca-sociale"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Studi Umanistici",
+   "fonte": "https://www.studiumanistici.unisalento.it/documents/3825171/0/Calendario+didattico+DSU_a.a.+2026-2027_approvato+dal+CdD.pdf/353dbcb2-5e5d-af86-556d-68ddef6e87af",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "tre appelli ordinari (sessioni a.a. 2025/2026 e 2026/2027)"
+    },
+    {
+     "nome": "Appello straordinario di primavera",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-02",
+     "note": "senza sospensione lezioni; riservato a fuori corso, laureandi e iscritti all'ultimo anno nell'a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "tre appelli ordinari"
+    },
+    {
+     "nome": "Appello di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "un appello ordinario"
+    },
+    {
+     "nome": "Appello di novembre",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-05",
+     "note": "ordinario con sospensione lezioni per Filosofia, Scienze filosofiche, Lettere, Lettere moderne, Lettere classiche, Scienze della comunicazione, Comunicazione media digitali giornalismo; straordinario senza sospensione (fuori corso, laureandi, ultimo anno) per i corsi di area linguistica"
+    }
+   ],
+   "corsi": [
+    "unisalento-l-5-filosofia",
+    "unisalento-lm-78-scienze-filosofiche",
+    "unisalento-l-10-lettere",
+    "unisalento-lm-14-lettere-moderne",
+    "unisalento-lm-15-lettere-classiche",
+    "unisalento-l-20-scienze-della-comunicazione",
+    "unisalento-lm-19-comunicazione-media-digitali-giornalismo",
+    "unisalento-l-11-lingue-culture-e-letterature-straniere",
+    "unisalento-l-12-scienza-e-tecnica-della-mediazione-linguistica",
+    "unisalento-lm-37-lingue-moderne-letterature-e-traduzione",
+    "unisalento-lm-94-traduzione-tecnico-scientifica-e-interpretariato"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Beni Culturali",
+   "fonte": "https://www.bbcc.unisalento.it/documents/3869715/3897480/Calendario+didattico+BBCC+2026_2027+approvato.pdf/97138c0b-eef4-f731-6287-04b7539f7f82",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "3 appelli ordinari"
+    },
+    {
+     "nome": "Appello di primavera",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-02",
+     "note": "1 appello ordinario, con sospensione dell'attività didattica"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "3 appelli ordinari"
+    },
+    {
+     "nome": "Appello di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello ordinario"
+    },
+    {
+     "nome": "Appello di novembre",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-05",
+     "note": "1 appello ordinario, con sospensione dell'attività didattica"
+    }
+   ],
+   "corsi": [
+    "unisalento-l-1-beni-culturali",
+    "unisalento-l-3-discipline-delle-arti-della-musica-e-dello-spettacolo-dams",
+    "unisalento-lm-2-archeologia",
+    "unisalento-lm-43-digital-heritage",
+    "unisalento-lm-65-scienze-dello-spettacolo-e-della-produzione-audiovisiva",
+    "unisalento-lm-89-storia-dell-arte"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze dell'Economia",
+   "fonte": "https://www.dse.unisalento.it/documents/3409830/3440288/DEFINITIVO_calendario+didattico_26.27_DSE_approvato.pdf/2841af3f-2051-1317-874d-da14ac0bbdef",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "3 appelli, validi per tutti i corsi"
+    },
+    {
+     "nome": "Appello di aprile",
+     "inizio": "2027-04-08",
+     "fine": "2027-04-16",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-31",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Appello di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-14",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Appello di ottobre-novembre",
+     "inizio": "2027-10-27",
+     "fine": "2027-11-05",
+     "note": "riservato a laureandi, fuori corso e iscritti all'ultimo anno che hanno terminato le lezioni; per le LM-77 anche appelli dal 28 ottobre al 5 novembre 2026 per gli insegnamenti del I trimestre"
+    }
+   ],
+   "corsi": [
+    "unisalento-l-18-economia-aziendale",
+    "unisalento-l-33-economia-finanza-e-innovazione",
+    "unisalento-l-15-management-delle-organizzazioni-turistiche",
+    "unisalento-l-18-management-digitale",
+    "unisalento-lm-16-lm-56-dati-e-metodi-per-le-decisioni-economiche-e-finanziarie-deci",
+    "unisalento-lm-77-management-controllo-e-finanza-con-ia",
+    "unisalento-lm-77-management-dei-territori-delle-aziende-pubbliche-e-del-turis"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria dell'Innovazione",
+   "fonte": "https://www.dii.unisalento.it/documents/3087679/3390762/Calendario+Attivita%CC%80+Didattica+2026_2027.pdf/25f5d046-b4bb-0265-52d2-8e6afa534c7c",
+   "sessioni": [
+    {
+     "nome": "Esami di profitto (gennaio-febbraio)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "3 appelli per i corsi del I semestre 2026/27 e 3 per quelli del II semestre 2025/26"
+    },
+    {
+     "nome": "Esami di profitto (giugno-luglio)",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "3 appelli per i corsi del I semestre e 3 per quelli del II semestre 2026/27"
+    },
+    {
+     "nome": "Esami di profitto (settembre)",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-14",
+     "note": "1 appello per i corsi del I semestre e 1 per quelli del II semestre 2026/27"
+    }
+   ],
+   "corsi": [
+    "unisalento-l-9-ingegneria-biomedica",
+    "unisalento-l-7-ingegneria-civile",
+    "unisalento-l-8-ingegneria-dell-informazione-elettronica-informatica-e-telec",
+    "unisalento-l-9-ingegneria-gestionale",
+    "unisalento-l-8-ingegneria-informatica",
+    "unisalento-l-9-ingegneria-meccanica",
+    "unisalento-l-9-ingegneria-per-l-industria-sostenibile",
+    "unisalento-lm-20-aerospace-engineering",
+    "unisalento-lm-21-ingegneria-biomedica",
+    "unisalento-lm-23-ingegneria-civile",
+    "unisalento-lm-53-ingegneria-dei-materiali-e-nanotecnologie",
+    "unisalento-lm-27-ingegneria-delle-telecomunicazioni-e-tecnologie-elettroniche",
+    "unisalento-lm-31-ingegneria-gestionale",
+    "unisalento-lm-32-ingegneria-informatica",
+    "unisalento-lm-33-ingegneria-meccanica",
+    "unisalento-lm-26-ingegneria-per-la-sicurezza-delle-infrastrutture-critiche-in"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Matematica e Fisica",
+   "fonte": "https://www.matfis.unisalento.it/documents/3563214/0/ALL_Calendari_Dip_Matematica_e_Fisica+aa_2026-27_VER_DD_07_ottobre_2026_signed.pdf/593608e1-d180-f125-5907-2679f36f864d",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "3 appelli per gli iscritti all'a.a. in corso (in parallelo la sessione straordinaria dell'a.a. precedente)"
+    },
+    {
+     "nome": "Sessione per fuori corso e laureandi",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-09",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unisalento-l-35-matematica",
+    "unisalento-lm-40-matematica",
+    "unisalento-l-30-fisica",
+    "unisalento-lm-17-fisica",
+    "unisalento-lm-17-fisica-medica",
+    "unisalento-l-30-ottica-e-optometria"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unisalento-l-2-biotecnologie",
+  "unisalento-l-27-chimica-per-la-sostenibilita",
+  "unisalento-l-14-diritto-e-management-dello-sport",
+  "unisalento-l-14-diritto-e-politiche-per-le-pubbliche-amministrazioni",
+  "unisalento-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "unisalento-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632328",
+  "unisalento-l-25-scienze-agrarie-e-vitivinicole",
+  "unisalento-l-13-scienze-biologiche",
+  "unisalento-l-32-scienze-e-tecnologie-per-l-ambiente",
+  "unisalento-l-22-scienze-motorie-e-dello-sport",
+  "unisalento-lm-6-biologia-sperimentale-ed-applicata",
+  "unisalento-lm-9-biotecnologie-mediche-e-nanobiotecnologie",
+  "unisalento-lm-6-coastal-and-marine-biology-and-ecology-biologia-ed-ecologia",
+  "unisalento-lm-90-governance-euro-mediterranea-delle-politiche-migratorie",
+  "unisalento-lm-75-scienze-ambientali",
+  "unisalento-lm-67-scienze-e-tecniche-delle-attivita-motorie-preventive-e-adatt",
+  "unisalento-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "unisalento-lmg-01-giurisprudenza",
+  "unisalento-lm-41-medicina-e-chirurgia"
+ ],
+ "mancanti": "Dipartimento di Scienze e Tecnologie Biologiche ed Ambientali (biologia, biotecnologie, ambiente, chimica per la sostenibilità, agraria, scienze motorie), Dipartimento di Scienze Giuridiche (Giurisprudenza, Diritto e management dello sport, Diritto e politiche per le PA, Governance euro-mediterranea) e Dipartimento di Medicina Sperimentale (Medicina, Infermieristica, Scienze infermieristiche): sui siti è pubblicato solo il calendario 2025/26; il calendario accademico di Ateneo 2026/27 non è ancora pubblicato. Servizio Sociale (L-39) assegnato al calendario DSUS insieme alla magistrale LM-87. Secondo giro (2026-10-11): i siti unisalento.it e dei dipartimenti non rispondono (connessione scaduta), quindi non è stato possibile ricontrollare DiSTeBA, Scienze Giuridiche e Medicina Sperimentale; le ricerche web non hanno trovato calendari 2026/27 di questi dipartimenti."
+}

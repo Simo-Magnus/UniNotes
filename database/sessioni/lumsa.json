@@ -1,0 +1,73 @@
+{
+ "universita_id": "lumsa",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://lumsa.it/it/calendario-accademico-e-date-da-ricordare",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-07",
+     "note": "Riservato a iscritti all'ultimo anno 2025/26, fuori corso e ripetenti nell'a.a. 2026/27 e categorie del Regolamento DR n. 3500 del 19/12/2025"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "Esami sessione invernale a.a. 2026/27; ultima sessione d'esami per l'a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-19",
+     "fine": "2027-07-17",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-18",
+     "note": null
+    },
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2027-11-03",
+     "fine": "2027-11-09",
+     "note": "Riservato a iscritti all'ultimo anno 2026/27, fuori corso e ripetenti nell'a.a. 2027/28 e categorie del Regolamento DR n. 3500 del 19/12/2025"
+    }
+   ],
+   "corsi": [
+    "lumsa-l-20-comunicazione-digitale-e-marketing",
+    "lumsa-l-33-economia-e-commercio",
+    "lumsa-l-18-economia-e-gestione-aziendale",
+    "lumsa-l-12-mediazione-linguistica-e-culturale",
+    "lumsa-l-39-scienze-del-servizio-sociale-e-del-non-profit",
+    "lumsa-l-19-scienze-dell-educazione-e-della-formazione",
+    "lumsa-l-20-scienze-della-comunicazione-marketing-e-digital-media",
+    "lumsa-l-24-scienze-e-tecniche-psicologiche",
+    "lumsa-l-36-scienze-politiche-e-studi-internazionali",
+    "lumsa-lm-59-ai-for-marketing-and-communication",
+    "lumsa-lm-91-comunicazione-innovazione-ed-experience-design",
+    "lumsa-lm-59-digital-communication-society-business-culture",
+    "lumsa-lm-77-economia-e-management",
+    "lumsa-lm-77-management-finance-and-data-analitycs",
+    "lumsa-lm-77-management-finance-and-data-analytics",
+    "lumsa-lm-59-marketing-digital-communication",
+    "lumsa-lm-85-pedagogia-e-progettazione-socio-educativa",
+    "lumsa-lm-62-politiche-amministrazioni-e-innovazione",
+    "lumsa-lm-87-programmazione-e-gestione-delle-politiche-e-dei-servizi-soci",
+    "lumsa-lm-51-psicologia-clinica",
+    "lumsa-lm-51-psicologia-sociale-forense-e-delle-organizzazioni",
+    "lumsa-lm-52-relazioni-internazionali",
+    "lumsa-lmg-01-giurisprudenza",
+    "lumsa-lmg-01-giurisprudenza-1630016",
+    "lumsa-lm-85-bis-scienze-della-formazione-primaria",
+    "lumsa-lm-85-bis-scienze-della-formazione-primaria-replica-palermo"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

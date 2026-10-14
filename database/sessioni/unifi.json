@@ -1,0 +1,692 @@
+{
+ "universita_id": "unifi",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Scuola di Agraria",
+   "fonte": "https://www.agraria.unifi.it/vp-326-calendario-didattico.html",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata invernale",
+     "inizio": "2026-11-09",
+     "fine": "2026-11-13",
+     "note": "Lezioni del primo semestre sospese; non disponibile per gli immatricolati 2026/27"
+    },
+    {
+     "nome": "I sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Almeno due appelli a 14 giorni di distanza"
+    },
+    {
+     "nome": "Sessione straordinaria di recupero",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-26",
+     "note": "Lezioni del secondo semestre sospese"
+    },
+    {
+     "nome": "II sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Almeno due appelli a 14 giorni di distanza"
+    },
+    {
+     "nome": "Sessione straordinaria di recupero",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria di recupero",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unifi-l-25-scienze-agrarie",
+    "unifi-l-38-scienze-faunistiche",
+    "unifi-l-25-scienze-forestali-e-ambientali",
+    "unifi-l-25-scienze-vivaistiche-e-progettazione-degli-spazi-verdi",
+    "unifi-l-26-tecnologie-alimentari",
+    "unifi-l-25-l-26-viticoltura-ed-enologia",
+    "unifi-lm-7-biotecnologie-per-la-gestione-ambientale-e-l-agricoltura-sos",
+    "unifi-lm-70-food-design-e-innovazione-dei-prodotti-alimentari",
+    "unifi-lm-70-innovazione-sostenibile-in-viticoltura-ed-enologia",
+    "unifi-lm-86-scienze-e-gestione-delle-risorse-faunistico-ambientali",
+    "unifi-lm-69-scienze-e-tecnologie-agrarie",
+    "unifi-lm-73-scienze-e-tecnologie-dei-sistemi-forestali",
+    "unifi-lm-69-tropical-and-subtropical-agriculture",
+    "unifi-l-p02-tecnologie-e-trasformazioni-avanzate-per-il-settore-legno-ar",
+    "unifi-lm-69-a-greentech-tecnologie-avanzate-per-lagricoltura-verde"
+   ]
+  },
+  {
+   "ambito": "Scuola di Architettura",
+   "fonte": "https://www.architettura.unifi.it/upload/sub/calendario_didattico/2026-27/Allegato_calendario-didattico_2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione autunnale a.a. 2025/26 (2° appello)",
+     "inizio": "2026-10-26",
+     "fine": "2026-10-30",
+     "note": "Solo Architettura a ciclo unico e Scienze dell'Architettura"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "1° e 2° appello distanziati di almeno 14 giorni"
+    },
+    {
+     "nome": "Appello straordinario di aprile 1",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-02",
+     "note": "Unico appello per laureandi, lavoratori e fuori corso"
+    },
+    {
+     "nome": "Appello straordinario di aprile 2",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-09",
+     "note": "Unico appello per laureandi, lavoratori e fuori corso"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-09",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-07-19",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "Indicata nell'allegato come data che sarà inserita nel calendario 2027/28 e che potrà subire variazioni"
+    },
+    {
+     "nome": "Sessione autunnale (2° appello)",
+     "inizio": "2027-10-25",
+     "fine": "2027-10-29",
+     "note": "Solo Architettura a ciclo unico e Scienze dell'Architettura; data soggetta a conferma nel calendario 2027/28"
+    }
+   ],
+   "corsi": [
+    "unifi-l-4-design-tessile-e-moda",
+    "unifi-l-21-pianificazione-della-citta-del-territorio-e-del-paesaggio",
+    "unifi-l-4-product-interior-communication-and-eco-social-design",
+    "unifi-l-17-scienze-dell-architettura",
+    "unifi-lm-4-architettura",
+    "unifi-lm-3-architettura-del-paesaggio",
+    "unifi-lm-12-design-per-l-innovazione-sostenibile",
+    "unifi-lm-12-design-sistema-moda",
+    "unifi-lm-48-pianificazione-e-progettazione-per-la-sostenibilita-urbana-e",
+    "unifi-lm-4-c-u-architettura"
+   ]
+  },
+  {
+   "ambito": "Scuola di Economia e Management",
+   "fonte": "https://www.economia.unifi.it/upload/sub/calendario%20didattico/Calendario%20didattico%2026-27OK.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-23",
+     "note": "1° appello, solo corsi del I semestre 2026/27"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-22",
+     "note": "2° appello (5° per i corsi del II semestre 2025/26)"
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-01-28",
+     "fine": "2027-02-19",
+     "note": "3° appello (6° per i corsi del II semestre 2025/26)"
+    },
+    {
+     "nome": "Sessione riservata di aprile",
+     "inizio": "2027-03-25",
+     "fine": "2027-03-31",
+     "note": "Riservata ai fuori corso EA per esami del terzo anno"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-03",
+     "fine": "2027-06-21",
+     "note": "1° appello"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-22",
+     "fine": "2027-07-16",
+     "note": "2° appello"
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "3° appello"
+    },
+    {
+     "nome": "Sessione riservata di novembre",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": "Riservata ai laureandi EA-EC in debito di due esami del terzo anno"
+    }
+   ],
+   "corsi": [
+    "unifi-l-18-economia-aziendale",
+    "unifi-l-33-economia-e-commercio",
+    "unifi-l-41-statistica",
+    "unifi-l-18-sustainable-business-for-societal-challenges",
+    "unifi-l-37-sviluppo-sostenibile-cooperazione-e-gestione-dei-conflitti",
+    "unifi-lm-77-accounting-auditing-e-controllo",
+    "unifi-lm-49-design-of-sustainable-tourism-systems-progettazione-dei-sist",
+    "unifi-lm-56-economia-istituzioni-sostenibilita-economics-institutions-su",
+    "unifi-lm-56-economics-and-development-economia-politica-e-sviluppo-econo",
+    "unifi-lm-16-finance-and-risk-management-finanza-e-gestione-del-rischio",
+    "unifi-lm-77-governo-e-direzione-d-impresa",
+    "unifi-lm-82-statistica-e-data-science"
+   ]
+  },
+  {
+   "ambito": "Scuola di Giurisprudenza",
+   "fonte": "https://www.giurisprudenza.unifi.it/vp-121-esami-di-profitto.html",
+   "sessioni": [
+    {
+     "nome": "Appello di dicembre",
+     "inizio": "2026-12-11",
+     "fine": "2026-12-22",
+     "note": "1 appello a conclusione dei corsi del primo semestre"
+    },
+    {
+     "nome": "Sessione gennaio-febbraio",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "4 appelli a distanza di almeno 14 giorni"
+    },
+    {
+     "nome": "Sessione giugno-luglio",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "4 appelli a distanza di almeno 14 giorni"
+    },
+    {
+     "nome": "Appello di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unifi-l-14-scienze-dei-servizi-giuridici",
+    "unifi-l-14-scienze-giuridiche-della-sicurezza",
+    "unifi-lm-sc-giur-diritto-per-le-sostenibilita-e-la-sicurezza",
+    "unifi-lmg-01-giurisprudenza",
+    "unifi-lmg-01-giurisprudenza-italiana-e-francese",
+    "unifi-lmg-01-giurisprudenza-italiana-e-tedesca"
+   ]
+  },
+  {
+   "ambito": "Scuola di Ingegneria",
+   "fonte": "https://www.ingegneria.unifi.it/vp-156-appelli-d-esame.html",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-19",
+     "note": "3 appelli distanziati di almeno 14 giorni"
+    },
+    {
+     "nome": "Sessione di aprile",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-14",
+     "note": "Eventualmente in sostituzione del terzo appello invernale o del primo estivo"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-08-06",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Nella sessione estiva+autunnale 4 appelli, di cui almeno 1 a settembre"
+    }
+   ],
+   "corsi": [
+    "unifi-l-7-ingegneria-ambientale",
+    "unifi-l-8-l-9-ingegneria-biomedica",
+    "unifi-l-7-ingegneria-civile-e-edile-per-la-sostenibilita",
+    "unifi-l-8-ingegneria-elettronica",
+    "unifi-l-9-ingegneria-gestionale",
+    "unifi-l-8-ingegneria-informatica",
+    "unifi-l-9-ingegneria-meccanica",
+    "unifi-lm-35-geoengineering",
+    "unifi-lm-21-ingegneria-biomedica",
+    "unifi-lm-23-ingegneria-civile",
+    "unifi-lm-29-ingegneria-dei-sistemi-elettronici",
+    "unifi-lm-24-ingegneria-edile",
+    "unifi-lm-30-ingegneria-energetica",
+    "unifi-lm-32-ingegneria-informatica",
+    "unifi-lm-33-ingegneria-meccanica",
+    "unifi-lm-35-ingegneria-per-la-tutela-dell-ambiente-e-del-territorio",
+    "unifi-lm-32-intelligenza-artificiale",
+    "unifi-lm-31-management-engineering",
+    "unifi-lm-33-mechanical-engineering-for-sustainability",
+    "unifi-lm-25-robotics-automation-and-electrical-engineering",
+    "unifi-l-p01-tecniche-e-tecnologie-per-le-costruzioni-e-il-territorio"
+   ]
+  },
+  {
+   "ambito": "Scuola di Scienze Matematiche, Fisiche e Naturali",
+   "fonte": "https://www.scienze.unifi.it/vp-107-calendario-didattico-e-orario-delle-lezioni.html",
+   "sessioni": [
+    {
+     "nome": "Interruzione per esami e prove intermedie",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "Unica finestra d'esame fissata dalla Scuola; gli altri periodi d'esame seguono la fine dei semestri (I semestre fino al 2026-12-18) e sono definiti dai CdS"
+    }
+   ],
+   "corsi": [
+    "unifi-l-27-chimica",
+    "unifi-l-43-diagnostica-e-materiali-per-la-conservazione-e-il-restauro",
+    "unifi-l-30-fisica-e-astrofisica",
+    "unifi-l-30-ottica-e-optometria",
+    "unifi-l-sc-mat-scienza-dei-materiali",
+    "unifi-l-13-scienze-biologiche",
+    "unifi-l-34-scienze-geologiche",
+    "unifi-l-32-scienze-naturali",
+    "unifi-lm-54-advanced-chemical-sciences-technologies",
+    "unifi-lm-6-biologia-dell-ambiente-e-del-comportamento",
+    "unifi-lm-6-biologia-molecolare-e-applicata",
+    "unifi-lm-data-data-science-calcolo-scientifico-intelligenza-artificiale",
+    "unifi-lm-54-scienze-chimiche",
+    "unifi-lm-60-scienze-della-natura-e-dell-uomo",
+    "unifi-lm-11-scienze-e-materiali-per-la-conservazione-e-il-restauro",
+    "unifi-lm-74-scienze-e-tecnologie-geologiche",
+    "unifi-l-34-geological-hazards-and-environmental-sustainability"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Software Science and Technology (LM-18)",
+   "fonte": "https://www.sst.unifi.it/vp-185-calendario-didattico.html",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-22",
+     "note": "I appello (insegnamenti del I semestre); V appello per quelli del II semestre 2025/26"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-19",
+     "note": "II appello (VI per il II semestre 2025/26)"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-18",
+     "note": "III appello I semestre / I appello II semestre"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-16",
+     "note": "IV / II appello"
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-07-19",
+     "fine": "2027-09-03",
+     "note": "V / III appello, esclusa la chiusura estiva dell'Ateneo"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-17",
+     "note": "VI / IV appello"
+    }
+   ],
+   "corsi": [
+    "unifi-lm-18-software-science-and-technology"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Informatica (L-31, Scuola di Scienze MFN)",
+   "fonte": "https://www.informatica.unifi.it/vp-285-a-a-2026-2027.html",
+   "sessioni": [
+    {
+     "nome": "Appelli I anno 1",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-19",
+     "note": "Solo per Programmazione; nello stesso periodo prove in itinere dei corsi annuali del I anno"
+    },
+    {
+     "nome": "Appelli I anno 2",
+     "inizio": "2027-05-17",
+     "fine": "2027-06-04",
+     "note": null
+    },
+    {
+     "nome": "Appelli I anno 3",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-06",
+     "note": null
+    },
+    {
+     "nome": "Appelli I anno 4",
+     "inizio": "2027-07-07",
+     "fine": "2027-09-01",
+     "note": null
+    },
+    {
+     "nome": "Appelli I anno 5",
+     "inizio": "2027-09-02",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Appelli I anno 6",
+     "inizio": "2028-01-10",
+     "fine": "2028-01-28",
+     "note": null
+    },
+    {
+     "nome": "Appelli I anno 7",
+     "inizio": "2028-01-31",
+     "fine": "2028-02-18",
+     "note": "Per Programmazione incluso negli appelli dell'a.a. successivo"
+    },
+    {
+     "nome": "Appelli II anno 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-15",
+     "note": null
+    },
+    {
+     "nome": "Appelli II anno 2",
+     "inizio": "2027-06-16",
+     "fine": "2027-07-06",
+     "note": null
+    },
+    {
+     "nome": "Appelli II anno 3",
+     "inizio": "2027-07-07",
+     "fine": "2027-09-01",
+     "note": null
+    },
+    {
+     "nome": "Appelli II anno 4",
+     "inizio": "2027-09-02",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Appelli II anno 5",
+     "inizio": "2028-01-10",
+     "fine": "2028-01-28",
+     "note": null
+    },
+    {
+     "nome": "Appelli II anno 6",
+     "inizio": "2028-01-31",
+     "fine": "2028-02-18",
+     "note": null
+    },
+    {
+     "nome": "Appelli III anno 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-15",
+     "note": null
+    },
+    {
+     "nome": "Appelli III anno 2",
+     "inizio": "2027-06-16",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Appelli III anno 3",
+     "inizio": "2027-07-26",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Appelli III anno 4",
+     "inizio": "2027-11-08",
+     "fine": "2027-11-12",
+     "note": null
+    },
+    {
+     "nome": "Appelli III anno 5",
+     "inizio": "2028-01-10",
+     "fine": "2028-01-28",
+     "note": null
+    },
+    {
+     "nome": "Appelli III anno 6",
+     "inizio": "2028-01-31",
+     "fine": "2028-02-18",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unifi-l-31-informatica"
+   ]
+  },
+  {
+   "ambito": "Scuola di Scienze Politiche «Cesare Alfieri»",
+   "fonte": "https://www.sc-politiche.unifi.it/upload/sub/Calendario%20didattico%202026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-18",
+     "note": "I appello"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-22",
+     "note": "II appello (solo insegnamenti del I semestre)"
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-05",
+     "note": "III appello I semestre / II appello II semestre"
+    },
+    {
+     "nome": "Sessione invernale 4",
+     "inizio": "2027-02-08",
+     "fine": "2027-02-19",
+     "note": "IV appello (solo insegnamenti del I semestre)"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-03-15",
+     "fine": "2027-03-19",
+     "note": "Riservata a laureandi di aprile, iscritti a corsi singoli, studenti incoming"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-05-24",
+     "fine": "2027-06-04",
+     "note": "V appello I semestre / III appello II semestre"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-14",
+     "fine": "2027-06-23",
+     "note": "IV appello (solo insegnamenti del II semestre)"
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-16",
+     "note": "V appello (solo insegnamenti del II semestre)"
+    },
+    {
+     "nome": "Sessione estiva 4",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": "VI appello"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-05",
+     "note": "Riservata a laureandi di dicembre, iscritti a corsi singoli, studenti incoming"
+    }
+   ],
+   "corsi": [
+    "unifi-l-36-scienze-politiche",
+    "unifi-l-39-servizio-sociale",
+    "unifi-lm-87-disegno-e-gestione-degli-interventi-sociali",
+    "unifi-lm-62-politica-istituzioni-e-mercato",
+    "unifi-lm-52-lm-90-relazioni-internazionali-e-studi-europei",
+    "unifi-lm-88-sociologia-e-sfide-globali",
+    "unifi-lm-59-strategie-di-comunicazione-nella-societa-digitale"
+   ]
+  },
+  {
+   "ambito": "Scuola di Studi Umanistici e della Formazione",
+   "fonte": "https://www.st-umaform.unifi.it/vp-136-calendario-didattico.html",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale 1",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-22",
+     "note": "I appello"
+    },
+    {
+     "nome": "Sessione invernale 2",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-05",
+     "note": "II appello"
+    },
+    {
+     "nome": "Sessione invernale 3",
+     "inizio": "2027-02-08",
+     "fine": "2027-02-19",
+     "note": "III appello"
+    },
+    {
+     "nome": "Appello straordinario di aprile",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-09",
+     "note": "Riservato (corsi singoli, fuori corso, part-time, Erasmus incoming, laureandi giugno-luglio 2027 e altre categorie); esclusi gli esami del 2° semestre 2026/27"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-14",
+     "fine": "2027-06-23",
+     "note": "I appello"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-09",
+     "note": "II appello"
+    },
+    {
+     "nome": "Sessione estiva 3",
+     "inizio": "2027-07-12",
+     "fine": "2027-07-23",
+     "note": "III appello"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    },
+    {
+     "nome": "Appello di recupero di dicembre",
+     "inizio": "2027-12-01",
+     "fine": "2027-12-10",
+     "note": "Riservato (corsi singoli, fuori corso, part-time e altre categorie); esclusi gli esami del 1° semestre 2026/27"
+    }
+   ],
+   "corsi": [
+    "unifi-l-3-discipline-delle-arti-della-musica-e-dello-spettacolo",
+    "unifi-l-5-filosofia",
+    "unifi-l-10-lettere",
+    "unifi-l-11-lingue-letterature-e-studi-interculturali",
+    "unifi-l-3-progettazione-e-gestione-di-eventi-e-imprese-dell-arte-e-del",
+    "unifi-l-19-scienze-dell-educazione-e-della-formazione",
+    "unifi-l-20-scienze-umanistiche-per-la-comunicazione",
+    "unifi-l-42-storia",
+    "unifi-l-1-storia-e-tutela-dei-beni-archeologici-artistici-archivistici",
+    "unifi-lm-2-archeologia",
+    "unifi-lm-50-dirigenza-scolastica-e-pedagogia-per-l-inclusione",
+    "unifi-lm-15-filologia-letteratura-e-storia-dell-antichita",
+    "unifi-lm-14-filologia-moderna",
+    "unifi-lm-80-geography-spatial-management-heritage-for-international-coop",
+    "unifi-lm-64-intermediazione-culturale-e-religiosa",
+    "unifi-lm-36-lingue-e-civilta-dell-asia-e-dell-africa",
+    "unifi-lm-37-lingue-e-letterature-europee-e-americane",
+    "unifi-lm-78-logica-filosofia-delle-scienze-e-metodi-della-ricerca",
+    "unifi-lm-92-pratiche-linguaggi-e-culture-della-comunicazione",
+    "unifi-lm-5-scienze-archivistiche-e-biblioteconomiche",
+    "unifi-lm-65-scienze-dello-spettacolo",
+    "unifi-lm-78-scienze-filosofiche",
+    "unifi-lm-57-lm-85-scienze-pedagogiche-e-management-della-formazione-per-lo-svi",
+    "unifi-lm-84-scienze-storiche",
+    "unifi-lm-89-storia-dell-arte",
+    "unifi-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unifi-l-24-scienze-e-tecniche-psicologiche",
+  "unifi-lm-51-psicologia-clinica-e-della-salute-e-neuropsicologia",
+  "unifi-lm-51-psicologia-del-ciclo-di-vita-e-dei-contesti",
+  "unifi-l-snt4-assistenza-sanitaria-abilitante-alla-professione-sanitaria-d",
+  "unifi-l-2-biotecnologie-applicate-alle-scienze-della-salute-umana",
+  "unifi-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista",
+  "unifi-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar",
+  "unifi-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "unifi-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "unifi-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+  "unifi-l-snt4-osteopatia",
+  "unifi-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+  "unifi-l-29-scienze-farmaceutiche-applicate-controllo-qualita",
+  "unifi-l-22-scienze-motorie-sport-e-salute",
+  "unifi-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+  "unifi-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+  "unifi-l-snt3-tecniche-di-neurofisiopatologia-abilitante-alla-professione",
+  "unifi-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "unifi-l-snt3-tecniche-ortopediche-abilitante-alla-professione-sanitaria-d",
+  "unifi-lm-9-biotecnologie-mediche-e-farmaceutiche",
+  "unifi-lm-61-scienze-dell-alimentazione",
+  "unifi-lm-snt4-scienze-delle-professioni-sanitarie-della-prevenzione",
+  "unifi-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche",
+  "unifi-lm-67-lm-68-scienze-e-tecniche-dello-sport-e-delle-attivita-motorie-prev",
+  "unifi-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "unifi-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie",
+  "unifi-lm-13-chimica-e-tecnologia-farmaceutiche",
+  "unifi-lm-13-farmacia",
+  "unifi-lm-41-medicina-e-chirurgia",
+  "unifi-lm-41-medicine-and-surgery",
+  "unifi-lm-46-odontoiatria-e-protesi-dentaria",
+  "unifi-l-35-matematica",
+  "unifi-lm-40-matematica",
+  "unifi-lm-17-physical-and-astrophysical-sciences",
+  "unifi-lm-8-biotecnologie-molecolari",
+  "unifi-l-2-biotecnologie-molecolari-e-delle-produzioni-sostenibili"
+ ],
+ "mancanti": "Unifi non ha un calendario d'esami di Ateneo: ogni Scuola pubblica il proprio. Secondo giro (2026-10-11): aggiunto il calendario 2026/27 di Informatica (L-31, 6 appelli per anno di corso, pagina «A.A. 2026/2027» del sito del CdS); Geological Hazards and Environmental Sustainability (L-34) assegnato al calendario della Scuola di Scienze MFN (è nella Guida 2026/27 della Scuola e non è tra i CdS esclusi; il suo sito dice «Academic calendar for A.Y. 2026/27: to be defined soon»); A-GreenTech (LM-69) assegnato al calendario della Scuola di Agraria (il suo «Sito del corso» è agraria.unifi.it, DAGRI). Ancora scoperti: Scuola di Psicologia (L-24 e due LM-51): la pagina «Esami di profitto» della Scuola e quelle dei CdS mostrano solo l'immagine del calendario 2025/26 (sessioni gen-feb, giu-lug, set 2026); per il 2026/27 sono pubblicati solo i periodi delle lezioni. Scuola di Scienze della Salute Umana (professioni sanitarie, Medicina, Odontoiatria, Farmacia, CTF, SFA-CQ, Biotecnologie, Scienze motorie, magistrali sanitarie): nessun calendario delle sessioni 2026/27; le pagine «Calendario esami» dei CdS riportano solo i mesi delle sessioni dal regolamento (es. Medicina: gen-feb, giu-lug, settembre) o calendari 2025/26 (TRMIR), oppure rimandano alla bacheca appelli; Farmacia/CTF/SFA pubblicano solo i semestri 2026/27; Scienze dell'Alimentazione pubblica solo le date dei singoli appelli 2026/27 (non finestre di sessione). Matematica (L-35, LM-40), Physical and Astrophysical Sciences e Biotecnologie Molecolari (LM-8), esclusi dall'articolazione della Scuola di Scienze: per il 2026/27 pubblicati solo i periodi di lezione (Matematica: «almeno 6 appelli, 2 alla fine di ogni periodo più 2 di recupero», senza date). Biotecnologie molecolari e delle produzioni sostenibili (L-2, nuovo, Scuola di Scienze): il sito del CdS riporta solo il I semestre (21/09-18/12/2026), con inizio diverso da quello della Scuola; non assegnato al calendario della Scuola perché non è chiaro se rientri tra i CdS di Biotecnologie esclusi. Medicine and Surgery (LM-41 in inglese): nessuna pagina del corso nel database."
+}

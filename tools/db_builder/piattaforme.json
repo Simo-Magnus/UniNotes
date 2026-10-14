@@ -1,0 +1,276 @@
+{
+ "descrizione": "Piattaforme pubbliche Cineca per ateneo (rilevate da tools/probe/discover.py). coursecatalogue = insegnamenti e syllabus; esse3 = bacheca appelli.",
+ "atenei": {
+  "casd": {
+   "esse3": "https://casd.esse3.cineca.it"
+  },
+  "gssi": {
+   "esse3": "https://gssi.esse3.cineca.it"
+  },
+  "iuav": {
+   "coursecatalogue": "https://iuav.coursecatalogue.cineca.it",
+   "esse3": "https://iuav.esse3.cineca.it"
+  },
+  "iulm": {
+   "coursecatalogue": "https://iulm.coursecatalogue.cineca.it",
+   "esse3": "https://iulm.esse3.cineca.it"
+  },
+  "liuc": {
+   "coursecatalogue": "https://liuc.coursecatalogue.cineca.it",
+   "esse3": "https://liuc.esse3.cineca.it"
+  },
+  "luiss": {
+   "coursecatalogue": "https://luiss.coursecatalogue.cineca.it",
+   "esse3": "https://luiss.esse3.cineca.it"
+  },
+  "lum": {
+   "esse3": "https://lum.esse3.cineca.it"
+  },
+  "lumsa": {
+   "coursecatalogue": "https://lumsa.coursecatalogue.cineca.it",
+   "esse3": "https://lumsa.esse3.cineca.it"
+  },
+  "poliba": {
+   "coursecatalogue": "https://poliba.coursecatalogue.cineca.it",
+   "esse3": "https://poliba.esse3.cineca.it"
+  },
+  "sissa": {
+   "esse3": "https://sissa.esse3.cineca.it"
+  },
+  "sns": {
+   "esse3": "https://sns.esse3.cineca.it"
+  },
+  "ssm": {
+   "esse3": "https://ssm.esse3.cineca.it"
+  },
+  "uniba": {
+   "coursecatalogue": "https://uniba.coursecatalogue.cineca.it",
+   "esse3": "https://uniba.esse3.cineca.it"
+  },
+  "unibas": {
+   "coursecatalogue": "https://unibas.coursecatalogue.cineca.it",
+   "esse3": "https://unibas.esse3.cineca.it"
+  },
+  "unibg": {
+   "coursecatalogue": "https://unibg.coursecatalogue.cineca.it",
+   "esse3": "https://unibg.esse3.cineca.it"
+  },
+  "unibs": {
+   "coursecatalogue": "https://unibs.coursecatalogue.cineca.it",
+   "esse3": "https://unibs.esse3.cineca.it"
+  },
+  "unica": {
+   "coursecatalogue": "https://unica.coursecatalogue.cineca.it",
+   "esse3": "https://unica.esse3.cineca.it"
+  },
+  "unical": {
+   "esse3": "https://unical.esse3.cineca.it"
+  },
+  "unicam": {
+   "coursecatalogue": "https://unicam.coursecatalogue.cineca.it",
+   "esse3": "https://unicam.esse3.cineca.it"
+  },
+  "unicampania": {
+   "esse3": "https://unicampania.esse3.cineca.it"
+  },
+  "unicampus": {
+   "coursecatalogue": "https://unicampus.coursecatalogue.cineca.it",
+   "esse3": "https://unicampus.esse3.cineca.it"
+  },
+  "unicatt": {
+   "esse3": "https://unicatt.esse3.cineca.it"
+  },
+  "unich": {
+   "coursecatalogue": "https://unich.coursecatalogue.cineca.it",
+   "esse3": "https://unich.esse3.cineca.it"
+  },
+  "unicz": {
+   "coursecatalogue": "https://unicz.coursecatalogue.cineca.it",
+   "esse3": "https://unicz.esse3.cineca.it"
+  },
+  "unidav": {
+   "esse3": "https://unidav.esse3.cineca.it"
+  },
+  "uniecampus": {
+   "coursecatalogue": "https://uniecampus.coursecatalogue.cineca.it",
+   "esse3": "https://uniecampus.esse3.cineca.it"
+  },
+  "unife": {
+   "coursecatalogue": "https://unife.coursecatalogue.cineca.it",
+   "esse3": "https://unife.esse3.cineca.it"
+  },
+  "unifg": {
+   "coursecatalogue": "https://unifg.coursecatalogue.cineca.it",
+   "esse3": "https://unifg.esse3.cineca.it"
+  },
+  "unifi": {
+   "coursecatalogue": "https://unifi.coursecatalogue.cineca.it",
+   "esse3": "https://unifi.esse3.cineca.it"
+  },
+  "unikore": {
+   "esse3": "https://unikore.esse3.cineca.it"
+  },
+  "unilink": {
+   "coursecatalogue": "https://unilink.coursecatalogue.cineca.it",
+   "esse3": "https://unilink.esse3.cineca.it"
+  },
+  "unimarconi": {
+   "esse3": "https://unimarconi.esse3.cineca.it"
+  },
+  "unimc": {
+   "coursecatalogue": "https://unimc.coursecatalogue.cineca.it",
+   "esse3": "https://unimc.esse3.cineca.it"
+  },
+  "unime": {
+   "coursecatalogue": "https://unime.coursecatalogue.cineca.it",
+   "esse3": "https://unime.esse3.cineca.it"
+  },
+  "unimib": {
+   "esse3": "https://unimib.esse3.cineca.it"
+  },
+  "unimol": {
+   "coursecatalogue": "https://unimol.coursecatalogue.cineca.it",
+   "esse3": "https://unimol.esse3.cineca.it"
+  },
+  "unimore": {
+   "coursecatalogue": "https://unimore.coursecatalogue.cineca.it",
+   "esse3": "https://unimore.esse3.cineca.it"
+  },
+  "unina": {
+   "coursecatalogue": "https://unina.coursecatalogue.cineca.it",
+   "esse3": "https://unina.esse3.cineca.it"
+  },
+  "uninettuno": {
+   "esse3": "https://uninettuno.esse3.cineca.it"
+  },
+  "uninsubria": {
+   "coursecatalogue": "https://uninsubria.coursecatalogue.cineca.it",
+   "esse3": "https://uninsubria.esse3.cineca.it"
+  },
+  "unint": {
+   "coursecatalogue": "https://unint.coursecatalogue.cineca.it"
+  },
+  "unior": {
+   "coursecatalogue": "https://coursecatalogue.unior.it",
+   "esse3": "https://unior.esse3.cineca.it"
+  },
+  "unipa": {
+   "coursecatalogue": "https://unipa.coursecatalogue.cineca.it",
+   "esse3": "https://unipa.esse3.cineca.it"
+  },
+  "uniparthenope": {
+   "coursecatalogue": "https://uniparthenope.coursecatalogue.cineca.it",
+   "esse3": "https://uniparthenope.esse3.cineca.it"
+  },
+  "unipd": {
+   "coursecatalogue": "https://unipd.coursecatalogue.cineca.it",
+   "esse3": "https://uniweb.unipd.it"
+  },
+  "unipg": {
+   "esse3": "https://unipg.esse3.cineca.it"
+  },
+  "unipi": {
+   "coursecatalogue": "https://unipi.coursecatalogue.cineca.it",
+   "esse3": "https://unipi.esse3.cineca.it"
+  },
+  "unipr": {
+   "esse3": "https://unipr.esse3.cineca.it"
+  },
+  "unipv": {
+   "coursecatalogue": "https://unipv.coursecatalogue.cineca.it",
+   "esse3": "https://unipv.esse3.cineca.it"
+  },
+  "unirc": {
+   "coursecatalogue": "https://unirc.coursecatalogue.cineca.it",
+   "esse3": "https://unirc.esse3.cineca.it"
+  },
+  "uniroma1": {
+   "esse3": "https://uniroma1.esse3.cineca.it"
+  },
+  "uniroma4": {
+   "coursecatalogue": "https://uniroma4.coursecatalogue.cineca.it"
+  },
+  "unisa": {
+   "coursecatalogue": "https://unisa.coursecatalogue.cineca.it",
+   "esse3": "https://unisa.esse3.cineca.it"
+  },
+  "unisalento": {
+   "esse3": "https://unisalento.esse3.cineca.it"
+  },
+  "unisannio": {
+   "coursecatalogue": "https://unisannio.coursecatalogue.cineca.it",
+   "esse3": "https://unisannio.esse3.cineca.it"
+  },
+  "unisg": {
+   "coursecatalogue": "https://unisg.coursecatalogue.cineca.it",
+   "esse3": "https://unisg.esse3.cineca.it"
+  },
+  "unisi": {
+   "coursecatalogue": "https://unisi.coursecatalogue.cineca.it",
+   "esse3": "https://unisi.esse3.cineca.it"
+  },
+  "unisr": {
+   "coursecatalogue": "https://syllabus.unisr.it",
+   "esse3": "https://unisr.esse3.cineca.it"
+  },
+  "uniss": {
+   "coursecatalogue": "https://uniss.coursecatalogue.cineca.it",
+   "esse3": "https://uniss.esse3.cineca.it"
+  },
+  "unistrapg": {
+   "coursecatalogue": "https://unistrapg.coursecatalogue.cineca.it",
+   "esse3": "https://unistrapg.esse3.cineca.it"
+  },
+  "unistrasi": {
+   "esse3": "https://unistrasi.esse3.cineca.it"
+  },
+  "unite": {
+   "coursecatalogue": "https://unite.coursecatalogue.cineca.it",
+   "esse3": "https://unite.esse3.cineca.it"
+  },
+  "unitelma": {
+   "coursecatalogue": "https://unitelma.coursecatalogue.cineca.it",
+   "esse3": "https://unitelma.esse3.cineca.it"
+  },
+  "unitn": {
+   "coursecatalogue": "https://unitn.coursecatalogue.cineca.it",
+   "esse3": "https://unitn.esse3.cineca.it"
+  },
+  "unito": {
+   "coursecatalogue": "https://unito.coursecatalogue.cineca.it",
+   "esse3": "https://unito.esse3.cineca.it"
+  },
+  "units": {
+   "coursecatalogue": "https://units.coursecatalogue.cineca.it",
+   "esse3": "https://units.esse3.cineca.it"
+  },
+  "uniud": {
+   "coursecatalogue": "https://uniud.coursecatalogue.cineca.it",
+   "esse3": "https://uniud.esse3.cineca.it"
+  },
+  "uniupo": {
+   "esse3": "https://www.studenti.uniupo.it"
+  },
+  "uniurb": {
+   "esse3": "https://uniurb.esse3.cineca.it"
+  },
+  "univaq": {
+   "coursecatalogue": "https://univaq.coursecatalogue.cineca.it",
+   "esse3": "https://univaq.esse3.cineca.it"
+  },
+  "univda": {
+   "coursecatalogue": "https://univda.coursecatalogue.cineca.it",
+   "esse3": "https://univda.esse3.cineca.it"
+  },
+  "unive": {
+   "esse3": "https://unive.esse3.cineca.it"
+  },
+  "univpm": {
+   "coursecatalogue": "https://univpm.coursecatalogue.cineca.it",
+   "esse3": "https://univpm.esse3.cineca.it"
+  },
+  "univr": {
+   "esse3": "https://univr.esse3.cineca.it"
+  }
+ }
+}

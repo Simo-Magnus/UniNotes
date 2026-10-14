@@ -1,0 +1,757 @@
+{
+ "universita_id": "unical",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Biologia, Ecologia e Scienze della Terra (DiBEST)",
+   "fonte": "https://www.unical.it/media/publications_attachments/23617/All_16_Calendario_Accademico_DIBEST_A_A_2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-10-19",
+     "fine": "2026-11-14",
+     "note": "Studenti fuori corso e chi ha completato la frequenza; 1 appello. Per Conservazione e Restauro dei Beni Culturali termina il 2026-11-07"
+    },
+    {
+     "nome": "I sessione straordinaria studenti in corso / II sessione straordinaria fuori corso",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-19",
+     "note": "1 appello; studenti in corso dal 2° anno in poi (lezioni sospese) e fuori corso"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "2 appelli. Per Conservazione e Restauro può essere anticipata al 2027-01-07"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-10",
+     "note": "Nel PDF «III sessione straordinaria studenti fuori corso»; 1 appello"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "2 appelli (il primo entro il 2027-07-03)"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello in 2 turni"
+    }
+   ],
+   "corsi": [
+    "unical-l-13-biologia",
+    "unical-l-13-l-2-scienze-e-tecnologie-biologiche",
+    "unical-l-22-scienze-e-tecnologie-per-le-attivita-motorie-e-sportive",
+    "unical-l-34-scienze-geologiche",
+    "unical-l-32-scienze-naturali-e-ambientali",
+    "unical-lm-60-biodiversita-e-conservazione-dei-sistemi-naturali",
+    "unical-lm-6-biologia",
+    "unical-lm-9-health-biotechnology",
+    "unical-lm-74-scienze-geologiche-per-la-gestione-dei-rischi-ambientali-e-l",
+    "unical-lmr-02-conservazione-e-restauro-dei-beni-culturali-abilitante-ai-se"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Chimica e Tecnologie Chimiche (CTC)",
+   "fonte": "https://ctc.unical.it/didattica/iscriversi-studiare-laurearsi/bacheca-corsi-di-studio/",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria 1",
+     "inizio": "2026-11-02",
+     "fine": "2026-12-05",
+     "note": "Solo studenti fuori corso; 1 appello (a.a. di riferimento 2025/26)"
+    },
+    {
+     "nome": "I sessione straordinaria 2",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "Fuori corso e studenti in corso degli anni successivi al primo, solo esami del secondo semestre; 1 appello"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-10",
+     "note": "1 appello"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unical-l-27-chimica",
+    "unical-lm-54-chemistry"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Culture, Educazione e Società (DiCES)",
+   "fonte": "https://www.unical.it/media/publications_attachments/5893/Calendario_Accademico_integrato_a.a._2026_27_DICES.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-10-26",
+     "fine": "2026-11-09",
+     "note": "Sessione straordinaria per fuori corso (a.a. di riferimento 2025/26); nel PDF le date compaiono come «Lunedì 26 Ottobre» e «Lunedì 9 Novembre» senza anno esplicito"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Almeno due appelli per insegnamento"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-03",
+     "note": "Fuori corso e chi ha completato la frequenza"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-31",
+     "note": "Almeno due appelli"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "Almeno un appello"
+    }
+   ],
+   "corsi": [
+    "unical-l-12-mediazione-linguistica",
+    "unical-l-19-scienze-dell-educazione",
+    "unical-l-24-scienze-e-tecniche-psicologiche",
+    "unical-lm-43-lm-5-digital-humanities",
+    "unical-lm-38-lingue-per-la-comunicazione-internazionale",
+    "unical-lm-85-scienze-pedagogiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia, Statistica e Finanza «Giovanni Anania» (DESF)",
+   "fonte": "https://www.unical.it/media/medias/2026/Calendario_Accademico_DESF_2026_27_-_CdD_12_02_2026.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-10-26",
+     "fine": "2026-11-21",
+     "note": "Riservata a studenti fuori corso e a chi ha completato la frequenza di tutti gli insegnamenti del piano di studio; 1 appello"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-10",
+     "note": "Riservata a studenti fuori corso e a chi ha completato la frequenza di tutti gli insegnamenti del piano di studio; 1 appello"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-31",
+     "note": "2 appelli; il primo appello dei corsi del 2° semestre non prima del 2027-06-07"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unical-l-33-economia",
+    "unical-l-41-statistica-per-data-science",
+    "unical-lm-82-data-science-per-le-strategie-aziendali",
+    "unical-lm-56-economia-imprese-e-sostenibilita",
+    "unical-lm-16-finance-and-insurance"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Farmacia e Scienze della Salute e della Nutrizione (DFSSN) – CTF, Farmacia, ISFTS, Scienza della Nutrizione",
+   "fonte": "https://www.unical.it/media/publications_attachments/24373/Calendario_Accademico_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-11-02",
+     "fine": "2026-12-01",
+     "note": "1 appello per studenti fuori corso e laureandi a.a. 2025/26"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-09",
+     "note": "1 appello per studenti fuori corso"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unical-l-29-informazione-scientifica-del-farmaco-e-delle-tecnologie-per",
+    "unical-l-29-scienza-della-nutrizione",
+    "unical-lm-61-scienza-della-nutrizione",
+    "unical-lm-13-chimica-e-tecnologia-farmaceutiche",
+    "unical-lm-13-farmacia"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Farmacia e Scienze della Salute e della Nutrizione (DFSSN) – Medicina e Chirurgia TD, Infermieristica, Fisioterapia",
+   "fonte": "https://www.unical.it/media/publications_attachments/24373/Calendario_Accademico_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-11-02",
+     "fine": "2026-12-01",
+     "note": "1 appello per studenti fuori corso e laureandi a.a. 2025/26"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-19",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-09",
+     "note": "1 appello per studenti fuori corso"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "2 appelli"
+    }
+   ],
+   "corsi": [
+    "unical-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "unical-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "unical-lm-41-medicina-e-chirurgia-td"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Fisica",
+   "fonte": "https://www.unical.it/media/publications_attachments/4641/Calendario_Accademico_a.a._2026-27_Fisica.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-18",
+     "note": "Ultima sessione straordinaria a.a. 2025/26 e prima a.a. 2026/27; fuori corso e chi ha completato la frequenza"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "Recupero 2° semestre 18-23/01; appelli 1° semestre 25/01-06/02 e 08-19/02"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-15",
+     "fine": "2027-04-16",
+     "note": "Fuori corso e studenti del II anno di Physics che hanno completato la frequenza"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-28",
+     "note": "Recuperi 1° semestre e appelli 2° semestre"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "Recuperi"
+    }
+   ],
+   "corsi": [
+    "unical-l-30-fisica",
+    "unical-lm-17-physics"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica (DIMES)",
+   "fonte": "https://www2.dimes.unical.it/it/download/file/fid/5832",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-21",
+     "note": "Riservata a studenti fuori corso e a chi ha completato la frequenza di tutti gli insegnamenti del piano di studio; 1 appello"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-10",
+     "note": "Riservata a studenti fuori corso e a chi ha completato la frequenza di tutti gli insegnamenti del piano di studio; 1 appello"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unical-l-8-l-9-ingegneria-biomedica",
+    "unical-l-9-ingegneria-chimica",
+    "unical-l-8-ingegneria-elettronica",
+    "unical-l-8-ingegneria-informatica",
+    "unical-lm-22-ingegneria-chimica",
+    "unical-lm-29-ingegneria-elettronica",
+    "unical-lm-32-ingegneria-informatica",
+    "unical-lm-25-robotics-and-automation-engineering",
+    "unical-lm-27-telecommunication-engineering-smart-sensing-computing-and-ne"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria Civile (DInCi)",
+   "fonte": "https://www.unical.it/media/medias/2026/CALENDARIO_ACCADEMICO_A.A._2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria fuori corso",
+     "inizio": "2026-10-19",
+     "fine": "2026-11-14",
+     "note": "1 appello per fuori corso o chi ha completato la frequenza; ultima sessione straordinaria a.a. 2025/26 e prima a.a. 2026/27"
+    },
+    {
+     "nome": "Appello straordinario studenti in corso",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-07",
+     "note": "1 appello riservato agli iscritti in corso ad anni successivi al primo"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-10",
+     "note": "1 appello per fuori corso o chi ha completato la frequenza"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unical-l-7-ingegneria-civile",
+    "unical-lm-23-civil-engineering-for-infrastructural-regeneration",
+    "unical-lm-23-ingegneria-civile",
+    "unical-lm-4-c-u-ingegneria-edile-architettura"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria dell'Ambiente (DIAm)",
+   "fonte": "https://www.unical.it/media/medias/2026/CALENDARIO_ACCADEMICO_A_UGNriyp.A._2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-10-19",
+     "fine": "2026-12-18",
+     "note": "Studenti fuori corso e chi ha completato la frequenza"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-10",
+     "note": "Studenti fuori corso e chi ha completato la frequenza"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unical-l-7-ingegneria-per-l-ambiente-e-la-sicurezza-del-territorio",
+    "unical-l-28-tecnologie-del-mare-e-della-navigazione",
+    "unical-lm-35-ingegneria-per-l-ambiente-e-la-sicurezza-del-territorio"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Ingegneria Meccanica, Energetica e Gestionale (DIMEG)",
+   "fonte": "https://www.unical.it/media/medias/2026/Calendario_accademico_DIMEG_2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-10-26",
+     "fine": "2026-11-21",
+     "note": "Solo fuori corso; 1 appello"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-15",
+     "fine": "2027-04-17",
+     "note": "Solo fuori corso; 1 appello"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-31",
+     "note": "I e II appello"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "III appello"
+    }
+   ],
+   "corsi": [
+    "unical-l-8-l-9-ingegneria-gestionale",
+    "unical-l-9-ingegneria-meccanica",
+    "unical-lm-30-ingegneria-energetica",
+    "unical-lm-31-ingegneria-gestionale",
+    "unical-lm-33-ingegneria-meccanica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Matematica e Informatica (DeMaCS) – Corsi di studio in Informatica",
+   "fonte": "https://www.unical.it/media/medias/2026/Calendario_Accademico_26-27_Informatica.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-28",
+     "note": "Solo fuori corso o chi ha completato la frequenza di tutti i corsi; 1 appello"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-10",
+     "note": "Solo fuori corso o chi ha completato la frequenza di tutti i corsi; 1 appello"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unical-l-31-informatica",
+    "unical-lm-18-artificial-intelligence-and-computer-science"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Matematica e Informatica (DeMaCS) – Corsi di studio in Matematica",
+   "fonte": "https://www.unical.it/media/medias/2026/Calendario_Accademico_matematica__2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-28",
+     "note": "Solo fuori corso o chi ha completato la frequenza di tutti i corsi; 1 appello"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-10",
+     "note": "Solo fuori corso o chi ha completato la frequenza di tutti i corsi; 1 appello"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unical-l-35-matematica",
+    "unical-lm-40-mathematics"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Scienze della Formazione Primaria (DeMaCS)",
+   "fonte": "https://www.unical.it/media/medias/2026/Calendario_Accademico_SFP_26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-28",
+     "note": "Fuori corso, chi ha completato la frequenza, studenti con disabilità, DSA o invalidità pari o superiore al 66%; 1 appello"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-10",
+     "note": "Fuori corso, chi ha completato la frequenza, studenti con disabilità, DSA o invalidità pari o superiore al 66%; 1 appello"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unical-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Aziendali e Giuridiche (DiScAG)",
+   "fonte": "https://discag.unical.it/media/publications_attachments/4561/calendario_discag_26_27_CD_gen_26.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-10-19",
+     "fine": "2026-11-20",
+     "note": "Solo fuori corso, studenti con disabilità o DSA e chi ha completato la frequenza; 1 appello"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-10",
+     "note": "Solo fuori corso, studenti con disabilità o DSA e chi ha completato la frequenza; 1 appello"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "2 appelli, di cui uno entro il 30 giugno"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unical-l-18-economia-aziendale",
+    "unical-l-15-scienze-del-turismo-e-dei-servizi-turistici",
+    "unical-l-14-servizi-giuridici-per-l-innovazione-digitale",
+    "unical-lm-77-economia-aziendale-e-management",
+    "unical-lm-49-progettazione-innovazione-e-gestione-delle-destinazioni-turi",
+    "unical-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Politiche e Sociali (DiSPeS)",
+   "fonte": "https://dispes.unical.it/didattica/iscriversi-studiare-laurearsi/frequentare-i-corsi/",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-14",
+     "note": "Solo fuori corso e chi ha terminato l'ultimo anno di corso nell'a.a. 2025/26; 1 appello"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "2 appelli distanziati di almeno 14 giorni"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-03-20",
+     "note": "Solo fuori corso; 1 appello"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "2 appelli distanziati di almeno 14 giorni"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello (prolungamento della II sessione ordinaria)"
+    }
+   ],
+   "corsi": [
+    "unical-l-20-media-e-societa-digitale",
+    "unical-l-16-scienze-dell-amministrazione",
+    "unical-l-36-scienze-politiche-e-relazioni-internazionali",
+    "unical-l-39-servizio-sociale",
+    "unical-lm-81-cooperazione-sviluppo-ecologia",
+    "unical-lm-62-scienze-della-politica-e-istituzioni-internazionali",
+    "unical-lm-87-scienze-delle-politiche-e-dei-servizi-sociali",
+    "unical-lm-63-scienze-delle-pubbliche-amministrazioni",
+    "unical-lm-19-scritture-immagini-media-digitali"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Studi Umanistici (DISU)",
+   "fonte": "https://www.unical.it/media/medias/2026/Calendario_accademico_2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2026-12-11",
+     "fine": "2026-12-19",
+     "note": "1 appello; per studenti in corso degli anni successivi al primo (recupero) e fuori corso"
+    },
+    {
+     "nome": "I sessione ordinaria",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "2 appelli, uno entro il 2027-02-06"
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-03-08",
+     "fine": "2027-04-10",
+     "note": "Riservata ai fuori corso; 1 appello"
+    },
+    {
+     "nome": "II sessione ordinaria 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "2 appelli, almeno uno entro il 2027-06-30"
+    },
+    {
+     "nome": "II sessione ordinaria 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unical-l-3-l-20-comunicazione-e-dams",
+    "unical-l-5-l-42-filosofia-e-storia",
+    "unical-l-10-lettere",
+    "unical-l-11-lingue-e-culture-moderne",
+    "unical-lm-14-filologia-moderna",
+    "unical-lm-65-lm-92-linguaggi-della-comunicazione-e-dello-spettacolo",
+    "unical-lm-37-lingue-e-letterature-moderne",
+    "unical-lm-15-scienze-dell-antichita",
+    "unical-lm-78-scienze-filosofiche",
+    "unical-lm-84-lm-89-scienze-storiche-e-del-patrimonio-culturale"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "Unical non ha un calendario d'esami unico: ogni Dipartimento delibera il proprio. Per CTC non risulta pubblicato un calendario accademico di Dipartimento 2026/27: le finestre vengono dai calendari esami 2026-2027 dei CdS in Chimica e Chemistry (bacheca CTC)."
+}

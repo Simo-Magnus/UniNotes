@@ -1,0 +1,860 @@
+{
+ "universita_id": "unicampania",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Architettura e Disegno Industriale",
+   "fonte": "https://www.architettura.unicampania.it/didattica/calendario-esami",
+   "sessioni": [
+    {
+     "nome": "Appelli anticipati (seduta estiva)",
+     "inizio": "2027-01-01",
+     "fine": "2027-04-30",
+     "note": "Sessione unica a.a. 2026-2027; settimane d'esame indicate: 1-5 febbraio, 15-19 febbraio, 1-5 marzo, 5-8 aprile 2027"
+    },
+    {
+     "nome": "Seduta estiva",
+     "inizio": "2027-05-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Seduta autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-12-31",
+     "note": null
+    },
+    {
+     "nome": "Seduta straordinaria",
+     "inizio": "2028-01-01",
+     "fine": "2028-03-31",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unicampania-l-4-design-e-comunicazione",
+    "unicampania-l-4-design-per-la-moda",
+    "unicampania-l-23-scienze-e-tecniche-dell-edilizia",
+    "unicampania-lm-4-architettura-rigenerazione-dell-ambiente-costruito",
+    "unicampania-lm-12-design-per-l-innovazione",
+    "unicampania-lm-4-c-u-architettura"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Medicina e chirurgia (sede di Caserta, DAMSS)",
+   "fonte": "https://www.damss.unicampania.it/didattica/calendario-esami/10-didattica/181-calendario-attivita-didattiche",
+   "sessioni": [
+    {
+     "nome": "Dicembre 2026",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-22",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Gennaio-febbraio 2027",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-28",
+     "note": "3 appelli; esclusi il 20/01 (Santo Patrono di Caserta) e l'8-9/02 (Carnevale)"
+    },
+    {
+     "nome": "Marzo 2027",
+     "inizio": "2027-03-01",
+     "fine": "2027-03-31",
+     "note": "1 appello (tutto il mese, esclusi i giorni dal 25 al 30 marzo)"
+    },
+    {
+     "nome": "Aprile 2027",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "1 appello (tutto il mese)"
+    },
+    {
+     "nome": "Maggio 2027",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-31",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Giugno-luglio 2027",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Settembre 2027",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Ottobre 2027",
+     "inizio": "2027-10-01",
+     "fine": "2027-10-31",
+     "note": "1 appello (tutto il mese)"
+    },
+    {
+     "nome": "Novembre 2027",
+     "inizio": "2027-11-01",
+     "fine": "2027-11-30",
+     "note": "1 appello (tutto il mese)"
+    }
+   ],
+   "corsi": [
+    "unicampania-lm-41-medicina-e-chirurgia"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Politiche",
+   "fonte": "https://www.scienzepolitiche.unicampania.it/images/didattica/Calendario_didattico_2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-23",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-08",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-17",
+     "fine": "2028-02-18",
+     "note": "2 appelli. Appelli riservati ai fuori corso: 1 appello nei mesi di novembre, dicembre, marzo, aprile, maggio (date non indicate)"
+    }
+   ],
+   "corsi": [
+    "unicampania-l-15-scienze-del-turismo",
+    "unicampania-l-16-l-36-scienze-politiche-e-dell-amministrazione",
+    "unicampania-lm-49-progettazione-e-gestione-dei-sistemi-turistici",
+    "unicampania-lm-52-relazioni-e-organizzazioni-internazionali",
+    "unicampania-lm-62-scienze-della-politica-e-della-comunicazione-istituzionale",
+    "unicampania-lm-63-scienze-e-tecniche-delle-amministrazioni-pubbliche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Lettere e Beni Culturali",
+   "fonte": "https://www.letterebeniculturali.unicampania.it/didattica/bacheca-avvisi-didattica/4700-calendario-didattico-2026-2027",
+   "sessioni": [
+    {
+     "nome": "I-II-III appello",
+     "inizio": "2027-01-07",
+     "fine": "2027-03-05",
+     "note": "3 appelli a distanza di 15 giorni; 8 e 9 febbraio vacanza didattica. Riservati agli insegnamenti del primo semestre"
+    },
+    {
+     "nome": "IV appello",
+     "inizio": "2027-04-01",
+     "fine": "2027-05-31",
+     "note": "Riservato agli insegnamenti del primo semestre"
+    },
+    {
+     "nome": "V-VI-VII appello",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "VIII-IX appello",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Il primo fra 1 e 15 settembre, il secondo fra 16 e 30 settembre 2027"
+    },
+    {
+     "nome": "X appello",
+     "inizio": "2027-11-02",
+     "fine": "2027-12-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unicampania-l-1-conservazione-dei-beni-culturali",
+    "unicampania-l-10-lettere",
+    "unicampania-lm-2-lm-89-archeologia-e-storia-dell-arte",
+    "unicampania-lm-14-lm-15-filologia-classica-e-moderna",
+    "unicampania-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Giurisprudenza",
+   "fonte": "https://www.giurisprudenza.unicampania.it/didattica/sedute-d-esame",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": "Appelli: 11-22 gennaio, 25 gennaio-5 febbraio, 8-19 febbraio 2027 (per esami ad annualità singola corta degli immatricolati fino al 2024-25 il III appello è dal 22 al 26 febbraio 2027)"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-16",
+     "note": "Appelli: 17-28 maggio, 7-18 giugno, 5-16 luglio 2027"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-06",
+     "fine": "2027-10-08",
+     "note": "Appelli: 6-17 settembre, 27 settembre-8 ottobre 2027"
+    }
+   ],
+   "corsi": [
+    "unicampania-l-14-scienze-dei-servizi-giuridici",
+    "unicampania-lm-sc-giur-diritto-della-sicurezza-e-dell-innovazione-tecnologica",
+    "unicampania-lmg-01-giurisprudenza-1634398",
+    "unicampania-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia",
+   "fonte": "https://www.economia.unicampania.it/didattica/sedute-d-esame",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "3 appelli distanziati di almeno due settimane"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-20",
+     "note": "3 appelli distanziati di almeno tre settimane"
+    },
+    {
+     "nome": "1ª sessione straordinaria",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-10",
+     "note": "Unico appello. Sono previste sessioni aggiuntive straordinarie in aprile, maggio, ottobre e novembre (date non indicate)"
+    },
+    {
+     "nome": "2ª sessione straordinaria",
+     "inizio": "2027-12-13",
+     "fine": "2027-12-17",
+     "note": "Unico appello"
+    }
+   ],
+   "corsi": [
+    "unicampania-l-18-economia-aziendale",
+    "unicampania-l-33-economia-e-commercio",
+    "unicampania-lm-77-economia-e-management",
+    "unicampania-lm-56-economia-finanza-e-mercati"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea in Scienze biologiche (L-13) e Biologia (LM-6) – DiSTABiF",
+   "fonte": "https://www.distabif.unicampania.it/avvisi/Manifesto_degli_studi/AA_2026_2027/L-13_Manifesto_degli_studi_2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Recupero (dicembre 2026)",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-07",
+     "fine": "2027-03-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-08",
+     "note": null
+    },
+    {
+     "nome": "Recupero (dicembre 2027)",
+     "inizio": "2027-12-09",
+     "fine": "2027-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-10",
+     "fine": "2028-03-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unicampania-l-13-scienze-biologiche",
+    "unicampania-lm-6-biologia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Biotecnologie (L-2) – DiSTABiF",
+   "fonte": "https://www.distabif.unicampania.it/images/didattica/diarioesami/L2_Diarioesami_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Recupero (dicembre 2026)",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-07",
+     "fine": "2027-03-05",
+     "note": "Dal 7 gennaio per gli studenti del 2° e 3° anno, dal 18 gennaio 2027 per il 1° anno"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-08",
+     "note": null
+    },
+    {
+     "nome": "Recupero (dicembre 2027)",
+     "inizio": "2027-12-09",
+     "fine": "2027-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-10",
+     "fine": "2028-03-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unicampania-l-2-biotecnologie"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Farmacia (LM-13) – DiSTABiF",
+   "fonte": "https://www.distabif.unicampania.it/avvisi/Manifesto_degli_studi/AA_2026_2027/LM-13_Manifesto_2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Recupero (dicembre 2026)",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-18",
+     "fine": "2027-03-05",
+     "note": "Nel manifesto è scritto «al 5 marzo 2026», refuso per 2027"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-08",
+     "note": null
+    },
+    {
+     "nome": "Recupero (dicembre 2027)",
+     "inizio": "2027-12-09",
+     "fine": "2027-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-07",
+     "fine": "2028-03-03",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unicampania-lm-13-farmacia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze agrarie e forestali (L-25) – DiSTABiF",
+   "fonte": "https://www.distabif.unicampania.it/avvisi/Manifesto_degli_studi/AA_2026_2027/LM-25_Manifesto_degli_studi_2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Recupero (dicembre 2026)",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-07",
+     "fine": "2027-03-05",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-18",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-08",
+     "note": null
+    },
+    {
+     "nome": "Recupero (dicembre 2027)",
+     "inizio": "2027-12-09",
+     "fine": "2027-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-07",
+     "fine": "2028-03-03",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unicampania-l-25-scienze-agrarie-e-forestali"
+   ]
+  },
+  {
+   "ambito": "Corsi di laurea in Scienze ambientali (L-32) e Scienze e tecnologie per l'ambiente e il territorio (LM-75) – DiSTABiF",
+   "fonte": "https://www.distabif.unicampania.it/avvisi/Manifesto_degli_studi/AA_2026_2027/L-32_Manifesto_degli_studi_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Recupero (dicembre 2026)",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-07",
+     "fine": "2027-03-05",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-08",
+     "note": null
+    },
+    {
+     "nome": "Recupero (dicembre 2027)",
+     "inizio": "2027-12-09",
+     "fine": "2027-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-07",
+     "fine": "2028-03-03",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unicampania-l-32-scienze-ambientali",
+    "unicampania-lm-75-scienze-e-tecnologie-per-l-ambiente-e-il-territorio"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze degli alimenti e della nutrizione umana (LM-61) – DiSTABiF",
+   "fonte": "https://www.distabif.unicampania.it/images/didattica/diarioesami/LM61_Diarioesami_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Recupero (dicembre 2026)",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2027-01-18",
+     "fine": "2027-03-05",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-08",
+     "note": null
+    },
+    {
+     "nome": "Recupero (dicembre 2027)",
+     "inizio": "2027-12-09",
+     "fine": "2027-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-07",
+     "fine": "2028-03-03",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unicampania-lm-61-scienze-degli-alimenti-e-della-nutrizione-umana"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Molecular Biotechnology (LM-9) – DiSTABiF",
+   "fonte": "https://www.distabif.unicampania.it/images/didattica/diarioesami/LM9_Diarioesami_2025-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Exams (second year)",
+     "inizio": "2026-12-10",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Exams (second year)",
+     "inizio": "2027-01-07",
+     "fine": "2027-03-05",
+     "note": null
+    },
+    {
+     "nome": "Exams (first year)",
+     "inizio": "2027-03-01",
+     "fine": "2027-04-16",
+     "note": null
+    },
+    {
+     "nome": "Exams (first and second year)",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Per il primo anno la tabella indica anche il periodo 21/06-30/07/2027"
+    },
+    {
+     "nome": "Exams (first and second year)",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-08",
+     "note": null
+    },
+    {
+     "nome": "Exams (first and second year)",
+     "inizio": "2027-12-09",
+     "fine": "2027-12-22",
+     "note": null
+    },
+    {
+     "nome": "Exams (first and second year)",
+     "inizio": "2028-01-10",
+     "fine": "2028-03-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unicampania-lm-9-molecular-biotechnology"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Data Analytics (L-41)",
+   "fonte": "https://www.matfis.unicampania.it/didattica/corsi-di-studio/data-analytics/49-regolamenti-e-manifesti-data-analytics/832-da-mani-2627",
+   "sessioni": [
+    {
+     "nome": "Periodo di esame 1 (dal 2° anno)",
+     "inizio": "2026-10-26",
+     "fine": "2026-10-29",
+     "note": "Per i corsi degli anni precedenti"
+    },
+    {
+     "nome": "Periodo di esame 2",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Periodo di esame 3",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-31",
+     "note": null
+    },
+    {
+     "nome": "Periodo di esame 4",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-29",
+     "note": null
+    },
+    {
+     "nome": "Periodo di esame 5",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-29",
+     "note": "Studenti dal 2° anno: 01/09-17/09/2027"
+    }
+   ],
+   "corsi": [
+    "unicampania-l-41-data-analytics"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Fisica (L-30)",
+   "fonte": "https://www.matfis.unicampania.it/images/id1439_Manifesto_degli_studi_2026-2027_Fisica_100626.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione di recupero (2° e 3° anno)",
+     "inizio": "2026-10-26",
+     "fine": "2026-10-30",
+     "note": "Per anni accademici precedenti; prove intermedie per i corsi del 1° semestre"
+    },
+    {
+     "nome": "Sessione anticipata (corsi del 1° semestre)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione di recupero (insegnamenti del 1° semestre)",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (settembre)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "Sessioni di recupero ulteriori indicate solo per mese: ottobre-novembre 2027, gennaio-febbraio 2028, marzo 2028"
+    }
+   ],
+   "corsi": [
+    "unicampania-l-30-fisica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Matematica (L-35)",
+   "fonte": "https://www.matfis.unicampania.it/images/All1_Manifesto_A34_LT_26-27_2.pdf",
+   "sessioni": [
+    {
+     "nome": "Periodo di esame 1 (dal 2° anno)",
+     "inizio": "2026-10-26",
+     "fine": "2026-10-30",
+     "note": "Per i corsi degli anni precedenti"
+    },
+    {
+     "nome": "Periodo di esame 2",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Periodo di esame 3",
+     "inizio": "2027-03-18",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Periodo di esame 4",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Per gli studenti del 1° anno: 14/06-29/07/2027"
+    },
+    {
+     "nome": "Periodo di esame 5",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-11",
+     "note": "Previsto inoltre 1 appello in una settimana di ottobre 2027 (date non indicate)"
+    }
+   ],
+   "corsi": [
+    "unicampania-l-35-matematica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Matematica (LM-40)",
+   "fonte": "https://www.matfis.unicampania.it/images/All2_Manifesto_A37_MAT_LM_26-27_corr_1.pdf",
+   "sessioni": [
+    {
+     "nome": "Periodo di esame 1 (dal 2° anno)",
+     "inizio": "2026-10-26",
+     "fine": "2026-10-30",
+     "note": "Per i corsi degli anni precedenti"
+    },
+    {
+     "nome": "Periodo di esame 2",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Periodo di esame 3",
+     "inizio": "2027-03-18",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Periodo di esame 4",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Per gli studenti del 1° anno: 14/06-29/07/2027"
+    },
+    {
+     "nome": "Periodo di esame 5",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-11",
+     "note": "Previsto inoltre 1 appello in una settimana di ottobre 2027 (date non indicate)"
+    }
+   ],
+   "corsi": [
+    "unicampania-lm-40-matematica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Data Science",
+   "fonte": "https://www.matfis.unicampania.it/images/Manifesto_degli_studi_Data_Science_2026-27_19_05_26_PV_1.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria (2° anno)",
+     "inizio": "2026-10-26",
+     "fine": "2026-10-30",
+     "note": "Per studenti di anni accademici precedenti; prove intermedie per i corsi del 1° semestre"
+    },
+    {
+     "nome": "Sessione anticipata / invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva (settembre)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unicampania-lm-data-data-science"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Physics (LM-17)",
+   "fonte": "https://www.matfis.unicampania.it/images/Manifesto_2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione anticipata (1° anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-27",
+     "note": "2° anno: 07/01-28/05/2027"
+    },
+    {
+     "nome": "Sessione primaverile di recupero",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-01",
+     "note": "2° anno: 01/06-01/08/2027"
+    },
+    {
+     "nome": "Sessione estiva (settembre)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-26",
+     "note": "2° anno: 01/09-30/10/2027. Sessioni di recupero indicate solo per mese (ottobre-dicembre 2027, gennaio-febbraio 2028, marzo-maggio 2028)"
+    }
+   ],
+   "corsi": [
+    "unicampania-lm-17-physics"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unicampania-l-snt4-assistenza-sanitaria-abilitante-alla-professione-sanitaria-d",
+  "unicampania-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "unicampania-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1634734",
+  "unicampania-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1634735",
+  "unicampania-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+  "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1629059",
+  "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1629057",
+  "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1629054",
+  "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1629053",
+  "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628949",
+  "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628884",
+  "unicampania-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628950",
+  "unicampania-l-9-ingegneria-aerospaziale-meccanica-energetica",
+  "unicampania-l-8-ingegneria-biomedica",
+  "unicampania-l-7-ingegneria-civile-edile-ambientale",
+  "unicampania-l-8-ingegneria-elettronica-e-informatica",
+  "unicampania-l-9-ingegneria-gestionale",
+  "unicampania-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+  "unicampania-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis-1634737",
+  "unicampania-l-snt1-nursing",
+  "unicampania-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes",
+  "unicampania-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+  "unicampania-l-24-scienze-e-tecniche-psicologiche",
+  "unicampania-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr",
+  "unicampania-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+  "unicampania-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+  "unicampania-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession-1634738",
+  "unicampania-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession-1634739",
+  "unicampania-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "unicampania-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1634740",
+  "unicampania-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1634741",
+  "unicampania-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1634742",
+  "unicampania-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil",
+  "unicampania-lm-20-ingegneria-aerospaziale",
+  "unicampania-lm-21-ingegneria-biomedica",
+  "unicampania-lm-23-ingegneria-civile",
+  "unicampania-lm-29-ingegneria-elettronica",
+  "unicampania-lm-31-ingegneria-gestionale",
+  "unicampania-lm-32-ingegneria-informatica",
+  "unicampania-lm-33-ingegneria-meccanica",
+  "unicampania-lm-30-lm-35-ingegneria-per-l-energia-e-l-ambiente",
+  "unicampania-lm-51-psicologia-applicata",
+  "unicampania-lm-51-psicologia-clinico-dinamica",
+  "unicampania-lm-51-psicologia-dei-processi-cognitivi",
+  "unicampania-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "unicampania-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie",
+  "unicampania-lm-41-medicina-e-chirurgia-1634406",
+  "unicampania-lm-41-medicina-e-chirurgia-1634407",
+  "unicampania-lm-41-medicina-e-chirurgia-1634408",
+  "unicampania-lm-46-odontoiatria-e-protesi-dentaria"
+ ],
+ "mancanti": "L'Ateneo (unicampania.it) non ha ancora pubblicato il calendario accademico 2026/27 (in pagina solo 2025/26 e 2024/25); i periodi d'esame sono fissati dai singoli Dipartimenti o corsi. Corsi scoperti: Dipartimento di Ingegneria (pubblica solo le date di inizio e fine dei semestri e il link agli appelli su Esse3); Dipartimento di Psicologia, Ostetricia (DDBC), corsi del Dipartimento di Medicina e scienze della salute (Odontoiatria, Fisioterapia, Igiene dentale, Ortottica, Medicina Interateneo, Scienze riabilitative), Medicina di precisione (TLB, TRMIR, Medicine and Surgery), Medicina sperimentale (Medicina Napoli: solo i mesi d'esame dicembre-febbraio, maggio-luglio, settembre), Salute mentale e fisica (Logopedia, TeRP, TNPEE) e Scienze mediche traslazionali (Infermieristica, Nursing): pubblicati solo calendari dei singoli appelli o mesi, senza date di inizio e fine delle sessioni. Secondo giro (11/10/2026): ricontrollati il calendario accademico di Ateneo (ancora solo 2024/25 e 2025/26, con soli giorni di vacanza), le pagine «Calendario esami»/«Sedute d'esame» e i calendari attività didattiche dei Dipartimenti di Ingegneria, Psicologia, Medicina sperimentale, Medicina di precisione (Exam schedule 2026/27 di Medicine and Surgery: solo date dei singoli appelli per mese), DDBC (Ostetricia: calendario 2026/27 con sessioni indicate solo per mese) e i regolamenti di Ingegneria: nessun periodo di sessione 2026/27 con date di inizio e fine. La ricerca interna dei siti di Psicologia, DAMSS/DMDSMCO, Salute mentale e fisica, Scienze mediche traslazionali e DDBC risponde con errore 500."
+}

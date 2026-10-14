@@ -1,0 +1,177 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Link esterni, aggiornamento dati, OneDrive e Google Drive. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Registratore delle lezioni: microfono e servizio in primo piano per
+         continuare a registrare a schermo spento (notifica visibile). -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- Notifiche pianificate delle prove (flutter_local_notifications):
+         ripianificate dopo il riavvio del telefono. Pianificazione inesatta,
+         quindi niente SCHEDULE_EXACT_ALARM. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!-- Esami, prove in itinere, esoneri e sessioni nel calendario del
+         telefono (solo se lo studente lo attiva in Impostazioni → Calendario). -->
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <!-- Sessioni Focus: Non disturbare del telefono durante la sessione, solo
+         se lo studente lo vuole e dà l'«Accesso a Non disturbare» dalle
+         impostazioni del sistema (FocusDnd.kt). -->
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+
+    <!-- Dati solo sul dispositivo: niente backup automatico su Google Drive né
+         copia su un nuovo telefono (reinstallando si riparte da zero). -->
+    <application
+        android:label="UniNotes"
+        android:name="${applicationName}"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:icon="@mipmap/ic_launcher">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI. -->
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!-- Ritorno dall'accesso Microsoft (OneDrive) con lo schema
+             msauth.io.github.simomagnus.universitynotes://auth
+             (flutter_web_auth_2; registrato in Microsoft Entra). -->
+        <activity
+            android:name="com.linusu.flutter_web_auth_2.CallbackActivity"
+            android:exported="true"
+            android:taskAffinity="">
+            <intent-filter android:label="flutter_web_auth_2">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="msauth.io.github.simomagnus.universitynotes"
+                    android:host="auth" />
+            </intent-filter>
+            <!-- Ritorno dall'accesso a Google Drive:
+                 com.googleusercontent.apps.<id>:/oauth2redirect (schema
+                 calcolato in build.gradle.kts dall'ID client Android). -->
+            <intent-filter android:label="flutter_web_auth_2">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="${googleAuthScheme}" />
+            </intent-filter>
+        </activity>
+        <!-- Servizio della registrazione lezioni (flutter_foreground_task). -->
+        <service
+            android:name="com.pravera.flutter_foreground_task.service.ForegroundService"
+            android:foregroundServiceType="microphone"
+            android:stopWithTask="true"
+            android:exported="false" />
+        <!-- Notifiche pianificate, ripianificazione al riavvio e pulsanti
+             delle notifiche (flutter_local_notifications). -->
+        <receiver
+            android:exported="false"
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
+        <receiver
+            android:exported="false"
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:exported="false"
+            android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver" />
+        <!-- Fine prevista della sessione Focus: il Non disturbare torna come
+             prima anche ad app chiusa (FocusDnd.kt). -->
+        <receiver
+            android:name=".FocusDndReceiver"
+            android:exported="false" />
+        <!-- Widget della schermata Home (dati scritti dall'app in
+             FlutterSharedPreferences, vedi lib/core/reminders/home_widgets.dart). -->
+        <receiver
+            android:name=".widgets.UpcomingExamsWidget"
+            android:label="@string/widget_prossime_prove_nome"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_prossime_prove_info" />
+        </receiver>
+        <receiver
+            android:name=".widgets.RecordWidget"
+            android:label="@string/widget_registra_nome"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_registra_info" />
+        </receiver>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+    <!-- Required to query activities that can process text, see:
+         https://developer.android.com/training/package-visibility and
+         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+
+         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+        <!-- url_launcher: link web, telefono ed email (canLaunchUrl su
+             Android 11+). -->
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="https"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="http"/>
+        </intent>
+        <!-- Accesso Microsoft nelle Custom Tabs del browser. -->
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.DIAL"/>
+            <data android:scheme="tel"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO"/>
+            <data android:scheme="mailto"/>
+        </intent>
+        <!-- Trascrizione istantanea: servizi di riconoscimento vocale del
+             sistema (SpeechRecognizer, LiveSpeech.kt). -->
+        <intent>
+            <action android:name="android.speech.RecognitionService"/>
+        </intent>
+    </queries>
+</manifest>

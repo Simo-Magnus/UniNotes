@@ -1,0 +1,540 @@
+{
+ "universita_id": "unina",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-12",
+ "calendari": [
+  {
+   "ambito": "Scuola Politecnica e delle Scienze di Base — Collegio degli Studi di Ingegneria",
+   "fonte": "https://www.scuolapsb.unina.it/wp-content/uploads/2026/08/Calendario_didattico_AA_26_27_Ingegneria.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-28",
+     "note": "Apertura sessione il 14/12/2026; appelli ordinari obbligatori nei mesi di gennaio e febbraio 2027 (fine sessione non indicata: indicato il mese)"
+    },
+    {
+     "nome": "Appello di recupero di marzo",
+     "inizio": "2027-03-01",
+     "fine": "2027-03-20",
+     "note": "Appello di recupero obbligatorio"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "Apertura sessione il 07/06/2027; appelli ordinari obbligatori nei mesi di giugno e luglio 2027 (fine sessione non indicata: indicato il mese)"
+    },
+    {
+     "nome": "Appello di recupero autunnale",
+     "inizio": "2027-10-18",
+     "fine": "2027-11-13",
+     "note": "Appello di recupero obbligatorio"
+    }
+   ],
+   "corsi": [
+    "unina-l-7-civil-and-environmental-engineering",
+    "unina-l-8-electrical-engineering-and-information-technology",
+    "unina-l-ds-gestione-dei-sistemi-aerospaziali-per-la-difesa",
+    "unina-l-9-ingegneria-aerospaziale",
+    "unina-l-9-ingegneria-chimica",
+    "unina-l-9-ingegneria-dei-materiali-e-biomateriali",
+    "unina-l-9-ingegneria-elettrica",
+    "unina-l-9-ingegneria-gestionale",
+    "unina-l-9-ingegneria-meccanica",
+    "unina-l-9-ingegneria-navale",
+    "unina-l-8-l-9-ingegneria-biomedica",
+    "unina-l-7-ingegneria-civile",
+    "unina-l-7-ingegneria-gestionale-delle-costruzioni",
+    "unina-l-7-ingegneria-per-l-ambiente-e-il-territorio",
+    "unina-l-8-ingegneria-dell-automazione-e-robotica",
+    "unina-l-8-ingegneria-delle-telecomunicazioni-e-dei-media-digitali",
+    "unina-l-8-ingegneria-elettronica",
+    "unina-l-8-ingegneria-informatica",
+    "unina-l-23-ingegneria-edile-per-la-sostenibilita",
+    "unina-lm-33-autonomous-vehicle-engineering",
+    "unina-lm-21-industrial-bioengineering",
+    "unina-lm-20-ingegneria-aerospaziale",
+    "unina-lm-21-ingegneria-biomedica",
+    "unina-lm-22-ingegneria-chimica",
+    "unina-lm-23-ingegneria-civile-per-l-idraulica-e-i-trasporti",
+    "unina-lm-23-ingegneria-strutturale-e-geotecnica",
+    "unina-lm-53-ingegneria-dei-materiali",
+    "unina-lm-25-ingegneria-dell-automazione-e-robotica",
+    "unina-lm-27-ingegneria-delle-telecomunicazioni-e-dei-media-digitali",
+    "unina-lm-24-ingegneria-edile-per-la-sostenibilita",
+    "unina-lm-28-ingegneria-elettrica",
+    "unina-lm-29-ingegneria-elettronica",
+    "unina-lm-31-ingegneria-gestionale",
+    "unina-lm-32-ingegneria-informatica",
+    "unina-lm-33-ingegneria-meccanica-per-l-energia-e-l-ambiente",
+    "unina-lm-33-ingegneria-meccanica-per-la-progettazione-e-la-produzione",
+    "unina-lm-34-ingegneria-navale",
+    "unina-lm-35-ingegneria-per-l-ambiente-e-il-territorio",
+    "unina-lm-23-transportation-engineering-and-mobility",
+    "unina-lm-44-mathematical-engineering",
+    "unina-lm-ds-scienze-dei-sistemi-aerospaziali-per-la-difesa",
+    "unina-lm-4-c-u-ingegneria-edile-architettura",
+    "unina-l-p03-meccatronica",
+    "unina-l-p01-tecnologie-digitali-per-le-costruzioni"
+   ]
+  },
+  {
+   "ambito": "Scuola Politecnica e delle Scienze di Base — Collegio degli Studi di Architettura",
+   "fonte": "https://www.scuolapsb.unina.it/wp-content/uploads/2026/08/Calendario_didattico_AA_26_27_Architettura.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli aggiuntivi di novembre",
+     "inizio": "2026-11-09",
+     "fine": "2026-11-13",
+     "note": "Sospensione didattica e appelli aggiuntivi"
+    },
+    {
+     "nome": "1° periodo esami",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "2 date; per il 1° anno di DBE e Archer dal 25/01/2027"
+    },
+    {
+     "nome": "2° periodo esami",
+     "inizio": "2027-06-14",
+     "fine": "2027-09-10",
+     "note": "3 date"
+    }
+   ],
+   "corsi": [
+    "unina-l-4-design-per-la-comunita",
+    "unina-l-17-scienze-dell-architettura",
+    "unina-l-21-urbanistica-sostenibile",
+    "unina-lm-4-architecture-and-heritage",
+    "unina-lm-4-architettura-per-comunita-territori-e-ambiente",
+    "unina-lm-12-design-for-the-built-environment",
+    "unina-lm-48-pianificazione-territoriale-urbanistica-e-paesaggistico-ambi",
+    "unina-lm-4-c-u-architettura"
+   ]
+  },
+  {
+   "ambito": "Scuola Politecnica e delle Scienze di Base — Collegio degli Studi di Scienze",
+   "fonte": "https://www.scuolapsb.unina.it/wp-content/uploads/2026/08/Calendario_didattico_AA_26_27_Scienze.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-28",
+     "note": "Apertura sessione il 14/12/2026; appelli ordinari obbligatori nei mesi di gennaio e febbraio 2027 (fine sessione non indicata: indicato il mese)"
+    },
+    {
+     "nome": "Appello di recupero di marzo",
+     "inizio": "2027-03-01",
+     "fine": "2027-03-20",
+     "note": "Appello di recupero obbligatorio"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "Apertura sessione il 07/06/2027; appelli ordinari obbligatori nei mesi di giugno e luglio 2027 (fine sessione non indicata: indicato il mese)"
+    },
+    {
+     "nome": "Appello di recupero autunnale",
+     "inizio": "2027-10-18",
+     "fine": "2027-11-13",
+     "note": "Appello di recupero obbligatorio"
+    }
+   ],
+   "corsi": [
+    "unina-l-13-biologia",
+    "unina-l-13-biology-for-one-health",
+    "unina-l-2-biotecnologie-molecolari-e-industriali",
+    "unina-l-27-chimica",
+    "unina-l-27-chimica-industriale",
+    "unina-l-30-fisica",
+    "unina-l-30-ottica-e-optometria",
+    "unina-l-31-informatica",
+    "unina-l-35-matematica",
+    "unina-l-34-scienze-geologiche",
+    "unina-l-32-scienze-per-la-natura-e-per-l-ambiente",
+    "unina-lm-6-biologia",
+    "unina-lm-6-biology-of-extreme-environments",
+    "unina-lm-6-marine-biology-and-aquaculture",
+    "unina-lm-6-scienze-biologiche",
+    "unina-lm-8-biotecnologie-molecolari-e-industriali",
+    "unina-lm-data-data-science",
+    "unina-lm-17-fisica",
+    "unina-lm-74-geoscienze-per-l-ambiente-le-risorse-e-i-rischi-naturali",
+    "unina-lm-74-volcanology",
+    "unina-lm-71-industrial-chemistry-for-circular-and-bio-economy",
+    "unina-lm-18-informatica",
+    "unina-lm-40-matematica",
+    "unina-lm-44-quantum-science-and-engineering",
+    "unina-lm-54-scienze-chimiche",
+    "unina-lm-71-scienze-e-tecnologie-della-chimica-industriale",
+    "unina-lm-60-scienze-naturali"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Sociali",
+   "fonte": "https://www.scienzesociali.unina.it/documents/11791783/111773892/Calendario+Didattico+2026-2027/e0a1463b-b629-4166-9931-5a68412c64f2",
+   "sessioni": [
+    {
+     "nome": "Sessione ordinaria invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "3 appelli: 7-22/01, 25/01-10/02, 11-26/02 (DIGISOC: 2 date 1-26/02)"
+    },
+    {
+     "nome": "Sessione riservata (aprile)",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "Riservata agli studenti fuori corso; 1 appello"
+    },
+    {
+     "nome": "Sessione ordinaria estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": "1° appello 31/05-16/06, 2° appello 17/06-02/07, appello aggiuntivo 05-30/07 (DIGISOC: 3 date 31/05-09/07)"
+    },
+    {
+     "nome": "Sessione straordinaria autunnale",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione riservata (novembre)",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-30",
+     "note": "Riservata a fuori corso e iscritti all'ultimo anno; 1 appello"
+    },
+    {
+     "nome": "Sessione straordinaria invernale",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-29",
+     "note": "1° appello 10-21/01, 2° appello 24/01-11/02, appello aggiuntivo 14-29/02"
+    }
+   ],
+   "corsi": [
+    "unina-l-40-culture-digitali-e-della-comunicazione",
+    "unina-l-40-sociologia",
+    "unina-lm-88-comunicazione-pubblica-sociale-e-politica",
+    "unina-lm-88-innovazione-sociale",
+    "unina-lm-88-sociologia-digitale-e-analisi-del-web",
+    "unina-lm-92-digital-society-social-innovation-and-global-citizenship"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Economiche e Statistiche (DISES)",
+   "fonte": "https://www.dises.unina.it/documents/12369237/112248694/Calendario_esami_2027.pdf/2e57a619-d530-4a28-be27-fc9df37e85ea",
+   "sessioni": [
+    {
+     "nome": "Appelli di ottobre 2026",
+     "inizio": "2026-10-28",
+     "fine": "2026-10-30",
+     "note": "Periodi ricavati dalle date dei singoli appelli del «Calendario Esami 2027» (il dipartimento non pubblica intervalli di sessione)"
+    },
+    {
+     "nome": "Appelli di novembre 2026",
+     "inizio": "2026-11-03",
+     "fine": "2026-11-11",
+     "note": "Periodo ricavato dalle date dei singoli appelli"
+    },
+    {
+     "nome": "Appelli di gennaio",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-28",
+     "note": "Periodo ricavato dalle date dei singoli appelli"
+    },
+    {
+     "nome": "Appelli di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-16",
+     "note": "Periodo ricavato dalle date dei singoli appelli"
+    },
+    {
+     "nome": "Appelli di giugno",
+     "inizio": "2027-06-10",
+     "fine": "2027-06-29",
+     "note": "Periodo ricavato dalle date dei singoli appelli"
+    },
+    {
+     "nome": "Appelli di luglio",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-21",
+     "note": "Periodo ricavato dalle date dei singoli appelli"
+    },
+    {
+     "nome": "Appelli di settembre",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-17",
+     "note": "Periodo ricavato dalle date dei singoli appelli"
+    }
+   ],
+   "corsi": [
+    "unina-l-18-economia-delle-imprese-finanziarie",
+    "unina-l-33-economia-e-commercio",
+    "unina-l-15-scienze-del-turismo-ad-indirizzo-manageriale",
+    "unina-lm-56-economia-e-commercio",
+    "unina-lm-56-economia-e-finanza",
+    "unina-lm-16-finanza"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Farmacia",
+   "fonte": "https://www.farmacia.unina.it/documents/12375415/62995712/Calendario+accademico+2026_2027Agg_.pdf/db40c089-4f46-449c-a55e-905b3cf2d768",
+   "sessioni": [
+    {
+     "nome": "Esami di novembre",
+     "inizio": "2026-11-11",
+     "fine": "2026-11-27",
+     "note": "Periodo «Esami» del calendario grafico (letto dalla griglia a colori)"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-15",
+     "fine": "2027-03-05",
+     "note": "Periodo «Esami» del calendario grafico (letto dalla griglia a colori)"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": "Periodo «Esami» del calendario grafico (letto dalla griglia a colori)"
+    }
+   ],
+   "corsi": [
+    "unina-l-29-controllo-di-qualita",
+    "unina-l-29-scienze-e-tecnologie-erboristiche",
+    "unina-l-29-scienze-nutraceutiche",
+    "unina-lm-13-chimica-e-tecnologia-farmaceutiche",
+    "unina-lm-13-farmacia",
+    "unina-lm-9-biotecnologie-del-farmaco",
+    "unina-lm-75-tossicologia-chimica-e-ambientale",
+    "unina-lm-71-scienza-e-tecnologia-dellindustria-cosmetica"
+   ]
+  },
+  {
+   "ambito": "Scuola di Medicina e Chirurgia (calendario didattico, decreto n. 186 del 05/08/2026)",
+   "fonte": "https://www.medicina.unina.it/smc/wp-content/uploads/2026/09/PG_2026_0104621_Calendario-didattico-SMC-26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione autunnale a.a. 2025/26",
+     "inizio": "2026-09-01",
+     "fine": "2026-12-31",
+     "note": "sessione dell'a.a. precedente"
+    },
+    {
+     "nome": "Sessione straordinaria a.a. 2025/26",
+     "inizio": "2027-01-01",
+     "fine": "2027-03-31",
+     "note": "sessione dell'a.a. precedente"
+    },
+    {
+     "nome": "Sessione anticipata",
+     "inizio": "2026-11-01",
+     "fine": "2027-03-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-04",
+     "fine": "2027-07-31",
+     "note": "esami e lauree sospesi dal 5 aprile al 3 maggio 2027 (passaggio da GEDAS a ESSE3, nota rettorale PG/2026/0079944)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-12-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2028-01-01",
+     "fine": "2028-03-31",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unina-l-2-biotecnologie-per-la-salute",
+    "unina-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista",
+    "unina-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "unina-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+    "unina-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "unina-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1635361",
+    "unina-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1635360",
+    "unina-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1635363",
+    "unina-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1635362",
+    "unina-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+    "unina-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes",
+    "unina-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+    "unina-l-snt3-tecniche-audiometriche-abilitante-alla-professione-sanitaria",
+    "unina-l-snt3-tecniche-audioprotesiche-abilitante-alla-professione-sanitar",
+    "unina-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+    "unina-l-snt3-tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-c",
+    "unina-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+    "unina-l-snt3-tecniche-di-neurofisiopatologia-abilitante-alla-professione",
+    "unina-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+    "unina-l-snt3-tecniche-ortopediche-abilitante-alla-professione-sanitaria-d",
+    "unina-l-snt2-terapia-occupazionale-abilitante-alla-professione-sanitaria",
+    "unina-lm-9-biotecnologie-mediche",
+    "unina-lm-61-scienze-della-nutrizione-umana",
+    "unina-lm-snt4-scienze-delle-professioni-sanitarie-della-prevenzione",
+    "unina-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-assistenziali",
+    "unina-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche",
+    "unina-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+    "unina-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-ostetrico",
+    "unina-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie",
+    "unina-lm-41-medicina-e-chirurgia",
+    "unina-lm-41-medicina-e-chirurgia-1634044",
+    "unina-lm-41-medicina-e-chirurgia-replica-medicina-e-chirurgia-sede-napol",
+    "unina-lm-41-medicine-and-surgery",
+    "unina-lm-46-odontoiatria-e-protesi-dentaria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Agraria (sedute d'esame a.a. 2026/27)",
+   "fonte": "https://www.agraria.unina.it/documents/13625297/106247214/Sedute+di+esame_a.a.2026-2027.doc.pdf/192a01d2-9e25-4090-8bcb-4c23490ef6d9",
+   "sessioni": [
+    {
+     "nome": "Appello di novembre",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": "ultimo esame LT e LM e studenti fuori corso"
+    },
+    {
+     "nome": "Appello di dicembre",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-22",
+     "note": "per tutti gli studenti"
+    },
+    {
+     "nome": "Sessione di gennaio-febbraio",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-26",
+     "note": "3 appelli; finestre consigliate per anno di corso dal 7 gennaio al 26 febbraio 2027"
+    },
+    {
+     "nome": "Appello di marzo",
+     "inizio": "2027-03-15",
+     "fine": "2027-03-19",
+     "note": "ultimo esame LT e LM e studenti fuori corso"
+    },
+    {
+     "nome": "Sessione di giugno-luglio",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "3 appelli; finestre consigliate per anno di corso dal 7 giugno al 30 luglio 2027"
+    },
+    {
+     "nome": "Appello di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "per tutti gli studenti"
+    }
+   ],
+   "corsi": [
+    "unina-l-25-scienze-agrarie-forestali-e-ambientali",
+    "unina-l-gastr-scienze-gastronomiche-mediterranee",
+    "unina-l-26-tecnologie-alimentari",
+    "unina-l-25-viticoltura-ed-enologia",
+    "unina-lm-7-biotecnologie-agro-ambientali-e-alimentari",
+    "unina-lm-69-scienze-e-tecnologie-agrarie",
+    "unina-lm-70-scienze-e-tecnologie-alimentari",
+    "unina-lm-69-scienze-enologiche",
+    "unina-lm-73-scienze-forestali-ed-ambientali",
+    "unina-lm-70-sustainable-food-systems"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia, Management, Istituzioni (DEMI)",
+   "fonte": "https://www.demi.unina.it/documents/13607297/13892525/Calendario_esami_2027.pdf/daccc935-d906-48a5-bbed-7a8ff4c304b5",
+   "sessioni": [
+    {
+     "nome": "Appelli di ottobre 2026",
+     "inizio": "2026-10-28",
+     "fine": "2026-10-30",
+     "note": "prima e ultima data degli appelli del calendario esami"
+    },
+    {
+     "nome": "Appelli di novembre 2026",
+     "inizio": "2026-11-03",
+     "fine": "2026-11-11",
+     "note": "prima e ultima data degli appelli del calendario esami"
+    },
+    {
+     "nome": "Appelli di gennaio",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-28",
+     "note": "prima e ultima data degli appelli del calendario esami"
+    },
+    {
+     "nome": "Appelli di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-16",
+     "note": "prima e ultima data degli appelli del calendario esami"
+    },
+    {
+     "nome": "Appelli di giugno",
+     "inizio": "2027-06-10",
+     "fine": "2027-06-29",
+     "note": "prima e ultima data degli appelli del calendario esami"
+    },
+    {
+     "nome": "Appelli di luglio",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-21",
+     "note": "prima e ultima data degli appelli del calendario esami"
+    },
+    {
+     "nome": "Appelli di settembre",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-17",
+     "note": "prima e ultima data degli appelli del calendario esami"
+    }
+   ],
+   "corsi": [
+    "unina-l-18-economia-aziendale",
+    "unina-l-18-hospitality-management",
+    "unina-lm-77-economia-aziendale",
+    "unina-lm-77-innovation-and-international-management"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unina-l-1-archeologia-storia-delle-arti-e-scienze-del-patrimonio-cultu",
+  "unina-l-5-filosofia",
+  "unina-l-38-gestione-degli-animali-e-delle-produzioni",
+  "unina-l-10-lettere-classiche",
+  "unina-l-10-lettere-moderne",
+  "unina-l-11-lingue-culture-e-letterature-moderne-europee",
+  "unina-l-14-scienze-dei-servizi-giuridici",
+  "unina-l-39-scienze-del-servizio-sociale",
+  "unina-l-16-scienze-dell-amministrazione-e-dell-organizzazione",
+  "unina-l-24-scienze-e-tecniche-psicologiche",
+  "unina-l-36-scienze-politiche",
+  "unina-l-41-statistica-e-tecnologie-per-l-analisi-dei-dati",
+  "unina-l-42-storia",
+  "unina-lm-2-archeologia-del-mediterraneo",
+  "unina-lm-50-coordinamento-dei-servizi-educativi-per-la-prima-infanzia-e",
+  "unina-lm-65-discipline-della-musica-e-dello-spettacolo-storia-e-teoria",
+  "unina-lm-15-filologia-letterature-e-civilta-del-mondo-antico",
+  "unina-lm-14-filologia-moderna",
+  "unina-lm-78-filosofia",
+  "unina-lm-87-gestione-delle-politiche-e-dei-servizi-sociali",
+  "unina-lm-52-international-relations",
+  "unina-lm-37-lingue-e-letterature-per-il-plurilinguismo-europeo",
+  "unina-lm-76-management-del-patrimonio-culturale",
+  "unina-lm-89-patrimonio-culturale-storia-delle-arti-e-museologia",
+  "unina-lm-86-precision-livestock-farming",
+  "unina-lm-51-psicologia-clinica-e-degli-interventi-nei-contesti-sociali-e",
+  "unina-lm-52-relazioni-internazionali-studi-sull-integrazione-europea-e-p",
+  "unina-lm-62-lm-91-scienze-criminologiche-investigative-e-di-contrasto-ai-crimi",
+  "unina-lm-63-scienze-della-pubblica-amministrazione-e-del-lavoro",
+  "unina-lm-86-scienze-e-tecnologie-delle-produzioni-animali",
+  "unina-lm-82-scienze-statistiche-per-le-decisioni",
+  "unina-lm-84-scienze-storiche",
+  "unina-lmg-01-giurisprudenza",
+  "unina-lm-42-medicina-veterinaria",
+  "unina-lm-42-veterinary-medicine"
+ ],
+ "mancanti": "Scoperti (ricontrollato il 12/10/2026): (1) Dipartimento di Studi Umanistici (18 corsi): il calendario didattico 2026/27 (https://www.studiumanistici.unina.it/wp-content/uploads/2026/07/CALENDARIO-DIDATTICO-2026-27.pdf) e la pagina https://www.studiumanistici.unina.it/appelli_esami/ indicano gli appelli solo per mese (gennaio/febbraio, aprile, giugno/luglio, settembre, novembre), senza date. (2) Scienze Politiche (10 corsi): https://www.scienzepolitiche.unina.it/didattica/calendario-esami-di-profitto/ pubblica solo i calendari degli esami dell'a.a. 2025/26 (giugno-settembre 2026); quelli 2026/27 non ancora pubblicati. (3) Giurisprudenza (2 corsi): https://www.giurisprudenza.unina.it/calendari ha i calendari degli appelli fino alle sessioni estiva e autunnale 2025/26; il 2026/27 non è ancora pubblicato. (4) Medicina Veterinaria e Produzioni Animali (5 corsi): https://www.mvpa-unina.org/corsi/studiare-mv.xhtml?catd=25 pubblica solo il calendario degli esami per insegnamento da maggio 2026 a marzo 2027 (a.a. 2025/26), nessun calendario delle sessioni 2026/27."
+}

@@ -1,0 +1,45 @@
+{
+ "universita_id": "unisg",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://ftparea.unisg.it/Regolamenti_Interni/Inglese/Academic%20calendar/Academic%20Calendar%202026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione di gennaio",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-22",
+     "note": "Iscrizioni dal 14/12 al 30/12/2026"
+    },
+    {
+     "nome": "Sessione di marzo (1 appello)",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-09",
+     "note": "Solo per gli insegnamenti conclusi nel I semestre; iscrizioni dal 22/03 al 26/03/2027"
+    },
+    {
+     "nome": "Sessione di giugno",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-02",
+     "note": "Iscrizioni dal 31/05 al 07/06/2027"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-16",
+     "note": "Iscrizioni dal 23/08 al 30/08/2027"
+    }
+   ],
+   "corsi": [
+    "unisg-l-gastr-food-tech-for-ecological-transition",
+    "unisg-l-gastr-scienze-e-culture-gastronomiche",
+    "unisg-lm-gastr-food-and-planetary-health",
+    "unisg-lm-gastr-food-industry-management"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

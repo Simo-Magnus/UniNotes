@@ -1,0 +1,576 @@
+{
+ "universita_id": "unict",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://www.unict.it/it/didattica/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "1ª sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unict-l-2-biotecnologie",
+    "unict-l-27-chimica",
+    "unict-l-27-chimica-sostenibile-per-lindustria-lambiente-e-lenergia",
+    "unict-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista",
+    "unict-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "unict-l-25-gestione-dei-sistemi-produttivi-agrari-mediterranei",
+    "unict-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "unict-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1628336",
+    "unict-l-7-ingegneria-civile-ambientale-e-gestionale",
+    "unict-l-8-ingegneria-elettronica",
+    "unict-l-9-ingegneria-gestionale",
+    "unict-l-9-ingegneria-industriale",
+    "unict-l-8-ingegneria-informatica",
+    "unict-l-9-ingegneria-per-la-transizione-ecologica",
+    "unict-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+    "unict-l-35-matematica",
+    "unict-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes",
+    "unict-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+    "unict-l-32-scienze-ambientali-e-naturali",
+    "unict-l-13-scienze-biologiche",
+    "unict-l-16-scienze-dell-amministrazione-e-dell-organizzazione",
+    "unict-l-25-scienze-e-tecnologie-agrarie",
+    "unict-l-26-scienze-e-tecnologie-alimentari",
+    "unict-l-34-scienze-geologiche",
+    "unict-l-22-scienze-motorie",
+    "unict-l-22-scienze-motorie-replica-ragusa",
+    "unict-l-14-servizi-giuridici-per-linnovazione-nelle-pubbliche-amministr",
+    "unict-l-39-l-40-sociologia-e-servizio-sociale",
+    "unict-l-21-sostenibilita-ambientale-territorio-e-transizione-ecologica",
+    "unict-l-36-storia-politica-e-relazioni-internazionali",
+    "unict-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr",
+    "unict-l-snt3-tecniche-audioprotesiche-abilitante-alla-professione-sanitar",
+    "unict-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+    "unict-l-snt3-tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-c",
+    "unict-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+    "unict-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+    "unict-l-snt2-terapia-occupazionale-abilitante-alla-professione-sanitaria",
+    "unict-l-26-viticoltura-enologia-ed-enomarketing",
+    "unict-lm-69-agricultural-science-and-technology",
+    "unict-lm-25-automation-engineering-and-control-of-complex-systems",
+    "unict-lm-6-biologia-ambientale",
+    "unict-lm-6-biologia-sperimentale-e-applicata",
+    "unict-lm-7-biotecnologie-agrarie",
+    "unict-lm-9-biotecnologie-mediche",
+    "unict-lm-22-chemical-engineering-for-industrial-sustainability-ingegneri",
+    "unict-lm-27-communications-engineering",
+    "unict-lm-26-construction-management-and-safety",
+    "unict-lm-data-data-science",
+    "unict-lm-28-electrical-engineering-for-sustainable-green-energy-transiti",
+    "unict-lm-29-electronic-engineering",
+    "unict-lm-74-lm-79-geologia-e-geofisica",
+    "unict-lm-75-gestione-sostenibile-dellambiente-e-del-paesaggio",
+    "unict-lm-62-global-politics-and-euro-mediterranean-relations",
+    "unict-lm-23-ingegneria-civile-delle-acque-e-dei-trasporti",
+    "unict-lm-23-ingegneria-civile-strutturale-e-geotecnica",
+    "unict-lm-31-ingegneria-gestionale",
+    "unict-lm-32-ingegneria-informatica",
+    "unict-lm-33-ingegneria-meccanica",
+    "unict-lm-35-ingegneria-per-l-ambiente-e-il-territorio",
+    "unict-lm-63-management-della-pubblica-amministrazione",
+    "unict-lm-40-matematica",
+    "unict-lm-87-politiche-e-servizi-sociali",
+    "unict-lm-52-relazioni-internazionali",
+    "unict-lm-54-scienze-chimiche",
+    "unict-lm-61-scienze-della-nutrizione-umana",
+    "unict-lm-67-scienze-e-tecniche-delle-attivita-motorie-preventive-e-adatt",
+    "unict-lm-69-scienze-e-tecnologie-agrarie",
+    "unict-lm-70-scienze-e-tecnologie-alimentari",
+    "unict-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+    "unict-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie",
+    "unict-lm-88-sociologia-delle-reti-dell-informazione-e-dell-innovazione",
+    "unict-lm-84-storia-e-cultura-dei-paesi-mediterranei",
+    "unict-lm-4-c-u-architettura",
+    "unict-lmg-01-giurisprudenza",
+    "unict-lm-4-c-u-ingegneria-edile-architettura",
+    "unict-lm-41-medicine-and-surgery"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Economia e Impresa (DEI)",
+   "fonte": "https://www.dei.unict.it/sites/default/files/Calendario%20didattico%20DEI%20-%20A.A.%202026-2027(1).pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli riservati",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": "Riservati a studenti in debito, fuori corso, laureandi e art. 30 RDA (sospensione lezioni)"
+    },
+    {
+     "nome": "Appelli riservati",
+     "inizio": "2026-11-30",
+     "fine": "2026-12-11",
+     "note": "Riservati a fuori corso, laureandi e art. 30 RDA"
+    },
+    {
+     "nome": "1ª sessione 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-22",
+     "note": "1° appello"
+    },
+    {
+     "nome": "1ª sessione 2",
+     "inizio": "2027-01-28",
+     "fine": "2027-02-11",
+     "note": "2° appello"
+    },
+    {
+     "nome": "Appelli riservati",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-02",
+     "note": "Riservati a studenti in debito, fuori corso, laureandi, art. 30 RDA e iscritti all'ultimo anno con i CFU richiesti"
+    },
+    {
+     "nome": "Appelli riservati",
+     "inizio": "2027-04-26",
+     "fine": "2027-05-07",
+     "note": "Riservati a fuori corso, laureandi, art. 30 RDA e iscritti all'ultimo anno con i CFU richiesti"
+    },
+    {
+     "nome": "2ª sessione 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-06-22",
+     "note": "1° appello"
+    },
+    {
+     "nome": "2ª sessione 2",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-14",
+     "note": "2° appello"
+    },
+    {
+     "nome": "3ª sessione 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": "1° appello"
+    },
+    {
+     "nome": "3ª sessione 2",
+     "inizio": "2027-09-15",
+     "fine": "2027-09-24",
+     "note": "2° appello"
+    }
+   ],
+   "corsi": [
+    "unict-l-33-economia",
+    "unict-l-18-economia-aziendale",
+    "unict-l-18-management-delle-imprese-per-leconomia-sostenibile",
+    "unict-lm-77-direzione-aziendale",
+    "unict-lm-56-economia-e-politiche-pubbliche",
+    "unict-lm-77-finanza-aziendale",
+    "unict-lm-77-lm-16-finanza-banca-e-mercati"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Fisica e Astronomia (DFA)",
+   "fonte": "https://www.dfa.unict.it/corsi/l-30/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Pausa didattica (esami di recupero)",
+     "inizio": "2026-11-25",
+     "fine": "2026-11-27",
+     "note": "Esami di recupero anno precedente"
+    },
+    {
+     "nome": "1ª sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Pausa didattica (esami di recupero)",
+     "inizio": "2027-03-23",
+     "fine": "2027-03-25",
+     "note": "Esami di recupero anno precedente"
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unict-l-30-fisica",
+    "unict-lm-17-physics"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Informatica (L-31) – Dipartimento di Matematica e Informatica",
+   "fonte": "https://web.dmi.unict.it/it/corsi/l-31/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Pausa esami (appelli straordinari e prove in itinere)",
+     "inizio": "2026-12-17",
+     "fine": "2026-12-23",
+     "note": null
+    },
+    {
+     "nome": "1ª sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Pausa esami (appelli straordinari e prove in itinere)",
+     "inizio": "2027-04-19",
+     "fine": "2027-04-23",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unict-l-31-informatica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Informatica (LM-18) – Dipartimento di Matematica e Informatica",
+   "fonte": "https://web.dmi.unict.it/it/corsi/lm-18/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Pausa esami",
+     "inizio": "2026-12-17",
+     "fine": "2026-12-23",
+     "note": null
+    },
+    {
+     "nome": "1ª sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Pausa primaverile/esami",
+     "inizio": "2027-03-26",
+     "fine": "2027-03-30",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unict-lm-18-informatica"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze della Formazione (DISFOR)",
+   "fonte": "https://www.disfor.unict.it/it/content/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione fuori corso (art. 30)",
+     "inizio": "2026-11-03",
+     "fine": "2026-11-30",
+     "note": "Fuori corso – art. 30"
+    },
+    {
+     "nome": "Sessione art. 19",
+     "inizio": "2026-12-16",
+     "fine": "2026-12-21",
+     "note": "Iscritti 2026/27 ad anni successivi al primo, per il recupero degli esami degli anni precedenti, e laureandi"
+    },
+    {
+     "nome": "1ª sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "Due appelli distanziati di almeno 15 giorni"
+    },
+    {
+     "nome": "Sessione fuori corso e laureandi (art. 30)",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "Due appelli"
+    },
+    {
+     "nome": "Sessione art. 19",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-21",
+     "note": "Recupero esami anni precedenti; sospensione lezioni esclusi i primi anni; un appello"
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "Due appelli distanziati di almeno 15 giorni"
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-30",
+     "note": "Due appelli distanziati di almeno 15 giorni"
+    },
+    {
+     "nome": "Sessione fuori corso (art. 30)",
+     "inizio": "2027-11-03",
+     "fine": "2027-11-30",
+     "note": "Fuori corso – art. 30"
+    }
+   ],
+   "corsi": [
+    "unict-l-15-scienze-del-turismo",
+    "unict-l-19-scienze-dell-educazione-e-della-formazione",
+    "unict-l-24-scienze-e-tecniche-psicologiche",
+    "unict-lm-49-progettazione-del-turismo-sostenibile-culturale-e-naturalist",
+    "unict-lm-51-psicologia",
+    "unict-lm-85-scienze-pedagogiche-e-progettazione-educativa",
+    "unict-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze del Farmaco e della Salute (DSF)",
+   "fonte": "https://www.dsf.unict.it/sites/default/files/CALENDARIO%20DIDATTICO%20A.%20A.%202026%20-%202027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione riservata",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-13",
+     "note": "Riservata (art. 19 c. 4: fuori corso e laureandi; art. 30: lavoratori, atleti)"
+    },
+    {
+     "nome": "Appello in sospensione didattica",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-23",
+     "note": "Sospensione dell'attività didattica con appello riservato art. 19 c. 4 e art. 30"
+    },
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Appello in sospensione didattica",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-27",
+     "note": "Sospensione dell'attività didattica con appello riservato art. 19 c. 4 e art. 30"
+    },
+    {
+     "nome": "Sessione riservata",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-26",
+     "note": "Riservata (art. 19 c. 4: fuori corso e laureandi; art. 30: lavoratori, atleti)"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unict-l-29-scienze-farmaceutiche-applicate",
+    "unict-lm-13-chimica-e-tecnologia-farmaceutiche",
+    "unict-lm-13-farmacia"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Umanistiche (DISUM)",
+   "fonte": "https://www.disum.unict.it/it/content/calendario-attivit%C3%A0-didattiche-2026-2027",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "Esami orali: 2 appelli, il secondo non prima del 2027-02-09. Scritti di lingue straniere: 2027-01-14/19"
+    },
+    {
+     "nome": "Prima sessione riservata",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-02",
+     "note": "1 appello; fuori corso, laureandi di aprile 2027, art. 30. Scritti di lingue: 2027-03-22/26"
+    },
+    {
+     "nome": "Prima sessione riservata (sospensione lezioni)",
+     "inizio": "2027-04-26",
+     "fine": "2027-04-30",
+     "note": "1 appello; iscritti ad anni successivi al primo per recupero, fuori corso, art. 30"
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-24",
+     "note": "2 appelli, il secondo non prima del 2027-07-05. Scritti di lingue: 2027-06-07/12"
+    },
+    {
+     "nome": "Terza sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "2 appelli. Scritti di lingue: 2027-09-01/06"
+    },
+    {
+     "nome": "Terza sessione riservata",
+     "inizio": "2027-10-25",
+     "fine": "2027-10-30",
+     "note": "1 appello; fuori corso, laureandi di novembre 2027, art. 30"
+    },
+    {
+     "nome": "Terza sessione riservata (sospensione lezioni)",
+     "inizio": "2027-11-22",
+     "fine": "2027-11-27",
+     "note": "1 appello; recupero, laureandi di febbraio e aprile 2028, fuori corso, art. 30"
+    }
+   ],
+   "corsi": [
+    "unict-l-1-beni-culturali",
+    "unict-l-5-filosofia",
+    "unict-l-10-lettere",
+    "unict-l-11-lingue-e-culture-europee-euroamericane-ed-orientali",
+    "unict-l-12-mediazione-linguistica-e-interculturale",
+    "unict-l-20-scienze-e-lingue-per-la-comunicazione",
+    "unict-lm-2-archeologia",
+    "unict-lm-65-comunicazione-della-cultura-e-dello-spettacolo",
+    "unict-lm-15-filologia-classica",
+    "unict-lm-14-filologia-moderna",
+    "unict-lm-37-lingue-e-letterature-comparate",
+    "unict-lm-38-lingue-per-la-cooperazione-internazionale",
+    "unict-lm-43-scienze-del-testo-per-le-professioni-digitali",
+    "unict-lm-78-scienze-filosofiche",
+    "unict-lm-39-scienze-linguistiche-per-l-intercultura-e-la-formazione",
+    "unict-lm-89-storia-dell-arte-e-beni-culturali"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicina e Chirurgia (LM-41)",
+   "fonte": "https://www.chirmed.unict.it/sites/default/files/Calendario%20didattico%20a.a.%202025_26_.pdf",
+   "sessioni": [
+    {
+     "nome": "Appello di dicembre",
+     "inizio": "2026-12-14",
+     "fine": "2027-01-06",
+     "note": "a.a. 2025/26, dal II al VI anno"
+    },
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "2 appelli a distanza di almeno 15 giorni"
+    },
+    {
+     "nome": "Appello di aprile",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-09",
+     "note": null
+    },
+    {
+     "nome": "Appello di maggio",
+     "inizio": "2027-05-02",
+     "fine": "2027-05-31",
+     "note": "Riservato a laureandi di luglio, fuori corso e art. 30"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "2 appelli a distanza di almeno 15 giorni"
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-30",
+     "note": "2 appelli a distanza di almeno 15 giorni"
+    },
+    {
+     "nome": "Appello di novembre",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-30",
+     "note": "Riservato a laureandi di dicembre, fuori corso e art. 30"
+    }
+   ],
+   "corsi": [
+    "unict-lm-41-medicina-e-chirurgia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Odontoiatria e protesi dentaria (LM-46)",
+   "fonte": "https://www.chirmed.unict.it/it/corsi/lm-46/calendario-accademico",
+   "sessioni": [
+    {
+     "nome": "Prolungamento III sessione 2025/26",
+     "inizio": "2026-12-14",
+     "fine": "2027-01-08",
+     "note": null
+    },
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Prolungamento I sessione",
+     "inizio": "2027-03-30",
+     "fine": "2027-04-06",
+     "note": null
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unict-lm-46-odontoiatria-e-protesi-dentaria"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": "Il calendario di Ateneo fissa le tre sessioni; i Dipartimenti DICAR, DIEEI, Di3A, il DMI (Matematica L-35 e LM-40), DSC (L-27 Chimica sostenibile) e il CdS in Tecniche di laboratorio biomedico pubblicano per il 2026/27 le stesse finestre e sono inclusi nel calendario di Ateneo. Per DSPS, Giurisprudenza, BIOMETEC, MEDCLIN, GF Ingrassia, DSBGA, Architettura (SDS Siracusa, pubblicato solo il 2025/26) e per Medicine and Surgery (inglese) non è stato trovato un calendario di Dipartimento/CdS 2026/27 diverso: vale quello di Ateneo, ma eventuali appelli riservati di struttura non sono riportati."
+}

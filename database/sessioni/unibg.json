@@ -1,0 +1,330 @@
+{
+ "universita_id": "unibg",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Scienze Economiche",
+   "fonte": "https://dse.unibg.it/sites/dip08/files/media/documents/2026-06-09/DSE_calendario%20didattico%2026-27_versione%20descrittiva.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-13",
+     "note": "1° e 2° appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": "3° e 4° appello; chi si laurea a luglio deve concludere gli esami entro il 26/06/2027"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-27",
+     "fine": "2027-09-11",
+     "note": "5° appello"
+    }
+   ],
+   "corsi": [
+    "unibg-l-33-economia",
+    "unibg-l-41-data-analytics-economia-e-tecnologie-digitali",
+    "unibg-lm-56-economics-and-data-analysis",
+    "unibg-lm-16-economics-and-finance",
+    "unibg-lm-62-geopolitica-economia-e-strategie-globali"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Aziendali",
+   "fonte": "https://dipsa.unibg.it/sites/dip06/files/media/documents/2026-06-09/DIPSA-%20calendario%20didattico%2026-27%20versione%20descrittiva.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-13",
+     "note": "1° e 2° appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": "3° e 4° appello; chi si laurea a luglio deve concludere gli esami entro il 26/06/2027"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-27",
+     "fine": "2027-09-11",
+     "note": "5° appello"
+    }
+   ],
+   "corsi": [
+    "unibg-l-18-economia-aziendale",
+    "unibg-lm-77-accounting-governance-and-sustainability",
+    "unibg-lm-77-economia-aziendale-direzione-amministrativa-e-professione",
+    "unibg-lm-16-finanza-banche-e-gestione-dei-patrimoni",
+    "unibg-lm-77-international-management-and-marketing",
+    "unibg-lm-77-management-per-linnovazione-di-business",
+    "unibg-lm-77-welfare-management-e-innovazione-sociale",
+    "unibg-l-36-scienze-politiche-e-strategie-globali"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Giurisprudenza",
+   "fonte": "https://dgiu.unibg.it/sites/dip01/files/media/documents/2026-05-21/CALENDARIO%20DIDATTICO%2026-27_Tabellare_0.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-13",
+     "note": "Periodi d'esame del calendario tabellare: 1° e 2° appello a.a. 2026/2027 dal 7 al 30 gennaio, poi appelli per gli insegnamenti di anni accademici precedenti fino al 13 febbraio; lezioni sospese"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-31",
+     "note": "3° e 4° appello"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-11",
+     "note": "5° appello"
+    }
+   ],
+   "corsi": [
+    "unibg-l-14-diritto-per-l-impresa-nazionale-e-internazionale",
+    "unibg-lm-81-diritti-umani-migrazioni-e-cooperazione-internazionale",
+    "unibg-lmg-01-giurisprudenza",
+    "unibg-lmg-01-giurisprudenza-1632620"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Lettere, Filosofia, Comunicazione",
+   "fonte": "https://dlfc.unibg.it/sites/dip04/files/media/documents/2026-04-02/3_allegato_punto_6_-_calendario_didattico_a.a._2026-2027_dlfc_0.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-12",
+     "note": "2 appelli per tutti gli insegnamenti"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-09",
+     "note": "1 appello straordinario per studenti in corso e fuori corso"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "3 appelli; per Lingua straniera 2 appelli scritti e 2 orali"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-16",
+     "fine": "2027-09-10",
+     "note": "2 appelli; 1 solo per Lingua straniera"
+    }
+   ],
+   "corsi": [
+    "unibg-l-5-filosofia",
+    "unibg-l-10-lettere",
+    "unibg-l-20-scienze-della-comunicazione",
+    "unibg-lm-19-comunicazione-informazione-editoria",
+    "unibg-lm-14-culture-umanistiche",
+    "unibg-lm-78-filosofia-scienze-e-societa",
+    "unibg-lm-78-philosophical-knowledge-foundations-methods-applications",
+    "unibg-lm-5-lm-92-valorizzazione-del-patrimonio-culturale-materiale-e-immateri"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Lingue, Letterature e Culture Straniere",
+   "fonte": "https://dllcs.unibg.it/sites/dip05/files/media/documents/2026-09-22/CALENDARIO%20DIDATTICO%20a.a.%202026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-08",
+     "fine": "2027-02-13",
+     "note": "2 appelli per tutte le discipline, comprese le lingue straniere"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-31",
+     "note": "3 appelli (2 per le lingue straniere); esclusi i giorni di tesi 8 e 9 luglio"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-16",
+     "fine": "2027-09-18",
+     "note": "2 appelli (1 per le lingue straniere)"
+    }
+   ],
+   "corsi": [
+    "unibg-l-11-lingue-e-letterature-straniere-moderne",
+    "unibg-lm-37-intercultural-studies-in-languages-and-literatures",
+    "unibg-lm-38-lingue-moderne-per-la-comunicazione-e-la-cooperazione-intern",
+    "unibg-lm-49-planning-and-management-of-tourism-systems",
+    "unibg-lm-80-lm-48-geourbanistica-analisi-e-pianificazione-territoriale-urbana"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Umane e Sociali",
+   "fonte": "https://dsus.unibg.it/sites/dip07/files/media/documents/2026-09-04/calendario%20didattico%2026-27%20SUS_4.9.2026.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-13",
+     "note": "2 appelli (escluse le attività di apprendimento linguistico)"
+    },
+    {
+     "nome": "Sessione di marzo/aprile",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-17",
+     "note": "1 appello; non per gli insegnamenti del III sottoperiodo"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "2 appelli; niente esami dal 12 al 16 luglio (tesi)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-11",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unibg-l-19-scienze-dell-educazione",
+    "unibg-l-22-scienze-motorie-e-sportive",
+    "unibg-l-24-scienze-psicologiche",
+    "unibg-lm-51-clinical-psychology-for-individuals-families-and-organizatio",
+    "unibg-lm-51-psicologia-clinica",
+    "unibg-lm-51-psicologia-della-salute-nei-contesti-sociali-organizzativi-e",
+    "unibg-lm-68-scienze-metodi-e-didattiche-delle-attivita-sportive",
+    "unibg-lm-85-scienze-pedagogiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Umane e Sociali - Corso di laurea magistrale a ciclo unico in Scienze della formazione primaria",
+   "fonte": "https://dsus.unibg.it/sites/dip07/files/media/documents/2026-09-04/calendario%20didattico%2026-27%20SUS_4.9.2026.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-13",
+     "note": "2 appelli (escluse le attività di apprendimento linguistico)"
+    },
+    {
+     "nome": "Sessione di marzo/aprile",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-17",
+     "note": "1 appello; non per gli insegnamenti del III sottoperiodo"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-31",
+     "note": "2 appelli; per Scienze della formazione primaria la sessione inizia il 24 maggio; niente esami dal 12 al 16 luglio (tesi)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-11",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unibg-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Umane e Sociali - Corso di laurea magistrale in Progettazione di contesti di vita accessibili ed inclusivi",
+   "fonte": "https://dsus.unibg.it/sites/dip07/files/media/documents/2026-09-04/calendario%20didattico%2026-27%20SUS_4.9.2026.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-13",
+     "note": "1 appello (escluse le attività di apprendimento linguistico)"
+    },
+    {
+     "nome": "Sessione di marzo/aprile",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-17",
+     "note": "1 appello; non per gli insegnamenti del III sottoperiodo"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": "2 appelli; niente esami dal 12 al 16 luglio (tesi)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-11",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unibg-lm-85-progettazione-di-contesti-di-vita-accessibili-ed-inclusivi"
+   ]
+  },
+  {
+   "ambito": "Scuola di Ingegneria (Dipartimenti DIGIP e DISA)",
+   "fonte": "https://www.unibg.it/sites/default/files/media/documents/2026-09-15/2026-03-16%20Calendario%20accademico%202026-2027%20modificato%20luglio%202027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-20",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione straordinaria di aprile",
+     "inizio": "2027-04-02",
+     "fine": "2027-04-30",
+     "note": "1 appello, riservata a fuori corso, iscritti al terzo anno delle triennali e al secondo delle magistrali per esami dell'a.a. 2025-26"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-24",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-16",
+     "fine": "2027-09-11",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unibg-l-23-ingegneria-delle-tecnologie-per-l-edilizia",
+    "unibg-l-9-ingegneria-delle-tecnologie-per-la-salute",
+    "unibg-l-9-ingegneria-delle-tecnologie-per-la-sostenibilita-energetica",
+    "unibg-l-8-ingegneria-delle-tecnologie-per-lelettronica-e-lautomazione",
+    "unibg-l-9-ingegneria-gestionale",
+    "unibg-l-8-ingegneria-informatica",
+    "unibg-l-9-ingegneria-meccanica",
+    "unibg-lm-24-ingegneria-delle-costruzioni-edili",
+    "unibg-lm-30-ingegneria-delle-tecnologie-per-la-sostenibilita-energetica",
+    "unibg-lm-31-ingegneria-gestionale",
+    "unibg-lm-32-ingegneria-informatica",
+    "unibg-lm-33-ingegneria-meccanica",
+    "unibg-lm-31-management-engineering",
+    "unibg-lm-33-mechatronics-and-smart-technology-engineering",
+    "unibg-lm-21-medical-engineering"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unibg-lm-41-medicine-and-surgery"
+ ],
+ "mancanti": "Medicine and Surgery (LM-41, interateneo con Milano-Bicocca, sede Bergamo): nessun calendario delle sessioni 2026/27 trovato sui siti UniBG né su quelli di Milano-Bicocca; il regolamento didattico Bicocca 2026/27 del corso (elearning.unimib.it) indica solo il numero di appelli e una possibile sessione primaverile, senza date. Nota: la sessione straordinaria di novembre 2026 della Scuola di Ingegneria (26/10-14/11/2026) appartiene all'a.a. 2025/26 e non è inclusa."
+}

@@ -1,0 +1,792 @@
+{
+ "universita_id": "uniroma1",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-12",
+ "calendari": [
+  {
+   "ambito": "Facoltà di Lettere e Filosofia",
+   "fonte": "https://lettere.web.uniroma1.it/en/academic-calendar-ay-2026-2027",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": "3 appelli, il primo entro il 31/01/2027 (valido anche per l'a.a. 2025/26)"
+    },
+    {
+     "nome": "Appelli straordinari 1",
+     "inizio": "2027-04-07",
+     "fine": "2027-05-08",
+     "note": "Riservati alle categorie di studenti previste dal regolamento"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-31",
+     "note": "3 appelli, il primo entro il 19/06/2027"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-25",
+     "note": "2 appelli, il primo entro l'11/09/2027"
+    },
+    {
+     "nome": "Appelli straordinari 2",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-16",
+     "note": "Riservati alle categorie di studenti previste dal regolamento"
+    },
+    {
+     "nome": "Sessione invernale a.a. 2027/28 (primo appello valido per il 2026/27)",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-19",
+     "note": "Il primo appello, valido anche per l'a.a. 2026/27, si chiude entro il 29/01/2028"
+    }
+   ],
+   "corsi": [
+    "uniroma1-l-10-classics",
+    "uniroma1-l-11-comunicazione-e-interpretariato-in-lingua-dei-segni-italiana",
+    "uniroma1-l-5-filosofia",
+    "uniroma1-l-5-filosofia-e-intelligenza-artificiale",
+    "uniroma1-l-42-global-humanities",
+    "uniroma1-l-10-letteratura-musica-spettacolo",
+    "uniroma1-l-10-lettere-classiche",
+    "uniroma1-l-10-lettere-moderne",
+    "uniroma1-l-11-lingue-culture-letterature-traduzione",
+    "uniroma1-l-11-lingue-e-civilta-orientali",
+    "uniroma1-l-12-mediazione-linguistica-e-interculturale",
+    "uniroma1-l-1-scienze-archeologiche",
+    "uniroma1-l-15-scienze-del-turismo-sostenibile",
+    "uniroma1-l-3-scienze-della-moda-e-del-costume",
+    "uniroma1-l-6-scienze-e-tecnologie-geografiche-per-l-ambiente-e-la-salute",
+    "uniroma1-l-42-storia-antropologia-religioni",
+    "uniroma1-l-1-studi-storico-artistici",
+    "uniroma1-l-3-teatro-cinema-media",
+    "uniroma1-lm-1-antropologia-culturale-ed-etnologia",
+    "uniroma1-lm-2-archeologia",
+    "uniroma1-lm-5-archivistica-e-biblioteconomia",
+    "uniroma1-lm-2-cultural-heritage-in-the-near-and-middle-east-and-in-africa",
+    "uniroma1-lm-64-culture-e-religioni",
+    "uniroma1-lm-19-editoria-e-scrittura",
+    "uniroma1-lm-37-english-and-anglo-american-studies",
+    "uniroma1-lm-65-fashion-theory-and-practices",
+    "uniroma1-lm-15-filologia-letterature-e-storia-del-mondo-antico",
+    "uniroma1-lm-14-filologia-moderna",
+    "uniroma1-lm-78-filosofia",
+    "uniroma1-lm-80-gestione-e-valorizzazione-del-territorio",
+    "uniroma1-lm-36-lingue-e-civilta-orientali",
+    "uniroma1-lm-39-linguistica",
+    "uniroma1-lm-2-mediterranean-archaeology",
+    "uniroma1-lm-45-musicologia",
+    "uniroma1-lm-37-scienze-linguistiche-letterarie-e-della-traduzione",
+    "uniroma1-lm-84-scienze-storiche-medioevo-eta-moderna-eta-contemporanea",
+    "uniroma1-lm-65-scritture-e-produzioni-dello-spettacolo-e-dei-media-cinema-t",
+    "uniroma1-lm-89-storia-dell-arte"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Ingegneria dell'informazione, informatica e statistica",
+   "fonte": "https://i3s.web.uniroma1.it/sites/default/files/allegati/2026-09/Calendario_Facolta_2026-2027-new-corretto_0.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessioni I e II",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Previsto anche un appello a gennaio e febbraio per i corsi del II semestre 2025/26"
+    },
+    {
+     "nome": "I sessione straordinaria",
+     "inizio": "2027-03-15",
+     "fine": "2027-04-19",
+     "note": "Riservata alle categorie di studenti previste dal regolamento"
+    },
+    {
+     "nome": "Sessioni III e IV",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione V",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-21",
+     "note": null
+    },
+    {
+     "nome": "II sessione straordinaria",
+     "inizio": "2027-10-06",
+     "fine": "2027-11-04",
+     "note": "Riservata alle categorie previste dal regolamento e ai fuori corso"
+    }
+   ],
+   "corsi": [
+    "uniroma1-l-31-applied-computer-science-and-artificial-intelligence",
+    "uniroma1-l-31-informatica",
+    "uniroma1-l-31-informatica-1630624",
+    "uniroma1-l-8-ingegneria-dell-informazione",
+    "uniroma1-l-8-ingegneria-delle-telecomunicazioni",
+    "uniroma1-l-8-ingegneria-elettronica",
+    "uniroma1-l-8-ingegneria-gestionale",
+    "uniroma1-l-8-ingegneria-informatica-e-automatica",
+    "uniroma1-l-41-statistica-e-data-analytics",
+    "uniroma1-l-41-statistica-economia-e-scienze-sociali",
+    "uniroma1-l-41-statistica-finanza-e-scienze-attuariali",
+    "uniroma1-lm-32-artificial-intelligence",
+    "uniroma1-lm-32-artificial-intelligence-and-robotics",
+    "uniroma1-lm-18-computer-science-informatica",
+    "uniroma1-lm-66-cybersecurity",
+    "uniroma1-lm-data-data-science",
+    "uniroma1-lm-32-engineering-in-computer-science-and-artificial-intelligence",
+    "uniroma1-lm-78-filosofia-e-intelligenza-artificiale",
+    "uniroma1-lm-29-ingegneria-elettronica",
+    "uniroma1-lm-83-scienze-attuariali-e-finanziarie",
+    "uniroma1-lm-82-scienze-statistiche",
+    "uniroma1-lm-82-statistical-methods-and-applications",
+    "uniroma1-lm-27-telecommunication-engineering"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Ingegneria civile e industriale",
+   "fonte": "https://ici.web.uniroma1.it/it/calendario-didattico-aa-20262027",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria autunnale",
+     "inizio": "2026-10-05",
+     "fine": "2026-11-07",
+     "note": "Riservata alle categorie dell'art. 40 c. 6 del Manifesto e agli iscritti nel 2025/26 al III anno della laurea e al II della magistrale"
+    },
+    {
+     "nome": "Sessioni I e II",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-20",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria primaverile",
+     "inizio": "2027-03-01",
+     "fine": "2027-04-10",
+     "note": "Relativa all'a.a. 2025/26; riservata alle categorie previste"
+    },
+    {
+     "nome": "Sessioni III e IV",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione V",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniroma1-l-9-ingegneria-aerospaziale",
+    "uniroma1-l-9-ingegneria-chimica",
+    "uniroma1-l-7-ingegneria-civile",
+    "uniroma1-l-9-ingegneria-clinica",
+    "uniroma1-l-7-ingegneria-dell-ambiente-per-lo-sviluppo-sostenibile",
+    "uniroma1-l-9-ingegneria-dell-energia-elettrica",
+    "uniroma1-l-23-ingegneria-dellinnovazione-tecnologica-e-digitale-per-lambie",
+    "uniroma1-l-9-ingegneria-energetica",
+    "uniroma1-l-9-ingegneria-meccanica",
+    "uniroma1-l-9-ingegneria-meccanica-per-la-transizione-verde",
+    "uniroma1-l-7-ingegneria-per-l-ambiente-e-il-territorio",
+    "uniroma1-l-23-sustainable-building-engineering",
+    "uniroma1-lm-25-control-engineering",
+    "uniroma1-lm-24-environmental-and-sustainable-building-engineering",
+    "uniroma1-lm-20-ingegneria-aeronautica",
+    "uniroma1-lm-21-ingegneria-biomedica",
+    "uniroma1-lm-22-ingegneria-chimica",
+    "uniroma1-lm-23-ingegneria-civile",
+    "uniroma1-lm-28-ingegneria-dell-energia-elettrica",
+    "uniroma1-lm-26-ingegneria-della-sicurezza-e-protezione-civile",
+    "uniroma1-lm-53-ingegneria-delle-nanotecnologie",
+    "uniroma1-lm-30-ingegneria-energetica-e-nucleare",
+    "uniroma1-lm-31-ingegneria-gestionale",
+    "uniroma1-lm-26-ingegneria-industriale-green-per-lo-sviluppo-sostenibile",
+    "uniroma1-lm-33-ingegneria-meccanica",
+    "uniroma1-lm-35-ingegneria-per-l-ambiente-e-il-territorio",
+    "uniroma1-lm-20-space-and-astronautical-engineering",
+    "uniroma1-lm-28-sustainable-transportation-and-electric-power-systems",
+    "uniroma1-lm-23-transport-systems-engineering",
+    "uniroma1-lm-4-c-u-ingegneria-edile-architettura"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Economia",
+   "fonte": "https://economia.web.uniroma1.it/sites/default/files/allegati/2026-06/Calendario_Attivita_Didattica_Economia_Sapienza_2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "1° periodo ordinario",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Per Matematica corso base e Calculus and Linear Algebra dal 2026-12-14"
+    },
+    {
+     "nome": "1° periodo straordinario",
+     "inizio": "2027-04-19",
+     "fine": "2027-05-14",
+     "note": "Riservato alle categorie dell'art. 21 c. 7 del Regolamento studenti"
+    },
+    {
+     "nome": "2° periodo ordinario",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "3° periodo ordinario",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    },
+    {
+     "nome": "2° periodo straordinario",
+     "inizio": "2027-10-11",
+     "fine": "2027-11-05",
+     "note": "Riservato alle categorie dell'art. 21 c. 7 del Regolamento studenti"
+    },
+    {
+     "nome": "4° periodo ordinario",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-18",
+     "note": "Per i corsi del II semestre 2026/27"
+    }
+   ],
+   "corsi": [
+    "uniroma1-l-33-economia",
+    "uniroma1-l-18-economia-aziendale-e-management",
+    "uniroma1-l-18-economia-dellinnovazione",
+    "uniroma1-l-33-economia-e-finanza",
+    "uniroma1-l-18-management-e-diritto-d-impresa",
+    "uniroma1-lm-76-economia-dellambiente-della-cultura-e-del-turismo",
+    "uniroma1-lm-77-economia-e-management",
+    "uniroma1-lm-56-economia-politica",
+    "uniroma1-lm-77-economics-and-communication-for-management-and-innovation",
+    "uniroma1-lm-16-finanza-e-assicurazioni",
+    "uniroma1-lm-56-health-economics",
+    "uniroma1-lm-77-intermediari-finanza-internazionale-e-risk-management",
+    "uniroma1-lm-77-management-delle-imprese",
+    "uniroma1-lm-77-management-delle-tecnologie-innovazione-e-sostenibilita",
+    "uniroma1-lm-77-strategia-e-governance-dell-impresa"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Architettura",
+   "fonte": "https://www.architettura.uniroma1.it/sites/default/files/allegati/2026-07/calendario_didattico_fac_arch_2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "1ª sessione ordinaria",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-20",
+     "note": "Appelli 18–23/01, 01–06/02 e 15–20/02/2027"
+    },
+    {
+     "nome": "1ª sessione straordinaria",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-17",
+     "note": "Riservata alle categorie dell'art. 21 c. 7"
+    },
+    {
+     "nome": "2ª sessione ordinaria",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-10",
+     "note": "Appelli 07–12/06, 21–26/06 e 05–10/07/2027"
+    },
+    {
+     "nome": "3ª sessione ordinaria",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-18",
+     "note": "Appelli 01–04/09 e 13–18/09/2027"
+    },
+    {
+     "nome": "2ª sessione straordinaria",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-06",
+     "note": "Riservata alle categorie dell'art. 21 c. 7"
+    }
+   ],
+   "corsi": [
+    "uniroma1-l-4-design",
+    "uniroma1-l-23-gestione-del-processo-edilizio-project-management",
+    "uniroma1-l-17-scienze-dell-architettura",
+    "uniroma1-lm-3-architettura-del-paesaggio",
+    "uniroma1-lm-4-architettura-interni-e-allestimenti",
+    "uniroma1-lm-4-architettura-restauro",
+    "uniroma1-lm-4-architettura-rigenerazione-urbana",
+    "uniroma1-lm-12-design-comunicazione-visiva-e-multimediale",
+    "uniroma1-lm-24-gestione-del-progetto-e-della-costruzione",
+    "uniroma1-lm-12-product-and-service-design",
+    "uniroma1-lm-4-c-u-architettura",
+    "uniroma1-l-p01-professioni-tecniche-per-l-edilizia-e-il-territorio"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze politiche, sociologia, comunicazione – Dipartimento di Scienze Politiche",
+   "fonte": "https://disp.web.uniroma1.it/sites/default/files/allegati/2026-09/Calendario-didattico-Dipartimento-Scienze-Politiche-a.a-2026-2027-agg.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli ordinari gennaio/febbraio",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "3 appelli (a.a. 2026/27 e appendice 2025/26)"
+    },
+    {
+     "nome": "Primo appello straordinario",
+     "inizio": "2027-05-05",
+     "fine": "2027-05-28",
+     "note": "Riservato alle categorie previste"
+    },
+    {
+     "nome": "Appelli ordinari giugno/luglio",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-23",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Appello ordinario di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Secondo appello straordinario",
+     "inizio": "2027-11-04",
+     "fine": "2027-11-26",
+     "note": "Riservato alle categorie previste"
+    },
+    {
+     "nome": "Appendice a.a. 2026/27",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-18",
+     "note": "3 appelli"
+    }
+   ],
+   "corsi": [
+    "uniroma1-l-16-scienze-amministrative-politiche-ed-economiche",
+    "uniroma1-l-36-scienze-politiche-e-relazioni-internazionali",
+    "uniroma1-lm-63-amministrazione-innovazione-e-sostenibilita-ambientale",
+    "uniroma1-lm-52-relazioni-internazionali-e-istituzioni-sovranazionali",
+    "uniroma1-lm-62-scienze-della-politica-e-sicurezza-internazionale"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze politiche, sociologia, comunicazione – Dipartimento di Comunicazione e Ricerca Sociale (CORIS)",
+   "fonte": "https://coris.web.uniroma1.it/en/calendar",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-13",
+     "note": "3 appelli; il primo entro il 16/01/2027"
+    },
+    {
+     "nome": "Sessione speciale",
+     "inizio": "2027-04-08",
+     "fine": "2027-04-20",
+     "note": "1 appello riservato alle categorie previste"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-17",
+     "note": "3 appelli; il primo entro il 12/06/2027"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-11",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-10-11",
+     "fine": "2027-11-06",
+     "note": "1 appello riservato a laureandi e categorie previste"
+    }
+   ],
+   "corsi": [
+    "uniroma1-l-20-comunicazione-pubblica-e-d-impresa",
+    "uniroma1-l-20-comunicazione-tecnologie-e-culture-digitali",
+    "uniroma1-l-37-cooperazione-internazionale-e-sviluppo",
+    "uniroma1-lm-19-gender-studies-culture-e-politiche-per-i-media-e-la-comunica",
+    "uniroma1-lm-19-media-digitali-giornalismo-e-comunicazione-politica",
+    "uniroma1-lm-59-organizzazione-e-marketing-per-la-comunicazione-d-impresa",
+    "uniroma1-lm-88-progettazione-sociale-per-la-sostenibilita-linnovazione-e-li"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze politiche, sociologia, comunicazione – Dipartimento di Scienze Sociali ed Economiche, corsi economici (L-33, LM-56)",
+   "fonte": "https://disse.web.uniroma1.it/sites/default/files/allegati/2026-09/Calendario-didattico-Corsi-economici-L-33-LM-56-2026-27-prolungamento-anno-accademico_ua20260907.pdf",
+   "sessioni": [
+    {
+     "nome": "Appelli ordinari gennaio/febbraio",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "3 appelli (a.a. 2026/27 e appendice 2025/26)"
+    },
+    {
+     "nome": "Primo appello straordinario",
+     "inizio": "2027-05-05",
+     "fine": "2027-05-28",
+     "note": "Riservato alle categorie previste"
+    },
+    {
+     "nome": "Appelli ordinari giugno/luglio",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-23",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Appello ordinario di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Secondo appello straordinario",
+     "inizio": "2027-11-04",
+     "fine": "2027-11-26",
+     "note": "Riservato alle categorie previste"
+    },
+    {
+     "nome": "Appendice a.a. 2026/27",
+     "inizio": "2028-01-10",
+     "fine": "2028-02-18",
+     "note": "3 appelli"
+    }
+   ],
+   "corsi": [
+    "uniroma1-l-33-relazioni-economiche-e-finanziarie-internazionali",
+    "uniroma1-lm-56-economia-e-politiche-per-la-sostenibilita-globale"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze politiche, sociologia, comunicazione – Dipartimento di Scienze Sociali ed Economiche, corsi di sociologia e servizio sociale",
+   "fonte": "https://disse.web.uniroma1.it/sites/default/files/allegati/2026-05/CALENDARIO-DIDATTICO-SOC_SoSAG_STESS_PROSS_SSCI-2026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Appelli straordinari 1",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-30",
+     "note": "Riservati a part-time, fuori corso e altre categorie previste"
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    },
+    {
+     "nome": "Appelli straordinari 2",
+     "inizio": "2027-10-18",
+     "fine": "2027-11-19",
+     "note": "Riservati a part-time, fuori corso e altre categorie previste"
+    },
+    {
+     "nome": "IV sessione",
+     "inizio": "2028-01-10",
+     "fine": "2028-01-24",
+     "note": "Nel documento indicata come «IV sessione A.A. 2025/2026»"
+    }
+   ],
+   "corsi": [
+    "uniroma1-l-39-scienze-e-tecniche-del-servizio-sociale",
+    "uniroma1-l-40-sociologia",
+    "uniroma1-lm-87-progettazione-gestione-e-valutazione-dei-servizi-sociali",
+    "uniroma1-lm-81-scienze-dello-sviluppo-e-della-cooperazione-internazionale",
+    "uniroma1-lm-88-sociologia-per-la-sostenibilita-e-analisi-dei-processi-globa"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze MFN – Dipartimento di Fisica",
+   "fonte": "https://corsidilaurea.uniroma1.it/it/course/33588/announcements",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-24",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-16",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-21",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniroma1-l-30-fisica",
+    "uniroma1-lm-58-astrophysics-and-cosmology",
+    "uniroma1-lm-17-physics"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze MFN – Dipartimento di Matematica",
+   "fonte": "https://www.mat.uniroma1.it/it/calendario-attivita-didattica",
+   "sessioni": [
+    {
+     "nome": "Esami I semestre",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-24",
+     "note": null
+    },
+    {
+     "nome": "Appelli straordinari 1",
+     "inizio": "2027-04-12",
+     "fine": "2027-04-16",
+     "note": null
+    },
+    {
+     "nome": "Esami II semestre",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Esami di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-21",
+     "note": null
+    },
+    {
+     "nome": "Appelli straordinari 2",
+     "inizio": "2027-11-02",
+     "fine": "2027-11-05",
+     "note": null
+    },
+    {
+     "nome": "Quinto appello corsi del II semestre",
+     "inizio": "2028-01-17",
+     "fine": "2028-01-31",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "uniroma1-l-35-matematica",
+    "uniroma1-l-35-scienze-matematiche-per-lintelligenza-artificiale",
+    "uniroma1-lm-40-matematica",
+    "uniroma1-lm-40-matematica-applicata"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze MFN – Dipartimento di Chimica (Scienze chimiche, Chimica, Chimica analitica)",
+   "fonte": "https://corsidilaurea.uniroma1.it/it/course/33605/announcements",
+   "sessioni": [
+    {
+     "nome": "Sessione d'esami I semestre",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "La sessione del II semestre va dal 2027-06-14 all'inizio del I semestre 2027/28 (data di fine non indicata)"
+    }
+   ],
+   "corsi": [
+    "uniroma1-l-27-scienze-chimiche",
+    "uniroma1-lm-54-chimica",
+    "uniroma1-lm-54-chimica-analitica"
+   ]
+  },
+  {
+   "ambito": "Facoltà di Scienze MFN – Chimica industriale (LM-71)",
+   "fonte": "https://corsidilaurea.uniroma1.it/it/course/33610/announcements",
+   "sessioni": [
+    {
+     "nome": "Sessione d'esami I semestre",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "La sessione del II semestre va dal 2027-06-14 all'inizio del I semestre 2027/28 (data di fine non indicata)"
+    }
+   ],
+   "corsi": [
+    "uniroma1-lm-71-chimica-industriale"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "uniroma1-l-snt4-assistenza-sanitaria-abilitante-alla-professione-sanitaria-d",
+  "uniroma1-l-2-bioinformatics",
+  "uniroma1-l-2-biotecnologie",
+  "uniroma1-l-2-biotecnologie-agro-alimentari-e-industriali",
+  "uniroma1-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista",
+  "uniroma1-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista-1630767",
+  "uniroma1-l-14-diritto-e-amministrazione-pubblica",
+  "uniroma1-l-14-diritto-ed-economia-della-proprieta-immobiliare",
+  "uniroma1-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "uniroma1-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1630521",
+  "uniroma1-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1630525",
+  "uniroma1-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1630757",
+  "uniroma1-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1630763",
+  "uniroma1-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1630764",
+  "uniroma1-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1630758",
+  "uniroma1-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1630760",
+  "uniroma1-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1630765",
+  "uniroma1-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1630766",
+  "uniroma1-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+  "uniroma1-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-1630541",
+  "uniroma1-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-1630768",
+  "uniroma1-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-1630769",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630433",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630434",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630508",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630511",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630502",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630512",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630505",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630504",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630513",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630503",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630501",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630750",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630751",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630517",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630497",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630516",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630753",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630752",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630518",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630509",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630510",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630498",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630754",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630515",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630506",
+  "uniroma1-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630514",
+  "uniroma1-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis",
+  "uniroma1-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis-1630756",
+  "uniroma1-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis-1630755",
+  "uniroma1-l-29-molecular-biology-medicinal-chemistry-and-computer-science-f",
+  "uniroma1-l-snt1-nursing",
+  "uniroma1-l-snt2-ortottica-ed-assistenza-oftalmologica-abilitante-alla-profes",
+  "uniroma1-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+  "uniroma1-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-1633899",
+  "uniroma1-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-1633900",
+  "uniroma1-l-snt2-podologia-abilitante-alla-professione-sanitaria-di-podologo",
+  "uniroma1-l-24-psicologia-e-processi-sociali",
+  "uniroma1-l-24-psicologia-e-salute",
+  "uniroma1-l-32-scienze-ambientali",
+  "uniroma1-l-13-scienze-biologiche",
+  "uniroma1-l-gastr-scienze-culture-e-politiche-gastronomiche-per-il-benessere",
+  "uniroma1-l-19-scienze-dell-educazione-e-della-formazione",
+  "uniroma1-l-24-scienze-e-tecniche-psicologiche",
+  "uniroma1-l-29-scienze-farmaceutiche-applicate",
+  "uniroma1-l-34-scienze-geologiche",
+  "uniroma1-l-32-scienze-naturali",
+  "uniroma1-l-24-scienze-psicologiche",
+  "uniroma1-l-39-servizio-sociale",
+  "uniroma1-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr",
+  "uniroma1-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr-1630522",
+  "uniroma1-l-snt3-tecniche-audiometriche-abilitante-alla-professione-sanitaria",
+  "uniroma1-l-snt3-tecniche-audioprotesiche-abilitante-alla-professione-sanitar",
+  "uniroma1-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+  "uniroma1-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav-1630543",
+  "uniroma1-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav-1630544",
+  "uniroma1-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav-1630770",
+  "uniroma1-l-snt3-tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-c",
+  "uniroma1-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+  "uniroma1-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession-1630538",
+  "uniroma1-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession-1630539",
+  "uniroma1-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession-1630772",
+  "uniroma1-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession-1630773",
+  "uniroma1-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession-1630771",
+  "uniroma1-l-snt3-tecniche-di-neurofisiopatologia-abilitante-alla-professione",
+  "uniroma1-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "uniroma1-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1630537",
+  "uniroma1-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1630540",
+  "uniroma1-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1630774",
+  "uniroma1-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1630776",
+  "uniroma1-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1630775",
+  "uniroma1-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1630777",
+  "uniroma1-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1630778",
+  "uniroma1-l-snt3-tecniche-ortopediche-abilitante-alla-professione-sanitaria-d",
+  "uniroma1-l-snt3-tecniche-ortopediche-abilitante-alla-professione-sanitaria-d-1630531",
+  "uniroma1-l-43-tecnologie-per-la-conservazione-e-il-restauro-dei-beni-cultu",
+  "uniroma1-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil",
+  "uniroma1-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil-1630440",
+  "uniroma1-l-snt2-terapia-occupazionale-abilitante-alla-professione-sanitaria",
+  "uniroma1-l-snt2-terapia-occupazionale-abilitante-alla-professione-sanitaria-1630526",
+  "uniroma1-lm-51-applied-dynamic-and-clinical-psychology",
+  "uniroma1-lm-11-archaeological-materials-science",
+  "uniroma1-lm-9-biochemistry",
+  "uniroma1-lm-6-biologia-e-tecnologie-cellulari",
+  "uniroma1-lm-8-biotecnologie-e-genomica-per-l-industria-e-l-ambiente",
+  "uniroma1-lm-9-biotecnologie-farmaceutiche",
+  "uniroma1-lm-9-biotecnologie-mediche",
+  "uniroma1-lm-55-cognitive-forensic-sciences",
+  "uniroma1-lm-51-cognitive-neuroscience",
+  "uniroma1-lm-9-lm-59-comunicazione-scientifica-biomedica",
+  "uniroma1-lm-sc-giur-diritto-amministrazione-e-gestione-del-patrimonio-culturale",
+  "uniroma1-lm-6-ecobiologia",
+  "uniroma1-lm-90-european-studies",
+  "uniroma1-lm-6-genetica-e-biologia-molecolare",
+  "uniroma1-lm-74-geologia-applicata-alla-protezione-e-allo-sviluppo-sostenibi",
+  "uniroma1-lm-74-geologia-di-esplorazione",
+  "uniroma1-lm-gastr-management-delle-scienze-gastronomiche-per-il-benessere",
+  "uniroma1-lm-75-monitoraggio-e-riqualificazione-ambientale",
+  "uniroma1-lm-6-neurobiologia",
+  "uniroma1-lm-51-neuroscienze-cognitive-e-riabilitazione-psicologica",
+  "uniroma1-lm-51-psicologia-clinica",
+  "uniroma1-lm-51-psicologia-clinica-e-della-salute-per-i-contesti-sanitari",
+  "uniroma1-lm-51-psicologia-della-comunicazione-e-del-marketing",
+  "uniroma1-lm-51-psicologia-delle-risorse-umane-del-lavoro-e-delle-organizzaz",
+  "uniroma1-lm-51-psicologia-dello-sviluppo-tipico-e-atipico",
+  "uniroma1-lm-51-psicologia-giuridica-forense-e-criminologica",
+  "uniroma1-lm-51-psicopatologia-dinamica-e-relazione-clinica-nell-eta-evoluti",
+  "uniroma1-lm-sc-giur-risorse-umane-scienze-del-lavoro-e-innovazione",
+  "uniroma1-lm-snt4-scienze-delle-professioni-sanitarie-della-prevenzione",
+  "uniroma1-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-assistenziali",
+  "uniroma1-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche",
+  "uniroma1-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche-1630566",
+  "uniroma1-lm-60-scienze-e-didattica-dei-sistemi-naturali",
+  "uniroma1-lm-67-scienze-e-tecniche-delle-attivita-motorie-a-curvatura-biomed",
+  "uniroma1-lm-70-scienze-e-tecnologie-alimentari",
+  "uniroma1-lm-11-scienze-e-tecnologie-per-la-conservazione-dei-beni-culturali",
+  "uniroma1-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "uniroma1-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-1630561",
+  "uniroma1-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-1630762",
+  "uniroma1-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-1630761",
+  "uniroma1-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-intensive",
+  "uniroma1-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-neonatali",
+  "uniroma1-lm-snt1-scienze-infermieristiche-specialistiche-nelle-cure-primarie",
+  "uniroma1-lm-85-scienze-pedagogiche",
+  "uniroma1-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie",
+  "uniroma1-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie-1630563",
+  "uniroma1-lm-13-chimica-e-tecnologia-farmaceutiche",
+  "uniroma1-lm-13-chimica-e-tecnologia-farmaceutiche-replica-latina",
+  "uniroma1-lm-46-dentistry-and-dental-prosthodontics",
+  "uniroma1-lm-13-farmacia",
+  "uniroma1-lmg-01-giurisprudenza",
+  "uniroma1-lm-41-medicina-e-chirurgia",
+  "uniroma1-lm-41-medicina-e-chirurgia-a",
+  "uniroma1-lm-41-medicina-e-chirurgia-b",
+  "uniroma1-lm-41-medicina-e-chirurgia-c",
+  "uniroma1-lm-41-medicina-e-chirurgia-d",
+  "uniroma1-lm-41-medicina-e-chirurgia-e",
+  "uniroma1-lm-41-medicina-e-chirurgia-g",
+  "uniroma1-lm-41-medicina-e-chirurgia-ht",
+  "uniroma1-lm-41-medicine-and-surgery",
+  "uniroma1-lm-46-odontoiatria-e-protesi-dentaria",
+  "uniroma1-lm-85-bis-scienze-della-formazione-primaria"
+ ],
+ "mancanti": "Alla Sapienza ogni Facoltà (e in alcune Facoltà ogni Dipartimento o corso) pubblica il proprio calendario. La Facoltà di riferimento di ogni corso è quella indicata per prima nel catalogo corsidilaurea.uniroma1.it. Non trovati calendari 2026/27 con date di sessione per: Facoltà di Giurisprudenza (la pagina «Programmazione esami» è ferma al 2024/25); Facoltà di Farmacia e Medicina, Medicina e Odontoiatria e Medicina e Psicologia (i calendari sono per singolo corso e anno, quasi sempre solo lezioni o sessioni indicate per mesi; la pagina «Sessioni d'esame» di Medicina e Psicologia per i corsi di psicologia riporta ancora le date 2025/26; per i tre insegnamenti del semestre aperto gli esami nazionali sono il 10/12/2026 e l'11/01/2027); Dipartimenti di Biologia e biotecnologie «Charles Darwin», Biologia ambientale e Scienze della Terra della Facoltà di Scienze MFN. Per Chimica è nota solo la sessione invernale: quella estiva comincia il 14/06/2027 ma la data di fine non è indicata. Secondo giro (11/10/2026): ricontrollate le pagine Frequentare/Orario/Avvisi di tutti i 164 corsi scoperti su corsidilaurea.uniroma1.it, i siti di Facoltà (farmed, medpsi, giurisprudenza) e di Dipartimento (DBA, DST, DCTF, DSG, Psicologia, PDCS, PPSS): nessun calendario 2026/27 con finestre di sessione datate. Giurisprudenza: «Programmazione esami» ancora ferma alla sessione invernale fino a 03-2026. Medicina e Psicologia: pagine «Sessioni d'esame» e «Calendari appelli d'esame» ancora con le date 2025/26. Medicina e chirurgia A, D ed E pubblicano calendari esami 2026/27 solo come singoli appelli per insegnamento, con sessioni indicate a mesi (gennaio-febbraio 2027, giugno-luglio 2027, settembre 2027, gennaio-febbraio 2028); il Regolamento didattico CLMMC (vers. 5/10/2026) fissa le sessioni solo per mesi. Tecniche di radiologia medica (sede Frosinone) indica le sessioni 2026/27 solo per mesi (gennaio, febbraio, aprile, giugno-luglio, settembre 2027). Corsi delle professioni sanitarie: pubblicati solo calendari delle lezioni del I semestre 2026/27 o calendari esami 2025/26. Corsi SMFN di Biologia e biotecnologie, Biologia ambientale e Scienze della Terra: indicate solo le date di lezione (I semestre fino al 15/01/2027, II semestre dal 23-25/02 all'11/06/2027). La pagina di Ateneo «Calendario dell'anno accademico» riporta ancora le sospensioni 2025/26 e non fissa sessioni. web.uniroma1.it (vecchio portale di Facoltà) risponde 403: non ritentato. Terzo controllo (12/10/2026): medpsi.web.uniroma1.it «Sessioni d'esame» (date ancora 2025/26) e «Calendari appelli d'esame» (solo calendari 2025/2026), giurisprudenza.web.uniroma1.it «Programmazione esami» (ferma alla sessione invernale fino a 03-2026), smfn.web.uniroma1.it (solo calendario lezioni 25-26): nessuna novità. farmaciamedicina.web.uniroma1.it, medodonto.web.uniroma1.it, bbcd.web.uniroma1.it, psicologia.web.uniroma1.it non rispondono (connessione non riuscita)."
+}

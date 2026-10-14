@@ -1,0 +1,2330 @@
+{
+ "schema": 1,
+ "generato_il": "2026-10-04",
+ "fonti": [
+  "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+  "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+  "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/istituti-universitari-ordinamento-speciale",
+  "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-telematiche"
+ ],
+ "conteggi": {
+  "statale": 61,
+  "non_statale": 21,
+  "ordinamento_speciale": 9,
+  "telematica": 11
+ },
+ "regioni": [
+  "Abruzzo",
+  "Basilicata",
+  "Calabria",
+  "Campania",
+  "Emilia-Romagna",
+  "Friuli-Venezia Giulia",
+  "Lazio",
+  "Liguria",
+  "Lombardia",
+  "Marche",
+  "Molise",
+  "Piemonte",
+  "Puglia",
+  "Sardegna",
+  "Sicilia",
+  "Toscana",
+  "Trentino-Alto Adige",
+  "Umbria",
+  "Valle d'Aosta",
+  "Veneto"
+ ],
+ "universita": [
+  {
+   "id": "hunimed",
+   "nome": "Humanitas University",
+   "sigla": "Humanitas",
+   "tipo": "non_statale",
+   "regioni": [
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lombardia",
+     "citta": "Rozzano (MI)",
+     "sito": "https://www.hunimed.eu/it/",
+     "nome_mur": "Humanitas University – Rozzano (MI)"
+    }
+   ],
+   "sito": "https://www.hunimed.eu/it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "iulm",
+   "nome": "IULM – Libera università di lingue e comunicazione",
+   "sigla": "IULM",
+   "tipo": "non_statale",
+   "regioni": [
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lombardia",
+     "citta": "Milano",
+     "sito": "https://www.iulm.it/",
+     "nome_mur": "IULM_Libera università di lingue e comunicazione – Milano"
+    }
+   ],
+   "sito": "https://www.iulm.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "unibz",
+   "nome": "Libera Università di Bolzano",
+   "sigla": "UniBZ",
+   "tipo": "non_statale",
+   "regioni": [
+    "Trentino-Alto Adige"
+   ],
+   "sedi": [
+    {
+     "regione": "Trentino-Alto Adige",
+     "citta": "Bolzano/Bozen",
+     "sito": "https://www.unibz.it/it/home/profile/",
+     "nome_mur": "Libera Università di Bolzano – Bolzano/Bozen"
+    }
+   ],
+   "sito": "https://www.unibz.it/it/home/profile/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "unilink",
+   "nome": "Link Campus University",
+   "sigla": "Link",
+   "tipo": "non_statale",
+   "regioni": [
+    "Campania",
+    "Lazio",
+    "Lombardia",
+    "Marche",
+    "Umbria"
+   ],
+   "sedi": [
+    {
+     "regione": "Campania",
+     "citta": "Napoli",
+     "sito": "https://www.unilink.it/",
+     "nome_mur": "Link Campus University – sede di Napoli"
+    },
+    {
+     "regione": "Lazio",
+     "citta": "Roma",
+     "sito": "https://www.unilink.it/",
+     "nome_mur": "Link Campus University – Roma"
+    },
+    {
+     "regione": "Lombardia",
+     "citta": "Novedrate",
+     "sito": "https://www.unilink.it/",
+     "nome_mur": "Link Campus University – sede di Novedrate"
+    },
+    {
+     "regione": "Marche",
+     "citta": "Ascoli Piceno, Fano e Macerata",
+     "sito": "https://www.unilink.it/",
+     "nome_mur": "Link Campus University – sedi di Ascoli Piceno, Fano e Macerata"
+    },
+    {
+     "regione": "Umbria",
+     "citta": "Città di Castello (Pg)",
+     "sito": "https://www.unilink.it/",
+     "nome_mur": "Link Campus University – sede di Città di Castello (Pg)"
+    }
+   ],
+   "sito": "https://www.unilink.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "liuc",
+   "nome": "LIUC – Università Cattaneo",
+   "sigla": "LIUC",
+   "tipo": "non_statale",
+   "regioni": [
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lombardia",
+     "citta": "Castellanza (VA)",
+     "sito": "https://www.liuc.it/",
+     "nome_mur": "LIUC_Università Cattaneo – Castellanza (VA)"
+    }
+   ],
+   "sito": "https://www.liuc.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "luiss",
+   "nome": "LUISS – Libera Università Internazionale Studi Sociali “Guido Carli”",
+   "sigla": "LUISS",
+   "tipo": "non_statale",
+   "regioni": [
+    "Lazio"
+   ],
+   "sedi": [
+    {
+     "regione": "Lazio",
+     "citta": "Roma",
+     "sito": "https://www.luiss.it/",
+     "nome_mur": "LUISS_Libera Università Internazionale Studi Sociali \"Guido Carli\" – Roma"
+    }
+   ],
+   "sito": "https://www.luiss.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "lum",
+   "nome": "LUM – Libera Università Mediterranea “Giuseppe Degennaro”",
+   "sigla": "LUM",
+   "tipo": "non_statale",
+   "regioni": [
+    "Puglia"
+   ],
+   "sedi": [
+    {
+     "regione": "Puglia",
+     "citta": "Casamassima (BA)",
+     "sito": "https://www.lum.it/",
+     "nome_mur": "LUM_Libera Università Mediterranea “Giuseppe Degennaro” – Casamassima (BA)"
+    }
+   ],
+   "sito": "https://www.lum.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "lumsa",
+   "nome": "LUMSA – Libera Università Maria Santissima Assunta",
+   "sigla": "LUMSA",
+   "tipo": "non_statale",
+   "regioni": [
+    "Lazio",
+    "Puglia",
+    "Sicilia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lazio",
+     "citta": "Roma",
+     "sito": "https://www.lumsa.it/",
+     "nome_mur": "LUMSA_Libera Università Maria Santissima Assunta – Roma"
+    },
+    {
+     "regione": "Puglia",
+     "citta": "Taranto",
+     "sito": "https://www.lumsa.it/",
+     "nome_mur": "LUMSA_Libera Università Maria Santissima Assunta – sede decentrata di Taranto"
+    },
+    {
+     "regione": "Sicilia",
+     "citta": "Palermo",
+     "sito": "https://www.lumsa.it/",
+     "nome_mur": "LUMSA_Libera Università Maria Santissima Assunta – sede decentrata di Palermo"
+    }
+   ],
+   "sito": "https://www.lumsa.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "unicamillus",
+   "nome": "Saint Camillus International University of Health and Medical Sciences",
+   "sigla": "UniCamillus",
+   "tipo": "non_statale",
+   "regioni": [
+    "Lazio"
+   ],
+   "sedi": [
+    {
+     "regione": "Lazio",
+     "citta": "Roma",
+     "sito": "https://www.unicamillus.org/it/homepage/",
+     "nome_mur": "Saint Camillus International University of Health and Medical Sciences – Roma"
+    }
+   ],
+   "sito": "https://www.unicamillus.org/it/homepage/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "unineuromed",
+   "nome": "UNINEUROMED – Neuromed Mediterranean University of Sciences and Technologies",
+   "sigla": "UNINEUROMED",
+   "tipo": "non_statale",
+   "regioni": [
+    "Molise"
+   ],
+   "sedi": [
+    {
+     "regione": "Molise",
+     "citta": "Pozzilli (Isernia)",
+     "sito": "https://www.unineuromed.it/",
+     "nome_mur": "UNINEUROMED - Neuromed Mediterranean University of Sciences and Technologies – Pozzilli (Isernia)"
+    }
+   ],
+   "sito": "https://www.unineuromed.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "unicampus",
+   "nome": "Università “Campus Bio-medico”",
+   "sigla": "UCBM",
+   "tipo": "non_statale",
+   "regioni": [
+    "Lazio"
+   ],
+   "sedi": [
+    {
+     "regione": "Lazio",
+     "citta": "Roma",
+     "sito": "https://www.unicampus.it/",
+     "nome_mur": "Università \"Campus Bio-medico” – Roma"
+    }
+   ],
+   "sito": "https://www.unicampus.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "unicatt",
+   "nome": "Università Cattolica del Sacro Cuore",
+   "sigla": "Cattolica",
+   "tipo": "non_statale",
+   "regioni": [
+    "Emilia-Romagna",
+    "Lazio",
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Emilia-Romagna",
+     "citta": "Piacenza",
+     "sito": "https://piacenza.unicatt.it/",
+     "nome_mur": "Università Cattolica del Sacro Cuore – sede decentrata di Piacenza"
+    },
+    {
+     "regione": "Lazio",
+     "citta": "Roma",
+     "sito": "https://roma.unicatt.it/",
+     "nome_mur": "Università Cattolica del Sacro Cuore – sede decentrata di Roma"
+    },
+    {
+     "regione": "Lombardia",
+     "citta": "Milano",
+     "sito": "https://www.unicatt.it/",
+     "nome_mur": "Università Cattolica del Sacro Cuore – Milano"
+    },
+    {
+     "regione": "Lombardia",
+     "citta": "Brescia",
+     "sito": "https://brescia.unicatt.it/",
+     "nome_mur": "Università Cattolica del Sacro Cuore – sede decentrata di Brescia"
+    },
+    {
+     "regione": "Lombardia",
+     "citta": "Cremona",
+     "sito": "https://piacenza.unicatt.it/",
+     "nome_mur": "Università Cattolica del Sacro Cuore – sede decentrata di Cremona"
+    }
+   ],
+   "sito": "https://www.unicatt.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "unibocconi",
+   "nome": "Università commerciale “Luigi Bocconi”",
+   "sigla": "Bocconi",
+   "tipo": "non_statale",
+   "regioni": [
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lombardia",
+     "citta": "Milano",
+     "sito": "https://www.unibocconi.it/",
+     "nome_mur": "Università commerciale \"Luigi Bocconi\" – Milano"
+    }
+   ],
+   "sito": "https://www.unibocconi.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "unisg",
+   "nome": "Università degli Studi di Scienze Gastronomiche",
+   "sigla": "UNISG",
+   "tipo": "non_statale",
+   "regioni": [
+    "Piemonte"
+   ],
+   "sedi": [
+    {
+     "regione": "Piemonte",
+     "citta": "Pollenzo (CN)",
+     "sito": "https://www.unisg.it/",
+     "nome_mur": "Università degli Studi di Scienze Gastronomiche – Pollenzo (CN)"
+    }
+   ],
+   "sito": "https://www.unisg.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "universitaeuropea",
+   "nome": "Università degli Studi Europea",
+   "sigla": "UER",
+   "tipo": "non_statale",
+   "regioni": [
+    "Lazio"
+   ],
+   "sedi": [
+    {
+     "regione": "Lazio",
+     "citta": "Roma",
+     "sito": "https://www.universitaeuropeadiroma.it/",
+     "nome_mur": "Università degli Studi Europea – Roma"
+    }
+   ],
+   "sito": "https://www.universitaeuropeadiroma.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "unint",
+   "nome": "Università degli Studi Internazionali di Roma",
+   "sigla": "UNINT",
+   "tipo": "non_statale",
+   "regioni": [
+    "Lazio"
+   ],
+   "sedi": [
+    {
+     "regione": "Lazio",
+     "citta": "Roma",
+     "sito": "https://www.unint.eu/",
+     "nome_mur": "Università degli Studi Internazionali di Roma – Roma"
+    }
+   ],
+   "sito": "https://www.unint.eu/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "unikore",
+   "nome": "Università degli Studi “Kore”",
+   "sigla": "Kore",
+   "tipo": "non_statale",
+   "regioni": [
+    "Sicilia"
+   ],
+   "sedi": [
+    {
+     "regione": "Sicilia",
+     "citta": "Enna",
+     "sito": "https://unikore.it/",
+     "nome_mur": "Università degli Studi “Kore” – Enna"
+    }
+   ],
+   "sito": "https://unikore.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "unisob",
+   "nome": "Università degli Studi “Suor Orsola Benincasa”",
+   "sigla": "UniSOB",
+   "tipo": "non_statale",
+   "regioni": [
+    "Campania"
+   ],
+   "sedi": [
+    {
+     "regione": "Campania",
+     "citta": "Napoli",
+     "sito": "https://www.unisob.na.it/",
+     "nome_mur": "Università degli Studi “Suor Orsola Benincasa” – Napoli"
+    }
+   ],
+   "sito": "https://www.unisob.na.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "univda",
+   "nome": "Università della Valle d’Aosta",
+   "sigla": "UniVdA",
+   "tipo": "non_statale",
+   "regioni": [
+    "Valle d'Aosta"
+   ],
+   "sedi": [
+    {
+     "regione": "Valle d'Aosta",
+     "citta": "Aosta",
+     "sito": "https://www.univda.it/",
+     "nome_mur": "Università della Valle d’Aosta – Aosta"
+    }
+   ],
+   "sito": "https://www.univda.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "unidarc",
+   "nome": "Università per Stranieri “Dante Alighieri”",
+   "sigla": "UniDA",
+   "tipo": "non_statale",
+   "regioni": [
+    "Calabria"
+   ],
+   "sedi": [
+    {
+     "regione": "Calabria",
+     "citta": "Reggio Calabria",
+     "sito": "https://www.unidarc.it/",
+     "nome_mur": "Università per Stranieri \"Dante Alighieri\" – Reggio Calabria"
+    }
+   ],
+   "sito": "https://www.unidarc.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "unisr",
+   "nome": "Università Vita-Salute “San Raffaele”",
+   "sigla": "UniSR",
+   "tipo": "non_statale",
+   "regioni": [
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lombardia",
+     "citta": "Milano",
+     "sito": "https://www.unisr.it/",
+     "nome_mur": "Università Vita-Salute “San Raffaele” – Milano"
+    }
+   ],
+   "sito": "https://www.unisr.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-non-statali-riconosciute",
+    "pagina_aggiornata": "23 gennaio 2026"
+   }
+  },
+  {
+   "id": "casd",
+   "nome": "Centro Alti Studi per la Difesa (CASD)",
+   "sigla": "CASD",
+   "tipo": "ordinamento_speciale",
+   "regioni": [
+    "Lazio"
+   ],
+   "sedi": [
+    {
+     "regione": "Lazio",
+     "citta": "Roma",
+     "sito": "https://www.casd.it/",
+     "nome_mur": "Centro Alti Studi per la Difesa (CASD) - Roma"
+    }
+   ],
+   "sito": "https://www.casd.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/istituti-universitari-ordinamento-speciale",
+    "pagina_aggiornata": "27 aprile 2026"
+   }
+  },
+  {
+   "id": "iasa",
+   "nome": "Institute of Advanced Science for Agriculture (IASA)",
+   "sigla": "IASA",
+   "tipo": "ordinamento_speciale",
+   "regioni": [
+    "Emilia-Romagna"
+   ],
+   "sedi": [
+    {
+     "regione": "Emilia-Romagna",
+     "citta": "Jolanda di Savoia (FE)",
+     "sito": "https://www.bfeducational.it/it/",
+     "nome_mur": "Institute of Advanced Science for Agriculture (IASA) - Jolanda di Savoia (FE)"
+    }
+   ],
+   "sito": "https://www.bfeducational.it/it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/istituti-universitari-ordinamento-speciale",
+    "pagina_aggiornata": "27 aprile 2026"
+   }
+  },
+  {
+   "id": "iuss",
+   "nome": "Istituto Universitario di Studi Superiori (IUSS)",
+   "sigla": "IUSS",
+   "tipo": "ordinamento_speciale",
+   "regioni": [
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lombardia",
+     "citta": "Pavia",
+     "sito": "https://www.iusspavia.it/",
+     "nome_mur": "Istituto Universitario di Studi Superiori (IUSS) - Pavia"
+    }
+   ],
+   "sito": "https://www.iusspavia.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/istituti-universitari-ordinamento-speciale",
+    "pagina_aggiornata": "27 aprile 2026"
+   }
+  },
+  {
+   "id": "imt",
+   "nome": "Scuola IMT Alti Studi",
+   "sigla": "IMT",
+   "tipo": "ordinamento_speciale",
+   "regioni": [
+    "Toscana"
+   ],
+   "sedi": [
+    {
+     "regione": "Toscana",
+     "citta": "Lucca",
+     "sito": "https://www.imtlucca.it/",
+     "nome_mur": "Scuola IMT Alti Studi - Lucca"
+    }
+   ],
+   "sito": "https://www.imtlucca.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/istituti-universitari-ordinamento-speciale",
+    "pagina_aggiornata": "27 aprile 2026"
+   }
+  },
+  {
+   "id": "sissa",
+   "nome": "Scuola Internazionale Superiore di Studi Avanzati (SISSA)",
+   "sigla": "SISSA",
+   "tipo": "ordinamento_speciale",
+   "regioni": [
+    "Friuli-Venezia Giulia"
+   ],
+   "sedi": [
+    {
+     "regione": "Friuli-Venezia Giulia",
+     "citta": "Trieste",
+     "sito": "https://www.sissa.it/",
+     "nome_mur": "Scuola Internazionale Superiore di Studi Avanzati (SISSA) - Trieste"
+    }
+   ],
+   "sito": "https://www.sissa.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/istituti-universitari-ordinamento-speciale",
+    "pagina_aggiornata": "27 aprile 2026"
+   }
+  },
+  {
+   "id": "sns",
+   "nome": "Scuola Normale Superiore (SNS)",
+   "sigla": "SNS",
+   "tipo": "ordinamento_speciale",
+   "regioni": [
+    "Toscana"
+   ],
+   "sedi": [
+    {
+     "regione": "Toscana",
+     "citta": "Pisa",
+     "sito": "https://www.sns.it/",
+     "nome_mur": "Scuola Normale Superiore (SNS) - Pisa"
+    }
+   ],
+   "sito": "https://www.sns.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/istituti-universitari-ordinamento-speciale",
+    "pagina_aggiornata": "27 aprile 2026"
+   }
+  },
+  {
+   "id": "ssm",
+   "nome": "Scuola Superiore Meridionale (SSM)",
+   "sigla": "SSM",
+   "tipo": "ordinamento_speciale",
+   "regioni": [
+    "Campania"
+   ],
+   "sedi": [
+    {
+     "regione": "Campania",
+     "citta": "Napoli",
+     "sito": "https://www.ssmeridionale.it/it-it/home",
+     "nome_mur": "Scuola Superiore Meridionale (SSM) - Napoli"
+    }
+   ],
+   "sito": "https://www.ssmeridionale.it/it-it/home",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/istituti-universitari-ordinamento-speciale",
+    "pagina_aggiornata": "27 aprile 2026"
+   }
+  },
+  {
+   "id": "santanna",
+   "nome": "Scuola superiore “Sant’Anna”",
+   "sigla": "Sant'Anna",
+   "tipo": "ordinamento_speciale",
+   "regioni": [
+    "Toscana"
+   ],
+   "sedi": [
+    {
+     "regione": "Toscana",
+     "citta": "Pisa",
+     "sito": "https://www.santannapisa.it/it",
+     "nome_mur": "Scuola superiore “Sant’Anna” - Pisa"
+    }
+   ],
+   "sito": "https://www.santannapisa.it/it",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/istituti-universitari-ordinamento-speciale",
+    "pagina_aggiornata": "27 aprile 2026"
+   }
+  },
+  {
+   "id": "gssi",
+   "nome": "Scuola universitaria superiore “Gran Sasso Science Institute” (GSSI)",
+   "sigla": "GSSI",
+   "tipo": "ordinamento_speciale",
+   "regioni": [
+    "Abruzzo"
+   ],
+   "sedi": [
+    {
+     "regione": "Abruzzo",
+     "citta": "L'Aquila",
+     "sito": "https://gssi.it/",
+     "nome_mur": "Scuola universitaria superiore “Gran Sasso Science Institute” (GSSI)"
+    }
+   ],
+   "sito": "https://gssi.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/istituti-universitari-ordinamento-speciale",
+    "pagina_aggiornata": "27 aprile 2026"
+   }
+  },
+  {
+   "id": "poliba",
+   "nome": "Politecnico di Bari",
+   "sigla": "PoliBa",
+   "tipo": "statale",
+   "regioni": [
+    "Puglia"
+   ],
+   "sedi": [
+    {
+     "regione": "Puglia",
+     "citta": "Bari",
+     "sito": "http://www.poliba.it/",
+     "nome_mur": "Politecnico di Bari"
+    }
+   ],
+   "sito": "http://www.poliba.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "polimi",
+   "nome": "Politecnico di Milano",
+   "sigla": "PoliMi",
+   "tipo": "statale",
+   "regioni": [
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lombardia",
+     "citta": "Milano",
+     "sito": "https://polimi.it/",
+     "nome_mur": "Politecnico di Milano"
+    }
+   ],
+   "sito": "https://polimi.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "polito",
+   "nome": "Politecnico di Torino",
+   "sigla": "PoliTO",
+   "tipo": "statale",
+   "regioni": [
+    "Piemonte"
+   ],
+   "sedi": [
+    {
+     "regione": "Piemonte",
+     "citta": "Torino",
+     "sito": "https://www.polito.it/",
+     "nome_mur": "Politecnico di Torino"
+    }
+   ],
+   "sito": "https://www.polito.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unimol",
+   "nome": "Università degli Studi del Molise",
+   "sigla": "UniMol",
+   "tipo": "statale",
+   "regioni": [
+    "Molise"
+   ],
+   "sedi": [
+    {
+     "regione": "Molise",
+     "citta": "Campobasso",
+     "sito": "https://www2.unimol.it/",
+     "nome_mur": "Università degli Studi del Molise - Campobasso"
+    }
+   ],
+   "sito": "https://www2.unimol.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "uniupo",
+   "nome": "Università degli Studi del Piemonte Orientale “Amedeo Avogadro”",
+   "sigla": "UPO",
+   "tipo": "statale",
+   "regioni": [
+    "Piemonte"
+   ],
+   "sedi": [
+    {
+     "regione": "Piemonte",
+     "citta": "Alessandria, Novara e Vercelli",
+     "sito": "https://www.uniupo.it/it",
+     "nome_mur": "Università degli Studi del Piemonte Orientale \"Amedeo Avogadro” – Alessandria, Novara e Vercelli"
+    }
+   ],
+   "sito": "https://www.uniupo.it/it",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unisalento",
+   "nome": "Università degli Studi del Salento",
+   "sigla": "UniSalento",
+   "tipo": "statale",
+   "regioni": [
+    "Puglia"
+   ],
+   "sedi": [
+    {
+     "regione": "Puglia",
+     "citta": "Lecce",
+     "sito": "https://www.unisalento.it/",
+     "nome_mur": "Università degli Studi del Salento – Lecce"
+    }
+   ],
+   "sito": "https://www.unisalento.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unisannio",
+   "nome": "Università degli Studi del Sannio",
+   "sigla": "UniSannio",
+   "tipo": "statale",
+   "regioni": [
+    "Campania"
+   ],
+   "sedi": [
+    {
+     "regione": "Campania",
+     "citta": "Benevento",
+     "sito": "https://unisannio.it/",
+     "nome_mur": "Università degli Studi del Sannio – Benevento"
+    }
+   ],
+   "sito": "https://unisannio.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "uninsubria",
+   "nome": "Università degli Studi dell'Insubria",
+   "sigla": "Insubria",
+   "tipo": "statale",
+   "regioni": [
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lombardia",
+     "citta": "Varese e Como",
+     "sito": "https://www.uninsubria.it/",
+     "nome_mur": "Università degli Studi dell'Insubria – Varese e Como"
+    }
+   ],
+   "sito": "https://www.uninsubria.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unibas",
+   "nome": "Università degli Studi della Basilicata",
+   "sigla": "UniBas",
+   "tipo": "statale",
+   "regioni": [
+    "Basilicata"
+   ],
+   "sedi": [
+    {
+     "regione": "Basilicata",
+     "citta": "Potenza e Matera",
+     "sito": "https://portale.unibas.it/site/home.html",
+     "nome_mur": "Università degli Studi della Basilicata – Potenza e Matera"
+    }
+   ],
+   "sito": "https://portale.unibas.it/site/home.html",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unicampania",
+   "nome": "Università degli Studi della Campania “Luigi Vanvitelli”",
+   "sigla": "Vanvitelli",
+   "tipo": "statale",
+   "regioni": [
+    "Campania"
+   ],
+   "sedi": [
+    {
+     "regione": "Campania",
+     "citta": "Caserta",
+     "sito": "https://unicampania.it/",
+     "nome_mur": "Università degli Studi della Campania \"Luigi Vanvitelli” – Caserta"
+    }
+   ],
+   "sito": "https://unicampania.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unitus",
+   "nome": "Università degli Studi della Tuscia",
+   "sigla": "UniTus",
+   "tipo": "statale",
+   "regioni": [
+    "Lazio"
+   ],
+   "sedi": [
+    {
+     "regione": "Lazio",
+     "citta": "Viterbo",
+     "sito": "https://www.unitus.it/",
+     "nome_mur": "Università degli Studi della Tuscia – Viterbo"
+    }
+   ],
+   "sito": "https://www.unitus.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "univaq",
+   "nome": "Università degli Studi dell’Aquila",
+   "sigla": "UnivAQ",
+   "tipo": "statale",
+   "regioni": [
+    "Abruzzo"
+   ],
+   "sedi": [
+    {
+     "regione": "Abruzzo",
+     "citta": "L'Aquila",
+     "sito": "https://www.univaq.it/",
+     "nome_mur": "Università degli Studi dell’Aquila"
+    }
+   ],
+   "sito": "https://www.univaq.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "uniba",
+   "nome": "Università degli Studi di Bari “Aldo Moro”",
+   "sigla": "UniBa",
+   "tipo": "statale",
+   "regioni": [
+    "Puglia"
+   ],
+   "sedi": [
+    {
+     "regione": "Puglia",
+     "citta": "Bari",
+     "sito": "https://www.uniba.it/",
+     "nome_mur": "Università degli Studi di Bari “Aldo Moro”"
+    }
+   ],
+   "sito": "https://www.uniba.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unibg",
+   "nome": "Università degli Studi di Bergamo",
+   "sigla": "UniBG",
+   "tipo": "statale",
+   "regioni": [
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lombardia",
+     "citta": "Bergamo",
+     "sito": "https://www.unibg.it/",
+     "nome_mur": "Università degli Studi di Bergamo"
+    }
+   ],
+   "sito": "https://www.unibg.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unibo",
+   "nome": "Università degli Studi di Bologna",
+   "sigla": "UniBo",
+   "tipo": "statale",
+   "regioni": [
+    "Emilia-Romagna"
+   ],
+   "sedi": [
+    {
+     "regione": "Emilia-Romagna",
+     "citta": "Bologna",
+     "sito": "https://www.unibo.it/",
+     "nome_mur": "Università degli Studi di Bologna"
+    }
+   ],
+   "sito": "https://www.unibo.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unibs",
+   "nome": "Università degli Studi di Brescia",
+   "sigla": "UniBS",
+   "tipo": "statale",
+   "regioni": [
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lombardia",
+     "citta": "Brescia",
+     "sito": "https://www.unibs.it/",
+     "nome_mur": "Università degli Studi di Brescia"
+    }
+   ],
+   "sito": "https://www.unibs.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unica",
+   "nome": "Università degli Studi di Cagliari",
+   "sigla": "UniCa",
+   "tipo": "statale",
+   "regioni": [
+    "Sardegna"
+   ],
+   "sedi": [
+    {
+     "regione": "Sardegna",
+     "citta": "Cagliari",
+     "sito": "https://unica.it/",
+     "nome_mur": "Università degli Studi di Cagliari"
+    }
+   ],
+   "sito": "https://unica.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unicam",
+   "nome": "Università degli Studi di Camerino",
+   "sigla": "UniCam",
+   "tipo": "statale",
+   "regioni": [
+    "Marche"
+   ],
+   "sedi": [
+    {
+     "regione": "Marche",
+     "citta": "Camerino (MC)",
+     "sito": "https://www.unicam.it/",
+     "nome_mur": "Università degli Studi di Camerino – Camerino (MC)"
+    }
+   ],
+   "sito": "https://www.unicam.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unicas",
+   "nome": "Università degli Studi di Cassino e del Lazio Meridionale",
+   "sigla": "UniCas",
+   "tipo": "statale",
+   "regioni": [
+    "Lazio"
+   ],
+   "sedi": [
+    {
+     "regione": "Lazio",
+     "citta": "Cassino (FR)",
+     "sito": "https://www.unicas.it/",
+     "nome_mur": "Università degli Studi di Cassino e del Lazio Meridionale"
+    }
+   ],
+   "sito": "https://www.unicas.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unict",
+   "nome": "Università degli Studi di Catania",
+   "sigla": "UniCT",
+   "tipo": "statale",
+   "regioni": [
+    "Sicilia"
+   ],
+   "sedi": [
+    {
+     "regione": "Sicilia",
+     "citta": "Catania",
+     "sito": "https://www.unict.it/",
+     "nome_mur": "Università degli Studi di Catania"
+    }
+   ],
+   "sito": "https://www.unict.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unicz",
+   "nome": "Università degli Studi di Catanzaro “Magna Graecia”",
+   "sigla": "UMG",
+   "tipo": "statale",
+   "regioni": [
+    "Calabria"
+   ],
+   "sedi": [
+    {
+     "regione": "Calabria",
+     "citta": "Catanzaro",
+     "sito": "https://web.unicz.it/",
+     "nome_mur": "Università degli Studi di Catanzaro “Magna Graecia”"
+    }
+   ],
+   "sito": "https://web.unicz.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unich",
+   "nome": "Università degli Studi di Chieti-Pescara “Gabriele D'Annunzio”",
+   "sigla": "UdA",
+   "tipo": "statale",
+   "regioni": [
+    "Abruzzo"
+   ],
+   "sedi": [
+    {
+     "regione": "Abruzzo",
+     "citta": "Chieti e Pescara",
+     "sito": "https://www.unich.it/",
+     "nome_mur": "Università degli Studi di Chieti-Pescara “Gabriele D'Annunzio”"
+    }
+   ],
+   "sito": "https://www.unich.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unife",
+   "nome": "Università degli Studi di Ferrara",
+   "sigla": "UniFE",
+   "tipo": "statale",
+   "regioni": [
+    "Emilia-Romagna"
+   ],
+   "sedi": [
+    {
+     "regione": "Emilia-Romagna",
+     "citta": "Ferrara",
+     "sito": "https://www.unife.it/",
+     "nome_mur": "Università degli Studi di Ferrara"
+    }
+   ],
+   "sito": "https://www.unife.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unifi",
+   "nome": "Università degli Studi di Firenze",
+   "sigla": "UniFI",
+   "tipo": "statale",
+   "regioni": [
+    "Toscana"
+   ],
+   "sedi": [
+    {
+     "regione": "Toscana",
+     "citta": "Firenze",
+     "sito": "https://www.unifi.it/",
+     "nome_mur": "Università degli Studi di Firenze"
+    }
+   ],
+   "sito": "https://www.unifi.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unifg",
+   "nome": "Università degli Studi di Foggia",
+   "sigla": "UniFG",
+   "tipo": "statale",
+   "regioni": [
+    "Puglia"
+   ],
+   "sedi": [
+    {
+     "regione": "Puglia",
+     "citta": "Foggia",
+     "sito": "https://www.unifg.it/it",
+     "nome_mur": "Università degli Studi di Foggia"
+    }
+   ],
+   "sito": "https://www.unifg.it/it",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unige",
+   "nome": "Università degli Studi di Genova",
+   "sigla": "UniGe",
+   "tipo": "statale",
+   "regioni": [
+    "Liguria"
+   ],
+   "sedi": [
+    {
+     "regione": "Liguria",
+     "citta": "Genova",
+     "sito": "https://unige.it/",
+     "nome_mur": "Università degli Studi di Genova"
+    }
+   ],
+   "sito": "https://unige.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unimc",
+   "nome": "Università degli Studi di Macerata",
+   "sigla": "UniMC",
+   "tipo": "statale",
+   "regioni": [
+    "Marche"
+   ],
+   "sedi": [
+    {
+     "regione": "Marche",
+     "citta": "Macerata",
+     "sito": "https://www.unimc.it/",
+     "nome_mur": "Università degli Studi di Macerata"
+    }
+   ],
+   "sito": "https://www.unimc.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unime",
+   "nome": "Università degli Studi di Messina",
+   "sigla": "UniME",
+   "tipo": "statale",
+   "regioni": [
+    "Sicilia"
+   ],
+   "sedi": [
+    {
+     "regione": "Sicilia",
+     "citta": "Messina",
+     "sito": "https://www.unime.it/",
+     "nome_mur": "Università degli Studi di Messina"
+    }
+   ],
+   "sito": "https://www.unime.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unimib",
+   "nome": "Università degli Studi di Milano “Bicocca”",
+   "sigla": "Bicocca",
+   "tipo": "statale",
+   "regioni": [
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lombardia",
+     "citta": "Milano",
+     "sito": "https://www.unimib.it/",
+     "nome_mur": "Università degli Studi di Milano “Bicocca”"
+    }
+   ],
+   "sito": "https://www.unimib.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unimi",
+   "nome": "Università degli Studi di Milano “Statale”",
+   "sigla": "UniMi",
+   "tipo": "statale",
+   "regioni": [
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lombardia",
+     "citta": "Milano",
+     "sito": "https://www.unimi.it/",
+     "nome_mur": "Università degli Studi di Milano “Statale”"
+    }
+   ],
+   "sito": "https://www.unimi.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unimore",
+   "nome": "Università degli Studi di Modena e Reggio Emilia",
+   "sigla": "UniMoRe",
+   "tipo": "statale",
+   "regioni": [
+    "Emilia-Romagna"
+   ],
+   "sedi": [
+    {
+     "regione": "Emilia-Romagna",
+     "citta": "Modena e Reggio Emilia",
+     "sito": "https://www.unimore.it/",
+     "nome_mur": "Università degli Studi di Modena e Reggio Emilia"
+    }
+   ],
+   "sito": "https://www.unimore.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unipd",
+   "nome": "Università degli Studi di Padova",
+   "sigla": "UniPD",
+   "tipo": "statale",
+   "regioni": [
+    "Veneto"
+   ],
+   "sedi": [
+    {
+     "regione": "Veneto",
+     "citta": "Padova",
+     "sito": "https://www.unipd.it/",
+     "nome_mur": "Università degli Studi di Padova"
+    }
+   ],
+   "sito": "https://www.unipd.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unipa",
+   "nome": "Università degli Studi di Palermo",
+   "sigla": "UniPA",
+   "tipo": "statale",
+   "regioni": [
+    "Sicilia"
+   ],
+   "sedi": [
+    {
+     "regione": "Sicilia",
+     "citta": "Palermo",
+     "sito": "https://www.unipa.it/",
+     "nome_mur": "Università degli Studi di Palermo"
+    }
+   ],
+   "sito": "https://www.unipa.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unipr",
+   "nome": "Università degli Studi di Parma",
+   "sigla": "UniPR",
+   "tipo": "statale",
+   "regioni": [
+    "Emilia-Romagna"
+   ],
+   "sedi": [
+    {
+     "regione": "Emilia-Romagna",
+     "citta": "Parma",
+     "sito": "https://www.unipr.it/",
+     "nome_mur": "Università degli Studi di Parma"
+    }
+   ],
+   "sito": "https://www.unipr.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unipv",
+   "nome": "Università degli Studi di Pavia",
+   "sigla": "UniPV",
+   "tipo": "statale",
+   "regioni": [
+    "Lombardia"
+   ],
+   "sedi": [
+    {
+     "regione": "Lombardia",
+     "citta": "Pavia",
+     "sito": "https://web.unipv.it/",
+     "nome_mur": "Università degli Studi di Pavia"
+    }
+   ],
+   "sito": "https://web.unipv.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unipg",
+   "nome": "Università degli Studi di Perugia",
+   "sigla": "UniPG",
+   "tipo": "statale",
+   "regioni": [
+    "Umbria"
+   ],
+   "sedi": [
+    {
+     "regione": "Umbria",
+     "citta": "Perugia",
+     "sito": "https://www.unipg.it/",
+     "nome_mur": "Università degli Studi di Perugia"
+    }
+   ],
+   "sito": "https://www.unipg.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unipi",
+   "nome": "Università degli Studi di Pisa",
+   "sigla": "UniPi",
+   "tipo": "statale",
+   "regioni": [
+    "Toscana"
+   ],
+   "sedi": [
+    {
+     "regione": "Toscana",
+     "citta": "Pisa",
+     "sito": "https://www.unipi.it/",
+     "nome_mur": "Università degli Studi di Pisa"
+    }
+   ],
+   "sito": "https://www.unipi.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unirc",
+   "nome": "Università degli Studi di Reggio Calabria “Mediterranea”",
+   "sigla": "UniRC",
+   "tipo": "statale",
+   "regioni": [
+    "Calabria"
+   ],
+   "sedi": [
+    {
+     "regione": "Calabria",
+     "citta": "Reggio Calabria",
+     "sito": "https://unirc.it/",
+     "nome_mur": "Università degli Studi di Reggio Calabria “Mediterranea”"
+    }
+   ],
+   "sito": "https://unirc.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "uniroma3",
+   "nome": "Università degli Studi di Roma Tre",
+   "sigla": "Roma Tre",
+   "tipo": "statale",
+   "regioni": [
+    "Lazio"
+   ],
+   "sedi": [
+    {
+     "regione": "Lazio",
+     "citta": "Roma",
+     "sito": "https://www.uniroma3.it/",
+     "nome_mur": "Università degli Studi di Roma Tre"
+    }
+   ],
+   "sito": "https://www.uniroma3.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "uniroma4",
+   "nome": "Università degli Studi di Roma “Foro Italico”",
+   "sigla": "Foro Italico",
+   "tipo": "statale",
+   "regioni": [
+    "Lazio"
+   ],
+   "sedi": [
+    {
+     "regione": "Lazio",
+     "citta": "Roma",
+     "sito": "http://www.uniroma4.it/",
+     "nome_mur": "Università degli Studi di Roma “Foro Italico”"
+    }
+   ],
+   "sito": "http://www.uniroma4.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "uniroma1",
+   "nome": "Università degli Studi di Roma “La Sapienza”",
+   "sigla": "Sapienza",
+   "tipo": "statale",
+   "regioni": [
+    "Lazio"
+   ],
+   "sedi": [
+    {
+     "regione": "Lazio",
+     "citta": "Roma",
+     "sito": "https://www.uniroma1.it/",
+     "nome_mur": "Università degli Studi di Roma “La Sapienza”"
+    }
+   ],
+   "sito": "https://www.uniroma1.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "uniroma2",
+   "nome": "Università degli Studi di Roma “Tor Vergata”",
+   "sigla": "Tor Vergata",
+   "tipo": "statale",
+   "regioni": [
+    "Lazio"
+   ],
+   "sedi": [
+    {
+     "regione": "Lazio",
+     "citta": "Roma",
+     "sito": "http://web.uniroma2.it/",
+     "nome_mur": "Università degli Studi di Roma “Tor Vergata”"
+    }
+   ],
+   "sito": "http://web.uniroma2.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unisa",
+   "nome": "Università degli Studi di Salerno",
+   "sigla": "UniSA",
+   "tipo": "statale",
+   "regioni": [
+    "Campania"
+   ],
+   "sedi": [
+    {
+     "regione": "Campania",
+     "citta": "Fisciano (SA)",
+     "sito": "https://www.unisa.it/",
+     "nome_mur": "Università degli Studi di Salerno"
+    }
+   ],
+   "sito": "https://www.unisa.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "uniss",
+   "nome": "Università degli Studi di Sassari",
+   "sigla": "UniSS",
+   "tipo": "statale",
+   "regioni": [
+    "Sardegna"
+   ],
+   "sedi": [
+    {
+     "regione": "Sardegna",
+     "citta": "Sassari",
+     "sito": "https://www.uniss.it/",
+     "nome_mur": "Università degli Studi di Sassari"
+    }
+   ],
+   "sito": "https://www.uniss.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unisi",
+   "nome": "Università degli Studi di Siena",
+   "sigla": "UniSi",
+   "tipo": "statale",
+   "regioni": [
+    "Toscana"
+   ],
+   "sedi": [
+    {
+     "regione": "Toscana",
+     "citta": "Siena",
+     "sito": "https://www.unisi.it/",
+     "nome_mur": "Università degli Studi di Siena"
+    }
+   ],
+   "sito": "https://www.unisi.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unite",
+   "nome": "Università degli Studi di Teramo",
+   "sigla": "UniTE",
+   "tipo": "statale",
+   "regioni": [
+    "Abruzzo"
+   ],
+   "sedi": [
+    {
+     "regione": "Abruzzo",
+     "citta": "Teramo",
+     "sito": "https://www.unite.it/",
+     "nome_mur": "Università degli Studi di Teramo"
+    }
+   ],
+   "sito": "https://www.unite.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unito",
+   "nome": "Università degli Studi di Torino",
+   "sigla": "UniTO",
+   "tipo": "statale",
+   "regioni": [
+    "Piemonte"
+   ],
+   "sedi": [
+    {
+     "regione": "Piemonte",
+     "citta": "Torino",
+     "sito": "https://www.unito.it/",
+     "nome_mur": "Università degli Studi di Torino"
+    }
+   ],
+   "sito": "https://www.unito.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unitn",
+   "nome": "Università degli Studi di Trento",
+   "sigla": "UniTN",
+   "tipo": "statale",
+   "regioni": [
+    "Trentino-Alto Adige"
+   ],
+   "sedi": [
+    {
+     "regione": "Trentino-Alto Adige",
+     "citta": "Trento",
+     "sito": "https://www.unitn.it/",
+     "nome_mur": "Università degli Studi di Trento"
+    }
+   ],
+   "sito": "https://www.unitn.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "units",
+   "nome": "Università degli Studi di Trieste",
+   "sigla": "UniTS",
+   "tipo": "statale",
+   "regioni": [
+    "Friuli-Venezia Giulia"
+   ],
+   "sedi": [
+    {
+     "regione": "Friuli-Venezia Giulia",
+     "citta": "Trieste",
+     "sito": "https://www.units.it/",
+     "nome_mur": "Università degli Studi di Trieste"
+    }
+   ],
+   "sito": "https://www.units.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "uniud",
+   "nome": "Università degli Studi di Udine",
+   "sigla": "UniUD",
+   "tipo": "statale",
+   "regioni": [
+    "Friuli-Venezia Giulia"
+   ],
+   "sedi": [
+    {
+     "regione": "Friuli-Venezia Giulia",
+     "citta": "Udine",
+     "sito": "https://www.uniud.it/",
+     "nome_mur": "Università degli Studi di Udine"
+    }
+   ],
+   "sito": "https://www.uniud.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "uniurb",
+   "nome": "Università degli Studi di Urbino “Carlo Bo”",
+   "sigla": "UniUrb",
+   "tipo": "statale",
+   "regioni": [
+    "Marche"
+   ],
+   "sedi": [
+    {
+     "regione": "Marche",
+     "citta": "Urbino (PU)",
+     "sito": "https://www.uniurb.it/",
+     "nome_mur": "Università degli Studi di Urbino “Carlo Bo”"
+    }
+   ],
+   "sito": "https://www.uniurb.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unive",
+   "nome": "Università degli Studi di Venezia “Ca’ Foscari”",
+   "sigla": "Ca' Foscari",
+   "tipo": "statale",
+   "regioni": [
+    "Veneto"
+   ],
+   "sedi": [
+    {
+     "regione": "Veneto",
+     "citta": "Venezia",
+     "sito": "https://unive.it/",
+     "nome_mur": "Università degli Studi di Venezia “Ca’ Foscari”"
+    }
+   ],
+   "sito": "https://unive.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "univr",
+   "nome": "Università degli Studi di Verona",
+   "sigla": "UniVR",
+   "tipo": "statale",
+   "regioni": [
+    "Veneto"
+   ],
+   "sedi": [
+    {
+     "regione": "Veneto",
+     "citta": "Verona",
+     "sito": "https://www.univr.it/",
+     "nome_mur": "Università degli Studi di Verona"
+    }
+   ],
+   "sito": "https://www.univr.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unina",
+   "nome": "Università degli Studi “Federico II”",
+   "sigla": "UniNA",
+   "tipo": "statale",
+   "regioni": [
+    "Campania"
+   ],
+   "sedi": [
+    {
+     "regione": "Campania",
+     "citta": "Napoli",
+     "sito": "http://www.unina.it/",
+     "nome_mur": "Università degli Studi “Federico II” – Napoli"
+    }
+   ],
+   "sito": "http://www.unina.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unior",
+   "nome": "Università degli Studi “L'Orientale”",
+   "sigla": "UniOR",
+   "tipo": "statale",
+   "regioni": [
+    "Campania"
+   ],
+   "sedi": [
+    {
+     "regione": "Campania",
+     "citta": "Napoli",
+     "sito": "https://www.unior.it/",
+     "nome_mur": "Università degli Studi “L'Orientale” – Napoli"
+    }
+   ],
+   "sito": "https://www.unior.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "uniparthenope",
+   "nome": "Università degli Studi “Parthenope”",
+   "sigla": "Parthenope",
+   "tipo": "statale",
+   "regioni": [
+    "Campania"
+   ],
+   "sedi": [
+    {
+     "regione": "Campania",
+     "citta": "Napoli",
+     "sito": "https://www.uniparthenope.it/",
+     "nome_mur": "Università degli Studi “Parthenope” – Napoli"
+    }
+   ],
+   "sito": "https://www.uniparthenope.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unical",
+   "nome": "Università della Calabria",
+   "sigla": "UniCal",
+   "tipo": "statale",
+   "regioni": [
+    "Calabria"
+   ],
+   "sedi": [
+    {
+     "regione": "Calabria",
+     "citta": "Arcavacata di Rende (CS)",
+     "sito": "https://www.unical.it/",
+     "nome_mur": "Università della Calabria – Arcavacata di Rende (CS)"
+    }
+   ],
+   "sito": "https://www.unical.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "iuav",
+   "nome": "Università IUAV",
+   "sigla": "IUAV",
+   "tipo": "statale",
+   "regioni": [
+    "Veneto"
+   ],
+   "sedi": [
+    {
+     "regione": "Veneto",
+     "citta": "Venezia",
+     "sito": "https://www.iuav.it/it",
+     "nome_mur": "Università IUAV - Venezia"
+    }
+   ],
+   "sito": "https://www.iuav.it/it",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unistrapg",
+   "nome": "Università per Stranieri di Perugia",
+   "sigla": "UniStraPG",
+   "tipo": "statale",
+   "regioni": [
+    "Umbria"
+   ],
+   "sedi": [
+    {
+     "regione": "Umbria",
+     "citta": "Perugia",
+     "sito": "https://www.unistrapg.it/",
+     "nome_mur": "Università per Stranieri di Perugia"
+    }
+   ],
+   "sito": "https://www.unistrapg.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "unistrasi",
+   "nome": "Università per Stranieri di Siena",
+   "sigla": "UniStraSi",
+   "tipo": "statale",
+   "regioni": [
+    "Toscana"
+   ],
+   "sedi": [
+    {
+     "regione": "Toscana",
+     "citta": "Siena",
+     "sito": "https://www.unistrasi.it/",
+     "nome_mur": "Università per Stranieri di Siena"
+    }
+   ],
+   "sito": "https://www.unistrasi.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "univpm",
+   "nome": "Università Politecnica delle Marche",
+   "sigla": "UnivPM",
+   "tipo": "statale",
+   "regioni": [
+    "Marche"
+   ],
+   "sedi": [
+    {
+     "regione": "Marche",
+     "citta": "Ancona",
+     "sito": "https://www.univpm.it/",
+     "nome_mur": "Università Politecnica delle Marche – Ancona"
+    }
+   ],
+   "sito": "https://www.univpm.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-statali",
+    "pagina_aggiornata": "4 aprile 2023"
+   }
+  },
+  {
+   "id": "uniecampus",
+   "nome": "Università telematica “e-Campus”",
+   "sigla": "eCampus",
+   "tipo": "telematica",
+   "regioni": [],
+   "sedi": [
+    {
+     "regione": null,
+     "citta": "Novedrate (CO)",
+     "sito": "http://www.uniecampus.it/",
+     "nome_mur": "Università telematica “e-Campus”"
+    }
+   ],
+   "sito": "http://www.uniecampus.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-telematiche",
+    "pagina_aggiornata": "8 febbraio 2023"
+   }
+  },
+  {
+   "id": "unifortunato",
+   "nome": "Università telematica “Giustino Fortunato”",
+   "sigla": "Fortunato",
+   "tipo": "telematica",
+   "regioni": [],
+   "sedi": [
+    {
+     "regione": null,
+     "citta": "Benevento",
+     "sito": "https://www.unifortunato.eu/",
+     "nome_mur": "Università telematica “Giustino Fortunato”"
+    }
+   ],
+   "sito": "https://www.unifortunato.eu/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-telematiche",
+    "pagina_aggiornata": "8 febbraio 2023"
+   }
+  },
+  {
+   "id": "unidav",
+   "nome": "Università telematica “Leonardo da Vinci”",
+   "sigla": "UniDAV",
+   "tipo": "telematica",
+   "regioni": [],
+   "sedi": [
+    {
+     "regione": null,
+     "citta": "Torrevecchia Teatina (CH)",
+     "sito": "https://www.unidav.it/",
+     "nome_mur": "Università telematica “Leonardo da Vinci”"
+    }
+   ],
+   "sito": "https://www.unidav.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-telematiche",
+    "pagina_aggiornata": "8 febbraio 2023"
+   }
+  },
+  {
+   "id": "uniroma5",
+   "nome": "Università telematica “San Raffaele”",
+   "sigla": "San Raffaele Roma",
+   "tipo": "telematica",
+   "regioni": [],
+   "sedi": [
+    {
+     "regione": null,
+     "citta": "Roma",
+     "sito": "https://www.uniroma5.it/",
+     "nome_mur": "Università telematica “San Raffaele”"
+    }
+   ],
+   "sito": "https://www.uniroma5.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-telematiche",
+    "pagina_aggiornata": "8 febbraio 2023"
+   }
+  },
+  {
+   "id": "unimercatorum",
+   "nome": "Università telematica “Universitas Mercatorum”",
+   "sigla": "Mercatorum",
+   "tipo": "telematica",
+   "regioni": [],
+   "sedi": [
+    {
+     "regione": null,
+     "citta": "Roma",
+     "sito": "https://www.unimercatorum.it/",
+     "nome_mur": "Università telematica “Universitas Mercatorum”"
+    }
+   ],
+   "sito": "https://www.unimercatorum.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-telematiche",
+    "pagina_aggiornata": "8 febbraio 2023"
+   }
+  },
+  {
+   "id": "iul",
+   "nome": "Università telematica degli studi “IUL”",
+   "sigla": "IUL",
+   "tipo": "telematica",
+   "regioni": [],
+   "sedi": [
+    {
+     "regione": null,
+     "citta": "Firenze",
+     "sito": "https://www.iuline.it/",
+     "nome_mur": "Università telematica degli studi “IUL”"
+    }
+   ],
+   "sito": "https://www.iuline.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-telematiche",
+    "pagina_aggiornata": "8 febbraio 2023"
+   }
+  },
+  {
+   "id": "uninettuno",
+   "nome": "Università telematica internazionale “Uninettuno”",
+   "sigla": "Uninettuno",
+   "tipo": "telematica",
+   "regioni": [],
+   "sedi": [
+    {
+     "regione": null,
+     "citta": "Roma",
+     "sito": "https://www.uninettunouniversity.net/",
+     "nome_mur": "Università telematica internazionale “Uninettuno”"
+    }
+   ],
+   "sito": "https://www.uninettunouniversity.net/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-telematiche",
+    "pagina_aggiornata": "8 febbraio 2023"
+   }
+  },
+  {
+   "id": "unimarconi",
+   "nome": "Università telematica “Guglielmo Marconi”",
+   "sigla": "Marconi",
+   "tipo": "telematica",
+   "regioni": [],
+   "sedi": [
+    {
+     "regione": null,
+     "citta": "Roma",
+     "sito": "https://www.unimarconi.it/",
+     "nome_mur": "Università telematica “Guglielmo Marconi”"
+    }
+   ],
+   "sito": "https://www.unimarconi.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-telematiche",
+    "pagina_aggiornata": "8 febbraio 2023"
+   }
+  },
+  {
+   "id": "unicusano",
+   "nome": "Università telematica “Niccolò Cusano”",
+   "sigla": "Unicusano",
+   "tipo": "telematica",
+   "regioni": [],
+   "sedi": [
+    {
+     "regione": null,
+     "citta": "Roma",
+     "sito": "https://www.unicusano.it/",
+     "nome_mur": "Università telematica “Niccolò Cusano”"
+    }
+   ],
+   "sito": "https://www.unicusano.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-telematiche",
+    "pagina_aggiornata": "8 febbraio 2023"
+   }
+  },
+  {
+   "id": "unipegaso",
+   "nome": "Università telematica “Pegaso”",
+   "sigla": "Pegaso",
+   "tipo": "telematica",
+   "regioni": [],
+   "sedi": [
+    {
+     "regione": null,
+     "citta": "Napoli",
+     "sito": "https://www.unipegaso.it/",
+     "nome_mur": "Università telematica “Pegaso”"
+    }
+   ],
+   "sito": "https://www.unipegaso.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-telematiche",
+    "pagina_aggiornata": "8 febbraio 2023"
+   }
+  },
+  {
+   "id": "unitelma",
+   "nome": "Università telematica “UNITELMA Sapienza”",
+   "sigla": "Unitelma",
+   "tipo": "telematica",
+   "regioni": [],
+   "sedi": [
+    {
+     "regione": null,
+     "citta": "Roma",
+     "sito": "https://www.unitelmasapienza.it/",
+     "nome_mur": "Università telematica “UNITELMA Sapienza”"
+    }
+   ],
+   "sito": "https://www.unitelmasapienza.it/",
+   "fonte": {
+    "url": "https://www.mur.gov.it/it/aree-tematiche/universita/le-universita/universita-telematiche",
+    "pagina_aggiornata": "8 febbraio 2023"
+   }
+  }
+ ]
+}

@@ -1,0 +1,3534 @@
+{
+ "universita_id": "unibo",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Corso di laurea in Acquacoltura e igiene delle produzioni ittiche",
+   "fonte": "https://corsi.unibo.it/laurea/acquacoltura/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami (solo primo anno)",
+     "inizio": "2026-11-23",
+     "fine": "2026-11-27",
+     "note": null
+    },
+    {
+     "nome": "Esami 1° semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Esami 2° semestre",
+     "inizio": "2027-05-31",
+     "fine": "2027-09-10",
+     "note": "Sosta estiva dal 09/08/2027 al 20/08/2027"
+    }
+   ],
+   "corsi": [
+    "unibo-l-38-acquacoltura-e-igiene-delle-produzioni-ittiche"
+   ]
+  },
+  {
+   "ambito": "Scuola di Ingegneria e Architettura (sede di Bologna)",
+   "fonte": "https://corsi.unibo.it/laurea/ArchitetturaIngegneria/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Primo periodo di esami",
+     "inizio": "2026-12-19",
+     "fine": "2027-02-14",
+     "note": null
+    },
+    {
+     "nome": "Secondo periodo di esami",
+     "inizio": "2027-06-05",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-17-architettura-ingegneria",
+    "unibo-l-4-design-del-prodotto-industriale",
+    "unibo-l-9-ingegneria-chimica-e-biochimica",
+    "unibo-l-7-ingegneria-civile",
+    "unibo-l-8-ingegneria-dell-automazione",
+    "unibo-l-9-ingegneria-dell-energia-elettrica",
+    "unibo-l-8-ingegneria-elettronica-e-telecomunicazioni",
+    "unibo-l-9-ingegneria-energetica",
+    "unibo-l-9-ingegneria-gestionale",
+    "unibo-l-8-ingegneria-informatica",
+    "unibo-l-9-ingegneria-meccanica",
+    "unibo-l-7-ingegneria-per-l-ambiente-e-il-territorio",
+    "unibo-lm-12-advanced-design",
+    "unibo-lm-22-ingegneria-chimica-e-di-processo",
+    "unibo-lm-23-ingegneria-civile",
+    "unibo-lm-28-ingegneria-dell-energia-elettrica",
+    "unibo-lm-4-ingegneria-edile-architettura",
+    "unibo-lm-29-ingegneria-elettronica",
+    "unibo-lm-30-ingegneria-energetica",
+    "unibo-lm-31-ingegneria-gestionale",
+    "unibo-lm-32-ingegneria-informatica",
+    "unibo-lm-33-ingegneria-meccanica",
+    "unibo-lm-35-ingegneria-per-l-ambiente-e-il-territorio",
+    "unibo-l-p03-compositi-polimerici",
+    "unibo-l-p03-meccatronica",
+    "unibo-l-p01-tecniche-per-l-edilizia-e-il-territorio"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Astronomia",
+   "fonte": "https://corsi.unibo.it/laurea/Astronomia/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-30-astronomia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Biotecnologie",
+   "fonte": "https://corsi.unibo.it/2cycle/PharmaceuticalIndustrialBiotechnology/academic-calendar/calendario-didattico-cds-fabit-202627.xlsx/@@download/file/Calendario didattico CDS FABIT 202627.xlsx",
+   "sessioni": [
+    {
+     "nome": "1° periodo",
+     "inizio": "2026-12-18",
+     "fine": "2026-12-22",
+     "note": "18, 21 e 22 dicembre 2026; le lezioni del 1° anno non si sospendono"
+    },
+    {
+     "nome": "2° periodo (2° e 3° anno)",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "2° periodo (1° anno)",
+     "inizio": "2027-02-08",
+     "fine": "2027-03-05",
+     "note": null
+    },
+    {
+     "nome": "3° periodo",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "4° periodo",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "5° periodo",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-2-biotecnologie"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Building Construction Engineering (Ravenna)",
+   "fonte": "https://corsi.unibo.it/1cycle/Building/academic-calendar-2026-27",
+   "sessioni": [
+    {
+     "nome": "Exam sessions – I Period",
+     "inizio": "2026-12-21",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Exam sessions – II Period",
+     "inizio": "2027-06-07",
+     "fine": "2027-09-10",
+     "note": "Di norma niente esami ad agosto"
+    }
+   ],
+   "corsi": [
+    "unibo-l-23-building-construction-engineering"
+   ]
+  },
+  {
+   "ambito": "Dipartimenti di Scienze Aziendali (DISA), Scienze Economiche (DSE) e Scienze Statistiche (STAT) – sede di Bologna",
+   "fonte": "https://corsi.unibo.it/s/3394/p/it/calendario-didattico-1/calendario-pdf.pdf/@@download/file/ITA calendario didattico DISA,DSE,STAT 26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Esami 1° sub-ciclo",
+     "inizio": "2026-10-26",
+     "fine": "2026-11-07",
+     "note": null
+    },
+    {
+     "nome": "Esami 2° sub-ciclo",
+     "inizio": "2026-12-17",
+     "fine": "2027-02-06",
+     "note": "Dal 17 al 23 dicembre 2026 e dal 7 gennaio al 6 febbraio 2027"
+    },
+    {
+     "nome": "Esami 3° sub-ciclo",
+     "inizio": "2027-03-18",
+     "fine": "2027-04-10",
+     "note": "Pausa pasquale dal 25 al 30 marzo 2027"
+    },
+    {
+     "nome": "Esami 4° sub-ciclo",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Appello di recupero",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-18-business-and-economics",
+    "unibo-l-18-economia-aziendale",
+    "unibo-l-33-economia-mercati-e-istituzioni",
+    "unibo-l-33-economics-and-finance",
+    "unibo-l-33-l-36-economics-politics-and-social-sciences",
+    "unibo-l-18-management-e-marketing",
+    "unibo-l-41-scienze-statistiche",
+    "unibo-lm-56-applied-economics-and-markets",
+    "unibo-lm-77-direzione-aziendale",
+    "unibo-lm-77-economia-consulenza-e-professioni",
+    "unibo-lm-56-economics-and-econometrics",
+    "unibo-lm-56-economics-and-public-policy",
+    "unibo-lm-16-finanza-intermediari-e-mercati",
+    "unibo-lm-16-greening-energy-market-and-finance",
+    "unibo-lm-77-international-management",
+    "unibo-lm-16-quantitative-finance",
+    "unibo-lm-82-statistica-economia-e-impresa",
+    "unibo-lm-82-statistical-sciences"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Chimica e chimica dei materiali",
+   "fonte": "https://corsi.unibo.it/laurea/chimica/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "Per il I anno: 25 gennaio-19 febbraio 2027. Sessione straordinaria 7-8 gennaio 2027 per il primo anno"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Per il III anno dal 31 maggio 2027"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-04-22",
+     "fine": "2027-04-23",
+     "note": "Per tutti e tre gli anni, senza sospensione delle lezioni"
+    }
+   ],
+   "corsi": [
+    "unibo-l-27-chimica-e-chimica-dei-materiali"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Chimica industriale",
+   "fonte": "https://corsi.unibo.it/laurea/ChimicaIndustriale/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami (sospensione lezioni) 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "Per il I anno dal 14 gennaio (Chimica industriale) o dal 18 gennaio 2027 (Chimica industriale e tecnologie per i materiali), soli esami del I ciclo"
+    },
+    {
+     "nome": "Esami (sospensione lezioni) 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "Soli esami di materie del I ciclo o studenti in debito di prova"
+    },
+    {
+     "nome": "Esami (sospensione lezioni) 3",
+     "inizio": "2027-06-07",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-27-chimica-industriale"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Chimica industriale e tecnologie per i materiali",
+   "fonte": "https://corsi.unibo.it/laurea/ChimicaMateriali/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami (sospensione lezioni) 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": "Per il I anno dal 14 gennaio (Chimica industriale) o dal 18 gennaio 2027 (Chimica industriale e tecnologie per i materiali), soli esami del I ciclo"
+    },
+    {
+     "nome": "Esami (sospensione lezioni) 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "Soli esami di materie del I ciclo o studenti in debito di prova"
+    },
+    {
+     "nome": "Esami (sospensione lezioni) 3",
+     "inizio": "2027-06-07",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-27-chimica-industriale-e-tecnologie-per-i-materiali"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Giuridiche – corsi di Bologna",
+   "fonte": "https://corsi.unibo.it/laurea/ConsulenteLavoroRelazioniAziendali/calendario-didattico/calendario-didattico-bologna-26-27-da-pubblicare-1.pdf",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-23",
+     "note": "Per studenti in debito degli anni precedenti, incoming e in corso esclusi gli iscritti al primo anno"
+    },
+    {
+     "nome": "Appelli 1° semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "3 finestre: 7-21 gennaio, 22 gennaio-5 febbraio, 8-19 febbraio 2027"
+    },
+    {
+     "nome": "Appelli 2° semestre",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-22",
+     "note": "3 finestre: 24 maggio-11 giugno, 14 giugno-2 luglio, 5-22 luglio 2027"
+    },
+    {
+     "nome": "Appelli di recupero",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-14-consulente-del-lavoro-e-delle-relazioni-aziendali",
+    "unibo-lm-sc-giur-legal-studies",
+    "unibo-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Campus di Rimini – corsi DISA, DSE e STAT",
+   "fonte": "https://corsi.unibo.it/s/3440/p/it/calendario-didattico-rimini.htm/calendario-didattico-cds-disa-e-dse-2026-27-rimini.pdf/@@download/file/Calendario didattico cds DISA e DSE 2026-27 Rimini.pdf",
+   "sessioni": [
+    {
+     "nome": "Prove parziali ed esami di fine corso",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami opzionale",
+     "inizio": "2026-12-21",
+     "fine": "2026-12-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione d'esami",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-05",
+     "note": null
+    },
+    {
+     "nome": "Prove parziali ed esami di fine corso",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-09",
+     "note": null
+    },
+    {
+     "nome": "Sessione d'esami (+ lauree)",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione d'esami (+ lauree)",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-18-economia-dell-impresa",
+    "unibo-l-33-economics-of-tourism-and-cities",
+    "unibo-l-41-statistica-finanza-e-assicurazioni",
+    "unibo-lm-77-amministrazione-e-gestione-d-impresa",
+    "unibo-lm-56-resource-economics-and-sustainable-development",
+    "unibo-lm-83-scienze-statistiche-finanziarie-e-attuariali",
+    "unibo-lm-77-service-management",
+    "unibo-lm-56-tourism-economics-and-management"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Economia e commercio (Forlì)",
+   "fonte": "https://corsi.unibo.it/laurea/EconomiaCommercio/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami 1° semestre 1",
+     "inizio": "2026-10-26",
+     "fine": "2026-11-07",
+     "note": "26, 27, 28, 30 ottobre e 2-7 novembre 2026"
+    },
+    {
+     "nome": "Esami 1° semestre 2",
+     "inizio": "2026-12-17",
+     "fine": "2027-02-06",
+     "note": "17, 18, 22, 23 dicembre 2026 e 7 gennaio-6 febbraio 2027"
+    },
+    {
+     "nome": "Esami 2° semestre 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-10",
+     "note": "22, 23 marzo e 31 marzo-10 aprile 2027"
+    },
+    {
+     "nome": "Esami 2° semestre 2",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Appello di recupero",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-18-economia-e-commercio"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze e Tecnologie Agro-Alimentari (DISTAL)",
+   "fonte": "https://corsi.unibo.it/laurea/EconomiaMarketingAgroIndustriale/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Periodo d'esami I ciclo",
+     "inizio": "2026-12-19",
+     "fine": "2027-02-21",
+     "note": "Il calendario indica «dal termine del I ciclo (18/12/2026) fino all'inizio delle lezioni del II ciclo (22/02/2027)». Il periodo per gli insegnamenti del I e II ciclo va dal termine del II ciclo (28/05/2027) all'inizio delle lezioni dell'a.a. 2027/28, con sospensione ad agosto: data di fine non ancora pubblicata"
+    }
+   ],
+   "corsi": [
+    "unibo-l-25-economia-e-mercati-agro-alimentari",
+    "unibo-l-38-produzioni-animali",
+    "unibo-l-gastr-scienze-e-cultura-della-gastronomia",
+    "unibo-l-25-scienze-e-tecnologie-per-il-verde-e-il-paesaggio",
+    "unibo-l-25-tecnologie-agrarie",
+    "unibo-l-26-tecnologie-alimentari",
+    "unibo-l-25-tecnologie-per-il-territorio-e-l-ambiente-agro-forestale",
+    "unibo-l-26-viticoltura-ed-enologia",
+    "unibo-lm-7-biotecnologie-agrarie-vegetali",
+    "unibo-lm-73-progettazione-e-gestione-del-territorio-forestale-del-paesag",
+    "unibo-lm-69-scienze-e-tecnologie-agrarie",
+    "unibo-lm-70-scienze-e-tecnologie-alimentari"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Educazione professionale",
+   "fonte": "https://corsi.unibo.it/laurea/EducazioneProfessionale/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "1ª sessione (2° e 3° anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-30",
+     "note": null
+    },
+    {
+     "nome": "1ª sessione (1° anno)",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione (1° e 2° anno)",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione (3° anno)",
+     "inizio": "2027-05-03",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione (1° e 2° anno)",
+     "inizio": "2027-09-06",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione (3° anno)",
+     "inizio": "2027-09-06",
+     "fine": "2027-11-07",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt2-educazione-professionale-abilitante-alla-professione-sanitar"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Fisica",
+   "fonte": "https://corsi.unibo.it/laurea/fisica/Calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-30-fisica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Fisioterapia",
+   "fonte": "https://corsi.unibo.it/laurea/fisioterapia/calendario-didattico/date-cicli_26-27.pdf/@@download/file/Date Cicli_26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "1ª sessione (1° anno)",
+     "inizio": "2027-01-18",
+     "fine": "2027-06-05",
+     "note": null
+    },
+    {
+     "nome": "1ª sessione (2° anno)",
+     "inizio": "2026-12-07",
+     "fine": "2027-05-29",
+     "note": null
+    },
+    {
+     "nome": "1ª sessione (3° anno)",
+     "inizio": "2027-02-01",
+     "fine": "2027-06-30",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione (1° anno)",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-28",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione (2° anno)",
+     "inizio": "2027-05-31",
+     "fine": "2027-08-28",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione (3° anno)",
+     "inizio": "2027-07-01",
+     "fine": "2027-08-28",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-12-31",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Genomics",
+   "fonte": "https://corsi.unibo.it/2cycle/PharmaceuticalIndustrialBiotechnology/academic-calendar/calendario-didattico-cds-fabit-202627.xlsx/@@download/file/Calendario didattico CDS FABIT 202627.xlsx",
+   "sessioni": [
+    {
+     "nome": "1° periodo",
+     "inizio": "2026-12-18",
+     "fine": "2026-12-22",
+     "note": "18, 21 e 22 dicembre 2026; le lezioni del 1° anno non si sospendono"
+    },
+    {
+     "nome": "2° periodo",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "3° periodo",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "4° periodo (2° e 3° anno)",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "1° anno: 14/06-30/07/2027"
+    },
+    {
+     "nome": "5° periodo",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-2-genomics"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Giuridiche – corsi di Ravenna",
+   "fonte": "https://corsi.unibo.it/magistralecu/Giurisprudenza-Ravenna/calendario-didattico-2026-2027",
+   "sessioni": [
+    {
+     "nome": "Appello straordinario",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-23",
+     "note": "Per studenti in debito degli anni precedenti, incoming e in corso esclusi gli iscritti al primo anno"
+    },
+    {
+     "nome": "Appelli 1° semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "3 finestre: 7-21 gennaio, 22 gennaio-5 febbraio, 8-19 febbraio 2027"
+    },
+    {
+     "nome": "Appelli 2° semestre",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-22",
+     "note": "3 finestre: 24 maggio-11 giugno, 14 giugno-2 luglio, 5-22 luglio 2027"
+    },
+    {
+     "nome": "Appelli di recupero",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-14-giurista-per-le-imprese-e-per-la-pubblica-amministrazione",
+    "unibo-lmg-01-giurisprudenza-1629712"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Igiene dentale",
+   "fonte": "https://corsi.unibo.it/laurea/IgieneDentale/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Terza sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Infermieristica (Ravenna/Faenza)",
+   "fonte": "https://corsi.unibo.it/laurea/Infermieristica-Ravenna/calendario-didattico/date-cicli-22-23-per-sito.xlsx/@@download/file/All.4.1.2-Date Cicli_26-27 INF-FA.pdf",
+   "sessioni": [
+    {
+     "nome": "1ª sessione",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-29",
+     "note": null
+    },
+    {
+     "nome": "Appello straordinario (1° anno)",
+     "inizio": "2027-04-22",
+     "fine": "2027-04-27",
+     "note": "22, 23, 26 e 27 aprile 2027"
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630300"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Infermieristica (Rimini)",
+   "fonte": "https://corsi.unibo.it/laurea/Infermieristica-Rimini/calendario-didattico/programmazione-didattica-a-a-2025-26.pdf/@@download/file/Cicli didattici A.A. 2026-27 per studenti.pdf",
+   "sessioni": [
+    {
+     "nome": "Esami",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-29",
+     "note": null
+    },
+    {
+     "nome": "Esami (solo 1° anno in corso)",
+     "inizio": "2027-04-26",
+     "fine": "2027-04-30",
+     "note": null
+    },
+    {
+     "nome": "Esami",
+     "inizio": "2027-07-12",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Esami",
+     "inizio": "2027-09-06",
+     "fine": "2027-10-01",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1630301"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Informatica",
+   "fonte": "https://corsi.unibo.it/laurea/informatica/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami di profitto",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-18",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-31-informatica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Informatica per il management",
+   "fonte": "https://corsi.unibo.it/laurea/InformaticaManagement/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami di profitto",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-30",
+     "note": "Ultimo periodo: dal 30/08/2027 fino all'inizio delle lezioni a.a. 2027/28 (data di fine non pubblicata)"
+    }
+   ],
+   "corsi": [
+    "unibo-l-31-informatica-per-il-management"
+   ]
+  },
+  {
+   "ambito": "Ingegneria (sede di Forlì) – Aerospaziale e Meccanica",
+   "fonte": "https://corsi.unibo.it/laurea/IngegneriaAerospaziale/calendario-didattico-sedeeAteneo",
+   "sessioni": [
+    {
+     "nome": "Sessione esami: primo periodo",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami: secondo periodo",
+     "inizio": "2027-06-07",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-9-ingegneria-aerospaziale",
+    "unibo-l-9-ingegneria-meccanica-1629663"
+   ]
+  },
+  {
+   "ambito": "Ingegneria (sede di Cesena) – Ingegneria biomedica ed elettronica",
+   "fonte": "https://corsi.unibo.it/laurea/IngegneriaBiomedica/calendario.htm",
+   "sessioni": [
+    {
+     "nome": "Primo periodo di esami",
+     "inizio": "2026-12-21",
+     "fine": "2027-02-19",
+     "note": "Il secondo periodo va dal 07/06/2027 all'inizio delle lezioni dell'a.a. 2027/28 (data di fine non pubblicata)"
+    }
+   ],
+   "corsi": [
+    "unibo-l-8-ingegneria-biomedica",
+    "unibo-l-8-ingegneria-elettronica",
+    "unibo-lm-29-ingegneria-elettronica-per-l-intelligenza-artificiale"
+   ]
+  },
+  {
+   "ambito": "Ingegneria e Scienze Informatiche (sede di Cesena)",
+   "fonte": "https://corsi.unibo.it/laurea/IngegneriaScienzeInformatiche/calendario-didattico-1",
+   "sessioni": [
+    {
+     "nome": "Primo periodo di esami",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Il secondo periodo va dal 07/06/2027 fino all'inizio delle lezioni dell'a.a. 2027/28 (settembre 2027, data esatta non pubblicata)"
+    }
+   ],
+   "corsi": [
+    "unibo-l-8-l-31-ingegneria-e-scienze-informatiche",
+    "unibo-l-p03-tecnologie-dei-sistemi-informatici"
+   ]
+  },
+  {
+   "ambito": "Campus di Forlì – Scienze politiche (corsi in inglese)",
+   "fonte": "https://corsi.unibo.it/1cycle/InternationalStudies/academiccalendar",
+   "sessioni": [
+    {
+     "nome": "1st exam session",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "2nd exam session",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": "Sulla pagina inglese è scritto «30.07.2026», refuso: la pagina italiana dello stesso calendario indica 30.07.2027"
+    },
+    {
+     "nome": "3rd exam session",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-36-international-studies",
+    "unibo-lm-56-lm-62-international-politics-and-economics"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Lingue, Letterature e Culture Moderne",
+   "fonte": "https://corsi.unibo.it/laurea/LingueLetteratureStraniere/calendario-didattico-lingue.htm",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-05",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-22",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-11-lingue-e-letterature-straniere",
+    "unibo-l-11-lingue-mercati-e-culture-dell-asia-e-dell-africa-mediterrane",
+    "unibo-lm-39-didattica-dellitaliano-l2-plurilinguismo-interculturalita",
+    "unibo-lm-37-letterature-moderne-comparate-e-postcoloniali"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Lingue, tecnologie e comunicazione interculturale (Forlì)",
+   "fonte": "https://corsi.unibo.it/laurea/LingueTecnologieComunicazioneInterculturale/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami di profitto 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Ultima settimana supplementare per situazioni particolari"
+    },
+    {
+     "nome": "Esami di profitto 2",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-09",
+     "note": "Ultima settimana supplementare per situazioni particolari"
+    },
+    {
+     "nome": "Esami di profitto 3",
+     "inizio": "2027-08-30",
+     "fine": "2027-10-08",
+     "note": "Ultima settimana supplementare per situazioni particolari"
+    },
+    {
+     "nome": "Esami di profitto 4",
+     "inizio": "2028-01-07",
+     "fine": "2028-02-18",
+     "note": "Ultimo periodo d'esame dell'a.a. 2026/27; ultima settimana supplementare per situazioni particolari"
+    }
+   ],
+   "corsi": [
+    "unibo-l-12-lingue-tecnologie-e-comunicazione-interculturale"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Logopedia",
+   "fonte": "https://corsi.unibo.it/laurea/Logopedia/calendario-didattico/date-cicli-22-23-per-sito.xlsx/@@download/file/All.5-Logopedia Date Cicli_26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "1ª sessione (2° e 3° anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "1ª sessione (1° anno)",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione (2° e 3° anno)",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione (1° anno)",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Management and Economics (Forlì)",
+   "fonte": "https://corsi.unibo.it/1cycle/Management/academiccalendar",
+   "sessioni": [
+    {
+     "nome": "Exams 1st semester 1",
+     "inizio": "2026-10-26",
+     "fine": "2026-11-07",
+     "note": "26, 27, 28, 30 October and 2-7 November 2026"
+    },
+    {
+     "nome": "Exams 1st semester 2",
+     "inizio": "2026-12-17",
+     "fine": "2027-02-06",
+     "note": "17, 18, 22, 23 December 2026 and 7 January-6 February 2027"
+    },
+    {
+     "nome": "Exams 2nd semester 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-10",
+     "note": "22, 23 March and 31 March-10 April 2027"
+    },
+    {
+     "nome": "Exams 2nd semester 2",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Third exam session",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-18-management-and-economics"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Podologia",
+   "fonte": "https://corsi.unibo.it/laurea/Podologia/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "1ª sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt2-podologia-abilitante-alla-professione-sanitaria-di-podologo"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienza dei materiali",
+   "fonte": "https://corsi.unibo.it/laurea/ScienzaMateriali/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-31",
+     "fine": "2027-09-18",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-sc-mat-scienza-dei-materiali"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze ambientali (Ravenna)",
+   "fonte": "https://corsi.unibo.it/laurea/ScienzeAmbientali/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Appelli invernali",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Appelli estivi",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": "23 luglio chiusura per il Santo Patrono di Ravenna"
+    },
+    {
+     "nome": "Appelli autunnali",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-32-scienze-ambientali"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze dell'Educazione",
+   "fonte": "https://corsi.unibo.it/laurea/ScienzeEducazioneSocialiCulturaliBologna/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione esami (1°, 2° e 3° appello)",
+     "inizio": "2026-12-09",
+     "fine": "2027-02-06",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami (4°, 5° e 6° appello)",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami (7° appello)",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-19-scienze-dell-educazione-nei-contesti-sociali-culturali-e-di",
+    "unibo-l-19-scienze-dell-educazione-nei-contesti-sociali-culturali-e-di-1629749",
+    "unibo-l-19-scienze-delleducazione-per-i-servizi-dellinfanzia",
+    "unibo-lm-85-pedagogia",
+    "unibo-lm-50-progettazione-e-gestione-dell-intervento-educativo-nel-disag",
+    "unibo-lm-50-progettazione-e-gestione-dell-intervento-educativo-nel-disag-1629825",
+    "unibo-lm-57-scienze-della-formazione-per-il-lavoro-e-le-organizzazioni",
+    "unibo-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze per la Qualità della Vita (QUVI)",
+   "fonte": "https://corsi.unibo.it/laurea/ScienzeMotorieSportive/calendario-didattico/calendario-didattico-2627-cds-quvi.pdf/@@download/file/Calendario Didattico 2627-CdS QuVi.pdf",
+   "sessioni": [
+    {
+     "nome": "Finestra d'esame 1° periodo",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Finestra d'esame 2° periodo",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "Appelli a discrezione dei docenti"
+    },
+    {
+     "nome": "Finestra d'esame 3° periodo",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Finestra d'esame 4° periodo",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "Per il secondo anno SAMS: 30/08/2027-10/09/2027"
+    }
+   ],
+   "corsi": [
+    "unibo-l-22-scienze-delle-attivita-motorie-e-sportive",
+    "unibo-l-22-scienze-delle-attivita-motorie-e-sportive-replica-rimini",
+    "unibo-lm-47-management-delle-attivita-motorie-e-sportive",
+    "unibo-lm-61-nutrizione-umana-benessere-e-salute",
+    "unibo-lm-67-scienze-e-tecniche-dell-attivita-motoria-preventiva-e-adatta",
+    "unibo-lm-68-scienze-e-tecniche-dell-attivita-sportiva"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Scienze erboristiche e tossicologiche",
+   "fonte": "https://corsi.unibo.it/laurea/ScienzeErboristicheTossicologiche/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Finestra d'esami 1",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": null
+    },
+    {
+     "nome": "Finestra d'esami 2",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Finestra d'esami 3",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Finestra d'esami 4",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Finestra d'esami 5",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-29-scienze-erboristiche-e-tossicologiche"
+   ]
+  },
+  {
+   "ambito": "Campus di Forlì – Scienze internazionali e diplomatiche",
+   "fonte": "https://corsi.unibo.it/laurea/ScienzeInternazionaliDiplomatiche/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-36-scienze-internazionali-e-diplomatiche",
+    "unibo-lm-52-scienze-internazionali-e-diplomatiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Politiche e Sociali – sede di Bologna",
+   "fonte": "https://corsi.unibo.it/s/3394/p/it/calendario-didattico-2/all-1-calendario-didattico-2026-2027_sps_bologna-1.pdf/@@download/file/All.1 Calendario didattico 2026-2027_SPS_BOLOGNA(1).pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione esami invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami estiva (settembre)",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Nel calendario indicata anch'essa come «Sessione Esami Estiva», dopo la sospensione estiva"
+    }
+   ],
+   "corsi": [
+    "unibo-l-36-scienze-politiche-sociali-e-internazionali",
+    "unibo-lm-59-lm-19-comunicazione-giornalistica-pubblica-e-d-impresa",
+    "unibo-lm-63-lm-91-governance-e-politiche-dellinnovazione-digitale",
+    "unibo-lm-52-international-relations",
+    "unibo-lm-63-politica-amministrazione-e-organizzazione",
+    "unibo-lm-81-sviluppo-locale-e-globale"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Sociologia e Diritto dell'Economia – Servizio sociale (Bologna)",
+   "fonte": "https://corsi.unibo.it/laurea/ServizioSociale/calendario-didattico/calendario-didattico-cds-sde-bo-palazzo-hercolani-2024-25.pdf/@@download/file/SDE-Calendario Didattico_ 2026-2027_.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione esami invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami estiva (settembre)",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Nel calendario indicata anch'essa come «Sessione Esami Estiva», dopo la sospensione estiva"
+    }
+   ],
+   "corsi": [
+    "unibo-l-39-servizio-sociale",
+    "unibo-lm-87-lm-88-sociologia-e-servizio-sociale"
+   ]
+  },
+  {
+   "ambito": "Campus di Forlì – Sociologia e Scienze criminologiche",
+   "fonte": "https://corsi.unibo.it/laurea/SociologiaForli/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-40-sociologia",
+    "unibo-lm-88-scienze-criminologiche-per-l-investigazione-e-la-sicurezza"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Sviluppo e cooperazione internazionale",
+   "fonte": "https://corsi.unibo.it/laurea/SviluppoCooperazioneInternazionale/calendario-didattico/all-7-calendario-didattico-svic-26-27.pdf/@@download/file/All. 7 Calendario didattico SVIC 26-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione esami invernale",
+     "inizio": "2026-12-17",
+     "fine": "2027-02-12",
+     "note": "Dal 17 al 23 dicembre 2026 e dal 7 gennaio al 12 febbraio 2027"
+    },
+    {
+     "nome": "Sessione esami estiva",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami estiva (settembre)",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-37-sviluppo-e-cooperazione-internazionale"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche della prevenzione nell'ambiente e nei luoghi di lavoro",
+   "fonte": "https://corsi.unibo.it/laurea/PrevenzioneAmbienteLavoro/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "I sessione",
+     "inizio": "2027-01-04",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-05-03",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-01",
+     "note": "Sulla pagina è scritto «dal 01/09/2026 al 01/10/2027»: l'inizio è evidentemente 01/09/2027"
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche di neurofisiopatologia",
+   "fonte": "https://corsi.unibo.it/laurea/Neurofisiopatologia/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "1ª sessione (1° anno)",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "1ª sessione (2° anno)",
+     "inizio": "2026-12-07",
+     "fine": "2027-03-05",
+     "note": null
+    },
+    {
+     "nome": "1ª sessione (3° anno)",
+     "inizio": "2026-11-23",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione (1° anno)",
+     "inizio": "2027-05-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione (2° anno)",
+     "inizio": "2027-04-26",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione (3° anno)",
+     "inizio": "2027-03-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt3-tecniche-di-neurofisiopatologia-abilitante-alla-professione"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche ortopediche",
+   "fonte": "https://corsi.unibo.it/laurea/TecnicheOrtopediche/calendario-didattico-a-a-2020-2021",
+   "sessioni": [
+    {
+     "nome": "1ª sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt3-tecniche-ortopediche-abilitante-alla-professione-sanitaria-d"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Advanced Cosmetic Sciences (Rimini)",
+   "fonte": "https://corsi.unibo.it/2cycle/AdvancedCosmeticSciences/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "1st session (1st year)",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": "Date indicate dal corso come provvisorie in attesa del calendario accademico 2026/27. Per il 2° anno: sessione unica dal 07/01/2027"
+    },
+    {
+     "nome": "2nd session (1st year)",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "3rd session (1st year)",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "4th session (1st year)",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-14",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-54-advanced-cosmetic-sciences"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Advanced Methods in Particle Physics",
+   "fonte": "https://corsi.unibo.it/2cycle/ParticlePhysics/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Winter session",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Summer session",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Fall session",
+     "inizio": "2027-08-25",
+     "fine": "2027-09-14",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-17-advanced-methods-in-particle-physics"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Advanced Spectroscopy in Chemistry",
+   "fonte": "https://corsi.unibo.it/2cycle/AdvancedSpectroscopyChemistry/teaching-calendar",
+   "sessioni": [
+    {
+     "nome": "Exams (first year courses) 1",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Exams (first year courses) 2",
+     "inizio": "2027-06-15",
+     "fine": "2027-09-17",
+     "note": "Per gli insegnamenti del secondo anno gli esami sono dal 07/01/2027 (data di fine non indicata)"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-71-advanced-spectroscopy-in-chemistry"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Aerospace Engineering (Forlì)",
+   "fonte": "https://corsi.unibo.it/2cycle/AerospaceEngineering/teaching-calendar",
+   "sessioni": [
+    {
+     "nome": "Exams 1st semester",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Exams 2nd semester",
+     "inizio": "2027-06-07",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-20-aerospace-engineering"
+   ]
+  },
+  {
+   "ambito": "Scuola di Ingegneria e Architettura – corsi in inglese (sede di Bologna)",
+   "fonte": "https://corsi.unibo.it/2cycle/ArchitectureCreativePractices/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "First session (winter)",
+     "inizio": "2026-12-19",
+     "fine": "2027-02-14",
+     "note": null
+    },
+    {
+     "nome": "Second session (summer)",
+     "inizio": "2027-06-05",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-4-architecture-and-creative-practices-for-the-city-and-landsca",
+    "unibo-lm-18-lm-32-artificial-intelligence",
+    "unibo-lm-25-automation-engineering",
+    "unibo-lm-23-civil-engineering",
+    "unibo-lm-27-communications-engineering",
+    "unibo-lm-28-electric-vehicle-engineering"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Astrophysics and Cosmology",
+   "fonte": "https://corsi.unibo.it/2cycle/Astrophysics/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Winter session",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Summer session",
+     "inizio": "2027-05-31",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Fall session",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-58-astrophysics-and-cosmology"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Biologia della salute",
+   "fonte": "https://corsi.unibo.it/2cycle/PharmaceuticalIndustrialBiotechnology/academic-calendar/calendario-didattico-cds-fabit-202627.xlsx/@@download/file/Calendario didattico CDS FABIT 202627.xlsx",
+   "sessioni": [
+    {
+     "nome": "1° periodo",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "Per gli studenti del 2° anno"
+    },
+    {
+     "nome": "2° periodo",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "3° periodo",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "4° periodo",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "5° periodo",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-6-biologia-della-salute"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Biologia marina (Ravenna)",
+   "fonte": "https://corsi.unibo.it/magistrale/BiologiaMarina/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami ciclo 1",
+     "inizio": "2026-10-12",
+     "fine": "2026-10-16",
+     "note": null
+    },
+    {
+     "nome": "Esami ciclo 2",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-22",
+     "note": null
+    },
+    {
+     "nome": "Esami ciclo 3",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-23",
+     "note": null
+    },
+    {
+     "nome": "Esami ciclo 4",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-6-biologia-marina"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Biomedical Engineering",
+   "fonte": "https://corsi.unibo.it/2cycle/BiomedicalEngineering/teaching-calendar",
+   "sessioni": [
+    {
+     "nome": "1st exam session",
+     "inizio": "2026-12-19",
+     "fine": "2027-02-14",
+     "note": "Esclusi 24 dicembre e 4-5 gennaio (chiusura dell'Ateneo)"
+    },
+    {
+     "nome": "2nd exam period",
+     "inizio": "2027-06-05",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-21-biomedical-engineering"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Biotecnologie animali",
+   "fonte": "https://corsi.unibo.it/magistrale/BiotecnologieAnimali/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami (1° anno)",
+     "inizio": "2026-11-16",
+     "fine": "2026-11-20",
+     "note": null
+    },
+    {
+     "nome": "Esami",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": null
+    },
+    {
+     "nome": "Esami",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-15",
+     "note": null
+    },
+    {
+     "nome": "Esami (1° anno)",
+     "inizio": "2027-02-22",
+     "fine": "2027-03-05",
+     "note": null
+    },
+    {
+     "nome": "Esami (2° anno)",
+     "inizio": "2027-04-01",
+     "fine": "2027-09-10",
+     "note": "Sosta estiva 09-13/08/2027"
+    },
+    {
+     "nome": "Esami (1° anno)",
+     "inizio": "2027-06-14",
+     "fine": "2027-09-10",
+     "note": "Sosta estiva 09-13/08/2027"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-9-biotecnologie-animali"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Business Administration and Sustainability (Forlì)",
+   "fonte": "https://corsi.unibo.it/2cycle/BusinessAdministration-Forli/academiccalendar",
+   "sessioni": [
+    {
+     "nome": "Exams 1st semester 1",
+     "inizio": "2026-10-26",
+     "fine": "2026-11-07",
+     "note": "26, 27, 28, 30 October and 2-7 November 2026"
+    },
+    {
+     "nome": "Exams 1st semester 2",
+     "inizio": "2026-12-17",
+     "fine": "2027-02-06",
+     "note": "17, 18, 22, 23 December 2026 and 7 January-6 February 2027"
+    },
+    {
+     "nome": "Exams 2nd semester 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-10",
+     "note": "22, 23 March and 31 March-10 April 2027"
+    },
+    {
+     "nome": "Exams 2nd semester 2",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Third exam session",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-77-business-administration-and-sustainability"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Chimica",
+   "fonte": "https://corsi.unibo.it/magistrale/Chimica/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "Primo anno; per il secondo anno 07/01/2027-01/06/2027"
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "Solo primo anno"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-10",
+     "note": "Primo anno; per il secondo anno dal 23/08/2027 in poi"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-54-chimica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Chimica e tecnologia per la valorizzazione delle sostanze naturali",
+   "fonte": "https://corsi.unibo.it/magistrale/ChimicaSostanzeNaturali/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-20",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-04-01",
+     "fine": "2027-04-03",
+     "note": "Con sospensione delle lezioni"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-25",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-54-chimica-e-tecnologia-per-la-valorizzazione-delle-sostanze-na"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Digital Transformation Management (Cesena)",
+   "fonte": "https://corsi.unibo.it/2cycle/DigitalTransformationManagement/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "1st exam session",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Sulla pagina è scritto «From January 7th 2026», refuso per 2027. La 2nd exam session va dal 07/06/2027 all'inizio delle lezioni a.a. 2027/28 (settembre 2027, data esatta non pubblicata)"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-91-digital-transformation-management"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in East European and Eurasian Studies (Forlì)",
+   "fonte": "https://corsi.unibo.it/2cycle/mirees/academic_calendar",
+   "sessioni": [
+    {
+     "nome": "1st exam session",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-29",
+     "note": null
+    },
+    {
+     "nome": "2nd exam session",
+     "inizio": "2027-06-03",
+     "fine": "2027-07-30",
+     "note": "Sulla pagina è scritto «30.07.2026», refuso per 2027"
+    },
+    {
+     "nome": "3rd exam session",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-52-east-european-and-eurasian-studies"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Aziendali/Economiche – lauree magistrali (calendario a periodi)",
+   "fonte": "https://corsi.unibo.it/magistrale/EconomiaCommercio/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami 1° semestre 1",
+     "inizio": "2026-10-26",
+     "fine": "2026-11-07",
+     "note": "26, 27, 28, 30 ottobre e 2-7 novembre 2026"
+    },
+    {
+     "nome": "Esami 1° semestre 2",
+     "inizio": "2026-12-17",
+     "fine": "2027-02-06",
+     "note": "17, 18, 22, 23 dicembre 2026 e 7 gennaio-6 febbraio 2027"
+    },
+    {
+     "nome": "Esami 2° semestre 1",
+     "inizio": "2027-03-22",
+     "fine": "2027-04-10",
+     "note": "22, 23 marzo e 31 marzo-10 aprile 2027"
+    },
+    {
+     "nome": "Esami 2° semestre 2",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Appello di recupero",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-77-economia-e-commercio",
+    "unibo-lm-77-economia-e-management",
+    "unibo-lm-77-management-dell-economia-sociale"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Sociologia e Diritto dell'Economia – LM Economia e diritto",
+   "fonte": "https://corsi.unibo.it/magistrale/EconomiaDiritto/calendario-didattico/calendario-didattico-2026-2027.pdf/@@download/file/Calendario didattico 2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione esami primo ciclo",
+     "inizio": "2026-10-26",
+     "fine": "2026-11-07",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami secondo sub-ciclo",
+     "inizio": "2026-12-17",
+     "fine": "2027-02-06",
+     "note": "Dal 17 al 23 dicembre 2026 e dal 7 gennaio al 6 febbraio 2027"
+    },
+    {
+     "nome": "Sessione esami terzo ciclo",
+     "inizio": "2027-03-18",
+     "fine": "2027-04-10",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami quarto sub-ciclo",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami di recupero",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-56-economia-e-diritto"
+   ]
+  },
+  {
+   "ambito": "Ingegneria (sede di Ravenna) – corsi in inglese",
+   "fonte": "https://corsi.unibo.it/2cycle/EngineeringProcessesSystems/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "First exam period",
+     "inizio": "2026-12-21",
+     "fine": "2027-02-12",
+     "note": "Sospensione per le vacanze di Natale dal 23/12/2026 al 06/01/2027"
+    },
+    {
+     "nome": "Second exam period",
+     "inizio": "2027-06-07",
+     "fine": "2027-09-10",
+     "note": "Di norma niente esami ad agosto"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-24-engineering-for-historic-building-rehabilitation",
+    "unibo-lm-22-lm-35-offshore-engineering-for-energy-transition"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Food Animal Metabolism and Management in the Circular Economy",
+   "fonte": "https://corsi.unibo.it/2cycle/FoodAnimalMetabolismManagement/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Exams (2nd year)",
+     "inizio": "2026-12-09",
+     "fine": "2026-12-18",
+     "note": null
+    },
+    {
+     "nome": "Exams (2nd year)",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-22",
+     "note": null
+    },
+    {
+     "nome": "Exams (1st year)",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Exams (2nd year)",
+     "inizio": "2027-03-01",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Exams (2nd year)",
+     "inizio": "2027-03-31",
+     "fine": "2027-09-17",
+     "note": "Summer holidays 09-13/08/2027"
+    },
+    {
+     "nome": "Exams (1st year)",
+     "inizio": "2027-06-03",
+     "fine": "2027-09-17",
+     "note": "Summer holidays 09-13/08/2027"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-86-food-animal-metabolism-and-management-in-the-circular-econom"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Health Economics and Management (Eu-HEM)",
+   "fonte": "https://corsi.unibo.it/2cycle/euHealthEconomicsManagement/academic-calendar/eu-hem-academic-calendar_2026-27.pdf/@@download/file/Eu-HEM Academic calendar_2026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Exams I term",
+     "inizio": "2026-10-26",
+     "fine": "2026-11-07",
+     "note": null
+    },
+    {
+     "nome": "Exams II term",
+     "inizio": "2026-12-17",
+     "fine": "2026-12-23",
+     "note": null
+    },
+    {
+     "nome": "Exams – 1st retake of I and II term",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-06",
+     "note": "Solo il primo semestre si svolge a Bologna; gli altri semestri presso le università partner"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-56-health-economics-and-management"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Informatica",
+   "fonte": "https://corsi.unibo.it/magistrale/informatica/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami di profitto",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-18",
+     "note": "Soggetto a variazione"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-18-informatica"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Ingegneria e scienze informatiche (Cesena)",
+   "fonte": "https://corsi.unibo.it/magistrale/IngegneriaScienzeInformatiche/calendario-didattico-1",
+   "sessioni": [
+    {
+     "nome": "Primo periodo di esami",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Il secondo periodo va dal 07/06/2027 fino all'inizio delle lezioni dell'a.a. 2027/28 (settembre 2027, data esatta non pubblicata)"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-18-lm-32-ingegneria-e-scienze-informatiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Ingegneria nautica (Forlì)",
+   "fonte": "https://corsi.unibo.it/magistrale/IngegneriaNautica/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Sessione esami: primo periodo",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami: secondo periodo",
+     "inizio": "2027-06-07",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-34-ingegneria-nautica"
+   ]
+  },
+  {
+   "ambito": "DISTAL – corsi in inglese (International Horticultural Science, Precise and Sustainable Agriculture)",
+   "fonte": "https://corsi.unibo.it/2cycle/InternationalHorticulturalScience/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "First semester exams",
+     "inizio": "2026-12-19",
+     "fine": "2027-02-21",
+     "note": "Il calendario indica «from the end of first semester (18/12/2026) to the beginning of second-semester classes (22/02/2027)». Il periodo per gli esami del I e II semestre va dalla fine del secondo semestre (28/05/2027) all'inizio delle lezioni a.a. 2027/28, con sospensione ad agosto: data di fine non pubblicata"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-69-international-horticultural-science",
+    "unibo-lm-69-precise-and-sustainable-agriculture"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Interpretazione (Forlì)",
+   "fonte": "https://corsi.unibo.it/magistrale/Interpretazione/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami di profitto 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto 2",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-02",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto 3",
+     "inizio": "2027-08-30",
+     "fine": "2027-10-01",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto 4",
+     "inizio": "2028-01-07",
+     "fine": "2028-02-11",
+     "note": "Ultimo periodo d'esame dell'a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-94-interpretazione"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Language, Society and Communication",
+   "fonte": "https://corsi.unibo.it/2cycle/LanguageSocietyCommunication/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Winter",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-05",
+     "note": null
+    },
+    {
+     "nome": "Summer",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Fall",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-22",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-38-language-society-and-communication"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Law, Economics and Governance",
+   "fonte": "https://corsi.unibo.it/2cycle/LawEconomicsGovernance/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Exams (first term)",
+     "inizio": "2026-10-26",
+     "fine": "2026-11-07",
+     "note": null
+    },
+    {
+     "nome": "Exams (second term)",
+     "inizio": "2026-12-17",
+     "fine": "2027-02-06",
+     "note": "17-23/12/2026 e 07/01-06/02/2027"
+    },
+    {
+     "nome": "Exams (third term)",
+     "inizio": "2027-03-18",
+     "fine": "2027-04-10",
+     "note": "18-24/03/2027 e 31/03-10/04/2027"
+    },
+    {
+     "nome": "Exams (fourth term)",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Recovery exams",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-sc-giur-lm-56-law-economics-and-governance"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Low Carbon Technologies and Sustainable Chemistry",
+   "fonte": "https://corsi.unibo.it/2cycle/LowCarbonTechnologiesChemistry/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Exams (first year courses) 1",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Exams (first year courses) 2",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Exams (first year courses) 3",
+     "inizio": "2027-06-15",
+     "fine": "2027-09-17",
+     "note": "Per gli insegnamenti del secondo anno gli esami sono dal 07/01/2027 (data di fine non indicata)"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-71-lm-75-low-carbon-technologies-and-sustainable-chemistry"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Medical Biotechnology",
+   "fonte": "https://corsi.unibo.it/2cycle/MedicalBiotechnology/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Exams – extraordinary session (winter)",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-08",
+     "note": null
+    },
+    {
+     "nome": "Exams – 1st session",
+     "inizio": "2027-02-01",
+     "fine": "2027-03-05",
+     "note": "Year 2: 01/02/2027-04/06/2027"
+    },
+    {
+     "nome": "Exams – extraordinary session (spring)",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Exams – 2nd session",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Exams – 3rd session",
+     "inizio": "2027-08-30",
+     "fine": "2027-10-01",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-9-medical-biotechnology"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Molecular and Computational Biology",
+   "fonte": "https://corsi.unibo.it/2cycle/PharmaceuticalIndustrialBiotechnology/academic-calendar/calendario-didattico-cds-fabit-202627.xlsx/@@download/file/Calendario didattico CDS FABIT 202627.xlsx",
+   "sessioni": [
+    {
+     "nome": "1° periodo",
+     "inizio": "2026-10-26",
+     "fine": "2026-10-28",
+     "note": "Gli studenti del 1° anno frequentano regolarmente le lezioni"
+    },
+    {
+     "nome": "2° periodo",
+     "inizio": "2026-12-21",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "3° periodo",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-08",
+     "note": null
+    },
+    {
+     "nome": "4° periodo",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "5° periodo",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "6° periodo",
+     "inizio": "2027-04-22",
+     "fine": "2027-04-23",
+     "note": null
+    },
+    {
+     "nome": "7° periodo",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "8° periodo",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-28",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-6-molecular-and-computational-biology"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Pharmaceutical and Industrial Biotechnology",
+   "fonte": "https://corsi.unibo.it/2cycle/PharmaceuticalIndustrialBiotechnology/academic-calendar/calendario-didattico-cds-fabit-202627.xlsx/@@download/file/Calendario didattico CDS FABIT 202627.xlsx",
+   "sessioni": [
+    {
+     "nome": "1° periodo (I anno)",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": "Per il II anno (Pharmaceutical Biotechnology): 14-18/12/2026, 25/01-26/02/2027, 31/03-02/04/2027, 14/06-30/07/2027, 01-30/09/2027"
+    },
+    {
+     "nome": "2° periodo",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "3° periodo",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "4° periodo",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-8-lm-9-pharmaceutical-and-industrial-biotechnology"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Photochemistry and Molecular Materials",
+   "fonte": "https://corsi.unibo.it/2cycle/PhotochemistryMolecularMaterials/teaching-calendar",
+   "sessioni": [
+    {
+     "nome": "Extraordinary exam session",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-01",
+     "note": "Senza sospensione delle lezioni. Gli altri esami si svolgono nei periodi di sospensione delle lezioni (dalla fine del primo semestre, 15/01/2027 per il primo anno e 22/01/2027 per il secondo, all'inizio del secondo, 01/03/2027), senza date esplicite di inizio e fine"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-54-photochemistry-and-molecular-materials"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Physics",
+   "fonte": "https://corsi.unibo.it/2cycle/Physics/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Winter session",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Summer session",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Fall session",
+     "inizio": "2027-08-25",
+     "fine": "2027-09-14",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-17-physics"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Physics of the Earth's Interior, Ocean and Atmosphere",
+   "fonte": "https://corsi.unibo.it/2cycle/PhysicsEarthOceanAtmosphere/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Winter session",
+     "inizio": "2027-01-14",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Summer session",
+     "inizio": "2027-06-12",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Fall session",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-17-physics-of-the-earths-interior-ocean-and-atmosphere"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Science for the Conservation-Restoration of Cultural Heritage (Ravenna)",
+   "fonte": "https://corsi.unibo.it/2cycle/ScienceForConservation/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Exam session (winter)",
+     "inizio": "2027-01-14",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Exam session (summer/autumn)",
+     "inizio": "2027-06-07",
+     "fine": "2027-10-01",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-11-science-for-the-conservation-restoration-of-cultural-heritag"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Science of Climate",
+   "fonte": "https://corsi.unibo.it/2cycle/ClimateScience/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Winter session",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Summer session",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Fall session",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-17-lm-79-science-of-climate"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze delle professioni sanitarie della prevenzione",
+   "fonte": "https://corsi.unibo.it/magistrale/ScienzePrevenzione/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "1ª sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-10-01",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-snt4-scienze-delle-professioni-sanitarie-della-prevenzione"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Scienze infermieristiche e ostetriche",
+   "fonte": "https://corsi.unibo.it/magistrale/ScienzeInfermieristicheOstetriche/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami – I sessione",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "Esami – II sessione",
+     "inizio": "2027-06-23",
+     "fine": "2027-07-17",
+     "note": null
+    },
+    {
+     "nome": "Esami – III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-04",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Sicurezza, qualità e sostenibilità delle produzioni animali",
+   "fonte": "https://corsi.unibo.it/magistrale/ProduzioniAnimali/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami (2° anno)",
+     "inizio": "2026-11-30",
+     "fine": "2026-12-18",
+     "note": null
+    },
+    {
+     "nome": "Esami (2° anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-08",
+     "note": "Per il secondo anno gli esami del 2° semestre sono dal 05/04/2027 (data di fine non indicata)"
+    },
+    {
+     "nome": "Esami (1° anno)",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Esami (1° anno)",
+     "inizio": "2027-05-31",
+     "fine": "2027-09-10",
+     "note": "Sosta estiva 09-13/08/2027"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-86-sicurezza-qualita-e-sostenibilita-delle-produzioni-animali"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Specialized Translation (Forlì)",
+   "fonte": "https://corsi.unibo.it/2cycle/SpecializedTranslation/academic-calendar-and-holidays",
+   "sessioni": [
+    {
+     "nome": "Esami di profitto 1",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto 2",
+     "inizio": "2027-05-17",
+     "fine": "2027-07-02",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto 3",
+     "inizio": "2027-08-30",
+     "fine": "2027-10-01",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto 4",
+     "inizio": "2028-01-07",
+     "fine": "2028-02-11",
+     "note": "Ultimo periodo d'esame dell'a.a. 2026/27"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-94-specialized-translation"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Architettura (Cesena)",
+   "fonte": "https://corsi.unibo.it/magistralecu/architettura/calendario-didattico-aa-2018-19",
+   "sessioni": [
+    {
+     "nome": "Sessione straordinaria (V anno e fuori corso)",
+     "inizio": "2026-09-21",
+     "fine": "2026-12-04",
+     "note": null
+    },
+    {
+     "nome": "Primo periodo di esame",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": "Iscritti al I anno 2026/27: 18 gennaio-19 febbraio 2027. Il secondo periodo va dal 03/06/2027 all'inizio delle lezioni dell'a.a. 2027/28 (data di fine non pubblicata)"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-4-c-u-architettura"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Chimica e tecnologia farmaceutiche",
+   "fonte": "https://corsi.unibo.it/2cycle/PharmaceuticalIndustrialBiotechnology/academic-calendar/calendario-didattico-cds-fabit-202627.xlsx/@@download/file/Calendario didattico CDS FABIT 202627.xlsx",
+   "sessioni": [
+    {
+     "nome": "1° periodo",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "Gli studenti del 1° anno frequentano regolarmente le lezioni"
+    },
+    {
+     "nome": "2° periodo",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "3° periodo",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "4° periodo",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "5° periodo",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-13-chimica-e-tecnologia-farmaceutiche"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Farmacia (Bologna)",
+   "fonte": "https://corsi.unibo.it/2cycle/PharmaceuticalIndustrialBiotechnology/academic-calendar/calendario-didattico-cds-fabit-202627.xlsx/@@download/file/Calendario didattico CDS FABIT 202627.xlsx",
+   "sessioni": [
+    {
+     "nome": "1° periodo",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "Gli studenti del 1° anno frequentano regolarmente le lezioni"
+    },
+    {
+     "nome": "2° periodo",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "3° periodo",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "4° periodo",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "5° periodo",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-13-farmacia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicina e chirurgia (Forlì)",
+   "fonte": "https://corsi.unibo.it/magistralecu/MedicinaChirurgia-Forli/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "I sessione (1° anno)",
+     "inizio": "2026-12-10",
+     "fine": "2027-03-05",
+     "note": null
+    },
+    {
+     "nome": "I sessione (2° anno)",
+     "inizio": "2027-01-21",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "I sessione (3° e 4° anno)",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "I sessione (5° e 6° anno)",
+     "inizio": "2026-12-17",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sospensione per esami (studenti in debito d'esame)",
+     "inizio": "2026-12-18",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sospensione per esami",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "II sessione (1° anno)",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "II sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Per tutti gli anni"
+    },
+    {
+     "nome": "III sessione (1° anno)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Anni successivi al primo"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-41-medicina-e-chirurgia"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicina e chirurgia (Bologna)",
+   "fonte": "https://corsi.unibo.it/magistralecu/MedicinaChirurgia/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "I sessione (1° anno)",
+     "inizio": "2026-12-10",
+     "fine": "2027-03-05",
+     "note": null
+    },
+    {
+     "nome": "I sessione (2°-4° anno)",
+     "inizio": "2027-01-17",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "I sessione (5° e 6° anno)",
+     "inizio": "2026-12-17",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sospensione per esami (studenti in debito d'esame)",
+     "inizio": "2026-12-17",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sospensione per esami (2° e 3° anno)",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "Per il 4°-6° anno: 24 e 31 marzo, 1 e 2 aprile 2027"
+    },
+    {
+     "nome": "II sessione (1° anno)",
+     "inizio": "2027-06-21",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "II sessione (altri anni)",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "III sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-41-medicina-e-chirurgia-1629744"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicina e chirurgia (Ravenna)",
+   "fonte": "https://corsi.unibo.it/magistralecu/MedicinaChirurgia-Ravenna/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "I sessione (1° anno)",
+     "inizio": "2026-12-10",
+     "fine": "2027-03-05",
+     "note": null
+    },
+    {
+     "nome": "I sessione (2°-4° anno)",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "I sessione (5° e 6° anno)",
+     "inizio": "2026-12-17",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Sospensione per esami (studenti in debito d'esame)",
+     "inizio": "2026-12-17",
+     "fine": "2026-12-22",
+     "note": null
+    },
+    {
+     "nome": "Sospensione per esami (escluso primo anno)",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Seconda sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Terza sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-41-medicina-e-chirurgia-1629745"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicina veterinaria",
+   "fonte": "https://corsi.unibo.it/magistralecu/MedicinaVeterinaria/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Esami (2°-5° anno)",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": null
+    },
+    {
+     "nome": "Esami (1° anno)",
+     "inizio": "2026-12-10",
+     "fine": "2027-01-11",
+     "note": "Solo nelle giornate del 10/12/2026 e 11/01/2027"
+    },
+    {
+     "nome": "Esami (2°-4° anno)",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Esami (1° anno)",
+     "inizio": "2027-03-15",
+     "fine": "2027-03-19",
+     "note": null
+    },
+    {
+     "nome": "Esami (2°-4° anno)",
+     "inizio": "2027-04-19",
+     "fine": "2027-04-23",
+     "note": null
+    },
+    {
+     "nome": "Esami (1° anno)",
+     "inizio": "2027-05-03",
+     "fine": "2027-05-07",
+     "note": null
+    },
+    {
+     "nome": "Esami (2°-4° anno)",
+     "inizio": "2027-06-14",
+     "fine": "2027-09-10",
+     "note": "Sosta estiva 09-13/08/2027"
+    },
+    {
+     "nome": "Esami (1° anno)",
+     "inizio": "2027-06-21",
+     "fine": "2027-09-10",
+     "note": "Sosta estiva 09-13/08/2027"
+    },
+    {
+     "nome": "Esami (5° anno)",
+     "inizio": "2026-11-30",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-42-medicina-veterinaria"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Medicine and Surgery",
+   "fonte": "https://corsi.unibo.it/singlecycle/MedicineAndSurgery/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Exams – extra session",
+     "inizio": "2026-12-16",
+     "fine": "2026-12-23",
+     "note": "Per alcuni anni di corso (tre colonne della tabella)"
+    },
+    {
+     "nome": "Exams – 1st session (Year 1)",
+     "inizio": "2027-02-17",
+     "fine": "2027-03-12",
+     "note": null
+    },
+    {
+     "nome": "Exams – 1st session (Year 2)",
+     "inizio": "2027-01-20",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Exams – 1st session (Year 3)",
+     "inizio": "2027-01-27",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Exams – 1st session (Year 4)",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Exams – 1st session (Years 5-6)",
+     "inizio": "2026-12-16",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "Exams – extra session",
+     "inizio": "2027-03-22",
+     "fine": "2027-03-24",
+     "note": null
+    },
+    {
+     "nome": "Exams – 2nd session (Year 1)",
+     "inizio": "2027-06-23",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Exams – 2nd session (Year 2)",
+     "inizio": "2027-06-16",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Exams – 2nd session (Year 3)",
+     "inizio": "2027-06-09",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Exams – 2nd session (Years 4-6)",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Exams – 3rd session",
+     "inizio": "2027-08-30",
+     "fine": "2027-10-01",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-41-medicine-and-surgery"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Odontoiatria e protesi dentaria",
+   "fonte": "https://corsi.unibo.it/magistralecu/Odontoiatria/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Prima sessione (II-VI anno)",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": "Per il I anno: appelli del Semestre aperto"
+    },
+    {
+     "nome": "Seconda sessione (II-VI anno)",
+     "inizio": "2027-06-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Seconda sessione (I anno)",
+     "inizio": "2027-06-21",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Terza sessione",
+     "inizio": "2028-02-01",
+     "fine": "2028-02-29",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-46-odontoiatria-e-protesi-dentaria"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Pharmacy (Rimini)",
+   "fonte": "https://corsi.unibo.it/singlecycle/Pharmacy-Rimini/didactic-calendar",
+   "sessioni": [
+    {
+     "nome": "Specific window for Fuori corso students",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": "Date indicate dal corso come provvisorie in attesa del calendario accademico 2026/27"
+    },
+    {
+     "nome": "1st window (2nd-4th yr)",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": "5th yr: 16-18/12/2026"
+    },
+    {
+     "nome": "2nd window (1st, 3rd and 5th yr)",
+     "inizio": "2027-01-25",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "2nd window (2nd and 4th yr)",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-26",
+     "note": null
+    },
+    {
+     "nome": "3rd window",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": "A discrezione dei docenti"
+    },
+    {
+     "nome": "Second specific window (Fuori corso and 5th yr)",
+     "inizio": "2027-05-17",
+     "fine": "2027-05-21",
+     "note": null
+    },
+    {
+     "nome": "4th window",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "5th window (1st, 2nd, 3rd and 5th yr)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-24",
+     "note": null
+    },
+    {
+     "nome": "5th window (4th yr)",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-13-pharmacy"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Veterinary Medicine",
+   "fonte": "https://corsi.unibo.it/singlecycle/VeterinaryMedicine/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Exams (2nd year)",
+     "inizio": "2026-11-02",
+     "fine": "2026-11-06",
+     "note": null
+    },
+    {
+     "nome": "Exams (1st year)",
+     "inizio": "2026-12-14",
+     "fine": "2026-12-18",
+     "note": null
+    },
+    {
+     "nome": "Exams (2nd year)",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Exams (1st year)",
+     "inizio": "2027-02-14",
+     "fine": "2027-03-12",
+     "note": null
+    },
+    {
+     "nome": "Exams",
+     "inizio": "2027-04-19",
+     "fine": "2027-04-23",
+     "note": null
+    },
+    {
+     "nome": "Exams",
+     "inizio": "2027-06-14",
+     "fine": "2027-09-10",
+     "note": "Summer holidays 09-13/08 (2nd year) / 09-15/08 (1st year)"
+    }
+   ],
+   "corsi": [
+    "unibo-lm-42-veterinary-medicine"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea professionalizzante in Metodologie chimiche per prodotti e processi",
+   "fonte": "https://corsi.unibo.it/laurea/MetodologieChimicheProdottiProcessi/calendario-didattico",
+   "sessioni": [
+    {
+     "nome": "Appelli invernali (II e III anno)",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-12",
+     "note": "I anno: 25 gennaio-19 febbraio 2027 (matematica dal 7 gennaio)"
+    },
+    {
+     "nome": "Appelli straordinari (studenti in debito di prova)",
+     "inizio": "2027-03-31",
+     "fine": "2027-04-02",
+     "note": null
+    },
+    {
+     "nome": "Appelli estivi",
+     "inizio": "2027-06-07",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-p03-metodologie-chimiche-per-prodotti-e-processi"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Innovation and Organization of Culture and the Arts (GIOCA)",
+   "fonte": "https://corsi.unibo.it/2cycle/gioca/teaching-plan-and-contents/gioca-academic-calendar-2026-27.pdf/@@download/file/GIOCA%20Academic%20Calendar%202026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Esami I periodo",
+     "inizio": "2026-10-26",
+     "fine": "2026-11-07",
+     "note": "26-30 ottobre e 2-7 novembre 2026"
+    },
+    {
+     "nome": "Esami II periodo (dicembre)",
+     "inizio": "2026-12-17",
+     "fine": "2026-12-23",
+     "note": null
+    },
+    {
+     "nome": "Esami II periodo (gennaio-febbraio)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-06",
+     "note": "I anno; per il II anno fino al 22 gennaio 2027"
+    },
+    {
+     "nome": "Esami III periodo",
+     "inizio": "2027-03-18",
+     "fine": "2027-04-09",
+     "note": "I anno"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-24",
+     "fine": "2027-07-23",
+     "note": null
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-08-23",
+     "fine": "2027-09-11",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-76-innovation-and-organization-of-culture-and-the-arts"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Mechanical Engineering for Sustainability (Forlì)",
+   "fonte": "https://corsi.unibo.it/2cycle/MechanicalEngineering-Forli/academic-calendar",
+   "sessioni": [
+    {
+     "nome": "Esami 1° semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-19",
+     "note": null
+    },
+    {
+     "nome": "Esami 2° semestre",
+     "inizio": "2027-06-07",
+     "fine": "2027-09-10",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-lm-33-mechanical-engineering-for-sustainability"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Infermieristica (Bologna)",
+   "fonte": "https://corsi.unibo.it/laurea/Infermieristica/orari-delle-lezioni",
+   "sessioni": [
+    {
+     "nome": "Sessione esami",
+     "inizio": "2027-01-07",
+     "fine": "2027-01-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami",
+     "inizio": "2027-07-05",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "Sessione esami",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-25",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Ostetricia",
+   "fonte": "https://corsi.unibo.it/laurea/ostetricia/orari-delle-lezioni",
+   "sessioni": [
+    {
+     "nome": "1ª sessione (1° e 2° anno)",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-28",
+     "note": null
+    },
+    {
+     "nome": "1ª sessione (3° anno)",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-28",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": "Per il 3° anno dal 1° settembre 2027 «al termine ultimo stabilito con le segreterie»"
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche di laboratorio biomedico (Bologna)",
+   "fonte": "https://corsi.unibo.it/laurea/tlb-bologna/didattica",
+   "sessioni": [
+    {
+     "nome": "1ª sessione (2° e 3° anno)",
+     "inizio": "2026-11-30",
+     "fine": "2027-02-19",
+     "note": "Tabella «Calendario didattico 2026/27» pubblicata come immagine nella pagina"
+    },
+    {
+     "nome": "1ª sessione (1° anno)",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione (1° anno)",
+     "inizio": "2027-03-30",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione (3° anno)",
+     "inizio": "2027-03-30",
+     "fine": "2027-06-18",
+     "note": null
+    },
+    {
+     "nome": "2ª sessione (2° anno)",
+     "inizio": "2027-05-03",
+     "fine": "2027-07-16",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Tecniche di radiologia medica, per immagini e radioterapia",
+   "fonte": "https://corsi.unibo.it/laurea/TecnicheRadiologiaMedica/periodi-di-lezioni-tirocini-esami",
+   "sessioni": [
+    {
+     "nome": "Periodo sostenimento esami 1ª sessione",
+     "inizio": "2027-01-11",
+     "fine": "2027-06-04",
+     "note": "Tabella «Calendario didattico a.a. 2026/2027» pubblicata come immagine nella pagina; stesse date per i tre anni"
+    },
+    {
+     "nome": "Periodo sostenimento esami 2ª sessione",
+     "inizio": "2027-06-07",
+     "fine": "2027-08-27",
+     "note": null
+    },
+    {
+     "nome": "Periodo sostenimento esami 3ª sessione",
+     "inizio": "2027-08-30",
+     "fine": "2027-12-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Dietistica",
+   "fonte": "https://corsi.unibo.it/laurea/Dietistica/orario-lezioni",
+   "sessioni": [
+    {
+     "nome": "1ª sessione (1° anno)",
+     "inizio": "2027-02-21",
+     "fine": "2027-03-30",
+     "note": "Per il 2° e il 3° anno la pagina indica «1/2/2027-29/2/2027» (data di fine inesistente): non riportata tra le date"
+    },
+    {
+     "nome": "2ª sessione",
+     "inizio": "2027-06-15",
+     "fine": "2027-07-31",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione (1° e 2° anno)",
+     "inizio": "2027-08-31",
+     "fine": "2027-09-20",
+     "note": null
+    },
+    {
+     "nome": "3ª sessione (3° anno)",
+     "inizio": "2027-08-31",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unibo-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unibo-l-42-antropologia-religioni-civilta-orientali",
+  "unibo-l-1-beni-culturali",
+  "unibo-l-27-chimica-industriale-per-l-ambiente-e-le-risorse",
+  "unibo-l-3-culture-e-pratiche-della-moda",
+  "unibo-l-3-dams-discipline-delle-arti-della-musica-e-dello-spettacolo",
+  "unibo-l-36-european-studies",
+  "unibo-l-5-filosofia",
+  "unibo-l-10-lettere",
+  "unibo-l-35-matematica",
+  "unibo-l-13-scienze-biologiche",
+  "unibo-l-20-scienze-della-comunicazione",
+  "unibo-l-24-scienze-e-tecniche-psicologiche",
+  "unibo-l-34-scienze-geologiche",
+  "unibo-l-32-scienze-naturali",
+  "unibo-l-42-storia",
+  "unibo-lm-1-antropologia-culturale-ed-etnologia",
+  "unibo-lm-2-archeologia",
+  "unibo-lm-89-arti-visive",
+  "unibo-lm-6-biodiversita-ed-evoluzione",
+  "unibo-lm-71-chimica-industriale",
+  "unibo-lm-65-cinema-televisione-e-produzione-multimediale",
+  "unibo-lm-39-dati-metodi-e-modelli-per-le-scienze-linguistiche",
+  "unibo-lm-60-didattica-e-comunicazione-delle-scienze-naturali",
+  "unibo-lm-43-digital-humanities-and-digital-knowledge",
+  "unibo-lm-55-digital-minds",
+  "unibo-lm-45-lm-65-discipline-della-musica-e-del-teatro",
+  "unibo-lm-65-fashion-studies",
+  "unibo-lm-15-filologia-letteratura-e-tradizione-classica",
+  "unibo-lm-80-geografia-e-processi-territoriali",
+  "unibo-lm-74-geologia-per-lo-sviluppo-sostenibile",
+  "unibo-lm-84-global-cultures",
+  "unibo-lm-19-informazione-culture-e-organizzazione-dei-media",
+  "unibo-lm-81-international-cooperation-on-human-rights-and-intercultural",
+  "unibo-lm-14-italianistica-e-culture-letterarie-europee",
+  "unibo-lm-40-matematica",
+  "unibo-lm-sc-mat-materials-science-and-batteries",
+  "unibo-lm-51-neuroscienze-e-riabilitazione-neuropsicologica",
+  "unibo-lm-51-psicologia-clinica",
+  "unibo-lm-51-psicologia-cognitiva-applicata",
+  "unibo-lm-51-psicologia-scolastica-e-di-comunita",
+  "unibo-lm-51-psychology-of-wellbeing-and-social-inclusivity",
+  "unibo-lm-2-scienze-archeologiche-e-bioarcheologiche-in-ambiente-terrest",
+  "unibo-lm-5-scienze-del-libro-e-del-documento",
+  "unibo-lm-60-scienze-e-gestione-della-natura",
+  "unibo-lm-75-scienze-e-tecnologie-per-la-sostenibilita-ambientale",
+  "unibo-lm-78-scienze-filosofiche",
+  "unibo-lm-84-scienze-storiche-e-orientalistiche",
+  "unibo-lm-92-semiotica",
+  "unibo-lm-47-sustainable-sport-management",
+  "unibo-lm-89-teorie-e-tecniche-per-lo-studio-delle-opere-darte",
+  "unibo-lm-51-work-organizational-and-personnel-psychology",
+  "unibo-lmr-02-conservazione-e-restauro-dei-beni-culturali-abilitante-ai-se"
+ ],
+ "mancanti": "UniBo non ha un calendario d'esami unico: ogni corso pubblica il proprio calendario didattico (o quello di Dipartimento/Campus). Restano scoperti (verificato di nuovo l'11/10/2026): (a) calendari 2026/27 che indicano solo la data d'inizio degli appelli per periodo didattico, senza data di fine (area umanistica: Dipartimenti FICLIT, DAR, DiSCi, Filosofia e comunicazione, Beni culturali Ravenna; Culture e pratiche della moda, Fashion Studies, Global Cultures, Digital Humanities, Digital Minds, I-CONTACT/International Cooperation, Scienze e tecnologie per la sostenibilità ambientale); (b) calendari 2026/27 che dicono solo che gli esami si tengono nelle interruzioni delle lezioni o che riportano solo i cicli di lezione (Scienze biologiche, Scienze geologiche, Scienze naturali, Biodiversità ed evoluzione, Didattica e comunicazione delle scienze naturali, Scienze e gestione della natura, Geologia per lo sviluppo sostenibile, Matematica L e LM, Materials Science and Batteries, corsi di Psicologia); (c) pagine ancora con il solo calendario 2025/26 (Chimica industriale per l'ambiente e le risorse, LM Chimica industriale); (d) nessun calendario trovato o pagina protetta da login (European Studies; Sustainable Sport Management rimanda al login). Alcuni periodi d'esame «dalla fine delle lezioni all'inizio dell'a.a. 2027/28» non hanno data di fine e sono riportati solo in nota."
+}

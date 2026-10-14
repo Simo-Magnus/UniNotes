@@ -1,0 +1,243 @@
+{
+ "universita_id": "unimol",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Medicina e Scienze della Salute «V. Tiberio»",
+   "fonte": "https://apistrapi.unimol.it/uploads/423_Guida_dello_studente_a_a_2026_2027_53d8c33c02.pdf",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "2 appelli; vale anche come sessione straordinaria a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "2 o 3 appelli (almeno 1 a giugno e 1 a luglio)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-01",
+     "note": "1 o 2 appelli. Due appelli di recupero riservati agli studenti fuori corso: uno a novembre 2027, uno a marzo o aprile 2028 (date non ancora fissate)"
+    }
+   ],
+   "corsi": [
+    "unimol-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+    "unimol-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+    "unimol-l-9-ingegneria-medica",
+    "unimol-l-22-scienze-motorie-e-sportive",
+    "unimol-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav",
+    "unimol-l-snt3-tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-c",
+    "unimol-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+    "unimol-lm-47-management-dello-sport",
+    "unimol-lm-snt4-scienze-delle-professioni-sanitarie-della-prevenzione",
+    "unimol-lm-67-scienze-e-tecniche-delle-attivita-motorie-preventive-e-adatt",
+    "unimol-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+    "unimol-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie",
+    "unimol-lm-41-medicina-e-chirurgia",
+    "unimol-lm-snt1-scienze-infermieristiche-ed-ostetriche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Bioscienze e Territorio",
+   "fonte": "https://apistrapi.unimol.it/uploads/INF_guida_dello_studente_2026_2027_docx_386414a766.pdf",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "2 appelli; vale anche come sessione straordinaria a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "2 appelli (3 per Scienze del turismo ambientale, Progettazione e gestione dei sistemi turistici patrimoniali, Ingegneria civile, Ingegneria per la sostenibilità e la sicurezza delle costruzioni)"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-01",
+     "note": "2 appelli (1 per i corsi di turismo e Ingegneria civile). La guida prevede inoltre 1 appello tra il 7 e il 15 gennaio 2027 (non per i corsi di turismo e di ingegneria civile/costruzioni). Due appelli di recupero riservati agli studenti fuori corso: uno a novembre 2027, uno a marzo o aprile 2028 (date non ancora fissate)"
+    }
+   ],
+   "corsi": [
+    "unimol-l-31-informatica",
+    "unimol-l-8-ingegneria-informatica-per-l-intelligenza-artificiale-e-l-au",
+    "unimol-l-7-ingegneria-per-la-sostenibilita-e-la-sicurezza-delle-costruz",
+    "unimol-l-13-scienze-biologiche",
+    "unimol-l-15-scienze-del-turismo-ambientale",
+    "unimol-lm-6-biologia",
+    "unimol-lm-23-ingegneria-civile",
+    "unimol-lm-49-progettazione-e-gestione-dei-sistemi-turistici-patrimoniali",
+    "unimol-lm-66-sicurezza-dei-sistemi-software"
+   ]
+  },
+  {
+   "ambito": "Dipartimento Agricoltura, Ambiente e Alimenti",
+   "fonte": "https://apistrapi.unimol.it/uploads/NBA_GUIDA_2026_27_mio_def_035a47f430.pdf",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "2 appelli; vale anche come sessione straordinaria a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "2 o 3 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-01",
+     "note": "1 o 2 appelli. Due appelli di recupero riservati agli studenti fuori corso: uno a novembre 2027, uno a marzo o aprile 2028 (date non ancora fissate)"
+    }
+   ],
+   "corsi": [
+    "unimol-l-25-scienze-e-tecnologie-agrarie-e-forestali",
+    "unimol-l-26-scienze-e-tecnologie-degli-alimenti",
+    "unimol-lm-61-lm-70-nutrizione-e-biosicurezza-degli-alimenti",
+    "unimol-lm-69-scienze-e-tecnologie-agrarie",
+    "unimol-lm-70-scienze-e-tecnologie-dei-sistemi-alimentari",
+    "unimol-lm-73-scienze-e-tecnologie-forestali-ed-ambientali"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Scienze Umanistiche, Sociali e della Formazione",
+   "fonte": "https://apistrapi.unimol.it/uploads/LBBCC_Guida_dello_studente_2026_2027_144c1d8e5a.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-07",
+     "fine": "2027-06-30",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-30",
+     "note": "1 o 2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-02",
+     "note": "1 appello. Nella guida è scritto «1° settembre 2026 - 2 ottobre 2026», evidente refuso per il 2027 (sessione dell'a.a. 2026-2027). Sessioni straordinarie per studenti degli anni precedenti: novembre 2027 e aprile 2028 (1 appello ciascuna, date non fissate)"
+    }
+   ],
+   "corsi": [
+    "unimol-l-1-l-10-lettere-e-beni-culturali",
+    "unimol-l-20-scienze-della-comunicazione",
+    "unimol-l-24-scienze-e-tecniche-psicologiche",
+    "unimol-lm-14-lm-89-letteratura-e-storia-dell-arte",
+    "unimol-lm-51-psicologia-applicata",
+    "unimol-lm-85-bis-scienze-della-formazione-primaria"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale a ciclo unico in Giurisprudenza (Dipartimento Giuridico)",
+   "fonte": "https://apistrapi.unimol.it/uploads/Guida_dello_studente_LMG_Giurisprudenza_2026_27_c158e5684c.pdf",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "2 appelli; vale anche come sessione straordinaria a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-13",
+     "fine": "2027-09-24",
+     "note": "1 appello. Sessione fuori corso: novembre 2027 e marzo 2028 (date non fissate)"
+    }
+   ],
+   "corsi": [
+    "unimol-lmg-01-giurisprudenza"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Diritto, nuove tecnologie e sicurezza (L-14, Dipartimento Giuridico)",
+   "fonte": "https://apistrapi.unimol.it/uploads/Diritto_nuove_tecnologie_e_sicurezza_L14_3b80f016b4.pdf",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "2 appelli (almeno due settimane tra i due); vale anche come sessione straordinaria a.a. 2025/26"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-13",
+     "fine": "2027-09-24",
+     "note": "1 appello. Sessione riservata ai fuori corso: un appello a novembre 2027 e uno a marzo 2028 (date non fissate)"
+    }
+   ],
+   "corsi": [
+    "unimol-l-14-diritto-nuove-tecnologie-e-sicurezza"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale interateneo in Ingegneria biomedica (LM-21, Unimol–Unisannio–Unicas, Dipartimento di Medicina e Scienze della Salute «V. Tiberio»)",
+   "fonte": "https://apistrapi.unimol.it/uploads/Ingegneria_biomedica_LM_21_Unione_c5b92f32a0.pdf",
+   "sessioni": [
+    {
+     "nome": "Prima sessione",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-26",
+     "note": "2 appelli; coincide con la sessione straordinaria a.a. 2025/26 (2 o 3 appelli). I Dipartimenti possono fissare un terzo appello a marzo o aprile 2027"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-07",
+     "fine": "2027-07-30",
+     "note": "Almeno 1 appello a giugno e 1 a luglio"
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-10-01",
+     "note": "1 o 2 appelli. Due appelli riservati ai fuori corso: novembre 2027 e marzo o aprile 2028 (date non fissate)"
+    }
+   ],
+   "corsi": [
+    "unimol-lm-21-ingegneria-biomedica"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unimol-l-18-economia-aziendale",
+  "unimol-l-36-l-16-scienze-politiche-amministrazione-e-relazioni-internazionali",
+  "unimol-l-39-servizio-sociale-comunita-e-vulnerabilita",
+  "unimol-lm-77-management-e-consulenza-aziendale",
+  "unimol-lm-56-public-and-health-economics",
+  "unimol-lm-87-servizio-sociale-e-politiche-sociali-per-il-contrasto-alle-v",
+  "unimol-lm-62-istituzioni-governance-and-global-studies"
+ ],
+ "mancanti": "Dipartimento di Economia (Economia aziendale, Management e consulenza aziendale, Scienze politiche, Servizio sociale L-39 e LM-87, Public and Health Economics, Istituzioni, Governance and Global Studies): la guida 2026/27 di Economia aziendale e quella di Management e consulenza aziendale indicano i periodi solo per mesi (gennaio-febbraio 2027, giugno-luglio 2027, settembre 2027, novembre 2027 per i fuori corso), senza giorni; per Scienze politiche (L-36/L-16) e Istituzioni, Governance and Global Studies (LM-62) le pagine «guida dello studente» del sito Unimol hanno solo guide fino al 2025/26; per Public and Health Economics c'è solo l'opuscolo 2025/26; per i due corsi di Servizio sociale non è stata trovata la pagina della guida. Il calendario d'ateneo riportato nelle guide (finestre 18/01–26/02, 07/06–30/07, 01/09–01/10/2027) lascia ai Dipartimenti la definizione degli appelli e il Dipartimento di Economia ne ha pubblicato uno proprio solo per mesi, quindi questi corsi restano scoperti. Secondo giro (2026-10-11): trovate le guide 2026/27 di Diritto, nuove tecnologie e sicurezza (L-14) e di Ingegneria biomedica (LM-21, interateneo), ora coperti."
+}

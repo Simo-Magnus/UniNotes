@@ -1,0 +1,1393 @@
+{
+ "schema": 1,
+ "universita_id": "unidav",
+ "anno_accademico": "2026/27",
+ "aggiornato_il": "2026-10-10",
+ "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
+ "corsi": [
+  {
+   "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione",
+   "id_universitaly": "1632143",
+   "nome": "Scienze dell'educazione e della formazione",
+   "nome_en": "Educational and Training Sciences",
+   "tipo": "L",
+   "classe": "L-19",
+   "durata_anni": 3,
+   "sede": null,
+   "lingua": "it",
+   "accesso": "libero",
+   "erogazione": "Corso di studio prevalentemente a distanza",
+   "interateneo": false,
+   "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+   "stato": "parziale",
+   "fonte": "https://www.universitaly.it/cerca-corsi",
+   "verificato_il": "2026-10-10",
+   "insegnamenti": [
+    {
+     "codice": null,
+     "nome": "Cinema e comunicazione audiovisiva per l’infanzia",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "L-ART/06",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Federico Pagello"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/8_Cinema-e-comunicazione-audiovisiva-per-l_infanzia_Syllabus-24-25-1.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-cinema-e-comunicazione-audiovisiva-per-l",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Educazione all’immagine e al disegno infantile",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "ICAR/17",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Francesca Fasanino"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/9_Educazione-allimmagine-e-al-disegno-infantile_Fasanino_Syllabus-24-25.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-educazione-allimmagine-e-al-disegno-infa",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Laboratorio di Osservazione del comportamento infantile",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "M-PSI/04",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Maria Concetta Garito"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Laboratorio-Osservazione-del-comportamento-infantile_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-laboratorio-di-osservazione-del-comporta",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Laboratorio: Osservazione nei contesti educativi",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "M-PSI/04",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Maria Concetta Garito"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Laboratorio-Osservazione-nei-contesti-educativi_syllabus-2024-2025-1.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-laboratorio-osservazione-nei-contesti-ed",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Lingua e traduzione inglese",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "L-LIN/12",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Marco Canani"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Lingua-e-traduzione-inglese_syllabus-2024-2025-1.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-lingua-e-traduzione-inglese",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Pedagogia dell’inclusione socio-educativa",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PED/03",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Elisa Maia"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Pedagogia-dell_inclusione-socio-educativa_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-pedagogia-dellinclusione-socio-educativa",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Pedagogia generale",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PED/01",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Nicolò Pisanu"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/1-Pedagogia-generale-e-sociale_Pisanu_Syllabus-24-25.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-pedagogia-generale",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Pedagogia generale e sociale",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PED/01",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Nicolò Pisanu"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/1-Pedagogia-generale-e-sociale_Pisanu_Syllabus-24-25.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-pedagogia-generale-e-sociale",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Pedagogia speciale per la prima infanzia",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PED/03",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Elisa Maia"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/3-Pedagogia-speciale-prima-infanzia_Maia_Syllabus-24-25-3.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-pedagogia-speciale-per-la-prima-infanzia",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Psicologia dello sviluppo",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PSI/04",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Mirco Fasolo",
+      "Francesca Lionetti"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/4-Psicologia-dello-sviluppo_Fasolo_Syllabus-24-25-2.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-psicologia-dello-sviluppo",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Sociologia Generale",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "SPS/07",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Isabella Cordisco"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Sociologia_ita_Cordisco-3.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-sociologia-generale",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Storia contemporanea",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "M-STO/04",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Stefano Trinchese"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/5-Storia-contemporanea_Trinchese_Syllabus-24-25-1.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-storia-contemporanea",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Storia dell’educazione",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PED/02",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Ilaria Filograsso"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/2b-Storia-dell_educazione_Filograsso_Syllabus-24-25-1.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-storia-delleducazione",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Storia dell’infanzia e dell’educazione",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PED/02",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Ilaria Filograsso"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/1-Pedagogia-generale-e-sociale_Pisanu_Syllabus-24-25.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-storia-dellinfanzia-e-delleducazione",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Storia moderna",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "M-STO/02",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Prof.Giuseppe Mrozek"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/6_Storia-moderna_Mrozek_Syllabus-24-25.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-storia-moderna",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Didattica del gioco e dell’animazione",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PED/03",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Mirca Montanari"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Didattica-del-gioco-e-dell_animazione_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-didattica-del-gioco-e-dellanimazione",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Etica delle relazioni",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-FIL/03",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Giuliana Di Biase"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/7-Etica-delle-relazioni_Di-Biase_Syllabus-24-25.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-etica-delle-relazioni",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Geografia umana e delle migrazioni",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "M-GGR/01",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Silvia Scorrano"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Syllabus_scorrano-2024-25-1.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-geografia-umana-e-delle-migrazioni",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Letteratura per l’infanzia",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "M-PED/02",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Ilaria Filograsso"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Letteratura-per-l_infanzia_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-letteratura-per-linfanzia",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Metodologia della ricerca pedagogica",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PED/04",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Luca Luciani"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Metodologia-della-ricerca-pedagogica_Syllabus_2024-25.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-metodologia-della-ricerca-pedagogica",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Pedagogia della relazione d’aiuto",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "M-PED/01",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Luana Di Profio"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Pedagogia-della-relazione-d_aiuto_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-pedagogia-della-relazione-daiuto",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Pedagogia interculturale",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "M-PED/01",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Rossella Caso"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Pedagogia-interculturale_ita_ing_CASO.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-pedagogia-interculturale",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Progettazione e valutazione degli interventi educativi",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PED/03",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Rosanna Buono"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Progettazione-e-valutazione-degli-interventi-educativi_syllabus-2024-2025-ROSANNA-BUONO.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-progettazione-e-valutazione-degli-interv",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Progettazione, valutazione, documentazione",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PED/04",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Rosanna Buono"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Progettazione-valutazione-e-documentazione-_syllabus-2024-25-ROSANNA-BUONO.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-progettazione-valutazione-documentazione",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Psicologia dei processi comunicativo-relazionali",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PSI/04",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Mirco Fasolo"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Syllabus_2024-25-Fasolo.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-psicologia-dei-processi-comunicativo-rel",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Psicologia del benessere e di comunità",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PSI/05",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Ambrosini Alessandra"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Psicologia-del-benessere-e-di-comunita_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-psicologia-del-benessere-e-di-comunita",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Sociologia della famiglia",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "M-PSI/08",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Isabella Cordisco"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Sociologia-della-Famiglia_ing_Cordisco.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-sociologia-della-famiglia",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Statistica sociale",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "SECS_S/05",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Marco Di Marzio"
+     ],
+     "url": "https://www.unidav.it/docs/sua-cds/2023/L-19/insegnamenti/D102-14.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-statistica-sociale",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Teatro educativo e sociale",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "L-ART/05",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Leonardo Spinelli"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Teatro-educativo-e-sociale_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-teatro-educativo-e-sociale",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Tirocinio indiretto",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 4,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [],
+     "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-tirocinio-indiretto",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Tirocinio interno",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 4,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [],
+     "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-tirocinio-interno",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Didattica dell’arte",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "L-ART/04",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Jessica Calipari"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Didattica-dell_arte-2024-25-.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-didattica-dellarte",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Diritto dell’amministrazione penitenziaria",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "IUS/09",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Annamaria Raciti"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Diritto-dell_amministrazione-penitenziaria_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-diritto-dellamministrazione-penitenziari",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Diritto pubblico",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "IUS/09",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Marcello Salerno"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Diritto-pubblico_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-diritto-pubblico",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Due esami da 6 CFU a scelta tra i seguenti",
+     "anno": 3,
+     "periodo": null,
+     "cfu": null,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-due-esami-da-6-cfu-a-scelta-tra-i-seguen",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Educazione al sonoro",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "L–ART/07",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Giorgio Pagannone"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Educazione-al-sonoro_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-educazione-al-sonoro",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Educazione alla comunicazione verbale",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "L-FIL-LET 12",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Paola Mondani"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Educazione-alla-comunicazione-verbale-Mondani_Syllabus_2024-25.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-educazione-alla-comunicazione-verbale",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Igiene",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "MED/42",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Pamela Di Giovanni"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Igiene_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-igiene",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Informatica",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "INF/01",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Luca Moscardelli"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Informatica_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-informatica",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Laboratorio di didattica attiva ed inclusiva",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "M-PED/03",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Antonia Labonia"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Laboratorio-Didattica-attiva-e-inclusiva_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-laboratorio-di-didattica-attiva-ed-inclu",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Laboratorio: Metodologie del gioco e della creatività",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "M-PED/03",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Tito Vezio Viola"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Laboratorio-Metodologie-del-gioco-e-della-creativita_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-laboratorio-metodologie-del-gioco-e-dell",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Laboratorio: Nuove tecnologie per la formazione",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 2,
+     "ssd": "M-PED/04",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Prof.sse Rosanna Buono – Maria Forlini",
+      "Danilo Rocchi"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Laboratorio-Nuove-tecnologie-BUONO-FORLINI_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-laboratorio-nuove-tecnologie-per-la-form",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Legislazione delle istituzioni educative e della famiglia",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "IUS/01",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Antoio Panichella"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Syllabus-Panichella.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-legislazione-delle-istituzioni-educative",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Lingua italiana e comunicazione",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "L-FIL_LET/12",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Pierluigi Ortolano"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Lingua-italiana-e-comunicazione-Ortolano_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-lingua-italiana-e-comunicazione",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Pedagogia della cura",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PED/01",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Marialibera d’Ambrosio"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Pedagogia-della-Cura_ita_d_Ambrosio.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-pedagogia-della-cura",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Pedagogia della famiglia",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "M-PED/01",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Erminio Di Filippo"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Pedagogia-della-Famiglia.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-pedagogia-della-famiglia",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Pedagogia della marginalità e della devianza",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "M-PED/01",
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [
+      "Cinzia Turli"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Pedagogia-della-marginalita-e-devianza_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-pedagogia-della-marginalita-e-della-devi",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Pediatria",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "MED/38",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Francesco Chiarelli"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Pediatria_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-pediatria",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Prova finale",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-prova-finale",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Tirocinio diretto",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": "Educatore Sociale",
+     "docenti": [],
+     "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-tirocinio-diretto",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Tirocinio esterno",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [],
+     "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-tirocinio-esterno",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "opzionale con",
+     "anno": 3,
+     "periodo": null,
+     "cfu": null,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [],
+     "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-opzionale-con",
+     "stato_esami": "da_aggiungere"
+    }
+   ],
+   "curricula": [
+    "Educatore Sociale",
+    "Educatore nei servizi per l’infanzia"
+   ],
+   "url_catalogo": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/"
+  },
+  {
+   "id": "unidav-lm-56-scienze-dell-economia-lm-56",
+   "id_universitaly": "1632144",
+   "nome": "Scienze dell'Economia (LM-56)",
+   "nome_en": "Economic Sciences (LM-56)",
+   "tipo": "LM",
+   "classe": "LM-56",
+   "durata_anni": 2,
+   "sede": null,
+   "lingua": "it",
+   "accesso": "libero",
+   "erogazione": "Corso di studio prevalentemente a distanza",
+   "interateneo": false,
+   "url": "http://www.unidav.it",
+   "stato": "da_aggiungere",
+   "fonte": "https://www.universitaly.it/cerca-corsi",
+   "verificato_il": "2026-10-10",
+   "insegnamenti": []
+  }
+ ]
+}

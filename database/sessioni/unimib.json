@@ -1,0 +1,360 @@
+{
+ "universita_id": "unimib",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-11",
+ "calendari": [
+  {
+   "ambito": "Dipartimento di Giurisprudenza (School of Law)",
+   "fonte": "https://elearning.unimib.it/pluginfile.php/2185020/mod_resource/content/1/MANIFESTO_GIURIS_26_27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione di novembre-dicembre",
+     "inizio": "2026-11-30",
+     "fine": "2026-12-04",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-18",
+     "fine": "2027-02-19",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione di maggio",
+     "inizio": "2027-05-03",
+     "fine": "2027-05-07",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-06-14",
+     "fine": "2027-07-30",
+     "note": "3 appelli"
+    },
+    {
+     "nome": "Sessione di settembre",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unimib-lmg-01-giurisprudenza",
+    "unimib-l-14-scienze-giuridiche",
+    "unimib-lm-sc-giur-diritto-delle-organizzazioni-pubbliche-e-private"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Sociologia e Ricerca Sociale",
+   "fonte": "https://elearning.unimib.it/pluginfile.php/2184248/mod_resource/content/1/Manifesto%20degli%20Studi%20-%20A.A.%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione di gennaio",
+     "inizio": "2027-01-11",
+     "fine": "2027-01-27",
+     "note": "1 appello per insegnamento"
+    },
+    {
+     "nome": "Sessione di febbraio",
+     "inizio": "2027-02-01",
+     "fine": "2027-02-23",
+     "note": "1 appello per insegnamento"
+    },
+    {
+     "nome": "Sessione di giugno",
+     "inizio": "2027-06-07",
+     "fine": "2027-06-25",
+     "note": "1 appello per insegnamento"
+    },
+    {
+     "nome": "Sessione di luglio",
+     "inizio": "2027-07-01",
+     "fine": "2027-07-23",
+     "note": "1 appello per insegnamento"
+    },
+    {
+     "nome": "Sessione di settembre 1",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-15",
+     "note": "prima sessione di settembre, 1 appello per insegnamento"
+    },
+    {
+     "nome": "Sessione di settembre 2",
+     "inizio": "2027-09-20",
+     "fine": "2027-09-30",
+     "note": "seconda sessione di settembre, 1 appello per insegnamento"
+    }
+   ],
+   "corsi": [
+    "unimib-l-15-scienze-del-turismo-e-comunita-locale",
+    "unimib-l-16-scienze-dell-organizzazione",
+    "unimib-l-39-servizio-sociale",
+    "unimib-l-40-sociologia",
+    "unimib-lm-49-turismo-territorio-e-sviluppo-locale",
+    "unimib-lm-87-programmazione-e-gestione-delle-politiche-e-dei-servizi-soci",
+    "unimib-lm-88-analisi-dei-processi-sociali",
+    "unimib-lm-88-sicurezza-devianza-e-gestione-dei-rischi"
+   ]
+  },
+  {
+   "ambito": "Area economica (Dipartimenti di Economia, Metodi Quantitativi e Strategie d'Impresa e di Scienze Economico-Aziendali e Diritto per l'Economia): stesse sessioni nei manifesti 2026/27 di ciascun corso",
+   "fonte": "https://elearning.unimib.it/pluginfile.php/2176801/mod_resource/content/0/Manifesto_Ecoaz%2026.27.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione di gennaio-febbraio",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-17",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione di aprile",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-09",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di giugno",
+     "inizio": "2027-06-01",
+     "fine": "2027-06-25",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di giugno-luglio",
+     "inizio": "2027-06-28",
+     "fine": "2027-07-30",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione di agosto-settembre",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "1 appello"
+    }
+   ],
+   "corsi": [
+    "unimib-lm-77-scienze-economico-aziendali",
+    "unimib-l-18-marketing-comunicazione-aziendale-e-mercati-globali",
+    "unimib-l-18-economia-e-amministrazione-delle-imprese",
+    "unimib-l-33-economia-analisi-dei-dati-e-management",
+    "unimib-l-18-economia-aziendale-e-management",
+    "unimib-l-18-economia-banca-e-finanza",
+    "unimib-lm-16-economia-e-finanza",
+    "unimib-lm-56-international-economics-economia-internazionale",
+    "unimib-lm-76-economia-del-turismo",
+    "unimib-lm-77-marketing-e-mercati-globali"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea in Economics and Science for Environmental Sustainability (calendario didattico dell'area economica)",
+   "fonte": "https://elearning.unimib.it/pluginfile.php/1779646/block_html/content/calendario%20didattico%202026-27.pdf",
+   "sessioni": [
+    {
+     "nome": "Esami di profitto primo semestre",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-17",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto di aprile",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-09",
+     "note": null
+    },
+    {
+     "nome": "Esami di profitto secondo semestre",
+     "inizio": "2027-06-01",
+     "fine": "2027-09-17",
+     "note": "escluso agosto dal 2 al 27"
+    }
+   ],
+   "corsi": [
+    "unimib-l-33-economics-and-science-for-environmental-sustainability"
+   ]
+  },
+  {
+   "ambito": "Corso di laurea magistrale in Management e Design dei Servizi",
+   "fonte": "https://elearning.unimib.it/pluginfile.php/2177097/mod_resource/content/1/Manifesto%20degli%20studi%20MAGES%202026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-07",
+     "fine": "2027-02-17",
+     "note": "2 appelli"
+    },
+    {
+     "nome": "Sessione primaverile",
+     "inizio": "2027-04-05",
+     "fine": "2027-04-09",
+     "note": "1 appello"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-01",
+     "fine": "2027-07-30",
+     "note": "3 appelli complessivi nella sessione estiva"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-08-30",
+     "fine": "2027-09-17",
+     "note": "3 appelli complessivi nella sessione estiva"
+    }
+   ],
+   "corsi": [
+    "unimib-lm-63-management-e-design-dei-servizi"
+   ]
+  },
+  {
+   "ambito": "Corsi di Statistica (Dipartimento di Statistica e Metodi Quantitativi)",
+   "fonte": "https://elearning.unimib.it/pluginfile.php/2136975/mod_resource/content/2/Calendario%20Didattico%20Statistica%20a.a.%202026-2027.xlsx",
+   "sessioni": [
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2026-11-06",
+     "fine": "2026-11-17",
+     "note": "1 appello per insegnamento"
+    },
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-22",
+     "fine": "2027-02-19",
+     "note": "2 appelli per insegnamento"
+    },
+    {
+     "nome": "Sessione primaverile",
+     "inizio": "2027-04-15",
+     "fine": "2027-04-26",
+     "note": "1 appello per insegnamento"
+    },
+    {
+     "nome": "Sessione estiva 1",
+     "inizio": "2027-06-15",
+     "fine": "2027-07-23",
+     "note": "3 appelli complessivi nella sessione estiva"
+    },
+    {
+     "nome": "Sessione estiva 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-17",
+     "note": "3 appelli complessivi nella sessione estiva (alcuni manifesti indicano per errore settembre 2026)"
+    }
+   ],
+   "corsi": [
+    "unimib-l-41-statistica-e-gestione-delle-informazioni",
+    "unimib-l-41-statistica-machine-learning-ed-economia",
+    "unimib-lm-82-biostatistica",
+    "unimib-lm-82-scienze-statistiche-ed-economiche"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Psicologia (corsi di laurea triennali e magistrali; vale anche per Interpretariato e traduzione in LIS e LIST, corso del Dipartimento di Psicologia senza calendario proprio)",
+   "fonte": "https://elearning.unimib.it/pluginfile.php/540365/mod_folder/content/0/Calendario%20Didattico%202026_2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione d'esame del primo semestre",
+     "inizio": "2026-12-14",
+     "fine": "2027-02-27",
+     "note": null
+    },
+    {
+     "nome": "Sessione d'esame del secondo semestre 1",
+     "inizio": "2027-05-20",
+     "fine": "2027-07-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione d'esame del secondo semestre 2",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unimib-l-24-scienze-e-tecniche-psicologiche",
+    "unimib-l-20-scienze-psicosociali-della-comunicazione",
+    "unimib-lm-51-applied-experimental-psychological-sciences",
+    "unimib-lm-51-neuropsicologia-e-neuroscienze-cognitive",
+    "unimib-lm-51-psicologia-clinica",
+    "unimib-lm-51-psicologia-dello-sviluppo-e-dei-processi-educativi",
+    "unimib-lm-51-psicologia-sociale-economica-e-delle-decisioni",
+    "unimib-l-20-interpretariato-e-traduzione-in-lingua-dei-segni-italiana-li"
+   ]
+  },
+  {
+   "ambito": "Dipartimento di Informatica, Sistemistica e Comunicazione (DISCo): LT e LM Informatica, LM Teoria e Tecnologia della Comunicazione, LM Data Science",
+   "fonte": "https://elearning.unimib.it/pluginfile.php/567642/course/section/111250/Calendario%20didattico%202026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-26",
+     "note": "Nessuna attività didattica o esame giovedì 11 e venerdì 12 febbraio 2027 (Carnevale ambrosiano). Per la LM TTC (I anno) settimana di esami anche dal 4 all'8 gennaio 2027 (4-6 gennaio senza lezioni ed esami)"
+    },
+    {
+     "nome": "Sessione estiva e autunnale",
+     "inizio": "2027-06-07",
+     "fine": "2027-09-24",
+     "note": "Periodo d'esame unico indicato nel calendario dopo il II semestre; per la LM TTC la settimana 31 maggio-4 giugno 2027 è di lezioni-esami. Il calendario segna come «Esami» anche la settimana 21-25 settembre 2026 (appelli di fine a.a. 2025/26, non riportata)"
+    }
+   ],
+   "corsi": [
+    "unimib-l-31-informatica",
+    "unimib-lm-18-informatica",
+    "unimib-lm-92-teoria-e-tecnologia-della-comunicazione",
+    "unimib-lm-data-data-science"
+   ]
+  }
+ ],
+ "corsi_scoperti": [
+  "unimib-l-2-biotecnologie",
+  "unimib-l-20-comunicazione-interculturale",
+  "unimib-l-30-fisica",
+  "unimib-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot",
+  "unimib-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1632207",
+  "unimib-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie",
+  "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+  "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632208",
+  "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632209",
+  "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632210",
+  "unimib-l-35-matematica",
+  "unimib-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric",
+  "unimib-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-1632211",
+  "unimib-l-30-ottica-e-optometria",
+  "unimib-l-30-physical-sciences-for-innovative-technologies",
+  "unimib-l-sc-mat-scienza-e-nanotecnologia-dei-materiali",
+  "unimib-l-13-scienze-biologiche",
+  "unimib-l-19-scienze-dell-educazione",
+  "unimib-l-27-scienze-e-tecnologie-chimiche",
+  "unimib-l-34-scienze-e-tecnologie-geologiche",
+  "unimib-l-32-scienze-e-tecnologie-per-l-ambiente",
+  "unimib-l-snt3-tecniche-di-laboratorio-biomedico-abilitante-alla-profession",
+  "unimib-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab",
+  "unimib-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab-1632212",
+  "unimib-l-snt2-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva-abil",
+  "unimib-lm-1-antropologia-culturale-e-sociale",
+  "unimib-lm-91-artificial-intelligence-for-science-and-technology",
+  "unimib-lm-58-astrophysics-and-space-physics",
+  "unimib-lm-6-biologia",
+  "unimib-lm-8-biotecnologie-industriali",
+  "unimib-lm-9-biotecnologie-mediche",
+  "unimib-lm-76-economics-and-technologies-for-sustainability",
+  "unimib-lm-17-fisica",
+  "unimib-lm-57-formazione-e-sviluppo-delle-risorse-umane",
+  "unimib-lm-57-linguaggi-artistici-per-la-formazione",
+  "unimib-lm-75-marine-sciences-scienze-marine",
+  "unimib-lm-40-matematica",
+  "unimib-lm-sc-mat-materials-science-and-nanotechnology",
+  "unimib-lm-17-optometry-and-vision-science",
+  "unimib-lm-54-scienze-e-tecnologie-chimiche",
+  "unimib-lm-74-scienze-e-tecnologie-geologiche",
+  "unimib-lm-75-scienze-e-tecnologie-per-l-ambiente-e-il-territorio",
+  "unimib-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+  "unimib-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-ostetrico",
+  "unimib-lm-85-scienze-pedagogiche",
+  "unimib-lm-41-medicina-e-chirurgia",
+  "unimib-lm-41-medicine-and-surgery",
+  "unimib-lm-46-odontoiatria-e-protesi-dentaria",
+  "unimib-lm-85-bis-scienze-della-formazione-primaria"
+ ],
+ "mancanti": "Secondo giro (11/10/2026): ricontrollate le pagine e-learning «Informazioni generali del corso di studi» (Esami, Appelli d'esame, Orari, Calendario didattico, Documenti) di tutti i corsi scoperti, i manifesti e regolamenti 2026/27, i siti dei Dipartimenti (fisica, mater, disat, btbs, matapp, disco, formazione, medicina) e il Calendario accademico di Ateneo 2026/27 (solo festività e vacanze). Per i corsi delle aree di Scienze (Fisica, Matematica, Scienza dei Materiali, Ottica e Optometria, Biotecnologie e Bioscienze, Scienze dell'Ambiente e della Terra, Marine Sciences, AI for Science and Technology), di Medicina e Chirurgia (Medicina, Medicine and Surgery, Odontoiatria, Biotecnologie mediche, professioni sanitarie e LM SNT1) e di Scienze Umane per la Formazione, le pagine e i manifesti 2026/27 indicano solo i periodi di lezione e i mesi degli appelli (es. gennaio-febbraio, giugno-luglio, settembre; Formazione: tabella appelli per mese) e rinviano all'Agenda Web / Bacheca appelli: nessuna data di sessione pubblicata. Alcune pagine e-learning (es. avvisi del corso LIS, risorse riservate) richiedono il login: non consultate. Economics and Technologies for Sustainability (DISAT): il manifesto 2026/27 non riporta date di sessione. Interpretariato e traduzione in LIS e LIST è stato assegnato al calendario didattico 2026/27 del Dipartimento di Psicologia (che fissa le sessioni per i «corsi di laurea triennali e magistrali» del Dipartimento) perché non ne ha uno proprio."
+}

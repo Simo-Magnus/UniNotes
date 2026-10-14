@@ -1,0 +1,64 @@
+name: Test trascrizione
+
+# Prova reale delle due trascrizioni dell'app su file audio:
+# - Whisper (whisper.cpp, gli stessi modelli ggml che l'app scarica);
+# - Gemini (Files API + generateContent, come l'app) se il secret GEMINI_API_KEY esiste.
+# Audio: una frase italiana nota (espeak-ng, per misurare il WER) e 2 minuti di un
+# audiolibro italiano LibriVox (pubblico dominio).
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "tools/transcription_test/**"
+      - ".github/workflows/transcription.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update && sudo apt-get install -y espeak-ng ffmpeg cmake
+      - name: Audio di prova
+        run: python tools/transcription_test/prepara_audio.py
+      - name: Link di download dei modelli Whisper della tabella
+        run: python tools/transcription_test/check_models.py
+      - name: Compila whisper.cpp
+        run: |
+          git clone --depth 1 https://github.com/ggml-org/whisper.cpp /tmp/whisper.cpp
+          cmake -S /tmp/whisper.cpp -B /tmp/whisper.cpp/build -DCMAKE_BUILD_TYPE=Release -DWHISPER_BUILD_TESTS=OFF
+          cmake --build /tmp/whisper.cpp/build -j 4 --config Release
+      - name: Trascrizione con Whisper (small e large-v3-turbo q5_0)
+        run: |
+          cd tools/transcription_test
+          for m in small large-v3-turbo-q5_0; do
+            curl -sSL -o /tmp/ggml-$m.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-$m.bin
+            for a in sintetico16k lezione; do
+              [ -f audio/$a.wav ] || { echo "manca audio/$a.wav"; continue; }
+              /tmp/whisper.cpp/build/bin/whisper-cli -m /tmp/ggml-$m.bin -l it -t 4 -otxt -of audio/$a.$m -f audio/$a.wav
+              echo "### Whisper $m · $a" >> "$GITHUB_STEP_SUMMARY"
+              { echo '```'; head -c 1500 audio/$a.$m.txt; echo; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+            done
+            python wer.py audio/sintetico.txt audio/sintetico16k.$m.txt 0.35 | tee -a "$GITHUB_STEP_SUMMARY"
+          done
+      - name: Trascrizione con Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd tools/transcription_test
+          python gemini_test.py audio/sintetico.wav
+          if [ -f audio/sintetico.gemini.txt ]; then
+            python wer.py audio/sintetico.txt audio/sintetico.gemini.txt 0.35 | tee -a "$GITHUB_STEP_SUMMARY"
+            python gemini_test.py audio/lezione.mp3
+            { echo "### Gemini · lezione"; echo '```'; head -c 1500 audio/lezione.gemini.txt; echo; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Gemini: secret GEMINI_API_KEY non impostato, test saltato" >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: trascrizioni
+          path: tools/transcription_test/audio/*.txt

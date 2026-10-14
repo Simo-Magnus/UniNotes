@@ -1,0 +1,44 @@
+{
+ "universita_id": "unidarc",
+ "anno_accademico": "2026/27",
+ "verificato_il": "2026-10-10",
+ "calendari": [
+  {
+   "ambito": "Ateneo",
+   "fonte": "https://www.unidarc.it/wp-content/uploads/2026/07/manifesto-degli-studi-unida-aa-2026-2027.pdf",
+   "sessioni": [
+    {
+     "nome": "Sessione invernale",
+     "inizio": "2027-01-11",
+     "fine": "2027-02-12",
+     "note": null
+    },
+    {
+     "nome": "Sessione estiva",
+     "inizio": "2027-05-10",
+     "fine": "2027-06-11",
+     "note": null
+    },
+    {
+     "nome": "Sessione autunnale",
+     "inizio": "2027-09-01",
+     "fine": "2027-09-30",
+     "note": null
+    },
+    {
+     "nome": "Sessione straordinaria",
+     "inizio": "2027-12-01",
+     "fine": "2027-12-22",
+     "note": null
+    }
+   ],
+   "corsi": [
+    "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale",
+    "unidarc-l-24-scienze-e-tecniche-psicologiche",
+    "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale"
+   ]
+  }
+ ],
+ "corsi_scoperti": [],
+ "mancanti": null
+}

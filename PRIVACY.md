@@ -1,0 +1,282 @@
+# Informativa sulla privacy di UniNotes
+
+Ultimo aggiornamento: 11 ottobre 2026
+
+<!--
+Prima della pubblicazione sostituire i segnaposto:
+«[nome e cognome dello sviluppatore]» e «[indirizzo email di contatto]».
+-->
+
+Questa informativa spiega quali dati personali entrano in gioco quando usi UniNotes, l'app per studenti universitari disponibile per Windows, macOS, Android e iOS, dove finiscono e chi ne risponde. È resa ai sensi degli articoli 13 e 14 del Regolamento (UE) 2016/679 (di seguito «GDPR») e del Codice in materia di protezione dei dati personali (D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018). Vale per la versione 2026.9 dell'app e per le successive, finché non viene sostituita da una versione più recente di questo documento.
+
+Le regole d'uso dell'app sono nei [Termini e condizioni d'uso](TERMINI.md). Il codice sorgente è pubblico su <https://github.com/Simo-Magnus/UniNotes>: tutto ciò che è scritto qui si può verificare leggendolo.
+
+## In breve
+
+UniNotes non richiede un account, non ha un server dello sviluppatore e non contiene strumenti di statistica d'uso, pubblicità o invio automatico di segnalazioni di errore. Quello che inserisci, registri o importi resta sul tuo dispositivo.
+
+L'app si collega a internet in pochi casi precisi: per scaricare il database pubblico dei corsi da GitHub, per scaricare i modelli di trascrizione che scegli e, se colleghi il tuo account, per sincronizzare i file con OneDrive o Google Drive. In questi casi i dati viaggiano direttamente tra il tuo dispositivo e il servizio, senza passare dallo sviluppatore.
+
+Con ChatGPT, Claude, Gemini e gli altri assistenti di intelligenza artificiale l'app non dialoga. Copia negli appunti il testo della richiesta e apre il sito o l'app del servizio: che cosa allegare e inviare lo decidi tu, in quella chat.
+
+Lo sviluppatore riceve dati che ti riguardano soltanto se gli scrivi, se apri una segnalazione su GitHub o se fai una donazione.
+
+## 1. Titolare del trattamento e contatti
+
+L'app è sviluppata e pubblicata da «[nome e cognome dello sviluppatore]», che su GitHub usa il nome Simo-Magnus (di seguito «lo sviluppatore»). Per qualsiasi domanda su questa informativa o sui tuoi dati puoi scrivere a «[indirizzo email di contatto]».
+
+Lo sviluppatore è titolare del trattamento solo per i dati descritti al paragrafo 10.2 (messaggi, segnalazioni, donazioni). Per i dati che restano sul tuo dispositivo e per quelli che invii ai servizi che colleghi non lo è, per le ragioni spiegate al paragrafo 10.1. Non è stato designato un responsabile della protezione dei dati: per un'attività di queste dimensioni, che non comporta il trattamento su larga scala di dati personali, il GDPR non lo richiede.
+
+UniNotes è un progetto indipendente. Non è un servizio delle università né del Ministero dell'università e della ricerca, e non è affiliato a nessuno di essi.
+
+## 2. Dati che restano sul dispositivo
+
+Quasi tutto quello che l'app gestisce rimane sul dispositivo su cui lo hai inserito. Ecco che cosa, schermata per schermata.
+
+- **Primo avvio e Impostazioni → Il mio percorso**: tipo di università, ateneo, corso di laurea, eventuale percorso o curriculum, anno che frequenti, condizione di fuori corso, anno accademico di riferimento, versione del database da cui sono stati importati i dati.
+- **Insegnamenti ed Esami**: insegnamenti del piano con CFU, semestre, docenti e stato; esami, prove in itinere ed esoneri con data, ora, luogo, modalità, voto, lode e note. Medie e voto di partenza alla laurea sono calcolati dall'app sul momento e non vengono inviati a nessuno.
+- **Studio**: moduli e argomenti di ogni materia, stato di avanzamento, sessioni registrate con il cronometro (inizio, durata, tipo di attività, note) e gli allegati che aggiungi.
+- **Registra**: le registrazioni audio delle lezioni e i testi collegati, cioè trascrizioni, riassunti, appunti e le risposte dell'AI che scegli di incollare. Sono file normali, ordinati in una cartella per insegnamento con le sottocartelle «Registrazioni», «Trascrizioni», «Riassunti», «Appunti» e «AI». Le registrazioni sono in formato FLAC mono a 16 kHz (WAV se il dispositivo non supporta FLAC).
+- **Libri**: libri del piano che tieni o rimuovi, libri che aggiungi, file che colleghi a un libro (l'app ne fa una copia nella propria cartella), ultima pagina letta.
+- **File**: elenco dei file aperti di recente, posizione di lettura, segnalibri ed evidenziazioni nei PDF.
+- **Collegamenti**: assistente AI scelto, modello Whisper in uso, impostazioni di sincronizzazione e, se colleghi OneDrive o Google Drive, il nome e l'indirizzo email dell'account, che l'app mostra per farti capire quale account è collegato.
+- **Impostazioni**: tema e colori, esclusioni, eventuali indirizzi personalizzati per il database o per i pacchetti di dati, preferenza per il calendario.
+
+L'app tiene anche due contatori locali, la data del primo avvio e il numero di aperture, che usa solo per decidere quando mostrare nella Home l'invito a lasciare una recensione o a sostenere il progetto. Restano nel database dell'app come tutto il resto.
+
+### Dove si trovano i file
+
+Su **Windows** il database, i libri, i materiali, gli allegati, i modelli Whisper e la copia locale del database dei corsi stanno nella cartella dei dati dell'app del tuo profilo utente (`%APPDATA%\UniNotes`). Registrazioni e appunti stanno in `Documenti\UniNotes\Corsi`; chi usava già la versione precedente dell'app con la cartella `Documenti\University Notes\Corsi` continua a usare quella.
+
+Su **macOS** l'app gira nella sandbox di Apple e tiene tutto nel proprio contenitore, dentro `~/Library/Containers/`.
+
+Su **Android** e **iOS** i dati stanno nello spazio riservato all'app, che le altre app non possono leggere. Gli appunti sono nella sottocartella «Appunti» della cartella documenti dell'app.
+
+L'app non cifra per conto suo il database né i file. La loro protezione dipende da quella del dispositivo: blocco dello schermo, cifratura del disco (BitLocker, FileVault, cifratura di Android e iOS) e account utente separati sul computer. Chi può usare il tuo dispositivo sbloccato, o la tua sessione di Windows o macOS, può vedere i dati dell'app.
+
+## 3. Credenziali e chiavi
+
+Quando colleghi OneDrive o Google Drive l'app conserva il token di accesso a lungo termine (refresh token) nell'archivio protetto del sistema operativo: il portachiavi (Keychain) su macOS e iOS, il Keystore di Android, l'archivio cifrato con chiave custodita in Gestione credenziali su Windows. La password del tuo account Microsoft o Google non passa mai dall'app: la scrivi solo nella pagina di accesso del fornitore, aperta nel browser.
+
+Questi token non vengono inclusi nei backup, non vengono esportati e non vengono sincronizzati.
+
+Le versioni precedenti dell'app permettevano di salvare una chiave API personale di Google AI Studio per usare Gemini. La versione attuale non usa più questa modalità e non invia nulla a Gemini. Se avevi salvato una chiave, resta nell'archivio protetto finché non usi «Elimina tutti i dati» (paragrafo 12).
+
+## 4. File temporanei
+
+Alcune funzioni creano copie temporanee nella cartella temporanea del sistema:
+
+- quando gli appunti di un insegnamento da allegare all'AI sono molti, l'app li riunisce in un unico file Markdown nella cartella «UniNotes AI»;
+- il lettore di File estrae il contenuto di alcuni formati (archivi, documenti composti) nella cartella «university_notes_reader»;
+- durante l'esportazione e il ripristino del database viene creata per pochi istanti una copia del file, cancellata subito dopo.
+
+Le cartelle «UniNotes AI» e «university_notes_reader» vengono svuotate a ogni avvio dell'app e con «Elimina tutti i dati». Se un file è in uso in quel momento, la cancellazione viene ritentata all'avvio successivo.
+
+Quando esporti gli esami nel calendario, l'app scrive un file `.ics` nella propria cartella «calendario» e lo apre con l'app di calendario del sistema.
+
+## 5. Backup ed esportazioni
+
+In Impostazioni → Esporta dati puoi salvare i tuoi dati in due modi.
+
+**Esporta dati (JSON)** produce un file con corsi, eventi, esami e voti, sessioni di studio, libri, materiali, preferiti, note e impostazioni. Alcune impostazioni sono escluse di proposito perché riguardano la sicurezza o il singolo dispositivo: l'account OneDrive o Google collegato, l'ID dell'applicazione Microsoft, la cartella degli appunti, i percorsi dei programmi esterni, gli indirizzi personalizzati del database e l'identificativo dell'installazione. Le stesse impostazioni vengono ignorate quando ripristini un backup, così un file ricevuto da altri non può, per esempio, indirizzare l'app verso un server diverso.
+
+**Esporta copia database** salva invece il file completo del database, comprese quelle impostazioni (anche il nome e l'indirizzo email dell'account collegato, se ce n'è uno). Trattalo con la stessa cura che riserveresti ai tuoi documenti personali.
+
+Né l'uno né l'altro contengono registrazioni, appunti o i file dei libri, e nessuno dei due contiene token o chiavi. I file esportati sono tuoi: dove salvarli, a chi darli e quando cancellarli lo decidi tu.
+
+## 6. Quando l'app usa internet
+
+L'app funziona senza connessione. Le connessioni descritte qui sotto avvengono solo nei casi indicati, sempre in HTTPS. L'unica eccezione è il ritorno dalla pagina di accesso di Microsoft o Google su computer, che usa un indirizzo `http://localhost` interno al dispositivo e non esce in rete.
+
+In ogni connessione il servizio contattato riceve, come per qualsiasi sito web, alcuni dati tecnici: indirizzo IP, data e ora, tipo di client. Che cosa ne fa dipende dalla sua informativa.
+
+### 6.1 Database pubblico dei corsi (GitHub)
+
+Atenei, corsi, insegnamenti, libri e date d'esame sono già inclusi nell'app. Quando c'è connessione, all'avvio l'app scarica il file `meta.json` dal repository pubblico del progetto su GitHub (`raw.githubusercontent.com`) per sapere se esiste una versione più recente; se c'è, te lo propone con il pulsante «Aggiorna». Durante la scelta del corso e negli aggiornamenti l'app scarica anche il file del tuo ateneo (per esempio `corsi/polito.json`). Il nome del file richiesto rivela quindi a GitHub quale ateneo stai consultando, insieme all'indirizzo IP. Nessun altro dato viene inviato.
+
+GitHub è un servizio di GitHub, Inc., società del gruppo Microsoft con sede negli Stati Uniti. Si applica la sua [informativa sulla privacy](https://docs.github.com/it/site-policy/privacy-policies/github-general-privacy-statement).
+
+In Impostazioni → Il mio percorso → «Indirizzo del database» e in Impostazioni → Importa corsi ed esami puoi indicare un indirizzo diverso da cui scaricare i dati. In quel caso le richieste vanno al server che hai scelto, gestito da chi lo pubblica. L'app accetta solo indirizzi `https://` (oppure `http://` verso il computer stesso, per le prove).
+
+### 6.2 Trascrizione locale con Whisper
+
+La trascrizione con Whisper avviene interamente sul dispositivo: l'audio non viene inviato a nessuno. Servono però dei file da scaricare, e lo fai tu da Collegamenti → Whisper:
+
+- i modelli di trascrizione, dal sito Hugging Face (`huggingface.co`), con dimensioni che vanno da circa 75 MB a circa 3 GB;
+- solo su Windows, il programma whisper.cpp (versione 1.9.2, dal repository ufficiale `ggml-org/whisper.cpp` su GitHub) e, se ti serve per le registrazioni `.m4a` fatte con il telefono, il convertitore ffmpeg (build di BtbN su GitHub, circa 170 MB).
+
+Su Mac, Android e iOS whisper.cpp è già incluso nell'app. Su Mac puoi installare a parte la versione di Homebrew: in quel caso l'installazione avviene fuori dall'app e segue le regole di Homebrew.
+
+Se lavori con i dati mobili, ricorda che questi download possono consumare molto traffico.
+
+### 6.3 OneDrive e OneNote (facoltativo)
+
+Da Collegamenti → OneDrive → «Accedi con Microsoft» si apre nel browser la pagina di accesso ufficiale di Microsoft (`login.microsoftonline.com`). L'app chiede questi permessi:
+
+- `User.Read`, per leggere nome e indirizzo email dell'account e mostrarli nella scheda;
+- `Files.ReadWrite`, per leggere e scrivere i file del tuo OneDrive;
+- `Notes.Read`, per mostrarti in sola lettura i blocchi appunti di OneNote;
+- `offline_access`, per restare collegata senza chiederti l'accesso ogni volta.
+
+Solo su Windows, e solo se attivi Impostazioni → Calendario, l'app chiede anche `Calendars.ReadWrite` per scrivere le date delle prove nel tuo calendario Outlook (vedi il paragrafo 6.8). Questo accesso usa un token separato, conservato come quello di OneDrive.
+
+Il permesso `Files.ReadWrite` consente tecnicamente l'accesso a tutto il tuo OneDrive. L'app lo usa per elencare le cartelle quando scegli dove sincronizzare e per leggere e scrivere nella cartella scelta (predefinita «UniNotes»). Lì tiene le sottocartelle «Corsi» (registrazioni, trascrizioni, riassunti, appunti), «Libri», «Materiali», «Allegati» e «Backup». Nell'ultima carica un backup JSON dei dati dell'app, con lo stesso contenuto descritto al paragrafo 5.
+
+Puoi scegliere che cosa sincronizzare con le caselle della scheda; all'inizio sono tutte attive. Sul telefono, salvo diversa scelta, le registrazioni si sincronizzano solo con Wi‑Fi o rete via cavo. La sincronizzazione va nei due sensi e parte all'avvio, a intervalli regolari (ogni 10 minuti, modificabile), quando torni nell'app e quando torna la connessione. Un file eliminato da una parte viene eliminato anche dall'altra: su OneDrive finisce nel cestino, sul dispositivo in una cartella nascosta dell'app.
+
+La sezione OneNote, raggiungibile da Registra e da File, mostra blocchi appunti, sezioni e pagine recenti e apre le pagine. Il contenuto viene letto al momento e non viene salvato dall'app.
+
+I file sincronizzati sono conservati da Microsoft secondo la sua [informativa sulla privacy](https://privacy.microsoft.com/it-it/privacystatement) e il [Contratto di Servizi Microsoft](https://www.microsoft.com/it-it/servicesagreement). Se usi l'account dell'università, i file finiscono nello spazio OneDrive gestito dall'ateneo e valgono anche le sue regole; in alcuni atenei il collegamento di app esterne richiede l'approvazione dell'amministratore.
+
+### 6.4 Google Drive (facoltativo)
+
+Google Drive è disponibile nelle versioni dell'app che includono l'identificativo client di Google. L'accesso avviene nella pagina ufficiale di Google (`accounts.google.com`). L'app chiede il permesso `drive`, che consente di vedere, modificare e cancellare tutti i file del tuo Google Drive. È un permesso ampio: serve perché i file che metti nella cartella «UniNotes» dal sito di Drive o da altre app arrivino anche in UniNotes, cosa che un permesso più ristretto non permetterebbe. L'app lo usa per elencare le cartelle quando scegli dove sincronizzare, per leggere nome e indirizzo email dell'account e per leggere e scrivere nella cartella scelta, con la stessa struttura e le stesse regole di sincronizzazione descritte per OneDrive.
+
+I dati sono conservati da Google secondo le sue [norme sulla privacy](https://policies.google.com/privacy?hl=it) e i suoi [termini di servizio](https://policies.google.com/terms?hl=it).
+
+### 6.5 Chi registra l'app presso Microsoft e Google
+
+Per usare OneDrive e Google Drive lo sviluppatore ha registrato l'app presso Microsoft e Google. Questo non gli dà accesso ai tuoi file né ai tuoi token, che vengono rilasciati all'app sul tuo dispositivo. Le console di Microsoft e Google possono mostrare a chi ha registrato un'app statistiche aggregate, come il numero di richieste o di errori; lo sviluppatore non le usa per identificare gli utenti.
+
+### 6.6 Assistenti di intelligenza artificiale
+
+In Collegamenti → «Studio con l'AI» scegli il tuo assistente di riferimento tra ChatGPT, Claude, Microsoft Copilot, Perplexity, NotebookLM e Gemini. Nelle schermate Registra e Studio, i pulsanti come «Trascrivi con Gemini», «Riassumi con Gemini» o «Apri ChatGPT» fanno sempre la stessa cosa:
+
+1. copiano negli appunti di sistema il testo della richiesta (il «prompt»), che contiene il nome dell'insegnamento e i nomi dei file;
+2. aprono l'app dell'assistente sul telefono o il suo sito sul computer;
+3. ti mostrano i file da allegare. Sul computer puoi copiarli negli appunti come file o aprire la cartella che li contiene; sul telefono puoi condividerli con il menu di sistema.
+
+L'app non invia nulla all'assistente. Allegare i file, incollare la richiesta e inviarla sono azioni che fai tu, nella chat del servizio, con il tuo account. Da quel momento i contenuti sono trattati dal fornitore (OpenAI, Anthropic, Microsoft, Perplexity o Google) secondo le sue condizioni e la sua informativa, compresa la possibilità che li conservi nella cronologia o li usi per migliorare i suoi modelli. Per Gemini e NotebookLM, per esempio, l'audio caricato resta nel tuo account Google finché non lo elimini.
+
+Quando premi «Incolla risposta», l'app legge il testo presente negli appunti di sistema per proporlo nella finestra di salvataggio. Lo fa solo in quel momento. Il testo che confermi viene salvato come file nella cartella dell'insegnamento.
+
+### 6.7 Segnalazioni sul database
+
+Nelle schermate Esami e Libri il pulsante per segnalare dati mancanti apre nel browser la pagina di GitHub per creare una nuova segnalazione (issue), con titolo e testo già compilati: ateneo, corso, insegnamento, anno. Questi dati compaiono nell'indirizzo della pagina, ma la segnalazione viene creata solo se la invii tu, dal tuo account GitHub. Le segnalazioni su GitHub sono pubbliche e mostrano il tuo nome utente.
+
+### 6.8 Calendario
+
+Da Impostazioni → Calendario, o da Esami, l'app crea un file `.ics` con le prove ancora da sostenere (insegnamento, data, ora, luogo) e lo apre con l'app di calendario del sistema, che lo importa. Se il tuo calendario è sincronizzato con un servizio online (Outlook, Google Calendar, iCloud), gli eventi finiscono anche lì, secondo le regole di quel servizio.
+
+Se attivi «Scrivi le prove nel calendario», l'app scrive direttamente nel tuo calendario, in un calendario «UniNotes», le prove ancora da sostenere e l'inizio delle sessioni d'esame del tuo corso (insegnamento, data, ora, luogo, argomenti e note) con i relativi promemoria, e li aggiorna o li cancella quando li modifichi. Su Android e iPhone usa il calendario del dispositivo, con il permesso del sistema; su Windows usa il calendario Outlook del tuo account Microsoft: in quel caso gli eventi vengono inviati a Microsoft Graph (`graph.microsoft.com`) sul tuo account, direttamente dal dispositivo. Spegnendo l'interruttore l'app toglie i propri eventi.
+
+### 6.8.1 Notifiche
+
+Gli avvisi delle prove, dell'inizio delle sessioni, dell'esito da registrare, dei collegamenti da rinnovare e le eventuali richieste di recensione o di sostegno sono notifiche locali: l'app le pianifica sul dispositivo e le mostra il sistema, senza server e senza inviare nulla allo sviluppatore. Si attivano solo con il tuo consenso e ogni tipo si spegne da Impostazioni → Notifiche (dettagli in `docs/notifiche.md`).
+
+### 6.9 Link esterni
+
+Alcuni pulsanti aprono pagine nel browser o in un'altra app: le pagine ufficiali dei calendari d'esame («Calendario ufficiale»), le pagine dei modelli Whisper, l'offerta di Google per gli studenti, il sito del progetto, le pagine degli store o di GitHub per lasciare una recensione o una stella e, solo nelle versioni che lo mostrano, la pagina «Sostieni il progetto». Anche i link presenti nei documenti aperti con il lettore si aprono nel browser quando li tocchi. L'app non aggiunge a questi indirizzi dati che ti riguardano. Il sito del progetto e la pagina delle donazioni sono pubblicati su GitHub Pages e non sono parte dell'app.
+
+## 7. Cosa l'app non fa
+
+L'app non contiene librerie di analisi, statistiche d'uso, pubblicità, tracciamento o raccolta automatica dei crash. Non usa identificativi pubblicitari e non crea profili. Non accede a posizione, fotocamera o contatti. Al calendario accede solo se attivi «Scrivi le prove nel calendario», e solo per scrivere, aggiornare e togliere i propri eventi; altrimenti per gli esami crea un file `.ics` e lo passa all'app di calendario quando lo chiedi tu. Non vende e non cede dati a nessuno, anche perché non li riceve.
+
+## 8. Permessi del dispositivo
+
+**Android.** Microfono (`RECORD_AUDIO`), richiesto la prima volta che registri. Servizio in primo piano per il microfono (`FOREGROUND_SERVICE`, `FOREGROUND_SERVICE_MICROPHONE`) e blocco della sospensione (`WAKE_LOCK`), che tengono attiva la registrazione a schermo spento: finché registri è visibile la notifica «Registrazione in corso» con il nome dell'insegnamento. Notifiche (`POST_NOTIFICATIONS`), richiesto da Android 13 in poi per mostrare quella notifica e, se le attivi, gli avvisi delle prove. Calendario (`READ_CALENDAR`, `WRITE_CALENDAR`), richiesto solo se attivi «Scrivi le prove nel calendario». Accesso a internet (`INTERNET`) e allo stato della rete (`ACCESS_NETWORK_STATE`), quest'ultimo per sapere quando torna la connessione e se sei su Wi‑Fi. `RECEIVE_BOOT_COMPLETED` serve solo a ripianificare gli avvisi delle prove dopo il riavvio del telefono. Il backup automatico di Android è disattivato (`allowBackup="false"`): i dati dell'app non vengono copiati su Google Drive né trasferiti a un nuovo telefono.
+
+**iOS.** Microfono, con la spiegazione mostrata dal sistema alla prima richiesta, e la modalità audio in background per continuare a registrare quando l'app non è in primo piano. Il sistema mostra l'indicatore del microfono. Notifiche e calendario, chiesti solo quando li attivi.
+
+**macOS.** L'app è in sandbox con questi diritti: microfono, connessioni di rete in uscita, ascolto su `localhost` per completare l'accesso a Microsoft e Google, lettura e scrittura dei soli file che scegli tu.
+
+**Windows.** Non c'è un sistema di permessi per singola app, ma il microfono deve essere consentito alle app desktop in Impostazioni di Windows → Privacy e sicurezza → Microfono. Chiudendo la finestra mentre registri, l'app resta nell'area di notifica e continua a registrare.
+
+Su tutte le piattaforme l'app apre solo i file che scegli con la finestra di sistema o che trascini nella finestra, oltre a quelli che si trovano nelle sue cartelle.
+
+## 9. Registrazioni delle lezioni e dati di altre persone
+
+Una registrazione contiene la voce del docente e spesso quella di compagni che fanno domande. La voce è un dato personale e la lezione può essere tutelata come opera dell'ingegno anche quando è orale (legge 633/1941 sul diritto d'autore).
+
+Registrare una lezione per il proprio studio personale è in genere lecito, ma molti atenei hanno regolamenti che chiedono l'autorizzazione del docente: informati e, se serve, chiedila prima di iniziare. Diffondere la registrazione, anche solo in un gruppo di corso o su un servizio di condivisione, richiede il consenso delle persone registrate.
+
+Finché usi registrazioni e trascrizioni per il tuo studio personale, il trattamento rientra di norma nelle attività a carattere esclusivamente personale o domestico, a cui il GDPR non si applica (articolo 2, paragrafo 2, lettera c). Se le condividi, le pubblichi o le carichi su un servizio di terzi, ne rispondi tu. Prima di sincronizzare una registrazione su OneDrive o Google Drive, o di caricarla su Gemini, NotebookLM o un altro assistente, considera che stai consegnando a quel fornitore anche la voce di altre persone.
+
+L'app non ascolta e non registra nulla se non hai premuto il pulsante di registrazione. Puoi mettere in pausa, riprendere o annullare la registrazione; annullandola, il file viene cancellato.
+
+## 10. Chi tratta i dati e su quale base giuridica
+
+### 10.1 Dati sul dispositivo e servizi che colleghi
+
+Lo sviluppatore non raccoglie, non riceve e non può consultare i dati che inserisci nell'app o che sincronizzi con i tuoi account. Per questi dati non è né titolare né responsabile del trattamento: il trattamento avviene sul tuo dispositivo, sotto il tuo controllo, e lo strumento che usi è un software che hai installato.
+
+Quando colleghi OneDrive o Google Drive, o quando usi un assistente AI, il rapporto è diretto tra te e il fornitore: Microsoft, Google, OpenAI, Anthropic, Perplexity. Ciascuno tratta i dati come titolare autonomo, secondo le proprie condizioni, e lo sviluppatore non è parte di quel rapporto. Lo stesso vale per GitHub e Hugging Face quando l'app scarica da loro il database o i modelli.
+
+### 10.2 Dati trattati dallo sviluppatore
+
+Lo sviluppatore è titolare del trattamento nei seguenti casi.
+
+**Se gli scrivi** all'indirizzo email indicato: tratta il tuo indirizzo, il nome che usi e quello che scrivi, per risponderti e, se segnali un problema, per correggere l'app o il database. La base giuridica è la gestione della tua richiesta nell'ambito del rapporto d'uso dell'app (articolo 6, paragrafo 1, lettera b del GDPR) e il legittimo interesse dello sviluppatore a mantenere l'app funzionante e corretta (lettera f). I messaggi sono conservati per il tempo necessario a gestire la richiesta e comunque non oltre 24 mesi dall'ultimo scambio, salvo che servano per tutelare un diritto in giudizio. La casella di posta è gestita da un fornitore di servizi email, che tratta i messaggi per conto dello sviluppatore o secondo le proprie condizioni.
+
+**Se apri una segnalazione o scrivi un commento su GitHub**: quello che pubblichi è visibile a tutti ed è trattato da GitHub secondo le sue condizioni. Lo sviluppatore lo legge, risponde e lo usa per correggere l'app o il database, sulla base del suo legittimo interesse (lettera f). Puoi modificare o cancellare i tuoi commenti; per far rimuovere una segnalazione intera scrivi allo sviluppatore.
+
+**Se fai una donazione**: il pagamento è gestito dalla piattaforma che scegli tra quelle indicate nella pagina «Sostieni» del progetto, che tratta i tuoi dati di pagamento come titolare autonomo. Lo sviluppatore non vede numeri di carta né credenziali; riceve soltanto quello che la piattaforma gli comunica, di solito il nome visualizzato, l'importo, l'eventuale messaggio e, per alcune piattaforme, l'indirizzo email. Questi dati servono a registrare la donazione, a ringraziarti e ad adempiere agli eventuali obblighi fiscali e contabili (lettere b e c). Il tuo nome compare nei ringraziamenti solo se lo chiedi tu, ed è una scelta che puoi revocare in qualsiasi momento (lettera a). I dati sono conservati per il tempo richiesto dalle norme fiscali e contabili, se applicabili, e altrimenti non oltre 24 mesi dalla donazione.
+
+In nessuno di questi casi i dati vengono usati per marketing, venduti o ceduti a terzi, né sottoposti a decisioni automatizzate o profilazione.
+
+## 11. Trasferimenti fuori dall'Unione europea
+
+Lo sviluppatore non trasferisce verso paesi extra UE i dati che usi nell'app, perché non li riceve. I trasferimenti possono avvenire quando sei tu a usare servizi con sede o server fuori dall'Unione: Microsoft, Google, GitHub, Hugging Face e i fornitori di assistenti AI operano in tutto o in parte negli Stati Uniti. In questi casi il trasferimento è effettuato dal fornitore, con gli strumenti indicati nella sua informativa, per esempio la decisione di adeguatezza della Commissione europea sul quadro UE-USA per la protezione dei dati o le clausole contrattuali tipo.
+
+Per i dati trattati dallo sviluppatore (paragrafo 10.2), un trasferimento può avvenire attraverso GitHub, il fornitore della casella email o la piattaforma di donazione scelta, alle stesse condizioni.
+
+## 12. Conservazione e cancellazione
+
+I dati sul dispositivo restano finché non li cancelli. Hai diverse possibilità.
+
+**Elimina tutti i dati** (Impostazioni → Privacy e informazioni) cancella dal dispositivo percorso di studi, voti, esami, libri e materiali copiati nell'app, sessioni di studio, modelli Whisper, la copia locale del database dei corsi, il contenuto dell'archivio protetto (accessi a OneDrive e Google Drive, eventuale chiave Gemini salvata da versioni precedenti) e i file temporanei. Se spunti la casella «Elimina anche appunti e registrazioni», cancella anche la cartella degli appunti. Poi l'app si chiude; su iPhone e iPad devi chiuderla tu. Toglie anche le notifiche pianificate e, se il calendario era collegato, gli eventi scritti dall'app nel calendario. L'operazione non si può annullare e non tocca i file già caricati su OneDrive o Google Drive.
+
+**Disinstallare l'app** su Android cancella tutti i suoi dati, oppure puoi usare Impostazioni di Android → App → UniNotes → Spazio di archiviazione → Cancella dati. Su iPhone e iPad la disinstallazione cancella i file dell'app; il portachiavi di iOS, però, può conservare i token anche dopo la disinstallazione, quindi conviene usare prima «Elimina tutti i dati». Se hai attivo il backup di iCloud o del computer, i dati dell'app possono trovarsi anche in quei backup, che sono tuoi e non accessibili allo sviluppatore.
+
+Su **Windows** e **macOS** eliminare l'app non cancella necessariamente le sue cartelle (paragrafo 2), né le voci del portachiavi su Mac: usa «Elimina tutti i dati» prima di disinstallare, oppure cancella le cartelle a mano.
+
+**Account collegati.** Scollegare OneDrive o Google Drive da Collegamenti cancella il token dal dispositivo. Per revocare anche l'autorizzazione concessa all'app vai, per un account Microsoft personale, su <https://account.live.com/consent/Manage>; per un account Microsoft dell'università o di lavoro, su <https://myapps.microsoft.com> o rivolgiti all'amministratore dell'ateneo; per Google, su <https://myaccount.google.com/connections>. I file nella cartella «UniNotes» del servizio restano lì finché non li cancelli.
+
+**Servizi AI.** Le conversazioni e i file caricati negli assistenti si cancellano dalla cronologia del tuo account su quei servizi.
+
+## 13. Sicurezza
+
+Le misure adottate nell'app sono queste:
+
+- tutte le connessioni verso servizi esterni usano HTTPS; gli indirizzi personalizzati del database devono essere `https://`;
+- l'accesso a Microsoft e Google usa il flusso OAuth per app installate con PKCE e verifica del parametro `state`, senza che la password passi dall'app;
+- i token sono conservati nell'archivio protetto del sistema operativo e non finiscono in backup, esportazioni o sincronizzazioni;
+- le impostazioni legate alla sicurezza non vengono esportate né ripristinate dai backup;
+- i modelli Whisper vengono verificati con l'impronta SHA-1 pubblicata da whisper.cpp, quando è disponibile, e il programma whisper.cpp per Windows è scaricato in una versione fissa;
+- verso l'esterno l'app apre solo alcuni tipi di link (pagine web, email, numeri di telefono, mappe, pagine degli store) e non avvia mai file eseguibili o script, nemmeno se un file importato vi fa riferimento;
+- i file temporanei con copie di appunti vengono cancellati a ogni avvio;
+- su Android il backup automatico è disattivato; su macOS l'app gira in sandbox.
+
+Nessuna misura elimina ogni rischio. La sicurezza dei dati dipende anche da te: blocca il dispositivo, tienilo aggiornato e proteggi i file che esporti.
+
+## 14. Minori
+
+L'app è pensata per studenti universitari, quindi di norma maggiorenni. Non chiede l'età perché non raccoglie dati. Chi ha meno di 18 anni, per esempio chi si iscrive all'università a diciassette anni, può usarla, ma per collegare servizi esterni deve rispettare i limiti di età e le condizioni di Microsoft, Google e dei fornitori di assistenti AI, che sono diversi da servizio a servizio. Lo sviluppatore non tratta consapevolmente dati di minori di 14 anni; se un genitore ritiene che sia successo, per esempio tramite un'email, può scrivere all'indirizzo indicato al paragrafo 1 per farli cancellare.
+
+## 15. I tuoi diritti
+
+Per i dati trattati dallo sviluppatore (paragrafo 10.2) puoi chiedere in qualsiasi momento l'accesso, la rettifica, la cancellazione, la limitazione del trattamento e la portabilità, e puoi opporti ai trattamenti basati sul legittimo interesse (articoli da 15 a 22 del GDPR). Se hai dato il consenso, per esempio per comparire nei ringraziamenti, puoi revocarlo senza conseguenze sui trattamenti già svolti. Scrivi a «[indirizzo email di contatto]»: riceverai risposta entro un mese, prorogabile di altri due solo nei casi complessi previsti dall'articolo 12 del GDPR, e in quel caso ti verrà detto il motivo.
+
+Per i dati sul dispositivo eserciti questi diritti direttamente: puoi consultarli e correggerli nell'app, esportarli in un formato leggibile (Esporta dati, in JSON) e cancellarli come descritto al paragrafo 12. Per i dati che hai affidato a Microsoft, Google, GitHub o ai fornitori di assistenti AI devi rivolgerti a loro.
+
+Se ritieni che un trattamento violi il GDPR puoi presentare reclamo al Garante per la protezione dei dati personali (<https://www.garanteprivacy.it>) o all'autorità di controllo del paese UE in cui vivi o lavori, oppure rivolgerti al giudice.
+
+## 16. Modifiche a questa informativa
+
+Se l'app cambia in modo da incidere sui dati trattati, per esempio con una nuova funzione che si collega a un servizio esterno, questa informativa viene aggiornata prima del rilascio della versione interessata. La data in cima indica l'ultima revisione; le modifiche importanti sono segnalate anche nelle note di versione su GitHub. La cronologia completa delle versioni del documento è consultabile nel repository.
+
+Il testo aggiornato è sempre disponibile su <https://github.com/Simo-Magnus/UniNotes/blob/main/PRIVACY.md> e dall'app, in Impostazioni → Privacy e informazioni → «Informativa privacy».
+
+---
+
+## Summary in English
+
+This is a short summary; the Italian text above is the binding version.
+
+UniNotes has no account system, no developer-run server, no analytics, no ads, no tracking and no automatic crash reporting. Everything you enter, record or import stays on your device; the app does not encrypt its database or files itself, so protection relies on your device lock and disk encryption.
+
+The app connects to the internet only to download the public course database from GitHub (it checks `meta.json` at start-up and downloads your university's file), to download Whisper models from Hugging Face and, on Windows only, whisper.cpp and ffmpeg from GitHub, and to sync with OneDrive (scopes `User.Read`, `Files.ReadWrite`, `Notes.Read`, `offline_access`) or Google Drive (full `drive` scope) if you connect your own account. Sync is two-way and deletions propagate. Refresh tokens are kept in the operating system's secure storage and never included in backups.
+
+For ChatGPT, Claude, Copilot, Perplexity, NotebookLM and Gemini the app only copies a prompt to the clipboard, opens the service and shows the files to attach: you decide what to send, under that provider's terms. The current version does not call the Gemini API.
+
+The developer («[nome e cognome dello sviluppatore]», GitHub user Simo-Magnus) is a controller only for emails you send, GitHub issues you open and donations you make. Lecture recordings contain other people's voices: follow your university's rules, ask the lecturer when required and do not share recordings without consent. You can delete everything from Settings → Privacy → «Elimina tutti i dati», and you may lodge a complaint with the Italian Data Protection Authority (<https://www.garanteprivacy.it>) or your local authority. Contact: «[indirizzo email di contatto]».
