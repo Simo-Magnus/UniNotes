@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unisa",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-13",
+ "aggiornato_il": "2026-10-14",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "http://corsi.unisa.it/chimica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CB12400001",
@@ -2641,7 +2641,7 @@
    "url": "http://corsi.unisa.it/davimus",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SP12400002",
@@ -4966,7 +4966,7 @@
    "url": "http://corsi.unisa.it/economia-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SE12100001",
@@ -6877,7 +6877,7 @@
    "url": "http://corsi.unisa.it/economia-e-commercio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SE12400001",
@@ -8476,7 +8476,7 @@
    "url": "http://corsi.unisa.it/economia-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SA12700001",
@@ -10759,7 +10759,7 @@
    "url": "https://corsi.unisa.it/farmaceutica-e-nutraceutica-animale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FR12300008",
@@ -12316,7 +12316,7 @@
    "url": "http://corsi.unisa.it/filosofia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SP12500017",
@@ -14365,69 +14365,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "0312500084",
-     "nome": "Lingua Inglese",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 12,
-     "ssd": "L-LIN/12",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Calabrese Rita",
-      "Latorraca Rossella"
-     ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/506033/2021/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "J.SMITH & A. MARGOLIS, ENGLISH FOR ACADEMIC STUDY: PRONUNCIATION, 2012",
-       "autori": null,
-       "editore": null,
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "J.SMITH & A. MARGOLIS, ENGLISH FOR ACADEMIC STUDY: PRONUNCIATION, 2012"
-      },
-      {
-       "titolo": "ROUTLEDGE, 2022 (SELECTED SECTIONS OF CHAPTERS 2 - 3 - 5 - 6 - 7).",
-       "autori": null,
-       "editore": "ROUTLEDGE",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ROUTLEDGE, 2022 (SELECTED SECTIONS OF CHAPTERS 2 - 3 - 5 - 6 - 7)."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-16",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto e orale",
-       "iscrizioni_dal": "2026-11-23",
-       "iscrizioni_al": "2026-12-11",
-       "docenti": "CALABRESE RITA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unisa-l-5-filosofia-0312500084",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "0312500310",
      "nome": "Antropologia Filosofica",
      "anno": 3,
@@ -15920,6 +15857,70 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "0312500084",
+     "nome": "Lingua Inglese",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 12,
+     "ssd": "L-LIN/12",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Calabrese Rita",
+      "Latorraca Rossella"
+     ],
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/506033/2021/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "J.SMITH & A. MARGOLIS, ENGLISH FOR ACADEMIC STUDY: PRONUNCIATION, 2012",
+       "autori": null,
+       "editore": null,
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "J.SMITH & A. MARGOLIS, ENGLISH FOR ACADEMIC STUDY: PRONUNCIATION, 2012"
+      },
+      {
+       "titolo": "ROUTLEDGE, 2022 (SELECTED SECTIONS OF CHAPTERS 2 - 3 - 5 - 6 - 7).",
+       "autori": null,
+       "editore": "ROUTLEDGE",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "ROUTLEDGE, 2022 (SELECTED SECTIONS OF CHAPTERS 2 - 3 - 5 - 6 - 7)."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": "CALABRESE RITA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unisa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unisa-l-5-filosofia-0312500084",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/506033/2021/9999?coorte=2024"
+    },
+    {
      "codice": "0312500085",
      "nome": "Lingua Tedesca",
      "anno": 3,
@@ -16353,7 +16354,7 @@
    "url": "http://corsi.unisa.it/fisica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FS12600001",
@@ -18318,7 +18319,7 @@
    "url": "http://corsi.unisa.it/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1012200004",
@@ -20561,7 +20562,7 @@
    "url": "http://corsi.unisa.it/agraria",
    "stato": "completo",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FR12200003",
@@ -22698,7 +22699,7 @@
    "url": "https://corsi.unisa.it/giurista-d-impresa-e-delle-nuove-tecnologie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SG12100002",
@@ -24591,7 +24592,7 @@
    "url": "http://corsi.unisa.it/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1012100004",
@@ -27632,7 +27633,7 @@
    "url": "http://corsi.unisa.it/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1012700005",
@@ -29324,7 +29325,7 @@
    "url": "http://corsi.unisa.it/informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "NF12100001",
@@ -31989,7 +31990,7 @@
    "url": "http://corsi.unisa.it/ingegneria-chimica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "II12200002",
@@ -33911,7 +33912,7 @@
    "url": "http://corsi.unisa.it/ingegneria-civile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IC12100007",
@@ -36183,7 +36184,7 @@
    "url": "https://corsi.unisa.it/ingegneria-ambientale/presentazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IC12500005",
@@ -38540,7 +38541,7 @@
    "url": "https://corsi.unisa.it/ingegneria-dell-informazione-per-la-medicina-digitale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IE12800001",
@@ -41133,7 +41134,7 @@
    "url": "http://corsi.unisa.it/ingegneria-elettronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "II12400023",
@@ -43171,7 +43172,7 @@
    "url": "http://corsi.unisa.it/ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "II12600003",
@@ -45327,7 +45328,7 @@
    "url": "http://corsi.unisa.it/ingegneria-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IE12700001",
@@ -48075,7 +48076,7 @@
    "url": "http://corsi.unisa.it/ingegneria-meccanica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "II12300003",
@@ -50465,7 +50466,7 @@
    "url": "http://corsi.unisa.it/lettere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TU12600045",
@@ -53539,189 +53540,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "0312600053",
-     "nome": "Storia Contemporanea",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "M-STO/04",
-     "obbligatorio": false,
-     "curriculum": "LETTERE CLASSICHE",
-     "docenti": [
-      "Bonvini Alessandro",
-      "Polese Remaggi Luca"
-     ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/505567/2023/10000?coorte=2024",
-     "libri": [
-      {
-       "titolo": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA",
-       "autori": null,
-       "editore": "LATERZA",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA"
-      },
-      {
-       "titolo": "RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)",
-       "autori": null,
-       "editore": "RIZZOLI",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)"
-      },
-      {
-       "titolo": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO,",
-       "autori": null,
-       "editore": "MONDADORI",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO,"
-      },
-      {
-       "titolo": "TIZIANO BONAZZI, ABRAHAM LINCOLN. UN DRAMMA AMERICANO, IL MULINO, BOLOGNA, 2016",
-       "autori": null,
-       "editore": "IL MULINO",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "TIZIANO BONAZZI, ABRAHAM LINCOLN. UN DRAMMA AMERICANO, IL MULINO, BOLOGNA, 2016"
-      },
-      {
-       "titolo": "LUCY RIALL, GARIBALDI. L’INVENZIONE DI UN EROE, LATERZA, ROMA-BARI, 2007",
-       "autori": null,
-       "editore": "LATERZA",
-       "anno": 2007,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "LUCY RIALL, GARIBALDI. L’INVENZIONE DI UN EROE, LATERZA, ROMA-BARI, 2007"
-      },
-      {
-       "titolo": "BERNARD BRUNETEAU, IL SECOLO DEI GENOCIDI, IL MULINO, BOLOGNA, 2005",
-       "autori": null,
-       "editore": "IL MULINO",
-       "anno": 2005,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "BERNARD BRUNETEAU, IL SECOLO DEI GENOCIDI, IL MULINO, BOLOGNA, 2005"
-      },
-      {
-       "titolo": "JOANNA BOURKE, LA SECONDA GUERRA MONDIALE, IL MULINO, BOLOGNA, 2005",
-       "autori": null,
-       "editore": "IL MULINO",
-       "anno": 2005,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "JOANNA BOURKE, LA SECONDA GUERRA MONDIALE, IL MULINO, BOLOGNA, 2005"
-      },
-      {
-       "titolo": "DAVID ENGEL, L’OLOCAUSTO, IL MULINO, BOLOGNA, 2005",
-       "autori": null,
-       "editore": "IL MULINO",
-       "anno": 2005,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "DAVID ENGEL, L’OLOCAUSTO, IL MULINO, BOLOGNA, 2005"
-      },
-      {
-       "titolo": "JOSEPH SMITH, LA GUERRA FREDDA, 1945-1991, IL MULINO, BOLOGNA, 2000",
-       "autori": null,
-       "editore": "IL MULINO",
-       "anno": 2000,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "JOSEPH SMITH, LA GUERRA FREDDA, 1945-1991, IL MULINO, BOLOGNA, 2000"
-      },
-      {
-       "titolo": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA-BARI, 2008 (CAPITOLI I-XXIII)",
-       "autori": null,
-       "editore": "LATERZA",
-       "anno": 2008,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA-BARI, 2008 (CAPITOLI I-XXIII)"
-      },
-      {
-       "titolo": "LINDA COLLEY, NAVI, PENNE E CANNONI. GUERRE, COSTITUZIONI E LA CREAZIONE DEL MONDO MODERNO, RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)",
-       "autori": null,
-       "editore": "RIZZOLI",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "LINDA COLLEY, NAVI, PENNE E CANNONI. GUERRE, COSTITUZIONI E LA CREAZIONE DEL MONDO MODERNO, RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)"
-      },
-      {
-       "titolo": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO, 2007 (DA PAG. 3 A PAG. 186)",
-       "autori": null,
-       "editore": "MONDADORI",
-       "anno": 2007,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO, 2007 (DA PAG. 3 A PAG. 186)"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-16",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-23",
-       "iscrizioni_al": "2026-12-11",
-       "docenti": "POLESE REMAGGI LUCA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unisa-l-10-lettere-0312600053",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "0312600002",
      "nome": "Archeologia e Storia Dell'arte Greca e Romana",
      "anno": 3,
@@ -56094,6 +55912,190 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "0312600053",
+     "nome": "Storia Contemporanea",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "M-STO/04",
+     "obbligatorio": false,
+     "curriculum": "LETTERE CLASSICHE",
+     "docenti": [
+      "Bonvini Alessandro",
+      "Polese Remaggi Luca"
+     ],
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/505567/2023/10000?coorte=2024",
+     "libri": [
+      {
+       "titolo": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA",
+       "autori": null,
+       "editore": "LATERZA",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA"
+      },
+      {
+       "titolo": "RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)",
+       "autori": null,
+       "editore": "RIZZOLI",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)"
+      },
+      {
+       "titolo": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO,",
+       "autori": null,
+       "editore": "MONDADORI",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO,"
+      },
+      {
+       "titolo": "TIZIANO BONAZZI, ABRAHAM LINCOLN. UN DRAMMA AMERICANO, IL MULINO, BOLOGNA, 2016",
+       "autori": null,
+       "editore": "IL MULINO",
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "TIZIANO BONAZZI, ABRAHAM LINCOLN. UN DRAMMA AMERICANO, IL MULINO, BOLOGNA, 2016"
+      },
+      {
+       "titolo": "LUCY RIALL, GARIBALDI. L’INVENZIONE DI UN EROE, LATERZA, ROMA-BARI, 2007",
+       "autori": null,
+       "editore": "LATERZA",
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "LUCY RIALL, GARIBALDI. L’INVENZIONE DI UN EROE, LATERZA, ROMA-BARI, 2007"
+      },
+      {
+       "titolo": "BERNARD BRUNETEAU, IL SECOLO DEI GENOCIDI, IL MULINO, BOLOGNA, 2005",
+       "autori": null,
+       "editore": "IL MULINO",
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "BERNARD BRUNETEAU, IL SECOLO DEI GENOCIDI, IL MULINO, BOLOGNA, 2005"
+      },
+      {
+       "titolo": "JOANNA BOURKE, LA SECONDA GUERRA MONDIALE, IL MULINO, BOLOGNA, 2005",
+       "autori": null,
+       "editore": "IL MULINO",
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "JOANNA BOURKE, LA SECONDA GUERRA MONDIALE, IL MULINO, BOLOGNA, 2005"
+      },
+      {
+       "titolo": "DAVID ENGEL, L’OLOCAUSTO, IL MULINO, BOLOGNA, 2005",
+       "autori": null,
+       "editore": "IL MULINO",
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "DAVID ENGEL, L’OLOCAUSTO, IL MULINO, BOLOGNA, 2005"
+      },
+      {
+       "titolo": "JOSEPH SMITH, LA GUERRA FREDDA, 1945-1991, IL MULINO, BOLOGNA, 2000",
+       "autori": null,
+       "editore": "IL MULINO",
+       "anno": 2000,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "JOSEPH SMITH, LA GUERRA FREDDA, 1945-1991, IL MULINO, BOLOGNA, 2000"
+      },
+      {
+       "titolo": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA-BARI, 2008 (CAPITOLI I-XXIII)",
+       "autori": null,
+       "editore": "LATERZA",
+       "anno": 2008,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA-BARI, 2008 (CAPITOLI I-XXIII)"
+      },
+      {
+       "titolo": "LINDA COLLEY, NAVI, PENNE E CANNONI. GUERRE, COSTITUZIONI E LA CREAZIONE DEL MONDO MODERNO, RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)",
+       "autori": null,
+       "editore": "RIZZOLI",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "LINDA COLLEY, NAVI, PENNE E CANNONI. GUERRE, COSTITUZIONI E LA CREAZIONE DEL MONDO MODERNO, RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)"
+      },
+      {
+       "titolo": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO, 2007 (DA PAG. 3 A PAG. 186)",
+       "autori": null,
+       "editore": "MONDADORI",
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO, 2007 (DA PAG. 3 A PAG. 186)"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": "POLESE REMAGGI LUCA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unisa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unisa-l-10-lettere-0312600053",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/505567/2023/10000?coorte=2024"
+    },
+    {
      "codice": "0312600111",
      "nome": "Storia Contemporanea",
      "anno": 3,
@@ -56989,7 +56991,7 @@
    "url": "http://corsi.unisa.it/lingue-e-culture-straniere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TU12200015",
@@ -61010,7 +61012,7 @@
        "citazione": "S. CONRAD, VERSO IL MONDO MODERNO. UNA STORIA CULTURALE, EINAUDI, TORINO 2022"
       },
       {
-       "titolo": "C.H. PARKER, RELAZIONI GLOBALI NELL&#39;ETÀ MODERNA, IL MULINO, BOLOGNA 2012",
+       "titolo": "C.H. PARKER, RELAZIONI GLOBALI NELL'ETÀ MODERNA, IL MULINO, BOLOGNA 2012",
        "autori": null,
        "editore": "IL MULINO",
        "anno": 2012,
@@ -61019,7 +61021,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "C.H. PARKER, RELAZIONI GLOBALI NELL&#39;ETÀ MODERNA, IL MULINO, BOLOGNA 2012"
+       "citazione": "C.H. PARKER, RELAZIONI GLOBALI NELL'ETÀ MODERNA, IL MULINO, BOLOGNA 2012"
       },
       {
        "titolo": "D. ABULAFIA, LA SCOPERTA DELL’UMANITÀ. INCONTRI ATLANTICI NELL’ETÀ DI COLOMBO, IL MULINO, BOLOGNA 2021",
@@ -61178,7 +61180,7 @@
        "citazione": "N. ZEMON DAVIS, LA DOPPIA VITA DI LEONE L’AFRICANO, LATERZA, ROMA-BARI 2008"
       },
       {
-       "titolo": "C.H. PARKER, RELAZIONI GLOBALI NELL'ETÀ MODERNA, IL MULINO, BOLOGNA 2012",
+       "titolo": "C.H. PARKER, RELAZIONI GLOBALI NELL&#39;ETÀ MODERNA, IL MULINO, BOLOGNA 2012",
        "autori": null,
        "editore": "IL MULINO",
        "anno": 2012,
@@ -61187,7 +61189,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "C.H. PARKER, RELAZIONI GLOBALI NELL'ETÀ MODERNA, IL MULINO, BOLOGNA 2012"
+       "citazione": "C.H. PARKER, RELAZIONI GLOBALI NELL&#39;ETÀ MODERNA, IL MULINO, BOLOGNA 2012"
       }
      ],
      "esami": [
@@ -61923,249 +61925,6 @@
      "modalita_esame": "scritto e orale con unico voto",
      "id": "unisa-l-11-lingue-e-culture-straniere-4312200060",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "4312200035",
-     "nome": "Storia Contemporanea",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "M-STO/04",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Bonvini Alessandro",
-      "Polese Remaggi Luca"
-     ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/508205/2016/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA",
-       "autori": null,
-       "editore": "LATERZA",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA"
-      },
-      {
-       "titolo": "RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)",
-       "autori": null,
-       "editore": "RIZZOLI",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)"
-      },
-      {
-       "titolo": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO,",
-       "autori": null,
-       "editore": "MONDADORI",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO,"
-      },
-      {
-       "titolo": "TIZIANO BONAZZI, ABRAHAM LINCOLN. UN DRAMMA AMERICANO, IL MULINO, BOLOGNA, 2016",
-       "autori": null,
-       "editore": "IL MULINO",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "TIZIANO BONAZZI, ABRAHAM LINCOLN. UN DRAMMA AMERICANO, IL MULINO, BOLOGNA, 2016"
-      },
-      {
-       "titolo": "LUCY RIALL, GARIBALDI. L’INVENZIONE DI UN EROE, LATERZA, ROMA-BARI, 2007",
-       "autori": null,
-       "editore": "LATERZA",
-       "anno": 2007,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "LUCY RIALL, GARIBALDI. L’INVENZIONE DI UN EROE, LATERZA, ROMA-BARI, 2007"
-      },
-      {
-       "titolo": "BERNARD BRUNETEAU, IL SECOLO DEI GENOCIDI, IL MULINO, BOLOGNA, 2005",
-       "autori": null,
-       "editore": "IL MULINO",
-       "anno": 2005,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "BERNARD BRUNETEAU, IL SECOLO DEI GENOCIDI, IL MULINO, BOLOGNA, 2005"
-      },
-      {
-       "titolo": "JOANNA BOURKE, LA SECONDA GUERRA MONDIALE, IL MULINO, BOLOGNA, 2005",
-       "autori": null,
-       "editore": "IL MULINO",
-       "anno": 2005,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "JOANNA BOURKE, LA SECONDA GUERRA MONDIALE, IL MULINO, BOLOGNA, 2005"
-      },
-      {
-       "titolo": "DAVID ENGEL, L’OLOCAUSTO, IL MULINO, BOLOGNA, 2005",
-       "autori": null,
-       "editore": "IL MULINO",
-       "anno": 2005,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "DAVID ENGEL, L’OLOCAUSTO, IL MULINO, BOLOGNA, 2005"
-      },
-      {
-       "titolo": "JOSEPH SMITH, LA GUERRA FREDDA, 1945-1991, IL MULINO, BOLOGNA, 2000",
-       "autori": null,
-       "editore": "IL MULINO",
-       "anno": 2000,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "JOSEPH SMITH, LA GUERRA FREDDA, 1945-1991, IL MULINO, BOLOGNA, 2000"
-      },
-      {
-       "titolo": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA-BARI, 2008 (CAPITOLI I-XXIII)",
-       "autori": null,
-       "editore": "LATERZA",
-       "anno": 2008,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA-BARI, 2008 (CAPITOLI I-XXIII)"
-      },
-      {
-       "titolo": "LINDA COLLEY, NAVI, PENNE E CANNONI. GUERRE, COSTITUZIONI E LA CREAZIONE DEL MONDO MODERNO, RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)",
-       "autori": null,
-       "editore": "RIZZOLI",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "LINDA COLLEY, NAVI, PENNE E CANNONI. GUERRE, COSTITUZIONI E LA CREAZIONE DEL MONDO MODERNO, RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)"
-      },
-      {
-       "titolo": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO, 2007 (DA PAG. 3 A PAG. 186)",
-       "autori": null,
-       "editore": "MONDADORI",
-       "anno": 2007,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO, 2007 (DA PAG. 3 A PAG. 186)"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-14",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-23",
-       "iscrizioni_al": "2026-12-09",
-       "docenti": "BONVINI ALESSANDRO",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-16",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-23",
-       "iscrizioni_al": "2026-12-11",
-       "docenti": "POLESE REMAGGI LUCA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-11",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-21",
-       "iscrizioni_al": "2027-01-06",
-       "docenti": "BONVINI ALESSANDRO",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-19",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-21",
-       "iscrizioni_al": "2027-01-14",
-       "docenti": "POLESE REMAGGI LUCA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-01",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-12",
-       "iscrizioni_al": "2027-01-27",
-       "docenti": "BONVINI ALESSANDRO",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-09",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-20",
-       "iscrizioni_al": "2027-02-04",
-       "docenti": "POLESE REMAGGI LUCA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unisa-l-11-lingue-e-culture-straniere-4312200035",
-     "stato_esami": "completo"
     },
     {
      "codice": "4312200050",
@@ -64476,6 +64235,250 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "4312200035",
+     "nome": "Storia Contemporanea",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "M-STO/04",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Bonvini Alessandro",
+      "Polese Remaggi Luca"
+     ],
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/508205/2016/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA",
+       "autori": null,
+       "editore": "LATERZA",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA"
+      },
+      {
+       "titolo": "RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)",
+       "autori": null,
+       "editore": "RIZZOLI",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)"
+      },
+      {
+       "titolo": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO,",
+       "autori": null,
+       "editore": "MONDADORI",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO,"
+      },
+      {
+       "titolo": "TIZIANO BONAZZI, ABRAHAM LINCOLN. UN DRAMMA AMERICANO, IL MULINO, BOLOGNA, 2016",
+       "autori": null,
+       "editore": "IL MULINO",
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "TIZIANO BONAZZI, ABRAHAM LINCOLN. UN DRAMMA AMERICANO, IL MULINO, BOLOGNA, 2016"
+      },
+      {
+       "titolo": "LUCY RIALL, GARIBALDI. L’INVENZIONE DI UN EROE, LATERZA, ROMA-BARI, 2007",
+       "autori": null,
+       "editore": "LATERZA",
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "LUCY RIALL, GARIBALDI. L’INVENZIONE DI UN EROE, LATERZA, ROMA-BARI, 2007"
+      },
+      {
+       "titolo": "BERNARD BRUNETEAU, IL SECOLO DEI GENOCIDI, IL MULINO, BOLOGNA, 2005",
+       "autori": null,
+       "editore": "IL MULINO",
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "BERNARD BRUNETEAU, IL SECOLO DEI GENOCIDI, IL MULINO, BOLOGNA, 2005"
+      },
+      {
+       "titolo": "JOANNA BOURKE, LA SECONDA GUERRA MONDIALE, IL MULINO, BOLOGNA, 2005",
+       "autori": null,
+       "editore": "IL MULINO",
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "JOANNA BOURKE, LA SECONDA GUERRA MONDIALE, IL MULINO, BOLOGNA, 2005"
+      },
+      {
+       "titolo": "DAVID ENGEL, L’OLOCAUSTO, IL MULINO, BOLOGNA, 2005",
+       "autori": null,
+       "editore": "IL MULINO",
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "DAVID ENGEL, L’OLOCAUSTO, IL MULINO, BOLOGNA, 2005"
+      },
+      {
+       "titolo": "JOSEPH SMITH, LA GUERRA FREDDA, 1945-1991, IL MULINO, BOLOGNA, 2000",
+       "autori": null,
+       "editore": "IL MULINO",
+       "anno": 2000,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "JOSEPH SMITH, LA GUERRA FREDDA, 1945-1991, IL MULINO, BOLOGNA, 2000"
+      },
+      {
+       "titolo": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA-BARI, 2008 (CAPITOLI I-XXIII)",
+       "autori": null,
+       "editore": "LATERZA",
+       "anno": 2008,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "GIOVANNI SABBATUCCI, VITTORIO VIDOTTO, IL MONDO CONTEMPORANEO DAL 1848 AD OGGI, LATERZA, ROMA-BARI, 2008 (CAPITOLI I-XXIII)"
+      },
+      {
+       "titolo": "LINDA COLLEY, NAVI, PENNE E CANNONI. GUERRE, COSTITUZIONI E LA CREAZIONE DEL MONDO MODERNO, RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)",
+       "autori": null,
+       "editore": "RIZZOLI",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "LINDA COLLEY, NAVI, PENNE E CANNONI. GUERRE, COSTITUZIONI E LA CREAZIONE DEL MONDO MODERNO, RIZZOLI, MILANO, 2022 (DA PAG. 9 A PAG. 232)"
+      },
+      {
+       "titolo": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO, 2007 (DA PAG. 3 A PAG. 186)",
+       "autori": null,
+       "editore": "MONDADORI",
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "NIALL FERGUSON, IMPERO. COME LA GRAN BRETAGNA HA FATTO IL MONDO MODERNO, MONDADORI, MILANO, 2007 (DA PAG. 3 A PAG. 186)"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "BONVINI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": "POLESE REMAGGI LUCA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-21",
+       "iscrizioni_al": "2027-01-06",
+       "docenti": "BONVINI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-21",
+       "iscrizioni_al": "2027-01-14",
+       "docenti": "POLESE REMAGGI LUCA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-01-27",
+       "docenti": "BONVINI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-04",
+       "docenti": "POLESE REMAGGI LUCA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unisa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unisa-l-11-lingue-e-culture-straniere-4312200035",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/508205/2016/9999?coorte=2024"
+    },
+    {
      "codice": "4312200072",
      "nome": "Storia Globale",
      "anno": 3,
@@ -64504,7 +64507,7 @@
        "citazione": "S. CONRAD, VERSO IL MONDO MODERNO. UNA STORIA CULTURALE, EINAUDI, TORINO 2022"
       },
       {
-       "titolo": "C.H. PARKER, RELAZIONI GLOBALI NELL&#39;ETÀ MODERNA, IL MULINO, BOLOGNA 2012",
+       "titolo": "C.H. PARKER, RELAZIONI GLOBALI NELL'ETÀ MODERNA, IL MULINO, BOLOGNA 2012",
        "autori": null,
        "editore": "IL MULINO",
        "anno": 2012,
@@ -64513,7 +64516,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "C.H. PARKER, RELAZIONI GLOBALI NELL&#39;ETÀ MODERNA, IL MULINO, BOLOGNA 2012"
+       "citazione": "C.H. PARKER, RELAZIONI GLOBALI NELL'ETÀ MODERNA, IL MULINO, BOLOGNA 2012"
       },
       {
        "titolo": "D. ABULAFIA, LA SCOPERTA DELL’UMANITÀ. INCONTRI ATLANTICI NELL’ETÀ DI COLOMBO, IL MULINO, BOLOGNA 2021",
@@ -64672,7 +64675,7 @@
        "citazione": "N. ZEMON DAVIS, LA DOPPIA VITA DI LEONE L’AFRICANO, LATERZA, ROMA-BARI 2008"
       },
       {
-       "titolo": "C.H. PARKER, RELAZIONI GLOBALI NELL'ETÀ MODERNA, IL MULINO, BOLOGNA 2012",
+       "titolo": "C.H. PARKER, RELAZIONI GLOBALI NELL&#39;ETÀ MODERNA, IL MULINO, BOLOGNA 2012",
        "autori": null,
        "editore": "IL MULINO",
        "anno": 2012,
@@ -64681,7 +64684,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "C.H. PARKER, RELAZIONI GLOBALI NELL'ETÀ MODERNA, IL MULINO, BOLOGNA 2012"
+       "citazione": "C.H. PARKER, RELAZIONI GLOBALI NELL&#39;ETÀ MODERNA, IL MULINO, BOLOGNA 2012"
       }
      ],
      "esami": [
@@ -66211,7 +66214,7 @@
    "url": "https://corsi.unisa.it/marketing-e-digital-business",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SC12300003",
@@ -67259,7 +67262,7 @@
    "url": "http://corsi.unisa.it/matematica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MT12300051",
@@ -69701,7 +69704,7 @@
    "url": "http://corsi.unisa.it/ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1012400004",
@@ -72782,7 +72785,7 @@
    "url": "http://corsi.unisa.it/scienze-ambientali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CB12700003",
@@ -74803,7 +74806,7 @@
    "url": "http://corsi.unisa.it/scienze-biologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CB12800005",
@@ -75894,7 +75897,7 @@
    "url": "http://corsi.unisa.it/scienze-dei-beni-culturali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SP12800014",
@@ -79638,7 +79641,7 @@
    "url": "https://corsi.unisa.it/scienze-del-servizio-sociale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TP12900026",
@@ -81279,7 +81282,7 @@
    "url": "https://corsi.unisa.it/scienze-del-turismo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SE12900001",
@@ -82257,7 +82260,7 @@
    "url": "http://corsi.unisa.it/scienze-dell-amministrazione-e-dell-organizzazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SE12200001",
@@ -83593,7 +83596,7 @@
    "url": "http://corsi.unisa.it/scienze-educazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SU12400007",
@@ -86189,7 +86192,7 @@
    "url": "http://corsi.unisa.it/scienze-della-comunicazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SC12200043",
@@ -88434,7 +88437,7 @@
    "url": "http://corsi.unisa.it/scienze-attivita-motorie-sportive-educazione-psicomotoria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SU12500008",
@@ -90005,7 +90008,7 @@
    "url": "https://corsi.unisa.it/scienze-e-nanotecnologie-per-la-sostenibilita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FS12900008",
@@ -91666,7 +91669,7 @@
    "url": "http://corsi.unisa.it/scienze-politiche-e-relazioni-Internazionali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SC12100006",
@@ -92475,68 +92478,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "1212100066",
-     "nome": "Geografia Politica ed Economica",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "M-GGR/02",
-     "obbligatorio": false,
-     "curriculum": "MEDIAZIONE CULTURALE E SPAZIO EURO-MEDITERRANEO, POLITICA E ISTITUZIONI, RELAZIONI INTERNAZIONALI",
-     "docenti": [
-      "Citarella Germana",
-      "Iovino Giorgia"
-     ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/507951/2019/10002?coorte=2024",
-     "libri": [
-      {
-       "titolo": "APPROCCIO VISUALE. UTET, TORINO, ULTIMA EDIZIONE.",
-       "autori": null,
-       "editore": "APPROCCIO VISUALE. UTET",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "APPROCCIO VISUALE. UTET, TORINO, ULTIMA EDIZIONE."
-      },
-      {
-       "titolo": "A.L. GREINER, G. DEMATTEIS, C. LANZA, GEOGRAFIA UMANA. UN APPROCCIO VISUALE, TORINO, UTET, ULTIMA EDIZIONE",
-       "autori": null,
-       "editore": "UTET",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "A.L. GREINER, G. DEMATTEIS, C. LANZA, GEOGRAFIA UMANA. UN APPROCCIO VISUALE, TORINO, UTET, ULTIMA EDIZIONE"
-      },
-      {
-       "titolo": "A.L. GREINER, G. DEMATTEIS, C. LANZA, GEOGRAFIA UMANA. UN APPROCCIO VISUALE, TORINO, UTET, ULTIMA EDIZIONE (ESCLUSI ALCUNI CAPITOLI)",
-       "autori": null,
-       "editore": "UTET",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "A.L. GREINER, G. DEMATTEIS, C. LANZA, GEOGRAFIA UMANA. UN APPROCCIO VISUALE, TORINO, UTET, ULTIMA EDIZIONE (ESCLUSI ALCUNI CAPITOLI)"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "scritto e orale con unico voto",
-     "id": "unisa-l-36-scienze-politiche-e-delle-relazioni-internazionali-1212100066",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "1212100156",
      "nome": "Culture Politiche e Sviluppo Economico Euromediterraneo",
      "anno": 3,
@@ -92913,6 +92854,69 @@
      "modalita_esame": "orale",
      "id": "unisa-l-36-scienze-politiche-e-delle-relazioni-internazionali-1212100136",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1212100066",
+     "nome": "Geografia Politica ed Economica",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "M-GGR/02",
+     "obbligatorio": false,
+     "curriculum": "MEDIAZIONE CULTURALE E SPAZIO EURO-MEDITERRANEO, POLITICA E ISTITUZIONI, RELAZIONI INTERNAZIONALI",
+     "docenti": [
+      "Citarella Germana",
+      "Iovino Giorgia"
+     ],
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/507951/2019/10002?coorte=2024",
+     "libri": [
+      {
+       "titolo": "APPROCCIO VISUALE. UTET, TORINO, ULTIMA EDIZIONE.",
+       "autori": null,
+       "editore": "APPROCCIO VISUALE. UTET",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "APPROCCIO VISUALE. UTET, TORINO, ULTIMA EDIZIONE."
+      },
+      {
+       "titolo": "A.L. GREINER, G. DEMATTEIS, C. LANZA, GEOGRAFIA UMANA. UN APPROCCIO VISUALE, TORINO, UTET, ULTIMA EDIZIONE",
+       "autori": null,
+       "editore": "UTET",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A.L. GREINER, G. DEMATTEIS, C. LANZA, GEOGRAFIA UMANA. UN APPROCCIO VISUALE, TORINO, UTET, ULTIMA EDIZIONE"
+      },
+      {
+       "titolo": "A.L. GREINER, G. DEMATTEIS, C. LANZA, GEOGRAFIA UMANA. UN APPROCCIO VISUALE, TORINO, UTET, ULTIMA EDIZIONE (ESCLUSI ALCUNI CAPITOLI)",
+       "autori": null,
+       "editore": "UTET",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A.L. GREINER, G. DEMATTEIS, C. LANZA, GEOGRAFIA UMANA. UN APPROCCIO VISUALE, TORINO, UTET, ULTIMA EDIZIONE (ESCLUSI ALCUNI CAPITOLI)"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://unisa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "scritto e orale con unico voto",
+     "id": "unisa-l-36-scienze-politiche-e-delle-relazioni-internazionali-1212100066",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/507951/2019/10000?coorte=2024"
     },
     {
      "codice": "1212100061",
@@ -94313,7 +94317,7 @@
    "url": "http://corsi.unisa.it/sociologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TP12300006",
@@ -96304,7 +96308,7 @@
    "url": "http://corsi.unisa.it/statistica-per-i-big-data",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SE12300001",
@@ -96986,7 +96990,7 @@
    "url": "https://corsi.unisa.it/studi-diplomatici-internazionali-e-sulla-sicurezza-globale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SA12500041",
@@ -99265,7 +99269,7 @@
    "url": "https://corsi.unisa.it/tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1012600033",
@@ -100672,7 +100676,7 @@
    "url": "http://corsi.unisa.it/tecniche-di-radiologia-medica-per-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "1012500032",
@@ -102415,7 +102419,7 @@
    "url": "http://corsi.unisa.it/tecniche-erboristiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FR12100007",
@@ -104348,7 +104352,7 @@
    "url": "http://corsi.unisa.it/archeologia-e-culture-antiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SP22300002",
@@ -105993,7 +105997,7 @@
    "url": "http://corsi.unisa.it/biologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CB22100001",
@@ -106852,7 +106856,7 @@
    "url": "http://corsi.unisa.it/chimica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CB22300002",
@@ -108819,7 +108823,7 @@
    "url": "http://corsi.unisa.it/consulenza-e-management-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SA22100037",
@@ -110885,7 +110889,7 @@
    "url": "http://corsi.unisa.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SC23100019",
@@ -111877,7 +111881,7 @@
    "url": "https://corsi.unisa.it/data-science-e-gestione-dell-innovazione-lm-data",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SA22800001",
@@ -113194,7 +113198,7 @@
    "url": "https://corsi.unisa.it/digital-marketing",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SC23200032",
@@ -114251,7 +114255,7 @@
    "url": "http://corsi.unisa.it/economia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SE22200001",
@@ -116508,7 +116512,7 @@
    "url": "http://corsi.unisa.it/economia-governo-e-amministrazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SE23100004",
@@ -117263,7 +117267,7 @@
    "url": "https://corsi.unisa.it/electrical-engineering-for-digital-energy",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IE23300002",
@@ -118445,7 +118449,7 @@
    "url": "http://corsi.unisa.it/filologia-letterature-e-storia-dell-antichita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TU22200001",
@@ -120908,7 +120912,7 @@
    "url": "http://corsi.unisa.it/filologia-moderna",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TU22100010",
@@ -124083,7 +124087,7 @@
    "url": "http://corsi.unisa.it/filosofia-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SP22600002",
@@ -126411,7 +126415,7 @@
    "url": "http://corsi.unisa.it/fisica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FS22600013",
@@ -128983,7 +128987,7 @@
    "url": "http://corsi.unisa.it/ingegneria-alimentare",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "II22800001",
@@ -130141,7 +130145,7 @@
    "url": "https://corsi.unisa.it/gestione-e-valorizzazione-degli-archivi-e-delle-biblioteche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SP22000001",
@@ -131332,7 +131336,7 @@
    "url": "http://corsi.unisa.it/informatica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "NF22500048",
@@ -135304,7 +135308,7 @@
    "url": "https://corsi.unisa.it/information-engineering-for-digital-medicine/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IE23200001",
@@ -136587,7 +136591,7 @@
    "url": "http://corsi.unisa.it/ingegneria-chimica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "II22200001",
@@ -138152,7 +138156,7 @@
    "url": "http://corsi.unisa.it/ingegneria-civile-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IC22100024",
@@ -141423,7 +141427,7 @@
    "url": "http://corsi.unisa.it/ingegneria-elettronica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "II22400001",
@@ -143342,7 +143346,7 @@
    "url": "http://corsi.unisa.it/ingegneria-gestionale-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "II22600006",
@@ -144993,7 +144997,7 @@
    "url": "http://corsi.unisa.it/ingegneria-informatica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IE22700004",
@@ -148296,7 +148300,7 @@
    "url": "http://corsi.unisa.it/ingegneria-meccanica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "II22300001",
@@ -151027,7 +151031,7 @@
    "url": "http://corsi.unisa.it/ingegneria-ambientale-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IC22500003",
@@ -153142,7 +153146,7 @@
    "url": "http://corsi.unisa.it/agraria-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FR22200005",
@@ -154302,7 +154306,7 @@
    "url": "http://corsi.unisa.it/lingue-e-letterature-moderne",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TU24100034",
@@ -161651,7 +161655,7 @@
    "url": "http://corsi.unisa.it/linguistica-e-didattica-dell-italiano",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TU24000004",
@@ -162547,7 +162551,7 @@
    "url": "https://corsi.unisa.it/management-dei-sistemi-turistici-per-lo-sviluppo-sostenibile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SC22800001",
@@ -163242,7 +163246,7 @@
    "url": "https://corsi.unisa.it/management-delle-attivita-sportive-e-motorie-per-il-benessere-sociale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TP22700009",
@@ -164443,7 +164447,7 @@
    "url": "http://corsi.unisa.it/matematica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MT22200057",
@@ -166785,7 +166789,7 @@
    "url": "https://corsi.unisa.it/nanotechnology-and-physics-for-sustainability",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FS22700003",
@@ -167960,7 +167964,7 @@
    "url": "https://corsi.unisa.it/organizzazione-valutazione-e-supervisione-dei-servizi-sociali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TP23000003",
@@ -168939,7 +168943,7 @@
    "url": "http://corsi.unisa.it/politiche-istituzioni-e-territorio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SC22600003",
@@ -170081,7 +170085,7 @@
    "url": "https://corsi.unisa.it/psicologia-di-comunita-per-i-contesti-formativi-per-il-benessere-e-per-lo-sport",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SU22500002",
@@ -171431,7 +171435,7 @@
    "url": "http://corsi.unisa.it/scienze-ambientali-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CB22400002",
@@ -172536,7 +172540,7 @@
    "url": "https://corsi.unisa.it/scienze-educazione-permanente-e-formazione-continua",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SU22400002",
@@ -173733,7 +173737,7 @@
    "url": "http://corsi.unisa.it/scienze-della-valutazione-motorio-sportiva",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SU22200006",
@@ -174850,7 +174854,7 @@
    "url": "http://corsi.unisa.it/scienze-dello-spettacolo-e-della-produzione-multimediale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SP22200005",
@@ -176480,7 +176484,7 @@
    "url": "https://corsi.unisa.it/scienze-infermieristiche-e-ostetriche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ME22100005",
@@ -177177,7 +177181,7 @@
    "url": "https://corsi.unisa.it/scienze-infermieristiche-e-ostetriche-profilo-ostetrico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ME22200005",
@@ -177883,7 +177887,7 @@
    "url": "http://corsi.unisa.it/scienze-pedagogiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SU22100003",
@@ -179160,7 +179164,7 @@
    "url": "http://corsi.unisa.it/scienze-statistiche-per-la-finanza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SE22400001",
@@ -179974,7 +179978,7 @@
    "url": "https://corsi.unisa.it/sicurezza-informatica-e-tecnologie-cloud",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "NF22700004",
@@ -180878,7 +180882,7 @@
    "url": "https://corsi.unisa.it/smart-industry-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "II23000002",
@@ -182477,7 +182481,7 @@
    "url": "http://corsi.unisa.it/sociologia-cambiamentoambientaledigitale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TP22900013",
@@ -184012,7 +184016,7 @@
    "url": "http://corsi.unisa.it/storia-e-critica-d-arte",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SP22400016",
@@ -186047,7 +186051,7 @@
    "url": "https://corsi.unisa.it/global-studies-and-eu",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SA22500005",
@@ -187815,7 +187819,7 @@
    "url": "http://corsi.unisa.it/chimica-e-tecnologia-farmaceutiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FR60400006",
@@ -190952,7 +190956,7 @@
    "url": "http://corsi.unisa.it/farmacia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FR60300006",
@@ -194601,7 +194605,7 @@
    "url": "http://corsi.unisa.it/giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SG60100001",
@@ -200009,10 +200013,459 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "0160100448",
+     "nome": "Diritto Comparato dei Dati e Dell’intelligenza Artificiale",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/12/2026 00:00:00",
+     "cfu": 8,
+     "ssd": "IUS/02",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Parisi Annamaria Giulia"
+     ],
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/518950/2012/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "PROGRAMMA DA 6 CFU - GIURISPRUDENZA [ SG601]: A. G. PARISI, METAVERSO E INTELLIGENZA ARTIFICIALE, GIAPPICHELLI,TORINO.",
+       "autori": null,
+       "editore": "GIAPPICHELLI",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "PROGRAMMA DA 6 CFU - GIURISPRUDENZA [ SG601]: A. G. PARISI, METAVERSO E INTELLIGENZA ARTIFICIALE, GIAPPICHELLI,TORINO."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://unisa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unisa-lmg-01-giurisprudenza-0160100448",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "0160100038",
+     "nome": "Diritto Penale",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": "IUS/17",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Castaldo Andrea",
+      "Schiaffo Francesco",
+      "Sessa Antonino"
+     ],
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504040/2012/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "FIANDACA - MUSCO, DIRITTO PENALE. PARTE GENERALE, ZANICHELLI EDITORE, ULTIMA EDIZIONE (PARTE I CAPITOLI 2, 3 E 5, PARTI II, III, IV, V E VI, PARTE VII CAPITOLO 1 PARAGRAFI 1, 2, 3, 4, CAPITOLO 2, CAPITOLO 3 PARAGRAFI 1, 2, 3, 4, CAPITOLO 4 PARAGRAFI 1, 2, 3, 12, CAPITOLO 5 PARAGRAFI 1, 2, 3, 4, 5, 6",
+       "autori": null,
+       "editore": "ZANICHELLI EDITORE",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "FIANDACA - MUSCO, DIRITTO PENALE. PARTE GENERALE, ZANICHELLI EDITORE, ULTIMA EDIZIONE (PARTE I CAPITOLI 2, 3 E 5, PARTI II, III, IV, V E VI, PARTE VII CAPITOLO 1 PARAGRAFI 1, 2, 3, 4, CAPITOLO 2, CAPITOLO 3 PARAGRAFI 1, 2, 3, 4, CAPITOLO 4 PARAGRAFI 1, 2, 3, 12, CAPITOLO 5 PARAGRAFI 1, 2, 3, 4, 5, 6, 7)."
+      },
+      {
+       "titolo": "FIORE - FIORE, DIRITTO PENALE. PARTE GENERALE, UTET, ULTIMA EDIZIONE (PARTE I - PARTE II CAPITOLO 1 - PARTI III, IV, V - PARTE VI SEZIONE I CAPITOLO 3 PARAGRAFI 1 E 2 - PARTE VI SEZIONE I CAPITOLO 1 PARAGRAFI 1 E 2 E RELATIVI SOTTOPARAGRAFI - PARTE VI SEZIONE I CAPITOLO 3 PARAGRAFI 3 (ESCLUSI I RELA",
+       "autori": null,
+       "editore": "UTET",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "FIORE - FIORE, DIRITTO PENALE. PARTE GENERALE, UTET, ULTIMA EDIZIONE (PARTE I - PARTE II CAPITOLO 1 - PARTI III, IV, V - PARTE VI SEZIONE I CAPITOLO 3 PARAGRAFI 1 E 2 - PARTE VI SEZIONE I CAPITOLO 1 PARAGRAFI 1 E 2 E RELATIVI SOTTOPARAGRAFI - PARTE VI SEZIONE I CAPITOLO 3 PARAGRAFI 3 (ESCLUSI I RELATIVI SOTTOPARAGRAFI) E 4 (ESCLUSI I RELATIVI SOTTOPARAGRAFI) - PARTE VI SEZIONE II CAPITOLO UNICO"
+      },
+      {
+       "titolo": "MOCCIA, IL DIRITTO PENALE TRA ESSERE E VALORE, ESI, NAPOLI 1992, P.17-38 + P.77-88 + P.96-97 + P.101-116",
+       "autori": null,
+       "editore": null,
+       "anno": 1992,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MOCCIA, IL DIRITTO PENALE TRA ESSERE E VALORE, ESI, NAPOLI 1992, P.17-38 + P.77-88 + P.96-97 + P.101-116"
+      },
+      {
+       "titolo": "M. NADDEO, PRINCIPIO DI OFFENSIVITÀ E CHIAVI DI LETTURA, GIAPPICHELLI, 2022, CAPITOLI I E II.",
+       "autori": null,
+       "editore": "GIAPPICHELLI",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "M. NADDEO, PRINCIPIO DI OFFENSIVITÀ E CHIAVI DI LETTURA, GIAPPICHELLI, 2022, CAPITOLI I E II."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-06",
+       "iscrizioni_al": "2026-10-03",
+       "docenti": "LO MONTE ELIO TELESCA MARIANGELA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-09",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "CASTALDO ANDREA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-15",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": "SESSA ANTONINO",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-18",
+       "iscrizioni_al": "2026-12-15",
+       "docenti": "CASTALDO ANDREA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-18",
+       "iscrizioni_al": "2026-12-15",
+       "docenti": "SCHIAFFO FRANCESCO",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unisa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unisa-lmg-01-giurisprudenza-0160100038",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504040/2012/9999?coorte=2024"
+    },
+    {
+     "codice": "0160100102",
+     "nome": "Teoria del Diritto e Dell'argomentazione",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/20",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Bisogni Giovanni",
+      "D'attorre Alfredo",
+      "Giordano Valeria"
+     ],
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504109/2012/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "H.L.A. HART, IL CONCETTO DI DIRITTO, EINAUDI, TORINO 2002",
+       "autori": null,
+       "editore": "EINAUDI",
+       "anno": 2002,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "H.L.A. HART, IL CONCETTO DI DIRITTO, EINAUDI, TORINO 2002"
+      },
+      {
+       "titolo": "A. CATANIA, EFFETTIVITÀ E MODELLI NORMATIVI. STUDI DI FILOSOFIA DEL DIRITTO, GIAPPICHELLI, TORINO 2018.",
+       "autori": null,
+       "editore": "GIAPPICHELLI",
+       "anno": 2018,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A. CATANIA, EFFETTIVITÀ E MODELLI NORMATIVI. STUDI DI FILOSOFIA DEL DIRITTO, GIAPPICHELLI, TORINO 2018."
+      },
+      {
+       "titolo": "PER I NON FREQUENTANTI: G. ZAGREBELSKY , IL DIRITTO MITE, EINAUDI, TORINO 2024, NONCHÉ A. CATANIA, METAMORFOSI DEL DIRITTO. DECISIONE E NORMA NELL'ETÀ GLOBALE, LATERZA, ROMA-BARI (QLS EDIZIONE).",
+       "autori": null,
+       "editore": "EINAUDI",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "PER I NON FREQUENTANTI: G. ZAGREBELSKY , IL DIRITTO MITE, EINAUDI, TORINO 2024, NONCHÉ A. CATANIA, METAMORFOSI DEL DIRITTO. DECISIONE E NORMA NELL'ETÀ GLOBALE, LATERZA, ROMA-BARI (QLS EDIZIONE)."
+      },
+      {
+       "titolo": "V. GIORDANO, LE REGOLE DEL CORPO. COSTRUZIONE TEORICHE E DECISIONI GIUDIZIARIE, GIAPPICHELLI, TORINO, 2017.",
+       "autori": null,
+       "editore": "GIAPPICHELLI",
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "V. GIORDANO, LE REGOLE DEL CORPO. COSTRUZIONE TEORICHE E DECISIONI GIUDIZIARIE, GIAPPICHELLI, TORINO, 2017."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-05",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "BISOGNI GIOVANNI D'ATTORRE ALFREDO",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-12",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-09",
+       "iscrizioni_al": "2026-10-09",
+       "docenti": "TUCCI ANTONIO LUCIANO MICHELANGELO NIGRO CARMELO",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-14",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": "BISOGNI GIOVANNI",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-14",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": "D'ATTORRE ALFREDO",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-15",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": "GIORDANO VALERIA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unisa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unisa-lmg-01-giurisprudenza-0160100102",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504109/2012/9999?coorte=2024"
+    },
+    {
+     "codice": "0160100449",
+     "nome": "Diritto Tributario Europeo e Internazionale",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "30/04/2027 00:00:00",
+     "cfu": 8,
+     "ssd": "IUS/12",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Cannizzaro Susanna"
+     ],
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/518951/2012/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "L. TOSI, R. BAGGIO, LINEAMENTI DI DIRITTO TRIBUTARIO INTERNAZIONALE, MILANO, CEDAM, ULTIMA EDIZIONE",
+       "autori": null,
+       "editore": "CEDAM",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "L. TOSI, R. BAGGIO, LINEAMENTI DI DIRITTO TRIBUTARIO INTERNAZIONALE, MILANO, CEDAM, ULTIMA EDIZIONE"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://unisa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unisa-lmg-01-giurisprudenza-0160100449",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "0160100096",
+     "nome": "Storia del Diritto Moderno e Contemporaneo",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/19",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Del Bagno Ileana",
+      "Simone Antonella",
+      "Trifone Gian Paolo"
+     ],
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504103/2012/9999?coorte=2024",
+     "libri": [
+      {
+       "titolo": "PARTE GENERALE: IL POTERE DEI CONFLITTI. TESTIMONIANZE SULLA STORIA DELLA MAGISTRATURA ITALIANA, A CURA DI ORAZIO ABBAMONTE, GIAPPICHELLI, TORINO 2017, PP. 31-57; 83-228; 269-312.",
+       "autori": null,
+       "editore": "GIAPPICHELLI",
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "PARTE GENERALE: IL POTERE DEI CONFLITTI. TESTIMONIANZE SULLA STORIA DELLA MAGISTRATURA ITALIANA, A CURA DI ORAZIO ABBAMONTE, GIAPPICHELLI, TORINO 2017, PP. 31-57; 83-228; 269-312."
+      },
+      {
+       "titolo": "I. DEL BAGNO, DA INCAPACI A DISABILI. MINORATI SENSORIALI E CULTURA DEI DIRITTI, GIAPPICHELLI 2021",
+       "autori": null,
+       "editore": "GIAPPICHELLI 2021",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "I. DEL BAGNO, DA INCAPACI A DISABILI. MINORATI SENSORIALI E CULTURA DEI DIRITTI, GIAPPICHELLI 2021"
+      },
+      {
+       "titolo": "A. SIMONE, LO SPORT COME ORDINAMENTO GIURIDICO. UN PROFILO STORICO, GIAPPICHELLI 2021",
+       "autori": null,
+       "editore": "A. SIMONE",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A. SIMONE, LO SPORT COME ORDINAMENTO GIURIDICO. UN PROFILO STORICO, GIAPPICHELLI 2021"
+      },
+      {
+       "titolo": "G. P. TRIFONE, DALLO STATO DI DIRITTO AL DIRITTO DELLO STATO. GIUSFORMALISMO E FASCISMO, GIAPPICHELLI 2019.",
+       "autori": null,
+       "editore": "GIAPPICHELLI 2019",
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "G. P. TRIFONE, DALLO STATO DI DIRITTO AL DIRITTO DELLO STATO. GIUSFORMALISMO E FASCISMO, GIAPPICHELLI 2019."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-07",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "DEL BAGNO ILEANA CANORO PIERLUIGI DI SOMMA ALFONSO MARIA SIMONE ANTONELLA TRIFONE GIAN PAOLO",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-16",
+       "iscrizioni_al": "2026-12-13",
+       "docenti": "DEL BAGNO ILEANA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unisa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unisa-lmg-01-giurisprudenza-0160100096",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504103/2012/9999?coorte=2024"
+    },
+    {
      "codice": "0160100010",
      "nome": "Diritto Civile",
      "anno": 3,
-     "periodo": null,
+     "periodo": "annuale",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
@@ -200228,149 +200681,14 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisa-lmg-01-giurisprudenza-0160100010",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "0160100038",
-     "nome": "Diritto Penale",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 9,
-     "ssd": "IUS/17",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Castaldo Andrea",
-      "Schiaffo Francesco",
-      "Sessa Antonino"
-     ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504040/2012/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "FIANDACA - MUSCO, DIRITTO PENALE. PARTE GENERALE, ZANICHELLI EDITORE, ULTIMA EDIZIONE (PARTE I CAPITOLI 2, 3 E 5, PARTI II, III, IV, V E VI, PARTE VII CAPITOLO 1 PARAGRAFI 1, 2, 3, 4, CAPITOLO 2, CAPITOLO 3 PARAGRAFI 1, 2, 3, 4, CAPITOLO 4 PARAGRAFI 1, 2, 3, 12, CAPITOLO 5 PARAGRAFI 1, 2, 3, 4, 5, 6",
-       "autori": null,
-       "editore": "ZANICHELLI EDITORE",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "FIANDACA - MUSCO, DIRITTO PENALE. PARTE GENERALE, ZANICHELLI EDITORE, ULTIMA EDIZIONE (PARTE I CAPITOLI 2, 3 E 5, PARTI II, III, IV, V E VI, PARTE VII CAPITOLO 1 PARAGRAFI 1, 2, 3, 4, CAPITOLO 2, CAPITOLO 3 PARAGRAFI 1, 2, 3, 4, CAPITOLO 4 PARAGRAFI 1, 2, 3, 12, CAPITOLO 5 PARAGRAFI 1, 2, 3, 4, 5, 6, 7)."
-      },
-      {
-       "titolo": "FIORE - FIORE, DIRITTO PENALE. PARTE GENERALE, UTET, ULTIMA EDIZIONE (PARTE I - PARTE II CAPITOLO 1 - PARTI III, IV, V - PARTE VI SEZIONE I CAPITOLO 3 PARAGRAFI 1 E 2 - PARTE VI SEZIONE I CAPITOLO 1 PARAGRAFI 1 E 2 E RELATIVI SOTTOPARAGRAFI - PARTE VI SEZIONE I CAPITOLO 3 PARAGRAFI 3 (ESCLUSI I RELA",
-       "autori": null,
-       "editore": "UTET",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "FIORE - FIORE, DIRITTO PENALE. PARTE GENERALE, UTET, ULTIMA EDIZIONE (PARTE I - PARTE II CAPITOLO 1 - PARTI III, IV, V - PARTE VI SEZIONE I CAPITOLO 3 PARAGRAFI 1 E 2 - PARTE VI SEZIONE I CAPITOLO 1 PARAGRAFI 1 E 2 E RELATIVI SOTTOPARAGRAFI - PARTE VI SEZIONE I CAPITOLO 3 PARAGRAFI 3 (ESCLUSI I RELATIVI SOTTOPARAGRAFI) E 4 (ESCLUSI I RELATIVI SOTTOPARAGRAFI) - PARTE VI SEZIONE II CAPITOLO UNICO"
-      },
-      {
-       "titolo": "MOCCIA, IL DIRITTO PENALE TRA ESSERE E VALORE, ESI, NAPOLI 1992, P.17-38 + P.77-88 + P.96-97 + P.101-116",
-       "autori": null,
-       "editore": null,
-       "anno": 1992,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MOCCIA, IL DIRITTO PENALE TRA ESSERE E VALORE, ESI, NAPOLI 1992, P.17-38 + P.77-88 + P.96-97 + P.101-116"
-      },
-      {
-       "titolo": "M. NADDEO, PRINCIPIO DI OFFENSIVITÀ E CHIAVI DI LETTURA, GIAPPICHELLI, 2022, CAPITOLI I E II.",
-       "autori": null,
-       "editore": "GIAPPICHELLI",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "M. NADDEO, PRINCIPIO DI OFFENSIVITÀ E CHIAVI DI LETTURA, GIAPPICHELLI, 2022, CAPITOLI I E II."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-06",
-       "ora": "16:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-06",
-       "iscrizioni_al": "2026-10-03",
-       "docenti": "LO MONTE ELIO TELESCA MARIANGELA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-16",
-       "ora": "12:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-09",
-       "iscrizioni_al": "2026-10-13",
-       "docenti": "CASTALDO ANDREA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-15",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-15",
-       "iscrizioni_al": "2026-12-12",
-       "docenti": "SESSA ANTONINO",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-18",
-       "ora": "11:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-18",
-       "iscrizioni_al": "2026-12-15",
-       "docenti": "CASTALDO ANDREA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-18",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-18",
-       "iscrizioni_al": "2026-12-15",
-       "docenti": "SCHIAFFO FRANCESCO",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unisa-lmg-01-giurisprudenza-0160100038",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504012/2012/9999?coorte=2024"
     },
     {
      "codice": "0160100020",
      "nome": "Diritto del Lavoro",
      "anno": 3,
-     "periodo": null,
+     "periodo": "annuale",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
@@ -200487,323 +200805,14 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisa-lmg-01-giurisprudenza-0160100020",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "0160100096",
-     "nome": "Storia del Diritto Moderno e Contemporaneo",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "IUS/19",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Del Bagno Ileana",
-      "Simone Antonella",
-      "Trifone Gian Paolo"
-     ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504103/2012/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "PARTE GENERALE: IL POTERE DEI CONFLITTI. TESTIMONIANZE SULLA STORIA DELLA MAGISTRATURA ITALIANA, A CURA DI ORAZIO ABBAMONTE, GIAPPICHELLI, TORINO 2017, PP. 31-57; 83-228; 269-312.",
-       "autori": null,
-       "editore": "GIAPPICHELLI",
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "PARTE GENERALE: IL POTERE DEI CONFLITTI. TESTIMONIANZE SULLA STORIA DELLA MAGISTRATURA ITALIANA, A CURA DI ORAZIO ABBAMONTE, GIAPPICHELLI, TORINO 2017, PP. 31-57; 83-228; 269-312."
-      },
-      {
-       "titolo": "I. DEL BAGNO, DA INCAPACI A DISABILI. MINORATI SENSORIALI E CULTURA DEI DIRITTI, GIAPPICHELLI 2021",
-       "autori": null,
-       "editore": "GIAPPICHELLI 2021",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "I. DEL BAGNO, DA INCAPACI A DISABILI. MINORATI SENSORIALI E CULTURA DEI DIRITTI, GIAPPICHELLI 2021"
-      },
-      {
-       "titolo": "A. SIMONE, LO SPORT COME ORDINAMENTO GIURIDICO. UN PROFILO STORICO, GIAPPICHELLI 2021",
-       "autori": null,
-       "editore": "A. SIMONE",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "A. SIMONE, LO SPORT COME ORDINAMENTO GIURIDICO. UN PROFILO STORICO, GIAPPICHELLI 2021"
-      },
-      {
-       "titolo": "G. P. TRIFONE, DALLO STATO DI DIRITTO AL DIRITTO DELLO STATO. GIUSFORMALISMO E FASCISMO, GIAPPICHELLI 2019.",
-       "autori": null,
-       "editore": "GIAPPICHELLI 2019",
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "G. P. TRIFONE, DALLO STATO DI DIRITTO AL DIRITTO DELLO STATO. GIUSFORMALISMO E FASCISMO, GIAPPICHELLI 2019."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-07",
-       "ora": "16:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-07",
-       "iscrizioni_al": "2026-10-04",
-       "docenti": "DEL BAGNO ILEANA CANORO PIERLUIGI DI SOMMA ALFONSO MARIA SIMONE ANTONELLA TRIFONE GIAN PAOLO",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-16",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-16",
-       "iscrizioni_al": "2026-12-13",
-       "docenti": "DEL BAGNO ILEANA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unisa-lmg-01-giurisprudenza-0160100096",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "0160100102",
-     "nome": "Teoria del Diritto e Dell'argomentazione",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "IUS/20",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Bisogni Giovanni",
-      "D'attorre Alfredo",
-      "Giordano Valeria"
-     ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504109/2012/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "H.L.A. HART, IL CONCETTO DI DIRITTO, EINAUDI, TORINO 2002",
-       "autori": null,
-       "editore": "EINAUDI",
-       "anno": 2002,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "H.L.A. HART, IL CONCETTO DI DIRITTO, EINAUDI, TORINO 2002"
-      },
-      {
-       "titolo": "A. CATANIA, EFFETTIVITÀ E MODELLI NORMATIVI. STUDI DI FILOSOFIA DEL DIRITTO, GIAPPICHELLI, TORINO 2018.",
-       "autori": null,
-       "editore": "GIAPPICHELLI",
-       "anno": 2018,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "A. CATANIA, EFFETTIVITÀ E MODELLI NORMATIVI. STUDI DI FILOSOFIA DEL DIRITTO, GIAPPICHELLI, TORINO 2018."
-      },
-      {
-       "titolo": "PER I NON FREQUENTANTI: G. ZAGREBELSKY , IL DIRITTO MITE, EINAUDI, TORINO 2024, NONCHÉ A. CATANIA, METAMORFOSI DEL DIRITTO. DECISIONE E NORMA NELL'ETÀ GLOBALE, LATERZA, ROMA-BARI (QLS EDIZIONE).",
-       "autori": null,
-       "editore": "EINAUDI",
-       "anno": 2024,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "PER I NON FREQUENTANTI: G. ZAGREBELSKY , IL DIRITTO MITE, EINAUDI, TORINO 2024, NONCHÉ A. CATANIA, METAMORFOSI DEL DIRITTO. DECISIONE E NORMA NELL'ETÀ GLOBALE, LATERZA, ROMA-BARI (QLS EDIZIONE)."
-      },
-      {
-       "titolo": "V. GIORDANO, LE REGOLE DEL CORPO. COSTRUZIONE TEORICHE E DECISIONI GIUDIZIARIE, GIAPPICHELLI, TORINO, 2017.",
-       "autori": null,
-       "editore": "GIAPPICHELLI",
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "V. GIORDANO, LE REGOLE DEL CORPO. COSTRUZIONE TEORICHE E DECISIONI GIUDIZIARIE, GIAPPICHELLI, TORINO, 2017."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-05",
-       "ora": "16:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-05",
-       "iscrizioni_al": "2026-10-02",
-       "docenti": "BISOGNI GIOVANNI D'ATTORRE ALFREDO",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-12",
-       "ora": "14:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-09",
-       "iscrizioni_al": "2026-10-09",
-       "docenti": "TUCCI ANTONIO LUCIANO MICHELANGELO NIGRO CARMELO",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-14",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-14",
-       "iscrizioni_al": "2026-12-11",
-       "docenti": "BISOGNI GIOVANNI",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-14",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-14",
-       "iscrizioni_al": "2026-12-11",
-       "docenti": "D'ATTORRE ALFREDO",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-15",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-15",
-       "iscrizioni_al": "2026-12-12",
-       "docenti": "GIORDANO VALERIA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unisa-lmg-01-giurisprudenza-0160100102",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "0160100448",
-     "nome": "Diritto Comparato dei Dati e Dell’intelligenza Artificiale",
-     "anno": 3,
-     "periodo": "1",
-     "periodo_inizio": "01/10/2026 00:00:00",
-     "periodo_fine": "15/12/2026 00:00:00",
-     "cfu": 8,
-     "ssd": "IUS/02",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Parisi Annamaria Giulia"
-     ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/518950/2012/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "PROGRAMMA DA 6 CFU - GIURISPRUDENZA [ SG601]: A. G. PARISI, METAVERSO E INTELLIGENZA ARTIFICIALE, GIAPPICHELLI,TORINO.",
-       "autori": null,
-       "editore": "GIAPPICHELLI",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "PROGRAMMA DA 6 CFU - GIURISPRUDENZA [ SG601]: A. G. PARISI, METAVERSO E INTELLIGENZA ARTIFICIALE, GIAPPICHELLI,TORINO."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unisa-lmg-01-giurisprudenza-0160100448",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "0160100449",
-     "nome": "Diritto Tributario Europeo e Internazionale",
-     "anno": 3,
-     "periodo": "2",
-     "periodo_inizio": "01/03/2027 00:00:00",
-     "periodo_fine": "30/04/2027 00:00:00",
-     "cfu": 8,
-     "ssd": "IUS/12",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Cannizzaro Susanna"
-     ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/518951/2012/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "L. TOSI, R. BAGGIO, LINEAMENTI DI DIRITTO TRIBUTARIO INTERNAZIONALE, MILANO, CEDAM, ULTIMA EDIZIONE",
-       "autori": null,
-       "editore": "CEDAM",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "L. TOSI, R. BAGGIO, LINEAMENTI DI DIRITTO TRIBUTARIO INTERNAZIONALE, MILANO, CEDAM, ULTIMA EDIZIONE"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unisa-lmg-01-giurisprudenza-0160100449",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504022/2012/9999?coorte=2024"
     },
     {
      "codice": "0160100007",
      "nome": "Diritto Amministrativo",
      "anno": 4,
-     "periodo": null,
+     "periodo": "1",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
@@ -200934,245 +200943,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisa-lmg-01-giurisprudenza-0160100007",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "0160100056",
-     "nome": "Diritto Processuale Civile",
-     "anno": 4,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 14,
-     "ssd": "IUS/15",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Conforti Stefano",
-      "Iannicelli Luigi",
-      "Mancuso Carlo"
-     ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504063/2012/9999?coorte=2023",
-     "libri": [
-      {
-       "titolo": "G. ARIETA, F. DE SANTIS, L. MONTESANO, CORSO BASE DI DIRITTO PROCESSUALE CIVILE, 8° ED., MILANO, 2024 O SUCCESSIVA,.",
-       "autori": null,
-       "editore": null,
-       "anno": 2024,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "G. ARIETA, F. DE SANTIS, L. MONTESANO, CORSO BASE DI DIRITTO PROCESSUALE CIVILE, 8° ED., MILANO, 2024 O SUCCESSIVA,."
-      },
-      {
-       "titolo": "G. BALENA, ISTITUZIONI DI DIRITTO PROCESSUALE CIVILE, VOLUMI I, II, III, 7° ED. BARI, 2025 O SUCCESSIVA",
-       "autori": null,
-       "editore": null,
-       "anno": 2025,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "G. BALENA, ISTITUZIONI DI DIRITTO PROCESSUALE CIVILE, VOLUMI I, II, III, 7° ED. BARI, 2025 O SUCCESSIVA"
-      },
-      {
-       "titolo": "C. MANDRIOLI, - A. CARRATTA, CORSO DI DIRITTO PROCESSUALE CIVILE, VOLUMI I, II, III, 21 ° ED., TORINO, 2026 O SUCCESSIVA.",
-       "autori": null,
-       "editore": null,
-       "anno": 2026,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "C. MANDRIOLI, - A. CARRATTA, CORSO DI DIRITTO PROCESSUALE CIVILE, VOLUMI I, II, III, 21 ° ED., TORINO, 2026 O SUCCESSIVA."
-      },
-      {
-       "titolo": "A) L. IANNICELLI, I TERMINI DI PRESCRIZIONE E DI DECADENZA PER LA PROPOSIZIONE DELLA DOMANDA E LA SOSPENSIONE DA COVID-19, IN RIV. DIR. PROC. , 2020, PP. 1616-1639",
-       "autori": null,
-       "editore": null,
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "A) L. IANNICELLI, I TERMINI DI PRESCRIZIONE E DI DECADENZA PER LA PROPOSIZIONE DELLA DOMANDA E LA SOSPENSIONE DA COVID-19, IN RIV. DIR. PROC. , 2020, PP. 1616-1639"
-      },
-      {
-       "titolo": "B) L. IANNICELLI, LA CHIUSURA DELL’ESPROPRIAZIONE PER INFRUTTUOSITÀ , A PIÙ DI DIECI ANNI DALL’INTRODUZIONE, ED IL RAPPORTO CON LA DIVISIONE ENDOESECUTIVA, IN RIV. ESEC. FORZATA 2025, PAGG. 521-556",
-       "autori": null,
-       "editore": null,
-       "anno": 2025,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "B) L. IANNICELLI, LA CHIUSURA DELL’ESPROPRIAZIONE PER INFRUTTUOSITÀ , A PIÙ DI DIECI ANNI DALL’INTRODUZIONE, ED IL RAPPORTO CON LA DIVISIONE ENDOESECUTIVA, IN RIV. ESEC. FORZATA 2025, PAGG. 521-556"
-      },
-      {
-       "titolo": "C) C. CASTELLI, IL SISTEMA DISCIPLINARE DEI MAGISTRATI: UNA COSA SERIA, IN COSTITUZIONALISMO 1/2022, ON LINE, PP. 116-138",
-       "autori": null,
-       "editore": null,
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "C) C. CASTELLI, IL SISTEMA DISCIPLINARE DEI MAGISTRATI: UNA COSA SERIA, IN COSTITUZIONALISMO 1/2022, ON LINE, PP. 116-138"
-      },
-      {
-       "titolo": "G. ARIETA, F. DE SANTIS, L. MONTESANO, CORSO DI DIRITTO PROCESSUALE CIVILE, MILANO, CEDAM, 2024",
-       "autori": null,
-       "editore": "CEDAM",
-       "anno": 2024,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "G. ARIETA, F. DE SANTIS, L. MONTESANO, CORSO DI DIRITTO PROCESSUALE CIVILE, MILANO, CEDAM, 2024"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-06",
-       "ora": "14:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-06",
-       "iscrizioni_al": "2026-10-03",
-       "docenti": "IANNICELLI LUIGI MASTROGIOVANNI GIUSEPPINA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-15",
-       "ora": "11:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-15",
-       "iscrizioni_al": "2026-12-12",
-       "docenti": "IANNICELLI LUIGI",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-15",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-15",
-       "iscrizioni_al": "2026-12-12",
-       "docenti": "MANCUSO CARLO",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-17",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-17",
-       "iscrizioni_al": "2026-12-14",
-       "docenti": "IANNICELLI LUIGI",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unisa-lmg-01-giurisprudenza-0160100056",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "0160100087",
-     "nome": "Procedura Penale",
-     "anno": 4,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 14,
-     "ssd": "IUS/16",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Cimadomo Donatello",
-      "Daraio Girolamo",
-      "Iovino Felice Pier Carlo",
-      "Kalb Luigi",
-      "Sammarco Angelo Alessandro"
-     ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504094/2012/9999?coorte=2023",
-     "libri": [
-      {
-       "titolo": "TONINI MANUALE DI PROCEDURA PENALE, MILANO, ULTIMA EDIZIONE",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "TONINI MANUALE DI PROCEDURA PENALE, MILANO, ULTIMA EDIZIONE"
-      },
-      {
-       "titolo": "AAVV, DIRITTO PROCESSUALE PENALE, COORSINATO DA GAITO, TORINO, ULTIMA EDIZIONE",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "AAVV, DIRITTO PROCESSUALE PENALE, COORSINATO DA GAITO, TORINO, ULTIMA EDIZIONE"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-05",
-       "ora": "16:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-05",
-       "iscrizioni_al": "2026-10-02",
-       "docenti": "CIMADOMO DONATELLO GAUDIERI ALESSIO",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-14",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-14",
-       "iscrizioni_al": "2026-12-11",
-       "docenti": "CIMADOMO DONATELLO",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unisa-lmg-01-giurisprudenza-0160100087",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504009/2012/9999?coorte=2023"
     },
     {
      "codice": "0160100441",
@@ -201598,243 +201370,209 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "0160100419",
-     "nome": "Clinica Legale - Tutela Internazionale dei Diritti Umani",
-     "anno": 5,
-     "periodo": null,
+     "codice": "0160100056",
+     "nome": "Diritto Processuale Civile",
+     "anno": 4,
+     "periodo": "annuale",
      "periodo_inizio": null,
      "periodo_fine": null,
-     "cfu": 2,
-     "ssd": "IUS/13",
-     "obbligatorio": false,
+     "cfu": 14,
+     "ssd": "IUS/15",
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
-      "Nino Michele"
+      "Conforti Stefano",
+      "Iannicelli Luigi",
+      "Mancuso Carlo"
      ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/513584/2012/9999?coorte=2022",
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504063/2012/9999?coorte=2023",
      "libri": [
       {
-       "titolo": "V. ZAGREBELSKY, R. CHENAL, L. TOMASI, MANUALE DEI DIRITTI FONDAMENTALI IN EUROPA, IL MULINO, BOLOGNA, 2025 (QUARTA EDIZIONE): PARTE I: CAPITOLO 1 (PP. 19-39); PARTE II: CAPITOLI 2 E 3 (PP. 41-75); PARTE VI: CAPITOLI 22, 23, 24 (PP. 459-569).",
+       "titolo": "G. ARIETA, F. DE SANTIS, L. MONTESANO, CORSO BASE DI DIRITTO PROCESSUALE CIVILE, 8° ED., MILANO, 2024 O SUCCESSIVA,.",
        "autori": null,
-       "editore": "IL MULINO",
+       "editore": null,
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "G. ARIETA, F. DE SANTIS, L. MONTESANO, CORSO BASE DI DIRITTO PROCESSUALE CIVILE, 8° ED., MILANO, 2024 O SUCCESSIVA,."
+      },
+      {
+       "titolo": "G. BALENA, ISTITUZIONI DI DIRITTO PROCESSUALE CIVILE, VOLUMI I, II, III, 7° ED. BARI, 2025 O SUCCESSIVA",
+       "autori": null,
+       "editore": null,
        "anno": 2025,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "V. ZAGREBELSKY, R. CHENAL, L. TOMASI, MANUALE DEI DIRITTI FONDAMENTALI IN EUROPA, IL MULINO, BOLOGNA, 2025 (QUARTA EDIZIONE): PARTE I: CAPITOLO 1 (PP. 19-39); PARTE II: CAPITOLI 2 E 3 (PP. 41-75); PARTE VI: CAPITOLI 22, 23, 24 (PP. 459-569)."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unisa-lmg-01-giurisprudenza-0160100419",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "0160100121",
-     "nome": "Diritto Penale Parte Speciale",
-     "anno": 5,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "IUS/17",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Lo Monte Elio",
-      "Sessa Antonino",
-      "Telesca Mariangela"
-     ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/505032/2012/9999?coorte=2022",
-     "libri": [
+       "citazione": "G. BALENA, ISTITUZIONI DI DIRITTO PROCESSUALE CIVILE, VOLUMI I, II, III, 7° ED. BARI, 2025 O SUCCESSIVA"
+      },
       {
-       "titolo": "A) T. PADOVANI- L. STORTONI, DIRITTO PENALE E FATTISPECIE CRIMINOSE. INTRODUZIONE ALLA PARTE SPECIALE DEL DIRITTO PENALE, BOLOGNA, 1991",
+       "titolo": "C. MANDRIOLI, - A. CARRATTA, CORSO DI DIRITTO PROCESSUALE CIVILE, VOLUMI I, II, III, 21 ° ED., TORINO, 2026 O SUCCESSIVA.",
        "autori": null,
        "editore": null,
-       "anno": 1991,
+       "anno": 2026,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "A) T. PADOVANI- L. STORTONI, DIRITTO PENALE E FATTISPECIE CRIMINOSE. INTRODUZIONE ALLA PARTE SPECIALE DEL DIRITTO PENALE, BOLOGNA, 1991"
+       "citazione": "C. MANDRIOLI, - A. CARRATTA, CORSO DI DIRITTO PROCESSUALE CIVILE, VOLUMI I, II, III, 21 ° ED., TORINO, 2026 O SUCCESSIVA."
       },
       {
-       "titolo": "D. PULITANO', INTRODUZIONE ALLA PARTE SPECIALE DEL DIRITTO PENALE, TORINO, 2010",
+       "titolo": "A) L. IANNICELLI, I TERMINI DI PRESCRIZIONE E DI DECADENZA PER LA PROPOSIZIONE DELLA DOMANDA E LA SOSPENSIONE DA COVID-19, IN RIV. DIR. PROC. , 2020, PP. 1616-1639",
        "autori": null,
        "editore": null,
-       "anno": 2010,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "D. PULITANO', INTRODUZIONE ALLA PARTE SPECIALE DEL DIRITTO PENALE, TORINO, 2010"
-      },
-      {
-       "titolo": "B) S. MOCCIA, IL DIRITTO PENALE TRA ESSERE E VALORE. FUNZIONE DELLA PENA E SISTEMATICA TELEOLOGICA, NAPOLI 1992 (PP.215-283)",
-       "autori": null,
-       "editore": null,
-       "anno": 1992,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "B) S. MOCCIA, IL DIRITTO PENALE TRA ESSERE E VALORE. FUNZIONE DELLA PENA E SISTEMATICA TELEOLOGICA, NAPOLI 1992 (PP.215-283)"
-      },
-      {
-       "titolo": "C) G. FIANDACA - E. MUSCO, DIRITTO PENALE. PARTE SPECIALE. VOL.I, V ED. AGGIORNATA, BOLOGNA, 2012 (CAP. 2 DA P. 155 A P. 286 - CAP.3 - CAP.5 - CAP. 6)",
-       "autori": null,
-       "editore": null,
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "C) G. FIANDACA - E. MUSCO, DIRITTO PENALE. PARTE SPECIALE. VOL.I, V ED. AGGIORNATA, BOLOGNA, 2012 (CAP. 2 DA P. 155 A P. 286 - CAP.3 - CAP.5 - CAP. 6)"
-      },
-      {
-       "titolo": "D)A.SESSA, CITTADINANZA ESPANSIVA, POLITICHE DI INTEGRAZIONE E MOTIVAZIONE CULTURALE AL REATO: PROFILI STORICO-DOMMATICI E DI POLITICA CRIMINALE, IN INDICE PENALE 2014, PP.469-504",
-       "autori": null,
-       "editore": null,
-       "anno": 2014,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "D)A.SESSA, CITTADINANZA ESPANSIVA, POLITICHE DI INTEGRAZIONE E MOTIVAZIONE CULTURALE AL REATO: PROFILI STORICO-DOMMATICI E DI POLITICA CRIMINALE, IN INDICE PENALE 2014, PP.469-504"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-06",
-       "ora": "16:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-06",
-       "iscrizioni_al": "2026-10-03",
-       "docenti": "LO MONTE ELIO TELESCA MARIANGELA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-15",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-15",
-       "iscrizioni_al": "2026-12-12",
-       "docenti": "LO MONTE ELIO TELESCA MARIANGELA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-15",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-15",
-       "iscrizioni_al": "2026-12-12",
-       "docenti": "SESSA ANTONINO",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unisa-lmg-01-giurisprudenza-0160100121",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "0160100055",
-     "nome": "Diritto Processuale Amministrativo",
-     "anno": 5,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 9,
-     "ssd": "IUS/10",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Di Giovanni Annalisa",
-      "Di Lieto Andrea",
-      "Romano Enza"
-     ],
-     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504062/2012/9999?coorte=2022",
-     "libri": [
-      {
-       "titolo": "GIUSTIZIA AMMINISTRATIVA, A CURA DI FRANCO GAETANO SCOCA, GIAPPICHELLI, ULTIMA EDIZIONE",
-       "autori": null,
-       "editore": "GIAPPICHELLI",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "GIUSTIZIA AMMINISTRATIVA, A CURA DI FRANCO GAETANO SCOCA, GIAPPICHELLI, ULTIMA EDIZIONE"
-      },
-      {
-       "titolo": "DIRITTO PROCESSUALE AMMINISTRATIVO, A CURA DI G.P. CIRILLO - S. PERONGINI, GIAPPICHELLI, ULTIMA EDIZIONE",
-       "autori": null,
-       "editore": "GIAPPICHELLI",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "DIRITTO PROCESSUALE AMMINISTRATIVO, A CURA DI G.P. CIRILLO - S. PERONGINI, GIAPPICHELLI, ULTIMA EDIZIONE"
-      },
-      {
-       "titolo": "DIRITTO PROCESSUALE AMMINISTRATIVO, A CURA DI EUGENIO PICOZZI, GIUFFRÈ, ULTIMA EDIZIONE",
-       "autori": null,
-       "editore": "GIUFFRÈ",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "DIRITTO PROCESSUALE AMMINISTRATIVO, A CURA DI EUGENIO PICOZZI, GIUFFRÈ, ULTIMA EDIZIONE"
-      },
-      {
-       "titolo": "G. P. CIRILLO- S. PERONGINI (A CURA DI), DIRITTO PROCESSUALE AMMINISTRATIVO, TORINO, GIAPPICHELLI, 2020.",
-       "autori": null,
-       "editore": "GIAPPICHELLI",
        "anno": 2020,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "G. P. CIRILLO- S. PERONGINI (A CURA DI), DIRITTO PROCESSUALE AMMINISTRATIVO, TORINO, GIAPPICHELLI, 2020."
+       "citazione": "A) L. IANNICELLI, I TERMINI DI PRESCRIZIONE E DI DECADENZA PER LA PROPOSIZIONE DELLA DOMANDA E LA SOSPENSIONE DA COVID-19, IN RIV. DIR. PROC. , 2020, PP. 1616-1639"
       },
       {
-       "titolo": "F. G. SCOCA (A CURA DI), GIUSTIZIA AMMINISTRATIVA, GIAPPICHELLI, TORINO, ULT. ED.",
+       "titolo": "B) L. IANNICELLI, LA CHIUSURA DELL’ESPROPRIAZIONE PER INFRUTTUOSITÀ , A PIÙ DI DIECI ANNI DALL’INTRODUZIONE, ED IL RAPPORTO CON LA DIVISIONE ENDOESECUTIVA, IN RIV. ESEC. FORZATA 2025, PAGG. 521-556",
        "autori": null,
-       "editore": "GIAPPICHELLI",
+       "editore": null,
+       "anno": 2025,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "B) L. IANNICELLI, LA CHIUSURA DELL’ESPROPRIAZIONE PER INFRUTTUOSITÀ , A PIÙ DI DIECI ANNI DALL’INTRODUZIONE, ED IL RAPPORTO CON LA DIVISIONE ENDOESECUTIVA, IN RIV. ESEC. FORZATA 2025, PAGG. 521-556"
+      },
+      {
+       "titolo": "C) C. CASTELLI, IL SISTEMA DISCIPLINARE DEI MAGISTRATI: UNA COSA SERIA, IN COSTITUZIONALISMO 1/2022, ON LINE, PP. 116-138",
+       "autori": null,
+       "editore": null,
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "C) C. CASTELLI, IL SISTEMA DISCIPLINARE DEI MAGISTRATI: UNA COSA SERIA, IN COSTITUZIONALISMO 1/2022, ON LINE, PP. 116-138"
+      },
+      {
+       "titolo": "G. ARIETA, F. DE SANTIS, L. MONTESANO, CORSO DI DIRITTO PROCESSUALE CIVILE, MILANO, CEDAM, 2024",
+       "autori": null,
+       "editore": "CEDAM",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "G. ARIETA, F. DE SANTIS, L. MONTESANO, CORSO DI DIRITTO PROCESSUALE CIVILE, MILANO, CEDAM, 2024"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-06",
+       "iscrizioni_al": "2026-10-03",
+       "docenti": "IANNICELLI LUIGI MASTROGIOVANNI GIUSEPPINA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-15",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": "IANNICELLI LUIGI",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-15",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": "MANCUSO CARLO",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-17",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": "IANNICELLI LUIGI",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unisa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unisa-lmg-01-giurisprudenza-0160100056",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504063/2012/9999?coorte=2023"
+    },
+    {
+     "codice": "0160100087",
+     "nome": "Procedura Penale",
+     "anno": 4,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 14,
+     "ssd": "IUS/16",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Cimadomo Donatello",
+      "Daraio Girolamo",
+      "Iovino Felice Pier Carlo",
+      "Kalb Luigi",
+      "Sammarco Angelo Alessandro"
+     ],
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504094/2012/9999?coorte=2023",
+     "libri": [
+      {
+       "titolo": "TONINI MANUALE DI PROCEDURA PENALE, MILANO, ULTIMA EDIZIONE",
+       "autori": null,
+       "editore": null,
        "anno": null,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "F. G. SCOCA (A CURA DI), GIUSTIZIA AMMINISTRATIVA, GIAPPICHELLI, TORINO, ULT. ED."
+       "citazione": "TONINI MANUALE DI PROCEDURA PENALE, MILANO, ULTIMA EDIZIONE"
+      },
+      {
+       "titolo": "AAVV, DIRITTO PROCESSUALE PENALE, COORSINATO DA GAITO, TORINO, ULTIMA EDIZIONE",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "AAVV, DIRITTO PROCESSUALE PENALE, COORSINATO DA GAITO, TORINO, ULTIMA EDIZIONE"
       }
      ],
      "esami": [
@@ -201846,67 +201584,19 @@
        "modalita": "orale",
        "iscrizioni_dal": "2026-09-05",
        "iscrizioni_al": "2026-10-02",
-       "docenti": "DI GIOVANNI ANNALISA MORVILLO ANTONINO SQUILLANTE SOFIA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-09",
-       "ora": "12:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-07",
-       "iscrizioni_al": "2026-10-06",
-       "docenti": "ROMANO ENZA GUACCI CARMENCITA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-09",
-       "ora": "16:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-09",
-       "iscrizioni_al": "2026-10-06",
-       "docenti": "DI LIETO ANDREA AURIEMMA BARBARA CRISCI ANTONELLO ORREI CHIARA MARIA ANNUNZIATA",
+       "docenti": "CIMADOMO DONATELLO GAUDIERI ALESSIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
        "data": "2026-12-14",
-       "ora": "11:30",
+       "ora": "09:00",
        "luogo": null,
        "modalita": "orale",
        "iscrizioni_dal": "2026-11-14",
        "iscrizioni_al": "2026-12-11",
-       "docenti": "DI GIOVANNI ANNALISA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-17",
-       "ora": "15:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-17",
-       "iscrizioni_al": "2026-12-14",
-       "docenti": "ROMANO ENZA",
-       "note": null,
-       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-18",
-       "ora": "17:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-18",
-       "iscrizioni_al": "2026-12-15",
-       "docenti": "DI LIETO ANDREA",
+       "docenti": "CIMADOMO DONATELLO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
       }
@@ -201915,8 +201605,9 @@
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
-     "id": "unisa-lmg-01-giurisprudenza-0160100055",
-     "stato_esami": "completo"
+     "id": "unisa-lmg-01-giurisprudenza-0160100087",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504094/2012/9999?coorte=2023"
     },
     {
      "codice": "SG60100125",
@@ -202809,6 +202500,131 @@
      "modalita_esame": "orale",
      "id": "unisa-lmg-01-giurisprudenza-0160100044",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "0160100121",
+     "nome": "Diritto Penale Parte Speciale",
+     "anno": 5,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/17",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Lo Monte Elio",
+      "Sessa Antonino",
+      "Telesca Mariangela"
+     ],
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/505032/2012/9999?coorte=2022",
+     "libri": [
+      {
+       "titolo": "A) T. PADOVANI- L. STORTONI, DIRITTO PENALE E FATTISPECIE CRIMINOSE. INTRODUZIONE ALLA PARTE SPECIALE DEL DIRITTO PENALE, BOLOGNA, 1991",
+       "autori": null,
+       "editore": null,
+       "anno": 1991,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A) T. PADOVANI- L. STORTONI, DIRITTO PENALE E FATTISPECIE CRIMINOSE. INTRODUZIONE ALLA PARTE SPECIALE DEL DIRITTO PENALE, BOLOGNA, 1991"
+      },
+      {
+       "titolo": "D. PULITANO', INTRODUZIONE ALLA PARTE SPECIALE DEL DIRITTO PENALE, TORINO, 2010",
+       "autori": null,
+       "editore": null,
+       "anno": 2010,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "D. PULITANO', INTRODUZIONE ALLA PARTE SPECIALE DEL DIRITTO PENALE, TORINO, 2010"
+      },
+      {
+       "titolo": "B) S. MOCCIA, IL DIRITTO PENALE TRA ESSERE E VALORE. FUNZIONE DELLA PENA E SISTEMATICA TELEOLOGICA, NAPOLI 1992 (PP.215-283)",
+       "autori": null,
+       "editore": null,
+       "anno": 1992,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "B) S. MOCCIA, IL DIRITTO PENALE TRA ESSERE E VALORE. FUNZIONE DELLA PENA E SISTEMATICA TELEOLOGICA, NAPOLI 1992 (PP.215-283)"
+      },
+      {
+       "titolo": "C) G. FIANDACA - E. MUSCO, DIRITTO PENALE. PARTE SPECIALE. VOL.I, V ED. AGGIORNATA, BOLOGNA, 2012 (CAP. 2 DA P. 155 A P. 286 - CAP.3 - CAP.5 - CAP. 6)",
+       "autori": null,
+       "editore": null,
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "C) G. FIANDACA - E. MUSCO, DIRITTO PENALE. PARTE SPECIALE. VOL.I, V ED. AGGIORNATA, BOLOGNA, 2012 (CAP. 2 DA P. 155 A P. 286 - CAP.3 - CAP.5 - CAP. 6)"
+      },
+      {
+       "titolo": "D)A.SESSA, CITTADINANZA ESPANSIVA, POLITICHE DI INTEGRAZIONE E MOTIVAZIONE CULTURALE AL REATO: PROFILI STORICO-DOMMATICI E DI POLITICA CRIMINALE, IN INDICE PENALE 2014, PP.469-504",
+       "autori": null,
+       "editore": null,
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "D)A.SESSA, CITTADINANZA ESPANSIVA, POLITICHE DI INTEGRAZIONE E MOTIVAZIONE CULTURALE AL REATO: PROFILI STORICO-DOMMATICI E DI POLITICA CRIMINALE, IN INDICE PENALE 2014, PP.469-504"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-06",
+       "iscrizioni_al": "2026-10-03",
+       "docenti": "LO MONTE ELIO TELESCA MARIANGELA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-15",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": "LO MONTE ELIO TELESCA MARIANGELA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-15",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": "SESSA ANTONINO",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unisa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unisa-lmg-01-giurisprudenza-0160100121",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/505032/2012/9999?coorte=2022"
     },
     {
      "codice": "0160100045",
@@ -204075,6 +203891,44 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "0160100419",
+     "nome": "Clinica Legale - Tutela Internazionale dei Diritti Umani",
+     "anno": 5,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 2,
+     "ssd": "IUS/13",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Nino Michele"
+     ],
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/513584/2012/9999?coorte=2022",
+     "libri": [
+      {
+       "titolo": "V. ZAGREBELSKY, R. CHENAL, L. TOMASI, MANUALE DEI DIRITTI FONDAMENTALI IN EUROPA, IL MULINO, BOLOGNA, 2025 (QUARTA EDIZIONE): PARTE I: CAPITOLO 1 (PP. 19-39); PARTE II: CAPITOLI 2 E 3 (PP. 41-75); PARTE VI: CAPITOLI 22, 23, 24 (PP. 459-569).",
+       "autori": null,
+       "editore": "IL MULINO",
+       "anno": 2025,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "V. ZAGREBELSKY, R. CHENAL, L. TOMASI, MANUALE DEI DIRITTI FONDAMENTALI IN EUROPA, IL MULINO, BOLOGNA, 2025 (QUARTA EDIZIONE): PARTE I: CAPITOLO 1 (PP. 19-39); PARTE II: CAPITOLI 2 E 3 (PP. 41-75); PARTE VI: CAPITOLI 22, 23, 24 (PP. 459-569)."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://unisa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unisa-lmg-01-giurisprudenza-0160100419",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/513584/2012/9999?coorte=2022"
+    },
+    {
      "codice": "SG60100115",
      "nome": "Clinica Legale - la Tutela della Donna nel Contesto Giuridico Internazionale",
      "anno": 5,
@@ -204671,6 +204525,167 @@
      "modalita_esame": "orale",
      "id": "unisa-lmg-01-giurisprudenza-0160100051",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "0160100055",
+     "nome": "Diritto Processuale Amministrativo",
+     "anno": 5,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": "IUS/10",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Di Giovanni Annalisa",
+      "Di Lieto Andrea",
+      "Romano Enza"
+     ],
+     "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504062/2012/9999?coorte=2022",
+     "libri": [
+      {
+       "titolo": "GIUSTIZIA AMMINISTRATIVA, A CURA DI FRANCO GAETANO SCOCA, GIAPPICHELLI, ULTIMA EDIZIONE",
+       "autori": null,
+       "editore": "GIAPPICHELLI",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "GIUSTIZIA AMMINISTRATIVA, A CURA DI FRANCO GAETANO SCOCA, GIAPPICHELLI, ULTIMA EDIZIONE"
+      },
+      {
+       "titolo": "DIRITTO PROCESSUALE AMMINISTRATIVO, A CURA DI G.P. CIRILLO - S. PERONGINI, GIAPPICHELLI, ULTIMA EDIZIONE",
+       "autori": null,
+       "editore": "GIAPPICHELLI",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "DIRITTO PROCESSUALE AMMINISTRATIVO, A CURA DI G.P. CIRILLO - S. PERONGINI, GIAPPICHELLI, ULTIMA EDIZIONE"
+      },
+      {
+       "titolo": "DIRITTO PROCESSUALE AMMINISTRATIVO, A CURA DI EUGENIO PICOZZI, GIUFFRÈ, ULTIMA EDIZIONE",
+       "autori": null,
+       "editore": "GIUFFRÈ",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "DIRITTO PROCESSUALE AMMINISTRATIVO, A CURA DI EUGENIO PICOZZI, GIUFFRÈ, ULTIMA EDIZIONE"
+      },
+      {
+       "titolo": "G. P. CIRILLO- S. PERONGINI (A CURA DI), DIRITTO PROCESSUALE AMMINISTRATIVO, TORINO, GIAPPICHELLI, 2020.",
+       "autori": null,
+       "editore": "GIAPPICHELLI",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "G. P. CIRILLO- S. PERONGINI (A CURA DI), DIRITTO PROCESSUALE AMMINISTRATIVO, TORINO, GIAPPICHELLI, 2020."
+      },
+      {
+       "titolo": "F. G. SCOCA (A CURA DI), GIUSTIZIA AMMINISTRATIVA, GIAPPICHELLI, TORINO, ULT. ED.",
+       "autori": null,
+       "editore": "GIAPPICHELLI",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "F. G. SCOCA (A CURA DI), GIUSTIZIA AMMINISTRATIVA, GIAPPICHELLI, TORINO, ULT. ED."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-05",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "DI GIOVANNI ANNALISA MORVILLO ANTONINO SQUILLANTE SOFIA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-09",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-07",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "ROMANO ENZA GUACCI CARMENCITA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-09",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-09",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "DI LIETO ANDREA AURIEMMA BARBARA CRISCI ANTONELLO ORREI CHIARA MARIA ANNUNZIATA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-14",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": "DI GIOVANNI ANNALISA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-17",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": "ROMANO ENZA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-18",
+       "iscrizioni_al": "2026-12-15",
+       "docenti": "DI LIETO ANDREA",
+       "note": null,
+       "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unisa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unisa-lmg-01-giurisprudenza-0160100055",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/504062/2012/9999?coorte=2022"
     },
     {
      "codice": "0160100017",
@@ -205459,7 +205474,7 @@
    "url": "http://corsi.unisa.it/ingegneria-edile-architettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IC60100001",
@@ -208710,7 +208725,7 @@
    "url": "http://corsi.unisa.it/medicina-e-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ME60100004",
@@ -212432,7 +212447,7 @@
    "url": "http://corsi.unisa.it/odontoiatria-protesi-dentaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ME60200003",
@@ -214527,7 +214542,7 @@
    "url": "http://corsi.unisa.it/scienze-della-formazione-primaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "4461000030",
@@ -215334,7 +215349,7 @@
        "citazione": "LOMBARDI M.G. (2026) ,EPISTEMOLOGIE GENERATIVE DI LETTURA E LETTERATURA PER L' INFANZIA TRA NIDO E SCUOLA. IL PROTOCOLLO O.GE.S.O. (ORIENTAMENTO GENERATIVO E DEI SISTEMI ORGANIZZATIVI). APPLICAZIONE METODOLOGICA DELLA CATTEDRA UNESCO GENERATIVE PEDAGOGY AND EDUCATIONAL SYSTEMS TO TACKLE INEQUALITY. PENSA MULTIMEDIA, LECCE."
       },
       {
-       "titolo": "LOMBARDI, M.G. (2025) PERCORSI GENERATIVI DI LETTERATURA PER L’INFANZIA IN HISTORY OF EDUCATION &AMP;AMP; CHILDREN’S LITERATUR, XX, 1 (2025), PP. 375-394 ISSN 1971-1093, EUM EDIZIONI UNIVERSITA DI MACERATA.",
+       "titolo": "LOMBARDI, M.G. (2025) PERCORSI GENERATIVI DI LETTERATURA PER L’INFANZIA IN HISTORY OF EDUCATION & CHILDREN’S LITERATUR, XX, 1 (2025), PP. 375-394 ISSN 1971-1093, EUM EDIZIONI UNIVERSITA DI MACERATA.",
        "autori": null,
        "editore": "EUM EDIZIONI UNIVERSITA DI MACERATA",
        "anno": 1971,
@@ -215343,7 +215358,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "LOMBARDI, M.G. (2025) PERCORSI GENERATIVI DI LETTERATURA PER L’INFANZIA IN HISTORY OF EDUCATION &AMP;AMP; CHILDREN’S LITERATUR, XX, 1 (2025), PP. 375-394 ISSN 1971-1093, EUM EDIZIONI UNIVERSITA DI MACERATA."
+       "citazione": "LOMBARDI, M.G. (2025) PERCORSI GENERATIVI DI LETTERATURA PER L’INFANZIA IN HISTORY OF EDUCATION & CHILDREN’S LITERATUR, XX, 1 (2025), PP. 375-394 ISSN 1971-1093, EUM EDIZIONI UNIVERSITA DI MACERATA."
       },
       {
        "titolo": "CAMBI F.. (2010). LEGGERE PER FORMARSI: UN’AVVENTURA TRA COSTRUZIONE DI SÉ E CONOSCENZA DEL MONDO. IN F. CAMBI, LA CURA DI SÉ COME PROCESSO FORMATIVO: TRA ADULTITÀ E SCUOLA (PP. 56-67). BARI: EDITORI LATERZA.",
@@ -215368,6 +215383,30 @@
        "tipo": null,
        "note": null,
        "citazione": "RODARI G.(2001).GRAMMATICA DELLA FANTASIA. INTRODUZIONE ALL'ARTE DI INVENTARE STORIE. TORINO: EINAUDI"
+      },
+      {
+       "titolo": "MANNESE E.(2023). MANUALE DI PEDAGOGIA GENERATIVA E SSITAM MONDO. EPISTEMOLOGIE E COMUNITÀ PENSANTI PE RL'HOMO GENERATIVUS, PENSA MULTIMEDIA, LECCE.",
+       "autori": null,
+       "editore": null,
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MANNESE E.(2023). MANUALE DI PEDAGOGIA GENERATIVA E SSITAM MONDO. EPISTEMOLOGIE E COMUNITÀ PENSANTI PE RL'HOMO GENERATIVUS, PENSA MULTIMEDIA, LECCE."
+      },
+      {
+       "titolo": "LOMBARDI, M.G. (2025) PERCORSI GENERATIVI DI LETTERATURA PER L’INFANZIA IN HISTORY OF EDUCATION &AMP;AMP; CHILDREN’S LITERATUR, XX, 1 (2025), PP. 375-394 ISSN 1971-1093, EUM EDIZIONI UNIVERSITA DI MACERATA.",
+       "autori": null,
+       "editore": "EUM EDIZIONI UNIVERSITA DI MACERATA",
+       "anno": 1971,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "LOMBARDI, M.G. (2025) PERCORSI GENERATIVI DI LETTERATURA PER L’INFANZIA IN HISTORY OF EDUCATION &AMP;AMP; CHILDREN’S LITERATUR, XX, 1 (2025), PP. 375-394 ISSN 1971-1093, EUM EDIZIONI UNIVERSITA DI MACERATA."
       },
       {
        "titolo": "MANNESE E.(2023). MANUALE DI PEDAGOGIA GENERATIVA E SSITAM MONDO. EPISTEMOLOGIE E COMUNITÀ PENSANTI PE RL&#39;HOMO GENERATIVUS, PENSA MULTIMEDIA, LECCE.",
@@ -215719,7 +215758,7 @@
        "citazione": "PER LO STUDIO DEL PROFILO BIOGRAFICO E DELLE OPERE DI DANTE SI CONSIGLIA: D. PIROVANO, DANTE DI PORTA SAN PIETRO, INVITO ALLA LETTURA, SAGGINE, DONZELLI (2026)"
       },
       {
-       "titolo": "&AMP;#34;CITAR DANTE. ESPRESSIONI DANTESCHE PER L&AMP;#39;ITALIANO D&AMP;#39;OGGI&AMP;#34;, A CURA DI I. CHIRICO, P. DAINOTTI, M. GALDI, ETPBOOKS, 2021.",
+       "titolo": "\"CITAR DANTE. ESPRESSIONI DANTESCHE PER L'ITALIANO D'OGGI\", A CURA DI I. CHIRICO, P. DAINOTTI, M. GALDI, ETPBOOKS, 2021.",
        "autori": null,
        "editore": "CITAR DANTE. ESPRESSIONI DANTESCHE PER L&",
        "anno": 2021,
@@ -215728,7 +215767,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "&AMP;#34;CITAR DANTE. ESPRESSIONI DANTESCHE PER L&AMP;#39;ITALIANO D&AMP;#39;OGGI&AMP;#34;, A CURA DI I. CHIRICO, P. DAINOTTI, M. GALDI, ETPBOOKS, 2021."
+       "citazione": "\"CITAR DANTE. ESPRESSIONI DANTESCHE PER L'ITALIANO D'OGGI\", A CURA DI I. CHIRICO, P. DAINOTTI, M. GALDI, ETPBOOKS, 2021."
       },
       {
        "titolo": "MARAZZINI, CLAUDIO (2018). BREVE STORIA DELLA QUESTIONE DELLA LINGUA, CAROCCI, ROMA.",
@@ -215767,16 +215806,16 @@
        "citazione": "NOBILI, CLAUDIO (2022). L’ITALIANO SENZA PAROLE: SEGNI, GESTI, SILENZI, FRANCO CESATI, FIRENZE."
       },
       {
-       "titolo": "\"CITAR DANTE. ESPRESSIONI DANTESCHE PER L'ITALIANO D'OGGI\", A CURA DI I. CHIRICO, P. DAINOTTI, M. GALDI, ETPBOOKS, 2021.",
+       "titolo": "&AMP;#34;CITAR DANTE. ESPRESSIONI DANTESCHE PER L&AMP;#39;ITALIANO D&AMP;#39;OGGI&AMP;#34;, A CURA DI I. CHIRICO, P. DAINOTTI, M. GALDI, ETPBOOKS, 2021.",
        "autori": null,
-       "editore": "CITAR DANTE. ESPRESSIONI DANTESCHE PER L'",
+       "editore": "CITAR DANTE. ESPRESSIONI DANTESCHE PER L&",
        "anno": 2021,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "\"CITAR DANTE. ESPRESSIONI DANTESCHE PER L'ITALIANO D'OGGI\", A CURA DI I. CHIRICO, P. DAINOTTI, M. GALDI, ETPBOOKS, 2021."
+       "citazione": "&AMP;#34;CITAR DANTE. ESPRESSIONI DANTESCHE PER L&AMP;#39;ITALIANO D&AMP;#39;OGGI&AMP;#34;, A CURA DI I. CHIRICO, P. DAINOTTI, M. GALDI, ETPBOOKS, 2021."
       }
      ],
      "esami": [],
@@ -217400,7 +217439,7 @@
    "url": "https://corsi.unisa.it/tecniche-per-l-edilizia-e-il-territorio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-13",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "0612900005",

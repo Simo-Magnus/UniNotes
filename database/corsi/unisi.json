@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unisi",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-14",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://biotech-engineering.unisi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2016670",
@@ -1002,7 +1002,7 @@
    "url": "https://biotecnologie.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2019071",
@@ -1660,7 +1660,7 @@
    "url": "https://dietistica.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2017475",
@@ -3690,7 +3690,7 @@
    "url": "https://economia-commercio.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99990",
@@ -4940,7 +4940,7 @@
    "url": "https://economics-management.unisi.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2015937",
@@ -6089,7 +6089,7 @@
    "url": "https://fisica-tecnologie-avanzate.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99990",
@@ -6390,7 +6390,7 @@
    "url": "https://fisioterapia.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000389",
@@ -6402,7 +6402,7 @@
      "cfu": 1,
      "ssd": "NN",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Marraccini Simone"
      ],
@@ -6429,7 +6429,7 @@
      "cfu": 4,
      "ssd": "NN",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Marraccini Simone"
      ],
@@ -6445,50 +6445,6 @@
      "codici_alternativi": [
       "2018814"
      ]
-    },
-    {
-     "codice": "2018816",
-     "nome": "Altre - Laboratorio di Valutazione Funzionale e Tecniche Speciali in Fisoterapia 3 Anno 2 Semestre",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 2,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": "SEDE GROSSETO",
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/26394/2020/3?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unisi-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-2018816",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "2000378",
-     "nome": "Altre 1 Anno 2 Semestre",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 1,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/20802/2020/2?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unisi-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-2000378",
-     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "2017475",
@@ -6566,7 +6522,7 @@
      "cfu": 5,
      "ssd": "BIO/17, BIO/16, BIO/09",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Bonifazi Marco",
       "Nicoletti Claudio",
@@ -6693,7 +6649,7 @@
      "cfu": 4,
      "ssd": "MED/09, MED/41, MED/36",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Guerrini Susanna",
       "Guideri Francesca",
@@ -6727,7 +6683,7 @@
      "cfu": 6,
      "ssd": "MED/40, MED/18, MED/19, MED/24, MED/48",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Cecconi Filippo",
       "Cuomo Roberto",
@@ -6784,7 +6740,7 @@
      "cfu": 7,
      "ssd": "MED/50, MED/27, MED/48, MED/26",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Casalini Alberto",
       "Chibbaro Salvatore",
@@ -6894,7 +6850,7 @@
      "cfu": 5,
      "ssd": "BIO/10, BIO/13, FIS/07, MED/03",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Depau Lorenzo",
       "Meloni Ilaria",
@@ -7350,7 +7306,7 @@
      "cfu": 6,
      "ssd": "MED/01, SECS-S/02, MED/48, ING-INF/06",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Cioncoloni David",
       "Ferretti Fabio",
@@ -7545,7 +7501,7 @@
      "cfu": 8,
      "ssd": "MED/26, MED/48",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Cioncoloni David",
       "Ginanneschi Federica",
@@ -7731,7 +7687,7 @@
      "cfu": 8,
      "ssd": "MED/48, MED/33, MED/16",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Frediani Bruno",
       "Giannotti Stefano",
@@ -7790,7 +7746,7 @@
      "cfu": 4,
      "ssd": "IUS/09, IUS/07, SECS-P/07",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Arezzini Simona",
       "Arrigucci Sara",
@@ -7850,7 +7806,7 @@
      "cfu": 6,
      "ssd": "M-PSI/08, M-PED/01, M-DEA/01, BIO/08",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Boschin Francesco",
       "Carletti Chiara",
@@ -7956,7 +7912,7 @@
      "cfu": 1,
      "ssd": "NN",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Cioncoloni David"
      ],
@@ -8022,6 +7978,29 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "2018816",
+     "nome": "Altre - Laboratorio di Valutazione Funzionale e Tecniche Speciali in Fisoterapia 3 Anno 2 Semestre",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 2,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": "SEDE GROSSETO",
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/26394/2020/3?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unisi-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-2018816",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/26394/2020/3?coorte=2024"
+    },
+    {
      "codice": "2000070",
      "nome": "Altre 1 Anno 2 Sem",
      "anno": null,
@@ -8031,7 +8010,7 @@
      "cfu": 1,
      "ssd": "NN",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Cioncoloni David"
      ],
@@ -8049,6 +8028,29 @@
      ]
     },
     {
+     "codice": "2000378",
+     "nome": "Altre 1 Anno 2 Semestre",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 1,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": "SEDE AREZZO",
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/20802/2020/2?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unisi-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-2000378",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2025/20802/2020/2?coorte=2024"
+    },
+    {
      "codice": "2000072",
      "nome": "Altre 2 Anno 2 Sem",
      "anno": null,
@@ -8058,7 +8060,7 @@
      "cfu": 3,
      "ssd": "NN",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Cioncoloni David"
      ],
@@ -8157,7 +8159,7 @@
      "cfu": 6,
      "ssd": "BIO/14, MED/04, MED/08, MED/07",
      "obbligatorio": false,
-     "curriculum": "SEDE GROSSETO",
+     "curriculum": "SEDE GROSSETO, SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "D'elios Mario Milco",
       "Docquier Jean Denis",
@@ -8383,7 +8385,7 @@
      "cfu": 6,
      "ssd": "MED/11, MED/10, MED/48",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Ciarleglio Giuseppina",
       "Focardi Marta",
@@ -8502,7 +8504,7 @@
      "cfu": 5,
      "ssd": "MED/39, MED/38, MED/48",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Conte Valentina",
       "Pianigiani Rosaria",
@@ -8672,7 +8674,7 @@
      "cfu": 5,
      "ssd": "MED/48, MED/34, FIS/07",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE GROSSETO, SEDE AREZZO",
      "docenti": [
       "Brogi Paolo",
       "Cioncoloni David",
@@ -8742,7 +8744,7 @@
      "cfu": 11,
      "ssd": "MED/48, M-EDF/01, BIO/16, BIO/09",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Bellini Nicoletta",
       "Bertelli Eugenio",
@@ -8812,7 +8814,7 @@
      "cfu": 4,
      "ssd": "MED/42, MED/44, MED/43, MED/36",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Gualtieri Giacomo",
       "Miceli Giovanni Battista",
@@ -8969,7 +8971,7 @@
      "cfu": 3,
      "ssd": "MED/49",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Cioncoloni David",
       "Marraccini Simone"
@@ -8998,7 +9000,7 @@
      "cfu": 15,
      "ssd": "MED/48",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Cioncoloni David",
       "Marraccini Simone"
@@ -9241,7 +9243,7 @@
    "url": "https://igiene-dentale.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2001127",
@@ -10499,7 +10501,7 @@
    "url": "https://infermieristica.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000442",
@@ -10511,7 +10513,7 @@
      "cfu": 6,
      "ssd": "NN",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE GROSSETO, SEDE SIENA",
      "docenti": [],
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/20454/2010/10001?coorte=2024",
      "libri": [],
@@ -10640,7 +10642,7 @@
      "cfu": 3,
      "ssd": "NN",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Spighi Massimo",
       "Marini Fulvia"
@@ -10915,7 +10917,7 @@
      "cfu": 4,
      "ssd": "MED/45",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Costabile Mauro",
       "Montesarchio Maddalena",
@@ -11242,18 +11244,6 @@
        "citazione": "Racomandazioni GAVeCeLT 2021 per la indicazione, l’impianto e la gestione dei dispositivi per accesso venoso, Mauro Pittirutti; Giancarlo Scopettuolo, 2021"
       },
       {
-       "titolo": "Manuale di tecniche e procedure infermieristiche di taylor",
-       "autori": "Lynn P",
-       "editore": "Casa Editrice Piccin",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Lynn P “Manuale di tecniche e procedure infermieristiche di taylor” Un approccio al processo di nursing. ( terza edizione italiana) Padova , Casa Editrice Piccin, 2016"
-      },
-      {
        "titolo": "P. Lynn ( 4° ed. 2016 ) Manuale di tecniche e procedure infermieristiche di Taylor – Piccin Editore",
        "autori": null,
        "editore": null,
@@ -11276,6 +11266,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Badon - Canesi - Monterosso – Pellegatta (2018) Procedure infermieristiche - Casa Editrice Ambrosiana"
+      },
+      {
+       "titolo": "Manuale di tecniche e procedure infermieristiche di taylor",
+       "autori": "Lynn P",
+       "editore": "Casa Editrice Piccin",
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Lynn P “Manuale di tecniche e procedure infermieristiche di taylor” Un approccio al processo di nursing. ( terza edizione italiana) Padova , Casa Editrice Piccin, 2016"
       }
      ],
      "esami": [
@@ -11361,7 +11363,7 @@
      "cfu": 10,
      "ssd": "BIO/16, BIO/13, BIO/10, BIO/09",
      "obbligatorio": false,
-     "curriculum": "SEDE GROSSETO",
+     "curriculum": "SEDE GROSSETO, SEDE SIENA",
      "docenti": [
       "Brunetti Jlenia",
       "Luddi Alice",
@@ -11755,7 +11757,7 @@
      "cfu": 6,
      "ssd": "MED/18, MED/45",
      "obbligatorio": false,
-     "curriculum": "SEDE GROSSETO",
+     "curriculum": "SEDE GROSSETO, SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Chessa Antonella",
       "Mecheroni Silvana",
@@ -11949,7 +11951,7 @@
      "cfu": 7,
      "ssd": "MED/09, MED/18, MED/45, MED/41",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE GROSSETO, SEDE SIENA",
      "docenti": [
       "Cini Silvia",
       "Malatesti Riccardo",
@@ -12446,7 +12448,7 @@
      "cfu": 6,
      "ssd": "MED/45",
      "obbligatorio": false,
-     "curriculum": "SEDE GROSSETO",
+     "curriculum": "SEDE GROSSETO, SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Banda Antonela",
       "Bellini Giampaolo",
@@ -12785,7 +12787,7 @@
      "cfu": 10,
      "ssd": "MED/09, MED/17, BIO/14, MED/45, MED/03",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Donnini Sandra",
       "Gennari Luigi",
@@ -13294,7 +13296,7 @@
      "cfu": 4,
      "ssd": "MED/42, ING-INF/05",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Ferretti Fabio",
       "Gulla' Massimiliano",
@@ -13471,7 +13473,7 @@
      "cfu": 3,
      "ssd": "MED/45, MED/42",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE GROSSETO, SEDE SIENA",
      "docenti": [
       "Messina Gabriele",
       "Savignani Gabriele",
@@ -13757,7 +13759,7 @@
      "cfu": 7,
      "ssd": "SPS/07, M-PSI/01, MED/42, M-DEA/01",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE GROSSETO, SEDE AREZZO",
      "docenti": [
       "Cuccurullo Rossella",
       "Fornasetti Pietro",
@@ -13971,7 +13973,7 @@
      "cfu": 1,
      "ssd": "MED/45",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Pomi Manola",
       "Francioni Stefania",
@@ -14026,7 +14028,7 @@
      "cfu": 1,
      "ssd": "MED/45",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Mambretti Sabina",
       "Francioni Stefania",
@@ -14117,7 +14119,7 @@
      "cfu": 1,
      "ssd": "MED/45",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Montesarchio Maddalena",
       "Tofani Alessandra",
@@ -14317,7 +14319,7 @@
      "cfu": 7,
      "ssd": "MED/04, BIO/14, MED/07, MED/08, MED/09",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Bellan Cristiana",
       "Borgonetti Vittoria",
@@ -14569,7 +14571,7 @@
      "cfu": 2,
      "ssd": "MED/45, MED/43",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Masti Alessandra",
       "Ricci Lorella",
@@ -14675,7 +14677,7 @@
      "cfu": 3,
      "ssd": "M-PSI/08, MED/25, MED/45",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Fagiolini Andrea",
       "Montalbano Roberto",
@@ -14915,7 +14917,7 @@
      "cfu": 5,
      "ssd": "MED/45",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Montesarchio Maddalena",
       "Pallassini Maurilio",
@@ -15496,7 +15498,7 @@
      "cfu": 3,
      "ssd": "IUS/07, SECS-P/10, MED/45",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Arrigucci Sara",
       "Biancalani Andrea",
@@ -15611,7 +15613,7 @@
      "cfu": 8,
      "ssd": "MED/09, MED/26, MED/33, MED/45",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Ferrini Giuliano",
       "Gallo Severino",
@@ -15735,7 +15737,7 @@
      "cfu": 5,
      "ssd": "MED/38, MED/40, MED/47, MED/45, MED/20",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Angotti Rossella",
       "Badii Linda",
@@ -16001,7 +16003,7 @@
      "cfu": 1,
      "ssd": "MED/36",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Perrella Armando",
       "Borghesi Simona",
@@ -16056,7 +16058,7 @@
      "cfu": 17,
      "ssd": "MED/45",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Pallassini Maurilio",
       "Spighi Massimo",
@@ -16244,7 +16246,7 @@
      "cfu": 22,
      "ssd": "MED/45",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Pallassini Maurilio",
       "Spighi Massimo",
@@ -16372,7 +16374,7 @@
      "cfu": 26,
      "ssd": "MED/45",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO, SEDE GROSSETO",
      "docenti": [
       "Pallassini Maurilio",
       "Spighi Massimo",
@@ -16547,7 +16549,7 @@
    "url": "https://ing-gestionale.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99991",
@@ -17666,7 +17668,7 @@
    "url": "https://ing-informatica-informazione.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99991",
@@ -18679,7 +18681,7 @@
    "url": "https://lingue-comunicazione.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99990",
@@ -18702,119 +18704,6 @@
      "modalita_esame": "orale",
      "id": "unisi-l-11-lingue-per-la-comunicazione-interculturale-e-d-impresa-l99990",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "104027",
-     "nome": "Storia Contemporanea",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/12660/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-13",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-23",
-       "iscrizioni_al": "2026-11-11",
-       "docenti": "ERTOLA EMANUELE",
-       "note": null,
-       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-17",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-28",
-       "iscrizioni_al": "2026-11-16",
-       "docenti": "NICOLOSI PELLEGRINO GERARDO",
-       "note": null,
-       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-l-11-lingue-per-la-comunicazione-interculturale-e-d-impresa-104027",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "104470",
-     "nome": "Storia Medievale",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/13103/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-l-11-lingue-per-la-comunicazione-interculturale-e-d-impresa-104470",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "104484",
-     "nome": "Storia Moderna",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/13117/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-12",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-23",
-       "iscrizioni_al": "2026-11-09",
-       "docenti": "ZAGLI ANDREA",
-       "note": null,
-       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-19",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-30",
-       "iscrizioni_al": "2026-11-18",
-       "docenti": "MAGGI STEFANO",
-       "note": null,
-       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-l-11-lingue-per-la-comunicazione-interculturale-e-d-impresa-104484",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
     },
     {
      "codice": "2016670",
@@ -18884,6 +18773,75 @@
      "id": "unisi-l-11-lingue-per-la-comunicazione-interculturale-e-d-impresa-2019695",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "104027",
+     "nome": "Storia Contemporanea",
+     "anno": null,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/12660/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-23",
+       "iscrizioni_al": "2026-11-11",
+       "docenti": "ERTOLA EMANUELE",
+       "note": null,
+       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-28",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": "NICOLOSI PELLEGRINO GERARDO",
+       "note": null,
+       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-l-11-lingue-per-la-comunicazione-interculturale-e-d-impresa-104027",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/12660/2018/4?coorte=2024"
+    },
+    {
+     "codice": "104470",
+     "nome": "Storia Medievale",
+     "anno": null,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/13103/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-l-11-lingue-per-la-comunicazione-interculturale-e-d-impresa-104470",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2025/13103/2021/2?coorte=2024"
     },
     {
      "codice": "2010046",
@@ -18980,6 +18938,53 @@
      "id": "unisi-l-11-lingue-per-la-comunicazione-interculturale-e-d-impresa-108071",
      "stato_libri": "da_aggiungere",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "104484",
+     "nome": "Storia Moderna",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/13117/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-23",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "ZAGLI ANDREA",
+       "note": null,
+       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-18",
+       "docenti": "MAGGI STEFANO",
+       "note": null,
+       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-l-11-lingue-per-la-comunicazione-interculturale-e-d-impresa-104484",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/13117/2021/2?coorte=2024"
     },
     {
      "codice": "2012407",
@@ -19174,7 +19179,7 @@
    "url": "https://logopedia.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2018788",
@@ -21167,7 +21172,7 @@
      "cfu": 5,
      "ssd": "MED/10, MED/50, MED/18",
      "obbligatorio": false,
-     "curriculum": "CORSO GENERICO, SEDE SIENA",
+     "curriculum": "CORSO GENERICO, SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Ciarleglio Giuseppina",
       "Mancini Stefano",
@@ -21981,7 +21986,7 @@
      "cfu": 2,
      "ssd": "MED/49",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Santucci Silvia"
      ],
@@ -22463,7 +22468,7 @@
    "url": "https://matematica.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2016670",
@@ -23972,7 +23977,7 @@
    "url": "https://ortottica.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2017475",
@@ -26289,7 +26294,7 @@
    "url": "https://ostetricia.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2001127",
@@ -27918,7 +27923,7 @@
    "url": "https://patrimonio-territorio-turismo.unisi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99990",
@@ -28409,7 +28414,7 @@
    "url": "https://scienze-ambientali-naturali.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "108983",
@@ -28787,7 +28792,7 @@
    "url": "https://scienze-biologiche.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99990",
@@ -29135,7 +29140,7 @@
    "url": "https://scienze-chimiche.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000983",
@@ -29416,7 +29421,7 @@
    "url": "https://servizi-giuridici.unisi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99990",
@@ -29723,7 +29728,7 @@
    "url": "https://scienze-servizio-sociale.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2019760",
@@ -30105,7 +30110,7 @@
    "url": "https://scienze-educazione-formazione.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99990",
@@ -30382,7 +30387,7 @@
    "url": "https://scienze-comunicazione.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2020057",
@@ -30666,7 +30671,7 @@
    "url": "https://scienze-economiche-bancarie.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99990",
@@ -32101,7 +32106,7 @@
    "url": "https://scienze-geologiche.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000976",
@@ -32383,7 +32388,7 @@
    "url": "https://scienze-politiche.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99990",
@@ -32612,7 +32617,7 @@
      "cfu": 9,
      "ssd": null,
      "obbligatorio": false,
-     "curriculum": "STORIA POLITICA SOCIETA', STUDI INTERNAZIONALI E EUROPEI",
+     "curriculum": "STORIA POLITICA SOCIETA', STUDI INTERNAZIONALI E EUROPEI, MANAGEMENT DEL PUBBLICO E DI IMPRESA",
      "docenti": [
       "Nicolosi Pellegrino Gerardo",
       "Gabrielli Patrizia"
@@ -33042,7 +33047,7 @@
    "url": "https://storia-patrimonio-culturale.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99990",
@@ -33379,41 +33384,6 @@
      "modalita_esame": "orale",
      "id": "unisi-l-1-scienze-storiche-e-del-patrimonio-culturale-2000041",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "2000807",
-     "nome": "Storia Economica Pre-industriale",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "M-STO/02",
-     "obbligatorio": false,
-     "curriculum": "ARCHEOLOGIA, STORIA DELL'ARTE",
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/21822/2021/1?coorte=2025",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-12",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-23",
-       "iscrizioni_al": "2026-11-09",
-       "docenti": "ZAGLI ANDREA",
-       "note": null,
-       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unisi-l-1-scienze-storiche-e-del-patrimonio-culturale-2000807",
-     "stato_esami": "completo"
     },
     {
      "codice": "100149",
@@ -38145,6 +38115,42 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "2000807",
+     "nome": "Storia Economica Pre-industriale",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "M-STO/02",
+     "obbligatorio": false,
+     "curriculum": "ARCHEOLOGIA, STORIA DELL'ARTE",
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/21822/2021/1?coorte=2025",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-23",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "ZAGLI ANDREA",
+       "note": null,
+       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unisi-l-1-scienze-storiche-e-del-patrimonio-culturale-2000807",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2025/21822/2021/3?coorte=2024"
+    },
+    {
      "codice": "2000519",
      "nome": "Storia Economica e Sociale del Medioevo",
      "anno": 2,
@@ -38989,7 +38995,7 @@
    "url": "https://studi-letterari-filosofici.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2017495",
@@ -39053,27 +39059,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unisi-l-10-studi-letterari-e-filosofici-l99990",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "2014516",
-     "nome": "Lingua e Traduzione Catalana",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": "LETTERE MODERNE",
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/23384/2026/3?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-l-10-studi-letterari-e-filosofici-2014516",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -40430,6 +40415,28 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "2014516",
+     "nome": "Lingua e Traduzione Catalana",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "LETTERE MODERNE",
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/23384/2026/3?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-l-10-studi-letterari-e-filosofici-2014516",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2022/23384/2019/3?coorte=2022"
+    },
+    {
      "codice": "102968",
      "nome": "Logica e Filosofia della Scienza",
      "anno": null,
@@ -40814,7 +40821,7 @@
    "url": "https://tecniche-prevenzione.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000423",
@@ -42536,7 +42543,7 @@
    "url": "https://tecniche-perfusione.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2017475",
@@ -44258,7 +44265,7 @@
    "url": "https://laboratorio-biomedico.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2017475",
@@ -44382,7 +44389,7 @@
      "cfu": 8,
      "ssd": "MED/08, MED/46",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Bellan Cristiana",
       "Laurini Lorella",
@@ -45865,7 +45872,7 @@
      "cfu": 9,
      "ssd": "BIO/13, BIO/10, NN",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Brunetti Jlenia",
       "Depau Lorenzo",
@@ -46067,7 +46074,7 @@
      "cfu": 8,
      "ssd": "BIO/16, BIO/09, BIO/17",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Filippi Irene",
       "Perni Stefano",
@@ -46482,7 +46489,7 @@
      "cfu": 7,
      "ssd": "VET/06, MED/46",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Anichini Gabriele",
       "Gori Savellini Gianni",
@@ -46576,7 +46583,7 @@
      "cfu": 10,
      "ssd": "MED/46, MED/03, MED/05",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Marzocchi Barbara",
       "Renieri Alessandra",
@@ -46959,7 +46966,7 @@
      "cfu": 4,
      "ssd": "FIS/07, ING-INF/07",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Ciocci Maria Agnese",
       "Delogu Pasquale",
@@ -47052,7 +47059,7 @@
      "cfu": 2,
      "ssd": "M-FIL/02, M-PSI/01",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE SIENA",
      "docenti": [
       "Martellucci Pietro Mario",
       "Varnier Giuseppe"
@@ -47105,7 +47112,7 @@
      "cfu": 4,
      "ssd": "IUS/09, IUS/07, SECS-P/07, SECS-P/10",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Arezzini Simona",
       "Arrigucci Sara",
@@ -47152,7 +47159,7 @@
      "cfu": 2,
      "ssd": "NN",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO, SEDE SIENA",
+     "curriculum": "SEDE AREZZO, SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Bonini Donatella",
       "Silenzi Marco"
@@ -48411,7 +48418,7 @@
      "cfu": 3,
      "ssd": "MED/01, ING-INF/06",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Cevenini Gabriele",
       "Ferretti Fabio"
@@ -48476,7 +48483,7 @@
      "cfu": 6,
      "ssd": "BIO/12, MED/46",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Brunetti Jlenia",
       "Silvietti Antonella",
@@ -48627,7 +48634,7 @@
      "cfu": 6,
      "ssd": "MED/42, ING-INF/05",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Ferretti Fabio",
       "Mugnaini Marco"
@@ -48789,7 +48796,7 @@
      "cfu": 5,
      "ssd": "MED/07",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE SIENA",
      "docenti": [
       "Cusi Maria Grazia",
       "Parisio Eva Maria",
@@ -49012,7 +49019,7 @@
      "cfu": 8,
      "ssd": "MED/03, NN, MED/04, MED/46",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE SIENA",
      "docenti": [
       "Frullanti Elisa",
       "Giurisato Emanuele",
@@ -49331,7 +49338,7 @@
      "cfu": 3,
      "ssd": "MED/41, MED/18, MED/09",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Caffarelli Carla",
       "Ruggieri Giuliana",
@@ -49423,7 +49430,7 @@
      "cfu": 5,
      "ssd": "MED/15, MED/46, MED/13, MED/16",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE SIENA",
      "docenti": [
       "Bocchia Monica",
       "Nigi Laura",
@@ -49529,7 +49536,7 @@
      "cfu": 6,
      "ssd": "MED/43, MED/42, MED/44, MED/36, MED/46",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Miceli Giovanni Battista",
       "Palummo Nazzareno",
@@ -49686,7 +49693,7 @@
      "cfu": 2,
      "ssd": "NN",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Brocherel Giuseppina",
       "Ragionieri Giovanni",
@@ -49812,7 +49819,7 @@
      "cfu": 12,
      "ssd": "MED/46",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE AREZZO",
      "docenti": [
       "Bartolommei Sabrina",
       "Bonini Donatella"
@@ -49912,7 +49919,7 @@
      "cfu": 7,
      "ssd": "BIO/14, MED/43, MED/35",
      "obbligatorio": false,
-     "curriculum": "SEDE AREZZO",
+     "curriculum": "SEDE AREZZO, SEDE SIENA",
      "docenti": [
       "Baldi Marco",
       "Borgonetti Vittoria",
@@ -50293,7 +50300,7 @@
    "url": "https://tecniche-radiologia.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2018900",
@@ -50569,7 +50576,7 @@
      "cfu": 4,
      "ssd": "NN",
      "obbligatorio": false,
-     "curriculum": "SEDE GROSSETO",
+     "curriculum": "SEDE GROSSETO, SEDE SIENA",
      "docenti": [],
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/25466/2011/2?coorte=2024",
      "libri": [],
@@ -50771,7 +50778,7 @@
      "cfu": 5,
      "ssd": "MED/36, MED/50, FIS/07",
      "obbligatorio": false,
-     "curriculum": "CORSO GENERICO, SEDE SIENA",
+     "curriculum": "CORSO GENERICO, SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Bassi Nadia",
       "Tini Paolo",
@@ -50801,7 +50808,7 @@
      "cfu": 5,
      "ssd": "BIO/13, MED/36, FIS/07",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Collodel Giulia",
       "Perrella Armando",
@@ -50917,7 +50924,7 @@
      "cfu": 8,
      "ssd": "BIO/16, BIO/09",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Durante Miriam",
       "Rossi Simone"
@@ -50958,7 +50965,7 @@
      "cfu": 4,
      "ssd": "MED/41, MED/18, BIO/14, MED/50",
      "obbligatorio": false,
-     "curriculum": "CORSO GENERICO, SEDE SIENA",
+     "curriculum": "CORSO GENERICO, SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Franchi Federico",
       "Neri Alessandro",
@@ -51025,7 +51032,7 @@
      "cfu": 3,
      "ssd": "MED/37, MED/50",
      "obbligatorio": false,
-     "curriculum": "CORSO GENERICO, SEDE SIENA",
+     "curriculum": "CORSO GENERICO, SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Galluzzi Paolo",
       "Martinelli Lorenzo",
@@ -51107,7 +51114,7 @@
      "cfu": 5,
      "ssd": "FIS/07, MED/01, INF/01, ING-INF/07",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Checchia Caterina",
       "Ferretti Fabio",
@@ -51199,7 +51206,7 @@
      "cfu": 4,
      "ssd": "MED/04, MED/42, MED/50",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Baldi Roberta",
       "Gamberucci Alessandra",
@@ -51266,7 +51273,7 @@
      "cfu": 3,
      "ssd": "MED/36, MED/50",
      "obbligatorio": false,
-     "curriculum": "CORSO GENERICO, SEDE SIENA",
+     "curriculum": "CORSO GENERICO, SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Mazzei Maria Antonietta",
       "Seri Francesca"
@@ -51617,7 +51624,7 @@
      "cfu": 3,
      "ssd": "MED/36",
      "obbligatorio": false,
-     "curriculum": "CORSO GENERICO, SEDE SIENA",
+     "curriculum": "CORSO GENERICO, SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Bagnacci Giulio",
       "Mazzei Maria Antonietta",
@@ -51684,7 +51691,7 @@
      "cfu": 5,
      "ssd": "MED/50, MED/36, MED/33",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Bagnacci Giulio",
       "Cannoni Laura",
@@ -51714,7 +51721,7 @@
      "cfu": 3,
      "ssd": "MED/50, MED/36",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Gentili Francesco",
       "Taddei Emanuele"
@@ -51742,7 +51749,7 @@
      "cfu": 3,
      "ssd": "MED/50, ING-INF/05, SECS-S/02",
      "obbligatorio": false,
-     "curriculum": "SEDE GROSSETO",
+     "curriculum": "SEDE GROSSETO, CORSO GENERICO, SEDE SIENA",
      "docenti": [
       "Cevenini Gabriele",
       "Ferretti Fabio",
@@ -51797,7 +51804,7 @@
      "cfu": 4,
      "ssd": "MED/36, MED/50, FIS/07",
      "obbligatorio": false,
-     "curriculum": "CORSO GENERICO, SEDE SIENA",
+     "curriculum": "CORSO GENERICO, SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Berti Valentina",
       "Didona Annamaria",
@@ -51826,7 +51833,7 @@
      "cfu": 3,
      "ssd": "MED/50, FIS/07, MED/36",
      "obbligatorio": false,
-     "curriculum": "CORSO GENERICO, SEDE SIENA",
+     "curriculum": "CORSO GENERICO, SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Ciocci Maria Agnese",
       "Mazzei Maria Antonietta",
@@ -51856,7 +51863,7 @@
      "cfu": 3,
      "ssd": "M-PSI/01, MED/50",
      "obbligatorio": false,
-     "curriculum": "SEDE SIENA",
+     "curriculum": "SEDE SIENA, SEDE GROSSETO",
      "docenti": [
       "Bassi Nadia",
       "Pozza Andrea"
@@ -52085,7 +52092,7 @@
    "url": "https://antropologia.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "100000",
@@ -52105,140 +52112,6 @@
      "fonte": "https://unisi.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unisi-lm-1-antropologia-della-contemporaneita-100000",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "2019838",
-     "nome": "Antropologia della Parentela e del Genere",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 12,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/26025/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-lm-1-antropologia-della-contemporaneita-2019838",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "2013579",
-     "nome": "Geografia",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/23009/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "14:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-10-21",
-       "iscrizioni_al": "2026-11-09",
-       "docenti": "GUARDUCCI ANNA",
-       "note": null,
-       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-22",
-       "iscrizioni_al": "2026-11-09",
-       "docenti": "GUARDUCCI ANNA",
-       "note": null,
-       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-12",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-22",
-       "iscrizioni_al": "2026-11-10",
-       "docenti": "GUARDUCCI ANNA",
-       "note": null,
-       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-lm-1-antropologia-della-contemporaneita-2013579",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "2019855",
-     "nome": "Storia della Contemporaneità",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/26030/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-09",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-20",
-       "iscrizioni_al": "2026-11-04",
-       "docenti": "LABANCA NICOLA",
-       "note": null,
-       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-lm-1-antropologia-della-contemporaneita-2019855",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "2000828",
-     "nome": "Teorie Dell'identita'",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/21564/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-lm-1-antropologia-della-contemporaneita-2000828",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -52466,6 +52339,28 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "2019838",
+     "nome": "Antropologia della Parentela e del Genere",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 12,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/26025/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-lm-1-antropologia-della-contemporaneita-2019838",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2025/26025/2025/9999?coorte=2025"
+    },
+    {
      "codice": "2019853",
      "nome": "Digital Ethnography e Nuovi Media",
      "anno": null,
@@ -52487,6 +52382,65 @@
      "id": "unisi-lm-1-antropologia-della-contemporaneita-2019853",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "2013579",
+     "nome": "Geografia",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/23009/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "GUARDUCCI ANNA",
+       "note": null,
+       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "GUARDUCCI ANNA",
+       "note": null,
+       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-10",
+       "docenti": "GUARDUCCI ANNA",
+       "note": null,
+       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-lm-1-antropologia-della-contemporaneita-2013579",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2025/23009/2025/9999?coorte=2024"
     },
     {
      "codice": "102049",
@@ -52546,6 +52500,63 @@
      "id": "unisi-lm-1-antropologia-della-contemporaneita-2019856",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "2019855",
+     "nome": "Storia della Contemporaneità",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/26030/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-04",
+       "docenti": "LABANCA NICOLA",
+       "note": null,
+       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-lm-1-antropologia-della-contemporaneita-2019855",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2025/26030/2025/9999?coorte=2025"
+    },
+    {
+     "codice": "2000828",
+     "nome": "Teorie Dell'identita'",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/21564/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-lm-1-antropologia-della-contemporaneita-2000828",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/21564/2021/1?coorte=2024"
     },
     {
      "codice": "104794",
@@ -52612,7 +52623,7 @@
    "url": "https://applied-mathematics.unisi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000410",
@@ -55304,7 +55315,7 @@
    "url": "https://archeologia.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99991",
@@ -55940,7 +55951,7 @@
    "url": "https://artificial-intelligence-automation.unisi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2017398",
@@ -57511,7 +57522,7 @@
    "url": "https://bceq.unisi.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2015973",
@@ -57787,7 +57798,7 @@
    "url": "https://biologia.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000475",
@@ -58346,7 +58357,7 @@
    "url": "https://biologia-sanitaria.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2019113",
@@ -58973,7 +58984,7 @@
    "url": "https://biotechnologies-humrep.unisi.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2015987",
@@ -59303,7 +59314,7 @@
    "url": "https://chemistry.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000915",
@@ -59959,7 +59970,7 @@
    "url": "https://chimica-scienze-agroalimentari.unisi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2017957",
@@ -60425,7 +60436,7 @@
    "url": "https://eas.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000976",
@@ -61000,7 +61011,7 @@
    "url": "https://economics.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "107441",
@@ -61380,7 +61391,7 @@
    "url": "https://ecotossicologia-ambiente.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99991",
@@ -61681,7 +61692,7 @@
    "url": "https://electronics-communications.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "109146D",
@@ -62930,7 +62941,7 @@
    "url": "https://engineering-management.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000976",
@@ -64382,7 +64393,7 @@
    "url": "https://finance.unisi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2021237",
@@ -64445,27 +64456,6 @@
      "fonte": "https://unisi.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unisi-lm-16-finance-2001104",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "2013673",
-     "nome": "Soft Skills",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/23148/2026/2?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-lm-16-finance-2013673",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -64829,6 +64819,28 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "2013673",
+     "nome": "Soft Skills",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/23148/2026/2?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-lm-16-finance-2013673",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/23148/2023/9999?coorte=2024"
+    },
+    {
      "codice": "2019690",
      "nome": "Financial Modeling",
      "anno": null,
@@ -64933,7 +64945,7 @@
    "url": "https://genetic-counsellors.unisi.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2019059",
@@ -65230,7 +65242,7 @@
    "url": "https://iama.unisi.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2013440",
@@ -65931,7 +65943,7 @@
    "url": "https://language-mind.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2015091",
@@ -66153,7 +66165,7 @@
    "url": "https://lettere-classiche.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2019697",
@@ -68150,7 +68162,7 @@
    "url": "https://lettere-moderne.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "100000",
@@ -69369,7 +69381,7 @@
    "url": "https://lingue-impresa-sviluppo.unisi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99991",
@@ -70079,7 +70091,7 @@
    "url": "https://mago.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2016249",
@@ -70568,7 +70580,7 @@
    "url": "https://medical-biotechnologies.unisi.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -70587,7 +70599,7 @@
    "url": "https://statistica-data-analytics.unisi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99991",
@@ -71119,7 +71131,7 @@
    "url": "https://public-cultural-diplomacy.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2021339",
@@ -71588,7 +71600,7 @@
    "url": "https://risorse-pericolosita-geologiche-territorio.unisi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000049",
@@ -71998,7 +72010,7 @@
    "url": "https://scienze-amministrazioni.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99991",
@@ -72739,7 +72751,7 @@
    "url": "https://scienze-giuridiche-lavoro-sicurezza.unisi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "100000",
@@ -73084,7 +73096,7 @@
    "url": "https://infost-magistrale.unisi.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -73103,7 +73115,7 @@
    "url": "https://scienze-internazionali.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2020026",
@@ -74440,7 +74452,7 @@
    "url": "https://consulenza-pedagogica-organizzazioni.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99991",
@@ -74604,29 +74616,8 @@
    "url": "https://sostenibilita-management-welfare.unisi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
-    {
-     "codice": "100148",
-     "nome": "Antropologia Sociale",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 12,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/8863/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-lm-87-sostenibilita-sociale-e-management-del-welfare-100148",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "L99991",
      "nome": "Idoneita' di Lingua Inglese - Liv. B2",
@@ -74707,6 +74698,28 @@
      "id": "unisi-lm-87-sostenibilita-sociale-e-management-del-welfare-2015076",
      "stato_libri": "da_aggiungere",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "100148",
+     "nome": "Antropologia Sociale",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 12,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/8863/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-lm-87-sostenibilita-sociale-e-management-del-welfare-100148",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/8863/2021/9999?coorte=2024"
     },
     {
      "codice": "2015078",
@@ -74948,7 +74961,7 @@
    "url": "https://storia-dell-arte.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "100000",
@@ -74975,7 +74988,7 @@
      "codice": "2000183",
      "nome": "Archivistica Ii/ls",
      "anno": null,
-     "periodo": null,
+     "periodo": "1",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
@@ -75003,109 +75016,8 @@
      "verificato_il": "2026-10-05",
      "id": "unisi-lm-89-storia-dell-arte-2000183",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "2000591",
-     "nome": "Paleografia Latina/ls",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/20500/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-07-27",
-       "iscrizioni_al": "2026-11-01",
-       "docenti": "MAGIONAMI LEONARDO",
-       "note": null,
-       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-lm-89-storia-dell-arte-2000591",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "105855",
-     "nome": "Storia Medievale/ls",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 12,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/15964/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-09",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-20",
-       "iscrizioni_al": "2026-11-07",
-       "docenti": "PICCINNI GABRIELLA",
-       "note": null,
-       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-lm-89-storia-dell-arte-105855",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "105567",
-     "nome": "Storia della Contemporaneita' C.i./ls",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 12,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/15648/2026/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-09",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-20",
-       "iscrizioni_al": "2026-11-04",
-       "docenti": "LABANCA NICOLA",
-       "note": null,
-       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-lm-89-storia-dell-arte-105567",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2025/20497/2025/9999?coorte=2024"
     },
     {
      "codice": "2013573",
@@ -75201,6 +75113,41 @@
      "id": "unisi-lm-89-storia-dell-arte-106497",
      "stato_libri": "da_aggiungere",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "105567",
+     "nome": "Storia della Contemporaneita' C.i./ls",
+     "anno": null,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 12,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/15648/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-04",
+       "docenti": "LABANCA NICOLA",
+       "note": null,
+       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-lm-89-storia-dell-arte-105567",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/15648/2021/1?coorte=2024"
     },
     {
      "codice": "104427",
@@ -75358,6 +75305,41 @@
      "id": "unisi-lm-89-storia-dell-arte-2000358",
      "stato_libri": "da_aggiungere",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "2000591",
+     "nome": "Paleografia Latina/ls",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/20500/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-07-27",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "MAGIONAMI LEONARDO",
+       "note": null,
+       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-lm-89-storia-dell-arte-2000591",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2025/20500/2021/1?coorte=2024"
     },
     {
      "codice": "2018048",
@@ -75539,6 +75521,41 @@
      "id": "unisi-lm-89-storia-dell-arte-107588",
      "stato_libri": "da_aggiungere",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "105855",
+     "nome": "Storia Medievale/ls",
+     "anno": null,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 12,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/15964/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": "PICCINNI GABRIELLA",
+       "note": null,
+       "fonte": "https://unisi.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-lm-89-storia-dell-arte-105855",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/15964/2022/9999?coorte=2024"
     }
    ],
    "ammissione": {
@@ -75569,7 +75586,7 @@
    "url": "https://storia-filosofia.unisi.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -75588,7 +75605,7 @@
    "url": "https://storia-filosofia.unisi.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [],
    "ammissione": {
     "accesso": "libero",
@@ -75616,7 +75633,7 @@
    "url": "https://comunicazione-tecniche-strategie.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "100000",
@@ -75657,27 +75674,6 @@
      "fonte": "https://unisi.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unisi-lm-92-strategie-e-tecniche-della-comunicazione-2008459",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "103612",
-     "nome": "Retorica e Linguaggi Persuasivi",
-     "anno": null,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": "COMUNICAZIONE PER LE INDUSTRIE CREATIVE E CULTURALI",
-     "docenti": [],
-     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/12303/2026/2?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unisi.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unisi-lm-92-strategie-e-tecniche-della-comunicazione-103612",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -76090,6 +76086,28 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "103612",
+     "nome": "Retorica e Linguaggi Persuasivi",
+     "anno": null,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "COMUNICAZIONE PER LE INDUSTRIE CREATIVE E CULTURALI",
+     "docenti": [],
+     "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/12303/2026/2?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unisi.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unisi-lm-92-strategie-e-tecniche-della-comunicazione-103612",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/12303/2021/3?coorte=2024"
+    },
+    {
      "codice": "2000814",
      "nome": "Scienze e Tecnologie Cognitive",
      "anno": null,
@@ -76192,7 +76210,7 @@
    "url": "https://sustainable-biotechnology.unisi.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2019798",
@@ -76374,7 +76392,7 @@
    "url": "https://chimica-tecnologia-farmaceutiche.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000976",
@@ -76823,7 +76841,7 @@
    "url": "https://dentistry.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2019185",
@@ -77521,7 +77539,7 @@
    "url": "https://farmacia.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000976",
@@ -77899,7 +77917,7 @@
    "url": "https://giurisprudenza.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99990",
@@ -78195,7 +78213,7 @@
    "url": "https://medicina-chirurgia.unisi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2020168",
@@ -79093,7 +79111,7 @@
    "url": "https://www.dispoc.unisi.it/it/didattica/la-nostra-offerta-formativa/scienze-della-formazione-primaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "100000",
@@ -80456,7 +80474,7 @@
    "url": "https://agribusiness.unisi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "100000",
@@ -82000,7 +82018,7 @@
    "url": "https://tact.unisi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "L99990",

@@ -37,7 +37,7 @@ Livelli mensili suggeriti (solo ringraziamento, nessun contenuto esclusivo):
 ## Altri modi (gratuiti) per aiutare
 
 - Lascia una **recensione** sullo store e consiglia l'app ai compagni di corso.
-- **Segnala errori** nel database (corsi, libri, date d'esame) aprendo una issue su GitHub o scrivendo a `<EMAIL_CONTATTO>`.
+- **Segnala errori** nel database (corsi, libri, date d'esame) aprendo una issue su GitHub o scrivendo a «[indirizzo email del progetto su Proton]».
 - Diventa **ambasciatore** del tuo ateneo (vedi il canale Telegram del progetto).
 - Contribuisci al codice o alle traduzioni su GitHub.
 

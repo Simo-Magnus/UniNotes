@@ -4,7 +4,7 @@ Ultimo aggiornamento: 14 ottobre 2026
 
 <!--
 Prima della pubblicazione sostituire i segnaposto:
-«[nome e cognome dello sviluppatore]» e «[indirizzo email di contatto]».
+«[nome e cognome dello sviluppatore]» e «[indirizzo email del progetto su Proton]».
 -->
 
 Questa informativa spiega quali dati personali entrano in gioco quando usi UniNotes, l'app per studenti universitari disponibile per Windows, macOS, Android e iOS, dove finiscono e chi ne risponde. È resa ai sensi degli articoli 13 e 14 del Regolamento (UE) 2016/679 (di seguito «GDPR») e del Codice in materia di protezione dei dati personali (D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018). Vale per la versione 2026.9 dell'app e per le successive, finché non viene sostituita da una versione più recente di questo documento.
@@ -23,7 +23,7 @@ Lo sviluppatore riceve dati che ti riguardano soltanto se gli scrivi, se apri un
 
 ## 1. Titolare del trattamento e contatti
 
-L'app è sviluppata e pubblicata da «[nome e cognome dello sviluppatore]», che su GitHub usa il nome Simo-Magnus (di seguito «lo sviluppatore»). Per qualsiasi domanda su questa informativa o sui tuoi dati puoi scrivere a «[indirizzo email di contatto]».
+L'app è sviluppata e pubblicata da «[nome e cognome dello sviluppatore]», che su GitHub usa il nome Simo-Magnus (di seguito «lo sviluppatore»). Per qualsiasi domanda su questa informativa o sui tuoi dati puoi scrivere a «[indirizzo email del progetto su Proton]».
 
 Lo sviluppatore è titolare del trattamento solo per i dati descritti al paragrafo 10.2 (messaggi, segnalazioni, donazioni). Per i dati che restano sul tuo dispositivo e per quelli che invii ai servizi che colleghi non lo è, per le ragioni spiegate al paragrafo 10.1. Non è stato designato un responsabile della protezione dei dati: per un'attività di queste dimensioni, che non comporta il trattamento su larga scala di dati personali, il GDPR non lo richiede.
 
@@ -255,7 +255,7 @@ L'app è pensata per studenti universitari, quindi di norma maggiorenni. Non chi
 
 ## 15. I tuoi diritti
 
-Per i dati trattati dallo sviluppatore (paragrafo 10.2) puoi chiedere in qualsiasi momento l'accesso, la rettifica, la cancellazione, la limitazione del trattamento e la portabilità, e puoi opporti ai trattamenti basati sul legittimo interesse (articoli da 15 a 22 del GDPR). Se hai dato il consenso, per esempio per comparire nei ringraziamenti, puoi revocarlo senza conseguenze sui trattamenti già svolti. Scrivi a «[indirizzo email di contatto]»: riceverai risposta entro un mese, prorogabile di altri due solo nei casi complessi previsti dall'articolo 12 del GDPR, e in quel caso ti verrà detto il motivo.
+Per i dati trattati dallo sviluppatore (paragrafo 10.2) puoi chiedere in qualsiasi momento l'accesso, la rettifica, la cancellazione, la limitazione del trattamento e la portabilità, e puoi opporti ai trattamenti basati sul legittimo interesse (articoli da 15 a 22 del GDPR). Se hai dato il consenso, per esempio per comparire nei ringraziamenti, puoi revocarlo senza conseguenze sui trattamenti già svolti. Scrivi a «[indirizzo email del progetto su Proton]»: riceverai risposta entro un mese, prorogabile di altri due solo nei casi complessi previsti dall'articolo 12 del GDPR, e in quel caso ti verrà detto il motivo.
 
 Per i dati sul dispositivo eserciti questi diritti direttamente: puoi consultarli e correggerli nell'app, esportarli in un formato leggibile (Esporta dati, in JSON) e cancellarli come descritto al paragrafo 12. Per i dati che hai affidato a Microsoft, Google, GitHub o ai fornitori di assistenti AI devi rivolgerti a loro.
 
@@ -279,4 +279,4 @@ The app connects to the internet only to download the public course database fro
 
 For ChatGPT, Claude, Copilot, Perplexity, NotebookLM and Gemini the app only copies a prompt to the clipboard, opens the service and shows the files to attach: you decide what to send, under that provider's terms. The current version does not call the Gemini API.
 
-The developer («[nome e cognome dello sviluppatore]», GitHub user Simo-Magnus) is a controller only for emails you send, GitHub issues you open and donations you make. Lecture recordings contain other people's voices: follow your university's rules, ask the lecturer when required and do not share recordings without consent. You can delete everything, including the app's folders on OneDrive and Google Drive and the calendar events it added, from Settings → Privacy → «Disinstalla UniNotes» or «Elimina tutti i dati», and you may lodge a complaint with the Italian Data Protection Authority (<https://www.garanteprivacy.it>) or your local authority. Contact: «[indirizzo email di contatto]».
+The developer («[nome e cognome dello sviluppatore]», GitHub user Simo-Magnus) is a controller only for emails you send, GitHub issues you open and donations you make. Lecture recordings contain other people's voices: follow your university's rules, ask the lecturer when required and do not share recordings without consent. You can delete everything, including the app's folders on OneDrive and Google Drive and the calendar events it added, from Settings → Privacy → «Disinstalla UniNotes» or «Elimina tutti i dati», and you may lodge a complaint with the Italian Data Protection Authority (<https://www.garanteprivacy.it>) or your local authority. Contact: «[indirizzo email del progetto su Proton]».

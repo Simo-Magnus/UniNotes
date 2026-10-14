@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "poliba",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-14",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10246",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3754",
@@ -572,7 +572,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10278",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3852",
@@ -1541,7 +1541,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10263",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "4000MATBA",
@@ -3925,7 +3925,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10263",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "4000MATBA",
@@ -4808,7 +4808,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10271",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "4000MATTA",
@@ -6020,7 +6020,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10275",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "4000MATBA",
@@ -7136,27 +7136,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "2653",
-     "nome": "Lingua Inglese B1",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2028/906409/2025/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://poliba.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "poliba-l-8-ingegneria-dei-sistemi-medicali-2653",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "2852",
      "nome": "Interazione della Radiazione con la Materia Biologica",
      "anno": 3,
@@ -7302,6 +7281,28 @@
      "id": "poliba-l-8-ingegneria-dei-sistemi-medicali-2159",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "2653",
+     "nome": "Lingua Inglese B1",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2028/906409/2025/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://poliba.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "poliba-l-8-ingegneria-dei-sistemi-medicali-2653",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2024/906409/2023/9999?coorte=2024"
     }
    ],
    "ammissione": {
@@ -7330,7 +7331,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10211",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2000BL",
@@ -8518,7 +8519,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10276",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "4000MATBA",
@@ -9941,7 +9942,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10262",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "4000MATBA",
@@ -11545,7 +11546,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10259",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "4000MATBA",
@@ -12537,27 +12538,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "2653",
-     "nome": "Lingua Inglese B1",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2028/906409/2025/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://poliba.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "poliba-l-8-ingegneria-elettronica-e-delle-tecnologie-internet-2653",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "2164",
      "nome": "Fondamenti di Elettronica",
      "anno": 3,
@@ -12747,6 +12727,28 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "2653",
+     "nome": "Lingua Inglese B1",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2028/906409/2025/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://poliba.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "poliba-l-8-ingegneria-elettronica-e-delle-tecnologie-internet-2653",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2024/906409/2023/9999?coorte=2024"
+    },
+    {
      "codice": "2175",
      "nome": "Microonde e Antenne",
      "anno": 3,
@@ -12799,7 +12801,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10257",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "4000MATBA",
@@ -14726,7 +14728,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10258",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "4000MATTA",
@@ -15338,27 +15340,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "2653",
-     "nome": "Lingua Inglese B1",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2028/906409/2025/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://poliba.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "poliba-l-9-ingegneria-industriale-e-dei-sistemi-navali-2653",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "3549",
      "nome": "Affidabilità e Manutenzione dei Sistemi",
      "anno": 3,
@@ -15504,6 +15485,28 @@
      "id": "poliba-l-9-ingegneria-industriale-e-dei-sistemi-navali-3551",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "2653",
+     "nome": "Lingua Inglese B1",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2028/906409/2025/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://poliba.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "poliba-l-9-ingegneria-industriale-e-dei-sistemi-navali-2653",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2024/906409/2023/9999?coorte=2024"
     }
    ],
    "ammissione": {
@@ -15532,7 +15535,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10260",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "4000MATBA",
@@ -16588,6 +16591,160 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "3446",
+     "nome": "Fondamenti di Teoria dei Circuiti",
+     "anno": 2,
+     "periodo": "1",
+     "periodo_inizio": "26/09/2026 00:00:00",
+     "periodo_fine": "30/01/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "ING-IND/31",
+     "obbligatorio": true,
+     "curriculum": "P-TECH",
+     "docenti": [
+      "Rohe Salomon Da Rosa Rodrigues Davi"
+     ],
+     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/907218/2025/10002?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://poliba.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-3446",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "3780",
+     "nome": "Metodi della Fisica Quantistica per L'ingegneria",
+     "anno": 2,
+     "periodo": "1",
+     "periodo_inizio": "26/09/2026 00:00:00",
+     "periodo_fine": "30/01/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "FIS/01",
+     "obbligatorio": true,
+     "curriculum": "AUTOMAZIONE, SISTEMI E APPLICAZIONI INFORMATICHE",
+     "docenti": [
+      "Berardi Vincenzo"
+     ],
+     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/907558/2025/10001?coorte=2025",
+     "libri": [
+      {
+       "titolo": "Michael A. Nielsen, Isaac L. Chuang; Quantum Computation and Quantum Information; Cambridge University Press,",
+       "autori": null,
+       "editore": "Cambridge University Press",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Michael A. Nielsen, Isaac L. Chuang; Quantum Computation and Quantum Information; Cambridge University Press,"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://poliba.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-3780",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "3442",
+     "nome": "Calcolatori Elettronici",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": "25/02/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "ING-INF/05",
+     "obbligatorio": true,
+     "curriculum": "P-TECH",
+     "docenti": [
+      "Lofù Domenico"
+     ],
+     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/907214/2025/10002?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://poliba.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-3442",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "3436",
+     "nome": "Fondamenti di Controlli Automatici",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": "25/02/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "ING-INF/04",
+     "obbligatorio": true,
+     "curriculum": "P-TECH",
+     "docenti": [],
+     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/907208/2025/10002?coorte=2025",
+     "libri": [
+      {
+       "titolo": "Fondamenti di Controlli Automatici",
+       "autori": "P. Bolzern, R. Scattolini, N. Schiavoni",
+       "editore": "“Fondamenti di Controlli Automatici”. McGraw-Hill. 2010",
+       "anno": 2010,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "P. Bolzern, R. Scattolini, N. Schiavoni, “Fondamenti di Controlli Automatici”. McGraw-Hill. 2010."
+      },
+      {
+       "titolo": "Sistemi di controllo digitale",
+       "autori": "C. Bonivento, C. Melchiorri, R. Zanasi",
+       "editore": "\"Sistemi di controllo digitale\". Esculapio",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "C. Bonivento, C. Melchiorri, R. Zanasi, \"Sistemi di controllo digitale\". Esculapio."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://poliba.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-3436",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "3437",
+     "nome": "Fondamenti di Controllo Digitale",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": "25/02/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "ING-INF/04",
+     "obbligatorio": true,
+     "curriculum": "P-TECH",
+     "docenti": [],
+     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/907209/2025/10002?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://poliba.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-3437",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "2182",
      "nome": "Fondamenti di Elettronica",
      "anno": 2,
@@ -16747,160 +16904,6 @@
      "codici_alternativi": [
       "3439"
      ]
-    },
-    {
-     "codice": "3446",
-     "nome": "Fondamenti di Teoria dei Circuiti",
-     "anno": 2,
-     "periodo": "1",
-     "periodo_inizio": "26/09/2026 00:00:00",
-     "periodo_fine": "30/01/2027 00:00:00",
-     "cfu": 6,
-     "ssd": "ING-IND/31",
-     "obbligatorio": true,
-     "curriculum": "P-TECH",
-     "docenti": [
-      "Rohe Salomon Da Rosa Rodrigues Davi"
-     ],
-     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/907218/2025/10002?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://poliba.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-3446",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "3780",
-     "nome": "Metodi della Fisica Quantistica per L'ingegneria",
-     "anno": 2,
-     "periodo": "1",
-     "periodo_inizio": "26/09/2026 00:00:00",
-     "periodo_fine": "30/01/2027 00:00:00",
-     "cfu": 6,
-     "ssd": "FIS/01",
-     "obbligatorio": true,
-     "curriculum": "AUTOMAZIONE, SISTEMI E APPLICAZIONI INFORMATICHE",
-     "docenti": [
-      "Berardi Vincenzo"
-     ],
-     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/907558/2025/10001?coorte=2025",
-     "libri": [
-      {
-       "titolo": "Michael A. Nielsen, Isaac L. Chuang; Quantum Computation and Quantum Information; Cambridge University Press,",
-       "autori": null,
-       "editore": "Cambridge University Press",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Michael A. Nielsen, Isaac L. Chuang; Quantum Computation and Quantum Information; Cambridge University Press,"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://poliba.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-3780",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "3442",
-     "nome": "Calcolatori Elettronici",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "25/02/2027 00:00:00",
-     "periodo_fine": "30/09/2027 00:00:00",
-     "cfu": 6,
-     "ssd": "ING-INF/05",
-     "obbligatorio": true,
-     "curriculum": "P-TECH",
-     "docenti": [
-      "Lofù Domenico"
-     ],
-     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/907214/2025/10002?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://poliba.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-3442",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "3436",
-     "nome": "Fondamenti di Controlli Automatici",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "25/02/2027 00:00:00",
-     "periodo_fine": "30/09/2027 00:00:00",
-     "cfu": 6,
-     "ssd": "ING-INF/04",
-     "obbligatorio": true,
-     "curriculum": "P-TECH",
-     "docenti": [],
-     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/907208/2025/10002?coorte=2025",
-     "libri": [
-      {
-       "titolo": "Fondamenti di Controlli Automatici",
-       "autori": "P. Bolzern, R. Scattolini, N. Schiavoni",
-       "editore": "“Fondamenti di Controlli Automatici”. McGraw-Hill. 2010",
-       "anno": 2010,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "P. Bolzern, R. Scattolini, N. Schiavoni, “Fondamenti di Controlli Automatici”. McGraw-Hill. 2010."
-      },
-      {
-       "titolo": "Sistemi di controllo digitale",
-       "autori": "C. Bonivento, C. Melchiorri, R. Zanasi",
-       "editore": "\"Sistemi di controllo digitale\". Esculapio",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "C. Bonivento, C. Melchiorri, R. Zanasi, \"Sistemi di controllo digitale\". Esculapio."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://poliba.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-3436",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "3437",
-     "nome": "Fondamenti di Controllo Digitale",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "25/02/2027 00:00:00",
-     "periodo_fine": "30/09/2027 00:00:00",
-     "cfu": 6,
-     "ssd": "ING-INF/04",
-     "obbligatorio": true,
-     "curriculum": "P-TECH",
-     "docenti": [],
-     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/907209/2025/10002?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://poliba.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-3437",
-     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "3368",
@@ -17188,30 +17191,6 @@
      "modalita_esame": "orale",
      "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-2174",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "2653",
-     "nome": "Lingua Inglese B1",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": "AUTOMAZIONE, SISTEMI E APPLICAZIONI INFORMATICHE",
-     "docenti": [],
-     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2028/906409/2025/10001?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://poliba.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-2653",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "3610"
-     ]
     },
     {
      "codice": "2329",
@@ -17511,6 +17490,31 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "2653",
+     "nome": "Lingua Inglese B1",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": "AUTOMAZIONE, SISTEMI E APPLICAZIONI INFORMATICHE",
+     "docenti": [],
+     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2028/906409/2025/10001?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://poliba.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-2653",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "3610"
+     ],
+     "periodo_fonte": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2024/906409/2023/9999?coorte=2024"
+    },
+    {
      "codice": "3440",
      "nome": "Sistemi Operativi e Cybersecurity",
      "anno": 3,
@@ -17563,7 +17567,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10260",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "4000MATBA",
@@ -17836,30 +17840,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "2182",
-     "nome": "Fondamenti di Elettronica",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "25/02/2027 00:00:00",
-     "periodo_fine": "30/09/2027 00:00:00",
-     "cfu": 9,
-     "ssd": "ING-INF/01",
-     "obbligatorio": true,
-     "curriculum": "AUTOMAZIONE, SISTEMI E APPLICAZIONI INFORMATICHE",
-     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/2110/2025/10001?coorte=2025",
-     "fonte": "https://poliba.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-replica-taranto-2182",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "3439"
-     ]
-    },
-    {
      "codice": "3446",
      "nome": "Fondamenti di Teoria dei Circuiti",
      "anno": 2,
@@ -17965,6 +17945,30 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "2182",
+     "nome": "Fondamenti di Elettronica",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": "25/02/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
+     "cfu": 9,
+     "ssd": "ING-INF/01",
+     "obbligatorio": true,
+     "curriculum": "AUTOMAZIONE, SISTEMI E APPLICAZIONI INFORMATICHE",
+     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/2110/2025/10001?coorte=2025",
+     "fonte": "https://poliba.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-replica-taranto-2182",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "3439"
+     ]
+    },
+    {
      "codice": "3368",
      "nome": "Laboratorio di Programmazione",
      "anno": 2,
@@ -18068,30 +18072,6 @@
      "stato_libri": "da_aggiungere",
      "esami": [],
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "2653",
-     "nome": "Lingua Inglese B1",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": "AUTOMAZIONE, SISTEMI E APPLICAZIONI INFORMATICHE",
-     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2028/906409/2025/10001?coorte=2024",
-     "fonte": "https://poliba.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-replica-taranto-2653",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "3610"
-     ]
     },
     {
      "codice": "2329",
@@ -18391,6 +18371,31 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "2653",
+     "nome": "Lingua Inglese B1",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": "AUTOMAZIONE, SISTEMI E APPLICAZIONI INFORMATICHE",
+     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2028/906409/2025/10001?coorte=2024",
+     "fonte": "https://poliba.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "poliba-l-8-ingegneria-informatica-e-dell-automazione-replica-taranto-2653",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "3610"
+     ],
+     "periodo_fonte": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2024/906409/2023/9999?coorte=2024"
+    },
+    {
      "codice": "3440",
      "nome": "Sistemi Operativi e Cybersecurity",
      "anno": 3,
@@ -18434,7 +18439,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10261",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "4000MATBA",
@@ -19735,7 +19740,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10247",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3717",
@@ -20956,27 +20961,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "3610",
-     "nome": "Lingua Inglese B1",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 0,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2028/907382/2025/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://poliba.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "poliba-l-9-management-engineering-for-innovation-3610",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "3728",
      "nome": "Al Governance And Ethics",
      "anno": 3,
@@ -21127,6 +21111,28 @@
      "id": "poliba-l-9-management-engineering-for-innovation-3733",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "3610",
+     "nome": "Lingua Inglese B1",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2028/907382/2025/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://poliba.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "poliba-l-9-management-engineering-for-innovation-3610",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2027/907382/2025/9999?coorte=2025"
     }
    ],
    "curricula": [
@@ -21160,7 +21166,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10264",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3068",
@@ -22236,7 +22242,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10021",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -22255,7 +22261,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10272",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3879",
@@ -22684,7 +22690,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10266",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3816",
@@ -22918,28 +22924,6 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "poliba-lm-29-electronics-engineering-3819",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "2780",
-     "nome": "Electronics For Telecommunications",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "ING-INF/01",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/906536/2025/9999?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://poliba.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "poliba-lm-29-electronics-engineering-2780",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -23658,6 +23642,29 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "2780",
+     "nome": "Electronics For Telecommunications",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "ING-INF/01",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/906536/2025/9999?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://poliba.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "poliba-lm-29-electronics-engineering-2780",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://poliba.coursecatalogue.cineca.it/insegnamenti/2026/906536/2025/10000?coorte=2025"
+    },
+    {
      "codice": "3827",
      "nome": "Hardware And Pcb Design",
      "anno": 2,
@@ -23854,7 +23861,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10265",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3997",
@@ -26021,7 +26028,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10008",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -27260,7 +27267,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10269",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3075",
@@ -28147,7 +28154,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10248",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3712",
@@ -28966,7 +28973,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10017",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -30672,7 +30679,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10270",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3376",
@@ -32415,7 +32422,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10036",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -35744,7 +35751,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10022",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [],
    "ammissione": {
     "accesso": "programmato",
@@ -38567,7 +38574,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10273",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3255",
@@ -39988,7 +39995,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10273",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3255",
@@ -40537,7 +40544,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10162",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3203",
@@ -41833,7 +41840,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10267",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2932",
@@ -43045,7 +43052,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10176",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2024BL",
@@ -43414,7 +43421,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10277",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "2880",
@@ -44829,7 +44836,7 @@
    "url": "https://poliba.coursecatalogue.cineca.it/corsi/2025/10168",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "3303",

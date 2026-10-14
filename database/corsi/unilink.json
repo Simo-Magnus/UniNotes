@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unilink",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-14",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "DAMSR004",
@@ -1689,7 +1689,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea/economia-e-management-dimpresa-e-delle-istituzioni-l-18-aa-25-26",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ECOMI063",
@@ -4292,31 +4292,6 @@
      ]
     },
     {
-     "codice": "FISIO996",
-     "nome": "Laboratori Professionali - 2° Anno",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 1,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8545/2024/9999?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unilink-l-snt2-fisioterapia-fisio996",
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "FIST991"
-     ]
-    },
-    {
      "codice": "FIST996",
      "nome": "Fisioterapia Tirocinio II",
      "anno": 2,
@@ -4336,6 +4311,32 @@
      "id": "unilink-l-snt2-fisioterapia-fist996",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "FISIO996",
+     "nome": "Laboratori Professionali - 2° Anno",
+     "anno": 2,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 1,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8545/2024/9999?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unilink-l-snt2-fisioterapia-fisio996",
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "FIST991"
+     ],
+     "periodo_fonte": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8545/2024/9999?coorte=2025"
     },
     {
      "codice": "FISIO009",
@@ -4974,31 +4975,6 @@
      ]
     },
     {
-     "codice": "FISIO997",
-     "nome": "Laboratori Professionali - 3° Anno",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 1,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8544/2024/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unilink-l-snt2-fisioterapia-fisio997",
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "FIST990"
-     ]
-    },
-    {
      "codice": "FISIO024",
      "nome": "Ade",
      "anno": 3,
@@ -5113,6 +5089,32 @@
      "modalita_esame": "orale",
      "id": "unilink-l-snt2-fisioterapia-fisio019",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "FISIO997",
+     "nome": "Laboratori Professionali - 3° Anno",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 1,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8544/2024/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unilink-l-snt2-fisioterapia-fisio997",
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "FIST990"
+     ],
+     "periodo_fonte": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8544/2024/9999?coorte=2024"
     },
     {
      "codice": "FISIO020",
@@ -5279,7 +5281,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -5298,7 +5300,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -5317,7 +5319,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -5336,7 +5338,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -5355,7 +5357,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -5374,7 +5376,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -5393,7 +5395,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -5412,7 +5414,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -5431,7 +5433,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -5450,7 +5452,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -5469,7 +5471,7 @@
    "url": "https://unilink.coursecatalogue.cineca.it/corsi/2026/10739",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IGDEN993",
@@ -8063,7 +8065,7 @@
      "codice": "INFERM096",
      "nome": "Laboratori Professionali - 3° Anno",
      "anno": 3,
-     "periodo": null,
+     "periodo": "2",
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 2,
@@ -8079,7 +8081,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unilink-l-snt1-infermieristica-inferm096",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7775/2026/9999?coorte=2026"
     },
     {
      "codice": "INFE022",
@@ -8363,7 +8366,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -8382,7 +8385,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -8401,7 +8404,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -8420,7 +8423,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "INGINF006",
@@ -9128,7 +9131,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OSTEO995",
@@ -10490,7 +10493,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -10509,7 +10512,7 @@
    "url": null,
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -10528,7 +10531,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "OSTE001",
@@ -11751,7 +11754,7 @@
    "url": "https://unilink.coursecatalogue.cineca.it/corsi/2026/10500",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SCED008",
@@ -12804,7 +12807,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SCDS032",
@@ -13529,7 +13532,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SCDS032",
@@ -13827,7 +13830,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SAMSRM005",
@@ -14468,7 +14471,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SCMT014",
@@ -16505,7 +16508,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "STEPSI997",
@@ -17618,7 +17621,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea/scienze-politiche-diplomatiche-e-governo-delle-amministrazioni-l-36-aa-25-26",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SCPOL003",
@@ -20392,7 +20395,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -20411,7 +20414,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TDRMIR995",
@@ -21493,7 +21496,7 @@
    "url": "https://www.unilink.it/cds/direzione-aziendale-e-della-pubblica-amministrazione-lm-77-aa-25-26",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CMPA003",
@@ -22715,7 +22718,7 @@
      "cfu": 6,
      "ssd": "SECS-P/11",
      "obbligatorio": true,
-     "curriculum": "(EN) Finance and Artificial Intelligence",
+     "curriculum": "(EN) Finance and Artificial Intelligence, Direzione delle amministrazioni pubbliche e delle società private",
      "docenti": [
       "Graziano Elvira Anna"
      ],
@@ -22839,7 +22842,7 @@
    "url": "https://www.unilink.it/cds/scienze-economiche-del-lavoro-e-dei-sistemi-socio-sanitari-lm-56-aa-25-26",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SELS001",
@@ -23761,7 +23764,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "STPS005",
@@ -25288,7 +25291,7 @@
    "url": "https://www.unilink.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TLCM003",
@@ -27178,7 +27181,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "FARMA004",
@@ -27899,7 +27902,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "GIUR010",
@@ -28713,7 +28716,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MEDEC_R003",
@@ -29697,7 +29700,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -30246,30 +30249,6 @@
      ]
     },
     {
-     "codice": "MED016",
-     "nome": "Farmacologia",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2028 00:00:00",
-     "periodo_fine": "30/09/2029 23:59:59",
-     "cfu": 3,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unilink-lm-41-medicina-e-chirurgia-replica-ascoli-piceno-med016",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "MEDEC_R016"
-     ]
-    },
-    {
      "codice": "MED015",
      "nome": "Malattie Infettive e Microbiologia Clinica",
      "anno": 3,
@@ -30315,6 +30294,30 @@
      "stato_esami": "da_aggiungere",
      "codici_alternativi": [
       "MEDEC_R038"
+     ]
+    },
+    {
+     "codice": "MED016",
+     "nome": "Farmacologia",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": "01/10/2028 00:00:00",
+     "periodo_fine": "30/09/2029 23:59:59",
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unilink-lm-41-medicina-e-chirurgia-replica-ascoli-piceno-med016",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "MEDEC_R016"
      ]
     },
     {
@@ -30383,7 +30386,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -30932,30 +30935,6 @@
      ]
     },
     {
-     "codice": "MED016",
-     "nome": "Farmacologia",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2028 00:00:00",
-     "periodo_fine": "30/09/2029 23:59:59",
-     "cfu": 3,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unilink-lm-41-medicina-e-chirurgia-replica-citta-di-castello-med016",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "MEDEC_R016"
-     ]
-    },
-    {
      "codice": "MED015",
      "nome": "Malattie Infettive e Microbiologia Clinica",
      "anno": 3,
@@ -31001,6 +30980,30 @@
      "stato_esami": "da_aggiungere",
      "codici_alternativi": [
       "MEDEC_R038"
+     ]
+    },
+    {
+     "codice": "MED016",
+     "nome": "Farmacologia",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": "01/10/2028 00:00:00",
+     "periodo_fine": "30/09/2029 23:59:59",
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unilink-lm-41-medicina-e-chirurgia-replica-citta-di-castello-med016",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "MEDEC_R016"
      ]
     },
     {
@@ -31069,7 +31072,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -31618,30 +31621,6 @@
      ]
     },
     {
-     "codice": "MED016",
-     "nome": "Farmacologia",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2028 00:00:00",
-     "periodo_fine": "30/09/2029 23:59:59",
-     "cfu": 3,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unilink-lm-41-medicina-e-chirurgia-replica-fano-med016",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "MEDEC_R016"
-     ]
-    },
-    {
      "codice": "MED015",
      "nome": "Malattie Infettive e Microbiologia Clinica",
      "anno": 3,
@@ -31687,6 +31666,30 @@
      "stato_esami": "da_aggiungere",
      "codici_alternativi": [
       "MEDEC_R038"
+     ]
+    },
+    {
+     "codice": "MED016",
+     "nome": "Farmacologia",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": "01/10/2028 00:00:00",
+     "periodo_fine": "30/09/2029 23:59:59",
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unilink-lm-41-medicina-e-chirurgia-replica-fano-med016",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "MEDEC_R016"
      ]
     },
     {
@@ -31755,7 +31758,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -32304,30 +32307,6 @@
      ]
     },
     {
-     "codice": "MED016",
-     "nome": "Farmacologia",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2028 00:00:00",
-     "periodo_fine": "30/09/2029 23:59:59",
-     "cfu": 3,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unilink-lm-41-medicina-e-chirurgia-replica-frosinone-med016",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "MEDEC_R016"
-     ]
-    },
-    {
      "codice": "MED015",
      "nome": "Malattie Infettive e Microbiologia Clinica",
      "anno": 3,
@@ -32373,6 +32352,30 @@
      "stato_esami": "da_aggiungere",
      "codici_alternativi": [
       "MEDEC_R038"
+     ]
+    },
+    {
+     "codice": "MED016",
+     "nome": "Farmacologia",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": "01/10/2028 00:00:00",
+     "periodo_fine": "30/09/2029 23:59:59",
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unilink-lm-41-medicina-e-chirurgia-replica-frosinone-med016",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "MEDEC_R016"
      ]
     },
     {
@@ -32441,7 +32444,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -32990,30 +32993,6 @@
      ]
     },
     {
-     "codice": "MED016",
-     "nome": "Farmacologia",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2028 00:00:00",
-     "periodo_fine": "30/09/2029 23:59:59",
-     "cfu": 3,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unilink-lm-41-medicina-e-chirurgia-replica-matera-med016",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "MEDEC_R016"
-     ]
-    },
-    {
      "codice": "MED015",
      "nome": "Malattie Infettive e Microbiologia Clinica",
      "anno": 3,
@@ -33059,6 +33038,30 @@
      "stato_esami": "da_aggiungere",
      "codici_alternativi": [
       "MEDEC_R038"
+     ]
+    },
+    {
+     "codice": "MED016",
+     "nome": "Farmacologia",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": "01/10/2028 00:00:00",
+     "periodo_fine": "30/09/2029 23:59:59",
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unilink-lm-41-medicina-e-chirurgia-replica-matera-med016",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "MEDEC_R016"
      ]
     },
     {
@@ -33127,7 +33130,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -33676,30 +33679,6 @@
      ]
     },
     {
-     "codice": "MED016",
-     "nome": "Farmacologia",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2028 00:00:00",
-     "periodo_fine": "30/09/2029 23:59:59",
-     "cfu": 3,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unilink-lm-41-medicina-e-chirurgia-replica-novedrate-med016",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "MEDEC_R016"
-     ]
-    },
-    {
      "codice": "MED015",
      "nome": "Malattie Infettive e Microbiologia Clinica",
      "anno": 3,
@@ -33745,6 +33724,30 @@
      "stato_esami": "da_aggiungere",
      "codici_alternativi": [
       "MEDEC_R038"
+     ]
+    },
+    {
+     "codice": "MED016",
+     "nome": "Farmacologia",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": "01/10/2028 00:00:00",
+     "periodo_fine": "30/09/2029 23:59:59",
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unilink-lm-41-medicina-e-chirurgia-replica-novedrate-med016",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "MEDEC_R016"
      ]
     },
     {
@@ -33813,7 +33816,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -34362,30 +34365,6 @@
      ]
     },
     {
-     "codice": "MED016",
-     "nome": "Farmacologia",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2028 00:00:00",
-     "periodo_fine": "30/09/2029 23:59:59",
-     "cfu": 3,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unilink-lm-41-medicina-e-chirurgia-replica-pescara-med016",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "MEDEC_R016"
-     ]
-    },
-    {
      "codice": "MED015",
      "nome": "Malattie Infettive e Microbiologia Clinica",
      "anno": 3,
@@ -34431,6 +34410,30 @@
      "stato_esami": "da_aggiungere",
      "codici_alternativi": [
       "MEDEC_R038"
+     ]
+    },
+    {
+     "codice": "MED016",
+     "nome": "Farmacologia",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": "01/10/2028 00:00:00",
+     "periodo_fine": "30/09/2029 23:59:59",
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unilink-lm-41-medicina-e-chirurgia-replica-pescara-med016",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "MEDEC_R016"
      ]
     },
     {
@@ -34499,7 +34502,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -35048,30 +35051,6 @@
      ]
     },
     {
-     "codice": "MED016",
-     "nome": "Farmacologia",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2028 00:00:00",
-     "periodo_fine": "30/09/2029 23:59:59",
-     "cfu": 3,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unilink-lm-41-medicina-e-chirurgia-replica-pietra-ligure-med016",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "MEDEC_R016"
-     ]
-    },
-    {
      "codice": "MED015",
      "nome": "Malattie Infettive e Microbiologia Clinica",
      "anno": 3,
@@ -35117,6 +35096,30 @@
      "stato_esami": "da_aggiungere",
      "codici_alternativi": [
       "MEDEC_R038"
+     ]
+    },
+    {
+     "codice": "MED016",
+     "nome": "Farmacologia",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": "01/10/2028 00:00:00",
+     "periodo_fine": "30/09/2029 23:59:59",
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7934/2026/9999?coorte=2024",
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unilink-lm-41-medicina-e-chirurgia-replica-pietra-ligure-med016",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "MEDEC_R016"
      ]
     },
     {
@@ -35185,7 +35188,7 @@
    "url": null,
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -35204,7 +35207,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ODONTO034",
@@ -36358,7 +36361,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ODONTO034",
@@ -37287,7 +37290,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ODONTO034",
@@ -38216,7 +38219,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ODONTO034",
@@ -39145,7 +39148,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SCF002",
@@ -41240,7 +41243,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SCF002",
@@ -41264,30 +41267,6 @@
      "stato_esami": "da_aggiungere",
      "codici_alternativi": [
       "SCFORM002"
-     ]
-    },
-    {
-     "codice": "SCF007",
-     "nome": "Laboratorio di Lingua Inglese I",
-     "anno": 1,
-     "periodo": "2",
-     "periodo_inizio": "15/03/2027 00:00:00",
-     "periodo_fine": "11/06/2027 00:00:00",
-     "cfu": 2,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": true,
-     "curriculum": null,
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8013/2026/9999?coorte=2026",
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unilink-lm-85-bis-scienze-della-formazione-primaria-replica-napoli-scf007",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "SCFORM007"
      ]
     },
     {
@@ -41402,6 +41381,30 @@
      "stato_esami": "da_aggiungere",
      "codici_alternativi": [
       "SCFORM001"
+     ]
+    },
+    {
+     "codice": "SCF007",
+     "nome": "Laboratorio di Lingua Inglese I",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/03/2027 00:00:00",
+     "periodo_fine": "11/06/2027 00:00:00",
+     "cfu": 2,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": null,
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8013/2026/9999?coorte=2026",
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unilink-lm-85-bis-scienze-della-formazione-primaria-replica-napoli-scf007",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "SCFORM007"
      ]
     },
     {
@@ -42251,30 +42254,6 @@
      ]
     },
     {
-     "codice": "SCF017",
-     "nome": "Pedagogia della Disabilità e Laboratorio Didattica Innovativa e Metodologia per gli Allievi con Bes",
-     "anno": 3,
-     "periodo": "2",
-     "periodo_inizio": "15/03/2027 00:00:00",
-     "periodo_fine": "11/06/2027 00:00:00",
-     "cfu": 0,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8022/2026/9999?coorte=2024",
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unilink-lm-85-bis-scienze-della-formazione-primaria-replica-napoli-scf017",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "SCFORM017"
-     ]
-    },
-    {
      "codice": "SCF019",
      "nome": "Storia della Pedagogia",
      "anno": 3,
@@ -42413,6 +42392,30 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "SCF017",
+     "nome": "Pedagogia della Disabilità e Laboratorio Didattica Innovativa e Metodologia per gli Allievi con Bes",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": "15/03/2027 00:00:00",
+     "periodo_fine": "11/06/2027 00:00:00",
+     "cfu": 0,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8022/2026/9999?coorte=2024",
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unilink-lm-85-bis-scienze-della-formazione-primaria-replica-napoli-scf017",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "SCFORM017"
+     ]
+    },
+    {
      "codice": "SCF996",
      "nome": "Tirocinio II",
      "anno": 3,
@@ -42477,7 +42480,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SCF002",
@@ -42501,30 +42504,6 @@
      "stato_esami": "da_aggiungere",
      "codici_alternativi": [
       "SCFORM002"
-     ]
-    },
-    {
-     "codice": "SCF007",
-     "nome": "Laboratorio di Lingua Inglese I",
-     "anno": 1,
-     "periodo": "2",
-     "periodo_inizio": "15/03/2027 00:00:00",
-     "periodo_fine": "11/06/2027 00:00:00",
-     "cfu": 2,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": true,
-     "curriculum": null,
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8013/2026/9999?coorte=2026",
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unilink-lm-85-bis-scienze-della-formazione-primaria-replica-roma-scf007",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "SCFORM007"
      ]
     },
     {
@@ -42639,6 +42618,30 @@
      "stato_esami": "da_aggiungere",
      "codici_alternativi": [
       "SCFORM001"
+     ]
+    },
+    {
+     "codice": "SCF007",
+     "nome": "Laboratorio di Lingua Inglese I",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/03/2027 00:00:00",
+     "periodo_fine": "11/06/2027 00:00:00",
+     "cfu": 2,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": null,
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8013/2026/9999?coorte=2026",
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unilink-lm-85-bis-scienze-della-formazione-primaria-replica-roma-scf007",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "SCFORM007"
      ]
     },
     {
@@ -43488,30 +43491,6 @@
      ]
     },
     {
-     "codice": "SCF017",
-     "nome": "Pedagogia della Disabilità e Laboratorio Didattica Innovativa e Metodologia per gli Allievi con Bes",
-     "anno": 3,
-     "periodo": "2",
-     "periodo_inizio": "15/03/2027 00:00:00",
-     "periodo_fine": "11/06/2027 00:00:00",
-     "cfu": 0,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8022/2026/9999?coorte=2024",
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "unilink-lm-85-bis-scienze-della-formazione-primaria-replica-roma-scf017",
-     "docenti": [],
-     "libri": [],
-     "stato_libri": "da_aggiungere",
-     "esami": [],
-     "stato_esami": "da_aggiungere",
-     "codici_alternativi": [
-      "SCFORM017"
-     ]
-    },
-    {
      "codice": "SCF019",
      "nome": "Storia della Pedagogia",
      "anno": 3,
@@ -43648,6 +43627,30 @@
      "stato_libri": "da_aggiungere",
      "esami": [],
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "SCF017",
+     "nome": "Pedagogia della Disabilità e Laboratorio Didattica Innovativa e Metodologia per gli Allievi con Bes",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": "15/03/2027 00:00:00",
+     "periodo_fine": "11/06/2027 00:00:00",
+     "cfu": 0,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8022/2026/9999?coorte=2024",
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "unilink-lm-85-bis-scienze-della-formazione-primaria-replica-roma-scf017",
+     "docenti": [],
+     "libri": [],
+     "stato_libri": "da_aggiungere",
+     "esami": [],
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "SCFORM017"
+     ]
     },
     {
      "codice": "SCF996",

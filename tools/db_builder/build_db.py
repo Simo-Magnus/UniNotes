@@ -374,7 +374,8 @@ def main() -> None:
             ins = []
             for i in cc.get("insegnamenti", []):
                 i = dict(i)
-                i.setdefault("id", f"{target['id']}-{slug(i.get('codice') or i['nome'], 40)}")
+                if "id" not in i:  # (i contributi dei periodi hanno già l'id e non il nome)
+                    i["id"] = f"{target['id']}-{slug(i.get('codice') or i['nome'], 40)}"
                 ins.append(i)
             target["insegnamenti"] = merge_insegnamenti(target.get("insegnamenti") or [], ins)
         app = appelli.get(uid, {})

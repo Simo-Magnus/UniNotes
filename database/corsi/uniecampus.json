@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "uniecampus",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-14",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "DDMO003",
@@ -1112,7 +1112,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -3509,7 +3509,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "ICAM002",
@@ -4478,7 +4478,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IIND206",
@@ -5491,7 +5491,7 @@
      "cfu": 6,
      "ssd": null,
      "obbligatorio": false,
-     "curriculum": "CHIMICO, ENERGETICO, GESTIONALE, VEICOLI IBRIDI ED ELETTRICI",
+     "curriculum": "CHIMICO, ENERGETICO, GESTIONALE, VEICOLI IBRIDI ED ELETTRICI, ENERGY ENGINEERING",
      "docenti": [
       "Brunzini Agnese"
      ],
@@ -6385,7 +6385,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "IAUT206",
@@ -8052,7 +8052,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "AMSL009",
@@ -9680,7 +9680,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "CEML001",
@@ -13440,7 +13440,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SBIO007",
@@ -14458,7 +14458,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "TMBC202",
@@ -16823,7 +16823,7 @@
      "cfu": 2,
      "ssd": null,
      "obbligatorio": false,
-     "curriculum": "MANAGEMENT DELL'OSPITALITA' E DEL TERRITORIO, MANAGEMENT E TURISMO CULTURALE",
+     "curriculum": "MANAGEMENT DELL'OSPITALITA' E DEL TERRITORIO, MANAGEMENT E TURISMO CULTURALE, GLOBAL TOURISM AND CULTURAL HERITAGE MANAGEMENT",
      "docenti": [
       "Scanu Lara"
      ],
@@ -17204,7 +17204,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "EDUF002",
@@ -18290,7 +18290,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SCOM010",
@@ -19719,7 +19719,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SCMS001",
@@ -20591,7 +20591,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SPSI001",
@@ -21065,27 +21065,6 @@
      "fonte": "https://uniecampus.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-10",
      "id": "uniecampus-l-24-scienze-e-tecniche-psicologiche-spsi999",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "SPSI034",
-     "nome": "Tpv_iii Anno",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 5,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniecampus.coursecatalogue.cineca.it/insegnamenti/2028/11660/2026/10000?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://uniecampus.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "id": "uniecampus-l-24-scienze-e-tecniche-psicologiche-spsi034",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -21745,6 +21724,28 @@
      "id": "uniecampus-l-24-scienze-e-tecniche-psicologiche-spsi047",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "SPSI034",
+     "nome": "Tpv_iii Anno",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 5,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniecampus.coursecatalogue.cineca.it/insegnamenti/2028/11660/2026/10000?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniecampus.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "id": "uniecampus-l-24-scienze-e-tecniche-psicologiche-spsi034",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://uniecampus.coursecatalogue.cineca.it/insegnamenti/2027/11660/2025/9999?coorte=2025"
     }
    ],
    "curricula": [
@@ -21779,7 +21780,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SPSO002",
@@ -22933,7 +22934,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": [
     {
      "codice": "SGIU011",
@@ -24619,7 +24620,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -25496,7 +25497,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -26430,7 +26431,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -27301,7 +27302,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -29693,7 +29694,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -32303,7 +32304,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -33722,7 +33723,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -34487,7 +34488,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -35610,7 +35611,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -36413,7 +36414,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
@@ -37424,7 +37425,7 @@
    "url": "http://www.uniecampus.it",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-14",
    "insegnamenti": []
   },
   {
