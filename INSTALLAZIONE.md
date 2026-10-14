@@ -6,19 +6,21 @@ che propone il file giusto per il dispositivo in uso.
 
 - **Ultima build** (aggiornata a ogni modifica):
   <https://github.com/Simo-Magnus/UniNotes/releases/tag/ultima-build> → sezione
-  *Assets*: `UniNotes-windows.zip`, `UniNotes-macos.zip`, `UniNotes-android.apk`,
-  `UniNotes-ios-non-firmata.ipa`.
+  *Assets*: `UniNotes_setup.exe` (Windows), `UniNotes.dmg` (macOS),
+  `UniNotes-android.apk`, `UniNotes-ios-non-firmata.ipa`; in più `UniNotes-windows.zip`
+  e `UniNotes-macos.zip` per chi preferisce non installare.
 - **Versioni numerate**, quando ci sono: <https://github.com/Simo-Magnus/UniNotes/releases>
   → versione → *Assets*.
 
 Quando l'app sarà negli store basterà
-cercare «UniNotes» in Google Play, App Store e Microsoft Store.
+cercare «UniNotes» in Google Play e nell'App Store. Le versioni per Windows e macOS
+restano sul sito: non vanno sul Microsoft Store né sul Mac App Store.
 
 | Piattaforma | File da scaricare | Requisiti |
 |---|---|---|
 | Android | `UniNotes-android.apk` (quasi tutti i telefoni, 64 bit); `UniNotes-android-32bit.apk` per i telefoni vecchi a 32 bit; `UniNotes-android-x86_64.apk` per Chromebook ed emulatori | Android 7.0 o successivo |
-| Windows | `UniNotes-windows.zip` | Windows 10/11 a 64 bit |
-| macOS | `UniNotes-macos.zip` | macOS 12 o successivo (Intel o Apple Silicon) |
+| Windows | `UniNotes_setup.exe` (oppure `UniNotes-windows.zip`) | Windows 10/11 a 64 bit |
+| macOS | `UniNotes.dmg` (oppure `UniNotes-macos.zip`) | macOS 12 o successivo (Intel o Apple Silicon) |
 | iPhone / iPad | `UniNotes-ios-non-firmata.ipa` | iOS 15.6 o successivo; va firmato (vedi sotto) |
 
 ## Android
@@ -39,27 +41,39 @@ solo la versione giusta.
 
 ## Windows
 
-1. Scarica `UniNotes-windows.zip` ed **estrai tutta la cartella** (tasto destro →
-   *Estrai tutto*), per esempio in `Documenti\UniNotes`.
-2. Avvia `uninotes.exe`. Se Windows mostra «Windows ha protetto il PC»
-   (SmartScreen, l'app non è ancora firmata): *Ulteriori informazioni → Esegui comunque*.
-3. Se manca una DLL (`MSVCP140.dll`, `VCRUNTIME140.dll`), installa il
+1. Scarica `UniNotes_setup.exe` e aprilo. Se Windows mostra «Windows ha protetto il
+   PC» (SmartScreen, l'app non è ancora firmata): *Ulteriori informazioni → Esegui
+   comunque*.
+2. Segui l'installazione: non servono permessi di amministratore. UniNotes si
+   installa per il tuo utente in `%LOCALAPPDATA%\Programs\UniNotes`, con il
+   collegamento nel menu Start e, se lo spunti, sul desktop.
+3. **Aggiornamenti**: scarica il nuovo `UniNotes_setup.exe` e installalo sopra la
+   versione precedente; i dati restano.
+4. Se manca una DLL (`MSVCP140.dll`, `VCRUNTIME140.dll`), installa il
    «Microsoft Visual C++ Redistributable x64» dal sito Microsoft.
-4. Facoltativo: tasto destro su `uninotes.exe` → *Mostra altre opzioni → Aggiungi
-   a Start* (o crea un collegamento sul desktop).
+
+**Senza installazione** (alternativa): scarica `UniNotes-windows.zip`, **estrai tutta
+la cartella** (tasto destro → *Estrai tutto*) e avvia `uninotes.exe`. In questo caso
+UniNotes non compare in *App installate*: per toglierla usa *Disinstalla UniNotes*
+nell'app e poi elimina la cartella.
 
 ## macOS
 
-1. Scarica `UniNotes-macos.zip`, aprilo (si estrae da solo) e trascina
-   **UniNotes.app** nella cartella *Applicazioni*.
-2. Primo avvio: l'app non è ancora firmata da Apple, quindi macOS la blocca. Apri
-   *Impostazioni di Sistema → Privacy e sicurezza*, in fondo «UniNotes è stata
+1. Scarica `UniNotes.dmg` e aprilo: nella finestra che compare trascina **UniNotes**
+   sulla cartella *Applicazioni*. Poi puoi espellere l'immagine disco.
+2. Primo avvio: finché l'app non è firmata e notarizzata da Apple, macOS la blocca.
+   Apri *Impostazioni di Sistema → Privacy e sicurezza*, in fondo «UniNotes è stata
    bloccata» → *Apri comunque* (su macOS più vecchi: tasto destro sull'app → *Apri* →
    *Apri*). In alternativa, nel Terminale:
    `xattr -dr com.apple.quarantine "/Applications/UniNotes.app"`.
-3. Al primo uso del registratore macOS chiede il permesso per il microfono: consentilo.
-4. Whisper su Mac: `brew install whisper-cpp` (Homebrew), poi scegli il modello in
+3. **Aggiornamenti**: apri il nuovo `UniNotes.dmg` e trascina UniNotes in
+   *Applicazioni* sostituendo la versione precedente; i dati restano.
+4. Al primo uso del registratore macOS chiede il permesso per il microfono: consentilo.
+5. Whisper su Mac: `brew install whisper-cpp` (Homebrew), poi scegli il modello in
    *Collegamenti*.
+
+In alternativa al DMG c'è `UniNotes-macos.zip`: si estrae da solo, poi si sposta
+**UniNotes.app** in *Applicazioni*.
 
 ## iPhone e iPad
 
@@ -79,6 +93,63 @@ sull'App Store ci sono due strade:
 
 Quando l'app sarà su **TestFlight** basterà installare l'app TestFlight e aprire il
 link d'invito.
+
+## Disinstallare UniNotes
+
+Il modo completo, su tutti i dispositivi, è **dall'app**: *Impostazioni → Privacy e
+informazioni → Disinstalla UniNotes*.
+
+1. Scegli **Elimina tutto** oppure **Scegli cosa eliminare**: un elenco con le
+   dimensioni dove si possono calcolare (profilo e corso scelto con le impostazioni;
+   database con insegnamenti, esami e studio; registrazioni e trascrizioni;
+   appunti; libri scaricati; modelli Whisper; dati dell'ateneo scaricati; cartelle
+   UniNotes su OneDrive e su Google Drive; eventi aggiunti al calendario; account
+   collegati).
+2. Conferma il riepilogo. Nel cloud e nel calendario si elimina solo ciò che l'app ha
+   creato: le sue cartelle (Corsi, Libri, Materiali, Allegati, Backup e la cartella
+   «UniNotes» se resta vuota, nel cestino del servizio per circa 30 giorni) e gli
+   eventi con il riferimento «UniNotes». OneNote l'app lo legge soltanto: lì non
+   crea nulla, quindi non c'è niente da eliminare.
+3. Se hai scelto solo alcune voci, l'app chiede se disinstallarla comunque o tenerla.
+4. Poi la disinstallazione parte dove il sistema lo permette:
+   - **Windows**: l'app avvia il disinstallatore e si chiude; il programma sparisce
+     da *App installate*.
+   - **Android**: si apre la richiesta di disinstallazione del sistema (tocca *OK*);
+     se non si apre, la pagina *Informazioni app*: tocca *Disinstalla*.
+   - **macOS**: l'app prova a spostarsi nel Cestino; se macOS non lo permette apre
+     il Finder su UniNotes: trascinala nel Cestino.
+   - **iPhone e iPad**: non si può fare dall'app. Tieni premuta l'icona di
+     UniNotes → *Rimuovi app* → *Elimina app*.
+
+Se disinstalli **senza passare dall'app**:
+
+- **Windows** (*Impostazioni → App → App installate → UniNotes → Disinstalla*): il
+  disinstallatore apre la stessa schermata *Disinstalla UniNotes*; chiudendola senza
+  scegliere, i dati restano sul PC. Gli appunti in `Documenti\UniNotes` si eliminano
+  solo se li scegli.
+- **Android**: il sistema elimina tutti i dati dell'app (l'app non usa cartelle
+  condivise e non va nel backup di Google, quindi reinstallandola non ritrovi
+  nulla). Restano solo i dati nel cloud e gli eventi nel calendario: per toglierli
+  usa prima *Disinstalla UniNotes*.
+- **iPhone e iPad**: il sistema elimina i dati dell'app ma non le voci nel
+  portachiavi; l'app le svuota da sola al primo avvio dopo una nuova installazione.
+  Anche qui cloud e calendario restano.
+- **macOS**: trascinare l'app nel Cestino **non** elimina i suoi dati, che restano in
+  `~/Library/Containers/io.github.simomagnus.universitynotes` (con le preferenze e
+  le cache) e nel portachiavi. Per eliminare tutto usa *Disinstalla UniNotes*
+  dall'app. Se l'hai già trascinata nel Cestino: reinstallala e scegli *Elimina*
+  quando chiede «Ho trovato dati di una installazione precedente», oppure elimina a
+  mano quella cartella dal Finder (*Vai → Vai alla cartella…* →
+  `~/Library/Containers`) e, in *Accesso Portachiavi*, le voci di UniNotes.
+
+Reinstallando, l'app non rilegge da sola i dati di un'installazione precedente
+rimasti sul dispositivo: chiede «Ho trovato dati di una installazione precedente: li
+usi o li elimini?» (sul PC, per gli appunti rimasti in Documenti: «li usi o li
+ignori?»; ignorandoli la cartella resta con il nome «Corsi (installazione
+precedente)»). Un aggiornamento a una versione più nuova non chiede nulla.
+
+*Impostazioni → Privacy e informazioni → Elimina tutti i dati* fa la stessa pulizia
+ma lascia l'app installata.
 
 ## Dopo l'installazione
 

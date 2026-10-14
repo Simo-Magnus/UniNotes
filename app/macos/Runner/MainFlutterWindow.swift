@@ -9,6 +9,8 @@ class MainFlutterWindow: NSWindow {
   static let widgetDataKey = "uninotes_widget_data"
 
   private var widgetChannel: FlutterMethodChannel?
+  /// «Disinstalla UniNotes» (lib/core/services/app_uninstall.dart).
+  private var uninstallChannel: FlutterMethodChannel?
   /// Trascrizione istantanea delle lezioni (LiveSpeech.swift).
   private var liveSpeech: LiveSpeech?
 
@@ -45,6 +47,39 @@ class MainFlutterWindow: NSWindow {
       }
     }
     widgetChannel = channel
+
+    // Disinstallazione dall'app e identità dell'installazione (per
+    // riconoscere una reinstallazione con i dati rimasti nel contenitore).
+    let uninstall = FlutterMethodChannel(
+      name: "io.github.simomagnus.universitynotes/disinstalla",
+      binaryMessenger: flutterViewController.engine.binaryMessenger
+    )
+    uninstall.setMethodCallHandler { call, result in
+      let bundle = Bundle.main.bundleURL
+      switch call.method {
+      case "installIdentity":
+        // data di creazione e inode di UniNotes.app: cambiano reinstallando
+        let attrs = try? FileManager.default.attributesOfItem(atPath: bundle.path)
+        let created = (attrs?[.creationDate] as? Date)?.timeIntervalSince1970 ?? 0
+        let inode = (attrs?[.systemFileNumber] as? NSNumber)?.int64Value ?? 0
+        result("mac:\(Int64(created * 1000)):\(inode)")
+      case "trashApp":
+        // nella sandbox di solito non è permesso: allora l'app mostra il
+        // pacchetto nel Finder e spiega come trascinarlo nel Cestino
+        do {
+          try FileManager.default.trashItem(at: bundle, resultingItemURL: nil)
+          result(true)
+        } catch {
+          result(false)
+        }
+      case "revealApp":
+        NSWorkspace.shared.activateFileViewerSelecting([bundle])
+        result(nil)
+      default:
+        result(FlutterMethodNotImplemented)
+      }
+    }
+    uninstallChannel = uninstall
     liveSpeech = LiveSpeech(messenger: flutterViewController.engine.binaryMessenger)
 
     super.awakeFromNib()

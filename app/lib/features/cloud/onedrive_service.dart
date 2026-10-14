@@ -125,6 +125,39 @@ class OneDriveService extends CloudDriveService {
   OneDriveFolderBrowser folders() => OneDriveFolderBrowser(graph());
 
   @override
+  Future<int> deleteRemoteAppData() async {
+    final g = graph();
+    final base = await folder();
+    Future<String?> folderId(String path) async {
+      final it = await g.getJson(
+        'me/drive/root:/${GraphClient.drivePath(path)}',
+      );
+      final id = it?['id'];
+      return (it?['folder'] != null && id is String) ? id : null;
+    }
+
+    var removed = 0;
+    for (final sub in CloudDriveService.appSubfolders) {
+      final id = await folderId('$base/$sub');
+      if (id == null) continue;
+      await g.request('DELETE', 'me/drive/items/$id');
+      removed++;
+    }
+    final rootId = await folderId(base);
+    if (rootId != null && CloudDriveService.isAppFolder(base)) {
+      final page = await g.getJson('me/drive/items/$rootId/children', {
+        r'$select': 'id',
+        r'$top': '1',
+      });
+      if ((page?['value'] as List? ?? const []).isEmpty) {
+        await g.request('DELETE', 'me/drive/items/$rootId');
+        removed++;
+      }
+    }
+    return removed;
+  }
+
+  @override
   OneDriveSync engine(SyncTarget t, Directory state) => OneDriveSync(
     graph: graph(),
     localRoot: t.local,

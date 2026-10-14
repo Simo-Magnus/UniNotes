@@ -192,6 +192,11 @@ class FakeDrive {
     if (method == 'DELETE' && item != null) {
       final path = _path(item[1]!);
       files.remove(path);
+      // una cartella va nel cestino con tutto il contenuto
+      if (folders.remove(path)) {
+        folders.removeWhere((f) => f.startsWith('$path/'));
+        files.removeWhere((f, _) => f.startsWith('$path/'));
+      }
       trash.add(path);
       _changed(path);
       return GraphResponse(204, Uint8List(0));

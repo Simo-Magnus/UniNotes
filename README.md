@@ -14,13 +14,18 @@ nessun abbonamento, nessuna pubblicità: solo donazioni libere ([SOSTIENI.md](SO
 | [`tools/transcription_test/`](tools/transcription_test) | Test reale della trascrizione (Whisper e Gemini) su audio italiano |
 | [`.github/workflows/`](.github/workflows) | `app.yml` build e test · `transcription.yml` test trascrizione |
 | [`INSTALLAZIONE.md`](INSTALLAZIONE.md) | **Dove scaricare e come installare** l'app su Android, Windows, macOS, iPhone/iPad |
+| [`PUBBLICAZIONE.md`](PUBBLICAZIONE.md) | Come pubblicare l'app: Google Play e App Store per telefono e tablet, sito e GitHub per Windows e macOS |
 | [`PRIVACY.md`](PRIVACY.md) | Informativa sulla privacy (aperta dall'app in *Impostazioni → Privacy e informazioni*) |
 | [`TERMINI.md`](TERMINI.md) | Termini e condizioni d'uso (aperti dall'app nella stessa sezione) |
 | [`docs/`](docs) | Formato del database, formato data pack, OneDrive, Google Drive, specifica Design 3 |
 
 **Scarica l'app**: <https://simo-magnus.github.io/UniNotes/> (riconosce il dispositivo) oppure
 [Ultima build](https://github.com/Simo-Magnus/UniNotes/releases/tag/ultima-build) (Windows, macOS, Android, iOS) –
-istruzioni per ogni piattaforma in [INSTALLAZIONE.md](INSTALLAZIONE.md).
+istruzioni per ogni piattaforma in [INSTALLAZIONE.md](INSTALLAZIONE.md). Su Windows c'è
+l'installatore `UniNotes_setup.exe` (senza amministratore, disinstallazione da «App
+installate»), su macOS `UniNotes.dmg` (si trascina UniNotes in Applicazioni); gli zip
+restano come alternativa. Per togliere l'app con tutti i suoi dati, anche nel cloud e
+nel calendario: *Impostazioni → Privacy e informazioni → Disinstalla UniNotes*.
 
 ## Cosa fa l'app
 
@@ -90,6 +95,10 @@ flutter analyze
 flutter test                 # ~300 test
 flutter run -d windows       # oppure macos, un telefono Android/iOS collegato
 ```
+
+Installatore Windows (serve [Inno Setup](https://jrsoftware.org/isinfo.php), gratuito; in CI
+lo fa il job `windows`): dopo `flutter build windows --release`, dalla cartella `app`
+`iscc /DAppVersion=2026.9.0 windows\installer\uninotes.iss` → `build\installer\UniNotes_setup.exe`.
 
 ```bash
 # database (serve internet libero: GitHub Actions o il proprio PC)

@@ -631,9 +631,31 @@ class RemindersService extends ChangeNotifier {
     }
   }
 
-  /// «Elimina tutti i dati»: via le notifiche pianificate, gli eventi
-  /// dell'app dal calendario di sistema e i dati dei widget.
-  Future<void> eraseAll() async {
+  /// Il collegamento al calendario è attivo (eventi dell'app da togliere
+  /// con «Elimina tutti i dati», se lo studente lo vuole).
+  Future<bool> calendarLinked() async {
+    try {
+      return await calendar.enabled();
+    } catch (_) {
+      return false;
+    }
+  }
+
+  /// Toglie dal calendario gli eventi aggiunti dall'app (riconosciuti dal
+  /// loro riferimento) e il calendario «UniNotes» se resta vuoto. Rilancia
+  /// gli errori (permesso mancante, accesso scaduto, rete).
+  Future<void> removeCalendarData() async {
+    if (await calendar.enabled()) await calendar.removeAll(dropCalendar: true);
+  }
+
+  /// «Elimina tutti i dati»: via le notifiche pianificate e i dati dei
+  /// widget; con [disconnect] anche l'accesso al calendario Outlook, con
+  /// [calendarEvents] gli eventi dell'app dal calendario (errori ignorati:
+  /// per vederli usare prima [removeCalendarData]).
+  Future<void> eraseAll({
+    bool calendarEvents = true,
+    bool disconnect = true,
+  }) async {
     _debounce?.cancel();
     final now = DateTime.now();
     for (final e in (await _dateMap(NotificationKeys.scheduled)).entries) {
@@ -642,12 +664,16 @@ class RemindersService extends ChangeNotifier {
         await platform.cancel(e.key);
       } catch (_) {}
     }
-    try {
-      if (await calendar.enabled()) await calendar.removeAll();
-    } catch (_) {}
-    try {
-      await outlook?.disconnect();
-    } catch (_) {}
+    if (calendarEvents) {
+      try {
+        if (await calendar.enabled()) await calendar.removeAll();
+      } catch (_) {}
+    }
+    if (disconnect) {
+      try {
+        await outlook?.disconnect();
+      } catch (_) {}
+    }
     await widgets.update(widgetPayload(const [], now));
   }
 

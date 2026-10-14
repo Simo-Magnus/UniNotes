@@ -126,7 +126,7 @@ class OutlookCalendarAuth {
 /// prova da una proprietà estesa invisibile (chiave stabile) e dall'id
 /// salvato, promemoria con `reminderMinutesBeforeStart` (Outlook ne
 /// permette uno solo per evento: si usa il più vicino alla prova).
-class OutlookCalendarBackend implements CalendarBackend {
+class OutlookCalendarBackend implements CalendarBackend, RemovableCalendar {
   OutlookCalendarBackend(this.auth, {this.transport});
 
   final OutlookCalendarAuth auth;
@@ -266,6 +266,25 @@ class OutlookCalendarBackend implements CalendarBackend {
     final id = r.status == 404 ? null : r.json['id'];
     if (id is! String) throw Exception('Evento Outlook non scritto.');
     return id;
+  });
+
+  @override
+  Future<bool> deleteCalendarIfEmpty(String calendarId) => _call(() async {
+    final c = await _graph.getJson('me/calendars/$calendarId', {
+      r'$select': 'id,name,isDefaultCalendar',
+    });
+    if (c == null ||
+        c['name'] != kCalendarName ||
+        c['isDefaultCalendar'] == true) {
+      return false;
+    }
+    final page = await _graph.getJson('me/calendars/$calendarId/events', {
+      r'$select': 'id',
+      r'$top': '1',
+    });
+    if ((page?['value'] as List? ?? const []).isNotEmpty) return false;
+    await _graph.request('DELETE', 'me/calendars/$calendarId');
+    return true;
   });
 
   @override

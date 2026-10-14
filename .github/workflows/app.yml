@@ -112,6 +112,9 @@ jobs:
     name: Windows
     needs: test
     runs-on: windows-latest
+    env:
+      # firma facoltativa: i passi partono solo se il secret esiste
+      HAS_WINDOWS_CERT: ${{ secrets.WINDOWS_CERT_PFX_BASE64 != '' }}
     defaults:
       run:
         working-directory: app
@@ -130,19 +133,60 @@ jobs:
         shell: bash
         run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
       - run: flutter build windows --release --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link
+      # Firma facoltativa del programma (certificato di firma del codice .pfx
+      # in base64 nei secret): senza, il passo non parte e SmartScreen avvisa
+      # al primo avvio. Vedi PUBBLICAZIONE.md.
+      - name: Firma uninotes.exe (solo con il certificato nei secret)
+        if: env.HAS_WINDOWS_CERT == 'true'
+        shell: pwsh
+        env:
+          WINDOWS_CERT_PFX_BASE64: ${{ secrets.WINDOWS_CERT_PFX_BASE64 }}
+          WINDOWS_CERT_PASSWORD: ${{ secrets.WINDOWS_CERT_PASSWORD }}
+        run: |
+          [IO.File]::WriteAllBytes("$env:RUNNER_TEMP\cert.pfx", [Convert]::FromBase64String($env:WINDOWS_CERT_PFX_BASE64))
+          $signtool = Get-ChildItem "${env:ProgramFiles(x86)}\Windows Kits\10\bin\*\x64\signtool.exe" | Select-Object -Last 1
+          & $signtool.FullName sign /f "$env:RUNNER_TEMP\cert.pfx" /p $env:WINDOWS_CERT_PASSWORD /fd SHA256 /tr http://timestamp.digicert.com /td SHA256 build/windows/x64/runner/Release/uninotes.exe
       - name: Comprimi
         shell: pwsh
         run: Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath uninotes-windows.zip
+      # Installatore UniNotes_setup.exe con Inno Setup (gratuito): versione
+      # letta da pubspec.yaml, script in app/windows/installer/uninotes.iss.
+      - name: Installatore (Inno Setup)
+        shell: pwsh
+        run: |
+          $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+          if (-not (Test-Path $iscc)) {
+            choco install innosetup -y --no-progress
+          }
+          $line = Select-String -Path pubspec.yaml -Pattern '^version:\s*(\S+)' | Select-Object -First 1
+          $version = $line.Matches[0].Groups[1].Value.Split('+')[0]
+          & $iscc "/DAppVersion=$version" windows\installer\uninotes.iss
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Copy-Item build\installer\UniNotes_setup.exe UniNotes_setup.exe
+      - name: Firma l'installatore (solo con il certificato nei secret)
+        if: env.HAS_WINDOWS_CERT == 'true'
+        shell: pwsh
+        env:
+          WINDOWS_CERT_PASSWORD: ${{ secrets.WINDOWS_CERT_PASSWORD }}
+        run: |
+          $signtool = Get-ChildItem "${env:ProgramFiles(x86)}\Windows Kits\10\bin\*\x64\signtool.exe" | Select-Object -Last 1
+          & $signtool.FullName sign /f "$env:RUNNER_TEMP\cert.pfx" /p $env:WINDOWS_CERT_PASSWORD /fd SHA256 /tr http://timestamp.digicert.com /td SHA256 UniNotes_setup.exe
       - uses: actions/upload-artifact@v7
         with:
           name: uninotes-windows
           retention-days: 3
-          path: app/uninotes-windows.zip
+          path: |
+            app/uninotes-windows.zip
+            app/UniNotes_setup.exe
 
   macos:
     name: macOS
     needs: test
     runs-on: macos-latest
+    env:
+      # firma e notarizzazione: i passi partono solo se i secret esistono
+      HAS_MACOS_CERT: ${{ secrets.MACOS_CERTIFICATE_P12_BASE64 != '' }}
+      HAS_APPLE_NOTARY: ${{ secrets.APPLE_NOTARY_PASSWORD != '' }}
     defaults:
       run:
         working-directory: app
@@ -161,15 +205,59 @@ jobs:
         shell: bash
         run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
       - run: flutter build macos --release --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link
+      # Firma con il certificato «Developer ID Application» e notarizzazione
+      # di Apple: richiedono l'account Apple Developer. Senza i secret questi
+      # passi non partono e la build resta non firmata (vedi PUBBLICAZIONE.md,
+      # «macOS: firma e notarizzazione»).
+      - name: Firma UniNotes.app (solo con il certificato nei secret)
+        if: env.HAS_MACOS_CERT == 'true'
+        env:
+          MACOS_CERTIFICATE_P12_BASE64: ${{ secrets.MACOS_CERTIFICATE_P12_BASE64 }}
+          MACOS_CERTIFICATE_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PASSWORD }}
+          MACOS_SIGN_IDENTITY: ${{ secrets.MACOS_SIGN_IDENTITY }}
+        run: |
+          KEYCHAIN="$RUNNER_TEMP/firma.keychain-db"
+          echo "$MACOS_CERTIFICATE_P12_BASE64" | base64 --decode > "$RUNNER_TEMP/cert.p12"
+          security create-keychain -p temporanea "$KEYCHAIN"
+          security set-keychain-settings -lut 3600 "$KEYCHAIN"
+          security unlock-keychain -p temporanea "$KEYCHAIN"
+          security import "$RUNNER_TEMP/cert.p12" -P "$MACOS_CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN"
+          security set-key-partition-list -S apple-tool:,apple: -k temporanea "$KEYCHAIN" > /dev/null
+          security list-keychains -d user -s "$KEYCHAIN" $(security list-keychains -d user | tr -d '"')
+          codesign --force --deep --options runtime --timestamp \
+            --entitlements macos/Runner/Release.entitlements \
+            --sign "$MACOS_SIGN_IDENTITY" build/macos/Build/Products/Release/UniNotes.app
       - name: Comprimi
         run: |
           cd build/macos/Build/Products/Release
           ditto -c -k --keepParent "UniNotes.app" "$GITHUB_WORKSPACE/app/uninotes-macos.zip"
+      # UniNotes.dmg: si apre e si trascina UniNotes in Applicazioni.
+      - name: Immagine disco UniNotes.dmg
+        run: |
+          STAGE="$RUNNER_TEMP/dmg"
+          rm -rf "$STAGE" && mkdir -p "$STAGE"
+          ditto build/macos/Build/Products/Release/UniNotes.app "$STAGE/UniNotes.app"
+          ln -s /Applications "$STAGE/Applicazioni"
+          hdiutil create -volname "UniNotes" -srcfolder "$STAGE" -ov -format UDZO UniNotes.dmg
+      - name: Firma e notarizzazione di UniNotes.dmg (solo con i secret)
+        if: env.HAS_MACOS_CERT == 'true' && env.HAS_APPLE_NOTARY == 'true'
+        env:
+          MACOS_SIGN_IDENTITY: ${{ secrets.MACOS_SIGN_IDENTITY }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_NOTARY_PASSWORD: ${{ secrets.APPLE_NOTARY_PASSWORD }}
+        run: |
+          codesign --force --timestamp --sign "$MACOS_SIGN_IDENTITY" UniNotes.dmg
+          xcrun notarytool submit UniNotes.dmg --apple-id "$APPLE_ID" --team-id "$APPLE_TEAM_ID" \
+            --password "$APPLE_NOTARY_PASSWORD" --wait
+          xcrun stapler staple UniNotes.dmg
       - uses: actions/upload-artifact@v7
         with:
           name: uninotes-macos
           retention-days: 3
-          path: app/uninotes-macos.zip
+          path: |
+            app/uninotes-macos.zip
+            app/UniNotes.dmg
 
   ios:
     name: iOS (non firmata)
@@ -228,7 +316,9 @@ jobs:
           cp dist/uninotes-android/flutter-apk/app-armeabi-v7a-release.apk out/UniNotes-android-32bit.apk
           cp dist/uninotes-android/flutter-apk/app-x86_64-release.apk out/UniNotes-android-x86_64.apk
           cp dist/uninotes-windows/uninotes-windows.zip out/UniNotes-windows.zip
+          cp dist/uninotes-windows/UniNotes_setup.exe out/UniNotes_setup.exe
           cp dist/uninotes-macos/uninotes-macos.zip out/UniNotes-macos.zip
+          cp dist/uninotes-macos/UniNotes.dmg out/UniNotes.dmg
           cp dist/uninotes-ios-unsigned/uninotes-ios-unsigned.ipa out/UniNotes-ios-non-firmata.ipa
       - name: Sostituisci la release «ultima-build»
         run: gh release delete ultima-build --repo "$GITHUB_REPOSITORY" --cleanup-tag --yes || true
@@ -243,11 +333,13 @@ jobs:
             Versione di prova creata automaticamente dall'ultima modifica (commit ${{ github.sha }}).
             Non è firmata: Windows e macOS mostrano un avviso al primo avvio.
 
-            - **Windows**: `UniNotes-windows.zip` → estrai la cartella e apri `uninotes.exe`.
-            - **macOS**: `UniNotes-macos.zip` → estrai, sposta UniNotes in Applicazioni, primo avvio con clic destro → Apri.
+            - **Windows**: `UniNotes_setup.exe` → avvialo e segui l'installazione (senza permessi di amministratore; collegamento nel menu Start, disinstallazione da «App installate»). Alternativa senza installazione: `UniNotes-windows.zip` → estrai la cartella e apri `uninotes.exe`.
+            - **macOS**: `UniNotes.dmg` → aprilo e trascina UniNotes in Applicazioni; primo avvio con clic destro → Apri (l'app non è ancora firmata). Alternativa: `UniNotes-macos.zip`.
             - **Android**: `UniNotes-android.apk` (quasi tutti i telefoni, processore a 64 bit) → apri il file sul telefono e consenti l'installazione.
               Telefoni vecchi a 32 bit: `UniNotes-android-32bit.apk`; Chromebook ed emulatori x86: `UniNotes-android-x86_64.apk`.
             - **iPhone/iPad**: `UniNotes-ios-non-firmata.ipa` → va firmata con il proprio account Apple (es. Sideloadly o AltStore).
+
+            Per togliere l'app con tutti i suoi dati (anche nel cloud e nel calendario): in UniNotes *Impostazioni → Privacy e informazioni → Disinstalla UniNotes*.
 
             Istruzioni complete: [INSTALLAZIONE.md](https://github.com/${{ github.repository }}/blob/${{ github.sha }}/INSTALLAZIONE.md)
           files: out/*
@@ -282,5 +374,7 @@ jobs:
           files: |
             dist/uninotes-android/flutter-apk/app-*-release.apk
             dist/uninotes-windows/uninotes-windows.zip
+            dist/uninotes-windows/UniNotes_setup.exe
             dist/uninotes-macos/uninotes-macos.zip
+            dist/uninotes-macos/UniNotes.dmg
             dist/uninotes-ios-unsigned/uninotes-ios-unsigned.ipa

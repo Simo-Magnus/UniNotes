@@ -194,6 +194,28 @@ abstract class CloudDriveService extends ChangeNotifier {
   /// Motore di sincronizzazione di una parte.
   FolderSync engine(SyncTarget t, Directory state);
 
+  /// Sottocartelle che l'app crea nella sua cartella sul servizio.
+  static const appSubfolders = [
+    'Corsi',
+    'Libri',
+    'Materiali',
+    'Allegati',
+    'Backup',
+  ];
+
+  /// «Elimina tutti i dati» e disinstallazione: toglie dal servizio solo ciò
+  /// che l'app ha creato, cioè le sue sottocartelle ([appSubfolders]) nella
+  /// cartella scelta e, se poi resta vuota, la cartella stessa quando è
+  /// quella dell'app («UniNotes» o il nome precedente). Altri file messi lì
+  /// dall'utente restano. Tutto finisce nel cestino del servizio
+  /// (recuperabile per circa 30 giorni). Restituisce le cartelle eliminate.
+  Future<int> deleteRemoteAppData();
+
+  /// La cartella [base] è quella creata dall'app (non una scelta a mano):
+  /// solo questa si elimina quando resta vuota.
+  static bool isAppFolder(String base) =>
+      base == defaultFolder || base == legacyFolder;
+
   Future<void> signOut() async {
     stopAutoSync();
     await secrets.delete(refreshKey);

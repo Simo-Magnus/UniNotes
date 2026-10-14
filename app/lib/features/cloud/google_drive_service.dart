@@ -90,6 +90,32 @@ class GoogleDriveService extends CloudDriveService {
   GoogleDriveFolderBrowser folders() => GoogleDriveFolderBrowser(drive());
 
   @override
+  Future<int> deleteRemoteAppData() async {
+    final d = drive();
+    final base = await folder();
+    final rootId = await d.folderPath(base, create: false);
+    if (rootId == null) return 0;
+    Future<void> trash(String id) => d.sendJson(
+      'PATCH',
+      d.url('files/$id', {'fields': 'id'}),
+      {'trashed': true},
+    );
+    var removed = 0;
+    for (final sub in CloudDriveService.appSubfolders) {
+      final id = await d.findFolder(rootId, sub);
+      if (id == null) continue;
+      await trash(id);
+      removed++;
+    }
+    if (CloudDriveService.isAppFolder(base) &&
+        (await d.children(rootId)).isEmpty) {
+      await trash(rootId);
+      removed++;
+    }
+    return removed;
+  }
+
+  @override
   GoogleDriveSync engine(SyncTarget t, Directory state) => GoogleDriveSync(
     drive: drive(),
     localRoot: t.local,

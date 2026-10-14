@@ -79,6 +79,14 @@ abstract class CalendarBackend {
   Future<void> delete(String calendarId, String eventId);
 }
 
+/// Backend che sa eliminare il calendario «UniNotes» creato dall'app.
+abstract interface class RemovableCalendar {
+  /// Elimina il calendario [calendarId] solo se si chiama «UniNotes», non è
+  /// il calendario predefinito ed è vuoto (nessun evento, neanche
+  /// dell'utente). true se eliminato.
+  Future<bool> deleteCalendarIfEmpty(String calendarId);
+}
+
 /// Stato del collegamento mostrato in Impostazioni → Calendario.
 class CalendarStatus {
   const CalendarStatus({
@@ -274,16 +282,35 @@ class SystemCalendarSync {
     return status();
   }
 
-  /// Toglie dal calendario tutti gli eventi dell'app (interruttore spento).
-  Future<void> removeAll() async {
+  /// Toglie dal calendario tutti gli eventi dell'app (interruttore spento):
+  /// solo quelli con il riferimento dell'app, mai gli altri. Con
+  /// [dropCalendar] («Elimina tutti i dati») elimina poi anche il calendario
+  /// «UniNotes» se è rimasto vuoto; senza permesso o accesso rilancia
+  /// [CalendarAccessException] (gli eventi restano).
+  Future<void> removeAll({bool dropCalendar = false}) async {
     final b = backend;
     final calId = await _settings.get(CalendarKeys.calendarId);
-    if (b != null && calId != null && await b.hasAccess()) {
-      final existing = await b.existing(calId);
-      for (final ids in existing.values) {
-        for (final id in ids) {
-          await b.delete(calId, id);
+    if (b != null && calId != null) {
+      if (await b.hasAccess()) {
+        final existing = await b.existing(calId);
+        for (final ids in existing.values) {
+          for (final id in ids) {
+            await b.delete(calId, id);
+          }
         }
+        final removable = b is RemovableCalendar
+            ? b as RemovableCalendar
+            : null;
+        if (dropCalendar &&
+            removable != null &&
+            await removable.deleteCalendarIfEmpty(calId)) {
+          await _settings.set(CalendarKeys.calendarId, null);
+        }
+      } else if (dropCalendar) {
+        throw CalendarAccessException(
+          'Permesso del calendario non disponibile: gli eventi aggiunti '
+          "dall'app restano nel ${b.label}.",
+        );
       }
     }
     await _settings.set(CalendarKeys.events, null);

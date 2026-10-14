@@ -131,6 +131,18 @@ class PrivacySection extends StatelessWidget {
                 style: TextStyle(color: theme.colorScheme.error),
               ),
             ),
+            TextButton.icon(
+              key: const Key('uninstall-app'),
+              onPressed: () => uninstallApp(context),
+              icon: Icon(
+                Icons.delete_sweep_outlined,
+                color: theme.colorScheme.error,
+              ),
+              label: Text(
+                'Disinstalla UniNotes',
+                style: TextStyle(color: theme.colorScheme.error),
+              ),
+            ),
             if (kShowDonationLink)
               TextButton.icon(
                 onPressed: () => ExternalLauncher.openUrl(kDonationUrl),

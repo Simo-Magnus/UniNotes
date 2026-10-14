@@ -11,7 +11,7 @@ import 'system_calendar.dart';
 /// dell'app); se il sistema non permette di crearlo (iOS senza un account
 /// locale) si usa il calendario predefinito, e gli eventi dell'app si
 /// riconoscono dalla riga «Rif. UniNotes: …» (con la chiave) nella descrizione.
-class DeviceCalendarBackend implements CalendarBackend {
+class DeviceCalendarBackend implements CalendarBackend, RemovableCalendar {
   DeviceCalendarBackend([this._custom]);
   final dc.DeviceCalendarPlugin? _custom;
 
@@ -139,6 +139,35 @@ class DeviceCalendarBackend implements CalendarBackend {
     final r = await _plugin.createOrUpdateEvent(event);
     if (r == null) throw Exception('Evento non scritto.');
     return _data(r, 'Evento non scritto');
+  }
+
+  @override
+  Future<bool> deleteCalendarIfEmpty(String calendarId) async {
+    final cals = _data(
+      await _plugin.retrieveCalendars(),
+      'Calendari non letti',
+    );
+    final c = cals.where((c) => c.id == calendarId).firstOrNull;
+    if (c == null ||
+        c.name != kCalendarName ||
+        c.isDefault == true ||
+        c.isReadOnly == true) {
+      return false;
+    }
+    final now = DateTime.now();
+    final events = _data(
+      await _plugin.retrieveEvents(
+        calendarId,
+        dc.RetrieveEventsParams(
+          startDate: now.subtract(const Duration(days: 3650)),
+          endDate: now.add(const Duration(days: 3650)),
+        ),
+      ),
+      'Eventi non letti',
+    );
+    if (events.isNotEmpty) return false;
+    final r = await _plugin.deleteCalendar(calendarId);
+    return r.isSuccess && r.data == true;
   }
 
   @override

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io' show Platform;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ import 'core/catalog/path_setup.dart';
 import 'core/database/app_database.dart';
 import 'core/router/app_shell.dart';
 import 'core/services/app_services.dart';
+import 'core/services/install_check.dart';
 import 'core/services/temp_files.dart';
 import 'core/services/desktop_window.dart';
 import 'core/services/nudges.dart';
@@ -21,12 +23,24 @@ import 'core/theme/display_prefs.dart';
 import 'features/academic/new_year_check.dart';
 import 'features/notes/recorder/recording_overlay.dart';
 import 'features/onboarding/onboarding_flow.dart';
+import 'features/onboarding/install_questions.dart';
+import 'features/settings/app_info.dart';
+import 'features/settings/logic/data_eraser.dart';
+import 'features/settings/uninstall_mode.dart';
 import 'repositories/settings_repository.dart';
 import 'widgets/common.dart';
 import 'widgets/glass.dart';
 
-Future<void> main() async {
+Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Windows: il disinstallatore avvia l'app in modalità minima per la
+  // pulizia dei dati (vedi features/settings/uninstall_mode.dart).
+  if (args.contains(kUninstallArg)) {
+    Intl.defaultLocale = 'it_IT';
+    await initializeDateFormatting('it_IT');
+    await runUninstallMode();
+    return;
+  }
   // Attribuzioni BSD/dominio pubblico di koni_rar (file NOTICE, non incluso in
   // automatico dalla pagina delle licenze, che legge solo i file LICENSE).
   LicenseRegistry.addLicense(() async* {
@@ -43,6 +57,21 @@ Future<void> main() async {
   });
   Intl.defaultLocale = 'it_IT';
   await initializeDateFormatting('it_IT');
+  // Primo avvio dopo una (re)installazione: via le credenziali rimaste nel
+  // portachiavi; i dati di un'installazione precedente non si rileggono
+  // senza chiedere (usa / elimina, oppure usa / ignora per gli appunti in
+  // Documenti sul PC).
+  final check = InstallCheck.standard(kAppVersion);
+  await runInstallQuestions(
+    await check.run(),
+    eraseLeftover: () async {
+      final old = await AppDatabase.open();
+      await DataEraser(
+        AppServices(old),
+      ).run(DataEraser.deviceItems(sharedNotes: Platform.isWindows));
+    },
+    recheck: check.run,
+  );
   final db = await AppDatabase.open();
   final services = AppServices(db);
   services.themeMode.value = parseThemeMode(

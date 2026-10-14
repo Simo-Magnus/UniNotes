@@ -1,7 +1,9 @@
 package io.github.simomagnus.universitynotes
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -19,10 +21,16 @@ import io.github.simomagnus.universitynotes.widgets.WidgetSupport
  *
  * Terzo canale: trascrizione istantanea delle lezioni con il riconoscimento
  * vocale del sistema (LiveSpeech.kt).
+ *
+ * Quarto canale: «Disinstalla UniNotes» (lib/core/services/app_uninstall.dart):
+ * - `uninstall`: richiesta di disinstallazione del sistema per questa app
+ *   (ACTION_DELETE, serve REQUEST_DELETE_PACKAGES da Android 9);
+ * - `appDetails`: pagina «Informazioni app», se la richiesta non parte.
  */
 class MainActivity : FlutterActivity() {
     private var channel: MethodChannel? = null
     private var focusChannel: MethodChannel? = null
+    private var uninstallChannel: MethodChannel? = null
     private var liveSpeech: LiveSpeech? = null
     private var pendingRoute: String? = null
 
@@ -80,6 +88,39 @@ class MainActivity : FlutterActivity() {
         }
         // Trascrizione istantanea (vedi LiveSpeech.kt).
         registerLiveSpeech(flutterEngine)
+        // Disinstallazione dall'app.
+        uninstallChannel = MethodChannel(
+            flutterEngine.dartExecutor.binaryMessenger,
+            UNINSTALL_CHANNEL,
+        ).also {
+            it.setMethodCallHandler { call, result ->
+                when (call.method) {
+                    "uninstall" -> result.success(
+                        startSafely(
+                            Intent(Intent.ACTION_DELETE, Uri.parse("package:$packageName")),
+                        ),
+                    )
+                    "appDetails" -> result.success(
+                        startSafely(
+                            Intent(
+                                Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                                Uri.parse("package:$packageName"),
+                            ),
+                        ),
+                    )
+                    else -> result.notImplemented()
+                }
+            }
+        }
+    }
+
+    /** Avvia [intent] in un task nuovo; false se nessuna app lo gestisce. */
+    private fun startSafely(intent: Intent): Boolean = try {
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+        true
+    } catch (e: Exception) {
+        false
     }
 
     private fun registerLiveSpeech(flutterEngine: FlutterEngine) {
@@ -109,8 +150,12 @@ class MainActivity : FlutterActivity() {
         channel = null
         focusChannel?.setMethodCallHandler(null)
         focusChannel = null
+        uninstallChannel?.setMethodCallHandler(null)
+        uninstallChannel = null
         liveSpeech?.dispose()
         liveSpeech = null
         super.cleanUpFlutterEngine(flutterEngine)
     }
 }
+
+private const val UNINSTALL_CHANNEL = "io.github.simomagnus.universitynotes/disinstalla"
