@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unisa",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-14",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "http://corsi.unisa.it/chimica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CB12400001",
@@ -2641,7 +2641,7 @@
    "url": "http://corsi.unisa.it/davimus",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SP12400002",
@@ -4966,7 +4966,7 @@
    "url": "http://corsi.unisa.it/economia-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SE12100001",
@@ -6877,7 +6877,7 @@
    "url": "http://corsi.unisa.it/economia-e-commercio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SE12400001",
@@ -8476,7 +8476,7 @@
    "url": "http://corsi.unisa.it/economia-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SA12700001",
@@ -10759,7 +10759,7 @@
    "url": "https://corsi.unisa.it/farmaceutica-e-nutraceutica-animale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "FR12300008",
@@ -12316,7 +12316,7 @@
    "url": "http://corsi.unisa.it/filosofia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SP12500017",
@@ -14915,7 +14915,7 @@
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
+     "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unisa-l-5-filosofia-0312500303",
@@ -16354,7 +16354,7 @@
    "url": "http://corsi.unisa.it/fisica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "FS12600001",
@@ -18319,7 +18319,7 @@
    "url": "http://corsi.unisa.it/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "1012200004",
@@ -20562,7 +20562,7 @@
    "url": "http://corsi.unisa.it/agraria",
    "stato": "completo",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "FR12200003",
@@ -22699,7 +22699,7 @@
    "url": "https://corsi.unisa.it/giurista-d-impresa-e-delle-nuove-tecnologie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SG12100002",
@@ -24592,7 +24592,7 @@
    "url": "http://corsi.unisa.it/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "1012100004",
@@ -27633,7 +27633,7 @@
    "url": "http://corsi.unisa.it/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "1012700005",
@@ -28178,7 +28178,7 @@
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
+     "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "scritto e orale con unico voto",
      "id": "unisa-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632598-1012700008",
@@ -29325,7 +29325,7 @@
    "url": "http://corsi.unisa.it/informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "NF12100001",
@@ -31990,7 +31990,7 @@
    "url": "http://corsi.unisa.it/ingegneria-chimica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "II12200002",
@@ -32049,6 +32049,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUADAGNO Liberata",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-06",
        "ora": "09:00",
        "luogo": null,
@@ -32058,6 +32070,18 @@
        "docenti": "GUADAGNO LIBERATA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUADAGNO Liberata",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -32155,6 +32179,18 @@
        "docenti": "SELLITTO ANTONIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-24",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SELLITTO Antonio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -32270,6 +32306,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-22",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "COLACE Francesco",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-23",
        "ora": "09:00",
        "luogo": null,
@@ -32279,6 +32327,18 @@
        "docenti": "COLACE FRANCESCO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-30",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "COLACE Francesco",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -32354,6 +32414,18 @@
        "docenti": "BARBIERI GIUSEPPINA GERARDA MONSURRO' SARA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BARBIERI Giuseppina Gerarda",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -32378,7 +32450,20 @@
       "Maritato Luigi"
      ],
      "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/521730/2026/10001?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "IL DOCENTE NON SEGUE UN UNICO TESTO DI RIFERIMENTO. AGLI STUDENTI VIENE CONSIGLIATO L'USO DI UN QUALUNQUE TESTO DI FISICA PER LE UNIVERSITÀ E VENGONO INDICATI, COME ESEMPIO, ALCUNI TRA I TESTI DI MAGGIORE UTILIZZO COME:HALLYDAY-RESNICK, FISICA, VOL.1 E 2, CASA EDIRICE AMBROSIANA; MAZZOLDI-NIGRO-VOCI",
+       "autori": null,
+       "editore": "CASA EDIRICE AMBROSIANA",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/521730/2026/10001?coorte=2026)",
+       "citazione": "IL DOCENTE NON SEGUE UN UNICO TESTO DI RIFERIMENTO. AGLI STUDENTI VIENE CONSIGLIATO L'USO DI UN QUALUNQUE TESTO DI FISICA PER LE UNIVERSITÀ E VENGONO INDICATI, COME ESEMPIO, ALCUNI TRA I TESTI DI MAGGIORE UTILIZZO COME:HALLYDAY-RESNICK, FISICA, VOL.1 E 2, CASA EDIRICE AMBROSIANA; MAZZOLDI-NIGRO-VOCI FISICA, VOL 1 E 2, EDISES, MENCUCCINI-SILVESTRINI, FISICA VOL.1 E 2, CASA EDITRICE AMBROSIANA, ETC."
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -32394,6 +32479,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MARITATO Luigi",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-27",
        "ora": "09:00",
        "luogo": null,
@@ -32403,6 +32500,18 @@
        "docenti": "MARITATO LUIGI",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MARITATO Luigi",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -33084,6 +33193,18 @@
        "docenti": "LAMBERTI GAETANO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LAMBERTI Gaetano",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -33146,6 +33267,18 @@
        "docenti": "LIPAROTI SARA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LIPAROTI SARA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -33213,6 +33346,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-26",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PATARO Gianpiero",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-10",
        "ora": "09:00",
        "luogo": null,
@@ -33222,6 +33367,18 @@
        "docenti": "PATARO GIANPIERO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PATARO Gianpiero",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -33912,7 +34069,7 @@
    "url": "http://corsi.unisa.it/ingegneria-civile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IC12100007",
@@ -34309,6 +34466,18 @@
        "docenti": "DE CASTRO MOTTA JULIA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "de Castro Motta Julia",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -34375,6 +34544,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ROSSI Domenico",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "09:00",
        "luogo": null,
@@ -34384,6 +34565,18 @@
        "docenti": "GUARNACCIA CLAUDIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ROSSI Domenico",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -34456,13 +34649,38 @@
        "citazione": "P. MARCELLINI - C. SBORDONE, “ESERCITAZIONI DI MATEMATICA VOL. 2° PRIMA E SECONDA PARTE“, LIGUORI EDITORE"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "AMENDOLA ADA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "AMENDOLA ADA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale con unico voto",
      "id": "unisa-l-7-ingegneria-civile-ic12100002",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "IC12100003",
@@ -34653,7 +34871,32 @@
       "Fraternali Fernando"
      ],
      "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/522670/2025/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "MECCANICA RAZIONALE, PAOLO BISCARI, MAURIZIO VIANELLO, TOMMASO RUGGERI, GIUSEPPE SACCOMANDI, EDITORE:",
+       "autori": null,
+       "editore": "EDITORE:",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/522670/2025/9999?coorte=2025)",
+       "citazione": "MECCANICA RAZIONALE, PAOLO BISCARI, MAURIZIO VIANELLO, TOMMASO RUGGERI, GIUSEPPE SACCOMANDI, EDITORE:"
+      },
+      {
+       "titolo": "APPROFONDIMENTI: F. STOPPELLI, APPUNTI DI MECCANICA RAZIONALE, LIGUORI ED",
+       "autori": null,
+       "editore": "LIGUORI ED",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/522670/2025/9999?coorte=2025)",
+       "citazione": "APPROFONDIMENTI: F. STOPPELLI, APPUNTI DI MECCANICA RAZIONALE, LIGUORI ED"
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -35027,6 +35270,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUARNACCIA Claudio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "09:00",
        "luogo": null,
@@ -35036,6 +35291,18 @@
        "docenti": "GUARNACCIA CLAUDIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUARNACCIA Claudio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -35964,6 +36231,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "NADDEO Vincenzo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-26",
        "ora": null,
        "luogo": null,
@@ -35973,6 +36252,18 @@
        "docenti": "OLIVA GIUSEPPINA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-26",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "NADDEO Vincenzo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -36071,6 +36362,18 @@
        "docenti": "FIORI CHIARA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FIORI Chiara",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -36137,6 +36440,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "RIZZANO Gianvittorio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-02",
        "ora": "14:30",
        "luogo": null,
@@ -36146,6 +36461,18 @@
        "docenti": "RIZZANO GIANVITTORIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "RIZZANO Gianvittorio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -36184,7 +36511,7 @@
    "url": "https://corsi.unisa.it/ingegneria-ambientale/presentazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IC12500005",
@@ -36231,6 +36558,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SCARFATO Paola",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-30",
        "ora": "09:00",
        "luogo": null,
@@ -36240,6 +36579,18 @@
        "docenti": "SCARFATO PAOLA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-02",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SCARFATO Paola",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -36595,6 +36946,18 @@
        "docenti": "DE CASTRO MOTTA JULIA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "de Castro Motta Julia",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -36661,6 +37024,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ROSSI Domenico",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "09:00",
        "luogo": null,
@@ -36670,6 +37045,18 @@
        "docenti": "GUARNACCIA CLAUDIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ROSSI Domenico",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -36742,13 +37129,38 @@
        "citazione": "P. MARCELLINI - C. SBORDONE, “ESERCITAZIONI DI MATEMATICA VOL. 2° PRIMA E SECONDA PARTE“, LIGUORI EDITORE"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "AMENDOLA ADA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "AMENDOLA ADA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale con unico voto",
      "id": "unisa-l-7-ingegneria-civile-per-l-ambiente-ed-il-territorio-ic12500002",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "IC12500003",
@@ -36890,7 +37302,32 @@
       "Fraternali Fernando"
      ],
      "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/522698/2025/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "MECCANICA RAZIONALE, PAOLO BISCARI, MAURIZIO VIANELLO, TOMMASO RUGGERI, GIUSEPPE SACCOMANDI, EDITORE:",
+       "autori": null,
+       "editore": "EDITORE:",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/522698/2025/9999?coorte=2025)",
+       "citazione": "MECCANICA RAZIONALE, PAOLO BISCARI, MAURIZIO VIANELLO, TOMMASO RUGGERI, GIUSEPPE SACCOMANDI, EDITORE:"
+      },
+      {
+       "titolo": "APPROFONDIMENTI: F. STOPPELLI, APPUNTI DI MECCANICA RAZIONALE, LIGUORI ED",
+       "autori": null,
+       "editore": "LIGUORI ED",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/522698/2025/9999?coorte=2025)",
+       "citazione": "APPROFONDIMENTI: F. STOPPELLI, APPUNTI DI MECCANICA RAZIONALE, LIGUORI ED"
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -37413,6 +37850,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUARNACCIA Claudio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "09:00",
        "luogo": null,
@@ -37422,6 +37871,18 @@
        "docenti": "GUARNACCIA CLAUDIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUARNACCIA Claudio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -38212,6 +38673,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "NADDEO Vincenzo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-26",
        "ora": null,
        "luogo": null,
@@ -38221,6 +38694,18 @@
        "docenti": "OLIVA GIUSEPPINA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-26",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "NADDEO Vincenzo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -38392,6 +38877,18 @@
        "docenti": "FIORI CHIARA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FIORI Chiara",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -38541,7 +39038,7 @@
    "url": "https://corsi.unisa.it/ingegneria-dell-informazione-per-la-medicina-digitale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IE12800001",
@@ -38600,6 +39097,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ZAMPOLI Vittorio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-14",
        "ora": "09:00",
        "luogo": null,
@@ -38609,6 +39118,18 @@
        "docenti": "ZAMPOLI VITTORIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ZAMPOLI Vittorio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -38663,6 +39184,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUADAGNO Liberata",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-15",
        "ora": "09:00",
        "luogo": null,
@@ -38672,6 +39205,18 @@
        "docenti": "GUADAGNO LIBERATA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUADAGNO Liberata",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -38726,6 +39271,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PERCANNELLA Gennaro",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-15",
        "ora": "09:00",
        "luogo": null,
@@ -38735,6 +39292,18 @@
        "docenti": "PERCANNELLA GENNARO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PERCANNELLA Gennaro",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -38859,6 +39428,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ALBANO Giovannina",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "09:00",
        "luogo": null,
@@ -38868,6 +39449,18 @@
        "docenti": "ALBANO GIOVANNINA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ALBANO Giovannina",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -39045,6 +39638,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FALANGA Mariarosaria",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "09:00",
        "luogo": null,
@@ -39054,6 +39659,18 @@
        "docenti": "FALANGA MARIAROSARIA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FALANGA Mariarosaria",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -39936,6 +40553,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GRECO Luca",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-02",
        "ora": "09:00",
        "luogo": null,
@@ -39945,6 +40574,18 @@
        "docenti": "GRECO LUCA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GRECO Luca",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -40208,6 +40849,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GIAQUINTO Martino",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-23",
        "ora": "09:00",
        "luogo": null,
@@ -40217,6 +40870,18 @@
        "docenti": "GIAQUINTO MARTINO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-26",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GIAQUINTO Martino",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -40683,6 +41348,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-29",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GRECO Luca",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-30",
        "ora": "09:00",
        "luogo": null,
@@ -40692,6 +41369,18 @@
        "docenti": "GRECO LUCA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GRECO Luca",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -40819,6 +41508,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-26",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MOSCATO Francesco",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-20",
        "ora": "09:00",
        "luogo": null,
@@ -40828,6 +41529,18 @@
        "docenti": "MOSCATO FRANCESCO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-24",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MOSCATO Francesco",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -41016,6 +41729,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BASILE Francesco",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "09:00",
        "luogo": null,
@@ -41134,7 +41859,7 @@
    "url": "http://corsi.unisa.it/ingegneria-elettronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "II12400023",
@@ -41327,6 +42052,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DE LUCA Roberto",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-11",
        "ora": "09:00",
        "luogo": null,
@@ -41336,6 +42073,18 @@
        "docenti": "DE LUCA ROBERTO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-23",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DE LUCA Roberto",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -41386,6 +42135,18 @@
        "docenti": "COLACE FRANCESCO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "COLACE Francesco",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -41472,6 +42233,18 @@
        "docenti": "RHANDI ABDELAZIZ",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-09",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "RHANDI Abdelaziz",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -41546,6 +42319,18 @@
        "docenti": "TUCCI VINCENZO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "TUCCI Vincenzo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -41608,6 +42393,18 @@
        "docenti": "ROMEO FRANCESCO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-26",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ROMEO Francesco",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -41803,6 +42600,18 @@
        "docenti": "CANALE ANNA PUGLIESE FABRIZIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CANALE Anna",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -41914,7 +42723,20 @@
       "Rubino Alfredo"
      ],
      "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/521845/2025/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "MICROELETTRONICA, RICHARD C. JAEGER TRAVIS N. BLALOCK , MCGRAW HILL. DISPENSE FORNITE DURANTE IL CORSO E RESE SUL SITO WEB: HTTPS://ELEARNING.UNISA.IT/ ALLA PAGINA DELL'INSEGNAMENTO",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/521845/2025/9999?coorte=2025)",
+       "citazione": "MICROELETTRONICA, RICHARD C. JAEGER TRAVIS N. BLALOCK , MCGRAW HILL. DISPENSE FORNITE DURANTE IL CORSO E RESE SUL SITO WEB: HTTPS://ELEARNING.UNISA.IT/ ALLA PAGINA DELL'INSEGNAMENTO"
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -42723,6 +43545,18 @@
        "docenti": "DE SANTO MASSIMO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-26",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DE SANTO Massimo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -42798,6 +43632,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CROCE Rocco Paolo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "09:00",
        "luogo": null,
@@ -42807,6 +43653,18 @@
        "docenti": "CROCE ROCCO PAOLO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CROCE Rocco Paolo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -43172,7 +44030,7 @@
    "url": "http://corsi.unisa.it/ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "II12600003",
@@ -43338,6 +44196,18 @@
        "docenti": "FUSCO LUIGI ANTONIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FUSCO Luigi Antonio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -43422,6 +44292,18 @@
        "docenti": "BOCHICCHIO IVANA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BOCHICCHIO IVANA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -43511,6 +44393,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CARLOMAGNO Isabella",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-23",
        "ora": "09:00",
        "luogo": null,
@@ -43520,6 +44414,18 @@
        "docenti": "CARLOMAGNO ISABELLA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CARLOMAGNO Isabella",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -43597,6 +44503,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "RUBINO FELICE",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-02",
        "ora": "09:00",
        "luogo": null,
@@ -43606,6 +44524,18 @@
        "docenti": "RUBINO FELICE",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "RUBINO FELICE",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -43680,6 +44610,18 @@
        "docenti": "GENNA ROBERTO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GENNA Roberto",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -44741,6 +45683,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DE IULIIS Massimiliano",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-04",
        "ora": "09:00",
        "luogo": null,
@@ -44750,6 +45704,18 @@
        "docenti": "DE IULIIS MASSIMILIANO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DE IULIIS Massimiliano",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -44813,6 +45779,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Giannella Venanzio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "09:00",
        "luogo": null,
@@ -44822,6 +45800,18 @@
        "docenti": "GIANNELLA VENANZIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-23",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Giannella Venanzio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -44935,6 +45925,18 @@
        "docenti": "MAIORINO ANGELO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MAIORINO Angelo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -45290,6 +46292,18 @@
        "docenti": "MIRANDA SALVATORE",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MIRANDA Salvatore",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -45328,7 +46342,7 @@
    "url": "http://corsi.unisa.it/ingegneria-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IE12700001",
@@ -45387,6 +46401,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ZAMPOLI Vittorio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-14",
        "ora": "09:00",
        "luogo": null,
@@ -45396,6 +46422,18 @@
        "docenti": "ZAMPOLI VITTORIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ZAMPOLI Vittorio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -45462,6 +46500,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FALANGA Mariarosaria",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "09:00",
        "luogo": null,
@@ -45483,6 +46533,18 @@
        "docenti": "GUIDA MICHELE",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FALANGA Mariarosaria",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -45550,6 +46612,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FOTIA Lidia",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-15",
        "ora": "09:00",
        "luogo": null,
@@ -45571,6 +46645,18 @@
        "docenti": "TORTORELLA FRANCESCO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FOTIA Lidia",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -45648,6 +46734,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-29",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ZAMPOLI Vittorio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-14",
        "ora": "09:00",
        "luogo": null,
@@ -45657,6 +46755,18 @@
        "docenti": "ZAMPOLI VITTORIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ZAMPOLI Vittorio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -45846,6 +46956,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FALANGA Mariarosaria",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "09:00",
        "luogo": null,
@@ -45867,6 +46989,18 @@
        "docenti": "GUIDA MICHELE",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FALANGA Mariarosaria",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -45944,6 +47078,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ALBANO Giovannina",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "09:00",
        "luogo": null,
@@ -45953,6 +47099,18 @@
        "docenti": "ALBANO GIOVANNINA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ALBANO Giovannina",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -46634,6 +47792,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUADAGNO Liberata",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-15",
        "ora": "09:00",
        "luogo": null,
@@ -46643,6 +47813,18 @@
        "docenti": "GUADAGNO LIBERATA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUADAGNO Liberata",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -46882,6 +48064,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GRECO Luca",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-02",
        "ora": "09:00",
        "luogo": null,
@@ -46891,6 +48085,18 @@
        "docenti": "GRECO LUCA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GRECO Luca",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -47652,6 +48858,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-29",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GRECO Luca",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-30",
        "ora": "09:00",
        "luogo": null,
@@ -47661,6 +48879,18 @@
        "docenti": "GRECO LUCA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GRECO Luca",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -47714,6 +48944,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-26",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MOSCATO Francesco",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-20",
        "ora": "09:00",
        "luogo": null,
@@ -47723,6 +48965,18 @@
        "docenti": "MOSCATO FRANCESCO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-24",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MOSCATO Francesco",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -47950,6 +49204,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BASILE Francesco",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "09:00",
        "luogo": null,
@@ -48076,7 +49342,7 @@
    "url": "http://corsi.unisa.it/ingegneria-meccanica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "II12300003",
@@ -48146,6 +49412,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "RAIMONDO MARIALUIGIA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-18",
        "ora": "09:00",
        "luogo": null,
@@ -48155,6 +49433,18 @@
        "docenti": "RAIMONDO MARIALUIGIA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-25",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "RAIMONDO MARIALUIGIA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -48241,6 +49531,18 @@
        "docenti": "BOZZA CRISTIANO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-26",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BOZZA Cristiano",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -48315,6 +49617,18 @@
        "docenti": "GENNA ROBERTO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GENNA Roberto",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -48399,6 +49713,18 @@
        "docenti": "SELLITTO ANTONIO BOCHICCHIO IVANA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SELLITTO Antonio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -48476,6 +49802,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "TIBULLO Vincenzo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-23",
        "ora": "09:00",
        "luogo": null,
@@ -48485,6 +49823,18 @@
        "docenti": "TIBULLO VINCENZO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "TIBULLO Vincenzo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -48562,6 +49912,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "RUBINO FELICE",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-02",
        "ora": "09:00",
        "luogo": null,
@@ -48571,6 +49933,18 @@
        "docenti": "RUBINO FELICE",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "RUBINO FELICE",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -49391,6 +50765,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PIANESE Cesare",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-04",
        "ora": "09:00",
        "luogo": null,
@@ -49400,6 +50786,18 @@
        "docenti": "PIANESE CESARE SORRENTINO MARCO POLVERINO PIERPAOLO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PIANESE Cesare",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -49837,6 +51235,18 @@
        "docenti": "SEPE RAFFAELE",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SEPE Raffaele",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -49953,6 +51363,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-20",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CAPPETTI Nicola",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-24",
        "ora": "09:00",
        "luogo": null,
@@ -49962,6 +51384,18 @@
        "docenti": "CAPPETTI NICOLA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CAPPETTI Nicola",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -50025,6 +51459,18 @@
        "docenti": "MAIORINO ANGELO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MAIORINO Angelo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -50428,6 +51874,18 @@
        "docenti": "IANNONE RAFFAELE DI PASQUALE VALENTINA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "IANNONE Raffaele",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -50466,7 +51924,7 @@
    "url": "http://corsi.unisa.it/lettere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "TU12600045",
@@ -55803,7 +57261,20 @@
       "Tonello Elisabetta"
      ],
      "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/511162/2023/10000?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "DISPENSE FORNITE DAL DOCENTE. SI CONSIGLIA LA LETTURA DEI TESTI DI P. V. MENGALDO, ATTRAVERSO LA PROSA ITALIANA. ANALISI DI TESTI ESEMPLARI E ATTRAVERSO LA POESIA ITALIANA. ANALISI DI TESTI ESEMPLARI, CAROCCI.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/511162/2023/10000?coorte=2024)",
+       "citazione": "DISPENSE FORNITE DAL DOCENTE. SI CONSIGLIA LA LETTURA DEI TESTI DI P. V. MENGALDO, ATTRAVERSO LA PROSA ITALIANA. ANALISI DI TESTI ESEMPLARI E ATTRAVERSO LA POESIA ITALIANA. ANALISI DI TESTI ESEMPLARI, CAROCCI."
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -56991,7 +58462,7 @@
    "url": "http://corsi.unisa.it/lingue-e-culture-straniere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "TU12200015",
@@ -66214,7 +67685,7 @@
    "url": "https://corsi.unisa.it/marketing-e-digital-business",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SC12300003",
@@ -67262,7 +68733,7 @@
    "url": "http://corsi.unisa.it/matematica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MT12300051",
@@ -69704,7 +71175,7 @@
    "url": "http://corsi.unisa.it/ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "1012400004",
@@ -72785,7 +74256,7 @@
    "url": "http://corsi.unisa.it/scienze-ambientali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CB12700003",
@@ -74552,7 +76023,7 @@
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
+     "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unisa-l-32-scienze-ambientali-0512700036",
@@ -74806,7 +76277,7 @@
    "url": "http://corsi.unisa.it/scienze-biologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CB12800005",
@@ -75897,7 +77368,7 @@
    "url": "http://corsi.unisa.it/scienze-dei-beni-culturali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SP12800014",
@@ -79641,7 +81112,7 @@
    "url": "https://corsi.unisa.it/scienze-del-servizio-sociale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "TP12900026",
@@ -81282,7 +82753,7 @@
    "url": "https://corsi.unisa.it/scienze-del-turismo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SE12900001",
@@ -81756,7 +83227,7 @@
      "libri": [],
      "esami": [],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
+     "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "scritto e orale con unico voto",
      "id": "unisa-l-15-scienze-del-turismo-se12900011",
@@ -82260,7 +83731,7 @@
    "url": "http://corsi.unisa.it/scienze-dell-amministrazione-e-dell-organizzazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SE12200001",
@@ -82912,7 +84383,20 @@
       "Puca Marcello"
      ],
      "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/521940/2025/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "HARVEY ROSEN, TED GAYER, SCIENZA DELLE FINANZE, MCGRAW-HILL, ULTIMA EDIZIONE DISPONIBILE.",
+       "autori": null,
+       "editore": "MCGRAW-HILL",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/521940/2025/9999?coorte=2026)",
+       "citazione": "HARVEY ROSEN, TED GAYER, SCIENZA DELLE FINANZE, MCGRAW-HILL, ULTIMA EDIZIONE DISPONIBILE."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
@@ -83596,7 +85080,7 @@
    "url": "http://corsi.unisa.it/scienze-educazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SU12400007",
@@ -86192,7 +87676,7 @@
    "url": "http://corsi.unisa.it/scienze-della-comunicazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SC12200043",
@@ -88437,7 +89921,7 @@
    "url": "http://corsi.unisa.it/scienze-attivita-motorie-sportive-educazione-psicomotoria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SU12500008",
@@ -90008,7 +91492,7 @@
    "url": "https://corsi.unisa.it/scienze-e-nanotecnologie-per-la-sostenibilita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "FS12900008",
@@ -91669,7 +93153,7 @@
    "url": "http://corsi.unisa.it/scienze-politiche-e-relazioni-Internazionali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SC12100006",
@@ -94317,7 +95801,7 @@
    "url": "http://corsi.unisa.it/sociologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "TP12300006",
@@ -96308,7 +97792,7 @@
    "url": "http://corsi.unisa.it/statistica-per-i-big-data",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SE12300001",
@@ -96389,7 +97873,7 @@
      "libri": [],
      "esami": [],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
+     "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "scritto e orale con unico voto",
      "id": "unisa-l-41-statistica-e-metodi-computazionali-se12300002",
@@ -96990,7 +98474,7 @@
    "url": "https://corsi.unisa.it/studi-diplomatici-internazionali-e-sulla-sicurezza-globale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SA12500041",
@@ -99269,7 +100753,7 @@
    "url": "https://corsi.unisa.it/tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "1012600033",
@@ -100454,7 +101938,20 @@
       "Tarallo Roberta"
      ],
      "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/517980/2024/9999?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "materiale di studio consterà di testi specializzati di proteomica, metabolomica e transcrittomica e dispense fornite agli studenti dai docenti",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisa.coursecatalogue.cineca.it/insegnamenti/2027/517980/2024/9999?coorte=2025)",
+       "citazione": "materiale di studio consterà di testi specializzati di proteomica, metabolomica e transcrittomica e dispense fornite agli studenti dai docenti"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
@@ -100676,7 +102173,7 @@
    "url": "http://corsi.unisa.it/tecniche-di-radiologia-medica-per-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "1012500032",
@@ -102419,7 +103916,7 @@
    "url": "http://corsi.unisa.it/tecniche-erboristiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "FR12100007",
@@ -104352,7 +105849,7 @@
    "url": "http://corsi.unisa.it/archeologia-e-culture-antiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SP22300002",
@@ -105997,7 +107494,7 @@
    "url": "http://corsi.unisa.it/biologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CB22100001",
@@ -106856,7 +108353,7 @@
    "url": "http://corsi.unisa.it/chimica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CB22300002",
@@ -108823,7 +110320,7 @@
    "url": "http://corsi.unisa.it/consulenza-e-management-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SA22100037",
@@ -110889,7 +112386,7 @@
    "url": "http://corsi.unisa.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SC23100019",
@@ -111881,7 +113378,7 @@
    "url": "https://corsi.unisa.it/data-science-e-gestione-dell-innovazione-lm-data",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SA22800001",
@@ -113198,7 +114695,7 @@
    "url": "https://corsi.unisa.it/digital-marketing",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SC23200032",
@@ -114255,7 +115752,7 @@
    "url": "http://corsi.unisa.it/economia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SE22200001",
@@ -116512,7 +118009,7 @@
    "url": "http://corsi.unisa.it/economia-governo-e-amministrazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SE23100004",
@@ -117267,7 +118764,7 @@
    "url": "https://corsi.unisa.it/electrical-engineering-for-digital-energy",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IE23300002",
@@ -117326,6 +118823,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LAMBERTI Patrizia",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "09:00",
        "luogo": null,
@@ -117335,6 +118844,18 @@
        "docenti": "LAMBERTI PATRIZIA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LAMBERTI Patrizia",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -117474,6 +118995,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GENNA Roberto",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-15",
        "ora": "09:00",
        "luogo": null,
@@ -117483,6 +119016,18 @@
        "docenti": "GENNA ROBERTO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GENNA Roberto",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -117607,6 +119152,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SESSA Giuseppe",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-15",
        "ora": "09:00",
        "luogo": null,
@@ -117616,6 +119173,18 @@
        "docenti": "SESSA GIUSEPPE",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SESSA Giuseppe",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -117691,6 +119260,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BRANDO GIANLUCA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "09:00",
        "luogo": null,
@@ -117700,6 +119281,18 @@
        "docenti": "BRANDO GIANLUCA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BRANDO GIANLUCA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -118449,7 +120042,7 @@
    "url": "http://corsi.unisa.it/filologia-letterature-e-storia-dell-antichita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "TU22200001",
@@ -120912,7 +122505,7 @@
    "url": "http://corsi.unisa.it/filologia-moderna",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "TU22100010",
@@ -124087,7 +125680,7 @@
    "url": "http://corsi.unisa.it/filosofia-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SP22600002",
@@ -126415,7 +128008,7 @@
    "url": "http://corsi.unisa.it/fisica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "FS22600013",
@@ -128987,7 +130580,7 @@
    "url": "http://corsi.unisa.it/ingegneria-alimentare",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "II22800001",
@@ -129069,6 +130662,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BOCHICCHIO IVANA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-11",
        "ora": "09:00",
        "luogo": null,
@@ -129078,6 +130683,18 @@
        "docenti": "BOCHICCHIO IVANA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BOCHICCHIO IVANA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -129253,6 +130870,18 @@
        "docenti": "DONSI' FRANCESCO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DONSI' Francesco",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -130031,7 +131660,7 @@
      "libri": [],
      "esami": [],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
+     "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unisa-lm-22-food-engineering-ii22800028",
@@ -130145,7 +131774,7 @@
    "url": "https://corsi.unisa.it/gestione-e-valorizzazione-degli-archivi-e-delle-biblioteche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SP22000001",
@@ -130908,7 +132537,44 @@
       "Masullo Giuseppe"
      ],
      "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/523216/2025/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "PIERGIORGIO CORBETTA, LA RICERCA SOCIALE: METODOLOGIA E TECNICHE, VOL. I, I PARADIGMI DI RIFERIMENTO, IL MULINO",
+       "autori": null,
+       "editore": "IL MULINO",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/523216/2025/9999?coorte=2025)",
+       "citazione": "PIERGIORGIO CORBETTA, LA RICERCA SOCIALE: METODOLOGIA E TECNICHE, VOL. I, I PARADIGMI DI RIFERIMENTO, IL MULINO"
+      },
+      {
+       "titolo": "(STUDENTI FREQUENTANTI) GARIGLIO LUIGI, AUTOETNOGRAFIA. UN METODO DI RICERCA FRA SCIENZE SOCIALI, ARTE E LETTERATURA, CAROCCI EDITORE",
+       "autori": null,
+       "editore": "CAROCCI EDITORE",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/523216/2025/9999?coorte=2025)",
+       "citazione": "(STUDENTI FREQUENTANTI) GARIGLIO LUIGI, AUTOETNOGRAFIA. UN METODO DI RICERCA FRA SCIENZE SOCIALI, ARTE E LETTERATURA, CAROCCI EDITORE"
+      },
+      {
+       "titolo": "(STUDENTI NON FREQUENTANTI) MASULLO GIUSEPPE EPISTEMOLOGIA E METODI DELLA SOCIOLOGIA ITALIANA.ORIGINI, STORIA E PROSPETTIVE, PM EDIZIONI",
+       "autori": null,
+       "editore": "PM EDIZIONI",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/523216/2025/9999?coorte=2025)",
+       "citazione": "(STUDENTI NON FREQUENTANTI) MASULLO GIUSEPPE EPISTEMOLOGIA E METODI DELLA SOCIOLOGIA ITALIANA.ORIGINI, STORIA E PROSPETTIVE, PM EDIZIONI"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
@@ -131336,7 +133002,7 @@
    "url": "http://corsi.unisa.it/informatica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "NF22500048",
@@ -135308,7 +136974,7 @@
    "url": "https://corsi.unisa.it/information-engineering-for-digital-medicine/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IE23200001",
@@ -135390,6 +137056,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PALUMBO Domenico",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-15",
        "ora": "09:00",
        "luogo": null,
@@ -135399,6 +137077,18 @@
        "docenti": "PALUMBO DOMENICO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PALUMBO Domenico",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -135600,6 +137290,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GIAQUINTO Martino",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-14",
        "ora": "09:00",
        "luogo": null,
@@ -135609,6 +137311,18 @@
        "docenti": "GIAQUINTO MARTINO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GIAQUINTO Martino",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -136591,7 +138305,7 @@
    "url": "http://corsi.unisa.it/ingegneria-chimica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "II22200001",
@@ -136673,6 +138387,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BOCHICCHIO IVANA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-11",
        "ora": "09:00",
        "luogo": null,
@@ -136682,6 +138408,18 @@
        "docenti": "BOCHICCHIO IVANA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BOCHICCHIO IVANA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -136748,6 +138486,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-23",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PANTANI Roberto",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-11",
        "ora": "14:30",
        "luogo": null,
@@ -136757,6 +138507,18 @@
        "docenti": "PANTANI ROBERTO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PANTANI Roberto",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -136885,6 +138647,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-29",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "POLETTO Massimo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-26",
        "ora": "09:00",
        "luogo": null,
@@ -136894,6 +138668,18 @@
        "docenti": "POLETTO MASSIMO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-30",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "POLETTO Massimo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -138156,7 +139942,7 @@
    "url": "http://corsi.unisa.it/ingegneria-civile-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IC22100024",
@@ -138935,6 +140721,18 @@
        "docenti": "MANCUSI GEMINIANO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MANCUSI Geminiano",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -138997,6 +140795,18 @@
        "docenti": "ASCIONE FRANCESCO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ASCIONE Francesco",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -139134,6 +140944,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "VILLANI Paolo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-30",
        "ora": "14:30",
        "luogo": null,
@@ -139143,6 +140965,18 @@
        "docenti": "VILLANI PAOLO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-07",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "VILLANI Paolo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -139823,13 +141657,38 @@
        "citazione": "C.R.I.CLAYTON , J. MILITITSKY, R.I. WOODS, “EARTH PRESSURE AND EARTH-RETAINING STRUCTURES” HEVELIUS EDIZIONI, 2006."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PEDUTO Dario",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PEDUTO Dario",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale con unico voto",
      "id": "unisa-lm-23-ingegneria-civile-ic22100008",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "IC22100026",
@@ -141427,7 +143286,7 @@
    "url": "http://corsi.unisa.it/ingegneria-elettronica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "II22400001",
@@ -141524,6 +143383,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-22",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "NEITZERT Heinrich Christoph",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "14:30",
        "luogo": null,
@@ -141545,6 +143416,18 @@
        "docenti": "DI BENEDETTO LUIGI",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "NEITZERT Heinrich Christoph",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -141707,6 +143590,18 @@
        "docenti": "SOMMELLA PAOLO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-24",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SOMMELLA Paolo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -142090,6 +143985,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GALDI Vincenzo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-04",
        "ora": "09:00",
        "luogo": null,
@@ -142099,6 +144006,18 @@
        "docenti": "GALDI VINCENZO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-07",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GALDI Vincenzo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -143346,7 +145265,7 @@
    "url": "http://corsi.unisa.it/ingegneria-gestionale-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "II22600006",
@@ -143609,6 +145528,18 @@
        "docenti": "DE SIMONE MARCO CLAUDIO PAPPALARDO CARMINE MARIA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DE SIMONE MARCO CLAUDIO",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -143828,6 +145759,18 @@
        "docenti": "DI CRESCENZO ANTONIO PARAGGIO PAOLA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DI CRESCENZO Antonio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -143894,6 +145837,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CAPPETTI Nicola",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-02",
        "ora": "09:00",
        "luogo": null,
@@ -143903,6 +145858,18 @@
        "docenti": "CAPPETTI NICOLA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-02",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CAPPETTI Nicola",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -144997,7 +146964,7 @@
    "url": "http://corsi.unisa.it/ingegneria-informatica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IE22700004",
@@ -145131,6 +147098,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "POSTIGLIONE Fabio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-14",
        "ora": "09:00",
        "luogo": null,
@@ -145152,10 +147131,22 @@
        "docenti": "MATTA VINCENZO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "POSTIGLIONE Fabio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
+     "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "scritto e orale con unico voto",
      "id": "unisa-lm-32-ingegneria-informatica-ie22700003",
@@ -145254,6 +147245,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "AULETTA Vincenzo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-15",
        "ora": "09:00",
        "luogo": null,
@@ -145275,6 +147278,18 @@
        "docenti": "FERRAIOLI DIODATO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "AULETTA Vincenzo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -148300,7 +150315,7 @@
    "url": "http://corsi.unisa.it/ingegneria-meccanica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "II22300001",
@@ -148368,6 +150383,18 @@
        "docenti": "APREA CIRO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "APREA Ciro",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -148749,6 +150776,18 @@
        "docenti": "PIANESE CESARE POLVERINO PIERPAOLO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PIANESE Cesare",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -151031,7 +153070,7 @@
    "url": "http://corsi.unisa.it/ingegneria-ambientale-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IC22500003",
@@ -151077,6 +153116,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "14:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUIDA Domenico",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-19",
        "ora": "09:00",
        "luogo": null,
@@ -151086,6 +153137,18 @@
        "docenti": "GUIDA DOMENICO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-23",
+       "ora": "14:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUIDA Domenico",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -151175,6 +153238,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "VILLANI Paolo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-18",
        "ora": "14:30",
        "luogo": null,
@@ -151184,6 +153259,18 @@
        "docenti": "DI PACE ROBERTA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-07",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "VILLANI Paolo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -153146,7 +155233,7 @@
    "url": "http://corsi.unisa.it/agraria-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "FR22200005",
@@ -154306,7 +156393,7 @@
    "url": "http://corsi.unisa.it/lingue-e-letterature-moderne",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "TU24100034",
@@ -161655,7 +163742,7 @@
    "url": "http://corsi.unisa.it/linguistica-e-didattica-dell-italiano",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "TU24000004",
@@ -162551,7 +164638,7 @@
    "url": "https://corsi.unisa.it/management-dei-sistemi-turistici-per-lo-sviluppo-sostenibile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SC22800001",
@@ -163246,7 +165333,7 @@
    "url": "https://corsi.unisa.it/management-delle-attivita-sportive-e-motorie-per-il-benessere-sociale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "TP22700009",
@@ -164447,7 +166534,7 @@
    "url": "http://corsi.unisa.it/matematica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MT22200057",
@@ -166789,7 +168876,7 @@
    "url": "https://corsi.unisa.it/nanotechnology-and-physics-for-sustainability",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "FS22700003",
@@ -167964,7 +170051,7 @@
    "url": "https://corsi.unisa.it/organizzazione-valutazione-e-supervisione-dei-servizi-sociali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "TP23000003",
@@ -167984,7 +170071,7 @@
      "libri": [],
      "esami": [],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
+     "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unisa-lm-87-organizzazione-valutazione-e-supervisione-dei-servizi-social-tp23000003",
@@ -168943,7 +171030,7 @@
    "url": "http://corsi.unisa.it/politiche-istituzioni-e-territorio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SC22600003",
@@ -170085,7 +172172,7 @@
    "url": "https://corsi.unisa.it/psicologia-di-comunita-per-i-contesti-formativi-per-il-benessere-e-per-lo-sport",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SU22500002",
@@ -171435,7 +173522,7 @@
    "url": "http://corsi.unisa.it/scienze-ambientali-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CB22400002",
@@ -172540,7 +174627,7 @@
    "url": "https://corsi.unisa.it/scienze-educazione-permanente-e-formazione-continua",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SU22400002",
@@ -173737,7 +175824,7 @@
    "url": "http://corsi.unisa.it/scienze-della-valutazione-motorio-sportiva",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SU22200006",
@@ -174854,7 +176941,7 @@
    "url": "http://corsi.unisa.it/scienze-dello-spettacolo-e-della-produzione-multimediale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SP22200005",
@@ -176484,7 +178571,7 @@
    "url": "https://corsi.unisa.it/scienze-infermieristiche-e-ostetriche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "ME22100005",
@@ -177181,7 +179268,7 @@
    "url": "https://corsi.unisa.it/scienze-infermieristiche-e-ostetriche-profilo-ostetrico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "ME22200005",
@@ -177887,7 +179974,7 @@
    "url": "http://corsi.unisa.it/scienze-pedagogiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SU22100003",
@@ -179164,7 +181251,7 @@
    "url": "http://corsi.unisa.it/scienze-statistiche-per-la-finanza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SE22400001",
@@ -179978,7 +182065,7 @@
    "url": "https://corsi.unisa.it/sicurezza-informatica-e-tecnologie-cloud",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "NF22700004",
@@ -180440,7 +182527,7 @@
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
+     "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "scritto e orale con unico voto",
      "id": "unisa-lm-66-sicurezza-informatica-e-tecnologie-cloud-nf22700005",
@@ -180882,7 +182969,7 @@
    "url": "https://corsi.unisa.it/smart-industry-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "II23000002",
@@ -182481,7 +184568,7 @@
    "url": "http://corsi.unisa.it/sociologia-cambiamentoambientaledigitale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "TP22900013",
@@ -183796,7 +185883,20 @@
       "Del Forno Massimo"
      ],
      "url": "https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/523502/2025/10000?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "DISPENSE, BASI DATI, SOFTWARE E MATERIALE DIDATTICO FORNITO DAL DOCENTE.",
+       "autori": null,
+       "editore": "DISPENSE",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisa.coursecatalogue.cineca.it/insegnamenti/2026/523502/2025/10000?coorte=2025)",
+       "citazione": "DISPENSE, BASI DATI, SOFTWARE E MATERIALE DIDATTICO FORNITO DAL DOCENTE."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
@@ -184016,7 +186116,7 @@
    "url": "http://corsi.unisa.it/storia-e-critica-d-arte",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SP22400016",
@@ -186051,7 +188151,7 @@
    "url": "https://corsi.unisa.it/global-studies-and-eu",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SA22500005",
@@ -187819,7 +189919,7 @@
    "url": "http://corsi.unisa.it/chimica-e-tecnologia-farmaceutiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "FR60400006",
@@ -190956,7 +193056,7 @@
    "url": "http://corsi.unisa.it/farmacia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "FR60300006",
@@ -194605,7 +196705,7 @@
    "url": "http://corsi.unisa.it/giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SG60100001",
@@ -205474,7 +207574,7 @@
    "url": "http://corsi.unisa.it/ingegneria-edile-architettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IC60100001",
@@ -205553,6 +207653,18 @@
        "docenti": "SPINA SERENA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SPINA SERENA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -205750,6 +207862,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MESSINA Barbara",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-09",
        "ora": "09:00",
        "luogo": null,
@@ -205759,6 +207883,18 @@
        "docenti": "MESSINA BARBARA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MESSINA Barbara",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -205833,6 +207969,18 @@
        "docenti": "PIERRI ANNA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PIERRI Anna",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -205910,6 +208058,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GREGORIO FEDERICA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-01",
        "ora": "09:00",
        "luogo": null,
@@ -205919,6 +208079,18 @@
        "docenti": "GREGORIO FEDERICA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GREGORIO FEDERICA",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -205985,6 +208157,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUARNACCIA Claudio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "09:00",
        "luogo": null,
@@ -205994,6 +208178,18 @@
        "docenti": "GUARNACCIA CLAUDIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUARNACCIA Claudio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -207258,6 +209454,18 @@
        "docenti": "FRATERNALI FERNANDO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FRATERNALI Fernando",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -207696,6 +209904,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PILUSO Vincenzo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "09:00",
        "luogo": null,
@@ -207705,6 +209925,18 @@
        "docenti": "PILUSO VINCENZO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PILUSO Vincenzo",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -208366,6 +210598,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "NASTRI ELIDE",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-13",
        "ora": "14:30",
        "luogo": null,
@@ -208375,6 +210619,18 @@
        "docenti": "NASTRI ELIDE",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "NASTRI ELIDE",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -208725,7 +210981,7 @@
    "url": "http://corsi.unisa.it/medicina-e-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "ME60100004",
@@ -212447,7 +214703,7 @@
    "url": "http://corsi.unisa.it/odontoiatria-protesi-dentaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "ME60200003",
@@ -214542,7 +216798,7 @@
    "url": "http://corsi.unisa.it/scienze-della-formazione-primaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "4461000030",
@@ -217439,7 +219695,7 @@
    "url": "https://corsi.unisa.it/tecniche-per-l-edilizia-e-il-territorio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0612900005",
@@ -217884,6 +220140,18 @@
        "docenti": "DE CASTRO MOTTA JULIA",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "de Castro Motta Julia",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -218266,6 +220534,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FRATERNALI Fernando",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-23",
        "ora": "09:00",
        "luogo": null,
@@ -218275,6 +220555,18 @@
        "docenti": "FRATERNALI FERNANDO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-25",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FRATERNALI Fernando",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -218428,6 +220720,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUARNACCIA Claudio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "09:00",
        "luogo": null,
@@ -218437,6 +220741,18 @@
        "docenti": "GUARNACCIA CLAUDIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GUARNACCIA Claudio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
@@ -218747,7 +221063,7 @@
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
+     "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "scritto e orale con unico voto",
      "id": "unisa-l-p01-tecniche-per-l-edilizia-e-il-territorio-0612900017",
@@ -219306,6 +221622,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-22",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "RIZZANO Gianvittorio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-25",
        "ora": "09:00",
        "luogo": null,
@@ -219315,6 +221643,18 @@
        "docenti": "RIZZANO GIANVITTORIO",
        "note": null,
        "fonte": "https://unisa.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-02",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "RIZZANO Gianvittorio",
+       "note": null,
+       "fonte": "https://easycourse.unisa.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unisa.coursecatalogue.cineca.it",

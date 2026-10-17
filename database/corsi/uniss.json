@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "uniss",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-14",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/biotecnologie-e-analisi-bioinformatiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A003395",
@@ -1703,7 +1703,7 @@
    "url": "https://www.dcf.uniss.it/it/i-nostri-corsi/corsi-di-studio/chimica-scopri-di-piu",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40004681",
@@ -3435,7 +3435,7 @@
    "url": "https://dissuf.uniss.it/it/i-nostri-corsi/cds-l-20-comunicazione-pubblica-e-professioni-dellinformazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A003226",
@@ -4296,6 +4296,18 @@
        "docenti": "GARRUCCIU GIOVANNI FADDA MARCO TIDORE CAMILLO GIUSEPPE ANTONIO",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "16:30",
+       "luogo": "Sala Seminari 'Da Passano', Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GARRUCCIU GIOVANNI",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://uniss.coursecatalogue.cineca.it",
@@ -4883,6 +4895,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": "Aula A, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SCANO ALESSIO DIEGO, DESOGUS MARCO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-04",
        "ora": "10:00",
        "luogo": null,
@@ -5053,6 +5077,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": "Aula C, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-26",
        "ora": "16:00",
        "luogo": null,
@@ -5062,6 +5098,18 @@
        "docenti": "MURA SALVATORE AMBROSINO RITA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:00",
+       "luogo": "Aula D, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -6924,7 +6972,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-triennali-e-ciclo-unico/design",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A003425",
@@ -8583,7 +8631,7 @@
    "url": "https://disea.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40000501",
@@ -9956,6 +10004,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "08:30",
+       "luogo": "Aula C, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CORASANITI GIUSEPPE",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-01",
        "ora": "10:00",
        "luogo": null,
@@ -10634,7 +10694,7 @@
    "url": "https://disea.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40000501",
@@ -12866,7 +12926,7 @@
    "url": "https://disea.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40000165",
@@ -14151,7 +14211,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A000026",
@@ -16946,7 +17006,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40004092",
@@ -20064,7 +20124,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40004092",
@@ -22196,7 +22256,7 @@
    "url": "https://scienzebiomediche.uniss.it/it/didattica/ingegneria-industriale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A000421",
@@ -23182,6 +23242,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "09:00",
+       "luogo": "Multimediale, Agraria - Pal. Ingegneristico",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CHERAGHI BIDSORKCHI HOSSEIN",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-23",
        "ora": "09:00",
        "luogo": null,
@@ -23191,6 +23263,18 @@
        "docenti": "CHERAGHI BIDSORKHI HOSSEIN",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "09:00",
+       "luogo": "Multimediale, Agraria - Pal. Ingegneristico",
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CHERAGHI BIDSORKCHI HOSSEIN",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://uniss.coursecatalogue.cineca.it",
@@ -23871,7 +23955,7 @@
    "url": "https://scienzebiomediche.uniss.it/it/didattica/ingegneria-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A000421",
@@ -25463,7 +25547,7 @@
    "url": "https://dissuf.uniss.it/it/i-nostri-corsi/cds-l-10-lettere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40002699",
@@ -25823,6 +25907,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": "Aula C, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-26",
        "ora": "16:00",
        "luogo": null,
@@ -25832,6 +25928,18 @@
        "docenti": "MURA SALVATORE AMBROSINO RITA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:00",
+       "luogo": "Aula D, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -32387,6 +32495,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": "Aula C, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-26",
        "ora": "16:00",
        "luogo": null,
@@ -32396,6 +32516,18 @@
        "docenti": "MURA SALVATORE AMBROSINO RITA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:00",
+       "luogo": "Aula D, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -40870,7 +41002,7 @@
    "url": "https://dumas.uniss.it/it/didattica/mediazione-linguistica-e-culturale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A005009",
@@ -46473,7 +46605,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/corsi-di-studiotutte-le-informazioni/ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40004092",
@@ -53645,7 +53777,7 @@
    "url": "https://uniss.coursecatalogue.cineca.it/corsi/2026/11025",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40001607",
@@ -55243,7 +55375,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/scienze-biologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40004117",
@@ -57145,7 +57277,7 @@
    "url": "https://uniss.coursecatalogue.cineca.it/corsi/2026/11027",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A004806",
@@ -58387,7 +58519,7 @@
    "url": "https://dissuf.uniss.it/it/i-nostri-corsi/cds-l-1-scienze-dei-beni-culturali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A001362",
@@ -62478,6 +62610,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": "Aula C, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-26",
        "ora": "16:00",
        "luogo": null,
@@ -62487,6 +62631,18 @@
        "docenti": "MURA SALVATORE AMBROSINO RITA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:00",
+       "luogo": "Aula D, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -63263,7 +63419,7 @@
    "url": "https://giuriss.uniss.it/it/i-nostri-corsi/corsi-di-studio/corso-di-laurea-triennale-scienze-dei-servizi-giuridici-scopri-di",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "3000818",
@@ -65577,6 +65733,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": "Aula A, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SCANO ALESSIO DIEGO, DESOGUS MARCO, CUCCU FRANCESCO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-04",
        "ora": "10:00",
        "luogo": null,
@@ -66756,6 +66924,18 @@
        "docenti": "CORASANITI GIUSEPPE CUCCU FRANCESCO",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "08:30",
+       "luogo": "Aula C, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CORASANITI GIUSEPPE",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -70595,6 +70775,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "08:30",
+       "luogo": "Aula C, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CORASANITI GIUSEPPE",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-01",
        "ora": "10:00",
        "luogo": null,
@@ -70841,7 +71033,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-triennali-e-ciclo-unico/scienze-dellarchitettura-e-del-progetto",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A003138",
@@ -74382,7 +74574,7 @@
    "url": "https://dissuf.uniss.it/it/i-nostri-corsi/cds-l-19-scienze-delleducazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "10F70420",
@@ -74620,6 +74812,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "08:30",
+       "luogo": "Aula informatica, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CESERACCIU CHIARA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-02",
        "ora": "09:30",
        "luogo": null,
@@ -74665,6 +74869,18 @@
        "docenti": "CESERACCIU CHIARA BRANCA GIAMPIERO DERIU ROMINA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "08:30",
+       "luogo": "Aula informatica, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CESERACCIU CHIARA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -74838,6 +75054,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": "Aula C, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-26",
        "ora": "16:00",
        "luogo": null,
@@ -74847,6 +75075,18 @@
        "docenti": "MURA SALVATORE AMBROSINO RITA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:00",
+       "luogo": "Aula D, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -77642,7 +77882,7 @@
    "url": "https://dumas.uniss.it/it/didattica/future-e-futuri-studenti/scienze-e-tecniche-psicologiche-dei-processi-cognitivi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A005009",
@@ -79716,7 +79956,7 @@
    "url": "https://agrariaweb.uniss.it/it/didattica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40101607",
@@ -81495,7 +81735,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-triennali-e-ciclo-unico/scienze-forestali-e-ambientali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40004077",
@@ -83390,7 +83630,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/scienze-motorie-sportive-e-benessere-delluomo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "10M40260",
@@ -84022,13 +84262,50 @@
        "citazione": "Fisiologia Umana, Rindi Manni; UTET"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "08:30",
+       "luogo": "Aula G, Complesso sede Orto Botanico, via Piandanna (Secondo Lotto)",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DERIU FRANCA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "08:30",
+       "luogo": "Aula G, Complesso sede Orto Botanico, via Piandanna (Secondo Lotto)",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DERIU FRANCA, MANCA ANDREA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "08:30",
+       "luogo": "Aula G, Complesso sede Orto Botanico, via Piandanna (Secondo Lotto)",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DERIU FRANCA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://uniss.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "uniss-l-22-scienze-motorie-sportive-e-benessere-dell-uomo-11080013",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A002283",
@@ -85163,7 +85440,7 @@
    "url": "https://www.dcf.uniss.it/it/i-nostri-corsi/corsi-di-studio/scienze-naturali-scopri-di-piu",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40000901",
@@ -85309,13 +85586,26 @@
        "citazione": "Evert R.F., Eichorn S.E., 2013 - La biologia delle piante di Raven. VII° ed. italiana. Ed. Zanichelli."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "17:00",
+       "luogo": "Aula 2, Complesso sede Orto Botanico, via Piandanna (Primo Lotto)",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ALBANI DIEGO MARIA, BAGELLA SIMONETTA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://uniss.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "uniss-l-32-scienze-naturali-40000637",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/2876/2026/9999?coorte=2026"
     },
     {
@@ -86787,7 +87077,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-triennali-e-ciclo-unico/scienze-politiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40000412",
@@ -86828,6 +87118,18 @@
        "docenti": "SCANO ALESSIO DIEGO CUCCU FRANCESCO DESOGUS MARCO",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": "Aula A, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SCANO ALESSIO DIEGO, DESOGUS MARCO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -87181,6 +87483,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "08:30",
+       "luogo": "Aula informatica, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CESERACCIU CHIARA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-02",
        "ora": "09:30",
        "luogo": null,
@@ -87226,6 +87540,18 @@
        "docenti": "CESERACCIU CHIARA BRANCA GIAMPIERO DERIU ROMINA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "08:30",
+       "luogo": "Aula informatica, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CESERACCIU CHIARA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -88038,6 +88364,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:00",
+       "luogo": "Aula Cossiga, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ALBERTI ANNA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-13",
        "ora": "10:00",
        "luogo": null,
@@ -88563,6 +88901,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": "Aula C, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-26",
        "ora": "16:00",
        "luogo": null,
@@ -88572,6 +88922,18 @@
        "docenti": "MURA SALVATORE AMBROSINO RITA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:00",
+       "luogo": "Aula D, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -88816,6 +89178,18 @@
        "docenti": "ALBERTI ANNA BUFFONI LAURA CHESSA OMAR",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:00",
+       "luogo": "Aula Cossiga, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ALBERTI ANNA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -90413,6 +90787,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "09:00",
+       "luogo": "Aula H, Centro Didattico Giurisprudenza",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BANO FABRIZIO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-01",
        "ora": "09:00",
        "luogo": null,
@@ -91010,6 +91396,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": "Aula Cicu, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ODONI MARIO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-02",
        "ora": "15:00",
        "luogo": null,
@@ -91464,7 +91862,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-triennali-e-ciclo-unico/scienze-strategiche-e-giuridiche-della",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A001351",
@@ -91795,6 +92193,18 @@
        "docenti": "SCANO ALESSIO DIEGO CUCCU FRANCESCO DESOGUS MARCO",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": "Aula A, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SCANO ALESSIO DIEGO, DESOGUS MARCO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -92775,6 +93185,18 @@
        "docenti": "BUFFONI LAURA ALBERTI ANNA PINNA PIETRO LUIGI",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "09:30",
+       "luogo": "Aula B, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BUFFONI LAURA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -94223,6 +94645,18 @@
        "docenti": "CECCHETTI MARCELLO BAROZZI REGGIANI GIOVANNI",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "10:00",
+       "luogo": "Aula Ex Danimarca, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CECCHETTI MARCELLO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://uniss.coursecatalogue.cineca.it",
@@ -95762,6 +96196,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": "Aula Cicu, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ODONI MARIO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-02",
        "ora": "15:00",
        "luogo": null,
@@ -96312,6 +96758,18 @@
        "docenti": "CECCHETTI MARCELLO BAROZZI REGGIANI GIOVANNI",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "10:00",
+       "luogo": "Aula Ex Danimarca, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CECCHETTI MARCELLO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://uniss.coursecatalogue.cineca.it",
@@ -97851,6 +98309,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": "Aula Cicu, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ODONI MARIO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-02",
        "ora": "15:00",
        "luogo": null,
@@ -97975,7 +98445,7 @@
    "url": "https://dumas.uniss.it/it/didattica/future-e-futuri-studenti/progettazione-gestione-e-promozione-turistica-di-itinerari-della",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A005009",
@@ -100965,7 +101435,7 @@
    "url": "https://dumas.uniss.it/it/servizio_sociale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A001767",
@@ -104525,7 +104995,7 @@
    "url": "https://dumas.uniss.it/it/didattica/future-e-futuri-studenti/l-15-sviluppo-turistico-e-territori-digitali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A005009",
@@ -108357,7 +108827,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/corsi-di-studiotutte-le-informazioni/tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "3000901",
@@ -111639,7 +112109,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/corsi-di-studiotutte-le-informazioni/tecniche-di-radiologia-medica-immagini-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40004077",
@@ -114163,14 +114633,27 @@
        "citazione": "Pasqua G., Abbate G., Forni C. Botanica generale e diversità vegetale. Seconda edizione. PICCIN (2011), 592 pp."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "17:00",
+       "luogo": "Aula 2, Complesso sede Orto Botanico, via Piandanna (Primo Lotto)",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ALBANI DIEGO MARIA, BAGELLA SIMONETTA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://uniss.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "note": "Piano dell'ultima coorte attiva (2025): ordinamento senza iscritti al 1° anno",
      "id": "uniss-l-26-tecnologie-viticole-enologiche-alimentari-40000637",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "40000645",
@@ -116620,7 +117103,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-triennali-e-ciclo-unico/urbanistica-progetto-ambientale-della",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A003504",
@@ -120132,7 +120615,7 @@
    "url": "https://agrariaweb.uniss.it/it/didattica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A003361",
@@ -126055,7 +126538,7 @@
    "url": "https://www.dissuf.uniss.it/it/i-nostri-corsi/cds-lm-284-interclasse-archeologia-e-scienze-storiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A003422",
@@ -131241,7 +131724,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-magistrali/architettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A003157",
@@ -133542,7 +134025,7 @@
    "url": "https://www.medicina-chirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/biologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A000026",
@@ -134967,7 +135450,7 @@
    "url": "https://uniss.coursecatalogue.cineca.it/corsi/2026/11029",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A004835",
@@ -135419,7 +135902,7 @@
    "url": "https://veterinaria.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A005089",
@@ -137215,7 +137698,7 @@
    "url": "https://disea.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40003453",
@@ -138440,7 +138923,7 @@
    "url": "https://disea.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40000546",
@@ -140265,6 +140748,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "09:00",
+       "luogo": "Aula H, Centro Didattico Giurisprudenza",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BANO FABRIZIO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-01",
        "ora": "09:00",
        "luogo": null,
@@ -141016,7 +141511,7 @@
    "url": "https://www.dcf.uniss.it/it/i-nostri-corsi/corsi-di-studio/environmental-conservation-restoration-and-sustainability-scopri-di",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A004989",
@@ -144074,7 +144569,7 @@
    "url": "https://disea.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A002713",
@@ -145047,7 +145542,7 @@
    "url": "https://dumas.uniss.it/it/didattica/future-e-futuri-studenti/lettere-filologia-moderna-e-industria-culturale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40002575",
@@ -151093,7 +151588,7 @@
    "url": "https://dumas.uniss.it/it/didattica/future-e-futuri-studenti/lm38-lingue-e-letterature-straniere-la-mediazione-culturale-e-la",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A000307",
@@ -155362,7 +155857,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-magistrali/pianificazione-e-politiche-la-citta-lambiente-e-il",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A003444",
@@ -157154,7 +157649,7 @@
    "url": "https://agrariaweb.uniss.it/it/didattica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40003343",
@@ -157948,7 +158443,7 @@
    "url": "https://www.dcf.uniss.it/it/i-nostri-corsi/corsi-di-studio/scienze-chimiche-scopri-di-piu",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40000643",
@@ -159095,28 +159590,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "A004222",
-     "nome": "Metalli in Medicina",
-     "anno": 2,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "CHIM/03",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/19446/2025/9999?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://uniss.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "uniss-lm-54-scienze-chimiche-a004222",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "40005035",
      "nome": "Prova Finale",
      "anno": 2,
@@ -159391,6 +159864,29 @@
      "modalita_esame": "orale",
      "id": "uniss-lm-54-scienze-chimiche-a003540",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A004222",
+     "nome": "Metalli in Medicina",
+     "anno": 2,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "CHIM/03",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/19446/2025/9999?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniss.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "uniss-lm-54-scienze-chimiche-a004222",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://orario.uniss.it/AgendaStudenti/combo.php?sw=ec_&aa=2026&page=corsi"
     },
     {
      "codice": "40003696",
@@ -160904,7 +161400,7 @@
    "url": "https://giuriss.uniss.it/it/i-nostri-corsi/corsi-di-studio/corso-di-laurea-magistrale-interclasse-scienze-politiche-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A004948",
@@ -161349,6 +161845,18 @@
        "docenti": "TEBALDI MAURO CALARESU MARCO DE MICHELI CHIARA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "12:00",
+       "luogo": "Aula Zanetti, Centro Didattico Giurisprudenza",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "TEBALDI MAURO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -162282,7 +162790,7 @@
    "url": "https://agrariaweb.uniss.it/it/didattica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40101607",
@@ -163062,7 +163570,7 @@
    "url": "https://www.dissuf.uniss.it/it/i-nostri-corsi/cds-lm-7885-interclasse-scienze-filosofiche-e-pedagogiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A004886",
@@ -165890,7 +166398,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/corsi-di-studiotutte-le-informazioni/scienze-infermieristiche-e-ostetriche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40004077",
@@ -167429,6 +167937,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:00",
+       "luogo": "Aula Cossiga, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ALBERTI ANNA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-13",
        "ora": "10:00",
        "luogo": null,
@@ -167660,6 +168180,18 @@
        "docenti": "BANO FABRIZIO MARRAS MARIA CRISTINA DI MARTINO MARIA ANTONIETTA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "09:00",
+       "luogo": "Aula H, Centro Didattico Giurisprudenza",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BANO FABRIZIO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -168321,6 +168853,18 @@
        "docenti": "TEBALDI MAURO CALARESU MARCO DE MICHELI CHIARA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "12:00",
+       "luogo": "Aula Zanetti, Centro Didattico Giurisprudenza",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "TEBALDI MAURO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -169830,6 +170374,18 @@
        "docenti": "CHESSA OMAR ALBERTI ANNA BUFFONI LAURA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:00",
+       "luogo": "Aula Cossiga, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CHESSA OMAR, ALBERTI ANNA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -171833,6 +172389,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": "Aula C, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-26",
        "ora": "16:00",
        "luogo": null,
@@ -171842,6 +172410,18 @@
        "docenti": "MURA SALVATORE AMBROSINO RITA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:00",
+       "luogo": "Aula D, Ex Lettere e Filosofia",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "LOI ROBERTO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -173814,7 +174394,7 @@
    "url": "https://dumas.uniss.it/it/didattica/future-e-futuri-studenti/lm-87-servizio-sociale-e-politiche-sociali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40002327",
@@ -175943,7 +176523,7 @@
    "url": "https://agrariaweb.uniss.it/it/didattica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40004501",
@@ -179467,7 +180047,7 @@
    "url": "https://agrariaweb.uniss.it/it/didattica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40004077",
@@ -179524,28 +180104,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "uniss-lm-73-sistemi-forestali-mediterranei-a004499",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "A005041",
-     "nome": "Progettazione e Gestione delle Infrastrutture Verdi Urbane e Periurbane",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "AGRI-03/B",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/19865/2026/9999?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://uniss.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "uniss-lm-73-sistemi-forestali-mediterranei-a005041",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -179679,6 +180237,29 @@
      "id": "uniss-lm-73-sistemi-forestali-mediterranei-a004484",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/19587/2026/9999?coorte=2026"
+    },
+    {
+     "codice": "A005041",
+     "nome": "Progettazione e Gestione delle Infrastrutture Verdi Urbane e Periurbane",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "AGRI-03/B",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/19865/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniss.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "uniss-lm-73-sistemi-forestali-mediterranei-a005041",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://orario.uniss.it/AgendaStudenti/combo.php?sw=ec_&aa=2026&page=corsi"
     },
     {
      "codice": "A005038",
@@ -180675,7 +181256,7 @@
    "url": "https://www.veterinaria.uniss.it/en/didactics/masters-degree-wildlife-management-conservation-and-control-wmcc",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A002016",
@@ -181734,7 +182315,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/chimica-e-tecnologia-farmaceutiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40000904",
@@ -185539,7 +186120,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/farmacia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40004062",
@@ -186077,6 +186658,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "15:00",
+       "luogo": "Aula C, Via Muroni 23/a",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "VITALE GABRIELLA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
       {
        "tipo": "appello",
        "data": "2027-02-02",
@@ -186760,6 +187353,18 @@
        "docenti": "VITALE GABRIELLA CORONA PAOLA PALOMBA MICHELE FRANCESCO LUIGI",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "15:00",
+       "luogo": "Aula C, Via Muroni 23/a",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "VITALE GABRIELLA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -188509,6 +189114,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "15:00",
+       "luogo": "Aula E, Via Muroni 23/a",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CAMPESI ILARIA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-04",
        "ora": "09:00",
        "luogo": null,
@@ -190014,6 +190631,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "15:00",
+       "luogo": "Aula E, Via Muroni 23/a",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CAMPESI ILARIA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-04",
        "ora": "09:00",
        "luogo": null,
@@ -191104,7 +191733,7 @@
    "url": "https://giuriss.uniss.it/it/i-nostri-corsi/corsi-di-studio/corso-di-laurea-magistrale-ciclo-unico-giurisprudenza-scopri-di-piu",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40000583",
@@ -191157,6 +191786,18 @@
        "docenti": "CHESSA OMAR ALBERTI ANNA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:00",
+       "luogo": "Aula Cossiga, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CHESSA OMAR",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -191317,6 +191958,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": "Aula A, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SCANO ALESSIO DIEGO, DESOGUS MARCO, CUCCU FRANCESCO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-04",
        "ora": "10:00",
        "luogo": null,
@@ -191458,6 +192111,18 @@
        "docenti": "BAROZZI REGGIANI GIOVANNI CECCHETTI MARCELLO",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:00",
+       "luogo": "Aula H, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BAROZZI REGGIANI GIOVANNI",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://uniss.coursecatalogue.cineca.it",
@@ -191904,6 +192569,18 @@
        "docenti": "ONIDA PIETRO PAOLO ORTU ROSANNA MURONI ADRIANA SANTORU PIETRO GIOVANNI ANTONIO PIRAS VANNI RINOLFI CRISTIANA MARIA ANASTASIA SEAZZU GIOVANNI CARLO",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "15:30",
+       "luogo": "Aula B, Centro Didattico Giurisprudenza",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ONIDA PIETRO PAOLO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -193804,6 +194481,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "15:30",
+       "luogo": "Aula B, Centro Didattico Giurisprudenza",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ONIDA PIETRO PAOLO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-09",
        "ora": "08:30",
        "luogo": null,
@@ -195371,6 +196060,18 @@
        "docenti": "ALBERTI ANNA BUFFONI LAURA CHESSA OMAR",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:00",
+       "luogo": "Aula Cossiga, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ALBERTI ANNA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -198172,6 +198873,18 @@
        "docenti": "CECCHETTI MARCELLO BAROZZI REGGIANI GIOVANNI",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "10:00",
+       "luogo": "Aula Ex Danimarca, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CECCHETTI MARCELLO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://uniss.coursecatalogue.cineca.it",
@@ -198734,6 +199447,30 @@
        "docenti": "BARROCU GIOVANNI MELONI SALVATORE PORCU FRANCESCO RICCIO ANDREA SECHI PAOLA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "16:00",
+       "luogo": "Aula Delitala, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PORCU FRANCESCO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "08:30",
+       "luogo": "Aula Cicu, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DEMURO GIAMPAOLO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -199415,6 +200152,18 @@
        "docenti": "SCANO ALESSIO DIEGO CUCCU FRANCESCO DESOGUS MARCO",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": "Aula A, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SCANO ALESSIO DIEGO, DESOGUS MARCO, CUCCU FRANCESCO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -201105,6 +201854,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "08:30",
+       "luogo": "Aula C, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CORASANITI GIUSEPPE",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-01",
        "ora": "10:00",
        "luogo": null,
@@ -201898,6 +202659,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:00",
+       "luogo": "Aula Cossiga, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CHESSA OMAR, ALBERTI ANNA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-13",
        "ora": "10:00",
        "luogo": null,
@@ -202544,6 +203317,18 @@
        "docenti": "CECCHETTI MARCELLO BAROZZI REGGIANI GIOVANNI",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "10:00",
+       "luogo": "Aula Ex Danimarca, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CECCHETTI MARCELLO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://uniss.coursecatalogue.cineca.it",
@@ -203106,6 +203891,30 @@
        "docenti": "BARROCU GIOVANNI MELONI SALVATORE PORCU FRANCESCO RICCIO ANDREA SECHI PAOLA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "16:00",
+       "luogo": "Aula Delitala, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PORCU FRANCESCO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "08:30",
+       "luogo": "Aula Cicu, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DEMURO GIAMPAOLO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -203787,6 +204596,18 @@
        "docenti": "SCANO ALESSIO DIEGO CUCCU FRANCESCO DESOGUS MARCO",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": "Aula A, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SCANO ALESSIO DIEGO, DESOGUS MARCO, CUCCU FRANCESCO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -205477,6 +206298,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "08:30",
+       "luogo": "Aula C, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CORASANITI GIUSEPPE",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-01",
        "ora": "10:00",
        "luogo": null,
@@ -206270,6 +207103,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:00",
+       "luogo": "Aula Cossiga, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CHESSA OMAR, ALBERTI ANNA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-13",
        "ora": "10:00",
        "luogo": null,
@@ -206916,6 +207761,18 @@
        "docenti": "CECCHETTI MARCELLO BAROZZI REGGIANI GIOVANNI",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "10:00",
+       "luogo": "Aula Ex Danimarca, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CECCHETTI MARCELLO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://uniss.coursecatalogue.cineca.it",
@@ -207478,6 +208335,30 @@
        "docenti": "BARROCU GIOVANNI MELONI SALVATORE PORCU FRANCESCO RICCIO ANDREA SECHI PAOLA",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "16:00",
+       "luogo": "Aula Delitala, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PORCU FRANCESCO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "08:30",
+       "luogo": "Aula Cicu, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DEMURO GIAMPAOLO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -208159,6 +209040,18 @@
        "docenti": "SCANO ALESSIO DIEGO CUCCU FRANCESCO DESOGUS MARCO",
        "note": null,
        "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": "Aula A, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SCANO ALESSIO DIEGO, DESOGUS MARCO, CUCCU FRANCESCO",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -209849,6 +210742,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "08:30",
+       "luogo": "Aula C, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CORASANITI GIUSEPPE",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-01",
        "ora": "10:00",
        "luogo": null,
@@ -210642,6 +211547,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:00",
+       "luogo": "Aula Cossiga, Centro Didattico Giurisprudenza",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CHESSA OMAR, ALBERTI ANNA",
+       "note": null,
+       "fonte": "https://orario.uniss.it/AgendaStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-13",
        "ora": "10:00",
        "luogo": null,
@@ -210859,7 +211776,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/medicina-e-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A004705",
@@ -213986,28 +214903,6 @@
      "periodo_fonte": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/19175/2023/9999?coorte=2026"
     },
     {
-     "codice": "A003754",
-     "nome": "Attivita' Didattiche Elettive",
-     "anno": 4,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 1,
-     "ssd": "NN",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/19186/2023/9999?coorte=2023",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://uniss.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "uniss-lm-41-medicina-e-chirurgia-a003754-a4",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "A003750",
      "nome": "Chirurgia Cardio-toraco-vascolare",
      "anno": 4,
@@ -214584,6 +215479,29 @@
      "id": "uniss-lm-41-medicina-e-chirurgia-a003721-a4",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/19170/2023/9999?coorte=2026"
+    },
+    {
+     "codice": "A003754",
+     "nome": "Attivita' Didattiche Elettive",
+     "anno": 4,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 1,
+     "ssd": "NN",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/19186/2023/9999?coorte=2023",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniss.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "uniss-lm-41-medicina-e-chirurgia-a003754-a4",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://orario.uniss.it/AgendaStudenti/combo.php?sw=ec_&aa=2026&page=corsi"
     },
     {
      "codice": "40000867",
@@ -217368,7 +218286,7 @@
    "url": "http://veterinaria.uniss.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40001283",
@@ -221769,7 +222687,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/corsi-di-studiotutte-le-informazioni/odontoiatria-e-protesi-dentaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A004705",
@@ -223628,125 +224546,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "40003540",
-     "nome": "Ortodonzia",
-     "anno": 5,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 7,
-     "ssd": "MED/28",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/14178/2018/9999?coorte=2022",
-     "libri": [
-      {
-       "titolo": "Crescita cranio-facciale. Cides Odonto",
-       "autori": "D.H.Enlow",
-       "editore": "Internazionali",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
-       "citazione": "D.H.Enlow, Crescita cranio-facciale. Cides Odonto, Ed. Internazionali"
-      },
-      {
-       "titolo": "F.Falconi, Impostazione diagnostica obbiettivi e piano di trattamento in ortodonzia, Gruppo Editoria Cadmos, Milano",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
-       "citazione": "F.Falconi, Impostazione diagnostica obbiettivi e piano di trattamento in ortodonzia, Gruppo Editoria Cadmos, Milano"
-      },
-      {
-       "titolo": "Manuale di Ortodonzia, Scienza e Tecnica dentistica",
-       "autori": "R.E. Moyers",
-       "editore": "Internazionali",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
-       "citazione": "R.E. Moyers, Manuale di Ortodonzia, Scienza e Tecnica dentistica, Ed. Internazionali, Milano"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://uniss.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "uniss-lm-46-odontoiatria-e-protesi-dentaria-40003540",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "40003537",
-     "nome": "Parodontologia",
-     "anno": 5,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 5,
-     "ssd": "MED/28",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/14175/2018/9999?coorte=2022",
-     "libri": [
-      {
-       "titolo": "Chirurgia Estetica Mucogengivale. Zuchelli. Quintessenza",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
-       "citazione": "Chirurgia Estetica Mucogengivale. Zuchelli. Quintessenza"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-06",
-       "ora": null,
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-22",
-       "iscrizioni_al": "2026-10-04",
-       "docenti": "MELONI SILVIO MARIO CHESSA GIACOMO INNOCENZO",
-       "note": null,
-       "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-20",
-       "ora": "08:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-07",
-       "iscrizioni_al": "2026-10-18",
-       "docenti": "MELONI SILVIO MARIO CHESSA GIACOMO INNOCENZO",
-       "note": null,
-       "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://uniss.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "uniss-lm-46-odontoiatria-e-protesi-dentaria-40003537",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "40003538",
      "nome": "Patologia e Terapia Maxillo-facciale",
      "anno": 5,
@@ -223884,6 +224683,127 @@
      "modalita_esame": "orale",
      "id": "uniss-lm-46-odontoiatria-e-protesi-dentaria-40003559",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "40003540",
+     "nome": "Ortodonzia",
+     "anno": 5,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 7,
+     "ssd": "MED/28",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/14178/2018/9999?coorte=2022",
+     "libri": [
+      {
+       "titolo": "Crescita cranio-facciale. Cides Odonto",
+       "autori": "D.H.Enlow",
+       "editore": "Internazionali",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
+       "citazione": "D.H.Enlow, Crescita cranio-facciale. Cides Odonto, Ed. Internazionali"
+      },
+      {
+       "titolo": "F.Falconi, Impostazione diagnostica obbiettivi e piano di trattamento in ortodonzia, Gruppo Editoria Cadmos, Milano",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
+       "citazione": "F.Falconi, Impostazione diagnostica obbiettivi e piano di trattamento in ortodonzia, Gruppo Editoria Cadmos, Milano"
+      },
+      {
+       "titolo": "Manuale di Ortodonzia, Scienza e Tecnica dentistica",
+       "autori": "R.E. Moyers",
+       "editore": "Internazionali",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
+       "citazione": "R.E. Moyers, Manuale di Ortodonzia, Scienza e Tecnica dentistica, Ed. Internazionali, Milano"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniss.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniss-lm-46-odontoiatria-e-protesi-dentaria-40003540",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://orario.uniss.it/AgendaStudenti/combo.php?sw=ec_&aa=2026&page=corsi"
+    },
+    {
+     "codice": "40003537",
+     "nome": "Parodontologia",
+     "anno": 5,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 5,
+     "ssd": "MED/28",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/14175/2018/9999?coorte=2022",
+     "libri": [
+      {
+       "titolo": "Chirurgia Estetica Mucogengivale. Zuchelli. Quintessenza",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
+       "citazione": "Chirurgia Estetica Mucogengivale. Zuchelli. Quintessenza"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "MELONI SILVIO MARIO CHESSA GIACOMO INNOCENZO",
+       "note": null,
+       "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-20",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "MELONI SILVIO MARIO CHESSA GIACOMO INNOCENZO",
+       "note": null,
+       "fonte": "https://uniss.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://uniss.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniss-lm-46-odontoiatria-e-protesi-dentaria-40003537",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://orario.uniss.it/AgendaStudenti/combo.php?sw=ec_&aa=2026&page=corsi"
     },
     {
      "codice": "A000334",
@@ -224107,65 +225027,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "40003540",
-     "nome": "Ortodonzia",
-     "anno": 6,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 7,
-     "ssd": "MED/28",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/14178/2018/9999?coorte=2021",
-     "libri": [
-      {
-       "titolo": "Crescita cranio-facciale. Cides Odonto",
-       "autori": "D.H.Enlow",
-       "editore": "Internazionali",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
-       "citazione": "D.H.Enlow, Crescita cranio-facciale. Cides Odonto, Ed. Internazionali"
-      },
-      {
-       "titolo": "F.Falconi, Impostazione diagnostica obbiettivi e piano di trattamento in ortodonzia, Gruppo Editoria Cadmos, Milano",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
-       "citazione": "F.Falconi, Impostazione diagnostica obbiettivi e piano di trattamento in ortodonzia, Gruppo Editoria Cadmos, Milano"
-      },
-      {
-       "titolo": "Manuale di Ortodonzia, Scienza e Tecnica dentistica",
-       "autori": "R.E. Moyers",
-       "editore": "Internazionali",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
-       "citazione": "R.E. Moyers, Manuale di Ortodonzia, Scienza e Tecnica dentistica, Ed. Internazionali, Milano"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://uniss.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "uniss-lm-46-odontoiatria-e-protesi-dentaria-40003540-a6",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "40003537",
      "nome": "Parodontologia",
      "anno": 6,
@@ -224363,6 +225224,66 @@
      "modalita_esame": "orale",
      "id": "uniss-lm-46-odontoiatria-e-protesi-dentaria-40003559-a6",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "40003540",
+     "nome": "Ortodonzia",
+     "anno": 6,
+     "periodo": "2",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 7,
+     "ssd": "MED/28",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniss.coursecatalogue.cineca.it/insegnamenti/2026/14178/2018/9999?coorte=2021",
+     "libri": [
+      {
+       "titolo": "Crescita cranio-facciale. Cides Odonto",
+       "autori": "D.H.Enlow",
+       "editore": "Internazionali",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
+       "citazione": "D.H.Enlow, Crescita cranio-facciale. Cides Odonto, Ed. Internazionali"
+      },
+      {
+       "titolo": "F.Falconi, Impostazione diagnostica obbiettivi e piano di trattamento in ortodonzia, Gruppo Editoria Cadmos, Milano",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
+       "citazione": "F.Falconi, Impostazione diagnostica obbiettivi e piano di trattamento in ortodonzia, Gruppo Editoria Cadmos, Milano"
+      },
+      {
+       "titolo": "Manuale di Ortodonzia, Scienza e Tecnica dentistica",
+       "autori": "R.E. Moyers",
+       "editore": "Internazionali",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
+       "citazione": "R.E. Moyers, Manuale di Ortodonzia, Scienza e Tecnica dentistica, Ed. Internazionali, Milano"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniss.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniss-lm-46-odontoiatria-e-protesi-dentaria-40003540-a6",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://orario.uniss.it/AgendaStudenti/combo.php?sw=ec_&aa=2026&page=corsi"
     }
    ],
    "ammissione": {
@@ -224393,7 +225314,7 @@
    "url": "https://uniss.coursecatalogue.cineca.it/corsi/2026/11024",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A004792",

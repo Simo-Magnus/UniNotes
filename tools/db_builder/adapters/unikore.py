@@ -93,7 +93,7 @@ def fetch_ateneo(uid: str = "unikore", anno: int | None = None, max_cds: int | N
         per_nome.setdefault(_norm(re.sub(r"\s+[–-]\s+sede di\s+.*$", "", x["title"], flags=re.I)), []).append(x)
     abbinati = []
     for corso in corsi:
-        nome = _norm(re.sub(r"(?i)\s*\(.*?\)|\s+replica\s+.*$", "", corso["nome"]))
+        nome = _norm(re.sub(r"(?i)\s*\(.*?\)|\s+replica\s+.*$|\s+-\s+profilo\s+.*$", "", corso["nome"]))
         cand = per_nome.get(nome) or []
         replica = re.search(r"(?i)replica\s+(\w+)", corso["nome"])
         if replica:

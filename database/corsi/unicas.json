@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unicas",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=ccd3d390-cdc2-439f-9400-cf0f849740d5&mode=CourseDetail&iso=ita&academicYear=2025",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "30001",
@@ -59,12 +59,49 @@
      ],
      "url": "https://unicas-public.gomp.it/PublicData?uid=cacba69f-d15f-4e06-9a1f-5cfeb480805a&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "09:00",
+       "luogo": "aula 1.2",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "Pansini Michele",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "09:00",
+       "luogo": "aula 1.1",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "Pansini Michele",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "09:00",
+       "luogo": "aula 1.1",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "Pansini Michele",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=cacba69f-d15f-4e06-9a1f-5cfeb480805a&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "id": "unicas-l-7-civil-and-environmental-engineering-32346",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "95014",
@@ -334,12 +371,37 @@
      ],
      "url": "https://unicas-public.gomp.it/PublicData?uid=cacba69f-d15f-4e06-9a1f-5cfeb480805a&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-26",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Wyss Jeffery",
+       "note": "Autunnale",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:00",
+       "luogo": "studio",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "Wyss Jeffery",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=cacba69f-d15f-4e06-9a1f-5cfeb480805a&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "id": "unicas-l-7-civil-and-environmental-engineering-30006",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "96141",
@@ -369,12 +431,49 @@
        "citazione": "Martin S. Silberberg, Chimica, Mcgraw Hill"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "16:00",
+       "luogo": "aula 2s.2",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "Pansini Michele",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "16:00",
+       "luogo": "aula 2s.2",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "Pansini Michele",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "16:00",
+       "luogo": "aula 2s.2",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "Pansini Michele",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=cacba69f-d15f-4e06-9a1f-5cfeb480805a&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-l-7-civil-and-environmental-engineering-96141",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "96146",
@@ -474,7 +573,7 @@
    "url": "https://www.unicas.it/computer-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "95975",
@@ -793,7 +892,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=8926dcac-9d40-4068-bee1-d3d24e6d5738&mode=CourseDetail&iso=ita&academicYear=2023",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "92424",
@@ -1319,7 +1418,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=3e3bf717-ec17-4fb9-8c94-7b4f6a9d1bd9&mode=CourseDetail&iso=ita&academicYear=2023",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "92424",
@@ -1961,7 +2060,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=cf2d2d49-76d9-4b4c-9787-d49523e8c851&mode=CourseDetail&iso=ita&academicYear=2023",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "91764",
@@ -2303,7 +2402,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=539e3281-7a03-4c3a-914a-8305223bec11&mode=CourseDetail&iso=eng&academicYear=2024",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -2563,7 +2662,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?mode=classRoomList&academicYear=2023&iso=ita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "96158",
@@ -2776,12 +2875,49 @@
        "citazione": "Martin S. Silberberg, Chimica, Mcgraw Hill"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "16:00",
+       "luogo": "aula 2s.2",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "Pansini Michele",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "16:00",
+       "luogo": "aula 2s.2",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "Pansini Michele",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "16:00",
+       "luogo": "aula 2s.2",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "Pansini Michele",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=689398dd-dc01-4b90-81c0-7f9b2a3ae51e&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-l-9-industrial-engineering-technology-94656",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "94661",
@@ -2847,7 +2983,7 @@
    "url": "https://www.unicas.it/ingegneria-informazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "30001",
@@ -3224,12 +3360,37 @@
        "citazione": "TIPLER, MOSCA, Corso di Fisica, elettricità, magnetismo, ottica, 4a edizione, Ed. ZANICHELLI"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-26",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Wyss Jeffery",
+       "note": "Autunnale",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:00",
+       "luogo": "studio",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "Wyss Jeffery",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=e38d55ec-cc4d-4fb2-b5be-058e697519be&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-l-8-ingegneria-dell-informazione-30006",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "32341",
@@ -3290,7 +3451,7 @@
    "url": "https://www.unicas.it/ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "31502",
@@ -3585,7 +3746,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=d6da5978-b321-44f6-bf99-a4a00d7f07a4&mode=CourseDetail&iso=ita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "30001",
@@ -3697,12 +3858,49 @@
        "citazione": "Martin S. Silberberg, Chimica, Mcgraw Hill"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "Pansini Michele",
+       "note": "Anticipata",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "Pansini Michele",
+       "note": "Anticipata",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "Pansini Michele",
+       "note": "Anticipata",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=960ac380-a499-4c2d-b149-bc0921beadeb&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-l-9-ingegneria-industriale-96201",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "32354",
@@ -3712,7 +3910,7 @@
      "cfu": 6,
      "ssd": "IIND-03/B",
      "obbligatorio": true,
-     "curriculum": "Elettrica",
+     "curriculum": "Elettrica, Meccanica",
      "docenti": [
       "Speranza Domenico"
      ],
@@ -3947,12 +4145,37 @@
        "citazione": "TIPLER, MOSCA, Corso di Fisica, elettricità, magnetismo, ottica, 4a edizione, Ed. ZANICHELLI"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-26",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Wyss Jeffery",
+       "note": "Autunnale",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:00",
+       "luogo": "studio",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "Wyss Jeffery",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=960ac380-a499-4c2d-b149-bc0921beadeb&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-l-9-ingegneria-industriale-30006",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "92368",
@@ -3981,12 +4204,49 @@
        "citazione": "H. Schildt, “Guida al C++”, McGraw-Hill, 3/ed."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "De Stefano Claudio",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-31",
+       "docenti": "De Stefano Claudio",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "De Stefano Claudio",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=960ac380-a499-4c2d-b149-bc0921beadeb&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-l-9-ingegneria-industriale-92368",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "curricula": [
@@ -4011,7 +4271,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=7e2019ef-a85b-4a7d-acb2-99b71d25c2e5&mode=CourseDetail&iso=ita&academicYear=2024",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40443",
@@ -4745,7 +5005,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=3d70db27-6414-4342-b6b3-9a477f5440c0&mode=CourseDetail&iso=ita&academicYear=2024",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -5029,7 +5289,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?mode=classRoomList&academicYear=2024&iso=ita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "92537",
@@ -5278,7 +5538,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?iso=ita&academicYear=2024",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -5693,7 +5953,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=32f42e7f-24ae-43bd-a5a3-26768d719567&mode=CourseDetail&iso=ita&academicYear=2023",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "96235",
@@ -5955,7 +6215,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=180e12a5-168d-4851-a2db-3dc9fb2cc3eb&mode=CourseDetail&iso=ita&academicYear=2024",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "90016",
@@ -6133,6 +6393,18 @@
        "modalita": "orale",
        "iscrizioni_dal": "2026-01-21",
        "iscrizioni_al": "2026-12-12",
+       "docenti": "Pasquino Paola",
+       "note": "Autunnale",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-01-21",
+       "iscrizioni_al": "2026-12-13",
        "docenti": "Pasquino Paola",
        "note": "Autunnale",
        "fonte": "https://unicas-public.gomp.it/PublicData"
@@ -6561,7 +6833,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=bea775ea-7659-457d-aec3-99475a945510&mode=CourseDetail&iso=ita&academicYear=2023",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "40309",
@@ -7232,7 +7504,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=e55b4389-7ded-4ea7-a48a-aff9ecb0276c&mode=CourseDetail&iso=ita&academicYear=2024",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "95038",
@@ -7577,7 +7849,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=adbd6c1f-8e70-486b-accb-887dbfb2225f&mode=CourseDetail&iso=ita&academicYear=2024",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "96221",
@@ -7721,12 +7993,73 @@
        "citazione": "Gonzales de Vallejo L. & Ferrer M. - Geoingegneria. Pearson Prentice Hall."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-16",
+       "docenti": "Fiorucci Matteo",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "Fiorucci Matteo",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "Fiorucci Matteo",
+       "note": "Anticipata",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "Fiorucci Matteo",
+       "note": "Anticipata",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "Fiorucci Matteo",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=2e209d46-e35b-482f-8a96-ce80a4c5498d&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-lm-23-civil-and-environmental-engineering-95021",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "",
@@ -7986,12 +8319,49 @@
        "citazione": "Lambe, T. W., & Whitman, R. V. (1991). Soil mechanics (Vol. 10). John Wiley & Sons."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "10:00",
+       "luogo": "aula 1n.3",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "Salvatore Erminio",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "10:00",
+       "luogo": "aula 1n.3",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-24",
+       "docenti": "Salvatore Erminio",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "10:00",
+       "luogo": "aula 1n.3",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-16",
+       "docenti": "Salvatore Erminio",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=2e209d46-e35b-482f-8a96-ce80a4c5498d&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-lm-23-civil-and-environmental-engineering-95025",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "31675",
@@ -8099,7 +8469,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=c681f0d9-18e5-48e7-862b-b78d28adc69f&mode=CourseDetail&iso=ita&academicYear=2023",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "91893",
@@ -8148,6 +8518,18 @@
      "url": "https://unicas-public.gomp.it/PublicData?uid=0e42a4cf-d74e-49c8-a715-500a7fac5bb1&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": null,
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "Bocci Corrado",
+       "note": null,
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-17",
@@ -8483,7 +8865,7 @@
      "cfu": 12,
      "ssd": "ECON-01/A, ECON-04/A",
      "obbligatorio": true,
-     "curriculum": "ECONOMICS AND ENTREPRENEURSHIP",
+     "curriculum": "ECONOMICS AND ENTREPRENEURSHIP, DUAL DEGREE ECONOMICS AND ENTREPRENEURSHIP@UNICAS - ECONOMICS@ODESSA",
      "docenti": [],
      "url": "https://unicas-public.gomp.it/PublicData?uid=0e42a4cf-d74e-49c8-a715-500a7fac5bb1&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [],
@@ -8555,7 +8937,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=cc760ba4-8a1f-4123-8f08-d861c512184e&mode=CourseDetail&iso=ita&academicYear=2023",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "95069",
@@ -8678,6 +9060,18 @@
      "url": "https://unicas-public.gomp.it/PublicData?uid=fe63ba19-c828-4fea-b58e-f5e3464784b0&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": null,
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "Bocci Corrado",
+       "note": null,
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-17",
@@ -8958,7 +9352,7 @@
      "cfu": 8,
      "ssd": "PAED-01/A, PHIL-02/A",
      "obbligatorio": true,
-     "curriculum": "Dual Degree Global Economy and Business (Unicas) - Applied economics (UIB)",
+     "curriculum": "Dual Degree Global Economy and Business (Unicas) - Applied economics (UIB), Dual Degree Global Economy and Business (Unicas) - Behavioral economics (UIB)",
      "docenti": [],
      "url": "https://unicas-public.gomp.it/PublicData?uid=fe63ba19-c828-4fea-b58e-f5e3464784b0&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [],
@@ -9429,7 +9823,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?mode=classRoomList&academicYear=2024&iso=ita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "30332",
@@ -9494,12 +9888,49 @@
        "citazione": "E. Cosenza, G. Maddaloni, G. Magluilo, M. Pecce, R. Ramasco, Progetto Antisismico di Edifici in Cemento Armato, IUSS Press, 2007."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-16",
+       "docenti": "Rasulo Alessandro",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "Rasulo Alessandro",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "Rasulo Alessandro",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=67eff9a2-bf20-4f1c-99c5-598adfdc0a96&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-lm-35-lm-23-ingegneria-civile-per-l-ambiente-e-il-territorio-30332",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "93375",
@@ -9657,6 +10088,42 @@
        "docenti": "Saroli Michele",
        "note": "Straordinaria",
        "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "09:30",
+       "luogo": "aula 1n.2",
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-16",
+       "docenti": "Saroli Michele",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "09:30",
+       "luogo": "aula 1n.2",
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "Saroli Michele",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "09:30",
+       "luogo": "aula 1n.2",
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "Saroli Michele",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
       }
      ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=67eff9a2-bf20-4f1c-99c5-598adfdc0a96&mode=CourseDetail&iso=ita&academicYear=2026",
@@ -9726,12 +10193,49 @@
        "citazione": "Earth Pressure and Earth-Retaining Structures, Clayton, C.R.I., Militisky, J. and Woods, R.I. (1986) Earth Pressure and Earth-Retaining Structures , London, GB. Taylor & Francis, 408pp."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:00",
+       "luogo": "AULA 1N.3",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "Modoni Giuseppe",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "09:00",
+       "luogo": "AULA 1N.3",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-24",
+       "docenti": "Modoni Giuseppe",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "09:00",
+       "luogo": "AULA 1N.3",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-16",
+       "docenti": "Modoni Giuseppe",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=67eff9a2-bf20-4f1c-99c5-598adfdc0a96&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-lm-35-lm-23-ingegneria-civile-per-l-ambiente-e-il-territorio-92816",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "url_catalogo": "https://unicas-public.gomp.it/PublicData?uid=67eff9a2-bf20-4f1c-99c5-598adfdc0a96&mode=CourseDetail&iso=ita&academicYear=2026"
@@ -9752,7 +10256,7 @@
    "url": "https://www.unicas.it/ingegneria-elettrica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "30159",
@@ -9807,6 +10311,42 @@
        "docenti": "Ventre Salvatore",
        "note": "Straordinaria",
        "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "10:00",
+       "luogo": "aula 1.3",
+       "modalita": "scritto+orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "Ventre Salvatore",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "10:00",
+       "luogo": "aula 1.3",
+       "modalita": "scritto+orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-31",
+       "docenti": "Ventre Salvatore",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "10:00",
+       "luogo": "aula 1.3",
+       "modalita": "scritto+orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "Ventre Salvatore",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
       }
      ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=c01e6e43-0b0c-4457-978b-4997d5aac388&mode=CourseDetail&iso=ita&academicYear=2026",
@@ -9842,12 +10382,49 @@
        "citazione": "Bonivento, Melchiorri, Zanasi: Sistemi di controllo Digitale. Progetto Leonardo, Bologna"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "15:00",
+       "luogo": "studio - stanza n.117",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-18",
+       "docenti": "Fusco Giuseppe",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "15:00",
+       "luogo": "studio - stanza n.117",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-01",
+       "docenti": "Fusco Giuseppe",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "15:00",
+       "luogo": "studio - stanza n.117",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "Fusco Giuseppe",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=c01e6e43-0b0c-4457-978b-4997d5aac388&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-lm-28-ingegneria-elettrica-92360",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "90326",
@@ -9948,12 +10525,25 @@
        "citazione": "G. Carpinelli, V. Mangoni: Introduzione ai sistemi elettrici per l'energia, Edizioni dell'Università degli Studi di Cassino, Cassino 2001"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "10:00",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-05-15",
+       "iscrizioni_al": "2026-09-09",
+       "docenti": "Verde Paola",
+       "note": "Estiva",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=c01e6e43-0b0c-4457-978b-4997d5aac388&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-lm-28-ingegneria-elettrica-32383",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "96270",
@@ -10041,12 +10631,49 @@
        "citazione": "Elementi di sistemi energetici: progettazione termodinamica, stato dell’arte e applicazioni-S.P. Cicconardi, A. Perna, EUC (Edizioni Università di Cassino)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "10:00",
+       "luogo": "- studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "Perna Alessandra",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "10:00",
+       "luogo": "- studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-31",
+       "docenti": "Perna Alessandra",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "10:00",
+       "luogo": "- studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "Perna Alessandra",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=c01e6e43-0b0c-4457-978b-4997d5aac388&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-lm-28-ingegneria-elettrica-92097",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "url_catalogo": "https://unicas-public.gomp.it/PublicData?uid=c01e6e43-0b0c-4457-978b-4997d5aac388&mode=CourseDetail&iso=ita&academicYear=2026"
@@ -10067,7 +10694,7 @@
    "url": "https://www.unicas.it/ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "31502",
@@ -10362,7 +10989,7 @@
    "url": "https://www.unicas.it/ingegneria-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "94676",
@@ -10760,6 +11387,42 @@
        "docenti": "Antonelli Gianluca",
        "note": "Straordinaria",
        "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "09:00",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "Antonelli Gianluca",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "09:00",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-01",
+       "docenti": "Antonelli Gianluca",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "09:00",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "Antonelli Gianluca",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
       }
      ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=7a2db4cd-37ad-47ea-8465-b3b892d4ffac&mode=CourseDetail&iso=ita&academicYear=2026",
@@ -10875,7 +11538,7 @@
      "cfu": 6,
      "ssd": "IINF-05/A",
      "obbligatorio": true,
-     "curriculum": "Computer Vision and Robotics – Double Degree with Université Bourgogne Europe (UNICAS-UBE)",
+     "curriculum": "Computer Vision and Robotics – Double Degree with Université Bourgogne Europe (UNICAS-UBE), Intelligenza Artificiale e Robotica",
      "docenti": [
       "Molinara Mario",
       "Scotto Di Freca Alessandra"
@@ -11232,12 +11895,25 @@
        "citazione": "H. K. Khalil, Nonlinear Control. Upper Saddle River, NJ: Pearson, 2015."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-23",
+       "ora": "14:00",
+       "luogo": "studio docente",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-21",
+       "docenti": "Arrichiello Filippo",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=7a2db4cd-37ad-47ea-8465-b3b892d4ffac&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-lm-32-ingegneria-informatica-95597",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "curricula": [
@@ -11265,7 +11941,7 @@
    "url": "https://unicas-public.gomp.it/Off?internalCode=7056",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "32429",
@@ -11316,12 +11992,49 @@
        "citazione": "\"Misure Termofluidodinamiche\", P.Vigo, M.Dell'Isola e G.Ficco - Editrice lilbreriauniversitaria.it"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "09:30",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "Ficco Giorgio",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "09:30",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "Ficco Giorgio",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-22",
+       "ora": "09:30",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "Ficco Giorgio",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=6c2afc24-d328-4c10-8c0a-9896dec13fe5&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-lm-33-ingegneria-meccanica-32558",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "32428",
@@ -11384,6 +12097,42 @@
        "modalita": "orale",
        "iscrizioni_dal": "2026-09-28",
        "iscrizioni_al": "2026-11-08",
+       "docenti": "Polini Wilma",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "Polini Wilma",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-31",
+       "docenti": "Polini Wilma",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-16",
        "docenti": "Polini Wilma",
        "note": "Straordinaria",
        "fonte": "https://unicas-public.gomp.it/PublicData"
@@ -11572,12 +12321,49 @@
        "citazione": "Le turbomacchine motrici e operatrici - S. Sandrolini, G. Naldi - Edizioni Pitagora. Turbomacchine - C. Pfleiderer, H. Peterman - Tecniche Nuove."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "Galloni Enzo",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-25",
+       "docenti": "Galloni Enzo",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "10:00",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-08",
+       "docenti": "Galloni Enzo",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=6c2afc24-d328-4c10-8c0a-9896dec13fe5&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-lm-33-ingegneria-meccanica-30378",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "curricula": [
@@ -11602,7 +12388,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=7bdc4888-0421-44be-9f10-3468b63b5437&mode=CourseDetail&iso=ita&academicYear=2023",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "92814",
@@ -12585,7 +13371,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=4de534b5-d092-49d1-b7c8-16b46bbba672&mode=CourseDetail&iso=ita&academicYear=2024",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "92408",
@@ -13003,7 +13789,7 @@
    "url": "https://unicas-public.gomp.it/publicData?uid=29ba4c36-7fff-4cba-b698-0e77e1404384&mode=CourseDetail&iso=ita&academicYear=2024",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "91779",
@@ -13721,7 +14507,7 @@
    "url": "http://www.mechanicalengineering.unicas.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "32429",
@@ -13772,12 +14558,49 @@
        "citazione": "\"Misure Termofluidodinamiche\", P.Vigo, M.Dell'Isola e G.Ficco - Editrice lilbreriauniversitaria.it"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "09:30",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "Ficco Giorgio",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "09:30",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "Ficco Giorgio",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-22",
+       "ora": "09:30",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "Ficco Giorgio",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=6c2afc24-d328-4c10-8c0a-9896dec13fe5&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-lm-33-mechanical-engineering-32558",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "32428",
@@ -13840,6 +14663,42 @@
        "modalita": "orale",
        "iscrizioni_dal": "2026-09-28",
        "iscrizioni_al": "2026-11-08",
+       "docenti": "Polini Wilma",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "Polini Wilma",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-31",
+       "docenti": "Polini Wilma",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-16",
        "docenti": "Polini Wilma",
        "note": "Straordinaria",
        "fonte": "https://unicas-public.gomp.it/PublicData"
@@ -14028,12 +14887,49 @@
        "citazione": "Le turbomacchine motrici e operatrici - S. Sandrolini, G. Naldi - Edizioni Pitagora. Turbomacchine - C. Pfleiderer, H. Peterman - Tecniche Nuove."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "Galloni Enzo",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-25",
+       "docenti": "Galloni Enzo",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "10:00",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-08",
+       "docenti": "Galloni Enzo",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=6c2afc24-d328-4c10-8c0a-9896dec13fe5&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-lm-33-mechanical-engineering-30378",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "curricula": [
@@ -14058,7 +14954,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=acba00f2-ee3f-44f0-8a1d-6596c4d15fb1&mode=CourseDetail&iso=ita&academicYear=2023",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "93885",
@@ -14468,7 +15364,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=4e564561-7096-4fc4-b17e-93be7e2d09fa&mode=CourseDetail&iso=ita&academicYear=2023",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -14818,7 +15714,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=d6781112-d870-4c91-8026-074ef852be6d&mode=CourseDetail&iso=ita&academicYear=2023",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "90737",
@@ -15149,7 +16045,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=40c4dff8-0eb4-4cd0-9e5b-40b1702eff62&mode=CourseDetail&iso=ita&academicYear=2023",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "90290",
@@ -15336,12 +16232,25 @@
      "docenti": [],
      "url": "https://unicas-public.gomp.it/PublicData?uid=d98be8b1-5506-4f43-8125-0894960b4cc5&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "09:00",
+       "luogo": "L'orario definitivo di convocazione sarà comunicato dal Centro Linguistico",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2022-04-26",
+       "iscrizioni_al": "2026-12-07",
+       "docenti": "Aprile Aurora",
+       "note": "Estiva",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=d98be8b1-5506-4f43-8125-0894960b4cc5&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "id": "unicas-lm-85-scienze-pedagogiche-90291",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "95618",
@@ -15467,7 +16376,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=4fc30c72-689d-4151-a173-960529d0a23c&mode=CourseDetail&iso=ita&academicYear=2023",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "93849",
@@ -16078,7 +16987,7 @@
    "url": "https://www.unicas.it/telecommunications-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "91216",
@@ -16360,12 +17269,49 @@
        "citazione": "Erik Dahlman, Stefan Parkvall and Johan Sköld “5G NR: The next generation wireless technology”, Elsevier."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-17",
+       "docenti": "D'andrea Carmen",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-31",
+       "docenti": "D'andrea Carmen",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "D'andrea Carmen",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=4e60491e-e08a-463c-907b-e284a2dbf7de&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unicas-lm-27-telecommunications-engineering-ingegneria-delle-telecomunica-90830",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "90828",
@@ -16418,6 +17364,42 @@
        "docenti": "Migliore Marco Donald",
        "note": "Straordinaria",
        "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-12",
+       "docenti": "Migliore Marco Donald",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-26",
+       "docenti": "Migliore Marco Donald",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-08",
+       "docenti": "Migliore Marco Donald",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
       }
      ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=4e60491e-e08a-463c-907b-e284a2dbf7de&mode=CourseDetail&iso=ita&academicYear=2026",
@@ -16438,12 +17420,49 @@
      "docenti": [],
      "url": "https://unicas-public.gomp.it/PublicData?uid=4e60491e-e08a-463c-907b-e284a2dbf7de&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "15:00",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "Alfano Giuseppa",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-08",
+       "ora": "15:00",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "Alfano Giuseppa",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-19",
+       "ora": "15:00",
+       "luogo": "studio",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-17",
+       "docenti": "Alfano Giuseppa",
+       "note": "Straordinaria",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      }
+     ],
      "fonte": "https://unicas-public.gomp.it/PublicData?uid=4e60491e-e08a-463c-907b-e284a2dbf7de&mode=CourseDetail&iso=ita&academicYear=2026",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "id": "unicas-lm-27-telecommunications-engineering-ingegneria-delle-telecomunica-90831",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "curricula": [
@@ -16470,7 +17489,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=86cfb8a8-7b01-4b32-aaea-ea204874e992&mode=CourseDetail&iso=ita&academicYear=2024",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "92902",
@@ -16677,6 +17696,18 @@
        "modalita": "orale",
        "iscrizioni_dal": "2026-01-21",
        "iscrizioni_al": "2026-12-12",
+       "docenti": "Pasquino Paola",
+       "note": "Autunnale",
+       "fonte": "https://unicas-public.gomp.it/PublicData"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-01-21",
+       "iscrizioni_al": "2026-12-13",
        "docenti": "Pasquino Paola",
        "note": "Autunnale",
        "fonte": "https://unicas-public.gomp.it/PublicData"
@@ -17000,7 +18031,7 @@
    "url": "https://unicas-public.gomp.it/PublicData?uid=a6d850d7-1f4f-482d-9eac-76210a17d719&mode=CourseDetail&iso=ita&academicYear=2024",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "94605",

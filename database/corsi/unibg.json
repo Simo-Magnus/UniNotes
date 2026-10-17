@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unibg",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-14",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://lt-det.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB2",
@@ -1924,7 +1924,7 @@
    "url": "https://lt-dini.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLFRAB1",
@@ -2381,6 +2381,18 @@
        "docenti": "HORNILLOS CANDELA MARIA JESUS",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "08:30",
+       "luogo": "Lab. 7 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Garrido Rodriguez Maria Dolores",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -2927,6 +2939,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "10:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Leporini Roberto",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-08",
        "ora": "09:00",
        "luogo": null,
@@ -3349,6 +3373,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "10:30",
+       "luogo": "Lab. 7 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Crepaldi Gabriella",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-19",
        "ora": "10:00",
        "luogo": null,
@@ -3563,6 +3599,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "08:30",
+       "luogo": "Aula 7 Moroni, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Conti Andrea",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "09:00",
        "luogo": null,
@@ -3696,6 +3744,18 @@
        "docenti": "COMI EMANUELE BANI ELISABETTA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "12:30",
+       "luogo": "Aula 6 Moroni, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Comi Emanuele",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -7724,7 +7784,7 @@
    "url": "https://lt-eco.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB2",
@@ -8239,6 +8299,18 @@
        "docenti": "VITALI SEBASTIANO ORTOBELLI LOZZA SERGIO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "09:00",
+       "luogo": "Lab. 7 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Nardelli Carla",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -9458,6 +9530,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "08:30",
+       "luogo": "Lab. 7 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Garrido Rodriguez Maria Dolores",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-18",
        "ora": "09:00",
        "luogo": null,
@@ -9876,6 +9960,30 @@
        "docenti": "BASSANI GAIA VIVIANA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "08:30",
+       "luogo": "Aula 1 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Cattaneo Cristiana",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "11:00",
+       "luogo": "Aula 1 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Bassani Gaia Viviana",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -10779,6 +10887,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "14:30",
+       "luogo": "Aula 1 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Pilonato Silvia",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-13",
        "ora": "14:00",
        "luogo": null,
@@ -11563,6 +11683,18 @@
        "docenti": "BRUGNOLI ALBERTO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "14:30",
+       "luogo": "Aula 4 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Brugnoli Alberto",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -16867,7 +16999,7 @@
    "url": "https://lt-ea.unibg.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB2",
@@ -17675,6 +17807,18 @@
        "docenti": "COSMA ANTONIO ORTOBELLI LOZZA SERGIO BERTINI CESARINO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "09:00",
+       "luogo": "Lab. 9 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Cosma Antonio",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -19832,6 +19976,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "08:30",
+       "luogo": "Lab. 7 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Garrido Rodriguez Maria Dolores",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-18",
        "ora": "09:00",
        "luogo": null,
@@ -20442,6 +20598,30 @@
        "docenti": "BASSANI GAIA VIVIANA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "08:30",
+       "luogo": "Aula 1 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Cattaneo Cristiana",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "11:00",
+       "luogo": "Aula 1 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Bassani Gaia Viviana",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -21519,6 +21699,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "14:30",
+       "luogo": "Aula 1 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Pilonato Silvia",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-13",
        "ora": "14:00",
        "luogo": null,
@@ -22192,6 +22384,18 @@
        "docenti": "BRUGNOLI ALBERTO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "14:30",
+       "luogo": "Aula 4 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Brugnoli Alberto",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -26775,7 +26979,7 @@
    "url": "https://lt-fil.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "10609",
@@ -31478,7 +31682,7 @@
    "url": "https://lt-ie.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB1",
@@ -36262,7 +36466,7 @@
    "url": "https://lt-its.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB1",
@@ -38687,6 +38891,18 @@
        "docenti": "COLOMBO ALESSANDRO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "10:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Colombo Alessandro",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -39095,6 +39311,18 @@
        "docenti": "LANZARONE ETTORE",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "10:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Lanzarone Ettore",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -40562,7 +40790,7 @@
    "url": "https://lt-tesea.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB1",
@@ -43704,13 +43932,26 @@
        "fonte": "https://readings.unibg.it/leganto/public/39BRG_INST/lists?courseCode=39096"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "13:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Bombardieri Enzo",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibg-l-9-ingegneria-delle-tecnologie-per-la-sostenibilita-energetica-39096",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "39055",
@@ -44332,6 +44573,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "10:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Massa Francesco Carlo",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-09",
        "ora": "08:30",
        "luogo": null,
@@ -44391,7 +44644,7 @@
    "url": "https://lt-tea.unibg.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB1",
@@ -44863,6 +45116,18 @@
        "docenti": "SCANDELLA MATTEO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "08:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Bosio Andrea Odille",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -46957,7 +47222,7 @@
    "url": "https://lt-ig.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB1",
@@ -48385,6 +48650,18 @@
        "docenti": "GIANGRANDE PAOLO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Scandella Matteo",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -49264,6 +49541,18 @@
        "docenti": "PELLEGRINI GIUSEPPE IGINIO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Pellegrini Giuseppe Iginio",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -50781,7 +51070,7 @@
    "url": "https://lt-ii.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB1",
@@ -54623,7 +54912,7 @@
    "url": "https://lt-im.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB1",
@@ -55838,6 +56127,18 @@
        "docenti": "COCCHETTI GIUSEPPE",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "15:00",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Cocchetti Giuseppe",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -56681,6 +56982,18 @@
        "docenti": "GAIONI LUIGI",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Gaioni Luigi",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -59297,6 +59610,18 @@
        "docenti": "GAIARDELLI PAOLO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Gaiardelli Paolo",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -59957,13 +60282,26 @@
        "fonte": "https://readings.unibg.it/leganto/public/39BRG_INST/lists?courseCode=39096"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "13:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Bombardieri Enzo",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibg-l-9-ingegneria-meccanica-39096",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "39055",
@@ -60407,6 +60745,18 @@
        "docenti": "PELLEGRINI GIUSEPPE IGINIO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Pellegrini Giuseppe Iginio",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -60864,7 +61214,7 @@
    "url": "https://lt-let.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "24125",
@@ -62657,6 +63007,18 @@
        "docenti": "HORNILLOS CANDELA MARIA JESUS",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "08:30",
+       "luogo": "Lab. 7 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Garrido Rodriguez Maria Dolores",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -70214,7 +70576,7 @@
    "url": "https://lt-llsm.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "13R054",
@@ -90689,7 +91051,7 @@
    "url": "https://lt-se.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB1",
@@ -97680,7 +98042,7 @@
    "url": "https://lt-sdc.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "92019",
@@ -98624,6 +98986,18 @@
        "docenti": "HORNILLOS CANDELA MARIA JESUS",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "08:30",
+       "luogo": "Lab. 7 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Garrido Rodriguez Maria Dolores",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -104020,7 +104394,7 @@
    "url": "https://lt-sms.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB1",
@@ -106306,7 +106680,7 @@
    "url": "https://lt-spsg.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SP-70011",
@@ -110249,7 +110623,7 @@
    "url": "https://lt-spsi.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB1",
@@ -113415,7 +113789,7 @@
    "url": "https://ls-ags.unibg.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "179003-ENG",
@@ -114362,6 +114736,18 @@
        "docenti": "HORNILLOS CANDELA MARIA JESUS",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "08:30",
+       "luogo": "Lab. 7 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Garrido Rodriguez Maria Dolores",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -122546,7 +122932,7 @@
    "url": "https://ls-cie.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "93256",
@@ -125313,7 +125699,7 @@
    "url": "https://ls-cmc.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB2",
@@ -133618,7 +134004,7 @@
    "url": "https://ls-dumci.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLFRAB2",
@@ -135583,6 +135969,18 @@
        "docenti": "BRUGNOLI ALBERTO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "08:30",
+       "luogo": "Aula 22 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Lucarelli Stefano",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "prova_in_itinere",
@@ -137607,6 +138005,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "14:30",
+       "luogo": "Aula 21 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Brunelli Michele",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-07",
        "ora": "09:00",
        "luogo": null,
@@ -139296,6 +139706,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "08:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Licini Stefania",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-17",
        "ora": "08:30",
        "luogo": null,
@@ -139770,7 +140192,7 @@
    "url": "https://ls-eadap.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "90034",
@@ -140577,6 +140999,18 @@
        "docenti": "HORNILLOS CANDELA MARIA JESUS",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "08:30",
+       "luogo": "Lab. 7 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Garrido Rodriguez Maria Dolores",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -146663,7 +147097,7 @@
    "url": "https://ls-eda.unibg.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "110015-ENG",
@@ -148158,6 +148592,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "09:00",
+       "luogo": "Aula 1 Moroni, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Cincinelli Peter",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-13",
@@ -150258,7 +150704,7 @@
    "url": "https://ls-ef.unibg.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "162003-ENG",
@@ -150639,6 +151085,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "09:00",
+       "luogo": "Aula 1 Moroni, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Cincinelli Peter",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-13",
@@ -154491,7 +154949,7 @@
    "url": "https://ls-fil.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "181001",
@@ -159303,7 +159761,7 @@
    "url": "https://ls-finbag.unibg.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "165001",
@@ -160443,7 +160901,7 @@
    "url": "https://ls-ges.unibg.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCLENGB2",
@@ -163664,7 +164122,7 @@
    "url": "https://ls-geou.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "156001",
@@ -165249,7 +165707,7 @@
    "url": "https://ls-ie.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "60077",
@@ -165884,6 +166342,18 @@
        "docenti": "CARDACI ALESSIO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "14:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Cardaci Alessio",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -165975,6 +166445,18 @@
        "docenti": "GARDA EMANUELE",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Garda Emanuele",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -167041,6 +167523,18 @@
        "docenti": "BELLERI ANDREA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "10:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Ferrari Rosalba",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -167967,6 +168461,18 @@
        "docenti": "BELLERI ANDREA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Belleri Andrea",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -169317,13 +169823,26 @@
        "fonte": "https://readings.unibg.it/leganto/public/39BRG_INST/lists?courseCode=20110"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "10:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Resmini Monica",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibg-lm-24-ingegneria-delle-costruzioni-edili-20110-1",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "60123-1",
@@ -170414,7 +170933,7 @@
    "url": "https://ls-tesea.unibg.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "102R008",
@@ -171655,7 +172174,7 @@
    "url": "https://ls-ig.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "37216",
@@ -171952,6 +172471,18 @@
        "docenti": "LAGORIO ALEXANDRA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Pinto Roberto",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -172438,6 +172969,18 @@
        "docenti": "SCOTTI DAVIDE",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "10:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Scotti Davide",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -173242,6 +173785,18 @@
        "docenti": "BRUMANA MARA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Brumana Mara",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -173343,13 +173898,26 @@
      ],
      "url": "https://unibg.coursecatalogue.cineca.it/insegnamenti/2026/9185_49145_40707/2025/9185?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Pala Daniele",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibg-lm-31-ingegneria-gestionale-175000-m2",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "37240",
@@ -177087,6 +177655,18 @@
        "docenti": "RAVASIO CHIARA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Ravasio Chiara",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "stato_libri": "completo",
@@ -177129,7 +177709,7 @@
    "url": "https://ls-ii.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "38003",
@@ -178890,13 +179470,26 @@
        "fonte": "https://readings.unibg.it/leganto/public/39BRG_INST/lists?courseCode=148008"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-29",
+       "ora": "14:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Regazzoni Daniele",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibg-lm-32-ingegneria-informatica-148008-m1",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "22023",
@@ -181995,13 +182588,26 @@
        "fonte": "https://readings.unibg.it/leganto/public/39BRG_INST/lists?courseCode=38091"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "13:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Maggioni Francesca",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibg-lm-32-ingegneria-informatica-38091-mod1",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "21069",
@@ -183213,7 +183819,7 @@
    "url": "https://ls-im.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "39203",
@@ -183827,6 +184433,18 @@
        "docenti": "RAVASIO CHIARA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Ravasio Chiara",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -189738,6 +190356,18 @@
        "docenti": "RAVASIO CHIARA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Ravasio Chiara",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -189842,6 +190472,18 @@
        "docenti": "MACCARINI GIANCARLO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "12:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Maccarini Giancarlo",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -189946,6 +190588,18 @@
        "docenti": "MACCARINI GIANCARLO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "12:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Maccarini Giancarlo",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -190050,6 +190704,18 @@
        "docenti": "MACCARINI GIANCARLO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "12:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Maccarini Giancarlo",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -193372,13 +194038,26 @@
        "fonte": "https://readings.unibg.it/leganto/public/39BRG_INST/lists?courseCode=39096"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "13:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Bombardieri Enzo",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibg-lm-33-ingegneria-meccanica-39096",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "39055",
@@ -194489,6 +195168,18 @@
        "docenti": "RAVASIO CHIARA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Ravasio Chiara",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "stato_libri": "completo",
@@ -194582,7 +195273,7 @@
    "url": "https://ls-islli.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "57258-ENG",
@@ -199712,6 +200403,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "14:30",
+       "luogo": "Aula 21 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Brunelli Michele",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-07",
        "ora": "09:00",
        "luogo": null,
@@ -202063,6 +202766,18 @@
        "docenti": "BRUGNOLI ALBERTO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "08:30",
+       "luogo": "Aula 22 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Lucarelli Stefano",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "prova_in_itinere",
@@ -205657,7 +206372,7 @@
    "url": "https://ls-imm.unibg.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "134005-ENG",
@@ -206008,6 +206723,18 @@
        "docenti": "HORNILLOS CANDELA MARIA JESUS",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "08:30",
+       "luogo": "Lab. 7 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Garrido Rodriguez Maria Dolores",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -212064,7 +212791,7 @@
    "url": "https://ls-lmcci.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "28R017",
@@ -219537,7 +220264,7 @@
    "url": "https://ls-ig.unibg.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "37194-ENG",
@@ -220803,6 +221530,18 @@
        "docenti": "BRUMANA MARA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Brumana Mara",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -221798,7 +222537,7 @@
    "url": "https://ls-mif.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "90003",
@@ -223055,7 +223794,7 @@
    "url": "https://ls-mec.unibg.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "161001",
@@ -226481,6 +227220,18 @@
        "docenti": "SANTINELLI JASMINE",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "12:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Gaioni Luigi",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -227108,6 +227859,18 @@
        "docenti": "BELLERI ANDREA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "10:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Ferrari Rosalba",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -227208,6 +227971,18 @@
        "docenti": "PELLEGRINI GIUSEPPE IGINIO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Pellegrini Giuseppe Iginio",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -227491,6 +228266,18 @@
        "docenti": "MACCARINI GIANCARLO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "12:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Maccarini Giancarlo",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -227595,6 +228382,18 @@
        "docenti": "MACCARINI GIANCARLO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "12:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Maccarini Giancarlo",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -229115,6 +229914,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Brugali Davide",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-05",
        "ora": "15:30",
        "luogo": null,
@@ -229872,13 +230683,26 @@
        "fonte": "https://readings.unibg.it/leganto/public/39BRG_INST/lists?courseCode=39096"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "13:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Bombardieri Enzo",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibg-lm-33-mechatronics-and-smart-technology-engineering-39096",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "39055",
@@ -230751,6 +231575,18 @@
        "docenti": "RAVASIO CHIARA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Ravasio Chiara",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "stato_libri": "completo",
@@ -230793,7 +231629,7 @@
    "url": "https://ls-mede.unibg.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "175014",
@@ -230967,6 +231803,18 @@
        "docenti": "LANZARONE ETTORE",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "10:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Lanzarone Ettore",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unibg.coursecatalogue.cineca.it",
@@ -231181,6 +232029,18 @@
        "docenti": "LANZARONE ETTORE",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "10:30",
+       "luogo": "Studio del docente",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Lanzarone Ettore",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -233480,7 +234340,7 @@
    "url": "https://ls-pfma.unibg.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "CCL001",
@@ -235558,7 +236418,7 @@
    "url": "https://ls-pmts.unibg.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "44156-ENG",
@@ -238766,7 +239626,7 @@
    "url": "https://ls-pcvai.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "UNISAL",
@@ -241277,6 +242137,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Garda Emanuele",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-11",
        "ora": "09:30",
        "luogo": null,
@@ -243217,7 +244089,7 @@
    "url": "https://ls-pc.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "64078",
@@ -248088,7 +248960,7 @@
    "url": "https://ls-pscoc.unibg.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "100R009",
@@ -248696,7 +249568,7 @@
    "url": "https://ls-smdas.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "178009",
@@ -249939,7 +250811,7 @@
    "url": "https://ls-sped.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "84044",
@@ -253710,7 +254582,7 @@
    "url": "https://ls-vpcm.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "176001",
@@ -259836,7 +260708,7 @@
    "url": "https://ls-wmi.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "98R003",
@@ -261465,7 +262337,7 @@
    "url": "https://lm-giu.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "19028",
@@ -261543,6 +262415,18 @@
        "docenti": "TROILO SILVIO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "14:30",
+       "luogo": "Aula 14 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Troilo Silvio",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -262046,6 +262930,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "10:30",
+       "luogo": "Aula 13 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Sandona' Alan",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "09:00",
        "luogo": null,
@@ -262319,6 +263215,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "08:30",
+       "luogo": "Lab. 7 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Garrido Rodriguez Maria Dolores",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-18",
        "ora": "09:00",
        "luogo": null,
@@ -262486,6 +263394,18 @@
        "docenti": "CREPALDI GABRIELLA ANDREIS MASSIMO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "10:30",
+       "luogo": "Lab. 7 Caniana, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Crepaldi Gabriella",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -262785,6 +263705,18 @@
        "docenti": "LOCATELLI FRANCESCA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "11:30",
+       "luogo": "Aula 7 Moroni, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Locatelli Francesca",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -263631,6 +264563,18 @@
        "docenti": "CONTI ANDREA PASTA ALESSANDRO",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "08:30",
+       "luogo": "Aula 7 Moroni, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Conti Andrea",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -266781,6 +267725,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "12:30",
+       "luogo": "aula virtuale",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Del Bo' Corrado",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-14",
        "ora": "09:00",
        "luogo": null,
@@ -267226,6 +268182,18 @@
        "docenti": "COMI EMANUELE BANI ELISABETTA",
        "note": null,
        "fonte": "https://unibg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "12:30",
+       "luogo": "Aula 6 Moroni, Caniana Moroni",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Comi Emanuele",
+       "note": null,
+       "fonte": "https://logistica.unibg.it/PortaleStudenti/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -269863,7 +270831,7 @@
    "url": "https://lm-giugdf.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "GDF002",
@@ -271600,7 +272568,7 @@
    "url": "https://lm-sfp.unibg.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "139003",

@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unicusano",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unicusano.it/sociologia-comunicazione/digitale-social-media",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -558,12 +558,39 @@
      "docenti": [],
      "url": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-comunicazione-digitale-e-social-media",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Prova Finale",
+       "data": "2026-10-27",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-27",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "Roldan Veronica Emilia",
+       "note": "SEDUTA DI LAUREA - 27 OTTOBRE 2026",
+       "fonte": "https://sophia.unicusano.it/appelli?f=26"
+      },
+      {
+       "tipo": "appello",
+       "titolo": "Prova Finale",
+       "data": "2026-10-27",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-27",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "Tarquini Federico",
+       "note": "SEDUTA DI LAUREA - 27 OTTOBRE 2026",
+       "fonte": "https://sophia.unicusano.it/appelli?f=26"
+      }
+     ],
      "fonte": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-comunicazione-digitale-e-social-media",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-20-comunicazione-digitale-e-social-media-prova-finale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -605,7 +632,7 @@
    "url": "https://www.unicusano.it/economia/corso-di-laurea-in-economia-aziendale-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -1108,7 +1135,7 @@
    "url": "https://www.unicusano.it/lettere/corso-di-laurea-triennale-in-filosofia-applicata",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -1571,7 +1598,7 @@
    "url": "https://www.unicusano.it/ingegneria/corso-di-laurea-in-ingegneria-civile-curriculum-strutture-l-7",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -1650,12 +1677,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Fisica Generale I",
+       "data": "2026-12-04",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Oliva Pietro",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-7-ingegneria-civile-fisica-generale-i",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1671,12 +1712,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Complementi di Geometria",
+       "data": "2026-12-04",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Donno Alfredo",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-7-ingegneria-civile-geometria",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1692,12 +1747,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Informatica",
+       "data": "2026-12-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Drago Carlo",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-7-ingegneria-civile-informatica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1713,12 +1782,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Istituzioni di matematica",
+       "data": "2026-12-03",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "D'Angeli Daniele",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-7-ingegneria-civile-istituzioni-di-matematica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1734,12 +1817,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Probabilita e Statistica",
+       "data": "2026-12-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Drago Carlo",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-7-ingegneria-civile-probabilita-e-statistica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1755,12 +1852,39 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Disegno",
+       "data": "2026-12-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Papa Stefano",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      },
+      {
+       "tipo": "appello",
+       "titolo": "Laboratorio di Disegno e Cad",
+       "data": "2026-12-03",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Tanga Eride",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-7-ingegneria-civile-disegno",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1776,12 +1900,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Fisica Tecnica",
+       "data": "2026-12-03",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Lombardi Simone",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-7-ingegneria-civile-fisica-tecnica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1797,12 +1935,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Idraulica",
+       "data": "2026-12-02",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Di Francesco Silvia",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-7-ingegneria-civile-idraulica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1818,12 +1970,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Inglese",
+       "data": "2026-12-01",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Gentile Gaia",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-7-ingegneria-civile-inglese",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1839,12 +2005,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Fondamenti di Scienza delle Costruzioni",
+       "data": "2026-12-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Roscini Francesca",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-7-ingegneria-civile-scienza-delle-costruzioni",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1881,12 +2061,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Tecnica ed Economia dei Trasporti",
+       "data": "2026-12-04",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "DelleSite Paolo",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-7-ingegneria-civile-tecnica-ed-economia-dei-trasporti",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1942,12 +2136,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Geotecnica",
+       "data": "2026-12-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Cacciotti Martina",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-7-ingegneria-civile-geotecnica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2043,12 +2251,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Topografia",
+       "data": "2026-12-02",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Giannone Francesca",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=10"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-l-7-curriculum-strutture",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-7-ingegneria-civile-topografia",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "url_catalogo": "https://www.unicusano.it/ingegneria/corso-di-laurea-in-ingegneria-civile-curriculum-strutture-l-7"
@@ -2069,7 +2291,7 @@
    "url": "https://www.unicusano.it/ingegneria/corso-laurea-ingegneria-informatica-triennale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -2127,12 +2349,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "BASI DI DATI",
+       "data": "2026-12-03",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Pasquini Daniele",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=18"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-8-ingegneria-elettronica-e-informatica-basi-di-dati",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2148,12 +2384,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "FISICA GENERALE II",
+       "data": "2026-12-04",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Oliva Pietro",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=18"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-8-ingegneria-elettronica-e-informatica-fisica-generale-i",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2169,12 +2419,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "GEOMETRIA",
+       "data": "2026-12-04",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Donno Alfredo",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=18"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-8-ingegneria-elettronica-e-informatica-geometria",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2190,12 +2454,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "INFORMATICA",
+       "data": "2026-12-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Drago Carlo",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=18"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-8-ingegneria-elettronica-e-informatica-informatica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2211,12 +2489,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "ISTITUZIONI DI MATEMATICA",
+       "data": "2026-12-03",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "D'Angeli Daniele",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=18"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-8-ingegneria-elettronica-e-informatica-istituzioni-di-matematica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2232,12 +2524,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "PROBABILITA' E STATISTICA",
+       "data": "2026-12-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Drago Carlo",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=18"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-8-ingegneria-elettronica-e-informatica-probabilita-e-statistica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2253,12 +2559,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "ARCHITETTURA DEGLI ELABORATORI E SISTEMI OPERATIVI",
+       "data": "2026-12-03",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Monteleone Salvatore",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=18"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-8-ingegneria-elettronica-e-informatica-architettura-degli-elaboratori-e-sistemi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2274,12 +2594,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "CAMPI ELETTROMAGNETICI",
+       "data": "2026-12-01",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Vellucci Stefano",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=18"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-8-ingegneria-elettronica-e-informatica-campi-elettromagnetici",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2358,12 +2692,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "FISICA GENERALE II",
+       "data": "2026-12-04",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Oliva Pietro",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=18"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-8-ingegneria-elettronica-e-informatica-fisica-generale-ii",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2377,12 +2725,26 @@
      "docenti": [],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "INGLESE",
+       "data": "2026-12-01",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Gentile Gaia",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=18"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-8-ingegneria-elettronica-e-informatica-inglese",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2417,12 +2779,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "PROGRAMMAZIONE AD OGGETTI",
+       "data": "2026-12-03",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Longo Minnolo Antonino",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=18"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-8-ingegneria-elettronica-e-informatica-programmazione-ad-oggetti",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2457,12 +2833,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "RETI DI CALCOLATORI",
+       "data": "2026-12-03",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Farina Giovanni",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=18"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-triennale-l-8-curriculum-informatica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-8-ingegneria-elettronica-e-informatica-reti-di-calcolatori",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2544,7 +2934,7 @@
    "url": "https://www.unicusano.it/ingegneria/corso-di-laurea-in-ingegneria-ind-meccanica-triennale-classe-l-9",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -2623,12 +3013,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Fisica Generale I",
+       "data": "2026-12-04",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Oliva Pietro",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=11"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-9-ingegneria-industriale-fisica-generale-i",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2644,12 +3048,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Geometria",
+       "data": "2026-12-04",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Donno Alfredo",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=11"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-9-ingegneria-industriale-geometria",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2665,12 +3083,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Informatica",
+       "data": "2026-12-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Drago Carlo",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=11"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-9-ingegneria-industriale-informatica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2686,12 +3118,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Lingua Inglese",
+       "data": "2026-12-01",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Gentile Gaia",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=11"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-9-ingegneria-industriale-inglese",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2707,12 +3153,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Istituzioni di Matematica",
+       "data": "2026-12-03",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "D'Angeli Daniele",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=11"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-9-ingegneria-industriale-istituzioni-di-matematica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2728,12 +3188,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Disegno Industriale",
+       "data": "2026-12-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Papa Stefano",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=11"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-9-ingegneria-industriale-disegno-industriale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2791,12 +3265,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Fondamenti di Scienza delle Costruzioni",
+       "data": "2026-12-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Nerilli Francesca",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=11"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-9-ingegneria-industriale-fondamenti-di-scienza-delle-costruzioni",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2813,12 +3301,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Meccanica Applicata alle Macchine",
+       "data": "2026-12-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Giannini Oliviero",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=11"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-9-ingegneria-industriale-meccanica-applicata-alle-macchine",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2834,12 +3336,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Tecnologia meccanica",
+       "data": "2026-12-02",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-25",
+       "docenti": "Guarino Stefano",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=11"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-9-ingegneria-industriale-tecnologia-meccanica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2856,12 +3372,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Termodinamica Applicata",
+       "data": "2026-12-03",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Lombardi Simone",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=11"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-9-ingegneria-industriale-termodinamica-applicata",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2877,12 +3407,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Elementi Costruttivi delle Macchine",
+       "data": "2026-12-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Panciroli Riccardo",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=11"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-9-ingegneria-industriale-elementi-costruttivi-delle-macchine",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -2918,12 +3462,39 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Macchine e Impianti Ospedalieri",
+       "data": "2026-12-01",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Mendecka Barbara",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=11"
+      },
+      {
+       "tipo": "appello",
+       "titolo": "Costruzioni di Macchine",
+       "data": "2026-12-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Panciroli Riccardo",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=11"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-l-9-curriculum-meccanico",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-9-ingegneria-industriale-macchine",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -3024,7 +3595,7 @@
    "url": "https://www.unicusano.it/scienze-della-formazione/laurea-scienze-formazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -3252,12 +3823,39 @@
      ],
      "url": "https://www.unicusano.it/scienze-della-formazione/piano-di-studi-scienze-dell-educazione-e-della-formazione-curriculum-servizi-educativi-infanzia-l-19",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Pedagogia Sociale e Laboratorio",
+       "data": "2026-11-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "Retinò Adele",
+       "note": "Pedagogia Sociale e Laboratorio -Novembre",
+       "fonte": "https://sophia.unicusano.it/appelli?f=8"
+      },
+      {
+       "tipo": "appello",
+       "titolo": "Pedagogia Sociale e Laboratorio",
+       "data": "2027-02-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-21",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "Retinò Adele",
+       "note": "Pedagogia Sociale e Laboratorio - Febbraio 2027",
+       "fonte": "https://sophia.unicusano.it/appelli?f=8"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-della-formazione/piano-di-studi-scienze-dell-educazione-e-della-formazione-curriculum-servizi-educativi-infanzia-l-19",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-19-scienze-dell-educazione-e-della-formazione-pedagogia-sociale-e-laboratorio-faraoni",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -3273,12 +3871,39 @@
      ],
      "url": "https://www.unicusano.it/scienze-della-formazione/piano-di-studi-scienze-dell-educazione-e-della-formazione-curriculum-servizi-educativi-infanzia-l-19",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Pedagogia Speciale e Laboratorio",
+       "data": "2026-11-23",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-29",
+       "iscrizioni_al": "2026-11-20",
+       "docenti": "Olivieri Diana",
+       "note": "Pedagogia Speciale e Laboratorio -Novembre",
+       "fonte": "https://sophia.unicusano.it/appelli?f=8"
+      },
+      {
+       "tipo": "appello",
+       "titolo": "Pedagogia Speciale e Laboratorio",
+       "data": "2027-02-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "Olivieri Diana",
+       "note": "Pedagogia Speciale e Laboratorio -Febbraio 2027",
+       "fonte": "https://sophia.unicusano.it/appelli?f=8"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-della-formazione/piano-di-studi-scienze-dell-educazione-e-della-formazione-curriculum-servizi-educativi-infanzia-l-19",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-19-scienze-dell-educazione-e-della-formazione-pedagogia-speciale-e-laboratorio",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -3482,7 +4107,7 @@
    "url": "https://www.unicusano.it/psicologia/corso-di-laurea-in-scienze-e-tecniche-psicologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -3935,7 +4560,7 @@
    "url": "https://www.unicusano.it/scienze-motorie/triennale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -3951,12 +4576,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Anatomia",
+       "data": "2026-12-02",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Ciccarelli Antonello",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-anatomia",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -3972,12 +4611,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Attività motoria di base",
+       "data": "2026-12-02",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Guidetti Laura",
+       "note": "APPELLO ORALE ROMA - Per la prenotazione (iscritti 25/26 e 26/27) inviare mail in segreteria",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-attivita-motoria-di-base",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -3993,12 +4646,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Biologia e Biochimica",
+       "data": "2026-12-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Magi Fiorenza",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-biologia-e-biochimica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -4035,12 +4702,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Informatica",
+       "data": "2026-12-04",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Acciai Alessandro",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-informatica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -4056,12 +4737,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Psicologia generale",
+       "data": "2026-12-02",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "D'Aleo Ettore",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-psicologia-generale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -4079,12 +4774,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Sport Individuali",
+       "data": "2026-12-02",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-11",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "Guidetti Laura",
+       "note": "APPELLO ORALE ROMA - Per la prenotazione inviare mail in segreteria",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-sport-individuali",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -4142,12 +4851,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Endocrinologia",
+       "data": "2026-12-02",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Greco Emanuela",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-endocrinologia",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -4185,12 +4908,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Pedagogia applicata alle attività motorie",
+       "data": "2026-12-01",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Migliorati Mascia",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-pedagogia-applicata-alle-attivita-motori",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -4206,12 +4943,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Psicologia dello sviluppo",
+       "data": "2026-12-01",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Capobianco Micaela",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-psicologia-dello-sviluppo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -4227,12 +4978,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Traumatologia",
+       "data": "2026-12-03",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Rizzello Giacomo",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-traumatologia-e-medicina-dellattivita-mo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -4249,12 +5014,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Attività motoria adattata",
+       "data": "2026-12-01",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Curzi Davide",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-attivita-motoria-adattata",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -4268,12 +5047,26 @@
      "docenti": [],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Diritto privato dello sport",
+       "data": "2026-12-01",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Matteucci Massimiliano",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-diritto-privato-dello-sport",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -4290,12 +5083,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Economia e contabilità delle aziende sportive",
+       "data": "2026-12-01",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Miglio Claudio",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-economia-e-contabilita-delle-aziende-spo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -4331,12 +5138,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Giochi sportivi",
+       "data": "2026-12-03",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-11",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "Polidori Antonio",
+       "note": "APPELLO ORALE ROMA - Per la prenotazione inviare mail in segreteria",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-giochi-sportivil",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -4352,12 +5173,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Igiene e prevenzione negli impianti sportivi",
+       "data": "2026-12-02",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-02",
+       "iscrizioni_al": "2026-11-25",
+       "docenti": "Valeriani Federica",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=22"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-22-scienze-motorie-igiene-e-prevenzione-negli-impianti-spor",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -4416,7 +5251,7 @@
    "url": "https://www.unicusano.it/scienze-politiche/corso-di-laurea-in-scienze-politiche-e-delle-relazioni-internazionali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -4851,7 +5686,7 @@
    "url": "https://www.unicusano.it/sociologia-comunicazione/scienze-sociali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -5241,12 +6076,26 @@
      "docenti": [],
      "url": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-scienze-sociali-l-40",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Prova Finale",
+       "data": "2026-10-26",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-26",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "Luzi Michela",
+       "note": "SEDUTA DI LAUREA - 26 OTTOBRE 2026",
+       "fonte": "https://sophia.unicusano.it/appelli?f=21"
+      }
+     ],
      "fonte": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-scienze-sociali-l-40",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-40-scienze-sociali-prova-finale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -5349,10 +6198,678 @@
    "erogazione": "Corso di studio integralmente a distanza",
    "interateneo": false,
    "url": "https://www.unicusano.it/lettere/corso-di-laurea-in-studi-umanistici-l-10",
-   "stato": "da_aggiungere",
+   "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
-   "insegnamenti": []
+   "verificato_il": "2026-10-17",
+   "insegnamenti": [
+    {
+     "nome": "Fondamenti di lingua latina di base A",
+     "anno": 1,
+     "cfu": 6,
+     "ssd": "LATI-01/A",
+     "periodo": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-fondamenti-di-lingua-latina-di-base-a",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Gasbarro",
+     "anno": 1,
+     "cfu": 12,
+     "ssd": "STAN-01/B HIST-03/A GEOG-01/A",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-gasbarro",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Grammatica normativa della lingua italiana (seminario laboratoriale di analisi del testo)",
+     "anno": 1,
+     "cfu": 6,
+     "ssd": "LIFI-01/A",
+     "periodo": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-grammatica-normativa-della-lingua-italia",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Letteratura italiana (seminario laboratoriale di analisi del testo letterario)",
+     "anno": 1,
+     "cfu": 12,
+     "ssd": "ITAL-01/A",
+     "periodo": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-letteratura-italiana-seminario-laborator",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Linguistica generale (seminario laboratoriale di fonetica)",
+     "anno": 1,
+     "cfu": 6,
+     "ssd": "GLOT-01/A",
+     "periodo": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-linguistica-generale-seminario-laborator",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Profilo di storia linguistica italiana dalla formazione alla contemporaneità",
+     "anno": 1,
+     "cfu": 6,
+     "ssd": "LIFI-01/A",
+     "periodo": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-profilo-di-storia-linguistica-italiana-d",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Storia contemporanea",
+     "anno": 1,
+     "cfu": 12,
+     "ssd": "STAN-01/B HIST-03/A GEOG-01/A",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-storia-contemporanea",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Storia romana",
+     "anno": 1,
+     "cfu": 12,
+     "ssd": "STAN-01/B HIST-03/A GEOG-01/A",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-storia-romana",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Vincenti",
+     "anno": 1,
+     "cfu": 12,
+     "ssd": "STAN-01/B HIST-03/A GEOG-01/A",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-vincenti",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Fondamenti di lingua latina di base B (seminario laboratoriale di traduzione)",
+     "anno": 2,
+     "cfu": 6,
+     "ssd": "LATI-01/A",
+     "periodo": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-fondamenti-di-lingua-latina-di-base-b-se",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Glottodidattica",
+     "anno": 2,
+     "cfu": 6,
+     "ssd": "GLOT-01/B PHIL-04/B",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-glottodidattica",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Letteratura italiana 2 (seminario laboratoriale di filologia del testo letterario)",
+     "anno": 2,
+     "cfu": 6,
+     "ssd": "ITAL-01/A",
+     "periodo": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-letteratura-italiana-2-seminario-laborat",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Letteratura italiana contemporanea nel contesto europeo 2 (seminario laboratoriale di letterature comparate)",
+     "anno": 2,
+     "cfu": 6,
+     "ssd": "LICO-01/A",
+     "periodo": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-letteratura-italiana-contemporanea-nel-c",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Storia medievale",
+     "anno": 2,
+     "cfu": 12,
+     "ssd": "HIST-01/A HIST-02/A",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-storia-medievale",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Storia moderna",
+     "anno": 2,
+     "cfu": 12,
+     "ssd": "HIST-01/A HIST-02/A",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-storia-moderna",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Teoria dei linguaggi e dei nuovi media",
+     "anno": 2,
+     "cfu": 6,
+     "ssd": "GLOT-01/B PHIL-04/B",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-teoria-dei-linguaggi-e-dei-nuovi-media",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Testi e linguaggi del teatro e della letteratura italiana",
+     "anno": 2,
+     "cfu": 6,
+     "ssd": "LIFI-01/B",
+     "periodo": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-testi-e-linguaggi-del-teatro-e-della-let",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "1 esame da 12 cfu o 2 da 6 a scelta",
+     "anno": 3,
+     "cfu": 12,
+     "ssd": null,
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-1-esame-da-12-cfu-o-2-da-6-a-scelta",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Abilità informatiche con approfondimenti di pensiero computazionale e coding",
+     "anno": 3,
+     "cfu": 6,
+     "ssd": "INFO-01/A",
+     "periodo": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-abilita-informatiche-con-approfondimenti",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Antropologia culturale",
+     "anno": 3,
+     "cfu": 18,
+     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-antropologia-culturale",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Filologia classica",
+     "anno": 3,
+     "cfu": 6,
+     "ssd": "GLOT-01/A GLOT-01/A FICP -01/A",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-filologia-classica",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Fondamenti di psicologia generale",
+     "anno": 3,
+     "cfu": 18,
+     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-fondamenti-di-psicologia-generale",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Lingua e linguistica della lingua inglese 02",
+     "anno": 3,
+     "cfu": 18,
+     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-lingua-e-linguistica-della-lingua-ingles",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Lingua inglese – ulteriori conoscenze linguistiche",
+     "anno": 3,
+     "cfu": 6,
+     "ssd": "ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-lingua-inglese-ulteriori-conoscenze-ling",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Linguistica storica (seminario laboratoriale di filologia comparata dell’antichità)",
+     "anno": 3,
+     "cfu": 6,
+     "ssd": "GLOT-01/A GLOT-01/A FICP -01/A",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-linguistica-storica-seminario-laboratori",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Media Studies",
+     "anno": 3,
+     "cfu": 18,
+     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-media-studies",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Pedagogia speciale – seminario laboratoriale",
+     "anno": 3,
+     "cfu": 18,
+     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-pedagogia-speciale-seminario-laboratoria",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Prova finale",
+     "anno": 3,
+     "cfu": 6,
+     "ssd": null,
+     "periodo": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-prova-finale",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Ricerca educativa e analisi dei dati",
+     "anno": 3,
+     "cfu": 18,
+     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-ricerca-educativa-e-analisi-dei-dati",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Sociolinguistica e pragmatica",
+     "anno": 3,
+     "cfu": 6,
+     "ssd": "GLOT-01/A GLOT-01/A FICP -01/A",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-sociolinguistica-e-pragmatica",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Sociologia della comunicazione",
+     "anno": 3,
+     "cfu": 18,
+     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-sociologia-della-comunicazione",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Storia contemporanea – seminario laboratoriale di analisi delle fonti",
+     "anno": 3,
+     "cfu": 6,
+     "ssd": "STAN-01/A STAN-01/B HIST-01/A HIST-02/A HIST-03/A ARTE-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-storia-contemporanea-seminario-laborator",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Storia dell’arte contemporanea",
+     "anno": 3,
+     "cfu": 6,
+     "ssd": "STAN-01/A STAN-01/B HIST-01/A HIST-02/A HIST-03/A ARTE-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-storia-dellarte-contemporanea",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Storia greca",
+     "anno": 3,
+     "cfu": 6,
+     "ssd": "STAN-01/A STAN-01/B HIST-01/A HIST-02/A HIST-03/A ARTE-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-storia-greca",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Storia medievale – seminario laboratoriale di analisi delle fonti",
+     "anno": 3,
+     "cfu": 6,
+     "ssd": "STAN-01/A STAN-01/B HIST-01/A HIST-02/A HIST-03/A ARTE-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-storia-medievale-seminario-laboratoriale",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Storia moderna – seminario laboratoriale di analisi delle fonti",
+     "anno": 3,
+     "cfu": 6,
+     "ssd": "STAN-01/A STAN-01/B HIST-01/A HIST-02/A HIST-03/A ARTE-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-storia-moderna-seminario-laboratoriale-d",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Storia romana – seminario laboratoriale di analisi delle fonti",
+     "anno": 3,
+     "cfu": 6,
+     "ssd": "STAN-01/A STAN-01/B HIST-01/A HIST-02/A HIST-03/A ARTE-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-storia-romana-seminario-laboratoriale-di",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    }
+   ],
+   "url_catalogo": "https://www.unicusano.it/lettere/corso-di-laurea-in-studi-umanistici-l-10"
   },
   {
    "id": "unicusano-lm-19-comunicazione-digitale",
@@ -5370,7 +6887,7 @@
    "url": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-comunicazione-digitale-lm-19",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -5719,12 +7236,26 @@
      "docenti": [],
      "url": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-comunicazione-digitale-lm-19",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Prova Finale",
+       "data": "2026-10-27",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-27",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "Tarquini Federico",
+       "note": "SEDUTA DI LAUREA - 27 OTTOBRE 2026",
+       "fonte": "https://sophia.unicusano.it/appelli?f=24"
+      }
+     ],
      "fonte": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-comunicazione-digitale-lm-19",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-19-comunicazione-digitale-prova-finale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -5848,7 +7379,7 @@
    "url": "https://www.unicusano.it/ingegneria/corso-di-laurea-magistrale-in-ingegneria-civile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -5864,12 +7395,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-lm-23-curriculum-edilizia-resiliente-e-transizione-ecologica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Geomatica",
+       "data": "2026-12-02",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Giannone Francesca",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=12"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-lm-23-curriculum-edilizia-resiliente-e-transizione-ecologica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-23-ingegneria-civile-geomatica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -5906,12 +7451,52 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-lm-23-curriculum-edilizia-resiliente-e-transizione-ecologica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Fondazioni e Opere di Sostegno",
+       "data": "2026-12-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Cacciotti Martina",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=12"
+      },
+      {
+       "tipo": "appello",
+       "titolo": "Meccanica Applicata Alle Macchine II",
+       "data": "2026-12-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Giannini Oliviero",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=12"
+      },
+      {
+       "tipo": "appello",
+       "titolo": "Pianificazione Territoriale",
+       "data": "2026-12-04",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Di Giacomo Tullia Valeria",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=12"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-lm-23-curriculum-edilizia-resiliente-e-transizione-ecologica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-23-ingegneria-civile-p",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6049,12 +7634,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-lm-23-curriculum-edilizia-resiliente-e-transizione-ecologica",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Life cycle thinking and assessment",
+       "data": "2026-12-01",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Lombardi Lidia",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=12"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-lm-23-curriculum-edilizia-resiliente-e-transizione-ecologica",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-23-ingegneria-civile-life-cycle-thinking-and-assessment",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6155,7 +7754,7 @@
    "url": "https://www.unicusano.it/ingegneria/corso-di-laurea-magistrale-in-ingegneria-elettronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -6255,12 +7854,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-elettronica-magistrale-lm-29",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Misure Elettriche ed Elettroniche",
+       "data": "2026-12-03",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Mileti Ilaria",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=13"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-elettronica-magistrale-lm-29",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-29-ingegneria-elettronica-misure-elettriche-ed-elettroniche",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6297,12 +7910,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-elettronica-magistrale-lm-29",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Antenne",
+       "data": "2026-12-01",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Vellucci Stefano",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=13"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-elettronica-magistrale-lm-29",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-29-ingegneria-elettronica-antenne",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6377,12 +8004,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-elettronica-magistrale-lm-29",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Sistemi RF e microonde per le comunicazioni",
+       "data": "2026-12-01",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Longhi Michela",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=13"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-elettronica-magistrale-lm-29",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-29-ingegneria-elettronica-sistemi-rf-e-microonde-per-le-comunicazi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6443,7 +8084,7 @@
    "url": "https://www.unicusano.it/ingegneria/laurea-magistrale-ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -6459,12 +8100,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "GESTIONE DEGLI IMPIANTI INDUSTRIALI",
+       "data": "2026-12-02",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Guarino Stefano",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=19"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-31-ingegneria-gestionale-gestione-degli-impianti-industriali",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6480,12 +8135,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "GESTIONE DELLA QUALITA'",
+       "data": "2026-12-01",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Capriccioli Ruggero",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=19"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-31-ingegneria-gestionale-gestione-della-qualita",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6564,12 +8233,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Tecnologie Speciali",
+       "data": "2026-12-02",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Ponticelli Gennaro Salvatore",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=19"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-31-ingegneria-gestionale-tecnologie-speciali",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6585,12 +8268,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "ANALISI DEI SISTEMI FINANZIARI",
+       "data": "2026-12-02",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "De Santis Francesco",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=19"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-31-ingegneria-gestionale-analisi-dei-sistemi-finanziari",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6646,12 +8343,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "PIANIFICAZIONE DEI SISTEMI DI TRASPORTO",
+       "data": "2026-12-04",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "DelleSite Paolo",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=19"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-31-ingegneria-gestionale-pianificazione-dei-sistemi-di-trasporto",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6731,7 +8442,7 @@
    "url": "https://www.unicusano.it/ingegneria/laurea-magistrale-ingegneria-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -6787,12 +8498,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-magistrale-lm-32",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "INGEGNERIA DEL SOFTWARE",
+       "data": "2026-12-03",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Longo Minnolo Antonino",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=20"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-magistrale-lm-32",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-32-ingegneria-informatica-ingegneria-del-software",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6808,12 +8533,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-magistrale-lm-32",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "INTELLIGENZA ARTIFICIALE E MACHINE LEARNING",
+       "data": "2026-12-03",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Dimitri Andrea",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=20"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-magistrale-lm-32",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-32-ingegneria-informatica-intelligenza-artificiale-e-machine-learn",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6829,12 +8568,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-magistrale-lm-32",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "SISTEMI DISTRIBUITI E BLOCKCHAIN",
+       "data": "2026-12-03",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Monteleone Salvatore",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=20"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-magistrale-lm-32",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-32-ingegneria-informatica-sistemi-distribuiti-e-blockchain",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6871,12 +8624,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-magistrale-lm-32",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "ALGORITMI E STRUTTURE DATI PER I BIG DATA",
+       "data": "2026-12-03",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Farina Giovanni",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=20"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-magistrale-lm-32",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-32-ingegneria-informatica-algoritmi-e-strutture-dati-per-i-big-dat",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6893,12 +8660,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-magistrale-lm-32",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Misure e strumentazione industriale",
+       "data": "2026-12-03",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Mileti Ilaria",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=20"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-magistrale-lm-32",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-32-ingegneria-informatica-misure-e-strumentazione-industriale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6933,12 +8714,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-magistrale-lm-32",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "SICUREZZA DEI SISTEMI",
+       "data": "2026-12-03",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Longo Minnolo Antonino",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=20"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-informatica-magistrale-lm-32",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-32-ingegneria-informatica-sicurezza-dei-sistemi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -6999,7 +8794,7 @@
    "url": "https://www.unicusano.it/ingegneria/corso-di-laurea-magistrale-in-ingegneria-meccanica-curriculum-automotive-lm-33",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -7036,12 +8831,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Meccanica Applicata Alle Macchine II",
+       "data": "2026-12-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Giannini Oliviero",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=14"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-33-ingegneria-meccanica-meccanica-applicata-alle-macchine-ii",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -7057,12 +8866,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Meccanica delle Vibrazioni",
+       "data": "2026-12-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Giannini Oliviero",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=14"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-33-ingegneria-meccanica-meccanica-delle-vibrazioni",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -7078,12 +8901,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Motori a Combustione Interna",
+       "data": "2026-12-03",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Chiappini Daniele",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=14"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-33-ingegneria-meccanica-motori-a-combustione-interna",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -7162,12 +8999,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Dinamica Dei Flussi Turbolenti",
+       "data": "2026-12-03",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Mele MELE PAOLO",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=14"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-33-ingegneria-meccanica-dinamica-dei-flussi-turbolenti",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -7183,12 +9034,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Dinamica del Veicolo",
+       "data": "2026-12-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Laurenza Maicol",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=14"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-33-ingegneria-meccanica-dinamica-del-veicolo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -7262,12 +9127,26 @@
      ],
      "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Veicoli Ibridi",
+       "data": "2026-12-03",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Lombardi Simone",
+       "note": "APPELLO SEDE DI ROMA - DICEMBRE",
+       "fonte": "https://sophia.unicusano.it/appelli?f=14"
+      }
+     ],
      "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-33-ingegneria-meccanica-veicoli-ibridi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "url_catalogo": "https://www.unicusano.it/ingegneria/corso-di-laurea-magistrale-in-ingegneria-meccanica-curriculum-automotive-lm-33"
@@ -7288,7 +9167,7 @@
    "url": "https://www.unicusano.it/psicologia/corso-di-laurea-magistrale-in-psicologia-clinica-riabilitazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -7616,7 +9495,7 @@
    "url": "https://www.unicusano.it/scienze-politiche/corso-di-laurea-magistrale-in-relazioni-internazionali-biennale-classe-lm-52",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -7886,7 +9765,7 @@
    "url": "https://www.unicusano.it/scienze-motorie/magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -7921,12 +9800,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Fisiologia e biomeccanica applicata allo sport",
+       "data": "2026-12-03",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Laudani Luca",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=25"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-68-scienza-e-tecnica-dello-sport-fisiologia-e-biomeccanica-applicata-allo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -7942,12 +9835,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Lingua Inglese",
+       "data": "2026-12-01",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Gentile Gaia",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=25"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-68-scienza-e-tecnica-dello-sport-inglese",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -7965,12 +9872,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Preparazione fisica e Personal Training",
+       "data": "2026-12-01",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-11",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "Curzi Davide",
+       "note": "APPELLO ORALE ROMA - Per la prenotazione inviare mail in segreteria",
+       "fonte": "https://sophia.unicusano.it/appelli?f=25"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-68-scienza-e-tecnica-dello-sport-preparazione-fisica-e-personal-training",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -7986,12 +9907,39 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Medicina dello sport",
+       "data": "2026-12-02",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Greco Emanuela",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=25"
+      },
+      {
+       "tipo": "appello",
+       "titolo": "Traumatologia e medicina dello sport",
+       "data": "2026-12-03",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Rizzello Giacomo",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=25"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-68-scienza-e-tecnica-dello-sport-traumatologia-e-medicina-dello-sport",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -8007,12 +9955,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Coaching sportivo",
+       "data": "2026-12-01",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Marcelli Lorenzo",
+       "note": "APPELLO ORALE ROMA - Per la prenotazione (iscritti 25/26 e 26/27) inviare mail in segreteria",
+       "fonte": "https://sophia.unicusano.it/appelli?f=25"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-68-scienza-e-tecnica-dello-sport-coaching-sportivo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -8049,12 +10011,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Endocrinologia e doping dello sport",
+       "data": "2026-12-02",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Greco Emanuela",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=25"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-68-scienza-e-tecnica-dello-sport-endocrinologia-e-doping-dello-sport",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -8070,12 +10046,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Nutrizione nello sportivo",
+       "data": "2026-12-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-01",
+       "iscrizioni_al": "2026-11-24",
+       "docenti": "Salerno Simona",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=25"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-68-scienza-e-tecnica-dello-sport-nutrizione-nello-sportivo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -8091,12 +10081,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Pedagogia speciale e disabilità",
+       "data": "2026-12-02",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "Covelli Alessio",
+       "note": "APPELLO ORALE ROMA",
+       "fonte": "https://sophia.unicusano.it/appelli?f=25"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-68-scienza-e-tecnica-dello-sport-pedagogia-speciale-e-disabilita",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -8178,7 +10182,7 @@
    "url": "https://www.unicusano.it/economia/corso-di-laurea-magistrale-in-scienze-economiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -8681,7 +10685,7 @@
    "url": "https://www.unicusano.it/lettere/laurea-magistrale-in-scienze-filosofiche-applicate",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -9054,7 +11058,7 @@
    "url": "https://www.unicusano.it/scienze-della-formazione/corso-di-laurea-magistrale-in-scienze-pedagogiche-lm-85-curriculum-esperto-e-coordinatore-dei-servizi-educativi-per-linfanzia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -9196,12 +11200,26 @@
      ],
      "url": "https://www.unicusano.it/scienze-della-formazione/piano-di-studi-scienze-pedagogiche-curriculum-esperto-e-coordinatore-dei-servizi-educativi-per-linfanzia-lm-85",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Teorie e modelli dei processi educativi",
+       "data": "2026-11-13",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "Macale Carlo",
+       "note": "Teorie e modelli dei processi educativi - laboratorio",
+       "fonte": "https://sophia.unicusano.it/appelli?f=9"
+      }
+     ],
      "fonte": "https://www.unicusano.it/scienze-della-formazione/piano-di-studi-scienze-pedagogiche-curriculum-esperto-e-coordinatore-dei-servizi-educativi-per-linfanzia-lm-85",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-85-scienze-pedagogiche-teorie-e-modelli-dei-processi-educativi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -9385,7 +11403,7 @@
    "url": "https://www.unicusano.it/lettere/magistrale-2",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -9839,7 +11857,7 @@
    "url": "https://www.unicusano.it/sociologia-comunicazione/sociologia-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -10104,12 +12122,26 @@
      "docenti": [],
      "url": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-classe-lm-88",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "titolo": "Prova Finale",
+       "data": "2026-10-26",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-26",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "Melotti Marxiano",
+       "note": "SEDUTA DI LAUREA - 26 OTTOBRE 2026",
+       "fonte": "https://sophia.unicusano.it/appelli?f=23"
+      }
+     ],
      "fonte": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-classe-lm-88",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-88-sociologia-e-ricerca-sociale-prova-finale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -10172,7 +12204,7 @@
    "url": "https://www.unicusano.it/giurisprudenza/corso-di-laurea-in-giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,

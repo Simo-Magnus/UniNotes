@@ -404,9 +404,15 @@ def main() -> None:
                 nuovi = [e for e in app.get(cod, []) if (e.get("data") or "") >= oggi[:4]]
                 if nuovi:
                     viste = {(e.get("data"), e.get("ora"), e.get("tipo")) for e in i.get("esami") or []}
-                    i["esami"] = sorted((i.get("esami") or []) + [
-                        {k: v for k, v in e.items() if k != "titolo"} for e in nuovi
-                        if (e.get("data"), e.get("ora"), e.get("tipo")) not in viste], key=lambda e: e.get("data") or "")
+                    aggiunti = []
+                    for e in sorted(nuovi, key=lambda e: e.get("ora") is None):  # prima gli appelli con l'ora
+                        k = (e.get("data"), e.get("ora"), e.get("tipo"))
+                        # stessa data da fonti diverse (es. bacheca Esse3 e Agenda Web): una sola volta
+                        if k in viste or (e.get("ora") is None and any(v[0] == k[0] and v[2] == k[2] for v in viste)):
+                            continue
+                        viste.add(k)
+                        aggiunti.append({k2: v for k2, v in e.items() if k2 != "titolo"})
+                    i["esami"] = sorted((i.get("esami") or []) + aggiunti, key=lambda e: e.get("data") or "")
                     i["stato_esami"] = "completo"
             c["insegnamenti"] = merge_insegnamenti([], c.get("insegnamenti") or [])
             c["stato"] = stato_corso(c)

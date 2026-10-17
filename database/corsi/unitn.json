@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unitn",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-14",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://corsi.unitn.it/it/amministrazione-aziendale-e-diritto",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "120127",
@@ -1256,27 +1256,6 @@
      "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50882_653151_97127/2025/50882?coorte=2025"
     },
     {
-     "codice": "120461",
-     "nome": "Laboratorio Strategie per l'innovazione nella PA",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": "",
-     "periodo_fine": "",
-     "cfu": 10,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": "Percorso Management pubblico",
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2028/51260_655483_97129/2026/51260?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "unitn-l-18-amministrazione-aziendale-e-diritto-120461",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "120460",
      "nome": "Laboratorio strategie giuridiche ed aziendali per l'internazionalizzazione",
      "anno": 3,
@@ -1686,6 +1665,28 @@
      "modalita_esame": "orale",
      "id": "unitn-l-18-amministrazione-aziendale-e-diritto-120075",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "120461",
+     "nome": "Laboratorio Strategie per l'innovazione nella PA",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": "",
+     "periodo_fine": "",
+     "cfu": 10,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": "Percorso Management pubblico",
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2028/51260_655483_97129/2026/51260?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "unitn-l-18-amministrazione-aziendale-e-diritto-120461",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/combo.php?sw=ec_&aa=2026&page=corsi"
     },
     {
      "codice": "120455",
@@ -2719,7 +2720,7 @@
    "url": "https://corsi.unitn.it/it/beni-culturali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "130728",
@@ -8458,7 +8459,7 @@
    "url": "https://corsi.unitn.it/it/economia-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "120127",
@@ -10287,27 +10288,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "120487",
-     "nome": "Marketing",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": "",
-     "periodo_fine": "",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": "Percorso generale",
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2028/51269_656884_97196/2026/51269?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "unitn-l-33-l-18-economia-e-management-120487",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "120489",
      "nome": "Modelli matematici per l'economia",
      "anno": 3,
@@ -10325,27 +10305,6 @@
      "fonte": "https://unitn.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "id": "unitn-l-33-l-18-economia-e-management-120489",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "120486",
-     "nome": "Strategia d'impresa",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": "",
-     "periodo_fine": "",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": "Percorso generale",
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2028/51269_656868_97195/2026/51269?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "unitn-l-33-l-18-economia-e-management-120486",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -11008,6 +10967,28 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "120487",
+     "nome": "Marketing",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": "",
+     "periodo_fine": "",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Percorso generale",
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2028/51269_656884_97196/2026/51269?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "unitn-l-33-l-18-economia-e-management-120487",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/combo.php?sw=ec_&aa=2026&page=corsi"
+    },
+    {
      "codice": "120124",
      "nome": "Marketing_",
      "anno": 3,
@@ -11071,6 +11052,28 @@
      "codici_alternativi": [
       "120051"
      ]
+    },
+    {
+     "codice": "120486",
+     "nome": "Strategia d'impresa",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": "",
+     "periodo_fine": "",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Percorso generale",
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2028/51269_656868_97195/2026/51269?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "unitn-l-33-l-18-economia-e-management-120486",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/combo.php?sw=ec_&aa=2026&page=corsi"
     },
     {
      "codice": "120125",
@@ -12944,7 +12947,7 @@
    "url": "https://corsi.unitn.it/it/educazione-professionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "156001",
@@ -14387,7 +14390,7 @@
    "url": "https://corsi.unitn.it/it/filosofia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "130006",
@@ -21234,7 +21237,7 @@
    "url": "https://corsi.unitn.it/it/fisica-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "145432",
@@ -24023,7 +24026,7 @@
    "url": "https://corsi.unitn.it/it/gestione-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "120000",
@@ -27447,7 +27450,7 @@
    "url": "https://corsi.unitn.it/it/informatica-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "145403",
@@ -31239,7 +31242,7 @@
    "url": "http://corsi.unitn.it/it/ingegneria-civile-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "140710",
@@ -37367,7 +37370,7 @@
    "url": "https://corsi.unitn.it/it/ingegneria-industriale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "146171",
@@ -40364,7 +40367,7 @@
    "url": "https://corsi.unitn.it/it/ingegneria-informatica-delle-comunicazioni-ed-elettronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "145403",
@@ -44249,7 +44252,7 @@
    "url": "http://corsi.unitn.it/it/ingegneria-lambiente-e-il-territorio-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "140710",
@@ -49543,7 +49546,7 @@
    "url": "https://corsi.unitn.it/it/interfacce-e-tecnologie-della-comunicazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "153033",
@@ -50969,7 +50972,7 @@
    "url": "https://corsi.unitn.it/it/lettere-e-storia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "130099",
@@ -56218,7 +56221,7 @@
    "url": "https://corsi.unitn.it/it/lingue-moderne",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "130473",
@@ -61178,7 +61181,7 @@
    "url": "https://corsi.unitn.it/it/matematica-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "146272",
@@ -64469,7 +64472,7 @@
    "url": "https://corsi.unitn.it/it/scienze-e-tecniche-di-psicologia-cognitiva",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "150035",
@@ -68920,7 +68923,7 @@
    "url": "https://corsi.unitn.it/it/scienze-e-tecnologie-biomolecolari",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "146384",
@@ -71039,7 +71042,7 @@
    "url": "https://corsi.unitn.it/it/scienze-motorie-sport-e-benessere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "151102",
@@ -72670,7 +72673,7 @@
    "url": "https://corsi.unitn.it/it/servizio-sociale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "135431",
@@ -74431,7 +74434,7 @@
    "url": "https://corsi.unitn.it/it/sociologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "136000",
@@ -79367,7 +79370,7 @@
    "url": "https://corsi.unitn.it/en/comparative-european-and-international-legal-studies",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "26180",
@@ -79505,6 +79508,18 @@
        "docenti": "DANI MARCO",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-23",
+       "ora": "09:00",
+       "luogo": "AULA INFORMATICA 01",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DANI MARCO",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -79580,6 +79595,18 @@
        "docenti": "IORIATTI ELENA",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "IORIATTI ELENA",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -79727,6 +79754,18 @@
        "docenti": "TOMASI SERENA",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-15",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "TOMASI SERENA",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -80702,6 +80741,18 @@
        "docenti": "POGGESCHI GIOVANNI",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "12:30",
+       "luogo": "AULA DIDATTICA 03",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "POGGESCHI GIOVANNI",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -80776,6 +80827,18 @@
        "docenti": "ZENDRI CHRISTIAN",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-14",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "ZENDRI CHRISTIAN",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -80851,6 +80914,18 @@
        "docenti": "FASOLI ELENA",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-17",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FASOLI Elena",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -80925,6 +81000,18 @@
        "docenti": "MAGGIONI PAOLO",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-18",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MAGGIONI PAOLO",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -81000,6 +81087,18 @@
        "docenti": "BOTTONI ROSSELLA ALESSANDRA",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-15",
+       "ora": "09:30",
+       "luogo": "AULA INFORMATICA 01",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BOTTONI ROSSELLA",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -81235,6 +81334,18 @@
        "docenti": "PERIN ANDREA",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PERIN ANDREA",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -81616,6 +81727,18 @@
        "docenti": "SIMONATI ANNA",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-14",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "SIMONATI ANNA",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -81692,6 +81815,18 @@
        "docenti": "MALBERTI CORRADO",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-16",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MALBERTI CORRADO",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -81753,6 +81888,18 @@
        "docenti": "BELLANTUONO GIUSEPPE",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-14",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BELLANTUONO GIUSEPPE",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -81901,6 +82048,18 @@
        "docenti": "DI PAOLO GABRIELLA",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DI PAOLO GABRIELLA",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -82381,7 +82540,7 @@
    "url": "https://corsi.unitn.it/it/studi-internazionali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "135338",
@@ -86144,7 +86303,7 @@
    "url": "https://corsi.unitn.it/it/tecniche-della-prevenzione-nellambiente-e-nei-luoghi-di-lavoro",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "103009",
@@ -86771,7 +86930,7 @@
    "url": "https://corsi.unitn.it/it/tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "102008",
@@ -87379,7 +87538,7 @@
    "url": "https://corsi.unitn.it/it/tecniche-di-radiologia-medica-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "101009",
@@ -87988,7 +88147,7 @@
    "url": "https://corsi.unitn.it/it/viticoltura-ed-enologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "170003",
@@ -89777,7 +89936,7 @@
    "url": "https://corsi.unitn.it/en/agrifood-innovation-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "173006",
@@ -90633,7 +90792,7 @@
    "url": "https://corsi.unitn.it/en/artificial-intelligence-systems",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "146437",
@@ -93319,7 +93478,7 @@
    "url": "https://corsi.unitn.it/it/bioengineering-personalized-medicine",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "146251",
@@ -94017,7 +94176,7 @@
    "url": "https://corsi.unitn.it/it/biotecnologie-cellulari-e-molecolari",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "146326",
@@ -95302,7 +95461,7 @@
    "url": "https://corsi.unitn.it/en/cognitive-science",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "154120",
@@ -97633,7 +97792,7 @@
    "url": "https://corsi.unitn.it/it/informatica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "146155",
@@ -102175,7 +102334,7 @@
    "url": "https://corsi.unitn.it/it/culture-e-beni-musicali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "130750",
@@ -103562,7 +103721,7 @@
    "url": "https://corsi.unitn.it/en/data-science",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "136071",
@@ -105591,7 +105750,7 @@
    "url": "https://corsi.unitn.it/en/behavioural-and-applied-economics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121492",
@@ -107271,7 +107430,7 @@
    "url": "https://corsi.unitn.it/it/economia-e-legislazione-dimpresa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121500",
@@ -111144,7 +111303,7 @@
    "url": "https://corsi.unitn.it/en/european-and-international-studies",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "155362",
@@ -113578,7 +113737,7 @@
    "url": "https://corsi.unitn.it/it/filologia-e-critica-letteraria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "130791",
@@ -117137,7 +117296,7 @@
    "url": "https://corsi.unitn.it/it/filosofia-e-linguaggi-della-modernita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "130838",
@@ -121235,7 +121394,7 @@
    "url": "https://corsi.unitn.it/it/finanza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121410",
@@ -124078,7 +124237,7 @@
    "url": "https://corsi.unitn.it/it/global-affairs-geopolitics-and-sustainability",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "135072",
@@ -126310,7 +126469,7 @@
    "url": "https://corsi.unitn.it/en/global-law-making",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "127003",
@@ -126329,13 +126488,26 @@
      ],
      "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51211_655761_96420/2026/51211?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "DI MARIA SABRINA",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unitn-lm-sc-giur-global-law-making-127003",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "127006",
@@ -126353,13 +126525,26 @@
      ],
      "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51211_655763_96423/2026/51211?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PETROSINO FRANCESCO",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unitn-lm-sc-giur-global-law-making-127006",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "127002",
@@ -126393,13 +126578,26 @@
        "citazione": "Mary-Beth Moylan, Stephanie J. Thompson, Legal Writing and Global Lawyering Skills, 3ª edizione, West Academic Publishing, 2023 (è ammessa anche l’edizione in formato elettronico)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "TOMASI SERENA",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unitn-lm-sc-giur-global-law-making-127002",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "127022",
@@ -126577,13 +126775,26 @@
        "citazione": "A. A. Bianchi, International Law Theories: An Inquiry into Different Ways of Thinking (OUP 2016)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "TURRINI PAOLO",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unitn-lm-sc-giur-global-law-making-127000",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "127007",
@@ -126962,13 +127173,26 @@
        "citazione": "Judith Shapiro, China's Environmental Challenges (third edition), Cambridge, UK, Hoboken, NJ, USA, Polity, 2024"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "POGGESCHI GIOVANNI",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unitn-lm-sc-giur-global-law-making-127019",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "127008",
@@ -127010,13 +127234,26 @@
      ],
      "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50896_652091_96427/2024/50896?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CRISTOFOLINI CHIARA",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unitn-lm-sc-giur-global-law-making-127010",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "127012",
@@ -127036,13 +127273,26 @@
      ],
      "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50896_652097_96430/2024/50896?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "FASAN MARTA",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unitn-lm-sc-giur-global-law-making-127012",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "127021",
@@ -127448,7 +127698,7 @@
    "url": "https://corsi.unitn.it/en/human-computer-interaction",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "155026",
@@ -129021,7 +129271,7 @@
    "url": "https://corsi.unitn.it/en/information-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "146224",
@@ -131188,7 +131438,7 @@
    "url": "https://corsi.unitn.it/it/ingegneria-civile-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "140665",
@@ -135408,7 +135658,7 @@
    "url": "https://corsi.unitn.it/it/ingegneria-lambiente-e-il-territorio-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "140150",
@@ -138761,7 +139011,7 @@
    "url": "https://corsi.unitn.it/en/innovation-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121319",
@@ -141762,7 +142012,7 @@
    "url": "https://corsi.unitn.it/it/mechatronics-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "146439",
@@ -143185,7 +143435,7 @@
    "url": "https://corsi.unitn.it/en/international-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121319",
@@ -144934,7 +145184,7 @@
    "url": "https://corsi.unitn.it/it/letterature-euroamericane-traduzione-e-critica-letteraria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "130838",
@@ -149248,7 +149498,7 @@
    "url": "https://corsi.unitn.it/it/lingue-moderne-nel-turismo-e-nella-cooperazione-internazionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "130802",
@@ -150671,7 +150921,7 @@
    "url": "https://corsi.unitn.it/en/european-master-business-studies",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121506",
@@ -151290,7 +151540,7 @@
    "url": "https://corsi.unitn.it/it/management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121341",
@@ -154640,7 +154890,7 @@
    "url": "https://corsi.unitn.it/it/management-and-industrial-systems-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "146006",
@@ -156668,7 +156918,7 @@
    "url": "https://corsi.unitn.it/it/management-della-sostenibilita-e-del-turismo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121327",
@@ -159870,7 +160120,7 @@
    "url": "https://corsi.unitn.it/it/matematica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "145129",
@@ -165679,7 +165929,7 @@
    "url": "https://corsi.unitn.it/it/materials-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "146019",
@@ -167520,7 +167770,7 @@
    "url": "https://corsi.unitn.it/en/environmental-meteorology-and-climate-physics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "140732",
@@ -169536,7 +169786,7 @@
    "url": "https://corsi.unitn.it/it/metodologia-organizzazione-e-valutazione-dei-servizi-sociali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "135794",
@@ -170937,7 +171187,7 @@
    "url": "https://corsi.unitn.it/it/organizzazione-societa-e-tecnologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "135072",
@@ -173087,7 +173337,7 @@
    "url": "https://corsi.unitn.it/it/fisica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "146268",
@@ -178199,7 +178449,7 @@
    "url": "https://corsi.unitn.it/it/psicologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "152108",
@@ -181758,7 +182008,7 @@
    "url": "https://corsi.unitn.it/en/quantitative-and-computational-biology",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "146466",
@@ -184886,7 +185136,7 @@
    "url": "https://corsi.unitn.it/en/security-intelligence-and-strategic-studies",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "180000",
@@ -186539,7 +186789,7 @@
    "url": "https://corsi.unitn.it/en/sociology-and-social-research",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "135933",
@@ -188810,7 +189060,7 @@
    "url": "https://corsi.unitn.it/it/storia-dellarte-e-studi-museali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "130654",
@@ -192332,7 +192582,7 @@
    "url": "https://corsi.unitn.it/en/international-security-studies",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "160095",
@@ -195148,7 +195398,7 @@
    "url": "https://corsi.unitn.it/it/giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "26180",
@@ -195611,6 +195861,18 @@
        "docenti": "BEGGIO TOMMASO",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "BEGGIO TOMMASO",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       },
       {
        "tipo": "appello",
@@ -196361,6 +196623,18 @@
        "docenti": "PRADI ANDREA",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PES LUCA",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -198206,13 +198480,26 @@
        "citazione": "M. Bombardelli (a cura di), L’intervento amministrativo sui mercati, Giappichelli, Torino, ult. ed. (escluso il cap. 5)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MALVAGNA UGO",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unitn-lmg-01-giurisprudenza-26076",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50724_652527_94849/2025/50724?coorte=2025"
     },
     {
@@ -199708,6 +199995,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CLARONI ALESSIO",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-12",
        "ora": "14:00",
        "luogo": null,
@@ -199781,6 +200080,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CLARONI ALESSIO",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-12",
@@ -202548,6 +202859,18 @@
        "docenti": "MAGLIARO ALESSANDRA",
        "note": null,
        "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MAGLIARO ALESSANDRA",
+       "note": null,
+       "fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easytest&include=et_cdl&_lang=it"
       }
      ],
      "fonte": "https://unitn.coursecatalogue.cineca.it",
@@ -204405,7 +204728,7 @@
    "url": "https://corsi.unitn.it/it/ingegneria-edile-architettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "140710",
@@ -206824,48 +207147,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "140739",
-     "nome": "Architettura tecnica 2 con laboratorio progettuale",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": "",
-     "periodo_fine": "",
-     "cfu": 11,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2028/51232_656999_96905/2026/51232?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "unitn-lm-4-c-u-ingegneria-edile-architettura-140739",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "140740",
-     "nome": "Urbanistica con laboratorio progettuale",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": "",
-     "periodo_fine": "",
-     "cfu": 11,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2028/51232_657004_96906/2026/51232?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "id": "unitn-lm-4-c-u-ingegneria-edile-architettura-140740",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "140379",
      "nome": "Architettura tecnica 2 con Laboratorio Progettuale",
      "anno": 3,
@@ -206974,6 +207255,28 @@
      "modalita_esame": "orale",
      "id": "unitn-lm-4-c-u-ingegneria-edile-architettura-140379",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "140739",
+     "nome": "Architettura tecnica 2 con laboratorio progettuale",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": "",
+     "periodo_fine": "",
+     "cfu": 11,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2028/51232_656999_96905/2026/51232?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "unitn-lm-4-c-u-ingegneria-edile-architettura-140739",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/combo.php?sw=ec_&aa=2026&page=corsi"
     },
     {
      "codice": "140377",
@@ -207634,6 +207937,28 @@
      "modalita_esame": "orale",
      "id": "unitn-lm-4-c-u-ingegneria-edile-architettura-140387",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "140740",
+     "nome": "Urbanistica con laboratorio progettuale",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": "",
+     "periodo_fine": "",
+     "cfu": 11,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2028/51232_657004_96906/2026/51232?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-04",
+     "id": "unitn-lm-4-c-u-ingegneria-edile-architettura-140740",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/combo.php?sw=ec_&aa=2025&page=corsi"
     },
     {
      "codice": "140386",
@@ -209257,7 +209582,7 @@
    "url": "https://corsi.unitn.it/it/medicina-e-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "110092",
@@ -211829,32 +212154,6 @@
      "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/49921_639698_94564/2020/49921?coorte=2022"
     },
     {
-     "codice": "110039",
-     "nome": "OT6. Intelligenza artificiale per la diagnostica per immagini",
-     "anno": 6,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 5,
-     "ssd": "ING-INF/05, NN",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Feraco Paola",
-      "Quattrocchi Carlo Cosimo",
-      "Tomassini Selene"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/49920_639664_94654/2020/49920?coorte=2021",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "scritto",
-     "id": "unitn-lm-41-medicina-e-chirurgia-110039",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "111000",
      "nome": "Prova finale",
      "anno": 6,
@@ -211969,6 +212268,33 @@
      "id": "unitn-lm-41-medicina-e-chirurgia-110028",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/49920_639660_94572/2020/49920?coorte=2021"
+    },
+    {
+     "codice": "110039",
+     "nome": "OT6. Intelligenza artificiale per la diagnostica per immagini",
+     "anno": 6,
+     "periodo": "1",
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 5,
+     "ssd": "ING-INF/05, NN",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Feraco Paola",
+      "Quattrocchi Carlo Cosimo",
+      "Tomassini Selene"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/49920_639664_94654/2020/49920?coorte=2021",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "scritto",
+     "id": "unitn-lm-41-medicina-e-chirurgia-110039",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/combo.php?sw=ec_&aa=2026&page=corsi"
     },
     {
      "codice": "110038",

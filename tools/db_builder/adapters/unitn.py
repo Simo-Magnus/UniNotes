@@ -212,6 +212,13 @@ def fetch_appelli(uid: str, corsi: list[dict], log=print) -> dict[str, list[dict
     from .esse3_appelli import fetch_appelli as esse3
 
     app = esse3(uid, ESSE3, log=log)
+    try:  # Agenda Web pubblica (EasyTest): date anche per gli appelli non ancora aperti in Esse3
+        from .unitn_agenda import fetch_appelli as agenda
+        for cod, lst in agenda(uid, corsi, log=log).items():
+            viste = {(x["data"], x.get("ora")) for x in app.get(cod, [])}
+            app.setdefault(cod, []).extend(x for x in lst if (x["data"], x.get("ora")) not in viste)
+    except Exception as e:  # noqa: BLE001 - la bacheca Esse3 basta
+        log(f"[{uid}] agenda web non letta: {e!r}")
     codici = {i["codice"] for c in corsi for i in c["insegnamenti"]}
     estesi = 0
     for cod, lst in list(app.items()):

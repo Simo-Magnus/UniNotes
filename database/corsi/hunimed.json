@@ -160,7 +160,7 @@
      "codice": null,
      "nome": "Statistics",
      "anno": 1,
-     "periodo": null,
+     "periodo": "annuale",
      "cfu": 7,
      "ssd": null,
      "obbligatorio": null,
@@ -173,7 +173,8 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "hunimed-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-statistics",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://www.hunimed.eu/it/course/fisioterapia/struttura-del-programma/"
     },
     {
      "codice": null,
@@ -4309,8 +4310,7 @@
      "esami": [],
      "stato_esami": "da_aggiungere"
     }
-   ],
-   "piano_da": "hunimed-l-snt3-tecniche-di-radiologia-medica-per-immagini-e-radioterapia-ab"
+   ]
   },
   {
    "id": "hunimed-lm-9-biotechnologies-for-human-health",
