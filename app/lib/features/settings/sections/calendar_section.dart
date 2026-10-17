@@ -6,6 +6,8 @@ import '../../../core/router/app_shell.dart';
 import '../../../core/services/app_services.dart';
 import '../../../core/services/calendar_export.dart';
 import '../../../widgets/common.dart';
+import '../../cloud/microsoft_admin_consent.dart';
+import '../../links/microsoft_consent_sheet.dart';
 import '../logic/formatting.dart';
 import '../widgets/async_action_button.dart';
 import '../widgets/settings_card.dart';
@@ -16,9 +18,14 @@ class _CalendarData {
     required this.status,
     required this.ics,
     required this.microsoftConnected,
+    required this.adminBlocked,
   });
   final CalendarStatus status;
   final bool ics;
+
+  /// Windows: l'ateneo ha bloccato l'account universitario (consenso
+  /// dell'amministratore), anche per OneDrive.
+  final bool adminBlocked;
 
   /// Windows: account Microsoft collegato (Collegamenti → OneDrive).
   final bool microsoftConnected;
@@ -68,6 +75,7 @@ class _CalendarSectionState extends State<CalendarSection> {
       microsoftConnected: outlook == null
           ? true
           : await outlook.microsoftConnected(),
+      adminBlocked: outlook != null && await _s.onedrive.adminConsentNeeded(),
     );
   }
 
@@ -75,14 +83,7 @@ class _CalendarSectionState extends State<CalendarSection> {
     setState(() => _busy = true);
     try {
       if (on) {
-        final st = await _s.reminders.enableCalendar();
-        if (mounted && !st.working && st.error != null) {
-          await showErrorDialog(
-            context,
-            'Calendario non aggiornato',
-            st.error!,
-          );
-        }
+        await _enable();
       } else {
         await _s.reminders.disableCalendar();
       }
@@ -94,6 +95,56 @@ class _CalendarSectionState extends State<CalendarSection> {
       if (mounted) setState(() => _busy = false);
       _reload();
     }
+  }
+
+  /// Attiva il calendario. Su Windows, se l'ateneo blocca l'account
+  /// universitario, mostra la scheda «Il tuo ateneo deve approvare
+  /// UniNotes» al posto dell'errore; con [chooseAccount] l'accesso parte
+  /// dalla scelta dell'account (account Microsoft personale).
+  Future<void> _enable({bool chooseAccount = false}) async {
+    final outlook = _s.reminders.outlook;
+    try {
+      if (chooseAccount) await outlook?.connect(chooseAccount: true);
+      final st = await _s.reminders.enableCalendar();
+      if (mounted && !st.working && st.error != null) {
+        await showErrorDialog(context, 'Calendario non aggiornato', st.error!);
+      }
+    } catch (e) {
+      if (outlook == null || !MicrosoftAdminConsent.isAdminConsentError(e)) {
+        rethrow;
+      }
+      await _s.onedrive.setAdminConsentNeeded(true);
+      if (await _blockedSheet(error: e)) await _enable(chooseAccount: true);
+    }
+  }
+
+  /// Link «Perché non riesco a collegare l'account universitario?».
+  Future<void> _openBlockedHelp() async {
+    if (!await _blockedSheet() || !mounted) return;
+    setState(() => _busy = true);
+    try {
+      await _enable(chooseAccount: true);
+    } catch (e) {
+      if (mounted) {
+        await showErrorDialog(context, 'Calendario non collegato', e);
+      }
+    } finally {
+      if (mounted) setState(() => _busy = false);
+      _reload();
+    }
+  }
+
+  Future<bool> _blockedSheet({Object? error}) async {
+    final id = await _s.onedrive.clientId();
+    if (!mounted) return false;
+    return showUniversityBlockedSheet(
+      context,
+      clientId: id,
+      declined: MicrosoftAdminConsent.isDeclined(error),
+      personalHint:
+          'Gratuito. Il calendario «UniNotes» sarà nell\'Outlook dell\'account '
+          'personale; OneDrive resta collegato come ora.',
+    );
   }
 
   @override
@@ -159,6 +210,18 @@ class _CalendarSectionState extends State<CalendarSection> {
                       value: st.enabled,
                       onChanged: _busy ? null : _toggle,
                     ),
+                  if (windows &&
+                      d.microsoftConnected &&
+                      d.adminBlocked &&
+                      !(st.enabled && st.working))
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: TextButton.icon(
+                        onPressed: _busy ? null : _openBlockedHelp,
+                        icon: const Icon(Icons.help_outline, size: 18),
+                        label: const Text(kUniversityAccountHelp),
+                      ),
+                    ),
                   if (st.enabled) ...[
                     const SizedBox(height: 4),
                     _StatusLine(status: st),
@@ -170,7 +233,7 @@ class _CalendarSectionState extends State<CalendarSection> {
                             icon: Icons.refresh,
                             errorTitle: 'Calendario non collegato',
                             onPressed: () async {
-                              await _s.reminders.enableCalendar();
+                              await _enable();
                               _reload();
                             },
                           ),

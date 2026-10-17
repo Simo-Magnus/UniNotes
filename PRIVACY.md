@@ -1,6 +1,6 @@
 # Informativa sulla privacy di UniNotes
 
-Ultimo aggiornamento: 14 ottobre 2026
+Ultimo aggiornamento: 17 ottobre 2026
 
 <!--
 Prima della pubblicazione sostituire i segnaposto:
@@ -126,7 +126,7 @@ Puoi scegliere che cosa sincronizzare con le caselle della scheda; all'inizio so
 
 La sezione OneNote, raggiungibile da Registra e da File, mostra blocchi appunti, sezioni e pagine recenti e apre le pagine. Il contenuto viene letto al momento e non viene salvato dall'app.
 
-I file sincronizzati sono conservati da Microsoft secondo la sua [informativa sulla privacy](https://privacy.microsoft.com/it-it/privacystatement) e il [Contratto di Servizi Microsoft](https://www.microsoft.com/it-it/servicesagreement). Se usi l'account dell'università, i file finiscono nello spazio OneDrive gestito dall'ateneo e valgono anche le sue regole; in alcuni atenei il collegamento di app esterne richiede l'approvazione dell'amministratore.
+I file sincronizzati sono conservati da Microsoft secondo la sua [informativa sulla privacy](https://privacy.microsoft.com/it-it/privacystatement) e il [Contratto di Servizi Microsoft](https://www.microsoft.com/it-it/servicesagreement). Se usi l'account dell'università, i file finiscono nello spazio OneDrive gestito dall'ateneo e valgono anche le sue regole; in alcuni atenei il collegamento di app esterne richiede l'approvazione dell'amministratore. In quel caso l'app ti propone un testo da mandare al servizio informatico dell'ateneo, con il nome e l'ID dell'app, i permessi e un link alla pagina per gli amministratori del sito del progetto (`simo-magnus.github.io/UniNotes/amministratori.html`): lo copi o lo condividi tu, l'app non lo invia e non contiene dati che ti riguardano. Anche quella pagina non ha statistiche né cookie propri.
 
 ### 6.4 Google Drive (facoltativo)
 

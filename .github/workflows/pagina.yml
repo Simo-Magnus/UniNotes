@@ -1,10 +1,17 @@
 # Pagina di download (GitHub Pages): pubblica la cartella sito/ a ogni modifica.
+# Nella pagina per gli amministratori IT (sito/amministratori.html) il
+# segnaposto __MS_CLIENT_ID__ diventa l'ID applicazione Microsoft: il secret
+# MS_CLIENT_ID se c'è, altrimenti quello incluso nell'app
+# (MicrosoftOAuth.defaultClientId), come nelle build. L'ID non è segreto.
 name: Pagina di download
 
 on:
   push:
     branches: [main]
-    paths: ["sito/**", ".github/workflows/pagina.yml"]
+    paths:
+      - "sito/**"
+      - ".github/workflows/pagina.yml"
+      - "app/lib/features/cloud/microsoft_oauth.dart"
   workflow_dispatch:
 
 permissions:
@@ -24,6 +31,20 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
+      - name: ID applicazione nella pagina per gli amministratori
+        env:
+          MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
+        run: |
+          id="$(printf '%s' "$MS_CLIENT_ID" | tr -d '[:space:]')"
+          if [ -z "$id" ]; then
+            id="$(grep -oE "defaultClientId = '[0-9a-fA-F-]{36}'" app/lib/features/cloud/microsoft_oauth.dart | grep -oE '[0-9a-fA-F-]{36}' || true)"
+          fi
+          if printf '%s' "$id" | grep -qE '^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$'; then
+            sed -i "s/__MS_CLIENT_ID__/$id/g" sito/amministratori.html
+          else
+            # la pagina nasconde il link di consenso invece di mostrarlo rotto
+            echo "::warning::ID applicazione Microsoft non valido: pagina senza ID"
+          fi
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

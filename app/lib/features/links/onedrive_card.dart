@@ -3,9 +3,11 @@ import 'package:provider/provider.dart';
 
 import '../../core/services/app_services.dart';
 import '../../widgets/common.dart';
+import '../cloud/microsoft_admin_consent.dart';
 import '../cloud/onedrive_folders.dart';
 import '../study/study_widgets.dart' show promptText;
 import 'cloud_drive_card.dart';
+import 'microsoft_consent_sheet.dart';
 
 /// OneDrive: accesso, cartella dell'app, cosa sincronizzare e stato.
 class OneDriveCard extends StatelessWidget {
@@ -30,6 +32,25 @@ class OneDriveCard extends StatelessWidget {
                 'Microsoft (vedi docs/onedrive_setup.md).',
       pickFolder: (context, current) =>
           showOneDriveFolderPicker(context, od.folders(), initialPath: current),
+      // account universitario bloccato dall'ateneo (consenso
+      // dell'amministratore): scheda dedicata, ricordata per le volte dopo
+      signInHelp: SignInHelp(
+        label: kUniversityAccountHelp,
+        matches: MicrosoftAdminConsent.isAdminConsentError,
+        show: (context, {error, required connected}) async {
+          if (error != null) await od.setAdminConsentNeeded(true);
+          final id = await od.clientId();
+          if (!context.mounted) return false;
+          return showUniversityBlockedSheet(
+            context,
+            clientId: id,
+            declined: MicrosoftAdminConsent.isDeclined(error),
+            allowPersonal: !connected,
+          );
+        },
+        retry: od.signInPersonal,
+        remembered: od.adminConsentNeeded,
+      ),
       primary: primary,
       onChanged: onChanged,
     );

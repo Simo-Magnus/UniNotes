@@ -34,8 +34,27 @@ firma è per MSAL): l'app usa lo schema personalizzato qui sopra.
 Poi, nella stessa pagina, *Impostazioni avanzate* → **Consenti flussi client
 pubblici: Sì**. Non creare segreti client: l'app è un client pubblico con PKCE.
 
-Non usare le piattaforme «Web» o «Applicazione a pagina singola»: danno gli
-errori AADSTS50011 / AADSTS7000218 (l'app li spiega in italiano).
+Non registrare `http://localhost` né l'URI `msauth…` sotto le piattaforme
+«Web» o «Applicazione a pagina singola»: danno gli errori AADSTS50011 /
+AADSTS7000218 (l'app li spiega in italiano).
+
+**Unica eccezione: la piattaforma «Web» con il solo URI della pagina per gli
+amministratori** (*Aggiungi una piattaforma → Web*):
+
+```
+https://simo-magnus.github.io/UniNotes/amministratori.html
+```
+
+Serve come ritorno del link di consenso amministratore (sezione 6) e non
+rompe il flusso client pubblico. Entra decide se trattare l'app come client
+pubblico o riservato in base all'URI di reindirizzamento usato nello scambio
+del codice: l'app usa sempre `http://localhost` o `msauth…://auth`, che restano
+nella piattaforma «App per dispositivi mobili e desktop», quindi non le viene
+mai chiesto un segreto. AADSTS7000218 compare solo se uno di quegli URI sta
+(anche) sotto «Web», o se «Consenti flussi client pubblici» è su No. L'URI
+della pagina non riceve mai un codice di autorizzazione: il consenso
+amministratore restituisce solo `admin_consent=True&tenant=…` (o un errore),
+che la pagina mostra. Neanche la piattaforma Web richiede un segreto client.
 
 ## 3. Autorizzazioni API
 
@@ -54,13 +73,13 @@ errori AADSTS50011 / AADSTS7000218 (l'app li spiega in italiano).
 - `Calendars.ReadWrite` (solo su Windows, calendario «UniNotes» in Outlook
   con le date delle prove): l'app lo chiede con il consenso dinamico solo
   quando lo studente attiva Impostazioni → Calendario, con un token separato
-  da quello di OneDrive (vedi docs/notifiche.md). Aggiungerlo all'elenco
-  evita una pagina di consenso inattesa ma non è obbligatorio: con gli
-  account Microsoft il consenso dinamico funziona anche senza.
+  da quello di OneDrive (vedi docs/notifiche.md). **Va aggiunto all'elenco**:
+  il consenso dinamico funzionerebbe anche senza, ma «Concedi il consenso
+  amministratore» in Entra admin center (sezione 6) approva solo i permessi
+  elencati qui.
 
-Non serve il consenso dell'amministratore per gli account personali. Alcuni
-atenei bloccano le app esterne (errori AADSTS65001/90094): gli studenti
-possono usare un account Microsoft personale (OneDrive gratuito 5 GB).
+Non serve il consenso dell'amministratore per gli account personali; per gli
+account universitari vedi la sezione 6.
 
 ## 4. ID dell'app UniNotes
 
@@ -107,3 +126,87 @@ automatici (avvio, ogni N minuti, ritorno nell'app, ritorno della connessione)
 usano `/delta` di Microsoft Graph sulla cartella per scaricare solo le novità;
 una volta su sei, e con «Sincronizza ora», si rilegge tutto (su OneDrive for
 Business `/delta` sulle sottocartelle non è disponibile: si rilegge sempre tutto).
+
+## 6. Account universitari e consenso dell'amministratore
+
+L'editore dell'app **non è verificato** (la verifica richiede un ente legale e
+un dominio verificato). Per questo molti atenei impediscono agli studenti di
+dare il consenso ad app non verificate, oppure tolgono del tutto il consenso
+degli utenti. L'accesso con l'account universitario allora fallisce con
+AADSTS65001, AADSTS90094, AADSTS90095, AADSTS50105 (utente non assegnato
+all'app) o con la pagina «Need admin approval» / «Richiede l'approvazione
+dell'amministratore». AADSTS65004 (consenso rifiutato) è trattato allo stesso
+modo, perché è anche il codice che arriva quando lo studente esce da quella
+pagina con «Torna all'applicazione»; la scheda aggiunge una riga per chi
+avesse annullato per sbaglio.
+
+**Nell'app** (`lib/features/cloud/microsoft_admin_consent.dart`,
+`lib/features/links/microsoft_consent_sheet.dart`): al posto dell'errore
+generico compare la scheda «Il tuo ateneo deve approvare UniNotes» con due
+azioni.
+
+- **Usa un account Microsoft personale**: rifà l'accesso con
+  `prompt=select_account` (se in Avanzate è scelto un tenant solo per account
+  universitari, torna a `common`). È gratuito con 5 GB di OneDrive, ma i file
+  e i blocchi OneNote dell'account universitario non sono visibili.
+- **Chiedi all'ateneo di approvare UniNotes**: un testo pronto per il servizio
+  informatico, con «Copia» e «Condividi». Contiene l'ID applicazione, i
+  permessi con il motivo, la frase sui dati che restano sul dispositivo e
+  nell'account dello studente, il link alla pagina per gli amministratori e il
+  link di consenso amministratore. Se l'app non ha un ID valido il testo non
+  contiene né l'ID né il link di consenso. Sotto c'è il suggerimento di usare
+  «Richiedi approvazione» se Microsoft lo mostra (flusso di lavoro di consenso
+  amministratore attivo nell'ateneo).
+
+La scheda OneDrive mostra sempre, finché l'account non è collegato, il link
+«Perché non riesco a collegare l'account universitario?»: la pagina di
+Microsoft può restare aperta senza tornare all'app, e allora l'errore non
+arriva. Dopo un blocco il link resta anche ad account collegato (impostazione
+`onedrive_admin_consent_needed`), con la sola richiesta all'ateneo. Il
+calendario Outlook su Windows (Impostazioni → Calendario) usa la stessa
+scheda: con l'account personale il calendario «UniNotes» va nell'Outlook di
+quell'account e OneDrive resta com'è.
+
+**Pagina per gli amministratori IT**: `sito/amministratori.html`, pubblicata
+su <https://simo-magnus.github.io/UniNotes/amministratori.html> e collegata
+dal piè di pagina del sito. Spiega l'app, i permessi, dove vanno i dati, come
+approvare e come revocare, con una sezione in inglese. L'ID applicazione nella
+pagina è il segnaposto `__MS_CLIENT_ID__`: il workflow
+`.github/workflows/pagina.yml` lo sostituisce al deploy con il secret
+`MS_CLIENT_ID` o, se il secret è vuoto, con `MicrosoftOAuth.defaultClientId`
+letto dal codice (come fanno le build). Senza un ID valido la pagina nasconde
+il link di consenso invece di mostrarlo rotto.
+
+**Link di consenso amministratore** (lo stesso nell'app e nella pagina,
+verificato da `test/microsoft_admin_consent_test.dart`):
+
+```
+https://login.microsoftonline.com/organizations/v2.0/adminconsent
+  ?client_id=<ID>
+  &scope=https://graph.microsoft.com/User.Read https://graph.microsoft.com/Files.ReadWrite
+         https://graph.microsoft.com/Notes.Read offline_access
+         https://graph.microsoft.com/Calendars.ReadWrite
+  &redirect_uri=https://simo-magnus.github.io/UniNotes/amministratori.html
+  &state=uninotes
+```
+
+- Endpoint v2.0 con `organizations`: vale per qualsiasi tenant, l'ateneo è
+  quello dell'amministratore che accede (`common` qui non è ammesso).
+- Scope espliciti invece di `.default`: l'approvazione copre esattamente i
+  permessi che l'app chiede, compreso il calendario, anche se l'elenco della
+  registrazione restasse indietro.
+- `redirect_uri` è obbligatorio e deve essere registrato: per questo serve la
+  piattaforma «Web» con l'URI della pagina (sezione 2). Microsoft torna sulla
+  pagina con `admin_consent=True` oppure con `error`/`error_description`, e la
+  pagina mostra l'esito.
+- La variante v1 (`https://login.microsoftonline.com/common/adminconsent?client_id=<ID>`)
+  non è usata: approva solo i permessi elencati nella registrazione e, senza
+  `redirect_uri`, torna a un URI registrato come `http://localhost`, cioè a
+  una pagina d'errore del browser anche quando il consenso è riuscito.
+
+In alternativa l'amministratore usa Entra admin center → Applicazioni
+aziendali → UniNotes → Autorizzazioni → «Concedi il consenso amministratore»
+(approva i permessi elencati nella sezione 3), oppure attiva il flusso di
+lavoro di consenso amministratore (Applicazioni aziendali → Consenso e
+autorizzazioni → Impostazioni del consenso amministratore), così gli studenti
+chiedono l'approvazione da soli con «Richiedi approvazione».

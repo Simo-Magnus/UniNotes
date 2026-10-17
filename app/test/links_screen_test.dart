@@ -9,6 +9,7 @@ import 'package:university_notes/core/services/app_services.dart';
 import 'package:university_notes/core/services/whisper_service.dart';
 import 'package:university_notes/core/theme/app_theme.dart';
 import 'package:university_notes/features/links/links_screen.dart';
+import 'package:university_notes/features/links/microsoft_consent_sheet.dart';
 import 'package:university_notes/features/settings/settings_screen.dart';
 
 Future<(AppServices, Directory)> _services() async {
@@ -111,6 +112,32 @@ void main() {
       find.widgetWithText(FilledButton, 'Accedi con Microsoft'),
       findsOneWidget,
     );
+    expect(tester.takeException(), isNull);
+    await tester.runAsync(() async {
+      await s.database.close();
+      await tmp.delete(recursive: true);
+    });
+  });
+
+  testWidgets('OneDrive: link per l\'account universitario bloccato', (
+    tester,
+  ) async {
+    final (s, tmp) = (await tester.runAsync(_services))!;
+    await _pump(tester, const LinksScreen(), s, const Size(1300, 6000));
+    // non collegato: il link c'è sempre (anche dopo un accesso interrotto)
+    expect(find.text(kUniversityAccountHelp), findsOneWidget);
+    await tester.tap(find.text(kUniversityAccountHelp));
+    await _settle(tester, 20);
+    await tester.pump(const Duration(seconds: 1));
+    expect(find.text('Il tuo ateneo deve approvare UniNotes'), findsOneWidget);
+    expect(find.text('Usa un account Microsoft personale'), findsOneWidget);
+    await tester.tap(find.byKey(const Key('consent-ask')));
+    await _settle(tester, 20);
+    await tester.pump(const Duration(seconds: 1));
+    final text = tester
+        .widget<SelectableText>(find.byKey(const Key('consent-request-text')))
+        .data!;
+    expect(text, contains(s.onedrive.builtInClientId));
     expect(tester.takeException(), isNull);
     await tester.runAsync(() async {
       await s.database.close();

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import '../../features/cloud/graph_client.dart';
+import '../../features/cloud/microsoft_admin_consent.dart';
 import '../../features/cloud/microsoft_oauth.dart';
 import '../../features/cloud/onedrive_service.dart';
 import '../services/external_launcher.dart';
@@ -52,14 +53,25 @@ class OutlookCalendarAuth {
 
   /// Chiede l'accesso al calendario: prima in silenzio con l'accesso di
   /// OneDrive (se il consenso c'è già), poi con la pagina di Microsoft
-  /// sull'account collegato.
-  Future<void> connect() async {
+  /// sull'account collegato. Con [chooseAccount] (l'ateneo blocca l'account
+  /// universitario: «Usa un account Microsoft personale») si va subito alla
+  /// pagina di Microsoft, con la scelta dell'account e senza suggerirlo.
+  Future<void> connect({bool chooseAccount = false}) async {
     if (!await microsoftConnected()) {
       throw CalendarAccessException(
         'Collega prima il tuo account Microsoft in Collegamenti → OneDrive.',
       );
     }
-    final oauth = await _oauth();
+    final oauth = chooseAccount
+        ? _oauthFactory(
+            await onedrive.clientId(),
+            MicrosoftAdminConsent.tenantForPersonal(await onedrive.tenant()),
+          )
+        : await _oauth();
+    if (chooseAccount) {
+      await _store(await oauth.signIn());
+      return;
+    }
     final odRefresh = await _secrets.read(onedrive.refreshKey);
     OAuthTokens? t;
     if (odRefresh != null) {
@@ -76,6 +88,10 @@ class OutlookCalendarAuth {
           .firstWhere((x) => x.contains('@'), orElse: () => '');
       t = await oauth.signIn(loginHint: hint.isEmpty ? null : hint);
     }
+    await _store(t);
+  }
+
+  Future<void> _store(OAuthTokens t) async {
     final refresh = t.refreshToken;
     if (refresh == null) {
       throw OAuthException('Microsoft non ha restituito un token permanente.');

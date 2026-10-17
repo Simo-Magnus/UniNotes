@@ -3,7 +3,40 @@ import 'package:flutter/material.dart';
 import '../../core/services/power.dart';
 import '../../widgets/common.dart';
 import '../cloud/cloud_drive_service.dart';
+import '../settings/widgets/async_action_button.dart' show showErrorDialog;
 import 'links_widgets.dart';
+
+/// Aiuto quando l'accesso al servizio non riesce per un motivo che lo
+/// studente non può risolvere dall'app (OneDrive: l'ateneo deve approvare
+/// UniNotes). Al posto dell'errore generico si apre una scheda.
+class SignInHelp {
+  const SignInHelp({
+    required this.label,
+    required this.matches,
+    required this.show,
+    required this.retry,
+    required this.remembered,
+  });
+
+  /// Testo del link che riapre la scheda.
+  final String label;
+
+  /// L'errore di accesso è di questo tipo.
+  final bool Function(Object error) matches;
+
+  /// Mostra la scheda ([error] null = aperta dal link); true = rifare
+  /// l'accesso con [retry] (es. con un account personale).
+  final Future<bool> Function(
+    BuildContext context, {
+    Object? error,
+    required bool connected,
+  })
+  show;
+  final Future<void> Function() retry;
+
+  /// Il blocco è già capitato: il link resta anche ad account collegato.
+  final Future<bool> Function() remembered;
+}
 
 class _CloudState {
   const _CloudState({
@@ -14,6 +47,7 @@ class _CloudState {
     required this.scopes,
     required this.interval,
     required this.wifiOnly,
+    required this.helpRemembered,
   });
   final bool connected;
   final String? account;
@@ -22,6 +56,7 @@ class _CloudState {
   final Set<SyncScope> scopes;
   final int interval;
   final bool wifiOnly;
+  final bool helpRemembered;
 }
 
 /// Scheda di un servizio cloud in Collegamenti (OneDrive, Google Drive):
@@ -38,6 +73,7 @@ class CloudDriveCard extends StatefulWidget {
     this.missingId,
     this.note,
     this.extra,
+    this.signInHelp,
     this.primary = false,
     this.onChanged,
   });
@@ -62,6 +98,9 @@ class CloudDriveCard extends StatefulWidget {
 
   /// Parti in più del servizio sotto i pulsanti (es. «Importa da Drive»).
   final Widget Function(BuildContext context, bool connected)? extra;
+
+  /// Scheda al posto dell'errore per gli accessi bloccati (vedi [SignInHelp]).
+  final SignInHelp? signInHelp;
   final bool primary;
   final VoidCallback? onChanged;
 
@@ -81,6 +120,7 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
     scopes: await _sv.scopes(),
     interval: await _sv.intervalMinutes(),
     wifiOnly: await _sv.recordingsWifiOnly(),
+    helpRemembered: await widget.signInHelp?.remembered() ?? false,
   );
 
   void _reload() {
@@ -106,6 +146,41 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
   void dispose() {
     _sv.removeListener(_onService);
     super.dispose();
+  }
+
+  /// Accesso; se l'errore ha una scheda dedicata ([SignInHelp]) la mostra
+  /// al posto del dialogo d'errore e, se lo studente lo chiede, riprova.
+  Future<void> _signIn(Future<void> Function() attempt) async {
+    try {
+      await attempt();
+    } catch (e) {
+      final help = widget.signInHelp;
+      if (help == null || !help.matches(e) || !mounted) rethrow;
+      final retry = await help.show(context, error: e, connected: false);
+      _reload();
+      if (retry && mounted) return _signIn(help.retry);
+      return;
+    }
+    _reload();
+    await _sv.sync();
+    _sv.startAutoSync();
+  }
+
+  Future<void> _openHelp(bool connected) async {
+    final help = widget.signInHelp!;
+    final retry = await help.show(context, connected: connected);
+    if (!retry || !mounted) return;
+    try {
+      await _signIn(help.retry);
+    } catch (e) {
+      if (mounted) {
+        await showErrorDialog(
+          context,
+          'Accesso a ${_sv.serviceName} non riuscito',
+          e,
+        );
+      }
+    }
   }
 
   Future<void> _pickFolder(String current) async {
@@ -194,12 +269,7 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
               errorTitle: 'Accesso a $name non riuscito',
               onPressed: widget.missingId != null
                   ? null
-                  : () async {
-                      await _sv.signIn();
-                      _reload();
-                      await _sv.sync();
-                      _sv.startAutoSync();
-                    },
+                  : () => _signIn(_sv.signIn),
             )
           else ...[
             LinkButton(
@@ -232,6 +302,16 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
           ],
         ],
       ),
+      if (widget.signInHelp != null && (!d.connected || d.helpRemembered))
+        Align(
+          alignment: Alignment.centerLeft,
+          child: TextButton.icon(
+            key: const Key('sign-in-help'),
+            onPressed: () => _openHelp(d.connected),
+            icon: const Icon(Icons.help_outline, size: 18),
+            label: Text(widget.signInHelp!.label),
+          ),
+        ),
       if (widget.note != null) ...[
         const SizedBox(height: 8),
         NoteText(widget.note!, icon: Icons.info_outline),

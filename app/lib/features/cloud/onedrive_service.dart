@@ -7,6 +7,7 @@ import '../../core/services/loopback_oauth.dart';
 import '../../repositories/settings_repository.dart';
 import 'cloud_drive_service.dart';
 import 'graph_client.dart';
+import 'microsoft_admin_consent.dart';
 import 'microsoft_oauth.dart';
 import 'onedrive_folders.dart';
 import 'onedrive_sync.dart';
@@ -73,6 +74,26 @@ class OneDriveService extends CloudDriveService {
     SettingKeys.onedriveTenant,
     MicrosoftOAuth.normalizeTenant(v),
   );
+
+  /// L'accesso con l'account universitario è stato bloccato dall'ateneo
+  /// (serve il consenso dell'amministratore): la scheda OneDrive tiene il
+  /// link «Perché non riesco a collegare l'account universitario?».
+  static const adminConsentKey = 'onedrive_admin_consent_needed';
+
+  Future<bool> adminConsentNeeded() async =>
+      (await settings.get(adminConsentKey)) == '1';
+  Future<void> setAdminConsentNeeded(bool v) =>
+      settings.set(adminConsentKey, v ? '1' : null);
+
+  /// «Usa un account Microsoft personale»: di nuovo la pagina di Microsoft
+  /// con la scelta dell'account (`prompt=select_account`); se in Avanzate è
+  /// scelto un tenant solo per account universitari si torna a «common».
+  Future<void> signInPersonal() async {
+    final t = await tenant();
+    final personal = MicrosoftAdminConsent.tenantForPersonal(t);
+    if (personal != t) await setTenant(personal);
+    await signIn();
+  }
 
   // ------------------------------------------------------------- account
 

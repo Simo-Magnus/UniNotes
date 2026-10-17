@@ -195,11 +195,17 @@ class MicrosoftOAuth extends LoopbackOAuth {
         'Questo account non è ammesso dalla registrazione dell\'app: prova con '
             'un altro account; chi pubblica l\'app deve accettare in Entra gli '
             '«Account Microsoft personali» e quelli di lavoro o scuola.',
-      '65001' || '90094' || '90095' || '65004' =>
-        'Il tuo ateneo richiede l\'approvazione di un amministratore per le app '
-            'esterne. Usa un account Microsoft personale (outlook/hotmail, OneDrive '
-            'gratuito 5 GB), oppure chiedi '
-            'l\'approvazione all\'helpdesk informatico.',
+      // l'app mostra la scheda «Il tuo ateneo deve approvare UniNotes»
+      // (MicrosoftAdminConsent.isAdminConsentError)
+      '65001' || '90094' || '90095' || '50105' =>
+        'Il tuo ateneo deve approvare UniNotes: non permette agli studenti di '
+            'collegare app esterne all\'account universitario. Usa un account '
+            'Microsoft personale (OneDrive gratuito 5 GB) oppure chiedi '
+            'all\'ateneo di approvare UniNotes.',
+      '65004' =>
+        'Autorizzazioni non concesse. Se le hai annullate tu, riprova e '
+            'accettale; se Microsoft chiedeva l\'approvazione '
+            'dell\'amministratore, il tuo ateneo deve approvare UniNotes.',
       '53003' || '530003' =>
         'Il criterio di accesso condizionale del tuo ateneo blocca questa app: '
             'usa un account Microsoft personale.',
@@ -211,12 +217,16 @@ class MicrosoftOAuth extends LoopbackOAuth {
             'nuovo.',
       _ => null,
     };
+    // il codice AADSTS ha la precedenza: «access_denied» accompagna anche il
+    // rifiuto per mancanza del consenso dell'amministratore
+    if (hint != null) {
+      return '$hint\n(Dettaglio Microsoft: ${raw.split('\n').first.trim()})';
+    }
     if (raw.contains('access_denied') || raw.contains('consent_required')) {
       return 'Accesso annullato o permessi non concessi: riprova e accetta le '
           'autorizzazioni richieste.';
     }
-    if (hint == null) return raw;
-    return '$hint\n(Dettaglio Microsoft: ${raw.split('\n').first.trim()})';
+    return raw;
   }
 
   static const defaultScope =

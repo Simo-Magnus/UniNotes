@@ -189,6 +189,20 @@ void main() {
     },
   );
 
+  test(
+    'ateneo che blocca: account personale scelto sulla pagina di Microsoft',
+    () async {
+      _FakeOAuth.silent = true;
+      await secrets.write(onedrive.refreshKey, 'od-refresh');
+      await onedrive.setAccount('Studente · studente@ateneo.it');
+      await auth.connect(chooseAccount: true);
+      // niente rinnovo silenzioso né account suggerito
+      expect(log, ['signIn null']);
+      expect(await secrets.read(OutlookCalendarAuth.refreshKey), 'cal-refresh');
+      expect(await secrets.read(onedrive.refreshKey), 'od-refresh');
+    },
+  );
+
   test('consenso già dato: nessuna pagina di accesso', () async {
     _FakeOAuth.silent = true;
     await secrets.write(onedrive.refreshKey, 'od-refresh');

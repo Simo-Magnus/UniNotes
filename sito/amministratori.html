@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>UniNotes per gli amministratori IT</title>
+<meta name="description" content="Informazioni per gli amministratori IT degli atenei: ID applicazione di UniNotes, permessi Microsoft Graph, dati e consenso amministratore.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Design 3 (docs/SPEC_DESIGN_3.md), come index.html. */
+  :root {
+    color-scheme: dark;
+    --text: #F3F7FB; --text2: rgba(235,245,255,.75); --muted: #8FA9C4;
+    --c2: #38BDF8; --c3: #7DD3FC; --c5: #7DE8FF;
+    --on-o: #1A0B00; --ok: #7EE0B5; --err: #FFB4A8;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; background: #02060f; }
+  body {
+    margin: 0; min-height: 100vh; color: var(--text);
+    font: 400 15px/1.6 "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background:
+      radial-gradient(280px 200px at 50% 18%, rgba(56,160,255,.15), transparent 72%),
+      radial-gradient(220px 160px at 20% 4%, rgba(37,99,235,.16), transparent 70%),
+      radial-gradient(140% 92% at 50% 45%, transparent 52%, rgba(0,0,0,.62) 100%),
+      linear-gradient(178deg, #02060f 0%, #030b18 30%, #041122 55%, #041426 80%, #020a16 100%);
+    background-attachment: fixed;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .12; z-index: 0;
+    background-image: radial-gradient(rgba(255,255,255,.05) .6px, transparent .7px);
+    background-size: 3px 3px;
+  }
+  a { color: var(--c3); }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--c5); outline-offset: 3px; border-radius: 10px; }
+  main { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 48px 16px 64px; }
+
+  header { display: flex; align-items: center; gap: 16px; }
+  header img { width: 64px; height: 64px; border-radius: 14px; box-shadow: 0 12px 26px -16px rgba(0,0,0,.92); }
+  h1 { font-size: 30px; font-weight: 700; line-height: 1.15; margin: 0; }
+  .tagline { color: var(--text2); margin: 4px 0 0; font-size: 15px; }
+
+  .card {
+    position: relative; overflow: hidden; isolation: isolate;
+    background: linear-gradient(180deg, rgba(255,255,255,.085) 0%, rgba(255,255,255,.03) 34%, rgba(255,255,255,.012) 66%, rgba(0,8,20,.34) 100%);
+    border: 1px solid rgba(160,205,255,.11); border-radius: 22px;
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.18), inset 0 -1px 0 rgba(0,0,0,.42), 0 12px 26px -16px rgba(0,0,0,.92);
+    padding: 20px 24px 24px; margin-top: 24px;
+  }
+  .card::before {
+    content: ""; position: absolute; top: 0; left: 16%; right: 16%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(190,228,255,.42), transparent);
+  }
+  .card::after {
+    content: ""; position: absolute; z-index: -1; width: 250px; height: 150px; top: -34px; left: 50%;
+    transform: translateX(-50%); background: radial-gradient(closest-side, rgba(56,189,248,.13), transparent);
+  }
+  .titolo { font-size: 11px; font-weight: 600; color: var(--text2); margin: 0 0 12px; }
+  h2 { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
+  h3 { font-size: 16px; font-weight: 600; margin: 20px 0 6px; }
+  p { margin: 0 0 10px; color: var(--text2); }
+  ol, ul { margin: 0 0 12px; padding-left: 20px; color: var(--text2); }
+  li { margin: 4px 0; }
+  b, strong { color: var(--text); font-weight: 600; }
+
+  .id { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 12px 0; }
+  .id code { font-size: 15px; padding: 4px 10px; }
+  code { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10); border-radius: 6px; padding: 1px 6px; font-size: 13px; overflow-wrap: anywhere; color: var(--text); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 44px; padding: 10px 20px; border-radius: 14px;
+    font-family: inherit; font-size: 15px; font-weight: 600; line-height: 1.2;
+    text-decoration: none; cursor: pointer; text-align: center;
+  }
+  .btn:focus-visible { outline: 2px solid var(--c5); outline-offset: 3px; }
+  /* l'unica azione arancione della pagina */
+  .btn-main {
+    background: linear-gradient(180deg, #FFB064 0%, #FF8A1F 52%, #E86F08 100%); color: var(--on-o); border: 0;
+    box-shadow: inset 0 1px 0 rgba(255,236,210,.75), inset 0 -2px 0 rgba(150,60,0,.35), 0 6px 14px -8px rgba(0,0,0,.75);
+  }
+  .btn-main:hover { filter: brightness(1.04); }
+  .btn-sec {
+    background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+    border: 1px solid rgba(255,255,255,.14); color: var(--text); font-size: 13px; min-height: 36px; padding: 6px 14px;
+  }
+  .btn-sec:hover { border-color: rgba(125,211,252,.55); }
+
+  .passo {
+    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10); border-radius: 16px;
+    padding: 16px; margin-top: 12px;
+  }
+  .passo h3 { margin-top: 0; }
+  .passo p:last-child, .passo ol:last-child { margin-bottom: 0; }
+
+  .tabella { overflow-x: auto; margin: 4px 0 12px; }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 14px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; }
+  td { color: var(--text2); }
+  td:first-child { white-space: nowrap; }
+
+  .esito { display: none; border-radius: 16px; padding: 14px 16px; margin-top: 24px; border: 1px solid; }
+  .esito.ok { display: block; background: rgba(126,224,181,.08); border-color: rgba(126,224,181,.35); color: var(--ok); }
+  .esito.errore { display: block; background: rgba(255,180,168,.08); border-color: rgba(255,180,168,.35); color: var(--err); }
+  .esito p { color: inherit; margin: 0; }
+  .esito .dettaglio { color: var(--text2); font-size: 13px; margin-top: 6px; overflow-wrap: anywhere; }
+
+  .senza-id { display: none; }
+  .nessun-id .senza-id { display: block; }
+  .nessun-id .richiede-id { display: none; }
+
+  details { border-top: 1px solid rgba(255,255,255,.08); }
+  summary { cursor: pointer; font-weight: 600; font-size: 15px; min-height: 44px; display: flex; align-items: center; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: ""; margin-left: auto; margin-right: 4px; width: 7px; height: 7px;
+    border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+    transform: rotate(45deg); transition: transform .2s ease;
+  }
+  details[open] summary::after { transform: rotate(225deg); }
+  .nota { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
+  footer { position: relative; z-index: 1; color: var(--muted); font-size: 13px; margin-top: 32px; text-align: center; }
+
+  @media (max-width: 520px) {
+    main { padding-top: 32px; }
+    .card { padding: 16px 16px 20px; }
+    h1 { font-size: 22px; }
+    .btn-main { width: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) { summary::after { transition: none; } }
+</style>
+</head>
+<body>
+<main id="pagina">
+  <header>
+    <img src="icona.png" alt="" width="64" height="64">
+    <div>
+      <h1>UniNotes per gli amministratori IT</h1>
+      <p class="tagline">Come approvare UniNotes nel tenant Microsoft Entra dell'ateneo, e che cosa fa con i permessi richiesti.</p>
+    </div>
+  </header>
+
+  <div class="esito" id="esito" role="status" aria-live="polite">
+    <p id="esito-testo"></p>
+    <p class="dettaglio" id="esito-dettaglio"></p>
+  </div>
+
+  <section class="card" aria-labelledby="breve">
+    <p class="titolo">In breve</p>
+    <h2 id="breve">Che cos'è UniNotes</h2>
+    <p>UniNotes è un'app per chi studia all'università: appunti, registrazioni delle lezioni, libri ed esami. È <b>gratuita e senza pubblicità</b>, per Windows, macOS, Android e iPhone, con il <a href="https://github.com/Simo-Magnus/UniNotes">codice pubblico su GitHub</a>. Gli studenti possono collegare il proprio account Microsoft per sincronizzare i file con OneDrive, leggere i blocchi appunti OneNote e, su Windows, scrivere le date degli esami nel calendario Outlook.</p>
+    <div class="id">
+      <span>ID applicazione (client):</span>
+      <code id="app-id">__MS_CLIENT_ID__</code>
+      <button type="button" class="btn btn-sec richiede-id" id="copia-id">Copia</button>
+    </div>
+    <p class="senza-id nota">L'ID applicazione non è disponibile in questa copia della pagina. In Entra admin center lo trovi cercando «UniNotes» in Applicazioni aziendali.</p>
+    <p>La registrazione è <b>multi-tenant con account Microsoft personali</b> (tenant <code>common</code>), come <b>client pubblico con PKCE</b>: non ha segreti client e chiede solo <b>permessi delegati</b>, quindi agisce sempre come lo studente che ha fatto l'accesso e solo sui suoi dati. Nessun permesso di applicazione.</p>
+    <p><b>Editore non verificato.</b> La verifica dell'editore di Microsoft richiede un account del Microsoft AI Cloud Partner Program intestato a un ente legale e un dominio verificato. UniNotes è un progetto personale, senza ente legale né dominio proprio: per questo Microsoft lo mostra come non verificato e molti atenei non permettono agli studenti di dargli il consenso da soli.</p>
+  </section>
+
+  <section class="card" aria-labelledby="approvare">
+    <p class="titolo">Come approvare</p>
+    <h2 id="approvare">Consenso amministratore</h2>
+    <div class="passo">
+      <h3>1. Con un clic, per tutto il tenant</h3>
+      <p class="richiede-id">Accedi con un account amministratore del tenant dell'ateneo (Amministratore applicazioni cloud, Amministratore applicazioni o Amministratore ruoli con privilegi), controlla i permessi e scegli <b>Accetta</b>. Microsoft torna poi su questa pagina con l'esito.</p>
+      <p class="richiede-id"><a class="btn btn-main" id="consenso" href="https://login.microsoftonline.com/organizations/v2.0/adminconsent?client_id=__MS_CLIENT_ID__&amp;scope=https%3A%2F%2Fgraph.microsoft.com%2FUser.Read%20https%3A%2F%2Fgraph.microsoft.com%2FFiles.ReadWrite%20https%3A%2F%2Fgraph.microsoft.com%2FNotes.Read%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2FCalendars.ReadWrite&amp;redirect_uri=https%3A%2F%2Fsimo-magnus.github.io%2FUniNotes%2Famministratori.html&amp;state=uninotes">Concedi il consenso amministratore</a></p>
+      <p class="senza-id">Il link non è disponibile senza l'ID applicazione: usa il passo 2.</p>
+      <p class="nota">Il link usa l'endpoint <code>/organizations/v2.0/adminconsent</code> con i permessi elencati qui sotto, compreso <code>Calendars.ReadWrite</code>, così l'approvazione copre anche il calendario su Windows.</p>
+    </div>
+    <div class="passo">
+      <h3>2. Da Microsoft Entra admin center</h3>
+      <ol>
+        <li>Apri <a href="https://entra.microsoft.com">entra.microsoft.com</a> → <b>Identità → Applicazioni → Applicazioni aziendali</b> e cerca <b>UniNotes</b>.</li>
+        <li><b>Autorizzazioni</b> → <b>Concedi il consenso amministratore</b> per il tenant dell'ateneo.</li>
+      </ol>
+      <p class="nota">UniNotes compare tra le applicazioni aziendali dopo il primo tentativo di accesso di uno studente dell'ateneo. Se non c'è, usa il link del passo 1, che la aggiunge.</p>
+    </div>
+    <div class="passo">
+      <h3>3. Lasciare che gli studenti chiedano l'approvazione</h3>
+      <p>Con il flusso di lavoro di consenso amministratore, lo studente bloccato vede nella pagina di accesso Microsoft il pulsante <b>Richiedi approvazione</b> e la richiesta arriva ai revisori che scegli.</p>
+      <ol>
+        <li>Entra admin center → <b>Applicazioni aziendali → Consenso e autorizzazioni → Impostazioni del consenso amministratore</b>.</li>
+        <li>Attiva <b>Gli utenti possono richiedere il consenso amministratore per le app a cui non possono concedere il consenso</b>.</li>
+        <li>Scegli i revisori (utenti, gruppi o ruoli), le notifiche e la scadenza delle richieste, poi <b>Salva</b>.</li>
+        <li>Le richieste compaiono in <b>Applicazioni aziendali → Richieste di consenso amministratore</b>.</li>
+      </ol>
+    </div>
+    <p class="nota">Se in <b>Proprietà</b> dell'applicazione aziendale è attiva <b>Assegnazione obbligatoria</b>, assegna gli studenti o un gruppo in <b>Utenti e gruppi</b>, altrimenti l'accesso fallisce con l'errore AADSTS50105.</p>
+  </section>
+
+  <section class="card" aria-labelledby="permessi">
+    <p class="titolo">Permessi richiesti</p>
+    <h2 id="permessi">Permessi delegati di Microsoft Graph</h2>
+    <div class="tabella">
+      <table>
+        <thead><tr><th>Permesso</th><th>Che cosa ne fa UniNotes</th></tr></thead>
+        <tbody>
+          <tr><td><code>User.Read</code></td><td>Legge nome e indirizzo dell'account, per mostrare allo studente quale account è collegato.</td></tr>
+          <tr><td><code>Files.ReadWrite</code></td><td>Elenca le cartelle quando lo studente sceglie dove sincronizzare e legge e scrive nella cartella scelta (predefinita «UniNotes»): appunti, registrazioni delle lezioni, trascrizioni, libri, materiali e un backup dei dati dell'app. Non tocca altri file.</td></tr>
+          <tr><td><code>Notes.Read</code></td><td>Mostra in sola lettura i blocchi appunti OneNote dello studente. Il contenuto non viene salvato dall'app.</td></tr>
+          <tr><td><code>offline_access</code></td><td>Mantiene il collegamento senza chiedere l'accesso ogni volta (refresh token conservato sul dispositivo).</td></tr>
+          <tr><td><code>Calendars.ReadWrite</code></td><td>Solo nell'app per Windows, chiesto a parte quando lo studente attiva il calendario: crea un calendario «UniNotes» in Outlook con le date degli esami e i promemoria, e aggiorna o toglie solo i propri eventi.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="dati">
+    <p class="titolo">Dove vanno i dati</p>
+    <h2 id="dati">Nessun server di UniNotes</h2>
+    <ul>
+      <li>L'app comunica direttamente con <code>login.microsoftonline.com</code> e <code>graph.microsoft.com</code>: i dati non passano dallo sviluppatore, che non ha server.</li>
+      <li>I token restano sul dispositivo, nell'archivio protetto del sistema (Gestione credenziali di Windows, Portachiavi di macOS e iOS, Keystore di Android). Non finiscono in backup, esportazioni o sincronizzazioni. La password resta nella pagina di accesso di Microsoft.</li>
+      <li>I file stanno sul dispositivo e nell'OneDrive dello studente, cioè nello spazio gestito dall'ateneo con le sue regole.</li>
+      <li>Nessuna statistica d'uso, pubblicità o segnalazione automatica degli errori.</li>
+    </ul>
+    <p>I dettagli sono nell'<a href="privacy.html">informativa sulla privacy</a>.</p>
+  </section>
+
+  <section class="card" aria-labelledby="revocare">
+    <p class="titolo">Come revocare</p>
+    <h2 id="revocare">Togliere l'approvazione</h2>
+    <ol>
+      <li>Entra admin center → <b>Applicazioni aziendali → UniNotes → Proprietà</b>: <b>Abilitato per l'accesso degli utenti</b> su <b>No</b> blocca subito ogni accesso.</li>
+      <li>Nella stessa pagina, <b>Elimina</b> toglie l'applicazione aziendale con il consenso concesso; i token già emessi non si rinnovano più.</li>
+      <li>Il singolo studente può scollegarsi dall'app (Collegamenti → OneDrive → Scollega) e togliere le autorizzazioni da <a href="https://myapps.microsoft.com">myapps.microsoft.com</a>.</li>
+    </ol>
+    <p class="nota">I file già sincronizzati restano nell'OneDrive dello studente.</p>
+  </section>
+
+  <section class="card" lang="en" aria-labelledby="english">
+    <p class="titolo">English</p>
+    <details>
+      <summary id="english">For IT administrators</summary>
+      <p>UniNotes is a free, ad-free, open-source app for university students (Windows, macOS, Android, iOS). It is registered in Microsoft Entra as a <b>multi-tenant public client with PKCE</b> (no client secret) and requests <b>delegated Microsoft Graph permissions only</b>: <code>User.Read</code> (account name), <code>Files.ReadWrite</code> (sync the folder the student picks in their OneDrive), <code>Notes.Read</code> (read-only OneNote notebooks), <code>offline_access</code>, and, on Windows only and requested separately, <code>Calendars.ReadWrite</code> (an «UniNotes» Outlook calendar with exam dates).</p>
+      <p>The publisher is <b>unverified</b> because publisher verification requires a legal entity and a verified domain, which this personal project does not have. There is <b>no UniNotes server</b>: the app talks directly to Microsoft, tokens stay in the device's secure storage and files stay on the device and in the student's OneDrive.</p>
+      <p class="richiede-id">Application (client) ID: <code class="app-id">__MS_CLIENT_ID__</code>. To approve it for your tenant, use the orange <b>admin consent</b> button above (v2.0 <code>/organizations/adminconsent</code> endpoint), or Entra admin center → Enterprise applications → UniNotes → Permissions → <b>Grant admin consent</b>. To let students request approval themselves, enable the <b>admin consent workflow</b> (Enterprise applications → Consent and permissions → Admin consent settings). To revoke, disable «Enabled for users to sign in?» or delete the enterprise application.</p>
+    </details>
+  </section>
+
+  <footer>
+    <a href="./">UniNotes</a> · <a href="privacy.html">Informativa sulla privacy</a> · <a href="termini.html">Termini di utilizzo</a>
+  </footer>
+</main>
+<script>
+  (function () {
+    // ID applicazione: inserito dal workflow della pagina (secret MS_CLIENT_ID).
+    // Senza un ID valido spariscono il link di consenso e il pulsante Copia.
+    var id = (document.getElementById("app-id").textContent || "").trim();
+    var guid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    if (!guid.test(id)) {
+      document.getElementById("pagina").classList.add("nessun-id");
+      document.getElementById("app-id").textContent = "non disponibile";
+    }
+    var copia = document.getElementById("copia-id");
+    copia.addEventListener("click", function () {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(id).then(function () {
+        copia.textContent = "Copiato";
+        setTimeout(function () { copia.textContent = "Copia"; }, 1600);
+      });
+    });
+
+    // Ritorno dal consenso amministratore di Microsoft.
+    var q = new URLSearchParams(location.search);
+    if (!q.has("admin_consent") && !q.has("error")) return;
+    var box = document.getElementById("esito");
+    var ok = /^true$/i.test(q.get("admin_consent") || "") && !q.has("error");
+    box.className = "esito " + (ok ? "ok" : "errore");
+    document.getElementById("esito-testo").textContent = ok
+      ? "Consenso concesso: gli studenti dell'ateneo possono collegare UniNotes al proprio account Microsoft. Grazie!"
+      : "Consenso non concesso. Puoi riprovare con un account amministratore o usare Entra admin center (passo 2).";
+    document.getElementById("esito-dettaglio").textContent =
+      ok ? "" : (q.get("error_description") || q.get("error") || "").slice(0, 400);
+    if (history.replaceState) history.replaceState(null, "", location.pathname);
+  })();
+</script>
+</body>
+</html>
