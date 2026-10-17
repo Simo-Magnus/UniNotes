@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "univda",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-14",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.univda.it/didattica/dipartimento-di-scienze-economiche-e-politiche/offerta-formativa/corso-di-laurea-in-economia-e-management/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "ECO 062",
@@ -38,11 +38,24 @@
       "Nova Massimiliano"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/4750/2025/10000?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Economia Aziendale, Seconda Edizione, A cura di Alberto Nobolo, Pearson, 2017. Note didattiche, slide, casi ed altro materiale didattico reso disponibile sul sito del corso.",
+       "autori": null,
+       "editore": "Pearson",
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/4750/2022/10000?coorte=2024)",
+       "citazione": "Economia Aziendale, Seconda Edizione, A cura di Alberto Nobolo, Pearson, 2017. Note didattiche, slide, casi ed altro materiale didattico reso disponibile sul sito del corso."
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-l-18-economia-e-management-eco-062",
      "stato_esami": "da_aggiungere"
@@ -438,11 +451,60 @@
      "curriculum": "Analisi dei sistemi economici, Gestione delle imprese",
      "docenti": [],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/5318/2025/10000?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "FRIGERIO, MACCAFERRI, RAJOLA, ICT e società dell'informazione (seconda edizione), Mc Graw Hill, 2023",
+       "autori": null,
+       "editore": null,
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/5318/2022/10000?coorte=2024)",
+       "citazione": "FRIGERIO, MACCAFERRI, RAJOLA, ICT e società dell'informazione (seconda edizione), Mc Graw Hill, 2023"
+      },
+      {
+       "titolo": "CONSOLE, RIBAUDO, AVALLE, et all., Introduzione all'informatica (quarta edizione), UTET 2010",
+       "autori": null,
+       "editore": "UTET 2010",
+       "anno": 2010,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/5318/2022/10000?coorte=2024)",
+       "citazione": "CONSOLE, RIBAUDO, AVALLE, et all., Introduzione all'informatica (quarta edizione), UTET 2010"
+      },
+      {
+       "titolo": "MARI, BUONANNO, SCIUTO, Informatica e cultura dell'informazione, McGraw-Hill, 2013",
+       "autori": null,
+       "editore": "McGraw-Hill",
+       "anno": 2013,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/5318/2022/10000?coorte=2024)",
+       "citazione": "MARI, BUONANNO, SCIUTO, Informatica e cultura dell'informazione, McGraw-Hill, 2013"
+      },
+      {
+       "titolo": "DOWNEY, Think Python (seconda edizione), Green Tea Press, 2015, https://greenteapress.com/wp/think-python-2e/",
+       "autori": null,
+       "editore": "Green Tea Press",
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/5318/2022/10000?coorte=2024)",
+       "citazione": "DOWNEY, Think Python (seconda edizione), Green Tea Press, 2015, https://greenteapress.com/wp/think-python-2e/"
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-l-18-economia-e-management-eco-081",
      "stato_esami": "da_aggiungere"
@@ -1160,11 +1222,24 @@
       "Sfameni Paolo Domenico"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2027/5333/2025/10000?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Oggetto del corso sarà la versione aggiornata del manuale Sfameni-Giannelli, Diritto dei mercati e degli interkediari finanziari, Egea, MIlano, 2018; in alternativa V. Perrone, Diritto del mercato dei capitali, Giuffrè, Milano, ultima edizionie",
+       "autori": null,
+       "editore": "Egea",
+       "anno": 2018,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5333/2022/10000?coorte=2025)",
+       "citazione": "Oggetto del corso sarà la versione aggiornata del manuale Sfameni-Giannelli, Diritto dei mercati e degli interkediari finanziari, Egea, MIlano, 2018; in alternativa V. Perrone, Diritto del mercato dei capitali, Giuffrè, Milano, ultima edizionie"
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-l-18-economia-e-management-eco-095",
      "stato_esami": "da_aggiungere"
@@ -1258,11 +1333,36 @@
       "Musolino Dario Antonino"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2027/5332/2025/10000?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Economia Regionale",
+       "autori": "Capello R.",
+       "editore": "Il Mulino",
+       "anno": 2004,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5332/2022/10000?coorte=2025)",
+       "citazione": "Capello R. (2004), Economia Regionale. I Edizione. Il Mulino, Bologna."
+      },
+      {
+       "titolo": "Giorgi et al. (2024), Libro Bianco sulla Montagna. Rubbettino Editore, giugno.",
+       "autori": null,
+       "editore": "Libro Bianco sulla Montagna. Rubbettino Editore",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5332/2022/10000?coorte=2025)",
+       "citazione": "Giorgi et al. (2024), Libro Bianco sulla Montagna. Rubbettino Editore, giugno."
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-l-18-economia-e-management-eco-094",
      "stato_esami": "da_aggiungere"
@@ -1429,11 +1529,72 @@
       "Stanchi Alessandro"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2027/5331/2025/10001?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Statistica per le decisioni aziendali (seconda edizione). Luigi Biggieri, Matilde Bini, Alessandra Coli, Laura Grassini, Mauro Maltagliati. 2023. Pearson.",
+       "autori": null,
+       "editore": "Mauro Maltagliati. 2023. Pearson",
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5331/2022/10001?coorte=2025)",
+       "citazione": "Statistica per le decisioni aziendali (seconda edizione). Luigi Biggieri, Matilde Bini, Alessandra Coli, Laura Grassini, Mauro Maltagliati. 2023. Pearson."
+      },
+      {
+       "titolo": "Business Intelligence: processi,metodi, utilizzo in azienda. Alessandro Rezzani. 2012. Maggioli editre.",
+       "autori": null,
+       "editore": null,
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5331/2022/10001?coorte=2025)",
+       "citazione": "Business Intelligence: processi,metodi, utilizzo in azienda. Alessandro Rezzani. 2012. Maggioli editre."
+      },
+      {
+       "titolo": "Introducing Microsoft Power BI. Alberto Ferrari, Marco Russo. 2016. Microsoft Press. Scaricabile gratuitamente online.",
+       "autori": null,
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5331/2022/10001?coorte=2025)",
+       "citazione": "Introducing Microsoft Power BI. Alberto Ferrari, Marco Russo. 2016. Microsoft Press. Scaricabile gratuitamente online."
+      },
+      {
+       "titolo": "Statistica aziendale. Bruno Bracalente, Massimo Cossignani, Anna Mulas. 2009. McGraw-Hill.",
+       "autori": null,
+       "editore": "Anna Mulas. 2009. McGraw-Hill",
+       "anno": 2009,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5331/2022/10001?coorte=2025)",
+       "citazione": "Statistica aziendale. Bruno Bracalente, Massimo Cossignani, Anna Mulas. 2009. McGraw-Hill."
+      },
+      {
+       "titolo": "Business intelligence per le PMI: manuale per professionisti e imprenditori. Francesco Bergamaschi, David Bianconi, Alessandro Mattavelli. 2022. Maggioli editore.",
+       "autori": null,
+       "editore": "Alessandro Mattavelli. 2022. Maggioli editore",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5331/2022/10001?coorte=2025)",
+       "citazione": "Business intelligence per le PMI: manuale per professionisti e imprenditori. Francesco Bergamaschi, David Bianconi, Alessandro Mattavelli. 2022. Maggioli editore."
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-l-18-economia-e-management-eco-093",
      "stato_esami": "da_aggiungere"
@@ -2145,7 +2306,7 @@
    "url": "http://www.univda.it/corso_di_laurea_in_lingue_e_comunicazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LIN 043",
@@ -2704,11 +2865,24 @@
       "Stanchi Alessandro"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/5402/2025/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "https://www.mulino.it/isbn/9788815278197",
+       "autori": null,
+       "editore": "https://www.mulino.it/isbn/9788815278197",
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788815278197",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/5402/2023/9999?coorte=2024)",
+       "citazione": "https://www.mulino.it/isbn/9788815278197"
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-l-12-lingue-e-comunicazione-per-l-impresa-e-il-turismo-lin-077",
      "stato_esami": "da_aggiungere"
@@ -4604,7 +4778,7 @@
    "url": "http://www.univda.it/corso_di_laurea_in_Scienze_e_tecniche_psicologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "PSI 84",
@@ -4927,11 +5101,168 @@
       "Ferro Laura"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/40/2025/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "L’esperienza della psicoanalisi. Storia del pensiero psicoanalitico moderno",
+       "autori": "Mitchell A., Black M.",
+       "editore": "Bollati Boringhieri Torino",
+       "anno": 1996,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/40/2023/9999?coorte=2024)",
+       "citazione": "Mitchell A., Black M., L’esperienza della psicoanalisi. Storia del pensiero psicoanalitico moderno. Ed. Bollati Boringhieri Torino, 1996"
+      },
+      {
+       "titolo": "Lis A., Mazzeschi C., Zennaro A.,La Psicoanalisi, Un percorso concettuale fra tradizione e attualità, Ed.Carocci, Roma 2002.",
+       "autori": null,
+       "editore": "Ed.Carocci",
+       "anno": 2002,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/40/2023/9999?coorte=2024)",
+       "citazione": "Lis A., Mazzeschi C., Zennaro A.,La Psicoanalisi, Un percorso concettuale fra tradizione e attualità, Ed.Carocci, Roma 2002."
+      },
+      {
+       "titolo": "L’uomo e i suoi simboli",
+       "autori": "Jung C.G.",
+       "editore": "Raffaello Cortina",
+       "anno": 2009,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/40/2023/9999?coorte=2024)",
+       "citazione": "Jung C.G., L’uomo e i suoi simboli, Raffaello Cortina, Milano 2009."
+      },
+      {
+       "titolo": "Apprendere dall’esperienza",
+       "autori": "Bion, W. R.",
+       "editore": "Armando Editore",
+       "anno": 1972,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/40/2023/9999?coorte=2024)",
+       "citazione": "Bion, W. R.(1962), Apprendere dall’esperienza, Armando Editore, Roma 1972."
+      },
+      {
+       "titolo": "Ferenczi S. Opere Vol. IV (1927-1933), Raffaello Cortina Editore, Milano 2002.",
+       "autori": null,
+       "editore": "Raffaello Cortina Editore",
+       "anno": 2002,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/40/2023/9999?coorte=2024)",
+       "citazione": "Ferenczi S. Opere Vol. IV (1927-1933), Raffaello Cortina Editore, Milano 2002."
+      },
+      {
+       "titolo": "Psicoanalisi e teoria dell’attaccamento",
+       "autori": "Fonagy P.",
+       "editore": "Raffaello Cortina Editore",
+       "anno": 2002,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/40/2023/9999?coorte=2024)",
+       "citazione": "Fonagy P.(2001), Psicoanalisi e teoria dell’attaccamento, Raffaello Cortina Editore, Milano 2002."
+      },
+      {
+       "titolo": "Freud S. (1917-1932), Introduzione alla Psicoanalisi. Nuova serie di lezioni, Bollati Boringhieri, Torino 1979.",
+       "autori": null,
+       "editore": null,
+       "anno": 1979,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/40/2023/9999?coorte=2024)",
+       "citazione": "Freud S. (1917-1932), Introduzione alla Psicoanalisi. Nuova serie di lezioni, Bollati Boringhieri, Torino 1979."
+      },
+      {
+       "titolo": "L’interpretazione dei sogni",
+       "autori": "Freud S.",
+       "editore": "Bollati Boringhieri",
+       "anno": 2011,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/40/2023/9999?coorte=2024)",
+       "citazione": "Freud S. (1899), L’interpretazione dei sogni, Bollati Boringhieri, Torino 2011."
+      },
+      {
+       "titolo": "L’Io e i meccanismi di difesa",
+       "autori": "Freud A.",
+       "editore": "Martinelli Editore",
+       "anno": 1975,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/40/2023/9999?coorte=2024)",
+       "citazione": "Freud A. (1936), L’Io e i meccanismi di difesa, Martinelli Editore, Firenze 1975"
+      },
+      {
+       "titolo": "L’Io e l’inconscio",
+       "autori": "Jung C.G.",
+       "editore": "Bollati Boringhieri",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/40/2023/9999?coorte=2024)",
+       "citazione": "Jung C.G., L’Io e l’inconscio, Bollati Boringhieri, Torino 2012"
+      },
+      {
+       "titolo": "Psicologia dell’inconscio",
+       "autori": "Jung C.G.",
+       "editore": "Bollati Boringhieri,Torino",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/40/2023/9999?coorte=2024)",
+       "citazione": "Jung C.G., Psicologia dell’inconscio, Bollati Boringhieri,Torino 2012 ."
+      },
+      {
+       "titolo": "Le fiabe interpretate",
+       "autori": "von Franz M.L.",
+       "editore": "Bollati Boringhieri",
+       "anno": 2000,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/40/2023/9999?coorte=2024)",
+       "citazione": "von Franz M.L., Le fiabe interpretate, Ed. Bollati Boringhieri 2000"
+      },
+      {
+       "titolo": "Fanno parte integrante del programma le slides del corso caricate sul software Microsoft Teams nel Team, Psicologia Dinamica, 2024-25, Psi 06",
+       "autori": null,
+       "editore": null,
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/40/2023/9999?coorte=2024)",
+       "citazione": "Fanno parte integrante del programma le slides del corso caricate sul software Microsoft Teams nel Team, Psicologia Dinamica, 2024-25, Psi 06"
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-l-24-scienze-e-tecniche-psicologiche-psi-06",
      "stato_esami": "da_aggiungere"
@@ -5012,11 +5343,36 @@
       "Zanetti Massimo Angelo"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/5382/2025/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "A. CAVALLI, Incontro con la sociologia, Il Mulino, Bologna, 2016, capitoli (chapters): I, II, III, IV, V, codice ISBN 978-88-15-26059-8.",
+       "autori": null,
+       "editore": "Il Mulino",
+       "anno": 2016,
+       "edizione": null,
+       "isbn": "9788815260598",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/5382/2023/9999?coorte=2024)",
+       "citazione": "A. CAVALLI, Incontro con la sociologia, Il Mulino, Bologna, 2016, capitoli (chapters): I, II, III, IV, V, codice ISBN 978-88-15-26059-8."
+      },
+      {
+       "titolo": "A. BAGNASCO, M. BARBAGLI, A. CAVALLI, Corso di sociologia, Il Mulino, 2012, capitoli (chapters). VIII, XI, XIII, XVI, codice ISBN 978-88-15-23894-8.",
+       "autori": null,
+       "editore": "Il Mulino",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": "9788815238948",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/5382/2023/9999?coorte=2024)",
+       "citazione": "A. BAGNASCO, M. BARBAGLI, A. CAVALLI, Corso di sociologia, Il Mulino, 2012, capitoli (chapters). VIII, XI, XIII, XVI, codice ISBN 978-88-15-23894-8."
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-l-24-scienze-e-tecniche-psicologiche-psi-89",
      "stato_esami": "da_aggiungere"
@@ -6632,11 +6988,60 @@
       "Spandre Valeria"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/5580/2025/9999?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "S. Bonino, E. Cattellino (a cura di) La prevenzione in adolescenza, percorsi psicoeducativi di intervento sul rischio e la salute\" ed. ERikson, 2007 Milano.",
+       "autori": null,
+       "editore": null,
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5580/2023/9999?coorte=2025)",
+       "citazione": "S. Bonino, E. Cattellino (a cura di) La prevenzione in adolescenza, percorsi psicoeducativi di intervento sul rischio e la salute\" ed. ERikson, 2007 Milano."
+      },
+      {
+       "titolo": "Adolescenti e rischio. Comportamenti funzioni e fattori di prevenzione",
+       "autori": "S. Bonino, E. Cattellino, S. CIairano",
+       "editore": null,
+       "anno": 2003,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5580/2023/9999?coorte=2025)",
+       "citazione": "S. Bonino, E. Cattellino, S. CIairano, \"Adolescenti e rischio. Comportamenti funzioni e fattori di prevenzione\" Giunti Editore 2003, Milano."
+      },
+      {
+       "titolo": "Sii te stesso ma a modo mio, essere adolescenti, nell'epoca della fragilità adulta",
+       "autori": "M. Lancini",
+       "editore": "nell'epoca della fragilità adulta\". Raffaello Cortina 2023",
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5580/2023/9999?coorte=2025)",
+       "citazione": "M. Lancini, \"Sii te stesso ma a modo mio, essere adolescenti, nell'epoca della fragilità adulta\". Raffaello Cortina 2023, Milano."
+      },
+      {
+       "titolo": "Costruire l'adolescenza tra immedesimazione e Bisogn",
+       "autori": "P.R., Goisis",
+       "editore": null,
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5580/2023/9999?coorte=2025)",
+       "citazione": "P.R., Goisis \"Costruire l'adolescenza tra immedesimazione e Bisogn\" Mimesis 2014, Milano."
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-l-24-scienze-e-tecniche-psicologiche-psi-tpv-10",
      "stato_esami": "da_aggiungere"
@@ -6656,11 +7061,48 @@
       "Litardi Chiara"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/5524/2025/9999?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Metodi di intervento in psicologia di comunità, Santinello M., Veno A. (2017). Bologna: il Mulino",
+       "autori": null,
+       "editore": "Veno A. (2017). Bologna: il Mulino",
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5524/2023/9999?coorte=2025)",
+       "citazione": "Metodi di intervento in psicologia di comunità, Santinello M., Veno A. (2017). Bologna: il Mulino"
+      },
+      {
+       "titolo": "La progettazione di interventi psicosociali. Linee guida ed esempi applicativi C. Inguglia (Curatore) Carocci, 2012",
+       "autori": null,
+       "editore": null,
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5524/2023/9999?coorte=2025)",
+       "citazione": "La progettazione di interventi psicosociali. Linee guida ed esempi applicativi C. Inguglia (Curatore) Carocci, 2012"
+      },
+      {
+       "titolo": "Bradshaw, J. (1972). A taxonomy of social need. In G. McLachlan (Ed.), Problems and Progress in Medical Care. Oxford University Press.",
+       "autori": null,
+       "editore": null,
+       "anno": 1972,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5524/2023/9999?coorte=2025)",
+       "citazione": "Bradshaw, J. (1972). A taxonomy of social need. In G. McLachlan (Ed.), Problems and Progress in Medical Care. Oxford University Press."
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-l-24-scienze-e-tecniche-psicologiche-psi-tpv-05",
      "stato_esami": "da_aggiungere"
@@ -9127,12 +9569,25 @@
       "Negro Matteo"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/5599/2025/9999?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Sadava D., Hillis D.M., Heller H.C. & Hacker S. La nuova biologia.blu. Dalla cellula al corpo umano. Seconda edizione. ISBN: 9788808327376",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788808327376",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5599/2025/9999?coorte=2025)",
+       "citazione": "Sadava D., Hillis D.M., Heller H.C. & Hacker S. La nuova biologia.blu. Dalla cellula al corpo umano. Seconda edizione. ISBN: 9788808327376"
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
+     "verificato_il": "2026-10-17",
      "id": "univda-l-24-scienze-e-tecniche-psicologiche-psi-pr-bio",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -9150,12 +9605,25 @@
       "Chanu Claudia Maria"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/5598/2025/9999?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Luca RICOLFI (2016). MATEMATICA PER LE SCIENZE UMANE. Uno strumento per i percorsi di Psicologia, Scienze politiche, Sociologia, ed. Mondadori Università.",
+       "autori": null,
+       "editore": "ed. Mondadori Università",
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2026/5598/2025/9999?coorte=2026)",
+       "citazione": "Luca RICOLFI (2016). MATEMATICA PER LE SCIENZE UMANE. Uno strumento per i percorsi di Psicologia, Scienze politiche, Sociologia, ed. Mondadori Università."
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
+     "verificato_il": "2026-10-17",
      "id": "univda-l-24-scienze-e-tecniche-psicologiche-psi-pr-mat",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -9328,7 +9796,7 @@
    "url": "http://www.univda.it/corso_di_laurea_in_scienze_politiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SPO 076",
@@ -10108,11 +10576,24 @@
       "Gheda Paolo"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/5286/2025/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Per un quadro generale si suggerisce il manuale di L. M. Migliorini. L’età moderna. Una storia globale, Bari Laterza 2020. Sulle varie tematiche affrontate nel corso verranno suggerite opere specifiche.",
+       "autori": null,
+       "editore": null,
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/5286/2021/9999?coorte=2024)",
+       "citazione": "Per un quadro generale si suggerisce il manuale di L. M. Migliorini. L’età moderna. Una storia globale, Bari Laterza 2020. Sulle varie tematiche affrontate nel corso verranno suggerite opere specifiche."
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-l-36-scienze-politiche-e-delle-relazioni-internazionali-spo-096",
      "stato_esami": "da_aggiungere"
@@ -10217,11 +10698,48 @@
       "Calvo Roberto"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/4970/2025/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "CALVO, L'ordimento criminale della deportazione, Laterza, Bari, 2023, limitatamente agli ultimi due capitoli",
+       "autori": null,
+       "editore": "Laterza",
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/4970/2021/9999?coorte=2024)",
+       "citazione": "CALVO, L'ordimento criminale della deportazione, Laterza, Bari, 2023, limitatamente agli ultimi due capitoli"
+      },
+      {
+       "titolo": "CALVO e CIATTI CAIMI, Diritto privato, 6a edizione, Zanichelli, 2024, da pag. 20 a pag. 470",
+       "autori": null,
+       "editore": "Zanichelli",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/4970/2021/9999?coorte=2024)",
+       "citazione": "CALVO e CIATTI CAIMI, Diritto privato, 6a edizione, Zanichelli, 2024, da pag. 20 a pag. 470"
+      },
+      {
+       "titolo": "Codice civile 2024, Zanichelli Editore, Bologna",
+       "autori": null,
+       "editore": "Zanichelli Editore",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/4970/2021/9999?coorte=2024)",
+       "citazione": "Codice civile 2024, Zanichelli Editore, Bologna"
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-l-36-scienze-politiche-e-delle-relazioni-internazionali-spo-075",
      "stato_esami": "da_aggiungere"
@@ -10694,11 +11212,60 @@
       "Thuilier Delphine"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/498/2025/9999?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "S. Callet, Répertoire des difficultés du français. Vérifier, comprendre, appliquer, Grenoble, Fle Pug, 2013.",
+       "autori": null,
+       "editore": null,
+       "anno": 2013,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2023/24 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2023/498/2021/9999?coorte=2023)",
+       "citazione": "S. Callet, Répertoire des difficultés du français. Vérifier, comprendre, appliquer, Grenoble, Fle Pug, 2013."
+      },
+      {
+       "titolo": "Bescherelle, La conjugaison pour tous, Hatier, 2019",
+       "autori": null,
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2023/24 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2023/498/2021/9999?coorte=2023)",
+       "citazione": "Bescherelle, La conjugaison pour tous, Hatier, 2019"
+      },
+      {
+       "titolo": "A. Renaut, Bien écrire au travail, Editions d'Organisation, Collection Livres outils - Efficacité professionnelle, 2011",
+       "autori": null,
+       "editore": null,
+       "anno": 2011,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2023/24 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2023/498/2021/9999?coorte=2023)",
+       "citazione": "A. Renaut, Bien écrire au travail, Editions d'Organisation, Collection Livres outils - Efficacité professionnelle, 2011"
+      },
+      {
+       "titolo": "J.-P. Beaufreton, Tous les écrits professionnels, Studyrama Eds, 2021",
+       "autori": null,
+       "editore": null,
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2023/24 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2023/498/2021/9999?coorte=2023)",
+       "citazione": "J.-P. Beaufreton, Tous les écrits professionnels, Studyrama Eds, 2021"
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-l-36-scienze-politiche-e-delle-relazioni-internazionali-spo-010",
      "stato_esami": "da_aggiungere"
@@ -13092,7 +13659,7 @@
    "url": "https://www.univda.it/universita-aosta-magistrale-economia-politiche-impresa-territorio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LM56_048",
@@ -13330,11 +13897,36 @@
       "Vesan Patrik"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/5570/2025/10001?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "M Ferrera e M. Jessoula (2025), Le politiche sociali, Il Mulino (Obbligatori cap. 1 e 2 + uno a scelta tra 3 (pensioni), 4 (politiche di contrasto alla povertà) 5 (politiche per la famiglia), ,6 (sanità) o 7 (politiche sociali europee).",
+       "autori": null,
+       "editore": null,
+       "anno": 2025,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5570/2025/10001?coorte=2025)",
+       "citazione": "M Ferrera e M. Jessoula (2025), Le politiche sociali, Il Mulino (Obbligatori cap. 1 e 2 + uno a scelta tra 3 (pensioni), 4 (politiche di contrasto alla povertà) 5 (politiche per la famiglia), ,6 (sanità) o 7 (politiche sociali europee)."
+      },
+      {
+       "titolo": "C. Ranci e E. Pavolini (2024; seconda edizione), Le politiche di welfare, Bologna, Il Mulino: obbligatori cap 2 e 3).",
+       "autori": null,
+       "editore": "Il Mulino: obbligatori cap 2 e 3)",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5570/2025/10001?coorte=2025)",
+       "citazione": "C. Ranci e E. Pavolini (2024; seconda edizione), Le politiche di welfare, Bologna, Il Mulino: obbligatori cap 2 e 3)."
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-lm-56-economia-e-politiche-del-territorio-e-dell-impresa-lm56-049",
      "stato_esami": "da_aggiungere"
@@ -13415,11 +14007,24 @@
       "Cugini Antonella"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/5336/2025/10000?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Misurare i costi per massimizzare profitto e customer satisfaction nel ‘new normal’: la nuova sfida delle imprese ricettive. A. Cugini, Franco Angeli, 2020",
+       "autori": null,
+       "editore": "Franco Angeli",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2024/5336/2022/10000?coorte=2024)",
+       "citazione": "Misurare i costi per massimizzare profitto e customer satisfaction nel ‘new normal’: la nuova sfida delle imprese ricettive. A. Cugini, Franco Angeli, 2020"
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-lm-56-economia-e-politiche-del-territorio-e-dell-impresa-lm56-035",
      "stato_esami": "da_aggiungere"
@@ -13439,11 +14044,36 @@
       "Benassi Mario"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/5571/2025/10000?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Schilling M. (2009 ed edizioni successive) Gestione della Innovazione, Mc Graw Hill",
+       "autori": null,
+       "editore": null,
+       "anno": 2009,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5571/2025/10000?coorte=2025)",
+       "citazione": "Schilling M. (2009 ed edizioni successive) Gestione della Innovazione, Mc Graw Hill"
+      },
+      {
+       "titolo": "La gestione dei brevetti",
+       "autori": "Benassi M.",
+       "editore": "Cedam",
+       "anno": 2013,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5571/2025/10000?coorte=2025)",
+       "citazione": "Benassi M. (2013) La gestione dei brevetti, Cedam"
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-lm-56-economia-e-politiche-del-territorio-e-dell-impresa-lm56-050",
      "stato_esami": "da_aggiungere"
@@ -13463,11 +14093,48 @@
       "Pintus Elisa Maria"
      ],
      "url": "https://univda.coursecatalogue.cineca.it/insegnamenti/2026/5041/2025/10001?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Cucciniello, Fattore, Longo, Ricciuti, Turrini, Management Pubblico, Egea, Milano, ultima edizione (2024). Per i frequentanti e per i non frequentanti sono incluse le parti del testo relative ai capitoli: 11,12,14,16,17,18,20. Versione digitale con approfondimenti inclusa.",
+       "autori": null,
+       "editore": "Egea",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5041/2025/10001?coorte=2025)",
+       "citazione": "Cucciniello, Fattore, Longo, Ricciuti, Turrini, Management Pubblico, Egea, Milano, ultima edizione (2024). Per i frequentanti e per i non frequentanti sono incluse le parti del testo relative ai capitoli: 11,12,14,16,17,18,20. Versione digitale con approfondimenti inclusa."
+      },
+      {
+       "titolo": "Saporito, Public Leadership, Egea, Milano, 2023, capitoli 3, 4.",
+       "autori": null,
+       "editore": "Egea",
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5041/2025/10001?coorte=2025)",
+       "citazione": "Saporito, Public Leadership, Egea, Milano, 2023, capitoli 3, 4."
+      },
+      {
+       "titolo": "Pintus, Stakeholder engagement e politiche del farmaco, Il Mulino, Bologna, 2015, capitolo 2.",
+       "autori": null,
+       "editore": "Il Mulino",
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univda.coursecatalogue.cineca.it/insegnamenti/2025/5041/2025/10001?coorte=2025)",
+       "citazione": "Pintus, Stakeholder engagement e politiche del farmaco, Il Mulino, Bologna, 2015, capitolo 2."
+      }
+     ],
      "esami": [],
      "fonte": "https://univda.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "univda-lm-56-economia-e-politiche-del-territorio-e-dell-impresa-lm56-024",
      "stato_esami": "da_aggiungere"
@@ -14090,7 +14757,7 @@
    "url": "http://www.univda.it/magistrale_in_scienze_della_formazione_primaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SED 153",

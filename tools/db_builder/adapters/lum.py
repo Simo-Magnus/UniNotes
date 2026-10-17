@@ -50,7 +50,118 @@ def leggi_piano(s: str, anno: int) -> list[dict]:
     return out
 
 
+def _righe_tabella(layout: str) -> list[tuple[str, list[str]]]:
+    """Le schede a.a. 2026/27 sono una tabella a due colonne (etichetta | contenuto): con
+    `extract_text()` le parole escono una per riga e le celle si mescolano. Con
+    `extraction_mode="layout"` le colonne restano allineate: si separano alla colonna in cui
+    inizia il contenuto di «Denominazione» e si raggruppano le righe per etichetta."""
+    m = re.search(r"^( *)(Denominazion\w*)( {3,})\S", layout, re.M)
+    if not m:
+        return []
+    c0 = len(m.group(1)) + len(m.group(2)) + len(m.group(3))
+    righe: list[tuple[str, list[str]]] = []
+    for riga in layout.splitlines():
+        if not riga.strip():
+            continue
+        et, cont = riga[:c0 - 2], riga[c0 - 2:].strip()
+        if re.fullmatch(r"A\.A\.\s*\d{4}\s*/\s*\d{4}|\d{1,2}", cont) and not et.strip():
+            continue  # intestazione e numero di pagina
+        if et.strip() and re.match(r" {0,2}[A-ZÀ-Ý]", et):
+            righe.append((et.strip(), [cont] if cont else []))
+        elif righe:
+            if et.strip():
+                righe[-1] = (righe[-1][0] + " " + et.strip(), righe[-1][1])
+            if cont:
+                righe[-1][1].append(cont)
+    return righe
+
+
+_SEM = {"1": "1", "i": "1", "primo": "1", "2": "2", "ii": "2", "secondo": "2"}
+
+
+def _periodo(testo: str) -> str | None:
+    """«1° anno, 1° semestre», «Anno di corso: II semestre di erogazione: primo», «… annuale»."""
+    t = re.sub(r"\s+", " ", testo.lower())
+    s = (re.search(r"\b(1|2|i{1,2}|primo|secondo)\s*[°^º]?\s*semestre\b(?!\s+di\s+erogazione)", t)
+         or re.search(r"semestre di erogazione:?\s*(1|2|i{1,2}|primo|secondo)\b", t))
+    if s:
+        return _SEM[s.group(1)]
+    if re.search(r"semestre di erogazione:?\s*(?:\w+\s+anno,\s*)?annual|\b\d°?\s*anno,\s*annual", t):
+        return "annuale"
+    return None
+
+
+_PUNTO = r"[•●▪◦\uf0b7\-–]"
+_NON_LIBRO = re.compile(
+    r"(?i)^(?:(?:le |il |la |i |gli |delle |dei )?(?:dispens|material|slide|lucidi|appunti)|elencare|indicare|nb\b|n\.b|"
+    r"casi stud|articol|sar[àa] |gli studenti|per i non|per gli studenti|"
+    r"testi? (?:consigliat|di riferimento|adottat)|libri? di testo|bibliografia|riferimenti)")
+
+
+def _libri_materiale(righe: list[str]) -> list[dict]:
+    """Voci della cella «Materiale didattico»: una per punto elenco o numero (le righe seguenti la continuano).
+    Il tipo (consigliato/obbligatorio) solo se la cella lo dice («Testi consigliati», «facoltativo»)."""
+    from .testi import _libero, _strutturato, _tipo
+    voci: list[str] = []
+    for l in righe:
+        if re.match(rf"(?:{_PUNTO}\s*|(?:\d{{1,2}}[.)]|\(?[a-zA-Z][.)])\s+)", l) or _NON_LIBRO.match(l) or not voci:
+            voci.append(re.sub(rf"^(?:{_PUNTO}|\d{{1,2}}[.)]|\(?[a-zA-Z][.)])\s*", "", l))
+        else:
+            voci[-1] += " " + l
+    out, viste, tipo_sez = [], set(), None
+    for v in voci:
+        v = re.sub(r"\s+", " ", v).strip()
+        if not v:
+            continue
+        if re.match(r"(?i)^(?:testi|libri|letture|materiale)\s+(?:consigliat\w+|facoltativ\w+|di approfondimento)\s*:?$", v):
+            tipo_sez = "consigliato"
+            continue
+        if re.match(r"(?i)^(?:testi|libri)\s+(?:obbligatori\w*|adottat\w+|di testo|di riferimento)\s*:?$", v):
+            tipo_sez = "obbligatorio" if re.search(r"obbligator|adottat", v, re.I) else None
+            continue
+        if v.endswith(":") or len(v) < 12 or len(v) > 600 or _NON_LIBRO.match(v):
+            continue
+        if not re.search(r"[A-Za-zÀ-ÿ]{3}.*[A-Za-zÀ-ÿ]{3}", v) or not (re.search(r"[,.]", v) or _strutturato(v)):
+            if len(v.split()) < 3:
+                continue
+        item = _strutturato(v) or _libero(v)
+        item["tipo"] = item.get("tipo") or _tipo(v) or tipo_sez
+        key = re.sub(r"\W+", "", item["citazione"].lower())[:120]
+        if key not in viste:
+            viste.add(key)
+            out.append(item)
+    return out
+
+
+
+def _leggi_scheda_tabella(data: bytes) -> dict | None:
+    try:
+        from pypdf import PdfReader
+        layout = "\n".join(p.extract_text(extraction_mode="layout") or "" for p in PdfReader(io.BytesIO(data)).pages)
+    except Exception:  # noqa: BLE001 - PDF illeggibile
+        return None
+    righe = _righe_tabella(layout)
+    if not righe:
+        return None
+    periodo, materiale, programma = None, [], []
+    for et, cont in righe:
+        e = et.lower()
+        if e.startswith("anno di corso") and "semestre" in e:
+            periodo = _periodo(" ".join(cont))
+        elif e.startswith("materiale didattico"):
+            materiale = cont
+        elif e.startswith("programma") or e.startswith("contenuti del corso"):
+            programma = cont
+    if not periodo:  # schede «per regolamento»: «Anno di corso: II   semestre di erogazione: primo»
+        periodo = _periodo(layout)
+    libri = _libri_materiale(materiale)
+    return {"periodo": periodo, "libri": libri, "programma": programma}
+
+
 def leggi_scheda(data: bytes) -> dict:
+    t = _leggi_scheda_tabella(data)
+    if t and (t["periodo"] or t["libri"]):
+        return t
     try:
         from pypdf import PdfReader
         testo = "\n".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(data)).pages)

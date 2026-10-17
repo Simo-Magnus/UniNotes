@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unisg",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "http://www.unisg.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SG408",
@@ -805,12 +805,85 @@
      "curriculum": null,
      "docenti": [],
      "url": "https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1961/2026/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Recommended text: M. Meilgaard, G. Civille, and B.T. Carr. Sensory Evaluation Techniques. 5th ed. Boca Raton, Florida: CRC Press, 2015.",
+       "autori": null,
+       "editore": "Florida: CRC Press",
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1961/2026/9999?coorte=2026)",
+       "citazione": "Recommended text: M. Meilgaard, G. Civille, and B.T. Carr. Sensory Evaluation Techniques. 5th ed. Boca Raton, Florida: CRC Press, 2015."
+      },
+      {
+       "titolo": "Exercises: The materials used during practical laboratory exercises will be provided by the instructor on the days of the exercises; the materials needed for statistical data processing will be provided by the instructor (link to which you can download the data analysis software for free, spreadshee",
+       "autori": null,
+       "editore": "spreadsheets with data sets to analyze",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1961/2026/9999?coorte=2026)",
+       "citazione": "Exercises: The materials used during practical laboratory exercises will be provided by the instructor on the days of the exercises; the materials needed for statistical data processing will be provided by the instructor (link to which you can download the data analysis software for free, spreadsheets with data sets to analyze, and written instructions for data processing) via Moodle."
+      },
+      {
+       "titolo": "Ares G. & Varela P. (eds). Methods in Consumer Research – Vol. 1: New Approaches to Classic Methods. Woodhead Publishing: UK, 2018.",
+       "autori": null,
+       "editore": null,
+       "anno": 2018,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1961/2026/9999?coorte=2026)",
+       "citazione": "Ares G. & Varela P. (eds). Methods in Consumer Research – Vol. 1: New Approaches to Classic Methods. Woodhead Publishing: UK, 2018."
+      },
+      {
+       "titolo": "Ares G. & Varela P. (eds). Methods in Consumer Research – Vol. 2: Alternative Approaches and Special Applications. Woodhead Publishing: UK, 2018.",
+       "autori": null,
+       "editore": null,
+       "anno": 2018,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1961/2026/9999?coorte=2026)",
+       "citazione": "Ares G. & Varela P. (eds). Methods in Consumer Research – Vol. 2: Alternative Approaches and Special Applications. Woodhead Publishing: UK, 2018."
+      },
+      {
+       "titolo": "SISS-Società Italiana Scienze Sensoriali. Atlante sensoriale dei prodotti alimentari. Tecniche Nuove, Milano, 2012.",
+       "autori": null,
+       "editore": null,
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1961/2026/9999?coorte=2026)",
+       "citazione": "SISS-Società Italiana Scienze Sensoriali. Atlante sensoriale dei prodotti alimentari. Tecniche Nuove, Milano, 2012."
+      },
+      {
+       "titolo": "Sensory Evaluation of Foods: Principles and Practices",
+       "autori": "H.T. Lawless, and H. Heymann",
+       "editore": "Hoepli",
+       "anno": 2002,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1961/2026/9999?coorte=2026)",
+       "citazione": "H.T. Lawless, and H. Heymann. Sensory Evaluation of Foods: Principles and Practices. 1 ed. New York: Chapman & Hall, 2010.E., Pagliarini. Valutazione Sensoriale. Aspetti teorici, pratici e metodologici. Milano: Hoepli, 2002."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisg.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
+     "verificato_il": "2026-10-17",
      "id": "unisg-l-gastr-food-tech-for-ecological-transition-sg420",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -826,12 +899,85 @@
      "curriculum": null,
      "docenti": [],
      "url": "https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1962/2026/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Barbero, S. (2017). Systemic Design Method Guide for Policymaking: a Circular Europe on the Way. Allemandi. - Bistagnino, L. (2011). Design sistemico: progettare la sostenibilità produttiva e ambientale (2nd ed.). Slow Food Editore.",
+       "autori": null,
+       "editore": null,
+       "anno": 2011,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1962/2026/9999?coorte=2026)",
+       "citazione": "Barbero, S. (2017). Systemic Design Method Guide for Policymaking: a Circular Europe on the Way. Allemandi. - Bistagnino, L. (2011). Design sistemico: progettare la sostenibilità produttiva e ambientale (2nd ed.). Slow Food Editore."
+      },
+      {
+       "titolo": "Barilla Center for Food & Nutrition. (2016). Eating planet. Cibo e sostenibilità: costruire il nostro futuro. Edizioni Ambiente.",
+       "autori": null,
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1962/2026/9999?coorte=2026)",
+       "citazione": "Barilla Center for Food & Nutrition. (2016). Eating planet. Cibo e sostenibilità: costruire il nostro futuro. Edizioni Ambiente."
+      },
+      {
+       "titolo": "FoodSystem 5.0. Agritech | dieta mediterranea | comunità",
+       "autori": "Giordano, A.",
+       "editore": "Edizioni Ambiente",
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1962/2026/9999?coorte=2026)",
+       "citazione": "Giordano, A. (2023). FoodSystem 5.0. Agritech | dieta mediterranea | comunità. Edizioni Ambiente."
+      },
+      {
+       "titolo": "Il cibo perfetto. Aziende, consumatori e impatto ambientale del cibo",
+       "autori": "Marino, M., Pratesi C. A.",
+       "editore": "Edizioni Ambiente",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1962/2026/9999?coorte=2026)",
+       "citazione": "Marino, M., Pratesi C. A. (2022). Il cibo perfetto. Aziende, consumatori e impatto ambientale del cibo. Edizioni Ambiente."
+      },
+      {
+       "titolo": "Design for a Better World: How to create a meaningful, sustainable, and humanity-centred future",
+       "autori": "Norman, D.",
+       "editore": "MIT Press",
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1962/2026/9999?coorte=2026)",
+       "citazione": "Norman, D. (2023). Design for a Better World: How to create a meaningful, sustainable, and humanity-centred future. MIT Press."
+      },
+      {
+       "titolo": "Economia in 3D. L'intelligenza della natura",
+       "autori": "Pauli, G.",
+       "editore": "Edizioni Ambiente",
+       "anno": 2018,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1962/2026/9999?coorte=2026)",
+       "citazione": "Pauli, G. (2018). Economia in 3D. L'intelligenza della natura. Edizioni Ambiente."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisg.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
+     "verificato_il": "2026-10-17",
      "id": "unisg-l-gastr-food-tech-for-ecological-transition-sg421",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -910,12 +1056,25 @@
      "curriculum": null,
      "docenti": [],
      "url": "https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1967/2026/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Packaging Design, Edition 2nd-2013",
+       "autori": "Klimchuk, M., and Krasovec, S.",
+       "editore": "John Wiley and Sons",
+       "anno": 2008,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1967/2026/9999?coorte=2026)",
+       "citazione": "Klimchuk, M., and Krasovec, S. (2006). Packaging Design, Edition 2nd-2013. Hoboken, NJ: John Wiley and Sons. - Adducci, B., and Keller, A. (2008). Design Matters: Packaging 01 An Essential Primer for Today’s Marketplace, Edition 8. Beverly, MA: Rockport Publishers."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisg.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
+     "verificato_il": "2026-10-17",
      "id": "unisg-l-gastr-food-tech-for-ecological-transition-sg426",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -1038,12 +1197,49 @@
      "curriculum": null,
      "docenti": [],
      "url": "https://unisg.coursecatalogue.cineca.it/insegnamenti/2028/1974/2026/9999?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Mays, L. W. (ed.) – Water Resources Engineering. Wiley.",
+       "autori": null,
+       "editore": "L. W. (ed.) – Water Resources Engineering. Wiley",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2028/29 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2028/1974/2026/9999?coorte=2026)",
+       "citazione": "Mays, L. W. (ed.) – Water Resources Engineering. Wiley."
+      },
+      {
+       "titolo": "Chadwick, A., Morfett, J., & Borthwick, M. – Hydraulics in Civil and Environmental Engineering. CRC Press.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2028/29 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2028/1974/2026/9999?coorte=2026)",
+       "citazione": "Chadwick, A., Morfett, J., & Borthwick, M. – Hydraulics in Civil and Environmental Engineering. CRC Press."
+      },
+      {
+       "titolo": "Gupta, R. S. – Hydraulics and Hydraulic Machines. Pearson.",
+       "autori": null,
+       "editore": "R. S. – Hydraulics and Hydraulic Machines. Pearson",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2028/29 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2028/1974/2026/9999?coorte=2026)",
+       "citazione": "Gupta, R. S. – Hydraulics and Hydraulic Machines. Pearson."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisg.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
+     "verificato_il": "2026-10-17",
      "id": "unisg-l-gastr-food-tech-for-ecological-transition-sg433",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -1059,12 +1255,37 @@
      "curriculum": null,
      "docenti": [],
      "url": "https://unisg.coursecatalogue.cineca.it/insegnamenti/2028/1975/2026/9999?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "David Banks, An Introduction to Thermogeology: Ground Source Heating and Cooling, 2nd Edition. Wiley. ISBN: 978-0-470-67034-7",
+       "autori": null,
+       "editore": "2nd Edition. Wiley. ISBN: 978-0-470-67034-7",
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780470670347",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2028/29 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2028/1975/2026/9999?coorte=2026)",
+       "citazione": "David Banks, An Introduction to Thermogeology: Ground Source Heating and Cooling, 2nd Edition. Wiley. ISBN: 978-0-470-67034-7"
+      },
+      {
+       "titolo": "Ronald DiPippo, Geothermal Power Plants (3rd Edition) Principles, Applications, Case Studies and Environmental Impact. Elsevier. ISBN: 978-0-08-098206-9",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780080982069",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2028/29 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2028/1975/2026/9999?coorte=2026)",
+       "citazione": "Ronald DiPippo, Geothermal Power Plants (3rd Edition) Principles, Applications, Case Studies and Environmental Impact. Elsevier. ISBN: 978-0-08-098206-9"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisg.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
+     "verificato_il": "2026-10-17",
      "id": "unisg-l-gastr-food-tech-for-ecological-transition-sg434",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -1157,7 +1378,7 @@
    "url": "http://www.unisg.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SG994",
@@ -1482,11 +1703,108 @@
       "Spagnolo Sandra"
      ],
      "url": "https://unisg.coursecatalogue.cineca.it/insegnamenti/2026/1490/2025/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "CLERGUE Boris, AMIAUD Bernard, PERVANCHON Frank, LASSERRE-JOULIN Françoise, PLANTUREUX Sylvain (2005) Biodiversity: function and assessment in agricultural areas. A review Agron. Sustain. Dev. 25 1–15",
+       "autori": null,
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2025/1490/2025/9999?coorte=2025)",
+       "citazione": "CLERGUE Boris, AMIAUD Bernard, PERVANCHON Frank, LASSERRE-JOULIN Françoise, PLANTUREUX Sylvain (2005) Biodiversity: function and assessment in agricultural areas. A review Agron. Sustain. Dev. 25 1–15"
+      },
+      {
+       "titolo": "Galluzzi Gea, Pablo Eyzaguirre, Valeria Negri (2010) Home gardens: neglected hotspots of agro-biodiversity and cultural diversity. Biodivers Conserv 19:3635–3654",
+       "autori": null,
+       "editore": null,
+       "anno": 2010,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2025/1490/2025/9999?coorte=2025)",
+       "citazione": "Galluzzi Gea, Pablo Eyzaguirre, Valeria Negri (2010) Home gardens: neglected hotspots of agro-biodiversity and cultural diversity. Biodivers Conserv 19:3635–3654"
+      },
+      {
+       "titolo": "Herzog Felix, Bal.zs Katalin, Dennis Peter, Friedel Jürgen, Geijzendorffer Ilse, Jeanneret Philippe, Kainz Max, Pointereau Philippe Editors (2012). Biodiversity Indicators for European Farming Systems A Guidebook. Swiss confederation",
+       "autori": null,
+       "editore": null,
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2025/1490/2025/9999?coorte=2025)",
+       "citazione": "Herzog Felix, Bal.zs Katalin, Dennis Peter, Friedel Jürgen, Geijzendorffer Ilse, Jeanneret Philippe, Kainz Max, Pointereau Philippe Editors (2012). Biodiversity Indicators for European Farming Systems A Guidebook. Swiss confederation"
+      },
+      {
+       "titolo": "ISPRA 2008, Indicatori di Biodiversità per la Sostenibilità in Agricoltura,",
+       "autori": null,
+       "editore": null,
+       "anno": 2008,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2025/1490/2025/9999?coorte=2025)",
+       "citazione": "ISPRA 2008, Indicatori di Biodiversità per la Sostenibilità in Agricoltura,"
+      },
+      {
+       "titolo": "Kimbrell, A. (2002) The fatal harvest reader: the tragedy of industrial agriculture. Published by the Foundation for Deep Ecology in collaboration with Island Press, Washington c2002.",
+       "autori": null,
+       "editore": null,
+       "anno": 2002,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2025/1490/2025/9999?coorte=2025)",
+       "citazione": "Kimbrell, A. (2002) The fatal harvest reader: the tragedy of industrial agriculture. Published by the Foundation for Deep Ecology in collaboration with Island Press, Washington c2002."
+      },
+      {
+       "titolo": "Love B. and Spaner D. (2010) Agrobiodiversity: Its Value, Measurement, and Conservation in the Context of Sustainable Agriculture. J of Sustainable Agroculture",
+       "autori": null,
+       "editore": null,
+       "anno": 2010,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2025/1490/2025/9999?coorte=2025)",
+       "citazione": "Love B. and Spaner D. (2010) Agrobiodiversity: Its Value, Measurement, and Conservation in the Context of Sustainable Agriculture. J of Sustainable Agroculture"
+      },
+      {
+       "titolo": "Maffi Luisa (2005) Linguistic, Cultural, and Biological Diversity",
+       "autori": null,
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2025/1490/2025/9999?coorte=2025)",
+       "citazione": "Maffi Luisa (2005) Linguistic, Cultural, and Biological Diversity"
+      },
+      {
+       "titolo": "Marshall E.J.P., A.C. Moonen (2002) Field margins in northern Europe: their functions and interactions with agriculture. Agriculture, Ecosystems and Environment 89 5–21",
+       "autori": null,
+       "editore": null,
+       "anno": 2002,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2025/1490/2025/9999?coorte=2025)",
+       "citazione": "Marshall E.J.P., A.C. Moonen (2002) Field margins in northern Europe: their functions and interactions with agriculture. Agriculture, Ecosystems and Environment 89 5–21"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisg.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale separati",
      "id": "unisg-l-gastr-scienze-e-culture-gastronomiche-sgsc102",
      "stato_esami": "da_aggiungere"
@@ -1506,11 +1824,24 @@
       "Fusar Poli Elena"
      ],
      "url": "https://unisg.coursecatalogue.cineca.it/insegnamenti/2026/1343/2025/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Per gli studenti che volessero approfondire tramite un manuale, si consiglia: Carole Counihan & Penny Van Esterik (a cura di), Food and Culture: A Reader, Routledge (ultima edizione).",
+       "autori": null,
+       "editore": "Routledge (ultima edizione)",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2025/1343/2025/9999?coorte=2025)",
+       "citazione": "Per gli studenti che volessero approfondire tramite un manuale, si consiglia: Carole Counihan & Penny Van Esterik (a cura di), Food and Culture: A Reader, Routledge (ultima edizione)."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisg.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto",
      "id": "unisg-l-gastr-scienze-e-culture-gastronomiche-sg368",
      "stato_esami": "da_aggiungere"
@@ -1741,11 +2072,24 @@
       "Scaffidi Cinzia"
      ],
      "url": "https://unisg.coursecatalogue.cineca.it/insegnamenti/2026/1737/2025/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "La docente fornirà agli studenti il materiale didattico (dispense, readings) relativo agli argomenti presentati a lezione.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2025/1737/2025/9999?coorte=2025)",
+       "citazione": "La docente fornirà agli studenti il materiale didattico (dispense, readings) relativo agli argomenti presentati a lezione."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisg.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto",
      "id": "unisg-l-gastr-scienze-e-culture-gastronomiche-sgsc143",
      "stato_esami": "da_aggiungere"
@@ -2286,11 +2630,24 @@
       "Catalano Francesca"
      ],
      "url": "https://unisg.coursecatalogue.cineca.it/insegnamenti/2026/1430/2025/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Facile Facile livello A1, Nina Edizioni",
+       "autori": null,
+       "editore": "Nina Edizioni",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2024/1430/2018/9999?coorte=2024)",
+       "citazione": "Facile Facile livello A1, Nina Edizioni"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisg.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisg-l-gastr-scienze-e-culture-gastronomiche-sg387",
      "stato_esami": "da_aggiungere"
@@ -4470,7 +4827,7 @@
    "url": "http://www.unisg.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LM344",
@@ -5123,12 +5480,25 @@
       "Martens Pim"
      ],
      "url": "https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1996/2026/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Martens, P. (2023). Planetary Health: the recipe for a sustainable future. Inaugural professorial speech, University of Maastricht.",
+       "autori": null,
+       "editore": null,
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1996/2026/9999?coorte=2026)",
+       "citazione": "Martens, P. (2023). Planetary Health: the recipe for a sustainable future. Inaugural professorial speech, University of Maastricht."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisg.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
+     "verificato_il": "2026-10-17",
      "id": "unisg-lm-gastr-food-and-planetary-health-lm354",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -5146,12 +5516,25 @@
       "Martens Pim"
      ],
      "url": "https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1995/2026/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Willett, W. et al. (2019). Food in the Anthropocene: the EAT–Lancet Commission on Healthy Diets from Sustainable Food Systems.",
+       "autori": null,
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2027/28 (altra coorte) dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2027/1995/2026/9999?coorte=2026)",
+       "citazione": "Willett, W. et al. (2019). Food in the Anthropocene: the EAT–Lancet Commission on Healthy Diets from Sustainable Food Systems."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisg.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
+     "verificato_il": "2026-10-17",
      "id": "unisg-lm-gastr-food-and-planetary-health-lm353",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -5223,7 +5606,7 @@
    "url": "http://www.unisg.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LM357",
@@ -5340,11 +5723,24 @@
       "Saccone Donatella"
      ],
      "url": "https://unisg.coursecatalogue.cineca.it/insegnamenti/2026/1800/2025/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Il testo raccomandato per tutti è: HANSEN H.O, Food Economics – Industry and Markets, 2013, Routledge.",
+       "autori": null,
+       "editore": "Food Economics – Industry and Markets",
+       "anno": 2013,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://unisg.coursecatalogue.cineca.it/insegnamenti/2024/1800/2024/9999?coorte=2024)",
+       "citazione": "Il testo raccomandato per tutti è: HANSEN H.O, Food Economics – Industry and Markets, 2013, Routledge."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisg.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale separati",
      "id": "unisg-lm-gastr-food-industry-management-lm325",
      "stato_esami": "da_aggiungere"

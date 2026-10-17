@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unidarc",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "http://www.unidarc.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -37,12 +37,25 @@
      ],
      "url": "https://www.unidarc.it/materie/47483_diritto-privato-per-i-servizi-sociali-giur-01-a-ex-ius-01/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "09:45",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "VESTO AURORA FURFARO DOMENICO ANDREA MARIA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-diritto-privato-per-i-servizi-sociali",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -58,12 +71,25 @@
      ],
      "url": "https://www.unidarc.it/materie/56520_economia-della-societa-econ-01-a-ex-secs-p-01/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-11-26",
+       "docenti": "MAVILIA ROBERTO LAGANÀ MASSIMO",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-economia-della-societa",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -98,12 +124,25 @@
      ],
      "url": "https://www.unidarc.it/materie/47501_metodi-e-tecniche-del-servizio-sociale-gsps-05-a-ex-sps-07/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-03",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "LAGANÀ NADIA TOSCANO MARIA LUISA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-metodi-e-tecniche-del-servizio-sociale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -140,12 +179,25 @@
      ],
      "url": "https://www.unidarc.it/materie/56521_psicologia-generale-psic-01-a-ex-m-psi-01/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-03",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "SCIARA SALVATORE AUGELLO ROSANNA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-psicologia-generale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -199,12 +251,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/47507_diritto-pubblico-giur-06-a-ex-ius-09/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-04",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-11-29",
+       "docenti": "FESTA GIANCLAUDIO MATTIA EMANUELE",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-diritto-pubblico",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -237,12 +302,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/47533_lingua-inglese-ii-angl-01-c-ex-l-lin-12/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-06",
+       "docenti": "MOJTOVA MONIKA STRATI ANNA LISA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-lingua-inglese-ii",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -256,12 +334,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/46536_metodologia-della-ricerca-sociale-gsps-05-ex-sps-07/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-11-25",
+       "docenti": "DI GREGORIO MARCO MININNO LUCILLA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-metodologia-della-ricerca-sociale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -313,12 +404,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/56529_storia-del-mediterraneo-medievale-hist-01-a-ex-m-sto-01/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "VERMIGLIO ELISA MILAZZO FABIO",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-storia-del-mediterraneo-medievale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -408,12 +512,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/47529_organizzazione-dei-servizi-sociali-gsps-08-a-ex-sps-09/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "MALLAMACI FRANCESCA STILLITANO ANNA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-organizzazione-dei-servizi-sociali",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -465,12 +582,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/56533_sanita-pubblica-ed-educazione-alla-salute-meds-24-b-ex-med-42/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-06",
+       "docenti": "LAGANÀ SAVERIO GIUSEPPE SAFFIOTI STEFANIA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-sanita-pubblica-ed-educazione-alla-salut",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -522,12 +652,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/54672_culture-identita-e-comunita-nei-sistemi-urbani-gsps-08-b-ex-sps-10/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-15",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": "GELOSI CARLO",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-culture-identita-e-comunita-nei-sistemi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -541,12 +684,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/51968_elementi-di-economia-aziendale-per-i-servizi-sociali-econ-06-a-ex-secs-p-07/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-02",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-02",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "LOPREVITE SALVATORE MAVILIA ROBERTO ZOCCALI CARMINE",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-elementi-di-economia-aziendale-per-i-ser",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -560,12 +716,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/47540_rigenerazione-urbana-e-inclusione-sociale-cear-12-b-ex-icar-21/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-15",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": "QUATTRONE GIULIANA GELOSI CARLO",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-rigenerazione-urbana-e-inclusione-social",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -579,12 +748,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/56540_sociolinguistica-lifi-01-a-ex-l-fil-let-12/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "RATI MARIA SILVIA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-sociolinguistica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -617,12 +799,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/50390_strumenti-di-protezione-del-minore-giur-01-a-ex-ius-01/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": "PANUCCIO FRANCESCA MARIA SAMMARCO ALBA MARIA GIOVANNA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-strumenti-di-protezione-del-minore",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "url_catalogo": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/"
@@ -643,7 +838,7 @@
    "url": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -659,12 +854,25 @@
      ],
      "url": "https://www.unidarc.it/materie/54702_biologia-bios-10-a-ex-bio-13/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-11-26",
+       "docenti": "LAMBERTI CASTRONUOVO EDUARDO PILOZZI FIAMMETTA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-biologia",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -701,12 +909,25 @@
      ],
      "url": "https://www.unidarc.it/materie/54670_psicologia-generale-psic-01-a-ex-m-psi-05/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-03",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "SCIARA SALVATORE AUGELLO ROSANNA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-psicologia-generale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -722,12 +943,25 @@
      ],
      "url": "https://www.unidarc.it/materie/46551_psicologia-dello-sviluppo-psic-02-ex-m-psi-04/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-02",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "PRATICÒ FRANCESCA AMATO MARIA VERDIANA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-psicologia-dello-sviluppo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -762,12 +996,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/46524_psicometria-psic-01-ex-m-psi-03/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-01",
+       "iscrizioni_al": "2026-11-26",
+       "docenti": "MAVILIA ROBERTO GANUCCI CANCELLIERI UBERTA LOPREVITE SALVATORE",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-psicometria",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -838,12 +1085,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/54795_psicologia-clinica-psic-04-ex-m-psi-08/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-12-06",
+       "docenti": "ROMEO PASQUALE ZEMA VALENTINA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-psicologia-clinica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -876,12 +1136,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/54794_psicologia-dinamica-psic-04-ex-m-psi-07/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-12-06",
+       "docenti": "ROMEO PASQUALE GUARNACCIA MARIKA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-psicologia-dinamica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -895,12 +1168,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/54704_sociologia-generale-gsps-05-a-ex-sps-07/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": "MARZIALE ANTONIO GIUSEPPE BURZUMATO LIDIA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-sociologia-generale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -971,12 +1257,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/54796_psicologia-della-personalita-e-delle-differenze-individuali-psic-01-a-ex-m-psi-01/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-03",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "SCIARA SALVATORE AUGELLO ROSANNA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-psicologia-della-personalita-e-delle-dif",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1068,12 +1367,25 @@
      ],
      "url": "https://www.unidarc.it/materie/54711_fondamenti-di-psichiatria-meds-11-a-ex-med-25/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-11-29",
+       "docenti": "ROMEO PASQUALE",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-fondamenti-di-psichiatria",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1106,12 +1418,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/46594_neuropsichiatria-infantile-meds-20-ex-med-39/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-01",
+       "iscrizioni_al": "2026-11-26",
+       "docenti": "GANUCCI CANCELLIERI UBERTA MAVILIA ROBERTO",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-neuropsichiatria-infantile",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1127,12 +1452,25 @@
      ],
      "url": "https://www.unidarc.it/materie/54745_pedagogia-e-didattica-speciale-paed-02-ex-m-ped-03/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-03",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "AUGELLO ROSANNA SCIARA SALVATORE",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-pedagogia-e-didattica-speciale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1146,12 +1484,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/54713_psico-oncologia-psic-04-b-ex-m-psi-08/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": "STILLITANO ELISABETTA GANUCCI CANCELLIERI UBERTA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-psico-oncologia",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1165,12 +1516,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/54710_psicologia-della-disabilita-e-della-riabilitazione-psic-02-a-ex-m-psi-04/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-03",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "AUGELLO ROSANNA SCIARA SALVATORE",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-psicologia-della-disabilita-e-della-riab",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1184,12 +1548,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/54712_psicologia-della-sicurezza-dellemergenza-e-del-rischio-psic-04-b-ex-m-psi-08/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-03",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "SCIARA SALVATORE AUGELLO ROSANNA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-psicologia-della-sicurezza-dellemergenza",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "url_catalogo": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/"
@@ -1210,7 +1587,7 @@
    "url": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -1224,12 +1601,37 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/46566_abilita-informatiche-e-telematiche-info-01-ex-inf-01/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "GALLETTA ANTONIO VESTO AURORA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-06",
+       "docenti": "LONGO MINNOLO ANTONIO GIOVANNI LOMBARDO GIOVANNI",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-abilita-informatiche-e-telematiche",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1243,12 +1645,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/53961_comunicazione-per-la-salute-gsps-06-a-ex-sps-08/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-10",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "TOTAFORTI SIMONA PILOZZI FIAMMETTA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-comunicazione-per-la-salute",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1262,12 +1677,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/46753_english-for-international-development-and-global-innovation-angl-01-ex-l-lin-12/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-15",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": "STILO SERENA SCIMONE GIUSEPPA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-english-for-international-development-an",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1281,12 +1709,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/47259_filosofia-politica-per-le-sfide-globali-gsps-01-ex-sps-01/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "VITALE MARIA ROSARIA VESTO AURORA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-filosofia-politica-per-le-sfide-globali",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1321,12 +1762,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/47252_progettazione-sociale-gsps-05-a-ex-sps-07/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-15",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": "QUATTRONE GIULIANA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-progettazione-sociale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1342,12 +1796,25 @@
      ],
      "url": "https://www.unidarc.it/materie/47261_tecniche-di-scrittura-dei-testi-istituzionali-lifi-01-a-ex-l-fil-let-12/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-06",
+       "docenti": "RATI MARIA SILVIA GANUCCI CANCELLIERI UBERTA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-tecniche-di-scrittura-dei-testi-istituzi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1363,12 +1830,25 @@
      ],
      "url": "https://www.unidarc.it/materie/47267_diritto-di-famiglia-e-dei-minori-giur-01-a-ex-ius-01/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "VESTO AURORA CUSUMANO GIOVANNA MARGHERITA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-diritto-di-famiglia-e-dei-minori",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1384,12 +1864,25 @@
      ],
      "url": "https://www.unidarc.it/materie/47265_economia-delle-aziende-di-servizi-sociali-econ-06-a-ex-secs-p-07/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-02",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-02",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "LOPREVITE SALVATORE MAVILIA ROBERTO ZOCCALI CARMINE",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-economia-delle-aziende-di-servizi-social",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1424,12 +1917,25 @@
      ],
      "url": "https://www.unidarc.it/materie/47263_politiche-urbane-e-sostenibilita-gsps-08-b-ex-sps-10/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-10",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "TOTAFORTI SIMONA PILOZZI FIAMMETTA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-politiche-urbane-e-sostenibilita",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1464,12 +1970,25 @@
      ],
      "url": "https://www.unidarc.it/materie/46793_analisi-dei-fenomeni-migratori-gsps-08-b-ex-sps-10/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-10",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "TOTAFORTI SIMONA PILOZZI FIAMMETTA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-analisi-dei-fenomeni-migratori",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1483,12 +2002,25 @@
      "docenti": [],
      "url": "https://www.unidarc.it/materie/46826_metodologia-della-valutazione-per-i-servizi-sociali-gsps-08-a-ex-sps-09/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-03",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "LAGANÀ NADIA TOSCANO MARIA LUISA",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-metodologia-della-valutazione-per-i-serv",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1523,12 +2055,25 @@
      ],
      "url": "https://www.unidarc.it/materie/53968_storia-sociale-hist-03-a-ex-m-sto-04/?anno=2027",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "VERMIGLIO ELISA MILAZZO FABIO",
+       "note": null,
+       "fonte": "https://unist.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-storia-sociale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "url_catalogo": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/"

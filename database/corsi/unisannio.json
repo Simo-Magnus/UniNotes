@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unisannio",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-14",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unisannio.it/it/sito-dipartimentale/dipartimento-dst/corso-di-laurea-biotecnologie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "100006",
@@ -75,11 +75,36 @@
       "Graziano Giuseppe"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8730/2026/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Chimica di Kotz, Treichel e Townsend, VII edizione, della EdiSES.",
+       "autori": null,
+       "editore": "della EdiSES",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8730/2025/9999?coorte=2025)",
+       "citazione": "Chimica di Kotz, Treichel e Townsend, VII edizione, della EdiSES."
+      },
+      {
+       "titolo": "Fondamenti di Chimica di Brown, Lemay, Bursten, Murphy e Woodward, V edizione, della EdiSES.",
+       "autori": null,
+       "editore": "della EdiSES",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8730/2025/9999?coorte=2025)",
+       "citazione": "Fondamenti di Chimica di Brown, Lemay, Bursten, Murphy e Woodward, V edizione, della EdiSES."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-l-2-biotecnologie-100005",
      "stato_esami": "da_aggiungere"
@@ -296,11 +321,36 @@
       "Filosa Rosanna"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8733/2026/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Chimica Organica P.Y. Bruice EdiSES, Napoli, 2008",
+       "autori": null,
+       "editore": "Chimica Organica P.Y. Bruice EdiSES",
+       "anno": 2008,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8733/2025/9999?coorte=2025)",
+       "citazione": "Chimica Organica P.Y. Bruice EdiSES, Napoli, 2008"
+      },
+      {
+       "titolo": "BROWN, Iverson;Ansyl Foote edizione EDISES",
+       "autori": null,
+       "editore": "Ansyl Foote edizione EDISES",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8733/2025/9999?coorte=2025)",
+       "citazione": "BROWN, Iverson;Ansyl Foote edizione EDISES"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-l-2-biotecnologie-100010",
      "stato_esami": "da_aggiungere"
@@ -956,11 +1006,36 @@
       "Filosa Rosanna"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/7781/2022/1?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Testi di chimica analitica e chimica organica relativi alle tecniche spettroscopiche e cromatografiche. Materiale didattico fornito dal docente (slide, articoli scientifici e dispense).",
+       "autori": null,
+       "editore": "articoli scientifici e dispense)",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2024/7781/2022/1?coorte=2024)",
+       "citazione": "Testi di chimica analitica e chimica organica relativi alle tecniche spettroscopiche e cromatografiche. Materiale didattico fornito dal docente (slide, articoli scientifici e dispense)."
+      },
+      {
+       "titolo": "Fondamenti di chimica organica Hart, Hadad, Craine et al. edito da Zanichelli Cap. 12",
+       "autori": null,
+       "editore": "Craine et al. edito da Zanichelli Cap. 12",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2024/7781/2022/1?coorte=2024)",
+       "citazione": "Fondamenti di chimica organica Hart, Hadad, Craine et al. edito da Zanichelli Cap. 12"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-2-biotecnologie-171239",
      "stato_esami": "da_aggiungere"
@@ -1081,11 +1156,36 @@
       "Tartaglia Maria"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8058/2022/1?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Biologia farmaceutica. Biologia vegetale, botanica farmaceutica, fitochimica (II ed., 2019) di Ferruccio Poli",
+       "autori": null,
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8058/2022/1?coorte=2025)",
+       "citazione": "Biologia farmaceutica. Biologia vegetale, botanica farmaceutica, fitochimica (II ed., 2019) di Ferruccio Poli"
+      },
+      {
+       "titolo": "Chimica, Biosintesi e Bioattività delle sostanze naturali. Piccin",
+       "autori": null,
+       "editore": "Biosintesi e Bioattività delle sostanze naturali. Piccin",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8058/2022/1?coorte=2025)",
+       "citazione": "Chimica, Biosintesi e Bioattività delle sostanze naturali. Piccin"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-2-biotecnologie-171254",
      "stato_esami": "da_aggiungere"
@@ -1228,7 +1328,56 @@
       "Graziano Giuseppe"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/7784/2022/1?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Biochimica Industriale di Verga e Pilone, Springer.",
+       "autori": null,
+       "editore": "Springer",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/7784/2022/1?coorte=2025)",
+       "citazione": "Biochimica Industriale di Verga e Pilone, Springer."
+      },
+      {
+       "titolo": "Glick-Pasternak - Biotecnologia Molecolare, Zanichelli",
+       "autori": null,
+       "editore": "Zanichelli",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/7784/2022/1?coorte=2025)",
+       "citazione": "Glick-Pasternak - Biotecnologia Molecolare, Zanichelli"
+      },
+      {
+       "titolo": "Branden-Tooze - Struttura e Funzione delle Proteine, Zanichelli",
+       "autori": null,
+       "editore": "Zanichelli",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/7784/2022/1?coorte=2025)",
+       "citazione": "Branden-Tooze - Struttura e Funzione delle Proteine, Zanichelli"
+      },
+      {
+       "titolo": "Donadio-Marino - Biotecnologie Microbiche, Casa Editrice Ambrosiana",
+       "autori": null,
+       "editore": "Casa Editrice Ambrosiana",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/7784/2022/1?coorte=2025)",
+       "citazione": "Donadio-Marino - Biotecnologie Microbiche, Casa Editrice Ambrosiana"
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -1256,8 +1405,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-2-biotecnologie-171242",
      "stato_esami": "completo"
@@ -1312,11 +1461,24 @@
      "curriculum": null,
      "docenti": [],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8198/2022/2?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "La qualità nelle organizzazioni. Matteo Podrecca, Marco Sartor. Editore McGraw Hill",
+       "autori": null,
+       "editore": "Marco Sartor. Editore McGraw Hill",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8198/2022/9999?coorte=2025)",
+       "citazione": "La qualità nelle organizzazioni. Matteo Podrecca, Marco Sartor. Editore McGraw Hill"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-2-biotecnologie-171257",
      "stato_esami": "da_aggiungere"
@@ -1733,7 +1895,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "201004",
@@ -3724,11 +3886,84 @@
       "Riviezzo Angelo"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8222/2024/1?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "De Vita P., Mercurio R., Testa F., (2024), Organizzazione aziendale: assetto e meccanismi di relazione (Capitoli da 1 a 5, 10).",
+       "autori": null,
+       "editore": null,
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8222/2024/1?coorte=2026)",
+       "citazione": "De Vita P., Mercurio R., Testa F., (2024), Organizzazione aziendale: assetto e meccanismi di relazione (Capitoli da 1 a 5, 10)."
+      },
+      {
+       "titolo": "Maiolini R., Rullani F., Versari P. (2013), Rendere sociali le imprese. Impatto sociale, confini dell’impresa e rete di stakeholder, Impresa sociale.",
+       "autori": null,
+       "editore": null,
+       "anno": 2013,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8222/2024/1?coorte=2026)",
+       "citazione": "Maiolini R., Rullani F., Versari P. (2013), Rendere sociali le imprese. Impatto sociale, confini dell’impresa e rete di stakeholder, Impresa sociale."
+      },
+      {
+       "titolo": "Fortunati S., (2022), La responsabilità sostenibile tra sviluppo del territorio e sostenibilità sociale, Prospettive in Organizzazione.",
+       "autori": null,
+       "editore": null,
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8222/2024/1?coorte=2026)",
+       "citazione": "Fortunati S., (2022), La responsabilità sostenibile tra sviluppo del territorio e sostenibilità sociale, Prospettive in Organizzazione."
+      },
+      {
+       "titolo": "Rosa, A., Marolla, G., Manfredi, F., & Filippelli, S. (2022), La sostenibilità organizzativa nelle piccole e medie imprese: Il ruolo delle capacità dinamiche e dello stile di management, Prospettive in Organizzazione.",
+       "autori": null,
+       "editore": null,
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8222/2024/1?coorte=2026)",
+       "citazione": "Rosa, A., Marolla, G., Manfredi, F., & Filippelli, S. (2022), La sostenibilità organizzativa nelle piccole e medie imprese: Il ruolo delle capacità dinamiche e dello stile di management, Prospettive in Organizzazione."
+      },
+      {
+       "titolo": "Mormile, S., & Piscopo, G. (2025), Sostenibilità in azione: Un modello di gestione del cambiamento organizzativo, Prospettive in Organizzazione.",
+       "autori": null,
+       "editore": null,
+       "anno": 2025,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8222/2024/1?coorte=2026)",
+       "citazione": "Mormile, S., & Piscopo, G. (2025), Sostenibilità in azione: Un modello di gestione del cambiamento organizzativo, Prospettive in Organizzazione."
+      },
+      {
+       "titolo": "Tomaselli, A., & Frigotto, M. L. (2025), Organizzarsi per un futuro sostenibile: Quale sinergia tra resilienza e sostenibilità?, Prospettive in Organizzazione.",
+       "autori": null,
+       "editore": null,
+       "anno": 2025,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8222/2024/1?coorte=2026)",
+       "citazione": "Tomaselli, A., & Frigotto, M. L. (2025), Organizzarsi per un futuro sostenibile: Quale sinergia tra resilienza e sostenibilità?, Prospettive in Organizzazione."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-18-economia-aziendale-261180",
      "stato_esami": "da_aggiungere"
@@ -4346,7 +4581,32 @@
       "Capasso Arturo"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8173/2024/2?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Scarcella Prandstraller, S., Cillo, V., Magni, D., Palladino, R., Riso, T., & Papa, A. (2022). Manuale di responsabilità sociale d'impresa (pp. 1-399). Mc Graw Hill.",
+       "autori": null,
+       "editore": null,
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8173/2024/1?coorte=2025)",
+       "citazione": "Scarcella Prandstraller, S., Cillo, V., Magni, D., Palladino, R., Riso, T., & Papa, A. (2022). Manuale di responsabilità sociale d'impresa (pp. 1-399). Mc Graw Hill."
+      },
+      {
+       "titolo": "Brand Activism: Dal Purpose all’Azione",
+       "autori": "Philip Kotler, Christian Sarkar",
+       "editore": "Hoepli",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8173/2024/1?coorte=2025)",
+       "citazione": "Philip Kotler, Christian Sarkar, “Brand Activism: Dal Purpose all’Azione”, Hoepli, 2020."
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -4362,8 +4622,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-18-economia-aziendale-261178",
      "stato_esami": "completo"
@@ -4677,7 +4937,7 @@
    "url": "https://www.unisannio.it/it/sito-dipartimentale/dipartimento-demm/corso-di-laurea-economia-bancaria-e-finanziaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "200004",
@@ -6796,7 +7056,32 @@
       "Capasso Arturo"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8173/2024/9999?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Scarcella Prandstraller, S., Cillo, V., Magni, D., Palladino, R., Riso, T., & Papa, A. (2022). Manuale di responsabilità sociale d'impresa (pp. 1-399). Mc Graw Hill.",
+       "autori": null,
+       "editore": null,
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8173/2024/1?coorte=2025)",
+       "citazione": "Scarcella Prandstraller, S., Cillo, V., Magni, D., Palladino, R., Riso, T., & Papa, A. (2022). Manuale di responsabilità sociale d'impresa (pp. 1-399). Mc Graw Hill."
+      },
+      {
+       "titolo": "Brand Activism: Dal Purpose all’Azione",
+       "autori": "Philip Kotler, Christian Sarkar",
+       "editore": "Hoepli",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8173/2024/1?coorte=2025)",
+       "citazione": "Philip Kotler, Christian Sarkar, “Brand Activism: Dal Purpose all’Azione”, Hoepli, 2020."
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -6812,8 +7097,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-18-economia-bancaria-e-finanziaria-261178",
      "stato_esami": "completo"
@@ -7083,7 +7368,7 @@
    "url": "https://unisannio.it/it/dipartimenti/ding/didattica/corsi-di-laurea/ingegneria-civile-865",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "802005",
@@ -11176,7 +11461,7 @@
    "url": "https://www.unisannio.it/it/dipartimenti/ding/didattica/corsi-di-laurea/ingegneria-elettronica-biomedica-866",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "803024",
@@ -11800,7 +12085,32 @@
       "Intorcia Elena"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8648/2026/1?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Edward de Chazal & Sam McCarter (2023). Oxford EAP. A Course in English for Academic Purposes. Oxford University Press. ISBN 9780194001762",
+       "autori": null,
+       "editore": null,
+       "anno": 2023,
+       "edizione": null,
+       "isbn": "9780194001762",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8648/2026/1?coorte=2026)",
+       "citazione": "Edward de Chazal & Sam McCarter (2023). Oxford EAP. A Course in English for Academic Purposes. Oxford University Press. ISBN 9780194001762"
+      },
+      {
+       "titolo": "Mark Foley & Diane Hall. MyGrammarLab Intermediate B1/B2 without Key + MyLab Pack. Pearson. ISBN 9781408299166",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9781408299166",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8648/2026/1?coorte=2026)",
+       "citazione": "Mark Foley & Diane Hall. MyGrammarLab Intermediate B1/B2 without Key + MyLab Pack. Pearson. ISBN 9781408299166"
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -11852,8 +12162,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-8-ingegneria-elettronica-e-biomedica-803007",
      "stato_esami": "completo"
@@ -13074,7 +13384,44 @@
       "Caputo Tania Mariastella"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8855/2025/1?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": " Loredano Pollegioni, Fondamenti di Biochimica, EDISES, ISBN9788836230358",
+       "autori": null,
+       "editore": "EDISES",
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788836230358",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8855/2025/1?coorte=2025)",
+       "citazione": " Loredano Pollegioni, Fondamenti di Biochimica, EDISES, ISBN9788836230358"
+      },
+      {
+       "titolo": " Donald Voet, Fondamenti di biochimica, ZANICHELLI, ISBN9788808974563",
+       "autori": null,
+       "editore": "ZANICHELLI",
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788808974563",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8855/2025/1?coorte=2025)",
+       "citazione": " Donald Voet, Fondamenti di biochimica, ZANICHELLI, ISBN9788808974563"
+      },
+      {
+       "titolo": " David L Nelson, Michael M Cox, Introduzione alla biochimica di Lehninger, ZANICHELLI, ISBN 9788808899736",
+       "autori": null,
+       "editore": "ZANICHELLI",
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788808899736",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8855/2025/1?coorte=2025)",
+       "citazione": " David L Nelson, Michael M Cox, Introduzione alla biochimica di Lehninger, ZANICHELLI, ISBN 9788808899736"
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -13174,8 +13521,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-8-ingegneria-elettronica-e-biomedica-803017",
      "stato_esami": "completo"
@@ -14164,7 +14511,44 @@
       "Pierro Vincenzo"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8074/2023/2?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Introduction to Electrodynamics",
+       "autori": "D. J. Griffiths",
+       "editore": "Cambridge University Press",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8074/2023/2?coorte=2026)",
+       "citazione": "D. J. Griffiths, \"Introduction to Electrodynamics\", Cambridge University Press."
+      },
+      {
+       "titolo": "Classical Electrodynamics",
+       "autori": "J. D. Jackson",
+       "editore": "John Wiley & Sons",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8074/2023/2?coorte=2026)",
+       "citazione": "J. D. Jackson, \"Classical Electrodynamics\", John Wiley & Sons."
+      },
+      {
+       "titolo": "Dispense, appunti e materiale didattico integrativo resi disponibili dal docente sulla piattaforma e-learning di Ateneo (Handy).",
+       "autori": null,
+       "editore": "Dispense",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8074/2023/2?coorte=2026)",
+       "citazione": "Dispense, appunti e materiale didattico integrativo resi disponibili dal docente sulla piattaforma e-learning di Ateneo (Handy)."
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -14264,8 +14648,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-8-ingegneria-elettronica-e-biomedica-86626",
      "stato_esami": "completo",
@@ -17132,7 +17516,7 @@
    "url": "https://unisannio.it/it/dipartimenti/ding/didattica/corsi-di-laurea/ingegneria-energetica-864",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "801001",
@@ -17477,7 +17861,32 @@
       "Lamberti Lorenzo"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8639/2026/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "E. Schlesinger -- Algebra lineare e geometria – Zanichelli",
+       "autori": null,
+       "editore": "E. Schlesinger -- Algebra lineare e geometria – Zanichelli",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8639/2026/9999?coorte=2026)",
+       "citazione": "E. Schlesinger -- Algebra lineare e geometria – Zanichelli"
+      },
+      {
+       "titolo": "A. Savo -- Geometria. Teoria ed esercizi – Hoepli",
+       "autori": null,
+       "editore": "A. Savo -- Geometria. Teoria ed esercizi – Hoepli",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8639/2026/9999?coorte=2026)",
+       "citazione": "A. Savo -- Geometria. Teoria ed esercizi – Hoepli"
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -17493,8 +17902,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-l-9-ingegneria-energetica-801005",
      "stato_esami": "completo"
@@ -17648,7 +18057,32 @@
       "Baldini Anna Rita"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8641/2026/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "English for Energy Engineering",
+       "autori": "Glendinning E.H.",
+       "editore": "Oxford University Press",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8641/2025/9999?coorte=2025)",
+       "citazione": "Glendinning E.H., English for Energy Engineering, Oxford University Press"
+      },
+      {
+       "titolo": "English Grammar in Use",
+       "autori": "Murphy R.",
+       "editore": "Cambridge University Press",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8641/2025/9999?coorte=2025)",
+       "citazione": "Murphy R., English Grammar in Use, Cambridge University Press."
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -17664,8 +18098,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-9-ingegneria-energetica-801007",
      "stato_esami": "completo"
@@ -20884,7 +21318,7 @@
    "url": "https://unisannio.it/it/dipartimenti/ding/didattica/corsi-di-laurea/ingegneria-informatica-863",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "800003",
@@ -21628,7 +22062,32 @@
       "Intorcia Elena"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8634/2026/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Edward de Chazal & Sam McCarter (2023). Oxford EAP. A Course in English for Academic Purposes. Oxford University Press. ISBN 9780194001762",
+       "autori": null,
+       "editore": null,
+       "anno": 2023,
+       "edizione": null,
+       "isbn": "9780194001762",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8634/2026/9999?coorte=2026)",
+       "citazione": "Edward de Chazal & Sam McCarter (2023). Oxford EAP. A Course in English for Academic Purposes. Oxford University Press. ISBN 9780194001762"
+      },
+      {
+       "titolo": "Mark Foley & Diane Hall. MyGrammarLab Intermediate B1/B2 without Key + MyLab Pack. Pearson. ISBN 9781408299166",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9781408299166",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8634/2026/9999?coorte=2026)",
+       "citazione": "Mark Foley & Diane Hall. MyGrammarLab Intermediate B1/B2 without Key + MyLab Pack. Pearson. ISBN 9781408299166"
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -21680,8 +22139,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-l-8-ingegneria-informatica-800007",
      "stato_esami": "completo"
@@ -25344,7 +25803,7 @@
    "url": "https://www.unisannio.it/it/sito-dipartimentale/dipartimento-dst/corso-di-laurea-scienze-biologiche-sede-benevento",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "101004",
@@ -25548,11 +26007,36 @@
       "Filosa Rosanna"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8697/2026/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Chimica Organica P.Y. Bruice EdiSES, Napoli, 2008",
+       "autori": null,
+       "editore": "Chimica Organica P.Y. Bruice EdiSES",
+       "anno": 2008,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8697/2025/9999?coorte=2025)",
+       "citazione": "Chimica Organica P.Y. Bruice EdiSES, Napoli, 2008"
+      },
+      {
+       "titolo": "BROWN, Iverson;Ansyl Foote edizione EDISES",
+       "autori": null,
+       "editore": "Ansyl Foote edizione EDISES",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8697/2025/9999?coorte=2025)",
+       "citazione": "BROWN, Iverson;Ansyl Foote edizione EDISES"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto",
      "id": "unisannio-l-13-scienze-biologiche-101005",
      "stato_esami": "da_aggiungere"
@@ -26529,11 +27013,60 @@
       "Maiorano Carmine"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/7927/2022/2?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Bioetica. Nozioni fondamentali",
+       "autori": "F. D’Agostino e L. Palazzani",
+       "editore": "Editrice La Scuola",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/7927/2022/2?coorte=2025)",
+       "citazione": "F. D’Agostino e L. Palazzani, Bioetica. Nozioni fondamentali, Editrice La Scuola"
+      },
+      {
+       "titolo": "A. PATRONI GRIFFI, Diritti della persona e dimensione normativa nel codice di deontologia medica, in L. Chieffi (a cura di) Biotica e diritti dell’uomo, Torino, 2000, pp. 247-265",
+       "autori": null,
+       "editore": "A. PATRONI GRIFFI",
+       "anno": 2000,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/7927/2022/2?coorte=2025)",
+       "citazione": "A. PATRONI GRIFFI, Diritti della persona e dimensione normativa nel codice di deontologia medica, in L. Chieffi (a cura di) Biotica e diritti dell’uomo, Torino, 2000, pp. 247-265"
+      },
+      {
+       "titolo": "P. PERLINGIERI, La persona e i suoi diritti. Problemi del diritto civile, Napoli, 2005, pp. 101-201",
+       "autori": null,
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/7927/2022/2?coorte=2025)",
+       "citazione": "P. PERLINGIERI, La persona e i suoi diritti. Problemi del diritto civile, Napoli, 2005, pp. 101-201"
+      },
+      {
+       "titolo": "L. CHIEFFI, Suicidio assistito in Italia tra aperture giurisprudenziali e persistenti impedimenti nelle concrete prassi, in Rivista AIC, 1, 2024, pp. 385- 407.",
+       "autori": null,
+       "editore": null,
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/7927/2022/2?coorte=2025)",
+       "citazione": "L. CHIEFFI, Suicidio assistito in Italia tra aperture giurisprudenziali e persistenti impedimenti nelle concrete prassi, in Rivista AIC, 1, 2024, pp. 385- 407."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-13-scienze-biologiche-172155",
      "stato_esami": "da_aggiungere"
@@ -26679,7 +27212,7 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
+     "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unisannio-l-13-scienze-biologiche-172170",
@@ -26698,11 +27231,24 @@
      "curriculum": "SCIENZE BIOLOGICHE PER LA DIAGNOSTICA CLINICA - DIA",
      "docenti": [],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/7926/2022/2?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Farmacologia generale e molecolare. Fondamenti - Maurizio Taglialatela Francesco Clementi Guido Fumagalli EDRA",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/7926/2022/2?coorte=2025)",
+       "citazione": "Farmacologia generale e molecolare. Fondamenti - Maurizio Taglialatela Francesco Clementi Guido Fumagalli EDRA"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-l-13-scienze-biologiche-172154",
      "stato_esami": "da_aggiungere"
@@ -26947,7 +27493,7 @@
    "url": "https://www.unisannio.it/it/sito-dipartimentale/dipartimento-demm/corso-di-laurea-scienze-amministrazione-digitale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "202008",
@@ -26964,7 +27510,20 @@
       "Camilleri Marco"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8553/2026/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Bilancia-De Marco, L’ordinamento della Repubblica, Cedam,",
+       "autori": null,
+       "editore": "Cedam",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8553/2026/9999?coorte=2026)",
+       "citazione": "Bilancia-De Marco, L’ordinamento della Repubblica, Cedam,"
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -26980,8 +27539,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-16-scienze-dell-amministrazione-digitale-202008",
      "stato_esami": "completo"
@@ -28355,7 +28914,20 @@
       "Crea Camilla"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/7873/2023/9999?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "D’ Orazio Roberto, Finocchiaro Giusella Dolores, Pollicino Oreste, Resta Giorgio (a cura di), CODICE DELLA PRIVACY E DATA PROTECTION DISPONIBILE, Giuffré, 2021, pp. 85-280; 418-468",
+       "autori": null,
+       "editore": "Giuffré",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2024/7873/2023/9999?coorte=2024)",
+       "citazione": "D’ Orazio Roberto, Finocchiaro Giusella Dolores, Pollicino Oreste, Resta Giorgio (a cura di), CODICE DELLA PRIVACY E DATA PROTECTION DISPONIBILE, Giuffré, 2021, pp. 85-280; 418-468"
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -28371,8 +28943,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-16-scienze-dell-amministrazione-digitale-26330",
      "stato_esami": "completo"
@@ -28453,7 +29025,7 @@
    "url": "https://www.unisannio.it/it/sito-dipartimentale/dipartimento-dst/corso-di-laurea-scienze-geologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "102001",
@@ -28775,11 +29347,48 @@
       "Cicchella Domenico"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8727/2026/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Principi di geochimica",
+       "autori": "G. Ottonello",
+       "editore": "Zanichelli",
+       "anno": 1991,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8727/2025/9999?coorte=2025)",
+       "citazione": "G. Ottonello \"Principi di geochimica\", Zanichelli, 1991"
+      },
+      {
+       "titolo": "Introduzione alla geochimica",
+       "autori": "A. Longinelli, S. Deganello",
+       "editore": "UTET",
+       "anno": 1999,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8727/2025/9999?coorte=2025)",
+       "citazione": "A. Longinelli, S. Deganello “Introduzione alla geochimica”, UTET, 1999"
+      },
+      {
+       "titolo": "Geochimica Ambientale",
+       "autori": "De Vivo B., Lima A., Siegel F.R.",
+       "editore": "Liguori Editore",
+       "anno": 2004,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8727/2025/9999?coorte=2025)",
+       "citazione": "De Vivo B., Lima A., Siegel F.R., 2004. Geochimica Ambientale. Liguori Editore, Napoli."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-l-34-scienze-geologiche-102013",
      "stato_esami": "da_aggiungere"
@@ -29776,7 +30385,7 @@
    "url": "https://www.unisannio.it/it/sito-dipartimentale/dipartimento-dst/corso-di-laurea-scienze-motorie-sport-e-salute",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "17831",
@@ -29867,7 +30476,20 @@
       "Varricchio Anna"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8134/2026/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Leon Fraser, Gareth Norman and Matthew Brown (2017). CAMBRIDGE IGCSE PHYSICAL EDUCATION. Collins. ISBN: 978-0-00-820216-3",
+       "autori": null,
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": "9780008202163",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8134/2024/9999?coorte=2025)",
+       "citazione": "Leon Fraser, Gareth Norman and Matthew Brown (2017). CAMBRIDGE IGCSE PHYSICAL EDUCATION. Collins. ISBN: 978-0-00-820216-3"
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -29883,8 +30505,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-22-scienze-motorie-per-lo-sport-e-la-salute-17806",
      "stato_esami": "completo"
@@ -29976,7 +30598,68 @@
      "curriculum": null,
      "docenti": [],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8136/2026/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Nelson-Cox, Principi di Biochimica di Lenhinger, Zanichelli",
+       "autori": null,
+       "editore": "Zanichelli",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8136/2024/9999?coorte=2025)",
+       "citazione": "Nelson-Cox, Principi di Biochimica di Lenhinger, Zanichelli"
+      },
+      {
+       "titolo": "Pollegioni, Fondamenti di Biochimica, Edises",
+       "autori": null,
+       "editore": "Edises",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8136/2024/9999?coorte=2025)",
+       "citazione": "Pollegioni, Fondamenti di Biochimica, Edises"
+      },
+      {
+       "titolo": "Di Giulio-Fiorilli-Stefanelli, Biochimica per le Scienze Motorie, Ambrosiana",
+       "autori": null,
+       "editore": "Ambrosiana",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8136/2024/9999?coorte=2025)",
+       "citazione": "Di Giulio-Fiorilli-Stefanelli, Biochimica per le Scienze Motorie, Ambrosiana"
+      },
+      {
+       "titolo": "Bertoldi, Chimica e Biochimica per le Scienze Motorie, Edises",
+       "autori": null,
+       "editore": "Edises",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8136/2024/9999?coorte=2025)",
+       "citazione": "Bertoldi, Chimica e Biochimica per le Scienze Motorie, Edises"
+      },
+      {
+       "titolo": "Abali-Cline-Franklin-Viselli Le basi della Biochimica, Zanichelli",
+       "autori": null,
+       "editore": "Zanichelli",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8136/2024/9999?coorte=2025)",
+       "citazione": "Abali-Cline-Franklin-Viselli Le basi della Biochimica, Zanichelli"
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -30004,8 +30687,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-l-22-scienze-motorie-per-lo-sport-e-la-salute-17808",
      "stato_esami": "completo"
@@ -30122,11 +30805,24 @@
       "Zecchino Irene"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8133/2026/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Cherubini S., Marketing e management dello sport. Analisi, strategie, azioni, F. Angeli, 2022",
+       "autori": null,
+       "editore": null,
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8133/2024/9999?coorte=2025)",
+       "citazione": "Cherubini S., Marketing e management dello sport. Analisi, strategie, azioni, F. Angeli, 2022"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-l-22-scienze-motorie-per-lo-sport-e-la-salute-17803",
      "stato_esami": "da_aggiungere"
@@ -30352,11 +31048,72 @@
      "curriculum": null,
      "docenti": [],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8139/2024/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Biomeccanica del movimento umano",
+       "autori": null,
+       "editore": "Verducci editore",
+       "anno": 2009,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8139/2024/9999?coorte=2025)",
+       "citazione": "“Biomeccanica del movimento umano”, Barney F. LeVeau, Verducci editore, 2009"
+      },
+      {
+       "titolo": "Bioingegneria della Postura e del Movimento",
+       "autori": null,
+       "editore": "Patron ed",
+       "anno": 2003,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8139/2024/9999?coorte=2025)",
+       "citazione": "“Bioingegneria della Postura e del Movimento”, Collana del Gruppo Nazionale di Bioingegneria, vol. 22, Patron ed., 2003"
+      },
+      {
+       "titolo": "Routledge Handbook of Biomechanics and Human Movement Science",
+       "autori": null,
+       "editore": null,
+       "anno": 2008,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8139/2024/9999?coorte=2025)",
+       "citazione": "“Routledge Handbook of Biomechanics and Human Movement Science”, Edited by Youlian Hong and Roger Bartlett, 2008"
+      },
+      {
+       "titolo": "Exercise Sciences Guidelines, Edited by Carl J. Payton and Roger M. Bartlett, 2008",
+       "autori": null,
+       "editore": null,
+       "anno": 2008,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8139/2024/9999?coorte=2025)",
+       "citazione": "Exercise Sciences Guidelines, Edited by Carl J. Payton and Roger M. Bartlett, 2008"
+      },
+      {
+       "titolo": "Biomechanics and Gait Analysis",
+       "autori": null,
+       "editore": "Academic Press",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8139/2024/9999?coorte=2025)",
+       "citazione": "“Biomechanics and Gait Analysis”, Nick Stergiou, 2020, Academic Press"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-l-22-scienze-motorie-per-lo-sport-e-la-salute-17815",
      "stato_esami": "da_aggiungere"
@@ -30941,11 +31698,36 @@
       "Cestari Antonello"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8681/2022/9999?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "M.N.DeMers, Fundamentals of Geographic Information Systems, J.Wiley&Sons (1997)",
+       "autori": null,
+       "editore": "J.Wiley&Sons (1997)",
+       "anno": 1997,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8681/2022/9999?coorte=2025)",
+       "citazione": "M.N.DeMers, Fundamentals of Geographic Information Systems, J.Wiley&Sons (1997)"
+      },
+      {
+       "titolo": "R.Laurini,D.Thompson, Fundamentals of Spatial Information Systems, Academic Press (1992)",
+       "autori": null,
+       "editore": "Academic Press (1992)",
+       "anno": 1992,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8681/2022/9999?coorte=2025)",
+       "citazione": "R.Laurini,D.Thompson, Fundamentals of Spatial Information Systems, Academic Press (1992)"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-l-32-scienze-naturali-geologiche-e-ambientali-17642",
      "stato_esami": "da_aggiungere"
@@ -31681,7 +32463,7 @@
    "url": "https://unisannio.it/it/sito-dipartimentale/dipartimento-demm/corso-di-laurea-statistica-le-assicurazioni-e-finanza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "203002",
@@ -32461,11 +33243,36 @@
       "Pacillo Simona"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8809/2025/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Grigoletto, M., Pauli, F., Ventura, L. (2017) Modello lineare, Teoria e applicazioni con R,",
+       "autori": null,
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8809/2025/9999?coorte=2025)",
+       "citazione": "Grigoletto, M., Pauli, F., Ventura, L. (2017) Modello lineare, Teoria e applicazioni con R,"
+      },
+      {
+       "titolo": "Serie Storiche Economiche",
+       "autori": "Di Fonzo T., Lisi F.",
+       "editore": "Carocci",
+       "anno": 2006,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8809/2025/9999?coorte=2025)",
+       "citazione": "Di Fonzo T., Lisi F. (2006) Serie Storiche Economiche, Carocci."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-l-41-statistica-per-le-assicurazioni-e-la-finanza-203012",
      "stato_esami": "da_aggiungere"
@@ -32802,7 +33609,7 @@
    "url": "https://www.unisannio.it/it/sito-dipartimentale/dipartimento-dst/corso-di-laurea-magistrale-biologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "512006",
@@ -34362,7 +35169,7 @@
    "url": "https://www.unisannio.it/it/sito-dipartimentale/dipartimento-dst/corso-di-laurea-magistrale-biotecnologie-genetiche-e-molecolari",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "513006",
@@ -34714,11 +35521,24 @@
       "Pancione Massimo"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8741/2026/1?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Bioinformatics Data Skills (Vince Buffalo) - O'Reilly Media.",
+       "autori": null,
+       "editore": "Bioinformatics Data Skills (Vince Buffalo) - O'Reilly Media",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8741/2025/1?coorte=2025)",
+       "citazione": "Bioinformatics Data Skills (Vince Buffalo) - O'Reilly Media."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-lm-9-biotecnologie-per-la-salute-513013",
      "stato_esami": "da_aggiungere"
@@ -34978,11 +35798,24 @@
       "Zecchino Irene"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8936/2025/1?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Innovation trends in industrial biotechnology",
+       "autori": "J. Nielsen, C. B. Tillegreen, D. Petranovic",
+       "editore": "pp. 1160–1172. Dispense e materiali forniti durante il corso",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8936/2025/1?coorte=2025)",
+       "citazione": "J. Nielsen, C. B. Tillegreen, D. Petranovic, “Innovation trends in industrial biotechnology”, Trends in Biotechnology, 40(10), 2022, pp. 1160–1172. Dispense e materiali forniti durante il corso."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-lm-9-biotecnologie-per-la-salute-513027",
      "stato_esami": "da_aggiungere"
@@ -35168,7 +36001,7 @@
    "url": "https://www.unisannio.it/it/sito-dipartimentale/dipartimento-demm/corso-di-laurea-magistrale-economia-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "404001",
@@ -36962,7 +37795,7 @@
    "url": "https://unisannio.it/it/dipartimenti/ding/didattica/corsi-di-laurea-magistrale/electronics-engineering-automation-sensing-389",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "303001",
@@ -39987,7 +40820,7 @@
    "url": "https://www.unisannio.it/it/sito-dipartimentale/dipartimento-dst/laurea-magistrale-geotecnologie-le-risorse-ambiente-e-i-rischi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "514002",
@@ -41240,7 +42073,7 @@
    "url": "https://unisannio.it/it/dipartimenti/ding/didattica/corsi-di-laurea-magistrale/ingegneria-Civile-388",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "302001",
@@ -43823,7 +44656,7 @@
    "url": "https://unisannio.it/it/dipartimenti/ding/didattica/corsi-di-laurea-magistrale/ingegneria-Energetica-398",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "301006",
@@ -45304,11 +46137,48 @@
       "Continillo Gaetano"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8873/2025/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Optimization of Chemical Processes",
+       "autori": "T. F. Edgar and D. M. Himmelblau",
+       "editore": "McGraw-Hill",
+       "anno": 1988,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8873/2025/9999?coorte=2025)",
+       "citazione": "T. F. Edgar and D. M. Himmelblau, “Optimization of Chemical Processes”, McGraw-Hill, 1988 (testo principale)"
+      },
+      {
+       "titolo": "Ottimizzazione",
+       "autori": "C. Vercellis",
+       "editore": "McGraw-Hill Italia",
+       "anno": 2008,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8873/2025/9999?coorte=2025)",
+       "citazione": "C. Vercellis, “Ottimizzazione”, McGraw-Hill Italia, 2008 (in Italiano)"
+      },
+      {
+       "titolo": "Engineering Optimization",
+       "autori": "S.S. Rao",
+       "editore": "McGraw Hill",
+       "anno": 2009,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8873/2025/9999?coorte=2025)",
+       "citazione": "S.S. Rao, Engineering Optimization, 4th Ed., McGraw Hill, 2009"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unisannio-lm-30-ingegneria-energetica-301013",
      "stato_esami": "da_aggiungere"
@@ -45522,11 +46392,48 @@
       "Del Prete Rosa"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/9152/2025/9999?coorte=2025",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "La rincorsa frenata, L'industria italiana dall'unità nazionale all'unificazione europea",
+       "autori": "P. Bianchi",
+       "editore": "il Mulino",
+       "anno": 2002,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/9152/2025/9999?coorte=2025)",
+       "citazione": "P. Bianchi, La rincorsa frenata, L'industria italiana dall'unità nazionale all'unificazione europea, il Mulino, Bologna 2002; R. Del Prete, La divisione del lavoro. Dalla società contadina a quella del terziario avanzato, Fondazione U.Spirito, Roma (capp. III, V, VI, VII, IX, X)"
+      },
+      {
+       "titolo": "Storia d'impresa. Complessità e comparazioni",
+       "autori": "F. Amatori, A. Colli",
+       "editore": "Pearson",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/9152/2025/9999?coorte=2025)",
+       "citazione": "F. Amatori, A. Colli, Storia d'impresa. Complessità e comparazioni, Pearson, Milano-Torino 2022"
+      },
+      {
+       "titolo": "L'organizzazione del lavoro. Dalla rivoluzione industriale allo smart working",
+       "autori": "G. Maifreda",
+       "editore": "Pearson",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/9152/2025/9999?coorte=2025)",
+       "citazione": "G. Maifreda, L'organizzazione del lavoro. Dalla rivoluzione industriale allo smart working, Pearson, Milano-Torino 2022"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-lm-30-ingegneria-energetica-301015",
      "stato_esami": "da_aggiungere"
@@ -45728,7 +46635,7 @@
    "url": "https://www.unisannio.it/it/dipartimenti/ding/didattica/corsi-di-laurea-magistrale/ingegneria-informatica-399",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "300001",
@@ -48135,7 +49042,7 @@
    "url": "https://unisannio.it/it/sito-dipartimentale/dipartimento-demm/corso-di-laurea-magistrale-scienze-statistiche-e-attuariali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "710001",
@@ -48674,11 +49581,48 @@
       "Melisi Giuseppe"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8577/2026/9999?coorte=2026",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Loss Models: from data to decisions",
+       "autori": "Klugman S. et al.",
+       "editore": "John Wiley & Sons",
+       "anno": 2008,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8577/2025/9999?coorte=2025)",
+       "citazione": "Klugman S. et al. (2008). Loss Models: from data to decisions. John Wiley & Sons, INC., 2008."
+      },
+      {
+       "titolo": "Mack T. Measuring the Variability of Chain Ladder Reserve Estimates. Casualty Actuarial Society, Spring Forum, 1994.",
+       "autori": null,
+       "editore": null,
+       "anno": 1994,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8577/2025/9999?coorte=2025)",
+       "citazione": "Mack T. Measuring the Variability of Chain Ladder Reserve Estimates. Casualty Actuarial Society, Spring Forum, 1994."
+      },
+      {
+       "titolo": "Fisher W., Lange J., 1973. Loss Reserve Testing: A Report Year Approach. Casualty Actuarial Society.",
+       "autori": null,
+       "editore": null,
+       "anno": 1973,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/8577/2025/9999?coorte=2025)",
+       "citazione": "Fisher W., Lange J., 1973. Loss Reserve Testing: A Report Year Approach. Casualty Actuarial Society."
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-lm-83-scienze-statistiche-e-attuariali-710004",
      "stato_esami": "da_aggiungere"
@@ -49572,11 +50516,24 @@
       "Veronesi Ilaria"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/221/2020/9999?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Ricerca operativa. Programmazione lineare, intera e non lineare",
+       "autori": "M. Caramia, S. Giordani, F. Guerriero, R. Musmanno, D. Pacciarelli",
+       "editore": null,
+       "anno": 2018,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/221/2020/9999?coorte=2025)",
+       "citazione": "M. Caramia, S. Giordani, F. Guerriero, R. Musmanno, D. Pacciarelli, \"Ricerca operativa. Programmazione lineare, intera e non lineare\", Isedi, Italia, 2018"
+      }
+     ],
      "esami": [],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-lm-83-scienze-statistiche-e-attuariali-67183",
      "stato_esami": "da_aggiungere"
@@ -49783,7 +50740,20 @@
       "Gavassuti Cristina"
      ],
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/206/2020/9999?coorte=2024",
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Manuale di gestione assicurativa",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisannio.coursecatalogue.cineca.it/insegnamenti/2025/206/2020/9999?coorte=2025)",
+       "citazione": "“Manuale di gestione assicurativa”- A cura di Fabrizio Santoboni (Walters Kluwer - CEDAM)"
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -49799,8 +50769,8 @@
       }
      ],
      "fonte": "https://unisannio.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-04",
-     "stato_libri": "da_aggiungere",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "unisannio-lm-83-scienze-statistiche-e-attuariali-67160",
      "stato_esami": "completo"
@@ -50086,7 +51056,7 @@
    "url": "https://www.unisannio.it/it/sito-dipartimentale/dipartimento-demm/corso-di-laurea-magistrale-ciclo-unico-giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "905002",
