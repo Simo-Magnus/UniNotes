@@ -22,7 +22,8 @@ const String kUninstallArg = '--disinstalla';
 /// chiude; il disinstallatore toglie i file del programma. Quando invece è
 /// l'app ad avviare il disinstallatore (dopo la pulizia) lo fa in modalità
 /// silenziosa e lascia il segno [AppUninstall.windowsCleanupMark]: qui ci si
-/// chiude subito.
+/// chiude subito. Solo per l'installatore del sito: nella build del Microsoft
+/// Store l'argomento si ignora ([AppUninstall.handlesUninstallArg]).
 Future<void> runUninstallMode() async {
   // disinstallatore avviato dall'app dopo la pulizia: niente da chiedere
   if (await AppUninstall.takeWindowsCleanupMark()) exit(0);
@@ -54,14 +55,21 @@ Future<void> runUninstallMode() async {
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: mode,
-      home: UninstallScreen(eraser: DataEraser(services), onDone: () => exit(0)),
+      home: UninstallScreen(
+        eraser: DataEraser(services),
+        onDone: () => exit(0),
+      ),
     ),
   );
 }
 
 /// Sfondo della modalità minima; il flusso parte al primo fotogramma.
 class UninstallScreen extends StatefulWidget {
-  const UninstallScreen({super.key, required this.eraser, required this.onDone});
+  const UninstallScreen({
+    super.key,
+    required this.eraser,
+    required this.onDone,
+  });
   final DataEraser eraser;
 
   /// Chiusura del programma.

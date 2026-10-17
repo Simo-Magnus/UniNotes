@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/constants/build_flags.dart';
 import '../../core/services/app_services.dart';
 import '../../core/services/app_uninstall.dart';
 import 'logic/data_eraser.dart';
@@ -13,7 +14,8 @@ enum EraseFlowMode {
   eraseOnly,
 
   /// Impostazioni → «Disinstalla UniNotes»: dopo la pulizia si avvia la
-  /// disinstallazione dove il sistema lo permette.
+  /// disinstallazione dove il sistema lo permette (Microsoft Store: si apre
+  /// «App installate» di Windows).
   uninstall,
 
   /// Windows, disinstallazione avviata da «App installate»: il
@@ -47,13 +49,19 @@ void _exitApp() => exit(0);
 /// 4. con una scelta parziale, domanda se disinstallare comunque o tenere
 ///    l'app;
 /// 5. disinstallazione ([AppUninstall]) o chiusura dell'app.
+///
+/// Nella build del Microsoft Store ([windowsStore], predefinito: Windows con
+/// `STORE=microsoft`) non c'è un disinstallatore da avviare: dopo la pulizia
+/// si apre «App installate» di Windows ([AppUninstall.windowsStore]).
 Future<void> runEraseFlow(
   BuildContext context, {
   required EraseFlowMode mode,
   required DataEraser eraser,
   Future<UninstallResult> Function() uninstall = AppUninstall.uninstall,
   VoidCallback quit = _exitApp,
+  bool? windowsStore,
 }) async {
+  final store = windowsStore ?? (Platform.isWindows && kMicrosoftStoreBuild);
   final windows = mode == EraseFlowMode.windowsUninstaller;
   final options = await eraser.options();
   if (!context.mounted) return;
@@ -111,7 +119,10 @@ Future<void> runEraseFlow(
           '• ${o.item.label}'
               '${o.bytes != null && o.bytes! > 0 ? ' (${formatBytes(o.bytes!)})' : ''}',
       if (mode == EraseFlowMode.uninstall && everything)
-        '\nPoi UniNotes si disinstalla.',
+        store
+            ? '\nPoi si apre «App installate» di Windows per togliere '
+                  'UniNotes.'
+            : '\nPoi UniNotes si disinstalla.',
       if (mode != EraseFlowMode.eraseOnly && !everything && !windows)
         '\nAlla fine potrai scegliere se disinstallare l\'app o tenerla.',
       '\nNon si può annullare.',
@@ -242,21 +253,21 @@ class _EraseChecklistState extends State<EraseChecklist> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-            for (final o in widget.options)
-              CheckboxListTile(
-                key: ValueKey('erase-${o.item.name}'),
-                value: o.available && _chosen.contains(o.item),
-                onChanged: o.available
-                    ? (v) => setState(
-                        () => v == true
-                            ? _chosen.add(o.item)
-                            : _chosen.remove(o.item),
-                      )
-                    : null,
-                title: Text(o.item.label),
-                subtitle: _subtitle(o),
-                controlAffinity: ListTileControlAffinity.leading,
-              ),
+              for (final o in widget.options)
+                CheckboxListTile(
+                  key: ValueKey('erase-${o.item.name}'),
+                  value: o.available && _chosen.contains(o.item),
+                  onChanged: o.available
+                      ? (v) => setState(
+                          () => v == true
+                              ? _chosen.add(o.item)
+                              : _chosen.remove(o.item),
+                        )
+                      : null,
+                  title: Text(o.item.label),
+                  subtitle: _subtitle(o),
+                  controlAffinity: ListTileControlAffinity.leading,
+                ),
             ],
           ),
         ),
@@ -281,10 +292,7 @@ class _EraseChecklistState extends State<EraseChecklist> {
   }
 
   Widget? _subtitle(EraseOption o) {
-    final parts = [
-      if (o.bytes != null) formatBytes(o.bytes!),
-      ?o.detail,
-    ];
+    final parts = [if (o.bytes != null) formatBytes(o.bytes!), ?o.detail];
     return parts.isEmpty ? null : Text(parts.join(' · '));
   }
 }
@@ -315,10 +323,7 @@ Future<bool?> askTwoChoices(
       title: Text(title),
       content: SingleChildScrollView(child: Text(body)),
       actions: [
-        TextButton(
-          onPressed: () => Navigator.pop(c, false),
-          child: Text(no),
-        ),
+        TextButton(onPressed: () => Navigator.pop(c, false), child: Text(no)),
         FilledButton(
           style: danger
               ? FilledButton.styleFrom(

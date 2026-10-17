@@ -13,13 +13,14 @@ che propone il file giusto per il dispositivo in uso.
   → versione → *Assets*.
 
 Quando l'app sarà negli store basterà
-cercare «UniNotes» in Google Play e nell'App Store. Le versioni per Windows e macOS
-restano sul sito: non vanno sul Microsoft Store né sul Mac App Store.
+cercare «UniNotes» in Google Play, nell'App Store e, per Windows, nel Microsoft Store
+(quando disponibile). Le versioni per Windows e macOS restano anche sul sito; macOS non
+va sul Mac App Store.
 
 | Piattaforma | File da scaricare | Requisiti |
 |---|---|---|
 | Android | `UniNotes-android.apk` (quasi tutti i telefoni, 64 bit); `UniNotes-android-32bit.apk` per i telefoni vecchi a 32 bit; `UniNotes-android-x86_64.apk` per Chromebook ed emulatori | Android 7.0 o successivo |
-| Windows | `UniNotes_setup.exe` (oppure `UniNotes-windows.zip`) | Windows 10/11 a 64 bit |
+| Windows | `UniNotes_setup.exe` (oppure `UniNotes-windows.zip`); Microsoft Store quando disponibile | Windows 10/11 a 64 bit |
 | macOS | `UniNotes.dmg` (oppure `UniNotes-macos.zip`) | macOS 12 o successivo (Intel o Apple Silicon) |
 | iPhone / iPad | `UniNotes-ios-non-firmata.ipa` | iOS 15.6 o successivo; va firmato (vedi sotto) |
 
@@ -51,6 +52,14 @@ solo la versione giusta.
    versione precedente; i dati restano.
 4. Se manca una DLL (`MSVCP140.dll`, `VCRUNTIME140.dll`), installa il
    «Microsoft Visual C++ Redistributable x64» dal sito Microsoft.
+
+**Dal Microsoft Store** (quando disponibile): cerca «UniNotes» nell'app Microsoft Store
+e scegli *Installa*. Gli aggiornamenti arrivano dallo Store. Per toglierla: menu Start →
+tasto destro su UniNotes → *Disinstalla*; Windows elimina anche i dati dell'app sul PC,
+mentre appunti e registrazioni in `Documenti\UniNotes` restano. Se vuoi eliminare anche
+le cartelle nel cloud e gli eventi nel calendario, prima usa *Disinstalla UniNotes*
+nell'app. La versione dello Store e `UniNotes_setup.exe` sono la stessa app: basta
+installarne una.
 
 **Senza installazione** (alternativa): scarica `UniNotes-windows.zip`, **estrai tutta
 la cartella** (tasto destro → *Estrai tutto*) e avvia `uninotes.exe`. In questo caso

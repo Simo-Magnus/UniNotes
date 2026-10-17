@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:open_filex/open_filex.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'msix_paths.dart';
+
 /// Esito di un'apertura esterna, mostrabile all'utente senza crash.
 class LaunchResult {
   const LaunchResult.ok() : ok = true, message = null;
@@ -120,7 +122,11 @@ class ExternalLauncher {
 
   static Future<LaunchResult> _openWithSystem(String path) async {
     if (Platform.isWindows) {
-      final ok = await launchUrl(Uri.file(path, windows: true));
+      // Microsoft Store: il programma che apre il file lo cerca nella
+      // cartella vera del pacchetto (vedi MsixPaths)
+      final ok = await launchUrl(
+        Uri.file(MsixPaths.forOtherApps(path), windows: true),
+      );
       return ok
           ? const LaunchResult.ok()
           : const LaunchResult.error(noAppMessage);

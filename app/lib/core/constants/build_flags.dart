@@ -30,6 +30,32 @@ const String kStoreChannel = String.fromEnvironment(
   defaultValue: 'github',
 );
 
+/// Build per il Microsoft Store (pacchetto MSIX, `STORE=microsoft`).
+const bool kMicrosoftStoreBuild = kStoreChannel == 'microsoft';
+
+/// Cosa l'app può fare da sola secondo il canale di distribuzione [store]
+/// (predefinito: quello della build; nei test si passa a mano).
+class StoreRules {
+  const StoreRules([this.store = kStoreChannel]);
+
+  final String store;
+
+  bool get microsoftStore => store == 'microsoft';
+
+  /// Controllo di nuove versioni dell'app e download dal sito: solo nelle
+  /// build del sito (GitHub). Negli store gli aggiornamenti li fa lo store
+  /// (il Microsoft Store vieta di aggiornarsi da soli fuori dallo Store).
+  /// Gli aggiornamenti del database dei corsi sono dati, non programma, e
+  /// restano in tutte le build.
+  bool get selfUpdate => store == 'github';
+
+  /// Windows: disinstallatore di UniNotes_setup.exe (Inno Setup) e avvio
+  /// `uninotes.exe --disinstalla`. Nel Microsoft Store l'app si toglie da
+  /// Windows (Start o «App installate»), che elimina anche i dati in
+  /// `%LOCALAPPDATA%\Packages\…`.
+  bool get windowsUninstaller => !microsoftStore;
+}
+
 /// Repository del progetto (per «Metti una stella su GitHub»).
 const String kGithubRepoUrl = 'https://github.com/Simo-Magnus/UniNotes';
 

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Manifest del pacchetto MSIX di UniNotes per il Microsoft Store.
+  Modello: crea_msix.ps1 (stessa cartella) sostituisce i segnaposto fra
+  doppi trattini bassi con i valori di Partner Center (Gestione prodotti →
+  Identità prodotto; secret MSSTORE_IDENTITY_NAME, MSSTORE_PUBLISHER e
+  MSSTORE_PUBLISHER_DISPLAY_NAME in GitHub) e con la versione di
+  pubspec.yaml (2026.9.0+1 diventa 2026.9.0.0). Il nome visualizzato
+  (Properties e VisualElements) deve coincidere con il nome prenotato in
+  Partner Center: secret MSSTORE_DISPLAY_NAME, «UniNotes» se manca. Il nome
+  dentro l'app e il titolo della finestra restano «UniNotes».
+  Vedi PUBBLICAZIONE.md, «Microsoft Store».
+-->
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+  IgnorableNamespaces="uap rescap desktop com">
+
+  <Identity
+    Name="__MSSTORE_IDENTITY_NAME__"
+    Publisher="__MSSTORE_PUBLISHER__"
+    Version="__VERSION__"
+    ProcessorArchitecture="x64" />
+
+  <Properties>
+    <DisplayName>__MSSTORE_DISPLAY_NAME__</DisplayName>
+    <PublisherDisplayName>__MSSTORE_PUBLISHER_DISPLAY_NAME__</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <Description>Il tuo percorso universitario in un'app: insegnamenti, esami e media, libri, appunti, registrazione e trascrizione delle lezioni.</Description>
+  </Properties>
+
+  <!-- Windows 10 1809 o successivo (come Flutter per Windows); provato fino a Windows 11 24H2. -->
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.26100.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="it-IT" />
+    <Resource Language="en-US" />
+  </Resources>
+
+  <Applications>
+    <Application Id="UniNotes" Executable="uninotes.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="__MSSTORE_DISPLAY_NAME__"
+        Description="Il tuo percorso universitario in un'app: insegnamenti, esami e media, libri, appunti, registrazione e trascrizione delle lezioni."
+        BackgroundColor="transparent"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="UniNotes">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+      </uap:VisualElements>
+      <Extensions>
+        <!-- Notifiche (flutter_local_notifications): un tocco sulla notifica o
+             su un suo pulsante riapre l'app anche se è chiusa. Il CLSID è il
+             guid di WindowsInitializationSettings in
+             lib/core/reminders/notification_platform.dart. -->
+        <desktop:Extension Category="windows.toastNotificationActivation">
+          <desktop:ToastNotificationActivation ToastActivatorCLSID="5d3f2b7e-91c4-4a8e-b6f1-0c7a2e9d4b13" />
+        </desktop:Extension>
+        <com:Extension Category="windows.comServer">
+          <com:ComServer>
+            <com:ExeServer Executable="uninotes.exe" Arguments="-ToastActivated" DisplayName="UniNotes">
+              <com:Class Id="5d3f2b7e-91c4-4a8e-b6f1-0c7a2e9d4b13" />
+            </com:ExeServer>
+          </com:ComServer>
+        </com:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+
+  <!-- internetClient: database dei corsi, modelli Whisper, OneDrive e Google
+       Drive, calendari. runFullTrust: app desktop (Flutter/Win32), che
+       legge e scrive anche in Documenti\UniNotes senza altre capability.
+       microphone: registratore delle lezioni e testo dal vivo. -->
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <rescap:Capability Name="runFullTrust" />
+    <DeviceCapability Name="microphone" />
+  </Capabilities>
+</Package>

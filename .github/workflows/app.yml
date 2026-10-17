@@ -179,6 +179,70 @@ jobs:
             app/uninotes-windows.zip
             app/UniNotes_setup.exe
 
+  # Pacchetto MSIX per il Microsoft Store, dallo stesso codice della build del
+  # sito ma con STORE=microsoft (niente disinstallatore né aggiornamenti
+  # dell'app fuori dallo Store). Solo per le versioni definitive: tag v* o
+  # avvio manuale del workflow, mai a ogni push. Non firmato (lo firma lo
+  # Store); non va nelle release né sul sito: UniNotes.msix si scarica
+  # dall'artifact e si carica a mano in Partner Center. Senza i tre secret di
+  # Partner Center il job si ferma con un avviso. Vedi PUBBLICAZIONE.md,
+  # «Microsoft Store».
+  microsoft-store:
+    name: Microsoft Store (MSIX)
+    if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
+    needs: test
+    runs-on: windows-latest
+    env:
+      HAS_MSSTORE_IDENTITY: ${{ secrets.MSSTORE_IDENTITY_NAME != '' && secrets.MSSTORE_PUBLISHER != '' && secrets.MSSTORE_PUBLISHER_DISPLAY_NAME != '' }}
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - name: Secret di Partner Center
+        if: env.HAS_MSSTORE_IDENTITY != 'true'
+        working-directory: .
+        shell: bash
+        run: |
+          echo "::warning title=Microsoft Store::Mancano i secret MSSTORE_IDENTITY_NAME, MSSTORE_PUBLISHER o MSSTORE_PUBLISHER_DISPLAY_NAME (Partner Center → Gestione prodotti → Identità prodotto): pacchetto MSIX non creato. Vedi PUBBLICAZIONE.md, «Microsoft Store»."
+      - uses: actions/checkout@v7
+        if: env.HAS_MSSTORE_IDENTITY == 'true'
+      - uses: subosito/flutter-action@v2
+        if: env.HAS_MSSTORE_IDENTITY == 'true'
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+      - if: env.HAS_MSSTORE_IDENTITY == 'true'
+        run: flutter pub get
+      - name: Elenco degli atenei e dei corsi nell'app (i dati dell'ateneo si scaricano)
+        if: env.HAS_MSSTORE_IDENTITY == 'true'
+        shell: bash
+        run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
+      # Link alle donazioni ammesso (policy 10.8.2: donazioni volontarie con
+      # un servizio di pagamento esterno, da dichiarare in Partner Center).
+      # MSSTORE_ID (facoltativo): ID dello Store per «Lascia una recensione».
+      - name: Build Windows per lo Store
+        if: env.HAS_MSSTORE_IDENTITY == 'true'
+        run: flutter build windows --release --dart-define=STORE=microsoft --dart-define=MSSTORE_ID=${{ secrets.MSSTORE_ID }} --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+      # Manifest (app/windows/msix/AppxManifest.xml) con identità e versione,
+      # icone, resources.pri e makeappx del Windows SDK del runner.
+      - name: Pacchetto UniNotes.msix (non firmato)
+        if: env.HAS_MSSTORE_IDENTITY == 'true'
+        shell: pwsh
+        env:
+          MSSTORE_IDENTITY_NAME: ${{ secrets.MSSTORE_IDENTITY_NAME }}
+          MSSTORE_PUBLISHER: ${{ secrets.MSSTORE_PUBLISHER }}
+          MSSTORE_PUBLISHER_DISPLAY_NAME: ${{ secrets.MSSTORE_PUBLISHER_DISPLAY_NAME }}
+          # nome prenotato in Partner Center (facoltativo: senza, «UniNotes»)
+          MSSTORE_DISPLAY_NAME: ${{ secrets.MSSTORE_DISPLAY_NAME }}
+        run: ./windows/msix/crea_msix.ps1 -Release build/windows/x64/runner/Release -Output UniNotes.msix
+      - uses: actions/upload-artifact@v7
+        if: env.HAS_MSSTORE_IDENTITY == 'true'
+        with:
+          name: uninotes-microsoft-store
+          retention-days: 30
+          path: app/UniNotes.msix
+
   macos:
     name: macOS
     needs: test
@@ -344,11 +408,13 @@ jobs:
             Istruzioni complete: [INSTALLAZIONE.md](https://github.com/${{ github.repository }}/blob/${{ github.sha }}/INSTALLAZIONE.md)
           files: out/*
       # Le versioni vecchie non restano: si eliminano gli artefatti delle build
-      # precedenti (la versione aggiornata è nella release «ultima-build»).
+      # precedenti (la versione aggiornata è nella release «ultima-build»),
+      # tranne il pacchetto per il Microsoft Store, che resta finché non scade
+      # (30 giorni) per caricarlo in Partner Center.
       - name: Elimina le versioni vecchie
         run: |
           gh api --paginate "repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" \
-            --jq '.artifacts[] | select(.workflow_run.id != '"$GITHUB_RUN_ID"') | .id' |
+            --jq '.artifacts[] | select(.workflow_run.id != '"$GITHUB_RUN_ID"' and .name != "uninotes-microsoft-store") | .id' |
           while read -r id; do
             gh api -X DELETE "repos/$GITHUB_REPOSITORY/actions/artifacts/$id" || true
           done

@@ -3,6 +3,9 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:path/path.dart' as p;
+import 'package:url_launcher/url_launcher.dart';
+
+import '../constants/build_flags.dart';
 
 /// Esito dell'avvio della disinstallazione.
 class UninstallResult {
@@ -18,9 +21,30 @@ class UninstallResult {
 
 /// Parti della disinstallazione che dipendono dalla piattaforma (codice
 /// nativo nel canale [channel]: MainActivity.kt su Android,
-/// MainFlutterWindow.swift su macOS).
+/// MainFlutterWindow.swift su macOS). Su Windows dipende anche dalla build:
+/// installatore del sito (Inno Setup) o Microsoft Store (MSIX, vedi
+/// [StoreRules.windowsUninstaller]).
 class AppUninstall {
   AppUninstall._();
+
+  /// L'avvio [arg] (`--disinstalla`) del disinstallatore di Inno Setup va
+  /// gestito: mai nella build del Microsoft Store, dove nessun
+  /// disinstallatore lo usa (un avvio con quell'argomento apre l'app).
+  static bool handlesUninstallArg(
+    List<String> args,
+    String arg, {
+    StoreRules rules = const StoreRules(),
+  }) => rules.windowsUninstaller && args.contains(arg);
+
+  /// Pagina «App installate» delle Impostazioni di Windows.
+  static final windowsAppsSettings = Uri.parse('ms-settings:appsfeatures');
+
+  /// Cosa resta da fare nella build del Microsoft Store.
+  static const windowsStoreMessage =
+      'Per finire, togli UniNotes da Windows: nella pagina «App installate» '
+      'che si è aperta cerca UniNotes → ⋯ → Disinstalla (oppure dal menu '
+      'Start: tasto destro su UniNotes → Disinstalla). Windows elimina '
+      'anche i dati rimasti sul PC.';
 
   static const channel = MethodChannel(
     'io.github.simomagnus.universitynotes/disinstalla',
@@ -64,7 +88,13 @@ class AppUninstall {
   /// data di creazione e numero di file (inode) del pacchetto UniNotes.app.
   /// Android e iOS: null, perché le preferenze si eliminano con l'app e la
   /// loro assenza basta a riconoscere una nuova installazione.
-  static Future<String?> installIdentity() async {
+  /// Microsoft Store: null come su Android e iOS (la disinstallazione
+  /// elimina i dati dell'app, e la cartella del programma cambia a ogni
+  /// aggiornamento).
+  static Future<String?> installIdentity({
+    StoreRules rules = const StoreRules(),
+  }) async {
+    if (rules.microsoftStore) return null;
     try {
       if (Platform.isWindows) {
         final dir = File(Platform.resolvedExecutable).parent;
@@ -81,7 +111,11 @@ class AppUninstall {
   /// Avvia la disinstallazione dove il sistema lo permette; altrimenti
   /// spiega come finire.
   static Future<UninstallResult> uninstall() async {
-    if (Platform.isWindows) return _windows();
+    if (Platform.isWindows) {
+      return const StoreRules().windowsUninstaller
+          ? _windows()
+          : windowsStore();
+    }
     if (Platform.isAndroid) {
       try {
         if (await channel.invokeMethod<bool>('uninstall') == true) {
@@ -123,6 +157,17 @@ class AppUninstall {
     );
   }
 
+  /// Microsoft Store: nessun disinstallatore da avviare (lo fa Windows);
+  /// si apre «App installate» e si spiega come finire.
+  static Future<UninstallResult> windowsStore({
+    Future<bool> Function(Uri uri)? open,
+  }) async {
+    try {
+      await (open ?? launchUrl)(windowsAppsSettings);
+    } catch (_) {}
+    return const UninstallResult.manual(windowsStoreMessage);
+  }
+
   /// Comando PowerShell che aspetta la chiusura dell'app e poi avvia il
   /// disinstallatore [path] (codificato per evitare problemi di virgolette).
   static String windowsDelayedCommand(String path) {
@@ -147,9 +192,7 @@ class AppUninstall {
     } catch (_) {}
     // L'app si chiude subito: il disinstallatore parte qualche secondo
     // dopo, quando uninotes.exe non è più in uso.
-    final script = base64.encode(
-      utf16le(windowsDelayedCommand(unins.path)),
-    );
+    final script = base64.encode(utf16le(windowsDelayedCommand(unins.path)));
     try {
       await Process.start('powershell', [
         '-NoProfile',

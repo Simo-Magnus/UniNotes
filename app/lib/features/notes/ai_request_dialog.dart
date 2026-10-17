@@ -8,6 +8,7 @@ import 'package:path/path.dart' as p;
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/services/external_launcher.dart';
+import '../../core/services/msix_paths.dart';
 import '../../widgets/common.dart';
 import '../../widgets/copyable_text.dart';
 import '../../widgets/glass.dart';
@@ -35,7 +36,12 @@ Future<bool> copyFilesToClipboard(List<File> files) async {
           '-Command',
           r'Set-Clipboard -LiteralPath ($env:UN_FILES -split [char]10)',
         ],
-        environment: {'UN_FILES': files.map((f) => f.path).join('\n')},
+        // Microsoft Store: percorsi veri, visibili al browser (MsixPaths)
+        environment: {
+          'UN_FILES': files
+              .map((f) => MsixPaths.forOtherApps(f.path))
+              .join('\n'),
+        },
       );
       return r.exitCode == 0;
     }
@@ -78,7 +84,7 @@ Future<bool> copyFilesToClipboard(List<File> files) async {
 Future<void> revealInFolder(BuildContext context, String path) async {
   try {
     if (Platform.isWindows) {
-      await Process.run('explorer', ['/select,', path]);
+      await Process.run('explorer', ['/select,', MsixPaths.forOtherApps(path)]);
       return;
     }
     if (Platform.isMacOS) {

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../core/services/msix_paths.dart';
 import '../features/notes/ai_request_dialog.dart'
     show copyFilesToClipboard, revealInFolder;
 import 'common.dart';
@@ -27,7 +28,8 @@ Future<void> shareFiles(
   try {
     final r = await SharePlus.instance.share(
       ShareParams(
-        files: [for (final f in files) XFile(f.path)],
+        // Microsoft Store: percorsi veri per le app che ricevono il file
+        files: [for (final f in files) XFile(MsixPaths.forOtherApps(f.path))],
         subject: subject,
         sharePositionOrigin: origin,
       ),

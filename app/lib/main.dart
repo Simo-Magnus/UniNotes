@@ -14,6 +14,7 @@ import 'core/catalog/path_setup.dart';
 import 'core/database/app_database.dart';
 import 'core/router/app_shell.dart';
 import 'core/services/app_services.dart';
+import 'core/services/app_uninstall.dart';
 import 'core/services/install_check.dart';
 import 'core/services/temp_files.dart';
 import 'core/services/desktop_window.dart';
@@ -34,8 +35,9 @@ import 'widgets/glass.dart';
 Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
   // Windows: il disinstallatore avvia l'app in modalità minima per la
-  // pulizia dei dati (vedi features/settings/uninstall_mode.dart).
-  if (args.contains(kUninstallArg)) {
+  // pulizia dei dati (vedi features/settings/uninstall_mode.dart). Non nella
+  // build del Microsoft Store, dove disinstalla Windows.
+  if (AppUninstall.handlesUninstallArg(args, kUninstallArg)) {
     Intl.defaultLocale = 'it_IT';
     await initializeDateFormatting('it_IT');
     await runUninstallMode();
@@ -66,9 +68,8 @@ Future<void> main(List<String> args) async {
     await check.run(),
     eraseLeftover: () async {
       final old = await AppDatabase.open();
-      await DataEraser(
-        AppServices(old),
-      ).run(DataEraser.deviceItems(sharedNotes: Platform.isWindows));
+      await DataEraser(AppServices(old))
+          .run(DataEraser.deviceItems(sharedNotes: Platform.isWindows));
     },
     recheck: check.run,
   );

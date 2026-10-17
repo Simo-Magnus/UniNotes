@@ -22,6 +22,10 @@ import 'package:path_provider/path_provider.dart';
 /// - Appunti e registrazioni: Windows `Documenti\UniNotes\Corsi` (cartella
 ///   condivisa, resta dopo la disinstallazione se l'utente non la elimina);
 ///   altrove la cartella documenti dell'app, dentro il suo contenitore.
+/// - Windows, build del Microsoft Store (MSIX): stessi percorsi per l'app,
+///   ma Windows scrive i file nuovi di AppData nella cartella del pacchetto
+///   `%LOCALAPPDATA%\Packages\<famiglia>\LocalCache\…` (vedi MsixPaths) e la
+///   elimina alla disinstallazione; Documenti\UniNotes resta dov'è.
 class LocalData {
   LocalData._();
 
@@ -191,8 +195,11 @@ class LocalData {
     for (final d in dirs) {
       if (!await d.exists()) continue;
       var target = '${d.path}$ignoredSuffix';
-      for (var i = 2; await FileSystemEntity.type(target) !=
-          FileSystemEntityType.notFound; i++) {
+      for (
+        var i = 2;
+        await FileSystemEntity.type(target) != FileSystemEntityType.notFound;
+        i++
+      ) {
         target = '${d.path} (installazione precedente $i)';
       }
       try {
