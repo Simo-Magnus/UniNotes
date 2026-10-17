@@ -6350,6 +6350,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-12",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "AREZZO EMANUELA GIORDANO DOMENICO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-09",
        "ora": "15:00",
        "luogo": null,
@@ -8678,6 +8690,18 @@
        "docenti": "CANCELLI EUGENIO",
        "note": null,
        "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-11",
+       "iscrizioni_al": "2026-11-04",
+       "docenti": "CANCELLI EUGENIO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unite.coursecatalogue.cineca.it",
@@ -11550,6 +11574,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "VARDANEGA AGNESE",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-01",
        "ora": "15:30",
        "luogo": null,
@@ -11731,6 +11767,18 @@
        "docenti": "MICHETTI MICHELA",
        "note": null,
        "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-27",
+       "iscrizioni_al": "2026-10-11",
+       "docenti": "MICHETTI MICHELA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -15356,6 +15404,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "VARDANEGA AGNESE",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-06",
        "ora": "10:30",
        "luogo": null,
@@ -17744,6 +17804,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "VARDANEGA AGNESE",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-06",
        "ora": "10:30",
        "luogo": null,
@@ -18504,13 +18576,50 @@
        "citazione": "Roberts Clark, W., Golder, M., Golder, S. N., Principi di scienza politica, McGraw Hill, 2022."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-11",
+       "docenti": "BUSETTI SIMONE",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-11",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "DI GIANNATALE FABIO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-16",
+       "iscrizioni_al": "2026-11-29",
+       "docenti": "BUSETTI SIMONE",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unite.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unite-l-36-scienze-politiche-a001122",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A001308",
@@ -18981,6 +19090,18 @@
        "docenti": "PIGNALOSA DARIA",
        "note": null,
        "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-20",
+       "iscrizioni_al": "2026-10-03",
+       "docenti": "PIGNALOSA DARIA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -22796,6 +22917,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-12",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "AREZZO EMANUELA GIORDANO DOMENICO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-09",
        "ora": "15:00",
        "luogo": null,
@@ -24808,13 +24941,38 @@
        "citazione": "C. Felice, A. Pepe, L. Ponziani (a cura di), Storia dell’Abruzzo, IV voll., ed. Laterza, Roma-Bari, 1999.S. Calabrese, G. Ragone, Transluoghi. Storytelling, beni culturali, turismo esperenziale, Liguori ed., 2016."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-23",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "GALLO FRANCESCA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-08",
+       "docenti": "GALLO FRANCESCA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unite.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unite-l-15-turismo-sostenibile-a001304",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A001283",
@@ -24930,13 +25088,38 @@
        "citazione": "Giuzio A., 2024, Turismo insostenibile. Per una nuova ecologia degli spazi e del tempo libero, Altrəconomia"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-29",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "SALVATORE RITA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-08",
+       "docenti": "SALVATORE RITA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unite.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unite-l-15-turismo-sostenibile-a001276",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A001280",
@@ -25704,12 +25887,37 @@
      "docenti": [],
      "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2028/7905/2026/2?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "GERACI ANNALISA GARGIULO PIETRO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-08",
+       "docenti": "GERACI ANNALISA GARGIULO PIETRO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unite.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "id": "unite-l-15-turismo-sostenibile-a001298",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "3855",
@@ -26695,6 +26903,18 @@
        "docenti": "LUCIDI PIA",
        "note": null,
        "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-09",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "LUCIDI PIA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -32318,6 +32538,18 @@
        "docenti": "AREZZO EMANUELA",
        "note": null,
        "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-15",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "AREZZO EMANUELA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -38521,7 +38753,7 @@
        "citazione": "Hardcover ISBN: 9780128184226 eBook ISBN: 9780128214015 EAN: 9788808320872 ISBN: 8808320871 EAN: 9788874889976 ISBN: 8874889976 EAN: 9788808320872 ISBN: 8808320871 EAN: 9788874889976 ISBN: 8874889976"
       },
       {
-       "titolo": "Hardcover ISBN: 9780128184226 eBook ISBN: 9780128214015",
+       "titolo": "Hardcover ISBN: 9780128184226 eBook ISBN: 9780128214015 EAN: 9788808320872 ISBN: 8808320871 EAN: 9788874889976 ISBN: 8874889976",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -38530,7 +38762,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unite.coursecatalogue.cineca.it/insegnamenti/2025/7484/2015/9999?coorte=2024)",
-       "citazione": "Hardcover ISBN: 9780128184226 eBook ISBN: 9780128214015"
+       "citazione": "Hardcover ISBN: 9780128184226 eBook ISBN: 9780128214015 EAN: 9788808320872 ISBN: 8808320871 EAN: 9788874889976 ISBN: 8874889976"
       }
      ],
      "esami": [],
@@ -38656,7 +38888,7 @@
        "citazione": "Hardcover ISBN: 9780128184226 eBook ISBN: 9780128214015 EAN: 9788808320872 ISBN: 8808320871 EAN: 9788874889976 ISBN: 8874889976 EAN: 9788808320872 ISBN: 8808320871 EAN: 9788874889976 ISBN: 8874889976"
       },
       {
-       "titolo": "Hardcover ISBN: 9780128184226 eBook ISBN: 9780128214015",
+       "titolo": "Hardcover ISBN: 9780128184226 eBook ISBN: 9780128214015 EAN: 9788808320872 ISBN: 8808320871 EAN: 9788874889976 ISBN: 8874889976",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -38665,7 +38897,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unite.coursecatalogue.cineca.it/insegnamenti/2025/7485/2015/9999?coorte=2024)",
-       "citazione": "Hardcover ISBN: 9780128184226 eBook ISBN: 9780128214015"
+       "citazione": "Hardcover ISBN: 9780128184226 eBook ISBN: 9780128214015 EAN: 9788808320872 ISBN: 8808320871 EAN: 9788874889976 ISBN: 8874889976"
       }
      ],
      "esami": [],
@@ -39931,6 +40163,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-16",
+       "iscrizioni_al": "2026-09-29",
+       "docenti": "CIFALDI GIANMARCO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-10",
@@ -43515,6 +43759,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-20",
+       "iscrizioni_al": "2026-10-03",
+       "docenti": "PIGNALOSA DARIA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-06",
        "ora": "16:00",
        "luogo": null,
@@ -44120,13 +44376,50 @@
      ],
      "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7701/2025/9999?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-12",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "PIERDONATI MARCO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "PIERDONATI MARCO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-11-29",
+       "docenti": "PIERDONATI MARCO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unite.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unite-lmg-01-giurisprudenza-a000861",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A001139",
@@ -44646,12 +44939,49 @@
      "docenti": [],
      "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2028/7769/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-12",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "PIERDONATI MARCO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "PIERDONATI MARCO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-11-29",
+       "docenti": "PIERDONATI MARCO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unite.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "id": "unite-lmg-01-giurisprudenza-a000862",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1210",
@@ -47307,13 +47637,50 @@
      ],
      "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2026/7701/2025/9999?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-12",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "PIERDONATI MARCO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "PIERDONATI MARCO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-11-29",
+       "docenti": "PIERDONATI MARCO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unite.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unite-lmg-01-giurisprudenza-sede-avezzano-a000861",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A000860",
@@ -47393,6 +47760,18 @@
        "docenti": "PIGNALOSA DARIA",
        "note": null,
        "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-20",
+       "iscrizioni_al": "2026-10-03",
+       "docenti": "PIGNALOSA DARIA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -48126,12 +48505,49 @@
      "docenti": [],
      "url": "https://unite.coursecatalogue.cineca.it/insegnamenti/2028/7769/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-12",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "PIERDONATI MARCO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "PIERDONATI MARCO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-11-29",
+       "docenti": "PIERDONATI MARCO",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unite.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "id": "unite-lmg-01-giurisprudenza-sede-avezzano-a000862",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1210",
@@ -50118,6 +50534,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-15",
+       "iscrizioni_al": "2026-10-28",
+       "docenti": "GRAMENZI ALESSANDRO FUSARO ISA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-23",
        "ora": "10:00",
        "luogo": null,
@@ -50234,6 +50662,18 @@
        "docenti": "TRAVERSA DONATO DI CESARE ANGELA MORELLI SIMONE PAOLETTI BARBARA",
        "note": null,
        "fonte": "https://unite.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-11-10",
+       "docenti": "TRAVERSA DONATO DI CESARE ANGELA MORELLI SIMONE PAOLETTI BARBARA",
+       "note": null,
+       "fonte": "https://unite.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",

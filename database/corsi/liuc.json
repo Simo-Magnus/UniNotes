@@ -268,6 +268,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-14",
        "ora": "09:00",
        "luogo": null,
@@ -337,13 +349,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5828/2026/9999?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-23",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01038",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5828/2026/9999?coorte=2026"
     },
     {
@@ -443,6 +468,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "17:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -635,6 +672,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -659,13 +708,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3728/2026/10002?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "17:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a86045",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3728/2026/10002?coorte=2026"
     },
     {
@@ -813,13 +875,38 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3229/2026/9999?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a86044",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3229/2026/9999?coorte=2026"
     },
     {
@@ -908,13 +995,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4961/2026/10001?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01000",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4961/2026/10001?coorte=2026"
     },
     {
@@ -1039,13 +1139,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5406/2026/10001?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a83722",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5406/2026/10001?coorte=2026"
     },
     {
@@ -1322,6 +1435,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-15",
        "ora": "10:00",
        "luogo": null,
@@ -1410,6 +1535,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -1436,13 +1573,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5438/2025/10001?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-27",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01014",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A78612",
@@ -1514,6 +1664,18 @@
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3782/2025/10000?coorte=2025",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-14",
@@ -1621,6 +1783,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-18",
        "ora": "10:30",
        "luogo": null,
@@ -1630,6 +1804,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-27",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -1722,13 +1908,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5442/2025/10001?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01018",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A01017",
@@ -1785,13 +1984,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4953/2025/10000?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-28",
+       "iscrizioni_al": "2026-11-14",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78608",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A20011",
@@ -1886,13 +2098,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3248/2025/9999?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a22222",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A95324",
@@ -1912,13 +2137,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3780/2025/10001?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a95324",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A95327",
@@ -1937,13 +2175,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3783/2025/10000?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a95327",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A24444",
@@ -1964,13 +2215,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3253/2025/9999?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a24444",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A78613",
@@ -2153,13 +2417,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/4587/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78631",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A83152",
@@ -2190,6 +2467,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -2279,13 +2568,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/5041/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01006",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A84301",
@@ -2417,13 +2719,26 @@
        "citazione": "A. Cortesi, F. Alberti, C. Salvato, Le piccole imprese. Struttura, gestione, percorsi evolutivi, Roma, Carocci, 2012, 2ª edizione"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a88751",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A15004",
@@ -2444,13 +2759,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/4942/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a15004",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A78618",
@@ -2519,6 +2847,18 @@
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/4963/2026/9999?coorte=2024",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-23",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-03",
@@ -2662,13 +3002,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/4938/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a15000",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A01012",
@@ -2688,13 +3041,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/5313/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "17:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01012",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A01024",
@@ -2812,13 +3178,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/3971/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78627",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A86099",
@@ -2887,13 +3266,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/3973/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78629",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A01004",
@@ -3130,13 +3522,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/3238/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a84395",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A01023",
@@ -3183,13 +3588,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/4940/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a15002",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A01030",
@@ -3358,13 +3776,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/3246/2026/10002?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78619",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A78617",
@@ -3383,13 +3814,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/4782/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78617",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A01034",
@@ -3544,13 +3988,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/4941/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a15003",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A01002",
@@ -3752,13 +4209,26 @@
        "citazione": "Franco Amatori e Andrea Colli, Storia d’impresa. Complessità e comparazioni, Milano-Torino, Pearson, 2022."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01011",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A88700",
@@ -3777,13 +4247,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/3262/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a88700",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A55705",
@@ -3827,13 +4310,26 @@
        "citazione": "Volberda et al. (2012) Strategic Management. Competitiveness & Globalization: Concepts Only» chapters 1, 2, 3, 4, 5, 6, 9, 11,13."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a55705",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A01010",
@@ -3852,13 +4348,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/5287/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01010",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A01029",
@@ -4275,13 +4784,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3414/2023/10001?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n90305",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "varianti": [
       {
        "lingua": "en",
@@ -4463,13 +4985,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5076/2023/10001?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91483",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5076/2023/10001?coorte=2024"
     },
     {
@@ -4883,13 +5418,38 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/2047/2026/10002?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-27",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-classe-l-9-r-il0001",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N91543",
@@ -5049,13 +5609,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3780/2026/10002?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-classe-l-9-r-a95324",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3780/2026/10002?coorte=2026"
     },
     {
@@ -5072,13 +5645,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5841/2026/10002?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-classe-l-9-r-n91600",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://orari.liuc.it/agendaweb/combo.php?sw=ec_&aa=2025&page=corsi"
     },
     {
@@ -5167,13 +5753,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5419/2026/10002?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-28",
+       "iscrizioni_al": "2026-11-14",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-classe-l-9-r-n91544",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5419/2026/10002?coorte=2026"
     },
     {
@@ -5262,6 +5861,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-28",
+       "iscrizioni_al": "2026-11-14",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -5469,13 +6080,26 @@
        "citazione": "C. K. Alexander, M. N. O. Sadiku, “Fundamentals of Electric Circuits” McGraw-Hill, 2020 (or later editions)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-classe-l-9-r-n91550",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N91547",
@@ -5496,13 +6120,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5423/2025/10003?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-20",
+       "iscrizioni_al": "2026-12-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-classe-l-9-r-n91547",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N91549",
@@ -5558,13 +6195,26 @@
        "citazione": "Osterwalder, A. & Pigneur, Y. (2010). Business Model Generation: A Handbook for Visionaries, Game Changers, and Challengers. John Wiley & Sons."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-24",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-classe-l-9-r-n91549",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N91546",
@@ -5657,13 +6307,38 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5424/2025/10001?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-27",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-classe-l-9-r-n91548",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N70020",
@@ -5691,6 +6366,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -5715,13 +6402,38 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4769/2025/10001?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-classe-l-9-r-n91334",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/4769/2025/10001?coorte=2025"
     },
     {
@@ -5993,13 +6705,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4907/2025/10001?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-classe-l-9-r-n91447",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N90308",
@@ -6477,13 +7202,38 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/5430/2026/10002?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "18:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-27",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-27",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-classe-l-9-r-n91554",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2027/5430/2025/10003?coorte=2025"
     },
     {
@@ -6559,12 +7309,25 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/3414/2026/10001?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "id": "liuc-l-9-ingegneria-gestionale-classe-l-9-r-n90305",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/3414/2026/10001?coorte=2024"
     },
     {
@@ -6727,6 +7490,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-28",
+       "iscrizioni_al": "2026-11-14",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-15",
        "ora": "14:00",
        "luogo": null,
@@ -6781,13 +7556,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/5076/2026/10001?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-classe-l-9-r-n91483",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/5076/2026/10001?coorte=2024"
     },
     {
@@ -7282,13 +8070,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5641/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05058",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05086",
@@ -7348,13 +8149,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5013/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00019",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05098",
@@ -7497,13 +8311,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5644/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05061",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05060",
@@ -7654,13 +8481,38 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4709/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-27",
+       "iscrizioni_al": "2026-12-17",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a84346",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05105",
@@ -7915,13 +8767,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5785/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05088",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A83067",
@@ -7937,13 +8802,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4781/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a83067",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A00056",
@@ -8038,13 +8916,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3740/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a22119",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05103",
@@ -8126,13 +9017,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5788/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05091",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05092",
@@ -8148,13 +9052,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5789/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05092",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05054",
@@ -8192,13 +9109,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5647/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05064",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05038",
@@ -8249,13 +9179,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5791/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05094",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A00035",
@@ -8414,6 +9357,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-11",
        "ora": null,
        "luogo": null,
@@ -8519,6 +9474,18 @@
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5551/2026/10000?coorte=2026",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-18",
@@ -8708,6 +9675,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "14:30",
        "luogo": null,
@@ -8744,13 +9723,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3295/2026/10001?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a85334",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A93118",
@@ -8811,6 +9803,18 @@
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5571/2026/10006?coorte=2026",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-15",
@@ -8899,13 +9903,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3307/2026/10002?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a86071",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05014",
@@ -8925,6 +9942,18 @@
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5562/2026/10005?coorte=2026",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-10",
@@ -9028,6 +10057,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -9338,13 +10379,26 @@
        "citazione": "Taboada, I., Daneshpajouh, A., Toledo, N. & de Vass, T. (2023). \"Artificial Intelligence Enabled Project Management\". Applied Sciences, 13, 5014."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-27",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-n92018",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05050",
@@ -9453,13 +10507,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5778/2026/10007?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05081",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05078",
@@ -9700,13 +10767,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3290/2026/10006?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a86039",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05006",
@@ -10055,13 +11135,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5566/2026/10002?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05018",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A78609",
@@ -10135,13 +11228,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5553/2026/10000?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05005",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A93123",
@@ -10161,13 +11267,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3304/2026/10007?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a93123",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05010",
@@ -10187,13 +11306,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5558/2026/10001?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05010",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05017",
@@ -10240,13 +11372,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4731/2026/10006?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a14903",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05012",
@@ -10293,13 +11438,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3332/2026/10007?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-n90312",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05020",
@@ -10318,13 +11476,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5568/2026/10002?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05020",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05104",
@@ -10368,13 +11539,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4732/2026/10003?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a14904",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A14911",
@@ -10421,13 +11605,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5577/2026/10003?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05029",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05030",
@@ -10472,13 +11669,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5601/2026/10005?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05053",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05031",
@@ -10519,13 +11729,50 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5470/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-27",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-24",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a83521",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A83040",
@@ -10579,6 +11826,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-24",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -10617,6 +11876,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-23",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -10667,13 +11938,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5589/2025/10005?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05041",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05002",
@@ -10692,13 +11976,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5550/2025/10001?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05002",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A00030",
@@ -10883,13 +12180,38 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4734/2025/10004?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a93109",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05051",
@@ -11046,13 +12368,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5580/2025/10000?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-23",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-02",
+       "iscrizioni_al": "2026-11-19",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05032",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A00053",
@@ -11368,6 +12703,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-09",
        "ora": "11:00",
        "luogo": null,
@@ -11377,6 +12724,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-30",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-09",
+       "iscrizioni_al": "2026-11-26",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -11456,6 +12815,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-14",
        "ora": "14:30",
        "luogo": null,
@@ -11490,13 +12861,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3597/2025/10004?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-18",
+       "iscrizioni_al": "2026-12-08",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-il1100",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05046",
@@ -11584,13 +12968,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5201/2025/10004?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00058",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05034",
@@ -11766,12 +13163,25 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4329/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "liuc-lm-77-economia-management-e-governance-a83527",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A93115",
@@ -11892,12 +13302,25 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5058/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "liuc-lm-77-economia-management-e-governance-a00032",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05099",
@@ -12713,13 +14136,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5788/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05091",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05092",
@@ -12735,13 +14171,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5789/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05092",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05022",
@@ -12804,6 +14253,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-11",
        "ora": null,
        "luogo": null,
@@ -12836,13 +14297,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4329/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a83527",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/4329/2025/10006?coorte=2025"
     },
     {
@@ -12968,6 +14442,18 @@
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5551/2026/10000?coorte=2026",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-18",
@@ -13203,6 +14689,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "14:30",
        "luogo": null,
@@ -13239,13 +14737,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3295/2026/10001?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a85334",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A00063",
@@ -13323,13 +14834,38 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4709/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-27",
+       "iscrizioni_al": "2026-12-17",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a84346",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4709/2026/10008?coorte=2026"
     },
     {
@@ -13445,6 +14981,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-15",
        "ora": "11:30",
        "luogo": null,
@@ -13551,13 +15099,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5785/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05088",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5785/2026/10008?coorte=2026"
     },
     {
@@ -13577,13 +15138,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3307/2026/10002?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a86071",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A00056",
@@ -13639,6 +15213,18 @@
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5562/2026/10005?coorte=2026",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-10",
@@ -13742,6 +15328,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -14075,13 +15673,26 @@
        "citazione": "Taboada, I., Daneshpajouh, A., Toledo, N. & de Vass, T. (2023). \"Artificial Intelligence Enabled Project Management\". Applied Sciences, 13, 5014."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-27",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-n92018",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05054",
@@ -14221,13 +15832,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5647/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05064",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5647/2026/10008?coorte=2026"
     },
     {
@@ -14248,13 +15872,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5778/2026/10007?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05081",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05078",
@@ -14522,13 +16159,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5641/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05058",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5641/2026/10008?coorte=2026"
     },
     {
@@ -14642,13 +16292,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5013/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a00019",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5013/2026/10008?coorte=2026"
     },
     {
@@ -14788,13 +16451,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3290/2026/10006?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a86039",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05006",
@@ -14881,13 +16557,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5644/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05061",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5644/2026/10008?coorte=2026"
     },
     {
@@ -15295,13 +16984,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5566/2026/10002?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05018",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05105",
@@ -15552,13 +17254,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5553/2026/10000?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05005",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A93123",
@@ -15578,13 +17293,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3304/2026/10007?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a93123",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A99002",
@@ -15627,13 +17355,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5558/2026/10001?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05010",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A00032",
@@ -15649,13 +17390,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5058/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a00032",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5058/2025/10006?coorte=2025"
     },
     {
@@ -15672,13 +17426,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4781/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a83067",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4781/2026/10008?coorte=2026"
     },
     {
@@ -15772,13 +17539,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4731/2026/10006?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a14903",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A22119",
@@ -15794,13 +17574,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3740/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a22119",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3740/2026/10008?coorte=2026"
     },
     {
@@ -15848,13 +17641,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3332/2026/10007?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-n90312",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05103",
@@ -15942,13 +17748,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5568/2026/10002?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05020",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05104",
@@ -15992,13 +17811,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4732/2026/10003?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a14904",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A14911",
@@ -16045,13 +17877,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5577/2026/10003?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05029",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05030",
@@ -16096,13 +17941,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5601/2026/10005?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05053",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05094",
@@ -16118,13 +17976,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5791/2026/10008?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05094",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5791/2026/10008?coorte=2026"
     },
     {
@@ -16241,13 +18112,50 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5470/2025/10000?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-27",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-24",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a83521",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5470/2025/10000?coorte=2025"
     },
     {
@@ -16280,6 +18188,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-24",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -16318,6 +18238,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-23",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -16368,13 +18300,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5589/2025/10005?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05041",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05002",
@@ -16393,13 +18338,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5550/2025/10001?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05002",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A00030",
@@ -16584,13 +18542,38 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4734/2025/10004?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a93109",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05051",
@@ -16782,13 +18765,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5580/2025/10000?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-23",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-02",
+       "iscrizioni_al": "2026-11-19",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a05032",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A00053",
@@ -17104,6 +19100,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-09",
        "ora": "11:00",
        "luogo": null,
@@ -17113,6 +19121,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-30",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-09",
+       "iscrizioni_al": "2026-11-26",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -17190,6 +19210,18 @@
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3318/2025/10000?coorte=2025",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-14",
@@ -17296,13 +19328,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5201/2025/10004?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-a00058",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A05034",
@@ -17480,13 +19525,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3597/2025/10004?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-18",
+       "iscrizioni_al": "2026-12-08",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-classe-lm-77-r-il1100",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "curricula": [
@@ -17567,13 +19625,38 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5254/2023/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-27",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91507",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N90350",
@@ -17671,13 +19754,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/4917/2023/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91458",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N92015",
@@ -17784,6 +19880,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -17877,13 +19985,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5253/2023/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91506",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N90312",
@@ -17899,13 +20020,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/3332/2023/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n90312",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N71052",
@@ -17921,13 +20055,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/3334/2023/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n71052",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N91502",
@@ -18237,6 +20384,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-20",
+       "iscrizioni_al": "2026-12-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -18313,13 +20472,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5129/2023/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "17:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n90508",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N91472",
@@ -18413,6 +20585,18 @@
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/4930/2023/9999?coorte=2024",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-09",
@@ -18524,13 +20708,26 @@
        "citazione": "John Stark - Product Lifecycle Management (Volume 1): 21st Century Paradigm for Product Realisation - Springer Ed."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n92006",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N91539",
@@ -18585,13 +20782,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4718/2023/10000?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91326",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N91469",
@@ -18611,6 +20821,18 @@
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/4928/2023/9999?coorte=2024",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-14",
@@ -18752,6 +20974,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-23",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "10:30",
        "luogo": null,
@@ -18787,13 +21021,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5293/2023/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91538",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N92007",
@@ -18835,13 +21082,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5135/2023/10000?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91514",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N91524",
@@ -19328,13 +21588,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/3959/2023/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n90330",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N92002",
@@ -19460,13 +21733,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5043/2023/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91474",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "CAR102",
@@ -19482,13 +21768,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5147/2023/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-car102",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "CAR105",
@@ -19526,13 +21825,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5494/2023/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-car106",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "CAR103",
@@ -19548,13 +21860,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5148/2023/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-car103",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "CAR101",
@@ -19617,13 +21942,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5491/2023/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-27",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-car104",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A94007",
@@ -19712,13 +22050,38 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5254/2026/10003?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-27",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-classe-lm-31-n91507",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5254/2026/10003?coorte=2026"
     },
     {
@@ -19853,6 +22216,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -19948,13 +22323,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5253/2026/10000?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-classe-lm-31-n91506",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5253/2026/10000?coorte=2026"
     },
     {
@@ -20067,13 +22455,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4917/2026/10000?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-classe-lm-31-n91458",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4917/2026/10000?coorte=2026"
     },
     {
@@ -20126,13 +22527,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3332/2026/10003?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-classe-lm-31-n90312",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3332/2026/10003?coorte=2026"
     },
     {
@@ -20149,13 +22563,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3334/2026/10000?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-classe-lm-31-n71052",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3334/2026/10000?coorte=2026"
     },
     {
@@ -20364,6 +22791,18 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-20",
+       "iscrizioni_al": "2026-12-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -20440,13 +22879,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5129/2023/10000?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "17:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-classe-lm-31-n90508",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N91472",
@@ -20540,6 +22992,18 @@
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4930/2023/10003?coorte=2025",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-09",
@@ -20651,13 +23115,26 @@
        "citazione": "John Stark - Product Lifecycle Management (Volume 1): 21st Century Paradigm for Product Realisation - Springer Ed."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-classe-lm-31-n92006",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N91539",
@@ -20712,13 +23189,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4718/2023/10000?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-classe-lm-31-n91326",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N91469",
@@ -20738,6 +23228,18 @@
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4928/2023/10003?coorte=2025",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-12-14",
@@ -20891,6 +23393,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-23",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "10:30",
        "luogo": null,
@@ -20926,13 +23440,26 @@
      ],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5293/2023/10001?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-29",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-classe-lm-31-n91538",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N92007",
@@ -20974,13 +23501,26 @@
      "docenti": [],
      "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5135/2023/10000?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-classe-lm-31-n91514",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "N91524",

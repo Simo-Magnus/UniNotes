@@ -258,13 +258,50 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50127_634520_10090/2026/50127?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-15",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "SUNSERI FRANCESCO LUPINI ANTONIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-17",
+       "docenti": "SUNSERI FRANCESCO LUPINI ANTONIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-10",
+       "iscrizioni_al": "2026-12-08",
+       "docenti": "SUNSERI FRANCESCO LUPINI ANTONIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-l-2-biotecnologie-per-la-sostenibilita-d10101",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D10103",
@@ -282,13 +319,26 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50127_634806_10092/2026/50127?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "O'SULLIVAN MARY TERESA PARKER EDWARD",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-l-2-biotecnologie-per-la-sostenibilita-d10103",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D10099",
@@ -499,6 +549,18 @@
        "docenti": "CARIDI ANDREA DOMENICO MARIA F. A. SIDARI ROSSANA",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-06-29",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "CARIDI ANDREA DOMENICO MARIA F. A. SIDARI ROSSANA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -2806,13 +2868,26 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50219_635197_2536/2026/50219?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "O'SULLIVAN MARY TERESA PARKER EDWARD",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-l-7-ingegneria-civile-e-ambientale-per-lo-sviluppo-sostenibile-56t007",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D50047",
@@ -2865,6 +2940,18 @@
        "docenti": "MOLLICA SONIA LA VITOLA NICOLA MERCURIO SONIA",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-09",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-28",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "MOLLICA SONIA LA VITOLA NICOLA MERCURIO SONIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -3057,6 +3144,18 @@
        "docenti": "MOLLICA SONIA LA VITOLA NICOLA MERCURIO SONIA",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-09",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-28",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "MOLLICA SONIA LA VITOLA NICOLA MERCURIO SONIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -3801,6 +3900,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-22",
+       "iscrizioni_al": "2026-09-26",
+       "docenti": "VERSACI MARIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-16",
@@ -4560,6 +4671,18 @@
        "docenti": "GATTUSO DOMENICO CALABRO' FRANCESCO GIUNTA MARINELLA SILVANA PELLICANO' DOMENICA SAVIA VITETTA ANTONINO",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-26",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "GATTUSO DOMENICO CALABRO' FRANCESCO PRATICO' FILIPPO GIAMMARIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -6371,13 +6494,50 @@
        "citazione": "P. Atkins, L. Jones, L. Laverman, Principi di chimica, Zanichelli, edizione più recente disponibile."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-25",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "FAGGIO GIULIANA MESSINA GIACOMO MOTTESE ANTONIO FRANCESCO PAONE EMILIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-15",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "FAGGIO GIULIANA MESSINA GIACOMO MOTTESE ANTONIO FRANCESCO PAONE EMILIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-25",
+       "docenti": "FAGGIO GIULIANA MESSINA GIACOMO MOTTESE ANTONIO FRANCESCO PAONE EMILIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unirc-l-8-ingegneria-elettronica-e-biomedica-d60218",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D60133",
@@ -6530,6 +6690,18 @@
        "docenti": "BARLETTA GIUSEPPINA AMODDEO ANTONINO BONANZINGA VITTORIA COTRONEI MARIANTONIA FAILLA GIOIA GIOVINE PASQUALE GIUFFRE' SOFIA",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": "BARLETTA GIUSEPPINA AMODDEO ANTONINO BONANZINGA VITTORIA COTRONEI MARIANTONIA FAILLA GIOIA GIOVINE PASQUALE GIUFFRE' SOFIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -6713,13 +6885,26 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50258_635514_2536/2026/50258?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "O'SULLIVAN MARY TERESA PARKER EDWARD",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-l-8-ingegneria-elettronica-e-biomedica-56t007",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D60237",
@@ -6799,13 +6984,38 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/49868_632787_9623/2025/49868?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-08",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-09",
+       "iscrizioni_al": "2027-01-05",
+       "docenti": "SCORDAMAGLIA VALERIO ARANITI GIUSEPPE CAROTENUTO RICCARDO DE CAPUA CLAUDIO LUGARÀ MARIACARLA VALERIA NARDI VITO ANTONIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-12",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-02-09",
+       "docenti": "SCORDAMAGLIA VALERIO ARANITI GIUSEPPE CAROTENUTO RICCARDO DE CAPUA CLAUDIO LUGARÀ MARIACARLA VALERIA NARDI VITO ANTONIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "scritto e orale separati",
      "id": "unirc-l-8-ingegneria-elettronica-e-biomedica-d60135",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1000587",
@@ -7403,6 +7613,18 @@
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2028/50258_635534_208/2026/50258?coorte=2024",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-23",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "PIETRAFESA MATILDE MARIAROSA CONSOLATA MARINO CONCETTINA NUCARA ANTONINO FRANCESCO PANZERA MARIA FRANCESCA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-11",
@@ -8899,13 +9121,26 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50249_635312_2536/2026/50250?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "O'SULLIVAN MARY TERESA PARKER EDWARD",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-l-9-ingegneria-gestionale-56t007",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "56T002",
@@ -9649,6 +9884,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-22",
+       "iscrizioni_al": "2026-09-26",
+       "docenti": "VERSACI MARIO MAMMONE NADIA MORABITO FRANCESCO CARLO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "11:00",
        "luogo": null,
@@ -9908,12 +10155,37 @@
      "docenti": [],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2028/50250_635323_239/2026/50250?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-16",
+       "iscrizioni_al": "2026-09-29",
+       "docenti": "SANTANGELO SAVERIA BARLETTA GIUSEPPINA FIAMMA VINCENZO MAMMONE NADIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": null,
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-07",
+       "docenti": "PALMERI ROBERTA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "id": "unirc-l-9-ingegneria-gestionale-1000297",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D50016",
@@ -10565,13 +10837,38 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50301_635550_10186/2026/50301?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-21",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-21",
+       "iscrizioni_al": "2026-12-18",
+       "docenti": "ARANITI GIUSEPPE PRATICO' FILIPPO GIAMMARIA ZUMBO SABRINA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-13",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "ARANITI GIUSEPPE PRATICO' FILIPPO GIAMMARIA ZUMBO SABRINA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-l-8-ingegneria-informatica-e-delle-telecomunicazioni-d60232",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D60177",
@@ -10724,6 +11021,18 @@
        "docenti": "BARLETTA GIUSEPPINA AMODDEO ANTONINO BONANZINGA VITTORIA COTRONEI MARIANTONIA FAILLA GIOIA GIOVINE PASQUALE GIUFFRE' SOFIA",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": "BARLETTA GIUSEPPINA AMODDEO ANTONINO BONANZINGA VITTORIA COTRONEI MARIANTONIA FAILLA GIOIA GIOVINE PASQUALE GIUFFRE' SOFIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -11018,13 +11327,50 @@
        "citazione": "F.Ciccacci, A.Fasana, L.Quartapelle, Fisica 1: problemi d’esame svolti Progetto Leonardo, Bologna"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-25",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "FAGGIO GIULIANA MESSINA GIACOMO MOTTESE ANTONIO FRANCESCO REHMAN TANZEEL UI",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-15",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "FAGGIO GIULIANA MESSINA GIACOMO MOTTESE ANTONIO FRANCESCO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-25",
+       "docenti": "FAGGIO GIULIANA MESSINA GIACOMO MOTTESE ANTONIO FRANCESCO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unirc-l-8-ingegneria-informatica-e-delle-telecomunicazioni-d60222",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "56T007",
@@ -11042,13 +11388,26 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50301_635422_2536/2026/50301?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "O'SULLIVAN MARY TERESA PARKER EDWARD",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-l-8-ingegneria-informatica-e-delle-telecomunicazioni-56t007",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D60165",
@@ -12199,6 +12558,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-23",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "PIETRAFESA MATILDE MARIAROSA CONSOLATA MARINO CONCETTINA NUCARA ANTONINO FRANCESCO PANZERA MARIA FRANCESCA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-11",
        "ora": "10:00",
        "luogo": null,
@@ -12511,6 +12882,18 @@
        "docenti": "GATTUSO DOMENICO CALABRO' FRANCESCO GIUNTA MARINELLA SILVANA PELLICANO' DOMENICA SAVIA VITETTA ANTONINO",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-26",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "GATTUSO DOMENICO CALABRO' FRANCESCO PRATICO' FILIPPO GIAMMARIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -12887,6 +13270,18 @@
        "docenti": "CAGNANO ALESSIA CARBONE ROSARIO IERO DEMETRIO LA FORESTA FABIO LUGARÀ MARIACARLA VALERIA",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-20",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "CAGNANO ALESSIA CARBONE ROSARIO IERO DEMETRIO LA FORESTA FABIO LUGARÀ MARIACARLA VALERIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -13809,13 +14204,26 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50309_635342_2536/2026/50310?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "O'SULLIVAN MARY TERESA PARKER EDWARD",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-l-9-ingegneria-meccanica-56t007",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "56T002",
@@ -14445,6 +14853,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-23",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "PERRELLI MICHELE BONACCORSI LUCIO MARIA CALABRO' PAOLO SALVATORE",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-20",
        "ora": "09:00",
        "luogo": null,
@@ -14829,13 +15249,38 @@
      "docenti": [],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/49817_631713_239/2024/49829?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-16",
+       "iscrizioni_al": "2026-09-29",
+       "docenti": "SANTANGELO SAVERIA BARLETTA GIUSEPPINA FIAMMA VINCENZO MAMMONE NADIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": null,
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-07",
+       "docenti": "PALMERI ROBERTA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-l-9-ingegneria-meccanica-1000297",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D50024",
@@ -15899,13 +16344,26 @@
      "docenti": [],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50277_636054_1527/2026/50278?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-01",
+       "iscrizioni_al": "2026-09-24",
+       "docenti": "SAMMARRO MARIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-l-19-scienze-dell-educazione-e-della-formazione-1001927",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1001412",
@@ -16793,12 +17251,25 @@
      "docenti": [],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2028/50278_636069_1166/2026/50278?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-01",
+       "iscrizioni_al": "2026-09-24",
+       "docenti": "SAMMARRO MARIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "id": "unirc-l-19-scienze-dell-educazione-e-della-formazione-1001467",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1001448",
@@ -17137,6 +17608,18 @@
        "docenti": "AMODDEO ANTONINO MILETO GRAZIANO",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-15",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "AMODDEO ANTONINO MILETO GRAZIANO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -18032,6 +18515,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-06-29",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "CARIDI ANDREA DOMENICO MARIA F. A. MINCIONE ANTONIO SIDARI ROSSANA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-03",
        "ora": "09:00",
        "luogo": null,
@@ -18412,6 +18907,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-07",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "CAMPOLO ORLANDO LATELLA ILARIA PALMERI VINCENZO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-11",
        "ora": "09:00",
        "luogo": null,
@@ -18698,6 +19205,18 @@
        "docenti": "PISCOPO AMALIA ROSA MARIA GIACONDINO CORINNE MINCIONE ANTONIO POIANA MARCO",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-06",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "PISCOPO AMALIA ROSA MARIA MINCIONE ANTONIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -19643,6 +20162,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-20",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-17",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "ABENAVOLI LORENZO MARIA MASSIMO D'AGOSTINO DANIELA ZIMBONE SANTO MARCELLO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-11",
        "ora": "09:00",
        "luogo": null,
@@ -20089,6 +20620,18 @@
        "docenti": "AMODDEO ANTONINO MILETO GRAZIANO",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-15",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "AMODDEO ANTONINO MILETO GRAZIANO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -21205,13 +21748,50 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50008_633166_9789/2025/50008?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-14",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "GIUFFRE' ANGELO MARIA SICARI VINCENZO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "GIUFFRE' ANGELO MARIA SICARI VINCENZO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-14",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": "GIUFFRE' ANGELO MARIA SICARI VINCENZO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-l-26-scienze-e-tecnologie-alimentari-e-gastronomiche-d10050",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D10119",
@@ -21461,6 +22041,18 @@
        "docenti": "CAMPOLO ORLANDO LATELLA ILARIA PALMERI VINCENZO",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-07",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "CAMPOLO ORLANDO LATELLA ILARIA PALMERI VINCENZO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -22585,6 +23177,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-06-29",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "CARIDI ANDREA DOMENICO MARIA F. A. SIDARI ROSSANA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-03",
        "ora": "10:00",
        "luogo": null,
@@ -22670,6 +23274,18 @@
        "docenti": "PISCOPO AMALIA ROSA MARIA GIACONDINO CORINNE MINCIONE ANTONIO POIANA MARCO",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-06",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "PISCOPO AMALIA ROSA MARIA MINCIONE ANTONIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -24412,12 +25028,25 @@
      "docenti": [],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2028/50282_635880_57/2026/50282?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-24",
+       "iscrizioni_al": "2026-09-17",
+       "docenti": "PIZZONIA GIUSEPPE POETA STEFANO MARIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "id": "unirc-l-33-scienze-economiche-01m20",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/49795_632128_57/2024/49795?coorte=2024"
     },
     {
@@ -24447,12 +25076,25 @@
        "citazione": "TESAURO, Compendio di diritto tributario, UTET Torino, ultima edizione disponibile (Parte Generale)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-24",
+       "iscrizioni_al": "2026-09-17",
+       "docenti": "PIZZONIA GIUSEPPE POETA STEFANO MARIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unirc-l-33-scienze-economiche-80056",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/49794_632130_3535/2024/49794?coorte=2024"
     },
     {
@@ -24720,6 +25362,18 @@
        "docenti": "AMODDEO ANTONINO MILETO GRAZIANO",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-15",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "AMODDEO ANTONINO MILETO GRAZIANO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -25552,6 +26206,18 @@
        "docenti": "CAMPOLO ORLANDO LATELLA ILARIA PALMERI VINCENZO",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-07",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "CAMPOLO ORLANDO LATELLA ILARIA PALMERI VINCENZO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -26967,13 +27633,26 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50280_636091_9383/2026/50280?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "O'SULLIVAN MARY TERESA PARKER EDWARD",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-l-22-scienze-motorie-e-diritto-dello-sport-d90123",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D90124",
@@ -29724,13 +30403,50 @@
        "citazione": "Massimiliano Ferrara: \"A Cooperative Study of One-Commodity Market Games\". RISEC, Volume 53 (2006), No. 2, 183-192"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-12",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-02",
+       "iscrizioni_al": "2026-10-07",
+       "docenti": "FERRARA MASSIMILIANO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-11-11",
+       "docenti": "FERRARA MASSIMILIANO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-04",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "FERRARA MASSIMILIANO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unirc-lm-56-economia-d90085",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D90084",
@@ -30245,13 +30961,50 @@
        "citazione": "LIFE CYCLE ASSESSMENT: quantitative approach for decisions that matter 2014,Editore: self publisher,Autore: Henry Scott Matthews, Chris Hendrickson, Deanna H. Matthews,"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-10",
+       "iscrizioni_al": "2026-11-14",
+       "docenti": "FRONTERA PATRIZIA BONACCORSI LUCIO MARIA FOTIA ANTONIO MALARA ANGELA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-02",
+       "iscrizioni_al": "2027-01-06",
+       "docenti": "FRONTERA PATRIZIA BONACCORSI LUCIO MARIA FOTIA ANTONIO MALARA ANGELA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-01-07",
+       "iscrizioni_al": "2027-02-11",
+       "docenti": "FRONTERA PATRIZIA BONACCORSI LUCIO MARIA FOTIA ANTONIO MALARA ANGELA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unirc-lm-56-economia-d90170",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D90173",
@@ -30576,13 +31329,26 @@
        "citazione": "TESAURO, Compendio di diritto tributario, UTET Torino, ultima edizione disponibile (Parte Speciale)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-24",
+       "iscrizioni_al": "2026-09-17",
+       "docenti": "PIZZONIA GIUSEPPE POETA STEFANO MARIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unirc-lm-56-economia-d90078",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D90004",
@@ -32494,6 +33260,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-22",
+       "iscrizioni_al": "2026-09-26",
+       "docenti": "BARBARO GIUSEPPE FIAMMA VINCENZO FOTI GIANDOMENICO MINNITI FRANCESCA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-18",
        "ora": "09:00",
        "luogo": null,
@@ -32690,6 +33468,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-23",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "ROMOLO ALESSANDRA ARENA FELICE BARBARO GIUSEPPE FIAMMA VINCENZO MALARA GIOVANNI RUZZO CARLO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "15:00",
        "luogo": null,
@@ -32834,13 +33624,26 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50236_635240_2169/2026/50236?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "O'SULLIVAN MARY TERESA PARKER EDWARD",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-lm-23-ingegneria-civile-36t009",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D60213",
@@ -33968,13 +34771,26 @@
      "docenti": [],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50055_633877_2075/2025/50055?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-16",
+       "iscrizioni_al": "2026-09-29",
+       "docenti": "SANTANGELO SAVERIA BARLETTA GIUSEPPINA FIAMMA VINCENZO MAMMONE NADIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-lm-23-ingegneria-civile-36m055",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1000287",
@@ -34932,13 +35748,62 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50055_633880_9958/2025/50055?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-22",
+       "iscrizioni_al": "2026-09-26",
+       "docenti": "BARBARO GIUSEPPE FIAMMA VINCENZO FOTI GIANDOMENICO MAURO GIUSEPPE MINNITI FRANCESCA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": "BARBARO GIUSEPPE FIAMMA VINCENZO FOTI GIANDOMENICO MAURO GIUSEPPE MINNITI FRANCESCA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-04",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "BARBARO GIUSEPPE FIAMMA VINCENZO FOTI GIANDOMENICO MAURO GIUSEPPE MINNITI FRANCESCA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "BARBARO GIUSEPPE FIAMMA VINCENZO FOTI GIANDOMENICO MAURO GIUSEPPE MINNITI FRANCESCA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-lm-23-ingegneria-civile-d50089",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1000288",
@@ -35055,6 +35920,18 @@
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50055_633871_208/2025/50055?coorte=2025",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-23",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "PIETRAFESA MATILDE MARIAROSA CONSOLATA MARINO CONCETTINA NUCARA ANTONINO FRANCESCO PANZERA MARIA FRANCESCA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-11",
@@ -35477,13 +36354,50 @@
        "citazione": "P. Atkins, L. Jones, L. Laverman, Principi di chimica, Zanichelli, edizione più recente disponibile."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-25",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "FAGGIO GIULIANA MESSINA GIACOMO MOTTESE ANTONIO FRANCESCO PAONE EMILIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-15",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "FAGGIO GIULIANA MESSINA GIACOMO MOTTESE ANTONIO FRANCESCO PAONE EMILIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-25",
+       "docenti": "FAGGIO GIULIANA MESSINA GIACOMO MOTTESE ANTONIO FRANCESCO PAONE EMILIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unirc-lm-29-ingegneria-elettronica-e-biomedica-d60218",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D60149",
@@ -35846,6 +36760,18 @@
        "docenti": "BARLETTA GIUSEPPINA AMODDEO ANTONINO BONANZINGA VITTORIA COTRONEI MARIANTONIA FAILLA GIOIA GIOVINE PASQUALE GIUFFRE' SOFIA",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": "BARLETTA GIUSEPPINA AMODDEO ANTONINO BONANZINGA VITTORIA COTRONEI MARIANTONIA FAILLA GIOIA GIOVINE PASQUALE GIUFFRE' SOFIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -36690,13 +37616,26 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50258_635514_2536/2026/50258?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "O'SULLIVAN MARY TERESA PARKER EDWARD",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-lm-29-ingegneria-elettronica-e-biomedica-56t007",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1001592",
@@ -37047,13 +37986,38 @@
        "citazione": "R. C. Jaeger, “Microelettronica”, ed. McGraw Hill Italia."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-25",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "CAROTENUTO RICCARDO IERO DEMETRIO MERENDA MASSIMO PEZZIMENTI FORTUNATO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-28",
+       "iscrizioni_al": "2027-01-12",
+       "docenti": "CAROTENUTO RICCARDO IERO DEMETRIO MERENDA MASSIMO PEZZIMENTI FORTUNATO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unirc-lm-29-ingegneria-elettronica-e-biomedica-d60241",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "D60154",
@@ -37160,13 +38124,38 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/49868_632787_9623/2025/49868?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-08",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-09",
+       "iscrizioni_al": "2027-01-05",
+       "docenti": "SCORDAMAGLIA VALERIO ARANITI GIUSEPPE CAROTENUTO RICCARDO DE CAPUA CLAUDIO LUGARÀ MARIACARLA VALERIA NARDI VITO ANTONIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-12",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-02-09",
+       "docenti": "SCORDAMAGLIA VALERIO ARANITI GIUSEPPE CAROTENUTO RICCARDO DE CAPUA CLAUDIO LUGARÀ MARIACARLA VALERIA NARDI VITO ANTONIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "scritto e orale separati",
      "id": "unirc-lm-29-ingegneria-elettronica-e-biomedica-d60135",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "55M030",
@@ -37967,6 +38956,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-22",
+       "iscrizioni_al": "2026-09-26",
+       "docenti": "VERSACI MARIO CALCAGNO SALVATORE LA FORESTA FABIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-16",
@@ -39050,6 +40051,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-20",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "CAGNANO ALESSIA CARBONE ROSARIO IERO DEMETRIO LA FORESTA FABIO LUGARÀ MARIACARLA VALERIA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-18",
        "ora": "09:30",
        "luogo": null,
@@ -39169,13 +40182,50 @@
        "citazione": "Simon Haykin, Neural Networks, IEEE Press"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": "MAMMONE NADIA MORABITO FRANCESCO CARLO VERSACI MARIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-12-13",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "MAMMONE NADIA MORABITO FRANCESCO CARLO VERSACI MARIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-01-10",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "MAMMONE NADIA MORABITO FRANCESCO CARLO VERSACI MARIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale separati",
      "id": "unirc-lm-29-ingegneria-elettronica-e-biomedica-d60157",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1000593",
@@ -39513,6 +40563,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-22",
+       "iscrizioni_al": "2026-09-26",
+       "docenti": "LA FORESTA FABIO ANGIULLI GIOVANNI CARBONE ROSARIO VERSACI MARIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-19",
@@ -40223,6 +41285,18 @@
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2028/50258_635534_208/2026/50258?coorte=2024",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-23",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "PIETRAFESA MATILDE MARIAROSA CONSOLATA MARINO CONCETTINA NUCARA ANTONINO FRANCESCO PANZERA MARIA FRANCESCA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-11",
@@ -44038,13 +45112,26 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50246_635272_2169/2026/50247?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "O'SULLIVAN MARY TERESA PARKER EDWARD",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-lm-30-lm-35-ingegneria-per-la-gestione-sostenibile-dell-ambiente-e-dell-36t009",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1001912",
@@ -44405,6 +45492,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-22",
+       "iscrizioni_al": "2026-09-26",
+       "docenti": "BARBARO GIUSEPPE FIAMMA VINCENZO FOTI GIANDOMENICO MINNITI FRANCESCA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-18",
@@ -46134,6 +47233,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-23",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "ZEMA DEMETRIO ANTONIO BARBARO GIUSEPPE DENISI PIETRO FILIANOTI PASQUALE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-20",
        "ora": "09:00",
        "luogo": null,
@@ -46230,6 +47341,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-08-22",
+       "iscrizioni_al": "2026-09-26",
+       "docenti": "LA FORESTA FABIO ANGIULLI GIOVANNI CARBONE ROSARIO VERSACI MARIO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-19",
@@ -49020,6 +50143,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-07",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "CAMPOLO ORLANDO MODAFFERI ANTONINO PALMERI VINCENZO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-11",
        "ora": null,
        "luogo": null,
@@ -51030,6 +52165,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-07",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "CAMPOLO ORLANDO MODAFFERI ANTONINO PALMERI VINCENZO",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-11",
        "ora": null,
        "luogo": null,
@@ -51172,6 +52319,18 @@
        "docenti": "GELSOMINO ANTONIO",
        "note": null,
        "fonte": "https://unirc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-15",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "GELSOMINO ANTONIO ABENAVOLI MARIA ROSA",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -53780,13 +54939,26 @@
      ],
      "url": "https://unirc.coursecatalogue.cineca.it/insegnamenti/2026/50272_635925_45/2026/50272?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "O'SULLIVAN MARY TERESA PARKER EDWARD",
+       "note": null,
+       "fonte": "https://unirc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unirc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unirc-lmg-01-giurisprudenza-01m11",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1001229",

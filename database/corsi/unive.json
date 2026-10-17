@@ -187,6 +187,30 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": "FAGGIAN SILVIA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-21",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-06",
+       "iscrizioni_al": "2026-12-17",
+       "docenti": "FAGGIAN SILVIA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-18",
        "ora": "15:00",
        "luogo": "Aula 4A, Aula 5A, San Giobbe",
@@ -638,12 +662,25 @@
        "citazione": "Subramanyam K.R. (2014), Financial statement analysis, 11/e, McGrawHill (Capitoli 1; 2; 7; 8; 9; 10)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": "BIANCHI STEFANO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/8755/insegnamenti-e-orari/2",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-18-business-administration-and-management-et0112",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/8755/insegnamenti-e-orari/2"
     },
     {
@@ -807,12 +844,25 @@
        "citazione": "[Lettura opzionale (in Italiano): M. Li Calzi, La matematica dell'incertezza, Il Mulino, 2016.]"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-18",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": "BASTIANELLO LORENZO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/8755/insegnamenti-e-orari/2",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-18-business-administration-and-management-et2031",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/8755/insegnamenti-e-orari/2"
     },
     {
@@ -1477,12 +1527,37 @@
      ],
      "url": "https://www.unive.it/data/insegnamento/687425",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-28",
+       "docenti": "MENEGAZZO FEDERICA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "15:45",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-28",
+       "docenti": "MENEGAZZO FEDERICA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/16794/insegnamenti-e-orari/1",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "id": "unive-l-27-chimica-sic001",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/16794/insegnamenti-e-orari/1"
     },
     {
@@ -2043,12 +2118,25 @@
        "citazione": "A. Barbera, C. Fusaro, C. Caruso, Corso di diritto pubblico, Il Mulino, ultima edizione."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-18",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": "MANCINI MARCO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/8502/insegnamenti-e-orari/1",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-33-commercio-estero-e-turismo-et0040",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/8502/insegnamenti-e-orari/1"
     },
     {
@@ -2094,6 +2182,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": "CARDIN MARTA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-05",
@@ -2542,6 +2642,18 @@
        "docenti": "LUCCHETTA MARCELLA PARADISO ANTONIO",
        "note": null,
        "fonte": "https://unive.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "CECCONI ADRIANO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://www.unive.it/data/it/8502/insegnamenti-e-orari/2",
@@ -2764,12 +2876,25 @@
        "citazione": "AA.VV., Diritto commerciale, a cura di L. De Angelis, 3a ed., Wolters Kluwer Cedam, Milano, 2024: capp. I, III, IV, VI, VII, VIII, IX, X, XI, XII, XVI (tranne sez. V, parr. 14-16), XVIII, XIX, corrispondenti alle pp. 1-49, 119-151, 169-428, 463-523, 589-617."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "MARTINA GIULIANA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/8502/insegnamenti-e-orari/2",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-33-commercio-estero-e-turismo-et0009",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/8502/insegnamenti-e-orari/2"
     },
     {
@@ -4063,6 +4188,30 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": "PONTANI FILIPPOMARIA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "LUPI FRANCESCO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-05",
        "ora": "14:30",
        "luogo": "Aula 1N, Polo didattico San Basilio (Magazzino 4)",
@@ -4162,6 +4311,66 @@
        "docenti": "MASTRANTONIO DAVIDE",
        "note": null,
        "fonte": "https://unive.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "10:15",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:45",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "13:15",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -4729,12 +4938,37 @@
        "citazione": "G. CRESCI MARRONE, F. ROHR VIO, L. CALVELLI, Roma antica. Storia e documenti, Bologna, Il Mulino, 2020, pp. 211-391 (dal cap. 12 compreso al cap. 23)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "VALENTINI ALESSANDRA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "VALENTINI ALESSANDRA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/880/insegnamenti-e-orari/1",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-1-conservazione-e-gestione-dei-beni-e-delle-attivita-culturali-ft0272",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/880/insegnamenti-e-orari/1"
     },
     {
@@ -6793,12 +7027,37 @@
        "citazione": "Maria Teresa Fiorio, Il museo nella storia. Dallo studiolo al museo virtuale, Milano 2023 (III ed.)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "PAPARELLO CATERINA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "VENTRA STEFANIA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/880/insegnamenti-e-orari/2",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-1-conservazione-e-gestione-dei-beni-e-delle-attivita-culturali-ft0611",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/880/insegnamenti-e-orari/2"
     },
     {
@@ -7172,7 +7431,7 @@
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-1-conservazione-e-gestione-dei-beni-e-delle-attivita-culturali-ft0135",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "codici_alternativi": [
       "FT0136"
      ],
@@ -10485,12 +10744,25 @@
        "citazione": "Storia dell'architettura in Italia. Tra Mediterraneo e Europa (VII-XVIII secolo), a cura di Alireza Naser Eslami e Marco Rosario Nobile, Pearson Italia, Milano-Torino 2022"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "MOLTENI ELISABETTA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/880/insegnamenti-e-orari/3",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-1-conservazione-e-gestione-dei-beni-e-delle-attivita-culturali-ft0225",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/880/insegnamenti-e-orari/3"
     },
     {
@@ -14604,6 +14876,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": "CARDIN MARTA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-05",
        "ora": "09:00",
        "luogo": null,
@@ -16025,6 +16309,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": "CARDIN MARTA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-05",
        "ora": "09:00",
        "luogo": null,
@@ -16495,6 +16791,18 @@
        "docenti": "LUCCHETTA MARCELLA PARADISO ANTONIO",
        "note": null,
        "fonte": "https://unive.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "CECCONI ADRIANO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://www.unive.it/data/it/8645/insegnamenti-e-orari/2",
@@ -16656,12 +16964,25 @@
        "citazione": "AA.VV., Diritto commerciale, a cura di L. De Angelis, 3a ed., Wolters Kluwer Cedam, Milano, 2024: capp. I, III, IV, VI, VII, VIII, IX, X, XI, XII, XVI (tranne sez. V, parr. 14-16), XVIII, XIX, corrispondenti alle pp. 1-49, 119-151, 169-428, 463-523, 589-617."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "MARTINA GIULIANA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/8645/insegnamenti-e-orari/2",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-33-economia-e-commercio-et0009",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/8645/insegnamenti-e-orari/2"
     },
     {
@@ -17124,6 +17445,30 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": "FAGGIAN SILVIA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-21",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-06",
+       "iscrizioni_al": "2026-12-17",
+       "docenti": "FAGGIAN SILVIA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-18",
        "ora": "15:00",
        "luogo": "Aula 4A, Aula 5A, San Giobbe",
@@ -17563,12 +17908,37 @@
      ],
      "url": "https://www.unive.it/data/insegnamento/561657",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "TEGLIO ANDREA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-28",
+       "iscrizioni_al": "2027-01-07",
+       "docenti": "TEGLIO ANDREA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/8869/insegnamenti-e-orari/2",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "id": "unive-l-33-economics-and-business-et2017",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/8869/insegnamenti-e-orari/2"
     },
     {
@@ -17672,6 +18042,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": "PARPINEL FRANCESCA BOZZA SILVIA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-15",
@@ -18077,6 +18459,30 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-22",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-19",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-22",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-19",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-14",
        "ora": "13:00",
        "luogo": "Aula MF3, Polo didattico San Basilio (MF - Magazzini Frigoriferi)",
@@ -18375,12 +18781,25 @@
        "citazione": "Stefano Catucci, Introduzione a Foucault, Laterza, Roma-Bari 2024 (seconda edizione)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-18",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": "CESARALE GIORGIO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9321/insegnamenti-e-orari/1",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-5-filosofia-ft0085",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9321/insegnamenti-e-orari/1"
     },
     {
@@ -18449,6 +18868,66 @@
        "docenti": "MASTRANTONIO DAVIDE",
        "note": null,
        "fonte": "https://unive.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "10:15",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:45",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "13:15",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -18665,12 +19144,25 @@
        "citazione": "Victoria De Grazia, L' impero irresistibile. La società dei consumi americana alla conquista del mondo, Einaudi, Torino, 2006, 2020"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": "TASCA LUISA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9321/insegnamenti-e-orari/1",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-5-filosofia-ft0269",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9321/insegnamenti-e-orari/1"
     },
     {
@@ -18725,12 +19217,37 @@
        "citazione": "G. CRESCI MARRONE, F. ROHR VIO, L. CALVELLI, Roma antica. Storia e documenti, Bologna, Il Mulino, 2020, pp. 211-391 (dal cap. 12 compreso al cap. 23)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "VALENTINI ALESSANDRA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "VALENTINI ALESSANDRA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9321/insegnamenti-e-orari/1",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-5-filosofia-ft0272",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9321/insegnamenti-e-orari/1"
     },
     {
@@ -18808,12 +19325,25 @@
        "citazione": "R. Granieri, Conoscere l'essere. Platone, Aristotele e la costruzione della filosofia prima, il Mulino"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-18",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": "MASI FRANCESCA GUADALUPE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9321/insegnamenti-e-orari/1",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-5-filosofia-ft0206",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9321/insegnamenti-e-orari/1"
     },
     {
@@ -20152,12 +20682,25 @@
      ],
      "url": "https://www.unive.it/data/insegnamento/579104",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "PAGANI PAOLO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9321/insegnamenti-e-orari/2",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "id": "unive-l-5-filosofia-ft0275",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9321/insegnamenti-e-orari/2"
     },
     {
@@ -22579,12 +23122,49 @@
      ],
      "url": "https://www.unive.it/data/insegnamento/717485",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": null,
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-27",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "CONTINI GIULIO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-30",
+       "ora": null,
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-03-15",
+       "iscrizioni_al": "2027-03-27",
+       "docenti": "CONTINI GIULIO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-04-12",
+       "ora": null,
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-03-28",
+       "iscrizioni_al": "2027-04-09",
+       "docenti": "CONTINI GIULIO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9051/insegnamenti-e-orari/1",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "id": "unive-l-15-hospitality-innovation-and-e-tourism-ct9031",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9051/insegnamenti-e-orari/1"
     },
     {
@@ -24054,6 +24634,18 @@
      "url": "https://www.unive.it/data/insegnamento/717303",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "12:15",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-04",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": "ROSSI SABINA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-18",
@@ -28344,6 +28936,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-23",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-08",
+       "iscrizioni_al": "2026-11-20",
+       "docenti": "SOLER BASTIDA MIGUEL ANGEL",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-02",
        "ora": "14:00",
        "luogo": "Aula Delta 2A, Campus scientifico via Torino (edificio Delta)",
@@ -30357,6 +30961,66 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "10:15",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:45",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "13:15",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-02",
        "ora": "15:00",
        "luogo": "Aula 1B, Polo didattico San Basilio (Magazzino 5)",
@@ -31894,12 +32558,25 @@
        "citazione": "A. Vallega, Geografia culturale, Torino, Utet, 2006.Sono esclusi i capitoli 9 e 10"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "BONARDI LUCA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9377/insegnamenti-e-orari/2",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-10-lettere-ft0093",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9377/insegnamenti-e-orari/2"
     },
     {
@@ -32207,12 +32884,25 @@
        "citazione": "A. Cavarzere, A. De Vivo, P. Mastandrea, Letteratura latina. Una sintesi storica, Roma, Carocci, 2003 (o le successive edizioni: 2015, 2024)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-18",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": "CIOFFI CARMELA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9377/insegnamenti-e-orari/2",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-10-lettere-ft0435",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9377/insegnamenti-e-orari/2"
     },
     {
@@ -32364,12 +33054,37 @@
        "citazione": "manuale G. Cresci Marrone-F. Rohr Vio-L. Calvelli, Roma antica. Storia e documenti, Bologna, Il Mulino, seconda edizione, 2020 (comprensivo dei materiali presenti nell'estensione digitale su Pandoracampus): selezione di capitoli indicati dalla docente."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "VALENTINI ALESSANDRA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "VALENTINI ALESSANDRA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9377/insegnamenti-e-orari/2",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-10-lettere-ft0272",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "codici_alternativi": [
       "FT0273"
      ],
@@ -32473,12 +33188,25 @@
        "citazione": "Claudio Marazzini, La lingua italiana. Profilo storico, 3a ed., Bologna, il Mulino, 2002."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-18",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": "BAGLIONI DANIELE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9377/insegnamenti-e-orari/2",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-10-lettere-ft0219",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9377/insegnamenti-e-orari/2"
     },
     {
@@ -66033,6 +66761,66 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "10:15",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:45",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "13:15",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-02",
        "ora": "15:00",
        "luogo": "Aula 1B, Polo didattico San Basilio (Magazzino 5)",
@@ -67393,12 +68181,37 @@
      ],
      "url": "https://www.unive.it/data/insegnamento/717682",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-28",
+       "docenti": "MENEGAZZO FEDERICA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "15:45",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-28",
+       "docenti": "MENEGAZZO FEDERICA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9271/insegnamenti-e-orari/1",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "id": "unive-l-43-scienze-e-tecnologie-per-i-beni-culturali-sic001",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9271/insegnamenti-e-orari/1"
     },
     {
@@ -69151,6 +69964,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "BONARDI LUCA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-18",
        "ora": "12:00",
        "luogo": "Aula MF5, Polo didattico San Basilio (MF - Magazzini Frigoriferi)",
@@ -69178,7 +70003,7 @@
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-42-storia-ft0093",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "codici_alternativi": [
       "FT0094"
      ],
@@ -69250,6 +70075,66 @@
        "docenti": "MASTRANTONIO DAVIDE",
        "note": null,
        "fonte": "https://unive.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "10:15",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:45",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "13:15",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MASTRANTONIO DAVIDE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -69384,12 +70269,25 @@
        "citazione": "A. Cavarzere, A. De Vivo, P. Mastandrea, Letteratura latina. Una sintesi storica, Roma, Carocci, 2003 (o le successive edizioni: 2015, 2024)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-18",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": "CIOFFI CARMELA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9467/insegnamenti-e-orari/1",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-42-storia-ft0435",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9467/insegnamenti-e-orari/1"
     },
     {
@@ -69444,12 +70342,37 @@
        "citazione": "G. CRESCI MARRONE, F. ROHR VIO, L. CALVELLI, Roma antica. Storia e documenti, Bologna, Il Mulino, 2020, pp. 211-391 (dal cap. 12 compreso al cap. 23)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "VALENTINI ALESSANDRA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "VALENTINI ALESSANDRA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9467/insegnamenti-e-orari/1",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-42-storia-ft0272",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9467/insegnamenti-e-orari/1"
     },
     {
@@ -70283,12 +71206,25 @@
      ],
      "url": "https://www.unive.it/data/insegnamento/567895",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "PAGANI PAOLO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9467/insegnamenti-e-orari/2",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "id": "unive-l-42-storia-ft0275",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9467/insegnamenti-e-orari/2"
     },
     {
@@ -71366,12 +72302,25 @@
        "citazione": "Caterina Roggero, Storia del Nord Africa indipendente. Tra imperialismi, nazionalismi e autoritarismi, Bompiani 2019 (il capitolo V non è obbligatorio)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": "TASCA LUISA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/9467/insegnamenti-e-orari/2",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-l-42-storia-ft0269",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/9467/insegnamenti-e-orari/2"
     },
     {
@@ -85532,6 +86481,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-23",
+       "ora": "12:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-08",
+       "iscrizioni_al": "2026-11-20",
+       "docenti": "SILVESTRI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-29",
        "ora": "09:00",
        "luogo": "Aula Epsilon 3, Campus scientifico via Torino (edificio Epsilon)",
@@ -91922,6 +92883,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-10-30",
+       "docenti": "ORLANDO SALVATORE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-14",
        "ora": "09:00",
        "luogo": "Laboratorio 3, Laboratorio 5, Campus scientifico via Torino (edificio Zeta)",
@@ -96309,6 +97282,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "URBANI ALBERTO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "10:00",
        "luogo": "Aula 3A, San Giobbe",
@@ -97276,6 +98261,30 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "NARDON MARTINA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-22",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-07",
+       "iscrizioni_al": "2026-12-18",
+       "docenti": "NARDON MARTINA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-15",
@@ -123299,6 +124308,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-18",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": "CARTA NICOLA",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-11",
@@ -168573,6 +169594,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-22",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "OLIVI MARCO",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-15",
        "ora": "13:00",
        "luogo": "Aula 1E, Polo didattico San Basilio (Magazzino 5)",
@@ -187298,12 +188331,25 @@
        "citazione": "Platone, Filebo, trad. it di M. Migliori, Bompiani, Milano"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "MASI FRANCESCA GUADALUPE",
+       "note": null,
+       "fonte": "https://unive.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://www.unive.it/data/it/11245/insegnamenti-e-orari/1",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "id": "unive-lm-78-scienze-filosofiche-fm0631",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/11245/insegnamenti-e-orari/1"
     },
     {
@@ -208368,7 +209414,7 @@
        "citazione": "A grammar of Italian Sign Language. 2020. Chiara Branchini, Lara Mantovan (ed.). Edizioni Ca' Foscari. Scaricabile gratuitamente a questo link:"
       },
       {
-       "titolo": "https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/",
+       "titolo": "https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -208377,7 +209423,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/"
+       "citazione": "https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/"
       }
      ],
      "esami": [

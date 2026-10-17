@@ -510,6 +510,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-07",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-08",
        "ora": "16:00",
        "luogo": null,
@@ -4064,11 +4076,24 @@
        "citazione": "Edwards, Eales, Oakes 2023. Speak out C1-C2 3rd Edition Split 1: Pearson"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-07",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "COLLINS BRIDGET CLARE FABBRI LOREDANA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "verificato_il": "2026-10-17",
      "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000605",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A000070",
@@ -6555,6 +6580,18 @@
        "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
        "note": null,
        "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-07",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -17879,12 +17916,85 @@
      "docenti": [],
      "url": "https://unistrapg.coursecatalogue.cineca.it/insegnamenti/2027/3353_9996_4068/2026/3354?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-22",
+       "iscrizioni_al": "2027-01-07",
+       "docenti": "GAMBINI DIANELLA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-25",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "GAMBINI DIANELLA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-06",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "GAMBINI DIANELLA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-01-28",
+       "docenti": "GAMBINI DIANELLA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-22",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-02",
+       "iscrizioni_al": "2027-02-18",
+       "docenti": "GAMBINI DIANELLA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-25",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-05",
+       "iscrizioni_al": "2027-02-21",
+       "docenti": "GAMBINI DIANELLA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unistrapg.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unistrapg-lm-14-italiano-per-l-insegnamento-a-stranieri-a000631",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "7016",
@@ -19001,6 +19111,18 @@
        "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
        "note": null,
        "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-07",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -20654,12 +20776,25 @@
        "citazione": "In generale, si segnalano i seguenti strumenti normativi: Carta delle Nazioni Unite (scaricabile on-line) Convenzione di Vienna del 1969 sul diritto dei trattati (scaricabile on-line) Selezione di sentenze e pareri della Corte internazionale di giustizia, reperibili al sito: https://www.icj-cij.org"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-24",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": "MARCHEGIANI MAURA QUIRICO OTTAVIO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unistrapg.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unistrapg-lm-52-lm-81-relazioni-internazionali-e-cooperazione-allo-sviluppo-a000992",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unistrapg.coursecatalogue.cineca.it/insegnamenti/2025/3294_9161_8324/2024/3294?coorte=2024"
     },
     {

@@ -58,12 +58,49 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2027/14656/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "15:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-16",
+       "iscrizioni_al": "2026-10-07",
+       "docenti": "FANTI PAOLO TROTTA VINCENZO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "09:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-11",
+       "docenti": "FANTI PAOLO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-04",
+       "iscrizioni_al": "2026-12-08",
+       "docenti": "FANTI PAOLO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-2-biotecnologie-dis0265",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "SMF0323",
@@ -634,6 +671,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-17",
+       "iscrizioni_al": "2026-10-07",
+       "docenti": "TERRAZZANO GIUSEPPE BRANCALEONE VINCENZO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-09",
        "ora": "11:15",
        "luogo": null,
@@ -775,6 +824,18 @@
        "docenti": "INFANTINO VITTORIA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-22",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-01-13",
+       "iscrizioni_al": "2026-10-09",
+       "docenti": "INFANTINO VITTORIA TODISCO SIMONA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -970,6 +1031,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "POTENZA GIOVANNA ROSATI LEONARDO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-14",
        "ora": "09:30",
        "luogo": null,
@@ -1029,12 +1102,49 @@
        "citazione": "Marrapese M., Matthews K. A. (2014), The Importance of Agricultural Biotechnology in the Response to the Effects of Climate Change, Natural Resources & Environment Volume 29, Number 1"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-22",
+       "docenti": "ROMANO SEVERINO COPPOLA ADELE SMALDONE PIERLUIGI VICCARO MAURO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-26",
+       "docenti": "ROMANO SEVERINO COPPOLA ADELE SMALDONE PIERLUIGI VICCARO MAURO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": "ROMANO SEVERINO COPPOLA ADELE SMALDONE PIERLUIGI VICCARO MAURO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-2-biotecnologie-smf0032",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2024/4786/2013/9999?coorte=2024"
     },
     {
@@ -1102,6 +1212,18 @@
        "docenti": "KORAL CAN",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-02",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "KORAL CAN",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -1295,6 +1417,18 @@
        "docenti": "DI CAPUA ANGELA GUERRIERI ANTONIO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-16",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "DI CAPUA ANGELA GUERRIERI ANTONIO LANGERAME FAUSTO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -1675,6 +1809,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-05",
+       "iscrizioni_al": "2026-09-29",
+       "docenti": "FABOZZI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-04",
        "ora": "15:00",
        "luogo": null,
@@ -2018,6 +2164,18 @@
        "docenti": "BOCHICCHIO BRIGIDA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "BOCHICCHIO BRIGIDA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -2683,13 +2841,26 @@
        "citazione": "Contabilità generale e bilancio d'impresa, a cura di Paolo Andrei e Anna Maria Fellegara, Giappichelli, Torino, Ultima edizione"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": "DI CARLO FERDINANDO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-l-18-economia-aziendale-mie0065",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ECN0005",
@@ -2744,6 +2915,18 @@
        "docenti": "FIDANZA DONATO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": "FIDANZA DONATO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -3163,13 +3346,26 @@
        "citazione": "L'economia civile integrale e la primavera delle comunità locali: dall'homo oeconomicus all'homo in civitatem. di AA.VV. (Autore), Giuseppe Marotta (a cura di), Orazio Francesco Piazza (a cura di). Rubbettino, 2021"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-31",
+       "iscrizioni_al": "2026-11-10",
+       "docenti": "QUARANTA GIOVANNI SALVIA ROSANNA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-l-18-economia-aziendale-mie0060",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ECN0012",
@@ -3201,13 +3397,26 @@
        "citazione": "Guerraggio A. - Matematica, IV edizione. Pearson, 2023 Cambini A. Matematica Finanziaria, appunti a.a. 2018-2019Cambini A., Carosi L., Marten L. Elementi di algebra lineare e funzioni di più variabili. Esercizi svolti. Giappichelli EditoreSydsæter, Hammond, Strøm, Carvajal, La Torre, Metodi matematici per l'economia 5/Ed."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "ROSCIANO MONICA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-l-18-economia-aziendale-ecn0012",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ECN0028",
@@ -3298,13 +3507,26 @@
        "citazione": "Emanuele Salsano – Roberto Lombardi, Crisi finanziaria e crisi reale. Analisi ed effetti. Gaia Edizioni, 2009."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "GRIMALDI GERARDO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-l-18-economia-aziendale-ecn0028",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "MIE0067",
@@ -3372,13 +3594,26 @@
        "citazione": "D. Piccolo. Statistica per le decisioni, il Mulino, Bologna, Terza edizione"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "IULIANO ANTONELLA LEONESSA VITA ROSCIANO MONICA VERGALLO PIERANDREA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-l-18-economia-aziendale-ecn0013",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ECN0026",
@@ -3671,6 +3906,18 @@
        "docenti": "DALIA CRISTINA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "DALIA CRISTINA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -4128,13 +4375,26 @@
      ],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2027/14358/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-24",
+       "iscrizioni_al": "2026-09-29",
+       "docenti": "GRECO MICHELE ARBIA FRANCESCO ANDREA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibas-l-7-ingegneria-civile-e-ambientale-ing0392",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ING0389",
@@ -4459,13 +4719,38 @@
      ],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2027/14356/2026/1?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "CANIANI DONATELLA MANCINI IGNAZIO MARCELLO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-30",
+       "iscrizioni_al": "2026-11-10",
+       "docenti": "CANIANI DONATELLA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibas-l-7-ingegneria-civile-e-ambientale-ing0388",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ING0393",
@@ -4483,13 +4768,98 @@
      ],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2027/14359/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "FRANCIOSI CLAUDIO DE ROSA MARIA ANNA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-02-13",
+       "iscrizioni_al": "2026-10-22",
+       "docenti": "DITOMMASO ROCCO LANZO ANTONIO DOMENICO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-02-13",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "DITOMMASO ROCCO LANZO ANTONIO DOMENICO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-02-13",
+       "iscrizioni_al": "2026-11-19",
+       "docenti": "DITOMMASO ROCCO LANZO ANTONIO DOMENICO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-25",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-02-13",
+       "iscrizioni_al": "2026-11-24",
+       "docenti": "DITOMMASO ROCCO LANZO ANTONIO DOMENICO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-02-13",
+       "iscrizioni_al": "2026-12-17",
+       "docenti": "DITOMMASO ROCCO LANZO ANTONIO DOMENICO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-23",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-02-13",
+       "iscrizioni_al": "2026-12-22",
+       "docenti": "DITOMMASO ROCCO LANZO ANTONIO DOMENICO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibas-l-7-ingegneria-civile-e-ambientale-ing0393",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ING0409",
@@ -4589,12 +4959,49 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2028/14372/2026/2?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-17",
+       "iscrizioni_al": "2026-10-09",
+       "docenti": "DIOMEDI MAURIZIO CIAMPA DONATO OLITA SAVERIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": "DIOMEDI MAURIZIO CIAMPA DONATO OLITA SAVERIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-19",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": "DIOMEDI MAURIZIO CIAMPA DONATO OLITA SAVERIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-7-ingegneria-civile-e-ambientale-ing0417",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ING0404",
@@ -4631,12 +5038,37 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2028/14366/2026/1?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-10",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-02-13",
+       "iscrizioni_al": "2026-10-08",
+       "docenti": "DI MAIO CATERINA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": "DI MAIO CATERINA VASSALLO ROBERTO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-7-ingegneria-civile-e-ambientale-ing0405",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ING0406",
@@ -4882,6 +5314,18 @@
        "docenti": "SANTOMAURO MICHELE",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-08",
+       "docenti": "SANTOMAURO MICHELE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -5293,12 +5737,25 @@
        "citazione": "R.A. Adams, Calcolo differenziale 1, Casa Editrice Ambrosiana."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "BARLETTA ELISABETTA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-7-ingegneria-civile-e-ambientale-ing0375",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "curricula": [
@@ -6498,12 +6955,25 @@
        "citazione": "Santesso, E., 1997, Valutazione di Bilancio, Giappichelli, Torino.Thuesen G. J., Fabricky W.J., 1994, Economia per Ingegneri, Ediz. Il Mulino"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-01",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "CARLUCCI DANIELA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-9-ingegneria-meccanica-ing0222",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/1848/2010/9999?coorte=2024"
     },
     {
@@ -6870,6 +7340,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-08",
+       "docenti": "SANTOMAURO MICHELE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-13",
        "ora": "08:00",
        "luogo": null,
@@ -7213,6 +7695,42 @@
        "docenti": "GENOVESE KATIA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-07-22",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "GENOVESE KATIA NIGRO MICHELANGELO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-04",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "GENOVESE KATIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "GENOVESE KATIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -7491,6 +8009,18 @@
        "docenti": "PALMIERI MARCO GUGLIELMI PASQUALE",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-25",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-18",
+       "docenti": "PALMIERI MARCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -7553,12 +8083,25 @@
        "citazione": "AIMAT - Manuale dei materiali per l’ingegneria, McGraw Hill Italia"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "MARROCCOLI MILENA TELESCA ANTONIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-9-ingegneria-meccanica-ing0307",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ING0276",
@@ -7589,12 +8132,25 @@
        "citazione": "R.A. Adams, Calcolo differenziale 1, Casa Editrice Ambrosiana."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "BARLETTA ELISABETTA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-9-ingegneria-meccanica-ing0276",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "ammissione": {
@@ -7641,12 +8197,25 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2028/14167/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-07",
+       "docenti": "CIALDEA ALBERTO VERGALLO PIERANDREA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-35-matematica-mie0118",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "SMF0061",
@@ -8263,6 +8832,18 @@
        "docenti": "CIALDEA ALBERTO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "CIALDEA ALBERTO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -8405,12 +8986,25 @@
        "citazione": "Mauro Fabrizio. ELEMENTI DI MECCANICA CLASSICA Zanichelli, Bologna, 2002."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-10-19",
+       "docenti": "CIMMELLI VITO ANTONIO VERGALLO PIERANDREA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-35-matematica-mie0115",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2025/14173/2023/9999?coorte=2024"
     },
     {
@@ -8427,12 +9021,25 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2028/13160/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "IULIANO ANTONELLA LEONESSA VITA ROSCIANO MONICA VERGALLO PIERANDREA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-35-matematica-mie0062",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/13160/2023/9999?coorte=2024"
     },
     {
@@ -9280,6 +9887,18 @@
        "docenti": "MIRIZZI FERDINANDO FELICE",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": "MIRIZZI FERDINANDO FELICE CICIRELLI ANGELA COPERTINO DOMENICO CORETTI CIRIACA FERRACUTI SANDRA MARANO FRANCESCO PARADISO ANNALISA SANTORO VITA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -9635,6 +10254,18 @@
        "docenti": "VINCIGUERRA GIOVANNI",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "VINCIGUERRA GIOVANNI",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -9841,6 +10472,18 @@
        "docenti": "SPORTELLI FRANCESCO DELL'AGLIO MONICA GIACOVELLI DOMENICO MASTRONARDI MARIA AURELIA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-19",
+       "docenti": "SPORTELLI FRANCESCO GIACOVELLI DOMENICO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -10026,13 +10669,26 @@
      ],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/4210/2025/9999?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-17",
+       "docenti": "ROUBIS DIMITRIS",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibas-l-1-operatore-dei-beni-culturali-dcm0026",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "LET0224",
@@ -10065,6 +10721,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-31",
+       "iscrizioni_al": "2026-10-09",
+       "docenti": "CUOZZO MARIADELAIDE TRIPPETTA TIZIANA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-20",
        "ora": "10:30",
        "luogo": null,
@@ -10074,6 +10742,18 @@
        "docenti": "CUOZZO MARIADELAIDE",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-31",
+       "iscrizioni_al": "2026-10-24",
+       "docenti": "CUOZZO MARIADELAIDE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -10170,12 +10850,25 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2028/3638/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": "COPERTINO DOMENICO ALLIEGRO ENZO VINICIO D'ALOISIO FULVIA DELL'AGLIO MONICA DE NARDIS FABIO DE ROSA ROSANNA D'ORSI LORENZO FIGLIUOLO GIOVANNI IMBRIANI EUGENIO LA FORESTA DANIELA MARANO FRANCESCO MININNI MARIAVALERIA MIRIZZI FERDINANDO FELICE NUZZO VITALE RUSSO ROSANNA RUSSO SAVERIO SCHIATTARELLA MARCELLO SCIONTI FRANCESCA SICILIANO SARAH SIMONETTI LUCIA STANZIONE LUIGI TOOMASPOEG KRISTJAN VARRASO ISABELLA MARIA ROSARIA NATALINA ZITO EUGENIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-1-operatore-dei-beni-culturali-let0170",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DCM0247",
@@ -10313,12 +11006,37 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2028/13330/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "MARTORELLA FRANCESCO ROUBIS DIMITRIS",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-09",
+       "iscrizioni_al": "2026-11-18",
+       "docenti": "MARTORELLA FRANCESCO ROUBIS DIMITRIS",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-1-operatore-dei-beni-culturali-dcm0268",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/13330/2015/9999?coorte=2024"
     },
     {
@@ -10441,6 +11159,18 @@
        "docenti": "SPORTELLI FRANCESCO DELL'AGLIO MONICA GIACOVELLI DOMENICO MASTRONARDI MARIA AURELIA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-20",
+       "docenti": "SPORTELLI FRANCESCO GIACOVELLI DOMENICO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -10738,6 +11468,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-29",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "RENNA PAOLO PIERRI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-06",
        "ora": "11:00",
        "luogo": null,
@@ -10759,6 +11501,18 @@
        "docenti": "RENNA PAOLO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "RENNA PAOLO PIERRI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -10953,6 +11707,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-16",
+       "iscrizioni_al": "2026-10-24",
+       "docenti": "CASSINO CARMINE FASANELLA MICHELE VERRASTRO DONATO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-17",
        "ora": "10:00",
        "luogo": null,
@@ -11072,13 +11838,26 @@
        "citazione": "F. Cambi, Manuale di storia della pedagogia, Laterza, Roma-Bari 2003 (tutta la parte quarta: l’età contemporanea)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-10-27",
+       "docenti": "RONI RICCARDO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-l-19-scienze-dell-educazione-e-della-formazione-dsu0126",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DSU0123",
@@ -11145,6 +11924,18 @@
        "docenti": "ANZALONE MARIAFILOMENA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-07-23",
+       "iscrizioni_al": "2026-10-01",
+       "docenti": "ANZALONE MARIAFILOMENA NIZZO CARLO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -11331,6 +12122,18 @@
        "docenti": "MOSCA LUCIA LUCIANA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": "MOSCA LUCIA LUCIANA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -11404,13 +12207,26 @@
        "citazione": "Altresì, si suggerisce la lettura di R. V. Merletti, B. Tognolini, Leggimi forte. Accompagnare i bambini nel grande universo della lettura, Salani editore, Milano, 2006."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-20",
+       "ora": "14:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-17",
+       "docenti": "TOMASCO CLELIA D'ALESSIO MICHELINA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-l-19-scienze-dell-educazione-e-della-formazione-dsu0133",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DSU0135",
@@ -11527,13 +12343,26 @@
        "citazione": "Per i non frequentanti: S. Sola, M. Terrusi , (a cura di), La differenza non è una sottrazione. Libri per ragazzi e disabilità, Roma, Lapis, 2009"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-26",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-19",
+       "docenti": "D'ALESSIO MICHELINA TOMASCO CLELIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-l-19-scienze-dell-educazione-e-della-formazione-dsu0128",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DSU0129",
@@ -11688,6 +12517,18 @@
        "docenti": "MARTIRANO MAURIZIO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "13:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-19",
+       "docenti": "MARTIRANO MAURIZIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -12215,6 +13056,18 @@
        "docenti": "FRAMMARTINO CARMELINA SUMMA DONATO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-26",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-07-21",
+       "iscrizioni_al": "2026-10-21",
+       "docenti": "FRAMMARTINO CARMELINA SUMMA DONATO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -12612,6 +13465,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-29",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "RENNA PAOLO PIERRI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-06",
        "ora": "11:00",
        "luogo": null,
@@ -12633,6 +13498,18 @@
        "docenti": "RENNA PAOLO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "RENNA PAOLO PIERRI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -12705,12 +13582,25 @@
        "citazione": "A. Albano. Costruire sistemi per basi di dati - Seconda Edizione, 2014"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "SARTIANI CARLO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-31-scienze-e-tecnologie-informatiche-smf0062",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "orale"
     },
     {
@@ -12949,13 +13839,26 @@
        "citazione": "Santesso, E., 1997, Valutazione di Bilancio, Giappichelli, Torino.Thuesen G. J., Fabricky W.J., 1994, Economia per Ingegneri, Ediz. Il Mulino"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-01",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "CARLUCCI DANIELA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-l-31-scienze-e-tecnologie-informatiche-ing0222",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ING0274",
@@ -13400,6 +14303,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-29",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "RENNA PAOLO PIERRI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-06",
        "ora": "11:00",
        "luogo": null,
@@ -13421,6 +14336,18 @@
        "docenti": "RENNA PAOLO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "RENNA PAOLO PIERRI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -13494,13 +14421,26 @@
        "citazione": "D. Piccolo. Statistica per le decisioni, il Mulino, Bologna, Terza edizione"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "IULIANO ANTONELLA LEONESSA VITA ROSCIANO MONICA VERGALLO PIERANDREA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-l-31-scienze-e-tecnologie-informatiche-ecn0013",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ING0364",
@@ -13734,12 +14674,25 @@
        "citazione": "F.T. Ulaby, Fondamenti di campi elettromagnetici, McGraw-Hill"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "FIUMARA VINCENZO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-31-scienze-e-tecnologie-informatiche-smf0070",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "orale"
     },
     {
@@ -13783,12 +14736,25 @@
        "citazione": "Millman/Grabel/Terrani, Elettronica di Millman, McGraw-Hill"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-04",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "IULA ANTONIO FIDANZA DONATO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-31-scienze-e-tecnologie-informatiche-smf0072",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "orale"
     },
     {
@@ -14187,12 +15153,25 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2027/3638/2025/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": "COPERTINO DOMENICO ALLIEGRO ENZO VINICIO D'ALOISIO FULVIA DELL'AGLIO MONICA DE NARDIS FABIO DE ROSA ROSANNA D'ORSI LORENZO FIGLIUOLO GIOVANNI IMBRIANI EUGENIO LA FORESTA DANIELA MARANO FRANCESCO MININNI MARIAVALERIA MIRIZZI FERDINANDO FELICE NUZZO VITALE RUSSO ROSANNA RUSSO SAVERIO SCHIATTARELLA MARCELLO SCIONTI FRANCESCA SICILIANO SARAH SIMONETTI LUCIA STANZIONE LUIGI TOOMASPOEG KRISTJAN VARRASO ISABELLA MARIA ROSARIA NATALINA ZITO EUGENIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-21-l-25-scienze-e-tecnologie-per-il-verde-urbano-il-paesaggio-e-le-f-let0170",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "AFE0070",
@@ -15618,12 +16597,49 @@
        "citazione": "D. Bigi e A. Zanon - Atlante delle razze autoctone. Edizioni Agricole de Il sole 24 ORE Edagricole srl., Bologna."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-22",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-21",
+       "docenti": "BRAGHIERI ADA LELARIO FILOMENA PACELLI CORRADO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-10",
+       "docenti": "BRAGHIERI ADA LELARIO FILOMENA PACELLI CORRADO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-16",
+       "iscrizioni_al": "2026-11-30",
+       "docenti": "BRAGHIERI ADA LELARIO FILOMENA PACELLI CORRADO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-21-l-25-scienze-e-tecnologie-per-il-verde-urbano-il-paesaggio-e-le-f-dcm0211",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/13167/2015/1?coorte=2024"
     },
     {
@@ -16213,6 +17229,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "09:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2026-12-09",
+       "docenti": "CANDIDO VINCENZO NUZZACI MARIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-11",
        "ora": "09:15",
        "luogo": null,
@@ -16505,6 +17533,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-01-30",
+       "iscrizioni_al": "2026-09-24",
+       "docenti": "GRIMALDI PATRIZIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-10-15",
@@ -16850,12 +17890,25 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2027/13695/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-09",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-08",
+       "docenti": "NOLE' GABRIELE GRIMALDI SALVATORE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-34-scienze-geologiche-ambientali-dis0148",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2025/13695/2022/9999?coorte=2024"
     },
     {
@@ -16946,12 +17999,37 @@
        "citazione": "M.R. Middleton, Analisi statistica con Excel, Apogeo."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-30",
+       "iscrizioni_al": "2026-10-11",
+       "docenti": "MALASPINA ANGELICA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2026-12-08",
+       "docenti": "MALASPINA ANGELICA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-34-scienze-geologiche-ambientali-dis0261",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DIS0204",
@@ -16980,12 +18058,25 @@
        "citazione": "Cain ML, Bowman DB, Hacker SD - Ecologia. Piccin"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-27",
+       "docenti": "ROSATI LEONARDO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-34-scienze-geologiche-ambientali-dis0204",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2025/14051/2022/9999?coorte=2024"
     },
     {
@@ -17016,6 +18107,18 @@
        "docenti": "KORAL CAN",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-02",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "KORAL CAN",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -17405,6 +18508,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-26",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2026-10-21",
+       "docenti": "MEDICI LUCA BELVISO CLAUDIA CAVALCANTE FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-03",
        "ora": "10:00",
        "luogo": null,
@@ -17656,6 +18771,18 @@
        "docenti": "PROSSER GIACOMO GIANNANDREA PAOLO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-07-26",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": "PROSSER GIACOMO GIANNANDREA PAOLO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -18510,12 +19637,37 @@
        "citazione": "JUDD, CAMPBELL, KELLOGG, STEVENS, 2019 - “BOTANICA SISTEMATICA un approccio filogenetico” Ed. Piccin"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "ROSATI LEONARDO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-25",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-31",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "ROSATI LEONARDO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-25-l-26-sistemi-agroalimentari-sostenibili-agr0016",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2024/8903/2011/2?coorte=2024"
     },
     {
@@ -18617,12 +19769,49 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2028/8922/2026/1?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-22",
+       "docenti": "ROMANO SEVERINO COPPOLA ADELE COZZI MARIO VENTURA GENNARO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-26",
+       "docenti": "ROMANO SEVERINO COPPOLA ADELE VENTURA GENNARO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": "ROMANO SEVERINO COPPOLA ADELE VENTURA GENNARO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-25-l-26-sistemi-agroalimentari-sostenibili-agr0139",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/8922/2011/2?coorte=2024"
     },
     {
@@ -18690,6 +19879,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "09:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-04",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "LOGOZZO GIUSEPPINA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-06",
@@ -18847,6 +20048,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-04",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "DI RENZO GIOVANNI CARLO ALTIERI GIUSEPPE GENOVESE FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-14",
        "ora": "11:30",
        "luogo": null,
@@ -18856,6 +20069,18 @@
        "docenti": "DI RENZO GIOVANNI CARLO ALTIERI GIUSEPPE",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "17:45",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "DI RENZO GIOVANNI CARLO ALTIERI GIUSEPPE GENOVESE FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -19187,13 +20412,26 @@
        "citazione": "G. Chiarini-F. Mosetti Casaretto (a c. di), Introduzione al teatro latino, Milano 2004 (in alternativa E. Adriani, Storia del teatro antico, Roma 2017, la sola parte dedicata al teatro latino)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": "ESPOSITO ELENA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-l-10-studi-umanistici-dsu0147",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "LET0041",
@@ -19629,6 +20867,18 @@
        "docenti": "TAGLIALATELA ANTONIO BRUNO GIULIANA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-29",
+       "iscrizioni_al": "2026-10-23",
+       "docenti": "TAGLIALATELA ANTONIO BRUNO GIULIANA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -19885,13 +21135,26 @@
        "citazione": "R. Bodei, Destini personali. L'età della colonizzazione delle coscienze, Feltrinelli, Milano 2002."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-10-27",
+       "docenti": "RONI RICCARDO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-l-10-studi-umanistici-let0002",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "LET0061",
@@ -19958,13 +21221,26 @@
        "citazione": "Manuali di riferimento per la parte paleografica: G. Cavallo, La scrittura greca e latina dei papiri. Una introduzione, Pisa 2008; La scrittura greca dall’antichità all’epoca della stampa. Una introduzione, a c. di E. Crisci e P. Degni, Roma 2011; L. Perria, Graphis. Per una storia della scrittura greca libraria (secc. IV a.C.-XVI d.C.), Roma 2011"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": "ESPOSITO ELENA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-l-10-studi-umanistici-let0240",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "LET0076",
@@ -20105,6 +21381,18 @@
        "docenti": "PISANI CARLA MEMOLI GIOVANNA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-28",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "PISANI CARLA MEMOLI GIOVANNA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -20278,13 +21566,26 @@
      ],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/3626/2025/3?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": "CARBONE DOMINGA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibas-l-10-studi-umanistici-let0059",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "LET0057",
@@ -20999,6 +22300,18 @@
        "docenti": "MARTIRANO MAURIZIO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-19",
+       "docenti": "MARTIRANO MAURIZIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -21553,12 +22866,25 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2028/4292/2026/2?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": "BANDINI MICHELE CORCELLA ALDO RUSSO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-10-studi-umanistici-let0031",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/4292/2022/2?coorte=2024"
     },
     {
@@ -21758,6 +23084,18 @@
        "docenti": "PISANI CARLA MEMOLI GIOVANNA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-28",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "PISANI CARLA MEMOLI GIOVANNA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -21784,6 +23122,18 @@
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2028/3889/2026/5?coorte=2024",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "ELLERO MARIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-06",
@@ -21818,13 +23168,26 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2028/11956/2026/5?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-17",
+       "docenti": "PAVONI MARTINA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibas-l-10-studi-umanistici-dsu0058",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "LET0229",
@@ -22011,6 +23374,18 @@
        "docenti": "CASSINO CARMINE FASANELLA MICHELE VERRASTRO DONATO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-16",
+       "iscrizioni_al": "2026-10-24",
+       "docenti": "CASSINO CARMINE FASANELLA MICHELE VERRASTRO DONATO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -22251,6 +23626,18 @@
        "docenti": "MARTIRANO MAURIZIO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "13:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-19",
+       "docenti": "MARTIRANO MAURIZIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -22287,12 +23674,25 @@
        "citazione": "Come manuale si consiglia C. Moreschini, E. Norelli, Manuale di letteratura cristiana antica, Brescia, Morcelliana, 1999 (e successive ristampe). Vari materiali saranno messi a disposizione degli studenti su Google Classroom."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-11",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": "BANDINI MICHELE CORCELLA ALDO RUSSO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-10-studi-umanistici-let0065",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/12109/2022/2?coorte=2024"
     },
     {
@@ -22466,12 +23866,25 @@
        "citazione": "L. Del Corso, Il libro nel mondo antico. Archeologia e storia (secoli VII a.C.- IV d.C.), Roma 2022."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": "ESPOSITO ELENA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-10-studi-umanistici-let0174",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/11588/2022/2?coorte=2024"
     },
     {
@@ -22503,6 +23916,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-31",
+       "iscrizioni_al": "2026-10-09",
+       "docenti": "CUOZZO MARIADELAIDE TRIPPETTA TIZIANA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-20",
        "ora": "10:30",
        "luogo": null,
@@ -22512,6 +23937,18 @@
        "docenti": "CUOZZO MARIADELAIDE",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-31",
+       "iscrizioni_al": "2026-10-24",
+       "docenti": "CUOZZO MARIADELAIDE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -22637,6 +24074,18 @@
        "docenti": "DI MURO ALESSANDRO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-23",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "DI MURO ALESSANDRO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -23088,6 +24537,18 @@
        "docenti": "SCOGNAMIGLIO PASQUALINA LIANA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-26",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-02",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "SCOGNAMIGLIO PASQUALINA LIANA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -23123,12 +24584,25 @@
        "citazione": "AA.VV., 2003. Biochimica agraria, Scarponi L. Coord., Pàtron Editore, Bologna. Sequi P., Ciavatta C., Miano T. Fondamenti di Chimica del Suolo. Pàtron Editore AA.VV., 2005. Fondamenti di Chimica del Suolo, Sequi P. coord., Pàtron Editore, Bologna.Mengel K. e Kirkby E.A., 2001. Principles of Plant Nutrition. 5th Edition. Pp. 849. Kluwer Academic Publishers."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-19",
+       "docenti": "SCOPA ANTONIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-25-tecnologie-agrarie-agr0303",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2025/13982/2011/2?coorte=2024"
     },
     {
@@ -23591,12 +25065,37 @@
        "citazione": "JUDD, CAMPBELL, KELLOGG, STEVENS, 2019 - “BOTANICA SISTEMATICA un approccio filogenetico” Ed. Piccin"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "ROSATI LEONARDO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-25",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-31",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "ROSATI LEONARDO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-25-tecnologie-agrarie-agr0016",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "AGR0139",
@@ -23612,12 +25111,49 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2028/8922/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-22",
+       "docenti": "ROMANO SEVERINO COPPOLA ADELE COZZI MARIO VENTURA GENNARO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-26",
+       "docenti": "ROMANO SEVERINO COPPOLA ADELE VENTURA GENNARO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": "ROMANO SEVERINO COPPOLA ADELE VENTURA GENNARO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-25-tecnologie-agrarie-agr0139",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/8922/2011/2?coorte=2024"
     },
     {
@@ -23742,12 +25278,37 @@
        "citazione": "Quaderni di topografia vol. 1. Geodesia, cartografia, trattamento delle misure. Autore Ambrogio Maria Manzino. Editore Levrotto & Bella. Anno: 2017"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-02",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": "FATTORE CARMEN ROSA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2026-12-13",
+       "docenti": "FATTORE CARMEN ROSA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-l-25-tecnologie-agrarie-agr0024",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/2612/2011/2?coorte=2024"
     },
     {
@@ -23938,12 +25499,25 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2028/14763/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-02",
+       "iscrizioni_al": "2026-11-14",
+       "docenti": "RICCIARDI ANNAMARIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-l-26-tecnologie-alimentari-fac0007",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "AGR0318",
@@ -24058,6 +25632,18 @@
        "docenti": "SCOGNAMIGLIO PASQUALINA LIANA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-26",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-02",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "SCOGNAMIGLIO PASQUALINA LIANA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -24301,6 +25887,18 @@
        "docenti": "ALTIERI GIUSEPPE DE LUCA VINCENZO PICUNO PIETRO STATUTO DINA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-07-30",
+       "iscrizioni_al": "2026-10-28",
+       "docenti": "ALTIERI GIUSEPPE DE LUCA VINCENZO PICUNO PIETRO STATUTO DINA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -24629,6 +26227,18 @@
        "docenti": "DE NISCO MAURO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-04",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "DE NISCO MAURO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -24739,6 +26349,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-07-27",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "VISTA DARIO CONDELLI NICOLA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-12",
        "ora": "15:00",
        "luogo": null,
@@ -24799,6 +26421,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "09:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-04",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "LOGOZZO GIUSEPPINA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-06",
@@ -25112,6 +26746,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-04",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "DI RENZO GIOVANNI CARLO ALTIERI GIUSEPPE GENOVESE FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-14",
        "ora": "11:30",
        "luogo": null,
@@ -25121,6 +26767,18 @@
        "docenti": "DI RENZO GIOVANNI CARLO ALTIERI GIUSEPPE",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "17:45",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "DI RENZO GIOVANNI CARLO ALTIERI GIUSEPPE GENOVESE FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -26408,6 +28066,18 @@
        "docenti": "CUOZZO MARIADELAIDE",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-31",
+       "iscrizioni_al": "2026-10-09",
+       "docenti": "CUOZZO MARIADELAIDE TRIPPETTA TIZIANA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -26697,13 +28367,26 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/3638/2025/1?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": "COPERTINO DOMENICO ALLIEGRO ENZO VINICIO D'ALOISIO FULVIA DELL'AGLIO MONICA DE NARDIS FABIO DE ROSA ROSANNA D'ORSI LORENZO FIGLIUOLO GIOVANNI IMBRIANI EUGENIO LA FORESTA DANIELA MARANO FRANCESCO MININNI MARIAVALERIA MIRIZZI FERDINANDO FELICE NUZZO VITALE RUSSO ROSANNA RUSSO SAVERIO SCHIATTARELLA MARCELLO SCIONTI FRANCESCA SICILIANO SARAH SIMONETTI LUCIA STANZIONE LUIGI TOOMASPOEG KRISTJAN VARRASO ISABELLA MARIA ROSARIA NATALINA ZITO EUGENIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibas-lm-2-lm-89-archeologia-e-storia-dell-arte-let0170",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DCM0247",
@@ -26744,6 +28427,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-29",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "RENNA PAOLO PIERRI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-06",
        "ora": "11:00",
        "luogo": null,
@@ -26765,6 +28460,18 @@
        "docenti": "RENNA PAOLO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "RENNA PAOLO PIERRI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -26837,13 +28544,38 @@
        "citazione": "Klaus Bringmann, Storia romana, Dalle origini alla tarda antichità, (Traduzione di Alessandro Cristofori), 2017 Editore: il Mulino, Universale Paperbacks"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "MARTORELLA FRANCESCO ROUBIS DIMITRIS",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-09",
+       "iscrizioni_al": "2026-11-18",
+       "docenti": "MARTORELLA FRANCESCO ROUBIS DIMITRIS",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-2-lm-89-archeologia-e-storia-dell-arte-dcm0476",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DCM0500",
@@ -27283,13 +29015,26 @@
        "citazione": "C. Mango, The Art of the Byzantine Empire 312-1453. Sources and documents, Englewood Cliffs, N.J. 1972"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": "BANDINI MICHELE CORCELLA ALDO RUSSO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-2-lm-89-archeologia-e-storia-dell-arte-let0176",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DCM0160",
@@ -27514,6 +29259,18 @@
        "docenti": "SPORTELLI FRANCESCO DE FALCO FABRIZIO DELL'AGLIO MONICA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "SPORTELLI FRANCESCO DELL'AGLIO MONICA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -28174,13 +29931,38 @@
      ],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/14183/2025/1?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "MARTORELLA FRANCESCO ROUBIS DIMITRIS",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-09",
+       "iscrizioni_al": "2026-11-18",
+       "docenti": "MARTORELLA FRANCESCO ROUBIS DIMITRIS",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibas-lm-2-lm-89-archeologia-e-storia-dell-arte-dcm0550",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DCM0553",
@@ -28604,6 +30386,18 @@
        "docenti": "BRANCALEONE VINCENZO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-25",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "BRANCALEONE VINCENZO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -29082,6 +30876,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-10-29",
+       "docenti": "MARTELLI GIUSEPPE BIAGIO GIOVANNI SCIEUZO CARMEN",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-27",
        "ora": "11:00",
        "luogo": null,
@@ -29228,13 +31034,26 @@
        "citazione": "Perlingieri-Mezzasoma-Angelone, Manuale di diritto dei consumi, ESI, 2024."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "DALIA CRISTINA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-56-economia-e-management-mie0087",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "MIE0082",
@@ -29388,13 +31207,26 @@
        "citazione": "AAVV, Il bilancio secondo i principi contabili internazionali IAS/IFRS: Regole e applicazioni. Introduzione di Lucio Potito. Giappichelli, Torino. Ultima edizione, oltre a materiale didattio online"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": "DI CARLO FERDINANDO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-56-economia-e-management-mie0079",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "MIE0078",
@@ -29560,13 +31392,26 @@
        "citazione": "Rasmussen, E., & Wright, M. (2015). How can universities facilitate academic spin-offs? An entrepreneurial competency perspective. The Journal of Technology Transfer, 40(5), 782-799."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": "RIVETTI FRANCESCA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-56-economia-e-management-mie0080",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "MIE0083",
@@ -29597,13 +31442,26 @@
        "citazione": "Bhattacharyya S.C. “Energy Economics: Concepts, Issues, Markets and Governance”, UK: Springer-Verlag London Ltd, 2nd ed. 2019. Solo capitoli: 2, 3; 6-11; 12-17"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "FUSACCHIA ILARIA ERCOLANO SALVATORE PETRAGLIA CARMELO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-56-economia-e-management-mie0083",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "MIE0084",
@@ -29909,12 +31767,25 @@
        "citazione": "Zani S. & Cerioli A. (2007) Analisi dei dati e datamining per le decisioni aziendali. Giuffrè Editore."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "ROSCIANO MONICA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-56-economia-e-management-mie0077",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "IUS0058",
@@ -30017,12 +31888,25 @@
        "citazione": "Di Tommaso M., Rubini L., Barbieri E., Tassinari M. “Economia e politica industriale. Organizzazione della produzione, innovazione e politiche di interesse pubblico”, 2021, Mulino"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "FUSACCHIA ILARIA ERCOLANO SALVATORE PETRAGLIA CARMELO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-56-economia-e-management-mie0075",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "MIE0073",
@@ -30065,12 +31949,25 @@
        "citazione": "Hogreve, J., Bilstein, N., & Hoerner, K. (2019). Service recovery on stage: effects of social media recovery on virtually present others. Journal of Service Research, 22(4), 421-439. N.B. = tale articolo costituisce parte integrante del programma."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": "RIVETTI FRANCESCA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-56-economia-e-management-mie0073",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "curricula": [
@@ -30232,6 +32129,18 @@
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/11931/2025/2?coorte=2025",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "ELLERO MARIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-18",
@@ -30656,13 +32565,26 @@
        "citazione": "L. Canfora, Tucidide: la menzogna, la colpa, l'esilio, Roma-Bari, Laterza, 2016"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": "BANDINI MICHELE CORCELLA ALDO RUSSO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-14-lm-15-filologia-classica-e-moderna-let0105",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DSU0092",
@@ -30691,13 +32613,26 @@
        "citazione": "PAVONI, M., I Carmina Ratisponensia. Una raccolta di scambi poetici fra un maestro e le sue allieve agli albori del XII secolo, Firenze, SISMEL - Edizioni del Galluzzo (“Per verba”)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-17",
+       "docenti": "PAVONI MARTINA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-14-lm-15-filologia-classica-e-moderna-dsu0092",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "LET0094",
@@ -30862,13 +32797,26 @@
      ],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/11604/2025/2?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "ELLERO MARIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibas-lm-14-lm-15-filologia-classica-e-moderna-let0246",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DSU0077",
@@ -30973,13 +32921,26 @@
        "citazione": "Niccolò Machiavelli, Discorsi sopra la prima Deca di Tito Livio, a cura di Giorgio Inglese, Milano, Rizzoli, 2018."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": "BANDINI MICHELE CORCELLA ALDO RUSSO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-14-lm-15-filologia-classica-e-moderna-dsu0095",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DSU0084",
@@ -31521,13 +33482,26 @@
        "citazione": "L. Del Corso, Il libro nel mondo antico. Archeologia e storia (secoli VII a.C.- IV d.C.), Roma 2022."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": "ESPOSITO ELENA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-14-lm-15-filologia-classica-e-moderna-dsu0098",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DSU0091",
@@ -31910,6 +33884,18 @@
        "docenti": "PISANI CARLA MEMOLI GIOVANNA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-28",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "PISANI CARLA MEMOLI GIOVANNA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -32487,13 +34473,26 @@
      ],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/13671/2025/1?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": "ESPOSITO ELENA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibas-lm-14-lm-15-filologia-classica-e-moderna-dsu0114",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "LET0026",
@@ -32724,6 +34723,18 @@
        "docenti": "SDAO FRANCESCO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-30",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "SDAO FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -33200,12 +35211,25 @@
        "citazione": "The mechanics of earthquakes and faulting, iii edition, Scholz, Cambridge, 2019"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-04",
+       "docenti": "AGOSTA FABRIZIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-74-geologia-ambiente-e-rischi-dis0184",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DIS0187",
@@ -34031,6 +36055,18 @@
        "docenti": "VONA MARCO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-01-28",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "VONA MARCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -34115,6 +36151,18 @@
        "docenti": "VONA MARCO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-01-28",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "VONA MARCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -35550,12 +37598,25 @@
      ],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/2190/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-23",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "DE LUCA PICIONE MAURO MANGANELLI BENEDETTO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-lm-23-ingegneria-civile-ing0255",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ING0241",
@@ -35701,12 +37762,25 @@
        "citazione": "Manganelli B. 2014, “ Real Estate Investing”, Springer"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-24",
+       "iscrizioni_al": "2026-09-29",
+       "docenti": "MANGANELLI BENEDETTO DE LUCA PICIONE MAURO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-23-ingegneria-civile-ing0189",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2025/2533/2010/4?coorte=2024"
     }
    ],
@@ -35844,12 +37918,61 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2027/14704/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-02-23",
+       "iscrizioni_al": "2026-10-20",
+       "docenti": "FRESA RAFFAELE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-02-23",
+       "iscrizioni_al": "2026-12-15",
+       "docenti": "FRESA RAFFAELE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-16",
+       "iscrizioni_al": "2027-01-19",
+       "docenti": "FRESA RAFFAELE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-16",
+       "iscrizioni_al": "2027-02-23",
+       "docenti": "FRESA RAFFAELE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-lm-32-ingegneria-informatica-e-delle-tecnologie-dell-informazione-ing0476",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "MIE0090",
@@ -37225,6 +39348,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-09",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-26",
+       "iscrizioni_al": "2026-10-08",
+       "docenti": "MAGI VINICIO VIGGIANO ANNARITA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-28",
        "ora": "15:00",
        "luogo": null,
@@ -37320,6 +39455,30 @@
        "docenti": "GENOVESE KATIA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-07-22",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "GENOVESE KATIA NIGRO MICHELANGELO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "GENOVESE KATIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -37415,6 +39574,30 @@
        "docenti": "VIGGIANO ANNARITA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-11",
+       "docenti": "VIGGIANO ANNARITA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-10-25",
+       "docenti": "VIGGIANO ANNARITA MAGI VINICIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -37756,6 +39939,18 @@
        "docenti": "BONFIGLIOLI ALDO VIGGIANO ANNARITA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": "BONFIGLIOLI ALDO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -37997,12 +40192,25 @@
        "citazione": "Argomenti specifici possono essere approfonditi sui seguenti testi: Manganelli B. 2011, “Il deprezzamento degli immobili urbani”, Franco Angeli, Milano. De Mare G., Morano P. 2002, “La stima del costo delle opere pubbliche”, Utet, Torino.Manganelli B., Pacifico A. 2004, “Struttura e normativa dei catasti terreni e fabbricati” CUES, Salerno. Manganelli B. 2015, “Real Estate Investing”, Springer."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-24",
+       "iscrizioni_al": "2026-09-29",
+       "docenti": "MANGANELLI BENEDETTO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-35-ingegneria-per-l-ambiente-e-il-territorio-ing0156",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2024/1881/2010/9999?coorte=2024"
     },
     {
@@ -38160,12 +40368,25 @@
      ],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/1872/2026/1?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "MARROCCOLI MILENA TELESCA ANTONIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-lm-35-ingegneria-per-l-ambiente-e-il-territorio-ing0074",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ING0168",
@@ -39563,12 +41784,25 @@
        "citazione": "A. Albano. Costruire sistemi per basi di dati - Seconda Edizione, 2014"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "SARTIANI CARLO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-40-matematica-mie0104",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "MIE0105",
@@ -40881,6 +43115,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "SCHIATTARELLA MARCELLO CAPPIELLO LUCIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-10-27",
@@ -42346,6 +44592,30 @@
        "docenti": "COPERTINO DOMENICO BERNARDI VALERIO FERRACUTI SANDRA MARANO FRANCESCO MIRIZZI FERDINANDO FELICE",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "COPERTINO DOMENICO BERNARDI VALERIO FERRACUTI SANDRA MARANO FRANCESCO MIRIZZI FERDINANDO FELICE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": "COPERTINO DOMENICO BERNARDI VALERIO FERRACUTI SANDRA MARANO FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -43398,6 +45668,30 @@
        "docenti": "COPERTINO DOMENICO BERARDI MARINA FERRACUTI SANDRA MARANO FRANCESCO MIRIZZI FERDINANDO FELICE",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "COPERTINO DOMENICO BERARDI MARINA FERRACUTI SANDRA MARANO FRANCESCO MIRIZZI FERDINANDO FELICE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": "COPERTINO DOMENICO BERARDI MARINA CORETTI CIRIACA FERRACUTI SANDRA MARANO FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -44043,6 +46337,18 @@
        "docenti": "VINCIGUERRA GIOVANNI",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "VINCIGUERRA GIOVANNI",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -44749,13 +47055,26 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/13160/2025/9999?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "IULIANO ANTONELLA LEONESSA VITA ROSCIANO MONICA VERGALLO PIERANDREA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibas-lm-1-lm-80-scienze-antropologiche-e-geografiche-per-i-patrimoni-cultura-mie0062",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DCM0311",
@@ -45433,6 +47752,18 @@
        "docenti": "SUPERCHI STEFANO CHIUMMIENTO LUCIA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-30",
+       "iscrizioni_al": "2026-10-21",
+       "docenti": "SUPERCHI STEFANO CHIUMMIENTO LUCIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -45616,12 +47947,25 @@
        "citazione": "Parte 2:K. Drauz, H. Waldmann Enzyme Catalysis in Organic Synthesis, 2002, ed. Wiley;S. Bommarius, B. R. Riebel Biocatalysis, 2004, ed Wiley"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-07",
+       "iscrizioni_al": "2026-09-28",
+       "docenti": "SUPERCHI STEFANO CHIUMMIENTO LUCIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-54-scienze-chimiche-smf0338",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DIS0002",
@@ -46291,6 +48635,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-14",
+       "iscrizioni_al": "2026-10-23",
+       "docenti": "MARZARIO STEFANIA LOGOZZO GIUSEPPINA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-11",
        "ora": "11:00",
        "luogo": null,
@@ -46300,6 +48656,18 @@
        "docenti": "MARZARIO STEFANIA GIOIA TANIA LOGOZZO GIUSEPPINA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-28",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": "MARZARIO STEFANIA LOGOZZO GIUSEPPINA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -46361,12 +48729,49 @@
        "citazione": "Goyal Megh R. 2016. Performance Evaluation of Micro Irrigation Management: Principles and Practices. CRC-Press."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-20",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-19",
+       "docenti": "LOVELLI STELLA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-24",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "LOVELLI STELLA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-12-15",
+       "docenti": "LOVELLI STELLA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-69-scienze-e-tecnologie-agrarie-fam0505",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "AGR0097",
@@ -46456,12 +48861,25 @@
        "citazione": "AA.VV. Arboricoltura Speciale - Edagricole, ISBN 978-88-506-5616-5 New Business Media"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-17",
+       "iscrizioni_al": "2026-10-20",
+       "docenti": "MONTANARO GIUSEPPE NUZZO VITALE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-69-scienze-e-tecnologie-agrarie-agr0100",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/8968/2025/2?coorte=2025"
     },
     {
@@ -46779,6 +49197,18 @@
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2027/9023/2026/9999?coorte=2024",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "COSENTINO CARLO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-10-29",
@@ -47607,6 +50037,18 @@
        "docenti": "DE NISCO MAURO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-04",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "DE NISCO MAURO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -48976,12 +51418,49 @@
        "citazione": "Baldoni R., Giardini L. Coltivazioni erbacee. patron Editore"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "LOVELLI STELLA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-24",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-11-23",
+       "docenti": "LOVELLI STELLA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-12-15",
+       "docenti": "LOVELLI STELLA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-73-scienze-forestali-e-ambientali-agr0253",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/13415/2020/9999?coorte=2024"
     },
     {
@@ -49121,12 +51600,49 @@
        "citazione": "Mario Polelli, Nuovo trattato di estimo, Maggioli Ed."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-22",
+       "docenti": "ROMANO SEVERINO COZZI MARIO VENTURA GENNARO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-27",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-26",
+       "docenti": "ROMANO SEVERINO COZZI MARIO VENTURA GENNARO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": "ROMANO SEVERINO COZZI MARIO VENTURA GENNARO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-73-scienze-forestali-e-ambientali-agr0288",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "AGR0265",
@@ -49527,6 +52043,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-16",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "NOLE' ANGELO RIPULLONE FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-20",
        "ora": "09:30",
        "luogo": null,
@@ -49595,12 +52123,37 @@
        "citazione": "Quaderni di topografia vol. 1. Geodesia, cartografia, trattamento delle misure. Autore Ambrogio Maria Manzino. Editore Levrotto & Bella. Anno: 2017"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-02",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": "FATTORE CARMEN ROSA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2026-12-13",
+       "docenti": "FATTORE CARMEN ROSA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-73-scienze-forestali-e-ambientali-agr0214",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/9450/2020/9999?coorte=2024"
     },
     {
@@ -49868,12 +52421,25 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2027/5152/2025/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-20",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-19",
+       "docenti": "RIPULLONE FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-lm-73-scienze-forestali-e-ambientali-agr0081",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/5152/2020/9999?coorte=2024"
     },
     {
@@ -50076,12 +52642,25 @@
        "citazione": "Murachelli A, Riboni V.: Rischio idraulico e difesa del territorio. Editore Flaccovio"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-11",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "COMEGNA ALESSANDRO AWADA HASSAN",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-73-scienze-forestali-e-ambientali-agr0246",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "AGR0230",
@@ -50267,12 +52846,25 @@
        "citazione": "Agnoletti M. (2020) Storia del bosco - Il paesaggio forestale italiano. Economica Laterza, Bari."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "PIERANGELI DOMENICO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-73-scienze-forestali-e-ambientali-agr0129",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/9374/2020/9999?coorte=2024"
     },
     {
@@ -50564,6 +53156,18 @@
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/11931/2025/9999?coorte=2025",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "ELLERO MARIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-18",
@@ -51144,13 +53748,26 @@
        "citazione": "M. Pavoni (a c. di), Petrus de Pretio, Adhortatio: edizione critica e digitale del ms. Leipzig, Universitätsbibliothek 1268, Potenza, BUP – Basilicata University Press, [disponibile online]"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-17",
+       "docenti": "PAVONI MARTINA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-84-storia-e-civilta-europee-dsu0104",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DSU0092",
@@ -51179,13 +53796,26 @@
        "citazione": "PAVONI, M., I Carmina Ratisponensia. Una raccolta di scambi poetici fra un maestro e le sue allieve agli albori del XII secolo, Firenze, SISMEL - Edizioni del Galluzzo (“Per verba”)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-17",
+       "docenti": "PAVONI MARTINA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-84-storia-e-civilta-europee-dsu0092",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DSU0169",
@@ -51264,13 +53894,26 @@
        "citazione": "R. Bodei, Destini personali. L'età della colonizzazione delle coscienze, Feltrinelli, Milano 2002."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-10-27",
+       "docenti": "RONI RICCARDO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-84-storia-e-civilta-europee-dsu0169",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "LET0192",
@@ -51325,13 +53968,26 @@
      ],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/11604/2025/9999?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "ELLERO MARIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibas-lm-84-storia-e-civilta-europee-let0246",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "LET0201",
@@ -51965,6 +54621,18 @@
        "docenti": "PISANI CARLA MEMOLI GIOVANNA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-28",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "PISANI CARLA MEMOLI GIOVANNA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -52472,6 +55140,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2026-10-17",
+       "docenti": "DI MURO ALESSANDRO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-22",
        "ora": "15:00",
        "luogo": null,
@@ -52550,13 +55230,26 @@
        "citazione": "P.Marcellini - C.Sbordone, Analisi Matematica, Liguori"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-19",
+       "docenti": "ANDRISANI EMANUELE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-4-c-u-architettura-ark0004",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "ARK0005",
@@ -52865,13 +55558,110 @@
        "citazione": "B. Secchi. 2000. Prima Lezione di Urbanistica. Editori Laterza."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-26",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "BONIBURINI ILARIA FATTORE CARMEN ROSA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-01-27",
+       "iscrizioni_al": "2027-02-12",
+       "docenti": "BONIBURINI ILARIA FATTORE CARMEN ROSA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-01-26",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "BONIBURINI ILARIA FATTORE CARMEN ROSA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-08",
+       "docenti": "BONIBURINI ILARIA FATTORE CARMEN ROSA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-29",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2027-06-22",
+       "docenti": "BONIBURINI ILARIA FATTORE CARMEN ROSA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-13",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-07-06",
+       "docenti": "BONIBURINI ILARIA FATTORE CARMEN ROSA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-24",
+       "iscrizioni_al": "2027-09-07",
+       "docenti": "BONIBURINI ILARIA FATTORE CARMEN ROSA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-21",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-24",
+       "iscrizioni_al": "2027-09-07",
+       "docenti": "BONIBURINI ILARIA FATTORE CARMEN ROSA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-4-c-u-architettura-dcm0569",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DCM0080",
@@ -53762,6 +56552,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-29",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "RENNA PAOLO PIERRI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-06",
        "ora": "11:00",
        "luogo": null,
@@ -53783,6 +56585,18 @@
        "docenti": "RENNA PAOLO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "RENNA PAOLO PIERRI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -53809,6 +56623,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-29",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "RENNA PAOLO PIERRI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-06",
        "ora": "11:00",
        "luogo": null,
@@ -53830,6 +56656,18 @@
        "docenti": "RENNA PAOLO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "RENNA PAOLO PIERRI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -53902,13 +56740,26 @@
      ],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2027/13730/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "11:45",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "MININNI MARIAVALERIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unibas-lm-4-c-u-architettura-dcm0452",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DCM0030",
@@ -54205,6 +57056,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-15",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "SDAO FRANCESCO PASCALE STEFANIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-20",
        "ora": "12:00",
        "luogo": null,
@@ -54461,6 +57324,18 @@
        "docenti": "RIZZI CHIARA MININNI MARIAVALERIA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "RIZZI CHIARA MININNI MARIAVALERIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -54919,6 +57794,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-24",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-01-31",
+       "iscrizioni_al": "2026-11-18",
+       "docenti": "VASSALLO ANTONIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-25",
        "ora": "10:30",
        "luogo": null,
@@ -55051,6 +57938,18 @@
        "docenti": "INFANTINO VITTORIA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-22",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-04-27",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "INFANTINO VITTORIA CONVERTINI PAOLO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -55278,6 +58177,18 @@
        "docenti": "BAVOSO ALFONSO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-20",
+       "docenti": "BAVOSO ALFONSO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -56532,12 +59443,37 @@
        "citazione": "FISICA APPLICATA ALLE SCIENZE MEDICHE/ Gian Marco Contessa, Giuseppe Augusto Marzo/ Casa Editrice Ambrosiana/2019"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-15",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "KORAL CAN",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-02",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "KORAL CAN",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-13-farmacia-ssa0073",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DIS0215",
@@ -56794,12 +59730,37 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2029/14397/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-12",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "BRANCALEONE VINCENZO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-17",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "BRANCALEONE VINCENZO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-lm-41-medicina-e-chirurgia-ssa0048",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "MED0083",
@@ -56848,6 +59809,18 @@
        "docenti": "ARMENTANO MARIA FRANCESCA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-01-13",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "ARMENTANO MARIA FRANCESCA NIGRO ILARIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -57204,12 +60177,37 @@
        "citazione": "S. Marini et al; Chimica e Propedeutica Biochimica, Piccin."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-01-13",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "ARMENTANO MARIA FRANCESCA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-01-13",
+       "iscrizioni_al": "2026-11-18",
+       "docenti": "ARMENTANO MARIA FRANCESCA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "id": "unibas-lm-41-medicina-e-chirurgia-ssa0003",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "MED0131",
@@ -57738,6 +60736,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-21",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "D'ANGELO SALVATORE FABRIZIO TOMMASO TATARANNI MARISA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-05",
        "ora": "08:00",
        "luogo": null,
@@ -57899,6 +60909,18 @@
        "docenti": "LACERENZA DOMENICO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-20",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-10-08",
+       "docenti": "LACERENZA DOMENICO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -58261,12 +61283,61 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2027/14391/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-10",
+       "iscrizioni_al": "2026-09-28",
+       "docenti": "CARMOSINO MONICA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "CARMOSINO MONICA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "CARMOSINO MONICA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-27",
+       "iscrizioni_al": "2026-12-13",
+       "docenti": "CARMOSINO MONICA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-lm-41-medicina-e-chirurgia-ssa0026",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2026/14391/2025/9999?coorte=2025"
     },
     {
@@ -58335,6 +61406,18 @@
        "docenti": "MELE LUIGI DE LEONIBUS CHIARA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-02",
+       "iscrizioni_al": "2026-10-16",
+       "docenti": "MELE LUIGI DE LEONIBUS CHIARA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -58418,6 +61501,18 @@
        "docenti": "TERRAZZANO GIUSEPPE",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "14:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-10",
+       "iscrizioni_al": "2026-10-21",
+       "docenti": "TERRAZZANO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -58531,6 +61626,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-07-10",
+       "iscrizioni_al": "2026-10-25",
+       "docenti": "TAGLIALATELA ANTONIO BRUNO GIULIANA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-11",
        "ora": "14:00",
        "luogo": null,
@@ -58540,6 +61647,18 @@
        "docenti": "TAGLIALATELA ANTONIO BRUNO GIULIANA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-25",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-11-22",
+       "docenti": "TAGLIALATELA ANTONIO BRUNO GIULIANA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -58620,6 +61739,18 @@
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2030/13989/2026/9999?coorte=2024",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "CANIANI DONATELLA CARLUCCI DANIELA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-03",
@@ -58765,6 +61896,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-21",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "BONOMO MARIA GRAZIA PISANTI SIMONA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-15",
        "ora": "10:30",
        "luogo": null,
@@ -58845,6 +61988,18 @@
        "docenti": "D'ANGELO SALVATORE SPIEZIA FILIPPO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-21",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-16",
+       "docenti": "D'ANGELO SALVATORE SPIEZIA FILIPPO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -59005,12 +62160,25 @@
      "docenti": [],
      "url": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2030/13983/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-06",
+       "docenti": "PACIELLO NICOLA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unibas-lm-41-medicina-e-chirurgia-med0093",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://unibas.coursecatalogue.cineca.it/insegnamenti/2025/13983/2021/9999?coorte=2024"
     }
    ],
@@ -59097,6 +62265,18 @@
        "docenti": "FABIANO ALESSIO BELSITO FRANCESCO ROSARIO DE LUCA CLAUDIO TIANO ANTONELLA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-06",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "FABIANO ALESSIO BELSITO FRANCESCO ROSARIO DE LUCA CLAUDIO TIANO ANTONELLA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -59714,13 +62894,26 @@
        "citazione": "M. D'Alessio, Sulle orme del passato educativo in Italia. Memorie scolastiche del Novecento nei fondi archivistici della Basilicata, in A. Barausse, T. de Freitas Ermel, V. Viola (a cura di), Prospettive incrociate sul patrimonio storico-educativo, Lecce, Pensa Multimedia, 2020, pp. 389-411"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-27",
+       "iscrizioni_al": "2026-11-10",
+       "docenti": "D'ALESSIO MICHELINA TOMASCO CLELIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-85-bis-scienze-della-formazione-primaria-fps0004",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "FPS0019",
@@ -60702,6 +63895,18 @@
        "docenti": "FABIANO ALESSIO BELSITO FRANCESCO ROSARIO DE LUCA CLAUDIO TIANO ANTONELLA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-06",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "FABIANO ALESSIO BELSITO FRANCESCO ROSARIO DE LUCA CLAUDIO TIANO ANTONELLA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -60838,6 +64043,18 @@
        "docenti": "MANIERI GIUSEPPE IACOVONE BRUNA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "10:15",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-24",
+       "iscrizioni_al": "2026-10-09",
+       "docenti": "MANIERI GIUSEPPE IACOVONE BRUNA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -60913,6 +64130,18 @@
        "docenti": "FABIANO ALESSIO BELSITO FRANCESCO ROSARIO DE LUCA CLAUDIO TIANO ANTONELLA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-06",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "FABIANO ALESSIO BELSITO FRANCESCO ROSARIO DE LUCA CLAUDIO TIANO ANTONELLA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -61188,6 +64417,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-01",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "TAGLIALATELA ANTONIO BRUNO GIULIANA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-20",
        "ora": "14:00",
        "luogo": null,
@@ -61383,6 +64624,18 @@
        "docenti": "PANARELLI FRANCESCO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-19",
+       "iscrizioni_al": "2026-10-17",
+       "docenti": "PANARELLI FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -61482,6 +64735,30 @@
        "docenti": "COPERTINO DOMENICO BERARDI MARINA FERRACUTI SANDRA MARANO FRANCESCO MIRIZZI FERDINANDO FELICE",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "COPERTINO DOMENICO BERARDI MARINA FERRACUTI SANDRA MARANO FRANCESCO MIRIZZI FERDINANDO FELICE",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": "COPERTINO DOMENICO BERARDI MARINA CORETTI CIRIACA FERRACUTI SANDRA MARANO FRANCESCO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -61743,6 +65020,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "ELLERO MARIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-11-06",
        "ora": "09:00",
        "luogo": null,
@@ -61815,13 +65104,26 @@
        "citazione": "M. D’Alessio, “La disabilità sensoriale nelle proposte dell’editoria per ragazzi, nel dossier “Le disabilità sensoriali: origini, figure, culture e rappresentazioni nella storia”, curato da Edoardo Bressan, in Studi in «Nuova Secondaria», n. 10/2017, Anno XXXI, pp. 41-43"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-27",
+       "iscrizioni_al": "2026-11-10",
+       "docenti": "D'ALESSIO MICHELINA TOMASCO CLELIA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibas-lm-85-bis-scienze-della-formazione-primaria-dsu0024",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "DSU0031",
@@ -61852,6 +65154,18 @@
        "docenti": "SPADAFORA GIUSEPPE BELSITO FRANCESCO ROSARIO DE LUCA CLAUDIO FABIANO ALESSIO TIANO ANTONELLA",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-08-06",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "SPADAFORA GIUSEPPE BELSITO FRANCESCO ROSARIO DE LUCA CLAUDIO FABIANO ALESSIO TIANO ANTONELLA",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",
@@ -61902,6 +65216,18 @@
        "docenti": "LO CRICCHIO MARIA GRAZIA FABIANO ALESSIO",
        "note": null,
        "fonte": "https://unibas.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-30",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "LO CRICCHIO MARIA GRAZIA FABIANO ALESSIO",
+       "note": null,
+       "fonte": "https://unibas.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://unibas.coursecatalogue.cineca.it",

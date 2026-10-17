@@ -247,6 +247,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-26",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-21",
+       "docenti": "BERNARDO MARIA ESTER",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-10",
        "ora": "09:00",
        "luogo": null,
@@ -853,12 +865,25 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2024/8590/2021/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": null,
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-01",
+       "iscrizioni_al": "2026-09-02",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-l-snt1-corso-di-laurea-in-infermieristica-0090",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "0074",
@@ -1126,12 +1151,25 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2024/6795/2021/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": null,
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-l-snt1-corso-di-laurea-in-infermieristica-0004",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "0003",
@@ -1386,6 +1424,18 @@
      "url": "https://syllabus.unisr.it/insegnamenti/2025/4150/2021/9999?coorte=2024",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-23",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "MORANDA DINA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-19",
@@ -2544,6 +2594,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-05-15",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "ROLANDI STEFANO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-07-27",
        "ora": "09:00",
        "luogo": null,
@@ -2568,6 +2630,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-09-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-09-01",
+       "iscrizioni_al": "2027-09-10",
+       "docenti": "ROLANDI STEFANO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-09-29",
        "ora": "09:00",
        "luogo": null,
@@ -2577,6 +2651,18 @@
        "docenti": "ROLANDI STEFANO",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-10-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-09-15",
+       "iscrizioni_al": "2027-09-26",
+       "docenti": "ROLANDI STEFANO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://syllabus.unisr.it",
@@ -2604,6 +2690,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2027-07-07",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-05-15",
+       "iscrizioni_al": "2027-07-02",
+       "docenti": "FERRARI MIRIAM",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-07-13",
        "ora": "09:00",
        "luogo": null,
@@ -2613,6 +2711,30 @@
        "docenti": "FERRARI MIRIAM",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-21",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-07-07",
+       "iscrizioni_al": "2027-07-16",
+       "docenti": "FERRARI MIRIAM",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-07-21",
+       "iscrizioni_al": "2027-08-27",
+       "docenti": "FERRARI MIRIAM",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -2663,12 +2785,25 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2025/6921/2021/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-07-28",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "GALLI EMANUELE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-l-snt1-corso-di-laurea-in-infermieristica-4154",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "4156",
@@ -3822,13 +3957,26 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2025/6922/2021/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-07-30",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "BAGNATO ELISABETTA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unisr-l-snt1-corso-di-laurea-in-infermieristica-2-4155",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "4157",
@@ -14982,6 +15130,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "CASARI GIORGIO NEVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-07-14",
        "ora": "10:00",
        "luogo": null,
@@ -15109,6 +15269,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-04-05",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-03-06",
+       "iscrizioni_al": "2027-03-31",
+       "docenti": "LOMBARDO ANGELO LEONE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-07-12",
        "ora": "09:30",
        "luogo": null,
@@ -15121,6 +15293,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-07-12",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-12",
+       "iscrizioni_al": "2027-07-07",
+       "docenti": "LOMBARDO ANGELO LEONE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-07-27",
        "ora": "09:30",
        "luogo": null,
@@ -15130,6 +15314,18 @@
        "docenti": "LOMBARDO ANGELO LEONE",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-13",
+       "iscrizioni_al": "2027-09-08",
+       "docenti": "LOMBARDO ANGELO LEONE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -15212,6 +15408,18 @@
        "docenti": "CLEMENTI NICOLA",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-05",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-05",
+       "iscrizioni_al": "2027-06-30",
+       "docenti": "CLEMENTI NICOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -15505,6 +15713,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-09-02",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-03",
+       "iscrizioni_al": "2027-08-28",
+       "docenti": "BOLINO ALESSANDRA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-09-16",
        "ora": "09:00",
        "luogo": null,
@@ -15514,6 +15734,18 @@
        "docenti": "BOLINO ALESSANDRA",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-17",
+       "iscrizioni_al": "2027-09-11",
+       "docenti": "BOLINO ALESSANDRA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://syllabus.unisr.it",
@@ -15709,6 +15941,18 @@
        "docenti": "SCARALE MARIA GIOVANNA",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-08",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-09",
+       "iscrizioni_al": "2027-09-03",
+       "docenti": "SCARALE MARIA GIOVANNA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -16012,6 +16256,18 @@
        "docenti": "SOMENZI DAMIANO MARINO",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-30",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-30",
+       "iscrizioni_al": "2027-09-25",
+       "docenti": "SOMENZI DAMIANO MARINO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://syllabus.unisr.it",
@@ -16073,6 +16329,18 @@
        "docenti": "ZAMBRANO SILVA SAMUEL",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-02",
+       "iscrizioni_al": "2027-06-27",
+       "docenti": "ZAMBRANO SILVA SAMUEL",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -16454,6 +16722,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-27",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "OGLIARI ANNA LUCIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-04",
        "ora": "09:00",
        "luogo": null,
@@ -16463,6 +16743,18 @@
        "docenti": "OGLIARI ANNA LUCIA",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-05",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-05",
+       "iscrizioni_al": "2027-01-31",
+       "docenti": "OGLIARI ANNA LUCIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -21008,12 +21300,85 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/7264/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-02",
+       "iscrizioni_al": "2027-01-28",
+       "docenti": "BROCCOLI VANIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-16",
+       "iscrizioni_al": "2027-02-11",
+       "docenti": "BROCCOLI VANIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-07",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-07",
+       "iscrizioni_al": "2027-07-02",
+       "docenti": "BROCCOLI VANIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-21",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-21",
+       "iscrizioni_al": "2027-07-16",
+       "docenti": "BROCCOLI VANIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-15",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-15",
+       "iscrizioni_al": "2027-09-10",
+       "docenti": "BROCCOLI VANIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-29",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-29",
+       "iscrizioni_al": "2027-09-24",
+       "docenti": "BROCCOLI VANIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-9-biotechnology-for-innovative-therapeutics-3298",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "3239",
@@ -21213,6 +21578,18 @@
        "docenti": "PANINA PAOLA",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-20",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-20",
+       "iscrizioni_al": "2027-07-15",
+       "docenti": "PANINA PAOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -21504,6 +21881,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-07-07",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-07",
+       "iscrizioni_al": "2027-07-02",
+       "docenti": "DI RESTA CHIARA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-07-23",
        "ora": "10:00",
        "luogo": null,
@@ -21513,6 +21902,18 @@
        "docenti": "DI RESTA CHIARA",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-23",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-23",
+       "iscrizioni_al": "2027-07-18",
+       "docenti": "DI RESTA CHIARA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -21528,6 +21929,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-09-08",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-09",
+       "iscrizioni_al": "2027-09-03",
+       "docenti": "DI RESTA CHIARA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-09-22",
        "ora": "10:00",
        "luogo": null,
@@ -21537,6 +21950,18 @@
        "docenti": "DI RESTA CHIARA",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-22",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-23",
+       "iscrizioni_al": "2027-09-17",
+       "docenti": "DI RESTA CHIARA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://syllabus.unisr.it",
@@ -21658,12 +22083,85 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/8406/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-02",
+       "iscrizioni_al": "2027-01-28",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-24",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-07",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-07",
+       "iscrizioni_al": "2027-07-02",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-22",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-22",
+       "iscrizioni_al": "2027-07-17",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-02",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-02",
+       "iscrizioni_al": "2027-08-28",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-23",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-23",
+       "iscrizioni_al": "2027-09-18",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-9-biotechnology-for-innovative-therapeutics-3328",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "3241",
@@ -21971,12 +22469,61 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/8324/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "ARRIGONI FEDERICA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-14",
+       "iscrizioni_al": "2027-07-09",
+       "docenti": "ARRIGONI FEDERICA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-12",
+       "iscrizioni_al": "2027-09-07",
+       "docenti": "ARRIGONI FEDERICA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-23",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-23",
+       "iscrizioni_al": "2027-09-18",
+       "docenti": "ARRIGONI FEDERICA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-9-biotechnology-for-innovative-therapeutics-3313",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "3327",
@@ -22205,6 +22752,30 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-07-09",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-09",
+       "iscrizioni_al": "2027-07-04",
+       "docenti": "BIELLA JACOPO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-23",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-20",
+       "iscrizioni_al": "2027-07-18",
+       "docenti": "BIELLA JACOPO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-07-27",
        "ora": "09:00",
        "luogo": null,
@@ -22217,6 +22788,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-09-03",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-03",
+       "iscrizioni_al": "2027-08-29",
+       "docenti": "BIELLA JACOPO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-09-07",
        "ora": "09:00",
        "luogo": null,
@@ -22226,6 +22809,18 @@
        "docenti": "BORGIANI BRUNO",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-17",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-17",
+       "iscrizioni_al": "2027-09-12",
+       "docenti": "BIELLA JACOPO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -22286,6 +22881,18 @@
        "docenti": "SIMONATO MICHELE",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-26",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-26",
+       "iscrizioni_al": "2027-02-21",
+       "docenti": "SIMONATO MICHELE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -22358,12 +22965,85 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/6187/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-01-26",
+       "docenti": "LORE' NICOLA IVAN",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-15",
+       "iscrizioni_al": "2027-02-10",
+       "docenti": "LORE' NICOLA IVAN",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "LORE' NICOLA IVAN",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-15",
+       "iscrizioni_al": "2027-07-10",
+       "docenti": "LORE' NICOLA IVAN",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-01",
+       "iscrizioni_al": "2027-08-27",
+       "docenti": "LORE' NICOLA IVAN",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-15",
+       "iscrizioni_al": "2027-09-10",
+       "docenti": "LORE' NICOLA IVAN",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-9-biotechnology-for-innovative-therapeutics-3238",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "3242",
@@ -22477,12 +23157,61 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/7739/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "CARDACI SIMONE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-15",
+       "iscrizioni_al": "2027-07-10",
+       "docenti": "CARDACI SIMONE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-01",
+       "iscrizioni_al": "2027-08-27",
+       "docenti": "CARDACI SIMONE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-15",
+       "iscrizioni_al": "2027-09-10",
+       "docenti": "CARDACI SIMONE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-9-biotechnology-for-innovative-therapeutics-3308",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "3323",
@@ -23037,6 +23766,30 @@
      "url": "https://syllabus.unisr.it/insegnamenti/2026/7737/2026/9999?coorte=2024",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-27",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "CASARI GIORGIO NEVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-10",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "CASARI GIORGIO NEVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-07-01",
@@ -36942,12 +37695,61 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/8111/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-03",
+       "iscrizioni_al": "2027-01-28",
+       "docenti": "CAMPANELLA ALESSANDRO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-25",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "CAMPANELLA ALESSANDRO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-22",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-05-23",
+       "iscrizioni_al": "2027-06-17",
+       "docenti": "CAMPANELLA ALESSANDRO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-13",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-13",
+       "iscrizioni_al": "2027-07-08",
+       "docenti": "CAMPANELLA ALESSANDRO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-41-corso-di-laurea-magistrale-in-medicina-e-chirurgia-2-ofa31",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "codici_alternativi": [
       "OFA35"
      ]
@@ -37188,6 +37990,18 @@
      "url": "https://syllabus.unisr.it/insegnamenti/2029/7048/2026/9999?coorte=2024",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-22",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-22",
+       "iscrizioni_al": "2026-12-17",
+       "docenti": "METRA MARCO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-25",
@@ -37742,6 +38556,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-15",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": "GIUSTINA ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-28",
        "ora": "10:00",
        "luogo": null,
@@ -38111,12 +38937,61 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/8110/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-04",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-04-07",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-03-08",
+       "iscrizioni_al": "2027-04-02",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-24",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-05-25",
+       "iscrizioni_al": "2027-06-19",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-14",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-14",
+       "iscrizioni_al": "2027-07-09",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-41-corso-di-laurea-magistrale-in-medicina-e-chirurgia-2-ofa30",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "codici_alternativi": [
       "OFA34"
      ]
@@ -39497,6 +40372,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-06-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-05-28",
+       "iscrizioni_al": "2027-06-23",
+       "docenti": "RONGIOLETTI FRANCO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-07-12",
        "ora": "09:00",
        "luogo": null,
@@ -39982,6 +40869,42 @@
      "url": "https://syllabus.unisr.it/insegnamenti/2030/7061/2026/9999?coorte=2024",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-11-18",
+       "iscrizioni_al": "2026-12-13",
+       "docenti": "ROVERE QUERINI PATRIZIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-11-18",
+       "iscrizioni_al": "2026-12-13",
+       "docenti": "ROVERE QUERINI PATRIZIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-21",
+       "ora": "18:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-11-21",
+       "iscrizioni_al": "2026-12-16",
+       "docenti": "ROVERE QUERINI PATRIZIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-02-01",
@@ -41426,6 +42349,18 @@
        "docenti": "ROCCA MARIA ASSUNTA",
        "note": null,
        "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-16",
+       "iscrizioni_al": "2027-09-11",
+       "docenti": "ROCCA MARIA ASSUNTA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://syllabus.unisr.it",
@@ -52196,12 +53131,73 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2028/4688/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-28",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "ABATI SILVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-07",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-07",
+       "iscrizioni_al": "2027-07-02",
+       "docenti": "ABATI SILVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-21",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-21",
+       "iscrizioni_al": "2027-07-16",
+       "docenti": "ABATI SILVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-02",
+       "iscrizioni_al": "2027-08-27",
+       "docenti": "ABATI SILVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-16",
+       "iscrizioni_al": "2027-09-10",
+       "docenti": "ABATI SILVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30014",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30009",
@@ -52217,12 +53213,109 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2027/4683/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-25",
+       "iscrizioni_al": "2027-01-20",
+       "docenti": "ZANGRILLO ALBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-01-27",
+       "docenti": "ZANGRILLO ALBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-10",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "ZANGRILLO ALBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-30",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-28",
+       "iscrizioni_al": "2027-03-25",
+       "docenti": "ZANGRILLO ALBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-29",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-05-29",
+       "iscrizioni_al": "2027-06-24",
+       "docenti": "ZANGRILLO ALBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-15",
+       "iscrizioni_al": "2027-07-10",
+       "docenti": "ZANGRILLO ALBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-01",
+       "iscrizioni_al": "2027-08-27",
+       "docenti": "ZANGRILLO ALBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-14",
+       "iscrizioni_al": "2027-09-09",
+       "docenti": "ZANGRILLO ALBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30009",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30059",
@@ -52322,12 +53415,61 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2031/6261/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-16",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": "VINCI RAFFAELE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-22",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-22",
+       "iscrizioni_al": "2026-12-17",
+       "docenti": "VINCI RAFFAELE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-13",
+       "iscrizioni_al": "2027-01-07",
+       "docenti": "VINCI RAFFAELE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-20",
+       "iscrizioni_al": "2027-01-14",
+       "docenti": "VINCI RAFFAELE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30081",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30015",
@@ -52343,12 +53485,73 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2028/4689/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-28",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "ABATI SILVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-07",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-07",
+       "iscrizioni_al": "2027-07-02",
+       "docenti": "ABATI SILVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-21",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-21",
+       "iscrizioni_al": "2027-07-16",
+       "docenti": "ABATI SILVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-02",
+       "iscrizioni_al": "2027-08-27",
+       "docenti": "ABATI SILVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-15",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-16",
+       "iscrizioni_al": "2027-09-10",
+       "docenti": "ABATI SILVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30015",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30013",
@@ -52364,12 +53567,85 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2027/4687/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-27",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "FALINI ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-04-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-03-02",
+       "iscrizioni_al": "2027-03-27",
+       "docenti": "FALINI ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-30",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-05-30",
+       "iscrizioni_al": "2027-06-25",
+       "docenti": "FALINI ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-16",
+       "iscrizioni_al": "2027-07-11",
+       "docenti": "FALINI ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-01",
+       "iscrizioni_al": "2027-08-27",
+       "docenti": "FALINI ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-13",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-13",
+       "iscrizioni_al": "2027-09-08",
+       "docenti": "FALINI ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30013",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30089",
@@ -52385,12 +53661,25 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2029/6681/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "GORNI FABIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30089",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30041",
@@ -52406,12 +53695,25 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2029/5259/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-06-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-05-29",
+       "iscrizioni_al": "2027-06-23",
+       "docenti": "RENZO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30041",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "OFA5",
@@ -52448,12 +53750,109 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2027/4680/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-12-26",
+       "iscrizioni_al": "2027-01-21",
+       "docenti": "GROHOVAZ FABIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-01-27",
+       "docenti": "GROHOVAZ FABIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-23",
+       "iscrizioni_al": "2027-02-18",
+       "docenti": "GROHOVAZ FABIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-04-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-03-02",
+       "iscrizioni_al": "2027-03-27",
+       "docenti": "GROHOVAZ FABIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-05-28",
+       "iscrizioni_al": "2027-06-23",
+       "docenti": "GROHOVAZ FABIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-21",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-21",
+       "iscrizioni_al": "2027-07-16",
+       "docenti": "GROHOVAZ FABIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-02",
+       "iscrizioni_al": "2027-08-28",
+       "docenti": "GROHOVAZ FABIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-15",
+       "iscrizioni_al": "2027-09-10",
+       "docenti": "GROHOVAZ FABIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30006",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30054",
@@ -52490,12 +53889,25 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2027/5137/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-06-29",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-05-29",
+       "iscrizioni_al": "2027-06-24",
+       "docenti": "CALLIONI ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30033",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30036",
@@ -52511,12 +53923,25 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2027/5138/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-06-29",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-05-29",
+       "iscrizioni_al": "2027-06-24",
+       "docenti": "REDI LORENZO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30036",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30069",
@@ -52532,12 +53957,25 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2030/5878/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "MALO' DE CARVALHO PAULO SERGIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30069",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30065",
@@ -52595,12 +54033,109 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2029/4694/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-26",
+       "iscrizioni_al": "2027-01-20",
+       "docenti": "TRAVAINI GUIDO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-03",
+       "iscrizioni_al": "2027-01-28",
+       "docenti": "TRAVAINI GUIDO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-25",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "TRAVAINI GUIDO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-30",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-28",
+       "iscrizioni_al": "2027-03-25",
+       "docenti": "TRAVAINI GUIDO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-05",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-05",
+       "iscrizioni_al": "2027-06-30",
+       "docenti": "TRAVAINI GUIDO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-20",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-20",
+       "iscrizioni_al": "2027-07-15",
+       "docenti": "TRAVAINI GUIDO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-09",
+       "iscrizioni_al": "2027-09-03",
+       "docenti": "TRAVAINI GUIDO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-17",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-18",
+       "iscrizioni_al": "2027-09-12",
+       "docenti": "TRAVAINI GUIDO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30020",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30068",
@@ -52616,12 +54151,25 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2029/5877/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-06-29",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-05-30",
+       "iscrizioni_al": "2027-06-24",
+       "docenti": "ESPOSITO MARCO ANTONIO BRUNO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30068",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30073",
@@ -52637,12 +54185,85 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2028/6253/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-26",
+       "iscrizioni_al": "2027-01-20",
+       "docenti": "BURIONI ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-02",
+       "iscrizioni_al": "2027-01-27",
+       "docenti": "BURIONI ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-22",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-23",
+       "iscrizioni_al": "2027-02-17",
+       "docenti": "BURIONI ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-09",
+       "iscrizioni_al": "2027-07-04",
+       "docenti": "BURIONI ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-30",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-30",
+       "iscrizioni_al": "2027-07-25",
+       "docenti": "BURIONI ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-08",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-09",
+       "iscrizioni_al": "2027-09-03",
+       "docenti": "BURIONI ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30073",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30066",
@@ -52658,12 +54279,37 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2030/5875/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-04",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "MASTRANTONIO ROBERTO FEDERICO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "MASTRANTONIO ROBERTO FEDERICO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30066",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30044",
@@ -52679,12 +54325,97 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2027/5262/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-28",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "CREMONA OTTAVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-11",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-11",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "CREMONA OTTAVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-25",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-25",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "CREMONA OTTAVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-04-01",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-03-01",
+       "iscrizioni_al": "2027-03-26",
+       "docenti": "CREMONA OTTAVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-08",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-08",
+       "iscrizioni_al": "2027-07-03",
+       "docenti": "CREMONA OTTAVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-29",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-29",
+       "iscrizioni_al": "2027-07-24",
+       "docenti": "CREMONA OTTAVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-09",
+       "iscrizioni_al": "2027-09-04",
+       "docenti": "CREMONA OTTAVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30044",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30019",
@@ -52700,12 +54431,97 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2029/4693/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-27",
+       "iscrizioni_al": "2027-01-21",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-10",
+       "iscrizioni_al": "2027-02-04",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-24",
+       "iscrizioni_al": "2027-02-18",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-29",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-05-30",
+       "iscrizioni_al": "2027-06-24",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-13",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-13",
+       "iscrizioni_al": "2027-07-08",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-07",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-08",
+       "iscrizioni_al": "2027-09-02",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-15",
+       "iscrizioni_al": "2027-09-09",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30019",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30023",
@@ -52721,12 +54537,85 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2030/4697/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-27",
+       "iscrizioni_al": "2027-01-21",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-10",
+       "iscrizioni_al": "2027-02-04",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-24",
+       "iscrizioni_al": "2027-02-18",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-29",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-05-30",
+       "iscrizioni_al": "2027-06-24",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-13",
+       "iscrizioni_al": "2027-07-08",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-14",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-15",
+       "iscrizioni_al": "2027-09-09",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30023",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30029",
@@ -52742,12 +54631,61 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2031/4703/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-15",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-21",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-21",
+       "iscrizioni_al": "2026-12-16",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-12",
+       "iscrizioni_al": "2027-01-06",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-21",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30029",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30057",
@@ -52763,12 +54701,25 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2030/5650/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "MONTICCIOLO FRANCESCO MANFREDI",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30057",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30085",
@@ -52784,12 +54735,37 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2030/6461/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-09",
+       "iscrizioni_al": "2027-02-03",
+       "docenti": "FERRINI FRANCESCO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "FERRINI FRANCESCO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30085",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30049",
@@ -52847,12 +54823,157 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2030/6255/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-11",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "TECCO SIMONA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-12",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-02-07",
+       "docenti": "TECCO SIMONA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-25",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-26",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "TECCO SIMONA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-26",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-27",
+       "iscrizioni_al": "2027-02-21",
+       "docenti": "TECCO SIMONA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-08",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-08",
+       "iscrizioni_al": "2027-07-03",
+       "docenti": "TECCO SIMONA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-09",
+       "iscrizioni_al": "2027-07-04",
+       "docenti": "TECCO SIMONA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-29",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-29",
+       "iscrizioni_al": "2027-07-24",
+       "docenti": "TECCO SIMONA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-30",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-30",
+       "iscrizioni_al": "2027-07-25",
+       "docenti": "TECCO SIMONA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-10",
+       "iscrizioni_al": "2027-09-04",
+       "docenti": "TECCO SIMONA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-10",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-11",
+       "iscrizioni_al": "2027-09-05",
+       "docenti": "TECCO SIMONA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-17",
+       "iscrizioni_al": "2027-09-11",
+       "docenti": "TECCO SIMONA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-17",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-18",
+       "iscrizioni_al": "2027-09-12",
+       "docenti": "TECCO SIMONA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30075",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30074",
@@ -52910,12 +55031,169 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2030/6256/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-26",
+       "iscrizioni_al": "2027-01-20",
+       "docenti": "ROTUNDO ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-03",
+       "iscrizioni_al": "2027-01-28",
+       "docenti": "VINCI RAFFAELE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-09",
+       "iscrizioni_al": "2027-02-03",
+       "docenti": "ROTUNDO ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-17",
+       "iscrizioni_al": "2027-02-11",
+       "docenti": "VINCI RAFFAELE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-22",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-23",
+       "iscrizioni_al": "2027-02-17",
+       "docenti": "ROTUNDO ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-28",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-05-29",
+       "iscrizioni_al": "2027-06-23",
+       "docenti": "ROTUNDO ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-06",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-06",
+       "iscrizioni_al": "2027-07-01",
+       "docenti": "VINCI RAFFAELE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-19",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-19",
+       "iscrizioni_al": "2027-07-14",
+       "docenti": "ROTUNDO ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-27",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-27",
+       "iscrizioni_al": "2027-07-22",
+       "docenti": "VINCI RAFFAELE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-01",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-02",
+       "iscrizioni_al": "2027-08-27",
+       "docenti": "ROTUNDO ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-07",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-08",
+       "iscrizioni_al": "2027-09-02",
+       "docenti": "VINCI RAFFAELE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-14",
+       "iscrizioni_al": "2027-09-08",
+       "docenti": "ROTUNDO ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-16",
+       "iscrizioni_al": "2027-09-10",
+       "docenti": "VINCI RAFFAELE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30076",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30080",
@@ -52931,12 +55209,61 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2031/6260/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-09",
+       "iscrizioni_al": "2026-12-04",
+       "docenti": "ROTUNDO ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-16",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": "ROTUNDO ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-13",
+       "iscrizioni_al": "2027-01-07",
+       "docenti": "ROTUNDO ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-19",
+       "iscrizioni_al": "2027-01-13",
+       "docenti": "ROTUNDO ROBERTO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30080",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30007",
@@ -52952,12 +55279,85 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2027/4681/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-03",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "IANNACONE MATTEO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-24",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "IANNACONE MATTEO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "IANNACONE MATTEO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-23",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-23",
+       "iscrizioni_al": "2027-07-18",
+       "docenti": "IANNACONE MATTEO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-02",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-02",
+       "iscrizioni_al": "2027-08-28",
+       "docenti": "IANNACONE MATTEO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-17",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-17",
+       "iscrizioni_al": "2027-09-12",
+       "docenti": "IANNACONE MATTEO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30007",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30050",
@@ -52973,12 +55373,25 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2030/5389/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "CATTONI FRANCESCA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30050",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30040",
@@ -53036,12 +55449,85 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2030/4696/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "GASTALDI GIORGIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-05",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "GASTALDI GIORGIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-19",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "GASTALDI GIORGIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "GASTALDI GIORGIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-15",
+       "iscrizioni_al": "2027-07-10",
+       "docenti": "GASTALDI GIORGIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-10",
+       "iscrizioni_al": "2027-09-04",
+       "docenti": "GASTALDI GIORGIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30022",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30026",
@@ -53057,12 +55543,49 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2031/4700/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-10",
+       "iscrizioni_al": "2026-12-05",
+       "docenti": "MALCHIODI LUCIANO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-15",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "MALCHIODI LUCIANO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-21",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-22",
+       "iscrizioni_al": "2027-01-16",
+       "docenti": "MALCHIODI LUCIANO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30026",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30095",
@@ -53099,12 +55622,97 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2029/4691/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "AGLIARDI ENRICO LUIGI",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-05",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "AGLIARDI ENRICO LUIGI",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-17",
+       "iscrizioni_al": "2027-02-11",
+       "docenti": "AGLIARDI ENRICO LUIGI",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-04-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-03-02",
+       "iscrizioni_al": "2027-03-27",
+       "docenti": "AGLIARDI ENRICO LUIGI",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "AGLIARDI ENRICO LUIGI",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-15",
+       "iscrizioni_al": "2027-07-10",
+       "docenti": "AGLIARDI ENRICO LUIGI",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-10",
+       "iscrizioni_al": "2027-09-04",
+       "docenti": "AGLIARDI ENRICO LUIGI",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30017",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30018",
@@ -53120,12 +55728,97 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2029/4692/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-28",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "POLIZZI ELISABETTA MARIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-02",
+       "iscrizioni_al": "2027-01-27",
+       "docenti": "POLIZZI ELISABETTA MARIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-16",
+       "iscrizioni_al": "2027-02-10",
+       "docenti": "POLIZZI ELISABETTA MARIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-31",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-03-01",
+       "iscrizioni_al": "2027-03-26",
+       "docenti": "POLIZZI ELISABETTA MARIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-26",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-05-27",
+       "iscrizioni_al": "2027-06-21",
+       "docenti": "POLIZZI ELISABETTA MARIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-12",
+       "iscrizioni_al": "2027-07-07",
+       "docenti": "POLIZZI ELISABETTA MARIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-13",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-14",
+       "iscrizioni_al": "2027-09-08",
+       "docenti": "POLIZZI ELISABETTA MARIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30018",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30012",
@@ -53141,12 +55834,85 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2028/4686/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-25",
+       "iscrizioni_al": "2027-01-20",
+       "docenti": "FILIPPI MASSIMO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-04",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "FILIPPI MASSIMO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-31",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-03-01",
+       "iscrizioni_al": "2027-03-26",
+       "docenti": "FILIPPI MASSIMO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-30",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-05-31",
+       "iscrizioni_al": "2027-06-25",
+       "docenti": "FILIPPI MASSIMO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-15",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-15",
+       "iscrizioni_al": "2027-07-10",
+       "docenti": "FILIPPI MASSIMO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-08",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-09",
+       "iscrizioni_al": "2027-09-03",
+       "docenti": "FILIPPI MASSIMO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30012",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30016",
@@ -53162,12 +55928,49 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2029/4690/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-07-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-02",
+       "iscrizioni_al": "2027-06-27",
+       "docenti": "PAPPONE CARLO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-23",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-23",
+       "iscrizioni_al": "2027-07-18",
+       "docenti": "PAPPONE CARLO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-10",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-11",
+       "iscrizioni_al": "2027-09-05",
+       "docenti": "PAPPONE CARLO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30016",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30072",
@@ -53183,12 +55986,49 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2028/6252/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-28",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "ABATI SILVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-14",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-14",
+       "iscrizioni_al": "2027-07-09",
+       "docenti": "ABATI SILVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-10",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-11",
+       "iscrizioni_al": "2027-09-05",
+       "docenti": "ABATI SILVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30072",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30097",
@@ -53225,12 +56065,49 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2029/5648/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-26",
+       "iscrizioni_al": "2027-01-20",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-14",
+       "iscrizioni_al": "2027-09-08",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-20",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-21",
+       "iscrizioni_al": "2027-09-15",
+       "docenti": "CANTATORE GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30055",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30098",
@@ -53267,12 +56144,25 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2031/7611/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-07-14",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-14",
+       "iscrizioni_al": "2027-07-09",
+       "docenti": "CREMONA OTTAVIO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30094",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30056",
@@ -53288,12 +56178,37 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2030/5649/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-06",
+       "docenti": "GHERLONE FELICE ENRICO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-17",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-18",
+       "iscrizioni_al": "2027-09-12",
+       "docenti": "GHERLONE FELICE ENRICO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30056",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30099",
@@ -53330,12 +56245,37 @@
      "docenti": [],
      "url": "https://syllabus.unisr.it/insegnamenti/2031/5656/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-20",
+       "iscrizioni_al": "2027-01-14",
+       "docenti": "GHERLONE FELICE ENRICO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-27",
+       "iscrizioni_al": "2027-01-21",
+       "docenti": "GHERLONE FELICE ENRICO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30063",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30100",
@@ -53355,12 +56295,85 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/8778/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-09",
+       "iscrizioni_al": "2027-02-04",
+       "docenti": "PANINA PAOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-23",
+       "iscrizioni_al": "2027-02-18",
+       "docenti": "PANINA PAOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-06",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-06",
+       "iscrizioni_al": "2027-07-01",
+       "docenti": "PANINA PAOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-20",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-20",
+       "iscrizioni_al": "2027-07-15",
+       "docenti": "PANINA PAOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-02",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-02",
+       "iscrizioni_al": "2027-08-28",
+       "docenti": "PANINA PAOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-16",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-16",
+       "iscrizioni_al": "2027-09-11",
+       "docenti": "PANINA PAOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30100",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30102",
@@ -53380,12 +56393,85 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/8780/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-12-27",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "DEGANO MASSIMO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-22",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-02",
+       "iscrizioni_al": "2027-02-17",
+       "docenti": "DEGANO MASSIMO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-31",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-02-28",
+       "iscrizioni_al": "2027-03-26",
+       "docenti": "DEGANO MASSIMO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-29",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-05-29",
+       "iscrizioni_al": "2027-06-24",
+       "docenti": "DEGANO MASSIMO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-20",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-20",
+       "iscrizioni_al": "2027-07-15",
+       "docenti": "DEGANO MASSIMO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-21",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-21",
+       "iscrizioni_al": "2027-09-16",
+       "docenti": "DEGANO MASSIMO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30102",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30101",
@@ -53405,12 +56491,85 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/8779/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-04",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-25",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-25",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-04-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-03-01",
+       "iscrizioni_al": "2027-03-27",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-26",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-15",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-15",
+       "iscrizioni_al": "2027-07-10",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-03",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-03",
+       "iscrizioni_al": "2027-08-29",
+       "docenti": "MAZZA DAVIDE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30101",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30103",
@@ -53428,12 +56587,85 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/8781/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-26",
+       "iscrizioni_al": "2027-01-21",
+       "docenti": "AMBROSI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-09",
+       "iscrizioni_al": "2027-02-04",
+       "docenti": "AMBROSI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-23",
+       "iscrizioni_al": "2027-02-18",
+       "docenti": "AMBROSI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-23",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-05-23",
+       "iscrizioni_al": "2027-06-18",
+       "docenti": "AMBROSI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-07",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-07",
+       "iscrizioni_al": "2027-07-02",
+       "docenti": "AMBROSI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-02",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-02",
+       "iscrizioni_al": "2027-08-28",
+       "docenti": "AMBROSI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30103",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30105",
@@ -53458,12 +56690,85 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/8782/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-09",
+       "iscrizioni_al": "2027-02-04",
+       "docenti": "PANINA PAOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-23",
+       "iscrizioni_al": "2027-02-18",
+       "docenti": "PANINA PAOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-06",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-06",
+       "iscrizioni_al": "2027-07-01",
+       "docenti": "PANINA PAOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-20",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-06-20",
+       "iscrizioni_al": "2027-07-15",
+       "docenti": "PANINA PAOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-02",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-02",
+       "iscrizioni_al": "2027-08-28",
+       "docenti": "PANINA PAOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-16",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-08-16",
+       "iscrizioni_al": "2027-09-11",
+       "docenti": "PANINA PAOLA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30105",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30096",
@@ -53483,12 +56788,25 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/7613/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-27",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "POLIZZI ELISABETTA MARIA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30096",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30071",
@@ -53509,12 +56827,97 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/6248/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-29",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-24",
+       "docenti": "BOGGIO ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-12",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-02-07",
+       "docenti": "BOGGIO ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-26",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-26",
+       "iscrizioni_al": "2027-02-21",
+       "docenti": "BOGGIO ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-02",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-02",
+       "iscrizioni_al": "2027-06-27",
+       "docenti": "BOGGIO ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-16",
+       "iscrizioni_al": "2027-07-11",
+       "docenti": "BOGGIO ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-01",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-01",
+       "iscrizioni_al": "2027-08-27",
+       "docenti": "BOGGIO ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-10",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-10",
+       "iscrizioni_al": "2027-09-05",
+       "docenti": "BOGGIO ANDREA",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30071",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "30070",
@@ -53536,12 +56939,85 @@
      ],
      "url": "https://syllabus.unisr.it/insegnamenti/2026/6247/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-16",
+       "iscrizioni_al": "2027-02-11",
+       "docenti": "PANTALEO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-23",
+       "iscrizioni_al": "2027-02-18",
+       "docenti": "PANTALEO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-06",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-06",
+       "iscrizioni_al": "2027-07-01",
+       "docenti": "PANTALEO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-13",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-13",
+       "iscrizioni_al": "2027-07-08",
+       "docenti": "PANTALEO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-07",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-07",
+       "iscrizioni_al": "2027-09-02",
+       "docenti": "PANTALEO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-14",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-14",
+       "iscrizioni_al": "2027-09-09",
+       "docenti": "PANTALEO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "id": "unisr-lm-46-odontoiatria-e-protesi-dentaria-30070",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "ammissione": {
