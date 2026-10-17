@@ -24,7 +24,9 @@ ANNI = {"primo": 1, "secondo": 2, "terzo": 3, "quarto": 4, "quinto": 5}
 
 
 def leggi_piano(s: str, anno: int) -> list[dict]:
-    m = re.search(rf"Piano di studi A\.A\.\s*{anno}\s*/\s*{anno + 1}(.*?)(?=Piano di studi A\.A\.\s*\d{{4}}|$)", s, re.S)
+    # intestazione «Piano di studi A.A. 2026/2027» oppure, nelle pagine più recenti, «Piano di studi 26/27»
+    m = re.search(rf"Piano di studi (?:A\.A\.\s*)?(?:{anno}\s*/\s*{anno + 1}|{anno % 100:02d}\s*/\s*{(anno + 1) % 100:02d})"
+                  rf"(.*?)(?=Piano di studi (?:A\.A\.\s*)?\d{{2}}|$)", s, re.S)
     if not m:
         return []
     out, k, cur = [], None, None

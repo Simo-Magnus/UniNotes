@@ -63,6 +63,8 @@ def fetch_ateneo(uid: str = "unical", anno: int | None = None, max_cds: int | No
             d = json.loads(r.text)
             out += d.get("results") or []
             url = d.get("next")
+            if url and url.startswith("//"):  # l'API restituisce URL senza schema
+                url = "https:" + url
         return out
 
     per_anno = {a: lista(a) for a in range(anno - 5, anno + 1)}

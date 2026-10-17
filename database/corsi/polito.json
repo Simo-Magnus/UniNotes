@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "polito",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-14",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.polito.it/corsi/80-458",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "06BJUWG",
@@ -16143,7 +16143,7 @@
    "url": "https://www.polito.it/corsi/32-465",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "06KWRWN",
@@ -23789,7 +23789,7 @@
    "url": "https://www.polito.it/corsi/81-471",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01UABWT",
@@ -35232,7 +35232,7 @@
    "url": "https://www.polito.it/corsi/37-474",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "06KWRWW",
@@ -36129,7 +36129,7 @@
    "url": "https://www.polito.it/corsi/32-477",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFWZ",
@@ -45128,7 +45128,7 @@
    "url": "https://www.polito.it/corsi/32-479",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFXB",
@@ -46390,12 +46390,25 @@
        "citazione": "Thibodeau e Patton, Anatomia e Fisiologia, Ambrosiana, Milano Martini F.H. Fondamenti di anatomia e fisiologia. Edises, Napoli"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "17:30",
+       "luogo": "1S - AULA Corso Duca",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "ROATTA SILVESTRO",
+       "note": null,
+       "fonte": "https://didattica.polito.it/pls/portal30/esami.visu.form"
+      }
+     ],
      "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2026&p_sdu=32&p_cds=479",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "polito-l-9-ingegneria-biomedica-03neaxb",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "09IHRXB",
@@ -52414,7 +52427,7 @@
    "url": "https://www.polito.it/corsi/32-481",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFXD",
@@ -59261,7 +59274,7 @@
    "url": "https://www.polito.it/corsi/32-483",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFXF",
@@ -68199,7 +68212,7 @@
    "url": "https://www.polito.it/corsi/32-485",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFXH",
@@ -76015,7 +76028,7 @@
    "url": "https://www.polito.it/corsi/37-487",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFXJ",
@@ -77182,7 +77195,7 @@
    "url": "https://www.polito.it/corsi/32-545",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFXP",
@@ -84629,7 +84642,7 @@
    "url": "https://www.polito.it/corsi/32-542",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFXM",
@@ -85702,7 +85715,7 @@
    "url": "https://www.polito.it/corsi/32-547",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFXR",
@@ -94267,7 +94280,7 @@
    "url": "https://www.polito.it/corsi/32-549",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFXT",
@@ -101315,7 +101328,7 @@
    "url": "https://www.polito.it/corsi/37-551",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFXV",
@@ -109582,7 +109595,7 @@
    "url": "https://www.polito.it/corsi/32-553",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFXX",
@@ -118487,7 +118500,7 @@
    "url": "https://www.polito.it/corsi/37-555",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFXZ",
@@ -128469,7 +128482,7 @@
    "url": "https://www.polito.it/corsi/38-556",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFYA",
@@ -136594,7 +136607,7 @@
    "url": "https://www.polito.it/corsi/37-560",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFYE",
@@ -145295,7 +145308,7 @@
    "url": "https://www.polito.it/corsi/32-564",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFYI",
@@ -154951,7 +154964,7 @@
    "url": "https://www.polito.it/corsi/32-568",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFYM",
@@ -162945,7 +162958,7 @@
    "url": "https://www.polito.it/corsi/32-570",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16ACFYO",
@@ -170221,7 +170234,7 @@
    "url": "https://www.polito.it/corsi/82-574",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "02UTVYS",
@@ -171073,6 +171086,18 @@
        "data": "2026-10-20",
        "ora": "17:00",
        "luogo": "6VM",
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "MOLASCHI VIVIANA",
+       "note": null,
+       "fonte": "https://didattica.polito.it/pls/portal30/esami.visu.form"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-20",
+       "ora": "17:30",
+       "luogo": "11B - AULA Corso Duca",
        "modalita": "orale",
        "iscrizioni_dal": null,
        "iscrizioni_al": "2026-09-30",
@@ -179211,7 +179236,7 @@
    "url": "https://www.polito.it/corsi/81-5",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01VPJPQ",
@@ -186365,7 +186390,7 @@
    "url": "https://www.polito.it/corsi/81-461",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "02JGXWJ",
@@ -188119,7 +188144,7 @@
    "url": "https://www.polito.it/corsi/82-4",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01VMQTE",
@@ -193344,7 +193369,7 @@
    "url": "https://www.polito.it/corsi/82-6",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01VOFPX",
@@ -200223,7 +200248,7 @@
    "url": "https://www.polito.it/corsi/32-464",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "03OFGWM",
@@ -202463,7 +202488,7 @@
    "url": "https://www.polito.it/corsi/37-467",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "03NRWWP",
@@ -203828,7 +203853,7 @@
    "url": "https://www.polito.it/corsi/32-468",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "02GYZWQ",
@@ -206555,7 +206580,7 @@
    "url": "https://www.polito.it/corsi/37-470",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "03TWYWS",
@@ -208844,7 +208869,7 @@
    "url": "https://www.polito.it/corsi/81-4",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01VYMPO",
@@ -210435,7 +210460,7 @@
    "url": "https://www.polito.it/corsi/81-83",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01WYHTD",
@@ -211667,7 +211692,7 @@
    "url": "https://www.polito.it/corsi/32-475",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01RWHWX",
@@ -213295,7 +213320,7 @@
    "url": "https://www.polito.it/corsi/37-476",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01VTDWY",
@@ -214675,7 +214700,7 @@
    "url": "https://www.polito.it/corsi/32-478",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "02BAQXA",
@@ -219554,7 +219579,7 @@
    "url": "https://www.polito.it/corsi/32-480",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01WNOXC",
@@ -222047,7 +222072,7 @@
    "url": "https://www.polito.it/corsi/32-482",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01SLQXE",
@@ -225717,7 +225742,7 @@
    "url": "https://www.polito.it/corsi/32-484",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "03MNIXG",
@@ -230644,7 +230669,7 @@
    "url": "https://www.polito.it/corsi/32-932",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "05AFYMZ",
@@ -232140,7 +232165,7 @@
    "url": "https://www.polito.it/corsi/37-488",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01UREXK",
@@ -233917,7 +233942,7 @@
    "url": "https://www.polito.it/corsi/32-544",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "06PAUXO",
@@ -234702,7 +234727,7 @@
    "url": "https://www.polito.it/corsi/32-548",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01UUNXS",
@@ -237720,7 +237745,7 @@
    "url": "https://www.polito.it/corsi/32-550",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "03OIIXU",
@@ -241337,7 +241362,7 @@
    "url": "https://www.polito.it/corsi/37-552",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "02LSEXW",
@@ -244757,7 +244782,7 @@
    "url": "https://www.polito.it/corsi/32-554",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01TVMXY",
@@ -252893,7 +252918,7 @@
    "url": "https://www.polito.it/corsi/38-558",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01PEBYC",
@@ -256333,7 +256358,7 @@
    "url": "https://www.polito.it/corsi/37-562",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "02GYYYG",
@@ -263931,7 +263956,7 @@
    "url": "https://www.polito.it/corsi/32-563",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "02GYZYH",
@@ -267824,7 +267849,7 @@
    "url": "https://www.polito.it/corsi/32-565",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "03FOEYJ",
@@ -272315,7 +272340,7 @@
    "url": "https://www.polito.it/corsi/32-569",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01UCHYN",
@@ -276794,7 +276819,7 @@
    "url": "https://www.polito.it/corsi/37-571",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01PDCYP",
@@ -279683,7 +279708,7 @@
    "url": "https://www.polito.it/corsi/37-572",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01RZYYQ",
@@ -281451,7 +281476,7 @@
    "url": "https://www.polito.it/corsi/37-573",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01TPTYR",
@@ -283840,7 +283865,7 @@
    "url": "https://www.polito.it/didattica/corsi-di-laurea-magistrale/pianificazione-urbanistica-e-territoriale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "05JPBQA",
@@ -285253,7 +285278,7 @@
    "url": "https://www.polito.it/corsi/32-576",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "01UDRYU",
@@ -286702,7 +286727,7 @@
    "url": "https://www.polito.it/corsi/38-577",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "02ELJYV",

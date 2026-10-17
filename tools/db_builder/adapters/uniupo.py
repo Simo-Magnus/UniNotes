@@ -99,7 +99,7 @@ def fetch_ateneo(uid: str = "uniupo", anno: int | None = None, max_cds: int | No
         rd = c.get(f"{BASE}/syllabus/{anno}/{d}")
         for tipo, nome, url in re.findall(r'<div\s+class="cds-card"\s+data-tipo="([^"]*)"[^>]*>\s*<div class="corso-titolo">'
                                           r'\s*(.*?)\s*</div>.*?href="([^"]+)"', rd.text if rd else "", re.S):
-            pagine.setdefault((_norm(_testo(nome)), _tipo(tipo) or ""), []).append(BASE + url)
+            pagine.setdefault((_norm(re.sub(r"(?i)\s*\(abilitante.*?\)", "", _testo(nome))), _tipo(tipo) or ""), []).append(BASE + url)
     abbinati = []
     for corso in corsi:
         nome = _norm(re.sub(r"(?i)\s*\(abilitante.*?\)", "", corso["nome"]))

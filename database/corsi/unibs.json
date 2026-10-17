@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unibs",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-14",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08691/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0381",
@@ -5225,7 +5225,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08691/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0381",
@@ -10130,7 +10130,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/54454R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A000010",
@@ -13628,7 +13628,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08635R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "703604",
@@ -20245,7 +20245,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/54456R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "ECO0106",
@@ -23518,7 +23518,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/04424R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "11602",
@@ -23903,6 +23903,18 @@
        "docenti": "PALETTI FEDERICA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "prova_in_itinere",
+       "data": "2026-11-09",
+       "ora": "16:30",
+       "luogo": "Aula 4, Via San Faustino,41",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PALETTI Federica",
+       "note": null,
+       "fonte": "https://unibs-public.prod.up.cineca.it/"
       },
       {
        "tipo": "prova_in_itinere",
@@ -24946,6 +24958,18 @@
        "docenti": "CORASANITI GIUSEPPE",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "15:00",
+       "luogo": "Sala dei Grifoni, Via San Faustino,41",
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CORASANITI GIUSEPPE",
+       "note": null,
+       "fonte": "https://unibs-public.prod.up.cineca.it/"
       },
       {
        "tipo": "appello",
@@ -30128,7 +30152,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08692/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0361",
@@ -31745,6 +31769,18 @@
        "docenti": "CORSETTI GIOVANNI",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWG27U7Ha6pqbTDZscDS9xnV7Pxrck0ZSgaF7kQEGfi_wssdYlfKGX6IX3T3pvfQ/pub?output=pdf"
       },
       {
        "tipo": "prova_in_itinere",
@@ -36832,7 +36868,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/54455R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A005212",
@@ -40426,7 +40462,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/54451R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A005213",
@@ -44367,7 +44403,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/54457R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A004815",
@@ -45483,7 +45519,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08693/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0034",
@@ -46542,6 +46578,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:45",
        "luogo": null,
@@ -46551,6 +46599,18 @@
        "docenti": "MAGRI CHIARA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "appello",
@@ -46566,6 +46626,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-03-24",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-06-22",
        "ora": "09:00",
        "luogo": null,
@@ -46575,6 +46647,18 @@
        "docenti": "MAGRI CHIARA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-22",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "appello",
@@ -46602,6 +46686,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-09-03",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-09-17",
        "ora": "14:00",
        "luogo": null,
@@ -46611,6 +46707,18 @@
        "docenti": "MAGRI CHIARA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-17",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -50808,6 +50916,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-16",
        "ora": "09:30",
        "luogo": null,
@@ -50817,6 +50937,18 @@
        "docenti": "BELLUCCI ARIANNA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "appello",
@@ -50832,6 +50964,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-03-22",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-06-21",
        "ora": "09:30",
        "luogo": null,
@@ -50841,6 +50985,18 @@
        "docenti": "BELLUCCI ARIANNA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-21",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "appello",
@@ -50856,6 +51012,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-07-05",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-08-31",
        "ora": "09:30",
        "luogo": null,
@@ -50868,6 +51036,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-08-31",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-09-14",
        "ora": "09:30",
        "luogo": null,
@@ -50877,6 +51057,18 @@
        "docenti": "BELLUCCI ARIANNA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-14",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -53025,6 +53217,18 @@
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
+       "tipo": "appello",
+       "data": "2027-01-29",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
        "tipo": "prova_in_itinere",
        "data": "2027-02-11",
        "ora": "10:00",
@@ -53047,6 +53251,18 @@
        "docenti": "COMINI GIUSEPPE",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-12",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "prova_in_itinere",
@@ -53073,6 +53289,18 @@
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
+       "tipo": "appello",
+       "data": "2027-03-25",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
        "tipo": "prova_in_itinere",
        "data": "2027-06-24",
        "ora": "10:00",
@@ -53095,6 +53323,18 @@
        "docenti": "COMINI GIUSEPPE",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-25",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "prova_in_itinere",
@@ -53121,6 +53361,18 @@
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
+       "tipo": "appello",
+       "data": "2027-07-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
        "tipo": "prova_in_itinere",
        "data": "2027-08-26",
        "ora": "10:00",
@@ -53143,6 +53395,18 @@
        "docenti": "COMINI GIUSEPPE",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-08-27",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "prova_in_itinere",
@@ -53675,7 +53939,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08693/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0026",
@@ -54611,6 +54875,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:45",
        "luogo": null,
@@ -54620,6 +54896,18 @@
        "docenti": "MAGRI CHIARA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "appello",
@@ -54635,6 +54923,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-03-24",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-06-22",
        "ora": "09:00",
        "luogo": null,
@@ -54644,6 +54944,18 @@
        "docenti": "MAGRI CHIARA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-22",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "appello",
@@ -54671,6 +54983,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-09-03",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-09-17",
        "ora": "14:00",
        "luogo": null,
@@ -54680,6 +55004,18 @@
        "docenti": "MAGRI CHIARA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-17",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -58183,6 +58519,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-16",
        "ora": "09:30",
        "luogo": null,
@@ -58192,6 +58540,18 @@
        "docenti": "BELLUCCI ARIANNA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "appello",
@@ -58207,6 +58567,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-03-22",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-06-21",
        "ora": "09:30",
        "luogo": null,
@@ -58216,6 +58588,18 @@
        "docenti": "BELLUCCI ARIANNA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-21",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "appello",
@@ -58231,6 +58615,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-07-05",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-08-31",
        "ora": "09:30",
        "luogo": null,
@@ -58243,6 +58639,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-08-31",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-09-14",
        "ora": "09:30",
        "luogo": null,
@@ -58252,6 +58660,18 @@
        "docenti": "BELLUCCI ARIANNA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-14",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -59563,6 +59983,18 @@
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
+       "tipo": "appello",
+       "data": "2027-01-29",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
        "tipo": "prova_in_itinere",
        "data": "2027-02-11",
        "ora": "10:00",
@@ -59585,6 +60017,18 @@
        "docenti": "COMINI GIUSEPPE",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-12",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "prova_in_itinere",
@@ -59611,6 +60055,18 @@
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
+       "tipo": "appello",
+       "data": "2027-03-25",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
        "tipo": "prova_in_itinere",
        "data": "2027-06-24",
        "ora": "10:00",
@@ -59633,6 +60089,18 @@
        "docenti": "COMINI GIUSEPPE",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-25",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "prova_in_itinere",
@@ -59659,6 +60127,18 @@
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
+       "tipo": "appello",
+       "data": "2027-07-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
+      },
+      {
        "tipo": "prova_in_itinere",
        "data": "2027-08-26",
        "ora": "10:00",
@@ -59681,6 +60161,18 @@
        "docenti": "COMINI GIUSEPPE",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-08-27",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsE0VZ1JfXuoB811y_4vFK5aAw_HDzeRvWp2apy4ISvWTO9I3J4_jQ8zRXFXtY2g/pub?output=pdf"
       },
       {
        "tipo": "prova_in_itinere",
@@ -60211,7 +60703,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08694/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0689",
@@ -67237,7 +67729,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08694/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0689",
@@ -71558,7 +72050,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08694/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0689",
@@ -75698,7 +76190,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08695/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "U13074",
@@ -81583,7 +82075,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08696/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "U11125",
@@ -89514,7 +90006,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08696/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "U11125",
@@ -93530,7 +94022,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08696/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "U11125",
@@ -97572,7 +98064,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08696/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "U11125",
@@ -101647,7 +102139,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08696/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "U11125",
@@ -105759,7 +106251,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08696/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "U11125",
@@ -109775,7 +110267,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08696/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "U11125",
@@ -113817,7 +114309,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05731R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "703174",
@@ -114053,6 +114545,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:30",
        "luogo": null,
@@ -114062,6 +114566,18 @@
        "docenti": "GIACOMINI ALESSANDRO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -114347,6 +114863,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-27",
        "ora": null,
        "luogo": null,
@@ -114380,6 +114908,18 @@
        "docenti": "FOGLI DANIELA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -114883,6 +115423,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-01",
        "ora": "14:30",
        "luogo": null,
@@ -114892,6 +115444,18 @@
        "docenti": "MONTRASIO LORELLA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -114982,6 +115546,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "09:30",
        "luogo": null,
@@ -114991,6 +115567,18 @@
        "docenti": "VUK ELENA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -115068,6 +115656,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-12",
        "ora": "09:00",
        "luogo": null,
@@ -115077,6 +115677,18 @@
        "docenti": "FERRETTI IVAN",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-12",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -116641,6 +117253,18 @@
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": null,
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
        "tipo": "prova_in_itinere",
        "data": "2027-02-09",
        "ora": "09:30",
@@ -116675,6 +117299,18 @@
        "docenti": "BARDELLA LORENZO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": null,
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -116862,7 +117498,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05751R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "702975",
@@ -117144,6 +117780,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-09/AUTLT%20-%20Calendario%20esami%20sessione%20S1%20a.a.%202026-27_0.xlsx"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:30",
        "luogo": null,
@@ -117153,6 +117801,18 @@
        "docenti": "LUTEROTTI FABIO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-09/AUTLT%20-%20Calendario%20esami%20sessione%20S1%20a.a.%202026-27_0.xlsx"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -120723,7 +121383,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05712R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "702975",
@@ -124242,7 +124902,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05712R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "702975",
@@ -124546,6 +125206,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-09/AUTLT%20-%20Calendario%20esami%20sessione%20S1%20a.a.%202026-27_0.xlsx"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:30",
        "luogo": null,
@@ -124555,6 +125227,18 @@
        "docenti": "LUTEROTTI FABIO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-09/AUTLT%20-%20Calendario%20esami%20sessione%20S1%20a.a.%202026-27_0.xlsx"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -128826,7 +129510,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05715/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "702975",
@@ -129075,6 +129759,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-09/AUTLT%20-%20Calendario%20esami%20sessione%20S1%20a.a.%202026-27_0.xlsx"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:30",
        "luogo": null,
@@ -129084,6 +129780,18 @@
        "docenti": "LUTEROTTI FABIO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-09/AUTLT%20-%20Calendario%20esami%20sessione%20S1%20a.a.%202026-27_0.xlsx"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -132137,7 +132845,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05771R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "702975",
@@ -132601,6 +133309,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-27",
        "ora": null,
        "luogo": null,
@@ -132634,6 +133354,18 @@
        "docenti": "FOGLI DANIELA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -136702,7 +137434,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05713R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "702975",
@@ -137006,6 +137738,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-09/AUTLT%20-%20Calendario%20esami%20sessione%20S1%20a.a.%202026-27_0.xlsx"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:30",
        "luogo": null,
@@ -137015,6 +137759,18 @@
        "docenti": "LUTEROTTI FABIO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-09/AUTLT%20-%20Calendario%20esami%20sessione%20S1%20a.a.%202026-27_0.xlsx"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -140180,7 +140936,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05742R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "702975",
@@ -140491,6 +141247,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-09/AUTLT%20-%20Calendario%20esami%20sessione%20S1%20a.a.%202026-27_0.xlsx"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:30",
        "luogo": null,
@@ -140500,6 +141268,18 @@
        "docenti": "LUTEROTTI FABIO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://corsi.unibs.it/sites/cdl/files/2026-09/AUTLT%20-%20Calendario%20esami%20sessione%20S1%20a.a.%202026-27_0.xlsx"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -145537,7 +146317,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05716R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "702975",
@@ -147851,7 +148631,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05721R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "703174",
@@ -148087,6 +148867,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:30",
        "luogo": null,
@@ -148096,6 +148888,18 @@
        "docenti": "GIACOMINI ALESSANDRO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -148491,6 +149295,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-27",
        "ora": null,
        "luogo": null,
@@ -148524,6 +149340,18 @@
        "docenti": "FOGLI DANIELA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -148907,6 +149735,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-01",
        "ora": "14:30",
        "luogo": null,
@@ -148916,6 +149756,18 @@
        "docenti": "MONTRASIO LORELLA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -149006,6 +149858,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "09:30",
        "luogo": null,
@@ -149015,6 +149879,18 @@
        "docenti": "VUK ELENA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -149092,6 +149968,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-12",
        "ora": "09:00",
        "luogo": null,
@@ -149101,6 +149989,18 @@
        "docenti": "FERRETTI IVAN",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-12",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -149781,6 +150681,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-01",
        "ora": "09:00",
        "luogo": null,
@@ -149790,6 +150702,18 @@
        "docenti": "SORLINI SABRINA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -150350,6 +151274,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-08",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-29",
        "ora": "09:00",
        "luogo": null,
@@ -150359,6 +151295,18 @@
        "docenti": "COLLIVIGNARELLI CARLO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-29",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -150683,6 +151631,18 @@
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": null,
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
        "tipo": "prova_in_itinere",
        "data": "2027-02-09",
        "ora": "09:30",
@@ -150717,6 +151677,18 @@
        "docenti": "BARDELLA LORENZO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": null,
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -150904,7 +151876,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08699/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0487",
@@ -155685,7 +156657,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08697/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0363",
@@ -162225,7 +163197,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08636R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A005547",
@@ -169165,7 +170137,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/04431R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "JUS0096",
@@ -171472,7 +172444,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05722R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "703174",
@@ -172157,6 +173129,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1130322215&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:30",
        "luogo": null,
@@ -172166,6 +173150,18 @@
        "docenti": "MORANDO ALESSANDRO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1130322215&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -172327,6 +173323,18 @@
        "docenti": "MONTI EUGENIO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1130322215&single=true&output=pdf"
       },
       {
        "tipo": "appello",
@@ -173872,6 +174880,18 @@
        "docenti": "MARIANI LUIGI",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1130322215&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -174801,6 +175821,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-08",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1130322215&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-16",
        "ora": "09:00",
        "luogo": null,
@@ -174810,6 +175842,18 @@
        "docenti": "VACCARI MENTORE",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1130322215&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -176387,7 +177431,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08715/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0500",
@@ -181120,13 +182164,74 @@
        "citazione": "L'uomo e il movimento. Lineamenti di teoria e metodologia. F.Casolo. Vita e Pensiero Edizioni, 2020."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXrndOHB1HmbnqUOl_52WeOarDf0YYxz7vh8YMN8e823zJUE2tDHj_LUz8dFKenQ/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXrndOHB1HmbnqUOl_52WeOarDf0YYxz7vh8YMN8e823zJUE2tDHj_LUz8dFKenQ/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-03-24",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXrndOHB1HmbnqUOl_52WeOarDf0YYxz7vh8YMN8e823zJUE2tDHj_LUz8dFKenQ/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-30",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXrndOHB1HmbnqUOl_52WeOarDf0YYxz7vh8YMN8e823zJUE2tDHj_LUz8dFKenQ/pub?output=pdf"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXrndOHB1HmbnqUOl_52WeOarDf0YYxz7vh8YMN8e823zJUE2tDHj_LUz8dFKenQ/pub?output=pdf"
+      }
+     ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unibs-l-snt2-tecnica-della-riabilitazione-psichiatrica-abilitante-alla-pr-a005621",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "A005623",
@@ -182658,7 +183763,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08714/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "U11284",
@@ -187460,7 +188565,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08716/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED1084",
@@ -192643,7 +193748,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08717/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0575",
@@ -198337,7 +199442,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/54477R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "ECO0007",
@@ -203206,7 +204311,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08632R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0800",
@@ -205911,7 +207016,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05853R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A000369",
@@ -205993,6 +207098,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-21",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1421004169&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-04",
        "ora": "14:30",
        "luogo": null,
@@ -206002,6 +207119,18 @@
        "docenti": "GATTO MICHELE PLACIDO ANTONIO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1421004169&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -206696,6 +207825,18 @@
        "docenti": "VALERIO GIULIA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1421004169&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -207962,7 +209103,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/54471R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "703055",
@@ -212921,7 +214062,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/54472R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "703110",
@@ -217691,7 +218832,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/04184/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "ECO0059",
@@ -220175,7 +221316,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05841R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "ING0366",
@@ -220821,6 +221962,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-21",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1120154425&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-04",
        "ora": "14:30",
        "luogo": null,
@@ -220830,6 +221983,18 @@
        "docenti": "MONTRASIO LORELLA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1120154425&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -221094,6 +222259,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=470794920&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-28",
        "ora": "09:30",
        "luogo": null,
@@ -221103,6 +222280,18 @@
        "docenti": "BARDELLA LORENZO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=470794920&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -221192,6 +222381,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=470794920&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-10",
        "ora": "09:30",
        "luogo": null,
@@ -221201,6 +222402,18 @@
        "docenti": "FANTONI FRANCESCA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=470794920&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -221617,6 +222830,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-21",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=470794920&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-04",
        "ora": "14:30",
        "luogo": null,
@@ -221626,6 +222851,18 @@
        "docenti": "MONTRASIO LORELLA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=470794920&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -223310,7 +224547,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05881R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "703177",
@@ -226261,7 +227498,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05821R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A004333",
@@ -230014,7 +231251,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05891R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "U8863",
@@ -232673,7 +233910,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05831R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A004333",
@@ -235836,7 +237073,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05861R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "703565",
@@ -244261,7 +245498,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05851R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "ING0366",
@@ -244590,6 +245827,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-21",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1120154425&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-04",
        "ora": "14:30",
        "luogo": null,
@@ -244599,6 +245848,18 @@
        "docenti": "MONTRASIO LORELLA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1120154425&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -247461,6 +248722,18 @@
        "docenti": "TIBONI MICHELA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-21",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1120154425&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -247660,6 +248933,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-08",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-29",
        "ora": "09:00",
        "luogo": null,
@@ -247669,6 +248954,18 @@
        "docenti": "COLLIVIGNARELLI CARLO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-29",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1248692762&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -247862,7 +249159,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05872R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "703565",
@@ -250315,7 +251612,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/54473R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "703055",
@@ -255956,7 +257253,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/54478R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "ECO0031",
@@ -258007,7 +259304,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08649R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED1208",
@@ -260521,7 +261818,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/04185R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "JUS0162",
@@ -261499,6 +262796,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "10:30",
+       "luogo": "Aula 6, Via San Faustino,41",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MORANDI Paola",
+       "note": null,
+       "fonte": "https://unibs-public.prod.up.cineca.it/"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-14",
        "ora": "09:30",
        "luogo": null,
@@ -262374,7 +263683,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08698R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED1249",
@@ -266253,7 +267562,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05854R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A004333",
@@ -266394,6 +267703,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=490544665&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-11",
        "ora": "09:30",
        "luogo": null,
@@ -266403,6 +267724,18 @@
        "docenti": "FERRONATO GIULIA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-11",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=490544665&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -267930,7 +269263,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08622R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED0832",
@@ -269570,7 +270903,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/04181R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "JUS0122",
@@ -272895,7 +274228,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05781R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "ING0366",
@@ -273067,6 +274400,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=441573206&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-01",
        "ora": "15:00",
        "luogo": null,
@@ -273076,6 +274421,18 @@
        "docenti": "TRAETTA TOMMASO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=441573206&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -273831,6 +275188,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=441573206&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-02",
        "ora": "10:00",
        "luogo": null,
@@ -273840,6 +275209,18 @@
        "docenti": "LUTEROTTI FABIO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=441573206&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -276570,7 +277951,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08624R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MED1044",
@@ -281433,6 +282814,18 @@
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "09:00",
+       "luogo": "LAB2, Edificio centrale - Viale Europa 11",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "CALZA STEFANO",
+       "note": null,
+       "fonte": "https://unibs-public.prod.up.cineca.it/"
+      },
+      {
        "tipo": "prova_in_itinere",
        "data": "2026-12-15",
        "ora": "10:30",
@@ -285978,7 +287371,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/08627R/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "703308",
@@ -291016,7 +292409,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05724/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "702975",
@@ -291383,6 +292776,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1130322215&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:30",
        "luogo": null,
@@ -291392,6 +292797,18 @@
        "docenti": "MORANDO ALESSANDRO",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=1130322215&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -291692,6 +293109,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-21",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=633281144&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-12",
        "ora": "10:00",
        "luogo": null,
@@ -291701,6 +293130,18 @@
        "docenti": "BARRICELLI BARBARA RITA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-12",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=633281144&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -292001,6 +293442,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=633281144&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-29",
        "ora": "14:00",
        "luogo": null,
@@ -292010,6 +293463,18 @@
        "docenti": "LONGO OLIVIA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-29",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=633281144&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -292508,6 +293973,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=633281144&single=true&output=pdf"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-02",
        "ora": "09:00",
        "luogo": null,
@@ -292517,6 +293994,18 @@
        "docenti": "VALERIO GIULIA",
        "note": null,
        "fonte": "https://unibs.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": null,
+       "note": "Dal calendario degli appelli pubblicato dal corso di studio",
+       "fonte": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGuySgusuRvYEgAFQqoaX1c5nmEc2bt8dTvoAdXoZ20L_bf_zWU9HK3uxTz3OhnA/pub?gid=633281144&single=true&output=pdf"
       }
      ],
      "fonte": "https://unibs.coursecatalogue.cineca.it",
@@ -292993,7 +294482,7 @@
    "url": "https://permalink.unibs.it/suacds/2026/05743/infogen",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A005569",

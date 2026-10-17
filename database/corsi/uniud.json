@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "uniud",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-14",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea/allevamento-e-salute-animale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "AG1091",
@@ -4979,7 +4979,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/banca-finanza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "EC0030",
@@ -5785,7 +5785,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea/beni-culturali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LE0201",
@@ -12304,7 +12304,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/biotecnologie/laurea/biotecnologie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "VE0250",
@@ -12750,10 +12750,1540 @@
    "erogazione": "Corso di studio convenzionale",
    "interateneo": false,
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea/dams",
-   "stato": "da_aggiungere",
+   "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
-   "insegnamenti": [],
+   "verificato_il": "2026-10-17",
+   "insegnamenti": [
+    {
+     "codice": "T_INGR",
+     "nome": "Test D'ingresso",
+     "anno": 1,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 0,
+     "ssd": "NN",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/14858/2026/2?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-t-ingr",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1151",
+     "nome": "Letteratura Italiana Contemporanea",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "18/12/2026 00:00:00",
+     "cfu": 9,
+     "ssd": "LICO-01/A",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Cardilli Lorenzo"
+     ],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/20187/2026/2?coorte=2026",
+     "libri": [
+      {
+       "titolo": "L’umorismo cosmicomico",
+       "autori": "C. Milanini",
+       "editore": "Carocci",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "C. Milanini, “L’umorismo cosmicomico”, in “L’utopia discontinua. Saggi su Italo Calvino. Nuova edizione rivista e accresciuta”, Roma, Carocci, 2022, pp. 89-110; M. Mengoni, D. Scarpa, “Postfazione”, in P. Levi, “Storie naturali”, Milano, Mondadori, 2022, pp. 231-276.Altri materiali relativi a moduli 1 e 2 verranno forniti a lezione."
+      },
+      {
+       "titolo": "Post-umano, troppo post-umano: Sirene di Laura Pugno",
+       "autori": "P. Antonello",
+       "editore": null,
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "P. Antonello, “Post-umano, troppo post-umano: Sirene di Laura Pugno”, «Narrativa», 43, 2021, https://journals.openedition.org/narrativa/438?lang=en. DOI: https://doi.org/10.4000/narrativa.438"
+      },
+      {
+       "titolo": "Ibridità testuale e ibridità creaturale in Sirene di Laura Pugno",
+       "autori": "A. Aubert-Noël",
+       "editore": null,
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A. Aubert-Noël, “Ibridità testuale e ibridità creaturale in Sirene di Laura Pugno”, «Narrativa», 43, 2021, https://journals.openedition.org/narrativa/443. DOI: https://doi.org/10.4000/narrativa.443"
+      },
+      {
+       "titolo": "Un’isola nel mar morto degli adulti. Su Bambini bonsai di Zanotti",
+       "autori": "M. Paolo",
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "M. Paolo, “Un’isola nel mar morto degli adulti. Su Bambini bonsai di Zanotti”, «Between», vol. XV, n. 30, 2025, pp. 300-316. DOI: 10.13125/2039-6597/6602"
+      },
+      {
+       "titolo": "Spunti per uno studio narratologico dello spazio nella narrativa post-apocalittica: Ammaniti, Arpaia, Zanotti",
+       "autori": "M. Beltrami",
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "M. Beltrami, “Spunti per uno studio narratologico dello spazio nella narrativa post-apocalittica: Ammaniti, Arpaia, Zanotti”, «Between», vol. XV, n. 30, 2025, pp. 22-42.DOI: 10.13125/2039-6597/6637"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1151",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1784",
+     "nome": "Linguaggi Audiovisivi",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "18/12/2026 00:00:00",
+     "cfu": 9,
+     "ssd": "PEMM-01/B",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Stergar Steven"
+     ],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/24000/2026/2?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1784",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE0132",
+     "nome": "Storia Moderna",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "18/12/2026 00:00:00",
+     "cfu": 9,
+     "ssd": "HIST-02/A",
+     "obbligatorio": false,
+     "curriculum": "Piano di studio Spettacolo e performance 26/27",
+     "docenti": [
+      "Rurale Flavio"
+     ],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/13739/2026/1?coorte=2026",
+     "libri": [
+      {
+       "titolo": "Ieva, Manuale di storia moderna, Torino, UTET, 2012); oppure V.",
+       "autori": null,
+       "editore": "UTET",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Ieva, Manuale di storia moderna, Torino, UTET, 2012); oppure V."
+      },
+      {
+       "titolo": "Criscuolo, L'età moderna, Pearson 2019, disponibile anche in formato",
+       "autori": null,
+       "editore": "Pearson 2019",
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Criscuolo, L'età moderna, Pearson 2019, disponibile anche in formato"
+      },
+      {
+       "titolo": "Rinascimento al femminile",
+       "autori": "O. Niccoli",
+       "editore": "Laterza",
+       "anno": 1998,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "O. Niccoli, Rinascimento al femminile, Roma-Bari, Laterza, 1998"
+      },
+      {
+       "titolo": "sua madre dal rogo, Milano, Hoepli, 2017",
+       "autori": null,
+       "editore": "Hoepli",
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "sua madre dal rogo, Milano, Hoepli, 2017"
+      },
+      {
+       "titolo": "famigliari e relazioni eterodosse , Roma, Viella, 2012",
+       "autori": null,
+       "editore": null,
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "famigliari e relazioni eterodosse , Roma, Viella, 2012"
+      },
+      {
+       "titolo": "missionario di Marie de L’Incarnation, Venezia, La Toletta, 2014",
+       "autori": null,
+       "editore": null,
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "missionario di Marie de L’Incarnation, Venezia, La Toletta, 2014"
+      },
+      {
+       "titolo": "donna di arte e di scienza, Bologna, Edizioni Pendragon, 2022",
+       "autori": null,
+       "editore": "Edizioni Pendragon",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "donna di arte e di scienza, Bologna, Edizioni Pendragon, 2022"
+      },
+      {
+       "titolo": "moderna, Turnhout, Brepols, 2020",
+       "autori": null,
+       "editore": null,
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "moderna, Turnhout, Brepols, 2020"
+      },
+      {
+       "titolo": "A. Boeri-F. Rurale, Marie, Maria, Mariana, Brindisi, Calamospecchia, 2020",
+       "autori": null,
+       "editore": null,
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A. Boeri-F. Rurale, Marie, Maria, Mariana, Brindisi, Calamospecchia, 2020"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le0132",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE0222",
+     "nome": "Storia del Cinema",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "18/12/2026 00:00:00",
+     "cfu": 9,
+     "ssd": "PEMM-01/B",
+     "obbligatorio": true,
+     "curriculum": "Piano di studio Cinema e media 26/27",
+     "docenti": [
+      "Pitassio Francesco"
+     ],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/13814/2026/2?coorte=2026",
+     "libri": [
+      {
+       "titolo": "David Bordwell, Kristin Thompson, Storia del cinema. Un'introduzione, McGraw Hill, Milano 2022",
+       "autori": null,
+       "editore": "McGraw Hill",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "David Bordwell, Kristin Thompson, Storia del cinema. Un'introduzione, McGraw Hill, Milano 2022"
+      },
+      {
+       "titolo": "Edgar Morin, Le star, CUE Press, Imola 2021",
+       "autori": null,
+       "editore": "CUE Press",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Edgar Morin, Le star, CUE Press, Imola 2021"
+      },
+      {
+       "titolo": "David Bordwell, Kristin Thompson, Storia del cinema. Un'introduzione, McGraw Hill, Milano 2014",
+       "autori": null,
+       "editore": "McGraw Hill",
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "David Bordwell, Kristin Thompson, Storia del cinema. Un'introduzione, McGraw Hill, Milano 2014"
+      },
+      {
+       "titolo": "Giaime Alonge, Giulia Carluccio, Il cinema americano classico, Laterza, Roma-Bari 2006",
+       "autori": null,
+       "editore": "Laterza",
+       "anno": 2006,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Giaime Alonge, Giulia Carluccio, Il cinema americano classico, Laterza, Roma-Bari 2006"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le0222",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE0848",
+     "nome": "Storia del Teatro Classico",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "18/12/2026 00:00:00",
+     "cfu": 6,
+     "ssd": "LATI-01/A",
+     "obbligatorio": true,
+     "curriculum": "Piano di studio Spettacolo e performance 26/27",
+     "docenti": [
+      "Battistella Chiara"
+     ],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/18593/2026/1?coorte=2026",
+     "libri": [
+      {
+       "titolo": "Manuali: E. Adriani, Storia del teatro antico, Roma 2005; M. Cambiaghi et all., Storia del teatro. Scena e spettacolo in Occidente, Milano 2025 (capitoli 1 e 2). Oltre ai manuali, costituisce parte integrante del programma d'esame una lista di testi teatrali di autori greci e latini che sarà indicat",
+       "autori": null,
+       "editore": null,
+       "anno": 2025,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Manuali: E. Adriani, Storia del teatro antico, Roma 2005; M. Cambiaghi et all., Storia del teatro. Scena e spettacolo in Occidente, Milano 2025 (capitoli 1 e 2). Oltre ai manuali, costituisce parte integrante del programma d'esame una lista di testi teatrali di autori greci e latini che sarà indicata a lezione (da preparare in traduzione)."
+      },
+      {
+       "titolo": "Gli studenti non frequentanti dovranno preparare i due manuali citati sopra secondo le indicazioni fornite. Dovranno inoltre aggiungere al programma: - la lettura integrale di Aristotele, Poetica (edizione BUR o altre edizioni); - una lista di testi d'autore fornita dalla docente, che gli studenti n",
+       "autori": null,
+       "editore": "Poetica (edizione BUR o altre edizioni)",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Gli studenti non frequentanti dovranno preparare i due manuali citati sopra secondo le indicazioni fornite. Dovranno inoltre aggiungere al programma: - la lettura integrale di Aristotele, Poetica (edizione BUR o altre edizioni); - una lista di testi d'autore fornita dalla docente, che gli studenti non frequentanti sono invitati a contattare."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le0848",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1777",
+     "nome": "Editing Digitale",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "21/05/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "PEMM-01/B",
+     "obbligatorio": true,
+     "curriculum": "Piano di studio Cinema e media 26/27",
+     "docenti": [
+      "Garelli Nikita Elisa"
+     ],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/23996/2026/2?coorte=2026",
+     "libri": [
+      {
+       "titolo": "Walter Murch, In un batter d'occhi. Una prospettiva sul montaggio cinematografico nell'era digitale. Lindau, 2007.",
+       "autori": null,
+       "editore": null,
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Walter Murch, In un batter d'occhi. Una prospettiva sul montaggio cinematografico nell'era digitale. Lindau, 2007."
+      },
+      {
+       "titolo": "Diego Cassani, Manuale del montaggio. Tecnica dell'editing nella comunicazione cinematografica e audiovisiva, UTET, 2000",
+       "autori": null,
+       "editore": "UTET",
+       "anno": 2000,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Diego Cassani, Manuale del montaggio. Tecnica dell'editing nella comunicazione cinematografica e audiovisiva, UTET, 2000"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1777",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1796",
+     "nome": "Laboratorio di Scenografia",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "21/05/2027 00:00:00",
+     "cfu": 9,
+     "ssd": "PEMM-01/A",
+     "obbligatorio": true,
+     "curriculum": "Piano di studio Spettacolo e performance 26/27",
+     "docenti": [
+      "Tusini Luigina"
+     ],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/24001/2026/1?coorte=2026",
+     "libri": [
+      {
+       "titolo": "Fabrizio Cruciani, Lo spazio del teatro, Bulzoni, Roma, 2005.",
+       "autori": null,
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Fabrizio Cruciani, Lo spazio del teatro, Bulzoni, Roma, 2005."
+      },
+      {
+       "titolo": "Il disegno dello spazio scenico",
+       "autori": "Pagliano, E.",
+       "editore": "Carocci",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pagliano, E., Il disegno dello spazio scenico, Carocci, Roma. (Il testo cardine per apprendere le regole della restituzione geometrica, della scala e della rappresentazione tecnica)."
+      },
+      {
+       "titolo": "Manuale pratico di scenotecnica. Le macchine teatrali",
+       "autori": "Copelli, G.",
+       "editore": "Pàtron Editore",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Copelli, G., Manuale pratico di scenotecnica. Le macchine teatrali, Pàtron Editore, Bologna. (Manuale pratico per l'introduzione alla nomenclatura teatrale e ai meccanismi di montaggio)."
+      },
+      {
+       "titolo": "Estetica del brutto",
+       "autori": "Rosenkranz, K.",
+       "editore": "Aesthetica Edizioni",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Rosenkranz, K., Estetica del brutto, Aesthetica Edizioni, Palermo. (Il saggio filosofico di riferimento per sviscerare il significato profondo e soggettivo di questa categoria)."
+      },
+      {
+       "titolo": "Storia della bruttezza",
+       "autori": "Eco, U.",
+       "editore": "Bompiani",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Eco, U., Storia della bruttezza, Bompiani, Milano. (Atlante visivo e culturale per stimolare la sensibilità )."
+      },
+      {
+       "titolo": "Lo spazio vuoto",
+       "autori": "Brook, P.",
+       "editore": "Dino Audino Editore",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Brook, P., Lo spazio vuoto, Dino Audino Editore, Roma. (Il testo manifesto sulla necessità del vuoto e della sottrazione in teatro)."
+      },
+      {
+       "titolo": "Castellucci, R., Il teatro di Socìetas Raffaello Sanzio, Ubulibri, Milano. (Per comprendere la scenografia del sentimento, del perturbante e l'espressione contemporanea).",
+       "autori": null,
+       "editore": "del perturbante e l'espressione contemporanea)",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Castellucci, R., Il teatro di Socìetas Raffaello Sanzio, Ubulibri, Milano. (Per comprendere la scenografia del sentimento, del perturbante e l'espressione contemporanea)."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1796",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1783",
+     "nome": "Regia Cinematografica",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "21/05/2027 00:00:00",
+     "cfu": 9,
+     "ssd": "PEMM-01/B",
+     "obbligatorio": false,
+     "curriculum": "Piano di studio Cinema e media 26/27",
+     "docenti": [
+      "Rossitti Marco"
+     ],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/23999/2026/2?coorte=2026",
+     "libri": [
+      {
+       "titolo": "La regia televisiva",
+       "autori": "Gianfranco Bettetini",
+       "editore": null,
+       "anno": 1965,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Gianfranco Bettetini, \"La regia televisiva\", EDUCatt Università Cattolica, Milano 2007 (prima ed. La Scuola 1965)."
+      },
+      {
+       "titolo": "Il teatro in televisione. Scrittura teatrale e scrittura audiovisiva nelle opere di frontiera tra teatro e tv",
+       "autori": "Franco Prono",
+       "editore": null,
+       "anno": 2011,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Franco Prono, \"Il teatro in televisione. Scrittura teatrale e scrittura audiovisiva nelle opere di frontiera tra teatro e tv\", Dino Audino, Roma 2011."
+      },
+      {
+       "titolo": "Liveness. Performance nell'epoca della riproducibilità digitale",
+       "autori": "Auslander, Philip",
+       "editore": "Cue Press",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Auslander, Philip, \"Liveness. Performance nell'epoca della riproducibilità digitale\", Cue Press, Imola 2024."
+      },
+      {
+       "titolo": "Vajont, 9 ottobre '63. Orazione civile",
+       "autori": "Marco Paolini e Gabriele Vacis",
+       "editore": null,
+       "anno": 1997,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Marco Paolini e Gabriele Vacis, \"Vajont, 9 ottobre '63. Orazione civile\" (1997), con Marco Paolini, regia televisiva di Antonio A. Moretti"
+      },
+      {
+       "titolo": "Fabbrica",
+       "autori": "Ascanio Celestini",
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Ascanio Celestini, \"Fabbrica\" (2005), con Ascanio Celestini, regia di Marco Rossitti"
+      },
+      {
+       "titolo": "mPalermu",
+       "autori": "Emma Dante",
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Emma Dante, \"mPalermu\" (2005), con la Compagnia Sud Costa Occidentale (Palermo), regia di Marco Rossitti"
+      },
+      {
+       "titolo": "maggio '43",
+       "autori": "Davide Enia",
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Davide Enia, \"maggio '43\" (2005), con Davide Enia e Giulio Barocchieri, regia di Marco Rossitti"
+      },
+      {
+       "titolo": "Nati in casa",
+       "autori": "Giuliana Musso",
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Giuliana Musso, \"Nati in casa\" (2005), regia di Marco Rossitti"
+      },
+      {
+       "titolo": "Italiani cincali",
+       "autori": "Mario Perrotta",
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Mario Perrotta, \"Italiani cincali\", parte prima: \"Minatori in Belgio\" (2005), regia di Marco Rossitti"
+      },
+      {
+       "titolo": "I Pescecani, ovvero quello che resta di Bertolt Brecht",
+       "autori": "Armando Punzo",
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Armando Punzo, \"I Pescecani, ovvero quello che resta di Bertolt Brecht\" (2005), con la Compagnia della Fortezza di Volterra, regia di Marco Rossitti"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1783",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1782",
+     "nome": "Scrittura per I Media",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "21/05/2027 00:00:00",
+     "cfu": 9,
+     "ssd": "PEMM-01/B",
+     "obbligatorio": true,
+     "curriculum": "Piano di studio Cinema e media 26/27",
+     "docenti": [
+      "Zanco Martina"
+     ],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/23998/2026/2?coorte=2026",
+     "libri": [
+      {
+       "titolo": "Henry Jenkins, Cultura convergente, Milano, Apogeo, 2011.",
+       "autori": null,
+       "editore": "Apogeo",
+       "anno": 2011,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Henry Jenkins, Cultura convergente, Milano, Apogeo, 2011."
+      },
+      {
+       "titolo": "Piero Babudro, Manuale di scrittura digitale creativa e consapevole. Un nuovo metodo per migliorare i tuoi contenuti su web e social, Palermo, Flaccovio, 2016.",
+       "autori": null,
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Piero Babudro, Manuale di scrittura digitale creativa e consapevole. Un nuovo metodo per migliorare i tuoi contenuti su web e social, Palermo, Flaccovio, 2016."
+      },
+      {
+       "titolo": "Anne Huet, La sceneggiatura. Teorie, regole, modelli, Torino, Lindau, 2007.",
+       "autori": null,
+       "editore": null,
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Anne Huet, La sceneggiatura. Teorie, regole, modelli, Torino, Lindau, 2007."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1782",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1781",
+     "nome": "Serialita' Audiovisiva",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "21/05/2027 00:00:00",
+     "cfu": 9,
+     "ssd": "PEMM-01/B",
+     "obbligatorio": false,
+     "curriculum": "Piano di studio Cinema e media 26/27",
+     "docenti": [
+      "Casini Silvia"
+     ],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/23997/2026/2?coorte=2026",
+     "libri": [
+      {
+       "titolo": "Daniela Cardini, Long TV. Le serie televisive viste da vicino, Milano, Unicopli 2017",
+       "autori": null,
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Daniela Cardini, Long TV. Le serie televisive viste da vicino, Milano, Unicopli 2017"
+      },
+      {
+       "titolo": "Monica Dall’Asta, Archeologia del film seriale, Le Mani 2009 (cap. 1 e 2: pdf forniti dalla docente)",
+       "autori": null,
+       "editore": null,
+       "anno": 2009,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Monica Dall’Asta, Archeologia del film seriale, Le Mani 2009 (cap. 1 e 2: pdf forniti dalla docente)"
+      },
+      {
+       "titolo": "Jason Mittell, Complex tv. Teoria e tecnica dello storytelling delle serie tv, Minimum fax, Roma 2017 (Introduzione e capitoli 1-6 inclusi)",
+       "autori": null,
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Jason Mittell, Complex tv. Teoria e tecnica dello storytelling delle serie tv, Minimum fax, Roma 2017 (Introduzione e capitoli 1-6 inclusi)"
+      },
+      {
+       "titolo": "Enrico Terrone, Il Seriale, Milano, Einaudi 2025 (solo l’Introduzione)",
+       "autori": null,
+       "editore": "Einaudi 2025 (solo l’Introduzione)",
+       "anno": 2025,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Enrico Terrone, Il Seriale, Milano, Einaudi 2025 (solo l’Introduzione)"
+      },
+      {
+       "titolo": "Veronica Innocenti, Guglielmo Pescatore, Le nuove forme della serialità televisiva. Storia, linguaggio e temi, Bologna, Archetipolibri 2012",
+       "autori": null,
+       "editore": null,
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Veronica Innocenti, Guglielmo Pescatore, Le nuove forme della serialità televisiva. Storia, linguaggio e temi, Bologna, Archetipolibri 2012"
+      },
+      {
+       "titolo": "Six Elements of Serial Narrative",
+       "autori": "Sean O’ Sullivan",
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Sean O’ Sullivan, “Six Elements of Serial Narrative”, in Narrative, 27, 1(2019), pp. 49-64"
+      },
+      {
+       "titolo": "Enrico Terrone, Il Seriale, Milano, Einaudi 2025",
+       "autori": null,
+       "editore": "Einaudi 2025",
+       "anno": 2025,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Enrico Terrone, Il Seriale, Milano, Einaudi 2025"
+      },
+      {
+       "titolo": "Veronica Innocenti, Guglielmo Pescatore, Le nuove forme della serialità televisiva. Storia, linguaggio e temi, Bologna, Archetipolibri 2012 (pp. 1-70)",
+       "autori": null,
+       "editore": null,
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Veronica Innocenti, Guglielmo Pescatore, Le nuove forme della serialità televisiva. Storia, linguaggio e temi, Bologna, Archetipolibri 2012 (pp. 1-70)"
+      },
+      {
+       "titolo": "Ariane Hudelet, Anne Crémieux, Exploring Seriality on Screen Audiovisual Narratives in Film and Television, London, Routledge 2021",
+       "autori": null,
+       "editore": "Routledge 2021",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Ariane Hudelet, Anne Crémieux, Exploring Seriality on Screen Audiovisual Narratives in Film and Television, London, Routledge 2021"
+      },
+      {
+       "titolo": "Exploring Film Seriality: An Introduction",
+       "autori": "Frank Krutnik, Kathleen Loock",
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Frank Krutnik, Kathleen Loock, “Exploring Film Seriality: An Introduction”, Film Studies 17, 1 (2017): pp. 1-15"
+      },
+      {
+       "titolo": "Angela Maiello, Mondi in serie. L’epoca postmediale delle serie TV, Cosenza, Pellegrini Editore 2020",
+       "autori": null,
+       "editore": "Pellegrini Editore 2020",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Angela Maiello, Mondi in serie. L’epoca postmediale delle serie TV, Cosenza, Pellegrini Editore 2020"
+      },
+      {
+       "titolo": "Run Lola Run: Film As narrative Database",
+       "autori": "Jim Bizzocchi",
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Jim Bizzocchi, “Run Lola Run: Film As narrative Database”, Media in Transition 4(2005)"
+      },
+      {
+       "titolo": "A missed encounter between species: The interplay of scientific realism and aesthetics in Painlevé’s cinematographic experiments on the octopus",
+       "autori": "Casini",
+       "editore": null,
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Casini, “A missed encounter between species: The interplay of scientific realism and aesthetics in Painlevé’s cinematographic experiments on the octopus”. Studi di Estetica, vol. 3(2022), 127-156 (https://journals.mimesisedizioni.it/index.php/studi-di-estetica/article/view/985/1425 )."
+      },
+      {
+       "titolo": "Screen Animals Dossier. An Introduction",
+       "autori": "McMahon",
+       "editore": null,
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "McMahon, “Screen Animals Dossier. An Introduction”, Screen, vol. 56, 1(2015), 81–87 (pdf fornito dalla docente)"
+      },
+      {
+       "titolo": "Time’s Up for a Change of Political Focus: Katniss Everdeen’s Ecofeminist Leadership in The Hunger Games",
+       "autori": "Mónica Martín",
+       "editore": null,
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Mónica Martín, “Time’s Up for a Change of Political Focus: Katniss Everdeen’s Ecofeminist Leadership in The Hunger Games”, ATLANTIS. Journal of the Spanish Association of Anglo-American Studies, 43,1(2021), 89-109"
+      },
+      {
+       "titolo": "Haunted by Seriality: The Formal Uncanny of Mulholland Drive",
+       "autori": "Jason Mittell",
+       "editore": null,
+       "anno": 2013,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Jason Mittell, “Haunted by Seriality: The Formal Uncanny of Mulholland Drive”, Cinephile 9,1(2013), pp. 27-32"
+      },
+      {
+       "titolo": "The Good Wife’s Representation of Women in the Political and Legal Realms: Balancing Expectations",
+       "autori": "Ana Popović",
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Ana Popović, “The Good Wife’s Representation of Women in the Political and Legal Realms: Balancing Expectations”, in Ex-Centric Narratives: Journal of Anglophone Literature, Culture and Media, 20(2019)"
+      },
+      {
+       "titolo": "Medical Reality TV, Social Media, and the Networked Patient",
+       "autori": "Ostherr",
+       "editore": null,
+       "anno": 2013,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Ostherr, “Medical Reality TV, Social Media, and the Networked Patient” from Medical Visions. Producing the Patient through Film, Television, and Imaging Technologies, (2013), 190-214."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1781",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE0096",
+     "nome": "Storia Contemporanea",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "21/05/2027 00:00:00",
+     "cfu": 9,
+     "ssd": "HIST-03/A",
+     "obbligatorio": true,
+     "curriculum": "Piano di studio Cinema e media 26/27, Piano di studio Spettacolo e performance 26/27",
+     "docenti": [
+      "Piffer Tommaso"
+     ],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/13815/2026/2?coorte=2026",
+     "libri": [
+      {
+       "titolo": "Giovanni Sabbatucci, Vittorio Vidotto, Storia contemporanea. Dalla Grande guerra ad oggi (Laterza). Solo dal capitolo 1 (La prima guerra mondiale e la rivoluzione russa) al capitolo 17 compreso (Declino e crisi della Prima Repubblica). Il programma è identico per frequentanti e non frequentanti. L'e",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Giovanni Sabbatucci, Vittorio Vidotto, Storia contemporanea. Dalla Grande guerra ad oggi (Laterza). Solo dal capitolo 1 (La prima guerra mondiale e la rivoluzione russa) al capitolo 17 compreso (Declino e crisi della Prima Repubblica). Il programma è identico per frequentanti e non frequentanti. L'elenco degli argomenti trattati in ogni lezione sarà disponibile all’inizio del corso."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le0096",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE0931",
+     "nome": "Storia del Teatro e Dello Spettacolo Moderno e Contemporaneo",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "21/05/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "PEMM-01/A",
+     "obbligatorio": true,
+     "curriculum": "Piano di studio Spettacolo e performance 26/27",
+     "docenti": [
+      "Monda Letizia Gioia"
+     ],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/19138/2026/1?coorte=2026",
+     "libri": [
+      {
+       "titolo": "M. Cambiaghi-A. Egidio-I. Innamorati-A. Sapienza, Storia del teatro. Scena e spettacolo in Occidente, Torino, Pearson, ed. 2, 2025. Ultimi due capitoli sulla Storia del Teatro del Primo e del Secondo Novecento.",
+       "autori": null,
+       "editore": "Pearson",
+       "anno": 2025,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "M. Cambiaghi-A. Egidio-I. Innamorati-A. Sapienza, Storia del teatro. Scena e spettacolo in Occidente, Torino, Pearson, ed. 2, 2025. Ultimi due capitoli sulla Storia del Teatro del Primo e del Secondo Novecento."
+      },
+      {
+       "titolo": "Elettra",
+       "autori": "Guido Avezzù (a cura di), Sofocle, Euripide, Hofmannsthal, Yourcenar",
+       "editore": null,
+       "anno": 2002,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Guido Avezzù (a cura di), Sofocle, Euripide, Hofmannsthal, Yourcenar, \"Elettra\": Variazioni sul mito, Marsilio, 2002."
+      },
+      {
+       "titolo": "Lehmann, Hans-Thies (2006), Il teatro postdramatico, Cue Press, 2017.",
+       "autori": null,
+       "editore": "Cue Press",
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Lehmann, Hans-Thies (2006), Il teatro postdramatico, Cue Press, 2017."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le0931",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1788",
+     "nome": "Cinema Generativo e Ai",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": "Piano di studio Cinema e media 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24009/2026/2?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1788",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1797",
+     "nome": "Drammaturgia Intermediale",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": "Piano di studio Spettacolo e performance 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24017/2026/1?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1797",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1798",
+     "nome": "Educazione al Suono e Ai Linguaggi della Musica",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Piano di studio Spettacolo e performance 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24018/2026/1?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1798",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1789",
+     "nome": "Fotografia e Culture Visuali",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": "Piano di studio Cinema e media 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24010/2026/2?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1789",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1785",
+     "nome": "Inglese per I Media",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24006/2026/2?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1785",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1799",
+     "nome": "Laboratorio di Realta' Virtuale",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": "Piano di studio Spettacolo e performance 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24019/2026/1?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1799",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1445",
+     "nome": "Letterature Comparate",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Piano di studio Cinema e media 26/27, Piano di studio Spettacolo e performance 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/21854/2026/2?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1445",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE0107",
+     "nome": "Storia Dell'arte Contemporanea",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/13768/2026/2?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le0107",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1786",
+     "nome": "Tecnologie Digitali per il Suono e la Radio",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24007/2026/2?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1786",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1499",
+     "nome": "Teorie Dell'immagine",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Piano di studio Cinema e media 26/27, Piano di studio Spettacolo e performance 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/22577/2026/2?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1499",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1787",
+     "nome": "Teorie dei Media",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": "Piano di studio Cinema e media 26/27, Piano di studio Spettacolo e performance 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24008/2026/2?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1787",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1794",
+     "nome": "Archivi e Patrimonio Audiovisivo",
+     "anno": 3,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Piano di studio Cinema e media 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24015/2026/2?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1794",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1791",
+     "nome": "Cinema D'animazione",
+     "anno": 3,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Piano di studio comune 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24012/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1791",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1793",
+     "nome": "Imprese Culturali e Creative",
+     "anno": 3,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Piano di studio comune 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24014/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1793",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1795",
+     "nome": "Pratiche di Motion Capture",
+     "anno": 3,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Piano di studio comune 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24016/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1795",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE0085",
+     "nome": "Prova Finale",
+     "anno": 3,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Piano di studio comune 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/16194/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le0085",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1790",
+     "nome": "Sociologia della Comunicazione e Culture del Web",
+     "anno": 3,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Piano di studio comune 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24011/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1790",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1028",
+     "nome": "Teorie e Pratiche del Videogame",
+     "anno": 3,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Piano di studio comune 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/20647/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1028",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1800",
+     "nome": "Teorie e Pratiche della Coreografia",
+     "anno": 3,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Piano di studio Spettacolo e performance 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24020/2026/1?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1800",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE0140",
+     "nome": "Tirocinio",
+     "anno": 3,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Piano di studio comune 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/13797/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le0140",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "LE1792",
+     "nome": "Videoarte",
+     "anno": 3,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Piano di studio comune 26/27",
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24013/2026/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-3-dams-discipline-dell-audiovisivo-dei-media-e-dello-spettacol-le1792",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    }
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -12762,7 +14292,13 @@
     "livello_inglese": null,
     "fonte": "https://uniud.coursecatalogue.cineca.it/corsi/2026/11062",
     "verificato_il": "2026-10-10"
-   }
+   },
+   "curricula": [
+    "Piano di studio Cinema e media 26/27",
+    "Piano di studio Spettacolo e performance 26/27",
+    "Piano di studio comune 26/27"
+   ],
+   "url_catalogo": "https://uniud.coursecatalogue.cineca.it/corsi/2026/11062"
   },
   {
    "id": "uniud-l-14-diritto-per-le-imprese-e-le-istituzioni",
@@ -12780,7 +14316,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/scienze-giuridiche/laurea/diritto-per-le-imprese-e-le-istituzioni/corso/diritto-per-le-imprese-e-le-istituzioni",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "GI0023",
@@ -14686,7 +16222,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/economia-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "EC0030",
@@ -15455,7 +16991,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/economia-commercio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "EC0334",
@@ -16351,7 +17887,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea/educazione-professionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MM3164",
@@ -18377,7 +19913,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea/filosofia-trasformazione-digitale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "T_INGR",
@@ -20463,7 +21999,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MM1779",
@@ -22566,7 +24102,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea/infermieristica",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": []
   },
   {
@@ -26109,7 +27645,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea/infermieristica",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": []
   },
   {
@@ -29655,7 +31191,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea/informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A_INGL_B1",
@@ -31198,7 +32734,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/ingegneria-civile-e-ambientale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "DEB_MAT",
@@ -32467,7 +34003,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/ingegneria-elettronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "DEB_MAT",
@@ -33430,7 +34966,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "DEB_MAT",
@@ -34461,7 +35997,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/ingegneria-industriale-sostenibilita-ambientale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "DEB_MAT",
@@ -35436,7 +36972,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/ingegneria-industriale-per-energia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IN1511",
@@ -36586,7 +38122,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/ingegneria-meccanica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "DEB_MAT",
@@ -37471,7 +39007,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea/internet-of-things-big-data-machine-learning",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A_INGL_B1",
@@ -39058,7 +40594,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea/lettere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LE1572",
@@ -52568,7 +54104,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea/lingue-e-letterature-straniere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "T_INGR",
@@ -65848,7 +67384,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/management-business-analytics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "EC0643",
@@ -66515,7 +68051,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea/matematica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MA0015",
@@ -67632,7 +69168,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea/mediazione-culturale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "T_INGR",
@@ -82640,7 +84176,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi-studenti-iscritti/area-medica/laurea/ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MM1779",
@@ -84629,7 +86165,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea/relazioni-pubbliche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LI0510",
@@ -86918,7 +88454,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea/scienza-cultura-cibo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "AG0113",
@@ -87977,7 +89513,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea/scienze-agrarie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "AG1765",
@@ -89005,7 +90541,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/scienze-dellarchitettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "DEB_MAT",
@@ -90970,7 +92506,7 @@
    "url": "http://www.uniud.it/it/scienze-educazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "T_INGR",
@@ -94244,7 +95780,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea/scienze-tecniche-turismo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "T_INGR",
@@ -97156,7 +98692,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea/scienze-e-tecnologie-alimentari",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "AG0113",
@@ -98773,7 +100309,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea/scienze-motorie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MM2700",
@@ -100057,7 +101593,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea/scienze-per-lambiente-e-la-natura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "AG0113",
@@ -101681,7 +103217,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea/tecnologie-digitali-e-comunicazione-per-le-industrie-creative/corso/tecnologie-digitali-e-comunicazione-per-le-industrie-creative",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MA0919",
@@ -105984,7 +107520,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea/viticoltura-ed-enologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "AG0113",
@@ -107208,7 +108744,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea-magistrale/archeologia-culture-antichita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LE1226",
@@ -110265,7 +111801,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea-magistrale/architettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IN1360",
@@ -111783,7 +113319,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea-magistrale/artificial-intelligence-cybersecurity",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MA0637",
@@ -112975,7 +114511,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea-magistrale/banca-finanza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "EC0414",
@@ -113972,7 +115508,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/biotecnologie/laurea-magistrale/biotecnologie-molecolari",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "AG1130",
@@ -114455,7 +115991,7 @@
    "url": "http://www.uniud.it/it/cittadinanza-istituzioni-politiche-europee",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "GI0483",
@@ -115409,7 +116945,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea-magistrale/comunicazione-integrata-per-le-imprese-e-le-organizzazioni",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LI0887",
@@ -116820,7 +118356,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea-magistrale/comunicazione-multimediale-e-tecnologie-dellinformazione/corso/comunicazione-multimediale-e-tecnologie-dellinformazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MA0966",
@@ -118206,7 +119742,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/scienze-giuridiche/laurea-magistrale/diritto-innovazione-imprese-pub-amm/corso/diritto-innovazione-imprese-pubbliche-amministrazioni",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "GI0081",
@@ -119260,7 +120796,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea-magistrale/economia-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "EC0343",
@@ -120252,7 +121788,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea-magistrale/economics-scienze-economiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "EC0301",
@@ -120793,7 +122329,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea-magistrale/gestione-turismo-culturale-eventi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LE0898",
@@ -121892,7 +123428,7 @@
    "url": "http://www.uniud.it/it/industrial-engineering-sustainable-manufacturing",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IN1666",
@@ -122645,7 +124181,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea-magistrale/informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MA0398",
@@ -124249,7 +125785,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea-magistrale/ingegneria-per-lambiente-il-territorio-e-la-protezione-civile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IN1360",
@@ -125482,7 +127018,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea-magistrale/ingegneria-civile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IN1360",
@@ -126972,7 +128508,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea-magistrale/ingegneria-elettronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IN1360",
@@ -131041,7 +132577,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea-magistrale/ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IN1360",
@@ -133546,7 +135082,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea-magistrale/ingegneria-meccanica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IN1360",
@@ -135215,7 +136751,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea-magistrale/international-marketing-management-organization",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "EC0286",
@@ -136047,7 +137583,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea-magistrale/italianistica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LE1226",
@@ -140753,7 +142289,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea-magistrale/lingue-letterature-europee-extraeuropee",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LI1963",
@@ -149295,7 +150831,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea-magistrale/matematica",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [],
    "ammissione": {
     "accesso": "libero",
@@ -149323,7 +150859,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea-magistrale/scienza-ed-economia-del-cibo/corso/scienza-ed-economia-del-cibo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "AG1562",
@@ -149816,7 +151352,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea-magistrale/scienze-patrimonio-audiovisivi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LE1018",
@@ -152848,7 +154384,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea-magistrale/scienze-attivita-motorie-preventive-adattate",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MM0001",
@@ -153343,7 +154879,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea-magistrale/scienze-e-tecnologie-agrarie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "AG1021",
@@ -154321,7 +155857,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea-magistrale/scienze-e-tecnologie-alimentari",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "AG1115",
@@ -155717,7 +157253,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea-magistrale/scienze-tecnologie-sostenibili-ambiente",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "AG1021",
@@ -156719,7 +158255,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi-studenti-iscritti/area-medica/laurea-magistrale/scienze-infermieristiche-ostetriche",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": []
   },
   {
@@ -156738,7 +158274,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea-magistrale/storia-dellarte",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LE0964",
@@ -159289,7 +160825,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea-magistrale/traduzione-mediazione-culturale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "LI0611",
@@ -172187,7 +173723,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea-magistrale/tutela-benessere-animale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "VE0002",
@@ -172997,7 +174533,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/scienze-giuridiche/magistrale-ciclo-unico/giurisprudenza/corso/giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "GI0065",
@@ -173898,7 +175434,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea-magistrale-ciclo-unico/medicina-e-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "MM2278",
@@ -175259,7 +176795,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/magistrale-ciclo-unico/scienze-formazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "SF0316",
@@ -179057,7 +180593,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/tecniche-edilizia-territorio-lp",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "IN1583",

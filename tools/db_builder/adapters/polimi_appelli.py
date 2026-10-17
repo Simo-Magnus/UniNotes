@@ -202,7 +202,7 @@ def info_appelli(da: dt.date, a: dt.date, log=print) -> list[dict]:
         r = c.get(f"{REST}/detail/cInsegn/{cod}/cClasse/{cl}?lang=it")
         try:
             for d in json.loads(r.text) if r else []:
-                if d.get("periodo_iscrizioni"):
+                if isinstance(d, dict) and d.get("periodo_iscrizioni") and d.get("c_appello") is not None:
                     iscr[d["c_appello"]] = d["periodo_iscrizioni"]
         except ValueError:
             continue

@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unistrapg",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-14",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -19,10 +19,907 @@
    "erogazione": "Corso di studio convenzionale",
    "interateneo": false,
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
-   "stato": "da_aggiungere",
+   "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
-   "insegnamenti": []
+   "verificato_il": "2026-10-17",
+   "insegnamenti": [
+    {
+     "codice": "A000300",
+     "nome": "Economia e gestione delle imprese",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Mauro Bernacchi"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000300&cdl=LT01R&rnd=718005318",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000300",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "SC22",
+     "nome": "Laboratorio informatico",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=SC22&cdl=LT01R&rnd=113735242",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-sc22",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "90424",
+     "nome": "Sociologia generale",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Maria Dentale"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=90424&cdl=LT01R&rnd=1001235174",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-90424",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "00300",
+     "nome": "Storia contemporanea",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Valerio De Cesaris"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=00300&cdl=LT01R&rnd=897455913",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-00300",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000052",
+     "nome": "Diritto privato dell'informazione e della comunicazione",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Alberto Azara"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000052&cdl=LT01R&rnd=1750190740",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-05",
+       "iscrizioni_al": "2027-01-21",
+       "docenti": "AZARA ALBERTO MOROZZO DELLA ROCCA PAOLO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-29",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "AZARA ALBERTO MOROZZO DELLA ROCCA PAOLO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000052",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "90419",
+     "nome": "Inglese professionale",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Renato Tomei -"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=90419&cdl=LT01R&rnd=2086418337",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-05",
+       "iscrizioni_al": "2027-01-21",
+       "docenti": "TOMEI RENATO FABBRI LOREDANA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "TOMEI RENATO FABBRI LOREDANA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-04",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "TOMEI RENATO FABBRI LOREDANA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-90419",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000271",
+     "nome": "Letteratura italiana contemporanea",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000271&cdl=LT01R&rnd=1208739482",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-08",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-19",
+       "iscrizioni_al": "2027-02-04",
+       "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000271",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000548",
+     "nome": "Politica comparata",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Emidio Diodato"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000548&cdl=LT01R&rnd=919421447",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-23",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "DIODATO EMIDIO SOTTILOTTA CECILIA EMMA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "DIODATO EMIDIO SOTTILOTTA CECILIA EMMA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "DIODATO EMIDIO SOTTILOTTA CECILIA EMMA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000548",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "90422",
+     "nome": "Storia del linguaggio politico",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Salvatore Cingari"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=90422&cdl=LT01R&rnd=731806629",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-14",
+       "docenti": "CINGARI SALVATORE MORNAGUI OUNS",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "CINGARI SALVATORE MORNAGUI OUNS",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-04",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "CINGARI SALVATORE MORNAGUI OUNS",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-90422",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000609",
+     "nome": "Diritti fondamentali comparati",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Francesco Duranti"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000609&cdl=LT01R&rnd=1553367006",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000609",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "90418",
+     "nome": "Italiano per la comunicazione",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Marcaccio Alejandro Ernesto"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=90418&cdl=LT01R&rnd=855461585",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-90418",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000601",
+     "nome": "Metodologia e tecniche per la ricerca sociale",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Stefania Tusini"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000601&cdl=LT01R&rnd=1440905017",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000601",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000602",
+     "nome": "Psicologia della comunicazione",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Marco Filardi"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000602&cdl=LT01R&rnd=1287624476",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000602",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000053",
+     "nome": "Sociologia dei media",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip/scheda-insegnamento?aa=2627&ins=A000053&cdl=LT01R&rnd=1345081366",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000053",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000055",
+     "nome": "Lingua e società",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Stefania Scaglione"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000055&cdl=LT01R&rnd=1515028978",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-21",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-01-17",
+       "docenti": "SCAGLIONE STEFANIA GASBARRA VALENTINA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-11",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-22",
+       "iscrizioni_al": "2027-02-07",
+       "docenti": "SCAGLIONE STEFANIA GASBARRA VALENTINA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000055",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000600",
+     "nome": "Linguaggi e tecniche dei media digitali e Laboratorio di social media management",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Antonio Catolfi",
+      "Federico Umberto Giordano"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000600&cdl=LT01R&rnd=1525889805",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "CATOLFI ANTONIO GIORDANO FEDERICO UMBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-27",
+       "iscrizioni_al": "2027-02-12",
+       "docenti": "CATOLFI ANTONIO GIORDANO FEDERICO UMBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000600",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "00020",
+     "nome": "Marketing",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Giancarlo Scozzese"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=00020&cdl=LT01R&rnd=70134823",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-14",
+       "docenti": "SCOZZESE GIANCARLO ROVITO STEFANO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-26",
+       "iscrizioni_al": "2027-02-11",
+       "docenti": "SCOZZESE GIANCARLO ROVITO STEFANO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-00020",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000607",
+     "nome": "Arte contemporanea, innovazione culturale e tecnologie digitali",
+     "anno": 3,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Michele Dantini"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000607&cdl=LT0001&rnd=1112999636",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000607",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "00121",
+     "nome": "Comunicazione visiva",
+     "anno": 3,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=00121&cdl=LT0001&rnd=74525018",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-00121",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000604",
+     "nome": "Laboratorio di italiano per la comunicazione",
+     "anno": 3,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000604&cdl=LT0001&rnd=1176890288",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000604",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000614",
+     "nome": "Laboratorio di scrittura giornalistica",
+     "anno": 3,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000614&cdl=LT0001&rnd=1080571621",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000614",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "00075",
+     "nome": "Marketing internazionale",
+     "anno": 3,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Giancarlo Scozzese"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=00075&cdl=LT0001&rnd=356821084",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-00075",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000603",
+     "nome": "Semiotica della comunicazione",
+     "anno": 3,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Toni Marino"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000603&cdl=LT0001&rnd=408563356",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000603",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000301",
+     "nome": "Sociologia delle migrazioni",
+     "anno": 3,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Stefania Tusini"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000301&cdl=LT0001&rnd=2078781690",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000301",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000612",
+     "nome": "Teorie della cittadinanza",
+     "anno": 3,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Alessandro Simoncini"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000612&cdl=LT0001&rnd=256723055",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000612",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000049",
+     "nome": "Architettura dell'informazione e user experience design",
+     "anno": 3,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000049&cdl=LT0001&rnd=1418260901",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-23",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "PAONE SALVATORE DOLCI ROBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "PAONE SALVATORE DOLCI ROBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000049",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000613",
+     "nome": "Comunicazione internazionale e tecniche negoziali",
+     "anno": 3,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Cecilia Emma Sottilotta"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000613&cdl=LT0001&rnd=60735985",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-07",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "SOTTILOTTA CECILIA EMMA MOLINELLI EDOARDO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-11",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-22",
+       "iscrizioni_al": "2027-02-07",
+       "docenti": "SOTTILOTTA CECILIA EMMA MOLINELLI EDOARDO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-26",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-06",
+       "iscrizioni_al": "2027-02-22",
+       "docenti": "SOTTILOTTA CECILIA EMMA MOLINELLI EDOARDO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000613",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000606",
+     "nome": "Filmmaking and gamification",
+     "anno": 3,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Federico Umberto Giordano"
+     ],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000606&cdl=LT0001&rnd=183168576",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "GIORDANO FEDERICO UMBERTO CATOLFI ANTONIO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-27",
+       "iscrizioni_al": "2027-02-12",
+       "docenti": "GIORDANO FEDERICO UMBERTO CATOLFI ANTONIO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000606",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000605",
+     "nome": "Lettorato di inglese",
+     "anno": 3,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000605&cdl=LT0001&rnd=1039956013",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000605",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000070",
+     "nome": "Lingua e cultura spagnola",
+     "anno": 3,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/509?aa=2627&ins=A000070&cdl=LT0001&rnd=2005870594",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-24",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "SAGNELLA ANGELA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-08",
+       "iscrizioni_al": "2027-01-24",
+       "docenti": "SAGNELLA ANGELA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-04",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "SAGNELLA ANGELA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-20-comunicazione-internazionale-e-pubblicitaria-a000070",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    }
+   ],
+   "url_catalogo": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip"
   },
   {
    "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale",
@@ -38,10 +935,732 @@
    "erogazione": "Corso di studio convenzionale",
    "interateneo": false,
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
-   "stato": "da_aggiungere",
+   "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
-   "insegnamenti": []
+   "verificato_il": "2026-10-17",
+   "insegnamenti": [
+    {
+     "codice": "A000049",
+     "nome": "Architettura dell'informazione e user experience design",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000049&cdl=LT02R&rnd=604070645",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-23",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "PAONE SALVATORE DOLCI ROBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "PAONE SALVATORE DOLCI ROBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000049",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000617",
+     "nome": "Filosofia delle Digital Humanities",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Antonio Allegra"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000617&cdl=LT02R&rnd=1504191927",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-23",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "ALLEGRA ANTONIO ORECCHIO FLAVIO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "ALLEGRA ANTONIO ORECCHIO FLAVIO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-29",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "ALLEGRA ANTONIO ORECCHIO FLAVIO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000617",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000965",
+     "nome": "Fondamenti di informatica umanistica",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Valentino Santucci"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000965&cdl=LT02R&rnd=1175693904",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000965",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "90516",
+     "nome": "Fonetica e fonologia dell'italiano",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Valentina Gasbarra"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=90516&cdl=LT02R&rnd=724415089",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-90516",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000968",
+     "nome": "Laboratorio: Analisi del testo letterario",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Simona Carretta"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000968&cdl=LT02R&rnd=22241458",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000968",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "AB33",
+     "nome": "Letteratura italiana",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=AB33&cdl=LT02R&rnd=1415534062",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-ab33",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000619",
+     "nome": "Linguistica generale",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Elisa Di Domenico"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000619&cdl=LT02R&rnd=429452176",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000619",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000620",
+     "nome": "Linguistica italiana",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Sandra Covino"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000620&cdl=LT02R&rnd=2130516961",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-07",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "COVINO SANDRA CASTO CLAUDIA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-04",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "COVINO SANDRA CASTO CLAUDIA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000620",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "00300",
+     "nome": "Storia contemporanea",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=00300&cdl=LT02R&rnd=557190343",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-00300",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000962",
+     "nome": "Storia della musica",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000962&cdl=LT02R&rnd=2143337262",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000962",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000961",
+     "nome": "Storia della tradizione artistica italiana",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Cristina Galassi"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000961&cdl=LT02R&rnd=29499833",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-23",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "GALASSI CRISTINA MORELLI MICHELA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "GALASSI CRISTINA MORELLI MICHELA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-26",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-06",
+       "iscrizioni_al": "2027-02-22",
+       "docenti": "GALASSI CRISTINA MORELLI MICHELA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000961",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000956",
+     "nome": "Tecnologie dell'educazione",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Cristina Gaggioli"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000956&cdl=LT02R&rnd=2028160762",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "GAGGIOLI CRISTINA FILARDI MARCO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-21",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "GAGGIOLI CRISTINA FILARDI MARCO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000956",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000629",
+     "nome": "Elementi di filologia della letteratura italiana",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Carla Gambacorta"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000629&cdl=LT02R&rnd=1385490224",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000629",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "00042",
+     "nome": "Glottodidattica",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Valentina Carbonara"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=00042&cdl=LT02R&rnd=1485062472",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-23",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "DOLCI ROBERTO CARBONARA VALENTINA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "DOLCI ROBERTO CARBONARA VALENTINA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-00042",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000966",
+     "nome": "Informatica umanistica",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Lucia Ballerini"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000966&cdl=LT02R&rnd=695977612",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000966",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000969",
+     "nome": "Laboratorio: Acquisizione del linguaggio e dell'italiano L2",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Elisa Di Domenico"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000969&cdl=LT02R&rnd=574438537",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000969",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000957",
+     "nome": "Lingua e cultura latina",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Emore Paoli"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000957&cdl=LT02R&rnd=173439688",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000957",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000958",
+     "nome": "Storia della lingua italiana e laboratorio di italiano scritto",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Francesca Malagnini"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000958&cdl=LT02R&rnd=1076348612",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000958",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000955",
+     "nome": "Geografia",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000955&cdl=LT02R&rnd=1818945415",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "MUNDULA LUIGI MONTAGNOLI ROBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-27",
+       "iscrizioni_al": "2027-02-12",
+       "docenti": "MUNDULA LUIGI MONTAGNOLI ROBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000955",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "00041",
+     "nome": "Letteratura italiana contemporanea",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Siriana Sgavicchia"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=00041&cdl=LT02R&rnd=605180369",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-31",
+       "iscrizioni_al": "2027-01-16",
+       "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-08",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-19",
+       "iscrizioni_al": "2027-02-04",
+       "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-04",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "SGAVICCHIA SIRIANA CARRETTA SIMONA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-00041",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000630",
+     "nome": "Lingua e letteratura inglese",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Enrico Terrinoni"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000630&cdl=LT02R&rnd=1588134241",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-07",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-18",
+       "iscrizioni_al": "2027-01-03",
+       "docenti": "TERRINONI ENRICO COLLINS BRIDGET CLARE",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-26",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-06",
+       "iscrizioni_al": "2027-02-22",
+       "docenti": "TERRINONI ENRICO COLLINS BRIDGET CLARE",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000630",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000964",
+     "nome": "Lingua e letteratura spagnola",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Angela Sagnella"
+     ],
+     "url": "https://www.unistrapg.it/node/510?aa=2627&ins=A000964&cdl=LT02R&rnd=1407336235",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-22",
+       "iscrizioni_al": "2027-01-07",
+       "docenti": "GAMBINI DIANELLA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-06",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "GAMBINI DIANELLA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-22",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-02",
+       "iscrizioni_al": "2027-02-18",
+       "docenti": "GAMBINI DIANELLA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-10-lingua-e-cultura-italiana-nel-mondo-digitale-a000964",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    }
+   ],
+   "url_catalogo": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod"
   },
   {
    "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita",
@@ -57,10 +1676,708 @@
    "erogazione": "Corso di studio convenzionale",
    "interateneo": false,
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
-   "stato": "da_aggiungere",
+   "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
-   "insegnamenti": []
+   "verificato_il": "2026-10-17",
+   "insegnamenti": [
+    {
+     "codice": "A000982",
+     "nome": "Ecologia e sviluppo sostenibile e laboratorio delle erbe",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000982&cdl=LT03R&rnd=71961793",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000982",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000368",
+     "nome": "Fondamenti di statistica",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000368&cdl=LT03R&rnd=1708116421",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000368",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000385",
+     "nome": "Linguaggi professionali del Made in Italy",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Francesca Malagnini"
+     ],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000385&cdl=LT03R&rnd=863299289",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000385",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000345",
+     "nome": "Storia e cultura del Made in Italy",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000345&cdl=LT03R&rnd=1032146191",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000345",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000347",
+     "nome": "Diritto e tutele del Made in Italy",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Alberto Azara"
+     ],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000347&cdl=LT03R&rnd=2127796231",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-05",
+       "iscrizioni_al": "2027-01-21",
+       "docenti": "AZARA ALBERTO ARISTEI LUNA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-29",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "AZARA ALBERTO ARISTEI LUNA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000347",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000979",
+     "nome": "Inglese per il turismo",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000979&cdl=LT03R&rnd=784733457",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-23",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "BAGLI MARCO COLLINS BRIDGET CLARE",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-14",
+       "docenti": "BAGLI MARCO COLLINS BRIDGET CLARE",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "BAGLI MARCO COLLINS BRIDGET CLARE",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "BAGLI MARCO COLLINS BRIDGET CLARE",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000979",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000984",
+     "nome": "Laboratorio di Geografia dell'alimentazione",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Luigi Mundula"
+     ],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000984&cdl=LT03R&rnd=1548148632",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-26",
+       "iscrizioni_al": "2027-02-11",
+       "docenti": "MUNDULA LUIGI MONTAGNOLI ROBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000984",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A001088",
+     "nome": "Psicologia generale e del comportamento turistico",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Marco Filardi"
+     ],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A001088&cdl=LT03R&rnd=1808974990",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-26",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "FILARDI MARCO GAGGIOLI CRISTINA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-05",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-16",
+       "iscrizioni_al": "2027-02-01",
+       "docenti": "FILARDI MARCO GAGGIOLI CRISTINA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-26",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-06",
+       "iscrizioni_al": "2027-02-22",
+       "docenti": "FILARDI MARCO GAGGIOLI CRISTINA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a001088",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000977",
+     "nome": "Scienze e tecnologie alimentari",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Luigi Mundula"
+     ],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R&rnd=726052014",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "MUNDULA LUIGI MONTAGNOLI ROBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-27",
+       "iscrizioni_al": "2027-02-12",
+       "docenti": "MUNDULA LUIGI MONTAGNOLI ROBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000977",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000980",
+     "nome": "Antropologia dell'alimentazione",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000980&cdl=LT03R&rnd=1939602277",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000980",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000353",
+     "nome": "Arte, cibo e paesaggio",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Michele Dantini"
+     ],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000353&cdl=LT03R&rnd=2077203765",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000353",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000460",
+     "nome": "Marketing del Made in Italy",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Donatella Radicchi"
+     ],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000460&cdl=LT03R&rnd=1086044119",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000460",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000348",
+     "nome": "Media e turismo",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Matteo Gerli"
+     ],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000348&cdl=LT03R&rnd=1205216030",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000348",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000712",
+     "nome": "Sociologia dell'alimentazione e degli stili di vita",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000712&cdl=LT03R&rnd=998789026",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000712",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000354",
+     "nome": "Cinema, fotografia e turismo",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Federico Umberto Giordano"
+     ],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000354&cdl=LT03R&rnd=635593580",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "GIORDANO FEDERICO UMBERTO CATOLFI ANTONIO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-27",
+       "iscrizioni_al": "2027-02-12",
+       "docenti": "GIORDANO FEDERICO UMBERTO CATOLFI ANTONIO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000354",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A001096",
+     "nome": "Laboratorio: Corporate and sustainability",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A001096&cdl=LT03R&rnd=289801114",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-22",
+       "iscrizioni_al": "2027-01-07",
+       "docenti": "ASDRUBALI FRANCESCO CHIATTI CHIARA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-26",
+       "iscrizioni_al": "2027-02-11",
+       "docenti": "ASDRUBALI FRANCESCO CHIATTI CHIARA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a001096",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A001097",
+     "nome": "Laboratorio: Ricettari storici",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Emore Paoli"
+     ],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A001097&cdl=LT03R&rnd=411944534",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-22",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-02",
+       "iscrizioni_al": "2027-01-18",
+       "docenti": "PAOLI EMORE BAGNARDI DAVIDE",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a001097",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000983",
+     "nome": "Lingua e civiltà della Cina per il turismo",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Daniele Beltrame"
+     ],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000983&cdl=LT03R&rnd=2089369375",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-08",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-12-19",
+       "iscrizioni_al": "2027-01-04",
+       "docenti": "BELTRAME DANIELE LI YING",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-14",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "BELTRAME DANIELE LI YING",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000983",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000358",
+     "nome": "Lingua e cultura spagnola per il turismo",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000358&cdl=LT03R&rnd=920479332",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-24",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "SAGNELLA ANGELA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-08",
+       "iscrizioni_al": "2027-01-24",
+       "docenti": "SAGNELLA ANGELA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-04",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "SAGNELLA ANGELA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000358",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000711",
+     "nome": "Lingua francese per il cibo",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000711&cdl=LT03R&rnd=1959082961",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-14",
+       "docenti": "FERRARI GIOVANNI MUNDULA LUIGI",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-22",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-02",
+       "iscrizioni_al": "2027-02-18",
+       "docenti": "FERRARI GIOVANNI MUNDULA LUIGI",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000711",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000359",
+     "nome": "Sistemi multimediali e web",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Lucia Ballerini"
+     ],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000359&cdl=LT03R&rnd=1637437804",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-26",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "BALLERINI LUCIA SANTUCCI VALENTINO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "BALLERINI LUCIA SANTUCCI VALENTINO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-28",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "BALLERINI LUCIA SANTUCCI VALENTINO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000359",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    }
+   ],
+   "url_catalogo": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico"
   },
   {
    "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter",
@@ -76,10 +2393,528 @@
    "erogazione": "Corso di studio convenzionale",
    "interateneo": false,
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
-   "stato": "da_aggiungere",
+   "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
-   "insegnamenti": []
+   "verificato_il": "2026-10-17",
+   "insegnamenti": [
+    {
+     "codice": "A000945",
+     "nome": "Filosofia della sostenibilità",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [],
+     "url": "https://www.unistrapg.it/node/512?aa=2627&ins=A000945&cdl=LT04R&rnd=2107575770",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter-a000945",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000546",
+     "nome": "Storia contemporanea",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Valerio De Cesaris"
+     ],
+     "url": "https://www.unistrapg.it/node/512?aa=2627&ins=A000546&cdl=LT04R&rnd=2046378961",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter-a000546",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000944",
+     "nome": "Storia economica e dello sviluppo",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Alessandro Albanese Ginammi"
+     ],
+     "url": "https://www.unistrapg.it/node/512?aa=2627&ins=A000944&cdl=LT04R&rnd=1453364569",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter-a000944",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000936",
+     "nome": "Istituzioni di diritto pubblico italiano e comparato",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Francesco Duranti"
+     ],
+     "url": "https://www.unistrapg.it/node/512?aa=2627&ins=A000936&cdl=LT04R&rnd=1263258946",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-22",
+       "iscrizioni_al": "2027-01-07",
+       "docenti": "DURANTI FRANCESCO BERTOTTO NICOLÒ",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-19",
+       "iscrizioni_al": "2027-02-04",
+       "docenti": "DURANTI FRANCESCO BERTOTTO NICOLÒ",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter-a000936",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000937",
+     "nome": "Lingua e cultura inglese",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Marco Bagli"
+     ],
+     "url": "https://www.unistrapg.it/node/512?aa=2627&ins=A000937&cdl=LT04R&rnd=279188942",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-23",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "BAGLI MARCO COLLINS BRIDGET CLARE",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-14",
+       "docenti": "BAGLI MARCO COLLINS BRIDGET CLARE",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "BAGLI MARCO COLLINS BRIDGET CLARE",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "BAGLI MARCO COLLINS BRIDGET CLARE",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter-a000937",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000548",
+     "nome": "Politica comparata",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Emidio Diodato"
+     ],
+     "url": "https://www.unistrapg.it/node/512?aa=2627&ins=A000548&cdl=LT04R&rnd=784608700",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-23",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "DIODATO EMIDIO SOTTILOTTA CECILIA EMMA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "DIODATO EMIDIO SOTTILOTTA CECILIA EMMA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "DIODATO EMIDIO SOTTILOTTA CECILIA EMMA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter-a000548",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000934",
+     "nome": "Teoria e storia della politica globale",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Federico Niglia"
+     ],
+     "url": "https://www.unistrapg.it/node/512?aa=2627&ins=A000934&cdl=LT04R&rnd=620800272",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-22",
+       "iscrizioni_al": "2027-01-07",
+       "docenti": "NIGLIA FEDERICO DIODATO EMIDIO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-01-28",
+       "docenti": "NIGLIA FEDERICO DIODATO EMIDIO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "NIGLIA FEDERICO DIODATO EMIDIO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter-a000934",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000564",
+     "nome": "Africa and globalization",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Federica Guazzini"
+     ],
+     "url": "https://www.unistrapg.it/node/512?aa=2627&ins=A000564&cdl=LT04R&rnd=551906550",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter-a000564",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000941",
+     "nome": "Cyber security and sustainability e Modulo di informatica per la sostenibilità",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Valentino Santucci",
+      "rof.ssa Lucia Ballerini"
+     ],
+     "url": "https://www.unistrapg.it/node/512?aa=2627&ins=A000941&cdl=LT04R&rnd=984436392",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter-a000941",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000940",
+     "nome": "Diritto internazionale e promozione della pace",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": null,
+     "docenti": [
+      "Maura Marchegiani"
+     ],
+     "url": "https://www.unistrapg.it/node/512?aa=2627&ins=A000940&cdl=LT04R&rnd=303626796",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter-a000940",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "A000935",
+     "nome": "Diritti della persona, tutela dei soggetti vulnerabili e Modulo di diritto delle migrazioni",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Paolo Morozzo della Rocca"
+     ],
+     "url": "https://www.unistrapg.it/node/512?aa=2627&ins=A000935&cdl=LT04R&rnd=1193777420",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-25",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-05",
+       "iscrizioni_al": "2027-01-21",
+       "docenti": "MOROZZO DELLA ROCCA PAOLO AZARA ALBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-29",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "MOROZZO DELLA ROCCA PAOLO AZARA ALBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter-a000935",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000551",
+     "nome": "Economia politica",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Filippo Sbrana"
+     ],
+     "url": "https://www.unistrapg.it/node/512?aa=2627&ins=A000551&cdl=LT04R&rnd=51725646",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-24",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "SBRANA FILIPPO ALBANESE GINAMMI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-14",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "SBRANA FILIPPO ALBANESE GINAMMI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-19",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-30",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "SBRANA FILIPPO ALBANESE GINAMMI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter-a000551",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "A000559",
+     "nome": "Lingua e cultura spagnola",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": null,
+     "docenti": [
+      "Giovanna Scocozza"
+     ],
+     "url": "https://www.unistrapg.it/node/512?aa=2627&ins=A000559&cdl=LT04R&rnd=971115980",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-23",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "SCOCOZZA GIOVANNA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-24",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "SCOCOZZA GIOVANNA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-07",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "SCOCOZZA GIOVANNA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-08",
+       "iscrizioni_al": "2027-01-24",
+       "docenti": "SCOCOZZA GIOVANNA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "SCOCOZZA GIOVANNA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-04",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "SCOCOZZA GIOVANNA SEVILLA GARCIA-MONTIEL MARIA LUISA",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-37-scienze-sociali-per-la-sostenibilita-e-la-cooperazione-inter-a000559",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    }
+   ],
+   "url_catalogo": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci"
   },
   {
    "id": "unistrapg-lm-92-comunicazione-pubblicitaria-storytelling-e-cultura-d-immagin",
@@ -97,7 +2932,7 @@
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-magistrale-comunicazione-pubblicitaria-storytelling-e-cultura-dimmagine-compsi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A001091",
@@ -947,7 +3782,7 @@
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-magistrale-italiano-linsegnamento-stranieri-itas",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A000589",
@@ -2260,7 +5095,7 @@
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-magistrale-relazioni-internazionali-e-cooperazione-allo-sviluppo-rics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "A000009",
