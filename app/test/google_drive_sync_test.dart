@@ -142,16 +142,35 @@ void main() {
     expect(drive.files.length, 1);
   });
 
-  test('file aggiunto dal sito di Drive nella cartella: arriva nell\'app; '
-      'il resto del Drive non conta', () async {
+  test('drive.file: file aggiunto dal sito nella cartella invisibile finché '
+      'non si importa; il resto del Drive non conta', () async {
+    drive.driveFileScope = true;
     final pc = device('PC');
     await write(pc, 'a.md', 'uno');
     await pc.run();
     expect(await pc.needsSync(), isFalse);
     // modifica fuori dalla cartella dell'app
-    drive.add('root', 'foto.jpg', 'image/jpeg', [1, 2, 3]);
+    drive.grant(drive.add('root', 'foto.jpg', 'image/jpeg', [1, 2, 3]).id);
     expect(await pc.needsSync(), isFalse);
-    // file caricato dal sito di Drive in una sottocartella dell'app
+    // file caricato dal sito di Drive nella cartella dell'app: l'app non lo
+    // vede (né lo considera eliminato)
+    final corsi = drive.items.values.firstWhere((i) => i.name == 'Corsi');
+    final pdf = drive.add(corsi.id, 'esercizi.pdf', 'application/pdf', [7, 7]);
+    expect(await pc.needsSync(), isFalse);
+    expect((await pc.run()).changed, isFalse);
+    // scelto con «Importa da Drive» (Picker): da ora si sincronizza
+    drive.grant(pdf.id);
+    expect(await pc.needsSync(), isTrue);
+    final r = await pc.run();
+    expect(r.downloaded, 1);
+    expect(await f(pc, 'esercizi.pdf').readAsBytes(), [7, 7]);
+  });
+
+  test('sottocartella nuova con un file visibile all\'app (da un altro '
+      'dispositivo o importato): arriva', () async {
+    final pc = device('PC');
+    await write(pc, 'a.md', 'uno');
+    await pc.run();
     final corsi = drive.items.values.firstWhere((i) => i.name == 'Corsi');
     final sub = drive.add(corsi.id, 'Fisica', GoogleDriveClient.folderMime);
     drive.add(sub.id, 'esercizi.pdf', 'application/pdf', [7, 7, 7]);

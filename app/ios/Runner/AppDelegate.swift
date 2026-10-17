@@ -29,6 +29,8 @@ import flutter_local_notifications
   private var liveActivityChannel: FlutterMethodChannel?
   /// Trascrizione istantanea delle lezioni (LiveSpeech.swift).
   private var liveSpeech: LiveSpeech?
+  /// File aperti con «Apri in UniNotes» / «Condividi» (IncomingFiles, sotto).
+  private var incomingFiles: IncomingFiles?
 
   /// Schermata chiesta da un widget (`registra`, `prova:12`…), letta una volta
   /// da Flutter con `takeRoute`.
@@ -73,6 +75,12 @@ import flutter_local_notifications
         }
       }
       widgetChannel = channel
+    }
+    if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "UniNotesIncomingFiles") {
+      let incoming = IncomingFiles(messenger: registrar.messenger())
+      // eventi della scena (apertura di file, anche all'avvio)
+      registrar.addSceneDelegate(incoming)
+      incomingFiles = incoming
     }
     if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "UniNotesLiveSpeech") {
       liveSpeech = LiveSpeech(messenger: registrar.messenger())
@@ -133,6 +141,84 @@ import flutter_local_notifications
     } else {
       pendingWidgetRoute = route
     }
+  }
+}
+
+/// File arrivati da altre app con «Apri in UniNotes» o dal foglio
+/// «Condividi» (tipi dichiarati in CFBundleDocumentTypes dell'Info.plist).
+/// Ogni file si copia nella cartella temporanea dell'app (anche quelli
+/// aperti sul posto, con accesso protetto) e resta in attesa finché Flutter
+/// non lo prende con `take` (lib/features/cloud/incoming_files.dart); con
+/// l'app aperta Flutter riceve `available`.
+final class IncomingFiles: NSObject, FlutterSceneLifeCycleDelegate {
+  static let channelName = "io.github.simomagnus.universitynotes/incoming"
+  private let channel: FlutterMethodChannel
+  private var pending: [[String: Any]] = []
+
+  init(messenger: FlutterBinaryMessenger) {
+    channel = FlutterMethodChannel(name: IncomingFiles.channelName, binaryMessenger: messenger)
+    super.init()
+    channel.setMethodCallHandler { [weak self] call, result in
+      guard call.method == "take" else {
+        result(FlutterMethodNotImplemented)
+        return
+      }
+      result(self?.pending ?? [])
+      self?.pending = []
+    }
+  }
+
+  /// App avviata aprendo un file.
+  func scene(
+    _ scene: UIScene, willConnectTo session: UISceneSession,
+    options connectionOptions: UIScene.ConnectionOptions?
+  ) -> Bool {
+    guard let contexts = connectionOptions?.urlContexts, !contexts.isEmpty else { return false }
+    return receive(contexts)
+  }
+
+  /// File aperto con l'app già avviata.
+  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) -> Bool {
+    return receive(URLContexts)
+  }
+
+  private func receive(_ contexts: Set<UIOpenURLContext>) -> Bool {
+    var got = false
+    for context in contexts where context.url.isFileURL {
+      if let item = copy(context.url, inPlace: context.options.openInPlace) {
+        pending.append(item)
+        got = true
+      }
+    }
+    if got { channel.invokeMethod("available", arguments: nil) }
+    return got
+  }
+
+  private func copy(_ url: URL, inPlace: Bool) -> [String: Any]? {
+    let scoped = url.startAccessingSecurityScopedResource()
+    defer { if scoped { url.stopAccessingSecurityScopedResource() } }
+    let fm = FileManager.default
+    let dir = fm.temporaryDirectory.appendingPathComponent("condivisi", isDirectory: true)
+    try? fm.createDirectory(at: dir, withIntermediateDirectories: true)
+    let name = url.lastPathComponent
+    let stamp = Int(Date().timeIntervalSince1970 * 1000)
+    let target = dir.appendingPathComponent("\(stamp)_\(pending.count)_\(name)")
+    // lettura coordinata: file di iCloud Drive o di altri fornitori
+    var coordError: NSError?
+    var copyError: Error?
+    NSFileCoordinator().coordinate(
+      readingItemAt: url, options: .withoutChanges, error: &coordError
+    ) { readURL in
+      do {
+        try fm.copyItem(at: readURL, to: target)
+      } catch {
+        copyError = error
+      }
+    }
+    if coordError != nil || copyError != nil { return nil }
+    // copia messa dal sistema in Documents/Inbox: non serve più
+    if !inPlace { try? fm.removeItem(at: url) }
+    return ["path": target.path, "name": name, "temporary": true]
   }
 }
 

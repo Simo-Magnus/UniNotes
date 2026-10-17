@@ -5,6 +5,7 @@ import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 import 'package:provider/provider.dart';
 
 import '../../features/books/books_screen.dart';
+import '../../features/cloud/incoming_files_host.dart';
 import '../../features/courses/courses_screen.dart';
 import '../../features/dashboard/dashboard_screen.dart';
 import '../../features/exams/exam_detail.dart';
@@ -194,7 +195,12 @@ class _AppShellState extends State<AppShell> {
           child: child!,
         );
       },
-      child: _buildShell(context),
+      // file condivisi, aperti con l'app o trascinati sulla finestra (nella
+      // sezione File il trascinamento apre il file, come prima)
+      child: IncomingFilesHost(
+        dropEnabled: kDestinations[_index].label != 'File',
+        child: _buildShell(context),
+      ),
     );
   }
 

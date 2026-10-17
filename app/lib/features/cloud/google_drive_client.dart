@@ -13,9 +13,12 @@ class DriveException implements Exception {
   String toString() => message;
 }
 
-/// Client minimo per Google Drive API v3 (scope `drive`: l'app vede anche i
-/// file messi nella sua cartella dal sito o dalle altre app di Drive; legge e
-/// scrive solo nella cartella scelta).
+/// Client minimo per Google Drive API v3 con lo scope `drive.file`: ogni
+/// richiesta (ricerca, elenco, modifiche) vede solo ciò che l'app ha creato
+/// o che lo studente ha scelto con «Importa da Drive». I file messi nella
+/// cartella UniNotes dal sito o dalle app di Drive restano invisibili finché
+/// non si importano; per Google una cartella creata da un'altra
+/// registrazione dell'app (un altro progetto Google Cloud) non esiste.
 class GoogleDriveClient {
   GoogleDriveClient(this._token, {GraphTransport? transport})
     : _send = transport ?? ioTransport;
@@ -158,6 +161,23 @@ class GoogleDriveClient {
       }
     }
     return id;
+  }
+
+  /// Dati di un file o di una cartella (null se assente o non accessibile
+  /// all'app: con `drive.file` Google risponde 404).
+  Future<Map<String, Object?>?> fileMeta(
+    String id, {
+    String fields = 'id,name,mimeType,parents,size,trashed',
+  }) => getJson('files/$id', {'fields': fields});
+
+  /// Copia del file [id] nella cartella [parentId] col nome [name]: la copia
+  /// è creata dall'app, quindi si sincronizza su tutti i dispositivi.
+  Future<String> copyFile(String id, String parentId, String name) async {
+    final r = await sendJson('POST', url('files/$id/copy', {'fields': 'id'}), {
+      'name': name,
+      'parents': [parentId],
+    });
+    return r['id'] as String;
   }
 
   /// Nome e indirizzo dell'account (`about.user`).

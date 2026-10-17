@@ -37,6 +37,7 @@ class CloudDriveCard extends StatefulWidget {
     required this.pickFolder,
     this.missingId,
     this.note,
+    this.extra,
     this.primary = false,
     this.onChanged,
   });
@@ -58,6 +59,9 @@ class CloudDriveCard extends StatefulWidget {
 
   /// Nota sotto i pulsanti (es. limiti del servizio).
   final String? note;
+
+  /// Parti in più del servizio sotto i pulsanti (es. «Importa da Drive»).
+  final Widget Function(BuildContext context, bool connected)? extra;
   final bool primary;
   final VoidCallback? onChanged;
 
@@ -232,6 +236,7 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
         const SizedBox(height: 8),
         NoteText(widget.note!, icon: Icons.info_outline),
       ],
+      if (widget.extra != null) widget.extra!(context, d.connected),
       const SizedBox(height: 12),
       Text(
         'Cosa sincronizzare',

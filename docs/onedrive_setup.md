@@ -42,7 +42,13 @@ errori AADSTS50011 / AADSTS7000218 (l'app li spiega in italiano).
 *Autorizzazioni API → Microsoft Graph → Autorizzazioni delegate*:
 
 - `User.Read` (nome dell'account)
-- `Files.ReadWrite` (cartella dell'app su OneDrive)
+- `Files.ReadWrite` (cartella dell'app su OneDrive). Serve questo e non
+  `Files.ReadWrite.AppFolder`: lo studente può scegliere la cartella (*Cambia…*)
+  e l'app sincronizza in entrambi i sensi tutto ciò che c'è dentro, compresi i
+  file aggiunti dal sito di OneDrive, da altre app o da OneDrive per desktop
+  (elenco completo della cartella e `/delta` per le novità; su OneDrive for
+  Business, senza `/delta` sulle sottocartelle, si rilegge tutta la cartella).
+  Con AppFolder la cartella sarebbe fissa (`App/UniNotes`)
 - `Notes.Read` (lettura dei blocchi appunti OneNote)
 - `offline_access` (resta collegato senza rifare l'accesso)
 - `Calendars.ReadWrite` (solo su Windows, calendario «UniNotes» in Outlook

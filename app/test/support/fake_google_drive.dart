@@ -28,7 +28,27 @@ class FakeItem {
 }
 
 /// Google Drive v3 finto in memoria: le sole chiamate usate dall'app.
+///
+/// Con [driveFileScope] si comporta come con lo scope `drive.file`: l'app
+/// vede solo ciò che ha creato lei e ciò che lo studente ha scelto nel
+/// Picker ([grant]); il resto (aggiunto «dal sito» con [add]) per l'app non
+/// esiste.
 class FakeGoogleDrive {
+  FakeGoogleDrive({this.driveFileScope = false});
+
+  bool driveFileScope;
+
+  /// Elementi accessibili all'app con `drive.file`.
+  final Set<String> granted = {};
+
+  /// Il Picker: il file scelto diventa accessibile all'app.
+  void grant(String id) {
+    granted.add(id);
+    changes.add(id);
+  }
+
+  bool _visible(String id) => !driveFileScope || granted.contains(id);
+
   final Map<String, FakeItem> items = {};
   final List<String> changes = [];
   final Map<String, (String?, String?, String, String, List<int>)> _sessions =
@@ -72,6 +92,13 @@ class FakeGoogleDrive {
     return it;
   }
 
+  /// Creato dall'app (con `drive.file` le è accessibile).
+  FakeItem _byApp(String parent, String name, String mime, [List<int>? b]) {
+    final it = add(parent, name, mime, b);
+    granted.add(it.id);
+    return it;
+  }
+
   GraphResponse _json(Object body, [int status = 200]) =>
       GraphResponse(status, Uint8List.fromList(utf8.encode(jsonEncode(body))));
 
@@ -107,6 +134,7 @@ class FakeGoogleDrive {
         'newStartPageToken': '${changes.length}',
         'changes': [
           for (final id in changes.skip(from))
+            if (_visible(id))
             {
               'fileId': id,
               'file': {
@@ -127,6 +155,7 @@ class FakeGoogleDrive {
         for (final it in items.values)
           if (it.parent == parent &&
               !it.trashed &&
+              _visible(it.id) &&
               (name == null || it.name == _unquote(name)) &&
               (!onlyFolders || it.folder))
             it.json(),
@@ -135,18 +164,42 @@ class FakeGoogleDrive {
     }
     if (path == '/drive/v3/files' && method == 'POST') {
       final m = jsonDecode(utf8.decode(body!)) as Map;
-      final it = add(
+      final it = _byApp(
         (m['parents'] as List).first as String,
         m['name'] as String,
         m['mimeType'] as String,
       );
       return _json({'id': it.id});
     }
+    final copy = RegExp(r'^/drive/v3/files/([^/]+)/copy$').firstMatch(path);
+    if (copy != null && method == 'POST') {
+      final src = items[copy[1]];
+      if (src == null || !_visible(src.id)) {
+        return _json({'error': {'message': 'File not found'}}, 404);
+      }
+      final m = jsonDecode(utf8.decode(body!)) as Map;
+      final it = _byApp(
+        (m['parents'] as List).first as String,
+        m['name'] as String? ?? src.name,
+        src.mime,
+        [...src.bytes],
+      );
+      return _json({'id': it.id});
+    }
     final id = path.split('/').last;
     final it = items[id];
-    if (it == null) return _json({'error': {'message': 'not found'}}, 404);
+    if (it == null || !_visible(id)) {
+      return _json({'error': {'message': 'File not found'}}, 404);
+    }
     if (method == 'GET' && q['alt'] == 'media') {
       return GraphResponse(200, Uint8List.fromList(it.bytes));
+    }
+    if (method == 'GET') {
+      return _json({
+        ...it.json(),
+        'parents': [it.parent],
+        'trashed': it.trashed,
+      });
     }
     if (method == 'PATCH') {
       final m = jsonDecode(utf8.decode(body!)) as Map;
@@ -184,7 +237,7 @@ class FakeGoogleDrive {
       ) as Map;
       final media = parts[2].substring(parts[2].indexOf('\r\n\r\n') + 4);
       final bytes = latin1.encode(media.substring(0, media.length - 2));
-      final it = add(
+      final it = _byApp(
         (meta['parents'] as List).first as String,
         meta['name'] as String,
         'application/octet-stream',
@@ -214,7 +267,7 @@ class FakeGoogleDrive {
     if (s.$5.length < int.parse(s.$4)) return GraphResponse(308, Uint8List(0));
     final it = s.$1 != null
         ? (items[s.$1]!..bytes = s.$5)
-        : add(s.$2!, s.$3, 'application/octet-stream', s.$5);
+        : _byApp(s.$2!, s.$3, 'application/octet-stream', s.$5);
     return _done(it);
   }
 }

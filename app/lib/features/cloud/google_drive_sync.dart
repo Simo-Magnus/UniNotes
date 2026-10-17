@@ -17,6 +17,13 @@ export 'folder_sync.dart';
 /// contenuto per `md5Checksum`. Per i controlli automatici si salva il
 /// segnalibro delle modifiche (`changes.getStartPageToken`): [needsSync]
 /// chiede a Drive solo cosa è cambiato da allora.
+///
+/// Con lo scope `drive.file` elenco e modifiche comprendono solo i file
+/// creati dall'app (da qualsiasi dispositivo) e quelli importati con il
+/// Picker: un file messo nella cartella da altre vie non compare, quindi non
+/// si scarica né si considera «eliminato». Se la cartella dell'app non si
+/// vede (creata da un'altra registrazione dell'app) se ne crea una nuova e i
+/// file del dispositivo si ricaricano ([FolderSync.remoteRootCreated]).
 class GoogleDriveSync extends FolderSync {
   GoogleDriveSync({
     required this.drive,

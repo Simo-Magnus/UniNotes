@@ -26,11 +26,16 @@ import io.github.simomagnus.universitynotes.widgets.WidgetSupport
  * - `uninstall`: richiesta di disinstallazione del sistema per questa app
  *   (ACTION_DELETE, serve REQUEST_DELETE_PACKAGES da Android 9);
  * - `appDetails`: pagina «Informazioni app», se la richiesta non parte.
+ *
+ * Quinto canale: file arrivati con «Condividi → UniNotes» (IncomingShare.kt):
+ * - `take`: file in attesa, una volta sola;
+ * - verso Flutter, `available`: sono arrivati file con l'app aperta.
  */
 class MainActivity : FlutterActivity() {
     private var channel: MethodChannel? = null
     private var focusChannel: MethodChannel? = null
     private var uninstallChannel: MethodChannel? = null
+    private var incomingChannel: MethodChannel? = null
     private var liveSpeech: LiveSpeech? = null
     private var pendingRoute: String? = null
 
@@ -88,6 +93,17 @@ class MainActivity : FlutterActivity() {
         }
         // Trascrizione istantanea (vedi LiveSpeech.kt).
         registerLiveSpeech(flutterEngine)
+        // File condivisi con l'app (vedi IncomingShare.kt).
+        incomingChannel = MethodChannel(
+            flutterEngine.dartExecutor.binaryMessenger,
+            IncomingShare.CHANNEL,
+        ).also { ch ->
+            ch.setMethodCallHandler { call, result ->
+                if (call.method == "take") result.success(IncomingShare.take())
+                else result.notImplemented()
+            }
+            IncomingShare.onAvailable = { ch.invokeMethod("available", null) }
+        }
         // Disinstallazione dall'app.
         uninstallChannel = MethodChannel(
             flutterEngine.dartExecutor.binaryMessenger,
@@ -152,6 +168,9 @@ class MainActivity : FlutterActivity() {
         focusChannel = null
         uninstallChannel?.setMethodCallHandler(null)
         uninstallChannel = null
+        incomingChannel?.setMethodCallHandler(null)
+        incomingChannel = null
+        IncomingShare.onAvailable = null
         liveSpeech?.dispose()
         liveSpeech = null
         super.cleanUpFlutterEngine(flutterEngine)

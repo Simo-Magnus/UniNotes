@@ -140,6 +140,48 @@ void main() {
     );
   });
 
+  test('file aggiunti, modificati ed eliminati dal sito di OneDrive, da '
+      'altre app o da OneDrive per desktop arrivano nell\'app', () async {
+    final pc = device('PC');
+    await write(pc, lesson, 'limiti');
+    await pc.run();
+    expect(await pc.needsSync(), isFalse);
+
+    // aggiunti fuori dall'app, anche in una sottocartella nuova
+    drive.put('Appunti università/Da ordinare/dispense.pdf', 'pdf');
+    drive.put('Appunti università/PoliTo - Analisi matematica I/foto.jpg', 'j');
+    expect(await pc.needsSync(), isTrue);
+    var r = await pc.run();
+    expect(r.downloaded, 2);
+    expect(await f(pc, 'Da ordinare/dispense.pdf').readAsString(), 'pdf');
+    expect(await pc.needsSync(), isFalse);
+
+    // modificato fuori dall'app
+    drive.put('Appunti università/Da ordinare/dispense.pdf', 'pdf v2');
+    expect(await pc.needsSync(), isTrue);
+    r = await pc.run();
+    expect(r.downloaded, 1);
+    expect(await f(pc, 'Da ordinare/dispense.pdf').readAsString(), 'pdf v2');
+
+    // eliminato dal sito: sul dispositivo va nel cestino locale
+    drive.files.remove(
+      'Appunti università/PoliTo - Analisi matematica I/foto.jpg',
+    );
+    drive.addFolder('Appunti università/PoliTo - Analisi matematica I');
+    r = await pc.run();
+    expect(r.deletedLocal, 1);
+    expect(await f(pc, 'PoliTo - Analisi matematica I/foto.jpg').exists(),
+        isFalse);
+
+    // OneDrive for Business (niente /delta sulle cartelle): si rilegge tutto
+    drive.deltaUnsupported = true;
+    final work = device('lavoro');
+    await work.run();
+    drive.put('Appunti università/nuovo.md', 'n');
+    expect(await work.needsSync(), isTrue);
+    expect((await work.run()).downloaded, 1);
+  });
+
   test('file temporanei e nascosti esclusi', () {
     expect(OneDriveSync.ignored('a/.appunti.json'), isTrue);
     expect(OneDriveSync.ignored('.cestino-onedrive/x.md'), isTrue);

@@ -98,8 +98,8 @@ jobs:
       # APK per GitHub Releases (link alle donazioni), uno per processore così
       # ognuno contiene solo le sue librerie native; AAB per Google Play (senza):
       # lì è lo store a mandare a ogni telefono la parte giusta.
-      - run: flutter build apk --release --split-per-abi --target-platform android-arm,android-arm64,android-x64 --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_ANDROID_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_ANDROID }} --dart-define=DONATIONS=link
-      - run: flutter build appbundle --release --target-platform android-arm,android-arm64,android-x64 --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_ANDROID_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_ANDROID }} --dart-define=STORE=play
+      - run: flutter build apk --release --split-per-abi --target-platform android-arm,android-arm64,android-x64 --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_ANDROID_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_ANDROID }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+      - run: flutter build appbundle --release --target-platform android-arm,android-arm64,android-x64 --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_ANDROID_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_ANDROID }} --dart-define=STORE=play --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
       - uses: actions/upload-artifact@v7
         with:
           name: uninotes-android
@@ -132,7 +132,7 @@ jobs:
       - name: Elenco degli atenei e dei corsi nell'app (i dati dell'ateneo si scaricano)
         shell: bash
         run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
-      - run: flutter build windows --release --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link
+      - run: flutter build windows --release --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
       # Firma facoltativa del programma (certificato di firma del codice .pfx
       # in base64 nei secret): senza, il passo non parte e SmartScreen avvisa
       # al primo avvio. Vedi PUBBLICAZIONE.md.
@@ -204,7 +204,7 @@ jobs:
       - name: Elenco degli atenei e dei corsi nell'app (i dati dell'ateneo si scaricano)
         shell: bash
         run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
-      - run: flutter build macos --release --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link
+      - run: flutter build macos --release --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
       # Firma con il certificato «Developer ID Application» e notarizzazione
       # di Apple: richiedono l'account Apple Developer. Senza i secret questi
       # passi non partono e la build resta non firmata (vedi PUBBLICAZIONE.md,
@@ -280,7 +280,7 @@ jobs:
       - name: Elenco degli atenei e dei corsi nell'app (i dati dell'ateneo si scaricano)
         shell: bash
         run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
-      - run: flutter build ios --release --no-codesign --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_IOS_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_IOS }}
+      - run: flutter build ios --release --no-codesign --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_IOS_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_IOS }} --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
       - name: Comprimi (IPA non firmato, da firmare con il proprio account Apple)
         run: |
           mkdir -p Payload && cp -R build/ios/iphoneos/Runner.app Payload/

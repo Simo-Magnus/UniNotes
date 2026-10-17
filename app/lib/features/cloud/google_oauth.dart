@@ -15,23 +15,27 @@ Future<String> _flutterWebAuth(Uri url, String scheme) =>
       options: const FlutterWebAuth2Options(preferEphemeral: false),
     );
 
-/// Accesso con l'account Google per Google Drive (scope `drive`: serve perché
-/// i file messi nella cartella UniNotes dal sito o da altre app di Drive
-/// arrivino anche nell'app; l'app legge e scrive solo in quella cartella).
+/// Accesso con l'account Google per Google Drive con lo scope `drive.file`:
+/// l'app vede solo i file e le cartelle che ha creato lei (la cartella
+/// UniNotes e il suo contenuto, da tutti i dispositivi) e quelli che lo
+/// studente sceglie con «Importa da Drive» (Google Picker). Non è uno scope
+/// con restrizioni: niente verifica di sicurezza a pagamento.
 ///
 /// **Registrazione in Google Cloud** (una sola volta, a cura di chi pubblica
 /// l'app; dettagli in `docs/google_drive_setup.md`):
-/// 1. progetto → API e servizi → abilita «Google Drive API»;
-/// 2. schermata di consenso OAuth: tipo «Esterno», scope `drive` (con
-///    restrizioni: verifica di Google per più di 100 utenti), stato «In
-///    produzione» (in «Test» i token scadono dopo 7 giorni);
+/// 1. progetto → API e servizi → abilita «Google Drive API» e «Google Picker
+///    API»;
+/// 2. schermata di consenso OAuth: tipo «Esterno», scope `drive.file`, stato
+///    «In produzione» (in «Test» i token scadono dopo 7 giorni);
 /// 3. credenziali → ID client OAuth tipo «App desktop» (PC e Mac, ritorno su
-///    `http://127.0.0.1:<porta>`), più «iOS» e «Android» per i telefoni.
+///    `http://127.0.0.1:<porta>`), più «iOS» e «Android» per i telefoni, e una
+///    chiave API (solo Google Picker API, solo dal sito del progetto).
 ///
 /// Gli ID entrano nella build con `--dart-define`: `GOOGLE_CLIENT_ID` e
 /// `GOOGLE_CLIENT_SECRET` (client desktop: Google lo chiama segreto ma per le
 /// app installate non lo è, la sicurezza viene da PKCE), `GOOGLE_IOS_CLIENT_ID`,
-/// `GOOGLE_ANDROID_CLIENT_ID`.
+/// `GOOGLE_ANDROID_CLIENT_ID`; per il Picker `GOOGLE_PICKER_API_KEY` e
+/// `GOOGLE_CLOUD_PROJECT_NUMBER` (vedi drive_picker.dart).
 class GoogleOAuth extends LoopbackOAuth {
   GoogleOAuth({
     required super.clientId,
@@ -57,7 +61,9 @@ class GoogleOAuth extends LoopbackOAuth {
   final OAuthRedirectMode mode;
   final WebAuthenticator _webAuth;
 
-  static const defaultScope = 'https://www.googleapis.com/auth/drive';
+  /// Solo i file creati dall'app o scelti dallo studente (non `drive`, che è
+  /// uno scope con restrizioni).
+  static const defaultScope = 'https://www.googleapis.com/auth/drive.file';
 
   static const desktopClientId = String.fromEnvironment('GOOGLE_CLIENT_ID');
   static const desktopClientSecret = String.fromEnvironment(
@@ -150,7 +156,7 @@ class GoogleOAuth extends LoopbackOAuth {
         'L\'accesso è scaduto o è stato revocato: scollega e accedi di nuovo.',
       _ when r.contains('access_denied') =>
         'Accesso annullato o permessi non concessi: riprova e accetta '
-            'l\'accesso a Google Drive.',
+            'l\'accesso ai file di Google Drive usati da UniNotes.',
       _ when r.contains('admin_policy_enforced') =>
         'Il tuo ateneo non consente questa app con l\'account istituzionale: '
             'usa un account Google personale.',
