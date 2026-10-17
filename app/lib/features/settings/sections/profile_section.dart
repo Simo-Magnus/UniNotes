@@ -54,6 +54,7 @@ class ProfileSection extends StatelessWidget {
             p.universityId,
             remote: false,
             scarica: false,
+            corso: p.degreeId,
           );
     final corso = p == null ? null : file?.data.corso(p.degreeId);
     final percorsi = corso == null ? null : PercorsiCorso.di(corso);

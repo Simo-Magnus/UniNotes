@@ -46,16 +46,21 @@ class CatalogDownloadProgress extends StatelessWidget {
   }
 }
 
-/// Avviso «Serve una connessione per scaricare i dati del tuo ateneo» con
-/// il pulsante Riprova: il resto dell'app (corsi a mano, appunti,
-/// registratore…) funziona comunque.
+/// Avviso «Serve una connessione per scaricare i dati del tuo ateneo» (o
+/// un altro [message], per esempio spazio insufficiente) con il pulsante
+/// Riprova: il resto dell'app (corsi a mano, appunti, registratore…)
+/// funziona comunque.
 class CatalogOfflineNotice extends StatelessWidget {
   const CatalogOfflineNotice({
     super.key,
     required this.onRetry,
     this.detail,
+    this.message = kServeConnessione,
     this.padding = const EdgeInsets.symmetric(vertical: 8),
   });
+
+  /// Messaggio principale (vedi [CatalogService.descriviErrore]).
+  final String message;
 
   /// null mentre si riprova.
   final VoidCallback? onRetry;
@@ -73,13 +78,18 @@ class CatalogOfflineNotice extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(Icons.cloud_off_outlined, color: t.textMuted),
+          Icon(
+            message == kServeConnessione
+                ? Icons.cloud_off_outlined
+                : Icons.error_outline,
+            color: t.textMuted,
+          ),
           const SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(kServeConnessione, style: TextStyle(color: t.textPrimary)),
+                Text(message, style: TextStyle(color: t.textPrimary)),
                 if (detail != null) ...[
                   const SizedBox(height: 4),
                   Text(

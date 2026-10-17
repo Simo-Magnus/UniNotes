@@ -222,7 +222,9 @@ Map<String, Object?> corsiPolitoFixture({
 /// assente risponde 404 ([CatalogNotFoundException]). La mappa si legge a
 /// ogni richiesta: un test può "tornare online" aggiungendo file. Gli asset
 /// di default sono solo i file comuni, come nelle build pubblicate.
-/// [cacheDir] di default una cartella temporanea.
+/// [cacheDir] di default una cartella temporanea. [attesa] (se restituisce
+/// un Future) trattiene la risposta per quel percorso relativo, per
+/// simulare un download lungo.
 CatalogService fakeCatalog(
   SettingsRepository settings, {
   Map<String, String> remote = const {},
@@ -230,6 +232,7 @@ CatalogService fakeCatalog(
   Directory? cacheDir,
   List<Uri>? requests,
   bool offline = false,
+  Future<void>? Function(String relative)? attesa,
 }) {
   final bundled =
       assets ??
@@ -243,8 +246,10 @@ CatalogService fakeCatalog(
     settings,
     fetcher: (uri, {onProgress}) async {
       requests?.add(uri);
-      if (offline || remote.isEmpty) throw const SocketException('offline');
       final rel = uri.path.split('/database/').last;
+      final gate = attesa?.call(rel);
+      if (gate != null) await gate;
+      if (offline || remote.isEmpty) throw const SocketException('offline');
       final text = remote[rel];
       if (text == null) throw CatalogNotFoundException();
       onProgress?.call(text.length, text.length);

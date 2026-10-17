@@ -36,7 +36,11 @@ class TeachingLanguage {
     final ateneo = m.group(1)!;
     final insId = m.group(2)!;
     try {
-      final r = await s.catalog.corsiAteneo(ateneo, remote: false);
+      final r = await s.catalog.corsiAteneo(
+        ateneo,
+        remote: false,
+        corso: degree,
+      );
       final corso = r?.data.corso(degree);
       for (final i in corso?.insegnamenti ?? const <Insegnamento>[]) {
         if (i.id == insId) return TeachingLanguage(ateneo, i);

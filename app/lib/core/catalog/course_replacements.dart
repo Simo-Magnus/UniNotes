@@ -173,7 +173,11 @@ class CourseReplacements {
     }
     if (ateneoId == null) return null;
     try {
-      final file = await _s.catalog.corsiAteneo(ateneoId, remote: false);
+      final file = await _s.catalog.corsiAteneo(
+        ateneoId,
+        remote: false,
+        corso: id,
+      );
       final c = file?.data.corso(id);
       if (c == null) return null;
       return CorsoIndice(
@@ -197,7 +201,11 @@ class CourseReplacements {
     // il percorso (curriculum) resta se esiste anche nel nuovo corso
     String? curriculum = p.curriculum;
     try {
-      final file = await _s.catalog.corsiAteneo(p.universityId, remote: false);
+      final file = await _s.catalog.corsiAteneo(
+        p.universityId,
+        remote: false,
+        corso: newId,
+      );
       final corso = file?.data.corso(newId);
       if (corso != null) {
         final percorsi = PercorsiCorso.di(corso);

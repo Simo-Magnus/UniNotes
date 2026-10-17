@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -26,6 +27,8 @@ const _desktop = Size(1400, 900);
 Future<AppServices> _services({
   bool online = true,
   Map<String, String>? remote,
+  List<Uri>? requests,
+  Future<void>? Function(String relative)? attesa,
 }) async {
   final db = await AppDatabase.openInMemory();
   // telefono Android finto: notifiche e calendario del dispositivo in memoria
@@ -42,6 +45,8 @@ Future<AppServices> _services({
     ),
     catalog: fakeCatalog(
       SettingsRepository(db),
+      requests: requests,
+      attesa: attesa,
       remote:
           remote ??
           (online
@@ -76,12 +81,19 @@ Future<(AppServices, List<bool>)> _start(
   Map<String, String>? remote,
   bool changing = false,
   bool skipAppearance = true,
+  List<Uri>? requests,
+  Future<void>? Function(String relative)? attesa,
 }) async {
   tester.view.physicalSize = size;
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.reset);
   final s = (await tester.runAsync(
-    () => _services(online: online, remote: remote),
+    () => _services(
+      online: online,
+      remote: remote,
+      requests: requests,
+      attesa: attesa,
+    ),
   ))!;
   addTearDown(() => tester.runAsync(s.database.close));
   final finished = <bool>[];
@@ -118,6 +130,18 @@ Future<void> _tap(WidgetTester tester, Finder f) async {
   await tester.tap(f);
   await tester.pump();
   await _settle(tester, 2);
+}
+
+/// Statale → Piemonte → PoliTO → triennale → Ingegneria Informatica →
+/// 1° anno: il riepilogo.
+Future<void> _toSummary(WidgetTester tester) async {
+  await _tap(tester, find.text('Statale'));
+  await _tap(tester, find.text('Piemonte'));
+  await _tap(tester, find.text('Politecnico di Torino'));
+  await _tap(tester, find.text('Laurea (triennale)'));
+  await _tap(tester, find.text('Ingegneria Informatica'));
+  await _tap(tester, find.text('1° anno'));
+  expect(find.text('Tutto giusto?'), findsOneWidget);
 }
 
 Future<void> _fullFlow(WidgetTester tester, Size size) async {
@@ -300,33 +324,172 @@ void main() {
     await _tap(tester, find.text('Laurea (triennale)'));
     await _tap(tester, find.text('Ingegneria Informatica'));
     await _tap(tester, find.text('1° anno'));
-    // il riepilogo prova a scaricare i dati dell'ateneo
+    // niente download all'apertura del riepilogo: l'avviso arriva al tocco
+    await _settle(tester, 6);
+    expect(find.byKey(const Key('catalog-offline')), findsNothing);
+    await _tap(tester, find.byKey(const Key('onboarding-confirm')));
     await _settleUntil(tester, find.byKey(const Key('catalog-offline')));
     expect(find.text(kServeConnessione), findsOneWidget);
     expect(
       (await tester.runAsync(() => s.catalog.datiAteneo('polito')))!.corsi,
       isFalse,
     );
+    expect(await tester.runAsync(s.profiles.load), isNull);
 
-    // di nuovo online: Riprova scarica i dati del solo ateneo scelto
+    // di nuovo online: Riprova scarica i dati del solo ateneo scelto e
+    // importa il piano
     remote['corsi/polito.json'] = jsonEncode(corsiPolitoFixture());
     await _tap(tester, find.byKey(const Key('catalog-retry')));
-    for (var i = 0; i < 150; i++) {
-      final dati = await tester.runAsync(() => s.catalog.datiAteneo('polito'));
-      if (dati!.corsi && s.catalog.progresso.value == null) break;
-      await _settle(tester, 1);
-    }
-    await _settle(tester, 4);
+    await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
     expect(find.byKey(const Key('catalog-offline')), findsNothing);
+    expect(find.text('Importati 4 insegnamenti e 2 libri.'), findsOneWidget);
     expect(
       (await tester.runAsync(() => s.catalog.datiAteneo('polito')))!.corsi,
       isTrue,
     );
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('senza rete: «Conferma senza piano» salva il percorso', (
+    tester,
+  ) async {
+    final remote = <String, String>{}; // offline
+    final (s, _) = await _start(tester, _phone, remote: remote);
+    await _toSummary(tester);
     await _tap(tester, find.byKey(const Key('onboarding-confirm')));
+    await _settleUntil(tester, find.byKey(const Key('catalog-offline')));
+    await _tap(tester, find.text('Conferma senza piano'));
+    await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
+    expect(find.text('Pronto!'), findsOneWidget);
+    expect(find.byKey(const Key('catalog-offline')), findsOneWidget);
+    final p = (await tester.runAsync(s.profiles.load))!;
+    expect(p.degreeName, 'Ingegneria Informatica');
+    // online: Riprova importa il piano anche dopo la conferma
+    remote['corsi/polito.json'] = jsonEncode(corsiPolitoFixture());
+    await _tap(tester, find.byKey(const Key('catalog-retry')));
+    await _settleUntil(tester, find.text('Importati 4 insegnamenti e 2 libri.'));
+    expect(find.byKey(const Key('catalog-offline')), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('riepilogo: nessun download finché non si preme il pulsante', (
+    tester,
+  ) async {
+    final requests = <Uri>[];
+    final (s, _) = await _start(tester, _phone, requests: requests);
+    await _toSummary(tester);
+    await _settle(tester, 10);
+    expect(find.text('Scarica il piano di studi'), findsOneWidget);
+    expect(requests, isEmpty);
+    expect(s.catalog.progresso.value, isNull);
+    expect(
+      (await tester.runAsync(() => s.catalog.datiAteneo('polito')))!.corsi,
+      isFalse,
+    );
+    await _tap(tester, find.byKey(const Key('onboarding-confirm')));
+    await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
+    expect(find.text('Importati 4 insegnamenti e 2 libri.'), findsOneWidget);
+    expect(
+      requests.where((u) => u.path.endsWith('/corsi/polito.json')),
+      hasLength(1),
+    );
+  });
+
+  testWidgets(
+    'doppio tocco e ritorno indietro durante il download: un solo download, '
+    'nessun errore',
+    (tester) async {
+      final requests = <Uri>[];
+      final gate = Completer<void>();
+      await _start(
+        tester,
+        _phone,
+        requests: requests,
+        attesa: (r) => r == 'corsi/polito.json' ? gate.future : null,
+      );
+      await _toSummary(tester);
+      await _tap(tester, find.byKey(const Key('onboarding-confirm')));
+      expect(find.text('Scarico i corsi del tuo ateneo…'), findsOneWidget);
+      final button = tester.widget<FilledButton>(
+        find.byKey(const Key('onboarding-confirm')),
+      );
+      expect(button.onPressed, isNull, reason: 'pulsante disattivato');
+      await tester.tap(
+        find.byKey(const Key('onboarding-confirm')),
+        warnIfMissed: false,
+      );
+      // indietro e di nuovo al riepilogo mentre il download continua
+      await _tap(tester, find.byTooltip('Indietro'));
+      expect(find.text('Che anno frequenti?'), findsOneWidget);
+      await _tap(tester, find.text('1° anno'));
+      await _tap(tester, find.byKey(const Key('onboarding-confirm')));
+      gate.complete();
+      await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
+      expect(find.text('Importati 4 insegnamenti e 2 libri.'), findsOneWidget);
+      expect(
+        requests.where((u) => u.path.endsWith('/corsi/polito.json')),
+        hasLength(1),
+      );
+      expect(tester.takeException(), isNull);
+    },
+  );
+
+  testWidgets('file dei corsi non valido: messaggio chiaro e Riprova', (
+    tester,
+  ) async {
+    final remote = {'corsi/polito.json': '<html>errore</html>'};
+    await _start(tester, _phone, remote: remote);
+    await _toSummary(tester);
+    await _tap(tester, find.byKey(const Key('onboarding-confirm')));
+    await _settleUntil(tester, find.byKey(const Key('catalog-offline')));
+    expect(find.textContaining('incompleto o non valido'), findsOneWidget);
+    remote['corsi/polito.json'] = jsonEncode(corsiPolitoFixture());
+    await _tap(tester, find.byKey(const Key('catalog-retry')));
     await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
     expect(find.text('Importati 4 insegnamenti e 2 libri.'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets(
+    'corso con più percorsi: si sceglie dopo i corsi, prima dell\'import',
+    (tester) async {
+      final corsi = corsiPolitoFixture();
+      final corso = (corsi['corsi'] as List).single as Map<String, Object?>;
+      final ins = corso['insegnamenti'] as List;
+      (ins[1] as Map)['curriculum'] = 'Percorso A';
+      (ins[2] as Map)['curriculum'] = 'Percorso A';
+      (ins[3] as Map)['curriculum'] = 'Percorso B';
+      final requests = <Uri>[];
+      final (s, _) = await _start(
+        tester,
+        _phone,
+        requests: requests,
+        remote: {'corsi/polito.json': jsonEncode(corsi)},
+      );
+      await _toSummary(tester);
+      expect(find.byKey(const Key('percorso')), findsNothing);
+      await _tap(tester, find.byKey(const Key('onboarding-confirm')));
+      await _settleUntil(tester, find.text('Importa il piano'));
+      expect(find.byKey(const Key('percorso')), findsOneWidget);
+      // solo i corsi, niente import né profilo prima della scelta
+      expect(
+        requests.map((u) => u.path.split('/database/').last),
+        ['meta.json', 'corsi/polito.json'],
+      );
+      expect(await tester.runAsync(s.profiles.load), isNull);
+      await _tap(tester, find.byKey(const Key('percorso')));
+      await _tap(tester, find.text('Percorso B').last);
+      await _tap(tester, find.byKey(const Key('onboarding-confirm')));
+      await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
+      expect(find.text('Importati 2 insegnamenti e 2 libri.'), findsOneWidget);
+      expect((await tester.runAsync(s.profiles.load))!.curriculum, 'Percorso B');
+      expect(
+        requests.where((u) => u.path.endsWith('/corsi/polito.json')),
+        hasLength(1),
+      );
+      expect(tester.takeException(), isNull);
+    },
+  );
 
   testWidgets(
     'avvisi e calendario «Non ora»: niente permessi, una volta sola',

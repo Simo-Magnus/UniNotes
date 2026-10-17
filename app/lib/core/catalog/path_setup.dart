@@ -121,7 +121,13 @@ class PathSetupService {
       'mano dalla sezione Insegnamenti o con "Aggiungi esame" in Esami.';
 
   /// Fine dell'onboarding: profilo, anni del piano e import del piano.
-  Future<PlanImportResult> apply(PathSelection sel, {DateTime? now}) async {
+  /// Con [remote] falso non si prova a scaricare nulla (lo studente
+  /// conferma senza connessione: il piano si scaricherà più tardi).
+  Future<PlanImportResult> apply(
+    PathSelection sel, {
+    DateTime? now,
+    bool remote = true,
+  }) async {
     final at = now ?? DateTime.now();
     final profile = sel.toProfile(at);
     final previous = await _s.profiles.load();
@@ -155,7 +161,12 @@ class PathSetupService {
             'sezione Insegnamenti o con "Aggiungi esame" in Esami.',
       );
     } else {
-      result = await importPlan(profile, ateneo: ateneo, now: at);
+      result = await importPlan(
+        profile,
+        ateneo: ateneo,
+        now: at,
+        remote: remote,
+      );
     }
     _s.revision.bump();
     return result;
@@ -338,7 +349,12 @@ class PathSetupService {
         : null;
     // dalla copia appena salvata (senza rete: da quella precedente o, se
     // manca, scaricata ora se possibile)
-    final read = await _s.catalog.corsiAteneo(a.id, remote: false);
+    // solo il corso del profilo: gli altri del file non restano in memoria
+    final read = await _s.catalog.corsiAteneo(
+      a.id,
+      remote: false,
+      corso: profile.degreeId,
+    );
     final file = read == null || download == null || !download.corsiAggiornati
         ? read
         : CatalogResult(read.data, CatalogSource.remote);
@@ -374,7 +390,10 @@ class PathSetupService {
     // gli argomenti d'esame e i moduli di Studio (facoltativi)
     ModuliAteneo? moduli;
     try {
-      moduli = (await _s.catalog.moduli(a.id))?.data;
+      moduli = (await _s.catalog.moduli(
+        a.id,
+        insegnamenti: [for (final i in tutto!.insegnamenti) i.id],
+      ))?.data;
     } catch (_) {
       moduli = null;
     }

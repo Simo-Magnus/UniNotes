@@ -16,7 +16,17 @@ personale). L'app lo legge in due modi:
    eliminano. Per un ateneo grande come `unibo` sul dispositivo sono circa
    49 MB di corsi e 15 MB di moduli; il trasferimento è compresso con gzip
    (HttpClient lo decomprime da solo), quindi si scarica molto meno. Durante il
-   download l'app mostra file in corso e megabyte ricevuti. `<base>` predefinito:
+   download l'app mostra file in corso e megabyte ricevuti. Nell'onboarding
+   non parte nulla da solo: solo al tocco su «Scarica il piano di studi» si
+   scaricano i corsi; se il corso ha più percorsi lo studente sceglie il suo, poi
+   si scaricano sessioni e moduli e si importa il piano. I file arrivano a pezzi
+   in un file temporaneo (`<id>.json.part`), si controllano e si leggono in un
+   isolate separato (in memoria resta solo il corso dello studente e i moduli
+   dei suoi insegnamenti) e sostituiscono la copia precedente con una rinomina:
+   un download interrotto o un file non valido lasciano intatta la copia salvata,
+   una copia illeggibile si elimina e si riscarica. Download dello stesso ateneo
+   chiesti insieme (doppio tocco, ritorno al riepilogo) condividono lo stesso
+   download. `<base>` predefinito:
    `https://raw.githubusercontent.com/Simo-Magnus/UniNotes/main/database`
    (modificabile in *Impostazioni → Il mio percorso*).
 

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -331,6 +332,263 @@ void main() {
           'moduli/polito.json',
         ]);
       },
+    );
+
+    List<String> rel(List<Uri> requests) => [
+      for (final u in requests) u.path.split('/database/').last,
+    ];
+
+    test(
+      'chiamate contemporanee (doppio tocco, ritorno al riepilogo, letture): '
+      'un solo download per file',
+      () async {
+        final requests = <Uri>[];
+        final gate = Completer<void>();
+        final c = fakeCatalog(
+          settings,
+          cacheDir: cache,
+          requests: requests,
+          remote: polito(),
+          attesa: (r) => r.endsWith('/polito.json') ? gate.future : null,
+        );
+        final a = c.scaricaAteneo('polito', pulisci: false, soloCorsi: true);
+        final b = c.scaricaAteneo('polito', pulisci: false, soloCorsi: true);
+        final completo = c.scaricaAteneo('polito');
+        while (!rel(requests).contains('corsi/polito.json')) {
+          await Future<void>.delayed(const Duration(milliseconds: 2));
+        }
+        // letture durante il download: aspettano lo stesso download
+        final diretta = c.corsiAteneo('polito');
+        final sessioni = c.sessioni('polito');
+        await Future<void>.delayed(const Duration(milliseconds: 20));
+        expect(c.progresso.value?.etichetta, 'corsi e insegnamenti');
+        gate.complete();
+        final esiti = await Future.wait([a, b, completo]);
+        expect(esiti.every((r) => r.corsi && r.errore == null), isTrue);
+        expect((await diretta)!.data.corsi.single.insegnamenti, hasLength(4));
+        expect(await sessioni, isNotNull);
+        final r = rel(requests);
+        for (final f in [
+          'corsi/polito.json',
+          'sessioni/polito.json',
+          'moduli/polito.json',
+        ]) {
+          expect(r.where((x) => x == f), hasLength(1), reason: f);
+        }
+        expect(c.progresso.value, isNull);
+        // nessun file temporaneo rimasto
+        expect(
+          cache
+              .listSync(recursive: true)
+              .where((e) => e.path.endsWith('.part')),
+          isEmpty,
+        );
+      },
+    );
+
+    test(
+      'solo i corsi (scelta del percorso), poi il resto: i corsi non si '
+      'riscaricano',
+      () async {
+        final requests = <Uri>[];
+        final c = fakeCatalog(
+          settings,
+          cacheDir: cache,
+          requests: requests,
+          remote: polito(),
+        );
+        final solo = await c.scaricaAteneo(
+          'polito',
+          pulisci: false,
+          soloCorsi: true,
+        );
+        expect(solo.corsi, isTrue);
+        expect(rel(requests), ['meta.json', 'corsi/polito.json']);
+        expect(inCache('sessioni/polito.json'), isFalse);
+        requests.clear();
+        final tutto = await c.scaricaAteneo('polito');
+        expect(tutto.corsiAggiornati, isTrue);
+        expect(rel(requests), [
+          'meta.json',
+          'sessioni/polito.json',
+          'moduli/polito.json',
+        ]);
+      },
+    );
+
+    test('download interrotto: la copia salvata resta intatta', () async {
+      await fakeCatalog(
+        settings,
+        cacheDir: cache,
+        remote: polito(),
+      ).scaricaAteneo('polito');
+      final prima = File('${cache.path}/corsi/polito.json').readAsStringSync();
+      final c = CatalogService(
+        settings,
+        fetcher: (uri, {onProgress}) async => throw CatalogNotFoundException(),
+        fileFetcher: (uri, dest, {onProgress}) async {
+          // metà file, poi la connessione cade
+          await dest.writeAsString(corsi.substring(0, corsi.length ~/ 2));
+          throw CatalogOfflineException('Connessione interrotta.');
+        },
+        assetLoader: (_) async => throw StateError('no'),
+        assetBytesLoader: (_) async => throw StateError('no'),
+        cacheDir: () async => cache,
+      );
+      final r = await c.scaricaAteneo('polito', forza: true);
+      expect(r.corsi, isTrue);
+      expect(r.errore, isA<CatalogOfflineException>());
+      expect(
+        File('${cache.path}/corsi/polito.json').readAsStringSync(),
+        prima,
+      );
+      expect(File('${cache.path}/corsi/polito.json.part').existsSync(), isFalse);
+      expect(c.progresso.value, isNull);
+    });
+
+    test('file salvato corrotto: si elimina e si riscarica', () async {
+      File('${cache.path}/corsi/polito.json')
+        ..createSync(recursive: true)
+        ..writeAsStringSync(corsi.substring(0, corsi.length ~/ 3));
+      final requests = <Uri>[];
+      final c = fakeCatalog(
+        settings,
+        cacheDir: cache,
+        requests: requests,
+        remote: polito(),
+      );
+      final r = (await c.corsiAteneo('polito', remote: false))!;
+      expect(r.source, CatalogSource.remote);
+      expect(r.data.corsi.single.insegnamenti, hasLength(4));
+      expect(rel(requests), ['corsi/polito.json']);
+      expect(
+        (await c.corsiAteneo('polito', remote: false))!.source,
+        CatalogSource.cache,
+      );
+    });
+
+    test('errori: messaggi chiari per lo studente', () {
+      expect(
+        CatalogService.descriviErrore(const SocketException('x')),
+        kServeConnessione,
+      );
+      expect(
+        CatalogService.descriviErrore(const FileSystemException('pieno')),
+        contains('spazio libero'),
+      );
+      expect(
+        CatalogService.descriviErrore(const FormatException('x')),
+        contains('non valido'),
+      );
+    });
+
+    test('con corso e insegnamenti in memoria resta solo il necessario', () async {
+      final due = corsiPolitoFixture();
+      final altro = Map<String, Object?>.of(
+        (due['corsi'] as List).single as Map<String, Object?>,
+      )..['id'] = 'polito-altro';
+      due['corsi'] = [...due['corsi'] as List, altro];
+      final c = fakeCatalog(
+        settings,
+        cacheDir: cache,
+        remote: {
+          ...polito(),
+          'corsi/polito.json': jsonEncode(due),
+          'moduli/polito.json': jsonEncode({
+            'schema': 1,
+            'universita_id': 'polito',
+            'insegnamenti': {
+              for (final id in ['a', 'b', 'c'])
+                id: {
+                  'moduli': [
+                    {
+                      'nome': 'Capitolo $id',
+                      'argomenti': ['x'],
+                    },
+                  ],
+                },
+            },
+          }),
+        },
+      );
+      await c.scaricaAteneo('polito');
+      expect(
+        (await c.corsiAteneo('polito', remote: false))!.data.corsi,
+        hasLength(2),
+      );
+      final uno = (await c.corsiAteneo(
+        'polito',
+        remote: false,
+        corso: 'polito-altro',
+      ))!.data;
+      expect(uno.corsi.single.id, 'polito-altro');
+      expect(uno.corsi.single.insegnamenti, hasLength(4));
+      expect(uno.universitaId, 'polito');
+      final m = (await c.moduli('polito', insegnamenti: ['a', 'c']))!.data;
+      expect(m.insegnamenti.keys.toSet(), {'a', 'c'});
+    });
+
+    test(
+      'file grande: lettura fuori dal thread dell\'interfaccia',
+      () async {
+        // ~15 MB di corsi, come un ateneo grande
+        final grande = {
+          'schema': 1,
+          'universita_id': 'polito',
+          'corsi': [
+            for (var c = 0; c < 400; c++)
+              {
+                'id': 'c$c',
+                'nome': 'Corso $c',
+                'tipo': 'L',
+                'insegnamenti': [
+                  for (var i = 0; i < 150; i++)
+                    {
+                      'id': 'c$c-i$i',
+                      'nome': 'Insegnamento $i del corso $c',
+                      'anno': 1 + i % 3,
+                      'cfu': 6,
+                      'docenti': ['Docente $i'],
+                      'libri': [
+                        {
+                          'titolo': 'Manuale di riferimento $i',
+                          'autori': 'Autore $i',
+                          'editore': 'Editore',
+                          'anno': 2020,
+                        },
+                      ],
+                      'esami': [
+                        {'tipo': 'appello', 'data': '2027-01-20'},
+                      ],
+                    },
+                ],
+              },
+          ],
+        };
+        File('${cache.path}/corsi/polito.json')
+          ..createSync(recursive: true)
+          ..writeAsStringSync(jsonEncode(grande));
+        final c = fakeCatalog(settings, cacheDir: cache);
+        var ultimo = DateTime.now();
+        var pausa = Duration.zero;
+        final timer = Timer.periodic(const Duration(milliseconds: 5), (_) {
+          final ora = DateTime.now();
+          if (ora.difference(ultimo) > pausa) pausa = ora.difference(ultimo);
+          ultimo = ora;
+        });
+        final r = (await c.corsiAteneo(
+          'polito',
+          remote: false,
+          scarica: false,
+          corso: 'c200',
+        ))!;
+        timer.cancel();
+        expect(r.data.corsi.single.insegnamenti, hasLength(150));
+        // sul thread principale la decodifica bloccherebbe per centinaia di
+        // millisecondi
+        expect(pausa, lessThan(const Duration(milliseconds: 200)));
+      },
+      timeout: const Timeout(Duration(minutes: 2)),
     );
   });
 }
