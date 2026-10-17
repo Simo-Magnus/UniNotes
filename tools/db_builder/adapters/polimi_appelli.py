@@ -264,7 +264,7 @@ def calendari_pdf(cartella: pathlib.Path, log=print) -> list[dict]:
     return out
 
 
-def _sedi_e_classi(corsi: list[dict], log=print) -> dict[int, tuple[set[str], set[int]]]:
+def _sedi_e_classi(corsi: list[dict], log=print, codici: set[str] | None = None) -> dict[int, tuple[set[str], set[int]]]:
     """id(insegnamento) -> (sedi delle righe del manifesto, classi del dettaglio), dalle stesse pagine
     lette da adapters/polimi.py (con UN_HTTP_CACHE si rileggono dalla cache)."""
     c = Client(rate=3.0)
@@ -272,6 +272,8 @@ def _sedi_e_classi(corsi: list[dict], log=print) -> dict[int, tuple[set[str], se
     out = {}
     for corso in corsi:
         for i in corso.get("insegnamenti") or []:
+            if codici is not None and i.get("codice") not in codici:
+                continue  # senza appelli: sede e classe non servono
             sedi, classi = set(), set()
             f = i.get("fonte")
             if f and "ManifestoPublic" in f:
@@ -343,6 +345,6 @@ def fetch_appelli(uid: str = "polimi", corsi: list[dict] | None = None, log=prin
     # di fine agosto/inizio settembre è dell'a.a. precedente
     aa = oggi.year if oggi.month >= 9 else oggi.year - 1
     appelli = [e for e in appelli if e["data"] >= f"{aa}-09-12"]
-    n = assegna(corsi, appelli, _sedi_e_classi(corsi, log=log))
+    n = assegna(corsi, appelli, _sedi_e_classi(corsi, log=log, codici={e['codice'] for e in appelli}))
     log(f"[polimi] insegnamenti con appelli: {n}")
     return {}

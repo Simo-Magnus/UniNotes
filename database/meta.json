@@ -2,7 +2,7 @@
  "schema": 1,
  "anno_accademico": "2026/27",
  "versione": "2026.10.17",
- "generato_il": "2026-10-17T08:18:05Z",
+ "generato_il": "2026-10-17T08:50:39Z",
  "atenei": {
   "hunimed": {
    "corsi": 15,
@@ -103,10 +103,10 @@
   "unibocconi": {
    "corsi": 25,
    "insegnamenti": 3794,
-   "libri": 5225,
+   "libri": 5451,
    "esami": 14603,
    "file": "corsi/unibocconi.json",
-   "sha256": "2daab91e7896e575fc680945f0ed55af10de7e7f2c86d24295f705aad5535ec4"
+   "sha256": "8daf9f854780e2ffdcbc67e5c3776938ac49ff03ef605f295bf64f88cfd3bd2b"
   },
   "unisg": {
    "corsi": 4,
@@ -256,9 +256,9 @@
    "corsi": 76,
    "insegnamenti": 5236,
    "libri": 20314,
-   "esami": 1331,
+   "esami": 1339,
    "file": "corsi/polimi.json",
-   "sha256": "7fd73884efb2b105f8b211138115e8c520973da3c97d39fc619c2b771d14a78c"
+   "sha256": "e1e10a5b616c2affb989c4547f27fcfac89c491077dabb378f692708bf2cc642"
   },
   "polito": {
    "corsi": 57,
@@ -423,10 +423,10 @@
   "unife": {
    "corsi": 79,
    "insegnamenti": 2886,
-   "libri": 4259,
+   "libri": 5334,
    "esami": 12699,
    "file": "corsi/unife.json",
-   "sha256": "13b8c77c290f0d3ba5d869b617d01afb4dd8acbea30c549fd15a3bb256981ae2"
+   "sha256": "04960f1be94bfcddc0d40ab3fc9cdac7cacf06e372a35cbc78ed0309d238bb1d"
   },
   "unifi": {
    "corsi": 152,
@@ -463,10 +463,10 @@
   "unime": {
    "corsi": 113,
    "insegnamenti": 3247,
-   "libri": 4179,
+   "libri": 5532,
    "esami": 3187,
    "file": "corsi/unime.json",
-   "sha256": "bc42d1bd64869158de1f91e81f447750558db24c5c786ccd1ecffdcdf03d21c7"
+   "sha256": "b5501d5c93f2911e8d6e56f66b5e1869566e9dfd8a9dc78a2d5aec1737ebb773"
   },
   "unimib": {
    "corsi": 88,
@@ -519,10 +519,10 @@
   "unipv": {
    "corsi": 104,
    "insegnamenti": 4541,
-   "libri": 12235,
+   "libri": 12248,
    "esami": 16108,
    "file": "corsi/unipv.json",
-   "sha256": "b578675f96996c3bd65ffd691b504722d1c3d457e4791a6545312ca209bbf0cc"
+   "sha256": "f6fa3ca671bbb287ac4e37e2d09a278f38dcb07231a5445037fa05b646bca24d"
   },
   "unipg": {
    "corsi": 100,
@@ -576,9 +576,9 @@
    "corsi": 123,
    "insegnamenti": 6236,
    "libri": 14442,
-   "esami": 804,
+   "esami": 1933,
    "file": "corsi/uniroma2.json",
-   "sha256": "4694e202d30effd15bc2f0d00801a3960a6138e7956a1881b7c1d7d926e8d694"
+   "sha256": "a6caa21e11a18fc844ae28bdf2de200ce13c6e914ae87369e5e4837232db50c7"
   },
   "unisa": {
    "corsi": 102,
@@ -623,10 +623,10 @@
   "unitn": {
    "corsi": 85,
    "insegnamenti": 3541,
-   "libri": 10242,
+   "libri": 10961,
    "esami": 383,
    "file": "corsi/unitn.json",
-   "sha256": "d2bb94f0ca7d31766459c4bdb22b90b2cf5568ed9dbfbd2f0cf8cc3fa03d09ac"
+   "sha256": "b55c2768780faeac27fed41edeadb5187ffa90a3a3274bf84966bcb7dc1a0701"
   },
   "units": {
    "corsi": 80,
@@ -639,10 +639,10 @@
   "uniud": {
    "corsi": 77,
    "insegnamenti": 2722,
-   "libri": 5766,
+   "libri": 6905,
    "esami": 3853,
    "file": "corsi/uniud.json",
-   "sha256": "fc1f008e35f6a6deedc7e1266306bc8fb77cd59ce4bf5f08c090c6337c2590c8"
+   "sha256": "a2ac322047187e39df58938ca557ebf809e774827da9038de15720aec8267732"
   },
   "uniurb": {
    "corsi": 43,
@@ -672,9 +672,9 @@
    "corsi": 182,
    "insegnamenti": 6591,
    "libri": 14590,
-   "esami": 4384,
+   "esami": 5088,
    "file": "corsi/unina.json",
-   "sha256": "7fbd47a278ba0c0775d8740540d92b86402741fc0f22e49dc0829d9845058ae9"
+   "sha256": "75ff7b324b4c5b92586cb755452f07fc9db28df2db42bc2a38d9b48965c0b052"
   },
   "unior": {
    "corsi": 16,
@@ -695,10 +695,10 @@
   "unical": {
    "corsi": 84,
    "insegnamenti": 1610,
-   "libri": 3343,
+   "libri": 3854,
    "esami": 582,
    "file": "corsi/unical.json",
-   "sha256": "811271d4146640a1c0a2badda46f61a10f9e1f8b5c77ac80645400a9b2ed4194"
+   "sha256": "57d8319f20c210b8cdeaa40daff4b15363d40bb204f615b35744e5affa985e9b"
   },
   "iuav": {
    "corsi": 18,

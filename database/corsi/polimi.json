@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "polimi",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-14",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.interiordesign.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "054493",
@@ -4786,7 +4786,7 @@
    "url": "http://productdesign.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "062212",
@@ -9536,7 +9536,7 @@
    "url": "https://www.designdellacomunicazione.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "062173",
@@ -14415,7 +14415,7 @@
    "url": "http://www.moda.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "054493",
@@ -17886,7 +17886,7 @@
    "url": "https://onlineservices.polimi.it/manifesti/manifesti/controller/ManifestoPublic.do?evn_default=EVENTO&aa=2026&k_cf=225&k_corso_la=571&ac_ins=0&lang=IT&tipoCorso=ALL_TIPO_CORSO&semestre=ALL_SEMESTRI",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "064307",
@@ -18425,7 +18425,7 @@
    "url": "https://www.ingindinf.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "064334",
@@ -19134,7 +19134,7 @@
    "url": "https://ccs-aerospaziale.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "081360",
@@ -23050,7 +23050,7 @@
    "url": "http://www.ccsbio.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "062323",
@@ -26911,7 +26911,7 @@
    "url": "http://www.ccs-chimica.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "082919",
@@ -31333,7 +31333,7 @@
    "url": "http://www.ingciv.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "052222",
@@ -36892,7 +36892,7 @@
    "url": "https://www.ccs-matnano.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "082919",
@@ -41182,7 +41182,7 @@
    "url": "http://www.ccsatm.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "082740",
@@ -43611,6 +43611,19 @@
        "docenti": null,
        "note": "fascia oraria F1; Bozza calendario appelli sessione invernale 2027, Scuola 3I, 1° livello, sede Leonardo",
        "fonte": "https://www.ingindinf.polimi.it/fileadmin/user_upload/upload/Studenti/Esami/2026-27/Invernale/Leo/Sessione_INVERNALE_20027_3I_LEO_sito.pdf"
+      },
+      {
+       "tipo": "prova_in_itinere",
+       "titolo": null,
+       "data": "2026-10-29",
+       "ora": "08:45",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "ESMAILI PARISA",
+       "note": null,
+       "fonte": "https://onlineservices.polimi.it/info_appelli/app/"
       }
      ],
      "fonte": "https://onlineservices.polimi.it/manifesti/manifesti/controller/ManifestoPublic.do?evn_default=EVENTO&aa=2026&k_cf=225&k_corso_la=519&ac_ins=0&lang=IT&tipoCorso=ALL_TIPO_CORSO&semestre=ALL_SEMESTRI",
@@ -44849,7 +44862,7 @@
    "url": "https://www.polimi.it/formazione/corsi-di-laurea/dettaglio-corso/ingegneria-della-produzione-industriale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "082919",
@@ -47589,7 +47602,7 @@
    "url": "https://www.ccsiec.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "053110",
@@ -50025,7 +50038,7 @@
    "url": "https://www.elettrica.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "082740",
@@ -52588,7 +52601,7 @@
    "url": "https://www.elettronica.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "082740",
@@ -53690,6 +53703,19 @@
        "docenti": "BRAMANTI MARCO",
        "note": null,
        "fonte": "https://onlineservices.polimi.it/info_appelli/app/"
+      },
+      {
+       "tipo": "prova_in_itinere",
+       "titolo": null,
+       "data": "2026-10-30",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-07",
+       "iscrizioni_al": "2026-10-27",
+       "docenti": "BRAMANTI MARCO",
+       "note": null,
+       "fonte": "https://onlineservices.polimi.it/info_appelli/app/"
       }
      ],
      "fonte": "https://onlineservices.polimi.it/manifesti/manifesti/controller/ManifestoPublic.do?evn_default=EVENTO&aa=2026&k_cf=225&k_corso_la=523&ac_ins=0&lang=IT&tipoCorso=ALL_TIPO_CORSO&semestre=ALL_SEMESTRI",
@@ -54019,6 +54045,19 @@
        "docenti": null,
        "note": "fascia oraria F2; Bozza calendario appelli sessione invernale 2027, Scuola 3I, 1° livello, sede Leonardo",
        "fonte": "https://www.ingindinf.polimi.it/fileadmin/user_upload/upload/Studenti/Esami/2026-27/Invernale/Leo/Sessione_INVERNALE_20027_3I_LEO_sito.pdf"
+      },
+      {
+       "tipo": "prova_in_itinere",
+       "titolo": null,
+       "data": "2026-10-29",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-23",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "D'AMORE DARIO",
+       "note": null,
+       "fonte": "https://onlineservices.polimi.it/info_appelli/app/"
       }
      ],
      "fonte": "https://onlineservices.polimi.it/manifesti/manifesti/controller/ManifestoPublic.do?evn_default=EVENTO&aa=2026&k_cf=225&k_corso_la=523&ac_ins=0&lang=IT&tipoCorso=ALL_TIPO_CORSO&semestre=ALL_SEMESTRI",
@@ -55635,7 +55674,7 @@
    "url": "https://www.ccs-energetica.polimi.it/it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "081360",
@@ -59870,7 +59909,7 @@
    "url": "https://www.ccs-fisica.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "059063",
@@ -63747,7 +63786,7 @@
    "url": "https://management-eng.polimi.it/laurea/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "082919",
@@ -63926,6 +63965,19 @@
        "docenti": null,
        "note": "fascia oraria F3; Bozza calendario appelli sessione invernale 2027, Scuola 3I, 1° livello, sede Bovisa",
        "fonte": "https://www.ingindinf.polimi.it/fileadmin/user_upload/upload/Studenti/Esami/2026-27/Invernale/BV/BOZZA_GEN_FEB_2027_3I_BV_1_LIVELLO_PAC_MEC_ENG_GES_AER_010926_sito.pdf"
+      },
+      {
+       "tipo": "prova_in_itinere",
+       "titolo": null,
+       "data": "2026-10-31",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-11",
+       "iscrizioni_al": "2026-10-28",
+       "docenti": "DI CRISTO MICHELE",
+       "note": null,
+       "fonte": "https://onlineservices.polimi.it/info_appelli/app/"
       }
      ],
      "fonte": "https://onlineservices.polimi.it/manifesti/manifesti/controller/ManifestoPublic.do?evn_default=EVENTO&aa=2026&k_cf=225&k_corso_la=530&ac_ins=0&lang=IT&tipoCorso=ALL_TIPO_CORSO&semestre=ALL_SEMESTRI",
@@ -67118,7 +67170,7 @@
    "url": "https://management-eng.polimi.it/laurea/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "082740",
@@ -68710,7 +68762,7 @@
    "url": "https://www.inginformatica.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "082740",
@@ -75053,7 +75105,7 @@
    "url": "https://www.inginformatica.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "082740",
@@ -76849,7 +76901,7 @@
    "url": "https://www.mate.polimi.it/im/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "083215",
@@ -78144,6 +78196,19 @@
        "docenti": null,
        "note": "fascia oraria F2; Bozza calendario appelli sessione invernale 2027, Scuola 3I, 1° livello, sede Leonardo",
        "fonte": "https://www.ingindinf.polimi.it/fileadmin/user_upload/upload/Studenti/Esami/2026-27/Invernale/Leo/Sessione_INVERNALE_20027_3I_LEO_sito.pdf"
+      },
+      {
+       "tipo": "prova_in_itinere",
+       "titolo": null,
+       "data": "2026-10-29",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-23",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "CODECASA LORENZO",
+       "note": null,
+       "fonte": "https://onlineservices.polimi.it/info_appelli/app/"
       }
      ],
      "fonte": "https://onlineservices.polimi.it/manifesti/manifesti/controller/ManifestoPublic.do?evn_default=EVENTO&aa=2026&k_cf=225&k_corso_la=532&ac_ins=0&lang=IT&tipoCorso=ALL_TIPO_CORSO&semestre=ALL_SEMESTRI",
@@ -81098,7 +81163,7 @@
    "url": "https://www.mecheng.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "081360",
@@ -86165,7 +86230,7 @@
    "url": "https://www.mecheng.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "081360",
@@ -88789,7 +88854,7 @@
    "url": "http://www.iat.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "059156",
@@ -92487,7 +92552,7 @@
    "url": "https://www.design.polimi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "062480",
@@ -95227,7 +95292,7 @@
    "url": "https://www.ingindinf.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "064320",
@@ -95636,7 +95701,7 @@
    "url": "http://www.progettazionedellarchitettura.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "055541",
@@ -95902,6 +95967,19 @@
        "iscrizioni_dal": "2026-12-01",
        "iscrizioni_al": "2026-12-17",
        "docenti": "BASSI CATERINA",
+       "note": null,
+       "fonte": "https://onlineservices.polimi.it/info_appelli/app/"
+      },
+      {
+       "tipo": "prova_in_itinere",
+       "titolo": null,
+       "data": "2026-11-12",
+       "ora": "14:15",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "DE FALCO CARLO",
        "note": null,
        "fonte": "https://onlineservices.polimi.it/info_appelli/app/"
       }
@@ -96965,13 +97043,27 @@
        "citazione": "L. Patetta , Storia dell'architettura occidentale. Antologia critica , Editore: Etas Libri"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "prova_in_itinere",
+       "titolo": null,
+       "data": "2026-11-06",
+       "ora": null,
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "FORNI MARIA ENRICA MARICA",
+       "note": null,
+       "fonte": "https://onlineservices.polimi.it/info_appelli/app/"
+      }
+     ],
      "fonte": "https://onlineservices.polimi.it/manifesti/manifesti/controller/ManifestoPublic.do?evn_default=EVENTO&aa=2026&k_cf=222&k_corso_la=1031&ac_ins=0&lang=IT&tipoCorso=ALL_TIPO_CORSO&semestre=ALL_SEMESTRI&k_indir=MIA",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "url_sito": "https://onlineservices.polimi.it/schedaincarico/schedaincarico/controller/scheda_pubblica/SchedaPublic.do?&evn_default=evento&c_classe=882732",
      "id": "polimi-l-17-progettazione-dellarchitettura-095955",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "055545",
@@ -114081,7 +114173,7 @@
    "url": "http://www.progettazionedellarchitettura.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "055541",
@@ -114205,13 +114297,27 @@
        "citazione": "Marcellini, Sbordone , Elementi di calcolo. Versione semplificata per i nuovi corsi di laurea , Editore: Liguori, Anno edizione: 2016, ISBN: 978-8820736651"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "prova_in_itinere",
+       "titolo": null,
+       "data": "2026-11-05",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-17",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "MAZZIERI ILARIO",
+       "note": null,
+       "fonte": "https://onlineservices.polimi.it/info_appelli/app/"
+      }
+     ],
      "fonte": "https://onlineservices.polimi.it/manifesti/manifesti/controller/ManifestoPublic.do?evn_default=EVENTO&aa=2026&k_cf=222&k_corso_la=1031&ac_ins=0&lang=IT&tipoCorso=ALL_TIPO_CORSO&semestre=ALL_SEMESTRI&k_indir=MNA",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "url_sito": "https://onlineservices.polimi.it/schedaincarico/schedaincarico/controller/scheda_pubblica/SchedaPublic.do?&evn_default=evento&c_classe=882349",
      "id": "polimi-l-17-progettazione-dellarchitettura-replica-mantova-053339",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "096557",
@@ -117844,7 +117950,7 @@
    "url": "http://www.progettazionedellarchitettura.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "055541",
@@ -122933,7 +123039,7 @@
    "url": "https://www.auic.polimi.it/formazione/corsi-di-laurea/dettaglio/1093?tx_didatticascuole_show%5Banno%5D=2024&cHash=63124debcfc64ec753aead11013bcfaa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "062404",
@@ -125921,7 +126027,7 @@
    "url": "https://ccs-aerospaziale.polimi.it/corso-di-laurea-magistrale-in-ingegneria-aeronautica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "051172",
@@ -130419,7 +130525,7 @@
    "url": "https://www.ccsage.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "057223",
@@ -131897,7 +132003,7 @@
    "url": "http://www.adh.mantova.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "063463",
@@ -134672,7 +134778,7 @@
    "url": "https://www.auic.polimi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "062466",
@@ -136595,7 +136701,7 @@
    "url": "https://www.adu.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "063223",
@@ -158768,7 +158874,7 @@
    "url": "https://www.ccsatm.polimi.it/?lang=en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "090912",
@@ -163269,7 +163375,7 @@
    "url": "http://www.ccsbio.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "064290",
@@ -172028,7 +172134,7 @@
    "url": "https://www.auic.polimi.it/formazione/corsi-di-laurea-magistrale/dettaglio/1013?tx_didatticascuole_show%5Banno%5D=2024&cHash=656ff385423ec28f0bd7f8cd8a2e2a60",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "062349",
@@ -174621,7 +174727,7 @@
    "url": "http://www.ccs-chimica.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "057956",
@@ -178293,7 +178399,7 @@
    "url": "https://www.master-cerm.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "091269",
@@ -183605,7 +183711,7 @@
    "url": "https://www.inginformatica.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "093212",
@@ -198120,7 +198226,7 @@
    "url": "https://www.designdellacomunicazione.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "089560",
@@ -203123,7 +203229,7 @@
    "url": "https://www.design.polimi.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "099896",
@@ -205719,7 +205825,7 @@
    "url": "http://www.moda.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "055941",
@@ -208834,7 +208940,7 @@
    "url": "http://www.digitalinteractiondesign.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "064450",
@@ -213544,7 +213650,7 @@
    "url": "https://www.elettrica.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "096101",
@@ -217238,7 +217344,7 @@
    "url": "https://www.elettronica.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "052427",
@@ -221849,7 +221955,7 @@
    "url": "https://www.ccs-energetica.polimi.it/it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "054066",
@@ -232245,7 +232351,7 @@
    "url": "https://www.ccs-energetica.polimi.it/it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "087073",
@@ -240649,7 +240755,7 @@
    "url": "https://www.ccs-fisica.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "054307",
@@ -250927,7 +251033,7 @@
    "url": "http://www.ccs-foodengineering.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "055771",
@@ -255313,7 +255419,7 @@
    "url": "http://www.geoinformatics.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "085779",
@@ -258597,7 +258703,7 @@
    "url": "https://masterhpc.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "058166",
@@ -261938,7 +262044,7 @@
    "url": "http://www.ingindinf.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "062302",
@@ -264921,7 +265027,7 @@
    "url": "http://www.ingciv.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "055756",
@@ -271118,7 +271224,7 @@
    "url": "http://www.iat.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "051279",
@@ -276615,7 +276721,7 @@
    "url": "http://productdesign.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "058243",
@@ -281310,7 +281416,7 @@
    "url": "https://www.interiordesign.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "051381",
@@ -286919,7 +287025,7 @@
    "url": "https://www.landscape.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "051412",
@@ -289863,7 +289969,7 @@
    "url": "https://management-eng.polimi.it/laurea-magistrale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "096078",
@@ -300118,7 +300224,7 @@
    "url": "http://www.ccsmbe.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "063518",
@@ -301506,7 +301612,7 @@
    "url": "https://www.ccs-matnano.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "096240",
@@ -308104,7 +308210,7 @@
    "url": "https://www.mate.polimi.it/im/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "052656",
@@ -317021,7 +317127,7 @@
    "url": "https://www.mecheng.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "059183",
@@ -335560,7 +335666,7 @@
    "url": "https://www.mecheng.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "059184",
@@ -337315,7 +337421,7 @@
    "url": "http://www.ingindinf.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "054268",
@@ -339966,7 +340072,7 @@
    "url": "https://www.suono.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "052828",
@@ -345292,7 +345398,7 @@
    "url": "https://www.ingnucleare.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "089540",
@@ -354049,7 +354155,7 @@
    "url": "http://www.pssd.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "059367",
@@ -358543,7 +358649,7 @@
    "url": "https://ccs-aerospaziale.polimi.it/corso-di-laurea-magistrale-in-ingegneria-spaziale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "083794",
@@ -361548,7 +361654,7 @@
    "url": "https://www.polo-piacenza.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "053243",
@@ -365207,7 +365313,7 @@
    "url": "https://www.ccstlc.polimi.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "089183",
@@ -374077,7 +374183,7 @@
    "url": "http://www.uppd.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "063483",
@@ -376908,7 +377014,7 @@
    "url": "http://www.ccseda.polimi.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "054421",
