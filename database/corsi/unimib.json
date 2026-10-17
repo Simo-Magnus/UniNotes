@@ -726,24 +726,24 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-10-27",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-27",
-       "iscrizioni_al": "2026-10-24",
-       "docenti": "LOTTI MARINA MANGIAGALLI MARCO",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-10-20",
        "ora": "09:30",
        "luogo": "U7-08 [CIVITAS ex U7]",
        "modalita": "scritto",
        "iscrizioni_dal": "2026-09-20",
        "iscrizioni_al": "2026-10-17",
+       "docenti": "LOTTI MARINA MANGIAGALLI MARCO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-27",
+       "iscrizioni_al": "2026-10-24",
        "docenti": "LOTTI MARINA MANGIAGALLI MARCO",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
@@ -1093,24 +1093,24 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-04",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-04",
-       "iscrizioni_al": "2026-12-01",
-       "docenti": "GRANUCCI FRANCESCA MARONGIU LAURA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-10-29",
        "ora": "08:30",
        "luogo": "Aula 2025 - Ed.U3 - 2 piano",
        "modalita": "orale",
        "iscrizioni_dal": "2026-09-29",
        "iscrizioni_al": "2026-10-26",
+       "docenti": "GRANUCCI FRANCESCA MARONGIU LAURA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-04",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-04",
+       "iscrizioni_al": "2026-12-01",
        "docenti": "GRANUCCI FRANCESCA MARONGIU LAURA",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
@@ -1406,18 +1406,6 @@
      "esami": [
       {
        "tipo": "appello",
-       "data": "2026-10-30",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-30",
-       "iscrizioni_al": "2026-10-27",
-       "docenti": "BRANDUARDI PAOLA PORRO DANILO SERRA IMMACOLATA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-10-09",
        "ora": "14:00",
        "luogo": "U2-01 con Podio [QUANTUM ex U2]",
@@ -1427,6 +1415,18 @@
        "docenti": "BRANDUARDI PAOLA",
        "note": null,
        "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-30",
+       "iscrizioni_al": "2026-10-27",
+       "docenti": "BRANDUARDI PAOLA PORRO DANILO SERRA IMMACOLATA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
       {
        "tipo": "appello",
@@ -2855,6 +2855,18 @@
        "docenti": "COSTA BARBARA SIMONA",
        "note": null,
        "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-17",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": "COSTA BARBARA SIMONA TORSELLO ANTONIO BIAGIO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12460",
@@ -4621,30 +4633,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-05",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-16",
-       "iscrizioni_al": "2027-02-02",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-19",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-30",
-       "iscrizioni_al": "2027-02-16",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-21",
        "ora": "14:00",
        "luogo": "aula virtuale",
@@ -4659,11 +4647,35 @@
        "tipo": "appello",
        "data": "2027-02-05",
        "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-16",
+       "iscrizioni_al": "2027-02-02",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-05",
+       "ora": "10:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-16",
        "iscrizioni_al": "2027-02-02",
        "docenti": "COMINETTI FEDERICA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-19",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-30",
+       "iscrizioni_al": "2027-02-16",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -4836,18 +4848,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-11",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": "scritto e orale",
-       "iscrizioni_dal": "2027-01-22",
-       "iscrizioni_al": "2027-02-08",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-14",
        "ora": "10:30",
        "luogo": "aula virtuale",
@@ -4855,6 +4855,18 @@
        "iscrizioni_dal": "2026-12-25",
        "iscrizioni_al": "2027-01-11",
        "docenti": "DA MILANO FEDERICA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-11",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-22",
+       "iscrizioni_al": "2027-02-08",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -4991,30 +5003,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-28",
-       "ora": "15:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-08",
-       "iscrizioni_al": "2027-01-25",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-15",
-       "ora": "15:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-26",
-       "iscrizioni_al": "2027-02-12",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-07",
        "ora": "15:30",
        "luogo": "U6-27 con Podio [AGORA' ex U6]",
@@ -5029,11 +5017,35 @@
        "tipo": "appello",
        "data": "2027-01-28",
        "ora": "15:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-08",
+       "iscrizioni_al": "2027-01-25",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "15:30",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": "2027-01-08",
        "iscrizioni_al": "2027-01-25",
        "docenti": "DATTERI EDOARDO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-26",
+       "iscrizioni_al": "2027-02-12",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -5086,30 +5098,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-29",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-09",
-       "iscrizioni_al": "2027-01-26",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-19",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-30",
-       "iscrizioni_al": "2027-02-16",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-08",
        "ora": "10:30",
        "luogo": "U6-07 con Podio [AGORA' ex U6]",
@@ -5124,11 +5112,35 @@
        "tipo": "appello",
        "data": "2027-01-29",
        "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-09",
+       "iscrizioni_al": "2027-01-26",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-29",
+       "ora": "10:30",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-09",
        "iscrizioni_al": "2027-01-26",
        "docenti": "DI ROSARIO GIOVANNA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-19",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-30",
+       "iscrizioni_al": "2027-02-16",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -5195,42 +5207,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-11",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-22",
-       "iscrizioni_al": "2027-01-08",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-24",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-02-04",
-       "iscrizioni_al": "2027-02-21",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-26",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-06",
-       "iscrizioni_al": "2027-02-23",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-07",
        "ora": "09:00",
        "luogo": "U6-35 [AGORA' ex U6]",
@@ -5245,6 +5221,18 @@
        "tipo": "appello",
        "data": "2027-01-11",
        "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-22",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "09:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2026-12-22",
@@ -5257,11 +5245,35 @@
        "tipo": "appello",
        "data": "2027-02-24",
        "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-04",
+       "iscrizioni_al": "2027-02-21",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "09:00",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": "2027-02-04",
        "iscrizioni_al": "2027-02-21",
        "docenti": "FARAJ ALI SAKHI MOHAMMED",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-26",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-06",
+       "iscrizioni_al": "2027-02-23",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -5388,42 +5400,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-08",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-19",
-       "iscrizioni_al": "2027-01-05",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-25",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-02-05",
-       "iscrizioni_al": "2027-02-22",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-26",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-06",
-       "iscrizioni_al": "2027-02-23",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-07",
        "ora": "09:30",
        "luogo": "U6-07 con Podio - AGORA' ex U6",
@@ -5431,6 +5407,18 @@
        "iscrizioni_dal": "2026-12-18",
        "iscrizioni_al": "2027-01-04",
        "docenti": "POZZI SILVIA CELLA GLORIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-08",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-19",
+       "iscrizioni_al": "2027-01-05",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -5450,11 +5438,35 @@
        "tipo": "appello",
        "data": "2027-02-25",
        "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-05",
+       "iscrizioni_al": "2027-02-22",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-25",
+       "ora": "09:30",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": "2027-02-05",
        "iscrizioni_al": "2027-02-22",
        "docenti": "POZZI SILVIA CELLA GLORIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-26",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-06",
+       "iscrizioni_al": "2027-02-23",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -5509,42 +5521,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-20",
-       "ora": "08:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-31",
-       "iscrizioni_al": "2027-01-17",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-10",
-       "ora": "08:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-21",
-       "iscrizioni_al": "2027-02-07",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-16",
-       "ora": "08:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-27",
-       "iscrizioni_al": "2027-02-13",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-13",
        "ora": "08:00",
        "luogo": "aula virtuale",
@@ -5559,6 +5535,18 @@
        "tipo": "appello",
        "data": "2027-01-20",
        "ora": "08:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-31",
+       "iscrizioni_al": "2027-01-17",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "08:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2026-12-31",
@@ -5571,11 +5559,35 @@
        "tipo": "appello",
        "data": "2027-02-10",
        "ora": "08:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-21",
+       "iscrizioni_al": "2027-02-07",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "08:00",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": "2027-01-21",
        "iscrizioni_al": "2027-02-07",
        "docenti": "MAURIZI ANDREA MADARAME NOBUAKI",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-27",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -13758,12 +13770,49 @@
        "citazione": "V. Barutello, M. Conti, D.L. Ferrario, S. Terracini, G, Verzini: Analisi 1 e 2. Apogeo."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-28",
+       "docenti": "VERONELLI GIONA FERRARIO DAVIDE LUIGI",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-12-08",
+       "docenti": "VERONELLI GIONA FERRARIO DAVIDE LUIGI",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-22",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-23",
+       "iscrizioni_al": "2027-01-19",
+       "docenti": "VERONELLI GIONA FERRARIO DAVIDE LUIGI",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12614",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-30-fisica-e3005q007",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "E3005Q008",
@@ -13874,24 +13923,24 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-11-12",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-13",
-       "iscrizioni_al": "2026-11-09",
-       "docenti": "GORINI GIUSEPPE DI MARTINO DANIELA LUCCHINI MARCO TOLIMAN MARCER GIULIA NAPOLETANO DAVIDE TABARELLI DE FATIS TOMMASO",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-11-04",
        "ora": "09:00",
        "luogo": "U6-44 [AGORA' ex U6]",
        "modalita": "orale",
        "iscrizioni_dal": "2026-10-05",
        "iscrizioni_al": "2026-11-01",
+       "docenti": "GORINI GIUSEPPE DI MARTINO DANIELA LUCCHINI MARCO TOLIMAN MARCER GIULIA NAPOLETANO DAVIDE TABARELLI DE FATIS TOMMASO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-09",
        "docenti": "GORINI GIUSEPPE DI MARTINO DANIELA LUCCHINI MARCO TOLIMAN MARCER GIULIA NAPOLETANO DAVIDE TABARELLI DE FATIS TOMMASO",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
@@ -14882,12 +14931,25 @@
        "citazione": "Donald Perkins, \"Introduction to High Energy Physics\", Cambridge University Press, 4th edition"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "PAGANONI MARCO TABARELLI DE FATIS TOMMASO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12462",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-30-fisica-e3001q088",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "E3001Q089",
@@ -21087,12 +21149,25 @@
        "citazione": "Wilkins Esther, La pratica clinica dell’igienista dentali, PICCIN."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-12",
+       "iscrizioni_al": "2026-09-28",
+       "docenti": "NICOLINI GABRIELLA MADDALONE MARCELLO SPINA GIOVANNI",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12445",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-i0301d016",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0301D033",
@@ -21576,6 +21651,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-05",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "PELLEGRINI EDDA COLOMBO NADIA TERESA LAZZARI GIUSEPPE GALBIATI GIANCARLO ONGARO CARMELA POLI SILVIA FORESTI MARINA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-19",
        "ora": "08:00",
        "luogo": null,
@@ -21930,6 +22017,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "09:00",
+       "luogo": "U8-05 [ASCLEPIO ex U8]",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MILOSO MARIAROSARIA",
+       "note": null,
+       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-14",
        "ora": "09:30",
        "luogo": null,
@@ -21978,6 +22077,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:00",
+       "luogo": "U8-05 [ASCLEPIO ex U8]",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MILOSO MARIAROSARIA",
+       "note": null,
+       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-23",
        "ora": "08:00",
        "luogo": null,
@@ -21999,30 +22110,6 @@
        "docenti": "MILOSO MARIAROSARIA MOLOGNI LUCA ONGARO CARMELA CONTESTABILE DAVIDE QUETTI ANTONIETTA",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-06",
-       "ora": "09:00",
-       "luogo": "U8-05 [ASCLEPIO ex U8]",
-       "modalita": "scritto",
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "MILOSO MARIAROSARIA",
-       "note": null,
-       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-14",
-       "ora": "09:00",
-       "luogo": "U8-05 [ASCLEPIO ex U8]",
-       "modalita": "scritto",
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "MILOSO MARIAROSARIA",
-       "note": null,
-       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
       },
       {
        "tipo": "appello",
@@ -28032,6 +28119,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-05",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "PELLEGRINI EDDA COLOMBO NADIA TERESA LAZZARI GIUSEPPE GALBIATI GIANCARLO ONGARO CARMELA POLI SILVIA FORESTI MARINA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-19",
        "ora": "08:00",
        "luogo": null,
@@ -28113,12 +28212,25 @@
        "citazione": "Testo consigliato: Giovagnorio, F. Manuale di diagnostica per immagini nella pratica medica. Esculapio, 2021."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": "D'ORSO MARCO ITALO MAZZAGLIA GIAMPIERO BOMBARDIERI GIULIA CIAVURRO FIAMMETTA DI LASCIO VALERIA PELLEGRINI EDDA SARPINI MAURIZIO LANDONI CLAUDIO GUERRA LUCA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12824",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632208-i0104d002",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://elearning.unimib.it/course/info.php?id=70213"
     },
     {
@@ -28266,12 +28378,37 @@
        "citazione": "ISTOLOGIA, Bani et al, CG Sorbona ANATOMIA UMANA, Martini, Tallitsch, Nath, EdiSES"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-14",
+       "iscrizioni_al": "2026-10-11",
+       "docenti": "MILOSO MARIAROSARIA BRUNO LUCIA PIA MAGNI FULVIO MOLOGNI LUCA SARPINI MAURIZIO MAESTRINI STEFANO BASSETTI SABRINA ROVELLI NADIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-03",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "MILOSO MARIAROSARIA MOLOGNI LUCA SARPINI MAURIZIO MAESTRINI STEFANO BASSETTI SABRINA ROVELLI NADIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12824",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632208-i0104d001",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0104D004",
@@ -28310,12 +28447,25 @@
        "citazione": "Scannicchio D., Giroletti E. (2015) Elementi di Fisica Biomedica, Edises, Milano."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-24",
+       "docenti": "CALAMAIO SERENA LAZZARI GIUSEPPE PANIZZA DENIS ALBERIO MASSIMO MIRANDOLA FABIO VISMARA EMANUELA BERTOZZI SIMONA MERATI SANDRA SPEDALE VALENTINA TOFFOLETTO MARTA CODARA MONICA CARUSO ANTONELLA GIOVANNA RAVASI SARA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12824",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632208-i0104d004",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0104D008",
@@ -28452,12 +28602,25 @@
        "citazione": "Fry ST, Johnstone MJ (2004) Etica per la pratica infermieristica. Milano: CEA."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-25",
+       "docenti": "LAZZARI GIUSEPPE ALBERIO MASSIMO SARPINI MAURIZIO FORESTI MARINA COLOMBO NADIA TERESA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12824",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632208-i0104d007",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0104D005",
@@ -28560,12 +28723,25 @@
        "citazione": "Melzi D'Eril G. V., Chelazzi G. (1999) Biochimica clinica e immunologia, Milano, Sorbona."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-23",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "VILLA CHIARA ALBERIO MASSIMO MEANTI RAMONA MIRANDOLA FABIO VISMARA EMANUELA BERTOZZI SIMONA MERATI SANDRA CARUSO ANTONELLA GIOVANNA TOFFOLETTO MARTA SPEDALE VALENTINA CODARA MONICA RAVASI SARA MALANDRIN SERGIO MARIA IVANO CAPPELLANI ADELE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12824",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632208-i0104d005",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0104D006",
@@ -28691,12 +28867,25 @@
        "citazione": "Laneri, N., Archeologia della morte, Carocci, Roma, 2011."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": "BANI MARCO MOZZANA CARLOTTA BERTOZZI SIMONA MIRANDOLA FABIO VISMARA EMANUELA ALBERIO MASSIMO CARUSO ANTONELLA GIOVANNA TOFFOLETTO MARTA SPEDALE VALENTINA CODARA MONICA MERATI SANDRA RAVASI SARA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12824",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632208-i0104d006",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0101D903",
@@ -29051,6 +29240,18 @@
      ],
      "stato_libri": "completo",
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-08",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "COLOMBO DANIELA BELLELLI GIUSEPPE LOCATELLI ANNA SPEDALE VALENTINA SALADINO LAURA DI LASCIO VALERIA GIALLI MARCO MORETTI ANTONELLA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-24",
@@ -33731,6 +33932,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-05",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "PELLEGRINI EDDA COLOMBO NADIA TERESA LAZZARI GIUSEPPE GALBIATI GIANCARLO ONGARO CARMELA POLI SILVIA FORESTI MARINA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-19",
        "ora": "08:00",
        "luogo": null,
@@ -33811,12 +34024,25 @@
        "citazione": "Testo consigliato: Giovagnorio, F. Manuale di diagnostica per immagini nella pratica medica. Esculapio, 2021."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": "D'ORSO MARCO ITALO MAZZAGLIA GIAMPIERO BOMBARDIERI GIULIA CIAVURRO FIAMMETTA DI LASCIO VALERIA PELLEGRINI EDDA SARPINI MAURIZIO LANDONI CLAUDIO GUERRA LUCA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12829",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632209-i0105d002",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://elearning.unimib.it/course/info.php?id=70241"
     },
     {
@@ -33892,12 +34118,37 @@
        "citazione": "ISTOLOGIA, Bani et al, CG Sorbona ANATOMIA UMANA, Martini, Tallitsch, Nath, EdiSES"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-14",
+       "iscrizioni_al": "2026-10-11",
+       "docenti": "MILOSO MARIAROSARIA BRUNO LUCIA PIA MAGNI FULVIO MOLOGNI LUCA SARPINI MAURIZIO MAESTRINI STEFANO BASSETTI SABRINA ROVELLI NADIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-03",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "MILOSO MARIAROSARIA MOLOGNI LUCA SARPINI MAURIZIO MAESTRINI STEFANO BASSETTI SABRINA ROVELLI NADIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12829",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632209-i0105d001",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0105D004",
@@ -33936,12 +34187,25 @@
        "citazione": "Scannicchio D., Giroletti E. (2015) Elementi di Fisica Biomedica, Edises, Milano."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-24",
+       "docenti": "CALAMAIO SERENA LAZZARI GIUSEPPE PANIZZA DENIS ALBERIO MASSIMO MIRANDOLA FABIO VISMARA EMANUELA BERTOZZI SIMONA MERATI SANDRA SPEDALE VALENTINA TOFFOLETTO MARTA CODARA MONICA CARUSO ANTONELLA GIOVANNA RAVASI SARA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12829",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632209-i0105d004",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0105D008",
@@ -34080,12 +34344,25 @@
        "citazione": "Fry ST, Johnstone MJ (2004) Etica per la pratica infermieristica. Milano: CEA."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-25",
+       "docenti": "LAZZARI GIUSEPPE ALBERIO MASSIMO SARPINI MAURIZIO FORESTI MARINA COLOMBO NADIA TERESA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12829",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632209-i0105d007",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0105D005",
@@ -34102,12 +34379,25 @@
      ],
      "url": "https://elearning.unimib.it/course/info.php?id=70219",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-23",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "VILLA CHIARA ALBERIO MASSIMO MEANTI RAMONA MIRANDOLA FABIO VISMARA EMANUELA BERTOZZI SIMONA MERATI SANDRA CARUSO ANTONELLA GIOVANNA TOFFOLETTO MARTA SPEDALE VALENTINA CODARA MONICA RAVASI SARA MALANDRIN SERGIO MARIA IVANO CAPPELLANI ADELE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12829",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632209-i0105d005",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0105D006",
@@ -34233,12 +34523,25 @@
        "citazione": "Laneri, N., Archeologia della morte, Carocci, Roma, 2011."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": "BANI MARCO MOZZANA CARLOTTA BERTOZZI SIMONA MIRANDOLA FABIO VISMARA EMANUELA ALBERIO MASSIMO CARUSO ANTONELLA GIOVANNA TOFFOLETTO MARTA SPEDALE VALENTINA CODARA MONICA MERATI SANDRA RAVASI SARA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12829",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632209-i0105d006",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0101D903",
@@ -34593,6 +34896,18 @@
      ],
      "stato_libri": "completo",
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-08",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "COLOMBO DANIELA BELLELLI GIUSEPPE LOCATELLI ANNA SPEDALE VALENTINA SALADINO LAURA DI LASCIO VALERIA GIALLI MARCO MORETTI ANTONELLA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-24",
@@ -39274,6 +39589,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-05",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "PELLEGRINI EDDA COLOMBO NADIA TERESA LAZZARI GIUSEPPE GALBIATI GIANCARLO ONGARO CARMELA POLI SILVIA FORESTI MARINA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-19",
        "ora": "08:00",
        "luogo": null,
@@ -39354,12 +39681,25 @@
        "citazione": "Testo consigliato: Giovagnorio, F. Manuale di diagnostica per immagini nella pratica medica. Esculapio, 2021."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": "D'ORSO MARCO ITALO MAZZAGLIA GIAMPIERO BOMBARDIERI GIULIA CIAVURRO FIAMMETTA DI LASCIO VALERIA PELLEGRINI EDDA SARPINI MAURIZIO LANDONI CLAUDIO GUERRA LUCA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12834",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632210-i0106d002",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://elearning.unimib.it/course/info.php?id=70276"
     },
     {
@@ -39507,12 +39847,37 @@
        "citazione": "ISTOLOGIA, Bani et al, CG Sorbona ANATOMIA UMANA, Martini, Tallitsch, Nath, EdiSES"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-14",
+       "iscrizioni_al": "2026-10-11",
+       "docenti": "MILOSO MARIAROSARIA BRUNO LUCIA PIA MAGNI FULVIO MOLOGNI LUCA SARPINI MAURIZIO MAESTRINI STEFANO BASSETTI SABRINA ROVELLI NADIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-03",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "MILOSO MARIAROSARIA MOLOGNI LUCA SARPINI MAURIZIO MAESTRINI STEFANO BASSETTI SABRINA ROVELLI NADIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12834",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632210-i0106d001",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0106D004",
@@ -39551,12 +39916,25 @@
        "citazione": "Scannicchio D., Giroletti E. (2015) Elementi di Fisica Biomedica, Edises, Milano."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-24",
+       "docenti": "CALAMAIO SERENA LAZZARI GIUSEPPE PANIZZA DENIS ALBERIO MASSIMO MIRANDOLA FABIO VISMARA EMANUELA BERTOZZI SIMONA MERATI SANDRA SPEDALE VALENTINA TOFFOLETTO MARTA CODARA MONICA CARUSO ANTONELLA GIOVANNA RAVASI SARA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12834",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632210-i0106d004",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0106D008",
@@ -39691,12 +40069,25 @@
        "citazione": "Fry ST, Johnstone MJ (2004) Etica per la pratica infermieristica. Milano: CEA."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-25",
+       "docenti": "LAZZARI GIUSEPPE ALBERIO MASSIMO SARPINI MAURIZIO FORESTI MARINA COLOMBO NADIA TERESA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12834",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632210-i0106d007",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0106D005",
@@ -39798,12 +40189,25 @@
        "citazione": "Melzi D'Eril G. V., Chelazzi G. (1999) Biochimica clinica e immunologia, Milano, Sorbona."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-23",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "VILLA CHIARA ALBERIO MASSIMO MEANTI RAMONA MIRANDOLA FABIO VISMARA EMANUELA BERTOZZI SIMONA MERATI SANDRA CARUSO ANTONELLA GIOVANNA TOFFOLETTO MARTA SPEDALE VALENTINA CODARA MONICA RAVASI SARA MALANDRIN SERGIO MARIA IVANO CAPPELLANI ADELE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12834",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632210-i0106d005",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0106D006",
@@ -39929,12 +40333,25 @@
        "citazione": "Laneri, N., Archeologia della morte, Carocci, Roma, 2011."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": "BANI MARCO MOZZANA CARLOTTA BERTOZZI SIMONA MIRANDOLA FABIO VISMARA EMANUELA ALBERIO MASSIMO CARUSO ANTONELLA GIOVANNA TOFFOLETTO MARTA SPEDALE VALENTINA CODARA MONICA MERATI SANDRA RAVASI SARA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12834",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1632210-i0106d006",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0101D903",
@@ -40289,6 +40706,18 @@
      ],
      "stato_libri": "completo",
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-08",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "COLOMBO DANIELA BELLELLI GIUSEPPE LOCATELLI ANNA SPEDALE VALENTINA SALADINO LAURA DI LASCIO VALERIA GIALLI MARCO MORETTI ANTONELLA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-24",
@@ -46592,12 +47021,25 @@
        "citazione": "Lee Zhi Eng, Qt5 C++ GUI Programming Cookbook, Packt Publishing"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-15",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-12",
+       "docenti": "CIOCCA GIANLUIGI CELONA LUIGI",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12479",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-31-informatica-e3101q133",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "E3101Q135",
@@ -51720,12 +52162,25 @@
        "citazione": "G. B. Whitham, Linear and nonlinear waves, Wiley&Sons"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": "MAIOCCHI ALBERTO MARIO CRISTADORO GIAMPAOLO FALQUI GREGORIO LORENZONI PAOLO NOJA DIEGO DAVIDE RAFFAELE RICCA RENZO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12476",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-35-matematica-e3501q059",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "E3501Q062",
@@ -51766,12 +52221,37 @@
        "citazione": "An Introduction to Mathematica Statistics: F. Bijma, M. Jonker, A. van der Vart, Amsterdam University Press"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-10",
+       "iscrizioni_al": "2026-12-07",
+       "docenti": "TESSITORE GIANMARIO BERTACCHI DANIELA CARAVENNA FRANCESCO MASIERO FEDERICA ORENSHTEIN TAL ROSSI MAURIZIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-14",
+       "iscrizioni_al": "2026-12-11",
+       "docenti": "TESSITORE GIANMARIO BERTACCHI DANIELA CARAVENNA FRANCESCO MASIERO FEDERICA ORENSHTEIN TAL ROSSI MAURIZIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12476",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-35-matematica-e3501q062",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "url_catalogo": "https://elearning.unimib.it/course/index.php?categoryid=2665"
@@ -51944,12 +52424,25 @@
        "citazione": "Spina E. (2009),Ostetriche e Midwives, Spazi di autonomia e identità corporativa, Franco Angeli"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-10",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "NESPOLI ANTONELLA DI MAURO STEFANIA CAPPELLETTI GIULIA LUMIA CRISTINA SADA ROMINA SERAFINI MARZIA SPEDALE VALENTINA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12809",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-i0107d003",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0107D002",
@@ -52094,6 +52587,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-16",
+       "iscrizioni_al": "2026-10-03",
+       "docenti": "MILOSO MARIAROSARIA MOLOGNI LUCA MAGNI FULVIO BRUNO LUCIA PIA SERAFINI MARZIA SADA ROMINA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-10-14",
@@ -55395,6 +55900,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-10",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "NESPOLI ANTONELLA DI MAURO STEFANIA CAPPELLETTI GIULIA LUMIA CRISTINA SADA ROMINA SERAFINI MARZIA SPEDALE VALENTINA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-10-19",
        "ora": "08:00",
        "luogo": null,
@@ -55436,12 +55953,37 @@
      "docenti": [],
      "url": "https://elearning.unimib.it/course/info.php?id=70108",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-30",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": "D'ORSO MARCO ITALO MAZZAGLIA GIAMPIERO GUERRA LUCA LANDONI CLAUDIO SADA ROMINA SERAFINI MARZIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-11-27",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": "LANDONI CLAUDIO D'ORSO MARCO ITALO GUERRA LUCA SADA ROMINA SERAFINI MARZIA MAZZAGLIA GIAMPIERO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12814",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "id": "unimib-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-1632211-i0108d002",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://elearning.unimib.it/course/info.php?id=70108"
     },
     {
@@ -55517,12 +56059,49 @@
        "citazione": "ISTOLOGIA, Bani et al, CG Sorbona ANATOMIA UMANA, Martini, Tallitsch, Nath, EdiSES"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-16",
+       "iscrizioni_al": "2026-10-03",
+       "docenti": "MILOSO MARIAROSARIA MOLOGNI LUCA MAGNI FULVIO BRUNO LUCIA PIA SERAFINI MARZIA SADA ROMINA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-25",
+       "iscrizioni_al": "2026-10-11",
+       "docenti": "MILOSO MARIAROSARIA MOLOGNI LUCA MAGNI FULVIO BRUNO LUCIA PIA SADA ROMINA SERAFINI MARZIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-03",
+       "iscrizioni_al": "2026-10-20",
+       "docenti": "MILOSO MARIAROSARIA MOLOGNI LUCA MAGNI FULVIO BRUNO LUCIA PIA SADA ROMINA SERAFINI MARZIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12814",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-1632211-i0108d001",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://elearning.unimib.it/course/info.php?id=70118"
     },
     {
@@ -55550,12 +56129,37 @@
        "citazione": "Sherwood L. (2012) Fondamenti di Fisiologia Umana, Piccin-Nuova Libraria"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-24",
+       "docenti": "RIVOLTA ILARIA FUMAGALLI MICHELE SADA ROMINA SERAFINI MARZIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-08",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-12-19",
+       "iscrizioni_al": "2027-01-05",
+       "docenti": "RIVOLTA ILARIA FUMAGALLI MICHELE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12814",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-1632211-i0108d004",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0108D007",
@@ -55779,12 +56383,61 @@
        "citazione": "Abbas A.K.: Fondamenti di Immunologia. Funzioni e alterazioni del Sistema Immunitario. Edizioni Piccin"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-23",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "VILLA CHIARA RIZZI LAURA CAPPELLANI ADELE SADA ROMINA SERAFINI MARZIA MALANDRIN SERGIO MARIA IVANO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": "RIZZI LAURA SADA ROMINA CAPPELLANI ADELE VILLA CHIARA SERAFINI MARZIA MALANDRIN SERGIO MARIA IVANO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-12-25",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "VILLA CHIARA RIZZI LAURA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-22",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-02-02",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "RIZZI LAURA SADA ROMINA CAPPELLANI ADELE VILLA CHIARA SERAFINI MARZIA MALANDRIN SERGIO MARIA IVANO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12814",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-1632211-i0108d005",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0108D006",
@@ -55873,12 +56526,61 @@
        "citazione": "Colozzi, I. (2002) Le nuove politiche sociali, Carocci, Roma, cap. 2 - Il terzo settore, e cap. 3 - Il principio di sussidiarietà"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": "BANI MARCO MOZZANA CARLOTTA SADA ROMINA SERAFINI MARZIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-11-21",
+       "iscrizioni_al": "2026-12-08",
+       "docenti": "MOZZANA CARLOTTA BANI MARCO SADA ROMINA SERAFINI MARZIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-12-22",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "BANI MARCO MOZZANA CARLOTTA SERAFINI MARZIA SADA ROMINA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-29",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "MOZZANA CARLOTTA BANI MARCO SADA ROMINA SERAFINI MARZIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12814",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-1632211-i0108d006",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "I0108D008",
@@ -59125,6 +59827,18 @@
        "docenti": "COSTA BARBARA SIMONA",
        "note": null,
        "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-17",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": "COSTA BARBARA SIMONA TORSELLO ANTONIO BIAGIO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12560",
@@ -63577,24 +64291,24 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-11-20",
-       "ora": "15:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-21",
-       "iscrizioni_al": "2026-11-17",
-       "docenti": "DI GENNARO PATRIZIA FRANZETTI ANDREA ZAMPOLLI JESSICA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "09:30",
        "luogo": "U6-01a con Podio [AGORA' ex U6]",
        "modalita": "scritto",
        "iscrizioni_dal": "2026-10-17",
        "iscrizioni_al": "2026-11-13",
+       "docenti": "DI GENNARO PATRIZIA FRANZETTI ANDREA ZAMPOLLI JESSICA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-20",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-17",
        "docenti": "DI GENNARO PATRIZIA FRANZETTI ANDREA ZAMPOLLI JESSICA",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
@@ -63983,6 +64697,18 @@
        "docenti": "COSTA BARBARA SIMONA",
        "note": null,
        "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-17",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": "COSTA BARBARA SIMONA TORSELLO ANTONIO BIAGIO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12470",
@@ -68745,30 +69471,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-03",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-14",
-       "iscrizioni_al": "2027-01-31",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-23",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-03",
-       "iscrizioni_al": "2027-02-20",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "10:00",
        "luogo": "aula virtuale",
@@ -68783,11 +69485,35 @@
        "tipo": "appello",
        "data": "2027-02-03",
        "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-14",
+       "iscrizioni_al": "2027-01-31",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "10:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-14",
        "iscrizioni_al": "2027-01-31",
        "docenti": "SACCOMAN ANDREA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -68949,66 +69675,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-19",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-30",
-       "iscrizioni_al": "2027-01-16",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-02",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-13",
-       "iscrizioni_al": "2027-01-30",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-09",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-20",
-       "iscrizioni_al": "2027-02-06",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-16",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-27",
-       "iscrizioni_al": "2027-02-13",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-23",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-03",
-       "iscrizioni_al": "2027-02-20",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "14:00",
        "luogo": "aula virtuale",
@@ -69023,11 +69689,35 @@
        "tipo": "appello",
        "data": "2027-01-19",
        "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-16",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "14:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2026-12-30",
        "iscrizioni_al": "2027-01-16",
        "docenti": "DELLA MISERICORDIA MASSIMO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -69047,6 +69737,18 @@
        "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "14:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-20",
@@ -69059,11 +69761,35 @@
        "tipo": "appello",
        "data": "2027-02-16",
        "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-27",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "14:00",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": "2027-01-27",
        "iscrizioni_al": "2027-02-13",
        "docenti": "DELLA MISERICORDIA MASSIMO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -69225,66 +69951,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-20",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-31",
-       "iscrizioni_al": "2027-01-17",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-04",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-15",
-       "iscrizioni_al": "2027-02-01",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-10",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-21",
-       "iscrizioni_al": "2027-02-07",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-18",
-       "ora": "14:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-29",
-       "iscrizioni_al": "2027-02-15",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-24",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-04",
-       "iscrizioni_al": "2027-02-21",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-14",
        "ora": "14:30",
        "luogo": "aula virtuale",
@@ -69299,11 +69965,35 @@
        "tipo": "appello",
        "data": "2027-01-20",
        "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-31",
+       "iscrizioni_al": "2027-01-17",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "09:30",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2026-12-31",
        "iscrizioni_al": "2027-01-17",
        "docenti": "MANNUCCI ERICA JOY",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-15",
+       "iscrizioni_al": "2027-02-01",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -69323,6 +70013,18 @@
        "tipo": "appello",
        "data": "2027-02-10",
        "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-21",
+       "iscrizioni_al": "2027-02-07",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "09:30",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-21",
@@ -69335,11 +70037,35 @@
        "tipo": "appello",
        "data": "2027-02-18",
        "ora": "14:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-29",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "14:30",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": "2027-01-29",
        "iscrizioni_al": "2027-02-15",
        "docenti": "MANNUCCI ERICA JOY",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-04",
+       "iscrizioni_al": "2027-02-21",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -70850,66 +71576,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-21",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-01",
-       "iscrizioni_al": "2027-01-18",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-03",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-14",
-       "iscrizioni_al": "2027-01-31",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-04",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-15",
-       "iscrizioni_al": "2027-02-01",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-18",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-29",
-       "iscrizioni_al": "2027-02-15",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-24",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-04",
-       "iscrizioni_al": "2027-02-21",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-20",
        "ora": "09:30",
        "luogo": "aula virtuale",
@@ -70924,11 +71590,35 @@
        "tipo": "appello",
        "data": "2027-01-21",
        "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-01-18",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-21",
+       "ora": "14:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-01",
        "iscrizioni_al": "2027-01-18",
        "docenti": "BRIVIO ALESSANDRA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-14",
+       "iscrizioni_al": "2027-01-31",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -70948,6 +71638,18 @@
        "tipo": "appello",
        "data": "2027-02-04",
        "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-15",
+       "iscrizioni_al": "2027-02-01",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": "14:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-15",
@@ -70960,11 +71662,35 @@
        "tipo": "appello",
        "data": "2027-02-18",
        "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-29",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "09:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-29",
        "iscrizioni_al": "2027-02-15",
        "docenti": "BRIVIO ALESSANDRA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-04",
+       "iscrizioni_al": "2027-02-21",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -71030,30 +71756,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-05",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-16",
-       "iscrizioni_al": "2027-02-02",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-26",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-02-06",
-       "iscrizioni_al": "2027-02-23",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-08",
        "ora": "08:30",
        "luogo": "aula virtuale",
@@ -71080,11 +71782,35 @@
        "tipo": "appello",
        "data": "2027-02-05",
        "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-16",
+       "iscrizioni_al": "2027-02-02",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-05",
+       "ora": "08:30",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": "2027-01-16",
        "iscrizioni_al": "2027-02-02",
        "docenti": "GHIRINGHELLI CRISTIANO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-26",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-06",
+       "iscrizioni_al": "2027-02-23",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -71150,30 +71876,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-27",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-07",
-       "iscrizioni_al": "2027-01-24",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-10",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-21",
-       "iscrizioni_al": "2027-02-07",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "09:00",
        "luogo": "aula virtuale",
@@ -71188,11 +71890,35 @@
        "tipo": "appello",
        "data": "2027-01-27",
        "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-07",
+       "iscrizioni_al": "2027-01-24",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "09:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-07",
        "iscrizioni_al": "2027-01-24",
        "docenti": "INFANTINO AGNESE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-21",
+       "iscrizioni_al": "2027-02-07",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -71270,30 +71996,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-04",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-15",
-       "iscrizioni_al": "2027-02-01",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-23",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-02-03",
-       "iscrizioni_al": "2027-02-20",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-14",
        "ora": "10:30",
        "luogo": "aula virtuale",
@@ -71308,11 +72010,35 @@
        "tipo": "appello",
        "data": "2027-02-04",
        "ora": "10:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-15",
+       "iscrizioni_al": "2027-02-01",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": "10:30",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": "2027-01-15",
        "iscrizioni_al": "2027-02-01",
        "docenti": "CASTIGLIONI MARCO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -71390,30 +72116,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-28",
-       "ora": "08:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-08",
-       "iscrizioni_al": "2027-01-25",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-11",
-       "ora": "08:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-22",
-       "iscrizioni_al": "2027-02-08",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-07",
        "ora": "08:00",
        "luogo": "U6-28 con Podio - AGORA' ex U6",
@@ -71428,11 +72130,35 @@
        "tipo": "appello",
        "data": "2027-01-28",
        "ora": "08:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-08",
+       "iscrizioni_al": "2027-01-25",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "08:00",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": "2027-01-08",
        "iscrizioni_al": "2027-01-25",
        "docenti": "VERONESE GUIDO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-11",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-22",
+       "iscrizioni_al": "2027-02-08",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -71510,30 +72236,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-26",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-06",
-       "iscrizioni_al": "2027-01-23",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-16",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-27",
-       "iscrizioni_al": "2027-02-13",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-11",
        "ora": "09:00",
        "luogo": "aula virtuale",
@@ -71548,11 +72250,35 @@
        "tipo": "appello",
        "data": "2027-01-26",
        "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-06",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "09:00",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": "2027-01-06",
        "iscrizioni_al": "2027-01-23",
        "docenti": "ORNAGHI VERONICA MARIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-27",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -78668,18 +79394,6 @@
      "esami": [
       {
        "tipo": "appello",
-       "data": "2027-02-03",
-       "ora": "14:00",
-       "luogo": "LAB907 (U9a) [LIB - Laboratori Informatici d'Ateneo]",
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "PAULESU ERALDO",
-       "note": null,
-       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-12-15",
        "ora": "14:30",
        "luogo": "LAB14A1 (U14) [LIB - Laboratori Informatici d'Ateneo]",
@@ -78711,6 +79425,18 @@
        "iscrizioni_dal": null,
        "iscrizioni_al": null,
        "docenti": "PROVERBIO ALICE MADO",
+       "note": null,
+       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "14:00",
+       "luogo": "LAB907 (U9a) [LIB - Laboratori Informatici d'Ateneo]",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "PAULESU ERALDO",
        "note": null,
        "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
       },
@@ -78956,6 +79682,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "08:30",
+       "luogo": "aula virtuale",
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "TAGINI ANGELA",
+       "note": null,
+       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-30",
        "ora": "08:30",
        "luogo": "aula virtuale",
@@ -78969,18 +79707,6 @@
       {
        "tipo": "appello",
        "data": "2027-02-22",
-       "ora": "08:30",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "TAGINI ANGELA",
-       "note": null,
-       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-18",
        "ora": "08:30",
        "luogo": "aula virtuale",
        "modalita": "orale",
@@ -79077,42 +79803,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-14",
-       "ora": "08:30",
-       "luogo": "LAB14A1 (U14) [LIB - Laboratori Informatici d'Ateneo]",
-       "modalita": "scritto",
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "REVERBERI FRANCO",
-       "note": null,
-       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-02",
-       "ora": "10:30",
-       "luogo": "LAB1641 (U16) [LIB - Laboratori Informatici d'Ateneo]",
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "MACCHI LAURA",
-       "note": null,
-       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-08",
-       "ora": "08:30",
-       "luogo": "LAB14A1 (U14) [LIB - Laboratori Informatici d'Ateneo]",
-       "modalita": "scritto",
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "REVERBERI FRANCO",
-       "note": null,
-       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-13",
        "ora": "10:00",
        "luogo": "aula virtuale",
@@ -79120,6 +79810,18 @@
        "iscrizioni_dal": null,
        "iscrizioni_al": null,
        "docenti": "MACCHI LAURA",
+       "note": null,
+       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "08:30",
+       "luogo": "LAB14A1 (U14) [LIB - Laboratori Informatici d'Ateneo]",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "REVERBERI FRANCO",
        "note": null,
        "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
       },
@@ -79138,12 +79840,36 @@
       {
        "tipo": "appello",
        "data": "2027-02-02",
+       "ora": "10:30",
+       "luogo": "LAB1641 (U16) [LIB - Laboratori Informatici d'Ateneo]",
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MACCHI LAURA",
+       "note": null,
+       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
        "ora": "10:00",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": null,
        "iscrizioni_al": null,
        "docenti": "MACCHI LAURA",
+       "note": null,
+       "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-08",
+       "ora": "08:30",
+       "luogo": "LAB14A1 (U14) [LIB - Laboratori Informatici d'Ateneo]",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "REVERBERI FRANCO",
        "note": null,
        "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
       },
@@ -81106,18 +81832,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-11-19",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": "scritto e orale",
-       "iscrizioni_dal": "2026-10-20",
-       "iscrizioni_al": "2026-11-16",
-       "docenti": "BONATI LAURA COSENTINO UGO RENATO GRECO CLAUDIO TRIFILETTI VANIRA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-11-16",
        "ora": "14:00",
        "luogo": "U1-11 [ATLAS ex U1]",
@@ -81125,6 +81839,18 @@
        "iscrizioni_dal": "2026-10-17",
        "iscrizioni_al": "2026-11-13",
        "docenti": "GRECO CLAUDIO BONATI LAURA COSENTINO UGO RENATO TRIFILETTI VANIRA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": "BONATI LAURA COSENTINO UGO RENATO GRECO CLAUDIO TRIFILETTI VANIRA",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -86254,6 +86980,30 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "CUNEO PAOLA OMBRETTA MASSIRONI ANDREA GIOVANNI RIZZI MARIAGRAZIA RONDINI PAOLO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "CUNEO PAOLA OMBRETTA MASSIRONI ANDREA GIOVANNI RIZZI MARIAGRAZIA RONDINI PAOLO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-02",
        "ora": "09:30",
        "luogo": null,
@@ -86302,6 +87052,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-31",
+       "iscrizioni_al": "2027-01-16",
+       "docenti": "CUNEO PAOLA OMBRETTA MASSIRONI ANDREA GIOVANNI RIZZI MARIAGRAZIA RONDINI PAOLO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-21",
        "ora": "09:30",
        "luogo": null,
@@ -86347,6 +87109,18 @@
        "docenti": "CUNEO PAOLA OMBRETTA MASSIRONI ANDREA GIOVANNI RIZZI MARIAGRAZIA RONDINI PAOLO",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "CUNEO PAOLA OMBRETTA MASSIRONI ANDREA GIOVANNI RIZZI MARIAGRAZIA RONDINI PAOLO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -88048,78 +88822,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-18",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-29",
-       "iscrizioni_al": "2027-01-15",
-       "docenti": "FORNARI MATTEO NICOLA ARCARI MAURIZIO CITRONI GABRIELLA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-18",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-29",
-       "iscrizioni_al": "2027-01-15",
-       "docenti": "TANCREDI ANTONELLO ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-18",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-29",
-       "iscrizioni_al": "2027-01-15",
-       "docenti": "ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI TANCREDI ANTONELLO",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-01",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-12",
-       "iscrizioni_al": "2027-01-29",
-       "docenti": "FORNARI MATTEO NICOLA ARCARI MAURIZIO CITRONI GABRIELLA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-01",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-12",
-       "iscrizioni_al": "2027-01-29",
-       "docenti": "TANCREDI ANTONELLO ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-01",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-12",
-       "iscrizioni_al": "2027-01-29",
-       "docenti": "ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI TANCREDI ANTONELLO",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-12-02",
        "ora": "08:30",
        "luogo": "aula virtuale",
@@ -88134,11 +88836,83 @@
        "tipo": "appello",
        "data": "2027-01-18",
        "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "FORNARI MATTEO NICOLA ARCARI MAURIZIO CITRONI GABRIELLA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "TANCREDI ANTONELLO ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI TANCREDI ANTONELLO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "08:30",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2026-12-29",
        "iscrizioni_al": "2027-01-15",
        "docenti": "FORNARI MATTEO NICOLA ARCARI MAURIZIO CITRONI GABRIELLA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "FORNARI MATTEO NICOLA ARCARI MAURIZIO CITRONI GABRIELLA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "TANCREDI ANTONELLO ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI TANCREDI ANTONELLO",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -88216,9 +88990,33 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "GIASANTI LORENZO SCARPELLI FRANCO VARVA SIMONE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-19",
        "ora": "09:00",
        "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-16",
+       "docenti": "GIASANTI LORENZO SCARPELLI FRANCO VARVA SIMONE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2026-12-30",
        "iscrizioni_al": "2027-01-16",
@@ -88234,30 +89032,6 @@
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-20",
        "iscrizioni_al": "2027-02-06",
-       "docenti": "GIASANTI LORENZO SCARPELLI FRANCO VARVA SIMONE",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-01",
-       "ora": "09:00",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-11",
-       "iscrizioni_al": "2026-11-28",
-       "docenti": "GIASANTI LORENZO SCARPELLI FRANCO VARVA SIMONE",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-19",
-       "ora": "09:00",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-30",
-       "iscrizioni_al": "2027-01-16",
        "docenti": "GIASANTI LORENZO SCARPELLI FRANCO VARVA SIMONE",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
@@ -89995,6 +90769,18 @@
      "url": "https://elearning.unimib.it/course/info.php?id=67525",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-07",
+       "docenti": "VETTOR TIZIANA BONETTI PAOLO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2026-11-30",
@@ -95655,12 +96441,25 @@
        "citazione": "T. Vettor, La Riforma del lavoro sportivo. Valori, principi e diritti nel pluralismo delle fonti (The Reform of Sports Labor. Values, Principles, and Rights in the Pluralism of Sources), G. Giappichelli, Turin, 2025*."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-07",
+       "docenti": "VETTOR TIZIANA BONETTI PAOLO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12518",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-l-39-servizio-sociale-e3901n013",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://elearning.unimib.it/course/info.php?id=67590"
     },
     {
@@ -116533,12 +117332,37 @@
      "docenti": [],
      "url": "https://elearning.unimib.it/course/info.php?id=68623",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-16",
+       "iscrizioni_al": "2026-12-13",
+       "docenti": "OLIVERO NADIA VECCHIO LUCA PIERO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-18",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "OLIVERO NADIA VECCHIO LUCA PIERO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12647",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "id": "unimib-lm-51-applied-experimental-psychological-sciences-f5109p020",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://elearning.unimib.it/course/info.php?id=68623"
     },
     {
@@ -116673,12 +117497,37 @@
        "citazione": "Gazzaniga M.S., Ivry R.B., & Mangun G.R. (2019). Cognitive Neuroscience. New York: Norton (ONLY Chapters 13 & 14)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-08",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-09",
+       "iscrizioni_al": "2027-01-05",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-08",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-09",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12647",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-lm-51-applied-experimental-psychological-sciences-f5109p019",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://elearning.unimib.it/course/info.php?id=68612"
     }
    ],
@@ -116730,12 +117579,25 @@
        "citazione": "R. Kruse, C. Borgelt, C. Braune, S. Mostaghim, M. Steinbrecher, Computational Intelligence: A Methodological Introduction, Springer, 2016"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-02",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "PIURI VINCENZO DONIDA LABATI RUGGERO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12578",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-lm-91-artificial-intelligence-for-science-and-technology-f9103q004",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://elearning.unimib.it/course/info.php?id=68050"
     },
     {
@@ -120210,12 +121072,25 @@
      ],
      "url": "https://elearning.unimib.it/course/info.php?id=69927",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": "COSTA BARBARA SIMONA TORSELLO ANTONIO BIAGIO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12795",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "id": "unimib-lm-6-biologia-f0602q056",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "F0602Q085",
@@ -131188,9 +132063,33 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-30",
+       "ora": "11:00",
+       "luogo": "aula virtuale",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-10",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "DELSIGNORE MONICA GALLI LUCA MARRA ALFREDO SQUAZZONI ALESSANDRO VERNILE SCILLA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-26",
        "ora": "11:00",
        "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-06",
+       "iscrizioni_al": "2027-01-23",
+       "docenti": "DELSIGNORE MONICA GALLI LUCA MARRA ALFREDO SQUAZZONI ALESSANDRO VERNILE SCILLA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "11:00",
+       "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-06",
        "iscrizioni_al": "2027-01-23",
@@ -131206,30 +132105,6 @@
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-20",
        "iscrizioni_al": "2027-02-06",
-       "docenti": "DELSIGNORE MONICA GALLI LUCA MARRA ALFREDO SQUAZZONI ALESSANDRO VERNILE SCILLA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-30",
-       "ora": "11:00",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-10",
-       "iscrizioni_al": "2026-11-27",
-       "docenti": "DELSIGNORE MONICA GALLI LUCA MARRA ALFREDO SQUAZZONI ALESSANDRO VERNILE SCILLA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-26",
-       "ora": "11:00",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-06",
-       "iscrizioni_al": "2027-01-23",
        "docenti": "DELSIGNORE MONICA GALLI LUCA MARRA ALFREDO SQUAZZONI ALESSANDRO VERNILE SCILLA",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
@@ -131318,9 +132193,33 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-12-04",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-14",
+       "iscrizioni_al": "2026-12-01",
+       "docenti": "GIRARDI ISACCO RESTELLI ENRICO RINO SEMEGHINI DANILO SPOLAORE PIERGIUSEPPE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-22",
        "ora": "09:00",
        "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-02",
+       "iscrizioni_al": "2027-01-19",
+       "docenti": "GIRARDI ISACCO RESTELLI ENRICO RINO SEMEGHINI DANILO SPOLAORE PIERGIUSEPPE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-22",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-02",
        "iscrizioni_al": "2027-01-19",
@@ -131336,30 +132235,6 @@
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-23",
        "iscrizioni_al": "2027-02-09",
-       "docenti": "GIRARDI ISACCO RESTELLI ENRICO RINO SEMEGHINI DANILO SPOLAORE PIERGIUSEPPE",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-04",
-       "ora": "09:00",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-14",
-       "iscrizioni_al": "2026-12-01",
-       "docenti": "GIRARDI ISACCO RESTELLI ENRICO RINO SEMEGHINI DANILO SPOLAORE PIERGIUSEPPE",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-22",
-       "ora": "09:00",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-02",
-       "iscrizioni_al": "2027-01-19",
        "docenti": "GIRARDI ISACCO RESTELLI ENRICO RINO SEMEGHINI DANILO SPOLAORE PIERGIUSEPPE",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
@@ -131436,9 +132311,33 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "14:00",
+       "luogo": "aula virtuale",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-13",
+       "iscrizioni_al": "2026-11-30",
+       "docenti": "FURLAN FEDERICO TANZARELLA PALMINA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-27",
        "ora": "14:00",
        "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-07",
+       "iscrizioni_al": "2027-01-24",
+       "docenti": "FURLAN FEDERICO TANZARELLA PALMINA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-27",
+       "ora": "14:00",
+       "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-07",
        "iscrizioni_al": "2027-01-24",
@@ -131454,30 +132353,6 @@
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-28",
        "iscrizioni_al": "2027-02-14",
-       "docenti": "FURLAN FEDERICO TANZARELLA PALMINA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-03",
-       "ora": "14:00",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-13",
-       "iscrizioni_al": "2026-11-30",
-       "docenti": "FURLAN FEDERICO TANZARELLA PALMINA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-27",
-       "ora": "14:00",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-07",
-       "iscrizioni_al": "2027-01-24",
        "docenti": "FURLAN FEDERICO TANZARELLA PALMINA",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
@@ -136574,12 +137449,25 @@
        "citazione": "A.Diaspro, “Confocal and two photon microscopy: foundations, applications and advances” edited by Alberto Diaspro, Wiley, 2002."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-22",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-21",
+       "docenti": "D'ALFONSO LAURA COLLINI MADDALENA PRESOTTO LUCA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12800",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-lm-17-fisica-f1703q016",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "F1703Q018",
@@ -137096,12 +137984,25 @@
        "citazione": "Orazio Svelto (2007), Principle of Lasers (Fourth Edition), Springer, Berlin"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-20",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "MORO FABRIZIO VANACORE GIOVANNI MARIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12800",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-lm-17-fisica-f1703q039",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "F1703Q043",
@@ -138544,12 +139445,25 @@
        "citazione": "T. Schlick: \"Molecular Modeling and Simulation: An Interdisciplinary Guide (Interdisciplinary Applied Mathematics)\" Springer."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-12",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-07",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "FACCIOLI PIETRO DALLABRIDA MATTIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12800",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-lm-17-fisica-f1703q025",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "F1703Q028",
@@ -138787,12 +139701,25 @@
        "citazione": "F. Wooten, Optical Properties of Solids (Academic Press, 1972)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": "SASSELLA ADELE MEINARDI FRANCESCO PALEARI ALBERTO MARIA FELICE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12800",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-lm-17-fisica-f1703q031",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "codici_alternativi": [
       "F1703Q058"
      ]
@@ -141926,30 +142853,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-04",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-15",
-       "iscrizioni_al": "2027-02-01",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-25",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-05",
-       "iscrizioni_al": "2027-02-22",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-07",
        "ora": "10:00",
        "luogo": "U6-36 [AGORA' ex U6]",
@@ -141964,11 +142867,35 @@
        "tipo": "appello",
        "data": "2027-02-04",
        "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-15",
+       "iscrizioni_al": "2027-02-01",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": "10:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-15",
        "iscrizioni_al": "2027-02-01",
        "docenti": "GHIRINGHELLI CRISTIANO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-25",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-05",
+       "iscrizioni_al": "2027-02-22",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -142021,30 +142948,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-09",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-20",
-       "iscrizioni_al": "2027-02-06",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-24",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-04",
-       "iscrizioni_al": "2027-02-21",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-18",
        "ora": "09:30",
        "luogo": "aula virtuale",
@@ -142059,11 +142962,35 @@
        "tipo": "appello",
        "data": "2027-02-09",
        "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "09:30",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-20",
        "iscrizioni_al": "2027-02-06",
        "docenti": "GALIMBERTI ANDREA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-24",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-04",
+       "iscrizioni_al": "2027-02-21",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -142114,30 +143041,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-02",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-13",
-       "iscrizioni_al": "2027-01-30",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-18",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-29",
-       "iscrizioni_al": "2027-02-15",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-19",
        "ora": "09:00",
        "luogo": "aula virtuale",
@@ -142152,11 +143055,35 @@
        "tipo": "appello",
        "data": "2027-02-02",
        "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "09:00",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": "2027-01-13",
        "iscrizioni_al": "2027-01-30",
        "docenti": "MORIANI SERGIO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-29",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -149332,9 +150259,33 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "14:00",
+       "luogo": "aula virtuale",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "CRESPI SERENA UBERTAZZI BENEDETTA CARLA ANGELA MARIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-20",
        "ora": "14:00",
        "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-31",
+       "iscrizioni_al": "2027-01-17",
+       "docenti": "CRESPI SERENA UBERTAZZI BENEDETTA CARLA ANGELA MARIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "14:00",
+       "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2026-12-31",
        "iscrizioni_al": "2027-01-17",
@@ -149350,30 +150301,6 @@
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-28",
        "iscrizioni_al": "2027-02-14",
-       "docenti": "CRESPI SERENA UBERTAZZI BENEDETTA CARLA ANGELA MARIA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-01",
-       "ora": "14:00",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-11",
-       "iscrizioni_al": "2026-11-28",
-       "docenti": "CRESPI SERENA UBERTAZZI BENEDETTA CARLA ANGELA MARIA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-20",
-       "ora": "14:00",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-31",
-       "iscrizioni_al": "2027-01-17",
        "docenti": "CRESPI SERENA UBERTAZZI BENEDETTA CARLA ANGELA MARIA",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
@@ -158180,12 +159107,25 @@
        "citazione": "Jiadong Zang, Vincent Cros, Axel Hoffmann, Topology in Magnetism, Springer Nature Switzerland AG 2018"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-20",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "MORO FABRIZIO VANACORE GIOVANNI MARIA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12639",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-lm-sc-mat-materials-science-and-nanotechnology-fsm02q028",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "FSM02Q044",
@@ -169091,6 +170031,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-12-13",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-29",
        "ora": "08:30",
        "luogo": "aula virtuale",
@@ -169103,6 +170055,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-29",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-26",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-23",
        "ora": "08:30",
        "luogo": "aula virtuale",
@@ -169112,6 +170076,18 @@
        "docenti": "BRAMBILLA MARCO",
        "note": null,
        "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-24",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12687",
@@ -171775,6 +172751,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-06",
+       "iscrizioni_al": "2026-10-03",
+       "docenti": "AIROLDI CRISTINA PALMIOLI ALESSANDRO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-17",
        "ora": "14:30",
        "luogo": null,
@@ -172051,18 +173039,6 @@
      "esami": [
       {
        "tipo": "appello",
-       "data": "2026-12-21",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-21",
-       "iscrizioni_al": "2026-12-18",
-       "docenti": "CIPOLLA LAURA FRANCESCA LA FERLA BARBARA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-10-07",
        "ora": "12:30",
        "luogo": "Studio del docente",
@@ -172084,6 +173060,18 @@
        "docenti": "CIPOLLA LAURA FRANCESCA",
        "note": null,
        "fonte": "https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=easytest&_lang=it&include=et_cdl"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-21",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-21",
+       "iscrizioni_al": "2026-12-18",
+       "docenti": "CIPOLLA LAURA FRANCESCA LA FERLA BARBARA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12619",
@@ -174117,12 +175105,25 @@
        "citazione": "Nova Roberto (2008). Meccanica delle Costruzioni Geotecniche. Città Studi, Milano"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-15",
+       "docenti": "CIANTIA MATTEO ORYEM CASTELLANZA RICCARDO PIETRO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://elearning.unimib.it/course/index.php?categoryid=12758",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "id": "unimib-lm-74-scienze-e-tecnologie-geologiche-f7402q007",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "periodo_fonte": "https://elearning.unimib.it/course/info.php?id=69582"
     },
     {
@@ -185297,30 +186298,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-01",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-12",
-       "iscrizioni_al": "2027-01-29",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-15",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-26",
-       "iscrizioni_al": "2027-02-12",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-18",
        "ora": "15:00",
        "luogo": "aula virtuale",
@@ -185335,11 +186312,35 @@
        "tipo": "appello",
        "data": "2027-02-01",
        "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "15:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-12",
        "iscrizioni_al": "2027-01-29",
        "docenti": "OGGIONNI FRANCESCA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-26",
+       "iscrizioni_al": "2027-02-12",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -185396,30 +186397,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-08",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-19",
-       "iscrizioni_al": "2027-02-05",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-22",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-02",
-       "iscrizioni_al": "2027-02-19",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-19",
        "ora": "09:30",
        "luogo": "aula virtuale",
@@ -185434,11 +186411,35 @@
        "tipo": "appello",
        "data": "2027-02-08",
        "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-19",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-08",
+       "ora": "09:30",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-19",
        "iscrizioni_al": "2027-02-05",
        "docenti": "GALIMBERTI ANDREA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-22",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-02",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -185538,30 +186539,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-02",
-       "ora": "14:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-13",
-       "iscrizioni_al": "2027-01-30",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-23",
-       "ora": "14:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-03",
-       "iscrizioni_al": "2027-02-20",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "14:30",
        "luogo": "aula virtuale",
@@ -185576,11 +186553,35 @@
        "tipo": "appello",
        "data": "2027-02-02",
        "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "14:30",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-13",
        "iscrizioni_al": "2027-01-30",
        "docenti": "DATTERI EDOARDO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -185658,30 +186659,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-02",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-13",
-       "iscrizioni_al": "2027-01-30",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-17",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-28",
-       "iscrizioni_al": "2027-02-14",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-20",
        "ora": "09:30",
        "luogo": "aula virtuale",
@@ -185696,11 +186673,35 @@
        "tipo": "appello",
        "data": "2027-02-02",
        "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "09:30",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-13",
        "iscrizioni_al": "2027-01-30",
        "docenti": "BARONE PIERANGELO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-28",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -185802,30 +186803,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-09",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-20",
-       "iscrizioni_al": "2027-02-06",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-25",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-02-05",
-       "iscrizioni_al": "2027-02-22",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-18",
        "ora": "14:00",
        "luogo": "aula virtuale",
@@ -185840,11 +186817,35 @@
        "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "14:00",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": "2027-01-20",
        "iscrizioni_al": "2027-02-06",
        "docenti": "PALLAVICINI FEDERICA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-25",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-05",
+       "iscrizioni_al": "2027-02-22",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -195161,54 +196162,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-18",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-29",
-       "iscrizioni_al": "2027-01-15",
-       "docenti": "TANCREDI ANTONELLO ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-18",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-29",
-       "iscrizioni_al": "2027-01-15",
-       "docenti": "ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI TANCREDI ANTONELLO",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-01",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-12",
-       "iscrizioni_al": "2027-01-29",
-       "docenti": "TANCREDI ANTONELLO ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-01",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-12",
-       "iscrizioni_al": "2027-01-29",
-       "docenti": "ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI TANCREDI ANTONELLO",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-11-30",
        "ora": "09:00",
        "luogo": "U7-10 con Podio [CIVITAS ex U7]",
@@ -195223,11 +196176,59 @@
        "tipo": "appello",
        "data": "2027-01-18",
        "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "TANCREDI ANTONELLO ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-29",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI TANCREDI ANTONELLO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "09:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2026-12-29",
        "iscrizioni_al": "2027-01-15",
        "docenti": "TANCREDI ANTONELLO ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "TANCREDI ANTONELLO ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "ARCARI MAURIZIO CITRONI GABRIELLA FORNARI MATTEO NICOLA PAPANICOLOPULU IRINI TANCREDI ANTONELLO",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -195367,6 +196368,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-30",
+       "ora": "12:30",
+       "luogo": "LAB908 (U9a) [LIB - Laboratori Informatici d'Ateneo]",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-10",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "VETTOR TIZIANA GIACONI MARTA GIASANTI LORENZO VARVA SIMONE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-01",
        "ora": "09:00",
        "luogo": null,
@@ -195391,9 +196404,33 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-12-01",
+       "ora": "10:30",
+       "luogo": "aula virtuale",
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-11",
+       "iscrizioni_al": "2026-11-28",
+       "docenti": "SCARPELLI FRANCO GIACONI MARTA GIASANTI LORENZO VARVA SIMONE VETTOR TIZIANA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-19",
        "ora": "09:00",
        "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-16",
+       "docenti": "GIASANTI LORENZO SCARPELLI FRANCO VARVA SIMONE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2026-12-30",
        "iscrizioni_al": "2027-01-16",
@@ -195415,9 +196452,33 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "12:30",
+       "luogo": "aula virtuale",
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "VETTOR TIZIANA GIACONI MARTA GIASANTI LORENZO VARVA SIMONE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-09",
        "ora": "09:00",
        "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "GIASANTI LORENZO SCARPELLI FRANCO VARVA SIMONE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "09:00",
+       "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-20",
        "iscrizioni_al": "2027-02-06",
@@ -195434,66 +196495,6 @@
        "iscrizioni_dal": "2027-01-28",
        "iscrizioni_al": "2027-02-14",
        "docenti": "VETTOR TIZIANA GIACONI MARTA GIASANTI LORENZO VARVA SIMONE",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-30",
-       "ora": "12:30",
-       "luogo": "LAB908 (U9a) [LIB - Laboratori Informatici d'Ateneo]",
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-11-10",
-       "iscrizioni_al": "2026-11-27",
-       "docenti": "VETTOR TIZIANA GIACONI MARTA GIASANTI LORENZO VARVA SIMONE",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-01",
-       "ora": "10:30",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-11",
-       "iscrizioni_al": "2026-11-28",
-       "docenti": "SCARPELLI FRANCO GIACONI MARTA GIASANTI LORENZO VARVA SIMONE VETTOR TIZIANA",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-19",
-       "ora": "09:00",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-30",
-       "iscrizioni_al": "2027-01-16",
-       "docenti": "GIASANTI LORENZO SCARPELLI FRANCO VARVA SIMONE",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-01",
-       "ora": "12:30",
-       "luogo": "aula virtuale",
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-12",
-       "iscrizioni_al": "2027-01-29",
-       "docenti": "VETTOR TIZIANA GIACONI MARTA GIASANTI LORENZO VARVA SIMONE",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-09",
-       "ora": "09:00",
-       "luogo": "aula virtuale",
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-20",
-       "iscrizioni_al": "2027-02-06",
-       "docenti": "GIASANTI LORENZO SCARPELLI FRANCO VARVA SIMONE",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -201427,6 +202428,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2026-11-30",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-11-10",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "TANZARELLA PALMINA CANZIAN NICOLA",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-19",
        "ora": "12:00",
        "luogo": null,
@@ -205451,6 +206464,18 @@
        "docenti": "TANZARELLA PALMINA NINATTI STEFANIA ZICCHITTU PAOLO",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-30",
+       "ora": "12:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-11-10",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "TANZARELLA PALMINA NINATTI STEFANIA ZICCHITTU PAOLO",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
       },
       {
        "tipo": "appello",
@@ -217135,6 +218160,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-22",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-14",
        "ora": "14:00",
        "luogo": null,
@@ -218382,66 +219419,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-19",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-30",
-       "iscrizioni_al": "2027-01-16",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-02",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-13",
-       "iscrizioni_al": "2027-01-30",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-09",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-20",
-       "iscrizioni_al": "2027-02-06",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-16",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-27",
-       "iscrizioni_al": "2027-02-13",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-23",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-03",
-       "iscrizioni_al": "2027-02-20",
-       "docenti": "",
-       "note": null,
-       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "14:00",
        "luogo": "aula virtuale",
@@ -218456,11 +219433,35 @@
        "tipo": "appello",
        "data": "2027-01-19",
        "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-16",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "14:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2026-12-30",
        "iscrizioni_al": "2027-01-16",
        "docenti": "DELLA MISERICORDIA MASSIMO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -218480,6 +219481,18 @@
        "tipo": "appello",
        "data": "2027-02-09",
        "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "14:00",
        "luogo": "aula virtuale",
        "modalita": "orale",
        "iscrizioni_dal": "2027-01-20",
@@ -218492,11 +219505,35 @@
        "tipo": "appello",
        "data": "2027-02-16",
        "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-27",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "14:00",
        "luogo": "aula virtuale",
        "modalita": "scritto",
        "iscrizioni_dal": "2027-01-27",
        "iscrizioni_al": "2027-02-13",
        "docenti": "DELLA MISERICORDIA MASSIMO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "",
        "note": null,
        "fonte": "https://unimib.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
