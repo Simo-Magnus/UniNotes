@@ -2,7 +2,7 @@
  "schema": 1,
  "anno_accademico": "2026/27",
  "versione": "2026.10.17",
- "generato_il": "2026-10-17T11:50:43Z",
+ "generato_il": "2026-10-17T12:06:03Z",
  "atenei": {
   "hunimed": {
    "corsi": 15,
@@ -58,7 +58,7 @@
    "libri": 163,
    "esami": 71,
    "file": "corsi/lum.json",
-   "sha256": "0c1e03692477fc767a49520eb13737555b643064a8f18c46d4efb04caf096828"
+   "sha256": "1b19db2f0a53454b97d7efeadc6dc8d4f78a70a7afcb0f6d3b051b7c4fda3913"
   },
   "lumsa": {
    "corsi": 26,
@@ -407,10 +407,10 @@
   "unicz": {
    "corsi": 41,
    "insegnamenti": 1447,
-   "libri": 708,
+   "libri": 797,
    "esami": 191,
    "file": "corsi/unicz.json",
-   "sha256": "b6ce67e615bff1851f7fc7bb0c9f0c0b4d4a32f723d46d9087a7b6331768a24c"
+   "sha256": "72da512b3ea5397a2a1e432898a75777ee138775f33c8c9b9c77a6fefc9ee631"
   },
   "unich": {
    "corsi": 77,
@@ -632,9 +632,9 @@
    "corsi": 80,
    "insegnamenti": 3578,
    "libri": 10021,
-   "esami": 2887,
+   "esami": 3176,
    "file": "corsi/units.json",
-   "sha256": "b124bafb4ab392c309c57fa2f66e48655208ceb280fbc81a4f5118e629ab1223"
+   "sha256": "1167d2ba80a00e2b150fe27e57494a61f04428937e5b5240257790545a92f700"
   },
   "uniud": {
    "corsi": 77,
@@ -664,9 +664,9 @@
    "corsi": 92,
    "insegnamenti": 2194,
    "libri": 3696,
-   "esami": 406,
+   "esami": 989,
    "file": "corsi/univr.json",
-   "sha256": "709ff612205c8538337e048b6b5305ca2b14b11e361e58c628c7ea1de850edfd"
+   "sha256": "aab8fd677c73ab802e238a39e055baa7e31c7edf8e439536039345fa8fa9b827"
   },
   "unina": {
    "corsi": 182,
@@ -711,10 +711,10 @@
   "unistrapg": {
    "corsi": 7,
    "insegnamenti": 169,
-   "libri": 923,
+   "libri": 1250,
    "esami": 189,
    "file": "corsi/unistrapg.json",
-   "sha256": "0d853b29b0752b0607085aa520df71f3ff9402fe5e81067e42283f1f0e63e66e"
+   "sha256": "974b61981170be86641afd766f07d73c3fb070af28e4463d05bf072ed00addce"
   },
   "unistrasi": {
    "corsi": 8,

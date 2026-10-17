@@ -91,7 +91,7 @@ def _periodo(testo: str) -> str | None:
     return None
 
 
-_PUNTO = r"[•●▪◦\uf0b7\-–]"
+_PUNTO = r"[^\w\s(\"'“«‘]"  # qualsiasi simbolo di punto elenco (•, ●, ✔,  di Word, -, –)
 _NON_LIBRO = re.compile(
     r"(?i)^(?:(?:le |il |la |i |gli |delle |dei )?(?:dispens|material|slide|lucidi|appunti)|elencare|indicare|nb\b|n\.b|"
     r"casi stud|articol|sar[àa] |gli studenti|per i non|per gli studenti|"

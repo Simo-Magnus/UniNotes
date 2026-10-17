@@ -912,13 +912,26 @@
        "citazione": "Martinez M.C. Manuale per i Corsi di Laurea in Assistenza Sanitaria. Roma: Società editrice universo; 2013"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-18",
+       "iscrizioni_al": "2027-02-02",
+       "docenti": "DE CARLO LUISA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-snt4-assistenza-sanitaria-abilitante-alla-professione-sanitaria-d-688me",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "880ME",
@@ -3534,13 +3547,26 @@
        "citazione": "Galli, Moret, Roversi Cristallografia, \"La visione a raggi X\", Zaccaria Editore (2014)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-22",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-12-21",
+       "docenti": "GEREMIA SILVANO DE ZORZI RITA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-27-chimica-086sm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "007CT",
@@ -4228,6 +4254,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "PERUZZO KATIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-02-03",
@@ -4988,6 +5026,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "MARC KARIN",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-02-11",
@@ -12255,6 +12305,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "PERUZZO KATIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-01",
        "ora": "08:30",
        "luogo": null,
@@ -15041,6 +15103,18 @@
        "docenti": "ANASTASIO GIUSEPPE",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-15",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "ANASTASIO GIUSEPPE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -16298,6 +16372,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-13",
+       "iscrizioni_al": "2027-01-12",
+       "docenti": "CARLETTI CLAUDIA VERONICA CAMILLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-01",
        "ora": "16:00",
        "luogo": null,
@@ -16317,6 +16403,18 @@
        "iscrizioni_dal": "2027-01-13",
        "iscrizioni_al": "2027-02-21",
        "docenti": "TORNESE GIANLUCA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-22",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-02-21",
+       "docenti": "CARLETTI CLAUDIA VERONICA CAMILLA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       },
@@ -16346,6 +16444,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-06-14",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-05-31",
+       "iscrizioni_al": "2027-06-13",
+       "docenti": "CARLETTI CLAUDIA VERONICA CAMILLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-06-30",
        "ora": "16:00",
        "luogo": null,
@@ -16365,6 +16475,18 @@
        "iscrizioni_dal": "2026-06-14",
        "iscrizioni_al": "2027-07-25",
        "docenti": "TORNESE GIANLUCA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-26",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-14",
+       "iscrizioni_al": "2027-07-25",
+       "docenti": "CARLETTI CLAUDIA VERONICA CAMILLA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       },
@@ -16394,6 +16516,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-09-06",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-07-26",
+       "iscrizioni_al": "2027-09-05",
+       "docenti": "CARLETTI CLAUDIA VERONICA CAMILLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-09-10",
        "ora": "16:00",
        "luogo": null,
@@ -16413,6 +16547,18 @@
        "iscrizioni_dal": "2027-09-06",
        "iscrizioni_al": "2027-09-26",
        "docenti": "TORNESE GIANLUCA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-27",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-09-06",
+       "iscrizioni_al": "2027-09-26",
+       "docenti": "CARLETTI CLAUDIA VERONICA CAMILLA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       },
@@ -18072,13 +18218,26 @@
        "citazione": "T. Brook, Il cappello di Vermeer. Il Seicento e la nascita del mondo globalizzato, Einaudi 2015."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-07",
+       "iscrizioni_al": "2027-01-06",
+       "docenti": "SANTUS CESARE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-5-l-42-discipline-storiche-e-filosofiche-147le",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "176LE",
@@ -18809,13 +18968,38 @@
        "citazione": "Samir Okasha, Il primo libro di Filosofia della Scienza, Einaudi, 2006. (anche, nella versione Inglese, Philosophy of Science. A very short introduction, Oxford University Press)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "STROLLO ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-19",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "STROLLO ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-5-l-42-discipline-storiche-e-filosofiche-311le",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "069LE",
@@ -18906,13 +19090,38 @@
        "citazione": "(anche, nella versione Inglese, Philosophy of Science. A very short introduction, Oxford University Press)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "STROLLO ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-19",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "STROLLO ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-5-l-42-discipline-storiche-e-filosofiche-069le",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "332LE",
@@ -19708,12 +19917,25 @@
        "citazione": "Timothy Snyder, Terre di sangue. L'Europa nella morsa di Hitler e Stalin, Milano, BUR Rizzoli, 2021"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-11",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "SANTORO STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-l-5-l-42-discipline-storiche-e-filosofiche-318le",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "orale"
     },
     {
@@ -19964,13 +20186,26 @@
        "citazione": "Communicatio in sacris, coesistenza e conflitti tra le comunità cristiane orientali, Roma 2019 (“Le Chiese Orientali e l’Impero ottomano”"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-07",
+       "iscrizioni_al": "2027-01-06",
+       "docenti": "SANTUS CESARE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-5-l-42-discipline-storiche-e-filosofiche-099le",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "312LE",
@@ -20651,13 +20886,38 @@
        "citazione": "M. Esfeld, Filosofia della natura. Fisica e ontologia, Rosenberg & Sellier, 2018."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-21",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-05",
+       "iscrizioni_al": "2027-01-19",
+       "docenti": "CISLAGHI ALESSANDRA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-11",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-14",
+       "iscrizioni_al": "2027-02-04",
+       "docenti": "CISLAGHI ALESSANDRA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-5-l-42-discipline-storiche-e-filosofiche-235le",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "241LE",
@@ -20946,13 +21206,26 @@
        "citazione": "G. Milani, I comuni italiani, Laterza, Roma-Bari, 2005."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "DAVIDE MIRIAM",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-5-l-42-discipline-storiche-e-filosofiche-053le",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "315LE",
@@ -20983,13 +21256,26 @@
        "citazione": "Gli studenti e le studentesse prepareranno e leggeranno con attenzione due libri a scelta tra: L. Tanzini, A consiglio. La vita politica nell'Italia dei Comuni, Laterza ed., Roma-Bari, 2014; -C. Wickham, Sonnambuli verso un nuovo mondo. L'affermazione dei comuni italiani nel XII secolo, Viella, Roma, 2017 -F. Franceschi-I.Taddei, Le città italiane nel Medioevo. XII-XIV, Il Mulino, Bologna, 2012."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-08",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "DAVIDE MIRIAM",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-5-l-42-discipline-storiche-e-filosofiche-315le",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "326LE",
@@ -22459,13 +22745,38 @@
        "citazione": "Giuseppe Invernizzi, Schopenhauer e Kierkegaard, in Storia della filosofia occidentale. 5: Dal moderno al contemporaneo, a cura di G. Cambiano, L. Fonnesu, M. Mori, Il Mulino, Bologna, 2015, pp. 93–129."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "16:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-04",
+       "docenti": "BONCHINO ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "16:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-01-21",
+       "iscrizioni_al": "2026-02-05",
+       "docenti": "BONCHINO ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-5-l-42-discipline-storiche-e-filosofiche-140le",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "codici_alternativi": [
       "314LE"
      ]
@@ -26003,6 +26314,18 @@
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/113283/2016/1?coorte=2024",
      "libri": [],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": "TRACOGNA ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-14",
@@ -31038,6 +31361,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": "TRACOGNA ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-14",
        "ora": "14:00",
        "luogo": "Aula 0_A Aula Magna, Edificio D",
@@ -32496,6 +32831,18 @@
        "docenti": "ROSSI STEFANIA PATRIZIA SONIA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-24",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "ROSSI STEFANIA PATRIZIA SONIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -36024,6 +36371,42 @@
        "docenti": "SCROBOGNA STEFANO",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "SCROBOGNA STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "BATTISTELLA SILVIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "BRESSAN ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -36196,13 +36579,38 @@
        "citazione": "Samir Okasha, Il primo libro di Filosofia della Scienza, Einaudi, 2006. (anche, nella versione Inglese, Philosophy of Science. A very short introduction, Oxford University Press)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "STROLLO ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-19",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "STROLLO ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-30-fisica-069le",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "174SM",
@@ -37951,13 +38359,26 @@
        "citazione": "editore Marrapese, -Roma"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-14",
+       "iscrizioni_al": "2026-09-29",
+       "docenti": "NOVELLI LISA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-553me",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "458ME",
@@ -38883,13 +39304,26 @@
      ],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/116213/2024/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "NOVELLI LISA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-276me",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1052ME",
@@ -38907,13 +39341,26 @@
      ],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/120652/2024/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-10-18",
+       "docenti": "CERONE ANTONIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-1052me",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "564ME",
@@ -40701,6 +41148,42 @@
        "docenti": "SCROBOGNA STEFANO",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "SCROBOGNA STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "BATTISTELLA SILVIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "BRESSAN ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -41151,12 +41634,25 @@
        "citazione": "Peccerillo A. & Perugini D. (2003)- Introduzione alla petrografia ottica, Morlacchi editore."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "DE MIN ANGELO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-l-34-geologia-097sm",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "orale"
     },
     {
@@ -41236,13 +41732,26 @@
        "citazione": "Duarte, J. C. Dynamics of Plate Tectonics and Mantle Convection. Elsevier, 2023 - Turcotte, D. and Gerald, S. Geodynamics. Cambridge University Press, 2014."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-21",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-12-18",
+       "docenti": "CIVIERO CHIARA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-34-geologia-294sm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "124SM",
@@ -41829,6 +42338,30 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-22",
+       "docenti": "GENTILE FUSILLO NICOLA PIETRO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-29",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-28",
+       "docenti": "GENTILE FUSILLO NICOLA PIETRO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-08",
        "ora": "10:00",
        "luogo": null,
@@ -41850,6 +42383,18 @@
        "docenti": "GANDIN ILARIA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "ANASTASIO GIUSEPPE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -42477,7 +43022,7 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-028me",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "codici_alternativi": [
       "1171ME"
      ]
@@ -42629,7 +43174,7 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-029me",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "codici_alternativi": [
       "1173ME"
      ]
@@ -44661,6 +45206,18 @@
        "docenti": "GANDIN ILARIA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "ANASTASIO GIUSEPPE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -45221,7 +45778,7 @@
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "codici_alternativi": [
       "1171ME"
      ],
@@ -45377,7 +45934,7 @@
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "codici_alternativi": [
       "1173ME"
      ],
@@ -47235,6 +47792,30 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-22",
+       "docenti": "GENTILE FUSILLO NICOLA PIETRO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-29",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-28",
+       "docenti": "GENTILE FUSILLO NICOLA PIETRO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-12",
@@ -50185,13 +50766,38 @@
        "citazione": "G. Garibotto, R. Pontremoli, Manuale di nefrologia, Ed. Minerva Medica, 2017."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-01-05",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "SCALA KATIUSCIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-02-09",
+       "iscrizioni_al": "2027-02-16",
+       "docenti": "SCALA KATIUSCIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-262me",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "697ME",
@@ -53382,13 +53988,50 @@
        "citazione": "Guide blu numero 1 - Edifici civili, numero 2 – Strutture commerciali, numero 3 – Cantieri edili, numero 5 – piccola industria, Edizioni TNE"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-08",
+       "iscrizioni_al": "2027-01-07",
+       "docenti": "BLASUTTIGH NICOLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-22",
+       "iscrizioni_al": "2027-01-21",
+       "docenti": "BLASUTTIGH NICOLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-11",
+       "iscrizioni_al": "2027-02-09",
+       "docenti": "BLASUTTIGH NICOLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-7-ingegneria-civile-e-ambientale-175in",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "054IN",
@@ -56962,12 +57605,25 @@
      "docenti": [],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2024/118298/2016/5?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "STEINDLER ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-l-8-ingegneria-elettronica-e-informatica-258mi",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "orale"
     },
     {
@@ -57035,13 +57691,26 @@
        "citazione": "Biomateriali per protesi e organi artificiali, - R.Pietrabissa - Pàtron Editore, 1996"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "10:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-11",
+       "docenti": "SBAIZERO ORFEO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-8-ingegneria-elettronica-e-informatica-150in",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "095IN-1",
@@ -57161,13 +57830,26 @@
        "citazione": "Per la parte di calcolabilità e complessità: [1] Michael Sipser, Introduzione alla teoria della computazione, Apogeo. Per la parte di Logica: [2] Mordechai Ben-Ari: Mathematical Logic for Computer Science (3rd ed.), Springer, 2013. (per un testo in italiano si veda anche) [3] Daniele Mundici, Logica-Metodo breve, Springer, 2011."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "PERON ADRIANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-l-8-ingegneria-elettronica-e-informatica-267sm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "284SF",
@@ -59194,12 +59876,97 @@
        "citazione": "M. D'Amico, S. Maddio, C. Riva, Elementi di campi elettromagnetici. Una selezione di esercizi, complementi e applicazioni, Politecnica/Maggioli Editore, 2022."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "BUTTAZZONI GIULIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-01-31",
+       "docenti": "BUTTAZZONI GIULIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-15",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2027-06-13",
+       "docenti": "BUTTAZZONI GIULIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-06",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2027-07-04",
+       "docenti": "BUTTAZZONI GIULIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-20",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2027-07-18",
+       "docenti": "BUTTAZZONI GIULIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-08-31",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2027-08-29",
+       "docenti": "BUTTAZZONI GIULIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-14",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2027-09-12",
+       "docenti": "BUTTAZZONI GIULIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-l-8-ingegneria-elettronica-e-informatica-083in",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "orale"
     },
     {
@@ -66951,13 +67718,26 @@
        "citazione": "Daniele Mundici, Logica-Metodo breve, Springer, 2011."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "PERON ADRIANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-l-31-intelligenza-artificiale-e-data-analytics-267sm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "264SM",
@@ -67255,12 +68035,25 @@
      "docenti": [],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2028/121969/2026/9999?coorte=2024",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "D'ONOFRIO ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-04",
      "id": "units-l-31-intelligenza-artificiale-e-data-analytics-011mg",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "079EC",
@@ -68601,13 +69394,26 @@
        "citazione": "Rössler, Otto E., and Christophe Letellier. Chaos: The World of Nonperiodic Oscillations. Springer ( 2020)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "D'ONOFRIO ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-31-intelligenza-artificiale-e-data-analytics-290sm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "ammissione": {
@@ -71084,13 +71890,26 @@
        "citazione": "T. Brook, Il cappello di Vermeer. Il Seicento e la nascita del mondo globalizzato, Einaudi 2015."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-07",
+       "iscrizioni_al": "2027-01-06",
+       "docenti": "SANTUS CESARE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-10-lettere-147le",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "114LE",
@@ -72851,6 +73670,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-15",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "MALISANO CLAUDIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-26",
@@ -74991,13 +75822,38 @@
        "citazione": "Cataldo L., Paraventi M., Il museo oggi. Modelli museologici e museografici nell'era della digital transformation, Milano 2023, pp. 42-300."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "GIORIO MARIA BEATRICE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "GIORIO MARIA BEATRICE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-10-lettere-092le",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "108LE",
@@ -78335,6 +79191,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-15",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "MALISANO CLAUDIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-26",
        "ora": "15:00",
        "luogo": null,
@@ -78393,6 +79261,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-15",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "MALISANO CLAUDIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-26",
@@ -82410,13 +83290,26 @@
        "citazione": "G. GRAFFI, S. SCALISE, Le lingue e il linguaggio, Il Mulino, Bologna, 2013, capp. I, II, IV, VII"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-12",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "FIORIN GAETANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-snt2-logopedia-abilitante-alla-professione-sanitaria-di-logopedis-1004me",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1062ME",
@@ -86654,12 +87547,25 @@
        "citazione": "Daniele Mundici, Logica-Metodo breve, Springer, 2011."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "PERON ADRIANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-l-35-matematica-267sm",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "scritto e orale congiunti"
     },
     {
@@ -87288,12 +88194,25 @@
        "citazione": "Rössler, Otto E., and Christophe Letellier. Chaos: The World of Nonperiodic Oscillations. Springer ( 2020)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "D'ONOFRIO ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-l-35-matematica-242sm",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "scritto e orale congiunti"
     },
     {
@@ -89374,6 +90293,18 @@
        "docenti": "ZENAROLLA ANNA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-08",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-08",
+       "iscrizioni_al": "2027-02-03",
+       "docenti": "ZENAROLLA ANNA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -89656,13 +90587,26 @@
        "citazione": "J. Greisch, La civetta e l'allodola, tr. it. di A. Cislaghi, Ipagine, Paris 2024."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "CISLAGHI ALESSANDRA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-19-scienze-dell-educazione-304sf",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "212LE",
@@ -89778,13 +90722,38 @@
        "citazione": "Zoletto D. 2010.\" Il gioco duro dell'integrazione\", Raffaello Cortina,"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-18",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "PIERI MICHELLE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-11",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-15",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "PIERI MICHELLE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-19-scienze-dell-educazione-101sf",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "322SF",
@@ -91084,6 +92053,18 @@
        "docenti": "MADRIZ ELISABETTA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-16",
+       "iscrizioni_al": "2027-02-09",
+       "docenti": "MADRIZ ELISABETTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -91134,12 +92115,37 @@
        "citazione": "Cornoldi C. (a cura di) (2023), I disturbi dell’apprendimento, Il Mulino, Bologna."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "11:45",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-18",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "PIERI MICHELLE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-11",
+       "ora": "11:45",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-18",
+       "iscrizioni_al": "2027-02-07",
+       "docenti": "PIERI MICHELLE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-l-19-scienze-dell-educazione-309sf",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "orale"
     },
     {
@@ -95256,6 +96262,42 @@
        "docenti": "SCROBOGNA STEFANO",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "SCROBOGNA STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "BATTISTELLA SILVIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "BRESSAN ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -96001,12 +97043,25 @@
        "citazione": "Baxevanis, Oullette. Bioinformatics. A practical guide to the analysis of genes and proteins. Wiley"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "GERDOL MARCO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-l-13-l-2-scienze-e-tecnologie-biologiche-644sm",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "scritto e orale congiunti"
     },
     {
@@ -97316,6 +98371,42 @@
        "docenti": "SCROBOGNA STEFANO",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "SCROBOGNA STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "BATTISTELLA SILVIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "BRESSAN ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -98108,13 +99199,26 @@
        "citazione": "Baxevanis, Oullette. Bioinformatics. A practical guide to the analysis of genes and proteins. Wiley"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "GERDOL MARCO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-l-32-scienze-e-tecnologie-per-l-ambiente-e-la-natura-644sm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "638SM",
@@ -101374,13 +102478,26 @@
        "citazione": "Diamond I., Jefferies J. Introduzione alla statistica per le scienze sociali. McGraw-Hill"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-10",
+       "docenti": "DE STEFANO DOMENICO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto",
      "id": "units-l-36-l-16-scienze-politiche-e-dell-amministrazione-003sp",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "007SP",
@@ -101497,13 +102614,38 @@
        "citazione": "C. Galli (a cura di), Manuale di storia del pensiero politico, il Mulino 2011, III edizione.Maggiori informazioni sulle porzioni di testo che saranno oggetto di lettura e spiegazione verrà data in aula durante il corso."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-16",
+       "iscrizioni_al": "2027-01-06",
+       "docenti": "RAIMONDI FABIO ANDREOZZI DANIELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-10",
+       "docenti": "RAIMONDI FABIO ANDREOZZI DANIELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-36-l-16-scienze-politiche-e-dell-amministrazione-152sp",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "658LM",
@@ -101559,13 +102701,38 @@
        "citazione": "https://www.transcript-publishing.com/978-3-8376-7871-0/dissonantes-kunst-und-kulturerbe/dissonant-cultural-heritage/art-et-patrimoine-culturel-dissonants/?number=978-3-8394-2177-2"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "ALTIN ROBERTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "ALTIN ROBERTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-36-l-16-scienze-politiche-e-dell-amministrazione-658lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "054SP",
@@ -102040,6 +103207,30 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": "ZULIANELLO MATTIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "15:15",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-11-16",
+       "docenti": "ZULIANELLO MATTIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-09",
        "ora": "11:30",
        "luogo": null,
@@ -102159,13 +103350,38 @@
        "citazione": "M. Zamponi. I sistemi politici dell'Africa indipendente. Carocci 2020"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2027-01-04",
+       "docenti": "BATTERA FEDERICO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2027-01-25",
+       "docenti": "BATTERA FEDERICO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-l-36-l-16-scienze-politiche-e-dell-amministrazione-208sp",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "181SP",
@@ -105906,12 +107122,25 @@
        "citazione": "Fraccaroli e Balducci, ‘Stress e rischi psicosociali nelle organizzazioni’, ed. Il Mulino"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "MARCATTO FRANCESCO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-l-39-servizio-sociale-268sf",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "orale"
     },
     {
@@ -108285,6 +109514,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-28",
+       "iscrizioni_al": "2027-01-14",
+       "docenti": "UKMAR MAJA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-02",
        "ora": "09:00",
        "luogo": null,
@@ -108297,6 +109538,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-02-04",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-01",
+       "docenti": "UKMAR MAJA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-16",
        "ora": "09:00",
        "luogo": null,
@@ -108306,6 +109559,30 @@
        "docenti": "BORELLI VIOLETTA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-08",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-05-10",
+       "iscrizioni_al": "2027-06-03",
+       "docenti": "UKMAR MAJA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-30",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-01",
+       "iscrizioni_al": "2027-06-25",
+       "docenti": "UKMAR MAJA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -109772,6 +111049,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "SINDICI CRISTIANA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-20",
@@ -117598,6 +118887,18 @@
        "docenti": "MORTELLITI ALESSIO",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "RENZI MONIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -119520,13 +120821,26 @@
        "citazione": "Ceramic Materials, Norton and Carter, Springer"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "SERGO VALTER",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-54-chimica-017cm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "039CM",
@@ -119544,13 +120858,38 @@
      ],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/120173/2025/1?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "CAROSATI EMANUELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "CAROSATI EMANUELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-54-chimica-039cm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "730SM",
@@ -120807,13 +122146,26 @@
      "docenti": [],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118298/2025/2?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "STEINDLER ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-32-computer-engineering-258mi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "512MI",
@@ -124732,6 +126084,42 @@
        "iscrizioni_dal": "2026-10-05",
        "iscrizioni_al": "2026-10-06",
        "docenti": "SCROBOGNA STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "SCROBOGNA STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "BATTISTELLA SILVIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "BRESSAN ANDREA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
@@ -133652,12 +135040,25 @@
      "docenti": [],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2025/118298/2024/9999?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "STEINDLER ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-lm-30-engineering-for-the-energy-transition-258mi",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "orale"
     },
     {
@@ -134261,13 +135662,134 @@
        "citazione": "ISBN:9780471689584 - DOI:10.1002/9780470209769"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "TACCANI RODOLFO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-11-17",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-12-15",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-01-19",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-02-02",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-02-16",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-06-08",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-30",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-06-29",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-21",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-07-20",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-09-07",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-30-engineering-for-the-energy-transition-472mi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "448MI",
@@ -135939,13 +137461,38 @@
        "citazione": "For non-attending students: Hodson et al., The Institutions of the European Union, Oxford University Press, 2022, 5th edition (available in the university library), pp. 1–174."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-16",
+       "iscrizioni_al": "2027-01-06",
+       "docenti": "RAIMONDI FABIO ANDREOZZI DANIELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-10",
+       "docenti": "RAIMONDI FABIO ANDREOZZI DANIELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-90-european-policies-for-digital-ecological-and-social-transiti-182sp",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "206SP",
@@ -136734,6 +138281,18 @@
        "docenti": "GREGORI TULLIO",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-06",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "GREGORI TULLIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -137567,13 +139126,38 @@
      ],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/121209/2026/9999?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "STROLLO ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "STROLLO ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-78-filosofia-569lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "671LM",
@@ -138018,13 +139602,38 @@
        "citazione": "Gli studenti non frequentanti dovranno portare, in aggiunta, il seguente testo: G. Agamben, Stasis. La guerra civile come paradigma politico. Homo sacer, II, 2, Bollati Boringhieri, Torino 2019 (nuova edizione ampliata)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-16",
+       "iscrizioni_al": "2027-01-06",
+       "docenti": "RAIMONDI FABIO ANDREOZZI DANIELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-10",
+       "docenti": "RAIMONDI FABIO ANDREOZZI DANIELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-78-filosofia-041lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "107LM",
@@ -138091,13 +139700,26 @@
        "citazione": "M. Giangiulio (a c. di), Introduzione alla storia greca, Bologna, Il Mulino, 2021, pp. 15-25, 37-49, 265 sgg"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-10",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "SACCOMANNO MICHELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-78-filosofia-107lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "PFIN",
@@ -138150,13 +139772,38 @@
        "citazione": "Nolt, John, Logica. Milano: McGraw-Hill, 2007"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "STROLLO ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-19",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "STROLLO ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-78-filosofia-127lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "662LM",
@@ -138285,13 +139932,26 @@
        "citazione": "Manuale di educazione comparata, a cura di N. Barbieri A. Gaudio, G. Zago, Brescia, ELS la scuola, 2016, pp. 129-207."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-12-19",
+       "docenti": "GAUDIO ANGELO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-78-filosofia-404lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "139LM",
@@ -138346,13 +140006,38 @@
        "citazione": "Per i non frequentanti: Damiano Cantone, Dal segno all’immagine. Saggio su Gilles Deleuze. Meltemi, Milano 2023."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "FURLANI SIMONE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-07",
+       "iscrizioni_al": "2027-02-09",
+       "docenti": "FURLANI SIMONE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-78-filosofia-139lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "148LM",
@@ -138565,13 +140250,38 @@
        "citazione": "Mario Rossi Monti, Psichiatria e Fenomenologia, (6. Storia della scienza, a cura di Paolo Rossi), Loescher, Torino, 1978 (Introduzione e un capitolo a scelta tra i primi tre capitoli, pp. 9–197)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-21",
+       "ora": "16:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-04",
+       "docenti": "BONCHINO ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-11",
+       "ora": "16:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-22",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "BONCHINO ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-78-filosofia-665lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "667LM",
@@ -138717,13 +140427,26 @@
        "citazione": "D.J. Acheson, Elementary Fluid Dynamics, Oxford U.P. 1990."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "LANDI GIOVANNI",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-17-fisica-973mg",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "517SM",
@@ -138888,13 +140611,26 @@
        "citazione": "Per la parte di calcolabilità e complessità: [1] Michael Sipser, Introduzione alla teoria della computazione, Apogeo. Per la parte di Logica: [2] Mordechai Ben-Ari: Mathematical Logic for Computer Science (3rd ed.), Springer, 2013. (per un testo in italiano si veda anche) [3] Daniele Mundici, Logica-Metodo breve, Springer, 2011."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "PERON ADRIANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-lm-17-fisica-267sm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "350SM",
@@ -139332,13 +141068,38 @@
        "citazione": "Parallel Programming with Python (Autore: J. Palach)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "COSLOVICH DANIELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "COSLOVICH DANIELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-17-fisica-973df",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "974DF",
@@ -139356,13 +141117,26 @@
      ],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/121079/2026/6?coorte=2026",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "COSLOVICH DANIELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-17-fisica-974df",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "978DF",
@@ -140302,13 +142076,26 @@
        "citazione": "A.M. Raffaele, L. Driussi, G. Savoia, and F. Becca, Quantum Many-Body Systems on the lattice: a focus on Hubbard and Heisenberg models. M. Fabrizio, A Course in Quantum Many-body Theory: From Conventional Fermi Liquids to Strongly Correlated Systems"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-02",
+       "iscrizioni_al": "2026-10-05",
+       "docenti": "BECCA FEDERICO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-17-fisica-458sm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "003DF",
@@ -141315,6 +143102,42 @@
        "docenti": "SCROBOGNA STEFANO",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "SCROBOGNA STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "BATTISTELLA SILVIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "BRESSAN ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -142305,13 +144128,26 @@
        "citazione": "● Chityala, R. & Pudipeddi, S. (2020) Image Processing and Acquisition using Python. Chapman and Hall. ISBN 978-0367-19808-4"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "THIBAULT PIERRE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-17-fisica-358sm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "518SM",
@@ -142787,13 +144623,38 @@
        "citazione": "“The C programming language”, B.W. Kernighan, D.M. Ritchie"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-04",
+       "iscrizioni_al": "2027-01-12",
+       "docenti": "VALENTINI MILENA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-08",
+       "iscrizioni_al": "2027-02-16",
+       "docenti": "VALENTINI MILENA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-17-fisica-990df",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "750SM",
@@ -144008,6 +145869,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "BENATTI FABIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-02-05",
@@ -145714,6 +147587,18 @@
        "docenti": "MORTELLITI ALESSIO",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "RENZI MONIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -146253,6 +148138,42 @@
        "iscrizioni_dal": "2026-10-05",
        "iscrizioni_al": "2026-10-06",
        "docenti": "SCROBOGNA STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "SCROBOGNA STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "BATTISTELLA SILVIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "BRESSAN ANDREA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
@@ -147487,13 +149408,26 @@
        "citazione": "● Chityala, R. & Pudipeddi, S. (2020) Image Processing and Acquisition using Python. Chapman and Hall. ISBN 978-0367-19808-4"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "THIBAULT PIERRE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-79-geophysics-and-geodata-390sm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "404SM",
@@ -150575,6 +152509,42 @@
        "docenti": "SCROBOGNA STEFANO",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "SCROBOGNA STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "BATTISTELLA SILVIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "BRESSAN ANDREA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -153223,13 +155193,26 @@
        "citazione": "Sheldon Ross. Introductory Statistics, Third Edition, Elsevier. Statistics."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "CASTELLI LORENZO MASET STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-23-ingegneria-civile-493mi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "288MI",
@@ -153330,13 +155313,26 @@
      "docenti": [],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118298/2025/1?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "STEINDLER ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-23-ingegneria-civile-258mi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "527MI",
@@ -155649,13 +157645,26 @@
      "docenti": [],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118298/2025/2?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "STEINDLER ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-21-ingegneria-clinica-258mi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "559MI",
@@ -156247,13 +158256,26 @@
        "citazione": "Ceramic Materials, Norton and Carter, Springer"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "SERGO VALTER",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-21-ingegneria-clinica-409mi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "350MI",
@@ -156335,6 +158357,18 @@
        "docenti": "CORTESE ANTONELLA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-26",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-02",
+       "iscrizioni_al": "2026-11-24",
+       "docenti": "CORTESE ANTONELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -156361,13 +158395,26 @@
      ],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118881/2025/2?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "PALLAVICINI ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-21-ingegneria-clinica-347mi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "447MI",
@@ -158497,13 +160544,26 @@
      "docenti": [],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118298/2025/2?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "STEINDLER ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-28-ingegneria-dell-energia-elettrica-e-dei-sistemi-258mi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "183MI",
@@ -160863,6 +162923,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-18",
+       "docenti": "PARUSSINI LUCIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "09:00",
        "luogo": "Aula A, Edificio C7",
@@ -161303,13 +163375,26 @@
      "docenti": [],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118298/2025/1?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "STEINDLER ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-33-ingegneria-meccanica-258mi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "468MI-3",
@@ -162559,13 +164644,122 @@
        "citazione": "ISBN:9780471689584 - DOI:10.1002/9780470209769"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-17",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-12-15",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-01-19",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-02-02",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-02-16",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-06-08",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-30",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-06-29",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-21",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-07-20",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-09-07",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-33-ingegneria-meccanica-472mi-3",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "241MI",
@@ -170040,13 +172234,26 @@
        "citazione": "Thaler, R. H., & Sunstein, C. R. (2014). \"La spinta gentile\". Milano: Feltrinelli."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "PEGAN GIOVANNA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale separati",
      "id": "units-lm-77-marketing-e-management-626ec",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "627EC",
@@ -171198,13 +173405,122 @@
        "citazione": "ISBN:9780471689584 - DOI:10.1002/9780470209769"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-17",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-12-15",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-01-19",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-02-02",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-02-16",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-06-08",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-30",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-06-29",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-21",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-07-20",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-09-07",
+       "docenti": "DE SOUZA RONELLY JOSÉ",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-22-lm-53-materials-and-chemical-engineering-for-nano-bio-and-sustaina-472mi-3",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "565MI",
@@ -171466,13 +173782,26 @@
      "docenti": [],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/118298/2025/1?coorte=2025",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "STEINDLER ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-22-lm-53-materials-and-chemical-engineering-for-nano-bio-and-sustaina-258mi",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "405MI",
@@ -171737,6 +174066,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-18",
+       "docenti": "PARUSSINI LUCIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-12",
@@ -174311,13 +176652,26 @@
        "citazione": "D.J. Acheson, Elementary Fluid Dynamics, Oxford U.P. 1990."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "LANDI GIOVANNI",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-40-mathematics-973mg",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "971MG",
@@ -175365,6 +177719,42 @@
        "iscrizioni_dal": "2026-10-05",
        "iscrizioni_al": "2026-10-06",
        "docenti": "SCROBOGNA STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-01",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "SCROBOGNA STEFANO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "BATTISTELLA SILVIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": "BRESSAN ANDREA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
@@ -183666,13 +186056,38 @@
        "citazione": "https://www.transcript-publishing.com/978-3-8376-7871-0/dissonantes-kunst-und-kulturerbe/dissonant-cultural-heritage/art-et-patrimoine-culturel-dissonants/?number=978-3-8394-2177-2"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "ALTIN ROBERTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "ALTIN ROBERTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-62-lm-63-scienze-del-governo-e-politiche-pubbliche-658lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "169SP",
@@ -183938,6 +186353,30 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "13:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-27",
+       "docenti": "ZULIANELLO MATTIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "14:15",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-27",
+       "docenti": "ZULIANELLO MATTIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-09",
        "ora": "11:30",
        "luogo": null,
@@ -184130,13 +186569,38 @@
        "citazione": "M. Zamponi. I sistemi politici dell'Africa indipendente. Carocci 2020"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2027-01-04",
+       "docenti": "BATTERA FEDERICO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2027-01-25",
+       "docenti": "BATTERA FEDERICO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-62-lm-63-scienze-del-governo-e-politiche-pubbliche-208sp",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "181SP",
@@ -184376,13 +186840,26 @@
        "citazione": "John Scott, Analisi delle reti Sociali, 2^ ristampa, 2003, Carocci Editore (capitol selezionati)"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-10",
+       "docenti": "DE STEFANO DOMENICO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-62-lm-63-scienze-del-governo-e-politiche-pubbliche-142sp",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "015SP",
@@ -187018,13 +189495,26 @@
        "citazione": "Baxevanis, Oullette. Bioinformatics. A practical guide to the analysis of genes and proteins. Wiley"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "GERDOL MARCO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-lm-75-scienze-per-l-ambiente-marino-e-costiero-644sm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "892SV",
@@ -187769,13 +190259,38 @@
        "citazione": "Elementi di Psichiatria, IV Edizione. G. Maina, U. Albert, G. Rosso. Edizioni Minerva Medica Torino, 2023"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-30",
+       "iscrizioni_al": "2027-01-14",
+       "docenti": "PELLEGRINI LUCA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-30",
+       "iscrizioni_al": "2027-02-11",
+       "docenti": "PELLEGRINI LUCA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie-1154me",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1152ME",
@@ -187848,13 +190363,38 @@
        "citazione": "Per approfondimento: Wolfgang Grisold, Walter Struhal, Anna Grisold The Cranial Nerves in Neurology: A comprehensive and systematic evaluation of cranial nerves, pathology and specific conditions. Springer 2023"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-06-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-05-24",
+       "iscrizioni_al": "2027-06-04",
+       "docenti": "UKMAR MAJA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-29",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-07",
+       "iscrizioni_al": "2027-06-25",
+       "docenti": "UKMAR MAJA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie-1155me",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1151ME",
@@ -191456,6 +193996,18 @@
        "docenti": "GUI LUIGI",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-01",
+       "docenti": "GUI LUIGI",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -191544,13 +194096,26 @@
        "citazione": "Santinello, Vieno e Lenzi (2009) Fondamenti di Psicologia di Comunità, Il Mulino."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-08",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-03",
+       "iscrizioni_al": "2027-01-06",
+       "docenti": "CESAREO CODA MARIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-87-servizio-sociale-politiche-sociali-programmazione-e-gestione-314sf",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "255SF",
@@ -193345,13 +195910,26 @@
        "citazione": "Thaler, R. H., & Sunstein, C. R. (2014). \"La spinta gentile\". Milano: Feltrinelli."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "PEGAN GIOVANNA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale separati",
      "id": "units-lm-77-strategia-consulenza-e-logistica-aziendale-626ec",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "620EC",
@@ -194913,13 +197491,38 @@
        "citazione": "https://www.transcript-publishing.com/978-3-8376-7871-0/dissonantes-kunst-und-kulturerbe/dissonant-cultural-heritage/art-et-patrimoine-culturel-dissonants/?number=978-3-8394-2177-2"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "ALTIN ROBERTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-09",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-02-06",
+       "docenti": "ALTIN ROBERTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-84-studi-storici-dall-antico-al-contemporaneo-658lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "144LM",
@@ -196456,13 +199059,26 @@
        "citazione": "Francesca Trivellato, Microstoria e Storia globale, Officina libraria, 2023"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-07",
+       "iscrizioni_al": "2027-01-06",
+       "docenti": "SANTUS CESARE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-84-studi-storici-dall-antico-al-contemporaneo-129lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "549LM",
@@ -198172,6 +200788,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2026-10-26",
+       "docenti": "VEZZOSI ELISABETTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "15:30",
        "luogo": null,
@@ -198523,13 +201151,38 @@
        "citazione": "Marani P. C., Pavoni R, Musei. Trasformazioni di un’istituzione dell’età moderna al contemporaneo, Marsilio, Venezia 2012."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-01-12",
+       "docenti": "GIORIO MARIA BEATRICE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2027-02-08",
+       "docenti": "GIORIO MARIA BEATRICE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-84-studi-storici-dall-antico-al-contemporaneo-035lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "131LM",
@@ -199497,13 +202150,38 @@
        "citazione": "Mario Rossi Monti, Psichiatria e Fenomenologia, (6. Storia della scienza, a cura di Paolo Rossi), Loescher, Torino, 1978 (Introduzione e due capitoli a scelta tra i primi tre capitoli, pp. 9–197)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-21",
+       "ora": "16:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2027-01-04",
+       "docenti": "BONCHINO ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-11",
+       "ora": "16:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-22",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "BONCHINO ALBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-84-studi-storici-dall-antico-al-contemporaneo-621lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "125LM",
@@ -199839,13 +202517,26 @@
        "citazione": "M. Giangiulio (a c. di), Introduzione alla storia greca, Bologna, Il Mulino, 2021, pp. 15-25, 37-49, 265 sgg"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-13",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-10",
+       "iscrizioni_al": "2026-10-12",
+       "docenti": "SACCOMANNO MICHELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-84-studi-storici-dall-antico-al-contemporaneo-107lm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "653LM",
@@ -202810,6 +205501,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "VIEZZI MAURIZIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-01",
        "ora": "09:00",
        "luogo": null,
@@ -205140,6 +207843,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-15",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-14",
+       "docenti": "VIEZZI MAURIZIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-02-01",
@@ -214164,13 +216879,38 @@
        "citazione": "Stellin G., Rosato P. (1998) La Valutazione dei Beni Ambientali, CittaStudiEdizioni, Torino."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-21",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-01-16",
+       "docenti": "ROSATO PAOLO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-02-01",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "ROSATO PAOLO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-lm-4-c-u-architettura-047ar",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "048AR",
@@ -216188,13 +218928,50 @@
        "citazione": "G. Sacchetti. “Botanica farmaceutica e farmacognosia”. UTET, Milano."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-18",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-11-16",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "SOSA SILVIO CARLIN MICHELA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-01",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-19",
+       "iscrizioni_al": "2027-01-29",
+       "docenti": "SOSA SILVIO CARLIN MICHELA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-22",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-02-02",
+       "iscrizioni_al": "2027-02-19",
+       "docenti": "SOSA SILVIO CARLIN MICHELA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-13-chimica-e-tecnologia-farmaceutiche-134fa",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "137FA",
@@ -216922,12 +219699,37 @@
        "citazione": "2015 Gabrielle Caviglioli, Tommasina Coviello, Giuseppe De Rosa, Tiziana Modena Aulton Tecnologie Farmaceutiche: Progettazione e allestimento dei medicinali Casa Editrice EDRA LSWR S.p.A. 2015. L.Fabris, A.Rigamonti., La Fabbricazione Industriale dei Medicinali. Società Editrice Esculapio s.r.l., Bologna, 2008"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-11",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-28",
+       "iscrizioni_al": "2027-01-07",
+       "docenti": "HASA DRITAN DI CAGNO MASSIMILIANO PIO MAGNANO GRETA CAMILLA PERISSUTTI BEATRICE VOINOVICH DARIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-11",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-14",
+       "iscrizioni_al": "2027-02-09",
+       "docenti": "HASA DRITAN DI CAGNO MASSIMILIANO PIO MAGNANO GRETA CAMILLA PERISSUTTI BEATRICE VOINOVICH DARIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-lm-13-chimica-e-tecnologia-farmaceutiche-141fa",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "orale"
     },
     {
@@ -217660,13 +220462,38 @@
      "docenti": [],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/120173/2025/9999?coorte=2023",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "CAROSATI EMANUELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "CAROSATI EMANUELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-13-chimica-e-tecnologia-farmaceutiche-039cm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "066FA",
@@ -217793,13 +220620,50 @@
        "citazione": "Mazzanti G., Dell’Agli M., Izzo A.A. Farmacognosia e Fitoterapia – Piccin. Fintelmann V., Weiss R.F., Kuchta K. Lehrbuch Phytotherapie – Thieme (in tedesco)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "SOSA SILVIO CARLIN MICHELA DELLA LOGGIA ROBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-14",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "SOSA SILVIO CARLIN MICHELA DELLA LOGGIA ROBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "SOSA SILVIO CARLIN MICHELA DELLA LOGGIA ROBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-13-chimica-e-tecnologia-farmaceutiche-033fa",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "142FA",
@@ -219059,13 +221923,38 @@
        "citazione": "Analisi Farmaceutica Quantitativa. A.Carta, M.G.Mamolo, F.Novelli, S.Piras.EdiSES 2011."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-14",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "ZAMPIERI DANIELE CAROSATI EMANUELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-17",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "ZAMPIERI DANIELE CAROSATI EMANUELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-13-chimica-e-tecnologia-farmaceutiche-026fa",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "052FA",
@@ -219808,13 +222697,38 @@
        "citazione": "Enrico Ragazzi, Galenica Pratica. Formulazione e Tecnologia. Libreria Internazionale Cortina Padova, 2006."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "VOINOVICH DARIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-02-10",
+       "docenti": "VOINOVICH DARIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-lm-13-chimica-e-tecnologia-farmaceutiche-068fa",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "ammissione": {
@@ -220351,13 +223265,50 @@
        "citazione": "Tuttavia questi vanno intesi esclusivamente come mero supporto alla didattica e non come dispense. Pertanto, l’uso del libro di testo è essenziale. Ogni settimana gli studenti riceveranno, inoltre, esercizi che riassumono i concetti svolti durante le lezioni e da usarsi come verifica del grado di apprendimento."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-31",
+       "iscrizioni_al": "2026-12-31",
+       "docenti": "GARDOSSI LUCIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-06",
+       "iscrizioni_al": "2027-01-25",
+       "docenti": "GARDOSSI LUCIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-27",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "GARDOSSI LUCIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-13-farmacia-122fa",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "022FA",
@@ -221242,12 +224193,37 @@
        "citazione": "Farmacopea Europea, X Edizione (anche con accesso online); Farmacopea Ufficiale Italiana XII Edizione; Analisi Farmaceutica Qualitativa, Carta, Mamolo, Novelli, Piras. Ed. Edises [ISBN 978-88-7959-682-4]; Principi di Analisi Farmaceutica, Cavrini, Andrisano. Ed. Esculapio [ISBN 978-88-9385-032-2]; Diapositive delle lezioni (disponibili su MS Teams)."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "CAROSATI EMANUELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "CAROSATI EMANUELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-lm-13-farmacia-037fa",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "orale"
     },
     {
@@ -221291,12 +224267,49 @@
        "citazione": "Mazzanti G., Dell’Agli M., Izzo A.A.: Farmacognosia e Fitoterapia – Piccin."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "SOSA SILVIO CARLIN MICHELA DELLA LOGGIA ROBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-02",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-14",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "SOSA SILVIO CARLIN MICHELA DELLA LOGGIA ROBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-23",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-02-03",
+       "iscrizioni_al": "2027-02-20",
+       "docenti": "SOSA SILVIO CARLIN MICHELA DELLA LOGGIA ROBERTO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "id": "units-lm-13-farmacia-033fa",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
+     "stato_esami": "completo",
      "modalita_esame": "orale"
     },
     {
@@ -221871,6 +224884,18 @@
        "docenti": "ADORINNI SIMONE",
        "note": null,
        "fonte": "https://orari.units.it/agendaweb/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-23",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-02",
+       "iscrizioni_al": "2026-10-11",
+       "docenti": "ADORINNI SIMONE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -222139,13 +225164,38 @@
        "citazione": "Enrico Ragazzi, Galenica Pratica. Formulazione e Tecnologia. Libreria Internazionale Cortina Padova, 2006."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-01-11",
+       "docenti": "VOINOVICH DARIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-12",
+       "iscrizioni_al": "2027-02-11",
+       "docenti": "VOINOVICH DARIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-13-farmacia-129fa",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "059FA",
@@ -222283,13 +225333,38 @@
      "docenti": [],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2026/120173/2026/9999?coorte=2023",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "CAROSATI EMANUELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-13",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "CAROSATI EMANUELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-13-farmacia-039cm",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "145FA",
@@ -223866,13 +226941,50 @@
        "citazione": "Agli studenti verranno inoltre forniti i lucidi utilizzati durante le lezioni. Tuttavia questi vanno intesi esclusivamente come mero supporto alla didattica e non come dispense. Pertanto, l’uso del libro di testo è essenziale."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-10-31",
+       "iscrizioni_al": "2026-12-31",
+       "docenti": "GARDOSSI LUCIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-28",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-06",
+       "iscrizioni_al": "2027-01-25",
+       "docenti": "GARDOSSI LUCIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-27",
+       "iscrizioni_al": "2027-02-15",
+       "docenti": "GARDOSSI LUCIA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "units-lm-13-farmacia-016fa",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "018FA",
@@ -224357,13 +227469,38 @@
        "citazione": "A.T.Florence, D.Attwood “Le basi chimico-fisiche della tecnologia farmaceutica” McMillan Press"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-01",
+       "iscrizioni_al": "2027-01-10",
+       "docenti": "VOINOVICH DARIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-02-10",
+       "docenti": "VOINOVICH DARIO",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-13-farmacia-055fa",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     }
    ],
    "ammissione": {
@@ -232136,6 +235273,78 @@
        "docenti": "COVA MARIA ASSUNTA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-14",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-05-15",
+       "iscrizioni_al": "2026-06-09",
+       "docenti": "COVA MARIA ASSUNTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-29",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-06-15",
+       "iscrizioni_al": "2027-06-24",
+       "docenti": "COVA MARIA ASSUNTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-16",
+       "iscrizioni_al": "2027-08-30",
+       "docenti": "COVA MARIA ASSUNTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-09-03",
+       "iscrizioni_al": "2027-09-13",
+       "docenti": "COVA MARIA ASSUNTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2028-01-24",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2028-01-02",
+       "iscrizioni_al": "2028-01-19",
+       "docenti": "COVA MARIA ASSUNTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2028-02-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2028-01-25",
+       "iscrizioni_al": "2028-02-03",
+       "docenti": "COVA MARIA ASSUNTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -232461,6 +235670,18 @@
      "esami": [
       {
        "tipo": "appello",
+       "data": "2026-12-03",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-28",
+       "iscrizioni_al": "2026-11-27",
+       "docenti": "CAIROLI FRANCESCA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2026-12-09",
        "ora": "15:00",
        "luogo": null,
@@ -232468,6 +235689,18 @@
        "iscrizioni_dal": "2026-09-28",
        "iscrizioni_al": "2026-12-07",
        "docenti": "CAIROLI FRANCESCA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-12-15",
+       "docenti": "BARBATI GIULIA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
       },
@@ -234061,6 +237294,18 @@
       },
       {
        "tipo": "appello",
+       "data": "2027-01-26",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-18",
+       "iscrizioni_al": "2027-01-22",
+       "docenti": "ZALAUDEK IRIS",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
        "data": "2027-02-18",
        "ora": "14:00",
        "luogo": null,
@@ -235492,6 +238737,18 @@
       }
      ],
      "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-07",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2025-09-22",
+       "iscrizioni_al": "2026-12-22",
+       "docenti": "STOCCO GABRIELE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
       {
        "tipo": "appello",
        "data": "2027-01-11",
@@ -237345,13 +240602,110 @@
      ],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2021/114973/2015/9999?coorte=2021",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2026-12-31",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-02-08",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-09",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-05-10",
+       "iscrizioni_al": "2027-05-24",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-30",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-10",
+       "iscrizioni_al": "2027-06-21",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-01",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-07-01",
+       "iscrizioni_al": "2027-08-16",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-15",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-17",
+       "iscrizioni_al": "2027-09-06",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2028-01-12",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-12-01",
+       "iscrizioni_al": "2027-12-27",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2028-02-09",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2028-01-13",
+       "iscrizioni_al": "2028-01-31",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-41-medicina-e-chirurgia-956me",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "972ME",
@@ -237369,13 +240723,110 @@
      ],
      "url": "https://units.coursecatalogue.cineca.it/insegnamenti/2022/114062/2015/9999?coorte=2021",
      "libri": [],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-01",
+       "iscrizioni_al": "2026-12-31",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-02-08",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-09",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-05-10",
+       "iscrizioni_al": "2027-05-24",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-30",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-06-10",
+       "iscrizioni_al": "2027-06-21",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-01",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-07-01",
+       "iscrizioni_al": "2027-08-16",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-15",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-08-17",
+       "iscrizioni_al": "2027-09-06",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2028-01-12",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-12-01",
+       "iscrizioni_al": "2027-12-27",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2028-02-09",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2028-01-13",
+       "iscrizioni_al": "2028-01-31",
+       "docenti": "BERNARDI STELLA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "units-lm-41-medicina-e-chirurgia-972me",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "723ME",
@@ -239716,6 +243167,78 @@
        "docenti": "COVA MARIA ASSUNTA",
        "note": null,
        "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-16",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-05-25",
+       "iscrizioni_al": "2027-06-11",
+       "docenti": "COVA MARIA ASSUNTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-30",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-17",
+       "iscrizioni_al": "2027-06-25",
+       "docenti": "COVA MARIA ASSUNTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-01",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-16",
+       "iscrizioni_al": "2027-08-27",
+       "docenti": "COVA MARIA ASSUNTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-15",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-09-02",
+       "iscrizioni_al": "2027-09-10",
+       "docenti": "COVA MARIA ASSUNTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2028-01-12",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2027-12-20",
+       "iscrizioni_al": "2028-01-07",
+       "docenti": "COVA MARIA ASSUNTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2028-02-09",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2028-01-13",
+       "iscrizioni_al": "2028-02-04",
+       "docenti": "COVA MARIA ASSUNTA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://units.coursecatalogue.cineca.it",
@@ -240069,13 +243592,38 @@
        "citazione": "Materiali e Tecnologie Odontostomatologiche (Materiali Dentari), Ariesdue"
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-14",
+       "iscrizioni_al": "2027-01-08",
+       "docenti": "TURCO GIANLUCA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-13",
+       "iscrizioni_al": "2027-02-12",
+       "docenti": "TURCO GIANLUCA",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-46-odontoiatria-e-protesi-dentaria-771me",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "1294ME",
@@ -246292,13 +249840,38 @@
        "citazione": "Pieri M., 2022, Classi in rete - Un modello innovativo per le piccole scuole, Pensa Multimedia, Lecce."
       }
      ],
-     "esami": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-13",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-12-20",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "PIERI MICHELLE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-10",
+       "ora": "17:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-14",
+       "iscrizioni_al": "2027-02-05",
+       "docenti": "PIERI MICHELLE",
+       "note": null,
+       "fonte": "https://units.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
      "fonte": "https://units.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-13",
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "units-lm-85-bis-scienze-della-formazione-primaria-413sf",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "completo"
     },
     {
      "codice": "448SF",
