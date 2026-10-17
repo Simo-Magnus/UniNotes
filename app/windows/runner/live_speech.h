@@ -20,7 +20,10 @@
 //
 // Il riconoscitore ascolta il microfono predefinito in modalità condivisa:
 // la registrazione (che usa lo stesso microfono) non viene interrotta.
-// - "support" {locale}: lingua tra quelle della dettatura di Windows;
+// - "support" {locale}: lingua tra quelle della dettatura di Windows
+//   (SupportedTopicLanguages, "languageOk") e «Riconoscimento vocale online»
+//   attivo (registro, HasAccepted); se manca qualcosa "reason" dice cosa
+//   ("privacy" prima di "locale");
 // - "start" {locale, session}: true se la sessione è partita, altrimenti
 //   il motivo (es. "privacy": «Riconoscimento vocale online» disattivato
 //   nelle impostazioni di Windows) e l'app usa Whisper;

@@ -2,21 +2,30 @@ import 'dart:math' as math;
 
 import 'recording_meta.dart';
 
-/// Trascrizione dal vivo: logica pura (test in test/recorder_logic_test.dart).
+//// Trascrizione dal vivo con Whisper: logica pura (test in
+/// test/recorder_logic_test.dart).
 ///
-/// Mentre si registra, ogni [LiveChunkPlanner.window] di audio nuovo diventa
-/// un pezzo da trascrivere, che inizia [LiveChunkPlanner.overlap] prima
-/// (così una parola tagliata a metà si sente intera in uno dei due pezzi).
-/// Se Whisper resta indietro, i pezzi in attesa più vecchi si saltano (la
-/// trascrizione resta al passo col parlato) e si recuperano a fine
-/// registrazione. Il testo dei pezzi si unisce senza ripetere le parole
-/// della sovrapposizione ([TranscriptMerger]).
+/// **Finestre corte che si allungano** ([LiveWindowPlanner]): ogni ~2 s di
+/// audio nuovo si ritrascrive il tratto non ancora definitivo (da
+/// [LiveWindowPlanner.anchor] a ora, al massimo
+/// [LiveWindowPlanner.maxWindow]). Il testo della finestra è provvisorio e
+/// si aggiorna a ogni passo; diventa definitivo a una pausa del parlato o
+/// quando la finestra è piena (in quel caso l'ultima frase, forse tagliata
+/// a metà parola, resta provvisoria e si ritrascrive nella finestra dopo).
+/// Ogni finestra inizia [LiveWindowPlanner.overlap] prima: le parole
+/// ripetute si tolgono unendo il testo ([TranscriptMerger]).
+///
+/// Se Whisper è lento il passo si allunga (meno lavoro, testo un po' meno
+/// frequente); se resta comunque indietro, il tratto più vecchio si salta
+/// (il testo resta al passo col parlato) e si recupera dopo il salvataggio.
 
 class LiveChunk {
   const LiveChunk(this.index, this.start, this.end);
   final int index;
   final Duration start;
   final Duration end;
+
+  Duration get length => end - start;
 
   @override
   bool operator ==(Object other) =>
@@ -33,80 +42,198 @@ class LiveChunk {
       'Pezzo $index (${start.inMilliseconds}–${end.inMilliseconds} ms)';
 }
 
-class LiveChunkPlanner {
-  LiveChunkPlanner({
-    this.window = const Duration(seconds: 9),
-    this.overlap = const Duration(seconds: 1),
-    this.maxWaiting = 1,
-  });
+/// Cosa resta di una finestra trascritta: segmenti definitivi e testo
+/// provvisorio (che la finestra successiva sostituisce).
+class WindowOutcome {
+  const WindowOutcome(this.committed, this.provisional);
+  final List<TranscriptSegment> committed;
+  final String provisional;
 
-  /// Audio nuovo per pezzo (più la sovrapposizione: ~10 s in tutto).
-  final Duration window;
+  static const empty = WindowOutcome([], '');
+}
+
+class LiveWindowPlanner {
+  LiveWindowPlanner({
+    this.step = const Duration(seconds: 2),
+    this.maxStep = const Duration(seconds: 5),
+    this.maxWindow = const Duration(seconds: 6),
+    this.minWindow = const Duration(seconds: 1),
+    this.overlap = const Duration(milliseconds: 300),
+    this.keepLast = true,
+    this.maxPiece = const Duration(seconds: 30),
+  }) : _step = step;
+
+  /// Modello lento (quello scelto dall'utente, se manca il modello dal
+  /// vivo): pezzi da ~10 s (9 s nuovi + 1 s di sovrapposizione), ognuno
+  /// definitivo appena trascritto.
+  factory LiveWindowPlanner.slow() => LiveWindowPlanner(
+    step: const Duration(seconds: 9),
+    maxStep: const Duration(seconds: 9),
+    maxWindow: const Duration(seconds: 9),
+    minWindow: const Duration(seconds: 9),
+    overlap: const Duration(seconds: 1),
+    keepLast: false,
+  );
+
+  /// Audio nuovo che fa partire una nuova trascrizione (passo minimo).
+  final Duration step;
+
+  /// Passo massimo quando Whisper è lento.
+  final Duration maxStep;
+
+  /// Lunghezza massima del tratto provvisorio: oltre diventa definitivo.
+  final Duration maxWindow;
+
+  /// Finestra minima (meno audio non vale una trascrizione).
+  final Duration minWindow;
   final Duration overlap;
 
-  /// Pezzi che possono aspettare mentre Whisper lavora; oltre si saltano.
-  final int maxWaiting;
+  /// Finestra piena: l'ultima frase resta provvisoria e si ritrascrive.
+  final bool keepLast;
 
-  Duration _next = Duration.zero;
+  /// Pezzi da recuperare alla fine: al massimo così lunghi.
+  final Duration maxPiece;
+
+  /// Inizio dell'audio non ancora definitivo.
+  Duration anchor = Duration.zero;
+  Duration _decoded = Duration.zero;
+  Duration _step;
+  Duration? _avg;
   int _count = 0;
   bool _busy = false;
-  final List<LiveChunk> waiting = [];
+
+  /// Tratti saltati, da trascrivere a fine registrazione.
   final List<LiveChunk> skipped = [];
+
+  /// Salti perché Whisper era indietro (non per l'attesa del modello
+  /// all'inizio).
+  int lagSkips = 0;
 
   bool get busy => _busy;
 
-  /// Fine dell'audio già assegnato a un pezzo.
-  Duration get planned => _next;
+  /// Passo attuale (si allunga se Whisper è lento).
+  Duration get currentStep => _step;
 
-  /// I pezzi partono da [t] (Whisper subentra a metà registrazione al
-  /// riconoscitore del sistema: il tratto prima è già trascritto).
+  /// Si parte da [t]: il tratto prima è già trascritto (Whisper subentra
+  /// a metà registrazione al riconoscitore del sistema).
   void startAt(Duration t) {
-    if (t > _next) _next = t;
+    if (t > anchor) anchor = t;
+    if (anchor > _decoded) _decoded = anchor;
   }
 
-  LiveChunk _chunk(Duration end) {
-    final start = _next - overlap;
-    return LiveChunk(
-      _count++,
-      start < Duration.zero ? Duration.zero : start,
-      end,
-    );
+  /// Il tratto da [anchor] a [t] non si trascrive ora: si recupera alla
+  /// fine (es. registrato mentre si scaricava il modello).
+  void skipTo(Duration t) {
+    if (t - anchor >= const Duration(milliseconds: 600)) {
+      skipped.add(_chunk(anchor, t));
+    }
+    startAt(t);
   }
 
-  /// C'è audio registrato fino a [recorded]: crea i pezzi completi.
-  void advance(Duration recorded) {
-    while (recorded - _next >= window) {
-      final c = _chunk(_next + window);
-      _next += window;
-      waiting.add(c);
-      while (waiting.length > maxWaiting) {
-        skipped.add(waiting.removeAt(0));
+  LiveChunk _chunk(Duration start, Duration end) {
+    final s = start - overlap;
+    return LiveChunk(_count++, s < Duration.zero ? Duration.zero : s, end);
+  }
+
+  /// Prossima finestra da trascrivere con l'audio registrato fino a
+  /// [recorded] (null se Whisper è occupato o non c'è abbastanza audio
+  /// nuovo). Va chiusa con [done] o [abandon].
+  LiveChunk? next(Duration recorded) {
+    if (_busy) return null;
+    // troppo indietro: il tratto vecchio si recupera alla fine
+    if (recorded - anchor > maxWindow * 3) {
+      skipTo(recorded - maxWindow);
+      lagSkips++;
+    }
+    final full = anchor + maxWindow;
+    final end = recorded < full ? recorded : full;
+    if (end - anchor < minWindow || end <= _decoded) return null;
+    if (end - _decoded < _step && end < full) return null;
+    _busy = true;
+    return _chunk(anchor, end);
+  }
+
+  /// La finestra in corso non ha dato un risultato (errore, fine
+  /// registrazione).
+  void abandon() => _busy = false;
+
+  /// Risultato della finestra [c]: [segments] con i tempi della
+  /// registrazione, [silentTail] se finisce in una pausa, [took] quanto ha
+  /// impiegato Whisper.
+  WindowOutcome done(
+    LiveChunk c,
+    List<TranscriptSegment> segments, {
+    bool silentTail = false,
+    Duration? took,
+  }) {
+    _busy = false;
+    if (c.end > _decoded) _decoded = c.end;
+    if (took != null) _adapt(took);
+    final segs = [
+      for (final s in segments)
+        if (!isHallucination(s.text)) s.copyWith(text: s.text.trim()),
+    ];
+    final full = c.end - anchor >= maxWindow;
+    if (segs.isEmpty) {
+      // silenzio o niente di comprensibile: la finestra non si allunga
+      if (silentTail || full) startAt(c.end);
+      return WindowOutcome.empty;
+    }
+    if (full && keepLast && !silentTail && segs.length > 1) {
+      final last = segs.last;
+      if (last.start > anchor + minWindow && last.start < c.end) {
+        anchor = last.start;
+        return WindowOutcome(segs.sublist(0, segs.length - 1), last.text);
       }
     }
+    if (full || silentTail) {
+      startAt(c.end);
+      return WindowOutcome(segs, '');
+    }
+    return WindowOutcome(const [], segs.map((s) => s.text).join(' '));
   }
 
-  /// Prossimo pezzo da trascrivere (null se Whisper è occupato o non c'è
-  /// niente). Va chiuso con [done].
-  LiveChunk? takeNext() {
-    if (_busy || waiting.isEmpty) return null;
-    _busy = true;
-    return waiting.removeAt(0);
+  void _adapt(Duration took) {
+    final prev = _avg;
+    final avg = prev == null
+        ? took
+        : Duration(
+            microseconds: (prev.inMicroseconds * 0.7 + took.inMicroseconds * 0.3)
+                .round(),
+          );
+    _avg = avg;
+    var s = Duration(microseconds: (avg.inMicroseconds * 1.2).round());
+    if (s < step) s = step;
+    if (s > maxStep) s = maxStep;
+    _step = s;
   }
 
-  void done() => _busy = false;
-
-  /// Fine registrazione a [recorded]: i pezzi ancora da fare, in ordine di
-  /// tempo (saltati, in attesa e l'ultimo pezzo, se dura almeno [minTail]).
+  /// Fine registrazione a [recorded]: i tratti ancora da trascrivere, in
+  /// ordine di tempo (saltati e quello non ancora definitivo, se dura
+  /// almeno [minTail]), divisi in pezzi di al massimo [maxPiece].
   List<LiveChunk> finish(
     Duration recorded, {
     Duration minTail = const Duration(milliseconds: 600),
   }) {
-    final out = [...skipped, ...waiting];
+    final raw = [...skipped];
     skipped.clear();
-    waiting.clear();
-    if (recorded - _next >= minTail) {
-      out.add(_chunk(recorded));
-      _next = recorded;
+    if (recorded - anchor >= minTail) raw.add(_chunk(anchor, recorded));
+    startAt(recorded);
+    _busy = false;
+    final out = <LiveChunk>[];
+    for (final c in raw) {
+      if (c.length <= maxPiece + overlap) {
+        out.add(c);
+        continue;
+      }
+      var s = c.start;
+      while (s < c.end) {
+        var e = s + maxPiece;
+        if (c.end - e < const Duration(seconds: 2)) e = c.end;
+        out.add(LiveChunk(_count++, s, e));
+        if (e >= c.end) break;
+        s = e - overlap;
+      }
     }
     out.sort((a, b) => a.start.compareTo(b.start));
     return out;

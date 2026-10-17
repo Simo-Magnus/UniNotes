@@ -31,9 +31,13 @@ audio: `app/lib/core/services/audio_codec.dart` e, su Windows,
 - **Trascrizione**: la card mostra il parlato trascritto **istantaneamente**,
   come Memo Vocali o la digitazione vocale di Google Docs: il testo
   provvisorio (più chiaro) si aggiorna mentre si parla e diventa definitivo
-  a ogni frase. Vedi [Trascrizione dal vivo](#trascrizione-dal-vivo). Se il
-  sistema non offre il riconoscimento e Whisper non è installato la
-  registrazione funziona lo stesso e la card spiega perché e come attivarlo.
+  a ogni frase. Vedi [Trascrizione dal vivo](#trascrizione-dal-vivo). Dove
+  il sistema non offre il riconoscimento trascrive Whisper sul dispositivo
+  con un modello piccolo (incluso nell'installatore di Windows), con un paio
+  di secondi di ritardo, e la card spiega perché e come attivare il
+  riconoscimento del sistema (su Windows: «Riconoscimento vocale online»,
+  con il pulsante per le impostazioni). La registrazione funziona sempre,
+  anche senza testo.
 - **Salva**: ferma, salva e porta alla **pagina del corso**, alla card
   «Registrazioni delle lezioni» (la registrazione nuova è evidenziata), non
   al lettore.
@@ -117,13 +121,14 @@ si lascia dov'è e si decide più tardi.
 ## Trascrizione dal vivo
 
 Come Memo Vocali e la digitazione vocale di Google Docs, il testo compare
-mentre si parla grazie al **riconoscimento vocale in streaming del sistema**
-(Whisper a pezzi da 10 s non può dare il testo istantaneo: resta come
-ripiego). Lingua: quella dell'insegnamento se nota (es. inglese per gli
-insegnamenti in inglese), altrimenti l'italiano. Il riconoscitore riceve
-**l'audio della registrazione** e non apre il microfono per conto suo
-(tranne su Windows, dove il microfono è condiviso): la registrazione non
-viene mai interrotta né bloccata da un suo errore.
+mentre si parla grazie al **riconoscimento vocale in streaming del sistema**;
+dove il sistema non lo offre c'è **Whisper sul dispositivo a finestre di
+2 s** (vedi sotto), offline e con un paio di secondi di ritardo. Lingua:
+quella dell'insegnamento se nota (es. inglese per gli insegnamenti in
+inglese), altrimenti l'italiano. Il riconoscitore riceve **l'audio della
+registrazione** e non apre il microfono per conto suo (tranne su Windows,
+dove il microfono è condiviso): la registrazione non viene mai interrotta né
+bloccata da un suo errore.
 
 | Sistema | Motore | Note |
 |---|---|---|
@@ -131,7 +136,7 @@ viene mai interrotta né bloccata da un suo errore.
 | iOS / macOS precedenti | `SFSpeechRecognizer` con `SFSpeechAudioBufferRecognitionRequest` | sul dispositivo quando la lingua lo permette (`supportsOnDeviceRecognition`), altrimenti in rete; una richiesta si chiude in una pausa dopo ~30 s (al massimo 55 s, limite di un minuto del servizio in rete) e se ne apre subito un'altra |
 | Android 13+ | `SpeechRecognizer` con risultati parziali, `createOnDeviceSpeechRecognizer` dove c'è | l'audio arriva da una pipe (`EXTRA_AUDIO_SOURCE`, PCM 16 bit mono 16 kHz) con sessione segmentata; se il riconoscitore sul dispositivo non ha la lingua si passa a quello normale |
 | Android 12 e precedenti | — | non si può passare l'audio al riconoscitore: aprirebbe il microfono in concorrenza con la registrazione (su molti telefoni la zittirebbe). Si usa Whisper |
-| Windows 10/11 | `Windows.Media.SpeechRecognition`, dettatura continua | ascolta il microfono predefinito in modalità condivisa; serve «Riconoscimento vocale online» (Impostazioni → Privacy e sicurezza → Voce) e la lingua installata, altrimenti Whisper |
+| Windows 10/11 | `Windows.Media.SpeechRecognition`, dettatura continua | ascolta il microfono predefinito in modalità condivisa; serve «Riconoscimento vocale online» e la lingua fra quelle della dettatura, altrimenti Whisper (vedi sotto) |
 | Linux | — | Whisper |
 
 Permessi: iOS e macOS chiedono il permesso del riconoscimento vocale la prima
@@ -145,26 +150,116 @@ quelli della registrazione (inizio ~1 s prima del primo testo provvisorio,
 fine all'arrivo del testo definitivo). Alla fine («Salva») si attende al
 massimo 2 s l'ultimo testo, poi quello ancora provvisorio diventa definitivo.
 
-**Ripiego con Whisper** (dove il sistema non offre nulla): ogni ~9 secondi di
-audio nuovo il registratore legge dal WAV di lavoro l'ultimo pezzo (circa
-10 s, con 1 s di sovrapposizione col precedente) e lo passa al motore
-Whisper già usato dall'app:
+Su **macOS** il riconoscitore è `LiveSpeech.swift` (registrato in
+`MainFlutterWindow.swift`, nel target Runner): il permesso «Riconoscimento
+vocale» si chiede alla prima registrazione, insieme al microfono. Se è
+negato l'avvio risponde `denied` e se Siri e Dettatura sono disattivate
+(errore `kLSRErrorDomain` 201) si passa subito a Whisper con l'errore
+`dictation`, invece di riprovare cinque volte: in tutti e due i casi la card
+lo spiega con il pulsante che apre Impostazioni di Sistema.
 
-- telefono (e Mac senza `whisper-cli`): `whisper_ggml` in un isolate
-  separato, modello tenuto in memoria fra un pezzo e l'altro, pochi thread;
-- PC e Mac con Homebrew: `whisper-cli` come processo separato.
+### Windows: «Riconoscimento vocale online»
 
-Il lavoro non blocca mai la registrazione: un pezzo alla volta, e se Whisper
-resta indietro i pezzi in attesa più vecchi si saltano (il testo resta al
-passo col parlato) e si recuperano dopo il salvataggio (operazione
-«Completo la trascrizione», visibile nella card della registrazione). I
-pezzi silenziosi non vanno a Whisper e le frasi che Whisper inventa sul
-silenzio («Sottotitoli creati dalla comunità Amara.org»…) si scartano. Il
-testo dei pezzi si unisce senza ripetere le parole della sovrapposizione.
+La dettatura libera di Windows (`SpeechRecognizer` senza grammatica) funziona
+solo con **Impostazioni → Privacy e sicurezza → Voce → «Riconoscimento vocale
+online»** attivo: con l'opzione spenta l'avvio fallisce
+(`SPERR_SPEECH_PRIVACY_POLICY_NOT_ACCEPTED`), anche se i riconoscitori
+offline della lingua sono installati (es. `MS-1040-110-WINMO-DNN` per
+l'italiano: servono solo ai comandi con una grammatica). A ogni registrazione
+il runner (`live_speech.cpp`, metodo `support`) controlla:
 
-Modello usato dal vivo, fra quelli scaricati: telefono `small`, poi `base`,
-`large-v3-turbo-q5_0`…; PC `large-v3-turbo-q5_0`, poi `small`,
-`medium-q5_0`…
+- l'opzione della privacy, nel registro:
+  `HKCU\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy`,
+  valore `HasAccepted` = 1 (la chiave non c'è finché l'opzione non è mai
+  stata attivata);
+- la lingua fra `SpeechRecognizer.SupportedTopicLanguages` (`languageOk`).
+
+Se manca qualcosa la card «Trascrizione» lo dice mentre Whisper trascrive:
+
+- **privacy**: «Per il testo istantaneo attiva «Riconoscimento vocale online»
+  in Windows», con il pulsante **Apri impostazioni**
+  (`ms-settings:privacy-speech`) e la nota: con questa opzione l'audio passa
+  dai servizi Microsoft; finché è spenta il testo arriva da Whisper, sul PC e
+  senza internet; vale dalla prossima registrazione;
+- **lingua**: come aggiungerla (Impostazioni → Ora e lingua → Lingua e area
+  geografica → Aggiungi una lingua, con «Riconoscimento vocale»), con il
+  pulsante per `ms-settings:regionlanguage`.
+
+Alla registrazione successiva, se l'opzione è attiva, si usa il
+riconoscitore di Windows.
+
+### Ripiego con Whisper (offline)
+
+Dove il sistema non offre nulla (Windows senza l'opzione, Linux, Android
+12 e precedenti, permesso negato) trascrive Whisper sul dispositivo con un
+**modello dedicato al «dal vivo»**: `ggml-base-q5_1.bin` (base quantizzato,
+57 MiB, `kLiveWhisperModel`), sempre con whisper.cpp dentro l'app
+(`whisper_ggml`, anche su Windows: niente `whisper-cli` da scaricare). La
+trascrizione completa dopo il salvataggio resta con il modello scelto
+dall'utente.
+
+- **Windows**: il modello è nell'installatore e nello zip
+  (`app/windows/CMakeLists.txt` lo scarica una volta da Hugging Face durante
+  la build, controlla lo SHA-1 e lo copia in `data/whisper/` accanto a
+  uninotes.exe). Funziona subito, senza installare nulla. Se la build non
+  ha internet il modello manca e l'app lo scarica alla prima registrazione.
+- **Altri sistemi** (macOS usa il riconoscitore di Apple e non lo include):
+  alla prima registrazione che ne ha bisogno l'app lo scarica da sola, con
+  la barra di avanzamento nella card; sul telefono solo con Wi‑Fi (con i
+  dati mobili si usa il modello Whisper già scaricato, se c'è). L'audio
+  registrato durante il download si trascrive dopo il salvataggio.
+- PC con CPU senza AVX2 (prima del 2013): whisper.cpp dell'app non si usa
+  (`IsProcessorFeaturePresent`), resta il modello scaricato dall'utente con
+  `whisper-cli`.
+
+**Finestre corte** (`LiveWindowPlanner` in `recorder/live_transcript.dart`):
+ogni ~2 s di audio nuovo si ritrascrive dal WAV di lavoro il tratto non
+ancora definitivo (che si allunga da 2 a 6 s, con 0,3 s di sovrapposizione
+col tratto prima). Il testo è **provvisorio** (più chiaro) e si aggiorna a
+ogni passo; diventa **definitivo** quando la finestra finisce in una pausa
+(ultimo mezzo secondo ~10 dB più basso del resto, `endsInPause`) o quando
+arriva a 6 s: in quel caso l'ultima frase, forse tagliata a metà parola,
+resta provvisoria e si ritrascrive nella finestra dopo. Le parole ripetute
+nella sovrapposizione si tolgono unendo il testo (`TranscriptMerger`).
+
+Il lavoro non blocca mai la registrazione: una finestra alla volta, in un
+isolate separato, con il modello tenuto in memoria. Se Whisper è lento il
+passo si allunga (fino a 5 s); se resta comunque indietro di oltre 18 s il
+tratto vecchio si salta (il testo resta al passo col parlato) e si recupera
+dopo il salvataggio (operazione «Completo la trascrizione», visibile nella
+card della registrazione), insieme all'ultimo tratto ancora provvisorio. Le
+finestre silenziose non vanno a Whisper e le frasi che Whisper inventa sul
+silenzio («Sottotitoli creati dalla comunità Amara.org»…) si scartano.
+
+Senza modello dal vivo (download non riuscito, telefono con i dati mobili)
+si usa il modello scaricato dall'utente come prima: pezzi da ~10 s (9 s
+nuovi + 1 s di sovrapposizione), ognuno definitivo appena trascritto
+(`LiveWindowPlanner.slow`).
+
+**Scelta del modello e latenza** (misurata su un portatile Intel Core
+Ultra 5 226V, 8 core, senza altri lavori in corso, con un audio di prova in
+italiano di 58 s sintetizzato con la voce Elsa di Windows, simulando la
+registrazione in tempo reale con il `LiveWindowPlanner` dell'app e
+`whisper_ggml.dll`, 4 thread):
+
+| Modello | Whisper per finestra (mediana) | Testo provvisorio: ritardo medio / peggiore (90°) | Qualità in italiano |
+|---|---|---|---|
+| tiny q5_1 (31 MiB) | 0,38 s | 1,4 s / 2,5 s | troppi errori («avariabili», «legga una full», frasi inventate) |
+| **base q5_1 (57 MiB)** | **0,77 s** | **1,8 s / 2,9 s** | buona («possiamo separare le variabili e integrare entrambi i membri») |
+| small q5_1 (181 MiB) | solo l'encoder 2,5–6 s | oltre 5 s | — |
+
+«Peggiore» è il ritardo della prima parola di ogni tratto nuovo (passo di
+2 s più il tempo di Whisper); il testo definitivo arriva in mediana 1,8 s
+dopo la fine della frase; il modello si carica in 0,9 s. Base è il modello
+più leggero con un italiano leggibile e sta sotto i 3 s. Con il PC già
+occupato al 100% (in una prima misura UniNotes trascriveva in parallelo
+un'altra registrazione con il vecchio ripiego, `whisper-cli` e
+large-v3-turbo) base impiegava 0,9–2,3 s per finestra e il ritardo medio
+saliva a 1,9–3,5 s: il passo che si allunga da solo tiene comunque il testo
+al passo con il parlato.
+
+Peso: il modello aggiunge ~52 MiB a UniNotes_setup.exe (LZMA2 lo comprime
+poco: 59,7 MB → 54,8 MB) e ~54 MiB a UniNotes-windows.zip (56,7 MB).
 
 ## Salvataggio e formati
 

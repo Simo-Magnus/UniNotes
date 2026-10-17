@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:ffi';
 import 'dart:io';
 
 import 'package:archive/archive_io.dart';
@@ -87,6 +88,10 @@ class WhisperSegment {
 /// isolate di whisper.cpp), così la registrazione non rallenta.
 abstract class LiveWhisper {
   String get modelId;
+
+  /// Modello dal vivo ([kLiveWhisperModel]): abbastanza veloce per
+  /// ritrascrivere ogni ~2 s il tratto in corso.
+  bool get quick => modelId == kLiveWhisperModel.id;
   Future<List<WhisperSegment>> transcribeWav(File wav16k);
   Future<void> close();
 }
@@ -121,7 +126,10 @@ class WhisperService {
     List<String>? macCliCandidates,
     this._nativeDecoder,
     this._livePlugin,
-  }) : _baseDir = baseDir ?? getApplicationSupportDirectory,
+    Directory? Function()? bundledModels,
+    this._cpuSupportsPlugin,
+  }) : _bundledModels = bundledModels ?? _defaultBundledModels,
+       _baseDir = baseDir ?? getApplicationSupportDirectory,
        _downloader = FileDownloader(
          httpClientFactory: httpClientFactory,
          freeSpace: freeSpace,
@@ -156,6 +164,22 @@ class WhisperService {
   /// riserva.
   final Future<bool> Function(File input, File wav)? _nativeDecoder;
   final LiveWhisper Function(File model, String modelId)? _livePlugin;
+
+  /// Cartella dei modelli inclusi nell'app (Windows: `data/whisper/`
+  /// accanto a uninotes.exe, dall'installatore), null se non c'è.
+  final Directory? Function() _bundledModels;
+  final bool Function()? _cpuSupportsPlugin;
+
+  static Directory? _defaultBundledModels() {
+    if (!Platform.isWindows) return null;
+    try {
+      return Directory(
+        p.join(p.dirname(Platform.resolvedExecutable), 'data', 'whisper'),
+      );
+    } catch (_) {
+      return null;
+    }
+  }
 
   Future<bool> _decodeNative(File input, File wav) async {
     try {
@@ -522,9 +546,63 @@ class WhisperService {
     return installed.isEmpty ? null : whisperModelById(installed.first);
   }
 
-  /// Whisper per la trascrizione dal vivo, null se non è installato (manca
-  /// il modello o `whisper-cli`).
+  /// whisper.cpp dentro l'app si può usare per il testo dal vivo. Su
+  /// Windows è compilato per CPU con AVX2 (whisper_ggml): su processori più
+  /// vecchi (prima del 2013) si userebbe un'istruzione che non hanno.
+  bool get liveModelSupported {
+    final check = _cpuSupportsPlugin;
+    if (check != null) return check();
+    if (host != WhisperHost.windows || !Platform.isWindows) return true;
+    return _windowsHasAvx2();
+  }
+
+  static bool? _avx2;
+  static bool _windowsHasAvx2() => _avx2 ??= () {
+    try {
+      final k32 = DynamicLibrary.open('kernel32.dll');
+      final present = k32
+          .lookupFunction<Int32 Function(Uint32), int Function(int)>(
+            'IsProcessorFeaturePresent',
+          );
+      // PF_AVX2_INSTRUCTIONS_AVAILABLE
+      return present(40) != 0;
+    } catch (_) {
+      return false;
+    }
+  }();
+
+  /// Il modello dal vivo: incluso nell'app (Windows) o già scaricato; null
+  /// se manca.
+  Future<File?> liveModelFile() async {
+    final bundled = _bundledModels();
+    if (bundled != null) {
+      final f = File(p.join(bundled.path, kLiveWhisperModel.fileName));
+      try {
+        if (await f.exists()) return f;
+      } catch (_) {}
+    }
+    final f = await modelFile(kLiveWhisperModel);
+    return await f.exists() ? f : null;
+  }
+
+  /// Scarica il modello dal vivo (57 MiB, una volta sola; riprende un
+  /// download interrotto).
+  Stream<WhisperProgress> downloadLiveModel({CancelToken? cancel}) =>
+      downloadModel(kLiveWhisperModel, cancel: cancel);
+
+  /// Whisper per la trascrizione dal vivo: il modello dal vivo con
+  /// whisper.cpp dentro l'app (niente da installare); senza, il modello
+  /// scaricato dall'utente più adatto. null se non c'è nessun modello.
   Future<LiveWhisper?> liveEngine() async {
+    if (liveModelSupported) {
+      final quick = await liveModelFile();
+      if (quick != null) {
+        return (_livePlugin ?? PluginLiveWhisper.new)(
+          quick,
+          kLiveWhisperModel.id,
+        );
+      }
+    }
     final st = await status();
     final m = pickLiveModel(st.models);
     if (!st.engineReady || m == null) return null;
@@ -784,7 +862,7 @@ String segmentsToMarkdown(
 /// Trascrizione dal vivo con `whisper-cli` (PC, Mac con Homebrew): un
 /// processo separato per ogni pezzo, con pochi thread per lasciare spazio
 /// al resto del sistema.
-class _CliLiveWhisper implements LiveWhisper {
+class _CliLiveWhisper extends LiveWhisper {
   _CliLiveWhisper(this._w, this._cli, this._model, this.modelId);
   final WhisperService _w;
   final File _cli;

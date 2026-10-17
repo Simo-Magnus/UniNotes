@@ -363,6 +363,35 @@ const List<WhisperModelInfo> kWhisperModels = [
   ),
 ];
 
+/// Modello per la **trascrizione dal vivo** con Whisper (ripiego quando il
+/// riconoscimento vocale del sistema non c'è): base quantizzato q5_1, 57 MiB.
+/// Non compare nella tabella: non si sceglie, serve solo al testo
+/// provvisorio durante la registrazione (la trascrizione completa usa il
+/// modello scelto dall'utente). Su Windows è incluso nell'installatore
+/// (windows/CMakeLists.txt, `data/whisper/` accanto a uninotes.exe); sugli
+/// altri sistemi si scarica da solo la prima volta che serve.
+///
+/// Scelto misurando la latenza su PC (docs/registratore.md): tiny è più
+/// veloce ma in italiano sbaglia troppe parole; small resta indietro sulle
+/// finestre di 2 s.
+const kLiveWhisperModel = WhisperModelInfo(
+  id: 'base-q5_1',
+  params: '74 M',
+  disk: '57 MiB',
+  approxBytes: 59707625,
+  ram: '~200 MB',
+  gpu: 'Non serve',
+  speed: '~7×',
+  italian: 'Bassa: comprensibile, qualche errore',
+  multilingual: true,
+  italianOk: true,
+  minHardware: 'PC con CPU AVX2 (dal 2013); telefono recente',
+  platforms: _all,
+  sha1: 'a3733eda680ef76256db5fc5dd9de8629e62c5e7',
+  quantized: true,
+  note: 'Solo per il testo dal vivo durante la registrazione.',
+);
+
 /// Modello consigliato: large-v3-turbo q5_0 su PC/Mac, small sul telefono.
 const kRecommendedDesktopModel = 'large-v3-turbo-q5_0';
 const kRecommendedPhoneModel = 'small';

@@ -114,8 +114,13 @@ final class LiveSpeech: NSObject {
     session = ses
     authorize { [weak self] ok in
       guard let self = self else { return }
-      guard ok, ses == self.session else {
+      guard ses == self.session else {
         result(false)
+        return
+      }
+      guard ok else {
+        // permesso negato: l'app lo spiega e usa Whisper
+        result("denied")
         return
       }
       let loc = Locale(identifier: locale)
@@ -209,6 +214,12 @@ private func pcmLevel(_ data: Data) -> Float {
   return (sum / Float(n)).squareRoot()
 }
 
+/// Errore «Siri e Dettatura sono disattivate» (kLSRErrorDomain 201).
+private func isDictationOff(_ error: Error) -> Bool {
+  let e = error as NSError
+  return e.domain == "kLSRErrorDomain" && e.code == 201
+}
+
 /// SFSpeechRecognizer con richieste a buffer che si susseguono.
 final class SFSpeechEngine: LiveSpeechEngine {
   private let recognizer: SFSpeechRecognizer
@@ -273,7 +284,18 @@ final class SFSpeechEngine: LiveSpeechEngine {
       }
       return
     }
-    guard error != nil, current else { return }
+    guard let err = error, current else { return }
+    // Siri e Dettatura disattivate (macOS): nessuna richiesta può riuscire,
+    // inutile riprovare; l'app lo spiega e usa Whisper
+    if isDictationOff(err) {
+      if !lastPartial.isEmpty {
+        emit("result", ["text": lastPartial])
+        lastPartial = ""
+      }
+      emit("error", ["message": "dictation", "fatal": true])
+      cancel()
+      return
+    }
     // la richiesta si è chiusa con un errore (anche «nessun parlato»):
     // il testo provvisorio resta e se ne apre un'altra
     if !lastPartial.isEmpty {
@@ -290,7 +312,7 @@ final class SFSpeechEngine: LiveSpeechEngine {
     if errors >= 5 {
       emit(
         "error",
-        ["message": error?.localizedDescription ?? "Riconoscimento non riuscito", "fatal": true])
+        ["message": err.localizedDescription, "fatal": true])
       cancel()
       return
     }

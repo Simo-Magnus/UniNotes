@@ -17,6 +17,9 @@ import 'package:flutter/services.dart';
 ///   pipe (EXTRA_AUDIO_SOURCE) e non apre il microfono;
 /// - Windows (windows/runner/live_speech.cpp): Windows.Media.SpeechRecognition,
 ///   dettatura continua (il microfono è condiviso con la registrazione).
+///   Funziona solo con «Riconoscimento vocale online» attivo (l'audio passa
+///   dai servizi Microsoft): senza, [support] risponde `privacy` e la card
+///   lo spiega con il pulsante per le impostazioni ([speechNotice]).
 ///
 /// Dove il sistema non offre nulla (Linux, Android prima del 13, lingua non
 /// disponibile) [support] risponde «non disponibile» e la trascrizione dal
@@ -86,6 +89,7 @@ class SystemSpeech {
         feedsAudio: r['feedsAudio'] != false,
         engine: '${r['engine'] ?? ''}',
         reason: r['reason'] is String ? r['reason'] as String : null,
+        languageOk: r['languageOk'] != false,
       );
     } catch (e) {
       // MissingPluginException (piattaforma senza riconoscitore) o errore
@@ -185,6 +189,7 @@ class SpeechSupport {
     this.feedsAudio = true,
     this.engine = '',
     this.reason,
+    this.languageOk = true,
   });
 
   static const none = SpeechSupport(available: false);
@@ -203,6 +208,10 @@ class SpeechSupport {
 
   /// Perché non è disponibile (codice del sistema, vedi [speechUnavailableText]).
   final String? reason;
+
+  /// La lingua chiesta è fra quelle del riconoscitore (Windows:
+  /// `SpeechRecognizer.SupportedTopicLanguages`).
+  final bool languageOk;
 }
 
 /// Lingua del riconoscimento: quella dell'insegnamento se nota (es. «en»
@@ -245,5 +254,93 @@ String? speechUnavailableText(String? reason) => switch (reason) {
   'privacy' =>
     'Su Windows attiva Impostazioni → Privacy e sicurezza → Voce → '
         '«Riconoscimento vocale online».',
+  'dictation' =>
+    'Sul Mac il riconoscimento vocale richiede la Dettatura: attivala in '
+        'Impostazioni di Sistema → Tastiera → Dettatura.',
   final r => r,
 };
+
+/// Avviso della card «Trascrizione» sul riconoscitore del sistema: cosa
+/// fare, eventuale nota sulla privacy e impostazioni da aprire.
+class SpeechNotice {
+  const SpeechNotice(this.text, {this.note, this.settings, this.action});
+  final String text;
+
+  /// Nota (es. dove passa l'audio).
+  final String? note;
+
+  /// Pagina delle impostazioni del sistema (es. `ms-settings:privacy-speech`).
+  final Uri? settings;
+
+  /// Etichetta del pulsante che apre [settings].
+  final String? action;
+}
+
+/// Impostazioni di Windows: Privacy e sicurezza → Voce.
+final kWindowsSpeechPrivacy = Uri.parse('ms-settings:privacy-speech');
+
+/// Impostazioni di Windows: Ora e lingua → Lingua e area geografica.
+final kWindowsLanguages = Uri.parse('ms-settings:regionlanguage');
+
+/// Nome della lingua per gli avvisi («l'italiano», «l'inglese»…).
+String languageName(String locale) =>
+    switch (locale.split('-').first.toLowerCase()) {
+      'it' => 'l\'italiano',
+      'en' => 'l\'inglese',
+      'fr' => 'il francese',
+      'de' => 'il tedesco',
+      'es' => 'lo spagnolo',
+      'pt' => 'il portoghese',
+      _ => 'la lingua della lezione',
+    };
+
+/// Avviso per il motivo [reason] ([SpeechSupport.reason]) per cui il
+/// riconoscitore del sistema non trascrive; null se non c'è niente da dire.
+/// [whisper]: intanto trascrive Whisper sul dispositivo.
+SpeechNotice? speechNotice(
+  String? reason, {
+  bool windows = false,
+  bool mac = false,
+  bool languageMissing = false,
+  String locale = 'it-IT',
+  bool whisper = false,
+}) {
+  final lang = languageName(locale);
+  final addLanguage =
+      'Aggiungi $lang in Impostazioni → Ora e lingua → Lingua e area '
+      'geografica → Aggiungi una lingua, con «Riconoscimento vocale».';
+  if (windows && reason == 'privacy') {
+    return SpeechNotice(
+      'Per il testo istantaneo attiva «Riconoscimento vocale online» in '
+      'Windows.${languageMissing ? ' $addLanguage' : ''}',
+      note:
+          'Con questa opzione l\'audio passa dai servizi Microsoft. '
+          '${whisper ? 'Finché è spenta il testo arriva da Whisper, sul PC e senza internet, con un paio di secondi di ritardo. ' : ''}'
+          'Vale dalla prossima registrazione.',
+      settings: kWindowsSpeechPrivacy,
+      action: 'Apri impostazioni',
+    );
+  }
+  if (windows && reason == 'locale') {
+    return SpeechNotice(
+      'Il riconoscimento vocale di Windows non ha $lang. $addLanguage',
+      note: 'Vale dalla prossima registrazione.',
+      settings: kWindowsLanguages,
+      action: 'Apri impostazioni',
+    );
+  }
+  final text = speechUnavailableText(reason);
+  if (text == null) return null;
+  if (mac && (reason == 'denied' || reason == 'dictation')) {
+    return SpeechNotice(
+      text,
+      settings: Uri.parse(
+        reason == 'denied'
+            ? 'x-apple.systempreferences:com.apple.preference.security?Privacy_SpeechRecognition'
+            : 'x-apple.systempreferences:com.apple.preference.keyboard?Dictation',
+      ),
+      action: 'Apri impostazioni',
+    );
+  }
+  return SpeechNotice(text);
+}

@@ -1,10 +1,13 @@
 import 'dart:io';
+import 'dart:math' as math;
+import 'dart:typed_data';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:university_notes/core/database/app_database.dart';
 import 'package:university_notes/core/services/app_services.dart';
+import 'package:university_notes/core/services/whisper_service.dart';
 import 'package:university_notes/features/cloud/cloud_drive_service.dart'
     show MemoryCloudSecrets;
 import 'package:university_notes/features/notes/ai_request_dialog.dart';
@@ -12,6 +15,7 @@ import 'package:university_notes/features/notes/lesson_transcripts.dart';
 import 'package:university_notes/features/notes/recorder/live_transcriber.dart';
 import 'package:university_notes/features/notes/recorder/overlay_logic.dart';
 import 'package:university_notes/features/notes/recorder/system_speech.dart';
+import 'package:university_notes/features/notes/recorder/wav.dart';
 import 'package:university_notes/features/notes/recycle_bin.dart';
 import 'package:university_notes/repositories/settings_repository.dart';
 
@@ -262,4 +266,181 @@ void main() {
     await s.removeLegacyGemini(secrets: secrets);
     expect(secrets.values, isNotEmpty);
   });
+
+  group('Windows senza «Riconoscimento vocale online»', () {
+    test('avviso con pulsante per le impostazioni e nota sulla privacy', () {
+      final n = speechNotice('privacy', windows: true, whisper: true)!;
+      expect(n.text, contains('Riconoscimento vocale online'));
+      expect(n.settings, Uri.parse('ms-settings:privacy-speech'));
+      expect(n.action, 'Apri impostazioni');
+      expect(n.note, contains('servizi Microsoft'));
+      expect(n.note, contains('Whisper'));
+      expect(n.note, contains('prossima registrazione'));
+      // anche la lingua manca: si spiega come aggiungerla
+      final both = speechNotice(
+        'privacy',
+        windows: true,
+        languageMissing: true,
+      )!;
+      expect(both.text, contains('Aggiungi l\'italiano'));
+      expect(both.note, isNot(contains('Whisper')));
+      // solo la lingua
+      final lang = speechNotice('locale', windows: true, locale: 'en-US')!;
+      expect(lang.text, contains('l\'inglese'));
+      expect(lang.text, contains('Riconoscimento vocale'));
+      expect(lang.settings, Uri.parse('ms-settings:regionlanguage'));
+      // altrove nessun pulsante per le impostazioni di Windows
+      expect(speechNotice('locale')!.settings, isNull);
+      expect(speechNotice('dictation', mac: true)!.action, 'Apri impostazioni');
+      expect(speechNotice(null, windows: true), isNull);
+    });
+
+    test('il motivo arriva dal sistema, si passa a Whisper', () async {
+      messenger.setMockMethodCallHandler(channel, (c) async {
+        return c.method == 'support'
+            ? {
+                'available': false,
+                'reason': 'privacy',
+                'languageOk': false,
+                'engine': 'windows',
+                'feedsAudio': false,
+              }
+            : null;
+      });
+      final live = LiveTranscriber(null, speech: SystemSpeech());
+      await live.begin(File('x.wav'), sampleRate: 16000, channels: 1);
+      expect(live.systemUnavailable, 'privacy');
+      expect(live.systemLanguageMissing, isTrue);
+      expect(live.engine, LiveEngine.none);
+      await live.close();
+    });
+  });
+
+  group('Whisper dal vivo', () {
+    late Directory tmp;
+    setUp(() async => tmp = await Directory.systemTemp.createTemp('un_live_'));
+    tearDown(() => tmp.delete(recursive: true));
+
+    WhisperService service({
+      Directory? bundled,
+      bool cpu = true,
+      Uri? modelUrl,
+      List<String>? used,
+    }) => WhisperService(
+      baseDir: () async => tmp,
+      host: WhisperHost.windows,
+      freeSpace: (_) async => null,
+      bundledModels: () => bundled,
+      cpuSupportsPlugin: () => cpu,
+      modelUrl: modelUrl == null ? null : (_) => modelUrl,
+      livePlugin: (model, id) {
+        used?.add(p.basename(model.path));
+        return _FakeLive(id);
+      },
+    );
+
+    test('scelta del motore: modello dal vivo incluso o scaricato', () async {
+      final bundle = Directory(p.join(tmp.path, 'data', 'whisper'))
+        ..createSync(recursive: true);
+      File(
+        p.join(bundle.path, kLiveWhisperModel.fileName),
+      ).writeAsBytesSync([1]);
+      final used = <String>[];
+      final w = service(bundled: bundle, used: used);
+      final e = (await w.liveEngine())!;
+      expect(e.quick, isTrue);
+      expect(e.modelId, 'base-q5_1');
+      expect(used, ['ggml-base-q5_1.bin']);
+      // CPU senza AVX2: niente whisper.cpp nell'app (e qui né modelli né
+      // whisper-cli: nessun motore)
+      expect(await service(bundled: bundle, cpu: false).liveEngine(), isNull);
+      // non incluso ma già scaricato
+      final models = Directory(p.join(tmp.path, 'whisper', 'models'))
+        ..createSync(recursive: true);
+      File(
+        p.join(models.path, kLiveWhisperModel.fileName),
+      ).writeAsBytesSync([1]);
+      expect((await service().liveModelFile())!.path, startsWith(models.path));
+      // il modello dal vivo non compare fra quelli dell'utente
+      expect((await service().status()).models, isEmpty);
+    });
+
+    test('finestre di 2 s: testo provvisorio, poi definitivo', () async {
+      final bundle = Directory(p.join(tmp.path, 'b'))..createSync();
+      File(
+        p.join(bundle.path, kLiveWhisperModel.fileName),
+      ).writeAsBytesSync([1]);
+      final live = LiveTranscriber(service(bundled: bundle));
+      final wav = File(p.join(tmp.path, 'rec.wav'));
+      // 2 s di «parlato» (tono) seguiti da una pausa di 2 s
+      final speech = pcm16(_tone(2));
+      final samples = Int16List(speech.length + 32000)..setAll(0, speech);
+      await writeWav16k(wav, samples);
+      await live.begin(wav, sampleRate: 16000, channels: 1);
+      expect(live.engine, LiveEngine.whisper);
+      expect(live.quick, isTrue);
+      expect(live.sourceLabel, contains('base-q5_1'));
+      live.onAudio(const Duration(seconds: 2));
+      expect(live.busy, isTrue);
+      await live.settle();
+      expect(live.partial, 'testo 2000 ms');
+      expect(live.segments, isEmpty);
+      // la finestra 0–4 s finisce in una pausa: definitivo
+      live.onAudio(const Duration(seconds: 4));
+      await live.settle();
+      expect(live.partial, '');
+      expect(live.segments.single.text, 'testo 4000 ms');
+      expect(live.lastTook, isNotNull);
+      expect(live.finish(const Duration(seconds: 4)), isEmpty);
+      await live.close();
+    });
+
+    test('download del modello non riuscito: la registrazione va', () async {
+      final live = LiveTranscriber(
+        service(modelUrl: Uri.parse('http://127.0.0.1:9/modello')),
+      );
+      await live.begin(
+        File(p.join(tmp.path, 'x.wav')),
+        sampleRate: 16000,
+        channels: 1,
+      );
+      expect(live.downloading, isFalse);
+      expect(live.downloadError, isNotNull);
+      expect(live.state, LiveState.unavailable);
+      await live.close();
+    });
+  });
+}
+
+/// Whisper finto: un segmento con la durata del pezzo.
+class _FakeLive extends LiveWhisper {
+  _FakeLive(this.modelId);
+  @override
+  final String modelId;
+
+  @override
+  Future<List<WhisperSegment>> transcribeWav(File wav16k) async {
+    final info = (await readWavInfo(wav16k))!;
+    final ms = info.dataLength ~/ 32;
+    return [
+      WhisperSegment(
+        Duration.zero,
+        'testo $ms ms',
+        end: Duration(milliseconds: ms),
+      ),
+    ];
+  }
+
+  @override
+  Future<void> close() async {}
+}
+
+/// Tono a 16 kHz mono per [seconds].
+Uint8List _tone(double seconds) {
+  final n = (seconds * 16000).round();
+  final s = Int16List(n);
+  for (var i = 0; i < n; i++) {
+    s[i] = (8000 * math.sin(2 * math.pi * 440 * i / 16000)).round();
+  }
+  return s.buffer.asUint8List();
 }

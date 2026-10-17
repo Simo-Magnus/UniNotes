@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/feedback/feedback_service.dart';
 import '../../core/reminders/notification_plan.dart' show AppRoutes;
@@ -11,6 +12,7 @@ import '../../core/theme/app_tokens.dart';
 import '../../models/course.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
+import '../links/whisper_models.dart' show kLiveWhisperModel;
 import '../study/course_catalog.dart';
 import '../study/study_widgets.dart' show promptText;
 import 'lecture_recorder.dart';
@@ -493,6 +495,8 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
           ),
         ),
       );
+    } else if (live != null && live.downloading) {
+      body = _DownloadProgress(fraction: live.downloadProgress);
     } else {
       body = Text(switch (state) {
         LiveState.off when !widget.recording =>
@@ -505,7 +509,19 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
         _ => 'In ascolto…',
       }, style: muted);
     }
-    final reason = speechUnavailableText(live?.systemUnavailable);
+    // perché non c'è il riconoscitore del sistema e come attivarlo (es.
+    // «Riconoscimento vocale online» su Windows), anche mentre trascrive
+    // Whisper
+    final notice = live == null || system
+        ? null
+        : speechNotice(
+            live.systemUnavailable,
+            windows: Platform.isWindows,
+            mac: Platform.isMacOS,
+            languageMissing: live.systemLanguageMissing,
+            locale: live.locale,
+            whisper: live.engine == LiveEngine.whisper,
+          );
     return GlassCard(
       margin: EdgeInsets.zero,
       child: Padding(
@@ -543,7 +559,7 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
             const SizedBox(height: 8),
             if (state == LiveState.unavailable)
               _SetupHint(
-                reason: reason,
+                downloadFailed: live?.downloadError != null,
                 onOpen: () => openWhisperLinks(context),
               )
             else
@@ -558,6 +574,10 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
                 ),
               ),
             ],
+            if (notice != null) ...[
+              const SizedBox(height: 10),
+              SystemSpeechNotice(notice: notice),
+            ],
           ],
         ),
       ),
@@ -565,12 +585,113 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
   }
 }
 
-/// Come attivare la trascrizione dal vivo: perché il sistema non la offre
-/// (se noto) e il ripiego su Whisper.
+/// Download del modello per il testo dal vivo (solo la prima volta, dove
+/// non è incluso nell'app).
+class _DownloadProgress extends StatelessWidget {
+  const _DownloadProgress({this.fraction});
+  final double? fraction;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final pct = fraction == null ? '' : ' ${(fraction! * 100).floor()}%';
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(
+          'Scarico il modello per il testo dal vivo '
+          '(${kLiveWhisperModel.disk}, una volta sola)…$pct',
+          style: theme.textTheme.bodyMedium?.copyWith(
+            color: theme.colorScheme.onSurfaceVariant,
+          ),
+        ),
+        const SizedBox(height: 8),
+        LinearProgressIndicator(value: fraction),
+        const SizedBox(height: 6),
+        Text(
+          'La registrazione è già partita: il parlato di questi secondi si '
+          'trascrive dopo il salvataggio.',
+          style: theme.textTheme.bodySmall?.copyWith(
+            color: theme.colorScheme.onSurfaceVariant,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Avviso sul riconoscitore del sistema: cosa fare, nota sulla privacy e
+/// pulsante per le impostazioni (es. `ms-settings:privacy-speech`).
+class SystemSpeechNotice extends StatelessWidget {
+  const SystemSpeechNotice({super.key, required this.notice});
+  final SpeechNotice notice;
+
+  Future<void> _open(BuildContext context) async {
+    final uri = notice.settings;
+    if (uri == null) return;
+    final messenger = ScaffoldMessenger.maybeOf(context);
+    var ok = false;
+    try {
+      ok = await launchUrl(uri);
+    } catch (_) {}
+    if (!ok) {
+      messenger?.showSnackBar(
+        const SnackBar(
+          content: Text('Impostazioni non aperte: aprile dal menu Start.'),
+        ),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final muted = theme.colorScheme.onSurfaceVariant;
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 2),
+          child: Icon(Icons.info_outline, size: 18, color: muted),
+        ),
+        const SizedBox(width: 8),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(notice.text, style: theme.textTheme.bodyMedium),
+              if (notice.note != null) ...[
+                const SizedBox(height: 4),
+                Text(
+                  notice.note!,
+                  style: theme.textTheme.bodySmall?.copyWith(color: muted),
+                ),
+              ],
+              if (notice.action != null && notice.settings != null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 4),
+                  child: TextButton.icon(
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                    ),
+                    onPressed: () => _open(context),
+                    icon: const Icon(Icons.settings_outlined, size: 18),
+                    label: Text(notice.action!),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Né il sistema né Whisper trascrivono: come avere il testo dal vivo.
 class _SetupHint extends StatelessWidget {
-  const _SetupHint({required this.onOpen, this.reason});
+  const _SetupHint({required this.onOpen, this.downloadFailed = false});
   final VoidCallback onOpen;
-  final String? reason;
+  final bool downloadFailed;
 
   @override
   Widget build(BuildContext context) {
@@ -579,8 +700,11 @@ class _SetupHint extends StatelessWidget {
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         Text(
-          '${reason == null ? '' : '$reason '}'
-          'Per il testo dal vivo scarica un modello Whisper.',
+          downloadFailed
+              ? 'Il modello per il testo dal vivo non si è scaricato (serve '
+                    'internet la prima volta): si riprova alla prossima '
+                    'registrazione. La registrazione continua.'
+              : 'Per il testo dal vivo scarica un modello Whisper.',
           style: theme.textTheme.bodyMedium?.copyWith(
             color: theme.colorScheme.onSurfaceVariant,
           ),

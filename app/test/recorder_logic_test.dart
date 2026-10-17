@@ -12,6 +12,8 @@ import 'package:university_notes/core/services/app_services.dart';
 import 'package:university_notes/features/notes/lecture_recorder.dart';
 import 'package:university_notes/features/notes/notes_store.dart';
 import 'package:university_notes/features/notes/recorder/background_controls.dart';
+import 'package:university_notes/features/notes/recorder/live_transcriber.dart'
+    show endsInPause;
 import 'package:university_notes/features/notes/recorder/live_transcript.dart';
 import 'package:university_notes/features/notes/recorder/overlay_logic.dart';
 import 'package:university_notes/features/notes/recorder/recording_meta.dart';
@@ -181,40 +183,147 @@ void main() {
   });
 
   group('trascrizione dal vivo', () {
-    test('pezzi da ~10 s con 1 s di sovrapposizione', () {
-      final pl = LiveChunkPlanner();
-      pl.advance(sec(8));
-      expect(pl.waiting, isEmpty);
-      pl.advance(sec(9.2));
-      expect(pl.waiting.single, LiveChunk(0, Duration.zero, sec(9)));
-      final c = pl.takeNext()!;
-      expect(c.index, 0);
-      expect(pl.takeNext(), isNull); // uno alla volta
-      pl.advance(sec(18));
-      expect(pl.waiting.single, LiveChunk(1, sec(8), sec(18)));
+    test('finestre corte: testo provvisorio che si aggiorna', () {
+      final pl = LiveWindowPlanner();
+      expect(pl.next(sec(1.5)), isNull); // meno di un passo
+      final a = pl.next(sec(2))!;
+      expect((a.start, a.end), (Duration.zero, sec(2)));
+      expect(pl.next(sec(4)), isNull); // una finestra alla volta
+      var out = pl.done(a, [seg(0, 1.8, 'Buongiorno a')]);
+      expect(out.committed, isEmpty);
+      expect(out.provisional, 'Buongiorno a');
+      // la finestra si allunga: stesso inizio, 2 s in più
+      final b = pl.next(sec(4))!;
+      expect((b.start, b.end), (Duration.zero, sec(4)));
+      out = pl.done(b, [seg(0, 3.5, 'Buongiorno a tutti, oggi')]);
+      expect(out.provisional, 'Buongiorno a tutti, oggi');
+      // pausa del parlato: il testo diventa definitivo e si riparte da lì
+      final c = pl.next(sec(6))!;
+      out = pl.done(c, [
+        seg(0, 3, 'Buongiorno a tutti,'),
+        seg(3, 5.2, 'oggi parliamo di limiti.'),
+      ], silentTail: true);
+      expect(out.committed.map((s) => s.text), [
+        'Buongiorno a tutti,',
+        'oggi parliamo di limiti.',
+      ]);
+      expect(out.provisional, '');
+      expect(pl.anchor, sec(6));
+      // la finestra dopo inizia poco prima (sovrapposizione)
+      final d = pl.next(sec(8))!;
+      expect((d.start, d.end), (sec(5.7), sec(8)));
     });
 
-    test(
-      'Whisper indietro: si saltano i pezzi vecchi e si recuperano alla fine',
-      () {
-        final pl = LiveChunkPlanner();
-        pl.advance(sec(9));
-        pl.takeNext(); // in lavorazione
-        pl.advance(sec(36)); // tre pezzi nuovi, ne aspetta solo uno
-        expect(pl.waiting.map((c) => c.index), [3]);
-        expect(pl.skipped.map((c) => c.index), [1, 2]);
-        pl.done();
-        final rest = pl.finish(sec(40));
-        expect(rest.map((c) => c.index), [1, 2, 3, 4]);
-        expect(rest.last.start, sec(35));
-        expect(rest.last.end, sec(40));
-        expect(pl.skipped, isEmpty);
-        // coda troppo corta: niente pezzo finale
-        final pl2 = LiveChunkPlanner()..advance(sec(9));
-        expect(pl2.finish(sec(9.3)).map((c) => c.index), [0]);
-      },
-    );
+    test('finestra piena: l\'ultima frase resta provvisoria', () {
+      final pl = LiveWindowPlanner();
+      for (final t in [2, 4]) {
+        pl.done(pl.next(sec(t))!, [seg(0, t - 0.2, 'parlato continuo')]);
+      }
+      final full = pl.next(sec(6))!;
+      expect(full.end, sec(6)); // 6 s: il massimo
+      final out = pl.done(full, [
+        seg(0, 2.4, 'Il teorema di Rolle'),
+        seg(2.4, 4.6, 'vale per le funzioni continue'),
+        seg(4.6, 6, 'e deriva'),
+      ]);
+      expect(out.committed.map((s) => s.text), [
+        'Il teorema di Rolle',
+        'vale per le funzioni continue',
+      ]);
+      // «e deriva» (forse tagliata) si ritrascrive nella finestra dopo
+      expect(out.provisional, 'e deriva');
+      expect(pl.anchor, sec(4.6));
+      final next = pl.next(sec(8))!;
+      expect(next.start, sec(4.3));
+      // una sola frase lunga: definitiva tutta, si riparte dalla fine
+      final pl2 = LiveWindowPlanner();
+      pl2.next(sec(7));
+      final out2 = pl2.done(LiveChunk(0, Duration.zero, sec(6)), [
+        seg(0, 6, 'una frase lunghissima senza pause'),
+      ]);
+      expect(out2.committed, hasLength(1));
+      expect(pl2.anchor, sec(6));
+    });
 
+    test('silenzio e frasi inventate: niente testo, la finestra riparte', () {
+      final pl = LiveWindowPlanner();
+      final a = pl.next(sec(2))!;
+      final out = pl.done(a, const [], silentTail: true);
+      expect(out.committed, isEmpty);
+      expect(out.provisional, '');
+      expect(pl.anchor, sec(2));
+      final b = pl.next(sec(4))!;
+      expect(
+        pl.done(b, [seg(2, 4, 'Sottotitoli creati dalla comunità Amara.org')]),
+        isA<WindowOutcome>().having((o) => o.provisional, 'provvisorio', ''),
+      );
+    });
+
+    test('Whisper lento: passo più lungo, poi salto e recupero alla fine', () {
+      final pl = LiveWindowPlanner();
+      final a = pl.next(sec(2))!;
+      pl.done(a, [seg(0, 2, 'uno')], took: sec(3));
+      expect(pl.currentStep, sec(3.6)); // 3 s × 1,2
+      expect(pl.next(sec(4)), isNull); // 2 s nuovi non bastano più
+      final b = pl.next(sec(5.6))!;
+      expect(b.end, sec(5.6));
+      pl.done(b, [seg(0, 5, 'uno due')], took: sec(10));
+      expect(pl.currentStep, sec(5)); // al massimo 5 s
+      // molto indietro (oltre 3 finestre): il tratto vecchio si salta
+      final c = pl.next(sec(40))!;
+      expect(pl.lagSkips, 1);
+      expect(pl.skipped.single.end, sec(34));
+      expect((c.start, c.end), (sec(33.7), sec(40)));
+      pl.abandon();
+      final rest = pl.finish(sec(41));
+      // saltato (0–34 s, diviso in pezzi da 30 s) e coda non definitiva
+      expect(rest.map((c) => (c.start, c.end)), [
+        (Duration.zero, sec(30)),
+        (sec(29.7), sec(34)),
+        (sec(33.7), sec(41)),
+      ]);
+      expect(pl.skipped, isEmpty);
+      // coda troppo corta: niente pezzo finale
+      final pl2 = LiveWindowPlanner();
+      pl2.done(pl2.next(sec(2))!, const [], silentTail: true);
+      expect(pl2.finish(sec(2.3)), isEmpty);
+    });
+
+    test('modello in download: il tratto registrato intanto si recupera', () {
+      final pl = LiveWindowPlanner()..skipTo(sec(25));
+      expect(pl.lagSkips, 0);
+      expect(pl.next(sec(26)), isNull);
+      expect(pl.next(sec(27))!.start, sec(24.7));
+      expect(pl.skipped.single, LiveChunk(0, Duration.zero, sec(25)));
+    });
+
+    test('modello pesante: pezzi da ~10 s, definitivi subito', () {
+      final pl = LiveWindowPlanner.slow();
+      expect(pl.next(sec(8)), isNull);
+      final a = pl.next(sec(9.2))!;
+      expect((a.start, a.end), (Duration.zero, sec(9)));
+      final out = pl.done(a, [
+        seg(0, 4, 'Buongiorno a tutti,'),
+        seg(4, 9, 'oggi parliamo di integrali'),
+      ]);
+      expect(out.committed, hasLength(2));
+      expect(out.provisional, '');
+      final b = pl.next(sec(18))!;
+      expect((b.start, b.end), (sec(8), sec(18)));
+    });
+
+    test('pausa alla fine della finestra', () {
+      Int16List samples(double speech, double pause) {
+        final s = pcm16(tone(speech));
+        final out = Int16List(s.length + (pause * 16000).round());
+        out.setAll(0, s);
+        return out;
+      }
+
+      expect(endsInPause(samples(2, 0.6)), isTrue);
+      expect(endsInPause(samples(2.6, 0)), isFalse);
+      expect(endsInPause(samples(0.3, 0)), isFalse); // troppo corta
+    });
     test('parole della sovrapposizione', () {
       List<String> w(String s) => s.split(' ');
       expect(

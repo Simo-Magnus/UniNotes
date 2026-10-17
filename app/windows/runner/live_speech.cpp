@@ -150,6 +150,21 @@ bool DictationSupports(const std::string& tag) {
   return false;
 }
 
+// «Riconoscimento vocale online» (Impostazioni → Privacy e sicurezza → Voce)
+// attivo: Windows lo scrive in HasAccepted = 1. Senza, la dettatura libera
+// non parte (SPERR_SPEECH_PRIVACY_POLICY_NOT_ACCEPTED), anche se i
+// riconoscitori offline della lingua sono installati: quelli servono solo
+// ai comandi con una grammatica, non alla dettatura.
+bool OnlineSpeechAccepted() {
+  DWORD value = 0;
+  DWORD size = sizeof(value);
+  const LSTATUS st = RegGetValueW(
+      HKEY_CURRENT_USER,
+      L"Software\\Microsoft\\Speech_OneCore\\Settings\\OnlineSpeechPrivacy",
+      L"HasAccepted", RRF_RT_REG_DWORD, nullptr, &value, &size);
+  return st == ERROR_SUCCESS && value == 1;
+}
+
 }  // namespace
 
 LiveSpeechChannel::LiveSpeechChannel(flutter::BinaryMessenger* messenger,
@@ -200,12 +215,20 @@ void LiveSpeechChannel::HandleMethodCall(
 
 flutter::EncodableValue LiveSpeechChannel::Support(const std::string& locale) {
   flutter::EncodableMap out;
-  const bool ok = DictationSupports(locale);
+  // lingua fra SupportedTopicLanguages (pacchetto vocale installato) e
+  // opzione della privacy: si controllano a ogni registrazione, così
+  // un'impostazione cambiata vale dalla registrazione successiva
+  const bool language = DictationSupports(locale);
+  const bool privacy = OnlineSpeechAccepted();
+  const bool ok = language && privacy;
   out[flutter::EncodableValue("available")] = flutter::EncodableValue(ok);
   out[flutter::EncodableValue("onDevice")] = flutter::EncodableValue(false);
   out[flutter::EncodableValue("feedsAudio")] = flutter::EncodableValue(false);
   out[flutter::EncodableValue("engine")] = flutter::EncodableValue("windows");
-  if (!ok) {
+  out[flutter::EncodableValue("languageOk")] = flutter::EncodableValue(language);
+  if (!privacy) {
+    out[flutter::EncodableValue("reason")] = flutter::EncodableValue("privacy");
+  } else if (!language) {
     out[flutter::EncodableValue("reason")] = flutter::EncodableValue("locale");
   }
   return flutter::EncodableValue(out);

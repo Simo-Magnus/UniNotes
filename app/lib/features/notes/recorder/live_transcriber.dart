@@ -1,9 +1,11 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as p;
 
+import '../../../core/services/power.dart';
 import '../../../core/services/whisper_service.dart';
 import 'live_transcript.dart';
 import 'recording_meta.dart';
@@ -19,13 +21,13 @@ enum LiveState {
   /// senza testo.
   unavailable,
 
-  /// Avvio del riconoscitore o caricamento del modello.
+  /// Avvio del riconoscitore, download o caricamento del modello.
   starting,
 
   /// Al passo con il parlato.
   running,
 
-  /// Whisper è indietro: alcuni pezzi si recuperano a fine registrazione.
+  /// Whisper è indietro: alcuni tratti si recuperano a fine registrazione.
   lagging,
 
   /// Errore del motore (la registrazione continua).
@@ -39,7 +41,8 @@ enum LiveEngine {
   /// Riconoscimento vocale del sistema in streaming (testo istantaneo).
   system,
 
-  /// Whisper a pezzi di ~10 s (ripiego).
+  /// Whisper sul dispositivo (ripiego): finestre di ~2 s con il modello dal
+  /// vivo, pezzi da ~10 s con un modello più pesante.
   whisper,
 }
 
@@ -50,27 +53,35 @@ enum LiveEngine {
 ///    registrazione man mano ([onPcm]); il testo provvisorio ([partial]) si
 ///    aggiorna mentre si parla e diventa un segmento quando il sistema lo
 ///    stabilizza.
-/// 2. **Whisper a pezzi** (ripiego, dove il sistema non offre nulla o il
-///    riconoscitore si ferma): legge dal WAV di lavoro l'ultimo pezzo (~10 s
-///    con 1 s di sovrapposizione), lo passa a Whisper fuori dal thread
-///    dell'interfaccia e unisce il testo. Un pezzo alla volta: se Whisper
-///    resta indietro, i pezzi saltati si recuperano alla fine ([recover]).
+/// 2. **Whisper** (ripiego, dove il sistema non offre nulla o il
+///    riconoscitore si ferma), sempre offline: con il modello dal vivo
+///    (piccolo, incluso nell'installatore di Windows o scaricato da solo la
+///    prima volta) ogni ~2 s ritrascrive dal WAV di lavoro il tratto non
+///    ancora definitivo ([LiveWindowPlanner]): il testo provvisorio si
+///    aggiorna come quello del sistema. Senza modello dal vivo usa quello
+///    scelto dall'utente a pezzi da ~10 s. Una trascrizione alla volta,
+///    fuori dal thread dell'interfaccia; i tratti saltati si recuperano
+///    alla fine ([recover]).
 ///
 /// Non blocca mai la registrazione: ogni errore ferma solo la trascrizione
 /// (o fa passare dal sistema a Whisper).
 class LiveTranscriber extends ChangeNotifier {
   LiveTranscriber(
     this._whisper, {
-    LiveChunkPlanner? planner,
+    LiveWindowPlanner? planner,
     this.speech,
     this.locale = 'it-IT',
-  }) : planner = planner ?? LiveChunkPlanner();
+  }) : _customPlanner = planner,
+       planner = planner ?? LiveWindowPlanner();
 
   final WhisperService? _whisper;
 
   /// Riconoscimento vocale del sistema (null = solo Whisper).
   final SystemSpeech? speech;
-  final LiveChunkPlanner planner;
+  final LiveWindowPlanner? _customPlanner;
+
+  /// Finestre di Whisper (scelte in base al modello all'avvio di Whisper).
+  LiveWindowPlanner planner;
   final TranscriptMerger merger = TranscriptMerger();
 
   /// Lingua del riconoscimento (es. «it-IT»).
@@ -81,7 +92,11 @@ class LiveTranscriber extends ChangeNotifier {
   String? modelId;
   String? error;
 
-  /// Testo provvisorio del riconoscitore del sistema (la frase in corso).
+  /// Whisper usa il modello dal vivo (testo provvisorio ogni ~2 s).
+  bool quick = false;
+
+  /// Testo provvisorio (la frase in corso): dal riconoscitore del sistema o
+  /// dall'ultima finestra di Whisper.
   String partial = '';
 
   /// Il riconoscitore del sistema lavora sul dispositivo.
@@ -91,6 +106,18 @@ class LiveTranscriber extends ChangeNotifier {
   /// [SpeechSupport.reason]).
   String? systemUnavailable;
 
+  /// La lingua manca fra quelle del riconoscitore del sistema.
+  bool systemLanguageMissing = false;
+
+  /// Download del modello dal vivo in corso ([downloadProgress] 0–1, null
+  /// se non si sa).
+  bool downloading = false;
+  double? downloadProgress;
+  String? downloadError;
+
+  /// Quanto ha impiegato Whisper per l'ultima finestra.
+  Duration? lastTook;
+
   LiveWhisper? _engine;
   File? _wav;
   int _sampleRate = 16000;
@@ -98,6 +125,8 @@ class LiveTranscriber extends ChangeNotifier {
   Directory? _tmp;
   Future<void>? _inFlight;
   bool _closed = false;
+  bool _finished = false;
+  CancelToken? _download;
 
   bool _feeds = false;
   StreamSubscription<SpeechEvent>? _sub;
@@ -146,6 +175,7 @@ class LiveTranscriber extends ChangeNotifier {
     try {
       final sup = await sp.support(locale);
       if (_closed) return false;
+      systemLanguageMissing = !sup.languageOk;
       if (!sup.available) {
         systemUnavailable = sup.reason;
         return false;
@@ -172,10 +202,15 @@ class LiveTranscriber extends ChangeNotifier {
     }
   }
 
-  /// Whisper dal punto [from] della registrazione in poi.
+  /// Whisper dal punto [from] della registrazione in poi. Se manca il
+  /// modello dal vivo lo scarica (barra nella card); l'audio registrato
+  /// nel frattempo si trascrive dopo il salvataggio.
   Future<void> _beginWhisper(Duration from) async {
+    final w = _whisper;
+    if (w != null) await _ensureLiveModel(w);
+    if (_closed || _finished) return;
     try {
-      _engine = await _whisper?.liveEngine();
+      _engine = await w?.liveEngine();
     } catch (e) {
       _engine = null;
     }
@@ -183,17 +218,59 @@ class LiveTranscriber extends ChangeNotifier {
       unawaited(_engine?.close());
       return;
     }
-    if (_engine == null) {
+    final eng = _engine;
+    if (eng == null) {
       engine = LiveEngine.none;
       state = LiveState.unavailable;
     } else {
       engine = LiveEngine.whisper;
-      modelId = _engine!.modelId;
-      planner.startAt(from);
+      modelId = eng.modelId;
+      quick = eng.quick;
+      final pl = planner =
+          _customPlanner ??
+          (eng.quick ? LiveWindowPlanner() : LiveWindowPlanner.slow());
+      pl.startAt(from);
+      pl.skipTo(_recorded);
       state = LiveState.running;
       _tmp ??= await Directory.systemTemp.createTemp('uninotes_live_');
     }
     notifyListeners();
+    _pump();
+  }
+
+  /// Scarica il modello dal vivo se manca (sul telefono solo con Wi‑Fi:
+  /// con i dati mobili si usa il modello già scaricato, se c'è).
+  Future<void> _ensureLiveModel(WhisperService w) async {
+    try {
+      if (!w.liveModelSupported || await w.liveModelFile() != null) return;
+      if (w.isPhone && !await Power.onWifi()) return;
+    } catch (_) {
+      return;
+    }
+    if (_closed) return;
+    final cancel = _download = CancelToken();
+    downloading = true;
+    downloadProgress = 0;
+    notifyListeners();
+    var shown = -1;
+    try {
+      await for (final pr in w.downloadLiveModel(cancel: cancel)) {
+        if (_closed) break;
+        downloadProgress = pr.fraction;
+        final pct = ((pr.fraction ?? 0) * 100).floor();
+        if (pct != shown) {
+          shown = pct;
+          notifyListeners();
+        }
+      }
+    } catch (e) {
+      if (!cancel.isCancelled) downloadError = '$e';
+    } finally {
+      _download = null;
+      downloading = false;
+      downloadProgress = null;
+      if (!_closed) notifyListeners();
+    }
   }
 
   void _onSpeech(SpeechEvent e) {
@@ -212,6 +289,8 @@ class LiveTranscriber extends ChangeNotifier {
         if (!e.fatal) return;
         debugPrint('Riconoscimento vocale del sistema: ${e.text}');
         error = e.text;
+        // il motivo resta visibile nella card (es. Dettatura disattivata)
+        systemUnavailable ??= e.text;
         _commit(partial);
         _fallbackToWhisper();
       case SpeechEventKind.ended:
@@ -284,10 +363,9 @@ class LiveTranscriber extends ChangeNotifier {
   /// Nuovo audio registrato fino a [recorded].
   void onAudio(Duration recorded) {
     _recorded = recorded;
-    if (_engine == null || _closed || state == LiveState.failed) return;
-    planner.advance(recorded);
-    final lag = planner.skipped.isNotEmpty;
-    final next = lag ? LiveState.lagging : LiveState.running;
+    if (_engine == null || _closed || _finished) return;
+    if (state == LiveState.failed) return;
+    final next = planner.lagSkips > 0 ? LiveState.lagging : LiveState.running;
     if (next != state) {
       state = next;
       notifyListeners();
@@ -305,14 +383,46 @@ class LiveTranscriber extends ChangeNotifier {
   }
 
   void _pump() {
-    if (_inFlight != null || _closed) return;
-    final c = planner.takeNext();
+    if (_inFlight != null || _closed || _finished || _engine == null) return;
+    if (state == LiveState.failed) return;
+    final c = planner.next(_recorded);
     if (c == null) return;
-    _inFlight = _process(c).whenComplete(() {
-      planner.done();
+    _inFlight = _window(c).whenComplete(() {
       _inFlight = null;
       if (!_closed) _pump();
     });
+  }
+
+  /// Trascrive la finestra [c]: testo provvisorio e segmenti definitivi.
+  Future<void> _window(LiveChunk c) async {
+    final sw = Stopwatch()..start();
+    try {
+      final r = await _run(c);
+      if (_finished || _closed) {
+        planner.abandon();
+        return;
+      }
+      lastTook = sw.elapsed;
+      final out = planner.done(
+        c,
+        r.segments,
+        silentTail: r.silentTail,
+        took: sw.elapsed,
+      );
+      if (out.committed.isNotEmpty) {
+        merger.add(out.committed);
+        onSegments?.call();
+      }
+      partial = out.provisional;
+      notifyListeners();
+    } catch (e) {
+      planner.abandon();
+      debugPrint('Trascrizione dal vivo: $e');
+      error = '$e';
+      partial = '';
+      state = LiveState.failed;
+      notifyListeners();
+    }
   }
 
   Future<void> _process(LiveChunk c, {File? source}) async {
@@ -336,10 +446,16 @@ class LiveTranscriber extends ChangeNotifier {
   Future<List<TranscriptSegment>> transcribeChunk(
     LiveChunk c, {
     File? source,
+  }) async => (await _run(c, source: source)).segments;
+
+  Future<({List<TranscriptSegment> segments, bool silentTail})> _run(
+    LiveChunk c, {
+    File? source,
   }) async {
+    const none = (segments: <TranscriptSegment>[], silentTail: true);
     final engine = _engine;
     final wav = source ?? _wav;
-    if (engine == null || wav == null) return const [];
+    if (engine == null || wav == null) return none;
     final info = source == null
         ? WavInfo(
             sampleRate: _sampleRate,
@@ -347,11 +463,12 @@ class LiveTranscriber extends ChangeNotifier {
             dataLength: 1 << 40,
           )
         : await readWavInfo(source);
-    if (info == null) return const [];
+    if (info == null) return none;
     final raw = await readWavRange(wav, info, c.start, c.end);
-    if (raw.isEmpty) return const [];
+    if (raw.isEmpty) return none;
     final mono = toMono16k(raw, info.sampleRate, info.channels);
-    if (pcmLevel(mono) < 0.12) return const [];
+    if (pcmLevel(mono) < 0.12) return none;
+    final silentTail = endsInPause(mono);
     final dir = _tmp ??= await Directory.systemTemp.createTemp(
       'uninotes_live_',
     );
@@ -359,16 +476,21 @@ class LiveTranscriber extends ChangeNotifier {
     await writeWav16k(file, mono);
     try {
       final out = await engine.transcribeWav(file);
-      return [
-        for (var i = 0; i < out.length; i++)
-          TranscriptSegment(
-            c.start + out[i].start,
-            c.start +
-                (out[i].end ??
-                    (i + 1 < out.length ? out[i + 1].start : c.end - c.start)),
-            out[i].text,
-          ),
-      ];
+      return (
+        segments: [
+          for (var i = 0; i < out.length; i++)
+            TranscriptSegment(
+              c.start + out[i].start,
+              c.start +
+                  (out[i].end ??
+                      (i + 1 < out.length
+                          ? out[i + 1].start
+                          : c.end - c.start)),
+              out[i].text,
+            ),
+        ],
+        silentTail: silentTail,
+      );
     } finally {
       try {
         if (await file.exists()) await file.delete();
@@ -393,20 +515,24 @@ class LiveTranscriber extends ChangeNotifier {
     if (partial.trim().isNotEmpty) _commit(partial);
   }
 
-  /// Fine registrazione a [recorded]: pezzi ancora da trascrivere con
-  /// Whisper (ultimo, saltati e in attesa).
+  /// Fine registrazione a [recorded]: tratti ancora da trascrivere con
+  /// Whisper (saltati e quello non ancora definitivo). Il testo provvisorio
+  /// sparisce: il suo tratto si ritrascrive dopo il salvataggio.
   List<LiveChunk> finish(Duration recorded) {
+    _download?.cancel();
+    _finished = true;
     if (_engine == null) return const [];
+    partial = '';
     return planner.finish(recorded);
   }
 
-  /// Whisper sta trascrivendo un pezzo.
+  /// Whisper sta trascrivendo una finestra.
   bool get busy => _inFlight != null;
 
-  /// Attende il pezzo in corso.
+  /// Attende la finestra in corso.
   Future<void> settle() async => _inFlight;
 
-  /// Recupera i pezzi [chunks] leggendo da [source] (il WAV della
+  /// Recupera i tratti [chunks] leggendo da [source] (il WAV della
   /// registrazione). [progress] riceve (fatti, totale).
   Future<void> recover(
     List<LiveChunk> chunks,
@@ -427,6 +553,7 @@ class LiveTranscriber extends ChangeNotifier {
   Future<void> close() async {
     _closed = true;
     _feeds = false;
+    _download?.cancel();
     final sub = _sub;
     _sub = null;
     await sub?.cancel();
@@ -454,4 +581,20 @@ class LiveTranscriber extends ChangeNotifier {
       ..clear()
       ..addAll(segs);
   }
+}
+
+/// La finestra [mono16k] finisce in una pausa: l'ultimo mezzo secondo è
+/// molto più basso del resto (~10 dB) o quasi silenzioso. Lì il testo
+/// diventa definitivo.
+bool endsInPause(
+  Int16List mono16k, {
+  Duration tail = const Duration(milliseconds: 500),
+}) {
+  final n = tail.inMilliseconds * 16;
+  if (mono16k.length < n * 2) return false;
+  final end = pcmLevel(
+    Int16List.sublistView(mono16k, mono16k.length - n),
+  );
+  final all = pcmLevel(Int16List.sublistView(mono16k, 0, mono16k.length - n));
+  return end < 0.15 || end < all - 0.17;
 }

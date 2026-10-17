@@ -128,11 +128,16 @@ class WhisperPluginEngine implements WhisperEngine {
   }
 }
 
-/// Trascrizione dal vivo con whisper.cpp dentro l'app (telefono, Mac senza
-/// `whisper-cli`): ogni pezzo gira in un isolate separato (whisper_ggml) e
-/// il modello resta in memoria fra un pezzo e l'altro. Pochi thread, per
-/// non togliere tempo di calcolo alla registrazione.
-class PluginLiveWhisper implements LiveWhisper {
+/// Trascrizione dal vivo con whisper.cpp dentro l'app (il modello dal vivo
+/// su tutti i sistemi, anche Windows; il modello dell'utente su telefono e
+/// Mac senza `whisper-cli`): ogni pezzo gira in un isolate separato
+/// (whisper_ggml) e il modello resta in memoria fra un pezzo e l'altro.
+/// Pochi thread, per non togliere tempo di calcolo alla registrazione.
+///
+/// Su Windows e Linux whisper_ggml prova a convertire l'audio con un
+/// `ffmpeg` nel PATH; se non c'è usa il file così com'è, che qui è già un
+/// WAV mono a 16 kHz.
+class PluginLiveWhisper extends LiveWhisper {
   PluginLiveWhisper(this._model, this.modelId);
   final File _model;
   @override
@@ -146,8 +151,14 @@ class PluginLiveWhisper implements LiveWhisper {
         transcribeRequest: wg.TranscribeRequest(
           audio: wav16k.path,
           language: 'it',
-          threads: math.max(1, math.min(Platform.numberOfProcessors ~/ 2, 3)),
+          threads: math.max(
+            1,
+            math.min(Platform.numberOfProcessors ~/ 2, quick ? 4 : 3),
+          ),
           isNoTimestamps: false,
+          // ogni finestra si trascrive da sola: il testo della precedente
+          // non deve condizionarla (si ripeterebbe)
+          noContext: true,
           keepModelLoaded: true,
         ),
         modelPath: _model.path,
