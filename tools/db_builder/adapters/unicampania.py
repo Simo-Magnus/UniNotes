@@ -486,6 +486,23 @@ def html_to_lines_camp(raw: str) -> list[str]:
     return html_to_lines(raw)
 
 
+_CHIUSURA_TITOLO = r"(?:”|&rdquo;|&quot;|&#8221;|»|&raquo;)"
+_INIZIO_AUTORE = r"(?=(?:[A-ZÀ-Ý]\.\s?){1,3}[A-ZÀ-Ý][a-zà-ÿ]+)"
+
+
+def _dividi_riferimenti(raw: str) -> str:
+    """«D.C. Giancoli “Physics. Principles with Applications.” D.Halliday, … "Fundamentals of Physics" J.W. Kane, …»:
+    riferimenti scritti di seguito, senza a capo, con l'autore prima del titolo tra virgolette. Vanno separati prima del
+    riconoscimento: il punto dentro il titolo non è la fine del riferimento. Il testo finale sul materiale del docente
+    («Appunti forniti a lezione…») non fa parte dell'ultimo riferimento."""
+    testo = re.sub(r"<[^>]+>", "", raw)
+    chiusure = len(re.findall(_CHIUSURA_TITOLO, testo))
+    if chiusure < 2 or not re.match(r"\s*(?:[A-ZÀ-Ý]\.\s?){1,3}[A-ZÀ-Ý]", testo.strip()):
+        return raw
+    raw = re.sub(r"(" + _CHIUSURA_TITOLO + r"[.,;]?)\s+" + _INIZIO_AUTORE, r"\1<br>", raw)
+    return re.sub(r"(?i)\s+(?:Appunti|Dispense|Slide|Materiale didattico)\b[^<]*", "", raw)
+
+
 def leggi_scheda(s: str) -> dict:
     s = _pulisci(s)
     testo = _testo(s)
@@ -498,11 +515,12 @@ def leggi_scheda(s: str) -> dict:
     t = re.search(r"Testi di riferimento(.*?)(?:Obiettivi formativi|Prerequisiti|Metodi didattici|English|$)", s, re.S)
     libri = []
     if t:
-        libri = estrai_libri(t.group(1))
+        testi_raw = _dividi_riferimenti(t.group(1))
+        libri = estrai_libri(testi_raw)
         if not libri:  # riconoscimento tollerante: elenchi puntati, prosa, voci senza editore
-            libri = libri_unipg([t.group(1)])
+            libri = libri_unipg([testi_raw])
         if not libri:
-            libri = libri_semplici(t.group(1))
+            libri = libri_semplici(testi_raw)
     return {"docente": _testo(doc.group(1)) if doc else None, "periodo": periodo,
             "nome": _testo(ins.group(1)) if ins else None, "libri": libri}
 

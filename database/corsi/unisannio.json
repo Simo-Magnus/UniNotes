@@ -2050,20 +2050,8 @@
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8594/2026/2?coorte=2026",
      "libri": [
       {
-       "titolo": "E. De Simone, Storia Economica. Dalla rivoluzione industriale alla rivoluzione informatica, Milano,",
-       "autori": null,
-       "editore": "E. De Simone",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "E. De Simone, Storia Economica. Dalla rivoluzione industriale alla rivoluzione informatica, Milano,"
-      },
-      {
-       "titolo": "Franco Angeli, 2010, ultima edizione.",
-       "autori": null,
+       "titolo": "Storia Economica. Dalla rivoluzione industriale alla rivoluzione informatica",
+       "autori": "E. De Simone",
        "editore": "Franco Angeli",
        "anno": 2010,
        "edizione": null,
@@ -2071,23 +2059,11 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Franco Angeli, 2010, ultima edizione."
+       "citazione": "E. De Simone, Storia Economica. Dalla rivoluzione industriale alla rivoluzione informatica, Milano, Franco Angeli, 2010, ultima edizione."
       },
       {
-       "titolo": "E. De Simone, V. Ferrandino, E. Cuomo, Banche e imprese in una provincia contadina, Milano,",
-       "autori": null,
-       "editore": "E. De Simone",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "E. De Simone, V. Ferrandino, E. Cuomo, Banche e imprese in una provincia contadina, Milano,"
-      },
-      {
-       "titolo": "Franco Angeli, 2009, capp. 2,4,5,6.",
-       "autori": null,
+       "titolo": "Banche e imprese in una provincia contadina",
+       "autori": "E. De Simone, V. Ferrandino, E. Cuomo",
        "editore": "Franco Angeli",
        "anno": 2009,
        "edizione": null,
@@ -2095,7 +2071,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Franco Angeli, 2009, capp. 2,4,5,6."
+       "citazione": "E. De Simone, V. Ferrandino, E. Cuomo, Banche e imprese in una provincia contadina, Milano, Franco Angeli, 2009, capp. 2,4,5,6."
       }
      ],
      "esami": [
@@ -2136,28 +2112,16 @@
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8595/2026/1?coorte=2026",
      "libri": [
       {
-       "titolo": "De Simone, Storia Economica. Dalla rivoluzione industriale alla rivoluzione informatica, Milano,",
+       "titolo": "De Simone, Storia Economica. Dalla rivoluzione industriale alla rivoluzione informatica, Milano, Franco Angeli, 2010, ultima edizione.",
        "autori": null,
-       "editore": "De Simone",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "De Simone, Storia Economica. Dalla rivoluzione industriale alla rivoluzione informatica, Milano,"
-      },
-      {
-       "titolo": "Franco Angeli, 2010, ultima edizione.",
-       "autori": null,
-       "editore": "Franco Angeli",
+       "editore": null,
        "anno": 2010,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Franco Angeli, 2010, ultima edizione."
+       "citazione": "De Simone, Storia Economica. Dalla rivoluzione industriale alla rivoluzione informatica, Milano, Franco Angeli, 2010, ultima edizione."
       }
      ],
      "esami": [
@@ -5513,7 +5477,7 @@
       {
        "titolo": "Economia internazionale. Teoria e Politica del Commercio Internazionale",
        "autori": "Krugman P.R., Obstfeld M., (2003)",
-       "editore": "Hoepli: Parte seconda",
+       "editore": "Hoepli",
        "anno": 2003,
        "edizione": null,
        "isbn": null,
@@ -5525,7 +5489,7 @@
       {
        "titolo": "Compendio di diritto alimentare",
        "autori": "Costato L., Borghi P., Rizzioli S., Paganizza V., Salvi L. (2022)",
-       "editore": "Wolters Kluver ed.: Capitolo 2 e 3",
+       "editore": "Wolters Kluver ed.",
        "anno": 2022,
        "edizione": null,
        "isbn": null,
@@ -6436,7 +6400,7 @@
       {
        "titolo": "Economia internazionale. Teoria e Politica del Commercio Internazionale",
        "autori": "Krugman P.R., Obstfeld M., (2003)",
-       "editore": "Hoepli: Parte seconda",
+       "editore": "Hoepli",
        "anno": 2003,
        "edizione": null,
        "isbn": null,
@@ -6448,7 +6412,7 @@
       {
        "titolo": "Compendio di diritto alimentare",
        "autori": "Costato L., Borghi P., Rizzioli S., Paganizza V., Salvi L. (2022)",
-       "editore": "Wolters Kluver ed.: Capitolo 2 e 3",
+       "editore": "Wolters Kluver ed.",
        "anno": 2022,
        "edizione": null,
        "isbn": null,
@@ -7304,7 +7268,7 @@
      "codice": "260144",
      "nome": "Economia Monetaria e Creditizia",
      "anno": 3,
-     "periodo": "Ciclo Annuale Unico Breve",
+     "periodo": "annuale",
      "periodo_inizio": "14/09/2026 00:00:00",
      "periodo_fine": "30/04/2027 00:00:00",
      "cfu": 12,
@@ -9098,16 +9062,16 @@
        "citazione": "Angelillo M. Statica ed elementi di dinamica, Maggioli Editore"
       },
       {
-       "titolo": "Carpinteri, A. Scienza delle Costruzioni, (Volume 1 e 2) Pitagora editrice, Bologna",
+       "titolo": "Carpinteri, A. Scienza delle Costruzioni, (Volume 1 e Pitagora editrice, Bologna",
        "autori": null,
-       "editore": "(Volume 1 e 2) Pitagora editrice",
+       "editore": null,
        "anno": null,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Carpinteri, A. Scienza delle Costruzioni, (Volume 1 e 2) Pitagora editrice, Bologna"
+       "citazione": "Carpinteri, A. Scienza delle Costruzioni, (Volume 1 e Pitagora editrice, Bologna"
       }
      ],
      "esami": [
@@ -19093,7 +19057,7 @@
       {
        "titolo": "Casa editrice: John Wiley&Sons 1999.",
        "autori": null,
-       "editore": "Casa editrice: John Wiley&Sons 1999",
+       "editore": "John Wiley&Sons 1999",
        "anno": 1999,
        "edizione": null,
        "isbn": null,
@@ -19371,28 +19335,16 @@
      "url": "https://unisannio.coursecatalogue.cineca.it/insegnamenti/2026/8844/2025/9999?coorte=2025",
      "libri": [
       {
-       "titolo": "Casa editrice: John Wiley&Sons 1999.",
-       "autori": null,
-       "editore": "Casa editrice: John Wiley&Sons 1999",
-       "anno": 1999,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Casa editrice: John Wiley&Sons 1999."
-      },
-      {
-       "titolo": "ISBN13: 9780073380193",
+       "titolo": "Casa editrice: John Wiley&Sons 1999. ISBN13: 9780073380193",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 1999,
        "edizione": null,
        "isbn": "9780073380193",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN13: 9780073380193"
+       "citazione": "Casa editrice: John Wiley&Sons 1999. ISBN13: 9780073380193"
       }
      ],
      "esami": [],
@@ -27847,7 +27799,7 @@
      "codice": "202004",
      "nome": "Tecnologie e Organizzazioni",
      "anno": 1,
-     "periodo": "Ciclo Annuale Unico Breve",
+     "periodo": "annuale",
      "periodo_inizio": "14/09/2026 00:00:00",
      "periodo_fine": "30/04/2027 00:00:00",
      "cfu": 12,
@@ -33958,18 +33910,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Mannina L., Daglia M., Ritieni A., La chimica e gli alimenti. Nutrienti e aspetti nutraceutici, Zanichelli."
-      },
-      {
-       "titolo": "Saranno inoltre forniti dal docente materiali didattici, dispense, articoli scientifici e review aggiornate utili all’approfondimento degli argomenti trattati. Tali materiali saranno essere resi disponibili sulla piattaforma e-learning HANDY Unisannio.",
-       "autori": null,
-       "editore": "dispense",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Saranno inoltre forniti dal docente materiali didattici, dispense, articoli scientifici e review aggiornate utili all’approfondimento degli argomenti trattati. Tali materiali saranno essere resi disponibili sulla piattaforma e-learning HANDY Unisannio."
       }
      ],
      "esami": [],
@@ -39175,7 +39115,7 @@
       {
        "titolo": ". S. O. Kasap, Optoelectronics and Photonics: Principles and Practices. Second edition., Editore: Pearson education limited, Anno edizione: 2013",
        "autori": null,
-       "editore": "Editore: Pearson education limited",
+       "editore": "Pearson education limited",
        "anno": 2013,
        "edizione": null,
        "isbn": null,

@@ -21,6 +21,10 @@ EDITORI = ["zanichelli", "mcgraw", "pearson", "hoepli", "giappichelli", "cedam",
            "esselibri", "pàtron", "patron", "clueb", "cleup", "levrotto", "celid", "progetto leonardo", "dispense",
            "jaca book", "raffaello cortina", "cortina", "erickson", "giunti", "ets", "plus", "aracne", "wolters",
            "packt", "manning", "no starch", "mit press", "princeton", "academic press", "crc"]
+# I nomi brevi degli editori ("ets", "plus", "sage", "edra", "press") non devono combaciare dentro altre parole
+# ("worksheets", "surplus", "message", "expressions"): confine di parola per i nomi fino a 6 lettere.
+_EDITORI_RE = re.compile(r"(?<![a-zà-ÿ])(?:" + "|".join(
+    re.escape(e) + (r"(?![a-zà-ÿ])" if len(e) <= 6 else "") for e in EDITORI) + ")")
 NON_LIBRO = re.compile(r"^(appunti|slide|slides|lucidi|dispense del docente|materiale (didattico )?(fornito|del docente|"
                        r"disponibile)|articoli|testi consigliati|testi di riferimento|bibliografia|studenti "
                        r"(non )?frequentanti|per il modulo|modulo)\b", re.I)
@@ -80,7 +84,7 @@ def _sembra_libro(line: str) -> bool:
         return False
     l = line.lower()
     has_year = bool(YEAR.search(line))
-    has_pub = any(e in l for e in EDITORI)
+    has_pub = bool(_EDITORI_RE.search(l))
     has_isbn = _isbn(line) is not None
     commas = line.count(",") + line.count(" - ") + line.count(" – ")
     return has_isbn or (has_pub and (has_year or commas >= 1)) or (has_year and commas >= 2)
@@ -240,7 +244,7 @@ def _libero(line: str) -> dict:
         if 2 <= len(before) <= 120:
             autori = before
     parts = [p.strip(" .") for p in re.split(r",\s*|;\s*", line)]
-    editore = next((p for p in parts if any(e in p.lower() for e in EDITORI)), None)
+    editore = next((p for p in parts if _EDITORI_RE.search(p.lower())), None)
     if editore and len(editore) > 60:
         editore = None
     sc = None if q else scomponi_citazione(line)

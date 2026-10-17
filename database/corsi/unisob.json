@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unisob",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-14",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unisob.na.it/ateneo/economia/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -1839,40 +1839,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/giurisprudenza/lepre/programma.asp?vr=1&id=20574",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403631-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403631-3 ISBN: 978-0194435932",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194036313",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403631-3"
-      },
-      {
-       "titolo": "ISBN: 978-0194435932",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780194435932",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ISBN: 978-0194435932"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403631-3 ISBN: 978-0194435932"
       }
      ],
      "esami": [],
@@ -2864,7 +2840,7 @@
       {
        "titolo": "Eminente – Editore: Il Mulino.",
        "autori": null,
-       "editore": "Eminente – Editore: Il Mulino",
+       "editore": "Eminente – Editore",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -3195,6 +3171,18 @@
        "tipo": null,
        "note": null,
        "citazione": "https://www.routledge.com/An-Introduction-to-Ecological-Economics/Costanza-Cumberland-Daly-Goodland-Norgaard-Kubiszewski-Franco/p/book/9781566706841"
+      },
+      {
+       "titolo": "CRC Press (2015) ISBN 9781566706841",
+       "autori": null,
+       "editore": null,
+       "anno": 2015,
+       "edizione": null,
+       "isbn": "9781566706841",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "CRC Press (2015) ISBN 9781566706841"
       }
      ],
      "esami": [],
@@ -3224,7 +3212,7 @@
    "url": "https://www.unisob.na.it/universita/facolta/lettere/lingue/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -5773,7 +5761,7 @@
       {
        "titolo": "George Yule, The Study of Language. Cambridge: CUP, 2010 (4th edition).",
        "autori": null,
-       "editore": "The Study of Language. Cambridge: CUP",
+       "editore": "The Study of Language. Cambridge",
        "anno": 2010,
        "edizione": null,
        "isbn": null,
@@ -7965,7 +7953,7 @@
    "url": "https://www.unisob.na.it/universita/facolta/lettere/beniculturali/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -8762,7 +8750,7 @@
       {
        "titolo": "Il valore dei beni culturali: paradigmi per un approccio non strumentale ad uno sviluppo heritage-based",
        "autori": "D’Auria A. (2017)",
-       "editore": "Enzo Albano Edizioni - ISBN: 978-8894158663(*)",
+       "editore": "Enzo Albano Edizioni - ISBN",
        "anno": 2017,
        "edizione": null,
        "isbn": "9788894158663",
@@ -13789,7 +13777,7 @@
    "url": "https://www.unisob.na.it/universita/facolta/formazione/serviziosociale/index.htm",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -14913,28 +14901,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20514",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [],
@@ -15493,28 +15469,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=19842",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [],
@@ -17592,7 +17556,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/educazione/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -17882,28 +17846,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=19960",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -17942,28 +17894,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=21365",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -18425,7 +18365,7 @@
       {
        "titolo": "H.I. , Marrou (2016), Storia dell’educazione nell’antichità, Edizioni Studium: Roma",
        "autori": null,
-       "editore": "Edizioni Studium: Roma",
+       "editore": "Edizioni Studium",
        "anno": 2016,
        "edizione": null,
        "isbn": null,
@@ -18580,8 +18520,8 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20601",
      "libri": [
       {
-       "titolo": "⁠•⁠ Fabietti, U., Storia dell’Antropologia (IV edizione), Zanichelli, Milano, 2024",
-       "autori": null,
+       "titolo": "Storia dell’Antropologia (IV edizione)",
+       "autori": "Fabietti, U.",
        "editore": "Zanichelli",
        "anno": 2024,
        "edizione": null,
@@ -18589,11 +18529,11 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "⁠•⁠ Fabietti, U., Storia dell’Antropologia (IV edizione), Zanichelli, Milano, 2024"
+       "citazione": "• Fabietti, U., Storia dell’Antropologia (IV edizione), Zanichelli, Milano, 2024"
       },
       {
-       "titolo": "⁠ ⁠Moro, E., Niola, M., Mangiare come Dio comanda, Torino, Einaudi, 2023",
-       "autori": null,
+       "titolo": "Mangiare come Dio comanda",
+       "autori": "Moro, E., Niola, M.",
        "editore": "Einaudi",
        "anno": 2023,
        "edizione": null,
@@ -18601,11 +18541,11 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "⁠ ⁠Moro, E., Niola, M., Mangiare come Dio comanda, Torino, Einaudi, 2023"
+       "citazione": "Moro, E., Niola, M., Mangiare come Dio comanda, Torino, Einaudi, 2023"
       },
       {
-       "titolo": "⁠ ⁠Niola, M., La capitale dell’anima, Milano, Raffaello Cortina Editore, 2026",
-       "autori": null,
+       "titolo": "La capitale dell’anima",
+       "autori": "Niola, M.",
        "editore": "Raffaello Cortina Editore",
        "anno": 2026,
        "edizione": null,
@@ -18613,7 +18553,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "⁠ ⁠Niola, M., La capitale dell’anima, Milano, Raffaello Cortina Editore, 2026"
+       "citazione": "Niola, M., La capitale dell’anima, Milano, Raffaello Cortina Editore, 2026"
       },
       {
        "titolo": "Marcel Mauss, Il saggio sul dono, Torino, Einaudi, 2002.",
@@ -21305,18 +21245,6 @@
        "citazione": "contrastare la povertà educativa, in M. Musello, V. Cafagna (a cura di), Saperi, tecnologia, inclusione. Temi e prospettive della scuola di oggi, Cafagna, Barletta, 2024, pp. 69-82."
       },
       {
-       "titolo": "La lettura ad alta voce condivisa. Un metodo in direzione dell'equità",
-       "autori": "F. Batini",
-       "editore": "il Mulino",
-       "anno": 2023,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "F. Batini (a cura di), La lettura ad alta voce condivisa. Un metodo in direzione dell'equità, il Mulino, Bologna, 2023."
-      },
-      {
        "titolo": "Tecniche per la lettura ad alta voce. 27 suggerimenti per la fascia 0-6 anni",
        "autori": "F. Batini, S. Giusti",
        "editore": "FrancoAngeli",
@@ -23568,28 +23496,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=21369",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -23628,28 +23544,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=19861",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -29438,28 +29342,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20128",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -29498,28 +29390,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20116",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -31588,18 +31468,6 @@
        "citazione": "de Landsheere G., Storia della pedagogia sperimentale. Cento anni di ricerca educativa nel mondo, Armando, Roma 1988 (ed or. La recherche en éducation dans le monde, PUF, Paris 1986)."
       },
       {
-       "titolo": "Fonti di una pedagogia della complessità",
-       "autori": "de Mennato P.",
-       "editore": "Liguori",
-       "anno": 1999,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "de Mennato P., Fonti di una pedagogia della complessità, Liguori, Napoli 1999."
-      },
-      {
        "titolo": "De Sanctis O., Varchetta D., Chello F., Itinerari di epistemologia pedagogica (1879-1945), Ursuliana, Napoli 2001.",
        "autori": null,
        "editore": null,
@@ -32066,6 +31934,18 @@
        "tipo": null,
        "note": null,
        "citazione": "E. Biffi, La ‘scrittura del caso’ come strategia di ricerca per le professioni educative, in Encyclopaideia XVIII (39), pp. 117-134, 2014."
+      },
+      {
+       "titolo": "Fonti di una pedagogia della complessità",
+       "autori": "de Mennato P.",
+       "editore": "Liguori",
+       "anno": 1999,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "de Mennato P., Fonti di una pedagogia della complessità, Liguori, Napoli 1999."
       }
      ],
      "esami": [
@@ -32336,7 +32216,7 @@
    "url": "https://www.unisob.na.it/universita/facolta/formazione/comunicazione/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -33736,28 +33616,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20469",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -33817,28 +33685,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20348",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [],
@@ -36304,28 +36160,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20346",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -36364,28 +36208,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=19866",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -36424,28 +36256,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=19870",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -39529,7 +39349,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/psicologia/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -40141,18 +39961,6 @@
        "citazione": "Il testo di lettura è: N. Carr, The Shallows: What the Internet is doing to our Brains, New York 2011."
       },
       {
-       "titolo": "E. Alessiato, La situazione digitale del tempo. Perlustrazioni filosofiche, Bibliopolis 2026",
-       "autori": null,
-       "editore": null,
-       "anno": 2026,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "E. Alessiato, La situazione digitale del tempo. Perlustrazioni filosofiche, Bibliopolis 2026"
-      },
-      {
        "titolo": "A. Civita, Filosofia della psicologia, in N. Vassallo (a cura di), Filosofia delle scienze, Einaudi, Torino 2003, pp. 281-315.",
        "autori": null,
        "editore": "Einaudi",
@@ -40477,28 +40285,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=21555",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0194435932",
+       "titolo": "2020 Oxford University Press ISBN: 978-0194435932",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194435932",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0194435932"
+       "citazione": "2020 Oxford University Press ISBN: 978-0194435932"
       }
      ],
      "esami": [],
@@ -43525,28 +43321,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=21250",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -45126,7 +44910,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/spc/lm59/index.htm?vr=1",
    "stato": "completo",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -46819,7 +46603,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/spc/lm57-85/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -46955,28 +46739,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20188",
      "libri": [
       {
-       "titolo": "2006 Libreria Editrice Cafoscarina",
-       "autori": null,
-       "editore": "2006 Libreria Editrice Cafoscarina",
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2006 Libreria Editrice Cafoscarina"
-      },
-      {
-       "titolo": "ISBN 978 88 7543 138 9",
+       "titolo": "2006 Libreria Editrice Cafoscarina ISBN 978 88 7543 138 9",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2006,
        "edizione": null,
        "isbn": "9788875431389",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN 978 88 7543 138 9"
+       "citazione": "2006 Libreria Editrice Cafoscarina ISBN 978 88 7543 138 9"
       }
      ],
      "esami": [
@@ -50947,7 +50719,7 @@
    "url": "https://www.unisob.na.it/universita/facolta/lettere/spc/lm43/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -51216,18 +50988,6 @@
        "tipo": null,
        "note": null,
        "citazione": "tre capitoli a scelta del seguente testo: Luigini, A., & Panciroli, C., Ambienti digitali per l’educazione all’arte e al patrimonio. Franco Angeli, Milano, 2018"
-      },
-      {
-       "titolo": "Ambienti digitali per l’educazione all’arte e al patrimonio",
-       "autori": "Luigini, A., & Panciroli, C.",
-       "editore": "Franco Angeli",
-       "anno": 2018,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Luigini, A., & Panciroli, C., Ambienti digitali per l’educazione all’arte e al patrimonio. Franco Angeli, Milano, 2018"
       },
       {
        "titolo": "EVA. BCS",
@@ -54065,7 +53825,7 @@
    "url": "https://www.unisob.na.it/ateneo/economia/lm77/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -56177,7 +55937,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/lettere/spc/lm38/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -57139,7 +56899,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "⁠\"Validation of Easy-to-Read Subtitles\", 2020, in \" Translation Studies and Information Technology - New Pathways for Researchers, Teachers and Professionals\", Rocío BERNABÉ Pilar ORERO Óscar GARCÍA Estella ONCINS"
+       "citazione": "\"Validation of Easy-to-Read Subtitles\", 2020, in \" Translation Studies and Information Technology - New Pathways for Researchers, Teachers and Professionals\", Rocío BERNABÉ Pilar ORERO Óscar GARCÍA Estella ONCINS"
       },
       {
        "titolo": "Academic writing for graduate students: Essential tasks and skills (3rd ed.)",
@@ -59680,7 +59440,7 @@
    "url": "https://www.unisob.na.it/universita/facolta/lettere/spc/lm49/index.htm?vr=1",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": []
   },
   {
@@ -59699,7 +59459,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/spc/lm87/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -63196,7 +62956,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/spc/lm51/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -64470,6 +64230,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Argentero P., I test nelle organizzazioni. Bologna: Il Mulino, 2006"
+      },
+      {
+       "titolo": "I test nelle organizzazioni",
+       "autori": "Argentero P.",
+       "editore": "Il Mulino",
+       "anno": 2006,
+       "edizione": null,
+       "isbn": "9788835149682",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Argentero P., I test nelle organizzazioni. Bologna: Il Mulino, 2006 Isbn: 9788835149682"
       }
      ],
      "esami": [],
@@ -66051,7 +65823,7 @@
    "url": "http://www.unisob.na.it/ateneo/restauro/index.htm?vr=1",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": []
   },
   {
@@ -66070,7 +65842,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/giurisprudenza/magistrale/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -71453,7 +71225,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/primaria/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-14",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": null,
@@ -72195,28 +71967,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20163",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -72421,7 +72181,7 @@
        "citazione": "Su classroom sono presenti tutte le slide delle lezioni, in attesa dell'uscita del libro del Docente (previsto per il prossimo settembre). Sbordone-Sbordone Fondamenti di matematica per la formazione di base. Vol. 1: Numeri e operazioni. Ed. Edises"
       },
       {
-       "titolo": "Sbordone-Sbordone, Fondamenti di matematica per la formazione di base. Vol. 1: Numeri e operazioni Ed. (Edises).",
+       "titolo": "Tutte le slide delle lezioni sono presenti su classroom. Siamo in attesa del libro del docente, inoltre vi è Fusco-Sbordone Fondamenti di matematica per la formazione di base. Elementi di geometria (Vol. Ed. Edises",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -72430,19 +72190,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Sbordone-Sbordone, Fondamenti di matematica per la formazione di base. Vol. 1: Numeri e operazioni Ed. (Edises)."
-      },
-      {
-       "titolo": "Tutte le slide delle lezioni sono presenti su classroom. Siamo in attesa del libro del docente, inoltre vi è Fusco-Sbordone Fondamenti di matematica per la formazione di base. Elementi di geometria (Vol. 2) Ed. Edises",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Tutte le slide delle lezioni sono presenti su classroom. Siamo in attesa del libro del docente, inoltre vi è Fusco-Sbordone Fondamenti di matematica per la formazione di base. Elementi di geometria (Vol. 2) Ed. Edises"
+       "citazione": "Tutte le slide delle lezioni sono presenti su classroom. Siamo in attesa del libro del docente, inoltre vi è Fusco-Sbordone Fondamenti di matematica per la formazione di base. Elementi di geometria (Vol. Ed. Edises"
       }
      ],
      "esami": [
@@ -73433,28 +73181,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=19851",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -75088,28 +74824,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=19845",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -77134,28 +76858,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=19872",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -77264,18 +76976,6 @@
        "tipo": null,
        "note": null,
        "citazione": "F.M. Sirignano, G. Borghese, Fondamenti di pedagogia della politica, Libreriauniversitaria edizioni, Padova, 2024.Fisichella (II Edizione aggiornata), Franco Angeli, Milano 2023."
-      },
-      {
-       "titolo": "aggiornata), Franco Angeli, Milano 2023.",
-       "autori": null,
-       "editore": "Franco Angeli",
-       "anno": 2023,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "aggiornata), Franco Angeli, Milano 2023."
       }
      ],
      "esami": [
@@ -77599,28 +77299,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20329",
      "libri": [
       {
-       "titolo": "2017 Oxford University Press",
-       "autori": null,
-       "editore": "2017 Oxford University Press",
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2017 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN 978 0 19 452456 8",
+       "titolo": "2017 Oxford University Press ISBN 978 0 19 452456 8",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2017,
        "edizione": null,
        "isbn": "9780194524568",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN 978 0 19 452456 8"
+       "citazione": "2017 Oxford University Press ISBN 978 0 19 452456 8"
       }
      ],
      "esami": [
@@ -77858,30 +77546,6 @@
        "citazione": "Cottini L., Morganti A. (2015). Evidence-Based Education e pedagogia speciale. Principi e modelli per l’inclusione. Roma: Carocci."
       },
       {
-       "titolo": "Come fare per gestire i comportamenti problematici nella pratica didattica: Affrontare la complessità con strategie, tecniche e strumenti efficaci",
-       "autori": "d’Alonzo, L.",
-       "editore": "Giunti EDU",
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "d’Alonzo, L. (2019). Come fare per gestire i comportamenti problematici nella pratica didattica: Affrontare la complessità con strategie, tecniche e strumenti efficaci. Giunti EDU."
-      },
-      {
-       "titolo": "La differenziazione didattica per l’inclusione. Meto¬di, strategie, attività",
-       "autori": "d’Alonzo L.",
-       "editore": "Erickson",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "d’Alonzo L. (2016). La differenziazione didattica per l’inclusione. Meto¬di, strategie, attività. Trento: Erickson."
-      },
-      {
        "titolo": "D’Angelo I., Crescimbeni M., Del Bianco N. (2025). ProgettAzione Inclusiva: Percorsi e prospettive in classi con alunni/e con Disturbo dello Spettro Autistico. Generis Publishing.",
        "autori": null,
        "editore": null,
@@ -78036,6 +77700,30 @@
        "tipo": null,
        "note": null,
        "citazione": "Montanari, M., & Ruzzante, G. (2021). Un curricolo scolastico senza barriere: la prospettiva inclusiva dell’Universal Design for Learning. Educational Reflective Practices - Open Access, (2-Special). https://doi.org/10.3280/erp2-Special-2021oa12915"
+      },
+      {
+       "titolo": "Come fare per gestire i comportamenti problematici nella pratica didattica: Affrontare la complessità con strategie, tecniche e strumenti efficaci",
+       "autori": "d’Alonzo, L.",
+       "editore": "Giunti EDU",
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "d’Alonzo, L. (2019). Come fare per gestire i comportamenti problematici nella pratica didattica: Affrontare la complessità con strategie, tecniche e strumenti efficaci. Giunti EDU."
+      },
+      {
+       "titolo": "La differenziazione didattica per l’inclusione. Meto¬di, strategie, attività",
+       "autori": "d’Alonzo L.",
+       "editore": "Erickson",
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "d’Alonzo L. (2016). La differenziazione didattica per l’inclusione. Meto¬di, strategie, attività. Trento: Erickson."
       }
      ],
      "esami": [
@@ -78371,28 +78059,16 @@
      "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=21035",
      "libri": [
       {
-       "titolo": "2020 Oxford University Press",
-       "autori": null,
-       "editore": "2020 Oxford University Press",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2020 Oxford University Press"
-      },
-      {
-       "titolo": "ISBN: 978-0-19-403941-3",
+       "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9780194039413",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-0-19-403941-3"
+       "citazione": "2020 Oxford University Press ISBN: 978-0-19-403941-3"
       }
      ],
      "esami": [
@@ -78635,18 +78311,6 @@
        "citazione": "Cottini L., Morganti A. (2015). Evidence-Based Education e pedagogia speciale. Principi e modelli per l’inclusione. Roma: Carocci."
       },
       {
-       "titolo": "La differenziazione didattica per l’inclusione. Meto¬di, strategie, attività",
-       "autori": "d’Alonzo L.",
-       "editore": "Erickson",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "d’Alonzo L. (2016). La differenziazione didattica per l’inclusione. Meto¬di, strategie, attività. Trento: Erickson."
-      },
-      {
        "titolo": "Pedagogia e didattica per realizzare l’inclusione. Guida all’Index",
        "autori": "Dovigo F.",
        "editore": "Carocci",
@@ -78765,6 +78429,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Pavone M. (2014). L’inclusione educativa. Indicazioni pedagogiche per la disabilità. Milano: Mondadori."
+      },
+      {
+       "titolo": "La differenziazione didattica per l’inclusione. Meto¬di, strategie, attività",
+       "autori": "d’Alonzo L.",
+       "editore": "Erickson",
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "d’Alonzo L. (2016). La differenziazione didattica per l’inclusione. Meto¬di, strategie, attività. Trento: Erickson."
       }
      ],
      "esami": [

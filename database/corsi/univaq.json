@@ -164,7 +164,7 @@
       {
        "titolo": "digitale, 5° ediz., Mario Schiavello, Leonardo Palmisano, Editore: Edises,",
        "autori": null,
-       "editore": "Editore: Edises",
+       "editore": "Edises",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -176,7 +176,7 @@
       {
        "titolo": "di Petrucci - Herring - Madura - Bissonette (Autore), Editore: Piccin-Nuova",
        "autori": null,
-       "editore": "Editore: Piccin-Nuova",
+       "editore": "Piccin-Nuova",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -605,7 +605,7 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/40742/2025/9999?coorte=2025",
      "libri": [
       {
-       "titolo": "I testi utilizzati e consigliati sono i seguenti: 1) Anatomia Umana- Elementi. Edi Ermes- ISBN: 978-88-7051-541-1. Autori: Arcuri et al. 2) Wheater- Istologia e anatomia microscopica - EDRA - ISBN 9788821438356",
+       "titolo": "I testi utilizzati e consigliati sono i seguenti: 1) Anatomia Umana- Elementi. Edi Ermes- ISBN: 978-88-7051-541-1. Autori: Arcuri et al.",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -614,7 +614,19 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "I testi utilizzati e consigliati sono i seguenti: 1) Anatomia Umana- Elementi. Edi Ermes- ISBN: 978-88-7051-541-1. Autori: Arcuri et al. 2) Wheater- Istologia e anatomia microscopica - EDRA - ISBN 9788821438356"
+       "citazione": "I testi utilizzati e consigliati sono i seguenti: 1) Anatomia Umana- Elementi. Edi Ermes- ISBN: 978-88-7051-541-1. Autori: Arcuri et al."
+      },
+      {
+       "titolo": "Wheater- Istologia e anatomia microscopica - EDRA - ISBN 9788821438356",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788821438356",
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "Wheater- Istologia e anatomia microscopica - EDRA - ISBN 9788821438356"
       }
      ],
      "esami": [],
@@ -4431,7 +4443,7 @@
        "citazione": "M.T. Busca, E. Nave (a cura di), Le parole della bioetica. Un dizionario ragionato, Il Pensiero Scientifico Editore, Roma 2021"
       },
       {
-       "titolo": "Da Re, Filosofia morale, Storia, teorie, argomenti, Pearson (ultima edizione);​​​​​​​",
+       "titolo": "Da Re, Filosofia morale, Storia, teorie, argomenti, Pearson (ultima edizione);",
        "autori": null,
        "editore": "Pearson (ultima edizione)",
        "anno": null,
@@ -4440,7 +4452,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Da Re, Filosofia morale, Storia, teorie, argomenti, Pearson (ultima edizione);​​​​​​​"
+       "citazione": "Da Re, Filosofia morale, Storia, teorie, argomenti, Pearson (ultima edizione);"
       },
       {
        "titolo": "R. Panikkar, La confidenza. Analisi di un sentimento, Jaka Book, Milano 2013.",
@@ -4543,7 +4555,7 @@
       {
        "titolo": "Fiorani, E., Gaffuri, L. (a cura di) (u.e.), Le rappresentazioni dello spazio. Immagini, linguaggi, narrazioni, FrancoAngeli: Milano.",
        "autori": null,
-       "editore": "FrancoAngeli: Milano",
+       "editore": "FrancoAngeli",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -4736,18 +4748,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Parte monografica: - Platone, Apologia di Socrate. Testo greco a fronte, a cura di G. Reale, Milano, Bompiani 2026."
-      },
-      {
-       "titolo": "Plotino, Sul Bene o l'Uno. Il trattato VI 9 (9). Traduzione e commento a cura di F. Casella, Milano, Vita e Pensiero 2026.",
-       "autori": null,
-       "editore": null,
-       "anno": 2026,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Plotino, Sul Bene o l'Uno. Il trattato VI 9 (9). Traduzione e commento a cura di F. Casella, Milano, Vita e Pensiero 2026."
       },
       {
        "titolo": "Parte istituzionale: - F. Ferrari, Filosofia antica, Milano, Le Monnier 2024 (da p. 194 a p. 391).",
@@ -5528,7 +5528,7 @@
       {
        "titolo": "Fiorani, E., Gaffuri, L. (a cura di) (u.e.), Le rappresentazioni dello spazio. Immagini, linguaggi, narrazioni, FrancoAngeli: Milano.",
        "autori": null,
-       "editore": "FrancoAngeli: Milano",
+       "editore": "FrancoAngeli",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -6801,16 +6801,28 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2028/34645/2026/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "Obbligatorio uno tra i seguenti due: 1) Blackmore, S. Coscienza, Codice 2) Gozzano, S. La Coscienza, Carocci, Roma Obbligatorio uno tra i seguenti due testi: a) Paternoster, Introduzione alla filosofia della mente, Laterza b) Kim, Philosophy of mind, Westview, Boulder Obbligatorio: Alter, Howell e K",
+       "titolo": "Obbligatorio uno tra i seguenti due: 1) Blackmore, S. Coscienza, Codice",
        "autori": null,
-       "editore": "Carocci",
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/34645/2023/9999?coorte=2024)",
+       "citazione": "Obbligatorio uno tra i seguenti due: 1) Blackmore, S. Coscienza, Codice"
+      },
+      {
+       "titolo": "Gozzano, S. La Coscienza, Carocci, Roma Obbligatorio uno tra i seguenti due testi: a) Paternoster, Introduzione alla filosofia della mente, Laterza b) Kim, Philosophy of mind, Westview, Boulder Obbligatorio: Alter, Howell e Kind, Paradossi e rompicapi in filosofia mente, Cortina 2024",
+       "autori": null,
+       "editore": null,
        "anno": 2024,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": "obbligatorio",
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/34645/2023/9999?coorte=2024)",
-       "citazione": "Obbligatorio uno tra i seguenti due: 1) Blackmore, S. Coscienza, Codice 2) Gozzano, S. La Coscienza, Carocci, Roma Obbligatorio uno tra i seguenti due testi: a) Paternoster, Introduzione alla filosofia della mente, Laterza b) Kim, Philosophy of mind, Westview, Boulder Obbligatorio: Alter, Howell e Kind, Paradossi e rompicapi in filosofia mente, Cortina 2024"
+       "citazione": "Gozzano, S. La Coscienza, Carocci, Roma Obbligatorio uno tra i seguenti due testi: a) Paternoster, Introduzione alla filosofia della mente, Laterza b) Kim, Philosophy of mind, Westview, Boulder Obbligatorio: Alter, Howell e Kind, Paradossi e rompicapi in filosofia mente, Cortina 2024"
       }
      ],
      "esami": [
@@ -8450,19 +8462,7 @@
        "citazione": "Claude Cohen-Tannoudji et. al. \"Quantum Mechanics, Volume 1\", Wiley ISBN:978-3-527-34553-3"
       },
       {
-       "titolo": "Quantum Mechanics, Volume 2",
-       "autori": null,
-       "editore": "Wiley",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/30513/2016/9999?coorte=2024)",
-       "citazione": "\"Quantum Mechanics, Volume 2\", Wiley"
-      },
-      {
-       "titolo": "ISBN: 978-3-527-34554-0",
+       "titolo": "\"Quantum Mechanics, Volume 2\", Wiley ISBN: 978-3-527-34554-0",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -8471,12 +8471,12 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/30513/2016/9999?coorte=2024)",
-       "citazione": "ISBN: 978-3-527-34554-0"
+       "citazione": "\"Quantum Mechanics, Volume 2\", Wiley ISBN: 978-3-527-34554-0"
       },
       {
        "titolo": "Meccanica Statistica Elementare",
        "autori": "M. Falcioni, A. Vulpiani",
-       "editore": "Springer-Verlag ISBN: 978-88-470-5653-4",
+       "editore": "Springer-Verlag ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788847056534",
@@ -9383,7 +9383,7 @@
        "citazione": "ABBAS: Le basi dell’immunologia – Editore Edra"
       },
       {
-       "titolo": "Sistema immunitario- Atlanti scientifici – editore Giunti 2021​​​​​​​",
+       "titolo": "Sistema immunitario- Atlanti scientifici – editore Giunti 2021",
        "autori": null,
        "editore": null,
        "anno": 2021,
@@ -9392,7 +9392,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Sistema immunitario- Atlanti scientifici – editore Giunti 2021​​​​​​​"
+       "citazione": "Sistema immunitario- Atlanti scientifici – editore Giunti 2021"
       }
      ],
      "esami": [
@@ -10831,7 +10831,7 @@
        "citazione": "ABBINANTE A, CORTESI ARDIZZONE V IGIENISTA ORALE – seconda edizione -, EDRA, MILANO, 2023"
       },
       {
-       "titolo": "Igienista orale. Teoria e pratica professionale. V.Cortesi Ardizzone, A. Abbinante Seconda edizione, 2023 - Edizione Edra ​​​​​​​",
+       "titolo": "Igienista orale. Teoria e pratica professionale. V.Cortesi Ardizzone, A. Abbinante Seconda edizione, 2023 - Edizione Edra",
        "autori": null,
        "editore": "2023 - Edizione Edra ​​​​​​​",
        "anno": 2023,
@@ -10840,7 +10840,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Igienista orale. Teoria e pratica professionale. V.Cortesi Ardizzone, A. Abbinante Seconda edizione, 2023 - Edizione Edra ​​​​​​​"
+       "citazione": "Igienista orale. Teoria e pratica professionale. V.Cortesi Ardizzone, A. Abbinante Seconda edizione, 2023 - Edizione Edra"
       }
      ],
      "esami": [
@@ -12067,30 +12067,6 @@
        "citazione": "Strachan – Read “Genetica molecolare umana” (Zanichelli)"
       },
       {
-       "titolo": "Materiale didattico integrativo (slide, dispense e link di approfondimento) reso disponibile sulla piattaforma e-learning/MOODLE di Ateneo.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Materiale didattico integrativo (slide, dispense e link di approfondimento) reso disponibile sulla piattaforma e-learning/MOODLE di Ateneo."
-      },
-      {
-       "titolo": "Autori: Marcello Ciaccio e Giuseppe Lippi EdiSES 2018",
-       "autori": null,
-       "editore": "Autori: Marcello Ciaccio e Giuseppe Lippi EdiSES 2018",
-       "anno": 2018,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Autori: Marcello Ciaccio e Giuseppe Lippi EdiSES 2018"
-      },
-      {
        "titolo": "Genetica humana e medica",
        "autori": "Neri – Genuardi",
        "editore": null,
@@ -13022,7 +12998,7 @@
        "citazione": "Il libro di testo di riferimento fondamentale ai fini dell'acquisizione dei contenuti del corso è: BARBONETTI - COCCIA: LEZIONI DI ENDOCRINOLOGIA - prima edizione 2023 - isbn 978-88-9385-349-1 - Società Editrice Esculapio - Bologna. (https://www.amazon.it/Lezioni-Endocrinologia-Arcangelo-Barbonetti/dp/8893853493)"
       },
       {
-       "titolo": "Unigastro, Manuale di Gastroenterologia Infermieristica, Editrice Gastroenterologica Italiana (EGI) ​​​​​​​",
+       "titolo": "Unigastro, Manuale di Gastroenterologia Infermieristica, Editrice Gastroenterologica Italiana (EGI)",
        "autori": null,
        "editore": "Editrice Gastroenterologica Italiana (EGI) ​​​​​​​",
        "anno": null,
@@ -13031,7 +13007,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Unigastro, Manuale di Gastroenterologia Infermieristica, Editrice Gastroenterologica Italiana (EGI) ​​​​​​​"
+       "citazione": "Unigastro, Manuale di Gastroenterologia Infermieristica, Editrice Gastroenterologica Italiana (EGI)"
       },
       {
        "titolo": "II Edizione Piccin Editore 2022",
@@ -13563,7 +13539,7 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/38003/2021/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "P. Badon, S.Cesaro. Casa editrice Ambrosiana 2015.Seconda edizione​​​​​​​",
+       "titolo": "P. Badon, S.Cesaro. Casa editrice Ambrosiana 2015.Seconda edizione",
        "autori": null,
        "editore": null,
        "anno": 2015,
@@ -13572,7 +13548,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "P. Badon, S.Cesaro. Casa editrice Ambrosiana 2015.Seconda edizione​​​​​​​"
+       "citazione": "P. Badon, S.Cesaro. Casa editrice Ambrosiana 2015.Seconda edizione"
       },
       {
        "titolo": "P. Di Giacomo, L. A. Rigon. Casa Editrice Ambrosiana. 2016.Secondaedizione",
@@ -13691,18 +13667,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Ref. Text books M. Penco. “Dispense di Cardiologia per le lauree triennali nelle professioni sanitarie”. Cesi Edizioni Calabrò - D'Andrea – Sarubbi “CARDIOLOGIA per Scienze Motorie e Scienze Infermieristiche” edizioni Idelson-Gnocchi"
-      },
-      {
-       "titolo": "emergenza. Ambrosiana, Rozzano (MI), 2022",
-       "autori": null,
-       "editore": "emergenza. Ambrosiana",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "emergenza. Ambrosiana, Rozzano (MI), 2022"
       },
       {
        "titolo": "Badon P., & Giusti, G.D. Assistenza infermieristica in area critica e inemergenza. Ambrosiana, Rozzano (MI), 2022Materiale didattico fornito dal docente messo a disposizione sullepiattaforme di Ateneo (Moodle / Teams)",
@@ -14425,7 +14389,7 @@
        "citazione": "Il libro di testo di riferimento fondamentale ai fini dell'acquisizione dei contenuti del corso è: BARBONETTI - COCCIA: LEZIONI DI ENDOCRINOLOGIA - prima edizione 2023 - isbn 978-88-9385-349-1 - Società Editrice Esculapio - Bologna. (https://www.amazon.it/Lezioni-Endocrinologia-Arcangelo-Barbonetti/dp/8893853493)"
       },
       {
-       "titolo": "Unigastro, Manuale di Gastroenterologia Infermieristica, Editrice Gastroenterologica Italiana (EGI) ​​​​​​​",
+       "titolo": "Unigastro, Manuale di Gastroenterologia Infermieristica, Editrice Gastroenterologica Italiana (EGI)",
        "autori": null,
        "editore": "Editrice Gastroenterologica Italiana (EGI) ​​​​​​​",
        "anno": null,
@@ -14434,7 +14398,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/39197/2021/9999?coorte=2025)",
-       "citazione": "Unigastro, Manuale di Gastroenterologia Infermieristica, Editrice Gastroenterologica Italiana (EGI) ​​​​​​​"
+       "citazione": "Unigastro, Manuale di Gastroenterologia Infermieristica, Editrice Gastroenterologica Italiana (EGI)"
       }
      ],
      "stato_libri": "completo",
@@ -14639,7 +14603,7 @@
      "docenti": [],
      "libri": [
       {
-       "titolo": "P. Badon, S.Cesaro. Casa editrice Ambrosiana 2015.Seconda edizione​​​​​​​",
+       "titolo": "P. Badon, S.Cesaro. Casa editrice Ambrosiana 2015.Seconda edizione",
        "autori": null,
        "editore": null,
        "anno": 2015,
@@ -14648,7 +14612,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/38003/2021/9999?coorte=2024)",
-       "citazione": "P. Badon, S.Cesaro. Casa editrice Ambrosiana 2015.Seconda edizione​​​​​​​"
+       "citazione": "P. Badon, S.Cesaro. Casa editrice Ambrosiana 2015.Seconda edizione"
       },
       {
        "titolo": "P. Di Giacomo, L. A. Rigon. Casa Editrice Ambrosiana. 2016.Secondaedizione",
@@ -14719,18 +14683,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/31579/2021/9999?coorte=2024)",
        "citazione": "Ref. Text books M. Penco. “Dispense di Cardiologia per le lauree triennali nelle professioni sanitarie”. Cesi Edizioni Calabrò - D'Andrea – Sarubbi “CARDIOLOGIA per Scienze Motorie e Scienze Infermieristiche” edizioni Idelson-Gnocchi"
-      },
-      {
-       "titolo": "emergenza. Ambrosiana, Rozzano (MI), 2022",
-       "autori": null,
-       "editore": "emergenza. Ambrosiana",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/31579/2021/9999?coorte=2024)",
-       "citazione": "emergenza. Ambrosiana, Rozzano (MI), 2022"
       },
       {
        "titolo": "Badon P., & Giusti, G.D. Assistenza infermieristica in area critica e inemergenza. Ambrosiana, Rozzano (MI), 2022Materiale didattico fornito dal docente messo a disposizione sullepiattaforme di Ateneo (Moodle / Teams)",
@@ -16856,18 +16808,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Chianese, Moscato, Picariello, Sansone. “Sistemi di basi di dati ed applicazioni”. Apogeo Education-Maggioli Editore. Settembre 2015. - Atzeni, Ceri, Fraternali, Paraboschi, Torlone, Basi di dati - Modelli e linguaggi di interrogazione, McGraw-Hill."
-      },
-      {
-       "titolo": "Atzeni, Ceri, Fraternali, Paraboschi, Torlone, Basi di dati - Modelli e linguaggi di interrogazione, McGraw-Hill.",
-       "autori": null,
-       "editore": "McGraw-Hill",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Atzeni, Ceri, Fraternali, Paraboschi, Torlone, Basi di dati - Modelli e linguaggi di interrogazione, McGraw-Hill."
       }
      ],
      "esami": [],
@@ -17618,7 +17558,7 @@
       {
        "titolo": "Jeff Erickson. Algorithms. ISBN: 978-1-792-64483-2",
        "autori": null,
-       "editore": "Jeff Erickson. Algorithms. ISBN: 978-1-792-64483-2",
+       "editore": "Jeff Erickson. Algorithms. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9781792644832",
@@ -18808,7 +18748,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/32312/2024/9999?coorte=2024)",
-       "citazione": "\"Strade: Teoria e tecnica delle costruzioni stradali\". Autori: Santagata, Colagrande et alii. ISBN 978-88-91903-04-4. Pearson Editore, 2016.​​​​​​​"
+       "citazione": "\"Strade: Teoria e tecnica delle costruzioni stradali\". Autori: Santagata, Colagrande et alii. ISBN 978-88-91903-04-4. Pearson Editore, 2016."
       }
      ],
      "esami": [
@@ -22155,7 +22095,7 @@
       {
        "titolo": "Marcello D'Amore, ELETTROTECNICA, Vol. I e II , Siderea, Roma. Appunti di elettrotecnica. Per ingegneri non elettrici. Tratti dalle lezioni di Saverio Cristina [Vol. 1, Vol. 2]. · Editore: Esculapio, 1998",
        "autori": null,
-       "editore": "Vol. 2]. · Editore: Esculapio",
+       "editore": "Vol. 2]. · Editore",
        "anno": 1998,
        "edizione": null,
        "isbn": null,
@@ -22242,28 +22182,16 @@
        "citazione": "ISBN: 978-88-386-5563-0."
       },
       {
-       "titolo": "Cesini, Latini, Polonara, Fisica Tecnica, 2022, Seconda Edizione, Città",
+       "titolo": "Cesini, Latini, Polonara, Fisica Tecnica, 2022, Seconda Edizione, Città ISBN: 978-88-251-7441-0.",
        "autori": null,
        "editore": null,
        "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Cesini, Latini, Polonara, Fisica Tecnica, 2022, Seconda Edizione, Città"
-      },
-      {
-       "titolo": "ISBN: 978-88-251-7441-0.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
        "edizione": null,
        "isbn": "9788825174410",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-88-251-7441-0."
+       "citazione": "Cesini, Latini, Polonara, Fisica Tecnica, 2022, Seconda Edizione, Città ISBN: 978-88-251-7441-0."
       }
      ],
      "esami": [
@@ -24366,7 +24294,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "“Tucidide. La guerra del Peloponneso”, Vol. I. Libri I-II, M. I. Finley (introduzione), F. Ferrari (traduzione), G. Daverio Rocchi (bibliografia e note), Milano 2005 (X ed., più volte ristampato). ​​​​​​​"
+       "citazione": "“Tucidide. La guerra del Peloponneso”, Vol. I. Libri I-II, M. I. Finley (introduzione), F. Ferrari (traduzione), G. Daverio Rocchi (bibliografia e note), Milano 2005 (X ed., più volte ristampato)."
       }
      ],
      "esami": [
@@ -24656,7 +24584,7 @@
       {
        "titolo": "Fiorani, E., Gaffuri, L. (a cura di) (u.e.), Le rappresentazioni dello spazio. Immagini, linguaggi, narrazioni, FrancoAngeli: Milano.",
        "autori": null,
-       "editore": "FrancoAngeli: Milano",
+       "editore": "FrancoAngeli",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -24997,7 +24925,7 @@
       {
        "titolo": "S. Leonardi / E. Morlicchio, La filologia germanica e le lingue moderne, il Mulino: Bologna 2009, capp. I, II, V, VI, VII, VIII",
        "autori": null,
-       "editore": "il Mulino: Bologna 2009",
+       "editore": "il Mulino",
        "anno": 2009,
        "edizione": null,
        "isbn": null,
@@ -26504,7 +26432,7 @@
       {
        "titolo": "Lingue e dialetti d’Italia",
        "autori": "Avolio, F. (2010)",
-       "editore": "Carocci: Roma",
+       "editore": "Carocci",
        "anno": 2010,
        "edizione": null,
        "isbn": null,
@@ -28313,18 +28241,6 @@
        "citazione": "Parte monografica: - Platone, Apologia di Socrate. Testo greco a fronte, a cura di G. Reale, Milano, Bompiani 2026."
       },
       {
-       "titolo": "Plotino, Sul Bene o l'Uno. Il trattato VI 9 (9). Traduzione e commento a cura di F. Casella, Milano, Vita e Pensiero 2026.",
-       "autori": null,
-       "editore": null,
-       "anno": 2026,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Plotino, Sul Bene o l'Uno. Il trattato VI 9 (9). Traduzione e commento a cura di F. Casella, Milano, Vita e Pensiero 2026."
-      },
-      {
        "titolo": "Parte istituzionale: - F. Ferrari, Filosofia antica, Milano, Le Monnier 2024 (da p. 194 a p. 391).",
        "autori": null,
        "editore": "Le Monnier 2024 (da p. 194 a p. 391)",
@@ -28550,7 +28466,7 @@
       {
        "titolo": "Santrock J.W (2013) Psicologia dello sviluppo, McGraw-Hill CAPITOLI: 1-5-6-9",
        "autori": null,
-       "editore": "McGraw-Hill CAPITOLI: 1-5-6-9",
+       "editore": "McGraw-Hill CAPITOLI",
        "anno": 2013,
        "edizione": null,
        "isbn": null,
@@ -28586,7 +28502,7 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/36859/2026/9999?coorte=2026",
      "libri": [
       {
-       "titolo": "G. R. Norman, D. L. Streiner. Biostatistica, tutto quello che avreste voluto sapere.2015.​​​​​​​",
+       "titolo": "G. R. Norman, D. L. Streiner. Biostatistica, tutto quello che avreste voluto sapere.2015.",
        "autori": null,
        "editore": null,
        "anno": 2015,
@@ -28595,7 +28511,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "G. R. Norman, D. L. Streiner. Biostatistica, tutto quello che avreste voluto sapere.2015.​​​​​​​"
+       "citazione": "G. R. Norman, D. L. Streiner. Biostatistica, tutto quello che avreste voluto sapere.2015."
       },
       {
        "titolo": "Marcello Pagano, Kimberlee Gauvreau - Principles of Biostatistics, Second Edition. 2018",
@@ -30031,7 +29947,43 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/35165/2026/9999?coorte=2026",
      "libri": [
       {
-       "titolo": "Knapp, Stokes Theorem and Whitney manifolds 2) Lee, Introduction to smooth manifolds (2012) 3) Warner, Foundations of Differentiable manifolds and Lie groups (1983) 4) Federer, Geometric Measure Theory (1969)",
+       "titolo": "Knapp, Stokes Theorem and Whitney manifolds",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2025/35165/2025/9999?coorte=2025)",
+       "citazione": "Knapp, Stokes Theorem and Whitney manifolds"
+      },
+      {
+       "titolo": "Lee, Introduction to smooth manifolds (2012)",
+       "autori": null,
+       "editore": null,
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2025/35165/2025/9999?coorte=2025)",
+       "citazione": "Lee, Introduction to smooth manifolds (2012)"
+      },
+      {
+       "titolo": "Warner, Foundations of Differentiable manifolds and Lie groups (1983)",
+       "autori": null,
+       "editore": null,
+       "anno": 1983,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2025/35165/2025/9999?coorte=2025)",
+       "citazione": "Warner, Foundations of Differentiable manifolds and Lie groups (1983)"
+      },
+      {
+       "titolo": "Federer, Geometric Measure Theory (1969)",
        "autori": null,
        "editore": null,
        "anno": 1969,
@@ -30040,7 +29992,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2025/35165/2025/9999?coorte=2025)",
-       "citazione": "Knapp, Stokes Theorem and Whitney manifolds 2) Lee, Introduction to smooth manifolds (2012) 3) Warner, Foundations of Differentiable manifolds and Lie groups (1983) 4) Federer, Geometric Measure Theory (1969)"
+       "citazione": "Federer, Geometric Measure Theory (1969)"
       }
      ],
      "esami": [],
@@ -31590,19 +31542,7 @@
        "citazione": "Claude Cohen-Tannoudji et. al. \"Quantum Mechanics, Volume 1\", Wiley ISBN:978-3-527-34553-3"
       },
       {
-       "titolo": "Quantum Mechanics, Volume 2",
-       "autori": null,
-       "editore": "Wiley",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "\"Quantum Mechanics, Volume 2\", Wiley"
-      },
-      {
-       "titolo": "ISBN: 978-3-527-34554-0",
+       "titolo": "\"Quantum Mechanics, Volume 2\", Wiley ISBN: 978-3-527-34554-0",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -31611,12 +31551,12 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-3-527-34554-0"
+       "citazione": "\"Quantum Mechanics, Volume 2\", Wiley ISBN: 978-3-527-34554-0"
       },
       {
        "titolo": "Meccanica Statistica Elementare",
        "autori": "M. Falcioni, A. Vulpiani",
-       "editore": "Springer-Verlag ISBN: 978-88-470-5653-4",
+       "editore": "Springer-Verlag ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788847056534",
@@ -33254,7 +33194,7 @@
       {
        "titolo": "Lawrence Perko, Differential Equations and Dynamical Systems , Springer. 2001. Third edition (ISBN: 0-387-9516-4)",
        "autori": null,
-       "editore": "Springer. 2001. Third edition (ISBN: 0-387-9516-4)",
+       "editore": "Springer. 2001. Third edition (ISBN",
        "anno": 2001,
        "edizione": null,
        "isbn": null,
@@ -33500,18 +33440,6 @@
        "citazione": "Quantum Theory. Springer, 2017."
       },
       {
-       "titolo": "Vol. 1, No. 3, pp. 195-290, 1964.",
-       "autori": null,
-       "editore": null,
-       "anno": 1964,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Vol. 1, No. 3, pp. 195-290, 1964."
-      },
-      {
        "titolo": "Quantum kinetic theory",
        "autori": "M. Bonitz",
        "editore": "Springer",
@@ -33654,7 +33582,7 @@
       {
        "titolo": "Lingue e dialetti d’Italia",
        "autori": "Avolio, F. (2010)",
-       "editore": "Carocci: Roma",
+       "editore": "Carocci",
        "anno": 2010,
        "edizione": null,
        "isbn": null,
@@ -33937,7 +33865,7 @@
       {
        "titolo": "Fiorani, E., Gaffuri, L. (a cura di) (u.e.), Le rappresentazioni dello spazio. Immagini, linguaggi, narrazioni, FrancoAngeli: Milano.",
        "autori": null,
-       "editore": "FrancoAngeli: Milano",
+       "editore": "FrancoAngeli",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -34753,7 +34681,7 @@
       {
        "titolo": "Fiorani, E., Gaffuri, L. (a cura di) (u.e.), Le rappresentazioni dello spazio. Immagini, linguaggi, narrazioni, FrancoAngeli: Milano.",
        "autori": null,
-       "editore": "FrancoAngeli: Milano",
+       "editore": "FrancoAngeli",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -35142,7 +35070,79 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/40819/2025/9999?coorte=2025",
      "libri": [
       {
-       "titolo": "The White Boy Shuffle, Paul Beatty (1996); 2) The Human Stain, Philip Roth (2000); 3) Erasure, Percival Everett (2001); 4) The Fortress of Solitude, Jonathan Lethem (2003); 5) Apex Hides the Hurt, Colson Whitehead (2006); 6) Loving Day, Mat Johnson (2015); 7) Sing, Unburied, Sing, Jesmyn Ward (2017)",
+       "titolo": "The White Boy Shuffle, Paul Beatty (1996);",
+       "autori": null,
+       "editore": null,
+       "anno": 1996,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "The White Boy Shuffle, Paul Beatty (1996);"
+      },
+      {
+       "titolo": "The Human Stain, Philip Roth (2000);",
+       "autori": null,
+       "editore": null,
+       "anno": 2000,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "The Human Stain, Philip Roth (2000);"
+      },
+      {
+       "titolo": "Erasure, Percival Everett (2001);",
+       "autori": null,
+       "editore": null,
+       "anno": 2001,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Erasure, Percival Everett (2001);"
+      },
+      {
+       "titolo": "The Fortress of Solitude, Jonathan Lethem (2003);",
+       "autori": null,
+       "editore": null,
+       "anno": 2003,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "The Fortress of Solitude, Jonathan Lethem (2003);"
+      },
+      {
+       "titolo": "Apex Hides the Hurt, Colson Whitehead (2006);",
+       "autori": null,
+       "editore": null,
+       "anno": 2006,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Apex Hides the Hurt, Colson Whitehead (2006);"
+      },
+      {
+       "titolo": "Loving Day, Mat Johnson (2015);",
+       "autori": null,
+       "editore": null,
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Loving Day, Mat Johnson (2015);"
+      },
+      {
+       "titolo": "Sing, Unburied, Sing, Jesmyn Ward (2017)",
        "autori": null,
        "editore": null,
        "anno": 2017,
@@ -35151,7 +35151,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "The White Boy Shuffle, Paul Beatty (1996); 2) The Human Stain, Philip Roth (2000); 3) Erasure, Percival Everett (2001); 4) The Fortress of Solitude, Jonathan Lethem (2003); 5) Apex Hides the Hurt, Colson Whitehead (2006); 6) Loving Day, Mat Johnson (2015); 7) Sing, Unburied, Sing, Jesmyn Ward (2017)"
+       "citazione": "Sing, Unburied, Sing, Jesmyn Ward (2017)"
       },
       {
        "titolo": "La letteratura degli Stati Uniti, Cristina Iuli e Paola Loreto (a cura di), Carocci editore (2017)",
@@ -35579,7 +35579,7 @@
        "citazione": "Kursbuch 978-3-19-001878-9"
       },
       {
-       "titolo": "Arbeitsbuch 978-3-19-031878-0",
+       "titolo": "Arbeitsbuch 978-3-19-031878-0 ISBN: 978-3-19-001206-0",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -35588,19 +35588,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Arbeitsbuch 978-3-19-031878-0"
-      },
-      {
-       "titolo": "ISBN: 978-3-19-001206-0",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9783190012060",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ISBN: 978-3-19-001206-0"
+       "citazione": "Arbeitsbuch 978-3-19-031878-0 ISBN: 978-3-19-001206-0"
       },
       {
        "titolo": "Kursbuch digital B1+ ISBN: 978-3-19-068602-5",
@@ -38007,7 +37995,7 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/32963/2026/9999?coorte=2026",
      "libri": [
       {
-       "titolo": "G. R. Norman, D. L. Streiner. Biostatistica, tutto quello che avreste voluto sapere.2015.​​​​​​​",
+       "titolo": "G. R. Norman, D. L. Streiner. Biostatistica, tutto quello che avreste voluto sapere.2015.",
        "autori": null,
        "editore": null,
        "anno": 2015,
@@ -38016,7 +38004,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "G. R. Norman, D. L. Streiner. Biostatistica, tutto quello che avreste voluto sapere.2015.​​​​​​​"
+       "citazione": "G. R. Norman, D. L. Streiner. Biostatistica, tutto quello che avreste voluto sapere.2015."
       },
       {
        "titolo": "Marcello Pagano, Kimberlee Gauvreau - Principles of Biostatistics, Second Edition. 2018",
@@ -42485,7 +42473,7 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/39794/2025/9999?coorte=2025",
      "libri": [
       {
-       "titolo": "​​​​​​​David L Nelson Michael M Cox. I principi di biochimica di Lehninger, 8 edizione ( 2022), ISBN 9788808599858​​​​​​​",
+       "titolo": "David L Nelson Michael M Cox. I principi di biochimica di Lehninger, 8 edizione ( 2022), ISBN 9788808599858",
        "autori": null,
        "editore": null,
        "anno": 2022,
@@ -42494,7 +42482,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "​​​​​​​David L Nelson Michael M Cox. I principi di biochimica di Lehninger, 8 edizione ( 2022), ISBN 9788808599858​​​​​​​"
+       "citazione": "David L Nelson Michael M Cox. I principi di biochimica di Lehninger, 8 edizione ( 2022), ISBN 9788808599858"
       },
       {
        "titolo": "Jeremy M Berg, John L Tymoczko, Gregory J. Gatto, Lubert Stryer. Biochimica, 8 edizione (2020), ISBN 9788808520289",
@@ -42509,7 +42497,7 @@
        "citazione": "Jeremy M Berg, John L Tymoczko, Gregory J. Gatto, Lubert Stryer. Biochimica, 8 edizione (2020), ISBN 9788808520289"
       },
       {
-       "titolo": "​​​​​​​Donald Voet, Judith G Voet, Charlotte W Pratt. Fondamenti di biochimica 4 edizione (2017). ISBN 9788808420961",
+       "titolo": "Donald Voet, Judith G Voet, Charlotte W Pratt. Fondamenti di biochimica 4 edizione (2017). ISBN 9788808420961",
        "autori": null,
        "editore": null,
        "anno": 2017,
@@ -42518,7 +42506,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "​​​​​​​Donald Voet, Judith G Voet, Charlotte W Pratt. Fondamenti di biochimica 4 edizione (2017). ISBN 9788808420961"
+       "citazione": "Donald Voet, Judith G Voet, Charlotte W Pratt. Fondamenti di biochimica 4 edizione (2017). ISBN 9788808420961"
       }
      ],
      "esami": [
@@ -43354,7 +43342,7 @@
        "citazione": "ROBBINS E COTRAN: LE BASI PATOLOGICHE DELLE MALATTIE, volume 1 (Patologia generale), e alcuni paragrafi del volume II (Patologia d’organo), ed. Masson/Elsevier"
       },
       {
-       "titolo": "ABBAS: Le basi dell’immunologia. Fisiopatologia del sistema immunitario Gennaio 2015 – Editore Edra​​​​​​​",
+       "titolo": "ABBAS: Le basi dell’immunologia. Fisiopatologia del sistema immunitario Gennaio 2015 – Editore Edra",
        "autori": null,
        "editore": null,
        "anno": 2015,
@@ -43363,7 +43351,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/31076/2019/9999?coorte=2024)",
-       "citazione": "ABBAS: Le basi dell’immunologia. Fisiopatologia del sistema immunitario Gennaio 2015 – Editore Edra​​​​​​​"
+       "citazione": "ABBAS: Le basi dell’immunologia. Fisiopatologia del sistema immunitario Gennaio 2015 – Editore Edra"
       }
      ],
      "esami": [
@@ -44152,7 +44140,7 @@
       {
        "titolo": "Fiorani, E., Gaffuri, L. (a cura di) (u.e.), Le rappresentazioni dello spazio. Immagini, linguaggi, narrazioni, FrancoAngeli: Milano.",
        "autori": null,
-       "editore": "FrancoAngeli: Milano",
+       "editore": "FrancoAngeli",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -44321,18 +44309,6 @@
        "tipo": null,
        "note": null,
        "citazione": "A. Vaccarelli, Le prove della vita. Promuovere la resilienza nella relazione educativa, Franco Angeli."
-      },
-      {
-       "titolo": "https://www.miur.gov.it/documents/20182/0/Orientamenti+Interculturali.pdf/be99b531-74d3-8035-21af-39aaf1c285f5?version=1.0&t=1647608565245",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "https://www.miur.gov.it/documents/20182/0/Orientamenti+Interculturali.pdf/be99b531-74d3-8035-21af-39aaf1c285f5?version=1.0&t=1647608565245"
       },
       {
        "titolo": "Marchesi, A. (2026). Il genocidio di Gaza e la crisi del diritto internazionale. Genocide in Gaza and the Crisis of International Law. QTimes webmagazine, anno XVIII, n. 1, pp. 34–47. DOI: https://doi.org/10.14668/QTimes_18105",
@@ -46289,18 +46265,6 @@
        "tipo": null,
        "note": null,
        "citazione": "I due libri: A. Chambers, Il lettore infinito. Educare alla lettura tra ragioni ed emozioni, Equilibri, 2015 + F. Batini, Lettura ad alta voce. Ricerche e strumenti per educatori, insegnanti e genitori, Roma, Carocci, 2022."
-      },
-      {
-       "titolo": "Sarà richiesta la lettura di 3 opere di letteratura per l’infanzia a scelta (una per ogni tipologia narrativa, ovvero: romanzo, albo illustrato, graphic novel) a partire da una lista di titoli condivisa tramite la piattaforma Moodle e durante le lezioni. Per discutere eventuali testi aggiuntivi tra",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Sarà richiesta la lettura di 3 opere di letteratura per l’infanzia a scelta (una per ogni tipologia narrativa, ovvero: romanzo, albo illustrato, graphic novel) a partire da una lista di titoli condivisa tramite la piattaforma Moodle e durante le lezioni. Per discutere eventuali testi aggiuntivi tra cui scegliere, siete invitati a mettervi in contatto con la docente."
       }
      ],
      "esami": [
@@ -46539,7 +46503,7 @@
       {
        "titolo": "D'Amico, S. Devescovi, A. (2013) Psicologia dello sviluppo del linguaggio. Bologna, Il Mulino (Capitoli: 1,3,4,5,6,10,11,12)",
        "autori": null,
-       "editore": "Il Mulino (Capitoli: 1",
+       "editore": "Il Mulino (Capitoli",
        "anno": 2013,
        "edizione": null,
        "isbn": null,
@@ -46855,18 +46819,6 @@
        "tipo": null,
        "note": null,
        "citazione": "A. Vaccarelli, Le prove della vita. Promuovere la resilienza nella relazione educativa, Franco Angeli."
-      },
-      {
-       "titolo": "https://www.miur.gov.it/documents/20182/0/Orientamenti+Interculturali.pdf/be99b531-74d3-8035-21af-39aaf1c285f5?version=1.0&t=1647608565245",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "https://www.miur.gov.it/documents/20182/0/Orientamenti+Interculturali.pdf/be99b531-74d3-8035-21af-39aaf1c285f5?version=1.0&t=1647608565245"
       },
       {
        "titolo": "Marchesi, A. (2026). Il genocidio di Gaza e la crisi del diritto internazionale. Genocide in Gaza and the Crisis of International Law. QTimes webmagazine, anno XVIII, n. 1, pp. 34–47. DOI: https://doi.org/10.14668/QTimes_18105",
@@ -50351,7 +50303,7 @@
        "citazione": "Stanfield Fisiologia EdiSES, VI edizione italiana"
       },
       {
-       "titolo": "​​​​​​​- Stuart Ira Fox, Fisiologia umana, PICCIN",
+       "titolo": "- Stuart Ira Fox, Fisiologia umana, PICCIN",
        "autori": null,
        "editore": "PICCIN",
        "anno": null,
@@ -50360,7 +50312,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "​​​​​​​- Stuart Ira Fox, Fisiologia umana, PICCIN"
+       "citazione": "- Stuart Ira Fox, Fisiologia umana, PICCIN"
       },
       {
        "titolo": "E.R. Kandel, J.H. Schartz & T. M. Jessel Principi di Neuroscienze ed. Ambrosiana",
@@ -51796,16 +51748,16 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/32972/2019/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "Autori: Angelo Sacco, Matteo Ciavarella; EDITORE EPC GENNAIO 2018",
+       "titolo": "Autori: Angelo Sacco, Matteo Ciavarella; EDITORE EPC GENNAIO 2018 ISBN 8863108439",
        "autori": null,
-       "editore": "EDITORE EPC GENNAIO 2018",
+       "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "8863108439",
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/32972/2026/9999?coorte=2026)",
-       "citazione": "Autori: Angelo Sacco, Matteo Ciavarella; EDITORE EPC GENNAIO 2018"
+       "citazione": "Autori: Angelo Sacco, Matteo Ciavarella; EDITORE EPC GENNAIO 2018 ISBN 8863108439"
       }
      ],
      "esami": [
@@ -52102,7 +52054,7 @@
        "citazione": "Linehan M. Schede di Lavoro Dialectical Behavior Therapy (DBT), Skills Training Manual, Guilford Publications, 2015"
       },
       {
-       "titolo": "Meneghelli A., Ruggeri M. Le Prime Fasi della Psicosi. Manuale per la formazione dei professionisti, il trattamento e la valutazione dell’esito nei dipartimenti di salute mentale. Il Pensiero Scientifico Editore, Roma, 2016.​​​​​​​",
+       "titolo": "Meneghelli A., Ruggeri M. Le Prime Fasi della Psicosi. Manuale per la formazione dei professionisti, il trattamento e la valutazione dell’esito nei dipartimenti di salute mentale. Il Pensiero Scientifico Editore, Roma, 2016.",
        "autori": null,
        "editore": null,
        "anno": 2016,
@@ -52111,7 +52063,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Meneghelli A., Ruggeri M. Le Prime Fasi della Psicosi. Manuale per la formazione dei professionisti, il trattamento e la valutazione dell’esito nei dipartimenti di salute mentale. Il Pensiero Scientifico Editore, Roma, 2016.​​​​​​​"
+       "citazione": "Meneghelli A., Ruggeri M. Le Prime Fasi della Psicosi. Manuale per la formazione dei professionisti, il trattamento e la valutazione dell’esito nei dipartimenti di salute mentale. Il Pensiero Scientifico Editore, Roma, 2016."
       },
       {
        "titolo": "Vita A, Dell'Osso L, Mucci A. (eds) Manuale di Clinica e Riabilitazione Psichiatrica. Dalle conoscenze teoriche alla pratica dei servizi di salute mentale. Volume 2. Riabilitazione Psichiatrica. Giovanni Fioriti Editore, 2019.",
@@ -53790,7 +53742,7 @@
       {
        "titolo": "Stefani M., Taddei N. Chimica & Biochimica, Ed. Zanichelli. ISBN: 9788808656711.",
        "autori": null,
-       "editore": "Ed. Zanichelli. ISBN: 9788808656711",
+       "editore": "Ed. Zanichelli. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788808656711",
@@ -55614,7 +55566,7 @@
        "citazione": "ABBAS: Le basi dell’immunologia – Editore Edra"
       },
       {
-       "titolo": "Sistema immunitario- Atlanti scientifici – editore Giunti 2021​​​​​​​",
+       "titolo": "Sistema immunitario- Atlanti scientifici – editore Giunti 2021",
        "autori": null,
        "editore": null,
        "anno": 2021,
@@ -55623,7 +55575,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Sistema immunitario- Atlanti scientifici – editore Giunti 2021​​​​​​​"
+       "citazione": "Sistema immunitario- Atlanti scientifici – editore Giunti 2021"
       }
      ],
      "esami": [
@@ -60204,7 +60156,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Ulteriori articoli scientifici, casi, template e materiali didattici su effectuation, design thinking, market shaping, imprenditorialità sociale e organizzazioni ibride saranno messi a disposizione dal docente. Per i project work a impatto sociale potranno essere suggerite letture aggiuntive specifiche.​​​​​​​"
+       "citazione": "Ulteriori articoli scientifici, casi, template e materiali didattici su effectuation, design thinking, market shaping, imprenditorialità sociale e organizzazioni ibride saranno messi a disposizione dal docente. Per i project work a impatto sociale potranno essere suggerite letture aggiuntive specifiche."
       }
      ],
      "esami": [],
@@ -60485,7 +60437,7 @@
       {
        "titolo": "MANUALI: - Augenti, A. (2016), Archeologia dell’Italia Medievale, Editori Laterza: Bari.",
        "autori": null,
-       "editore": "Editori Laterza: Bari",
+       "editore": "Editori Laterza",
        "anno": 2016,
        "edizione": null,
        "isbn": null,
@@ -60605,7 +60557,7 @@
        "citazione": "Alessandro Guidi, Mariassunta Cuozzo, Archeologia delle identità e delle differenze. Carocci, Roma 2013."
       },
       {
-       "titolo": "​​​​​​​Articoli: V. Acconcia, Some remarks on the periodization of the first phase of Fossa and its absolute chronology, in Mediterranea 16/2019, pp. 7-29; M. Milletti, V. Del Segato, La tomba 620 di Fossa e l’Orientalizzante nella conca aquilana, in Archeologia Classica LXXIV/2023, pp. 33-55.",
+       "titolo": "Articoli: V. Acconcia, Some remarks on the periodization of the first phase of Fossa and its absolute chronology, in Mediterranea 16/2019, pp. 7-29; M. Milletti, V. Del Segato, La tomba 620 di Fossa e l’Orientalizzante nella conca aquilana, in Archeologia Classica LXXIV/2023, pp. 33-55.",
        "autori": null,
        "editore": null,
        "anno": 2023,
@@ -60614,7 +60566,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "​​​​​​​Articoli: V. Acconcia, Some remarks on the periodization of the first phase of Fossa and its absolute chronology, in Mediterranea 16/2019, pp. 7-29; M. Milletti, V. Del Segato, La tomba 620 di Fossa e l’Orientalizzante nella conca aquilana, in Archeologia Classica LXXIV/2023, pp. 33-55."
+       "citazione": "Articoli: V. Acconcia, Some remarks on the periodization of the first phase of Fossa and its absolute chronology, in Mediterranea 16/2019, pp. 7-29; M. Milletti, V. Del Segato, La tomba 620 di Fossa e l’Orientalizzante nella conca aquilana, in Archeologia Classica LXXIV/2023, pp. 33-55."
       }
      ],
      "esami": [
@@ -61030,7 +60982,7 @@
        "edizione": null,
        "isbn": null,
        "lingua": null,
-       "tipo": "obbligatorio",
+       "tipo": "consigliato",
        "note": null,
        "citazione": "Michael Fried, Courbet's Realism, University of Chicago Press, Chicago, 1990. Disponibile anche nella traduzione francese: Michael Fried, Le réalisme de Courbet. Esthétique et origines de la peinture moderne, II, nfr Essais, Gallimard, Paris, 1993 [NON OBBLIGATORIO, MA IMPORTANTE: il docente ne parlerà ampiamente a lezione]"
       },
@@ -61102,7 +61054,7 @@
        "edizione": null,
        "isbn": null,
        "lingua": null,
-       "tipo": "obbligatorio",
+       "tipo": "consigliato",
        "note": null,
        "citazione": "Giuseppe Di Natale, Courbet en Italie. Prolégomènes pour l’histoire d’une réception critique, visuelle et politique, Silvana Editoriale, Cinisello Balsamo (MI) - Pôle Courbet, Ornans, 2023 [NON OBBLIGATORIO, MA IMPORTANTE: il docente ne parlerà ampiamente a lezione]"
       },
@@ -61186,7 +61138,7 @@
        "edizione": null,
        "isbn": null,
        "lingua": null,
-       "tipo": "obbligatorio",
+       "tipo": "consigliato",
        "note": null,
        "citazione": "Michael Fried, Le modernisme de Manet, Esthétique et origines de la peinture moderne, II, nfr Essais, Gallimard, Paris, 2000 (disponibile anche nella versione inglese) [NON OBBLIGATORIO, MA IMPORTANTE: il docente ne parlerà ampiamente a lezione]"
       },
@@ -62087,7 +62039,7 @@
       {
        "titolo": "Grespi B., Violi A., (2019), a cura di., Apparizioni. Scritti sulla fantasmagoria, Aracne: Roma.",
        "autori": null,
-       "editore": "Aracne: Roma",
+       "editore": "Aracne",
        "anno": 2019,
        "edizione": null,
        "isbn": null,
@@ -62147,7 +62099,7 @@
       {
        "titolo": "Per i non frequentanti, da aggiungere: Puglia, E., Fusillo, M., et. al., (2017), a cura di, Ritorni Spettrali. Storie e teorie della spettralità senza fantasmi, Il Mulino: Bologna.",
        "autori": null,
-       "editore": "Il Mulino: Bologna",
+       "editore": "Il Mulino",
        "anno": 2017,
        "edizione": null,
        "isbn": null,
@@ -63395,7 +63347,7 @@
        "citazione": "Armstrong and Brune, Snow and Climate: Physical Processes, Surface Energy Balance and Modelling, Cambridge."
       },
       {
-       "titolo": "Cuffey and Paterson, The Physics of the Glaciers, ​​​​​​​Elsevier.",
+       "titolo": "Cuffey and Paterson, The Physics of the Glaciers, Elsevier.",
        "autori": null,
        "editore": "​​​​​​​Elsevier",
        "anno": null,
@@ -63404,7 +63356,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Cuffey and Paterson, The Physics of the Glaciers, ​​​​​​​Elsevier."
+       "citazione": "Cuffey and Paterson, The Physics of the Glaciers, Elsevier."
       }
      ],
      "esami": [],
@@ -65913,7 +65865,7 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/42277/2025/1?coorte=2025",
      "libri": [
       {
-       "titolo": "Maria Carmela Bonaccorsi di Patti, Roberto Contestabile, Martino Luigi Di Salvo​​​​​​​. Metodologie biochimiche. 2 edizione (2019) ISBN 9788808520586",
+       "titolo": "Maria Carmela Bonaccorsi di Patti, Roberto Contestabile, Martino Luigi Di Salvo. Metodologie biochimiche. 2 edizione (2019) ISBN 9788808520586",
        "autori": null,
        "editore": null,
        "anno": 2019,
@@ -65922,7 +65874,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Maria Carmela Bonaccorsi di Patti, Roberto Contestabile, Martino Luigi Di Salvo​​​​​​​. Metodologie biochimiche. 2 edizione (2019) ISBN 9788808520586"
+       "citazione": "Maria Carmela Bonaccorsi di Patti, Roberto Contestabile, Martino Luigi Di Salvo. Metodologie biochimiche. 2 edizione (2019) ISBN 9788808520586"
       },
       {
        "titolo": "Wilson & Walker. Biochimica e Biologia molecolare (2019) ISBN 9788832851458",
@@ -68345,7 +68297,7 @@
        "citazione": "Chimica Farmaceutica – A. Gasco, F. Gualtieri, C. Melchiorre (Zanichelli)"
       },
       {
-       "titolo": "​​​​​​​​​​​​​​Metodologie Biochimiche e Biomolecolari - M. Maccarrone (Zanichelli)​​​​​​​",
+       "titolo": "Metodologie Biochimiche e Biomolecolari - M. Maccarrone (Zanichelli)",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -68354,7 +68306,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "​​​​​​​​​​​​​​Metodologie Biochimiche e Biomolecolari - M. Maccarrone (Zanichelli)​​​​​​​"
+       "citazione": "Metodologie Biochimiche e Biomolecolari - M. Maccarrone (Zanichelli)"
       }
      ],
      "esami": [],
@@ -72854,7 +72806,7 @@
       {
        "titolo": "Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. The Elements Of Statistical Learning: Data Mining, Inference, And Prediction, (Springer Series In Statistics (2009): 768.",
        "autori": null,
-       "editore": "(Springer Series In Statistics (2009): 768",
+       "editore": "(Springer Series In Statistics (2009)",
        "anno": 2009,
        "edizione": null,
        "isbn": null,
@@ -76721,23 +76673,11 @@
        "editore": null,
        "anno": 1998,
        "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "A. Reichl \"A modern course in statistical physics\" 2nd edition Wiley (1998)"
-      },
-      {
-       "titolo": "ISBN: 978-3-527-41349-2",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
        "isbn": "9783527413492",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-3-527-41349-2"
+       "citazione": "A. Reichl \"A modern course in statistical physics\" 2nd edition Wiley (1998) ISBN: 978-3-527-41349-2"
       },
       {
        "titolo": "introduction to modern statistical mechanics",
@@ -79760,19 +79700,7 @@
        "citazione": "Claude Cohen-Tannoudji et. al. \"Quantum Mechanics, Volume 1\", Wiley ISBN:978-3-527-34553-3"
       },
       {
-       "titolo": "Quantum Mechanics, Volume 2",
-       "autori": null,
-       "editore": "Wiley",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/30513/2016/9999?coorte=2024)",
-       "citazione": "\"Quantum Mechanics, Volume 2\", Wiley"
-      },
-      {
-       "titolo": "ISBN: 978-3-527-34554-0",
+       "titolo": "\"Quantum Mechanics, Volume 2\", Wiley ISBN: 978-3-527-34554-0",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -79781,12 +79709,12 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/30513/2016/9999?coorte=2024)",
-       "citazione": "ISBN: 978-3-527-34554-0"
+       "citazione": "\"Quantum Mechanics, Volume 2\", Wiley ISBN: 978-3-527-34554-0"
       },
       {
        "titolo": "Meccanica Statistica Elementare",
        "autori": "M. Falcioni, A. Vulpiani",
-       "editore": "Springer-Verlag ISBN: 978-88-470-5653-4",
+       "editore": "Springer-Verlag ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788847056534",
@@ -80953,18 +80881,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Connie U. Smith, Lloyd Williams, Performance Solutions , Addison Wesley."
-      },
-      {
-       "titolo": "Vittorio Cortellessa, Antinisca Di Marco, Paola Inverardi, Model-based Software Performance Analysis , Springer.",
-       "autori": null,
-       "editore": "Springer",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Vittorio Cortellessa, Antinisca Di Marco, Paola Inverardi, Model-based Software Performance Analysis , Springer."
       }
      ],
      "esami": [],
@@ -83158,18 +83074,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Chianese, Moscato, Picariello, Sansone. “Sistemi di basi di dati ed applicazioni”. Apogeo Education-Maggioli Editore. Settembre 2015. - Atzeni, Ceri, Fraternali, Paraboschi, Torlone, Basi di dati - Modelli e linguaggi di interrogazione, McGraw-Hill."
-      },
-      {
-       "titolo": "Atzeni, Ceri, Fraternali, Paraboschi, Torlone, Basi di dati - Modelli e linguaggi di interrogazione, McGraw-Hill.",
-       "autori": null,
-       "editore": "McGraw-Hill",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Atzeni, Ceri, Fraternali, Paraboschi, Torlone, Basi di dati - Modelli e linguaggi di interrogazione, McGraw-Hill."
       }
      ],
      "esami": [],
@@ -83814,7 +83718,7 @@
       {
        "titolo": "Jonathan Katz, Yehuda Lindell. Introduction to Modern Cryptography, 3rd edition. CRC Press. ISBN: 978-0815354369.",
        "autori": null,
-       "editore": "3rd edition. CRC Press. ISBN: 978-0815354369",
+       "editore": "3rd edition. CRC Press. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9780815354369",
@@ -84322,7 +84226,7 @@
       {
        "titolo": "Jeff Erickson. Algorithms. ISBN: 978-1-792-64483-2",
        "autori": null,
-       "editore": "Jeff Erickson. Algorithms. ISBN: 978-1-792-64483-2",
+       "editore": "Jeff Erickson. Algorithms. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9781792644832",
@@ -85824,7 +85728,7 @@
       {
        "titolo": "Fondamenti di chimica industriale. Materie prime, prodotti, processi, sostenibilità",
        "autori": "Fabrizio Cavani, Gabriele Centi, Martino Di Serio",
-       "editore": "sostenibilità” 1st ed. Zanichelli ISBN: 9788808320193",
+       "editore": "sostenibilità” 1st ed. Zanichelli ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788808320193",
@@ -85993,7 +85897,7 @@
       {
        "titolo": "Skinner B. J., Porter S.C. (1987). Physical Geology, John Wiley & Sons ISBN: 0-471-05668-5; Lupia Palmieri E., Parotto M. (2008). Il Globo terrestre e la sua evoluzione (sesta edizione). Zanichelli Ed.; Mottana A., Crespi A., Liborio M. (1983). Minerali e rocce. Ed. Mondadori; Lanzo G., Silvestri F.",
        "autori": null,
-       "editore": "John Wiley & Sons ISBN: 0-471-05668-5",
+       "editore": "John Wiley & Sons ISBN",
        "anno": 1999,
        "edizione": null,
        "isbn": "0471056685",
@@ -86836,7 +86740,7 @@
       {
        "titolo": "Timber Engineering, by Sven Thelandersson and Hans J. Larsen, edited by Wiley – ISBN: 978-0-470-84469-4.",
        "autori": null,
-       "editore": "edited by Wiley – ISBN: 978-0-470-84469-4",
+       "editore": "edited by Wiley – ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9780470844694",
@@ -87138,7 +87042,7 @@
       {
        "titolo": "Discrete and Continuum Models for Complex Metamaterials, Eds. dell’Isola, F. and Steigmann D. - Cambridge: Cambridge University Press.",
        "autori": null,
-       "editore": "F. and Steigmann D. - Cambridge: Cambridge University Press",
+       "editore": "F. and Steigmann D. - Cambridge",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -88274,7 +88178,7 @@
       {
        "titolo": "Timber Engineering, by Sven Thelandersson and Hans J. Larsen, edited by Wiley – ISBN: 978-0-470-84469-4.",
        "autori": null,
-       "editore": "edited by Wiley – ISBN: 978-0-470-84469-4",
+       "editore": "edited by Wiley – ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9780470844694",
@@ -88855,7 +88759,7 @@
       {
        "titolo": "Discrete and Continuum Models for Complex Metamaterials, Eds. dell’Isola, F. and Steigmann D. - Cambridge: Cambridge University Press.",
        "autori": null,
-       "editore": "F. and Steigmann D. - Cambridge: Cambridge University Press",
+       "editore": "F. and Steigmann D. - Cambridge",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -90185,7 +90089,7 @@
       {
        "titolo": "Timber Engineering, by Sven Thelandersson and Hans J. Larsen, edited by Wiley – ISBN: 978-0-470-84469-4.",
        "autori": null,
-       "editore": "edited by Wiley – ISBN: 978-0-470-84469-4",
+       "editore": "edited by Wiley – ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9780470844694",
@@ -90582,52 +90486,28 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/36821/2026/2?coorte=2026",
      "libri": [
       {
-       "titolo": "Yunus A. Cengel, Termodinamica e trasmissione del calore, V Edizione, 2022, McGrawHill.",
-       "autori": null,
-       "editore": "McGrawHill",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Yunus A. Cengel, Termodinamica e trasmissione del calore, V Edizione, 2022, McGrawHill."
-      },
-      {
-       "titolo": "ISBN: 978-88-386-5563-0.",
+       "titolo": "Yunus A. Cengel, Termodinamica e trasmissione del calore, V Edizione, 2022, McGrawHill. ISBN: 978-88-386-5563-0.",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2022,
        "edizione": null,
        "isbn": "9788838655630",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-88-386-5563-0."
+       "citazione": "Yunus A. Cengel, Termodinamica e trasmissione del calore, V Edizione, 2022, McGrawHill. ISBN: 978-88-386-5563-0."
       },
       {
-       "titolo": "Cesini, Latini, Polonara, Fisica Tecnica, 2022, Seconda Edizione, Città Studi Edizione.",
-       "autori": null,
-       "editore": "Città Studi Edizione",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Cesini, Latini, Polonara, Fisica Tecnica, 2022, Seconda Edizione, Città Studi Edizione."
-      },
-      {
-       "titolo": "ISBN: 978-88-251-7441-0.",
+       "titolo": "Cesini, Latini, Polonara, Fisica Tecnica, 2022, Seconda Edizione, Città Studi Edizione. ISBN: 978-88-251-7441-0.",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2022,
        "edizione": null,
        "isbn": "9788825174410",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-88-251-7441-0."
+       "citazione": "Cesini, Latini, Polonara, Fisica Tecnica, 2022, Seconda Edizione, Città Studi Edizione. ISBN: 978-88-251-7441-0."
       },
       {
        "titolo": "Spiga, Efficienza Energetica e Termofisica dell’Edificio, 2018, Società Editrice Esculapio.",
@@ -91264,16 +91144,40 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/37131/2026/2?coorte=2026",
      "libri": [
       {
-       "titolo": "Francesco Iliceto, Impianti elettrici Vol. I, ed. Patron, Bologna. 2) W. Diesendorf, Insulation co-ordination in high voltage electric power systems. 3) F. M. Gatta, Impianti elettrici 1 and 2, Esculapio",
+       "titolo": "Francesco Iliceto, Impianti elettrici Vol. I, ed. Patron, Bologna.",
        "autori": null,
-       "editore": "ed. Patron",
+       "editore": null,
        "anno": null,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Francesco Iliceto, Impianti elettrici Vol. I, ed. Patron, Bologna. 2) W. Diesendorf, Insulation co-ordination in high voltage electric power systems. 3) F. M. Gatta, Impianti elettrici 1 and 2, Esculapio"
+       "citazione": "Francesco Iliceto, Impianti elettrici Vol. I, ed. Patron, Bologna."
+      },
+      {
+       "titolo": "W. Diesendorf, Insulation co-ordination in high voltage electric power systems.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "W. Diesendorf, Insulation co-ordination in high voltage electric power systems."
+      },
+      {
+       "titolo": "Impianti elettrici 1 and 2",
+       "autori": "F. M. Gatta",
+       "editore": "Esculapio",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "F. M. Gatta, Impianti elettrici 1 and 2, Esculapio"
       }
      ],
      "esami": [
@@ -96451,7 +96355,7 @@
       {
        "titolo": "Lawrence Perko, Differential Equations and Dynamical Systems , Springer. 2001. Third edition (ISBN: 0-387-9516-4)",
        "autori": null,
-       "editore": "Springer. 2001. Third edition (ISBN: 0-387-9516-4)",
+       "editore": "Springer. 2001. Third edition (ISBN",
        "anno": 2001,
        "edizione": null,
        "isbn": null,
@@ -97438,7 +97342,7 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/40630/2025/1?coorte=2025",
      "libri": [
       {
-       "titolo": "A. Bressan, B. Piccoli, Introduction to the Mathematical Theory of Control, AIMS, 2007. -L.C. Evans, An introduction to mathematical control theory, Berkley, Lecture notes. -S. Lenhart and J.T. Workman, Optimal Control Applied to Biological Models, Chapman & Hall/CRC. ​​​​​​​-E. Trélat, Control in f",
+       "titolo": "A. Bressan, B. Piccoli, Introduction to the Mathematical Theory of Control, AIMS, 2007. -L.C. Evans, An introduction to mathematical control theory, Berkley, Lecture notes. -S. Lenhart and J.T. Workman, Optimal Control Applied to Biological Models, Chapman & Hall/CRC. -E. Trélat, Control in f",
        "autori": null,
        "editore": "Chapman & Hall/CRC. ​​​​​​​-E. Trélat",
        "anno": 2024,
@@ -97447,7 +97351,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "A. Bressan, B. Piccoli, Introduction to the Mathematical Theory of Control, AIMS, 2007. -L.C. Evans, An introduction to mathematical control theory, Berkley, Lecture notes. -S. Lenhart and J.T. Workman, Optimal Control Applied to Biological Models, Chapman & Hall/CRC. ​​​​​​​-E. Trélat, Control in finite and infinite dimension. SpringerBriefs PDEs Data Sci., Springer, Singapore, 2024."
+       "citazione": "A. Bressan, B. Piccoli, Introduction to the Mathematical Theory of Control, AIMS, 2007. -L.C. Evans, An introduction to mathematical control theory, Berkley, Lecture notes. -S. Lenhart and J.T. Workman, Optimal Control Applied to Biological Models, Chapman & Hall/CRC. -E. Trélat, Control in finite and infinite dimension. SpringerBriefs PDEs Data Sci., Springer, Singapore, 2024."
       }
      ],
      "esami": [],
@@ -98293,16 +98197,28 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/37921/2025/1?coorte=2025",
      "libri": [
       {
-       "titolo": "Versteeg and Malalasekera, 2007 ‘An introduction to Computational Fluid Dynamics: the finite volume method’, Pearson. 2) Kundu & Cohen, 2015 Fluid Mechanics, 6th edition, Academic Press",
+       "titolo": "Versteeg and Malalasekera, 2007 ‘An introduction to Computational Fluid Dynamics: the finite volume method’, Pearson.",
        "autori": null,
-       "editore": "Pearson. 2) Kundu & Cohen",
+       "editore": null,
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Versteeg and Malalasekera, 2007 ‘An introduction to Computational Fluid Dynamics: the finite volume method’, Pearson."
+      },
+      {
+       "titolo": "Kundu & Cohen, 2015 Fluid Mechanics, 6th edition, Academic Press",
+       "autori": null,
+       "editore": null,
        "anno": 2015,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Versteeg and Malalasekera, 2007 ‘An introduction to Computational Fluid Dynamics: the finite volume method’, Pearson. 2) Kundu & Cohen, 2015 Fluid Mechanics, 6th edition, Academic Press"
+       "citazione": "Kundu & Cohen, 2015 Fluid Mechanics, 6th edition, Academic Press"
       }
      ],
      "esami": [
@@ -100096,52 +100012,28 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/36821/2025/1?coorte=2025",
      "libri": [
       {
-       "titolo": "Yunus A. Cengel, Termodinamica e trasmissione del calore, V Edizione, 2022, McGrawHill.",
-       "autori": null,
-       "editore": "McGrawHill",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Yunus A. Cengel, Termodinamica e trasmissione del calore, V Edizione, 2022, McGrawHill."
-      },
-      {
-       "titolo": "ISBN: 978-88-386-5563-0.",
+       "titolo": "Yunus A. Cengel, Termodinamica e trasmissione del calore, V Edizione, 2022, McGrawHill. ISBN: 978-88-386-5563-0.",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2022,
        "edizione": null,
        "isbn": "9788838655630",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-88-386-5563-0."
+       "citazione": "Yunus A. Cengel, Termodinamica e trasmissione del calore, V Edizione, 2022, McGrawHill. ISBN: 978-88-386-5563-0."
       },
       {
-       "titolo": "Cesini, Latini, Polonara, Fisica Tecnica, 2022, Seconda Edizione, Città Studi Edizione.",
-       "autori": null,
-       "editore": "Città Studi Edizione",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Cesini, Latini, Polonara, Fisica Tecnica, 2022, Seconda Edizione, Città Studi Edizione."
-      },
-      {
-       "titolo": "ISBN: 978-88-251-7441-0.",
+       "titolo": "Cesini, Latini, Polonara, Fisica Tecnica, 2022, Seconda Edizione, Città Studi Edizione. ISBN: 978-88-251-7441-0.",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2022,
        "edizione": null,
        "isbn": "9788825174410",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-88-251-7441-0."
+       "citazione": "Cesini, Latini, Polonara, Fisica Tecnica, 2022, Seconda Edizione, Città Studi Edizione. ISBN: 978-88-251-7441-0."
       },
       {
        "titolo": "Spiga, Efficienza Energetica e Termofisica dell’Edificio, 2018, Società Editrice Esculapio.",
@@ -102626,7 +102518,7 @@
       {
        "titolo": "Cyril Edwards, ‘German vernacular literature: a survey’, in Carolingian culture: emulation and innovation, ed. by Rosamond McKitterik (Cambridge UP: Cambridge, 1994), pp. 141-170.",
        "autori": null,
-       "editore": "ed. by Rosamond McKitterik (Cambridge UP: Cambridge",
+       "editore": "ed. by Rosamond McKitterik (Cambridge UP",
        "anno": 1994,
        "edizione": null,
        "isbn": null,
@@ -103627,7 +103519,7 @@
       {
        "titolo": "Grespi B., Violi A., (2019), a cura di., Apparizioni. Scritti sulla fantasmagoria, Aracne: Roma.",
        "autori": null,
-       "editore": "Aracne: Roma",
+       "editore": "Aracne",
        "anno": 2019,
        "edizione": null,
        "isbn": null,
@@ -103687,7 +103579,7 @@
       {
        "titolo": "Per i non frequentanti, da aggiungere: Puglia, E., Fusillo, M., et. al., (2017), a cura di, Ritorni Spettrali. Storie e teorie della spettralità senza fantasmi, Il Mulino: Bologna.",
        "autori": null,
-       "editore": "Il Mulino: Bologna",
+       "editore": "Il Mulino",
        "anno": 2017,
        "edizione": null,
        "isbn": null,
@@ -105238,7 +105130,43 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/35165/2026/9999?coorte=2026",
      "libri": [
       {
-       "titolo": "Knapp, Stokes Theorem and Whitney manifolds 2) Lee, Introduction to smooth manifolds (2012) 3) Warner, Foundations of Differentiable manifolds and Lie groups (1983) 4) Federer, Geometric Measure Theory (1969)",
+       "titolo": "Knapp, Stokes Theorem and Whitney manifolds",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2025/35165/2025/9999?coorte=2025)",
+       "citazione": "Knapp, Stokes Theorem and Whitney manifolds"
+      },
+      {
+       "titolo": "Lee, Introduction to smooth manifolds (2012)",
+       "autori": null,
+       "editore": null,
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2025/35165/2025/9999?coorte=2025)",
+       "citazione": "Lee, Introduction to smooth manifolds (2012)"
+      },
+      {
+       "titolo": "Warner, Foundations of Differentiable manifolds and Lie groups (1983)",
+       "autori": null,
+       "editore": null,
+       "anno": 1983,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2025/35165/2025/9999?coorte=2025)",
+       "citazione": "Warner, Foundations of Differentiable manifolds and Lie groups (1983)"
+      },
+      {
+       "titolo": "Federer, Geometric Measure Theory (1969)",
        "autori": null,
        "editore": null,
        "anno": 1969,
@@ -105247,7 +105175,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2025/35165/2025/9999?coorte=2025)",
-       "citazione": "Knapp, Stokes Theorem and Whitney manifolds 2) Lee, Introduction to smooth manifolds (2012) 3) Warner, Foundations of Differentiable manifolds and Lie groups (1983) 4) Federer, Geometric Measure Theory (1969)"
+       "citazione": "Federer, Geometric Measure Theory (1969)"
       }
      ],
      "esami": [],
@@ -106370,19 +106298,7 @@
        "citazione": "Claude Cohen-Tannoudji et. al. \"Quantum Mechanics, Volume 1\", Wiley ISBN:978-3-527-34553-3"
       },
       {
-       "titolo": "Quantum Mechanics, Volume 2",
-       "autori": null,
-       "editore": "Wiley",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "\"Quantum Mechanics, Volume 2\", Wiley"
-      },
-      {
-       "titolo": "ISBN: 978-3-527-34554-0",
+       "titolo": "\"Quantum Mechanics, Volume 2\", Wiley ISBN: 978-3-527-34554-0",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -106391,12 +106307,12 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-3-527-34554-0"
+       "citazione": "\"Quantum Mechanics, Volume 2\", Wiley ISBN: 978-3-527-34554-0"
       },
       {
        "titolo": "Meccanica Statistica Elementare",
        "autori": "M. Falcioni, A. Vulpiani",
-       "editore": "Springer-Verlag ISBN: 978-88-470-5653-4",
+       "editore": "Springer-Verlag ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788847056534",
@@ -106640,7 +106556,7 @@
       {
        "titolo": "Lawrence Perko, Differential Equations and Dynamical Systems , Springer. 2001. Third edition (ISBN: 0-387-9516-4)",
        "autori": null,
-       "editore": "Springer. 2001. Third edition (ISBN: 0-387-9516-4)",
+       "editore": "Springer. 2001. Third edition (ISBN",
        "anno": 2001,
        "edizione": null,
        "isbn": null,
@@ -107296,18 +107212,6 @@
        "citazione": "Quantum Theory. Springer, 2017."
       },
       {
-       "titolo": "Vol. 1, No. 3, pp. 195-290, 1964.",
-       "autori": null,
-       "editore": null,
-       "anno": 1964,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Vol. 1, No. 3, pp. 195-290, 1964."
-      },
-      {
        "titolo": "Quantum kinetic theory",
        "autori": "M. Bonitz",
        "editore": "Springer",
@@ -107882,7 +107786,7 @@
       {
        "titolo": "Lawrence Perko, Differential Equations and Dynamical Systems , Springer. 2001. Third edition (ISBN: 0-387-9516-4)",
        "autori": null,
-       "editore": "Springer. 2001. Third edition (ISBN: 0-387-9516-4)",
+       "editore": "Springer. 2001. Third edition (ISBN",
        "anno": 2001,
        "edizione": null,
        "isbn": null,
@@ -107931,7 +107835,7 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/40630/2026/2?coorte=2026",
      "libri": [
       {
-       "titolo": "A. Bressan, B. Piccoli, Introduction to the Mathematical Theory of Control, AIMS, 2007. -L.C. Evans, An introduction to mathematical control theory, Berkley, Lecture notes. -S. Lenhart and J.T. Workman, Optimal Control Applied to Biological Models, Chapman & Hall/CRC. ​​​​​​​-E. Trélat, Control in f",
+       "titolo": "A. Bressan, B. Piccoli, Introduction to the Mathematical Theory of Control, AIMS, 2007. -L.C. Evans, An introduction to mathematical control theory, Berkley, Lecture notes. -S. Lenhart and J.T. Workman, Optimal Control Applied to Biological Models, Chapman & Hall/CRC. -E. Trélat, Control in f",
        "autori": null,
        "editore": "Chapman & Hall/CRC. ​​​​​​​-E. Trélat",
        "anno": 2024,
@@ -107940,7 +107844,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "A. Bressan, B. Piccoli, Introduction to the Mathematical Theory of Control, AIMS, 2007. -L.C. Evans, An introduction to mathematical control theory, Berkley, Lecture notes. -S. Lenhart and J.T. Workman, Optimal Control Applied to Biological Models, Chapman & Hall/CRC. ​​​​​​​-E. Trélat, Control in finite and infinite dimension. SpringerBriefs PDEs Data Sci., Springer, Singapore, 2024."
+       "citazione": "A. Bressan, B. Piccoli, Introduction to the Mathematical Theory of Control, AIMS, 2007. -L.C. Evans, An introduction to mathematical control theory, Berkley, Lecture notes. -S. Lenhart and J.T. Workman, Optimal Control Applied to Biological Models, Chapman & Hall/CRC. -E. Trélat, Control in finite and infinite dimension. SpringerBriefs PDEs Data Sci., Springer, Singapore, 2024."
       }
      ],
      "esami": [],
@@ -111068,16 +110972,28 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/37921/2025/2?coorte=2025",
      "libri": [
       {
-       "titolo": "Versteeg and Malalasekera, 2007 ‘An introduction to Computational Fluid Dynamics: the finite volume method’, Pearson. 2) Kundu & Cohen, 2015 Fluid Mechanics, 6th edition, Academic Press",
+       "titolo": "Versteeg and Malalasekera, 2007 ‘An introduction to Computational Fluid Dynamics: the finite volume method’, Pearson.",
        "autori": null,
-       "editore": "Pearson. 2) Kundu & Cohen",
+       "editore": null,
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Versteeg and Malalasekera, 2007 ‘An introduction to Computational Fluid Dynamics: the finite volume method’, Pearson."
+      },
+      {
+       "titolo": "Kundu & Cohen, 2015 Fluid Mechanics, 6th edition, Academic Press",
+       "autori": null,
+       "editore": null,
        "anno": 2015,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Versteeg and Malalasekera, 2007 ‘An introduction to Computational Fluid Dynamics: the finite volume method’, Pearson. 2) Kundu & Cohen, 2015 Fluid Mechanics, 6th edition, Academic Press"
+       "citazione": "Kundu & Cohen, 2015 Fluid Mechanics, 6th edition, Academic Press"
       }
      ],
      "esami": [
@@ -112575,18 +112491,6 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/40824/2025/9999?coorte=2025",
      "libri": [
       {
-       "titolo": "Ed. Carocci Faber 2003",
-       "autori": null,
-       "editore": "Ed. Carocci Faber 2003",
-       "anno": 2003,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Ed. Carocci Faber 2003"
-      },
-      {
        "titolo": "strategie e modelli d’intervento” Maggioli, 2021, cap. 6 e 7",
        "autori": null,
        "editore": "strategie e modelli d’intervento” Maggioli",
@@ -113687,7 +113591,7 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/36555/2026/2?coorte=2026",
      "libri": [
       {
-       "titolo": "Sessuologia medica. Trattato di psicosessuologia, medicina della sessualità e salute della coppia. Emmanuele A. Jannini, Andrea Lenzi, Mario Maggi, II edizione, Edra, 2017. ​​​​​​​",
+       "titolo": "Sessuologia medica. Trattato di psicosessuologia, medicina della sessualità e salute della coppia. Emmanuele A. Jannini, Andrea Lenzi, Mario Maggi, II edizione, Edra, 2017.",
        "autori": null,
        "editore": "Edra",
        "anno": 2017,
@@ -113696,7 +113600,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/36555/2026/2?coorte=2026)",
-       "citazione": "Sessuologia medica. Trattato di psicosessuologia, medicina della sessualità e salute della coppia. Emmanuele A. Jannini, Andrea Lenzi, Mario Maggi, II edizione, Edra, 2017. ​​​​​​​"
+       "citazione": "Sessuologia medica. Trattato di psicosessuologia, medicina della sessualità e salute della coppia. Emmanuele A. Jannini, Andrea Lenzi, Mario Maggi, II edizione, Edra, 2017."
       }
      ],
      "esami": [],
@@ -114776,16 +114680,28 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/42164/2025/9999?coorte=2025",
      "libri": [
       {
-       "titolo": "L’ATLETA COSTRUTTORE DI PACE",
+       "titolo": "TESTI DI ESAME: 1) ELEMENTI DI DIRITTO E GIUSTIZIA SPORTIVA; MURGO EDITORE, ED. IL CERCALIBRO, ANNO 2024, PAOLA DI SALVATORE.",
        "autori": null,
-       "editore": "MURGO EDITORE",
+       "editore": null,
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/42164/2025/9999?coorte=2025)",
+       "citazione": "TESTI DI ESAME: 1) ELEMENTI DI DIRITTO E GIUSTIZIA SPORTIVA; MURGO EDITORE, ED. IL CERCALIBRO, ANNO 2024, PAOLA DI SALVATORE."
+      },
+      {
+       "titolo": "“ L’ATLETA COSTRUTTORE DI PACE” di PAOLA DI SALVATORE - Aracne Editore Collana il Podio anno 2025.",
+       "autori": null,
+       "editore": null,
        "anno": 2025,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/42164/2025/9999?coorte=2025)",
-       "citazione": "TESTI DI ESAME: 1) ELEMENTI DI DIRITTO E GIUSTIZIA SPORTIVA; MURGO EDITORE, ED. IL CERCALIBRO, ANNO 2024, PAOLA DI SALVATORE. 2) “ L’ATLETA COSTRUTTORE DI PACE” di PAOLA DI SALVATORE - Aracne Editore Collana il Podio anno 2025."
+       "citazione": "“ L’ATLETA COSTRUTTORE DI PACE” di PAOLA DI SALVATORE - Aracne Editore Collana il Podio anno 2025."
       },
       {
        "titolo": "Testi di approfondimento: DIRITTO SPORTIVO a cura di Andrea Tatafiore e Paola Di Salvatore CEDAM SCIENZE GIURIDICHE anno 2022;NUOVI SAGGI DI DIRITTO SPORTIVO; ARACNE EDITORE, ANNO 2017, PAOLA DI SALVATORE. CODICE DI COMPORTAMENTO SPORTIVO CODICE DI GIUSTIZIA SPORTIVA",
@@ -116813,7 +116729,7 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/37213/2023/9999?coorte=2025",
      "libri": [
       {
-       "titolo": "​​​​​​​P. Pascucci, I principi fondamentali della tutela della salute e della sicurezza sul lavoro. Dall'art. 2087 c.c. al Titolo I del d.lgs. n. 81/2008. Aggiornato alla disciplina della petente a crediti e all'accordo Stato-Regioni del 17 aprile 2025 sulla formazione per la sicurezza, Giappichelli",
+       "titolo": "P. Pascucci, I principi fondamentali della tutela della salute e della sicurezza sul lavoro. Dall'art. 2087 c.c. al Titolo I del d.lgs. n. 81/2008. Aggiornato alla disciplina della petente a crediti e all'accordo Stato-Regioni del 17 aprile 2025 sulla formazione per la sicurezza, Giappichelli",
        "autori": null,
        "editore": "Giappichelli",
        "anno": 2025,
@@ -116822,7 +116738,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "​​​​​​​P. Pascucci, I principi fondamentali della tutela della salute e della sicurezza sul lavoro. Dall'art. 2087 c.c. al Titolo I del d.lgs. n. 81/2008. Aggiornato alla disciplina della petente a crediti e all'accordo Stato-Regioni del 17 aprile 2025 sulla formazione per la sicurezza, Giappichelli, 2025"
+       "citazione": "P. Pascucci, I principi fondamentali della tutela della salute e della sicurezza sul lavoro. Dall'art. 2087 c.c. al Titolo I del d.lgs. n. 81/2008. Aggiornato alla disciplina della petente a crediti e all'accordo Stato-Regioni del 17 aprile 2025 sulla formazione per la sicurezza, Giappichelli, 2025"
       }
      ],
      "esami": [
@@ -118260,7 +118176,7 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/42705/2026/9999?coorte=2026",
      "libri": [
       {
-       "titolo": "​​​​​​​P. Pascucci, I principi fondamentali della tutela della salute e della sicurezza sul lavoro. Dall'art. 2087 c.c. al Titolo I del d.lgs. n. 81/2008. Aggiornato alla disciplina della petente a crediti e all'accordo Stato-Regioni del 17 aprile 2025 sulla formazione per la sicurezza, Giappichelli",
+       "titolo": "P. Pascucci, I principi fondamentali della tutela della salute e della sicurezza sul lavoro. Dall'art. 2087 c.c. al Titolo I del d.lgs. n. 81/2008. Aggiornato alla disciplina della petente a crediti e all'accordo Stato-Regioni del 17 aprile 2025 sulla formazione per la sicurezza, Giappichelli",
        "autori": null,
        "editore": "Giappichelli",
        "anno": 2025,
@@ -118269,7 +118185,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "​​​​​​​P. Pascucci, I principi fondamentali della tutela della salute e della sicurezza sul lavoro. Dall'art. 2087 c.c. al Titolo I del d.lgs. n. 81/2008. Aggiornato alla disciplina della petente a crediti e all'accordo Stato-Regioni del 17 aprile 2025 sulla formazione per la sicurezza, Giappichelli, 2025"
+       "citazione": "P. Pascucci, I principi fondamentali della tutela della salute e della sicurezza sul lavoro. Dall'art. 2087 c.c. al Titolo I del d.lgs. n. 81/2008. Aggiornato alla disciplina della petente a crediti e all'accordo Stato-Regioni del 17 aprile 2025 sulla formazione per la sicurezza, Giappichelli, 2025"
       }
      ],
      "esami": [],
@@ -118777,7 +118693,7 @@
        "citazione": "National Consensus Project for Quality Palliative Care. (2018). Clinical Practice Guidelines for Quality Palliative Care, 4th edition. Richmond, VA: National Coalition for Hospice and Palliative Care. https://www.nationalcoalitionhpc.org/ncp"
       },
       {
-       "titolo": "​​​​​​​Letture aggiuntive oggetto di esercitazioni che verranno condivise e discusse in aula, finalizzate a stimolare il pensiero critico.",
+       "titolo": "Letture aggiuntive oggetto di esercitazioni che verranno condivise e discusse in aula, finalizzate a stimolare il pensiero critico.",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -118786,7 +118702,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "​​​​​​​Letture aggiuntive oggetto di esercitazioni che verranno condivise e discusse in aula, finalizzate a stimolare il pensiero critico."
+       "citazione": "Letture aggiuntive oggetto di esercitazioni che verranno condivise e discusse in aula, finalizzate a stimolare il pensiero critico."
       }
      ],
      "esami": [],
@@ -119992,16 +119908,16 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/32972/2026/9999?coorte=2026",
      "libri": [
       {
-       "titolo": "Autori: Angelo Sacco, Matteo Ciavarella; EDITORE EPC GENNAIO 2018",
+       "titolo": "Autori: Angelo Sacco, Matteo Ciavarella; EDITORE EPC GENNAIO 2018 ISBN 8863108439",
        "autori": null,
-       "editore": "EDITORE EPC GENNAIO 2018",
+       "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "8863108439",
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/32972/2026/9999?coorte=2026)",
-       "citazione": "Autori: Angelo Sacco, Matteo Ciavarella; EDITORE EPC GENNAIO 2018"
+       "citazione": "Autori: Angelo Sacco, Matteo Ciavarella; EDITORE EPC GENNAIO 2018 ISBN 8863108439"
       }
      ],
      "esami": [
@@ -120366,7 +120282,7 @@
        "citazione": "Nuova frontiera dell’Oftalmologia, Edizione SOI 2022 - Ipovisione"
       },
       {
-       "titolo": "​​​​​​​F.Cruciani, A.Reibaldi, Quaderni SOI, 2014 - La Riabilitazione Visiva",
+       "titolo": "F.Cruciani, A.Reibaldi, Quaderni SOI, 2014 - La Riabilitazione Visiva",
        "autori": null,
        "editore": null,
        "anno": 2014,
@@ -120375,7 +120291,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "​​​​​​​F.Cruciani, A.Reibaldi, Quaderni SOI, 2014 - La Riabilitazione Visiva"
+       "citazione": "F.Cruciani, A.Reibaldi, Quaderni SOI, 2014 - La Riabilitazione Visiva"
       }
      ],
      "esami": [
@@ -123208,7 +123124,7 @@
       {
        "titolo": "Grespi B., Violi A., (2019), a cura di., Apparizioni. Scritti sulla fantasmagoria, Aracne: Roma.",
        "autori": null,
-       "editore": "Aracne: Roma",
+       "editore": "Aracne",
        "anno": 2019,
        "edizione": null,
        "isbn": null,
@@ -123268,7 +123184,7 @@
       {
        "titolo": "Per i non frequentanti, da aggiungere: Puglia, E., Fusillo, M., et. al., (2017), a cura di, Ritorni Spettrali. Storie e teorie della spettralità senza fantasmi, Il Mulino: Bologna.",
        "autori": null,
-       "editore": "Il Mulino: Bologna",
+       "editore": "Il Mulino",
        "anno": 2017,
        "edizione": null,
        "isbn": null,
@@ -125599,18 +125515,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Academic Press, 2013,"
-      },
-      {
-       "titolo": "https://doi.org/10.1016/B978-0-12-397023-7.00021-8.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "0123970237",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "https://doi.org/10.1016/B978-0-12-397023-7.00021-8."
       }
      ],
      "esami": [],
@@ -127341,7 +127245,7 @@
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/16139/2026/9999?coorte=2026",
      "libri": [
       {
-       "titolo": "P.Mazzoldi, M. Nigro, C. Voci – Elementi di Fisica I: meccanica,termodinamica. – EdiSES ​​​​​​​D.Halliday, R.Resnick, J.Walker – Fondamenti di Fisica.- Casa Editrice Ambrosiana",
+       "titolo": "P.Mazzoldi, M. Nigro, C. Voci – Elementi di Fisica I: meccanica,termodinamica. – EdiSES D.Halliday, R.Resnick, J.Walker – Fondamenti di Fisica.- Casa Editrice Ambrosiana",
        "autori": null,
        "editore": "termodinamica. – EdiSES ​​​​​​​D.Halliday",
        "anno": null,
@@ -127350,7 +127254,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "P.Mazzoldi, M. Nigro, C. Voci – Elementi di Fisica I: meccanica,termodinamica. – EdiSES ​​​​​​​D.Halliday, R.Resnick, J.Walker – Fondamenti di Fisica.- Casa Editrice Ambrosiana"
+       "citazione": "P.Mazzoldi, M. Nigro, C. Voci – Elementi di Fisica I: meccanica,termodinamica. – EdiSES D.Halliday, R.Resnick, J.Walker – Fondamenti di Fisica.- Casa Editrice Ambrosiana"
       }
      ],
      "esami": [],
@@ -127700,7 +127604,7 @@
        "citazione": "L. Di Palma, Tecnologia dei Materiali e Chimica Applicata, Terza edizione, Società Editrice Esculapio, 2020."
       },
       {
-       "titolo": "​​​​​​​4. M. Collepardi, Il Nuovo Calcestruzzo, Edizioni Tintoretto, 2006.",
+       "titolo": "4. M. Collepardi, Il Nuovo Calcestruzzo, Edizioni Tintoretto, 2006.",
        "autori": null,
        "editore": "Edizioni Tintoretto",
        "anno": 2006,
@@ -127709,7 +127613,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "​​​​​​​4. M. Collepardi, Il Nuovo Calcestruzzo, Edizioni Tintoretto, 2006."
+       "citazione": "4. M. Collepardi, Il Nuovo Calcestruzzo, Edizioni Tintoretto, 2006."
       }
      ],
      "esami": [],
@@ -128658,7 +128562,7 @@
        "citazione": "Ellis et al.: Anatomia Clinica, I edizione Italiana a cura di Cappello et al. 2019, Idelson-Gnocchi - ISBN 9788879476850"
       },
       {
-       "titolo": "Anastasi et al.: Anatomy bag: Trattato di anatomia umana-Anatomia umana topografica- 2020 - ‎ Edi. Ermes ISBN 9788870517064",
+       "titolo": "Anastasi et al.: Anatomy bag: Trattato di anatomia umana-Anatomia umana topografica- 2020 - Edi. Ermes ISBN 9788870517064",
        "autori": null,
        "editore": null,
        "anno": 2020,
@@ -128667,7 +128571,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Anastasi et al.: Anatomy bag: Trattato di anatomia umana-Anatomia umana topografica- 2020 - ‎ Edi. Ermes ISBN 9788870517064"
+       "citazione": "Anastasi et al.: Anatomy bag: Trattato di anatomia umana-Anatomia umana topografica- 2020 - Edi. Ermes ISBN 9788870517064"
       },
       {
        "titolo": "Sferra, Vetuschi: Anatomia microscopica, 2017 - Edra ISBN 9788821443800",
@@ -128978,30 +128882,6 @@
        "tipo": "consigliato",
        "note": null,
        "citazione": "Per approfondimenti Keith L. Moore, T.V.N. Persaud, Mark G. Torchia, Lo sviluppo prenatale dell'uomo. Embriologia ad orientamento clinico, Edra, edizione italiana più recente disponibile."
-      },
-      {
-       "titolo": "Thomas W. Sadler, Embriologia medica di Langman, Elsevier, edizione italiana più recente disponibile.",
-       "autori": null,
-       "editore": "Elsevier",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Thomas W. Sadler, Embriologia medica di Langman, Elsevier, edizione italiana più recente disponibile."
-      },
-      {
-       "titolo": "Keith L. Moore, T.V.N. Persaud, Mark G. Torchia, Lo sviluppo prenatale dell'uomo. Embriologia ad orientamento clinico, Edra, edizione italiana più recente disponibile.",
-       "autori": null,
-       "editore": "Edra",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Keith L. Moore, T.V.N. Persaud, Mark G. Torchia, Lo sviluppo prenatale dell'uomo. Embriologia ad orientamento clinico, Edra, edizione italiana più recente disponibile."
       }
      ],
      "esami": [
@@ -129106,7 +128986,7 @@
        "citazione": "Ellis et al.: Anatomia Clinica, I edizione Italiana a cura di Cappello et al. 2019, Idelson-Gnocchi - ISBN 9788879476850"
       },
       {
-       "titolo": "Anastasi et al.: Anatomy bag: Trattato di anatomia umana-Anatomia umana topografica- 2020 - ‎ Edi. Ermes ISBN 9788870517064",
+       "titolo": "Anastasi et al.: Anatomy bag: Trattato di anatomia umana-Anatomia umana topografica- 2020 - Edi. Ermes ISBN 9788870517064",
        "autori": null,
        "editore": null,
        "anno": 2020,
@@ -129115,7 +128995,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Anastasi et al.: Anatomy bag: Trattato di anatomia umana-Anatomia umana topografica- 2020 - ‎ Edi. Ermes ISBN 9788870517064"
+       "citazione": "Anastasi et al.: Anatomy bag: Trattato di anatomia umana-Anatomia umana topografica- 2020 - Edi. Ermes ISBN 9788870517064"
       },
       {
        "titolo": "Sferra, Vetuschi: Anatomia microscopica, 2017 - Edra ISBN 9788821443800",
@@ -133575,18 +133455,6 @@
        "citazione": "A. Vaccarelli, Le prove della vita. Promuovere la resilienza nella relazione educativa, Franco Angeli."
       },
       {
-       "titolo": "https://www.miur.gov.it/documents/20182/0/Orientamenti+Interculturali.pdf/be99b531-74d3-8035-21af-39aaf1c285f5?version=1.0&t=1647608565245",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "https://www.miur.gov.it/documents/20182/0/Orientamenti+Interculturali.pdf/be99b531-74d3-8035-21af-39aaf1c285f5?version=1.0&t=1647608565245"
-      },
-      {
        "titolo": "Marchesi, A. (2026). Il genocidio di Gaza e la crisi del diritto internazionale. Genocide in Gaza and the Crisis of International Law. QTimes webmagazine, anno XVIII, n. 1, pp. 34–47. DOI: https://doi.org/10.14668/QTimes_18105",
        "autori": null,
        "editore": null,
@@ -134047,7 +133915,7 @@
        "citazione": "Enrico Schlesinger, Algebra lineare e geometria, Terza edizione, Zanichelli, Bologna, 2026."
       },
       {
-       "titolo": "​​​​​​​Cosimo Flavi, Manuale di algebra lineare con 900 esercizi, CittàStudi Edizioni, Milano, 2026.",
+       "titolo": "Cosimo Flavi, Manuale di algebra lineare con 900 esercizi, CittàStudi Edizioni, Milano, 2026.",
        "autori": null,
        "editore": "CittàStudi Edizioni",
        "anno": 2026,
@@ -134056,7 +133924,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "​​​​​​​Cosimo Flavi, Manuale di algebra lineare con 900 esercizi, CittàStudi Edizioni, Milano, 2026."
+       "citazione": "Cosimo Flavi, Manuale di algebra lineare con 900 esercizi, CittàStudi Edizioni, Milano, 2026."
       }
      ],
      "esami": [],
@@ -134158,18 +134026,6 @@
      ],
      "url": "https://univaq.coursecatalogue.cineca.it/insegnamenti/2026/37549/2026/9999?coorte=2026",
      "libri": [
-      {
-       "titolo": "Scienza del Disegno",
-       "autori": "DOCCI M., MAESTRI D., GAIANI M",
-       "editore": "UTET",
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://univaq.coursecatalogue.cineca.it/insegnamenti/2024/37549/2023/9999?coorte=2024)",
-       "citazione": "DOCCI M., MAESTRI D., GAIANI M., \"Scienza del Disegno”, UTET, Torino 2011"
-      },
       {
        "titolo": "Manuale di rilevamento architettonico e urbano",
        "autori": "DOCCI M., MAESTRI D",

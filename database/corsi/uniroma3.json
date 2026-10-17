@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "uniroma3",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "http://studiumanistici.uniroma3.it/didattica/offerta-formativa/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -844,7 +844,7 @@
       {
        "titolo": "Hal Foster, Rosalind Krauss, Yve-Alain Bois, Benjamin Buchloh, Art since 1900, Thames & Hudson (PDF) o traduzione italiana, Arte dal 1900, Zanichelli 2016: 1900-1940.",
        "autori": null,
-       "editore": "Zanichelli 2016: 1900-1940",
+       "editore": "Zanichelli 2016",
        "anno": 2016,
        "edizione": null,
        "isbn": null,
@@ -1092,7 +1092,7 @@
    "url": "http://filosofiacomunicazionespettacolo.uniroma3.it/dams/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -2421,18 +2421,6 @@
        "citazione": "S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Quattrocento alla Controriforma (vol. 3), Mondadori Editore"
       },
       {
-       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788828616450",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450"
-      },
-      {
        "titolo": "e S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Barocco all’Impressionismo (vol. 4), Mondadori Editore (solo fino al Settecento, capitolo 14 incluso)",
        "autori": null,
        "editore": null,
@@ -2443,18 +2431,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "e S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Barocco all’Impressionismo (vol. 4), Mondadori Editore (solo fino al Settecento, capitolo 14 incluso)"
-      },
-      {
-       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788828616467",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467"
       },
       {
        "titolo": "Francesco Poli, Francesca Filippi, Dario Barbera, Paolo Brusasco, Umberto Spigo, Martina Corgnati, Francesca Cappelletti, Giovanni Maria Fara, La bellezza resta. Dal Rinascimento al Manierismo (vol. 3), ISBN 9788869107825",
@@ -2563,6 +2539,30 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "M. Hirst, Michelangelo, la conquista della fama. 1475-1534, Roma, 2021."
+      },
+      {
+       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788828616450",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450"
+      },
+      {
+       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788828616467",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467"
       }
      ],
      "esami": [],
@@ -3042,18 +3042,6 @@
        "citazione": "Bentivegna, S. e Boccia Artieri, G. (2019), Le teorie delle comunicazioni di massa e la sfida digitale, Bari-Roma, Laterza."
       },
       {
-       "titolo": "Platform Society",
-       "autori": "van Dijk, J., Poell T., de Waal M.",
-       "editore": "Milano Guerini scientifica",
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "van Dijk, J., Poell T., de Waal M., (2019), Platform Society, Milano Guerini scientifica. Capitoli 1, 2 pp.35--102"
-      },
-      {
        "titolo": "Poell, T., Nieborg, D.B., Duffy, B.E. (2022), Piattaforme digitali e produzione culturale, trad. it. Roma, minimum fax. Capitoli 5, 6, 7 PP.221-356",
        "autori": null,
        "editore": null,
@@ -3090,18 +3078,6 @@
        "citazione": "Bentivegna, S. e Boccia Artieri, G. (2019), Le teorie delle comunicazioni di massa e la sfida digitale, Roma-Bari, Laterza."
       },
       {
-       "titolo": "Platform Society. Valori pubblici e società connessa",
-       "autori": "van Dijk, J., Poell T., de Waal M.",
-       "editore": "Guerini",
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "van Dijk, J., Poell T., de Waal M. (2019), Platform Society. Valori pubblici e società connessa, Milano, Guerini (solo capitoli 1 e 2, pp. 35-101)."
-      },
-      {
        "titolo": "Poell, T., Nieborg, D.B., Duffy, B.E. (2022), Piattaforme digitali e produzione culturale, Roma, Minimum Fax (solo capitoli 5, 6 e 7, pp. 221-348).",
        "autori": null,
        "editore": null,
@@ -3124,6 +3100,18 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "Roncaglia G., (2023), L'architetto e l'oracolo. Forme digitali del sapere da Wikipedia a ChatGPT, Roma-Bari, Laterza (solo capitoli 8, 9, 10, 11, 12. pp. 69-110)."
+      },
+      {
+       "titolo": "Platform Society. Valori pubblici e società connessa",
+       "autori": "van Dijk, J., Poell T., de Waal M.",
+       "editore": "Guerini",
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "van Dijk, J., Poell T., de Waal M. (2019), Platform Society. Valori pubblici e società connessa, Milano, Guerini (solo capitoli 1 e 2, pp. 35-101)."
       }
      ],
      "esami": [],
@@ -3690,18 +3678,6 @@
        "citazione": "S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Quattrocento alla Controriforma (vol. 3), Mondadori Editore"
       },
       {
-       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788828616450",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450"
-      },
-      {
        "titolo": "e S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Barocco all’Impressionismo (vol. 4), Mondadori Editore (solo fino al Settecento, capitolo 14 incluso)",
        "autori": null,
        "editore": null,
@@ -3712,18 +3688,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "e S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Barocco all’Impressionismo (vol. 4), Mondadori Editore (solo fino al Settecento, capitolo 14 incluso)"
-      },
-      {
-       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788828616467",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467"
       },
       {
        "titolo": "Francesco Poli, Francesca Filippi, Dario Barbera, Paolo Brusasco, Umberto Spigo, Martina Corgnati, Francesca Cappelletti, Giovanni Maria Fara, La bellezza resta. Dal Rinascimento al Manierismo (vol. 3), ISBN 9788869107825",
@@ -3832,6 +3796,30 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "M. Hirst, Michelangelo, la conquista della fama. 1475-1534, Roma, 2021."
+      },
+      {
+       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788828616450",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450"
+      },
+      {
+       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788828616467",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467"
       }
      ],
      "esami": [],
@@ -5663,7 +5651,7 @@
    "url": "https://economia.uniroma3.it/didattica/orientamento/il-nostro-triennio/laurea-triennale-in-economia-l-33-2/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "21210055",
@@ -6206,7 +6194,7 @@
    "url": "https://economia.uniroma3.it/didattica/orientamento/il-nostro-triennio/laurea-triennale-in-economia-e-big-data-l-33/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "21210220",
@@ -6638,7 +6626,7 @@
    "url": "http://economiaziendale.uniroma3.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "21210238",
@@ -6719,18 +6707,6 @@
        "tipo": "consigliato",
        "note": null,
        "citazione": "Paoloni M., Celli, M. (a cura di), Introduzione alla contabilità generale, CEDAM, 2020 (seconda edizione)"
-      },
-      {
-       "titolo": "Paoloni M. (a cura di), Mattei G., Paoloni N., Eserciziario di economia aziendale e contabilità, CEDAM, 2018",
-       "autori": null,
-       "editore": "CEDAM",
-       "anno": 2018,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Paoloni M. (a cura di), Mattei G., Paoloni N., Eserciziario di economia aziendale e contabilità, CEDAM, 2018"
       }
      ],
      "esami": [],
@@ -6779,7 +6755,7 @@
      "url": "https://uniroma3-public.gomp.it/PublicData?uid=5d72a071-6221-423e-b747-dafe0701a5cc&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [
       {
-       "titolo": "Cesaroni, Corradini, Lampariello Matematica Generale Edizioni Giappichelli, I2024 ISBN-13 ‏ : ‎ 979-1221107746",
+       "titolo": "Cesaroni, Corradini, Lampariello Matematica Generale Edizioni Giappichelli, I2024 ISBN-13 : 979-1221107746",
        "autori": null,
        "editore": "Lampariello Matematica Generale Edizioni Giappichelli",
        "anno": null,
@@ -6788,7 +6764,7 @@
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "Cesaroni, Corradini, Lampariello Matematica Generale Edizioni Giappichelli, I2024 ISBN-13 ‏ : ‎ 979-1221107746"
+       "citazione": "Cesaroni, Corradini, Lampariello Matematica Generale Edizioni Giappichelli, I2024 ISBN-13 : 979-1221107746"
       },
       {
        "titolo": "Alessandro Blasi, Matematica: Corso base per la facoltà di Economia, Kappa, 2006",
@@ -7046,7 +7022,7 @@
    "url": "http://scienzeformazione.uniroma3.it/didattica/educatore-di-nido-e-dei-servizi-per-linfanzia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "22910166",
@@ -8042,7 +8018,7 @@
    "url": "https://www.uniroma3.it/corsi/dipartimento-di-filosofia-comunicazione-e-spettacolo/l/2023-2024/filosofia-0580706200500002/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20740060",
@@ -9601,7 +9577,7 @@
    "url": "https://matematicafisica.uniroma3.it/didattica/corsi-di-laurea-e-laurea-magistrale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20410405",
@@ -9689,7 +9665,7 @@
       {
        "titolo": "Gaetano Cannelli, Metodologie sperimentali in Fisica, Introduzione al metodo scientifico, ed. EdiSES (ISBN: 978 88 7959 679 4).",
        "autori": null,
-       "editore": "ed. EdiSES (ISBN: 978 88 7959 679 4)",
+       "editore": "ed. EdiSES (ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788879596794",
@@ -9882,7 +9858,7 @@
    "url": "https://scienzepolitiche.uniroma3.it/corsi/dipartimento-di-scienze-politiche/l/2023-2024/governo-e-amministrazione-0580706201600001/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -10730,16 +10706,40 @@
        "citazione": "Giovanni Mario Ceci, La CIA e il terrorismo italiano. Dalla strage di piazza Fontana agli anni Ottanta (1969-1986), Carocci, 2019"
       },
       {
-       "titolo": "L. Caracciolo-A. Roccucci, Storia contemporanea, Le Monnier Università, Milano 2017; 2) Marco Bresciani - Fulvio Conti (a cura di), L'età contemporanea. Prospettive di storia europea e globale, Roma, Carocci, 2023; 3) Mark Mazower, Le ombre dell'Europa. Democrazie e totalitarismi nel XX secolo, Mila",
+       "titolo": "L. Caracciolo-A. Roccucci, Storia contemporanea, Le Monnier Università, Milano 2017;",
        "autori": null,
-       "editore": "Le Monnier Università",
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "L. Caracciolo-A. Roccucci, Storia contemporanea, Le Monnier Università, Milano 2017;"
+      },
+      {
+       "titolo": "Marco Bresciani - Fulvio Conti (a cura di), L'età contemporanea. Prospettive di storia europea e globale, Roma, Carocci, 2023;",
+       "autori": null,
+       "editore": null,
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "Marco Bresciani - Fulvio Conti (a cura di), L'età contemporanea. Prospettive di storia europea e globale, Roma, Carocci, 2023;"
+      },
+      {
+       "titolo": "Mark Mazower, Le ombre dell'Europa. Democrazie e totalitarismi nel XX secolo, Milano, Garzanti, 2019.",
+       "autori": null,
+       "editore": null,
        "anno": 2019,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "L. Caracciolo-A. Roccucci, Storia contemporanea, Le Monnier Università, Milano 2017; 2) Marco Bresciani - Fulvio Conti (a cura di), L'età contemporanea. Prospettive di storia europea e globale, Roma, Carocci, 2023; 3) Mark Mazower, Le ombre dell'Europa. Democrazie e totalitarismi nel XX secolo, Milano, Garzanti, 2019."
+       "citazione": "Mark Mazower, Le ombre dell'Europa. Democrazie e totalitarismi nel XX secolo, Milano, Garzanti, 2019."
       }
      ],
      "esami": [],
@@ -10768,7 +10768,7 @@
    "url": "https://ingegneriaindustrialeelettronicameccanica.uniroma3.it/didattica/ingegneria-biomedica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20810351",
@@ -11132,7 +11132,7 @@
    "url": "https://ingegneriacivileinformaticatecnologieaeronautiche.uniroma3.it/didattica/collegio-civile/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20810293",
@@ -11375,7 +11375,7 @@
    "url": "https://uniroma3-public.gomp.it/PublicData?uid=badc2dd1-da9e-4c6a-a99c-ec7482acfb87&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20810293",
@@ -11451,18 +11451,6 @@
        "tipo": "consigliato",
        "note": null,
        "citazione": "\"Funzioni Algebriche e Trascendenti\", B. Palumbo, M.C. Signorino, editore Accademica \"Analisi Matematica\","
-      },
-      {
-       "titolo": "M. Bertsch, R. Dal Passo, L. Giacomelli, editore MCGraw-Hill",
-       "autori": null,
-       "editore": "editore MCGraw-Hill",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "M. Bertsch, R. Dal Passo, L. Giacomelli, editore MCGraw-Hill"
       }
      ],
      "esami": [],
@@ -11868,7 +11856,7 @@
    "url": "https://ingegneriaindustrialeelettronicameccanica.uniroma3.it/didattica/collegio-elettronica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20810230",
@@ -12124,7 +12112,7 @@
    "url": "https://ingegneriaindustrialeelettronicameccanica.uniroma3.it/didattica/offerta-formativa/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20840000",
@@ -12373,7 +12361,7 @@
    "url": "https://ingegneriacivileinformaticatecnologieaeronautiche.uniroma3.it/didattica/collegio-informatica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20810232",
@@ -12705,7 +12693,7 @@
    "url": "https://ingegneriaindustrialeelettronicameccanica.uniroma3.it/didattica/collegio-meccanica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20810231",
@@ -12715,7 +12703,7 @@
      "cfu": 12,
      "ssd": "MATH-03/A",
      "obbligatorio": true,
-     "curriculum": "MECCANICA",
+     "curriculum": "MECCANICA, TECNOLOGIE PER IL MARE",
      "docenti": [
       "Natalini Pierpaolo",
       "Pascucci Fabrizio",
@@ -12922,7 +12910,7 @@
      "cfu": 9,
      "ssd": "CHEM-06/A",
      "obbligatorio": true,
-     "curriculum": "TECNOLOGIE PER IL MARE",
+     "curriculum": "TECNOLOGIE PER IL MARE, MECCANICA",
      "docenti": [
       "Rocco Daniele",
       "Sotgiu Giovanni"
@@ -13206,7 +13194,7 @@
    "url": "http://studiumanistici.uniroma3.it/didattica/offerta-formativa/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -16289,18 +16277,6 @@
        "citazione": "M. Simonetti - E. Prinzivalli, Letteratura cristiana antica, Casale Monferrato: PiemmeReligio, 2003 (testi scelti)."
       },
       {
-       "titolo": "https://archive.org/details/simonetti-e-prinzivalli.-la-letteratura-cristiana-antica.-profilo-storico-antologia-di-testi-2003/mode/2up",
-       "autori": null,
-       "editore": null,
-       "anno": 2003,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://archive.org/details/simonetti-e-prinzivalli.-la-letteratura-cristiana-antica.-profilo-storico-antologia-di-testi-2003/mode/2up"
-      },
-      {
        "titolo": "Per chi volesse approfondire: M. Simonetti - E. Prinzivalli, Storia della letteratura cristiana antica, Bologna: EDB, 2022.",
        "autori": null,
        "editore": "Per chi volesse approfondire: M. Simonetti - E. Prinzivalli",
@@ -16691,7 +16667,7 @@
    "url": "https://lingueletteratureculturestraniere.uniroma3.it/corsi/dipartimento-di-lingue-letterature-e-culture-straniere/l/2024-2025/lingue-e-letterature-per-la-comunicazione-interculturale-0580706201100001/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20750106",
@@ -18249,7 +18225,7 @@
       {
        "titolo": "William Shakespeare, The New Oxford Shakespeare: The Tempest, Oxford World Classics, 2024.",
        "autori": null,
-       "editore": "The New Oxford Shakespeare: The Tempest",
+       "editore": "The New Oxford Shakespeare",
        "anno": 2024,
        "edizione": null,
        "isbn": null,
@@ -18604,7 +18580,7 @@
    "url": "http://lingueletteratureculturestraniere.uniroma3.it/corsi/dipartimento-di-lingue-letterature-e-culture-straniere/l/2019-2020/lingue-e-mediazione-linguistico-culturale-0580706201200001/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -19834,7 +19810,7 @@
    "url": "https://matematicafisica.uniroma3.it/didattica/corsi-di-laurea-e-laurea-magistrale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20410386",
@@ -20228,7 +20204,7 @@
    "url": "https://scienze.uniroma3.it/corsi/dipartimento-di-scienze/l/2023-2024/ottica-e-optometria-0580706203000002/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20410973",
@@ -20656,7 +20632,7 @@
    "url": "https://scienzepolitiche.uniroma3.it/corsi/dipartimento-di-scienze-politiche/l/2023-2024/politiche-cooperazione-e-sviluppo-0580706203700001/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "21801591",
@@ -21590,16 +21566,40 @@
        "citazione": "Giovanni Mario Ceci, La CIA e il terrorismo italiano. Dalla strage di piazza Fontana agli anni Ottanta (1969-1986), Carocci, 2019"
       },
       {
-       "titolo": "L. Caracciolo-A. Roccucci, Storia contemporanea, Le Monnier Università, Milano 2017; 2) Marco Bresciani - Fulvio Conti (a cura di), L'età contemporanea. Prospettive di storia europea e globale, Roma, Carocci, 2023; 3) Mark Mazower, Le ombre dell'Europa. Democrazie e totalitarismi nel XX secolo, Mila",
+       "titolo": "L. Caracciolo-A. Roccucci, Storia contemporanea, Le Monnier Università, Milano 2017;",
        "autori": null,
-       "editore": "Le Monnier Università",
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "L. Caracciolo-A. Roccucci, Storia contemporanea, Le Monnier Università, Milano 2017;"
+      },
+      {
+       "titolo": "Marco Bresciani - Fulvio Conti (a cura di), L'età contemporanea. Prospettive di storia europea e globale, Roma, Carocci, 2023;",
+       "autori": null,
+       "editore": null,
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "Marco Bresciani - Fulvio Conti (a cura di), L'età contemporanea. Prospettive di storia europea e globale, Roma, Carocci, 2023;"
+      },
+      {
+       "titolo": "Mark Mazower, Le ombre dell'Europa. Democrazie e totalitarismi nel XX secolo, Milano, Garzanti, 2019.",
+       "autori": null,
+       "editore": null,
        "anno": 2019,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "L. Caracciolo-A. Roccucci, Storia contemporanea, Le Monnier Università, Milano 2017; 2) Marco Bresciani - Fulvio Conti (a cura di), L'età contemporanea. Prospettive di storia europea e globale, Roma, Carocci, 2023; 3) Mark Mazower, Le ombre dell'Europa. Democrazie e totalitarismi nel XX secolo, Milano, Garzanti, 2019."
+       "citazione": "Mark Mazower, Le ombre dell'Europa. Democrazie e totalitarismi nel XX secolo, Milano, Garzanti, 2019."
       }
      ],
      "esami": [],
@@ -21649,7 +21649,7 @@
    "url": "http://www.scienze.uniroma3.it/courses/2",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20440046",
@@ -22073,7 +22073,7 @@
    "url": "http://giurisprudenza.uniroma3.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -22953,7 +22953,7 @@
      "cfu": 6,
      "ssd": "GIUR-15/A",
      "obbligatorio": true,
-     "curriculum": "Sicurezza territoriale e digitale",
+     "curriculum": "Sicurezza territoriale e digitale, Consulente del lavoro, Generale",
      "docenti": [
       "Galeotti Sara",
       "Cortese Barbara"
@@ -23433,7 +23433,7 @@
    "url": "http://architettura.uniroma3.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "21010195",
@@ -24611,7 +24611,7 @@
       {
        "titolo": "Laterza: Storia della città, collana a cura di Donatella Calabi:",
        "autori": null,
-       "editore": "Laterza: Storia della città",
+       "editore": "Laterza",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -25426,7 +25426,7 @@
    "url": "https://scienzeformazione.uniroma3.it/didattica/scienze-delleducazione-prevalentemente-a-distanza/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "22930001",
@@ -25715,7 +25715,7 @@
    "url": "https://scienzeformazione.uniroma3.it/didattica/scienze-delleducazione-per-educatori-e-formatori/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "22910166",
@@ -26553,7 +26553,7 @@
    "url": "http://filosofiacomunicazionespettacolo.uniroma3.it/didattica/scienze-della-comunicazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -27149,18 +27149,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "Capitoli I, II e III di Graffi G. (2008). Che cos'è la grammatica generativa. Carocci, Roma."
-      },
-      {
-       "titolo": "Che cos'è la grammatica generativa",
-       "autori": "Graffi G.",
-       "editore": "Carocci",
-       "anno": 2008,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Graffi G. (2008). Che cos'è la grammatica generativa. Carocci, Roma."
       },
       {
        "titolo": "Ferretti, Francesco. La facoltà di linguaggio: determinanti biologiche e variabilità culturale. Carocci editore, 2015.",
@@ -28168,18 +28156,6 @@
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "F. Pizzetti (a cura di), La regolazione europea della società digitale, Giappichelli, Torino, 2024, 203-233 (Capitolo VIII - La disciplina della cybersicurezza nell'Unione europea e in Italia)."
-      },
-      {
-       "titolo": "La regolazione europea della società digitale",
-       "autori": "F. Pizzetti",
-       "editore": "Giappichelli",
-       "anno": 2024,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
        "citazione": "F. Pizzetti (a cura di) (2024), La regolazione europea della società digitale, Giappichelli, 203-233 (Capitolo VIII - La disciplina della cybersicurezza nell'Unione europea e in Italia)"
       }
      ],
@@ -28500,6 +28476,18 @@
        "editore": "Il Mulino",
        "anno": 2012,
        "edizione": null,
+       "isbn": "9780521724579",
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "Cardaci M. (2012). Psicologia evoluzionistica e cognizione umana. Il Mulino, Bologna. ISBN: 9780521724579 ISBN: 9780194002011"
+      },
+      {
+       "titolo": "Psicologia evoluzionistica e cognizione umana",
+       "autori": "Cardaci M.",
+       "editore": "Il Mulino",
+       "anno": 2012,
+       "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": "consigliato",
@@ -28604,7 +28592,7 @@
    "url": "https://scienze.uniroma3.it/didattica/corsi-di-laurea-e-laurea-magistrale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20440005",
@@ -28622,28 +28610,28 @@
      "url": "https://uniroma3-public.gomp.it/PublicData?uid=1e1242c5-ecd8-443a-8bab-33b92e6bf116&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [
       {
-       "titolo": "Botanica generale e diversità vegetale, G. Pasqua, G. Abbate, C. Forni, Editore: Piccin-Nuova Libraria",
-       "autori": null,
-       "editore": "Editore: Piccin-Nuova Libraria",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "Botanica generale e diversità vegetale, G. Pasqua, G. Abbate, C. Forni, Editore: Piccin-Nuova Libraria"
-      },
-      {
-       "titolo": "ISBN-13 978-8829929795",
+       "titolo": "Botanica generale e diversità vegetale, G. Pasqua, G. Abbate, C. Forni, Editore: Piccin-Nuova Libraria ISBN-13 978-8829929795 ISBN-13 978-8829929795",
        "autori": null,
        "editore": null,
        "anno": null,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788829929795",
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "ISBN-13 978-8829929795"
+       "citazione": "Botanica generale e diversità vegetale, G. Pasqua, G. Abbate, C. Forni, Editore: Piccin-Nuova Libraria ISBN-13 978-8829929795 ISBN-13 978-8829929795"
+      },
+      {
+       "titolo": "Botanica generale e diversità vegetale, G. Pasqua, G. Abbate, C. Forni, Editore: Piccin-Nuova Libraria ISBN-13 978-8829929795",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788829929795",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "Botanica generale e diversità vegetale, G. Pasqua, G. Abbate, C. Forni, Editore: Piccin-Nuova Libraria ISBN-13 978-8829929795"
       }
      ],
      "esami": [],
@@ -28982,7 +28970,7 @@
    "url": "https://scienze.uniroma3.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20410775",
@@ -29435,7 +29423,7 @@
    "url": "https://scienze.uniroma3.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20410066",
@@ -30022,7 +30010,7 @@
    "url": "http://scienzepolitiche.uniroma3.it/corsi/dipartimento-di-scienze-politiche/l/2019-2020/scienze-politiche-e-relazioni-internazionali-0580706203600002/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -30464,16 +30452,40 @@
        "citazione": "Giovanni Mario Ceci, La CIA e il terrorismo italiano. Dalla strage di piazza Fontana agli anni Ottanta (1969-1986), Carocci, 2019"
       },
       {
-       "titolo": "L. Caracciolo-A. Roccucci, Storia contemporanea, Le Monnier Università, Milano 2017; 2) Marco Bresciani - Fulvio Conti (a cura di), L'età contemporanea. Prospettive di storia europea e globale, Roma, Carocci, 2023; 3) Mark Mazower, Le ombre dell'Europa. Democrazie e totalitarismi nel XX secolo, Mila",
+       "titolo": "L. Caracciolo-A. Roccucci, Storia contemporanea, Le Monnier Università, Milano 2017;",
        "autori": null,
-       "editore": "Le Monnier Università",
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "L. Caracciolo-A. Roccucci, Storia contemporanea, Le Monnier Università, Milano 2017;"
+      },
+      {
+       "titolo": "Marco Bresciani - Fulvio Conti (a cura di), L'età contemporanea. Prospettive di storia europea e globale, Roma, Carocci, 2023;",
+       "autori": null,
+       "editore": null,
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "Marco Bresciani - Fulvio Conti (a cura di), L'età contemporanea. Prospettive di storia europea e globale, Roma, Carocci, 2023;"
+      },
+      {
+       "titolo": "Mark Mazower, Le ombre dell'Europa. Democrazie e totalitarismi nel XX secolo, Milano, Garzanti, 2019.",
+       "autori": null,
+       "editore": null,
        "anno": 2019,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "L. Caracciolo-A. Roccucci, Storia contemporanea, Le Monnier Università, Milano 2017; 2) Marco Bresciani - Fulvio Conti (a cura di), L'età contemporanea. Prospettive di storia europea e globale, Roma, Carocci, 2023; 3) Mark Mazower, Le ombre dell'Europa. Democrazie e totalitarismi nel XX secolo, Milano, Garzanti, 2019."
+       "citazione": "Mark Mazower, Le ombre dell'Europa. Democrazie e totalitarismi nel XX secolo, Milano, Garzanti, 2019."
       }
      ],
      "esami": [],
@@ -30532,7 +30544,7 @@
    "url": "http://scienzeformazione.uniroma3.it/didattica/servizio-sociale-e-sociologia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "22902434",
@@ -31591,7 +31603,7 @@
    "url": "http://studiumanistici.uniroma3.it/didattica/offerta-formativa/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20710564",
@@ -32192,18 +32204,6 @@
        "citazione": "S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Quattrocento alla Controriforma (vol. 3), Mondadori Editore"
       },
       {
-       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788828616450",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450"
-      },
-      {
        "titolo": "e S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Barocco all’Impressionismo (vol. 4), Mondadori Editore (solo fino al Settecento, capitolo 14 incluso)",
        "autori": null,
        "editore": null,
@@ -32214,18 +32214,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "e S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Barocco all’Impressionismo (vol. 4), Mondadori Editore (solo fino al Settecento, capitolo 14 incluso)"
-      },
-      {
-       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788828616467",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467"
       },
       {
        "titolo": "Pittura ed esperienze sociali nell’Italia del Quattrocento",
@@ -32346,6 +32334,30 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "M. Hirst, Michelangelo, la conquista della fama. 1475-1534, Roma, 2021."
+      },
+      {
+       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788828616450",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450"
+      },
+      {
+       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788828616467",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467"
       }
      ],
      "esami": [],
@@ -33174,18 +33186,6 @@
        "citazione": "S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Quattrocento alla Controriforma (vol. 3), Mondadori Editore"
       },
       {
-       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788828616450",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450"
-      },
-      {
        "titolo": "e S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Barocco all’Impressionismo (vol. 4), Mondadori Editore (solo fino al Settecento, capitolo 14 incluso)",
        "autori": null,
        "editore": null,
@@ -33196,18 +33196,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "e S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Barocco all’Impressionismo (vol. 4), Mondadori Editore (solo fino al Settecento, capitolo 14 incluso)"
-      },
-      {
-       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788828616467",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467"
       },
       {
        "titolo": "Pittura ed esperienze sociali nell’Italia del Quattrocento",
@@ -33352,6 +33340,30 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "L. Goglia - F. Grassi, Il colonialismo italiano da Adua all'impero, Laterza, seconda parte."
+      },
+      {
+       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788828616450",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450"
+      },
+      {
+       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788828616467",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467"
       }
      ],
      "esami": [],
@@ -33711,18 +33723,6 @@
        "citazione": "S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Quattrocento alla Controriforma (vol. 3), Mondadori Editore"
       },
       {
-       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788828616450",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450"
-      },
-      {
        "titolo": "e S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Barocco all’Impressionismo (vol. 4), Mondadori Editore (solo fino al Settecento, capitolo 14 incluso)",
        "autori": null,
        "editore": null,
@@ -33733,18 +33733,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "e S. Settis – T. Montanari, Arte. Una storia naturale e civile. Dal Barocco all’Impressionismo (vol. 4), Mondadori Editore (solo fino al Settecento, capitolo 14 incluso)"
-      },
-      {
-       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788828616467",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467"
       },
       {
        "titolo": "Pittura ed esperienze sociali nell’Italia del Quattrocento",
@@ -33949,6 +33937,30 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "C. Zambianchi, Arte contemporanea. Dall’espressionismo astratto alla pop art, Carocci, Roma 2011."
+      },
+      {
+       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788828616450",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616450"
+      },
+      {
+       "titolo": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788828616467",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "https://www.libreriauniversitaria.it/arte-storia-naturale-civile-licei/libro/9788828616467"
       }
      ],
      "esami": [],
@@ -34804,7 +34816,7 @@
    "url": "https://scienzepolitiche.uniroma3.it/corsi/dipartimento-di-scienze-politiche/lm/2024-2025/amministrazioni-e-politiche-pubbliche-0580707306400001/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "21810474",
@@ -35217,7 +35229,7 @@
    "url": "http://studiumanistici.uniroma3.it/didattica/offerta-formativa/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -35899,7 +35911,7 @@
    "url": "http://architettura.uniroma3.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "21002041",
@@ -37260,7 +37272,7 @@
       {
        "titolo": "Mitchell, W.J. The logic of architecture. Design, Computation, and Cognition. Cambridge: The MIT Press, 1990",
        "autori": null,
-       "editore": "and Cognition. Cambridge: The MIT Press",
+       "editore": "and Cognition. Cambridge",
        "anno": 1990,
        "edizione": null,
        "isbn": null,
@@ -38203,18 +38215,6 @@
        "citazione": "A. Ricci, Attorno alla nuda pietra. Archeologia e città tra identità e progetto, Roma 2006."
       },
       {
-       "titolo": "E. Pallottino (a cura di), Architetti e archeologi costruttori d’identità, in Ricerche di Storia dell’arte, 95, 2008, pp. 30-43.",
-       "autori": null,
-       "editore": null,
-       "anno": 2008,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "E. Pallottino (a cura di), Architetti e archeologi costruttori d’identità, in Ricerche di Storia dell’arte, 95, 2008, pp. 30-43."
-      },
-      {
        "titolo": "D. Manacorda, R. Santangeli Valenzani, L. Franciosini, E. Pallottino, S. Picciola, A. Carlini, P. Porretta (a cura di), Arch.it.arch, dialoghi di archeologia e architettura, seminari 2005|2006, Roma 2009.",
        "autori": null,
        "editore": null,
@@ -38769,7 +38769,7 @@
    "url": "http://architettura.uniroma3.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "21002070",
@@ -39861,7 +39861,7 @@
        "citazione": "A. M. Damigella e N. Cardano, La campagna romana de «I XXV», De Luca Editori, 2005."
       },
       {
-       "titolo": "R. Funiciello,‎ G. Giordano e A. Praturlon,‎ La geologia di Roma dal centro storico alla periferia, Ist. Poligrafico dello Stato, 2008.",
+       "titolo": "R. Funiciello, G. Giordano e A. Praturlon, La geologia di Roma dal centro storico alla periferia, Ist. Poligrafico dello Stato, 2008.",
        "autori": null,
        "editore": null,
        "anno": 2008,
@@ -39870,7 +39870,7 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "R. Funiciello,‎ G. Giordano e A. Praturlon,‎ La geologia di Roma dal centro storico alla periferia, Ist. Poligrafico dello Stato, 2008."
+       "citazione": "R. Funiciello, G. Giordano e A. Praturlon, La geologia di Roma dal centro storico alla periferia, Ist. Poligrafico dello Stato, 2008."
       },
       {
        "titolo": "Campagne romane",
@@ -40208,7 +40208,7 @@
    "url": "http://architettura.uniroma3.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "21002101",
@@ -41791,7 +41791,7 @@
    "url": "http://www.scienze.uniroma3.it/courses/4",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -42612,7 +42612,7 @@
    "url": "http://www.scienze.uniroma3.it/courses/5",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -42827,7 +42827,7 @@
       {
        "titolo": " Abul K. Abbas and Andrew H. Lichtman and Shiv Pillai – Immunologia cellulare e molecolare – Ottava edizione 2015, Edito da Edra - Masson ISBN: 9788821447372",
        "autori": null,
-       "editore": "Edito da Edra - Masson ISBN: 9788821447372",
+       "editore": "Edito da Edra - Masson ISBN",
        "anno": 2015,
        "edizione": null,
        "isbn": "9788821447372",
@@ -42887,7 +42887,7 @@
       {
        "titolo": "Abul K. Abbas and Andrew H. Lichtman and Shiv Pillai – Immunologia cellulare e molecolare – Decima edizione 2022, Edito da Edra - Masson ISBN: 978 88 214 5573-5",
        "autori": null,
-       "editore": "Edito da Edra - Masson ISBN: 978 88 214 5573-5",
+       "editore": "Edito da Edra - Masson ISBN",
        "anno": 2022,
        "edizione": null,
        "isbn": "9788821455735",
@@ -43375,7 +43375,7 @@
       {
        "titolo": "Abul K. Abbas and Andrew H. Lichtman and Shiv Pillai – Immunologia cellulare e molecolare – Decima edizione 2022, Edito da Edra - Masson ISBN: 978 88 214 5573-5",
        "autori": null,
-       "editore": "Edito da Edra - Masson ISBN: 978 88 214 5573-5",
+       "editore": "Edito da Edra - Masson ISBN",
        "anno": 2022,
        "edizione": null,
        "isbn": "9788821455735",
@@ -43639,7 +43639,7 @@
    "url": "https://ingegneriaindustrialeelettronicameccanica.uniroma3.it/didattica/collegio-elettronica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20840115",
@@ -43813,7 +43813,7 @@
    "url": "http://filosofiacomunicazionespettacolo.uniroma3.it/dams/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -44671,7 +44671,7 @@
    "url": "https://scienzeformazione.uniroma3.it/didattica/coordinatore-dei-servizi-educativi-e-dei-servizi-sociali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "22911316",
@@ -47305,30 +47305,6 @@
        "citazione": "CATARCI M., Le forme sociali dell’educazione. Servizi, Territori, Società, Franco Angeli, Milano"
       },
       {
-       "titolo": "cambiamento sociale, Franco Angeli, Milano 2016.",
-       "autori": null,
-       "editore": "Franco Angeli",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "cambiamento sociale, Franco Angeli, Milano 2016."
-      },
-      {
-       "titolo": "Raffaello Cortina, Milano 2001",
-       "autori": null,
-       "editore": "Raffaello Cortina",
-       "anno": 2001,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Raffaello Cortina, Milano 2001"
-      },
-      {
        "titolo": "STILLO L., Periferie dell’esclusione. Contesti, soggettività, riflessioni in prospettiva pedagogico-sociale, Pensa Multimedia, Lecce, 2023",
        "autori": null,
        "editore": null,
@@ -47411,18 +47387,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "MASSIMO SANTINELLO, ALESSIO VIENO, MICHELA LENZI. (2018). Fondamenti di psicologia di comunità. Il Mulino. (Cap. 1, 4, 5, 6 e 7)."
-      },
-      {
-       "titolo": "https://lenguamairena.wordpress.com/wp-content/uploads/2009/03/valoracion-critica-romancero-gitano.pdf",
-       "autori": null,
-       "editore": null,
-       "anno": 2009,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://lenguamairena.wordpress.com/wp-content/uploads/2009/03/valoracion-critica-romancero-gitano.pdf"
       },
       {
        "titolo": "International Journal of Psychoanalysis and Education",
@@ -49977,18 +49941,6 @@
      "url": "https://uniroma3-public.gomp.it/PublicData?uid=7306f0f7-9398-4e67-9103-1a65264de809&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [
       {
-       "titolo": "https://lenguamairena.wordpress.com/wp-content/uploads/2009/03/valoracion-critica-romancero-gitano.pdf",
-       "autori": null,
-       "editore": null,
-       "anno": 2009,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://lenguamairena.wordpress.com/wp-content/uploads/2009/03/valoracion-critica-romancero-gitano.pdf"
-      },
-      {
        "titolo": "Haas, H. de (2024), Migrazioni. Einaudi (Edizione originale: How Migration Really Works; The Facts About the Most Divisive Issue in Politics. New York: Basic Books, 2023).",
        "autori": null,
        "editore": null,
@@ -50356,7 +50308,7 @@
    "url": "http://filosofiacomunicazionespettacolo.uniroma3.it/dams/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -51278,18 +51230,6 @@
        "citazione": "Mattioli Valerio, Superonda, Baldini & Castoldi, Milano 2016."
       },
       {
-       "titolo": "Canzonette",
-       "autori": "Mignogna Dino",
-       "editore": null,
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Mignogna Dino, \"Canzonette\" a regola d'arte, Arcana, 2020."
-      },
-      {
        "titolo": "Moore Allan F. - Vacca Giovanni, Legacies of Ewan MacColl, Ashgate 2014.",
        "autori": null,
        "editore": null,
@@ -51432,18 +51372,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "Mattioli Valerio, Superonda, Baldini & Castoldi, Milano 2016. Mignogna Dino, \"Canzonette\" a regola d'arte, Arcana, 2020."
-      },
-      {
-       "titolo": "Le canzoni della cattiva coscienza, Bompiani 1963.",
-       "autori": null,
-       "editore": "Bompiani 1963",
-       "anno": 1963,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "Le canzoni della cattiva coscienza, Bompiani 1963."
       },
       {
        "titolo": "Zukar Paola, Rap. Una storia italiana, Baldini & Castoldi, Milano 2021",
@@ -52649,7 +52577,7 @@
    "url": "https://uniroma3-public.gomp.it/PublicData?uid=900d9e62-16d2-445a-a06b-117780c8e1f8&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -53039,7 +52967,7 @@
    "url": "https://scienzeformazione.uniroma3.it/didattica/e-learning-e-media-education/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "22910286",
@@ -53511,7 +53439,7 @@
    "url": "https://economiaziendale.uniroma3.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -54016,7 +53944,7 @@
    "url": "https://economia.uniroma3.it/didattica/orientamento/le-nostre-magistrali/laurea-magistrale-in-economia-dellambiente-e-dello-sviluppo-lm-56/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -54561,18 +54489,6 @@
        "citazione": "Open issues in composite indicators. Terzi, Otoiu, Mazziotta, Pareto, Grimaccia. Scaricabile dal sito RomaTre press:"
       },
       {
-       "titolo": "https://romatrepress.uniroma3.it/wp-content/uploads/2021/03/open-togmp-2.pdf",
-       "autori": null,
-       "editore": null,
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://romatrepress.uniroma3.it/wp-content/uploads/2021/03/open-togmp-2.pdf"
-      },
-      {
        "titolo": "Introductory econometrics: A modern approach.",
        "autori": "Wooldridge, Jeffrey M",
        "editore": null,
@@ -54630,18 +54546,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "Open issues in composite indicators. Terzi, Otoiu, Mazziotta, Pareto, Grimaccia. Scaricabile dal sito RomaTre press:"
-      },
-      {
-       "titolo": "https://romatrepress.uniroma3.it/wp-content/uploads/2021/03/open-togmp-2.pdf",
-       "autori": null,
-       "editore": null,
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "https://romatrepress.uniroma3.it/wp-content/uploads/2021/03/open-togmp-2.pdf"
       },
       {
        "titolo": "Introductory econometrics: A modern approach.",
@@ -55411,7 +55315,7 @@
    "url": "https://economia.uniroma3.it/didattica/orientamento/le-nostre-magistrali/economia-e-gestione-della-trasformazione-digitale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "21230044",
@@ -55823,7 +55727,7 @@
    "url": "http://economiaziendale.uniroma3.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -56766,7 +56670,7 @@
    "url": "http://studiumanistici.uniroma3.it/didattica/offerta-formativa/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": " - ",
@@ -56891,18 +56795,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "A) Capitoli X-XII di D. MUSTI, Storia greca. Linee di sviluppo dall'età micenea all'età romana, Roma-Bari, Laterza, 1990 (seconda edizione) ed edizioni successive"
-      },
-      {
-       "titolo": "M. BETTALLI - L. D'AGATA - A. MAGNETTO, Storia greca, Roma, Carocci, 2021, capitoli 24-30.",
-       "autori": null,
-       "editore": "Carocci",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "M. BETTALLI - L. D'AGATA - A. MAGNETTO, Storia greca, Roma, Carocci, 2021, capitoli 24-30."
       },
       {
        "titolo": "B) M. MARI (a cura di), L’età ellenistica. Società, politica, cultura, Roma, Carocci Editore, 2019 (intero volume).",
@@ -57325,7 +57217,7 @@
    "url": "http://economiaziendale.uniroma3.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -58048,7 +57940,7 @@
    "url": "https://matematicafisica.uniroma3.it/didattica/corsi-di-laurea-e-laurea-magistrale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20410581",
@@ -59409,7 +59301,7 @@
    "url": "http://www.scienze.uniroma3.it/didattica/corsi-di-laurea-e-laurea-magistrale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20410870",
@@ -59506,18 +59398,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "il materiale proviene da molteplici sorgenti, tra le quali: Lowrie, Fundamentals of Geophysics, Cambridge, 2002, Kearey et al., An introduction to Geophysical Exploration, Blackwell Publishing, 2002, Telford et al., Applied Geophysics, Cambridge, 1990"
-      },
-      {
-       "titolo": "Lowrie, Fundamentals of Geophysics, Cambridge, 2002, Kearey et al., An introduction to Geophysical Exploration, Blackwell Publishing, 2002, Telford et al., Applied Geophysics, Cambridge, 1990",
-       "autori": null,
-       "editore": "Cambridge",
-       "anno": 1990,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Lowrie, Fundamentals of Geophysics, Cambridge, 2002, Kearey et al., An introduction to Geophysical Exploration, Blackwell Publishing, 2002, Telford et al., Applied Geophysics, Cambridge, 1990"
       }
      ],
      "esami": [],
@@ -60038,18 +59918,6 @@
        "citazione": "il materiale proviene da molteplici sorgenti, tra le quali: Lowrie, Fundamentals of Geophysics, Cambridge, 2002, Kearey et al., An introduction to Geophysical Exploration, Blackwell Publishing, 2002, Telford et al., Applied Geophysics, Cambridge, 1990"
       },
       {
-       "titolo": "Lowrie, Fundamentals of Geophysics, Cambridge, 2002, Kearey et al., An introduction to Geophysical Exploration, Blackwell Publishing, 2002, Telford et al., Applied Geophysics, Cambridge, 1990",
-       "autori": null,
-       "editore": "Cambridge",
-       "anno": 1990,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Lowrie, Fundamentals of Geophysics, Cambridge, 2002, Kearey et al., An introduction to Geophysical Exploration, Blackwell Publishing, 2002, Telford et al., Applied Geophysics, Cambridge, 1990"
-      },
-      {
        "titolo": "BAIRD C. CHIMICA AMBIENTALE. ZANICHELLI EDITORE, 2001- IN ITALIANO",
        "autori": null,
        "editore": "BAIRD C. CHIMICA AMBIENTALE. ZANICHELLI EDITORE",
@@ -60250,7 +60118,7 @@
    "url": "http://filosofiacomunicazionespettacolo.uniroma3.it/didattica/scienze-della-comunicazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -61549,7 +61417,7 @@
    "url": "https://ingegneriacivileinformaticatecnologieaeronautiche.uniroma3.it/didattica/ingegneria-aeronautica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20830042",
@@ -62291,7 +62159,7 @@
    "url": "https://ingegneriacivileinformaticatecnologieaeronautiche.uniroma3.it/didattica/collegio-civile/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20830068",
@@ -62709,7 +62577,7 @@
    "url": "https://ingegneriacivileinformaticatecnologieaeronautiche.uniroma3.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20830133",
@@ -62941,7 +62809,7 @@
    "url": "https://ingegneriacivileinformaticatecnologieaeronautiche.uniroma3.it/didattica/collegio-civile/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20810000",
@@ -63301,7 +63169,7 @@
    "url": "https://ingegneriaindustrialeelettronicameccanica.uniroma3.it/didattica/collegio-elettronica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20810540",
@@ -63642,7 +63510,7 @@
    "url": "https://ingegneriaindustrialeelettronicameccanica.uniroma3.it/didattica/collegio-elettronica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20801707",
@@ -64064,7 +63932,7 @@
    "url": "https://ingegneriacivileinformaticatecnologieaeronautiche.uniroma3.it/didattica/collegio-informatica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -64532,7 +64400,7 @@
    "url": "https://ingegneriacivileinformaticatecnologieaeronautiche.uniroma3.it/didattica/collegio-informatica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20810256",
@@ -65324,7 +65192,7 @@
    "url": "https://ingegneriaindustrialeelettronicameccanica.uniroma3.it/didattica/collegio-meccanica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20810407",
@@ -65776,7 +65644,7 @@
    "url": "https://ingegneriaindustrialeelettronicameccanica.uniroma3.it/didattica/collegio-meccanica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -66024,7 +65892,7 @@
    "url": "https://scienzepolitiche.uniroma3.it/corsi/dipartimento-di-scienze-politiche/lm/2020-2021/international-studies-0580707305300003/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -67223,7 +67091,7 @@
       {
        "titolo": "Brooks, Stephen and William Wohlforth, America Abroad: The US Global Role in the 21st Century, (Oxford: Oxford University Press, 2016).",
        "autori": null,
-       "editore": "(Oxford: Oxford University Press",
+       "editore": "(Oxford",
        "anno": 2016,
        "edizione": null,
        "isbn": null,
@@ -67235,7 +67103,7 @@
       {
        "titolo": "(Cambridge: Harvard University Press, 2005).",
        "autori": null,
-       "editore": "(Cambridge: Harvard University Press",
+       "editore": "(Cambridge",
        "anno": 2005,
        "edizione": null,
        "isbn": null,
@@ -67783,7 +67651,7 @@
    "url": "http://studiumanistici.uniroma3.it/didattica/offerta-formativa/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -69444,7 +69312,7 @@
       {
        "titolo": "L’ordine delle parole. Storia di vocabolari italiani",
        "autori": "C. Marazzini (2009)",
-       "editore": "il Mulino: capp. III",
+       "editore": "il Mulino",
        "anno": 2009,
        "edizione": null,
        "isbn": null,
@@ -69805,7 +69673,7 @@
    "url": "https://lingueletteratureculturestraniere.uniroma3.it/corsi/dipartimento-di-lingue-letterature-e-culture-straniere/lm/2024-2025/lingue-e-letterature-per-la-didattica-e-la-traduzione-0580707303800001/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -72762,7 +72630,7 @@
    "url": "http://www.uniroma3.it/corsi/dipartimento-di-lingue-letterature-e-culture-straniere/lm/2019-2020/lingue-moderne-per-la-comunicazione-internazionale-0580707303900001/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -74784,7 +74652,7 @@
    "url": "https://matematicafisica.uniroma3.it/didattica/corsi-di-laurea-e-laurea-magistrale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -74866,7 +74734,7 @@
        "citazione": "DEHORNOY, P., COMPLEXITÈ ET DECIDABILITÈ. SPRINGER-VERLAG, (1993)."
       },
       {
-       "titolo": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ‪ELLIS HORWOOD, (1993).",
+       "titolo": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ELLIS HORWOOD, (1993).",
        "autori": null,
        "editore": null,
        "anno": 1993,
@@ -74875,7 +74743,7 @@
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ‪ELLIS HORWOOD, (1993)."
+       "citazione": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ELLIS HORWOOD, (1993)."
       },
       {
        "titolo": "SIPSER,M., INTRODUCTION TO THE THEORY OF COMPUTATION.THOMSON COURSE TECHNOLOGY, (2006).",
@@ -75154,7 +75022,7 @@
        "citazione": "DEHORNOY, P., COMPLEXITÈ ET DECIDABILITÈ. SPRINGER-VERLAG, (1993)."
       },
       {
-       "titolo": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ‪ELLIS HORWOOD, (1993).",
+       "titolo": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ELLIS HORWOOD, (1993).",
        "autori": null,
        "editore": null,
        "anno": 1993,
@@ -75163,7 +75031,7 @@
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ‪ELLIS HORWOOD, (1993)."
+       "citazione": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ELLIS HORWOOD, (1993)."
       },
       {
        "titolo": "SIPSER,M., INTRODUCTION TO THE THEORY OF COMPUTATION.THOMSON COURSE TECHNOLOGY, (2006).",
@@ -75278,7 +75146,7 @@
        "citazione": "DEHORNOY, P., COMPLEXITÈ ET DECIDABILITÈ. SPRINGER-VERLAG, (1993)."
       },
       {
-       "titolo": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ‪ELLIS HORWOOD, (1993).",
+       "titolo": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ELLIS HORWOOD, (1993).",
        "autori": null,
        "editore": null,
        "anno": 1993,
@@ -75287,7 +75155,7 @@
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ‪ELLIS HORWOOD, (1993)."
+       "citazione": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ELLIS HORWOOD, (1993)."
       },
       {
        "titolo": "SIPSER,M., INTRODUCTION TO THE THEORY OF COMPUTATION.THOMSON COURSE TECHNOLOGY, (2006).",
@@ -75722,7 +75590,7 @@
        "citazione": "DEHORNOY, P., COMPLEXITÈ ET DECIDABILITÈ. SPRINGER-VERLAG, (1993)."
       },
       {
-       "titolo": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ‪ELLIS HORWOOD, (1993).",
+       "titolo": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ELLIS HORWOOD, (1993).",
        "autori": null,
        "editore": null,
        "anno": 1993,
@@ -75731,7 +75599,7 @@
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ‪ELLIS HORWOOD, (1993)."
+       "citazione": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ELLIS HORWOOD, (1993)."
       },
       {
        "titolo": "SIPSER,M., INTRODUCTION TO THE THEORY OF COMPUTATION.THOMSON COURSE TECHNOLOGY, (2006).",
@@ -76149,7 +76017,7 @@
        "citazione": "DEHORNOY, P., COMPLEXITÈ ET DECIDABILITÈ. SPRINGER-VERLAG, (1993)."
       },
       {
-       "titolo": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ‪ELLIS HORWOOD, (1993).",
+       "titolo": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ELLIS HORWOOD, (1993).",
        "autori": null,
        "editore": null,
        "anno": 1993,
@@ -76158,7 +76026,7 @@
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ‪ELLIS HORWOOD, (1993)."
+       "citazione": "KRIVINE, J.-L., LAMBDA CALCULUS: TYPES AND MODELS. ELLIS HORWOOD, (1993)."
       },
       {
        "titolo": "SIPSER,M., INTRODUCTION TO THE THEORY OF COMPUTATION.THOMSON COURSE TECHNOLOGY, (2006).",
@@ -76514,7 +76382,7 @@
    "url": "https://scienzepolitiche.uniroma3.it/didattica/offerta-formativa/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "21830221",
@@ -76545,7 +76413,7 @@
       {
        "titolo": "Raffaele Nocera, Paolo Wulzer, L’America Latina nella politica internazionale. Dalla fine del sistema bipolare alla crisi dell'ordine liberale, Carocci (solo parte prima: L'America Latina nelle Americhe)",
        "autori": null,
-       "editore": "Carocci (solo parte prima: L'America Latina nelle Americhe)",
+       "editore": "Carocci (solo parte prima",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -76879,7 +76747,7 @@
       {
        "titolo": "Raffaele Nocera, Paolo Wulzer, L’America Latina nella politica internazionale. Dalla fine del sistema bipolare alla crisi dell'ordine liberale, Carocci (solo parte prima: L'America Latina nelle Americhe)",
        "autori": null,
-       "editore": "Carocci (solo parte prima: L'America Latina nelle Americhe)",
+       "editore": "Carocci (solo parte prima",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -78389,7 +78257,7 @@
       {
        "titolo": "Nolan, Mary. The Transatlantic Century Europe and America, 1890-2010. Cambridge: Cambridge UP, 2012.",
        "autori": null,
-       "editore": "1890-2010. Cambridge: Cambridge UP",
+       "editore": "1890-2010. Cambridge",
        "anno": 2012,
        "edizione": null,
        "isbn": null,
@@ -78605,7 +78473,7 @@
       {
        "titolo": "Empire",
        "autori": "Lundestad, Geir, The United States and Western Europe since 1945: From",
-       "editore": "Oxford: Oxford University Press",
+       "editore": "Oxford",
        "anno": 2005,
        "edizione": null,
        "isbn": null,
@@ -78723,7 +78591,7 @@
        "citazione": "Sloan, Stanley R. Defense of the West NATO, the European Union and the Transatlantic Bargain. Manchester: Manchester UP, 2016."
       },
       {
-       "titolo": "Stoltenberg Jens, On my watch: leading NATO in a time of war, ‎ W. W. Norton & Company, 2025",
+       "titolo": "Stoltenberg Jens, On my watch: leading NATO in a time of war, W. W. Norton & Company, 2025",
        "autori": null,
        "editore": null,
        "anno": 2025,
@@ -78732,7 +78600,7 @@
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "Stoltenberg Jens, On my watch: leading NATO in a time of war, ‎ W. W. Norton & Company, 2025"
+       "citazione": "Stoltenberg Jens, On my watch: leading NATO in a time of war, W. W. Norton & Company, 2025"
       },
       {
        "titolo": "Bernardo Bernardi, Africa. Tradizione e Modernità, Carocci, 2001",
@@ -79052,7 +78920,7 @@
       {
        "titolo": "Raffaele Nocera, Paolo Wulzer, L’America Latina nella politica internazionale. Dalla fine del sistema bipolare alla crisi dell'ordine liberale, Carocci (solo parte prima: L'America Latina nelle Americhe)",
        "autori": null,
-       "editore": "Carocci (solo parte prima: L'America Latina nelle Americhe)",
+       "editore": "Carocci (solo parte prima",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -79100,7 +78968,7 @@
       {
        "titolo": "Nolan, Mary. The Transatlantic Century Europe and America, 1890-2010. Cambridge: Cambridge UP, 2012.",
        "autori": null,
-       "editore": "1890-2010. Cambridge: Cambridge UP",
+       "editore": "1890-2010. Cambridge",
        "anno": 2012,
        "edizione": null,
        "isbn": null,
@@ -79316,7 +79184,7 @@
       {
        "titolo": "Empire",
        "autori": "Lundestad, Geir, The United States and Western Europe since 1945: From",
-       "editore": "Oxford: Oxford University Press",
+       "editore": "Oxford",
        "anno": 2005,
        "edizione": null,
        "isbn": null,
@@ -79434,7 +79302,7 @@
        "citazione": "Sloan, Stanley R. Defense of the West NATO, the European Union and the Transatlantic Bargain. Manchester: Manchester UP, 2016."
       },
       {
-       "titolo": "Stoltenberg Jens, On my watch: leading NATO in a time of war, ‎ W. W. Norton & Company, 2025",
+       "titolo": "Stoltenberg Jens, On my watch: leading NATO in a time of war, W. W. Norton & Company, 2025",
        "autori": null,
        "editore": null,
        "anno": 2025,
@@ -79443,7 +79311,7 @@
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "Stoltenberg Jens, On my watch: leading NATO in a time of war, ‎ W. W. Norton & Company, 2025"
+       "citazione": "Stoltenberg Jens, On my watch: leading NATO in a time of war, W. W. Norton & Company, 2025"
       },
       {
        "titolo": "Bernardo Bernardi, Africa. Tradizione e Modernità, Carocci, 2001",
@@ -79902,18 +79770,6 @@
        "citazione": "P. Grilli di Cortona, Come gli stati diventano democratici, Laterza, Roma-Bari 2009."
       },
       {
-       "titolo": "Tra vecchio e nuovo regime. Il peso del passato nella costruzione della democrazia",
-       "autori": "P. Grilli di Cortona e O. Lanza",
-       "editore": "Il Mulino",
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "P. Grilli di Cortona e O. Lanza (a cura di), Tra vecchio e nuovo regime. Il peso del passato nella costruzione della democrazia, Il Mulino, Bologna 2011."
-      },
-      {
        "titolo": "Gli studenti non frequentanti che sostengono l'esame da 6 CFU possono escludere i capp. VII, VIII, IX e X del volume P. Grilli di Cortona e O. Lanza (a cura di),Tra vecchio e nuovo regime. Il peso del passato nella costruzione della democrazia, Il Mulino, Bologna 2011.",
        "autori": null,
        "editore": "Il Mulino",
@@ -80252,7 +80108,7 @@
    "url": "https://studiumanistici.uniroma3.it/didattica/offerta-formativa/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "22901497",
@@ -80821,7 +80677,7 @@
    "url": "http://filosofiacomunicazionespettacolo.uniroma3.it/didattica/scienze-della-comunicazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -81367,7 +81223,7 @@
    "url": "https://economia.uniroma3.it/corsi/dipartimento-di-economia/lm/2024-2025/scienze-economiche-0580707305700002/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -82601,7 +82457,7 @@
    "url": "https://www.uniroma3.it/corsi/dipartimento-di-filosofia-comunicazione-e-spettacolo/lm/2023-2024/scienze-filosofiche-0580707307900001/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -83989,7 +83845,7 @@
    "url": "https://giurisprudenza.uniroma3.it/en/study/educational-offer/masters-degree-in-law-and-new-technologies/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -85336,7 +85192,7 @@
    "url": "https://scienzeformazione.uniroma3.it/didattica/scienze-pedagogiche-e-scienze-delleducazione-degli-adulti-e-della-formazione-continua/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "22910709",
@@ -85943,30 +85799,6 @@
        "citazione": "CATARCI M., Le forme sociali dell’educazione. Servizi, Territori, Società, Franco Angeli, Milano"
       },
       {
-       "titolo": "cambiamento sociale, Franco Angeli, Milano 2016.",
-       "autori": null,
-       "editore": "Franco Angeli",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "cambiamento sociale, Franco Angeli, Milano 2016."
-      },
-      {
-       "titolo": "Raffaello Cortina, Milano 2001",
-       "autori": null,
-       "editore": "Raffaello Cortina",
-       "anno": 2001,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Raffaello Cortina, Milano 2001"
-      },
-      {
        "titolo": "STILLO L., Periferie dell’esclusione. Contesti, soggettività, riflessioni in prospettiva pedagogico-sociale, Pensa Multimedia, Lecce, 2023",
        "autori": null,
        "editore": null,
@@ -86543,7 +86375,7 @@
    "url": "http://studiumanistici.uniroma3.it/didattica/offerta-formativa/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -87854,7 +87686,7 @@
    "url": "https://studiumanistici.uniroma3.it/didattica/offerta-formativa/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -88904,7 +88736,7 @@
       {
        "titolo": "Laterza: Storia della città, collana a cura di Donatella Calabi:",
        "autori": null,
-       "editore": "Laterza: Storia della città",
+       "editore": "Laterza",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -89570,7 +89402,7 @@
    "url": "https://studiumanistici.uniroma3.it/didattica/offerta-formativa/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -89783,7 +89615,7 @@
       {
        "titolo": "Jan W. Wojcik, Robert Boyle and the Limits of Reason, Cambridge: Cambridge University Press, 1997",
        "autori": null,
-       "editore": "Cambridge: Cambridge University Press",
+       "editore": "Cambridge",
        "anno": 1997,
        "edizione": null,
        "isbn": null,
@@ -90335,7 +90167,7 @@
       {
        "titolo": "Jan W. Wojcik, Robert Boyle and the Limits of Reason, Cambridge: Cambridge University Press, 1997",
        "autori": null,
-       "editore": "Cambridge: Cambridge University Press",
+       "editore": "Cambridge",
        "anno": 1997,
        "edizione": null,
        "isbn": null,
@@ -90949,7 +90781,7 @@
       {
        "titolo": "Jan W. Wojcik, Robert Boyle and the Limits of Reason, Cambridge: Cambridge University Press, 1997",
        "autori": null,
-       "editore": "Cambridge: Cambridge University Press",
+       "editore": "Cambridge",
        "anno": 1997,
        "edizione": null,
        "isbn": null,
@@ -91514,7 +91346,7 @@
       {
        "titolo": "Jan W. Wojcik, Robert Boyle and the Limits of Reason, Cambridge: Cambridge University Press, 1997",
        "autori": null,
-       "editore": "Cambridge: Cambridge University Press",
+       "editore": "Cambridge",
        "anno": 1997,
        "edizione": null,
        "isbn": null,
@@ -91910,7 +91742,7 @@
    "url": "http://studiumanistici.uniroma3.it/didattica/offerta-formativa/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -92781,7 +92613,7 @@
    "url": "https://scienzepolitiche.uniroma3.it/didattica/corsi-di-laurea-e-laurea-magistrale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "21810760",
@@ -93199,7 +93031,7 @@
    "url": "https://uniroma3-public.gomp.it/PublicData?uid=95fe47cd-f337-42c6-9c22-748d8c25421e&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "20410860",
@@ -93473,7 +93305,7 @@
    "url": "http://giurisprudenza.uniroma3.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -95188,7 +95020,7 @@
       {
        "titolo": "Mazzamuto (a cura di), Manuale del diritto privato, Torino, Giappichelli [CAPITOLI: I, II, III, IV, XIII (solo § 13), XIV, XV (escluso § 3), XVI, XVIII, XIX].",
        "autori": null,
-       "editore": "Giappichelli [CAPITOLI: I",
+       "editore": "Giappichelli [CAPITOLI",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -95760,7 +95592,7 @@
    "url": "https://scienzeformazione.uniroma3.it/didattica/scienze-della-formazione-primaria/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "22911123",
@@ -95838,7 +95670,7 @@
       {
        "titolo": "Luciana BERTINATO, (2017) 2023, Una scuola felice. Diario di un'esperienza educativa possibile, Franco Angeli: Milano",
        "autori": null,
-       "editore": "Franco Angeli: Milano",
+       "editore": "Franco Angeli",
        "anno": 2023,
        "edizione": null,
        "isbn": null,
@@ -95850,7 +95682,7 @@
       {
        "titolo": "Sonia COLUCCELLI, Montessori incontra...Intrecci pedagogici tra scuola montessoriana e didattiche non tradizionali, Erickson: Trento",
        "autori": null,
-       "editore": "Erickson: Trento",
+       "editore": "Erickson",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -95862,7 +95694,7 @@
       {
        "titolo": "Mario LODI, (1977) 2022, Il paese sbagliato. Diario di un'esperienza didattica, BUR Rizzoli saggi: Milano",
        "autori": null,
-       "editore": "BUR Rizzoli saggi: Milano",
+       "editore": "BUR Rizzoli saggi",
        "anno": 2022,
        "edizione": null,
        "isbn": null,

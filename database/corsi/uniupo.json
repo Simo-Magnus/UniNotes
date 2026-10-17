@@ -1000,18 +1000,6 @@
        "tipo": null,
        "note": null,
        "citazione": "C Shimasaki (editor), Biotechnology Entrepreneurship: Leading, Managing and Commercializing Innovative Technologies, Academic Press, 2020"
-      },
-      {
-       "titolo": "AA.VV., Lezioni di economia aziendale, seconda edizione, Giappichelli, Torino, 2013.",
-       "autori": null,
-       "editore": "Giappichelli",
-       "anno": 2013,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "AA.VV., Lezioni di economia aziendale, seconda edizione, Giappichelli, Torino, 2013."
       }
      ],
      "esami": [
@@ -2975,7 +2963,7 @@
       {
        "titolo": "Raymond Murphy, English Grammar in Use, 5th Edition. Cambridge: Cambridge University Press, 2019.",
        "autori": null,
-       "editore": "5th Edition. Cambridge: Cambridge University Press",
+       "editore": "5th Edition. Cambridge",
        "anno": 2019,
        "edizione": null,
        "isbn": null,
@@ -2999,7 +2987,7 @@
       {
        "titolo": "AA. VV. Academic English: Skills for Success, 3nd Edition. Oxford: Oxford University Press, 2025.",
        "autori": null,
-       "editore": "3nd Edition. Oxford: Oxford University Press",
+       "editore": "3nd Edition. Oxford",
        "anno": 2025,
        "edizione": null,
        "isbn": null,
@@ -5394,7 +5382,7 @@
       {
        "titolo": "Raymond Murphy, English Grammar in Use, 5th Edition. Cambridge: Cambridge University Press, 2019.",
        "autori": null,
-       "editore": "5th Edition. Cambridge: Cambridge University Press",
+       "editore": "5th Edition. Cambridge",
        "anno": 2019,
        "edizione": null,
        "isbn": null,
@@ -5418,7 +5406,7 @@
       {
        "titolo": "AA. VV. Academic English: Skills for Success, 3nd Edition. Oxford: Oxford University Press, 2025.",
        "autori": null,
-       "editore": "3nd Edition. Oxford: Oxford University Press",
+       "editore": "3nd Edition. Oxford",
        "anno": 2025,
        "edizione": null,
        "isbn": null,
@@ -5743,7 +5731,7 @@
       {
        "titolo": "Brock. Biologia dei microrganismi. Microbiologia generale, ambientale e industriale. 16/Ed. Madigan, Martinko, Stahl, Bender, Buckley. PEARSON Data di Pubblicazione: gennaio 2022",
        "autori": null,
-       "editore": "Buckley. PEARSON Data di Pubblicazione: gennaio 2022",
+       "editore": "Buckley. PEARSON Data di Pubblicazione",
        "anno": 2022,
        "edizione": null,
        "isbn": null,
@@ -5811,6 +5799,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Matteo Bordiga. Valorization of Wine Making By-Products. CRC Press, 2016."
+      },
+      {
+       "titolo": "Matteo Bordiga & Leo M.L. Nollet. Food Aroma Evolution – During food processing, cooking, and aging. CRC Press, 2019. ISBN: 8891906298",
+       "autori": null,
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": "8891906298",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Matteo Bordiga & Leo M.L. Nollet. Food Aroma Evolution – During food processing, cooking, and aging. CRC Press, 2019. ISBN: 8891906298"
       },
       {
        "titolo": "Matteo Bordiga & Leo M.L. Nollet. Food Aroma Evolution – During food processing, cooking, and aging. CRC Press, 2019.",
@@ -7814,28 +7814,16 @@
        "citazione": "Published November 28, 2016 by CRC Press"
       },
       {
-       "titolo": "Published March 31, 2021 by CRC Press",
-       "autori": null,
-       "editore": "2021 by CRC Press",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Published March 31, 2021 by CRC Press"
-      },
-      {
-       "titolo": "ISBN: 978-1-119-84086-2",
+       "titolo": "Published March 31, 2021 by CRC Press ISBN: 978-1-119-84086-2",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2021,
        "edizione": null,
        "isbn": "9781119840862",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-1-119-84086-2"
+       "citazione": "Published March 31, 2021 by CRC Press ISBN: 978-1-119-84086-2"
       },
       {
        "titolo": "1st Edition, Volume 7 - July 26, 2014",
@@ -7908,6 +7896,18 @@
        "tipo": null,
        "note": null,
        "citazione": "3rd Edition - July 13, 2023"
+      },
+      {
+       "titolo": "Paperback ISBN: 9780323902922 ISBN 9781498749732 ISBN 9780367783044 ISBN 9781498749732 ISBN 9780367783044",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780323902922",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Paperback ISBN: 9780323902922 ISBN 9781498749732 ISBN 9780367783044 ISBN 9781498749732 ISBN 9780367783044"
       },
       {
        "titolo": "Paperback ISBN: 9780323902922",
@@ -13047,7 +13047,7 @@
      "url": "https://of.uniupo.it/syllabus/2026/300070/A077/C141939",
      "libri": [
       {
-       "titolo": "Harrison, Internal Medicine, Rugarli, Medicina Interna, Cecil Textbook of Medicine, Ettore Bartoli, Medicina Interna. Camanni F. and Ghigo E Malattie del sistema endocrino e del metabolismo. Centro Scientifico Editore, III° edizione, Torino 2001. 2) Per approfondimenti: Patricia E Molina. Fisiologia",
+       "titolo": "Harrison, Internal Medicine, Rugarli, Medicina Interna, Cecil Textbook of Medicine, Ettore Bartoli, Medicina Interna. Camanni F. and Ghigo E Malattie del sistema endocrino e del metabolismo. Centro Scientifico Editore, III° edizione, Torino 2001.",
        "autori": null,
        "editore": null,
        "anno": 2001,
@@ -13056,7 +13056,19 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://of.uniupo.it/syllabus/2025/300070/A077/C109070)",
-       "citazione": "Harrison, Internal Medicine, Rugarli, Medicina Interna, Cecil Textbook of Medicine, Ettore Bartoli, Medicina Interna. Camanni F. and Ghigo E Malattie del sistema endocrino e del metabolismo. Centro Scientifico Editore, III° edizione, Torino 2001. 2) Per approfondimenti: Patricia E Molina. Fisiologia Endocrina. Lange Physiology Series (McGraw-Hill)."
+       "citazione": "Harrison, Internal Medicine, Rugarli, Medicina Interna, Cecil Textbook of Medicine, Ettore Bartoli, Medicina Interna. Camanni F. and Ghigo E Malattie del sistema endocrino e del metabolismo. Centro Scientifico Editore, III° edizione, Torino 2001."
+      },
+      {
+       "titolo": "Per approfondimenti: Patricia E Molina. Fisiologia Endocrina. Lange Physiology Series (McGraw-Hill).",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://of.uniupo.it/syllabus/2025/300070/A077/C109070)",
+       "citazione": "Per approfondimenti: Patricia E Molina. Fisiologia Endocrina. Lange Physiology Series (McGraw-Hill)."
       },
       {
        "titolo": "Principi di Genetica",
@@ -14208,42 +14220,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://of.uniupo.it/syllabus/2025/300070/A077/C117902)",
        "citazione": "Luigi Dotti “Storie di vita in scena. Il teatro di improvvisazione al servizio del singolo, del gruppo, della comunità” Ed. Ananke 2006"
-      },
-      {
-       "titolo": "editore, 2017; R.Pani, R.Biolcati, S.Sagliaschi",
-       "autori": null,
-       "editore": "editore",
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "editore, 2017; R.Pani, R.Biolcati, S.Sagliaschi"
-      },
-      {
-       "titolo": "l’educazione e la formazione”, Il Mulino, 2009",
-       "autori": null,
-       "editore": "Il Mulino",
-       "anno": 2009,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "l’educazione e la formazione”, Il Mulino, 2009"
-      },
-      {
-       "titolo": "neuropsicologica”, Il Mulino, Bologna, 2012",
-       "autori": null,
-       "editore": "Il Mulino",
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "neuropsicologica”, Il Mulino, Bologna, 2012"
       }
      ],
      "esami": [
@@ -15366,6 +15342,18 @@
        "tipo": "consigliato",
        "note": null,
        "citazione": "C. Giunta, Come non scrivere. Consigli ed esempi da seguire, trappole e scemenze da evitare quando si scrive in italiano, Novara-Milano, UTET, 2023. 2) Testo facoltativo (ma caldamente consigliato): U. Eco, Come si fa una tesi di laurea, Milano, La nave di Teseo, 2017."
+      },
+      {
+       "titolo": "Come non scrivere. Consigli ed esempi da seguire, trappole e scemenze da evitare quando si scrive in italiano",
+       "autori": "C. Giunta",
+       "editore": "UTET",
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "C. Giunta, Come non scrivere. Consigli ed esempi da seguire, trappole e scemenze da evitare quando si scrive in italiano, Novara-Milano, UTET, 2023."
       }
      ],
      "esami": [],
@@ -15837,18 +15825,6 @@
        "tipo": null,
        "note": null,
        "citazione": "A. Barbero, Dante, 2020 [Laterza]"
-      },
-      {
-       "titolo": "G. Albini, Poveri e povertà nel Medioevo, 2016 [Carocci]",
-       "autori": null,
-       "editore": "2016 [Carocci]",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "G. Albini, Poveri e povertà nel Medioevo, 2016 [Carocci]"
       }
      ],
      "esami": [],
@@ -16002,7 +15978,7 @@
      "url": "https://of.uniupo.it/syllabus/2026/300074/1724_A164/C139591",
      "libri": [
       {
-       "titolo": "AAVV, Black Plays Three, ‎ Bloomsbury Methuen Drama 1995",
+       "titolo": "AAVV, Black Plays Three, Bloomsbury Methuen Drama 1995",
        "autori": null,
        "editore": null,
        "anno": 1995,
@@ -16011,7 +15987,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "AAVV, Black Plays Three, ‎ Bloomsbury Methuen Drama 1995"
+       "citazione": "AAVV, Black Plays Three, Bloomsbury Methuen Drama 1995"
       },
       {
        "titolo": "Barry Reckord, For the Reckord: A Collection of Three Plays, Oberon 2010",
@@ -17152,8 +17128,8 @@
      "url": "https://of.uniupo.it/syllabus/2026/300074/1724_A164/C130663",
      "libri": [
       {
-       "titolo": "A. C. Cassio, Storia delle lingue letterarie greche, Firenze, Le Monnier Università, seconda edizione 2016 (Euro 32, ISBN 9788800745796); 2) A. Porro, W. Lapini, C. Bevegni, Letteratura greca, Bologna, Il Mulino, ISBN-10: 8815271600, ISBN-13: 9788815271600 (euro 29,75), oppure F. Montanari, F.",
-       "autori": null,
+       "titolo": "Storia delle lingue letterarie greche",
+       "autori": "A. C. Cassio",
        "editore": "Le Monnier Università",
        "anno": 2016,
        "edizione": null,
@@ -17161,7 +17137,19 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "A. C. Cassio, Storia delle lingue letterarie greche, Firenze, Le Monnier Università, seconda edizione 2016 (Euro 32, ISBN 9788800745796); 2) A. Porro, W. Lapini, C. Bevegni, Letteratura greca, Bologna, Il Mulino, ISBN-10: 8815271600, ISBN-13: 9788815271600 (euro 29,75), oppure F. Montanari, F."
+       "citazione": "A. C. Cassio, Storia delle lingue letterarie greche, Firenze, Le Monnier Università, seconda edizione 2016 (Euro 32, ISBN 9788800745796);"
+      },
+      {
+       "titolo": "Letteratura greca",
+       "autori": "A. Porro, W. Lapini, C. Bevegni",
+       "editore": "Il Mulino",
+       "anno": null,
+       "edizione": null,
+       "isbn": "8815271600",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A. Porro, W. Lapini, C. Bevegni, Letteratura greca, Bologna, Il Mulino, ISBN-10: 8815271600, ISBN-13: 9788815271600 (euro 29,75), oppure F. Montanari, F."
       }
      ],
      "esami": [],
@@ -20145,7 +20133,7 @@
       {
        "titolo": "Raymond Murphy, English Grammar in Use, 5th Edition. Cambridge: Cambridge University Press, 2019.",
        "autori": null,
-       "editore": "5th Edition. Cambridge: Cambridge University Press",
+       "editore": "5th Edition. Cambridge",
        "anno": 2019,
        "edizione": null,
        "isbn": null,
@@ -20548,7 +20536,7 @@
       {
        "titolo": "Introductory Circuit Analysis",
        "autori": "Robert L. Boylestad, Brian A. Olivari",
-       "editore": "Pearson 2022 - ISBN: 0137594119",
+       "editore": "Pearson 2022 - ISBN",
        "anno": 2022,
        "edizione": null,
        "isbn": "0137594119",
@@ -20653,7 +20641,7 @@
       {
        "titolo": "Mario Guzzi – Principi di Fisica dei Semiconduttori, hoepli 2004 - ISBN: 88-203-3381-3",
        "autori": null,
-       "editore": "hoepli 2004 - ISBN: 88-203-3381-3",
+       "editore": "hoepli 2004 - ISBN",
        "anno": 2004,
        "edizione": null,
        "isbn": "8820333813",
@@ -20665,7 +20653,7 @@
       {
        "titolo": "Simon M. Sze, Yiming Li, Kwok K. Ng - Physics of Semiconductor Devices, 4th Edition, Wiley 2021 - ISBN: 9781119618003",
        "autori": null,
-       "editore": "Wiley 2021 - ISBN: 9781119618003",
+       "editore": "Wiley 2021 - ISBN",
        "anno": 2021,
        "edizione": null,
        "isbn": "9781119618003",
@@ -21064,7 +21052,7 @@
       {
        "titolo": "Robert L. Jaffe & Washington Taylor, The Physics of Energy, Cambridge University Press (2018) - ISBN: 9781107016651",
        "autori": null,
-       "editore": "Cambridge University Press (2018) - ISBN: 9781107016651",
+       "editore": "Cambridge University Press (2018) - ISBN",
        "anno": 2018,
        "edizione": null,
        "isbn": "9781107016651",
@@ -21101,7 +21089,7 @@
       {
        "titolo": "Simon M. Sze, Yiming Li, Kwok K. Ng - Physics of Semiconductor Devices, 4th Edition, Wiley 2021 - ISBN: 9781119618003",
        "autori": null,
-       "editore": "Wiley 2021 - ISBN: 9781119618003",
+       "editore": "Wiley 2021 - ISBN",
        "anno": 2021,
        "edizione": null,
        "isbn": "9781119618003",
@@ -21113,7 +21101,7 @@
       {
        "titolo": "Luis Castañer, Santiago Silvestre, Modelling Photovoltaic Systems Using PSpice®, Wiley 2002 - ISBN: 9780470845271",
        "autori": null,
-       "editore": "Wiley 2002 - ISBN: 9780470845271",
+       "editore": "Wiley 2002 - ISBN",
        "anno": 2002,
        "edizione": null,
        "isbn": "9780470845271",
@@ -21149,7 +21137,7 @@
       {
        "titolo": "Lewis & Miller, Computational methods of neutron transport, John Wiley and Sons 1984 – ISBN: 9780471092452",
        "autori": null,
-       "editore": "John Wiley and Sons 1984 – ISBN: 9780471092452",
+       "editore": "John Wiley and Sons 1984 – ISBN",
        "anno": 1984,
        "edizione": null,
        "isbn": "9780471092452",
@@ -28074,7 +28062,7 @@
       {
        "titolo": "Raymond Murphy, English Grammar in Use, 5th Edition. Cambridge: Cambridge University Press, 2019.",
        "autori": null,
-       "editore": "5th Edition. Cambridge: Cambridge University Press",
+       "editore": "5th Edition. Cambridge",
        "anno": 2019,
        "edizione": null,
        "isbn": null,
@@ -28098,7 +28086,7 @@
       {
        "titolo": "AA. VV. Academic English: Skills for Success, 3nd Edition. Oxford: Oxford University Press, 2025.",
        "autori": null,
-       "editore": "3nd Edition. Oxford: Oxford University Press",
+       "editore": "3nd Edition. Oxford",
        "anno": 2025,
        "edizione": null,
        "isbn": null,
@@ -38348,7 +38336,7 @@
       {
        "titolo": "Programmare in Java, 11° edizione",
        "autori": "Paul J. Deitel, Harvey M. Deitel",
-       "editore": "Pearson (testo alternativo: Claudio De Sio Cesari",
+       "editore": "Pearson (testo alternativo",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -38788,7 +38776,7 @@
       {
        "titolo": "Autori: James F. Kurose, Keith W. Ross Titolo: RETI DI CALCOLATORI E INTERNET - Un approccio top-down 8/ed, Casa editrice: Addison Wesley (2022), ISBN 9788891916013.",
        "autori": null,
-       "editore": "Casa editrice: Addison Wesley (2022)",
+       "editore": "Addison Wesley (2022)",
        "anno": 2022,
        "edizione": null,
        "isbn": "9788891916013",
@@ -39597,7 +39585,7 @@
       {
        "titolo": "Introduzione alla logica formale",
        "autori": "Gabriele Lolli",
-       "editore": "editore: Il Mulino",
+       "editore": "Il Mulino",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -39975,7 +39963,7 @@
       {
        "titolo": "Autori: James F. Kurose, Keith W. Ross Titolo: RETI DI CALCOLATORI E INTERNET - Un approccio top-down 8/ed, Casa editrice: Addison Wesley (2022), ISBN 9788891916013.",
        "autori": null,
-       "editore": "Casa editrice: Addison Wesley (2022)",
+       "editore": "Addison Wesley (2022)",
        "anno": 2022,
        "edizione": null,
        "isbn": "9788891916013",
@@ -39987,7 +39975,7 @@
       {
        "titolo": "Autori: Chris Richardson Titolo: MICROSERVICES PATTERS, wth examples in Java. Casa editrice: Manning, Shelter Island.",
        "autori": null,
-       "editore": "wth examples in Java. Casa editrice: Manning",
+       "editore": "wth examples in Java. Casa editrice",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -40807,7 +40795,7 @@
       {
        "titolo": "Programmare in Java, 11° edizione",
        "autori": "Paul J. Deitel, Harvey M. Deitel",
-       "editore": "Pearson (testo alternativo: Claudio De Sio Cesari",
+       "editore": "Pearson (testo alternativo",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -41002,7 +40990,7 @@
       {
        "titolo": "Autori: James F. Kurose, Keith W. Ross Titolo: RETI DI CALCOLATORI E INTERNET - Un approccio top-down 8/ed, Casa editrice: Addison Wesley (2022), ISBN 9788891916013.",
        "autori": null,
-       "editore": "Casa editrice: Addison Wesley (2022)",
+       "editore": "Addison Wesley (2022)",
        "anno": 2022,
        "edizione": null,
        "isbn": "9788891916013",
@@ -41375,7 +41363,7 @@
       {
        "titolo": "Introduzione alla logica formale",
        "autori": "Gabriele Lolli",
-       "editore": "editore: Il Mulino",
+       "editore": "Il Mulino",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -41774,7 +41762,7 @@
       {
        "titolo": "Autori: James F. Kurose, Keith W. Ross Titolo: RETI DI CALCOLATORI E INTERNET - Un approccio top-down 8/ed, Casa editrice: Addison Wesley (2022), ISBN 9788891916013.",
        "autori": null,
-       "editore": "Casa editrice: Addison Wesley (2022)",
+       "editore": "Addison Wesley (2022)",
        "anno": 2022,
        "edizione": null,
        "isbn": "9788891916013",
@@ -41786,7 +41774,7 @@
       {
        "titolo": "Autori: Chris Richardson Titolo: MICROSERVICES PATTERS, wth examples in Java. Casa editrice: Manning, Shelter Island.",
        "autori": null,
-       "editore": "wth examples in Java. Casa editrice: Manning",
+       "editore": "wth examples in Java. Casa editrice",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -42461,8 +42449,8 @@
      "url": "https://of.uniupo.it/syllabus/2026/300074/1722_A160/C138615",
      "libri": [
       {
-       "titolo": "A. C. Cassio, Storia delle lingue letterarie greche, Firenze, Le Monnier Università, seconda edizione 2016 (Euro 32, ISBN 9788800745796); 2) A. Porro, W. Lapini, C. Bevegni, Letteratura greca, Bologna, Il Mulino, ISBN-10: 8815271600, ISBN-13: 9788815271600 (euro 29,75), oppure F. Montanari, F.",
-       "autori": null,
+       "titolo": "Storia delle lingue letterarie greche",
+       "autori": "A. C. Cassio",
        "editore": "Le Monnier Università",
        "anno": 2016,
        "edizione": null,
@@ -42470,7 +42458,19 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "A. C. Cassio, Storia delle lingue letterarie greche, Firenze, Le Monnier Università, seconda edizione 2016 (Euro 32, ISBN 9788800745796); 2) A. Porro, W. Lapini, C. Bevegni, Letteratura greca, Bologna, Il Mulino, ISBN-10: 8815271600, ISBN-13: 9788815271600 (euro 29,75), oppure F. Montanari, F."
+       "citazione": "A. C. Cassio, Storia delle lingue letterarie greche, Firenze, Le Monnier Università, seconda edizione 2016 (Euro 32, ISBN 9788800745796);"
+      },
+      {
+       "titolo": "Letteratura greca",
+       "autori": "A. Porro, W. Lapini, C. Bevegni",
+       "editore": "Il Mulino",
+       "anno": null,
+       "edizione": null,
+       "isbn": "8815271600",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A. Porro, W. Lapini, C. Bevegni, Letteratura greca, Bologna, Il Mulino, ISBN-10: 8815271600, ISBN-13: 9788815271600 (euro 29,75), oppure F. Montanari, F."
       }
      ],
      "esami": [],
@@ -44976,8 +44976,8 @@
      "url": "https://of.uniupo.it/syllabus/2026/300074/1722_A160/C130301",
      "libri": [
       {
-       "titolo": "A. C. Cassio, Storia delle lingue letterarie greche, Firenze, Le Monnier Università, seconda edizione 2016 (Euro 32, ISBN 9788800745796); 2) A. Porro, W. Lapini, C. Bevegni, Letteratura greca, Bologna, Il Mulino, ISBN-10: 8815271600, ISBN-13: 9788815271600 (euro 29,75), oppure F. Montanari, F.",
-       "autori": null,
+       "titolo": "Storia delle lingue letterarie greche",
+       "autori": "A. C. Cassio",
        "editore": "Le Monnier Università",
        "anno": 2016,
        "edizione": null,
@@ -44985,7 +44985,19 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "A. C. Cassio, Storia delle lingue letterarie greche, Firenze, Le Monnier Università, seconda edizione 2016 (Euro 32, ISBN 9788800745796); 2) A. Porro, W. Lapini, C. Bevegni, Letteratura greca, Bologna, Il Mulino, ISBN-10: 8815271600, ISBN-13: 9788815271600 (euro 29,75), oppure F. Montanari, F."
+       "citazione": "A. C. Cassio, Storia delle lingue letterarie greche, Firenze, Le Monnier Università, seconda edizione 2016 (Euro 32, ISBN 9788800745796);"
+      },
+      {
+       "titolo": "Letteratura greca",
+       "autori": "A. Porro, W. Lapini, C. Bevegni",
+       "editore": "Il Mulino",
+       "anno": null,
+       "edizione": null,
+       "isbn": "8815271600",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A. Porro, W. Lapini, C. Bevegni, Letteratura greca, Bologna, Il Mulino, ISBN-10: 8815271600, ISBN-13: 9788815271600 (euro 29,75), oppure F. Montanari, F."
       }
      ],
      "esami": [],
@@ -45010,8 +45022,8 @@
      "url": "https://of.uniupo.it/syllabus/2026/300074/1722_A160/C130250",
      "libri": [
       {
-       "titolo": "A. C. Cassio, Storia delle lingue letterarie greche, Firenze, Le Monnier Università, seconda edizione 2016 (Euro 32, ISBN 9788800745796); 2) A. Porro, W. Lapini, C. Bevegni, Letteratura greca, Bologna, Il Mulino, ISBN-10: 8815271600, ISBN-13: 9788815271600 (euro 29,75), oppure F. Montanari, F.",
-       "autori": null,
+       "titolo": "Storia delle lingue letterarie greche",
+       "autori": "A. C. Cassio",
        "editore": "Le Monnier Università",
        "anno": 2016,
        "edizione": null,
@@ -45019,7 +45031,19 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "A. C. Cassio, Storia delle lingue letterarie greche, Firenze, Le Monnier Università, seconda edizione 2016 (Euro 32, ISBN 9788800745796); 2) A. Porro, W. Lapini, C. Bevegni, Letteratura greca, Bologna, Il Mulino, ISBN-10: 8815271600, ISBN-13: 9788815271600 (euro 29,75), oppure F. Montanari, F."
+       "citazione": "A. C. Cassio, Storia delle lingue letterarie greche, Firenze, Le Monnier Università, seconda edizione 2016 (Euro 32, ISBN 9788800745796);"
+      },
+      {
+       "titolo": "Letteratura greca",
+       "autori": "A. Porro, W. Lapini, C. Bevegni",
+       "editore": "Il Mulino",
+       "anno": null,
+       "edizione": null,
+       "isbn": "8815271600",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A. Porro, W. Lapini, C. Bevegni, Letteratura greca, Bologna, Il Mulino, ISBN-10: 8815271600, ISBN-13: 9788815271600 (euro 29,75), oppure F. Montanari, F."
       }
      ],
      "esami": [],
@@ -45350,16 +45374,40 @@
      "url": "https://of.uniupo.it/syllabus/2026/300074/1722_A160/C130233",
      "libri": [
       {
-       "titolo": "M. Cerruti - R. Regis, Italiano e dialetto, Roma, Carocci, 2021 (TUTTO). 2) N. De Blasi, Geografia e storia dell’italiano regionale, Bologna, Il Mulino, 2014 (TUTTO). 3) V. Lambertini, Che cos’è un proverbio, Roma, Carocci, 2022 (TUTTO). Per i non frequentanti aggiungere: 4) N. De Blasi, Il dialetto",
+       "titolo": "M. Cerruti - R. Regis, Italiano e dialetto, Roma, Carocci, 2021 (TUTTO).",
        "autori": null,
-       "editore": "Carocci",
-       "anno": 2019,
+       "editore": null,
+       "anno": 2021,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "M. Cerruti - R. Regis, Italiano e dialetto, Roma, Carocci, 2021 (TUTTO). 2) N. De Blasi, Geografia e storia dell’italiano regionale, Bologna, Il Mulino, 2014 (TUTTO). 3) V. Lambertini, Che cos’è un proverbio, Roma, Carocci, 2022 (TUTTO). Per i non frequentanti aggiungere: 4) N. De Blasi, Il dialetto nell’Italia unita, Roma, Carocci, 2019 (TUTTO)."
+       "citazione": "M. Cerruti - R. Regis, Italiano e dialetto, Roma, Carocci, 2021 (TUTTO)."
+      },
+      {
+       "titolo": "Geografia e storia dell’italiano regionale",
+       "autori": "N. De Blasi",
+       "editore": "Il Mulino",
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "N. De Blasi, Geografia e storia dell’italiano regionale, Bologna, Il Mulino, 2014 (TUTTO)."
+      },
+      {
+       "titolo": "V. Lambertini, Che cos’è un proverbio, Roma, Carocci, 2022 (TUTTO). Per i non frequentanti aggiungere: 4) N. De Blasi, Il dialetto nell’Italia unita, Roma, Carocci, 2019 (TUTTO).",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "V. Lambertini, Che cos’è un proverbio, Roma, Carocci, 2022 (TUTTO). Per i non frequentanti aggiungere: 4) N. De Blasi, Il dialetto nell’Italia unita, Roma, Carocci, 2019 (TUTTO)."
       }
      ],
      "esami": [],
@@ -47413,18 +47461,6 @@
        "tipo": null,
        "note": null,
        "citazione": "A. Barbero, Dante, 2020 [Laterza]"
-      },
-      {
-       "titolo": "G. Albini, Poveri e povertà nel Medioevo, 2016 [Carocci]",
-       "autori": null,
-       "editore": "2016 [Carocci]",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "G. Albini, Poveri e povertà nel Medioevo, 2016 [Carocci]"
       }
      ],
      "esami": [],
@@ -51569,16 +51605,40 @@
      "url": "https://of.uniupo.it/syllabus/2026/300074/1723_A161/C130521",
      "libri": [
       {
-       "titolo": "M. Cerruti - R. Regis, Italiano e dialetto, Roma, Carocci, 2021 (TUTTO). 2) N. De Blasi, Geografia e storia dell’italiano regionale, Bologna, Il Mulino, 2014 (TUTTO). 3) V. Lambertini, Che cos’è un proverbio, Roma, Carocci, 2022 (TUTTO). Per i non frequentanti aggiungere: 4) N. De Blasi, Il dialetto",
+       "titolo": "M. Cerruti - R. Regis, Italiano e dialetto, Roma, Carocci, 2021 (TUTTO).",
        "autori": null,
-       "editore": "Carocci",
-       "anno": 2019,
+       "editore": null,
+       "anno": 2021,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "M. Cerruti - R. Regis, Italiano e dialetto, Roma, Carocci, 2021 (TUTTO). 2) N. De Blasi, Geografia e storia dell’italiano regionale, Bologna, Il Mulino, 2014 (TUTTO). 3) V. Lambertini, Che cos’è un proverbio, Roma, Carocci, 2022 (TUTTO). Per i non frequentanti aggiungere: 4) N. De Blasi, Il dialetto nell’Italia unita, Roma, Carocci, 2019 (TUTTO)."
+       "citazione": "M. Cerruti - R. Regis, Italiano e dialetto, Roma, Carocci, 2021 (TUTTO)."
+      },
+      {
+       "titolo": "Geografia e storia dell’italiano regionale",
+       "autori": "N. De Blasi",
+       "editore": "Il Mulino",
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "N. De Blasi, Geografia e storia dell’italiano regionale, Bologna, Il Mulino, 2014 (TUTTO)."
+      },
+      {
+       "titolo": "V. Lambertini, Che cos’è un proverbio, Roma, Carocci, 2022 (TUTTO). Per i non frequentanti aggiungere: 4) N. De Blasi, Il dialetto nell’Italia unita, Roma, Carocci, 2019 (TUTTO).",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "V. Lambertini, Che cos’è un proverbio, Roma, Carocci, 2022 (TUTTO). Per i non frequentanti aggiungere: 4) N. De Blasi, Il dialetto nell’Italia unita, Roma, Carocci, 2019 (TUTTO)."
       }
      ],
      "esami": [],
@@ -53794,7 +53854,7 @@
      "url": "https://of.uniupo.it/syllabus/2026/300074/1723_A161/C130566",
      "libri": [
       {
-       "titolo": "AAVV, Black Plays Three, ‎ Bloomsbury Methuen Drama 1995",
+       "titolo": "AAVV, Black Plays Three, Bloomsbury Methuen Drama 1995",
        "autori": null,
        "editore": null,
        "anno": 1995,
@@ -53803,7 +53863,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "AAVV, Black Plays Three, ‎ Bloomsbury Methuen Drama 1995"
+       "citazione": "AAVV, Black Plays Three, Bloomsbury Methuen Drama 1995"
       },
       {
        "titolo": "Barry Reckord, For the Reckord: A Collection of Three Plays, Oberon 2010",
@@ -54061,7 +54121,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Per chi frequenta il Corso di studio in Lingue Straniere Moderne: Christel Le Bellec, LE GREVISSE VOCABULAIRE - LES MOTS DU FRANÇAIS DE LEUR ORIGINE à LEUR UTILISATION EN CONTEXTE, De Boeck supérieur, 2020, ISBN 978-2-8073-2357-5 Bibliografia complementare: Henriette Walter, \"Les Petits plats dans les grands\", Paris, Laffont, 2020, ISBN-10 ‏ : ‎ 2221221419"
+       "citazione": "Per chi frequenta il Corso di studio in Lingue Straniere Moderne: Christel Le Bellec, LE GREVISSE VOCABULAIRE - LES MOTS DU FRANÇAIS DE LEUR ORIGINE à LEUR UTILISATION EN CONTEXTE, De Boeck supérieur, 2020, ISBN 978-2-8073-2357-5 Bibliografia complementare: Henriette Walter, \"Les Petits plats dans les grands\", Paris, Laffont, 2020, ISBN-10 : 2221221419"
       },
       {
        "titolo": "La nouvelle grammaire du français pour italophones",
@@ -55109,20 +55169,7 @@
       "Carmen Aina"
      ],
      "url": "https://of.uniupo.it/syllabus/2026/300489/A168/C142768",
-     "libri": [
-      {
-       "titolo": "utilizzare i modelli fondamentali di domanda, offerta, equilibrio, elasticità, surplus ed esternalità per interpretare il funzionamento dei mercati",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "utilizzare i modelli fondamentali di domanda, offerta, equilibrio, elasticità, surplus ed esternalità per interpretare il funzionamento dei mercati"
-      }
-     ],
+     "libri": [],
      "esami": [
       {
        "tipo": "appello",
@@ -55151,7 +55198,7 @@
      ],
      "fonte": "https://of.uniupo.it/syllabus/2026/300489/A168",
      "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
+     "stato_libri": "da_aggiungere",
      "id": "uniupo-l-18-management-for-sustainability-st0238",
      "stato_esami": "completo"
     },
@@ -56137,8 +56184,20 @@
        "citazione": "FREQUENTANTI: 1) Castiglioni B. Paesaggio e società, Roma, Carocci, 2022 capitoli 1-2-3-4-9-10 + 2) Materiali discussi a lezione e resi disponibili sulla pagina DIR."
       },
       {
-       "titolo": "NON FREQUENTANTI: 1) Castiglioni B. Paesaggio e società, Roma, Carocci, 2022.; 2) Gavinelli D., Zanolin G.Geografia del turismo contemporaneo, Roma, Carocci, 2019",
+       "titolo": "NON FREQUENTANTI: 1) Castiglioni B. Paesaggio e società, Roma, Carocci, 2022.;",
        "autori": null,
+       "editore": null,
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "NON FREQUENTANTI: 1) Castiglioni B. Paesaggio e società, Roma, Carocci, 2022.;"
+      },
+      {
+       "titolo": "Zanolin G.Geografia del turismo contemporaneo",
+       "autori": "Gavinelli D.",
        "editore": "Carocci",
        "anno": 2019,
        "edizione": null,
@@ -56146,7 +56205,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "NON FREQUENTANTI: 1) Castiglioni B. Paesaggio e società, Roma, Carocci, 2022.; 2) Gavinelli D., Zanolin G.Geografia del turismo contemporaneo, Roma, Carocci, 2019"
+       "citazione": "Gavinelli D., Zanolin G.Geografia del turismo contemporaneo, Roma, Carocci, 2019"
       }
      ],
      "esami": [],
@@ -59103,7 +59162,7 @@
      "url": "https://of.uniupo.it/syllabus/2026/300073/1929_A111_A137/C144363",
      "libri": [
       {
-       "titolo": "De Carneri. Parassitologia generale e umana. Bruschi F., Pozio E. CEA 2023, 14° Edizione. ISBN-13: ‎978-8808899828",
+       "titolo": "De Carneri. Parassitologia generale e umana. Bruschi F., Pozio E. CEA 2023, 14° Edizione. ISBN-13: 978-8808899828",
        "autori": null,
        "editore": null,
        "anno": 2023,
@@ -59112,10 +59171,10 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "De Carneri. Parassitologia generale e umana. Bruschi F., Pozio E. CEA 2023, 14° Edizione. ISBN-13: ‎978-8808899828"
+       "citazione": "De Carneri. Parassitologia generale e umana. Bruschi F., Pozio E. CEA 2023, 14° Edizione. ISBN-13: 978-8808899828"
       },
       {
-       "titolo": "Ecology and Evolution of Parasitism: Hosts to Ecosystems. Thomas F., Guégan JF, Renaud F. Oxford University Press, 2009. ISBN-13: ‎978-0199535330",
+       "titolo": "Ecology and Evolution of Parasitism: Hosts to Ecosystems. Thomas F., Guégan JF, Renaud F. Oxford University Press, 2009. ISBN-13: 978-0199535330",
        "autori": null,
        "editore": "Renaud F. Oxford University Press",
        "anno": 2009,
@@ -59124,10 +59183,10 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Ecology and Evolution of Parasitism: Hosts to Ecosystems. Thomas F., Guégan JF, Renaud F. Oxford University Press, 2009. ISBN-13: ‎978-0199535330"
+       "citazione": "Ecology and Evolution of Parasitism: Hosts to Ecosystems. Thomas F., Guégan JF, Renaud F. Oxford University Press, 2009. ISBN-13: 978-0199535330"
       },
       {
-       "titolo": "Parasitism: The Diversity and Ecology of Animal Parasites. Gaugen TM. Cambridge University Press, 2014. ISBN-13: ‎978-0521122054",
+       "titolo": "Parasitism: The Diversity and Ecology of Animal Parasites. Gaugen TM. Cambridge University Press, 2014. ISBN-13: 978-0521122054",
        "autori": null,
        "editore": null,
        "anno": 2014,
@@ -59136,7 +59195,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Parasitism: The Diversity and Ecology of Animal Parasites. Gaugen TM. Cambridge University Press, 2014. ISBN-13: ‎978-0521122054"
+       "citazione": "Parasitism: The Diversity and Ecology of Animal Parasites. Gaugen TM. Cambridge University Press, 2014. ISBN-13: 978-0521122054"
       }
      ],
      "esami": [],
@@ -59567,7 +59626,7 @@
       {
        "titolo": "Raymond Murphy, English Grammar in Use, 5th Edition. Cambridge: Cambridge University Press, 2019.",
        "autori": null,
-       "editore": "5th Edition. Cambridge: Cambridge University Press",
+       "editore": "5th Edition. Cambridge",
        "anno": 2019,
        "edizione": null,
        "isbn": null,
@@ -60495,7 +60554,7 @@
       {
        "titolo": "Easton,Keith N. Leppard. Editore: CEA",
        "autori": null,
-       "editore": "Keith N. Leppard. Editore: CEA",
+       "editore": "Keith N. Leppard. Editore",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -61594,7 +61653,7 @@
      "docenti": [],
      "libri": [
       {
-       "titolo": "De Carneri. Parassitologia generale e umana. Bruschi F., Pozio E. CEA 2023, 14° Edizione. ISBN-13: ‎978-8808899828",
+       "titolo": "De Carneri. Parassitologia generale e umana. Bruschi F., Pozio E. CEA 2023, 14° Edizione. ISBN-13: 978-8808899828",
        "autori": null,
        "editore": null,
        "anno": 2023,
@@ -61603,10 +61662,10 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dello stesso insegnamento (stesso codice MF0905) nel corso «Scienze Biologiche»",
-       "citazione": "De Carneri. Parassitologia generale e umana. Bruschi F., Pozio E. CEA 2023, 14° Edizione. ISBN-13: ‎978-8808899828"
+       "citazione": "De Carneri. Parassitologia generale e umana. Bruschi F., Pozio E. CEA 2023, 14° Edizione. ISBN-13: 978-8808899828"
       },
       {
-       "titolo": "Ecology and Evolution of Parasitism: Hosts to Ecosystems. Thomas F., Guégan JF, Renaud F. Oxford University Press, 2009. ISBN-13: ‎978-0199535330",
+       "titolo": "Ecology and Evolution of Parasitism: Hosts to Ecosystems. Thomas F., Guégan JF, Renaud F. Oxford University Press, 2009. ISBN-13: 978-0199535330",
        "autori": null,
        "editore": "Renaud F. Oxford University Press",
        "anno": 2009,
@@ -61615,10 +61674,10 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dello stesso insegnamento (stesso codice MF0905) nel corso «Scienze Biologiche»",
-       "citazione": "Ecology and Evolution of Parasitism: Hosts to Ecosystems. Thomas F., Guégan JF, Renaud F. Oxford University Press, 2009. ISBN-13: ‎978-0199535330"
+       "citazione": "Ecology and Evolution of Parasitism: Hosts to Ecosystems. Thomas F., Guégan JF, Renaud F. Oxford University Press, 2009. ISBN-13: 978-0199535330"
       },
       {
-       "titolo": "Parasitism: The Diversity and Ecology of Animal Parasites. Gaugen TM. Cambridge University Press, 2014. ISBN-13: ‎978-0521122054",
+       "titolo": "Parasitism: The Diversity and Ecology of Animal Parasites. Gaugen TM. Cambridge University Press, 2014. ISBN-13: 978-0521122054",
        "autori": null,
        "editore": null,
        "anno": 2014,
@@ -61627,7 +61686,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dello stesso insegnamento (stesso codice MF0905) nel corso «Scienze Biologiche»",
-       "citazione": "Parasitism: The Diversity and Ecology of Animal Parasites. Gaugen TM. Cambridge University Press, 2014. ISBN-13: ‎978-0521122054"
+       "citazione": "Parasitism: The Diversity and Ecology of Animal Parasites. Gaugen TM. Cambridge University Press, 2014. ISBN-13: 978-0521122054"
       }
      ],
      "stato_libri": "completo",
@@ -61785,7 +61844,7 @@
       {
        "titolo": "Raymond Murphy, English Grammar in Use, 5th Edition. Cambridge: Cambridge University Press, 2019.",
        "autori": null,
-       "editore": "5th Edition. Cambridge: Cambridge University Press",
+       "editore": "5th Edition. Cambridge",
        "anno": 2019,
        "edizione": null,
        "isbn": null,
@@ -62353,7 +62412,7 @@
       {
        "titolo": "Easton,Keith N. Leppard. Editore: CEA",
        "autori": null,
-       "editore": "Keith N. Leppard. Editore: CEA",
+       "editore": "Keith N. Leppard. Editore",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -64881,28 +64940,28 @@
      "url": "https://of.uniupo.it/syllabus/2026/300069/2024_A118/C143164",
      "libri": [
       {
-       "titolo": "Editore: McGraw-Hill Education; 7° edizione (8 febbraio 2021)",
-       "autori": null,
-       "editore": "Editore: McGraw-Hill Education",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Editore: McGraw-Hill Education; 7° edizione (8 febbraio 2021)"
-      },
-      {
-       "titolo": "ISBN-13: 978-8838698767",
+       "titolo": "Editore: McGraw-Hill Education; 7° edizione (8 febbraio 2021) ISBN-13: 978-8838698767 ISBN-10: 8838698767",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2021,
        "edizione": null,
        "isbn": "9788838698767",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN-13: 978-8838698767"
+       "citazione": "Editore: McGraw-Hill Education; 7° edizione (8 febbraio 2021) ISBN-13: 978-8838698767 ISBN-10: 8838698767"
+      },
+      {
+       "titolo": "Editore: McGraw-Hill Education; 7° edizione (8 febbraio 2021) ISBN-10: 8838698767 ISBN-13: 978-8838698767",
+       "autori": null,
+       "editore": null,
+       "anno": 2021,
+       "edizione": null,
+       "isbn": "8838698767",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Editore: McGraw-Hill Education; 7° edizione (8 febbraio 2021) ISBN-10: 8838698767 ISBN-13: 978-8838698767"
       }
      ],
      "esami": [],
@@ -72332,7 +72391,7 @@
       {
        "titolo": "Raymond Murphy, English Grammar in Use, 5th Edition. Cambridge: Cambridge University Press, 2019.",
        "autori": null,
-       "editore": "5th Edition. Cambridge: Cambridge University Press",
+       "editore": "5th Edition. Cambridge",
        "anno": 2019,
        "edizione": null,
        "isbn": null,
@@ -72490,16 +72549,16 @@
      "url": "https://of.uniupo.it/syllabus/2026/300069/A126/C144335",
      "libri": [
       {
-       "titolo": "Per la parte scritta : Samira Zaouya, Cristina Nobili, Allié de grammaire. Grammaire graduelle du français, Torino, Loescher, 2025",
+       "titolo": "Per la parte scritta : Samira Zaouya, Cristina Nobili, Allié de grammaire. Grammaire graduelle du français, Torino, Loescher, 2025 ISBN 9788858356609",
        "autori": null,
-       "editore": "Loescher",
+       "editore": null,
        "anno": 2025,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788858356609",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Per la parte scritta : Samira Zaouya, Cristina Nobili, Allié de grammaire. Grammaire graduelle du français, Torino, Loescher, 2025"
+       "citazione": "Per la parte scritta : Samira Zaouya, Cristina Nobili, Allié de grammaire. Grammaire graduelle du français, Torino, Loescher, 2025 ISBN 9788858356609"
       }
      ],
      "esami": [],
@@ -76436,18 +76495,6 @@
        "citazione": "Freeland J.R., Molecular Ecology, 3ª ed., Wiley-Blackwell, 2020."
       },
       {
-       "titolo": "An Introduction to Ecological Genomics",
-       "autori": "van Straalen N.M., Roelofs D.",
-       "editore": "Oxford University Press",
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "van Straalen N.M., Roelofs D., An Introduction to Ecological Genomics, 2ª ed., Oxford University Press, 2012."
-      },
-      {
        "titolo": "Environmental DNA: For Biodiversity Research and Monitoring",
        "autori": "Taberlet P., Bonin A., Zinger L., Coissac E.",
        "editore": "Oxford University Press",
@@ -76458,6 +76505,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Taberlet P., Bonin A., Zinger L., Coissac E., Environmental DNA: For Biodiversity Research and Monitoring, Oxford University Press, 2018."
+      },
+      {
+       "titolo": "An Introduction to Ecological Genomics",
+       "autori": "van Straalen N.M., Roelofs D.",
+       "editore": "Oxford University Press",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "van Straalen N.M., Roelofs D., An Introduction to Ecological Genomics, 2ª ed., Oxford University Press, 2012."
       }
      ],
      "esami": [],
@@ -77045,19 +77104,7 @@
      "url": "https://of.uniupo.it/syllabus/2026/300073/A120/C137664",
      "libri": [
       {
-       "titolo": "Manuale di Nutrizione Applicata",
-       "autori": null,
-       "editore": "Rivellese. Idelson Gnocchi",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "“Manuale di Nutrizione Applicata” Riccardi, Pacioni, Giacco, Rivellese. Idelson Gnocchi."
-      },
-      {
-       "titolo": "ISBN 978-88-7947-617-1",
+       "titolo": "“Manuale di Nutrizione Applicata” Riccardi, Pacioni, Giacco, Rivellese. Idelson Gnocchi. ISBN 978-88-7947-617-1",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -77066,7 +77113,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN 978-88-7947-617-1"
+       "citazione": "“Manuale di Nutrizione Applicata” Riccardi, Pacioni, Giacco, Rivellese. Idelson Gnocchi. ISBN 978-88-7947-617-1"
       },
       {
        "titolo": "Le basi molecolari della Nutrizione",
@@ -78993,7 +79040,7 @@
      "url": "https://of.uniupo.it/syllabus/2026/300489/A103/C138231",
      "libri": [
       {
-       "titolo": "Disaster Medicine - Koening & Schulz 2. Rothman. Epidemiology: An Introduction. Oxford press. 3. World Health Organization. (‎2021)‎. WHO guidance on research methods for health emergency and disaster risk management. World Health Organization. Scaricabile gratuitamente: https://iris.who.int/handle/",
+       "titolo": "Disaster Medicine - Koening & Schulz 2. Rothman. Epidemiology: An Introduction. Oxford press. 3. World Health Organization. (2021). WHO guidance on research methods for health emergency and disaster risk management. World Health Organization. Scaricabile gratuitamente: https://iris.who.int/handle/",
        "autori": null,
        "editore": null,
        "anno": 2021,
@@ -79002,7 +79049,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://of.uniupo.it/syllabus/2025/300489/A103/C117150)",
-       "citazione": "Disaster Medicine - Koening & Schulz 2. Rothman. Epidemiology: An Introduction. Oxford press. 3. World Health Organization. (‎2021)‎. WHO guidance on research methods for health emergency and disaster risk management. World Health Organization. Scaricabile gratuitamente: https://iris.who.int/handle/10665/345591"
+       "citazione": "Disaster Medicine - Koening & Schulz 2. Rothman. Epidemiology: An Introduction. Oxford press. 3. World Health Organization. (2021). WHO guidance on research methods for health emergency and disaster risk management. World Health Organization. Scaricabile gratuitamente: https://iris.who.int/handle/10665/345591"
       }
      ],
      "esami": [
@@ -81443,16 +81490,40 @@
      "url": "https://of.uniupo.it/syllabus/2026/300074/A159/C143764",
      "libri": [
       {
-       "titolo": "(1) R. Kassel, St. Schröder, Poetae comici Graeci VI,1, Berlin 2022. 2) E. W. Handley, The Dyskolos of Menander, London 1965. ISBN: 9781853991875. 3) O. Taplin, Comic Angels and Other Approaches to Greek Drama through Vase Paintings, Oxford 1993. ISBN: 9780198150008.",
+       "titolo": "(1) R. Kassel, St. Schröder, Poetae comici Graeci VI,1, Berlin 2022.",
        "autori": null,
-       "editore": "Oxford 1993. ISBN: 9780198150008",
-       "anno": 1993,
+       "editore": null,
+       "anno": 2022,
        "edizione": null,
        "isbn": "9781853991875",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "(1) R. Kassel, St. Schröder, Poetae comici Graeci VI,1, Berlin 2022. 2) E. W. Handley, The Dyskolos of Menander, London 1965. ISBN: 9781853991875. 3) O. Taplin, Comic Angels and Other Approaches to Greek Drama through Vase Paintings, Oxford 1993. ISBN: 9780198150008."
+       "citazione": "(1) R. Kassel, St. Schröder, Poetae comici Graeci VI,1, Berlin 2022."
+      },
+      {
+       "titolo": "E. W. Handley, The Dyskolos of Menander, London 1965. ISBN: 9781853991875.",
+       "autori": null,
+       "editore": null,
+       "anno": 1965,
+       "edizione": null,
+       "isbn": "9781853991875",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "E. W. Handley, The Dyskolos of Menander, London 1965. ISBN: 9781853991875."
+      },
+      {
+       "titolo": "O. Taplin, Comic Angels and Other Approaches to Greek Drama through Vase Paintings, Oxford 1993. ISBN: 9780198150008.",
+       "autori": null,
+       "editore": null,
+       "anno": 1993,
+       "edizione": null,
+       "isbn": "9780198150008",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "O. Taplin, Comic Angels and Other Approaches to Greek Drama through Vase Paintings, Oxford 1993. ISBN: 9780198150008."
       }
      ],
      "esami": [],
@@ -83475,16 +83546,40 @@
      "url": "https://of.uniupo.it/syllabus/2026/300074/A159/C138387",
      "libri": [
       {
-       "titolo": "(1) R. Kassel, St. Schröder, Poetae comici Graeci VI,1, Berlin 2022. 2) E. W. Handley, The Dyskolos of Menander, London 1965. ISBN: 9781853991875. 3) O. Taplin, Comic Angels and Other Approaches to Greek Drama through Vase Paintings, Oxford 1993. ISBN: 9780198150008.",
+       "titolo": "(1) R. Kassel, St. Schröder, Poetae comici Graeci VI,1, Berlin 2022.",
        "autori": null,
-       "editore": "Oxford 1993. ISBN: 9780198150008",
-       "anno": 1993,
+       "editore": null,
+       "anno": 2022,
        "edizione": null,
        "isbn": "9781853991875",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "(1) R. Kassel, St. Schröder, Poetae comici Graeci VI,1, Berlin 2022. 2) E. W. Handley, The Dyskolos of Menander, London 1965. ISBN: 9781853991875. 3) O. Taplin, Comic Angels and Other Approaches to Greek Drama through Vase Paintings, Oxford 1993. ISBN: 9780198150008."
+       "citazione": "(1) R. Kassel, St. Schröder, Poetae comici Graeci VI,1, Berlin 2022."
+      },
+      {
+       "titolo": "E. W. Handley, The Dyskolos of Menander, London 1965. ISBN: 9781853991875.",
+       "autori": null,
+       "editore": null,
+       "anno": 1965,
+       "edizione": null,
+       "isbn": "9781853991875",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "E. W. Handley, The Dyskolos of Menander, London 1965. ISBN: 9781853991875."
+      },
+      {
+       "titolo": "O. Taplin, Comic Angels and Other Approaches to Greek Drama through Vase Paintings, Oxford 1993. ISBN: 9780198150008.",
+       "autori": null,
+       "editore": null,
+       "anno": 1993,
+       "edizione": null,
+       "isbn": "9780198150008",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "O. Taplin, Comic Angels and Other Approaches to Greek Drama through Vase Paintings, Oxford 1993. ISBN: 9780198150008."
       }
      ],
      "esami": [],
@@ -85064,16 +85159,52 @@
      "url": "https://of.uniupo.it/syllabus/2026/300074/A159/C138550_1",
      "libri": [
       {
-       "titolo": "A. Belardinelli, Lo spettacolo teatrale dei Greci. Le Monnier, 2023. ISBN 9788800750370. 2) B. Zimmermann, La commedia greca. Carocci, 2016. ISBN 9788843083114. 3) O. Taplin, R. Wyles, The Pronomos Vase and its Context, Oxford 2010. ISBN 9780199582594. 4) M. Di Marco, Storia del teatro greco, Roma 2",
+       "titolo": "Lo spettacolo teatrale dei Greci",
+       "autori": "A. Belardinelli",
+       "editore": "Le Monnier",
+       "anno": 2023,
+       "edizione": null,
+       "isbn": "9788800750370",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A. Belardinelli, Lo spettacolo teatrale dei Greci. Le Monnier, 2023. ISBN 9788800750370."
+      },
+      {
+       "titolo": "La commedia greca",
+       "autori": "B. Zimmermann",
+       "editore": "Carocci",
+       "anno": 2016,
+       "edizione": null,
+       "isbn": "9788843083114",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "B. Zimmermann, La commedia greca. Carocci, 2016. ISBN 9788843083114."
+      },
+      {
+       "titolo": "O. Taplin, R. Wyles, The Pronomos Vase and its Context, Oxford 2010. ISBN 9780199582594.",
        "autori": null,
-       "editore": "Lo spettacolo teatrale dei Greci. Le Monnier",
+       "editore": null,
+       "anno": 2010,
+       "edizione": null,
+       "isbn": "9780199582594",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "O. Taplin, R. Wyles, The Pronomos Vase and its Context, Oxford 2010. ISBN 9780199582594."
+      },
+      {
+       "titolo": "M. Di Marco, Storia del teatro greco, Roma 2020.",
+       "autori": null,
+       "editore": null,
        "anno": 2020,
        "edizione": null,
        "isbn": "9788800750370",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "A. Belardinelli, Lo spettacolo teatrale dei Greci. Le Monnier, 2023. ISBN 9788800750370. 2) B. Zimmermann, La commedia greca. Carocci, 2016. ISBN 9788843083114. 3) O. Taplin, R. Wyles, The Pronomos Vase and its Context, Oxford 2010. ISBN 9780199582594. 4) M. Di Marco, Storia del teatro greco, Roma 2020."
+       "citazione": "M. Di Marco, Storia del teatro greco, Roma 2020."
       }
      ],
      "esami": [],
@@ -100776,7 +100907,7 @@
      "url": "https://of.uniupo.it/syllabus/2026/300074/A162/C139114",
      "libri": [
       {
-       "titolo": "AAVV, Black Plays Three, ‎ Bloomsbury Methuen Drama 1995",
+       "titolo": "AAVV, Black Plays Three, Bloomsbury Methuen Drama 1995",
        "autori": null,
        "editore": null,
        "anno": 1995,
@@ -100785,7 +100916,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "AAVV, Black Plays Three, ‎ Bloomsbury Methuen Drama 1995"
+       "citazione": "AAVV, Black Plays Three, Bloomsbury Methuen Drama 1995"
       },
       {
        "titolo": "Barry Reckord, For the Reckord: A Collection of Three Plays, Oberon 2010",
@@ -107594,18 +107725,6 @@
      "url": "https://of.uniupo.it/syllabus/2026/300073/A134/C142336_2",
      "libri": [
       {
-       "titolo": "Saranno messe a disposizione su D.I.R. copie delle slides proiettate durante il corso e dispense per il laboratorio, oltre ad altro materiale utile. Sono consigliati i seguenti testi:",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Saranno messe a disposizione su D.I.R. copie delle slides proiettate durante il corso e dispense per il laboratorio, oltre ad altro materiale utile. Sono consigliati i seguenti testi:"
-      },
-      {
        "titolo": "Progettare la formazione",
        "autori": "M. Castagna",
        "editore": "FrancoAngeli",
@@ -108662,18 +108781,6 @@
      ],
      "url": "https://of.uniupo.it/syllabus/2026/300071/1505_A094_A125/C143625",
      "libri": [
-      {
-       "titolo": "Biologia molecolare della cellula, Alberts, Zanichelli",
-       "autori": null,
-       "editore": "Zanichelli",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Biologia molecolare della cellula, Alberts, Zanichelli"
-      },
       {
        "titolo": "L’essenziale di Biologia molecolare della cellula, Alberts, Zanichelli",
        "autori": null,
@@ -109768,40 +109875,52 @@
        "citazione": "2013, Zanichelli Editore"
       },
       {
-       "titolo": "2006, Zanichelli Editore",
-       "autori": null,
-       "editore": "Zanichelli Editore",
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2006, Zanichelli Editore"
-      },
-      {
-       "titolo": "ISBN 978-8808-19774-0",
+       "titolo": "2006, Zanichelli Editore ISBN 978-8808-19774-0 ISBN: 978 8879 597 807 ISBN 9788808175441 ISBN 9788808175441",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2006,
        "edizione": null,
        "isbn": "9788808197740",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN 978-8808-19774-0"
+       "citazione": "2006, Zanichelli Editore ISBN 978-8808-19774-0 ISBN: 978 8879 597 807 ISBN 9788808175441 ISBN 9788808175441"
       },
       {
-       "titolo": "ISBN: 978 8879 597 807",
+       "titolo": "2006, Zanichelli Editore ISBN 978-8808-19774-0",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2006,
+       "edizione": null,
+       "isbn": "9788808197740",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "2006, Zanichelli Editore ISBN 978-8808-19774-0"
+      },
+      {
+       "titolo": "2013, EdiSES srl ISBN: 978 8879 597 807 ISBN 9788808175441",
+       "autori": null,
+       "editore": null,
+       "anno": 2013,
        "edizione": null,
        "isbn": "9788879597807",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978 8879 597 807"
+       "citazione": "2013, EdiSES srl ISBN: 978 8879 597 807 ISBN 9788808175441"
+      },
+      {
+       "titolo": "2013, EdiSES srl ISBN: 978 8879 597 807",
+       "autori": null,
+       "editore": "EdiSES srl",
+       "anno": 2013,
+       "edizione": null,
+       "isbn": "9788879597807",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "2013, EdiSES srl ISBN: 978 8879 597 807"
       }
      ],
      "esami": [
@@ -110030,7 +110149,7 @@
       {
        "titolo": "Biochimica Applicata",
        "autori": "Stoppini, M e Bellotti, V",
-       "editore": "V “Biochimica Applicata” Ed. EdiSES ISBN: 9788879597135",
+       "editore": "V “Biochimica Applicata” Ed. EdiSES ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788879597135",
@@ -112552,18 +112671,6 @@
      "url": "https://of.uniupo.it/syllabus/2026/300071/1506_A093_A124/C143561",
      "libri": [
       {
-       "titolo": "Biologia molecolare della cellula, Alberts, Zanichelli.",
-       "autori": null,
-       "editore": "Zanichelli",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Biologia molecolare della cellula, Alberts, Zanichelli."
-      },
-      {
        "titolo": "L’essenziale di Biologia molecolare della cellula, Alberts, Zanichelli.",
        "autori": null,
        "editore": "Zanichelli",
@@ -113676,40 +113783,52 @@
        "citazione": "2013, Zanichelli Editore"
       },
       {
-       "titolo": "2006, Zanichelli Editore",
-       "autori": null,
-       "editore": "Zanichelli Editore",
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "2006, Zanichelli Editore"
-      },
-      {
-       "titolo": "ISBN 978-8808-19774-0",
+       "titolo": "2006, Zanichelli Editore ISBN 978-8808-19774-0 ISBN: 978 8879 597 807 ISBN 9788808175441 ISBN 9788808175441",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2006,
        "edizione": null,
        "isbn": "9788808197740",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN 978-8808-19774-0"
+       "citazione": "2006, Zanichelli Editore ISBN 978-8808-19774-0 ISBN: 978 8879 597 807 ISBN 9788808175441 ISBN 9788808175441"
       },
       {
-       "titolo": "ISBN: 978 8879 597 807",
+       "titolo": "2006, Zanichelli Editore ISBN 978-8808-19774-0",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2006,
+       "edizione": null,
+       "isbn": "9788808197740",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "2006, Zanichelli Editore ISBN 978-8808-19774-0"
+      },
+      {
+       "titolo": "2013, EdiSES srl ISBN: 978 8879 597 807 ISBN 9788808175441",
+       "autori": null,
+       "editore": null,
+       "anno": 2013,
        "edizione": null,
        "isbn": "9788879597807",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978 8879 597 807"
+       "citazione": "2013, EdiSES srl ISBN: 978 8879 597 807 ISBN 9788808175441"
+      },
+      {
+       "titolo": "2013, EdiSES srl ISBN: 978 8879 597 807",
+       "autori": null,
+       "editore": "EdiSES srl",
+       "anno": 2013,
+       "edizione": null,
+       "isbn": "9788879597807",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "2013, EdiSES srl ISBN: 978 8879 597 807"
       }
      ],
      "esami": [
@@ -119031,6 +119150,18 @@
      "url": "https://of.uniupo.it/syllabus/2026/300070/1804_A131_A141/C142892",
      "libri": [
       {
+       "titolo": "GRAMMAR AND VOCABULARY FOR THE REAL WORLD OXFORD ISBN 978 0 19 481030 2 Answer Key, Student Book + Answer Book + Ebook ISBN 9780521682015 ISBN 9780521682015",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780194810302",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "GRAMMAR AND VOCABULARY FOR THE REAL WORLD OXFORD ISBN 978 0 19 481030 2 Answer Key, Student Book + Answer Book + Ebook ISBN 9780521682015 ISBN 9780521682015"
+      },
+      {
        "titolo": "GRAMMAR AND VOCABULARY FOR THE REAL WORLD OXFORD ISBN 978 0 19 481030 2 Answer Key, Student Book + Answer Book + Ebook",
        "autori": null,
        "editore": null,
@@ -119195,18 +119326,6 @@
      "url": "https://of.uniupo.it/syllabus/2026/300070/1804_A131_A141/C137288",
      "libri": [
       {
-       "titolo": "Conforti M, Corbellini G, Gazzaniga V- Dalla cura alla scienza - EncycloMedia 2011Cosmacini G - L'arte lunga. Storia della Medicina dall'Antichità ad oggi - Laterza 2011",
-       "autori": null,
-       "editore": null,
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Conforti M, Corbellini G, Gazzaniga V- Dalla cura alla scienza - EncycloMedia 2011Cosmacini G - L'arte lunga. Storia della Medicina dall'Antichità ad oggi - Laterza 2011"
-      },
-      {
        "titolo": "Materiale informatico disponibile su DIR. Farmacologia: principi di base e applicazioni terapeutiche, a cura di F. Rossi, V. Cuomo, C. Riccardi, Edizioni Minerva Medica",
        "autori": null,
        "editore": "Edizioni Minerva Medica",
@@ -119229,18 +119348,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Farmacologia, Rang H.P., Dale M.M., Ritter J.M e Moore P.K., Casa Editrice Ambrosiana"
-      },
-      {
-       "titolo": "Carmen Usai e Patrizia Zeppegno - Aracne Editrice",
-       "autori": null,
-       "editore": "Carmen Usai e Patrizia Zeppegno - Aracne Editrice",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Carmen Usai e Patrizia Zeppegno - Aracne Editrice"
       },
       {
        "titolo": "Storia della medicina: Conforti M, Corbellini G, Gazzaniga V- Dalla cura alla scienza - EncycloMedia 2011Cosmacini G - L'arte lunga. Storia della Medicina dall'Antichità ad oggi - Laterza 2011",
@@ -119449,7 +119556,7 @@
       {
        "titolo": "Statistica medica: WW. Daniel, CL Cross. Biostatistica, Edises. Altro testo: Triola MM, Triola MF. Fondamenti di Statistica per le discipline biomediche, Pearson",
        "autori": null,
-       "editore": "Edises. Altro testo: Triola MM",
+       "editore": "Edises. Altro testo",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -120668,7 +120775,7 @@
       {
        "titolo": "Trattato di patologia chirurgica maxillo-facciale; SICMF Società Italiana di Chirurgia Maxillo-Facciale; Editore: Minerva Medica Edizione:2007",
        "autori": null,
-       "editore": "Editore: Minerva Medica Edizione:2007",
+       "editore": "Minerva Medica Edizione:2007",
        "anno": 2007,
        "edizione": null,
        "isbn": null,
@@ -120680,7 +120787,7 @@
       {
        "titolo": "Oral and Maxillofacial Surgery - 3rd Edition - 3-Volume Set; Autori: Raymond Fonseca; Editore: Elsevier – Saunders; Anno: 2017",
        "autori": null,
-       "editore": "Editore: Elsevier – Saunders",
+       "editore": "Elsevier – Saunders",
        "anno": 2017,
        "edizione": null,
        "isbn": null,
@@ -120692,7 +120799,7 @@
       {
        "titolo": "Orthognathic Surgery : Principles and Practice - 2 Volume Set; Autori: Jeffrey Posnick; Editore: Elsevier – Saunders; Anno: 2013 /2014",
        "autori": null,
-       "editore": "Editore: Elsevier – Saunders",
+       "editore": "Elsevier – Saunders",
        "anno": 2014,
        "edizione": null,
        "isbn": null,
@@ -121958,18 +122065,6 @@
      "docenti": [],
      "libri": [
       {
-       "titolo": "Conforti M, Corbellini G, Gazzaniga V- Dalla cura alla scienza - EncycloMedia 2011Cosmacini G - L'arte lunga. Storia della Medicina dall'Antichità ad oggi - Laterza 2011",
-       "autori": null,
-       "editore": null,
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dello stesso insegnamento (stesso codice MS3029) nel corso «Medicina e chirurgia»",
-       "citazione": "Conforti M, Corbellini G, Gazzaniga V- Dalla cura alla scienza - EncycloMedia 2011Cosmacini G - L'arte lunga. Storia della Medicina dall'Antichità ad oggi - Laterza 2011"
-      },
-      {
        "titolo": "Materiale informatico disponibile su DIR. Farmacologia: principi di base e applicazioni terapeutiche, a cura di F. Rossi, V. Cuomo, C. Riccardi, Edizioni Minerva Medica",
        "autori": null,
        "editore": "Edizioni Minerva Medica",
@@ -121992,18 +122087,6 @@
        "tipo": null,
        "note": "Dal programma dello stesso insegnamento (stesso codice MS3029) nel corso «Medicina e chirurgia»",
        "citazione": "Farmacologia, Rang H.P., Dale M.M., Ritter J.M e Moore P.K., Casa Editrice Ambrosiana"
-      },
-      {
-       "titolo": "Carmen Usai e Patrizia Zeppegno - Aracne Editrice",
-       "autori": null,
-       "editore": "Carmen Usai e Patrizia Zeppegno - Aracne Editrice",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dello stesso insegnamento (stesso codice MS3029) nel corso «Medicina e chirurgia»",
-       "citazione": "Carmen Usai e Patrizia Zeppegno - Aracne Editrice"
       },
       {
        "titolo": "Storia della medicina: Conforti M, Corbellini G, Gazzaniga V- Dalla cura alla scienza - EncycloMedia 2011Cosmacini G - L'arte lunga. Storia della Medicina dall'Antichità ad oggi - Laterza 2011",
@@ -122093,7 +122176,7 @@
       {
        "titolo": "Statistica medica: WW. Daniel, CL Cross. Biostatistica, Edises. Altro testo: Triola MM, Triola MF. Fondamenti di Statistica per le discipline biomediche, Pearson",
        "autori": null,
-       "editore": "Edises. Altro testo: Triola MM",
+       "editore": "Edises. Altro testo",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -122920,7 +123003,7 @@
       {
        "titolo": "Trattato di patologia chirurgica maxillo-facciale; SICMF Società Italiana di Chirurgia Maxillo-Facciale; Editore: Minerva Medica Edizione:2007",
        "autori": null,
-       "editore": "Editore: Minerva Medica Edizione:2007",
+       "editore": "Minerva Medica Edizione:2007",
        "anno": 2007,
        "edizione": null,
        "isbn": null,
@@ -122932,7 +123015,7 @@
       {
        "titolo": "Oral and Maxillofacial Surgery - 3rd Edition - 3-Volume Set; Autori: Raymond Fonseca; Editore: Elsevier – Saunders; Anno: 2017",
        "autori": null,
-       "editore": "Editore: Elsevier – Saunders",
+       "editore": "Elsevier – Saunders",
        "anno": 2017,
        "edizione": null,
        "isbn": null,
@@ -122944,7 +123027,7 @@
       {
        "titolo": "Orthognathic Surgery : Principles and Practice - 2 Volume Set; Autori: Jeffrey Posnick; Editore: Elsevier – Saunders; Anno: 2013 /2014",
        "autori": null,
-       "editore": "Editore: Elsevier – Saunders",
+       "editore": "Elsevier – Saunders",
        "anno": 2014,
        "edizione": null,
        "isbn": null,

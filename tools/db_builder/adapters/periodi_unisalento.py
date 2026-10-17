@@ -33,7 +33,7 @@ def leggi(s: str) -> dict | None:
 
 
 def fetch_periodi(uid: str = "unisalento", log=print) -> dict[str, dict]:
-    c = Client(rate=2.0)
+    c = Client(rate=1.0)
     per_url: dict[str, list[str]] = {}
     for x in periodi.mancanti(uid):
         if x.get("url"):

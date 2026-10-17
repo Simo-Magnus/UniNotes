@@ -124,11 +124,12 @@ def fetch_appelli(uid: str, base: str, corsi: list[dict], log=print) -> dict[str
     for d in per_corso.values():
         for ad, lst in d.items():
             _aggiungi(ad_tutti, ad, lst)
-    try:
-        dip = per_dipartimento(uid, base, log=log)
-    except Exception as e:  # noqa: BLE001
-        log(f"[{uid}] esse3 per dipartimento: {e!r}")
-        dip = {}
+    dip: dict[str, list[dict]] = {}
+    if not per_corso:  # senza corsi di studio nell'offerta (o con il modulo diverso): bacheca per dipartimento
+        try:
+            dip = per_dipartimento(uid, base, log=log)
+        except Exception as e:  # noqa: BLE001
+            log(f"[{uid}] esse3 per dipartimento: {e!r}")
     for ad, lst in dip.items():
         _aggiungi(ad_tutti, ad, lst)
     out: dict[str, list[dict]] = {}

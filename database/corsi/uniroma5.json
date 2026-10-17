@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "uniroma5",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.uniroma5.it/triennale/ingegneria-biomedica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0092512MAT05XMAT03",
@@ -1019,18 +1019,6 @@
      "url": "https://www.uniroma5.it/insegnamenti/0092508INGINF06",
      "libri": [
       {
-       "titolo": "Il docente consiglia l’integrazione del materiale fornito (videolezioni, dispense) con i seguenti testi, a cui il docente può fare riferimento durante le lezioni:",
-       "autori": null,
-       "editore": "dispense) con i seguenti testi",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Il docente consiglia l’integrazione del materiale fornito (videolezioni, dispense) con i seguenti testi, a cui il docente può fare riferimento durante le lezioni:"
-      },
-      {
        "titolo": "Fondamenti di analisi di segnali biomedici",
        "autori": null,
        "editore": "PISA University press 2013",
@@ -1131,7 +1119,7 @@
    "url": "https://www.uniroma5.it/triennale/ingegneria-informatica-e-intelligenza-artificiale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0082509MAT05",
@@ -1906,30 +1894,6 @@
      "url": "https://www.uniroma5.it/insegnamenti/0082509INGINF05I",
      "libri": [
       {
-       "titolo": "Il docente stabilisce la necessità di integrare il materiale fornito (videolezioni, slide, test di autovalutazione, dispense) con i seguenti testi di riferimento:",
-       "autori": null,
-       "editore": "dispense) con i seguenti testi di riferimento:",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Il docente stabilisce la necessità di integrare il materiale fornito (videolezioni, slide, test di autovalutazione, dispense) con i seguenti testi di riferimento:"
-      },
-      {
-       "titolo": "Deep Learning",
-       "autori": "I. Goodfellow, Y. Bengio, A. Courville",
-       "editore": "MIT Press",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "I. Goodfellow, Y. Bengio, A. Courville, Deep Learning, MIT Press, 2016."
-      },
-      {
        "titolo": "Pattern Recognition and Machine Learning",
        "autori": "C.M. Bishop",
        "editore": "Springer",
@@ -1976,6 +1940,18 @@
        "tipo": "consigliato",
        "note": null,
        "citazione": "R.S. Sutton, A.G. Barto, Reinforcement Learning: An Introduction (2nd ed.), MIT Press, 2018."
+      },
+      {
+       "titolo": "Il docente stabilisce la necessità di integrare il materiale fornito (videolezioni, slide, test di autovalutazione, dispense) con i seguenti testi di riferimento: I. Goodfellow, Y. Bengio, A. Courville, Deep Learning, MIT Press, 2016.",
+       "autori": null,
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "Il docente stabilisce la necessità di integrare il materiale fornito (videolezioni, slide, test di autovalutazione, dispense) con i seguenti testi di riferimento: I. Goodfellow, Y. Bengio, A. Courville, Deep Learning, MIT Press, 2016."
       }
      ],
      "esami": [],
@@ -2058,7 +2034,7 @@
       {
        "titolo": "HTML e CSS EAN: 9788848130363 ISBN: 8848130364 di Elizabeth Castro , Bruce Hyslop - Editore: Tecniche Nuove",
        "autori": null,
-       "editore": "Bruce Hyslop - Editore: Tecniche Nuove",
+       "editore": "Bruce Hyslop - Editore",
        "anno": null,
        "edizione": null,
        "isbn": "9788848130363",
@@ -2277,7 +2253,7 @@
    "url": "https://www.uniroma5.it/triennale/lingue-e-culture-straniere-per-lera-digitale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0112503INF01",
@@ -2982,7 +2958,7 @@
    "url": "https://www.uniroma5.it/triennale/triennale-corso-di-studio-in-moda-e-design-industriale-l-4.html",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0042208ICAR13I",
@@ -3582,18 +3558,6 @@
      ],
      "url": "https://www.uniroma5.it/insegnamenti/0042406INGIND22",
      "libri": [
-      {
-       "titolo": "Il docente consiglia l’integrazione del materiale fornito (videolezioni, slides, dispense, contenuti multimediali, esercitazioni) con i seguenti testi, a cui il docente può fare riferimento durante le lezioni:",
-       "autori": null,
-       "editore": "dispense",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Il docente consiglia l’integrazione del materiale fornito (videolezioni, slides, dispense, contenuti multimediali, esercitazioni) con i seguenti testi, a cui il docente può fare riferimento durante le lezioni:"
-      },
       {
        "titolo": "Materiali per il design. Introduzione ai materiali e alle loro proprietà. A cura di Barbara Del Curto, Claudia Marano, Maria Pia Pedeferri. Casa editrice Ambrosiana (Seconda edizione: 2015)",
        "autori": null,
@@ -4524,7 +4488,7 @@
    "url": "https://www.uniroma5.it/triennale/patrimonio-culturale-in-era-digitale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0012512MDEA01",
@@ -4907,18 +4871,6 @@
      ],
      "url": "https://www.uniroma5.it/insegnamenti/0012509LANT10",
      "libri": [
-      {
-       "titolo": "La docente consiglia l’integrazione del materiale fornito (videolezioni, dispense con approfondimenti bibliografici consigliati a seconda degli argomenti trattati, esercitazioni) con i seguenti testi, a cui la docente può fare riferimento durante le lezioni:",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "La docente consiglia l’integrazione del materiale fornito (videolezioni, dispense con approfondimenti bibliografici consigliati a seconda degli argomenti trattati, esercitazioni) con i seguenti testi, a cui la docente può fare riferimento durante le lezioni:"
-      },
       {
        "titolo": "C. Renfrew - P. Bahn – E. DeMarrais, L’essenziale di archeologia. Teoria, Metodi, Pratiche, Zanichelli 2024",
        "autori": null,
@@ -5678,7 +5630,7 @@
    "url": "https://www.uniroma5.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0132407BIO01",
@@ -5928,7 +5880,7 @@
       {
        "titolo": "Elementi di Matematica. Autore: Marcellini P., Sbordone C. Editore: Liguori",
        "autori": null,
-       "editore": "Sbordone C. Editore: Liguori",
+       "editore": "Sbordone C. Editore",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -6714,7 +6666,7 @@
    "url": "https://www.uniroma5.it/triennale/triennale-scienze-dellalimentazione-e-gastronomia-l26.html",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0262412BIO10XCHIM10",
@@ -7191,18 +7143,6 @@
        "citazione": "Il docente consiglia l’integrazione del materiale fornito (videolezioni, slides, esercitazioni) con i seguenti testi, a cui il docente può fare riferimento durante le lezioni: · Marsico, Giuseppe, and Simona Tarricone. \"Appunti di produzione animale e qualità delle materie prime.\" (2018): 1-371. ISBN: 8825512732"
       },
       {
-       "titolo": "La docente consiglia l’integrazione del materiale fornito (videolezioni, slides, dispense) con i seguenti testi, a cui il docente può fare riferimento durante le lezioni:",
-       "autori": null,
-       "editore": "dispense) con i seguenti testi",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "La docente consiglia l’integrazione del materiale fornito (videolezioni, slides, dispense) con i seguenti testi, a cui il docente può fare riferimento durante le lezioni:"
-      },
-      {
        "titolo": "Ceccon, P., Fagnano, M., Grignani, C., Monti, M., & Orlandini, S. (2017). Agronomia. In Agronomia (pp. 1-620).",
        "autori": null,
        "editore": null,
@@ -7626,7 +7566,7 @@
    "url": "https://www.uniroma5.it/triennale/scienze-dellamministrazione-e-dellorganizzazione-l16.html?aa=2025/2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0162206IUS01",
@@ -9287,7 +9227,7 @@
    "url": "https://www.uniroma5.it/triennale/scienze-motorie.html",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0222206BIO16I",
@@ -9371,16 +9311,16 @@
      "url": "https://www.uniroma5.it/insegnamenti/0222506BIO13",
      "libri": [
       {
-       "titolo": "Bevilacqua, A., Chieffi, P., Speranza, L., Canterini, S., Pesce, M., Montorsi, M. (2020)",
+       "titolo": "Bevilacqua, A., Chieffi, P., Speranza, L., Canterini, S., Pesce, M., Montorsi, M. (2020) ISBN: 9788829930371 ISBN: 9788836230402",
        "autori": null,
        "editore": null,
        "anno": 2020,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788829930371",
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "Bevilacqua, A., Chieffi, P., Speranza, L., Canterini, S., Pesce, M., Montorsi, M. (2020)"
+       "citazione": "Bevilacqua, A., Chieffi, P., Speranza, L., Canterini, S., Pesce, M., Montorsi, M. (2020) ISBN: 9788829930371 ISBN: 9788836230402"
       }
      ],
      "esami": [],
@@ -10746,7 +10686,7 @@
    "url": "https://www.uniroma5.it/magistrale/ingegneria-informatica-e-intelligenza-artificiale-applicata",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0322509INGINF05",
@@ -10761,24 +10701,11 @@
       "Noemi Scarpato"
      ],
      "url": "https://www.uniroma5.it/insegnamenti/0322509INGINF05",
-     "libri": [
-      {
-       "titolo": "Il docente consiglia l’integrazione del materiale fornito (videolezioni, dispense, slides, esercitazioni) con i seguenti testi, a cui il docente può fare riferimento durante le lezioni:",
-       "autori": null,
-       "editore": "dispense",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Il docente consiglia l’integrazione del materiale fornito (videolezioni, dispense, slides, esercitazioni) con i seguenti testi, a cui il docente può fare riferimento durante le lezioni:"
-      }
-     ],
+     "libri": [],
      "esami": [],
      "fonte": "https://www.uniroma5.it/magistrale/ingegneria-informatica-e-intelligenza-artificiale-applicata",
      "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
+     "stato_libri": "da_aggiungere",
      "id": "uniroma5-lm-32-ingegneria-informatica-e-dellintelligenza-artificiale-applic-0322509inginf05",
      "stato_esami": "da_aggiungere"
     },
@@ -11051,18 +10978,6 @@
      "url": "https://www.uniroma5.it/insegnamenti/0322508INGINF04",
      "libri": [
       {
-       "titolo": "Il docente consiglia l’integrazione del materiale fornito (videolezioni, dispense e slides) con i seguenti testi, a cui il docente può fare riferimento durante le lezioni:",
-       "autori": null,
-       "editore": "dispense e slides) con i seguenti testi",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Il docente consiglia l’integrazione del materiale fornito (videolezioni, dispense e slides) con i seguenti testi, a cui il docente può fare riferimento durante le lezioni:"
-      },
-      {
        "titolo": "Feedback systems: an introduction for scientists and engineers",
        "autori": "Åström, K. J., & Murray, R.",
        "editore": "Princeton university press",
@@ -11173,7 +11088,7 @@
    "url": "https://www.uniroma5.it/magistrale/lingue-e-culture-straniere-per-lera-digitale-scuola-societa-e-professioni",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0372506MDEA01",
@@ -11818,7 +11733,7 @@
    "url": "https://www.uniroma5.it/magistrale/management-diritto-e-governance-della-pubblica-amministrazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0632506IUS10",
@@ -12318,7 +12233,7 @@
    "url": "https://www.uniroma5.it/magistrale/magistrale-management-e-consulenza-aziendale.html",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0772212SECSP07II",
@@ -13385,7 +13300,7 @@
    "url": "https://www.uniroma5.it/magistrale/magistrale-scienze-della-nutrizione-umana.html",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0612610BIO10XMED03",
@@ -13935,7 +13850,7 @@
       {
        "titolo": "Biochimica della nutrizione",
        "autori": null,
-       "editore": "Editore: Esculapio",
+       "editore": "Esculapio",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -13947,7 +13862,7 @@
       {
        "titolo": "Chimica degli alimenti",
        "autori": null,
-       "editore": "Editore: Zanichelli",
+       "editore": "Zanichelli",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -13959,7 +13874,7 @@
       {
        "titolo": "Nutrizione Umana",
        "autori": null,
-       "editore": "Editore: Idelsongnocchi",
+       "editore": "Idelsongnocchi",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -14058,7 +13973,7 @@
       {
        "titolo": "Trattato Italiano di Nutraceutica Clinica",
        "autori": null,
-       "editore": "Editore: Scripta Manent Edizioni",
+       "editore": "Scripta Manent Edizioni",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -14432,7 +14347,7 @@
    "url": "https://www.uniroma5.it/magistrale/scienze-e-tecniche-delle-attivita-motorie-preventive-e-adattate.html",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "0672510BIO09XBIO16",

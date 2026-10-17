@@ -5378,7 +5378,7 @@
      "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2026/31313194/2026/9999?coorte=2026",
      "libri": [
       {
-       "titolo": " Dispense del corso a cura del docente  Informatica: arte e mestiere. Dino Mandrioli, Stefano Ceri, Licia Sbattella, Paolo Cremonesi, Gianpaolo Cugola. McGraw-Hill.",
+       "titolo": "Dispense del corso a cura del docente",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -5387,7 +5387,19 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": " Dispense del corso a cura del docente  Informatica: arte e mestiere. Dino Mandrioli, Stefano Ceri, Licia Sbattella, Paolo Cremonesi, Gianpaolo Cugola. McGraw-Hill."
+       "citazione": "Dispense del corso a cura del docente"
+      },
+      {
+       "titolo": "Informatica: arte e mestiere. Dino Mandrioli, Stefano Ceri, Licia Sbattella, Paolo Cremonesi, Gianpaolo Cugola. McGraw-Hill.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Informatica: arte e mestiere. Dino Mandrioli, Stefano Ceri, Licia Sbattella, Paolo Cremonesi, Gianpaolo Cugola. McGraw-Hill."
       }
      ],
      "esami": [],
@@ -5498,7 +5510,7 @@
       {
        "titolo": "Marcellini, Sbordone, Calcolo, Liguori editore. 2. Esercizi: Marcellini, Sbordone, Esercitazioni di matematica, 1° volume, parte prima e parte seconda, Liguori editore.",
        "autori": null,
-       "editore": "Liguori editore. 2. Esercizi: Marcellini",
+       "editore": "Liguori editore. 2. Esercizi",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -6867,7 +6879,7 @@
       {
        "titolo": "Marcellini, Sbordone, Calcolo, Liguori editore. 2. Esercizi: Marcellini, Sbordone, Esercitazioni di matematica, 1° volume, parte prima e parte seconda, Liguori editore.",
        "autori": null,
-       "editore": "Liguori editore. 2. Esercizi: Marcellini",
+       "editore": "Liguori editore. 2. Esercizi",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -7157,7 +7169,7 @@
       {
        "titolo": "Editore: Flaccovio Dario, 2009.",
        "autori": null,
-       "editore": "Editore: Flaccovio Dario",
+       "editore": "Flaccovio Dario",
        "anno": 2009,
        "edizione": null,
        "isbn": null,
@@ -7884,18 +7896,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://unimol.coursecatalogue.cineca.it/insegnamenti/2024/31311556/2023/9999?coorte=2024)",
        "citazione": "Luciano Pia – condominio residenziale, 25 Verde (2012 Torino)"
-      },
-      {
-       "titolo": "https://www.lucianopia.it/opere-e-progetti/2007-2012-25-green-25-verde",
-       "autori": null,
-       "editore": null,
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://unimol.coursecatalogue.cineca.it/insegnamenti/2024/31311556/2023/9999?coorte=2024)",
-       "citazione": "https://www.lucianopia.it/opere-e-progetti/2007-2012-25-green-25-verde"
       },
       {
        "titolo": "Ferdinand Ludwig – Plane Tree Cube, Baubotanik in Nagold (2012 Stoccarda)",
@@ -14101,16 +14101,64 @@
      "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2026/31313431/2026/9999?coorte=2026",
      "libri": [
       {
-       "titolo": "Robert McKee, Story, Omero, 2010 2) Luca Aimeri, Manuale di sceneggiatura cinematografica, UTET, Torino, 1998 3) John Truby, Anatomia di una storia, Dino Audino Editore, Roma, 2010 4) Blake Snyder, Save the cat, Omero, 2014 5) Syd Field, La sceneggiatura, il film sulla carta, Lupetti 1991",
+       "titolo": "Robert McKee, Story, Omero, 2010",
        "autori": null,
-       "editore": "UTET",
+       "editore": null,
+       "anno": 2010,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Robert McKee, Story, Omero, 2010"
+      },
+      {
+       "titolo": "Luca Aimeri, Manuale di sceneggiatura cinematografica, UTET, Torino, 1998",
+       "autori": null,
+       "editore": null,
+       "anno": 1998,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Luca Aimeri, Manuale di sceneggiatura cinematografica, UTET, Torino, 1998"
+      },
+      {
+       "titolo": "John Truby, Anatomia di una storia, Dino Audino Editore, Roma, 2010",
+       "autori": null,
+       "editore": null,
+       "anno": 2010,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "John Truby, Anatomia di una storia, Dino Audino Editore, Roma, 2010"
+      },
+      {
+       "titolo": "Blake Snyder, Save the cat, Omero, 2014",
+       "autori": null,
+       "editore": null,
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Blake Snyder, Save the cat, Omero, 2014"
+      },
+      {
+       "titolo": "Syd Field, La sceneggiatura, il film sulla carta, Lupetti 1991",
+       "autori": null,
+       "editore": null,
        "anno": 1991,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Robert McKee, Story, Omero, 2010 2) Luca Aimeri, Manuale di sceneggiatura cinematografica, UTET, Torino, 1998 3) John Truby, Anatomia di una storia, Dino Audino Editore, Roma, 2010 4) Blake Snyder, Save the cat, Omero, 2014 5) Syd Field, La sceneggiatura, il film sulla carta, Lupetti 1991"
+       "citazione": "Syd Field, La sceneggiatura, il film sulla carta, Lupetti 1991"
       }
      ],
      "esami": [
@@ -16588,7 +16636,7 @@
       {
        "titolo": "PSICOLOGIA DINAMICA, I MODELLI TEORICI A CONFRONTO, Alessandra De Coro, Francesca Ortu (a cura di), Laterza: Bari. MANUALE DI PSICOLOGIA DINAMICA, Adriana Lis, Silvio Stella, Giulio Cesare Zavattini, Il Mulino: Bologna,",
        "autori": null,
-       "editore": "Laterza: Bari. MANUALE DI PSICOLOGIA DINAMICA",
+       "editore": "Laterza",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -17568,7 +17616,7 @@
       {
        "titolo": "Gugliemo Giordano, UTET : Tecnologia del legno",
        "autori": null,
-       "editore": "UTET : Tecnologia del legno",
+       "editore": "UTET",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -22080,18 +22128,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unimol.coursecatalogue.cineca.it/insegnamenti/2025/31313619/2025/9999?coorte=2025)",
        "citazione": "Andrea Mirri (2018). Emergenze, urgenze e servizio sociale – teoria metodologia e tecniche. Carocci editore@Faber."
-      },
-      {
-       "titolo": "La docente, durante le lezioni fornirà eventuale materiale aggiuntivo.",
-       "autori": null,
-       "editore": "durante le lezioni fornirà eventuale materiale aggiuntivo",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unimol.coursecatalogue.cineca.it/insegnamenti/2025/31313619/2025/9999?coorte=2025)",
-       "citazione": "La docente, durante le lezioni fornirà eventuale materiale aggiuntivo."
       }
      ],
      "esami": [],
@@ -28282,7 +28318,7 @@
       {
        "titolo": "HUDSON, R. Sociolinguistica. Bologna, il Mulino (cap.III: Lingua, cultura, pensiero).",
        "autori": null,
-       "editore": "il Mulino (cap.III: Lingua",
+       "editore": "il Mulino (cap.III",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -34338,7 +34374,7 @@
       {
        "titolo": "Gugliemo Giordano, UTET : Tecnologia del legno",
        "autori": null,
-       "editore": "UTET : Tecnologia del legno",
+       "editore": "UTET",
        "anno": null,
        "edizione": null,
        "isbn": null,

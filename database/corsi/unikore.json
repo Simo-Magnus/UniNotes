@@ -488,7 +488,7 @@
       {
        "titolo": "Strategie d’impresa",
        "autori": "Per la parte di",
-       "editore": "il Mulino. Pagine: 467",
+       "editore": "il Mulino. Pagine",
        "anno": 2020,
        "edizione": null,
        "isbn": null,
@@ -500,7 +500,7 @@
       {
        "titolo": "Marketing",
        "autori": "Per la parte di",
-       "editore": "McGraw-Hill. Pagine: 281",
+       "editore": "McGraw-Hill. Pagine",
        "anno": 2024,
        "edizione": null,
        "isbn": null,
@@ -1115,23 +1115,11 @@
        "editore": "EdiSES",
        "anno": 2023,
        "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "D. Scannicchio E. Giroletti, “Elementi di Fisica Biomedica II Ed.”, EdiSES, 2023,"
-      },
-      {
-       "titolo": "ISBN:978-88-3623-125-6.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
        "isbn": "9788836231256",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN:978-88-3623-125-6."
+       "citazione": "D. Scannicchio E. Giroletti, “Elementi di Fisica Biomedica II Ed.”, EdiSES, 2023, ISBN:978-88-3623-125-6."
       },
       {
        "titolo": "Fisica applicata alle scienze mediche. Conespansione online",
@@ -1266,19 +1254,7 @@
      "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Fisioterapia/2025-2026/I anno/MEDICINA FISICA E RIABILITATIVA.pdf",
      "libri": [
       {
-       "titolo": "Lezioni di Medicina Riabilitativa – Prof. I. Caruso - editrice CIC Roma",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Lezioni di Medicina Riabilitativa – Prof. I. Caruso - editrice CIC Roma"
-      },
-      {
-       "titolo": "ISBN: 9788871418353.",
+       "titolo": "Lezioni di Medicina Riabilitativa – Prof. I. Caruso - editrice CIC Roma ISBN: 9788871418353.",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -1287,7 +1263,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 9788871418353."
+       "citazione": "Lezioni di Medicina Riabilitativa – Prof. I. Caruso - editrice CIC Roma ISBN: 9788871418353."
       },
       {
        "titolo": "Elsevier Italia ISBN 978-8821437731.",
@@ -1304,7 +1280,7 @@
       {
        "titolo": "Basaglia - Idelson-Gnocchi ISBN: 887947491X.",
        "autori": null,
-       "editore": "Basaglia - Idelson-Gnocchi ISBN: 887947491X",
+       "editore": "Basaglia - Idelson-Gnocchi ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "887947491X",
@@ -1827,16 +1803,28 @@
      "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Infermieristica – Sede Caltagirone/2026-2027/I anno/FISIOLOGIA.pdf",
      "libri": [
       {
-       "titolo": "Pearson Italia; 8a Edizione: febbraio 2020. ISBN:978-88-919-0973-2; 2) Fisiologia Umana; Autore: G. D’Arcangelo, R. Dalla Volta, A. De Lorenzo, F. Felici",
+       "titolo": "Pearson Italia; 8a Edizione: febbraio 2020. ISBN:978-88-919-0973-2;",
        "autori": null,
-       "editore": "Pearson Italia",
+       "editore": null,
        "anno": 2020,
        "edizione": null,
        "isbn": "9788891909732",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Pearson Italia; 8a Edizione: febbraio 2020. ISBN:978-88-919-0973-2; 2) Fisiologia Umana; Autore: G. D’Arcangelo, R. Dalla Volta, A. De Lorenzo, F. Felici"
+       "citazione": "Pearson Italia; 8a Edizione: febbraio 2020. ISBN:978-88-919-0973-2;"
+      },
+      {
+       "titolo": "Fisiologia Umana; Autore: G. D’Arcangelo, R. Dalla Volta, A. De Lorenzo, F. Felici",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788891909732",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Fisiologia Umana; Autore: G. D’Arcangelo, R. Dalla Volta, A. De Lorenzo, F. Felici"
       },
       {
        "titolo": "AAVV",
@@ -1861,18 +1849,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Biella. Edi-ermes 2018. 1ª Edizione. ISBN:978887051544-2"
-      },
-      {
-       "titolo": "Ed.Pearson Education Limited ISBN:9781292094939.",
-       "autori": null,
-       "editore": "Ed.Pearson Education Limited ISBN:9781292094939",
-       "anno": null,
-       "edizione": null,
-       "isbn": "9781292094939",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Ed.Pearson Education Limited ISBN:9781292094939."
       }
      ],
      "esami": [],
@@ -2065,28 +2041,16 @@
      "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Infermieristica – Sede Caltagirone/2025-2026/II anno/Clinica Medica e Chirurgica.pdf",
      "libri": [
       {
-       "titolo": "● Nettina SM. Il Manuale dell’infermiere. IV Edizione, Volume I, Ed. Piccin, 2021.",
-       "autori": null,
-       "editore": "Ed. Piccin",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "● Nettina SM. Il Manuale dell’infermiere. IV Edizione, Volume I, Ed. Piccin, 2021."
-      },
-      {
-       "titolo": "ISBN-10: 8829930954; ISBN-13: 978-8829930951",
+       "titolo": "● Nettina SM. Il Manuale dell’infermiere. IV Edizione, Volume I, Ed. Piccin, 2021. ISBN-10: 8829930954; ISBN-13: 978-8829930951",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2021,
        "edizione": null,
        "isbn": "8829930954",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN-10: 8829930954; ISBN-13: 978-8829930951"
+       "citazione": "● Nettina SM. Il Manuale dell’infermiere. IV Edizione, Volume I, Ed. Piccin, 2021. ISBN-10: 8829930954; ISBN-13: 978-8829930951"
       },
       {
        "titolo": "● Massini et al. Medicina Interna (VI ed.), 2019, McGraw-Hill Education; ISBN 978- 8838694660",
@@ -2101,28 +2065,16 @@
        "citazione": "● Massini et al. Medicina Interna (VI ed.), 2019, McGraw-Hill Education; ISBN 978- 8838694660"
       },
       {
-       "titolo": "● Claudio Rugarli. Medicina Interna Sistematica, Editrice Masson; ISBN-10: 8821450953",
+       "titolo": "● Claudio Rugarli. Medicina Interna Sistematica, Editrice Masson; ISBN-10: 8821450953 ISBN-13: 978-8821450952",
        "autori": null,
-       "editore": "Editrice Masson",
+       "editore": null,
        "anno": null,
        "edizione": null,
        "isbn": "8821450953",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "● Claudio Rugarli. Medicina Interna Sistematica, Editrice Masson; ISBN-10: 8821450953"
-      },
-      {
-       "titolo": "ISBN-13: 978-8821450952",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788821450952",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ISBN-13: 978-8821450952"
+       "citazione": "● Claudio Rugarli. Medicina Interna Sistematica, Editrice Masson; ISBN-10: 8821450953 ISBN-13: 978-8821450952"
       },
       {
        "titolo": "Chirurgia per infermieri",
@@ -2228,7 +2180,7 @@
       {
        "titolo": "Diagnosi infermieristiche NANDA-I: Definizioni e classificazione 2024–2026 (13ª ed.), Herdman T. H., Kamitsuru S., North American Nursing Diagnosis Association (NANDA), Casa Editrice Ambrosiana (2024). ISBN: 9788808713780",
        "autori": null,
-       "editore": "Casa Editrice Ambrosiana (2024). ISBN: 9788808713780",
+       "editore": "Casa Editrice Ambrosiana (2024). ISBN",
        "anno": 2024,
        "edizione": null,
        "isbn": "9788808713780",
@@ -2252,7 +2204,7 @@
       {
        "titolo": "McCloskey Dochterman J., Butcher H. K., Bulechek G. M., Casa Editrice Ambrosiana (2025). ISBN: 9788808580092",
        "autori": null,
-       "editore": "Casa Editrice Ambrosiana (2025). ISBN: 9788808580092",
+       "editore": "Casa Editrice Ambrosiana (2025). ISBN",
        "anno": 2025,
        "edizione": null,
        "isbn": "9788808580092",
@@ -2336,7 +2288,7 @@
       {
        "titolo": "Editrice Ambrosiana. ISBN: 978-88-08-09800-9",
        "autori": null,
-       "editore": "Editrice Ambrosiana. ISBN: 978-88-08-09800-9",
+       "editore": "Editrice Ambrosiana. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788808098009",
@@ -2346,9 +2298,33 @@
        "citazione": "Editrice Ambrosiana. ISBN: 978-88-08-09800-9"
       },
       {
+       "titolo": "Editrice Ambrosiana. ISBN: 978-88-08-18728-4 ISBN: 9788808480095 ISBN: 8879477315 ISBN: 9788829912636",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788808187284",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Editrice Ambrosiana. ISBN: 978-88-08-18728-4 ISBN: 9788808480095 ISBN: 8879477315 ISBN: 9788829912636"
+      },
+      {
+       "titolo": "McCloskey Dochterman J., Butcher H. K., Bulechek G. M., Casa Editrice Ambrosiana (2025). ISBN: 9788808580092 ISBN: 8879477315 ISBN: 9788829912636",
+       "autori": null,
+       "editore": null,
+       "anno": 2025,
+       "edizione": null,
+       "isbn": "9788808580092",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "McCloskey Dochterman J., Butcher H. K., Bulechek G. M., Casa Editrice Ambrosiana (2025). ISBN: 9788808580092 ISBN: 8879477315 ISBN: 9788829912636"
+      },
+      {
        "titolo": "Editrice Ambrosiana. ISBN: 978-88-08-18728-4",
        "autori": null,
-       "editore": "Editrice Ambrosiana. ISBN: 978-88-08-18728-4",
+       "editore": "Editrice Ambrosiana. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788808187284",
@@ -2554,7 +2530,7 @@
       {
        "titolo": "Ambrosiana. ISBN Vol. 1: 978-88-08-18784-0; ISBN Vol. 2: 978-88-08-18790-1.",
        "autori": null,
-       "editore": "Ambrosiana. ISBN Vol. 1: 978-88-08-18784-0",
+       "editore": "Ambrosiana. ISBN Vol. 1",
        "anno": null,
        "edizione": null,
        "isbn": "9788808187840",
@@ -2735,23 +2711,11 @@
        "editore": "Cambridge University Press",
        "anno": 2014,
        "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Page, A. C. (2014). Clinical Psychology for Trainees. Cambridge University Press."
-      },
-      {
-       "titolo": "ISBN-13: 978-1107613980",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
        "isbn": "9781107613980",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN-13: 978-1107613980"
+       "citazione": "Page, A. C. (2014). Clinical Psychology for Trainees. Cambridge University Press. ISBN-13: 978-1107613980"
       },
       {
        "titolo": "Cortelli, Federico, Mancardi, Marciani, Meola, Nichelli, Sganzerla. (2016). McGraw",
@@ -2860,6 +2824,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Clinical Approach. 10th ed. Elsevier; 2026. ISBN: 9780443127236."
+      },
+      {
+       "titolo": "Clinical Psychology for Trainees",
+       "autori": "Page, A. C.",
+       "editore": "Cambridge University Press",
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Page, A. C. (2014). Clinical Psychology for Trainees. Cambridge University Press."
       }
      ],
      "esami": [],
@@ -3038,16 +3014,28 @@
      "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Infermieristica – Sede Caltagirone/2026-2027/I anno/FISIOLOGIA.pdf",
      "libri": [
       {
-       "titolo": "Pearson Italia; 8a Edizione: febbraio 2020. ISBN:978-88-919-0973-2; 2) Fisiologia Umana; Autore: G. D’Arcangelo, R. Dalla Volta, A. De Lorenzo, F. Felici",
+       "titolo": "Pearson Italia; 8a Edizione: febbraio 2020. ISBN:978-88-919-0973-2;",
        "autori": null,
-       "editore": "Pearson Italia",
+       "editore": null,
        "anno": 2020,
        "edizione": null,
        "isbn": "9788891909732",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Pearson Italia; 8a Edizione: febbraio 2020. ISBN:978-88-919-0973-2; 2) Fisiologia Umana; Autore: G. D’Arcangelo, R. Dalla Volta, A. De Lorenzo, F. Felici"
+       "citazione": "Pearson Italia; 8a Edizione: febbraio 2020. ISBN:978-88-919-0973-2;"
+      },
+      {
+       "titolo": "Fisiologia Umana; Autore: G. D’Arcangelo, R. Dalla Volta, A. De Lorenzo, F. Felici",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788891909732",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Fisiologia Umana; Autore: G. D’Arcangelo, R. Dalla Volta, A. De Lorenzo, F. Felici"
       },
       {
        "titolo": "AAVV",
@@ -3072,18 +3060,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Biella. Edi-ermes 2018. 1ª Edizione. ISBN:978887051544-2"
-      },
-      {
-       "titolo": "Ed.Pearson Education Limited ISBN:9781292094939.",
-       "autori": null,
-       "editore": "Ed.Pearson Education Limited ISBN:9781292094939",
-       "anno": null,
-       "edizione": null,
-       "isbn": "9781292094939",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Ed.Pearson Education Limited ISBN:9781292094939."
       }
      ],
      "esami": [],
@@ -3276,28 +3252,16 @@
      "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Infermieristica – Sede Caltagirone/2025-2026/II anno/Clinica Medica e Chirurgica.pdf",
      "libri": [
       {
-       "titolo": "● Nettina SM. Il Manuale dell’infermiere. IV Edizione, Volume I, Ed. Piccin, 2021.",
-       "autori": null,
-       "editore": "Ed. Piccin",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "● Nettina SM. Il Manuale dell’infermiere. IV Edizione, Volume I, Ed. Piccin, 2021."
-      },
-      {
-       "titolo": "ISBN-10: 8829930954; ISBN-13: 978-8829930951",
+       "titolo": "● Nettina SM. Il Manuale dell’infermiere. IV Edizione, Volume I, Ed. Piccin, 2021. ISBN-10: 8829930954; ISBN-13: 978-8829930951",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2021,
        "edizione": null,
        "isbn": "8829930954",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN-10: 8829930954; ISBN-13: 978-8829930951"
+       "citazione": "● Nettina SM. Il Manuale dell’infermiere. IV Edizione, Volume I, Ed. Piccin, 2021. ISBN-10: 8829930954; ISBN-13: 978-8829930951"
       },
       {
        "titolo": "● Massini et al. Medicina Interna (VI ed.), 2019, McGraw-Hill Education; ISBN 978- 8838694660",
@@ -3312,28 +3276,16 @@
        "citazione": "● Massini et al. Medicina Interna (VI ed.), 2019, McGraw-Hill Education; ISBN 978- 8838694660"
       },
       {
-       "titolo": "● Claudio Rugarli. Medicina Interna Sistematica, Editrice Masson; ISBN-10: 8821450953",
+       "titolo": "● Claudio Rugarli. Medicina Interna Sistematica, Editrice Masson; ISBN-10: 8821450953 ISBN-13: 978-8821450952",
        "autori": null,
-       "editore": "Editrice Masson",
+       "editore": null,
        "anno": null,
        "edizione": null,
        "isbn": "8821450953",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "● Claudio Rugarli. Medicina Interna Sistematica, Editrice Masson; ISBN-10: 8821450953"
-      },
-      {
-       "titolo": "ISBN-13: 978-8821450952",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788821450952",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ISBN-13: 978-8821450952"
+       "citazione": "● Claudio Rugarli. Medicina Interna Sistematica, Editrice Masson; ISBN-10: 8821450953 ISBN-13: 978-8821450952"
       },
       {
        "titolo": "Chirurgia per infermieri",
@@ -3439,7 +3391,7 @@
       {
        "titolo": "Diagnosi infermieristiche NANDA-I: Definizioni e classificazione 2024–2026 (13ª ed.), Herdman T. H., Kamitsuru S., North American Nursing Diagnosis Association (NANDA), Casa Editrice Ambrosiana (2024). ISBN: 9788808713780",
        "autori": null,
-       "editore": "Casa Editrice Ambrosiana (2024). ISBN: 9788808713780",
+       "editore": "Casa Editrice Ambrosiana (2024). ISBN",
        "anno": 2024,
        "edizione": null,
        "isbn": "9788808713780",
@@ -3463,7 +3415,7 @@
       {
        "titolo": "McCloskey Dochterman J., Butcher H. K., Bulechek G. M., Casa Editrice Ambrosiana (2025). ISBN: 9788808580092",
        "autori": null,
-       "editore": "Casa Editrice Ambrosiana (2025). ISBN: 9788808580092",
+       "editore": "Casa Editrice Ambrosiana (2025). ISBN",
        "anno": 2025,
        "edizione": null,
        "isbn": "9788808580092",
@@ -3547,7 +3499,7 @@
       {
        "titolo": "Editrice Ambrosiana. ISBN: 978-88-08-09800-9",
        "autori": null,
-       "editore": "Editrice Ambrosiana. ISBN: 978-88-08-09800-9",
+       "editore": "Editrice Ambrosiana. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788808098009",
@@ -3557,9 +3509,33 @@
        "citazione": "Editrice Ambrosiana. ISBN: 978-88-08-09800-9"
       },
       {
+       "titolo": "Editrice Ambrosiana. ISBN: 978-88-08-18728-4 ISBN: 9788808480095 ISBN: 8879477315 ISBN: 9788829912636",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788808187284",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Editrice Ambrosiana. ISBN: 978-88-08-18728-4 ISBN: 9788808480095 ISBN: 8879477315 ISBN: 9788829912636"
+      },
+      {
+       "titolo": "McCloskey Dochterman J., Butcher H. K., Bulechek G. M., Casa Editrice Ambrosiana (2025). ISBN: 9788808580092 ISBN: 8879477315 ISBN: 9788829912636",
+       "autori": null,
+       "editore": null,
+       "anno": 2025,
+       "edizione": null,
+       "isbn": "9788808580092",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "McCloskey Dochterman J., Butcher H. K., Bulechek G. M., Casa Editrice Ambrosiana (2025). ISBN: 9788808580092 ISBN: 8879477315 ISBN: 9788829912636"
+      },
+      {
        "titolo": "Editrice Ambrosiana. ISBN: 978-88-08-18728-4",
        "autori": null,
-       "editore": "Editrice Ambrosiana. ISBN: 978-88-08-18728-4",
+       "editore": "Editrice Ambrosiana. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788808187284",
@@ -3765,7 +3741,7 @@
       {
        "titolo": "Ambrosiana. ISBN Vol. 1: 978-88-08-18784-0; ISBN Vol. 2: 978-88-08-18790-1.",
        "autori": null,
-       "editore": "Ambrosiana. ISBN Vol. 1: 978-88-08-18784-0",
+       "editore": "Ambrosiana. ISBN Vol. 1",
        "anno": null,
        "edizione": null,
        "isbn": "9788808187840",
@@ -3946,23 +3922,11 @@
        "editore": "Cambridge University Press",
        "anno": 2014,
        "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Page, A. C. (2014). Clinical Psychology for Trainees. Cambridge University Press."
-      },
-      {
-       "titolo": "ISBN-13: 978-1107613980",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
        "isbn": "9781107613980",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN-13: 978-1107613980"
+       "citazione": "Page, A. C. (2014). Clinical Psychology for Trainees. Cambridge University Press. ISBN-13: 978-1107613980"
       },
       {
        "titolo": "Cortelli, Federico, Mancardi, Marciani, Meola, Nichelli, Sganzerla. (2016). McGraw",
@@ -4071,6 +4035,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Clinical Approach. 10th ed. Elsevier; 2026. ISBN: 9780443127236."
+      },
+      {
+       "titolo": "Clinical Psychology for Trainees",
+       "autori": "Page, A. C.",
+       "editore": "Cambridge University Press",
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Page, A. C. (2014). Clinical Psychology for Trainees. Cambridge University Press."
       }
      ],
      "esami": [],
@@ -5246,7 +5222,7 @@
       {
        "titolo": "I/2015 EdiSES editore ISBN: 9788879598781",
        "autori": null,
-       "editore": "I/2015 EdiSES editore ISBN: 9788879598781",
+       "editore": "I/2015 EdiSES editore ISBN",
        "anno": 2015,
        "edizione": null,
        "isbn": "9788879598781",
@@ -5258,7 +5234,7 @@
       {
        "titolo": "Stoltzfus, M. W. Chemistry: The Central Science, 15th Edition, Pearson. ISBN-13: 978-0137493609",
        "autori": null,
-       "editore": "Pearson. ISBN-13: 978-0137493609",
+       "editore": "Pearson. ISBN-13",
        "anno": null,
        "edizione": null,
        "isbn": "9780137493609",
@@ -5555,7 +5531,7 @@
       {
        "titolo": "J.C., Deyrup A.T. Edizione EDRA. ISBN Cartaceo: 9788821458323; ISBN Digitale: 9788821458330",
        "autori": null,
-       "editore": "Deyrup A.T. Edizione EDRA. ISBN Cartaceo: 9788821458323",
+       "editore": "Deyrup A.T. Edizione EDRA. ISBN Cartaceo",
        "anno": null,
        "edizione": null,
        "isbn": "9788821458323",
@@ -5567,7 +5543,7 @@
       {
        "titolo": "Aster J.C., Deyrup A.T. Edizione EDRA. ISBN: 978882143708",
        "autori": null,
-       "editore": "Deyrup A.T. Edizione EDRA. ISBN: 978882143708",
+       "editore": "Deyrup A.T. Edizione EDRA. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -7860,18 +7836,6 @@
        "citazione": "Carlo Tagliavini, Le origini delle lingue neolatine, Bologna, Patron, 1982, §§ 14, 16, 30, 31, 32, 33, 40, 45, 46, 47, 48, 49, 50, 51, 52, 61, 63, 75, 76, 85."
       },
       {
-       "titolo": "Carocci, 2019, §§ 1.1, 1.2, 1.3, 1.4, 1.5, 1.6; 2.1, 2.2, 2.3, 2.4; 4.1; 4.4.",
-       "autori": null,
-       "editore": "Carocci",
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Carocci, 2019, §§ 1.1, 1.2, 1.3, 1.4, 1.5, 1.6; 2.1, 2.2, 2.3, 2.4; 4.1; 4.4."
-      },
-      {
        "titolo": "Rainer Schlösser, Le lingue romanze, Bologna, il Mulino, 2001, §§ 5-6, 8-10.",
        "autori": null,
        "editore": "il Mulino",
@@ -10144,28 +10108,16 @@
      "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Lingue e culture moderne (indirizzi: europeo, arabo, cinese)/2025-2026/III anno/Letteratura Cinese 2.pdf",
      "libri": [
       {
-       "titolo": "Pedone, Valentina, Zuccheri Serena, Letteratura cinese contemporanea, Hoepli,",
+       "titolo": "Pedone, Valentina, Zuccheri Serena, Letteratura cinese contemporanea, Hoepli, Pesaro, Nicoletta, Pirazzoli Melinda, La narrativa cinese del Novecento, Carocci,",
        "autori": null,
-       "editore": "Hoepli",
+       "editore": null,
        "anno": null,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Pedone, Valentina, Zuccheri Serena, Letteratura cinese contemporanea, Hoepli,"
-      },
-      {
-       "titolo": "Pesaro, Nicoletta, Pirazzoli Melinda, La narrativa cinese del Novecento, Carocci,",
-       "autori": null,
-       "editore": "Carocci",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pesaro, Nicoletta, Pirazzoli Melinda, La narrativa cinese del Novecento, Carocci,"
+       "citazione": "Pedone, Valentina, Zuccheri Serena, Letteratura cinese contemporanea, Hoepli, Pesaro, Nicoletta, Pirazzoli Melinda, La narrativa cinese del Novecento, Carocci,"
       },
       {
        "titolo": "Can Xue, La città del fumo, Utopia Editore, Milano, 2025.",
@@ -11065,7 +11017,7 @@
       {
        "titolo": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735.",
        "autori": null,
-       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735",
+       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "8829929735",
@@ -11073,6 +11025,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735."
+      },
+      {
+       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9783031249600",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499"
       },
       {
        "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607",
@@ -11112,23 +11076,11 @@
        "editore": "EdiSES",
        "anno": 2023,
        "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "D. Scannicchio E. Giroletti, “Elementi di Fisica Biomedica II Ed.”, EdiSES, 2023,"
-      },
-      {
-       "titolo": "ISBN:978-88-3623-125-6.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
        "isbn": "9788836231256",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN:978-88-3623-125-6."
+       "citazione": "D. Scannicchio E. Giroletti, “Elementi di Fisica Biomedica II Ed.”, EdiSES, 2023, ISBN:978-88-3623-125-6."
       },
       {
        "titolo": "Fisica applicata alle scienze mediche. Conespansione online",
@@ -11202,7 +11154,7 @@
      "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Logopedia/2026-2027/I anno/SCIENZE DELLA PREVENZIONE NEI SERVIZI SANITARI.pdf",
      "libri": [
       {
-       "titolo": "Giammanco et al. Edizione: II/2022, ISBN: 9788836230808",
+       "titolo": "Giammanco et al. Edizione: II/2022, ISBN: 9788836230808 ISBN:978-88-299-2902-3 ISBN:978-0316356367",
        "autori": null,
        "editore": null,
        "anno": 2022,
@@ -11211,19 +11163,19 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Giammanco et al. Edizione: II/2022, ISBN: 9788836230808"
+       "citazione": "Giammanco et al. Edizione: II/2022, ISBN: 9788836230808 ISBN:978-88-299-2902-3 ISBN:978-0316356367"
       },
       {
-       "titolo": "ISBN:978-88-299-2902-3",
+       "titolo": "Giammanco et al. Edizione: II/2022, ISBN: 9788836230808 ISBN:978-0316356367 ISBN:978-88-299-2902-3",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2022,
        "edizione": null,
-       "isbn": "9788829929023",
+       "isbn": "9788836230808",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN:978-88-299-2902-3"
+       "citazione": "Giammanco et al. Edizione: II/2022, ISBN: 9788836230808 ISBN:978-0316356367 ISBN:978-88-299-2902-3"
       }
      ],
      "esami": [],
@@ -11334,7 +11286,7 @@
       {
        "titolo": "Editore: Elsevier, ISBN: 9780323834605",
        "autori": null,
-       "editore": "Editore: Elsevier",
+       "editore": "Elsevier",
        "anno": null,
        "edizione": null,
        "isbn": "9780323834605",
@@ -11344,16 +11296,28 @@
        "citazione": "Editore: Elsevier, ISBN: 9780323834605"
       },
       {
-       "titolo": "PICCIN, ISBN: 9788829931507 2) Fisiologia Umana - seconda edizione",
+       "titolo": "PICCIN, ISBN: 9788829931507",
        "autori": null,
-       "editore": "PICCIN",
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788829931507",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "PICCIN, ISBN: 9788829931507"
+      },
+      {
+       "titolo": "Fisiologia Umana - seconda edizione",
+       "autori": null,
+       "editore": null,
        "anno": null,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "PICCIN, ISBN: 9788829931507 2) Fisiologia Umana - seconda edizione"
+       "citazione": "Fisiologia Umana - seconda edizione"
       },
       {
        "titolo": "Edizioni A.L.E., ISBN 9791280427281 3) Fisiologia Umana-Fondamenti (1ªEdizione 2018)",
@@ -11392,16 +11356,28 @@
        "citazione": "Pearson, ISBN: 9780134605197"
       },
       {
-       "titolo": "PICCIN, ISBN: 9788829929689 2) Istologia. Testo e atlante. Con elementi di biologia cellulare e molecolare (III",
+       "titolo": "PICCIN, ISBN: 9788829929689",
        "autori": null,
-       "editore": "PICCIN",
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788829929689",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "PICCIN, ISBN: 9788829929689"
+      },
+      {
+       "titolo": "Istologia. Testo e atlante. Con elementi di biologia cellulare e molecolare (III",
+       "autori": null,
+       "editore": null,
        "anno": null,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "PICCIN, ISBN: 9788829929689 2) Istologia. Testo e atlante. Con elementi di biologia cellulare e molecolare (III"
+       "citazione": "Istologia. Testo e atlante. Con elementi di biologia cellulare e molecolare (III"
       },
       {
        "titolo": "Casa Editrice Ambrosiana (CEA) , ISBN: 9788808720238 3) Istologia ed elementi di anatomia microscopica (II Edizione 2011)",
@@ -11465,7 +11441,7 @@
       {
        "titolo": "Presti, G., Moderato, P. Pensieri, parole, emozioni. Franco Angeli. ISBN: 9788891788993 (capp. 1, 2, 3, 65, 7, 9)",
        "autori": null,
-       "editore": "emozioni. Franco Angeli. ISBN: 9788891788993 (capp. 1",
+       "editore": "emozioni. Franco Angeli. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788891788993",
@@ -11533,6 +11509,30 @@
        "tipo": null,
        "note": null,
        "citazione": "The Basics of Bioethics. Laura K. Guidry-Grimes. Taylor & Francis Ltd. ISBN: 9781032775371"
+      },
+      {
+       "titolo": "Introductions. Edward Elgar Publishing. ISBN: 978-1-03538-808-0. ISBN: 9788829931996",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9781035388080",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Introductions. Edward Elgar Publishing. ISBN: 978-1-03538-808-0. ISBN: 9788829931996"
+      },
+      {
+       "titolo": "Presti, G., Moderato, P. Pensieri, parole, emozioni. Franco Angeli. ISBN: 9788891788993 (capp. 1, 2, 3, 65, 7, 9) ISBN: 9788829931996",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788891788993",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Presti, G., Moderato, P. Pensieri, parole, emozioni. Franco Angeli. ISBN: 9788891788993 (capp. 1, 2, 3, 65, 7, 9) ISBN: 9788829931996"
       },
       {
        "titolo": "Introductions. Edward Elgar Publishing. ISBN: 978-1-03538-808-0.",
@@ -11761,28 +11761,16 @@
        "citazione": "Sebastiano Nutarelli. Piccin Nuova Libraria, 2025. ISBN-13: 978-88-299-3488-1."
       },
       {
-       "titolo": "Coppola L., Masiero S. Riabilitazione in Ortopedia. Piccin Nuova Libraria, 2005.",
+       "titolo": "Coppola L., Masiero S. Riabilitazione in Ortopedia. Piccin Nuova Libraria, 2005. ISBN-13: 978-88-299-1761-7.",
        "autori": null,
        "editore": null,
        "anno": 2005,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Coppola L., Masiero S. Riabilitazione in Ortopedia. Piccin Nuova Libraria, 2005."
-      },
-      {
-       "titolo": "ISBN-13: 978-88-299-1761-7.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
        "edizione": null,
        "isbn": "9788829917617",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN-13: 978-88-299-1761-7."
+       "citazione": "Coppola L., Masiero S. Riabilitazione in Ortopedia. Piccin Nuova Libraria, 2005. ISBN-13: 978-88-299-1761-7."
       },
       {
        "titolo": "Lotter A., Quinci C. La riabilitazione della paralisi del VII nervo cranico. Piccin",
@@ -11855,6 +11843,30 @@
        "tipo": null,
        "note": null,
        "citazione": "N.Burton. “Psychiatry”. Acreron Press, 2016."
+      },
+      {
+       "titolo": "Internazionale del Funzionamento, della Disabilità e della Salute (ICF). Erickson. ISBN: 1405177225",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "1405177225",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Internazionale del Funzionamento, della Disabilità e della Salute (ICF). Erickson. ISBN: 1405177225"
+      },
+      {
+       "titolo": "Coppola L., Masiero S. Riabilitazione in Ortopedia. Piccin Nuova Libraria, 2005. ISBN-13: 978-88-299-1761-7. ISBN: 1405177225",
+       "autori": null,
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": "9788829917617",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Coppola L., Masiero S. Riabilitazione in Ortopedia. Piccin Nuova Libraria, 2005. ISBN-13: 978-88-299-1761-7. ISBN: 1405177225"
       },
       {
        "titolo": "Internazionale del Funzionamento, della Disabilità e della Salute (ICF). Erickson.",
@@ -12027,30 +12039,6 @@
      "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Logopedia/2025-2026/I anno/ORGANI DI SENSO.pdf",
      "libri": [
       {
-       "titolo": "Per la preparazione dell'esame, il materiale didattico fondamentale è costituito dagli appunti presi a lezione e dalle dispense, slide e articoli scientifici forniti dai docenti di ciascun modulo.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Per la preparazione dell'esame, il materiale didattico fondamentale è costituito dagli appunti presi a lezione e dalle dispense, slide e articoli scientifici forniti dai docenti di ciascun modulo."
-      },
-      {
-       "titolo": "Medica (Edizione: 5°) 2021. ISBN-13:9788855320535",
-       "autori": null,
-       "editore": null,
-       "anno": 2021,
-       "edizione": null,
-       "isbn": "9788855320535",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Medica (Edizione: 5°) 2021. ISBN-13:9788855320535"
-      },
-      {
        "titolo": "Azzolini Claudio, Donati Simone. Edra (8 edizione,2017). ISBN/EAN: 9788821443671",
        "autori": null,
        "editore": "Donati Simone. Edra (8 edizione",
@@ -12113,7 +12101,7 @@
       {
        "titolo": "Otorinolaringoiatria. De Campora Enrico, Paolo Pagnini. Elsevier (2013). ISBN- 13: 9788821430626",
        "autori": null,
-       "editore": "Paolo Pagnini. Elsevier (2013). ISBN- 13: 9788821430626",
+       "editore": "Paolo Pagnini. Elsevier (2013). ISBN- 13",
        "anno": 2013,
        "edizione": null,
        "isbn": "9788821430626",
@@ -12226,7 +12214,7 @@
       {
        "titolo": "Editore: Piccin nuova Libraria, ISBN 978-88-299-2832-3",
        "autori": null,
-       "editore": "Editore: Piccin nuova Libraria",
+       "editore": "Piccin nuova Libraria",
        "anno": null,
        "edizione": null,
        "isbn": "9788829928323",
@@ -12238,7 +12226,7 @@
       {
        "titolo": "Editore: Edizioni A.L.E., ISBN 9791280427281",
        "autori": null,
-       "editore": "Editore: Edizioni A.L.E",
+       "editore": "Edizioni A.L.E",
        "anno": null,
        "edizione": null,
        "isbn": "9791280427281",
@@ -12262,7 +12250,7 @@
       {
        "titolo": "Editore: Edi-ermes, ISBN:9788870515442",
        "autori": null,
-       "editore": "Editore: Edi-ermes",
+       "editore": "Edi-ermes",
        "anno": null,
        "edizione": null,
        "isbn": "9788870515442",
@@ -12274,7 +12262,7 @@
       {
        "titolo": "Editore: Pearson Italia, ISBN: 9788891909732",
        "autori": null,
-       "editore": "Editore: Pearson Italia",
+       "editore": "Pearson Italia",
        "anno": null,
        "edizione": null,
        "isbn": "9788891909732",
@@ -12298,7 +12286,7 @@
       {
        "titolo": "Editore: Idelson-Gnocchi, ISBN 9788879478236",
        "autori": null,
-       "editore": "Editore: Idelson-Gnocchi",
+       "editore": "Idelson-Gnocchi",
        "anno": null,
        "edizione": null,
        "isbn": "9788879478236",
@@ -12310,7 +12298,7 @@
       {
        "titolo": "Editore: Piccin-Nuova Libraria, ISBN 8829929689.",
        "autori": null,
-       "editore": "Editore: Piccin-Nuova Libraria",
+       "editore": "Piccin-Nuova Libraria",
        "anno": null,
        "edizione": null,
        "isbn": "8829929689",
@@ -12720,18 +12708,6 @@
      "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Scienze del movimento e dello sport/2025-2026/I anno/Fondamenti del Movimento Umano.pdf",
      "libri": [
       {
-       "titolo": "Meinel (2008), Teoria del movimento, Edizioni Società Stampa Sportiva, Roma. Il testo è rintracciabile presso la biblioteca di Ateneo.",
-       "autori": null,
-       "editore": "Edizioni Società Stampa Sportiva",
-       "anno": 2008,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Meinel (2008), Teoria del movimento, Edizioni Società Stampa Sportiva, Roma. Il testo è rintracciabile presso la biblioteca di Ateneo."
-      },
-      {
        "titolo": "Sistemi motori. Nuovi paradigmi di apprendimento e comunicazione",
        "autori": "M.V. Meraviglia",
        "editore": "Edizioni Springer",
@@ -12780,7 +12756,7 @@
       {
        "titolo": "Mulino: studiare i capitoli 1, 3, 4, 5, 6, 7 e 8.",
        "autori": null,
-       "editore": "Mulino: studiare i capitoli 1",
+       "editore": "Mulino",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -16562,7 +16538,7 @@
       {
        "titolo": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735.",
        "autori": null,
-       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735",
+       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "8829929735",
@@ -16570,6 +16546,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735."
+      },
+      {
+       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9783031249600",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499"
       },
       {
        "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607",
@@ -17199,6 +17187,18 @@
        "tipo": null,
        "note": null,
        "citazione": "2011. ISBN: 9788879596114"
+      },
+      {
+       "titolo": "Anatomia Umana. Kenneth S. Saladin. casa editrice Piccin_Nuova Libraria. ISBN 978- 8829932160 ISBN: 9788808720238",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Anatomia Umana. Kenneth S. Saladin. casa editrice Piccin_Nuova Libraria. ISBN 978- 8829932160 ISBN: 9788808720238"
       }
      ],
      "esami": [],
@@ -17297,6 +17297,18 @@
        "citazione": "Medicina di laboratorio: la diagnosi di malattia nel laboratorio clinico. II edizione italiana. ISBN: 9788829921096"
       },
       {
+       "titolo": "2025. McGraw Hill, 4 ed. 2025. ISBN: 9781264258093 ISBN:9788808520555. ISBN:9788808520555.",
+       "autori": null,
+       "editore": null,
+       "anno": 2025,
+       "edizione": null,
+       "isbn": "9781264258093",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "2025. McGraw Hill, 4 ed. 2025. ISBN: 9781264258093 ISBN:9788808520555. ISBN:9788808520555."
+      },
+      {
        "titolo": "2025. McGraw Hill, 4 ed. 2025. ISBN: 9781264258093",
        "autori": null,
        "editore": "2025. McGraw Hill",
@@ -17384,7 +17396,7 @@
       {
        "titolo": "Anatomia Patologica – La sistematica",
        "autori": "Gallo - D’Amati",
-       "editore": "Casa Editrice:",
+       "editore": null,
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -17396,7 +17408,7 @@
       {
        "titolo": "EDRA.ISBN: 9788821444777",
        "autori": null,
-       "editore": "EDRA.ISBN: 9788821444777",
+       "editore": "EDRA.ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788821444777",
@@ -17408,7 +17420,7 @@
       {
        "titolo": "Wolters Kluwer Health 2022. ISBN: 9781975150723",
        "autori": null,
-       "editore": "Wolters Kluwer Health 2022. ISBN: 9781975150723",
+       "editore": "Wolters Kluwer Health 2022. ISBN",
        "anno": 2022,
        "edizione": null,
        "isbn": "9781975150723",
@@ -17466,33 +17478,21 @@
      "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Tecniche di laboratorio biomedico/2026-2027/II anno/BIOCHIMICA CLINICA E BIOLOGIA MOLECOLARE CLINICA.pdf",
      "libri": [
       {
-       "titolo": "Trattato di Biochimica Clinica e Medicina di Laboratorio. Ciaccio M. Edises, 2021.",
+       "titolo": "Trattato di Biochimica Clinica e Medicina di Laboratorio. Ciaccio M. Edises, 2021. ISBN: 9788836230440.",
        "autori": null,
        "editore": null,
        "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Trattato di Biochimica Clinica e Medicina di Laboratorio. Ciaccio M. Edises, 2021."
-      },
-      {
-       "titolo": "ISBN: 9788836230440.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
        "edizione": null,
        "isbn": "9788836230440",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 9788836230440."
+       "citazione": "Trattato di Biochimica Clinica e Medicina di Laboratorio. Ciaccio M. Edises, 2021. ISBN: 9788836230440."
       },
       {
        "titolo": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735.",
        "autori": null,
-       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735",
+       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "8829929735",
@@ -17502,28 +17502,16 @@
        "citazione": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735."
       },
       {
-       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024",
+       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024 ISBN:9783031249600, 3031249607",
        "autori": null,
        "editore": null,
        "anno": 2024,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024"
-      },
-      {
-       "titolo": "ISBN:9783031249600, 3031249607",
-       "autori": null,
-       "editore": null,
-       "anno": null,
        "edizione": null,
        "isbn": "9783031249600",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN:9783031249600, 3031249607"
+       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024 ISBN:9783031249600, 3031249607"
       },
       {
        "titolo": "Genetica & Genomica nelle scienze mediche. Strachan T., Lucassen A. 2ª edizione, Zanichelli, 2024. ISBN: 9788808299543",
@@ -17548,6 +17536,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Buckingham L. 4th Edition, F.A. Davis, 2026. ISBN: 9781719651134."
+      },
+      {
+       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024",
+       "autori": null,
+       "editore": null,
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024"
       }
      ],
      "esami": [],
@@ -17587,7 +17587,7 @@
       {
        "titolo": "Deyrup A.T. Edizione EDRA. ISBN Cartaceo: 9788821458323; ISBN",
        "autori": null,
-       "editore": "Deyrup A.T. Edizione EDRA. ISBN Cartaceo: 9788821458323",
+       "editore": "Deyrup A.T. Edizione EDRA. ISBN Cartaceo",
        "anno": null,
        "edizione": null,
        "isbn": "9788821458323",
@@ -17674,7 +17674,7 @@
       {
        "titolo": "Editrice Edra. ISBN: 8821453952.",
        "autori": null,
-       "editore": "Editrice Edra. ISBN: 8821453952",
+       "editore": "Editrice Edra. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "8821453952",
@@ -17698,7 +17698,7 @@
       {
        "titolo": "Borgia, Gaeta, Gentile, Coppola. AAVV. Malattie Infettive e Tropicali. II edizione, 2019. Ed. Idelson Gnocchi. ISBN: 978-8-879-47695-9",
        "autori": null,
-       "editore": "2019. Ed. Idelson Gnocchi. ISBN: 978-8-879-47695-9",
+       "editore": "2019. Ed. Idelson Gnocchi. ISBN",
        "anno": 2019,
        "edizione": null,
        "isbn": "9788879476959",
@@ -17708,19 +17708,7 @@
        "citazione": "Borgia, Gaeta, Gentile, Coppola. AAVV. Malattie Infettive e Tropicali. II edizione, 2019. Ed. Idelson Gnocchi. ISBN: 978-8-879-47695-9"
       },
       {
-       "titolo": "Madigan M.T., Bender K.S., Buckley D.H., Matthew Sattley W., Stahl D.A. – Pearson.",
-       "autori": null,
-       "editore": "Stahl D.A. – Pearson",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Madigan M.T., Bender K.S., Buckley D.H., Matthew Sattley W., Stahl D.A. – Pearson."
-      },
-      {
-       "titolo": "ISBN: 978-8891906298",
+       "titolo": "Madigan M.T., Bender K.S., Buckley D.H., Matthew Sattley W., Stahl D.A. – Pearson. ISBN: 978-8891906298",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -17729,7 +17717,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-8891906298"
+       "citazione": "Madigan M.T., Bender K.S., Buckley D.H., Matthew Sattley W., Stahl D.A. – Pearson. ISBN: 978-8891906298"
       },
       {
        "titolo": "Laboratorio di microbiologia, biochimica, igiene e patologia – F. Fanti. Casa Editrice",
@@ -17746,7 +17734,7 @@
       {
        "titolo": "Zanichelli. ISBN: 9788808691774",
        "autori": null,
-       "editore": "Zanichelli. ISBN: 9788808691774",
+       "editore": "Zanichelli. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788808691774",
@@ -17781,7 +17769,7 @@
       {
        "titolo": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735.",
        "autori": null,
-       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735",
+       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "8829929735",
@@ -17793,7 +17781,7 @@
       {
        "titolo": "Antonozzi I., Gulletta E. Casa Editrice PICCIN. ISBN: 978-88-299-3518-5.",
        "autori": null,
-       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN: 978-88-299-3518-5",
+       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788829935185",
@@ -17805,7 +17793,7 @@
       {
        "titolo": "Laposata M. Casa Editrice PICCIN. ISBN: 978-88-299-3127-9.",
        "autori": null,
-       "editore": "Laposata M. Casa Editrice PICCIN. ISBN: 978-88-299-3127-9",
+       "editore": "Laposata M. Casa Editrice PICCIN. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788829931279",
@@ -17827,6 +17815,18 @@
        "citazione": "Trattato di Biochimica Clinica e Medicina di Laboratorio. Ciaccio M. Edises, 2021. ISBN: 9788836230440."
       },
       {
+       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024. ISBN:9783031249600, 3031249607",
+       "autori": null,
+       "editore": null,
+       "anno": 2024,
+       "edizione": null,
+       "isbn": "9783031249600",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024. ISBN:9783031249600, 3031249607"
+      },
+      {
        "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024.",
        "autori": null,
        "editore": null,
@@ -17837,30 +17837,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024."
-      },
-      {
-       "titolo": "ISBN:9783031249600, 3031249607",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9783031249600",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ISBN:9783031249600, 3031249607"
-      },
-      {
-       "titolo": "Il docente fornirà articoli scientifici originali e di revisione, linee guida, dispense, protocolli e altro materiale di approfondimento aggiornato e pertinente agli argomenti trattati, rendendolo disponibile sulla piattaforma informatica di Ateneo (https://unikorefad.it/login/login_n.php).",
-       "autori": null,
-       "editore": "dispense",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Il docente fornirà articoli scientifici originali e di revisione, linee guida, dispense, protocolli e altro materiale di approfondimento aggiornato e pertinente agli argomenti trattati, rendendolo disponibile sulla piattaforma informatica di Ateneo (https://unikorefad.it/login/login_n.php)."
       }
      ],
      "esami": [],
@@ -18219,7 +18195,7 @@
       {
        "titolo": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735.",
        "autori": null,
-       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735",
+       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "8829929735",
@@ -18227,6 +18203,30 @@
        "tipo": null,
        "note": null,
        "citazione": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735."
+      },
+      {
+       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024 ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499",
+       "autori": null,
+       "editore": null,
+       "anno": 2024,
+       "edizione": null,
+       "isbn": "9783031249600",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024 ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499"
+      },
+      {
+       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024 ISBN:9783031249600, 3031249607 ISBN:9788836232499",
+       "autori": null,
+       "editore": null,
+       "anno": 2024,
+       "edizione": null,
+       "isbn": "9783031249600",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024 ISBN:9783031249600, 3031249607 ISBN:9788836232499"
       },
       {
        "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024",
@@ -18239,18 +18239,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024"
-      },
-      {
-       "titolo": "ISBN:9783031249600, 3031249607",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9783031249600",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ISBN:9783031249600, 3031249607"
       }
      ],
      "esami": [],
@@ -18295,7 +18283,7 @@
      "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Tecniche di radiologia medica, per immagini e radioterapia/2026-2027/I anno/SCIENZE DELLA PREVENZIONE NEI SERVIZI SANITARI.pdf",
      "libri": [
       {
-       "titolo": "Giammanco et al. Edizione: II/2022, ISBN: 9788836230808",
+       "titolo": "Giammanco et al. Edizione: II/2022, ISBN: 9788836230808 ISBN:978-88-299-2902-3",
        "autori": null,
        "editore": null,
        "anno": 2022,
@@ -18304,19 +18292,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Giammanco et al. Edizione: II/2022, ISBN: 9788836230808"
-      },
-      {
-       "titolo": "ISBN:978-88-299-2902-3",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788829929023",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ISBN:978-88-299-2902-3"
+       "citazione": "Giammanco et al. Edizione: II/2022, ISBN: 9788836230808 ISBN:978-88-299-2902-3"
       }
      ],
      "esami": [],
@@ -18737,33 +18713,21 @@
        "citazione": "Thieme. ISBN-13 978-3131256041"
       },
       {
-       "titolo": "Larry R. Cochard, Netter's Introduzione all'imaging, 2022 Piccin-Nuova Libraria.",
-       "autori": null,
-       "editore": "2022 Piccin-Nuova Libraria",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Larry R. Cochard, Netter's Introduzione all'imaging, 2022 Piccin-Nuova Libraria."
-      },
-      {
-       "titolo": "ISBN-13: 978-8829932177",
+       "titolo": "Larry R. Cochard, Netter's Introduzione all'imaging, 2022 Piccin-Nuova Libraria. ISBN-13: 978-8829932177",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2022,
        "edizione": null,
        "isbn": "9788829932177",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN-13: 978-8829932177"
+       "citazione": "Larry R. Cochard, Netter's Introduzione all'imaging, 2022 Piccin-Nuova Libraria. ISBN-13: 978-8829932177"
       },
       {
        "titolo": "A. Brown, Richard C. Semelka. Editore: Wiley-Blackwell. Volume::",
        "autori": null,
-       "editore": "Richard C. Semelka. Editore: Wiley-Blackwell. Volume::",
+       "editore": "Richard C. Semelka. Editore",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -20265,7 +20229,7 @@
       {
        "titolo": "Amici M., Porcedda F., (a cura di), Guida alla formulazione e gestione dei progetti europei. Capitoli: 1, 2, 3, 4. Editore: Franco Angeli, 2024",
        "autori": null,
-       "editore": "4. Editore: Franco Angeli",
+       "editore": "4. Editore",
        "anno": 2024,
        "edizione": null,
        "isbn": null,
@@ -20363,18 +20327,6 @@
        "tipo": null,
        "note": null,
        "citazione": "AA.VV., La giustizia riparativa, a cura di V. Bonini, Giappichelli, 2024, pp. 1-170."
-      },
-      {
-       "titolo": "Sarà cura del docente mettere a disposizione degli studenti dell'ulteriore materiale didattico finalizzato ad agevolare la comprensione degli istituti (Schemi, power point, ecc). Il materiale didattico sarà disponibile presso la biblioteca.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Sarà cura del docente mettere a disposizione degli studenti dell'ulteriore materiale didattico finalizzato ad agevolare la comprensione degli istituti (Schemi, power point, ecc). Il materiale didattico sarà disponibile presso la biblioteca."
       }
      ],
      "esami": [],
@@ -21262,7 +21214,7 @@
       {
        "titolo": "O.C. Zienckiewicz, R.L Taylor, The Finite Element Method, Editore: McGraw-Hill.",
        "autori": null,
-       "editore": "Editore: McGraw-Hill",
+       "editore": "McGraw-Hill",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -23408,18 +23360,6 @@
        "citazione": "Columbia Companion to Modern Chinese Literature, Columbia University Press, New"
       },
       {
-       "titolo": "York, 2016, pp. 62-71.",
-       "autori": null,
-       "editore": null,
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "York, 2016, pp. 62-71."
-      },
-      {
        "titolo": "Orientalia Editrice, Roma, 2025.",
        "autori": null,
        "editore": "Orientalia Editrice",
@@ -24919,7 +24859,7 @@
       {
        "titolo": "Zanichelli: Bologna, Parte II: cap. 3, Sezione II; cap. 4, par. 11. Parte VII (escludendo il cap. 6), Parte VIII: cap. 2.",
        "autori": null,
-       "editore": "Zanichelli: Bologna",
+       "editore": "Zanichelli",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -24931,7 +24871,7 @@
       {
        "titolo": "GIORS – NEPPI MODONA – PETRINI, Diritto penale e servizio sociale, Seconda edizione – 2021, Giappichelli: Torino, 2021, Parte prima: capp. III, VII (escludendo il par. 2) e IX Parte seconda: capp. I (escludendo i parr. 5, 6 e 8), cap. II (limitatamente ai parr. da 1 a 7 compreso e ai parr. da 11 a 1",
        "autori": null,
-       "editore": "Giappichelli: Torino",
+       "editore": "Giappichelli",
        "anno": 2021,
        "edizione": null,
        "isbn": null,
@@ -25626,7 +25566,7 @@
       {
        "titolo": "Metodi e strumenti per la valutazione del movimento umano",
        "autori": "Strumenti per la valutazione del movimento e della prestazione 1. Sgrò, F",
-       "editore": "Franco Angeli. ISBN: 9788891727138",
+       "editore": "Franco Angeli. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788891727138",
@@ -27072,18 +27012,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Rebecchini G., Cardullo F., Dato G., Lo Curzio M., Dantes L., Pirruccello C. (1991), Le vie dello zolfo in Sicilia. Storia ed architettura, Officina Edizioni, Roma"
-      },
-      {
-       "titolo": "Saranno messi a disposizione degli studenti materiali didattici integrativi, comprendenti le slide del corso e dispense di approfondimento.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Saranno messi a disposizione degli studenti materiali didattici integrativi, comprendenti le slide del corso e dispense di approfondimento."
       },
       {
        "titolo": "Fabian L., Munarin S. (a cura di) (2017), Re-cycle Italy. Atlante, LetteraVentidue,",
@@ -29150,7 +29078,7 @@
       {
        "titolo": "Fiandaca-Musco, Diritto penale. Parte generale, Ottava edizione, Zanichelli: Bologna, 2019, limitatamente a:",
        "autori": null,
-       "editore": "Zanichelli: Bologna",
+       "editore": "Zanichelli",
        "anno": 2019,
        "edizione": null,
        "isbn": null,
@@ -29162,7 +29090,7 @@
       {
        "titolo": "Fiandaca-Musco, Diritto penale. Parte speciale, Vol. II, tomo 1, I delitti contro la persona, Quinta edizione, Zanichelli: Bologna, 2020 (limitatamente ai reati sopra indicati – totale pagine di questo testo: 190 circa).",
        "autori": null,
-       "editore": "Zanichelli: Bologna",
+       "editore": "Zanichelli",
        "anno": 2020,
        "edizione": null,
        "isbn": null,
@@ -29174,7 +29102,7 @@
       {
        "titolo": "Settima edizione, Zanichelli: Bologna, 2015 (limitatamente ai reati sopra indicati – totale pagine di questo testo: 185 circa).",
        "autori": null,
-       "editore": "Zanichelli: Bologna",
+       "editore": "Zanichelli",
        "anno": 2015,
        "edizione": null,
        "isbn": null,
@@ -29186,7 +29114,7 @@
       {
        "titolo": "Ruga Riva, Diritto penale dell’ambiente, Quarta edizione, Giappichelli: Torino, 2021, pagg. da 27 a 29; da 61 a 66; da 117 a 180; da 229 a 306 (totale pagine di questo testo: 150 circa).",
        "autori": null,
-       "editore": "Giappichelli: Torino",
+       "editore": "Giappichelli",
        "anno": 2021,
        "edizione": null,
        "isbn": null,
@@ -29903,28 +29831,16 @@
        "citazione": "Editore Edi-ermes, ISBN:9788870515428"
       },
       {
-       "titolo": "Prometheus. Atlante di Anatomia. AM Gilroy, BR MacPherson. EdiSES, 2019.",
+       "titolo": "Prometheus. Atlante di Anatomia. AM Gilroy, BR MacPherson. EdiSES, 2019. ISBN 978- 8833190105",
        "autori": null,
-       "editore": "BR MacPherson. EdiSES",
+       "editore": null,
        "anno": 2019,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Prometheus. Atlante di Anatomia. AM Gilroy, BR MacPherson. EdiSES, 2019."
-      },
-      {
-       "titolo": "ISBN 978- 8833190105",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ISBN 978- 8833190105"
+       "citazione": "Prometheus. Atlante di Anatomia. AM Gilroy, BR MacPherson. EdiSES, 2019. ISBN 978- 8833190105"
       },
       {
        "titolo": "Atlante di Anatomia Umana. Netter. Edra, 2022. ISBN 978-8821457111",
@@ -29961,6 +29877,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Gray' s Anatomy - The Anatomical Basis of Clinical Practice. Elsevier, 2026. ISBN 0443124787."
+      },
+      {
+       "titolo": "Anatomia Clinica. Ellis H., Mahadevan V. Editore, Idelson-Gnocchi, ISBN: 978- 8879476850 ISBN 978- 8833190105",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Anatomia Clinica. Ellis H., Mahadevan V. Editore, Idelson-Gnocchi, ISBN: 978- 8879476850 ISBN 978- 8833190105"
       }
      ],
      "esami": [],
@@ -30229,7 +30157,7 @@
       {
        "titolo": "Casa Editrice Edra. ISBN: 8821453952.",
        "autori": null,
-       "editore": "Casa Editrice Edra. ISBN: 8821453952",
+       "editore": "Casa Editrice Edra. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "8821453952",
@@ -30237,18 +30165,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Casa Editrice Edra. ISBN: 8821453952."
-      },
-      {
-       "titolo": "Editrice Edra. ISBN: 8821453952.",
-       "autori": null,
-       "editore": "Editrice Edra. ISBN: 8821453952",
-       "anno": null,
-       "edizione": null,
-       "isbn": "8821453952",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Editrice Edra. ISBN: 8821453952."
       }
      ],
      "esami": [],
@@ -30277,7 +30193,7 @@
       {
        "titolo": "La Biochimica di Thomas Devlin, VI edizione, Edises 2023 ISBN: 978883623130.",
        "autori": null,
-       "editore": "Edises 2023 ISBN: 978883623130",
+       "editore": "Edises 2023 ISBN",
        "anno": 2023,
        "edizione": null,
        "isbn": null,
@@ -30335,28 +30251,16 @@
        "citazione": "Plevani. Casa Editrice Ambrosiana, 201 8. ISBN: 97888081 851 81."
       },
       {
-       "titolo": "Fondamenti di biologia molecolare. Lizabeth A. Allison. Seconda edizione italiana condotta sulla terza edizione americana. Casa Editrice Zanichelli, 2023.",
+       "titolo": "Fondamenti di biologia molecolare. Lizabeth A. Allison. Seconda edizione italiana condotta sulla terza edizione americana. Casa Editrice Zanichelli, 2023. ISBN: 9788808399762.",
        "autori": null,
        "editore": null,
        "anno": 2023,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Fondamenti di biologia molecolare. Lizabeth A. Allison. Seconda edizione italiana condotta sulla terza edizione americana. Casa Editrice Zanichelli, 2023."
-      },
-      {
-       "titolo": "ISBN: 9788808399762.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
        "edizione": null,
        "isbn": "9788808399762",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 9788808399762."
+       "citazione": "Fondamenti di biologia molecolare. Lizabeth A. Allison. Seconda edizione italiana condotta sulla terza edizione americana. Casa Editrice Zanichelli, 2023. ISBN: 9788808399762."
       },
       {
        "titolo": "Casa Editrice Zanichelli, 2020. ISBN: 9788808799388.",
@@ -30397,7 +30301,7 @@
       {
        "titolo": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735.",
        "autori": null,
-       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735",
+       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "8829929735",
@@ -30504,7 +30408,7 @@
       {
        "titolo": "Editore: Idelson-Gnocchi. EAN: 9788879474214, ISBN: 8879474219",
        "autori": null,
-       "editore": "Editore: Idelson-Gnocchi. EAN: 9788879474214",
+       "editore": "Idelson-Gnocchi. EAN",
        "anno": null,
        "edizione": null,
        "isbn": "9788879474214",
@@ -30540,7 +30444,7 @@
       {
        "titolo": "Edra. EAN: 9788821441844, ISBN: 8821441849",
        "autori": null,
-       "editore": "Edra. EAN: 9788821441844",
+       "editore": "Edra. EAN",
        "anno": null,
        "edizione": null,
        "isbn": "9788821441844",
@@ -30552,7 +30456,7 @@
       {
        "titolo": "Dennis L. Kasper. Editore: CEA. EAN: 9788808820372, ISBN: 8808820378",
        "autori": null,
-       "editore": "Dennis L. Kasper. Editore: CEA. EAN: 9788808820372",
+       "editore": "Dennis L. Kasper. Editore",
        "anno": null,
        "edizione": null,
        "isbn": "9788808820372",
@@ -30598,9 +30502,33 @@
        "citazione": "Esculapio ISBN 978-88-7488-666-1"
       },
       {
+       "titolo": "Idelson-Gnocchi. ISBN: 8879477307 EAN: 9788829928897 ISBN-10: 8829928895",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "8879477307",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Idelson-Gnocchi. ISBN: 8879477307 EAN: 9788829928897 ISBN-10: 8829928895"
+      },
+      {
+       "titolo": "Editore: Idelson-Gnocchi. EAN: 9788879474214, ISBN: 8879474219 EAN: 9788829928897 ISBN-10: 8829928895",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788879474214",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Editore: Idelson-Gnocchi. EAN: 9788879474214, ISBN: 8879474219 EAN: 9788829928897 ISBN-10: 8829928895"
+      },
+      {
        "titolo": "Idelson-Gnocchi. ISBN: 8879477307",
        "autori": null,
-       "editore": "Idelson-Gnocchi. ISBN: 8879477307",
+       "editore": "Idelson-Gnocchi. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "8879477307",
@@ -30775,33 +30703,21 @@
      "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Medicina e chirurgia/2025-2026/III anno/Medicina di Laboratorio C.I._Corso2.pdf",
      "libri": [
       {
-       "titolo": "Trattato di Biochimica Clinica e Medicina di Laboratorio. Ciaccio M. Edises, 2021.",
+       "titolo": "Trattato di Biochimica Clinica e Medicina di Laboratorio. Ciaccio M. Edises, 2021. ISBN: 9788836230440.",
        "autori": null,
        "editore": null,
        "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Trattato di Biochimica Clinica e Medicina di Laboratorio. Ciaccio M. Edises, 2021."
-      },
-      {
-       "titolo": "ISBN: 9788836230440.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
        "edizione": null,
        "isbn": "9788836230440",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 9788836230440."
+       "citazione": "Trattato di Biochimica Clinica e Medicina di Laboratorio. Ciaccio M. Edises, 2021. ISBN: 9788836230440."
       },
       {
        "titolo": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735.",
        "autori": null,
-       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735",
+       "editore": "Gulletta E. Casa Editrice PICCIN. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "8829929735",
@@ -30813,7 +30729,7 @@
       {
        "titolo": "Editrice Edra. ISBN: 8821453952.",
        "autori": null,
-       "editore": "Editrice Edra. ISBN: 8821453952",
+       "editore": "Editrice Edra. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "8821453952",
@@ -30823,19 +30739,7 @@
        "citazione": "Editrice Edra. ISBN: 8821453952."
       },
       {
-       "titolo": "Sherris - Microbiologia Medica VII Edizione. Kenneth J. Ryan. Casa Editrice Edra.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Sherris - Microbiologia Medica VII Edizione. Kenneth J. Ryan. Casa Editrice Edra."
-      },
-      {
-       "titolo": "ISBN: 9788821454004.",
+       "titolo": "Sherris - Microbiologia Medica VII Edizione. Kenneth J. Ryan. Casa Editrice Edra. ISBN: 9788821454004.",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -30844,7 +30748,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 9788821454004."
+       "citazione": "Sherris - Microbiologia Medica VII Edizione. Kenneth J. Ryan. Casa Editrice Edra. ISBN: 9788821454004."
       },
       {
        "titolo": "Rossolini G.M. Casa Editrice Zanichelli. ISBN: 9788808699817.",
@@ -30861,7 +30765,7 @@
       {
        "titolo": "M. Casa Editrice PICCIN. ISBN: 978-88-299-3127-9.",
        "autori": null,
-       "editore": "M. Casa Editrice PICCIN. ISBN: 978-88-299-3127-9",
+       "editore": "M. Casa Editrice PICCIN. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "9788829931279",
@@ -30871,9 +30775,33 @@
        "citazione": "M. Casa Editrice PICCIN. ISBN: 978-88-299-3127-9."
       },
       {
+       "titolo": "Editrice Edra. ISBN: 8821452972. ISBN: 8808599817.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "8821452972",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Editrice Edra. ISBN: 8821452972. ISBN: 8808599817."
+      },
+      {
+       "titolo": "Sherris - Microbiologia Medica VII Edizione. Kenneth J. Ryan. Casa Editrice Edra. ISBN: 9788821454004. ISBN: 8808599817.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788821454004",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Sherris - Microbiologia Medica VII Edizione. Kenneth J. Ryan. Casa Editrice Edra. ISBN: 9788821454004. ISBN: 8808599817."
+      },
+      {
        "titolo": "Editrice Edra. ISBN: 8821452972.",
        "autori": null,
-       "editore": "Editrice Edra. ISBN: 8821452972",
+       "editore": "Editrice Edra. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": "8821452972",
@@ -31064,7 +30992,7 @@
       {
        "titolo": "Gianfranco Liguri. Zanichelli 2015. ISBN: 9788808253811",
        "autori": null,
-       "editore": "Gianfranco Liguri. Zanichelli 2015. ISBN: 9788808253811",
+       "editore": "Gianfranco Liguri. Zanichelli 2015. ISBN",
        "anno": 2015,
        "edizione": null,
        "isbn": "9788808253811",
@@ -31074,33 +31002,21 @@
        "citazione": "Gianfranco Liguri. Zanichelli 2015. ISBN: 9788808253811"
       },
       {
-       "titolo": "● BASI MOLECOLARI DELLA NUTRIZIONE. Giuseppe Arienti. Editore Piccin 2021.",
+       "titolo": "● BASI MOLECOLARI DELLA NUTRIZIONE. Giuseppe Arienti. Editore Piccin 2021. ISBN10: 8829932051. ISBN13: 978-8829932054",
        "autori": null,
        "editore": null,
        "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "● BASI MOLECOLARI DELLA NUTRIZIONE. Giuseppe Arienti. Editore Piccin 2021."
-      },
-      {
-       "titolo": "ISBN10: 8829932051. ISBN13: 978-8829932054",
-       "autori": null,
-       "editore": null,
-       "anno": null,
        "edizione": null,
        "isbn": "8829932051",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN10: 8829932051. ISBN13: 978-8829932054"
+       "citazione": "● BASI MOLECOLARI DELLA NUTRIZIONE. Giuseppe Arienti. Editore Piccin 2021. ISBN10: 8829932051. ISBN13: 978-8829932054"
       },
       {
        "titolo": "Editore: EdiSES 2019. ISBN: 9788833190518",
        "autori": null,
-       "editore": "Editore: EdiSES 2019. ISBN: 9788833190518",
+       "editore": "EdiSES 2019. ISBN",
        "anno": 2019,
        "edizione": null,
        "isbn": "9788833190518",
@@ -31184,7 +31100,7 @@
       {
        "titolo": "Scollo Paolo; Vizza Enrico; Ghezzi Fabio. Edra 2019. ISBN: 9788821448690",
        "autori": null,
-       "editore": "Ghezzi Fabio. Edra 2019. ISBN: 9788821448690",
+       "editore": "Ghezzi Fabio. Edra 2019. ISBN",
        "anno": 2019,
        "edizione": null,
        "isbn": "9788821448690",
@@ -31192,6 +31108,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Scollo Paolo; Vizza Enrico; Ghezzi Fabio. Edra 2019. ISBN: 9788821448690"
+      },
+      {
+       "titolo": "UROLOGIA. Francesco Porpiglia. Edizioni Minerva Medica 2015. ISBN 8877118349 EAN 9788879477246",
+       "autori": null,
+       "editore": null,
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "UROLOGIA. Francesco Porpiglia. Edizioni Minerva Medica 2015. ISBN 8877118349 EAN 9788879477246"
       }
      ],
      "esami": [],
@@ -31259,7 +31187,7 @@
       {
        "titolo": "● Borgia, Gaeta, Gentile, Coppola. AAVV. Malattie Infettive e Tropicali. II edizione, 2019. Ed. Idelson Gnocchi. ISBN: 978-8-879-47695-9",
        "autori": null,
-       "editore": "2019. Ed. Idelson Gnocchi. ISBN: 978-8-879-47695-9",
+       "editore": "2019. Ed. Idelson Gnocchi. ISBN",
        "anno": 2019,
        "edizione": null,
        "isbn": "9788879476959",
@@ -31271,7 +31199,7 @@
       {
        "titolo": "● Moroni, Antinori, Mastroianni, Vullo. AAVV. Manuale di Malattie Infettive. III edizione, 2020. Ed. Edra Masson. ISBN: 978-8-821-45111-9",
        "autori": null,
-       "editore": "2020. Ed. Edra Masson. ISBN: 978-8-821-45111-9",
+       "editore": "2020. Ed. Edra Masson. ISBN",
        "anno": 2020,
        "edizione": null,
        "isbn": "9788821451119",
@@ -31283,7 +31211,7 @@
       {
        "titolo": "● D’Arminio Monforte, Marchetti. AAVV. Manuale di Malattie Infettive e Tropicali e casi clinici correlati. I edizione, 2023. Ed. Piccin – Nuova Libraria. ISBN: 978-8-829- 93366-2",
        "autori": null,
-       "editore": "2023. Ed. Piccin – Nuova Libraria. ISBN: 978-8-829- 93366-2",
+       "editore": "2023. Ed. Piccin – Nuova Libraria. ISBN",
        "anno": 2023,
        "edizione": null,
        "isbn": null,
@@ -31502,7 +31430,7 @@
       {
        "titolo": "Otorinolaringoiatria. De Campora Enrico, Paolo Pagnini. Elsevier (2013). ISBN- 13: 9788821430626",
        "autori": null,
-       "editore": "Paolo Pagnini. Elsevier (2013). ISBN- 13: 9788821430626",
+       "editore": "Paolo Pagnini. Elsevier (2013). ISBN- 13",
        "anno": 2013,
        "edizione": null,
        "isbn": "9788821430626",
@@ -31745,6 +31673,18 @@
        "citazione": "Ginecologia e Ostetricia. Zanoio, Barcellona, Zacchè, Netter. ISBN: 8821432475"
       },
       {
+       "titolo": "Hoffmann - Casey – AAVV. ISBN: 9788829927548 ISBN: 882144869X ISBN: 882144869X",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788829927548",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Hoffmann - Casey – AAVV. ISBN: 9788829927548 ISBN: 882144869X ISBN: 882144869X"
+      },
+      {
        "titolo": "Hoffmann - Casey – AAVV. ISBN: 9788829927548",
        "autori": null,
        "editore": null,
@@ -31784,7 +31724,7 @@
       {
        "titolo": "Editore: Edra. ISBN 13: 978-8821440250",
        "autori": null,
-       "editore": "Editore: Edra. ISBN 13: 978-8821440250",
+       "editore": "Edra. ISBN 13",
        "anno": null,
        "edizione": null,
        "isbn": "9788821440250",
@@ -31796,7 +31736,7 @@
       {
        "titolo": "Publisher: Springer Nature ISBN-13: 978-3030361242",
        "autori": null,
-       "editore": "Publisher: Springer Nature ISBN-13: 978-3030361242",
+       "editore": "Springer Nature ISBN-13",
        "anno": null,
        "edizione": null,
        "isbn": "9783030361242",
@@ -32185,28 +32125,16 @@
        "citazione": "Editore Edi-ermes, ISBN:9788870515428"
       },
       {
-       "titolo": "Prometheus. Atlante di Anatomia. AM Gilroy, BR MacPherson. EdiSES, 2019.",
+       "titolo": "Prometheus. Atlante di Anatomia. AM Gilroy, BR MacPherson. EdiSES, 2019. ISBN 978- 8833190105",
        "autori": null,
-       "editore": "BR MacPherson. EdiSES",
+       "editore": null,
        "anno": 2019,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Prometheus. Atlante di Anatomia. AM Gilroy, BR MacPherson. EdiSES, 2019."
-      },
-      {
-       "titolo": "ISBN 978- 8833190105",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ISBN 978- 8833190105"
+       "citazione": "Prometheus. Atlante di Anatomia. AM Gilroy, BR MacPherson. EdiSES, 2019. ISBN 978- 8833190105"
       },
       {
        "titolo": "Atlante di Anatomia Umana. Netter. Edra, 2022. ISBN 978-8821457111",
@@ -32243,6 +32171,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Gray' s Anatomy - The Anatomical Basis of Clinical Practice. Elsevier, 2026. ISBN 0443124787."
+      },
+      {
+       "titolo": "Anatomia Clinica. Ellis H., Mahadevan V. Editore, Idelson-Gnocchi, ISBN: 978- 8879476850 ISBN 978- 8833190105",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Anatomia Clinica. Ellis H., Mahadevan V. Editore, Idelson-Gnocchi, ISBN: 978- 8879476850 ISBN 978- 8833190105"
       }
      ],
      "esami": [],
@@ -32339,28 +32279,28 @@
        "citazione": "Siliprandi N. e Tettamanti G. “Biochimica medica, strutturale, metabolica e funzionale” (Piccin, 2018). ISBN: 9788829927913."
       },
       {
-       "titolo": "Donald Voet, Judith G. Voet e Charlotte W. Pratt, Principi di Biochimica (Zanichelli, 2017).",
-       "autori": null,
-       "editore": "Principi di Biochimica (Zanichelli",
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Donald Voet, Judith G. Voet e Charlotte W. Pratt, Principi di Biochimica (Zanichelli, 2017)."
-      },
-      {
-       "titolo": "ISBN: 9788808974563.",
+       "titolo": "Donald Voet, Judith G. Voet e Charlotte W. Pratt, Principi di Biochimica (Zanichelli, 2017). ISBN: 9788808974563.",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2017,
        "edizione": null,
        "isbn": "9788808974563",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 9788808974563."
+       "citazione": "Donald Voet, Judith G. Voet e Charlotte W. Pratt, Principi di Biochimica (Zanichelli, 2017). ISBN: 9788808974563."
+      },
+      {
+       "titolo": "Donald Voet, Judith G. Voet e Charlotte W. Pratt, Fondamenti di Biochimica, quarta edizione (Zanichelli, 2017). ISBN: 9788808420961. ISBN: 8891902740. ISBN: 8891902740.",
+       "autori": null,
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": "9788808420961",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Donald Voet, Judith G. Voet e Charlotte W. Pratt, Fondamenti di Biochimica, quarta edizione (Zanichelli, 2017). ISBN: 9788808420961. ISBN: 8891902740. ISBN: 8891902740."
       },
       {
        "titolo": "Donald Voet, Judith G. Voet e Charlotte W. Pratt, Fondamenti di Biochimica, quarta edizione (Zanichelli, 2017). ISBN: 9788808420961.",

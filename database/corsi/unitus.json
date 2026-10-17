@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unitus",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-10",
+ "aggiornato_il": "2026-10-17",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/biotecnologie/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "16173",
@@ -442,7 +442,7 @@
    "url": "https://www.unitus.it/it/dipartimento/l20",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121683",
@@ -1570,7 +1570,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/design/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "119907",
@@ -2068,7 +2068,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deim-economia/economia-aziendale-econ-deim/articolo/economia-aziendale-deim",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -2078,7 +2078,7 @@
      "cfu": 8,
      "ssd": null,
      "obbligatorio": false,
-     "curriculum": "Management - sede Viterbo",
+     "curriculum": "Management - sede Viterbo, Banca e finanza - sede Viterbo, Professione e consulenza aziendale - sede Viterbo",
      "docenti": [],
      "url": "https://unitus-public.gomp.it/PublicData?uid=0a942f78-2bd9-405a-9052-9c54b45af29c&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [],
@@ -3431,7 +3431,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deim-economia/economia-aziendale-econ-deim/articolo/economia-aziendale-deim",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "13797",
@@ -4664,18 +4664,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "Il libro di testo è Corsi M. e Roncaglia A. \"Nuovi lineamenti di economia politica\", Laterza, ultima edizione."
-      },
-      {
-       "titolo": "Nuovi lineamenti di economia politica",
-       "autori": "Corsi M. e Roncaglia A",
-       "editore": "Laterza",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Corsi M. e Roncaglia A. \"Nuovi lineamenti di economia politica\", Laterza, ultima edizione."
       }
      ],
      "esami": [],
@@ -4750,7 +4738,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/ingegneria-industriale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "119631",
@@ -5359,7 +5347,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-umanistiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121061",
@@ -7655,7 +7643,7 @@
    "url": "http://www.unitus.it/it/dipartimento/distu/corsi-di-laurea-triennale1/articolo/presentazione-del-corso-l11",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -10720,7 +10708,7 @@
       {
        "titolo": "D. Sperber, D. Wilson (1986), Relevance: communication and cognition, seconda ed. 1995, Oxford: Blackwell, 1996.",
        "autori": null,
-       "editore": "Oxford: Blackwell",
+       "editore": "Oxford",
        "anno": 1996,
        "edizione": null,
        "isbn": null,
@@ -10881,7 +10869,7 @@
    "url": "http://www.unitus.it/it/dipartimento/dibaf/presentazione6/articolo/presentazione5",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "118486",
@@ -11133,7 +11121,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-agrarie-ambientali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "119795",
@@ -11747,7 +11735,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-biologiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "17547",
@@ -12158,7 +12146,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-biologiche-ambientali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "118387",
@@ -12507,7 +12495,7 @@
    "url": "https://www.unitus.it/it/dipartimento/l1/presentazione-del-corso-l-1/articolo/presentazione-l-1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121721",
@@ -13921,7 +13909,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-dell-educazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121755",
@@ -14468,7 +14456,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-della-montagna/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "120760",
@@ -14720,6 +14708,18 @@
      "url": "https://unitus-public.gomp.it/PublicData?uid=33565121-17f6-40bd-99d0-e38fcb8b89ea&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [
       {
+       "titolo": "Testo principale: Russell PJ.: Genetica - Un approccio molecolare, Pearson editore (o testi similari, preferibilmente dello stesso autore) ISBN 9788891905574 ISBN 9788891905574 ISBN 9788891905574",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788891905574",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "Testo principale: Russell PJ.: Genetica - Un approccio molecolare, Pearson editore (o testi similari, preferibilmente dello stesso autore) ISBN 9788891905574 ISBN 9788891905574 ISBN 9788891905574"
+      },
+      {
        "titolo": "Testo principale: Russell PJ.: Genetica - Un approccio molecolare, Pearson editore (o testi similari, preferibilmente dello stesso autore)",
        "autori": null,
        "editore": "Pearson editore (o testi similari",
@@ -14935,7 +14935,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-forestali-ambientali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "119491",
@@ -15352,7 +15352,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deb/scienze-naturali-e-ambientali-l-32/articolo/presentazione-del-corso-sna",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "120397",
@@ -15577,18 +15577,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "Qualsiasi testo universitario recente di Zoologia (Esempio: M. Casiraghi, M de Eguileor, C. Cerrano, S. Puce - ZOOLOGIA - UTET - 2023)."
-      },
-      {
-       "titolo": "M de Eguileor, C. Cerrano",
-       "autori": "M. Casiraghi",
-       "editore": "S. Puce - ZOOLOGIA - UTET",
-       "anno": 2023,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "M. Casiraghi, M de Eguileor, C. Cerrano, S. Puce - ZOOLOGIA - UTET - 2023"
       },
       {
        "titolo": "Cleveland P. Hickman, Jr., Susan L. Keen, David J. Eisenhour, Allan Larson, Helen Lanson, Vincenzo Arizza, Olimpia Coppellotti, Laura Guidolin - ZOOLOGIA - McGraw Hill - 2020",
@@ -15840,7 +15828,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deim-scienze-politiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "-",
@@ -15929,7 +15917,7 @@
      "cfu": 8,
      "ssd": "GIUR-05/A",
      "obbligatorio": true,
-     "curriculum": "Scienze e tecniche delle professioni aeronautiche",
+     "curriculum": "Scienze e tecniche delle professioni aeronautiche, Investigazioni e sicurezza, Scienze politiche",
      "docenti": [
       "Pacini Fabio",
       "Trozzi Simonetta",
@@ -16307,7 +16295,7 @@
      "cfu": 8,
      "ssd": "HIST-03/A",
      "obbligatorio": true,
-     "curriculum": "Scienze e tecniche delle professioni aeronautiche",
+     "curriculum": "Scienze e tecniche delle professioni aeronautiche, Scienze organizzative e gestionali, Investigazioni e sicurezza, Scienze politiche",
      "docenti": [
       "Colozza Roberto",
       "Mongardini Caterina",
@@ -16355,7 +16343,7 @@
       {
        "titolo": "Nello sviluppo delle esercitazioni scritte si utilizzano lemmi e parole chiave desunti dal volume di M. Ridolfi (diretto da), Lessico per la Repubblica. Dal Risorgimento all'integrazione europea, il Mulino 2026 [ISBN: ???]",
        "autori": null,
-       "editore": "il Mulino 2026 [ISBN: ???]",
+       "editore": "il Mulino 2026 [ISBN",
        "anno": 2026,
        "edizione": null,
        "isbn": null,
@@ -16391,7 +16379,7 @@
       {
        "titolo": "Alessandro Rosina e Roberto Impicciatore, Storia demografica d'Italia. Crescita, crisi, sfide, Roma, Carocci 2023 [ISBN: 978-88-290-1679-2]",
        "autori": null,
-       "editore": "Carocci 2023 [ISBN: 978-88-290-1679-2]",
+       "editore": "Carocci 2023 [ISBN",
        "anno": 2023,
        "edizione": null,
        "isbn": "9788829016792",
@@ -16439,7 +16427,7 @@
      "cfu": 8,
      "ssd": "ECON-01/A",
      "obbligatorio": true,
-     "curriculum": "Scienze e tecniche delle professioni aeronautiche",
+     "curriculum": "Scienze e tecniche delle professioni aeronautiche, Investigazioni e sicurezza, Scienze politiche",
      "docenti": [
       "Arriga Felice",
       "Moschetti Arianna",
@@ -16640,7 +16628,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/sport-benessere-attivita-motoria-in-ambiente-naturale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "119446",
@@ -16960,7 +16948,7 @@
    "url": "http://www.unitus.it/it/dipartimento/dibaf/presentazione2/articolo/presentazione4",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "118932",
@@ -17093,40 +17081,28 @@
      "url": "https://unitus-public.gomp.it/PublicData?uid=5bf08508-dd3e-44e8-b4b9-59af3a56e589&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [
       {
-       "titolo": "M. Speranza e A. Filippi, Edizioni A.L.E., Anno edizione: 2022",
-       "autori": null,
-       "editore": "Edizioni A.L.E",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "M. Speranza e A. Filippi, Edizioni A.L.E., Anno edizione: 2022"
-      },
-      {
-       "titolo": "ISBN 979-12-80427-09-0",
+       "titolo": "M. Speranza e A. Filippi, Edizioni A.L.E., Anno edizione: 2022 ISBN 979-12-80427-09-0",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2022,
        "edizione": null,
        "isbn": "9791280427090",
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "ISBN 979-12-80427-09-0"
+       "citazione": "M. Speranza e A. Filippi, Edizioni A.L.E., Anno edizione: 2022 ISBN 979-12-80427-09-0"
       },
       {
-       "titolo": "M. Aschi et al., Edizioni A.L.E., Anno edizione: 2021",
+       "titolo": "M. Aschi et al., Edizioni A.L.E., Anno edizione: 2021 EAN: 9791280427014",
        "autori": null,
-       "editore": "Edizioni A.L.E",
+       "editore": null,
        "anno": 2021,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9791280427014",
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "M. Aschi et al., Edizioni A.L.E., Anno edizione: 2021"
+       "citazione": "M. Aschi et al., Edizioni A.L.E., Anno edizione: 2021 EAN: 9791280427014"
       }
      ],
      "esami": [],
@@ -17299,7 +17275,7 @@
    "url": "http://www.unitus.it/it/dipartimento/distu/archeologia-e-storia-dellarte-tutela-e-valorizzazione-lm2lm89/articolo/presentazione-del-corso-lm2lm89",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "18021",
@@ -17511,7 +17487,7 @@
    "url": "https://unitus-public.gomp.it/PublicData?uid=8af86e14-701b-4466-a152-2c82e67194dd&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121580",
@@ -18012,7 +17988,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-magistrale/biologia-sperimentale-bioinformatica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "120844",
@@ -18179,18 +18155,6 @@
      "libri": [
       {
        "titolo": "PROTEOMICA",
-       "autori": "T. Ajberio, M. Fasano, P. Roncada",
-       "editore": "P. Roncada \"PROTEOMICA\" EdiSES",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "T. Ajberio, M. Fasano, P. Roncada \"PROTEOMICA\" EdiSES; I. Lavagnini, F. Magno, R. Seraglia e P. Traldi \"Quantitative Applications of Mass Spectrometry (English Edition)\" WILEY."
-      },
-      {
-       "titolo": "PROTEOMICA",
        "autori": null,
        "editore": "P. Roncada \"PROTEOMICA\" EdiSES",
        "anno": null,
@@ -18325,7 +18289,7 @@
    "url": "http://www.unitus.it/it/dipartimento/dibaf/biotecnologie-industriali-per-la-salute-e-il-benessere/articolo/presentazione33",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "18434",
@@ -18640,7 +18604,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deim-economia/economia-circolare-econ-deim/articolo/economia-circolare-econ-deim1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121436",
@@ -19426,7 +19390,7 @@
    "url": "http://www.unitus.it/it/dipartimento/dafne/conservazione-e-restauro-dellambiente-forestale-e-difesa-del-suolo/articolo/presentazione12",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "120747",
@@ -19790,18 +19754,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "II° Edizione CEA-ZANICHELLI ISBN 978-8808-18054-4. Attraverso la piattaforma Moodle saranno resi disponibili le “memorie di lezione” (slides), dispense e articoli scientifici in consultazione per inquadrare il dettaglio del ruolo della microbiologia forestale nella filiera applicativa della conservazione e del restauro ambientale con particolare riferimento al suolo."
-      },
-      {
-       "titolo": "memorie di lezione",
-       "autori": "Attraverso la piattaforma Moodle saranno resi disponibili le",
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Attraverso la piattaforma Moodle saranno resi disponibili le “memorie di lezione” (slides), dispense e articoli scientifici in consultazione per inquadrare il dettaglio del ruolo della microbiologia forestale nella filiera applicativa della conservazione e del restauro ambientale con particolare riferimento al suolo."
       }
      ],
      "esami": [],
@@ -19834,7 +19786,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deim-economia/amm-finanza-controllo-econ-deim/articolo/amm-fin-contr-econ-deim",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "119246",
@@ -20574,18 +20526,6 @@
        "tipo": "consigliato",
        "note": null,
        "citazione": "Per l’approfondimento degli argomenti trattati attraverso i materiali distribuiti durante il corso, si consigliano, in alternativa tra loro, i seguenti testi: Nicola de Luca, European Company Law, Cambridge University Press, 2026."
-      },
-      {
-       "titolo": "Stefano Cerrato e Luciano M. Quattrocchio (a cura di), European Business Law, Giappichelli, 2026.",
-       "autori": null,
-       "editore": "Giappichelli",
-       "anno": 2026,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "Stefano Cerrato e Luciano M. Quattrocchio (a cura di), European Business Law, Giappichelli, 2026."
       }
      ],
      "esami": [],
@@ -20799,7 +20739,7 @@
    "url": "https://www.unitus.it/it/dipartimento/lm14/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -22456,7 +22396,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-magistrale/forestry-environmental-sciences/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -23052,7 +22992,7 @@
    "url": "https://www.unitus.it/it/dipartimento/lm91/presentazione-del-corso/articolo/presentazione-lm-91",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121522",
@@ -23338,7 +23278,7 @@
    "url": "http://www.unitus.it/it/dipartimento/distu/lingue-e-culture-per-la-comunicazione-internazionale-lm37/articolo/presentazione-del-corso-lm37",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -24169,7 +24109,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-magistrale/marine-biology-and-ecology/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "120870",
@@ -24789,7 +24729,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deim-ingegneria/ingegneria-meccanica-ing/articolo/ingegneria-meccanica-deim",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "119551",
@@ -25648,7 +25588,7 @@
       {
        "titolo": "Sergi Vincenzo, Produzione assistita da calcolatore, editore: Cues",
        "autori": null,
-       "editore": "editore: Cues",
+       "editore": "Cues",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -25777,7 +25717,7 @@
       {
        "titolo": "Sergi Vincenzo, Produzione assistita da calcolatore, editore: Cues",
        "autori": null,
-       "editore": "editore: Cues",
+       "editore": "Cues",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -25856,7 +25796,7 @@
    "url": "http://www.unitus.it/it/dipartimento/dafne/plant-biotechnology-for-food-and-global-health/articolo/presentazione58",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "119765",
@@ -26421,7 +26361,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-magistrale/science-and-technologies-for-agriculture-and-mountain-areas/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "120798",
@@ -27062,7 +27002,7 @@
    "url": "http://www.unitus.it/it/dipartimento/dafne/scienze-agrarie-e-ambientali1/articolo/presentazione11",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "14939",
@@ -27408,7 +27348,7 @@
      "cfu": 12,
      "ssd": "AGRI-05/A, AGRI-05/B",
      "obbligatorio": true,
-     "curriculum": "Organic Agriculture in Mediterranean Area Orientamento unico",
+     "curriculum": "Organic Agriculture in Mediterranean Area Orientamento unico, Organic Agriculture in Mediterranean Area Plant Science",
      "docenti": [
       "Francesconi Sara"
      ],
@@ -27868,7 +27808,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-magistrale/scienze-politica-sicurezza-internazionale-comunicazione-pubblica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "",
@@ -28253,18 +28193,6 @@
      "url": "https://unitus-public.gomp.it/PublicData?uid=ba7e30a8-6e72-4096-b019-ef43689c6d09&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [
       {
-       "titolo": "Per la preparazione dell’esame, è fondamentale integrare i contenuti forniti durante le lezioni e disponibili sulla piattaforma (slide, materiali audio-video, dispense), con il seguente testo obbligatorio:",
-       "autori": null,
-       "editore": "dispense)",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "Per la preparazione dell’esame, è fondamentale integrare i contenuti forniti durante le lezioni e disponibili sulla piattaforma (slide, materiali audio-video, dispense), con il seguente testo obbligatorio:"
-      },
-      {
        "titolo": "Introduzione alla metodologia della ricerca sociale",
        "autori": "Nobile S.",
        "editore": "Carocci",
@@ -28359,7 +28287,7 @@
        "citazione": "Obbligatorio: Alessandro Boccolini, \"Un lucchese al servizio della Santa Sede: Francesco Buonvisi nuzio a Colonia, Varsavia e Vienna\". Viterbo: Sette Città, 2018."
       },
       {
-       "titolo": "Robert Hutchings, ‎Jeremi Suri, \"Modern Diplomacy in Practicebooks (London: Palgrave, 2019)",
+       "titolo": "Robert Hutchings, Jeremi Suri, \"Modern Diplomacy in Practicebooks (London: Palgrave, 2019)",
        "autori": null,
        "editore": null,
        "anno": 2019,
@@ -28368,7 +28296,7 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "Robert Hutchings, ‎Jeremi Suri, \"Modern Diplomacy in Practicebooks (London: Palgrave, 2019)"
+       "citazione": "Robert Hutchings, Jeremi Suri, \"Modern Diplomacy in Practicebooks (London: Palgrave, 2019)"
       },
       {
        "titolo": "Peculiarita e finalita della diplomazia della Santa Sede",
@@ -29165,7 +29093,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deb/scienze-dellalimentazione-e-della-nutrizione-umana/articolo/presentazione-del-corso2",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "119486",
@@ -29382,7 +29310,7 @@
    "url": "https://unitus-public.gomp.it/PublicData?uid=717600c5-dd26-4176-bd59-2faffff7fce1&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "-",
@@ -29597,7 +29525,7 @@
    "url": "https://unitus-public.gomp.it/PublicData?uid=66c8cae2-aac3-470e-bb88-88a1eb0d6c93&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121461",
@@ -30008,7 +29936,7 @@
    "url": "http://www.unitus.it/it/dipartimento/distu/corso-di-laurea-magistrale-in-security-and-human-rights-lm-90-/articolo/presentazione-corso",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121181",
@@ -30018,7 +29946,7 @@
      "cfu": 6,
      "ssd": "GSPS-05/A",
      "obbligatorio": true,
-     "curriculum": "Option A: Security and Human Mobility",
+     "curriculum": "Option A: Security and Human Mobility, Option B: Security, Technology and Sustainability",
      "docenti": [
       "Nosova Bogdana"
      ],
@@ -30199,7 +30127,7 @@
      "cfu": 9,
      "ssd": "GIUR-14/A",
      "obbligatorio": true,
-     "curriculum": "Option A: Security and Human Mobility",
+     "curriculum": "Option A: Security and Human Mobility, Option B: Security, Technology and Sustainability",
      "docenti": [
       "Galli Martina"
      ],
@@ -30328,7 +30256,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-magistrale-a-ciclo-unico/conservazione-e-restauro-dei-beni-culturali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "17960",
@@ -30367,28 +30295,16 @@
      "url": "https://unitus-public.gomp.it/PublicData?uid=2bf13ae4-6d06-40c7-8682-f66707d1ebf0&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [
       {
-       "titolo": "M. Speranza e A. Filippi, Edizioni A.L.E., Anno edizione: 2022",
-       "autori": null,
-       "editore": "Edizioni A.L.E",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "M. Speranza e A. Filippi, Edizioni A.L.E., Anno edizione: 2022"
-      },
-      {
-       "titolo": "ISBN 979-12-80427-09-0",
+       "titolo": "M. Speranza e A. Filippi, Edizioni A.L.E., Anno edizione: 2022 ISBN 979-12-80427-09-0",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2022,
        "edizione": null,
        "isbn": "9791280427090",
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "ISBN 979-12-80427-09-0"
+       "citazione": "M. Speranza e A. Filippi, Edizioni A.L.E., Anno edizione: 2022 ISBN 979-12-80427-09-0"
       },
       {
        "titolo": "M. Aschi et al., Edizioni A.L.E., Anno edizione: 2021",
@@ -30413,6 +30329,18 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "R. Morassi, G.P. Speroni, “Il Laboratorio Chimico”, ed. Piccin."
+      },
+      {
+       "titolo": "M. Speranza e A. Filippi, Edizioni A.L.E., Anno edizione: 2022 ISBN 979-12-80427-09-0 EAN: 9791280427014",
+       "autori": null,
+       "editore": null,
+       "anno": 2022,
+       "edizione": null,
+       "isbn": "9791280427090",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "M. Speranza e A. Filippi, Edizioni A.L.E., Anno edizione: 2022 ISBN 979-12-80427-09-0 EAN: 9791280427014"
       }
      ],
      "esami": [],
@@ -30495,18 +30423,6 @@
        "tipo": "consigliato",
        "note": null,
        "citazione": "Arti e storia nel Medioevo a cura di E. Castelnuovo e G. Sergi, vol. I-IV, Torino, Einaudi 2004."
-      },
-      {
-       "titolo": "L’arte medievale nel contesto 300-1300. Funzioni, iconografia, tecniche\" a cura di Paolo Piva, Milano, Jaca Book, 2006",
-       "autori": null,
-       "editore": "Jaca Book",
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "L’arte medievale nel contesto 300-1300. Funzioni, iconografia, tecniche\" a cura di Paolo Piva, Milano, Jaca Book, 2006"
       }
      ],
      "esami": [],
@@ -30662,7 +30578,7 @@
    "url": "http://www.unitus.it/it/dipartimento/distu/giurisprudenza-lmg01/articolo/presentazione-del-corso-lmg01",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "121623",
@@ -30781,18 +30697,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "M. Marrone, Lineamenti di diritto privato romano, Giappichelli editore, Torino, 2001 (ISBN 88-348-1278-6), tutto il volume escluso il capitolo VII"
-      },
-      {
-       "titolo": "D. Di Ottavio, Ricerche in tema di querela inofficiosi testamenti. 1. Le origini, Jovene, Napoli, 2012 (ISBN 978-88-243-2116-7).",
-       "autori": null,
-       "editore": null,
-       "anno": 2012,
-       "edizione": null,
-       "isbn": "9788824321167",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "D. Di Ottavio, Ricerche in tema di querela inofficiosi testamenti. 1. Le origini, Jovene, Napoli, 2012 (ISBN 978-88-243-2116-7)."
       },
       {
        "titolo": "Il programma per gli studenti che debbono integrare 8 CFU consiste nello studio dei capitoli da II a V compreso del volume di M. Marrone, Lineamenti di diritto privato romano, Giappichelli editore, Torino, 2001 (ISBN 88-348-1278-6).",
@@ -31049,7 +30953,7 @@
    "url": "https://unitus-public.gomp.it/PublicData?uid=b777f130-9fcd-4c6d-8b46-7306763532fb&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-10",
+   "verificato_il": "2026-10-17",
    "insegnamenti": [
     {
      "codice": "120046",

@@ -1231,7 +1231,7 @@
       {
        "titolo": "Elementi di Fisica - meccanica e termodinamica",
        "autori": "P. Mazzoldi, M. Nigro, C. Voci",
-       "editore": "EdiSES. Testi alternativi: • F. Borsa e A. Lascialfari",
+       "editore": "EdiSES. Testi alternativi",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -1974,30 +1974,6 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/23861/2020/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "cura",
-       "autori": "de Mennato P., Orefice C., Branchi S., 2011, Educarsi alla",
-       "editore": null,
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "de Mennato P., Orefice C., Branchi S., 2011, Educarsi alla “cura”. Un"
-      },
-      {
-       "titolo": "cura",
-       "autori": "de Mennato P., Orefice C., Branchi S., 2011, Educarsi alla",
-       "editore": null,
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "de Mennato P., Orefice C., Branchi S., 2011, Educarsi alla “cura”. Un itinerario riflessivo tra frammenti e sequenze, Pensa MultiMedia, Lecce."
-      },
-      {
        "titolo": "Simone Sarti, Marco Terraneo (2023), Studiare la salute. La prospettiva della sociologia, Roma: Carocci ISBN: 9788829017638",
        "autori": null,
        "editore": "Simone Sarti",
@@ -2020,6 +1996,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Occhini L., Psicologia clinica per insegnare, Bologna: Zanichelli (cap. 0-1-2-4)"
+      },
+      {
+       "titolo": "cura",
+       "autori": "de Mennato P., Orefice C., Branchi S., 2011, Educarsi alla",
+       "editore": null,
+       "anno": 2011,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "de Mennato P., Orefice C., Branchi S., 2011, Educarsi alla “cura”. Un itinerario riflessivo tra frammenti e sequenze, Pensa MultiMedia, Lecce."
       }
      ],
      "esami": [],
@@ -2076,7 +2064,7 @@
       {
        "titolo": "Manuale di Nutrizione Applicata V Edizione (2021). Riccardi, Pacioni, Giacco, Rivellese. Idelson Gnocchi. ISBN: 9788879477352",
        "autori": null,
-       "editore": "Rivellese. Idelson Gnocchi. ISBN: 9788879477352",
+       "editore": "Rivellese. Idelson Gnocchi. ISBN",
        "anno": 2021,
        "edizione": null,
        "isbn": "9788879477352",
@@ -3748,7 +3736,7 @@
       {
        "titolo": "Manuale di Nutrizione Applicata V Edizione (2021). Riccardi, Pacioni, Giacco, Rivellese. Idelson Gnocchi. ISBN: 9788879477352",
        "autori": null,
-       "editore": "Rivellese. Idelson Gnocchi. ISBN: 9788879477352",
+       "editore": "Rivellese. Idelson Gnocchi. ISBN",
        "anno": 2021,
        "edizione": null,
        "isbn": "9788879477352",
@@ -6849,18 +6837,6 @@
        "citazione": "Mazzoldi, Saggion, Voci - \"Problemi di Fisica Generale\" - Edizioni Cortina - Padova"
       },
       {
-       "titolo": "Mencuccini, Silvestrini, Fisica I Meccanica Termodinamica, Ambrosiana",
-       "autori": null,
-       "editore": "Ambrosiana",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/19022/2026/9999?coorte=2026)",
-       "citazione": "Mencuccini, Silvestrini, Fisica I Meccanica Termodinamica, Ambrosiana"
-      },
-      {
        "titolo": "Mazzoldi, Nigro, Voci, Fisica volume I, EdiSES",
        "autori": null,
        "editore": "EdiSES",
@@ -6897,18 +6873,6 @@
      ],
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/24963/2026/9999?coorte=2024",
      "libri": [
-      {
-       "titolo": "Introduzione all'analisi degli errori",
-       "autori": "John R. Taylor",
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/24963/2026/9999?coorte=2026)",
-       "citazione": "John R. Taylor - “Introduzione all'analisi degli errori” - Zanichelli P. Bevington - “Data Reduction and Error Analysis” - McGraw-Hill Company C. Cametti, A. Di Biasio - “Introuzione all'elaborazione dei dati sperimentali” - CISU"
-      },
       {
        "titolo": "C++ - Fondamenti di programmazione",
        "autori": null,
@@ -8026,64 +7990,52 @@
        "citazione": "Grabb and Smith's Plastic Surgery - 2013 - Lippincott Williams & Wilkins"
       },
       {
-       "titolo": "Publisher: McGraw Hill / Medical; 19th edition (April, 2020)",
-       "autori": null,
-       "editore": "Publisher: McGraw Hill / Medical",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Publisher: McGraw Hill / Medical; 19th edition (April, 2020)"
-      },
-      {
-       "titolo": "ISBN-13: 978-1259834332",
+       "titolo": "Publisher: McGraw Hill / Medical; 19th edition (April, 2020) ISBN-13: 978-1259834332",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "9781259834332",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN-13: 978-1259834332"
+       "citazione": "Publisher: McGraw Hill / Medical; 19th edition (April, 2020) ISBN-13: 978-1259834332"
       },
       {
-       "titolo": "Editore: Minerva Medica; I edizione (ottobre 2020)",
-       "autori": null,
-       "editore": "Editore: Minerva Medica",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Editore: Minerva Medica; I edizione (ottobre 2020)"
-      },
-      {
-       "titolo": "ISBN-10 : 8855320270",
+       "titolo": "Editore: Minerva Medica; I edizione (ottobre 2020) ISBN-10 : 8855320270 ISBN-13: 978-8855320276 ISBN-10: 1259834336",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
        "isbn": "8855320270",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN-10 : 8855320270"
+       "citazione": "Editore: Minerva Medica; I edizione (ottobre 2020) ISBN-10 : 8855320270 ISBN-13: 978-8855320276 ISBN-10: 1259834336"
       },
       {
-       "titolo": "ISBN-13: 978-8855320276",
+       "titolo": "Publisher: McGraw Hill / Medical; 19th edition (April, 2020) ISBN-10: 1259834336 ISBN-13: 978-1259834332",
        "autori": null,
        "editore": null,
-       "anno": null,
+       "anno": 2020,
        "edizione": null,
-       "isbn": "9788855320276",
+       "isbn": "1259834336",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN-13: 978-8855320276"
+       "citazione": "Publisher: McGraw Hill / Medical; 19th edition (April, 2020) ISBN-10: 1259834336 ISBN-13: 978-1259834332"
+      },
+      {
+       "titolo": "Editore: Minerva Medica; I edizione (ottobre 2020) ISBN-10 : 8855320270 ISBN-13: 978-8855320276",
+       "autori": null,
+       "editore": null,
+       "anno": 2020,
+       "edizione": null,
+       "isbn": "8855320270",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Editore: Minerva Medica; I edizione (ottobre 2020) ISBN-10 : 8855320270 ISBN-13: 978-8855320276"
       }
      ],
      "esami": [],
@@ -10017,7 +9969,7 @@
       {
        "titolo": "Marco Furini, (2018), Comunicazioni multimediali. Fondamenti di informatica per la produzione e la gestione di flussi audio-video nella rete Internet, Franco Angeli (Codice ISBN: 9788891761811)",
        "autori": null,
-       "editore": "Franco Angeli (Codice ISBN: 9788891761811)",
+       "editore": "Franco Angeli (Codice ISBN",
        "anno": 2018,
        "edizione": null,
        "isbn": "9788891761811",
@@ -10674,18 +10626,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Madigan MT, Martinko JM. Brock. Biologia dei Microorganismi (XVI ed.). Ed. Pearson."
-      },
-      {
-       "titolo": "Il Docente del corso fornirà direttamente il materiale di studio, costituito essenzialmente dalle diapositive delle lezioni e dalle dispense fornite dal Docente. Lo studente può anche consultare un testo di Igiene generale.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Il Docente del corso fornirà direttamente il materiale di studio, costituito essenzialmente dalle diapositive delle lezioni e dalle dispense fornite dal Docente. Lo studente può anche consultare un testo di Igiene generale."
       }
      ],
      "esami": [
@@ -11323,7 +11263,7 @@
       {
        "titolo": "EdiSES: Elementi di chimica e biochimica di Chiricozzi, Colombo, Magni,Marin, Palestini e Tugnoli",
        "autori": null,
-       "editore": "EdiSES: Elementi di chimica e biochimica di Chiricozzi",
+       "editore": "EdiSES",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -11992,7 +11932,7 @@
       {
        "titolo": "EdiSES: Elementi di chimica e biochimica di Chiricozzi, Colombo, Magni,Marin, Palestini e Tugnoli",
        "autori": null,
-       "editore": "EdiSES: Elementi di chimica e biochimica di Chiricozzi",
+       "editore": "EdiSES",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -12004,7 +11944,7 @@
       {
        "titolo": "EdiSES: Elementi di chimica e biochimica di Chiricozzi, Colombo, Magni, Marin,",
        "autori": null,
-       "editore": "EdiSES: Elementi di chimica e biochimica di Chiricozzi",
+       "editore": "EdiSES",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -12076,7 +12016,7 @@
       {
        "titolo": "FISIOLOGIA, EdiSES. Vander : Fisiologia , Ambrosiana.",
        "autori": null,
-       "editore": "EdiSES. Vander : Fisiologia",
+       "editore": "EdiSES. Vander",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -14983,7 +14923,7 @@
        "citazione": "Roxas MA, Caputi AP, Del Tacca M. Compendio di Farmacologia Generale e Speciale - Edra SpA"
       },
       {
-       "titolo": "Robbins and Cotran Pathologic Basis of Disease, 10th Edition . Publisher: ‎Elsevier; 10th edition (June 29, 2020)",
+       "titolo": "Robbins and Cotran Pathologic Basis of Disease, 10th Edition . Publisher: Elsevier; 10th edition (June 29, 2020)",
        "autori": null,
        "editore": "10th Edition . Publisher: ‎Elsevier",
        "anno": 2020,
@@ -14992,7 +14932,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Robbins and Cotran Pathologic Basis of Disease, 10th Edition . Publisher: ‎Elsevier; 10th edition (June 29, 2020)"
+       "citazione": "Robbins and Cotran Pathologic Basis of Disease, 10th Edition . Publisher: Elsevier; 10th edition (June 29, 2020)"
       },
       {
        "titolo": "Patologia generale. Anatomia patologica-Emanuel Rubin, David S. Strayer- ed. R. Rizzuto, S. Ausoni, M. Rugge- Piccin-Nuova Libraria – 2019",
@@ -15586,18 +15526,6 @@
        "citazione": "o M. Vanzetta – M. Volterrani “Farmaci e infermiere un prontuario per la somministrazione” Quarta Edizione Casa editrice Mc Graw – Hill, Milano 2013"
       },
       {
-       "titolo": "o Herdam, T.H., Kamitsuru S. NANDA International. NANDA International Diagnosi Infermieristiche, Definizioni e classificazione 2024-2026. Milano: CEA, tredicesima edizione.",
-       "autori": null,
-       "editore": null,
-       "anno": 2026,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "o Herdam, T.H., Kamitsuru S. NANDA International. NANDA International Diagnosi Infermieristiche, Definizioni e classificazione 2024-2026. Milano: CEA, tredicesima edizione."
-      },
-      {
        "titolo": "o L.J. Carpenito-Moyet. Diagnosi infermieristiche, Applicazione alla pratica clinica. Milano: CEA 2020, ottava edizione.",
        "autori": null,
        "editore": null,
@@ -15620,18 +15548,6 @@
        "tipo": null,
        "note": null,
        "citazione": "o Linn, P. Manuale di tecniche e procedure infermieristiche di Taylor. 3° ed. italiana. Padova: Piccin, 2016"
-      },
-      {
-       "titolo": "o Craven, R., Hirnle, C., Henshaw, C.M. Principi fondamentali dell'assistenza infermieristica. Settima ed. Milano: CEA, 2019",
-       "autori": null,
-       "editore": null,
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "o Craven, R., Hirnle, C., Henshaw, C.M. Principi fondamentali dell'assistenza infermieristica. Settima ed. Milano: CEA, 2019"
       },
       {
        "titolo": "o Taylor, C., Lillis, C., Lynn, P., LeMone, P. Principi fondamentali dell'assistenza infermieristica. Padova: Piccin, 2018.",
@@ -15826,7 +15742,7 @@
        "citazione": "Koloroutis Mary (a cura di), Cure basate sulla relazione, Casa Editrice Ambrosiana, Milano, 2015."
       },
       {
-       "titolo": "Relazioni di cura. Introduzione alla psicologia sociale maligna, Carocci Faber, 2009",
+       "titolo": "Giorgio Bissolo, Luca Fazzi , M. Vittoria Gianelli , Relazioni di cura. Introduzione alla psicologia sociale maligna, Carocci Faber, 2009",
        "autori": null,
        "editore": "Carocci Faber",
        "anno": 2009,
@@ -15835,19 +15751,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Relazioni di cura. Introduzione alla psicologia sociale maligna, Carocci Faber, 2009"
-      },
-      {
-       "titolo": "​ Giorgio Bissolo, Luca Fazzi , M. Vittoria Gianelli , Relazioni di cura. Introduzione alla psicologia sociale maligna, Carocci Faber, 2009",
-       "autori": null,
-       "editore": "Carocci Faber",
-       "anno": 2009,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "​ Giorgio Bissolo, Luca Fazzi , M. Vittoria Gianelli , Relazioni di cura. Introduzione alla psicologia sociale maligna, Carocci Faber, 2009"
+       "citazione": "Giorgio Bissolo, Luca Fazzi , M. Vittoria Gianelli , Relazioni di cura. Introduzione alla psicologia sociale maligna, Carocci Faber, 2009"
       },
       {
        "titolo": "Il Nursing di base con approccio fisiopatologico e psicologico",
@@ -15958,18 +15862,6 @@
        "citazione": "Manuale di tecniche e procedure infermieristiche di Taylor - Un approccio al processo del nursing di Lynn - Taylor Editore: Piccin"
       },
       {
-       "titolo": "o Craven R. Hirnle C. Henshaw C.M. Principi fondamentali dell'assistenza infermieristica. Sesta ed. Casa Editrice Ambrosiana, Milano 2019.",
-       "autori": null,
-       "editore": null,
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "o Craven R. Hirnle C. Henshaw C.M. Principi fondamentali dell'assistenza infermieristica. Sesta ed. Casa Editrice Ambrosiana, Milano 2019."
-      },
-      {
        "titolo": "o Carpenito, L.J. Piani di assistenza infermieristica. Assistenza infermieristica centrata sulla persona assistita e sulla famiglia: trasferimento dall'ambito ospedaliero a quello domiciliare. Terza ed. Casa Editrice Ambrosiana, Milano 2019.",
        "autori": null,
        "editore": null,
@@ -16016,6 +15908,18 @@
        "tipo": null,
        "note": null,
        "citazione": "o Badon P. Giusti GD. Assistenza infermieristica in area critica e in emergenza. Prima ed. Milano: Casa Editrice Ambrosiana, Milano 2022."
+      },
+      {
+       "titolo": "o Craven R. Hirnle C. Henshaw C.M. Principi fondamentali dell'assistenza infermieristica. Sesta ed. Casa Editrice Ambrosiana, Milano 2019.",
+       "autori": null,
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "o Craven R. Hirnle C. Henshaw C.M. Principi fondamentali dell'assistenza infermieristica. Sesta ed. Casa Editrice Ambrosiana, Milano 2019."
       },
       {
        "titolo": "o Herdam, T.H., Kamitsuru S. NANDA International. NANDA International Diagnosi Infermieristiche, Definizioni e classificazione 2024-2026. Tredicesima ed. Casa Editrice Ambrosiana, Milano 2024.",
@@ -16355,18 +16259,6 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/20598/2010/10000?coorte=2024",
      "libri": [
       {
-       "titolo": "Piga, M. Vicario , Mc Graw-Hill – 2011",
-       "autori": null,
-       "editore": null,
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Piga, M. Vicario , Mc Graw-Hill – 2011"
-      },
-      {
        "titolo": "Guana M. La disciplina ostetrica teoria, pratica e organizzazione della professione. Milano: McGraw-Hill; 2011.",
        "autori": null,
        "editore": null,
@@ -16475,6 +16367,18 @@
        "citazione": "Assistenza infermieristica in pediatria (BADON, CESARO) casa Editrice Ambrosiana"
       },
       {
+       "titolo": "“Assistenza Infermieristica in Pediatria” di Pierluigi Badon e Simone Cesaro – II edizioneCasa editrice Ambrosiana EAN: 9788808999788 ISBN: 8808999785",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788808999788",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "“Assistenza Infermieristica in Pediatria” di Pierluigi Badon e Simone Cesaro – II edizioneCasa editrice Ambrosiana EAN: 9788808999788 ISBN: 8808999785"
+      },
+      {
        "titolo": "Assistenza Infermieristica in Pediatria",
        "autori": null,
        "editore": null,
@@ -16485,6 +16389,18 @@
        "tipo": null,
        "note": null,
        "citazione": "“Assistenza Infermieristica in Pediatria” di Pierluigi Badon e Simone Cesaro – II edizioneCasa editrice Ambrosiana"
+      },
+      {
+       "titolo": "Piga, M. Vicario , Mc Graw-Hill – 2011 EAN: 9788808999788 ISBN: 8808999785",
+       "autori": null,
+       "editore": null,
+       "anno": 2011,
+       "edizione": null,
+       "isbn": "9788808999788",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Piga, M. Vicario , Mc Graw-Hill – 2011 EAN: 9788808999788 ISBN: 8808999785"
       }
      ],
      "esami": [
@@ -18967,7 +18883,7 @@
       {
        "titolo": "Alfio Quarteroni, Riccardo Sacco, Fausto Saleri, Matematica numerica, Editore: Springer, Anno edizione: 2000.",
        "autori": null,
-       "editore": "Editore: Springer",
+       "editore": "Springer",
        "anno": 2000,
        "edizione": null,
        "isbn": null,
@@ -27395,7 +27311,7 @@
       {
        "titolo": "EdiSES: Elementi di chimica e biochimica di Chiricozzi, Colombo, Magni,Marin, Palestini e Tugnoli",
        "autori": null,
-       "editore": "EdiSES: Elementi di chimica e biochimica di Chiricozzi",
+       "editore": "EdiSES",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -27451,18 +27367,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Guyton e Hall, Fisiologia Medica, Elsevier."
-      },
-      {
-       "titolo": "Vander : Fisiologia , Ambrosiana.",
-       "autori": null,
-       "editore": "Ambrosiana",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Vander : Fisiologia , Ambrosiana."
       }
      ],
      "esami": [
@@ -27704,7 +27608,7 @@
       {
        "titolo": "Marco Furini, (2018), Comunicazioni multimediali. Fondamenti di informatica per la produzione e la gestione di flussi audio-video nella rete Internet, Franco Angeli (Codice ISBN: 9788891761811)",
        "autori": null,
-       "editore": "Franco Angeli (Codice ISBN: 9788891761811)",
+       "editore": "Franco Angeli (Codice ISBN",
        "anno": 2018,
        "edizione": null,
        "isbn": "9788891761811",
@@ -28051,18 +27955,6 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2025/25873/2024/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "arte della professionalità ostetrica. Piccin. 2021 V.",
-       "autori": null,
-       "editore": "arte della professionalità ostetrica. Piccin. 2021 V",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "arte della professionalità ostetrica. Piccin. 2021 V."
-      },
-      {
        "titolo": "La fisiologia della nascita. Dai prodromi al postpartum",
        "autori": "R. Spandrio, A. Regalia, G. Bestetti",
        "editore": "Carocci Faber",
@@ -28336,7 +28228,7 @@
        "citazione": "“Principi di Microbiologia Medica” a cura di G. Antonelli, M. Clementi, G. Pozzi e G. M. Rossolini (Casa Editrice Ambrosiana, 4° Edizione, 2022)"
       },
       {
-       "titolo": "Robbins and Cotran Pathologic Basis of Disease, 10th Edition . Publisher: ‎Elsevier; 10th edition (June 29, 2020)",
+       "titolo": "Robbins and Cotran Pathologic Basis of Disease, 10th Edition . Publisher: Elsevier; 10th edition (June 29, 2020)",
        "autori": null,
        "editore": "10th Edition . Publisher: ‎Elsevier",
        "anno": 2020,
@@ -28345,7 +28237,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Robbins and Cotran Pathologic Basis of Disease, 10th Edition . Publisher: ‎Elsevier; 10th edition (June 29, 2020)"
+       "citazione": "Robbins and Cotran Pathologic Basis of Disease, 10th Edition . Publisher: Elsevier; 10th edition (June 29, 2020)"
       },
       {
        "titolo": "Patologia generale. Anatomia patologica-Emanuel Rubin, David S. Strayer- ed. R. Rizzuto, S. Ausoni, M. Rugge- Piccin-Nuova Libraria – 2019",
@@ -28792,18 +28684,6 @@
      ],
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/26033/2026/9999?coorte=2024",
      "libri": [
-      {
-       "titolo": "Roma Antica",
-       "autori": "A. Giardina",
-       "editore": "Laterza",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/26033/2026/9999?coorte=2026)",
-       "citazione": "A. Giardina (a cura di), 2021, Roma Antica, Roma-Bari: Laterza."
-      },
       {
        "titolo": "Si consiglia di integrare lo studio della bibliografia inerente alla parte generale del corso con la lettura del manuale di M. Menichetti, M. Torelli, G. Grassigli, 2008, Arte e archeologia del mondo romano, Milano: Longanesi.",
        "autori": null,
@@ -29718,18 +29598,6 @@
        "citazione": "Rocce e successioni sedimentarie, UTET."
       },
       {
-       "titolo": "Geologia del sedimentario, Flaccovio Editore.",
-       "autori": null,
-       "editore": "Flaccovio Editore",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/10779/2014/9999?coorte=2024)",
-       "citazione": "Geologia del sedimentario, Flaccovio Editore."
-      },
-      {
        "titolo": "A. Iannace - Storia della Terra (prima edizione) - Editori Laterza.",
        "autori": null,
        "editore": null,
@@ -30104,19 +29972,7 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/20108/2026/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "HICKMAN - ZOOLOGIA 18a ed. Editore ‏: ‎ McGraw-Hill Education",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/20108/2026/9999?coorte=2026)",
-       "citazione": "HICKMAN - ZOOLOGIA 18a ed. Editore ‏: ‎ McGraw-Hill Education"
-      },
-      {
-       "titolo": "ISBN-13: ‎978-8838696947",
+       "titolo": "HICKMAN - ZOOLOGIA 18a ed. Editore : McGraw-Hill Education ISBN-13: 978-8838696947",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -30125,7 +29981,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/20108/2026/9999?coorte=2026)",
-       "citazione": "ISBN-13: ‎978-8838696947"
+       "citazione": "HICKMAN - ZOOLOGIA 18a ed. Editore : McGraw-Hill Education ISBN-13: 978-8838696947"
       }
      ],
      "esami": [
@@ -30518,7 +30374,7 @@
       {
        "titolo": "Editore: Apogeo Education - Maggioli Editore",
        "autori": null,
-       "editore": "Editore: Apogeo Education - Maggioli Editore",
+       "editore": "Apogeo Education - Maggioli Editore",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -30685,19 +30541,7 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/13453/2026/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "HICKMAN - ZOOLOGIA 18a ed. Editore ‏: ‎ McGraw-Hill Education",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/13453/2026/9999?coorte=2026)",
-       "citazione": "HICKMAN - ZOOLOGIA 18a ed. Editore ‏: ‎ McGraw-Hill Education"
-      },
-      {
-       "titolo": "ISBN-13: ‎978-8838696947",
+       "titolo": "HICKMAN - ZOOLOGIA 18a ed. Editore : McGraw-Hill Education ISBN-13: 978-8838696947",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -30706,7 +30550,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/13453/2026/9999?coorte=2026)",
-       "citazione": "ISBN-13: ‎978-8838696947"
+       "citazione": "HICKMAN - ZOOLOGIA 18a ed. Editore : McGraw-Hill Education ISBN-13: 978-8838696947"
       },
       {
        "titolo": "Manuale di Zoologia",
@@ -32769,30 +32613,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/23422/2026/9999?coorte=2026)",
        "citazione": "R., & Salerni, N. (2023). L’osservazione nei contesti"
-      },
-      {
-       "titolo": "socio-pedagogici e di nido. Roma: Carocci. 2. Cassibba, R. & Salerni, N. (2023). L’osservazione nei contesti educativi. Tecniche e strumenti.",
-       "autori": null,
-       "editore": "socio-pedagogici e di nido. Roma: Carocci. 2. Cassibba",
-       "anno": 2023,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/23422/2026/9999?coorte=2026)",
-       "citazione": "socio-pedagogici e di nido. Roma: Carocci. 2. Cassibba, R. & Salerni, N. (2023). L’osservazione nei contesti educativi. Tecniche e strumenti."
-      },
-      {
-       "titolo": "socio-pedagogici e di nido. Roma: Carocci. 2. Cassibba, R., &",
-       "autori": null,
-       "editore": "socio-pedagogici e di nido. Roma: Carocci. 2. Cassibba",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/23422/2026/9999?coorte=2026)",
-       "citazione": "socio-pedagogici e di nido. Roma: Carocci. 2. Cassibba, R., &"
       }
      ],
      "esami": [],
@@ -32882,7 +32702,7 @@
       {
        "titolo": "Per i non frequentanti: 1) A.Giddens, P.H.Sutton, Fondamenti di sociologia, Bologna, il Mulino 2021 (sesta edizione): Capitoli I, II, III, IV, V, VI, VII, VIII, IX, X, XI, XV.",
        "autori": null,
-       "editore": "il Mulino 2021 (sesta edizione): Capitoli I",
+       "editore": "il Mulino 2021 (sesta edizione)",
        "anno": 2021,
        "edizione": null,
        "isbn": null,
@@ -32906,7 +32726,7 @@
       {
        "titolo": "Per i frequentanti: 1) A.Giddens, P.H.Sutton, Fondamenti di sociologia, Bologna, il Mulino 2021 (sesta editione): Capitoli I, II, III, IV, V, VI, VII, VIII, IX, X, XI, XV).",
        "autori": null,
-       "editore": "il Mulino 2021 (sesta editione): Capitoli I",
+       "editore": "il Mulino 2021 (sesta editione)",
        "anno": 2021,
        "edizione": null,
        "isbn": null,
@@ -32916,8 +32736,20 @@
        "citazione": "Per i frequentanti: 1) A.Giddens, P.H.Sutton, Fondamenti di sociologia, Bologna, il Mulino 2021 (sesta editione): Capitoli I, II, III, IV, V, VI, VII, VIII, IX, X, XI, XV)."
       },
       {
-       "titolo": "M.Colombo, Sociologia e politiche dell'educazione, Milano, Vita e pensiero, 2026 (Introduzione, Capitoli 1, 4, 6, Conclusioni). 2) A. Giorgi, M.Pizzolati, E.Vacchelli, Metodi creativi per la ricerca sociale, Bologna, Il Mulino, 2021.",
-       "autori": null,
+       "titolo": "Sociologia e politiche dell'educazione",
+       "autori": "M.Colombo",
+       "editore": "Vita e pensiero",
+       "anno": 2026,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/12578/2026/9999?coorte=2026)",
+       "citazione": "M.Colombo, Sociologia e politiche dell'educazione, Milano, Vita e pensiero, 2026 (Introduzione, Capitoli 1, 4, 6, Conclusioni)."
+      },
+      {
+       "titolo": "Metodi creativi per la ricerca sociale",
+       "autori": "A. Giorgi, M.Pizzolati, E.Vacchelli",
        "editore": "Il Mulino",
        "anno": 2021,
        "edizione": null,
@@ -32925,19 +32757,19 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/12578/2026/9999?coorte=2026)",
-       "citazione": "M.Colombo, Sociologia e politiche dell'educazione, Milano, Vita e pensiero, 2026 (Introduzione, Capitoli 1, 4, 6, Conclusioni). 2) A. Giorgi, M.Pizzolati, E.Vacchelli, Metodi creativi per la ricerca sociale, Bologna, Il Mulino, 2021."
+       "citazione": "A. Giorgi, M.Pizzolati, E.Vacchelli, Metodi creativi per la ricerca sociale, Bologna, Il Mulino, 2021."
       },
       {
-       "titolo": "F.Bianchi, La trasformazione dei processi di socializzazione tra obiettivi educativi e nuove pratiche di cura in Brogi S. (a cura di), Filosofia dell'educazione, Milano, Mondadori, 2026. 2) A. Giorgi, M.Pizzolati, E.Vacchelli, Metodi creativi per la ricerca sociale, Bologna, Il Mulino, 2021.",
-       "autori": null,
+       "titolo": "La trasformazione dei processi di socializzazione tra obiettivi educativi e nuove pratiche di cura in Brogi S. (a cura di), Filosofia dell'educazione",
+       "autori": "F.Bianchi",
        "editore": "Mondadori",
-       "anno": 2021,
+       "anno": 2026,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/12578/2026/9999?coorte=2026)",
-       "citazione": "F.Bianchi, La trasformazione dei processi di socializzazione tra obiettivi educativi e nuove pratiche di cura in Brogi S. (a cura di), Filosofia dell'educazione, Milano, Mondadori, 2026. 2) A. Giorgi, M.Pizzolati, E.Vacchelli, Metodi creativi per la ricerca sociale, Bologna, Il Mulino, 2021."
+       "citazione": "F.Bianchi, La trasformazione dei processi di socializzazione tra obiettivi educativi e nuove pratiche di cura in Brogi S. (a cura di), Filosofia dell'educazione, Milano, Mondadori, 2026."
       }
      ],
      "esami": [],
@@ -33074,7 +32906,7 @@
       {
        "titolo": "Marco Furini, (2018), Comunicazioni multimediali. Fondamenti di informatica per la produzione e la gestione di flussi audio-video nella rete Internet, Franco Angeli (Codice ISBN: 9788891761811)",
        "autori": null,
-       "editore": "Franco Angeli (Codice ISBN: 9788891761811)",
+       "editore": "Franco Angeli (Codice ISBN",
        "anno": 2018,
        "edizione": null,
        "isbn": "9788891761811",
@@ -33541,30 +33373,6 @@
        "citazione": "Mazower M., Le ombre dell’Europa, Garzanti, Milano 2000"
       },
       {
-       "titolo": "contemporanea, Einaudi, Torino 1996",
-       "autori": null,
-       "editore": "Einaudi",
-       "anno": 1996,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/23399/2026/9999?coorte=2026)",
-       "citazione": "contemporanea, Einaudi, Torino 1996"
-      },
-      {
-       "titolo": "d’Europa. 5. L’età contemporanea, Einaudi, Torino 1996",
-       "autori": null,
-       "editore": "Einaudi",
-       "anno": 1996,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/23399/2026/9999?coorte=2026)",
-       "citazione": "d’Europa. 5. L’età contemporanea, Einaudi, Torino 1996"
-      },
-      {
        "titolo": "Ohmae K., La fine dello stato-nazione, Baldini e Castoldi, Milano 1995",
        "autori": null,
        "editore": null,
@@ -33886,7 +33694,7 @@
        "edizione": null,
        "isbn": null,
        "lingua": null,
-       "tipo": "obbligatorio",
+       "tipo": "consigliato",
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/12533/2026/9999?coorte=2026)",
        "citazione": "ARNALDO BAGNASCO, MARZIO BARBAGLI, ALESSANDRO CAVALLI, Sociologia I concetti di base, Il Mulino, terza edizione (Copertina blu), non obbligatorio cap. IV SPARTI, D., Sul tango. L’improvvisazione intima, Mulino, Bologna, 2015"
       }
@@ -35653,18 +35461,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/10779/2014/9999?coorte=2024)",
        "citazione": "Rocce e successioni sedimentarie, UTET."
-      },
-      {
-       "titolo": "Geologia del sedimentario, Flaccovio Editore.",
-       "autori": null,
-       "editore": "Flaccovio Editore",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2024/25 dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/10779/2014/9999?coorte=2024)",
-       "citazione": "Geologia del sedimentario, Flaccovio Editore."
       },
       {
        "titolo": "A. Iannace - Storia della Terra (prima edizione) - Editori Laterza.",
@@ -37675,18 +37471,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Si consiglia di integrare lo studio della bibliografia inerente alla parte generale del corso con la lettura del manuale di G. Geraci, A. Marcone, 2016, Storia romana, Firenze: Mondadori Università (qualsiasi edizione)."
-      },
-      {
-       "titolo": "Storia romana",
-       "autori": "G. Geraci, A. Marcone",
-       "editore": "Mondadori Università",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "G. Geraci, A. Marcone, 2016, Storia romana, Firenze: Mondadori Università (qualsiasi edizione)."
       }
      ],
      "esami": [
@@ -37833,18 +37617,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Vidale M., 2004, Che cos'è l'etnoarcheologia, Carocci, Roma"
-      },
-      {
-       "titolo": "https://www.slideshare.net/laboratoridalbasso/ld-b-30-04062014-comis-exarc-e-musei-openair",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "https://www.slideshare.net/laboratoridalbasso/ld-b-30-04062014-comis-exarc-e-musei-openair"
       },
       {
        "titolo": "J. Reed Flores, R. Paerdekooper 2017, Experiments Past – Histories of Experimental Archaeology, Oxbow, ISBN 9789088904783",
@@ -38008,7 +37780,7 @@
       {
        "titolo": "MANFREDINI A.2006, Il Neolitico in Europa, in S. De Martino, a cura di, Storia d’Europa e del Mediterraneo. Il Mondo antico. Dalla Preistoria alla storia, vol. 1, Salerno Editrice: cap. III: pp. 267-334.",
        "autori": null,
-       "editore": "Salerno Editrice: cap. III: pp. 267-334",
+       "editore": "Salerno Editrice",
        "anno": 2006,
        "edizione": null,
        "isbn": null,
@@ -41790,7 +41562,7 @@
        "edizione": null,
        "isbn": null,
        "lingua": null,
-       "tipo": "obbligatorio",
+       "tipo": "consigliato",
        "note": null,
        "citazione": "ARNALDO BAGNASCO, MARZIO BARBAGLI, ALESSANDRO CAVALLI, Sociologia I concetti di base, Il Mulino, terza edizione (Copertina blu), non obbligatorio cap. IV SPARTI, D., Sul tango. L’improvvisazione intima, Mulino, Bologna, 2015"
       }
@@ -43855,28 +43627,16 @@
        "citazione": "A. MENICHETTI, Metrica italiana. Fondamenti metrici, prosodia, rima, Padova, Antenore 1993."
       },
       {
-       "titolo": "Di entrambi esistono edizioni ridotte, più abbordabili:",
+       "titolo": "Di entrambi esistono edizioni ridotte, più abbordabili: P.G. BELTRAMI, Gli strumenti della poesia, Bologna, il Mulino 1996.",
        "autori": null,
-       "editore": "Di entrambi esistono edizioni ridotte",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/24943/2026/9999?coorte=2026)",
-       "citazione": "Di entrambi esistono edizioni ridotte, più abbordabili:"
-      },
-      {
-       "titolo": "P.G. BELTRAMI, Gli strumenti della poesia, Bologna, il Mulino 1996.",
-       "autori": null,
-       "editore": "il Mulino 1996",
+       "editore": null,
        "anno": 1996,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/24943/2026/9999?coorte=2026)",
-       "citazione": "P.G. BELTRAMI, Gli strumenti della poesia, Bologna, il Mulino 1996."
+       "citazione": "Di entrambi esistono edizioni ridotte, più abbordabili: P.G. BELTRAMI, Gli strumenti della poesia, Bologna, il Mulino 1996."
       },
       {
        "titolo": "A. MENICHETTI, Prima lezione di metrica, Roma-Bari, Laterza 2013.",
@@ -45223,18 +44983,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/11508/2026/3?coorte=2026)",
        "citazione": "Mainer, José Carlos (a cura di), Historia de la literatura española: Derrota y restitución de la modernidad, 1939-2010. Vol. 7, Barcelona, Crítica, 2011."
-      },
-      {
-       "titolo": "2019, Vol. 49(3–4), 394–409, https://doi.org/10.1177/0047244119859152",
-       "autori": null,
-       "editore": null,
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/11508/2026/3?coorte=2026)",
-       "citazione": "2019, Vol. 49(3–4), 394–409, https://doi.org/10.1177/0047244119859152"
       },
       {
        "titolo": "Pozuelo Yvancos, José María, Novela española del siglo XXI, Madrid, Cátedra, 2017.",
@@ -47101,7 +46849,7 @@
       {
        "titolo": "EdiSES: Elementi di chimica e biochimica di Chiricozzi, Colombo, Magni,Marin, Palestini e Tugnoli",
        "autori": null,
-       "editore": "EdiSES: Elementi di chimica e biochimica di Chiricozzi",
+       "editore": "EdiSES",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -47658,18 +47406,6 @@
        "tipo": null,
        "note": null,
        "citazione": "professionisti della salute, Carocci, Roma, 2004 (e"
-      },
-      {
-       "titolo": "agosto 2007, n.123, in materia di tutela della salute",
-       "autori": null,
-       "editore": null,
-       "anno": 2007,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "agosto 2007, n.123, in materia di tutela della salute"
       },
       {
        "titolo": "Simone Sarti, Marco Terraneo (2023), Studiare la salute. La prospettiva della sociologia, Roma: Carocci ISBN: 9788829017638",
@@ -49135,7 +48871,7 @@
       {
        "titolo": "Marco Furini, (2018), Comunicazioni multimediali. Fondamenti di informatica per la produzione e la gestione di flussi audio-video nella rete Internet, Franco Angeli (Codice ISBN: 9788891761811)",
        "autori": null,
-       "editore": "Franco Angeli (Codice ISBN: 9788891761811)",
+       "editore": "Franco Angeli (Codice ISBN",
        "anno": 2018,
        "edizione": null,
        "isbn": "9788891761811",
@@ -49276,7 +49012,7 @@
       {
        "titolo": "EdiSES: Elementi di chimica e biochimica di Chiricozzi, Colombo, Magni,Marin, Palestini e Tugnoli",
        "autori": null,
-       "editore": "EdiSES: Elementi di chimica e biochimica di Chiricozzi",
+       "editore": "EdiSES",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -49780,16 +49516,16 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/22621/2011/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "Cella - Di Giulio - Gorio – Scaglione PICCIN",
+       "titolo": "Cella - Di Giulio - Gorio – Scaglione PICCIN EAN: 9788802061597 ISBN: 8802061599",
        "autori": null,
-       "editore": "Cella - Di Giulio - Gorio – Scaglione PICCIN",
+       "editore": null,
        "anno": null,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788802061597",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Cella - Di Giulio - Gorio – Scaglione PICCIN"
+       "citazione": "Cella - Di Giulio - Gorio – Scaglione PICCIN EAN: 9788802061597 ISBN: 8802061599"
       }
      ],
      "esami": [],
@@ -49921,18 +49657,6 @@
      ],
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/23056/2011/9999?coorte=2024",
      "libri": [
-      {
-       "titolo": "Linda B. Mongero, James R. Beck. On Bypass: Advanced Perfusion Techniques. Humana Press, 2009",
-       "autori": null,
-       "editore": null,
-       "anno": 2009,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Linda B. Mongero, James R. Beck. On Bypass: Advanced Perfusion Techniques. Humana Press, 2009"
-      },
       {
        "titolo": "Florian Falter, Albert Perrino. Robert A BakerCardiopulmonary Bypass. Cambridge University Press, 2022",
        "autori": null,
@@ -50724,7 +50448,7 @@
       {
        "titolo": "EdiSES: Elementi di chimica e biochimica di Chiricozzi, Colombo, Magni,Marin, Palestini e Tugnoli",
        "autori": null,
-       "editore": "EdiSES: Elementi di chimica e biochimica di Chiricozzi",
+       "editore": "EdiSES",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -51248,19 +50972,7 @@
        "citazione": "Guyton e Hall, Fisiologia Medica, Elsevier."
       },
       {
-       "titolo": "Vander : Fisiologia , Ambrosiana.",
-       "autori": null,
-       "editore": "Ambrosiana",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Vander : Fisiologia , Ambrosiana."
-      },
-      {
-       "titolo": "ISBN: 978-88-299-3067-8",
+       "titolo": "Vander : Fisiologia , Ambrosiana. ISBN: 978-88-299-3067-8 ISBN: 978-88-299-2864-4",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -51269,19 +50981,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-88-299-3067-8"
-      },
-      {
-       "titolo": "ISBN: 978-88-299-2864-4",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788829928644",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ISBN: 978-88-299-2864-4"
+       "citazione": "Vander : Fisiologia , Ambrosiana. ISBN: 978-88-299-3067-8 ISBN: 978-88-299-2864-4"
       }
      ],
      "esami": [
@@ -52104,7 +51804,7 @@
       {
        "titolo": "EdiSES: Elementi di chimica e biochimica di Chiricozzi, Colombo, Magni,Marin, Palestini e Tugnoli",
        "autori": null,
-       "editore": "EdiSES: Elementi di chimica e biochimica di Chiricozzi",
+       "editore": "EdiSES",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -52325,19 +52025,7 @@
        "citazione": "Guyton e Hall, Fisiologia Medica, Elsevier."
       },
       {
-       "titolo": "Vander : Fisiologia , Ambrosiana.",
-       "autori": null,
-       "editore": "Ambrosiana",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Vander : Fisiologia , Ambrosiana."
-      },
-      {
-       "titolo": "ISBN: 978-88-299-3067-8",
+       "titolo": "Vander : Fisiologia , Ambrosiana. ISBN: 978-88-299-3067-8 ISBN: 978-88-299-2864-4",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -52346,19 +52034,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-88-299-3067-8"
-      },
-      {
-       "titolo": "ISBN: 978-88-299-2864-4",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788829928644",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ISBN: 978-88-299-2864-4"
+       "citazione": "Vander : Fisiologia , Ambrosiana. ISBN: 978-88-299-3067-8 ISBN: 978-88-299-2864-4"
       }
      ],
      "esami": [
@@ -53804,19 +53480,7 @@
        "citazione": "Microbiologia clinica, Eudes-Lanciotti. Casa Editrice Ambrosiana. Microbiologia, Wessner, Casa Editrice Zanichelli Cevenini. Microbiologia Clinica. Piccin."
       },
       {
-       "titolo": "Microbiologia, Wessner, Casa Editrice Zanichelli",
-       "autori": null,
-       "editore": "Casa Editrice Zanichelli",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Microbiologia, Wessner, Casa Editrice Zanichelli"
-      },
-      {
-       "titolo": "ISBN: 978-88-08-18684-3",
+       "titolo": "Microbiologia, Wessner, Casa Editrice Zanichelli ISBN: 978-88-08-18684-3 ISBN: 978-88-08-18724-6 ISBN: 88-386-2963-3",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -53825,19 +53489,19 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-88-08-18684-3"
+       "citazione": "Microbiologia, Wessner, Casa Editrice Zanichelli ISBN: 978-88-08-18684-3 ISBN: 978-88-08-18724-6 ISBN: 88-386-2963-3"
       },
       {
-       "titolo": "ISBN: 978-88-08-18724-6",
+       "titolo": "Microbiologia, Wessner, Casa Editrice Zanichelli ISBN: 88-386-2963-3 ISBN: 978-88-08-18684-3 ISBN: 978-88-08-18724-6",
        "autori": null,
        "editore": null,
        "anno": null,
        "edizione": null,
-       "isbn": "9788808187246",
+       "isbn": "9788808186843",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-88-08-18724-6"
+       "citazione": "Microbiologia, Wessner, Casa Editrice Zanichelli ISBN: 88-386-2963-3 ISBN: 978-88-08-18684-3 ISBN: 978-88-08-18724-6"
       }
      ],
      "esami": [
@@ -54987,19 +54651,7 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2024/20460/2011/10001?coorte=2024",
      "libri": [
       {
-       "titolo": "Microbiologia, Wessner, Casa Editrice Zanichelli",
-       "autori": null,
-       "editore": "Casa Editrice Zanichelli",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Microbiologia, Wessner, Casa Editrice Zanichelli"
-      },
-      {
-       "titolo": "ISBN: 978-88-08-18684-3",
+       "titolo": "Microbiologia, Wessner, Casa Editrice Zanichelli ISBN: 978-88-08-18684-3 ISBN: 978-88-08-18724-6 ISBN: 88-386-2963-3",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -55008,19 +54660,19 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-88-08-18684-3"
+       "citazione": "Microbiologia, Wessner, Casa Editrice Zanichelli ISBN: 978-88-08-18684-3 ISBN: 978-88-08-18724-6 ISBN: 88-386-2963-3"
       },
       {
-       "titolo": "ISBN: 978-88-08-18724-6",
+       "titolo": "Microbiologia, Wessner, Casa Editrice Zanichelli ISBN: 88-386-2963-3 ISBN: 978-88-08-18684-3 ISBN: 978-88-08-18724-6",
        "autori": null,
        "editore": null,
        "anno": null,
        "edizione": null,
-       "isbn": "9788808187246",
+       "isbn": "9788808186843",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 978-88-08-18724-6"
+       "citazione": "Microbiologia, Wessner, Casa Editrice Zanichelli ISBN: 88-386-2963-3 ISBN: 978-88-08-18684-3 ISBN: 978-88-08-18724-6"
       }
      ],
      "esami": [
@@ -57358,7 +57010,7 @@
       {
        "titolo": "Marco Furini, (2018), Comunicazioni multimediali. Fondamenti di informatica per la produzione e la gestione di flussi audio-video nella rete Internet, Franco Angeli (Codice ISBN: 9788891761811)",
        "autori": null,
-       "editore": "Franco Angeli (Codice ISBN: 9788891761811)",
+       "editore": "Franco Angeli (Codice ISBN",
        "anno": 2018,
        "edizione": null,
        "isbn": "9788891761811",
@@ -59982,16 +59634,28 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/21966/2026/1?coorte=2024",
      "libri": [
       {
-       "titolo": "Dispense del docente. 2) R. Soare, Turing Computability: Theory and Applications, Springer-Verlag, Berlin, 2016",
+       "titolo": "Dispense del docente.",
        "autori": null,
-       "editore": "Dispense del docente. 2) R. Soare",
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2025/21966/2025/1?coorte=2025)",
+       "citazione": "Dispense del docente."
+      },
+      {
+       "titolo": "Turing Computability: Theory and Applications",
+       "autori": "R. Soare",
+       "editore": "Springer-Verlag",
        "anno": 2016,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2025/21966/2025/1?coorte=2025)",
-       "citazione": "Dispense del docente. 2) R. Soare, Turing Computability: Theory and Applications, Springer-Verlag, Berlin, 2016"
+       "citazione": "R. Soare, Turing Computability: Theory and Applications, Springer-Verlag, Berlin, 2016"
       }
      ],
      "esami": [
@@ -60915,7 +60579,7 @@
       {
        "titolo": "Operations Strategy",
        "autori": "Slack N, Lewis M",
-       "editore": "Pearson. ISBN-13: 9781292317854",
+       "editore": "Pearson. ISBN-13",
        "anno": null,
        "edizione": null,
        "isbn": "9781292317854",
@@ -61505,16 +61169,28 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/22400/2025/1?coorte=2025",
      "libri": [
       {
-       "titolo": "Dan E. Krane, Michael L. Raymer, Fundamental Concepts of Bioinformatics, Pearson, 2003 2) Python Tutorial, freely available online. http://docs.python.org/2/tutorial/ 3) Notes distributed in the classroom. Additional material for the course (including a tutorial on logic programming) can be found at",
+       "titolo": "Dan E. Krane, Michael L. Raymer, Fundamental Concepts of Bioinformatics, Pearson, 2003",
        "autori": null,
-       "editore": "Pearson",
+       "editore": null,
        "anno": 2003,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Dan E. Krane, Michael L. Raymer, Fundamental Concepts of Bioinformatics, Pearson, 2003 2) Python Tutorial, freely available online. http://docs.python.org/2/tutorial/ 3) Notes distributed in the classroom. Additional material for the course (including a tutorial on logic programming) can be found at the following link: http://www3.diism.unisi.it/~falaschi/Teaching/bioinformatics.html"
+       "citazione": "Dan E. Krane, Michael L. Raymer, Fundamental Concepts of Bioinformatics, Pearson, 2003"
+      },
+      {
+       "titolo": "Python Tutorial, freely available online. http://docs.python.org/2/tutorial/ 3) Notes distributed in the classroom. Additional material for the course (including a tutorial on logic programming) can be found at the following link: http://www3.diism.unisi.it/~falaschi/Teaching/bioinformatics.html",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Python Tutorial, freely available online. http://docs.python.org/2/tutorial/ 3) Notes distributed in the classroom. Additional material for the course (including a tutorial on logic programming) can be found at the following link: http://www3.diism.unisi.it/~falaschi/Teaching/bioinformatics.html"
       },
       {
        "titolo": "An Introduction to Bioinformatics",
@@ -63583,7 +63259,7 @@
       {
        "titolo": "Maggi R. 2016, I monti sono vecchi, Archeologia del Paesaggio dal Turchino alla Magra, Editore: De Ferrari, Genova",
        "autori": null,
-       "editore": "Editore: De Ferrari",
+       "editore": "De Ferrari",
        "anno": 2016,
        "edizione": null,
        "isbn": null,
@@ -65240,16 +64916,28 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/20553/2026/2?coorte=2025",
      "libri": [
       {
-       "titolo": "Dan E. Krane, Michael L. Raymer, Fundamental Concepts of Bioinformatics, Pearson, 2003 2) Python Tutorial, freely available online. http://docs.python.org/2/tutorial/ 3) Notes distributed in the classroom. Additional material for the course (including a tutorial on logic programming) can be found at",
+       "titolo": "Dan E. Krane, Michael L. Raymer, Fundamental Concepts of Bioinformatics, Pearson, 2003",
        "autori": null,
-       "editore": "Pearson",
+       "editore": null,
        "anno": 2003,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Dan E. Krane, Michael L. Raymer, Fundamental Concepts of Bioinformatics, Pearson, 2003 2) Python Tutorial, freely available online. http://docs.python.org/2/tutorial/ 3) Notes distributed in the classroom. Additional material for the course (including a tutorial on logic programming) can be found at the following link: http://www3.diism.unisi.it/~falaschi/Teaching/bioinformatics.html"
+       "citazione": "Dan E. Krane, Michael L. Raymer, Fundamental Concepts of Bioinformatics, Pearson, 2003"
+      },
+      {
+       "titolo": "Python Tutorial, freely available online. http://docs.python.org/2/tutorial/ 3) Notes distributed in the classroom. Additional material for the course (including a tutorial on logic programming) can be found at the following link: http://www3.diism.unisi.it/~falaschi/Teaching/bioinformatics.html",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Python Tutorial, freely available online. http://docs.python.org/2/tutorial/ 3) Notes distributed in the classroom. Additional material for the course (including a tutorial on logic programming) can be found at the following link: http://www3.diism.unisi.it/~falaschi/Teaching/bioinformatics.html"
       }
      ],
      "esami": [
@@ -66308,7 +65996,7 @@
        "edizione": null,
        "isbn": null,
        "lingua": null,
-       "tipo": "obbligatorio",
+       "tipo": "consigliato",
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/22664/2026/1?coorte=2026)",
        "citazione": "La frequenza alle lezioni non è obbligatoria, ma altamente raccomandata. Non c'è materiale didattico aggiuntivo per gli studenti e le studentesse non frequentanti. Il materiale fornito è sufficiente alla preparazione dell'esame."
       }
@@ -67690,7 +67378,7 @@
      "codice": "2019143",
      "nome": "I.c. Biology Of Human Fertility",
      "anno": null,
-     "periodo": "Primo Periodo - Primo Semestre",
+     "periodo": "1",
      "periodo_inizio": "03/11/2026 00:00:00",
      "periodo_fine": "12/02/2027 00:00:00",
      "cfu": 12,
@@ -67727,7 +67415,7 @@
      "codice": "2019139",
      "nome": "I.c. Microenvironment Of Reproductive System",
      "anno": null,
-     "periodo": "Primo Periodo - Primo Semestre",
+     "periodo": "1",
      "periodo_inizio": "03/11/2026 00:00:00",
      "periodo_fine": "12/02/2027 00:00:00",
      "cfu": 12,
@@ -67741,16 +67429,28 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25888/2026/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "Langman's Medical Embryology, ed. Wolters Kluwer 2) Histology: Ross & Pawlina, ed. Williams&Wilki",
+       "titolo": "Langman's Medical Embryology, ed. Wolters Kluwer",
        "autori": null,
-       "editore": "ed. Wolters Kluwer 2) Histology: Ross & Pawlina",
+       "editore": null,
        "anno": null,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25888/2026/9999?coorte=2026)",
-       "citazione": "Langman's Medical Embryology, ed. Wolters Kluwer 2) Histology: Ross & Pawlina, ed. Williams&Wilki"
+       "citazione": "Langman's Medical Embryology, ed. Wolters Kluwer"
+      },
+      {
+       "titolo": "Histology: Ross & Pawlina, ed. Williams&Wilki",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25888/2026/9999?coorte=2026)",
+       "citazione": "Histology: Ross & Pawlina, ed. Williams&Wilki"
       }
      ],
      "esami": [],
@@ -67764,7 +67464,7 @@
      "codice": "2019142",
      "nome": "Physiology Of Reproduction",
      "anno": null,
-     "periodo": "Primo Periodo - Primo Semestre",
+     "periodo": "1",
      "periodo_inizio": "03/11/2026 00:00:00",
      "periodo_fine": "12/02/2027 00:00:00",
      "cfu": 6,
@@ -67787,7 +67487,7 @@
      "codice": "2019149",
      "nome": "Genetics",
      "anno": null,
-     "periodo": "Primo Periodo - Secondo Semestre",
+     "periodo": "2",
      "periodo_inizio": "05/04/2027 00:00:00",
      "periodo_fine": "30/06/2027 00:00:00",
      "cfu": 6,
@@ -67823,7 +67523,7 @@
      "codice": "2019147",
      "nome": "I.c. Assisted Reproductive Techniques",
      "anno": null,
-     "periodo": "Primo Periodo - Secondo Semestre",
+     "periodo": "2",
      "periodo_inizio": "05/04/2027 00:00:00",
      "periodo_fine": "30/06/2027 00:00:00",
      "cfu": 12,
@@ -67909,7 +67609,7 @@
      "codice": "2019146",
      "nome": "Pathology Of Reproduction",
      "anno": null,
-     "periodo": "Primo Periodo - Secondo Semestre",
+     "periodo": "2",
      "periodo_inizio": "05/04/2027 00:00:00",
      "periodo_fine": "30/06/2027 00:00:00",
      "cfu": 6,
@@ -67969,7 +67669,7 @@
      "codice": "2019151",
      "nome": "Public Health And Human Fertility",
      "anno": null,
-     "periodo": "Primo Periodo - Secondo Semestre",
+     "periodo": "2",
      "periodo_inizio": "05/04/2027 00:00:00",
      "periodo_fine": "30/06/2027 00:00:00",
      "cfu": 6,
@@ -69030,37 +68730,12 @@
       "Pogni Rebecca"
      ],
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/21271/2026/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Ed. by A. Liese, K. Seelbach, C.Wandrey – Wiley-VCH",
-       "autori": null,
-       "editore": "C.Wandrey – Wiley-VCH",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/21271/2026/9999?coorte=2026)",
-       "citazione": "Ed. by A. Liese, K. Seelbach, C.Wandrey – Wiley-VCH"
-      },
-      {
-       "titolo": "Ed. by ChristophWittmann and James C. Liao – Wiley-VCH",
-       "autori": null,
-       "editore": "Ed. by ChristophWittmann and James C. Liao – Wiley-VCH",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/21271/2026/9999?coorte=2026)",
-       "citazione": "Ed. by ChristophWittmann and James C. Liao – Wiley-VCH"
-      }
-     ],
+     "libri": [],
      "esami": [],
      "fonte": "https://unisi.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-05",
      "id": "unisi-lm-54-chemistry-2000937",
-     "stato_libri": "completo",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -71310,16 +70985,28 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/19317/2026/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "Testi principali: 1) Stock and Watson, Introduction to Econometrics, 2) Davidson and MacKinnon, Econometric Theory and Methods, Oxford. 3)Verbeek, Marno. A guide to modern econometrics. John Wiley and Sons, 2017. Testi di supporto: Pearson. i) Enders, Walter. Applied econometric time series. John Wi",
+       "titolo": "Testi principali: 1) Stock and Watson, Introduction to Econometrics,",
        "autori": null,
-       "editore": "Oxford. 3)Verbeek",
-       "anno": 2008,
+       "editore": null,
+       "anno": null,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": "consigliato",
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/19317/2026/9999?coorte=2026)",
-       "citazione": "Testi principali: 1) Stock and Watson, Introduction to Econometrics, 2) Davidson and MacKinnon, Econometric Theory and Methods, Oxford. 3)Verbeek, Marno. A guide to modern econometrics. John Wiley and Sons, 2017. Testi di supporto: Pearson. i) Enders, Walter. Applied econometric time series. John Wiley and Sons, 2008. Materiali e letture aggiuntive di approfondimento verranno forniti in classe."
+       "citazione": "Testi principali: 1) Stock and Watson, Introduction to Econometrics,"
+      },
+      {
+       "titolo": "Davidson and MacKinnon, Econometric Theory and Methods, Oxford. 3)Verbeek, Marno. A guide to modern econometrics. John Wiley and Sons, 2017. Testi di supporto: Pearson. i) Enders, Walter. Applied econometric time series. John Wiley and Sons, 2008. Materiali e letture aggiuntive di approfondimento verranno forniti in classe.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/19317/2026/9999?coorte=2026)",
+       "citazione": "Davidson and MacKinnon, Econometric Theory and Methods, Oxford. 3)Verbeek, Marno. A guide to modern econometrics. John Wiley and Sons, 2017. Testi di supporto: Pearson. i) Enders, Walter. Applied econometric time series. John Wiley and Sons, 2008. Materiali e letture aggiuntive di approfondimento verranno forniti in classe."
       },
       {
        "titolo": "Testo principale: B. E. Hansen (2022), Econometrics, Princeton University Press.",
@@ -71725,18 +71412,6 @@
      ],
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25021/2026/9999?coorte=2024",
      "libri": [
-      {
-       "titolo": "sostenibilità – ovvero quello che il PIL non dice”. Donzelli, Roma, 2011.",
-       "autori": null,
-       "editore": null,
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25021/2026/9999?coorte=2026)",
-       "citazione": "sostenibilità – ovvero quello che il PIL non dice”. Donzelli, Roma, 2011."
-      },
       {
        "titolo": "Analisi del ciclo di vita: materiali, prodotti e processi",
        "autori": "G.L. Baldo, M. Marino, S. Rossi",
@@ -74425,7 +74100,7 @@
       {
        "titolo": "Operations Strategy",
        "autori": "Slack N, Lewis M",
-       "editore": "Pearson. ISBN-13: 9781292317854",
+       "editore": "Pearson. ISBN-13",
        "anno": null,
        "edizione": null,
        "isbn": "9781292317854",
@@ -74824,16 +74499,28 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/17723/2026/1?coorte=2024",
      "libri": [
       {
-       "titolo": "Testi principali: 1) Stock and Watson, Introduction to Econometrics, 2) Davidson and MacKinnon, Econometric Theory and Methods, Oxford. 3)Verbeek, Marno. A guide to modern econometrics. John Wiley and Sons, 2017. Testi di supporto: Pearson. i) Enders, Walter. Applied econometric time series. John Wi",
+       "titolo": "Testi principali: 1) Stock and Watson, Introduction to Econometrics,",
        "autori": null,
-       "editore": "Oxford. 3)Verbeek",
-       "anno": 2008,
+       "editore": null,
+       "anno": null,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": "consigliato",
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/17723/2026/1?coorte=2026)",
-       "citazione": "Testi principali: 1) Stock and Watson, Introduction to Econometrics, 2) Davidson and MacKinnon, Econometric Theory and Methods, Oxford. 3)Verbeek, Marno. A guide to modern econometrics. John Wiley and Sons, 2017. Testi di supporto: Pearson. i) Enders, Walter. Applied econometric time series. John Wiley and Sons, 2008. Materiali e letture aggiuntive di approfondimento verranno forniti in classe."
+       "citazione": "Testi principali: 1) Stock and Watson, Introduction to Econometrics,"
+      },
+      {
+       "titolo": "Davidson and MacKinnon, Econometric Theory and Methods, Oxford. 3)Verbeek, Marno. A guide to modern econometrics. John Wiley and Sons, 2017. Testi di supporto: Pearson. i) Enders, Walter. Applied econometric time series. John Wiley and Sons, 2008. Materiali e letture aggiuntive di approfondimento verranno forniti in classe.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/17723/2026/1?coorte=2026)",
+       "citazione": "Davidson and MacKinnon, Econometric Theory and Methods, Oxford. 3)Verbeek, Marno. A guide to modern econometrics. John Wiley and Sons, 2017. Testi di supporto: Pearson. i) Enders, Walter. Applied econometric time series. John Wiley and Sons, 2008. Materiali e letture aggiuntive di approfondimento verranno forniti in classe."
       }
      ],
      "esami": [
@@ -76864,16 +76551,28 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/17723/2026/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "Testi principali: 1) Stock and Watson, Introduction to Econometrics, 2) Davidson and MacKinnon, Econometric Theory and Methods, Oxford. 3)Verbeek, Marno. A guide to modern econometrics. John Wiley and Sons, 2017. Testi di supporto: Pearson. i) Enders, Walter. Applied econometric time series. John Wi",
+       "titolo": "Testi principali: 1) Stock and Watson, Introduction to Econometrics,",
        "autori": null,
-       "editore": "Oxford. 3)Verbeek",
-       "anno": 2008,
+       "editore": null,
+       "anno": null,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": "consigliato",
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/17723/2026/9999?coorte=2026)",
-       "citazione": "Testi principali: 1) Stock and Watson, Introduction to Econometrics, 2) Davidson and MacKinnon, Econometric Theory and Methods, Oxford. 3)Verbeek, Marno. A guide to modern econometrics. John Wiley and Sons, 2017. Testi di supporto: Pearson. i) Enders, Walter. Applied econometric time series. John Wiley and Sons, 2008. Materiali e letture aggiuntive di approfondimento verranno forniti in classe."
+       "citazione": "Testi principali: 1) Stock and Watson, Introduction to Econometrics,"
+      },
+      {
+       "titolo": "Davidson and MacKinnon, Econometric Theory and Methods, Oxford. 3)Verbeek, Marno. A guide to modern econometrics. John Wiley and Sons, 2017. Testi di supporto: Pearson. i) Enders, Walter. Applied econometric time series. John Wiley and Sons, 2008. Materiali e letture aggiuntive di approfondimento verranno forniti in classe.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/17723/2026/9999?coorte=2026)",
+       "citazione": "Davidson and MacKinnon, Econometric Theory and Methods, Oxford. 3)Verbeek, Marno. A guide to modern econometrics. John Wiley and Sons, 2017. Testi di supporto: Pearson. i) Enders, Walter. Applied econometric time series. John Wiley and Sons, 2008. Materiali e letture aggiuntive di approfondimento verranno forniti in classe."
       }
      ],
      "esami": [
@@ -82689,18 +82388,6 @@
        "citazione": "J. Holmes, An introduction to sociolinguistics, Routledge, 2013."
       },
       {
-       "titolo": "ii) S.A. Tagliamonte, Variationist sociolinguistics. Change, observation, interpretation, Wiley-Blackwell, 2012.",
-       "autori": null,
-       "editore": "Wiley-Blackwell",
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25028/2026/9999?coorte=2026)",
-       "citazione": "ii) S.A. Tagliamonte, Variationist sociolinguistics. Change, observation, interpretation, Wiley-Blackwell, 2012."
-      },
-      {
        "titolo": "Usare un’altra lingua. Guida alla pragmatica interculturale",
        "autori": "C. Bettoni",
        "editore": "Laterza",
@@ -83173,21 +82860,9 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25029/2026/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "Alberto BRAMATI, Grammatica contrastiva per i traduttori dal francese. Le trappole della lingua, Milano, Edizioni libreria Cortina, 2025. ISBN: 978–88–7043–233–6.",
-       "autori": null,
-       "editore": "Edizioni libreria Cortina",
-       "anno": 2025,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25029/2026/9999?coorte=2026)",
-       "citazione": "Alberto BRAMATI, Grammatica contrastiva per i traduttori dal francese. Le trappole della lingua, Milano, Edizioni libreria Cortina, 2025. ISBN: 978–88–7043–233–6."
-      },
-      {
        "titolo": "Françoise BIDAUD, Nouvelle grammaire du français pour italophones, Torino, UTET. ISBN: 97888860082220",
        "autori": null,
-       "editore": "UTET. ISBN: 97888860082220",
+       "editore": "UTET. ISBN",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -83317,18 +82992,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25030/2026/9999?coorte=2026)",
        "citazione": "Roderick, Megan, Nuttal, Carol &Kenny, Nick. Proficiency EXPERT Coursebook. Pearson Education Ltd., 2013. ISBN 9781447937593."
-      },
-      {
-       "titolo": "Roderick, Megan, Nuttal, Carol &Kenny, Nick. Proficiency EXPERT Student’s Resource Book. Pearson Education Ltd., 2013. ISBN 9781408299005.",
-       "autori": null,
-       "editore": null,
-       "anno": 2013,
-       "edizione": null,
-       "isbn": "9781408299005",
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25030/2026/9999?coorte=2026)",
-       "citazione": "Roderick, Megan, Nuttal, Carol &Kenny, Nick. Proficiency EXPERT Student’s Resource Book. Pearson Education Ltd., 2013. ISBN 9781408299005."
       }
      ],
      "esami": [],
@@ -88673,16 +88336,40 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25997/2026/2?coorte=2024",
      "libri": [
       {
-       "titolo": "G. Raimondi, La sicurezza pubblica, Giappichelli editore, Torino, 2023; 2) F. Basile, Manuale delle misure di prevenzione, Giappichelli editore, 2021; 3) P. Tonini - C. Conti, Lineamenti di diritto processuale penale, Giuffrè, Milano, 2025, limitatamente al capitolo sulle misure cautelari.",
-       "autori": null,
+       "titolo": "La sicurezza pubblica",
+       "autori": "G. Raimondi",
        "editore": "Giappichelli editore",
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25997/2026/2?coorte=2026)",
+       "citazione": "G. Raimondi, La sicurezza pubblica, Giappichelli editore, Torino, 2023;"
+      },
+      {
+       "titolo": "Manuale delle misure di prevenzione",
+       "autori": "F. Basile",
+       "editore": "Giappichelli editore",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25997/2026/2?coorte=2026)",
+       "citazione": "F. Basile, Manuale delle misure di prevenzione, Giappichelli editore, 2021;"
+      },
+      {
+       "titolo": "P. Tonini - C. Conti, Lineamenti di diritto processuale penale, Giuffrè, Milano, 2025, limitatamente al capitolo sulle misure cautelari.",
+       "autori": null,
+       "editore": null,
        "anno": 2025,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25997/2026/2?coorte=2026)",
-       "citazione": "G. Raimondi, La sicurezza pubblica, Giappichelli editore, Torino, 2023; 2) F. Basile, Manuale delle misure di prevenzione, Giappichelli editore, 2021; 3) P. Tonini - C. Conti, Lineamenti di diritto processuale penale, Giuffrè, Milano, 2025, limitatamente al capitolo sulle misure cautelari."
+       "citazione": "P. Tonini - C. Conti, Lineamenti di diritto processuale penale, Giuffrè, Milano, 2025, limitatamente al capitolo sulle misure cautelari."
       }
      ],
      "esami": [],
@@ -90977,18 +90664,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/24680/2026/1?coorte=2026)",
        "citazione": "P. Gabrielli, Dalla parte di lei (e di lui). Alba de Céspedes a Epoca, Pacini, 2026."
-      },
-      {
-       "titolo": "Il 1946, le donne, la Repubblica",
-       "autori": "P. Gabrielli",
-       "editore": "Donzelli",
-       "anno": 2026,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/24680/2026/1?coorte=2026)",
-       "citazione": "P. Gabrielli, Il 1946, le donne, la Repubblica, Donzelli, 2026 (II edizione)"
       },
       {
        "titolo": "Un'altra storia dell'aborto. Contraccezione, salute e diritti nell'Italia Repubblicana",
@@ -100064,7 +99739,7 @@
      "codice": "2019162",
      "nome": "I.c. Chemistry",
      "anno": null,
-     "periodo": "Primo Periodo - Primo Semestre",
+     "periodo": "1",
      "periodo_inizio": "19/10/2026 00:00:00",
      "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 7,
@@ -100259,7 +99934,7 @@
      "codice": "2019169",
      "nome": "I.c. Scientific Methods, Behavioral Sciences And Critical Thinking",
      "anno": null,
-     "periodo": "Primo Periodo - Primo Semestre",
+     "periodo": "1",
      "periodo_inizio": "19/10/2026 00:00:00",
      "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 10,
@@ -100322,7 +99997,7 @@
      "codice": "2019184",
      "nome": "Other Languages (idoneità)",
      "anno": null,
-     "periodo": "Primo Periodo - Primo Semestre",
+     "periodo": "1",
      "periodo_inizio": "19/10/2026 00:00:00",
      "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 4,
@@ -100873,18 +100548,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25039/2026/9999?coorte=2026)",
        "citazione": "Ferrari, Luci, Mariani, Pelissetto: 'Fisica' vol 1 e 2, Idelson-Gnocchi"
-      },
-      {
-       "titolo": "Young, Freedman: Sears & Zemansky's University Physics (Pearson)",
-       "autori": null,
-       "editore": "Freedman: Sears & Zemansky's University Physics (Pearson)",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25039/2026/9999?coorte=2026)",
-       "citazione": "Young, Freedman: Sears & Zemansky's University Physics (Pearson)"
       },
       {
        "titolo": "Guerraggio, Matematica per le Scienze, Ed. Pearson",
@@ -102221,18 +101884,6 @@
      ],
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25946/2026/9999?coorte=2024",
      "libri": [
-      {
-       "titolo": "Pawlina Istologia, Testo e atlante C.E.A. Casa Editrice Ambrosiana. ---- ISTOLOGIA di Monesi, Piccin Editore",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unisi.coursecatalogue.cineca.it/insegnamenti/2026/25946/2026/9999?coorte=2026)",
-       "citazione": "Pawlina Istologia, Testo e atlante C.E.A. Casa Editrice Ambrosiana. ---- ISTOLOGIA di Monesi, Piccin Editore"
-      },
       {
        "titolo": "Embriologia Medica di Langman, ed. Masson ---- Embriologia Umana, De Felici, ed,. Piccin",
        "autori": null,
@@ -103891,16 +103542,28 @@
      "url": "https://unisi.coursecatalogue.cineca.it/insegnamenti/2025/25781/2024/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "I metodi e le tecnologie per l'educazione ambientale – Enrico Brugnoli, Vito Felice Uricchio, Gabriella Lamaddalena (Cacucci editore, 2016) 2) Metodi e strategie didattiche innovative per l'educazione ambientale - Alessia Scarinci (Franco Angeli editore, 2023)",
+       "titolo": "I metodi e le tecnologie per l'educazione ambientale – Enrico Brugnoli, Vito Felice Uricchio, Gabriella Lamaddalena (Cacucci editore, 2016)",
        "autori": null,
-       "editore": "Gabriella Lamaddalena (Cacucci editore",
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "I metodi e le tecnologie per l'educazione ambientale – Enrico Brugnoli, Vito Felice Uricchio, Gabriella Lamaddalena (Cacucci editore, 2016)"
+      },
+      {
+       "titolo": "Metodi e strategie didattiche innovative per l'educazione ambientale - Alessia Scarinci (Franco Angeli editore, 2023)",
+       "autori": null,
+       "editore": null,
        "anno": 2023,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "I metodi e le tecnologie per l'educazione ambientale – Enrico Brugnoli, Vito Felice Uricchio, Gabriella Lamaddalena (Cacucci editore, 2016) 2) Metodi e strategie didattiche innovative per l'educazione ambientale - Alessia Scarinci (Franco Angeli editore, 2023)"
+       "citazione": "Metodi e strategie didattiche innovative per l'educazione ambientale - Alessia Scarinci (Franco Angeli editore, 2023)"
       }
      ],
      "esami": [],
@@ -105361,7 +105024,7 @@
       {
        "titolo": "casa editrice: Edagricole , autore Igino Michieli",
        "autori": null,
-       "editore": "casa editrice: Edagricole",
+       "editore": "Edagricole",
        "anno": null,
        "edizione": null,
        "isbn": null,

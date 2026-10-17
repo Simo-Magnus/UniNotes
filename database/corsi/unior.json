@@ -642,8 +642,8 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2026/455/2026/9999?coorte=2026",
      "libri": [
       {
-       "titolo": "M. Corsaro, L. Gallo, Storia greca, Milano, Mondadori- Le Monnier, 2021. 2) L. Gallo, S. Gallotta, Fonti per la storia greca, Milano, Mondadori - Le Monnier, 2021.",
-       "autori": null,
+       "titolo": "Storia greca",
+       "autori": "M. Corsaro, L. Gallo",
        "editore": "Mondadori- Le Monnier",
        "anno": 2021,
        "edizione": null,
@@ -651,7 +651,19 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "M. Corsaro, L. Gallo, Storia greca, Milano, Mondadori- Le Monnier, 2021. 2) L. Gallo, S. Gallotta, Fonti per la storia greca, Milano, Mondadori - Le Monnier, 2021."
+       "citazione": "M. Corsaro, L. Gallo, Storia greca, Milano, Mondadori- Le Monnier, 2021."
+      },
+      {
+       "titolo": "Fonti per la storia greca",
+       "autori": "L. Gallo, S. Gallotta",
+       "editore": "Mondadori - Le Monnier",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "L. Gallo, S. Gallotta, Fonti per la storia greca, Milano, Mondadori - Le Monnier, 2021."
       }
      ],
      "esami": [
@@ -6974,7 +6986,7 @@
        "edizione": null,
        "isbn": null,
        "lingua": null,
-       "tipo": "obbligatorio",
+       "tipo": "consigliato",
        "note": null,
        "citazione": "Il materiale sarà fornito a cura del docente. Come testo di consultazione (non obbligatorio) sulle lingue semitiche, si può ricorrereall’agile compendio A.D. Rubin, A Brief Introduction to the Semitic Languages, Piscataway: Gorgias Press 2010."
       }
@@ -7525,7 +7537,7 @@
        "citazione": "Randall L. Nadeau ed. 2012. The Wiley-Blackwell Companion to Chinese Religions"
       },
       {
-       "titolo": "Paul L. Swanson, ‎Clark Chilson eds, 2006. Nanzan Guide to Japanese Religions. University of Hawai'i Press",
+       "titolo": "Paul L. Swanson, Clark Chilson eds, 2006. Nanzan Guide to Japanese Religions. University of Hawai'i Press",
        "autori": null,
        "editore": null,
        "anno": 2006,
@@ -7534,7 +7546,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Paul L. Swanson, ‎Clark Chilson eds, 2006. Nanzan Guide to Japanese Religions. University of Hawai'i Press"
+       "citazione": "Paul L. Swanson, Clark Chilson eds, 2006. Nanzan Guide to Japanese Religions. University of Hawai'i Press"
       },
       {
        "titolo": "Robert E. Buswell ed. 2007. Religions of Korea in Practice. Princeton University Press",
@@ -9433,7 +9445,7 @@
       {
        "titolo": "Culpeper, Jonathan, and Michael Haugh. Pragmatics and the English Language. Basingstoke: Palgrave Macmillan, 2014. Huang, Yan. Pragmatics. 2nd ed. Oxford: Oxford University Press, 2014. Mansfield-Kelley, Deane, and Lois A. Marchino, eds. The Longman Anthology of Detective Fiction. New York: Pearson",
        "autori": null,
-       "editore": "Yan. Pragmatics. 2nd ed. Oxford: Oxford University Press",
+       "editore": "Yan. Pragmatics. 2nd ed. Oxford",
        "anno": 2005,
        "edizione": null,
        "isbn": null,
@@ -10305,18 +10317,6 @@
        "tipo": null,
        "note": null,
        "citazione": "M. Bettetini - L. Bianchi - C. Marmo - P. Porro, \"Filosofia medievale\", Raffaello Cortina Editore, Milano 2004 (passi scelti)."
-      },
-      {
-       "titolo": "Le filosofie del Mediterraneo e della Magna Graecia",
-       "autori": "P. Di Giovanni",
-       "editore": "Franco Angeli",
-       "anno": 2015,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "P. Di Giovanni, \"Le filosofie del Mediterraneo e della Magna Graecia\", Franco Angeli, Milano 2015 (capitoli scelti)."
       }
      ],
      "esami": [
@@ -13201,8 +13201,8 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2026/8780/2025/9999?coorte=2025",
      "libri": [
       {
-       "titolo": "D. Ross, L. Berghout, M. Mertens, R. Dagnino, Mooi zo! Corso di lingua neerlandese, Hoepli, 2017; 2) Slide di approfondimento fornite durante il corso; 3) Altri testi e materiali cartacei e digitali verranno forniti durante il corso. La scelta sarà fatta – e comunicata agli studenti - non appena tut",
-       "autori": null,
+       "titolo": "Mooi zo! Corso di lingua neerlandese",
+       "autori": "D. Ross, L. Berghout, M. Mertens, R. Dagnino",
        "editore": "Hoepli",
        "anno": 2017,
        "edizione": null,
@@ -13210,7 +13210,31 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "D. Ross, L. Berghout, M. Mertens, R. Dagnino, Mooi zo! Corso di lingua neerlandese, Hoepli, 2017; 2) Slide di approfondimento fornite durante il corso; 3) Altri testi e materiali cartacei e digitali verranno forniti durante il corso. La scelta sarà fatta – e comunicata agli studenti - non appena tutti gli autori e docenti ospiti confermeranno la loro presenza a Napoli."
+       "citazione": "D. Ross, L. Berghout, M. Mertens, R. Dagnino, Mooi zo! Corso di lingua neerlandese, Hoepli, 2017;"
+      },
+      {
+       "titolo": "Slide di approfondimento fornite durante il corso;",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "Slide di approfondimento fornite durante il corso;"
+      },
+      {
+       "titolo": "Altri testi e materiali cartacei e digitali verranno forniti durante il corso. La scelta sarà fatta – e comunicata agli studenti - non appena tutti gli autori e docenti ospiti confermeranno la loro presenza a Napoli.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "Altri testi e materiali cartacei e digitali verranno forniti durante il corso. La scelta sarà fatta – e comunicata agli studenti - non appena tutti gli autori e docenti ospiti confermeranno la loro presenza a Napoli."
       }
      ],
      "esami": [
@@ -15536,16 +15560,28 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2025/6786/2025/9999?coorte=2025",
      "libri": [
       {
-       "titolo": "Boccella, N., Imbriani, C., Morone, P. (2014), Analisi microeconomica e scelte pubbliche, LED Edizioni Universitarie, Milano. 2) Imbriani, C., Lopes, A. (2016), Macroeconomia, un'introduzione. Mercati, istituzioni finanziarie e politiche, UTET Università, Torino.",
-       "autori": null,
+       "titolo": "Analisi microeconomica e scelte pubbliche",
+       "autori": "Boccella, N., Imbriani, C., Morone, P.",
        "editore": "LED Edizioni Universitarie",
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Boccella, N., Imbriani, C., Morone, P. (2014), Analisi microeconomica e scelte pubbliche, LED Edizioni Universitarie, Milano."
+      },
+      {
+       "titolo": "Macroeconomia, un'introduzione. Mercati, istituzioni finanziarie e politiche",
+       "autori": "Imbriani, C., Lopes, A.",
+       "editore": "UTET Università",
        "anno": 2016,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Boccella, N., Imbriani, C., Morone, P. (2014), Analisi microeconomica e scelte pubbliche, LED Edizioni Universitarie, Milano. 2) Imbriani, C., Lopes, A. (2016), Macroeconomia, un'introduzione. Mercati, istituzioni finanziarie e politiche, UTET Università, Torino."
+       "citazione": "Imbriani, C., Lopes, A. (2016), Macroeconomia, un'introduzione. Mercati, istituzioni finanziarie e politiche, UTET Università, Torino."
       },
       {
        "titolo": "N. Boccella, C. Imbriani, P. Morone - Analisi Microeconomica e scelte pubbliche, LED, Milano, 2014.",
@@ -19190,7 +19226,7 @@
        "citazione": "Randall L. Nadeau ed. 2012. The Wiley-Blackwell Companion to Chinese Religions"
       },
       {
-       "titolo": "Paul L. Swanson, ‎Clark Chilson eds, 2006. Nanzan Guide to Japanese Religions. University of Hawai'i Press",
+       "titolo": "Paul L. Swanson, Clark Chilson eds, 2006. Nanzan Guide to Japanese Religions. University of Hawai'i Press",
        "autori": null,
        "editore": null,
        "anno": 2006,
@@ -19199,7 +19235,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Paul L. Swanson, ‎Clark Chilson eds, 2006. Nanzan Guide to Japanese Religions. University of Hawai'i Press"
+       "citazione": "Paul L. Swanson, Clark Chilson eds, 2006. Nanzan Guide to Japanese Religions. University of Hawai'i Press"
       },
       {
        "titolo": "Robert E. Buswell ed. 2007. Religions of Korea in Practice. Princeton University Press",
@@ -24335,18 +24371,6 @@
        "citazione": "The Japan Times, Tōkyō, 2016"
       },
       {
-       "titolo": "ed.), V ol. 1, The Japan Times, Tōkyō, 2016",
-       "autori": null,
-       "editore": null,
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ed.), V ol. 1, The Japan Times, Tōkyō, 2016"
-      },
-      {
        "titolo": "Makino S., Tsutsui M., A Dictionary of Basic Japanese Grammar, The Japan Times, Tōkyō,1989",
        "autori": null,
        "editore": null,
@@ -24381,18 +24405,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Nihongo tadoku kenkyūkai (ed.), Reberu betsu nihongo tadoku raiburarī. Nihongo yomu yomu"
-      },
-      {
-       "titolo": "bunko. Reberu 1, Ask, Tōkyō, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "bunko. Reberu 1, Ask, Tōkyō, 2006."
       },
       {
        "titolo": "Banno E., Ikeda Y. et al., An Integrated Course in Elementary Japanese. Genki (3a ed.), Vol. 1, The Japan Times, Tōkyō, 2016",
@@ -24773,7 +24785,7 @@
       {
        "titolo": "McGregor, R.S., Outline of Hindi grammar. Oxford: Oxford University Press, 1995.",
        "autori": null,
-       "editore": "Outline of Hindi grammar. Oxford: Oxford University Press",
+       "editore": "Outline of Hindi grammar. Oxford",
        "anno": 1995,
        "edizione": null,
        "isbn": null,
@@ -26205,18 +26217,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Shaali, Ali K., Mfalme Chura, OUP, 2004."
-      },
-      {
-       "titolo": "Amandina Lihamba, Mama Mbeku, Cambridge University Press, 1999.",
-       "autori": null,
-       "editore": "Cambridge University Press",
-       "anno": 1999,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Amandina Lihamba, Mama Mbeku, Cambridge University Press, 1999."
       }
      ],
      "esami": [
@@ -26474,18 +26474,6 @@
        "citazione": "California Press; 1991."
       },
       {
-       "titolo": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006."
-      },
-      {
        "titolo": "Bstan ’dzin dge legs et al. (eds.). Spang rgyan me tog, n. 2, 2007, Mi rigs dpe skrun khang, Beijing.",
        "autori": null,
        "editore": null,
@@ -26740,18 +26728,6 @@
        "citazione": "California Press; 1991."
       },
       {
-       "titolo": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/1380/2015/9999?coorte=2024)",
-       "citazione": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006."
-      },
-      {
        "titolo": "Bstan ’dzin dge legs et al. (eds.). Spang rgyan me tog, n. 2, 2007, Mi rigs dpe skrun khang, Beijing.",
        "autori": null,
        "editore": null,
@@ -26996,7 +26972,7 @@
       {
        "titolo": "Lewis, Geoffrey, The Turkish Language Reform, Oxford: Oxford University Press, 1999.",
        "autori": null,
-       "editore": "Oxford: Oxford University Press",
+       "editore": "Oxford",
        "anno": 1999,
        "edizione": null,
        "isbn": null,
@@ -27754,7 +27730,7 @@
       {
        "titolo": "R. Marti, Dal manoscritto alla letteratura: per una testologia del patrimonio scritto slavo. – In: Lo spazio letterario del medioevo. 3: Le culture circostanti, vol. III: Le culture slave, a cura di M. Capaldo, Roma, Salerno editrice 2010: pp. 671-703.",
        "autori": null,
-       "editore": "Salerno editrice 2010: pp. 671-703",
+       "editore": "Salerno editrice 2010",
        "anno": 2010,
        "edizione": null,
        "isbn": null,
@@ -34785,7 +34761,7 @@
        "citazione": "Randall L. Nadeau ed. 2012. The Wiley-Blackwell Companion to Chinese Religions"
       },
       {
-       "titolo": "Paul L. Swanson, ‎Clark Chilson eds, 2006. Nanzan Guide to Japanese Religions. University of Hawai'i Press",
+       "titolo": "Paul L. Swanson, Clark Chilson eds, 2006. Nanzan Guide to Japanese Religions. University of Hawai'i Press",
        "autori": null,
        "editore": null,
        "anno": 2006,
@@ -34794,7 +34770,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/8428/2025/9999?coorte=2025)",
-       "citazione": "Paul L. Swanson, ‎Clark Chilson eds, 2006. Nanzan Guide to Japanese Religions. University of Hawai'i Press"
+       "citazione": "Paul L. Swanson, Clark Chilson eds, 2006. Nanzan Guide to Japanese Religions. University of Hawai'i Press"
       },
       {
        "titolo": "Robert E. Buswell ed. 2007. Religions of Korea in Practice. Princeton University Press",
@@ -40212,18 +40188,6 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2027/1929/2026/9999?coorte=2024",
      "libri": [
       {
-       "titolo": "Per la preparazione dell’esame è necessario studiare, oltre a tutte le dispense fornite durante il corso, uno dei due seguenti manuali:",
-       "autori": null,
-       "editore": "oltre a tutte le dispense fornite durante il corso",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/1929/2015/9999?coorte=2024)",
-       "citazione": "Per la preparazione dell’esame è necessario studiare, oltre a tutte le dispense fornite durante il corso, uno dei due seguenti manuali:"
-      },
-      {
        "titolo": "Bruno A. L. e Riotto M., La letteratura coreana, Roma, L'Asino d'Oro, 2014, pp. 5- 94.",
        "autori": null,
        "editore": null,
@@ -41819,18 +41783,6 @@
      ],
      "url": "https://coursecatalogue.unior.it/insegnamenti/2026/8703/2026/9999?coorte=2024",
      "libri": [
-      {
-       "titolo": "Per la preparazione dell’esame bisognerà studiare, oltre a tutte le slide dell'esame e alle dispense fornite durante l'insegnamento, i testi:",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/8703/2025/9999?coorte=2025)",
-       "citazione": "Per la preparazione dell’esame bisognerà studiare, oltre a tutte le slide dell'esame e alle dispense fornite durante l'insegnamento, i testi:"
-      },
       {
        "titolo": "De Benedittis, Andrea, Introduzione alla cultura coreana, HOEPLI, 2018.",
        "autori": null,
@@ -47519,18 +47471,6 @@
        "citazione": "The Japan Times, Tōkyō, 2016"
       },
       {
-       "titolo": "ed.), V ol. 1, The Japan Times, Tōkyō, 2016",
-       "autori": null,
-       "editore": null,
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/1926/2025/9999?coorte=2025)",
-       "citazione": "ed.), V ol. 1, The Japan Times, Tōkyō, 2016"
-      },
-      {
        "titolo": "Makino S., Tsutsui M., A Dictionary of Basic Japanese Grammar, The Japan Times, Tōkyō,1989",
        "autori": null,
        "editore": null,
@@ -47565,18 +47505,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/1926/2025/9999?coorte=2025)",
        "citazione": "Nihongo tadoku kenkyūkai (ed.), Reberu betsu nihongo tadoku raiburarī. Nihongo yomu yomu"
-      },
-      {
-       "titolo": "bunko. Reberu 1, Ask, Tōkyō, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/1926/2025/9999?coorte=2025)",
-       "citazione": "bunko. Reberu 1, Ask, Tōkyō, 2006."
       },
       {
        "titolo": "Banno E., Ikeda Y. et al., An Integrated Course in Elementary Japanese. Genki (3a ed.), Vol. 1, The Japan Times, Tōkyō, 2016",
@@ -49428,18 +49356,6 @@
        "citazione": "California Press; 1991."
       },
       {
-       "titolo": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/9172/2025/9999?coorte=2025)",
-       "citazione": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006."
-      },
-      {
        "titolo": "Bstan ’dzin dge legs et al. (eds.). Spang rgyan me tog, n. 2, 2007, Mi rigs dpe skrun khang, Beijing.",
        "autori": null,
        "editore": null,
@@ -49692,18 +49608,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/1380/2015/9999?coorte=2024)",
        "citazione": "California Press; 1991."
-      },
-      {
-       "titolo": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/1380/2015/9999?coorte=2024)",
-       "citazione": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006."
       },
       {
        "titolo": "Bstan ’dzin dge legs et al. (eds.). Spang rgyan me tog, n. 2, 2007, Mi rigs dpe skrun khang, Beijing.",
@@ -52024,7 +51928,7 @@
       {
        "titolo": "Culpeper, Jonathan, and Michael Haugh. Pragmatics and the English Language. Basingstoke: Palgrave Macmillan, 2014. Huang, Yan. Pragmatics. 2nd ed. Oxford: Oxford University Press, 2014. Mansfield-Kelley, Deane, and Lois A. Marchino, eds. The Longman Anthology of Detective Fiction. New York: Pearson",
        "autori": null,
-       "editore": "Yan. Pragmatics. 2nd ed. Oxford: Oxford University Press",
+       "editore": "Yan. Pragmatics. 2nd ed. Oxford",
        "anno": 2005,
        "edizione": null,
        "isbn": null,
@@ -53546,8 +53450,8 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2026/9644/2025/1?coorte=2025",
      "libri": [
       {
-       "titolo": "D. Ross, L. Berghout, M. Mertens, R. Dagnino, Mooi zo! Corso di lingua neerlandese, Hoepli, 2017; 2) Slide di approfondimento fornite durante il corso; 3) Altri testi e materiali cartacei e digitali verranno forniti durante il corso. La scelta sarà fatta – e comunicata agli studenti - non appena tut",
-       "autori": null,
+       "titolo": "Mooi zo! Corso di lingua neerlandese",
+       "autori": "D. Ross, L. Berghout, M. Mertens, R. Dagnino",
        "editore": "Hoepli",
        "anno": 2017,
        "edizione": null,
@@ -53555,7 +53459,31 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "D. Ross, L. Berghout, M. Mertens, R. Dagnino, Mooi zo! Corso di lingua neerlandese, Hoepli, 2017; 2) Slide di approfondimento fornite durante il corso; 3) Altri testi e materiali cartacei e digitali verranno forniti durante il corso. La scelta sarà fatta – e comunicata agli studenti - non appena tutti gli autori e docenti ospiti confermeranno la loro presenza a Napoli."
+       "citazione": "D. Ross, L. Berghout, M. Mertens, R. Dagnino, Mooi zo! Corso di lingua neerlandese, Hoepli, 2017;"
+      },
+      {
+       "titolo": "Slide di approfondimento fornite durante il corso;",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "Slide di approfondimento fornite durante il corso;"
+      },
+      {
+       "titolo": "Altri testi e materiali cartacei e digitali verranno forniti durante il corso. La scelta sarà fatta – e comunicata agli studenti - non appena tutti gli autori e docenti ospiti confermeranno la loro presenza a Napoli.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "Altri testi e materiali cartacei e digitali verranno forniti durante il corso. La scelta sarà fatta – e comunicata agli studenti - non appena tutti gli autori e docenti ospiti confermeranno la loro presenza a Napoli."
       }
      ],
      "esami": [
@@ -64443,7 +64371,7 @@
       {
        "titolo": "Culpeper, Jonathan, and Michael Haugh. Pragmatics and the English Language. Basingstoke: Palgrave Macmillan, 2014. Huang, Yan. Pragmatics. 2nd ed. Oxford: Oxford University Press, 2014. Mansfield-Kelley, Deane, and Lois A. Marchino, eds. The Longman Anthology of Detective Fiction. New York: Pearson",
        "autori": null,
-       "editore": "Yan. Pragmatics. 2nd ed. Oxford: Oxford University Press",
+       "editore": "Yan. Pragmatics. 2nd ed. Oxford",
        "anno": 2005,
        "edizione": null,
        "isbn": null,
@@ -65695,8 +65623,8 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2027/2590/2026/2?coorte=2024",
      "libri": [
       {
-       "titolo": "D. Ross, L. Berghout, M. Mertens, R. Dagnino, Mooi zo! Corso di lingua neerlandese, Hoepli, 2017; 2) Slide di approfondimento fornite durante il corso; 3) Altri testi e materiali cartacei e digitali verranno forniti durante il corso. La scelta sarà fatta – e comunicata agli studenti - non appena tut",
-       "autori": null,
+       "titolo": "Mooi zo! Corso di lingua neerlandese",
+       "autori": "D. Ross, L. Berghout, M. Mertens, R. Dagnino",
        "editore": "Hoepli",
        "anno": 2017,
        "edizione": null,
@@ -65704,7 +65632,31 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "D. Ross, L. Berghout, M. Mertens, R. Dagnino, Mooi zo! Corso di lingua neerlandese, Hoepli, 2017; 2) Slide di approfondimento fornite durante il corso; 3) Altri testi e materiali cartacei e digitali verranno forniti durante il corso. La scelta sarà fatta – e comunicata agli studenti - non appena tutti gli autori e docenti ospiti confermeranno la loro presenza a Napoli."
+       "citazione": "D. Ross, L. Berghout, M. Mertens, R. Dagnino, Mooi zo! Corso di lingua neerlandese, Hoepli, 2017;"
+      },
+      {
+       "titolo": "Slide di approfondimento fornite durante il corso;",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "Slide di approfondimento fornite durante il corso;"
+      },
+      {
+       "titolo": "Altri testi e materiali cartacei e digitali verranno forniti durante il corso. La scelta sarà fatta – e comunicata agli studenti - non appena tutti gli autori e docenti ospiti confermeranno la loro presenza a Napoli.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "Altri testi e materiali cartacei e digitali verranno forniti durante il corso. La scelta sarà fatta – e comunicata agli studenti - non appena tutti gli autori e docenti ospiti confermeranno la loro presenza a Napoli."
       }
      ],
      "esami": [
@@ -69784,7 +69736,7 @@
       {
        "titolo": "Lewis, Geoffrey, The Turkish Language Reform, Oxford: Oxford University Press, 1999.",
        "autori": null,
-       "editore": "Oxford: Oxford University Press",
+       "editore": "Oxford",
        "anno": 1999,
        "edizione": null,
        "isbn": null,
@@ -70375,16 +70327,28 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2026/6786/2026/2?coorte=2026",
      "libri": [
       {
-       "titolo": "Boccella, N., Imbriani, C., Morone, P. (2014), Analisi microeconomica e scelte pubbliche, LED Edizioni Universitarie, Milano. 2) Imbriani, C., Lopes, A. (2016), Macroeconomia, un'introduzione. Mercati, istituzioni finanziarie e politiche, UTET Università, Torino.",
-       "autori": null,
+       "titolo": "Analisi microeconomica e scelte pubbliche",
+       "autori": "Boccella, N., Imbriani, C., Morone, P.",
        "editore": "LED Edizioni Universitarie",
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Boccella, N., Imbriani, C., Morone, P. (2014), Analisi microeconomica e scelte pubbliche, LED Edizioni Universitarie, Milano."
+      },
+      {
+       "titolo": "Macroeconomia, un'introduzione. Mercati, istituzioni finanziarie e politiche",
+       "autori": "Imbriani, C., Lopes, A.",
+       "editore": "UTET Università",
        "anno": 2016,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Boccella, N., Imbriani, C., Morone, P. (2014), Analisi microeconomica e scelte pubbliche, LED Edizioni Universitarie, Milano. 2) Imbriani, C., Lopes, A. (2016), Macroeconomia, un'introduzione. Mercati, istituzioni finanziarie e politiche, UTET Università, Torino."
+       "citazione": "Imbriani, C., Lopes, A. (2016), Macroeconomia, un'introduzione. Mercati, istituzioni finanziarie e politiche, UTET Università, Torino."
       }
      ],
      "esami": [
@@ -81919,7 +81883,7 @@
       {
        "titolo": "► Eleanor Robson, Mathematics in Ancient Iraq: A Social History, Princeton and Oxford: Princeton University Press, 2008: cap. 1, ‘Scope, Methods, Sources’ (pp. 1-26)",
        "autori": null,
-       "editore": "Princeton and Oxford: Princeton University Press",
+       "editore": "Princeton and Oxford",
        "anno": 2008,
        "edizione": null,
        "isbn": null,
@@ -84793,7 +84757,7 @@
        "edizione": null,
        "isbn": null,
        "lingua": null,
-       "tipo": "obbligatorio",
+       "tipo": "consigliato",
        "note": null,
        "citazione": "Il materiale sarà fornito a cura del docente. Come testi di consultazione (non obbligatori), si può ricorrere per le lingue semitiche all’agile compendio A.D. Rubin, A Brief Introduction to the Semitic Languages, Piscataway: Gorgias Press 2010 e, per il fenicio, a M.G. Amadasi Guzzo, R. De Simone, La lingua dei fenici, Milano: Hoepli 2024."
       },
@@ -84805,7 +84769,7 @@
        "edizione": null,
        "isbn": null,
        "lingua": null,
-       "tipo": "obbligatorio",
+       "tipo": "consigliato",
        "note": null,
        "citazione": "Come testi di consultazione (non obbligatori), si può ricorrere per le lingue semitiche all’agile compendio A.D. Rubin, A Brief Introduction to the Semitic Languages, Gorgias Press 2010 e, per i testi di Elefantina, a T. Muraoka, Introduction to Egyptian Aramaic, Ugarit-Verlag 2012."
       }
@@ -89979,7 +89943,7 @@
       {
        "titolo": "Descent of Ishtar to the Netherworld",
        "autori": "B. Foster",
-       "editore": "CDL Press 1996: 402-409",
+       "editore": "CDL Press 1996",
        "anno": 1996,
        "edizione": null,
        "isbn": null,
@@ -90237,7 +90201,7 @@
       {
        "titolo": "Kapstein, Matthew. The Tibetans. Oxford: Blackwell Publishing, 2006.",
        "autori": null,
-       "editore": "Matthew. The Tibetans. Oxford: Blackwell Publishing",
+       "editore": "Matthew. The Tibetans. Oxford",
        "anno": 2006,
        "edizione": null,
        "isbn": null,
@@ -90981,18 +90945,6 @@
        "citazione": "The Japan Times, Tōkyō, 2016"
       },
       {
-       "titolo": "ed.), V ol. 1, The Japan Times, Tōkyō, 2016",
-       "autori": null,
-       "editore": null,
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ed.), V ol. 1, The Japan Times, Tōkyō, 2016"
-      },
-      {
        "titolo": "Makino S., Tsutsui M., A Dictionary of Basic Japanese Grammar, The Japan Times, Tōkyō,1989",
        "autori": null,
        "editore": null,
@@ -91027,18 +90979,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Nihongo tadoku kenkyūkai (ed.), Reberu betsu nihongo tadoku raiburarī. Nihongo yomu yomu"
-      },
-      {
-       "titolo": "bunko. Reberu 1, Ask, Tōkyō, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "bunko. Reberu 1, Ask, Tōkyō, 2006."
       },
       {
        "titolo": "Banno E., Ikeda Y. et al., An Integrated Course in Elementary Japanese. Genki (3a ed.), Vol. 1, The Japan Times, Tōkyō, 2016",
@@ -92075,18 +92015,6 @@
        "citazione": "California Press; 1991."
       },
       {
-       "titolo": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006."
-      },
-      {
        "titolo": "Bstan ’dzin dge legs et al. (eds.). Spang rgyan me tog, n. 2, 2007, Mi rigs dpe skrun khang, Beijing.",
        "autori": null,
        "editore": null,
@@ -92413,18 +92341,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Göksel, Asli & Kerslake, Celia 2005, Turkish / A Comprehensive Grammar, London, Routledge."
-      },
-      {
-       "titolo": "Lewis G. L. 1967, Turkish Grammar, Oxford University Press, Oxford.",
-       "autori": null,
-       "editore": "Oxford University Press",
-       "anno": 1967,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Lewis G. L. 1967, Turkish Grammar, Oxford University Press, Oxford."
       }
      ],
      "esami": [
@@ -92551,7 +92467,7 @@
       {
        "titolo": "Lewis, Geoffrey, The Turkish Language Reform, Oxford: Oxford University Press, 1999.",
        "autori": null,
-       "editore": "Oxford: Oxford University Press",
+       "editore": "Oxford",
        "anno": 1999,
        "edizione": null,
        "isbn": null,
@@ -93933,7 +93849,7 @@
       {
        "titolo": "D. CRYSTAL (2003) English as a Global Language, Cambridge: CUP (archive.org)",
        "autori": null,
-       "editore": "Cambridge: CUP (archive.org)",
+       "editore": "Cambridge",
        "anno": 2003,
        "edizione": null,
        "isbn": null,
@@ -93945,7 +93861,7 @@
       {
        "titolo": "S. HOROBIN (2016) How English Became English : A Short History of a Global Language, Oxford: OUP (SIBA> ProQuest>Ebook Central)",
        "autori": null,
-       "editore": "Oxford: OUP (SIBA> ProQuest>Ebook Central)",
+       "editore": "Oxford",
        "anno": 2016,
        "edizione": null,
        "isbn": null,
@@ -93957,7 +93873,7 @@
       {
        "titolo": "R. HOGG, D. DENISON (eds.) (2006) A History of the English Language, Cambridge: CUP (SIBA> ProQuest >Ebook Central)",
        "autori": null,
-       "editore": "Cambridge: CUP (SIBA> ProQuest >Ebook Central)",
+       "editore": "Cambridge",
        "anno": 2006,
        "edizione": null,
        "isbn": null,
@@ -94005,7 +93921,7 @@
       {
        "titolo": "K. BRUNNER (1965) An outline of Middle English grammar, Oxford: Basil Blackwell (archive.org)",
        "autori": null,
-       "editore": "Oxford: Basil Blackwell (archive.org)",
+       "editore": "Oxford",
        "anno": 1965,
        "edizione": null,
        "isbn": null,
@@ -96564,7 +96480,7 @@
        "edizione": null,
        "isbn": null,
        "lingua": null,
-       "tipo": "obbligatorio",
+       "tipo": "consigliato",
        "note": null,
        "citazione": "Il materiale sarà fornito a cura del docente. Come testi di consultazione (non obbligatori), si può ricorrere per le lingue semitiche all’agile compendio A.D. Rubin, A Brief Introduction to the Semitic Languages, Piscataway: Gorgias Press 2010 e, per il fenicio, a M.G. Amadasi Guzzo, R. De Simone, La lingua dei fenici, Milano: Hoepli 2024."
       }
@@ -101235,16 +101151,40 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2026/8168/2025/2?coorte=2025",
      "libri": [
       {
-       "titolo": "J. Conrad, Cuore di tenebra, edizione inglese/italiano di R. Bernasconi, con Introduzione di R. Hampson e un saggio di V.S. Naipaul, Mondadori, Milano 2012. 2) G. Moretti, Estetica e comparatistica, Morcelliana, Brescia 2021, pp. 91-136 (parte seconda – Conradiana). 3) R. Ambrosini, Le storie di Con",
-       "autori": null,
+       "titolo": "Cuore di tenebra, edizione inglese/italiano di R. Bernasconi, con Introduzione di R. Hampson e un saggio di V.S. Naipaul",
+       "autori": "J. Conrad",
        "editore": "Mondadori",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "J. Conrad, Cuore di tenebra, edizione inglese/italiano di R. Bernasconi, con Introduzione di R. Hampson e un saggio di V.S. Naipaul, Mondadori, Milano 2012."
+      },
+      {
+       "titolo": "G. Moretti, Estetica e comparatistica, Morcelliana, Brescia 2021, pp. 91-136 (parte seconda – Conradiana).",
+       "autori": null,
+       "editore": null,
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "G. Moretti, Estetica e comparatistica, Morcelliana, Brescia 2021, pp. 91-136 (parte seconda – Conradiana)."
+      },
+      {
+       "titolo": "Le storie di Conrad. Biografia intellettuale di un romanziere",
+       "autori": "R. Ambrosini",
+       "editore": "Carocci",
        "anno": 2019,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "J. Conrad, Cuore di tenebra, edizione inglese/italiano di R. Bernasconi, con Introduzione di R. Hampson e un saggio di V.S. Naipaul, Mondadori, Milano 2012. 2) G. Moretti, Estetica e comparatistica, Morcelliana, Brescia 2021, pp. 91-136 (parte seconda – Conradiana). 3) R. Ambrosini, Le storie di Conrad. Biografia intellettuale di un romanziere, Carocci, Roma 2019, pp. 9-161."
+       "citazione": "R. Ambrosini, Le storie di Conrad. Biografia intellettuale di un romanziere, Carocci, Roma 2019, pp. 9-161."
       }
      ],
      "esami": [
@@ -106630,18 +106570,6 @@
        "citazione": "M. Avino, C. Pinto, F. Aljaramneh, M. Ruocco, Comunicare in arabo, vol. 3, II parte\\ da Unità 5 a unità 10, HoepliAcademy, Milano 2024. + eBook+ e Risorse online"
       },
       {
-       "titolo": "Mohammad Alhawary, Arabic Grammar in Context, London, Routledge, 2016.",
-       "autori": null,
-       "editore": "Routledge",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Mohammad Alhawary, Arabic Grammar in Context, London, Routledge, 2016."
-      },
-      {
        "titolo": "Joseph H. Hajjar, Traitè de Traduction, Diràsah fi usul al-tarjamah, Dar el-Machreq Beyrouth, 2008",
        "autori": null,
        "editore": null,
@@ -108718,18 +108646,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Göksel, Asli & Kerslake, Celia 2005, Turkish / A Comprehensive Grammar, London, Routledge."
-      },
-      {
-       "titolo": "Lewis G. L. 1967, Turkish Grammar, Oxford University Press, Oxford.",
-       "autori": null,
-       "editore": "Oxford University Press",
-       "anno": 1967,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Lewis G. L. 1967, Turkish Grammar, Oxford University Press, Oxford."
       }
      ],
      "esami": [
@@ -112223,18 +112139,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Göksel, Asli & Kerslake, Celia 2005, Turkish / A Comprehensive Grammar, London, Routledge."
-      },
-      {
-       "titolo": "Lewis G. L. 1967, Turkish Grammar, Oxford University Press, Oxford.",
-       "autori": null,
-       "editore": "Oxford University Press",
-       "anno": 1967,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Lewis G. L. 1967, Turkish Grammar, Oxford University Press, Oxford."
       }
      ],
      "esami": [
@@ -120860,8 +120764,8 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2026/9327/2025/9999?coorte=2025",
      "libri": [
       {
-       "titolo": "E. Tavani, Filosofia del selfie: estetica e pratiche del sé, Carocci, Roma 2026 2) Materiali disponibili sul sito del corso **I/le non frequentanti porteranno, oltre ai punti 1. e 2.: 3) M. Foucault, Tecnologie del sé, Bollati Boringhieri, Torino.",
-       "autori": null,
+       "titolo": "Filosofia del selfie: estetica e pratiche del sé",
+       "autori": "E. Tavani",
        "editore": "Carocci",
        "anno": 2026,
        "edizione": null,
@@ -120869,7 +120773,19 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "E. Tavani, Filosofia del selfie: estetica e pratiche del sé, Carocci, Roma 2026 2) Materiali disponibili sul sito del corso **I/le non frequentanti porteranno, oltre ai punti 1. e 2.: 3) M. Foucault, Tecnologie del sé, Bollati Boringhieri, Torino."
+       "citazione": "E. Tavani, Filosofia del selfie: estetica e pratiche del sé, Carocci, Roma 2026"
+      },
+      {
+       "titolo": "Materiali disponibili sul sito del corso **I/le non frequentanti porteranno, oltre ai punti 1. e 2.: 3) M. Foucault, Tecnologie del sé, Bollati Boringhieri, Torino.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Materiali disponibili sul sito del corso **I/le non frequentanti porteranno, oltre ai punti 1. e 2.: 3) M. Foucault, Tecnologie del sé, Bollati Boringhieri, Torino."
       }
      ],
      "esami": [],
@@ -128301,7 +128217,7 @@
        "edizione": null,
        "isbn": null,
        "lingua": null,
-       "tipo": "obbligatorio",
+       "tipo": "consigliato",
        "note": null,
        "citazione": "Il materiale sarà fornito a cura del docente. Come testi di consultazione (non obbligatori), si può ricorrere per le lingue semitiche all’agile compendio A.D. Rubin, A Brief Introduction to the Semitic Languages, Piscataway: Gorgias Press 2010 e, per il fenicio, a M.G. Amadasi Guzzo, R. De Simone, La lingua dei fenici, Milano: Hoepli 2024."
       }
@@ -130424,7 +130340,7 @@
       {
        "titolo": "Ibn al-ʿArabī",
        "autori": "Ahmed Ateş",
-       "editore": "2nd Edition (esistono due edizioni: cartacea e online)",
+       "editore": "2nd Edition (esistono due edizioni",
        "anno": null,
        "edizione": null,
        "isbn": null,
@@ -130436,7 +130352,7 @@
       {
        "titolo": "introduzione",
        "autori": "Michel Chodkiewicz",
-       "editore": "pp. 7-41 (altre edizioni: Bompiani",
+       "editore": "pp. 7-41 (altre edizioni",
        "anno": 2006,
        "edizione": null,
        "isbn": null,
@@ -135720,7 +135636,7 @@
       {
        "titolo": "McGregor, R.S., Outline of Hindi grammar. Oxford: Oxford University Press, 1995.",
        "autori": null,
-       "editore": "Outline of Hindi grammar. Oxford: Oxford University Press",
+       "editore": "Outline of Hindi grammar. Oxford",
        "anno": 1995,
        "edizione": null,
        "isbn": null,
@@ -135890,7 +135806,7 @@
       {
        "titolo": "McGregor, R.S., Outline of Hindi grammar. Oxford: Oxford University Press, 1995.",
        "autori": null,
-       "editore": "Outline of Hindi grammar. Oxford: Oxford University Press",
+       "editore": "Outline of Hindi grammar. Oxford",
        "anno": 1995,
        "edizione": null,
        "isbn": null,
@@ -137781,18 +137697,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Shaali, Ali K., Mfalme Chura, OUP, 2004."
-      },
-      {
-       "titolo": "Amandina Lihamba, Mama Mbeku, Cambridge University Press, 1999.",
-       "autori": null,
-       "editore": "Cambridge University Press",
-       "anno": 1999,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Amandina Lihamba, Mama Mbeku, Cambridge University Press, 1999."
       }
      ],
      "esami": [
@@ -138136,18 +138040,6 @@
        "citazione": "California Press; 1991."
       },
       {
-       "titolo": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006."
-      },
-      {
        "titolo": "Bstan ’dzin dge legs et al. (eds.). Spang rgyan me tog, n. 2, 2007, Mi rigs dpe skrun khang, Beijing.",
        "autori": null,
        "editore": null,
@@ -138400,18 +138292,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/8668/2018/1?coorte=2024)",
        "citazione": "California Press; 1991."
-      },
-      {
-       "titolo": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/8668/2018/1?coorte=2024)",
-       "citazione": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006."
       },
       {
        "titolo": "Bstan ’dzin dge legs et al. (eds.). Spang rgyan me tog, n. 2, 2007, Mi rigs dpe skrun khang, Beijing.",
@@ -138731,7 +138611,7 @@
       {
        "titolo": "Lewis, Geoffrey, The Turkish Language Reform, Oxford: Oxford University Press, 1999.",
        "autori": null,
-       "editore": "Oxford: Oxford University Press",
+       "editore": "Oxford",
        "anno": 1999,
        "edizione": null,
        "isbn": null,
@@ -139994,16 +139874,40 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2026/8168/2026/2?coorte=2026",
      "libri": [
       {
-       "titolo": "J. Conrad, Cuore di tenebra, edizione inglese/italiano di R. Bernasconi, con Introduzione di R. Hampson e un saggio di V.S. Naipaul, Mondadori, Milano 2012. 2) G. Moretti, Estetica e comparatistica, Morcelliana, Brescia 2021, pp. 91-136 (parte seconda – Conradiana). 3) R. Ambrosini, Le storie di Con",
-       "autori": null,
+       "titolo": "Cuore di tenebra, edizione inglese/italiano di R. Bernasconi, con Introduzione di R. Hampson e un saggio di V.S. Naipaul",
+       "autori": "J. Conrad",
        "editore": "Mondadori",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "J. Conrad, Cuore di tenebra, edizione inglese/italiano di R. Bernasconi, con Introduzione di R. Hampson e un saggio di V.S. Naipaul, Mondadori, Milano 2012."
+      },
+      {
+       "titolo": "G. Moretti, Estetica e comparatistica, Morcelliana, Brescia 2021, pp. 91-136 (parte seconda – Conradiana).",
+       "autori": null,
+       "editore": null,
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "G. Moretti, Estetica e comparatistica, Morcelliana, Brescia 2021, pp. 91-136 (parte seconda – Conradiana)."
+      },
+      {
+       "titolo": "Le storie di Conrad. Biografia intellettuale di un romanziere",
+       "autori": "R. Ambrosini",
+       "editore": "Carocci",
        "anno": 2019,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "J. Conrad, Cuore di tenebra, edizione inglese/italiano di R. Bernasconi, con Introduzione di R. Hampson e un saggio di V.S. Naipaul, Mondadori, Milano 2012. 2) G. Moretti, Estetica e comparatistica, Morcelliana, Brescia 2021, pp. 91-136 (parte seconda – Conradiana). 3) R. Ambrosini, Le storie di Conrad. Biografia intellettuale di un romanziere, Carocci, Roma 2019, pp. 9-161."
+       "citazione": "R. Ambrosini, Le storie di Conrad. Biografia intellettuale di un romanziere, Carocci, Roma 2019, pp. 9-161."
       }
      ],
      "esami": [
@@ -153468,18 +153372,6 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2026/7751/2025/3?coorte=2025",
      "libri": [
       {
-       "titolo": "La sharì‘a e il mondo contemporaneo",
-       "autori": "Donini V.M., Scolart D.",
-       "editore": "Carocci",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/7751/2018/1?coorte=2024)",
-       "citazione": "Donini V.M., Scolart D., La sharì‘a e il mondo contemporaneo, Roma, Carocci, 2015 (ristampa 2020)"
-      },
-      {
        "titolo": "Per la parte contemporanea: Donini V.M., Scolart D., La sharì‘a e il mondo contemporaneo, Roma, Carocci, 2015 (ristampa 2020)",
        "autori": null,
        "editore": "Carocci",
@@ -156613,7 +156505,7 @@
       {
        "titolo": "McGregor, R.S., Outline of Hindi grammar. Oxford: Oxford University Press, 1995.",
        "autori": null,
-       "editore": "Outline of Hindi grammar. Oxford: Oxford University Press",
+       "editore": "Outline of Hindi grammar. Oxford",
        "anno": 1995,
        "edizione": null,
        "isbn": null,
@@ -157643,18 +157535,6 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/8668/2018/1?coorte=2024)",
        "citazione": "California Press; 1991."
-      },
-      {
-       "titolo": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unior.coursecatalogue.cineca.it/insegnamenti/2025/8668/2018/1?coorte=2024)",
-       "citazione": "chos sgrung nyer gcig pa rgyas par phye ba bzhugs so. Bod longs mi dmangs dpe skrun khang, Lhasa, 2006."
       },
       {
        "titolo": "Bstan ’dzin dge legs et al. (eds.). Spang rgyan me tog, n. 2, 2007, Mi rigs dpe skrun khang, Beijing.",
@@ -159344,16 +159224,28 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2026/8799/2026/3?coorte=2026",
      "libri": [
       {
-       "titolo": "Manuale per la preparazione dell’esame (obbligatorio): Alessandra Quarta e Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione disponibile (tutto) 2) Il Codice di diritto digitale (obbligatorio): a cura di Salvatore Orlando, editore McGraw Hill 2026",
+       "titolo": "Manuale per la preparazione dell’esame (obbligatorio): Alessandra Quarta e Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione disponibile (tutto)",
        "autori": null,
-       "editore": "Le Monnier Università",
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "Manuale per la preparazione dell’esame (obbligatorio): Alessandra Quarta e Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione disponibile (tutto)"
+      },
+      {
+       "titolo": "Il Codice di diritto digitale (obbligatorio): a cura di Salvatore Orlando, editore McGraw Hill 2026",
+       "autori": null,
+       "editore": null,
        "anno": 2026,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "Manuale per la preparazione dell’esame (obbligatorio): Alessandra Quarta e Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione disponibile (tutto) 2) Il Codice di diritto digitale (obbligatorio): a cura di Salvatore Orlando, editore McGraw Hill 2026"
+       "citazione": "Il Codice di diritto digitale (obbligatorio): a cura di Salvatore Orlando, editore McGraw Hill 2026"
       }
      ],
      "esami": [
@@ -166646,16 +166538,28 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2025/9073/2024/2?coorte=2025",
      "libri": [
       {
-       "titolo": "Alessandra Quarta and Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione - Ad eccezione dei capitoli 2 e 3 - Manuale (obbligatorio) 2) Salvatore Orlando, Il Codice di diritto digitale, McGraw Hill New York, 2026 - Codice (obbligatorio)",
+       "titolo": "Alessandra Quarta and Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione - Ad eccezione dei capitoli 2 e 3 - Manuale (obbligatorio)",
        "autori": null,
-       "editore": "Le Monnier Università",
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "Alessandra Quarta and Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione - Ad eccezione dei capitoli 2 e 3 - Manuale (obbligatorio)"
+      },
+      {
+       "titolo": "Salvatore Orlando, Il Codice di diritto digitale, McGraw Hill New York, 2026 - Codice (obbligatorio)",
+       "autori": null,
+       "editore": null,
        "anno": 2026,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "Alessandra Quarta and Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione - Ad eccezione dei capitoli 2 e 3 - Manuale (obbligatorio) 2) Salvatore Orlando, Il Codice di diritto digitale, McGraw Hill New York, 2026 - Codice (obbligatorio)"
+       "citazione": "Salvatore Orlando, Il Codice di diritto digitale, McGraw Hill New York, 2026 - Codice (obbligatorio)"
       }
      ],
      "esami": [
@@ -168908,16 +168812,28 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2026/9073/2026/2?coorte=2026",
      "libri": [
       {
-       "titolo": "Alessandra Quarta and Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione - Ad eccezione dei capitoli 2 e 3 - Manuale (obbligatorio) 2) Salvatore Orlando, Il Codice di diritto digitale, McGraw Hill New York, 2026 - Codice (obbligatorio)",
+       "titolo": "Alessandra Quarta and Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione - Ad eccezione dei capitoli 2 e 3 - Manuale (obbligatorio)",
        "autori": null,
-       "editore": "Le Monnier Università",
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "Alessandra Quarta and Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione - Ad eccezione dei capitoli 2 e 3 - Manuale (obbligatorio)"
+      },
+      {
+       "titolo": "Salvatore Orlando, Il Codice di diritto digitale, McGraw Hill New York, 2026 - Codice (obbligatorio)",
+       "autori": null,
+       "editore": null,
        "anno": 2026,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "Alessandra Quarta and Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione - Ad eccezione dei capitoli 2 e 3 - Manuale (obbligatorio) 2) Salvatore Orlando, Il Codice di diritto digitale, McGraw Hill New York, 2026 - Codice (obbligatorio)"
+       "citazione": "Salvatore Orlando, Il Codice di diritto digitale, McGraw Hill New York, 2026 - Codice (obbligatorio)"
       }
      ],
      "esami": [
@@ -171134,16 +171050,28 @@
      "url": "https://coursecatalogue.unior.it/insegnamenti/2026/8799/2025/1?coorte=2025",
      "libri": [
       {
-       "titolo": "Manuale per la preparazione dell’esame (obbligatorio): Alessandra Quarta e Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione disponibile (tutto) 2) Il Codice di diritto digitale (obbligatorio): a cura di Salvatore Orlando, editore McGraw Hill 2026",
+       "titolo": "Manuale per la preparazione dell’esame (obbligatorio): Alessandra Quarta e Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione disponibile (tutto)",
        "autori": null,
-       "editore": "Le Monnier Università",
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "Manuale per la preparazione dell’esame (obbligatorio): Alessandra Quarta e Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione disponibile (tutto)"
+      },
+      {
+       "titolo": "Il Codice di diritto digitale (obbligatorio): a cura di Salvatore Orlando, editore McGraw Hill 2026",
+       "autori": null,
+       "editore": null,
        "anno": 2026,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "Manuale per la preparazione dell’esame (obbligatorio): Alessandra Quarta e Guido Smorto, Diritto privato dei mercati digitali, Le Monnier Università, Milano, ultima edizione disponibile (tutto) 2) Il Codice di diritto digitale (obbligatorio): a cura di Salvatore Orlando, editore McGraw Hill 2026"
+       "citazione": "Il Codice di diritto digitale (obbligatorio): a cura di Salvatore Orlando, editore McGraw Hill 2026"
       }
      ],
      "esami": [

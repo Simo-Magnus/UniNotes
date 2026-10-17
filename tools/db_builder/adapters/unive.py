@@ -31,10 +31,19 @@ def _codice(url: str | None) -> str | None:
     return m.group(1) if m else None
 
 
+# Ca' Foscari divide l'anno in 4 «periodi» (1° e 2° nel 1° semestre, 3° e 4° nel 2°): le lezioni del 1° periodo vanno
+# dal 21/09 a fine ottobre, quelle del 2° da inizio novembre a metà dicembre (file ICS ufficiale di ogni insegnamento),
+# il 3° e il 4° da febbraio a maggio (piani delle frequenze pubblicati sul sito). «2° Periodo» NON è il 2° semestre.
+PERIODO_A_SEMESTRE = {"1": "1", "2": "1", "3": "2", "4": "2"}
+
+
 def _periodo(t: str) -> str | None:
-    m = re.match(r"\s*(\d|I{1,3}|IV)\s*°?\s*(?:periodo|semestre|period|semester)", t, re.I)
+    m = re.match(r"\s*(\d|I{1,3}|IV)\s*°?\s*(periodo|semestre|period|semester)", t, re.I)
     if m:
-        return {"I": "1", "II": "2", "III": "3", "IV": "4"}.get(m.group(1).upper(), m.group(1))
+        n = {"I": "1", "II": "2", "III": "3", "IV": "4"}.get(m.group(1).upper(), m.group(1))
+        if m.group(2).lower() in ("periodo", "period"):
+            return PERIODO_A_SEMESTRE.get(n, n)
+        return n
     return "annuale" if re.search(r"(?i)annual", t) else (t.strip() or None)
 
 

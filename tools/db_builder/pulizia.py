@@ -31,7 +31,7 @@ SEM2 = re.compile(r"(?i)^(secondo|2\s*°?|ii)\s*(ciclo\s+)?(semestr|ciclo semest
 ANNUALE = re.compile(r"(?i)^(ciclo annuale( unico)?|annualit[àa]( singola)?( (i|ii|iii|iv|v|vi) anno)?|annuale|annual|"
                      r"attivit[àa] a durata annuale|intero anno|anno intero|year|yearly|full year|i e ii semestre|"
                      r"1 e 2 semestre|primo e secondo semestre)$")
-SENZA_PERIODO = re.compile(r"(?i)^(undefined|non definito|--+|-|n\.?d\.?|periodo fittizio.*)$")
+SENZA_PERIODO = re.compile(r"(?i)^(undefined|non definito|--+|-|n\.?d\.?|periodo fittizio.*|periodo non specificat\w*)$")
 MOJIBAKE = re.compile(r"Ã.|â€|Â")
 PLACEHOLDER = re.compile(r"(?i)(fittizi[oa]|to be defined|codocenza|non definit[oa]|da definire|da nominare|da assegnare|tbd|tba|n\.?\s?d\.?)\b|"
                          r"^docente\b(?!\s+[A-Z][a-z])|^docente\s+(csal|vacante|esterno)$")
@@ -80,7 +80,9 @@ def isbn_valido(s: str) -> bool:
     return False
 
 
-def _data(s: str | None) -> dt.date | None:
+def _data(s: str | None, con_ora: bool = False) -> dt.date | None:
+    if con_ora:  # «22/02/2027 00:00:00»
+        s = re.sub(r"[ T]\d{1,2}:\d{2}(:\d{2})?$", "", s or "")
     m = re.match(r"(\d{2})/(\d{2})/(\d{4})$", s or "") or re.match(r"(\d{4})-(\d{2})-(\d{2})$", s or "")
     if not m:
         return None
@@ -91,9 +93,9 @@ def _data(s: str | None) -> dt.date | None:
         return None
 
 
-def _semestre_da_date(inizio, fine) -> str | None:
+def _semestre_da_date(inizio, fine, con_ora: bool = False) -> str | None:
     """Semestre dalle date del periodo didattico (vale anche per cicli, trimestri e quadrimestri)."""
-    a, b = _data(inizio), _data(fine)
+    a, b = _data(inizio, con_ora), _data(fine, con_ora)
     if not a or not b or b <= a:
         return None
     if (b - a).days > 180:
@@ -126,11 +128,24 @@ def periodo(p, inizio=None, fine=None):
         return "annuale"
     if SENZA_PERIODO.search(t):
         return None
+    if re.search(r"(?i)\bprimo\s+semestre\b|\b1\s*°?\s*semestre\b|\bi\s+semestre\b", t):  # «Primo Periodo - Primo Semestre»
+        return "1"
+    if re.search(r"(?i)\bsecondo\s+semestre\b|\b2\s*°?\s*semestre\b|\bii\s+semestre\b", t):
+        return "2"
+    if re.search(r"(?i)annual", t):  # «Ciclo Annuale Unico posticipato», «… Breve»
+        return "annuale"
     parti = [x.strip() for x in t.split(",") if x.strip()]
     if len(parti) > 1 and set(parti) <= {"1", "2"}:  # moduli in semestri diversi
         return "annuale" if len(set(parti)) == 2 else parti[0]
     if re.fullmatch(r"[A-Z]{1,3}\d?(?:,[A-Z0-9]{1,3}\d?)*", t):  # sigla senza date: periodo non noto
         return None
+    # bimestri, trimestri, quadrimestri e «periodi» numerati: con le date (anche «22/02/2027 00:00:00») si dice in quale
+    # semestre cadono; senza date il testo resta com'è (l'app lo mostra così)
+    if re.search(r"(?i)bimestr|trimestr|quadrimestr|trimester|quadrimester|\bperiodo\b|\bperiodi\b", t) and not re.search(
+            r"(?i)intensiv|non specificat", t):
+        d = _semestre_da_date(inizio, fine, con_ora=True)
+        if d:
+            return d
     return t
 
 
@@ -149,9 +164,221 @@ def docenti(lst):
     return out
 
 
+# --- rifinitura delle liste di libri (agente F, 17/10/2026) -------------------------------------
+# Correzioni trovate confrontando un campione con le schede ufficiali: citazioni spezzate a
+# meta' dal ritorno a capo del PDF o della pagina, elenchi puntati incollati in un solo libro,
+# righe che non sono libri (segnaposto, indirizzi web, materiali del docente, frasi di obiettivi),
+# caratteri invisibili e "non obbligatorio" registrato come obbligatorio.
+INVISIBILI = re.compile("[\u200b\u200e\u200f\u202a-\u202e\u2060\ufeff]")
+PUNTI_ELENCO = re.compile("\\s*[\uf0a7\uf0b7\uf0d8\uf0fc\uf076\uf0a8]\\s*")
+ENUMERATORE_P = re.compile(r"(?<=[.;,)\w])\s+(?=\d{1,2}\)\s+[A-ZÀ-Ý“\"'‘«])")
+ENUMERATORE_N = re.compile(r"(?<=[.;,)\w])\s+(?=\d{1,2}\.\s+[A-ZÀ-Ý“\"'‘«])")
+SEGNAPOSTO = re.compile(r"(?i)^\s*autor[ei]\W+titolo\W+editore\W+anno")
+NON_LIBRO_MATERIALI = re.compile(
+    r"(?i)^\W*(?:tutti i materiali|i materiali|il materiale|materiale didattico|materiali didattici|"
+    r"nel corso delle lezioni|durante le lezioni|dispense?|slides?|appunti|presentazioni|lucidi)\b")
+CODA_DI_CITAZIONE = re.compile(r"(?i)^(?:ed|edn|vol|voll|volume|pp|cap|capp)[.,]")
+PROSA_OBIETTIVO = re.compile(
+    r"(?i)^\W*(?:per le lezioni|per l'esame|per la preparazione|si consiglia|si rimanda|verranno|saranno|sar[àa] |"
+    r"il docente|la docente|utilizzare|comprendere|conoscere|saper[ei]?|essere in grado|acquisire|riconoscere|"
+    r"capacit[àa] di|lo studente|gli studenti|il corso|l'insegnamento|al termine)\b")
+NEGAZIONE_OBBLIGO = re.compile(
+    r"(?i)\bnon\s+(?:è\s+|sono\s+|risulta\s+)?obbligator\w*|\bnon\s+obb\b|\bnot\s+(?:mandatory|compulsory|required|obligatory)\b|"
+    r"\bfacoltativ\w*|\bnon\s+(?:è\s+)?richiest\w*")
+APERTA_IN_FONDO = re.compile(
+    r"(?i)(?:[,:;(\-–—/&“\"‘«\[]|\b(?:e|di|del|della|dei|degli|and|of|the|in|per|a cura di|volume|vol\.?|tomo|parte|"
+    r"capitolo|cap\.?|capp\.?|pagg?\.?|pp\.?|n\.|con))\s*$")
+FRAMMENTO_EDITORIALE = re.compile(r"(?i)^\W*(?:(?:isbn|ean)\W*(?:10|13)?\W*[0-9Xx\- ]{9,17}\W*)+$")
+URL = re.compile(r"https?://\S+|www\.\S+")
+
+
+def _senza_url(t: str) -> str:
+    return URL.sub(" ", t or "")
+
+
+def _bilanciata(t: str) -> bool:
+    return (t.count("(") == t.count(")") and t.count("[") == t.count("]") and t.count("“") == t.count("”")
+            and t.count("«") == t.count("»") and t.count('"') % 2 == 0)
+
+
+def _cit(lb: dict) -> str:
+    return (lb.get("citazione") or lb.get("titolo") or "").strip()
+
+
+def _nuovo_libro(base: dict, cit: str) -> dict:
+    """Libro non scomposto con la citazione `cit` (titolo = citazione; il resto si ricalcola)."""
+    cit = re.sub(r"\s+", " ", cit).strip()
+    anni = set(re.findall(r"\b(19[5-9]\d|20[0-4]\d)\b", cit))
+    isbn = None
+    m = re.search(r"\b(97[89][- ]?\d[-\d ]{8,13}\d|\d{9}[\dXx])\b", cit)
+    if m:
+        d = re.sub(r"[^\dXx]", "", m.group(1)).upper()
+        isbn = d if len(d) in (10, 13) else None
+    lb = dict(base)
+    lb.update({"titolo": cit, "citazione": cit, "autori": None, "editore": None, "edizione": None,
+               "anno": int(anni.pop()) if len(anni) == 1 else None, "isbn": isbn or base.get("isbn")})
+    return lb
+
+
+def _struttura(lb: dict) -> bool:
+    """Libro gia' scomposto dall'ateneo (Titolo:/Autori:/...): non si tocca."""
+    return bool(lb.get("autori")) and lb.get("titolo") != lb.get("citazione")
+
+
+def _spezza(cit: str) -> list[str]:
+    """Punti elenco (U+F0A7, ...) e numerazione «1) ... 2) ...» (o «1. ... 2. ...») incollati in una sola citazione."""
+    parti = [x for x in PUNTI_ELENCO.split(cit) if x.strip()]
+    if len(parti) > 1:
+        return parti
+    for pat, sep, richiede_uno in ((ENUMERATORE_P, r")", False), (ENUMERATORE_N, r".", True)):
+        if richiede_uno and not re.match(r"\s*1\.\s", cit):
+            continue
+        sub = pat.split(cit)
+        if len(sub) < 2:
+            continue
+        nums = []
+        for x in sub:
+            m = re.match(r"\s*(\d{1,2})" + re.escape(sep) + r"\s", x)
+            nums.append(int(m.group(1)) if m else -1)
+        if nums[0] == -1 and len(sub[0]) >= 20:  # «Titolo A ... 2) Titolo B»: il «1)» iniziale era già stato tolto
+            nums[0] = 1
+        if nums == list(range(1, len(sub) + 1)):
+            return [re.sub(r"^\s*\d{1,2}" + re.escape(sep) + r"\s+", "", x) for x in sub]
+    return [cit]
+
+
+_INIZIO_EDITORIALE = re.compile(
+    r"(?i)^\W*(?:ed\.|editore|edizioni|casa editrice|ristampa|pp?\.|isbn|ean|vol\.|voll\.|\d{1,4}\b|[IVX]{1,5}\b)")
+
+
+def _ha_editore(t: str) -> bool:
+    from adapters.testi import _EDITORI_CIT
+    return bool(_EDITORI_CIT.search(t))
+
+
+def _inizia_come_continuazione(cit: str, forte: bool = True) -> bool:
+    """La riga non comincia come un nuovo riferimento (autore) ma come il seguito di uno.
+    `forte`: il riferimento precedente non ha ancora un editore (un titolo in minuscolo lo continua)."""
+    if not cit:
+        return False
+    if cit[:1] in "”’»)]–—-,;:.0123456789":
+        return True
+    if cit[:1].islower():
+        return forte
+    if _INIZIO_EDITORIALE.match(cit):
+        return True
+    from adapters.testi import _CITTA, _EDITORI_CIT
+    prima = re.split(r"[,.;:]", cit, 1)[0].strip().lower()
+    if prima in _CITTA:
+        return True
+    if not forte:
+        return False
+    m = _EDITORI_CIT.match(cit)  # editore all'inizio (Einaudi, Torino, 2005.)
+    return bool(m) and not re.match(r"^\s*[A-ZÀ-Ý][\w'’\-]+,\s+[A-ZÀ-Ý]\.?\s", cit)
+
+
+def _aperte(t: str) -> int:
+    """Virgolette e parentesi aperte e non chiuse."""
+    return max(0, t.count("“") - t.count("”")) + max(0, t.count("«") - t.count("»")) + max(0, t.count("(") - t.count(")"))
+
+
+def _chiusura_orfana(cit: str) -> bool:
+    """Una virgoletta di chiusura prima di qualunque virgoletta di apertura."""
+    for ch in cit:
+        if ch in "”»":
+            return True
+        if ch in "“«":
+            return False
+    return False
+
+
+def rifinisci_libri(lst: list[dict]) -> list[dict]:
+    """Spezza i libri incollati, unisce le citazioni spezzate, toglie cio' che non e' un libro."""
+    pezzi: list[dict] = []
+    for lb in lst or []:
+        cit = INVISIBILI.sub("", _cit(lb))
+        if not cit:
+            continue
+        if _struttura(lb):
+            pezzi.append(lb)
+            continue
+        parti = _spezza(cit)
+        if len(parti) > 1:
+            pezzi.extend(_nuovo_libro(lb, x) for x in parti)
+        elif cit != _cit(lb):
+            lb = dict(lb)
+            for k in ("titolo", "citazione", "note"):
+                if isinstance(lb.get(k), str):
+                    lb[k] = INVISIBILI.sub("", lb[k])
+            pezzi.append(lb)
+        else:
+            pezzi.append(lb)
+    out: list[dict] = []
+    for lb in pezzi:
+        cit = _cit(lb)
+        prec = out[-1] if out else None
+        unisci = False
+        if prec is not None and FRAMMENTO_EDITORIALE.match(cit) and not FRAMMENTO_EDITORIALE.match(_cit(prec)):
+            # riga con il solo codice ISBN/EAN: appartiene al libro che la precede (anche se già scomposto)
+            nuovo = dict(prec)
+            pc = _cit(prec)
+            nuovo["citazione"] = pc + " " + cit
+            if nuovo.get("titolo") == pc:
+                nuovo["titolo"] = nuovo["citazione"]
+            m = re.search(r"\b(97[89][- ]?\d[-\d ]{8,13}\d|\d{9}[\dXx])\b", cit)
+            if m and not nuovo.get("isbn"):
+                d = re.sub(r"[^\dXx]", "", m.group(1)).upper()
+                if len(d) in (10, 13):
+                    nuovo["isbn"] = d
+            out[-1] = nuovo
+            continue
+        if prec is not None and not _struttura(prec) and not _struttura(lb) and len(cit) <= 120:
+            pc = _cit(prec)
+            completa = bool(re.search(r"\b(?:19|20)\d\d\b|ISBN|EAN", pc, re.I))
+            if FRAMMENTO_EDITORIALE.match(cit) and not FRAMMENTO_EDITORIALE.match(pc):
+                unisci = True
+            elif (not completa and APERTA_IN_FONDO.search(pc)
+                  and _inizia_come_continuazione(cit, forte=not _ha_editore(pc))
+                  and len(re.findall(r"\b(?:19|20)\d\d\b", cit)) <= 1):
+                unisci = True
+            elif _chiusura_orfana(cit) and _aperte(pc) > 0:
+                unisci = True
+        if unisci:
+            nuovo = _nuovo_libro(prec, _cit(prec) + " " + cit)
+            nuovo["tipo"] = prec.get("tipo") or lb.get("tipo")
+            out[-1] = nuovo
+        else:
+            out.append(lb)
+    norm = [re.sub(r"\W+", "", _cit(x).lower()) for x in out]
+    risultato = []
+    for k, lb in enumerate(out):
+        cit = _cit(lb)
+        lettere = [ch for ch in _senza_url(cit) if ch.isalpha()]
+        ha_isbn = bool(re.search(r"\b(?:97[89][- ]?\d|ISBN|EAN)", cit, re.I))
+        if SEGNAPOSTO.match(cit) or CODA_DI_CITAZIONE.match(cit):
+            continue
+        if len(lettere) < 8 and not ha_isbn and not re.search(r"/dp/|/libro/|/product/|/book|isbn", cit, re.I):
+            continue  # solo un indirizzo web generico o simboli
+        if (not _struttura(lb) and not ha_isbn and PROSA_OBIETTIVO.match(cit) and not re.search(r"\d{4}", cit)
+                and not _ha_editore(cit) and not re.search(r"[“«\"]|\b[A-Z]\.\s?[A-ZÀ-Ý][a-zà-ÿ]+", cit)):
+            continue  # frase di obiettivi o istruzioni, senza alcun riferimento bibliografico
+        if cit[:1].islower() and len(cit) >= 25:  # frammento gia' contenuto in un'altra citazione dello stesso insegnamento
+            corpo = re.sub(r"\W+", "", re.sub(r"\([^)]*\)\W*$", "", cit).lower())[:40]
+            if len(corpo) >= 20 and any(corpo in n and len(n) > len(norm[k]) for j, n in enumerate(norm) if j != k):
+                continue
+        if len(norm[k]) >= 25 and any(len(n) >= len(norm[k]) + 4 and n.endswith(norm[k]) for j, n in enumerate(norm) if j != k):
+            continue  # coda ripetuta di un'altra citazione (es. «WG1 (2021), WG2 (2022)» dentro «IPCC - AR6 - WG1 (2021), …»)
+        if lb.get("tipo") == "obbligatorio" and NEGAZIONE_OBBLIGO.search(cit + " " + (lb.get("note") or "")):
+            lb = dict(lb)
+            lb["tipo"] = "consigliato"
+        risultato.append(lb)
+    return risultato
+
+
+
 def libri(lst, anno_max: int):
     out, viste = [], set()
-    for lb in lst or []:
+    for lb in rifinisci_libri(lst or []):
         lb = dict(lb)
         for k in ("titolo", "autori", "editore", "citazione", "note", "edizione"):
             if isinstance(lb.get(k), str):
@@ -159,6 +386,15 @@ def libri(lst, anno_max: int):
         cit = lb.get("citazione") or lb.get("titolo") or ""
         if not cit:
             continue
+        ed = lb.get("editore")
+        if isinstance(ed, str):  # «Editore: Giappichelli» → «Giappichelli»; «Il Mulino: parti I» → «Il Mulino»
+            ed = re.sub(r"(?i)^(?:editore|publisher|casa editrice)\s*:\s*", "", ed).strip()
+            m = re.match(r"^([^:]{3,40}):\s", ed)
+            if m:
+                from adapters.testi import _EDITORI_RE
+                if _EDITORI_RE.search(m.group(1).lower()):
+                    ed = m.group(1).strip()
+            lb["editore"] = ed or None
         # frammento senza titolo ("Carocci, 2019.") o prosa che non cita un'opera
         if len(cit) < 20 and not re.search(r"[A-Za-zÀ-ÿ]{4,}\s+[A-Za-zÀ-ÿ]{4,}", re.sub(EDITORE_O_ANNO, "", cit)):
             continue
