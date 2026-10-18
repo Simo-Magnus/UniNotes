@@ -6,9 +6,9 @@ studiare, registrazione e trascrizione delle lezioni, esami e medie, lettore di 
 calendario e promemoria, sincronizzazione con OneDrive e Google Drive. Niente
 pubblicità, niente abbonamenti, niente account, niente raccolta di dati.
 
-Lo sviluppo, l'aggiornamento del database dei corsi dei 102 atenei italiani e i costi di
-pubblicazione sugli store (ad esempio 99 € l'anno per l'Apple Developer Program) sono
-sostenuti da chi sceglie di contribuire.
+UniNotes non dipende dalle donazioni: funziona ed è completa per tutti, chi dona e chi
+no. Una donazione è un regalo facoltativo allo sviluppatore, che fa piacere e dà una
+spinta in più a migliorarla.
 
 ## Come funzionano le donazioni
 
