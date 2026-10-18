@@ -21,7 +21,7 @@ spinta in più a migliorarla.
 
 | Piattaforma | Tipo | Link |
 |---|---|---|
-| Ko-fi | una tantum («offrimi un caffè») o mensile, con carta o PayPal | [ko-fi.com/uninotes](https://ko-fi.com/uninotes) |
+| Ko-fi | una tantum («offrimi un caffè») o mensile, con carta, Apple Pay o Google Pay | [ko-fi.com/uninotes](https://ko-fi.com/uninotes) |
 | GitHub Sponsors | mensile o una tantum, per chi ha un account GitHub | in arrivo |
 
 Livelli mensili suggeriti (solo ringraziamento, nessun contenuto esclusivo):
