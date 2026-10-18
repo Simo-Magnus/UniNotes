@@ -135,7 +135,7 @@ jobs:
       - run: flutter build windows --release --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
       # Firma facoltativa del programma (certificato di firma del codice .pfx
       # in base64 nei secret): senza, il passo non parte e SmartScreen avvisa
-      # al primo avvio. Vedi PUBBLICAZIONE.md.
+      # al primo avvio.
       - name: Firma uninotes.exe (solo con il certificato nei secret)
         if: env.HAS_WINDOWS_CERT == 'true'
         shell: pwsh
@@ -185,8 +185,7 @@ jobs:
   # avvio manuale del workflow, mai a ogni push. Non firmato (lo firma lo
   # Store); non va nelle release né sul sito: UniNotes.msix si scarica
   # dall'artifact e si carica a mano in Partner Center. Senza i tre secret di
-  # Partner Center il job si ferma con un avviso. Vedi PUBBLICAZIONE.md,
-  # «Microsoft Store».
+  # Partner Center il job si ferma con un avviso.
   microsoft-store:
     name: Microsoft Store (MSIX)
     if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
@@ -203,7 +202,7 @@ jobs:
         working-directory: .
         shell: bash
         run: |
-          echo "::warning title=Microsoft Store::Mancano i secret MSSTORE_IDENTITY_NAME, MSSTORE_PUBLISHER o MSSTORE_PUBLISHER_DISPLAY_NAME (Partner Center → Gestione prodotti → Identità prodotto): pacchetto MSIX non creato. Vedi PUBBLICAZIONE.md, «Microsoft Store»."
+          echo "::warning title=Microsoft Store::Mancano i secret MSSTORE_IDENTITY_NAME, MSSTORE_PUBLISHER o MSSTORE_PUBLISHER_DISPLAY_NAME (Partner Center → Gestione prodotti → Identità prodotto): pacchetto MSIX non creato."
       - uses: actions/checkout@v7
         if: env.HAS_MSSTORE_IDENTITY == 'true'
       - uses: subosito/flutter-action@v2
@@ -271,8 +270,7 @@ jobs:
       - run: flutter build macos --release --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
       # Firma con il certificato «Developer ID Application» e notarizzazione
       # di Apple: richiedono l'account Apple Developer. Senza i secret questi
-      # passi non partono e la build resta non firmata (vedi PUBBLICAZIONE.md,
-      # «macOS: firma e notarizzazione»).
+      # passi non partono e la build resta non firmata.
       - name: Firma UniNotes.app (solo con il certificato nei secret)
         if: env.HAS_MACOS_CERT == 'true'
         env:
@@ -398,7 +396,7 @@ jobs:
             Non è firmata: Windows e macOS mostrano un avviso al primo avvio.
 
             - **Windows**: `UniNotes_setup.exe` → avvialo e segui l'installazione (senza permessi di amministratore; collegamento nel menu Start, disinstallazione da «App installate»). Alternativa senza installazione: `UniNotes-windows.zip` → estrai la cartella e apri `uninotes.exe`.
-            - **macOS**: `UniNotes.dmg` → aprilo e trascina UniNotes in Applicazioni; primo avvio con clic destro → Apri (l'app non è ancora firmata). Alternativa: `UniNotes-macos.zip`.
+            - **macOS**: `UniNotes.dmg` → aprilo e trascina UniNotes in Applicazioni; al primo avvio Impostazioni di Sistema → Privacy e sicurezza → Apri comunque (l'app non è ancora firmata). Alternativa: `UniNotes-macos.zip`.
             - **Android**: `UniNotes-android.apk` (quasi tutti i telefoni, processore a 64 bit) → apri il file sul telefono e consenti l'installazione.
               Telefoni vecchi a 32 bit: `UniNotes-android-32bit.apk`; Chromebook ed emulatori x86: `UniNotes-android-x86_64.apk`.
             - **iPhone/iPad**: `UniNotes-ios-non-firmata.ipa` → va firmata con il proprio account Apple (es. Sideloadly o AltStore).

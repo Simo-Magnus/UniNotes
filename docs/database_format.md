@@ -337,6 +337,12 @@ d'esame (resta solo come moduli di Studio). Il testo ha una riga per modulo,
 modificarlo: «Aggiorna database» aggiorna solo i campi che non ha toccato
 (vedi [datapack_format.md](datapack_format.md)).
 
+Materiali da studiare: l'app riempie il campo «Materiali da studiare» dell'esame
+finale con i libri dell'insegnamento nel database (`libri` del corso), uno per
+riga come «Autori — Titolo (Editore, anno)» o con la citazione del syllabus,
+prima gli obbligatori, poi i consigliati, poi quelli senza indicazione; anche
+questo campo si aggiorna solo finché lo studente non lo modifica.
+
 Solo titoli, sempre in italiano; nessun argomento aggiunto o dedotto. Gli
 insegnamenti senza indice né programma pubblicato non compaiono. L'app scarica il
 file del solo ateneo scelto insieme ai corsi (fino a circa 15 MB per gli atenei

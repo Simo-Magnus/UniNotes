@@ -7,7 +7,9 @@ compila e pubblica l'app (una sola volta).
 ## 1. Registrazione
 
 1. Apri [Microsoft Entra → Registrazioni app](https://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)
-   con un account Microsoft (va bene un account personale) → **Nuova registrazione**.
+   con un account che abbia una directory Entra (le registrazioni fuori da una
+   directory non sono più ammesse; quella di UniNotes è fatta con l'account del
+   progetto, in una directory propria) → **Nuova registrazione**.
 2. Nome: `UniNotes`.
 3. Tipi di account supportati: **Account in qualsiasi directory organizzativa e
    account Microsoft personali** (tenant `common`: funziona sia con
@@ -112,7 +114,7 @@ navigatore delle cartelle) crea:
 
 ```
 UniNotes/
-  Corsi/<Ateneo - Corso>/Registrazioni | Trascrizioni | Riassunti | Appunti | Claude
+  Corsi/<Ateneo - Corso>/Registrazioni | Trascrizioni | Riassunti | Appunti | AI
   Libri/        libri copiati nell'app
   Materiali/    materiale didattico copiato nell'app
   Allegati/     allegati di Studio

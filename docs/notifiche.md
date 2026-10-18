@@ -26,7 +26,7 @@ Codice: `app/lib/core/reminders/` (logica pura in `agenda.dart`,
 | **Sessione Focus in corso** (`focus`, Android) | Per tutta la sessione Focus, silenziosa e fissa | «Focus: Analisi I · Limiti» · «Pausa alle 10:30» con il conto alla rovescia del sistema («Focus in pausa» col tempo fermo) | Tocco → sessione Focus | Sparisce a fine sessione | No |
 | **Fine della sessione Focus e delle pause** (`focus_avvisi`) | Solo con l'app in background: inizio pausa, fine pausa, fine sessione | «È il momento di una pausa» · «5 minuti, poi si riparte.» | Tocco → sessione Focus | Conseguenza diretta della sessione avviata: non dipende dagli interruttori | No |
 | **Recensione** (`recensione`, promozionale) | Una sola richiesta, dopo almeno 14 giorni dall'installazione e 5 giorni di uso effettivo, alle 18:00; mai entro 2 giorni da una prova, mai durante una registrazione | «Ti trovi bene con UniNotes?» · invito a una recensione (store) o a una stella o un commento (GitHub) | «Recensisci», «Più tardi» (dopo 30 giorni, al massimo 2 volte), «Non chiedermelo più» | Interruttore «Richiesta di recensione» | Sì |
-| **Sostieni il progetto** (`sostegno`, promozionale) | Solo nelle build con `--dart-define=DONATIONS=link` (APK GitHub, Windows, macOS GitHub). Dopo 30 giorni dall'installazione e 5 d'uso, poi al massimo ogni 6 mesi; mai nello stesso mese della richiesta di recensione, mai entro 7 giorni da una prova, mai durante una registrazione | «Sostieni UniNotes, se vuoi» · «UniNotes è gratuita e resta completa per tutti. Se ti è utile, una donazione aiuta a mantenerla. È del tutto facoltativo.» | «Dona», «Più tardi» (dopo 30 giorni), «Non chiedermelo più» | Interruttore «Sostieni il progetto» (attivo di default solo in quelle build) | Sì |
+| **Sostieni il progetto** (`sostegno`, promozionale) | Solo nelle build con `--dart-define=DONATIONS=link` (APK e versioni del sito per Windows e macOS, Microsoft Store). Dopo 30 giorni dall'installazione e 5 d'uso, poi al massimo ogni 6 mesi; mai nello stesso mese della richiesta di recensione, mai entro 7 giorni da una prova, mai durante una registrazione | «Sostieni UniNotes, se vuoi» · «UniNotes è gratuita e resta completa per tutti. Se ti è utile, una donazione aiuta a mantenerla. È del tutto facoltativo.» | «Dona», «Più tardi» (dopo 30 giorni), «Non chiedermelo più» | Interruttore «Sostieni il progetto» (attivo di default solo in quelle build) | Sì |
 
 «Prova una notifica» (Impostazioni → Notifiche) ne mostra subito una d'esempio.
 
@@ -40,7 +40,7 @@ aggiunta in Xcode: vedi [widget.md](widget.md) e
 | Build | Link |
 |---|---|
 | Android per Google Play (AAB, senza `DONATIONS=link`, o `STORE=play`) | `market://details?id=io.github.simomagnus.universitynotes`, se non si apre `https://play.google.com/store/apps/details?id=…` |
-| iOS, macOS App Store (`STORE=macappstore`) | `itms-apps://itunes.apple.com/app/id<APPSTORE_ID>?action=write-review` con `--dart-define=APPSTORE_ID`; senza ID **nessuna** richiesta |
+| iPhone e iPad dall'App Store (`STORE=appstore`) | `itms-apps://itunes.apple.com/app/id<APPSTORE_ID>?action=write-review` con `--dart-define=APPSTORE_ID`; senza ID **nessuna** richiesta |
 | Microsoft Store (`STORE=microsoft` e `MSSTORE_ID`) | `ms-windows-store://review/?ProductId=…` |
 | GitHub (APK, Windows, macOS con `DONATIONS=link`) | `https://github.com/Simo-Magnus/UniNotes` (stella o commento) |
 
@@ -170,9 +170,11 @@ dal pacchetto sono invariate (verificato in compilazione e nei test).
 - iOS: permesso delle notifiche (avvisi e suoni) e del calendario
   (`NSCalendarsFullAccessUsageDescription`, `NSCalendarsUsageDescription`).
 - macOS: permesso delle notifiche.
-- Windows: app non pacchettizzata, inizializzazione con nome «UniNotes»,
-  AppUserModelID `io.github.simomagnus.universitynotes` e GUID fisso
-  (attivazione al tocco anche ad app chiusa).
+- Windows: versione del sito non pacchettizzata, inizializzazione con nome
+  «UniNotes», AppUserModelID `io.github.simomagnus.universitynotes` e GUID
+  fisso (attivazione al tocco anche ad app chiusa); nella versione del
+  Microsoft Store (MSIX) l'attivazione dalle notifiche è registrata nel
+  manifest (`app/windows/msix/AppxManifest.xml`).
 
 ## Dettagli tecnici
 
@@ -208,8 +210,9 @@ dal pacchetto sono invariate (verificato in compilazione e nei test).
 - **Apple 3.1.1 e Google Play (Payments)**: nelle app distribuite dagli store
   non si possono indirizzare gli utenti a pagamenti esterni per sostenere
   l'app con link o inviti. Per questo la notifica «Sostieni il progetto»
-  esiste solo nelle build GitHub con `DONATIONS=link`, mai nell'AAB per Play
-  né su iOS.
+  esiste solo nelle build con `DONATIONS=link` (sito, GitHub e Microsoft
+  Store, che ammette le donazioni volontarie con un pagamento di terze parti
+  dichiarato), mai nell'AAB per Play né su iOS.
 - **UE/Italia**: una richiesta di donazione volontaria, chiara e non
   ingannevole a sostegno di un progetto gratuito è lecita; il testo dice che
   è facoltativa e che l'app resta gratuita e completa, senza scadenze finte,

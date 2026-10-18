@@ -49,7 +49,6 @@ ReviewDestination? reviewDestination({
     ),
     'android' => github,
     'ios' => apple(),
-    'macos' when store == 'macappstore' || store == 'appstore' => apple(),
     'windows' when store == 'microsoft' && msStoreId.isNotEmpty =>
       ReviewDestination(
         'ms-windows-store://review/?ProductId=$msStoreId',

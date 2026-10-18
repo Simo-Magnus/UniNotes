@@ -173,7 +173,7 @@ enum _Source { device, notes }
 
 /// Allega uno o più file a un modulo ([moduleId]) o a un argomento
 /// ([topicId]): dal dispositivo (copiati nell'app) o dagli appunti del corso
-/// (registrazioni, trascrizioni, riassunti, appunti, risposte di Claude).
+/// (registrazioni, trascrizioni, riassunti, appunti, risposte dell'AI).
 Future<void> attachTo(
   BuildContext context,
   Course course, {
@@ -196,7 +196,7 @@ Future<void> attachTo(
             leading: const Icon(Icons.mic_none),
             title: const Text('Dagli appunti del corso'),
             subtitle: const Text(
-              'Registrazioni, trascrizioni, riassunti, appunti, Claude',
+              "Registrazioni, trascrizioni, riassunti, appunti, risposte dell'AI",
             ),
             onTap: () => Navigator.pop(c, _Source.notes),
           ),

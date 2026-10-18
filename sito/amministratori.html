@@ -240,7 +240,7 @@
     <p class="titolo">English</p>
     <details>
       <summary id="english">For IT administrators</summary>
-      <p>UniNotes is a free, ad-free, open-source app for university students (Windows, macOS, Android, iOS). It is registered in Microsoft Entra as a <b>multi-tenant public client with PKCE</b> (no client secret) and requests <b>delegated Microsoft Graph permissions only</b>: <code>User.Read</code> (account name), <code>Files.ReadWrite</code> (sync the folder the student picks in their OneDrive), <code>Notes.Read</code> (read-only OneNote notebooks), <code>offline_access</code>, and, on Windows only and requested separately, <code>Calendars.ReadWrite</code> (an «UniNotes» Outlook calendar with exam dates).</p>
+      <p>UniNotes is a free, ad-free app for university students (Windows, macOS, Android, iOS) with its source code public on GitHub. It is registered in Microsoft Entra as a <b>multi-tenant public client with PKCE</b> (no client secret) and requests <b>delegated Microsoft Graph permissions only</b>: <code>User.Read</code> (account name), <code>Files.ReadWrite</code> (sync the folder the student picks in their OneDrive), <code>Notes.Read</code> (read-only OneNote notebooks), <code>offline_access</code>, and, on Windows only and requested separately, <code>Calendars.ReadWrite</code> (an «UniNotes» Outlook calendar with exam dates).</p>
       <p>The publisher is <b>unverified</b> because publisher verification requires a legal entity and a verified domain, which this personal project does not have. There is <b>no UniNotes server</b>: the app talks directly to Microsoft, tokens stay in the device's secure storage and files stay on the device and in the student's OneDrive.</p>
       <p class="richiede-id">Application (client) ID: <code class="app-id">__MS_CLIENT_ID__</code>. To approve it for your tenant, use the orange <b>admin consent</b> button above (v2.0 <code>/organizations/adminconsent</code> endpoint), or Entra admin center → Enterprise applications → UniNotes → Permissions → <b>Grant admin consent</b>. To let students request approval themselves, enable the <b>admin consent workflow</b> (Enterprise applications → Consent and permissions → Admin consent settings). To revoke, disable «Enabled for users to sign in?» or delete the enterprise application.</p>
     </details>
@@ -252,7 +252,7 @@
 </main>
 <script>
   (function () {
-    // ID applicazione: inserito dal workflow della pagina (secret MS_CLIENT_ID).
+    // ID applicazione: inserito dal workflow della pagina (secret MS_CLIENT_ID o, senza, l'ID incluso nell'app).
     // Senza un ID valido spariscono il link di consenso e il pulsante Copia.
     var id = (document.getElementById("app-id").textContent || "").trim();
     var guid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;

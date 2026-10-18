@@ -1,11 +1,12 @@
 # UniNotes (app Flutter)
 
-App Android + Windows del progetto. Documentazione generale nel [README principale](../README.md),
+App per Windows, macOS, Android e iOS. Documentazione generale nel [README principale](../README.md),
 formato dei dati in [docs/datapack_format.md](../docs/datapack_format.md).
 
 Struttura: `lib/core` (database SQLite, servizi, tema, navigazione), `lib/models`,
 `lib/repositories`, `lib/features/<sezione>`, `lib/widgets`, `lib/utils`;
-seed dei dati pubblici in `assets/data/seed_datapack.json`.
+negli asset (`assets/database/`) solo l'elenco degli atenei e dei corsi: i dati dell'ateneo scelto
+si scaricano (`lib/core/catalog/catalog_service.dart`, cartella `database_cache/`).
 
 ## Cartelle di UniNotes
 
@@ -99,6 +100,6 @@ Funzioni del lettore, uguali per tutti i formati:
 
 Impostazione nativa del lettore multimediale (`media_kit`, `media_kit_video`,
 `media_kit_libs_video`): nulla su Windows, Android e iOS; su macOS la sandbox ha
-`com.apple.security.files.user-selected.read-only` per i file scelti (serve anche
+`com.apple.security.files.user-selected.read-write` per i file scelti (serve anche
 `com.apple.security.network.client` solo per flussi in rete); su Linux serve `libmpv`
 (`sudo apt install libmpv-dev`). Nei test (`FLUTTER_TEST`) il lettore non si inizializza.

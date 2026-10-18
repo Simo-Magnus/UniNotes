@@ -1,8 +1,8 @@
 name: Test trascrizione
 
-# Prova reale delle due trascrizioni dell'app su file audio:
-# - Whisper (whisper.cpp, gli stessi modelli ggml che l'app scarica);
-# - Gemini (Files API + generateContent, come l'app) se il secret GEMINI_API_KEY esiste.
+# Prova reale della trascrizione con Whisper su file audio (whisper.cpp, gli
+# stessi modelli ggml che l'app scarica). Gemini non si prova qui: l'app lo apre
+# nel browser con l'account dello studente, senza chiave API.
 # Audio: una frase italiana nota (espeak-ng, per misurare il WER) e 2 minuti di un
 # audiolibro italiano LibriVox (pubblico dominio).
 on:
@@ -44,19 +44,6 @@ jobs:
             done
             python wer.py audio/sintetico.txt audio/sintetico16k.$m.txt 0.35 | tee -a "$GITHUB_STEP_SUMMARY"
           done
-      - name: Trascrizione con Gemini
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          cd tools/transcription_test
-          python gemini_test.py audio/sintetico.wav
-          if [ -f audio/sintetico.gemini.txt ]; then
-            python wer.py audio/sintetico.txt audio/sintetico.gemini.txt 0.35 | tee -a "$GITHUB_STEP_SUMMARY"
-            python gemini_test.py audio/lezione.mp3
-            { echo "### Gemini · lezione"; echo '```'; head -c 1500 audio/lezione.gemini.txt; echo; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "Gemini: secret GEMINI_API_KEY non impostato, test saltato" >> "$GITHUB_STEP_SUMMARY"
-          fi
       - uses: actions/upload-artifact@v7
         if: always()
         with:

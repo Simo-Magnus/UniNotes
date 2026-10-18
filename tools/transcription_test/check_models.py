@@ -18,7 +18,7 @@ if not names:
 bad = []
 for n in sorted(names):
     url = f"https://huggingface.co/ggerganov/whisper.cpp/resolve/main/{n}"
-    req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "UniversityNotes-test"})
+    req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "UniNotes-test"})
     try:
         r = urllib.request.urlopen(req, timeout=60)
         size = int(r.headers.get("Content-Length") or r.headers.get("x-linked-size") or 0)

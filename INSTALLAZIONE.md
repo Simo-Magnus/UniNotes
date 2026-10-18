@@ -7,8 +7,9 @@ che propone il file giusto per il dispositivo in uso.
 - **Ultima build** (aggiornata a ogni modifica):
   <https://github.com/Simo-Magnus/UniNotes/releases/tag/ultima-build> → sezione
   *Assets*: `UniNotes_setup.exe` (Windows), `UniNotes.dmg` (macOS),
-  `UniNotes-android.apk`, `UniNotes-ios-non-firmata.ipa`; in più `UniNotes-windows.zip`
-  e `UniNotes-macos.zip` per chi preferisce non installare.
+  `UniNotes-android.apk` (con `UniNotes-android-32bit.apk` e `UniNotes-android-x86_64.apk`),
+  `UniNotes-ios-non-firmata.ipa`; in più `UniNotes-windows.zip` e `UniNotes-macos.zip` per
+  chi preferisce non installare.
 - **Versioni numerate**, quando ci sono: <https://github.com/Simo-Magnus/UniNotes/releases>
   → versione → *Assets*.
 
@@ -78,8 +79,9 @@ nell'app e poi elimina la cartella.
 3. **Aggiornamenti**: apri il nuovo `UniNotes.dmg` e trascina UniNotes in
    *Applicazioni* sostituendo la versione precedente; i dati restano.
 4. Al primo uso del registratore macOS chiede il permesso per il microfono: consentilo.
-5. Whisper su Mac: `brew install whisper-cpp` (Homebrew), poi scegli il modello in
-   *Collegamenti*.
+5. Whisper su Mac: scegli e scarica il modello in *Collegamenti → Whisper*; funziona con
+   whisper.cpp incluso nell'app. Per le lezioni di ore conviene installare anche
+   `brew install whisper-cpp` (Homebrew): l'app lo trova da sola.
 
 In alternativa al DMG c'è `UniNotes-macos.zip`: si estrae da solo, poi si sposta
 **UniNotes.app** in *Applicazioni*.

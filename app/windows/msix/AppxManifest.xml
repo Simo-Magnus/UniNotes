@@ -9,7 +9,6 @@
   (Properties e VisualElements) deve coincidere con il nome prenotato in
   Partner Center: secret MSSTORE_DISPLAY_NAME, «UniNotes» se manca. Il nome
   dentro l'app e il titolo della finestra restano «UniNotes».
-  Vedi PUBBLICAZIONE.md, «Microsoft Store».
 -->
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"

@@ -15,7 +15,7 @@ Windows (flutter build windows --release --dart-define=STORE=microsoft ...).
 
 Uso (dalla cartella app):
   powershell -File windows\msix\crea_msix.ps1 -Output build\msix\UniNotes.msix
-Vedi PUBBLICAZIONE.md, sezione "Microsoft Store".
+In CI lo usa il job microsoft-store di .github/workflows/app.yml.
 #>
 param(
   [string]$Release = 'build\windows\x64\runner\Release',

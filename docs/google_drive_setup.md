@@ -74,7 +74,8 @@ Il progetto Google Cloud è nuovo, quindi:
 ## 2. Schermata di consenso OAuth (Google Auth Platform)
 
 1. *Google Auth Platform → Branding*: nome `UniNotes`, email di
-   assistenza, logo (facoltativo), link a home page, privacy e termini (il sito
+   assistenza (l'email dell'account o un Gruppo Google che gestisci: per
+   UniNotes un Gruppo Google), logo (facoltativo), link a home page, privacy e termini (il sito
    del progetto); tra i domini autorizzati `simo-magnus.github.io`.
 2. *Pubblico*: tipo **Esterno**.
 3. *Accesso ai dati → Aggiungi o rimuovi ambiti*:

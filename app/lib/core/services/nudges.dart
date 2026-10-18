@@ -141,7 +141,7 @@ class Nudges {
       url:
           'https://play.google.com/store/apps/details?id=io.github.simomagnus.universitynotes',
     ),
-    'appstore' || 'macappstore' when kAppStoreId.isNotEmpty => (
+    'appstore' when kAppStoreId.isNotEmpty => (
       label: 'Lascia una recensione sull\'App Store',
       url: 'https://apps.apple.com/app/id$kAppStoreId?action=write-review',
     ),

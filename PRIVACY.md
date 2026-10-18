@@ -1,6 +1,6 @@
 # Informativa sulla privacy di UniNotes
 
-Ultimo aggiornamento: 17 ottobre 2026
+Ultimo aggiornamento: 18 ottobre 2026
 
 <!--
 Prima della pubblicazione sostituire i segnaposto:
@@ -36,11 +36,11 @@ Quasi tutto quello che l'app gestisce rimane sul dispositivo su cui lo hai inser
 - **Primo avvio e Impostazioni → Il mio percorso**: tipo di università, ateneo, corso di laurea, eventuale percorso o curriculum, anno che frequenti, condizione di fuori corso, anno accademico di riferimento, versione del database da cui sono stati importati i dati.
 - **Insegnamenti ed Esami**: insegnamenti del piano con CFU, semestre, docenti e stato; esami, prove in itinere ed esoneri con data, ora, luogo, modalità, voto, lode e note. Medie e voto di partenza alla laurea sono calcolati dall'app sul momento e non vengono inviati a nessuno.
 - **Studio**: moduli e argomenti di ogni materia, stato di avanzamento, sessioni registrate con il cronometro (inizio, durata, tipo di attività, note) e gli allegati che aggiungi.
-- **Registra**: le registrazioni audio delle lezioni e i testi collegati, cioè trascrizioni, riassunti, appunti e le risposte dell'AI che scegli di incollare. Sono file normali, ordinati in una cartella per insegnamento con le sottocartelle «Registrazioni», «Trascrizioni», «Riassunti», «Appunti» e «AI». Le registrazioni sono in formato FLAC mono a 16 kHz (WAV se il dispositivo non supporta FLAC).
+- **Registra**: le registrazioni audio delle lezioni e i testi collegati, cioè trascrizioni, riassunti, appunti e le risposte dell'AI che scegli di incollare. Sono file normali, ordinati in una cartella per insegnamento con le sottocartelle «Registrazioni», «Trascrizioni», «Riassunti», «Appunti» e «AI». Le registrazioni sono in formato M4A (AAC mono, circa 48 kbit/s); se la compressione non riesce resta il file WAV mono a 16 kHz.
 - **Libri**: libri del piano che tieni o rimuovi, libri che aggiungi, file che colleghi a un libro (l'app ne fa una copia nella propria cartella), ultima pagina letta.
 - **File**: elenco dei file aperti di recente, posizione di lettura, segnalibri ed evidenziazioni nei PDF.
 - **Collegamenti**: assistente AI scelto, modello Whisper in uso, impostazioni di sincronizzazione e, se colleghi OneDrive o Google Drive, il nome e l'indirizzo email dell'account, che l'app mostra per farti capire quale account è collegato.
-- **Impostazioni**: tema e colori, esclusioni, eventuali indirizzi personalizzati per il database o per i pacchetti di dati, preferenza per il calendario.
+- **Impostazioni**: tema e colori, esclusioni, l'eventuale indirizzo personalizzato del database, preferenza per il calendario.
 
 L'app tiene anche due contatori locali, la data del primo avvio e il numero di aperture, che usa solo per decidere quando mostrare nella Home l'invito a lasciare una recensione o a sostenere il progetto. Restano nel database dell'app come tutto il resto.
 
@@ -60,7 +60,7 @@ Quando colleghi OneDrive o Google Drive l'app conserva il token di accesso a lun
 
 Questi token non vengono inclusi nei backup, non vengono esportati e non vengono sincronizzati.
 
-Le versioni precedenti dell'app permettevano di salvare una chiave API personale di Google AI Studio per usare Gemini. La versione attuale non usa più questa modalità e non invia nulla a Gemini. Se avevi salvato una chiave, resta nell'archivio protetto finché non usi «Elimina tutti i dati» (paragrafo 12).
+Le versioni precedenti dell'app permettevano di salvare una chiave API personale di Google AI Studio per usare Gemini. La versione attuale non usa più questa modalità e non invia nulla a Gemini. Se avevi salvato una chiave, l'app la cancella dall'archivio protetto da sola, una volta, al primo avvio della versione attuale.
 
 ## 4. File temporanei
 
@@ -76,13 +76,11 @@ Quando esporti gli esami nel calendario, l'app scrive un file `.ics` nella propr
 
 ## 5. Backup ed esportazioni
 
-In Impostazioni → Esporta dati puoi salvare i tuoi dati in due modi.
+In Impostazioni → Esporta/importa dati puoi salvare i tuoi dati in un file e ripristinarli.
 
-**Esporta dati (JSON)** produce un file con corsi, eventi, esami e voti, sessioni di studio, libri, materiali, preferiti, note e impostazioni. Alcune impostazioni sono escluse di proposito perché riguardano la sicurezza o il singolo dispositivo: l'account OneDrive o Google collegato, l'ID dell'applicazione Microsoft, la cartella degli appunti, i percorsi dei programmi esterni, gli indirizzi personalizzati del database e l'identificativo dell'installazione. Le stesse impostazioni vengono ignorate quando ripristini un backup, così un file ricevuto da altri non può, per esempio, indirizzare l'app verso un server diverso.
+**Esporta dati (.json)** produce un file con corsi, eventi, esami e voti, sessioni di studio, libri, materiali, preferiti, note e impostazioni. Alcune impostazioni sono escluse di proposito perché riguardano la sicurezza o il singolo dispositivo: l'account OneDrive o Google collegato, l'ID dell'applicazione Microsoft, la cartella degli appunti, i percorsi dei programmi esterni, gli indirizzi personalizzati del database e l'identificativo dell'installazione. Le stesse impostazioni vengono ignorate quando ripristini un backup, così un file ricevuto da altri non può, per esempio, indirizzare l'app verso un server diverso.
 
-**Esporta copia database** salva invece il file completo del database, comprese quelle impostazioni (anche il nome e l'indirizzo email dell'account collegato, se ce n'è uno). Trattalo con la stessa cura che riserveresti ai tuoi documenti personali.
-
-Né l'uno né l'altro contengono registrazioni, appunti o i file dei libri, e nessuno dei due contiene token o chiavi. I file esportati sono tuoi: dove salvarli, a chi darli e quando cancellarli lo decidi tu.
+Il file non contiene registrazioni, appunti o i file dei libri, né token o chiavi. Contiene comunque i tuoi dati personali: trattalo con la stessa cura che riserveresti ai tuoi documenti. I file esportati sono tuoi: dove salvarli, a chi darli e quando cancellarli lo decidi tu.
 
 ## 6. Quando l'app usa internet
 
@@ -92,22 +90,24 @@ In ogni connessione il servizio contattato riceve, come per qualsiasi sito web, 
 
 ### 6.1 Database pubblico dei corsi (GitHub)
 
-Atenei, corsi, insegnamenti, libri e date d'esame sono già inclusi nell'app. Quando c'è connessione, all'avvio l'app scarica il file `meta.json` dal repository pubblico del progetto su GitHub (`raw.githubusercontent.com`) per sapere se esiste una versione più recente; se c'è, te lo propone con il pulsante «Aggiorna». Durante la scelta del corso e negli aggiornamenti l'app scarica anche il file del tuo ateneo (per esempio `corsi/polito.json`). Il nome del file richiesto rivela quindi a GitHub quale ateneo stai consultando, insieme all'indirizzo IP. Nessun altro dato viene inviato.
+Nell'app è incluso solo l'elenco degli atenei e dei corsi. Insegnamenti, libri, date d'esame e moduli di studio li scarica soltanto per l'ateneo che scegli (quando tocchi «Scarica il piano di studi») e li tiene sul dispositivo, anche senza connessione; se cambi ateneo, i dati del precedente si cancellano. Quando c'è connessione, all'avvio l'app scarica il file `meta.json` dal repository pubblico del progetto su GitHub (`raw.githubusercontent.com`) per sapere se esiste una versione più recente; se c'è, te lo propone con il pulsante «Aggiorna». Durante la scelta del corso, al download del piano e negli aggiornamenti l'app scarica i file del tuo ateneo (per esempio `corsi/polito.json`). Il nome del file richiesto rivela quindi a GitHub quale ateneo stai consultando, insieme all'indirizzo IP. Nessun altro dato viene inviato.
 
 GitHub è un servizio di GitHub, Inc., società del gruppo Microsoft con sede negli Stati Uniti. Si applica la sua [informativa sulla privacy](https://docs.github.com/it/site-policy/privacy-policies/github-general-privacy-statement).
 
-In Impostazioni → Il mio percorso → «Indirizzo del database» e in Impostazioni → Importa corsi ed esami puoi indicare un indirizzo diverso da cui scaricare i dati. In quel caso le richieste vanno al server che hai scelto, gestito da chi lo pubblica. L'app accetta solo indirizzi `https://` (oppure `http://` verso il computer stesso, per le prove).
+In Impostazioni → Il mio percorso → «Indirizzo del database» puoi indicare un indirizzo diverso da cui scaricare i dati. In quel caso le richieste vanno al server che hai scelto, gestito da chi lo pubblica. L'app accetta solo indirizzi `https://` (oppure `http://` verso il computer stesso, per le prove).
 
 ### 6.2 Trascrizione locale con Whisper
 
 La trascrizione con Whisper avviene interamente sul dispositivo: l'audio non viene inviato a nessuno. Servono però dei file da scaricare, e lo fai tu da Collegamenti → Whisper:
 
-- i modelli di trascrizione, dal sito Hugging Face (`huggingface.co`), con dimensioni che vanno da circa 75 MB a circa 3 GB;
+- i modelli di trascrizione, dal sito Hugging Face (`huggingface.co`), con dimensioni che vanno da circa 75 MB a circa 3 GB (su Windows un modello piccolo per il testo dal vivo, circa 57 MB, è già incluso nell'installatore);
 - solo su Windows, il programma whisper.cpp (versione 1.9.2, dal repository ufficiale `ggml-org/whisper.cpp` su GitHub) e, se ti serve per le registrazioni `.m4a` fatte con il telefono, il convertitore ffmpeg (build di BtbN su GitHub, circa 170 MB).
 
 Su Mac, Android e iOS whisper.cpp è già incluso nell'app. Su Mac puoi installare a parte la versione di Homebrew: in quel caso l'installazione avviene fuori dall'app e segue le regole di Homebrew.
 
 Se lavori con i dati mobili, ricorda che questi download possono consumare molto traffico.
+
+**Testo dal vivo durante la registrazione.** Mentre registri, il testo che compare sullo schermo lo produce il riconoscimento vocale del sistema operativo, che riceve l'audio della registrazione: su iPhone, iPad e Mac lavora sul dispositivo quando la lingua lo permette, altrimenti passa dai servizi di Apple; su Android usa il riconoscitore del telefono, sul dispositivo dove c'è; su Windows funziona solo se in Impostazioni → Privacy e sicurezza → Voce è attivo «Riconoscimento vocale online», e in quel caso l'audio passa dai servizi di Microsoft. Valgono le informative di Apple, Google e Microsoft. Dove il riconoscimento del sistema non c'è o non è attivo, il testo dal vivo lo fa Whisper sul dispositivo, senza inviare l'audio a nessuno; il modello piccolo che serve è incluso su Windows, sugli altri sistemi l'app lo scarica da Hugging Face alla prima registrazione che ne ha bisogno.
 
 ### 6.3 OneDrive e OneNote (facoltativo)
 
@@ -144,7 +144,7 @@ Per usare OneDrive e Google Drive lo sviluppatore ha registrato l'app presso Mic
 
 ### 6.6 Assistenti di intelligenza artificiale
 
-In Collegamenti → «Studio con l'AI» scegli il tuo assistente di riferimento tra ChatGPT, Claude, Microsoft Copilot, Perplexity, NotebookLM e Gemini. Nelle schermate Registra e Studio, i pulsanti come «Trascrivi con Gemini», «Riassumi con Gemini» o «Apri ChatGPT» fanno sempre la stessa cosa:
+In Collegamenti → «AI di riferimento» (o al primo avvio) scegli il tuo assistente di riferimento tra ChatGPT, Claude, Microsoft Copilot, Perplexity, NotebookLM e Gemini. Nelle schermate Registra e Studio, i pulsanti come «Trascrivi con Gemini», «Riassumi con Gemini» o «Apri ChatGPT» fanno sempre la stessa cosa:
 
 1. copiano negli appunti di sistema il testo della richiesta (il «prompt»), che contiene il nome dell'insegnamento e i nomi dei file;
 2. aprono l'app dell'assistente sul telefono o il suo sito sul computer;
@@ -152,7 +152,7 @@ In Collegamenti → «Studio con l'AI» scegli il tuo assistente di riferimento 
 
 L'app non invia nulla all'assistente. Allegare i file, incollare la richiesta e inviarla sono azioni che fai tu, nella chat del servizio, con il tuo account. Da quel momento i contenuti sono trattati dal fornitore (OpenAI, Anthropic, Microsoft, Perplexity o Google) secondo le sue condizioni e la sua informativa, compresa la possibilità che li conservi nella cronologia o li usi per migliorare i suoi modelli. Per Gemini e NotebookLM, per esempio, l'audio caricato resta nel tuo account Google finché non lo elimini.
 
-Quando premi «Incolla risposta», l'app legge il testo presente negli appunti di sistema per proporlo nella finestra di salvataggio. Lo fa solo in quel momento. Il testo che confermi viene salvato come file nella cartella dell'insegnamento.
+Per «Trascrivi con Gemini» e «Riassumi con Gemini», quando torni in UniNotes con la finestra della richiesta ancora aperta l'app legge il testo presente negli appunti di sistema: se è la risposta copiata da Gemini (almeno 200 caratteri e diversa dalla richiesta) la salva come file nella cartella dell'insegnamento, con «Annulla» nell'avviso. Lo fa solo in quel momento e solo con quella finestra aperta.
 
 ### 6.7 Segnalazioni sul database
 
@@ -162,7 +162,7 @@ Nelle schermate Esami e Libri il pulsante per segnalare dati mancanti apre nel b
 
 Da Impostazioni → Calendario, o da Esami, l'app crea un file `.ics` con le prove ancora da sostenere (insegnamento, data, ora, luogo) e lo apre con l'app di calendario del sistema, che lo importa. Se il tuo calendario è sincronizzato con un servizio online (Outlook, Google Calendar, iCloud), gli eventi finiscono anche lì, secondo le regole di quel servizio.
 
-Se attivi «Scrivi le prove nel calendario», l'app scrive direttamente nel tuo calendario, in un calendario «UniNotes», le prove ancora da sostenere e l'inizio delle sessioni d'esame del tuo corso (insegnamento, data, ora, luogo, argomenti e note) con i relativi promemoria, e li aggiorna o li cancella quando li modifichi. Su Android e iPhone usa il calendario del dispositivo, con il permesso del sistema; su Windows usa il calendario Outlook del tuo account Microsoft: in quel caso gli eventi vengono inviati a Microsoft Graph (`graph.microsoft.com`) sul tuo account, direttamente dal dispositivo. Spegnendo l'interruttore l'app toglie i propri eventi.
+Se attivi «Scrivi le prove nel calendario», l'app scrive direttamente nel tuo calendario, in un calendario «UniNotes», le prove ancora da sostenere e l'inizio delle sessioni d'esame del tuo corso (insegnamento, data, ora, luogo, argomenti e note) con i relativi promemoria, e li aggiorna o li cancella quando li modifichi. Su Android, iPhone e iPad usa il calendario del dispositivo, con il permesso del sistema; su Windows usa il calendario Outlook del tuo account Microsoft: in quel caso gli eventi vengono inviati a Microsoft Graph (`graph.microsoft.com`) sul tuo account, direttamente dal dispositivo. Spegnendo l'interruttore l'app toglie i propri eventi.
 
 ### 6.8.1 Notifiche
 
@@ -261,7 +261,7 @@ L'app è pensata per studenti universitari, quindi di norma maggiorenni. Non chi
 
 Per i dati trattati dallo sviluppatore (paragrafo 10.2) puoi chiedere in qualsiasi momento l'accesso, la rettifica, la cancellazione, la limitazione del trattamento e la portabilità, e puoi opporti ai trattamenti basati sul legittimo interesse (articoli da 15 a 22 del GDPR). Se hai dato il consenso, per esempio per comparire nei ringraziamenti, puoi revocarlo senza conseguenze sui trattamenti già svolti. Scrivi a «[indirizzo email del progetto su Proton]»: riceverai risposta entro un mese, prorogabile di altri due solo nei casi complessi previsti dall'articolo 12 del GDPR, e in quel caso ti verrà detto il motivo.
 
-Per i dati sul dispositivo eserciti questi diritti direttamente: puoi consultarli e correggerli nell'app, esportarli in un formato leggibile (Esporta dati, in JSON) e cancellarli come descritto al paragrafo 12. Per i dati che hai affidato a Microsoft, Google, GitHub o ai fornitori di assistenti AI devi rivolgerti a loro.
+Per i dati sul dispositivo eserciti questi diritti direttamente: puoi consultarli e correggerli nell'app, esportarli in un formato leggibile (Esporta dati, in .json) e cancellarli come descritto al paragrafo 12. Per i dati che hai affidato a Microsoft, Google, GitHub o ai fornitori di assistenti AI devi rivolgerti a loro.
 
 Se ritieni che un trattamento violi il GDPR puoi presentare reclamo al Garante per la protezione dei dati personali (<https://www.garanteprivacy.it>) o all'autorità di controllo del paese UE in cui vivi o lavori, oppure rivolgerti al giudice.
 
@@ -279,7 +279,7 @@ This is a short summary; the Italian text above is the binding version.
 
 UniNotes has no account system, no developer-run server, no analytics, no ads, no tracking and no automatic crash reporting. Everything you enter, record or import stays on your device; the app does not encrypt its database or files itself, so protection relies on your device lock and disk encryption.
 
-The app connects to the internet only to download the public course database from GitHub (it checks `meta.json` at start-up and downloads your university's file), to download Whisper models from Hugging Face and, on Windows only, whisper.cpp and ffmpeg from GitHub, and to sync with OneDrive (scopes `User.Read`, `Files.ReadWrite`, `Notes.Read`, `offline_access`) or Google Drive (`drive.file` scope only: the app sees just the files it created and those you pick with Google's file picker, opened from a static page on the project site that receives a short-lived token in the URL fragment) if you connect your own account. Sync is two-way and deletions propagate. Refresh tokens are kept in the operating system's secure storage and never included in backups.
+The app connects to the internet only to download the public course database from GitHub (it checks `meta.json` at start-up and downloads your university's file), to download Whisper models from Hugging Face and, on Windows only, whisper.cpp and ffmpeg from GitHub, and to sync with OneDrive (scopes `User.Read`, `Files.ReadWrite`, `Notes.Read`, `offline_access`) or Google Drive (`drive.file` scope only: the app sees just the files it created and those you pick with Google's file picker, opened from a static page on the project site that receives a short-lived token in the URL fragment) if you connect your own account. Sync is two-way and deletions propagate. Live text while recording comes from the operating system's speech recognizer (on the device where possible, otherwise through Apple's, Google's or, on Windows with «Online speech recognition» turned on, Microsoft's services) or from Whisper on the device. Refresh tokens are kept in the operating system's secure storage and never included in backups.
 
 For ChatGPT, Claude, Copilot, Perplexity, NotebookLM and Gemini the app only copies a prompt to the clipboard, opens the service and shows the files to attach: you decide what to send, under that provider's terms. The current version does not call the Gemini API.
 

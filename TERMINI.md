@@ -1,6 +1,6 @@
 # Termini e condizioni d'uso di UniNotes
 
-Ultimo aggiornamento: 11 ottobre 2026
+Ultimo aggiornamento: 18 ottobre 2026
 
 <!--
 Prima della pubblicazione sostituire i segnaposto:
@@ -17,7 +17,7 @@ UniNotes è sviluppata e distribuita da «[nome e cognome dello sviluppatore]»,
 
 Lo sviluppatore agisce come persona fisica e pubblica UniNotes come progetto indipendente e gratuito. UniNotes non è un servizio delle università né del Ministero dell'università e della ricerca e non è affiliata, approvata o sponsorizzata da nessuno di essi.
 
-In questi termini «app» indica il programma UniNotes in tutte le sue versioni; «database» indica i dati pubblici su atenei, corsi, insegnamenti, libri e sessioni d'esame distribuiti con l'app e pubblicati nella cartella `database` del repository; «tu» indica la persona che usa l'app.
+In questi termini «app» indica il programma UniNotes in tutte le sue versioni; «database» indica i dati pubblici su atenei, corsi, insegnamenti, libri e sessioni d'esame che l'app include (l'elenco degli atenei e dei corsi) o scarica per l'ateneo scelto, pubblicati nella cartella `database` del repository; «tu» indica la persona che usa l'app.
 
 ## 2. Accettazione
 
@@ -37,7 +37,7 @@ L'app ti aiuta a organizzare il percorso universitario. Al primo avvio scegli at
 - **Libri**, per i testi del piano e quelli che aggiungi, con il lettore interno;
 - **Insegnamenti** e **File**, per consultare il piano e aprire i tuoi documenti in molti formati;
 - **Collegamenti**, per i modelli Whisper, l'assistente AI di riferimento e la sincronizzazione con OneDrive o Google Drive;
-- **Impostazioni**, per percorso, calendario, importazioni, aspetto, backup e privacy.
+- **Impostazioni**, per percorso, calendario, aspetto, notifiche, backup e privacy.
 
 Alcune funzioni dipendono dalla versione. Il pulsante «Sostieni il progetto» compare solo nelle versioni distribuite dove lo store lo consente; Google Drive è disponibile solo nelle versioni che includono l'identificativo client di Google; alcune funzioni di trascrizione cambiano tra computer e telefono.
 
@@ -67,7 +67,7 @@ Puoi usare l'app liberamente per il tuo studio e per la tua organizzazione perso
 2. diffondere registrazioni, trascrizioni o riassunti di lezioni senza il consenso delle persone registrate e, quando serve, del docente;
 3. usare l'app per conservare, condividere o rendere accessibili libri e materiali protetti dal diritto d'autore senza averne il diritto (vedi l'articolo 8);
 4. presentare l'app, o una versione modificata, come un servizio ufficiale di un'università o del Ministero;
-5. modificare il database distribuito con l'app o i pacchetti di dati per diffondere informazioni false su corsi, esami o docenti;
+5. modificare il database distribuito con l'app per diffondere informazioni false su corsi, esami o docenti;
 6. usare le segnalazioni su GitHub o l'indirizzo email dello sviluppatore per inviare contenuti offensivi, illeciti, pubblicitari o dati personali di altre persone;
 7. usare l'app per aggirare misure tecniche di protezione (DRM) dei file o le condizioni d'uso dei servizi che colleghi.
 
@@ -97,13 +97,13 @@ Se trovi un errore, puoi segnalarlo dalle schermate Esami e Libri (si apre una s
 
 I nomi delle università compaiono solo per indicare a quale ateneo si riferiscono i dati. I marchi e i nomi degli atenei appartengono ai rispettivi titolari.
 
-Con Impostazioni → Importa corsi ed esami puoi importare pacchetti di dati preparati da altri, da file o da un indirizzo web che scegli tu. Quei dati non provengono dallo sviluppatore, che non ne verifica il contenuto e non ne risponde.
+Con Impostazioni → Il mio percorso → «Indirizzo del database» puoi scaricare i dati da un indirizzo diverso, scelto da te. Quei dati non provengono dallo sviluppatore, che non ne verifica il contenuto e non ne risponde.
 
 ## 10. Medie, statistiche e calendario
 
 La media ponderata e il voto di partenza alla laurea sono calcolati con la formula più comune: media dei voti degli esami superati pesata sui CFU, con la lode che vale 30, riportata in centodecimi. Il tuo corso può applicare regole diverse, per esempio un valore diverso per la lode, l'esclusione di alcuni esami o bonus per la carriera. I risultati sono indicativi; fanno fede i calcoli della segreteria.
 
-Lo stesso vale per le statistiche di studio, che dipendono da quello che registri, e per gli eventi esportati nel calendario, che riportano le date presenti nell'app al momento dell'esportazione e non si aggiornano da soli se cambiano.
+Lo stesso vale per le statistiche di studio, che dipendono da quello che registri, e per gli eventi nel calendario: quelli scritti dall'app con «Scrivi le prove nel calendario» riportano le date presenti nell'app e si aggiornano quando le cambi nell'app; quelli esportati con un file `.ics` riportano le date del momento dell'esportazione e non si aggiornano da soli.
 
 ## 11. Servizi di terzi
 
@@ -111,8 +111,9 @@ Alcune funzioni usano servizi forniti da altre aziende:
 
 - **GitHub** (GitHub, Inc.), da cui l'app scarica il database e, su Windows, il programma whisper.cpp e il convertitore ffmpeg, e dove si aprono le segnalazioni;
 - **Hugging Face**, da cui l'app scarica i modelli Whisper;
-- **Microsoft**, per OneDrive e OneNote;
+- **Microsoft**, per OneDrive, OneNote e, su Windows, il calendario Outlook e il riconoscimento vocale online;
 - **Google**, per Google Drive, Gemini e NotebookLM;
+- **Apple**, **Google** e **Microsoft** anche per il riconoscimento vocale del sistema che scrive il testo dal vivo durante la registrazione, quando non lavora sul dispositivo;
 - i fornitori degli assistenti AI che scegli: OpenAI (ChatGPT), Anthropic (Claude), Microsoft (Copilot), Perplexity, Google (Gemini, NotebookLM).
 
 Quando li usi, accetti le condizioni e le informative di quei fornitori, che si aggiungono a questi termini. Lo sviluppatore non controlla questi servizi. Non risponde della loro disponibilità, delle modifiche che vi apportano, dei limiti d'uso, degli eventuali costi (per esempio un abbonamento a un assistente AI o lo spazio su un cloud) né di come trattano i dati che affidi loro. Un fornitore può smettere di offrire un servizio o cambiarne le regole in modo che una funzione dell'app non funzioni più.
@@ -123,17 +124,17 @@ Scaricare modelli, programmi e file sincronizzati può consumare molto traffico.
 
 ## 12. Trascrizioni e intelligenza artificiale
 
-L'app non genera testi con l'intelligenza artificiale sui server dello sviluppatore, perché non ne ha. Le trascrizioni si ottengono in due modi: con Whisper, un modello di riconoscimento vocale che gira sul tuo dispositivo, oppure con un assistente esterno che usi con il tuo account.
+L'app non genera testi con l'intelligenza artificiale sui server dello sviluppatore, perché non ne ha. Le trascrizioni si ottengono così: durante la registrazione, il testo dal vivo del riconoscimento vocale del sistema (o di Whisper, dove il sistema non lo offre); dopo, con Whisper, un modello di riconoscimento vocale che gira sul tuo dispositivo, oppure con un assistente esterno che usi con il tuo account.
 
 In entrambi i casi il risultato può essere sbagliato. Capita spesso con nomi propri, termini tecnici, formule, sigle, audio disturbato o più persone che parlano insieme. Gli assistenti AI possono anche omettere parti, inventare contenuti plausibili ma falsi o riassumere in modo impreciso. Controlla sempre trascrizioni e riassunti confrontandoli con la lezione, con i libri e con il materiale del docente prima di studiarli o di usarli in un esame.
 
-Quello che incolli nell'app come risposta di un assistente diventa un tuo appunto e ne rispondi tu. L'uso dell'intelligenza artificiale per elaborati, tesi e prove può essere regolato dal tuo ateneo o dal singolo docente: rispettare quelle regole è compito tuo.
+Quello che salvi nell'app come risposta di un assistente diventa un tuo appunto e ne rispondi tu. L'uso dell'intelligenza artificiale per elaborati, tesi e prove può essere regolato dal tuo ateneo o dal singolo docente: rispettare quelle regole è compito tuo.
 
 ## 13. I tuoi dati e i backup
 
 I dati che inserisci nell'app restano sul tuo dispositivo e non sono custoditi dallo sviluppatore, che quindi non può recuperarli se vanno persi. Una registrazione può interrompersi o rovinarsi per batteria scarica, memoria piena, arresto del sistema o altre cause che l'app non controlla. Un dispositivo può guastarsi o andare perso.
 
-Per questo ti consigliamo di esportare periodicamente i dati da Impostazioni → Esporta dati, di copiare altrove le registrazioni che contano o di attivare la sincronizzazione con un servizio cloud. «Elimina tutti i dati» cancella in modo definitivo quanto descritto nell'informativa sulla privacy e non si può annullare.
+Per questo ti consigliamo di esportare periodicamente i dati da Impostazioni → Esporta/importa dati, di copiare altrove le registrazioni che contano o di attivare la sincronizzazione con un servizio cloud. «Elimina tutti i dati» cancella in modo definitivo quanto descritto nell'informativa sulla privacy e non si può annullare.
 
 ## 14. Gratuità e donazioni
 
@@ -165,7 +166,7 @@ Nei limiti consentiti dalla legge, lo sviluppatore non risponde dei danni deriva
 
 1. la perdita o il danneggiamento di registrazioni, appunti, voti o altri dati;
 2. appelli mancati, scadenze non rispettate o decisioni prese sulla base di dati del database, medie o calcoli dell'app;
-3. errori nelle trascrizioni e nei riassunti, prodotti da Whisper o da assistenti esterni;
+3. errori nelle trascrizioni e nei riassunti, prodotti da Whisper, dal riconoscimento vocale del sistema o da assistenti esterni;
 4. malfunzionamenti, interruzioni, modifiche o costi dei servizi di terzi;
 5. file eliminati o sovrascritti dalla sincronizzazione con OneDrive o Google Drive;
 6. l'uso illecito dell'app da parte tua o di altri, comprese registrazioni fatte senza consenso e la diffusione di contenuti protetti.

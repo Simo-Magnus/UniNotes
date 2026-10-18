@@ -7,7 +7,7 @@ calendario e promemoria, sincronizzazione con OneDrive e Google Drive. Niente
 pubblicità, niente abbonamenti, niente account, niente raccolta di dati.
 
 Lo sviluppo, l'aggiornamento del database dei corsi dei 102 atenei italiani e i costi di
-pubblicazione sugli store (ad esempio 99 $ l'anno per l'Apple Developer Program) sono
+pubblicazione sugli store (ad esempio 99 € l'anno per l'Apple Developer Program) sono
 sostenuti da chi sceglie di contribuire.
 
 ## Come funzionano le donazioni

@@ -7,8 +7,9 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
-// Firma di rilascio: android/key.properties (vedi PUBBLICAZIONE.md). Senza il
-// file si usa la chiave di debug, sufficiente per provare l'APK.
+// Firma di rilascio: android/key.properties (in CI lo scrive il job android di
+// app.yml dai secret). Senza il file si usa la chiave di debug, sufficiente per
+// provare l'APK.
 val keyProperties = Properties().apply {
     val f = rootProject.file("key.properties")
     if (f.exists()) f.inputStream().use { load(it) }

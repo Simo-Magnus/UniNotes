@@ -11,10 +11,9 @@ nessun abbonamento, nessuna pubblicità: solo donazioni libere ([SOSTIENI.md](SO
 | [`app/`](app) | App Flutter (Windows, macOS, Android, iOS) |
 | [`database/`](database) | Database pubblico: atenei, corsi di studio, insegnamenti, libri, date d'esame ([formato](docs/database_format.md)) |
 | [`tools/db_builder/`](tools/db_builder) | Script che costruiscono il database dalle fonti ufficiali |
-| [`tools/transcription_test/`](tools/transcription_test) | Test reale della trascrizione (Whisper e Gemini) su audio italiano |
+| [`tools/transcription_test/`](tools/transcription_test) | Test reale della trascrizione con Whisper su audio italiano |
 | [`.github/workflows/`](.github/workflows) | `app.yml` build e test · `transcription.yml` test trascrizione |
 | [`INSTALLAZIONE.md`](INSTALLAZIONE.md) | **Dove scaricare e come installare** l'app su Android, Windows, macOS, iPhone/iPad |
-| [`PUBBLICAZIONE.md`](PUBBLICAZIONE.md) | Come pubblicare l'app: Google Play e App Store per telefono e tablet, sito e GitHub per Windows e macOS |
 | [`PRIVACY.md`](PRIVACY.md) | Informativa sulla privacy (aperta dall'app in *Impostazioni → Privacy e informazioni*) |
 | [`TERMINI.md`](TERMINI.md) | Termini e condizioni d'uso (aperti dall'app nella stessa sezione) |
 | [`docs/`](docs) | Formato del database, formato data pack, OneDrive, Google Drive, specifica Design 3 |
@@ -32,9 +31,11 @@ nel calendario: *Impostazioni → Privacy e informazioni → Disinstalla UniNote
 - **Primo avvio**: contrasto e grandezza del testo → tipo di università (statale, non statale,
   a ordinamento speciale, telematica) o ricerca per nome/sigla/città → regione (non per le
   telematiche) → ateneo → tipo di laurea (triennale, professionalizzante, magistrale, magistrale
-  a ciclo unico, altro) → corso → anno → download dei dati del solo ateneo scelto e import del
-  piano → l'AI con cui studi (diventa l'AI di riferimento) → avvisi (spiegati prima del permesso
-  del sistema) → calendario del telefono → gruppi da nascondere (OFA, inglese e lingua
+  a ciclo unico, altro) → corso → anno → *Scarica il piano di studi* (solo al tocco: scarica i
+  dati del solo ateneo scelto e importa il piano) → l'AI con cui studi (diventa l'AI di
+  riferimento) → avvisi (spiegati prima del permesso del sistema) → calendario del telefono
+  (Android e iOS; su Windows il calendario Outlook si collega dalle Impostazioni, su macOS
+  le prove si aggiungono con un file .ics) → gruppi da nascondere (OFA, inglese e lingua
   straniera, corsi facoltativi). Ogni passo ha al massimo due pulsanti. L'anno accademico in
   corso (dal 1° settembre) è il tuo anno; puoi aprire anche gli anni precedenti (*Segna come
   completato*: solo i voti; se mancano voti l'anno risulta *completato parzialmente*) e quelli
@@ -79,11 +80,11 @@ Costruito automaticamente da fonti pubbliche e ufficiali:
 4. **Date degli appelli e delle prove parziali** – dalla bacheca appelli pubblica *Esse3*
    (~70 atenei).
 
-Ciò che manca è segnato *da aggiungere*. Il workflow **Database** lo rigenera ogni anno
-(luglio, settembre, gennaio) e apre una pull request; l'app propone l'aggiornamento quando
-cambia la versione del database. L'app include solo l'elenco degli atenei e dei corsi
-(circa 1 MB): i dati di un ateneo (insegnamenti, libri, date, moduli) li scarica da
-internet solo per l'ateneo scelto e li tiene sul dispositivo, anche offline.
+Ciò che manca è segnato *da aggiungere*. Il database si rigenera ogni anno (luglio,
+settembre, gennaio); l'app propone l'aggiornamento quando cambia la versione del database.
+L'app include solo l'elenco degli atenei e dei corsi (circa 1 MB): i dati di un ateneo
+(insegnamenti, libri, date, moduli) li scarica da internet solo per l'ateneo scelto e li
+tiene sul dispositivo, anche offline.
 Dettagli: [docs/database_format.md](docs/database_format.md).
 
 ## Sviluppo
@@ -92,7 +93,7 @@ Dettagli: [docs/database_format.md](docs/database_format.md).
 cd app
 flutter pub get
 flutter analyze
-flutter test                 # ~300 test
+flutter test                 # ~580 test
 flutter run -d windows       # oppure macos, un telefono Android/iOS collegato
 ```
 

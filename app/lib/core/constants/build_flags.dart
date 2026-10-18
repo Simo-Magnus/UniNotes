@@ -22,9 +22,10 @@ const String kProjectUrl = String.fromEnvironment(
   defaultValue: 'https://simo-magnus.github.io/UniNotes/',
 );
 
-/// Canale da cui è stata scaricata l'app: github (predefinito), microsoft,
-/// play, appstore, macappstore, fdroid. Decide dove portare «Lascia una
-/// recensione» (vedi core/services/nudges.dart).
+/// Canale da cui è stata scaricata l'app: github (predefinito: sito e
+/// release di GitHub, anche per macOS), microsoft, play, appstore (iPhone e
+/// iPad). Decide dove portare «Lascia una recensione» (vedi
+/// core/services/nudges.dart).
 const String kStoreChannel = String.fromEnvironment(
   'STORE',
   defaultValue: 'github',
