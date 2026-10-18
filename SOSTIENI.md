@@ -35,7 +35,7 @@ Livelli mensili suggeriti (solo ringraziamento, nessun contenuto esclusivo):
 ## Altri modi (gratuiti) per aiutare
 
 - Lascia una **recensione** sullo store e consiglia l'app ai compagni di corso.
-- **Segnala errori** nel database (corsi, libri, date d'esame) aprendo una issue su GitHub o scrivendo a «[indirizzo email del progetto su Proton]».
+- **Segnala errori** nel database (corsi, libri, date d'esame) aprendo una issue su GitHub o scrivendo a uninotes-supporto@googlegroups.com.
 - Segui i **canali del progetto** per le novità e per aiutare chi ha dubbi.
 - Contribuisci al codice su GitHub, rispettando la [licenza](LICENSE).
 

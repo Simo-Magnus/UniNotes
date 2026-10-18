@@ -2,18 +2,13 @@
 
 Ultimo aggiornamento: 18 ottobre 2026
 
-<!--
-Prima della pubblicazione sostituire i segnaposto:
-«[nome e cognome dello sviluppatore]» e «[indirizzo email del progetto su Proton]».
--->
-
 Questi termini regolano l'uso di UniNotes, l'app per studenti universitari disponibile per Windows, macOS, Android e iOS. Sono scritti per essere letti da chi usa l'app, non solo da chi si occupa di diritto: dove una regola ha un motivo pratico, il motivo è spiegato.
 
 Come vengono trattati i dati personali è descritto a parte, nell'[Informativa sulla privacy](PRIVACY.md).
 
 ## 1. Chi fornisce l'app
 
-UniNotes è sviluppata e distribuita da «[nome e cognome dello sviluppatore]», che su GitHub usa il nome Simo-Magnus (di seguito «lo sviluppatore»). Puoi scrivergli a «[indirizzo email del progetto su Proton]».
+UniNotes è sviluppata e distribuita da Simone Magnano, che su GitHub usa il nome Simo-Magnus (di seguito «lo sviluppatore»). Puoi scrivergli a uninotes-supporto@googlegroups.com.
 
 Lo sviluppatore agisce come persona fisica e pubblica UniNotes come progetto indipendente e gratuito. UniNotes non è un servizio delle università né del Ministero dell'università e della ricerca e non è affiliata, approvata o sponsorizzata da nessuno di essi.
 
@@ -199,4 +194,4 @@ Questi termini sono redatti in italiano. Il testo della licenza nel file LICENSE
 
 ## 22. Contatti
 
-Per domande su questi termini, segnalazioni o richieste: «[indirizzo email del progetto su Proton]». Per problemi tecnici o errori nel database puoi anche aprire una segnalazione su <https://github.com/Simo-Magnus/UniNotes/issues>; ricorda che lì quello che scrivi è pubblico.
+Per domande su questi termini, segnalazioni o richieste: uninotes-supporto@googlegroups.com. Per problemi tecnici o errori nel database puoi anche aprire una segnalazione su <https://github.com/Simo-Magnus/UniNotes/issues>; ricorda che lì quello che scrivi è pubblico.
