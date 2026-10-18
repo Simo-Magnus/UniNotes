@@ -6,6 +6,8 @@ Android e iOS**. Tutto resta sul dispositivo; la rete serve solo per il database
 dei corsi e per i collegamenti che attivi tu (OneDrive, Google Drive, Gemini, la tua AI). Nessun account,
 nessun abbonamento, nessuna pubblicità: solo donazioni libere ([SOSTIENI.md](SOSTIENI.md)).
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3P8291ENG)
+
 | Cartella / file | Contenuto |
 |---|---|
 | [`app/`](app) | App Flutter (Windows, macOS, Android, iOS) |
