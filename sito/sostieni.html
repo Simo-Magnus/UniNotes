@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sostieni UniNotes</title>
+<meta name="description" content="UniNotes è gratuita, senza pubblicità e senza account. Se ti è utile puoi sostenerla con una donazione volontaria: non sblocca nulla.">
+<link rel="icon" href="favicon.png">
+<style>
+  :root { --bg: #02060f; --card: #0a1628; --text: #dcebf7; --muted: #9db4c8; --c2: #38BDF8; --line: #16304a; --o: #FF8A1F; }
+  html { background: var(--bg); -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.6 "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: var(--c2); }
+  h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 8px; }
+  h2 { font-size: 1.35rem; margin: 36px 0 8px; padding-top: 12px; border-top: 1px solid var(--line); }
+  ul { padding-left: 22px; }
+  li { margin: 4px 0; }
+  table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
+  th, td { border: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+  .torna { display: inline-block; margin-bottom: 20px; color: var(--muted); text-decoration: none; }
+  .piattaforme { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 16px 0; }
+  .piattaforma { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+  .piattaforma h3 { margin: 0 0 4px; font-size: 1.1rem; }
+  .piattaforma p { margin: 0 0 12px; color: var(--muted); font-size: .95rem; }
+  .bottone { display: inline-block; min-height: 44px; line-height: 44px; padding: 0 18px; border-radius: 22px;
+             background: linear-gradient(180deg, #FFB064 0%, #FF8A1F 52%, #E86F08 100%); color: #2a1300;
+             font-weight: 600; text-decoration: none; }
+  .bottone[aria-disabled="true"] { background: var(--line); color: var(--muted); cursor: default; }
+  .nota { color: var(--muted); font-size: .95rem; }
+</style>
+</head>
+<body>
+<main>
+<a class="torna" href="./">← UniNotes</a>
+<h1>Sostieni UniNotes</h1>
+<p><strong>UniNotes è e resterà gratuita.</strong> Tutte le funzioni sono disponibili a tutti: piano di studi del tuo corso con insegnamenti, libri e date d'esame, moduli e argomenti da studiare, registrazione e trascrizione delle lezioni, esami e medie, lettore di file, calendario e promemoria, sincronizzazione con OneDrive e Google Drive. Niente pubblicità, niente abbonamenti, niente account, niente raccolta di dati.</p>
+<p>Lo sviluppo, l'aggiornamento del database dei corsi dei 102 atenei italiani e i costi di pubblicazione sugli store sono sostenuti da chi sceglie di contribuire.</p>
+
+<h2>Dove donare</h2>
+<div class="piattaforme">
+  <div class="piattaforma">
+    <h3>Ko-fi</h3>
+    <p>Una tantum («offrimi un caffè») o mensile, con carta o PayPal. Non serve un account.</p>
+    <a class="bottone" aria-disabled="true">In arrivo</a>
+  </div>
+  <div class="piattaforma">
+    <h3>GitHub Sponsors</h3>
+    <p>Mensile o una tantum, per chi ha un account GitHub.</p>
+    <a class="bottone" aria-disabled="true">In arrivo</a>
+  </div>
+</div>
+<p class="nota">Le pagine di donazione sono in preparazione. Nel frattempo puoi aiutare nei modi gratuiti qui sotto.</p>
+
+<h2>Come funzionano le donazioni</h2>
+<ul>
+<li>Sono <strong>volontarie</strong> e <strong>non sbloccano nulla</strong>: chi dona e chi non dona usa la stessa identica app.</li>
+<li>Vanno allo sviluppatore del progetto, non a un ente benefico: <strong>non sono deducibili</strong>.</li>
+<li>I pagamenti sono gestiti dalle piattaforme indicate sopra; lo sviluppatore non vede i tuoi dati di pagamento (vedi l'<a href="privacy.html">informativa sulla privacy</a> e i <a href="termini.html">termini di utilizzo</a>).</li>
+<li>Chi lo desidera può comparire nella pagina dei ringraziamenti del sito, solo con il nome che sceglie e solo se lo chiede.</li>
+</ul>
+
+<p>Livelli mensili suggeriti (solo ringraziamento, nessun contenuto esclusivo):</p>
+<table>
+<tr><th>Livello</th><th>Importo</th><th>Cosa ricevi</th></tr>
+<tr><td>Caffè</td><td>2 €/mese</td><td>Il nostro grazie e il nome nei ringraziamenti (se vuoi)</td></tr>
+<tr><td>Pizza</td><td>5 €/mese</td><td>Come sopra + un aggiornamento mensile sul progetto (pubblico per tutti, ma inviato anche a te)</td></tr>
+<tr><td>Sessione d'esame</td><td>10 €/mese</td><td>Come sopra + menzione nelle note di rilascio</td></tr>
+</table>
+
+<h2>Altri modi (gratuiti) per aiutare</h2>
+<ul>
+<li>Lascia una <strong>recensione</strong> sullo store e consiglia l'app ai compagni di corso.</li>
+<li><strong>Segnala errori</strong> nel database (corsi, libri, date d'esame) aprendo una <a href="https://github.com/Simo-Magnus/UniNotes/issues">issue su GitHub</a>.</li>
+<li>Segui i canali del progetto per le novità e per aiutare chi ha dubbi.</li>
+<li>Contribuisci al codice su <a href="https://github.com/Simo-Magnus/UniNotes">GitHub</a>, rispettando la licenza.</li>
+</ul>
+
+<h2>Perché nell'app non sempre trovi il pulsante «Sostieni»</h2>
+<p>Alcuni store (Google Play, App Store) non permettono di collegarsi a pagine di donazione esterne dall'interno dell'app. Per rispettare le loro regole, nelle versioni distribuite da quegli store il pulsante non c'è: trovi questa pagina sul sito del progetto. Le versioni scaricate dal sito e dal Microsoft Store mostrano invece il link.</p>
+<p>Grazie!</p>
+</main>
+</body>
+</html>
