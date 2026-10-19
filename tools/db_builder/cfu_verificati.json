@@ -2055,6 +2055,450 @@
    "nota": "Il piano pubblicato dall'ateneo (API del portale corsi.unical.it) elenca per l'anno 5 insegnamenti per 54 CFU obbligatori (totale 54); i CFU restanti dell'anno (attività a scelta libera, altre attività) non sono elencati nel piano pubblicato. Verifica automatica: fonte riletta e somme confrontate con il database (le attività ripetute nel piano si contano una volta)."
   }
  },
+ "unicampania-l-35-matematica": {
+  "1": {
+   "fonte": "https://www.matfis.unicampania.it/images/All1_Manifesto_A34_LT_26-27_2.pdf",
+   "nota": "manifesto 2026/27 (coorte 2026-2027): totale del 1° anno 52 CFU; verifica automatica: obbligatori 52 CFU nel database. Il manifesto non dichiara la regola di scelta per il resto dei crediti"
+  }
+ },
+ "unicatt-l-1-scienze-dei-beni-culturali": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-dei-beni-culturali-milano/piani-di-studio-2026-27/curriculum-teatro-cinema-video-e-ritualita.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 18 CFU + 51 CFU dei 6 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 69 CFU (percorso «Teatro cinema video e ritualità»)."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-dei-beni-culturali-milano/piani-di-studio-2025-26/curriculum-archeologico.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 36 CFU + 36 CFU dei 6 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 72 CFU (percorso «Archeologico»)."
+  }
+ },
+ "unicatt-l-12-scienze-linguistiche": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-linguistiche-milano/piani-di-studio-2026-27/curriculum-lingue-comunicazione-media-e-culture-digitali.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 33 CFU + 30 CFU dei 1 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 63 CFU (percorso «Lingue comunicazione media e culture digitali»)."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-linguistiche-milano/piani-di-studio-2025-26/curriculum-lingue-e-letterature-straniere.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 26 CFU + 38 CFU dei 2 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 64 CFU (percorso «Lingue e letterature straniere»)."
+  },
+  "3": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-linguistiche-milano/piani-di-studio-2024-25/curriculum-lingue-per-limpresa.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024-25: obbligatori fissi 18 CFU + 50 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 68 CFU (percorso «Lingue per l'impresa»)."
+  }
+ },
+ "unicatt-l-12-scienze-linguistiche-per-le-relazioni-internazionali": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-linguistiche-per-le-relazioni-internazionali-milano/piani-di-studio-2026-27/curriculum-mediazione-linguistica-e-politiche-internazionali.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 24 CFU + 32 CFU dei 2 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 56 CFU (percorso «Mediazione linguistica e politiche internazionali»). L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 180 CFU su 180 (diversa distribuzione tra gli anni)."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-linguistiche-per-le-relazioni-internazionali-milano/piani-di-studio-2025-26/curriculum-lingue-e-comunicazione-per-le-organizzazioni-internazionali.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 25 CFU + 24 CFU dei 1 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 49 CFU (percorso «Lingue e comunicazione per le Organizzazioni internazionali»). L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 180 CFU su 180 (diversa distribuzione tra gli anni)."
+  },
+  "3": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-linguistiche-per-le-relazioni-internazionali-milano/piani-di-studio-2024-25/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024-25: obbligatori fissi 20 CFU + 55 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 75 CFU."
+  }
+ },
+ "unicatt-l-12-scienze-linguistiche-replica-brescia": {
+  "3": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-linguistiche-brescia/piani-di-studio-2024-25/curriculum-lingue-comunicazione-e-media.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024-25: obbligatori fissi 16 CFU + 56 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 72 CFU (percorso «Lingue comunicazione e media»)."
+  }
+ },
+ "unicatt-l-18-economia-delle-aziende-artistiche-culturali-e-creative": {
+  "3": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/economia-delle-aziende-artistiche-culturali-e-creative-milano/piani-di-studio-2026-27/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 33 CFU + 22 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 55 CFU. L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 180 CFU su 180 (diversa distribuzione tra gli anni). Anno dedotto, non letto: il sito non pubblica il piano della coorte di 3° anno e si usa il piano 2026-27 (coorte più vicina)."
+  }
+ },
+ "unicatt-l-19-scienze-dell-educazione-e-della-formazione": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-delleducazione-e-della-formazione-milano/piani-di-studio-2026-27/curriculum-educatore-professionale-socio-pedagogico.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 33 CFU + 35 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 68 CFU (percorso «Educatore professionale socio-pedagogico»)."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-delleducazione-e-della-formazione-milano/piani-di-studio-2025-26/curriculum-educatore-nei-servizi-educativi-per-linfanzia.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 3 CFU + 54 CFU dei 7 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 57 CFU (percorso «Educatore nei servizi educativi per l'infanzia»). L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 180 CFU su 180 (diversa distribuzione tra gli anni)."
+  },
+  "3": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-delleducazione-e-della-formazione-milano/piani-di-studio-2024-25/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024-25: obbligatori fissi 20 CFU + 35 CFU dei 6 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 55 CFU. L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 180 CFU su 180 (diversa distribuzione tra gli anni)."
+  }
+ },
+ "unicatt-l-19-scienze-dell-educazione-e-della-formazione-replica-brescia": {
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-delleducazione-e-della-formazione-brescia/piani-di-studio-2025-26/curriculum-educatore-nei-servizi-educativi-per-linfanzia.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 3 CFU + 54 CFU dei 7 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 57 CFU (percorso «Educatore nei servizi educativi per l'infanzia»). L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 180 CFU su 180 (diversa distribuzione tra gli anni)."
+  },
+  "3": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-delleducazione-e-della-formazione-brescia/piani-di-studio-2024-25/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024-25: obbligatori fissi 20 CFU + 35 CFU dei 6 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 55 CFU. L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 180 CFU su 180 (diversa distribuzione tra gli anni)."
+  }
+ },
+ "unicatt-l-19-scienze-dell-educazione-e-della-formazione-replica-piacenza": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-delleducazione-e-della-formazione-piacenza/piani-di-studio-2026-27/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 18 CFU + 50 CFU dei 5 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 68 CFU."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-delleducazione-e-della-formazione-piacenza/piani-di-studio-2025-26/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 13 CFU + 44 CFU dei 5 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 57 CFU. L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 180 CFU su 180 (diversa distribuzione tra gli anni)."
+  },
+  "3": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-delleducazione-e-della-formazione-piacenza/piani-di-studio-2024-25/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024-25: obbligatori fissi 20 CFU + 35 CFU dei 6 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 55 CFU. L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 180 CFU su 180 (diversa distribuzione tra gli anni)."
+  }
+ },
+ "unicatt-l-20-comunicazione-e-societa": {
+  "3": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/comunicazione-e-societa--comes-milano/piani-di-studio-2024-25/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024-25: obbligatori fissi 36 CFU + 18 CFU dei 3 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 54 CFU. L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 180 CFU su 180 (diversa distribuzione tra gli anni)."
+  }
+ },
+ "unicatt-l-22-scienze-motorie-e-dello-sport": {
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-motorie-e-dello-sport-milano/piani-di-studio-2025-26/curriculum-sportivo-manageriale.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 55 CFU + 4 CFU dei 1 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 59 CFU (percorso «Sportivo-manageriale»). L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 180 CFU su 180 (diversa distribuzione tra gli anni)."
+  },
+  "3": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/scienze-motorie-e-dello-sport-milano/piani-di-studio-2024-25/curriculum-scolastico-adattativo.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024-25: obbligatori fissi 47 CFU + 10 CFU dei 1 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 57 CFU (percorso «Scolastico-adattativo»). L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 180 CFU su 180 (diversa distribuzione tra gli anni)."
+  }
+ },
+ "unicatt-l-5-filosofia": {
+  "3": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/filosofia-milano/piani-di-studio-2024-25/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024-25: obbligatori fissi 36 CFU + 18 CFU dei 3 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 54 CFU. L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 180 CFU su 180 (diversa distribuzione tra gli anni)."
+  }
+ },
+ "unicatt-lm-14-filologia-moderna": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/filologia-moderna-milano/piani-di-studio-2026-27/curriculum-editoria-e-gestione-dei-beni-librari.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 18 CFU + 45 CFU dei 5 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 63 CFU (percorso «Editoria e gestione dei beni librari»)."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/filologia-moderna-milano/piani-di-studio-2025-26/curriculum-editoria-e-gestione-dei-beni-librari.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 39 CFU + 24 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 63 CFU (percorso «Editoria e gestione dei beni librari»)."
+  }
+ },
+ "unicatt-lm-14-filologia-moderna-replica-brescia": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/filologia-moderna-milano/piani-di-studio-2026-27/curriculum-editoria-e-gestione-dei-beni-librari.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 18 CFU + 45 CFU dei 5 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 63 CFU (percorso «Editoria e gestione dei beni librari»)."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/filologia-moderna-milano/piani-di-studio-2025-26/curriculum-editoria-e-gestione-dei-beni-librari.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 39 CFU + 24 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 63 CFU (percorso «Editoria e gestione dei beni librari»)."
+  }
+ },
+ "unicatt-lm-15-scienze-dell-antichita": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/scienze-dellantichita-milano/piani-di-studio-2026-27/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 24 CFU + 24 CFU dei 2 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 48 CFU. L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 120 CFU su 120 (diversa distribuzione tra gli anni)."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/scienze-dellantichita-milano/piani-di-studio-2025-26/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 39 CFU + 33 CFU dei 2 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 72 CFU."
+  }
+ },
+ "unicatt-lm-19-gestione-di-contenuti-digitali-per-i-media-le-imprese-e-i-pa": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/gestione-di-contenuti-digitali-per-i-media-le-imprese-e-i-patrimoni-culturali-brescia/piani-di-studio-2026-27/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 18 CFU + 42 CFU dei 5 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 60 CFU."
+  }
+ },
+ "unicatt-lm-19-lm-59-comunicazione-per-l-impresa-i-media-e-le-organizzazioni-comp": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/comunicazione-per-limpresa-i-media-e-le-organizzazioni-complesse--cimo-milano/piani-di-studio-2026-27/curriculum-comunicazione-e-marketing-per-le-imprese-mediali-di-cultura-e-i-territori.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 5 CFU + 52 CFU dei 7 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 57 CFU (percorso «Comunicazione e marketing per le imprese mediali di cultura e i territori»). L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 120 CFU su 120 (diversa distribuzione tra gli anni)."
+  }
+ },
+ "unicatt-lm-37-lingue-letterature-e-culture-straniere": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/lingue-letterature-e-culture-straniere-milano/piani-di-studio-2026-27/curriculum-lingue-letterature-e-culture-deuropa-e-damerica.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 8 CFU + 56 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 64 CFU (percorso «Lingue letterature e culture d'Europa e d'America»)."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/lingue-letterature-e-culture-straniere-milano/piani-di-studio-2025-26/curriculum-terminologie-industria-delle-lingue-e-culture-digitali.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 24 CFU + 36 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 60 CFU (percorso «Terminologie industria delle lingue e culture digitali»)."
+  }
+ },
+ "unicatt-lm-38-scienze-linguistiche": {
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/scienze-linguistiche-milano/piani-di-studio-2025-26/curriculum-media--digital-management.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 28 CFU + 33 CFU dei 5 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 61 CFU (percorso «Media & digital management»)."
+  }
+ },
+ "unicatt-lm-38-scienze-linguistiche-replica-brescia": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/scienze-linguistiche-brescia/piani-di-studio-2026-27/curriculum-letteratura-e-comunicazione-per-i-media-e-le-culture-digitali.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 0 CFU + 60 CFU dei 5 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 60 CFU (percorso «Letteratura e comunicazione per i media e le culture digitali»)."
+  }
+ },
+ "unicatt-lm-39-linguistic-computing": {
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/linguistic-computing-milano/study-plan-2025-26/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 18 CFU + 42 CFU dei 5 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 60 CFU (percorso «Curriculum - A.Y. 2025/2026»)."
+  }
+ },
+ "unicatt-lm-40-matematica": {
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/matematica-brescia/piani-di-studio-2025-26/curriculum-matematica-per-le-applicazioni-economiche-finanziarie-e-per-limpresa.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 36 CFU + 24 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 60 CFU (percorso «Matematica per le applicazioni economiche finanziarie e per l'impresa»)."
+  }
+ },
+ "unicatt-lm-41-medicine-and-surgery-replica-bolzano": {
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/triennale/medicine-and-surgery-roma/study-plan-2025-26/curriculum-main-curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 60 CFU + 0 CFU dei 0 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 60 CFU (percorso «Main Curriculum - A.y. 2025/2026»)."
+  }
+ },
+ "unicatt-lm-51-psicologia-clinica-e-della-salute-persona-relazioni-famiglia": {
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/psicologia-clinica-e-della-salute-persona-relazioni-famigliari-e-di-comunita-milano/piani-di-studio-2025-26/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 37 CFU + 22 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 59 CFU. L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 142 CFU su 120 (diversa distribuzione tra gli anni)."
+  }
+ },
+ "unicatt-lm-52-politiche-europee-ed-internazionali": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/politiche-europee-ed-internazionali-milano/piani-di-studio-2026-27/curriculum-sistema-internazionale-e-integrazione-europea.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 12 CFU + 54 CFU dei 6 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 66 CFU (percorso «Sistema internazionale e integrazione europea»)."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/politiche-europee-ed-internazionali-milano/piani-di-studio-2025-26/curriculum-sistema-internazionale-e-integrazione-europea.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 30 CFU + 24 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 54 CFU (percorso «Sistema internazionale e integrazione europea»). L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 120 CFU su 120 (diversa distribuzione tra gli anni)."
+  }
+ },
+ "unicatt-lm-56-economia": {
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/economia-milano/piani-di-studio-2025-26/curriculum-finanza-e-mercati-internazionali.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 32 CFU + 32 CFU dei 3 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 64 CFU (percorso «Finanza e mercati internazionali»)."
+  }
+ },
+ "unicatt-lm-76-management-dellarte-della-cultura-e-della-creativita": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/management-dell-arte-della-cultura-e-della-creativita/piani-di-studio-2026-27/curriculum-economia-e-gestione-delle-aziende-e-delle-manifestazioni-dello-spettacolo.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 20 CFU + 46 CFU dei 6 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 66 CFU (percorso «Economia e gestione delle aziende e delle manifestazioni dello spettacolo»)."
+  }
+ },
+ "unicatt-lm-77-innovation-and-technology-management": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/innovation-and-technology-management-milano/study-plan-2026-27/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 28 CFU + 32 CFU dei 3 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 60 CFU (percorso «Curriculum - A.Y. 2026/2027»)."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/innovation-and-technology-management-milano/study-plan-2025-26/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 28 CFU + 32 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 60 CFU (percorso «Curriculum - A.Y. 2025/2026»)."
+  }
+ },
+ "unicatt-lm-77-management": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/management-milano/study-plan-2026-27/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 32 CFU + 32 CFU dei 1 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 64 CFU (percorso «Curriculum - A.Y. 2026/2027»)."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/management-milano/study-plan-2025-26/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 24 CFU + 32 CFU dei 3 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 56 CFU (percorso «Curriculum - A.Y. 2025/2026»). L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 120 CFU su 120 (diversa distribuzione tra gli anni)."
+  }
+ },
+ "unicatt-lm-77-management-per-l-impresa": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/management-per-limpresa-milano/piani-di-studio-2026-27/curriculum-finance.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 32 CFU + 32 CFU dei 3 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 64 CFU (percorso «Finance»)."
+  }
+ },
+ "unicatt-lm-78-filosofia": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/filosofia-milano/piani-di-studio-2026-27/curriculum-etico-bioetico-antropologico.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 12 CFU + 69 CFU dei 5 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 81 CFU (percorso «Etico-bioetico-antropologico»)."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/filosofia-milano/piani-di-studio-2025-26/curriculum-generale.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 27 CFU + 96 CFU dei 8 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 123 CFU (percorso «Generale»)."
+  }
+ },
+ "unicatt-lm-81-politiche-per-la-cooperazione-internazionale-allo-sviluppo": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/politiche-per-la-cooperazione-internazionale-allo-sviluppo-milano/piani-di-studio-2026-27/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 27 CFU + 36 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 63 CFU."
+  },
+  "2": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/politiche-per-la-cooperazione-internazionale-allo-sviluppo-milano/piani-di-studio-2025-26/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025-26: obbligatori fissi 30 CFU + 27 CFU dei 4 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 57 CFU. L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 120 CFU su 120 (diversa distribuzione tra gli anni)."
+  }
+ },
+ "unicatt-lm-90-european-studies-in-investor-relations-and-financial-communi": {
+  "1": {
+   "fonte": "https://www.unicatt.it/corsi/magistrale/european-studies-in-investor-relations-financial-communication-milano/study-plan-2026-27/curriculum.html",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 39 CFU + 12 CFU dei 2 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 51 CFU (percorso «Curriculum - A.Y. 2026/2027»). L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 120 CFU su 120 (diversa distribuzione tra gli anni)."
+  }
+ },
+ "unime-l-11-l-12-lingue-letterature-straniere-e-tecniche-della-mediazione-lin": {
+  "1": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2026/10781",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 1 è quello del piano della coorte 2026 (180 CFU in tutto) e ha 21 CFU di attività obbligatorie; il resto è in 6 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «LINGUA STRANIERA A: (12 CFU)»; «LINGUA STRANIERA B: (12 CFU)»; «UNA MATERIA A SCELTA TRA: (6 CFU)»; «A SCELTA DALLO STESSO CORSO (fra 0.5 e 9 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (102 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  },
+  "2": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2025/10781",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 2 è quello del piano della coorte 2025 (180 CFU in tutto) e ha 0 CFU di attività obbligatorie; il resto è in 8 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «LINGUA STRANIERA A: (9 CFU)»; «LINGUA STRANIERA B: (9 CFU)»; «LETTERATURA DELLA LINGUA A: (9 CFU)»; «LETTERATURA DELLA LINGUA B: (9 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (189 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  },
+  "3": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2024/10015",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 3 è quello del piano della coorte 2024 (180 CFU in tutto) e ha 24 CFU di attività obbligatorie; il resto è in 6 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «1 LINGUA STRANIERA A III A SCELTA:»; «1 LINGUA STRANIERA B III A SCELTA:»; «1 LETTERATURA DELLA LINGUA A II»; «1 LETTERATURA DELLA LINGUA B II»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (135 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "unime-l-18-economia-aziendale": {
+  "1": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2026/10831",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 1 è quello del piano della coorte 2026 e vale 56 CFU in quel piano (8 voci); il piano completo della coorte 2026 somma 180 CFU su 180 (56 + 70 + 54 per anno; crediti del corso nel catalogo: 180). La somma della coorte torna: la differenza con 60 è come il riordino distribuisce i CFU tra gli anni; nel database il totale del corso non arriva a quella cifra perché ogni anno è preso dalla coorte di chi lo frequenta oggi (coorti diverse, con riordini diversi)."
+  },
+  "3": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2024/10080",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 3 è quello del piano della coorte 2024 e vale 54 CFU in quel piano (8 voci); il piano completo della coorte 2024 somma 180 CFU su 180 (56 + 70 + 54 per anno; crediti del corso nel catalogo: 180). La somma della coorte torna: la differenza con 60 è come il riordino distribuisce i CFU tra gli anni; nel database il totale del corso non arriva a quella cifra perché ogni anno è preso dalla coorte di chi lo frequenta oggi (coorti diverse, con riordini diversi)."
+  }
+ },
+ "unime-l-25-scienze-e-tecnologie-agrarie-per-la-transizione-ecologica": {
+  "1": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2026/10776",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 1 è quello del piano della coorte 2026 e vale 59 CFU in quel piano (8 voci); il piano completo della coorte 2026 somma 185 CFU su 180 (59 + 59 + 67 per anno; crediti del corso nel catalogo: 180). La somma della coorte supera il totale perché conta tutte le opzioni a scelta elencate; l'anno è quello del piano ufficiale di quella coorte. Nel database il totale del corso resta sotto perché ogni anno è preso dalla coorte di chi lo frequenta oggi (coorti diverse, con riordini diversi)."
+  },
+  "3": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2024/10554",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 3 è quello del piano della coorte 2024 e vale 57 CFU in quel piano (11 voci); il piano completo della coorte 2024 somma 180 CFU su 180 (63 + 60 + 57 per anno; crediti del corso nel catalogo: 180). La somma della coorte torna: la differenza con 60 è come il riordino distribuisce i CFU tra gli anni; nel database il totale del corso non arriva a quella cifra perché ogni anno è preso dalla coorte di chi lo frequenta oggi (coorti diverse, con riordini diversi)."
+  }
+ },
+ "unime-l-27-chimica": {
+  "3": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2024/10045",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 3 è quello del piano della coorte 2024 (180 CFU in tutto) e ha 38 CFU di attività obbligatorie; il resto è in 4 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «DUE MATERIE A SCELTA TRA (12 CFU)»; «A SCELTA (fra 0.1 e 12 CFU)»; «A SCELTA DALLO STESSO CORSO (fra 0.5 e 12 CFU)»; «TIROCINIO (fra 0.1 e 5 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (17 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "unime-l-35-matematica": {
+  "3": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2024/10050",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 3 è quello del piano della coorte 2024 (180 CFU in tutto) e ha 35 CFU di attività obbligatorie; il resto è in 4 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «MATERIE OPZIONALI A SCELTA (12 CFU)»; «MATERIA A SCELTA DALLO STESSO CORSO (fra 0.5 e 12 CFU)»; «e/o MATERIA A SCELTA DA ALTRI CORSI (fra 0.5 e 12 CFU)»; «TIROCINI (2 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (48 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "unime-l-38-scienze-tecnologie-e-sicurezza-delle-produzioni-animali": {
+  "1": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2026/10772",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 1 è quello del piano della coorte 2026 e vale 52 CFU in quel piano (7 voci); il piano completo della coorte 2026 somma 180 CFU su 180 (52 + 62 + 66 per anno; crediti del corso nel catalogo: 180). La somma della coorte torna: la differenza con 60 è come il riordino distribuisce i CFU tra gli anni; nel database il totale del corso non arriva a quella cifra perché ogni anno è preso dalla coorte di chi lo frequenta oggi (coorti diverse, con riordini diversi)."
+  }
+ },
+ "unime-l-5-filosofia": {
+  "3": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2024/10021",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 3 è quello del piano della coorte 2024 (180 CFU in tutto) e ha 18 CFU di attività obbligatorie; il resto è in 8 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «DISCIPLINE STORICHE 2 ATTIVITA' A SCELTA TRA: (fra 0.5 e 24 CFU)»; «DISCIPLINE PSICO-PEDAGOGICHE 2 A SCELTA TRA: (fra 0.5 e 24 CFU)»; «DISCIPLINE DELL'EDITORIA E DELLA COMUNICAZIONE TRA: (fra 0.5 e 24 CFU)»; «TIROCINIO (3 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (147 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "unime-l-snt3-tecniche-audioprotesiche-abilitante-alla-professione-sanitar": {
+  "2": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2025/10176",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 2 è quello del piano della coorte 2025 e vale 58 CFU in quel piano (8 voci); il piano completo della coorte 2025 somma 178 CFU su 180 (60 + 58 + 60 per anno; crediti del corso nel catalogo: 180). Il piano pubblicato dal catalogo per quella coorte somma 178 CFU su 180: i CFU mancanti non sono elencati dalla fonte (non dedotti né aggiunti)."
+  }
+ },
+ "unime-lm-13-chimica-e-tecnologia-farmaceutiche": {
+  "1": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2026/10794",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 1 è quello del piano della coorte 2026 e vale 57 CFU in quel piano (9 voci); il piano completo della coorte 2026 somma 300 CFU su 300 (57 + 58 + 62 + 63 + 60 per anno; crediti del corso nel catalogo: 300). La somma della coorte torna: la differenza con 60 è come il riordino distribuisce i CFU tra gli anni; nel database il totale del corso non arriva a quella cifra perché ogni anno è preso dalla coorte di chi lo frequenta oggi (coorti diverse, con riordini diversi)."
+  },
+  "2": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2025/10794",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 2 è quello del piano della coorte 2025 e vale 58 CFU in quel piano (7 voci); il piano completo della coorte 2025 somma 300 CFU su 300 (56 + 58 + 63 + 63 + 60 per anno; crediti del corso nel catalogo: 300). La somma della coorte torna: la differenza con 60 è come il riordino distribuisce i CFU tra gli anni; nel database il totale del corso non arriva a quella cifra perché ogni anno è preso dalla coorte di chi lo frequenta oggi (coorti diverse, con riordini diversi)."
+  }
+ },
+ "unime-lm-13-farmacia": {
+  "1": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2026/10792",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 1 è quello del piano della coorte 2026 e vale 58 CFU in quel piano (9 voci); il piano completo della coorte 2026 somma 300 CFU su 300 (58 + 58 + 55 + 65 + 64 per anno; crediti del corso nel catalogo: 300). La somma della coorte torna: la differenza con 60 è come il riordino distribuisce i CFU tra gli anni; nel database il totale del corso non arriva a quella cifra perché ogni anno è preso dalla coorte di chi lo frequenta oggi (coorti diverse, con riordini diversi)."
+  },
+  "2": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2025/10792",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 2 è quello del piano della coorte 2025 e vale 59 CFU in quel piano (8 voci); il piano completo della coorte 2025 somma 300 CFU su 300 (57 + 59 + 55 + 65 + 64 per anno; crediti del corso nel catalogo: 300). La somma della coorte torna: la differenza con 60 è come il riordino distribuisce i CFU tra gli anni; nel database il totale del corso non arriva a quella cifra perché ogni anno è preso dalla coorte di chi lo frequenta oggi (coorti diverse, con riordini diversi)."
+  },
+  "3": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2024/10602",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 3 è quello del piano della coorte 2024 e vale 56 CFU in quel piano (7 voci); il piano completo della coorte 2024 somma 300 CFU su 300 (57 + 59 + 56 + 65 + 63 per anno; crediti del corso nel catalogo: 300). La somma della coorte torna: la differenza con 60 è come il riordino distribuisce i CFU tra gli anni; nel database il totale del corso non arriva a quella cifra perché ogni anno è preso dalla coorte di chi lo frequenta oggi (coorti diverse, con riordini diversi)."
+  },
+  "5": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2022/10076",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 5 è quello del piano della coorte 2022 e vale 59 CFU in quel piano (5 voci); il piano completo della coorte 2022 somma 306 CFU su 300 (60 + 60 + 67 + 60 + 59 per anno; crediti del corso nel catalogo: 300). La somma della coorte supera il totale perché conta tutte le opzioni a scelta elencate; l'anno è quello del piano ufficiale di quella coorte. Nel database il totale del corso resta sotto perché ogni anno è preso dalla coorte di chi lo frequenta oggi (coorti diverse, con riordini diversi)."
+  }
+ },
+ "unime-lm-14-civilta-letteraria-dell-italia-medievale-e-moderna": {
+  "2": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2025/10782",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 2 è quello del piano della coorte 2025 (120 CFU in tutto) e ha 18 CFU di attività obbligatorie; il resto è in 6 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «1 MATERIA A SCELTA TRA: (6 CFU)»; «1 MATERIA A SCELTA TRA: (6 CFU)»; «1 MATERIA A SCELTA TRA: (6 CFU)»; «1 MATERIA A SCELTA TRA: (6 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (114 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "unime-lm-19-comunicazione-digitale-e-linguaggi-del-giornalismo": {
+  "1": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2026/10786",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 1 è quello del piano della coorte 2026 (120 CFU in tutto) e ha 30 CFU di attività obbligatorie; il resto è in 5 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «UNA MATERIA A SCELTA TRA: (6 CFU)»; «DUE MATERIE A SCELTA TRA: (12 CFU)»; «MATERIE A SCELTA DALLO STESSO CORSO (fra 0.5 e 12 CFU)»; «oppure MATERIE A SCELTA DA ALTRI CORSI (fra 0.5 e 12 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (48.5 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "unime-lm-37-traduzione-didattica-e-relazioni-culturali-per-le-lingue-e-l": {
+  "1": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2026/10777",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 1 è quello del piano della coorte 2026 (120 CFU in tutto) e ha 3 CFU di attività obbligatorie; il resto è in 10 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «LINGUA STRANIERA A (6 CFU)»; «LINGUA STRANIERA b (6 CFU)»; «LETTERATURA STRANIERA A (12 CFU)»; «UNA MATERIA A SCELTA TRA: (12 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (198 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  },
+  "2": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2025/10777",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 2 è quello del piano della coorte 2025 (120 CFU in tutto) e ha 21 CFU di attività obbligatorie; il resto è in 6 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «LINGUA STRANIERA A (6 CFU)»; «LINGUA STRANIERA B (6 CFU)»; «LETTERATURA STRANIERA B (12 CFU)»; «UNA MATERIA A SCELTA TRA: (6 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (78 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "unime-lm-40-matematica": {
+  "2": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2025/10765",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 2 è quello del piano della coorte 2025 (120 CFU in tutto) e ha 20 CFU di attività obbligatorie; il resto è in 5 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «2 MATERIE CARATTERIZZANTI DA TAB. A»; «1 MATERIA CARATTERIZZANTE DA TAB. B»; «2 MATERIE AFFINI DA TAB. C»; «MATERIA A SCELTA DALLO STESSO PERCORSO (fra 0.5 e 12 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (144 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "unime-lm-42-medicina-veterinaria": {
+  "1": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2026/10775",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 1 è quello del piano della coorte 2026 e vale 51 CFU in quel piano (9 voci); il piano completo della coorte 2026 somma 300 CFU su 300 (51 + 61 + 66 + 65 + 57 per anno; crediti del corso nel catalogo: 300). La somma della coorte torna: la differenza con 60 è come il riordino distribuisce i CFU tra gli anni; nel database il totale del corso non arriva a quella cifra perché ogni anno è preso dalla coorte di chi lo frequenta oggi (coorti diverse, con riordini diversi)."
+  },
+  "5": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2022/10084",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 5 è quello del piano della coorte 2022 e vale 59 CFU in quel piano (12 voci); il piano completo della coorte 2022 somma 300 CFU su 300 (57 + 58 + 66 + 60 + 59 per anno; crediti del corso nel catalogo: 300). La somma della coorte torna: la differenza con 60 è come il riordino distribuisce i CFU tra gli anni; nel database il totale del corso non arriva a quella cifra perché ogni anno è preso dalla coorte di chi lo frequenta oggi (coorti diverse, con riordini diversi)."
+  }
+ },
+ "unime-lm-52-global-security-studies": {
+  "1": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2026/10884",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 1 è quello del piano della coorte 2026 (120 CFU in tutto) e ha 30 CFU di attività obbligatorie; il resto è in 4 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «1 COMPULSORY SUBJECT (8 CFU)»; «1 COMPULSORY SUBJECT (6 CFU)»; «SELECTED FROM THE SAME DEGREE COURSE (fra 0.5 e 8 CFU)»; «and/or SELECTED FROM OTHER DEGREE COURSES AS WELL (fra 0.5 e 8 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (56 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "unime-lm-54-chimica": {
+  "2": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2025/10793",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 2 è quello del piano della coorte 2025 (120 CFU in tutto) e ha 30 CFU di attività obbligatorie; il resto è in 3 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «DISCIPLINE DI INDIRIZZO (18 CFU)»; «A SCELTA DELLO STUDENTE (fra 0.5 e 12 CFU)»; «TIROCINIO (7 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (66 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "unime-lm-78-filosofia-contemporanea": {
+  "2": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2025/10780",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 2 è quello del piano della coorte 2025 (120 CFU in tutto) e ha 36 CFU di attività obbligatorie; il resto è in 4 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «A SCELTA MATERIA GRUPPO A (fra 0.1 e 12 CFU)»; «A SCELTA 2 MATERIE DAL GRUPPO B (12 CFU)»; «A SCELTA DELLO STUDENTE (fra 0.5 e 12 CFU)»; «TIROCINIO (3 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (54 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "unime-lm-84-scienze-storiche-societa-culture-e-istituzioni-d-europa": {
+  "2": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2025/10787",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 2 è quello del piano della coorte 2025 (120 CFU in tutto) e ha 36 CFU di attività obbligatorie; il resto è in 2 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «2 MATERIE A SCELTA TRA: (12 CFU)»; «A SCELTA DELLO STUDENTE (fra 0.5 e 12 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (78 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "unime-lmg-01-giurisprudenza": {
+  "2": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2025/10761",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 2 è quello del piano della coorte 2025 (300 CFU in tutto) e ha 37 CFU di attività obbligatorie; il resto è in 3 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «MATERIA OPZIONALE (IUS/02 o IUS/21)  (9 CFU)»; «MATERIA OPZIONALE (IUS/11)  (7 CFU)»; «MATERIA A SCELTA (fra 0.5 e 6 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (38 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "unime-lmg-01-giurisprudenza-replica-siracusa": {
+  "2": {
+   "fonte": "https://unime.coursecatalogue.cineca.it/corsi/2025/10760",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 19/10/2026: l'anno 2 è quello del piano della coorte 2025 (300 CFU in tutto) e ha 37 CFU di attività obbligatorie; il resto è in 3 gruppi a scelta o a CFU fissi dell'etichetta del catalogo (es. «MATERIA OPZIONALE (IUS/02 o IUS/21)  (9 CFU)»; «MATERIA OPZIONALE (IUS/11)  (7 CFU)»; «MATERIA A SCELTA (fra 0.5 e 6 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano (38 CFU di scelte elencati, contro i CFU richiesti dalle etichette). Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
  "unimi-l-1-scienze-dei-beni-culturali": {
   "2": {
    "fonte": "https://beniculturali.cdl.unimi.it/it/insegnamenti/piano-didattico",
@@ -2833,6 +3277,690 @@
   "4": {
    "fonte": "https://giurisprudenza.cdl.unimi.it/it/insegnamenti/piano-didattico",
    "nota": "Piano ufficiale (coorte Immatricolati dall'a.a. 2014/2015 all'a.a. 2024/2025 (A41)): l'anno ha 21 CFU obbligatori e 273 CFU in elenchi di insegnamenti a scelta/opzionali, di cui lo studente ne sceglie solo alcuni. Gli insegnamenti a scelta ripetuti in più anni stanno nel primo anno in cui si possono seguire."
+  }
+ },
+ "unina-l-1-archeologia-storia-delle-arti-e-scienze-del-patrimonio-cultu": {
+  "3": {
+   "fonte": "https://www.corsi.unina.it/P14/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano ARC04, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 50 CFU (obbligatori 26, a scelta 24); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte; piano con più percorsi, il totale è quello del percorso più ampio"
+  }
+ },
+ "unina-l-10-lettere-moderne": {
+  "3": {
+   "fonte": "https://www.corsi.unina.it/N60/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano N6004, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 30, a scelta 24); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-11-lingue-culture-e-letterature-moderne-europee": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D89/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D8901, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 18 CFU + gruppi e crediti a scelta 48 CFU = 66 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 18, tra cui scegliere 96 CFU di insegnamenti)"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D89/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D8901, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 6 CFU + gruppi e crediti a scelta 60 CFU = 66 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 6, tra cui scegliere 138 CFU di insegnamenti)"
+  },
+  "3": {
+   "fonte": "https://www.corsi.unina.it/N62/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano N6206, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 47 CFU (obbligatori 5, a scelta 42); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-13-biology-for-one-health": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DA1/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA125, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 48 CFU (obbligatori 48, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DA1/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA125, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 56 CFU (obbligatori 56, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-15-scienze-del-turismo-ad-indirizzo-manageriale": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DH2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DH201, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 50 CFU (obbligatori 30, a scelta 20); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-16-scienze-dell-amministrazione-e-dell-organizzazione": {
+  "3": {
+   "fonte": "https://www.corsi.unina.it/M96/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano M9619, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 30 CFU + gruppi e crediti a scelta 33 CFU = 63 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 30, tra cui scegliere 93 CFU di insegnamenti)"
+  }
+ },
+ "unina-l-18-economia-aziendale": {
+  "3": {
+   "fonte": "https://www.corsi.unina.it/N22/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano N2204, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 58 CFU (obbligatori 18, a scelta 40); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-21-urbanistica-sostenibile": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DA9/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA901, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 56 CFU (obbligatori 56, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DA9/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA901, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 52 CFU (obbligatori 52, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "3": {
+   "fonte": "https://www.corsi.unina.it/DA9/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA901, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 57 CFU (obbligatori 57, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-25-scienze-agrarie-forestali-e-ambientali": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DA4/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA4-1, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 57 CFU (obbligatori 57, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DA4/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA4-1, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 50 CFU (obbligatori 50, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "3": {
+   "fonte": "https://www.corsi.unina.it/DA4/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA4-1, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 50 CFU (obbligatori 38, a scelta 12); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-25-viticoltura-ed-enologia": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DA5/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA5-1, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 57 CFU (obbligatori 57, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DA5/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA5-1, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 57 CFU (obbligatori 57, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "3": {
+   "fonte": "https://www.corsi.unina.it/N03/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano N030A, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 44 CFU (obbligatori 44, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-26-tecnologie-alimentari": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DA6/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA6-1, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 53 CFU (obbligatori 53, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DA6/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA6-1, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 54, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-32-scienze-per-la-natura-e-per-l-ambiente": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D51/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D5125, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 56 CFU (obbligatori 56, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "3": {
+   "fonte": "https://www.corsi.unina.it/D51/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano GEA25, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 58 CFU (obbligatori 52, a scelta 6); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-33-economia-e-commercio": {
+  "3": {
+   "fonte": "https://www.corsi.unina.it/N24/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano N2406, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 53 CFU (obbligatori 13, a scelta 40); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-35-matematica": {
+  "3": {
+   "fonte": "https://www.corsi.unina.it/N87/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano A3118, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 57 CFU (obbligatori 39, a scelta 18); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-36-scienze-politiche": {
+  "3": {
+   "fonte": "https://www.corsi.unina.it/M06/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano M0637, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 24 CFU + gruppi e crediti a scelta 36 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 24, tra cui scegliere 162 CFU di insegnamenti)"
+  }
+ },
+ "unina-l-39-scienze-del-servizio-sociale": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DH9/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DH901, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 36 CFU + gruppi e crediti a scelta 24 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 36, tra cui scegliere 30 CFU di insegnamenti)"
+  }
+ },
+ "unina-l-4-design-per-la-comunita": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DB0/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DB001, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 56 CFU (obbligatori 56, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "3": {
+   "fonte": "https://www.corsi.unina.it/P42/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano P4201, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 50 CFU (obbligatori 50, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-40-sociologia": {
+  "3": {
+   "fonte": "https://www.corsi.unina.it/M13/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano M1313, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 48 CFU (obbligatori 15, a scelta 33); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte; piano con più percorsi, il totale è quello del percorso più ampio"
+  }
+ },
+ "unina-l-41-statistica-e-tecnologie-per-l-analisi-dei-dati": {
+  "3": {
+   "fonte": "https://www.corsi.unina.it/D47/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D4701, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 57 CFU (obbligatori 12, a scelta 45); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-42-storia": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D00/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D0025, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 48 CFU (obbligatori 36, a scelta 12); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "3": {
+   "fonte": "https://www.corsi.unina.it/N69/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano N6906, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 58 CFU (obbligatori 4, a scelta 54); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-5-filosofia": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D91/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D9101, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 24 CFU + gruppi e crediti a scelta 36 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 24, tra cui scegliere 72 CFU di insegnamenti)"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D91/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D9101, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 0, a scelta 54); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "3": {
+   "fonte": "https://www.corsi.unina.it/D29/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D2901, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 22 CFU + gruppi e crediti a scelta 38 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 22, tra cui scegliere 162 CFU di insegnamenti)"
+  }
+ },
+ "unina-l-8-electrical-engineering-and-information-technology": {
+  "3": {
+   "fonte": "https://www.corsi.unina.it/DM3/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DM301, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 30 CFU + gruppi e crediti a scelta 36 CFU = 66 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 30, tra cui scegliere 216 CFU di insegnamenti)"
+  }
+ },
+ "unina-l-8-ingegneria-delle-telecomunicazioni-e-dei-media-digitali": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D65/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D6501, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 51 CFU (obbligatori 51, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D65/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D6501, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 54, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-8-ingegneria-elettronica": {
+  "3": {
+   "fonte": "https://www.corsi.unina.it/N43/piani-degli-studi?anno=2024-2025",
+   "nota": "verifica automatica sul piano ufficiale (piano N4306, a.a. 2024-2025, dati del portale dei corsi di studio): obbligatori 37 CFU + gruppi e crediti a scelta 33 CFU = 70 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 37, tra cui scegliere 96 CFU di insegnamenti); piano dell'a.a. 2024-2025 (coorte più vicina con questo anno pubblicato)"
+  }
+ },
+ "unina-l-9-ingegneria-dei-materiali-e-biomateriali": {
+  "3": {
+   "fonte": "https://www.corsi.unina.it/DD2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DD201, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 39 CFU + gruppi e crediti a scelta 30 CFU = 69 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 39, tra cui scegliere 96 CFU di insegnamenti)"
+  }
+ },
+ "unina-l-gastr-scienze-gastronomiche-mediterranee": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D61/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D61-1, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 56 CFU (obbligatori 56, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "3": {
+   "fonte": "https://www.corsi.unina.it/P26/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano P260A, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 48 CFU (obbligatori 48, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-l-p01-tecnologie-digitali-per-le-costruzioni": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D35/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D3503, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 59 CFU (obbligatori 59, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D35/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D3503, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 50 CFU (obbligatori 50, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-12-design-for-the-built-environment": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DB1/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DB102, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 52 CFU (obbligatori 52, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-14-filologia-moderna": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D30/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D3002, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 12 CFU + gruppi e crediti a scelta 48 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 12, tra cui scegliere 276 CFU di insegnamenti)"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D30/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D3002, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 24 CFU + gruppi e crediti a scelta 36 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 24, tra cui scegliere 144 CFU di insegnamenti)"
+  }
+ },
+ "unina-lm-15-filologia-letterature-e-civilta-del-mondo-antico": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D93/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D9301, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 36, a scelta 18); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-16-finanza": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D77/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D7703, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 30 CFU + gruppi e crediti a scelta 36 CFU = 66 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 30, tra cui scegliere 72 CFU di insegnamenti)"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D77/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D7703, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 45 CFU (obbligatori 33, a scelta 12); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-2-archeologia-del-mediterraneo": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DL6/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DL601, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 0 CFU + gruppi e crediti a scelta 66 CFU = 66 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 0, tra cui scegliere 288 CFU di insegnamenti)"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DL6/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DL601, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 30, a scelta 24); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-20-ingegneria-aerospaziale": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DF5/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DF501, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 39, a scelta 15); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DF5/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DF501, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 21 CFU + gruppi e crediti a scelta 45 CFU = 66 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 21, tra cui scegliere 192 CFU di insegnamenti)"
+  }
+ },
+ "unina-lm-23-ingegneria-civile-per-l-idraulica-e-i-trasporti": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DD6/piani-degli-studi?anno=2025-2026",
+   "nota": "verifica automatica sul piano ufficiale (piano DD601, a.a. 2025-2026, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 55 CFU (obbligatori 37, a scelta 18); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte; piano dell'a.a. 2025-2026 (coorte più vicina con questo anno pubblicato)"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DD6/piani-degli-studi?anno=2025-2026",
+   "nota": "verifica automatica sul piano ufficiale (piano DD601, a.a. 2025-2026, dati del portale dei corsi di studio): obbligatori 20 CFU + gruppi e crediti a scelta 45 CFU = 65 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 20, tra cui scegliere 48 CFU di insegnamenti); piano dell'a.a. 2025-2026 (coorte più vicina con questo anno pubblicato)"
+  }
+ },
+ "unina-lm-23-transportation-engineering-and-mobility": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DD7/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DD701, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 12, a scelta 42); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-24-ingegneria-edile-per-la-sostenibilita": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DD8/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DD801, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 27 CFU + gruppi e crediti a scelta 36 CFU = 63 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 27, tra cui scegliere 63 CFU di insegnamenti)"
+  }
+ },
+ "unina-lm-25-ingegneria-dell-automazione-e-robotica": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DE6/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DE601, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 27 CFU + gruppi e crediti a scelta 39 CFU = 66 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 27, tra cui scegliere 234 CFU di insegnamenti)"
+  }
+ },
+ "unina-lm-27-ingegneria-delle-telecomunicazioni-e-dei-media-digitali": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DE7/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DE701, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 36 CFU (obbligatori 27, a scelta 9); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte; il piano è molto incompleto per questo anno e il database aggiunge 4 insegnamenti erogati nell'anno (dalle schede, fuori dal piano)"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DE7/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DE701, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 21 CFU + gruppi e crediti a scelta 63 CFU = 84 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 21, tra cui scegliere 261 CFU di insegnamenti)"
+  }
+ },
+ "unina-lm-29-ingegneria-elettronica": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DE8/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DE801, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 36, a scelta 18); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DE8/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DE801, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 30 CFU + gruppi e crediti a scelta 36 CFU = 66 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 30, tra cui scegliere 243 CFU di insegnamenti)"
+  }
+ },
+ "unina-lm-31-ingegneria-gestionale": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DF6/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DF601, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 51 CFU (obbligatori 51, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-32-ingegneria-informatica": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DE9/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DE901, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 51 CFU (obbligatori 33, a scelta 18); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DE9/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DE901, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 33 CFU + gruppi e crediti a scelta 36 CFU = 69 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 33, tra cui scegliere 219 CFU di insegnamenti)"
+  }
+ },
+ "unina-lm-33-ingegneria-meccanica-per-l-energia-e-l-ambiente": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D20/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D2012, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 51 CFU (obbligatori 36, a scelta 15); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte; alcune scelte del piano non sono nel database in questo anno (lo stesso insegnamento offerto in più anni sta nel primo anno in cui si può seguire, gli omonimi sono uniti) o non hanno CFU nel piano"
+  }
+ },
+ "unina-lm-33-ingegneria-meccanica-per-la-progettazione-e-la-produzione": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D19/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D1908, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 27 CFU + gruppi e crediti a scelta 69 CFU = 96 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 42, tra cui scegliere 0 CFU di insegnamenti); alcune scelte del piano non sono nel database in questo anno (lo stesso insegnamento offerto in più anni sta nel primo anno in cui si può seguire, gli omonimi sono uniti) o non hanno CFU nel piano"
+  }
+ },
+ "unina-lm-34-ingegneria-navale": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D21/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D2103, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 48 CFU (obbligatori 48, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D21/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D2103, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 54, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-4-architecture-and-heritage": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DB2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DB201, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 54, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DB2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DB201, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 58 CFU (obbligatori 58, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-4-c-u-architettura": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DB7/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DB701, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 59 CFU (obbligatori 59, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DB7/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DB701, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 55 CFU (obbligatori 55, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "3": {
+   "fonte": "https://www.corsi.unina.it/D06/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D0601, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 58 CFU (obbligatori 58, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-40-matematica": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D70/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DID25, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 59 CFU (obbligatori 29, a scelta 30); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-41-medicina-e-chirurgia": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/M39/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano M3905, a.a. 2026-2027, dati del portale dei corsi di studio): il piano del corso attivo (DF8) pubblica per il 2° anno solo 5 CFU; si usa il piano della coorte precedente (M39): obbligatori 35 CFU e gruppi a scelta 5 CFU, totale 40. La fonte stessa è incompleta per questo anno"
+  }
+ },
+ "unina-lm-41-medicina-e-chirurgia-replica-medicina-e-chirurgia-sede-napol": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/M39/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano M3905, a.a. 2026-2027, dati del portale dei corsi di studio): il piano del corso attivo (DF8) pubblica per il 2° anno solo 5 CFU; si usa il piano della coorte precedente (M39): obbligatori 35 CFU e gruppi a scelta 5 CFU, totale 40. La fonte stessa è incompleta per questo anno"
+  }
+ },
+ "unina-lm-42-medicina-veterinaria": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D24/piani-degli-studi?anno=2025-2026",
+   "nota": "verifica automatica sul piano ufficiale (piano D2401, a.a. 2025-2026, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 56 CFU (obbligatori 56, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte; piano dell'a.a. 2025-2026 (coorte più vicina con questo anno pubblicato)"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DG1/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DG101, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 49 CFU (obbligatori 49, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "3": {
+   "fonte": "https://www.corsi.unina.it/D24/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D2402, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 53 CFU (obbligatori 53, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "4": {
+   "fonte": "https://www.corsi.unina.it/D24/piani-degli-studi?anno=2025-2026",
+   "nota": "verifica automatica sul piano ufficiale (piano D2401, a.a. 2025-2026, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 54, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte; piano dell'a.a. 2025-2026 (coorte più vicina con questo anno pubblicato)"
+  }
+ },
+ "unina-lm-42-veterinary-medicine": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DM2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DM201, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 58 CFU (obbligatori 58, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DM2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica: corso attivato nel 2026 (annoAttivazione 2026), il portale dei corsi di studio pubblica il piano solo del 1° anno (58 CFU); gli anni successivi non esistono ancora"
+  },
+  "3": {
+   "fonte": "https://www.corsi.unina.it/DM2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica: corso attivato nel 2026 (annoAttivazione 2026), il portale dei corsi di studio pubblica il piano solo del 1° anno (58 CFU); gli anni successivi non esistono ancora"
+  },
+  "4": {
+   "fonte": "https://www.corsi.unina.it/DM2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica: corso attivato nel 2026 (annoAttivazione 2026), il portale dei corsi di studio pubblica il piano solo del 1° anno (58 CFU); gli anni successivi non esistono ancora"
+  },
+  "5": {
+   "fonte": "https://www.corsi.unina.it/DM2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica: corso attivato nel 2026 (annoAttivazione 2026), il portale dei corsi di studio pubblica il piano solo del 1° anno (58 CFU); gli anni successivi non esistono ancora"
+  }
+ },
+ "unina-lm-44-mathematical-engineering": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D71/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano CUA25, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 36, a scelta 18); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-44-quantum-science-and-engineering": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D60/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D6025, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 30, a scelta 24); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte; alcune scelte del piano non sono nel database in questo anno (lo stesso insegnamento offerto in più anni sta nel primo anno in cui si può seguire, gli omonimi sono uniti) o non hanno CFU nel piano"
+  }
+ },
+ "unina-lm-46-odontoiatria-e-protesi-dentaria": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DG4/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DG401, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 47 CFU (obbligatori 47, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D34/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D3401, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 57 CFU (obbligatori 57, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "3": {
+   "fonte": "https://www.corsi.unina.it/D34/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D3401, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 58 CFU (obbligatori 58, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-48-pianificazione-territoriale-urbanistica-e-paesaggistico-ambi": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DB3/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DB303, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 52 CFU (obbligatori 52, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-50-coordinamento-dei-servizi-educativi-per-la-prima-infanzia-e": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DL7/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DL701, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 50 CFU (obbligatori 16, a scelta 34); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-52-international-relations": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DL0/piani-degli-studi?anno=2025-2026",
+   "nota": "verifica automatica sul piano ufficiale (piano DL0-1, a.a. 2025-2026, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 36, a scelta 18); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte; piano dell'a.a. 2025-2026 (coorte più vicina con questo anno pubblicato)"
+  }
+ },
+ "unina-lm-56-economia-e-commercio": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D78/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D7801, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 30 CFU + gruppi e crediti a scelta 36 CFU = 66 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 36, tra cui scegliere 84 CFU di insegnamenti); piano con più percorsi, il totale è quello del percorso più ampio"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D78/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D7801, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 48 CFU (obbligatori 36, a scelta 12); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte; piano con più percorsi, il totale è quello del percorso più ampio"
+  }
+ },
+ "unina-lm-56-economia-e-finanza": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DH5/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DH501, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 48 CFU (obbligatori 30, a scelta 18); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-6-biology-of-extreme-environments": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D53/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano ASB25, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 52 CFU (obbligatori 46, a scelta 6); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D53/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano ASB25, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 56 CFU + gruppi e crediti a scelta 6 CFU = 62 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 56, tra cui scegliere 0 CFU di insegnamenti); alcune scelte del piano non sono nel database in questo anno (lo stesso insegnamento offerto in più anni sta nel primo anno in cui si può seguire, gli omonimi sono uniti) o non hanno CFU nel piano"
+  }
+ },
+ "unina-lm-61-scienze-della-nutrizione-umana": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D72/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D7201, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 4 CFU (obbligatori 4, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte; il piano è molto incompleto per questo anno e il database aggiunge 3 insegnamenti erogati nell'anno (dalle schede, fuori dal piano)"
+  }
+ },
+ "unina-lm-62-lm-91-scienze-criminologiche-investigative-e-di-contrasto-ai-crimi": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DL2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DL201, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 48 CFU + gruppi e crediti a scelta 12 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 48, tra cui scegliere 6 CFU di insegnamenti); alcune scelte del piano non sono nel database in questo anno (lo stesso insegnamento offerto in più anni sta nel primo anno in cui si può seguire, gli omonimi sono uniti) o non hanno CFU nel piano"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DL2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica: il portale dei corsi di studio pubblica il piano (anni 2025-26 e 2026-27) solo per il 1° anno; il 2° anno è ricostruito dagli insegnamenti erogati nell'a.a. 2026/27 e il piano ufficiale non è disponibile, quindi non è completabile"
+  }
+ },
+ "unina-lm-63-scienze-della-pubblica-amministrazione-e-del-lavoro": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DL3/piani-degli-studi?anno=2025-2026",
+   "nota": "verifica automatica sul piano ufficiale (piano DL3-1, a.a. 2025-2026, dati del portale dei corsi di studio): obbligatori 24 CFU + gruppi e crediti a scelta 36 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 24, tra cui scegliere 90 CFU di insegnamenti); piano dell'a.a. 2025-2026 (coorte più vicina con questo anno pubblicato)"
+  }
+ },
+ "unina-lm-65-discipline-della-musica-e-dello-spettacolo-storia-e-teoria": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D95/piani-degli-studi?anno=2025-2026",
+   "nota": "verifica automatica sul piano ufficiale (piano D9501, a.a. 2025-2026, dati del portale dei corsi di studio): obbligatori 36 CFU + gruppi e crediti a scelta 24 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 36, tra cui scegliere 72 CFU di insegnamenti); piano dell'a.a. 2025-2026 (coorte più vicina con questo anno pubblicato)"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D95/piani-degli-studi?anno=2025-2026",
+   "nota": "verifica automatica sul piano ufficiale (piano D9501, a.a. 2025-2026, dati del portale dei corsi di studio): obbligatori 30 CFU + gruppi e crediti a scelta 30 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 30, tra cui scegliere 78 CFU di insegnamenti); piano dell'a.a. 2025-2026 (coorte più vicina con questo anno pubblicato)"
+  }
+ },
+ "unina-lm-69-scienze-enologiche": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DA7/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA7-1, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 54, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-7-biotecnologie-agro-ambientali-e-alimentari": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D68/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D68-1, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 49 CFU (obbligatori 49, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-70-scienze-e-tecnologie-alimentari": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DA8/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA8-1, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 51 CFU (obbligatori 51, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-70-sustainable-food-systems": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DD0/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DD0-1, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 57 CFU (obbligatori 57, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DD0/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DD0-1, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 54 CFU (obbligatori 44, a scelta 10); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-71-industrial-chemistry-for-circular-and-bio-economy": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DG8/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano PAI25, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 44 CFU (obbligatori 44, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-76-management-del-patrimonio-culturale": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DL8/piani-degli-studi?anno=2025-2026",
+   "nota": "verifica automatica sul piano ufficiale (piano DL801, a.a. 2025-2026, dati del portale dei corsi di studio): obbligatori 30 CFU + gruppi e crediti a scelta 30 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 30, tra cui scegliere 174 CFU di insegnamenti); piano dell'a.a. 2025-2026 (coorte più vicina con questo anno pubblicato)"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DL8/piani-degli-studi?anno=2025-2026",
+   "nota": "verifica automatica sul piano ufficiale (piano DL801, a.a. 2025-2026, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 36 CFU (obbligatori 18, a scelta 18); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte; il piano è molto incompleto per questo anno e il database aggiunge 1 insegnamenti erogati nell'anno (dalle schede, fuori dal piano); piano dell'a.a. 2025-2026 (coorte più vicina con questo anno pubblicato)"
+  }
+ },
+ "unina-lm-77-economia-aziendale": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DB9/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DB901, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 24 CFU + gruppi e crediti a scelta 36 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 30, tra cui scegliere 72 CFU di insegnamenti); piano con più percorsi, il totale è quello del percorso più ampio"
+  }
+ },
+ "unina-lm-78-filosofia": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D96/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D9601, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 6 CFU + gruppi e crediti a scelta 57 CFU = 63 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 6, tra cui scegliere 147 CFU di insegnamenti)"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D96/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D9601, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 33 CFU (obbligatori 3, a scelta 30); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte; il piano è molto incompleto per questo anno e il database aggiunge 1 insegnamenti erogati nell'anno (dalle schede, fuori dal piano)"
+  }
+ },
+ "unina-lm-8-biotecnologie-molecolari-e-industriali": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/D76/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano BRR25, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 57 CFU (obbligatori 57, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D76/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano BRR25, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 45 CFU (obbligatori 33, a scelta 12); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-82-scienze-statistiche-per-le-decisioni": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D82/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D8201, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 33 CFU + gruppi e crediti a scelta 27 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 33, tra cui scegliere 60 CFU di insegnamenti)"
+  }
+ },
+ "unina-lm-84-scienze-storiche": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DL9/piani-degli-studi?anno=2025-2026",
+   "nota": "verifica automatica sul piano ufficiale (piano DL901, a.a. 2025-2026, dati del portale dei corsi di studio): obbligatori 0 CFU + gruppi e crediti a scelta 60 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 0, tra cui scegliere 372 CFU di insegnamenti); piano dell'a.a. 2025-2026 (coorte più vicina con questo anno pubblicato)"
+  }
+ },
+ "unina-lm-86-precision-livestock-farming": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DG2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DG201, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 51 CFU (obbligatori 51, a scelta 0); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  },
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DG2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica: il portale dei corsi di studio pubblica il piano (anni 2025-26 e 2026-27) solo per il 1° anno; il 2° anno è ricostruito dagli insegnamenti erogati nell'a.a. 2026/27 e il piano ufficiale non è disponibile, quindi non è completabile"
+  }
+ },
+ "unina-lm-86-scienze-e-tecnologie-delle-produzioni-animali": {
+  "1": {
+   "fonte": "https://www.corsi.unina.it/DG3/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DG301, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 52 CFU (obbligatori 42, a scelta 10); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-88-comunicazione-pubblica-sociale-e-politica": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D84/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D8401, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 56 CFU (obbligatori 32, a scelta 24); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-88-sociologia-digitale-e-analisi-del-web": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D85/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano D8501, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 42 CFU (obbligatori 12, a scelta 30); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-89-patrimonio-culturale-storia-delle-arti-e-museologia": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DA3/piani-degli-studi?anno=2025-2026",
+   "nota": "verifica automatica sul piano ufficiale (piano CON25, a.a. 2025-2026, dati del portale dei corsi di studio): obbligatori 24 CFU + gruppi e crediti a scelta 36 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 24, tra cui scegliere 198 CFU di insegnamenti); piano dell'a.a. 2025-2026 (coorte più vicina con questo anno pubblicato)"
+  }
+ },
+ "unina-lm-92-digital-society-social-innovation-and-global-citizenship": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/DA2/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DA201, a.a. 2026-2027, dati del portale dei corsi di studio): il piano ufficiale elenca per l'anno solo 40 CFU (obbligatori 20, a scelta 20); l'anno è sotto 60 CFU già nel piano ufficiale (fonte incompleta) e il database coincide con la fonte"
+  }
+ },
+ "unina-lm-data-data-science": {
+  "2": {
+   "fonte": "https://www.corsi.unina.it/D03/piani-degli-studi?anno=2026-2027",
+   "nota": "verifica automatica sul piano ufficiale (piano DAM02, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 30 CFU + gruppi e crediti a scelta 30 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 30, tra cui scegliere 165 CFU di insegnamenti)"
   }
  },
  "uniroma1-l-10-classics": {

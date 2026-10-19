@@ -119,6 +119,26 @@ def intestazione(riga: str, max_anno: int = 6) -> tuple[int | None, str | None]:
     return None, None
 
 
+_NOME_VERO = re.compile(r"[A-Za-zÀ-ÿ]{4}")
+_NON_NOME = re.compile(r"(?i)\(?\s*(?:[A-Z]\s*-\s*[A-Z]|pomeridian\w*|serale|cognomi.*|canale.*|cfu.*|a\d{3,7})\s*\)?")
+
+
+def _nome_riga(s: str, pos: int) -> str | None:
+    """Nome dell'insegnamento nella prima cella della riga di tabella che contiene la posizione `pos`
+    («Diritto Privato<a>…</a><a>(A-D)</a>…»): il testo della cella senza i link."""
+    a = s.rfind("<tr", 0, pos)
+    if a < 0:
+        return None
+    c = s.find("<td", a)
+    f = s.find("</td>", c) if c >= 0 else -1
+    if c < 0 or f < 0 or c > pos:
+        return None
+    cella = re.sub(r"<a\b.*?</a>", " ", s[c:f], flags=re.S | re.I)
+    t = re.sub(r"\[[^\]]*\]|\([^)]*\)", " ", _testo(cella))
+    t = re.sub(r"\s+", " ", t).strip(" -–−:")
+    return t if _NOME_VERO.search(t) else None
+
+
 def leggi_elenco(s: str, anno_offerta: int) -> list[dict]:
     """Insegnamenti di una pagina "Insegnamenti - CdS …": un elemento per unità didattica."""
     s = _pulisci(s)
@@ -127,7 +147,18 @@ def leggi_elenco(s: str, anno_offerta: int) -> list[dict]:
     fine = s.find("<aside")
     s = s[:fine] if fine > 0 else s
     out, anno, sem = [], None, None
+    senza = _righe_senza_link(s)  # righe di tabella senza scheda (insegnamenti «da assegnare», lingua, laboratori…)
+
+    def senza_fino_a(pos: int):
+        while senza and senza[0][0] < pos:
+            _, nome, cfu = senza.pop(0)
+            if anno:
+                out.append({"anno": anno, "periodo": sem, "nome": nome, "integrato": None, "cod_unita": None,
+                            "cod_attivita": None, "ssd": None, "cfu": None, "cfu_tab": cfu, "href": None,
+                            "cds": None, "aa": None})
+
     for e in EVENTI.finditer(s):
+        senza_fino_a(e.start())
         if e.group("anno") or e.group("annoparola") or e.group("annor") or e.group("annor2"):
             if e.group("anno"):
                 anno = int(e.group("anno"))
@@ -141,11 +172,47 @@ def leggi_elenco(s: str, anno_offerta: int) -> list[dict]:
         elif e.group("annuale"):
             sem = "annuale"
         elif e.group("href"):
+            nome_link = _testo(e.group("testo"))
+            if not _NOME_VERO.search(nome_link) or _NON_NOME.fullmatch(nome_link):
+                nome_link = _nome_riga(s, e.start()) or nome_link  # il nome sta nella cella, prima dei link «(A-D)», «(E-O)»
             ei = re.search(r"\(\s*Modulo\s+dell[’']\s*e\.?\s*i\.?\s*(?:di\s+)?(.*?)\)", _testo(e.group("dopo")), re.I)
-            v = _voce(html.unescape(e.group("href")), anno, sem, _testo(e.group("testo")),
+            v = _voce(html.unescape(e.group("href")), anno, sem, nome_link,
                       ei.group(1).strip() if ei else None, anno_offerta)
             if v:
+                # «(esame a scelta)» subito dopo il nome: insegnamento tra quelli a scelta dello studente
+                v["scelta"] = bool(re.match(r"\s*[-–]?\s*\(\s*(?:esame|insegnamento|corso)?\s*a\s+scelta\s*\)",
+                                            _testo(e.group("dopo"))[:60], re.I))
                 out.append(v)
+    senza_fino_a(len(s) + 1)
+    return out
+
+
+_INTESTAZIONE_COL = re.compile(r"(?i)(?:insegnamenti?|docenti?|cfu|codice(?: aula virtuale)?|semestre|anno|ssd|settore|"
+                               r"course|teacher|credits?|subjects?|class|attivit[àa]|name)")
+
+
+def _righe_senza_link(s: str) -> list[tuple[int, str, str]]:
+    """(posizione, nome, CFU) delle righe di tabella «Insegnamento | … | CFU | Docente» senza link alla scheda: sono
+    insegnamenti del piano a cui non è ancora collegata la scheda (docente «da assegnare»). Si escludono le righe di
+    intestazione, i moduli di un integrato (nome tra parentesi) e le righe di soli docenti (prima cella numerica)."""
+    out = []
+    for m in re.finditer(r"<tr[^>]*>(.*?)</tr>", s, re.S | re.I):
+        riga = m.group(1)
+        if "COD_ATTIVITA=" in riga or "COD_UNITA=" in riga:
+            continue
+        celle = [_testo(c) for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", riga, re.S | re.I)]
+        if len(celle) < 3 or not celle[0] or _INTESTAZIONE_COL.fullmatch(celle[0]):
+            continue
+        nome = celle[0].strip(" -–−")
+        nome = re.sub(r"(?i)^(.{4,}?)\s*\1\s*\(.*?\)$", r"\1", nome)  # «Microeconomia Microeconomia(Pomeridiano)»
+        if re.search(r"(?i)\(\s*(?:modul[eo]|mod\.)|\bmodul[eo] of\b", nome):  # modulo di un integrato: il CFU è già nel corso integrato
+            continue
+        if not re.search(r"[A-Za-zÀ-ÿ]{3}", nome) or re.fullmatch(r"[\d.,\s]+", nome) or nome.startswith("("):
+            continue
+        cfu = [c for c in celle[1:] if re.fullmatch(r"\d{1,2}(?:[.,]\d)?", c)]
+        if not cfu or float(cfu[0].replace(",", ".")) > 30:
+            continue
+        out.append((m.start(), nome, cfu[0].replace(",", ".")))
     return out
 
 
@@ -220,7 +287,7 @@ def leggi_piano_tabella(s: str) -> list[dict]:
         if len(testi) < 3 or testi[1].upper() == "INSEGNAMENTO" or not anno:
             continue
         nome = re.sub(r"\s*\*+$", "", testi[1]).strip()
-        if not nome or nome.startswith("*") or re.match(r"(?i)insegnamento a scelta|a scelta|tirocinio|prova finale|in alternativa", nome):
+        if not nome or nome.startswith("*") or re.match(r"(?i)in alternativa", nome):
             continue
         mcfu = re.match(r"(\d+(?:[.,]\d+)?)", testi[2])
         mat = re.findall(r"MATRICOLA=(\d+)", html.unescape(e.group("r")))
@@ -354,6 +421,84 @@ def leggi_pdf(data: bytes, anno_offerta: int, max_anno: int = 6) -> list[dict]:
             v = _voce(uri, anno or a_riga, sem or (s_riga if not anno else None), nome, None, anno_offerta)
             if v:
                 out.append(v)
+    return out
+
+
+# CFU complessivi degli insegnamenti nei PDF «Insegnamenti attivi» di Ingegneria: «Bioelettromagnetismo  I  9  72» (corso
+# integrato: i moduli seguono sulle righe dopo, con l'SSD) oppure «Modelli di sistemi biologici  II  IBIO-01/A  B  9  72  Docente»
+_RIGA_CFU_DOC = re.compile(
+    r"^(?P<nome>[^|]+?)\s+(?P<sem>I{1,2}|Annuale|annuale)\s+(?:(?P<ssd>[A-Z]{2,5}-\d{2}/[A-Z])\s+(?P<taf>[A-Z](?:\s*,\s*[A-Z])?)\s+)?"
+    r"(?P<cfu>\d{1,2})\s+(?P<ore>\d{2,3})(?:\s|$)")
+
+
+def leggi_cfu_pdf(data: bytes, max_anno: int = 6) -> dict[tuple[int, str], tuple]:
+    """{(anno, nome normalizzato): (CFU, semestre, nome)} delle righe con i CFU complessivi di un insegnamento nel PDF."""
+    out: dict[tuple[int, str], tuple] = {}
+    anno = None
+    for pg in _pdf_reader(data).pages:
+        for riga in (pg.extract_text() or "").split("\n"):
+            riga = re.sub(r"\s+", " ", riga).strip()
+            a, _ = intestazione(riga, max_anno)
+            if a:
+                anno = a
+                continue
+            m = _RIGA_CFU_DOC.match(riga)
+            if m and anno and not re.search(r"(?i)^(?:insegnamento|modulo)", m.group("nome")):
+                out[(anno, _norm_nome(m.group("nome")))] = (float(m.group("cfu")), m.group("sem"), m.group("nome").strip())
+    return out
+
+
+# ---------------------------------------------------------------------------------------------
+# attività senza scheda (a scelta, tirocinio, prova finale…): dal manifesto / piano di studio ufficiale
+
+_ATT_SCELTA = (r"(?:a\s+scelta\s+(?:dello|dallo)\s+studente|attivit[àa]\s+(?:formative\s+)?(?:a\s+(?:libera\s+)?scelta|autonomamente\s+scelte)(?:\s+(?:dallo|dello)\s+studente)?|"
+               r"(?:esami?|insegnamenti?|crediti|cfu)\s+a\s+scelta(?:\s+(?:dallo|dello)\s+studente)?|"
+               r"(?:free|student'?s?)\s+choice(?:\s+(?:courses?|credits|activit\w+))?|elective\s+(?:courses?|activit\w+)|"
+               r"attivit[àa]\s+didattiche\s+a\s+scelta(?:\s+dello\s+studente)?)")
+_ATT_FINALE = r"(?:prova\s+finale|tesi(?:\s+di\s+laurea)?|elaborato\s+finale|final\s+(?:exam|thesis|test|examination)|thesis|dissertation)"
+_ATT_TIROCINIO = r"(?:tirocini?o?\w*(?:\s+(?:formativo|pratico|professionalizzante|curriculare)\w*)?|stage|internship)"
+_ATT_ALTRE = (r"(?:competenze\s+linguistiche|altre\s+attivit[àa](?:\s+formative)?|ulteriori\s+conoscenze\s+linguistiche|abilit[àa]\s+informatiche(?:\s+e\s+telematiche)?|"
+              r"ulteriori\s+attivit[àa]\s+formative|attivit[àa]\s+seminariali|laboratori(?:o)?\s+(?:professionalizzant\w+|didattic\w+)|"
+              r"other\s+(?:learning\s+)?activit\w+)")
+ATTIVITA_SENZA_SCHEDA = re.compile(
+    rf"^\W*(?P<nome>{_ATT_SCELTA}|{_ATT_FINALE}|{_ATT_TIROCINIO}|{_ATT_ALTRE})\W*(?P<resto>.*)$", re.I)
+_FINE_PIANO = re.compile(r"(?i)^\W*(?:docenti\b|carichi didattici|propedeutic|calendario|insegnamenti a scelta (?:attivati|mutuati)|"
+                         r"esami a scelta (?:per|mutuati)|attivit[àa] a scelta(?:\s*$|\s+(?:proposte|attivate))|elenco degli insegnamenti)")
+_NUM = re.compile(r"(?<![\w.,/])(\d{1,2}(?:[.,]\d)?)(?![\w.,/])")
+
+
+def leggi_attivita_manifesto(testo: str, max_anno: int = 6) -> list[dict]:
+    """Righe «Attività a scelta 6», «Tirocinio 1», «Tesi di laurea 5» del manifesto/piano di studio in testo, con
+    l'anno dell'intestazione («SECONDO ANNO», «III anno») più vicina sopra. Il CFU è il primo numero della riga
+    dopo il nome (o, se la riga è solo il nome, della riga seguente)."""
+    righe = [re.sub(r"\s+", " ", r).strip() for r in testo.split("\n")]
+    righe = [r for r in righe if r]
+    out, anno = [], None
+    for k, r in enumerate(righe):
+        a, _ = intestazione(r, max_anno)
+        if a:
+            anno = a
+            continue
+        if not anno:
+            continue
+        if _FINE_PIANO.match(r):  # dopo i carichi didattici/le tabelle delle scelte si ripetono gli stessi nomi
+            break
+        m = ATTIVITA_SENZA_SCHEDA.match(r)
+        if not m:
+            continue
+        resto = m.group("resto")
+        n = _NUM.search(resto)
+        if not n and not resto.strip(" *()-–:") and k + 1 < len(righe):
+            n = _NUM.match(righe[k + 1])  # tabella a celle separate: il CFU è sulla riga dopo
+        if not n:
+            continue
+        cfu = float(n.group(1).replace(",", "."))
+        if not 0 < cfu <= 30 or len(r) > 140:
+            continue
+        nome = re.sub(r"\s+", " ", m.group("nome")).strip().rstrip("*")
+        if nome.isupper():
+            nome = nome.lower()
+        out.append({"anno": anno, "nome": nome[:1].upper() + nome[1:], "cfu": cfu})
     return out
 
 
@@ -676,12 +821,43 @@ def fonti_corso(c: Client, url: str, anno: int) -> list[tuple[str, str, int]]:
 #   fonti:    elenco (url, tipo) da leggere al posto della scoperta
 #   prefisso: espressione dei codici delle attività del corso (piani senza link)
 #   aa:       a.a. dei codici (AA_OFFERTA) da usare per le pagine dei corsi integrati
+#   manifesto: manifesto / piano di studio ufficiale (url o (url, curriculum)) da cui si leggono le attività senza scheda
+#              (a scelta, tirocinio, prova finale…), `tail_unici`: righe uguali ripetute (curricula) contano una volta
+_DISTABIF = "https://www.distabif.unicampania.it/avvisi/Manifesto_degli_studi/AA_2026_2027/"
 CORSI: dict[str, dict] = {
+    "unicampania-l-2-biotecnologie": {"manifesto": _DISTABIF + "L-2_Manifesto_degli_studi_a.a_2026_2027.pdf"},
+    "unicampania-l-25-scienze-agrarie": {"manifesto": _DISTABIF + "LM-25_Manifesto_degli_studi_2026_2027.pdf"},
+    "unicampania-l-32-scienze-ambientali": {"manifesto": _DISTABIF + "L-32_Manifesto_degli_studi_2026-2027.pdf"},
+    "unicampania-l-13-scienze-biologiche": {"manifesto": _DISTABIF + "L-13_Manifesto_degli_studi_2026_2027.pdf"},
+    "unicampania-lm-6-biologia": {"manifesto": _DISTABIF + "LM-6_Manifesto_degli_studi_2026_2027.pdf", "tail_unici": True},
+    "unicampania-lm-9-molecular": {"manifesto": _DISTABIF + "LM-9_Course_Catalogue_a.a_2026-2027.pdf"},
+    "unicampania-lm-61-scienze-degli-alimenti": {"manifesto": _DISTABIF + "LM-61_Manifesto_degli_studi_2026-2027.pdf"},
+    "unicampania-lm-75-scienze-e-tecnologie": {"manifesto": _DISTABIF + "LM-75_Manifesto_degli_studi_2026-2027.pdf"},
+    "unicampania-lm-13-farmacia": {"manifesto": _DISTABIF + "LM-13_Manifesto_2026_2027.pdf"},
+    # Fisica: manifesto 2026/27 (2° anno 58 CFU, 3° anno 66 CFU): lingua inglese, attività a scelta, tesi e tirocinio senza scheda
+    "unicampania-l-30-fisica": {
+        "extra_fonte": "https://www.matfis.unicampania.it/images/id1439_Manifesto_degli_studi_2026-2027_Fisica_100626.pdf",
+        "extra": [(2, "Lingua inglese", 6, False), (2, "Attività a scelta", 6, True), (3, "Attività a scelta libera", 6, True),
+                  (3, "Tesi di laurea", 6, False), (3, "Tirocinio", 3, False)]},
+    # Ingegneria biomedica magistrale: piano di studio 2026/27 (1° anno 54 CFU, 2° anno 66 CFU)
+    "unicampania-lm-21-ingegneria-biomedica": {
+        "righe_da_pdf": True,
+        "extra_fonte": "https://www.ingegneria.unicampania.it/images/Didattica_2026_2027/Piani_studio/22.09.2026/Manifesto_LM21_26_27.pdf",
+        "extra": [(1, "Applicazione di Medicina e Chirurgia di Precisione", 8, False), (2, "Attività a scelta dello studente", 8, True),
+                  (2, "Tirocinio formativo e di orientamento", 3, False), (2, "Tirocinio aziendale", 3, False),
+                  (2, "Prova finale", 6, False)]},
+    # professioni sanitarie: piano di studio con tirocinio, attività a scelta (ADE), laboratori e prova finale, che non hanno scheda
+    "unicampania-l-snt4-assistenza-sanitaria": {
+        "manifesto": "https://www.medicinasperimentale.unicampania.it/images/AS_Piano_di_Studio_2026_2027.pdf"},
+    "unicampania-l-snt4-tecniche-della-prevenzione": {
+        "manifesto": "https://www.medicinasperimentale.unicampania.it/images/TPS_Piano_di_Studio_2026_2027.pdf"},
+    "unicampania-lm-32-ingegneria-informatica": {"righe_da_pdf": True},
     "unicampania-l-35-matematica": {"tutte": True},  # un PDF per curriculum
     # piani senza link alle schede: i codici delle attività si leggono dal testo
     "unicampania-l-snt1-infermieristica": {"prefisso": r"A50\d\d"},
     "unicampania-l-snt2-ortottica": {"prefisso": r"A76\d\d"},
-    "unicampania-l-snt3-igiene-dentale": {"prefisso": r"A84\d\d"},
+    "unicampania-l-snt3-igiene-dentale": {"prefisso": r"A84\d\d", "manifesto":
+        "https://www.dipmdsmco.unicampania.it/images/ORDINAMENTO_-_Piano_di_Studi_Corso_di_Studi_in_IGIENE_DENTALE_-_Cod._Reg._A84-19-25_-_a.a._2025-26.pdf"},
     "unicampania-lm-46-odontoiatria": {"prefisso": r"A42\d{4}"},
     # pagine dei corsi che Universitaly non collega (o collega alla home del dipartimento)
     "unicampania-lm-snt2-scienze-riabilitative": {"url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/"
@@ -729,10 +905,111 @@ CORSI: dict[str, dict] = {
 }
 
 
+def _testo_documento(c: "_Scarica", url: str) -> str | None:
+    """Testo di un PDF o di una pagina (articolo) con il piano di studio/manifesto."""
+    if url.lower().split("?")[0].endswith(".pdf"):
+        dati = c.pdf(url)
+        return "\n".join((p.extract_text() or "") for p in _pdf_reader(dati).pages) if dati else None
+    r = c.get(url)
+    if not r:
+        return None
+    s = _pulisci(r.text)
+    m = re.search(r'itemprop="articleBody"', s)
+    s = s[m.start():] if m else s
+    fine = s.find("<aside")
+    s = s[:fine] if fine > 0 else s
+    s = re.sub(r"(?i)</(?:tr|p|div|li|h\d)>|<br\s*/?>", "\n", s)
+    s = re.sub(r"(?i)</t[dh]>", " ", s)
+    return html.unescape(re.sub(r"<[^>]+>", " ", s))
+
+
+def _applica_cfu_pdf(x: dict, ci_doc: dict, oggi: str, aggiungi: bool = False) -> None:
+    """CFU complessivi letti dal PDF dell'elenco: correggono i CFU presi dalla scheda di un solo modulo; gli
+    insegnamenti dell'elenco senza scheda collegata («Da definire») si aggiungono con il CFU del PDF se il corso ha
+    `righe_da_pdf` in CORSI (provato sui piani di Ingegneria biomedica e informatica magistrale)."""
+    import difflib
+    usate = set()
+    for i in x["insegnamenti"]:
+        n = _norm_nome(i["nome"])
+        k = (i["anno"], n)
+        if k not in ci_doc:  # nome scritto in modo un po' diverso («Metodi … per l'analisi» / «Metodi … di analisi»)
+            simili = [(difflib.SequenceMatcher(None, n, kk[1]).ratio(), kk) for kk in ci_doc if kk[0] == i["anno"]]
+            k = max(simili)[1] if simili and max(simili)[0] >= 0.85 else None
+        if k is None:
+            continue
+        usate.add(k)
+        v = ci_doc[k][0]
+        if not i.get("cfu") or v > i["cfu"]:
+            i["cfu"] = int(v) if float(v).is_integer() else v
+    for k, (v, sem, nome) in ci_doc.items():
+        if not aggiungi or k in usate or len(nome) < 6 or re.match(r"(?i)totale|insegnamento|modulo", nome):
+            continue
+        if any(i["anno"] == k[0] and difflib.SequenceMatcher(None, _norm_nome(i["nome"]), k[1]).ratio() >= 0.85
+               for i in x["insegnamenti"]):
+            continue
+        x["insegnamenti"].append({
+            "codice": None, "nome": _titolo(nome), "anno": k[0], "periodo": {"I": "1", "II": "2"}.get(sem, "annuale"),
+            "cfu": int(v) if float(v).is_integer() else v, "ssd": None, "obbligatorio": None, "curriculum": None,
+            "docenti": [], "url": x["fonte"], "libri": [], "esami": [], "fonte": x["fonte"], "verificato_il": oggi,
+            "stato_libri": "da_aggiungere"})
+
+
+def _aggiungi_attivita(x: dict, cfg: dict, c: "_Scarica", oggi: str, log=print) -> None:
+    """Aggiunge a un corso le attività senza scheda (a scelta, tirocinio, prova finale…) del manifesto / piano di studio
+    ufficiale indicato in `CORSI[...]["manifesto"]` (elenco di url, o (url, curriculum)); un'attività già presente
+    nello stesso anno con lo stesso nome (collegata a una scheda) non si ripete. Le attività con lo stesso nome e anno
+    si distinguono con un numero («Attività a scelta - parte 2»), perché build_db unisce per nome le voci senza codice."""
+    fonti = cfg.get("manifesto") or []
+    if isinstance(fonti, (str, tuple)):
+        fonti = [fonti]
+    durata = x.get("durata_anni") or 6
+    # attività elencate nel documento ufficiale ma non leggibili dal testo (celle senza il nome sulla stessa riga):
+    # (anno, nome, CFU, a scelta?) lette dal documento `extra_fonte`
+    for anno_e, nome_e, cfu_e, scelta_e in cfg.get("extra") or []:
+        if any(i["anno"] == anno_e and _norm_nome(i["nome"]) == _norm_nome(nome_e) for i in x["insegnamenti"]):
+            continue
+        fonte_e = cfg["extra_fonte"]
+        x["insegnamenti"].append({
+            "codice": None, "nome": nome_e, "anno": anno_e, "periodo": None, "cfu": cfu_e, "ssd": None,
+            "obbligatorio": False if scelta_e else True, "curriculum": None, "docenti": [], "url": fonte_e, "libri": [],
+            "esami": [], "fonte": fonte_e, "verificato_il": oggi, "stato_libri": "da_aggiungere"})
+    for f in fonti:
+        url, curr = (f, None) if isinstance(f, str) else f
+        testo = _testo_documento(c, url)
+        if not testo:
+            log(f"[unicampania]   {x['id'][:50]}: documento {url} non letto")
+            continue
+        note = {_norm_nome(i["nome"]) + f":{i['anno']}:{i.get('curriculum') or ''}" for i in x["insegnamenti"]}
+        viste: dict[tuple, int] = {}
+        gia: set = set()
+        for a in leggi_attivita_manifesto(testo, durata):
+            chiave = (a["anno"], _norm_nome(a["nome"]))
+            if cfg.get("tail_unici") and (chiave, a["cfu"]) in gia:
+                continue
+            gia.add((chiave, a["cfu"]))
+            viste[chiave] = viste.get(chiave, 0) + 1
+            n = viste[chiave]
+            nome = a["nome"] if n == 1 else f"{a['nome']} - parte {n}"
+            if _norm_nome(nome) + f":{a['anno']}:{curr or ''}" in note:
+                continue
+            scelta = bool(re.match(rf"(?i){_ATT_SCELTA}", a["nome"]))
+            x["insegnamenti"].append({
+                "codice": None, "nome": nome, "anno": a["anno"], "periodo": None,
+                "cfu": int(a["cfu"]) if float(a["cfu"]).is_integer() else a["cfu"], "ssd": None,
+                "obbligatorio": False if scelta else True, "curriculum": curr, "docenti": [], "url": url, "libri": [],
+                "esami": [], "fonte": url, "verificato_il": oggi, "stato_libri": "da_aggiungere"})
+
+
 def _cfg(cid: str) -> dict:
     """Impostazioni del corso: la chiave più lunga che è un prefisso dell'id."""
     ks = [k for k in CORSI if cid.startswith(k)]
     return CORSI[max(ks, key=len)] if ks else {}
+
+
+def _slug_corso(url: str | None) -> str | None:
+    """Ultimo segmento di `…/corsi-di-studio/<corso>` (la pagina del corso, o un elenco sotto di essa)."""
+    m = re.search(r"/corsi-di-studio/([^/?#]+)", url or "")
+    return m.group(1) if m else None
 
 
 def _host(url: str) -> str:
@@ -753,17 +1030,22 @@ def fetch_ateneo(uid: str = "unicampania", anno: int | None = None, max_cds: int
     if max_cds:
         corsi = corsi[:max_cds]
     c = _Scarica(rate=2.0)  # un sito: al massimo 2 richieste al secondo in tutto
+    altri_slug = {_slug_corso(x["url"]) for x in corsi} - {None}
     oggi = time.strftime("%Y-%m-%d")
     prec = anno - 1
 
     def build(corso: dict) -> dict | None:
         righe: dict[str, dict] = {}
         fonti: list[str] = []
+        ci_doc: dict[tuple[int, str], float] = {}
         cfg = _cfg(corso["id"])
         if cfg.get("fonti"):
             sorgenti = [(u, k, None) for u, k in cfg["fonti"]]
         else:  # la pagina del corso stessa (spesso ha l'elenco in una scheda a fisarmonica) e i documenti che collega
             sorgenti = [(corso["url"], "html", None)] + fonti_corso(c, corso["url"], anno)
+            # il menu delle pagine di alcuni dipartimenti (Architettura) collega gli elenchi degli altri corsi: non sono di questo
+            propria = _slug_corso(corso["url"])
+            sorgenti = [q for q in sorgenti if _slug_corso(q[0]) in (None, propria) or _slug_corso(q[0]) not in altri_slug]
         # le pagine HTML dell'elenco, se ci sono; il PDF solo se le pagine non hanno l'elenco
         sorgenti.sort(key=lambda s: (s[1] != "html", s[0]))
         host_corso = _host(corso["url"])
@@ -791,6 +1073,7 @@ def fetch_ateneo(uid: str = "unicampania", anno: int | None = None, max_cds: int
                 dati = c.pdf(p)
                 if dati:
                     try:
+                        ci_doc.update(leggi_cfu_pdf(dati, corso.get("durata_anni") or 6))
                         voci = leggi_pdf(dati, anno, corso.get("durata_anni") or 6)
                         if len([v for v in voci if v["anno"]]) < 3 and cfg.get("prefisso"):
                             voci = _voci_da_codici(leggi_pdf_codici(dati, cfg["prefisso"]), host_corso, cfg.get("aa", anno), corso)
@@ -816,7 +1099,7 @@ def fetch_ateneo(uid: str = "unicampania", anno: int | None = None, max_cds: int
                 if not v["anno"]:
                     continue
                 key = f"{v['anno']}:{v['cod_attivita'] or _norm_nome(v['nome'])}:{v.get('curriculum') or ''}"
-                href = v["href"] if v["href"].startswith("http") else host + v["href"]
+                href = p if not v["href"] else v["href"] if v["href"].startswith("http") else host + v["href"]
                 item = righe.get(key)
                 if not item:
                     item = righe[key] = {
@@ -830,6 +1113,8 @@ def fetch_ateneo(uid: str = "unicampania", anno: int | None = None, max_cds: int
                 if nome and (not item["nome"] or (not v["cod_unita"] and not v["integrato"])):
                     item["nome"] = nome  # il nome del corso integrato (link senza unità) vale più di quello di un modulo
                 item["periodo"] = item["periodo"] or v["periodo"]
+                if v.get("scelta"):
+                    item["obbligatorio"] = False
                 if v["cod_unita"]:
                     try:
                         item["_unita"][v["cod_unita"]] = float(v["cfu"] or 0)
@@ -843,7 +1128,7 @@ def fetch_ateneo(uid: str = "unicampania", anno: int | None = None, max_cds: int
             return None
         return {"id": corso["id"], "nome": corso["nome"], "classe": corso.get("classe"),
                 "durata_anni": corso.get("durata_anni"), "url": corso["url"], "curricula": None,
-                "fonte": fonti[0], "verificato_il": oggi, "insegnamenti": list(righe.values())}
+                "fonte": fonti[0], "verificato_il": oggi, "insegnamenti": list(righe.values()), "_ci_doc": ci_doc}
 
     titoli_appelli: dict[str, list[str]] = {}
     try:  # titoli degli appelli dell'ultima raccolta: danno il codice dell'attività di titoli senza scheda collegata
@@ -1084,6 +1369,15 @@ def fetch_ateneo(uid: str = "unicampania", anno: int | None = None, max_cds: int
         x["insegnamenti"] = [i for i in x["insegnamenti"] if i.get("nome")]
         for i in x["insegnamenti"]:  # «TPV in Psicologia …» = Tirocinio pratico valutativo (sigla scritta per esteso)
             i["nome"] = re.sub(r"^TPV\b", "Tirocinio pratico valutativo (TPV)", i["nome"])
+            if re.search(r"(?i)\ba scelta\b", i["nome"]):  # «Fondamenti di sostenibilità - esame a scelta», «2 Insegnamenti a Scelta»
+                i["obbligatorio"] = False
+    for x in out:  # CFU complessivi dei PDF (l'insegnamento integrato vale più della scheda del singolo modulo)
+        _applica_cfu_pdf(x, x.pop("_ci_doc", None) or {}, oggi, bool(_cfg(x["id"]).get("righe_da_pdf")))
+    for x in out:
+        try:
+            _aggiungi_attivita(x, _cfg(x["id"]), c, oggi, log)
+        except Exception as e:  # noqa: BLE001
+            log(f"[{uid}]   attività senza scheda di {x['id']} non lette: {e!r}")
     out = [x for x in out if x["insegnamenti"]]
     log(f"[{uid}] libri trovati: {trovati}; richieste: {c.requests}")
     return {"universita_id": uid, "descrizione": "Generato dai siti dei dipartimenti *.unicampania.it "

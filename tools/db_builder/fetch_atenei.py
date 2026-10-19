@@ -103,6 +103,9 @@ CATALOGO_IN_SITI.add("unito")
 from adapters import unisi  # noqa: E402
 SITI["unisi"] = unisi.fetch_ateneo  # catalogo Cineca: anno di corso dalle date delle attività («altreAttivita»), durata dal piano, coorti per nome
 CATALOGO_IN_SITI.add("unisi")
+from adapters import unime  # noqa: E402
+SITI["unime"] = unime.fetch_ateneo  # catalogo Cineca: durata dal piano, coorti per codice e nome, CFU fissi/liberi dalle etichette dei gruppi, id dei corsi gemelli
+CATALOGO_IN_SITI.add("unime")
 # Integrazioni: dati che il catalogo non ha (es. i libri di UniTO dalle pagine Campusnet),
 # letti a partire dagli insegnamenti già nel database e uniti dopo il catalogo
 INTEGRAZIONI = {"unito": unito_campusnet.fetch_ateneo}

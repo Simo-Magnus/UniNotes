@@ -313341,11 +313341,11 @@
        "editore": null,
        "anno": null,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788821446917",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Titolo: Chirurgia per infermieri"
+       "citazione": "Titolo: Chirurgia per infermieri ISBN: 9788821446917"
       }
      ],
      "esami": [
@@ -318408,7 +318408,7 @@
        "citazione": "Lynn P., “Manuale di tecniche e procedure infermieristiche di Taylor”, Piccin, IV edizione"
       },
       {
-       "titolo": "sesta edizione, casa editrice ambrosiana. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738.",
+       "titolo": "sesta edizione, casa editrice ambrosiana. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738.",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -318417,7 +318417,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "sesta edizione, casa editrice ambrosiana. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738."
+       "citazione": "sesta edizione, casa editrice ambrosiana. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738. ISBN 9788838636738."
       }
      ],
      "esami": [
@@ -494623,16 +494623,16 @@
        "citazione": "Bujatti Anna, Come in sogno: venti ci con testo cinese a fronte, Milano, Libri Scheiwiller, 1996. ISBN 9788806198466 ISBN 9788806198466"
       },
       {
-       "titolo": "Bujatti Anna, Come in sogno: venti ci con testo cinese a fronte, Milano, Libri Scheiwiller, 1996.",
+       "titolo": "Bujatti Anna, Come in sogno: venti ci con testo cinese a fronte, Milano, Libri Scheiwiller, 1996. ISBN 9788806198466",
        "autori": null,
        "editore": null,
        "anno": 1996,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788806198466",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Bujatti Anna, Come in sogno: venti ci con testo cinese a fronte, Milano, Libri Scheiwiller, 1996."
+       "citazione": "Bujatti Anna, Come in sogno: venti ci con testo cinese a fronte, Milano, Libri Scheiwiller, 1996. ISBN 9788806198466"
       }
      ],
      "esami": [],
@@ -643173,9 +643173,24 @@
      "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
-     "docenti": [],
+     "docenti": [
+      "Anna Maria Giannini"
+     ],
      "url": null,
-     "libri": [],
+     "libri": [
+      {
+       "titolo": "Atlante illustrato di deontologia per psicologi e studenti di Psicologia",
+       "autori": "Stampa, P., Civitillo, A., & Gibilisco, S.",
+       "editore": "Franco Angeli",
+       "anno": 2023,
+       "edizione": null,
+       "isbn": "9788835146568",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dalla scheda dello stesso insegnamento (codice AAF2365) nel corso L-24 Psicologia e processi sociali, a.a. 2026/27: https://corsidilaurea.uniroma1.it/it/course/33569/attendance/lesson/710f6bec-ceab-4ef9-be8b-ba1c98191ceb/3/1/796ce82e-917a-4efc-a538-e1028929a392",
+       "citazione": "Stampa, P., Civitillo, A., & Gibilisco, S. (2023). Atlante illustrato di deontologia per psicologi e studenti di Psicologia. Franco Angeli. ISBN 9788835146568."
+      }
+     ],
      "esami": [
       {
        "tipo": "appello",
@@ -643192,7 +643207,7 @@
      ],
      "fonte": "https://corsidilaurea.uniroma1.it/it/timeview/2026/34185/study-plan",
      "verificato_il": "2026-10-19",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "id": "uniroma1-l-24-scienze-psicologiche-aaf2365",
      "stato_esami": "completo"
     },
@@ -685673,7 +685688,7 @@
        "citazione": "ISBN: 9788893852890, COLLANA: Esculapio Ingegneria ISBN: 9788893852890 ISBN: 9788893852890"
       },
       {
-       "titolo": "ISBN: 9788893852890, COLLANA: Esculapio Ingegneria",
+       "titolo": "ISBN: 9788893852890, COLLANA: Esculapio Ingegneria ISBN: 9788893852890",
        "autori": null,
        "editore": "COLLANA: Esculapio Ingegneria",
        "anno": null,
@@ -685682,7 +685697,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN: 9788893852890, COLLANA: Esculapio Ingegneria"
+       "citazione": "ISBN: 9788893852890, COLLANA: Esculapio Ingegneria ISBN: 9788893852890"
       }
      ],
      "esami": [
@@ -693154,16 +693169,16 @@
        "citazione": "Medicina di Laboratorio - Logica & Patologia Clinica I. Antonozzi, E. Gulletta PICCIN III/2019 ISBN: 9788836230228 ISBN: 9788836230228"
       },
       {
-       "titolo": "Medicina di Laboratorio - Logica & Patologia Clinica I. Antonozzi, E. Gulletta PICCIN III/2019",
+       "titolo": "Medicina di Laboratorio - Logica & Patologia Clinica I. Antonozzi, E. Gulletta PICCIN III/2019 ISBN: 9788836230228",
        "autori": null,
        "editore": "E. Gulletta PICCIN III/2019",
        "anno": 2019,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788836230228",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Medicina di Laboratorio - Logica & Patologia Clinica I. Antonozzi, E. Gulletta PICCIN III/2019"
+       "citazione": "Medicina di Laboratorio - Logica & Patologia Clinica I. Antonozzi, E. Gulletta PICCIN III/2019 ISBN: 9788836230228"
       }
      ],
      "esami": [
@@ -795114,7 +795129,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Il Prato Editore - Collana \"I Talenti\" ISBN: 9788863360905 ISBN: 9788863360516 ISBN: 8887243859 ISBN: 8887243085 ISBN: 9788863361193 ISBN: 8877942797 ISBN: 9788870382280 ISBN: 9788859805434 ISBN: 9788840440132 ISBN: 9788842054887 ISBN: 9788808068538 ISBN: 9788840441542 ISBN: 9788808068538 ISBN: 9788840441542 ISBN: 9788808068538 ISBN: 9788840441542 ISBN: 9788808068538 ISBN: 9788840441542 ISBN: 9788808068538 ISBN: 9788840441542 ISBN: 9788808068538 ISBN: 9788840441542 ISBN: 9788808068538 ISBN: 9788840441542"
+       "citazione": "Il Prato Editore - Collana \"I Talenti\" ISBN: 9788863360905 ISBN: 9788863360516 ISBN: 8887243859 ISBN: 8887243085 ISBN: 9788863361193 ISBN: 8877942797 ISBN: 9788870382280 ISBN: 9788859805434 ISBN: 9788840440132 ISBN: 9788842054887 ISBN: 9788808068538 ISBN: 9788840441542 ISBN: 9788808068538 ISBN: 9788840441542 ISBN: 9788808068538 ISBN: 9788840441542 ISBN: 9788808068538 ISBN: 9788840441542 ISBN: 9788808068538 ISBN: 9788840441542 ISBN: 9788808068538 ISBN: 9788840441542 ISBN: 9788808068538 ISBN: 9788840441542 ISBN: 9788808068538 ISBN: 9788840441542"
       }
      ],
      "esami": [
@@ -876770,16 +876785,16 @@
        "citazione": "Loman, N., Watson, M. So you want to be a computational biologist?. Nat Biotechnol 31, 996–998 (2013). https://doi.org/10.1038/nbt.2740 ISBN: 9788808520555 ISBN: 9788808520555"
       },
       {
-       "titolo": "Loman, N., Watson, M. So you want to be a computational biologist?. Nat Biotechnol 31, 996–998 (2013). https://doi.org/10.1038/nbt.2740",
+       "titolo": "Loman, N., Watson, M. So you want to be a computational biologist?. Nat Biotechnol 31, 996–998 (2013). https://doi.org/10.1038/nbt.2740 ISBN: 9788808520555",
        "autori": null,
        "editore": null,
        "anno": 2013,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788808520555",
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia. https://corsidilaurea.uniroma1.it/it/archive/2025/33460/attendance/lesson/5a23f2a0-7155-4544-aac6-a1c15dab6493/1/2/36e67c3d-528f-41d1-9339-e1a7c0538e76/71dc1d49-40ed-4f89-8e17-2700e482c243?code=33460&year=2025&channel=0",
-       "citazione": "Loman, N., Watson, M. So you want to be a computational biologist?. Nat Biotechnol 31, 996–998 (2013). https://doi.org/10.1038/nbt.2740"
+       "citazione": "Loman, N., Watson, M. So you want to be a computational biologist?. Nat Biotechnol 31, 996–998 (2013). https://doi.org/10.1038/nbt.2740 ISBN: 9788808520555"
       }
      ],
      "esami": [
@@ -892927,7 +892942,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Liuccio M., Naro F., Soligon S., D'Amico A.(2010). La teoria dei \"frame\" nel giornalismo scientifico. Problemi dell'informazione, vol. 4, p. 427-440, ISSN: 0390-5195 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543"
+       "citazione": "Liuccio M., Naro F., Soligon S., D'Amico A.(2010). La teoria dei \"frame\" nel giornalismo scientifico. Problemi dell'informazione, vol. 4, p. 427-440, ISSN: 0390-5195 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543 ISBN: 9788893774543"
       }
      ],
      "esami": [
@@ -944128,16 +944143,16 @@
        "citazione": "Published June 5, 2006 ISBN 9780415360845 ISBN 9780415360845"
       },
       {
-       "titolo": "Published June 5, 2006",
+       "titolo": "Published June 5, 2006 ISBN 9780415360845",
        "autori": null,
        "editore": null,
        "anno": 2006,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9780415360845",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Published June 5, 2006"
+       "citazione": "Published June 5, 2006 ISBN 9780415360845"
       }
      ],
      "esami": [
@@ -1089705,16 +1089720,16 @@
        "citazione": "CREA, Centro di Ricerca Alimenti e Nutrizione ISBN: 9788849005479 ISBN:9788886154765 ISBN: 9788849005479 ISBN:9788886154765"
       },
       {
-       "titolo": "CREA, Centro di Ricerca Alimenti e Nutrizione",
+       "titolo": "CREA, Centro di Ricerca Alimenti e Nutrizione ISBN: 9788849005479 ISBN:9788886154765",
        "autori": null,
        "editore": null,
        "anno": null,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788849005479",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "CREA, Centro di Ricerca Alimenti e Nutrizione"
+       "citazione": "CREA, Centro di Ricerca Alimenti e Nutrizione ISBN: 9788849005479 ISBN:9788886154765"
       }
      ],
      "esami": [],
@@ -1170780,16 +1170795,16 @@
        "citazione": "CREA, Centro di Ricerca Alimenti e Nutrizione ISBN: 8815388311 EAN: 9788815388315 ISBN: 9788849005479 ISBN:9788886154765 ISBN: 9788849000641 ISBN: 8815388311 EAN: 9788815388315 ISBN: 9788849005479 ISBN:9788886154765 ISBN: 9788849000641"
       },
       {
-       "titolo": "CREA, Centro di Ricerca Alimenti e Nutrizione",
+       "titolo": "CREA, Centro di Ricerca Alimenti e Nutrizione ISBN: 8815388311 EAN: 9788815388315 ISBN: 9788849005479 ISBN:9788886154765 ISBN: 9788849000641",
        "autori": null,
        "editore": null,
        "anno": null,
        "edizione": null,
-       "isbn": null,
+       "isbn": "8815388311",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "CREA, Centro di Ricerca Alimenti e Nutrizione"
+       "citazione": "CREA, Centro di Ricerca Alimenti e Nutrizione ISBN: 8815388311 EAN: 9788815388315 ISBN: 9788849005479 ISBN:9788886154765 ISBN: 9788849000641"
       }
      ],
      "esami": [],
@@ -1319910,16 +1319925,16 @@
        "citazione": "Manuale di Pediatria Generale e Specialistica. Bonamico M, 2017. Casa Editrice Esculapio ISBN: 9788893850445 ISBN: 9788893850445"
       },
       {
-       "titolo": "Manuale di Pediatria Generale e Specialistica. Bonamico M, 2017. Casa Editrice Esculapio",
+       "titolo": "Manuale di Pediatria Generale e Specialistica. Bonamico M, 2017. Casa Editrice Esculapio ISBN: 9788893850445",
        "autori": null,
        "editore": "2017. Casa Editrice Esculapio",
        "anno": 2017,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788893850445",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Manuale di Pediatria Generale e Specialistica. Bonamico M, 2017. Casa Editrice Esculapio"
+       "citazione": "Manuale di Pediatria Generale e Specialistica. Bonamico M, 2017. Casa Editrice Esculapio ISBN: 9788893850445"
       }
      ],
      "esami": [
@@ -1326560,16 +1326575,16 @@
        "citazione": "2 Medicina di Laboratorio - Logica & Patologia Clinica Ed Antonozzi – Gulletta Piccin ISBN 9788836230228 ISBN 9788836230228"
       },
       {
-       "titolo": "2 Medicina di Laboratorio - Logica & Patologia Clinica Ed Antonozzi – Gulletta Piccin",
+       "titolo": "2 Medicina di Laboratorio - Logica & Patologia Clinica Ed Antonozzi – Gulletta Piccin ISBN 9788836230228",
        "autori": null,
        "editore": null,
        "anno": null,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788836230228",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "2 Medicina di Laboratorio - Logica & Patologia Clinica Ed Antonozzi – Gulletta Piccin"
+       "citazione": "2 Medicina di Laboratorio - Logica & Patologia Clinica Ed Antonozzi – Gulletta Piccin ISBN 9788836230228"
       }
      ],
      "esami": [
@@ -1327970,16 +1327985,16 @@
        "citazione": "Unireuma reumatologia autori Valentini, Bombardieri ed altri. seconda edizione editore Idelson - Gnocchi EAN:9788877819741 ISBN:887781974X EAN:9788877819741 ISBN:887781974X"
       },
       {
-       "titolo": "Unireuma reumatologia autori Valentini, Bombardieri ed altri. seconda edizione editore Idelson - Gnocchi",
+       "titolo": "Unireuma reumatologia autori Valentini, Bombardieri ed altri. seconda edizione editore Idelson - Gnocchi EAN:9788877819741 ISBN:887781974X",
        "autori": null,
        "editore": null,
        "anno": null,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788877819741",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Unireuma reumatologia autori Valentini, Bombardieri ed altri. seconda edizione editore Idelson - Gnocchi"
+       "citazione": "Unireuma reumatologia autori Valentini, Bombardieri ed altri. seconda edizione editore Idelson - Gnocchi EAN:9788877819741 ISBN:887781974X"
       }
      ],
      "esami": [
@@ -1347525,16 +1347540,16 @@
        "citazione": "Ortopedia e Traumatologia. Postacchini, Ippolito, Ferreti. Delfino Editore ISBN: 9788874668540 ISBN: 1975176707 ISBN: 9788874668540 ISBN: 1975176707"
       },
       {
-       "titolo": "Ortopedia e Traumatologia. Postacchini, Ippolito, Ferreti. Delfino Editore",
+       "titolo": "Ortopedia e Traumatologia. Postacchini, Ippolito, Ferreti. Delfino Editore ISBN: 9788874668540 ISBN: 1975176707",
        "autori": null,
        "editore": "Ferreti. Delfino Editore",
        "anno": null,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788874668540",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Ortopedia e Traumatologia. Postacchini, Ippolito, Ferreti. Delfino Editore"
+       "citazione": "Ortopedia e Traumatologia. Postacchini, Ippolito, Ferreti. Delfino Editore ISBN: 9788874668540 ISBN: 1975176707"
       }
      ],
      "esami": [

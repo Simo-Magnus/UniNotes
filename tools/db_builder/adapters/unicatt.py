@@ -46,6 +46,7 @@ SEDI = ("MI", "BS", "PC", "CR", "RM")
 PIANO = re.compile(r'href="(/corsi/[^"]*?/(?:pian[oi]-di-studi?o?|piano-studi|study-plan)[\w-]*?-(\d{4})-(\d{2})/[\w-]+\.html)"')
 LINK_API = re.compile(r"https://\w+\.unicatt\.it/polo-studenti-e-didattica-programmi-dei-corsi-orari-delle-lezioni/(\w\w)/"
                       r"insegnamenti\?([^\"\s<]+)")
+SEGNAPOSTO = re.compile(r"(?i)da designare|da definire|da nominare|da assegnare|to be (?:appointed|assigned|defined|announced)")
 HEADERS = {"User-Agent": "Mozilla/5.0 (UniversityNotes database builder; +https://github.com/Simo-Magnus/UniNotes)"}
 
 
@@ -54,16 +55,73 @@ def _pagina(url: str | None) -> str | None:
     return f"{BASE}{m.group(1)}.html" if m else None
 
 
+def _crediti_gruppo(info: str) -> float | None:
+    """CFU che lo studente deve ottenere dal gruppo: «(crediti 8)», «(crediti 6+6)», «(crediti 12 o 6+6)»
+    (con più alternative vale la prima), «(credits 8)»."""
+    m = re.search(r"\(\s*(?:crediti|credits)\s+([^)]*)\)", info or "", re.I)
+    if not m:
+        return None
+    alt = re.split(r"\s+(?:o|or)\s+", m.group(1).strip())[0]
+    parti = [p.replace(",", ".") for p in re.split(r"\s*\+\s*", alt)]
+    if not parti or not all(re.fullmatch(r"\d+(?:\.\d+)?", p) for p in parti):
+        return None
+    return sum(float(p) for p in parti)
+
+
+SCELTA_LIBERA = re.compile(r"(?i)libera scelta|consigl|raccomand|potr[àa] scegliere|free choice|recommend|suggest")
+SCELTA = re.compile(r"(?i)a scelta|chosen from|choose|scegliere|opzional|elective|\btra\b|\bamong\b|\bfra\b|\bor\b|\boppure\b")
+
+
+def _gruppo_richiesto(info: str, righe: list[dict]) -> bool:
+    """Un gruppo del piano («Un insegnamento a scelta tra: (crediti 8)», «Attività formative: (crediti 24)») va
+    sostenuto per intero quando offre al più i CFU richiesti o ha una sola riga; è a scelta quando ne offre di più.
+    Senza i crediti nel titolo si decide dalle parole di scelta; le tabelle senza titolo sono obbligatorie."""
+    if not righe:
+        return True
+    info = (info or "").strip()
+    if not info:
+        return True
+    if SCELTA_LIBERA.search(info):
+        return False
+    n = _crediti_gruppo(info)
+    if n is None:
+        return not SCELTA.search(info)
+    if len(righe) == 1:
+        return True
+    cfu = [r["cfu"] for r in righe]
+    if any(c is None for c in cfu):
+        return not SCELTA.search(info)
+    return sum(cfu) <= n + 1e-9
+
+
 def leggi_piano(s: str) -> list[dict]:
+    """Righe del piano di una coorte (tutti gli anni). Ogni riga ha anche `gruppo` (il titolo del gruppo di
+    scelta, vuoto per le tabelle senza titolo) e `gruppo_cfu` (i CFU richiesti dal gruppo)."""
     out = []
     parti = re.split(r'<h2 class="cmp-table-title__text">\s*(\d)\s*(?:°|st|nd|rd|th|o)?\s*(?:anno|year)\s*</h2>', s, flags=re.I)
     for anno, corpo in zip(parti[1::2], parti[2::2]):
         # le tabelle "mobile" ripetono le righe: si leggono solo quelle "desk"
         pezzi = re.split(r'(<div class="cmp-info">.*?</div>)', corpo, flags=re.S)
-        scelta = False
+        info = ""
+        gruppo: list[dict] = []
+        contatore = [0]
+
+        def chiudi() -> None:
+            richiesto = _gruppo_richiesto(info, gruppo)
+            n = _crediti_gruppo(info)
+            contatore[0] += 1
+            for x in gruppo:
+                x["obbligatorio"] = richiesto
+                x["gruppo"] = info
+                x["gruppo_cfu"] = n
+                x["gruppo_id"] = (int(anno), contatore[0])
+            out.extend(gruppo)
+
         for p in pezzi:
             if p.startswith('<div class="cmp-info">'):
-                scelta = bool(re.search(r"(?i)a scelta|chosen from|choose|scegliere|opzional|elective", _testo(p)))
+                chiudi()
+                gruppo = []
+                info = re.sub(r"\s+", " ", _testo(p)).strip()
                 continue
             for tab in re.findall(r'<table class="wrapper-tables-desk"[^>]*>(.*?)</table>', p, re.S):
                 for tr in re.findall(r"<tr>(.*?)</tr>", tab, re.S):
@@ -75,14 +133,28 @@ def leggi_piano(s: str) -> list[dict]:
                     t = _testo(nome.group(1))
                     ssd = re.search(r"\(([A-Z][A-Z/\-\d, ]+)\)\s*$", t)
                     v = _testo(cfu.group(1)).replace(",", ".") if cfu else ""
-                    out.append({
+                    gruppo.append({
                         "anno": int(anno), "nome": _titolo(re.sub(r"\s*\([A-Z][A-Z/\-\d, ]+\)\s*$", "", t)),
                         "ssd": ssd.group(1).replace(" ", "") if ssd else None,
                         "cfu": (int(float(v)) if float(v).is_integer() else float(v)) if re.fullmatch(r"\d+(\.\d+)?", v)
                         else None,
-                        "programma": html.unescape(prog.group(1)) if prog else None, "obbligatorio": not scelta,
+                        "programma": html.unescape(prog.group(1)) if prog else None, "obbligatorio": True,
                     })
+        chiudi()
     return out
+
+
+def nome_curriculum(s: str) -> str | None:
+    """«Curriculum: Educatore nei servizi educativi - A.A. 2025/2026» → «Educatore nei servizi educativi»;
+    «PERCORSO COMUNE» (o nessun curriculum) → None."""
+    m = re.search(r'id="desc_course"[^>]*>\s*([^<]*?)\s*</h2>', s)
+    if not m:
+        return None
+    t = html.unescape(m.group(1))
+    t = re.sub(r"(?i)\s*[-–]?\s*A\.?A\.?\s*\d{4}\s*/\s*\d{2,4}\s*$", "", t).strip()
+    t = re.sub(r"(?i)^\s*(?:curriculum|curricula|percorso)\s*(?::|$)\s*", "", t).strip()
+    t = re.sub(r"\s*,\s*", " ", _titolo(t)).strip()
+    return None if not t or re.fullmatch(r"(?i)percorso comune|common (?:path|curriculum)|main curriculum", t) else t
 
 
 # --- API dei campus ----------------------------------------------------------------------------
@@ -208,6 +280,48 @@ def _esami_ps(api: Api, sede: str, anno: int, cdl: dict, anno_corso: int) -> lis
     return out
 
 
+# Per ogni corso e anno di corso, da quale coorte si è letto il piano e quanti CFU richiede (fissi più gruppi a
+# scelta): serve ai controlli dei CFU (vedi tools/db_builder/controllo_cfu.py), non fa parte del contributo.
+ANALISI: dict[str, dict] = {}
+ELENCHI_CORSI = ("triennale", "magistrale")
+
+
+def _elenco_pagine_sito(c: Client, cache: dict) -> list[str]:
+    """Pagine dei corsi (`/corsi/<tipo>/<corso>.html`) nell'elenco dei corsi di laurea e di laurea magistrale."""
+    if "pagine" not in cache:
+        pagine: list[str] = []
+        for tipo in ELENCHI_CORSI:
+            r = c.get(f"{BASE}/corsi/{tipo}.html")
+            if r:
+                pagine += re.findall(r'href="(?:https://www\.unicatt\.it)?(/corsi/(?:triennale|magistrale)/[\w-]+\.html)"', r.text)
+        cache["pagine"] = sorted(set(pagine))
+    return cache["pagine"]
+
+
+def _pagina_alternativa(c: Client, corso: dict, cache: dict) -> str | None:
+    """Pagina del corso quando l'indirizzo di Universitaly manca o non esiste più: tra le pagine dell'elenco dei
+    corsi del sito, quella il cui indirizzo (senza la sede in fondo) assomiglia al nome del corso (ratio >= 0.9, e
+    nettamente migliore delle altre), nella stessa sede se la si conosce dall'indirizzo vecchio o da «REPLICA»."""
+    nome = _ascii(_nome_corso(corso["nome"]))
+    sede = None
+    m = re.search(r"(?i)REPLICA(.*)$", corso["nome"])
+    vecchio = ((corso.get("url") or "").rsplit("/", 1)[-1]).removesuffix(".html")
+    for nome_sede in SEDE_NOMI:
+        if (m and nome_sede in _ascii(m.group(1)).split()) or (not m and vecchio.endswith("-" + nome_sede)):
+            sede = nome_sede
+    punteggi = []
+    for path in _elenco_pagine_sito(c, cache):
+        slug = path.rsplit("/", 1)[-1].removesuffix(".html")
+        if sede and not slug.endswith("-" + sede):
+            continue
+        base = re.sub(r"-(?:%s)$" % "|".join(SEDE_NOMI), "", slug)
+        punteggi.append((difflib.SequenceMatcher(None, nome, _ascii(base)).ratio(), path))
+    punteggi.sort(reverse=True)
+    if punteggi and punteggi[0][0] >= 0.9 and (len(punteggi) == 1 or punteggi[0][0] - punteggi[1][0] >= 0.05):
+        return BASE + punteggi[0][1]
+    return None
+
+
 def fetch_ateneo(uid: str = "unicatt", anno: int | None = None, max_cds: int | None = None, syllabus: bool = True,
                  corsi: list[dict] | None = None, log=print, api: bool = True) -> dict:
     """Restituisce un contributo nel formato di database/contrib (vedi build_db.py)."""
@@ -215,19 +329,30 @@ def fetch_ateneo(uid: str = "unicatt", anno: int | None = None, max_cds: int | N
     if corsi is None:
         corsi = json.loads((ROOT / "database" / "corsi" / f"{uid}.json").read_text(encoding="utf-8"))["corsi"]
     tutti = list(corsi)
-    corsi = [c for c in corsi if _pagina(c.get("url"))]
     if max_cds:
         corsi = corsi[:max_cds]
     log(f"[{uid}] {len(corsi)} corsi su www.unicatt.it")
+    elenchi_sito: dict = {}
+    ana_corso = ANALISI
     c = Client(rate=2.0)
     oggi = time.strftime("%Y-%m-%d")
     cache_dir = os.environ.get("UN_HTTP_CACHE")
     cache = pathlib.Path(cache_dir) if cache_dir else None
     links: dict[str, list[tuple[str, dict]]] = {}  # id corso → [(sede, parametri)] dalle pagine del corso
 
+    def pagina_corso(corso: dict):
+        """(url, risposta) della pagina del corso: quella dell'elenco dei corsi di Universitaly o, se non c'è più,
+        la pagina che l'elenco dei corsi del sito intitola allo stesso corso (nella stessa sede)."""
+        pagina = _pagina(corso.get("url"))
+        r = c.get(pagina) if pagina else None
+        if r:
+            return pagina, r
+        alt = _pagina_alternativa(c, corso, elenchi_sito)
+        r = c.get(alt) if alt else None
+        return (alt, r) if r else (None, None)
+
     def build(corso: dict) -> dict | None:
-        pagina = _pagina(corso["url"])
-        r = c.get(pagina)
+        pagina, r = pagina_corso(corso)
         if not r:
             return None
         links[corso["id"]] = [(sede, dict(re.findall(r"([A-Za-z]+)=([^&]*)", q.replace("&amp;", "&"))))
@@ -239,32 +364,84 @@ def fetch_ateneo(uid: str = "unicatt", anno: int | None = None, max_cds: int | N
                 piani[int(a)].append(BASE + path)
         durata = corso.get("durata_anni") or 3
         righe: dict[str, dict] = {}
-        curricula = set()
-        for k in range(1, durata + 1):
-            for url in piani.get(anno - k + 1, []):
+        curricula: set[str] = set()
+        analisi: dict[int, dict] = {}
+        lette: dict[str, tuple[list[dict], str | None] | None] = {}
+
+        def piano(url: str):
+            if url not in lette:
                 rp = c.get(url)
-                if not rp:
-                    continue
-                curr = url.rsplit("/", 1)[-1].removesuffix(".html")
-                curr = None if curr in ("curriculum", "piano-di-studi", "piani-di-studio", "study-plan") else curr.replace("-", " ")
-                if curr and len(piani.get(anno - k + 1, [])) > 1:
-                    curricula.add(curr)
-                for x in leggi_piano(rp.text):
-                    if x["anno"] != k:
-                        continue
-                    key = f"{k}:{x['nome'].lower()}"
-                    item = righe.get(key)
-                    if not item:
-                        item = righe[key] = {
-                            "codice": None, "nome": x["nome"], "anno": k, "periodo": None, "cfu": x["cfu"],
-                            "ssd": x["ssd"], "obbligatorio": x["obbligatorio"], "curriculum": None, "docenti": [],
-                            "url": x["programma"], "libri": [], "esami": [], "fonte": url, "verificato_il": oggi,
-                        }
-                    item["obbligatorio"] = item["obbligatorio"] or x["obbligatorio"]
-                    if not item["url"] and x["programma"]:
-                        item["url"] = x["programma"]
+                lette[url] = (leggi_piano(rp.text), nome_curriculum(rp.text)) if rp else None
+            return lette[url]
+
+        for k in range(1, durata + 1):
+            # l'anno k di quest'anno accademico è della coorte anno-k+1; se quella coorte non ha un piano sul sito
+            # (le coorti più vecchie escono dal sito) si legge lo stesso anno dal piano della coorte più vicina
+            obiettivo = anno - k + 1
+            scelta = None
+            for coorte in sorted(piani, key=lambda a: (abs(a - obiettivo), -a)):
+                pagine = []
+                for url in piani[coorte]:
+                    pp = piano(url)
+                    rows = [x for x in pp[0] if x["anno"] == k] if pp else []
+                    if rows:
+                        slug = url.rsplit("/", 1)[-1].removesuffix(".html")
+                        nome_c = pp[1] or (None if slug in ("curriculum", "piano-di-studi", "piani-di-studio", "study-plan")
+                                           or re.search(r"percorso-comune|main-curriculum|common", slug)
+                                           else re.sub(r"^curriculum-", "", slug).replace("-", " ").capitalize())
+                        pagine.append((url, nome_c, rows))
+                if pagine:
+                    scelta = (coorte, pagine)
+                    break
+            if not scelta:
+                continue
+            coorte, pagine = scelta
+            comuni = [p for p in pagine if not p[1]]
+            nominate = [p for p in pagine if p[1]]
+            analisi[k] = {"coorte": f"{coorte}-{(coorte + 1) % 100:02d}", "esatta": coorte == obiettivo,
+                          "pagine": [p[0] for p in pagine], "percorsi": {}}
+            # righe per (nome, obbligatorio, cfu) → pagine in cui compaiono
+            gruppi: dict[tuple, dict] = {}
+            for url, nome_c, rows in pagine:
+                for x in rows:
+                    g = gruppi.setdefault((x["nome"].lower(), x["obbligatorio"], x["cfu"]), {"x": x, "url": url, "pagine": []})
+                    if nome_c not in g["pagine"]:
+                        g["pagine"].append(nome_c)
+            for (nl, obb, cfu), g in gruppi.items():
+                x = g["x"]
+                if None in g["pagine"] or (len(g["pagine"]) == len(pagine) and len(pagine) == 1):
+                    curr = None
+                elif len(nominate) > 1 and set(g["pagine"]) == {p[1] for p in nominate}:
+                    curr = None
+                else:
+                    curr = ", ".join(sorted(g["pagine"]))
+                    curricula.update(g["pagine"])
+                key = f"{k}:{nl}:{obb}:{cfu}:{curr}"
+                if key not in righe:
+                    righe[key] = {
+                        "codice": None, "nome": x["nome"], "anno": k, "periodo": None, "cfu": x["cfu"],
+                        "ssd": x["ssd"], "obbligatorio": obb, "curriculum": curr, "docenti": [],
+                        "url": x["programma"], "libri": [], "esami": [], "fonte": g["url"], "verificato_il": oggi,
+                    }
+            # CFU richiesti dall'anno per ogni percorso: righe obbligatorie più i CFU dei gruppi a scelta
+            def richiesti(rows: list[dict]) -> tuple[float, float, list[float]]:
+                fissi = sum(x["cfu"] or 0 for x in rows if x["obbligatorio"])
+                visti, gr = set(), []
+                for x in rows:
+                    if not x["obbligatorio"] and x["gruppo_id"] not in visti:
+                        visti.add(x["gruppo_id"])
+                        gr.append(x["gruppo_cfu"] if x["gruppo_cfu"] is not None else 0)
+                return fissi + sum(gr), fissi, gr
+            base = [x for p in comuni for x in p[2]]
+            for url, nome_c, rows in (nominate or [(None, None, [])]):
+                tot, fissi, gr = richiesti(base + rows)
+                analisi[k]["percorsi"][nome_c or "-"] = {"richiesti": tot, "fissi": fissi, "gruppi": gr,
+                                                           "url": url or comuni[0][0],
+                                                           "incerti": sum(1 for x in rows + base if not x["obbligatorio"]
+                                                                          and x["gruppo_cfu"] is None)}
         if not righe:
             return None
+        ana_corso[corso["id"]] = analisi
         return {"id": corso["id"], "nome": corso["nome"], "classe": corso.get("classe"), "durata_anni": durata,
                 "url": pagina, "curricula": sorted(curricula) or None, "fonte": pagina, "verificato_il": oggi,
                 "insegnamenti": list(righe.values())}
@@ -341,7 +518,7 @@ def fetch_ateneo(uid: str = "unicatt", anno: int | None = None, max_cds: int | N
         if aa and aa != anno:  # programma di un a.a. precedente (quello corrente non è ancora pubblicato)
             libri = [{**lb, "note": lb.get("note") or f"Dal programma {aa}/{str(aa + 1)[2:]}"} for lb in libri]
         it["url"] = url
-        it["docenti"] = sorted(set(it.get("docenti") or []) | set(p["docenti"]))
+        it["docenti"] = sorted(set(it.get("docenti") or []) | {d for d in p["docenti"] if not SEGNAPOSTO.search(d)})
         it["libri"] = libri
         it["stato_libri"] = "completo" if libri else "da_aggiungere"
         it["_biblio"] = p["bibliografia"]
@@ -441,7 +618,7 @@ SEDE_NOMI = {"milano": "MI", "brescia": "BS", "piacenza": "PC", "cremona": "CR",
 def _sedi_corso(corso: dict, links: list) -> list[str] | None:
     """Sedi dell'API in cui cercare il corso: [] = nessuna (replica in un'altra città), None = tutte."""
     m = re.search(r"(?i)REPLICA(.*)$", corso["nome"])
-    if m:
+    if m and _ascii(m.group(1)):  # «REPLICA» senza la città: stessa pagina del corso, si guarda la sede di quella
         coda = _ascii(m.group(1))
         for nome, cod in SEDE_NOMI.items():
             if nome in coda.split():
@@ -485,6 +662,38 @@ def _corsi_uguali(corso: dict, voci: list[tuple[int, dict]]) -> list[tuple[int, 
     base = _ascii(_nome_corso(corso["nome"]))
     return [(a, e) for a, e in voci if ok_classe(e) and difflib.SequenceMatcher(
         None, base, _ascii(_nome_corso(e.get("descrizione")))).ratio() >= 0.9]
+
+
+def _piano_incompleto(corso: dict, durata: int) -> bool:
+    """Il piano pubblicato sul sito richiede (righe obbligatorie più CFU dei gruppi a scelta) meno dei 60 CFU per
+    anno del corso: mancano le attività a scelta dello studente, che il sito non elenca."""
+    ana = ANALISI.get(corso["id"]) or {}
+    if not ana:
+        return False
+    totale = sum(max((p["richiesti"] for p in a["percorsi"].values()), default=0) for a in ana.values())
+    return totale < 60 * durata - 0.01
+
+
+def _attivita_a_scelta(corso: dict, ps_voci: list[dict], anno: int, durata: int, oggi: str) -> list[dict]:
+    """Attività offerte a scelta dall'API (`ps/insegnamenti`, a.a. corrente) che non sono nel piano del sito:
+    insegnamenti singoli (non moduli di un integrato) con CFU, per anno di corso."""
+    out = []
+    for k in range(1, durata + 1):
+        nomi = [_chiave_ins(i["nome"]) for i in corso["insegnamenti"] if i["anno"] == k]
+        visti: set[str] = set()
+        for v in sorted((v for v in ps_voci if v["anno_acc"] == anno and v["anno_corso"] == k and not v["integrato"]
+                         and (v["cfu"] or 0) > 0), key=lambda v: (v["nome"], v["codice"] or "")):
+            kk = _chiave_ins(v["nome"])
+            if not kk or kk in visti or (v["cfu"] * 2) % 1:  # (i seminari da 0,25 CFU non si registrano)
+                continue
+            if any(kk == n or difflib.SequenceMatcher(None, kk, n).ratio() >= 0.9 for n in nomi):
+                continue
+            visti.add(kk)
+            out.append({
+                "codice": v["codice"], "nome": _titolo(v["nome"]), "anno": k, "periodo": None, "cfu": v["cfu"],
+                "ssd": None, "obbligatorio": False, "curriculum": None, "docenti": [], "url": v.get("url"),
+                "libri": [], "esami": [], "fonte": f"{API}/ps/insegnamenti/", "verificato_il": oggi})
+    return out
 
 
 def _api_campus(uid: str, anno: int, tutti: list[dict], out: list[dict], links: dict, cache, log) -> None:
@@ -541,19 +750,35 @@ def _api_campus(uid: str, anno: int, tutti: list[dict], out: list[dict], links: 
             ps_chiave.setdefault(_chiave_ins(v["nome"]), []).append(v)
         if corso.get("_stub"):  # nessun piano sul sito: gli insegnamenti di primo livello dell'a.a. corrente
             visti = set()
+            moduli: dict[tuple, float] = {}  # (codice-corso, anno di corso, integrato) → CFU dei moduli
+            for v in ps_voci:
+                if v["integrato"] and v["anno_acc"] == anno:
+                    kk = (v["cdl"], v["anno_corso"], v["integrato"])
+                    moduli[kk] = moduli.get(kk, 0) + (v["cfu"] or 0)
             for v in sorted((v for v in ps_voci if v["anno_acc"] == anno and not v["integrato"]),
                             key=lambda v: (v["anno_corso"], v["nome"])):
                 k = (v["anno_corso"], _chiave_ins(v["nome"]))
                 if k in visti or v["anno_corso"] > durata:
                     continue
                 visti.add(k)
+                cfu_v = v["cfu"]
+                if not cfu_v:  # corso integrato: l'API dà 0 CFU al corso e i CFU ai moduli
+                    cfu_m = moduli.get((v["cdl"], v["anno_corso"], v["codice"]))
+                    cfu_v = (int(cfu_m) if float(cfu_m).is_integer() else cfu_m) if cfu_m else cfu_v
                 corso["insegnamenti"].append({
-                    "codice": None, "nome": _titolo(v["nome"]), "anno": v["anno_corso"], "periodo": None, "cfu": v["cfu"],
+                    "codice": None, "nome": _titolo(v["nome"]), "anno": v["anno_corso"], "periodo": None, "cfu": cfu_v,
                     "ssd": None, "obbligatorio": True, "curriculum": None, "docenti": [], "url": None, "libri": [],
                     "esami": [], "fonte": f"{API}/ps/insegnamenti/", "verificato_il": oggi})
             if corso["insegnamenti"]:
                 stat["corsi_stub_riempiti"] += 1
                 corso["fonte"] = f"{API}/ps/insegnamenti/"
+        if not corso.get("_stub") and _piano_incompleto(corso, durata):
+            aggiunte = _attivita_a_scelta(corso, ps_voci, anno, durata, oggi)
+            corso["insegnamenti"].extend(aggiunte)
+            stat["ins_a_scelta_api"] = stat.get("ins_a_scelta_api", 0) + len(aggiunte)
+            ps_chiave = {}
+            for v in ps_voci:
+                ps_chiave.setdefault(_chiave_ins(v["nome"]), []).append(v)
         for it in corso["insegnamenti"]:
             kk = _chiave_ins(it["nome"])
             pv = [v for v in ps_chiave.get(kk, []) if v["anno_corso"] == it["anno"]] or ps_chiave.get(kk, [])
@@ -565,7 +790,7 @@ def _api_campus(uid: str, anno: int, tutti: list[dict], out: list[dict], links: 
             it["codice"] = it.get("codice") or (cod[0] if cod else None)
             stat["ins_codice"] += 1
             correnti = [v for v in ev if v["anno_acc"] == anno]
-            it["docenti"] = sorted(set(it.get("docenti") or []) | {v["docente"] for v in correnti if v["docente"]})
+            it["docenti"] = sorted(set(it.get("docenti") or []) | {v["docente"] for v in correnti if v["docente"] and not SEGNAPOSTO.search(v["docente"])})
             if it.get("cfu") is None:
                 it["cfu"] = next((v["cfu"] for v in pv if v["cfu"] is not None and v["anno_acc"] == anno), None)
             cand = sorted({(v["anno_acc"], v["url"]) for v in pv + ev if v.get("url")}, reverse=True)

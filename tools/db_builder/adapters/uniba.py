@@ -239,14 +239,21 @@ def _coorte_anno(cohorts: dict, voci: dict, k: int, anno: int) -> int | None:
     return (pieni or vicine)[0]
 
 
-def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log) -> dict:
+def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, solo_syllabus: set | None = None,
+                 anni_precedenti: bool = False) -> dict:
     """Piani di studio dal catalogo, un anno di corso alla volta.
 
     Per l'anno k si usa il piano della coorte anno-k+1; il codice del corso cambia da una coorte
     all'altra (7743 → 7743-R: si riconosce senza il suffisso o per nome, sede e tipo). Se quella coorte
     non ha voci per quell'anno (corso nuovo, offerta non ancora pubblicata, piano senza ripartizione per
     anno) si prende il piano della coorte più vicina che le ha, di solito la più recente. La durata è
-    quella del piano (le lauree magistrali a ciclo unico hanno 5-6 anni, non 3)."""
+    quella del piano (le lauree magistrali a ciclo unico hanno 5-6 anni, non 3).
+
+    `solo_syllabus`: insieme di codici di attività (adCod); se dato, si leggono i syllabus solo di quelle
+    (per riempire i libri di insegnamenti nuovi senza rileggere tutto il catalogo).
+    `anni_precedenti`: per gli insegnamenti la cui scheda dell'anno corrente non ha libri si legge la scheda
+    degli anni accademici precedenti (stesso codice di attività, piano di un'altra coorte); i libri portano in
+    `note` l'anno e l'indirizzo della scheda usata."""
     base = BASE
     c = ClientConCache(BASE)
     coorti: dict[int, list[dict]] = {}
@@ -283,6 +290,7 @@ def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log) 
 
     corsi_out = []
     syllabus_jobs: dict[tuple[str, str], dict] = {}
+    alt_jobs: list[tuple[dict, dict]] = []
     oggi = time.strftime("%Y-%m-%d")
 
     def build_cds(cur: dict) -> dict | None:
@@ -348,7 +356,7 @@ def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log) 
                             "libri": [], "esami": [], "fonte": base, "verificato_il": oggi,
                         }
                         insegnamenti[key] = item
-                        if syllabus:
+                        if syllabus and (solo_syllabus is None or ad in solo_syllabus):
                             syllabus_jobs.setdefault((str(att.get("aa")), str(att.get("cod"))), {
                                 "params": {"anno": att.get("aa"), "insegnamento": att.get("cod"),
                                            "ordinamento_aa": att.get("ordinamento_aa"),
@@ -359,6 +367,32 @@ def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log) 
                 if n_percorsi > 1 and pnome:
                     item["_percorsi"].add(pnome)
                     percorsi_nomi.add(pnome)
+        if anni_precedenti and syllabus:
+            for item in insegnamenti.values():
+                ad = item.get("codice")
+                if not ad or (solo_syllabus is not None and ad not in solo_syllabus):
+                    continue
+                alts: dict = {}
+                for y, vv in voci.items():
+                    for _, _, _, att in vv:
+                        if att is None or (att.get("adCod") or att.get("cod")) != ad:
+                            continue
+                        try:
+                            aa = int(att.get("aa"))
+                        except (TypeError, ValueError):
+                            continue
+                        if aa >= anno:
+                            continue
+                        alts.setdefault((aa, str(att.get("cod")), str(att.get("corso_percorso_id"))), {
+                            "params": {"anno": att.get("aa"), "insegnamento": att.get("cod"),
+                                       "ordinamento_aa": att.get("ordinamento_aa"),
+                                       "af_percorso": att.get("corso_percorso_id"),
+                                       "corso_cod": att.get("corso_cod"), "corso_aa": y,
+                                       "schema_id": att.get("schemaId")},
+                            "url": f"{base}/insegnamenti/{att.get('aa')}/{att.get('cod')}"
+                                   f"/{att.get('ordinamento_aa')}/{att.get('corso_percorso_id')}?coorte={y}"})
+                if alts:
+                    alt_jobs.append((item, alts))
         ins = list(insegnamenti.values())
         for i in ins:
             ps, tutti = i.pop("_percorsi"), i.pop("_tutti")
@@ -424,12 +458,47 @@ def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log) 
             if i % 1000 == 0:
                 log(f"[{uid}]   syllabus {i}/{len(syllabus_jobs)}")
     log(f"[{uid}] libri trovati: {trovati}; richieste: {c.requests}")
+
+    def libri_di(sy: dict) -> list[dict]:
+        libri = cc._testi_syllabus(sy)[0]
+        if not libri:
+            libri = libri_testo_libero(sy)
+        if not libri:
+            for u in cc._testi_syllabus(sy)[2]:
+                libri += cc.leganto.libri(u)
+        return libri
+
+    def do_alt(entry: tuple[dict, dict]) -> int:
+        item, alts = entry
+        try:
+            for (aa, _, _), a in sorted(alts.items(), key=lambda kv: -kv[0][0]):
+                sy = c.get("/insegnamento", {k: v for k, v in a["params"].items() if v not in (None, "")})
+                libri = libri_di(sy) if isinstance(sy, dict) else []
+                if libri:
+                    nota = (f"Dal programma dell'a.a. {aa}/{(aa + 1) % 100:02d}: la scheda {anno}/{(anno + 1) % 100:02d} "
+                            f"non riporta la bibliografia. {a['url']}")
+                    item["libri"] = [{**b, "note": f"{b['note']} {nota}" if b.get("note") else nota} for b in libri]
+                    item["stato_libri"] = "completo"
+                    return len(libri)
+        except Exception:  # noqa: BLE001 - una scheda illeggibile non ferma le altre
+            pass
+        return 0
+
+    if alt_jobs:
+        da_fare = [e for e in alt_jobs if not e[0]["libri"]]
+        log(f"[{uid}] schede degli anni precedenti da leggere: {len(da_fare)}")
+        trovati = 0
+        with cf.ThreadPoolExecutor(8) as ex:
+            for i, n in enumerate(ex.map(do_alt, da_fare), 1):
+                trovati += n
+        log(f"[{uid}] libri dagli anni precedenti: {trovati}; richieste: {c.requests}")
     return {"universita_id": uid, "descrizione": f"Generato da {base} (Course Catalogue Cineca)",
             "generato_il": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "corsi": corsi_out, "canali": []}
 
 
-def fetch_ateneo(uid: str, anno: int, max_cds: int | None = None, syllabus: bool = True, log=print) -> dict:
-    doc = _fetch_piani(uid, anno, max_cds, syllabus, log)
+def fetch_ateneo(uid: str, anno: int, max_cds: int | None = None, syllabus: bool = True, log=print,
+                 solo_syllabus: set | None = None, anni_precedenti: bool = False) -> dict:
+    doc = _fetch_piani(uid, anno, max_cds, syllabus, log, solo_syllabus, anni_precedenti)
     for c in doc["corsi"]:  # alcuni syllabus hanno le entità HTML annidate («&amp;#39;»)
         for ins in c.get("insegnamenti") or []:
             for b in ins.get("libri") or []:

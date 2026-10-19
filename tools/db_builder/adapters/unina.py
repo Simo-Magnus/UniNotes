@@ -52,6 +52,9 @@ SITO = "https://www.corsi.unina.it"
 DOCENTI = "https://www.docenti.unina.it/webdocenti-be/docenti"
 SCHEDA = DOCENTI + "/programmi/schedainsegnamento/"
 SEM = {"1": "1", "2": "2", "A": "annuale", "0": "annuale"}
+# Righe del piano che sono crediti a scelta dello studente («Attività a scelta», «Insegnamento a scelta dello
+# studente», «Un esame a scelta libera tra…»), non un insegnamento
+_A_SCELTA = re.compile(r"(?i)\ba scelta\b|scelta libera|\bscelte\b")
 SEM_SCHEDA = {"primo semestre": "1", "secondo semestre": "2", "annuale": "annuale"}
 
 # Corsi del database con più corsi omonimi sul portale (stesso nome e classe): codice scelto
@@ -369,7 +372,7 @@ def fetch_ateneo(uid: str = "unina", anno: int | None = None, max_cds: int | Non
                     for pi in piani}
             righe: dict[str, dict] = {}
 
-            def aggiungi(t: dict, pc: str, obbl: bool) -> None:
+            def aggiungi(t: dict, pc: str, obbl: bool, segnaposto: bool = False) -> None:
                 k, cod = t.get("annoCorso"), t.get("codInsegnamento")
                 if not k or not cod:
                     return
@@ -377,23 +380,36 @@ def fetch_ateneo(uid: str = "unina", anno: int | None = None, max_cds: int | Non
                 if not item:
                     nome = re.sub(r"\s*\(\s*integrato\s*\)\s*$", "", t.get("descInsegnamento") or "", flags=re.I)
                     item = righe[f"{k}:{cod}"] = {
-                        "codice": cod, "nome": _titolo(nome), "anno": k,
+                        # i segnaposto «a scelta» hanno lo stesso codice in anni diversi: uno per anno
+                        "codice": f"{cod}-a{k}" if segnaposto else cod, "nome": _titolo(nome), "anno": k,
                         "periodo": SEM.get(str(t.get("semestre") or "")), "cfu": t.get("cfu"),
                         "ssd": t.get("ssd") or None, "obbligatorio": obbl, "curriculum": None, "docenti": [],
-                        "url": f"{SITO}/{cds}/insegnamenti/{aa}/{cod}", "libri": [], "esami": [], "fonte": fonte,
-                        "verificato_il": oggi, "_p": set(), "_cds": cds, "_aa": aa}
+                        "url": None if segnaposto else f"{SITO}/{cds}/insegnamenti/{aa}/{cod}", "libri": [],
+                        "esami": [], "fonte": fonte, "verificato_il": oggi, "_p": set(), "_cds": cds, "_aa": aa,
+                        "_ph": segnaposto}
                 item["obbligatorio"] = item["obbligatorio"] or obbl
                 item["_p"].add(pc)
 
+            tot: dict[tuple, float] = {}  # (piano, anno di corso) -> CFU del piano (gruppi a scelta una volta sola)
             for pi in piani:
                 for t in h.json(f"{API}/courses/details/{cds}/study-plans/{aas}/teachings?codPiano={pi['codPiano']}") or []:
+                    tot[(pi["codPiano"], t.get("annoCorso"))] = tot.get((pi["codPiano"], t.get("annoCorso")), 0) +                         (t.get("cfu") if isinstance(t.get("cfu"), (int, float)) else 0)
                     if t.get("tipo") == "G":
-                        for f in h.json(f"{API}/courses/details/{cds}/study-plans/{aas}/child-teachings?codPiano="
-                                        f"{pi['codPiano']}&annoCorso={t.get('annoCorso')}&codInsegnamentoPadre="
-                                        f"{t.get('codInsegnamento')}") or []:
-                            aggiungi(f, pi["codPiano"], False)
-                    elif not re.match(r"(?i)attivit[aà]'? a scelta|un insegnamento a scelta",
-                                      t.get("descInsegnamento") or ""):
+                        figli = h.json(f"{API}/courses/details/{cds}/study-plans/{aas}/child-teachings?codPiano="
+                                       f"{pi['codPiano']}&annoCorso={t.get('annoCorso')}&codInsegnamentoPadre="
+                                       f"{t.get('codInsegnamento')}") or []
+                        if not figli or not any(isinstance(f.get("cfu"), (int, float)) and f["cfu"] > 0 for f in figli):
+                            # gruppo senza elenco o con insegnamenti senza CFU: i CFU a scelta restano nel piano
+                            aggiungi(t, pi["codPiano"], False, segnaposto=True)
+                        # gruppo da sostenere per intero (i CFU dei figli non superano quelli del gruppo): obbligatorio
+                        intero = bool(t.get("cfu")) and all(isinstance(f.get("cfu"), (int, float)) and f["cfu"] > 0
+                                                            for f in figli)                             and sum(f["cfu"] for f in figli) <= t["cfu"] + 0.01
+                        for f in figli:
+                            aggiungi(f, pi["codPiano"], intero)
+                    elif _A_SCELTA.search(t.get("descInsegnamento") or ""):
+                        # crediti a scelta dello studente: nel piano come riga unica con i suoi CFU
+                        aggiungi(t, pi["codPiano"], False, segnaposto=True)
+                    else:
                         aggiungi(t, pi["codPiano"], True)
             if not righe:
                 continue
@@ -401,6 +417,7 @@ def fetch_ateneo(uid: str = "unina", anno: int | None = None, max_cds: int | Non
             per_anno: dict[int, list[dict]] = {}
             for i in righe.values():
                 ps = i.pop("_p")
+                i["_tot"] = max([v for (q, a), v in tot.items() if a == i["anno"] and q in ps] or [0])
                 if len(tutti) > 1 and ps != tutti:
                     i["curriculum"] = ", ".join(sorted(nomi[q] for q in ps))
                 per_anno.setdefault(i["anno"], []).append(i)
@@ -458,11 +475,14 @@ def fetch_ateneo(uid: str = "unina", anno: int | None = None, max_cds: int | Non
         for cds in codici:
             for aa, per_anno, nomi in piano(cds):
                 dati.append((cds, per_anno, nomi, erogati(cds)))
+        if not dati and re.search(r"(?i)\breplica\b", corso["nome"]):
+            return None  # replica di sede senza piano proprio: riceve la struttura del corso principale (pulizia.repliche)
         coperti = {k for _, pa, _, _ in dati for k in pa}
         if not dati or (dur and not all(k in coperti for k in range(1, dur + 1))):
             for cds in codici:  # anni senza piano: dagli insegnamenti erogati e dalle loro schede
                 dati.append((cds, da_erogati(cds), {}, erogati(cds)))
         presi: dict[int | None, list[dict]] = {}
+        erogati_corso = None
         curricula: dict[str, str] = {}
         fonti: list[str] = []
         anni = sorted({k for _, pa, _, _ in dati for k in pa if k is not None and (not dur or k <= dur)})
@@ -470,7 +490,24 @@ def fetch_ateneo(uid: str = "unina", anno: int | None = None, max_cds: int | Non
             cand = [(cds, pa[k], nomi, er) for cds, pa, nomi, er in dati if pa.get(k)]
             scelto = next((c for c in cand if sum(r["codice"] in c[3] for r in c[1]) >= max(1, 0.3 * len(c[1]))),
                           cand[0])
+
+            def cfu_piano(c):
+                return max((r.get("_tot") or 0 for r in c[1]), default=0)
+
+            # piano di quell'anno quasi vuoto (corso nuovo con anni ancora da pubblicare): si prende
+            # l'anno più completo tra gli altri piani dello stesso corso (coorte precedente)
+            if cfu_piano(scelto) < 40:
+                meglio = max(cand, key=cfu_piano)
+                if cfu_piano(meglio) > cfu_piano(scelto) + 10:
+                    scelto = meglio
             presi[k] = scelto[1]
+            if 0 < cfu_piano(scelto) < 40:
+                # piano di quell'anno molto incompleto: si aggiungono gli insegnamenti erogati nell'anno
+                # (con anno di corso, CFU e semestre dalle schede) che il piano non ha
+                if erogati_corso is None:
+                    erogati_corso = da_erogati(codici[0])
+                noti = {r["codice"] for r in presi[k]}
+                presi[k] = presi[k] + [r for r in erogati_corso.get(k, []) if r["codice"] not in noti]
             curricula.update(scelto[2])
             if scelto[0] not in fonti:
                 fonti.append(scelto[0])
@@ -514,6 +551,9 @@ def fetch_ateneo(uid: str = "unina", anno: int | None = None, max_cds: int | Non
         x, it = job
         cod, cds_r = it["codice"], it.pop("_cds")
         it.pop("_aa", None)
+        if it.pop("_ph", False):  # crediti a scelta: nessuna scheda
+            it["stato_libri"] = "da_aggiungere"
+            return 0
         gruppo = [cds_r] + [c for c in x["_codici"] if c != cds_r]
         livelli = []
         for a in (anno, anno - 1):
@@ -565,6 +605,31 @@ def fetch_ateneo(uid: str = "unina", anno: int | None = None, max_cds: int | Non
 
     jobs = [(x, i) for x in out for i in x["insegnamenti"]]
     trovati = 0
+    # UN_RIUSA=<contributo precedente>: per gli insegnamenti già raccolti (stesso corso, codice e anno)
+    # si riprendono libri e docenti, e si leggono le schede solo dei nuovi
+    riusa: dict[tuple, dict] = {}
+    if os.environ.get("UN_RIUSA") and pathlib.Path(os.environ["UN_RIUSA"]).exists():
+        for x in json.loads(pathlib.Path(os.environ["UN_RIUSA"]).read_text(encoding="utf-8")).get("corsi") or []:
+            for i in x.get("insegnamenti") or []:
+                if i.get("stato_libri") == "completo" or i.get("docenti"):
+                    riusa[(x["id"], i.get("codice"), i.get("anno"))] = i
+        log(f"[{uid}] insegnamenti da riusare: {len(riusa)}")
+    nuovi_jobs = []
+    for x, it in jobs:
+        vecchio = riusa.get((x["id"], it["codice"], it["anno"]))
+        if vecchio:
+            for k in ("libri", "docenti", "url_sito", "stato_libri"):
+                if vecchio.get(k):
+                    it[k] = vecchio[k]
+            it["ssd"] = it.get("ssd") or vecchio.get("ssd")
+            it.pop("_cds", None)
+            it.pop("_ph", None)
+            it.setdefault("stato_libri", "da_aggiungere")
+        else:
+            nuovi_jobs.append((x, it))
+    if riusa:
+        log(f"[{uid}] schede da leggere: {len(nuovi_jobs)} su {len(jobs)}")
+        jobs = nuovi_jobs
     if syllabus:
         with cf.ThreadPoolExecutor(6) as ex:
             for n, k in enumerate(ex.map(lambda j: _sicuro(scheda_job, j, log) or 0, jobs), 1):
@@ -580,6 +645,8 @@ def fetch_ateneo(uid: str = "unina", anno: int | None = None, max_cds: int | Non
         for i in x["insegnamenti"]:
             i.pop("_cds", None)
             i.pop("_aa", None)
+            i.pop("_ph", None)
+            i.pop("_tot", None)
     return {"universita_id": uid, "descrizione": "Generato da www.corsi.unina.it e www.docenti.unina.it "
                                                  "(adapters/unina.py)",
             "generato_il": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "corsi": out, "canali": []}
