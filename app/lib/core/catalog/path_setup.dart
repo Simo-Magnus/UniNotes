@@ -99,7 +99,7 @@ class PlanImportResult {
   /// Spiegazione per lo studente (es. offline: si potrà fare più tardi).
   final String? message;
 
-  /// I dati dell'ateneo non sono sul dispositivo e non si sono potuti
+  /// I dati del corso non sono sul dispositivo e non si sono potuti
   /// scaricare: l'interfaccia mostra [kServeConnessione] e «Riprova».
   final bool senzaRete;
 }
@@ -138,9 +138,12 @@ class PathSetupService {
     if (previous != null && previous.degreeId != profile.degreeId) {
       await hideOtherPaths(previous, profile);
     }
-    // cambio d'ateneo: i dati del precedente escono dalla cache (app leggera)
-    if (previous != null && previous.universityId != profile.universityId) {
-      await _s.catalog.eliminaAltriAtenei(profile.universityId);
+    // cambio d'ateneo o di corso: i dati del precedente escono dalla cache
+    // (app leggera)
+    if (previous != null &&
+        (previous.universityId != profile.universityId ||
+            previous.degreeId != profile.degreeId)) {
+      await _s.catalog.eliminaAltri(profile.universityId, profile.degreeId);
     }
     final ateneo = sel.ateneo;
     PlanImportResult result;
@@ -197,19 +200,28 @@ class PathSetupService {
   /// creati una volta (se lo studente li cancella non tornano).
   static const prefilledKey = 'prefilled_modules';
 
-  /// Crea in Studio i moduli e gli argomenti proposti dal database
-  /// (`moduli/<ateneo>.json`, per esempio i capitoli del libro di
+  /// Crea in Studio i moduli e gli argomenti proposti dal database (nel
+  /// file del corso [corso], per esempio i capitoli del libro di
   /// riferimento) per gli insegnamenti che non hanno ancora moduli.
   /// Restituisce quanti insegnamenti sono stati precompilati.
-  /// [moduli]: il file già letto (es. da [importPlan]), così non si
-  /// rilegge.
+  /// [moduli]: quelli già letti (es. da [importPlan]), così non si
+  /// rileggono.
   Future<int> prefillModules(
     String ateneoId, {
+    String? corso,
     bool remote = false,
     ModuliAteneo? moduli,
   }) async {
     final data =
-        (moduli ?? (await _s.catalog.moduli(ateneoId, remote: remote))?.data)
+        (moduli ??
+                (corso == null
+                        ? null
+                        : await _s.catalog.moduli(
+                            ateneoId,
+                            corso: corso,
+                            remote: remote,
+                          ))
+                    ?.data)
             ?.insegnamenti;
     if (data == null || data.isEmpty) return 0;
     final done = {
@@ -320,12 +332,12 @@ class PathSetupService {
     return n;
   }
 
-  /// Scarica i dati dell'ateneo (con [remote]: corsi, sessioni,
-  /// moduli, solo ciò che è cambiato, vedi [CatalogService.scaricaAteneo])
-  /// o li legge dalla copia salvata, e importa il corso del profilo. Senza
-  /// dati importa solo ateneo e corso di laurea. [meta] è `meta.json` già
-  /// scaricato; [forza] riscarica anche se l'ateneo è stato appena scaricato
-  /// (es. nel riepilogo dell'onboarding).
+  /// Scarica i dati del corso del profilo (con [remote]: il corso con tutti
+  /// gli anni e i moduli, e le sessioni dell'ateneo, solo ciò che è
+  /// cambiato, vedi [CatalogService.scaricaCorso]) o li legge dalla copia
+  /// salvata, e importa il corso. Senza dati importa solo ateneo e corso di
+  /// laurea. [meta] è `meta.json` già scaricato; [forza] riscarica anche se
+  /// il corso è stato appena scaricato (es. nel riepilogo dell'onboarding).
   Future<PlanImportResult> importPlan(
     StudentProfile profile, {
     Ateneo? ateneo,
@@ -345,11 +357,15 @@ class PathSetupService {
               TipoAteneo.fromKey(profile.universityType) ?? TipoAteneo.statale,
         );
     final download = remote
-        ? await _s.catalog.scaricaAteneo(a.id, meta: meta, forza: forza)
+        ? await _s.catalog.scaricaCorso(
+            a.id,
+            profile.degreeId,
+            meta: meta,
+            forza: forza,
+          )
         : null;
     // dalla copia appena salvata (senza rete: da quella precedente o, se
     // manca, scaricata ora se possibile)
-    // solo il corso del profilo: gli altri del file non restano in memoria
     final read = await _s.catalog.corsiAteneo(
       a.id,
       remote: false,
@@ -386,12 +402,13 @@ class PathSetupService {
       );
     }
     final before = {for (final c in await _s.courses.all()) c.id: c};
-    // moduli e programmi già scaricati con gli altri file dell'ateneo: danno
-    // gli argomenti d'esame e i moduli di Studio (facoltativi)
+    // moduli e programmi, nello stesso file del corso: danno gli argomenti
+    // d'esame e i moduli di Studio (facoltativi)
     ModuliAteneo? moduli;
     try {
       moduli = (await _s.catalog.moduli(
         a.id,
+        corso: profile.degreeId,
         insegnamenti: [for (final i in tutto!.insegnamenti) i.id],
       ))?.data;
     } catch (_) {

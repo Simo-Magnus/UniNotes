@@ -112,12 +112,6 @@ dev_dependencies:
 flutter:
   assets:
     - assets/database/
-    # File per ateneo: cartelle vuote (.gitkeep) nelle build pubblicate, che
-    # li scaricano per l'ateneo scelto; piene solo nelle build locali con
-    # tools/db_builder/sync_assets.py --completo.
-    - assets/database/corsi/
-    - assets/database/sessioni/
-    - assets/database/moduli/
     - assets/fonts/
     - assets/licenses/
     - assets/tray/

@@ -8,42 +8,47 @@ personale). L'app lo legge in due modi:
    senza internet; con loro `meta.json` e `corsi_sostituiti.json`. Li copia
    `tools/db_builder/sync_assets.py`, che le build di GitHub Actions eseguono
    senza opzioni.
-2. **Scaricato solo per l'ateneo scelto** dal repository: `<base>/corsi/<id>.json`,
-   `<base>/sessioni/<id>.json` e `<base>/moduli/<id>.json`, quando lo studente sceglie ateneo e corso
-   (onboarding o *Cambia corso di laurea*) e a ogni "Aggiorna database". I file
-   si salvano nella cartella di supporto dell'app (`database_cache/`), da cui
-   l'app li legge anche offline; cambiando ateneo quelli del precedente si
-   eliminano. Per un ateneo grande come `unibo` sul dispositivo sono circa
-   49 MB di corsi e 15 MB di moduli; il trasferimento è compresso con gzip
-   (HttpClient lo decomprime da solo), quindi si scarica molto meno. Durante il
-   download l'app mostra file in corso e megabyte ricevuti. Nell'onboarding
-   non parte nulla da solo: solo al tocco su «Scarica il piano di studi» si
-   scaricano i corsi; se il corso ha più percorsi lo studente sceglie il suo, poi
-   si scaricano sessioni e moduli e si importa il piano. I file arrivano a pezzi
-   in un file temporaneo (`<id>.json.part`), si controllano e si leggono in un
-   isolate separato (in memoria resta solo il corso dello studente e i moduli
-   dei suoi insegnamenti) e sostituiscono la copia precedente con una rinomina:
-   un download interrotto o un file non valido lasciano intatta la copia salvata,
-   una copia illeggibile si elimina e si riscarica. Download dello stesso ateneo
-   chiesti insieme (doppio tocco, ritorno al riepilogo) condividono lo stesso
-   download. `<base>` predefinito:
+2. **Scaricato solo per il corso scelto** dal repository:
+   `<base>/per_corso/<ateneo>/<corso>.json` (il corso di laurea con tutti gli
+   anni, tutti i percorsi, libri, appelli e i moduli di studio dei suoi
+   insegnamenti) e `<base>/sessioni/<ateneo>.json` (calendario delle sessioni
+   dell'ateneo), quando lo studente sceglie ateneo e corso (onboarding o
+   *Cambia corso di laurea*) e a ogni "Aggiorna database". Prima del file del
+   corso l'app legge `<base>/per_corso/<ateneo>/indice.json` (pochi KB) per
+   sapere se il corso c'è e se è cambiato. I file si salvano nella cartella di
+   supporto dell'app (`database_cache/`), da cui l'app li legge anche offline;
+   cambiando corso o ateneo quelli del precedente si eliminano (e anche i file
+   per ateneo `corsi/` e `moduli/` delle versioni precedenti dell'app). Il file
+   di un corso pesa da pochi KB a circa 1,4 MB; il trasferimento è compresso con
+   gzip (HttpClient lo decomprime da solo). Durante il download l'app mostra
+   file in corso e kilobyte ricevuti. Nell'onboarding non parte nulla da solo:
+   solo al tocco su «Scarica il piano di studi» si scarica il corso; se ha più
+   percorsi lo studente sceglie il suo, poi si scaricano le sessioni e si
+   importa il piano. I file arrivano a pezzi in un file temporaneo
+   (`<corso>.json.part`), si controllano (in un isolate separato se superano
+   512 KB) e sostituiscono la copia precedente con una rinomina: un download
+   interrotto o un file non valido lasciano intatta la copia salvata, una copia
+   illeggibile si elimina e si riscarica. Download dello stesso corso chiesti
+   insieme (doppio tocco, ritorno al riepilogo) condividono lo stesso download.
+   `<base>` predefinito:
    `https://raw.githubusercontent.com/Simo-Magnus/UniNotes/main/database`
    (modificabile in *Impostazioni → Il mio percorso*).
 
 Aggiornamenti: all'avvio l'app confronta `meta.json.versione` con la versione
 importata e propone "Aggiorna database", che riscarica solo i file del proprio
-ateneo e solo se cambiati: `corsi/<id>.json` se il suo `sha256` in `meta.json`
-è diverso da quello salvato, gli altri file se è cambiata la `versione`. Un file
-che risponde 404 (es. un ateneo senza calendario delle sessioni) si annota e non si richiede di
-nuovo fino alla versione successiva. Senza rete restano le copie salvate; se
-mancano anche quelle l'app mostra «Serve una connessione per scaricare i dati
-del tuo ateneo» con *Riprova*, e il resto dell'app (corsi aggiunti a mano,
-appunti, registratore) funziona comunque.
+corso e solo se cambiati: il file del corso se la sua impronta in
+`per_corso/<ateneo>/indice.json` è diversa da quella salvata (l'indice si legge
+solo se è cambiato il suo `sha256_per_corso` in `meta.json`), le sessioni se è
+cambiata la `versione`. Un file che risponde 404 (es. un ateneo senza
+calendario delle sessioni) si annota e non si richiede di nuovo fino alla
+versione successiva. Senza rete restano le copie salvate; se mancano anche
+quelle l'app mostra «Serve una connessione per scaricare i dati del tuo corso»
+con *Riprova*, e il resto dell'app (corsi aggiunti a mano, appunti,
+registratore) funziona comunque.
 
-Solo per le build locali, `sync_assets.py --completo` copia negli asset anche i
-file per ateneo (`corsi/` e `moduli/` compressi in `.json.gz`, circa 95 MB):
-l'app li usa se mancano nella cache, per esempio per provarla senza rete. Non va
-usato in CI: le build pubblicate restano leggere.
+I file per ateneo `corsi/<ateneo>.json` e `moduli/<ateneo>.json` restano nel
+repository: sono la fonte dei file per corso e li usano le versioni precedenti
+dell'app.
 
 Regole generali:
 
@@ -67,7 +72,40 @@ Regole generali:
   "atenei": {
     "polito": { "corsi": 120, "insegnamenti": 3400, "libri": 900,
                  "esami": 0, "file": "corsi/polito.json",
-                 "sha256": "…" }
+                 "sha256": "…",
+                 "per_corso": "per_corso/polito/indice.json",
+                 "sha256_per_corso": "…" }
+  }
+}
+```
+
+## `per_corso/<id_ateneo>/<id_corso>.json` e `indice.json`
+
+Li scrive `tools/db_builder/dividi_per_corso.py` (dopo `build_db.py`, prima di
+`sync_assets.py`) dai file per ateneo. Il file di un corso ha la stessa forma
+di `corsi/<id_ateneo>.json` con il solo corso in `corsi`, più `moduli`
+(id insegnamento → voce di `moduli/<id_ateneo>.json`) con i moduli dei suoi
+insegnamenti:
+
+```jsonc
+{
+  "schema": 1,
+  "universita_id": "polito",
+  "anno_accademico": "2026/27",
+  "aggiornato_il": "2026-10-04",
+  "corsi": [ { "id": "polito-l8-ingegneria-informatica", … } ],
+  "moduli": { "polito-l8-ingegneria-informatica-01rkcpl": { "moduli": [ … ] } }
+}
+```
+
+L'indice dell'ateneo elenca ogni corso con impronta e dimensione del file:
+
+```jsonc
+{
+  "schema": 1,
+  "universita_id": "polito",
+  "corsi": {
+    "polito-l8-ingegneria-informatica": { "sha256": "…", "byte": 482113 }
   }
 }
 ```
@@ -102,7 +140,7 @@ voce** con più `regioni`: nell'onboarding compare in ciascuna.
 ## `indice_corsi.json`
 
 Elenco compatto di tutti i corsi di studio di tutti gli atenei, per la ricerca
-nell'onboarding senza scaricare i file per ateneo.
+nell'onboarding senza scaricare i file dei corsi.
 
 ```jsonc
 {
@@ -344,8 +382,7 @@ prima gli obbligatori, poi i consigliati, poi quelli senza indicazione; anche
 questo campo si aggiorna solo finché lo studente non lo modifica.
 
 Solo titoli, sempre in italiano; nessun argomento aggiunto o dedotto. Gli
-insegnamenti senza indice né programma pubblicato non compaiono. L'app scarica il
-file del solo ateneo scelto insieme ai corsi (fino a circa 15 MB per gli atenei
-più grandi, compressi con gzip in trasferimento) e crea i moduli dopo l'import del piano;
-le build pubblicate non lo includono negli asset (solo le build locali con
-`sync_assets.py --completo`, compresso in `.json.gz`).
+insegnamenti senza indice né programma pubblicato non compaiono. L'app riceve i
+moduli dei soli insegnamenti del corso scelto, dentro il file del corso
+(`per_corso/<ateneo>/<corso>.json`, chiave `moduli`), e crea i moduli dopo
+l'import del piano; le build pubblicate non li includono negli asset.

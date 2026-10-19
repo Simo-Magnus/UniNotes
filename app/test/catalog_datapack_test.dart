@@ -189,7 +189,7 @@ void main() {
     },
   );
 
-  test('scelta del corso: scarica i dati dell\'ateneo; cambio d\'ateneo: '
+  test('scelta del corso: scarica i dati del corso; cambio d\'ateneo: '
       'quelli del precedente si eliminano', () async {
     final db = await AppDatabase.openInMemory();
     addTearDown(db.close);
@@ -214,12 +214,20 @@ void main() {
     final r = await PathSetupService(s).apply(_selection());
     expect(r.imported, isTrue);
     expect(r.senzaRete, isFalse);
-    expect(File('${cache.path}/corsi/polito.json').existsSync(), isTrue);
+    expect(
+      File(
+        '${cache.path}/per_corso/polito/polito-l8-ingegneria-informatica.json',
+      ).existsSync(),
+      isTrue,
+    );
     expect(File('${cache.path}/sessioni/polito.json').existsSync(), isTrue);
     // solo i file di PoliTO (più meta.json)
     expect(
       requests.every(
-        (u) => u.path.endsWith('/polito.json') || u.path.endsWith('meta.json'),
+        (u) =>
+            u.path.contains('/per_corso/polito/') ||
+            u.path.endsWith('/sessioni/polito.json') ||
+            u.path.endsWith('meta.json'),
       ),
       isTrue,
     );
@@ -233,7 +241,12 @@ void main() {
         year: 1,
       ),
     );
-    expect(File('${cache.path}/corsi/polito.json').existsSync(), isFalse);
+    expect(
+      File(
+        '${cache.path}/per_corso/polito/polito-l8-ingegneria-informatica.json',
+      ).existsSync(),
+      isFalse,
+    );
     expect(File('${cache.path}/sessioni/polito.json').existsSync(), isFalse);
   });
 

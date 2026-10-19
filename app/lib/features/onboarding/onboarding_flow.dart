@@ -66,7 +66,7 @@ extension on OnboardingStep {
 
 /// Onboarding: aspetto (contrasto e caratteri) → tipo di università (o
 /// ricerca diretta) → regione → università → tipo di laurea → corso → anno
-/// frequentato → riepilogo, download dei dati dell'ateneo e import del piano
+/// frequentato → riepilogo, download dei dati del corso e import del piano
 /// → AI di riferimento → avvisi → calendario (telefono) → gruppi da
 /// nascondere (OFA, lingua, facoltativi). Ogni passo ha al massimo due
 /// pulsanti. Al primo avvio; da Impostazioni → «Cambia corso» si rifanno solo
@@ -1008,7 +1008,7 @@ class _SummaryStepState extends State<_SummaryStep> {
   /// n'è più d'uno), poi il resto dei dati e l'import. Durante
   /// l'operazione il pulsante è disattivato; un download già in corso
   /// dello stesso ateneo (per esempio dopo un ritorno al riepilogo) si
-  /// aspetta invece di avviarne un altro ([CatalogService.scaricaAteneo]).
+  /// aspetta invece di avviarne un altro ([CatalogService.scaricaCorso]).
   Future<void> _avvia({bool senzaPiano = false}) async {
     if (_busy) return;
     final sel = widget.selection;
@@ -1021,11 +1021,12 @@ class _SummaryStepState extends State<_SummaryStep> {
       _erroreCorsi = null;
     });
     try {
-      // i file dell'ateneo precedente si eliminano solo all'import
-      final d = await _s.catalog.scaricaAteneo(
+      // i file del corso precedente si eliminano solo all'import
+      final d = await _s.catalog.scaricaCorso(
         sel.ateneo.id,
+        sel.degreeId,
         pulisci: false,
-        soloCorsi: true,
+        soloCorso: true,
       );
       if (!mounted) return;
       if (d.senzaRete) {
@@ -1060,7 +1061,7 @@ class _SummaryStepState extends State<_SummaryStep> {
         return;
       }
     } catch (e) {
-      // (scaricaAteneo non lancia: qui solo la lettura del file)
+      // (scaricaCorso non lancia: qui solo la lettura del file)
       _set(() {
         _fase = _Fase.pronto;
         _erroreCorsi = e;
@@ -1079,9 +1080,8 @@ class _SummaryStepState extends State<_SummaryStep> {
     });
     widget.onBusy?.call(true);
     try {
-      final r = await PathSetupService(
-        _s,
-      ).apply(widget.selection.withPercorso(_percorso), remote: remote);
+      final r = await PathSetupService(_s)
+          .apply(widget.selection.withPercorso(_percorso), remote: remote);
       _set(() {
         _result = r;
         _fase = _Fase.fatto;
@@ -1105,11 +1105,11 @@ class _SummaryStepState extends State<_SummaryStep> {
     final erroreCorsi = _erroreCorsi;
     final percorsi = _percorsi;
     final stato = switch (_fase) {
-      _Fase.corsi => 'Scarico i corsi del tuo ateneo…',
+      _Fase.corsi => 'Scarico i dati del tuo corso…',
       _Fase.importo =>
         sel.isManual
             ? 'Salvo il tuo percorso…'
-            : 'Scarico sessioni e moduli e importo il piano di studi…',
+            : 'Scarico le sessioni d\'esame e importo il piano di studi…',
       _Fase.percorso =>
         'Il tuo corso ha più percorsi: scegli il tuo, poi importa il piano.',
       _ => null,

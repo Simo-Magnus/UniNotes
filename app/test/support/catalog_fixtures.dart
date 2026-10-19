@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:crypto/crypto.dart' as crypto;
 import 'package:university_notes/core/catalog/catalog_service.dart';
 import 'package:university_notes/repositories/settings_repository.dart';
 
@@ -215,6 +216,71 @@ Map<String, Object?> corsiPolitoFixture({
   ],
 };
 
+/// I file per corso (`per_corso/<ateneo>/<corso>.json` e
+/// `per_corso/<ateneo>/indice.json`) ricavati, come fa
+/// `tools/db_builder/dividi_per_corso.py`, dai file per ateneo
+/// `corsi/<ateneo>.json` e `moduli/<ateneo>.json` di [remote]. null se il
+/// file per ateneo o il corso non c'è.
+String? fileDaPerAteneo(Map<String, String> remote, String rel) {
+  final m = RegExp(r'^per_corso/([^/]+)/([^/]+)\.json$').firstMatch(rel);
+  if (m == null) return null;
+  final ateneo = m.group(1)!, nome = m.group(2)!;
+  final corsiText = remote['corsi/$ateneo.json'];
+  if (corsiText == null) return null;
+  final Object? doc;
+  try {
+    doc = jsonDecode(corsiText);
+  } on FormatException {
+    return corsiText; // file non valido: resta non valido
+  }
+  if (doc is! Map) return corsiText;
+  final moduliText = remote['moduli/$ateneo.json'];
+  final moduli = moduliText == null
+      ? const <String, Object?>{}
+      : ((jsonDecode(moduliText) as Map)['insegnamenti'] as Map? ?? {});
+  final testa = {
+    for (final e in doc.entries)
+      if (e.key != 'corsi') e.key as String: e.value,
+  };
+  String fileCorso(Map corso) {
+    final ids = {
+      for (final i in (corso['insegnamenti'] as List? ?? const []))
+        if (i is Map && i['id'] is String) i['id'] as String,
+    };
+    return jsonEncode({
+      ...testa,
+      'corsi': [corso],
+      'moduli': {
+        for (final e in moduli.entries)
+          if (ids.contains(e.key)) e.key: e.value,
+      },
+    });
+  }
+
+  final corsi = [
+    for (final c in (doc['corsi'] as List? ?? const []))
+      if (c is Map) c,
+  ];
+  if (nome == 'indice') {
+    return jsonEncode({
+      'schema': 1,
+      'universita_id': ateneo,
+      'corsi': {
+        for (final c in corsi)
+          c['id']: {
+            'sha256': crypto.sha256
+                .convert(utf8.encode(fileCorso(c)))
+                .toString(),
+          },
+      },
+    });
+  }
+  for (final c in corsi) {
+    if (c['id'] == nome) return fileCorso(c);
+  }
+  return null;
+}
+
 /// Servizio del catalogo con asset, rete e cache finti.
 ///
 /// [remote]: percorso relativo → testo. Con [remote] vuoto (o [offline])
@@ -250,7 +316,7 @@ CatalogService fakeCatalog(
       final gate = attesa?.call(rel);
       if (gate != null) await gate;
       if (offline || remote.isEmpty) throw const SocketException('offline');
-      final text = remote[rel];
+      final text = remote[rel] ?? fileDaPerAteneo(remote, rel);
       if (text == null) throw CatalogNotFoundException();
       onProgress?.call(text.length, text.length);
       return text;

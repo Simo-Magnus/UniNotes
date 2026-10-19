@@ -6,7 +6,7 @@ import '../core/services/app_services.dart';
 import '../core/theme/app_tokens.dart';
 import '../features/settings/logic/formatting.dart';
 
-/// Barra di avanzamento del download dei dati dell'ateneo
+/// Barra di avanzamento del download dei dati del corso
 /// ([CatalogService.progresso]): file in corso e megabyte ricevuti. Non
 /// occupa spazio quando non si scarica nulla.
 class CatalogDownloadProgress extends StatelessWidget {
@@ -33,7 +33,7 @@ class CatalogDownloadProgress extends StatelessWidget {
               LinearProgressIndicator(value: p.frazione),
               const SizedBox(height: 6),
               Text(
-                'Scarico i dati del tuo ateneo: ${p.etichetta} '
+                'Scarico i dati del tuo corso: ${p.etichetta} '
                 '(${p.indice} di ${p.totale}) · '
                 '${formatBytes(p.ricevutiTotali)}',
                 style: TextStyle(fontSize: 13, color: t.textMuted),
@@ -46,7 +46,7 @@ class CatalogDownloadProgress extends StatelessWidget {
   }
 }
 
-/// Avviso «Serve una connessione per scaricare i dati del tuo ateneo» (o
+/// Avviso «Serve una connessione per scaricare i dati del tuo corso» (o
 /// un altro [message], per esempio spazio insufficiente) con il pulsante
 /// Riprova: il resto dell'app (corsi a mano, appunti, registratore…)
 /// funziona comunque.

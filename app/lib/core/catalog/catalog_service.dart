@@ -22,24 +22,28 @@ const String kDefaultCatalogBaseUrl =
 /// file comuni: atenei, indice dei corsi, meta, corsi sostituiti).
 const String kCatalogAssetDir = 'assets/database';
 
-/// Messaggio per lo studente quando i dati dell'ateneo non sono sul
+/// Messaggio per lo studente quando i dati del corso non sono sul
 /// dispositivo e non si possono scaricare.
 const String kServeConnessione =
-    'Serve una connessione per scaricare i dati del tuo ateneo.';
+    'Serve una connessione per scaricare i dati del tuo corso.';
 
 /// Avanzamento di un download: byte ricevuti e attesi (null se il server
 /// non lo dice, per esempio con la compressione gzip in trasferimento).
 typedef CatalogByteProgress = void Function(int ricevuti, int? attesi);
 
 /// Scarica il testo di un URL. Iniettabile nei test.
-typedef CatalogFetcher =
-    Future<String> Function(Uri uri, {CatalogByteProgress? onProgress});
+typedef CatalogFetcher = Future<String> Function(
+  Uri uri, {
+  CatalogByteProgress? onProgress,
+});
 
 /// Scarica un URL direttamente nel file [dest], senza tenerlo tutto in
-/// memoria (i corsi dei grandi atenei superano i 50 MB), e restituisce i
-/// byte ricevuti. Iniettabile nei test.
-typedef CatalogFileFetcher =
-    Future<int> Function(Uri uri, File dest, {CatalogByteProgress? onProgress});
+/// memoria, e restituisce i byte ricevuti. Iniettabile nei test.
+typedef CatalogFileFetcher = Future<int> Function(
+  Uri uri,
+  File dest, {
+  CatalogByteProgress? onProgress,
+});
 
 /// Legge un asset come testo (default: rootBundle). Iniettabile nei test.
 typedef CatalogAssetLoader = Future<String> Function(String path);
@@ -79,7 +83,8 @@ class CatalogException implements Exception {
 }
 
 /// Il file non c'è nel database (risposta 404): non è un problema di rete,
-/// per esempio un ateneo senza calendario delle sessioni o senza moduli di studio.
+/// per esempio un ateneo senza calendario delle sessioni o un corso non
+/// ancora nel database.
 class CatalogNotFoundException extends CatalogException {
   CatalogNotFoundException([
     super.message = 'File non ancora presente nel database (404).',
@@ -91,19 +96,21 @@ class CatalogOfflineException extends CatalogException {
   CatalogOfflineException([super.message = 'Nessuna connessione a internet.']);
 }
 
-/// Un file dei dati di un ateneo: cartella nel database e descrizione per
-/// l'indicatore di download.
-typedef FileAteneo = ({String cartella, String etichetta});
+/// Percorsi (relativi alla cartella `database/`) dei file di un corso.
+abstract final class CatalogPaths {
+  /// Dati del corso di laurea: tutti gli anni, i percorsi, libri, appelli e
+  /// i moduli di studio dei suoi insegnamenti.
+  static String corso(String ateneoId, String corsoId) =>
+      'per_corso/$ateneoId/$corsoId.json';
 
-/// File scaricati per l'ateneo scelto, nell'ordine del download: prima i
-/// corsi (indispensabili per il piano di studi), poi quelli facoltativi.
-const List<FileAteneo> kFileAteneo = [
-  (cartella: 'corsi', etichetta: 'corsi e insegnamenti'),
-  (cartella: 'sessioni', etichetta: 'sessioni d\'esame'),
-  (cartella: 'moduli', etichetta: 'moduli di studio'),
-];
+  /// Impronte (sha256) e dimensioni dei file dei corsi dell'ateneo.
+  static String indice(String ateneoId) => 'per_corso/$ateneoId/indice.json';
 
-/// Avanzamento del download dei dati di un ateneo (per la barra
+  /// Calendari delle sessioni d'esame dell'ateneo (pochi KB).
+  static String sessioni(String ateneoId) => 'sessioni/$ateneoId.json';
+}
+
+/// Avanzamento del download dei dati del corso (per la barra
 /// nell'onboarding e in Impostazioni → Il mio percorso).
 class CatalogProgress {
   const CatalogProgress({
@@ -117,7 +124,7 @@ class CatalogProgress {
   });
   final String ateneoId;
 
-  /// Cosa si sta scaricando ("corsi e insegnamenti", …).
+  /// Cosa si sta scaricando ("corso di laurea", …).
   final String etichetta;
 
   /// File in corso (1..[totale]).
@@ -128,7 +135,7 @@ class CatalogProgress {
   final int ricevuti;
   final int? attesi;
 
-  /// Byte dei file dell'ateneo già scaricati in questo download.
+  /// Byte dei file già scaricati in questo download.
   final int ricevutiPrima;
 
   int get ricevutiTotali => ricevutiPrima + ricevuti;
@@ -138,14 +145,16 @@ class CatalogProgress {
   double? get frazione {
     final a = attesi;
     if (a == null || a <= 0) return null;
-    return ((indice - 1) + (ricevuti / a).clamp(0.0, 1.0)) / totale;
+    final f = ((indice - 1) + (ricevuti / a).clamp(0.0, 1.0)) / totale;
+    return f.isFinite ? f.clamp(0.0, 1.0) : null;
   }
 }
 
-/// Esito di [CatalogService.scaricaAteneo].
+/// Esito di [CatalogService.scaricaCorso].
 class AteneoScaricato {
   const AteneoScaricato({
     required this.ateneoId,
+    this.corsoId,
     this.scaricati = 0,
     this.invariati = 0,
     this.byte = 0,
@@ -155,6 +164,7 @@ class AteneoScaricato {
     this.errore,
   });
   final String ateneoId;
+  final String? corsoId;
 
   /// File scaricati ora e file già aggiornati sul dispositivo.
   final int scaricati;
@@ -163,23 +173,23 @@ class AteneoScaricato {
   /// Byte scaricati ora (dopo la decompressione).
   final int byte;
 
-  /// `corsi/<ateneo>.json` è sul dispositivo (scaricato ora o prima).
+  /// Il file del corso è sul dispositivo (scaricato ora o prima).
   final bool corsi;
 
   /// …ed è quello attuale del database (scaricato ora o verificato).
   final bool corsiAggiornati;
 
-  /// Il database non ha (ancora) i corsi dell'ateneo (404).
+  /// Il database non ha (ancora) il corso o l'ateneo (404).
   final bool corsiAssenti;
 
   /// Primo errore (di rete o file non valido), se c'è stato.
   final Object? errore;
 
-  /// Nessuna copia dei corsi e niente rete: serve una connessione.
+  /// Nessuna copia del corso e niente rete: serve una connessione.
   bool get senzaRete => !corsi && !corsiAssenti && errore != null;
 }
 
-/// Dati dell'ateneo salvati sul dispositivo (Impostazioni → Il mio percorso).
+/// Dati del corso salvati sul dispositivo (Impostazioni → Il mio percorso).
 class AteneoSulDispositivo {
   const AteneoSulDispositivo({
     required this.ateneoId,
@@ -190,11 +200,10 @@ class AteneoSulDispositivo {
   });
   final String ateneoId;
 
-  /// C'è il file dei corsi (sul disco o, nelle build locali complete, negli
-  /// asset).
+  /// C'è il file del corso.
   final bool corsi;
 
-  /// Spazio occupato dai file dell'ateneo nella cache.
+  /// Spazio occupato dai file del corso e dell'ateneo nella cache.
   final int byte;
 
   /// `meta.json.versione` dell'ultimo download completo e sua data.
@@ -202,22 +211,27 @@ class AteneoSulDispositivo {
   final DateTime? scaricatoIl;
 }
 
-/// Registro dell'ultimo download dei dati di un ateneo (`ateneo.json` nella
-/// cache): versione del database, impronta dei corsi e file assenti (404),
-/// così «Aggiorna database» riscarica solo ciò che è cambiato e i file
-/// assenti non si richiedono a ogni lettura.
+/// Registro dell'ultimo download (`ateneo.json` nella cache): corso,
+/// versione del database, impronte del file del corso e dell'indice dei
+/// corsi dell'ateneo e file assenti (404), così «Aggiorna database»
+/// riscarica solo ciò che è cambiato e i file assenti non si richiedono a
+/// ogni lettura.
 class _Registro {
   const _Registro({
     required this.ateneoId,
+    this.corsoId,
     this.versione,
     this.scaricatoIl,
-    this.sha256Corsi,
+    this.sha256Corso,
+    this.sha256Indice,
     this.assenti = const {},
   });
   final String ateneoId;
+  final String? corsoId;
   final String? versione;
   final DateTime? scaricatoIl;
-  final String? sha256Corsi;
+  final String? sha256Corso;
+  final String? sha256Indice;
   final Set<String> assenti;
 
   static _Registro? fromJson(Object? json) {
@@ -225,9 +239,11 @@ class _Registro {
     final assenti = json['assenti'];
     return _Registro(
       ateneoId: json['ateneo'] as String,
+      corsoId: json['corso'] as String?,
       versione: json['versione'] as String?,
       scaricatoIl: DateTime.tryParse('${json['scaricato_il']}'),
-      sha256Corsi: json['sha256_corsi'] as String?,
+      sha256Corso: json['sha256_corso'] as String?,
+      sha256Indice: json['sha256_indice'] as String?,
       assenti: {
         if (assenti is List)
           for (final a in assenti)
@@ -238,9 +254,11 @@ class _Registro {
 
   Map<String, Object?> toJson() => {
     'ateneo': ateneoId,
+    'corso': corsoId,
     'versione': versione,
     'scaricato_il': scaricatoIl?.toIso8601String(),
-    'sha256_corsi': sha256Corsi,
+    'sha256_corso': sha256Corso,
+    'sha256_indice': sha256Indice,
     'assenti': assenti.toList()..sort(),
   };
 }
@@ -249,26 +267,22 @@ class _Registro {
 ///
 /// L'app include negli asset solo i file comuni (atenei, indice dei corsi,
 /// meta, corsi sostituiti: circa 1 MB) per scegliere ateneo e corso anche
-/// offline. I dati di ogni ateneo (corsi, sessioni, moduli) si
-/// scaricano da internet solo per l'ateneo scelto ([scaricaAteneo]) e si
-/// salvano nella cartella di supporto dell'app (`database_cache/`), da cui
-/// si leggono anche offline. Cambiando ateneo i file del precedente si
-/// eliminano.
+/// offline. Dei dati veri scarica solo quelli del **corso di laurea scelto**
+/// ([scaricaCorso]): un file con tutti gli anni, i percorsi, libri, appelli
+/// e i moduli di studio dei suoi insegnamenti (`per_corso/<ateneo>/<corso>.json`,
+/// da pochi KB a circa 1 MB), più i calendari delle sessioni dell'ateneo. I
+/// file si salvano nella cartella di supporto dell'app (`database_cache/`),
+/// da cui si leggono anche offline; cambiando corso o ateneo quelli del
+/// precedente si eliminano.
 ///
-/// Ordine di lettura: rete (se richiesta) → copia su disco → asset (le
-/// build locali con `sync_assets.py --completo` includono anche i file per
-/// ateneo). Un file per ateneo che manca ovunque si scarica alla prima
-/// lettura, se c'è rete (una volta per sessione). Ogni download riuscito
-/// aggiorna la copia su disco.
+/// Per sapere se un corso è cambiato basta `per_corso/<ateneo>/indice.json`
+/// (impronte sha256 dei file dei corsi), la cui impronta è in `meta.json`.
 ///
-/// I file per ateneo (decine di MB per gli atenei grandi) non passano mai
-/// interi dalla memoria del thread dell'interfaccia: si scaricano a pezzi in
-/// un file temporaneo, si controllano e si leggono in un isolate a parte
-/// ([Isolate.run]) tenendo solo ciò che serve (un corso di laurea, i moduli
-/// dei suoi insegnamenti) e si sostituiscono con una rinomina, così un
-/// download interrotto non lascia mai un file troncato. Download dello
-/// stesso file o dello stesso ateneo chiamati insieme condividono lo stesso
-/// Future: non si scrive mai due volte nello stesso file.
+/// I file si scaricano a pezzi in un file temporaneo, si controllano e si
+/// sostituiscono con una rinomina, così un download interrotto non lascia
+/// mai un file troncato. Download dello stesso file o dello stesso corso
+/// chiamati insieme condividono lo stesso Future: non si scrive mai due
+/// volte nello stesso file.
 class CatalogService {
   CatalogService(
     this._settings, {
@@ -300,27 +314,29 @@ class CatalogService {
   IndiceCorsi? _indice;
   CorsiSostituiti? _sostituiti;
 
-  /// Download in corso dei dati di un ateneo (null quando non si scarica).
+  /// Download in corso dei dati del corso (null quando non si scarica).
   final ValueNotifier<CatalogProgress?> progresso = ValueNotifier(null);
 
-  /// File per ateneo già cercati in rete in questa sessione (non si
-  /// richiedono di nuovo a ogni lettura se mancano o la rete non c'è).
+  /// File già cercati in rete in questa sessione (non si richiedono di
+  /// nuovo a ogni lettura se mancano o la rete non c'è).
   final Set<String> _tentati = {};
 
   /// Download completi recenti (l'import subito dopo un download non
-  /// riscarica) e corsi scaricati da poco da soli (onboarding: prima i
-  /// corsi per la scelta del percorso, poi il resto).
+  /// riscarica) e corsi scaricati da poco da soli (onboarding: prima il
+  /// corso per la scelta del percorso, poi il resto). Chiave: ateneo/corso.
   final Map<String, (DateTime, AteneoScaricato)> _recenti = {};
   final Map<String, (DateTime, String)> _corsiRecenti = {};
 
-  /// Download in corso per ateneo ([completo]: tutti i file, non solo i
-  /// corsi) e per file (percorso relativo → byte ricevuti e impronta).
-  final Map<String, ({Future<AteneoScaricato> f, bool completo})> _inCorso =
-      {};
+  /// Download in corso per corso ([completo]: anche le sessioni) e per file
+  /// (percorso relativo → byte ricevuti e impronta).
+  final Map<String, ({Future<AteneoScaricato> f, bool completo})> _inCorso = {};
   final Map<String, Future<(int, String)>> _fileInCorso = {};
 
   /// Nome del registro dell'ultimo download nella cache.
   static const _registroFile = 'ateneo.json';
+
+  static String _chiave(String ateneoId, String corsoId) =>
+      '$ateneoId/$corsoId';
 
   static Future<Directory> _defaultCacheDir() async {
     final base = await getApplicationSupportDirectory();
@@ -371,8 +387,9 @@ class CatalogService {
   // ---------------------------------------------------------- lettura base
 
   Future<File> _cacheFile(String relative) async {
-    // nomi dal catalogo (es. id dell'ateneo): mai fuori dalla cache
-    if (relative.split(RegExp(r'[/\\]')).any((s) => s == '..') ||
+    // nomi dal catalogo (es. id dell'ateneo o del corso): mai fuori dalla
+    // cache
+    if (relative.split(RegExp(r'[/\\]')).any((s) => s == '..' || s.isEmpty) ||
         p.isAbsolute(relative)) {
       throw CatalogException('Percorso non valido: $relative');
     }
@@ -424,9 +441,9 @@ class CatalogService {
     }
   }
 
-  static Future<void> _eliminaSilenzioso(File? f) async {
+  static Future<void> _eliminaSilenzioso(FileSystemEntity? f) async {
     try {
-      if (f != null && await f.exists()) await f.delete();
+      if (f != null && await f.exists()) await f.delete(recursive: true);
     } catch (_) {}
   }
 
@@ -448,9 +465,8 @@ class CatalogService {
     }
   }
 
-  /// Asset inclusi nell'app: `<file>` oppure `<file>.gz`. Le build
-  /// pubblicate includono solo i file comuni; i file per ateneo ci sono
-  /// solo nelle build locali con `tools/db_builder/sync_assets.py --completo`.
+  /// Asset inclusi nell'app: `<file>` oppure `<file>.gz` (solo i file
+  /// comuni).
   Future<String?> _readAsset(String relative) async {
     try {
       return await _assetLoader('$kCatalogAssetDir/$relative');
@@ -463,7 +479,7 @@ class CatalogService {
     }
   }
 
-  /// Callback di avanzamento del download di un file di [ateneoId]: aggiorna
+  /// Callback di avanzamento del download di un file: aggiorna
   /// [progresso] (file [indice] di [totale], dopo [prima] byte già
   /// ricevuti in questo download).
   CatalogByteProgress _avanzamento({
@@ -518,66 +534,60 @@ class CatalogService {
     return null;
   }
 
-  // ------------------------------------------------------ file per ateneo
+  // ------------------------------------------------- file del corso scelto
 
-  static String _etichetta(String cartella) => kFileAteneo
-      .firstWhere(
-        (f) => f.cartella == cartella,
-        orElse: () => (cartella: cartella, etichetta: cartella),
-      )
-      .etichetta;
-
-  /// Scarica `<cartella>/<ateneoId>.json` nella cache: a pezzi in un file
-  /// temporaneo (`.part`), controllo del JSON in un isolate, poi rinomina.
-  /// Un file non valido o un download interrotto lasciano la copia
-  /// precedente. Chiamate contemporanee per lo stesso file aspettano lo
-  /// stesso download. Restituisce i byte ricevuti e l'impronta sha256.
+  /// Scarica il file [rel] nella cache: a pezzi in un file temporaneo
+  /// (`.part`), controllo del JSON, poi rinomina. Un file non valido o un
+  /// download interrotto lasciano la copia precedente. Chiamate
+  /// contemporanee per lo stesso file aspettano lo stesso download.
+  /// Restituisce i byte ricevuti e l'impronta sha256.
   Future<(int, String)> _scaricaFile(
-    String ateneoId,
-    String cartella, {
+    String rel,
+    _Tipo tipo, {
+    required String ateneoId,
     int indice = 1,
     int totale = 1,
     int prima = 0,
   }) {
-    final rel = '$cartella/$ateneoId.json';
     _tentati.add(rel);
     // (la callback non restituisce il Future rimosso: whenComplete
     // aspetterebbe sé stesso)
-    return _fileInCorso[rel] ??= _scaricaFileOra(
-      ateneoId,
-      cartella,
-      indice: indice,
-      totale: totale,
-      prima: prima,
-    ).whenComplete(() {
-      _fileInCorso.remove(rel);
-    });
+    return _fileInCorso[rel] ??=
+        _scaricaFileOra(
+          rel,
+          tipo,
+          ateneoId: ateneoId,
+          indice: indice,
+          totale: totale,
+          prima: prima,
+        ).whenComplete(() {
+          _fileInCorso.remove(rel);
+        });
   }
 
   Future<(int, String)> _scaricaFileOra(
-    String ateneoId,
-    String cartella, {
+    String rel,
+    _Tipo tipo, {
+    required String ateneoId,
     required int indice,
     required int totale,
     required int prima,
   }) async {
-    final rel = '$cartella/$ateneoId.json';
     final dest = await _cacheFile(rel);
     final tmp = File('${dest.path}.part');
     try {
       await dest.parent.create(recursive: true);
       final avanza = _avanzamento(
         ateneoId: ateneoId,
-        etichetta: _etichetta(cartella),
+        etichetta: tipo.etichetta,
         indice: indice,
         totale: totale,
         prima: prima,
       );
       avanza(0, null);
       final n = await _fileFetcher(await _url(rel), tmp, onProgress: avanza);
-      final sha = await _controllaInIsolate(tmp.path, cartella);
+      final sha = await _controlla(tmp, tipo);
       await _sostituisci(tmp, dest);
-      if (cartella == 'corsi') _corsiRecenti[ateneoId] = (DateTime.now(), sha);
       return (n, sha);
     } catch (_) {
       await _eliminaSilenzioso(tmp);
@@ -585,16 +595,15 @@ class CatalogService {
     }
   }
 
-  /// Legge dalla cache `<cartella>/<ateneoId>.json` in un isolate, tenendo
-  /// solo ciò che chiede [filtro]. Restituisce il modello (null se il file
-  /// non c'è) e l'eventuale errore. Un file illeggibile (troncato, non JSON)
-  /// si elimina, così alla prossima richiesta si riscarica.
+  /// Legge dalla cache il file [rel] tenendo solo ciò che chiede [filtro].
+  /// Restituisce il modello (null se il file non c'è) e l'eventuale errore.
+  /// Un file illeggibile (troncato, non JSON) si elimina, così alla
+  /// prossima richiesta si riscarica.
   Future<(Object?, Object?)> _leggiCache(
-    String ateneoId,
-    String cartella,
+    String rel,
+    _Tipo tipo,
     _Filtro filtro,
   ) async {
-    final rel = '$cartella/$ateneoId.json';
     final File f;
     try {
       f = await _cacheFile(rel);
@@ -603,93 +612,97 @@ class CatalogService {
       return (null, null);
     }
     try {
-      return (await _leggiInIsolate(f.path, cartella, filtro), null);
+      return (await _leggi(f, tipo, filtro), null);
     } catch (e) {
       if (e is FormatException || e is CatalogFormatException) {
         await _eliminaSilenzioso(f);
         _tentati.remove(rel);
-        _recenti.remove(ateneoId);
-        if (cartella == 'corsi') _corsiRecenti.remove(ateneoId);
+        _recenti.clear();
+        _corsiRecenti.clear();
       }
       return (null, e);
     }
   }
 
-  /// Asset dell'ateneo (solo nelle build locali complete): `<file>` o
-  /// `<file>.gz`, decodificati fuori dal thread dell'interfaccia.
-  Future<Object?> _leggiAsset(
-    String relative,
-    String cartella,
-    _Filtro filtro,
-  ) async {
-    try {
-      final text = await _assetLoader('$kCatalogAssetDir/$relative');
-      return await _testoInIsolate(text, cartella, filtro);
-    } catch (_) {}
-    try {
-      final gz = await _assetBytesLoader('$kCatalogAssetDir/$relative.gz');
-      return await _gzInIsolate(gz, cartella, filtro);
-    } catch (_) {
-      return null;
-    }
-  }
-
-  /// Un file dell'ateneo [ateneoId] nella [cartella]: rete (se [remote]) →
-  /// cache → asset. Se manca ovunque e [scarica], si scarica da internet
-  /// (una volta per sessione, non se l'ultimo download l'ha trovato assente
-  /// nel database): così i chiamanti che leggono la copia salvata
-  /// funzionano anche se lo studente non ha ancora scaricato i dati.
-  Future<CatalogResult<T>?> _loadAteneo<T>(
-    String ateneoId,
-    String cartella, {
+  /// Un file del corso o dell'ateneo: rete (se [remote]) → cache. Se manca
+  /// e [scarica], si scarica da internet (una volta per sessione, non se
+  /// l'ultimo download l'ha trovato assente nel database): così i
+  /// chiamanti che leggono la copia salvata funzionano anche se lo
+  /// studente non ha ancora scaricato i dati.
+  Future<CatalogResult<T>?> _loadFile<T>(
+    String rel,
+    _Tipo tipo, {
+    required String ateneoId,
+    String? corsoId,
     required bool remote,
     bool scarica = true,
     _Filtro filtro = _senzaFiltro,
   }) async {
-    final relative = '$cartella/$ateneoId.json';
     Object? error;
     if (remote) {
       try {
-        await _scaricaFile(ateneoId, cartella);
-        final (data, e) = await _leggiCache(ateneoId, cartella, filtro);
+        if (corsoId != null) {
+          // il file del corso passa dall'indice (impronte) e dal registro
+          final d = await scaricaCorso(
+            ateneoId,
+            corsoId,
+            soloCorso: true,
+            pulisci: false,
+          );
+          if (d.errore != null) throw d.errore!;
+          if (d.corsiAssenti) throw CatalogNotFoundException();
+        } else {
+          await _scaricaFile(rel, tipo, ateneoId: ateneoId);
+        }
+        final (data, e) = await _leggiCache(rel, tipo, filtro);
         if (data is T) return CatalogResult(data, CatalogSource.remote);
         error = e;
       } catch (e) {
         error = e;
       } finally {
-        // (non durante il download di tutto l'ateneo: lo chiude quello)
-        if (!_inCorso.containsKey(ateneoId)) progresso.value = null;
+        // (non durante il download del corso: lo chiude quello)
+        if (_inCorso.isEmpty) progresso.value = null;
       }
     }
-    final (cached, e) = await _leggiCache(ateneoId, cartella, filtro);
+    final (cached, e) = await _leggiCache(rel, tipo, filtro);
     if (cached is T) {
       return CatalogResult(cached, CatalogSource.cache, error: error);
     }
     error ??= e;
-    final bundled = await _leggiAsset(relative, cartella, filtro);
-    if (bundled is T) {
-      return CatalogResult(bundled, CatalogSource.bundled, error: error);
-    }
     if (remote || !scarica) return null;
-    // download dell'ateneo già in corso: si aspetta quello
-    final inCorso = _inCorso[ateneoId];
+    // download già in corso (del corso, o per le sessioni di un corso
+    // dell'ateneo): si aspetta quello
+    final inCorso = corsoId != null
+        ? _inCorso[_chiave(ateneoId, corsoId)]
+        : _inCorso.entries
+              .where((e) => e.key.startsWith('$ateneoId/'))
+              .firstOrNull
+              ?.value;
     if (inCorso != null) {
       await inCorso.f;
-      return _loadAteneo(
-        ateneoId,
-        cartella,
+      return _loadFile(
+        rel,
+        tipo,
+        ateneoId: ateneoId,
+        corsoId: corsoId,
         remote: false,
         scarica: false,
         filtro: filtro,
       );
     }
-    if (!await _cacheDisponibile() || _tentati.contains(relative)) return null;
+    if (!await _cacheDisponibile() || _tentati.contains(rel)) return null;
     final registro = await _registro();
-    if (registro?.ateneoId == ateneoId &&
-        registro!.assenti.contains(relative)) {
+    if (registro?.ateneoId == ateneoId && registro!.assenti.contains(rel)) {
       return null;
     }
-    return _loadAteneo(ateneoId, cartella, remote: true, filtro: filtro);
+    return _loadFile(
+      rel,
+      tipo,
+      ateneoId: ateneoId,
+      corsoId: corsoId,
+      remote: true,
+      filtro: filtro,
+    );
   }
 
   // ------------------------------------------------------------- pubblici
@@ -731,22 +744,22 @@ class CatalogService {
     return _sostituiti = r?.data ?? CorsiSostituiti.empty;
   }
 
-  /// Corsi e insegnamenti di un ateneo: prova la rete (se [remote]), poi
-  /// la copia salvata; se manca la scarica (con [scarica]). null se non
-  /// disponibile (es. offline al primo uso). Con [corso] il risultato
-  /// contiene solo quel corso di laurea: gli altri non restano mai in
-  /// memoria (i file dei grandi atenei superano i 50 MB).
+  /// Dati del corso di laurea [corso] dell'ateneo (tutti gli anni):
+  /// prova la rete (se [remote]), poi la copia salvata; se manca la
+  /// scarica (con [scarica]). null se non disponibile (es. offline al
+  /// primo uso).
   Future<CatalogResult<CorsiAteneo>?> corsiAteneo(
     String ateneoId, {
+    required String corso,
     bool remote = true,
     bool scarica = true,
-    String? corso,
-  }) => _loadAteneo(
-    ateneoId,
-    'corsi',
+  }) => _loadFile(
+    CatalogPaths.corso(ateneoId, corso),
+    _Tipo.corso,
+    ateneoId: ateneoId,
+    corsoId: corso,
     remote: remote,
     scarica: scarica,
-    filtro: (corso: corso, insegnamenti: null),
   );
 
   /// Sessioni d'esame dell'ateneo (calendari ufficiali): rete se
@@ -755,21 +768,30 @@ class CatalogService {
     String ateneoId, {
     bool remote = false,
     bool scarica = true,
-  }) => _loadAteneo(ateneoId, 'sessioni', remote: remote, scarica: scarica);
+  }) => _loadFile(
+    CatalogPaths.sessioni(ateneoId),
+    _Tipo.sessioni,
+    ateneoId: ateneoId,
+    remote: remote,
+    scarica: scarica,
+  );
 
-  /// Moduli di studio proposti per gli insegnamenti dell'ateneo; con
-  /// [insegnamenti] (id) solo i loro.
+  /// Moduli di studio proposti per gli insegnamenti del corso [corso]
+  /// (sono nello stesso file del corso); con [insegnamenti] (id) solo i loro.
   Future<CatalogResult<ModuliAteneo>?> moduli(
     String ateneoId, {
+    required String corso,
     bool remote = false,
     bool scarica = true,
     Iterable<String>? insegnamenti,
-  }) => _loadAteneo(
-    ateneoId,
-    'moduli',
+  }) => _loadFile(
+    CatalogPaths.corso(ateneoId, corso),
+    _Tipo.moduli,
+    ateneoId: ateneoId,
+    corsoId: corso,
     remote: remote,
     scarica: scarica,
-    filtro: (corso: null, insegnamenti: insegnamenti?.toSet()),
+    filtro: (insegnamenti: insegnamenti?.toSet()),
   );
 
   /// `meta.json` dalla rete; null se offline o assente.
@@ -815,7 +837,7 @@ class CatalogService {
         c?.source == CatalogSource.remote;
   }
 
-  // ---------------------------------------------------- dati dell'ateneo
+  // ------------------------------------------------------ dati del corso
 
   Future<_Registro?> _registro() async {
     final text = await _readCache(_registroFile);
@@ -827,156 +849,212 @@ class CatalogService {
     }
   }
 
-  /// Scarica da internet i dati dell'ateneo scelto (corsi, sessioni,
-  /// moduli; con [soloCorsi] solo i corsi, per esempio per la scelta del
-  /// percorso nell'onboarding) nella cache, aggiornando [progresso].
+  /// Impronta del corso [corsoId] in `per_corso/<ateneo>/indice.json`
+  /// (scaricato ora, in memoria: pochi KB). Lancia
+  /// [CatalogNotFoundException] se l'ateneo o il corso non sono nel
+  /// database.
+  Future<String?> _shaDaIndice(String ateneoId, String corsoId) async {
+    final text = await _fetcher(await _url(CatalogPaths.indice(ateneoId)));
+    final json = jsonDecode(text);
+    final corsi = json is Map ? json['corsi'] : null;
+    if (corsi is! Map) {
+      throw CatalogFormatException('Indice dei corsi dell\'ateneo non valido.');
+    }
+    final voce = corsi[corsoId];
+    if (voce == null) throw CatalogNotFoundException();
+    return voce is Map ? voce['sha256'] as String? : null;
+  }
+
+  /// Scarica da internet i dati del corso di laurea [corsoId] dell'ateneo
+  /// [ateneoId] (con [soloCorso] solo il file del corso, per esempio per la
+  /// scelta del percorso nell'onboarding; altrimenti anche le sessioni
+  /// d'esame dell'ateneo) nella cache, aggiornando [progresso].
   ///
   /// Con [meta] (`meta.json` online, scaricato se non passato) riscarica
-  /// solo ciò che è cambiato: i corsi se l'impronta sha256 è diversa, gli
-  /// altri file se è cambiata la versione del database. Un file assente nel
-  /// database (404) si ricorda, così non si richiede a ogni lettura. Senza
-  /// rete restano le copie già salvate ([AteneoScaricato.senzaRete] se
-  /// manca anche quella dei corsi). Con [pulisci] (e i corsi disponibili)
-  /// elimina dalla cache i file degli altri atenei. Un download fatto da
-  /// meno di 15 minuti non si ripete, salvo [forza]. Chiamate contemporanee
-  /// per lo stesso ateneo aspettano lo stesso download (un secondo tocco o
-  /// un ritorno al riepilogo non ne avviano un altro). Non lancia.
-  Future<AteneoScaricato> scaricaAteneo(
-    String ateneoId, {
+  /// solo ciò che è cambiato: il corso se la sua impronta
+  /// nell'indice dell'ateneo è diversa, le sessioni se è cambiata la
+  /// versione del database. Un file assente nel database (404) si ricorda,
+  /// così non si richiede a ogni lettura. Senza rete restano le copie già
+  /// salvate ([AteneoScaricato.senzaRete] se manca anche quella del corso).
+  /// Con [pulisci] (e il corso disponibile) elimina dalla cache i file degli
+  /// altri corsi e atenei. Un download fatto da meno di 15 minuti non si
+  /// ripete, salvo [forza]. Chiamate contemporanee per lo stesso corso
+  /// aspettano lo stesso download. Non lancia.
+  Future<AteneoScaricato> scaricaCorso(
+    String ateneoId,
+    String corsoId, {
     DatabaseMeta? meta,
     bool pulisci = true,
     bool forza = false,
-    bool soloCorsi = false,
+    bool soloCorso = false,
   }) async {
     AteneoScaricato r;
+    final k = _chiave(ateneoId, corsoId);
     try {
-      final recente = _recenti[ateneoId];
+      final recente = _recenti[k];
       if (!forza &&
           recente != null &&
           DateTime.now().difference(recente.$1) < _validitaRecente) {
         r = recente.$2;
       } else {
-        r = await _accoda(ateneoId, meta, soloCorsi: soloCorsi, forza: forza);
+        r = await _accoda(
+          ateneoId,
+          corsoId,
+          meta,
+          soloCorso: soloCorso,
+          forza: forza,
+        );
       }
-      if (pulisci && r.corsi) await eliminaAltriAtenei(ateneoId);
+      if (pulisci && r.corsi) await eliminaAltri(ateneoId, corsoId);
     } catch (e) {
-      r = AteneoScaricato(ateneoId: ateneoId, errore: e);
+      r = AteneoScaricato(ateneoId: ateneoId, corsoId: corsoId, errore: e);
     }
     return r;
   }
 
   static const _validitaRecente = Duration(minutes: 15);
 
-  /// Un download dell'ateneo alla volta: se ce n'è già uno che copre la
-  /// richiesta (completo, o anche solo dei corsi se bastano quelli) si
+  /// Un download del corso alla volta: se ce n'è già uno che copre la
+  /// richiesta (completo, o anche solo del corso se basta quello) si
   /// aspetta quello; altrimenti il nuovo parte quando finisce il precedente.
   Future<AteneoScaricato> _accoda(
-    String id,
+    String ateneoId,
+    String corsoId,
     DatabaseMeta? meta, {
-    required bool soloCorsi,
+    required bool soloCorso,
     required bool forza,
   }) {
-    final c = _inCorso[id];
-    if (c != null && (c.completo || soloCorsi)) return c.f;
+    final k = _chiave(ateneoId, corsoId);
+    final c = _inCorso[k];
+    if (c != null && (c.completo || soloCorso)) return c.f;
     final prima = c?.f;
     late final Future<AteneoScaricato> f;
-    f = () async {
-      if (prima != null) await prima;
-      return _scarica(id, meta, soloCorsi: soloCorsi, forza: forza);
-    }().whenComplete(() {
-      if (identical(_inCorso[id]?.f, f)) _inCorso.remove(id);
-    });
-    _inCorso[id] = (f: f, completo: !soloCorsi);
+    f =
+        () async {
+          if (prima != null) await prima;
+          return _scarica(
+            ateneoId,
+            corsoId,
+            meta,
+            soloCorso: soloCorso,
+            forza: forza,
+          );
+        }().whenComplete(() {
+          if (identical(_inCorso[k]?.f, f)) _inCorso.remove(k);
+        });
+    _inCorso[k] = (f: f, completo: !soloCorso);
     return f;
   }
 
   Future<AteneoScaricato> _scarica(
     String id,
+    String corsoId,
     DatabaseMeta? meta, {
-    required bool soloCorsi,
+    required bool soloCorso,
     required bool forza,
   }) async {
     meta ??= await remoteMeta();
     final prima = await _registro();
     final stessoAteneo = prima?.ateneoId == id;
+    final stessoCorso = stessoAteneo && prima?.corsoId == corsoId;
     final stessaVersione =
-        stessoAteneo && meta?.versione != null && prima!.versione == meta!.versione;
-    final shaOnline = meta?.atenei[id]?.sha256;
-    var shaCorsi = stessoAteneo ? prima!.sha256Corsi : null;
-    // corsi scaricati da soli pochi minuti fa (scelta del percorso)
-    final corsiRecenti = _corsiRecenti[id];
-    final corsiAppena =
-        !forza &&
-        corsiRecenti != null &&
-        DateTime.now().difference(corsiRecenti.$1) < _validitaRecente;
-    final file = soloCorsi ? kFileAteneo.take(1).toList() : kFileAteneo;
+        stessoAteneo &&
+        meta?.versione != null &&
+        prima?.versione == meta?.versione;
+    final shaIndiceOnline = meta?.atenei[id]?.sha256PerCorso;
+    final k = _chiave(id, corsoId);
+    final relCorso = CatalogPaths.corso(id, corsoId);
+    final relSessioni = CatalogPaths.sessioni(id);
+    final totale = soloCorso ? 1 : 2;
+    var shaCorso = stessoCorso ? prima?.sha256Corso : null;
+    var shaIndice = stessoAteneo ? prima?.sha256Indice : null;
     final assenti = <String>{
-      // download dei soli corsi: per gli altri file vale il registro
-      if (soloCorsi && stessoAteneo)
-        for (final a in prima!.assenti)
-          if (!a.startsWith('corsi/')) a,
+      // download del solo corso: per le sessioni vale il registro
+      if (soloCorso && stessoAteneo)
+        for (final a in prima?.assenti ?? const <String>{})
+          if (a == relSessioni) a,
     };
     var scaricati = 0, invariati = 0, byte = 0;
     var corsi = false, corsiAggiornati = false, corsiAssenti = false;
     Object? errore;
     try {
-      for (final (i, f) in file.indexed) {
-        final rel = '${f.cartella}/$id.json';
-        final isCorsi = i == 0;
-        final presente = await _inCache(rel);
-        // già aggiornato sul dispositivo: non si riscarica
-        final aggiornato =
-            presente &&
-            ((isCorsi && corsiAppena) ||
-                (isCorsi && shaOnline != null
-                    ? shaOnline == shaCorsi
-                    : stessaVersione));
-        if (aggiornato) {
-          invariati++;
-          if (isCorsi) {
-            corsi = corsiAggiornati = true;
-            if (corsiAppena) shaCorsi = corsiRecenti.$2;
-          }
-          continue;
-        }
-        if (!presente && stessaVersione && prima.assenti.contains(rel)) {
-          assenti.add(rel);
-          invariati++;
-          continue;
-        }
+      // 1. il corso di laurea
+      final presente = await _inCache(relCorso);
+      final recente = _corsiRecenti[k];
+      final appena =
+          !forza &&
+          recente != null &&
+          DateTime.now().difference(recente.$1) < _validitaRecente;
+      if (presente &&
+          (appena ||
+              (stessoCorso &&
+                  shaIndiceOnline != null &&
+                  shaIndiceOnline == prima?.sha256Indice))) {
+        invariati++;
+        corsi = corsiAggiornati = true;
+        if (appena) shaCorso = recente.$2;
+      } else {
         try {
-          final (n, sha) = await _scaricaFile(
-            id,
-            f.cartella,
-            indice: i + 1,
-            totale: file.length,
-            prima: byte,
-          );
-          byte += n;
-          scaricati++;
-          if (isCorsi) {
+          final atteso = await _shaDaIndice(id, corsoId);
+          shaIndice = shaIndiceOnline;
+          if (presente && atteso != null && atteso == shaCorso) {
+            invariati++;
             corsi = corsiAggiornati = true;
-            shaCorsi = sha;
+          } else {
+            final (n, sha) = await _scaricaFile(
+              relCorso,
+              _Tipo.corso,
+              ateneoId: id,
+              totale: totale,
+            );
+            byte += n;
+            scaricati++;
+            corsi = corsiAggiornati = true;
+            shaCorso = sha;
+            _corsiRecenti[k] = (DateTime.now(), sha);
           }
         } on CatalogNotFoundException {
-          // non c'è (più) nel database: niente copia vecchia
-          assenti.add(rel);
-          await _deleteCache(rel);
-          if (isCorsi) {
-            corsiAssenti = true;
-            shaCorsi = null;
-          }
+          // il corso (o l'ateneo) non c'è (più) nel database
+          assenti.add(relCorso);
+          await _deleteCache(relCorso);
+          corsiAssenti = true;
+          shaCorso = null;
         } catch (e) {
           errore ??= e;
-          if (isCorsi && presente) corsi = true; // resta la copia salvata
-          // offline: inutile provare gli altri file
-          if (erroreDiRete(e)) {
-            for (final g in file.skip(i + 1)) {
-              _tentati.add('${g.cartella}/$id.json');
-            }
-            break;
+          if (presente) corsi = true; // resta la copia salvata
+        }
+      }
+      // 2. le sessioni d'esame dell'ateneo
+      if (!soloCorso && !(errore != null && erroreDiRete(errore))) {
+        final presenti = await _inCache(relSessioni);
+        if (presenti && stessaVersione) {
+          invariati++;
+        } else if (!presenti &&
+            stessaVersione &&
+            (prima?.assenti.contains(relSessioni) ?? false)) {
+          assenti.add(relSessioni);
+          invariati++;
+        } else {
+          try {
+            final (n, _) = await _scaricaFile(
+              relSessioni,
+              _Tipo.sessioni,
+              ateneoId: id,
+              indice: totale,
+              totale: totale,
+              prima: byte,
+            );
+            byte += n;
+            scaricati++;
+          } on CatalogNotFoundException {
+            assenti.add(relSessioni);
+            await _deleteCache(relSessioni);
+          } catch (e) {
+            errore ??= e;
           }
         }
+      } else if (!soloCorso) {
+        _tentati.add(relSessioni);
       }
     } finally {
       progresso.value = null;
@@ -987,15 +1065,17 @@ class CatalogService {
         jsonEncode(
           _Registro(
             ateneoId: id,
-            // con errori la versione non si segna: si ricontrolla tutto; coi
-            // soli corsi resta quella degli altri file già sul dispositivo
+            corsoId: corsoId,
+            // con errori la versione non si segna: si ricontrolla tutto; col
+            // solo corso resta quella delle sessioni già sul dispositivo
             versione: errore != null
                 ? null
-                : soloCorsi
-                ? (stessaVersione ? prima.versione : null)
+                : soloCorso
+                ? (stessaVersione ? prima?.versione : null)
                 : meta?.versione,
             scaricatoIl: DateTime.now(),
-            sha256Corsi: shaCorsi,
+            sha256Corso: shaCorso,
+            sha256Indice: corsiAggiornati ? shaIndice : null,
             assenti: assenti,
           ).toJson(),
         ),
@@ -1003,6 +1083,7 @@ class CatalogService {
     }
     final r = AteneoScaricato(
       ateneoId: id,
+      corsoId: corsoId,
       scaricati: scaricati,
       invariati: invariati,
       byte: byte,
@@ -1011,32 +1092,53 @@ class CatalogService {
       corsiAssenti: corsiAssenti,
       errore: errore,
     );
-    if (errore == null && !soloCorsi) _recenti[id] = (DateTime.now(), r);
+    if (errore == null && !soloCorso) _recenti[k] = (DateTime.now(), r);
     return r;
   }
 
-  /// Elimina dalla cache i file per ateneo diversi da [ateneoId] (cambio
-  /// d'ateneo: l'app resta leggera). I file comuni restano, e anche i
-  /// download in corso di [ateneoId] (`<id>.json.part`).
-  Future<void> eliminaAltriAtenei(String ateneoId) async {
+  /// Elimina dalla cache i file diversi dal corso [corsoId] dell'ateneo
+  /// [ateneoId] e dalle sessioni dell'ateneo (cambio di corso o d'ateneo:
+  /// l'app resta leggera). I file comuni restano, e anche i download in
+  /// corso del corso (`<corso>.json.part`). Elimina anche i file per
+  /// ateneo delle versioni precedenti dell'app (`corsi/`, `moduli/`).
+  Future<void> eliminaAltri(String ateneoId, [String? corsoId]) async {
     try {
       final dir = await _cacheDir();
-      // una tantum: la cartella dei gruppi degli studenti, non più usata
-      final vecchia = Directory(p.join(dir.path, 'community'));
-      if (await vecchia.exists()) await vecchia.delete(recursive: true);
-      for (final f in kFileAteneo) {
-        final d = Directory(p.join(dir.path, f.cartella));
-        if (!await d.exists()) continue;
-        await for (final e in d.list()) {
+      // file delle versioni precedenti (dati di tutto l'ateneo) e cartella
+      // dei gruppi degli studenti, non più usata
+      for (final vecchia in ['corsi', 'moduli', 'community']) {
+        await _eliminaSilenzioso(Directory(p.join(dir.path, vecchia)));
+      }
+      final perCorso = Directory(p.join(dir.path, 'per_corso'));
+      if (await perCorso.exists()) {
+        await for (final e in perCorso.list()) {
+          if (e is! Directory || p.basename(e.path) != ateneoId) {
+            await _eliminaSilenzioso(e);
+            continue;
+          }
+          await for (final f in e.list()) {
+            final nome = p.basename(f.path);
+            if (corsoId == null || !nome.startsWith('$corsoId.json')) {
+              await _eliminaSilenzioso(f);
+            }
+          }
+        }
+      }
+      final sessioni = Directory(p.join(dir.path, 'sessioni'));
+      if (await sessioni.exists()) {
+        await for (final e in sessioni.list()) {
           if (e is File && !p.basename(e.path).startsWith('$ateneoId.json')) {
             await _eliminaSilenzioso(e);
           }
         }
       }
-      _recenti.removeWhere((k, _) => k != ateneoId);
-      _corsiRecenti.removeWhere((k, _) => k != ateneoId);
+      final tieni = corsoId == null ? null : _chiave(ateneoId, corsoId);
+      _recenti.removeWhere((k, _) => k != tieni);
+      _corsiRecenti.removeWhere((k, _) => k != tieni);
       final r = await _registro();
-      if (r != null && r.ateneoId != ateneoId) {
+      if (r != null &&
+          (r.ateneoId != ateneoId ||
+              (corsoId != null && r.corsoId != corsoId))) {
         await _deleteCache(_registroFile);
       }
     } catch (_) {
@@ -1044,24 +1146,27 @@ class CatalogService {
     }
   }
 
-  /// Dati di [ateneoId] presenti sul dispositivo (senza rete).
-  Future<AteneoSulDispositivo> datiAteneo(String ateneoId) async {
+  /// Dati del corso [corsoId] presenti sul dispositivo (senza rete).
+  Future<AteneoSulDispositivo> datiCorso(
+    String ateneoId,
+    String corsoId,
+  ) async {
     var byte = 0;
-    for (final f in kFileAteneo) {
+    var corsi = false;
+    for (final rel in [
+      CatalogPaths.corso(ateneoId, corsoId),
+      CatalogPaths.sessioni(ateneoId),
+    ]) {
       try {
-        final file = await _cacheFile('${f.cartella}/$ateneoId.json');
-        if (await file.exists()) byte += await file.length();
+        final file = await _cacheFile(rel);
+        if (await file.exists()) {
+          byte += await file.length();
+          if (rel.startsWith('per_corso/')) corsi = true;
+        }
       } catch (_) {}
     }
-    // negli asset (build locali complete) basta che il file compresso ci
-    // sia: niente decompressione a ogni apertura delle Impostazioni
-    final corsi =
-        await _inCache('corsi/$ateneoId.json') ||
-        await _assetBytesLoader(
-          '$kCatalogAssetDir/corsi/$ateneoId.json.gz',
-        ).then((_) => true, onError: (_) => false);
     final r = await _registro();
-    final stesso = r?.ateneoId == ateneoId;
+    final stesso = r?.ateneoId == ateneoId && r?.corsoId == corsoId;
     return AteneoSulDispositivo(
       ateneoId: ateneoId,
       corsi: corsi,
@@ -1073,12 +1178,12 @@ class CatalogService {
 
   // ------------------------------------------------------------ download
 
-  /// Scaricamento con dart:io HttpClient, timeout e limite di 200 MB (i
-  /// corsi degli atenei più grandi superano i 45 MB; in trasferimento sono
-  /// compressi con gzip e HttpClient li decomprime da solo).
+  /// Scaricamento con dart:io HttpClient, timeout e limite di 50 MB (i file
+  /// del database sono di pochi KB o MB; in trasferimento sono compressi
+  /// con gzip e HttpClient li decomprime da solo).
   static CatalogFetcher defaultFetcher({
     Duration timeout = const Duration(seconds: 30),
-    int maxBytes = 200 * 1024 * 1024,
+    int maxBytes = 50 * 1024 * 1024,
   }) => (Uri uri, {CatalogByteProgress? onProgress}) async {
     final client = HttpClient()
       ..connectionTimeout = timeout
@@ -1104,7 +1209,7 @@ class CatalogService {
                   HttpClientResponseCompressionState.decompressed
           ? response.contentLength
           : null;
-      final builder = BytesBuilder(copy: false);
+      final builder = BytesBuilder(copy: true);
       var avvisati = 0;
       await for (final chunk in response.timeout(timeout)) {
         builder.add(chunk);
@@ -1131,17 +1236,16 @@ class CatalogService {
     }
   };
 
-  /// Come [defaultFetcher] ma scrive a pezzi direttamente in `dest` (file
-  /// grandi dell'ateneo): in memoria resta solo il pezzo in arrivo, con
-  /// la contropressione del disco ([IOSink.addStream]).
+  /// Come [defaultFetcher] ma scrive a pezzi direttamente in `dest`: in
+  /// memoria resta solo il pezzo in arrivo.
   static CatalogFileFetcher defaultFileFetcher({
     Duration timeout = const Duration(seconds: 30),
-    int maxBytes = 200 * 1024 * 1024,
+    int maxBytes = 50 * 1024 * 1024,
   }) => (Uri uri, File dest, {CatalogByteProgress? onProgress}) async {
     final client = HttpClient()
       ..connectionTimeout = timeout
       ..idleTimeout = timeout;
-    IOSink? sink;
+    RandomAccessFile? out;
     try {
       final request = await client.getUrl(uri).timeout(timeout);
       request.headers.set(HttpHeaders.acceptHeader, 'application/json');
@@ -1163,30 +1267,29 @@ class CatalogService {
           : null;
       var ricevuti = 0, avvisati = 0;
       var primo = true;
-      sink = dest.openWrite();
-      await sink.addStream(
-        response.timeout(timeout).map((chunk) {
-          var c = chunk;
-          // BOM UTF-8 iniziale: il decoder JSON non lo accetta
-          if (primo) {
-            primo = false;
-            if (c.length >= 3 && c[0] == 0xEF && c[1] == 0xBB && c[2] == 0xBF) {
-              c = c.sublist(3);
-            }
+      out = await dest.open(mode: FileMode.write);
+      await for (final chunk in response.timeout(timeout)) {
+        var c = chunk;
+        // BOM UTF-8 iniziale: il decoder JSON non lo accetta
+        if (primo) {
+          primo = false;
+          if (c.length >= 3 && c[0] == 0xEF && c[1] == 0xBB && c[2] == 0xBF) {
+            c = c.sublist(3);
           }
-          ricevuti += c.length;
-          if (ricevuti > maxBytes) throw CatalogException('File troppo grande.');
-          // al massimo un aggiornamento ogni 256 KB
-          if (onProgress != null && ricevuti - avvisati >= 256 * 1024) {
-            avvisati = ricevuti;
-            onProgress(ricevuti, attesi);
-          }
-          return c;
-        }),
-      );
-      final s = sink;
-      sink = null;
-      await s.close();
+        }
+        ricevuti += c.length;
+        if (ricevuti > maxBytes) throw CatalogException('File troppo grande.');
+        await out.writeFrom(c);
+        // al massimo un aggiornamento ogni 256 KB
+        if (onProgress != null && ricevuti - avvisati >= 256 * 1024) {
+          avvisati = ricevuti;
+          onProgress(ricevuti, attesi);
+        }
+      }
+      final f = out;
+      out = null;
+      await f.flush();
+      await f.close();
       onProgress?.call(ricevuti, attesi);
       return ricevuti;
     } on SocketException {
@@ -1196,9 +1299,9 @@ class CatalogService {
     } on TimeoutException {
       throw CatalogOfflineException('Tempo scaduto durante il download.');
     } finally {
-      if (sink != null) {
+      if (out != null) {
         try {
-          await sink.close();
+          await out.close();
         } catch (_) {}
       }
       client.close(force: true);
@@ -1214,138 +1317,101 @@ class CatalogService {
       };
 
   /// Messaggio chiaro per lo studente su un errore del download o della
-  /// lettura dei dati dell'ateneo.
+  /// lettura dei dati del corso.
   static String descriviErrore(Object? e) {
     if (e == null || erroreDiRete(e)) return kServeConnessione;
     if (e is FileSystemException) {
-      return 'Non riesco a salvare i dati del tuo ateneo sul dispositivo: '
+      return 'Non riesco a salvare i dati del tuo corso sul dispositivo: '
           'controlla lo spazio libero e riprova.';
     }
     if (e is FormatException || e is CatalogFormatException) {
-      return 'Il file del tuo ateneo è arrivato incompleto o non valido: '
+      return 'Il file del tuo corso è arrivato incompleto o non valido: '
           'riprova.';
     }
     if (e is CatalogException) return e.message;
-    return 'Download dei dati del tuo ateneo non riuscito: riprova.';
+    return 'Download dei dati del tuo corso non riuscito: riprova.';
   }
 }
 
-// ------------------------------------------- lettura fuori dal thread UI
+// --------------------------------------------------------- lettura dei file
 
-/// Cosa tenere leggendo un file per ateneo: solo il corso di laurea
-/// [corso] (file dei corsi) o solo gli [insegnamenti] (file dei moduli);
-/// null = tutto.
-typedef _Filtro = ({String? corso, Set<String>? insegnamenti});
+/// Tipo di file della cache: etichetta per l'indicatore di download e
+/// modello in cui si converte.
+enum _Tipo {
+  corso('corso di laurea'),
+  moduli('corso di laurea'),
+  sessioni('sessioni d\'esame');
 
-const _Filtro _senzaFiltro = (corso: null, insegnamenti: null);
-
-/// Testi più corti si decodificano subito, senza avviare un isolate.
-const _sogliaIsolate = 256 * 1024;
-
-/// Reviver della decodifica: scarta appena letti i rami che non servono,
-/// così anche di un file di decine di MB resta in memoria solo il
-/// necessario. Con [soloRadice] tiene solo i campi semplici della radice
-/// (controllo di un file scaricato: sintassi completa, memoria minima).
-Object? Function(Object? key, Object? value)? _reviver(
-  _Filtro f, {
-  bool soloRadice = false,
-}) {
-  if (soloRadice) {
-    return (k, v) => k == null || (v is! Map && v is! List) ? v : null;
-  }
-  final corso = f.corso, ins = f.insegnamenti;
-  if (corso != null) {
-    // elementi della lista `corsi`: gli unici oggetti con `insegnamenti`
-    return (k, v) =>
-        k is int && v is Map && v.containsKey('insegnamenti') && v['id'] != corso
-        ? null
-        : v;
-  }
-  if (ins != null) {
-    // voci di `insegnamenti` (chiave: id dell'insegnamento)
-    return (k, v) =>
-        k is String &&
-            v is Map &&
-            (v.containsKey('moduli') || v.containsKey('programma')) &&
-            !ins.contains(k)
-        ? null
-        : v;
-  }
-  return null;
+  const _Tipo(this.etichetta);
+  final String etichetta;
 }
 
-Object _modello(String cartella, Object? json) => switch (cartella) {
-  'corsi' => CorsiAteneo.fromJson(json),
-  'sessioni' => SessioniAteneo.fromJson(json),
-  'moduli' => ModuliAteneo.fromJson(json),
-  _ => throw CatalogException('Cartella del database sconosciuta: $cartella'),
+/// Cosa tenere leggendo i moduli: solo quelli degli [insegnamenti]; null =
+/// tutti.
+typedef _Filtro = ({Set<String>? insegnamenti});
+
+const _Filtro _senzaFiltro = (insegnamenti: null);
+
+/// File più grandi si decodificano in un isolate a parte, per non bloccare
+/// l'interfaccia. I file di un corso sono quasi sempre più piccoli.
+const _sogliaIsolate = 512 * 1024;
+
+Object _modello(_Tipo tipo, Object? json, _Filtro f) => switch (tipo) {
+  _Tipo.corso => CorsiAteneo.fromJson(json),
+  _Tipo.sessioni => SessioniAteneo.fromJson(json),
+  _Tipo.moduli => ModuliAteneo.fromJson(_moduliDelCorso(json, f)),
 };
 
-/// Ultimo valore ricevuto da una conversione a pezzi.
-class _Ultimo<T> implements Sink<T> {
-  T? value;
-  @override
-  void add(T data) => value = data;
-  @override
-  void close() {}
-}
-
-/// Decodifica il JSON del file [path] a pezzi (byte → oggetti, senza
-/// passare da un'unica stringa), con l'impronta sha256 dei byte se
-/// [impronta].
-Future<(Object?, String?)> _decodificaFile(
-  String path,
-  Object? Function(Object? key, Object? value)? reviver, {
-  bool impronta = false,
-}) async {
-  final out = _Ultimo<Object?>();
-  final json = utf8.decoder
-      .fuse(JsonDecoder(reviver))
-      .startChunkedConversion(out);
-  final digest = _Ultimo<crypto.Digest>();
-  final hash = impronta ? crypto.sha256.startChunkedConversion(digest) : null;
-  await for (final chunk in File(path).openRead()) {
-    hash?.add(chunk);
-    json.add(chunk);
+/// `moduli` del file del corso nella forma di `moduli/<ateneo>.json`,
+/// tenendo solo gli insegnamenti del filtro.
+Map<String, Object?> _moduliDelCorso(Object? json, _Filtro f) {
+  if (json is! Map) {
+    throw CatalogFormatException('File del corso non valido.');
   }
-  hash?.close();
-  json.close();
-  return (out.value, digest.value?.toString());
+  final tutti = json['moduli'];
+  final ins = f.insegnamenti;
+  return {
+    'universita_id': json['universita_id'],
+    'insegnamenti': {
+      if (tutti is Map)
+        for (final e in tutti.entries)
+          if (ins == null || ins.contains(e.key)) e.key: e.value,
+    },
+  };
 }
 
-/// Legge il file della cache [path] in un isolate e restituisce il modello
-/// (filtrato con [f]); gli errori (file troncato…) arrivano al chiamante.
-Future<Object> _leggiInIsolate(String path, String cartella, _Filtro f) =>
-    Isolate.run(() async {
-      final (json, _) = await _decodificaFile(path, _reviver(f));
-      return _modello(cartella, json);
-    });
-
-/// Controlla in un isolate il file appena scaricato [path] (JSON completo e
-/// radice valida) e ne restituisce l'impronta sha256.
-Future<String> _controllaInIsolate(String path, String cartella) =>
-    Isolate.run(() async {
-      final (json, sha) = await _decodificaFile(
-        path,
-        _reviver(_senzaFiltro, soloRadice: true),
-        impronta: true,
-      );
-      _modello(cartella, json);
-      return sha!;
-    });
-
-/// Asset di testo: in un isolate se è grande.
-Future<Object> _testoInIsolate(String text, String cartella, _Filtro f) {
-  Object leggi() => _modello(cartella, JsonDecoder(_reviver(f)).convert(text));
-  if (text.length < _sogliaIsolate) return Future.value(leggi());
-  return Isolate.run(leggi);
+/// Decodifica e controlla il testo [text] ([tipo]) e ne restituisce il
+/// modello.
+Object _converti(String text, _Tipo tipo, _Filtro f) {
+  final t = text.startsWith('﻿') ? text.substring(1) : text;
+  return _modello(tipo, jsonDecode(t), f);
 }
 
-/// Asset compresso (`.json.gz`): decompressione e decodifica in un isolate.
-Future<Object> _gzInIsolate(Uint8List gz, String cartella, _Filtro f) =>
-    Isolate.run(
-      () => _modello(
-        cartella,
-        utf8.decoder.fuse(JsonDecoder(_reviver(f))).convert(gzip.decode(gz)),
-      ),
-    );
+/// Legge il file della cache [f] e restituisce il modello (filtrato con
+/// [filtro]); gli errori (file troncato…) arrivano al chiamante. I file
+/// grandi si leggono in un isolate.
+Future<Object> _leggi(File f, _Tipo tipo, _Filtro filtro) async {
+  final n = await f.length();
+  if (n < _sogliaIsolate) {
+    return _converti(await f.readAsString(), tipo, filtro);
+  }
+  final path = f.path;
+  return Isolate.run(
+    () => _converti(File(path).readAsStringSync(), tipo, filtro),
+  );
+}
+
+/// Controlla il file appena scaricato [f] (JSON completo e radice valida)
+/// e ne restituisce l'impronta sha256.
+Future<String> _controlla(File f, _Tipo tipo) async {
+  final n = await f.length();
+  final path = f.path;
+  String controlla() {
+    final bytes = File(path).readAsBytesSync();
+    _modello(tipo, jsonDecode(utf8.decode(bytes)), _senzaFiltro);
+    return crypto.sha256.convert(bytes).toString();
+  }
+
+  if (n < _sogliaIsolate) return controlla();
+  return Isolate.run(controlla);
+}

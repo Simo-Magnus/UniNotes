@@ -239,6 +239,9 @@ Future<void> _fullFlow(WidgetTester tester, Size size) async {
   expect(tester.takeException(), isNull);
 }
 
+const _corso = 'polito-l8-ingegneria-informatica';
+const _relCorso = 'per_corso/polito/$_corso.json';
+
 void main() {
   testWidgets('percorso completo su telefono', (tester) async {
     await _fullFlow(tester, _phone);
@@ -331,7 +334,8 @@ void main() {
     await _settleUntil(tester, find.byKey(const Key('catalog-offline')));
     expect(find.text(kServeConnessione), findsOneWidget);
     expect(
-      (await tester.runAsync(() => s.catalog.datiAteneo('polito')))!.corsi,
+      (await tester.runAsync(() => s.catalog.datiCorso('polito', _corso)))!
+          .corsi,
       isFalse,
     );
     expect(await tester.runAsync(s.profiles.load), isNull);
@@ -344,7 +348,8 @@ void main() {
     expect(find.byKey(const Key('catalog-offline')), findsNothing);
     expect(find.text('Importati 4 insegnamenti e 2 libri.'), findsOneWidget);
     expect(
-      (await tester.runAsync(() => s.catalog.datiAteneo('polito')))!.corsi,
+      (await tester.runAsync(() => s.catalog.datiCorso('polito', _corso)))!
+          .corsi,
       isTrue,
     );
     expect(tester.takeException(), isNull);
@@ -367,7 +372,10 @@ void main() {
     // online: Riprova importa il piano anche dopo la conferma
     remote['corsi/polito.json'] = jsonEncode(corsiPolitoFixture());
     await _tap(tester, find.byKey(const Key('catalog-retry')));
-    await _settleUntil(tester, find.text('Importati 4 insegnamenti e 2 libri.'));
+    await _settleUntil(
+      tester,
+      find.text('Importati 4 insegnamenti e 2 libri.'),
+    );
     expect(find.byKey(const Key('catalog-offline')), findsNothing);
     expect(tester.takeException(), isNull);
   });
@@ -383,16 +391,14 @@ void main() {
     expect(requests, isEmpty);
     expect(s.catalog.progresso.value, isNull);
     expect(
-      (await tester.runAsync(() => s.catalog.datiAteneo('polito')))!.corsi,
+      (await tester.runAsync(() => s.catalog.datiCorso('polito', _corso)))!
+          .corsi,
       isFalse,
     );
     await _tap(tester, find.byKey(const Key('onboarding-confirm')));
     await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
     expect(find.text('Importati 4 insegnamenti e 2 libri.'), findsOneWidget);
-    expect(
-      requests.where((u) => u.path.endsWith('/corsi/polito.json')),
-      hasLength(1),
-    );
+    expect(requests.where((u) => u.path.endsWith('/$_relCorso')), hasLength(1));
   });
 
   testWidgets(
@@ -405,11 +411,11 @@ void main() {
         tester,
         _phone,
         requests: requests,
-        attesa: (r) => r == 'corsi/polito.json' ? gate.future : null,
+        attesa: (r) => r == _relCorso ? gate.future : null,
       );
       await _toSummary(tester);
       await _tap(tester, find.byKey(const Key('onboarding-confirm')));
-      expect(find.text('Scarico i corsi del tuo ateneo…'), findsOneWidget);
+      expect(find.text('Scarico i dati del tuo corso…'), findsOneWidget);
       final button = tester.widget<FilledButton>(
         find.byKey(const Key('onboarding-confirm')),
       );
@@ -427,7 +433,7 @@ void main() {
       await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
       expect(find.text('Importati 4 insegnamenti e 2 libri.'), findsOneWidget);
       expect(
-        requests.where((u) => u.path.endsWith('/corsi/polito.json')),
+        requests.where((u) => u.path.endsWith('/$_relCorso')),
         hasLength(1),
       );
       expect(tester.takeException(), isNull);
@@ -472,19 +478,23 @@ void main() {
       await _settleUntil(tester, find.text('Importa il piano'));
       expect(find.byKey(const Key('percorso')), findsOneWidget);
       // solo i corsi, niente import né profilo prima della scelta
-      expect(
-        requests.map((u) => u.path.split('/database/').last),
-        ['meta.json', 'corsi/polito.json'],
-      );
+      expect(requests.map((u) => u.path.split('/database/').last), [
+        'meta.json',
+        'per_corso/polito/indice.json',
+        _relCorso,
+      ]);
       expect(await tester.runAsync(s.profiles.load), isNull);
       await _tap(tester, find.byKey(const Key('percorso')));
       await _tap(tester, find.text('Percorso B').last);
       await _tap(tester, find.byKey(const Key('onboarding-confirm')));
       await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
       expect(find.text('Importati 2 insegnamenti e 2 libri.'), findsOneWidget);
-      expect((await tester.runAsync(s.profiles.load))!.curriculum, 'Percorso B');
       expect(
-        requests.where((u) => u.path.endsWith('/corsi/polito.json')),
+        (await tester.runAsync(s.profiles.load))!.curriculum,
+        'Percorso B',
+      );
+      expect(
+        requests.where((u) => u.path.endsWith('/$_relCorso')),
         hasLength(1),
       );
       expect(tester.takeException(), isNull);

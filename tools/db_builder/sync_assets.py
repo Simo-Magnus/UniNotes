@@ -3,28 +3,23 @@
 L'app è leggera: negli asset ci sono solo i file comuni, `universita.json`
 e `indice_corsi.json` (e `meta.json` e `corsi_sostituiti.json`, se ci
 sono), circa 1 MB, per scegliere ateneo e corso anche senza internet. I dati
-di ogni ateneo (corsi, sessioni, moduli) l'app li scarica da
-internet solo per l'ateneo scelto e li salva sul dispositivo. Le build di
-GitHub Actions usano questo script senza opzioni.
+del corso scelto (`per_corso/<ateneo>/<corso>.json`: tutti gli anni, libri,
+appelli e moduli) e le sessioni d'esame dell'ateneo l'app li scarica da
+internet e li salva sul dispositivo. Le build di GitHub Actions usano questo
+script.
 
-Con `--completo` (solo per le build locali, per esempio per provare l'app
-senza rete o con un database non pubblicato) copia anche i file per ateneo:
-`corsi/<id>.json.gz` e `moduli/<id>.json.gz` compressi
-e `sessioni/<id>.json` (circa 95 MB in tutto). Senza `--completo` i file per
-ateneo rimasti negli asset da un'esecuzione precedente vengono eliminati,
-così una build locale torna leggera. Nel repository questi file non vengono
-salvati (.gitignore).
+Le cartelle dei file per ateneo delle versioni precedenti (`corsi/`,
+`sessioni/`, `moduli/` negli asset) vengono eliminate.
 
 Uso (dalla radice del repository):
 
-    python tools/db_builder/sync_assets.py [--completo]
+    python tools/db_builder/sync_assets.py
 
 Un file mancante in `database/` viene saltato (con un avviso); se manca
 `indice_corsi.json` negli asset viene scritto un indice vuoto valido.
 """
 from __future__ import annotations
 
-import gzip
 import json
 import pathlib
 import shutil
@@ -34,8 +29,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 SRC = ROOT / "database"
 DEST = ROOT / "app" / "assets" / "database"
 FILES = ("universita.json", "indice_corsi.json", "meta.json", "corsi_sostituiti.json")
-# cartelle dei file per ateneo (True = compressi in .json.gz negli asset)
-PER_ATENEO = (("corsi", True), ("sessioni", False), ("moduli", True))
+# cartelle negli asset delle versioni precedenti (file per ateneo)
+VECCHIE = ("corsi", "sessioni", "moduli")
 
 
 def _valid_json(path: pathlib.Path) -> bool:
@@ -48,36 +43,14 @@ def _valid_json(path: pathlib.Path) -> bool:
     return isinstance(data, dict) and data.get("schema", 1) == 1
 
 
-def _pulisci_per_ateneo() -> int:
-    """Toglie dagli asset i file per ateneo (restano le cartelle con .gitkeep,
-    dichiarate in pubspec.yaml)."""
+def _pulisci_vecchie() -> int:
+    """Toglie dagli asset le cartelle dei file per ateneo."""
     n = 0
-    for sub, _ in PER_ATENEO:
+    for sub in VECCHIE:
         out = DEST / sub
-        out.mkdir(parents=True, exist_ok=True)
-        for old in out.glob("*.json*"):
-            old.unlink()
-            n += 1
-    return n
-
-
-def _per_ateneo() -> int:
-    """corsi/ e moduli/<id>.json -> <id>.json.gz; sessioni/<id>.json negli asset."""
-    _pulisci_per_ateneo()
-    n = 0
-    for sub, compress in PER_ATENEO:
-        out = DEST / sub
-        for src in sorted((SRC / sub).glob("*.json")):
-            if compress:
-                # mtime=0: stesso contenuto, stesso file compresso
-                with (out / (src.name + ".gz")).open("wb") as raw, \
-                        gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0, compresslevel=9) as gz:
-                    gz.write(src.read_bytes())
-            else:
-                shutil.copyfile(src, out / src.name)
-            n += 1
-    size = sum(f.stat().st_size for f in DEST.rglob("*.json*"))
-    print(f"+ {n} file per ateneo (asset totali {size // (1024 * 1024)} MB)")
+        if out.is_dir():
+            n += sum(1 for f in out.rglob("*") if f.is_file())
+            shutil.rmtree(out)
     return n
 
 
@@ -102,12 +75,9 @@ def main() -> int:
             encoding="utf-8",
         )
         print("+ indice_corsi.json vuoto (segnaposto)")
-    if "--completo" in sys.argv[1:]:
-        _per_ateneo()
-    else:
-        removed = _pulisci_per_ateneo()
-        if removed:
-            print(f"- {removed} file per ateneo tolti dagli asset (si scaricano nell'app)")
+    removed = _pulisci_vecchie()
+    if removed:
+        print(f"- {removed} file per ateneo tolti dagli asset (si scaricano nell'app)")
     print(f"{copied} file copiati in {DEST.relative_to(ROOT)}")
     return 0
 

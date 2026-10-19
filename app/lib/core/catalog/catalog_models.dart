@@ -624,7 +624,9 @@ class CorsoDettaglio {
   }
 }
 
-/// Contenuto di `corsi/<id_ateneo>.json`.
+/// Contenuto di `per_corso/<ateneo>/<corso>.json` (un solo corso in
+/// [corsi]) o di `corsi/<ateneo>.json` (tutti i corsi, file delle versioni
+/// precedenti).
 class CorsiAteneo {
   const CorsiAteneo({
     required this.universitaId,
@@ -673,6 +675,8 @@ class MetaAteneo {
     this.esami,
     this.file,
     this.sha256,
+    this.perCorso,
+    this.sha256PerCorso,
   });
   final int? corsi;
   final int? insegnamenti;
@@ -681,6 +685,11 @@ class MetaAteneo {
   final String? file;
   final String? sha256;
 
+  /// Indice dei file per corso (`per_corso/<ateneo>/indice.json`) e sua
+  /// impronta: se non cambia, nessun corso dell'ateneo è cambiato.
+  final String? perCorso;
+  final String? sha256PerCorso;
+
   factory MetaAteneo.fromJson(Map<String, Object?> m) => MetaAteneo(
     corsi: asInt(m['corsi']),
     insegnamenti: asInt(m['insegnamenti']),
@@ -688,6 +697,8 @@ class MetaAteneo {
     esami: asInt(m['esami']),
     file: asString(m['file']),
     sha256: asString(m['sha256']),
+    perCorso: asString(m['per_corso']),
+    sha256PerCorso: asString(m['sha256_per_corso']),
   );
 }
 

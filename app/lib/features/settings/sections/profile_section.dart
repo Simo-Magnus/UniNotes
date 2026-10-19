@@ -31,7 +31,7 @@ class _ProfileData {
   final DatabaseMeta? meta;
   final Ammissione? ammissione;
 
-  /// Dati dell'ateneo del profilo salvati sul dispositivo.
+  /// Dati del corso del profilo salvati sul dispositivo.
   final AteneoSulDispositivo? dati;
 
   /// Percorsi del corso di laurea, se sono più d'uno.
@@ -46,7 +46,7 @@ class ProfileSection extends StatelessWidget {
 
   static Future<_ProfileData> _load(AppServices s) async {
     final p = await s.profiles.load();
-    // requisiti di accesso dalla copia salvata del file dell'ateneo (niente
+    // requisiti di accesso dalla copia salvata del file del corso (niente
     // rete: se manca si scarica con «Riprova», non aprendo le Impostazioni)
     final file = p == null
         ? null
@@ -64,11 +64,11 @@ class ProfileSection extends StatelessWidget {
       await s.catalog.localMeta(),
       corso?.ammissione,
       percorsi != null && percorsi.daScegliere ? percorsi : null,
-      p == null ? null : await s.catalog.datiAteneo(p.universityId),
+      p == null ? null : await s.catalog.datiCorso(p.universityId, p.degreeId),
     );
   }
 
-  /// «Dati dell'ateneo»: spazio occupato e data dell'ultimo download.
+  /// «Dati del corso»: spazio occupato e data dell'ultimo download.
   static String _datiLabel(AteneoSulDispositivo d) {
     if (!d.corsi) return 'non ancora scaricati';
     return [
@@ -133,9 +133,9 @@ class ProfileSection extends StatelessWidget {
                   ].join(' · ').ifEmpty('non ancora scaricato'),
                 ),
                 if (d.dati case final dati?)
-                  InfoRow('Dati dell\'ateneo', _datiLabel(dati)),
+                  InfoRow('Dati del corso', _datiLabel(dati)),
                 InfoRow('Indirizzo', d.baseUrl),
-                // percorso dal catalogo ma dati dell'ateneo non scaricati
+                // percorso dal catalogo ma dati del corso non scaricati
                 // (es. primo avvio offline): avviso con «Riprova»
                 if (p != null && !p.manual && d.dati?.corsi == false)
                   CatalogOfflineNotice(onRetry: () => _refresh(context)),
