@@ -22,7 +22,7 @@
    "file": "corsi/iulm.json",
    "sha256": "2afcc5b71a770ff05a023b2119cdb969d775fe10d133ed80f1e0f7302cfb9df8",
    "per_corso": "per_corso/iulm/indice.json",
-   "sha256_per_corso": "1591b2bdbae646601ed472a97584e6828faf7274b86b8d1bcdb3ae7cf3c0f071"
+   "sha256_per_corso": "40f04ac1c0de926f0c02fd6d64519b142441f07c65d76c16873dc97f79021c47"
   },
   "unibz": {
    "corsi": 29,
@@ -42,7 +42,7 @@
    "file": "corsi/unilink.json",
    "sha256": "cea78b1cbe4ec1f880f754974cf8834625628ea38a54168b60814c9e8ae7d1ff",
    "per_corso": "per_corso/unilink/indice.json",
-   "sha256_per_corso": "81e6f0df3a264ae4264e9e919c1bb3e68aa602135987bd3dc4d2cd61a2082cca"
+   "sha256_per_corso": "0100b22a5aa3d0d081cee1e6426f901a3ea5f3e65a96cb2c5382a560f02ab002"
   },
   "liuc": {
    "corsi": 7,
@@ -52,7 +52,7 @@
    "file": "corsi/liuc.json",
    "sha256": "2455a402b57c6fb87b4e65dfbae1243ee7fb8373ee282e77f37fdd945cd23b05",
    "per_corso": "per_corso/liuc/indice.json",
-   "sha256_per_corso": "1e0c64c237334e0940dc10dab705ee33f7bf9a03aed4f7f6253cb8a8db3635bc"
+   "sha256_per_corso": "102c2cb92b025318acc48cb79ff54a2ca739e987066b763a7b3e30271029039f"
   },
   "luiss": {
    "corsi": 19,
@@ -62,7 +62,7 @@
    "file": "corsi/luiss.json",
    "sha256": "7bf8eda2a8ff87ecb6e78deca6dc7873a76a4fdb9b0de4a2f074e0fcdf349869",
    "per_corso": "per_corso/luiss/indice.json",
-   "sha256_per_corso": "4424479561d11d5b13d15ca74849250a03f6342763d7479533a52960dc912e71"
+   "sha256_per_corso": "8ca8ec5c6878f46ae5bebd02757800a0c00bd2182f1383a22daeee2d6373069d"
   },
   "lum": {
    "corsi": 13,
@@ -72,7 +72,7 @@
    "file": "corsi/lum.json",
    "sha256": "c7cdf64173859da5128bf39a9592e584e5e3ff77656f0da7c381a0f2dd874244",
    "per_corso": "per_corso/lum/indice.json",
-   "sha256_per_corso": "ab6df2b56bac01fd51a66ba6a5393b886dafa6400bf290250c69ea2d949c3261"
+   "sha256_per_corso": "c6d407fd9d5f46a637f4b3e3ae3f5ca504e2366b55d605549deea5f9d5fc839b"
   },
   "lumsa": {
    "corsi": 26,
@@ -82,7 +82,7 @@
    "file": "corsi/lumsa.json",
    "sha256": "4c5763861b51682afe72711334d79ca315d6f82841d827a8e61ae348c347227f",
    "per_corso": "per_corso/lumsa/indice.json",
-   "sha256_per_corso": "1a2046c036a7c5db7b0a56d5b139b5ba70d235da6fcfa99cee16597531077166"
+   "sha256_per_corso": "6c3764e867fd7a59c952468bb068be67038113cbe5e6d2f57d391c9b91c610dc"
   },
   "unicamillus": {
    "corsi": 12,
@@ -112,7 +112,7 @@
    "file": "corsi/unicampus.json",
    "sha256": "2cc4b362b529c7d5be3af70e5379f4e31f601cd7630dd79f9a89895d968deab1",
    "per_corso": "per_corso/unicampus/indice.json",
-   "sha256_per_corso": "9ccf3e28065934c5a4d6dd6d3f9ce48aca3198087ef32e6a5801a244e8c83e44"
+   "sha256_per_corso": "8046f869fda8280ab9ff87af3b403c0da0ca405cd9f491d58a47df9ecd909ebd"
   },
   "unicatt": {
    "corsi": 138,
@@ -152,7 +152,7 @@
    "file": "corsi/universitaeuropea.json",
    "sha256": "fb26a87dbfa7a8e74df84aeb969562198ced83f912bcc1f67986bc2e3031bf2a",
    "per_corso": "per_corso/universitaeuropea/indice.json",
-   "sha256_per_corso": "26ae1ba5900ba86e9a15a8220d9f87be2dea36d8d9f4279b4a0b399747149e33"
+   "sha256_per_corso": "280f6205e82b2403274ae7b438e02b9b369e26c85c033d1659458f53cb828b55"
   },
   "unint": {
    "corsi": 9,
@@ -162,7 +162,7 @@
    "file": "corsi/unint.json",
    "sha256": "d5eab49bf803c80623d2ae05efc2d5ccdf9712bd76a7d243b5dd23f315005528",
    "per_corso": "per_corso/unint/indice.json",
-   "sha256_per_corso": "b14e89519ae0c83df2c3cb665c9d5e1d80eb66b3f1242fc59b7a03200b8d2d2c"
+   "sha256_per_corso": "d46ad1e641010f46521b097d6506b66eb212c01e11e7f9d98c8cf985f1fb2195"
   },
   "unikore": {
    "corsi": 37,
@@ -172,7 +172,7 @@
    "file": "corsi/unikore.json",
    "sha256": "efb5a7d3fc94cfbccb5f2d031be26d026c0be6ee493dc48205f09043f4401b3a",
    "per_corso": "per_corso/unikore/indice.json",
-   "sha256_per_corso": "6da9505589b28847ba48ee502679739bcd4dc7fb37012ecb8cedd3448c19791b"
+   "sha256_per_corso": "c3df7adca265fe33707e7329ee76a9b3ef81ce77909834f1f8db9977edb29de8"
   },
   "unisob": {
    "corsi": 18,
@@ -192,7 +192,7 @@
    "file": "corsi/univda.json",
    "sha256": "11f3ae4c51b3112a43d7a5a4bb3c0693280754b89aa9b0b5aa2b148247599c08",
    "per_corso": "per_corso/univda/indice.json",
-   "sha256_per_corso": "882ebe490274d37f98ab68e8e5d66c6a6f0e53d40ab0acf63d79106a131c7ab7"
+   "sha256_per_corso": "1f8e5ec983962eb96ac2b2108e351482d7be6ff16cb828f5eb4fd1eed84a8bc8"
   },
   "unidarc": {
    "corsi": 3,
@@ -212,7 +212,7 @@
    "file": "corsi/unisr.json",
    "sha256": "a62cbaedc6c49765ae3f0b7be71f05bab5db4ab590298244ef52311ac59fdf56",
    "per_corso": "per_corso/unisr/indice.json",
-   "sha256_per_corso": "656918f99e72d84dedf6f59ced729f2413c337c05f8239dacae5171d3ccb3b54"
+   "sha256_per_corso": "3dd783599d885ad7163b33a1faf131d016fa8a4de1f84f35ac00280708985d93"
   },
   "casd": {
    "corsi": 0,
@@ -312,7 +312,7 @@
    "file": "corsi/poliba.json",
    "sha256": "0e805cc5271dcb136cfb86afad6d56ea96734e38b71b76ae36cb5477f0674dce",
    "per_corso": "per_corso/poliba/indice.json",
-   "sha256_per_corso": "8701089eba426d5ed26efbaadc01fa4499a9278e8e7955767d27f33e5e105bf9"
+   "sha256_per_corso": "a482462f1ef85afa3a009cf32121d8191c80af6907b9143c16f039f575e9fcbc"
   },
   "polimi": {
    "corsi": 76,
@@ -322,7 +322,7 @@
    "file": "corsi/polimi.json",
    "sha256": "e64055c28f21d9af6fb659e4c27a120b7eb06cf1d8502b0c4543b56f5dfff25f",
    "per_corso": "per_corso/polimi/indice.json",
-   "sha256_per_corso": "08515d883dea59a1b56f64b906ebd0529ba2f21a0c165d876599ca4daae18976"
+   "sha256_per_corso": "4c8e33be97f29599775febf0eba62272cda452c6d60e68280104e29b661b9312"
   },
   "polito": {
    "corsi": 57,
@@ -332,7 +332,7 @@
    "file": "corsi/polito.json",
    "sha256": "bb3a8c3415742b07a52502389b42b6848173e02e3eae56e1d17c5565ecb9cc05",
    "per_corso": "per_corso/polito/indice.json",
-   "sha256_per_corso": "e5d979424fbade62f12f7177ae6bf8443c65527f40367aa01ff27f38f3ba910c"
+   "sha256_per_corso": "2550ec9e8d6443ff66db0d0c9106a88074af6e6ce697f4d2ac23146332c9a0ef"
   },
   "unimol": {
    "corsi": 45,
@@ -342,7 +342,7 @@
    "file": "corsi/unimol.json",
    "sha256": "baa732d4d99ede625dc0de4f48ac743166338c572f04c3ea99ddc899a393d4c8",
    "per_corso": "per_corso/unimol/indice.json",
-   "sha256_per_corso": "2042d709803b6c2c212e34655a731d4d931aadf44ce2a429f974eea145ef0a72"
+   "sha256_per_corso": "0986de959a0f6f17ff634bfd8ee47520b64a34c2acc792e4cf366b2709c6808e"
   },
   "uniupo": {
    "corsi": 54,
@@ -352,7 +352,7 @@
    "file": "corsi/uniupo.json",
    "sha256": "e723e58800183a2f2e9ff026cbea160107c0fde6c6a3c58b6af36278a44bacb5",
    "per_corso": "per_corso/uniupo/indice.json",
-   "sha256_per_corso": "68042fc511ea06ed4108a891e3b070c86e46c859af6f356cfd6c1ea9f01c8509"
+   "sha256_per_corso": "84bc8cad3d45357db4592e99d5a3bf3346d74914fa505ae8d9f0f6607fe6e246"
   },
   "unisalento": {
    "corsi": 78,
@@ -362,7 +362,7 @@
    "file": "corsi/unisalento.json",
    "sha256": "621cbd6dcd1a8b2d46f14537c5ea9a5df3a3ed443a915ca4b2c1e1b15ae27e09",
    "per_corso": "per_corso/unisalento/indice.json",
-   "sha256_per_corso": "54cfe300192264313af34103c916610c6f6e8a28d5a993d64f17f0cbc47e7920"
+   "sha256_per_corso": "fe584366d2e8d376bf35c582a81b2430f88d01320a39432f32d5a547996da1ee"
   },
   "unisannio": {
    "corsi": 23,
@@ -372,7 +372,7 @@
    "file": "corsi/unisannio.json",
    "sha256": "6151c5242e8c886f348cbebd896d51901268be03c306df96e7015d4308323c73",
    "per_corso": "per_corso/unisannio/indice.json",
-   "sha256_per_corso": "f81c471ddcc0d4e0800ff5fb8f82a89e09ae0d1009fdf9548126a2a16c0a387b"
+   "sha256_per_corso": "e552ea8b5de78cdd80511adf9e9cd4f57e9aab48a7cd094648b5d3a212754d4a"
   },
   "uninsubria": {
    "corsi": 49,
@@ -382,7 +382,7 @@
    "file": "corsi/uninsubria.json",
    "sha256": "2ee289c14c1b773b9d671f712b3d1cd7ca4402114ec7a3e4f6866ae18a99e846",
    "per_corso": "per_corso/uninsubria/indice.json",
-   "sha256_per_corso": "6cc89876d374c7dc114c806e581cfdd0108a97fa6e6ef6c66d9c2304557a8513"
+   "sha256_per_corso": "65047a83a17506d9a6bc7d48876b7adf8a74f92d1e3dcbed50897ff4a000af87"
   },
   "unibas": {
    "corsi": 36,
@@ -392,7 +392,7 @@
    "file": "corsi/unibas.json",
    "sha256": "5f78516116791bfd9aa0e748cc40b59fceab4982ba2e3fbfd2fbfe3004c181a2",
    "per_corso": "per_corso/unibas/indice.json",
-   "sha256_per_corso": "3c98542306cfe8fa730deee917914a4cebd3daa3d31bccfe528d4e232922b7c6"
+   "sha256_per_corso": "1d8a1dbfc80a733447d8e82687bc2ffa8e4f84dbdec52b01d7e0e73170df4330"
   },
   "unicampania": {
    "corsi": 92,
@@ -402,7 +402,7 @@
    "file": "corsi/unicampania.json",
    "sha256": "ff43d30a1a84de73f5cc9c759bec4710043437ce5e66f30cbf97af3358c80cf7",
    "per_corso": "per_corso/unicampania/indice.json",
-   "sha256_per_corso": "f5af7fd65c1390a9836f12ec52ce79e209a2eb8d2b743800aafeadd33775d1c3"
+   "sha256_per_corso": "761930017b5d32ef586e405355886c3f4b46fa1e285416a0cf0ca6060c8b07e5"
   },
   "unitus": {
    "corsi": 44,
@@ -412,7 +412,7 @@
    "file": "corsi/unitus.json",
    "sha256": "164c6bfabd1c5c926cee5d46730b239f1f73d1b7161e052ab3446588af2d7693",
    "per_corso": "per_corso/unitus/indice.json",
-   "sha256_per_corso": "04d4f6ea458666b5cc31d561ddbdb55dd09e18aa8f8f3bd7f9c274c7231b8628"
+   "sha256_per_corso": "c688ae1a8e84c3ab169855ae6bf9fde2b69dc7019b577ceb35ea4a91610011d1"
   },
   "univaq": {
    "corsi": 74,
@@ -422,7 +422,7 @@
    "file": "corsi/univaq.json",
    "sha256": "a154b62d3065a264ee04b5e4e8d348d768199901ad413592592c39dcd134aa54",
    "per_corso": "per_corso/univaq/indice.json",
-   "sha256_per_corso": "88709283be9d4b5e66c0669d53fc703edb6f563aa779b78bc6fc732f5bba5917"
+   "sha256_per_corso": "d9fd8bcf1f62eb6a46ceb973cd23981c9bce23c77380ca3231129052b434cd09"
   },
   "uniba": {
    "corsi": 156,
@@ -432,7 +432,7 @@
    "file": "corsi/uniba.json",
    "sha256": "e4e181062cb5a04698fbc5e5f1c1ef55f136dc1b409eac8c343de77e8ce15d46",
    "per_corso": "per_corso/uniba/indice.json",
-   "sha256_per_corso": "047fa5b2f3b70ad6908e79279dd451844608a16f7d07e80213b2d365ae685a73"
+   "sha256_per_corso": "11e9a761f5c8988b9febb7da446cfd596fa766f67163ef2cd14d0b2a7d67479f"
   },
   "unibg": {
    "corsi": 56,
@@ -442,7 +442,7 @@
    "file": "corsi/unibg.json",
    "sha256": "6a1cb6194e719f1f9d096966b49872621b3209b18cc6ffa9df0f92f0305c72aa",
    "per_corso": "per_corso/unibg/indice.json",
-   "sha256_per_corso": "fbe6fbfff9a840efaf98af8a12d4169166aaeb7c40356cf73dadef3f50662095"
+   "sha256_per_corso": "be8bc76779149d7d0f344ca4c09ca78000ce027d49d91004929b4e35d2023080"
   },
   "unibo": {
    "corsi": 256,
@@ -452,7 +452,7 @@
    "file": "corsi/unibo.json",
    "sha256": "dcec1c57f00e4f514bcf9d0ae2332c8254ddcaaab4548142e702f427a0566776",
    "per_corso": "per_corso/unibo/indice.json",
-   "sha256_per_corso": "08a5e7dcd1985374c3dab2dce87db9a44db1386a9ce3228260730d17df620879"
+   "sha256_per_corso": "7e81a615f9f293acf54815d3736a9c11c2fb2753970404f434b11b054795f723"
   },
   "unibs": {
    "corsi": 69,
@@ -462,7 +462,7 @@
    "file": "corsi/unibs.json",
    "sha256": "0a41aeb53670929b877a94d7906304485e7966975132aef5c6e1cd64efe4e367",
    "per_corso": "per_corso/unibs/indice.json",
-   "sha256_per_corso": "81630232f2f440a24d638c57865ceab83c6cf8c74cf2466095df9a8e26650c21"
+   "sha256_per_corso": "25e89a8c4d5a5f60ae6b0be362a393bdb2e8d013c8ca5a3ba692622be3259500"
   },
   "unica": {
    "corsi": 103,
@@ -472,7 +472,7 @@
    "file": "corsi/unica.json",
    "sha256": "40f26253f1db06838bf9524d7e8a9da05ad49f8f3a8ab0c2c68a735d1a9d1702",
    "per_corso": "per_corso/unica/indice.json",
-   "sha256_per_corso": "35d12b8142e83ab894a4f63b917b32010428cdde422f0b4011983b08bdc61316"
+   "sha256_per_corso": "4ac508f22d8a5caa4001d2c69cb6568a916a8f09103692b3cc17bb2e44891790"
   },
   "unicam": {
    "corsi": 33,
@@ -482,7 +482,7 @@
    "file": "corsi/unicam.json",
    "sha256": "7e0cf201934b7941b91aa3a93d830b5f880fa33f95c2b07a154c0c10af0cc102",
    "per_corso": "per_corso/unicam/indice.json",
-   "sha256_per_corso": "81e8170b9eb54e34b6ad84cf461d42a4e00024f01c6af37295f7810660661d7a"
+   "sha256_per_corso": "05116e03df270aba376ab4d76358100a2253643b6d56664a6484452125cc66bd"
   },
   "unicas": {
    "corsi": 38,
@@ -492,7 +492,7 @@
    "file": "corsi/unicas.json",
    "sha256": "b071e2f8b86ed7135eba3eb4414ec82d94f506967fe53f8c6c0cad64892f1db2",
    "per_corso": "per_corso/unicas/indice.json",
-   "sha256_per_corso": "6fa08ed0a5791ea36b5a5e7fc161baa56db34dba7f8a6bcf2f94017c2e8ee668"
+   "sha256_per_corso": "923a7302f84d35f15c8438485b7e7a62cb0685f082542caef0d46f1e999b6ab1"
   },
   "unict": {
    "corsi": 115,
@@ -502,7 +502,7 @@
    "file": "corsi/unict.json",
    "sha256": "a5e522ac1311fd37009a18562c0b02cfa37bad6a69123279ecb2df26085c5524",
    "per_corso": "per_corso/unict/indice.json",
-   "sha256_per_corso": "36031ab929717baa8728acc7466424a1b9034f1f051212e5f49804dbd5cc9c9c"
+   "sha256_per_corso": "026773ae5525ae0861245a108529aab05a26b964ad1debe5f80097c71c271acf"
   },
   "unicz": {
    "corsi": 41,
@@ -512,7 +512,7 @@
    "file": "corsi/unicz.json",
    "sha256": "1804e149736504d6e5b79af5e508f3d4296d2e08c3c5a3ee156efc313f9847e9",
    "per_corso": "per_corso/unicz/indice.json",
-   "sha256_per_corso": "a2978088817f0a63a2690ab8249bf7121131eb9341c80219f822997b28c2451b"
+   "sha256_per_corso": "1b390990fb3279e1ae267a828130b2ebccd0e7f84ebad23db6e244b2c9bff94f"
   },
   "unich": {
    "corsi": 77,
@@ -522,7 +522,7 @@
    "file": "corsi/unich.json",
    "sha256": "cf189b31600569955707badb6cf75226d1646fceea3aff9ae1d7fe9f391215c4",
    "per_corso": "per_corso/unich/indice.json",
-   "sha256_per_corso": "39c7359a6c47c1779f016c621cf29d54b7bb8946c5b838638f10ae79ca1bfd55"
+   "sha256_per_corso": "1b761963a6f9eeac5c64e26ea36dc793cf002883bd25aead011795ff39006b52"
   },
   "unife": {
    "corsi": 79,
@@ -532,7 +532,7 @@
    "file": "corsi/unife.json",
    "sha256": "3b8114ba6190c6087013310cf2ea0b6bf6239d3835991b214ce405654bf26fd6",
    "per_corso": "per_corso/unife/indice.json",
-   "sha256_per_corso": "0632ccb82857ade30d584528d0cdb297ae73db16201a60ba988c89a2fab89c39"
+   "sha256_per_corso": "f05e74fcd3ce893b5faecd2ee866030bcd774b0838aa23a347cfe425b0890505"
   },
   "unifi": {
    "corsi": 152,
@@ -542,7 +542,7 @@
    "file": "corsi/unifi.json",
    "sha256": "5670f77118c9343f376b0e4a9e246a5afcd56df2850cdfed5f1d5594e3f5f8f6",
    "per_corso": "per_corso/unifi/indice.json",
-   "sha256_per_corso": "4674c4b095fb3ecb1f08bb6ff2edeebec15abb82b7d86d032783a75f90a5390a"
+   "sha256_per_corso": "0b109ead5ce40d58d3597847afccf1514b09234bb798a167cd76e3bc14aa9e1c"
   },
   "unifg": {
    "corsi": 56,
@@ -552,7 +552,7 @@
    "file": "corsi/unifg.json",
    "sha256": "e2f315549d757ec8662e961b3ac68eb90bfd9060031da7a0d9e9bfe33352c45d",
    "per_corso": "per_corso/unifg/indice.json",
-   "sha256_per_corso": "7b21b8a9c377e3f2265a048f8e05b75f9140e59baccf1aa2df5801d59191dbd6"
+   "sha256_per_corso": "a4989e69b4ab4dd9e88413283146c8301054dc22a08d6e94d848b4253a84cffc"
   },
   "unige": {
    "corsi": 148,
@@ -572,7 +572,7 @@
    "file": "corsi/unimc.json",
    "sha256": "5c7c1c24a1f198ad5630847ca21ba60870ff537667364173cc8c3a00731aed9b",
    "per_corso": "per_corso/unimc/indice.json",
-   "sha256_per_corso": "9208d9f5c17bcf9f09c0fbbafd5782d0174966c4bdb58c6cb586b7d499cf7d1c"
+   "sha256_per_corso": "82d7971c2bc08d27123bd2e133565430b16bdb1bffcb410f51493f111d2c1c69"
   },
   "unime": {
    "corsi": 113,
@@ -582,7 +582,7 @@
    "file": "corsi/unime.json",
    "sha256": "2230e73db647e4c1f03d46d78a4c66216b3cbfec301751cecff44b1ee0a1f376",
    "per_corso": "per_corso/unime/indice.json",
-   "sha256_per_corso": "5059e1586de2ac97f05276b6161315d602466cd2462c7948d218c0db8115f305"
+   "sha256_per_corso": "1649b02937b0b04ce3c72cff07a3b90e432bf4f283b24eafd5ffa6e986148b29"
   },
   "unimib": {
    "corsi": 88,
@@ -602,7 +602,7 @@
    "file": "corsi/unimi.json",
    "sha256": "7024c3f1e4d2b83a8b23a236ac917387d6fd3a50c0cfff2ad60b1c34779b3fbd",
    "per_corso": "per_corso/unimi/indice.json",
-   "sha256_per_corso": "509d52fafe4ae34d53b52b5e980c6022001b1134eeb1be97269e3af24c38152d"
+   "sha256_per_corso": "e980f11c08e90e0ccc2514e43022945b88fde03e054eed0695c1ce380ff30bd3"
   },
   "unimore": {
    "corsi": 96,
@@ -612,7 +612,7 @@
    "file": "corsi/unimore.json",
    "sha256": "05f38b80a6e2154ae1674cedf9532aab7988850f6eb56a4b63654f7af4559af0",
    "per_corso": "per_corso/unimore/indice.json",
-   "sha256_per_corso": "3e80ce24d77da520e8f0abb73bf79d945dbaac5856d5bc46b1be493091c1c469"
+   "sha256_per_corso": "18e802db2d5ef1d999725d379d17df3e772c1cdb2c92b5b7f178e1beda6ae0ed"
   },
   "unipd": {
    "corsi": 236,
@@ -622,7 +622,7 @@
    "file": "corsi/unipd.json",
    "sha256": "20bf6cf3f3e5c30b4a8c5e6c19646ef1767988e9ebaab16ad42b1a928f2d2e5c",
    "per_corso": "per_corso/unipd/indice.json",
-   "sha256_per_corso": "7d3d1c76ef9d31c8926b54f98de488c37f622759f1bd37118ac6d8ea5b1a5bef"
+   "sha256_per_corso": "f882d20294e7e8838c61ce7f0b81184ba17286c6a9803c31b1af928a0696c0a1"
   },
   "unipa": {
    "corsi": 188,
@@ -632,7 +632,7 @@
    "file": "corsi/unipa.json",
    "sha256": "a1fa65345cfb56cd642c47cfc9d29bdb2951074227eac56e191cf06cf562553e",
    "per_corso": "per_corso/unipa/indice.json",
-   "sha256_per_corso": "3ea52835dd96afd194b3c15d8c29b46d07b34d29259483041061d274413676bd"
+   "sha256_per_corso": "254163af0bbc8baf2a8a70a3fb1ecdf1f02f99c263415a6fdbe11e6dbf1d670c"
   },
   "unipr": {
    "corsi": 107,
@@ -652,7 +652,7 @@
    "file": "corsi/unipv.json",
    "sha256": "ab128400e755e0653520ab605e7d0cb633a2b76269eae65e0b04bcd0c0a93a14",
    "per_corso": "per_corso/unipv/indice.json",
-   "sha256_per_corso": "f2b1ede5ba81b0dc6655dcde6061688bb7f005619b29acea2c9c89b4c65b6761"
+   "sha256_per_corso": "1b2381c5c7e8e71fb86691d3011e02e2ab36cef01e5a56ebb19cc439a88b560a"
   },
   "unipg": {
    "corsi": 100,
@@ -662,7 +662,7 @@
    "file": "corsi/unipg.json",
    "sha256": "adc88f792bed68c51750b8aa1ebba98655b51b30aab902d83987ae9db7d23cba",
    "per_corso": "per_corso/unipg/indice.json",
-   "sha256_per_corso": "b2dae8faea728166a61b56de318ffb775dfecd8aa24969edc7a0c7799b4488b2"
+   "sha256_per_corso": "cdb0b0ab5b5f53832b591f2deb97795fca2e4397a374eaca4ffbeb7825301a67"
   },
   "unipi": {
    "corsi": 156,
@@ -672,7 +672,7 @@
    "file": "corsi/unipi.json",
    "sha256": "6b66c4e77f08b23e5f867fda31180983b1b092a03c052bb45a4242b3ecb4a38b",
    "per_corso": "per_corso/unipi/indice.json",
-   "sha256_per_corso": "87c088a428a0a021d3fb87d9e1cdf34496de19269a0a7fd353107578b945dd1d"
+   "sha256_per_corso": "95ba496387f7785348ebb108cc757fbe3c918b551564547ec05fdc18ce8489cb"
   },
   "unirc": {
    "corsi": 26,
@@ -682,7 +682,7 @@
    "file": "corsi/unirc.json",
    "sha256": "ac062e76f56ae0076c9d041cfe5c28385327960cee0cc38a4f727b486fd1d68e",
    "per_corso": "per_corso/unirc/indice.json",
-   "sha256_per_corso": "cb628390053784239756dab5ac6b6cabdb60556bf69c389a46db8df9adc3cdf8"
+   "sha256_per_corso": "7cccafb38c128fdb2aa4fa0e7c3a29ce121cd3e683287c19f091b0a0ffd0d799"
   },
   "uniroma3": {
    "corsi": 86,
@@ -692,7 +692,7 @@
    "file": "corsi/uniroma3.json",
    "sha256": "b544dfc6c64d22f45a5ec8cb8d892af890c97978e18cfa773ac8cb86f769565c",
    "per_corso": "per_corso/uniroma3/indice.json",
-   "sha256_per_corso": "f1a828ff980d6dacd9c72d05636f1bd919a69937e769ea7fb4d97b16aecfda1b"
+   "sha256_per_corso": "acefa4ad457069b43e0c8484f4c55cc6f17305b94dcb8468f77874e1f5586687"
   },
   "uniroma4": {
    "corsi": 8,
@@ -702,7 +702,7 @@
    "file": "corsi/uniroma4.json",
    "sha256": "17d8fc85f5e4605343579eb3178e103607ce4bf92503a41c6ff2d6b9ae5e732a",
    "per_corso": "per_corso/uniroma4/indice.json",
-   "sha256_per_corso": "597a31ac97559fbd7116c3a5128ed094784d966f13824e83fcc3a9fde336a2bb"
+   "sha256_per_corso": "de501d9bf509ddac06a4314fc93d3c516ad0327e4c47a15e423d241bfc3dc59d"
   },
   "uniroma1": {
    "corsi": 312,
@@ -712,7 +712,7 @@
    "file": "corsi/uniroma1.json",
    "sha256": "9849de3c7d30dd26c84b8c577ab2ec33d10bb4962d7465f85ceae6fb64592fe2",
    "per_corso": "per_corso/uniroma1/indice.json",
-   "sha256_per_corso": "5f944fd21e3799fbd461ecfc55e12509dfbe29ccd0e9ac5c52aa882908edbd6d"
+   "sha256_per_corso": "02df324632c686c660498aee5ce1265f453fbc7f37049e65b71b7df2bbcfef7a"
   },
   "uniroma2": {
    "corsi": 123,
@@ -722,7 +722,7 @@
    "file": "corsi/uniroma2.json",
    "sha256": "1d0f5a36b19d39c827d4589a11e562dbd5fa3ee8a651824c07ed548ae7f9d2b6",
    "per_corso": "per_corso/uniroma2/indice.json",
-   "sha256_per_corso": "ae8ebf077fa3746130fc42e9cfade7dc357c2a2f27db20bdf913d185d675208e"
+   "sha256_per_corso": "3548bd9b78f66ae1d0fad5d4da33cce50de57d30c776b77813950d9f8e0b0bf4"
   },
   "unisa": {
    "corsi": 102,
@@ -732,7 +732,7 @@
    "file": "corsi/unisa.json",
    "sha256": "bc3b6de599e26346f5a8a043e52b9e8ad07a5eef48897fdbe62ebc0384089826",
    "per_corso": "per_corso/unisa/indice.json",
-   "sha256_per_corso": "0c27dade9219240db6af16a1fd6ed00aa5721f571cac0a5582e134b567f81a27"
+   "sha256_per_corso": "90e325123686abededfe666a4399742ace0507b7831f2064980e2b3f14222d99"
   },
   "uniss": {
    "corsi": 78,
@@ -742,7 +742,7 @@
    "file": "corsi/uniss.json",
    "sha256": "63e8ad599f7b253e9c3fe854c297cf335af78e4244d3b09c0ec499f3a526dbaa",
    "per_corso": "per_corso/uniss/indice.json",
-   "sha256_per_corso": "d2318e9b4c90419f40dfebc81cde539b9cf8e3699b6d3cfbac359e05ce1fe267"
+   "sha256_per_corso": "f2fab2d27566cb2ce7a83e078263c42caf691b0f9f6a6228688e12a12c44f29b"
   },
   "unisi": {
    "corsi": 79,
@@ -752,7 +752,7 @@
    "file": "corsi/unisi.json",
    "sha256": "d404fbae5200cfe27c778237d1ecbe40ffbbbe1a6535de2364f15a29f9cc719c",
    "per_corso": "per_corso/unisi/indice.json",
-   "sha256_per_corso": "a9c2715af070c854cb881c2e289f361bd76bde129086f151a42d1a4c79fab4df"
+   "sha256_per_corso": "cf6a00af8fa83ecf551da48cc9b5c27cf8e44a7ea6567b6b4b32a00c7d93c54b"
   },
   "unite": {
    "corsi": 27,
@@ -762,7 +762,7 @@
    "file": "corsi/unite.json",
    "sha256": "66af34ce44ce894d9f903c1aa492db9f82483c8296651dd3466fa317d7deb243",
    "per_corso": "per_corso/unite/indice.json",
-   "sha256_per_corso": "daae105ca9e277ce64c446cd32b7e3bf87bdeb348dabc68bd60fd6fed821bebc"
+   "sha256_per_corso": "c1ecd3a982a06866bf30e0a5c03d39e74652b7ed1b0e61bff2670b8314889b50"
   },
   "unito": {
    "corsi": 193,
@@ -772,7 +772,7 @@
    "file": "corsi/unito.json",
    "sha256": "54958125a82df7c24c26008cccfffb602778e30212ef33c186ff78e7b2d73db8",
    "per_corso": "per_corso/unito/indice.json",
-   "sha256_per_corso": "7799d21d1a8d7f6898a1787b28a8ee0f13d8a81d6b782bf6b678dac1484871e4"
+   "sha256_per_corso": "70d68fee5062c9bfbdad14ae3e5fce38242cb245876d24939f01af647aac9c7a"
   },
   "unitn": {
    "corsi": 85,
@@ -782,7 +782,7 @@
    "file": "corsi/unitn.json",
    "sha256": "0ae208b6c94d3302a9e44275c2a623dea4e764132e156e9bee9e89c01eece667",
    "per_corso": "per_corso/unitn/indice.json",
-   "sha256_per_corso": "0ed27c7ac91dc1b26de56965eb0ea09f823b5be60d1cca0659e7c7f40ff2d71b"
+   "sha256_per_corso": "aa5aa290271df0739c620a8e30ea47ff36406573afc8118469200e598af0bde5"
   },
   "units": {
    "corsi": 80,
@@ -792,7 +792,7 @@
    "file": "corsi/units.json",
    "sha256": "cf8a6e215c1fee4aa4ce4e0c981a35787a0c946672074ddcb304b51dce948bb4",
    "per_corso": "per_corso/units/indice.json",
-   "sha256_per_corso": "197f3a50942655acd91abda0709f789e6b2205144bcf0f51bf7d3e740630be5e"
+   "sha256_per_corso": "fcf9193ae53d9028c44407f2e2ba3b3a4f815f6aa868da207d013d5d6874408c"
   },
   "uniud": {
    "corsi": 77,
@@ -802,7 +802,7 @@
    "file": "corsi/uniud.json",
    "sha256": "de5a09cf88fee9c0ee288d4a2d70c5a12268986e77dbbb6b419545a5c1879fb3",
    "per_corso": "per_corso/uniud/indice.json",
-   "sha256_per_corso": "50968e065cfdd5f21dcc6776e0aafc7181c4465d7195e9130e24451ccf1eb59e"
+   "sha256_per_corso": "27e5e48618fa1da7bf3327b1237805d7d87381fbca1884a6dbfbe813996aee2c"
   },
   "uniurb": {
    "corsi": 43,
@@ -812,7 +812,7 @@
    "file": "corsi/uniurb.json",
    "sha256": "8b8eed019278b0e5af8985ff0300f1a0ad36ec9d382fd1594ecc47bb4d1c6af0",
    "per_corso": "per_corso/uniurb/indice.json",
-   "sha256_per_corso": "397e50fcaea00c52f87615ab2f2522466466bbd1ac90b744651342d24bb95b5a"
+   "sha256_per_corso": "89af91d135794af96e3da386abf8bc4c9f59e92d1bbb9216fcb064412188a3fd"
   },
   "unive": {
    "corsi": 64,
@@ -822,7 +822,7 @@
    "file": "corsi/unive.json",
    "sha256": "29d8cefc9ac42b5ff5dcaf93726b493d87c76351d9c2a962aa8f3cb093525936",
    "per_corso": "per_corso/unive/indice.json",
-   "sha256_per_corso": "a73d9a940da8b818dd40827da4829906f77ddd8c861470f3ed3a6a24613f8f89"
+   "sha256_per_corso": "3c674593c4cac195b5ce6a4f1a76302c929a10141373505754da8e96d39c4015"
   },
   "univr": {
    "corsi": 92,
@@ -842,7 +842,7 @@
    "file": "corsi/unina.json",
    "sha256": "8152f3a56bca18037fb57f8224167abeb9b3aedd53e457f21fc79af690b259b2",
    "per_corso": "per_corso/unina/indice.json",
-   "sha256_per_corso": "49ae39c1dd5ba98104b15381ca96ce5e42de87dbbb96a8c4d5d22b5ab519cfbd"
+   "sha256_per_corso": "7ad2d01512d412536d9131c0cf4a0edbd90406c6fd0f214340c4029494b729ab"
   },
   "unior": {
    "corsi": 16,
@@ -852,7 +852,7 @@
    "file": "corsi/unior.json",
    "sha256": "a8d503915b6ef702b2e6ec72a7bdfa2c8fb95967e802c05e6583cf0f580a5bcf",
    "per_corso": "per_corso/unior/indice.json",
-   "sha256_per_corso": "9d272a7c631f7bb2042fc62a7c72972871649556fe1a5c289abb124f0b72daf6"
+   "sha256_per_corso": "89a73d14d4f5f1c9b03e0a24f963abb6b6d6cf7d5ab6d780fb1f7f4f5f7aae2b"
   },
   "uniparthenope": {
    "corsi": 39,
@@ -862,7 +862,7 @@
    "file": "corsi/uniparthenope.json",
    "sha256": "10b5916a04c04b03452d7872e35d9c6b0534bb297df51f30f50d41240c8b309c",
    "per_corso": "per_corso/uniparthenope/indice.json",
-   "sha256_per_corso": "cbae3cfc98dfa39c33ec14646a0bd8c58d7c9d38655a53d8a9be479a61087c87"
+   "sha256_per_corso": "af50103d9d44f3d0741bd97a82c86d4b703abebff644ba3fbe8df8b39d6b1863"
   },
   "unical": {
    "corsi": 84,
@@ -872,7 +872,7 @@
    "file": "corsi/unical.json",
    "sha256": "200b72eb6b1589941d8e5fd421a89c848ac0209fc9fb1468f832c3675b0f9662",
    "per_corso": "per_corso/unical/indice.json",
-   "sha256_per_corso": "5946308067c1e996dc017f60acb056505974e02736774bd94f8b4463fd4664a7"
+   "sha256_per_corso": "49c54dae0ad3fd67162bda63929e5e885cea9551927796b113171281f925597f"
   },
   "iuav": {
    "corsi": 18,
@@ -882,7 +882,7 @@
    "file": "corsi/iuav.json",
    "sha256": "1d4c6ccc7fb6b0605219e06db7149c6ea2a1d0463090c64baf6a96a3654d94ca",
    "per_corso": "per_corso/iuav/indice.json",
-   "sha256_per_corso": "96db103b240e4330f784bce39711997cf49777bc8dd2ac1583e0d29e01b47f0b"
+   "sha256_per_corso": "cd012e066ecd3bdde1e6b8ba2965975e04f50e5f05377a3df2b94f1ff58dd875"
   },
   "unistrapg": {
    "corsi": 7,
@@ -892,7 +892,7 @@
    "file": "corsi/unistrapg.json",
    "sha256": "4c4d0089e76993e0f020bb48b34e3683ea15505deb9ece978b1d4f6953d4c6c7",
    "per_corso": "per_corso/unistrapg/indice.json",
-   "sha256_per_corso": "3d02daab476a9d24886ddd295d85b05a1eb262a5a9799ffbb5381715f25ed230"
+   "sha256_per_corso": "06e8376edb9cbabd3d948f6ee1cce40011b0bf0dd5acf146c79aaf68fbeadacc"
   },
   "unistrasi": {
    "corsi": 8,
@@ -902,7 +902,7 @@
    "file": "corsi/unistrasi.json",
    "sha256": "7da4e78e5ffe19b541695e8f05cf15b950eb43d11e667fcc25dc9f0824c4e214",
    "per_corso": "per_corso/unistrasi/indice.json",
-   "sha256_per_corso": "8e50692b3bf1172c0a649281d9cfb0d3687e02f5bae7b90e4a794521c300f9a6"
+   "sha256_per_corso": "a476be27bb6a2c165192f00a96609aeda13d8e262145450dab9b86b404874dfc"
   },
   "univpm": {
    "corsi": 73,
@@ -912,7 +912,7 @@
    "file": "corsi/univpm.json",
    "sha256": "e923bb21f233e95c71a7dfb352fa3fc83f14a6faf2861b0da2d5772bbe2b1e11",
    "per_corso": "per_corso/univpm/indice.json",
-   "sha256_per_corso": "bdba768c2c9aa63a7aaeb51b4e2bfa092e7125f43103a38f7dcc2f6b5c9a47cb"
+   "sha256_per_corso": "75ef640cd28c01ae50517c1dcb2a5c91ae02d302d8a2de898ba215ae253d1752"
   },
   "uniecampus": {
    "corsi": 38,
@@ -922,7 +922,7 @@
    "file": "corsi/uniecampus.json",
    "sha256": "5ebcd5aa2c6058b19e6d4a53d9b9e49d8f6f4cbbfdd5158bdfb5f18056dff6df",
    "per_corso": "per_corso/uniecampus/indice.json",
-   "sha256_per_corso": "2a344b93fc313309bafb08ad2fe816fd9c3b40b4f54d56c0016ac49a2f7d0adf"
+   "sha256_per_corso": "7732d96e113f69c99210a12545df6c667b7e63e0b24bd3f5482b370e4fe32df0"
   },
   "unifortunato": {
    "corsi": 11,
@@ -932,7 +932,7 @@
    "file": "corsi/unifortunato.json",
    "sha256": "2fd4d0ac13248a96463c8a42b05a8d236b87bd27625d495eb1d5337f7414536b",
    "per_corso": "per_corso/unifortunato/indice.json",
-   "sha256_per_corso": "1098f8485673555b2b2b3720e43fb3edc3db88706473b20c5d722ed6d789ca98"
+   "sha256_per_corso": "31f712a28e4749eec4d76630fefddaeb9a5ef8a33eee7ac23d18896fd7ae25c9"
   },
   "unidav": {
    "corsi": 2,
@@ -942,7 +942,7 @@
    "file": "corsi/unidav.json",
    "sha256": "0c52dac0d3c7824fe8f51fcc0517d5e508d7e3379ab57fd1979a9cb38f607557",
    "per_corso": "per_corso/unidav/indice.json",
-   "sha256_per_corso": "db8d8b73ed3912e6aff4ab45c9b97739ad8ba22f179b9a6724c614e39d08fce5"
+   "sha256_per_corso": "e86cb8911a2bd5137f8fd71fc39f3bbb6276992aaba30a271ac89ba84267742a"
   },
   "uniroma5": {
    "corsi": 15,
@@ -952,7 +952,7 @@
    "file": "corsi/uniroma5.json",
    "sha256": "656c5f13cdc60f2637a1eed8c5196ff578426c6a9677f0fdda54a0d70e8a7795",
    "per_corso": "per_corso/uniroma5/indice.json",
-   "sha256_per_corso": "6c603cd2645eb416708456d3d5b27980613433be5186d640a7995ffaddf3da8c"
+   "sha256_per_corso": "13fe5ba33f6cf15fa2f95764790f242b646fc2b96dffe36b22098309fa83a03b"
   },
   "unimercatorum": {
    "corsi": 20,
@@ -962,7 +962,7 @@
    "file": "corsi/unimercatorum.json",
    "sha256": "3ccb74970b3bdabcf1e611296ad90006417f753d15b5e0ceadf8c507e7aee8c4",
    "per_corso": "per_corso/unimercatorum/indice.json",
-   "sha256_per_corso": "f699d5a1adaf46e8ca3bc96979b92538c305bd473a91e113d02e4d6b7680f4ab"
+   "sha256_per_corso": "f9c3cecc0de002f8bb6358621da529d89adc55b84cb44239a9ca1daeb421cd89"
   },
   "iul": {
    "corsi": 6,
@@ -972,7 +972,7 @@
    "file": "corsi/iul.json",
    "sha256": "80cc67422ef74a0091d54c50bfb9bf2e60eac98cf62de6c469eaca8e29ab9197",
    "per_corso": "per_corso/iul/indice.json",
-   "sha256_per_corso": "2effa3bee6a67c3dd6fe888c6c55661b2f8880c53e6c32d4793762bb45f47f32"
+   "sha256_per_corso": "5b0a8d50d7ecdaac84f5e6327dff74d125666c09f826ebe635b540ca4ca526ea"
   },
   "uninettuno": {
    "corsi": 15,
@@ -982,7 +982,7 @@
    "file": "corsi/uninettuno.json",
    "sha256": "98a3c57a7143eac4b51a454daa0bd810f56bc72ef2077bf69516abbbd1924fbc",
    "per_corso": "per_corso/uninettuno/indice.json",
-   "sha256_per_corso": "ca9b4305633e7c7de5112532416baaf754d5dba8a8ea05b4193e311d514efd72"
+   "sha256_per_corso": "bf44f5699bc203b533dccfd781901e3212acbeb66b4963c342f0c47c0b358095"
   },
   "unimarconi": {
    "corsi": 20,
@@ -992,7 +992,7 @@
    "file": "corsi/unimarconi.json",
    "sha256": "c27f631bf7d959227cd3c61ebd25815c6757432f5e7cda7b4f217ef69a4be61e",
    "per_corso": "per_corso/unimarconi/indice.json",
-   "sha256_per_corso": "6adde6b751e8cc773f0d69121ba5492c4484b28541733eee70cd41f84063e5db"
+   "sha256_per_corso": "813af1a8e46506d69f17ffe5ff8127eeb65abeaf87020b09446b23c0dacff910"
   },
   "unicusano": {
    "corsi": 27,
@@ -1012,7 +1012,7 @@
    "file": "corsi/unipegaso.json",
    "sha256": "62ff7ef801c1eed993727a21be19c02e592a6a1e79f0a71725e8dee0c4244be4",
    "per_corso": "per_corso/unipegaso/indice.json",
-   "sha256_per_corso": "751e49146d18e01c14ee06218caa7b3e74962de064027e3d686837206d966234"
+   "sha256_per_corso": "67867cb59997ebc9ed6f96b9209be424c50ba3b3e49783a1d9987f9e10b496a1"
   },
   "unitelma": {
    "corsi": 11,
@@ -1022,7 +1022,7 @@
    "file": "corsi/unitelma.json",
    "sha256": "f4cb15e090eda8d08f2df2c774ad97b6a65ff604a8c1046b6020513b89fb4825",
    "per_corso": "per_corso/unitelma/indice.json",
-   "sha256_per_corso": "bd56a89730f0660bdc103dd76fa1d2a929170110ab81c2c7d5318ad56bce241f"
+   "sha256_per_corso": "06134ec8d3229d813e7f3e47149e5dd008b4589631bd6df9641d742a3c0cc2be"
   }
  }
 }

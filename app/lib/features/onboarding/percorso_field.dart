@@ -18,10 +18,7 @@ class PercorsoField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final labels = [
-      for (final (i, p) in percorsi.scelte.indexed)
-        i == 0 ? '$p (principale)' : p,
-    ];
+    final labels = [for (final p in percorsi.scelte) percorsi.etichetta(p)];
     return DropdownButtonFormField<String>(
       key: const Key('percorso'),
       isExpanded: true,

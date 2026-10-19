@@ -9,7 +9,8 @@ e scrive:
 
 - `per_corso/<ateneo>/<corso>.json`: stessa forma di `corsi/<ateneo>.json`
   con il solo corso in `corsi`, più `moduli` (insegnamento → moduli) con i
-  moduli dei suoi insegnamenti;
+  moduli dei suoi insegnamenti; nei corsi con più percorsi, il corso ha anche
+  `percorso_classico` (vedi percorso_classico.py);
 - `per_corso/<ateneo>/indice.json`: per ogni corso l'impronta sha256 e la
   dimensione del file, così l'app riscarica un corso solo se è cambiato.
 
@@ -27,6 +28,8 @@ import json
 import pathlib
 import re
 import sys
+
+from percorso_classico import scegli as percorso_classico
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 DB = ROOT / "database"
@@ -62,6 +65,10 @@ def dividi(uid: str) -> dict | None:
             print(f"! {uid}: corso ripetuto {cid}", file=sys.stderr)
             continue
         ins_ids = {i.get("id") for i in corso.get("insegnamenti", []) if i.get("id")}
+        # corsi con più percorsi: quello da proporre già scelto
+        classico = percorso_classico(corso)
+        if classico:
+            corso = {**corso, "percorso_classico": classico}
         dati = {**testa, "corsi": [corso],
                 "moduli": {k: moduli[k] for k in sorted(ins_ids) if k in moduli}}
         testo = _scrivi(cartella / f"{cid}.json", dati)

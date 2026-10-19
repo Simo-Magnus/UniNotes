@@ -38,17 +38,31 @@ Set<String> percorsiDi(String? curriculum) {
 
 bool _comuneATutti(String percorso) => _comune.hasMatch(percorso);
 
-/// Percorsi tra cui scegliere in un corso di laurea, dal più seguito
-/// (quello con più insegnamenti, il predefinito) al meno seguito.
+/// Percorsi tra cui scegliere in un corso di laurea: prima il percorso
+/// classico (quello del database, `percorso_classico`, già scelto), poi gli
+/// altri dal più seguito (con più insegnamenti) al meno seguito.
 class PercorsiCorso {
-  const PercorsiCorso(this.scelte);
+  const PercorsiCorso(this.scelte, {this.classico = false});
 
   /// Vuoto o con un solo elemento: non c'è nulla da scegliere.
   final List<String> scelte;
 
+  /// Il primo è il percorso classico (il piano «normale» del corso), non
+  /// solo quello con più insegnamenti.
+  final bool classico;
+
   bool get daScegliere => scelte.length > 1;
 
   String? get predefinito => scelte.firstOrNull;
+
+  /// Nome da mostrare per il percorso [p]: il classico si riconosce subito.
+  String etichetta(String p) {
+    if (p != predefinito) return p;
+    if (!classico) return '$p (principale)';
+    return p.toLowerCase() == 'percorso'
+        ? 'Percorso classico'
+        : '$p (percorso classico)';
+  }
 
   /// [scelto] valido per questo corso, altrimenti il predefinito.
   String? valido(String? scelto) =>
@@ -78,6 +92,12 @@ class PercorsiCorso {
         final c = n[b]!.compareTo(n[a]!);
         return c != 0 ? c : a.compareTo(b);
       });
+    // percorso classico indicato dal database: per primo, già scelto
+    final c = corso.percorsoClassico;
+    if (c != null && list.remove(c.nome)) {
+      list.insert(0, c.nome);
+      return PercorsiCorso(list, classico: c.classico);
+    }
     return PercorsiCorso(list);
   }
 }
@@ -104,5 +124,6 @@ CorsoDettaglio soloPercorso(CorsoDettaglio corso, String? scelto) {
       for (final i in corso.insegnamenti)
         if (p.include(i, scelto)) i,
     ],
+    percorsoClassico: corso.percorsoClassico,
   );
 }

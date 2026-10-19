@@ -566,6 +566,28 @@ class Ammissione {
   }
 }
 
+/// Percorso classico di un corso con più percorsi (`percorso_classico` nel
+/// database): quello che segue la maggior parte degli studenti, già scelto.
+/// [criterio]: `nome` (nome da piano ordinario, es. «Percorso», «Generale»,
+/// «Statutario»), `unico_ordinario` (l'unico senza percorsi speciali) o
+/// `piu_insegnamenti` (percorsi tematici: quello con più insegnamenti).
+class PercorsoClassico {
+  const PercorsoClassico(this.nome, this.criterio);
+
+  final String nome;
+  final String criterio;
+
+  /// È davvero il percorso «normale» (non solo quello con più insegnamenti).
+  bool get classico => criterio == 'nome' || criterio == 'unico_ordinario';
+
+  static PercorsoClassico? fromJson(Object? json) {
+    if (json is! Map) return null;
+    final nome = asString(json['nome']);
+    if (nome == null) return null;
+    return PercorsoClassico(nome, asString(json['criterio']) ?? '');
+  }
+}
+
 class CorsoDettaglio {
   const CorsoDettaglio({
     required this.id,
@@ -582,6 +604,7 @@ class CorsoDettaglio {
     this.stato = StatoDati.daAggiungere,
     this.fonte,
     this.insegnamenti = const [],
+    this.percorsoClassico,
   });
 
   final String id;
@@ -598,6 +621,9 @@ class CorsoDettaglio {
   final String stato;
   final String? fonte;
   final List<Insegnamento> insegnamenti;
+
+  /// Percorso da proporre già scelto (corsi con più percorsi).
+  final PercorsoClassico? percorsoClassico;
 
   static CorsoDettaglio? fromJson(Map<String, Object?> m) {
     final id = asString(m['id']);
@@ -620,6 +646,7 @@ class CorsoDettaglio {
       insegnamenti: [
         for (final i in _maps(m['insegnamenti'])) ?Insegnamento.fromJson(i),
       ],
+      percorsoClassico: PercorsoClassico.fromJson(m['percorso_classico']),
     );
   }
 }

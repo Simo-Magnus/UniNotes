@@ -98,6 +98,26 @@ insegnamenti:
 }
 ```
 
+Nei corsi con più percorsi (curricula, orientamenti, percorsi speciali) il
+corso ha anche `percorso_classico`, il percorso da proporre già scelto:
+
+```jsonc
+"percorso_classico": { "nome": "Percorso", "criterio": "nome" }
+```
+
+Gli atenei non pubblicano quanti studenti seguono ogni percorso, quindi lo
+sceglie `tools/db_builder/percorso_classico.py` con regole dichiarate in
+`criterio`: `nome` (un percorso ha un nome da piano ordinario: «Percorso»,
+«Generale», «Statutario», «Standard», «Tradizionale»…; tra più piani per anno
+il più recente), `unico_ordinario` (tolti i percorsi speciali, cioè
+eccellenza, «Grow Your Talents», «INTRAPRENDENTI», doppio titolo, part-time,
+in lingua inglese, online, sedi diverse da quella del corso, percorsi da
+30/60 CFU, ne resta uno solo) o `piu_insegnamenti` (percorsi tematici come
+«Management» e «Marketing»: quello con più insegnamenti). Nell'app il percorso
+è il primo dell'elenco e già scelto, chiamato «Percorso classico» (o «<nome>
+(percorso classico)») con i primi due criteri e «<nome> (principale)» con il
+terzo; lo studente può sceglierne un altro.
+
 L'indice dell'ateneo elenca ogni corso con impronta e dimensione del file:
 
 ```jsonc
