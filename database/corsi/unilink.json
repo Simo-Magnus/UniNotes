@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unilink",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DAMSR004",
@@ -167,6 +167,30 @@
      "modalita_esame": "orale",
      "id": "unilink-l-3-dams-produzione-audiovisiva-e-teatrale-damsr025",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "DAMSR012",
+     "nome": "Lettura Espressiva e Public Speaking",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "15/09/2026 00:00:00",
+     "periodo_fine": "21/12/2026 00:00:00",
+     "cfu": 6,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Cavalcoli Marco"
+     ],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/7086/2026/9999?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unilink-l-3-dams-produzione-audiovisiva-e-teatrale-damsr012",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "DAMSR007",
@@ -1307,7 +1331,7 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "unilink-l-3-dams-produzione-audiovisiva-e-teatrale-damsr012",
+     "id": "unilink-l-3-dams-produzione-audiovisiva-e-teatrale-damsr012-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -1910,7 +1934,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea/economia-e-management-dimpresa-e-delle-istituzioni-l-18-aa-25-26",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "ECOMI063",
@@ -3269,6 +3293,30 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "ECOMI011",
+     "nome": "Corporations",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "30/04/2027 00:00:00",
+     "cfu": 9,
+     "ssd": "IUS/02",
+     "obbligatorio": true,
+     "curriculum": "(ENG) Sport Management",
+     "docenti": [
+      "Matera Pierluigi"
+     ],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/7289/2025/10003?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unilink-l-18-economia-e-management-d-impresa-e-delle-istituzioni-ecomi011",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "ECOMI019",
      "nome": "Economia degli Intermediari Finanziari",
      "anno": 2,
@@ -3848,20 +3896,17 @@
      "periodo_inizio": "15/03/2029 00:00:00",
      "periodo_fine": "11/06/2029 00:00:00",
      "cfu": 9,
-     "ssd": "IUS/02",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": "(ENG) International Management and Finance",
-     "docenti": [
-      "Matera Pierluigi"
-     ],
+     "docenti": [],
      "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7289/2026/10000?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unilink.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-10",
+     "id": "unilink-l-18-economia-e-management-d-impresa-e-delle-istituzioni-ecomi011-a3",
      "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unilink-l-18-economia-e-management-d-impresa-e-delle-istituzioni-ecomi011",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -6074,7 +6119,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -6093,7 +6138,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -6112,7 +6157,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -6131,7 +6176,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -6150,7 +6195,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -6169,7 +6214,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -6188,7 +6233,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -6207,7 +6252,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -6226,7 +6271,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -6245,7 +6290,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -6264,7 +6309,7 @@
    "url": "https://unilink.coursecatalogue.cineca.it/corsi/2026/10739",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "IGDEN993",
@@ -9210,7 +9255,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -9229,7 +9274,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -9248,7 +9293,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -9267,7 +9312,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "INGINF006",
@@ -10079,7 +10124,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "OSTEO995",
@@ -11886,7 +11931,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -11905,7 +11950,7 @@
    "url": null,
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -11924,7 +11969,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "OSTE001",
@@ -13160,7 +13205,7 @@
    "url": "https://unilink.coursecatalogue.cineca.it/corsi/2026/10500",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "SCED008",
@@ -14213,7 +14258,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "SCDS032",
@@ -15297,7 +15342,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "SCDS032",
@@ -16011,7 +16056,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "SAMSRM005",
@@ -16814,7 +16859,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "SCMT014",
@@ -17341,6 +17386,30 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt002",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "SCMT040",
+     "nome": "Narrazione Interattiva",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "30/11/2027 00:00:00",
+     "cfu": 9,
+     "ssd": "PAED-02/A",
+     "obbligatorio": true,
+     "curriculum": "Comunicazione, Marketing ed Eventi Digitali, Videogame design and production",
+     "docenti": [
+      "Marinensi Giada"
+     ],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/7146/2026/10002?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt040",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -17897,7 +17966,7 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt040",
+     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt040-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -18263,6 +18332,28 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "SCMT076",
+     "nome": "Altre Conoscenze - Anatomia del Disegno",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "30/04/2027 00:00:00",
+     "cfu": 3,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": "Videogame design and production",
+     "docenti": [],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8448/2025/10001?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt076",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "SCMT064",
      "nome": "Altre Conoscenze - Digital Filmaking And Video Production",
      "anno": 2,
@@ -18306,6 +18397,89 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt111",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "SCMT065",
+     "nome": "Altre Conoscenze - Game Development",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "30/04/2027 00:00:00",
+     "cfu": 3,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": "Videogame design and production",
+     "docenti": [
+      "Leganza Andrea"
+     ],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/7373/2025/10001?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt065",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "SCMT066",
+     "nome": "Altre Conoscenze - Game Journalism",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "30/04/2027 00:00:00",
+     "cfu": 3,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": "Videogame design and production",
+     "docenti": [
+      "Nicastro Annalisa"
+     ],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/7374/2025/10001?coorte=2025",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-11-30",
+       "docenti": "NICASTRO ANNALISA",
+       "note": null,
+       "fonte": "https://unilink.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt066",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "SCMT073",
+     "nome": "Altre Conoscenze - Laboratorio Tesi",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "30/04/2027 00:00:00",
+     "cfu": 3,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": "Videogame design and production",
+     "docenti": [],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/7381/2025/10001?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt073",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -18449,6 +18623,43 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "SCMT033",
+     "nome": "Grafica 3d II",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "30/04/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "ICAR/17",
+     "obbligatorio": true,
+     "curriculum": "Videogame design and production",
+     "docenti": [
+      "Coppola Andrea"
+     ],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/7139/2025/10001?coorte=2025",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-26",
+       "iscrizioni_al": "2026-12-01",
+       "docenti": "COPPOLA ANDREA",
+       "note": null,
+       "fonte": "https://unilink.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt033",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "SCMT035",
      "nome": "Interactive Storytelling",
      "anno": 2,
@@ -18583,111 +18794,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "SCMT076",
-     "nome": "Altre Conoscenze - Anatomia del Disegno",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2028 00:00:00",
-     "periodo_fine": "30/09/2029 23:59:59",
-     "cfu": 3,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": "Videogame design and production",
-     "docenti": [],
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/8448/2026/10001?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt076",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "SCMT065",
-     "nome": "Altre Conoscenze - Game Development",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2028 00:00:00",
-     "periodo_fine": "30/09/2029 23:59:59",
-     "cfu": 3,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": "Videogame design and production",
-     "docenti": [
-      "Leganza Andrea"
-     ],
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7373/2026/10001?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt065",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "SCMT066",
-     "nome": "Altre Conoscenze - Game Journalism",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2028 00:00:00",
-     "periodo_fine": "30/09/2029 23:59:59",
-     "cfu": 3,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": "Videogame design and production",
-     "docenti": [
-      "Nicastro Annalisa"
-     ],
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7374/2026/10001?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-10",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-25",
-       "iscrizioni_al": "2026-11-30",
-       "docenti": "NICASTRO ANNALISA",
-       "note": null,
-       "fonte": "https://unilink.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt066",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "SCMT073",
-     "nome": "Altre Conoscenze - Laboratorio Tesi",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2028 00:00:00",
-     "periodo_fine": "30/09/2029 23:59:59",
-     "cfu": 3,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": "Videogame design and production",
-     "docenti": [],
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7381/2026/10001?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt073",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "SCMT083",
      "nome": "Branding Artistico e Media Experience",
      "anno": 3,
@@ -18779,34 +18885,18 @@
      "periodo_inizio": "15/10/2028 00:00:00",
      "periodo_fine": "31/01/2029 00:00:00",
      "cfu": 6,
-     "ssd": "ICAR/17",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": "Videogame design and production",
-     "docenti": [
-      "Coppola Andrea"
-     ],
+     "docenti": [],
      "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7139/2026/10001?coorte=2024",
      "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-11",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-26",
-       "iscrizioni_al": "2026-12-01",
-       "docenti": "COPPOLA ANDREA",
-       "note": null,
-       "fonte": "https://unilink.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
+     "esami": [],
      "fonte": "https://unilink.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-10",
+     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt033-a3",
      "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unilink-l-20-scienze-delle-comunicazioni-media-e-tecnologie-digitali-scmt033",
-     "stato_esami": "completo"
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "SCMT094",
@@ -19094,7 +19184,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "STEPSI997",
@@ -20306,7 +20396,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea/scienze-politiche-diplomatiche-e-governo-delle-amministrazioni-l-36-aa-25-26",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "SCPOL003",
@@ -23431,7 +23521,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -23450,7 +23540,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "TDRMIR995",
@@ -24753,7 +24843,7 @@
    "url": "https://www.unilink.it/cds/direzione-aziendale-e-della-pubblica-amministrazione-lm-77-aa-25-26",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "CMPA003",
@@ -26358,7 +26448,7 @@
    "url": "https://www.unilink.it/cds/scienze-economiche-del-lavoro-e-dei-sistemi-socio-sanitari-lm-56-aa-25-26",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "SELS001",
@@ -27511,7 +27601,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "STPS005",
@@ -28668,6 +28758,31 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "STPS012",
+     "nome": "Governance delle Piattaforme Digitali",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "30/04/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "GIUR-03/A",
+     "obbligatorio": false,
+     "curriculum": "Studi strategici e politiche della sicurezza",
+     "docenti": [
+      "Boggio Luca",
+      "Sbarbaro Ferruccio Maria"
+     ],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/7183/2026/10001?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unilink-lm-62-studi-strategici-e-politiche-della-sicurezza-stps012",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "STPS029",
      "nome": "Language Skills - English",
      "anno": 1,
@@ -29384,7 +29499,7 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "unilink-lm-62-studi-strategici-e-politiche-della-sicurezza-stps012",
+     "id": "unilink-lm-62-studi-strategici-e-politiche-della-sicurezza-stps012-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -29538,7 +29653,7 @@
    "url": "https://www.unilink.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "TLCM003",
@@ -29600,6 +29715,28 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unilink-lm-59-tecnologie-e-linguaggi-della-comunicazione-tlcm003",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "TLCM054",
+     "nome": "Language Skills - English Language For Multimedia Communications",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "30/04/2027 00:00:00",
+     "cfu": 3,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": "(E) Interaction Design COORTE 2025",
+     "docenti": [],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/8643/2026/10001?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unilink-lm-59-tecnologie-e-linguaggi-della-comunicazione-tlcm054",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -31081,6 +31218,27 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "TLCM054",
+     "nome": "Language Skills - English Language For Multimedia Communications",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "(ENG) Interaction Design",
+     "docenti": [],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2027/8643/2026/10001?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "id": "unilink-lm-59-tecnologie-e-linguaggi-della-comunicazione-tlcm054-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "TLCM987",
      "nome": "Stage/tirocinio - 2° Anno",
      "anno": 2,
@@ -31204,28 +31362,6 @@
      "verificato_il": "2026-10-10",
      "id": "unilink-lm-59-tecnologie-e-linguaggi-della-comunicazione-tlcm025",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "TLCM054",
-     "nome": "Language Skills - English Language For Multimedia Communications",
-     "anno": 2,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026 00:00:00",
-     "periodo_fine": "30/04/2027 00:00:00",
-     "cfu": 3,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": "(ENG) Interaction Design",
-     "docenti": [],
-     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2027/8643/2026/10001?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unilink.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unilink-lm-59-tecnologie-e-linguaggi-della-comunicazione-tlcm054",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -31467,7 +31603,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "FARMA004",
@@ -32523,7 +32659,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "GIUR010",
@@ -33071,6 +33207,28 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "GIUR039",
+     "nome": "Regolamentazione del Mercato Interno Ue",
+     "anno": 2,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "30/04/2027 00:00:00",
+     "cfu": 3,
+     "ssd": "IUS/14",
+     "obbligatorio": true,
+     "curriculum": "CV Diritto ed economia",
+     "docenti": [],
+     "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2026/7554/2025/10000?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unilink.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unilink-lmg-01-giurisprudenza-giur039",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "GIUR058",
      "nome": "Diritto Amministrativo - Modulo I",
      "anno": 3,
@@ -33301,18 +33459,17 @@
      "periodo_inizio": "15/10/2028 00:00:00",
      "periodo_fine": "31/01/2029 00:00:00",
      "cfu": 3,
-     "ssd": "IUS/14",
+     "ssd": null,
      "obbligatorio": true,
-     "curriculum": "CV Diritto ed economia",
+     "curriculum": null,
      "docenti": [],
      "url": "https://unilink.coursecatalogue.cineca.it/insegnamenti/2028/7554/2026/10000?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unilink.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-10",
+     "id": "unilink-lmg-01-giurisprudenza-giur039-a3",
      "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unilink-lmg-01-giurisprudenza-giur039",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -33454,7 +33611,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MEDEC_R003",
@@ -34601,7 +34758,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -35287,7 +35444,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -35973,7 +36130,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -36659,7 +36816,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -37345,7 +37502,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -38031,7 +38188,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -38717,7 +38874,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -39403,7 +39560,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MED005",
@@ -40089,7 +40246,7 @@
    "url": null,
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -40108,7 +40265,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "ODONTO034",
@@ -41486,7 +41643,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "ODONTO034",
@@ -42415,7 +42572,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "ODONTO034",
@@ -43344,7 +43501,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "ODONTO034",
@@ -44273,7 +44430,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "SCF002",
@@ -46975,7 +47132,7 @@
    "url": "https://www.unilink.it/didattica/corsi-di-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "SCF002",
@@ -48529,7 +48686,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "SCF002",

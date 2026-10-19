@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "iulm",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-triennali/arti-eventi-culturali/arti-eventi-culturali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "14210",
@@ -391,6 +391,29 @@
      "periodo_fonte": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_22765_6345/2026/2062?coorte=2026"
     },
     {
+     "codice": "13379",
+     "nome": "Comunicazione Sportiva",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Barletta Pierfrancesco"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2026/2062?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-3-arti-ed-eventi-culturali-13379",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "14209",
      "nome": "Cultura e Media",
      "anno": 1,
@@ -413,6 +436,78 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "iulm-l-3-arti-ed-eventi-culturali-14209",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "5981",
+     "nome": "English For The Arts",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Ornaghi Elisabeth Marida"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23472_5981/2026/2062?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "iulm-l-3-arti-ed-eventi-culturali-5981",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "14193",
+     "nome": "Enigmistica e Creativita' della Parola",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Bartezzaghi Stefano"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2026/2062?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-3-arti-ed-eventi-culturali-14193",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "13902",
+     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Damiano Luisa",
+      "Di Fraia Guido",
+      "Manzotti Riccardo"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2026/2062?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-3-arti-ed-eventi-culturali-13902",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -672,6 +767,29 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "1789",
+     "nome": "Storia del Cinema Italiano",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Canova Gian Battista"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2026/2062?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-3-arti-ed-eventi-culturali-1789",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "13852",
      "nome": "Arti e Culture Classiche",
      "anno": 2,
@@ -685,7 +803,7 @@
      "docenti": [
       "Treu Martina"
      ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23471_13872/2025/1974?coorte=2025",
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23471_13872/2026/2062?coorte=2026",
      "libri": [
       {
        "titolo": "ISLER KERÉNY Cornelia, L’arte greca, Jaca Book, Milano, 2008.",
@@ -1589,29 +1707,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "13379",
-     "nome": "Comunicazione Sportiva",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Barletta Pierfrancesco"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2025/1974?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-3-arti-ed-eventi-culturali-13379",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "14099",
      "nome": "Culture Ispaniche",
      "anno": 2,
@@ -1685,53 +1780,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "5981",
-     "nome": "English For The Arts",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Ornaghi Elisabeth Marida"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23472_5981/2025/1974?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "iulm-l-3-arti-ed-eventi-culturali-5981",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "14193",
-     "nome": "Enigmistica e Creativita' della Parola",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Bartezzaghi Stefano"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2025/1974?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-3-arti-ed-eventi-culturali-14193",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "8210",
      "nome": "Fondazioni D'arte e di Moda",
      "anno": 2,
@@ -1776,31 +1824,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "iulm-l-3-arti-ed-eventi-culturali-12179",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "13902",
-     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Damiano Luisa",
-      "Di Fraia Guido",
-      "Manzotti Riccardo"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2025/1974?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-3-arti-ed-eventi-culturali-13902",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -1876,29 +1899,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "iulm-l-3-arti-ed-eventi-culturali-1752",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "1789",
-     "nome": "Storia del Cinema Italiano",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Canova Gian Battista"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2025/1974?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-3-arti-ed-eventi-culturali-1789",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -2000,7 +2000,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-triennali/comunicazione-impresa-relazioni-pubbliche/comunicazione-impresa-relazioni-pubbliche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "6238",
@@ -2681,6 +2681,52 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "13379",
+     "nome": "Comunicazione Sportiva",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Barletta Pierfrancesco"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2026/2066?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-20-comunicazione-d-impresa-e-relazioni-pubbliche-13379",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "14193",
+     "nome": "Enigmistica e Creativita' della Parola",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Bartezzaghi Stefano"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2026/2066?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-20-comunicazione-d-impresa-e-relazioni-pubbliche-14193",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "13950",
      "nome": "History Of Contemporary Economics And Politics",
      "anno": 1,
@@ -2727,6 +2773,31 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "iulm-l-20-comunicazione-d-impresa-e-relazioni-pubbliche-13950",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "13902",
+     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Damiano Luisa",
+      "Di Fraia Guido",
+      "Manzotti Riccardo"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2026/2066?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-20-comunicazione-d-impresa-e-relazioni-pubbliche-13902",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -2849,6 +2920,29 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "iulm-l-20-comunicazione-d-impresa-e-relazioni-pubbliche-6763",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1789",
+     "nome": "Storia del Cinema Italiano",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Canova Gian Battista"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2026/2066?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-20-comunicazione-d-impresa-e-relazioni-pubbliche-1789",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -3856,29 +3950,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "13379",
-     "nome": "Comunicazione Sportiva",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Barletta Pierfrancesco"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2025/1999?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-20-comunicazione-d-impresa-e-relazioni-pubbliche-13379",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "11379",
      "nome": "Critical Thinking",
      "anno": 2,
@@ -3948,54 +4019,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "iulm-l-20-comunicazione-d-impresa-e-relazioni-pubbliche-13817",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "14193",
-     "nome": "Enigmistica e Creativita' della Parola",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Bartezzaghi Stefano"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2025/1999?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-20-comunicazione-d-impresa-e-relazioni-pubbliche-14193",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "13902",
-     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Damiano Luisa",
-      "Di Fraia Guido",
-      "Manzotti Riccardo"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2025/1999?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-20-comunicazione-d-impresa-e-relazioni-pubbliche-13902",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -4122,29 +4145,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "1789",
-     "nome": "Storia del Cinema Italiano",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Canova Gian Battista"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2025/1999?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-20-comunicazione-d-impresa-e-relazioni-pubbliche-1789",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "13906",
      "nome": "English For Corporate Skills",
      "anno": 2,
@@ -4201,7 +4201,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-triennali/comunicazione-media-pubblicita/comunicazione-media-pubblicita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "7220",
@@ -4852,6 +4852,100 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "13379",
+     "nome": "Comunicazione Sportiva",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Barletta Pierfrancesco"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2026/2101?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-20-comunicazione-media-e-pubblicita-13379",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "14193",
+     "nome": "Enigmistica e Creativita' della Parola",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Bartezzaghi Stefano"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2026/2101?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-20-comunicazione-media-e-pubblicita-14193",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "13902",
+     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Damiano Luisa",
+      "Di Fraia Guido",
+      "Manzotti Riccardo"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2026/2101?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-20-comunicazione-media-e-pubblicita-13902",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1789",
+     "nome": "Storia del Cinema Italiano",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Canova Gian Battista"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2026/2101?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-20-comunicazione-media-e-pubblicita-1789",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "6620",
      "nome": "Comunicazione Pubblica e Politica",
      "anno": 2,
@@ -5389,52 +5483,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "13379",
-     "nome": "Comunicazione Sportiva",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Barletta Pierfrancesco"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2025/1997?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-20-comunicazione-media-e-pubblicita-13379",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "14193",
-     "nome": "Enigmistica e Creativita' della Parola",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Bartezzaghi Stefano"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2025/1997?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-20-comunicazione-media-e-pubblicita-14193",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "4833",
      "nome": "Estetica del Cinema",
      "anno": 2,
@@ -5566,31 +5614,6 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "iulm-l-20-comunicazione-media-e-pubblicita-4833",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "13902",
-     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Damiano Luisa",
-      "Di Fraia Guido",
-      "Manzotti Riccardo"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2025/1997?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-20-comunicazione-media-e-pubblicita-13902",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -5752,29 +5775,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "1789",
-     "nome": "Storia del Cinema Italiano",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Canova Gian Battista"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2025/1997?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-20-comunicazione-media-e-pubblicita-1789",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "13812",
      "nome": "Storia e Teoria della Fotografia",
      "anno": 2,
@@ -5852,7 +5852,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-triennali/lingue-cultura-e-comunicazione-digitale/lingue-cultura-e-comunicazione-digitale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "7886",
@@ -6437,6 +6437,29 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "13379",
+     "nome": "Comunicazione Sportiva",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Barletta Pierfrancesco"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2026/2063?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-11-lingue-cultura-e-comunicazione-digitale-13379",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "9583",
      "nome": "Editoria, Libri e Riviste Digitali",
      "anno": 1,
@@ -6569,6 +6592,54 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "iulm-l-11-lingue-cultura-e-comunicazione-digitale-9583",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "14193",
+     "nome": "Enigmistica e Creativita' della Parola",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Bartezzaghi Stefano"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2026/2063?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-11-lingue-cultura-e-comunicazione-digitale-14193",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "13902",
+     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Damiano Luisa",
+      "Di Fraia Guido",
+      "Manzotti Riccardo"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2026/2063?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-11-lingue-cultura-e-comunicazione-digitale-13902",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -6777,6 +6848,29 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "iulm-l-11-lingue-cultura-e-comunicazione-digitale-7878",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1789",
+     "nome": "Storia del Cinema Italiano",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Canova Gian Battista"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2026/2063?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-11-lingue-cultura-e-comunicazione-digitale-1789",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -8257,52 +8351,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "13379",
-     "nome": "Comunicazione Sportiva",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Barletta Pierfrancesco"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2025/1978?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-11-lingue-cultura-e-comunicazione-digitale-13379",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "14193",
-     "nome": "Enigmistica e Creativita' della Parola",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Bartezzaghi Stefano"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2025/1978?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-11-lingue-cultura-e-comunicazione-digitale-14193",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "13886",
      "nome": "Graphics, Infographics And Multimedia Languages",
      "anno": 2,
@@ -8462,31 +8510,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "13902",
-     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Damiano Luisa",
-      "Di Fraia Guido",
-      "Manzotti Riccardo"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2025/1978?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-11-lingue-cultura-e-comunicazione-digitale-13902",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "1264",
      "nome": "Linguistica Computazionale",
      "anno": 2,
@@ -8570,29 +8593,6 @@
      "id": "iulm-l-11-lingue-cultura-e-comunicazione-digitale-7887",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/1978_21874_7887/2025/1978?coorte=2025"
-    },
-    {
-     "codice": "1789",
-     "nome": "Storia del Cinema Italiano",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Canova Gian Battista"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2025/1978?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-11-lingue-cultura-e-comunicazione-digitale-1789",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "6017",
@@ -9022,7 +9022,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-triennali/interpretariato-comunicazione/mediazione-interpretariato-comunicazioneinterculturale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "13972",
@@ -9216,6 +9216,29 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "13379",
+     "nome": "Comunicazione Sportiva",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Barletta Pierfrancesco"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2026/2083?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-12-mediazione-interpretariato-e-comunicazione-interculturale-13379",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "13965",
      "nome": "Cultura Inglese I",
      "anno": 1,
@@ -9238,6 +9261,54 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "iulm-l-12-mediazione-interpretariato-e-comunicazione-interculturale-13965",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "14193",
+     "nome": "Enigmistica e Creativita' della Parola",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Bartezzaghi Stefano"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2026/2083?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-12-mediazione-interpretariato-e-comunicazione-interculturale-14193",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "13902",
+     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Damiano Luisa",
+      "Di Fraia Guido",
+      "Manzotti Riccardo"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2026/2083?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-12-mediazione-interpretariato-e-comunicazione-interculturale-13902",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -9323,6 +9394,29 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "iulm-l-12-mediazione-interpretariato-e-comunicazione-interculturale-1269",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1789",
+     "nome": "Storia del Cinema Italiano",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Canova Gian Battista"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2026/2083?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-12-mediazione-interpretariato-e-comunicazione-interculturale-1789",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -9900,29 +9994,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "13379",
-     "nome": "Comunicazione Sportiva",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Barletta Pierfrancesco"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2025/2005?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-12-mediazione-interpretariato-e-comunicazione-interculturale-13379",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "14139",
      "nome": "Cultura Araba",
      "anno": 2,
@@ -10086,54 +10157,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "iulm-l-12-mediazione-interpretariato-e-comunicazione-interculturale-14219",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "14193",
-     "nome": "Enigmistica e Creativita' della Parola",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Bartezzaghi Stefano"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2025/2005?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-12-mediazione-interpretariato-e-comunicazione-interculturale-14193",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "13902",
-     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Damiano Luisa",
-      "Di Fraia Guido",
-      "Manzotti Riccardo"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2025/2005?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-12-mediazione-interpretariato-e-comunicazione-interculturale-13902",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -10389,29 +10412,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "iulm-l-12-mediazione-interpretariato-e-comunicazione-interculturale-14142",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "1789",
-     "nome": "Storia del Cinema Italiano",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Canova Gian Battista"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2025/2005?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-12-mediazione-interpretariato-e-comunicazione-interculturale-1789",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -10781,7 +10781,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-triennali/moda-e-industrie-creative/moda-e-industrie-creative",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "7677",
@@ -11368,6 +11368,52 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "13379",
+     "nome": "Comunicazione Sportiva",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Barletta Pierfrancesco"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2026/2070?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-3-moda-e-industrie-creative-13379",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "14193",
+     "nome": "Enigmistica e Creativita' della Parola",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Bartezzaghi Stefano"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2026/2070?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-3-moda-e-industrie-creative-14193",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "13915",
      "nome": "Informatica per la Comunicazione Creativa",
      "anno": 1,
@@ -11477,6 +11523,31 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "13902",
+     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Damiano Luisa",
+      "Di Fraia Guido",
+      "Manzotti Riccardo"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2026/2070?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-3-moda-e-industrie-creative-13902",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "7477",
      "nome": "Laboratorio di Advertising per la Moda e il Design",
      "anno": 1,
@@ -11523,6 +11594,29 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "iulm-l-3-moda-e-industrie-creative-7477",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1789",
+     "nome": "Storia del Cinema Italiano",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Canova Gian Battista"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2026/2070?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-3-moda-e-industrie-creative-1789",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -11882,29 +11976,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "13379",
-     "nome": "Comunicazione Sportiva",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Barletta Pierfrancesco"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2025/1972?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-3-moda-e-industrie-creative-13379",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "7408",
      "nome": "Economia e Gestione delle Industrie Creative",
      "anno": 2,
@@ -11939,29 +12010,6 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "iulm-l-3-moda-e-industrie-creative-7408",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "14193",
-     "nome": "Enigmistica e Creativita' della Parola",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Bartezzaghi Stefano"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2025/1972?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-3-moda-e-industrie-creative-14193",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -12110,31 +12158,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "13902",
-     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Damiano Luisa",
-      "Di Fraia Guido",
-      "Manzotti Riccardo"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2025/1972?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-3-moda-e-industrie-creative-13902",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "7397",
      "nome": "Laboratorio di Tecniche di Comunicazione Efficace II (comunicazione Orale)",
      "anno": 2,
@@ -12258,29 +12281,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "1789",
-     "nome": "Storia del Cinema Italiano",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Canova Gian Battista"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2025/1972?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-3-moda-e-industrie-creative-1789",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "13906",
      "nome": "English For Corporate Skills",
      "anno": 2,
@@ -12333,7 +12333,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-triennali/turismo-management-cultura/turismo-management-cultura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "8397",
@@ -12574,6 +12574,52 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "13379",
+     "nome": "Comunicazione Sportiva",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Barletta Pierfrancesco"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2026/2067?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-15-turismo-management-e-cultura-13379",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "14193",
+     "nome": "Enigmistica e Creativita' della Parola",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Bartezzaghi Stefano"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2026/2067?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-15-turismo-management-e-cultura-14193",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "6357",
      "nome": "Il Sistema Economico del Turismo",
      "anno": 1,
@@ -12697,6 +12743,31 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "13902",
+     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Damiano Luisa",
+      "Di Fraia Guido",
+      "Manzotti Riccardo"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2026/2067?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-15-turismo-management-e-cultura-13902",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "13784",
      "nome": "Media Digitali e Turismo",
      "anno": 1,
@@ -12792,6 +12863,29 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "iulm-l-15-turismo-management-e-cultura-13781",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1789",
+     "nome": "Storia del Cinema Italiano",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "15/02/2027",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Canova Gian Battista"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2026/2067?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "id": "iulm-l-15-turismo-management-e-cultura-1789",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -13136,29 +13230,6 @@
      "modalita_esame": "orale"
     },
     {
-     "codice": "13379",
-     "nome": "Comunicazione Sportiva",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Barletta Pierfrancesco"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23536_13379/2025/1976?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-15-turismo-management-e-cultura-13379",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "14099",
      "nome": "Culture Ispaniche",
      "anno": 2,
@@ -13293,54 +13364,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "14193",
-     "nome": "Enigmistica e Creativita' della Parola",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Bartezzaghi Stefano"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2062_23534_14219/2025/1976?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-15-turismo-management-e-cultura-14193",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "13902",
-     "nome": "Intelligenza Artificiale: Nuova Tecnologia O Nuova Era per L'umanita'?",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Damiano Luisa",
-      "Di Fraia Guido",
-      "Manzotti Riccardo"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2066_23535_13921/2025/1976?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-15-turismo-management-e-cultura-13902",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "8118",
      "nome": "Politiche Territoriali",
      "anno": 2,
@@ -13437,29 +13460,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "iulm-l-15-turismo-management-e-cultura-13804",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "1789",
-     "nome": "Storia del Cinema Italiano",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "15/02/2027",
-     "periodo_fine": "22/05/2027",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Canova Gian Battista"
-     ],
-     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2101_23537_158/2025/1976?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://iulm.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-05",
-     "id": "iulm-l-15-turismo-management-e-cultura-1789",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -13610,7 +13610,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-magistrali/arte-valorizzazione-mercato/arte-valorizzazione-mercato",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "7318",
@@ -15200,7 +15200,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-magistrali/fashion-communication-and-luxury-strategies/fashion-communication-and-luxury-strategies",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "13829",
@@ -17416,7 +17416,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-magistrali/hospitality-tourism-management/hospitality-tourism-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "13924",
@@ -18310,7 +18310,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-magistrali/intelligenza-artificiale-impresa-societa/intelligenza-artificiale-impresa-societa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "14211",
@@ -19305,7 +19305,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-magistrali/marketing-consumi-comunicazione/marketing-consumi-comunicazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "5017",
@@ -19765,6 +19765,30 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "8581",
+     "nome": "Business Technologies And Innovation Management For Startups",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "21/09/2026",
+     "periodo_fine": "19/12/2026",
+     "cfu": 6,
+     "ssd": "SECS-P/08",
+     "obbligatorio": false,
+     "curriculum": "Marketing, Consumer Behaviour and Communication",
+     "docenti": [
+      "Parisi Emanuele"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/1987_23554_8581/2026/2106?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "iulm-lm-59-marketing-consumi-e-comunicazione-8581",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "8580",
      "nome": "Competitive Positioning And Branding New Products",
      "anno": 1,
@@ -20154,6 +20178,30 @@
      "periodo_fonte": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2025/1983_22180_6037/2025/1983?coorte=2025"
     },
     {
+     "codice": "5425",
+     "nome": "Business English",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": "21/09/2026",
+     "periodo_fine": "22/05/2027",
+     "cfu": 6,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": "Marketing, consumi e comunicazione",
+     "docenti": [
+      "Bartolini Anna"
+     ],
+     "url": "https://iulm.coursecatalogue.cineca.it/insegnamenti/2026/2103_22193_5425/2026/2103?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://iulm.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-05",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "iulm-lm-59-marketing-consumi-e-comunicazione-5425",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "5424",
      "nome": "Brand & Corporate Communication",
      "anno": 2,
@@ -20334,7 +20382,7 @@
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "iulm-lm-59-marketing-consumi-e-comunicazione-8581",
+     "id": "iulm-lm-59-marketing-consumi-e-comunicazione-8581-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -21047,7 +21095,7 @@
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "iulm-lm-59-marketing-consumi-e-comunicazione-5425",
+     "id": "iulm-lm-59-marketing-consumi-e-comunicazione-5425-a2",
      "stato_esami": "da_aggiungere"
     }
    ],
@@ -21086,7 +21134,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-magistrali/strategic-communication/strategic-communication",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "8982",
@@ -23538,7 +23586,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-magistrali/televisione-cinema-new-media/televisione-cinema-new-media",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "8159",
@@ -26921,7 +26969,7 @@
    "url": "https://www.iulm.it/it/offerta-formativa/corsi-di-lauree-magistrali/traduzione-interpretariato-comunicazione-digitale/traduzione-interpretariato-comunicazione-digitale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "14011",

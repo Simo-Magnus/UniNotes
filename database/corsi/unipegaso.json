@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unipegaso",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "http://www.unipegaso.it/website/corsi-di-laurea/economia-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0602509IUS04NM",
@@ -712,7 +712,7 @@
    "url": "https://www.unipegaso.it/lauree-triennali/filosofia-ed-etica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0052509MFIL02NM",
@@ -1449,7 +1449,7 @@
    "url": "https://www.unipegaso.it/lauree-triennali/informatica-per-le-aziende-digitali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0312606MAT02NM",
@@ -1813,6 +1813,25 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": null,
+     "nome": "Insegnamento a scelta caratterizzante Diritto digitale (SSD IUS/20 (GIUR-17/A)) Game based learning (SSD M-PED/03 (PAED-02/A)) Psicologia dell'educazione (SSD M-PSI/04 (PSIC-02/A)) Diritto privato (SSD IUS/01 (GIUR-01/A)) Statistica applicata (SSD SECS-S/01 (STAT-01/A))",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Digital Education And Gaming",
+     "docenti": [],
+     "url": "https://www.unipegaso.it/lauree-triennali/informatica-per-le-aziende-digitali",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipegaso.it/lauree-triennali/informatica-per-le-aziende-digitali",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unipegaso-l-31-informatica-per-le-aziende-digitali-insegnamento-a-scelta-caratterizzante-di",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "0312512INGINF05INM",
      "nome": "Machine and deep learning",
      "anno": 2,
@@ -2075,7 +2094,7 @@
      "fonte": "https://www.unipegaso.it/lauree-triennali/informatica-per-le-aziende-digitali",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
-     "id": "unipegaso-l-31-informatica-per-le-aziende-digitali-insegnamento-a-scelta-caratterizzante-di",
+     "id": "unipegaso-l-31-informatica-per-le-aziende-digitali-insegnamento-a-scelta-caratterizzante-di-a3",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -2312,7 +2331,7 @@
    "url": "http://www.unipegaso.it/website/corsi-di-laurea/ingegneria-civile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0702615MAT05NM",
@@ -2388,6 +2407,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unipegaso-l-7-ingegneria-civile-0702606mat03nm",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Insegnamento a scelta affine",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipegaso.it/lauree-triennali/ingegneria-civile",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipegaso.it/lauree-triennali/ingegneria-civile",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unipegaso-l-7-ingegneria-civile-insegnamento-a-scelta-affine",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -2505,6 +2543,25 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "0702509ICAR07NM",
+     "nome": "Geotecnica",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "CEAR-05/A",
+     "obbligatorio": null,
+     "curriculum": "Gestione Dei Progetti E Dei Cantieri, Tecnologie Digitali Per L'Ingegneria",
+     "docenti": [],
+     "url": "https://www.unipegaso.it/pdf/programma/0702509ICAR07NM",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipegaso.it/lauree-triennali/ingegneria-civile",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unipegaso-l-7-ingegneria-civile-0702509icar07nm",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "0702606ICAR04INM",
      "nome": "Infrastrutture di trasporto",
      "anno": 2,
@@ -2600,6 +2657,25 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "0702506ICAR20NM",
+     "nome": "Tecnica e pianificazione urbanistica",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "CEAR-12/A",
+     "obbligatorio": null,
+     "curriculum": "Gestione Dei Progetti E Dei Cantieri",
+     "docenti": [],
+     "url": "https://www.unipegaso.it/pdf/programma/0702506ICAR20NM",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipegaso.it/lauree-triennali/ingegneria-civile",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unipegaso-l-7-ingegneria-civile-0702506icar20nm",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "0702506ICAR22INM",
      "nome": "Valutazione economica dei progetti",
      "anno": 2,
@@ -2672,7 +2748,7 @@
      "fonte": "https://www.unipegaso.it/lauree-triennali/ingegneria-civile",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
-     "id": "unipegaso-l-7-ingegneria-civile-0702509icar07nm",
+     "id": "unipegaso-l-7-ingegneria-civile-0702509icar07nm-a3",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -2692,25 +2768,6 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unipegaso-l-7-ingegneria-civile-insegnamento-a-scelta",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Insegnamento a scelta affine",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 9,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unipegaso.it/lauree-triennali/ingegneria-civile",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipegaso.it/lauree-triennali/ingegneria-civile",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unipegaso-l-7-ingegneria-civile-insegnamento-a-scelta-affine",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -2824,7 +2881,7 @@
      "fonte": "https://www.unipegaso.it/lauree-triennali/ingegneria-civile",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
-     "id": "unipegaso-l-7-ingegneria-civile-0702506icar20nm",
+     "id": "unipegaso-l-7-ingegneria-civile-0702506icar20nm-a3",
      "stato_esami": "da_aggiungere"
     }
    ],
@@ -2851,7 +2908,7 @@
    "url": "https://www.unipegaso.it/lauree-triennali/lettere-sapere-umanistico-e-formazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0102506MSTO08NM",
@@ -3675,7 +3732,7 @@
    "url": "https://www.unipegaso.it/lauree-triennali/scienze-educazione-e-formazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0902506MPED03IINM",
@@ -4443,7 +4500,7 @@
    "url": "http://www.unipegaso.it/website/corsi-di-laurea/scienze-motorie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0502509BIO16NM",
@@ -4731,6 +4788,25 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": null,
+     "nome": "Insegnamento a scelta",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipegaso.it/lauree-triennali/scienze-motorie",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipegaso.it/lauree-triennali/scienze-motorie",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unipegaso-l-22-scienze-motorie-insegnamento-a-scelta",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "0502506SECSP10NM",
      "nome": "Organizzazione Aziendale",
      "anno": 2,
@@ -4808,25 +4884,6 @@
     },
     {
      "codice": null,
-     "nome": "Insegnamento a scelta",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unipegaso.it/lauree-triennali/scienze-motorie",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipegaso.it/lauree-triennali/scienze-motorie",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unipegaso-l-22-scienze-motorie-insegnamento-a-scelta",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Insegnamento a scelta caratterizzante Nutrizione nello sportivo e nelle varie fasi della vita (SSD MED/49 (MEDS-08/C)) Psicologia dinamica (SSD M-PSI/07 (PSIC-04/A)) Pedagogia generale (SSD M-PED/01 (PAED-01/A)) Sociologia generale e salute (SSD SPS/07 (GSPS-05/A))",
      "anno": 3,
      "periodo": null,
@@ -4842,6 +4899,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unipegaso-l-22-scienze-motorie-insegnamento-a-scelta-caratterizzante-nu",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "0502506MPED04NM",
+     "nome": "Metodologia della valutazione motoria",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "PAED-02/B",
+     "obbligatorio": null,
+     "curriculum": "Statutario",
+     "docenti": [],
+     "url": "https://www.unipegaso.it/pdf/programma/0502506MPED04NM",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipegaso.it/lauree-triennali/scienze-motorie",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unipegaso-l-22-scienze-motorie-0502506mped04nm-a3",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -4981,7 +5057,7 @@
    "url": "http://www.unipegaso.it/website/corsi-di-laurea/scienze-economiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0612512SECSP07NM",
@@ -5634,7 +5710,7 @@
    "url": "https://www.unipegaso.it/lauree-magistrali/filologia-moderna-e-comparata",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0142512LFILLET10NM",
@@ -5928,7 +6004,7 @@
    "url": "https://www.unipegaso.it/lauree-magistrali/ingegneria-della-sicurezza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0262506IUS10NM",
@@ -6390,8 +6466,27 @@
    "url": "https://www.unipegaso.it/lauree-magistrali/linguistica-moderna",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
+    {
+     "codice": null,
+     "nome": "Insegnamento a scelta",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipegaso.it/lauree-magistrali/linguistica-moderna",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipegaso.it/lauree-magistrali/linguistica-moderna",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unipegaso-lm-39-linguistica-moderna-insegnamento-a-scelta",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": null,
      "nome": "Insegnamento a scelta caratterizzante Filologia della letteratura italiana (SSD L-FIL-LET/13 (LIFI-01/B)) Orgini dell'inglese (SSD L-FIL-LET/15 (GERM-01/A)) Didattica delle lingue moderne (SSD L-LIN/02 (GLOT-01/B))",
@@ -6413,13 +6508,13 @@
     },
     {
      "codice": null,
-     "nome": "Insegnamento a scelta caratterizzante Metodologie della ricerca archeologica (SSD L-ANT/10 (ARCH-01/G)) Geografia culturale (SSD M-GGR/02 (GEOG-01/B)) e-Learning e media education (SSD M-PED/04 (PAED-02/B)) Digital Humanities (SSD M-PED/04 (PAED-02/B))",
+     "nome": "Insegnamento a scelta caratterizzante Metodologie della ricerca archeologica (SSD L-ANT/10 (ARCH-01/G)) Geografia culturale (SSD M-GGR/02 (GEOG-01/B)) e-Learning e media education (SSD M-PED/04 (PAED-02/B))",
      "anno": 1,
      "periodo": null,
      "cfu": 6,
      "ssd": null,
      "obbligatorio": false,
-     "curriculum": "Comunicazione, Editoria E Cultura Digitale",
+     "curriculum": "Statutario, Comunicazione, Editoria E Cultura Digitale",
      "docenti": [],
      "url": "https://www.unipegaso.it/lauree-magistrali/linguistica-moderna",
      "libri": [],
@@ -6587,25 +6682,6 @@
     },
     {
      "codice": null,
-     "nome": "Insegnamento a scelta",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 12,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unipegaso.it/lauree-magistrali/linguistica-moderna",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipegaso.it/lauree-magistrali/linguistica-moderna",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unipegaso-lm-39-linguistica-moderna-insegnamento-a-scelta",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Prova Finale",
      "anno": 2,
      "periodo": null,
@@ -6703,7 +6779,7 @@
    "url": "https://www.unipegaso.it/lauree-magistrali/management-sport-attivita-motorie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0512513MEDF01INM",
@@ -6741,6 +6817,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unipegaso-lm-47-management-dello-sport-e-delle-attivita-motorie-0512509secsp07nm",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Insegnamento a scelta",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipegaso.it/lauree-magistrali/management-sport-attivita-motorie",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipegaso.it/lauree-magistrali/management-sport-attivita-motorie",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unipegaso-lm-47-management-dello-sport-e-delle-attivita-motorie-insegnamento-a-scelta",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -6915,25 +7010,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": null,
-     "nome": "Insegnamento a scelta",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unipegaso.it/lauree-magistrali/management-sport-attivita-motorie",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipegaso.it/lauree-magistrali/management-sport-attivita-motorie",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unipegaso-lm-47-management-dello-sport-e-delle-attivita-motorie-insegnamento-a-scelta",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "0512506IUS09NM",
      "nome": "Istituzioni di diritto pubblico",
      "anno": 2,
@@ -7051,7 +7127,7 @@
    "url": "https://www.unipegaso.it/lauree-magistrali/scienze-pedagogiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0912506MFIL01NM",
@@ -7321,13 +7397,13 @@
     },
     {
      "codice": null,
-     "nome": "Insegnamento a scelta caratterizzante Sistemi di elaborazione delle informazioni e contenuti digitali (SSD ING-INF/05 (IINF-05/A)) Psicologia dello sviluppo e nuove tecnologie (SSD M-PSI/04 (PSIC-02/A)) Pedagogia della salute e Medical Humanities (SSD M-PED/04 (PAED-02/B))",
+     "nome": "Insegnamento a scelta caratterizzante Sistemi di elaborazione delle informazioni e contenuti digitali (SSD ING-INF/05 (IINF-05/A)) Diritto amministrativo e dei servizi sociali (SSD IUS/10 (GIUR-06/A)) Pedagogia della salute e Medical Humanities (SSD M-PED/04 (PAED-02/B)) Sociologia della devianza e del mutamento sociale (SSD SPS/12 (GSPS-07/B))",
      "anno": 2,
      "periodo": null,
      "cfu": 6,
      "ssd": null,
      "obbligatorio": false,
-     "curriculum": "E-Learning E Formazione",
+     "curriculum": "Statutario, E-Learning E Formazione",
      "docenti": [],
      "url": "https://www.unipegaso.it/lauree-magistrali/scienze-pedagogiche",
      "libri": [],
@@ -7418,7 +7494,7 @@
    "url": "http://www.unipegaso.it/website/corsi-di-laurea/giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Diritto costituzionale",
@@ -7822,6 +7898,24 @@
      "obbligatorio": false
     },
     {
+     "nome": "Insegnamento a scelta caratterizzante Diritto privato comparato (SSD IUS/02 (GIUR-11/A)) Economia aziendale (SSD SECS-P/07 (ECON-06/A)) LAW English (SSD L-LIN/12 (ANGL-01/C)) Diritto penale dell'Intelligenza Artificiale e delle nuove tecnologie (SSD IUS/17 (GIUR-14/A)) Economia e gestione delle imprese (SSD SECS-P/08 (ECON-07/A)) Finanza aziendale (SSD SECS-P/09 (ECON-09/A))",
+     "anno": 4,
+     "cfu": 6,
+     "ssd": null,
+     "periodo": null,
+     "docenti": [],
+     "url": "http://www.unipegaso.it/website/corsi-di-laurea/giurisprudenza",
+     "fonte": "http://www.unipegaso.it/website/corsi-di-laurea/giurisprudenza",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unipegaso-lmg-01-giurisprudenza-insegnamento-a-scelta-caratterizzante-di",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "obbligatorio": false,
+     "curriculum": null
+    },
+    {
      "nome": "Procedimento amministrativo, trasparenza e cybersecurity",
      "anno": 4,
      "cfu": 9,
@@ -7914,23 +8008,6 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unipegaso-lmg-01-giurisprudenza-insegnamento-a-scelta",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "obbligatorio": false
-    },
-    {
-     "nome": "Insegnamento a scelta caratterizzante Diritto privato comparato (SSD IUS/02 (GIUR-11/A)) Economia aziendale (SSD SECS-P/07 (ECON-06/A)) LAW English (SSD L-LIN/12 (ANGL-01/C)) Diritto penale dell'Intelligenza Artificiale e delle nuove tecnologie (SSD IUS/17 (GIUR-14/A)) Economia e gestione delle imprese (SSD SECS-P/08 (ECON-07/A)) Finanza aziendale (SSD SECS-P/09 (ECON-09/A))",
-     "anno": 5,
-     "cfu": 6,
-     "ssd": null,
-     "periodo": null,
-     "docenti": [],
-     "url": "http://www.unipegaso.it/website/corsi-di-laurea/giurisprudenza",
-     "fonte": "http://www.unipegaso.it/website/corsi-di-laurea/giurisprudenza",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unipegaso-lmg-01-giurisprudenza-insegnamento-a-scelta-caratterizzante-di",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "obbligatorio": false

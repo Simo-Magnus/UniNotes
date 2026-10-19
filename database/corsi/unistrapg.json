@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unistrapg",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-comunicazione-internazionale-e-pubblicitaria-comip",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A000300",
@@ -4228,7 +4228,7 @@
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-lingua-e-cultura-italiana-nel-mondo-digitale-licimod",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A000049",
@@ -7078,7 +7078,7 @@
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A000982",
@@ -7420,6 +7420,147 @@
      "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000347",
      "stato_libri": "da_aggiungere",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "A000977",
+     "nome": "Geografia del turismo",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": 9,
+     "docenti": [
+      "Luigi Mundula"
+     ],
+     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000977-1&cdl=LT03R&rnd=330243832",
+     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
+     "libri": [
+      {
+       "titolo": "Manuale di agricoltura",
+       "autori": "Amicabile S.",
+       "editore": "Hoepli edit",
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dai «Testi di esame» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
+       "citazione": "Amicabile S. (2016), Manuale di agricoltura. Terza edizione. Hoepli edit. (I capitoli da studiare saranno resi disponibili all’inizio del corso sulla piattaforma LOL)"
+      },
+      {
+       "titolo": "Bianchi A. (2015), Guida al corretto uso delle D.O.P., I.G.P. e S.T.G. in Italia. Associazione BRE ARCHIMEDE Salerno",
+       "autori": null,
+       "editore": null,
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dai «Testi di esame» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
+       "citazione": "Bianchi A. (2015), Guida al corretto uso delle D.O.P., I.G.P. e S.T.G. in Italia. Associazione BRE ARCHIMEDE Salerno"
+      },
+      {
+       "titolo": "Saija R. - Fabbio P. (2019), La Qualità e le qualità dei prodotti agroalimentari tra regole e mercato. Wolters Kluver Milano",
+       "autori": null,
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dai «Testi di esame» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
+       "citazione": "Saija R. - Fabbio P. (2019), La Qualità e le qualità dei prodotti agroalimentari tra regole e mercato. Wolters Kluver Milano"
+      },
+      {
+       "titolo": "Arfini F. - Belletti G. - Marescotti A. (2010), Prodotti tipici e denominazioni geografiche strumenti di tutela e valorizzazione. Edizioni Tellus",
+       "autori": null,
+       "editore": null,
+       "anno": 2010,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dai «Testi di consultazione e approfondimento» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
+       "citazione": "Arfini F. - Belletti G. - Marescotti A. (2010), Prodotti tipici e denominazioni geografiche strumenti di tutela e valorizzazione. Edizioni Tellus"
+      },
+      {
+       "titolo": "Palliotti A. - Poni S. - Silvestroni O., (2018), Manuale di Viticoltura. Edagricole-NewBusiness",
+       "autori": null,
+       "editore": null,
+       "anno": 2018,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dai «Testi di consultazione e approfondimento» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
+       "citazione": "Palliotti A. - Poni S. - Silvestroni O., (2018), Manuale di Viticoltura. Edagricole-NewBusiness"
+      },
+      {
+       "titolo": "Alfei B. - Pannelli G. - Ricci A. (2013), Olivicoltura. Coltivazione Olio e territorio. Edagricole - NewBusiness.",
+       "autori": null,
+       "editore": null,
+       "anno": 2013,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dai «Testi di consultazione e approfondimento» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
+       "citazione": "Alfei B. - Pannelli G. - Ricci A. (2013), Olivicoltura. Coltivazione Olio e territorio. Edagricole - NewBusiness."
+      },
+      {
+       "titolo": "Industrie agrarie. Olearia, enologica, lattiero-casearia",
+       "autori": "Sciancalepore V.",
+       "editore": "UTET",
+       "anno": 1998,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dai «Testi di consultazione e approfondimento» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
+       "citazione": "Sciancalepore V. (1998) Industrie agrarie. Olearia, enologica, lattiero-casearia. UTET"
+      },
+      {
+       "titolo": "Coltura & Cultura Il vero racconto dei prodotti della terra (www.colturaecultura.it) progetto promosso da Bayer",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "Dai «Testi di consultazione e approfondimento» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
+       "citazione": "Coltura & Cultura Il vero racconto dei prodotti della terra (www.colturaecultura.it) progetto promosso da Bayer"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-30",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "MUNDULA LUIGI MONTAGNOLI ROBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-27",
+       "iscrizioni_al": "2027-02-12",
+       "docenti": "MUNDULA LUIGI MONTAGNOLI ROBERTO",
+       "note": null,
+       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000977",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "curriculum": null
     },
     {
      "codice": "A000979",
@@ -7788,146 +7929,6 @@
      ],
      "verificato_il": "2026-10-17",
      "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a001088",
-     "stato_libri": "completo",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "A000977",
-     "nome": "Scienze e tecnologie alimentari",
-     "anno": 1,
-     "periodo": "2",
-     "cfu": 9,
-     "docenti": [
-      "Luigi Mundula"
-     ],
-     "url": "https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R&rnd=726052014",
-     "fonte": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-made-italy-cibo-e-ospitalita-mico",
-     "libri": [
-      {
-       "titolo": "Manuale di agricoltura",
-       "autori": "Amicabile S.",
-       "editore": "Hoepli edit",
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dai «Testi di esame» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
-       "citazione": "Amicabile S. (2016), Manuale di agricoltura. Terza edizione. Hoepli edit. (I capitoli da studiare saranno resi disponibili all’inizio del corso sulla piattaforma LOL)"
-      },
-      {
-       "titolo": "Bianchi A. (2015), Guida al corretto uso delle D.O.P., I.G.P. e S.T.G. in Italia. Associazione BRE ARCHIMEDE Salerno",
-       "autori": null,
-       "editore": null,
-       "anno": 2015,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dai «Testi di esame» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
-       "citazione": "Bianchi A. (2015), Guida al corretto uso delle D.O.P., I.G.P. e S.T.G. in Italia. Associazione BRE ARCHIMEDE Salerno"
-      },
-      {
-       "titolo": "Saija R. - Fabbio P. (2019), La Qualità e le qualità dei prodotti agroalimentari tra regole e mercato. Wolters Kluver Milano",
-       "autori": null,
-       "editore": null,
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dai «Testi di esame» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
-       "citazione": "Saija R. - Fabbio P. (2019), La Qualità e le qualità dei prodotti agroalimentari tra regole e mercato. Wolters Kluver Milano"
-      },
-      {
-       "titolo": "Arfini F. - Belletti G. - Marescotti A. (2010), Prodotti tipici e denominazioni geografiche strumenti di tutela e valorizzazione. Edizioni Tellus",
-       "autori": null,
-       "editore": null,
-       "anno": 2010,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": "Dai «Testi di consultazione e approfondimento» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
-       "citazione": "Arfini F. - Belletti G. - Marescotti A. (2010), Prodotti tipici e denominazioni geografiche strumenti di tutela e valorizzazione. Edizioni Tellus"
-      },
-      {
-       "titolo": "Palliotti A. - Poni S. - Silvestroni O., (2018), Manuale di Viticoltura. Edagricole-NewBusiness",
-       "autori": null,
-       "editore": null,
-       "anno": 2018,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": "Dai «Testi di consultazione e approfondimento» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
-       "citazione": "Palliotti A. - Poni S. - Silvestroni O., (2018), Manuale di Viticoltura. Edagricole-NewBusiness"
-      },
-      {
-       "titolo": "Alfei B. - Pannelli G. - Ricci A. (2013), Olivicoltura. Coltivazione Olio e territorio. Edagricole - NewBusiness.",
-       "autori": null,
-       "editore": null,
-       "anno": 2013,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": "Dai «Testi di consultazione e approfondimento» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
-       "citazione": "Alfei B. - Pannelli G. - Ricci A. (2013), Olivicoltura. Coltivazione Olio e territorio. Edagricole - NewBusiness."
-      },
-      {
-       "titolo": "Industrie agrarie. Olearia, enologica, lattiero-casearia",
-       "autori": "Sciancalepore V.",
-       "editore": "UTET",
-       "anno": 1998,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": "Dai «Testi di consultazione e approfondimento» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
-       "citazione": "Sciancalepore V. (1998) Industrie agrarie. Olearia, enologica, lattiero-casearia. UTET"
-      },
-      {
-       "titolo": "Coltura & Cultura Il vero racconto dei prodotti della terra (www.colturaecultura.it) progetto promosso da Bayer",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": "Dai «Testi di consultazione e approfondimento» della scheda ufficiale (https://www.unistrapg.it/node/511?aa=2627&ins=A000977-2&cdl=LT03R)",
-       "citazione": "Coltura & Cultura Il vero racconto dei prodotti della terra (www.colturaecultura.it) progetto promosso da Bayer"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2027-01-19",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-30",
-       "iscrizioni_al": "2027-01-15",
-       "docenti": "MUNDULA LUIGI MONTAGNOLI ROBERTO",
-       "note": null,
-       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-16",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-27",
-       "iscrizioni_al": "2027-02-12",
-       "docenti": "MUNDULA LUIGI MONTAGNOLI ROBERTO",
-       "note": null,
-       "fonte": "https://unistrapg.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "verificato_il": "2026-10-17",
-     "id": "unistrapg-l-15-l-gastr-made-in-italy-cibo-e-ospitalita-a000977",
      "stato_libri": "completo",
      "stato_esami": "completo"
     },
@@ -10310,7 +10311,7 @@
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-scienze-sociali-la-sostenibilita-e-la-cooperazione-internazionale-soci",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A000945",
@@ -11507,7 +11508,7 @@
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-magistrale-comunicazione-pubblicitaria-storytelling-e-cultura-dimmagine-compsi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A001091",
@@ -14911,7 +14912,7 @@
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-magistrale-italiano-linsegnamento-stranieri-itas",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A000589",
@@ -19790,7 +19791,7 @@
    "url": "https://www.unistrapg.it/offerta-formativa/corsi-di-laurea-e-laurea-magistrale/corso-di-laurea-magistrale-relazioni-internazionali-e-cooperazione-allo-sviluppo-rics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A000009",
@@ -20870,7 +20871,7 @@
      "docenti": [
       "Biscarini Chiara"
      ],
-     "url": "https://unistrapg.coursecatalogue.cineca.it/insegnamenti/2026/3352_9634_8329/2026/3352?coorte=2024",
+     "url": "https://unistrapg.coursecatalogue.cineca.it/insegnamenti/2027/3352_10120_8329/2026/3352?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://unistrapg.coursecatalogue.cineca.it",

@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unical",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/biologia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27005250",
@@ -1375,7 +1375,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/chimica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27005002",
@@ -2517,7 +2517,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/comunicazione-e-dams",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008307",
@@ -3684,11 +3684,11 @@
      "cfu": 6,
      "ssd": "IUS/09",
      "obbligatorio": true,
-     "curriculum": "PIANO ALTERNATIVO COMUNICAZIONE E DAMS (CLASSE L-20) coorte 2024, PIANO STATUTARIO COMUNICAZIONE E DAMS (CLASSE L-20) coorte 2024",
+     "curriculum": "PIANO ALTERNATIVO COMUNICAZIONE E DAMS 2025 classe L-20, PIANO STATUTARIO COMUNICAZIONE E DAMS 2025 classe L-20, PIANO ALTERNATIVO COMUNICAZIONE E DAMS (CLASSE L-20) coorte 2024, PIANO STATUTARIO COMUNICAZIONE E DAMS (CLASSE L-20) coorte 2024",
      "docenti": [
       "Aquino Caterina"
      ],
-     "url": "https://corsi.unical.it/activities/141148/",
+     "url": "https://corsi.unical.it/activities/205930/",
      "libri": [
       {
        "titolo": "Le regole dell'informazione Verso la Gigabit Society",
@@ -3704,7 +3704,7 @@
       }
      ],
      "esami": [],
-     "fonte": "https://storage.portale.unical.it/api/ricerca/cds/30150/studyplans-activities/",
+     "fonte": "https://storage.portale.unical.it/api/ricerca/cds/52558/studyplans-activities/",
      "verificato_il": "2026-10-17",
      "stato_libri": "completo",
      "id": "unical-l-3-l-20-comunicazione-e-dams-27006496",
@@ -4411,7 +4411,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/economia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27001079",
@@ -5611,6 +5611,51 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "27003008",
+     "nome": "Economia e Gestione delle Imprese",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 9,
+     "ssd": "SECS-P/08",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://corsi.unical.it/activities/205774/",
+     "libri": [
+      {
+       "titolo": "La Gestione dell'Impresa. Tra teoria e pratica aziendale",
+       "autori": "S.Sciarelli",
+       "editore": "Cedam",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "S.Sciarelli, 2024, La Gestione dell'Impresa. Tra teoria e pratica aziendale, Cedam, Padova."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-30",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-05",
+       "iscrizioni_al": "2026-10-25",
+       "docenti": "FASANO FRANCESCO",
+       "note": null,
+       "fonte": "https://unical.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://storage.portale.unical.it/api/ricerca/cds/52358/studyplans-activities/",
+     "verificato_il": "2026-10-05",
+     "stato_libri": "completo",
+     "id": "unical-l-33-economia-27003008",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "27008240",
      "nome": "Modelli Finanziari",
      "anno": 2,
@@ -6044,20 +6089,7 @@
      "curriculum": null,
      "docenti": [],
      "url": "https://corsi.unical.it/activities/138886/",
-     "libri": [
-      {
-       "titolo": "La Gestione dell'Impresa. Tra teoria e pratica aziendale",
-       "autori": "S.Sciarelli",
-       "editore": "Cedam",
-       "anno": 2024,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "S.Sciarelli, 2024, La Gestione dell'Impresa. Tra teoria e pratica aziendale, Cedam, Padova."
-      }
-     ],
+     "libri": [],
      "esami": [
       {
        "tipo": "appello",
@@ -6075,7 +6107,7 @@
      "fonte": "https://storage.portale.unical.it/api/ricerca/cds/29750/studyplans-activities/",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
-     "id": "unical-l-33-economia-27003008",
+     "id": "unical-l-33-economia-27003008-a3",
      "stato_esami": "completo"
     },
     {
@@ -6192,7 +6224,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/economia-aziendale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27003003",
@@ -8984,7 +9016,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/filosofia-e-storia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27009088",
@@ -11035,7 +11067,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/fisica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27000001",
@@ -12027,7 +12059,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/fisioterapia-abilitante-alla-professione-di-fisioterapista/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27009941",
@@ -12607,7 +12639,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/infermieristica-abilitante-alla-professione-sanitaria-di-infermiere/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008935",
@@ -13876,18 +13908,6 @@
        "tipo": null,
        "note": null,
        "citazione": "88 916 1142 0 ISBN: 9788809903326"
-      },
-      {
-       "titolo": "Giusti GD, Benetton M. La cura del corpo in terapia intensiva. Maggioli editore 2013",
-       "autori": null,
-       "editore": null,
-       "anno": 2013,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Giusti GD, Benetton M. La cura del corpo in terapia intensiva. Maggioli editore 2013"
       }
      ],
      "esami": [],
@@ -13935,7 +13955,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/informatica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27002208",
@@ -14925,7 +14945,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/informazione-scientifica-del-farmaco-e-delle-tecnologie-per-la-salute/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27005042",
@@ -15362,7 +15382,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-biomedica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "28000023",
@@ -16353,7 +16373,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-chimica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "28000002",
@@ -17634,7 +17654,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-civile/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "28000002",
@@ -19041,7 +19061,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-elettronica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "28000002",
@@ -20190,7 +20210,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-gestionale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "28000002",
@@ -21533,7 +21553,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-informatica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "28000023",
@@ -22370,7 +22390,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-meccanica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "28000002",
@@ -23206,7 +23226,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-per-lambiente-e-la-sicurezza-del-territorio/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27000004",
@@ -23851,7 +23871,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/lettere/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27010297",
@@ -24768,7 +24788,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/lingue-e-culture-moderne/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27001189",
@@ -26020,7 +26040,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/matematica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27004076",
@@ -26507,7 +26527,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/media-e-societa-digitale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27009375",
@@ -27070,7 +27090,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/mediazione-linguistica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008649",
@@ -27662,7 +27682,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienza-della-nutrizione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27010116",
@@ -28496,7 +28516,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-del-turismo-e-dei-servizi-turistici/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27010367",
@@ -29152,7 +29172,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-dellamministrazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27009375",
@@ -30947,7 +30967,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-delleducazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27010970",
@@ -32038,6 +32058,40 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "27001104",
+     "nome": "Psicologia Generale",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "M-PSI/01",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "D'acri Rosa Pia"
+     ],
+     "url": "https://corsi.unical.it/activities/205416/",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-25",
+       "docenti": "SORANZO ALESSANDRO",
+       "note": null,
+       "fonte": "https://unical.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://storage.portale.unical.it/api/ricerca/cds/50562/studyplans-activities/",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "id": "unical-l-19-scienze-dell-educazione-27001104",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "27007321",
      "nome": "Storia dei processi educativi",
      "anno": 2,
@@ -32261,7 +32315,7 @@
      "fonte": "https://storage.portale.unical.it/api/ricerca/cds/27752/studyplans-activities/",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
-     "id": "unical-l-19-scienze-dell-educazione-27001104",
+     "id": "unical-l-19-scienze-dell-educazione-27001104-a3",
      "stato_esami": "completo"
     },
     {
@@ -32401,7 +32455,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-e-tecniche-psicologiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27007216",
@@ -33216,7 +33270,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-e-tecnologie-biologiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008264",
@@ -33270,6 +33324,77 @@
      "stato_libri": "completo",
      "id": "unical-l-13-l-2-scienze-e-tecnologie-biologiche-27002297",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "27006934",
+     "nome": "Cito-istologia Applicata",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "BIOS-04/A",
+     "obbligatorio": true,
+     "curriculum": "STANDARD L-13, STANDARD L-2",
+     "docenti": [
+      "Facciolo Rosa Maria"
+     ],
+     "url": "https://corsi.unical.it/activities/298025/",
+     "libri": [
+      {
+       "titolo": "CITOLOGIA & ISTOLOGIA, Dini & Romano et al.2021 Edizione Idelson-Gnocchi, Napoli.",
+       "autori": null,
+       "editore": "Dini & Romano et al.2021 Edizione Idelson-Gnocchi",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "CITOLOGIA & ISTOLOGIA, Dini & Romano et al.2021 Edizione Idelson-Gnocchi, Napoli."
+      },
+      {
+       "titolo": "ISTOLOGIA di Monesi, Piccin",
+       "autori": null,
+       "editore": "Piccin",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "ISTOLOGIA di Monesi, Piccin"
+      },
+      {
+       "titolo": "L’ESSENZIALE DI BIOLOGIA MOLECOLARE DELLA CELLULA di Alberts et al., III ed. Zanichelli",
+       "autori": null,
+       "editore": "III ed. Zanichelli",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "L’ESSENZIALE DI BIOLOGIA MOLECOLARE DELLA CELLULA di Alberts et al., III ed. Zanichelli"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-27",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-21",
+       "docenti": "FACCIOLO ROSA MARIA ALO' RAFFAELLA AVOLIO ENNIO MINERVINI DAMIANA OLIVITO ILARIA",
+       "note": null,
+       "fonte": "https://unical.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://storage.portale.unical.it/api/ricerca/cds/83250/studyplans-activities/",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "id": "unical-l-13-l-2-scienze-e-tecnologie-biologiche-27006934",
+     "stato_esami": "completo"
     },
     {
      "codice": "27005250",
@@ -34278,44 +34403,7 @@
       "Facciolo Rosa Maria"
      ],
      "url": "https://corsi.unical.it/activities/145712/",
-     "libri": [
-      {
-       "titolo": "CITOLOGIA & ISTOLOGIA, Dini & Romano et al.2021 Edizione Idelson-Gnocchi, Napoli.",
-       "autori": null,
-       "editore": "Dini & Romano et al.2021 Edizione Idelson-Gnocchi",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "CITOLOGIA & ISTOLOGIA, Dini & Romano et al.2021 Edizione Idelson-Gnocchi, Napoli."
-      },
-      {
-       "titolo": "ISTOLOGIA di Monesi, Piccin",
-       "autori": null,
-       "editore": "Piccin",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ISTOLOGIA di Monesi, Piccin"
-      },
-      {
-       "titolo": "L’ESSENZIALE DI BIOLOGIA MOLECOLARE DELLA CELLULA di Alberts et al., III ed. Zanichelli",
-       "autori": null,
-       "editore": "III ed. Zanichelli",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "L’ESSENZIALE DI BIOLOGIA MOLECOLARE DELLA CELLULA di Alberts et al., III ed. Zanichelli"
-      }
-     ],
+     "libri": [],
      "esami": [
       {
        "tipo": "appello",
@@ -34333,7 +34421,7 @@
      "fonte": "https://storage.portale.unical.it/api/ricerca/cds/31347/studyplans-activities/",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
-     "id": "unical-l-13-l-2-scienze-e-tecnologie-biologiche-27006934",
+     "id": "unical-l-13-l-2-scienze-e-tecnologie-biologiche-27006934-a3",
      "stato_esami": "completo"
     },
     {
@@ -34635,7 +34723,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-e-tecnologie-per-le-attivita-motorie-e-sportive/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "28000002",
@@ -35580,7 +35668,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-geologiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008264",
@@ -36762,7 +36850,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-naturali-e-ambientali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008264",
@@ -38198,7 +38286,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-politiche-e-relazioni-internazionali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27009375",
@@ -40194,7 +40282,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/servizi-giuridici-per-linnovazione-digitale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008952",
@@ -41308,7 +41396,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/servizio-sociale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27010190",
@@ -42320,6 +42408,112 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "27004052",
+     "nome": "Sociologia della Devianza",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "SPS/12",
+     "obbligatorio": false,
+     "curriculum": "PIANO DI STUDI 2025",
+     "docenti": [
+      "Garreffa Franca"
+     ],
+     "url": "https://corsi.unical.it/activities/207097/",
+     "libri": [
+      {
+       "titolo": "Luigi Berzano, Franco Prina, Sociologia della devianza, Carocci Editore, 2010, Roma (I-II-III-IV capp. e V cap. fino a p. 148).",
+       "autori": null,
+       "editore": "Carocci Editore",
+       "anno": 2010,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Luigi Berzano, Franco Prina, Sociologia della devianza, Carocci Editore, 2010, Roma (I-II-III-IV capp. e V cap. fino a p. 148)."
+      },
+      {
+       "titolo": "Fassone Elvio, Fine pena ora, Sellerio Editore, 2015.",
+       "autori": null,
+       "editore": "Sellerio Editore",
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Fassone Elvio, Fine pena ora, Sellerio Editore, 2015."
+      },
+      {
+       "titolo": "Carmelo Sardo, Giuseppe Grassonelli, Malerba, Mondadori, 2014.",
+       "autori": null,
+       "editore": "Mondadori",
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Carmelo Sardo, Giuseppe Grassonelli, Malerba, Mondadori, 2014."
+      },
+      {
+       "titolo": "Bertoni Roberto, Raccontami ogni cosa. Genova, per non dimenticare, Santelli Editore, Milano, 2025.",
+       "autori": null,
+       "editore": "Santelli Editore",
+       "anno": 2025,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Bertoni Roberto, Raccontami ogni cosa. Genova, per non dimenticare, Santelli Editore, Milano, 2025."
+      },
+      {
+       "titolo": "Ortolan Maurizio, Io, sbirro a Palermo, Melampo Editore, 2018.",
+       "autori": null,
+       "editore": "Melampo Editore",
+       "anno": 2018,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Ortolan Maurizio, Io, sbirro a Palermo, Melampo Editore, 2018."
+      },
+      {
+       "titolo": "Audiolibro, Matteo Caccia, Giacomo Di Girolamo, L'isola di Matteo. In Sicilia nei luoghi di Matteo Messina Denaro, il latitante a capo di Cosa Nostra, Episodio 6, 2020.",
+       "autori": null,
+       "editore": null,
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Audiolibro, Matteo Caccia, Giacomo Di Girolamo, L'isola di Matteo. In Sicilia nei luoghi di Matteo Messina Denaro, il latitante a capo di Cosa Nostra, Episodio 6, 2020."
+      },
+      {
+       "titolo": "Maiello Fabrizio, Garreffa Franca, Nel carcere dei matti delinquenti. L’ultimo record Kappa Vu, Udine, 2023.",
+       "autori": null,
+       "editore": null,
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Maiello Fabrizio, Garreffa Franca, Nel carcere dei matti delinquenti. L’ultimo record Kappa Vu, Udine, 2023."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://storage.portale.unical.it/api/ricerca/cds/51961/studyplans-activities/",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "id": "unical-l-39-servizio-sociale-27004052",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "27006694",
      "nome": "Sociologia delle migrazioni",
      "anno": 2,
@@ -42902,7 +43096,7 @@
      "fonte": "https://storage.portale.unical.it/api/ricerca/cds/31748/studyplans-activities/",
      "verificato_il": "2026-10-17",
      "stato_libri": "completo",
-     "id": "unical-l-39-servizio-sociale-27004052",
+     "id": "unical-l-39-servizio-sociale-27004052-a3",
      "stato_esami": "da_aggiungere"
     }
    ],
@@ -42924,7 +43118,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/statistica-per-data-science/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27002284",
@@ -44771,7 +44965,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/tecnologie-del-mare-e-della-navigazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27009733",
@@ -46408,7 +46602,7 @@
    "url": "https://corsi.unical.it/lm/artificial-intelligence-and-computer-science/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27006172",
@@ -47446,7 +47640,7 @@
    "url": "https://corsi.unical.it/lm/biodiversita-e-sistemi-naturali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27004076",
@@ -48548,7 +48742,7 @@
    "url": "https://corsi.unical.it/lm/biologia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27006228",
@@ -49641,7 +49835,7 @@
    "url": "https://corsi.unical.it/lm/chemistry/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008510",
@@ -50586,7 +50780,7 @@
    "url": "https://corsi.unical.it/lm/civil-engineering-for-infrastructural-regeneration/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008634",
@@ -51075,6 +51269,112 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "completo",
      "id": "unical-lm-23-civil-engineering-for-infrastructural-regeneration-27009969",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "27008622",
+     "nome": "Advanced Structural Design",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "CEAR-06/A",
+     "obbligatorio": true,
+     "curriculum": "STANDARD (ARMS)",
+     "docenti": [
+      "Madeo Antonio"
+     ],
+     "url": "https://corsi.unical.it/activities/198881/",
+     "libri": [
+      {
+       "titolo": "Strutture in legno, calcolo e progetto secondo le nuove normative europee, Maurizio Piazza Roberto Tomasi Roberto Modena, HOEPLI",
+       "autori": null,
+       "editore": "HOEPLI",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Strutture in legno, calcolo e progetto secondo le nuove normative europee, Maurizio Piazza Roberto Tomasi Roberto Modena, HOEPLI"
+      },
+      {
+       "titolo": "Strutture in cemento in zona sismica. Guida a una progettazione consapevole e controllata, Vincenzo Nunziata, Dario Flaccovio Editore",
+       "autori": null,
+       "editore": "Dario Flaccovio Editore",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Strutture in cemento in zona sismica. Guida a una progettazione consapevole e controllata, Vincenzo Nunziata, Dario Flaccovio Editore"
+      },
+      {
+       "titolo": "Teoria e pratica delle strutture in cemento armato, Vincenzo Nunziata, Dario Flaccovio Editore",
+       "autori": null,
+       "editore": "Dario Flaccovio Editore",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Teoria e pratica delle strutture in cemento armato, Vincenzo Nunziata, Dario Flaccovio Editore"
+      },
+      {
+       "titolo": "Numerical methods in finite element analysis, Klaus-Jurgen Bathe, EDward L. Wilson, Prentice Hall",
+       "autori": null,
+       "editore": "Prentice Hall",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Numerical methods in finite element analysis, Klaus-Jurgen Bathe, EDward L. Wilson, Prentice Hall"
+      },
+      {
+       "titolo": "The finite elements analysis of Shells - Fundamentals, Dominique Chapelle, Klaus Jurgen Bathe, Springer",
+       "autori": null,
+       "editore": "Springer",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "The finite elements analysis of Shells - Fundamentals, Dominique Chapelle, Klaus Jurgen Bathe, Springer"
+      },
+      {
+       "titolo": "I compositi nell'Ingegneria Strutturale, Francesco Clementi, Stefano Lenci, Esculapio.",
+       "autori": null,
+       "editore": "Esculapio",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "I compositi nell'Ingegneria Strutturale, Francesco Clementi, Stefano Lenci, Esculapio."
+      },
+      {
+       "titolo": "Materiale didattica fornito dal docente (slides, dispense).",
+       "autori": null,
+       "editore": "dispense)",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Materiale didattica fornito dal docente (slides, dispense)."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://storage.portale.unical.it/api/ricerca/cds/83231/studyplans-activities/",
+     "verificato_il": "2026-10-05",
+     "stato_libri": "completo",
+     "id": "unical-lm-23-civil-engineering-for-infrastructural-regeneration-27008622",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -51996,7 +52296,7 @@
      "fonte": "https://storage.portale.unical.it/api/ricerca/cds/45556/studyplans-activities/",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
-     "id": "unical-lm-23-civil-engineering-for-infrastructural-regeneration-27008622",
+     "id": "unical-lm-23-civil-engineering-for-infrastructural-regeneration-27008622-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -52070,7 +52370,7 @@
    "url": "https://corsi.unical.it/lm/cooperazione-sviluppo-ecologia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27010143",
@@ -53296,7 +53596,7 @@
    "url": "https://corsi.unical.it/lm/data-science-per-le-strategie-aziendali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008250",
@@ -54336,7 +54636,7 @@
    "url": "https://corsi.unical.it/lm/digital-humanities/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27009089",
@@ -55049,7 +55349,7 @@
    "url": "https://corsi.unical.it/lm/economia-aziendale-e-management/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27011026",
@@ -56886,7 +57186,7 @@
    "url": "https://corsi.unical.it/lm/economia-imprese-e-sostenibilita/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27006691",
@@ -57842,7 +58142,7 @@
    "url": "https://corsi.unical.it/lm/filologia-moderna/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27001261",
@@ -59107,7 +59407,7 @@
    "url": "https://corsi.unical.it/lm/finance-and-insurance/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27006569",
@@ -59883,7 +60183,7 @@
    "url": "https://corsi.unical.it/lm/health-biotechnology/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008334",
@@ -60192,7 +60492,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-chimica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27007407",
@@ -60811,7 +61111,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-civile/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27009973",
@@ -61569,7 +61869,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-elettronica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008830",
@@ -62098,7 +62398,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-energetica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27007957",
@@ -62574,7 +62874,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-gestionale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27007390",
@@ -63010,7 +63310,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-informatica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27009553",
@@ -64098,7 +64398,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-meccanica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27007957",
@@ -64754,7 +65054,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-per-lambiente-e-la-sicurezza-del-territorio/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27006938",
@@ -65581,7 +65881,7 @@
    "url": "https://corsi.unical.it/lm/linguaggi-della-comunicazione-e-dello-spettacolo/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27009909",
@@ -66343,7 +66643,7 @@
    "url": "https://corsi.unical.it/lm/lingue-e-letterature-moderne/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27006064",
@@ -68149,7 +68449,7 @@
    "url": "https://corsi.unical.it/lm/lingue-per-la-comunicazione-internazionale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27010977",
@@ -69056,7 +69356,7 @@
    "url": "https://corsi.unical.it/lm/mathematics/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008371",
@@ -69450,7 +69750,7 @@
    "url": "https://corsi.unical.it/lm/physics/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008463",
@@ -71269,7 +71569,7 @@
    "url": "https://corsi.unical.it/lm/progettazione-innovazione-e-gestione-delle-destinazioni-turistiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27006888",
@@ -71937,7 +72237,7 @@
    "url": "https://corsi.unical.it/lm/robotics-and-automation-engineering/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008368",
@@ -72328,7 +72628,7 @@
    "url": "https://corsi.unical.it/lm/scienza-della-nutrizione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27010116",
@@ -73162,7 +73462,7 @@
    "url": "https://corsi.unical.it/lm/scienze-dellantichita/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27007836",
@@ -74233,7 +74533,7 @@
    "url": "https://corsi.unical.it/lm/scienze-della-politica-e-istituzioni-internazionali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27009381",
@@ -75335,7 +75635,7 @@
    "url": "https://corsi.unical.it/lm/scienze-delle-politiche-e-dei-servizi-sociali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27007268",
@@ -76707,7 +77007,7 @@
    "url": "https://corsi.unical.it/lm/scienze-delle-pubbliche-amministrazioni/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27007580",
@@ -77892,7 +78192,7 @@
    "url": "https://corsi.unical.it/lm/scienze-filosofiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27010095",
@@ -79516,7 +79816,7 @@
    "url": "https://corsi.unical.it/lm/scienze-geologiche-per-la-gestione-dei-rischi-ambientali-e-le-georisorse/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008321",
@@ -80743,7 +81043,7 @@
    "url": "https://corsi.unical.it/lm/scienze-pedagogiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27006796",
@@ -82152,7 +82452,7 @@
    "url": "https://corsi.unical.it/lm/scienze-storiche-e-del-patrimonio-culturale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008111",
@@ -83955,7 +84255,7 @@
    "url": "https://corsi.unical.it/lm/scritture-immagini-media-digitali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27009975",
@@ -84907,7 +85207,7 @@
    "url": "https://corsi.unical.it/lm/telecommunication-engineering-smart-sensing-computing-and-networking/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27008411",
@@ -85597,7 +85897,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/chimica-e-tecnologia-farmaceutiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27002341",
@@ -87458,7 +87758,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/conservazione-e-restauro-dei-beni-culturali-abilitante-ai-sensi-del-dlgs-n422004/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27006565",
@@ -88418,6 +88718,38 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "27008825",
+     "nome": "Tecniche di Biologia Molecolare per i Beni Culturali",
+     "anno": 3,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "BIO/11",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://corsi.unical.it/activities/147684/",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-15",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "GALLUCCIO MICHELE INDIVERI CESARE PANNI SIMONA POCHINI LORENA",
+       "note": null,
+       "fonte": "https://unical.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://storage.portale.unical.it/api/ricerca/cds/29349/studyplans-activities/",
+     "verificato_il": "2026-10-05",
+     "stato_libri": "da_aggiungere",
+     "id": "unical-lmr-02-conservazione-e-restauro-dei-beni-culturali-abilitante-ai-se-27008825",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "27008304",
      "nome": "Tutela del Patrimonio Culturale Archeologico e Dell'edificato Storico-artistico",
      "anno": 3,
@@ -88809,7 +89141,7 @@
      "fonte": "https://storage.portale.unical.it/api/ricerca/cds/19338/studyplans-activities/",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
-     "id": "unical-lmr-02-conservazione-e-restauro-dei-beni-culturali-abilitante-ai-se-27008825",
+     "id": "unical-lmr-02-conservazione-e-restauro-dei-beni-culturali-abilitante-ai-se-27008825-a4",
      "stato_esami": "completo"
     },
     {
@@ -89222,7 +89554,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/farmacia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27005004",
@@ -90506,6 +90838,53 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "27005067",
+     "nome": "Metodologie di Laboratorio in Patologia Clinica",
+     "anno": 4,
+     "periodo": "1",
+     "cfu": null,
+     "ssd": "MED/05, MED/46",
+     "obbligatorio": true,
+     "curriculum": "Pharmaceutical Care, Preclinico Traslazionale",
+     "docenti": [
+      "Giordano Cinzia"
+     ],
+     "url": null,
+     "libri": [
+      {
+       "titolo": "Wilson K e Walker JM: Biochimica e biologia molecolare. Principi e tecniche. Ed. Raffaello Cortina, Milano.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Wilson K e Walker JM: Biochimica e biologia molecolare. Principi e tecniche. Ed. Raffaello Cortina, Milano."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-27",
+       "iscrizioni_al": "2026-11-09",
+       "docenti": "GIORDANO CINZIA",
+       "note": null,
+       "fonte": "https://unical.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://storage.portale.unical.it/api/ricerca/cds/19340/studyplans-activities/",
+     "verificato_il": "2026-10-05",
+     "stato_libri": "completo",
+     "id": "unical-lm-13-farmacia-27005067",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "27009167",
      "nome": "Basi Genetiche e Molecolari delle Patologie Endocrino-metaboliche",
      "anno": 4,
@@ -90931,7 +91310,7 @@
      "fonte": "https://storage.portale.unical.it/api/ricerca/cds/13731/studyplans-activities/",
      "verificato_il": "2026-10-05",
      "stato_libri": "completo",
-     "id": "unical-lm-13-farmacia-27005067",
+     "id": "unical-lm-13-farmacia-27005067-a5",
      "stato_esami": "completo"
     },
     {
@@ -91029,7 +91408,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/giurisprudenza/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "50901626",
@@ -93425,7 +93804,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-edile-architettura/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27002284",
@@ -96311,7 +96690,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/medicina-e-chirurgia-td/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27007233",
@@ -96761,7 +97140,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-della-formazione-primaria/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "27001079",
@@ -96793,6 +97172,74 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "completo",
      "id": "unical-lm-85-bis-scienze-della-formazione-primaria-27001079",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "27006100",
+     "nome": "Educazione e Attivita' Motorie per L'eta' Evolutiva",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": null,
+     "ssd": "MEDF-01/A",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": null,
+     "libri": [
+      {
+       "titolo": "Neuroscienze Cognitive. (a cura di A. Zani & A. Madoproverbio)",
+       "autori": "Gazzaniga, M.S., Ivry, R.B., Mangun, G.R.",
+       "editore": "Zanichelli",
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Gazzaniga, M.S., Ivry, R.B., Mangun, G.R. (2015). Neuroscienze Cognitive. (a cura di A. Zani & A. Madoproverbio). Zanichelli."
+      },
+      {
+       "titolo": "Il controllo motorio",
+       "autori": "Nicoletti, R., & Borghi, A.M.",
+       "editore": "Il Mulino",
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Nicoletti, R., & Borghi, A.M. (2007). Il controllo motorio. Bologna: Il Mulino."
+      },
+      {
+       "titolo": "Corpo, movimento e didattica: emergenze formative e sviluppi professionali. I nuovi profili professionali motorio – sportivi nei contesti educativi per l’età evolutiva",
+       "autori": "Carlomagno, N.",
+       "editore": "Pensa Editore",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Carlomagno, N. (2012). Corpo, movimento e didattica: emergenze formative e sviluppi professionali. I nuovi profili professionali motorio – sportivi nei contesti educativi per l’età evolutiva. Lecce: Pensa Editore."
+      },
+      {
+       "titolo": "Apprendere con le mani. Strategie cognitive per la realizzazione di ambienti di apprendimento",
+       "autori": "Bertacchini, P.A., Bilotta, E., Gabriele, L., Pantano, P., & Servidio, R.",
+       "editore": "Franco Angeli",
+       "anno": 2006,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Bertacchini, P.A., Bilotta, E., Gabriele, L., Pantano, P., & Servidio, R. (2006). Apprendere con le mani. Strategie cognitive per la realizzazione di ambienti di apprendimento. Milano: Franco Angeli."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://storage.portale.unical.it/api/ricerca/cds/72773/studyplans-activities/",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "id": "unical-lm-85-bis-scienze-della-formazione-primaria-27006100",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -98742,7 +99189,7 @@
      "fonte": "https://storage.portale.unical.it/api/ricerca/cds/22140/studyplans-activities/",
      "verificato_il": "2026-10-17",
      "stato_libri": "completo",
-     "id": "unical-lm-85-bis-scienze-della-formazione-primaria-27006100",
+     "id": "unical-lm-85-bis-scienze-della-formazione-primaria-27006100-a4",
      "stato_esami": "da_aggiungere"
     },
     {

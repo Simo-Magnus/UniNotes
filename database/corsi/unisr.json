@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unisr",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -4045,7 +4045,7 @@
    "url": "https://www.unisr.it/offerta-formativa/filosofia/corso-di-laurea-triennale-filosofia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "6008",
@@ -7714,30 +7714,31 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia/corso-di-laurea-fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "5111",
      "nome": "Neurologia",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2023 00:00:00",
-     "periodo_fine": "15/01/2024 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 10,
      "ssd": "MED/26, BIO/14",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
+      "Bastioli Guendalina",
       "Bombaci Alessandro",
-      "De Gregorio Danilo",
       "Filippi Massimo",
       "Leocani Annunziata Maria Letizia",
       "Mazzeo Salvatore",
       "Messina Roberta",
       "Previtali Stefano Carlo",
-      "Preziosa Paolo"
+      "Preziosa Paolo",
+      "De Gregorio Danilo"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4529/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4529/2015/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -7789,23 +7790,25 @@
      "nome": "Patologia del Sistema Cardio Respiratorio, Dell'età Avanzata ed Evolutiva",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/38, MED/16, MED/21, MED/11, MED/10",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Bonfanti Riccardo",
-      "Cianflone Domenico",
       "Ciriaco Paola",
       "Cremona George Ian",
-      "Della Torre Emanuel",
+      "Damanti Sarah",
       "Manfredi Angelo Andrea M. A.",
       "Muriana Piergiorgio",
-      "Veronesi Giulia"
+      "Sacchi Stefania",
+      "Veronesi Giulia",
+      "Cianflone Domenico",
+      "Della Torre Emanuel"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4530/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4530/2015/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -7857,11 +7860,11 @@
      "nome": "Cinesiologia Applicata alla Clinica",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/48, MED/02",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Emedoli Daniele",
@@ -7869,7 +7872,7 @@
       "Olper Luigi",
       "Tettamanti Andrea"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4534/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4534/2015/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -7921,11 +7924,11 @@
      "nome": "Disturbi del Comportamento",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 8,
      "ssd": "MED/26, M-PSI/01, MED/25, L-LIN/01",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Agosta Federica",
@@ -7935,7 +7938,7 @@
       "Ferini Strambi Luigi",
       "Natali Sora Maria Grazia"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4532/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4532/2015/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -7987,20 +7990,21 @@
      "nome": "Patologia del Sistema Locomotore",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/03/2024 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/33, MED/09, MED/36, BIO/14",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
+      "Bastioli Guendalina",
       "Brembilla Giorgio",
-      "Della Torre Emanuel",
       "Manfredi Angelo Andrea M. A.",
       "Placella Giacomo",
+      "Della Torre Emanuel",
       "Reggiani Angelo Mario"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4533/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4533/2015/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -8052,16 +8056,16 @@
      "nome": "Seminari Secondo Anno",
      "anno": 2,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 2,
      "ssd": "MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Sarasso Elisabetta"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5153/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5153/2015/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -8089,16 +8093,16 @@
      "nome": "Tirocinio 2",
      "anno": 2,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 22,
      "ssd": "MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Tettamanti Andrea"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4531/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4531/2015/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -8130,10 +8134,10 @@
      "periodo_fine": null,
      "cfu": 5,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4541/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4541/2015/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
@@ -8148,8 +8152,8 @@
      "nome": "Allenamento dei Disturbi Dell'equilibrio",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/48",
      "obbligatorio": false,
@@ -8157,7 +8161,7 @@
      "docenti": [
       "Sarasso Elisabetta"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5258/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5258/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8185,8 +8189,8 @@
      "nome": "Fisioterapia Nell'atleta Professionista",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/48",
      "obbligatorio": false,
@@ -8194,7 +8198,7 @@
      "docenti": [
       "Ceriani Gabriele"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4834/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4834/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8222,20 +8226,21 @@
      "nome": "Fisioterapia dei Disordini Muscoloscheletrici",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 8,
      "ssd": "MED/48, MED/34",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Gemma Mariano",
-      "Menegari Alessandra Luisa",
+      "Lapini Michele Dino Francesco",
       "Pajardi Giorgio Eugenio",
       "Tolosa Francesca",
-      "Vigano' Luca"
+      "Vigano' Luca",
+      "Menegari Alessandra Luisa"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4535/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4535/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8287,8 +8292,8 @@
      "nome": "Fisioterapia delle Patologie Reumatologiche",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/48",
      "obbligatorio": false,
@@ -8296,7 +8301,7 @@
      "docenti": [
       "Nava Tiziana Bruna"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/6139/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/6139/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8324,18 +8329,20 @@
      "nome": "Fisioterapia in Ambito Cardiorespiratorio",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 3,
      "ssd": "MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
-      "Arosio Maddalena",
       "Olper Luigi",
-      "Tettamanti Andrea"
+      "Pauciullo Marco",
+      "Pelachin Mattia",
+      "Tettamanti Andrea",
+      "Arosio Maddalena"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4537/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4537/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8387,8 +8394,8 @@
      "nome": "Il Dolore: Diagnosi e Trattamento Fisioterapico delle Algie Muscolo-scheletriche",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/48",
      "obbligatorio": false,
@@ -8396,7 +8403,7 @@
      "docenti": [
       "Vigano' Luca"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5416/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5416/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8424,16 +8431,17 @@
      "nome": "Traumatologia Dell'atleta Professionista",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/34",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
+      "Danelon Furio",
       "Melegati Gianluca"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4833/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4833/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8461,11 +8469,11 @@
      "nome": "Fisioterapia in Ambito Neurologico",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/48, MED/34, MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Corti Gustavo",
@@ -8474,7 +8482,7 @@
       "Sarasso Elisabetta",
       "Spinelli Edoardo Gioele"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4536/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4536/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8517,7 +8525,7 @@
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
-     "modalita_esame": "scritto",
+     "modalita_esame": "scritto e orale congiunti",
      "id": "unisr-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-5117",
      "stato_esami": "completo"
     },
@@ -8526,7 +8534,7 @@
      "nome": "Il Trattamento Fisioterapico della Sindrome Miofasciale",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
      "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/48",
@@ -8535,7 +8543,7 @@
      "docenti": [
       "Ranzolin Antonella"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/488/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/488/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8563,7 +8571,7 @@
      "nome": "Metodi di Ragionamento Fisioterapico in Ambito Neurologico",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
      "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/48",
@@ -8572,7 +8580,7 @@
      "docenti": [
       "Sarasso Elisabetta"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5840/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5840/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8600,7 +8608,7 @@
      "nome": "Metodi di Ragionamento Fisioterapico in Ambito Ortopedico",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
      "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/48",
@@ -8609,7 +8617,7 @@
      "docenti": [
       "Faccendini Simone"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5841/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5841/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8637,7 +8645,7 @@
      "nome": "Neuroimaging e Fisiopatologia delle Malattie Neurodegenerative",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
      "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/26",
@@ -8646,7 +8654,7 @@
      "docenti": [
       "Spinelli Edoardo Gioele"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5256/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5256/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8674,20 +8682,21 @@
      "nome": "Primo Soccorso e Management Sanitario",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
      "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/44, MED/41, SECS-P/10",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Calvi Maria Rosa",
+      "Cordani Claudio",
       "Monti Giacomo",
       "Pellicciotta Gabriele",
-      "Rancati Jacopo Matteo",
-      "Tettamanti Andrea"
+      "Tettamanti Andrea",
+      "Rancati Jacopo Matteo"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4538/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4538/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8739,7 +8748,7 @@
      "nome": "Riorganizzazione Corticale e Recupero",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2024 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
      "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/26",
@@ -8748,7 +8757,7 @@
      "docenti": [
       "Preziosa Paolo"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/482/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/482/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8776,7 +8785,7 @@
      "nome": "Tecniche Fisioterapiche di Supporto",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
      "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/48",
@@ -8785,7 +8794,7 @@
      "docenti": [
       "Galizzi Michela"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/7736/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/7736/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8813,16 +8822,16 @@
      "nome": "Seminari Terzo Anno",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 2,
      "ssd": "MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Tettamanti Andrea"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5154/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5154/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8850,16 +8859,16 @@
      "nome": "Tirocinio 3",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 26,
      "ssd": "MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Tettamanti Andrea"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4539/2015/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4539/2015/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -9502,7 +9511,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia/corso-di-laurea-igiene-dentale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "16118",
@@ -9513,10 +9522,10 @@
      "periodo_fine": null,
      "cfu": 5,
      "ssd": "MED/28",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4516/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4516/2011/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
@@ -9531,16 +9540,16 @@
      "nome": "Anestesia e Rianimazione",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/41",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Turi Stefano"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5164/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5164/2011/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -9571,7 +9580,7 @@
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
+     "modalita_esame": "scritto",
      "id": "unisr-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-16121",
      "stato_esami": "completo"
     },
@@ -9580,11 +9589,11 @@
      "nome": "Clinica Odontoiatrica e Odontoiatria Ricostruttiva",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2023 00:00:00",
-     "periodo_fine": "15/01/2024 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 7,
      "ssd": "MED/28",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Cantile Nicola",
@@ -9595,7 +9604,7 @@
       "Quasso Luigi",
       "Sberna Maria Teresa"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4496/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4496/2011/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -9635,16 +9644,16 @@
      "nome": "Farmacologia Speciale: Farmaci nella Pratica Odontoiatrica",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
-     "cfu": 1,
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
+     "cfu": 2,
      "ssd": "BIO/14",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Menegon Andrea Domenico"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5251/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5251/2011/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -9684,21 +9693,24 @@
      "nome": "Odontoiatria Pediatrica",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 9,
      "ssd": "MED/28, M-PSI/01, MED/42",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
+      "Boggio Andrea",
+      "Nota Alessandro",
+      "Pennisi Flavia",
+      "Ratti Maria Monica",
+      "Tecco Simona",
       "Caccone Livia",
       "Garlaschi Chiara",
       "Lucchese Alessandra",
-      "Ratti Maria Monica",
-      "Tecco Simona",
       "Zoppei Gianna Maria"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4497/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4497/2011/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -9738,11 +9750,11 @@
      "nome": "Principi di Medicina Generale",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 7,
      "ssd": "MED/12, MED/15, MED/22, BIO/14, MED/09",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Baccellieri Domenico",
@@ -9751,10 +9763,11 @@
       "Ferreri Andres Jose Maria",
       "Kahlberg Andrea Luitz",
       "Maffi Paola Angela Maria",
-      "Menegon Andrea Domenico",
-      "Nozza Silvia"
+      "Nencini Sara",
+      "Nozza Silvia",
+      "Menegon Andrea Domenico"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4493/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4493/2011/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -9794,16 +9807,16 @@
      "nome": "La Fotografia in Odontoiatria",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/28",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Manazza Fabio Vittorio Giuseppe"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/6026/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/6026/2011/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
@@ -9818,16 +9831,16 @@
      "nome": "Patologia Orale Pediatrica - Ereditaria O Acquisita",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
      "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/28",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Gola Giuseppe"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5644/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5644/2011/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -9855,16 +9868,16 @@
      "nome": "Previsualizzazione Estetica Digitale in Implantologia",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "16/05/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/28",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Cotticelli Ciro"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5645/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5645/2011/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -9892,16 +9905,16 @@
      "nome": "Protocolli di Mantenimento Dell’implanto-protesi",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Bova Francesco"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5184/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5184/2011/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -9929,11 +9942,11 @@
      "nome": "Scienze Chirurgiche",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/03/2024 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 9,
      "ssd": "MED/28, MED/18",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Biliotti Mario",
@@ -9943,7 +9956,7 @@
       "Tamburrino Domenico",
       "Vinci Raffaele"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4498/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4498/2011/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -10007,23 +10020,29 @@
      "nome": "Scienze Dell'igiene Dentale 2",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "16/05/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 10,
      "ssd": "MED/50, M-PSI/06, MED/28",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Austoni Clotilde Isabella Roberta",
-      "Bonafede Vanessa",
+      "Cesari Claudio",
+      "Contu Federico",
+      "Cosola Saverio",
       "D'amicantonio Teresa",
       "Genovesi Annamaria",
       "Guglielmi Davide",
+      "Oldoini Giacomo",
       "Pantaleo Giuseppe",
-      "Pignacca Maria Irene",
-      "Porrini Filippo"
+      "Pelle Silvia",
+      "Porrini Filippo",
+      "Rotundo Roberto",
+      "Bonafede Vanessa",
+      "Pignacca Maria Irene"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4499/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4499/2011/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -10087,25 +10106,29 @@
      "nome": "Tirocinio 2",
      "anno": 2,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 20,
      "ssd": "MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Boninsegna Ramon",
       "Brambati Valentina",
+      "Cicognani Chiara",
       "Colombo Alessandro",
-      "Contini Claudia",
       "D'amicantonio Teresa",
       "Di Petto Lorenza Francesca",
-      "Invernizzi Marco",
+      "Grumetti Alessia",
+      "Guizzetti Roberta",
       "Iozzo Rosa",
       "Polizzi Elisabetta Maria",
-      "Zappella Chiara"
+      "Visone Ada",
+      "Zappella Chiara",
+      "Contini Claudia",
+      "Invernizzi Marco"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4509/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4509/2011/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
@@ -10124,10 +10147,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4517/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4517/2011/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
@@ -10142,16 +10165,16 @@
      "nome": "Dermatologia - Malattie Cutanee e Veneree",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2023 00:00:00",
-     "periodo_fine": "15/01/2024 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/35",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Mercuri Santo Raffaele"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5189/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5189/2011/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -10182,7 +10205,7 @@
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
-     "modalita_esame": "scritto e orale congiunti",
+     "modalita_esame": "scritto",
      "id": "unisr-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-16128",
      "stato_esami": "completo"
     },
@@ -10191,22 +10214,25 @@
      "nome": "Prevenzione dei Servizi Sanitari e Radioprotezione",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2023 00:00:00",
-     "periodo_fine": "15/01/2024 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 9,
-     "ssd": "IUS/09, MED/36, MED/43, MED/42, ING-INF/05, MED/02",
-     "obbligatorio": false,
+     "ssd": "MED/43, MED/42, ING-INF/05, MED/02, IUS/09, MED/36",
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
-      "Ancarani Fabio Guido Ulderico",
       "Esposito Marco Antonio Bruno",
-      "Monestiroli Paolo",
-      "Palmisano Anna",
+      "Gisco Aurelio",
       "Tetè Giulia",
       "Travaini Guido Vittorio",
-      "Zampetti Paolo"
+      "Vignale Davide",
+      "Zampetti Paolo",
+      "Zangari Francesca",
+      "Ancarani Fabio Guido Ulderico",
+      "Monestiroli Paolo",
+      "Palmisano Anna"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4510/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4510/2011/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -10237,7 +10263,7 @@
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
+     "modalita_esame": "scritto e orale congiunti",
      "id": "unisr-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-16112",
      "stato_esami": "completo"
     },
@@ -10246,16 +10272,16 @@
      "nome": "Protesi Estetica Pianificazione Digitale e Laser Terapia Applicata",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/28",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Cattoni Francesca"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/6220/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/6220/2011/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -10279,20 +10305,76 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "16113",
+     "nome": "Scienze Psicopedagogiche",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
+     "cfu": 8,
+     "ssd": "M-PSI/01, SPS/07, M-PSI/06, MED/25",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Abutalebi Jubin",
+      "Bosia Marta",
+      "Cattaneo Ada",
+      "Contu Federico",
+      "Del Maschio Nicola Alessandro",
+      "Galbiati Andrea",
+      "Pantaleo Giuseppe",
+      "Pignacca Maria Irene"
+     ],
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4511/2011/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-04",
+       "iscrizioni_al": "2027-01-30",
+       "docenti": "PANTALEO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2027-01-04",
+       "iscrizioni_al": "2027-02-13",
+       "docenti": "PANTALEO GIUSEPPE",
+       "note": null,
+       "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://syllabus.unisr.it",
+     "verificato_il": "2026-10-05",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "scritto e orale congiunti",
+     "id": "unisr-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-16113",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "16120",
      "nome": "Basic Life Support Defibrillation",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/41",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Calvi Maria Rosa"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5150/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5150/2011/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
@@ -10307,16 +10389,16 @@
      "nome": "Corso Teorico e Partico Sullo Sbiancamento Dentale",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 2,
      "ssd": "MED/28",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Polizzi Elisabetta Maria"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/6221/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/6221/2011/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -10344,16 +10426,16 @@
      "nome": "Ergonomia Clinica",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "16/05/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/28",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Chirico Luca"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/2800/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/2800/2011/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -10381,21 +10463,21 @@
      "nome": "Scienze Dell'igiene Dentale 3",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2024 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/28, MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Cesari Claudio",
-      "Di Petto Lorenza Francesca",
       "Nardi Gianna Maria",
       "Ortado Luisa",
       "Polizzi Elisabetta Maria",
-      "Rotundo Roberto"
+      "Rotundo Roberto",
+      "Di Petto Lorenza Francesca"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4512/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4512/2011/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -10459,16 +10541,16 @@
      "nome": "Tecnologie in Implantoprotesi",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/28",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Redi Lorenzo"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5646/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5646/2011/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -10496,16 +10578,16 @@
      "nome": "Wellness Marketing: il Valore per il Paziente e L’importanza della Gestione della Relazione",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "SECS-P/07",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Gisco Aurelio"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5225/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5225/2011/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
@@ -10516,81 +10598,28 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "16113",
-     "nome": "Scienze Psicopedagogiche",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
-     "cfu": 8,
-     "ssd": "M-PSI/01, SPS/07, M-PSI/06, MED/25",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Abutalebi Jubin",
-      "Bosia Marta",
-      "Cattaneo Ada",
-      "Del Maschio Nicola Alessandro",
-      "Galbiati Andrea",
-      "Pantaleo Giuseppe",
-      "Pignacca Maria Irene"
-     ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4511/2011/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2027-02-03",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "scritto e orale",
-       "iscrizioni_dal": "2027-01-04",
-       "iscrizioni_al": "2027-01-30",
-       "docenti": "PANTALEO GIUSEPPE",
-       "note": null,
-       "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-18",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "scritto e orale",
-       "iscrizioni_dal": "2027-01-04",
-       "iscrizioni_al": "2027-02-13",
-       "docenti": "PANTALEO GIUSEPPE",
-       "note": null,
-       "fonte": "https://unisr.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://syllabus.unisr.it",
-     "verificato_il": "2026-10-05",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unisr-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-16113",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "16116",
      "nome": "Tirocinio 3",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 22,
      "ssd": "MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Andrade Zambrano Monica Monserrate",
       "Bertuzzi Corrado",
+      "Brancaccio Beatrice",
+      "Ghinzani Beatrice",
       "Larocca Michele",
       "Polizzi Elisabetta Maria",
       "Polli Giulia",
       "Porrini Filippo",
       "Vitali Beatrice"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/4514/2011/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/4514/2011/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
@@ -11469,7 +11498,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia/corso-di-laurea-infermieristica",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -11488,7 +11517,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia/corso-di-laurea-infermieristica",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -11507,7 +11536,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "OS023",
@@ -12935,7 +12964,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia/corso-laurea-triennale-ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "90042",
@@ -12946,14 +12975,14 @@
      "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 5,
      "ssd": "MED/41, BIO/14, MED/47",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Bastioli Guendalina",
       "Odelli Vanessa Giovanna",
       "Turi Stefano"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2026/7864/2024/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/7864/2024/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -13021,7 +13050,7 @@
      "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 12,
      "ssd": "MED/47",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Caglioni Martina",
@@ -13031,7 +13060,7 @@
       "Rinaldi Stefania",
       "Trapani Sara"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2026/7865/2024/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/7865/2024/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -13099,7 +13128,7 @@
      "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 4,
      "ssd": "MED/43, MED/36, MED/40",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "De Seta Francesco",
@@ -13107,7 +13136,7 @@
       "Salvatore Stefano",
       "Travaini Guido Vittorio"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2026/7866/2024/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/7866/2024/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -13175,7 +13204,7 @@
      "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 7,
      "ssd": "MED/47",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Ascoli Elisa",
@@ -13183,7 +13212,7 @@
       "Merlini Valentina",
       "Stefanizzi Lara"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2026/7867/2024/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/7867/2024/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -13251,7 +13280,7 @@
      "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 6,
      "ssd": "M-DEA/01, M-PSI/08, M-PED/01, M-PSI/01",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Catarinella Antonio",
@@ -13259,7 +13288,7 @@
       "Florita Marcello",
       "Mazzetti Martina"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2026/7868/2024/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/7868/2024/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -13327,13 +13356,13 @@
      "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 23,
      "ssd": "MED/47",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Rinaldi Stefania",
       "Trapani Sara"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2026/7869/2024/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/7869/2024/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -14549,7 +14578,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia/corso-di-laurea-ricerca-biotecnologica-in-medicina",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "2010",
@@ -16649,7 +16678,7 @@
    "url": "https://www.unisr.it/offerta-formativa/psicologia/corso-di-laurea-triennale-scienze-tecniche-psicologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "OFA24",
@@ -19282,7 +19311,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "T0037",
@@ -20885,7 +20914,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia/corso-di-laurea-magistrale-biotechnology-medical-biology",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "3321",
@@ -23951,7 +23980,7 @@
    "url": "https://www.unisr.it/offerta-formativa/psicologia/corso-di-laurea-magistrale-cognitive-psychology-in-health-communication",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -24878,7 +24907,7 @@
    "url": "https://www.unisr.it/offerta-formativa/filosofia/corso-di-laurea-magistrale-filosofia-mondo-contemporaneo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "18212",
@@ -29030,7 +29059,7 @@
    "url": "https://www.unisr.it/en/offerta-formativa/medicina-chirurgia/corso-laurea-magistrale-health-informatics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "100022",
@@ -29895,7 +29924,7 @@
    "url": "https://www.unisr.it/offerta-formativa/psicologia/corso-di-laurea-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "9197",
@@ -32970,7 +32999,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -32989,7 +33018,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia/corso-di-laurea-magistrale-scienze-riabilitative-delle-professioni-sanitare",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "60013",
@@ -33000,10 +33029,10 @@
      "periodo_fine": null,
      "cfu": 8,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5944/2017/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5944/2017/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
@@ -33018,18 +33047,18 @@
      "nome": "Analisi Strumentale del Movimento",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 3,
      "ssd": "MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Cescon Corrado",
       "Teggi Roberto Carlo",
       "Trojaniello Diana"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5940/2017/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5940/2017/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -33081,18 +33110,20 @@
      "nome": "Analisi delle Funzioni Cognitive",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/01/2027 00:00:00",
      "cfu": 7,
      "ssd": "MED/26, MED/37",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Agosta Federica",
       "Falini Andrea",
-      "Rocca Maria Assunta"
+      "Mazzeo Salvatore",
+      "Rocca Maria Assunta",
+      "Salsone Maria"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/6288/2017/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/6288/2017/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -33135,7 +33166,7 @@
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
+     "modalita_esame": "scritto e orale congiunti",
      "id": "unisr-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie-60014",
      "stato_esami": "completo"
     },
@@ -33144,23 +33175,23 @@
      "nome": "Approfondimenti di Economia e Legislazione Sanitaria",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 3,
      "ssd": "SECS-P/06",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
-      "D'amelio Einaudi Anna Flavia",
-      "Sorgente Antonella Eliana"
+      "Sorgente Antonella Eliana",
+      "D'amelio Einaudi Anna Flavia"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5941/2017/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5941/2017/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
+     "modalita_esame": "scritto",
      "id": "unisr-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie-60009",
      "stato_esami": "da_aggiungere"
     },
@@ -33169,8 +33200,8 @@
      "nome": "Legislazione, Organizzazione e Programmazione Sanitaria",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/03/2024 00:00:00",
-     "periodo_fine": "15/06/2024 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 2,
      "ssd": "SECS-P/10",
      "obbligatorio": false,
@@ -33178,13 +33209,13 @@
      "docenti": [
       "Signorelli Carlo"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/6289/2017/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/6289/2017/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
+     "modalita_esame": "scritto e orale congiunti",
      "id": "unisr-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie-60015",
      "stato_esami": "da_aggiungere"
     },
@@ -33193,22 +33224,23 @@
      "nome": "Ricerca ed Organizzazione in Sanità",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "SECS-P/10",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
+      "Tuccillo Luigi",
       "Esposti Federico"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/6464/2017/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/6464/2017/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
      "verificato_il": "2026-10-05",
      "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
+     "modalita_esame": "scritto",
      "id": "unisr-lm-snt2-scienze-riabilitative-delle-professioni-sanitarie-60017",
      "stato_esami": "da_aggiungere"
     },
@@ -33217,19 +33249,19 @@
      "nome": "Journal Club",
      "anno": 2,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 5,
      "ssd": "MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Basaia Silvia",
       "Corbetta Davide",
-      "Nicolelis Miguel",
-      "Pelosin Elisa"
+      "Pelosin Elisa",
+      "Nicolelis Miguel"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5942/2017/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5942/2017/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
@@ -33244,8 +33276,8 @@
      "nome": "Riabilitazione Psichiatrica",
      "anno": 2,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 1,
      "ssd": "MED/25",
      "obbligatorio": false,
@@ -33253,7 +33285,7 @@
      "docenti": [
       "Bechi Margherita"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/6290/2017/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/6290/2017/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
@@ -33268,16 +33300,16 @@
      "nome": "Tirocinio",
      "anno": 2,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "15/06/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "15/06/2027 00:00:00",
      "cfu": 30,
      "ssd": "MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Sarasso Elisabetta"
      ],
-     "url": "https://syllabus.unisr.it/insegnamenti/2024/5943/2017/9999?coorte=2024",
+     "url": "https://syllabus.unisr.it/insegnamenti/2026/5943/2017/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://syllabus.unisr.it",
@@ -33721,7 +33753,7 @@
    "url": "https://www.unisr.it/offerta-formativa/filosofia/corso-di-laurea-magistrale-in-teoria-e-storia-arti-immagine",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "10117",
@@ -46637,7 +46669,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia/corso-di-laurea-medicina-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A0028",
@@ -50536,7 +50568,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia/corso-di-laurea-medicina-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A0028",
@@ -51816,7 +51848,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia/corso-di-laurea-medicina-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A0028",
@@ -53096,7 +53128,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia/international-medical-doctor-program",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -53115,7 +53147,7 @@
    "url": "https://www.unisr.it/offerta-formativa/medicina-chirurgia/corso-di-laurea-odontoiatria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "30014",

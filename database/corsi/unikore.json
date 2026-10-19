@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unikore",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://uke.it/didattica/corsi/economia-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -1074,7 +1074,7 @@
    "url": "https://uke.it/didattica/corsi/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -1691,7 +1691,7 @@
    "url": "https://uke.it/didattica/corsi/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -2902,7 +2902,7 @@
    "url": "https://uke.it/didattica/corsi/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -4113,7 +4113,7 @@
    "url": "https://uke.it/didattica/corsi/ingegneria-aerospaziale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -4885,7 +4885,7 @@
    "url": "https://uke.it/didattica/corsi/ingegneria-biomedica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -5834,7 +5834,7 @@
    "url": "https://uke.it/didattica/corsi/ingegneria-dei-rischi-ambientali-e-delle-infrastrutture",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -6815,7 +6815,7 @@
    "url": "https://uke.it/didattica/corsi/ingegneria-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -7626,7 +7626,7 @@
    "url": "https://uke.it/didattica/corsi/lettere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -7644,6 +7644,25 @@
      "fonte": "https://uke.it/didattica/corsi/lettere",
      "verificato_il": "2026-10-05",
      "id": "unikore-l-10-lettere-lingua-e-letteratura-greca",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Lingua e letteratura latina",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 12,
+     "ssd": "LATI-01/A",
+     "obbligatorio": true,
+     "curriculum": "Linguaggi della contemporaneità",
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/lettere",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/lettere",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-l-10-lettere-lingua-e-letteratura-latina",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -8080,7 +8099,7 @@
      "esami": [],
      "fonte": "https://uke.it/didattica/corsi/lettere",
      "verificato_il": "2026-10-05",
-     "id": "unikore-l-10-lettere-lingua-e-letteratura-latina",
+     "id": "unikore-l-10-lettere-lingua-e-letteratura-latina-a2",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -8663,8 +8682,27 @@
    "url": "https://uke.it/didattica/corsi/lingue-e-culture-moderne",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
+    {
+     "codice": null,
+     "nome": "Due lingue a scelta tra",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 12,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/lingue-e-culture-moderne",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/lingue-e-culture-moderne",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-l-11-lingue-e-culture-moderne-due-lingue-a-scelta-tra",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": null,
      "nome": "Lingua e traduzione inglese 1",
@@ -9247,6 +9285,25 @@
     },
     {
      "codice": null,
+     "nome": "Due lingue a scelta tra",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 12,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/lingue-e-culture-moderne",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/lingue-e-culture-moderne",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-l-11-lingue-e-culture-moderne-due-lingue-a-scelta-tra-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Lingua cinese 2",
      "anno": 2,
      "periodo": null,
@@ -9648,6 +9705,25 @@
     },
     {
      "codice": null,
+     "nome": "Letterature correlate alle lingue a e b tra",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 8,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/lingue-e-culture-moderne",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/lingue-e-culture-moderne",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-l-11-lingue-e-culture-moderne-letterature-correlate-alle-lingue-a-e-b",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Una Filologia a scelta tra",
      "anno": 2,
      "periodo": "1",
@@ -9855,7 +9931,7 @@
      "esami": [],
      "fonte": "https://uke.it/didattica/corsi/lingue-e-culture-moderne",
      "verificato_il": "2026-10-05",
-     "id": "unikore-l-11-lingue-e-culture-moderne-due-lingue-a-scelta-tra",
+     "id": "unikore-l-11-lingue-e-culture-moderne-due-lingue-a-scelta-tra-a3",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -10089,7 +10165,7 @@
      "esami": [],
      "fonte": "https://uke.it/didattica/corsi/lingue-e-culture-moderne",
      "verificato_il": "2026-10-05",
-     "id": "unikore-l-11-lingue-e-culture-moderne-letterature-correlate-alle-lingue-a-e-b",
+     "id": "unikore-l-11-lingue-e-culture-moderne-letterature-correlate-alle-lingue-a-e-b-a3",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -10842,7 +10918,7 @@
    "url": "https://uke.it/didattica/corsi/logopedia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -11039,7 +11115,7 @@
        "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499"
       },
       {
-       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607",
+       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -11048,7 +11124,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607"
+       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499"
       }
      ],
      "esami": [],
@@ -12138,7 +12214,7 @@
    "url": "https://uke.it/didattica/corsi/ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -12353,6 +12429,25 @@
     },
     {
      "codice": null,
+     "nome": "Ginecologia e Ostetricia e Scienze Infermieristiche ostetriche (parte I)",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": 4,
+     "ssd": "MEDS-24/C",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/ostetricia",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/ostetricia",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-ginecologia-e-ostetricia-e-scienze-infer",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Laboratorio Professionale",
      "anno": 1,
      "periodo": "2",
@@ -12424,6 +12519,25 @@
      "fonte": "https://uke.it/didattica/corsi/ostetricia",
      "verificato_il": "2026-10-05",
      "id": "unikore-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-diagnostica-per-immagini-e-informatica",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Ginecologia e Ostetricia e Scienze Infermieristiche ostetriche (parte II)",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 13,
+     "ssd": "MEDS-24/C",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/ostetricia",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/ostetricia",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-ginecologia-e-ostetricia-e-scienze-infer-a2",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -12562,6 +12676,25 @@
     },
     {
      "codice": null,
+     "nome": "Ginecologia e Ostetricia e Scienze Infermieristiche ostetriche (parte III)",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 13,
+     "ssd": "MEDS-24/C",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/ostetricia",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/ostetricia",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-ginecologia-e-ostetricia-e-scienze-infer-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Prova finale",
      "anno": 3,
      "periodo": null,
@@ -12635,25 +12768,6 @@
      "id": "unikore-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-ulteriori-attivita",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Ginecologia e Ostetricia e Scienze Infermieristiche ostetriche (parte III)",
-     "anno": 3,
-     "periodo": "2",
-     "cfu": 13,
-     "ssd": "MEDS-24/C",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uke.it/didattica/corsi/ostetricia",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://uke.it/didattica/corsi/ostetricia",
-     "verificato_il": "2026-10-05",
-     "id": "unikore-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric-ginecologia-e-ostetricia-e-scienze-infer",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
     }
    ],
    "url_catalogo": "https://uke.it/didattica/corsi/ostetricia"
@@ -12674,7 +12788,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-delle-attivita-motorie-e-sportive",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -13400,7 +13514,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-e-tecniche-psicologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -14542,7 +14656,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-politiche-e-delle-relazioni-internazionali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -14834,6 +14948,25 @@
      "stato_libri": "completo",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Scienze politiche e delle relazioni internazionali/2025-2026/I anno/Storia del mondo contemporaneo.pdf"
+    },
+    {
+     "codice": null,
+     "nome": "Tirocini formativi e di orientamento",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 4,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/scienze-politiche-e-delle-relazioni-internazionali",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/scienze-politiche-e-delle-relazioni-internazionali",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-l-36-scienze-politiche-e-delle-relazioni-internazionali-tirocini-formativi-e-di-orientamento",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": null,
@@ -15377,7 +15510,7 @@
      "esami": [],
      "fonte": "https://uke.it/didattica/corsi/scienze-politiche-e-delle-relazioni-internazionali",
      "verificato_il": "2026-10-05",
-     "id": "unikore-l-36-scienze-politiche-e-delle-relazioni-internazionali-tirocini-formativi-e-di-orientamento",
+     "id": "unikore-l-36-scienze-politiche-e-delle-relazioni-internazionali-tirocini-formativi-e-di-orientamento-a3",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -15423,7 +15556,7 @@
    "url": "https://uke.it/didattica/corsi/servizio-sociale-e-scienze-criminologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -15765,6 +15898,25 @@
     },
     {
      "codice": null,
+     "nome": "Tirocinio",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/servizio-sociale-in-contesti-disagiati-e-criminogeni",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/servizio-sociale-in-contesti-disagiati-e-criminogeni",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-l-39-servizio-sociale-in-contesti-disagiati-e-criminogeni-tirocinio",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Diritto di Famiglia e Tutele Penali",
      "anno": 2,
      "periodo": "1",
@@ -16089,7 +16241,7 @@
      "esami": [],
      "fonte": "https://uke.it/didattica/corsi/servizio-sociale-in-contesti-disagiati-e-criminogeni",
      "verificato_il": "2026-10-05",
-     "id": "unikore-l-39-servizio-sociale-in-contesti-disagiati-e-criminogeni-tirocinio",
+     "id": "unikore-l-39-servizio-sociale-in-contesti-disagiati-e-criminogeni-tirocinio-a3",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -16363,7 +16515,7 @@
    "url": "https://uke.it/didattica/corsi/tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-cardiovascolare",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -16560,7 +16712,7 @@
        "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499"
       },
       {
-       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607",
+       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -16569,7 +16721,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607"
+       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499"
       }
      ],
      "esami": [],
@@ -17016,7 +17168,7 @@
    "url": "https://uke.it/didattica/corsi/tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -17309,7 +17461,7 @@
        "citazione": "2025. McGraw Hill, 4 ed. 2025. ISBN: 9781264258093 ISBN:9788808520555. ISBN:9788808520555."
       },
       {
-       "titolo": "2025. McGraw Hill, 4 ed. 2025. ISBN: 9781264258093",
+       "titolo": "2025. McGraw Hill, 4 ed. 2025. ISBN: 9781264258093 ISBN:9788808520555.",
        "autori": null,
        "editore": "2025. McGraw Hill",
        "anno": 2025,
@@ -17318,7 +17470,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "2025. McGraw Hill, 4 ed. 2025. ISBN: 9781264258093"
+       "citazione": "2025. McGraw Hill, 4 ed. 2025. ISBN: 9781264258093 ISBN:9788808520555."
       }
      ],
      "esami": [],
@@ -18018,7 +18170,7 @@
    "url": "https://uke.it/didattica/corsi/tecniche-di-radiologia-medica-per-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -18229,16 +18381,28 @@
        "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024 ISBN:9783031249600, 3031249607 ISBN:9788836232499"
       },
       {
-       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024",
+       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024 ISBN:9788836232499",
        "autori": null,
        "editore": null,
        "anno": 2024,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788836232499",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024"
+       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024 ISBN:9788836232499"
+      },
+      {
+       "titolo": "ISBN:9783031249600, 3031249607",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9783031249600",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "ISBN:9783031249600, 3031249607"
       }
      ],
      "esami": [],
@@ -19012,7 +19176,7 @@
    "url": "https://uke.it/didattica/corsi/economia-e-direzione-delle-imprese",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -20121,7 +20285,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-sociali-per-lo-sviluppo-sostenibile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -20970,7 +21134,7 @@
    "url": "https://uke.it/didattica/corsi/gestione-e-protezione-delle-risorse-territoriali-e-ambientali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -20988,6 +21152,25 @@
      "fonte": "https://uke.it/didattica/corsi/gestione-e-protezione-delle-risorse-territoriali-e-ambientali",
      "verificato_il": "2026-10-05",
      "id": "unikore-lm-23-lm-35-gestione-e-protezione-delle-risorse-territoriali-e-ambiental-applicazioni-gis-per-le-infrastrutture-e",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Materia a scelta",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/gestione-e-protezione-delle-risorse-territoriali-e-ambientali",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/gestione-e-protezione-delle-risorse-territoriali-e-ambientali",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-lm-23-lm-35-gestione-e-protezione-delle-risorse-territoriali-e-ambiental-materia-a-scelta",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -21376,7 +21559,7 @@
      "esami": [],
      "fonte": "https://uke.it/didattica/corsi/gestione-e-protezione-delle-risorse-territoriali-e-ambientali",
      "verificato_il": "2026-10-05",
-     "id": "unikore-lm-23-lm-35-gestione-e-protezione-delle-risorse-territoriali-e-ambiental-materia-a-scelta",
+     "id": "unikore-lm-23-lm-35-gestione-e-protezione-delle-risorse-territoriali-e-ambiental-materia-a-scelta-a2",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -21439,11 +21622,11 @@
     },
     {
      "codice": null,
-     "nome": "Tecniche di monitoraggio delle infrastrutture II",
+     "nome": "Tecniche di monitoraggio delle infrastrutture I",
      "anno": 2,
      "periodo": null,
-     "cfu": 9,
-     "ssd": "CEAR-05/A, CEAR-06/A, CEAR-07/A",
+     "cfu": 6,
+     "ssd": "CEAR-01/B, CEAR-10/A",
      "obbligatorio": true,
      "curriculum": "Gestione delle infrastrutture civili",
      "docenti": [],
@@ -21705,7 +21888,7 @@
    "url": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -22477,7 +22660,7 @@
    "url": "https://uke.it/didattica/corsi/ingegneria-dellintelligenza-artificiale-e-della-sicurezza-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -22978,7 +23161,7 @@
    "url": "https://uke.it/didattica/corsi/lingue-per-la-comunicazione-e-i-servizi-culturali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -24163,7 +24346,7 @@
    "url": "https://uke.it/didattica/corsi/psicologia-clinica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -25083,7 +25266,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-e-tecniche-delle-attivita-motorie-preventive-e-adattate",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -25539,17 +25722,17 @@
     },
     {
      "codice": null,
-     "nome": "Analisi del Movimento e della Prestazione",
+     "nome": "Analisi del Movimento e della Prestazione C.I.",
      "anno": 2,
      "periodo": "2",
      "cfu": 12,
      "ssd": "MEDF-01/B",
      "obbligatorio": true,
-     "curriculum": "Curriculum Sport e Salute",
+     "curriculum": "Curriculum Movimento e Scuola, Curriculum Sport e Salute",
      "docenti": [
       "Francesco Lucio Sgrò"
      ],
-     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Scienze dell'esercizio fisico per il benessere/2025-2026/I anno/Analisi del movimento e della prestazione.pdf",
+     "url": "https://uke.it/didattica/corsi/scienze-dell-esercizio-fisico-per-il-benessere",
      "libri": [
       {
        "titolo": "Tecniche avanzate di analisi dei dati 1. Thomas, Nelson, J.K., Silverman, S.S. (2012). Metodologia della ricerca per le scienze motorie e sportive. Calzetti Mariucci - Capitoli dal n. 6 al n. 9.",
@@ -25627,7 +25810,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-infermieristiche-e-ostetriche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Tirocinio formativo di Management",
@@ -25643,6 +25826,23 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unikore-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-tirocinio-formativo-di-management",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Tirocinio formativo di Ricerca",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 7,
+     "ssd": "MEDS-24/C",
+     "obbligatorio": true,
+     "docenti": [],
+     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Scienze Infermieristiche e ostetriche/2025-2026/I anno/TIROCINIO FORMATIVO DI RICERCA.pdf",
+     "fonte": "https://uke.it/didattica/corsi/scienze-infermieristiche-e-ostetriche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unikore-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-tirocinio-formativo-di-ricerca",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -25897,7 +26097,7 @@
      "libri": [],
      "esami": [],
      "verificato_il": "2026-10-17",
-     "id": "unikore-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-tirocinio-formativo-di-ricerca",
+     "id": "unikore-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-tirocinio-formativo-di-ricerca-a2",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     }
@@ -25920,7 +26120,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-pedagogiche-per-la-consulenza-e-la-progettazione-educativa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -26418,7 +26618,7 @@
    "url": "https://uke.it/didattica/corsi/architettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -27045,6 +27245,25 @@
      "stato_libri": "completo",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Architettura/2026-2027/II anno/LABORATORIO DI PROGETTAZIONE 2.pdf"
+    },
+    {
+     "codice": null,
+     "nome": "Materia a scelta",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/architettura",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/architettura",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-lm-4-c-u-architettura-materia-a-scelta",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": null,
@@ -27879,7 +28098,7 @@
      "esami": [],
      "fonte": "https://uke.it/didattica/corsi/architettura",
      "verificato_il": "2026-10-05",
-     "id": "unikore-lm-4-c-u-architettura-materia-a-scelta",
+     "id": "unikore-lm-4-c-u-architettura-materia-a-scelta-a5",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -28004,7 +28223,7 @@
    "url": "https://uke.it/didattica/corsi/giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -29610,7 +29829,7 @@
    "url": "https://uke.it/didattica/corsi/medicina-e-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -31685,7 +31904,7 @@
        "citazione": "Hoffmann - Casey – AAVV. ISBN: 9788829927548 ISBN: 882144869X ISBN: 882144869X"
       },
       {
-       "titolo": "Hoffmann - Casey – AAVV. ISBN: 9788829927548",
+       "titolo": "Hoffmann - Casey – AAVV. ISBN: 9788829927548 ISBN: 882144869X",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -31694,7 +31913,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Hoffmann - Casey – AAVV. ISBN: 9788829927548"
+       "citazione": "Hoffmann - Casey – AAVV. ISBN: 9788829927548 ISBN: 882144869X"
       }
      ],
      "esami": [],
@@ -31892,7 +32111,7 @@
    "url": "https://uke.it/didattica/corsi/medicina-e-chirurgia-sede-di-ragusa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -32303,7 +32522,7 @@
        "citazione": "Donald Voet, Judith G. Voet e Charlotte W. Pratt, Fondamenti di Biochimica, quarta edizione (Zanichelli, 2017). ISBN: 9788808420961. ISBN: 8891902740. ISBN: 8891902740."
       },
       {
-       "titolo": "Donald Voet, Judith G. Voet e Charlotte W. Pratt, Fondamenti di Biochimica, quarta edizione (Zanichelli, 2017). ISBN: 9788808420961.",
+       "titolo": "Donald Voet, Judith G. Voet e Charlotte W. Pratt, Fondamenti di Biochimica, quarta edizione (Zanichelli, 2017). ISBN: 9788808420961. ISBN: 8891902740.",
        "autori": null,
        "editore": "quarta edizione (Zanichelli",
        "anno": 2017,
@@ -32312,7 +32531,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Donald Voet, Judith G. Voet e Charlotte W. Pratt, Fondamenti di Biochimica, quarta edizione (Zanichelli, 2017). ISBN: 9788808420961."
+       "citazione": "Donald Voet, Judith G. Voet e Charlotte W. Pratt, Fondamenti di Biochimica, quarta edizione (Zanichelli, 2017). ISBN: 9788808420961. ISBN: 8891902740."
       }
      ],
      "esami": [],
@@ -33063,7 +33282,7 @@
    "url": "https://uke.it/didattica/corsi/medicina-e-chirurgia-sede-di-siracusa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -34182,7 +34401,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -34257,6 +34476,25 @@
      "fonte": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria",
      "verificato_il": "2026-10-05",
      "id": "unikore-lm-85-bis-scienze-della-formazione-primaria-laboratorio-di-psicologia-dello-sviluppo",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Laboratorio di lingua inglese - idoneita' (livello a1)",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": 2,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-lm-85-bis-scienze-della-formazione-primaria-laboratorio-di-lingua-inglese-idoneita-l",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -34834,6 +35072,25 @@
     },
     {
      "codice": null,
+     "nome": "Laboratorio di lingua inglese - idoneita' (livello a2)",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 2,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-lm-85-bis-scienze-della-formazione-primaria-laboratorio-di-lingua-inglese-idoneita-l-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Laboratorio di tecnologie didattiche",
      "anno": 2,
      "periodo": "2",
@@ -35074,6 +35331,25 @@
      "fonte": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria",
      "verificato_il": "2026-10-05",
      "id": "unikore-lm-85-bis-scienze-della-formazione-primaria-tirocinio-2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Laboratorio di lingua inglese - idoneita' (livello b1)",
+     "anno": 3,
+     "periodo": "1",
+     "cfu": 2,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-lm-85-bis-scienze-della-formazione-primaria-laboratorio-di-lingua-inglese-idoneita-l-a3",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -35824,7 +36100,7 @@
      "esami": [],
      "fonte": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria",
      "verificato_il": "2026-10-05",
-     "id": "unikore-lm-85-bis-scienze-della-formazione-primaria-laboratorio-di-lingua-inglese-idoneita-l",
+     "id": "unikore-lm-85-bis-scienze-della-formazione-primaria-laboratorio-di-lingua-inglese-idoneita-l-a4",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -36195,7 +36471,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria-sede-di-siracusa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -36232,6 +36508,25 @@
      "fonte": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria-sede-di-siracusa",
      "verificato_il": "2026-10-05",
      "id": "unikore-lm-85-bis-scienze-della-formazione-primaria-replica-siracusa-laboratorio-di-letteratura-per-l-infanzi",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Laboratorio di lingua inglese - idoneita' (livello a1)",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 2,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria-sede-di-siracusa",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria-sede-di-siracusa",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-lm-85-bis-scienze-della-formazione-primaria-replica-siracusa-laboratorio-di-lingua-inglese-idoneita-l",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -36668,6 +36963,25 @@
     },
     {
      "codice": null,
+     "nome": "Laboratorio di lingua inglese - idoneita' (livello a2)",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 2,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria-sede-di-siracusa",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria-sede-di-siracusa",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-lm-85-bis-scienze-della-formazione-primaria-replica-siracusa-laboratorio-di-lingua-inglese-idoneita-l-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Laboratorio di tecnologie didattiche",
      "anno": 2,
      "periodo": null,
@@ -36934,6 +37248,25 @@
     },
     {
      "codice": null,
+     "nome": "Laboratorio di lingua inglese - idoneita' (livello b1)",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 2,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria-sede-di-siracusa",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria-sede-di-siracusa",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-lm-85-bis-scienze-della-formazione-primaria-replica-siracusa-laboratorio-di-lingua-inglese-idoneita-l-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Laboratorio di matematica per la scuola primaria e dell'infanzia",
      "anno": 3,
      "periodo": null,
@@ -37175,7 +37508,7 @@
      "esami": [],
      "fonte": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria-sede-di-siracusa",
      "verificato_il": "2026-10-05",
-     "id": "unikore-lm-85-bis-scienze-della-formazione-primaria-replica-siracusa-laboratorio-di-lingua-inglese-idoneita-l",
+     "id": "unikore-lm-85-bis-scienze-della-formazione-primaria-replica-siracusa-laboratorio-di-lingua-inglese-idoneita-l-a4",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -37483,7 +37816,7 @@
    "url": "https://uke.it/didattica/corsi/tecnologie-per-l-energia-e-l-ambiente",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -37734,6 +38067,25 @@
     },
     {
      "codice": null,
+     "nome": "Laboratorio Permanente – Progetto e Restauro del Moderno I",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 10,
+     "ssd": "CEAR-09/A",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/tecnologie-per-il-recupero-delledilizia-contemporanea",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/tecnologie-per-il-recupero-delledilizia-contemporanea",
+     "verificato_il": "2026-10-05",
+     "id": "unikore-l-p01-tecnologie-per-il-recupero-dell-edilizia-contemporanea-laboratorio-permanente-progetto-e-restau",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Laboratorio di Rilievo e Modellazione 3D",
      "anno": 2,
      "periodo": null,
@@ -37823,7 +38175,7 @@
      "esami": [],
      "fonte": "https://uke.it/didattica/corsi/tecnologie-per-il-recupero-delledilizia-contemporanea",
      "verificato_il": "2026-10-05",
-     "id": "unikore-l-p01-tecnologie-per-il-recupero-dell-edilizia-contemporanea-laboratorio-permanente-progetto-e-restau",
+     "id": "unikore-l-p01-tecnologie-per-il-recupero-dell-edilizia-contemporanea-laboratorio-permanente-progetto-e-restau-a3",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },

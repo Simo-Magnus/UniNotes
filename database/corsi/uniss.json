@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "uniss",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/biotecnologie-e-analisi-bioinformatiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A003395",
@@ -73,7 +73,19 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "I. Dalle Donne et al. Istologia con elementi di Anatomia Microscopica. EdiSES. Ed. 2019 ISBN:9788836230259 ISBN 9788833190495"
+       "citazione": "I. Dalle Donne et al. Istologia con elementi di Anatomia Microscopica. EdiSES. Ed. 2019 ISBN:9788836230259 ISBN 9788833190495 ISBN:9788836230259"
+      },
+      {
+       "titolo": "Istologia con elementi di Anatomia Microscopica",
+       "autori": "I. Dalle Donne et al",
+       "editore": "EdiSES",
+       "anno": 2019,
+       "edizione": null,
+       "isbn": "9788833190495",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "I. Dalle Donne et al. Istologia con elementi di Anatomia Microscopica. EdiSES. Ed. 2019 ISBN 9788833190495"
       }
      ],
      "esami": [],
@@ -1691,7 +1703,7 @@
    "url": "https://www.dcf.uniss.it/it/i-nostri-corsi/corsi-di-studio/chimica-scopri-di-piu",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40004681",
@@ -3399,7 +3411,7 @@
    "url": "https://dissuf.uniss.it/it/i-nostri-corsi/cds-l-20-comunicazione-pubblica-e-professioni-dellinformazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A003226",
@@ -4456,16 +4468,16 @@
        "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018",
+       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "0194435733",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018"
+       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -6997,7 +7009,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-triennali-e-ciclo-unico/design",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A003425",
@@ -8656,7 +8668,7 @@
    "url": "https://disea.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40000501",
@@ -9546,16 +9558,16 @@
        "citazione": "MASCAGNI, Italian Company Law June, 15, 2021 ISBN: 9791221117745 ISBN: 9791221117745"
       },
       {
-       "titolo": "MASCAGNI, Italian Company Law June, 15, 2021",
+       "titolo": "MASCAGNI, Italian Company Law June, 15, 2021 ISBN: 9791221117745",
        "autori": null,
        "editore": null,
        "anno": 2021,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9791221117745",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "MASCAGNI, Italian Company Law June, 15, 2021"
+       "citazione": "MASCAGNI, Italian Company Law June, 15, 2021 ISBN: 9791221117745"
       }
      ],
      "esami": [],
@@ -10755,7 +10767,7 @@
    "url": "https://disea.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40000501",
@@ -12999,7 +13011,7 @@
    "url": "https://disea.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40000165",
@@ -14285,7 +14297,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A000026",
@@ -17129,7 +17141,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40004092",
@@ -17576,16 +17588,16 @@
        "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018",
+       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "0194435733",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018"
+       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -20322,7 +20334,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40004092",
@@ -21026,16 +21038,16 @@
        "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018",
+       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "0194435733",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018"
+       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -22529,7 +22541,7 @@
    "url": "https://scienzebiomediche.uniss.it/it/didattica/ingegneria-industriale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A000421",
@@ -24205,7 +24217,7 @@
    "url": "https://scienzebiomediche.uniss.it/it/didattica/ingegneria-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A000421",
@@ -25774,7 +25786,7 @@
    "url": "https://dissuf.uniss.it/it/i-nostri-corsi/cds-l-10-lettere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40002699",
@@ -27812,16 +27824,16 @@
        "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018",
+       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "0194435733",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018"
+       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -31218,16 +31230,16 @@
        "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018",
+       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "0194435733",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018"
+       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -41325,7 +41337,7 @@
    "url": "https://dumas.uniss.it/it/didattica/mediazione-linguistica-e-culturale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A005009",
@@ -46868,7 +46880,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/corsi-di-studiotutte-le-informazioni/ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40004092",
@@ -49684,7 +49696,7 @@
        "citazione": "Codice ISBN: 9781408299135 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "Codice ISBN: 9781408299135",
+       "titolo": "Codice ISBN: 9781408299135 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -49693,7 +49705,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2024/25: la scheda 2025/26 non riporta la bibliografia",
-       "citazione": "Codice ISBN: 9781408299135"
+       "citazione": "Codice ISBN: 9781408299135 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -51374,16 +51386,16 @@
        "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018",
+       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "0194435733",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018"
+       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -54089,7 +54101,7 @@
    "url": "https://uniss.coursecatalogue.cineca.it/corsi/2026/11025",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40001607",
@@ -55675,7 +55687,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/scienze-biologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40004117",
@@ -57529,7 +57541,7 @@
    "url": "https://uniss.coursecatalogue.cineca.it/corsi/2026/11027",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A004806",
@@ -58868,7 +58880,7 @@
    "url": "https://dissuf.uniss.it/it/i-nostri-corsi/cds-l-1-scienze-dei-beni-culturali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A001362",
@@ -60571,16 +60583,16 @@
        "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018",
+       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "0194435733",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018"
+       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -63804,7 +63816,7 @@
    "url": "https://giuriss.uniss.it/it/i-nostri-corsi/corsi-di-studio/corso-di-laurea-triennale-scienze-dei-servizi-giuridici-scopri-di",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "3000818",
@@ -68311,16 +68323,16 @@
        "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018",
+       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "0194435733",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018"
+       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -71399,7 +71411,7 @@
        "citazione": "G. Peters, La pubblica amministrazione, Bologna, Il Mulino, 1999 (capp. I, II, III, IV)"
       },
       {
-       "titolo": "C. Ham e M Hill, Introduzione all'analisi delle politiche pubbliche, Bologna, Il Mulino, 1995 (eccetto cap. VIII e IX; volume in esaurimento; fotocopie disponibili presso le copisterie convenzionate). ISBN-13: 9788815048660 ISBN-10: 8815071768 ISBN-10: 8815048669 ISBN-10: 8815071768 ISBN-10: 8815071768 ISBN-10: 8815071768",
+       "titolo": "C. Ham e M Hill, Introduzione all'analisi delle politiche pubbliche, Bologna, Il Mulino, 1995 (eccetto cap. VIII e IX; volume in esaurimento; fotocopie disponibili presso le copisterie convenzionate). ISBN-13: 9788815048660 ISBN-10: 8815071768 ISBN-10: 8815048669 ISBN-10: 8815071768 ISBN-10: 8815071768 ISBN-10: 8815071768 ISBN-10: 8815071768",
        "autori": null,
        "editore": null,
        "anno": 1995,
@@ -71408,7 +71420,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "C. Ham e M Hill, Introduzione all'analisi delle politiche pubbliche, Bologna, Il Mulino, 1995 (eccetto cap. VIII e IX; volume in esaurimento; fotocopie disponibili presso le copisterie convenzionate). ISBN-13: 9788815048660 ISBN-10: 8815071768 ISBN-10: 8815048669 ISBN-10: 8815071768 ISBN-10: 8815071768 ISBN-10: 8815071768"
+       "citazione": "C. Ham e M Hill, Introduzione all'analisi delle politiche pubbliche, Bologna, Il Mulino, 1995 (eccetto cap. VIII e IX; volume in esaurimento; fotocopie disponibili presso le copisterie convenzionate). ISBN-13: 9788815048660 ISBN-10: 8815071768 ISBN-10: 8815048669 ISBN-10: 8815071768 ISBN-10: 8815071768 ISBN-10: 8815071768 ISBN-10: 8815071768"
       }
      ],
      "esami": [
@@ -71550,7 +71562,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-triennali-e-ciclo-unico/scienze-dellarchitettura-e-del-progetto",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A003138",
@@ -75079,7 +75091,7 @@
    "url": "https://dissuf.uniss.it/it/i-nostri-corsi/cds-l-19-scienze-delleducazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "10F70420",
@@ -76261,16 +76273,16 @@
        "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018",
+       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "0194435733",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018"
+       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -78461,7 +78473,7 @@
    "url": "https://dumas.uniss.it/it/didattica/future-e-futuri-studenti/scienze-e-tecniche-psicologiche-dei-processi-cognitivi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A005009",
@@ -80547,7 +80559,7 @@
    "url": "https://agrariaweb.uniss.it/it/didattica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40101607",
@@ -82314,7 +82326,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-triennali-e-ciclo-unico/scienze-forestali-e-ambientali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40004077",
@@ -84222,7 +84234,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/scienze-motorie-sportive-e-benessere-delluomo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "10M40260",
@@ -86020,7 +86032,7 @@
    "url": "https://www.dcf.uniss.it/it/i-nostri-corsi/corsi-di-studio/scienze-naturali-scopri-di-piu",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40000901",
@@ -87744,7 +87756,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-triennali-e-ciclo-unico/scienze-politiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40000412",
@@ -92402,7 +92414,7 @@
        "citazione": "G. Peters, La pubblica amministrazione, Bologna, Il Mulino, 1999 (capp. I, II, III, IV)"
       },
       {
-       "titolo": "C. Ham e M Hill, Introduzione all'analisi delle politiche pubbliche, Bologna, Il Mulino, 1995 (eccetto cap. VIII e IX; volume in esaurimento; fotocopie disponibili presso le copisterie convenzionate). ISBN-13: 9788815048660 ISBN-10: 8815071768 ISBN-10: 8815048669 ISBN-10: 8815071768 ISBN-10: 8815071768 ISBN-10: 8815071768",
+       "titolo": "C. Ham e M Hill, Introduzione all'analisi delle politiche pubbliche, Bologna, Il Mulino, 1995 (eccetto cap. VIII e IX; volume in esaurimento; fotocopie disponibili presso le copisterie convenzionate). ISBN-13: 9788815048660 ISBN-10: 8815071768 ISBN-10: 8815048669 ISBN-10: 8815071768 ISBN-10: 8815071768 ISBN-10: 8815071768 ISBN-10: 8815071768",
        "autori": null,
        "editore": null,
        "anno": 1995,
@@ -92411,7 +92423,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "C. Ham e M Hill, Introduzione all'analisi delle politiche pubbliche, Bologna, Il Mulino, 1995 (eccetto cap. VIII e IX; volume in esaurimento; fotocopie disponibili presso le copisterie convenzionate). ISBN-13: 9788815048660 ISBN-10: 8815071768 ISBN-10: 8815048669 ISBN-10: 8815071768 ISBN-10: 8815071768 ISBN-10: 8815071768"
+       "citazione": "C. Ham e M Hill, Introduzione all'analisi delle politiche pubbliche, Bologna, Il Mulino, 1995 (eccetto cap. VIII e IX; volume in esaurimento; fotocopie disponibili presso le copisterie convenzionate). ISBN-13: 9788815048660 ISBN-10: 8815071768 ISBN-10: 8815048669 ISBN-10: 8815071768 ISBN-10: 8815071768 ISBN-10: 8815071768 ISBN-10: 8815071768"
       }
      ],
      "esami": [
@@ -92553,7 +92565,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-triennali-e-ciclo-unico/scienze-strategiche-e-giuridiche-della",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A001351",
@@ -99148,7 +99160,7 @@
    "url": "https://dumas.uniss.it/it/didattica/future-e-futuri-studenti/progettazione-gestione-e-promozione-turistica-di-itinerari-della",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A005009",
@@ -101314,16 +101326,16 @@
        "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018",
+       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "0194435733",
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2026/27: la scheda 2027/28 non riporta la bibliografia",
-       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018"
+       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -102174,7 +102186,7 @@
    "url": "https://dumas.uniss.it/it/servizio_sociale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A001767",
@@ -105258,16 +105270,16 @@
        "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018",
+       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "0194435733",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018"
+       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -105819,7 +105831,7 @@
    "url": "https://dumas.uniss.it/it/didattica/future-e-futuri-studenti/l-15-sviluppo-turistico-e-territori-digitali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A005009",
@@ -110269,7 +110281,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/corsi-di-studiotutte-le-informazioni/tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "3000901",
@@ -113639,7 +113651,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/corsi-di-studiotutte-le-informazioni/tecniche-di-radiologia-medica-immagini-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40004077",
@@ -118855,7 +118867,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-triennali-e-ciclo-unico/urbanistica-progetto-ambientale-della",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A003504",
@@ -122366,7 +122378,7 @@
    "url": "https://agrariaweb.uniss.it/it/didattica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A003361",
@@ -128399,7 +128411,7 @@
    "url": "https://www.dissuf.uniss.it/it/i-nostri-corsi/cds-lm-284-interclasse-archeologia-e-scienze-storiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A003422",
@@ -133549,7 +133561,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-magistrali/architettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A003157",
@@ -133979,16 +133991,16 @@
        "citazione": "Libro e film Era O Hotel Cambridge, Ed. Aracne Roma, Ed. Aracne Roma,"
       },
       {
-       "titolo": "Libro e film Era O Hotel Cambridge,",
+       "titolo": "Libro e film Era O Hotel Cambridge, Ed. Aracne Roma,",
        "autori": null,
-       "editore": "Libro e film Era O Hotel Cambridge",
+       "editore": null,
        "anno": null,
        "edizione": null,
        "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
-       "citazione": "Libro e film Era O Hotel Cambridge,"
+       "citazione": "Libro e film Era O Hotel Cambridge, Ed. Aracne Roma,"
       }
      ],
      "esami": [],
@@ -135850,7 +135862,7 @@
    "url": "https://www.medicina-chirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/biologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A000026",
@@ -137275,7 +137287,7 @@
    "url": "https://uniss.coursecatalogue.cineca.it/corsi/2026/11029",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A004835",
@@ -137316,7 +137328,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "A. Capes-Davis and R. I. Freshney, Freshney's Culture of Animal Cells: A Manual of Basic Technique and Specialized Applications, 8th edition, Wiley, 2021 (selected chapters). ISBN-10: 1108716989 ISBN-13: 978-1107606227"
+       "citazione": "A. Capes-Davis and R. I. Freshney, Freshney's Culture of Animal Cells: A Manual of Basic Technique and Specialized Applications, 8th edition, Wiley, 2021 (selected chapters). ISBN-10: 1108716989 ISBN-13: 978-1107606227 ISBN-10: 1108716989 ISBN-13: 978-1107606227"
       }
      ],
      "esami": [],
@@ -137715,7 +137727,7 @@
    "url": "https://veterinaria.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A005089",
@@ -139511,7 +139523,7 @@
    "url": "https://disea.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40003453",
@@ -140736,7 +140748,7 @@
    "url": "https://disea.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40000546",
@@ -143324,7 +143336,7 @@
    "url": "https://www.dcf.uniss.it/it/i-nostri-corsi/corsi-di-studio/environmental-conservation-restoration-and-sustainability-scopri-di",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A004989",
@@ -146468,7 +146480,7 @@
    "url": "https://disea.uniss.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A002713",
@@ -147441,7 +147453,7 @@
    "url": "https://dumas.uniss.it/it/didattica/future-e-futuri-studenti/lettere-filologia-moderna-e-industria-culturale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40002575",
@@ -153522,7 +153534,7 @@
    "url": "https://dumas.uniss.it/it/didattica/future-e-futuri-studenti/lm38-lingue-e-letterature-straniere-la-mediazione-culturale-e-la",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A000307",
@@ -157779,7 +157791,7 @@
    "url": "https://www.uniss.it/it/didattica/offerta-formativa/lauree-magistrali/pianificazione-e-politiche-la-citta-lambiente-e-il",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A003444",
@@ -159595,7 +159607,7 @@
    "url": "https://agrariaweb.uniss.it/it/didattica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40003343",
@@ -160389,7 +160401,7 @@
    "url": "https://www.dcf.uniss.it/it/i-nostri-corsi/corsi-di-studio/scienze-chimiche-scopri-di-piu",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40000643",
@@ -163382,7 +163394,7 @@
    "url": "https://giuriss.uniss.it/it/i-nostri-corsi/corsi-di-studio/corso-di-laurea-magistrale-interclasse-scienze-politiche-e",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A004948",
@@ -164833,7 +164845,7 @@
    "url": "https://agrariaweb.uniss.it/it/didattica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40101607",
@@ -165637,7 +165649,7 @@
    "url": "https://www.dissuf.uniss.it/it/i-nostri-corsi/cds-lm-7885-interclasse-scienze-filosofiche-e-pedagogiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A004886",
@@ -168552,7 +168564,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/corsi-di-studiotutte-le-informazioni/scienze-infermieristiche-e-ostetriche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40004077",
@@ -176131,16 +176143,16 @@
        "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018",
+       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "0194435733",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018"
+       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -176695,7 +176707,7 @@
    "url": "https://dumas.uniss.it/it/didattica/future-e-futuri-studenti/lm-87-servizio-sociale-e-politiche-sociali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40002327",
@@ -178289,16 +178301,16 @@
        "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733 ISBN: 0194435733"
       },
       {
-       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018",
+       "titolo": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733",
        "autori": null,
        "editore": null,
        "anno": 2018,
        "edizione": null,
-       "isbn": null,
+       "isbn": "0194435733",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018"
+       "citazione": "D) The future demand for English in Europe, 2025 and beyond, British Council, 2018 ISBN: 0194435733"
       }
      ],
      "esami": [
@@ -178848,7 +178860,7 @@
    "url": "https://agrariaweb.uniss.it/it/didattica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40004501",
@@ -182385,7 +182397,7 @@
    "url": "https://agrariaweb.uniss.it/it/didattica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40004077",
@@ -183594,7 +183606,7 @@
    "url": "https://www.veterinaria.uniss.it/en/didactics/masters-degree-wildlife-management-conservation-and-control-wmcc",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A002016",
@@ -184653,7 +184665,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/chimica-e-tecnologia-farmaceutiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40000904",
@@ -188458,7 +188470,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/farmacia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40004062",
@@ -194157,7 +194169,7 @@
    "url": "https://giuriss.uniss.it/it/i-nostri-corsi/corsi-di-studio/corso-di-laurea-magistrale-ciclo-unico-giurisprudenza-scopri-di-piu",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40000583",
@@ -214889,7 +214901,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/i-nostri-corsi-di-studi/medicina-e-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A004705",
@@ -221486,7 +221498,7 @@
    "url": "http://veterinaria.uniss.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "40001283",
@@ -225888,7 +225900,7 @@
    "url": "https://sdr.medicinachirurgia.uniss.it/it/i-nostri-corsi/corsi-di-studiotutte-le-informazioni/odontoiatria-e-protesi-dentaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A004705",
@@ -228515,7 +228527,7 @@
    "url": "https://uniss.coursecatalogue.cineca.it/corsi/2026/11024",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A004792",

@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "lumsa",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://lumsa.it/it/corsi/comunicazione-digitale-marketing",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "CBST_L20R",
@@ -1547,7 +1547,7 @@
    "url": "https://lumsa.it/it/corsi/economia-commercio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DIRPRI_L33",
@@ -3131,7 +3131,7 @@
    "url": "https://lumsa.it/it/corsi/economia-gestione-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "EAZ_L18",
@@ -5144,7 +5144,7 @@
    "url": "https://lumsa.it/it/corsi/mediazione-linguistica-culturale?refresh=true",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LGENL12",
@@ -7243,7 +7243,7 @@
    "url": "https://lumsa.it/it/corsi/scienze-del-servizio-sociale-non-profit-roma?refresh=true",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "IDPUBL39",
@@ -9681,7 +9681,7 @@
    "url": "https://lumsa.it/it/corsi/scienze-delleducazione-e-della-formazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "ANTFAM_L19",
@@ -13809,7 +13809,7 @@
    "url": "https://lumsa.it/it/corsi/scienze-comunicazione-marketing-digital-media",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DIRPBB_L20",
@@ -18381,7 +18381,7 @@
    "url": "https://lumsa.it/it/corsi/scienze-tecniche-psicologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "PEDGN_L24",
@@ -22425,7 +22425,7 @@
    "url": "https://lumsa.it/it/corsi/scienze-politiche-e-studi-internazionali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DCPUB_L36",
@@ -24433,7 +24433,7 @@
    "url": "https://lumsa.it/it/corsi/ai-marketing-and-communication",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "AID_LM59EN",
@@ -25066,7 +25066,7 @@
    "url": "https://www.lumsa.it/didattica/corsi-di-laurea/roma/magistrale/comunicazione-innovazione-experience-design",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "GESIN_LM91",
@@ -27345,7 +27345,7 @@
    "url": null,
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DAIA_LM59R",
@@ -28169,7 +28169,7 @@
    "url": "https://lumsa.it/it/corsi/economia-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "BUS_LM77R",
@@ -29684,7 +29684,7 @@
    "url": "https://lumsa.it/it/corsi/management-finance-data-analytics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "TES_LM77",
@@ -30117,6 +30117,43 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "lumsa-lm-77-management-finance-and-data-analitycs-bulaw",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "CSSLM77",
+     "nome": "Corporate Strategy And Sustainability",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "19/12/2026 00:00:00",
+     "cfu": 4,
+     "ssd": "ECON-06/A",
+     "obbligatorio": false,
+     "curriculum": "Sustainable finance and data analytics",
+     "docenti": [
+      "De Agostini Luca"
+     ],
+     "url": "https://lumsa.coursecatalogue.cineca.it/insegnamenti/2026/20750/2026/3?coorte=2026",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-06",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "DE AGOSTINI LUCA",
+       "note": null,
+       "fonte": "https://lumsa.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://lumsa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "lumsa-lm-77-management-finance-and-data-analitycs-csslm77",
      "stato_esami": "completo"
     },
     {
@@ -30976,6 +31013,55 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "LPCM_LM52",
+     "nome": "Lab.: Project Cycle Management",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "22/02/2027 00:00:00",
+     "periodo_fine": "15/05/2027 00:00:00",
+     "cfu": 3,
+     "ssd": "ECON-08/A",
+     "obbligatorio": false,
+     "curriculum": "Sustainable finance and data analytics",
+     "docenti": [
+      "Desole Martina"
+     ],
+     "url": "https://lumsa.coursecatalogue.cineca.it/insegnamenti/2026/21767/2026/3?coorte=2026",
+     "libri": [
+      {
+       "titolo": "European Commission, Project cycle management guidelines, Bruxelles, European Commission, March, 2004",
+       "autori": null,
+       "editore": null,
+       "anno": 2004,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "European Commission, Project cycle management guidelines, Bruxelles, European Commission, March, 2004"
+      },
+      {
+       "titolo": "European Commission, The Horizon Europe handbook, Bruxelles, European Commission, last update 2024",
+       "autori": null,
+       "editore": null,
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "European Commission, The Horizon Europe handbook, Bruxelles, European Commission, last update 2024"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://lumsa.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "lumsa-lm-77-management-finance-and-data-analitycs-lpcm-lm52",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "LCARS_LM52",
      "nome": "Lab: Climate Change: Awareness, Resilience, Sustainability",
      "anno": 1,
@@ -31666,7 +31752,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "lumsa-lm-77-management-finance-and-data-analitycs-csslm77",
+     "id": "lumsa-lm-77-management-finance-and-data-analitycs-csslm77-a2",
      "stato_esami": "completo"
     },
     {
@@ -32151,9 +32237,7 @@
      "ssd": "ECON-08/A",
      "obbligatorio": false,
      "curriculum": "Amministrazione, finanza e controllo, Management e sostenibilità",
-     "docenti": [
-      "Desole Martina"
-     ],
+     "docenti": [],
      "url": "https://lumsa.coursecatalogue.cineca.it/insegnamenti/2026/21767/2026/1?coorte=2025",
      "libri": [
       {
@@ -32186,7 +32270,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "completo",
      "modalita_esame": "orale",
-     "id": "lumsa-lm-77-management-finance-and-data-analitycs-lpcm-lm52",
+     "id": "lumsa-lm-77-management-finance-and-data-analitycs-lpcm-lm52-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -34848,7 +34932,7 @@
    "url": "https://lumsa.it/it/corsi/marketing-digital-communication",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "ANWEB_LM59",
@@ -37747,7 +37831,7 @@
    "url": "https://lumsa.it/it/corsi/pedagogia-e-progettazione-socio-educativa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DICED_LM85",
@@ -39176,7 +39260,7 @@
    "url": "https://www.lumsa.it/didattica/corsi-dilaurea/roma/magistrale/politiche-amministrazioni-innovazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DIRLPBLM62",
@@ -40851,7 +40935,7 @@
    "url": "https://lumsa.it/it/corsi/programmazione-gestione-politiche-servizi-sociali-roma",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "ABDDALM87",
@@ -41879,7 +41963,7 @@
    "url": "https://lumsa.it/it/psicologia-clinica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LDIS_LM51C",
@@ -45255,7 +45339,7 @@
    "url": "https://lumsa.it/it/psicologia-sociale-forense-e-delle-organizzazioni-roma",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DEMK_LM51S",
@@ -50121,7 +50205,7 @@
    "url": "https://lumsa.it/it/corsi/relazioni-internazionali?refresh=true",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "ADRESOC",
@@ -55213,7 +55297,7 @@
    "url": "https://lumsa.it/it/corsi/giurisprudenza-roma",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "EPOL_LMG",
@@ -56941,7 +57025,7 @@
    "url": "https://lumsa.it/it/corsi/giurisprudenza-palermo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DC_LMG",
@@ -58566,7 +58650,7 @@
      "obbligatorio": false,
      "curriculum": "Comune",
      "docenti": [],
-     "url": "https://lumsa.coursecatalogue.cineca.it/insegnamenti/2030/21842/2026/9999?coorte=2024",
+     "url": "https://lumsa.coursecatalogue.cineca.it/insegnamenti/2028/21842/2026/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://lumsa.coursecatalogue.cineca.it",
@@ -58629,7 +58713,7 @@
      "obbligatorio": false,
      "curriculum": "Comune",
      "docenti": [],
-     "url": "https://lumsa.coursecatalogue.cineca.it/insegnamenti/2030/22342/2026/9999?coorte=2024",
+     "url": "https://lumsa.coursecatalogue.cineca.it/insegnamenti/2028/22342/2026/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://lumsa.coursecatalogue.cineca.it",
@@ -58826,7 +58910,7 @@
    "url": "https://lumsa.it/it/corsi?field_tipo_di_corso%5B0%5D=Laurea%20Magistrale%20a%20ciclo%20unico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "PED_LMB5BR",
@@ -61606,7 +61690,7 @@
    "url": "https://lumsa.it/it/corsi?field_tipo_di_corso%5B0%5D=Laurea%20Magistrale%20a%20ciclo%20unico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "PED_LMB5BR",

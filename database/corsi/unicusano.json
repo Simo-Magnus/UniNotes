@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unicusano",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unicusano.it/sociologia-comunicazione/digitale-social-media",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -210,6 +210,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-20-comunicazione-digitale-e-social-media-elementi-di-economia-politica-applicata",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Esame a scelta",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-comunicazione-digitale-e-social-media",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-comunicazione-digitale-e-social-media",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unicusano-l-20-comunicazione-digitale-e-social-media-esame-a-scelta",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -423,25 +442,6 @@
     },
     {
      "codice": null,
-     "nome": "Esame a scelta",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-comunicazione-digitale-e-social-media",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-comunicazione-digitale-e-social-media",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unicusano-l-20-comunicazione-digitale-e-social-media-esame-a-scelta",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Filosofia e scienza politica",
      "anno": 3,
      "periodo": null,
@@ -632,7 +632,7 @@
    "url": "https://www.unicusano.it/economia/corso-di-laurea-in-economia-aziendale-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -1135,7 +1135,7 @@
    "url": "https://www.unicusano.it/lettere/corso-di-laurea-triennale-in-filosofia-applicata",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -1598,7 +1598,7 @@
    "url": "https://www.unicusano.it/ingegneria/corso-di-laurea-in-ingegneria-civile-curriculum-strutture-l-7",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -2291,7 +2291,7 @@
    "url": "https://www.unicusano.it/ingegneria/corso-laurea-ingegneria-informatica-triennale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -2934,7 +2934,7 @@
    "url": "https://www.unicusano.it/ingegneria/corso-di-laurea-in-ingegneria-ind-meccanica-triennale-classe-l-9",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -3595,7 +3595,7 @@
    "url": "https://www.unicusano.it/scienze-della-formazione/laurea-scienze-formazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -3742,6 +3742,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-19-scienze-dell-educazione-e-della-formazione-storia-sociale-delleducazione-infanzia",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Esame a scelta",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/scienze-della-formazione/piano-di-studi-scienze-dell-educazione-e-della-formazione-curriculum-servizi-educativi-infanzia-l-19",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unicusano.it/scienze-della-formazione/piano-di-studi-scienze-dell-educazione-e-della-formazione-curriculum-servizi-educativi-infanzia-l-19",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unicusano-l-19-scienze-dell-educazione-e-della-formazione-esame-a-scelta",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -3949,25 +3968,6 @@
     },
     {
      "codice": null,
-     "nome": "Esame a scelta",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/scienze-della-formazione/piano-di-studi-scienze-dell-educazione-e-della-formazione-curriculum-servizi-educativi-infanzia-l-19",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unicusano.it/scienze-della-formazione/piano-di-studi-scienze-dell-educazione-e-della-formazione-curriculum-servizi-educativi-infanzia-l-19",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unicusano-l-19-scienze-dell-educazione-e-della-formazione-esame-a-scelta",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Igiene generale e applicata",
      "anno": 3,
      "periodo": null,
@@ -4107,7 +4107,7 @@
    "url": "https://www.unicusano.it/psicologia/corso-di-laurea-in-scienze-e-tecniche-psicologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -4257,6 +4257,25 @@
     },
     {
      "codice": null,
+     "nome": "Esame a scelta",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/psicologia/piano-di-studi-scienze-e-tecniche-psicologiche-l-24",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unicusano.it/psicologia/piano-di-studi-scienze-e-tecniche-psicologiche-l-24",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unicusano-l-24-scienze-e-tecniche-psicologiche-esame-a-scelta",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Psicobiologia",
      "anno": 2,
      "periodo": null,
@@ -4377,25 +4396,6 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-l-24-scienze-e-tecniche-psicologiche-psicologia-sociale",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Esame a scelta",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/psicologia/piano-di-studi-scienze-e-tecniche-psicologiche-l-24",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unicusano.it/psicologia/piano-di-studi-scienze-e-tecniche-psicologiche-l-24",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unicusano-l-24-scienze-e-tecniche-psicologiche-esame-a-scelta",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -4560,7 +4560,7 @@
    "url": "https://www.unicusano.it/scienze-motorie/triennale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -4874,6 +4874,25 @@
     },
     {
      "codice": null,
+     "nome": "Esame a scelta",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unicusano-l-22-scienze-motorie-esame-a-scelta",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Lingua inglese",
      "anno": 2,
      "periodo": null,
@@ -5106,25 +5125,6 @@
     },
     {
      "codice": null,
-     "nome": "Esame a scelta",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-motorie-l-22",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unicusano-l-22-scienze-motorie-esame-a-scelta",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Giochi sportivil",
      "anno": 3,
      "periodo": null,
@@ -5251,7 +5251,7 @@
    "url": "https://www.unicusano.it/scienze-politiche/corso-di-laurea-in-scienze-politiche-e-delle-relazioni-internazionali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -5686,7 +5686,7 @@
    "url": "https://www.unicusano.it/sociologia-comunicazione/scienze-sociali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -5879,6 +5879,25 @@
     },
     {
      "codice": null,
+     "nome": "Esame a scelta",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-scienze-sociali-l-40",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-scienze-sociali-l-40",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unicusano-l-40-scienze-sociali-esame-a-scelta",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Lingua inglese",
      "anno": 2,
      "periodo": null,
@@ -6047,25 +6066,6 @@
     },
     {
      "codice": null,
-     "nome": "Esame a scelta",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-scienze-sociali-l-40",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-scienze-sociali-l-40",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unicusano-l-40-scienze-sociali-esame-a-scelta",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Prova Finale",
      "anno": 3,
      "periodo": null,
@@ -6200,7 +6200,7 @@
    "url": "https://www.unicusano.it/lettere/corso-di-laurea-in-studi-umanistici-l-10",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Fondamenti di lingua latina di base A",
@@ -6271,6 +6271,42 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicusano-l-10-studi-umanistici-letteratura-italiana-seminario-laborator",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Letteratura italiana contemporanea nel contesto europeo 1 (seminario laboratoriale di letterature comparate)",
+     "anno": 1,
+     "cfu": 6,
+     "ssd": "LICO-01/A",
+     "periodo": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-letteratura-italiana-contemporanea-nel-c",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Lingua e linguistica della lingua inglese 01",
+     "anno": 1,
+     "cfu": 6,
+     "ssd": "ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-lingua-e-linguistica-della-lingua-ingles",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -6365,6 +6401,24 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "nome": "Antropologia culturale",
+     "anno": 2,
+     "cfu": 18,
+     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-antropologia-culturale",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "nome": "Fondamenti di lingua latina di base B (seminario laboratoriale di traduzione)",
      "anno": 2,
      "cfu": 6,
@@ -6379,6 +6433,24 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicusano-l-10-studi-umanistici-fondamenti-di-lingua-latina-di-base-b-se",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Fondamenti di psicologia generale",
+     "anno": 2,
+     "cfu": 18,
+     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-fondamenti-di-psicologia-generale",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -6419,12 +6491,12 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Letteratura italiana contemporanea nel contesto europeo 2 (seminario laboratoriale di letterature comparate)",
+     "nome": "Media Studies",
      "anno": 2,
-     "cfu": 6,
-     "ssd": "LICO-01/A",
+     "cfu": 18,
+     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
      "periodo": null,
-     "obbligatorio": null,
+     "obbligatorio": false,
      "curriculum": null,
      "docenti": [],
      "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
@@ -6432,7 +6504,61 @@
      "libri": [],
      "esami": [],
      "verificato_il": "2026-10-17",
-     "id": "unicusano-l-10-studi-umanistici-letteratura-italiana-contemporanea-nel-c",
+     "id": "unicusano-l-10-studi-umanistici-media-studies",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Pedagogia speciale – seminario laboratoriale",
+     "anno": 2,
+     "cfu": 18,
+     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-pedagogia-speciale-seminario-laboratoria",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Ricerca educativa e analisi dei dati",
+     "anno": 2,
+     "cfu": 18,
+     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-ricerca-educativa-e-analisi-dei-dati",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Sociologia della comunicazione",
+     "anno": 2,
+     "cfu": 18,
+     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
+     "periodo": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicusano-l-10-studi-umanistici-sociologia-della-comunicazione",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -6545,24 +6671,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Antropologia culturale",
-     "anno": 3,
-     "cfu": 18,
-     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
-     "periodo": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicusano-l-10-studi-umanistici-antropologia-culturale",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Filologia classica",
      "anno": 3,
      "cfu": 6,
@@ -6577,42 +6685,6 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicusano-l-10-studi-umanistici-filologia-classica",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Fondamenti di psicologia generale",
-     "anno": 3,
-     "cfu": 18,
-     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
-     "periodo": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicusano-l-10-studi-umanistici-fondamenti-di-psicologia-generale",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Lingua e linguistica della lingua inglese 02",
-     "anno": 3,
-     "cfu": 18,
-     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
-     "periodo": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicusano-l-10-studi-umanistici-lingua-e-linguistica-della-lingua-ingles",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -6653,42 +6725,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Media Studies",
-     "anno": 3,
-     "cfu": 18,
-     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
-     "periodo": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicusano-l-10-studi-umanistici-media-studies",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Pedagogia speciale – seminario laboratoriale",
-     "anno": 3,
-     "cfu": 18,
-     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
-     "periodo": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicusano-l-10-studi-umanistici-pedagogia-speciale-seminario-laboratoria",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Prova finale",
      "anno": 3,
      "cfu": 6,
@@ -6707,24 +6743,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Ricerca educativa e analisi dei dati",
-     "anno": 3,
-     "cfu": 18,
-     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
-     "periodo": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicusano-l-10-studi-umanistici-ricerca-educativa-e-analisi-dei-dati",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Sociolinguistica e pragmatica",
      "anno": 3,
      "cfu": 6,
@@ -6739,24 +6757,6 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicusano-l-10-studi-umanistici-sociolinguistica-e-pragmatica",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Sociologia della comunicazione",
-     "anno": 3,
-     "cfu": 18,
-     "ssd": "GSPS-06/A GSPS-06/A PAED-02/B PAED-02/A PSIC-01/A SDEA-01/A ANGL-01/C",
-     "periodo": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "fonte": "https://www.unicusano.it/lettere/piano-di-studi-lettere-l-10-curriculum-materie-letterarie-e-linguistiche",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicusano-l-10-studi-umanistici-sociologia-della-comunicazione",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -6887,7 +6887,7 @@
    "url": "https://www.unicusano.it/sociologia-comunicazione/piano-di-studi-comunicazione-digitale-lm-19",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -7379,8 +7379,27 @@
    "url": "https://www.unicusano.it/ingegneria/corso-di-laurea-magistrale-in-ingegneria-civile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
+    {
+     "codice": null,
+     "nome": "Esame a scelta",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-lm-23-curriculum-edilizia-resiliente-e-transizione-ecologica",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-lm-23-curriculum-edilizia-resiliente-e-transizione-ecologica",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unicusano-lm-23-ingegneria-civile-esame-a-scelta",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": null,
      "nome": "Geomatica",
@@ -7582,25 +7601,6 @@
     },
     {
      "codice": null,
-     "nome": "Esame a scelta",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-lm-23-curriculum-edilizia-resiliente-e-transizione-ecologica",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-civile-lm-23-curriculum-edilizia-resiliente-e-transizione-ecologica",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unicusano-lm-23-ingegneria-civile-esame-a-scelta",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Gestione dell’Innovazione e dei progetti",
      "anno": 2,
      "periodo": null,
@@ -7754,7 +7754,7 @@
    "url": "https://www.unicusano.it/ingegneria/corso-di-laurea-magistrale-in-ingegneria-elettronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -7817,6 +7817,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-29-ingegneria-elettronica-elettronica-dello-stato-solido-e-disposi",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Esame a scelta",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-elettronica-magistrale-lm-29",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-elettronica-magistrale-lm-29",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unicusano-lm-29-ingegneria-elettronica-esame-a-scelta",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -7954,25 +7973,6 @@
     },
     {
      "codice": null,
-     "nome": "Esame a scelta",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-elettronica-magistrale-lm-29",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-elettronica-magistrale-lm-29",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unicusano-lm-29-ingegneria-elettronica-esame-a-scelta",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Prova finale",
      "anno": 2,
      "periodo": null,
@@ -8084,8 +8084,27 @@
    "url": "https://www.unicusano.it/ingegneria/laurea-magistrale-ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
+    {
+     "codice": null,
+     "nome": "Esame a scelta",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unicusano-lm-31-ingegneria-gestionale-esame-a-scelta",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": null,
      "nome": "Gestione degli impianti industriali",
@@ -8291,25 +8310,6 @@
     },
     {
      "codice": null,
-     "nome": "Esame a scelta",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-ingegneria-gestionale-magistrale-lm-31",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unicusano-lm-31-ingegneria-gestionale-esame-a-scelta",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Gestione dell’Innovazione e dei progetti",
      "anno": 2,
      "periodo": null,
@@ -8442,7 +8442,7 @@
    "url": "https://www.unicusano.it/ingegneria/laurea-magistrale-ingegneria-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -8794,7 +8794,7 @@
    "url": "https://www.unicusano.it/ingegneria/corso-di-laurea-magistrale-in-ingegneria-meccanica-curriculum-automotive-lm-33",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -8815,6 +8815,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-33-ingegneria-meccanica-costruzioni-di-macchine",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Esame a scelta",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unicusano-lm-33-ingegneria-meccanica-esame-a-scelta",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -9057,25 +9076,6 @@
     },
     {
      "codice": null,
-     "nome": "Esame a scelta",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unicusano.it/ingegneria/piano-di-studi-classe-lm-33-automotive",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unicusano-lm-33-ingegneria-meccanica-esame-a-scelta",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Prova finale",
      "anno": 2,
      "periodo": null,
@@ -9167,7 +9167,7 @@
    "url": "https://www.unicusano.it/psicologia/corso-di-laurea-magistrale-in-psicologia-clinica-riabilitazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -9495,7 +9495,7 @@
    "url": "https://www.unicusano.it/scienze-politiche/corso-di-laurea-magistrale-in-relazioni-internazionali-biennale-classe-lm-52",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -9554,6 +9554,32 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-52-relazioni-internazionali-esame-a-scelta",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Materia opzionale",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "ECON-08/A GSPS-04/A STAA-01/J",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Enrico Ferri",
+      "Marco Valeri",
+      "Silvio Berardi",
+      "Anne Marie Bertinotti",
+      "Roberta Bargelli",
+      "Silvia Ronzoni"
+     ],
+     "url": "https://www.unicusano.it/scienze-politiche/piano-di-studi-relazioni-internazionali-lm-52",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unicusano.it/scienze-politiche/piano-di-studi-relazioni-internazionali-lm-52",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unicusano-lm-52-relazioni-internazionali-materia-opzionale",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -9663,32 +9689,6 @@
     },
     {
      "codice": null,
-     "nome": "Materia opzionale",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 9,
-     "ssd": "ANGL-01/C ASIA-01/F FRAN-01/B",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Anne Marie Bertinotti",
-      "Enrico Ferri",
-      "Marco Valeri",
-      "Roberta Bargelli",
-      "Silvia Ronzoni",
-      "Silvio Berardi"
-     ],
-     "url": "https://www.unicusano.it/scienze-politiche/piano-di-studi-relazioni-internazionali-lm-52",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unicusano.it/scienze-politiche/piano-di-studi-relazioni-internazionali-lm-52",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unicusano-lm-52-relazioni-internazionali-materia-opzionale",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Prova finale",
      "anno": 2,
      "periodo": null,
@@ -9765,7 +9765,7 @@
    "url": "https://www.unicusano.it/scienze-motorie/magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -9892,6 +9892,32 @@
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lm-68-scienza-e-tecnica-dello-sport-preparazione-fisica-e-personal-training",
      "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Teoria e metodologia dell’allenamento degli Sport 1",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 16,
+     "ssd": "MEDF-01/B",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Davide Curzi",
+      "Lorenzo Marcelli",
+      "Paolo Troiani",
+      "Dario Pompa",
+      "Federica Marzoli",
+      "Fioretta Silvestri"
+     ],
+     "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unicusano-lm-68-scienza-e-tecnica-dello-sport-teoria-e-metodologia-dellallenamento-deg",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": null,
@@ -10123,29 +10149,6 @@
     },
     {
      "codice": null,
-     "nome": "Teoria e metodologia dell’allenamento degli Sport 2",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 12,
-     "ssd": "MEDF-01/B",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Dario Pompa",
-      "Federica Marzoli",
-      "Fioretta Silvestri"
-     ],
-     "url": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unicusano.it/scienze-motorie/piano-di-studi-scienze-tecnica-sport-lm-68",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unicusano-lm-68-scienza-e-tecnica-dello-sport-teoria-e-metodologia-dellallenamento-deg",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Tirocini",
      "anno": 2,
      "periodo": null,
@@ -10182,7 +10185,7 @@
    "url": "https://www.unicusano.it/economia/corso-di-laurea-magistrale-in-scienze-economiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -10685,7 +10688,7 @@
    "url": "https://www.unicusano.it/lettere/laurea-magistrale-in-scienze-filosofiche-applicate",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -11058,7 +11061,7 @@
    "url": "https://www.unicusano.it/scienze-della-formazione/corso-di-laurea-magistrale-in-scienze-pedagogiche-lm-85-curriculum-esperto-e-coordinatore-dei-servizi-educativi-per-linfanzia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -11403,7 +11406,7 @@
    "url": "https://www.unicusano.it/lettere/magistrale-2",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -11857,7 +11860,7 @@
    "url": "https://www.unicusano.it/sociologia-comunicazione/sociologia-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -12204,7 +12207,7 @@
    "url": "https://www.unicusano.it/giurisprudenza/corso-di-laurea-in-giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -12671,6 +12674,25 @@
     },
     {
      "codice": null,
+     "nome": "Esame a scelta",
+     "anno": 4,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unicusano.it/giurisprudenza/piano-di-studi-giurisprudenza-lmg-01",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unicusano.it/giurisprudenza/piano-di-studi-giurisprudenza-lmg-01",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unicusano-lmg-01-giurisprudenza-esame-a-scelta",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Teoria e tecnica di redazione degli atti difensivi",
      "anno": 4,
      "periodo": null,
@@ -12753,25 +12775,6 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicusano-lmg-01-giurisprudenza-diritto-tributario",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Esame a scelta",
-     "anno": 5,
-     "periodo": null,
-     "cfu": 9,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unicusano.it/giurisprudenza/piano-di-studi-giurisprudenza-lmg-01",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unicusano.it/giurisprudenza/piano-di-studi-giurisprudenza-lmg-01",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unicusano-lmg-01-giurisprudenza-esame-a-scelta",
      "stato_esami": "da_aggiungere"
     },
     {

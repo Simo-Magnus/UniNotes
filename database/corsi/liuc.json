@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "liuc",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.liuc.it/corsi-di-studio/laurea-triennale/economia-aziendale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A01013",
@@ -4569,7 +4569,7 @@
    "url": "https://www.liuc.it/corsi-di-studio/laurea-triennale/ingegneria-gestionale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "N90392",
@@ -8010,7 +8010,7 @@
    "url": "https://www.liuc.it/corsi-di-studio/laurea-magistrale/economia-aziendale-e-management/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A05097",
@@ -9784,6 +9784,41 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "A84256",
+     "nome": "Innovation Management",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "11/12/2026 00:00:00",
+     "cfu": 6,
+     "ssd": "IEGE-01/A",
+     "obbligatorio": true,
+     "curriculum": "Entrepreneurship & Innovation",
+     "docenti": [],
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4733/2026/10003?coorte=2026",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-27",
+       "iscrizioni_al": "2026-12-14",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://liuc.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "liuc-lm-77-economia-management-e-governance-a84256",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "A05023",
      "nome": "International Marketing",
      "anno": 1,
@@ -10538,9 +10573,9 @@
      "cfu": 6,
      "ssd": "ECON-08/A",
      "obbligatorio": false,
-     "curriculum": "comune",
+     "curriculum": "X SUA, comune",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2027/5775/2026/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5775/2026/10008?coorte=2026",
      "libri": [],
      "esami": [],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -11724,10 +11759,10 @@
      "periodo_fine": null,
      "cfu": 0,
      "ssd": "SECS-P/01",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Amministrazione, Finanza e Controllo, Banche e Finanza, Direzione d’Impresa, Marketing, comune",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5470/2026/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5470/2025/10000?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -11783,10 +11818,10 @@
      "periodo_fine": null,
      "cfu": 0,
      "ssd": "SECS-P/01",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Entrepreneurship & Innovation, comune",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5482/2026/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5482/2025/10004?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -12321,7 +12356,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-77-economia-management-e-governance-a84256",
+     "id": "liuc-lm-77-economia-management-e-governance-a84256-a2",
      "stato_esami": "completo"
     },
     {
@@ -19587,7 +19622,7 @@
    "url": "https://www.liuc.it/corsi-di-studio/laurea-magistrale/ingegneria-gestionale-laurea-magistrale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "N92013",
@@ -19612,40 +19647,28 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "N91507",
-     "nome": "Dynamical Systems Design",
+     "codice": "N91514",
+     "nome": "Analisi delle Perfomance in Sanità",
      "anno": 1,
      "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "ING-INF/07",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "periodo_inizio": "22/02/2027 00:00:00",
+     "periodo_fine": "11/06/2027 00:00:00",
+     "cfu": 3,
+     "ssd": "IEGE-01/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Smart and Sustainable Management",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5254/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5135/2026/10000?coorte=2026",
      "libri": [],
      "esami": [
       {
        "tipo": "appello",
-       "data": "2026-11-20",
+       "data": "2026-11-04",
        "ora": "17:00",
        "luogo": null,
        "modalita": null,
-       "iscrizioni_dal": "2026-10-30",
-       "iscrizioni_al": "2026-11-16",
-       "docenti": null,
-       "note": null,
-       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-18",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-27",
-       "iscrizioni_al": "2026-12-14",
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
@@ -19655,7 +19678,149 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91507",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91514",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "N92004",
+     "nome": "Artificial Intelligence And Law",
+     "anno": 1,
+     "periodo": null,
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "22/01/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "GIUR-11/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Smart and Sustainable Management",
+     "docenti": [],
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5625/2026/10000?coorte=2026",
+     "libri": [
+      {
+       "titolo": "S. Zuboff, The Age of Surveillance Capitalism, 2019.",
+       "autori": null,
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "S. Zuboff, The Age of Surveillance Capitalism, 2019."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-11",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-21",
+       "iscrizioni_al": "2026-11-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-25",
+       "iscrizioni_al": "2026-12-12",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://liuc.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "liuc-lm-31-ingegneria-gestionale-n92004",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "N91525",
+     "nome": "Artificial Intelligence For Business",
+     "anno": 1,
+     "periodo": null,
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "22/01/2027 00:00:00",
+     "cfu": 3,
+     "ssd": "IINF-05/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Smart and Sustainable Management",
+     "docenti": [],
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5272/2026/10000?coorte=2026",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-10",
+       "ora": "16:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-20",
+       "iscrizioni_al": "2026-11-06",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-11",
+       "ora": "14:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-20",
+       "iscrizioni_al": "2026-12-07",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://liuc.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91525",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "N91472",
+     "nome": "Diritto per L'ingegneria",
+     "anno": 1,
+     "periodo": null,
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "22/01/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "GIUR-14/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Smart and Sustainable Management",
+     "docenti": [],
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4931/2026/10000?coorte=2026",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "17:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-28",
+       "iscrizioni_al": "2026-11-14",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://liuc.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91472",
      "stato_esami": "completo"
     },
     {
@@ -19666,11 +19831,11 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 3,
-     "ssd": "ING-INF/05",
+     "ssd": "IINF-05/A",
      "obbligatorio": false,
-     "curriculum": "comune",
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Smart and Sustainable Management, comune",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/3493/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3493/2026/10000?coorte=2026",
      "libri": [],
      "esami": [
       {
@@ -19706,6 +19871,41 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "N91527",
+     "nome": "Game Theory For Industrial Engineers",
+     "anno": 1,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "IIND-05/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Smart and Sustainable Management",
+     "docenti": [],
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5274/2026/10000?coorte=2026",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://liuc.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91527",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "N91508",
      "nome": "Gestione Dell'innovazione e della Tecnologia",
      "anno": 1,
@@ -19713,11 +19913,11 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "ING-IND/35",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "ssd": "IEGE-01/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Supply Chain per Executive, comune, Smart and Sustainable Management",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5255/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5255/2026/10000?coorte=2026",
      "libri": [],
      "esami": [
       {
@@ -19738,7 +19938,30 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91508",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "N91522",
+       "nome": "Technology And Innovation Management",
+       "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5269/2026/10003?coorte=2026",
+       "esami": [
+        {
+         "tipo": "appello",
+         "data": "2026-11-12",
+         "ora": "14:00",
+         "luogo": null,
+         "modalita": null,
+         "iscrizioni_dal": "2026-10-22",
+         "iscrizioni_al": "2026-11-08",
+         "docenti": null,
+         "note": null,
+         "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+        }
+       ],
+       "modalita_esame": "orale"
+      }
+     ]
     },
     {
      "codice": "N91458",
@@ -19748,11 +19971,11 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "ssd": "IIND-05/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Supply Chain per Executive, comune, Smart and Sustainable Management",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/4917/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4917/2026/10000?coorte=2026",
      "libri": [],
      "esami": [
       {
@@ -19773,6 +19996,67 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91458",
+     "stato_esami": "completo",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "N90312",
+       "nome": "Project Management",
+       "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3332/2026/10003?coorte=2026",
+       "esami": [
+        {
+         "tipo": "appello",
+         "data": "2026-11-20",
+         "ora": "09:00",
+         "luogo": null,
+         "modalita": null,
+         "iscrizioni_dal": "2026-10-30",
+         "iscrizioni_al": "2026-11-16",
+         "docenti": null,
+         "note": null,
+         "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+        }
+       ],
+       "modalita_esame": "orale"
+      }
+     ]
+    },
+    {
+     "codice": "N90315",
+     "nome": "Gestione della Supply Chain",
+     "anno": 1,
+     "periodo": null,
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "22/01/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "IIND-05/A",
+     "obbligatorio": true,
+     "curriculum": "Supply Chain per Executive, comune",
+     "docenti": [
+      "Dallari Fabrizio",
+      "Milanato Damiano"
+     ],
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2027/3426/2026/10004?coorte=2026",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-17",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-27",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://liuc.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "liuc-lm-31-ingegneria-gestionale-n90315",
      "stato_esami": "completo"
     },
     {
@@ -19798,6 +20082,69 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "N91515",
+     "nome": "Industrial Design Lab",
+     "anno": 1,
+     "periodo": null,
+     "periodo_inizio": "22/02/2027 00:00:00",
+     "periodo_fine": "11/06/2027 00:00:00",
+     "cfu": 3,
+     "ssd": "ING-IND/35",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Smart and Sustainable Management",
+     "docenti": [
+      "Puliga Gloria",
+      "Rossi Tommaso"
+     ],
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5136/2026/10000?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://liuc.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91515",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "N91523",
+     "nome": "Ingegneria Finanziaria",
+     "anno": 1,
+     "periodo": null,
+     "periodo_inizio": "22/02/2027 00:00:00",
+     "periodo_fine": "11/06/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "IEGE-01/A",
+     "obbligatorio": true,
+     "curriculum": "Supply Chain per Executive, comune",
+     "docenti": [
+      "Manzini Raffaella",
+      "Soppelsa Cristina Maria"
+     ],
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5270/2026/10004?coorte=2026",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-18",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-28",
+       "iscrizioni_al": "2026-11-14",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://liuc.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91523",
+     "modalita_esame": "orale",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "N92014",
      "nome": "Intelligenza Artificiale per le Decisioni Manageriali",
      "anno": 1,
@@ -19820,6 +20167,41 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "N91518",
+     "nome": "Laboratorio I-fab",
+     "anno": 1,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 3,
+     "ssd": "IIND-05/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Smart and Sustainable Management",
+     "docenti": [],
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5139/2026/10000?coorte=2026",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-10-31",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://liuc.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91518",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "N90321",
      "nome": "Management Information Systems",
      "anno": 1,
@@ -19827,11 +20209,11 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "ING-INF/05",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "ssd": "IINF-05/A",
+     "obbligatorio": true,
+     "curriculum": "Smart and Sustainable Management, comune",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/3494/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3494/2026/10003?coorte=2026",
      "libri": [],
      "esami": [
       {
@@ -19855,53 +20237,6 @@
      "stato_esami": "completo"
     },
     {
-     "codice": "N91530",
-     "nome": "Mathematical Methods For Industrial Engineers",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
-     "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5277/2023/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-13",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-23",
-       "iscrizioni_al": "2026-11-09",
-       "docenti": null,
-       "note": null,
-       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-16",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-25",
-       "iscrizioni_al": "2026-12-12",
-       "docenti": null,
-       "note": null,
-       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://liuc.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91530",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "N91529",
      "nome": "Metodi Matematici per le Applicazioni Industriali",
      "anno": 1,
@@ -19909,11 +20244,11 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "ssd": "IIND-05/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, comune, Smart and Sustainable Management",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5276/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5276/2026/10000?coorte=2026",
      "libri": [],
      "esami": [
       {
@@ -19934,6 +20269,124 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91529",
+     "stato_esami": "completo",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "N91530",
+       "nome": "Mathematical Methods For Industrial Engineers",
+       "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5277/2026/10003?coorte=2026",
+       "esami": [
+        {
+         "tipo": "appello",
+         "data": "2026-11-13",
+         "ora": "09:00",
+         "luogo": null,
+         "modalita": null,
+         "iscrizioni_dal": "2026-10-23",
+         "iscrizioni_al": "2026-11-09",
+         "docenti": null,
+         "note": null,
+         "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+        },
+        {
+         "tipo": "appello",
+         "data": "2026-12-16",
+         "ora": "08:30",
+         "luogo": null,
+         "modalita": null,
+         "iscrizioni_dal": "2026-11-25",
+         "iscrizioni_al": "2026-12-12",
+         "docenti": null,
+         "note": null,
+         "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+        }
+       ],
+       "modalita_esame": "orale"
+      }
+     ]
+    },
+    {
+     "codice": "N91513",
+     "nome": "Process Management in Sanità",
+     "anno": 1,
+     "periodo": null,
+     "periodo_inizio": "22/02/2027 00:00:00",
+     "periodo_fine": "11/06/2027 00:00:00",
+     "cfu": 3,
+     "ssd": "IEGE-01/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Smart and Sustainable Management",
+     "docenti": [],
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5134/2026/10000?coorte=2026",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-09",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-10-19",
+       "iscrizioni_al": "2026-11-05",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://liuc.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91513",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "N92006",
+     "nome": "Product Lifecycle Management",
+     "anno": 1,
+     "periodo": null,
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "22/01/2027 00:00:00",
+     "cfu": 3,
+     "ssd": "IIND-05/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Smart and Sustainable Management",
+     "docenti": [],
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5631/2026/10000?coorte=2026",
+     "libri": [
+      {
+       "titolo": "John Stark - Product Lifecycle Management (Volume 1): 21st Century Paradigm for Product Realisation - Springer Ed.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "John Stark - Product Lifecycle Management (Volume 1): 21st Century Paradigm for Product Realisation - Springer Ed."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-11-23",
+       "iscrizioni_al": "2026-12-10",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://liuc.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "liuc-lm-31-ingegneria-gestionale-n92006",
      "stato_esami": "completo"
     },
     {
@@ -19944,11 +20397,11 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "ssd": "IIND-05/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Supply Chain per Executive, comune, Smart and Sustainable Management",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/3331/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3331/2026/10000?coorte=2026",
      "libri": [],
      "esami": [
       {
@@ -19969,7 +20422,42 @@
      "stato_libri": "da_aggiungere",
      "id": "liuc-lm-31-ingegneria-gestionale-n90309",
      "modalita_esame": "orale",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "N91309",
+       "nome": "Supply Chain Design",
+       "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3574/2026/10003?coorte=2026",
+       "esami": [
+        {
+         "tipo": "appello",
+         "data": "2026-11-17",
+         "ora": "09:30",
+         "luogo": null,
+         "modalita": null,
+         "iscrizioni_dal": "2026-10-27",
+         "iscrizioni_al": "2026-11-13",
+         "docenti": null,
+         "note": null,
+         "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+        },
+        {
+         "tipo": "appello",
+         "data": "2026-12-10",
+         "ora": "11:30",
+         "luogo": null,
+         "modalita": null,
+         "iscrizioni_dal": "2026-11-19",
+         "iscrizioni_al": "2026-12-06",
+         "docenti": null,
+         "note": null,
+         "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+        }
+       ],
+       "modalita_esame": "orale"
+      }
+     ]
     },
     {
      "codice": "N91506",
@@ -19979,11 +20467,11 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "ING-INF/07",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "ssd": "IMIS-01/B",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, comune, Smart and Sustainable Management",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5253/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5253/2026/10000?coorte=2026",
      "libri": [],
      "esami": [
       {
@@ -20004,31 +20492,66 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91506",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "N91507",
+       "nome": "Dynamical Systems Design",
+       "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5254/2026/10003?coorte=2026",
+       "esami": [
+        {
+         "tipo": "appello",
+         "data": "2026-11-20",
+         "ora": "17:00",
+         "luogo": null,
+         "modalita": null,
+         "iscrizioni_dal": "2026-10-30",
+         "iscrizioni_al": "2026-11-16",
+         "docenti": null,
+         "note": null,
+         "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+        },
+        {
+         "tipo": "appello",
+         "data": "2026-12-18",
+         "ora": "08:30",
+         "luogo": null,
+         "modalita": null,
+         "iscrizioni_dal": "2026-11-27",
+         "iscrizioni_al": "2026-12-14",
+         "docenti": null,
+         "note": null,
+         "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
+        }
+       ],
+       "modalita_esame": "orale"
+      }
+     ]
     },
     {
-     "codice": "N90312",
-     "nome": "Project Management",
+     "codice": "N91326",
+     "nome": "Psicologia Sociale delle Organizzazioni e dei Servizi",
      "anno": 1,
      "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 9,
-     "ssd": "ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "22/01/2027 00:00:00",
+     "cfu": 2,
+     "ssd": "PSIC-03/B",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Smart and Sustainable Management",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/3332/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4718/2026/10000?coorte=2026",
      "libri": [],
      "esami": [
       {
        "tipo": "appello",
-       "data": "2026-11-20",
-       "ora": "09:00",
+       "data": "2026-11-02",
+       "ora": "17:00",
        "luogo": null,
        "modalita": null,
-       "iscrizioni_dal": "2026-10-30",
-       "iscrizioni_al": "2026-11-16",
+       "iscrizioni_dal": "2026-10-12",
+       "iscrizioni_al": "2026-10-29",
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/ListaAppelliOfferta.do"
@@ -20038,7 +20561,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n90312",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91326",
      "stato_esami": "completo"
     },
     {
@@ -20049,11 +20572,11 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "ING-INF/05",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "ssd": "IINF-05/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Supply Chain per Executive, comune",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/3334/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3334/2026/10000?coorte=2026",
      "libri": [],
      "esami": [
       {
@@ -20084,11 +20607,11 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "ssd": "IIND-05/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Supply Chain per Executive, comune, Smart and Sustainable Management",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5123/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5123/2026/10000?coorte=2026",
      "libri": [],
      "esami": [
       {
@@ -20109,21 +20632,44 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91502",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "N91503",
+       "nome": "Sustainability in Industrial Systems",
+       "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5124/2026/10003?coorte=2026",
+       "esami": [
+        {
+         "tipo": "appello",
+         "data": "2026-11-16",
+         "ora": "12:30",
+         "luogo": null,
+         "modalita": null,
+         "iscrizioni_dal": "2026-10-26",
+         "iscrizioni_al": "2026-11-12",
+         "docenti": null,
+         "note": null,
+         "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+        }
+       ],
+       "modalita_esame": "orale"
+      }
+     ]
     },
     {
-     "codice": "N91309",
-     "nome": "Supply Chain Design",
+     "codice": "N92005",
+     "nome": "Supply Chain Lab For Business",
      "anno": 1,
      "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "periodo_inizio": "22/02/2027 00:00:00",
+     "periodo_fine": "11/06/2027 00:00:00",
+     "cfu": 3,
+     "ssd": "IIND-05/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Smart and Sustainable Management",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/3574/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5626/2026/10000?coorte=2026",
      "libri": [],
      "esami": [
       {
@@ -20137,95 +20683,13 @@
        "docenti": null,
        "note": null,
        "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-10",
-       "ora": "11:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-19",
-       "iscrizioni_al": "2026-12-06",
-       "docenti": null,
-       "note": null,
-       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91309",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "N91503",
-     "nome": "Sustainability in Industrial Systems",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
-     "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5124/2023/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-16",
-       "ora": "12:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-26",
-       "iscrizioni_al": "2026-11-12",
-       "docenti": null,
-       "note": null,
-       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://liuc.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91503",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "N91522",
-     "nome": "Technology And Innovation Management",
-     "anno": 1,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 9,
-     "ssd": "ING-IND/35",
-     "obbligatorio": false,
-     "curriculum": "comune",
-     "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5269/2023/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-12",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-22",
-       "iscrizioni_al": "2026-11-08",
-       "docenti": null,
-       "note": null,
-       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://liuc.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91522",
+     "id": "liuc-lm-31-ingegneria-gestionale-n92005",
      "stato_esami": "completo"
     },
     {
@@ -20260,7 +20724,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91527",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91527-a2",
      "stato_esami": "completo"
     },
     {
@@ -20295,7 +20759,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91518",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91518-a2",
      "stato_esami": "completo"
     },
     {
@@ -20355,7 +20819,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "completo",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n92004",
+     "id": "liuc-lm-31-ingegneria-gestionale-n92004-a2",
      "stato_esami": "completo"
     },
     {
@@ -20402,7 +20866,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91525",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91525-a2",
      "stato_esami": "completo"
     },
     {
@@ -20413,14 +20877,14 @@
      "periodo_inizio": "21/09/2026 00:00:00",
      "periodo_fine": "22/01/2027 00:00:00",
      "cfu": 6,
-     "ssd": "SECS-S/03, ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "ssd": "ING-IND/17, SECS-S/03",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, comune",
      "docenti": [
       "Cattaneo Laura",
       "Pirovano Giovanni Luca"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5130/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5130/2023/10000?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -20463,14 +20927,14 @@
      "periodo_inizio": "21/09/2026 00:00:00",
      "periodo_fine": "31/12/2026 00:00:00",
      "cfu": 6,
-     "ssd": "SECS-S/03, ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "ssd": "ING-IND/17, SECS-S/03",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, comune",
      "docenti": [
       "Rossi Tommaso",
       "Saporiti Nicolo'"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5129/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5129/2023/10000?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -20525,7 +20989,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91472",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91472-a2",
      "stato_esami": "completo"
     },
     {
@@ -20537,13 +21001,13 @@
      "periodo_fine": "22/01/2027 00:00:00",
      "cfu": 6,
      "ssd": "ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale",
      "docenti": [
       "Dallari Fabrizio",
       "Milanato Damiano"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/3426/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3426/2023/10000?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -20563,7 +21027,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n90315",
+     "id": "liuc-lm-31-ingegneria-gestionale-n90315-a2",
      "stato_esami": "completo"
     },
     {
@@ -20575,14 +21039,14 @@
      "periodo_fine": "22/01/2027 00:00:00",
      "cfu": 6,
      "ssd": "ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Manufacturing Strategy, comune",
      "docenti": [
       "Beghini Livio",
       "Bianchi Matteo",
       "Ciano Maria Pia"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/4930/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4930/2023/10003?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -20626,13 +21090,13 @@
      "periodo_fine": "22/01/2027 00:00:00",
      "cfu": 6,
      "ssd": "ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, comune",
      "docenti": [
       "Pirovano Giovanni Luca",
       "Pozzi Rossella"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5131/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5131/2023/10000?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -20664,14 +21128,14 @@
      "periodo_fine": "22/01/2027 00:00:00",
      "cfu": 6,
      "ssd": "ING-IND/35",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Management della Trasformazione Digitale, comune",
      "docenti": [
       "Perozzo Haiat",
       "Ravarini Aurelio",
       "Strada Emanuele"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5295/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5295/2023/10001?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -20726,7 +21190,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "completo",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n92006",
+     "id": "liuc-lm-31-ingegneria-gestionale-n92006-a2",
      "stato_esami": "completo"
     },
     {
@@ -20738,14 +21202,14 @@
      "periodo_fine": "22/01/2027 00:00:00",
      "cfu": 6,
      "ssd": "ING-IND/35",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Management della Trasformazione Digitale, comune",
      "docenti": [
       "Canavesi Alice",
       "Ravarini Aurelio",
       "Strada Emanuele"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5294/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5294/2023/10001?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -20800,7 +21264,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91326",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91326-a2",
      "stato_esami": "completo"
     },
     {
@@ -20812,13 +21276,13 @@
      "periodo_fine": "22/01/2027 00:00:00",
      "cfu": 6,
      "ssd": "ING-IND/17, SECS-S/03",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Manufacturing Strategy, comune",
      "docenti": [
       "Cannas Violetta Giada",
       "Saporiti Nicolo'"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/4928/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4928/2023/10003?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -20874,14 +21338,14 @@
      "periodo_fine": "22/01/2027 00:00:00",
      "cfu": 6,
      "ssd": "ING-IND/35",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Gestione Integrata delle Aziende e dei Servizi in, comune",
      "docenti": [
       "Garagiola Elisabetta Rachele",
       "Porazzi Emanuele",
       "Sebastiano Antonio"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5275/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5275/2023/10002?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -20913,13 +21377,13 @@
      "periodo_fine": "22/01/2027 00:00:00",
      "cfu": 6,
      "ssd": "ING-IND/17",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Manufacturing Strategy, Sustainability and Circular Economy, comune",
      "docenti": [
       "Dallari Fabrizio",
       "Milanato Damiano"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/4575/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4575/2023/10003?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -20963,13 +21427,13 @@
      "periodo_fine": "22/01/2027 00:00:00",
      "cfu": 6,
      "ssd": "ING-IND/17, SECS-S/03",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Manufacturing Strategy, comune",
      "docenti": [
       "Battezzati Luigi",
       "Rossi Tommaso"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/4929/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4929/2023/10003?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -21013,13 +21477,13 @@
      "periodo_fine": "22/01/2027 00:00:00",
      "cfu": 6,
      "ssd": "SECS-P/10",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Management della Trasformazione Digitale, comune",
      "docenti": [
       "Ravarini Aurelio",
       "Strada Emanuele"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5293/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5293/2023/10001?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -21100,7 +21564,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91514",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91514-a2",
      "stato_esami": "completo"
     },
     {
@@ -21112,13 +21576,13 @@
      "periodo_fine": "11/06/2027 00:00:00",
      "cfu": 6,
      "ssd": "ING-IND/35",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Manufacturing Strategy, Sustainability and Circular Economy, comune",
      "docenti": [
       "Manzini Raffaella",
       "Soppelsa Cristina Maria"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5271/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5271/2023/10003?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -21139,46 +21603,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91524",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "N90507",
-     "nome": "Industrial Design",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "22/02/2027 00:00:00",
-     "periodo_fine": "11/06/2027 00:00:00",
-     "cfu": 9,
-     "ssd": "ING-IND/17, ING-IND/35",
-     "obbligatorio": false,
-     "curriculum": "comune",
-     "docenti": [
-      "Olgiati Marzio Andrea",
-      "Pizzurno Emanuele",
-      "Raimondi Marco",
-      "Tatti Marco"
-     ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5128/2023/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "14:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-21",
-       "iscrizioni_al": "2026-11-07",
-       "docenti": null,
-       "note": null,
-       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://liuc.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n90507",
      "stato_esami": "completo"
     },
     {
@@ -21203,7 +21627,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91515",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91515-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -21214,14 +21638,14 @@
      "periodo_inizio": "22/02/2027 00:00:00",
      "periodo_fine": "11/06/2027 00:00:00",
      "cfu": 6,
-     "ssd": "ING-IND/35",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "ssd": "IEGE-01/A",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale",
      "docenti": [
       "Manzini Raffaella",
       "Soppelsa Cristina Maria"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5270/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5270/2023/10000?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -21240,8 +21664,7 @@
      "fonte": "https://liuc.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91523",
-     "modalita_esame": "orale",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91523-a2",
      "stato_esami": "completo"
     },
     {
@@ -21253,15 +21676,15 @@
      "periodo_fine": "11/06/2027 00:00:00",
      "cfu": 9,
      "ssd": "ING-IND/17, ING-IND/35",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, comune, Manufacturing Strategy, Sustainability and Circular Economy",
      "docenti": [
       "Giorgetti Paolo",
       "Olgiati Marzio Andrea",
       "Pizzurno Emanuele",
       "Raimondi Marco"
      ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/4918/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4918/2023/10000?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -21282,7 +21705,37 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91459",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "N90507",
+       "nome": "Industrial Design",
+       "docenti": [
+        "Olgiati Marzio Andrea",
+        "Pizzurno Emanuele",
+        "Raimondi Marco",
+        "Tatti Marco"
+       ],
+       "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5128/2023/10003?coorte=2025",
+       "periodo": "2",
+       "esami": [
+        {
+         "tipo": "appello",
+         "data": "2026-11-11",
+         "ora": "14:30",
+         "luogo": null,
+         "modalita": null,
+         "iscrizioni_dal": "2026-10-21",
+         "iscrizioni_al": "2026-11-07",
+         "docenti": null,
+         "note": null,
+         "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+        }
+       ],
+       "modalita_esame": "orale"
+      }
+     ]
     },
     {
      "codice": "N91513",
@@ -21316,7 +21769,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n91513",
+     "id": "liuc-lm-31-ingegneria-gestionale-n91513-a2",
      "stato_esami": "completo"
     },
     {
@@ -21328,10 +21781,10 @@
      "periodo_fine": "11/06/2027 00:00:00",
      "cfu": 18,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Manufacturing Strategy, Sustainability and Circular Economy, comune",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5279/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5279/2023/10000?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -21350,10 +21803,10 @@
      "periodo_fine": "11/06/2027 00:00:00",
      "cfu": 18,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
-     "curriculum": "comune",
+     "obbligatorio": true,
+     "curriculum": "Data Science e Intelligenza Artificiale per Operational Excellence, Gestione Integrata delle Aziende e dei Servizi in, Management della Trasformazione Digitale, Manufacturing Strategy, Sustainability and Circular Economy, comune",
      "docenti": [],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2024/5278/2023/9999?coorte=2024",
+     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5278/2023/10000?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://liuc.coursecatalogue.cineca.it",
@@ -21395,7 +21848,7 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
-     "id": "liuc-lm-31-ingegneria-gestionale-n92005",
+     "id": "liuc-lm-31-ingegneria-gestionale-n92005-a2",
      "stato_esami": "completo"
     },
     {

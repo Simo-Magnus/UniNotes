@@ -46,6 +46,11 @@ def _scrivi(path: pathlib.Path, data) -> bytes:
     return testo
 
 
+def _base(ins_id: str) -> str:
+    """Stesso codice in un altro anno del piano (`<id>-a2`): i moduli sono quelli del codice."""
+    return re.sub(r"-a(\d+|x)$", "", ins_id)
+
+
 def dividi(uid: str) -> dict | None:
     src = DB / "corsi" / f"{uid}.json"
     if not src.exists():
@@ -70,7 +75,8 @@ def dividi(uid: str) -> dict | None:
         if classico:
             corso = {**corso, "percorso_classico": classico}
         dati = {**testa, "corsi": [corso],
-                "moduli": {k: moduli[k] for k in sorted(ins_ids) if k in moduli}}
+                "moduli": {k: moduli[k] if k in moduli else moduli[_base(k)]
+                           for k in sorted(ins_ids) if k in moduli or _base(k) in moduli}}
         testo = _scrivi(cartella / f"{cid}.json", dati)
         indice[cid] = {"sha256": hashlib.sha256(testo).hexdigest(), "byte": len(testo)}
     # corsi non più presenti

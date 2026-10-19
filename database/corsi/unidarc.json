@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unidarc",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "http://www.unidarc.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -324,6 +324,25 @@
     },
     {
      "codice": null,
+     "nome": "Materia a scelta",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unidarc.it/materie/49841_materia-a-scelta/?anno=2027",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-materia-a-scelta",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Metodologia della ricerca sociale",
      "anno": 2,
      "periodo": null,
@@ -375,7 +394,7 @@
     },
     {
      "codice": null,
-     "nome": "Sociologia dei processi culturali e comunicativi (Modulo B)",
+     "nome": "Sociologia dei processi culturali e comunicativi (Modulo A)",
      "anno": 2,
      "periodo": null,
      "cfu": 6,
@@ -383,7 +402,7 @@
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [],
-     "url": "https://www.unidarc.it/materie/56545_sociologia-dei-processi-culturali-e-comunicativi-modulo-b-gsps-06-a-ex-sps-08/?anno=2027",
+     "url": "https://www.unidarc.it/materie/47509_sociologia-dei-processi-culturali-e-comunicativi-modulo-a-gsps-06-a-ex-sps-08/?anno=2027",
      "libri": [],
      "esami": [],
      "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
@@ -423,6 +442,25 @@
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-storia-del-mediterraneo-medievale",
      "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Tirocinio",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unidarc.it/materie/49842_tirocinio/?anno=2027",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-tirocinio",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": null,
@@ -479,25 +517,6 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-lingua-a-scelta-ii",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Materia a scelta",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unidarc.it/materie/49841_materia-a-scelta/?anno=2027",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-materia-a-scelta",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -619,25 +638,6 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-storia-della-societa-contemporanea",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Tirocinio",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unidarc.it/materie/49842_tirocinio/?anno=2027",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unidarc.it/corsi/56301_scienze-della-societa-e-del-servizio-sociale-classe-l-39r-l-39r/",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unidarc-l-39-scienze-della-societa-e-del-servizio-sociale-tirocinio",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -838,7 +838,7 @@
    "url": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -893,6 +893,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-lingua-inglese",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Materia a scelta",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unidarc.it/materie/49841_materia-a-scelta/?anno=2027",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-materia-a-scelta",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -1015,25 +1034,6 @@
      "stato_libri": "da_aggiungere",
      "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-psicometria",
      "stato_esami": "completo"
-    },
-    {
-     "codice": null,
-     "nome": "Materia a scelta",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unidarc.it/materie/49841_materia-a-scelta/?anno=2027",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unidarc.it/corsi/54666_scienze-e-tecniche-psicologiche-l-24r-l-24r/",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unidarc-l-24-scienze-e-tecniche-psicologiche-materia-a-scelta",
-     "stato_esami": "da_aggiungere"
     },
     {
      "codice": null,
@@ -1587,7 +1587,7 @@
    "url": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -1752,6 +1752,25 @@
     },
     {
      "codice": null,
+     "nome": "Materia a scelta",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unidarc.it/materie/49841_materia-a-scelta/?anno=2027",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-materia-a-scelta",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Progettazione sociale",
      "anno": 1,
      "periodo": null,
@@ -1883,25 +1902,6 @@
      "stato_libri": "da_aggiungere",
      "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-economia-delle-aziende-di-servizi-social",
      "stato_esami": "completo"
-    },
-    {
-     "codice": null,
-     "nome": "Materia a scelta",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unidarc.it/materie/49841_materia-a-scelta/?anno=2027",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unidarc.it/corsi/54667_politiche-per-linnovazione-e-linclusione-sociale-polis-lm-87r-lm-87r/",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unidarc-lm-87-politiche-per-l-innovazione-e-l-inclusione-sociale-materia-a-scelta",
-     "stato_esami": "da_aggiungere"
     },
     {
      "codice": null,

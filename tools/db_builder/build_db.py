@@ -246,14 +246,87 @@ def stato_corso(c: dict) -> str:
     return "completo" if completo else "parziale"
 
 
+def _unisci_stesso_anno(base: dict, altro: dict) -> None:
+    """Stesso codice due volte nello stesso anno del piano (una riga per percorso):
+    un solo insegnamento, con i percorsi, i docenti, i libri e gli appelli di entrambe."""
+    base["curriculum"] = pulizia._unisci_percorsi(base.get("curriculum"), altro.get("curriculum"))
+    if base.get("obbligatorio") is False and altro.get("obbligatorio"):
+        base["obbligatorio"] = True
+    for k in ("docenti", "libri", "esami"):
+        for x in altro.get(k) or []:
+            if x not in (base.get(k) or []):
+                base.setdefault(k, []).append(x)
+    for k, v in altro.items():
+        if base.get(k) in (None, "", []) and v not in (None, "", []):
+            base[k] = v
+
+
+def assegna_id(corso_id: str, items: list[dict]) -> list[dict]:
+    """id degli insegnamenti di un contributo: `<corso>-<slug del codice o del nome>`.
+    Lo stesso codice ripetuto nel piano è un solo insegnamento se è nello stesso anno
+    (righe di percorsi diversi: i percorsi si uniscono) e insegnamenti diversi se è in
+    anni diversi (es. PoliTO, «Fondamenti di biologia, anatomia e fisiologia» al 1° anno
+    a Torino e al 2° per chi fa il primo anno a Mondovì): l'anno più basso tiene l'id,
+    gli altri hanno `-a<anno>`. Prima l'ultima riga sovrascriveva le altre."""
+    out: list[dict] = []
+    gruppi: dict[str, dict] = {}
+    for i in items:
+        i = dict(i)
+        if "id" in i:  # (i contributi dei periodi hanno già l'id e non il nome)
+            out.append(i)
+            continue
+        base = f"{corso_id}-{slug(i.get('codice') or i['nome'], 40)}"
+        per_anno = gruppi.setdefault(base, {})
+        prima = per_anno.get(i.get("anno"))
+        if prima:
+            _unisci_stesso_anno(prima, i)
+        else:
+            per_anno[i.get("anno")] = i
+    for base, per_anno in gruppi.items():
+        anni = sorted(per_anno, key=lambda a: (not isinstance(a, int), a if isinstance(a, int) else 0))
+        tenuti: list[dict] = []
+        for a in anni:
+            i = per_anno[a]
+            # stesso insegnamento a scelta offerto in più anni (o anno non indicato): uno solo,
+            # nel primo anno in cui si può seguire
+            dove = next((t for t in tenuti if not isinstance(a, int) or _stessa_scelta(t, i)), None)
+            if dove:
+                _unisci_stesso_anno(dove, i)
+                continue
+            i["id"] = base if not tenuti else f"{base}-a{a if isinstance(a, int) else 'x'}"
+            tenuti.append(i)
+        out.extend(tenuti)
+    return out
+
+
+def _stessa_scelta(a: dict, b: dict) -> bool:
+    """Lo stesso codice in due anni è la stessa scelta (non due insegnamenti) se non è
+    obbligatorio in nessuno dei due e vale per gli stessi percorsi (o per tutti)."""
+    if a.get("obbligatorio") or b.get("obbligatorio"):
+        return False
+    pa, pb = set(pulizia.percorsi(a.get("curriculum"))), set(pulizia.percorsi(b.get("curriculum")))
+    return not pa or not pb or bool(pa & pb)
+
+
+# Dove stanno nel piano: li decide il contributo (anche quando li toglie, es. un
+# percorso che diventa comune a tutti), non la copia precedente del database.
+_STRUTTURA = ("anno", "periodo", "curriculum", "obbligatorio")
+
+
 def merge_insegnamenti(old: list[dict], new: list[dict]) -> list[dict]:
-    """Unisce per id: i campi non nulli del nuovo vincono, libri ed esami si uniscono."""
+    """Unisce per id: i campi non nulli del nuovo vincono, libri ed esami si uniscono.
+    Per un insegnamento completo del contributo (con il nome) anno, periodo, percorso e
+    obbligatorietà sono sempre quelli del contributo."""
     by_id = {i["id"]: dict(i) for i in old}
     for n in new:
         cur = by_id.get(n["id"])
         if not cur:
             by_id[n["id"]] = n
             continue
+        if n.get("nome"):
+            for k in _STRUTTURA:
+                if k in n:
+                    cur[k] = n[k]
         for k, v in n.items():
             if k in ("libri", "esami"):
                 seen = {json.dumps(x, sort_keys=True) for x in cur.get(k) or []}
@@ -371,12 +444,7 @@ def main() -> None:
                 target["url_catalogo"] = cc["url"]
             if cc.get("ammissione"):  # requisiti di accesso (OFA, test, inglese): il più recente vale
                 target["ammissione"] = cc["ammissione"]
-            ins = []
-            for i in cc.get("insegnamenti", []):
-                i = dict(i)
-                if "id" not in i:  # (i contributi dei periodi hanno già l'id e non il nome)
-                    i["id"] = f"{target['id']}-{slug(i.get('codice') or i['nome'], 40)}"
-                ins.append(i)
+            ins = assegna_id(target["id"], cc.get("insegnamenti", []))
             target["insegnamenti"] = merge_insegnamenti(target.get("insegnamenti") or [], ins)
         app = appelli.get(uid, {})
         oggi = date.today().isoformat()

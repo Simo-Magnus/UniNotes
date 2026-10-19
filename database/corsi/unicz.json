@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unicz",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.sfn.unicz.it/corso_studio/biotecnologie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "32186",
@@ -32,10 +32,10 @@
      "periodo_fine": null,
      "cfu": 5,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14580/2019/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14580/2019/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -52,10 +52,10 @@
      "periodo": "1",
      "cfu": 3,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/21545/2019/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/21545/2019/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -75,14 +75,14 @@
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 10,
      "ssd": "AGR/18, MED/49",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Hribal Marta Letizia",
       "Maurotti Samantha",
       "Morittu Valeria Maria"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/21544/2019/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/21544/2019/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Mariani, Costantini, Cannella, Tommasi Alimentazione e Nutrizione Umana. Il Pensiero Scientifico Editore",
@@ -151,7 +151,7 @@
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 11,
      "ssd": "BIO/14, CHIM/09",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Berliocchi Laura",
@@ -159,7 +159,7 @@
       "Gagliardi Agnese",
       "Muscoli Carolina"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/21543/2019/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/21543/2019/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Clementi-Fumagalli. Farmacologia Generale e molecolare. Edra edizioni",
@@ -228,12 +228,12 @@
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
      "ssd": "MED/43",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Aquila Isabella"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/21542/2019/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/21542/2019/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -277,7 +277,7 @@
      "periodo_fine": "14/06/2026 00:00:00",
      "cfu": 11,
      "ssd": "BIO/12, MED/05",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Abbonante Vittorio",
@@ -285,7 +285,7 @@
       "Foti Daniela Patrizia Francesca",
       "Greco Marta"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/21546/2019/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/21546/2019/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Metodologie Biochimiche e biomolecolari (Maccarrone – Zanichelli)",
@@ -1996,7 +1996,7 @@
    "url": "https://www.medicina.unicz.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A004947",
@@ -2193,7 +2193,7 @@
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9379/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9379/2013/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -2215,10 +2215,10 @@
      "periodo_fine": null,
      "cfu": 5,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9385/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9385/2013/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -2237,7 +2237,7 @@
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 7,
      "ssd": "MED/17, MED/49, MED/42",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Hribal Marta Letizia",
@@ -2247,7 +2247,7 @@
       "Serapide Francesca",
       "Trecarichi Enrico Maria"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/19343/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/19343/2013/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Carosi G., Cauda R. Core curriculum in Malattie Infettive. Ed. McGraw-Hill",
@@ -2304,7 +2304,7 @@
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
      "ssd": "MED/38, MED/49, M-PSI/01, MED/12",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Gallizzi Romina",
@@ -2312,7 +2312,7 @@
       "Luzza Francesco",
       "Montalcini Tiziana"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9377/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9377/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -2344,10 +2344,10 @@
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 15,
      "ssd": "MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9380/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9380/2013/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -2366,7 +2366,7 @@
      "periodo_fine": "30/09/2023 00:00:00",
      "cfu": 8,
      "ssd": "L-LIN/02, ING-INF/05",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Alcaro Rosa",
@@ -2374,7 +2374,7 @@
       "Michael Ashour",
       "Talarico Filomena"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9381/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9381/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -2402,13 +2402,14 @@
      "nome": "C.i. Primo Soccorso",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/04/2023 00:00:00",
-     "periodo_fine": "30/09/2023 00:00:00",
+     "periodo_inizio": "01/04/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/41, BIO/14, MED/18, MED/27, MED/33",
-     "obbligatorio": false,
+     "ssd": "BIO/14, MED/18, MED/27, MED/33, MED/41",
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
+      "Della Torre Attilio",
       "Ammendola Michele",
       "Bosco Francesca",
       "Bruni Andrea",
@@ -2416,7 +2417,7 @@
       "La Torre Domenico",
       "Mercurio Michele"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9382/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9382/2013/9999?coorte=2024",
      "libri": [
       {
        "titolo": "MANUALE DI ORTOPEDIA E TRAUMATOLOGIA (3A ED.), GRASSI E COLL, CASA EDITRICE: ELSEVIER MASSON.",
@@ -2497,10 +2498,10 @@
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 3,
      "ssd": "ING-INF/05",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9383/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9383/2013/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -2519,10 +2520,10 @@
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 5,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9386/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9386/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -3339,7 +3340,7 @@
    "url": "https://medicina.unicz.it/corso_studio/dietistica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Biochimica e Fisiologia della Nutrizione",
@@ -3750,6 +3751,25 @@
      "stato_esami": "completo"
     },
     {
+     "nome": "Tirocinio",
+     "anno": 1,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Elisa Mazza"
+     ],
+     "url": "https://medicina.unicz.it/insegnamento/499/40586",
+     "fonte": "https://medicina.unicz.it/corso_studio/dietistica/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista-1633919-tirocinio",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "nome": "Scienze Biomediche II",
      "anno": 1,
      "cfu": 7,
@@ -4001,16 +4021,17 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Scienze della Dietistica Applicate alla Clinica",
+     "nome": "Scienze della Dietistica Applicate alla Prevenzione e alla Educazione Alimentare",
      "anno": 2,
      "cfu": 6,
      "periodo": "1",
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
+      "Elisa Mazza",
       "Arturo Pujia"
      ],
-     "url": "https://medicina.unicz.it/insegnamento/499/40614",
+     "url": "https://medicina.unicz.it/insegnamento/499/40610",
      "fonte": "https://medicina.unicz.it/corso_studio/dietistica/insegnamenti",
      "libri": [
       {
@@ -4197,25 +4218,6 @@
      "verificato_il": "2026-10-17",
      "id": "unicz-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista-1633919-scienze-psicologiche-e-disturbi-dell-ali",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Tirocinio",
-     "anno": 3,
-     "cfu": 15,
-     "periodo": "1",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Elisa Mazza"
-     ],
-     "url": "https://medicina.unicz.it/insegnamento/499/40645",
-     "fonte": "https://medicina.unicz.it/corso_studio/dietistica/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-l-snt3-dietistica-abilitante-alla-professione-sanitaria-di-dietista-1633919-tirocinio",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -4410,30 +4412,8 @@
    "url": "https://www.diges.unicz.it/corso_studio/economia_aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
-    {
-     "codice": "A000449",
-     "nome": "Attivita' a Libera Scelta",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 5,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/17858/2011/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unicz-l-18-economia-aziendale-a000449",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "A005771",
      "nome": "Bioetica: Questione di Vita e di Morte",
@@ -5186,10 +5166,10 @@
      "periodo_fine": null,
      "cfu": 3,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/5177/2011/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/5177/2011/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -5290,10 +5270,10 @@
      "periodo_fine": null,
      "cfu": 2,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/20314/2011/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/20314/2011/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -5428,14 +5408,14 @@
      "periodo_inizio": "01/10/2024 00:00:00",
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 15,
-     "ssd": "SECS-P/09, SECS-P/11",
-     "obbligatorio": false,
+     "ssd": "SECS-P/11, SECS-P/09",
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Cavallaro Giusy",
       "Piluso Fabio"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/20311/2011/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/20311/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Strumenti e servizi finanziari",
@@ -5575,13 +5555,13 @@
      "periodo_inizio": "01/10/2024 00:00:00",
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 5,
-     "ssd": "IUS/05",
+     "ssd": "GIUR-03/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
       "Carrisi Andrea"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/17844/2011/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/17844/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Testi Consigliati: A. Urbani, L’attività delle banche, 2020, Cedam: Parte I, Cap. III,",
@@ -5734,12 +5714,12 @@
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
      "ssd": "IUS/04",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Laudonio Aldo"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/5166/2011/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/5166/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "G. Presti, M. Rescigno, “Corso di diritto commerciale” (dodicesima ed.",
@@ -5888,16 +5868,16 @@
      "nome": "Finanza, Imprenditorialita' e Fattori Esg. Casi Aziendali",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 5,
-     "ssd": "SECS-P/09",
+     "ssd": "ECON-09/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
       "Trotta Annarita"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/21499/2011/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/21499/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Linciano e al., 2021, La finanza per lo sviluppo sostenibile, Consob (pp.",
@@ -6086,12 +6066,12 @@
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
      "ssd": "IUS/07",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Ranieri Maura"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/3612/2011/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/3612/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "M. ESPOSITO, L. GAETA, A. ZOPPOLI, L. ZOPPOLI, Diritto del lavoro e sindacale , Giappichelli editore, Torino, ult. ed. (limitatamente ai seguenti Capitoli: II, IV, V, IX, X, XI, XII, XIII, XIV, XV, XVI, XVII e XVIII).",
@@ -6231,13 +6211,13 @@
      "periodo_inizio": "01/04/2025 00:00:00",
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 5,
-     "ssd": "SECS-P/08",
+     "ssd": "ECON-07/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
       "Colurcio Maria"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/21501/2011/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/21501/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Libro di Testo: \"Twin Transition - Principi e pratiche per la gestione degli ecosistemi emergenti\" Colurcio M., Caridà A. (2025) – Franco Angeli (attualmente in corso di pubblicazione).",
@@ -6378,12 +6358,12 @@
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 8,
      "ssd": "L-LIN/12",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Lazzaro Vittoria"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/20312/2011/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/20312/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Gallagher A.; Galuzzi F., “Mastering Grammar” (2016) - Pearson-",
@@ -6547,13 +6527,13 @@
      "periodo_inizio": "01/04/2025 00:00:00",
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 5,
-     "ssd": "SECS-P/08",
+     "ssd": "ECON-07/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
       "Ranieri Angelo"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/21500/2011/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/21500/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Technology, Strategy. Ed. World Scientific Pub Co Inc. ISBN. 978-1944659820",
@@ -6693,13 +6673,13 @@
      "periodo_inizio": "01/04/2025 00:00:00",
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 5,
-     "ssd": "SECS-P/02",
+     "ssd": "ECON-02/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
       "Bruni Sergio"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/17860/2011/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/17860/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Il Testo di riferimento è : Francesca Fauri, L’Unione Europea. Una Storia economica. Bologna , il Mulino , 2017 Al fine di analizzare il processo di unificazione europea più specificamente da un punto di vista economico consultare il volume : Macroeconomia : un’introduzione di Cesare",
@@ -6840,12 +6820,12 @@
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 9,
      "ssd": "SECS-P/07",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Giancotti Monica"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/20313/2011/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/20313/2011/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -8004,7 +7984,10 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unicz-l-18-economia-aziendale-a000443",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "codici_alternativi": [
+      "A000449"
+     ]
     },
     {
      "codice": "92568",
@@ -9925,7 +9908,7 @@
    "url": "https://medicina.unicz.it/corso_studio/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "32890",
@@ -9936,10 +9919,10 @@
      "periodo_fine": null,
      "cfu": 17,
      "ssd": "MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9235/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9235/2010/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -9958,10 +9941,10 @@
      "periodo_fine": null,
      "cfu": 12,
      "ssd": "MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9231/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9231/2010/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -9976,18 +9959,18 @@
      "nome": "C.i. di Cinesiologia e Metodiche Cinesiterapiche e Rieducative Generali",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/34, MED/33, MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
+      "Marotta Nicola",
       "Gasparini Giorgio",
-      "Inzitari Maria Teresa",
-      "Marotta Nicola"
+      "Inzitari Maria Teresa"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9229/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9229/2010/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -10015,18 +9998,18 @@
      "nome": "C.i. di Mezzi Fisici e Tecnologici in Riabilitazione",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
      "ssd": "ING-INF/05, MED/34, MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Ammendolia Antonio",
       "Inzitari Maria Teresa",
       "Zucco Chiara"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9230/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9230/2010/9999?coorte=2025",
      "libri": [
       {
        "titolo": "Terapia Fisica di Zati e Valent – edizioni Minerva Medica",
@@ -10057,7 +10040,7 @@
      ],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unicz-l-snt2-fisioterapia-abilitante-alla-professione-sanitaria-di-fisiot-32875",
      "stato_esami": "completo"
@@ -10067,20 +10050,23 @@
      "nome": "C.i. di Misure e Valutazione Funzionale in Riabilitazione",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/34, MED/26, MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
+      "Demeco Andrea",
+      "Morelli Maurizio",
+      "Sammarra Ilaria",
       "Arabia Gennarina",
       "Fortunato Francesco",
       "Inzitari Maria Teresa",
       "Marotta Nicola",
       "Valentino Paola"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9228/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9228/2010/9999?coorte=2025",
      "libri": [
       {
        "titolo": "Bonaiuti Donatella – Scale di valutazione in riabilitazione. Ed. SEU 2008 Masur Harald: Neurologia – Scale e punteggi; Ed. Ediermes Valerius Klaus P. e altri: I muscoli- Anatomia- test funzionali movimento, Ed Ediermes Valutazione Cinesiologica, H. M. Clarkson, Ediermes Clinica Neurologica (Autore: Pazzaglia) (Società Editrice Esculapio) Il Bergamini di Neurologia (Autori: Mutani, Lopiano, Durelli) (Edizioni Cortina, Torino) Materiale didattico fornito dai docenti.",
@@ -10125,7 +10111,7 @@
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
      "ssd": "MED/33, MED/09, MED/34, MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Fiorentino Teresa Vanessa",
@@ -10133,7 +10119,7 @@
       "Marotta Nicola",
       "Mercurio Michele"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9232/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9232/2010/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -10161,13 +10147,14 @@
      "nome": "C.i. di Clinica Riabilitativa della Disabilita' Neurologica",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/04/2025 00:00:00",
-     "periodo_fine": "30/09/2025 00:00:00",
+     "periodo_inizio": "01/04/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/26, MED/34, MED/48, MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
+      "Marotta Nicola",
       "De Sire Alessandro",
       "Fortunato Francesco",
       "Gramigna Vera",
@@ -10175,7 +10162,7 @@
       "Quattrone Andrea",
       "Sammarra Ilaria"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9233/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9233/2010/9999?coorte=2025",
      "libri": [
       {
        "titolo": "Basaglia Nino – Trattato di Medicina riabilitativa- Medicina Fisica e Riabilitazione Idelson Gnoccchi Sandrini Giorgio, Dattola Roberto: Casa editrice: Verduci Editore, Compendio di Neuroriabilitazione, 2012 Maurizio Iocco- Trattamento riabilitativo delle lesioni nervose periferiche Clinica Neurologica (Autore: Pazzaglia) (Società Editrice Esculapio) Il Bergamini di Neurologia (Autori: Mutani, Lopiano, Durelli) (Edizioni Cortina, Torino) Dispense e materiale didattico fornito dai docenti.",
@@ -10235,7 +10222,7 @@
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9243/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9243/2010/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -10257,7 +10244,7 @@
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9238/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9238/2010/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -10276,10 +10263,10 @@
      "periodo_fine": null,
      "cfu": 3,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9242/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9242/2010/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -10311,10 +10298,10 @@
      "periodo_fine": null,
      "cfu": 5,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9244/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9244/2010/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -10333,10 +10320,10 @@
      "periodo_fine": null,
      "cfu": 5,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9245/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9245/2010/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -10355,10 +10342,10 @@
      "periodo_fine": null,
      "cfu": 2,
      "ssd": "MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9246/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9246/2010/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -10377,10 +10364,10 @@
      "periodo_fine": null,
      "cfu": 15,
      "ssd": "MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9239/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9239/2010/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -10399,7 +10386,7 @@
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
      "ssd": "MED/10, MED/11, MED/26, MED/24, MED/48",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Arabia Gennarina",
@@ -10410,7 +10397,7 @@
       "Pelaia Girolamo",
       "Sorrentino Sabato"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9237/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9237/2010/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -10442,7 +10429,7 @@
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
      "ssd": "MED/25, MED/24, MED/27, MED/26",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "De Filippis Renato",
@@ -10450,7 +10437,7 @@
       "Lavano Angelo",
       "Mondaini Nicola"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9236/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9236/2010/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Manuale di Psichiatria e Psicologia Clinica IV ed di Invernizzi e C. Bressi. Mc Graw Hill editore, 2012.",
@@ -10531,13 +10518,13 @@
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 8,
      "ssd": "L-LIN/02, ING-INF/05",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "De Pascali Antonio",
       "Talarico Filomena"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9240/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9240/2010/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -10581,7 +10568,7 @@
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
      "ssd": "BIO/14, MED/18, MED/27, MED/33, MED/41",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Ammendola Michele",
@@ -10591,7 +10578,7 @@
       "Garofalo Eugenio",
       "Gasparini Giorgio"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/9241/2010/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/9241/2010/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Manuale di ortopedia e traumatologia (2a ed.), Grassi e Coll, Casa editrice: Elsevier Masson.",
@@ -11342,7 +11329,7 @@
    "url": "https://medicina.unicz.it/corso_studio/igiene_dentale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Laboratori di Informatica",
@@ -11684,6 +11671,25 @@
      "url_sito": "https://medicina.unicz.it/insegnamento/509/41739"
     },
     {
+     "nome": "Tirocinio",
+     "anno": 1,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Cinzia Arturi"
+     ],
+     "url": "https://medicina.unicz.it/insegnamento/509/41743",
+     "fonte": "https://medicina.unicz.it/corso_studio/igiene_dentale/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-tirocinio",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "nome": "Biomateriali Dentari",
      "anno": 1,
      "cfu": 5,
@@ -11879,6 +11885,27 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "nome": "Scienze e Tecniche Dell'igiene Dentale I",
+     "anno": 2,
+     "cfu": 5,
+     "periodo": "1",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Amerigo Giudice",
+      "Sergio Paduano",
+      "Concetta Irace"
+     ],
+     "url": "https://medicina.unicz.it/insegnamento/509/41777",
+     "fonte": "https://medicina.unicz.it/corso_studio/igiene_dentale/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-scienze-e-tecniche-dell-igiene-dentale-i",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "nome": "Discipline Odontostomatologiche II",
      "anno": 2,
      "cfu": 5,
@@ -11983,44 +12010,6 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicz-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-patologia-oro-maxillo-facciale",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Scienze e Tecniche Dell'igiene Dentale III",
-     "anno": 3,
-     "cfu": 5,
-     "periodo": "1",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Concetta Irace"
-     ],
-     "url": "https://medicina.unicz.it/insegnamento/509/41799",
-     "fonte": "https://medicina.unicz.it/corso_studio/igiene_dentale/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-scienze-e-tecniche-dell-igiene-dentale-i",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Tirocinio",
-     "anno": 3,
-     "cfu": 16,
-     "periodo": "1",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Cinzia Arturi"
-     ],
-     "url": "https://medicina.unicz.it/insegnamento/509/41805",
-     "fonte": "https://medicina.unicz.it/corso_studio/igiene_dentale/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-l-snt3-igiene-dentale-abilitante-alla-professione-sanitaria-di-igie-tirocinio",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -12140,7 +12129,7 @@
    "url": "https://medicina.unicz.it/corso_studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A004774",
@@ -12470,7 +12459,7 @@
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14845/2018/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14845/2018/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -12492,7 +12481,7 @@
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14850/2018/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14850/2018/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -12511,10 +12500,10 @@
      "periodo_fine": null,
      "cfu": 5,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14851/2018/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14851/2018/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -12529,22 +12518,24 @@
      "nome": "C.i. Medicina e Chirurgia Basata Sull'evidenza",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/09, MED/45, MED/18, MED/19",
-     "obbligatorio": false,
+     "ssd": "MED/45, MED/18, MED/19, MED/09",
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Ammendola Michele",
-      "Andreozzi Francesco",
       "Doldo Patrizia",
-      "Fiorentino Teresa Vanessa",
       "Marcasciano Marco",
+      "Mercuri Caterina",
+      "Perticone Maria",
       "Simeone Silvio",
+      "Andreozzi Francesco",
+      "Fiorentino Teresa Vanessa",
       "Volpicelli Giovanni"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/15452/2018/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/15452/2018/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -12559,11 +12550,11 @@
      "nome": "C.i. di Chirurgia Specialistica",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/45, MED/23, MED/40, MED/33",
-     "obbligatorio": false,
+     "ssd": "MED/23, MED/40, MED/33, MED/45",
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Bosco Vincenzo",
@@ -12571,9 +12562,10 @@
       "Familiari Filippo",
       "Serraino Giuseppe Filiberto",
       "Simeone Silvio",
+      "Svelato Alessandro",
       "Venturella Roberta"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14844/2018/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14844/2018/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Lukmann/Soresen, IL TRATTATO COMPLETO DEL NURSING. E Piccin",
@@ -12615,7 +12607,7 @@
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unicz-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-32409",
      "stato_esami": "da_aggiungere"
@@ -12625,16 +12617,16 @@
      "nome": "Tirocinio III Anno I Semestre",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 15,
      "ssd": "MED/45",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Simeone Silvio"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14846/2018/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14846/2018/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Trattato di Cure Infermieristiche,Autori: Luisa Saiani-Anna Brugnoli,Editore: Sorbona. Fondamenti",
@@ -12676,7 +12668,7 @@
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unicz-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-32416",
      "stato_esami": "da_aggiungere"
@@ -12686,17 +12678,19 @@
      "nome": "C.i. di Abilita' Informatico-linguistiche",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/04/2025 00:00:00",
-     "periodo_fine": "30/09/2025 00:00:00",
+     "periodo_inizio": "01/04/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 8,
      "ssd": "L-LIN/02, ING-INF/05",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
+      "Bottino Lorella",
       "Clodomiro Emanuela",
+      "De Pascali Antonio",
       "Martinis Maria Chiara"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14847/2018/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14847/2018/9999?coorte=2024",
      "libri": [
       {
        "titolo": "I. Parini, F. Malaguti, R. Roberts. English for Nurses and Healthcare Professionals . Roma: CEA, 2018.",
@@ -12736,22 +12730,24 @@
      "nome": "C.i. di Primo Soccorso",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/04/2025 00:00:00",
-     "periodo_fine": "30/09/2025 00:00:00",
+     "periodo_inizio": "01/04/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 6,
      "ssd": "BIO/14, MED/18, MED/27, MED/41, MED/09",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
-      "Bosco Francesca",
-      "Bruni Andrea",
+      "Biamonte Eugenio",
+      "Citraro Rita",
       "Della Torre Attilio",
       "Garofalo Eugenio",
+      "Volpicelli Giovanni",
+      "Bosco Francesca",
+      "Bruni Andrea",
       "La Torre Domenico",
-      "Rizzuto Antonia",
-      "Volpicelli Giovanni"
+      "Rizzuto Antonia"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14848/2018/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14848/2018/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -12779,16 +12775,16 @@
      "nome": "Laboratori Ssd",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/04/2025 00:00:00",
-     "periodo_fine": "30/09/2025 00:00:00",
+     "periodo_inizio": "01/04/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 3,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Simeone Silvio"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14849/2018/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14849/2018/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Trattato di Cure Infermieristiche,Autori: Luisa Saiani-Anna Brugnoli,Editore: Sorbona. Fondamenti del nursing secondo Kozier ed Erb. Concetti, procedure e pratica. Autore: Audrey Berman, Shirlee J. Snyder, Geralyn Frandsen,Editore: Piccin-Nuova Libraria 2023Berman A., Snyder S., & Jackson C. (2019). Nursing clinico. Tecniche e procedure di Kozier. Edises Hinkle J.L. & Cheever K.H. (2017). Brunner & Suddarth. Infermieristica medico-chirurgica (Vol. 1 e 2).",
@@ -12816,16 +12812,16 @@
      "nome": "Tirocinio III Anno II Semestre",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/04/2025 00:00:00",
-     "periodo_fine": "30/09/2025 00:00:00",
+     "periodo_inizio": "01/04/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 5,
      "ssd": "MED/45",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Simeone Silvio"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14852/2018/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14852/2018/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Trattato di Cure Infermieristiche,Autori: Luisa Saiani-Anna Brugnoli,Editore: Sorbona. Fondamenti del nursing secondo Kozier ed Erb. Concetti, procedure e pratica. Autore: Audrey Berman, Shirlee J. Snyder, Geralyn Frandsen,Editore: Piccin-Nuova Libraria 2023Berman A., Snyder S., & Jackson C. (2019). Nursing clinico. Tecniche e procedure di Kozier. Edises Hinkle J.L. & Cheever K.H. (2017). Brunner & Suddarth. Infermieristica medico-chirurgica (Vol. 1 e 2).",
@@ -13875,7 +13871,7 @@
    "url": "https://medicina.unicz.it/corso_studio/interateneo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Prevenzione Ambienti di Lavoro, Microbiologia e Malattie Infettive",
@@ -15082,7 +15078,7 @@
    "url": "https://medicina.unicz.it/corso_studio/ingegneria_informatica_biomedica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "ING0027",
@@ -15093,10 +15089,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14859/2014/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14859/2014/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -15118,10 +15114,10 @@
      "periodo_fine": null,
      "cfu": 3,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14862/2014/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14862/2014/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -15140,10 +15136,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14861/2014/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14861/2014/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -15175,12 +15171,12 @@
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 9,
      "ssd": "ING-INF/05",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Cinaglia Pietro"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14854/2014/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14854/2014/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Sistemi di Basi di Dati - Fondamenti e complementi. Autori: Ramez A. Elmasri, Shamkant B. Navathe. Editore: Pearson.",
@@ -15212,12 +15208,12 @@
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
      "ssd": "ING-IND/34",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Fragomeni Gionata"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14856/2014/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14856/2014/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Biofluidodinamica, patron",
@@ -15249,12 +15245,12 @@
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
      "ssd": "ING-INF/05",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Milano Marianna"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14855/2014/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14855/2014/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Artificial Intelligence in Bioinformatics: From Omics Analysis to Deep Learning and Network Mining",
@@ -15298,13 +15294,13 @@
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 9,
      "ssd": "ING-INF/04",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Cosentino Carlo",
       "Merola Alessio"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14853/2014/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14853/2014/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Paolo Bolzern, Riccardo Scattolini, Nicola Schiavoni, Fondamenti di controlli automatici, McGraw-Hill, 4^ edizione, 2015",
@@ -15322,7 +15318,7 @@
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
+     "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unicz-l-8-ingegneria-informatica-e-biomedica-ing0021",
      "stato_esami": "da_aggiungere"
@@ -15336,12 +15332,12 @@
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
      "ssd": "ING-INF/06",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Zaffino Paolo"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14858/2014/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14858/2014/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Bioimmagini",
@@ -15373,12 +15369,12 @@
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
      "ssd": "ING-INF/04",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Merola Alessio"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14857/2014/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14857/2014/9999?coorte=2024",
      "libri": [
       {
        "titolo": "GianAntonio Magnani, Gianni Ferretti, Paolo Rocco, Tecnologie dei sistemi di controllo 2/ed, McGraw-Hill, 2007",
@@ -15421,7 +15417,7 @@
      ],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
+     "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unicz-l-8-ingegneria-informatica-e-biomedica-ing0025",
      "stato_esami": "completo"
@@ -15996,7 +15992,7 @@
    "url": "https://medicina.unicz.it/corso_studio/logopedia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A004494",
@@ -16482,7 +16478,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/oapp",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A006231",
@@ -16577,10 +16573,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/3381/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/3381/2013/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -16599,10 +16595,10 @@
      "periodo_fine": null,
      "cfu": 2,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/3383/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/3383/2013/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -16613,175 +16609,20 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "03944",
-     "nome": "Ulteriori Conoscenze",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/3382/2013/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unicz-l-16-organizzazione-delle-amministrazioni-pubbliche-e-private-03944",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "03940",
-     "nome": "Diritto Commerciale",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "30/09/2025 00:00:00",
-     "cfu": 8,
-     "ssd": "IUS/04",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Ranieli Melania"
-     ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/3378/2013/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-22",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2025-08-07",
-       "iscrizioni_al": "2026-10-13",
-       "docenti": "MIGALDI MARCO",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-18",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-22",
-       "iscrizioni_al": "2026-12-15",
-       "docenti": "MIGALDI MARCO",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-12",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-22",
-       "iscrizioni_al": "2027-01-09",
-       "docenti": "MIGALDI MARCO",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-26",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-22",
-       "iscrizioni_al": "2027-02-23",
-       "docenti": "MIGALDI MARCO",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-04-02",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-22",
-       "iscrizioni_al": "2027-03-30",
-       "docenti": "MIGALDI MARCO",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-06-24",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-22",
-       "iscrizioni_al": "2027-06-21",
-       "docenti": "MIGALDI MARCO",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-07-12",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-22",
-       "iscrizioni_al": "2027-07-09",
-       "docenti": "MIGALDI MARCO",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-09-23",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-22",
-       "iscrizioni_al": "2027-09-20",
-       "docenti": "MIGALDI MARCO",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-10-14",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-22",
-       "iscrizioni_al": "2027-10-11",
-       "docenti": "MIGALDI MARCO",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unicz-l-16-organizzazione-delle-amministrazioni-pubbliche-e-private-03940",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "03894",
      "nome": "Diritto Amministrativo",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "28/02/2027 00:00:00",
      "cfu": 12,
      "ssd": "IUS/10",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Giannelli Annalaura"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/3367/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/3367/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -16901,12 +16742,146 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "03940",
+     "nome": "Diritto Commerciale",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "28/02/2027 00:00:00",
+     "cfu": 8,
+     "ssd": "IUS/04",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Migaldi Marco",
+      "Ranieli Melania"
+     ],
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/3378/2013/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-22",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2025-08-07",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "MIGALDI MARCO",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-18",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2026-12-15",
+       "docenti": "MIGALDI MARCO",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-01-12",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2027-01-09",
+       "docenti": "MIGALDI MARCO",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-26",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2027-02-23",
+       "docenti": "MIGALDI MARCO",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-04-02",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2027-03-30",
+       "docenti": "MIGALDI MARCO",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-24",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2027-06-21",
+       "docenti": "MIGALDI MARCO",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-12",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2027-07-09",
+       "docenti": "MIGALDI MARCO",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-23",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2027-09-20",
+       "docenti": "MIGALDI MARCO",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-10-14",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2027-10-11",
+       "docenti": "MIGALDI MARCO",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unicz.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unicz-l-16-organizzazione-delle-amministrazioni-pubbliche-e-private-03940",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "A002944",
      "nome": "Diritto Sportivo",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "15/09/2025 00:00:00",
-     "periodo_fine": "30/04/2026 00:00:00",
+     "periodo_inizio": "01/10/2024 00:00:00",
+     "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
      "ssd": "IUS/01",
      "obbligatorio": false,
@@ -16915,7 +16890,7 @@
       "Errigo Elisabetta",
       "Mazzuca Marcello"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/20966/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/20966/2013/9999?coorte=2024",
      "libri": [
       {
        "titolo": "L. DI NELLA (a cura di), Manuale di diritto dello sport, ESI, 2021, limitatamente alle seguenti parti:",
@@ -16995,16 +16970,16 @@
      "nome": "Diritto Tributario",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "28/02/2027 00:00:00",
      "cfu": 10,
      "ssd": "IUS/12",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Mauro Michele"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/3377/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/3377/2013/9999?coorte=2024",
      "libri": [
       {
        "titolo": "F. TESAURO (a cura di Maria Cecilia Fregni, Nicola Sartori e Alessandro Turchi),",
@@ -17189,8 +17164,8 @@
      "nome": "Diritto del Lavoro Nelle Pubbliche Amministrazioni",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "15/09/2025 00:00:00",
-     "periodo_fine": "30/04/2026 00:00:00",
+     "periodo_inizio": "01/10/2024 00:00:00",
+     "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
      "ssd": "IUS/07",
      "obbligatorio": false,
@@ -17198,7 +17173,7 @@
      "docenti": [
       "Viscomi Antonio"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/22577/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/22577/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -17303,8 +17278,8 @@
      "nome": "Gestione delle Risorse Umane",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "15/09/2025 00:00:00",
-     "periodo_fine": "30/04/2026 00:00:00",
+     "periodo_inizio": "01/10/2024 00:00:00",
+     "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
      "ssd": "SECS-P/10",
      "obbligatorio": false,
@@ -17312,7 +17287,7 @@
      "docenti": [
       "Ventura Marzia"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/3388/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/3388/2013/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Luca Solari (2020) Freedom management Organizzazioni centrate sulla libertà dell’individuo. Franco Angeli. ISBN:9788891791269",
@@ -17368,8 +17343,8 @@
      "nome": "Informatica Giuridica",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "15/09/2025 00:00:00",
-     "periodo_fine": "30/04/2026 00:00:00",
+     "periodo_inizio": "01/10/2024 00:00:00",
+     "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
      "ssd": "IUS/20",
      "obbligatorio": false,
@@ -17377,7 +17352,7 @@
      "docenti": [
       "Sigillo' Fabrizio"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/3387/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/3387/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -17432,8 +17407,8 @@
      "nome": "Teoria e Tecnica della Normazione e dell' Interpretazione",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "15/09/2025 00:00:00",
-     "periodo_fine": "30/04/2026 00:00:00",
+     "periodo_inizio": "01/10/2024 00:00:00",
+     "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
      "ssd": "IUS/20",
      "obbligatorio": false,
@@ -17441,7 +17416,7 @@
      "docenti": [
       "Mazzuca Jessica"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/3589/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/3589/2013/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Mazzuca J. (2025). Ragionamento giuridico e intelligenza artificiale.",
@@ -17570,8 +17545,8 @@
      "nome": "Diritto Agroalimentare",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "23/02/2026 00:00:00",
-     "periodo_fine": "31/07/2026 00:00:00",
+     "periodo_inizio": "01/04/2025 00:00:00",
+     "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
      "ssd": "IUS/03",
      "obbligatorio": false,
@@ -17580,7 +17555,7 @@
       "Rizzuto Maria Carlotta",
       "Rizzuto Antonia"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/20967/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/20967/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -17666,7 +17641,7 @@
      "docenti": [
       "Tigano Vincenzo Mario Marco"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/19363/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/19363/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -17804,8 +17779,8 @@
      "nome": "Diritto di Famiglia ( 6 Cfu )",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "23/02/2026 00:00:00",
-     "periodo_fine": "31/07/2026 00:00:00",
+     "periodo_inizio": "01/04/2025 00:00:00",
+     "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
      "ssd": "IUS/01",
      "obbligatorio": false,
@@ -17813,7 +17788,7 @@
      "docenti": [
       "Cosco Giusy"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/4011/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/4011/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -17841,8 +17816,8 @@
      "nome": "Diritto e Letteratura",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "23/02/2026 00:00:00",
-     "periodo_fine": "31/07/2026 00:00:00",
+     "periodo_inizio": "01/04/2025 00:00:00",
+     "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
      "ssd": "IUS/20",
      "obbligatorio": false,
@@ -17850,7 +17825,7 @@
      "docenti": [
       "Scerbo Alberto"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/17514/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/17514/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -17881,16 +17856,16 @@
      "nome": "Economia e Gestione delle Imprese",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/04/2025 00:00:00",
-     "periodo_fine": "30/09/2025 00:00:00",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 8,
      "ssd": "SECS-P/08",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Bongiorno Giuseppe"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/3379/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/3379/2013/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Sciarelli S. (202 6). La gestione dell’impresa . Competitività, sostenibilità e valore nel disegno imprendito riale, XIV edizione. Ed.",
@@ -18076,16 +18051,16 @@
      "nome": "Sociologia dei Fenomeni Politici",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/04/2025 00:00:00",
-     "periodo_fine": "30/09/2025 00:00:00",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 12,
      "ssd": "SPS/11",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Montesanti Lucia"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/19747/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/19747/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -18271,8 +18246,8 @@
      "nome": "Spazio Giudiziario Europeo",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/04/2025 00:00:00",
-     "periodo_fine": "30/09/2025 00:00:00",
+     "periodo_inizio": "15/02/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 6,
      "ssd": "IUS/15",
      "obbligatorio": false,
@@ -18280,7 +18255,7 @@
      "docenti": [
       "De Propris Luigi"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/22570/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22570/2013/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -19991,6 +19966,28 @@
      "modalita_esame": "orale",
      "id": "unicz-l-16-organizzazione-delle-amministrazioni-pubbliche-e-private-03910",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "03944",
+     "nome": "Ulteriori Conoscenze",
+     "anno": null,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/3382/2013/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unicz.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unicz-l-16-organizzazione-delle-amministrazioni-pubbliche-e-private-03944",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "SEM186",
@@ -22653,7 +22650,7 @@
    "url": "https://medicina.unicz.it/corso_studio/ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A003203",
@@ -22664,10 +22661,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": "MED/47, MED/42",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22470/2024/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22470/2024/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -22687,10 +22684,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": "MED/47",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22471/2024/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22471/2024/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -22710,10 +22707,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": "MED/47",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22472/2024/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22472/2024/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -22731,10 +22728,10 @@
      "periodo": "1",
      "cfu": 12,
      "ssd": "MED/47",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22473/2024/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22473/2024/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -22754,10 +22751,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": "MED/47, MED/38",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22474/2024/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22474/2024/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -22775,10 +22772,10 @@
      "periodo": "2",
      "cfu": 18,
      "ssd": "MED/47",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22476/2024/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22476/2024/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -22811,12 +22808,12 @@
      "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/47, MED/40",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Venturella Roberta"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22475/2024/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/22475/2024/9999?coorte=2025",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -23489,7 +23486,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Diritto Penale Romano",
@@ -24008,6 +24005,57 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "nome": "Diritto del Lavoro nelle Pubbliche Amministrazioni",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Antonio Viscomi"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/39/1407",
+     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-l-14-scienze-delle-investigazioni-diritto-del-lavoro-nelle-pubbliche-ammin",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Diritto delle Obbligazioni",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Geremia Romano"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/39/1422",
+     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2025-11-10",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "ROMANO GEREMIA",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-l-14-scienze-delle-investigazioni-diritto-delle-obbligazioni",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
      "nome": "Indagini Medico - Legali e Tecniche Criminologiche",
      "anno": 2,
      "cfu": 12,
@@ -24021,6 +24069,44 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicz-l-14-scienze-delle-investigazioni-indagini-medico-legali-e-tecniche-crimin",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Informatica Giuridica",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Fabrizio Sigillò"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/39/1959",
+     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-l-14-scienze-delle-investigazioni-informatica-giuridica",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Legislazione Scolastica",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Rossana Caridà"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/39/1429",
+     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-l-14-scienze-delle-investigazioni-legislazione-scolastica",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -24044,6 +24130,42 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "nome": "Attività Formativa a Libera Scelta",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.diges.unicz.it/insegnamento/39/1794",
+     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-l-14-scienze-delle-investigazioni-attivita-formativa-a-libera-scelta",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Bioetica Questione di Vita e di Morte",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Massimo La Torre"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/39/1409",
+     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-l-14-scienze-delle-investigazioni-bioetica-questione-di-vita-e-di-morte",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "nome": "C.i. Mezzi di Prova e Mezzi di Ricerca della Prova",
      "anno": 2,
      "cfu": 15,
@@ -24057,6 +24179,42 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicz-l-14-scienze-delle-investigazioni-c-i-mezzi-di-prova-e-mezzi-di-ricerca-de",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Diritto Agroalimentare",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Maria Carlotta Rizzuto"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/39/1411",
+     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-l-14-scienze-delle-investigazioni-diritto-agroalimentare",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Diritto Dell'informazione e della Comunicazione Digitale",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.diges.unicz.it/insegnamento/39/1943",
+     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-l-14-scienze-delle-investigazioni-diritto-dell-informazione-e-della-comuni",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -24112,6 +24270,44 @@
      "verificato_il": "2026-10-17",
      "id": "unicz-l-14-scienze-delle-investigazioni-diritto-penale-e-legislazione-antimafia",
      "stato_libri": "completo",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Diritto e Letteratura",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Alberto Scerbo"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/39/1417",
+     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-l-14-scienze-delle-investigazioni-diritto-e-letteratura",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Teorie della Cittadinanza e Paradigmi di Inclusione",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Leonardo Mellace"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/39/1530",
+     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-l-14-scienze-delle-investigazioni-teorie-della-cittadinanza-e-paradigmi-di",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -24352,57 +24548,6 @@
      "verificato_il": "2026-10-17",
      "id": "unicz-l-14-scienze-delle-investigazioni-diritto-tributario-frode-fiscale-e-tecni",
      "stato_libri": "completo",
-     "stato_esami": "completo"
-    },
-    {
-     "nome": "Diritto del Lavoro nelle Pubbliche Amministrazioni",
-     "anno": 3,
-     "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Antonio Viscomi"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/39/1407",
-     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-l-14-scienze-delle-investigazioni-diritto-del-lavoro-nelle-pubbliche-ammin",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Diritto delle Obbligazioni",
-     "anno": 3,
-     "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Geremia Romano"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/39/1422",
-     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-07",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2025-11-10",
-       "iscrizioni_al": "2026-10-04",
-       "docenti": "ROMANO GEREMIA",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-l-14-scienze-delle-investigazioni-diritto-delle-obbligazioni",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "completo"
     },
     {
@@ -24684,44 +24829,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Informatica Giuridica",
-     "anno": 3,
-     "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Fabrizio Sigillò"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/39/1959",
-     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-l-14-scienze-delle-investigazioni-informatica-giuridica",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Legislazione Scolastica",
-     "anno": 3,
-     "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Rossana Caridà"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/39/1429",
-     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-l-14-scienze-delle-investigazioni-legislazione-scolastica",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Spazio giudiziario europeo II",
      "anno": 3,
      "cfu": 6,
@@ -24925,42 +25032,6 @@
      "id": "unicz-l-14-scienze-delle-investigazioni-analisi-di-bilancio",
      "stato_libri": "completo",
      "stato_esami": "completo"
-    },
-    {
-     "nome": "Attività Formativa a Libera Scelta",
-     "anno": 3,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.diges.unicz.it/insegnamento/39/1828",
-     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-l-14-scienze-delle-investigazioni-attivita-formativa-a-libera-scelta",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Bioetica Questione di Vita e di Morte",
-     "anno": 3,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Massimo La Torre"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/39/1409",
-     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-l-14-scienze-delle-investigazioni-bioetica-questione-di-vita-e-di-morte",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
     },
     {
      "nome": "Contratti Bancari, Reti Internazionali e Flussi Finanziari",
@@ -25170,25 +25241,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Diritto Agroalimentare",
-     "anno": 3,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Maria Carlotta Rizzuto"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/39/1411",
-     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-l-14-scienze-delle-investigazioni-diritto-agroalimentare",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Diritto Dell'esecuzione Forzata Civile",
      "anno": 3,
      "cfu": 6,
@@ -25242,23 +25294,6 @@
      "verificato_il": "2026-10-17",
      "id": "unicz-l-14-scienze-delle-investigazioni-diritto-dell-esecuzione-forzata-civile",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Diritto Dell'informazione e della Comunicazione Digitale",
-     "anno": 3,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.diges.unicz.it/insegnamento/39/1943",
-     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-l-14-scienze-delle-investigazioni-diritto-dell-informazione-e-della-comuni",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -25430,25 +25465,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Diritto e Letteratura",
-     "anno": 3,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Alberto Scerbo"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/39/1417",
-     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-l-14-scienze-delle-investigazioni-diritto-e-letteratura",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Politiche Europee e Progettazione per L'inclusione Sociale",
      "anno": 3,
      "cfu": 6,
@@ -25586,25 +25602,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Teorie della Cittadinanza e Paradigmi di Inclusione",
-     "anno": 3,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Leonardo Mellace"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/39/1530",
-     "fonte": "https://www.diges.unicz.it/corso_studio/scienze_investigazioni/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-l-14-scienze-delle-investigazioni-teorie-della-cittadinanza-e-paradigmi-di",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Tirocinio",
      "anno": 3,
      "cfu": 3,
@@ -25657,7 +25654,7 @@
    "url": "https://medicina.unicz.it/corso_studio/scienze_tecniche_psicologia_cognitiva",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Biologia",
@@ -26319,7 +26316,7 @@
    "url": "https://www.sfn.unicz.it/corso_studio/scienze_tecnologie_cosmetiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "C. I. Biologia e Biochimica",
@@ -26449,18 +26446,6 @@
        "tipo": null,
        "note": "Dalla scheda ufficiale dell'insegnamento, a.a. 2026/27 (https://sfn.unicz.it/insegnamento/71/4946)",
        "citazione": "I. Bertini, F. Mani, C. Luchinat - P.W. Atkins, L. Jones - – quinta edizione – Zanichelli."
-      },
-      {
-       "titolo": "I. Bertini, F. Mani, C. Luchinat -",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dalla scheda ufficiale dell'insegnamento, a.a. 2026/27 (https://sfn.unicz.it/insegnamento/71/4946)",
-       "citazione": "I. Bertini, F. Mani, C. Luchinat -"
       }
      ],
      "esami": [],
@@ -27652,7 +27637,7 @@
    "url": "https://www.sfn.unicz.it/corso_studio/stpa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A002864",
@@ -27663,10 +27648,10 @@
      "periodo_fine": null,
      "cfu": 5,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/20899/2022/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/20899/2022/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -27683,10 +27668,10 @@
      "periodo": "1",
      "cfu": 10,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/20896/2022/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/20896/2022/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -27702,19 +27687,20 @@
      "nome": "C.i. Valorizzazione Nutrizionale dei Prodotti di Origine Animale",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/09/2024 00:00:00",
-     "periodo_fine": "28/02/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 12,
      "ssd": "MED/49, AGR/18",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Ferro Yvelise",
       "Mare Rosario",
+      "Maurotti Samantha",
       "Morittu Valeria Maria",
       "Spina Anna Antonella"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/20895/2022/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/20895/2022/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Stefanon B. (cur.) Mele M. (cur.) Pulina G. (cur.) - Allevamento animale e sostenibilità ambientale. Vol. 1: I principi. Editore: Franco Angeli, 2018 - ISBN-13: 9788891761835; Pagine: 292",
@@ -27791,17 +27777,17 @@
      "nome": "Eziopatogenesi delle Malattie Infettive",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/09/2024 00:00:00",
-     "periodo_fine": "28/02/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
      "ssd": "VET/05",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Procopio Anna Caterina",
       "Roncada Paola"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/20893/2022/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/20893/2022/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Malattie infettive degli animali. A cura di M. Fadda, V. Cuteri, P. Dall'Ara, G. Iovane, F. Marsilio. Milano, Point Veterinaire Italie, 2023. ISBN: 978889921184.",
@@ -27842,17 +27828,18 @@
      "nome": "Tossicologia degli Animali Domestici e Dell'ambiente",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/09/2024 00:00:00",
-     "periodo_fine": "28/02/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
      "ssd": "VET/07",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Britti Domenico",
+      "Naccari Clara",
       "Piras Cristian"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/20894/2022/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/20894/2022/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Tossicologia veterinaria, Idelson-Gnocchi, edizione 2022.",
@@ -27893,17 +27880,18 @@
      "nome": "C.i. Organizzazione delle Aziende Zootecniche",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "31/08/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "17/06/2027 00:00:00",
      "cfu": 12,
      "ssd": "SECS-P/10, AGR/19",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Carpino Santo",
+      "Lorena Antonio",
       "Reina Rocco"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/20897/2022/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/20897/2022/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Reina/Vesperi, Organizzare relazioni e conoscenze dell’agribusiness, ESI 2023;",
@@ -28751,7 +28739,7 @@
    "url": "https://medicina.unicz.it/corso_studio/scienze_motorie_sportive",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "PS00599",
@@ -28762,10 +28750,10 @@
      "periodo_fine": null,
      "cfu": 3,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/10834/2017/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/10834/2017/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -28809,10 +28797,10 @@
      "periodo_fine": null,
      "cfu": 2,
      "ssd": "L-LIN/12",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/5134/2017/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/5134/2017/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -28844,10 +28832,10 @@
      "periodo_fine": null,
      "cfu": 3,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/5177/2017/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/5177/2017/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -28867,7 +28855,7 @@
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/10833/2017/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/10833/2017/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -28883,17 +28871,19 @@
      "nome": "C.i. Attività Motoria Preventiva Adattata",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 10,
      "ssd": "M-EDF/01",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
+      "Corapi Giampiero",
+      "Greco Francesca",
       "Gradilone Antonio",
       "Quinzi Federico"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/10830/2017/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/10830/2017/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -28908,18 +28898,18 @@
      "nome": "C.i. Fondamenti di Economia e Diritto Dello Sport",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 11,
      "ssd": "IUS/09, IUS/10, IUS/14, SECS-P/07, IUS/01",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Bongarzone Amelia",
-      "Carida' Rossana",
-      "Giancotti Monica"
+      "Giancotti Monica",
+      "Carida' Rossana"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/10829/2017/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/10829/2017/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Manuale di Diritto dello Sport (a cura di L. Di Nella), ESI (Edizioni Scientifiche",
@@ -28959,24 +28949,27 @@
      "nome": "C.i. Scienze Mediche Applicate Allo Sport",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 12,
-     "ssd": "MED/13, MED/26, MED/09, BIO/14, MED/33, MED/34",
-     "obbligatorio": false,
+     "ssd": "MED/13, MED/26, MED/09, MED/33, MED/34, BIO/14",
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Andreozzi Francesco",
       "Aversa Antonio",
-      "Donato Di Paola Eugenio",
       "Familiari Filippo",
+      "Marotta Nicola",
+      "Mercurio Michele",
+      "Rubino Mariangela",
+      "Sammarra Ilaria",
+      "Scuteri Damiana",
+      "Donato Di Paola Eugenio",
       "Fiorentino Teresa Vanessa",
       "Gasparini Giorgio",
-      "Marotta Nicola",
-      "Sammarra Ilaria",
       "Volpicelli Giovanni"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/11273/2017/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/11273/2017/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Testo consigliato Manuale di ortopedia e traumatologia (2a ed.), Grassi, Casa editrice: Elsevier Masson. Altro materiale didattico Contenuti multimediali aggiuntivi e test di autoapprendimento accessibili attraverso il sito della Elsevier Masson. Anatomia funzionale, Kapandji, Casa editrice: Monduzz",
@@ -29004,16 +28997,16 @@
      "nome": "C.i. Lingua Straniera: Inglese",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/04/2025 00:00:00",
-     "periodo_fine": "30/09/2025 00:00:00",
+     "periodo_inizio": "01/04/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 4,
      "ssd": "L-LIN/02",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Alampi Gagliardi Rosalba"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/10831/2017/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/10831/2017/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -29045,12 +29038,12 @@
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 5,
      "ssd": "M-EDF/02",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Chiodo Salvatore"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/10832/2017/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/10832/2017/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Testi di riferimento Counsilman James E.: “La Nuova Scienza del Nuoto”. Ed. Zanichelli, Bologna, 2004. Materiali didattici Articoli scientifici forniti dal docente (in Moocdle attraverso la pagina E-Learning dell’università).",
@@ -30526,30 +30519,8 @@
    "url": "https://www.diges.unicz.it/corso_studio/Sociologia_e_Servizio_Sociale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
-    {
-     "codice": "L4000044",
-     "nome": "A Scelta Dello Studente (terzo Anno)",
-     "anno": 3,
-     "periodo": null,
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 16,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/5538/2013/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unicz-l-39-l-40-sociologia-e-servizio-sociale-l4000044",
-     "stato_esami": "da_aggiungere"
-    },
     {
      "codice": "L4000028",
      "nome": "Altre Competenze",
@@ -30559,10 +30530,10 @@
      "periodo_fine": null,
      "cfu": 2,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/5524/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/5524/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -30594,10 +30565,10 @@
      "periodo_fine": null,
      "cfu": 8,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/5525/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/5525/2013/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -30619,7 +30590,7 @@
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/24129/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/24129/2013/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Cleto Corposanto, Viaggiatori e turisti, Rubbettino 2025 e",
@@ -30676,10 +30647,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/5521/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/5521/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -30707,16 +30678,16 @@
      "nome": "Abilita' Informatiche",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "28/02/2027 00:00:00",
      "cfu": 4,
      "ssd": "INF/01",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Agapito Giuseppe"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/5522/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/5522/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -30844,13 +30815,13 @@
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 5,
      "ssd": "IUS/20",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Chiarella Paola",
       "Scerbo Alberto"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/19801/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/19801/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -30887,7 +30858,7 @@
      "docenti": [
       "Romeo Andrea"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/17762/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/17762/2013/9999?coorte=2024",
      "libri": [
       {
        "titolo": "S. PETRUCCIANI, Modelli di Filosofia Politica, Einaudi, Torino, 2005.",
@@ -30936,57 +30907,20 @@
      "stato_esami": "completo"
     },
     {
-     "codice": "L4000050",
-     "nome": "Istituzioni di Diritto del Lavoro",
-     "anno": 3,
-     "periodo": "2",
-     "periodo_inizio": "01/04/2025 00:00:00",
-     "periodo_fine": "30/09/2025 00:00:00",
-     "cfu": 4,
-     "ssd": "IUS/07",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Lamannis Mariagrazia"
-     ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/17531/2013/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-12",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2025-09-16",
-       "iscrizioni_al": "2026-10-09",
-       "docenti": "LAMANNIS MARIAGRAZIA VISCOMI ANTONIO",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unicz-l-39-l-40-sociologia-e-servizio-sociale-l4000050",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "A000687",
      "nome": "Sociologia della Salute e della Medicina",
      "anno": 3,
-     "periodo": "2",
-     "periodo_inizio": "01/04/2025 00:00:00",
-     "periodo_fine": "30/09/2025 00:00:00",
+     "periodo": "1",
+     "periodo_inizio": "21/09/2026 00:00:00",
+     "periodo_fine": "28/02/2027 00:00:00",
      "cfu": 8,
      "ssd": "SPS/07",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Giarelli Guido"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/18335/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/18335/2013/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Sociologia della salute e della medicina. Manuale per le professioni mediche, sanitarie e sociali",
@@ -31125,9 +31059,46 @@
      ],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unicz-l-39-l-40-sociologia-e-servizio-sociale-a000687",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "L4000050",
+     "nome": "Istituzioni di Diritto del Lavoro",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": "01/04/2025 00:00:00",
+     "periodo_fine": "30/09/2025 00:00:00",
+     "cfu": 4,
+     "ssd": "IUS/07",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Lamannis Mariagrazia"
+     ],
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/17531/2013/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-12",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2025-09-16",
+       "iscrizioni_al": "2026-10-09",
+       "docenti": "LAMANNIS MARIAGRAZIA VISCOMI ANTONIO",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unicz.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unicz-l-39-l-40-sociologia-e-servizio-sociale-l4000050",
      "stato_esami": "completo"
     },
     {
@@ -32061,6 +32032,28 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unicz-l-39-l-40-sociologia-e-servizio-sociale-sem203",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "L4000044",
+     "nome": "A Scelta Dello Studente (terzo Anno)",
+     "anno": null,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 16,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/5538/2013/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unicz.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unicz-l-39-l-40-sociologia-e-servizio-sociale-l4000044",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -34596,6 +34589,67 @@
    "verificato_il": "2026-10-05",
    "insegnamenti": [
     {
+     "codice": "PS00055",
+     "nome": "C.i. Ispezione e Controllo degli Alimenti",
+     "anno": 2,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "MED/42, MED/50, VET/04",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/13221/2019/9999?coorte=2025",
+     "libri": [
+      {
+       "titolo": "Colavita G. Igiene e Tecnologie alimentari. Le Point Veterinarie Italie, 2012.",
+       "autori": null,
+       "editore": null,
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus ufficiale a.a. 2026/27 dello stesso insegnamento (https://medicina.unicz.it/private/uploaded/temp/syllabus/f78913148ed9198e4497dfe8dc6d3e3e.pdf)",
+       "citazione": "Colavita G. Igiene e Tecnologie alimentari. Le Point Veterinarie Italie, 2012."
+      },
+      {
+       "titolo": "Longeri M. Valutazione e Comunicazione del Rischio in Sicurezza Alimentare. Università degli Studi di Milano. DOI: https://doi.org/10.54103/milanoup.98 https://eur- lex.europa.eu/eli/reg/2005/2073/oj/eng",
+       "autori": null,
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus ufficiale a.a. 2026/27 dello stesso insegnamento (https://medicina.unicz.it/private/uploaded/temp/syllabus/f78913148ed9198e4497dfe8dc6d3e3e.pdf)",
+       "citazione": "Longeri M. Valutazione e Comunicazione del Rischio in Sicurezza Alimentare. Università degli Studi di Milano. DOI: https://doi.org/10.54103/milanoup.98 https://eur- lex.europa.eu/eli/reg/2005/2073/oj/eng"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-24",
+       "iscrizioni_al": "2026-11-13",
+       "docenti": "MERCURI CARLO MAMONE DANIELA PIRAS CRISTIAN",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unicz.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unicz-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav-ps00055",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://medicina.unicz.it/private/uploaded/temp/syllabus/f78913148ed9198e4497dfe8dc6d3e3e.pdf"
+    },
+    {
      "codice": "PS00049",
      "nome": "Tirocinio II Anno I Semestre",
      "anno": 2,
@@ -34664,67 +34718,6 @@
      "modalita_esame": "orale",
      "id": "unicz-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav-ps00059",
      "stato_esami": "completo"
-    },
-    {
-     "codice": "PS00055",
-     "nome": "C.i. Ispezione e Controllo degli Alimenti",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": null,
-     "periodo_fine": null,
-     "cfu": 6,
-     "ssd": "MED/42, MED/50, VET/04",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/13221/2019/9999?coorte=2025",
-     "libri": [
-      {
-       "titolo": "Colavita G. Igiene e Tecnologie alimentari. Le Point Veterinarie Italie, 2012.",
-       "autori": null,
-       "editore": null,
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus ufficiale a.a. 2026/27 dello stesso insegnamento (https://medicina.unicz.it/private/uploaded/temp/syllabus/f78913148ed9198e4497dfe8dc6d3e3e.pdf)",
-       "citazione": "Colavita G. Igiene e Tecnologie alimentari. Le Point Veterinarie Italie, 2012."
-      },
-      {
-       "titolo": "Longeri M. Valutazione e Comunicazione del Rischio in Sicurezza Alimentare. Università degli Studi di Milano. DOI: https://doi.org/10.54103/milanoup.98 https://eur- lex.europa.eu/eli/reg/2005/2073/oj/eng",
-       "autori": null,
-       "editore": null,
-       "anno": 2005,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus ufficiale a.a. 2026/27 dello stesso insegnamento (https://medicina.unicz.it/private/uploaded/temp/syllabus/f78913148ed9198e4497dfe8dc6d3e3e.pdf)",
-       "citazione": "Longeri M. Valutazione e Comunicazione del Rischio in Sicurezza Alimentare. Università degli Studi di Milano. DOI: https://doi.org/10.54103/milanoup.98 https://eur- lex.europa.eu/eli/reg/2005/2073/oj/eng"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-16",
-       "ora": "13:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-24",
-       "iscrizioni_al": "2026-11-13",
-       "docenti": "MERCURI CARLO MAMONE DANIELA PIRAS CRISTIAN",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unicz.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unicz-l-snt4-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lav-ps00055",
-     "stato_esami": "completo",
-     "periodo_fonte": "https://medicina.unicz.it/private/uploaded/temp/syllabus/f78913148ed9198e4497dfe8dc6d3e3e.pdf"
     },
     {
      "codice": "PS00050",
@@ -34975,7 +34968,7 @@
    "url": "https://medicina.unicz.it/corso_studio/tecniche_laboratorio_biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "32233",
@@ -35245,7 +35238,7 @@
    "url": "https://medicina.unicz.it/corso_studio/tecniche_neurofisiopatologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "32958",
@@ -35564,7 +35557,7 @@
    "url": "https://medicina.unicz.it/corso_studio/radiologia_medica_radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "32481",
@@ -35575,10 +35568,10 @@
      "periodo_fine": null,
      "cfu": 12,
      "ssd": "MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14746/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14746/2013/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -35610,10 +35603,10 @@
      "periodo_fine": null,
      "cfu": 18,
      "ssd": "MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14749/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14749/2013/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -35641,19 +35634,19 @@
      "nome": "C.i. di Tecniche di Diagnostica per Immagini I",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/36, MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Fanfarra Loredana",
-      "Gigliotti Francesco",
       "Lagana' Domenico",
-      "Restuccia Antonino"
+      "Restuccia Antonino",
+      "Gigliotti Francesco"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14743/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14743/2013/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -35681,11 +35674,11 @@
      "nome": "C.i. di Tecniche di Diagnostica per Immagini II",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/36, MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Lagana' Domenico",
@@ -35693,7 +35686,7 @@
       "Nicoletta Melania",
       "Rotundo Anna"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14744/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14744/2013/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -35721,19 +35714,20 @@
      "nome": "C.i. di Tecniche in Radioterapia e Medicina Nucleare",
      "anno": 2,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/03/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/36, MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Bianco Cataldo",
+      "Chimento Ilaria",
       "Cicone Francesco",
       "Galea Domenico",
       "Mauro Gioconda"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14745/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14745/2013/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -35761,19 +35755,20 @@
      "nome": "C.i. di Neuroradiologia",
      "anno": 2,
      "periodo": "2",
-     "periodo_inizio": "01/04/2025 00:00:00",
-     "periodo_fine": "30/09/2025 00:00:00",
+     "periodo_inizio": "01/04/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 6,
      "ssd": "MED/37, MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
+      "Calomino Camilla",
       "Ciccio' Gabriele",
       "Sabatini Umberto",
       "Sarica Alessia",
       "Tinelli Emanuele"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14747/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14747/2013/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -35805,7 +35800,7 @@
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
      "ssd": "MED/36, MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Bianco Maria Giovanna",
@@ -35813,7 +35808,7 @@
       "Lagana' Domenico",
       "Nistico' Rita"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2024/14748/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14748/2013/9999?coorte=2025",
      "libri": [],
      "esami": [
       {
@@ -35860,7 +35855,7 @@
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/14752/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14752/2013/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -35882,7 +35877,7 @@
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/14760/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14760/2013/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -35901,10 +35896,10 @@
      "periodo_fine": null,
      "cfu": 3,
      "ssd": "MED/36",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/14759/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14759/2013/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -35923,10 +35918,10 @@
      "periodo_fine": null,
      "cfu": 5,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/14761/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14761/2013/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://unicz.coursecatalogue.cineca.it",
@@ -35945,10 +35940,10 @@
      "periodo_fine": null,
      "cfu": 15,
      "ssd": "MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/14753/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14753/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -35980,10 +35975,10 @@
      "periodo_fine": null,
      "cfu": 5,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/14762/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14762/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -36015,13 +36010,13 @@
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
      "ssd": "MED/36, MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Lagana' Domenico",
       "Marasco Caterina"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/14751/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14751/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -36061,17 +36056,18 @@
      "nome": "C.i. di Controlli di Qualita' delle Apparecchiature Diagnostiche",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2025 00:00:00",
-     "periodo_fine": "31/03/2026 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
      "ssd": "FIS/07, MED/36, MED/50",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
+      "Perozziello Gerardo",
       "Caligiuri Maria Eugenia",
       "Lagana' Domenico"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/14750/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14750/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -36115,13 +36111,13 @@
      "periodo_fine": "30/09/2026 00:00:00",
      "cfu": 8,
      "ssd": "L-LIN/12, ING-INF/05",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Alcaro Rosa",
       "Talarico Filomena"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/14754/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14754/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -36153,7 +36149,7 @@
      "periodo_fine": "30/09/2026 00:00:00",
      "cfu": 6,
      "ssd": "MED/33, MED/41, MED/21",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [
       "Caroleo Maria Cristina",
@@ -36161,7 +36157,7 @@
       "Garofalo Eugenio",
       "Mercurio Michele"
      ],
-     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2025/14755/2013/9999?coorte=2024",
+     "url": "https://unicz.coursecatalogue.cineca.it/insegnamenti/2026/14755/2013/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -36901,7 +36897,7 @@
    "url": "https://www.sfn.unicz.it/corso_studio/biotecnologie_innovative_salute",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "C.i. Biochimica e Biologia Molecolare Avanzata",
@@ -38298,9 +38294,9 @@
      "cfu": 6,
      "periodo": "2",
      "obbligatorio": null,
-     "curriculum": "Curriculum Tecnologie Digitali in Medicina",
+     "curriculum": "Curriculum Molecolare per la Medicina, Curriculum One Health, Curriculum Tecnologie Digitali in Medicina",
      "docenti": [],
-     "url": "https://www.sfn.unicz.it/insegnamento/67/4945",
+     "url": "https://www.sfn.unicz.it/insegnamento/67/4917",
      "fonte": "https://www.sfn.unicz.it/corso_studio/biotecnologie_innovative_salute/insegnamenti",
      "libri": [],
      "esami": [],
@@ -38328,7 +38324,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Diritto Tributario",
@@ -38412,6 +38408,25 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicz-lm-77-economia-aziendale-e-management-diritto-dei-trasporti-a-scelta-vincolata",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Diritto del Lavoro nelle Pubbliche Amministrazioni",
+     "anno": 1,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Antonio Viscomi"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/40/1407",
+     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lm-77-economia-aziendale-e-management-diritto-del-lavoro-nelle-pubbliche-ammin",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -38557,6 +38572,38 @@
      "stato_esami": "completo"
     },
     {
+     "nome": "Diritto delle Obbligazioni",
+     "anno": 1,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Geremia Romano"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/40/1422",
+     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2025-11-10",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "ROMANO GEREMIA",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lm-77-economia-aziendale-e-management-diritto-delle-obbligazioni",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
      "nome": "Economia dello Sviluppo Sistenibile",
      "anno": 1,
      "cfu": 6,
@@ -38601,6 +38648,44 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "nome": "Informatica Giuridica",
+     "anno": 1,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Fabrizio Sigillò"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/40/1959",
+     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lm-77-economia-aziendale-e-management-informatica-giuridica",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Legislazione Scolastica",
+     "anno": 1,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Rossana Caridà"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/40/1429",
+     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lm-77-economia-aziendale-e-management-legislazione-scolastica",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "nome": "Service Management - a Scelta Vincolata",
      "anno": 1,
      "cfu": 9,
@@ -38616,6 +38701,80 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicz-lm-77-economia-aziendale-e-management-service-management-a-scelta-vincolata",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Bioetica Questione di Vita e di Morte",
+     "anno": 1,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Massimo La Torre"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/40/1409",
+     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lm-77-economia-aziendale-e-management-bioetica-questione-di-vita-e-di-morte",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Diritto Agroalimentare",
+     "anno": 1,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Maria Carlotta Rizzuto"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/40/1411",
+     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lm-77-economia-aziendale-e-management-diritto-agroalimentare",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Diritto Dell'informazione e della Comunicazione Digitale",
+     "anno": 1,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.diges.unicz.it/insegnamento/40/1943",
+     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lm-77-economia-aziendale-e-management-diritto-dell-informazione-e-della-comuni",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Diritto e Letteratura",
+     "anno": 1,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Alberto Scerbo"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/40/1417",
+     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lm-77-economia-aziendale-e-management-diritto-e-letteratura",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -38669,6 +38828,25 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "nome": "Etica della Cura e Intelligenza Artificiale",
+     "anno": 1,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Domenico Concolino"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/40/1684",
+     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lm-77-economia-aziendale-e-management-etica-della-cura-e-intelligenza-artifici",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "nome": "Organizzazione e Gestione del Personale",
      "anno": 1,
      "cfu": 10,
@@ -38688,55 +38866,23 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Diritto del Lavoro nelle Pubbliche Amministrazioni",
-     "anno": 2,
+     "nome": "Teorie della Cittadinanza e Paradigmi di Inclusione",
+     "anno": 1,
      "cfu": 6,
-     "periodo": "1",
+     "periodo": "2",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
-      "Antonio Viscomi"
+      "Leonardo Mellace"
      ],
-     "url": "https://www.diges.unicz.it/insegnamento/40/1407",
+     "url": "https://www.diges.unicz.it/insegnamento/40/1530",
      "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
      "libri": [],
      "esami": [],
      "verificato_il": "2026-10-17",
-     "id": "unicz-lm-77-economia-aziendale-e-management-diritto-del-lavoro-nelle-pubbliche-ammin",
+     "id": "unicz-lm-77-economia-aziendale-e-management-teorie-della-cittadinanza-e-paradigmi-di",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Diritto delle Obbligazioni",
-     "anno": 2,
-     "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Geremia Romano"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/40/1422",
-     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-07",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2025-11-10",
-       "iscrizioni_al": "2026-10-04",
-       "docenti": "ROMANO GEREMIA",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lm-77-economia-aziendale-e-management-diritto-delle-obbligazioni",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
     },
     {
      "nome": "Diritto processuale tributario I",
@@ -38942,44 +39088,6 @@
      "verificato_il": "2026-10-17",
      "id": "unicz-lm-77-economia-aziendale-e-management-governo-aziendale-e-bilancio-corso-avanz",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Informatica Giuridica",
-     "anno": 2,
-     "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Fabrizio Sigillò"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/40/1959",
-     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lm-77-economia-aziendale-e-management-informatica-giuridica",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Legislazione Scolastica",
-     "anno": 2,
-     "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Rossana Caridà"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/40/1429",
-     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lm-77-economia-aziendale-e-management-legislazione-scolastica",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -39231,25 +39339,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Bioetica Questione di Vita e di Morte",
-     "anno": 2,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Massimo La Torre"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/40/1409",
-     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lm-77-economia-aziendale-e-management-bioetica-questione-di-vita-e-di-morte",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Diritto Aerospaziale",
      "anno": 2,
      "cfu": 6,
@@ -39306,25 +39395,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Diritto Agroalimentare",
-     "anno": 2,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Maria Carlotta Rizzuto"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/40/1411",
-     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lm-77-economia-aziendale-e-management-diritto-agroalimentare",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Diritto Dell'esecuzione Forzata Civile",
      "anno": 2,
      "cfu": 6,
@@ -39378,23 +39448,6 @@
      "verificato_il": "2026-10-17",
      "id": "unicz-lm-77-economia-aziendale-e-management-diritto-dell-esecuzione-forzata-civile",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Diritto Dell'informazione e della Comunicazione Digitale",
-     "anno": 2,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.diges.unicz.it/insegnamento/40/1943",
-     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lm-77-economia-aziendale-e-management-diritto-dell-informazione-e-della-comuni",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -39563,44 +39616,6 @@
      "verificato_il": "2026-10-17",
      "id": "unicz-lm-77-economia-aziendale-e-management-diritto-di-famiglia",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Diritto e Letteratura",
-     "anno": 2,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Alberto Scerbo"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/40/1417",
-     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lm-77-economia-aziendale-e-management-diritto-e-letteratura",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Etica della Cura e Intelligenza Artificiale",
-     "anno": 2,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Domenico Concolino"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/40/1684",
-     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lm-77-economia-aziendale-e-management-etica-della-cura-e-intelligenza-artifici",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -39840,25 +39855,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Teorie della Cittadinanza e Paradigmi di Inclusione",
-     "anno": 2,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Leonardo Mellace"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/40/1530",
-     "fonte": "https://www.diges.unicz.it/corso_studio/economia_aziendale_management/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lm-77-economia-aziendale-e-management-teorie-della-cittadinanza-e-paradigmi-di",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Ulteriori conoscenze",
      "anno": 2,
      "cfu": 3,
@@ -39950,7 +39946,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Inglese per l’economia e il settore pubblico",
@@ -39958,11 +39954,11 @@
      "cfu": 8,
      "periodo": "1",
      "obbligatorio": null,
-     "curriculum": "Organizzativo",
+     "curriculum": "Economico, Organizzativo",
      "docenti": [
       "Erika Lopez"
      ],
-     "url": "https://www.diges.unicz.it/insegnamento/45/2105",
+     "url": "https://www.diges.unicz.it/insegnamento/45/2099",
      "fonte": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico/insegnamenti",
      "libri": [
       {
@@ -40059,14 +40055,14 @@
     {
      "nome": "Modelli di finanza ad impatto per l’economia e il settore pubblico",
      "anno": 1,
-     "cfu": 6,
+     "cfu": 8,
      "periodo": "1",
      "obbligatorio": null,
-     "curriculum": "Organizzativo",
+     "curriculum": "Economico, Organizzativo",
      "docenti": [
       "Annarita Trotta"
      ],
-     "url": "https://www.diges.unicz.it/insegnamento/45/2100",
+     "url": "https://www.diges.unicz.it/insegnamento/45/2092",
      "fonte": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico/insegnamenti",
      "libri": [
       {
@@ -40115,14 +40111,14 @@
     {
      "nome": "Stata e data management",
      "anno": 1,
-     "cfu": 2,
+     "cfu": 6,
      "periodo": "1",
      "obbligatorio": null,
-     "curriculum": "Organizzativo",
+     "curriculum": "Economico, Organizzativo",
      "docenti": [
       "Giuseppe Agapito"
      ],
-     "url": "https://www.diges.unicz.it/insegnamento/45/2102",
+     "url": "https://www.diges.unicz.it/insegnamento/45/2094",
      "fonte": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico/insegnamenti",
      "libri": [
       {
@@ -40150,11 +40146,11 @@
      "cfu": 8,
      "periodo": "1",
      "obbligatorio": null,
-     "curriculum": "Organizzativo",
+     "curriculum": "Economico, Organizzativo",
      "docenti": [
       "Giulio Giacomo Cantone"
      ],
-     "url": "https://www.diges.unicz.it/insegnamento/45/2101",
+     "url": "https://www.diges.unicz.it/insegnamento/45/2093",
      "fonte": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico/insegnamenti",
      "libri": [
       {
@@ -40191,14 +40187,14 @@
     {
      "nome": "Diritto del lavoro pubblico",
      "anno": 1,
-     "cfu": 6,
+     "cfu": 8,
      "periodo": "2",
      "obbligatorio": null,
-     "curriculum": "Economico",
+     "curriculum": "Organizzativo, Economico",
      "docenti": [
       "Anna Trojsi"
      ],
-     "url": "https://www.diges.unicz.it/insegnamento/45/2095",
+     "url": "https://www.diges.unicz.it/insegnamento/45/2103",
      "fonte": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico/insegnamenti",
      "libri": [
       {
@@ -40250,9 +40246,9 @@
      "cfu": 12,
      "periodo": "2",
      "obbligatorio": null,
-     "curriculum": "Economico",
+     "curriculum": "Organizzativo, Economico",
      "docenti": [],
-     "url": "https://www.diges.unicz.it/insegnamento/45/2125",
+     "url": "https://www.diges.unicz.it/insegnamento/45/2128",
      "fonte": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico/insegnamenti",
      "libri": [],
      "esami": [],
@@ -40264,14 +40260,14 @@
     {
      "nome": "Sociologia e trasformazioni economiche",
      "anno": 1,
-     "cfu": 6,
+     "cfu": 8,
      "periodo": "2",
      "obbligatorio": null,
-     "curriculum": "Economico",
+     "curriculum": "Organizzativo, Economico",
      "docenti": [
       "Emilio Gardini"
      ],
-     "url": "https://www.diges.unicz.it/insegnamento/45/2098",
+     "url": "https://www.diges.unicz.it/insegnamento/45/2104",
      "fonte": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico/insegnamenti",
      "libri": [
       {
@@ -40299,9 +40295,9 @@
      "cfu": 8,
      "periodo": "annuale",
      "obbligatorio": null,
-     "curriculum": "Organizzativo",
+     "curriculum": "Economico, Organizzativo",
      "docenti": [],
-     "url": "https://www.diges.unicz.it/insegnamento/45/2117",
+     "url": "https://www.diges.unicz.it/insegnamento/45/2110",
      "fonte": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico/insegnamenti",
      "libri": [],
      "esami": [],
@@ -40384,9 +40380,9 @@
      "cfu": 8,
      "periodo": "annuale",
      "obbligatorio": null,
-     "curriculum": "Organizzativo",
+     "curriculum": "Economico, Organizzativo",
      "docenti": [],
-     "url": "https://www.diges.unicz.it/insegnamento/45/2115",
+     "url": "https://www.diges.unicz.it/insegnamento/45/2108",
      "fonte": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico/insegnamenti",
      "libri": [],
      "esami": [],
@@ -40415,12 +40411,12 @@
     {
      "nome": "Prova finale",
      "anno": 2,
-     "cfu": 9,
+     "cfu": 0,
      "periodo": "annuale",
      "obbligatorio": null,
-     "curriculum": "Organizzativo",
+     "curriculum": "Economico, Organizzativo",
      "docenti": [],
-     "url": "https://www.diges.unicz.it/insegnamento/45/2120",
+     "url": "https://www.diges.unicz.it/insegnamento/45/2113",
      "fonte": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico/insegnamenti",
      "libri": [],
      "esami": [],
@@ -40435,9 +40431,9 @@
      "cfu": 5,
      "periodo": "annuale",
      "obbligatorio": null,
-     "curriculum": "Organizzativo",
+     "curriculum": "Economico, Organizzativo",
      "docenti": [],
-     "url": "https://www.diges.unicz.it/insegnamento/45/2118",
+     "url": "https://www.diges.unicz.it/insegnamento/45/2111",
      "fonte": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico/insegnamenti",
      "libri": [],
      "esami": [],
@@ -40452,9 +40448,9 @@
      "cfu": 2,
      "periodo": "annuale",
      "obbligatorio": null,
-     "curriculum": "Organizzativo",
+     "curriculum": "Economico, Organizzativo",
      "docenti": [],
-     "url": "https://www.diges.unicz.it/insegnamento/45/2119",
+     "url": "https://www.diges.unicz.it/insegnamento/45/2112",
      "fonte": "https://www.diges.unicz.it/corso_studio/economia_data_analysis_e_settore_pubblico/insegnamenti",
      "libri": [],
      "esami": [],
@@ -40482,7 +40478,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/healthcare_management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Epidemiology And Public Health",
@@ -40641,7 +40637,7 @@
    "url": "https://medicina.unicz.it/corso_studio/ingegneria_biomedica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "C.I. di Biochimica, Biologia e Fisiopatologia per l’Oncologia",
@@ -41040,7 +41036,7 @@
    "url": "https://medicina.unicz.it/corso_studio/psicologia_cognitiva_neuroscienze",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Analisi dei Dati nella Ricerca Psicologica con 4 Cfu di Laboratorio",
@@ -41615,7 +41611,7 @@
    "url": "https://medicina.unicz.it/corso_studio/psicologia_forense_criminologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Aspetti Psicometrici dei Test della Psicologia Forense con 2 Cfu di Laboratorio",
@@ -42035,7 +42031,7 @@
    "url": "https://www.sfn.unicz.it/corso_studio/scienze_chimiche_e_cosmetiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "C.I. Analisi e controllo qualità di materie prime in cosmesi",
@@ -42649,7 +42645,7 @@
    "url": "https://medicina.unicz.it/corso_studio/lm_scienze_prof_sanitarie_tecniche_diagnostiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Scienze Biomediche",
@@ -42791,6 +42787,23 @@
      "stato_libri": "completo",
      "stato_esami": "da_aggiungere",
      "url_sito": "https://medicina.unicz.it/insegnamento/512/41972"
+    },
+    {
+     "nome": "Tirocinio",
+     "anno": 1,
+     "cfu": 7,
+     "periodo": "1",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://medicina.unicz.it/insegnamento/512/41986",
+     "fonte": "https://medicina.unicz.it/corso_studio/lm_scienze_prof_sanitarie_tecniche_diagnostiche/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche-tirocinio",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "nome": "Altre Attivita' (informatica, Laboratori Etc.)",
@@ -43018,23 +43031,6 @@
      "id": "unicz-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche-scienze-informatiche-applicate-alla-gest",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Tirocinio",
-     "anno": 2,
-     "cfu": 8,
-     "periodo": "2",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://medicina.unicz.it/insegnamento/512/42029",
-     "fonte": "https://medicina.unicz.it/corso_studio/lm_scienze_prof_sanitarie_tecniche_diagnostiche/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-diagnostiche-tirocinio",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
     }
    ],
    "url_catalogo": "https://medicina.unicz.it/corso_studio/lm_scienze_prof_sanitarie_tecniche_diagnostiche"
@@ -43055,7 +43051,7 @@
    "url": "https://www.medicina.unicz.it/corso_studio/scienze_tecniche_sport",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Attività motorie per la salute e l'efficienza fisica",
@@ -43770,7 +43766,7 @@
    "url": "https://medicina.unicz.it/corso_studio/scienze_infermieristiche_ostetriche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Analisi dei Bisogni e di Promozione della Salute",
@@ -43911,6 +43907,25 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicz-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-scienze-ostetriche-e-ginecologiche-speci",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Tirocinio",
+     "anno": 1,
+     "cfu": 8,
+     "periodo": "1",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Anna Varano"
+     ],
+     "url": "https://medicina.unicz.it/insegnamento/494/40293",
+     "fonte": "https://medicina.unicz.it/corso_studio/scienze_infermieristiche_ostetriche/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-tirocinio",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -44199,25 +44214,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Tirocinio",
-     "anno": 2,
-     "cfu": 8,
-     "periodo": "1",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Anna Varano"
-     ],
-     "url": "https://medicina.unicz.it/insegnamento/494/40329",
-     "fonte": "https://medicina.unicz.it/corso_studio/scienze_infermieristiche_ostetriche/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-tirocinio",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "A scelta dello studente",
      "anno": 2,
      "cfu": 3,
@@ -44325,7 +44321,7 @@
    "url": "https://ust.edu.al/en/home-ust/",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -44344,7 +44340,7 @@
    "url": "https://www.medicina.unicz.it/corso_studio/scienze_riabilitative_prof_sanitarie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Educazione Professionale Sanitaria",
@@ -44718,7 +44714,7 @@
    "url": "https://www.sfn.unicz.it/corso_studio/farmacia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Biologia Animale",
@@ -46769,7 +46765,7 @@
    "url": "https://www.diges.unicz.it/corso_studio/giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Diritto Romano I (a-l)",
@@ -46820,6 +46816,25 @@
      "verificato_il": "2026-10-17",
      "id": "unicz-lmg-01-giurisprudenza-diritto-romano-i-m-z",
      "stato_libri": "completo",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Diritto processuale tributario I",
+     "anno": 1,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Michele Mauro"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/37/2090",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-diritto-processuale-tributario-i",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -46931,6 +46946,25 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicz-lmg-01-giurisprudenza-lingua-inglese-a-scelta-vincolata",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Spazio giudiziario europeo II",
+     "anno": 1,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Luigi De Propris"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/37/2091",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-spazio-giudiziario-europeo-ii",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -47180,6 +47214,23 @@
      "verificato_il": "2026-10-17",
      "id": "unicz-lmg-01-giurisprudenza-diritto-costituzionale-i",
      "stato_libri": "completo",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Attivita' a Libera Scelta",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.diges.unicz.it/insegnamento/37/1531",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-attivita-a-libera-scelta",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -47456,6 +47507,114 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "nome": "Diritto del Lavoro nelle Pubbliche Amministrazioni",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Antonio Viscomi"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/37/1407",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-diritto-del-lavoro-nelle-pubbliche-ammin",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Diritto delle Obbligazioni",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Geremia Romano"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/37/1422",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2025-11-10",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "ROMANO GEREMIA",
+       "note": null,
+       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-diritto-delle-obbligazioni",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
+     "nome": "Informatica Giuridica",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Fabrizio Sigillò"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/37/1959",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-informatica-giuridica",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Legislazione Scolastica",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "1",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Rossana Caridà"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/37/1429",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-legislazione-scolastica",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Bioetica Questione di Vita e di Morte",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Massimo La Torre"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/37/1409",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-bioetica-questione-di-vita-e-di-morte",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "nome": "Corso Integrato di Economia",
      "anno": 2,
      "cfu": 10,
@@ -47469,6 +47628,42 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicz-lmg-01-giurisprudenza-corso-integrato-di-economia",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Diritto Agroalimentare",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Maria Carlotta Rizzuto"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/37/1411",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-diritto-agroalimentare",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Diritto Dell'informazione e della Comunicazione Digitale",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.diges.unicz.it/insegnamento/37/1943",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-diritto-dell-informazione-e-della-comuni",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -47517,6 +47712,82 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "nome": "Diritto e Letteratura",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Alberto Scerbo"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/37/1417",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-diritto-e-letteratura",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Etica della Cura e Intelligenza Artificiale",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Domenico Concolino"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/37/1684",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-etica-della-cura-e-intelligenza-artifici",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Politiche Europee e Progettazione per L'inclusione Sociale",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Rosetta Alberto"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/37/1638",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-politiche-europee-e-progettazione-per-l",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Sociologia del Viaggio e del Turismo",
+     "anno": 2,
+     "cfu": 6,
+     "periodo": "2",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Cleto Corposanto"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/37/1529",
+     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lmg-01-giurisprudenza-sociologia-del-viaggio-e-del-turismo",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "nome": "Storia delle Codificazioni e delle Costituzioni Moderne - a Scelta Vincolata 2",
      "anno": 2,
      "cfu": 6,
@@ -47536,19 +47807,21 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Attività a Libera Scelta",
-     "anno": 3,
+     "nome": "Teorie della Cittadinanza e Paradigmi di Inclusione",
+     "anno": 2,
      "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": null,
+     "periodo": "2",
+     "obbligatorio": false,
      "curriculum": null,
-     "docenti": [],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1579",
+     "docenti": [
+      "Leonardo Mellace"
+     ],
+     "url": "https://www.diges.unicz.it/insegnamento/37/1530",
      "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
      "libri": [],
      "esami": [],
      "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-attivita-a-libera-scelta",
+     "id": "unicz-lmg-01-giurisprudenza-teorie-della-cittadinanza-e-paradigmi-di",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -48492,25 +48765,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Diritto del Lavoro nelle Pubbliche Amministrazioni",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Antonio Viscomi"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1407",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-diritto-del-lavoro-nelle-pubbliche-ammin",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Diritto della Navigazione (se Non Sostenuto al III Anno di Corso) - a Scelta Vincolata",
      "anno": 5,
      "cfu": 6,
@@ -48526,57 +48780,6 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicz-lmg-01-giurisprudenza-diritto-della-navigazione-se-non-sostenu",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Diritto delle Obbligazioni",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Geremia Romano"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1422",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-07",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2025-11-10",
-       "iscrizioni_al": "2026-10-04",
-       "docenti": "ROMANO GEREMIA",
-       "note": null,
-       "fonte": "https://unicz.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-diritto-delle-obbligazioni",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
-    },
-    {
-     "nome": "Diritto processuale tributario I",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Michele Mauro"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/2090",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-diritto-processuale-tributario-i",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -48744,44 +48947,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Informatica Giuridica",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Fabrizio Sigillò"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1959",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-informatica-giuridica",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Legislazione Scolastica",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Rossana Caridà"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1429",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-legislazione-scolastica",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Organizzazione e Gestione Dell'impresa - a Scelta Vincolata, Coppia a",
      "anno": 5,
      "cfu": 6,
@@ -48814,25 +48979,6 @@
      "esami": [],
      "verificato_il": "2026-10-17",
      "id": "unicz-lmg-01-giurisprudenza-prova-finale",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Spazio giudiziario europeo II",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "1",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Luigi De Propris"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/2091",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-spazio-giudiziario-europeo-ii",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -48914,7 +49060,7 @@
      "docenti": [
       "Valerio Donato"
      ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1641",
+     "url": "https://www.diges.unicz.it/insegnamento/37/1640",
      "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
      "libri": [
       {
@@ -48946,25 +49092,6 @@
      "verificato_il": "2026-10-17",
      "id": "unicz-lmg-01-giurisprudenza-analisi-applicata-di-diritto-e-procedura",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Bioetica Questione di Vita e di Morte",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Massimo La Torre"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1409",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-bioetica-questione-di-vita-e-di-morte",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -49040,25 +49167,6 @@
      "verificato_il": "2026-10-17",
      "id": "unicz-lmg-01-giurisprudenza-diritto-aerospaziale",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Diritto Agroalimentare",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Maria Carlotta Rizzuto"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1411",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-diritto-agroalimentare",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -49151,23 +49259,6 @@
      "verificato_il": "2026-10-17",
      "id": "unicz-lmg-01-giurisprudenza-diritto-dell-esecuzione-forzata-civile",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Diritto Dell'informazione e della Comunicazione Digitale",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1943",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-diritto-dell-informazione-e-della-comuni",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -49423,16 +49514,16 @@
      "stato_esami": "completo"
     },
     {
-     "nome": "Diritto del Mercato Interno Europeo European Union Internal Market Law - a Scelta Vincolata",
+     "nome": "Diritto del Mercato Interno Europeo (european Union Internal Market Law) - a Scelta Vincolata",
      "anno": 5,
      "cfu": 6,
      "periodo": "2",
      "obbligatorio": null,
-     "curriculum": "Organizzazione, Imprese, Mercati",
+     "curriculum": "Territorio E Pubblica Amministrazione, Organizzazione, Imprese, Mercati",
      "docenti": [
       "Antonio Di Marco"
      ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1663",
+     "url": "https://www.diges.unicz.it/insegnamento/37/1688",
      "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
      "libri": [],
      "esami": [],
@@ -49510,44 +49601,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Diritto e Letteratura",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Alberto Scerbo"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1417",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-diritto-e-letteratura",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Etica della Cura e Intelligenza Artificiale",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Domenico Concolino"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1684",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-etica-della-cura-e-intelligenza-artifici",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Gestione Sostenibile ed Assetti Dell'impresa Societaria",
      "anno": 5,
      "cfu": 6,
@@ -49620,44 +49673,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Politiche Europee e Progettazione per L'inclusione Sociale",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Rosetta Alberto"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1638",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-politiche-europee-e-progettazione-per-l",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Sociologia del Viaggio e del Turismo",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Cleto Corposanto"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1529",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-sociologia-del-viaggio-e-del-turismo",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "nome": "Teorie Criminologiche e Rappresentazioni di Genere",
      "anno": 5,
      "cfu": 6,
@@ -49699,25 +49714,6 @@
      "verificato_il": "2026-10-17",
      "id": "unicz-lmg-01-giurisprudenza-teorie-criminologiche-e-rappresentazioni",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "nome": "Teorie della Cittadinanza e Paradigmi di Inclusione",
-     "anno": 5,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Leonardo Mellace"
-     ],
-     "url": "https://www.diges.unicz.it/insegnamento/37/1530",
-     "fonte": "https://www.diges.unicz.it/corso_studio/giurisprudenza/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lmg-01-giurisprudenza-teorie-della-cittadinanza-e-paradigmi-di",
-     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -49829,10 +49825,10 @@
    "url": "https://medicina.unicz.it/corso_studio/medicina_chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
-     "nome": "ABILITÀ INFORMATICHE, STATISTICHE E LINGUISTICHE canale A-E",
+     "nome": "ABILITA' INFORMATICHE, STATISTICHE E LINGUISTICHE canale F-N",
      "anno": 1,
      "cfu": 9,
      "periodo": "1",
@@ -49841,7 +49837,7 @@
      "docenti": [
       "Gianfranco Di Gennaro"
      ],
-     "url": "https://medicina.unicz.it/insegnamento/505/41007",
+     "url": "https://medicina.unicz.it/insegnamento/505/42189",
      "fonte": "https://medicina.unicz.it/corso_studio/medicina_chirurgia/insegnamenti",
      "libri": [
       {
@@ -49900,7 +49896,7 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "ANATOMIA 1, ISTOLOGIA ED EMBRIOLOGIA UMANA canale O-Z",
+     "nome": "ANATOMIA 1, ISTOLOGIA ED EMBRIOLOGIA UMANA canale A-E",
      "anno": 1,
      "cfu": 12,
      "periodo": "1",
@@ -49909,7 +49905,7 @@
      "docenti": [
       "Mariangela Scalise"
      ],
-     "url": "https://medicina.unicz.it/insegnamento/505/42209",
+     "url": "https://medicina.unicz.it/insegnamento/505/41014",
      "fonte": "https://medicina.unicz.it/corso_studio/medicina_chirurgia/insegnamenti",
      "libri": [
       {
@@ -50076,7 +50072,7 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "BIOCHIMICA, BIOLOGIA MOLECOLARE E GENETICA canale O-Z",
+     "nome": "BIOCHIMICA, BIOLOGIA MOLECOLARE E GENETICA canale A-E",
      "anno": 1,
      "cfu": 14,
      "periodo": "1",
@@ -50085,7 +50081,7 @@
      "docenti": [
       "Stefania Scalise"
      ],
-     "url": "https://medicina.unicz.it/insegnamento/505/42229",
+     "url": "https://medicina.unicz.it/insegnamento/505/41021",
      "fonte": "https://medicina.unicz.it/corso_studio/medicina_chirurgia/insegnamenti",
      "libri": [
       {
@@ -50851,7 +50847,7 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "PATOLOGIA GENERALE 1 E GENETICA MEDICA canale O-Z",
+     "nome": "PATOLOGIA GENERALE 1 e GENETICA MEDICA canale A-E",
      "anno": 2,
      "cfu": 10,
      "periodo": "2",
@@ -50860,7 +50856,7 @@
      "docenti": [
       "Giuseppe Viglietto"
      ],
-     "url": "https://medicina.unicz.it/insegnamento/505/42172",
+     "url": "https://medicina.unicz.it/insegnamento/505/41074",
      "fonte": "https://medicina.unicz.it/corso_studio/medicina_chirurgia/insegnamenti",
      "libri": [
       {
@@ -51414,16 +51410,17 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "ENDOCRINOLOGIA, E NUTRIZIONE CLINICA canale M-Z",
+     "nome": "ENDOCRINOLOGIA, E NUTRIZIONE CLINICA canale A-L",
      "anno": 3,
      "cfu": 9,
      "periodo": "2",
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
+      "Arturo Pujia",
       "Antonio Aversa"
      ],
-     "url": "https://medicina.unicz.it/insegnamento/505/41159",
+     "url": "https://medicina.unicz.it/insegnamento/505/41152",
      "fonte": "https://medicina.unicz.it/corso_studio/medicina_chirurgia/insegnamenti",
      "libri": [
       {
@@ -51572,7 +51569,7 @@
      "url_sito": "https://medicina.unicz.it/insegnamento/505/41174"
     },
     {
-     "nome": "ODONTOIATRIA E CHIRURGIA MAXILLO FACCIALE canale M-Z",
+     "nome": "ODONTOIATRIA E CHIRURGIA MAXILLO FACCIALE canale A-L",
      "anno": 3,
      "cfu": 3,
      "periodo": "2",
@@ -51581,7 +51578,7 @@
      "docenti": [
       "Maria Giulia Cristofaro"
      ],
-     "url": "https://medicina.unicz.it/insegnamento/505/41185",
+     "url": "https://medicina.unicz.it/insegnamento/505/41182",
      "fonte": "https://medicina.unicz.it/corso_studio/medicina_chirurgia/insegnamenti",
      "libri": [
       {
@@ -51605,7 +51602,7 @@
      "url_sito": "https://medicina.unicz.it/insegnamento/505/41185"
     },
     {
-     "nome": "PATOLOGIA SISTEMICA E RICOSTRUTTIVA canale M-Z",
+     "nome": "PATOLOGIA SISTEMICA E RICOSTRUTTIVA canale A-L",
      "anno": 3,
      "cfu": 5,
      "periodo": "2",
@@ -51614,7 +51611,7 @@
      "docenti": [
       "Rocco Damiano"
      ],
-     "url": "https://medicina.unicz.it/insegnamento/505/41196",
+     "url": "https://medicina.unicz.it/insegnamento/505/41188",
      "fonte": "https://medicina.unicz.it/corso_studio/medicina_chirurgia/insegnamenti",
      "libri": [
       {
@@ -52052,7 +52049,7 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "PATOLOGIA APPARATO CARDIOVASCOLARE E RENALE canale M-Z",
+     "nome": "PATOLOGIA APPARATO CARDIOVASCOLARE E RENALE canale A-L",
      "anno": 4,
      "cfu": 13,
      "periodo": "2",
@@ -52061,7 +52058,7 @@
      "docenti": [
       "Pasquale Mastroroberto"
      ],
-     "url": "https://medicina.unicz.it/insegnamento/505/43243",
+     "url": "https://medicina.unicz.it/insegnamento/505/41243",
      "fonte": "https://medicina.unicz.it/corso_studio/medicina_chirurgia/insegnamenti",
      "libri": [
       {
@@ -52096,7 +52093,7 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "PATOLOGIE RESPIRATORIE E TORACICHE canale M-Z",
+     "nome": "PATOLOGIE RESPIRATORIE E TORACICHE canale A-L",
      "anno": 4,
      "cfu": 6,
      "periodo": "2",
@@ -52105,7 +52102,7 @@
      "docenti": [
       "Girolamo Pelaia"
      ],
-     "url": "https://medicina.unicz.it/insegnamento/505/43257",
+     "url": "https://medicina.unicz.it/insegnamento/505/41257",
      "fonte": "https://medicina.unicz.it/corso_studio/medicina_chirurgia/insegnamenti",
      "libri": [
       {
@@ -53002,7 +52999,7 @@
    "url": "https://medicina.unicz.it/corso_studio/medicina_chirurgia_interateneo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Anatomia umana",
@@ -53281,6 +53278,25 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "nome": "Biocompatibilità e Biomateriali",
+     "anno": 2,
+     "cfu": 1,
+     "periodo": "2",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Bando Esterno"
+     ],
+     "url": "https://medicina.unicz.it/insegnamento/486/42440",
+     "fonte": "https://medicina.unicz.it/corso_studio/medicina_chirurgia_interateneo/insegnamenti",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unicz-lm-41-medicina-e-chirurgia-td-biocompatibilita-e-biomateriali",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "nome": "Metodi Omici per lo Studio e la Diagnosi Personalizzata delle Malattie",
      "anno": 2,
      "cfu": 8,
@@ -53409,25 +53425,6 @@
      "id": "unicz-lm-41-medicina-e-chirurgia-td-anatomia-patologica",
      "stato_libri": "da_aggiungere",
      "stato_esami": "completo"
-    },
-    {
-     "nome": "Biocompatibilità e Biomateriali",
-     "anno": 3,
-     "cfu": 6,
-     "periodo": "2",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Bando Esterno"
-     ],
-     "url": "https://medicina.unicz.it/insegnamento/486/42441",
-     "fonte": "https://medicina.unicz.it/corso_studio/medicina_chirurgia_interateneo/insegnamenti",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unicz-lm-41-medicina-e-chirurgia-td-biocompatibilita-e-biomateriali",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
     },
     {
      "nome": "Elementi di Elettromagnetismo e Teoria dei Circuiti",
@@ -53945,7 +53942,7 @@
    "url": "https://medicina.unicz.it/corso_studio/odontoiatria_protesi_dentaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Biologia",
@@ -55824,7 +55821,7 @@
    "url": "https://medicina.unicz.it/corso_studio/scienze_formazione_primaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Discipline Biologiche e Ecologiche",

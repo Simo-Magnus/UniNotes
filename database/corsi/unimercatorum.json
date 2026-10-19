@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unimercatorum",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unimercatorum.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0202503INF01",
@@ -844,7 +844,7 @@
    "url": "http://www.unimercatorum.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0042514ICAR13P",
@@ -1783,7 +1783,7 @@
    "url": "http://www.unimercatorum.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Chimica degli alimenti",
@@ -1882,6 +1882,24 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "nome": "Insegnamento a scelta affine",
+     "anno": 1,
+     "cfu": 6,
+     "ssd": null,
+     "periodo": null,
+     "docenti": [],
+     "url": "https://www.unimercatorum.it/corsi-di-laurea/gastronomia-ospitalita-e-territori",
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/gastronomia-ospitalita-e-territori",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unimercatorum-l-gastr-gastronomia-ospitalita-e-territori-insegnamento-a-scelta-affine",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "obbligatorio": false,
+     "curriculum": null
+    },
+    {
      "nome": "Legislazione turistica",
      "anno": 1,
      "cfu": 9,
@@ -1911,7 +1929,8 @@
      "verificato_il": "2026-10-17",
      "id": "unimercatorum-l-gastr-gastronomia-ospitalita-e-territori-lingua-inglese",
      "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "curriculum": null
     },
     {
      "nome": "Scienze e tecnologie enogastronomiche",
@@ -2332,23 +2351,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "nome": "Insegnamento a scelta affine",
-     "anno": 3,
-     "cfu": 8,
-     "ssd": null,
-     "periodo": null,
-     "docenti": [],
-     "url": "https://www.unimercatorum.it/corsi-di-laurea/gastronomia-ospitalita-e-territori",
-     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/gastronomia-ospitalita-e-territori",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unimercatorum-l-gastr-gastronomia-ospitalita-e-territori-insegnamento-a-scelta-affine",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "obbligatorio": false
-    },
-    {
      "nome": "Nutrizione e dietetica",
      "anno": 3,
      "cfu": 8,
@@ -2447,7 +2449,7 @@
    "url": "http://www.unimercatorum.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0182510IUS01III",
@@ -2721,6 +2723,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "completo",
      "id": "unimercatorum-l-18-gestione-di-impresa-0182508secsp01",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Insegnamento a scelta affine",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 8,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unimercatorum.it/corsi-di-laurea/gestione-di-impresa",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/gestione-di-impresa",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-l-18-gestione-di-impresa-insegnamento-a-scelta-affine",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -3651,25 +3672,6 @@
     },
     {
      "codice": null,
-     "nome": "Insegnamento a scelta affine",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 10,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": "Gestione Di Impresa Con Sole 24 Ore Formazione, Maritime Logistics, Profilo Economia Sociale, Profilo Economico-Digitale, Statutario",
-     "docenti": [],
-     "url": "https://www.unimercatorum.it/corsi-di-laurea/gestione-di-impresa",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/gestione-di-impresa",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unimercatorum-l-18-gestione-di-impresa-insegnamento-a-scelta-affine",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Prova Finale",
      "anno": 3,
      "periodo": null,
@@ -3733,7 +3735,7 @@
    "url": "http://www.unimercatorum.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0092512MAT05",
@@ -3861,6 +3863,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unimercatorum-l-9-ingegneria-gestionale-0092512inginf05",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Insegnamento a scelta affine",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-gestionale",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-gestionale",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-l-9-ingegneria-gestionale-insegnamento-a-scelta-affine",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -3999,25 +4020,6 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "completo",
      "id": "unimercatorum-l-9-ingegneria-gestionale-0092509ingind17",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Insegnamento a scelta affine",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-gestionale",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-gestionale",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unimercatorum-l-9-ingegneria-gestionale-insegnamento-a-scelta-affine",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -4326,7 +4328,7 @@
    "url": "http://www.unimercatorum.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0082512MAT05",
@@ -4389,6 +4391,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unimercatorum-l-8-ingegneria-informatica-0082512fis01",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Insegnamento a scelta affine",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-informatica",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-informatica",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-l-8-ingegneria-informatica-insegnamento-a-scelta-affine",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -4564,25 +4585,6 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unimercatorum-l-8-ingegneria-informatica-0082509inginf05i",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Insegnamento a scelta affine",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 9,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-informatica",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-informatica",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unimercatorum-l-8-ingegneria-informatica-insegnamento-a-scelta-affine",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -4858,7 +4860,7 @@
    "url": "https://www.unimercatorum.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0072509MAT05",
@@ -5486,6 +5488,25 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": null,
+     "nome": "Insegnamento a scelta affine",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Profilo Infrastrutture",
+     "docenti": [],
+     "url": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-delle-infrastrutture-per-una-mobilita-sostenibile",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-delle-infrastrutture-per-una-mobilita-sostenibile",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-l-7-ingegneria-infrastrutture-trasporti-insegnamento-a-scelta-affine-a3",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "0072509ICAR05I",
      "nome": "Pianificazione dei trasporti",
      "anno": 3,
@@ -5657,7 +5678,7 @@
    "url": "http://www.unimercatorum.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0122503INF01",
@@ -6115,6 +6136,25 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": null,
+     "nome": "Insegnamento a scelta affine",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unimercatorum.it/corsi-di-laurea/lingue-e-mercati",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/lingue-e-mercati",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-l-12-lingue-e-mercati-insegnamento-a-scelta-affine",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "0122609LLIN03",
      "nome": "Letteratura francese",
      "anno": 2,
@@ -6421,25 +6461,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": null,
-     "nome": "Insegnamento a scelta affine",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 9,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unimercatorum.it/corsi-di-laurea/lingue-e-mercati",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/lingue-e-mercati",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unimercatorum-l-12-lingue-e-mercati-insegnamento-a-scelta-affine",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "0122512LOR21II",
      "nome": "Lingua cinese 3",
      "anno": 3,
@@ -6590,7 +6611,7 @@
    "url": "http://www.unimercatorum.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0242509MPSI03",
@@ -7314,7 +7335,7 @@
    "url": "http://www.unimercatorum.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0142509IUS01I",
@@ -7460,6 +7481,53 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unimercatorum-l-14-scienze-giuridiche-0142509ius02",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "0142509SECSP07",
+     "nome": "Economia aziendale",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "ECON-06/A",
+     "obbligatorio": null,
+     "curriculum": "Profilo Giurista Di Impresa, Profilo P.A. E Sicurezza, Profilo Scienze Giuridiche Per La Criminologia, L'Investigazione E La Sicurezza, Statutario",
+     "docenti": [
+      "Matteo Pozzoli",
+      "Laura Martiniello"
+     ],
+     "url": "https://www.unimercatorum.it/programma/0142509SECSP07",
+     "libri": [
+      {
+       "titolo": "Tiscini R., Fiori G., Economia aziendale, Padova, Egea 2014; Maurizio Leo, Le imposte sui redditi nel testo unico, Giuffr",
+       "autori": null,
+       "editore": "Egea 2014",
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "Tiscini R., Fiori G., Economia aziendale, Padova, Egea 2014; Maurizio Leo, Le imposte sui redditi nel testo unico, Giuffr"
+      },
+      {
+       "titolo": "2016; Ceppellini, Lugano, Testo unico delle imposte sui redditi, Gruppo 24 Ore 2016",
+       "autori": null,
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "2016; Ceppellini, Lugano, Testo unico delle imposte sui redditi, Gruppo 24 Ore 2016"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/scienze-giuridiche",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "id": "unimercatorum-l-14-scienze-giuridiche-0142509secsp07",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -7919,6 +7987,42 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "0142609IUS20II",
+     "nome": "Metodologia e logica giuridica digitale",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "GIUR-17/A",
+     "obbligatorio": null,
+     "curriculum": "Profilo Enti Locali, Profilo Giurista Di Impresa, Profilo P.A. E Sicurezza, Profilo Scienze Giuridiche Per La Criminologia, L'Investigazione E La Sicurezza, Statutario",
+     "docenti": [
+      "Edoardo Messineo",
+      "(Metodologia giuridica)",
+      "Alessandro Campo"
+     ],
+     "url": "https://www.unimercatorum.it/programma/0142609IUS20II",
+     "libri": [
+      {
+       "titolo": "Informatica giuridica e progettazione innovativa digitale",
+       "autori": "G. Corasaniti",
+       "editore": "Milano Wolters Kluwer",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "G. Corasaniti, Informatica giuridica e progettazione innovativa digitale, Milano Wolters Kluwer 2024"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/scienze-giuridiche",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "id": "unimercatorum-l-14-scienze-giuridiche-0142609ius20ii",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "0142504INF01",
      "nome": "Abilità informatiche e telematiche",
      "anno": 3,
@@ -8004,6 +8108,28 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "completo",
      "id": "unimercatorum-l-14-scienze-giuridiche-0142506ius04ii",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "0142506IUS07",
+     "nome": "Diritto del lavoro avanzato",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "GIUR-04/A",
+     "obbligatorio": null,
+     "curriculum": "Profilo Enti Locali, Profilo P.A. E Sicurezza, Profilo Scienze Giuridiche Per La Criminologia, L'Investigazione E La Sicurezza, Statutario",
+     "docenti": [
+      "Valentina Aniballi",
+      "Carmelinda Lorea"
+     ],
+     "url": "https://www.unimercatorum.it/programma/0142506IUS07",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/scienze-giuridiche",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-l-14-scienze-giuridiche-0142506ius07-a3",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -8122,6 +8248,27 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "0142512IUS15",
+     "nome": "Diritto processuale civile",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 12,
+     "ssd": "GIUR-12/A",
+     "obbligatorio": null,
+     "curriculum": "Profilo Enti Locali, Profilo Giurista Di Impresa, Profilo P.A. E Sicurezza, Statutario",
+     "docenti": [
+      "Massimo Cirulli"
+     ],
+     "url": "https://www.unimercatorum.it/programma/0142512IUS15",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/scienze-giuridiche",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-l-14-scienze-giuridiche-0142512ius15-a3",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "0142506IUS12",
      "nome": "Diritto tributario",
      "anno": 3,
@@ -8222,7 +8369,7 @@
      "fonte": "https://www.unimercatorum.it/corsi-di-laurea/scienze-giuridiche",
      "verificato_il": "2026-10-10",
      "stato_libri": "completo",
-     "id": "unimercatorum-l-14-scienze-giuridiche-0142509secsp07",
+     "id": "unimercatorum-l-14-scienze-giuridiche-0142509secsp07-a3",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -8298,7 +8445,7 @@
      "fonte": "https://www.unimercatorum.it/corsi-di-laurea/scienze-giuridiche",
      "verificato_il": "2026-10-10",
      "stato_libri": "completo",
-     "id": "unimercatorum-l-14-scienze-giuridiche-0142609ius20ii",
+     "id": "unimercatorum-l-14-scienze-giuridiche-0142609ius20ii-a3",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -8444,7 +8591,7 @@
    "url": "https://www.unimercatorum.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0362509SPS01",
@@ -9103,7 +9250,7 @@
    "url": "https://www.unimercatorum.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0412509INF01I",
@@ -9856,7 +10003,7 @@
    "url": "http://www.unimercatorum.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0592506INF01",
@@ -10222,8 +10369,42 @@
    "url": "http://www.unimercatorum.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
+    {
+     "codice": "0312509INGINF04",
+     "nome": "Automazione dei processi produttivi",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "IINF-04/A",
+     "obbligatorio": null,
+     "curriculum": "Profilo Trasformazione Digitale",
+     "docenti": [
+      "Lorenzo Ricciardi Celsi"
+     ],
+     "url": "https://www.unimercatorum.it/programma/0312509INGINF04",
+     "libri": [
+      {
+       "titolo": "Sistemi di automazione industriale - Architetture e controllo, Claudio Bonivento, Luca Gentili, Andrea Paoli, McGraw-Hill",
+       "autori": null,
+       "editore": "McGraw-Hill",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "Sistemi di automazione industriale - Architetture e controllo, Claudio Bonivento, Luca Gentili, Andrea Paoli, McGraw-Hill"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-gestionale-magistrale",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "id": "unimercatorum-lm-31-ingegneria-gestionale-0312509inginf04",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "0312509INGINF04I",
      "nome": "Controlli automatici",
@@ -10366,6 +10547,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unimercatorum-lm-31-ingegneria-gestionale-0312509ingind16",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Insegnamento a scelta",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 12,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Profilo Trasformazione Digitale",
+     "docenti": [],
+     "url": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-gestionale-magistrale",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-gestionale-magistrale",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-lm-31-ingegneria-gestionale-insegnamento-a-scelta",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -10517,7 +10717,7 @@
      "fonte": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-gestionale-magistrale",
      "verificato_il": "2026-10-10",
      "stato_libri": "completo",
-     "id": "unimercatorum-lm-31-ingegneria-gestionale-0312509inginf04",
+     "id": "unimercatorum-lm-31-ingegneria-gestionale-0312509inginf04-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -10536,7 +10736,26 @@
      "fonte": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-gestionale-magistrale",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
-     "id": "unimercatorum-lm-31-ingegneria-gestionale-insegnamento-a-scelta",
+     "id": "unimercatorum-lm-31-ingegneria-gestionale-insegnamento-a-scelta-a2",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Insegnamento a scelta affine",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Profilo Trasformazione Digitale",
+     "docenti": [],
+     "url": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-gestionale-magistrale",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-gestionale-magistrale",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-lm-31-ingegneria-gestionale-insegnamento-a-scelta-affine-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -10600,7 +10819,7 @@
    "url": "http://www.unimercatorum.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0332603INF01",
@@ -11004,6 +11223,28 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "0332609INGINF04I",
+     "nome": "Fondamenti di automatica",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "IINF-04/A",
+     "obbligatorio": null,
+     "curriculum": "Profilo Industria E Innovazione Digitale",
+     "docenti": [
+      "Massimiliano D'Angelo",
+      "Mirko Leomanni"
+     ],
+     "url": "https://www.unimercatorum.it/programma/0332609INGINF04I",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-industriale-e-innovazione",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-lm-33-ingegneria-industriale-e-dellinnovazione-0332609inginf04i-a2",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": null,
      "nome": "Insegnamento a scelta",
      "anno": 2,
@@ -11060,6 +11301,27 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unimercatorum-lm-33-ingegneria-industriale-e-dellinnovazione-0332606ingind12",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "0332606INGIND15",
+     "nome": "Modellazione e Metodi dell’Ingegneria Industriale",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "IIND-03/B",
+     "obbligatorio": null,
+     "curriculum": "Profilo Prodotti E Sistemi Industriali, Profilo Sistemi Energetici E Industria",
+     "docenti": [
+      "Marianna Ciccarelli"
+     ],
+     "url": "https://www.unimercatorum.it/programma/0332606INGIND15",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/ingegneria-industriale-e-innovazione",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-lm-33-ingegneria-industriale-e-dellinnovazione-0332606ingind15-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -11124,7 +11386,7 @@
    "url": "http://www.unimercatorum.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0382503INF01",
@@ -11209,6 +11471,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unimercatorum-lm-38-lingue-per-la-comunicazione-internazionale-0382512llin01",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Insegnamento a scelta affine",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unimercatorum.it/corsi-di-laurea/lingue-per-la-comunicazione-internazionale",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/lingue-per-la-comunicazione-internazionale",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-lm-38-lingue-per-la-comunicazione-internazionale-insegnamento-a-scelta-affine",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -11430,7 +11711,7 @@
     },
     {
      "codice": null,
-     "nome": "Insegnamento a scelta affine",
+     "nome": "Insegnamento a scelta caratterizzante",
      "anno": 2,
      "periodo": null,
      "cfu": 6,
@@ -11444,7 +11725,7 @@
      "fonte": "https://www.unimercatorum.it/corsi-di-laurea/lingue-per-la-comunicazione-internazionale",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
-     "id": "unimercatorum-lm-38-lingue-per-la-comunicazione-internazionale-insegnamento-a-scelta-affine",
+     "id": "unimercatorum-lm-38-lingue-per-la-comunicazione-internazionale-insegnamento-a-scelta-caratterizzante-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -11606,8 +11887,29 @@
    "url": "http://www.unimercatorum.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
+    {
+     "codice": "0772508LLIN12I",
+     "nome": "Business English",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 8,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": null,
+     "curriculum": "Management Con Sole 24 Ore Formazione, Statutario",
+     "docenti": [
+      "Emanuela Ammendola"
+     ],
+     "url": "https://www.unimercatorum.it/programma/0772508LLIN12I",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/management",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-lm-77-management-0772508llin12i",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "0772506SECSP07",
      "nome": "Business Planning",
@@ -11944,7 +12246,7 @@
      "fonte": "https://www.unimercatorum.it/corsi-di-laurea/management",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
-     "id": "unimercatorum-lm-77-management-0772508llin12i",
+     "id": "unimercatorum-lm-77-management-0772508llin12i-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -11985,6 +12287,25 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unimercatorum-lm-77-management-insegnamento-a-scelta",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Insegnamento a scelta affine",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Management Con Sole 24 Ore Formazione, Statutario",
+     "docenti": [],
+     "url": "https://www.unimercatorum.it/corsi-di-laurea/management",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/management",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-lm-77-management-insegnamento-a-scelta-affine-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -12165,8 +12486,27 @@
    "url": "http://www.unimercatorum.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
+    {
+     "codice": null,
+     "nome": "Insegnamento a scelta affine",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unimercatorum.it/corsi-di-laurea/psicologia-del-lavoro-e-delle-organizzazioni",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/psicologia-del-lavoro-e-delle-organizzazioni",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unimercatorum-lm-51-psicologia-insegnamento-a-scelta-affine",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "0512606MPSI03I",
      "nome": "Metodi quantitativi per gli strumenti psicodiagnostici",
@@ -12551,25 +12891,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": null,
-     "nome": "Insegnamento a scelta affine",
-     "anno": 2,
-     "periodo": null,
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unimercatorum.it/corsi-di-laurea/psicologia-del-lavoro-e-delle-organizzazioni",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unimercatorum.it/corsi-di-laurea/psicologia-del-lavoro-e-delle-organizzazioni",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unimercatorum-lm-51-psicologia-insegnamento-a-scelta-affine",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "0512506LLIN12",
      "nome": "Lingua inglese",
      "anno": 2,
@@ -12764,7 +13085,7 @@
    "url": "https://www.unimercatorum.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0522512IUS13I",
@@ -13202,7 +13523,7 @@
    "url": "http://www.unimercatorum.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "0662403ACU",

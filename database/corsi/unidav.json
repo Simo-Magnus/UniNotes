@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unidav",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -88,6 +88,27 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-educazione-allimmagine-e-al-disegno-infa",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Etica delle Relazioni",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "L-FIL-LET/03",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Giuliana Di Biase"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/7-Etica-delle-relazioni_Di-Biase_Syllabus-24-25-1.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-etica-delle-relazioni",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -516,6 +537,25 @@
     },
     {
      "codice": null,
+     "nome": "opzionale con",
+     "anno": 1,
+     "periodo": null,
+     "cfu": null,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [],
+     "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-opzionale-con",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Didattica del gioco e dell’animazione",
      "anno": 2,
      "periodo": null,
@@ -578,7 +618,7 @@
      "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
-     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-etica-delle-relazioni",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-etica-delle-relazioni-a2",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -646,6 +686,52 @@
      "verificato_il": "2026-10-10",
      "stato_libri": "da_aggiungere",
      "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-letteratura-per-linfanzia",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Lingua e traduzione inglese",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "L-LIN/12",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Marco Canani"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Lingua-e-traduzione-inglese_syllabus-2024-2025.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-29",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-lingua-e-traduzione-inglese-a2",
      "stato_esami": "completo"
     },
     {
@@ -890,6 +976,52 @@
      "stato_libri": "da_aggiungere",
      "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-sociologia-della-famiglia",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Sociologia generale",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "SPS/07",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Isabella Cordisco"
+     ],
+     "url": "https://www.unidav.it/wp-content/uploads/Sociologia_ita_Cordisco.pdf",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-28",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-29",
+       "ora": "00:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-06",
+       "iscrizioni_al": "2026-10-13",
+       "docenti": "",
+       "note": null,
+       "fonte": "https://unidav.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-sociologia-generale-a2",
+     "stato_esami": "completo"
     },
     {
      "codice": null,
@@ -1548,6 +1680,27 @@
     },
     {
      "codice": null,
+     "nome": "Sociologia della famiglia",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "SPS/08",
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [
+      "Isabella Cordisco"
+     ],
+     "url": "https://www.unidav.it/docs/sua-cds/2023/L-19/insegnamenti/D102-23.pdf",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-sociologia-della-famiglia-a3",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Tirocinio diretto",
      "anno": 3,
      "periodo": null,
@@ -1583,25 +1736,6 @@
      "stato_libri": "da_aggiungere",
      "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-tirocinio-esterno",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "opzionale con",
-     "anno": 3,
-     "periodo": null,
-     "cfu": null,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": "Educatore nei servizi per l’infanzia",
-     "docenti": [],
-     "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-opzionale-con",
-     "stato_esami": "da_aggiungere"
     }
    ],
    "curricula": [
@@ -1626,7 +1760,7 @@
    "url": "http://www.unidav.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "nome": "Abilità informatiche",
@@ -1690,6 +1824,24 @@
      "id": "unidav-lm-56-scienze-dell-economia-lm-56-economia-delle-aziende-e-delle-pa",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "nome": "Esame a scelta",
+     "anno": 1,
+     "cfu": 6,
+     "ssd": null,
+     "periodo": null,
+     "obbligatorio": false,
+     "docenti": [],
+     "url": "https://www.unidav.it/index.php/aq/syllabus-scienze-delleconomia/",
+     "fonte": "https://www.unidav.it/index.php/aq/syllabus-scienze-delleconomia/",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unidav-lm-56-scienze-dell-economia-lm-56-esame-a-scelta",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "curriculum": null
     },
     {
      "nome": "Lingua inglese",
@@ -2158,23 +2310,6 @@
      "id": "unidav-lm-56-scienze-dell-economia-lm-56-economia-e-gestione-delle-aziende-sanita",
      "stato_libri": "da_aggiungere",
      "stato_esami": "completo"
-    },
-    {
-     "nome": "Esame a scelta",
-     "anno": 2,
-     "cfu": 6,
-     "ssd": null,
-     "periodo": null,
-     "obbligatorio": false,
-     "docenti": [],
-     "url": "https://www.unidav.it/index.php/aq/syllabus-scienze-delleconomia/",
-     "fonte": "https://www.unidav.it/index.php/aq/syllabus-scienze-delleconomia/",
-     "libri": [],
-     "esami": [],
-     "verificato_il": "2026-10-17",
-     "id": "unidav-lm-56-scienze-dell-economia-lm-56-esame-a-scelta",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
     },
     {
      "nome": "Prova finale",

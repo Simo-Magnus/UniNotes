@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "uniud",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea/allevamento-e-salute-animale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "AG1091",
@@ -5701,7 +5701,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/banca-finanza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "EC0030",
@@ -7309,7 +7309,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea/beni-culturali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LE0201",
@@ -18623,7 +18623,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/biotecnologie/laurea/biotecnologie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "VE0250",
@@ -19071,7 +19071,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea/dams",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "T_INGR",
@@ -22185,7 +22185,7 @@
      "obbligatorio": false,
      "curriculum": "Piano di studio Cinema e media 26/27",
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24015/2026/2?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2028/24015/2026/2?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -22203,10 +22203,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "Piano di studio comune 26/27",
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24012/2026/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2028/24012/2026/2?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -22225,9 +22225,9 @@
      "cfu": 9,
      "ssd": null,
      "obbligatorio": false,
-     "curriculum": "Piano di studio comune 26/27",
+     "curriculum": "Piano di studio Cinema e media 26/27, Piano di studio Spettacolo e performance 26/27, Piano di studio comune 26/27",
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24014/2026/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2028/24014/2026/2?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -22246,9 +22246,9 @@
      "cfu": 9,
      "ssd": null,
      "obbligatorio": false,
-     "curriculum": "Piano di studio comune 26/27",
+     "curriculum": "Piano di studio Cinema e media 26/27, Piano di studio Spettacolo e performance 26/27, Piano di studio comune 26/27",
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24016/2026/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2028/24016/2026/2?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -22266,10 +22266,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "Piano di studio comune 26/27",
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/16194/2026/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2028/16194/2026/2?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -22287,10 +22287,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "Piano di studio comune 26/27",
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24011/2026/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2028/24011/2026/2?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -22308,10 +22308,10 @@
      "periodo_fine": null,
      "cfu": 9,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "Piano di studio comune 26/27",
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/20647/2026/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2028/20647/2026/2?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -22402,10 +22402,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "Piano di studio Spettacolo e performance 26/27",
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24020/2026/1?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2028/24020/2026/1?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -22423,10 +22423,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "Piano di studio comune 26/27",
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/13797/2026/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2028/13797/2026/2?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -22445,9 +22445,9 @@
      "cfu": 9,
      "ssd": null,
      "obbligatorio": false,
-     "curriculum": "Piano di studio comune 26/27",
+     "curriculum": "Piano di studio Cinema e media 26/27, Piano di studio Spettacolo e performance 26/27, Piano di studio comune 26/27",
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2027/24013/2026/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2028/24013/2026/2?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -22489,7 +22489,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/scienze-giuridiche/laurea/diritto-per-le-imprese-e-le-istituzioni/corso/diritto-per-le-imprese-e-le-istituzioni",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "GI0023",
@@ -26243,7 +26243,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/economia-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "EC0030",
@@ -27664,7 +27664,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/economia-commercio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "EC0334",
@@ -29651,7 +29651,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea/educazione-professionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MM3164",
@@ -31762,7 +31762,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea/filosofia-trasformazione-digitale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "T_INGR",
@@ -35917,7 +35917,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MM1779",
@@ -38488,7 +38488,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MM1779",
@@ -38499,10 +38499,10 @@
      "periodo_fine": null,
      "cfu": 3,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17452/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17452/2026/9999?coorte=2026",
      "libri": [],
      "esami": [
       {
@@ -38965,10 +38965,10 @@
      "periodo_fine": null,
      "cfu": 3,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17136/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17136/2026/9999?coorte=2026",
      "libri": [],
      "esami": [
       {
@@ -39071,10 +39071,10 @@
      "periodo_fine": null,
      "cfu": 16,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17137/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17137/2026/9999?coorte=2026",
      "libri": [],
      "esami": [
       {
@@ -39169,65 +39169,18 @@
      "stato_esami": "completo"
     },
     {
-     "codice": "MM1392",
-     "nome": "Laboratori I",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "13/10/2025 00:00:00",
-     "periodo_fine": "01/06/2026 00:00:00",
-     "cfu": 1,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17138/2011/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Trattato di cure infermieristiche",
-       "autori": "Saiani L., Brugnolli A.",
-       "editore": "Sorbona – Idelson-Gnocchi",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17138/2026/9999?coorte=2026)",
-       "citazione": "Saiani L., Brugnolli A. (2020). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2027-02-16",
-       "ora": null,
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-17",
-       "iscrizioni_al": "2027-02-12",
-       "docenti": "DORBOLO' MARIA ROSA VIDI DANIELE",
-       "note": null,
-       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://uniud.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-mm1392",
-     "stato_libri": "completo",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "MM1444",
      "nome": "Basi Morfo Funzionali del Corpo Umano",
      "anno": 1,
      "periodo": "annuale",
-     "periodo_inizio": "13/10/2025 00:00:00",
-     "periodo_fine": "27/03/2026 00:00:00",
+     "periodo_inizio": "12/10/2026 00:00:00",
+     "periodo_fine": "09/04/2027 00:00:00",
      "cfu": 7,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17142/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17142/2026/9999?coorte=2026",
      "libri": [
       {
        "titolo": "ELEMENTI DI ANATOMIA E FISIOLOGIA DELL’UOMO terza edizione italiana – E.N. Marieb, S.M. Keller – 2019 - Zanichelli (gli studenti con DSA possono richiedere all'editore il formato pdf del testo)",
@@ -39399,14 +39352,14 @@
      "nome": "Fondamenti di Infermieristica e della Relazione Assistenziale",
      "anno": 1,
      "periodo": "annuale",
-     "periodo_inizio": "13/10/2025 00:00:00",
-     "periodo_fine": "27/03/2026 00:00:00",
+     "periodo_inizio": "12/10/2026 00:00:00",
+     "periodo_fine": "09/04/2027 00:00:00",
      "cfu": 8,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17140/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17140/2026/9999?coorte=2026",
      "libri": [
       {
        "titolo": "Tortolici Beatrice e Stievano Alessandro , 2006, Antropologia e nursing, due mondi che si incontrano, Firenze, Carocci.",
@@ -39526,18 +39479,65 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "MM1392",
+     "nome": "Laboratori I",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": "12/10/2026 00:00:00",
+     "periodo_fine": "09/04/2027 00:00:00",
+     "cfu": 1,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17138/2026/9999?coorte=2026",
+     "libri": [
+      {
+       "titolo": "Trattato di cure infermieristiche",
+       "autori": "Saiani L., Brugnolli A.",
+       "editore": "Sorbona – Idelson-Gnocchi",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17138/2026/9999?coorte=2026)",
+       "citazione": "Saiani L., Brugnolli A. (2020). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": null,
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-17",
+       "iscrizioni_al": "2027-02-12",
+       "docenti": "DORBOLO' MARIA ROSA VIDI DANIELE",
+       "note": null,
+       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-mm1392",
+     "stato_libri": "completo",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "MM1443",
      "nome": "Meccanismi Biologici Fondamentali",
      "anno": 1,
      "periodo": "1",
-     "periodo_inizio": "13/10/2025 00:00:00",
-     "periodo_fine": "19/12/2025 00:00:00",
+     "periodo_inizio": "12/10/2026 00:00:00",
+     "periodo_fine": "23/12/2026 00:00:00",
      "cfu": 5,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17141/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17141/2026/9999?coorte=2026",
      "libri": [
       {
        "titolo": "Fisica Biomedica",
@@ -39649,14 +39649,14 @@
      "nome": "Prevenzione e Sicurezza Nei Luoghi di Cura",
      "anno": 1,
      "periodo": "1",
-     "periodo_inizio": "13/10/2025 00:00:00",
-     "periodo_fine": "19/12/2025 00:00:00",
+     "periodo_inizio": "12/10/2026 00:00:00",
+     "periodo_fine": "23/12/2026 00:00:00",
      "cfu": 5,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17139/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17139/2026/9999?coorte=2026",
      "libri": [
       {
        "titolo": "MEDICINA DEL LAVORO Manuale per le professioni sanitarie. Ciavarella Matteo, De Lorenzo Giuseppe, Sacco Angelo. EPC Editore 2018",
@@ -39695,14 +39695,14 @@
      "nome": "Basi di Patologia",
      "anno": 1,
      "periodo": "2",
-     "periodo_inizio": "08/01/2026 00:00:00",
-     "periodo_fine": "27/03/2026 00:00:00",
+     "periodo_inizio": "07/01/2027 00:00:00",
+     "periodo_fine": "09/04/2027 00:00:00",
      "cfu": 5,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/13544/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/13544/2026/9999?coorte=2026",
      "libri": [
       {
        "titolo": "Castagliuolo, I. (2022). Principi di microbiologia clinica per le scienze infermieristiche. Piccin-Nuova Libraria.",
@@ -39910,14 +39910,14 @@
      "nome": "Infermieristica Clinica",
      "anno": 1,
      "periodo": "2",
-     "periodo_inizio": "08/01/2026 00:00:00",
-     "periodo_fine": "27/03/2026 00:00:00",
+     "periodo_inizio": "07/01/2027 00:00:00",
+     "periodo_fine": "09/04/2027 00:00:00",
      "cfu": 7,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/13546/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/13546/2026/9999?coorte=2026",
      "libri": [
       {
        "titolo": "Trattato di Medicina e Infermieristica- Un approccio di cure integrate",
@@ -40013,171 +40013,18 @@
      "stato_esami": "completo"
     },
     {
-     "codice": "MM1511",
-     "nome": "Laboratori II",
-     "anno": 2,
-     "periodo": "annuale",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "27/06/2025 00:00:00",
-     "cfu": 1,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17451/2011/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Saiani L., Brugnolli A. (2021). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi (cap. 8, cap. 16, cap. 26, cap. 27, cap. 28 e cap. 29). Brugnolli, A. & Saiani L., (2023). Trattato di Medicina e Infermieristica- Un approccio di cure integrate. II Ed. Napoli: Casa Editrice",
-       "autori": null,
-       "editore": null,
-       "anno": 2023,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17451/2011/9999?coorte=2025)",
-       "citazione": "Saiani L., Brugnolli A. (2021). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi (cap. 8, cap. 16, cap. 26, cap. 27, cap. 28 e cap. 29). Brugnolli, A. & Saiani L., (2023). Trattato di Medicina e Infermieristica- Un approccio di cure integrate. II Ed. Napoli: Casa Editrice Idelson-Gnocchi (cap. 3, cap. 9 e cap. 11)."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-01",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-01",
-       "iscrizioni_al": "2026-09-27",
-       "docenti": "VIEL MICHELE VENTURINI ANNA",
-       "note": null,
-       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-15",
-       "ora": null,
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-16",
-       "iscrizioni_al": "2027-02-11",
-       "docenti": "PINZINI CHIARA VIDI DANIELE",
-       "note": null,
-       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://uniud.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-mm1511",
-     "stato_libri": "completo",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "MM1510",
-     "nome": "Tirocinio II",
+     "codice": "MM0321",
+     "nome": "Applicazione Percorsi Terapeutici",
      "anno": 2,
      "periodo": "annuale",
      "periodo_inizio": "14/09/2026 00:00:00",
      "periodo_fine": "31/05/2027 00:00:00",
-     "cfu": 20,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17450/2011/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-02",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-02",
-       "iscrizioni_al": "2026-09-28",
-       "docenti": "LATINI FRANCESCA VENTURINI ANNA",
-       "note": null,
-       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-06",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": "scritto e orale",
-       "iscrizioni_dal": "2026-09-06",
-       "iscrizioni_al": "2026-10-02",
-       "docenti": "FOGOLIN SEBASTIANO BATTISTELLA NADIA CLAUT LAURA GAIATTO DAVIDE VIERA GIANNINA ZANARDO DAVIDE",
-       "note": null,
-       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-08",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-08",
-       "iscrizioni_al": "2026-10-04",
-       "docenti": "LATINI FRANCESCA VENTURINI ANNA",
-       "note": null,
-       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-19",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-15",
-       "iscrizioni_al": "2026-10-15",
-       "docenti": "VIDI DANIELE DE MAIO GIULIANA DORBOLO' MARIA ROSA FILIPUTTI DARIO PINZINI CHIARA",
-       "note": null,
-       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-16",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-11-03",
-       "iscrizioni_al": "2026-11-29",
-       "docenti": "FASAN JESSICA BELTRAME VRIZ GIULIA GODEAS GLORIA",
-       "note": null,
-       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-08",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-09",
-       "iscrizioni_al": "2027-02-04",
-       "docenti": "VIDI DANIELE DE MAIO GIULIANA DORBOLO' MARIA ROSA FILIPUTTI DARIO PINZINI CHIARA",
-       "note": null,
-       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://uniud.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-mm1510",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "MM0321",
-     "nome": "Applicazione Percorsi Terapeutici",
-     "anno": 2,
-     "periodo": "1",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "20/12/2024 00:00:00",
      "cfu": 4,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/15063/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/15063/2011/9999?coorte=2025",
      "libri": [
       {
        "titolo": "Taglialatela, Conforti, Cuzzolin, Leone, Mattioli, Moretti, Pignataro, Vanzetta. (2021). Farmacologia per le lauree triennali e magistrali. III Ed. Napoli: Sorbona - Idelson-Gnocchi.",
@@ -40252,15 +40099,15 @@
      "codice": "MM1732",
      "nome": "Infermieristica Clinica in Area Chirurgica",
      "anno": 2,
-     "periodo": "1",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "20/12/2024 00:00:00",
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 7,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/18003/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/18003/2011/9999?coorte=2025",
      "libri": [
       {
        "titolo": "Alberto Albertazzi, Massimo Porena. Malattie del rene, delle vie urinarie e dell'apparato genitale. 21 luglio 2017, edizione 2°, Editore Piccin-Nuova Libraria (italiano)",
@@ -40416,18 +40263,113 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "MM1508",
+     "nome": "Infermieristica Clinica in Area Chirurgica Specialistica",
+     "anno": 2,
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
+     "cfu": 4,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025",
+     "libri": [
+      {
+       "titolo": "Malattie odontostomatologiche",
+       "autori": "Valletta, G., Matarasso, S., Mignogna, M.D.",
+       "editore": "Piccin",
+       "anno": 2004,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025)",
+       "citazione": "Valletta, G., Matarasso, S., Mignogna, M.D. (2004). Malattie odontostomatologiche. Padova: Piccin."
+      },
+      {
+       "titolo": "Trattato di cure infermieristiche",
+       "autori": "Saiani L., Brugnolli A.",
+       "editore": "Sorbona – Idelson-Gnocchi",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025)",
+       "citazione": "Saiani L., Brugnolli A. (2020). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi"
+      },
+      {
+       "titolo": "Trattato di chirurgia e infermieristica",
+       "autori": "Saiani L., Brugnolli A.",
+       "editore": "Sorbona – Idelson-Gnocchi",
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025)",
+       "citazione": "Saiani L., Brugnolli A. (2023). Trattato di chirurgia e infermieristica. I Ed. Napoli: Sorbona – Idelson-Gnocchi"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-01",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "SEMBRONIO SALVATORE GUMIERO LUISA MENCHINI FRANCESCA MIANI CESARE",
+       "note": null,
+       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-29",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-29",
+       "iscrizioni_al": "2026-10-25",
+       "docenti": "SEMBRONIO SALVATORE GUMIERO LUISA MENCHINI FRANCESCA MIANI CESARE",
+       "note": null,
+       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-29",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-29",
+       "iscrizioni_al": "2026-10-25",
+       "docenti": "SEMBRONIO SALVATORE MENCHINI FRANCESCA MIANI CESARE RIZZUTO ANTONIO SARAO VALENTINA",
+       "note": null,
+       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-mm1508",
+     "stato_libri": "completo",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "MM1504",
      "nome": "Infermieristica Clinica in Area Medica",
      "anno": 2,
-     "periodo": "1",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "20/12/2024 00:00:00",
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 8,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17447/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17447/2011/9999?coorte=2025",
      "libri": [
       {
        "titolo": "Dermatologia e venereologia. Testo atlante; Editore: Idelson-Gnocchi; Data di pubblicazione: 28 aprile 2022",
@@ -40562,15 +40504,15 @@
      "codice": "MM1506",
      "nome": "Infermieristica Clinica in Area Oncologica",
      "anno": 2,
-     "periodo": "1",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "20/12/2024 00:00:00",
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 4,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17448/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17448/2011/9999?coorte=2025",
      "libri": [
       {
        "titolo": "ISBN: 9788855320948 Titolo: Manuale di oncologia medica Autori: COMU (Collegio degli Oncologi Medici Italiani) - A cura di Massimo Aglietta",
@@ -40714,113 +40656,18 @@
      "stato_esami": "completo"
     },
     {
-     "codice": "MM1508",
-     "nome": "Infermieristica Clinica in Area Chirurgica Specialistica",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "23/04/2025 00:00:00",
-     "periodo_fine": "30/05/2025 00:00:00",
-     "cfu": 4,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17449/2011/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Malattie odontostomatologiche",
-       "autori": "Valletta, G., Matarasso, S., Mignogna, M.D.",
-       "editore": "Piccin",
-       "anno": 2004,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025)",
-       "citazione": "Valletta, G., Matarasso, S., Mignogna, M.D. (2004). Malattie odontostomatologiche. Padova: Piccin."
-      },
-      {
-       "titolo": "Trattato di cure infermieristiche",
-       "autori": "Saiani L., Brugnolli A.",
-       "editore": "Sorbona – Idelson-Gnocchi",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025)",
-       "citazione": "Saiani L., Brugnolli A. (2020). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi"
-      },
-      {
-       "titolo": "Trattato di chirurgia e infermieristica",
-       "autori": "Saiani L., Brugnolli A.",
-       "editore": "Sorbona – Idelson-Gnocchi",
-       "anno": 2023,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025)",
-       "citazione": "Saiani L., Brugnolli A. (2023). Trattato di chirurgia e infermieristica. I Ed. Napoli: Sorbona – Idelson-Gnocchi"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-01",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-01",
-       "iscrizioni_al": "2026-09-27",
-       "docenti": "SEMBRONIO SALVATORE GUMIERO LUISA MENCHINI FRANCESCA MIANI CESARE",
-       "note": null,
-       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-29",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-29",
-       "iscrizioni_al": "2026-10-25",
-       "docenti": "SEMBRONIO SALVATORE GUMIERO LUISA MENCHINI FRANCESCA MIANI CESARE",
-       "note": null,
-       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-29",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-29",
-       "iscrizioni_al": "2026-10-25",
-       "docenti": "SEMBRONIO SALVATORE MENCHINI FRANCESCA MIANI CESARE RIZZUTO ANTONIO SARAO VALENTINA",
-       "note": null,
-       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://uniud.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-mm1508",
-     "stato_libri": "completo",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "MM1309",
      "nome": "Infermieristica Clinica nella Cronicita' e Disabilita'",
      "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "23/04/2025 00:00:00",
-     "periodo_fine": "30/05/2025 00:00:00",
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 6,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17445/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17445/2011/9999?coorte=2025",
      "libri": [
       {
        "titolo": " Senin, U. (2011). Paziente anziano, paziente geriatrico, medicina delle complessità. Fondamenti di Gerontologia e Geriatria. Napoli: EdiSES.",
@@ -40976,6 +40823,159 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "MM1511",
+     "nome": "Laboratori II",
+     "anno": 2,
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
+     "cfu": 1,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17451/2011/9999?coorte=2025",
+     "libri": [
+      {
+       "titolo": "Saiani L., Brugnolli A. (2021). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi (cap. 8, cap. 16, cap. 26, cap. 27, cap. 28 e cap. 29). Brugnolli, A. & Saiani L., (2023). Trattato di Medicina e Infermieristica- Un approccio di cure integrate. II Ed. Napoli: Casa Editrice",
+       "autori": null,
+       "editore": null,
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17451/2011/9999?coorte=2025)",
+       "citazione": "Saiani L., Brugnolli A. (2021). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi (cap. 8, cap. 16, cap. 26, cap. 27, cap. 28 e cap. 29). Brugnolli, A. & Saiani L., (2023). Trattato di Medicina e Infermieristica- Un approccio di cure integrate. II Ed. Napoli: Casa Editrice Idelson-Gnocchi (cap. 3, cap. 9 e cap. 11)."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-01",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-01",
+       "iscrizioni_al": "2026-09-27",
+       "docenti": "VIEL MICHELE VENTURINI ANNA",
+       "note": null,
+       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-15",
+       "ora": null,
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-16",
+       "iscrizioni_al": "2027-02-11",
+       "docenti": "PINZINI CHIARA VIDI DANIELE",
+       "note": null,
+       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-mm1511",
+     "stato_libri": "completo",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "MM1510",
+     "nome": "Tirocinio II",
+     "anno": 2,
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
+     "cfu": 20,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17450/2011/9999?coorte=2025",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-02",
+       "iscrizioni_al": "2026-09-28",
+       "docenti": "LATINI FRANCESCA VENTURINI ANNA",
+       "note": null,
+       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-06",
+       "ora": "08:30",
+       "luogo": null,
+       "modalita": "scritto e orale",
+       "iscrizioni_dal": "2026-09-06",
+       "iscrizioni_al": "2026-10-02",
+       "docenti": "FOGOLIN SEBASTIANO BATTISTELLA NADIA CLAUT LAURA GAIATTO DAVIDE VIERA GIANNINA ZANARDO DAVIDE",
+       "note": null,
+       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-08",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": "LATINI FRANCESCA VENTURINI ANNA",
+       "note": null,
+       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-15",
+       "iscrizioni_al": "2026-10-15",
+       "docenti": "VIDI DANIELE DE MAIO GIULIANA DORBOLO' MARIA ROSA FILIPUTTI DARIO PINZINI CHIARA",
+       "note": null,
+       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-11-03",
+       "iscrizioni_al": "2026-11-29",
+       "docenti": "FASAN JESSICA BELTRAME VRIZ GIULIA GODEAS GLORIA",
+       "note": null,
+       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-08",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-09",
+       "iscrizioni_al": "2027-02-04",
+       "docenti": "VIDI DANIELE DE MAIO GIULIANA DORBOLO' MARIA ROSA FILIPUTTI DARIO PINZINI CHIARA",
+       "note": null,
+       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-mm1510",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "MM0118",
      "nome": "Prova Finale",
      "anno": 3,
@@ -40984,10 +40984,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/15105/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/15105/2011/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -40997,18 +40997,52 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "MM1517",
+     "nome": "Laboratori III",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "01/06/2027 00:00:00",
+     "cfu": 1,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17953/2011/9999?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-16",
+       "ora": null,
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2027-01-17",
+       "iscrizioni_al": "2027-02-12",
+       "docenti": "FILIPUTTI DARIO VIDI DANIELE",
+       "note": null,
+       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-mm1517",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "MM1680",
      "nome": "Gestione del Rischio Clinico e Tutela del Paziente",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "07/03/2025 00:00:00",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "12/03/2027 00:00:00",
      "cfu": 11,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/18002/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/18002/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Statistica per le professioni sanitarie",
@@ -41276,14 +41310,14 @@
      "nome": "Infermieristica Clinica in Area Materno-infantile",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "07/03/2025 00:00:00",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "12/03/2027 00:00:00",
      "cfu": 4,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17999/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17999/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Badon P. Cesaro S. Assistenza infermieristica in Pediatria. Ed. Ambrosiana 2a ed 2015",
@@ -41455,14 +41489,14 @@
      "nome": "Infermieristica Clinica in Urgenza/emergenza",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "07/03/2025 00:00:00",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "12/03/2027 00:00:00",
      "cfu": 6,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17998/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17998/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Chirurgica per le professioni sanitarie",
@@ -41598,14 +41632,14 @@
      "nome": "Infermieristica nella Comunita'",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "07/03/2025 00:00:00",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "12/03/2027 00:00:00",
      "cfu": 5,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/18000/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/18000/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "L’infermiere di Comunità. Dalla teoria alla prassi",
@@ -41773,40 +41807,6 @@
      "stato_esami": "completo"
     },
     {
-     "codice": "MM1517",
-     "nome": "Laboratori III",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "07/03/2025 00:00:00",
-     "cfu": 1,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17953/2011/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2027-02-16",
-       "ora": null,
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-17",
-       "iscrizioni_al": "2027-02-12",
-       "docenti": "FILIPUTTI DARIO VIDI DANIELE",
-       "note": null,
-       "fonte": "https://uniud.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://uniud.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-mm1517",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "completo"
-    },
-    {
      "codice": "MM1488",
      "nome": "A Scelta Dello Studente",
      "anno": 3,
@@ -41818,7 +41818,7 @@
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17662/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17662/2011/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -41893,14 +41893,14 @@
      "nome": "Seminari",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "07/03/2025 00:00:00",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "12/03/2027 00:00:00",
      "cfu": 3,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/18001/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/18001/2011/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -41979,10 +41979,10 @@
      "periodo_fine": "12/03/2027 00:00:00",
      "cfu": 24,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17952/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17952/2011/9999?coorte=2024",
      "libri": [],
      "esami": [
       {
@@ -46138,7 +46138,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MM1779",
@@ -46149,10 +46149,10 @@
      "periodo_fine": null,
      "cfu": 3,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17452/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17452/2026/9999?coorte=2026",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -46170,10 +46170,10 @@
      "periodo_fine": null,
      "cfu": 3,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17136/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17136/2026/9999?coorte=2026",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -46191,10 +46191,10 @@
      "periodo_fine": null,
      "cfu": 16,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17137/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17137/2026/9999?coorte=2026",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -46204,52 +46204,18 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "MM1392",
-     "nome": "Laboratori I",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "13/10/2025 00:00:00",
-     "periodo_fine": "01/06/2026 00:00:00",
-     "cfu": 1,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17138/2011/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Trattato di cure infermieristiche",
-       "autori": "Saiani L., Brugnolli A.",
-       "editore": "Sorbona – Idelson-Gnocchi",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17138/2026/9999?coorte=2026)",
-       "citazione": "Saiani L., Brugnolli A. (2020). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://uniud.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1634365-mm1392",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "MM1444",
      "nome": "Basi Morfo Funzionali del Corpo Umano",
      "anno": 1,
      "periodo": "annuale",
-     "periodo_inizio": "13/10/2025 00:00:00",
-     "periodo_fine": "27/03/2026 00:00:00",
+     "periodo_inizio": "12/10/2026 00:00:00",
+     "periodo_fine": "09/04/2027 00:00:00",
      "cfu": 7,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17142/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17142/2026/9999?coorte=2026",
      "libri": [
       {
        "titolo": "ELEMENTI DI ANATOMIA E FISIOLOGIA DELL’UOMO terza edizione italiana – E.N. Marieb, S.M. Keller – 2019 - Zanichelli (gli studenti con DSA possono richiedere all'editore il formato pdf del testo)",
@@ -46360,14 +46326,14 @@
      "nome": "Fondamenti di Infermieristica e della Relazione Assistenziale",
      "anno": 1,
      "periodo": "annuale",
-     "periodo_inizio": "13/10/2025 00:00:00",
-     "periodo_fine": "27/03/2026 00:00:00",
+     "periodo_inizio": "12/10/2026 00:00:00",
+     "periodo_fine": "09/04/2027 00:00:00",
      "cfu": 8,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17140/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17140/2026/9999?coorte=2026",
      "libri": [
       {
        "titolo": "Tortolici Beatrice e Stievano Alessandro , 2006, Antropologia e nursing, due mondi che si incontrano, Firenze, Carocci.",
@@ -46462,18 +46428,52 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "MM1392",
+     "nome": "Laboratori I",
+     "anno": 1,
+     "periodo": "annuale",
+     "periodo_inizio": "12/10/2026 00:00:00",
+     "periodo_fine": "09/04/2027 00:00:00",
+     "cfu": 1,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17138/2026/9999?coorte=2026",
+     "libri": [
+      {
+       "titolo": "Trattato di cure infermieristiche",
+       "autori": "Saiani L., Brugnolli A.",
+       "editore": "Sorbona – Idelson-Gnocchi",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17138/2026/9999?coorte=2026)",
+       "citazione": "Saiani L., Brugnolli A. (2020). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1634365-mm1392",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "MM1443",
      "nome": "Meccanismi Biologici Fondamentali",
      "anno": 1,
      "periodo": "1",
-     "periodo_inizio": "13/10/2025 00:00:00",
-     "periodo_fine": "19/12/2025 00:00:00",
+     "periodo_inizio": "12/10/2026 00:00:00",
+     "periodo_fine": "23/12/2026 00:00:00",
      "cfu": 5,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17141/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17141/2026/9999?coorte=2026",
      "libri": [
       {
        "titolo": "Fisica Biomedica",
@@ -46560,14 +46560,14 @@
      "nome": "Prevenzione e Sicurezza Nei Luoghi di Cura",
      "anno": 1,
      "periodo": "1",
-     "periodo_inizio": "13/10/2025 00:00:00",
-     "periodo_fine": "19/12/2025 00:00:00",
+     "periodo_inizio": "12/10/2026 00:00:00",
+     "periodo_fine": "23/12/2026 00:00:00",
      "cfu": 5,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/17139/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17139/2026/9999?coorte=2026",
      "libri": [
       {
        "titolo": "MEDICINA DEL LAVORO Manuale per le professioni sanitarie. Ciavarella Matteo, De Lorenzo Giuseppe, Sacco Angelo. EPC Editore 2018",
@@ -46606,14 +46606,14 @@
      "nome": "Basi di Patologia",
      "anno": 1,
      "periodo": "2",
-     "periodo_inizio": "08/01/2026 00:00:00",
-     "periodo_fine": "27/03/2026 00:00:00",
+     "periodo_inizio": "07/01/2027 00:00:00",
+     "periodo_fine": "09/04/2027 00:00:00",
      "cfu": 5,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/13544/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/13544/2026/9999?coorte=2026",
      "libri": [
       {
        "titolo": "Castagliuolo, I. (2022). Principi di microbiologia clinica per le scienze infermieristiche. Piccin-Nuova Libraria.",
@@ -46796,14 +46796,14 @@
      "nome": "Infermieristica Clinica",
      "anno": 1,
      "periodo": "2",
-     "periodo_inizio": "08/01/2026 00:00:00",
-     "periodo_fine": "27/03/2026 00:00:00",
+     "periodo_inizio": "07/01/2027 00:00:00",
+     "periodo_fine": "09/04/2027 00:00:00",
      "cfu": 7,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/13546/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/13546/2026/9999?coorte=2026",
      "libri": [
       {
        "titolo": "Trattato di Medicina e Infermieristica- Un approccio di cure integrate",
@@ -46874,73 +46874,18 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "MM1511",
-     "nome": "Laboratori II",
-     "anno": 2,
-     "periodo": "annuale",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "27/06/2025 00:00:00",
-     "cfu": 1,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17451/2011/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Saiani L., Brugnolli A. (2021). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi (cap. 8, cap. 16, cap. 26, cap. 27, cap. 28 e cap. 29). Brugnolli, A. & Saiani L., (2023). Trattato di Medicina e Infermieristica- Un approccio di cure integrate. II Ed. Napoli: Casa Editrice",
-       "autori": null,
-       "editore": null,
-       "anno": 2023,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17451/2011/9999?coorte=2025)",
-       "citazione": "Saiani L., Brugnolli A. (2021). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi (cap. 8, cap. 16, cap. 26, cap. 27, cap. 28 e cap. 29). Brugnolli, A. & Saiani L., (2023). Trattato di Medicina e Infermieristica- Un approccio di cure integrate. II Ed. Napoli: Casa Editrice Idelson-Gnocchi (cap. 3, cap. 9 e cap. 11)."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://uniud.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1634365-mm1511",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "MM1510",
-     "nome": "Tirocinio II",
+     "codice": "MM0321",
+     "nome": "Applicazione Percorsi Terapeutici",
      "anno": 2,
      "periodo": "annuale",
      "periodo_inizio": "14/09/2026 00:00:00",
      "periodo_fine": "31/05/2027 00:00:00",
-     "cfu": 20,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17450/2011/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://uniud.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1634365-mm1510",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "MM0321",
-     "nome": "Applicazione Percorsi Terapeutici",
-     "anno": 2,
-     "periodo": "1",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "20/12/2024 00:00:00",
      "cfu": 4,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/15063/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/15063/2011/9999?coorte=2025",
      "libri": [
       {
        "titolo": "Taglialatela, Conforti, Cuzzolin, Leone, Mattioli, Moretti, Pignataro, Vanzetta. (2021). Farmacologia per le lauree triennali e magistrali. III Ed. Napoli: Sorbona - Idelson-Gnocchi.",
@@ -46990,15 +46935,15 @@
      "codice": "MM1732",
      "nome": "Infermieristica Clinica in Area Chirurgica",
      "anno": 2,
-     "periodo": "1",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "20/12/2024 00:00:00",
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 7,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/18003/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/18003/2011/9999?coorte=2025",
      "libri": [
       {
        "titolo": "Alberto Albertazzi, Massimo Porena. Malattie del rene, delle vie urinarie e dell'apparato genitale. 21 luglio 2017, edizione 2°, Editore Piccin-Nuova Libraria (italiano)",
@@ -47129,18 +47074,76 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "MM1508",
+     "nome": "Infermieristica Clinica in Area Chirurgica Specialistica",
+     "anno": 2,
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
+     "cfu": 4,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025",
+     "libri": [
+      {
+       "titolo": "Malattie odontostomatologiche",
+       "autori": "Valletta, G., Matarasso, S., Mignogna, M.D.",
+       "editore": "Piccin",
+       "anno": 2004,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025)",
+       "citazione": "Valletta, G., Matarasso, S., Mignogna, M.D. (2004). Malattie odontostomatologiche. Padova: Piccin."
+      },
+      {
+       "titolo": "Trattato di cure infermieristiche",
+       "autori": "Saiani L., Brugnolli A.",
+       "editore": "Sorbona – Idelson-Gnocchi",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025)",
+       "citazione": "Saiani L., Brugnolli A. (2020). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi"
+      },
+      {
+       "titolo": "Trattato di chirurgia e infermieristica",
+       "autori": "Saiani L., Brugnolli A.",
+       "editore": "Sorbona – Idelson-Gnocchi",
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025)",
+       "citazione": "Saiani L., Brugnolli A. (2023). Trattato di chirurgia e infermieristica. I Ed. Napoli: Sorbona – Idelson-Gnocchi"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1634365-mm1508",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "MM1504",
      "nome": "Infermieristica Clinica in Area Medica",
      "anno": 2,
-     "periodo": "1",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "20/12/2024 00:00:00",
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 8,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17447/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17447/2011/9999?coorte=2025",
      "libri": [
       {
        "titolo": "Dermatologia e venereologia. Testo atlante; Editore: Idelson-Gnocchi; Data di pubblicazione: 28 aprile 2022",
@@ -47250,15 +47253,15 @@
      "codice": "MM1506",
      "nome": "Infermieristica Clinica in Area Oncologica",
      "anno": 2,
-     "periodo": "1",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "20/12/2024 00:00:00",
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 4,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17448/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17448/2011/9999?coorte=2025",
      "libri": [
       {
        "titolo": "ISBN: 9788855320948 Titolo: Manuale di oncologia medica Autori: COMU (Collegio degli Oncologi Medici Italiani) - A cura di Massimo Aglietta",
@@ -47377,76 +47380,18 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "MM1508",
-     "nome": "Infermieristica Clinica in Area Chirurgica Specialistica",
-     "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "23/04/2025 00:00:00",
-     "periodo_fine": "30/05/2025 00:00:00",
-     "cfu": 4,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17449/2011/9999?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Malattie odontostomatologiche",
-       "autori": "Valletta, G., Matarasso, S., Mignogna, M.D.",
-       "editore": "Piccin",
-       "anno": 2004,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025)",
-       "citazione": "Valletta, G., Matarasso, S., Mignogna, M.D. (2004). Malattie odontostomatologiche. Padova: Piccin."
-      },
-      {
-       "titolo": "Trattato di cure infermieristiche",
-       "autori": "Saiani L., Brugnolli A.",
-       "editore": "Sorbona – Idelson-Gnocchi",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025)",
-       "citazione": "Saiani L., Brugnolli A. (2020). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi"
-      },
-      {
-       "titolo": "Trattato di chirurgia e infermieristica",
-       "autori": "Saiani L., Brugnolli A.",
-       "editore": "Sorbona – Idelson-Gnocchi",
-       "anno": 2023,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17449/2011/9999?coorte=2025)",
-       "citazione": "Saiani L., Brugnolli A. (2023). Trattato di chirurgia e infermieristica. I Ed. Napoli: Sorbona – Idelson-Gnocchi"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://uniud.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1634365-mm1508",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "MM1309",
      "nome": "Infermieristica Clinica nella Cronicita' e Disabilita'",
      "anno": 2,
-     "periodo": "2",
-     "periodo_inizio": "23/04/2025 00:00:00",
-     "periodo_fine": "30/05/2025 00:00:00",
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 6,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17445/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17445/2011/9999?coorte=2025",
      "libri": [
       {
        "titolo": " Senin, U. (2011). Paziente anziano, paziente geriatrico, medicina delle complessità. Fondamenti di Gerontologia e Geriatria. Napoli: EdiSES.",
@@ -47565,6 +47510,61 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "MM1511",
+     "nome": "Laboratori II",
+     "anno": 2,
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
+     "cfu": 1,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17451/2011/9999?coorte=2025",
+     "libri": [
+      {
+       "titolo": "Saiani L., Brugnolli A. (2021). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi (cap. 8, cap. 16, cap. 26, cap. 27, cap. 28 e cap. 29). Brugnolli, A. & Saiani L., (2023). Trattato di Medicina e Infermieristica- Un approccio di cure integrate. II Ed. Napoli: Casa Editrice",
+       "autori": null,
+       "editore": null,
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17451/2011/9999?coorte=2025)",
+       "citazione": "Saiani L., Brugnolli A. (2021). Trattato di cure infermieristiche. III Ed. Napoli: Sorbona – Idelson-Gnocchi (cap. 8, cap. 16, cap. 26, cap. 27, cap. 28 e cap. 29). Brugnolli, A. & Saiani L., (2023). Trattato di Medicina e Infermieristica- Un approccio di cure integrate. II Ed. Napoli: Casa Editrice Idelson-Gnocchi (cap. 3, cap. 9 e cap. 11)."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1634365-mm1511",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "MM1510",
+     "nome": "Tirocinio II",
+     "anno": 2,
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
+     "cfu": 20,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17450/2011/9999?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1634365-mm1510",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "MM0118",
      "nome": "Prova Finale",
      "anno": 3,
@@ -47573,10 +47573,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/15105/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/15105/2011/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -47586,18 +47586,39 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "MM1517",
+     "nome": "Laboratori III",
+     "anno": 3,
+     "periodo": "annuale",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "01/06/2027 00:00:00",
+     "cfu": 1,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17953/2011/9999?coorte=2024",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uniud.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-17",
+     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1634365-mm1517",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "MM1680",
      "nome": "Gestione del Rischio Clinico e Tutela del Paziente",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "07/03/2025 00:00:00",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "12/03/2027 00:00:00",
      "cfu": 11,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/18002/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/18002/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Statistica per le professioni sanitarie",
@@ -47852,14 +47873,14 @@
      "nome": "Infermieristica Clinica in Area Materno-infantile",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "07/03/2025 00:00:00",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "12/03/2027 00:00:00",
      "cfu": 4,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17999/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17999/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Badon P. Cesaro S. Assistenza infermieristica in Pediatria. Ed. Ambrosiana 2a ed 2015",
@@ -48006,14 +48027,14 @@
      "nome": "Infermieristica Clinica in Urgenza/emergenza",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "07/03/2025 00:00:00",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "12/03/2027 00:00:00",
      "cfu": 6,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17998/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17998/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "Chirurgica per le professioni sanitarie",
@@ -48124,14 +48145,14 @@
      "nome": "Infermieristica nella Comunita'",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "07/03/2025 00:00:00",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "12/03/2027 00:00:00",
      "cfu": 5,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/18000/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/18000/2011/9999?coorte=2024",
      "libri": [
       {
        "titolo": "L’infermiere di Comunità. Dalla teoria alla prassi",
@@ -48274,39 +48295,18 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "MM1517",
-     "nome": "Laboratori III",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "07/03/2025 00:00:00",
-     "cfu": 1,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17953/2011/9999?coorte=2024",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://uniud.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-17",
-     "id": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1634365-mm1517",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "MM1488",
      "nome": "A Scelta Dello Studente",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "07/03/2025 00:00:00",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "12/03/2027 00:00:00",
      "cfu": 6,
      "ssd": null,
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17662/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17662/2011/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -48320,14 +48320,14 @@
      "nome": "Seminari",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "16/09/2024 00:00:00",
-     "periodo_fine": "07/03/2025 00:00:00",
+     "periodo_inizio": "14/09/2026 00:00:00",
+     "periodo_fine": "12/03/2027 00:00:00",
      "cfu": 3,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/18001/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/18001/2011/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -48345,10 +48345,10 @@
      "periodo_fine": "12/03/2027 00:00:00",
      "cfu": 24,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2024/17952/2011/9999?coorte=2024",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/17952/2011/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -52398,7 +52398,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea/informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A_INGL_B1",
@@ -54885,7 +54885,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/ingegneria-civile-e-ambientale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DEB_MAT",
@@ -56527,7 +56527,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/ingegneria-elettronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DEB_MAT",
@@ -58265,7 +58265,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DEB_MAT",
@@ -59720,7 +59720,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/ingegneria-industriale-sostenibilita-ambientale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DEB_MAT",
@@ -61277,7 +61277,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/ingegneria-industriale-per-energia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "IN1511",
@@ -62824,7 +62824,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/ingegneria-meccanica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DEB_MAT",
@@ -64167,7 +64167,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea/internet-of-things-big-data-machine-learning",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "A_INGL_B1",
@@ -66709,7 +66709,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea/lettere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LE1572",
@@ -87333,7 +87333,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea/lingue-e-letterature-straniere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "T_INGR",
@@ -103148,7 +103148,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/management-business-analytics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "EC0643",
@@ -104114,7 +104114,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea/matematica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MA0015",
@@ -105472,7 +105472,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea/mediazione-culturale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "T_INGR",
@@ -123265,7 +123265,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi-studenti-iscritti/area-medica/laurea/ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MM1779",
@@ -126413,7 +126413,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea/relazioni-pubbliche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LI0510",
@@ -129732,7 +129732,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea/scienza-cultura-cibo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "AG0113",
@@ -131470,7 +131470,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea/scienze-agrarie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "AG1765",
@@ -132995,7 +132995,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/scienze-dellarchitettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "DEB_MAT",
@@ -136264,7 +136264,7 @@
    "url": "http://www.uniud.it/it/scienze-educazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "T_INGR",
@@ -139946,7 +139946,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea/scienze-tecniche-turismo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "T_INGR",
@@ -144925,7 +144925,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea/scienze-e-tecnologie-alimentari",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "AG0113",
@@ -146986,7 +146986,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea/scienze-motorie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MM2700",
@@ -148671,7 +148671,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea/scienze-per-lambiente-e-la-natura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "AG0113",
@@ -151131,7 +151131,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea/tecnologie-digitali-e-comunicazione-per-le-industrie-creative/corso/tecnologie-digitali-e-comunicazione-per-le-industrie-creative",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MA0919",
@@ -157742,7 +157742,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea/viticoltura-ed-enologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "AG0113",
@@ -159816,7 +159816,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea-magistrale/archeologia-culture-antichita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LE1226",
@@ -164890,7 +164890,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea-magistrale/architettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "IN1360",
@@ -166504,7 +166504,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea-magistrale/artificial-intelligence-cybersecurity",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MA0637",
@@ -167908,7 +167908,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea-magistrale/banca-finanza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "EC0414",
@@ -169218,7 +169218,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/biotecnologie/laurea-magistrale/biotecnologie-molecolari",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "AG1130",
@@ -169812,7 +169812,7 @@
    "url": "http://www.uniud.it/it/cittadinanza-istituzioni-politiche-europee",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "GI0483",
@@ -171611,7 +171611,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea-magistrale/comunicazione-integrata-per-le-imprese-e-le-organizzazioni",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LI0887",
@@ -173626,7 +173626,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea-magistrale/comunicazione-multimediale-e-tecnologie-dellinformazione/corso/comunicazione-multimediale-e-tecnologie-dellinformazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MA0966",
@@ -175038,7 +175038,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/scienze-giuridiche/laurea-magistrale/diritto-innovazione-imprese-pub-amm/corso/diritto-innovazione-imprese-pubbliche-amministrazioni",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "GI0081",
@@ -177008,7 +177008,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea-magistrale/economia-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "EC0343",
@@ -178890,7 +178890,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea-magistrale/economics-scienze-economiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "EC0301",
@@ -179780,7 +179780,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea-magistrale/gestione-turismo-culturale-eventi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LE0898",
@@ -181433,7 +181433,7 @@
    "url": "http://www.uniud.it/it/industrial-engineering-sustainable-manufacturing",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "IN1666",
@@ -182199,7 +182199,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea-magistrale/informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MA0398",
@@ -184337,7 +184337,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea-magistrale/ingegneria-per-lambiente-il-territorio-e-la-protezione-civile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "IN1360",
@@ -185692,7 +185692,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea-magistrale/ingegneria-civile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "IN1360",
@@ -187304,7 +187304,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea-magistrale/ingegneria-elettronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "IN1360",
@@ -191521,7 +191521,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea-magistrale/ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "IN1360",
@@ -194389,7 +194389,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea-magistrale/ingegneria-meccanica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "IN1360",
@@ -196193,7 +196193,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea-magistrale/international-marketing-management-organization",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "EC0286",
@@ -197441,7 +197441,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea-magistrale/italianistica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LE1226",
@@ -203927,7 +203927,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea-magistrale/lingue-letterature-europee-extraeuropee",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LI1963",
@@ -213828,7 +213828,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/scienze-matematiche-informatiche-multimediali-fisiche/laurea-magistrale/matematica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MA0302",
@@ -215695,10 +215695,10 @@
      "periodo_fine": null,
      "cfu": 30,
      "ssd": null,
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "FINANZA QUANTITATIVA",
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/16834/2025/9999?coorte=2023",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2026/16834/2025/9999?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -215765,7 +215765,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea-magistrale/scienza-ed-economia-del-cibo/corso/scienza-ed-economia-del-cibo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "AG1562",
@@ -216474,7 +216474,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea-magistrale/scienze-patrimonio-audiovisivi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LE1018",
@@ -221314,7 +221314,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea-magistrale/scienze-attivita-motorie-preventive-adattate",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MM0001",
@@ -221899,7 +221899,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea-magistrale/scienze-e-tecnologie-agrarie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "AG1021",
@@ -223081,7 +223081,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea-magistrale/scienze-e-tecnologie-alimentari",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "AG1115",
@@ -224504,7 +224504,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea-magistrale/scienze-tecnologie-sostenibili-ambiente",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "AG1021",
@@ -225722,7 +225722,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi-studenti-iscritti/area-medica/laurea-magistrale/scienze-infermieristiche-ostetriche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MM2587",
@@ -227649,7 +227649,7 @@
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [],
-     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2023/21943/2021/9999?coorte=2022",
+     "url": "https://uniud.coursecatalogue.cineca.it/insegnamenti/2025/21943/2021/9999?coorte=2023",
      "libri": [],
      "esami": [],
      "fonte": "https://uniud.coursecatalogue.cineca.it",
@@ -227698,7 +227698,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lettere-beni-culturali/laurea-magistrale/storia-dellarte",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LE0964",
@@ -231924,7 +231924,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/laurea-magistrale/traduzione-mediazione-culturale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LI0611",
@@ -247034,7 +247034,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/agraria/laurea-magistrale/tutela-benessere-animale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "VE0002",
@@ -247906,7 +247906,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/scienze-giuridiche/magistrale-ciclo-unico/giurisprudenza/corso/giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "GI0065",
@@ -249985,7 +249985,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-medica/laurea-magistrale-ciclo-unico/medicina-e-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "MM2278",
@@ -251759,7 +251759,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-umanistica-formazione/lingue-comunicazione-formazione/magistrale-ciclo-unico/scienze-formazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "SF0316",
@@ -255799,7 +255799,7 @@
    "url": "https://www.uniud.it/it/didattica/corsi/area-scientifica/ingegneria-architettura/laurea/tecniche-edilizia-territorio-lp",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "IN1583",

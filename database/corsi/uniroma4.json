@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "uniroma4",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.uniroma4.it/index.php/corsi/laurea-in-scienze-motorie-e-sportive-classe-l22/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "L22R-45",
@@ -1880,10 +1880,10 @@
      "periodo_fine": null,
      "cfu": 6,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "GESTIONE E ORGANIZZAZIONE DELLO SPORT DI ALTO LIVELLO",
      "docenti": [],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/6381/2014/2?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/6381/2014/2?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniroma4.coursecatalogue.cineca.it",
@@ -1902,10 +1902,10 @@
      "periodo_fine": null,
      "cfu": 3,
      "ssd": "PROFIN_S",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "SCIENZE MOTORIE E SPORTIVE",
      "docenti": [],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/5686/2014/1?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/5686/2014/1?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniroma4.coursecatalogue.cineca.it",
@@ -1924,10 +1924,10 @@
      "periodo_fine": null,
      "cfu": 5,
      "ssd": "NN",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "SCIENZE MOTORIE E SPORTIVE",
      "docenti": [],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/5685/2014/1?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/5685/2014/1?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniroma4.coursecatalogue.cineca.it",
@@ -1942,17 +1942,17 @@
      "nome": "Fondamenti di Marketing Sportivo",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/01/2027 00:00:00",
      "cfu": 4,
      "ssd": "SECS-P/08",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "GESTIONE E ORGANIZZAZIONE DELLO SPORT DI ALTO LIVELLO",
      "docenti": [
       "Mura Rita",
       "Vicentini Francesca"
      ],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/6541/2014/2?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/6541/2014/2?coorte=2024",
      "libri": [
       {
        "titolo": "Fondamenti di marketing (Create Edition)",
@@ -1992,16 +1992,16 @@
      "nome": "Lingua Straniera: Inglese",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/01/2027 00:00:00",
      "cfu": 4,
      "ssd": "L-LIN/12",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "GESTIONE E ORGANIZZAZIONE DELLO SPORT DI ALTO LIVELLO",
      "docenti": [
       "Fazio Alessandra"
      ],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/6378/2014/2?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/6378/2014/2?coorte=2024",
      "libri": [
       {
        "titolo": "Open Mind series (A2 and B1), Macmillan Publishers Limited, 2016.",
@@ -2029,18 +2029,18 @@
      "nome": "Teoria e Metodologia Dell'allenamento e Qualita' degli Impianti Sportivi",
      "anno": 3,
      "periodo": "1",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/01/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/01/2027 00:00:00",
      "cfu": 7,
-     "ssd": "M-EDF/02, ICAR/10",
-     "obbligatorio": false,
+     "ssd": "ICAR/10, M-EDF/02",
+     "obbligatorio": true,
      "curriculum": "SCIENZE MOTORIE E SPORTIVE",
      "docenti": [
-      "Colombo Chiara",
       "Conte Daniele",
-      "Di Cagno Alessandra"
+      "Di Cagno Alessandra",
+      "Colombo Chiara"
      ],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/5680/2014/1?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/5680/2014/1?coorte=2024",
      "libri": [
       {
        "titolo": "Manuale di condizionamento fisico e di allenamento della forza",
@@ -2058,7 +2058,7 @@
      "esami": [],
      "fonte": "https://uniroma4.coursecatalogue.cineca.it",
      "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
+     "stato_libri": "completo",
      "modalita_esame": "scritto e orale congiunti",
      "id": "uniroma4-l-22-corso-di-laurea-in-scienze-motorie-e-sportive-l22-12",
      "stato_esami": "da_aggiungere"
@@ -2068,16 +2068,16 @@
      "nome": "Informatica",
      "anno": 3,
      "periodo": "2",
-     "periodo_inizio": "01/03/2025 00:00:00",
-     "periodo_fine": "31/05/2025 00:00:00",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 4,
      "ssd": "INF/01",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "GESTIONE E ORGANIZZAZIONE DELLO SPORT DI ALTO LIVELLO",
      "docenti": [
       "Mari Federico"
      ],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/6379/2014/2?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/6379/2014/2?coorte=2024",
      "libri": [
       {
        "titolo": "Statistica di base. Idee & strumenti",
@@ -2141,34 +2141,34 @@
      "nome": "Attivita' Motoria Preventiva e Adattata",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/05/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 8,
      "ssd": "M-EDF/01",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "SCIENZE MOTORIE E SPORTIVE",
      "docenti": [
-      "Abete Marika",
       "Cerulli Claudia",
+      "Grazioli Elisa",
+      "Parisi Attilio",
+      "Scotto Di Palumbo Alessandro",
+      "Abete Marika",
       "Del Mese Claudia",
       "Frediani Chiara",
       "Giorgi Silvia",
-      "Grazioli Elisa",
       "Macone Damiano",
       "Marcotulli Laura",
       "Melis Alessio",
       "Palumbo Alessandra",
-      "Parisi Attilio",
       "Pascale Andrea",
       "Pepe Erika",
       "Sacchetti Massimo",
       "Saliola Margherita",
-      "Scotto Di Palumbo Alessandro",
       "Todini Erica",
       "Usberghi Martina",
       "Vallese Cristina"
      ],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/5676/2014/1?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/5676/2014/1?coorte=2024",
      "libri": [
       {
        "titolo": "Buono P: Attività Fisica per la Salute Terza Edizione Idelson - Gnocchi Editore, 2021.",
@@ -2208,11 +2208,11 @@
      "nome": "Biomeccanica e Traumatologia Dell'attivita' Motoria",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/05/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 10,
      "ssd": "ING-INF/06, MED/33",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "SCIENZE MOTORIE E SPORTIVE",
      "docenti": [
       "Belluscio Valeria",
@@ -2221,7 +2221,7 @@
       "Vannozzi Giuseppe",
       "Vasta Sebastiano"
      ],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/6291/2014/1?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/6291/2014/1?coorte=2024",
      "libri": [
       {
        "titolo": "Joint Structure and Function: A Comprehensive Analysis",
@@ -2261,17 +2261,17 @@
      "nome": "Biomeccanica e Traumatologia Dello Sport",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/05/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 10,
      "ssd": "ING-INF/06, MED/33",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "GESTIONE E ORGANIZZAZIONE DELLO SPORT DI ALTO LIVELLO",
      "docenti": [
       "Camomilla Valentina",
       "Margheritini Fabrizio"
      ],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/6375/2014/2?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/6375/2014/2?coorte=2024",
      "libri": [
       {
        "titolo": "F. Margheritini, R. Rossi. -Springer.",
@@ -2299,22 +2299,23 @@
      "nome": "Didattica e Pedagogia Speciale e Psicologia Dello Sviluppo e Dell'educazione",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/05/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 9,
      "ssd": "M-PED/03, M-PSI/04",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "SCIENZE MOTORIE E SPORTIVE",
      "docenti": [
       "Brancucci Alfredo",
-      "Cioni Lorenzo",
       "Galli Federica",
-      "Magnanini Angela",
       "Mallia Luca",
+      "Piccioli Marianna",
+      "Cioni Lorenzo",
+      "Magnanini Angela",
       "Pannone Chiara",
       "Sanchez Utge' Marta"
      ],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/6264/2014/1?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/6264/2014/1?coorte=2024",
      "libri": [
       {
        "titolo": "Altri corpi. Visioni e rappresentazioni della (e incursioni sulla) disabilità e diversità (Vol. 10)",
@@ -2438,17 +2439,17 @@
      "nome": "Economia e Fondamenti di Strategia delle Organizzazioni Sportive",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/05/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 13,
      "ssd": "M-EDF/01, SECS-P/07",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "GESTIONE E ORGANIZZAZIONE DELLO SPORT DI ALTO LIVELLO",
      "docenti": [
       "Buscarini Cristiana",
       "Moraglia Daniele"
      ],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/6542/2014/2?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/6542/2014/2?coorte=2024",
      "libri": [],
      "esami": [],
      "fonte": "https://uniroma4.coursecatalogue.cineca.it",
@@ -2463,27 +2464,28 @@
      "nome": "Endocrinologia e Medicina Dello Sport",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/05/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 12,
      "ssd": "MED/09, MED/13, BIO/14",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "SCIENZE MOTORIE E SPORTIVE",
      "docenti": [
       "Antinozzi Cristina",
-      "Calo' Leonardo",
       "D'amico Alessandra",
       "Di Luigi Luigi",
       "Fossati Chiara",
       "Francomano Davide",
       "Gabrielli Armando",
+      "Parisi Attilio",
+      "Segreti Andrea",
+      "Sgro' Paolo Giuseppe Maria",
+      "Calo' Leonardo",
       "Mannacio Elena",
       "Mastroluca Erminio",
-      "Parisi Attilio",
-      "Quaranta Federico",
-      "Sgro' Paolo Giuseppe Maria"
+      "Quaranta Federico"
      ],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/6292/2014/1?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/6292/2014/1?coorte=2024",
      "libri": [
       {
        "titolo": "International Federation of Sports Medicine, Team Physician Manual, Elsevier 2025",
@@ -2655,26 +2657,29 @@
      "nome": "Sport Natatori e Prevenzione Negli Impianti Sportivi",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/05/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 12,
      "ssd": "M-EDF/02, MED/42",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "SCIENZE MOTORIE E SPORTIVE",
      "docenti": [
+      "Demarie Sabrina",
+      "Giampaoli Saverio",
+      "Gianfranceschi Gianluca",
+      "Romano Spica Vincenzo",
+      "Scotto Di Palumbo Alessandro",
+      "Ubaldi Francesca",
+      "Valeriani Federica",
       "Aghilarre Roberto",
       "Bratta Cecilia",
       "Castiglione Matteo",
       "De Renzis Laura",
-      "Demarie Sabrina",
-      "Giampaoli Saverio",
       "Leggiero Letizia",
       "Lofrano Giusy",
-      "Robert Pietro",
-      "Romano Spica Vincenzo",
-      "Valeriani Federica"
+      "Robert Pietro"
      ],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/5678/2014/1?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/5678/2014/1?coorte=2024",
      "libri": [
       {
        "titolo": "Danilo Selvaggini. Insegniamo a nuotare; CALZETTI & MARIUCCI, ISBN: 9788860286154; Dispense Federali; Slides delle lezioni",
@@ -2714,17 +2719,17 @@
      "nome": "Test e Misurazioni Nello Sport",
      "anno": 3,
      "periodo": "annuale",
-     "periodo_inizio": "01/10/2024 00:00:00",
-     "periodo_fine": "31/05/2025 00:00:00",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "31/05/2027 00:00:00",
      "cfu": 12,
      "ssd": "M-EDF/01, M-EDF/02",
-     "obbligatorio": false,
+     "obbligatorio": true,
      "curriculum": "GESTIONE E ORGANIZZAZIONE DELLO SPORT DI ALTO LIVELLO",
      "docenti": [
-      "Capranica Laura",
-      "Crescioli Clara"
+      "Crescioli Clara",
+      "Capranica Laura"
      ],
-     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2024/6376/2014/2?coorte=2024",
+     "url": "https://uniroma4.coursecatalogue.cineca.it/insegnamenti/2026/6376/2014/2?coorte=2024",
      "libri": [
       {
        "titolo": "Thomas J.R., Nelson J.K., Silverman S.S., Metodologia della ricerca per le scienze motorie e sportive, Calzetti&Mariucci, 2012",
@@ -5663,7 +5668,7 @@
    "url": "https://www.uniroma4.it/index.php/corsi/laurea-magistrale-in-attivita-motorie-preventive-e-adattate-classe-lm67/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LM67R-07",
@@ -13672,7 +13677,7 @@
    "url": "https://www.uniroma4.it/index.php/corsi/laurea-magistrale-in-attivita-fisica-e-salute-classe-lm67int/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LM67I-R-01",
@@ -14132,7 +14137,7 @@
    "url": "https://www.uniroma4.it/index.php/corsi/laurea-magistrale-in-management-dello-sport-classe-lm47/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LM47R-01",
@@ -15106,7 +15111,7 @@
    "url": "https://www.uniroma4.it/index.php/corsi/laurea-magistrale-in-scienza-e-tecnica-dello-sport-classe-lm68/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": "LM68R-02",

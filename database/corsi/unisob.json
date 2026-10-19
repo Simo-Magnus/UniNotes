@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unisob",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-17",
+ "aggiornato_il": "2026-10-19",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unisob.na.it/ateneo/economia/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -3212,7 +3212,7 @@
    "url": "https://www.unisob.na.it/universita/facolta/lettere/lingue/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -7953,8 +7953,125 @@
    "url": "https://www.unisob.na.it/universita/facolta/lettere/beniculturali/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
+    {
+     "codice": null,
+     "nome": "Laboratorio di Restauro dei metalli",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "ICAR/19",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Daria Catello"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=20488",
+     "libri": [
+      {
+       "titolo": "D. Catello, Il restauro delle opere in argento, Giannini, Napoli 2007",
+       "autori": null,
+       "editore": null,
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "D. Catello, Il restauro delle opere in argento, Giannini, Napoli 2007"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-laboratorio-di-restauro-dei-metalli",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Metodologia della ricerca archeologica",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 12,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Carla Pepe"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=20357",
+     "libri": [
+      {
+       "titolo": "C. Renfrew, P. Bahn, E. DeMarrais, L'essenziale di archeologia. Teoria, metodi, pratica, Zanichelli, Bologna 2024.",
+       "autori": null,
+       "editore": "Zanichelli",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "C. Renfrew, P. Bahn, E. DeMarrais, L'essenziale di archeologia. Teoria, metodi, pratica, Zanichelli, Bologna 2024."
+      },
+      {
+       "titolo": "Storie dalla terra. Manuale di scavo archeologico",
+       "autori": "A. Carandini",
+       "editore": "Einaudi",
+       "anno": 2010,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A. Carandini, Storie dalla terra. Manuale di scavo archeologico, Einaudi, Torino 2010."
+      },
+      {
+       "titolo": "Il sito archeologico: fra ricerca e valorizzazione",
+       "autori": "D. Manacorda",
+       "editore": "Carocci",
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "D. Manacorda, Il sito archeologico: fra ricerca e valorizzazione, Carocci, Roma 2007."
+      },
+      {
+       "titolo": "Alcune voci a scelta dal dizionario di: R. Francovich, D. Manacorda (a cura di), Dizionario di archeologia. Temi, concetti e metodi. Laterza, Roma-Bari 2000 (2017).",
+       "autori": null,
+       "editore": "concetti e metodi. Laterza",
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Alcune voci a scelta dal dizionario di: R. Francovich, D. Manacorda (a cura di), Dizionario di archeologia. Temi, concetti e metodi. Laterza, Roma-Bari 2000 (2017)."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "10:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Carla Pepe",
+       "note": "Sessione straordinaria",
+       "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/esami.asp"
+      }
+     ],
+     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-metodologia-della-ricerca-archeologica"
+    },
     {
      "codice": null,
      "nome": "OFA - Lingua italiana e logica verbale",
@@ -8423,6 +8540,28 @@
     },
     {
      "codice": null,
+     "nome": "Laboratorio di Tecniche fotografiche applicate ai Beni Culturali",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": 3,
+     "ssd": "ICAR/19",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Marco Casciello"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=20258",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-laboratorio-di-tecniche-fotografiche-app",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
+    },
+    {
+     "codice": null,
      "nome": "Retorica e storytelling per i Beni Culturali",
      "anno": 1,
      "periodo": "1",
@@ -8563,6 +8702,54 @@
      "stato_libri": "completo",
      "stato_esami": "completo",
      "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-storia-greca",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
+    },
+    {
+     "codice": null,
+     "nome": "Storia medievale",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Giuseppe Perta"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=21482",
+     "libri": [
+      {
+       "titolo": "Parte generale: A. MUSARRA, P. SILANOS (a cura di), Storia del Mediterraneo medievale. Tempi, spazi, interazioni, Bologna, Il Mulino, 2025.Parte speciale: F. DELLE DONNE, Federico II e la crociata della pace, Roma, Carocci, 2022",
+       "autori": null,
+       "editore": "Il Mulino",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Parte generale: A. MUSARRA, P. SILANOS (a cura di), Storia del Mediterraneo medievale. Tempi, spazi, interazioni, Bologna, Il Mulino, 2025.Parte speciale: F. DELLE DONNE, Federico II e la crociata della pace, Roma, Carocci, 2022"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Andrea Cammarano",
+       "note": "Sessione straordinaria",
+       "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/esami.asp"
+      }
+     ],
+     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-storia-medievale",
      "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
     },
     {
@@ -8963,6 +9150,53 @@
     },
     {
      "codice": null,
+     "nome": "Interpretazione del patrimonio culturale",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Alessandra Drioli"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=21475",
+     "libri": [
+      {
+       "titolo": "Liguori Editore, 2025",
+       "autori": null,
+       "editore": "Liguori Editore",
+       "anno": 2025,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Liguori Editore, 2025"
+      },
+      {
+       "titolo": "Nicolette Mandarano, Il digitale per i musei. Comunicazione, fruizione, valorizzazione, Carocci, 2024",
+       "autori": null,
+       "editore": "Carocci",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Nicolette Mandarano, Il digitale per i musei. Comunicazione, fruizione, valorizzazione, Carocci, 2024"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-interpretazione-del-patrimonio-culturale",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
+    },
+    {
+     "codice": null,
      "nome": "Laboratorio di Diagnostica e conservazione del libro e del manoscritto",
      "anno": 1,
      "periodo": "2",
@@ -8985,6 +9219,26 @@
     },
     {
      "codice": null,
+     "nome": "Laboratorio di Materiali lapidei e affreschi",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": 3,
+     "ssd": "ICAR/19",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=19833",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-laboratorio-di-materiali-lapidei-e-affre",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
+    },
+    {
+     "codice": null,
      "nome": "Laboratorio di Restauro dei dipinti su tela",
      "anno": 1,
      "periodo": "2",
@@ -9001,6 +9255,54 @@
      "stato_libri": "da_aggiungere",
      "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-laboratorio-di-restauro-dei-dipinti-su-t",
      "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
+    },
+    {
+     "codice": null,
+     "nome": "Legislazione europea dei Beni Culturali",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "IUS/14",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Gaspare Fiengo"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=20094",
+     "libri": [
+      {
+       "titolo": "G. TESAURO, Manuale di diritto dell’Unione europea, Editoriale scientifica, Napoli, 2021, Introduzione e capp. I-II-III-IV-V-VI.",
+       "autori": null,
+       "editore": null,
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "G. TESAURO, Manuale di diritto dell’Unione europea, Editoriale scientifica, Napoli, 2021, Introduzione e capp. I-II-III-IV-V-VI."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Gaspare Fiengo, Benedetta Minucci",
+       "note": "Sessione straordinaria",
+       "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/esami.asp"
+      }
+     ],
+     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-legislazione-europea-dei-beni-culturali",
      "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
     },
     {
@@ -9419,6 +9721,138 @@
      "stato_libri": "completo",
      "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-restauro-dei-dipinti-su-tavola-e-delle-s",
      "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
+    },
+    {
+     "codice": null,
+     "nome": "Storia dell'arte medievale",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Stefano De Mieri"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=20647",
+     "libri": [
+      {
+       "titolo": "Gotico Internazionale alla Maniera Moderna, pp. 2-45, Milano, Bompiani (1991 e ristampe successive)",
+       "autori": null,
+       "editore": "Bompiani (1991 e ristampe successive)",
+       "anno": 1991,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Gotico Internazionale alla Maniera Moderna, pp. 2-45, Milano, Bompiani (1991 e ristampe successive)"
+      },
+      {
+       "titolo": "Claudio Franzoni, Arte. Una storia naturale e civile, vol. 2, Dall'Alto Medioevo alla fine del Trecento, Einaudi Scuola, 2019 o edizioni successive.",
+       "autori": null,
+       "editore": "Einaudi Scuola",
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Claudio Franzoni, Arte. Una storia naturale e civile, vol. 2, Dall'Alto Medioevo alla fine del Trecento, Einaudi Scuola, 2019 o edizioni successive."
+      },
+      {
+       "titolo": "Ferdinando Bologna, La pittura italiana delle origini, Roma, Editori riuniti, 1962",
+       "autori": null,
+       "editore": null,
+       "anno": 1962,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Ferdinando Bologna, La pittura italiana delle origini, Roma, Editori riuniti, 1962"
+      },
+      {
+       "titolo": "Ferdinando Bologna, Momenti della cultura figurativa nella Campania Medievale, in Storia e civiltà della Campania, Il Medioevo, a cura di Giovanni Pugliese Carratelli, Napoli, Electa Napoli, 1992, pp. 171-275",
+       "autori": null,
+       "editore": null,
+       "anno": 1992,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Ferdinando Bologna, Momenti della cultura figurativa nella Campania Medievale, in Storia e civiltà della Campania, Il Medioevo, a cura di Giovanni Pugliese Carratelli, Napoli, Electa Napoli, 1992, pp. 171-275"
+      },
+      {
+       "titolo": "Enrico Castelnuovo, Arte delle città, arte delle corti tra XII e XIV secolo, Torino, Einaudi, 2009",
+       "autori": null,
+       "editore": "Einaudi",
+       "anno": 2009,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Enrico Castelnuovo, Arte delle città, arte delle corti tra XII e XIV secolo, Torino, Einaudi, 2009"
+      },
+      {
+       "titolo": "Alessio Monciatti, L'arte nel Duecento, Torino, Einaudi, 2013",
+       "autori": null,
+       "editore": "Einaudi",
+       "anno": 2013,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Alessio Monciatti, L'arte nel Duecento, Torino, Einaudi, 2013"
+      },
+      {
+       "titolo": "Michele Tomasi, L'arte del Trecento in Europa, Torino, Einaudi, 2012.",
+       "autori": null,
+       "editore": "Einaudi",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Michele Tomasi, L'arte del Trecento in Europa, Torino, Einaudi, 2012."
+      },
+      {
+       "titolo": "Lezioni frontali, seminari, visite di studio presso monumenti e musei.",
+       "autori": null,
+       "editore": "visite di studio presso monumenti e musei",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Lezioni frontali, seminari, visite di studio presso monumenti e musei."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Stefano De Mieri",
+       "note": "Sessione straordinaria",
+       "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/esami.asp"
+      }
+     ],
+     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-storia-dell-arte-medievale",
      "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
     },
     {
@@ -10524,6 +10958,89 @@
     },
     {
      "codice": null,
+     "nome": "Teorie e tecniche dei media",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 9,
+     "ssd": "GSPS-06/A",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Arturo Lando"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=21484",
+     "libri": [
+      {
+       "titolo": "Le teorie delle comunicazioni di massa e la sfida digitale",
+       "autori": "Bentivegna S., Boccia Artieri G",
+       "editore": "Laterza",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Bentivegna S., Boccia Artieri G., \"Le teorie delle comunicazioni di massa e la sfida digitale\", Laterza."
+      },
+      {
+       "titolo": "Il cinema e la 'malattia dei sentimenti'",
+       "autori": "Lando A",
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Lando A., \"Il cinema e la 'malattia dei sentimenti' \", in MHMN, V. 8 N. 1, Aracne Editrice (ATTENZIONE il testo è da scaricare in formato Pdf dall'area docente)."
+      },
+      {
+       "titolo": "Introduzione ai media digitali",
+       "autori": "Arvidsson A., Delfanti A",
+       "editore": "Il Mulino (III edizione",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Arvidsson A., Delfanti A., \"Introduzione ai media digitali\", Il Mulino (III edizione, 2024)."
+      },
+      {
+       "titolo": "The Game",
+       "autori": "Baricco A",
+       "editore": "Einaudi",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Baricco A., \"The Game\", Einaudi."
+      },
+      {
+       "titolo": "ATTENZIONE - Per sostenere l'esame, sia per i frequentanti sia per i non-frequentanti, occorre aver visto i film riportati qui di seguito, film dei quali si vedranno sequenze e si parlerà durante il corso. I film sono:",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "ATTENZIONE - Per sostenere l'esame, sia per i frequentanti sia per i non-frequentanti, occorre aver visto i film riportati qui di seguito, film dei quali si vedranno sequenze e si parlerà durante il corso. I film sono:"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-teorie-e-tecniche-dei-media",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
+    },
+    {
+     "codice": null,
      "nome": "Architettura medievale e territorio",
      "anno": 2,
      "periodo": "2",
@@ -10632,54 +11149,6 @@
     },
     {
      "codice": null,
-     "nome": "Legislazione europea dei Beni Culturali",
-     "anno": 2,
-     "periodo": "2",
-     "cfu": 6,
-     "ssd": "IUS/14",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Gaspare Fiengo"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=20399",
-     "libri": [
-      {
-       "titolo": "G. TESAURO, Manuale di diritto dell’Unione europea, Editoriale scientifica, Napoli, 2021, Introduzione e capp. I-II-III-IV-V-VI.",
-       "autori": null,
-       "editore": null,
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "G. TESAURO, Manuale di diritto dell’Unione europea, Editoriale scientifica, Napoli, 2021, Introduzione e capp. I-II-III-IV-V-VI."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-16",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "Gaspare Fiengo, Benedetta Minucci",
-       "note": "Sessione straordinaria",
-       "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/esami.asp"
-      }
-     ],
-     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "stato_esami": "completo",
-     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-legislazione-europea-dei-beni-culturali",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
-    },
-    {
-     "codice": null,
      "nome": "Management del turismo",
      "anno": 2,
      "periodo": "2",
@@ -10734,6 +11203,86 @@
      "stato_libri": "da_aggiungere",
      "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-manufatti-storico-artistici-dal-reale-al",
      "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
+    },
+    {
+     "codice": null,
+     "nome": "Memoria e territorio",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "SPS/10",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=21478",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-memoria-e-territorio",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
+    },
+    {
+     "codice": null,
+     "nome": "Neuro Humanities",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Stefano Calabrese"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=20018",
+     "libri": [
+      {
+       "titolo": "Eserciziario di Neuronarratologia. Una grammatica della fantasia",
+       "autori": "S. Calabrese, V. Conti",
+       "editore": "Pearson",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "S. Calabrese, V. Conti, Eserciziario di Neuronarratologia. Una grammatica della fantasia, Pearson, 2024."
+      },
+      {
+       "titolo": "La narrazione. Letteratura, storie di vita, visual storytelling",
+       "autori": "S. Calabrese",
+       "editore": "Pearson",
+       "anno": 2024,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "S. Calabrese, La narrazione. Letteratura, storie di vita, visual storytelling, Pearson, 2024 (only chapters 1, 2, 3, 4 e 7)."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-17",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Stefano Calabrese",
+       "note": "Sessione straordinaria",
+       "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/esami.asp"
+      }
+     ],
+     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-neuro-humanities",
      "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
     },
     {
@@ -10794,6 +11343,150 @@
      "stato_libri": "completo",
      "stato_esami": "completo",
      "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-organizzazione-dei-servizi-turistici",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
+    },
+    {
+     "codice": null,
+     "nome": "Storia del Mediterraneo",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Guglielmo De Giovanni Centelles"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=20664",
+     "libri": [
+      {
+       "titolo": "G. de’ Giovanni-Centelles, Studi Mediterranei, Napoli, Edizioni Scientifiche 2021 (in corso di stampa)",
+       "autori": null,
+       "editore": "Edizioni Scientifiche 2021 (in corso di stampa)",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "G. de’ Giovanni-Centelles, Studi Mediterranei, Napoli, Edizioni Scientifiche 2021 (in corso di stampa)"
+      },
+      {
+       "titolo": "F. BRAUDEL, Il Mediterraneo, lo spazio, la storia, gli uomini, le tradizioni, Milano, Bompiani. 2017",
+       "autori": null,
+       "editore": "Bompiani. 2017",
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "F. BRAUDEL, Il Mediterraneo, lo spazio, la storia, gli uomini, le tradizioni, Milano, Bompiani. 2017"
+      },
+      {
+       "titolo": "E.F.M. EMANUELE, G. de’ GIOVANNI-CENTELLES, Arte e cultura nel Mediterraneo del XX secolo, Roma, Fondazione-Roma / Unesco, 2004",
+       "autori": null,
+       "editore": null,
+       "anno": 2004,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "E.F.M. EMANUELE, G. de’ GIOVANNI-CENTELLES, Arte e cultura nel Mediterraneo del XX secolo, Roma, Fondazione-Roma / Unesco, 2004"
+      },
+      {
+       "titolo": "G. de’ GIOVANNI-CENTELLES, Mediterraneo, porta d’Oriente, Roma, Fondazione Roma-Mediterraneo, 2011",
+       "autori": null,
+       "editore": null,
+       "anno": 2011,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "G. de’ GIOVANNI-CENTELLES, Mediterraneo, porta d’Oriente, Roma, Fondazione Roma-Mediterraneo, 2011"
+      },
+      {
+       "titolo": "Approndimenti di carattere generale: • G. CHARPENTIER, F. LEBRUN, Histoire de la Méditerranée, Parigi, Seuil, 1998; • P. POUPARD, Mediterraneo in ascolto, Roma, Città Nuova, 1999; • M. MOLLAT DU JOURDIN, L’Europa e il mare dall’antichità ad oggi, Roma-Bari, Laterza, 2004; • G. E. RUIZ DOMÈNEC, El Me",
+       "autori": null,
+       "editore": "Laterza",
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Approndimenti di carattere generale: • G. CHARPENTIER, F. LEBRUN, Histoire de la Méditerranée, Parigi, Seuil, 1998; • P. POUPARD, Mediterraneo in ascolto, Roma, Città Nuova, 1999; • M. MOLLAT DU JOURDIN, L’Europa e il mare dall’antichità ad oggi, Roma-Bari, Laterza, 2004; • G. E. RUIZ DOMÈNEC, El Mediterráneo, Barcellona, Península, 2004; •E. MIRA, Mediterrànies, Alzira, Bromera, 2014"
+      },
+      {
+       "titolo": "Per l'Età Antica: •S. MOSCATI (a cura di), L'alba della civiltà, 3 voll., Torino, UTET, 1976; • C. BROODBANK, Il Mediterraneo, Torino, Einaudi, 2015",
+       "autori": null,
+       "editore": "UTET",
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Per l'Età Antica: •S. MOSCATI (a cura di), L'alba della civiltà, 3 voll., Torino, UTET, 1976; • C. BROODBANK, Il Mediterraneo, Torino, Einaudi, 2015"
+      },
+      {
+       "titolo": "Per il Medioevo: • G. JEHEL, Il Mediterraneo medievale, dal 359 al 1450, intr. G. de’ GIOVANNI-CENTELLES, Nardò, Besa, 2004",
+       "autori": null,
+       "editore": null,
+       "anno": 2004,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Per il Medioevo: • G. JEHEL, Il Mediterraneo medievale, dal 359 al 1450, intr. G. de’ GIOVANNI-CENTELLES, Nardò, Besa, 2004"
+      },
+      {
+       "titolo": "Per l'Età Moderna: • F. BRAUDEL, Civiltà e imperi del Mediterraneo nell'età di Filippo II, Torino, Einaudi, 2002; • G. de’ GIOVANNI-CENTELLES (a cura di), Mercurino, Carlo V e l’Europa, Gattinara, Città di Gattinara, 2005",
+       "autori": null,
+       "editore": "Einaudi",
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Per l'Età Moderna: • F. BRAUDEL, Civiltà e imperi del Mediterraneo nell'età di Filippo II, Torino, Einaudi, 2002; • G. de’ GIOVANNI-CENTELLES (a cura di), Mercurino, Carlo V e l’Europa, Gattinara, Città di Gattinara, 2005"
+      },
+      {
+       "titolo": "Per l'Età Contemporanea: • G. Spina, Il Mediterraneo delle donne. La principessa Strongoli, il Suor Orsola Benincasa e l’inizio dell’insegnamento della Storia dell’arte, Napoli, Edizioni Suor Orsola, 2015 •E. F. M. EMANUELE - G. de'GIOVANNI-CENTELLES, Mediterraneo di civiltà e di pace, Roma, Fondazi",
+       "autori": null,
+       "editore": "Edizioni Suor Orsola",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Per l'Età Contemporanea: • G. Spina, Il Mediterraneo delle donne. La principessa Strongoli, il Suor Orsola Benincasa e l’inizio dell’insegnamento della Storia dell’arte, Napoli, Edizioni Suor Orsola, 2015 •E. F. M. EMANUELE - G. de'GIOVANNI-CENTELLES, Mediterraneo di civiltà e di pace, Roma, Fondazione Terzo Pilastro, 2021, in corso di stampa"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-16",
+       "ora": "15:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Guglielmo De Giovanni Centelles, Giuseppina Spina",
+       "note": "Sessione straordinaria",
+       "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/esami.asp"
+      }
+     ],
+     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-storia-del-mediterraneo",
      "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
     },
     {
@@ -11415,123 +12108,6 @@
     },
     {
      "codice": null,
-     "nome": "Laboratorio di Restauro dei metalli",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 3,
-     "ssd": "ICAR/19",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Daria Catello"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=20487",
-     "libri": [
-      {
-       "titolo": "D. Catello, Il restauro delle opere in argento, Giannini, Napoli 2007",
-       "autori": null,
-       "editore": null,
-       "anno": 2007,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "D. Catello, Il restauro delle opere in argento, Giannini, Napoli 2007"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-laboratorio-di-restauro-dei-metalli",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Metodologia della ricerca archeologica",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 12,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Carla Pepe"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=20580",
-     "libri": [
-      {
-       "titolo": "C. Renfrew, P. Bahn, E. DeMarrais, L'essenziale di archeologia. Teoria, metodi, pratica, Zanichelli, Bologna 2024.",
-       "autori": null,
-       "editore": "Zanichelli",
-       "anno": 2024,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "C. Renfrew, P. Bahn, E. DeMarrais, L'essenziale di archeologia. Teoria, metodi, pratica, Zanichelli, Bologna 2024."
-      },
-      {
-       "titolo": "Storie dalla terra. Manuale di scavo archeologico",
-       "autori": "A. Carandini",
-       "editore": "Einaudi",
-       "anno": 2010,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "A. Carandini, Storie dalla terra. Manuale di scavo archeologico, Einaudi, Torino 2010."
-      },
-      {
-       "titolo": "Il sito archeologico: fra ricerca e valorizzazione",
-       "autori": "D. Manacorda",
-       "editore": "Carocci",
-       "anno": 2007,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "D. Manacorda, Il sito archeologico: fra ricerca e valorizzazione, Carocci, Roma 2007."
-      },
-      {
-       "titolo": "Alcune voci a scelta dal dizionario di: R. Francovich, D. Manacorda (a cura di), Dizionario di archeologia. Temi, concetti e metodi. Laterza, Roma-Bari 2000 (2017).",
-       "autori": null,
-       "editore": "concetti e metodi. Laterza",
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Alcune voci a scelta dal dizionario di: R. Francovich, D. Manacorda (a cura di), Dizionario di archeologia. Temi, concetti e metodi. Laterza, Roma-Bari 2000 (2017)."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-16",
-       "ora": "10:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "Carla Pepe",
-       "note": "Sessione straordinaria",
-       "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/esami.asp"
-      }
-     ],
-     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "stato_esami": "completo",
-     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-metodologia-della-ricerca-archeologica"
-    },
-    {
-     "codice": null,
      "nome": "Rilievo e rappresentazione digitale per l'analisi dei monumenti antichi",
      "anno": 3,
      "periodo": null,
@@ -11754,28 +12330,6 @@
      "stato_libri": "completo",
      "stato_esami": "completo",
      "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-etnoantropologia",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
-    },
-    {
-     "codice": null,
-     "nome": "Laboratorio di Tecniche fotografiche applicate ai Beni Culturali",
-     "anno": 3,
-     "periodo": "1",
-     "cfu": 3,
-     "ssd": "ICAR/19",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Marco Casciello"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=21477",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-laboratorio-di-tecniche-fotografiche-app",
-     "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
     },
     {
@@ -12596,137 +13150,6 @@
     },
     {
      "codice": null,
-     "nome": "Storia medievale",
-     "anno": 3,
-     "periodo": "1",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Giuseppe Perta"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=21483",
-     "libri": [
-      {
-       "titolo": "Parte generale: A. MUSARRA, P. SILANOS (a cura di), Storia del Mediterraneo medievale. Tempi, spazi, interazioni, Bologna, Il Mulino, 2025.Parte speciale: F. DELLE DONNE, Federico II e la crociata della pace, Roma, Carocci, 2022",
-       "autori": null,
-       "editore": "Il Mulino",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Parte generale: A. MUSARRA, P. SILANOS (a cura di), Storia del Mediterraneo medievale. Tempi, spazi, interazioni, Bologna, Il Mulino, 2025.Parte speciale: F. DELLE DONNE, Federico II e la crociata della pace, Roma, Carocci, 2022"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-10",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "Andrea Cammarano",
-       "note": "Sessione straordinaria",
-       "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/esami.asp"
-      }
-     ],
-     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "stato_esami": "completo",
-     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-storia-medievale",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
-    },
-    {
-     "codice": null,
-     "nome": "Teorie e tecniche dei media",
-     "anno": 3,
-     "periodo": "1",
-     "cfu": 9,
-     "ssd": "GSPS-06/A",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Arturo Lando"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=21485",
-     "libri": [
-      {
-       "titolo": "Le teorie delle comunicazioni di massa e la sfida digitale",
-       "autori": "Bentivegna S., Boccia Artieri G",
-       "editore": "Laterza",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Bentivegna S., Boccia Artieri G., \"Le teorie delle comunicazioni di massa e la sfida digitale\", Laterza."
-      },
-      {
-       "titolo": "Il cinema e la 'malattia dei sentimenti'",
-       "autori": "Lando A",
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Lando A., \"Il cinema e la 'malattia dei sentimenti' \", in MHMN, V. 8 N. 1, Aracne Editrice (ATTENZIONE il testo è da scaricare in formato Pdf dall'area docente)."
-      },
-      {
-       "titolo": "Introduzione ai media digitali",
-       "autori": "Arvidsson A., Delfanti A",
-       "editore": "Il Mulino (III edizione",
-       "anno": 2024,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Arvidsson A., Delfanti A., \"Introduzione ai media digitali\", Il Mulino (III edizione, 2024)."
-      },
-      {
-       "titolo": "The Game",
-       "autori": "Baricco A",
-       "editore": "Einaudi",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Baricco A., \"The Game\", Einaudi."
-      },
-      {
-       "titolo": "ATTENZIONE - Per sostenere l'esame, sia per i frequentanti sia per i non-frequentanti, occorre aver visto i film riportati qui di seguito, film dei quali si vedranno sequenze e si parlerà durante il corso. I film sono:",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "ATTENZIONE - Per sostenere l'esame, sia per i frequentanti sia per i non-frequentanti, occorre aver visto i film riportati qui di seguito, film dei quali si vedranno sequenze e si parlerà durante il corso. I film sono:"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-teorie-e-tecniche-dei-media",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
-    },
-    {
-     "codice": null,
      "nome": "Borghi e paesaggi storici della Campania",
      "anno": 3,
      "periodo": "2",
@@ -12883,73 +13306,6 @@
     },
     {
      "codice": null,
-     "nome": "Interpretazione del patrimonio culturale",
-     "anno": 3,
-     "periodo": "2",
-     "cfu": 9,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Alessandra Drioli"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=21476",
-     "libri": [
-      {
-       "titolo": "Liguori Editore, 2025",
-       "autori": null,
-       "editore": "Liguori Editore",
-       "anno": 2025,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Liguori Editore, 2025"
-      },
-      {
-       "titolo": "Nicolette Mandarano, Il digitale per i musei. Comunicazione, fruizione, valorizzazione, Carocci, 2024",
-       "autori": null,
-       "editore": "Carocci",
-       "anno": 2024,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Nicolette Mandarano, Il digitale per i musei. Comunicazione, fruizione, valorizzazione, Carocci, 2024"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-interpretazione-del-patrimonio-culturale",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
-    },
-    {
-     "codice": null,
-     "nome": "Laboratorio di Materiali lapidei e affreschi",
-     "anno": 3,
-     "periodo": "2",
-     "cfu": 3,
-     "ssd": "ICAR/19",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=21249",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-laboratorio-di-materiali-lapidei-e-affre",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
-    },
-    {
-     "codice": null,
      "nome": "Laboratorio di Storia del paesaggio letterario",
      "anno": 3,
      "periodo": "2",
@@ -13082,86 +13438,6 @@
     },
     {
      "codice": null,
-     "nome": "Memoria e territorio",
-     "anno": 3,
-     "periodo": "2",
-     "cfu": 6,
-     "ssd": "SPS/10",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=21479",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "da_aggiungere",
-     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-memoria-e-territorio",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
-    },
-    {
-     "codice": null,
-     "nome": "Neuro Humanities",
-     "anno": 3,
-     "periodo": "2",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Stefano Calabrese"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=20017",
-     "libri": [
-      {
-       "titolo": "Eserciziario di Neuronarratologia. Una grammatica della fantasia",
-       "autori": "S. Calabrese, V. Conti",
-       "editore": "Pearson",
-       "anno": 2024,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "S. Calabrese, V. Conti, Eserciziario di Neuronarratologia. Una grammatica della fantasia, Pearson, 2024."
-      },
-      {
-       "titolo": "La narrazione. Letteratura, storie di vita, visual storytelling",
-       "autori": "S. Calabrese",
-       "editore": "Pearson",
-       "anno": 2024,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "S. Calabrese, La narrazione. Letteratura, storie di vita, visual storytelling, Pearson, 2024 (only chapters 1, 2, 3, 4 e 7)."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-17",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "Stefano Calabrese",
-       "note": "Sessione straordinaria",
-       "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/esami.asp"
-      }
-     ],
-     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "stato_esami": "completo",
-     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-neuro-humanities",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
-    },
-    {
-     "codice": null,
      "nome": "Storia dei giardini",
      "anno": 3,
      "periodo": "2",
@@ -13230,282 +13506,6 @@
      "stato_libri": "completo",
      "stato_esami": "completo",
      "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-storia-dei-giardini",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
-    },
-    {
-     "codice": null,
-     "nome": "Storia del Mediterraneo",
-     "anno": 3,
-     "periodo": "2",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Guglielmo De Giovanni Centelles"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=19900",
-     "libri": [
-      {
-       "titolo": "G. de’ Giovanni-Centelles, Studi Mediterranei, Napoli, Edizioni Scientifiche 2021 (in corso di stampa)",
-       "autori": null,
-       "editore": "Edizioni Scientifiche 2021 (in corso di stampa)",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "G. de’ Giovanni-Centelles, Studi Mediterranei, Napoli, Edizioni Scientifiche 2021 (in corso di stampa)"
-      },
-      {
-       "titolo": "F. BRAUDEL, Il Mediterraneo, lo spazio, la storia, gli uomini, le tradizioni, Milano, Bompiani. 2017",
-       "autori": null,
-       "editore": "Bompiani. 2017",
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "F. BRAUDEL, Il Mediterraneo, lo spazio, la storia, gli uomini, le tradizioni, Milano, Bompiani. 2017"
-      },
-      {
-       "titolo": "E.F.M. EMANUELE, G. de’ GIOVANNI-CENTELLES, Arte e cultura nel Mediterraneo del XX secolo, Roma, Fondazione-Roma / Unesco, 2004",
-       "autori": null,
-       "editore": null,
-       "anno": 2004,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "E.F.M. EMANUELE, G. de’ GIOVANNI-CENTELLES, Arte e cultura nel Mediterraneo del XX secolo, Roma, Fondazione-Roma / Unesco, 2004"
-      },
-      {
-       "titolo": "G. de’ GIOVANNI-CENTELLES, Mediterraneo, porta d’Oriente, Roma, Fondazione Roma-Mediterraneo, 2011",
-       "autori": null,
-       "editore": null,
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "G. de’ GIOVANNI-CENTELLES, Mediterraneo, porta d’Oriente, Roma, Fondazione Roma-Mediterraneo, 2011"
-      },
-      {
-       "titolo": "Approndimenti di carattere generale: • G. CHARPENTIER, F. LEBRUN, Histoire de la Méditerranée, Parigi, Seuil, 1998; • P. POUPARD, Mediterraneo in ascolto, Roma, Città Nuova, 1999; • M. MOLLAT DU JOURDIN, L’Europa e il mare dall’antichità ad oggi, Roma-Bari, Laterza, 2004; • G. E. RUIZ DOMÈNEC, El Me",
-       "autori": null,
-       "editore": "Laterza",
-       "anno": 2014,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Approndimenti di carattere generale: • G. CHARPENTIER, F. LEBRUN, Histoire de la Méditerranée, Parigi, Seuil, 1998; • P. POUPARD, Mediterraneo in ascolto, Roma, Città Nuova, 1999; • M. MOLLAT DU JOURDIN, L’Europa e il mare dall’antichità ad oggi, Roma-Bari, Laterza, 2004; • G. E. RUIZ DOMÈNEC, El Mediterráneo, Barcellona, Península, 2004; •E. MIRA, Mediterrànies, Alzira, Bromera, 2014"
-      },
-      {
-       "titolo": "Per l'Età Antica: •S. MOSCATI (a cura di), L'alba della civiltà, 3 voll., Torino, UTET, 1976; • C. BROODBANK, Il Mediterraneo, Torino, Einaudi, 2015",
-       "autori": null,
-       "editore": "UTET",
-       "anno": 2015,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Per l'Età Antica: •S. MOSCATI (a cura di), L'alba della civiltà, 3 voll., Torino, UTET, 1976; • C. BROODBANK, Il Mediterraneo, Torino, Einaudi, 2015"
-      },
-      {
-       "titolo": "Per il Medioevo: • G. JEHEL, Il Mediterraneo medievale, dal 359 al 1450, intr. G. de’ GIOVANNI-CENTELLES, Nardò, Besa, 2004",
-       "autori": null,
-       "editore": null,
-       "anno": 2004,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Per il Medioevo: • G. JEHEL, Il Mediterraneo medievale, dal 359 al 1450, intr. G. de’ GIOVANNI-CENTELLES, Nardò, Besa, 2004"
-      },
-      {
-       "titolo": "Per l'Età Moderna: • F. BRAUDEL, Civiltà e imperi del Mediterraneo nell'età di Filippo II, Torino, Einaudi, 2002; • G. de’ GIOVANNI-CENTELLES (a cura di), Mercurino, Carlo V e l’Europa, Gattinara, Città di Gattinara, 2005",
-       "autori": null,
-       "editore": "Einaudi",
-       "anno": 2005,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Per l'Età Moderna: • F. BRAUDEL, Civiltà e imperi del Mediterraneo nell'età di Filippo II, Torino, Einaudi, 2002; • G. de’ GIOVANNI-CENTELLES (a cura di), Mercurino, Carlo V e l’Europa, Gattinara, Città di Gattinara, 2005"
-      },
-      {
-       "titolo": "Per l'Età Contemporanea: • G. Spina, Il Mediterraneo delle donne. La principessa Strongoli, il Suor Orsola Benincasa e l’inizio dell’insegnamento della Storia dell’arte, Napoli, Edizioni Suor Orsola, 2015 •E. F. M. EMANUELE - G. de'GIOVANNI-CENTELLES, Mediterraneo di civiltà e di pace, Roma, Fondazi",
-       "autori": null,
-       "editore": "Edizioni Suor Orsola",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Per l'Età Contemporanea: • G. Spina, Il Mediterraneo delle donne. La principessa Strongoli, il Suor Orsola Benincasa e l’inizio dell’insegnamento della Storia dell’arte, Napoli, Edizioni Suor Orsola, 2015 •E. F. M. EMANUELE - G. de'GIOVANNI-CENTELLES, Mediterraneo di civiltà e di pace, Roma, Fondazione Terzo Pilastro, 2021, in corso di stampa"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-16",
-       "ora": "15:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "Guglielmo De Giovanni Centelles, Giuseppina Spina",
-       "note": "Sessione straordinaria",
-       "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/esami.asp"
-      }
-     ],
-     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "stato_esami": "completo",
-     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-storia-del-mediterraneo",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
-    },
-    {
-     "codice": null,
-     "nome": "Storia dell'arte medievale",
-     "anno": 3,
-     "periodo": "2",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Stefano De Mieri"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=20685",
-     "libri": [
-      {
-       "titolo": "Gotico Internazionale alla Maniera Moderna, pp. 2-45, Milano, Bompiani (1991 e ristampe successive)",
-       "autori": null,
-       "editore": "Bompiani (1991 e ristampe successive)",
-       "anno": 1991,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Gotico Internazionale alla Maniera Moderna, pp. 2-45, Milano, Bompiani (1991 e ristampe successive)"
-      },
-      {
-       "titolo": "Claudio Franzoni, Arte. Una storia naturale e civile, vol. 2, Dall'Alto Medioevo alla fine del Trecento, Einaudi Scuola, 2019 o edizioni successive.",
-       "autori": null,
-       "editore": "Einaudi Scuola",
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Claudio Franzoni, Arte. Una storia naturale e civile, vol. 2, Dall'Alto Medioevo alla fine del Trecento, Einaudi Scuola, 2019 o edizioni successive."
-      },
-      {
-       "titolo": "Ferdinando Bologna, La pittura italiana delle origini, Roma, Editori riuniti, 1962",
-       "autori": null,
-       "editore": null,
-       "anno": 1962,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Ferdinando Bologna, La pittura italiana delle origini, Roma, Editori riuniti, 1962"
-      },
-      {
-       "titolo": "Ferdinando Bologna, Momenti della cultura figurativa nella Campania Medievale, in Storia e civiltà della Campania, Il Medioevo, a cura di Giovanni Pugliese Carratelli, Napoli, Electa Napoli, 1992, pp. 171-275",
-       "autori": null,
-       "editore": null,
-       "anno": 1992,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Ferdinando Bologna, Momenti della cultura figurativa nella Campania Medievale, in Storia e civiltà della Campania, Il Medioevo, a cura di Giovanni Pugliese Carratelli, Napoli, Electa Napoli, 1992, pp. 171-275"
-      },
-      {
-       "titolo": "Enrico Castelnuovo, Arte delle città, arte delle corti tra XII e XIV secolo, Torino, Einaudi, 2009",
-       "autori": null,
-       "editore": "Einaudi",
-       "anno": 2009,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Enrico Castelnuovo, Arte delle città, arte delle corti tra XII e XIV secolo, Torino, Einaudi, 2009"
-      },
-      {
-       "titolo": "Alessio Monciatti, L'arte nel Duecento, Torino, Einaudi, 2013",
-       "autori": null,
-       "editore": "Einaudi",
-       "anno": 2013,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Alessio Monciatti, L'arte nel Duecento, Torino, Einaudi, 2013"
-      },
-      {
-       "titolo": "Michele Tomasi, L'arte del Trecento in Europa, Torino, Einaudi, 2012.",
-       "autori": null,
-       "editore": "Einaudi",
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Michele Tomasi, L'arte del Trecento in Europa, Torino, Einaudi, 2012."
-      },
-      {
-       "titolo": "Lezioni frontali, seminari, visite di studio presso monumenti e musei.",
-       "autori": null,
-       "editore": "visite di studio presso monumenti e musei",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Lezioni frontali, seminari, visite di studio presso monumenti e musei."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-17",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "Stefano De Mieri",
-       "note": "Sessione straordinaria",
-       "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/esami.asp"
-      }
-     ],
-     "fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "stato_esami": "completo",
-     "id": "unisob-l-1-scienze-dei-beni-culturali-turismo-arte-archeologia-storia-dell-arte-medievale",
      "periodo_fonte": "https://www.unisob.na.it/universita/facolta/lettere/lepre/lezioni.asp"
     },
     {
@@ -13777,7 +13777,7 @@
    "url": "https://www.unisob.na.it/universita/facolta/formazione/serviziosociale/index.htm",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -17556,7 +17556,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/educazione/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -17689,7 +17689,7 @@
     },
     {
      "codice": null,
-     "nome": "Tirocinio indiretto: professione educatore (M-Z)",
+     "nome": "Tirocinio indiretto: professione educatore (A-L)",
      "anno": 1,
      "periodo": null,
      "cfu": 3,
@@ -17700,7 +17700,7 @@
       "Martina Ercolano",
       "Pascal Perillo"
      ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20388",
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=19940",
      "libri": [
       {
        "titolo": "Perillo P., L’educatore professionale socio-pedagogico. Questioni di pedagogia professionale, Scholé, Brescia 2026.",
@@ -18867,7 +18867,7 @@
      "docenti": [
       "Fernando Sarracino"
      ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20707",
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20475",
      "libri": [
       {
        "titolo": "Intento e azione nella progettazione educativa",
@@ -19392,6 +19392,65 @@
     },
     {
      "codice": null,
+     "nome": "Tirocinio diretto contesti scolastici e servizi culturali",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Marialaura Cunzio"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20037",
+     "libri": [
+      {
+       "titolo": "Il tirocinio in presenza prevede lo svolgimento di attività presso l’ente scelto per un numero complessivo di 6 cfu, salvo diverse situazioni previste da singoli piani di studio e da comunicare al tutor d'Ateneo.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Il tirocinio in presenza prevede lo svolgimento di attività presso l’ente scelto per un numero complessivo di 6 cfu, salvo diverse situazioni previste da singoli piani di studio e da comunicare al tutor d'Ateneo."
+      },
+      {
+       "titolo": "Il tirocinio in presenza prevede lo svolgimento di attività presso l’ente scelto per un numero complessivo di 3 cfu, salvo diverse situazioni previste da singoli piani di studio e da comunicare al tutor d'Ateneo.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Il tirocinio in presenza prevede lo svolgimento di attività presso l’ente scelto per un numero complessivo di 3 cfu, salvo diverse situazioni previste da singoli piani di studio e da comunicare al tutor d'Ateneo."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Marialaura Cunzio",
+       "note": "Sessione straordinaria",
+       "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/esami.asp"
+      }
+     ],
+     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "id": "unisob-l-19-scienze-dell-educazione-tirocinio-diretto-contesti-scolastici-e"
+    },
+    {
+     "codice": null,
      "nome": "Tirocinio diretto servizi per l'infanzia",
      "anno": 2,
      "periodo": null,
@@ -19448,6 +19507,53 @@
      "stato_libri": "completo",
      "stato_esami": "completo",
      "id": "unisob-l-19-scienze-dell-educazione-tirocinio-diretto-servizi-per-l-infanzia"
+    },
+    {
+     "codice": null,
+     "nome": "Tirocinio diretto servizi socio-assistenziali",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Marialaura Cunzio"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20795",
+     "libri": [
+      {
+       "titolo": "Il tirocinio in presenza prevede lo svolgimento di attività presso l’ente scelto per un numero complessivo di 3 cfu, salvo diverse situazioni previste da singoli piani di studio e da comunicare al tutor d'Ateneo.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Il tirocinio in presenza prevede lo svolgimento di attività presso l’ente scelto per un numero complessivo di 3 cfu, salvo diverse situazioni previste da singoli piani di studio e da comunicare al tutor d'Ateneo."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "10:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Marialaura Cunzio",
+       "note": "Sessione straordinaria",
+       "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/esami.asp"
+      }
+     ],
+     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "id": "unisob-l-19-scienze-dell-educazione-tirocinio-diretto-servizi-socio-assisten"
     },
     {
      "codice": null,
@@ -20499,6 +20605,246 @@
      "stato_libri": "completo",
      "stato_esami": "completo",
      "id": "unisob-l-19-scienze-dell-educazione-modelli-sociali-della-disabilita",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
+    },
+    {
+     "codice": null,
+     "nome": "Pedagogia della comunicazione",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Maria D'Ambrosio"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20062",
+     "libri": [
+      {
+       "titolo": "MORTARI, LUIGINA, 2002, Aver cura della vita della mente, Roma, Carocci.",
+       "autori": null,
+       "editore": "Carocci",
+       "anno": 2002,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MORTARI, LUIGINA, 2002, Aver cura della vita della mente, Roma, Carocci."
+      },
+      {
+       "titolo": "D’AMBROSIO, MARIA, 2019, Teatro Scuola Vedere Fare, Napoli, Liguori.",
+       "autori": null,
+       "editore": "Liguori",
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "D’AMBROSIO, MARIA, 2019, Teatro Scuola Vedere Fare, Napoli, Liguori."
+      },
+      {
+       "titolo": "D'AMBROSIO, MARIA, 2023, Fuoriclasse. Pedagogie per un'educazione civica fatta ad arte, Milano, Mimesis.",
+       "autori": null,
+       "editore": null,
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "D'AMBROSIO, MARIA, 2023, Fuoriclasse. Pedagogie per un'educazione civica fatta ad arte, Milano, Mimesis."
+      },
+      {
+       "titolo": "MD’A, Dove la cognizione prende corpo: la cinetica e la plasticità degli ambienti sensibili, in: Sibilio, M., a cura di, Vicarianza e Didattica. Corpo, cognizione, insegnamento, Brescia, La Scuola, 2016.",
+       "autori": null,
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A, Dove la cognizione prende corpo: la cinetica e la plasticità degli ambienti sensibili, in: Sibilio, M., a cura di, Vicarianza e Didattica. Corpo, cognizione, insegnamento, Brescia, La Scuola, 2016."
+      },
+      {
+       "titolo": "MD’A., 2016, La stratificazione multisensoriale della macchina letteraria. Una metodologia intercodice, in: E. Corbi (a cura di), La literacy in lettura. Prospettive pedagogiche e didattiche, Lecce: Pensa MultiMedia, 2016.",
+       "autori": null,
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A., 2016, La stratificazione multisensoriale della macchina letteraria. Una metodologia intercodice, in: E. Corbi (a cura di), La literacy in lettura. Prospettive pedagogiche e didattiche, Lecce: Pensa MultiMedia, 2016."
+      },
+      {
+       "titolo": "MD’A-Aisu, Hirotsugu, 2016, Verso lo spazioFormante: intercodice multiagente autonomo. Progettare ambienti di apprendimento generativi, in: Metis, anno VI, numero 2, 12/2016.",
+       "autori": null,
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A-Aisu, Hirotsugu, 2016, Verso lo spazioFormante: intercodice multiagente autonomo. Progettare ambienti di apprendimento generativi, in: Metis, anno VI, numero 2, 12/2016."
+      },
+      {
+       "titolo": "MD’A, 2017, Per un Umanesimo digitale. Apprendimento e formazione al tempo del web 3.0, in: Scienze e Ricerche, n°47, aprile 2017.",
+       "autori": null,
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A, 2017, Per un Umanesimo digitale. Apprendimento e formazione al tempo del web 3.0, in: Scienze e Ricerche, n°47, aprile 2017."
+      },
+      {
+       "titolo": "MD’A, 2017, L’arte come spazio necessario: dove prende corpo il Sublime, Kayak, 4, 2017.",
+       "autori": null,
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A, 2017, L’arte come spazio necessario: dove prende corpo il Sublime, Kayak, 4, 2017."
+      },
+      {
+       "titolo": "MD’A, 2017, Quando il museo si fa patrimonio comune: il teatro delle donne di Forcella a Palazzo Zevallos, Metis, anno VII, vol 13, n. 2, dicembre 2017.",
+       "autori": null,
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A, 2017, Quando il museo si fa patrimonio comune: il teatro delle donne di Forcella a Palazzo Zevallos, Metis, anno VII, vol 13, n. 2, dicembre 2017."
+      },
+      {
+       "titolo": "MD’A, 2018, ArteFormante per l’educazione del futuro, in: Moreno-Parrello-Iorio, a cura di, Sconfini dell’educazione, Molfetta, Edizioni La meridiana.",
+       "autori": null,
+       "editore": "Edizioni La meridiana",
+       "anno": 2018,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A, 2018, ArteFormante per l’educazione del futuro, in: Moreno-Parrello-Iorio, a cura di, Sconfini dell’educazione, Molfetta, Edizioni La meridiana."
+      },
+      {
+       "titolo": "MD’A, 2019, Teatro Scuola Vedere Fare. Spazi pratiche estetiche per una poetica pedagogica, Napoli, Liguori.",
+       "autori": null,
+       "editore": "Liguori",
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A, 2019, Teatro Scuola Vedere Fare. Spazi pratiche estetiche per una poetica pedagogica, Napoli, Liguori."
+      },
+      {
+       "titolo": "MD’A-Diamare, 2019, La metodologia embodied per le disabilità sensoriali, in: Research Trend in Humanities Education & Philosophy, gennaio 2019.",
+       "autori": null,
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A-Diamare, 2019, La metodologia embodied per le disabilità sensoriali, in: Research Trend in Humanities Education & Philosophy, gennaio 2019."
+      },
+      {
+       "titolo": "MD’A, Per una pedagogia del sentire. Il fuoco e la saggezza di maestro e allievo, in: METIS, 1/2019.",
+       "autori": null,
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A, Per una pedagogia del sentire. Il fuoco e la saggezza di maestro e allievo, in: METIS, 1/2019."
+      },
+      {
+       "titolo": "MD’A, L’essenziale del Piccolo principe. Dispositivi normativi e pluralità di mondi, in: Casucci, a cura di, Il volto umano del diritto, Edizioni Scientifiche Italiane, 2019.",
+       "autori": null,
+       "editore": "Edizioni Scientifiche Italiane",
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A, L’essenziale del Piccolo principe. Dispositivi normativi e pluralità di mondi, in: Casucci, a cura di, Il volto umano del diritto, Edizioni Scientifiche Italiane, 2019."
+      },
+      {
+       "titolo": "MD’A, Eroica e poetica pedagogica, in: Studi sulla Formazione, 22, 2/2019.",
+       "autori": null,
+       "editore": null,
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A, Eroica e poetica pedagogica, in: Studi sulla Formazione, 22, 2/2019."
+      },
+      {
+       "titolo": "MD’A, La formazione dell’insegnante a una pedagogia del sentire. Un dialogo tra Friedrich Schiller e Hannah Arendt, in: Annali on line della didattica e della formazione docente, vol 12 n 19, 2020.",
+       "autori": null,
+       "editore": null,
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A, La formazione dell’insegnante a una pedagogia del sentire. Un dialogo tra Friedrich Schiller e Hannah Arendt, in: Annali on line della didattica e della formazione docente, vol 12 n 19, 2020."
+      },
+      {
+       "titolo": "MD’A, Laino, G., Educatori come designer degli spazi perFormativi. Asili nido come ‘fabbriche’ di cittadinanza e innovazione sociale, in: Welfare e Ergonomia, Milano, Franco Angeli, 2020.",
+       "autori": null,
+       "editore": "Franco Angeli",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "MD’A, Laino, G., Educatori come designer degli spazi perFormativi. Asili nido come ‘fabbriche’ di cittadinanza e innovazione sociale, in: Welfare e Ergonomia, Milano, Franco Angeli, 2020."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Maria D'Ambrosio",
+       "note": "Sessione straordinaria",
+       "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/esami.asp"
+      }
+     ],
+     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "id": "unisob-l-19-scienze-dell-educazione-pedagogia-della-comunicazione",
      "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
     },
     {
@@ -23541,7 +23887,7 @@
      "docenti": [
       "Stefania Tondo"
      ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=19861",
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=19875",
      "libri": [
       {
        "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
@@ -23635,6 +23981,306 @@
      "stato_libri": "completo",
      "stato_esami": "completo",
      "id": "unisob-l-19-scienze-dell-educazione-laboratorio-sugli-interventi-educativi-n",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
+    },
+    {
+     "codice": null,
+     "nome": "Laboratorio teatrale (Servizi socio-assistenziali)",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Vincenzo Pennella"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20047",
+     "libri": [
+      {
+       "titolo": "Capelli Amaranta, Lorenzoni Franco, La nave di Penelope, Firenze, Giunti, 2002.",
+       "autori": null,
+       "editore": "Giunti",
+       "anno": 2002,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Capelli Amaranta, Lorenzoni Franco, La nave di Penelope, Firenze, Giunti, 2002."
+      },
+      {
+       "titolo": "Cuesta Jairo, Sentieri verso il cuore, Bologna, Culture, Teatrali, 1995.",
+       "autori": null,
+       "editore": null,
+       "anno": 1995,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Cuesta Jairo, Sentieri verso il cuore, Bologna, Culture, Teatrali, 1995."
+      },
+      {
+       "titolo": "D’Ambrosio Maria, Teatro e parateatro come pratiche educative, Napoli, Liguori, 2015",
+       "autori": null,
+       "editore": "Liguori",
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "D’Ambrosio Maria, Teatro e parateatro come pratiche educative, Napoli, Liguori, 2015"
+      },
+      {
+       "titolo": "Flaszen Ludwik, Pollastrelli Carla, Molinari Renata, Il Teatr Laboratorium di Jerzy Grotowski 1959-1969, Firenze, Usher, 2007.",
+       "autori": null,
+       "editore": null,
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Flaszen Ludwik, Pollastrelli Carla, Molinari Renata, Il Teatr Laboratorium di Jerzy Grotowski 1959-1969, Firenze, Usher, 2007."
+      },
+      {
+       "titolo": "Grotowski Jerzy, Holyday e il Teatro delle Fonti, Firenze Usher, 2006.",
+       "autori": null,
+       "editore": null,
+       "anno": 2006,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Grotowski Jerzy, Holyday e il Teatro delle Fonti, Firenze Usher, 2006."
+      },
+      {
+       "titolo": "Tinti Luisa, Brunelli Pier Pietro, La sacra canoa. Rena Mirecka dal Teatro Laboratorio di Jerzy Grotowski al parateatro, Roma, Bulzoni, 2010.",
+       "autori": null,
+       "editore": null,
+       "anno": 2010,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Tinti Luisa, Brunelli Pier Pietro, La sacra canoa. Rena Mirecka dal Teatro Laboratorio di Jerzy Grotowski al parateatro, Roma, Bulzoni, 2010."
+      },
+      {
+       "titolo": "AA.VV., Essere un uomo totale, Autori polacchi su Grotowski. L’ultimo decennio, Corazzano (PI), Titivillus, 2005.",
+       "autori": null,
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "AA.VV., Essere un uomo totale, Autori polacchi su Grotowski. L’ultimo decennio, Corazzano (PI), Titivillus, 2005."
+      },
+      {
+       "titolo": "AA.VV., Opere e sentieri vol.I, II, III, Roma, Bulzoni, 2008.",
+       "autori": null,
+       "editore": null,
+       "anno": 2008,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "AA.VV., Opere e sentieri vol.I, II, III, Roma, Bulzoni, 2008."
+      },
+      {
+       "titolo": "Attisani Antonio, Un teatro apocrifo. Il potenziale dell’arte teatrale nel Workcenter of Jerzy Grotowski and Thomas Richards, Milano, Medusa, 2006.",
+       "autori": null,
+       "editore": null,
+       "anno": 2006,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Attisani Antonio, Un teatro apocrifo. Il potenziale dell’arte teatrale nel Workcenter of Jerzy Grotowski and Thomas Richards, Milano, Medusa, 2006."
+      },
+      {
+       "titolo": "Attisani Antonio, Smisurato cantabile. Note sul lavoro del teatro dopo Jerzy Grotowski, Bari, Pagina soc. coop., 2009.",
+       "autori": null,
+       "editore": null,
+       "anno": 2009,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Attisani Antonio, Smisurato cantabile. Note sul lavoro del teatro dopo Jerzy Grotowski, Bari, Pagina soc. coop., 2009."
+      },
+      {
+       "titolo": "Benesz Ewa, Kiedy patrzę w gwiaździste niebo…, Wroclaw, Performer, Grotowski.net, 2011.",
+       "autori": null,
+       "editore": null,
+       "anno": 2011,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Benesz Ewa, Kiedy patrzę w gwiaździste niebo…, Wroclaw, Performer, Grotowski.net, 2011."
+      },
+      {
+       "titolo": "Brook Peter, Il punto in movimento 1946-1987, Milano, Ubulibri, 1988.",
+       "autori": null,
+       "editore": null,
+       "anno": 1988,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Brook Peter, Il punto in movimento 1946-1987, Milano, Ubulibri, 1988."
+      },
+      {
+       "titolo": "Brunelli Pier Pietro, Il Teatro Interiore, Milano, Albedo, 2000.",
+       "autori": null,
+       "editore": null,
+       "anno": 2000,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Brunelli Pier Pietro, Il Teatro Interiore, Milano, Albedo, 2000."
+      },
+      {
+       "titolo": "Pedagogika",
+       "autori": "Brunelli Pier Pietro, Il Teatro del giocattolo rotto, Milano",
+       "editore": null,
+       "anno": 1997,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Brunelli Pier Pietro, Il Teatro del giocattolo rotto, Milano, “ Pedagogika”, 1997."
+      },
+      {
+       "titolo": "D’Ambrosio Maria, Teatro scuola vedere fare, Napoli, Liguori, 2019",
+       "autori": null,
+       "editore": "Liguori",
+       "anno": 2019,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "D’Ambrosio Maria, Teatro scuola vedere fare, Napoli, Liguori, 2019"
+      },
+      {
+       "titolo": "Sapienza",
+       "autori": "Grotowski Jerzy, Tecniche originarie dell’attore, Roma, ciclo lezioni tenuto da J. Grotowski presso Università",
+       "editore": null,
+       "anno": 1982,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Grotowski Jerzy, Tecniche originarie dell’attore, Roma, ciclo lezioni tenuto da J. Grotowski presso Università “Sapienza” Dipartimento di Musica e Spettacolo, A.A. 1982-83."
+      },
+      {
+       "titolo": "Grotowski Jerzy, Per un teatro povero,Roma, Bulzoni, 1970.",
+       "autori": null,
+       "editore": null,
+       "anno": 1970,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Grotowski Jerzy, Per un teatro povero,Roma, Bulzoni, 1970."
+      },
+      {
+       "titolo": "Jagiellonian University",
+       "autori": null,
+       "editore": null,
+       "anno": 2011,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Janik Karina, Pan Tadeusz nella vita e nella creazione di Ewa Benesz, Cracovia, Tesi di laurea presso Facoltà degli Studi Polacchi “ Jagiellonian University”, 2011."
+      },
+      {
+       "titolo": "Didaskalia",
+       "autori": "Kornaś Tadeusz, Śpiew Aojda, Cracovia",
+       "editore": null,
+       "anno": 1999,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Kornaś Tadeusz, Śpiew Aojda, Cracovia, “Didaskalia”, n.29. 1999."
+      },
+      {
+       "titolo": "Kumiega Jennifer, Jerzy Grotowski, Firenze, Usher, 1989.",
+       "autori": null,
+       "editore": null,
+       "anno": 1989,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Kumiega Jennifer, Jerzy Grotowski, Firenze, Usher, 1989."
+      },
+      {
+       "titolo": "Pennella Vincenzo, Il parateatro di Ewa Benesz, tesi di laurea in Drammaturgia II, Alma mater studiorum Università di Bologna, 2013.",
+       "autori": null,
+       "editore": null,
+       "anno": 2013,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pennella Vincenzo, Il parateatro di Ewa Benesz, tesi di laurea in Drammaturgia II, Alma mater studiorum Università di Bologna, 2013."
+      },
+      {
+       "titolo": "Molinari Renata, Diario dal Teatro delle Fonti. Polonia 1980, Firenze, Usher, 2006.",
+       "autori": null,
+       "editore": null,
+       "anno": 2006,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Molinari Renata, Diario dal Teatro delle Fonti. Polonia 1980, Firenze, Usher, 2006."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-15",
+       "ora": "11:30",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Vincenzo Pennella",
+       "note": "Sessione straordinaria",
+       "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/esami.asp"
+      }
+     ],
+     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "id": "unisob-l-19-scienze-dell-educazione-laboratorio-teatrale-servizi-socio-assis",
      "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
     },
     {
@@ -26624,112 +27270,6 @@
     },
     {
      "codice": null,
-     "nome": "Tirocinio diretto contesti scolastici e servizi culturali",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 3,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Marialaura Cunzio"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20771",
-     "libri": [
-      {
-       "titolo": "Il tirocinio in presenza prevede lo svolgimento di attività presso l’ente scelto per un numero complessivo di 6 cfu, salvo diverse situazioni previste da singoli piani di studio e da comunicare al tutor d'Ateneo.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Il tirocinio in presenza prevede lo svolgimento di attività presso l’ente scelto per un numero complessivo di 6 cfu, salvo diverse situazioni previste da singoli piani di studio e da comunicare al tutor d'Ateneo."
-      },
-      {
-       "titolo": "Il tirocinio in presenza prevede lo svolgimento di attività presso l’ente scelto per un numero complessivo di 3 cfu, salvo diverse situazioni previste da singoli piani di studio e da comunicare al tutor d'Ateneo.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Il tirocinio in presenza prevede lo svolgimento di attività presso l’ente scelto per un numero complessivo di 3 cfu, salvo diverse situazioni previste da singoli piani di studio e da comunicare al tutor d'Ateneo."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-10",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "Marialaura Cunzio",
-       "note": "Sessione straordinaria",
-       "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/esami.asp"
-      }
-     ],
-     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "stato_esami": "completo",
-     "id": "unisob-l-19-scienze-dell-educazione-tirocinio-diretto-contesti-scolastici-e"
-    },
-    {
-     "codice": null,
-     "nome": "Tirocinio diretto servizi socio-assistenziali",
-     "anno": 3,
-     "periodo": null,
-     "cfu": 3,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Marialaura Cunzio"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20798",
-     "libri": [
-      {
-       "titolo": "Il tirocinio in presenza prevede lo svolgimento di attività presso l’ente scelto per un numero complessivo di 3 cfu, salvo diverse situazioni previste da singoli piani di studio e da comunicare al tutor d'Ateneo.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Il tirocinio in presenza prevede lo svolgimento di attività presso l’ente scelto per un numero complessivo di 3 cfu, salvo diverse situazioni previste da singoli piani di studio e da comunicare al tutor d'Ateneo."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-10",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "Marialaura Cunzio",
-       "note": "Sessione straordinaria",
-       "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/esami.asp"
-      }
-     ],
-     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "stato_esami": "completo",
-     "id": "unisob-l-19-scienze-dell-educazione-tirocinio-diretto-servizi-socio-assisten"
-    },
-    {
-     "codice": null,
      "nome": "Arte e accessibilità",
      "anno": 3,
      "periodo": "1",
@@ -27934,246 +28474,6 @@
      "stato_libri": "completo",
      "stato_esami": "completo",
      "id": "unisob-l-19-scienze-dell-educazione-metodologia-dello-studio",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
-    },
-    {
-     "codice": null,
-     "nome": "Pedagogia della comunicazione",
-     "anno": 3,
-     "periodo": "1",
-     "cfu": 6,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Maria D'Ambrosio"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20063",
-     "libri": [
-      {
-       "titolo": "MORTARI, LUIGINA, 2002, Aver cura della vita della mente, Roma, Carocci.",
-       "autori": null,
-       "editore": "Carocci",
-       "anno": 2002,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MORTARI, LUIGINA, 2002, Aver cura della vita della mente, Roma, Carocci."
-      },
-      {
-       "titolo": "D’AMBROSIO, MARIA, 2019, Teatro Scuola Vedere Fare, Napoli, Liguori.",
-       "autori": null,
-       "editore": "Liguori",
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "D’AMBROSIO, MARIA, 2019, Teatro Scuola Vedere Fare, Napoli, Liguori."
-      },
-      {
-       "titolo": "D'AMBROSIO, MARIA, 2023, Fuoriclasse. Pedagogie per un'educazione civica fatta ad arte, Milano, Mimesis.",
-       "autori": null,
-       "editore": null,
-       "anno": 2023,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "D'AMBROSIO, MARIA, 2023, Fuoriclasse. Pedagogie per un'educazione civica fatta ad arte, Milano, Mimesis."
-      },
-      {
-       "titolo": "MD’A, Dove la cognizione prende corpo: la cinetica e la plasticità degli ambienti sensibili, in: Sibilio, M., a cura di, Vicarianza e Didattica. Corpo, cognizione, insegnamento, Brescia, La Scuola, 2016.",
-       "autori": null,
-       "editore": null,
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A, Dove la cognizione prende corpo: la cinetica e la plasticità degli ambienti sensibili, in: Sibilio, M., a cura di, Vicarianza e Didattica. Corpo, cognizione, insegnamento, Brescia, La Scuola, 2016."
-      },
-      {
-       "titolo": "MD’A., 2016, La stratificazione multisensoriale della macchina letteraria. Una metodologia intercodice, in: E. Corbi (a cura di), La literacy in lettura. Prospettive pedagogiche e didattiche, Lecce: Pensa MultiMedia, 2016.",
-       "autori": null,
-       "editore": null,
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A., 2016, La stratificazione multisensoriale della macchina letteraria. Una metodologia intercodice, in: E. Corbi (a cura di), La literacy in lettura. Prospettive pedagogiche e didattiche, Lecce: Pensa MultiMedia, 2016."
-      },
-      {
-       "titolo": "MD’A-Aisu, Hirotsugu, 2016, Verso lo spazioFormante: intercodice multiagente autonomo. Progettare ambienti di apprendimento generativi, in: Metis, anno VI, numero 2, 12/2016.",
-       "autori": null,
-       "editore": null,
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A-Aisu, Hirotsugu, 2016, Verso lo spazioFormante: intercodice multiagente autonomo. Progettare ambienti di apprendimento generativi, in: Metis, anno VI, numero 2, 12/2016."
-      },
-      {
-       "titolo": "MD’A, 2017, Per un Umanesimo digitale. Apprendimento e formazione al tempo del web 3.0, in: Scienze e Ricerche, n°47, aprile 2017.",
-       "autori": null,
-       "editore": null,
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A, 2017, Per un Umanesimo digitale. Apprendimento e formazione al tempo del web 3.0, in: Scienze e Ricerche, n°47, aprile 2017."
-      },
-      {
-       "titolo": "MD’A, 2017, L’arte come spazio necessario: dove prende corpo il Sublime, Kayak, 4, 2017.",
-       "autori": null,
-       "editore": null,
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A, 2017, L’arte come spazio necessario: dove prende corpo il Sublime, Kayak, 4, 2017."
-      },
-      {
-       "titolo": "MD’A, 2017, Quando il museo si fa patrimonio comune: il teatro delle donne di Forcella a Palazzo Zevallos, Metis, anno VII, vol 13, n. 2, dicembre 2017.",
-       "autori": null,
-       "editore": null,
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A, 2017, Quando il museo si fa patrimonio comune: il teatro delle donne di Forcella a Palazzo Zevallos, Metis, anno VII, vol 13, n. 2, dicembre 2017."
-      },
-      {
-       "titolo": "MD’A, 2018, ArteFormante per l’educazione del futuro, in: Moreno-Parrello-Iorio, a cura di, Sconfini dell’educazione, Molfetta, Edizioni La meridiana.",
-       "autori": null,
-       "editore": "Edizioni La meridiana",
-       "anno": 2018,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A, 2018, ArteFormante per l’educazione del futuro, in: Moreno-Parrello-Iorio, a cura di, Sconfini dell’educazione, Molfetta, Edizioni La meridiana."
-      },
-      {
-       "titolo": "MD’A, 2019, Teatro Scuola Vedere Fare. Spazi pratiche estetiche per una poetica pedagogica, Napoli, Liguori.",
-       "autori": null,
-       "editore": "Liguori",
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A, 2019, Teatro Scuola Vedere Fare. Spazi pratiche estetiche per una poetica pedagogica, Napoli, Liguori."
-      },
-      {
-       "titolo": "MD’A-Diamare, 2019, La metodologia embodied per le disabilità sensoriali, in: Research Trend in Humanities Education & Philosophy, gennaio 2019.",
-       "autori": null,
-       "editore": null,
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A-Diamare, 2019, La metodologia embodied per le disabilità sensoriali, in: Research Trend in Humanities Education & Philosophy, gennaio 2019."
-      },
-      {
-       "titolo": "MD’A, Per una pedagogia del sentire. Il fuoco e la saggezza di maestro e allievo, in: METIS, 1/2019.",
-       "autori": null,
-       "editore": null,
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A, Per una pedagogia del sentire. Il fuoco e la saggezza di maestro e allievo, in: METIS, 1/2019."
-      },
-      {
-       "titolo": "MD’A, L’essenziale del Piccolo principe. Dispositivi normativi e pluralità di mondi, in: Casucci, a cura di, Il volto umano del diritto, Edizioni Scientifiche Italiane, 2019.",
-       "autori": null,
-       "editore": "Edizioni Scientifiche Italiane",
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A, L’essenziale del Piccolo principe. Dispositivi normativi e pluralità di mondi, in: Casucci, a cura di, Il volto umano del diritto, Edizioni Scientifiche Italiane, 2019."
-      },
-      {
-       "titolo": "MD’A, Eroica e poetica pedagogica, in: Studi sulla Formazione, 22, 2/2019.",
-       "autori": null,
-       "editore": null,
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A, Eroica e poetica pedagogica, in: Studi sulla Formazione, 22, 2/2019."
-      },
-      {
-       "titolo": "MD’A, La formazione dell’insegnante a una pedagogia del sentire. Un dialogo tra Friedrich Schiller e Hannah Arendt, in: Annali on line della didattica e della formazione docente, vol 12 n 19, 2020.",
-       "autori": null,
-       "editore": null,
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A, La formazione dell’insegnante a una pedagogia del sentire. Un dialogo tra Friedrich Schiller e Hannah Arendt, in: Annali on line della didattica e della formazione docente, vol 12 n 19, 2020."
-      },
-      {
-       "titolo": "MD’A, Laino, G., Educatori come designer degli spazi perFormativi. Asili nido come ‘fabbriche’ di cittadinanza e innovazione sociale, in: Welfare e Ergonomia, Milano, Franco Angeli, 2020.",
-       "autori": null,
-       "editore": "Franco Angeli",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "MD’A, Laino, G., Educatori come designer degli spazi perFormativi. Asili nido come ‘fabbriche’ di cittadinanza e innovazione sociale, in: Welfare e Ergonomia, Milano, Franco Angeli, 2020."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-15",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "Maria D'Ambrosio",
-       "note": "Sessione straordinaria",
-       "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/esami.asp"
-      }
-     ],
-     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "stato_esami": "completo",
-     "id": "unisob-l-19-scienze-dell-educazione-pedagogia-della-comunicazione",
      "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
     },
     {
@@ -29387,7 +29687,7 @@
      "docenti": [
       "Stefania Tondo"
      ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20116",
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20426",
      "libri": [
       {
        "titolo": "2020 Oxford University Press ISBN: 978-0-19-403941-3",
@@ -30021,306 +30321,6 @@
      "stato_libri": "completo",
      "stato_esami": "completo",
      "id": "unisob-l-19-scienze-dell-educazione-laboratorio-teatrale-servizi-per-l-infan",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
-    },
-    {
-     "codice": null,
-     "nome": "Laboratorio teatrale (Servizi socio-assistenziali)",
-     "anno": 3,
-     "periodo": "2",
-     "cfu": 3,
-     "ssd": null,
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Vincenzo Pennella"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20259",
-     "libri": [
-      {
-       "titolo": "Capelli Amaranta, Lorenzoni Franco, La nave di Penelope, Firenze, Giunti, 2002.",
-       "autori": null,
-       "editore": "Giunti",
-       "anno": 2002,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Capelli Amaranta, Lorenzoni Franco, La nave di Penelope, Firenze, Giunti, 2002."
-      },
-      {
-       "titolo": "Cuesta Jairo, Sentieri verso il cuore, Bologna, Culture, Teatrali, 1995.",
-       "autori": null,
-       "editore": null,
-       "anno": 1995,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Cuesta Jairo, Sentieri verso il cuore, Bologna, Culture, Teatrali, 1995."
-      },
-      {
-       "titolo": "D’Ambrosio Maria, Teatro e parateatro come pratiche educative, Napoli, Liguori, 2015",
-       "autori": null,
-       "editore": "Liguori",
-       "anno": 2015,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "D’Ambrosio Maria, Teatro e parateatro come pratiche educative, Napoli, Liguori, 2015"
-      },
-      {
-       "titolo": "Flaszen Ludwik, Pollastrelli Carla, Molinari Renata, Il Teatr Laboratorium di Jerzy Grotowski 1959-1969, Firenze, Usher, 2007.",
-       "autori": null,
-       "editore": null,
-       "anno": 2007,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Flaszen Ludwik, Pollastrelli Carla, Molinari Renata, Il Teatr Laboratorium di Jerzy Grotowski 1959-1969, Firenze, Usher, 2007."
-      },
-      {
-       "titolo": "Grotowski Jerzy, Holyday e il Teatro delle Fonti, Firenze Usher, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Grotowski Jerzy, Holyday e il Teatro delle Fonti, Firenze Usher, 2006."
-      },
-      {
-       "titolo": "Tinti Luisa, Brunelli Pier Pietro, La sacra canoa. Rena Mirecka dal Teatro Laboratorio di Jerzy Grotowski al parateatro, Roma, Bulzoni, 2010.",
-       "autori": null,
-       "editore": null,
-       "anno": 2010,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Tinti Luisa, Brunelli Pier Pietro, La sacra canoa. Rena Mirecka dal Teatro Laboratorio di Jerzy Grotowski al parateatro, Roma, Bulzoni, 2010."
-      },
-      {
-       "titolo": "AA.VV., Essere un uomo totale, Autori polacchi su Grotowski. L’ultimo decennio, Corazzano (PI), Titivillus, 2005.",
-       "autori": null,
-       "editore": null,
-       "anno": 2005,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "AA.VV., Essere un uomo totale, Autori polacchi su Grotowski. L’ultimo decennio, Corazzano (PI), Titivillus, 2005."
-      },
-      {
-       "titolo": "AA.VV., Opere e sentieri vol.I, II, III, Roma, Bulzoni, 2008.",
-       "autori": null,
-       "editore": null,
-       "anno": 2008,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "AA.VV., Opere e sentieri vol.I, II, III, Roma, Bulzoni, 2008."
-      },
-      {
-       "titolo": "Attisani Antonio, Un teatro apocrifo. Il potenziale dell’arte teatrale nel Workcenter of Jerzy Grotowski and Thomas Richards, Milano, Medusa, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Attisani Antonio, Un teatro apocrifo. Il potenziale dell’arte teatrale nel Workcenter of Jerzy Grotowski and Thomas Richards, Milano, Medusa, 2006."
-      },
-      {
-       "titolo": "Attisani Antonio, Smisurato cantabile. Note sul lavoro del teatro dopo Jerzy Grotowski, Bari, Pagina soc. coop., 2009.",
-       "autori": null,
-       "editore": null,
-       "anno": 2009,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Attisani Antonio, Smisurato cantabile. Note sul lavoro del teatro dopo Jerzy Grotowski, Bari, Pagina soc. coop., 2009."
-      },
-      {
-       "titolo": "Benesz Ewa, Kiedy patrzę w gwiaździste niebo…, Wroclaw, Performer, Grotowski.net, 2011.",
-       "autori": null,
-       "editore": null,
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Benesz Ewa, Kiedy patrzę w gwiaździste niebo…, Wroclaw, Performer, Grotowski.net, 2011."
-      },
-      {
-       "titolo": "Brook Peter, Il punto in movimento 1946-1987, Milano, Ubulibri, 1988.",
-       "autori": null,
-       "editore": null,
-       "anno": 1988,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Brook Peter, Il punto in movimento 1946-1987, Milano, Ubulibri, 1988."
-      },
-      {
-       "titolo": "Brunelli Pier Pietro, Il Teatro Interiore, Milano, Albedo, 2000.",
-       "autori": null,
-       "editore": null,
-       "anno": 2000,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Brunelli Pier Pietro, Il Teatro Interiore, Milano, Albedo, 2000."
-      },
-      {
-       "titolo": "Pedagogika",
-       "autori": "Brunelli Pier Pietro, Il Teatro del giocattolo rotto, Milano",
-       "editore": null,
-       "anno": 1997,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Brunelli Pier Pietro, Il Teatro del giocattolo rotto, Milano, “ Pedagogika”, 1997."
-      },
-      {
-       "titolo": "D’Ambrosio Maria, Teatro scuola vedere fare, Napoli, Liguori, 2019",
-       "autori": null,
-       "editore": "Liguori",
-       "anno": 2019,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "D’Ambrosio Maria, Teatro scuola vedere fare, Napoli, Liguori, 2019"
-      },
-      {
-       "titolo": "Sapienza",
-       "autori": "Grotowski Jerzy, Tecniche originarie dell’attore, Roma, ciclo lezioni tenuto da J. Grotowski presso Università",
-       "editore": null,
-       "anno": 1982,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Grotowski Jerzy, Tecniche originarie dell’attore, Roma, ciclo lezioni tenuto da J. Grotowski presso Università “Sapienza” Dipartimento di Musica e Spettacolo, A.A. 1982-83."
-      },
-      {
-       "titolo": "Grotowski Jerzy, Per un teatro povero,Roma, Bulzoni, 1970.",
-       "autori": null,
-       "editore": null,
-       "anno": 1970,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Grotowski Jerzy, Per un teatro povero,Roma, Bulzoni, 1970."
-      },
-      {
-       "titolo": "Jagiellonian University",
-       "autori": null,
-       "editore": null,
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Janik Karina, Pan Tadeusz nella vita e nella creazione di Ewa Benesz, Cracovia, Tesi di laurea presso Facoltà degli Studi Polacchi “ Jagiellonian University”, 2011."
-      },
-      {
-       "titolo": "Didaskalia",
-       "autori": "Kornaś Tadeusz, Śpiew Aojda, Cracovia",
-       "editore": null,
-       "anno": 1999,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Kornaś Tadeusz, Śpiew Aojda, Cracovia, “Didaskalia”, n.29. 1999."
-      },
-      {
-       "titolo": "Kumiega Jennifer, Jerzy Grotowski, Firenze, Usher, 1989.",
-       "autori": null,
-       "editore": null,
-       "anno": 1989,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Kumiega Jennifer, Jerzy Grotowski, Firenze, Usher, 1989."
-      },
-      {
-       "titolo": "Pennella Vincenzo, Il parateatro di Ewa Benesz, tesi di laurea in Drammaturgia II, Alma mater studiorum Università di Bologna, 2013.",
-       "autori": null,
-       "editore": null,
-       "anno": 2013,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pennella Vincenzo, Il parateatro di Ewa Benesz, tesi di laurea in Drammaturgia II, Alma mater studiorum Università di Bologna, 2013."
-      },
-      {
-       "titolo": "Molinari Renata, Diario dal Teatro delle Fonti. Polonia 1980, Firenze, Usher, 2006.",
-       "autori": null,
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Molinari Renata, Diario dal Teatro delle Fonti. Polonia 1980, Firenze, Usher, 2006."
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-15",
-       "ora": "11:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "Vincenzo Pennella",
-       "note": "Sessione straordinaria",
-       "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/esami.asp"
-      }
-     ],
-     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "stato_esami": "completo",
-     "id": "unisob-l-19-scienze-dell-educazione-laboratorio-teatrale-servizi-socio-assis",
      "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
     },
     {
@@ -31319,9 +31319,10 @@
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
+      "Fabrizio Chello",
       "Maria Romano"
      ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20326",
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=19905",
      "libri": [
       {
        "titolo": "1 C. Coggi, P. Ricchiardi, Progettare la ricerca empirica in educazione, Carocci, Roma, 2020.",
@@ -32216,7 +32217,7 @@
    "url": "https://www.unisob.na.it/universita/facolta/formazione/comunicazione/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -39349,7 +39350,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/psicologia/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -40497,7 +40498,7 @@
     },
     {
      "codice": null,
-     "nome": "Preparazione alla tesi di laurea triennale in psicologia cognitiva (Curriculum Ergonomia cognitiva Risorse umane)",
+     "nome": "Preparazione alla tesi di laurea triennale in psicologia cognitiva (Curriculum Benessere)",
      "anno": 2,
      "periodo": null,
      "cfu": 3,
@@ -40505,9 +40506,10 @@
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
+      "Maria Adriana Neroni",
       "M. Antonella Brandimonte"
      ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20024",
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20113",
      "libri": [
       {
        "titolo": "Età del paradosso. Perché chiediamo tutto e il contrario di tutto nelle imprese e nella società",
@@ -40574,7 +40576,7 @@
      ],
      "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
      "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
+     "stato_libri": "da_aggiungere",
      "id": "unisob-l-24-scienze-e-tecniche-di-psicologia-cognitiva-preparazione-alla-tesi-di-laurea-trienna",
      "stato_esami": "completo"
     },
@@ -41165,7 +41167,7 @@
      "docenti": [
       "Simona Collina"
      ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=21038",
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=21256",
      "libri": [
       {
        "titolo": "Dizionario delle scienze psicologiche",
@@ -44910,8 +44912,55 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/spc/lm59/index.htm?vr=1",
    "stato": "completo",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
+    {
+     "codice": null,
+     "nome": "Design e comunicazione visiva",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "ICAR/13",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Francesca Nicolais"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=21543",
+     "libri": [
+      {
+       "titolo": "Dardi, D., Pasca.V. (2019) Manuale di storia del design, SilvanaeditoreQuinz E., (2020) Contro l'oggetto. Conversazioni sul design, Quodlibet habitatPetroni, M., (2022) Studio Formafantasma: Il design degli iperoggetti, Postmedia booksUlteriori indicazioni bibliografiche saranno fornite dalla docent",
+       "autori": null,
+       "editore": "SilvanaeditoreQuinz E",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Dardi, D., Pasca.V. (2019) Manuale di storia del design, SilvanaeditoreQuinz E., (2020) Contro l'oggetto. Conversazioni sul design, Quodlibet habitatPetroni, M., (2022) Studio Formafantasma: Il design degli iperoggetti, Postmedia booksUlteriori indicazioni bibliografiche saranno fornite dalla docente oltre a dispense delle lezioni e slide"
+      },
+      {
+       "titolo": "Bohemia, Erik & Harman, Kerry & Lauche, Kristina. (2009). The Global Studio: Linking Research, Teaching and Learning.",
+       "autori": null,
+       "editore": null,
+       "anno": 2009,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Bohemia, Erik & Harman, Kerry & Lauche, Kristina. (2009). The Global Studio: Linking Research, Teaching and Learning."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "id": "unisob-lm-59-comunicazione-pubblica-e-d-impresa-design-e-comunicazione-visiva",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
+    },
     {
      "codice": null,
      "nome": "English for Business and Communication",
@@ -45717,53 +45766,6 @@
      "stato_libri": "completo",
      "id": "unisob-lm-59-comunicazione-pubblica-e-d-impresa-global-citizenship",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Design e comunicazione visiva",
-     "anno": 2,
-     "periodo": "1",
-     "cfu": 6,
-     "ssd": "ICAR/13",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Francesca Nicolais"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=21544",
-     "libri": [
-      {
-       "titolo": "Dardi, D., Pasca.V. (2019) Manuale di storia del design, SilvanaeditoreQuinz E., (2020) Contro l'oggetto. Conversazioni sul design, Quodlibet habitatPetroni, M., (2022) Studio Formafantasma: Il design degli iperoggetti, Postmedia booksUlteriori indicazioni bibliografiche saranno fornite dalla docent",
-       "autori": null,
-       "editore": "SilvanaeditoreQuinz E",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Dardi, D., Pasca.V. (2019) Manuale di storia del design, SilvanaeditoreQuinz E., (2020) Contro l'oggetto. Conversazioni sul design, Quodlibet habitatPetroni, M., (2022) Studio Formafantasma: Il design degli iperoggetti, Postmedia booksUlteriori indicazioni bibliografiche saranno fornite dalla docente oltre a dispense delle lezioni e slide"
-      },
-      {
-       "titolo": "Bohemia, Erik & Harman, Kerry & Lauche, Kristina. (2009). The Global Studio: Linking Research, Teaching and Learning.",
-       "autori": null,
-       "editore": null,
-       "anno": 2009,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Bohemia, Erik & Harman, Kerry & Lauche, Kristina. (2009). The Global Studio: Linking Research, Teaching and Learning."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "id": "unisob-lm-59-comunicazione-pubblica-e-d-impresa-design-e-comunicazione-visiva",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
     },
     {
      "codice": null,
@@ -46603,21 +46605,21 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/spc/lm57-85/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
-     "nome": "Consulenza pedagogica e formazione continua (LM-85)",
+     "nome": "Consulenza pedagogica e formazione continua",
      "anno": 1,
      "periodo": null,
-     "cfu": 9,
+     "cfu": 6,
      "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
       "Pascal Perillo"
      ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20547",
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20271",
      "libri": [
       {
        "titolo": "La trabeazione formativa. Riflessioni sulla formazione per una formazione alla riflessività",
@@ -50719,7 +50721,7 @@
    "url": "https://www.unisob.na.it/universita/facolta/lettere/spc/lm43/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -50925,9 +50927,10 @@
      "curriculum": null,
      "docenti": [
       "Stefano De Luca",
+      "Francesca Nicolais",
       "Fernando Sarracino"
      ],
-     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=19911",
+     "url": "https://www.unisob.na.it/universita/facolta/lettere/lepre/programma.asp?vr=1&id=20619",
      "libri": [
       {
        "titolo": "La scorciatoia. Come le macchine sono diventate intelligenti senza pensare in modo umano",
@@ -53825,7 +53828,7 @@
    "url": "https://www.unisob.na.it/ateneo/economia/lm77/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -55937,7 +55940,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/lettere/spc/lm38/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -59440,7 +59443,7 @@
    "url": "https://www.unisob.na.it/universita/facolta/lettere/spc/lm49/index.htm?vr=1",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -59459,7 +59462,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/spc/lm87/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -62956,7 +62959,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/spc/lm51/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -65823,7 +65826,7 @@
    "url": "http://www.unisob.na.it/ateneo/restauro/index.htm?vr=1",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": []
   },
   {
@@ -65842,7 +65845,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/giurisprudenza/magistrale/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -71225,7 +71228,7 @@
    "url": "http://www.unisob.na.it/universita/facolta/formazione/primaria/index.htm?vr=1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-17",
+   "verificato_il": "2026-10-19",
    "insegnamenti": [
     {
      "codice": null,
@@ -71329,6 +71332,66 @@
      "stato_libri": "completo",
      "stato_esami": "completo",
      "id": "unisob-lm-85-bis-scienze-della-formazione-primaria-ofa-lingua-italiana-e-logica-verbale"
+    },
+    {
+     "codice": null,
+     "nome": "Fondamenti di matematica per la formazione di base II",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "MAT/04",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Luigi D'Onofrio"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20010",
+     "libri": [
+      {
+       "titolo": "Su classroom sono presenti tutte le slide delle lezioni, in attesa dell'uscita del libro del Docente (previsto per il prossimo settembre). Sbordone-Sbordone Fondamenti di matematica per la formazione di base. Vol. 1: Numeri e operazioni. Ed. Edises",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Su classroom sono presenti tutte le slide delle lezioni, in attesa dell'uscita del libro del Docente (previsto per il prossimo settembre). Sbordone-Sbordone Fondamenti di matematica per la formazione di base. Vol. 1: Numeri e operazioni. Ed. Edises"
+      },
+      {
+       "titolo": "Tutte le slide delle lezioni sono presenti su classroom. Siamo in attesa del libro del docente, inoltre vi è Fusco-Sbordone Fondamenti di matematica per la formazione di base. Elementi di geometria (Vol. Ed. Edises",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Tutte le slide delle lezioni sono presenti su classroom. Siamo in attesa del libro del docente, inoltre vi è Fusco-Sbordone Fondamenti di matematica per la formazione di base. Elementi di geometria (Vol. Ed. Edises"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-14",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Luigi D'Onofrio",
+       "note": "Sessione straordinaria",
+       "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/esami.asp"
+      }
+     ],
+     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "id": "unisob-lm-85-bis-scienze-della-formazione-primaria-fondamenti-di-matematica-per-la-formazio",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
     },
     {
      "codice": null,
@@ -72153,66 +72216,6 @@
      "stato_libri": "completo",
      "id": "unisob-lm-85-bis-scienze-della-formazione-primaria-il-linguaggio-della-manipolazione-tra-re",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Fondamenti di matematica per la formazione di base II",
-     "anno": 2,
-     "periodo": "1",
-     "cfu": 6,
-     "ssd": "MAT/04",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Luigi D'Onofrio"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20097",
-     "libri": [
-      {
-       "titolo": "Su classroom sono presenti tutte le slide delle lezioni, in attesa dell'uscita del libro del Docente (previsto per il prossimo settembre). Sbordone-Sbordone Fondamenti di matematica per la formazione di base. Vol. 1: Numeri e operazioni. Ed. Edises",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Su classroom sono presenti tutte le slide delle lezioni, in attesa dell'uscita del libro del Docente (previsto per il prossimo settembre). Sbordone-Sbordone Fondamenti di matematica per la formazione di base. Vol. 1: Numeri e operazioni. Ed. Edises"
-      },
-      {
-       "titolo": "Tutte le slide delle lezioni sono presenti su classroom. Siamo in attesa del libro del docente, inoltre vi è Fusco-Sbordone Fondamenti di matematica per la formazione di base. Elementi di geometria (Vol. Ed. Edises",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Tutte le slide delle lezioni sono presenti su classroom. Siamo in attesa del libro del docente, inoltre vi è Fusco-Sbordone Fondamenti di matematica per la formazione di base. Elementi di geometria (Vol. Ed. Edises"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-14",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "Luigi D'Onofrio",
-       "note": "Sessione straordinaria",
-       "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/esami.asp"
-      }
-     ],
-     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "stato_esami": "completo",
-     "id": "unisob-lm-85-bis-scienze-della-formazione-primaria-fondamenti-di-matematica-per-la-formazio",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
     },
     {
      "codice": null,
@@ -77001,6 +77004,66 @@
     },
     {
      "codice": null,
+     "nome": "Arti visive e disegno",
+     "anno": 4,
+     "periodo": "2",
+     "cfu": 8,
+     "ssd": "ICAR/17",
+     "obbligatorio": null,
+     "curriculum": null,
+     "docenti": [
+      "Sergio Prozzillo"
+     ],
+     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20351",
+     "libri": [
+      {
+       "titolo": "Sergio Prozzillo, La parola disegnata. Scrittura e tipografia; Arti visive dalla Grecia classica all’Impero romano VII a.C. – V d.C., Napoli 2026",
+       "autori": null,
+       "editore": null,
+       "anno": 2026,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Sergio Prozzillo, La parola disegnata. Scrittura e tipografia; Arti visive dalla Grecia classica all’Impero romano VII a.C. – V d.C., Napoli 2026"
+      },
+      {
+       "titolo": "Sergio Prozzillo, La parola disegnata. Scrittura e tipografia, Imago, Napoli 2017",
+       "autori": null,
+       "editore": null,
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Sergio Prozzillo, La parola disegnata. Scrittura e tipografia, Imago, Napoli 2017"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-12-10",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "Sergio Prozzillo",
+       "note": "Sessione straordinaria",
+       "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/esami.asp"
+      }
+     ],
+     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "id": "unisob-lm-85-bis-scienze-della-formazione-primaria-arti-visive-e-disegno",
+     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
+    },
+    {
+     "codice": null,
      "nome": "Laboratorio area biologica",
      "anno": 4,
      "periodo": "2",
@@ -78702,66 +78765,6 @@
      "stato_libri": "completo",
      "stato_esami": "completo",
      "id": "unisob-lm-85-bis-scienze-della-formazione-primaria-urbs-e-civitas",
-     "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
-    },
-    {
-     "codice": null,
-     "nome": "Arti visive e disegno",
-     "anno": 5,
-     "periodo": "2",
-     "cfu": 8,
-     "ssd": "ICAR/17",
-     "obbligatorio": null,
-     "curriculum": null,
-     "docenti": [
-      "Sergio Prozzillo"
-     ],
-     "url": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programma.asp?vr=1&id=20352",
-     "libri": [
-      {
-       "titolo": "Sergio Prozzillo, La parola disegnata. Scrittura e tipografia; Arti visive dalla Grecia classica all’Impero romano VII a.C. – V d.C., Napoli 2026",
-       "autori": null,
-       "editore": null,
-       "anno": 2026,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Sergio Prozzillo, La parola disegnata. Scrittura e tipografia; Arti visive dalla Grecia classica all’Impero romano VII a.C. – V d.C., Napoli 2026"
-      },
-      {
-       "titolo": "Sergio Prozzillo, La parola disegnata. Scrittura e tipografia, Imago, Napoli 2017",
-       "autori": null,
-       "editore": null,
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Sergio Prozzillo, La parola disegnata. Scrittura e tipografia, Imago, Napoli 2017"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-12-10",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": null,
-       "iscrizioni_al": null,
-       "docenti": "Sergio Prozzillo",
-       "note": "Sessione straordinaria",
-       "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/esami.asp"
-      }
-     ],
-     "fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/programmi.asp",
-     "verificato_il": "2026-10-10",
-     "stato_libri": "completo",
-     "stato_esami": "completo",
-     "id": "unisob-lm-85-bis-scienze-della-formazione-primaria-arti-visive-e-disegno",
      "periodo_fonte": "https://www.unisob.na.it/universita/facolta/formazione/lepre/lezioni.asp"
     },
     {
