@@ -192,7 +192,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "IT",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -1028,7 +1028,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "IT, DE",
+     "ssd": null,
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -3994,7 +3994,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -4016,7 +4016,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -4053,7 +4053,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN, DE",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -4175,7 +4175,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "IT",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -6241,7 +6241,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -6460,7 +6460,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "IT, DE",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -8965,7 +8965,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "IT",
+     "ssd": null,
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -9383,7 +9383,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -9447,7 +9447,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -9489,7 +9489,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "DE, EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -9624,7 +9624,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "EN, DE",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -9886,7 +9886,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "IT",
+     "ssd": null,
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -11029,7 +11029,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 3,
-     "ssd": "DE",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -11226,7 +11226,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "IT, DE",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -13865,7 +13865,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "IT",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -13946,7 +13946,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -14007,7 +14007,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "DE",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -14028,7 +14028,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "IT",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -14109,7 +14109,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "DE",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -14157,7 +14157,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -14180,7 +14180,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "IT",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -14285,7 +14285,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -28223,7 +28223,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -29049,7 +29049,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -30963,7 +30963,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -31106,7 +31106,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -31190,7 +31190,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -31280,7 +31280,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -31470,7 +31470,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -31530,7 +31530,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -32548,7 +32548,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 15,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -32723,7 +32723,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 15,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -32926,7 +32926,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 15,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -33501,7 +33501,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 15,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -33968,7 +33968,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -34062,7 +34062,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -35266,7 +35266,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -35350,7 +35350,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -35374,7 +35374,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -35429,7 +35429,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -35451,7 +35451,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -35472,7 +35472,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -35494,7 +35494,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -35517,7 +35517,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -35627,7 +35627,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -35713,7 +35713,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -36575,7 +36575,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -36849,7 +36849,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -36946,7 +36946,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -37723,7 +37723,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -37786,7 +37786,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -38057,7 +38057,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -38267,7 +38267,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -38325,7 +38325,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -38347,7 +38347,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -38688,7 +38688,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 10,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -39670,7 +39670,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -39704,7 +39704,7 @@
        "citazione": "Paper: Bryson, J. M. (2004). What to do when stakeholders matter: stakeholder identification and analysis techniques. Public management review, 6(1), 21-53."
       },
       {
-       "titolo": "Background material is covered in Public Finance and Public Policy, by Jonathan Gruber, 7th edition – Chapters 1, 2, 3, 5, 6, 7, 8, 9, 10 ISBN: 1319466923 ISBN: 9780141986104 ISBN: 9780141986104 ISBN: 9780141986104 ISBN: 9780141986104",
+       "titolo": "Background material is covered in Public Finance and Public Policy, by Jonathan Gruber, 7th edition – Chapters 1, 2, 3, 5, 6, 7, 8, 9, 10 ISBN: 1319466923 ISBN: 9780141986104 ISBN: 9780141986104 ISBN: 9780141986104 ISBN: 9780141986104 ISBN: 9780141986104",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -39713,7 +39713,19 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "Background material is covered in Public Finance and Public Policy, by Jonathan Gruber, 7th edition – Chapters 1, 2, 3, 5, 6, 7, 8, 9, 10 ISBN: 1319466923 ISBN: 9780141986104 ISBN: 9780141986104 ISBN: 9780141986104 ISBN: 9780141986104"
+       "citazione": "Background material is covered in Public Finance and Public Policy, by Jonathan Gruber, 7th edition – Chapters 1, 2, 3, 5, 6, 7, 8, 9, 10 ISBN: 1319466923 ISBN: 9780141986104 ISBN: 9780141986104 ISBN: 9780141986104 ISBN: 9780141986104 ISBN: 9780141986104"
+      },
+      {
+       "titolo": "Background material is covered in Public Finance and Public Policy, by Jonathan Gruber, 7th edition – Chapters 1, 2, 3, 5, 6, 7, 8, 9, 10 ISBN: 1319466923",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "1319466923",
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "Background material is covered in Public Finance and Public Policy, by Jonathan Gruber, 7th edition – Chapters 1, 2, 3, 5, 6, 7, 8, 9, 10 ISBN: 1319466923"
       }
      ],
      "esami": [],
@@ -39847,7 +39859,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -39969,7 +39981,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -40454,7 +40466,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "IT, DE",
+     "ssd": null,
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -41414,7 +41426,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -41653,7 +41665,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -41847,7 +41859,7 @@
      "anno": null,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -41985,7 +41997,7 @@
      "anno": null,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -42087,7 +42099,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -42157,7 +42169,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [
@@ -42316,7 +42328,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "EN",
+     "ssd": null,
      "obbligatorio": null,
      "curriculum": null,
      "docenti": [

@@ -15,8 +15,6 @@ import '../../models/study.dart';
 import '../../utils/dates.dart';
 import '../../utils/grade_math.dart';
 import '../books/book_filters.dart';
-import '../links/ai_assistants.dart';
-import '../links/link_settings.dart';
 import '../notes/lesson_transcripts.dart';
 import '../notes/notes_store.dart';
 
@@ -76,7 +74,6 @@ class DashboardData {
     required this.palette,
     this.recordings = const [],
     this.books = const BooksSummary(),
-    this.ai = ReferenceAi.defaultAi,
     this.profile,
     this.year,
   });
@@ -97,9 +94,6 @@ class DashboardData {
   /// Ultime lezioni registrate (le più recenti per prime).
   final List<RecentRecording> recordings;
   final BooksSummary books;
-
-  /// AI di riferimento (Collegamenti; scelta nell'onboarding).
-  final ReferenceAi ai;
 
   DateTime get weekStart => startOfWeek(now);
 
@@ -185,7 +179,6 @@ class DashboardData {
       palette: palette,
       recordings: await _recordings(s, shown),
       books: await _books(s, scope),
-      ai: await s.settings.referenceAi(),
       profile: scope.profile,
       year: scope.year,
     );

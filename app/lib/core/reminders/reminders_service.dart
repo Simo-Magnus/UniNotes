@@ -15,6 +15,7 @@ import '../services/calendar_export.dart';
 import '../services/external_launcher.dart';
 import '../services/nudges.dart';
 import 'agenda.dart';
+import 'apple_calendar_backend.dart';
 import 'device_calendar_backend.dart';
 import 'home_widgets.dart';
 import 'notification_platform.dart';
@@ -79,9 +80,11 @@ class RemindersService extends ChangeNotifier {
   late final OutlookCalendarAuth? outlook;
 
   CalendarBackend? _defaultBackend(String p) => switch (p) {
-    'android' || 'ios' => DeviceCalendarBackend(),
+    'android' => DeviceCalendarBackend(),
+    // iPhone, iPad e Mac: EventKit con codice nativo (calendario visibile
+    // anche con iCloud attivo; sul Mac non serve più il file .ics)
+    'ios' || 'macos' => AppleCalendarBackend(),
     'windows' => OutlookCalendarBackend(outlook!),
-    // macOS: device_calendar non lo supporta → file .ics
     _ => null,
   };
 

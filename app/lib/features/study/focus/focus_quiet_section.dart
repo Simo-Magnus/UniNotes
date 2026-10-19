@@ -169,9 +169,10 @@ class _FocusQuietSectionState extends State<FocusQuietSection> {
       onChanged: _set,
     ),
     Text(
-      'Se Windows non la permette (alcune versioni la riservano alle sue '
-      'app), la sessione lo dice e apre le impostazioni delle notifiche per '
-      'attivare «Non disturbare» a mano.',
+      'Windows 11 riserva questa funzione alle app autorizzate da '
+      'Microsoft: se la rifiuta, la sessione lo dice e offre il pulsante per '
+      'le impostazioni delle notifiche, dove attivare «Non disturbare» a '
+      'mano.',
       style: small,
     ),
   ];
@@ -198,8 +199,8 @@ class _FocusQuietSectionState extends State<FocusQuietSection> {
       title: Text('Avvia «$kAppleFocusShortcut» con la sessione'),
       subtitle: const Text(
         'All\'avvio l\'app apre Comandi con l\'ora di fine: il Non disturbare '
-        'resta fino ad allora (chiamate ripetute e sveglie passano). Poi '
-        'torna su UniNotes.',
+        'resta fino ad allora (chiamate ripetute e sveglie passano) e '
+        'Comandi torna da solo su UniNotes con l\'esito.',
       ),
       value: on,
       onChanged: _set,

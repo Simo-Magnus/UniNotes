@@ -6,6 +6,7 @@ import '../../core/services/app_services.dart';
 import '../../models/course.dart';
 import '../../models/study.dart';
 import '../study/attachments.dart';
+import 'lesson_transcripts.dart';
 import 'notes_store.dart';
 
 /// Oltre questo numero di appunti di testo si allegano riuniti in un solo
@@ -71,7 +72,8 @@ Future<List<File>> collectAiFiles(
     }
     for (final n in texts) {
       md.writeln(
-        '\n---\n\n## ${n.folder.dirName} – ${n.name}\n\n${await n.file.readAsString()}',
+        '\n---\n\n## ${n.folder.dirName} – ${n.name}\n\n'
+        '${stripTranscriptTimes(await n.file.readAsString())}',
       );
     }
     final bundle = File(

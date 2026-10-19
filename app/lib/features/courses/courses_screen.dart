@@ -11,7 +11,6 @@ import 'course_detail_screen.dart';
 import 'course_form.dart';
 import 'course_list.dart';
 import 'course_ui.dart';
-import '../academic/year_widgets.dart';
 import '../../core/constants/text_limits.dart';
 
 /// Sezione Insegnamenti: gli insegnamenti dell'anno scelto nel selettore
@@ -75,7 +74,6 @@ class _CoursesScreenState extends State<CoursesScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Insegnamenti'),
-        actions: const [YearSelectorChip()],
       ),
       floatingActionButton: GlowFab(
         onPressed: _add,

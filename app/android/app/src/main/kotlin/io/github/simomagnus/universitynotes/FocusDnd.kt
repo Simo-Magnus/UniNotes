@@ -7,6 +7,8 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.os.Handler
+import android.os.Looper
 import android.provider.Settings
 
 /**
@@ -20,14 +22,20 @@ import android.provider.Settings
  *   della modalità Focus (vedi [focusPolicy]: passano solo sveglie, audio
  *   dei contenuti, chiamate ripetute e chiamate dai contatti preferiti;
  *   tutte le altre notifiche e i loro suoni sono bloccati) o torna al filtro
- *   e alle regole di prima.
+ *   e alle regole di prima. Risponde true solo se il sistema ha davvero
+ *   attivato il Non disturbare (letto subito dopo e di nuovo poco più
+ *   tardi): altrimenti rimette tutto come prima e risponde false;
+ * - `dndActive`: il Non disturbare della sessione è ancora attivo (l'utente
+ *   può averlo spento a mano dalla tendina).
  *
  * Filtro e regole di prima restano salvati e un allarme del sistema li
  * ripristina alla fine prevista della sessione anche se l'app nel frattempo
  * è stata chiusa: il telefono non resta mai silenziato per sbaglio.
- * Da Android 15 (app con targetSdk 35) il sistema applica filtro e regole a
- * una regola «automatica» propria dell'app, senza toccare il Non disturbare
- * dell'utente: il comportamento per chi usa il telefono è lo stesso.
+ * Da Android 15 (l'app ha targetSdk 36) il sistema applica filtro e regole a
+ * una modalità propria dell'app («UniNotes» in Impostazioni → Modalità),
+ * separata dal Non disturbare dell'utente: alla fine si spegne solo quella
+ * (mai il Non disturbare che l'utente aveva già acceso), e se l'utente ha
+ * disattivato la modalità dell'app la sessione lo dice invece di fingere.
  */
 object FocusDnd {
     const val CHANNEL = "io.github.simomagnus.universitynotes/focus"
@@ -42,6 +50,27 @@ object FocusDnd {
 
     private fun manager(ctx: Context) =
         ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+    /**
+     * Android 15+ con targetSdk 35+: `setInterruptionFilter` accende e spegne
+     * la modalità implicita dell'app, non il Non disturbare globale.
+     */
+    private fun appMode(ctx: Context): Boolean =
+        Build.VERSION.SDK_INT >= 35 && ctx.applicationInfo.targetSdkVersion >= 35
+
+    /** Il telefono è in Non disturbare (qualsiasi filtro tranne «Tutte»). */
+    private fun quiet(nm: NotificationManager): Boolean {
+        val f = nm.currentInterruptionFilter
+        return f != NotificationManager.INTERRUPTION_FILTER_ALL &&
+            f != NotificationManager.INTERRUPTION_FILTER_UNKNOWN
+    }
+
+    /** Il Non disturbare attivato dall'app per la sessione è ancora acceso. */
+    fun isActive(ctx: Context): Boolean {
+        val prefs = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+        return prefs.getBoolean(KEY_ACTIVE, false) && hasAccess(ctx) &&
+            quiet(manager(ctx))
+    }
 
     fun hasAccess(ctx: Context): Boolean =
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
@@ -59,9 +88,17 @@ object FocusDnd {
         }
     }
 
-    /** Attiva il Non disturbare fino a [untilMs]; false senza permesso. */
-    fun enable(ctx: Context, untilMs: Long): Boolean {
-        if (!hasAccess(ctx)) return false
+    /**
+     * Attiva il Non disturbare fino a [untilMs] e passa a [done] se è
+     * davvero attivo: false senza permesso, se il sistema rifiuta o se la
+     * modalità dell'app è disattivata (Android 15+); in quei casi tutto
+     * torna come prima.
+     */
+    fun enable(ctx: Context, untilMs: Long, done: (Boolean) -> Unit) {
+        if (!hasAccess(ctx)) {
+            done(false)
+            return
+        }
         val nm = manager(ctx)
         val prefs = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
         if (!prefs.getBoolean(KEY_ACTIVE, false)) {
@@ -71,7 +108,7 @@ object FocusDnd {
                 .putString(KEY_POLICY, encode(nm.notificationPolicy))
                 .apply()
         }
-        return try {
+        try {
             // regole della sessione; se il sistema le rifiuta resta il
             // filtro «Solo priorità» con le regole dell'utente
             try {
@@ -81,11 +118,24 @@ object FocusDnd {
             nm.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_PRIORITY)
             allowFocusAlerts(nm)
             scheduleRestore(ctx, untilMs)
-            true
         } catch (e: SecurityException) {
-            prefs.edit().clear().apply()
-            false
+            disable(ctx)
+            done(false)
+            return
         }
+        if (quiet(nm)) {
+            done(true)
+            return
+        }
+        // il sistema può applicare la modalità un attimo dopo: si rilegge
+        Handler(Looper.getMainLooper()).postDelayed({
+            if (quiet(manager(ctx))) {
+                done(true)
+            } else {
+                disable(ctx)
+                done(false)
+            }
+        }, 400)
     }
 
     /**
@@ -106,7 +156,11 @@ object FocusDnd {
         }
     }
 
-    /** Torna al filtro di prima (se è stata l'app a cambiarlo). */
+    /**
+     * Torna al filtro di prima (se è stata l'app a cambiarlo). Da Android 15
+     * si spegne la modalità dell'app («Tutte»): il Non disturbare che
+     * l'utente aveva già acceso è separato e resta com'è.
+     */
     fun disable(ctx: Context) {
         val prefs = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
         cancelRestore(ctx)
@@ -118,7 +172,10 @@ object FocusDnd {
         val policy = decode(prefs.getString(KEY_POLICY, null))
         prefs.edit().clear().apply()
         if (!hasAccess(ctx)) return
-        if (policy != null) {
+        val appMode = appMode(ctx)
+        // Android 15+: le regole salvate sono quelle della modalità dell'app,
+        // che restano pronte per la prossima sessione
+        if (policy != null && !appMode) {
             try {
                 manager(ctx).notificationPolicy = policy
             } catch (e: Exception) {
@@ -126,7 +183,9 @@ object FocusDnd {
         }
         try {
             manager(ctx).setInterruptionFilter(
-                if (previous == NotificationManager.INTERRUPTION_FILTER_UNKNOWN) {
+                if (appMode ||
+                    previous == NotificationManager.INTERRUPTION_FILTER_UNKNOWN
+                ) {
                     NotificationManager.INTERRUPTION_FILTER_ALL
                 } else {
                     previous

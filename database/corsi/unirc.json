@@ -31,7 +31,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "CHEM-03/A, CHEM-05/A",
+     "ssd": "CHEM-03/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -55,7 +55,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "MATH-03/A, PHYS-06/A",
+     "ssd": "MATH-03/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -1040,7 +1040,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "CEAR-06/A, CEAR-08/C",
+     "ssd": "CEAR-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -1357,7 +1357,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "ICAR/17, ING-INF/05",
+     "ssd": "ICAR/17",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -1382,7 +1382,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "L-ART/03, ICAR/18",
+     "ssd": "L-ART/03",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -1528,7 +1528,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "ICAR/21, ICAR/13",
+     "ssd": "ICAR/21",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -6364,7 +6364,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "PHYS-03/A, CHEM-06/A",
+     "ssd": "PHYS-03/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -9322,7 +9322,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "ING-IND/10, ING-IND/11",
+     "ssd": "ING-IND/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -9432,7 +9432,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "ING-IND/22, ING-IND/16",
+     "ssd": "ING-IND/22",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -10706,7 +10706,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 8,
-     "ssd": "NN-ANTE",
+     "ssd": "NN",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -10758,7 +10758,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "MATH-05/A, MATH-03/B",
+     "ssd": "MATH-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -11372,7 +11372,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "ING-INF/07, ING-INF/01",
+     "ssd": "ING-INF/07",
      "obbligatorio": true,
      "curriculum": "INTERNET & CYBERSECURITY",
      "docenti": [
@@ -14392,7 +14392,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "ICAR/01, ING-IND/08",
+     "ssd": "ICAR/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -14465,7 +14465,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "ING-IND/22, ING-IND/16",
+     "ssd": "ING-IND/22",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -15041,7 +15041,7 @@
      "periodo_inizio": "",
      "periodo_fine": "",
      "cfu": 3,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -15702,7 +15702,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 14,
-     "ssd": "PAED-01/A, NN",
+     "ssd": "PAED-01/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -15776,7 +15776,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 14,
-     "ssd": "PAED-01/A, MATH-04/A",
+     "ssd": "PAED-01/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -15851,7 +15851,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 14,
-     "ssd": "PAED-01/A, CEAR-08/C",
+     "ssd": "PAED-01/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -15938,7 +15938,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 14,
-     "ssd": "CHEM-07/B, PAED-01/A",
+     "ssd": "CHEM-07/B",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -16488,7 +16488,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 16,
-     "ssd": "M-DEA/01, SPS/07",
+     "ssd": "M-DEA/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -17359,7 +17359,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "MATH-04/A, PHYS-01/A",
+     "ssd": "MATH-04/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -18262,7 +18262,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "AGR/16, AGR/15",
+     "ssd": "AGR/16",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -18509,7 +18509,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "AGRI-01/A, AGRI-09/C",
+     "ssd": "AGRI-01/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -20347,7 +20347,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "MATH-04/A, PHYS-01/A",
+     "ssd": "MATH-04/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -20469,7 +20469,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "AGRI-01/A, GIUR-03/B",
+     "ssd": "AGRI-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -21496,7 +21496,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "AGR/03, AGR/18, AGR/02",
+     "ssd": "AGR/03",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -21597,7 +21597,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "AGRI-01/A, AGRI-09/C",
+     "ssd": "AGRI-01/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -25089,7 +25089,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "MATH-04/A, PHYS-01/A",
+     "ssd": "MATH-04/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -25784,7 +25784,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "AGR/03, AGR/18, AGR/02",
+     "ssd": "AGR/03",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -25823,7 +25823,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "AGR/19, AGR/18",
+     "ssd": "AGR/19",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -25848,7 +25848,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "AGRI-01/A, AGRI-09/C",
+     "ssd": "AGRI-01/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -27197,7 +27197,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "GIUR-01/A, CEAR-08/C",
+     "ssd": "GIUR-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -27284,7 +27284,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "GIUR-05/A, GIUR-11/B",
+     "ssd": "GIUR-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -27322,7 +27322,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 10,
-     "ssd": "PSIC-01/A, PAED-01/A",
+     "ssd": "PSIC-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -27520,7 +27520,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 15,
-     "ssd": "M-EDF/02, M-EDF/01",
+     "ssd": "M-EDF/02",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -27570,7 +27570,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 13,
-     "ssd": "IUS/01, IUS/10, SECS-P/08",
+     "ssd": "IUS/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -28215,7 +28215,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 20,
-     "ssd": "CEAR-08/C, CEAR-08/D, CEAR-06/A",
+     "ssd": "CEAR-08/C",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -29019,7 +29019,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 14,
-     "ssd": "ICAR/13, ICAR/22",
+     "ssd": "ICAR/13",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -29129,7 +29129,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 14,
-     "ssd": "ICAR/13, ING-INF/05",
+     "ssd": "ICAR/13",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -29249,7 +29249,7 @@
      "periodo_inizio": "",
      "periodo_fine": "",
      "cfu": 8,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -30051,7 +30051,7 @@
      "periodo_inizio": "",
      "periodo_fine": "",
      "cfu": 12,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -31407,7 +31407,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "AGRI-05/B, AGRI-05/A",
+     "ssd": "AGRI-05/B",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -32224,7 +32224,7 @@
      "periodo_inizio": "",
      "periodo_fine": "",
      "cfu": 12,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -32314,7 +32314,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "AGRI-01/A, AGRI-09/C",
+     "ssd": "AGRI-01/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -32812,7 +32812,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "CEAR-06/A, CEAR-07/A",
+     "ssd": "CEAR-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -32935,7 +32935,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "CEAR-01/A, CEAR-01/B",
+     "ssd": "CEAR-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -34124,7 +34124,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "ICAR/05, ICAR/04",
+     "ssd": "ICAR/05",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -34272,7 +34272,7 @@
      "periodo_inizio": "",
      "periodo_fine": "",
      "cfu": 9,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -36044,7 +36044,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "PHYS-03/A, CHEM-06/A",
+     "ssd": "PHYS-03/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -36179,7 +36179,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "PHYS-03/A, MATH-03/A",
+     "ssd": "PHYS-03/A",
      "obbligatorio": true,
      "curriculum": "ELETTRONICA",
      "docenti": [
@@ -36278,7 +36278,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "PHYS-03/A, MATH-03/A",
+     "ssd": "PHYS-03/A",
      "obbligatorio": true,
      "curriculum": "BIOMEDICA",
      "docenti": [
@@ -37799,7 +37799,7 @@
      "periodo_inizio": "",
      "periodo_fine": "",
      "cfu": 18,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": "ELETTRONICA",
      "docenti": [],
@@ -42159,7 +42159,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "PHYS-03/A, MATH-03/A",
+     "ssd": "PHYS-03/A",
      "obbligatorio": true,
      "curriculum": "SISTEMI WIRELESS PER SPAZIO E DIFESA",
      "docenti": [
@@ -43057,7 +43057,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "IINF-03/A, ING-INF/03",
+     "ssd": "ING-INF/03 (IINF-03/A)",
      "obbligatorio": false,
      "curriculum": "INTELLIGENTE TRASPORTATION SYSTEMS, RETI E APPLICAZIONI, SISTEMI WIRELESS PER SPAZIO E DIFESA",
      "docenti": [
@@ -43304,7 +43304,7 @@
      "periodo_inizio": "",
      "periodo_fine": "",
      "cfu": 21,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": "INTELLIGENTE TRASPORTATION SYSTEMS, RETI E APPLICAZIONI, SISTEMI WIRELESS PER SPAZIO E DIFESA",
      "docenti": [],
@@ -45782,7 +45782,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "ICAR/01, ICAR/02",
+     "ssd": "ICAR/01",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -45807,7 +45807,7 @@
      "periodo_inizio": "",
      "periodo_fine": "",
      "cfu": 15,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -45976,7 +45976,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "ICAR/04, ICAR/06",
+     "ssd": "ICAR/04",
      "obbligatorio": true,
      "curriculum": "GESTIONE ENERGETICA SOSTENIBILE (LM-30), GESTIONE ENERGETICA SOSTENIBILE (LM-35)",
      "docenti": [
@@ -47911,7 +47911,7 @@
      "periodo_inizio": "",
      "periodo_fine": "",
      "cfu": 10,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -48580,7 +48580,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "AGRI-01/A, GIUR-03/B",
+     "ssd": "AGRI-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -49315,7 +49315,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "AGR/11, AGR/12",
+     "ssd": "AGR/11",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -49339,7 +49339,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "AGR/02, AGR/03, AGR/18",
+     "ssd": "AGR/02",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -49378,7 +49378,7 @@
      "periodo_inizio": "",
      "periodo_fine": "",
      "cfu": 12,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -49468,7 +49468,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "AGRI-01/A, AGRI-09/C",
+     "ssd": "AGRI-01/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -51118,7 +51118,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "AGRI-05/B, AGRI-05/A",
+     "ssd": "AGRI-05/B",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -51508,7 +51508,7 @@
      "periodo_inizio": "",
      "periodo_fine": "",
      "cfu": 12,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -51554,7 +51554,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 9,
-     "ssd": "AGR/19, AGR/18",
+     "ssd": "AGR/19",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -51684,7 +51684,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "AGRI-01/A, AGRI-09/C",
+     "ssd": "AGRI-01/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -52450,7 +52450,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 12,
-     "ssd": "CEAR-09/A, CEAR-11/A",
+     "ssd": "CEAR-09/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -52633,7 +52633,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 10,
-     "ssd": "GIUR-06/A, CEAR-12/B",
+     "ssd": "GIUR-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -57106,7 +57106,7 @@
      "periodo_inizio": "15/02/2027",
      "periodo_fine": "07/05/2027",
      "cfu": 8,
-     "ssd": "STAN-01/A, STAN-01/B, HIST-01/A",
+     "ssd": "STAN-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -58208,7 +58208,7 @@
      "periodo_inizio": "15/02/2027",
      "periodo_fine": "07/05/2027",
      "cfu": 8,
-     "ssd": "M-DEA/01, SPS/08",
+     "ssd": "M-DEA/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],

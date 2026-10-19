@@ -20,10 +20,27 @@
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<!-- Collegamenti uninotes:// (AppLinks in MainFlutterWindow.swift): tocchi
+	     sui widget e ritorno da Comandi dopo il comando «UniNotes Focus». -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>io.github.simomagnus.universitynotes</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>uninotes</string>
+			</array>
+		</dict>
+	</array>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>$(PRODUCT_COPYRIGHT)</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>UniNotes scrive le date di esami, prove in itinere, esoneri e sessioni d'esame nel calendario «UniNotes» e le aggiorna quando le modifichi. Solo se lo attivi in Impostazioni, Calendario.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>UniNotes scrive le date di esami, prove in itinere, esoneri e sessioni d'esame nel calendario «UniNotes» e le aggiorna quando le modifichi. Solo se lo attivi in Impostazioni, Calendario.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Il riconoscimento vocale trascrive le lezioni mentre le registri. Quando possibile avviene sul Mac.</string>
 	<key>NSMicrophoneUsageDescription</key>

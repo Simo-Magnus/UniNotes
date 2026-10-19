@@ -17,7 +17,7 @@ import io.github.simomagnus.universitynotes.widgets.WidgetSupport
  * - verso Flutter, `route`: tocco su un widget con l'app già aperta.
  *
  * Secondo canale: Non disturbare del telefono durante le sessioni Focus
- * (FocusDnd.kt).
+ * (FocusDnd.kt): `dndAccess`, `openDndSettings`, `setDnd`, `dndActive`.
  *
  * Terzo canale: trascrizione istantanea delle lezioni con il riconoscimento
  * vocale del sistema (LiveSpeech.kt).
@@ -72,6 +72,7 @@ class MainActivity : FlutterActivity() {
             it.setMethodCallHandler { call, result ->
                 when (call.method) {
                     "dndAccess" -> result.success(FocusDnd.hasAccess(applicationContext))
+                    "dndActive" -> result.success(FocusDnd.isActive(applicationContext))
                     "openDndSettings" -> {
                         FocusDnd.openSettings(this)
                         result.success(null)
@@ -81,7 +82,9 @@ class MainActivity : FlutterActivity() {
                         if (on) {
                             val until = call.argument<Number>("untilMs")?.toLong()
                                 ?: (System.currentTimeMillis() + 60 * 60_000L)
-                            result.success(FocusDnd.enable(applicationContext, until))
+                            FocusDnd.enable(applicationContext, until) { ok ->
+                                result.success(ok)
+                            }
                         } else {
                             FocusDnd.disable(applicationContext)
                             result.success(true)

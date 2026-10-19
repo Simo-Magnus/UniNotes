@@ -42,12 +42,13 @@ nel calendario: *Impostazioni → Privacy e informazioni → Disinstalla UniNote
   corso (dal 1° settembre) è il tuo anno; puoi aprire anche gli anni precedenti (*Segna come
   completato*: solo i voti; se mancano voti l'anno risulta *completato parzialmente*) e quelli
   successivi (voti facoltativi).
-- **Home**: «Inizia» (Sessione Studio con cronometro o timer, Registra lezione, la tua AI di
-  riferimento), prossime prove con lo stato (da prenotare, prenotato), obiettivo di oggi e
-  studio della settimana, ultime registrazioni con le trascrizioni fatte, moduli e argomenti,
-  libri (scaricati, da procurare, riprendi la lettura).
-- **Impostazioni**: in alto *Cambia corso*; il mio percorso (*Aggiorna database* e *Indirizzo
-  del database*), calendario, esclusioni, Focus e Non disturbare, aspetto, suoni, notifiche,
+- **Home**: il corso di laurea con accanto l'anno di corso (toccandolo si sceglie l'anno
+  mostrato in tutte le sezioni), «Inizia» (quanto hai studiato oggi rispetto all'obiettivo,
+  Sessione Studio con cronometro o timer, Registra lezione), prossime prove con lo stato (da
+  prenotare, prenotato), studio della settimana, ultime registrazioni con le trascrizioni
+  fatte, moduli e argomenti, libri (scaricati, da procurare, riprendi la lettura).
+- **Impostazioni**: il mio percorso con *Cambia corso*, *Aggiorna database* e *Indirizzo
+  del database* (senza connessione l'app la chiede, con *Riprova*), calendario, esclusioni, Focus e Non disturbare, aspetto, suoni, notifiche,
   *Esporta/importa dati* (.json), privacy e informazioni con le licenze open source.
 - **Registra**: registrazione delle lezioni anche di più ore (schermo spento su Android, in
   background su iOS), trascrizione con **Whisper** (locale) o **Gemini**, riassunti, appunti.

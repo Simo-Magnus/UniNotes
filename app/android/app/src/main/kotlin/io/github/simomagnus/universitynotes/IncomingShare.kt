@@ -17,7 +17,8 @@ import java.util.Locale
 
 /**
  * File condivisi con UniNotes da altre app («Condividi → UniNotes»,
- * ACTION_SEND e ACTION_SEND_MULTIPLE): [ShareReceiverActivity] copia ogni
+ * ACTION_SEND e ACTION_SEND_MULTIPLE, e «Apri con → UniNotes»,
+ * ACTION_VIEW): [ShareReceiverActivity] copia ogni
  * file nella cache dell'app (finché ha il permesso di leggerlo), li mette in
  * attesa qui e apre l'app; Flutter li prende con `take` sul canale
  * [CHANNEL] (lib/features/cloud/incoming_files.dart) e chiede in quale
@@ -57,6 +58,8 @@ object IncomingShare {
                 }
                 if (uri != null) out.add(uri)
             }
+            // «Apri con → UniNotes» da un file manager o da un'altra app
+            Intent.ACTION_VIEW -> intent.data?.let(out::add)
             Intent.ACTION_SEND_MULTIPLE -> {
                 val list: List<Uri>? = if (Build.VERSION.SDK_INT >= 33) {
                     intent.getParcelableArrayListExtra(Intent.EXTRA_STREAM, Uri::class.java)

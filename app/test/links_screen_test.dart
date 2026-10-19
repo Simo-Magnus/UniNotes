@@ -27,6 +27,12 @@ Future<(AppServices, Directory)> _services() async {
       baseDir: () async => tmp,
       host: WhisperHost.windows,
       processRunner: (exe, _) async => throw ProcessException(exe, const []),
+      freeSpace: (_) async => 200 * 1000 * 1000 * 1000,
+      deviceProbe: () async => const DeviceProfile(
+        platform: WhisperPlatform.pc,
+        ramBytes: 16 * 1000 * 1000 * 1000,
+        cores: 8,
+      ),
     ),
   );
   return (s, tmp);
@@ -89,7 +95,8 @@ void main() {
       await tester.pump(const Duration(milliseconds: 100));
     }
     expect(find.text('large-v3-turbo-q5_0'), findsOneWidget);
-    expect(find.text('consigliato'), findsOneWidget);
+    // consiglio in base al dispositivo (16 GB, 8 core)
+    expect(find.text('Consigliato per questo dispositivo'), findsOneWidget);
     expect(find.text('Scarica'), findsWidgets);
     expect(find.text('Pagina ufficiale del modello'), findsWidgets);
     // Gemini con l'account universitario: passi guidati.

@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
 
 import '../../core/theme/app_tokens.dart';
+import '../links/whisper_models.dart';
 import 'notes_store.dart';
+import 'recorder/recording_meta.dart';
 
 /// Le trascrizioni di una lezione e come si riconoscono.
 ///
@@ -47,8 +49,85 @@ TranscriptKind transcriptKindOf(String name) =>
 bool isSystemLiveTranscript(String head) =>
     head.contains('riconoscimento vocale del sistema');
 
+/// Orario in testa a un paragrafo nel vecchio formato dell'app
+/// (`[00:12:30] testo`).
+final _paragraphTime = RegExp(
+  r'^[ \t]*\[\d{1,2}:\d{2}:\d{2}\][ \t]*',
+  multiLine: true,
+);
+
+/// La trascrizione è nel formato dell'app (Whisper o testo dal vivo):
+/// intestazione «# Trascrizione…». Quelle di Gemini e i file scritti a mano
+/// non si toccano.
+bool isAppTranscript(String md) => md.trimLeft().startsWith('# Trascrizione');
+
+/// [md] senza gli orari delle frasi (`[hh:mm:ss]` all'inizio dei
+/// paragrafi), se è una trascrizione nel formato dell'app; altrimenti
+/// com'è.
+String stripTranscriptTimes(String md) =>
+    isAppTranscript(md) ? md.replaceAll(_paragraphTime, '') : md;
+
+/// Il testo ha ancora gli orari dei paragrafi del vecchio formato.
+bool hasTranscriptTimes(String md) =>
+    isAppTranscript(md) && _paragraphTime.hasMatch(md);
+
+/// File già controllati in questa sessione (percorso → data di modifica).
+final _cleaned = <String, DateTime>{};
+
+/// Toglie dal file [md] (trascrizione di Whisper o dal vivo) gli orari dei
+/// paragrafi del vecchio formato. Se la registrazione [audioPath] non ha
+/// ancora i tempi dei segmenti nel suo `.json`, li prende prima dal testo:
+/// il lettore resta sincronizzato con l'audio. Restituisce true se il file
+/// è cambiato. Le trascrizioni di Gemini non si toccano.
+Future<bool> removeTranscriptTimes(File md, {String? audioPath}) async {
+  if (p.basenameWithoutExtension(md.path).endsWith(NotesStore.geminiSuffix)) {
+    return false;
+  }
+  try {
+    final modified = await md.lastModified();
+    if (_cleaned[md.path] == modified) return false;
+    final head = await readHead(md);
+    if (!isAppTranscript(head) || !_paragraphTime.hasMatch(head)) {
+      _cleaned[md.path] = modified;
+      return false;
+    }
+    final text = await md.readAsString();
+    if (audioPath != null && await File(audioPath).exists()) {
+      final meta = await RecordingMeta.load(audioPath);
+      if (meta.segments.isEmpty) {
+        meta.segments = segmentsFromMarkdown(text, total: meta.duration);
+        if (meta.segments.isNotEmpty) await meta.save(audioPath);
+      }
+    }
+    await md.writeAsString(stripTranscriptTimes(text));
+    _cleaned[md.path] = await md.lastModified();
+    return true;
+  } on FileSystemException {
+    return false;
+  }
+}
+
+/// Modello di Whisper scritto nell'intestazione della trascrizione
+/// («… · trascritta con Whisper small», «trascrizione dal vivo con Whisper
+/// base-q5_1»); null se non c'è.
+String? whisperModelInHead(String head) {
+  final m = RegExp(r'con Whisper ([A-Za-z0-9.-]+(?:_\d[A-Za-z0-9.-]*)*)')
+      .firstMatch(head);
+  return m?.group(1);
+}
+
+/// Etichetta breve del modello per il pulsante della trascrizione
+/// («small», «modello integrato»).
+String? whisperModelShort(String? id) =>
+    id == null || id.isEmpty ? null : whisperModelLabel(id);
+
 class LessonTranscripts {
-  const LessonTranscripts({this.whisper, this.systemLive, this.gemini});
+  const LessonTranscripts({
+    this.whisper,
+    this.systemLive,
+    this.gemini,
+    this.whisperModel,
+  });
 
   /// Trascrizione di Whisper (null se manca).
   final File? whisper;
@@ -57,6 +136,9 @@ class LessonTranscripts {
   /// già quella di Whisper, che lo sostituisce).
   final File? systemLive;
   final File? gemini;
+
+  /// Modello di Whisper con cui è stata fatta [whisper] (null = non si sa).
+  final String? whisperModel;
 
   static const none = LessonTranscripts();
 
@@ -67,27 +149,35 @@ class LessonTranscripts {
 }
 
 /// Trascrizioni della lezione [lesson] nella cartella [dir]
-/// (`<corso>/Trascrizioni`).
+/// (`<corso>/Trascrizioni`). Con [audioPath] (la registrazione) le
+/// trascrizioni del vecchio formato perdono gli orari dei paragrafi
+/// ([removeTranscriptTimes]).
 Future<LessonTranscripts> loadLessonTranscripts(
   Directory dir,
-  String lesson,
-) async {
+  String lesson, {
+  String? audioPath,
+}) async {
   final main = File(p.join(dir.path, '$lesson.md'));
   final gemini = File(
     p.join(dir.path, '${transcriptName(lesson, TranscriptKind.gemini)}.md'),
   );
   File? whisper, live;
+  String? model;
   if (await main.exists()) {
-    if (isSystemLiveTranscript(await readHead(main))) {
+    await removeTranscriptTimes(main, audioPath: audioPath);
+    final head = await readHead(main);
+    if (isSystemLiveTranscript(head)) {
       live = main;
     } else {
       whisper = main;
+      model = whisperModelInHead(head);
     }
   }
   return LessonTranscripts(
     whisper: whisper,
     systemLive: live,
     gemini: await gemini.exists() ? gemini : null,
+    whisperModel: model,
   );
 }
 

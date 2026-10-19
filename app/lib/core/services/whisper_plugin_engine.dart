@@ -6,16 +6,21 @@ import 'package:ffmpeg_kit_flutter_new_min/return_code.dart';
 import 'package:path/path.dart' as p;
 import 'package:whisper_ggml/whisper_ggml.dart' as wg;
 
+import '../../features/notes/recorder/wav.dart';
+import 'audio_codec.dart';
 import 'whisper_service.dart';
 
 /// Whisper dentro l'app (pacchetto `whisper_ggml`, whisper.cpp v1.9 incluso,
-/// licenza MIT) per Android, iOS e, se manca `whisper-cli`, macOS.
+/// licenza MIT) per Android, iOS e, se manca `whisper-cli`, macOS; su tutti
+/// i sistemi (anche Windows) per il modello integrato.
 ///
 /// Le lezioni durano ore: whisper.cpp tiene in memoria tutto l'audio
 /// (3 h a 16 kHz ≈ 700 MB), troppo per un telefono. Per questo l'audio viene
 /// prima convertito e diviso con ffmpeg in pezzi WAV da [chunk] e trascritto
 /// un pezzo alla volta, tenendo il modello caricato tra un pezzo e l'altro;
-/// gli orari dei segmenti vengono riportati alla registrazione intera.
+/// gli orari dei segmenti vengono riportati alla registrazione intera. Su
+/// Windows e Linux (niente ffmpeg nell'app) l'audio si converte in WAV con
+/// gli strumenti del sistema (Media Foundation) e si divide in Dart.
 class WhisperPluginEngine implements WhisperEngine {
   WhisperPluginEngine({this.chunk = const Duration(minutes: 10)});
 
@@ -34,37 +39,9 @@ class WhisperPluginEngine implements WhisperEngine {
     final tmp = await Directory.systemTemp.createTemp('whisper_chunks_');
     try {
       onProgress?.call(const WhisperProgress('Preparo l\'audio…', null));
-      final pattern = p.join(tmp.path, 'parte_%03d.wav');
-      final session = await FFmpegKit.executeWithArguments([
-        '-y',
-        '-i',
-        audio.path,
-        '-ar',
-        '16000',
-        '-ac',
-        '1',
-        '-c:a',
-        'pcm_s16le',
-        '-f',
-        'segment',
-        '-segment_time',
-        '${chunk.inSeconds}',
-        pattern,
-      ]);
-      if (!ReturnCode.isSuccess(await session.getReturnCode())) {
-        final log = (await session.getOutput())?.trim() ?? '';
-        throw WhisperException(
-          'Conversione dell\'audio non riuscita'
-          '${log.isEmpty ? '' : ': ${log.split('\n').last}'}',
-        );
-      }
-      final parts =
-          tmp
-              .listSync()
-              .whereType<File>()
-              .where((f) => p.basename(f.path).startsWith('parte_'))
-              .toList()
-            ..sort((a, b) => a.path.compareTo(b.path));
+      final parts = Platform.isWindows || Platform.isLinux
+          ? await _splitWav(audio, tmp)
+          : await _splitFfmpeg(audio, tmp);
       if (parts.isEmpty) {
         throw WhisperException('Audio vuoto o non leggibile.');
       }
@@ -125,6 +102,78 @@ class WhisperPluginEngine implements WhisperEngine {
     } finally {
       if (await tmp.exists()) await tmp.delete(recursive: true);
     }
+  }
+
+  /// Pezzi WAV 16 kHz mono da [chunk] con ffmpeg dell'app (telefono, Mac).
+  Future<List<File>> _splitFfmpeg(File audio, Directory tmp) async {
+    final pattern = p.join(tmp.path, 'parte_%03d.wav');
+    final session = await FFmpegKit.executeWithArguments([
+      '-y',
+      '-i',
+      audio.path,
+      '-ar',
+      '16000',
+      '-ac',
+      '1',
+      '-c:a',
+      'pcm_s16le',
+      '-f',
+      'segment',
+      '-segment_time',
+      '${chunk.inSeconds}',
+      pattern,
+    ]);
+    if (!ReturnCode.isSuccess(await session.getReturnCode())) {
+      final log = (await session.getOutput())?.trim() ?? '';
+      throw WhisperException(
+        'Conversione dell\'audio non riuscita'
+        '${log.isEmpty ? '' : ': ${log.split('\n').last}'}',
+      );
+    }
+    return tmp
+        .listSync()
+        .whereType<File>()
+        .where((f) => p.basename(f.path).startsWith('parte_'))
+        .toList()
+      ..sort((a, b) => a.path.compareTo(b.path));
+  }
+
+  /// Pezzi WAV 16 kHz mono da [chunk] senza ffmpeg (Windows, Linux): i WAV
+  /// si leggono direttamente, gli altri formati (.m4a, .flac…) si
+  /// convertono prima con gli strumenti del sistema.
+  Future<List<File>> _splitWav(File audio, Directory tmp) async {
+    var wav = audio;
+    var info = p.extension(audio.path).toLowerCase() == '.wav'
+        ? await readWavInfo(audio)
+        : null;
+    if (info == null) {
+      wav = File(p.join(tmp.path, 'audio.wav'));
+      if (!await AudioCodec.instance.toWav(audio, wav)) {
+        throw WhisperException(
+          'Conversione dell\'audio non riuscita: prova a trascrivere con '
+          'Gemini.',
+        );
+      }
+      info = await readWavInfo(wav);
+      if (info == null) throw WhisperException('Audio vuoto o non leggibile.');
+    }
+    final parts = <File>[];
+    final total = info.duration;
+    for (var k = 0; chunk * k < total; k++) {
+      final start = chunk * k;
+      final end = start + chunk < total ? start + chunk : total;
+      final raw = await readWavRange(wav, info, start, end);
+      if (raw.isEmpty) break;
+      final mono = toMono16k(raw, info.sampleRate, info.channels);
+      parts.add(
+        await writeWav16k(
+          File(p.join(tmp.path, 'parte_${'$k'.padLeft(3, '0')}.wav')),
+          mono,
+        ),
+      );
+    }
+    if (!p.equals(wav.path, audio.path)) await wav.delete();
+    return parts;
   }
 }
 

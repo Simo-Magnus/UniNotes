@@ -16,15 +16,45 @@ import 'links_widgets.dart';
 String whisperDownloadTitle(WhisperModelInfo m) => 'Download Whisper · ${m.id}';
 
 class _WhisperState {
-  const _WhisperState(this.status, this.ffmpeg, this.partial, this.selected);
+  const _WhisperState(
+    this.status,
+    this.ffmpeg,
+    this.partial,
+    this.selected, {
+    required this.available,
+    required this.defaultId,
+    required this.recommendation,
+    required this.device,
+  });
   final WhisperStatus status;
   final String? ffmpeg;
   final Map<String, int> partial;
+
+  /// Modello che userà «Trascrivi con Whisper» (null = nessuno).
   final WhisperModelInfo? selected;
+
+  /// Modelli con cui si può trascrivere (scaricati e integrato).
+  final List<WhisperModelInfo> available;
+
+  /// Modello predefinito scelto (null = automatico).
+  final String? defaultId;
+  final WhisperRecommendation recommendation;
+  final DeviceProfile device;
 }
 
+/// Valore «Automatico» del menu del modello predefinito.
+const _auto = 'auto';
+
 /// Whisper in locale: tabella dei modelli con download, programma
-/// whisper.cpp (PC) e modello usato per le trascrizioni.
+/// whisper.cpp (PC), modello predefinito per le trascrizioni e modello
+/// «Consigliato per questo dispositivo» (RAM, core, piattaforma e spazio
+/// libero, vedi `whisper_device.dart`).
+///
+/// Con più modelli scaricati: si usa il predefinito scelto qui; se è
+/// «Automatico» il più accurato fra quelli scaricati che il dispositivo
+/// regge; senza modelli scaricati il modello integrato. Per una singola
+/// trascrizione se ne sceglie un altro tenendo premuto «Trascrivi con
+/// Whisper» o con «Trascrivi di nuovo con…».
 class WhisperCard extends StatefulWidget {
   const WhisperCard({super.key});
 
@@ -39,11 +69,16 @@ class _WhisperCardState extends State<WhisperCard> {
 
   Future<_WhisperState> _load() async {
     final st = await _w.status();
+    final available = await _w.availableModels(known: st);
     return _WhisperState(
       st,
       st.engine == WhisperEngineKind.cli ? await _w.ffmpeg() : null,
       {for (final m in kWhisperModels) m.id: await _w.partialBytes(m)},
-      await _w.pickModel(st.models),
+      await _w.pickModel({for (final m in available) m.id}),
+      available: available,
+      defaultId: await _w.selectedModelId(),
+      recommendation: await _w.recommendation(),
+      device: await _w.deviceProfile(),
     );
   }
 
@@ -72,9 +107,8 @@ class _WhisperCardState extends State<WhisperCard> {
       await for (final p in _w.install(m, cancel: cancel)) {
         report(p.phase, p.fraction);
       }
-      if (await _w.selectedModelId() == null) {
-        await _w.setSelectedModel(m.id);
-      }
+      // nessun predefinito impostato: resta «Automatico» (il più accurato
+      // scaricato), così un modello migliore si usa appena arriva
       return null;
     }, onFinished: (_) => _reload());
   }
@@ -132,24 +166,43 @@ class _WhisperCardState extends State<WhisperCard> {
 
   List<Widget> _content(BuildContext context, _WhisperState d) {
     final st = d.status;
-    final rec = recommendedWhisperModel(phone: _w.isPhone);
+    final rec = d.recommendation.model;
     final models = whisperModelsFor(_w.platform);
     final installed = [
       for (final m in kWhisperModels)
         if (st.models.contains(m.id)) m,
     ];
+    final builtIn = d.available.any((m) => m.id == kBuiltInWhisperModel.id);
+    final used = d.selected == null
+        ? kMissing
+        : whisperModelLabel(d.selected!.id);
     return [
       StatusLine(_engineText(st), ok: st.engineReady),
       const SizedBox(height: 6),
       StatusLine(
         installed.isEmpty
-            ? 'Nessun modello scaricato. Consigliato: ${rec.id} (${rec.disk}).'
-            : 'Modello usato: ${d.selected?.id ?? kMissing}',
-        ok: installed.isNotEmpty,
+            ? (builtIn
+                  ? 'Nessun modello scaricato: «Trascrivi con Whisper» usa il '
+                        'modello integrato (base, ${kBuiltInWhisperModel.disk}).'
+                  : 'Nessun modello scaricato.')
+            : 'Le trascrizioni usano: $used'
+                  '${d.defaultId == null ? ' (automatico)' : ''}',
+        ok: installed.isNotEmpty || builtIn,
       ),
-      const NoteText(
-        'Con un modello scaricato il registratore mostra anche la '
-        'trascrizione dal vivo mentre registri.',
+      // consiglio in base al dispositivo
+      NoteText(
+        'Consigliato per questo dispositivo: ${rec.id} (${rec.disk}) – '
+        '${d.recommendation.reason}.'
+        '${d.device.summary.isEmpty ? '' : ' ${d.device.summary}.'}'
+        '${st.models.contains(rec.id) ? ' Già scaricato.' : ''}',
+        icon: Icons.recommend_outlined,
+      ),
+      NoteText(
+        builtIn
+            ? 'Il modello integrato trascrive anche dal vivo mentre registri, '
+                  'quando il riconoscimento vocale del sistema non c\'è.'
+            : 'Con un modello scaricato il registratore mostra anche la '
+                  'trascrizione dal vivo mentre registri.',
         icon: Icons.subtitles_outlined,
       ),
       if (_w.isPhone)
@@ -159,19 +212,37 @@ class _WhisperCardState extends State<WhisperCard> {
           'aperta e il telefono in carica. Per lezioni lunghe Gemini è più rapido.',
           icon: Icons.battery_charging_full,
         ),
-      if (installed.length > 1) ...[
+      if (d.available.length > 1) ...[
         const SizedBox(height: 8),
         DropdownButtonFormField<String>(
+          key: const Key('whisper-default-model'),
           style: Theme.of(context).textTheme.bodyLarge,
           isExpanded: true,
-          initialValue: d.selected?.id,
-          decoration: const InputDecoration(labelText: 'Modello da usare'),
+          initialValue: d.available.any((m) => m.id == d.defaultId)
+              ? d.defaultId
+              : _auto,
+          decoration: const InputDecoration(
+            labelText: 'Modello predefinito',
+            helperText:
+                'Per una sola trascrizione: tieni premuto «Trascrivi con '
+                'Whisper».',
+          ),
           items: [
-            for (final m in installed)
-              DropdownMenuItem(value: m.id, child: Text(m.id)),
+            const DropdownMenuItem(
+              value: _auto,
+              child: Text(
+                'Automatico: il più accurato che il dispositivo regge',
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            for (final m in d.available)
+              DropdownMenuItem(
+                value: m.id,
+                child: Text(whisperModelLabel(m.id)),
+              ),
           ],
           onChanged: (v) async {
-            await _w.setSelectedModel(v);
+            await _w.setSelectedModel(v == _auto ? null : v);
             _reload();
           },
         ),
@@ -212,7 +283,7 @@ class _WhisperCardState extends State<WhisperCard> {
         key: const Key('whisper-models'),
         title: d.selected == null
             ? 'Modelli di trascrizione'
-            : 'Modelli di trascrizione · in uso: ${d.selected!.id}',
+            : 'Modelli di trascrizione · in uso: $used',
         children: [
           Text(
             'Fonti: whisper.cpp e OpenAI',
@@ -239,8 +310,8 @@ class _WhisperCardState extends State<WhisperCard> {
 
   String _engineText(WhisperStatus st) {
     if (_w.isPhone) {
-      return 'whisper.cpp incluso nell\'app: basta scaricare un modello '
-          '(consigliato $kRecommendedPhoneModel; $kLightPhoneModel sui telefoni meno recenti).';
+      return 'whisper.cpp incluso nell\'app, con il modello integrato: per '
+          'trascrizioni più precise scarica un modello.';
     }
     if (st.engine == WhisperEngineKind.plugin) {
       return 'Mac: uso whisper.cpp incluso nell\'app. Per lezioni lunghe è più '
@@ -361,9 +432,17 @@ class _WhisperCardState extends State<WhisperCard> {
       children: [
         Text(m.id, style: const TextStyle(fontWeight: FontWeight.w600)),
         if (m.id == rec.id)
-          Text(
-            'consigliato',
-            style: TextStyle(fontSize: 11, color: t.cyanSoft),
+          Container(
+            key: const Key('whisper-recommended'),
+            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
+            decoration: BoxDecoration(
+              color: t.cyanSoft.withValues(alpha: 0.16),
+              borderRadius: BorderRadius.circular(6),
+            ),
+            child: Text(
+              'Consigliato per questo dispositivo',
+              style: TextStyle(fontSize: 11, color: t.cyanSoft),
+            ),
           ),
         if (installed)
           Text('scaricato', style: TextStyle(fontSize: 11, color: t.cyanSoft)),

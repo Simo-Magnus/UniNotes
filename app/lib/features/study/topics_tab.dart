@@ -15,8 +15,12 @@ import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
 import '../books/book_opener.dart';
 import '../notes/course_notes_screen.dart';
+import 'attachments.dart' show removeStoredAttachments;
 import 'course_catalog.dart';
+import 'course_groups.dart';
 import 'module_card.dart';
+import 'module_order_dialog.dart';
+import 'reorder_lift.dart';
 import 'study_ai.dart';
 import 'study_sessions_tab.dart' show openStudySession;
 import 'study_widgets.dart';
@@ -44,8 +48,9 @@ class _CourseTopics {
 }
 
 /// Scheda "Argomenti": insegnamento → moduli → argomenti con avanzamento.
-/// L'insegnamento si cambia toccandone il nome nella card in alto (su
-/// schermi larghi anche dall'elenco a sinistra).
+/// L'insegnamento si cambia toccandone il nome nella card in alto: si apre
+/// l'elenco diviso per semestre, annuali e OFA (anche su schermi larghi
+/// non c'è più l'elenco laterale con lo stato degli insegnamenti).
 class TopicsTab extends StatelessWidget {
   const TopicsTab({
     super.key,
@@ -61,93 +66,163 @@ class TopicsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final id = courseId;
-    final content = id == null
-        ? const EmptyState(
-            icon: Icons.school_outlined,
-            message: 'Seleziona un insegnamento per vederne moduli e argomenti.',
-          )
-        : _CourseContent(
-            key: ValueKey(id),
-            catalog: catalog,
-            courseId: id,
-            onCourseChanged: onCourseChanged,
-          );
-
-    if (context.isWide) {
-      return Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(
-            width: 300,
-            child: _CourseList(catalog, id, onCourseChanged),
-          ),
-          const VerticalDivider(width: 1),
-          Expanded(child: content),
-        ],
+    if (id == null) {
+      return const EmptyState(
+        icon: Icons.school_outlined,
+        message: 'Seleziona un insegnamento per vederne moduli e argomenti.',
       );
     }
-    return content;
-  }
-}
-
-/// Elenco degli insegnamenti (schermi larghi): solo il nome.
-class _CourseList extends StatelessWidget {
-  const _CourseList(this.catalog, this.selected, this.onSelect);
-  final CourseCatalog catalog;
-  final int? selected;
-  final ValueChanged<int?> onSelect;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        for (final c in catalog.courses)
-          ListTile(
-            title: Text(c.label, maxLines: 2, overflow: TextOverflow.ellipsis),
-            subtitle: Tooltip(
-              message: c.status.description,
-              child: Text(c.status.label),
-            ),
-            selected: c.id == selected,
-            onTap: () => onSelect(c.id),
-          ),
-      ],
+    return _CourseContent(
+      key: ValueKey(id),
+      catalog: catalog,
+      courseId: id,
+      onCourseChanged: onCourseChanged,
     );
   }
 }
 
-/// Sceglie un altro insegnamento (tocco sul nome nella card in alto).
+/// Sceglie un altro insegnamento (tocco sul nome nella card in alto):
+/// elenco diviso per 1° e 2° semestre, annuali e OFA, solo con il nome.
+/// Tenendo premuto un insegnamento e trascinandolo se ne cambia l'ordine
+/// (dentro il suo gruppo); l'ordine si salva e vale in tutto Studio.
 Future<int?> pickCourse(
   BuildContext context,
   CourseCatalog catalog,
   int? selected,
-) => showModalBottomSheet<int>(
-  context: context,
-  showDragHandle: true,
-  isScrollControlled: true,
-  builder: (c) => SafeArea(
-    child: ConstrainedBox(
-      constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(c).height * 0.8),
-      child: ListView(
-        shrinkWrap: true,
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(24, 0, 24, 8),
-            child: Text('Insegnamento', style: Theme.of(c).textTheme.titleMedium),
-          ),
-          for (final course in catalog.courses)
-            ListTile(
-              title: Text(course.label),
-              subtitle: Text(course.status.label),
-              selected: course.id == selected,
-              trailing: course.id == selected ? const Icon(Icons.check) : null,
-              onTap: () => Navigator.pop(c, course.id),
-            ),
-        ],
+) async {
+  final s = context.read<AppServices>();
+  var changed = false;
+  final id = await showModalBottomSheet<int>(
+    context: context,
+    showDragHandle: true,
+    isScrollControlled: true,
+    builder: (c) => SafeArea(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.sizeOf(c).height * 0.8,
+        ),
+        child: CoursePickerList(
+          courses: catalog.courses,
+          selected: selected,
+          onSelect: (id) => Navigator.pop(c, id),
+          onReordered: (ids) {
+            changed = true;
+            saveStudyCourseOrder(s, ids);
+          },
+        ),
       ),
     ),
-  ),
-);
+  );
+  // l'ordine nuovo vale anche per i menu di Sessioni Studio e Statistiche
+  if (changed) s.revision.bump();
+  return id;
+}
+
+/// Elenco degli insegnamenti per gruppo (semestre, annuale, OFA) con
+/// riordino: tieni premuto e trascina. [onReordered] riceve tutti gli id
+/// nel nuovo ordine.
+class CoursePickerList extends StatefulWidget {
+  const CoursePickerList({
+    super.key,
+    required this.courses,
+    required this.selected,
+    required this.onSelect,
+    required this.onReordered,
+  });
+
+  final List<Course> courses;
+  final int? selected;
+  final ValueChanged<int> onSelect;
+  final ValueChanged<List<int>> onReordered;
+
+  @override
+  State<CoursePickerList> createState() => _CoursePickerListState();
+}
+
+class _CoursePickerListState extends State<CoursePickerList> {
+  late List<StudyCourseGroup> _groups = groupStudyCourses(widget.courses);
+
+  void _reorder(int group, int from, int to) {
+    final g = _groups[group];
+    final next = reorderList(g.courses, from, to);
+    if (next == null) return;
+    AppFeedback.of(context).toggle();
+    setState(() {
+      _groups = [
+        for (var i = 0; i < _groups.length; i++)
+          i == group ? StudyCourseGroup(g.label, next) : _groups[i],
+      ];
+    });
+    widget.onReordered([
+      for (final g in _groups)
+        for (final c in g.courses) c.id!,
+    ]);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    return CustomScrollView(
+      shrinkWrap: true,
+      slivers: [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Insegnamento', style: theme.textTheme.titleMedium),
+                if (widget.courses.length > 1) ...[
+                  const SizedBox(height: 2),
+                  Text(
+                    'Tieni premuto un insegnamento e trascinalo per '
+                    'cambiarne l\'ordine.',
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
+        ),
+        for (var gi = 0; gi < _groups.length; gi++) ...[
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: SectionHeader(_groups[gi].label),
+            ),
+          ),
+          SliverReorderableList(
+            key: ValueKey('course-group-${_groups[gi].label}'),
+            autoScrollerVelocityScalar: kReorderAutoScrollVelocity,
+            itemCount: _groups[gi].courses.length,
+            onReorderStart: (_) => AppFeedback.of(context).tap(),
+            onReorderItem: (from, to) => _reorder(gi, from, to),
+            proxyDecorator: liftProxy,
+            itemBuilder: (context, i) {
+              final course = _groups[gi].courses[i];
+              final on = course.id == widget.selected;
+              return ReorderableDelayedDragStartListener(
+                key: ValueKey('pick-course-${course.id}'),
+                index: i,
+                child: ListTile(
+                  // solo il nome dell'insegnamento
+                  title: Text(course.label),
+                  selected: on,
+                  trailing: on ? const Icon(Icons.check) : null,
+                  onTap: () => widget.onSelect(course.id!),
+                ),
+              );
+            },
+          ),
+        ],
+        const SliverToBoxAdapter(child: SizedBox(height: 16)),
+      ],
+    );
+  }
+}
 
 class _CourseContent extends StatefulWidget {
   const _CourseContent({
@@ -165,16 +240,18 @@ class _CourseContent extends StatefulWidget {
   State<_CourseContent> createState() => _CourseContentState();
 }
 
-class _CourseContentState extends State<_CourseContent> {
-  /// Ordine mostrato dei moduli: cambia subito al rilascio, poi si salva.
-  List<StudyModule>? _order;
-  List<StudyModule>? _loaded;
+enum _CourseAction { arrange, removeAll }
 
+class _CourseContentState extends State<_CourseContent> {
   int get courseId => widget.courseId;
   CourseCatalog get catalog => widget.catalog;
 
   Future<void> _addModule() async {
-    final name = await promptText(context, title: 'Nuovo modulo', label: 'Nome');
+    final name = await promptText(
+      context,
+      title: 'Nuovo modulo',
+      label: 'Nome',
+    );
     if (name == null || !mounted) return;
     final s = context.read<AppServices>();
     final sort = await s.study.nextModuleSort(courseId);
@@ -190,14 +267,39 @@ class _CourseContentState extends State<_CourseContent> {
     if (id != null && id != courseId) widget.onCourseChanged(id);
   }
 
-  Future<void> _reorder(List<StudyModule> mods, int from, int to) async {
-    final next = reorderList(mods, from, to);
-    if (next == null) return;
-    AppFeedback.of(context).toggle();
-    setState(() => _order = next);
+  /// Ordine dei moduli: finestra al centro con tutti i moduli, da
+  /// riordinare tenendo premuto e trascinando.
+  Future<void> _arrange(List<StudyModule> modules, [int? selectedId]) =>
+      showModuleOrderDialog(context, modules: modules, selectedId: selectedId);
+
+  /// «Rimuovi tutti i moduli»: moduli, argomenti e file allegati
+  /// dell'insegnamento (dopo la conferma).
+  Future<void> _removeAll(_CourseTopics data) async {
+    if (data.modules.isEmpty) return;
+    final m = data.modules.length, t = data.topics.length;
+    final name = catalog.nameOf(courseId);
+    final what = m == 1
+        ? 'Il modulo di "$name" verrà eliminato'
+        : 'I $m moduli di "$name" verranno eliminati';
+    final extra = switch (t) {
+      0 => 'i file allegati',
+      1 => 'l\'argomento e i file allegati',
+      _ => 'i $t argomenti e i file allegati',
+    };
+    final ok = await confirmDialog(
+      context,
+      'Rimuovere tutti i moduli?',
+      '$what con $extra. Le sessioni di studio restano, senza modulo né '
+          'argomento.',
+    );
+    if (!ok || !mounted) return;
     final s = context.read<AppServices>();
-    await s.study.reorderModules([for (final m in next) m.id!]);
+    for (final mod in data.modules) {
+      await removeStoredAttachments(s, moduleId: mod.id);
+      await s.study.deleteModule(mod.id!);
+    }
     s.revision.bump();
+    if (mounted) showSnack(context, 'Moduli rimossi.');
   }
 
   @override
@@ -226,13 +328,7 @@ class _CourseContentState extends State<_CourseContent> {
       builder: (context, data) {
         final course = catalog.byId[courseId]!;
         final progress = courseProgress(data.topics.map((t) => t.status));
-        // dati nuovi dal database: l'ordine salvato prende il posto di
-        // quello mostrato durante il trascinamento
-        if (!identical(_loaded, data.modules)) {
-          _loaded = data.modules;
-          _order = null;
-        }
-        final modules = _order ?? data.modules;
+        final modules = data.modules;
         final theme = Theme.of(context);
         final header = GlassCard(
           child: Padding(
@@ -240,32 +336,40 @@ class _CourseContentState extends State<_CourseContent> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // tocca il nome per cambiare insegnamento
-                Semantics(
-                  button: true,
-                  hint: 'Cambia insegnamento',
-                  child: InkWell(
-                    key: const Key('course-name'),
-                    borderRadius: BorderRadius.circular(8),
-                    onTap: _changeCourse,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 4),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              catalog.nameOf(courseId),
-                              style: theme.textTheme.titleLarge,
+                // tocca il nome per cambiare insegnamento; a destra il menu
+                // dei moduli (ordine, rimuovi tutti)
+                Row(
+                  children: [
+                    Expanded(
+                      child: Semantics(
+                        button: true,
+                        hint: 'Cambia insegnamento',
+                        child: InkWell(
+                          key: const Key('course-name'),
+                          borderRadius: BorderRadius.circular(8),
+                          onTap: _changeCourse,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 4),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    catalog.nameOf(courseId),
+                                    style: theme.textTheme.titleLarge,
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.unfold_more,
+                                  color: theme.colorScheme.onSurfaceVariant,
+                                ),
+                              ],
                             ),
                           ),
-                          Icon(
-                            Icons.unfold_more,
-                            color: theme.colorScheme.onSurfaceVariant,
-                          ),
-                        ],
+                        ),
                       ),
                     ),
-                  ),
+                    if (modules.isNotEmpty) _courseMenu(data),
+                  ],
                 ),
                 const SizedBox(height: 12),
                 ProgressRow(value: progress, label: 'Avanzamento'),
@@ -318,49 +422,83 @@ class _CourseContentState extends State<_CourseContent> {
             ),
           ),
         );
-        return ReorderableListView.builder(
+        final list = ListView(
           padding: const EdgeInsets.only(bottom: 24),
-          buildDefaultDragHandles: false,
-          header: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              header,
-              if (modules.isEmpty)
-                const EmptyState(
-                  icon: Icons.account_tree_outlined,
-                  message:
-                      'Nessun modulo. Aggiungi un modulo (es. "Limiti e '
-                      'derivate") e poi i suoi argomenti.',
-                )
-              else if (modules.length > 1 || data.topics.length > 1)
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 4, 16, 2),
-                  child: Text(
-                    'Tieni premuto un modulo o un argomento e trascinalo per '
-                    'spostarlo.',
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: theme.colorScheme.onSurfaceVariant,
-                    ),
+          children: [
+            header,
+            if (modules.isEmpty)
+              const EmptyState(
+                icon: Icons.account_tree_outlined,
+                message:
+                    'Nessun modulo. Aggiungi un modulo (es. "Limiti e '
+                    'derivate") e poi i suoi argomenti.',
+              )
+            else if (modules.length > 1 || data.topics.length > 1)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 4, 16, 2),
+                child: Text(
+                  'Tieni premuto un argomento e trascinalo per spostarlo; '
+                  'tieni premuto il nome di un modulo per cambiare l\'ordine '
+                  'dei moduli.',
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
                   ),
                 ),
-            ],
-          ),
-          itemCount: modules.length,
-          onReorderItem: (from, to) => _reorder(modules, from, to),
-          proxyDecorator: reorderProxy,
-          itemBuilder: (context, i) => ModuleCard(
-            key: ValueKey('module-${modules[i].id}'),
-            course: course,
-            attachments: data.attachments,
-            module: modules[i],
-            topics: data.of(modules[i]),
-            color: color,
-            dragIndex: i,
+              ),
+            for (final m in modules)
+              ModuleCard(
+                key: ValueKey('module-${m.id}'),
+                course: course,
+                attachments: data.attachments,
+                module: m,
+                topics: data.of(m),
+                color: color,
+                onArrange: modules.length > 1
+                    ? () => _arrange(modules, m.id)
+                    : null,
+              ),
+          ],
+        );
+        // schermi larghi: niente elenco laterale, colonna centrata e leggibile
+        if (!context.isWide) return list;
+        return Align(
+          alignment: Alignment.topCenter,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 880),
+            child: list,
           ),
         );
       },
     );
   }
+
+  Widget _courseMenu(_CourseTopics data) => PopupMenuButton<_CourseAction>(
+    key: const Key('course-menu'),
+    tooltip: 'Moduli dell\'insegnamento',
+    onSelected: (a) => switch (a) {
+      _CourseAction.arrange => _arrange(data.modules),
+      _CourseAction.removeAll => _removeAll(data),
+    },
+    itemBuilder: (_) => [
+      if (data.modules.length > 1)
+        const PopupMenuItem(
+          value: _CourseAction.arrange,
+          child: ListTile(
+            dense: true,
+            leading: Icon(Icons.swap_vert_rounded),
+            title: Text('Ordina i moduli'),
+          ),
+        ),
+      const PopupMenuItem(
+        value: _CourseAction.removeAll,
+        child: ListTile(
+          dense: true,
+          leading: Icon(Icons.delete_sweep_outlined),
+          title: Text('Rimuovi tutti i moduli'),
+        ),
+      ),
+    ],
+  );
 }
 
 /// Libri della materia: sempre l'elenco (obbligatori prima). Quelli già

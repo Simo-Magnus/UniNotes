@@ -10,12 +10,16 @@ class SettingsCard extends StatelessWidget {
     required this.icon,
     required this.children,
     this.subtitle,
+    this.trailing,
   });
 
   final String title;
   final IconData icon;
   final String? subtitle;
   final List<Widget> children;
+
+  /// Azione accanto al titolo (es. «Cambia corso» in Il mio percorso).
+  final Widget? trailing;
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +30,28 @@ class SettingsCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            CardHeader(
-              title: title,
-              icon: icon,
-              padding: const EdgeInsets.only(bottom: 4),
-            ),
+            if (trailing case final action?)
+              // con i caratteri grandi il pulsante si restringe (il testo va
+              // a capo) invece di uscire dalla card
+              Row(
+                children: [
+                  Expanded(
+                    child: CardHeader(
+                      title: title,
+                      icon: icon,
+                      padding: const EdgeInsets.only(bottom: 4),
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  Flexible(child: action),
+                ],
+              )
+            else
+              CardHeader(
+                title: title,
+                icon: icon,
+                padding: const EdgeInsets.only(bottom: 4),
+              ),
             if (subtitle != null) ...[
               const SizedBox(height: 6),
               Text(

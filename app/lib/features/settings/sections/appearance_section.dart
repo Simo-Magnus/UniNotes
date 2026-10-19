@@ -7,10 +7,11 @@ import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/display_prefs.dart';
 import '../../../repositories/settings_repository.dart';
 import '../widgets/settings_card.dart';
+import 'questions_reset.dart';
 
 /// "Aspetto": tema scuro (predefinito), chiaro o come il sistema;
-/// contrasto, grandezza dei caratteri (con anteprima) e «Riduci
-/// animazioni».
+/// contrasto, grandezza dei caratteri (con anteprima), «Riduci
+/// animazioni» e «Ripristina le domande» («Non chiedere più»).
 class AppearanceSection extends StatelessWidget {
   const AppearanceSection({super.key});
 
@@ -141,6 +142,8 @@ class AppearanceSection extends StatelessWidget {
             ],
           ),
         ),
+        // scelte «Non chiedere più» di tutta l'app
+        const ResetQuestionsTile(),
       ],
     );
   }

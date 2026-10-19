@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -12,10 +14,12 @@ import '../../core/theme/app_tokens.dart';
 import '../../models/course.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
+import '../../widgets/math_text.dart';
 import '../links/whisper_models.dart' show kLiveWhisperModel;
 import '../study/course_catalog.dart';
 import '../study/study_widgets.dart' show promptText;
 import 'lecture_recorder.dart';
+import 'markdown_lite.dart' show parseMathOnly;
 import 'notes_screen.dart';
 import 'course_notes_screen.dart';
 import 'recorder/live_transcriber.dart';
@@ -32,6 +36,11 @@ import 'recorder/waveform.dart';
 /// tempo reale (riconoscimento vocale del sistema, altrimenti Whisper).
 /// «Salva» ferma e salva (Appunti → corso → Registrazioni) e porta alla
 /// pagina del corso, alla card «Registrazioni delle lezioni».
+///
+/// Nella card «Trascrizione» un tocco su una frase la corregge mentre la
+/// registrazione continua; «Formule (LaTeX)» scrive in LaTeX le formule
+/// dette a voce («due terzi» → ⅔, «integrale da 2 a pi greco» → ∫ da 2 a
+/// π) e la scelta resta per le registrazioni successive.
 ///
 /// Uscendo dalla schermata la registrazione continua: un riquadro sopra
 /// tutte le schermate (recorder/recording_overlay.dart) mostra tempo e
@@ -54,6 +63,12 @@ class _RecorderScreenState extends State<RecorderScreen> {
   Course? _course;
   bool _busy = false;
 
+  /// «Formule (LaTeX)» nella trascrizione dal vivo.
+  bool _formulas = false;
+
+  /// Impostazione di «Formule (LaTeX)».
+  static const formulasKey = 'live_formulas';
+
   LectureRecorder get _rec => _s.recorder;
 
   @override
@@ -71,6 +86,11 @@ class _RecorderScreenState extends State<RecorderScreen> {
   }
 
   Future<void> _load() async {
+    final formulas = await _s.settings.get(formulasKey) == '1';
+    if (mounted) {
+      setState(() => _formulas = formulas);
+      _rec.live?.formulas = formulas;
+    }
     final catalog = await CourseCatalog.load(_s);
     final suggested = _course ?? await NotesScreen.suggestedCourse(_s, catalog);
     if (!mounted) return;
@@ -96,6 +116,7 @@ class _RecorderScreenState extends State<RecorderScreen> {
         courseId: c.id,
         language: c.examLanguage,
       );
+      _rec.live?.formulas = _formulas;
     } on RecorderException catch (e) {
       _s.feedback.warning();
       if (mounted) showSnack(context, e.message);
@@ -201,6 +222,12 @@ class _RecorderScreenState extends State<RecorderScreen> {
   static String _clock(Duration d) {
     String two(int v) => v.toString().padLeft(2, '0');
     return '${two(d.inHours)}:${two(d.inMinutes % 60)}:${two(d.inSeconds % 60)}';
+  }
+
+  void _setFormulas(bool v) {
+    setState(() => _formulas = v);
+    _rec.live?.formulas = v;
+    unawaited(_s.settings.set(formulasKey, v ? '1' : '0'));
   }
 
   @override
@@ -367,7 +394,12 @@ class _RecorderScreenState extends State<RecorderScreen> {
                           ),
                         ],
                         const SizedBox(height: 20),
-                        _LiveTranscriptCard(live: _rec.live, recording: active),
+                        _LiveTranscriptCard(
+                          live: _rec.live,
+                          recording: active,
+                          formulas: _formulas,
+                          onFormulas: _setFormulas,
+                        ),
                         if (Platform.isAndroid || Platform.isIOS) ...[
                           const SizedBox(height: 20),
                           Text(
@@ -423,9 +455,16 @@ void openWhisperLinks(BuildContext context) {
 
 /// Card «Trascrizione»: il parlato trascritto mentre si registra.
 class _LiveTranscriptCard extends StatefulWidget {
-  const _LiveTranscriptCard({required this.live, required this.recording});
+  const _LiveTranscriptCard({
+    required this.live,
+    required this.recording,
+    required this.formulas,
+    required this.onFormulas,
+  });
   final LiveTranscriber? live;
   final bool recording;
+  final bool formulas;
+  final ValueChanged<bool> onFormulas;
 
   @override
   State<_LiveTranscriptCard> createState() => _LiveTranscriptCardState();
@@ -434,6 +473,9 @@ class _LiveTranscriptCard extends StatefulWidget {
 class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
   final _scroll = ScrollController();
   int _shown = 0;
+
+  /// Si sta correggendo una frase: il testo non scorre da solo.
+  bool _editing = false;
 
   @override
   void dispose() {
@@ -446,9 +488,9 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
     final theme = Theme.of(context);
     final live = widget.live;
     final segs = live?.segments ?? const <TranscriptSegment>[];
-    final partial = live?.partial ?? '';
+    final partial = live?.partialShown ?? '';
     final shown = segs.length + partial.length;
-    if (shown != _shown) {
+    if (shown != _shown && !_editing) {
       _shown = shown;
       // l'ultimo testo resta in vista
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -472,25 +514,17 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
       // aggiorna mentre si parla
       final style = theme.textTheme.bodyLarge?.copyWith(height: 1.45);
       body = ConstrainedBox(
-        constraints: const BoxConstraints(maxHeight: 220),
+        constraints: const BoxConstraints(maxHeight: 260),
         child: Scrollbar(
           controller: _scroll,
           child: SingleChildScrollView(
             controller: _scroll,
-            child: SelectableText.rich(
-              TextSpan(
-                style: style,
-                children: [
-                  TextSpan(text: segs.map((s) => s.text).join(' ')),
-                  if (partial.isNotEmpty)
-                    TextSpan(
-                      text: '${segs.isEmpty ? '' : ' '}$partial',
-                      style: TextStyle(
-                        color: theme.colorScheme.onSurfaceVariant,
-                      ),
-                    ),
-                ],
-              ),
+            child: EditableLiveTranscript(
+              segments: segs,
+              partial: partial,
+              style: style,
+              onEditing: (v) => _editing = v,
+              onEdit: (i, t) => live?.editSegment(i, t),
             ),
           ),
         ),
@@ -556,7 +590,34 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
                   ),
               ],
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 6),
+            // «Formule (LaTeX)»: le formule dette a voce diventano formule
+            Align(
+              alignment: Alignment.centerLeft,
+              child: FilterChip(
+                key: const Key('live-formulas'),
+                visualDensity: VisualDensity.compact,
+                avatar: const Icon(Icons.functions, size: 18),
+                label: const Text('Formule (LaTeX)'),
+                tooltip:
+                    'Scrive come formule quelle dette a voce: «due terzi», '
+                    '«integrale da 2 a pi greco»…',
+                selected: widget.formulas,
+                showCheckmark: false,
+                onSelected: widget.onFormulas,
+              ),
+            ),
+            const SizedBox(height: 4),
+            if (segs.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 6),
+                child: Text(
+                  'Tocca una frase per correggerla: la registrazione continua.',
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ),
             if (state == LiveState.unavailable)
               _SetupHint(
                 downloadFailed: live?.downloadError != null,
@@ -581,6 +642,194 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
           ],
         ),
       ),
+    );
+  }
+}
+
+/// Testo dal vivo correggibile: le frasi definitive (un tocco → si
+/// correggono sul posto, Invio o un tocco fuori salvano, Esc annulla; una
+/// frase svuotata si toglie), poi quella provvisoria, più chiara. Le formule
+/// (`$…$`) si disegnano. Il testo nuovo continua ad arrivare mentre si
+/// corregge.
+class EditableLiveTranscript extends StatefulWidget {
+  const EditableLiveTranscript({
+    super.key,
+    required this.segments,
+    required this.partial,
+    required this.onEdit,
+    this.style,
+    this.onEditing,
+  });
+
+  final List<TranscriptSegment> segments;
+  final String partial;
+  final TextStyle? style;
+
+  /// Correzione del segmento (indice, testo nuovo).
+  final void Function(int index, String text) onEdit;
+
+  /// Inizio (true) e fine (false) di una correzione.
+  final ValueChanged<bool>? onEditing;
+
+  @override
+  State<EditableLiveTranscript> createState() => _EditableLiveTranscriptState();
+}
+
+class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
+  /// Inizio del segmento che si sta correggendo (stabile anche se arrivano
+  /// frasi nuove).
+  Duration? _editing;
+  final _controller = TextEditingController();
+  final _focus = FocusNode();
+  final _taps = <TapGestureRecognizer>[];
+
+  @override
+  void initState() {
+    super.initState();
+    _focus.addListener(() {
+      if (!_focus.hasFocus && _editing != null) _commit();
+    });
+  }
+
+  @override
+  void dispose() {
+    for (final t in _taps) {
+      t.dispose();
+    }
+    _controller.dispose();
+    _focus.dispose();
+    super.dispose();
+  }
+
+  void _start(int i) {
+    final seg = widget.segments[i];
+    setState(() {
+      _editing = seg.start;
+      _controller.text = seg.text;
+      _controller.selection = TextSelection.collapsed(offset: seg.text.length);
+    });
+    widget.onEditing?.call(true);
+    WidgetsBinding.instance.addPostFrameCallback((_) => _focus.requestFocus());
+  }
+
+  int get _index => widget.segments.indexWhere((s) => s.start == _editing);
+
+  void _commit() {
+    final i = _index;
+    final text = _controller.text;
+    if (i >= 0 && text.trim() != widget.segments[i].text) {
+      widget.onEdit(i, text);
+    }
+    _stop();
+  }
+
+  void _stop() {
+    if (_editing == null) return;
+    setState(() => _editing = null);
+    widget.onEditing?.call(false);
+  }
+
+  TapGestureRecognizer _tap(int k, VoidCallback onTap) {
+    while (_taps.length <= k) {
+      _taps.add(TapGestureRecognizer());
+    }
+    return _taps[k]..onTap = onTap;
+  }
+
+  /// Frasi [from]–[to] come testo continuo (un tocco su una frase la
+  /// corregge).
+  InlineSpan _run(int from, int to) {
+    final children = <InlineSpan>[];
+    for (var i = from; i < to; i++) {
+      final text = widget.segments[i].text;
+      final tap = _tap(i, () => _start(i));
+      if (i > from) children.add(const TextSpan(text: ' '));
+      if (!mayContainMath(text)) {
+        children.add(TextSpan(text: text, recognizer: tap));
+        continue;
+      }
+      for (final part in parseMathOnly(text)) {
+        children.add(
+          part.math
+              ? WidgetSpan(
+                  alignment: PlaceholderAlignment.middle,
+                  child: GestureDetector(
+                    onTap: () => _start(i),
+                    child: MathFormula(
+                      part.text,
+                      display: part.display,
+                      style: widget.style,
+                      source: part.source,
+                    ),
+                  ),
+                )
+              : TextSpan(text: part.text, recognizer: tap),
+        );
+      }
+    }
+    return TextSpan(children: children);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final segs = widget.segments;
+    final partial = widget.partial.isEmpty
+        ? null
+        : TextSpan(
+            text: '${segs.isEmpty ? '' : ' '}${widget.partial}',
+            style: TextStyle(color: theme.colorScheme.onSurfaceVariant),
+          );
+    final i = _editing == null ? -1 : _index;
+    if (i < 0) {
+      if (_editing != null) {
+        // la frase non c'è più (recuperata o tolta): fine della correzione
+        WidgetsBinding.instance.addPostFrameCallback((_) => _stop());
+      }
+      return Semantics(
+        hint: 'Tocca una frase per correggerla',
+        child: Text.rich(
+          TextSpan(
+            style: widget.style,
+            children: [_run(0, segs.length), ?partial],
+          ),
+        ),
+      );
+    }
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (i > 0) Text.rich(_run(0, i), style: widget.style),
+        CallbackShortcuts(
+          bindings: {const SingleActivator(LogicalKeyboardKey.escape): _stop},
+          child: TextField(
+            key: const Key('live-edit'),
+            controller: _controller,
+            focusNode: _focus,
+            style: widget.style,
+            minLines: 1,
+            maxLines: 6,
+            textInputAction: TextInputAction.done,
+            onSubmitted: (_) => _commit(),
+            decoration: InputDecoration(
+              isDense: true,
+              hintText: 'Frase vuota: verrà tolta',
+              suffixIcon: IconButton(
+                tooltip: 'Salva la correzione',
+                icon: const Icon(Icons.check_rounded),
+                onPressed: _commit,
+              ),
+            ),
+          ),
+        ),
+        if (i + 1 < segs.length || partial != null)
+          Text.rich(
+            TextSpan(
+              style: widget.style,
+              children: [_run(i + 1, segs.length), ?partial],
+            ),
+          ),
+      ],
     );
   }
 }

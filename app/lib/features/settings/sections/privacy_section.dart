@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constants/build_flags.dart';
 import '../../../core/services/external_launcher.dart';
+import '../../../widgets/common.dart';
 import '../app_info.dart';
 import '../erase_all.dart';
 import '../widgets/settings_card.dart';
@@ -95,17 +96,17 @@ class PrivacySection extends StatelessWidget {
           spacing: 8,
           children: [
             TextButton.icon(
-              onPressed: () => ExternalLauncher.openUrl(kProjectUrl),
+              onPressed: () => _open(context, kProjectUrl),
               icon: const Icon(Icons.public),
               label: const Text('Sito del progetto'),
             ),
             TextButton.icon(
-              onPressed: () => ExternalLauncher.openUrl(kPrivacyUrl),
+              onPressed: () => _open(context, kPrivacyUrl),
               icon: const Icon(Icons.policy_outlined),
               label: const Text('Informativa privacy'),
             ),
             TextButton.icon(
-              onPressed: () => ExternalLauncher.openUrl(kTermsUrl),
+              onPressed: () => _open(context, kTermsUrl),
               icon: const Icon(Icons.description_outlined),
               label: const Text('Termini d\'uso'),
             ),
@@ -145,7 +146,7 @@ class PrivacySection extends StatelessWidget {
             ),
             if (kShowDonationLink)
               TextButton.icon(
-                onPressed: () => ExternalLauncher.openUrl(kDonationUrl),
+                onPressed: () => _open(context, kDonationUrl),
                 icon: const Icon(Icons.favorite_outline),
                 label: const Text('Sostieni il progetto'),
               ),
@@ -154,4 +155,10 @@ class PrivacySection extends StatelessWidget {
       ],
     );
   }
+}
+
+/// Apre un link esterno; se non si apre lo dice (es. nessun browser).
+Future<void> _open(BuildContext context, String url) async {
+  final r = await ExternalLauncher.openUrl(url);
+  if (context.mounted) showLaunchResult(context, r);
 }

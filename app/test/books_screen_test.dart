@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:university_notes/core/constants/enums.dart';
 import 'package:university_notes/core/database/app_database.dart';
 import 'package:university_notes/core/services/app_services.dart';
+import 'package:university_notes/features/books/book_tile.dart';
 import 'package:university_notes/features/books/books_screen.dart';
 import 'package:university_notes/models/book.dart';
 import 'package:university_notes/models/course.dart';
@@ -111,5 +112,33 @@ void main() {
 
   testWidgets('BooksScreen su desktop', (tester) async {
     await _run(tester, const Size(1400, 900));
+  });
+
+  testWidgets('«Aggiungi» alla stessa distanza dal bordo del titolo', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(400, 600);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: BookTile(
+            book: const Book(id: 7, title: 'Manuale da comprare'),
+            onOpen: () {},
+            onAction: (_) {},
+          ),
+        ),
+      ),
+    );
+    final title = tester.getTopLeft(find.text('Manuale da comprare'));
+    final attach = find.byKey(const ValueKey('attach-7'));
+    expect(attach, findsOneWidget);
+    final icon = tester.getTopLeft(
+      find.descendant(of: attach, matching: find.byIcon(Icons.attach_file)),
+    );
+    // sotto il titolo e allineato a sinistra con lui
+    expect(icon.dy, greaterThan(title.dy));
+    expect(icon.dx, closeTo(title.dx, 0.5));
   });
 }

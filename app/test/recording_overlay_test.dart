@@ -158,8 +158,21 @@ void main() {
       );
       await t.pump(const Duration(milliseconds: 300));
       await t.tap(find.byKey(const Key('recording-delete')));
-      await t.pump(const Duration(milliseconds: 300));
+      // la conferma legge «Non chiedere più» dalle impostazioni (database)
+      for (var i = 0; i < 20; i++) {
+        await t.runAsync(
+          () => Future<void>.delayed(const Duration(milliseconds: 20)),
+        );
+        await t.pump(const Duration(milliseconds: 50));
+        if (find.text('Eliminare la registrazione?').evaluate().isNotEmpty) {
+          break;
+        }
+      }
       expect(find.text('Eliminare la registrazione?'), findsOneWidget);
+      // due pulsanti più la casella «Non chiedere più»
+      expect(find.text('Non chiedere più'), findsOneWidget);
+      await t.tap(find.byKey(const Key('recording-delete-dont-ask')));
+      await t.pump();
       await t.tap(find.byKey(const Key('recording-delete-confirm')));
       // fermata e spostamento nel cestino (file veri: tempo reale)
       var trashed = const <TrashEntry>[];
@@ -176,6 +189,12 @@ void main() {
       expect(find.text('Analisi matematica I'), findsNothing);
       expect(trashed.single.title, '2026-10-12 08-30 Lezione');
       expect(trashed.single.isAudio, isTrue);
+      // la prossima volta non si chiede più (si ripristina dalle
+      // Impostazioni: chiavi «dont_ask_»)
+      expect(
+        await t.runAsync(() => s.settings.get(kDontAskDeleteRecordingKey)),
+        '1',
+      );
       await t.pump(const Duration(seconds: 5));
     },
   );

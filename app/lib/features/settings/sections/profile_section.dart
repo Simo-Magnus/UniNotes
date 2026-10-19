@@ -11,6 +11,7 @@ import '../../../core/services/calendar_export.dart';
 import '../../../utils/dates.dart';
 import '../../../widgets/catalog_download.dart';
 import '../../../widgets/common.dart';
+import '../../onboarding/onboarding_flow.dart' show showChangePath;
 import '../../onboarding/percorso_field.dart';
 import '../dialogs/text_edit_dialog.dart';
 import '../logic/formatting.dart';
@@ -38,9 +39,10 @@ class _ProfileData {
   final PercorsiCorso? percorsi;
 }
 
-/// "Il mio percorso": ateneo, corso, anno e anno accademico; aggiorna il
-/// database pubblico e indirizzo del database (sulla stessa riga). Il cambio
-/// di corso è nella barra in alto delle Impostazioni.
+/// "Il mio percorso": ateneo, corso, anno e anno accademico con «Cambia
+/// corso» accanto al titolo; aggiorna il database pubblico e indirizzo del
+/// database (sulla stessa riga). Senza connessione l'aggiornamento mostra il
+/// messaggio che la chiede, con «Riprova» ([aggiornaDatabase]).
 class ProfileSection extends StatelessWidget {
   const ProfileSection({super.key});
 
@@ -82,6 +84,13 @@ class ProfileSection extends StatelessWidget {
     return SettingsCard(
       title: 'Il mio percorso',
       icon: Icons.school_outlined,
+      // cambio del corso di laurea (università, corso, anno) dentro la card
+      trailing: TextButton.icon(
+        key: const Key('change-path'),
+        onPressed: () => showChangePath(context),
+        icon: const Icon(Icons.swap_horiz),
+        label: const Text('Cambia corso'),
+      ),
       children: [
         RevisionBuilder<_ProfileData>(
           load: _load,
@@ -144,7 +153,6 @@ class ProfileSection extends StatelessWidget {
           },
         ),
         // «Aggiorna database» e «Indirizzo del database» sulla stessa riga
-        // («Cambia corso» è in alto, nella barra delle Impostazioni)
         Padding(
           padding: const EdgeInsets.only(top: 8),
           child: Row(
@@ -177,48 +185,60 @@ class ProfileSection extends StatelessWidget {
   }
 
   /// Accesso, test d'ingresso, OFA e inglese come li descrive l'ateneo; il
-  /// testo completo in una finestra.
-  List<Widget> _ammissione(BuildContext context, Ammissione a) => [
-    if (a.accesso != null) InfoRow('Accesso', a.accesso!),
-    if (a.test.isNotEmpty) InfoRow("Test d'ingresso", a.test.join(', ')),
-    if (a.ofa != null)
-      InfoRow(
-        'OFA',
-        a.ofa!
-            ? 'previsti se la verifica iniziale non è superata'
-            : 'non previsti',
-      ),
-    if (a.livelloInglese != null)
-      InfoRow('Inglese richiesto', 'livello ${a.livelloInglese}'),
-    if (a.requisiti != null)
-      Align(
-        alignment: Alignment.centerLeft,
-        child: TextButton.icon(
-          onPressed: () => showDialog<void>(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: const Text('Requisiti di accesso'),
-              content: SingleChildScrollView(
-                child: SelectableText(
-                  [
-                    a.requisiti!,
-                    if (a.fonte != null) 'Fonte: ${a.fonte}',
-                  ].join('\n\n'),
-                ),
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.of(context).pop(),
-                  child: const Text('Chiudi'),
-                ),
-              ],
+  /// testo completo («Accesso e OFA») si apre dalla riga «Accesso».
+  List<Widget> _ammissione(BuildContext context, Ammissione a) {
+    final dettagli = a.requisiti == null
+        ? null
+        : TextButton.icon(
+            key: const Key('accesso-ofa'),
+            style: TextButton.styleFrom(
+              visualDensity: VisualDensity.compact,
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+            ),
+            onPressed: () => _showRequisiti(context, a),
+            icon: const Icon(Icons.rule_outlined, size: 18),
+            label: const Text('Accesso e OFA'),
+          );
+    return [
+      if (a.accesso != null)
+        AccessoRow(value: a.accesso!, action: dettagli)
+      else if (dettagli != null)
+        Align(alignment: Alignment.centerLeft, child: dettagli),
+      if (a.test.isNotEmpty) InfoRow("Test d'ingresso", a.test.join(', ')),
+      if (a.ofa != null)
+        InfoRow(
+          'OFA',
+          a.ofa!
+              ? 'previsti se la verifica iniziale non è superata'
+              : 'non previsti',
+        ),
+      if (a.livelloInglese != null)
+        InfoRow('Inglese richiesto', 'livello ${a.livelloInglese}'),
+    ];
+  }
+
+  /// Testo completo dei requisiti di accesso e degli OFA, con la fonte.
+  Future<void> _showRequisiti(BuildContext context, Ammissione a) =>
+      showDialog<void>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text('Accesso e OFA'),
+          content: SingleChildScrollView(
+            child: SelectableText(
+              [
+                a.requisiti!,
+                if (a.fonte != null) 'Fonte: ${a.fonte}',
+              ].join('\n\n'),
             ),
           ),
-          icon: const Icon(Icons.rule_outlined),
-          label: const Text('Requisiti di accesso e OFA'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('Chiudi'),
+            ),
+          ],
         ),
-      ),
-  ];
+      );
 
   Future<void> _changeCurriculum(BuildContext context, String? v) async {
     final s = context.read<AppServices>();
@@ -247,9 +267,9 @@ class ProfileSection extends StatelessWidget {
       if (ics)
         for (final e in await cal.pendingWithDate()) e.id,
     };
-    final PlanImportResult r;
+    final AggiornamentoDatabase agg;
     try {
-      r = await PathSetupService(s).refresh();
+      agg = await aggiornaDatabase(s);
     } catch (e) {
       if (context.mounted) {
         showSnack(context, 'Aggiornamento non riuscito: $e');
@@ -257,6 +277,16 @@ class ProfileSection extends StatelessWidget {
       return;
     }
     if (!context.mounted) return;
+    // senza connessione: messaggio che la chiede, con «Riprova»
+    if (agg.offline) {
+      mostraServeConnessione(
+        context,
+        message: agg.messaggioOffline,
+        onRetry: () => _refresh(context),
+      );
+      return;
+    }
+    final r = agg.result!;
     // Nuove prove con una data dal database: «Aggiungi al calendario»?
     final added = [
       if (ics)
@@ -277,20 +307,6 @@ class ProfileSection extends StatelessWidget {
       }
     }
     if (!context.mounted) return;
-    if (r.senzaRete) {
-      ScaffoldMessenger.of(context)
-        ..hideCurrentSnackBar()
-        ..showSnackBar(
-          SnackBar(
-            content: const Text(kServeConnessione),
-            action: SnackBarAction(
-              label: 'Riprova',
-              onPressed: () => _refresh(context),
-            ),
-          ),
-        );
-      return;
-    }
     showSnack(
       context,
       r.imported
@@ -328,4 +344,55 @@ class ProfileSection extends StatelessWidget {
 
 extension on String {
   String ifEmpty(String fallback) => isEmpty ? fallback : this;
+}
+
+/// Riga «Accesso» con, sulla stessa riga, «Accesso e OFA» (testo completo).
+/// Su schermi stretti il pulsante va sotto il valore, sempre nella riga.
+class AccessoRow extends StatelessWidget {
+  const AccessoRow({super.key, required this.value, this.action});
+  final String value;
+  final Widget? action;
+
+  @override
+  Widget build(BuildContext context) {
+    final action = this.action;
+    if (action == null) return InfoRow('Accesso', value);
+    final theme = Theme.of(context);
+    final label = SizedBox(
+      width: 150,
+      child: Text(
+        'Accesso',
+        style: theme.textTheme.bodyMedium?.copyWith(
+          color: theme.colorScheme.onSurfaceVariant,
+        ),
+      ),
+    );
+    final text = SelectableText(value, style: theme.textTheme.bodyMedium);
+    return Padding(
+      key: const Key('accesso-row'),
+      padding: const EdgeInsets.symmetric(vertical: 3),
+      child: LayoutBuilder(
+        builder: (context, c) {
+          final wide = c.maxWidth >= 480;
+          return Row(
+            crossAxisAlignment: wide
+                ? CrossAxisAlignment.center
+                : CrossAxisAlignment.start,
+            children: [
+              label,
+              Expanded(
+                child: wide
+                    ? text
+                    : Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [text, action],
+                      ),
+              ),
+              if (wide) ...[const SizedBox(width: 8), action],
+            ],
+          );
+        },
+      ),
+    );
+  }
 }

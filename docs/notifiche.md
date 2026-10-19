@@ -96,10 +96,26 @@ sistema solo quando lo si attiva. Si scrivono: esami, prove in itinere ed
 esoneri ancora da sostenere del corso attuale (dal database e aggiunti a
 mano) e la data d'inizio delle sessioni d'esame del corso.
 
-- **Android, iOS**: calendario del dispositivo con `device_calendar`, in un
-  calendario locale «UniNotes» (azzurro dell'app); su iOS, se il sistema non
-  permette di crearlo (nessuna sorgente locale), nel calendario predefinito.
-  Ogni evento porta nella descrizione la riga `Rif. UniNotes: <chiave>` (es.
+- **Android**: calendario del dispositivo con `device_calendar`, in un
+  calendario locale «UniNotes» (azzurro dell'app); se non si può creare, nel
+  calendario predefinito.
+- **iOS e macOS**: EventKit con codice nativo (`UniNotesCalendar` in
+  `ios/Runner/AppDelegate.swift` e `macos/Runner/MainFlutterWindow.swift`,
+  canale `io.github.simomagnus.universitynotes/calendario`, lato Dart
+  `apple_calendar_backend.dart`, test in `app/test/system_links_test.dart`).
+  Il calendario «UniNotes» nasce nell'account dove l'utente vede i suoi
+  calendari (iCloud se attivo, altrimenti sul dispositivo): con
+  `device_calendar` su iPhone finiva «Sul mio iPhone», che con iCloud attivo
+  l'app Calendario non mostra; un calendario così rimasto da una versione
+  precedente viene svuotato degli eventi dell'app ed eliminato se vuoto. Gli
+  eventi si aggiornano sul posto (stesso id; se l'evento è stato tolto a
+  mano si ricrea), la ricerca va a blocchi di un anno (EventKit cerca al
+  massimo 4 anni per volta). Accesso completo (`requestFullAccessToEvents`
+  da iOS 17/macOS 14; con l'accesso «solo aggiunta» l'app non può evitare i
+  doppioni e lo considera non concesso). Sul Mac: entitlement
+  `com.apple.security.personal-information.calendars` e testi del permesso
+  nell'Info.plist.
+- Android, iOS e macOS: ogni evento porta nella descrizione la riga `Rif. UniNotes: <chiave>` (es.
   `esame-12`, `sessione-20270111-sessione-invernale`): l'app ritrova così i
   propri eventi, li aggiorna o li cancella e toglie i doppioni. Promemoria
   dell'evento agli stessi istanti delle notifiche.
@@ -114,14 +130,8 @@ mano) e la data d'inizio delle sessioni d'esame del corso.
   `reminderMinutesBeforeStart` è uno solo per evento (limite di Outlook): si
   usa l'anticipo più vicino alla prova. Senza account Microsoft collegato la
   sezione lo spiega e porta a Collegamenti.
-- **macOS**: `device_calendar` non supporta macOS e non esiste un pacchetto
-  mantenuto equivalente per EventKit che copra anche macOS (l'unico trovato,
-  `calendar_bridge`, ha pochissimi utenti). Su macOS resta quindi il **file
-  .ics**, che il Calendario importa e aggiorna senza doppioni (UID fisso per
-  prova): interruttore «Aggiungi esami… al calendario» e pulsante
-  **«Aggiungi ora tutte le prove con una data»**, solo su macOS. Per questo
-  il Mac non dichiara il permesso del calendario.
-- Su Android, iOS e Windows il file .ics non c'è più (né nelle Impostazioni,
+- Il file .ics (`calendar_export.dart`) resta solo per un sistema senza
+  calendario collegabile: su Android, iOS, macOS e Windows non c'è più (né nelle Impostazioni,
   né nell'onboarding, né dopo «Aggiorna database»): le prove si aggiungono a
   mano in Esami (o arrivano dal database) e il calendario di sistema le
   riceve da solo.

@@ -45,7 +45,7 @@ RootBack rootBackAction({
 const double kPillBottomReserve = 76;
 
 /// Larghezza della maniglia per ridimensionare, a destra dei riquadri.
-const double kPillHandleWidth = 16;
+const double kPillHandleWidth = 24;
 
 /// Larghezza minima del riquadro: pallino, livello e tre pulsanti da 48 px
 /// restano visibili (il testo si accorcia fino a sparire).

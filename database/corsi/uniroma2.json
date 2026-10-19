@@ -9257,7 +9257,7 @@
      "anno": 1,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "L-ANT/09, L-ANT/10",
+     "ssd": "L-ANT/09",
      "obbligatorio": false,
      "curriculum": "Archeologia, Generico, Beni storico-artistici",
      "docenti": [
@@ -20866,7 +20866,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "SECS-P/06, SECS-S/01",
+     "ssd": "SECS-P/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -21063,7 +21063,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIO/19, MED/04",
+     "ssd": "BIO/19",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -21100,7 +21100,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "BIO/19, MED/07",
+     "ssd": "BIO/19",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -22507,11 +22507,11 @@
        "editore": "Tata McGraw-Hill Education",
        "anno": 2012,
        "edizione": null,
-       "isbn": "9781308978611",
+       "isbn": null,
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "Brealey, R. A., Myers, S. C., Allen, F., & Mohanty, P. (2012). Principles of corporate finance. Tata McGraw-Hill Education. ISBN: 9781308978611"
+       "citazione": "Brealey, R. A., Myers, S. C., Allen, F., & Mohanty, P. (2012). Principles of corporate finance. Tata McGraw-Hill Education."
       }
      ],
      "esami": [
@@ -31512,7 +31512,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "INFO-01/A, MEDS-24/A, PHYS-06/A, STAT-01/B",
+     "ssd": "INFO-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -31554,7 +31554,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "BIOS-07/A, BIOS-10/A, BIOS-12/A, BIOS-13/A, MEDS-01/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -31602,7 +31602,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "BIOS-06/A, BIOS-07/A, MEDS-02/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -31639,7 +31639,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "CHEM-07/B, ECON-10/A, MEDS-08/C",
+     "ssd": "CHEM-07/B",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -31676,7 +31676,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MEDS-03/A, MEDS-24/B, MVET-03/B",
+     "ssd": "MEDS-03/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -31794,7 +31794,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "MED/42, MED/43",
+     "ssd": "MED/42",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -31896,7 +31896,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "M-PSI/01, M-PSI/03",
+     "ssd": "M-PSI/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -31918,7 +31918,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "BIO/14, MED/04, MED/09",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -31942,7 +31942,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/09, MED/13",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -32019,7 +32019,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/09, MED/13, MED/49",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -32096,7 +32096,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "MED/11, MED/12, MED/13, MED/14, MED/17, MED/49",
+     "ssd": "MED/11",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -32174,7 +32174,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "MED/06, MED/09, MED/18, MED/36",
+     "ssd": "MED/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -32327,7 +32327,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "M-PSI/08, MED/13, MED/25, MED/49",
+     "ssd": "M-PSI/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -32439,7 +32439,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/38, MED/40, MED/49, SECS-P/07, SECS-P/10",
+     "ssd": "MED/38",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -32826,7 +32826,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "GIUR-15/A, GIUR-16/A",
+     "ssd": "GIUR-15/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -33979,7 +33979,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "IUS/13, IUS/14",
+     "ssd": "IUS/13",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -35308,7 +35308,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "IUS/16, IUS/17",
+     "ssd": "IUS/16",
      "obbligatorio": true,
      "curriculum": "Operatore giuridico per l’innovazione tecnologica e la sostenibilità nell’impresa",
      "docenti": [
@@ -35343,7 +35343,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "IUS/15, IUS/16",
+     "ssd": "IUS/15",
      "obbligatorio": true,
      "curriculum": "Operatore giuridico per l’innovazione tecnologica e la sostenibilità nella pubblica amministrazione",
      "docenti": [
@@ -42494,7 +42494,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIO/09, MED/04, MED/05",
+     "ssd": "BIO/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -42516,7 +42516,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIO/13, BIO/16, MED/03, MED/07",
+     "ssd": "BIO/13",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -42540,7 +42540,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "FIS/07, INF/01, MED/01",
+     "ssd": "FIS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -42562,7 +42562,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 13,
-     "ssd": "M-EDF/01, M-FIL/03, M-PED/01, M-PED/03, SPS/07, SPS/08",
+     "ssd": "M-EDF/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -42745,7 +42745,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 11,
-     "ssd": "MED/42, MED/45, MED/48",
+     "ssd": "MED/42",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -42768,7 +42768,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "M-PSI/01, M-PSI/04, M-PSI/05",
+     "ssd": "M-PSI/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -42832,7 +42832,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "IUS/09, IUS/10, IUS/14",
+     "ssd": "IUS/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -42868,7 +42868,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "MED/25, MED/39",
+     "ssd": "MED/25",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -42890,7 +42890,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/09, MED/17, MED/26, MED/38, MED/41",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -42915,7 +42915,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "MED/14, MED/18, MED/33, MED/40",
+     "ssd": "MED/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -42939,7 +42939,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "MED/34, MED/45, MED/48, MED/50",
+     "ssd": "MED/34",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -42962,7 +42962,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "BIO/12, MED/36, MED/48",
+     "ssd": "BIO/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -43150,7 +43150,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "M-PSI/06, MED/43, MED/44, SECS-P/10",
+     "ssd": "M-PSI/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -46103,7 +46103,7 @@
      "anno": 2,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "M-PSI/04, M-PSI/07",
+     "ssd": "M-PSI/04",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -54278,7 +54278,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-06/A, BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -54371,7 +54371,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-07/A, BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -54421,7 +54421,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "IINF-05/A, INFO-01/A, MEDS-24/A, PHYS-06/A",
+     "ssd": "IINF-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -54727,7 +54727,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MEDS-02/A, MEDS-03/A",
+     "ssd": "MEDS-02/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -54785,7 +54785,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "GSPS-06/A, PSIC-01/A, PSIC-02/A",
+     "ssd": "GSPS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -54887,7 +54887,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIO/14, MED/05, MED/25, MED/26, MED/27",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -54999,7 +54999,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/33, MED/38, MED/39, MED/50",
+     "ssd": "MED/33",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -55083,7 +55083,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/30, MED/31, MED/33, MED/34, MED/36",
+     "ssd": "MED/30",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -55318,7 +55318,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/09, MED/16, MED/22, MED/24, MED/33",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -55558,7 +55558,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "MED/06, MED/18, MED/41",
+     "ssd": "MED/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -55660,7 +55660,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/10, MED/11, MED/21, MED/23",
+     "ssd": "MED/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -55804,7 +55804,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "IUS/07, M-FIL/03, MED/42, MED/43, SECS-P/10",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -58858,7 +58858,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/05, MED/42",
+     "ssd": "MED/05",
      "obbligatorio": true,
      "curriculum": "SCIENCE AND TECHNOLOGY",
      "docenti": [
@@ -59291,7 +59291,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 2,
-     "ssd": "PSIC-03/A, SDEA-01/A",
+     "ssd": "PSIC-03/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -59351,7 +59351,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-07/A, BIOS-10/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -59436,7 +59436,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-12/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -59473,7 +59473,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "INFO-01/A, MEDS-24/A, PHYS-06/A",
+     "ssd": "INFO-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -59601,7 +59601,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 10,
-     "ssd": "BIOS-06/A, MEDS-02/A, MEDS-02/B, MEDS-03/A, MEDS-05/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -59694,7 +59694,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MEDS-03/A, MEDS-16/A, MEDS-26/B",
+     "ssd": "MEDS-03/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -59842,7 +59842,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MEDS-02/C, PAED-01/A, PSIC-01/A",
+     "ssd": "MEDS-02/C",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -60036,7 +60036,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIO/14, MED/18, MED/28, MED/41",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -60075,7 +60075,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "MED/17, MED/28, MED/36, MED/42, MED/50",
+     "ssd": "MED/17",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -60661,7 +60661,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/08, MED/28, MED/50",
+     "ssd": "MED/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -60999,7 +60999,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "IUS/07, MED/43, MED/44, SECS-P/07, SECS-S/02",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -61047,7 +61047,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "MED/06, MED/11, MED/12, MED/13, MED/15, MED/25, MED/26, MED/31, MED/35, MED/38",
+     "ssd": "MED/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -61101,16 +61101,16 @@
        "citazione": "AR. Bianco, S. De Placido, G. Tortora. Core Curriculum: Oncologia Clinica. Ed. McGraw-Hill EAN: 9788808185495 ISBN: 8808185494 EAN: 9788808185495 ISBN: 8808185494"
       },
       {
-       "titolo": "AR. Bianco, S. De Placido, G. Tortora. Core Curriculum: Oncologia Clinica. Ed. McGraw-Hill",
+       "titolo": "AR. Bianco, S. De Placido, G. Tortora. Core Curriculum: Oncologia Clinica. Ed. McGraw-Hill EAN: 9788808185495 ISBN: 8808185494",
        "autori": null,
        "editore": null,
        "anno": null,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788808185495",
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "AR. Bianco, S. De Placido, G. Tortora. Core Curriculum: Oncologia Clinica. Ed. McGraw-Hill"
+       "citazione": "AR. Bianco, S. De Placido, G. Tortora. Core Curriculum: Oncologia Clinica. Ed. McGraw-Hill EAN: 9788808185495 ISBN: 8808185494"
       }
      ],
      "esami": [
@@ -61433,7 +61433,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-06/A, BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -61472,7 +61472,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIOS-06/A, BIOS-07/A, BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -61561,7 +61561,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "GSPS-05/A, MEDS-02/C, MEDS-22/A, MEDS-24/B, PAED-01/A, PSIC-01/A, SDEA-01/A",
+     "ssd": "GSPS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -61703,7 +61703,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MEDS-02/A, MEDS-02/B, MEDS-03/A",
+     "ssd": "MEDS-02/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -61825,7 +61825,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "INF/01, MED/01, MED/42, MED/45",
+     "ssd": "INF/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -61883,7 +61883,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIO/14, MED/09, MED/18, MED/41",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -61995,7 +61995,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/38, MED/40, MED/45, MED/47",
+     "ssd": "MED/38",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -62096,7 +62096,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/06, MED/09, MED/12, MED/17, MED/18, MED/24",
+     "ssd": "MED/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -62181,7 +62181,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/09, MED/33, MED/34, MED/45",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -62229,7 +62229,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIO/14, MED/09, MED/18, MED/41, MED/45",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -62298,7 +62298,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "M-PSI/08, MED/25, MED/26, MED/45",
+     "ssd": "M-PSI/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -62404,7 +62404,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "IUS/07, MED/42, MED/43, MED/44, MED/45, SECS-P/07",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -62702,7 +62702,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-06/A, BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -62747,7 +62747,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIOS-06/A, BIOS-07/A, BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -62840,7 +62840,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "GSPS-05/A, MEDS-02/C, MEDS-22/A, MEDS-24/B, PAED-01/A, PSIC-01/A, SDEA-01/A",
+     "ssd": "GSPS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -62968,7 +62968,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MEDS-02/A, MEDS-02/B, MEDS-03/A",
+     "ssd": "MEDS-02/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -63087,7 +63087,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "INF/01, MED/01, MED/42, MED/45",
+     "ssd": "INF/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -63129,7 +63129,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIO/14, MED/09, MED/18, MED/41",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -63245,7 +63245,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/38, MED/40, MED/45, MED/47",
+     "ssd": "MED/38",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -63343,7 +63343,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/06, MED/09, MED/12, MED/17, MED/18, MED/24",
+     "ssd": "MED/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -63427,7 +63427,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/09, MED/33, MED/34, MED/45",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -63458,7 +63458,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIO/14, MED/09, MED/18, MED/41, MED/45",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -63506,7 +63506,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "M-PSI/08, MED/25, MED/26, MED/45",
+     "ssd": "M-PSI/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -63575,7 +63575,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "IUS/07, MED/42, MED/43, MED/44, MED/45, SECS-P/07",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -63781,7 +63781,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-06/A, BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -63807,7 +63807,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIOS-06/A, BIOS-07/A, BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -63865,7 +63865,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "GSPS-05/A, MEDS-02/C, MEDS-22/A, MEDS-24/B, PAED-01/A, PSIC-01/A, SDEA-01/A",
+     "ssd": "GSPS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -63968,7 +63968,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MEDS-02/A, MEDS-02/B, MEDS-03/A",
+     "ssd": "MEDS-02/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64046,7 +64046,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "INF/01, MED/01, MED/42, MED/45",
+     "ssd": "INF/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64077,7 +64077,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIO/14, MED/09, MED/18, MED/41",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64155,7 +64155,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/38, MED/40, MED/45, MED/47",
+     "ssd": "MED/38",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64231,7 +64231,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/06, MED/09, MED/12, MED/17, MED/18, MED/24",
+     "ssd": "MED/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64302,7 +64302,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/09, MED/33, MED/34, MED/45",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64331,7 +64331,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIO/14, MED/09, MED/18, MED/41, MED/45",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64364,7 +64364,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "M-PSI/08, MED/25, MED/26, MED/45",
+     "ssd": "M-PSI/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64417,7 +64417,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "IUS/07, MED/42, MED/43, MED/44, MED/45, SECS-P/07",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64591,7 +64591,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-06/A, BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64619,7 +64619,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIOS-06/A, BIOS-07/A, BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64676,7 +64676,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "GSPS-05/A, MEDS-02/C, MEDS-22/A, MEDS-24/B, PAED-01/A, PSIC-01/A, SDEA-01/A",
+     "ssd": "GSPS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64776,7 +64776,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MEDS-02/A, MEDS-02/B, MEDS-03/A",
+     "ssd": "MEDS-02/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64855,7 +64855,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "INF/01, MED/01, MED/42, MED/45",
+     "ssd": "INF/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64890,7 +64890,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIO/14, MED/09, MED/18, MED/41",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -64973,7 +64973,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/38, MED/40, MED/45, MED/47",
+     "ssd": "MED/38",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -65050,7 +65050,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/06, MED/09, MED/12, MED/17, MED/18, MED/24",
+     "ssd": "MED/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -65115,7 +65115,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/09, MED/33, MED/34, MED/45",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -65148,7 +65148,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIO/14, MED/09, MED/18, MED/41, MED/45",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -65200,7 +65200,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "M-PSI/08, MED/25, MED/26, MED/45",
+     "ssd": "M-PSI/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -65267,7 +65267,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "IUS/07, MED/42, MED/43, MED/44, MED/45, SECS-P/07",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -75987,7 +75987,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "ING-IND/14, ING-IND/16",
+     "ssd": "ING-IND/14",
      "obbligatorio": true,
      "curriculum": "INGEGNERIA DELLA PRODUZIONE",
      "docenti": [
@@ -84077,7 +84077,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "ING-IND/21, ING-IND/22",
+     "ssd": "ING-IND/21",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -88539,7 +88539,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "ING-IND/13, ING-IND/14",
+     "ssd": "ING-IND/13",
      "obbligatorio": true,
      "curriculum": "Energetica industriale",
      "docenti": [
@@ -95341,7 +95341,7 @@
      "anno": 1,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "FICP-01/C, HIST-04/D",
+     "ssd": "FICP-01/C",
      "obbligatorio": false,
      "curriculum": "Lettere classiche e medievali",
      "docenti": [
@@ -109792,7 +109792,7 @@
      "anno": 3,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "L-ANT/05, M-STO/09",
+     "ssd": "L-ANT/05",
      "obbligatorio": false,
      "curriculum": "Archeologia e storia dell'arte antica, Lettere classiche e medievali, Storia dell'arte",
      "docenti": [
@@ -110141,7 +110141,7 @@
      "anno": 3,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "L-ANT/09, L-ANT/10",
+     "ssd": "L-ANT/09",
      "obbligatorio": false,
      "curriculum": "Archeologia e storia dell'arte antica, Lettere classiche e medievali, Lettere moderne, Storia dell'arte, Storia e geografia",
      "docenti": [
@@ -122001,7 +122001,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIOS-07/A, BIOS-10/A, MEDS-01/A, PHYS-06/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -122047,7 +122047,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-12/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -122104,7 +122104,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "PAED-01/A, PAED-02/A, PSIC-01/A, PSIC-02/A, PSIC-04/B",
+     "ssd": "PAED-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -122209,7 +122209,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "BIOS-06/A, BIOS-11/A, MEDS-02/A, MEDS-03/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -122258,7 +122258,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "GSPS-05/A, GSPS-06/A, MEDS-24/A, STAT-01/B",
+     "ssd": "GSPS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -122302,7 +122302,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "GLOT-01/A, MEDS-26/C, PHIL-04/B",
+     "ssd": "GLOT-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -122502,7 +122502,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/28, MED/38, MED/39",
+     "ssd": "MED/28",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -122597,7 +122597,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/32, MED/50",
+     "ssd": "MED/32",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -122694,7 +122694,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/10, MED/18, MED/31",
+     "ssd": "MED/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -122810,7 +122810,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "MED/26, MED/50",
+     "ssd": "MED/26",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -122848,7 +122848,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/26, MED/50",
+     "ssd": "MED/26",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -122908,7 +122908,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "IUS/07, M-FIL/03, MED/42, MED/44, MED/50, SECS-P/06, SPS/09",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -122960,7 +122960,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/09, MED/25, MED/33, MED/34, MED/36, MED/43",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -123770,7 +123770,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "INF/01, MAT/08",
+     "ssd": "INF/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -125705,7 +125705,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "BIOS-06/A, BIOS-12/A, BIOS-13/A, MEDS-17/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -125743,7 +125743,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIOS-07/A, BIOS-09/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -125766,7 +125766,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "INFO-01/A, MEDS-24/A, PHYS-06/A",
+     "ssd": "INFO-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -125790,7 +125790,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIOS-10/A, MEDS-01/A, MEDS-03/A",
+     "ssd": "BIOS-10/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -125814,7 +125814,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 10,
-     "ssd": "MEDS-17/A, MEDS-26/C",
+     "ssd": "MEDS-17/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -125881,7 +125881,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "MED/30, MED/50",
+     "ssd": "MED/30",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -125927,7 +125927,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "M-PSI/01, MED/13, MED/26, MED/39",
+     "ssd": "M-PSI/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -125951,7 +125951,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MED/30, MED/38",
+     "ssd": "MED/30",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -125973,7 +125973,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "MED/30, MED/50",
+     "ssd": "MED/30",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -126090,7 +126090,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "MED/30, MED/50",
+     "ssd": "MED/30",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -126205,7 +126205,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "BIO/14, MED/09, MED/45",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -126335,7 +126335,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/36, MED/42, MED/43, MED/44, SECS-P/07, SECS-P/10",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -126455,7 +126455,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIOS-06/A, BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -126479,7 +126479,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIOS-07/A, BIOS-10/A, MEDS-01/A, PHYS-06/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -126527,7 +126527,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "GSPS-05/A, MEDS-02/C, MEDS-22/A, PAED-01/A, PSIC-01/A, SDEA-01/A",
+     "ssd": "GSPS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -126695,7 +126695,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MEDS-02/A, MEDS-02/B, MEDS-03/A",
+     "ssd": "MEDS-02/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -126765,7 +126765,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIO/14, MED/01, MED/09, MED/18, MED/40, MED/42",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -126902,7 +126902,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/06, MED/13, MED/18, MED/40",
+     "ssd": "MED/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -126929,7 +126929,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "M-PSI/08, MED/03, MED/38, MED/40",
+     "ssd": "M-PSI/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -127001,7 +127001,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "BIO/14, MED/09, MED/18, MED/40, MED/41",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -127045,7 +127045,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "MED/13, MED/40, MED/49",
+     "ssd": "MED/13",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -127199,7 +127199,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "IUS/07, MED/42, MED/43, MED/44, SECS-P/07",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -127351,7 +127351,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-06/A, BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -127414,7 +127414,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-07/A, BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -127452,7 +127452,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "IINF-05/A, INFO-01/A, MEDS-24/A, PHYS-06/A",
+     "ssd": "IINF-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -127597,7 +127597,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MEDS-02/A, MEDS-03/A",
+     "ssd": "MEDS-02/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -127634,7 +127634,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "MEDS-19/A, MEDS-24/C, MEDS-26/C",
+     "ssd": "MEDS-19/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -127675,7 +127675,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "GSPS-05/A, PSIC-01/A, PSIC-02/A",
+     "ssd": "GSPS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -127737,7 +127737,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIO/14, MED/05, MED/25, MED/26, MED/27",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -127813,7 +127813,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/33, MED/38, MED/39, MED/50",
+     "ssd": "MED/33",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -127851,7 +127851,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/30, MED/31, MED/33, MED/34, MED/36",
+     "ssd": "MED/30",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -127983,7 +127983,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/18, MED/22, MED/41",
+     "ssd": "MED/18",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -128042,7 +128042,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "MED/09, MED/13",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -128080,7 +128080,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "MED/33, MED/50",
+     "ssd": "MED/33",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -128144,7 +128144,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "MED/11, MED/16, MED/17, MED/35",
+     "ssd": "MED/11",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -128183,7 +128183,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "ING-INF/06, MED/34",
+     "ssd": "ING-INF/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -128268,7 +128268,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "IUS/07, M-FIL/03, MED/42, MED/43, SECS-P/10",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -128345,7 +128345,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MED/33, MED/50",
+     "ssd": "MED/33",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -128435,7 +128435,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "BIOS-06/A, BIOS-10/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -128870,11 +128870,11 @@
        "editore": "Zanichelli",
        "anno": 2021,
        "edizione": null,
-       "isbn": "9788808399120",
+       "isbn": null,
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "Gazzaniga, M.S., Ivry, R.B. e Mangun, G.R. (2021). Neuroscienze cognitive. Bologna: Zanichelli (3a edizione italiana). ISBN 9788808399120"
+       "citazione": "Gazzaniga, M.S., Ivry, R.B. e Mangun, G.R. (2021). Neuroscienze cognitive. Bologna: Zanichelli (3a edizione italiana)."
       }
      ],
      "esami": [],
@@ -129207,7 +129207,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "M-PSI/04, MED/39",
+     "ssd": "M-PSI/04",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -129535,7 +129535,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "ING-IND/35, M-PSI/06, SECS-P/11",
+     "ssd": "ING-IND/35",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -129808,7 +129808,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "IUS/10, MED/43",
+     "ssd": "IUS/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -130284,7 +130284,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "CHIM/01, CHIM/03",
+     "ssd": "CHIM/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -131029,7 +131029,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 13,
-     "ssd": "FIS/07, MED/01",
+     "ssd": "FIS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -131699,7 +131699,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 11,
-     "ssd": "BIO/05, VET/06",
+     "ssd": "BIO/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -131760,7 +131760,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "BIO/08, MED/02",
+     "ssd": "BIO/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -131995,7 +131995,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "BIO/11, MED/03",
+     "ssd": "BIO/11",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -132168,7 +132168,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "BIO/12, MED/04",
+     "ssd": "BIO/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -138627,7 +138627,7 @@
      "anno": 1,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "PSIC-02/A, PSIC-04/B",
+     "ssd": "PSIC-02/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -140077,7 +140077,7 @@
      "anno": 3,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "M-PSI/04, M-PSI/07",
+     "ssd": "M-PSI/04",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -140923,7 +140923,7 @@
      "anno": 2,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "M-FIL/01, SPS/08",
+     "ssd": "M-FIL/01",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -141006,7 +141006,7 @@
      "anno": 2,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "IUS/09, SPS/01",
+     "ssd": "IUS/09",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -141028,7 +141028,7 @@
      "anno": 2,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "IUS/01, IUS/09",
+     "ssd": "IUS/01",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -142081,7 +142081,7 @@
      "anno": 2,
      "periodo": "annuale",
      "cfu": 18,
-     "ssd": "M-FIL/01, SPS/01, SPS/02",
+     "ssd": "M-FIL/01",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -143914,7 +143914,7 @@
      "anno": 2,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "M-STO/04, SPS/02",
+     "ssd": "M-STO/04",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -145870,7 +145870,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "HIST-03/A, PAED-01/A",
+     "ssd": "HIST-03/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -145892,7 +145892,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "BIOS-06/A, BIOS-12/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -145959,7 +145959,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 10,
-     "ssd": "ECON-01/A, GIUR-01/A",
+     "ssd": "ECON-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -146386,7 +146386,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "MED/04, MED/05",
+     "ssd": "MED/04",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -146538,7 +146538,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "M-EDF/01, M-EDF/02",
+     "ssd": "M-EDF/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -146587,7 +146587,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 15,
-     "ssd": "M-EDF/01, MED/33, MED/34",
+     "ssd": "M-EDF/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -146654,7 +146654,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 16,
-     "ssd": "M-EDF/01, M-EDF/02",
+     "ssd": "M-EDF/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147308,7 +147308,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "BIOS-06/A, BIOS-12/A, BIOS-13/A, MEDS-12/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147346,7 +147346,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "BIOS-07/A, BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147369,7 +147369,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "INFO-01/A, MEDS-11/A, MEDS-24/A, PHYS-06/A",
+     "ssd": "INFO-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147477,7 +147477,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MEDS-02/A, MEDS-03/A, MEDS-26/C",
+     "ssd": "MEDS-02/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147500,7 +147500,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "PAED-01/A, PSIC-01/A, PSIC-04/B",
+     "ssd": "PAED-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147523,7 +147523,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MEDS-24/C, MEDS-26/C",
+     "ssd": "MEDS-24/C",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147566,7 +147566,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/25, MED/39",
+     "ssd": "MED/25",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147589,7 +147589,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIO/14, MED/26, MED/34, MED/48",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147613,7 +147613,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/25, MED/48",
+     "ssd": "MED/25",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147699,7 +147699,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "M-PSI/01, M-PSI/08, MED/25, MED/38",
+     "ssd": "M-PSI/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147723,7 +147723,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "MED/25, MED/45, MED/48",
+     "ssd": "MED/25",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147768,7 +147768,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "BIO/14, MED/18, MED/25, MED/36, MED/41",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147793,7 +147793,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "M-PSI/08, MED/39, MED/48",
+     "ssd": "M-PSI/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147858,7 +147858,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "ING-INF/05, IUS/09, MED/42, SECS-P/07, SECS-P/10",
+     "ssd": "ING-INF/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147923,7 +147923,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "MED/45, MED/48",
+     "ssd": "MED/45",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -147947,7 +147947,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "IUS/07, MED/43, MED/48",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148012,7 +148012,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-12/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148034,7 +148034,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-07/A, BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148058,7 +148058,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "INFO-01/A, MEDS-24/A, PHYS-06/A",
+     "ssd": "INFO-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148145,7 +148145,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "BIOS-06/A, IMAT-01/A, IMIS-01/B, MEDS-02/A, PHYS-06/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148199,7 +148199,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 10,
-     "ssd": "MEDS-18/A, MEDS-18/B, MEDS-26/B",
+     "ssd": "MEDS-18/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148224,7 +148224,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "GLOT-01/A, PSIC-01/A",
+     "ssd": "GLOT-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148269,7 +148269,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/09, MED/17, MED/18",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148292,7 +148292,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "MED/31, MED/50",
+     "ssd": "MED/31",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148330,7 +148330,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "MED/36, MED/37, MED/42",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148417,7 +148417,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MED/31, MED/32",
+     "ssd": "MED/31",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148453,7 +148453,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 11,
-     "ssd": "MED/31, MED/32, MED/38, MED/39, MED/50",
+     "ssd": "MED/31",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148503,7 +148503,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "IUS/07, MED/43, MED/44",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148526,7 +148526,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/32, MED/50",
+     "ssd": "MED/32",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148651,7 +148651,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "MED/32, MED/50",
+     "ssd": "MED/32",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148756,7 +148756,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "GIUR-06/A, MEDS-24/B, MEDS-25/B",
+     "ssd": "GIUR-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148795,7 +148795,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-07/A, BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148860,7 +148860,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "INFO-01/A, MEDS-24/A, PHYS-06/A",
+     "ssd": "INFO-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148920,7 +148920,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "MEDS-02/A, MEDS-03/A, MEDS-26/B",
+     "ssd": "MEDS-02/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -148985,7 +148985,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "MEDS-24/B, MEDS-24/C",
+     "ssd": "MEDS-24/B",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -149133,7 +149133,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "MED/17, MED/44, SPS/07",
+     "ssd": "MED/17",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -149173,7 +149173,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "MED/44, MED/50",
+     "ssd": "MED/44",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -149398,7 +149398,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "AGR/15, CHIM/10, CHIM/12",
+     "ssd": "AGR/15",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -149425,7 +149425,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "IUS/07, IUS/09, MED/43, SECS-P/01",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -149584,7 +149584,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "BIO/03, ICAR/03, ING-INF/05",
+     "ssd": "BIO/03",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -149624,7 +149624,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "MED/42, MED/44, VET/04",
+     "ssd": "MED/42",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -149798,7 +149798,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "MED/36, MED/44, MED/50",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -149918,7 +149918,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIOS-07/A, BIOS-12/A, BIOS-13/A, MEDS-01/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -149967,7 +149967,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "IINF-05/A, INFO-01/A, MEDS-24/A, STAT-01/B",
+     "ssd": "IINF-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -149990,7 +149990,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "IMAT-01/A, MEDS-07/B, MEDS-13/C, MEDS-26/B",
+     "ssd": "IMAT-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150081,7 +150081,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "IBIO-01/A, IMIS-01/B, PHYS-06/A",
+     "ssd": "IBIO-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150104,7 +150104,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "BIOS-06/A, MEDS-02/A, MEDS-02/B, MEDS-26/B",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150167,7 +150167,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "BIO/14, MED/18, MED/41",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150190,7 +150190,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "M-PSI/01, M-PSI/05, SPS/07",
+     "ssd": "M-PSI/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150212,7 +150212,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "MED/11, MED/23, MED/36, MED/50",
+     "ssd": "MED/11",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150313,7 +150313,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "MED/10, MED/13, MED/17, MED/26",
+     "ssd": "MED/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150337,7 +150337,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "MED/06, MED/14, MED/27",
+     "ssd": "MED/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150360,7 +150360,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "MED/11, MED/15, MED/23, MED/50",
+     "ssd": "MED/11",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150421,7 +150421,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/20, MED/21, MED/22",
+     "ssd": "MED/20",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150445,7 +150445,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "MED/42, MED/43, MED/44",
+     "ssd": "MED/42",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150469,7 +150469,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/11, MED/23, MED/50",
+     "ssd": "MED/11",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150613,7 +150613,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "IUS/07, MED/50, SECS-P/10",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150717,7 +150717,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "MED/11, MED/23, MED/41",
+     "ssd": "MED/11",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150799,7 +150799,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "BIOS-10/A, BIOS-12/A, BIOS-13/A, MEDS-01/A",
+     "ssd": "BIOS-10/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150823,7 +150823,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "CHEM-03/A, CHEM-05/A, INFO-01/A, MEDS-24/A, PHYS-06/A",
+     "ssd": "CHEM-03/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150849,7 +150849,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 11,
-     "ssd": "BIOS-06/A, BIOS-07/A, BIOS-08/A, MEDS-03/A, MEDS-26/B",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150901,7 +150901,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIO/12, MED/04, MED/46",
+     "ssd": "BIO/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150938,7 +150938,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "BIO/12, ING-INF/05, MED/46, SECS-S/02",
+     "ssd": "BIO/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150965,7 +150965,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "MED/07, MED/46, VET/06",
+     "ssd": "MED/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151029,7 +151029,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/08, MED/46",
+     "ssd": "MED/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151052,7 +151052,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "BIO/12, BIO/14",
+     "ssd": "BIO/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151124,7 +151124,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/04, MED/05, MED/46",
+     "ssd": "MED/04",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151213,7 +151213,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "MED/08, MED/46",
+     "ssd": "MED/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151295,7 +151295,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/07, MED/46, VET/06",
+     "ssd": "MED/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151461,7 +151461,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "IUS/07, MED/02, MED/42, MED/50",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151573,7 +151573,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/06, MED/15, MED/36",
+     "ssd": "MED/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151723,7 +151723,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "BIOS-06/A, BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151763,7 +151763,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "BIOS-07/A, BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151790,7 +151790,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "INFO-01/A, PHYS-06/A, STAT-01/B",
+     "ssd": "INFO-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151815,7 +151815,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "MEDS-12/A, MEDS-26/B",
+     "ssd": "MEDS-12/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151841,7 +151841,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "INFO-01/A, PHYS-06/A",
+     "ssd": "INFO-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151886,7 +151886,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MEDS-22/A, MEDS-26/B, PSIC-01/A",
+     "ssd": "MEDS-22/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151934,7 +151934,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "MED/04, MED/10, MED/26, MED/33, MED/48",
+     "ssd": "MED/04",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151967,7 +151967,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/38, MED/39, MED/48",
+     "ssd": "MED/38",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -151991,7 +151991,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIO/14, MED/09, MED/18, MED/41, MED/45",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152035,7 +152035,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "MED/26, MED/48",
+     "ssd": "MED/26",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152064,7 +152064,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "MED/11, MED/26, MED/48",
+     "ssd": "MED/11",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152133,7 +152133,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "MED/09, MED/26, MED/48",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152180,7 +152180,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "MED/26, MED/27, MED/41, MED/48",
+     "ssd": "MED/26",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152231,7 +152231,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "IUS/09, MED/43, SECS-P/10",
+     "ssd": "IUS/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152256,7 +152256,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MED/26, SECS-S/02",
+     "ssd": "MED/26",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152279,7 +152279,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MED/26, MED/33",
+     "ssd": "MED/26",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152366,7 +152366,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIOS-12/A, MEDS-22/A",
+     "ssd": "BIOS-12/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152428,7 +152428,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "BIOS-07/A, BIOS-10/A, BIOS-13/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152514,7 +152514,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "IINF-01/A, MATH-03/A, MEDS-24/A, PHYS-06/A",
+     "ssd": "IINF-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152552,7 +152552,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "BIOS-06/A, MEDS-02/A, MEDS-22/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152619,7 +152619,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "IMIS-01/B, PHYS-06/A",
+     "ssd": "IMIS-01/B",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152844,7 +152844,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "MEDS-22/A, MEDS-26/B",
+     "ssd": "MEDS-22/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152941,7 +152941,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "ING-INF/05, MED/50",
+     "ssd": "ING-INF/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152963,7 +152963,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "BIO/14, MED/02, MED/36, MED/41",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -152988,7 +152988,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "FIS/07, MED/36",
+     "ssd": "FIS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153053,7 +153053,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "FIS/07, ING-INF/05, MED/36",
+     "ssd": "FIS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153098,7 +153098,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "MED/36, MED/50",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153142,7 +153142,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "IUS/10, MED/43, MED/44",
+     "ssd": "IUS/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153181,7 +153181,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/36, MED/50",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153206,7 +153206,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "MED/36, MED/50",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153346,7 +153346,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/36, SECS-P/10",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153383,7 +153383,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "MED/36, MED/50",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153487,7 +153487,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIOS-07/A, INFO-01/A, MEDS-01/A, PHYS-06/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153525,7 +153525,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "BIOS-10/A, BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-10/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153604,7 +153604,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 13,
-     "ssd": "ANGL-01/C, IIND-02/A, IMAT-01/A, IMIS-01/B, MEDS-26/B",
+     "ssd": "ANGL-01/C",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153644,7 +153644,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "BIOS-09/A, GSPS-05/A, MEDS-02/A",
+     "ssd": "BIOS-09/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153741,7 +153741,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "MED/33, MED/34, MED/36, MED/50",
+     "ssd": "MED/33",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153798,7 +153798,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "ING-IND/12, ING-IND/14, ING-IND/34",
+     "ssd": "ING-IND/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153835,7 +153835,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/26, MED/33, MED/39, MED/50",
+     "ssd": "MED/26",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153906,7 +153906,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "ING-IND/34, MED/33, MED/50",
+     "ssd": "ING-IND/34",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -153944,7 +153944,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MED/09, MED/18, MED/41",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -154066,7 +154066,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "MED/33, MED/34, MED/36, MED/50",
+     "ssd": "MED/33",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -154143,7 +154143,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "ING-INF/05, L-LIN/12, MED/43, MED/44, SECS-P/07, SECS-P/10, SECS-S/02",
+     "ssd": "ING-INF/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -154263,7 +154263,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/33, MED/34, MED/36, MED/50",
+     "ssd": "MED/33",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -154384,7 +154384,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "MED/10, MED/14, MED/15, MED/18, MED/27",
+     "ssd": "MED/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -154490,7 +154490,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-06/A, BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -154553,7 +154553,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-07/A, BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -154591,7 +154591,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "IINF-05/A, INFO-01/A, MEDS-24/A, PHYS-06/A",
+     "ssd": "IINF-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -154739,7 +154739,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MEDS-02/A, MEDS-03/A",
+     "ssd": "MEDS-02/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -154761,7 +154761,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "GSPS-05/A, PSIC-01/A, PSIC-02/A",
+     "ssd": "GSPS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -154841,7 +154841,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIO/14, MED/05, MED/25, MED/26, MED/27",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -154917,7 +154917,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/30, MED/31, MED/33, MED/34, MED/36",
+     "ssd": "MED/30",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -154993,7 +154993,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "MED/38, MED/40",
+     "ssd": "MED/38",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -155079,7 +155079,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "M-PSI/08, MED/39",
+     "ssd": "M-PSI/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -155128,7 +155128,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/45, MED/48",
+     "ssd": "MED/45",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -155233,7 +155233,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/45, MED/48",
+     "ssd": "MED/45",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -155357,7 +155357,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "IUS/07, M-FIL/03, MED/42, MED/43, SECS-P/10",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -155863,7 +155863,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "MEDS-08/C, MEDS-24/B",
+     "ssd": "MEDS-08/C",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -162483,7 +162483,7 @@
      "anno": 2,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "L-FIL-LET/07, L-FIL-LET/08",
+     "ssd": "L-FIL-LET/07",
      "obbligatorio": false,
      "curriculum": "LM-15",
      "docenti": [
@@ -173420,7 +173420,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "BIO/05, BIO/08",
+     "ssd": "BIO/05",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -173528,7 +173528,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "BIO/01, BIO/05, BIO/07",
+     "ssd": "BIO/01",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -173609,7 +173609,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "IUS/10, SECS-P/06",
+     "ssd": "IUS/10",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -173822,7 +173822,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIO/09, BIO/10",
+     "ssd": "BIO/09",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -174311,7 +174311,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIO/10, BIO/11, BIO/18",
+     "ssd": "BIO/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -174710,7 +174710,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MEDS-02/A, MEDS-03/A",
+     "ssd": "MEDS-02/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -174732,7 +174732,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-04/A, BIOS-07/A",
+     "ssd": "BIOS-04/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -174810,7 +174810,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "BIOS-07/A, BIOS-08/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -174853,7 +174853,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-15/A, CHEM-02/A",
+     "ssd": "BIOS-15/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -174931,7 +174931,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "BIOS-11/A, CHEM-07/A",
+     "ssd": "BIOS-11/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -175080,7 +175080,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "ECON-08/A, MEDS-24/A",
+     "ssd": "ECON-08/A",
      "obbligatorio": true,
      "curriculum": "Clinical research",
      "docenti": [
@@ -175703,7 +175703,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "IUS/03, SECS-P/08",
+     "ssd": "IUS/03",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -175786,7 +175786,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "BIO/18, BIO/19",
+     "ssd": "BIO/18",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -175909,7 +175909,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "BIOS-12/A, BIOS-13/A",
+     "ssd": "BIOS-12/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -176058,7 +176058,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "BIOS-08/A, CHEM-01/A, CHEM-02/A",
+     "ssd": "BIOS-08/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -176182,7 +176182,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "BIOS-09/A, BIOS-10/A",
+     "ssd": "BIOS-09/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -176257,7 +176257,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 11,
-     "ssd": "MEDS-01/A, MEDS-02/A",
+     "ssd": "MEDS-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -176370,7 +176370,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "MED/05, MED/09, MED/12, MED/15, MED/26, MED/36",
+     "ssd": "MED/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -176424,7 +176424,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "IUS/04, MED/01, MED/42",
+     "ssd": "IUS/04",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -176499,7 +176499,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "BIO/14, IUS/20, SECS-P/02",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -179863,7 +179863,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "FIS/07, ING-IND/23",
+     "ssd": "FIS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -186724,7 +186724,7 @@
      "anno": 1,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "PHIL-01/A, PHIL-04/A",
+     "ssd": "PHIL-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -191217,7 +191217,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "SECS-P/05, SECS-S/03",
+     "ssd": "SECS-P/05",
      "obbligatorio": true,
      "curriculum": "Mercati finanziari e finanza quantitativa",
      "docenti": [
@@ -198599,7 +198599,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "MATH-03/B, STAT-04/A",
+     "ssd": "MATH-03/B",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -218935,7 +218935,7 @@
      "anno": 2,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "M-PSI/04, M-PSI/07",
+     "ssd": "M-PSI/04",
      "obbligatorio": false,
      "curriculum": "Filosofia",
      "docenti": [
@@ -223059,7 +223059,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "MATH-03/B, STAT-04/A",
+     "ssd": "MATH-03/B",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -242908,7 +242908,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "IINF-01/A, IMIS-01/B",
+     "ssd": "IINF-01/A",
      "obbligatorio": false,
      "curriculum": "Percorso B) Elettronica per l'industria, Percorso C) Elettronica per la medicina",
      "docenti": [
@@ -244795,7 +244795,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "PHYS-03/A, PHYS-06/A",
+     "ssd": "PHYS-03/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -253400,7 +253400,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "IIND-01/F, MATH-03/B",
+     "ssd": "IIND-01/F",
      "obbligatorio": true,
      "curriculum": "Ingegneria dei processi sostenibili, Ingegneria di prodotto",
      "docenti": [
@@ -253498,7 +253498,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "IIND-02/A, IIND-03/B",
+     "ssd": "IIND-02/A",
      "obbligatorio": true,
      "curriculum": "Ingegneria dei processi sostenibili, Ingegneria di prodotto",
      "docenti": [
@@ -253842,7 +253842,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 18,
-     "ssd": "IIND-06/A, IIND-06/B",
+     "ssd": "IIND-06/A",
      "obbligatorio": true,
      "curriculum": "Ingegneria dei processi sostenibili",
      "docenti": [
@@ -253888,7 +253888,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "IIND-03/C, IMAT-01/A",
+     "ssd": "IIND-03/C",
      "obbligatorio": true,
      "curriculum": "Ingegneria dei processi sostenibili, Ingegneria di prodotto",
      "docenti": [
@@ -254392,7 +254392,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 15,
-     "ssd": "ING-IND/08, ING-IND/09",
+     "ssd": "ING-IND/08",
      "obbligatorio": true,
      "curriculum": "Ingegneria di prodotto",
      "docenti": [
@@ -287135,7 +287135,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/09, MED/25, MED/44",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": "Processi psicologici di sviluppo",
      "docenti": [
@@ -289644,7 +289644,7 @@
      "anno": 1,
      "periodo": "annuale",
      "cfu": 10,
-     "ssd": "BIOS-02/A, BIOS-07/A, BIOS-08/A",
+     "ssd": "BIOS-02/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -289720,7 +289720,7 @@
      "anno": 1,
      "periodo": "annuale",
      "cfu": 9,
-     "ssd": "BIOS-06/A, BIOS-10/A, BIOS-12/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -289784,7 +289784,7 @@
      "anno": 1,
      "periodo": "annuale",
      "cfu": 10,
-     "ssd": "AGRI-07/A, CHEM-07/B",
+     "ssd": "AGRI-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -289907,7 +289907,7 @@
      "anno": 1,
      "periodo": "annuale",
      "cfu": 7,
-     "ssd": "ECON-01/A, GIUR-03/B",
+     "ssd": "ECON-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -289993,7 +289993,7 @@
      "anno": 1,
      "periodo": "annuale",
      "cfu": 4,
-     "ssd": "BIOS-07/A, BIOS-09/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -290029,7 +290029,7 @@
      "anno": 1,
      "periodo": "annuale",
      "cfu": 7,
-     "ssd": "AGRI-08/A, MEDS-03/A",
+     "ssd": "AGRI-08/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -290105,7 +290105,7 @@
      "anno": 1,
      "periodo": "annuale",
      "cfu": 4,
-     "ssd": "BIOS-07/A, MEDS-03/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -290275,7 +290275,7 @@
      "anno": 1,
      "periodo": "annuale",
      "cfu": 13,
-     "ssd": "BIOS-09/A, BIOS-11/A, MEDS-02/A",
+     "ssd": "BIOS-09/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -290642,7 +290642,7 @@
      "anno": 2,
      "periodo": "annuale",
      "cfu": 7,
-     "ssd": "MED/12, MED/18",
+     "ssd": "MED/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -290678,7 +290678,7 @@
      "anno": 2,
      "periodo": "annuale",
      "cfu": 7,
-     "ssd": "MED/03, MED/09",
+     "ssd": "MED/03",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -290777,7 +290777,7 @@
      "anno": 2,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "MED/13, MED/26, MED/42",
+     "ssd": "MED/13",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -299663,7 +299663,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "IINF-05/A, MEDS-24/A, MEDS-24/B, STAT-03/A, STAT-03/B",
+     "ssd": "IINF-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -299686,7 +299686,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 11,
-     "ssd": "MEDS-10/B, MEDS-24/B, MEDS-25/A, MEDS-25/B",
+     "ssd": "MEDS-10/B",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -299731,7 +299731,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "CEAR-02/A, ECON-02/A, ECON-06/A, ECON-07/A, GSPS-08/A",
+     "ssd": "CEAR-02/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -299775,7 +299775,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MEDS-01/A, MEDS-02/A, MEDS-26/B",
+     "ssd": "MEDS-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -299798,7 +299798,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "GSPS-05/A, GSPS-06/A, GSPS-08/B, PAED-01/A, PSIC-01/A, PSIC-02/A, PSIC-03/A",
+     "ssd": "GSPS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -299899,7 +299899,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "BIO/10, BIO/13, BIO/19, CHIM/03, CHIM/06",
+     "ssd": "BIO/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300029,7 +300029,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "FIS/02, ICAR/03, ING-IND/09, ING-IND/11",
+     "ssd": "FIS/02",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300096,7 +300096,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "BIO/07, CHIM/10, CHIM/12",
+     "ssd": "BIO/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300159,7 +300159,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "IUS/07, IUS/10, IUS/13, IUS/14, IUS/16, IUS/17",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300333,7 +300333,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "GIUR-01/A, GIUR-06/A, GIUR-10/A",
+     "ssd": "GIUR-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300357,7 +300357,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "ECON-03/A, ECON-07/A, ECON-08/A, IIND-07/E, MEDS-24/A",
+     "ssd": "ECON-03/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300422,7 +300422,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "IMIS-01/B, MEDS-22/A, MEDS-24/A, PAED-02/B, PHYS-06/A, STAT-01/B",
+     "ssd": "IMIS-01/B",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300469,7 +300469,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "ECON-06/A, MEDS-24/A, MEDS-24/B, MEDS-25/A, MEDS-25/B",
+     "ssd": "ECON-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300494,7 +300494,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MEDS-24/B, MEDS-26/B, PAED-02/B, PSIC-01/A",
+     "ssd": "MEDS-24/B",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300540,7 +300540,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "ING-INF/05, MED/36, MED/50, SPS/08",
+     "ssd": "ING-INF/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300593,7 +300593,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIO/12, MED/09, MED/36, MED/50, SECS-S/04",
+     "ssd": "BIO/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300673,7 +300673,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "ING-INF/05, M-PED/04, MED/36, MED/46, MED/50, SECS-S/02, SECS-S/04",
+     "ssd": "ING-INF/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300719,7 +300719,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "ING-INF/06, M-PSI/01, MED/05, MED/25, MED/26, MED/32, MED/41, SECS-S/02, SPS/08",
+     "ssd": "ING-INF/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300862,7 +300862,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "GSPS-06/A, HIST-03/A",
+     "ssd": "GSPS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300884,7 +300884,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 10,
-     "ssd": "BIOS-06/A, MEDS-08/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300926,7 +300926,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "MEDS-09/C, MEDS-19/A",
+     "ssd": "MEDS-09/C",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -300948,7 +300948,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 15,
-     "ssd": "MEDF-01/A, MEDF-01/B",
+     "ssd": "MEDF-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -301016,7 +301016,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "BIO/14, MED/09",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -301243,7 +301243,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 10,
-     "ssd": "MED/34, MED/49",
+     "ssd": "MED/34",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -301566,7 +301566,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "GIUR-01/A, PSIC-03/B",
+     "ssd": "GIUR-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -302369,7 +302369,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "GSPS-05/A, MEDS-02/C, PHIL-02/A, PSIC-01/A, SDEA-01/A",
+     "ssd": "GSPS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -302400,7 +302400,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "IINF-05/A, MEDS-24/A, MEDS-24/B, MEDS-24/C",
+     "ssd": "IINF-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -302429,7 +302429,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "MEDS-09/A, MEDS-24/C",
+     "ssd": "MEDS-09/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -302459,7 +302459,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MEDS-24/B, MEDS-24/C, MEDS-25/B",
+     "ssd": "MEDS-24/B",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -302555,7 +302555,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MEDS-24/C, PAED-01/A, PSIC-03/A",
+     "ssd": "MEDS-24/C",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -302582,7 +302582,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "IUS/07, IUS/10, MED/42, MED/43",
+     "ssd": "IUS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -302612,7 +302612,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "SECS-P/06, SECS-P/07",
+     "ssd": "SECS-P/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -302637,7 +302637,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "M-PED/03, M-PSI/06, MED/45",
+     "ssd": "M-PED/03",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -302733,7 +302733,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "ING-INF/05, MED/06, MED/17, MED/45",
+     "ssd": "ING-INF/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -302854,7 +302854,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MEDS-24/C, MEDS-25/A, PSIC-02/A",
+     "ssd": "MEDS-24/C",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -302878,7 +302878,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "IINF-05/A, MEDS-24/A, MEDS-24/B, MEDS-24/C",
+     "ssd": "IINF-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -302903,7 +302903,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "GSPS-05/A, MEDS-24/C, PAED-01/A, SDEA-01/A",
+     "ssd": "GSPS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -302972,7 +302972,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "BIOS-11/A, MEDS-10/B, MEDS-24/C",
+     "ssd": "BIOS-11/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -303017,7 +303017,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 10,
-     "ssd": "MEDS-05/A, MEDS-06/A, MEDS-20/A, MEDS-23/A, MEDS-24/B, MEDS-24/C",
+     "ssd": "MEDS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -303065,7 +303065,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MEDS-24/C, MEDS-25/A, PSIC-02/A",
+     "ssd": "MEDS-24/C",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -303089,7 +303089,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "IINF-05/A, MEDS-24/A, MEDS-24/B, MEDS-24/C",
+     "ssd": "IINF-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -303114,7 +303114,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "GSPS-05/A, MEDS-24/C, PAED-01/A, SDEA-01/A",
+     "ssd": "GSPS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -303161,7 +303161,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "MEDS-01/A, MEDS-20/A, MEDS-24/C",
+     "ssd": "MEDS-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -303228,7 +303228,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "BIOS-11/A, MEDS-20/A, MEDS-23/A, MEDS-24/C",
+     "ssd": "BIOS-11/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305120,7 +305120,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "IINF-05/A, MEDS-24/A, MEDS-24/B, MEDS-26/C, STAT-03/B",
+     "ssd": "IINF-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305169,7 +305169,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "GLOT-01/A, MEDS-26/C",
+     "ssd": "GLOT-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305195,7 +305195,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "GSPS-05/A, MEDS-02/C, PSIC-01/A, PSIC-02/A",
+     "ssd": "GSPS-05/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305262,7 +305262,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MEDS-26/C, PAED-01/A, PAED-02/A",
+     "ssd": "MEDS-26/C",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305309,7 +305309,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "SECS-P/06, SECS-P/07",
+     "ssd": "SECS-P/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305331,7 +305331,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "IUS/01, IUS/07, IUS/09, IUS/10, MED/43, MED/48",
+     "ssd": "IUS/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305357,7 +305357,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "MED/48, MED/50, SECS-P/10, SPS/09",
+     "ssd": "MED/48",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305399,7 +305399,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/26, MED/33, MED/39, MED/44",
+     "ssd": "MED/26",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305443,7 +305443,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 15,
-     "ssd": "MED/48, MED/50",
+     "ssd": "MED/48",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305508,7 +305508,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "GIUR-01/A, GIUR-17/A",
+     "ssd": "GIUR-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305530,7 +305530,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "GSPS-06/A, PAED-02/B, PSIC-02/A",
+     "ssd": "GSPS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305553,7 +305553,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 3,
-     "ssd": "BIOS-09/A, PHYS-06/A",
+     "ssd": "BIOS-09/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305594,7 +305594,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "MEDS-02/B, MEDS-08/C",
+     "ssd": "MEDS-02/B",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305774,7 +305774,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "BIOS-06/A, BIOS-11/A",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305839,7 +305839,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 3,
-     "ssd": "MED/11, MED/18",
+     "ssd": "MED/11",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -305880,7 +305880,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "MED/09, MED/13, MED/34",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -309757,7 +309757,7 @@
      "anno": 1,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "ECON-06/A, ECON-07/A",
+     "ssd": "ECON-06/A",
      "obbligatorio": true,
      "curriculum": "E-tourism, Heritage and Made in Italy",
      "docenti": [
@@ -316014,7 +316014,7 @@
      "anno": 2,
      "periodo": "annuale",
      "cfu": 12,
-     "ssd": "L-ANT/05, M-STO/09",
+     "ssd": "L-ANT/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -325076,7 +325076,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "IUS/10, SECS-P/02",
+     "ssd": "IUS/10",
      "obbligatorio": true,
      "curriculum": "Giurispudenza CC",
      "docenti": [
@@ -330248,7 +330248,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "IUS/16, IUS/17",
+     "ssd": "IUS/16",
      "obbligatorio": true,
      "curriculum": "Giurispudenza CC",
      "docenti": [
@@ -330310,7 +330310,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "IUS/11, IUS/19",
+     "ssd": "IUS/11",
      "obbligatorio": true,
      "curriculum": "Giurispudenza CC",
      "docenti": [
@@ -331453,7 +331453,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "IUS/10, SPS/10",
+     "ssd": "IUS/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -334362,7 +334362,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 14,
-     "ssd": "BIOS-07/A, BIOS-08/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -334397,7 +334397,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "BIOS-07/A, BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -334506,7 +334506,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "BIOS-06/A, BIOS-12/A, BIOS-13/A, MEDS-24/C",
+     "ssd": "BIOS-06/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -334553,7 +334553,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "INFO-01/A, MEDS-24/A, PHYS-06/A",
+     "ssd": "INFO-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -334663,7 +334663,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "BIO/10, BIO/11",
+     "ssd": "BIO/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -334993,7 +334993,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 3,
-     "ssd": "BIO/09, BIO/10, MED/04",
+     "ssd": "BIO/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -335145,7 +335145,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 14,
-     "ssd": "MED/04, MED/46",
+     "ssd": "MED/04",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -335321,7 +335321,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "BIO/12, MED/05, MED/07, VET/06",
+     "ssd": "BIO/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -335361,7 +335361,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "MED/04, MED/46",
+     "ssd": "MED/04",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -335649,7 +335649,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 11,
-     "ssd": "BIO/12, MED/07, MED/08, MED/46, MED/49, VET/06",
+     "ssd": "BIO/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -335697,7 +335697,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "MED/10, MED/11, MED/21, MED/22, MED/23",
+     "ssd": "MED/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -335788,7 +335788,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "M-DEA/01, M-PED/01, MED/02, MED/42",
+     "ssd": "M-DEA/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -335890,7 +335890,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/09, MED/18",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -335966,7 +335966,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 3,
-     "ssd": "MED/19, MED/35",
+     "ssd": "MED/19",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -336079,7 +336079,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "BIO/14, INF/01, MED/01",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -336250,7 +336250,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "MED/12, MED/13, MED/14, MED/18, MED/24, MED/49",
+     "ssd": "MED/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -336359,7 +336359,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "MED/28, MED/29, MED/30, MED/31, MED/32",
+     "ssd": "MED/28",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -336669,7 +336669,7 @@
      "anno": 4,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "MED/09, MED/11, MED/12, MED/13, MED/14, MED/15, MED/16, MED/18, MED/21, MED/24, MED/30, MED/44",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -336730,7 +336730,7 @@
      "anno": 4,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "MED/09, MED/15, MED/16, MED/17",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -336886,7 +336886,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/36, MED/37",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -336987,7 +336987,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/16, MED/33, MED/34",
+     "ssd": "MED/16",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -337165,7 +337165,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "M-PSI/08, MED/25",
+     "ssd": "M-PSI/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -337281,7 +337281,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/26, MED/27",
+     "ssd": "MED/26",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -337458,7 +337458,7 @@
      "anno": 5,
      "periodo": "2",
      "cfu": 15,
-     "ssd": "MED/03, MED/06, MED/09, MED/50",
+     "ssd": "MED/03",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -337589,7 +337589,7 @@
      "anno": 5,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "MED/10, MED/25, MED/26, MED/31, MED/33, MED/36, MED/38, MED/40",
+     "ssd": "MED/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -337701,7 +337701,7 @@
      "anno": 5,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/20, MED/38, MED/39",
+     "ssd": "MED/20",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -337828,7 +337828,7 @@
      "anno": 6,
      "periodo": "1",
      "cfu": 15,
-     "ssd": "MED/03, MED/06, MED/09, MED/50",
+     "ssd": "MED/03",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -337960,7 +337960,7 @@
      "anno": 6,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/42, MED/44, SECS-P/06",
+     "ssd": "MED/42",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -338075,7 +338075,7 @@
      "anno": 6,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/09, MED/18, MED/41",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -338114,7 +338114,7 @@
      "anno": 6,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "IUS/09, MED/43",
+     "ssd": "IUS/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -338672,7 +338672,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 11,
-     "ssd": "BIOS-07/A, BIOS-08/A, INFO-01/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -338784,7 +338784,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "VET/05, VET/06",
+     "ssd": "VET/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -338895,7 +338895,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "AGR/18, BIO/01",
+     "ssd": "AGR/18",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -339008,7 +339008,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 8,
-     "ssd": "AGR/11, AGR/20",
+     "ssd": "AGR/11",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -339202,7 +339202,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "MED/46, VET/03",
+     "ssd": "MED/46",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -339224,7 +339224,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 3,
-     "ssd": "AGR/18, AGR/19, AGR/20",
+     "ssd": "AGR/18",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -339247,7 +339247,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 2,
-     "ssd": "VET/04, VET/05",
+     "ssd": "VET/04",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -339457,7 +339457,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "VET/05, VET/06",
+     "ssd": "VET/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -339560,7 +339560,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "FIS/07, VET/01, VET/09",
+     "ssd": "FIS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -339656,7 +339656,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 2,
-     "ssd": "VET/08, VET/09",
+     "ssd": "VET/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -339678,7 +339678,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "BIO/12, VET/08, VET/09",
+     "ssd": "BIO/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -339844,7 +339844,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "INFO-01/A, MEDS-24/A, PHYS-06/A",
+     "ssd": "INFO-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -339869,7 +339869,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 10,
-     "ssd": "BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-10/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -339931,7 +339931,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "BIOS-07/A, BIOS-12/A, BIOS-13/A, MEDS-24/C, PHYS-06/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -340111,7 +340111,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "BIO/10, BIO/11",
+     "ssd": "BIO/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -340407,7 +340407,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 3,
-     "ssd": "BIO/09, MED/07, MED/41",
+     "ssd": "BIO/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -340488,7 +340488,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/09, MED/18",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -340564,7 +340564,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "MED/04, MED/46",
+     "ssd": "MED/04",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -340629,7 +340629,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "BIO/12, MED/05, MED/07, VET/06",
+     "ssd": "BIO/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -340683,7 +340683,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 11,
-     "ssd": "MED/05, MED/09, MED/10, MED/11, MED/18, MED/21, MED/22, MED/23",
+     "ssd": "MED/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -340733,7 +340733,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "M-DEA/01, M-PED/01, MED/02, MED/42",
+     "ssd": "M-DEA/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -340842,7 +340842,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "MED/10, MED/11, MED/21, MED/22, MED/23",
+     "ssd": "MED/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -340952,7 +340952,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "BIO/14, INF/01, MED/01",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -340974,7 +340974,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/42, MED/44, SECS-P/06",
+     "ssd": "MED/42",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -340997,7 +340997,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "MED/12, MED/13, MED/14, MED/18, MED/24, MED/49",
+     "ssd": "MED/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -341060,7 +341060,7 @@
      "anno": 4,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "MED/09, MED/15, MED/16, MED/17",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -341153,7 +341153,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/36, MED/37",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -341242,7 +341242,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/16, MED/33, MED/34",
+     "ssd": "MED/16",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -341359,7 +341359,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/26, MED/27",
+     "ssd": "MED/26",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -341421,7 +341421,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "M-PSI/08, MED/25",
+     "ssd": "M-PSI/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -341514,7 +341514,7 @@
      "anno": 5,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "MED/18, MED/29",
+     "ssd": "MED/18",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -341617,7 +341617,7 @@
      "anno": 5,
      "periodo": "2",
      "cfu": 15,
-     "ssd": "MED/03, MED/06, MED/09",
+     "ssd": "MED/03",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -341812,7 +341812,7 @@
      "anno": 5,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/20, MED/38, MED/39",
+     "ssd": "MED/20",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -341878,7 +341878,7 @@
      "anno": 6,
      "periodo": "1",
      "cfu": 3,
-     "ssd": "MED/19, MED/35",
+     "ssd": "MED/19",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -341938,7 +341938,7 @@
      "anno": 6,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "MED/18, MED/29",
+     "ssd": "MED/18",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -342040,7 +342040,7 @@
      "anno": 6,
      "periodo": "1",
      "cfu": 15,
-     "ssd": "MED/03, MED/06, MED/09",
+     "ssd": "MED/03",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -342157,7 +342157,7 @@
      "anno": 6,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/28, MED/30, MED/31, MED/32",
+     "ssd": "MED/28",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -342317,7 +342317,7 @@
      "anno": 6,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/09, MED/18, MED/41",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -342358,7 +342358,7 @@
      "anno": 6,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "IUS/09, MED/43",
+     "ssd": "IUS/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -342628,7 +342628,7 @@
      "anno": 1,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "INFO-01/A, MEDS-24/A, PHYS-06/A",
+     "ssd": "INFO-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -342653,7 +342653,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 10,
-     "ssd": "BIOS-10/A, MEDS-01/A",
+     "ssd": "BIOS-10/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -342715,7 +342715,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "BIOS-07/A, BIOS-12/A, BIOS-13/A, MEDS-24/C, PHYS-06/A",
+     "ssd": "BIOS-07/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -342895,7 +342895,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "BIO/10, BIO/11",
+     "ssd": "BIO/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -343177,7 +343177,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 3,
-     "ssd": "BIO/09, MED/07, MED/41",
+     "ssd": "BIO/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -343258,7 +343258,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/09, MED/18",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -343334,7 +343334,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "MED/04, MED/46",
+     "ssd": "MED/04",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -343399,7 +343399,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "BIO/12, MED/05, MED/07, VET/06",
+     "ssd": "BIO/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -343453,7 +343453,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 11,
-     "ssd": "MED/05, MED/09, MED/10, MED/11, MED/18, MED/21, MED/22, MED/23",
+     "ssd": "MED/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -343503,7 +343503,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "M-DEA/01, M-PED/01, MED/02, MED/42",
+     "ssd": "M-DEA/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -343612,7 +343612,7 @@
      "anno": 3,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "MED/10, MED/11, MED/21, MED/22, MED/23",
+     "ssd": "MED/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -343722,7 +343722,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "BIO/14, INF/01, MED/01",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -343744,7 +343744,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/42, MED/44, SECS-P/06",
+     "ssd": "MED/42",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -343767,7 +343767,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "MED/12, MED/13, MED/14, MED/18, MED/24, MED/49",
+     "ssd": "MED/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -343830,7 +343830,7 @@
      "anno": 4,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "MED/09, MED/15, MED/16, MED/17",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -343923,7 +343923,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/36, MED/37",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -344012,7 +344012,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/16, MED/33, MED/34",
+     "ssd": "MED/16",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -344129,7 +344129,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/26, MED/27",
+     "ssd": "MED/26",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -344191,7 +344191,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "M-PSI/08, MED/25",
+     "ssd": "M-PSI/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -344284,7 +344284,7 @@
      "anno": 5,
      "periodo": "2",
      "cfu": 9,
-     "ssd": "MED/18, MED/29",
+     "ssd": "MED/18",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -344387,7 +344387,7 @@
      "anno": 5,
      "periodo": "2",
      "cfu": 15,
-     "ssd": "MED/03, MED/06, MED/09",
+     "ssd": "MED/03",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -344582,7 +344582,7 @@
      "anno": 5,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/20, MED/38, MED/39",
+     "ssd": "MED/20",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -344648,7 +344648,7 @@
      "anno": 6,
      "periodo": "1",
      "cfu": 3,
-     "ssd": "MED/19, MED/35",
+     "ssd": "MED/19",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -344708,7 +344708,7 @@
      "anno": 6,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "MED/18, MED/29",
+     "ssd": "MED/18",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -344810,7 +344810,7 @@
      "anno": 6,
      "periodo": "1",
      "cfu": 15,
-     "ssd": "MED/03, MED/06, MED/09",
+     "ssd": "MED/03",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -344927,7 +344927,7 @@
      "anno": 6,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/28, MED/30, MED/31, MED/32",
+     "ssd": "MED/28",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -345087,7 +345087,7 @@
      "anno": 6,
      "periodo": "2",
      "cfu": 7,
-     "ssd": "MED/09, MED/18, MED/41",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -345128,7 +345128,7 @@
      "anno": 6,
      "periodo": "2",
      "cfu": 4,
-     "ssd": "IUS/09, MED/43",
+     "ssd": "IUS/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -345620,7 +345620,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 12,
-     "ssd": "INFO-01/A, MEDS-02/C, MEDS-24/A, PSIC-01/A",
+     "ssd": "INFO-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -345644,7 +345644,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 7,
-     "ssd": "BIO/10, BIO/11, BIO/12",
+     "ssd": "BIO/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -345730,7 +345730,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "MED/07, MED/42",
+     "ssd": "MED/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -345752,7 +345752,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 14,
-     "ssd": "MED/28, MED/50",
+     "ssd": "MED/28",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -345872,7 +345872,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/03, MED/30, MED/35",
+     "ssd": "MED/03",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -346247,7 +346247,7 @@
      "anno": 3,
      "periodo": "1",
      "cfu": 13,
-     "ssd": "MED/05, MED/09",
+     "ssd": "MED/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -346722,7 +346722,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 5,
-     "ssd": "MED/25, MED/26",
+     "ssd": "MED/25",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -346759,7 +346759,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 12,
-     "ssd": "MED/18, MED/41",
+     "ssd": "MED/18",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -346871,7 +346871,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/28, MED/38",
+     "ssd": "MED/28",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -347163,7 +347163,7 @@
      "anno": 5,
      "periodo": "1",
      "cfu": 4,
-     "ssd": "MED/29, MED/31",
+     "ssd": "MED/29",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -347945,7 +347945,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 5,
-     "ssd": "BIOS-01/A, BIOS-01/D",
+     "ssd": "BIOS-01/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -348004,7 +348004,7 @@
      "anno": 1,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "BIOS-10/A, BIOS-12/A",
+     "ssd": "BIOS-10/A",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -348300,7 +348300,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 9,
-     "ssd": "MED/07, MED/46",
+     "ssd": "MED/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -348410,7 +348410,7 @@
      "anno": 2,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "BIO/01, BIO/14",
+     "ssd": "BIO/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -348757,7 +348757,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 10,
-     "ssd": "BIO/14, MED/03",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -348879,7 +348879,7 @@
      "anno": 4,
      "periodo": "1",
      "cfu": 6,
-     "ssd": "MED/09, MED/35",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -349029,7 +349029,7 @@
      "anno": 4,
      "periodo": "2",
      "cfu": 8,
-     "ssd": "BIO/11, MED/49",
+     "ssd": "BIO/11",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -349097,7 +349097,7 @@
      "anno": 5,
      "periodo": "annuale",
      "cfu": 10,
-     "ssd": "CHIM/09, IUS/04",
+     "ssd": "CHIM/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -349162,7 +349162,7 @@
      "anno": 5,
      "periodo": "annuale",
      "cfu": 11,
-     "ssd": "BIO/14, SECS-P/06",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [

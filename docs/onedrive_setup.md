@@ -128,6 +128,11 @@ automatici (avvio, ogni N minuti, ritorno nell'app, ritorno della connessione)
 usano `/delta` di Microsoft Graph sulla cartella per scaricare solo le novità;
 una volta su sei, e con «Sincronizza ora», si rilegge tutto (su OneDrive for
 Business `/delta` sulle sottocartelle non è disponibile: si rilegge sempre tutto).
+Senza connessione (anche se cade a metà) la sincronizzazione si ferma salvando
+quanto fatto e mostra «Serve una connessione a internet per sincronizzare con
+OneDrive» (lo stesso per Google Drive) al posto dell'errore tecnico; l'ultima
+sincronizzazione riuscita resta indicata e si riprova da sola quando torna la
+rete, o con «Sincronizza ora».
 
 ## 6. Account universitari e consenso dell'amministratore
 

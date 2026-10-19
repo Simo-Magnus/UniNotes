@@ -9,6 +9,7 @@ import 'package:university_notes/core/services/app_services.dart';
 import 'package:university_notes/features/academic/new_year_check.dart';
 import 'package:university_notes/features/academic/year_grades_screen.dart';
 import 'package:university_notes/features/books/books_screen.dart';
+import 'package:university_notes/features/dashboard/dashboard_screen.dart';
 import 'package:university_notes/features/exams/exams_screen.dart';
 import 'package:university_notes/main.dart';
 import 'package:university_notes/models/book.dart';
@@ -109,8 +110,8 @@ void main() {
     final s = (await tester.runAsync(planServices))!;
     s.selectedYear.value = 1;
     await _pump(tester, const BooksScreen(), services: s);
-    expect(find.byKey(const Key('year-selector')), findsOneWidget);
-    expect(find.text('1° anno · 2025/26'), findsOneWidget);
+    // l'anno si sceglie solo nella Home: niente selettore nella barra
+    expect(find.byKey(const Key('year-selector')), findsNothing);
     expect(find.text('Analisi Matematica 1'), findsOneWidget);
     // Fisica non ha libri nel catalogo.
     expect(find.text('Libri da aggiungere'), findsOneWidget);
@@ -143,9 +144,50 @@ void main() {
     // Anno 3: Reti di calcolatori senza libri previsti.
     s.selectYear(3);
     await _settle(tester);
-    expect(find.text('3° anno · 2027/28'), findsOneWidget);
     expect(find.text('Nessun libro previsto'), findsOneWidget);
     expect(find.text('Analisi Matematica 1'), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('Home: corso e anno senza ripetizioni, anno scelto toccandolo', (
+    tester,
+  ) async {
+    final s = await _pump(tester, const DashboardScreen());
+    await _settle(tester);
+    // nessun selettore nella barra in alto
+    expect(
+      find.descendant(
+        of: find.byType(AppBar),
+        matching: find.byKey(const Key('year-selector')),
+      ),
+      findsNothing,
+    );
+    final p = s.profile.value!;
+    // il nome del corso una volta sola, senza l'anno attaccato
+    expect(find.text(p.degreeName), findsOneWidget);
+    expect(find.textContaining('${p.degreeName} ·'), findsNothing);
+    // l'anno (con l'anno accademico) accanto al nome del corso
+    final pill = find.byKey(const Key('year-selector'));
+    expect(pill, findsOneWidget);
+    expect(find.text(p.yearChipLabel(2)), findsOneWidget);
+    // l'anno accademico non si ripete sotto, accanto all'università
+    expect(find.text(p.universityName), findsOneWidget);
+    expect(
+      find.textContaining('${p.universityName} · ${p.academicYearOf(2).label}'),
+      findsNothing,
+    );
+    // stessa riga del nome del corso (su schermo largo)
+    expect(
+      tester.getCenter(pill).dy,
+      closeTo(tester.getCenter(find.text(p.degreeName)).dy, 12),
+    );
+    await tester.tap(pill);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(p.yearChipLabel(1)).last);
+    await tester.pumpAndSettle();
+    expect(s.selectedYear.value, 1);
+    await _settle(tester);
+    expect(find.text(p.yearChipLabel(1)), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 

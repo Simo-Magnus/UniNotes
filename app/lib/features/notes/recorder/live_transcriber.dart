@@ -7,6 +7,7 @@ import 'package:path/path.dart' as p;
 
 import '../../../core/services/power.dart';
 import '../../../core/services/whisper_service.dart';
+import '../spoken_math.dart';
 import 'live_transcript.dart';
 import 'recording_meta.dart';
 import 'system_speech.dart';
@@ -65,6 +66,13 @@ enum LiveEngine {
 ///
 /// Non blocca mai la registrazione: ogni errore ferma solo la trascrizione
 /// (o fa passare dal sistema a Whisper).
+///
+/// Mentre si registra lo studente può **correggere** le frasi già scritte
+/// ([editSegment]) e attivare **«Formule (LaTeX)»** ([formulas]): le
+/// formule dette a voce diventano LaTeX (`spoken_math.dart`). Correzioni e
+/// formule si applicano a [segments], che finiscono nella trascrizione
+/// salvata; il testo originale resta in [merger] per unire bene le finestre
+/// successive di Whisper.
 class LiveTranscriber extends ChangeNotifier {
   LiveTranscriber(
     this._whisper, {
@@ -137,8 +145,63 @@ class LiveTranscriber extends ChangeNotifier {
   /// Chiamato a ogni nuovo segmento (salvataggio nel file di sessione).
   VoidCallback? onSegments;
 
-  List<TranscriptSegment> get segments => merger.segments;
-  String get text => merger.text;
+  /// Correzioni dello studente (inizio del segmento in ms → testo).
+  final Map<int, String> _edits = {};
+
+  /// Formule dette a voce → LaTeX.
+  bool _formulas = false;
+  bool get formulas => _formulas;
+  set formulas(bool v) {
+    if (v == _formulas) return;
+    _formulas = v;
+    onSegments?.call();
+    notifyListeners();
+  }
+
+  /// Conversioni già fatte (il testo si ridisegna spesso).
+  final Map<String, String> _latex = {};
+
+  String _shown(String raw) {
+    if (!_formulas) return raw;
+    final hit = _latex[raw];
+    if (hit != null) return hit;
+    if (_latex.length > 400) _latex.clear();
+    return _latex[raw] = spokenMathToLatex(raw);
+  }
+
+  /// Segmenti come li vede (e li salva) lo studente: con le sue correzioni
+  /// e, se attive, le formule in LaTeX.
+  List<TranscriptSegment> get segments => [
+    for (final s in merger.segments)
+      s.copyWith(text: _edits[s.start.inMilliseconds] ?? _shown(s.text)),
+  ];
+
+  /// Testo provvisorio come si mostra (formule comprese).
+  String get partialShown => partial.isEmpty ? '' : _shown(partial);
+
+  String get text => segments.map((s) => s.text).join(' ');
+
+  /// Il segmento [index] è stato corretto a mano.
+  bool isEdited(int index) =>
+      index >= 0 &&
+      index < merger.segments.length &&
+      _edits.containsKey(merger.segments[index].start.inMilliseconds);
+
+  /// Correzione del segmento [index] (testo vuoto = frase tolta).
+  void editSegment(int index, String text) {
+    if (index < 0 || index >= merger.segments.length) return;
+    final key = merger.segments[index].start.inMilliseconds;
+    final t = text.trim();
+    if (t.isEmpty) {
+      merger.segments.removeAt(index);
+      _edits.remove(key);
+    } else {
+      _edits[key] = t;
+    }
+    onSegments?.call();
+    notifyListeners();
+  }
+
   bool get active =>
       state == LiveState.running ||
       state == LiveState.lagging ||
@@ -592,9 +655,7 @@ bool endsInPause(
 }) {
   final n = tail.inMilliseconds * 16;
   if (mono16k.length < n * 2) return false;
-  final end = pcmLevel(
-    Int16List.sublistView(mono16k, mono16k.length - n),
-  );
+  final end = pcmLevel(Int16List.sublistView(mono16k, mono16k.length - n));
   final all = pcmLevel(Int16List.sublistView(mono16k, 0, mono16k.length - n));
   return end < 0.15 || end < all - 0.17;
 }

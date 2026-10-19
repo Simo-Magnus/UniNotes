@@ -32,11 +32,11 @@ class _CalendarData {
 }
 
 /// «Calendario»: esami, prove in itinere ed esoneri (aggiunti a mano in
-/// Esami o dal database) nel calendario di sistema (Android, iOS:
+/// Esami o dal database) nel calendario di sistema (Android, iOS, macOS:
 /// calendario del dispositivo; Windows: Outlook dell'account Microsoft),
-/// aggiornati da soli a ogni modifica. Il file .ics resta solo su macOS,
-/// dove il calendario di sistema non si collega e l'esportazione .ics è
-/// l'unico modo.
+/// aggiornati da soli a ogni modifica. Il file .ics resta solo dove non c'è
+/// un calendario di sistema collegabile (nessuna delle quattro piattaforme
+/// dell'app).
 class CalendarSection extends StatefulWidget {
   const CalendarSection({super.key});
 
@@ -241,8 +241,7 @@ class _CalendarSectionState extends State<CalendarSection> {
                       ),
                   ],
                 ],
-                // solo macOS: file .ics, l'unico modo senza calendario di
-                // sistema
+                // file .ics solo senza calendario di sistema collegabile
                 if (!sync.supported) ...[
                   const SizedBox(height: 8),
                   SwitchListTile(

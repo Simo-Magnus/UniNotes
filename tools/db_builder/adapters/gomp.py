@@ -28,6 +28,12 @@ from .unibo import HEADERS, _titolo
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 HOSTS = {u: f"https://{u}-public.gomp.it" for u in ("uniroma3", "unicas", "unitus", "unicamillus", "unifortunato", "iul")}
 HOSTS["uniroma2"] = "https://uniroma2public.gomp.it"  # Tor Vergata: host senza trattino
+# Atenei il cui piano di ogni anno di corso è quello della coorte che lo segue (a.a. - k + 1): ogni coorte ha
+# il suo regolamento (uid diverso, stesso `code` del corso) e solo il 1° anno è quello dell'a.a. corrente.
+# Il piano si ricostruisce anno per anno, con i gruppi a scelta espansi negli insegnamenti che li compongono.
+ANNI_PER_COORTE = {"uniroma3"}
+_LIBERA = re.compile(r"(?i)^\s*(a scelta\b|attivit[aà] (formative )?a scelta|insegnament[oi] a scelta|esam[ei] a scelta|"
+                     r"crediti (liberi|a scelta)|corso a scelta|materia a scelta)")
 
 
 def _norm(s: str) -> str:
@@ -99,6 +105,93 @@ def _attivita(a: dict) -> dict:
             "gruppo": bool(a.get("linkedGroup")) or a.get("type") not in (None, "activity")}
 
 
+def _cfu_attivita(a: dict) -> float:
+    return float(sum(c.get("credits") or 0 for c in a.get("credits") or []))
+
+
+def _righe_anno(dati: dict, k: int) -> tuple[list[dict], set[str]]:
+    """Righe dell'anno `k` del regolamento (tutti i curricula) e nomi dei curricula del regolamento.
+
+    Un gruppo (`linkedGroup`) elenca nelle sue unità gli insegnamenti tra cui scegliere e i CFU da acquisire:
+    si espande negli insegnamenti, da sostenere per intero (obbligatori) se i CFU del gruppo bastano per tutti,
+    altrimenti a scelta. Un gruppo senza insegnamenti ("A scelta dello studente", "Tirocinio") resta una voce
+    senza codice a scelta. Le righe hanno `_c` (curricula) e `_pc` (curricula del regolamento)."""
+    curr_list = dati.get("curricula") or []
+    nomi_curr = {_ita(cu.get("name")) for cu in curr_list if len(curr_list) > 1 and _ita(cu.get("name"))}
+    righe: dict[str, dict] = {}
+    for cu in curr_list:
+        nome_c = _ita(cu.get("name")) if len(curr_list) > 1 else None
+        for y in cu.get("years") or []:
+            if y.get("number") != k:
+                continue
+            gruppi: dict[str, dict] = {}
+            semplici: list[tuple[dict, int | None]] = []
+            for u in y.get("units") or []:
+                for a in u.get("activities") or []:
+                    if a.get("linkedGroup") or a.get("type") not in (None, "activity"):
+                        g = gruppi.setdefault(a.get("linkedGroup") or a.get("uid") or _ita(a.get("name")),
+                                              {"a": a, "cfu": 0.0, "figli": {}, "periodo": u.get("number")})
+                        g["cfu"] = max(g["cfu"], _cfu_attivita(a))
+                        for f in a.get("children") or []:
+                            g["figli"].setdefault(f.get("code") or _norm(_ita(f.get("name"))), (f, u.get("number")))
+                    else:
+                        semplici.append((a, u.get("number")))
+            voci: list[tuple[dict, int | None, bool]] = [(a, n, True) for a, n in semplici]
+            for g in gruppi.values():
+                if g["figli"]:
+                    intero = 0 < g["cfu"] and sum(_cfu_attivita(f) for f, _ in g["figli"].values()) <= g["cfu"] + 1e-9
+                    voci += [(f, n, intero) for f, n in g["figli"].values()]
+                else:
+                    voci.append((g["a"], g["periodo"], False))
+            for a, n, obb in voci:
+                x = _attivita(a)
+                if not x["nome"]:
+                    continue
+                libera = bool(_LIBERA.search(x["nome"]))
+                codice = None if libera or not x["codice"] else x["codice"]
+                key = f"{k}:{codice}" if codice else f"{k}:#{_norm(x['nome'])}:{x['cfu']}"
+                item = righe.get(key)
+                if not item:
+                    item = righe[key] = {
+                        "codice": codice, "nome": x["nome"], "anno": k, "periodo": str(n) if n else None,
+                        "cfu": x["cfu"], "ssd": x["ssd"], "obbligatorio": bool(obb and not libera), "curriculum": None,
+                        "docenti": x["docenti"], "libri": x["libri"], "_c": set(), "_pc": nomi_curr,
+                    }
+                else:
+                    item["obbligatorio"] = item["obbligatorio"] or bool(obb and not libera)
+                    for d in x["docenti"]:
+                        if d not in item["docenti"]:
+                            item["docenti"].append(d)
+                    visti = {lb["citazione"] for lb in item["libri"]}
+                    item["libri"] += [lb for lb in x["libri"] if lb["citazione"] not in visti]
+                    item["ssd"] = item["ssd"] or x["ssd"]
+                item["_c"].add(nome_c)
+    return list(righe.values()), nomi_curr
+
+
+def _nomi_distinti(righe: list[dict]) -> None:
+    """Voci senza codice con lo stesso nome (es. «A scelta dello studente» di anni diversi) sono crediti liberi
+    distinti: build_db unisce per nome le voci senza codice, quindi si distinguono per anno (e CFU)."""
+    per_nome: dict[str, list[dict]] = {}
+    for i in righe:
+        if not i["codice"]:
+            per_nome.setdefault(_norm(i["nome"]), []).append(i)
+    for voci in per_nome.values():
+        if len(voci) < 2:
+            continue
+        anni = {i["anno"] for i in voci}
+        for i in voci:
+            if len(anni) > 1:
+                i["nome"] = f"{i['nome']} ({i['anno']}° anno)"
+        visti: dict[str, list[dict]] = {}
+        for i in voci:
+            visti.setdefault(_norm(i["nome"]), []).append(i)
+        for gruppo in visti.values():
+            if len(gruppo) > 1:
+                for n, i in enumerate(sorted(gruppo, key=lambda i: (i["periodo"] or "", i["cfu"] or 0)), 1):
+                    i["nome"] = f"{i['nome']} {n}"
+
+
 def fetch_gomp(uid: str, anno: int | None = None, max_cds: int | None = None, syllabus: bool = True,
                corsi: list[dict] | None = None, log=print) -> dict:
     """Restituisce un contributo nel formato di database/contrib (vedi build_db.py)."""
@@ -128,8 +221,80 @@ def fetch_gomp(uid: str, anno: int | None = None, max_cds: int | None = None, sy
         abbinati = abbinati[:max_cds]
     log(f"[{uid}] {len(gomp)} corsi in GOMP, {len(abbinati)} associati al database (su {len(corsi)})")
 
+    coorte_elenco: dict[int, list[dict]] = {}
+    if uid in ANNI_PER_COORTE and abbinati:
+        for a in range(anno - 1, anno - max((c.get("durata_anni") or g.get("years") or 3) for c, g in abbinati), -1):
+            els = api.post("getDepartmentsAndCourses", {"mode": "CourseDetail", "academicYear": a,
+                                                        "courseTypes": ["CorsoDiStudio"]}) or {}
+            coorte_elenco[a] = [c for s in els.get("data") or [] for c in s.get("courses") or []]
+        log(f"[{uid}] coorti: " + ", ".join(f"{a}: {len(v)} corsi" for a, v in sorted(coorte_elenco.items())))
+
+    def coorte_corso(g: dict, a: int) -> dict | None:
+        """Corso della coorte `a` che corrisponde al corso `g` dell'a.a. corrente: stesso `code`; se il codice è
+        cambiato con il riordino, stesso nome e stessa classe."""
+        if a == anno:
+            return g
+        elenco_a = coorte_elenco.get(a) or []
+        for c in elenco_a:
+            if c.get("code") == g.get("code"):
+                return c
+        nomi = {_norm(t.get("text") or "") for t in g.get("name") or [] if t.get("text")}
+        cl = {re.sub(r"\s+R$", "", x) for x in g.get("classes") or []}
+        for c in elenco_a:
+            if nomi & {_norm(t.get("text") or "") for t in c.get("name") or []} and (
+                    not cl or not c.get("classes") or cl & {re.sub(r"\s+R$", "", x) for x in c["classes"]}):
+                return c
+        return None
+
+    def build_coorti(corso: dict, g: dict) -> dict | None:
+        durata = corso.get("durata_anni") or g.get("years") or 3
+        piani: dict[int, tuple[str, dict] | None] = {}
+
+        def piano(a: int):
+            if a not in piani:
+                c = coorte_corso(g, a)
+                dati = api.corso(c["uid"], a) if c else None
+                piani[a] = (c["uid"], dati) if dati else None
+            return piani[a]
+
+        fonte0 = f"{base}/PublicData?uid={g['uid']}&mode=CourseDetail&iso=ita&academicYear={anno}"
+        righe, curricula = [], set()
+        for k in range(1, durata + 1):
+            # piano dell'anno k: coorte (anno - k + 1); se non c'è o non ha quell'anno, la coorte più vicina
+            # (a parità la più recente) che lo ha
+            cohorts = sorted(range(anno - durata + 1, anno + 1), key=lambda a: (abs(a - (anno - k + 1)), -a))
+            for a in cohorts:
+                if a != anno and a not in coorte_elenco:
+                    continue
+                p = piano(a)
+                if not p:
+                    continue
+                rk, nomi = _righe_anno(p[1], k)
+                if not rk:
+                    continue
+                fonte = f"{base}/PublicData?uid={p[0]}&mode=CourseDetail&iso=ita&academicYear={a}"
+                for i in rk:
+                    cs = i.pop("_c")
+                    pc = i.pop("_pc")
+                    if None not in cs and pc and cs != pc:
+                        i["curriculum"] = ", ".join(sorted(cs))
+                    i.update({"url": fonte, "esami": [], "fonte": fonte, "verificato_il": oggi})
+                    if syllabus:
+                        i["stato_libri"] = "completo" if i["libri"] else "da_aggiungere"
+                curricula |= nomi
+                righe += rk
+                break
+        _nomi_distinti(righe)
+        if not righe:
+            return None
+        return {"id": corso["id"], "nome": corso["nome"], "classe": corso.get("classe"), "durata_anni": durata,
+                "url": fonte0, "curricula": sorted(curricula) or None, "fonte": fonte0, "verificato_il": oggi,
+                "insegnamenti": righe}
+
     def build(coppia) -> dict | None:
         corso, g = coppia
+        if uid in ANNI_PER_COORTE:
+            return build_coorti(corso, g)
         attuale = api.corso(g["uid"], anno)
         if not attuale:
             return None

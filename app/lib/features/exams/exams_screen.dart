@@ -5,7 +5,6 @@ import '../../core/theme/app_theme.dart';
 import '../../models/exam.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
-import '../academic/year_widgets.dart';
 import 'averages_tab.dart';
 import 'exam_detail.dart';
 import 'exam_form.dart';
@@ -83,7 +82,6 @@ class _ExamsScreenState extends State<ExamsScreen>
     return Scaffold(
       appBar: AppBar(
         title: const Text('Esami'),
-        actions: const [YearSelectorChip()],
         bottom: TabBar(
           controller: _tabs,
           tabs: const [

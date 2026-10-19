@@ -65,7 +65,8 @@ Future<void> editDailyGoal(BuildContext context) async {
   if (context.mounted) context.read<AppServices>().revision.bump();
 }
 
-/// Sessione Focus in corso: anello piccolo e «Apri la sessione».
+/// Sessione Focus in corso: anello (in proporzione alla card) e «Apri la
+/// sessione».
 class FocusRunningPanel extends StatelessWidget {
   const FocusRunningPanel({super.key});
 
@@ -79,14 +80,17 @@ class FocusRunningPanel extends StatelessWidget {
         final rest = p.phase == FocusPhase.rest;
         return Column(
           children: [
-            FocusRing(
-              size: 180,
-              value: p.segmentProgress,
-              rest: rest,
-              dimmed: focus.timer.paused,
-              label: rest ? 'Pausa' : 'Concentrazione',
-              time: formatCountdown(p.segmentRemaining),
-              caption: focus.current.label ?? 'Studio',
+            // anello in proporzione alla card (180-260 px): tempo leggibile
+            LayoutBuilder(
+              builder: (context, c) => FocusRing(
+                size: (c.maxWidth * 0.62).clamp(180.0, 260.0),
+                value: p.segmentProgress,
+                rest: rest,
+                dimmed: focus.timer.paused,
+                label: rest ? 'Pausa' : 'Concentrazione',
+                time: formatCountdown(p.segmentRemaining),
+                caption: focus.current.label ?? 'Studio',
+              ),
             ),
             const SizedBox(height: 16),
             Pressable(

@@ -99,36 +99,14 @@ UserDefaults dell'App Group `group.io.github.simomagnus.universitynotes`
    Extensions* con `WidgetUniNotes.appex` e sposta la fase **prima** di
    *Thin Binary* / *Run Script* di Flutter (altrimenti l'errore «Cycle inside
    Runner»).
-7. Tocchi sui widget: aggiungi lo schema URL `uninotes` all'app (*Runner →
-   Info → URL Types → +*, URL Schemes `uninotes`) e in
-   `ios/Runner/SceneDelegate.swift`:
-
-   ```swift
-   import Flutter
-   import UIKit
-
-   class SceneDelegate: FlutterSceneDelegate {
-     override func scene(
-       _ scene: UIScene, willConnectTo session: UISceneSession,
-       options connectionOptions: UIScene.ConnectionOptions
-     ) {
-       super.scene(scene, willConnectTo: session, options: connectionOptions)
-       for ctx in connectionOptions.urlContexts {
-         (UIApplication.shared.delegate as? AppDelegate)?.openWidgetURL(ctx.url)
-       }
-     }
-
-     override func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-       super.scene(scene, openURLContexts: URLContexts)
-       for ctx in URLContexts {
-         (UIApplication.shared.delegate as? AppDelegate)?.openWidgetURL(ctx.url)
-       }
-     }
-   }
-   ```
-
-   (Se Xcode segnala che i metodi non sovrascrivono nulla, togli `override`
-   e la chiamata a `super`.) `openWidgetURL` è già in `AppDelegate.swift`.
+7. Tocchi sui widget: **già pronto nel codice**. Lo schema `uninotes` è in
+   `CFBundleURLTypes` dell'Info.plist (iOS e macOS); su iOS i collegamenti
+   arrivano alla scena tramite `IncomingFiles` e `AppDelegate.openAppURL`
+   (`uninotes://widget/<schermata>` → `openWidgetURL`), sul Mac tramite
+   `AppDelegate.application(_:open:)` e `AppLinks` in
+   `MainFlutterWindow.swift` (anche `takeRoute` all'avvio). Non serve
+   toccare `SceneDelegate.swift`. Lo stesso schema riporta nell'app l'esito
+   del comando «UniNotes Focus» (`uninotes://focus/…`, vedi focus.md).
 8. Compila ed esegui su un iPhone o sul simulatore, poi aggiungi i widget
    dalla schermata Home (pressione lunga → +). Prova: aggiungi una prova con
    una data nell'app, torna alla Home e controlla il widget.

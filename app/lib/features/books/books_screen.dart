@@ -180,7 +180,6 @@ class _BooksScreenState extends State<BooksScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Libri'),
-        actions: const [YearSelectorChip()],
       ),
       floatingActionButton: GlowFab(
         onPressed: () => _edit(),

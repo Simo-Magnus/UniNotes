@@ -139,6 +139,11 @@ abstract class CloudDriveService extends ChangeNotifier {
   /// Nome mostrato («OneDrive», «Google Drive»).
   String get serviceName;
 
+  /// Messaggio quando la sincronizzazione non parte o si interrompe per
+  /// mancanza di connessione ([isNetworkError]).
+  String get offlineMessage =>
+      'Serve una connessione a internet per sincronizzare con $serviceName.';
+
   /// Prefisso delle impostazioni e dei file di stato («onedrive», «gdrive»).
   String get prefix;
 
@@ -529,6 +534,13 @@ abstract class CloudDriveService extends ChangeNotifier {
       _lastRun = DateTime.now();
       return total;
     } catch (e) {
+      if (isNetworkError(e)) {
+        // senza connessione: il messaggio che la chiede (anche nei controlli
+        // automatici); l'ultima sincronizzazione riuscita resta mostrata e si
+        // riprova da sola quando torna la rete
+        lastError = offlineMessage;
+        return null;
+      }
       lastError = '$e';
       await settings.set(lastResultKey, 'Errore: $e');
       return null;

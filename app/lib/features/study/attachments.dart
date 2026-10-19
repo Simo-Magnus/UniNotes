@@ -213,6 +213,7 @@ Future<void> attachTo(
   if (source == null || !context.mounted) return;
   final s = context.read<AppServices>();
   var added = 0;
+  Set<AttachmentKind> kinds = const {};
   if (source == _Source.device) {
     final List<PlatformFile> files;
     try {
@@ -221,6 +222,15 @@ Future<void> attachTo(
       if (context.mounted) showSnack(context, 'Selezione non riuscita: $e');
       return;
     }
+    if (files.isEmpty || !context.mounted) return;
+    // tipo del file (teoria, ripasso, esercizi), se non è «Non chiedere più»
+    final chosen = await chooseAttachmentKinds(
+      context,
+      count: files.length,
+      name: p.basenameWithoutExtension(files.first.name),
+    );
+    if (chosen == null) return;
+    kinds = chosen;
     for (final f in files) {
       final path = f.path;
       if (path == null) continue;
@@ -233,6 +243,7 @@ Future<void> attachTo(
             title: p.basenameWithoutExtension(f.name),
             storedFile: name,
             createdAt: DateTime.now(),
+            kinds: kinds,
           ),
         );
         added++;
@@ -247,7 +258,15 @@ Future<void> attachTo(
       context: context,
       builder: (_) => _NotePicker(notes),
     );
-    for (final n in picked ?? const <NoteFile>[]) {
+    if (picked == null || picked.isEmpty || !context.mounted) return;
+    final chosen = await chooseAttachmentKinds(
+      context,
+      count: picked.length,
+      name: picked.first.name,
+    );
+    if (chosen == null) return;
+    kinds = chosen;
+    for (final n in picked) {
       await s.study.insertAttachment(
         Attachment(
           moduleId: topicId == null ? moduleId : null,
@@ -255,6 +274,7 @@ Future<void> attachTo(
           title: '${n.folder.dirName} – ${n.name}',
           path: n.file.path,
           createdAt: DateTime.now(),
+          kinds: kinds,
         ),
       );
       added++;
@@ -262,9 +282,159 @@ Future<void> attachTo(
   }
   s.revision.bump();
   if (context.mounted && added > 0) {
+    final what = added == 1 ? 'Allegato aggiunto' : '$added allegati aggiunti';
     showSnack(
       context,
-      added == 1 ? 'Allegato aggiunto' : '$added allegati aggiunti',
+      kinds.isEmpty ? what : '$what: ${describeAttachmentKinds(kinds)}',
+    );
+  }
+}
+
+/// Ultimo tipo scelto per i file allegati (codifica di
+/// [AttachmentKind.encode]; vuoto = nessun tipo). Senza scelte: Teoria.
+const String kAttachmentKindLastKey = 'attachment_kind_last';
+
+/// «Non chiedere più» il tipo del file: si usa l'ultimo tipo scelto. Le
+/// domande con «Non chiedere più» hanno le chiavi che iniziano con
+/// `dont_ask_` (per un ripristino unico dalle Impostazioni).
+const String kAttachmentKindDontAskKey = 'dont_ask_attachment_kind';
+
+/// Tipo predefinito, finché lo studente non ne sceglie uno.
+const Set<AttachmentKind> kDefaultAttachmentKinds = {AttachmentKind.theory};
+
+/// Ordine dei tipi nella domanda: teoria, ripasso, esercizi.
+const List<AttachmentKind> kAttachmentKindOrder = [
+  AttachmentKind.theory,
+  AttachmentKind.review,
+  AttachmentKind.exercises,
+];
+
+/// «Teoria», «Teoria e Ripasso», «Teoria, Ripasso ed Esercizi».
+String describeAttachmentKinds(Set<AttachmentKind> kinds) {
+  final labels = [
+    for (final k in kAttachmentKindOrder)
+      if (kinds.contains(k)) k.label,
+  ];
+  if (labels.length <= 1) return labels.join();
+  final last = labels.removeLast();
+  final and = RegExp('^[AEIOU]').hasMatch(last) ? 'ed' : 'e';
+  return '${labels.join(', ')} $and $last';
+}
+
+/// Chiede il tipo dei file che si stanno allegando (teoria, ripasso,
+/// esercizi; anche più di uno, o nessuno). Con «Non chiedere più» la
+/// domanda non compare più e si usa l'ultimo tipo scelto (all'inizio
+/// Teoria). null = annullato: non si allega niente.
+Future<Set<AttachmentKind>?> chooseAttachmentKinds(
+  BuildContext context, {
+  required int count,
+  String? name,
+}) async {
+  final s = context.read<AppServices>();
+  final last = await s.settings.get(kAttachmentKindLastKey);
+  final initial = last == null
+      ? kDefaultAttachmentKinds
+      : AttachmentKind.parse(last);
+  if (await s.settings.get(kAttachmentKindDontAskKey) == '1') return initial;
+  if (!context.mounted) return null;
+  final r = await showDialog<(Set<AttachmentKind>, bool)>(
+    context: context,
+    builder: (_) => _KindDialog(initial: initial, count: count, name: name),
+  );
+  if (r == null) return null;
+  await s.settings.set(
+    kAttachmentKindLastKey,
+    AttachmentKind.encode(r.$1) ?? '',
+  );
+  if (r.$2) await s.settings.set(kAttachmentKindDontAskKey, '1');
+  return r.$1;
+}
+
+/// Domanda del tipo: tre caselle (Teoria, Ripasso, Esercizi, anche più di
+/// una), «Non chiedere più», Annulla e Allega.
+class _KindDialog extends StatefulWidget {
+  const _KindDialog({required this.initial, required this.count, this.name});
+  final Set<AttachmentKind> initial;
+  final int count;
+  final String? name;
+
+  @override
+  State<_KindDialog> createState() => _KindDialogState();
+}
+
+class _KindDialogState extends State<_KindDialog> {
+  late final Set<AttachmentKind> _kinds = {...widget.initial};
+  bool _dontAsk = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final what = widget.count == 1 && widget.name != null
+        ? '«${widget.name}»'
+        : '${widget.count} file';
+    return AlertDialog(
+      key: const Key('attachment-kind-dialog'),
+      title: Text(widget.count == 1 ? 'Che tipo di file è?' : 'Che file sono?'),
+      content: SizedBox(
+        width: 400,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              '$what: scegli uno o più tipi. Si possono cambiare anche dopo, '
+              'dal menu del file.',
+            ),
+            const SizedBox(height: 12),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                for (final k in kAttachmentKindOrder)
+                  FilterChip(
+                    key: ValueKey('kind-${k.key}'),
+                    avatar: Icon(k.icon, size: 18, color: k.color),
+                    label: Text(k.label),
+                    selected: _kinds.contains(k),
+                    showCheckmark: false,
+                    selectedColor: k.color.withValues(alpha: 0.22),
+                    side: BorderSide(
+                      color: _kinds.contains(k)
+                          ? k.color
+                          : theme.colorScheme.outlineVariant,
+                    ),
+                    onSelected: (v) =>
+                        setState(() => v ? _kinds.add(k) : _kinds.remove(k)),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            CheckboxListTile(
+              key: const Key('kind-dont-ask'),
+              contentPadding: EdgeInsets.zero,
+              controlAffinity: ListTileControlAffinity.leading,
+              value: _dontAsk,
+              onChanged: (v) => setState(() => _dontAsk = v ?? false),
+              title: const Text('Non chiedere più'),
+              subtitle: const Text('I prossimi file avranno questo tipo.'),
+            ),
+          ],
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Annulla'),
+        ),
+        FilledButton(
+          key: const Key('kind-confirm'),
+          onPressed: () => Navigator.pop(context, (
+            Set<AttachmentKind>.of(_kinds),
+            _dontAsk,
+          )),
+          child: const Text('Allega'),
+        ),
+      ],
     );
   }
 }
@@ -409,7 +579,11 @@ class AttachmentTile extends StatelessWidget {
             child: Row(
               children: [
                 const SizedBox(width: 10),
-                Icon(attachmentIcon(a), size: 18, color: scheme.onSurfaceVariant),
+                Icon(
+                  attachmentIcon(a),
+                  size: 18,
+                  color: scheme.onSurfaceVariant,
+                ),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(

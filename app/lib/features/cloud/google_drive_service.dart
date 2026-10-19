@@ -207,7 +207,13 @@ class GoogleDriveService extends CloudDriveService {
 
   @override
   Future<SyncReport?> sync({bool force = true, bool auto = false}) async {
-    await migrateLegacyAccess();
+    try {
+      await migrateLegacyAccess();
+    } catch (e) {
+      // senza rete: la sincronizzazione mostra il messaggio che chiede la
+      // connessione ([CloudDriveService.offlineMessage])
+      if (!isNetworkError(e)) rethrow;
+    }
     return super.sync(force: force, auto: auto);
   }
 

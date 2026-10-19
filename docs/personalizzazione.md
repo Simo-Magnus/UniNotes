@@ -61,6 +61,11 @@ subito come preferisce lo studente. Poi si cambiano in Impostazioni →
   ed è applicata a tutta l'app con il `textScaler` del MediaQuery.
 - **Riduci animazioni**: oltre all'impostazione del sistema, che è sempre
   rispettata. Pagine, contatori e conferme compaiono senza movimento.
+- **Ripristina le domande**: dopo una conferma azzera tutte le scelte «Non
+  chiedere più» dell'app (le impostazioni con il prefisso `dont_ask_`, es.
+  `dont_ask_attachment_kind`, `dont_ask_delete_recording`:
+  `resetDontAskQuestions` in `features/settings/sections/questions_reset.dart`).
+  Ogni nuova casella «Non chiedere più» usa una chiave con quel prefisso.
 
 Con i caratteri grandi le schermate principali non si rompono:
 `app/test/large_text_test.dart` apre Studio (tutte le schede), la sessione

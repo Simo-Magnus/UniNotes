@@ -100,7 +100,7 @@ void main() {
     },
   );
 
-  test('parseSegments e Markdown con orari', () {
+  test('parseSegments e Markdown senza orari delle frasi', () {
     final json = jsonEncode({
       'transcription': [
         {
@@ -129,11 +129,14 @@ void main() {
       title: 'Lezione',
       subtitle: 'Analisi I',
     );
+    // paragrafi di ~2 minuti, senza [hh:mm:ss]
     expect(
       md,
-      contains('[00:00:00] Buongiorno a tutti. Oggi parliamo di limiti.'),
+      '# Lezione\n\n_Analisi I_\n\n'
+      'Buongiorno a tutti. Oggi parliamo di limiti.\n\n'
+      'Teorema del confronto.\n\n',
     );
-    expect(md, contains('[00:02:10] Teorema del confronto.'));
+    expect(md, isNot(contains('[00:')));
     expect(
       () => WhisperService.parseSegments('nope'),
       throwsA(isA<WhisperException>()),

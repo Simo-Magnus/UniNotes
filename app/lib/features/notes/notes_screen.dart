@@ -9,6 +9,7 @@ import '../../widgets/glass.dart';
 import '../cloud/cloud_drive_service.dart';
 import '../cloud/onenote_screen.dart';
 import '../study/course_catalog.dart';
+import '../study/course_groups.dart' show groupStudyCourses;
 import 'course_notes_screen.dart';
 import 'recently_deleted_screen.dart';
 import 'recorder_screen.dart';
@@ -36,6 +37,8 @@ class _NotesData {
 }
 
 /// "Appunti": registrazioni, trascrizioni, riassunti e appunti per corso.
+/// Gli insegnamenti sono divisi per semestre (1°, 2°), annuali e OFA, come
+/// in Studio, e mostrati solo con il loro nome.
 class NotesScreen extends StatelessWidget {
   const NotesScreen({super.key});
 
@@ -144,25 +147,46 @@ class NotesScreen extends StatelessWidget {
                     onTap: () => openRecorder(context, course: d.suggested),
                   ),
                 ),
-              // insegnamenti solo con il nome: niente gruppi per ateneo
-              GlassCard(
-                child: Column(
-                  children: [
-                    for (final c in d.catalog.courses)
-                      ListTile(
-                        // solo il nome dell'insegnamento (niente pallino)
-                        title: Text(c.label),
-                        subtitle: Text(_countLabel(d.counts[c.id] ?? 0)),
-                        trailing: const Icon(Icons.chevron_right),
-                        onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute<void>(
-                            builder: (_) => CourseNotesScreen(course: c),
+              // per semestre, annuali e OFA; insegnamenti solo con il nome
+              for (final g in groupStudyCourses(d.catalog.courses))
+                Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: GlassCard(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+                          child: Semantics(
+                            header: true,
+                            child: Text(
+                              g.label,
+                              style: Theme.of(context).textTheme.labelLarge
+                                  ?.copyWith(
+                                    letterSpacing: 0.3,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurfaceVariant,
+                                  ),
+                            ),
                           ),
                         ),
-                      ),
-                  ],
+                        for (final c in g.courses)
+                          ListTile(
+                            // solo il nome dell'insegnamento (niente pallino)
+                            title: Text(c.name),
+                            subtitle: Text(_countLabel(d.counts[c.id] ?? 0)),
+                            trailing: const Icon(Icons.chevron_right),
+                            onTap: () => Navigator.of(context).push(
+                              MaterialPageRoute<void>(
+                                builder: (_) => CourseNotesScreen(course: c),
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
               if (d.deleted > 0)
                 Padding(
                   padding: const EdgeInsets.only(top: 12),

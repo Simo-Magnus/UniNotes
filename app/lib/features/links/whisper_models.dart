@@ -124,6 +124,14 @@ class WhisperModelInfo {
       multilingual ? 'Multilingue (99 lingue)' : 'Solo inglese';
 
   bool runsOn(WhisperPlatform p) => platforms.contains(p);
+
+  /// RAM necessaria in byte, letta da [ram] («~852 MB», «~2,1 GB»).
+  int get ramBytes {
+    final m = RegExp(r'([\d]+(?:[.,]\d+)?)\s*(MB|GB)').firstMatch(ram);
+    if (m == null) return 1 << 30;
+    final v = double.parse(m.group(1)!.replaceAll(',', '.'));
+    return (v * (m.group(2) == 'GB' ? 1e9 : 1e6)).round();
+  }
 }
 
 const _mib = 1024 * 1024;
@@ -363,17 +371,29 @@ const List<WhisperModelInfo> kWhisperModels = [
   ),
 ];
 
-/// Modello per la **trascrizione dal vivo** con Whisper (ripiego quando il
-/// riconoscimento vocale del sistema non c'è): base quantizzato q5_1, 57 MiB.
-/// Non compare nella tabella: non si sceglie, serve solo al testo
-/// provvisorio durante la registrazione (la trascrizione completa usa il
-/// modello scelto dall'utente). Su Windows è incluso nell'installatore
-/// (windows/CMakeLists.txt, `data/whisper/` accanto a uninotes.exe); sugli
-/// altri sistemi si scarica da solo la prima volta che serve.
+/// **Modello integrato** nell'app: base multilingue quantizzato q5_1
+/// (57 MiB, `ggml-base-q5_1.bin`). Serve al testo istantaneo durante la
+/// registrazione (quando il riconoscimento vocale del sistema non c'è) ed è
+/// il ripiego sempre disponibile di «Trascrivi con Whisper» quando l'utente
+/// non ha scaricato modelli (o il programma whisper.cpp manca). Non compare
+/// nella tabella dei download.
 ///
-/// Scelto misurando la latenza su PC (docs/registratore.md): tiny è più
-/// veloce ma in italiano sbaglia troppe parole; small resta indietro sulle
-/// finestre di 2 s.
+/// Come arriva sul dispositivo:
+/// - **Windows**: nell'installatore e nello zip (windows/CMakeLists.txt lo
+///   scarica durante la build, controlla lo SHA-1 e lo copia in
+///   `data/whisper/` accanto a uninotes.exe);
+/// - **Android, iOS, macOS, Linux**: asset dell'app
+///   (`assets/whisper/ggml-base-q5_1.bin`, scaricato prima della build da
+///   `tool/prepara_modello_whisper.py`), copiato alla prima apertura nella
+///   cartella dei modelli;
+/// - build senza il modello: si scarica da solo la prima volta che serve.
+///
+/// Perché base q5_1 (misure in docs/registratore.md): tiny q5_1 (31 MiB) è
+/// due volte più veloce ma in italiano sbaglia troppe parole; small q5_1
+/// (181 MiB) non sta al passo con le finestre di 2 s del testo dal vivo e
+/// triplica il peso dell'app. base q5_1 trascrive una finestra di 2 s in
+/// ~0,8 s su un portatile (testo dopo 1,8 s in media) con un italiano
+/// comprensibile, e pesa meno di un terzo di base non quantizzato.
 const kLiveWhisperModel = WhisperModelInfo(
   id: 'base-q5_1',
   params: '74 M',
@@ -389,8 +409,45 @@ const kLiveWhisperModel = WhisperModelInfo(
   platforms: _all,
   sha1: 'a3733eda680ef76256db5fc5dd9de8629e62c5e7',
   quantized: true,
-  note: 'Solo per il testo dal vivo durante la registrazione.',
+  note:
+      'Incluso nell\'app: testo dal vivo e ripiego di «Trascrivi con '
+      'Whisper».',
 );
+
+/// Il modello integrato ([kLiveWhisperModel]).
+const kBuiltInWhisperModel = kLiveWhisperModel;
+
+/// Nome breve da mostrare (es. sul pulsante «Trascrivi con Whisper»).
+String whisperModelLabel(String id) =>
+    id == kBuiltInWhisperModel.id ? 'modello integrato' : id;
+
+/// Modelli dal più accurato in italiano al meno accurato (WER indicativi
+/// della tabella): a parità di famiglia la versione non quantizzata viene
+/// prima, i distillati inglesi non ci sono.
+const kWhisperAccuracy = [
+  'large-v3',
+  'large-v3-turbo',
+  'large-v3-turbo-q8_0',
+  'large-v2',
+  'large-v2-q8_0',
+  'large-v3-q5_0',
+  'large-v3-turbo-q5_0',
+  'large-v2-q5_0',
+  'large-v1',
+  'medium',
+  'medium-q8_0',
+  'medium-q5_0',
+  'small',
+  'base',
+  'base-q5_1',
+  'tiny',
+];
+
+/// Posizione di [id] in [kWhisperAccuracy] (0 = il più accurato).
+int whisperAccuracyRank(String id) {
+  final i = kWhisperAccuracy.indexOf(id);
+  return i < 0 ? kWhisperAccuracy.length : i;
+}
 
 /// Modello consigliato: large-v3-turbo q5_0 su PC/Mac, small sul telefono.
 const kRecommendedDesktopModel = 'large-v3-turbo-q5_0';
@@ -403,6 +460,7 @@ WhisperModelInfo? whisperModelById(String? id) {
   for (final m in kWhisperModels) {
     if (m.id == id) return m;
   }
+  if (id == kBuiltInWhisperModel.id) return kBuiltInWhisperModel;
   return null;
 }
 

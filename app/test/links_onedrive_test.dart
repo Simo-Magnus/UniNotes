@@ -204,6 +204,54 @@ void main() {
     });
 
     test(
+      'offline: il messaggio chiede la connessione, resta l\'ultima',
+      () async {
+        var offline = false;
+        final od = OneDriveService(
+          settings,
+          NotesStore(settings, root: () async => dir('appunti')),
+          secrets: secrets,
+          transport: (method, url, {headers = const {}, body}) async {
+            // come ioTransport senza rete
+            if (offline) {
+              throw GraphException(0, 'Microsoft non raggiungibile (offline).');
+            }
+            return drive.call(method, url, headers: headers, body: body);
+          },
+          oauthFactory: (_, _) => _FakeOAuth(),
+          stateDir: () async => dir('stato'),
+          builtInClientId: '11111111-2222-3333-4444-555555555555',
+          deviceName: 'PC',
+        );
+        await od.signIn();
+        File(p.join(dir('appunti').path, 'Fisica', 'Trascrizioni', 'L1.md'))
+          ..createSync(recursive: true)
+          ..writeAsStringSync('testo');
+        expect(await od.sync(), isNotNull);
+        final last = await settings.get(od.lastResultKey);
+        offline = true;
+        File(p.join(dir('appunti').path, 'Fisica', 'Trascrizioni', 'L2.md'))
+          ..createSync(recursive: true)
+          ..writeAsStringSync('altro');
+        expect(await od.sync(), isNull);
+        expect(
+          od.lastError,
+          'Serve una connessione a internet per sincronizzare con OneDrive.',
+        );
+        // l'ultima sincronizzazione riuscita resta (niente «Errore: …»)
+        expect(await settings.get(od.lastResultKey), last);
+        // torna la rete: riparte e il messaggio sparisce
+        offline = false;
+        expect(await od.sync(), isNotNull);
+        expect(od.lastError, isNull);
+        expect(
+          drive.files.keys,
+          contains('UniNotes/Corsi/Fisica/Trascrizioni/L2.md'),
+        );
+      },
+    );
+
+    test(
       'accesso, cartelle per tipo, caselle e backup solo se cambia',
       () async {
         final od = service(builtIn: '11111111-2222-3333-4444-555555555555');

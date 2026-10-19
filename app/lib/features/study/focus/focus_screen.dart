@@ -155,7 +155,7 @@ class _Running extends StatelessWidget {
         : 'Pausa alle ${hm.format(segmentEnd)}';
     final hint = focusSystemHint(
       focus.system.kind,
-      windowsFailed: focus.windowsFailed,
+      failure: focus.quietFailure,
       quiet: focus.systemQuiet,
     );
     final breaksLeft = switch (p.breaksLeft) {
@@ -165,7 +165,8 @@ class _Running extends StatelessWidget {
     };
     return LayoutBuilder(
       builder: (context, c) {
-        final ring = math.min(c.maxWidth - 48, 320.0).clamp(180.0, 320.0);
+        // anello grande quanto la larghezza permette (fino a 380 px)
+        final ring = math.min(c.maxWidth - 48, 380.0).clamp(200.0, 380.0);
         return SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(24, 16, 24, 32),
           child: Center(
@@ -366,6 +367,12 @@ class _PlanStrip extends StatelessWidget {
 
 /// Timer grande: anello di Design 3 (§7.2) in scala, tempo al centro.
 /// Azzurro: il tempo lo conta la macchina; in pausa l'anello si attenua.
+///
+/// Le cifre sono grandi e in proporzione all'anello (circa un quinto del
+/// diametro), semigrassetto e a larghezza fissa (le cifre non ballano a ogni
+/// secondo); si rimpiccioliscono solo loro se non ci stanno. Etichetta e
+/// riga sotto hanno una larghezza propria e vanno a capo o si accorciano,
+/// senza rimpicciolire il tempo.
 class FocusRing extends StatelessWidget {
   const FocusRing({
     super.key,
@@ -389,7 +396,6 @@ class FocusRing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final t = context.tokens;
-    final theme = Theme.of(context);
     final colors = rest
         ? [t.cyanSoft, const Color(0xFFBAE6FD)]
         : [const Color(0xFF0EA5E9), t.cyanBright];
@@ -413,42 +419,115 @@ class FocusRing extends StatelessWidget {
             child: child,
           ),
           child: Center(
-            child: Padding(
-              padding: EdgeInsets.all(size * 0.16),
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      label.toUpperCase(),
-                      style: theme.textTheme.labelMedium?.copyWith(
-                        color: rest ? t.cyanSoft : t.textSecondary,
-                        letterSpacing: 1.2,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      time,
-                      style: TextStyle(
-                        fontSize: 48,
-                        fontWeight: FontWeight.w300,
-                        color: dimmed ? t.textMuted : t.textPrimary,
-                        fontFeatures: const [FontFeature.tabularFigures()],
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      caption,
-                      style: theme.textTheme.bodySmall?.copyWith(
-                        color: t.textMuted,
-                      ),
-                    ),
-                  ],
+            child: _RingFace(
+              size: size,
+              label: label,
+              time: time,
+              caption: caption,
+              rest: rest,
+              dimmed: dimmed,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Testo al centro dell'anello: etichetta, tempo, riga sotto.
+class _RingFace extends StatelessWidget {
+  const _RingFace({
+    required this.size,
+    required this.label,
+    required this.time,
+    required this.caption,
+    required this.rest,
+    required this.dimmed,
+  });
+
+  final double size;
+  final String label;
+  final String time;
+  final String caption;
+  final bool rest;
+  final bool dimmed;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.tokens;
+    final theme = Theme.of(context);
+    // dentro l'anello (raggio interno ~0,38 del lato): il tempo occupa la
+    // corda centrale, etichetta e riga sotto una corda più corta
+    final timeWidth = size * 0.64;
+    final textWidth = size * 0.54;
+    // «25:00» più grande di «1:05:09»
+    final digits = size * (time.length > 5 ? 0.17 : 0.215);
+    // caratteri grandi: etichetta e riga sotto crescono, ma restano
+    // dentro l'anello
+    final scaler = MediaQuery.textScalerOf(context)
+        .clamp(maxScaleFactor: size >= 260 ? 1.4 : 1.2);
+    final timeColor = dimmed ? t.textSecondary : t.textPrimary;
+    return SizedBox.square(
+      dimension: size * 0.7,
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              width: textWidth,
+              child: Text(
+                label.toUpperCase(),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                textScaler: scaler,
+                style: theme.textTheme.labelLarge?.copyWith(
+                  color: rest ? t.cyanSoft : t.textSecondary,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1.4,
                 ),
               ),
             ),
-          ),
+            SizedBox(height: size * 0.015),
+            SizedBox(
+              key: const Key('focus-ring-time'),
+              width: timeWidth,
+              height: digits * 1.1,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  time,
+                  maxLines: 1,
+                  // cifre già in proporzione all'anello
+                  textScaler: TextScaler.noScaling,
+                  style: TextStyle(
+                    fontSize: digits,
+                    height: 1.05,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: -digits * 0.02,
+                    color: timeColor,
+                    fontFeatures: const [FontFeature.tabularFigures()],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: size * 0.02),
+            SizedBox(
+              width: textWidth,
+              child: Text(
+                caption,
+                textAlign: TextAlign.center,
+                maxLines: size >= 240 ? 2 : 1,
+                overflow: TextOverflow.ellipsis,
+                textScaler: scaler,
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  color: t.textSecondary,
+                  height: 1.3,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -553,9 +632,9 @@ class DailyGoalCard extends StatelessWidget {
                   children: [
                     ProgressRing(
                       // l'anello cresce con i caratteri grandi
-                      size: MediaQuery.textScalerOf(
-                        context,
-                      ).scale(94).clamp(94.0, 160.0),
+                      size: MediaQuery.textScalerOf(context)
+                          .scale(94)
+                          .clamp(94.0, 160.0),
                       value: stats.progress,
                       label: '${(stats.progress * 100).round()}%',
                       caption: formatMinutes(stats.goal),

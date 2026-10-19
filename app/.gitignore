@@ -46,3 +46,6 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# Modello Whisper integrato: si scarica con tool/prepara_modello_whisper.py
+/assets/whisper/*.bin

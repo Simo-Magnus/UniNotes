@@ -87,12 +87,14 @@ class FocusService extends ChangeNotifier {
       system = system ?? const FocusSystem() {
     this.timer.addListener(_timerChanged);
     _events = this.timer.events.listen(_onEvent);
+    _apple = FocusSystem.appleResults.listen(_appleResult);
   }
 
   final AppServices _s;
   final FocusTimer timer;
   final FocusSystem system;
   StreamSubscription<FocusEventKind>? _events;
+  StreamSubscription<QuietFailure?>? _apple;
   AppLifecycleListener? _lifecycle;
 
   FocusSettings settings = const FocusSettings();
@@ -106,8 +108,13 @@ class FocusService extends ChangeNotifier {
   /// Silenzio del sistema attivo (Non disturbare, sessione di Windows).
   bool systemQuiet = false;
 
+  /// Perché il silenzio del sistema chiesto per la sessione non è attivo
+  /// (null = attivo o non chiesto).
+  QuietFailure? quietFailure;
+
   /// Windows ha rifiutato la sessione di concentrazione del sistema.
-  bool windowsFailed = false;
+  bool get windowsFailed =>
+      quietFailure != null && system.kind == FocusSystemKind.windowsFocus;
 
   /// Ultima sessione salvata (riepilogo nella schermata o avviso).
   final ValueNotifier<FocusResult?> completed = ValueNotifier(null);
@@ -157,6 +164,8 @@ class FocusService extends ChangeNotifier {
         timer.check();
         // notifica col tempo restante di nuovo al suo posto
         unawaited(_updateNotifications());
+        // il silenzio del sistema può essere finito ad app chiusa
+        unawaited(_checkQuiet());
       }
     } catch (e) {
       debugPrint('Impostazioni Focus non lette: $e');
@@ -220,17 +229,16 @@ class FocusService extends ChangeNotifier {
     link = to;
     current = to;
     completed.value = null;
-    windowsFailed = false;
+    quietFailure = null;
     systemQuiet = false;
     timer.start(s);
     _listenLifecycle();
     unawaited(_s.feedback.play(FeedbackEvent.focusStart));
     final until = timer.endsAt;
     if (systemDnd && until != null) {
-      systemQuiet = await system.enable(until);
-      if (!systemQuiet && system.kind == FocusSystemKind.windowsFocus) {
-        windowsFailed = true;
-      }
+      final r = await system.enable(until);
+      systemQuiet = r.on;
+      quietFailure = r.failure;
     }
     notifyListeners();
     await _s.settings.set(FocusKeys.settings, jsonEncode(s.toJson()));
@@ -315,7 +323,7 @@ class FocusService extends ChangeNotifier {
         if (systemQuiet &&
             until != null &&
             system.kind != FocusSystemKind.appleFocus) {
-          unawaited(system.enable(until));
+          unawaited(_enableAgain(until));
         }
       default:
         break;
@@ -323,6 +331,37 @@ class FocusService extends ChangeNotifier {
     if (k == FocusEventKind.started || k == FocusEventKind.stopped) return;
     unawaited(_persist());
     unawaited(_updateNotifications());
+  }
+
+  /// Dopo una pausa: silenzio fino alla nuova fine; se il sistema non lo
+  /// riattiva la sessione lo dice.
+  Future<void> _enableAgain(DateTime until) async {
+    final r = await system.enable(until);
+    if (r.on || !timer.active) return;
+    systemQuiet = false;
+    quietFailure = r.failure;
+    notifyListeners();
+    await _persist();
+  }
+
+  /// iOS/macOS: esito del comando che attiva il Non disturbare.
+  void _appleResult(QuietFailure? f) {
+    if (!timer.active || system.kind != FocusSystemKind.appleFocus) return;
+    systemQuiet = f == null;
+    quietFailure = f;
+    notifyListeners();
+    unawaited(_persist());
+  }
+
+  /// Tornando nell'app: il silenzio è ancora acceso? (l'utente può averlo
+  /// spento dalla tendina o dal centro notifiche).
+  Future<void> _checkQuiet() async {
+    if (!systemQuiet || !timer.active) return;
+    if (await system.isActive() != false || !timer.active) return;
+    systemQuiet = false;
+    quietFailure = QuietFailure.turnedOff;
+    notifyListeners();
+    await _persist();
   }
 
   // ------------------------------------------------------------ notifiche
@@ -339,6 +378,7 @@ class FocusService extends ChangeNotifier {
           _inBackground = false;
           timer.check();
           unawaited(_updateNotifications());
+          unawaited(_checkQuiet());
         },
       );
     } catch (_) {}
@@ -486,6 +526,7 @@ class FocusService extends ChangeNotifier {
   @override
   void dispose() {
     _events?.cancel();
+    _apple?.cancel();
     _lifecycle?.dispose();
     timer.removeListener(_timerChanged);
     super.dispose();

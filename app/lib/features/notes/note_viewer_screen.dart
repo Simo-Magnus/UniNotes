@@ -6,6 +6,7 @@ import '../../core/services/app_services.dart';
 import '../../models/course.dart';
 import '../../widgets/common.dart';
 import 'formula_dialog.dart';
+import 'lesson_transcripts.dart';
 import 'markdown_view.dart';
 import 'notes_actions.dart';
 import 'notes_store.dart';
@@ -55,7 +56,11 @@ class NoteViewerScreen extends StatefulWidget {
 }
 
 class _NoteViewerScreenState extends State<NoteViewerScreen> {
-  late Future<String> _text = widget.note.file.readAsString();
+  late Future<String> _text = _read();
+
+  /// Testo del file; le trascrizioni del vecchio formato senza gli orari.
+  Future<String> _read() =>
+      widget.note.file.readAsString().then(stripTranscriptTimes);
   final _view = GlobalKey<SearchableMarkdownViewState>();
 
   @override
@@ -74,7 +79,7 @@ class _NoteViewerScreenState extends State<NoteViewerScreen> {
             icon: const Icon(Icons.edit_outlined),
             onPressed: () async {
               await openNoteEditor(context, widget.course, note: widget.note);
-              setState(() => _text = widget.note.file.readAsString());
+              setState(() => _text = _read());
             },
           ),
           // una risposta dell'AI non si rimanda all'AI
@@ -155,7 +160,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
       n.file.readAsString().then((t) {
         if (!mounted) return;
         setState(() {
-          _body.text = t;
+          _body.text = stripTranscriptTimes(t);
           _loaded = true;
         });
       });

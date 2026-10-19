@@ -12,11 +12,14 @@ import 'package:super_sliver_list/super_sliver_list.dart';
 
 import '../../core/services/app_services.dart';
 import '../../core/services/audio_codec.dart';
+import '../../core/services/whisper_service.dart'
+    show WhisperModelInfo, whisperModelLabel;
 import '../../core/theme/app_theme.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../models/course.dart';
 import '../../widgets/common.dart';
 import '../../widgets/find_bar.dart';
+import '../../widgets/math_text.dart';
 import '../../widgets/share_files.dart';
 import '../reader/views/media_view.dart' show readerMediaEnabled;
 import '../study/study_widgets.dart' show promptText;
@@ -70,7 +73,7 @@ class RecordingPlayerScreen extends StatefulWidget {
 
 const kPlaybackSpeeds = [0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0];
 
-enum _Menu { shareAudio, shareText, shareBoth, summarize, trim }
+enum _Menu { shareAudio, shareText, shareBoth, summarize, trim, whisper }
 
 /// Posizione di riproduzione aggiornata a ogni fotogramma: fra due
 /// posizioni del lettore (che arrivano a intervalli irregolari) si avanza
@@ -152,6 +155,9 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
   late TranscriptKind _kind = widget.transcript ?? TranscriptKind.whisper;
   List<TranscriptSegment> _segs = const [];
   String? _plainText;
+
+  /// Modello che userebbe «Trascrivi con Whisper».
+  WhisperModelInfo? _whisperModel;
   File? _summary;
   Uint8List _peaks = Uint8List(0);
   bool _peaksLoading = false;
@@ -231,7 +237,17 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
     if (!await _file.exists()) return;
     final meta = await RecordingMeta.load(_file.path);
     final dir = await _s.notes.courseDir(widget.course, NoteFolder.transcripts);
-    final transcripts = await loadLessonTranscripts(dir, _name);
+    final transcripts = await loadLessonTranscripts(
+      dir,
+      _name,
+      audioPath: _file.path,
+    );
+    WhisperModelInfo? whisperModel;
+    try {
+      whisperModel = await _s.whisper.resolveModel();
+    } catch (_) {
+      whisperModel = null;
+    }
     final summary = await _s.notes.companion(
       widget.course,
       _note,
@@ -253,6 +269,7 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
       _segs = segs;
       _plainText = plain;
       _summary = summary;
+      _whisperModel = whisperModel;
       if (meta.peaks != null && meta.peaks!.isNotEmpty) _peaks = meta.peaks!;
       _current = segmentIndexAt(_segs, _pos);
     });
@@ -612,6 +629,14 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
         await summarizeWithGemini(context, widget.course, t);
       case _Menu.trim:
         await _trim();
+      case _Menu.whisper:
+        await chooseWhisperModelAndTranscribe(
+          context,
+          widget.course,
+          _note,
+          again: _transcripts.whisper != null,
+          current: _transcripts.whisperModel,
+        );
     }
   }
 
@@ -770,6 +795,14 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
               const PopupMenuItem(
                 value: _Menu.summarize,
                 child: Text('Riassumi'),
+              ),
+              PopupMenuItem(
+                value: _Menu.whisper,
+                child: Text(
+                  _transcripts.whisper != null
+                      ? 'Trascrivi di nuovo con…'
+                      : 'Trascrivi con Whisper con…',
+                ),
               ),
               const PopupMenuItem(value: _Menu.trim, child: Text('Taglia…')),
             ],
@@ -1092,9 +1125,13 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
     final live =
         _kind == TranscriptKind.whisper && _transcripts.whisper == null;
     final color = live ? null : transcriptColor(context, _kind);
+    final model = _kind == TranscriptKind.whisper && !live
+        ? _transcripts.whisperModel
+        : null;
     final title = live
         ? 'Trascrizione dal vivo'
-        : 'Trascrizione con ${_kind.label}';
+        : 'Trascrizione con ${_kind.label}'
+              '${model == null ? '' : ' · ${whisperModelLabel(model)}'}';
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -1200,6 +1237,12 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
                     child: TranscriptButton(
                       kind: TranscriptKind.whisper,
                       done: false,
+                      model: whisperModelShort(_whisperModel?.id),
+                      onLongPress: () => chooseWhisperModelAndTranscribe(
+                        context,
+                        widget.course,
+                        _note,
+                      ),
                       onPressed: () =>
                           transcribeWithWhisper(context, widget.course, _note),
                     ),
@@ -1241,6 +1284,10 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
       itemBuilder: (context, i) {
         final s = _segs[i];
         final current = i == _current;
+        final style = theme.textTheme.bodyLarge?.copyWith(
+          height: 1.4,
+          fontWeight: current ? FontWeight.w600 : null,
+        );
         return Semantics(
           button: true,
           label: 'Vai a ${clockLabel(s.start)}',
@@ -1260,30 +1307,11 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
                             )
                           : null),
               ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    width: 60,
-                    child: Text(
-                      clockLabel(s.start),
-                      style: theme.textTheme.bodySmall?.copyWith(
-                        fontFamily: 'IBMPlexMono',
-                        color: theme.colorScheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Text.rich(
-                      _highlight(s.text, q, theme),
-                      style: theme.textTheme.bodyLarge?.copyWith(
-                        height: 1.4,
-                        fontWeight: current ? FontWeight.w600 : null,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              // senza l'orario di ogni frase: un tocco salta comunque a quel
+              // punto dell'audio; le formule ($…$) si disegnano
+              child: q.isEmpty && mayContainMath(s.text)
+                  ? MathText(s.text, style: style)
+                  : Text.rich(_highlight(s.text, q, theme), style: style),
             ),
           ),
         );

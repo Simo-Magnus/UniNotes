@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../core/constants/enums.dart';
 import '../../core/feedback/feedback_service.dart';
 import '../../widgets/common.dart';
-import '../academic/year_widgets.dart';
 import 'course_catalog.dart';
+import 'course_groups.dart';
 import 'stats_tab.dart';
 import 'study_sessions_tab.dart';
 import 'topics_tab.dart';
@@ -43,7 +44,6 @@ class _StudyScreenState extends State<StudyScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Studio'),
-          actions: const [YearSelectorChip()],
           bottom: TabBar(
             isScrollable: big,
             tabAlignment: big ? TabAlignment.start : null,
@@ -56,7 +56,13 @@ class _StudyScreenState extends State<StudyScreen> {
           ),
         ),
         body: RevisionBuilder<CourseCatalog>(
-          load: CourseCatalog.load,
+          // insegnamenti nell'ordine scelto in Studio (tieni premuto e
+          // trascina nell'elenco degli insegnamenti)
+          load: (s) async {
+            final catalog = await CourseCatalog.load(s);
+            final order = await loadStudyCourseOrder(s);
+            return catalog.ordered((c) => applyCourseOrder(c, order));
+          },
           builder: (context, all) {
             if (all.isEmpty) {
               return const EmptyState(
@@ -69,9 +75,15 @@ class _StudyScreenState extends State<StudyScreen> {
             // insegnamenti solo con il nome: niente scelta dell'ateneo (il
             // piano è già quello del corso di laurea scelto)
             final catalog = all;
+            // all'apertura il primo insegnamento in corso (nell'ordine
+            // scelto), altrimenti il primo
             final selected = catalog.courses.any((c) => c.id == _lastCourseId)
                 ? _lastCourseId
-                : catalog.courses.firstOrNull?.id;
+                : (catalog.courses
+                              .where((c) => c.status == CourseStatus.active)
+                              .firstOrNull ??
+                          catalog.courses.firstOrNull)
+                      ?.id;
             return TabBarView(
               children: [
                 TopicsTab(

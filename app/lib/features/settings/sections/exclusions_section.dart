@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../../core/catalog/path_setup.dart';
 import '../../../core/services/app_services.dart';
 import '../../../repositories/settings_repository.dart';
+import '../../../widgets/catalog_download.dart';
 import '../../../widgets/common.dart';
 import '../dialogs/exclusion_confirm_dialog.dart';
 import '../logic/exclusion_cleanup.dart';
@@ -58,10 +59,15 @@ class _PatternList extends StatelessWidget {
     await _save(context, [...patterns.where((x) => !g.patterns.contains(x))]);
     if (!context.mounted) return;
     final s = context.read<AppServices>();
+    // reimport del piano (anche dalla copia salvata, senza connessione)
     final r = await PathSetupService(s).refresh();
     s.revision.bump();
-    if (context.mounted && r.imported) {
+    if (!context.mounted) return;
+    if (r.imported) {
       showSnack(context, '${g.label}: di nuovo nel tuo piano.');
+    } else if (r.senzaRete) {
+      // dati del corso mai scaricati: serve la connessione
+      mostraServeConnessione(context, onRetry: () => _toggle(context, g, on));
     }
   }
 

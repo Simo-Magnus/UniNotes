@@ -46,17 +46,27 @@ class MutedChip extends StatelessWidget {
   }
 }
 
-/// Selettore dell'anno del piano nelle barre di Home, Studio, Libri ed
-/// Esami: pillola di vetro "2° anno · 2026/27" con la freccia in giù.
-/// Invisibile senza profilo.
-class YearSelectorChip extends StatefulWidget {
-  const YearSelectorChip({super.key});
+/// Scelta dell'anno del piano: toccando [child] (nella Home, la scritta
+/// dell'anno accanto al nome del corso di laurea) si apre il menu degli
+/// anni con lo stato di ciascuno («in corso», «completato»…). L'anno scelto
+/// vale per tutte le sezioni ([AppServices.selectedYear]). Invisibile senza
+/// profilo.
+class YearMenuButton extends StatefulWidget {
+  const YearMenuButton({super.key, required this.builder});
+
+  /// Contenuto toccabile per l'anno [selected] del profilo [profile].
+  final Widget Function(
+    BuildContext context,
+    StudentProfile profile,
+    int selected,
+  )
+  builder;
 
   @override
-  State<YearSelectorChip> createState() => _YearSelectorChipState();
+  State<YearMenuButton> createState() => _YearMenuButtonState();
 }
 
-class _YearSelectorChipState extends State<YearSelectorChip> {
+class _YearMenuButtonState extends State<YearMenuButton> {
   late final AppServices _s = context.read<AppServices>();
   Map<int, PlanYearStatus> _status = const {};
 
@@ -91,78 +101,44 @@ class _YearSelectorChipState extends State<YearSelectorChip> {
         return ValueListenableBuilder<int?>(
           valueListenable: _s.selectedYear,
           builder: (context, selected, _) =>
-              _chip(context, profile, selected ?? profile.currentYear),
+              _menu(context, profile, selected ?? profile.currentYear),
         );
       },
     );
   }
 
-  Widget _chip(BuildContext context, StudentProfile p, int selected) {
+  Widget _menu(BuildContext context, StudentProfile p, int selected) {
     final t = context.tokens;
-    return Padding(
-      padding: const EdgeInsets.only(right: 8),
-      child: PopupMenuButton<int>(
-        tooltip: 'Cambia anno',
-        position: PopupMenuPosition.under,
-        onSelected: _s.selectYear,
-        itemBuilder: (_) => [
-          for (final y in planYearsOf(p))
-            PopupMenuItem(
-              value: y,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      p.yearChipLabel(y),
-                      style: TextStyle(
-                        fontWeight: y == selected
-                            ? FontWeight.w700
-                            : FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  Text(
-                    _statusLabel(p, y),
-                    style: TextStyle(fontSize: 11, color: t.textMuted),
-                  ),
-                ],
-              ),
-            ),
-        ],
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(minHeight: 44),
-          child: Center(
-            child: Container(
-              key: const Key('year-selector'),
-              padding: const EdgeInsets.fromLTRB(12, 6, 6, 6),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: t.navGradient,
-                ),
-                border: Border.all(color: t.navBorder),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    p.yearChipLabel(selected),
+    return PopupMenuButton<int>(
+      tooltip: 'Cambia anno',
+      position: PopupMenuPosition.under,
+      onSelected: _s.selectYear,
+      itemBuilder: (_) => [
+        for (final y in planYearsOf(p))
+          PopupMenuItem(
+            value: y,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    p.yearChipLabel(y),
                     style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
-                      color: t.textPrimary,
+                      fontWeight: y == selected
+                          ? FontWeight.w700
+                          : FontWeight.w500,
                     ),
                   ),
-                  Icon(Icons.expand_more, size: 18, color: t.textSecondary),
-                ],
-              ),
+                ),
+                const SizedBox(width: 12),
+                Text(
+                  _statusLabel(p, y),
+                  style: TextStyle(fontSize: 11, color: t.textMuted),
+                ),
+              ],
             ),
           ),
-        ),
-      ),
+      ],
+      child: widget.builder(context, p, selected),
     );
   }
 

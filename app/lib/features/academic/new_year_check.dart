@@ -3,9 +3,10 @@ import 'package:provider/provider.dart';
 
 import '../../core/academic/academic_year.dart';
 import '../../core/academic/year_transition.dart';
-import '../../core/catalog/path_setup.dart';
+import '../../core/catalog/catalog_service.dart';
 import '../../core/services/app_services.dart';
 import '../../repositories/settings_repository.dart';
+import '../../widgets/catalog_download.dart';
 import '../../widgets/common.dart';
 import 'year_grades_screen.dart';
 
@@ -67,28 +68,66 @@ Future<NewYearAnswer?> checkNewAcademicYear(
   s.profile.value = updated;
   s.selectedYear.value = updated.currentYear;
   s.revision.bump();
-  // Nuovo anno: nuova offerta formativa e nuove date d'esame.
-  try {
-    final r = await PathSetupService(s).refresh();
-    if (context.mounted) {
-      showSnack(
-        context,
-        r.imported ? 'Piano di studi aggiornato.' : (r.message ?? ''),
-      );
-    }
-  } catch (_) {
-    // Offline: si potrà aggiornare da Impostazioni → Il mio percorso.
-  }
+  // Nuovo anno: nuova offerta formativa e nuove date d'esame (senza
+  // connessione il messaggio che la chiede, con «Riprova»).
+  if (context.mounted) await _aggiorna(context);
   return answer;
 }
 
-/// All'avvio con internet confronta `meta.json.versione` con quella
-/// importata e, se c'è una versione nuova, propone "Aggiorna database"
-/// (una volta per versione). I dati personali non vengono toccati.
+/// «Aggiorna database» lanciato dall'app (nuovo anno, nuova versione, dati
+/// del corso mancanti all'avvio): esito in una SnackBar; senza connessione
+/// il messaggio che la chiede, con «Riprova». Con [silenzioso] l'esito
+/// riuscito non si mostra se non ha importato nulla.
+Future<void> _aggiorna(BuildContext context, {bool silenzioso = false}) async {
+  final s = context.read<AppServices>();
+  final AggiornamentoDatabase agg;
+  try {
+    agg = await aggiornaDatabase(s);
+  } catch (_) {
+    // si potrà aggiornare da Impostazioni → Il mio percorso
+    return;
+  }
+  if (!context.mounted) return;
+  if (agg.offline) {
+    mostraServeConnessione(
+      context,
+      message: agg.messaggioOffline,
+      onRetry: () => _aggiorna(context),
+    );
+    return;
+  }
+  final r = agg.result!;
+  if (r.imported) {
+    showSnack(context, 'Piano di studi aggiornato.');
+  } else if (!silenzioso && r.message != null) {
+    showSnack(context, r.message!);
+  }
+}
+
+/// All'avvio:
+/// - percorso dal database ma dati del corso mai scaricati (es. onboarding
+///   confermato senza connessione): li scarica; senza connessione mostra il
+///   messaggio che la chiede, con «Riprova»;
+/// - altrimenti, con internet, confronta `meta.json.versione` con quella
+///   importata e, se c'è una versione nuova, propone "Aggiorna database"
+///   (una volta per versione).
+/// I dati personali non vengono toccati.
 Future<void> checkCatalogUpdate(BuildContext context) async {
   final s = context.read<AppServices>();
   final p = s.profile.value;
   if (p == null) return;
+  if (!p.manual) {
+    AteneoSulDispositivo? dati;
+    try {
+      dati = await s.catalog.datiCorso(p.universityId, p.degreeId);
+    } catch (_) {
+      dati = null;
+    }
+    if (dati != null && !dati.corsi) {
+      if (context.mounted) await _aggiorna(context, silenzioso: true);
+      return;
+    }
+  }
   final meta = await s.catalog.remoteMeta();
   final v = meta?.versione;
   if (v == null || v == p.catalogVersion) return;
@@ -101,15 +140,7 @@ Future<void> checkCatalogUpdate(BuildContext context) async {
       duration: const Duration(seconds: 8),
       action: SnackBarAction(
         label: 'Aggiorna',
-        onPressed: () async {
-          final r = await PathSetupService(s).refresh();
-          if (context.mounted) {
-            showSnack(
-              context,
-              r.imported ? 'Piano di studi aggiornato.' : (r.message ?? ''),
-            );
-          }
-        },
+        onPressed: () => _aggiorna(context),
       ),
     ),
   );

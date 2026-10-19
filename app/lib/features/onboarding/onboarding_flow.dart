@@ -1217,7 +1217,13 @@ class _SummaryStepState extends State<_SummaryStep> {
                 '→ Aggiorna database.',
             onRetry: () => _importa(remote: true),
           ),
-        if (_error != null)
+        // import interrotto dalla rete: lo stesso avviso con «Riprova»
+        if (_error case final e? when CatalogService.erroreDiRete(e) && !_busy)
+          CatalogOfflineNotice(
+            padding: const EdgeInsets.fromLTRB(20, 12, 20, 0),
+            onRetry: () => _importa(remote: true),
+          )
+        else if (_error != null)
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 12, 20, 0),
             child: Text(

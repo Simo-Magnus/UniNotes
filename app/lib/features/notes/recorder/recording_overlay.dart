@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:flutter/gestures.dart' show VelocityTracker;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:intl/intl.dart';
@@ -39,7 +40,12 @@ const _red = Color(0xFFEF4444);
 /// avviene a metà di un fotogramma), segue il dito alla stessa velocità
 /// (nessuna soglia né animazione durante il trascinamento) e si allarga o
 /// stringe con la maniglia a destra, fino alla larghezza minima in cui i
-/// pulsanti restano visibili.
+/// pulsanti restano visibili. Il ridimensionamento è diretto: la maniglia
+/// resta sotto il dito (si misura dallo spostamento totale, non a piccoli
+/// passi), si ridisegna solo il riquadro (niente ricostruzione del resto),
+/// un gesto veloce lo porta subito alla larghezza minima o massima con
+/// un'animazione di 160 ms (immediata con «Riduci animazioni») e il doppio
+/// tocco sulla maniglia passa dall'una all'altra.
 class RecordingOverlayHost extends StatefulWidget {
   const RecordingOverlayHost({super.key, required this.child});
   final Widget child;
@@ -48,7 +54,8 @@ class RecordingOverlayHost extends StatefulWidget {
   State<RecordingOverlayHost> createState() => _RecordingOverlayHostState();
 }
 
-class _RecordingOverlayHostState extends State<RecordingOverlayHost> {
+class _RecordingOverlayHostState extends State<RecordingOverlayHost>
+    with SingleTickerProviderStateMixin {
   late final AppServices _s = context.read<AppServices>();
   StreamSubscription<RecorderCommand>? _commands;
 
@@ -56,9 +63,21 @@ class _RecordingOverlayHostState extends State<RecordingOverlayHost> {
   /// trascinamento si ridisegna solo la posizione.
   final _offset = ValueNotifier<Offset?>(null);
 
-  /// Larghezza scelta con la maniglia (null = predefinita).
-  double? _width;
+  /// Larghezza scelta con la maniglia (null = predefinita): cambiandola si
+  /// ridisegna solo il gruppo dei riquadri.
+  final _width = ValueNotifier<double?>(null);
+
+  /// Animazione verso la larghezza minima o massima (gesto veloce, doppio
+  /// tocco).
+  late final AnimationController _snap = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 160),
+  )..addListener(_snapTick);
+  Tween<double>? _snapTween;
   bool _rebuildQueued = false;
+
+  /// Copia del modello Whisper integrato poco dopo l'avvio.
+  Timer? _builtInCopy;
 
   LectureRecorder get _rec => _s.recorder;
 
@@ -70,6 +89,32 @@ class _RecordingOverlayHostState extends State<RecordingOverlayHost> {
     _s.focus.addListener(_changed);
     _s.focus.completed.addListener(_focusCompleted);
     WidgetsBinding.instance.addPostFrameCallback((_) => _checkOrphans());
+    // modello Whisper integrato: copiato dall'app nella cartella dei
+    // modelli alla prima apertura (in background, dopo l'avvio)
+    _builtInCopy = Timer(const Duration(seconds: 4), () async {
+      if (!mounted) return;
+      try {
+        await _s.whisper.builtInModelFile();
+      } catch (_) {}
+    });
+  }
+
+  void _snapTick() {
+    final t = _snapTween;
+    if (t != null) {
+      _width.value = t.transform(Curves.easeOutCubic.transform(_snap.value));
+    }
+  }
+
+  /// Porta il riquadro a [target] di larghezza, con un'animazione breve.
+  void _animateWidth(double from, double target) {
+    _snap.stop();
+    if (reduceMotion(context) || (from - target).abs() < 1) {
+      _width.value = target;
+      return;
+    }
+    _snapTween = Tween(begin: from, end: target);
+    _snap.forward(from: 0);
   }
 
   @override
@@ -79,6 +124,9 @@ class _RecordingOverlayHostState extends State<RecordingOverlayHost> {
     _s.focus.removeListener(_changed);
     _s.focus.completed.removeListener(_focusCompleted);
     _offset.dispose();
+    _builtInCopy?.cancel();
+    _snap.dispose();
+    _width.dispose();
     super.dispose();
   }
 
@@ -301,91 +349,185 @@ class _RecordingOverlayHostState extends State<RecordingOverlayHost> {
     ];
     if (pills.isEmpty) return widget.child;
     const pillHeight = 64.0, gap = 8.0;
-    final width = pillWidth(_width, screen.width);
-    final size = Size(
-      width + kPillHandleWidth,
-      pills.length * pillHeight + (pills.length - 1) * gap,
-    );
+    final height = pills.length * pillHeight + (pills.length - 1) * gap;
     final reserve = context.isWide ? 0.0 : kPillBottomReserve;
-    Offset clamp(Offset o) =>
+    Size sizeFor(double w) => Size(w + kPillHandleWidth, height);
+    Offset clamp(Offset o, Size size) =>
         clampPillOffset(o, screen, size, safe: safe, bottomReserve: reserve);
-    // la posizione segue il dito: si aggiorna solo il riquadro, senza
-    // ricostruire il resto
-    void drag(Offset d) => _offset.value = clamp(
-      (_offset.value ?? defaultPillOffset(screen, size, safe)) + d,
-    );
-    void resize(double dx) {
-      final w = pillWidth(width + dx, screen.width);
-      if (w != width) setState(() => _width = w);
-    }
+    final minW = pillWidth(0, screen.width);
+    final maxW = pillWidth(double.infinity, screen.width);
 
-    final group = SizedBox(
-      width: size.width,
-      height: size.height,
-      child: Row(
-        children: [
-          SizedBox(
-            width: width,
-            child: Column(
+    Widget group(double width) {
+      final size = sizeFor(width);
+      // la posizione segue il dito: si aggiorna solo il riquadro, senza
+      // ricostruire il resto
+      void drag(Offset d) => _offset.value = clamp(
+        (_offset.value ?? defaultPillOffset(screen, size, safe)) + d,
+        size,
+      );
+      return ValueListenableBuilder<Offset?>(
+        valueListenable: _offset,
+        child: RepaintBoundary(
+          child: SizedBox(
+            width: size.width,
+            height: size.height,
+            child: Row(
               children: [
-                for (var i = 0; i < pills.length; i++) ...[
-                  if (i > 0) const SizedBox(height: gap),
-                  SizedBox(height: pillHeight, child: pills[i](drag)),
-                ],
+                SizedBox(
+                  width: width,
+                  child: Column(
+                    children: [
+                      for (var i = 0; i < pills.length; i++) ...[
+                        if (i > 0) const SizedBox(height: gap),
+                        SizedBox(height: pillHeight, child: pills[i](drag)),
+                      ],
+                    ],
+                  ),
+                ),
+                _ResizeHandle(
+                  width: () => pillWidth(_width.value, screen.width),
+                  onResize: (w) {
+                    _snap.stop();
+                    _width.value = pillWidth(w, screen.width);
+                  },
+                  onFling: (v) => _animateWidth(
+                    pillWidth(_width.value, screen.width),
+                    v < 0 ? minW : maxW,
+                  ),
+                  onToggle: () {
+                    final w = pillWidth(_width.value, screen.width);
+                    _animateWidth(w, w > (minW + maxW) / 2 ? minW : maxW);
+                  },
+                ),
               ],
             ),
           ),
-          _ResizeHandle(onResize: resize),
-        ],
-      ),
-    );
+        ),
+        builder: (context, o, child) {
+          final off = clamp(o ?? defaultPillOffset(screen, size, safe), size);
+          return Positioned(
+            left: off.dx,
+            top: off.dy,
+            width: size.width,
+            height: size.height,
+            child: child!,
+          );
+        },
+      );
+    }
+
     return Stack(
       children: [
         widget.child,
-        ValueListenableBuilder<Offset?>(
-          valueListenable: _offset,
-          child: group,
-          builder: (context, o, child) {
-            final off = clamp(o ?? defaultPillOffset(screen, size, safe));
-            return Positioned(
-              left: off.dx,
-              top: off.dy,
-              width: size.width,
-              height: size.height,
-              child: child!,
-            );
-          },
+        ValueListenableBuilder<double?>(
+          valueListenable: _width,
+          builder: (context, w, _) => group(pillWidth(w, screen.width)),
         ),
       ],
     );
   }
 }
 
-/// Maniglia a destra del riquadro: trascinandola si allarga o si stringe
-/// (segue il dito, nessuna soglia).
-class _ResizeHandle extends StatelessWidget {
-  const _ResizeHandle({required this.onResize});
+/// Maniglia a destra del riquadro: trascinandola si allarga o si stringe.
+/// La larghezza segue lo spostamento totale del dito dall'inizio del gesto
+/// (la maniglia resta sotto il dito anche oltre i limiti), un gesto veloce
+/// porta subito alla larghezza minima o massima, il doppio tocco passa
+/// dall'una all'altra. Area di tocco più larga del segno visibile.
+class _ResizeHandle extends StatefulWidget {
+  const _ResizeHandle({
+    required this.width,
+    required this.onResize,
+    required this.onFling,
+    required this.onToggle,
+  });
+
+  /// Larghezza attuale del riquadro.
+  final double Function() width;
   final ValueChanged<double> onResize;
+
+  /// Gesto veloce: velocità orizzontale (px/s, negativa = verso sinistra).
+  final ValueChanged<double> onFling;
+  final VoidCallback onToggle;
+
+  @override
+  State<_ResizeHandle> createState() => _ResizeHandleState();
+}
+
+class _ResizeHandleState extends State<_ResizeHandle> {
+  double _startX = 0;
+  double _startWidth = 0;
+  VelocityTracker? _velocity;
+  int? _pointer;
+  DateTime? _lastTap;
+
+  /// Velocità oltre la quale il gesto «lancia» il riquadro.
+  static const _flingSpeed = 900.0;
+
+  void _down(PointerDownEvent e) {
+    if (_pointer != null) return;
+    _pointer = e.pointer;
+    _startX = e.position.dx;
+    _startWidth = widget.width();
+    _velocity = VelocityTracker.withKind(e.kind)
+      ..addPosition(e.timeStamp, e.position);
+  }
+
+  void _move(PointerMoveEvent e) {
+    if (e.pointer != _pointer) return;
+    _velocity?.addPosition(e.timeStamp, e.position);
+    widget.onResize(_startWidth + e.position.dx - _startX);
+  }
+
+  void _up(PointerUpEvent e) {
+    if (e.pointer != _pointer) return;
+    _pointer = null;
+    final moved = (e.position.dx - _startX).abs();
+    final v = _velocity?.getVelocity().pixelsPerSecond.dx ?? 0;
+    _velocity = null;
+    if (moved < 4) {
+      // tocco: due tocchi ravvicinati passano da stretto a largo
+      final now = DateTime.now();
+      final last = _lastTap;
+      _lastTap = now;
+      if (last != null &&
+          now.difference(last) < const Duration(milliseconds: 350)) {
+        _lastTap = null;
+        widget.onToggle();
+      }
+      return;
+    }
+    if (v.abs() > _flingSpeed) widget.onFling(v);
+  }
+
+  void _cancel(PointerCancelEvent e) {
+    if (e.pointer == _pointer) _pointer = null;
+  }
 
   @override
   Widget build(BuildContext context) {
     final t = context.tokens;
     return Semantics(
       label: 'Ridimensiona il riquadro',
+      hint: 'Doppio tocco: stretto o largo',
+      onIncrease: () => widget.onResize(widget.width() + 40),
+      onDecrease: () => widget.onResize(widget.width() - 40),
       child: MouseRegion(
         cursor: SystemMouseCursors.resizeLeftRight,
         child: Listener(
           behavior: HitTestBehavior.opaque,
-          onPointerMove: (e) => onResize(e.delta.dx),
+          onPointerDown: _down,
+          onPointerMove: _move,
+          onPointerUp: _up,
+          onPointerCancel: _cancel,
           child: SizedBox(
             width: kPillHandleWidth,
             child: Center(
               child: Container(
-                width: 4,
-                height: 28,
+                width: 5,
+                height: 32,
                 decoration: BoxDecoration(
-                  color: t.textSecondary.withValues(alpha: 0.75),
-                  borderRadius: BorderRadius.circular(2),
+                  color: t.textSecondary.withValues(alpha: 0.8),
+                  borderRadius: BorderRadius.circular(3),
                   boxShadow: const [
                     BoxShadow(color: Color(0x66000000), blurRadius: 4),
                   ],
@@ -436,37 +578,81 @@ Future<RecordingCloseChoice> askSaveRecording(BuildContext context) async {
   return choice ?? RecordingCloseChoice.cancel;
 }
 
-/// Conferma chiara prima di eliminare una registrazione.
-Future<bool> confirmDeleteRecording(BuildContext context) async {
+/// Impostazione «Non chiedere più» della conferma di eliminazione (le
+/// chiavi `dont_ask_` si ripristinano tutte da Impostazioni → «Ripristina
+/// le domande»).
+const String kDontAskDeleteRecordingKey = 'dont_ask_delete_recording';
+
+/// Conferma chiara prima di eliminare una registrazione («Eliminare la
+/// registrazione?»): Annulla ed Elimina, più la casella «Non chiedere
+/// più». Con la casella spuntata le eliminazioni successive vanno subito in
+/// «Eliminati di recente» (recuperabili per 30 giorni). [name] è il nome
+/// della registrazione, se c'è.
+Future<bool> confirmDeleteRecording(
+  BuildContext context, {
+  String? name,
+}) async {
+  final settings = context.read<AppServices>().settings;
+  try {
+    if (await settings.get(kDontAskDeleteRecordingKey) == '1') return true;
+  } catch (_) {
+    // impostazioni non leggibili: si chiede
+  }
+  if (!context.mounted) return false;
+  var dontAsk = false;
   final ok = await showDialog<bool>(
     context: context,
     builder: (c) {
       final scheme = Theme.of(c).colorScheme;
-      return AlertDialog(
-        icon: Icon(Icons.delete_outline, color: scheme.error),
-        title: const Text('Eliminare la registrazione?'),
-        content: const Text(
-          'La registrazione va in «Eliminati di recente»: per 30 giorni puoi '
-          'ancora recuperarla, poi viene cancellata.',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(c, false),
-            child: const Text('Annulla'),
+      return StatefulBuilder(
+        builder: (c, setLocal) => AlertDialog(
+          icon: Icon(Icons.delete_outline, color: scheme.error),
+          title: const Text('Eliminare la registrazione?'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '${name == null ? 'La registrazione' : '«$name»'} va in '
+                '«Eliminati di recente»: per 30 giorni puoi ancora recuperarla '
+                '(trascrizioni e riassunti restano), poi viene cancellata.',
+              ),
+              const SizedBox(height: 8),
+              CheckboxListTile(
+                key: const Key('recording-delete-dont-ask'),
+                contentPadding: EdgeInsets.zero,
+                controlAffinity: ListTileControlAffinity.leading,
+                dense: true,
+                value: dontAsk,
+                onChanged: (v) => setLocal(() => dontAsk = v ?? false),
+                title: const Text('Non chiedere più'),
+              ),
+            ],
           ),
-          FilledButton(
-            key: const Key('recording-delete-confirm'),
-            style: FilledButton.styleFrom(
-              backgroundColor: scheme.error,
-              foregroundColor: scheme.onError,
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(c, false),
+              child: const Text('Annulla'),
             ),
-            onPressed: () => Navigator.pop(c, true),
-            child: const Text('Elimina'),
-          ),
-        ],
+            FilledButton(
+              key: const Key('recording-delete-confirm'),
+              style: FilledButton.styleFrom(
+                backgroundColor: scheme.error,
+                foregroundColor: scheme.onError,
+              ),
+              onPressed: () => Navigator.pop(c, true),
+              child: const Text('Elimina'),
+            ),
+          ],
+        ),
       );
     },
   );
+  if (ok == true && dontAsk) {
+    try {
+      await settings.set(kDontAskDeleteRecordingKey, '1');
+    } catch (_) {}
+  }
   return ok ?? false;
 }
 

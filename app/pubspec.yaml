@@ -117,6 +117,11 @@ flutter:
     - assets/tray/
     # Suoni brevi dell'app, sintetizzati da tool/genera_suoni.py.
     - assets/suoni/
+    # Modello Whisper integrato (ggml-base-q5_1.bin, 57 MiB), scaricato prima
+    # della build da tool/prepara_modello_whisper.py (non è nel repository).
+    # Windows lo installa accanto all'eseguibile (windows/CMakeLists.txt).
+    - path: assets/whisper/
+      platforms: [android, ios, macos, linux]
 
   # IBM Plex (licenza SIL OFL, assets/fonts/OFL.txt): interfaccia ed export PDF.
   fonts:

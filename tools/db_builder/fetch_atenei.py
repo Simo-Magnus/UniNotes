@@ -100,6 +100,9 @@ APPELLI["unicusano"] = unicusano_appelli.fetch_appelli  # pagina «Date Appelli�
 from adapters import unito  # noqa: E402
 SITI["unito"] = unito.fetch_ateneo  # catalogo Cineca: durata dal piano, coorti per nome, piano di ogni sede nel suo corso, blocchi obbligatori
 CATALOGO_IN_SITI.add("unito")
+from adapters import unisi  # noqa: E402
+SITI["unisi"] = unisi.fetch_ateneo  # catalogo Cineca: anno di corso dalle date delle attività («altreAttivita»), durata dal piano, coorti per nome
+CATALOGO_IN_SITI.add("unisi")
 # Integrazioni: dati che il catalogo non ha (es. i libri di UniTO dalle pagine Campusnet),
 # letti a partire dagli insegnamenti già nel database e uniti dopo il catalogo
 INTEGRAZIONI = {"unito": unito_campusnet.fetch_ateneo}

@@ -43,6 +43,17 @@ class CourseCatalog {
       visibleIds = all.visibleIds,
       universities = all.universities;
 
+  CourseCatalog._reordered(CourseCatalog base, this.courses)
+    : byId = base.byId,
+      visibleIds = base.visibleIds,
+      universities = base.universities,
+      universityFilter = base.universityFilter;
+
+  /// Stessi dati con i corsi mostrati in un altro ordine (es. quello scelto
+  /// in Studio): [order] riceve i corsi e li restituisce riordinati.
+  CourseCatalog ordered(List<Course> Function(List<Course> c) order) =>
+      CourseCatalog._reordered(this, order(courses));
+
   /// Corsi nel filtro di percorso/anno (null = nessun filtro).
   final Set<int>? visibleIds;
 

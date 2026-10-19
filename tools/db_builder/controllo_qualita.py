@@ -51,7 +51,7 @@ GRAVITA = {
 MOJIBAKE = re.compile(r"Ã[\x80-\xbf]|â€|Â[\xa0-\xbf]|�")
 # SSD: vecchio formato (MAT/05, ING-INF/05, L-LIN/12, SECS-P/07, M-PSI/01), nuovo (MATH-02/B),
 # tutti e due («MAT/03 (MATH-02/B)»), «NN» (attività senza settore)
-_SSD1 = r"[A-Z]{1,4}(?:-[A-Z]{1,5})?/\d{2}"
+_SSD1 = r"[A-Z]{1,4}(?:-[A-Z]{1,5}){0,2}/\d{2}"
 _SSD2 = r"[A-Z]{3,5}-\d{2}/[A-Z]"
 SSD = re.compile(rf"^(?:NN|{_SSD1}(?:\s*\({_SSD2}\))?|{_SSD2}(?:\s*\({_SSD1}\))?)$")
 PERIODI = {"1", "2", "3", "4", "annuale", None}

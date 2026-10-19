@@ -2,24 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/feedback/feedback_service.dart';
+import '../../../core/feedback/motion.dart';
 import '../../../core/router/app_shell.dart';
 import '../../../core/services/app_services.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../widgets/glass.dart';
-import '../../notes/ai_request_dialog.dart' show openReferenceAi;
 import '../../notes/notes_screen.dart' show openRecorder;
-import '../../study/focus/focus_screen.dart' show openFocusScreen;
+import '../../study/focus/focus_cards.dart' show editDailyGoal;
+import '../../study/focus/focus_screen.dart'
+    show FocusStatsBuilder, openFocusScreen;
 import '../../study/study_screen.dart';
 import '../../study/study_timer.dart';
 import '../dashboard_data.dart';
 
-/// «Inizia»: le tre cose che si fanno ogni giorno, a un tocco dalla Home.
+/// «Inizia»: quanto si è studiato oggi e le due cose che si fanno ogni
+/// giorno, a un tocco dalla Home.
+/// - Oggi: anello con l'avanzamento verso l'obiettivo giornaliero, minuti di
+///   studio di oggi (tutte le sessioni salvate: cronometro, timer e
+///   aggiunte a mano), quanto manca e la serie; «Obiettivo» lo cambia;
 /// - Sessione Studio: cronometro o timer (Studio → Sessioni Studio); con una
 ///   sessione in corso mostra il tempo e la riapre;
 /// - Registra lezione: registrazione con la trascrizione istantanea; con
-///   una registrazione in corso la riporta in primo piano;
-/// - la propria AI di riferimento (ChatGPT, Claude…), aperta con l'account
-///   dello studente.
+///   una registrazione in corso la riporta in primo piano.
+/// Su schermi larghi i tre riquadri stanno su una riga, altrimenti uno
+/// sotto l'altro.
 class QuickStartCard extends StatelessWidget {
   const QuickStartCard({super.key, required this.data});
 
@@ -46,10 +52,16 @@ class QuickStartCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const CardHeader(
+            CardHeader(
               title: 'Inizia',
               icon: Icons.bolt_outlined,
-              padding: EdgeInsets.fromLTRB(4, 14, 0, 8),
+              padding: const EdgeInsets.fromLTRB(4, 8, 0, 4),
+              trailing: TextButton.icon(
+                key: const Key('home-goal-edit'),
+                onPressed: () => editDailyGoal(context),
+                icon: const Icon(Icons.flag_outlined, size: 18),
+                label: const Text('Obiettivo'),
+              ),
             ),
             ListenableBuilder(
               listenable: Listenable.merge([s.focus, s.recorder, sw]),
@@ -57,6 +69,7 @@ class QuickStartCard extends StatelessWidget {
                 final studying = s.focus.active || sw.isActive;
                 final recording = s.recorder.active;
                 final tiles = [
+                  const _TodayTile(key: Key('home-today')),
                   _QuickTile(
                     key: const Key('home-study'),
                     icon: Icons.timer_outlined,
@@ -81,24 +94,17 @@ class QuickStartCard extends StatelessWidget {
                     live: recording,
                     onTap: () => openRecorder(context),
                   ),
-                  _QuickTile(
-                    key: const Key('home-ai'),
-                    icon: Icons.psychology_alt_outlined,
-                    color: t.cyanSoft,
-                    title: 'Apri ${data.ai.label}',
-                    detail: 'La tua AI di riferimento',
-                    onTap: () => openReferenceAi(context, data.ai),
-                  ),
                 ];
                 return LayoutBuilder(
                   builder: (context, c) {
                     // tre colonne se c'è spazio (anche con i caratteri
-                    // grandi), altrimenti una sotto l'altra
+                    // grandi), altrimenti uno sotto l'altro
                     final wide =
                         c.maxWidth >=
-                        MediaQuery.textScalerOf(context).scale(150) * 3;
+                        MediaQuery.textScalerOf(context).scale(170) * 3;
                     if (!wide) {
                       return Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           for (final (i, w) in tiles.indexed) ...[
                             if (i > 0) const SizedBox(height: 8),
@@ -124,6 +130,104 @@ class QuickStartCard extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+/// Studio di oggi: anello verso l'obiettivo giornaliero, minuti di oggi,
+/// quanto manca e la serie di giorni con l'obiettivo raggiunto. I minuti
+/// vengono dalle sessioni salvate ([FocusStatsBuilder]) e si aggiornano a
+/// ogni sessione salvata o cambio dell'obiettivo: nessun dato stimato.
+class _TodayTile extends StatelessWidget {
+  const _TodayTile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.tokens;
+    final theme = Theme.of(context);
+    return GlassCard(
+      inner: true,
+      margin: EdgeInsets.zero,
+      child: FocusStatsBuilder(
+        builder: (context, stats) {
+          final goal = formatMinutes(stats.goal);
+          final reached = stats.today >= stats.goal;
+          return Semantics(
+            label:
+                'Studio di oggi: ${formatMinutes(stats.today)}. '
+                'Obiettivo $goal. ${stats.caption}',
+            excludeSemantics: true,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(10, 10, 12, 10),
+              child: Row(
+                children: [
+                  // l'anello cresce con i caratteri grandi; la percentuale
+                  // dentro cresce fino a 1,3× (il valore intero è nel testo
+                  // accanto e nella semantica)
+                  MediaQuery.withClampedTextScaling(
+                    maxScaleFactor: 1.3,
+                    child: ProgressRing(
+                      size: MediaQuery.textScalerOf(context)
+                          .scale(56)
+                          .clamp(56.0, 96.0),
+                      value: stats.progress,
+                      label: '${(stats.progress * 100).round()}%',
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        AnimatedCount(
+                          value: stats.today,
+                          format: (v) => 'Oggi ${formatMinutes(v)}',
+                          style: theme.textTheme.titleSmall?.copyWith(
+                            fontWeight: FontWeight.w700,
+                            color: t.textPrimary,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          reached
+                              ? '${stats.caption} ($goal)'
+                              : '${stats.caption} · obiettivo $goal',
+                          style: theme.textTheme.bodySmall?.copyWith(
+                            color: reached ? t.cyanSoft : t.textMuted,
+                          ),
+                        ),
+                        if (stats.streak > 0)
+                          Padding(
+                            padding: const EdgeInsets.only(top: 2),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.local_fire_department_outlined,
+                                  size: 14,
+                                  color: t.cyanSoft,
+                                ),
+                                const SizedBox(width: 4),
+                                Flexible(
+                                  child: Text(
+                                    'Serie: ${stats.streakText}',
+                                    style: theme.textTheme.bodySmall?.copyWith(
+                                      color: t.textMuted,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }

@@ -6,11 +6,11 @@ import 'package:device_calendar/device_calendar.dart' as dc;
 import 'agenda.dart';
 import 'system_calendar.dart';
 
-/// Calendario del dispositivo (Android: Calendar Provider, iOS: EventKit)
-/// con il pacchetto device_calendar: calendario locale «UniNotes» (azzurro
-/// dell'app); se il sistema non permette di crearlo (iOS senza un account
-/// locale) si usa il calendario predefinito, e gli eventi dell'app si
-/// riconoscono dalla riga «Rif. UniNotes: …» (con la chiave) nella descrizione.
+/// Calendario del dispositivo su Android (Calendar Provider) con il pacchetto
+/// device_calendar: calendario locale «UniNotes» (azzurro dell'app); se il
+/// sistema non permette di crearlo si usa il calendario predefinito, e gli
+/// eventi dell'app si riconoscono dalla riga «Rif. UniNotes: …» (con la
+/// chiave) nella descrizione. iOS e macOS: [AppleCalendarBackend].
 class DeviceCalendarBackend implements CalendarBackend, RemovableCalendar {
   DeviceCalendarBackend([this._custom]);
   final dc.DeviceCalendarPlugin? _custom;
@@ -19,8 +19,8 @@ class DeviceCalendarBackend implements CalendarBackend, RemovableCalendar {
   late final dc.DeviceCalendarPlugin _plugin =
       _custom ?? dc.DeviceCalendarPlugin();
 
-  /// Android, iOS. Su macOS il pacchetto non c'è: resta il file .ics.
-  static bool get supported => Platform.isAndroid || Platform.isIOS;
+  /// Solo Android (iOS e macOS: apple_calendar_backend.dart).
+  static bool get supported => Platform.isAndroid;
 
   /// Azzurro dell'app (AppTokens.dark.cyan).
   static const _color = Color(0xFF38BDF8);
@@ -117,8 +117,10 @@ class DeviceCalendarBackend implements CalendarBackend, RemovableCalendar {
     final dc.TZDateTime start;
     final dc.TZDateTime end;
     if (item.allDay) {
-      // giornata intera: data «pura» (device_calendar la porta a
-      // mezzanotte UTC su Android e a mezzanotte locale su iOS)
+      // giornata intera: data «pura»; device_calendar (createOrUpdateEvent)
+      // la porta a mezzanotte UTC e su Android sposta da sé la fine alla
+      // mezzanotte del giorno dopo, come vuole il Calendar Provider (una
+      // fine già al giorno dopo diventerebbe un evento di due giorni)
       start = dc.TZDateTime.utc(item.date.year, item.date.month, item.date.day);
       end = start;
     } else {

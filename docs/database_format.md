@@ -44,7 +44,13 @@ calendario delle sessioni) si annota e non si richiede di nuovo fino alla
 versione successiva. Senza rete restano le copie salvate; se mancano anche
 quelle l'app mostra «Serve una connessione per scaricare i dati del tuo corso»
 con *Riprova*, e il resto dell'app (corsi aggiunti a mano, appunti,
-registratore) funziona comunque.
+registratore) funziona comunque. Lo stesso controllo vale ovunque si scarichi o
+si aggiorni il database (onboarding, *Aggiorna database*, nuovo anno
+accademico, nuova versione, avvio con i dati del corso mancanti:
+`aggiornaDatabase` in `app/lib/widgets/catalog_download.dart`): se il sistema non
+vede nessuna rete, o il database non risponde e il piano si rilegge dalla copia
+salvata, compare «Serve una connessione a internet per aggiornare il database»
+con *Riprova*, invece di un falso «Piano aggiornato».
 
 I file per ateneo `corsi/<ateneo>.json` e `moduli/<ateneo>.json` restano nel
 repository: sono la fonte dei file per corso e li usano le versioni precedenti

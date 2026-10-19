@@ -55,11 +55,18 @@ class BookTile extends StatelessWidget {
       if (book.year != null) '${book.year}',
     ].join(' · ');
     // Telefono: «Aggiungi» sotto il testo insieme alle altre azioni, così il
-    // titolo usa tutta la larghezza.
+    // titolo usa tutta la larghezza; senza il margine interno a sinistra,
+    // l'icona parte dalla stessa distanza dal bordo del titolo.
     final narrow = MediaQuery.sizeOf(context).width < 600;
     final attach = !isDownloaded(book) && !book.isRemoved
         ? TextButton.icon(
             key: ValueKey('attach-${book.id}'),
+            style: narrow
+                ? TextButton.styleFrom(
+                    padding: const EdgeInsetsDirectional.only(end: 12),
+                    alignment: AlignmentDirectional.centerStart,
+                  )
+                : null,
             onPressed: () => onAction(BookAction.attachFile),
             icon: const Icon(Icons.attach_file, size: 18),
             label: const Text('Aggiungi'),

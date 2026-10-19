@@ -23,6 +23,7 @@ import 'lesson_transcripts.dart';
 import 'markdown_view.dart';
 import 'notes_store.dart';
 import 'recorder/recording_meta.dart';
+import 'recorder/recording_overlay.dart' show confirmDeleteRecording;
 import '../links/link_settings.dart';
 
 /// Sul PC Whisper usa `whisper-cli`; sul telefono il motore incluso.
@@ -35,7 +36,20 @@ String _date(NoteFile f) => f.name;
 /// annullabile. Se non riesce, l'errore non diventa una card a parte: la
 /// card della registrazione mostra «Impossibile trascrivere con Whisper: …»
 /// con cosa provare (vedi [whisperFailureMessage]).
-void transcribeWithWhisper(BuildContext context, Course course, NoteFile rec) {
+///
+/// Modello: [model] se scelto per questa trascrizione («Trascrivi con…»),
+/// altrimenti quello predefinito o il più accurato fra quelli scaricati che
+/// il dispositivo regge; senza modelli scaricati il modello integrato (vedi
+/// [WhisperService.pickModel]). Il modello usato si scrive nella
+/// trascrizione e nei dati della registrazione. Con [again] la trascrizione
+/// di prima va in «Eliminati di recente».
+void transcribeWithWhisper(
+  BuildContext context,
+  Course course,
+  NoteFile rec, {
+  String? model,
+  bool again = false,
+}) {
   final s = context.read<AppServices>();
   final cancel = CancelToken();
   // un errore precedente sulla stessa registrazione si toglie
@@ -49,8 +63,9 @@ void transcribeWithWhisper(BuildContext context, Course course, NoteFile rec) {
     kind: JobKind.whisper,
     onCancel: cancel.cancel,
     (report) async {
-      final st = await s.whisper.status();
-      if (!st.ready) {
+      final chosen = await s.whisper.resolveModel(requested: model);
+      if (chosen == null) {
+        final st = await s.whisper.status();
         throw WhisperException(
           st.engineReady
               ? 'Nessun modello Whisper scaricato.'
@@ -65,22 +80,37 @@ void transcribeWithWhisper(BuildContext context, Course course, NoteFile rec) {
           throw WhisperException('Trascrizione annullata.');
         }
       }
-      final model = await s.whisper.pickModel(st.models);
-      final segs = await s.whisper.transcribe(
+      final result = await s.whisper.transcribeWith(
         rec.file,
-        model: model?.id,
+        model: chosen.id,
         cancel: cancel,
-        onProgress: (pr) => report(pr.phase, pr.fraction),
+        onProgress: (pr) => report(
+          '${pr.phase} · ${whisperModelLabel(chosen.id)}',
+          pr.fraction,
+        ),
       );
+      final segs = result.segments;
+      final used = result.model.id;
       if (segs.isEmpty) {
         throw WhisperException('Nessun parlato riconosciuto nell\'audio.');
       }
       final md = segmentsToMarkdown(
         segs,
         title: 'Trascrizione – ${_date(rec)}',
-        subtitle: '${course.name} · trascritta con Whisper ${model?.id ?? ''}'
-            .trim(),
+        subtitle: '${course.name} · trascritta con Whisper $used',
       );
+      if (again) {
+        // la trascrizione di prima resta recuperabile per 30 giorni
+        final dir = await s.notes.courseDir(course, NoteFolder.transcripts);
+        final old = File(p.join(dir.path, '${rec.name}.md'));
+        if (await old.exists()) {
+          await s.trash.trash(
+            [old],
+            title: 'Trascrizione – ${rec.name}',
+            course: course.name,
+          );
+        }
+      }
       final f = await s.notes.writeText(
         course,
         NoteFolder.transcripts,
@@ -103,7 +133,7 @@ void transcribeWithWhisper(BuildContext context, Course course, NoteFile rec) {
                 segs[i].text,
               ),
           ]
-          ..transcriptSource = 'Whisper ${model?.id ?? ''}'.trim();
+          ..transcriptSource = 'Whisper $used';
         await meta.save(rec.file.path);
       } catch (_) {
         // la trascrizione Markdown basta
@@ -117,6 +147,77 @@ void transcribeWithWhisper(BuildContext context, Course course, NoteFile rec) {
     },
   );
   showSnack(context, 'Trascrizione avviata: puoi continuare a usare l\'app.');
+}
+
+/// «Trascrivi con…» / «Trascrivi di nuovo con…»: sceglie il modello per
+/// questa trascrizione fra quelli scaricati e il modello integrato, poi la
+/// avvia. [current] è il modello della trascrizione che c'è già (segnato
+/// nell'elenco).
+Future<void> chooseWhisperModelAndTranscribe(
+  BuildContext context,
+  Course course,
+  NoteFile rec, {
+  bool again = false,
+  String? current,
+}) async {
+  final s = context.read<AppServices>();
+  final models = await s.whisper.availableModels();
+  final auto = await s.whisper.resolveModel();
+  final device = await s.whisper.deviceProfile();
+  if (!context.mounted) return;
+  if (models.isEmpty) {
+    showSnack(
+      context,
+      'Nessun modello Whisper: scaricane uno da Collegamenti → Whisper.',
+    );
+    return;
+  }
+  final picked = await showModalBottomSheet<String>(
+    context: context,
+    showDragHandle: true,
+    isScrollControlled: true,
+    builder: (c) => SafeArea(
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(24, 0, 24, 8),
+              child: Text(
+                again ? 'Trascrivi di nuovo con…' : 'Trascrivi con…',
+                style: Theme.of(c).textTheme.titleMedium,
+              ),
+            ),
+            for (final m in models)
+              ListTile(
+                leading: Icon(
+                  m.id == auto?.id
+                      ? Icons.radio_button_checked
+                      : Icons.radio_button_unchecked,
+                ),
+                title: Text(whisperModelLabel(m.id)),
+                subtitle: Text(
+                  [
+                    if (m.id == kBuiltInWhisperModel.id)
+                      'base q5_1, ${m.disk}'
+                    else
+                      '${m.disk} · RAM ${m.ram}',
+                    if (m.id == auto?.id) 'usato di solito',
+                    if (m.id == current) 'trascrizione attuale',
+                    if (!deviceCanRun(m, device))
+                      'pesante per questo dispositivo',
+                  ].join(' · '),
+                ),
+                onTap: () => Navigator.pop(c, m.id),
+              ),
+          ],
+        ),
+      ),
+    ),
+  );
+  if (picked == null || !context.mounted) return;
+  transcribeWithWhisper(context, course, rec, model: picked, again: again);
 }
 
 /// I tre passi mostrati nel riquadro dell'AI (Registra → insegnamento).
@@ -353,8 +454,9 @@ Future<void> exportPdf(
   required String subtitle,
 }) async {
   try {
+    // trascrizioni del vecchio formato: senza gli orari delle frasi
     final bytes = await markdownToPdf(
-      await note.file.readAsString(),
+      stripTranscriptTimes(await note.file.readAsString()),
       title: note.name,
       subtitle: subtitle,
     );
@@ -454,14 +556,13 @@ Future<bool> trashNote(BuildContext context, Course course, NoteFile f) async {
     showSnack(context, 'Attendi la fine della trascrizione o del riassunto.');
     return false;
   }
-  final ok = await confirmDialog(
-    context,
-    'Eliminare "${f.name}"?',
-    f.isAudio
-        ? 'La registrazione va in «Eliminati di recente» per 30 giorni '
-              '(trascrizioni e riassunti restano).'
-        : 'Il file va in «Eliminati di recente» per 30 giorni.',
-  );
+  final ok = f.isAudio
+      ? await confirmDeleteRecording(context, name: f.name)
+      : await confirmDialog(
+          context,
+          'Eliminare "${f.name}"?',
+          'Il file va in «Eliminati di recente» per 30 giorni.',
+        );
   if (!ok || !context.mounted) return false;
   final messenger = ScaffoldMessenger.maybeOf(context);
   final entry = await s.trash.trash(

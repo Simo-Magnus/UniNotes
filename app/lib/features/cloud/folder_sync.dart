@@ -1,7 +1,20 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart' as p;
+
+import 'graph_client.dart' show GraphException;
+
+/// L'errore viene dalla rete (nessuna connessione, servizio non
+/// raggiungibile, tempo scaduto, connessione caduta), non dal file o
+/// dall'account: [ioTransport] lo trasforma in [GraphException] con stato 0
+/// (anche per Google Drive).
+bool isNetworkError(Object e) =>
+    e is SocketException ||
+    e is TimeoutException ||
+    e is HttpException ||
+    (e is GraphException && e.status == 0);
 
 /// Stato di un file all'ultima sincronizzazione riuscita.
 class SyncedFile {
@@ -313,6 +326,9 @@ abstract class FolderSync {
     final paths = {...remote.keys, ...local.keys, ...state.keys}
       ..removeWhere((r) => !wanted(r));
     final sorted = paths.toList()..sort();
+    // connessione caduta a metà: si salva quanto fatto e ci si ferma (i
+    // file successivi fallirebbero tutti allo stesso modo)
+    Object? offline;
     for (final rel in sorted) {
       final l = local[rel];
       final r = remote[rel];
@@ -375,8 +391,16 @@ abstract class FolderSync {
           state.remove(rel); // sparito da entrambe le parti
         }
       } catch (e) {
+        if (isNetworkError(e)) {
+          offline = e;
+          break;
+        }
         report.errors.add('$rel: $e');
       }
+    }
+    if (offline != null) {
+      await saveState(state);
+      throw offline;
     }
     await afterRun();
     await saveState(state);

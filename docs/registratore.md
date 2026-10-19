@@ -5,6 +5,11 @@ iOS, con la trascrizione dal vivo come la registrazione audio nell'app Note.
 Tutto avviene sul dispositivo: l'audio e il testo non lasciano il telefono o
 il PC finché non scegli di sincronizzarli o di mandarli a Gemini.
 
+Nella pagina **Registra** gli insegnamenti sono divisi come in Studio: **1°
+semestre**, **2° semestre**, **Annuale** e **OFA** (con l'anno davanti se
+il percorso ne mostra più d'uno), ognuno solo con il suo nome
+(`groupStudyCourses` in `app/lib/features/study/course_groups.dart`).
+
 Codice: `app/lib/features/notes/` (`lecture_recorder.dart`,
 `recorder_screen.dart`, `recording_player_screen.dart`,
 `recently_deleted_screen.dart`, `transcript_search_screen.dart`,
@@ -17,7 +22,10 @@ le schermate, controlli in background). Riconoscimento vocale del sistema:
 audio: `app/lib/core/services/audio_codec.dart` e, su Windows,
 `app/windows/runner/audio_transcoder.cpp`. Test:
 `app/test/recorder_logic_test.dart`, `app/test/recorder_speech_test.dart` e
-`app/test/recording_overlay_test.dart`.
+`app/test/recording_overlay_test.dart`; formule a voce
+`app/lib/features/notes/spoken_math.dart` (`app/test/spoken_math_test.dart`);
+scelta e consiglio dei modelli Whisper `app/lib/features/links/whisper_device.dart`
+e `app/lib/core/services/whisper_service.dart` (`app/test/whisper_choice_test.dart`).
 
 ## Mentre registri
 
@@ -55,16 +63,30 @@ che pulsa, nome del corso, tempo, livello del microfono, **Pausa/Riprendi**,
   puntatore, senza soglia iniziale né animazioni, e si ridisegna solo la sua
   posizione; resta dentro lo schermo, nelle aree sicure e sopra la barra in
   basso;
-- si **allarga o stringe** con la maniglia a destra, fino alla larghezza
-  minima in cui i tre pulsanti restano visibili (il testo si accorcia,
-  l'indicatore del microfono sparisce);
+- si **allarga o stringe** con la maniglia a destra (area di tocco di
+  24 px), fino alla larghezza minima in cui i tre pulsanti restano visibili
+  (il testo si accorcia, l'indicatore del microfono sparisce). Il gesto è
+  diretto: la larghezza segue lo spostamento totale del dito dall'inizio
+  (la maniglia resta sotto il dito, niente accumulo di piccoli passi), si
+  ridisegna solo il riquadro (`ValueNotifier` della larghezza e
+  `RepaintBoundary`, nessun `setState` sopra l'app); un **gesto veloce**
+  (oltre 900 px/s) lo porta subito alla larghezza minima o massima con
+  un'animazione di 160 ms, il **doppio tocco** sulla maniglia passa
+  dall'una all'altra; con «Riduci animazioni» il cambio è immediato. Vale
+  anche per il riquadro della sessione Focus (stesso gruppo);
 - ha un **fondo scuro quasi opaco** (chiaro nel tema chiaro), leggibile
   anche sopra altri testi;
 - un tocco riporta al registratore.
 
 Solo la **X** chiede «Salvare la registrazione?» con due pulsanti, Elimina
 (con una seconda conferma, in rosso) e Salva; toccando fuori dal dialogo la
-registrazione continua. Dopo «Salva» dal riquadro, l'avviso «Apri» porta
+registrazione continua. La conferma «Eliminare la registrazione?» (anche
+dal cestino della pagina del corso e del lettore) ha Annulla, Elimina e la
+casella **«Non chiedere più»**: spuntata, le eliminazioni successive vanno
+subito in «Eliminati di recente» (sempre recuperabili per 30 giorni). La
+scelta è l'impostazione `dont_ask_delete_recording` e si annulla da
+Impostazioni → «Ripristina le domande» (cancella tutte le chiavi
+`dont_ask_`). Dopo «Salva» dal riquadro, l'avviso «Apri» porta
 alla pagina del corso.
 
 Perché prima su Android il riquadro compariva solo al primo tocco: la pagina
@@ -158,6 +180,46 @@ negato l'avvio risponde `denied` e se Siri e Dettatura sono disattivate
 `dictation`, invece di riprovare cinque volte: in tutti e due i casi la card
 lo spiega con il pulsante che apre Impostazioni di Sistema.
 
+### Correggere il testo mentre si registra
+
+Un tocco su una frase già scritta la apre in un campo di testo sul posto:
+si corregge mentre la registrazione e la trascrizione continuano (le frasi
+nuove arrivano sotto). **Invio**, il segno di spunta o un tocco fuori
+salvano, **Esc** annulla; una frase svuotata si toglie. Le correzioni
+(`LiveTranscriber.editSegment`) finiscono nella trascrizione salvata e nei
+dati della registrazione; il testo originale resta in memoria per unire
+bene le finestre successive di Whisper (le parole ripetute nella
+sovrapposizione si riconoscono ancora).
+
+### Formule (LaTeX)
+
+Il filtro **«Formule (LaTeX)»** nella card «Trascrizione» (la scelta resta
+per le registrazioni successive, impostazione `live_formulas`) scrive come
+formule quelle dette a voce, con un convertitore italiano parlato → LaTeX
+(`spoken_math.dart`): «due terzi» → `$\frac{2}{3}$`, «integrale da 2 a pi
+greco» → `$\int_{2}^{\pi}$`, «x al quadrato più y al quadrato uguale r al
+quadrato» → `$x^{2} + y^{2} = r^{2}$`, «il limite per x che tende a zero di
+seno di x fratto x» → `$\lim_{x \to 0} \frac{\sin x}{x}$`. Riconosce
+numeri in lettere e cifre, frazioni («un mezzo», «pi greco mezzi», «x fratto
+2», «b su c»), più/meno/per/diviso, uguale/diverso/minore/maggiore (o
+uguale), potenze («al quadrato», «quadro», «alla terza», «elevato alla n»,
+«alla meno uno»), pedici («x con zero»), radici (quadrata, cubica, ennesima),
+valore assoluto, fattoriale, integrali («da … a …», «tra … e …», «in dx»),
+somme e produttorie («per k che va da 1 a n», «da i uguale 1 a n»), limiti,
+seno/coseno/tangente/logaritmo («in base»), esponenziale, «f di x», «f
+primo», derivate («derivata di … rispetto a x»), lettere greche (anche
+«maiuscola»), infinito, «e alla x» e parentesi («aperta parentesi … chiusa
+parentesi»).
+
+Un tratto diventa formula solo se ha almeno un segno o una struttura
+matematica e almeno due parole: «tre», «alfa», «la somma di due numeri»,
+«più o meno», «due secondi», date e orari restano testo; le parole a, e, i,
+o (articoli e congiunzioni) non diventano variabili, tranne dove la frase lo
+richiede (indici di somme e limiti). Le formule si vedono disegnate
+(`widgets/math_text.dart`) nella card, nel lettore e negli appunti e si
+salvano in LaTeX (`$…$`) nella trascrizione. Le frasi corrette a mano non si
+convertono più. Senza l'opzione il testo resta com'è.
+
 ### Windows: «Riconoscimento vocale online»
 
 La dettatura libera di Windows (`SpeechRecognizer` senza grammatica) funziona
@@ -192,22 +254,43 @@ riconoscitore di Windows.
 
 Dove il sistema non offre nulla (Windows senza l'opzione, Linux, Android
 12 e precedenti, permesso negato) trascrive Whisper sul dispositivo con un
-**modello dedicato al «dal vivo»**: `ggml-base-q5_1.bin` (base quantizzato,
-57 MiB, `kLiveWhisperModel`), sempre con whisper.cpp dentro l'app
-(`whisper_ggml`, anche su Windows: niente `whisper-cli` da scaricare). La
-trascrizione completa dopo il salvataggio resta con il modello scelto
-dall'utente.
+**modello integrato**: `ggml-base-q5_1.bin` (base multilingue quantizzato
+q5_1, 57 MiB, `kBuiltInWhisperModel`), sempre con whisper.cpp dentro l'app
+(`whisper_ggml`, anche su Windows: niente `whisper-cli` da scaricare). Lo
+stesso modello è il ripiego sempre disponibile di «Trascrivi con Whisper»
+(vedi [Quale modello Whisper si usa](#quale-modello-whisper-si-usa)).
 
-- **Windows**: il modello è nell'installatore e nello zip
-  (`app/windows/CMakeLists.txt` lo scarica una volta da Hugging Face durante
-  la build, controlla lo SHA-1 e lo copia in `data/whisper/` accanto a
-  uninotes.exe). Funziona subito, senza installare nulla. Se la build non
-  ha internet il modello manca e l'app lo scarica alla prima registrazione.
-- **Altri sistemi** (macOS usa il riconoscitore di Apple e non lo include):
-  alla prima registrazione che ne ha bisogno l'app lo scarica da sola, con
-  la barra di avanzamento nella card; sul telefono solo con Wi‑Fi (con i
-  dati mobili si usa il modello Whisper già scaricato, se c'è). L'audio
+Ogni build lo include:
+
+- **Windows**: nell'installatore e nello zip (`app/windows/CMakeLists.txt`
+  lo scarica una volta da Hugging Face durante la build, controlla lo SHA-1
+  e lo copia in `data/whisper/` accanto a uninotes.exe). Funziona subito.
+- **Android, iOS, macOS, Linux**: asset dell'app `assets/whisper/` (in
+  `pubspec.yaml` con `platforms: [android, ios, macos, linux]`, così su
+  Windows non è doppio). Il file non è nel repository (`.gitignore`): prima
+  della build si scarica con `python tool/prepara_modello_whisper.py`
+  (controlla lo SHA-1). Alla prima apertura l'app lo copia nella cartella
+  dei modelli (`whisper/models/`, 4 s dopo l'avvio, in background; la copia
+  si verifica con lo SHA-1 e si rinomina solo a fine scrittura).
+- **Build senza il modello** (script non lanciato, build di Windows senza
+  internet): alla prima registrazione che ne ha bisogno l'app lo scarica
+  da sola, con la barra nella card; sul telefono solo con Wi‑Fi. L'audio
   registrato durante il download si trascrive dopo il salvataggio.
+
+Verifica (19/10/2026, Windows): `whisper_ggml.dll` dell'app carica
+`ggml-base-q5_1.bin` e trascrive un audio di prova in italiano («Buongiorno
+a tutti. Oggi parliamo di integrali e calcoliamo l'integrale da 0 a 1 di x
+al quadrato.») in 3,5 s compreso il caricamento, con il PC occupato da
+altre build.
+
+**Peso sugli store** (il modello si comprime pochissimo): +~55 MB su ogni
+build. Google Play accetta AAB fino a 200 MB di download compresso
+(UniNotes con media_kit, ffmpeg e pdfium resta sotto, ma va controllato
+sull'AAB vero: se si supera, il modello va spostato in un *asset pack*
+install-time di Play Asset Delivery, che richiede una modifica nativa);
+App Store: sopra i 200 MB iOS chiede conferma per scaricare con i dati
+mobili (non è un rifiuto); Microsoft Store e Mac App Store non hanno
+problemi di dimensione.
 - PC con CPU senza AVX2 (prima del 2013): whisper.cpp dell'app non si usa
   (`IsProcessorFeaturePresent`), resta il modello scaricato dall'utente con
   `whisper-cli`.
@@ -269,7 +352,8 @@ poco: 59,7 MB → 54,8 MB) e ~54 MiB a UniNotes-windows.zip (56,7 MB).
 | Se la compressione non riesce | resta il WAV (16 kHz mono, ~115 MB per ora): mai perdere la registrazione |
 | Registrazioni precedenti | `.flac`, `.wav`, `.m4a`: restano leggibili e trascrivibili |
 | Dati della registrazione | `Registrazioni/<nome>.json`: segnalibri, segmenti della trascrizione con inizio e fine, forma d'onda (un valore ogni 0,1 s), durata. Si rinomina, si sincronizza e va nel cestino con l'audio; non compare negli elenchi |
-| Trascrizione | `Trascrizioni/<nome>.md` (Whisper, o il testo dal vivo), lo stesso formato di sempre (un paragrafo ogni ~2 minuti con `[hh:mm:ss]`; l'intestazione dice chi l'ha fatta). I tempi precisi dei segmenti sono nel `.json`; per le trascrizioni senza `.json` il lettore usa i tempi dei paragrafi |
+| Trascrizione | `Trascrizioni/<nome>.md` (Whisper, o il testo dal vivo): un paragrafo ogni ~2 minuti, **senza gli orari delle frasi**; l'intestazione dice chi l'ha fatta e con quale modello («trascritta con Whisper small»). I tempi dei segmenti sono solo nel `.json` (testo sincronizzato nel lettore) |
+| Trascrizioni del vecchio formato (`[hh:mm:ss]` a ogni paragrafo) | aprendo la pagina del corso o la registrazione gli orari si tolgono dal file; se la registrazione non aveva ancora i tempi nel `.json`, prima vengono copiati lì. Anche esportazione PDF, lettura, modifica e i file mandati all'AI li tolgono. Le trascrizioni di Gemini non si toccano |
 | Trascrizione di Gemini | `Trascrizioni/<nome> (Gemini).md`, accanto a quella di Whisper; si rinomina con la lezione |
 
 Compressione (WAV → `.m4a`):
@@ -298,9 +382,16 @@ Card **«Registrazioni delle lezioni»** (la card «Trascrizioni» non c'è più
 - sulla stessa riga **«Trascrivi con Whisper»** e **«Trascrivi con
   Gemini»**: fatta la trascrizione la casella diventa **«Vedi
   trascrizione»**, azzurra per Whisper e viola per Gemini, e apre la
-  registrazione con quella trascrizione («Trascrizione con Whisper» o «con
-  Gemini»). Il testo dal vivo del sistema non occupa la casella di Whisper:
-  si legge nella registrazione e Whisper resta disponibile;
+  registrazione con quella trascrizione («Trascrizione con Whisper · small»
+  o «con Gemini»). Sotto «Trascrivi con Whisper» c'è il modello che si
+  userà (es. «small», «modello integrato»), sotto «Vedi trascrizione» quello
+  con cui è stata fatta («con small»). Il testo dal vivo del sistema non
+  occupa la casella di Whisper: si legge nella registrazione e Whisper
+  resta disponibile;
+- **tenendo premuto** «Trascrivi con Whisper», o dal menu ⋮ («Trascrivi con
+  un altro modello…», «Trascrivi di nuovo con…», anche nel menu del
+  lettore) si sceglie il modello per quella sola trascrizione; rifacendola,
+  quella di prima va in «Eliminati di recente»;
 - se Whisper non riesce non compare una card d'errore: la card della
   registrazione dice «Impossibile trascrivere con Whisper: …» con cosa
   provare (scaricare un modello, un modello più piccolo, Gemini…);
@@ -321,6 +412,42 @@ da solo come trascrizione di Gemini, con «Annulla» nell'avviso. Lo stesso per
 risposta»; le risposte incollate in passato restano elencate e ora si
 possono **eliminare** (cestino) oltre che rinominare.
 
+## Quale modello Whisper si usa
+
+Con più modelli scaricati (Collegamenti → Whisper):
+
+1. il modello scelto per quella trascrizione (pressione lunga o «Trascrivi
+   di nuovo con…»);
+2. altrimenti il **modello predefinito** scelto nel menu «Modello
+   predefinito» di Collegamenti → Whisper;
+3. se è «Automatico» (il valore iniziale; scaricare un modello non lo
+   cambia più), il **più accurato fra quelli scaricati che il dispositivo
+   regge**: ordine di accuratezza in italiano `kWhisperAccuracy` (large-v3,
+   large-v3-turbo, … small, base, modello integrato, tiny) e RAM necessaria
+   al massimo il 60% di quella del PC/Mac o il 40% di quella del telefono
+   (`deviceCanRun`); se nessuno regge, il più accurato comunque;
+4. senza modelli scaricati, o se il programma whisper.cpp manca (Windows
+   senza `whisper-cli`), il **modello integrato**, che gira sempre con
+   whisper.cpp dentro l'app.
+
+Perché così: il predefinito lascia allo studente il controllo; l'automatico
+evita che un modello scaricato per prova (o più vecchio) resti in uso
+quando ne arriva uno migliore, ma senza scegliere un modello che sul
+telefono finirebbe la memoria; l'integrato garantisce che «Trascrivi con
+Whisper» funzioni sempre. Ogni trascrizione salva il modello usato davvero
+(intestazione del `.md` e `trascrizione` nel `.json`, `WhisperResult`).
+
+**Consiglio per il dispositivo**: Collegamenti → Whisper mostra «Consigliato
+per questo dispositivo» accanto al modello da scaricare scelto in base a RAM
+(`/proc/meminfo` su Android e Linux, `GlobalMemoryStatusEx` su Windows,
+`sysctlbyname("hw.memsize")` su macOS e iOS, via FFI, senza pacchetti),
+core (`Platform.numberOfProcessors`), piattaforma e spazio libero
+(`recommendWhisperModel`): sul PC e sul Mac large-v3-turbo q5_0 con almeno
+8 GB e 4 core, small con almeno 4 GB, altrimenti base; sul telefono small
+con almeno 6 GB e 6 core, altrimenti base; se lo spazio non basta (con
+500 MiB di margine) il modello più accurato che ci sta. Tiny non si
+consiglia mai: il modello integrato è già migliore.
+
 ## Riascoltare una registrazione
 
 Tocco su una registrazione nella pagina del corso:
@@ -333,7 +460,8 @@ Tocco su una registrazione nella pagina del corso:
 - **indietro / avanti di 15 e 30 s**, **velocità** 0,5–2×, **Salta
   silenzi** (salta i tratti silenziosi di almeno 1,5 s);
 - **testo sincronizzato**: il segmento in corso è evidenziato e resta in
-  vista, un tocco su un segmento salta a quel punto;
+  vista, un tocco su un segmento salta a quel punto (senza l'orario accanto
+  a ogni frase); le formule `$…$` si vedono disegnate;
 - **segnalibri**: tacche arancioni sulla forma d'onda e pulsanti (tocco → vai
   lì, pressione lunga → nota o rimozione); «Segna» ne aggiunge uno durante
   l'ascolto;

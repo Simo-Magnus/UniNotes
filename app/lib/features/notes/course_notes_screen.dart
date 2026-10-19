@@ -4,6 +4,7 @@ import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 
 import '../../core/services/app_services.dart';
+import '../../core/services/whisper_service.dart' show WhisperModelInfo;
 import '../../models/course.dart';
 import '../../widgets/common.dart';
 import '../../widgets/find_bar.dart';
@@ -30,7 +31,10 @@ import '../../core/constants/text_limits.dart';
 /// registrazione (ascolto e trascrizione), un tocco sul nome la rinomina,
 /// il cestino la elimina; sotto, sulla stessa riga, «Trascrivi con Whisper»
 /// e «Trascrivi con Gemini», che diventano «Vedi trascrizione» (azzurro per
-/// Whisper, viola per Gemini) quando la trascrizione c'è.
+/// Whisper, viola per Gemini) quando la trascrizione c'è. Sotto «Trascrivi
+/// con Whisper» c'è il modello che si userà, sotto «Vedi trascrizione» quello
+/// usato; tenendo premuto (o dal menu ⋮) si sceglie un altro modello o si
+/// trascrive di nuovo.
 class CourseNotesScreen extends StatefulWidget {
   const CourseNotesScreen({super.key, required this.course, this.justSaved});
   final Course course;
@@ -95,11 +99,27 @@ class _CourseNotesScreenState extends State<CourseNotesScreen> {
     if (recs.isNotEmpty) {
       final dir = await s.notes.courseDir(course, NoteFolder.transcripts);
       for (final r in recs) {
-        transcripts[r.name] = await loadLessonTranscripts(dir, r.name);
+        transcripts[r.name] = await loadLessonTranscripts(
+          dir,
+          r.name,
+          audioPath: r.file.path,
+        );
+      }
+    }
+    // trascrizioni del vecchio formato senza registrazione: via gli orari
+    for (final t in files[NoteFolder.transcripts]!) {
+      if (t.extension == '.md') await removeTranscriptTimes(t.file);
+    }
+    WhisperModelInfo? whisperModel;
+    if (recs.isNotEmpty) {
+      try {
+        whisperModel = await s.whisper.resolveModel();
+      } catch (_) {
+        whisperModel = null;
       }
     }
     final q = _searchOpen ? _query.text.trim().toLowerCase() : '';
-    if (q.isEmpty) return _NotesView(files, transcripts, null);
+    if (q.isEmpty) return _NotesView(files, transcripts, null, whisperModel);
     final hits = <String, String?>{};
     for (final list in files.values) {
       for (final f in list) {
@@ -121,7 +141,7 @@ class _CourseNotesScreenState extends State<CourseNotesScreen> {
         }
       }
     }
-    return _NotesView(files, transcripts, hits);
+    return _NotesView(files, transcripts, hits, whisperModel);
   }
 
   static String _snippet(String text, int i, int len) {
@@ -236,6 +256,7 @@ class _CourseNotesScreenState extends State<CourseNotesScreen> {
             query: query,
             snippets: hits,
             highlight: _justSaved,
+            whisperModel: v.whisperModel,
           );
     // Le trascrizioni non hanno più una card: si aprono dalla card della
     // registrazione. Durante la ricerca i risultati nelle trascrizioni
@@ -290,8 +311,11 @@ class _CourseNotesScreenState extends State<CourseNotesScreen> {
 }
 
 class _NotesView {
-  const _NotesView(this.files, this.transcripts, this.hits);
+  const _NotesView(this.files, this.transcripts, this.hits, this.whisperModel);
   final Map<NoteFolder, List<NoteFile>> files;
+
+  /// Modello che userebbe «Trascrivi con Whisper» (null = nessuno).
+  final WhisperModelInfo? whisperModel;
 
   /// Trascrizioni per registrazione (nome della lezione).
   final Map<String, LessonTranscripts> transcripts;
@@ -375,9 +399,11 @@ class _Section extends StatelessWidget {
     this.query,
     this.snippets,
     this.highlight,
+    this.whisperModel,
   });
   final Course course;
   final NoteFolder folder;
+  final WhisperModelInfo? whisperModel;
   final List<NoteFile> files;
   final Map<NoteFolder, List<NoteFile>> all;
   final Map<String, LessonTranscripts> transcripts;
@@ -442,6 +468,7 @@ class _Section extends StatelessWidget {
                         highlighted:
                             highlight != null &&
                             p.equals(highlight!, f.file.path),
+                        whisperModel: whisperModel,
                       )
                     : _tile(context, f),
           ],
@@ -608,6 +635,7 @@ class _RecordingTile extends StatelessWidget {
     required this.summarized,
     required this.query,
     required this.highlighted,
+    this.whisperModel,
   });
 
   final Course course;
@@ -616,6 +644,19 @@ class _RecordingTile extends StatelessWidget {
   final bool summarized;
   final String? query;
   final bool highlighted;
+
+  /// Modello che userebbe «Trascrivi con Whisper».
+  final WhisperModelInfo? whisperModel;
+
+  /// «Trascrivi con…» / «Trascrivi di nuovo con…».
+  Future<void> _chooseModel(BuildContext context) =>
+      chooseWhisperModelAndTranscribe(
+        context,
+        course,
+        file,
+        again: transcripts.whisper != null,
+        current: transcripts.whisperModel,
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -689,18 +730,27 @@ class _RecordingTile extends StatelessWidget {
                       onSelected: (v) => switch (v) {
                         'copia' => saveCopy(context, f),
                         'condividi' => shareNote(context, f),
+                        'whisper' => _chooseModel(context),
                         _ => attachNoteToStudy(context, course, f),
                       },
-                      itemBuilder: (_) => const [
+                      itemBuilder: (_) => [
                         PopupMenuItem(
+                          value: 'whisper',
+                          child: Text(
+                            transcripts.whisper != null
+                                ? 'Trascrivi di nuovo con…'
+                                : 'Trascrivi con un altro modello…',
+                          ),
+                        ),
+                        const PopupMenuItem(
                           value: 'copia',
                           child: Text('Salva una copia…'),
                         ),
-                        PopupMenuItem(
+                        const PopupMenuItem(
                           value: 'condividi',
                           child: Text('Condividi'),
                         ),
-                        PopupMenuItem(
+                        const PopupMenuItem(
                           value: 'studio',
                           child: Text('Allega a modulo/argomento di Studio'),
                         ),
@@ -727,6 +777,16 @@ class _RecordingTile extends StatelessWidget {
                         child: TranscriptButton(
                           kind: k,
                           done: transcripts.of(k) != null,
+                          model: k != TranscriptKind.whisper
+                              ? null
+                              : (transcripts.whisper != null
+                                    ? whisperModelShort(
+                                        transcripts.whisperModel,
+                                      )
+                                    : whisperModelShort(whisperModel?.id)),
+                          onLongPress: k == TranscriptKind.whisper
+                              ? () => _chooseModel(context)
+                              : null,
                           onPressed: () => transcripts.of(k) != null
                               ? openRecording(context, course, f, transcript: k)
                               : (k == TranscriptKind.whisper
@@ -777,17 +837,27 @@ class _RecordingTile extends StatelessWidget {
 
 /// «Trascrivi con Whisper/Gemini» o, se la trascrizione c'è, «Vedi
 /// trascrizione», con il colore di chi la fa (Whisper azzurro, Gemini viola).
+/// Per Whisper la seconda riga dice il modello: quello che si userà o quello
+/// con cui è stata fatta la trascrizione.
 class TranscriptButton extends StatelessWidget {
   const TranscriptButton({
     super.key,
     required this.kind,
     required this.done,
     required this.onPressed,
+    this.model,
+    this.onLongPress,
   });
 
   final TranscriptKind kind;
   final bool done;
   final VoidCallback onPressed;
+
+  /// Modello di Whisper da mostrare (null = nessuno).
+  final String? model;
+
+  /// Pressione lunga: scelta di un altro modello.
+  final VoidCallback? onLongPress;
 
   @override
   Widget build(BuildContext context) {
@@ -796,8 +866,10 @@ class TranscriptButton extends StatelessWidget {
         ? Icons.graphic_eq
         : Icons.auto_awesome_outlined;
     final label = done ? 'Vedi trascrizione' : 'Trascrivi con ${kind.label}';
+    final m = model;
     return OutlinedButton.icon(
       onPressed: onPressed,
+      onLongPress: onLongPress,
       style: OutlinedButton.styleFrom(
         foregroundColor: color,
         backgroundColor: done ? color.withValues(alpha: 0.14) : null,
@@ -811,11 +883,34 @@ class TranscriptButton extends StatelessWidget {
             : MaterialTapTargetSize.shrinkWrap,
       ),
       icon: Icon(done ? Icons.article_outlined : icon, size: 18),
-      label: Text(
-        label,
-        textAlign: TextAlign.center,
-        semanticsLabel: done ? 'Vedi la trascrizione di ${kind.label}' : null,
-      ),
+      label: m == null
+          ? Text(
+              label,
+              textAlign: TextAlign.center,
+              semanticsLabel: done
+                  ? 'Vedi la trascrizione di ${kind.label}'
+                  : null,
+            )
+          : Semantics(
+              label: done
+                  ? 'Vedi la trascrizione di ${kind.label}, fatta con $m'
+                  : '$label, modello $m. Tieni premuto per sceglierne un altro',
+              excludeSemantics: true,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(label, textAlign: TextAlign.center),
+                  Text(
+                    done ? 'con $m' : m,
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.labelSmall
+                        ?.copyWith(color: color.withValues(alpha: 0.85)),
+                  ),
+                ],
+              ),
+            ),
     );
   }
 }

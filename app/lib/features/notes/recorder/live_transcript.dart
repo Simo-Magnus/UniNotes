@@ -198,8 +198,8 @@ class LiveWindowPlanner {
     final avg = prev == null
         ? took
         : Duration(
-            microseconds: (prev.inMicroseconds * 0.7 + took.inMicroseconds * 0.3)
-                .round(),
+            microseconds:
+                (prev.inMicroseconds * 0.7 + took.inMicroseconds * 0.3).round(),
           );
     _avg = avg;
     var s = Duration(microseconds: (avg.inMicroseconds * 1.2).round());

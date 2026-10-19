@@ -220,7 +220,8 @@ class _ChoicePill extends StatelessWidget {
 /// Silenzio del sistema all'avvio di una sessione (Impostazioni → Focus e
 /// Non disturbare). Restituisce se attivarlo, o null se l'avvio è annullato.
 /// Android senza «Accesso a Non disturbare»: spiega a che cosa serve e apre
-/// la pagina del sistema (poi si avvia di nuovo) oppure si parte senza.
+/// la pagina del sistema (tornando con l'accesso si parte) oppure si parte
+/// senza.
 Future<bool?> prepareSystemQuiet(
   BuildContext context,
   FocusService focus,
@@ -239,7 +240,8 @@ Future<bool?> prepareSystemQuiet(
         'le app: passano solo sveglie, chiamate ripetute e chiamate dai '
         'contatti preferiti. Alla fine torna tutto come prima.\n\n'
         'Per attivarlo Android chiede l\'«Accesso a Non disturbare»: si apre '
-        'la pagina del sistema, scegli UniNotes, poi torna qui e avvia. '
+        'la pagina del sistema, scegli UniNotes e torna qui: la sessione '
+        'parte da sola. '
         'Puoi spegnerlo in Impostazioni → Focus e Non disturbare.',
       ),
       actions: [
@@ -256,7 +258,7 @@ Future<bool?> prepareSystemQuiet(
   );
   if (grant == null) return null;
   if (!grant) return false;
-  await focus.system.openDndAccessSettings();
-  // l'utente torna e avvia di nuovo, questa volta con il permesso
-  return null;
+  // si apre la pagina del sistema; tornando con l'accesso la sessione parte
+  // già silenziata, altrimenti si resta qui per scegliere di nuovo
+  return await focus.system.requestDndAccess() ? true : null;
 }

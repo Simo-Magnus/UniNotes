@@ -774,10 +774,11 @@ void main() {
       final md = f.readAsStringSync();
       expect(md, contains('# Trascrizione – Lezione'));
       expect(md, contains('_Fisica · trascrizione dal vivo_'));
-      expect(md, contains('[00:00:00] Buongiorno.'));
-      expect(md, contains('[00:02:10] Seconda parte.'));
-      // e si rilegge con i tempi
-      expect(segmentsFromMarkdown(md).length, 2);
+      // niente orari delle frasi: i tempi restano nel .json
+      expect(md, contains('Buongiorno.'));
+      expect(md, contains('Seconda parte.'));
+      expect(md, isNot(contains('[00:')));
+      expect(segmentsFromMarkdown(md), isEmpty);
       expect(
         await uniqueLessonName(
           Directory(p.dirname(audio))..createSync(recursive: true),

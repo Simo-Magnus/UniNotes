@@ -171,13 +171,35 @@ void main() {
       final services = await tester.runAsync(_seed);
       addTearDown(() => tester.runAsync(() => services!.database.close()));
       await _pumpApp(tester, services!, const DashboardScreen(), size);
-      // «Inizia»: Sessione Studio, Registra lezione, AI di riferimento
+      // «Inizia»: studio di oggi, Sessione Studio, Registra lezione; niente
+      // più AI di riferimento
       expect(find.text('Inizia'), findsOneWidget);
+      expect(find.byKey(const Key('home-today')), findsOneWidget);
       expect(find.byKey(const Key('home-study')), findsOneWidget);
       expect(find.byKey(const Key('home-record')), findsOneWidget);
-      expect(find.text('Apri ChatGPT'), findsOneWidget);
-      // niente «Cambia corso» nella Home (è nelle Impostazioni)
+      expect(find.text('Apri ChatGPT'), findsNothing);
+      expect(find.textContaining('AI di riferimento'), findsNothing);
+      // minuti di oggi dalle sessioni salvate (90 min, obiettivo 1 h)
+      await tester.pumpAndSettle();
+      expect(
+        find.descendant(
+          of: find.byKey(const Key('home-today')),
+          matching: find.text('Oggi 1 h 30 min'),
+        ),
+        findsOneWidget,
+      );
+      expect(find.text('Obiettivo raggiunto (1 h)'), findsOneWidget);
+      expect(find.byKey(const Key('home-goal-edit')), findsOneWidget);
+      // niente «Cambia corso» nella Home (è nelle Impostazioni) né selettore
+      // dell'anno nella barra in alto
       expect(find.text('Cambia corso'), findsNothing);
+      expect(
+        find.descendant(
+          of: find.byType(AppBar),
+          matching: find.byKey(const Key('year-selector')),
+        ),
+        findsNothing,
+      );
       // prossime prove con lo stato semplificato
       expect(find.text('Prossime prove'), findsOneWidget);
       expect(find.text('Prima prova in itinere'), findsOneWidget);
@@ -196,7 +218,8 @@ void main() {
         scrollable: find.byType(Scrollable).first,
       );
       expect(find.text('Ultime registrazioni'), findsOneWidget);
-      expect(find.text('Obiettivo di oggi'), findsOneWidget);
+      // l'obiettivo di oggi è nel riquadro «Inizia», non in una card a parte
+      expect(find.text('Obiettivo di oggi'), findsNothing);
       // niente card dei gruppi degli studenti
       expect(find.text('Gruppi del tuo corso'), findsNothing);
       expect(tester.takeException(), isNull);

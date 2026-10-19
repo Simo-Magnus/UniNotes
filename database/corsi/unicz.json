@@ -31,7 +31,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 5,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -74,7 +74,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 10,
-     "ssd": "AGR/18, MED/49",
+     "ssd": "AGR/18",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -150,7 +150,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 11,
-     "ssd": "BIO/14, CHIM/09",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -276,7 +276,7 @@
      "periodo_inizio": "01/03/2026 00:00:00",
      "periodo_fine": "14/06/2026 00:00:00",
      "cfu": 11,
-     "ssd": "BIO/12, MED/05",
+     "ssd": "BIO/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -935,7 +935,7 @@
      "periodo_inizio": "01/09/2024 00:00:00",
      "periodo_fine": "28/02/2025 00:00:00",
      "cfu": 10,
-     "ssd": "MED/49, AGR/18, MED/50",
+     "ssd": "MED/49",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -986,7 +986,7 @@
      "periodo_inizio": "01/09/2024 00:00:00",
      "periodo_fine": "28/02/2025 00:00:00",
      "cfu": 10,
-     "ssd": "MED/43, MED/42, VET/04",
+     "ssd": "MED/43",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -1174,7 +1174,7 @@
      "periodo_inizio": "01/09/2024 00:00:00",
      "periodo_fine": "28/02/2025 00:00:00",
      "cfu": 8,
-     "ssd": "CHIM/09, BIO/14",
+     "ssd": "CHIM/09",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -1363,7 +1363,7 @@
      "periodo_inizio": "01/03/2025 00:00:00",
      "periodo_fine": "31/08/2025 00:00:00",
      "cfu": 10,
-     "ssd": "BIO/12, MED/05, CHIM/06, MED/36",
+     "ssd": "BIO/12",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -1415,7 +1415,7 @@
      "periodo_inizio": "01/03/2025 00:00:00",
      "periodo_fine": "31/08/2025 00:00:00",
      "cfu": 11,
-     "ssd": "MED/04, MED/03",
+     "ssd": "MED/04",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -2006,7 +2006,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "MED/09, MED/13, MED/49",
+     "ssd": "MED/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -2085,7 +2085,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/12, MED/49, MED/38",
+     "ssd": "MED/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -2111,7 +2111,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/14, MED/12, MED/49",
+     "ssd": "MED/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -2137,7 +2137,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "M-PED/01, MED/49, MED/42",
+     "ssd": "M-PED/01",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -2164,7 +2164,7 @@
      "periodo_inizio": "01/04/2027 00:00:00",
      "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/06, MED/49, MED/41, MED/18",
+     "ssd": "MED/06",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -2214,7 +2214,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 5,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -2236,7 +2236,7 @@
      "periodo_inizio": "01/10/2024 00:00:00",
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 7,
-     "ssd": "MED/17, MED/49, MED/42",
+     "ssd": "MED/17",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -2303,7 +2303,7 @@
      "periodo_inizio": "01/10/2024 00:00:00",
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
-     "ssd": "MED/38, MED/49, M-PSI/01, MED/12",
+     "ssd": "MED/38",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -2365,7 +2365,7 @@
      "periodo_inizio": "01/04/2023 00:00:00",
      "periodo_fine": "30/09/2023 00:00:00",
      "cfu": 8,
-     "ssd": "L-LIN/02, ING-INF/05",
+     "ssd": "L-LIN/02",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -2405,7 +2405,7 @@
      "periodo_inizio": "01/04/2027 00:00:00",
      "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 6,
-     "ssd": "BIO/14, MED/18, MED/27, MED/33, MED/41",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -2673,7 +2673,7 @@
      "periodo_inizio": "01/10/2024 00:00:00",
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
-     "ssd": "MED/12, MED/49, MED/38",
+     "ssd": "MED/12",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -2726,7 +2726,7 @@
      "periodo_inizio": "01/10/2024 00:00:00",
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
-     "ssd": "MED/14, MED/12, MED/49",
+     "ssd": "MED/14",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -2792,7 +2792,7 @@
      "periodo_inizio": "01/10/2024 00:00:00",
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
-     "ssd": "M-PED/01, MED/49, MED/42",
+     "ssd": "M-PED/01",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -3095,7 +3095,7 @@
      "periodo_inizio": "01/04/2025 00:00:00",
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
-     "ssd": "MED/09, MED/13, MED/49",
+     "ssd": "MED/09",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -3172,7 +3172,7 @@
      "periodo_inizio": "01/04/2025 00:00:00",
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
-     "ssd": "MED/06, MED/49, MED/41, MED/18",
+     "ssd": "MED/06",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -5165,7 +5165,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 3,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -5408,7 +5408,7 @@
      "periodo_inizio": "01/10/2024 00:00:00",
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 15,
-     "ssd": "SECS-P/11, SECS-P/09",
+     "ssd": "SECS-P/11",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -9962,7 +9962,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/34, MED/33, MED/48",
+     "ssd": "MED/34",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -10001,7 +10001,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "ING-INF/05, MED/34, MED/48",
+     "ssd": "ING-INF/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -10053,7 +10053,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/34, MED/26, MED/48",
+     "ssd": "MED/34",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -10110,7 +10110,7 @@
      "periodo_inizio": "01/04/2025 00:00:00",
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
-     "ssd": "MED/33, MED/09, MED/34, MED/48",
+     "ssd": "MED/33",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -10150,7 +10150,7 @@
      "periodo_inizio": "01/04/2027 00:00:00",
      "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/26, MED/34, MED/48, MED/50",
+     "ssd": "MED/26",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -10297,7 +10297,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 5,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -10385,7 +10385,7 @@
      "periodo_inizio": "01/10/2024 00:00:00",
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
-     "ssd": "MED/10, MED/11, MED/26, MED/24, MED/48",
+     "ssd": "MED/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -10428,7 +10428,7 @@
      "periodo_inizio": "01/10/2024 00:00:00",
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
-     "ssd": "MED/25, MED/24, MED/27, MED/26",
+     "ssd": "MED/25",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -10517,7 +10517,7 @@
      "periodo_inizio": "01/04/2025 00:00:00",
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 8,
-     "ssd": "L-LIN/02, ING-INF/05",
+     "ssd": "L-LIN/02",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -10567,7 +10567,7 @@
      "periodo_inizio": "01/04/2025 00:00:00",
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
-     "ssd": "BIO/14, MED/18, MED/27, MED/33, MED/41",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -10737,7 +10737,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
-     "ssd": "BIO/10, BIO/16",
+     "ssd": "BIO/10",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -10775,7 +10775,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
-     "ssd": "MED/34, MED/48, FIS/07",
+     "ssd": "MED/34",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -10827,7 +10827,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
-     "ssd": "MED/36, MED/43, MED/42, MED/07, MED/17",
+     "ssd": "MED/36",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -10892,7 +10892,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
-     "ssd": "FIS/07, MED/01, INF/01",
+     "ssd": "FIS/07",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -11032,7 +11032,7 @@
      "periodo_inizio": "01/04/2026 00:00:00",
      "periodo_fine": "30/09/2026 00:00:00",
      "cfu": 7,
-     "ssd": "MED/04, MED/05, MED/08, BIO/09",
+     "ssd": "MED/04",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -11146,7 +11146,7 @@
      "periodo_inizio": "01/04/2026 00:00:00",
      "periodo_fine": "30/09/2026 00:00:00",
      "cfu": 6,
-     "ssd": "MED/09, MED/18, MED/13, MED/26, BIO/14",
+     "ssd": "MED/09",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -11200,7 +11200,7 @@
      "periodo_inizio": "01/04/2026 00:00:00",
      "periodo_fine": "30/09/2026 00:00:00",
      "cfu": 8,
-     "ssd": "M-PSI/01, IUS/07, SECS-P/07, MED/42, M-PED/01, SPS/07",
+     "ssd": "M-PSI/01",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -12166,7 +12166,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 8,
-     "ssd": "MED/12, MED/35, MED/06, MED/49, MED/14, MED/10, MED/11",
+     "ssd": "MED/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -12245,7 +12245,7 @@
      "periodo_inizio": "01/04/2027 00:00:00",
      "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 7,
-     "ssd": "MED/42, MED/45",
+     "ssd": "MED/42",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -12499,7 +12499,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 5,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -12521,7 +12521,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/45, MED/18, MED/19, MED/09",
+     "ssd": "MED/45",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -12553,7 +12553,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/23, MED/40, MED/33, MED/45",
+     "ssd": "MED/23",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -12681,7 +12681,7 @@
      "periodo_inizio": "01/04/2027 00:00:00",
      "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 8,
-     "ssd": "L-LIN/02, ING-INF/05",
+     "ssd": "L-LIN/02",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -12733,7 +12733,7 @@
      "periodo_inizio": "01/04/2027 00:00:00",
      "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 6,
-     "ssd": "BIO/14, MED/18, MED/27, MED/41, MED/09",
+     "ssd": "BIO/14",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -13097,7 +13097,7 @@
      "periodo_inizio": "01/10/2024 00:00:00",
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 8,
-     "ssd": "MED/12, MED/06, MED/49, MED/14, MED/10, MED/11, MED/35",
+     "ssd": "MED/12",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -13434,7 +13434,7 @@
      "periodo_inizio": "01/04/2025 00:00:00",
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 7,
-     "ssd": "MED/45, MED/42",
+     "ssd": "MED/45",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -15113,7 +15113,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 3,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -15475,7 +15475,7 @@
      "periodo_inizio": "01/10/2024 00:00:00",
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 6,
-     "ssd": "MED/04, MED/09",
+     "ssd": "MED/04",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -16572,7 +16572,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -22660,7 +22660,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "MED/47, MED/42",
+     "ssd": "MED/47",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -22750,7 +22750,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "MED/47, MED/38",
+     "ssd": "MED/47",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -22807,7 +22807,7 @@
      "periodo_inizio": "01/04/2027 00:00:00",
      "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/47, MED/40",
+     "ssd": "MED/47",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -22856,7 +22856,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "MED/47, MED/40",
+     "ssd": "MED/47",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -22900,7 +22900,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 5,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -22966,7 +22966,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/47, MED/40",
+     "ssd": "MED/47",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -22990,7 +22990,7 @@
      "periodo_inizio": "01/04/2027 00:00:00",
      "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 8,
-     "ssd": "L-LIN/02, ING-INF/05",
+     "ssd": "L-LIN/02",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -23015,7 +23015,7 @@
      "periodo_inizio": "01/04/2027 00:00:00",
      "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/38, MED/40, MED/25, MED/41",
+     "ssd": "MED/38",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -23043,7 +23043,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
-     "ssd": "BIO/13, BIO/10, BIO/16",
+     "ssd": "BIO/13",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -23142,7 +23142,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
-     "ssd": "FIS/07, MED/01, INF/01",
+     "ssd": "FIS/07",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -23229,7 +23229,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
-     "ssd": "MED/47, MED/45",
+     "ssd": "MED/47",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -23304,7 +23304,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
-     "ssd": "MED/36, MED/43, MED/42, MED/07, MED/17",
+     "ssd": "MED/36",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -23356,7 +23356,7 @@
      "periodo_inizio": "01/04/2026 00:00:00",
      "periodo_fine": "30/09/2026 00:00:00",
      "cfu": 7,
-     "ssd": "BIO/09, MED/03, MED/04, MED/05, MED/08",
+     "ssd": "BIO/09",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -23385,7 +23385,7 @@
      "periodo_inizio": "01/04/2026 00:00:00",
      "periodo_fine": "30/09/2026 00:00:00",
      "cfu": 6,
-     "ssd": "MED/09, MED/18, MED/35, BIO/14",
+     "ssd": "MED/09",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -23413,7 +23413,7 @@
      "periodo_inizio": "01/04/2026 00:00:00",
      "periodo_fine": "30/09/2026 00:00:00",
      "cfu": 8,
-     "ssd": "M-PSI/01, IUS/07, SECS-P/07, MED/42, M-PED/01, SPS/07",
+     "ssd": "M-PSI/01",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -26446,18 +26446,6 @@
        "tipo": null,
        "note": "Dalla scheda ufficiale dell'insegnamento, a.a. 2026/27 (https://sfn.unicz.it/insegnamento/71/4946)",
        "citazione": "I. Bertini, F. Mani, C. Luchinat - P.W. Atkins, L. Jones - – quinta edizione – Zanichelli."
-      },
-      {
-       "titolo": "I. Bertini, F. Mani, C. Luchinat -",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dalla scheda ufficiale dell'insegnamento, a.a. 2026/27 (https://sfn.unicz.it/insegnamento/71/4946)",
-       "citazione": "I. Bertini, F. Mani, C. Luchinat -"
       }
      ],
      "esami": [],
@@ -27659,7 +27647,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 5,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -27702,7 +27690,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 12,
-     "ssd": "MED/49, AGR/18",
+     "ssd": "MED/49",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -27895,7 +27883,7 @@
      "periodo_inizio": "01/03/2027 00:00:00",
      "periodo_fine": "17/06/2027 00:00:00",
      "cfu": 12,
-     "ssd": "SECS-P/10, AGR/19",
+     "ssd": "SECS-P/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -28009,7 +27997,7 @@
      "periodo_inizio": "01/09/2024 00:00:00",
      "periodo_fine": "28/02/2025 00:00:00",
      "cfu": 12,
-     "ssd": "VET/06, VET/08",
+     "ssd": "VET/06",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -28197,7 +28185,7 @@
      "periodo_inizio": "01/03/2025 00:00:00",
      "periodo_fine": "31/08/2025 00:00:00",
      "cfu": 12,
-     "ssd": "VET/08, VET/06",
+     "ssd": "VET/08",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -28843,7 +28831,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 3,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -28913,7 +28901,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 11,
-     "ssd": "IUS/09, IUS/10, IUS/14, SECS-P/07, IUS/01",
+     "ssd": "IUS/09",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -28964,7 +28952,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 12,
-     "ssd": "MED/13, MED/26, MED/09, MED/33, MED/34, BIO/14",
+     "ssd": "MED/13",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -29586,7 +29574,7 @@
      "periodo_inizio": "01/10/2024 00:00:00",
      "periodo_fine": "31/03/2025 00:00:00",
      "cfu": 8,
-     "ssd": "M-PSI/01, M-PSI/02, M-PSI/05, M-PED/01",
+     "ssd": "M-PSI/01",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -29807,7 +29795,7 @@
      "periodo_inizio": "01/04/2025 00:00:00",
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 11,
-     "ssd": "M-EDF/01, M-EDF/02, L-ART/05",
+     "ssd": "M-EDF/01",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -29833,7 +29821,7 @@
      "periodo_inizio": "01/04/2025 00:00:00",
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 4,
-     "ssd": "MED/42, MED/01",
+     "ssd": "MED/42",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -30576,7 +30564,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 8,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -34608,7 +34596,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "MED/42, MED/50, VET/04",
+     "ssd": "MED/42",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -34737,7 +34725,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "CHIM/10, MED/42, MED/50, AGR/18",
+     "ssd": "CHIM/10",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -34785,7 +34773,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "CHIM/08, ING-IND/09, ING-IND/11",
+     "ssd": "CHIM/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -34835,7 +34823,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/42, MED/44",
+     "ssd": "MED/42",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -34990,7 +34978,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 6,
-     "ssd": "MED/08, MED/46",
+     "ssd": "MED/08",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -35067,7 +35055,7 @@
      "anno": 2,
      "periodo": "2",
      "cfu": 6,
-     "ssd": "MED/05, MED/46, BIO/12",
+     "ssd": "MED/05",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -35649,7 +35637,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/36, MED/50",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -35689,7 +35677,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/36, MED/50",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -35729,7 +35717,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/36, MED/50",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -35770,7 +35758,7 @@
      "periodo_inizio": "01/04/2027 00:00:00",
      "periodo_fine": "30/09/2027 00:00:00",
      "cfu": 6,
-     "ssd": "MED/37, MED/50",
+     "ssd": "MED/37",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -35811,7 +35799,7 @@
      "periodo_inizio": "01/04/2025 00:00:00",
      "periodo_fine": "30/09/2025 00:00:00",
      "cfu": 6,
-     "ssd": "MED/36, MED/50",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -35929,7 +35917,7 @@
      "periodo_inizio": null,
      "periodo_fine": null,
      "cfu": 5,
-     "ssd": "PROFIN_S",
+     "ssd": null,
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [],
@@ -36021,7 +36009,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
-     "ssd": "MED/36, MED/50",
+     "ssd": "MED/36",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -36071,7 +36059,7 @@
      "periodo_inizio": "01/10/2026 00:00:00",
      "periodo_fine": "31/03/2027 00:00:00",
      "cfu": 6,
-     "ssd": "FIS/07, MED/36, MED/50",
+     "ssd": "FIS/07",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -36122,7 +36110,7 @@
      "periodo_inizio": "01/04/2026 00:00:00",
      "periodo_fine": "30/09/2026 00:00:00",
      "cfu": 8,
-     "ssd": "L-LIN/12, ING-INF/05",
+     "ssd": "L-LIN/12",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -36160,7 +36148,7 @@
      "periodo_inizio": "01/04/2026 00:00:00",
      "periodo_fine": "30/09/2026 00:00:00",
      "cfu": 6,
-     "ssd": "MED/33, MED/41, MED/21",
+     "ssd": "MED/33",
      "obbligatorio": true,
      "curriculum": null,
      "docenti": [
@@ -36366,7 +36354,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
-     "ssd": "FIS/07, MED/50, MED/36",
+     "ssd": "FIS/07",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -36440,7 +36428,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
-     "ssd": "MED/07, BIO/14, MED/36, MED/43, MED/42",
+     "ssd": "MED/07",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -36493,7 +36481,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 7,
-     "ssd": "BIO/16, BIO/10",
+     "ssd": "BIO/16",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -36556,7 +36544,7 @@
      "periodo_inizio": "01/10/2025 00:00:00",
      "periodo_fine": "31/03/2026 00:00:00",
      "cfu": 6,
-     "ssd": "MED/01, INF/01, FIS/07",
+     "ssd": "MED/01",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -36668,7 +36656,7 @@
      "periodo_inizio": "01/04/2024 00:00:00",
      "periodo_fine": "30/09/2026 00:00:00",
      "cfu": 7,
-     "ssd": "BIO/09, BIO/16, MED/08, MED/04",
+     "ssd": "BIO/09",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -36720,7 +36708,7 @@
      "periodo_inizio": "01/04/2024 00:00:00",
      "periodo_fine": "30/09/2026 00:00:00",
      "cfu": 6,
-     "ssd": "MED/09, MED/26, BIO/14, MED/18",
+     "ssd": "MED/09",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
@@ -36773,7 +36761,7 @@
      "periodo_inizio": "01/04/2024 00:00:00",
      "periodo_fine": "30/09/2026 00:00:00",
      "cfu": 7,
-     "ssd": "IUS/07, SECS-P/07, M-PED/01, SPS/07, M-PSI/01",
+     "ssd": "IUS/07",
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [

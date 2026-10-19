@@ -4,15 +4,18 @@ import 'dart:ffi';
 import 'dart:io';
 
 import 'package:archive/archive_io.dart';
+import 'package:flutter/services.dart' show ByteData, rootBundle;
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
+import '../../features/links/whisper_device.dart';
 import '../../features/links/whisper_models.dart';
 import '../../repositories/settings_repository.dart';
 import 'audio_codec.dart';
 import 'file_downloader.dart';
 import 'whisper_plugin_engine.dart';
 
+export '../../features/links/whisper_device.dart';
 export '../../features/links/whisper_models.dart';
 export 'file_downloader.dart' show CancelToken, DownloadCancelled;
 
@@ -82,6 +85,14 @@ class WhisperSegment {
   final String text;
 }
 
+/// Trascrizione finita: segmenti e modello usato davvero (può essere il
+/// modello integrato se quello scelto non si poteva usare).
+class WhisperResult {
+  const WhisperResult(this.segments, this.model);
+  final List<WhisperSegment> segments;
+  final WhisperModelInfo model;
+}
+
 /// Whisper pronto per la trascrizione dal vivo: pezzi brevi (WAV mono
 /// 16 kHz) uno alla volta, con il modello tenuto in memoria quando si può.
 /// Lavora fuori dal thread dell'interfaccia (processo `whisper-cli` o
@@ -128,12 +139,17 @@ class WhisperService {
     this._livePlugin,
     Directory? Function()? bundledModels,
     this._cpuSupportsPlugin,
+    Future<ByteData> Function(String key)? assetLoader,
+    this._builtInAsset,
+    this._deviceProbe,
   }) : _bundledModels = bundledModels ?? _defaultBundledModels,
+       _assetLoader = assetLoader ?? rootBundle.load,
        _baseDir = baseDir ?? getApplicationSupportDirectory,
        _downloader = FileDownloader(
          httpClientFactory: httpClientFactory,
          freeSpace: freeSpace,
        ),
+       _freeSpace = freeSpace ?? FileDownloader.defaultFreeSpace,
        binariesUrl = binariesUrl ?? defaultBinariesUrl,
        ffmpegUrl = ffmpegUrl ?? defaultFfmpegUrl,
        _modelUrl = modelUrl ?? ((m) => m.downloadUrl),
@@ -142,6 +158,7 @@ class WhisperService {
        _macCandidates = macCliCandidates ?? defaultMacCliCandidates;
 
   final SettingsRepository? _settings;
+  final Future<int?> Function(Directory dir) _freeSpace;
   final Future<Directory> Function() _baseDir;
   final FileDownloader _downloader;
   final Uri binariesUrl;
@@ -169,6 +186,11 @@ class WhisperService {
   /// accanto a uninotes.exe, dall'installatore), null se non c'è.
   final Directory? Function() _bundledModels;
   final bool Function()? _cpuSupportsPlugin;
+
+  /// Lettura dell'asset del modello integrato (sostituibile nei test).
+  final Future<ByteData> Function(String key) _assetLoader;
+  final bool? _builtInAsset;
+  final Future<DeviceProfile> Function()? _deviceProbe;
 
   static Directory? _defaultBundledModels() {
     if (!Platform.isWindows) return null;
@@ -471,47 +493,106 @@ class WhisperService {
 
   // ------------------------------------------------------------ modello
 
-  Future<String?> selectedModelId() async =>
-      (await _settings?.get(SettingKeys.whisperModel))?.trim();
+  /// Modello predefinito scelto in Collegamenti → Whisper (null =
+  /// automatico: il più accurato fra quelli scaricati che il dispositivo
+  /// regge).
+  Future<String?> selectedModelId() async {
+    final v = (await _settings?.get(SettingKeys.whisperModel))?.trim();
+    return v == null || v.isEmpty ? null : v;
+  }
 
   Future<void> setSelectedModel(String? id) async =>
       _settings?.set(SettingKeys.whisperModel, id);
 
-  /// Ordine di preferenza fra i modelli scaricati (adatti all'italiano).
-  static const _preference = [
-    'large-v3-turbo-q5_0',
-    'large-v3-turbo',
-    'large-v3-turbo-q8_0',
-    'large-v3',
-    'large-v3-q5_0',
-    'large-v2',
-    'large-v2-q8_0',
-    'large-v2-q5_0',
-    'medium',
-    'medium-q8_0',
-    'medium-q5_0',
-    'large-v1',
-    'small',
-    'base',
-    'tiny',
-  ];
+  Future<DeviceProfile>? _device;
 
-  /// Modello da usare: [requested], poi quello scelto, poi il migliore
-  /// scaricato.
+  /// RAM, core e piattaforma (letti una volta; veloce, senza processi).
+  Future<DeviceProfile> deviceProfile() => _device ??= () async {
+    final probe = _deviceProbe;
+    if (probe != null) return probe();
+    return probeDevice(platform);
+  }();
+
+  /// Modello da scaricare consigliato per questo dispositivo (RAM, core,
+  /// piattaforma e spazio libero nella cartella dei modelli).
+  Future<WhisperRecommendation> recommendation() async {
+    final d = await deviceProfile();
+    int? free = d.freeBytes;
+    if (free == null) {
+      try {
+        free = await _freeSpace(await _dir('models'));
+      } catch (_) {
+        free = null;
+      }
+    }
+    return recommendWhisperModel(
+      DeviceProfile(
+        platform: d.platform,
+        ramBytes: d.ramBytes,
+        cores: d.cores,
+        freeBytes: free,
+      ),
+    );
+  }
+
+  /// Modello da usare fra quelli di [installed] (id, anche quello
+  /// integrato):
+  /// 1. [requested] (scelto per questa trascrizione);
+  /// 2. il modello predefinito delle impostazioni;
+  /// 3. il più accurato che il dispositivo regge ([deviceCanRun]);
+  /// 4. il più accurato in assoluto (RAM sconosciuta o tutti troppo
+  ///    pesanti: meglio provare che non trascrivere).
   Future<WhisperModelInfo?> pickModel(
     Set<String> installed, {
     String? requested,
+    DeviceProfile? device,
   }) async {
     for (final id in [requested, await selectedModelId()]) {
       if (id != null && installed.contains(id)) return whisperModelById(id);
     }
-    final phoneFirst = isPhone
-        ? [kRecommendedPhoneModel, kLightPhoneModel, ..._preference]
-        : _preference;
-    for (final id in phoneFirst) {
-      if (installed.contains(id)) return whisperModelById(id);
+    final known = [
+      for (final id in installed)
+        if (whisperModelById(id) case final m? when m.italianOk) m,
+    ]..sort(_byAccuracy);
+    if (known.isEmpty) {
+      return installed.isEmpty ? null : whisperModelById(installed.first);
     }
-    return installed.isEmpty ? null : whisperModelById(installed.first);
+    var d = device;
+    if (d == null) {
+      try {
+        d = await deviceProfile();
+      } catch (_) {
+        d = null;
+      }
+    }
+    if (d != null) {
+      for (final m in known) {
+        if (deviceCanRun(m, d)) return m;
+      }
+    }
+    return known.first;
+  }
+
+  static int _byAccuracy(WhisperModelInfo a, WhisperModelInfo b) =>
+      whisperAccuracyRank(a.id).compareTo(whisperAccuracyRank(b.id));
+
+  /// Modelli con cui si può trascrivere adesso: quelli scaricati (se il
+  /// motore c'è) e il modello integrato, dal più accurato.
+  Future<List<WhisperModelInfo>> availableModels({WhisperStatus? known}) async {
+    final st = known ?? await status();
+    final builtIn = await builtInModelFile() != null;
+    return [
+      if (st.engineReady)
+        for (final id in st.models) ?whisperModelById(id),
+      if (builtIn) kBuiltInWhisperModel,
+    ]..sort(_byAccuracy);
+  }
+
+  /// Il modello che userebbe «Trascrivi con Whisper» ([requested] se c'è,
+  /// altrimenti la scelta automatica); null se non si può trascrivere.
+  Future<WhisperModelInfo?> resolveModel({String? requested}) async {
+    final ids = {for (final m in await availableModels()) m.id};
+    return pickModel(ids, requested: requested);
   }
 
   // ------------------------------------------------------- dal vivo
@@ -571,19 +652,67 @@ class WhisperService {
     }
   }();
 
-  /// Il modello dal vivo: incluso nell'app (Windows) o già scaricato; null
-  /// se manca.
-  Future<File?> liveModelFile() async {
+  /// Percorso dell'asset con il modello integrato (Android, iOS, macOS,
+  /// Linux; su Windows è in `data/whisper/`).
+  static const builtInAssetKey = 'assets/whisper/ggml-base-q5_1.bin';
+
+  /// L'app ha il modello integrato come asset (vedi `pubspec.yaml`: tutte le
+  /// piattaforme tranne Windows, che lo installa accanto all'eseguibile).
+  bool get _hasBuiltInAsset => _builtInAsset ?? host != WhisperHost.windows;
+
+  Future<File?>? _copying;
+  bool _assetMissing = false;
+
+  /// Il modello integrato: accanto all'eseguibile (Windows), già copiato o
+  /// scaricato nella cartella dei modelli, oppure copiato adesso dall'asset
+  /// dell'app (la prima volta). null se questa build non lo include e non
+  /// è ancora stato scaricato.
+  Future<File?> builtInModelFile() async {
     final bundled = _bundledModels();
     if (bundled != null) {
-      final f = File(p.join(bundled.path, kLiveWhisperModel.fileName));
+      final f = File(p.join(bundled.path, kBuiltInWhisperModel.fileName));
       try {
         if (await f.exists()) return f;
       } catch (_) {}
     }
-    final f = await modelFile(kLiveWhisperModel);
-    return await f.exists() ? f : null;
+    final f = await modelFile(kBuiltInWhisperModel);
+    if (await f.exists()) return f;
+    if (!_hasBuiltInAsset || _assetMissing) return null;
+    return _copying ??= _copyBuiltIn(f).whenComplete(() => _copying = null);
   }
+
+  /// Copia l'asset del modello integrato in [target] (file temporaneo poi
+  /// rinominato: un'interruzione non lascia un modello a metà).
+  Future<File?> _copyBuiltIn(File target) async {
+    final tmp = File('${target.path}.copia');
+    try {
+      final data = await _assetLoader(builtInAssetKey);
+      await tmp.writeAsBytes(
+        data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes),
+        flush: true,
+      );
+      final sha = kBuiltInWhisperModel.sha1;
+      if (sha != null && await FileDownloader.sha1Of(tmp) != sha) {
+        await tmp.delete();
+        _assetMissing = true;
+        return null;
+      }
+      if (await target.exists()) await target.delete();
+      await tmp.rename(target.path);
+      return target;
+    } catch (_) {
+      // build senza il modello (asset assente): si scarica quando serve
+      _assetMissing = true;
+      try {
+        if (await tmp.exists()) await tmp.delete();
+      } catch (_) {}
+      return null;
+    }
+  }
+
+  /// Il modello dal vivo (= il modello integrato); null se manca.
+  Future<File?> liveModelFile() async =>
+      liveModelSupported ? builtInModelFile() : null;
 
   /// Scarica il modello dal vivo (57 MiB, una volta sola; riprende un
   /// download interrotto).
@@ -621,10 +750,30 @@ class WhisperService {
     String? model,
     void Function(WhisperProgress)? onProgress,
     CancelToken? cancel,
+  }) async => (await transcribeWith(
+    audio,
+    model: model,
+    onProgress: onProgress,
+    cancel: cancel,
+  )).segments;
+
+  /// Trascrive [audio] con [model] (null = scelta automatica, vedi
+  /// [pickModel]). Se nessun modello scaricato si può usare (nessun
+  /// download, programma whisper.cpp mancante) si usa il modello integrato.
+  Future<WhisperResult> transcribeWith(
+    File audio, {
+    String? model,
+    void Function(WhisperProgress)? onProgress,
+    CancelToken? cancel,
   }) async {
     final st = await status();
-    final m = await pickModel(st.models, requested: model);
-    if (!st.engineReady || m == null) {
+    final builtIn = liveModelSupported ? await builtInModelFile() : null;
+    final usable = {
+      if (st.engineReady) ...st.models,
+      if (builtIn != null) kBuiltInWhisperModel.id,
+    };
+    final m = await pickModel(usable, requested: model);
+    if (m == null) {
       throw WhisperException(
         'Whisper non è pronto: scarica un modello da Collegamenti → '
         'Trascrizione → Whisper.',
@@ -633,22 +782,28 @@ class WhisperService {
     if (!await audio.exists()) {
       throw WhisperException('File audio non trovato: ${audio.path}');
     }
-    final modelPath = await modelFile(m);
-    if (st.engine == WhisperEngineKind.plugin) {
-      return _pluginEngine.transcribe(
-        audio,
-        modelPath,
-        onProgress: onProgress,
-        cancel: cancel,
-      );
-    }
-    return _transcribeCli(
-      st.cli!,
-      modelPath,
-      audio,
-      onProgress: onProgress,
-      cancel: cancel,
-    );
+    // il modello integrato gira sempre con whisper.cpp dentro l'app
+    final usesPlugin =
+        st.engine == WhisperEngineKind.plugin ||
+        m.id == kBuiltInWhisperModel.id;
+    final modelPath = m.id == kBuiltInWhisperModel.id
+        ? builtIn!
+        : await modelFile(m);
+    final segs = usesPlugin
+        ? await _pluginEngine.transcribe(
+            audio,
+            modelPath,
+            onProgress: onProgress,
+            cancel: cancel,
+          )
+        : await _transcribeCli(
+            st.cli!,
+            modelPath,
+            audio,
+            onProgress: onProgress,
+            cancel: cancel,
+          );
+    return WhisperResult(segs, m);
   }
 
   Future<List<WhisperSegment>> _transcribeCli(
@@ -826,25 +981,22 @@ class WhisperService {
   }
 }
 
-/// Trascrizione in Markdown: un paragrafo ogni ~2 minuti con [hh:mm:ss].
+/// Trascrizione in Markdown: un paragrafo ogni ~2 minuti, **senza gli
+/// orari** delle frasi (i tempi precisi dei segmenti restano nel `.json`
+/// accanto alla registrazione, per il testo sincronizzato con l'audio).
 String segmentsToMarkdown(
   List<WhisperSegment> segments, {
   required String title,
   String? subtitle,
   Duration every = const Duration(minutes: 2),
 }) {
-  String ts(Duration d) {
-    String two(int v) => v.toString().padLeft(2, '0');
-    return '[${two(d.inHours)}:${two(d.inMinutes % 60)}:${two(d.inSeconds % 60)}]';
-  }
-
   final b = StringBuffer('# $title\n\n');
   if (subtitle != null) b.write('_${subtitle}_\n\n');
   Duration? paraStart;
   final para = <String>[];
   void flush() {
     if (para.isEmpty) return;
-    b.write('${ts(paraStart!)} ${para.join(' ')}\n\n');
+    b.write('${para.join(' ')}\n\n');
     para.clear();
   }
 

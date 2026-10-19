@@ -348,11 +348,15 @@ void main() {
         isTrue,
       );
       expect(systemQuietOn(FocusSystemKind.none, DndChoice.always), isFalse);
-      // comando di iOS/macOS: spazi come %20, ora di fine come testo
+      // comando di iOS/macOS: spazi come %20, ora di fine come testo, esito
+      // di ritorno a UniNotes (x-callback-url)
       expect(
         appleShortcutUri(DateTime(2026, 10, 14, 18, 5)).toString(),
-        'shortcuts://run-shortcut?name=UniNotes%20Focus&input=text'
-        '&text=2026-10-14%2018%3A05',
+        'shortcuts://x-callback-url/run-shortcut?name=UniNotes%20Focus'
+        '&input=text&text=2026-10-14%2018%3A05'
+        '&x-success=uninotes%3A%2F%2Ffocus%2Fok'
+        '&x-cancel=uninotes%3A%2F%2Ffocus%2Fannullato'
+        '&x-error=uninotes%3A%2F%2Ffocus%2Ferrore',
       );
       expect(showFocusPill(active: true, screenVisible: false), isTrue);
       expect(showFocusPill(active: true, screenVisible: true), isFalse);

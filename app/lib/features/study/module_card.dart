@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show ViewportOffset;
 import 'package:provider/provider.dart';
 
 import '../../core/feedback/feedback_service.dart';
@@ -12,6 +13,7 @@ import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
 import '../../widgets/math_text.dart';
 import 'attachments.dart';
+import 'reorder_lift.dart';
 import 'study_ai.dart';
 import 'study_sessions_tab.dart' show openStudySession;
 import 'study_widgets.dart';
@@ -19,13 +21,15 @@ import 'topic_dialog.dart';
 import 'topic_logic.dart';
 import 'topic_tile.dart';
 
-enum _ModuleAction { focus, ai, delete, note }
+enum _ModuleAction { focus, ai, deleteTopics, delete, note }
 
 /// Modulo con il suo avanzamento e la lista degli argomenti.
 ///
-/// Si sposta tenendo premuta l'intestazione e trascinando ([dragIndex] =
-/// posizione nella lista dei moduli); gli argomenti si spostano allo
-/// stesso modo, tenendo premuta la loro riga.
+/// Gli argomenti si spostano tenendo premuta la loro riga e trascinando: la
+/// riga si solleva, le altre scorrono per farle posto e, vicino ai bordi
+/// dello schermo, la pagina scorre da sola (più veloce quanto più si va
+/// oltre il bordo). Tenendo premuto il nome del modulo si apre l'ordine dei
+/// moduli ([onArrange]).
 class ModuleCard extends StatefulWidget {
   const ModuleCard({
     super.key,
@@ -34,7 +38,7 @@ class ModuleCard extends StatefulWidget {
     required this.topics,
     required this.color,
     this.attachments = const [],
-    this.dragIndex,
+    this.onArrange,
   });
 
   final Course course;
@@ -45,8 +49,8 @@ class ModuleCard extends StatefulWidget {
   /// Allegati del modulo e dei suoi argomenti.
   final List<Attachment> attachments;
 
-  /// Posizione nella lista riordinabile dei moduli (null = non si sposta).
-  final int? dragIndex;
+  /// Apre l'ordine dei moduli (tenendo premuto il nome del modulo).
+  final VoidCallback? onArrange;
 
   @override
   State<ModuleCard> createState() => _ModuleCardState();
@@ -56,6 +60,17 @@ class _ModuleCardState extends State<ModuleCard> {
   /// Ordine mostrato degli argomenti: cambia subito al rilascio, poi si
   /// salva.
   late List<Topic> _topics = widget.topics;
+
+  /// Gli argomenti stanno in un viewport senza scorrimento proprio: così la
+  /// lista riordinabile usa lo scorrimento della pagina e la fa scorrere da
+  /// sola quando si trascina un argomento vicino ai bordi.
+  final ViewportOffset _fixed = ViewportOffset.zero();
+
+  @override
+  void dispose() {
+    _fixed.dispose();
+    super.dispose();
+  }
 
   StudyModule get module => widget.module;
   Course get course => widget.course;
@@ -96,6 +111,30 @@ class _ModuleCardState extends State<ModuleCard> {
     await _write((s) async {
       await removeStoredAttachments(s, moduleId: module.id);
       await s.study.deleteModule(module.id!);
+    });
+  }
+
+  /// Elimina tutti gli argomenti del modulo (e i loro file); il modulo resta.
+  Future<void> _deleteTopics() async {
+    final topics = [..._topics];
+    if (topics.isEmpty) return;
+    final ok = await confirmDialog(
+      context,
+      'Eliminare tutti gli argomenti?',
+      topics.length == 1
+          ? 'L\'argomento di "${module.name}" verrà eliminato con i suoi '
+                'allegati. Il modulo resta; le sessioni di studio collegate '
+                'restano, senza argomento.'
+          : 'I ${topics.length} argomenti di "${module.name}" verranno '
+                'eliminati con i loro allegati. Il modulo resta; le sessioni '
+                'di studio collegate restano, senza argomento.',
+    );
+    if (!ok || !mounted) return;
+    await _write((s) async {
+      for (final t in topics) {
+        await removeStoredAttachments(s, topicId: t.id);
+        await s.study.deleteTopic(t.id!);
+      }
     });
   }
 
@@ -160,17 +199,28 @@ class _ModuleCardState extends State<ModuleCard> {
       for (final a in widget.attachments)
         if (a.moduleId == module.id && a.topicId == null) a,
     ];
-    Widget header = Padding(
+    final header = Padding(
       padding: const EdgeInsets.fromLTRB(16, 8, 4, 0),
       child: Row(
         children: [
           Expanded(
             child: InkWell(
+              key: ValueKey('module-name-${module.id}'),
               borderRadius: BorderRadius.circular(8),
               onTap: _note,
+              // tieni premuto il nome: ordine dei moduli al centro
+              onLongPress: widget.onArrange == null
+                  ? null
+                  : () {
+                      AppFeedback.of(context).tap();
+                      widget.onArrange!();
+                    },
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 6),
-                child: MathText(module.name, style: theme.textTheme.titleMedium),
+                child: MathText(
+                  module.name,
+                  style: theme.textTheme.titleMedium,
+                ),
               ),
             ),
           ),
@@ -184,11 +234,6 @@ class _ModuleCardState extends State<ModuleCard> {
         ],
       ),
     );
-    final index = widget.dragIndex;
-    if (index != null) {
-      // tieni premuto il titolo del modulo e trascina per spostarlo
-      header = ReorderableDelayedDragStartListener(index: index, child: header);
-    }
     return GlassCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -214,53 +259,57 @@ class _ModuleCardState extends State<ModuleCard> {
               child: AttachmentList(course: course, attachments: own),
             ),
           const SizedBox(height: 4),
-          ReorderableListView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            buildDefaultDragHandles: false,
-            itemCount: topics.length,
-            onReorderItem: _reorder,
-            proxyDecorator: reorderProxy,
-            itemBuilder: (context, i) {
-              final t = topics[i];
-              return ReorderableDelayedDragStartListener(
-                key: ValueKey('topic-${t.id}'),
-                index: i,
-                child: TopicTile(
-                  topic: t,
-                  attachments: [
-                    for (final a in widget.attachments)
-                      if (a.topicId == t.id) a,
-                  ],
-                  course: course,
-                  onAddFile: () => attachTo(
-                    context,
-                    course,
-                    topicId: t.id,
-                    targetName: t.name,
-                  ),
-                  onAskAi: () =>
-                      askAiStudy(context, course, module: module, topic: t),
-                  onChanged: (next) {
-                    // argomento appena completato: conferma con suono e
-                    // vibrazione; gli altri cambi vibrano appena
-                    final before = t.status.progressWeight >= 1;
-                    final after = next.status.progressWeight >= 1;
-                    final fb = AppFeedback.of(context);
-                    after && !before ? fb.complete() : fb.toggle();
-                    _write((s) => s.study.updateTopic(next));
-                  },
-                  onNote: () => _topicNote(t),
-                  onDelete: () => _deleteTopic(t),
-                  onFocus: () => openStudySession(
-                    context,
-                    courseId: course.id!,
-                    moduleId: module.id,
-                    topicId: t.id,
-                  ),
-                ),
-              );
-            },
+          ShrinkWrappingViewport(
+            offset: _fixed,
+            slivers: [
+              SliverReorderableList(
+                autoScrollerVelocityScalar: kReorderAutoScrollVelocity,
+                itemCount: topics.length,
+                onReorderStart: (_) => AppFeedback.of(context).tap(),
+                onReorderItem: _reorder,
+                proxyDecorator: liftProxy,
+                itemBuilder: (context, i) {
+                  final t = topics[i];
+                  return ReorderableDelayedDragStartListener(
+                    key: ValueKey('topic-${t.id}'),
+                    index: i,
+                    child: TopicTile(
+                      topic: t,
+                      attachments: [
+                        for (final a in widget.attachments)
+                          if (a.topicId == t.id) a,
+                      ],
+                      course: course,
+                      onAddFile: () => attachTo(
+                        context,
+                        course,
+                        topicId: t.id,
+                        targetName: t.name,
+                      ),
+                      onAskAi: () =>
+                          askAiStudy(context, course, module: module, topic: t),
+                      onChanged: (next) {
+                        // argomento appena completato: conferma con suono e
+                        // vibrazione; gli altri cambi vibrano appena
+                        final before = t.status.progressWeight >= 1;
+                        final after = next.status.progressWeight >= 1;
+                        final fb = AppFeedback.of(context);
+                        after && !before ? fb.complete() : fb.toggle();
+                        _write((s) => s.study.updateTopic(next));
+                      },
+                      onNote: () => _topicNote(t),
+                      onDelete: () => _deleteTopic(t),
+                      onFocus: () => openStudySession(
+                        context,
+                        courseId: course.id!,
+                        moduleId: module.id,
+                        topicId: t.id,
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
           Align(
             alignment: Alignment.centerLeft,
@@ -287,11 +336,12 @@ class _ModuleCardState extends State<ModuleCard> {
         moduleId: module.id,
       ),
       _ModuleAction.ai => askAiStudy(context, course, module: module),
+      _ModuleAction.deleteTopics => _deleteTopics(),
       _ModuleAction.delete => _delete(),
       _ModuleAction.note => _note(),
     },
-    itemBuilder: (_) => const [
-      PopupMenuItem(
+    itemBuilder: (_) => [
+      const PopupMenuItem(
         value: _ModuleAction.focus,
         child: ListTile(
           dense: true,
@@ -299,7 +349,7 @@ class _ModuleCardState extends State<ModuleCard> {
           title: Text('Sessione focus sul modulo'),
         ),
       ),
-      PopupMenuItem(
+      const PopupMenuItem(
         value: _ModuleAction.ai,
         child: ListTile(
           dense: true,
@@ -307,7 +357,16 @@ class _ModuleCardState extends State<ModuleCard> {
           title: Text('Revisiona con AI'),
         ),
       ),
-      PopupMenuItem(
+      if (_topics.isNotEmpty)
+        const PopupMenuItem(
+          value: _ModuleAction.deleteTopics,
+          child: ListTile(
+            dense: true,
+            leading: Icon(Icons.playlist_remove_rounded),
+            title: Text('Elimina tutti gli argomenti'),
+          ),
+        ),
+      const PopupMenuItem(
         value: _ModuleAction.delete,
         child: ListTile(
           dense: true,
@@ -315,7 +374,7 @@ class _ModuleCardState extends State<ModuleCard> {
           title: Text('Elimina modulo'),
         ),
       ),
-      PopupMenuItem(
+      const PopupMenuItem(
         value: _ModuleAction.note,
         child: ListTile(
           dense: true,
@@ -326,17 +385,3 @@ class _ModuleCardState extends State<ModuleCard> {
     ],
   );
 }
-
-/// Aspetto dell'elemento trascinato: sollevato, con gli angoli della card.
-Widget reorderProxy(Widget child, int index, Animation<double> animation) =>
-    AnimatedBuilder(
-      animation: animation,
-      builder: (context, child) => Material(
-        elevation: 6 * Curves.easeOut.transform(animation.value),
-        borderRadius: BorderRadius.circular(16),
-        color: Theme.of(context).colorScheme.surfaceContainerHigh,
-        clipBehavior: Clip.antiAlias,
-        child: child,
-      ),
-      child: child,
-    );

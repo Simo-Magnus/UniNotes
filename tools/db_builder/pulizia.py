@@ -524,6 +524,8 @@ def pulisci_corsi(corsi: list[dict], oggi: dt.date | None = None) -> None:
                     continue  # copia del piano part-time
                 i["anno"] = None
             i["periodo"] = periodo(i.get("periodo"), i.get("periodo_inizio"), i.get("periodo_fine"))
+            if "ssd" in i:
+                i["ssd"] = ssd(i["ssd"])
             if "docenti" in i:
                 i["docenti"] = docenti(i["docenti"])
             if "libri" in i:
@@ -1214,3 +1216,35 @@ def durata_per_tipo(corsi: list[dict]) -> int:
         c["durata_anni"] = giusta
         n += 1
     return n
+
+# Settori scientifico-disciplinari: vecchia sigla (MAT/05, ING-INF/05, L-FIL-LET/11) e nuova
+# (MATH-03/A, DM 639/2024). Le fonti li scrivono in molti modi («IINF-05/A ING-INF/05»,
+# «7 cfu - ING-INF/05 (IINF-05/A)», «-- --»): una forma sola, «VECCHIA (NUOVA)», separati da «; ».
+SSD_VECCHIO = re.compile(r"\b[A-Z]{1,4}(?:-[A-Z]{1,5}){0,2}/\d{2}\b")
+SSD_NUOVO = re.compile(r"\b[A-Z]{3,5}-\d{2}/[A-Z]\b")
+
+
+def ssd(s: str | None) -> str | None:
+    if not s or not isinstance(s, str):
+        return s or None
+    t = s.strip()
+    if t.upper() == "NN":
+        return "NN"
+    parti = []
+    for pezzo in re.split(r"\s*;\s*", t):
+        pezzo = re.sub(r"(?i)^\s*\d+(?:[.,]\d+)?\s*cfu\s*-\s*", "", pezzo)
+        nuovi = SSD_NUOVO.findall(pezzo)
+        vecchi = [v for v in SSD_VECCHIO.findall(pezzo) if v not in nuovi and not any(v in n for n in nuovi)]
+        if not vecchi and not nuovi:
+            continue
+        if vecchi and nuovi:
+            parti.append(f"{vecchi[0]} ({nuovi[0]})")
+        else:
+            parti.append((vecchi or nuovi)[0])
+    out = []
+    for x in parti:
+        if x not in out:
+            out.append(x)
+    if not out:
+        return "NN" if re.search(r"\bNN\b", t) else None
+    return "; ".join(out)

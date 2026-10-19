@@ -59,6 +59,19 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<!-- Collegamenti uninotes:// (AppDelegate.openAppURL): tocchi sui widget
+	     e ritorno da Comandi dopo il comando «UniNotes Focus». -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>io.github.simomagnus.universitynotes</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>uninotes</string>
+			</array>
+		</dict>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCalendarsFullAccessUsageDescription</key>
