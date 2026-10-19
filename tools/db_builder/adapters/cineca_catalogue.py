@@ -162,7 +162,8 @@ def _percorsi_sede(percorsi: list[dict], cur: dict) -> list[dict]:
 
 def fetch_ateneo(uid: str, base: str, anno: int, durata_max: int = 6, max_cds: int | None = None,
                  syllabus: bool = True, log=print, client: Client | None = None,
-                 coorte_per_nome: bool = False, libri_extra=None) -> dict:
+                 coorte_per_nome: bool = False, libri_extra=None, obbligatorio_gruppo=None,
+                 id_corso=None) -> dict:
     """Restituisce un contributo nel formato di database/contrib (vedi build_db.py).
 
     `coorte_per_nome` (UniPD): se il corso non c'è con lo stesso codice in una coorte
@@ -170,7 +171,10 @@ def fetch_ateneo(uid: str, base: str, anno: int, durata_max: int = 6, max_cds: i
     poi per nome e tipo (un solo corso per più sedi, con un percorso per sede: si prende il
     percorso della sede); la durata, assente nell'elenco minimale, si legge dal piano.
     Altrimenti per gli anni successivi al 1° si userebbe il piano futuro della coorte attuale.
-    `libri_extra(syllabus)`: se l'estrazione comune non trova libri, quella propria dell'ateneo."""
+    `libri_extra(syllabus)`: se l'estrazione comune non trova libri, quella propria dell'ateneo.
+    `obbligatorio_gruppo(gruppo)`: se restituisce True le attività del gruppo (non «Obbligatori») sono
+    obbligatorie (per esempio un blocco con una sola attività e i CFU richiesti uguali ai suoi).
+    `id_corso(corso)`: id del corso del database a cui associare il piano (più sedi con lo stesso nome)."""
     c = client or Client(base)
     coorti: dict[int, dict[str, dict]] = {}
     for y in range(anno - durata_max + 1, anno + 1):
@@ -241,7 +245,8 @@ def fetch_ateneo(uid: str, base: str, anno: int, durata_max: int = 6, max_cds: i
                                                        if a.get("attivita") else [])
                     for g in gruppi:
                         gruppo = (g.get("label_it") or "").lower()
-                        obbl = "obbligator" in gruppo or g.get("cod") == "OO"
+                        obbl = "obbligator" in gruppo or g.get("cod") == "OO" or bool(
+                            obbligatorio_gruppo and obbligatorio_gruppo(g))
                         for att in g.get("attivita") or []:
                             ad = att.get("adCod") or att.get("cod")
                             key = f"{anno_item}:{ad}"
@@ -280,6 +285,7 @@ def fetch_ateneo(uid: str, base: str, anno: int, durata_max: int = 6, max_cds: i
             if percorsi_nomi and ps and ps != percorsi_nomi:
                 i["curriculum"] = ", ".join(sorted(ps))
         return {
+            **({"id": id_corso(cur)} if id_corso and id_corso(cur) else {}),
             "nome": _titolo(cur.get("des_it") or ""),
             "classe": _classe(cur.get("classe_cod") or classe_dettaglio),
             "tipo_catalogo": cur.get("tipo_corso_cod"), "durata_anni": durata,

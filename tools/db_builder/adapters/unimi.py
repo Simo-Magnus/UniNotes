@@ -123,6 +123,40 @@ def _righe(corpo: str, anno: int | None, curriculum: str | None, coorte: str) ->
     return out
 
 
+NOME_SCELTA = "Attività a scelta dello studente"  # + " (N° anno)": il nome diverso per anno evita che build_db le fonda in una sola
+ORDINALI = {"primo": 1, "secondo": 2, "terzo": 3, "quarto": 4, "quinto": 5, "sesto": 6}
+_ORD = "(primo|secondo|terzo|quarto|quinto|sesto)"
+REGOLE_SCELTA = (
+    # «Lo studente, al primo anno, deve altresì maturare 2 CFU in attività formative a scelta»
+    # (anche «al termine del sesto anno»)
+    re.compile(rf"(?i)\bal(?:\s+termine\s+del)?\s+{_ORD}\s+anno,?\s+deve\s+altresì\s+maturare\s+"
+               r"(\d+)\s+CFU\s+in\s+attività\s+formative\s+a\s+scelta"),
+    # «Nel secondo anno di corso lo studente deve acquisire 6 CFU scegliendo liberamente tra tutte le attività…»
+    re.compile(rf"(?i)\bnel\s+{_ORD}\s+anno(?:\s+di\s+corso)?,?\s+lo\s+studente\s+deve\s+acquisire\s+"
+               r"(\d+)\s+CFU\s+scegliendo\s+liberamente"),
+)
+
+
+def _regole_scelta(corpo: str, anno: int | None, curriculum: str | None, coorte: str) -> list[dict]:
+    """«Regole di composizione» dell'anno: una regola che dice quanti CFU a scelta libera si fanno in
+    quell'anno («Lo studente, al primo anno, deve altresì maturare 2 CFU in attività formative a
+    scelta») → una riga «Attività a scelta dello studente (1° anno)» con i CFU della regola,
+    non obbligatoria. Si usa solo se l'anno della regola è quello della scheda."""
+    out = []
+    for blocco in re.findall(r'class="ugov-of-pd-year-rules-\d+">(.*?)</div>\s*</div>', corpo, re.S):
+        testo = _testo(blocco)
+        for rx in REGOLE_SCELTA:
+            m = rx.search(testo)
+            if m and ORDINALI[m.group(1).lower()] == anno:
+                out.append({
+                    "nome": f"{NOME_SCELTA} ({anno}° anno)", "anno": anno,
+                    "periodo": None, "cfu": int(m.group(2)), "ssd": None, "lingua": None, "obbligatorio": False,
+                    "url": None, "curriculum": curriculum, "coorte": coorte,
+                })
+                break
+    return out
+
+
 def leggi_piano(s: str, anche_futuri: bool = False) -> list[dict]:
     """Righe degli anni offerti nell'a.a. corrente (schede senza nota), di tutti i blocchi.
 
@@ -130,6 +164,12 @@ def leggi_piano(s: str, anche_futuri: bool = False) -> list[dict]:
     lauree magistrali con regole di scelta ("Anno di corso a scelta dello studente") no: tutto
     il pannello del curriculum è una scheda senza anno. Con `anche_futuri` si tengono anche gli
     anni con la nota «sarà attivato dall'A.A. …» (piano della coorte non ancora attivo)."""
+    return [x for x in leggi_piano_stati(s) if x["stato"] == "attivo" or (anche_futuri and x["stato"] == "futuro")]
+
+
+def leggi_piano_stati(s: str) -> list[dict]:
+    """Come `leggi_piano`, ma di ogni riga dice se l'anno è `attivo` (nessuna nota), `futuro` («sarà
+    attivato dall'A.A. …») o `passato` («annualità non più attiva»)."""
     out = []
     for coorte, blocco in _blocchi(s):
         # curricula: pannelli "curr-…" con il titolo del curriculum ("Piano didattico" = nessuno)
@@ -140,17 +180,37 @@ def leggi_piano(s: str, anche_futuri: bool = False) -> list[dict]:
             etichette = dict(re.findall(r'<a data-toggle="tab" href="#([^"]+)"><div>\s*(.*?)\s*</div>', pannello, re.S))
             schede = re.split(r'<div id="(ugov-of-pd-year-af-[^"]+)" class="tab-pane[^"]*">', pannello)
             if len(schede) == 1:
-                out += [dict(x, senza_anni=True) for x in _righe(pannello.split("</a>", 1)[-1], None, curriculum,
-                                                                coorte)]
+                out += [dict(x, senza_anni=True, stato="attivo", da=None)
+                        for x in _righe(pannello.split("</a>", 1)[-1], None, curriculum, coorte)]
                 continue
             for tab_id, corpo in zip(schede[1::2], schede[2::2]):
                 nota = re.search(r'class="noteanno"[^>]*>(.*?)<', corpo, re.S)
-                if nota and not (anche_futuri and re.search(r"(?i)sar[àa] attivat|will be activated",
-                                                            html.unescape(nota.group(1)))):
-                    continue
+                stato, da = "attivo", None
+                if nota:
+                    testo_nota = html.unescape(nota.group(1))
+                    stato = "futuro" if re.search(r"(?i)sar[àa] attivat|will be activated", testo_nota) else "passato"
+                    da = int(m_da.group(1)) if (m_da := re.search(r"(\d{4})", testo_nota)) else None
                 m = re.search(r"(\d)", _testo(etichette.get(tab_id, "")))
                 anno = int(m.group(1)) if m else None
-                out += _righe(corpo, anno, curriculum, coorte)
+                righe = _righe(corpo, anno, curriculum, coorte)
+                if anno is not None:
+                    righe += _regole_scelta(corpo, anno, curriculum, coorte)
+                out += [dict(x, stato=stato, da=da) for x in righe]
+    return out
+
+
+def con_futuri_mancanti(piano: list[dict]) -> list[dict]:
+    """Righe degli anni attivi; per gli anni che nessuna coorte offre ancora (nuovo corso o nuovo
+    ordinamento: «sarà attivato dall'A.A. …») il piano pubblicato per la coorte che li attiverà
+    per prima (tutti i curricula di quella coorte)."""
+    attivi = [x for x in piano if x["stato"] == "attivo"]
+    coperti = {x["anno"] for x in attivi if x["anno"] is not None and not x["nome"].startswith(NOME_SCELTA)}
+    out = list(attivi)
+    for anno in sorted({x["anno"] for x in piano if x["stato"] == "futuro" and x["anno"] is not None} - coperti):
+        futuri = [x for x in piano if x["stato"] == "futuro" and x["anno"] == anno]
+        prima = min(x["da"] or 9999 for x in futuri)
+        coorte = next(x["coorte"] for x in futuri if (x["da"] or 9999) == prima)
+        out += [x for x in futuri if x["coorte"] == coorte]
     return out
 
 
@@ -236,7 +296,7 @@ def fetch_ateneo(uid: str = "unimi", anno: int | None = None, max_cds: int | Non
             r = None
         fonte = r.url if r else None
         if r:
-            piano = leggi_piano(r.text)
+            piano = con_futuri_mancanti(leggi_piano_stati(r.text))
         else:
             piano, fonte = piano_da_manifesto(c, sito)
             if not piano:

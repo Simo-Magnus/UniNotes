@@ -28,6 +28,7 @@ import json
 import pathlib
 import re
 import sys
+import time
 
 from percorso_classico import scegli as percorso_classico
 
@@ -42,7 +43,16 @@ def _scrivi(path: pathlib.Path, data) -> bytes:
     testo = (json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n").encode("utf-8")
     if not path.exists() or path.read_bytes() != testo:
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(testo)
+        # su Windows un file appena letto da un altro processo (antivirus, indicizzazione,
+        # git) può rifiutare per un attimo la scrittura (OSError 22/13): si riprova
+        for prova in range(5):
+            try:
+                path.write_bytes(testo)
+                break
+            except OSError:
+                if prova == 4:
+                    raise
+                time.sleep(0.5 * (prova + 1))
     return testo
 
 

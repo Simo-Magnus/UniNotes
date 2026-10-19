@@ -160,6 +160,18 @@ def _periodo(cod: str, legenda: dict[str, tuple[str, str]]) -> str | None:
     return cod
 
 
+def _colonne_da_classi(attrs: list[str]) -> dict:
+    """Tabelle senza <th>: celle `code`, `title`, poi `info` (periodo, tipo), `ssd` e `info` (CFU).
+    I CFU sono l'ultima cella `info` dopo il titolo; periodo e tipo le prime due (se ce ne sono tre)."""
+    info = [k for k, a in enumerate(attrs) if "info" in a and k >= 2]
+    ssd = next((k for k, a in enumerate(attrs) if "ssd" in a), None)
+    if len(info) >= 3:
+        return {"periodo": info[0], "tipo": info[1], "ssd": ssd, "cfu": info[-1]}
+    if len(info) == 2:
+        return {"periodo": info[0], "tipo": None, "ssd": ssd, "cfu": info[-1]}
+    return {"periodo": None, "tipo": None, "ssd": ssd, "cfu": info[-1] if info else None}
+
+
 def leggi_piano(s: str, anno_corso: int) -> list[dict]:
     """Righe del piano per l'anno di corso indicato."""
     legenda = _periodi(s)
@@ -174,6 +186,7 @@ def leggi_piano(s: str, anno_corso: int) -> list[dict]:
             gruppo = _testo(gruppi[i - 1]) if i else ""
             obbl = bool(re.search(r"(?i)obbligatori|mandatory|compulsory", gruppo))
             padre = None
+            inizio = len(out)
             for tabella in re.findall(r"<table[^>]*>(.*?)</table>", gruppi[i], re.S):
                 # colonne: codice, nome e poi (non sempre tutte) periodo, tipo, ssd, cfu
                 intest = [(_testo(re.sub(r'<span class="legend">.*', "", h, flags=re.S)).split() or [""])[0].lower()
@@ -182,11 +195,36 @@ def leggi_piano(s: str, anno_corso: int) -> list[dict]:
                 col = {"periodo": col.get("periodo", col.get("period")), "tipo": col.get("tipo", col.get("type")),
                        "ssd": col.get("ssd"), "cfu": col.get("cfu", col.get("credits"))}
                 for tr_attr, tr in re.findall(r"<tr([^>]*)>(.*?)</tr>", tabella, re.S):
-                    celle = [c[1] for c in re.findall(r"<td( [^>]*)?>(.*?)</td>", tr, re.S)]
+                    td = re.findall(r"<td( [^>]*)?>(.*?)</td>", tr, re.S)
+                    celle = [c[1] for c in td]
                     if len(celle) < 2:
                         continue
-                    padre = _riga(celle, col, tr_attr, obbl, legenda, padre, out)
+                    col_riga = col
+                    if not intest:  # tabella senza intestazione (sottotabelle sotto un <h6>): colonne dalle classi
+                        col_riga = _colonne_da_classi([_testo(c[0]) for c in td])
+                    padre = _riga(celle, col_riga, tr_attr, obbl, legenda, padre, out)
+            if not obbl and _gruppo_tutto_richiesto(gruppo, out[inizio:]):
+                for x in out[inizio:]:
+                    x["obbligatorio"] = True
     return out
+
+
+SCELTA = re.compile(r"(?i)scelt|scegl|\btra\b|opzional|elective|optional|choos|chosen|among|between|alternativ|"
+                    r"libera|\bfree\b|oppure|facoltativ|\bor\b|\bgruppo\b|\bgroup\b|percorso|curriculum|track|"
+                    r"affini|integrativ|crash|anticip|raccomandat|consigliat|\bmax")
+
+
+def _gruppo_tutto_richiesto(titolo: str, righe: list[dict]) -> bool:
+    """Gruppo del piano che non si chiama "obbligatorie" ma in cui lo studente deve sostenere tutte le righe
+    (per esempio le "Discipline pedagogiche e metodologico-didattiche" di Scienze dell'educazione): nel titolo
+    nessuna parola di scelta e, se il titolo dà i CFU, sono almeno quelli di tutte le righe."""
+    if not righe or SCELTA.search(titolo):
+        return False
+    cfu = [x["cfu"] for x in righe if isinstance(x["cfu"], (int, float))]
+    if len(cfu) != len(righe):
+        return False
+    m = re.search(r"\(\s*(?:\w+\s+)?(\d+(?:[.,]\d+)?)\s*(?:[-–]\s*\d+\s*)?(?:CFU|credits|ECTS)", titolo, re.I)
+    return not m or float(m.group(1).replace(",", ".")) >= sum(cfu)
 
 
 NON_ATTIVO = re.compile(r"(?i)non attiv[oa]|not active|not available for the year|non disponibile per l")
@@ -491,6 +529,34 @@ def _sito(url: str) -> str | None:
     return f"https://corsi.unibo.it/{m.group(1)}" if m else None
 
 
+def _riusa_schede(uid: str, corsi: list[dict], log=print) -> set[int]:
+    """Con UN_RIUSA_SCHEDE=1: docenti, libri e scheda degli insegnamenti già presenti nell'ultimo
+    contributo (database/contrib/auto/<uid>.json, stesso corso, anno e codice) si riprendono da lì
+    invece di riscaricare le schede; si leggono solo le schede degli insegnamenti nuovi.
+    Restituisce gli `id()` delle righe riusate."""
+    f = ROOT / "database" / "contrib" / "auto" / f"{uid}.json"
+    try:
+        prec = json.loads(f.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return set()
+    vecchi = {}
+    for c in prec.get("corsi") or []:
+        for i in c.get("insegnamenti") or []:
+            if i.get("docenti") or i.get("libri") or i.get("stato_libri"):
+                vecchi.setdefault((c["id"], i["anno"], i.get("codice") or i["nome"], i.get("modulo_di")), i)
+    riusati: set[int] = set()
+    for c in corsi:
+        for i in c["insegnamenti"]:
+            o = vecchi.get((c["id"], i["anno"], i.get("codice") or i["nome"], i.get("modulo_di")))
+            if o:
+                for k in ("docenti", "libri", "url", "stato_libri"):
+                    if k in o:
+                        i[k] = o[k]
+                riusati.add(id(i))
+    log(f"[{uid}] schede riprese dal contributo precedente: {len(riusati)}")
+    return riusati
+
+
 def fetch_ateneo(uid: str = "unibo", anno: int | None = None, max_cds: int | None = None, syllabus: bool = True,
                  corsi: list[dict] | None = None, log=print) -> dict:
     """Restituisce un contributo nel formato di database/contrib (vedi build_db.py)."""
@@ -532,14 +598,10 @@ def fetch_ateneo(uid: str = "unibo", anno: int | None = None, max_cds: int | Non
         durata = corso.get("durata_anni") or 3
         righe: dict[str, dict] = {}
         curricula: set[str] = set()
-        for url, cod, cur, coorte, curr in piani:
-            reale = 2000 + coorte % 100 if coorte > 2100 else coorte  # 9026 = percorso speciale della coorte 2026
-            k = anno - reale + 1
-            if not 1 <= k <= durata:
-                continue
+        def aggiungi(url: str, curr: str | None, k: int) -> None:
             r = c.get(url)
             if not r:
-                continue
+                return
             if curr:
                 curricula.add(curr)
             for x in leggi_piano(r.text, k):
@@ -555,6 +617,28 @@ def fetch_ateneo(uid: str = "unibo", anno: int | None = None, max_cds: int | Non
                     }
                 item["obbligatorio"] = item["obbligatorio"] or x["obbligatorio"]
                 item["_curr"].add(curr)
+
+        def coorte_reale(coorte: int) -> int:
+            return 2000 + coorte % 100 if coorte > 2100 else coorte  # 9026 = percorso speciale della coorte 2026
+
+        for url, cod, cur, coorte, curr in piani:
+            k = anno - coorte_reale(coorte) + 1
+            if 1 <= k <= durata:
+                aggiungi(url, curr, k)
+        # Anni di corso senza coorte attiva nell'a.a. (corso nuovo, ordinamento cambiato, coorti più vecchie non
+        # più in elenco): la pagina del piano di una coorte più recente elenca tutti gli anni del corso, e per
+        # quell'anno si legge il piano della coorte disponibile più vicina (la più vecchia tra quelle più recenti).
+        presenti = {i["anno"] for i in righe.values()}
+        for k in range(1, durata + 1):
+            if k in presenti:
+                continue
+            candidati = [p for p in piani if coorte_reale(p[3]) > anno - k + 1]
+            if not candidati:
+                continue
+            minima = min(coorte_reale(p[3]) for p in candidati)
+            for url, cod, cur, coorte, curr in candidati:
+                if coorte_reale(coorte) == minima:
+                    aggiungi(url, curr, k)
         tutti = set().union(*(i["_curr"] for i in righe.values())) if righe else set()
         for i in righe.values():
             cs = i.pop("_curr")
@@ -579,10 +663,11 @@ def fetch_ateneo(uid: str = "unibo", anno: int | None = None, max_cds: int | Non
 
     with cf.ThreadPoolExecutor(4) as ex:
         out = [r for r in ex.map(build_safe, corsi) if r]
+    riusati = _riusa_schede(uid, out, log) if os.environ.get("UN_RIUSA_SCHEDE") else set()
     jobs: dict[str, list[dict]] = {}
     for corso in out:
         for i in corso["insegnamenti"]:
-            if i.get("url"):
+            if i.get("url") and id(i) not in riusati:
                 jobs.setdefault(i["url"], []).append(i)
     log(f"[{uid}] piani letti: {len(out)} corsi, {sum(len(x['insegnamenti']) for x in out)} insegnamenti; "
         f"schede da leggere: {len(jobs) if syllabus else 0}")

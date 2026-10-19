@@ -97,6 +97,9 @@ CATALOGO_IN_SITI.add("unica")
 APPELLI["unica"] = unica.fetch_appelli  # bacheca Esse3 per corso di studio (codici riassegnati per nome) e per dipartimento
 from adapters import unicusano_appelli  # noqa: E402
 APPELLI["unicusano"] = unicusano_appelli.fetch_appelli  # pagina «Date Appelli» (sophia.unicusano.it), appelli orali per corso
+from adapters import unito  # noqa: E402
+SITI["unito"] = unito.fetch_ateneo  # catalogo Cineca: durata dal piano, coorti per nome, piano di ogni sede nel suo corso, blocchi obbligatori
+CATALOGO_IN_SITI.add("unito")
 # Integrazioni: dati che il catalogo non ha (es. i libri di UniTO dalle pagine Campusnet),
 # letti a partire dagli insegnamenti già nel database e uniti dopo il catalogo
 INTEGRAZIONI = {"unito": unito_campusnet.fetch_ateneo}
