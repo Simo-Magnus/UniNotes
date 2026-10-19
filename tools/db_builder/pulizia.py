@@ -33,7 +33,8 @@ ANNUALE = re.compile(r"(?i)^(ciclo annuale( unico)?|annualit[àa]( singola)?( (i
                      r"1 e 2 semestre|primo e secondo semestre)$")
 SENZA_PERIODO = re.compile(r"(?i)^(undefined|non definito|--+|-|n\.?d\.?|periodo fittizio.*|periodo non specificat\w*)$")
 MOJIBAKE = re.compile(r"Ã.|â€|Â")
-PLACEHOLDER = re.compile(r"(?i)(fittizi[oa]|to be defined|codocenza|non definit[oa]|da definire|da nominare|da assegnare|tbd|tba|n\.?\s?d\.?)\b|"
+PLACEHOLDER = re.compile(r"(?i)(fittizi[oa]|to be defined|codocenza|non definit[oa]|da definire|da nominare|da assegnare|"
+                         r"da inserire|non assegnat[oa]|provvisori[oa]|tbd|tba|n\.?\s?d\.?)\b|"
                          r"^docente\b(?!\s+[A-Z][a-z])|^docente\s+(csal|vacante|esterno)$")
 CODA_DOCENTE = re.compile(r"\s*(?:Scroll to top\b.*|Class(?:e/i| group/s)\b.*|PAGEREF\b.*|\(\s*codocenza\s*\).*)$",
                           re.I | re.S)
@@ -47,7 +48,8 @@ EDITORE_O_ANNO = re.compile(r"\b(1[5-9]\d\d|20[0-4]\d)\b|(?i:\b(?:editore|edizio
 # doppie codifiche rimaste dopo che il nome è stato messo in maiuscolo/minuscolo (il passaggio inverso
 # cp1252 → UTF-8 non funziona più): le sequenze più comuni
 RESTI = [("Ã¨", "è"), ("Ã©", "é"), ("Ã²", "ò"), ("Ã¹", "ù"), ("Ã¬", "ì"), ("Ã€", "À"), ("ã€", "à"),
-         ("â€™", "’"), ("Â€™", "’"), ("â€“", "–"), ("Â€“", "–"), ("â€œ", "“"), ("â€\x9d", "”"), ("Ã ", "à ")]
+         ("â€™", "’"), ("Â€™", "’"), ("â€“", "–"), ("Â€“", "–"), ("â€œ", "“"), ("â€\x9d", "”"), ("Ã ", "à "),
+         ("â€", "”")]  # (ultima: virgolette chiuse il cui terzo byte è andato perso)
 
 
 def testo(s: str | None) -> str | None:
@@ -383,6 +385,8 @@ def libri(lst, anno_max: int):
         for k in ("titolo", "autori", "editore", "citazione", "note", "edizione"):
             if isinstance(lb.get(k), str):
                 lb[k] = testo(lb[k])
+        if isinstance(lb.get("titolo"), str) and not re.search(r"\w", lb["titolo"]):
+            lb["titolo"] = None  # «--», «-»: nessun titolo (resta la citazione, se c'è)
         cit = lb.get("citazione") or lb.get("titolo") or ""
         if not cit:
             continue
@@ -444,13 +448,41 @@ def scomponi_citazioni(corsi: list[dict]) -> int:
     return n
 
 
-def esami(lst):
-    out, viste = [], set()
+ORA = re.compile(r"^(\d{1,2}):(\d{2})$")
+
+
+def _ora(o):
+    """Ora dell'appello «HH:MM»; None se manca o è impossibile per un esame («00:00»
+    usato come «ora non indicata», «23:45» chiusura delle iscrizioni)."""
+    m = ORA.match(str(o or "").strip())
+    if not m:
+        return None
+    h, mi = int(m.group(1)), int(m.group(2))
+    return f"{h:02d}:{mi:02d}" if 6 <= h <= 21 and mi < 60 else None
+
+
+def esami(lst, oggi: dt.date | None = None):
+    """Appelli senza doppioni (stessa data, ora, tipo e luogo: i docenti si uniscono),
+    con l'ora impossibile tolta e senza date non valide o assurde (es. anno 4017)."""
+    oggi = oggi or dt.date.today()
+    out, viste = [], {}
     for e in lst or []:
-        k = (e.get("data"), e.get("ora"), e.get("tipo"), e.get("docenti"), e.get("luogo"))
-        if k in viste:
+        e = dict(e)
+        d = _data(e.get("data"))
+        if d is None or d.year < 2000 or d > oggi.replace(year=oggi.year + 3):
             continue
-        viste.add(k)
+        if "ora" in e:
+            e["ora"] = _ora(e.get("ora"))
+        k = (e.get("data"), e.get("ora"), e.get("tipo"), e.get("luogo"))
+        if k in viste:
+            prima = viste[k]
+            d1, d2 = prima.get("docenti"), e.get("docenti")
+            if isinstance(d1, list) and isinstance(d2, list):
+                prima["docenti"] = d1 + [x for x in d2 if x not in d1]
+            elif d2 and not d1:  # (a volte i docenti sono un testo)
+                prima["docenti"] = d2
+            continue
+        viste[k] = e
         out.append(e)
     return out
 
@@ -1157,4 +1189,28 @@ def unisci_omonimi(corsi: list[dict]) -> int:
                 base["esami"].sort(key=lambda e: e.get("data") or "")
             nuovi.append(base)
         c["insegnamenti"] = nuovi
+    return n
+
+# Durata legale per tipo di corso (DM 270/2004): magistrale 2 anni, ciclo unico 5 anni,
+# 6 per Medicina e chirurgia (LM-41) e Odontoiatria (LM-46).
+_CU_SEI = {"LM-41", "LM-46"}
+
+
+def durata_per_tipo(corsi: list[dict]) -> int:
+    """Corregge `durata_anni` incoerente con il tipo (es. una magistrale da 3 anni o un
+    ciclo unico da 3, lasciati dall'elenco del catalogo). Restituisce i corsi corretti."""
+    n = 0
+    for c in corsi:
+        tipo, d = c.get("tipo"), c.get("durata_anni")
+        classi = {x.strip().upper() for x in re.split(r"[&,]| e ", c.get("classe") or "") if x.strip()}
+        if tipo == "LM" and d != 2:
+            giusta = 2
+        elif tipo == "LMCU" and d not in (5, 6):
+            giusta = 6 if classi & _CU_SEI else 5
+        elif tipo == "LMCU" and d == 5 and classi & _CU_SEI:
+            giusta = 6
+        else:
+            continue
+        c["durata_anni"] = giusta
+        n += 1
     return n

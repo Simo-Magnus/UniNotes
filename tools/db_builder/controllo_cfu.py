@@ -48,9 +48,11 @@ def _cfu(i: dict) -> float:
 
 def anni_corso(c: dict) -> list[dict]:
     ins = [i for i in c.get("insegnamenti") or [] if isinstance(i, dict)]
-    if not ins:
-        return []
     durata = c.get("durata_anni") or 3
+    if not ins:  # corso senza piano: ogni anno è vuoto
+        return [{"corso": c.get("id"), "nome": c.get("nome"), "anno": a, "percorso": None,
+                 "obbligatori": 0, "a_scelta": 0, "insegnamenti": 0, "senza_cfu": 0,
+                 "causa": "vuoto", "fonte": c.get("fonte")} for a in range(1, durata + 1)]
     percorsi = sorted({p for i in ins for p in pulizia.percorsi(i.get("curriculum"))}) or [None]
     out = []
     righe = []

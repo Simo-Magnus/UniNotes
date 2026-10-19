@@ -2135,18 +2135,6 @@
       {
        "tipo": "appello",
        "data": "2026-10-12",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-30",
-       "iscrizioni_al": "2026-10-11",
-       "docenti": "PUCCIARELLI SANDRA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-12",
        "ora": "10:00",
        "luogo": null,
        "modalita": "orale",
@@ -3571,9 +3559,7 @@
      "ssd": "MATH-05/A",
      "obbligatorio": true,
      "curriculum": null,
-     "docenti": [
-      "Docente Non Assegnato"
-     ],
+     "docenti": [],
      "url": "https://unicam.coursecatalogue.cineca.it/insegnamenti/2026/7302/2026/9999?coorte=2026",
      "libri": [],
      "esami": [],
@@ -3850,18 +3836,6 @@
       {
        "tipo": "appello",
        "data": "2026-10-15",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-15",
-       "iscrizioni_al": "2026-10-12",
-       "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-15",
        "ora": "12:00",
        "luogo": null,
        "modalita": "orale",
@@ -3910,18 +3884,6 @@
       {
        "tipo": "appello",
        "data": "2026-11-19",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-19",
-       "iscrizioni_al": "2026-11-16",
-       "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-19",
        "ora": "12:00",
        "luogo": null,
        "modalita": "orale",
@@ -3958,18 +3920,6 @@
       {
        "tipo": "appello",
        "data": "2026-12-17",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-17",
-       "iscrizioni_al": "2026-12-14",
-       "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-17",
        "ora": "12:00",
        "luogo": null,
        "modalita": "orale",
@@ -3988,18 +3938,6 @@
        "iscrizioni_dal": "2026-05-26",
        "iscrizioni_al": "2027-01-19",
        "docenti": "CONTI FABIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-21",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-12-21",
-       "iscrizioni_al": "2027-01-18",
-       "docenti": "MOSCONI GILBERTO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -4030,18 +3968,6 @@
       {
        "tipo": "appello",
        "data": "2027-02-18",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-01-18",
-       "iscrizioni_al": "2027-02-15",
-       "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-18",
        "ora": "12:00",
        "luogo": null,
        "modalita": "orale",
@@ -4060,18 +3986,6 @@
        "iscrizioni_dal": "2026-05-26",
        "iscrizioni_al": "2027-03-16",
        "docenti": "CONTI FABIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-18",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-02-18",
-       "iscrizioni_al": "2027-03-15",
-       "docenti": "MOSCONI GILBERTO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -4102,18 +4016,6 @@
       {
        "tipo": "appello",
        "data": "2027-06-17",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-28",
-       "iscrizioni_al": "2027-06-15",
-       "docenti": "CONTI FABIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-06-17",
        "ora": "09:15",
        "luogo": null,
        "modalita": "orale",
@@ -4132,18 +4034,6 @@
        "iscrizioni_dal": "2027-06-15",
        "iscrizioni_al": "2027-07-12",
        "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-07-15",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-28",
-       "iscrizioni_al": "2027-07-13",
-       "docenti": "CONTI FABIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -4174,18 +4064,6 @@
       {
        "tipo": "appello",
        "data": "2027-09-16",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-28",
-       "iscrizioni_al": "2027-09-14",
-       "docenti": "CONTI FABIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-09-16",
        "ora": "09:15",
        "luogo": null,
        "modalita": "orale",
@@ -4204,18 +4082,6 @@
        "iscrizioni_dal": "2027-09-14",
        "iscrizioni_al": "2027-10-11",
        "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-10-14",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-28",
-       "iscrizioni_al": "2027-10-12",
-       "docenti": "CONTI FABIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -4246,18 +4112,6 @@
       {
        "tipo": "appello",
        "data": "2027-11-18",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-28",
-       "iscrizioni_al": "2027-11-16",
-       "docenti": "CONTI FABIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-11-18",
        "ora": "09:15",
        "luogo": null,
        "modalita": null,
@@ -4276,18 +4130,6 @@
        "iscrizioni_dal": "2027-11-16",
        "iscrizioni_al": "2027-12-13",
        "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-12-16",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-28",
-       "iscrizioni_al": "2027-12-14",
-       "docenti": "CONTI FABIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -4318,18 +4160,6 @@
       {
        "tipo": "appello",
        "data": "2028-01-13",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-28",
-       "iscrizioni_al": "2028-01-11",
-       "docenti": "CONTI FABIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2028-01-13",
        "ora": "09:15",
        "luogo": null,
        "modalita": "orale",
@@ -4348,18 +4178,6 @@
        "iscrizioni_dal": "2028-01-17",
        "iscrizioni_al": "2028-02-14",
        "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2028-02-17",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-28",
-       "iscrizioni_al": "2028-02-15",
-       "docenti": "CONTI FABIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -4390,18 +4208,6 @@
       {
        "tipo": "appello",
        "data": "2028-03-16",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-28",
-       "iscrizioni_al": "2028-03-14",
-       "docenti": "CONTI FABIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2028-03-16",
        "ora": "09:15",
        "luogo": null,
        "modalita": "orale",
@@ -4420,18 +4226,6 @@
        "iscrizioni_dal": "2028-03-06",
        "iscrizioni_al": "2028-04-03",
        "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2028-04-06",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-28",
-       "iscrizioni_al": "2028-04-04",
-       "docenti": "CONTI FABIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -7543,18 +7337,6 @@
       {
        "tipo": "appello",
        "data": "2026-10-15",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-18",
-       "iscrizioni_al": "2026-10-11",
-       "docenti": "TOMASSONI DANIELE",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-15",
        "ora": "11:30",
        "luogo": null,
        "modalita": null,
@@ -7590,18 +7372,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-17",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-13",
-       "iscrizioni_al": "2026-12-13",
-       "docenti": "TOMASSONI DANIELE",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-14",
        "ora": "09:30",
        "luogo": null,
@@ -7614,18 +7384,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-14",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-12-18",
-       "iscrizioni_al": "2027-01-10",
-       "docenti": "TOMASSONI DANIELE",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-02-25",
        "ora": "09:30",
        "luogo": null,
@@ -7633,18 +7391,6 @@
        "iscrizioni_dal": "2026-03-12",
        "iscrizioni_al": "2027-02-22",
        "docenti": "AGAS DIMITRIOS",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-25",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-15",
-       "iscrizioni_al": "2027-02-21",
-       "docenti": "TOMASSONI DANIELE",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -7669,18 +7415,6 @@
        "iscrizioni_dal": "2026-03-12",
        "iscrizioni_al": "2027-04-13",
        "docenti": "AGAS DIMITRIOS",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-04-15",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-03-19",
-       "iscrizioni_al": "2027-04-11",
-       "docenti": "TOMASSONI DANIELE",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -9255,18 +8989,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-10",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-02",
-       "iscrizioni_al": "2026-12-04",
-       "docenti": "MARCHETTI FABIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-02-04",
        "ora": "09:30",
        "luogo": null,
@@ -9279,18 +9001,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-04",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-04",
-       "iscrizioni_al": "2027-01-29",
-       "docenti": "MARCHETTI FABIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-02-23",
        "ora": "09:30",
        "luogo": null,
@@ -9298,18 +9008,6 @@
        "iscrizioni_dal": "2027-02-05",
        "iscrizioni_al": "2027-02-19",
        "docenti": "PELLEI MAURA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-23",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-05",
-       "iscrizioni_al": "2027-02-19",
-       "docenti": "MARCHETTI FABIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -11991,18 +11689,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-04",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-04",
-       "iscrizioni_al": "2027-02-02",
-       "docenti": "PUPI GIANLUCA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-02-18",
        "ora": "15:00",
        "luogo": null,
@@ -12015,18 +11701,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-18",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-02-05",
-       "iscrizioni_al": "2027-02-16",
-       "docenti": "PUPI GIANLUCA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-03-18",
        "ora": "15:00",
        "luogo": null,
@@ -12034,18 +11708,6 @@
        "iscrizioni_dal": "2027-02-19",
        "iscrizioni_al": "2027-03-16",
        "docenti": "DI VITTORI NADIA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-18",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-02-19",
-       "iscrizioni_al": "2027-03-16",
-       "docenti": "PUPI GIANLUCA",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -12186,18 +11848,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-01",
-       "ora": "15:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2025-09-30",
-       "iscrizioni_al": "2026-11-24",
-       "docenti": "BACHETTI DORIA CARLO SAVINI MARIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-28",
        "ora": "15:30",
        "luogo": null,
@@ -12205,18 +11855,6 @@
        "iscrizioni_dal": "2026-09-30",
        "iscrizioni_al": "2027-01-21",
        "docenti": "BACHETTI DORIA CARLO SAVINI MARIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-28",
-       "ora": "15:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-30",
-       "iscrizioni_al": "2027-01-21",
-       "docenti": "SAVINI MARIO BACHETTI DORIA CARLO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -12234,18 +11872,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-11",
-       "ora": "15:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-30",
-       "iscrizioni_al": "2027-02-04",
-       "docenti": "BACHETTI DORIA CARLO SAVINI MARIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-03-04",
        "ora": "15:30",
        "luogo": null,
@@ -12253,18 +11879,6 @@
        "iscrizioni_dal": "2026-09-30",
        "iscrizioni_al": "2027-02-25",
        "docenti": "BACHETTI DORIA CARLO SAVINI MARIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-04",
-       "ora": "15:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-30",
-       "iscrizioni_al": "2027-02-25",
-       "docenti": "SAVINI MARIO BACHETTI DORIA CARLO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -12461,18 +12075,6 @@
        "iscrizioni_dal": "2026-11-25",
        "iscrizioni_al": "2026-11-30",
        "docenti": "ATTENNI MARTINA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-02",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-25",
-       "iscrizioni_al": "2026-11-30",
-       "docenti": "OLIVIERI ALESSANDRO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -13172,18 +12774,6 @@
        "iscrizioni_dal": "2026-11-08",
        "iscrizioni_al": "2026-11-23",
        "docenti": "MASCITTI JACOPO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-25",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-08",
-       "iscrizioni_al": "2026-11-23",
-       "docenti": "GALLOPPO DANIELE",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -13939,36 +13529,12 @@
       {
        "tipo": "appello",
        "data": "2026-10-09",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-09",
-       "iscrizioni_al": "2026-10-02",
-       "docenti": "SANTINI CARLO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-09",
        "ora": "14:00",
        "luogo": null,
        "modalita": "scritto",
        "iscrizioni_dal": "2026-09-11",
        "iscrizioni_al": "2026-10-05",
        "docenti": "PELLEI MAURA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-09",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-09",
-       "iscrizioni_al": "2026-10-02",
-       "docenti": "SANTINI CARLO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -13986,18 +13552,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-02",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-12-28",
-       "iscrizioni_al": "2027-01-30",
-       "docenti": "PELLEI MAURA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-02-23",
        "ora": "10:00",
        "luogo": null,
@@ -14010,18 +13564,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-23",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-02-03",
-       "iscrizioni_al": "2027-02-20",
-       "docenti": "PELLEI MAURA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-04-14",
        "ora": "10:00",
        "luogo": null,
@@ -14029,18 +13571,6 @@
        "iscrizioni_dal": "2027-03-14",
        "iscrizioni_al": "2027-04-07",
        "docenti": "SANTINI CARLO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-04-14",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-03-01",
-       "iscrizioni_al": "2027-04-10",
-       "docenti": "PELLEI MAURA",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -22148,18 +21678,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-11-26",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-01",
-       "iscrizioni_al": "2026-11-25",
-       "docenti": "MENZIETTI GIULIA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-02-04",
        "ora": "09:30",
        "luogo": null,
@@ -23310,18 +22828,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-11-27",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-13",
-       "iscrizioni_al": "2026-11-25",
-       "docenti": "VESPASIANO LUCA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-02-05",
        "ora": "09:30",
        "luogo": null,
@@ -24329,18 +23835,6 @@
        "iscrizioni_dal": "2026-11-09",
        "iscrizioni_al": "2026-11-26",
        "docenti": "VADINI ETTORE",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-27",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-13",
-       "iscrizioni_al": "2026-11-26",
-       "docenti": "COCCIA LUIGI",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -26127,18 +25621,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-10-20",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-20",
-       "iscrizioni_al": "2026-10-18",
-       "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-10-30",
        "ora": "09:00",
        "luogo": null,
@@ -26223,18 +25705,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-15",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-15",
-       "iscrizioni_al": "2026-12-13",
-       "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-12-18",
        "ora": "09:00",
        "luogo": null,
@@ -26259,18 +25729,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-01-12",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-12-12",
-       "iscrizioni_al": "2027-01-10",
-       "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-02-02",
        "ora": "10:00",
        "luogo": null,
@@ -26283,18 +25741,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-02",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-02",
-       "iscrizioni_al": "2027-01-31",
-       "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-02-23",
        "ora": "10:00",
        "luogo": null,
@@ -26302,18 +25748,6 @@
        "iscrizioni_dal": "2027-01-18",
        "iscrizioni_al": "2027-02-21",
        "docenti": "ALIMENTI CLAUDIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-02-23",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-23",
-       "iscrizioni_al": "2027-02-21",
-       "docenti": "MOSCONI GILBERTO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -26343,18 +25777,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-03-23",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-23",
-       "iscrizioni_al": "2027-03-21",
-       "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-04-13",
        "ora": "10:00",
        "luogo": null,
@@ -26362,18 +25784,6 @@
        "iscrizioni_dal": "2027-03-20",
        "iscrizioni_al": "2027-04-11",
        "docenti": "ALIMENTI CLAUDIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-04-13",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-03-13",
-       "iscrizioni_al": "2027-04-11",
-       "docenti": "MOSCONI GILBERTO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -26403,18 +25813,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-06-22",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-06-01",
-       "iscrizioni_al": "2027-06-19",
-       "docenti": "ALIMENTI CLAUDIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-07-20",
        "ora": "10:00",
        "luogo": null,
@@ -26422,18 +25820,6 @@
        "iscrizioni_dal": "2027-06-20",
        "iscrizioni_al": "2027-07-16",
        "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-07-20",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-07-01",
-       "iscrizioni_al": "2027-07-17",
-       "docenti": "ALIMENTI CLAUDIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -26451,18 +25837,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-09-21",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-09-01",
-       "iscrizioni_al": "2027-09-18",
-       "docenti": "ALIMENTI CLAUDIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-10-19",
        "ora": "10:00",
        "luogo": null,
@@ -26470,18 +25844,6 @@
        "iscrizioni_dal": "2027-09-19",
        "iscrizioni_al": "2027-10-15",
        "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-10-19",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-10-01",
-       "iscrizioni_al": "2027-10-01",
-       "docenti": "ALIMENTI CLAUDIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -26499,18 +25861,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-11-23",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-11-01",
-       "iscrizioni_al": "2027-11-20",
-       "docenti": "ALIMENTI CLAUDIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-12-21",
        "ora": "10:00",
        "luogo": null,
@@ -26518,18 +25868,6 @@
        "iscrizioni_dal": "2027-11-21",
        "iscrizioni_al": "2027-12-17",
        "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-12-21",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-12-01",
-       "iscrizioni_al": "2027-12-18",
-       "docenti": "ALIMENTI CLAUDIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -26547,18 +25885,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2028-01-18",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2028-01-01",
-       "iscrizioni_al": "2028-01-15",
-       "docenti": "ALIMENTI CLAUDIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2028-02-22",
        "ora": "10:00",
        "luogo": null,
@@ -26566,18 +25892,6 @@
        "iscrizioni_dal": "2028-01-22",
        "iscrizioni_al": "2028-02-18",
        "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2028-02-22",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2028-02-01",
-       "iscrizioni_al": "2028-02-19",
-       "docenti": "ALIMENTI CLAUDIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -26595,18 +25909,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2028-03-21",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2028-03-01",
-       "iscrizioni_al": "2028-03-18",
-       "docenti": "ALIMENTI CLAUDIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2028-04-04",
        "ora": "10:00",
        "luogo": null,
@@ -26614,18 +25916,6 @@
        "iscrizioni_dal": "2028-03-04",
        "iscrizioni_al": "2028-03-31",
        "docenti": "MOSCONI GILBERTO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2028-04-04",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-03-01",
-       "iscrizioni_al": "2028-04-01",
-       "docenti": "ALIMENTI CLAUDIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -29207,36 +28497,12 @@
       {
        "tipo": "appello",
        "data": "2026-10-09",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-09",
-       "iscrizioni_al": "2026-10-02",
-       "docenti": "SANTINI CARLO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-09",
        "ora": "14:00",
        "luogo": null,
        "modalita": "scritto",
        "iscrizioni_dal": "2026-09-11",
        "iscrizioni_al": "2026-10-05",
        "docenti": "PELLEI MAURA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-09",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-09",
-       "iscrizioni_al": "2026-10-02",
-       "docenti": "SANTINI CARLO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -29254,18 +28520,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-02",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-12-28",
-       "iscrizioni_al": "2027-01-30",
-       "docenti": "PELLEI MAURA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-02-23",
        "ora": "10:00",
        "luogo": null,
@@ -29278,18 +28532,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-23",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-02-03",
-       "iscrizioni_al": "2027-02-20",
-       "docenti": "PELLEI MAURA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-04-14",
        "ora": "10:00",
        "luogo": null,
@@ -29297,18 +28539,6 @@
        "iscrizioni_dal": "2027-03-14",
        "iscrizioni_al": "2027-04-07",
        "docenti": "SANTINI CARLO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-04-14",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-03-01",
-       "iscrizioni_al": "2027-04-10",
-       "docenti": "PELLEI MAURA",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -36823,18 +36053,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-11-24",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-15",
-       "iscrizioni_al": "2026-11-23",
-       "docenti": "PETRUCCI ENRICA LEONI GRAZIANO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-26",
        "ora": "09:00",
        "luogo": null,
@@ -36842,18 +36060,6 @@
        "iscrizioni_dal": "2027-01-08",
        "iscrizioni_al": "2027-01-25",
        "docenti": "PETRUCCI ENRICA LEONI GRAZIANO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-26",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-01",
-       "iscrizioni_al": "2027-01-22",
-       "docenti": "PUTZU MARIA GIOVANNA GIOIELLA LAURA",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -36871,18 +36077,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-09",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-11",
-       "iscrizioni_al": "2027-02-05",
-       "docenti": "PUTZU MARIA GIOVANNA GIOIELLA LAURA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-03-16",
        "ora": "09:00",
        "luogo": null,
@@ -36890,18 +36084,6 @@
        "iscrizioni_dal": "2027-02-09",
        "iscrizioni_al": "2027-03-15",
        "docenti": "PETRUCCI ENRICA LEONI GRAZIANO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-16",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-03-01",
-       "iscrizioni_al": "2027-03-12",
-       "docenti": "PUTZU MARIA GIOVANNA GIOIELLA LAURA",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -37220,18 +36402,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-05",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-01-01",
-       "iscrizioni_al": "2027-02-03",
-       "docenti": "D'ONOFRIO ROSALBA DI FLAVIO GIULIANO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-02-19",
        "ora": "09:30",
        "luogo": null,
@@ -37244,18 +36414,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-19",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-02-03",
-       "iscrizioni_al": "2027-02-17",
-       "docenti": "D'ONOFRIO ROSALBA DI FLAVIO GIULIANO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-03-11",
        "ora": "09:30",
        "luogo": null,
@@ -37263,18 +36421,6 @@
        "iscrizioni_dal": "2026-09-28",
        "iscrizioni_al": "2027-03-08",
        "docenti": "SARGOLINI MASSIMO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-11",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-02-20",
-       "iscrizioni_al": "2027-03-09",
-       "docenti": "D'ONOFRIO ROSALBA DI FLAVIO GIULIANO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -41671,9 +40817,7 @@
      "ssd": "BIO/07",
      "obbligatorio": true,
      "curriculum": "NUTRIZIONE PER IL BENESSERE E LO SPORT",
-     "docenti": [
-      "Docente Non Assegnato"
-     ],
+     "docenti": [],
      "url": "https://unicam.coursecatalogue.cineca.it/insegnamenti/2026/11069/2025/4?coorte=2025",
      "libri": [],
      "esami": [],
@@ -48405,18 +47549,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-04-14",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-03-28",
-       "iscrizioni_al": "2027-03-28",
-       "docenti": "LATINO AGOSTINA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-05-05",
        "ora": "10:00",
        "luogo": null,
@@ -48424,18 +47556,6 @@
        "iscrizioni_dal": "2027-04-01",
        "iscrizioni_al": "2027-05-04",
        "docenti": "LATINI CARLOTTA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-05-05",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-04-18",
-       "iscrizioni_al": "2027-05-02",
-       "docenti": "LATINO AGOSTINA",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -48453,18 +47573,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-06-09",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-05-09",
-       "iscrizioni_al": "2027-06-06",
-       "docenti": "LATINO AGOSTINA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-07-07",
        "ora": "10:00",
        "luogo": null,
@@ -48472,18 +47580,6 @@
        "iscrizioni_dal": "2027-06-01",
        "iscrizioni_al": "2027-07-06",
        "docenti": "LATINI CARLOTTA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-07-07",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-06-13",
-       "iscrizioni_al": "2027-07-04",
-       "docenti": "LATINO AGOSTINA",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -48501,18 +47597,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-09-22",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-08-22",
-       "iscrizioni_al": "2027-09-19",
-       "docenti": "LATINO AGOSTINA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-10-20",
        "ora": "10:00",
        "luogo": null,
@@ -48520,18 +47604,6 @@
        "iscrizioni_dal": "2027-09-01",
        "iscrizioni_al": "2027-09-30",
        "docenti": "LATINI CARLOTTA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-10-20",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2027-09-26",
-       "iscrizioni_al": "2027-10-17",
-       "docenti": "LATINO AGOSTINA",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -58121,18 +57193,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-11-20",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-01-20",
-       "iscrizioni_al": "2026-11-19",
-       "docenti": "PETTINARI CLAUDIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-12-18",
        "ora": "15:00",
        "luogo": null,
@@ -58145,30 +57205,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-18",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-11-18",
-       "iscrizioni_al": "2026-12-17",
-       "docenti": "PETTINARI RICCARDO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-18",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-11-18",
-       "iscrizioni_al": "2026-12-17",
-       "docenti": "TOMBESI ALESSIA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-15",
        "ora": "15:00",
        "luogo": null,
@@ -58176,18 +57212,6 @@
        "iscrizioni_dal": "2026-12-15",
        "iscrizioni_al": "2027-01-14",
        "docenti": "PETTINARI RICCARDO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-15",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-12-15",
-       "iscrizioni_al": "2027-01-14",
-       "docenti": "TOMBESI ALESSIA",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -58241,18 +57265,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-03-05",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-23",
-       "iscrizioni_al": "2027-03-04",
-       "docenti": "PETTINARI CLAUDIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-03-19",
        "ora": "15:00",
        "luogo": null,
@@ -58272,18 +57284,6 @@
        "iscrizioni_dal": "2027-03-02",
        "iscrizioni_al": "2027-04-01",
        "docenti": "PETTINARI RICCARDO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-04-02",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-23",
-       "iscrizioni_al": "2027-04-01",
-       "docenti": "PETTINARI CLAUDIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -58313,18 +57313,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-05-07",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-23",
-       "iscrizioni_al": "2027-05-06",
-       "docenti": "PETTINARI CLAUDIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-06-04",
        "ora": "15:00",
        "luogo": null,
@@ -58332,18 +57320,6 @@
        "iscrizioni_dal": "2027-05-04",
        "iscrizioni_al": "2027-06-03",
        "docenti": "PETTINARI RICCARDO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-06-04",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-23",
-       "iscrizioni_al": "2027-06-03",
-       "docenti": "PETTINARI CLAUDIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -60859,18 +59835,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-11-20",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-01-20",
-       "iscrizioni_al": "2026-11-19",
-       "docenti": "PETTINARI CLAUDIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-12-18",
        "ora": "15:00",
        "luogo": null,
@@ -60883,30 +59847,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-18",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-11-18",
-       "iscrizioni_al": "2026-12-17",
-       "docenti": "PETTINARI RICCARDO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-18",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-11-18",
-       "iscrizioni_al": "2026-12-17",
-       "docenti": "TOMBESI ALESSIA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-15",
        "ora": "15:00",
        "luogo": null,
@@ -60914,18 +59854,6 @@
        "iscrizioni_dal": "2026-12-15",
        "iscrizioni_al": "2027-01-14",
        "docenti": "PETTINARI RICCARDO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-15",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-12-15",
-       "iscrizioni_al": "2027-01-14",
-       "docenti": "TOMBESI ALESSIA",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -60979,18 +59907,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-03-05",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-23",
-       "iscrizioni_al": "2027-03-04",
-       "docenti": "PETTINARI CLAUDIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-03-19",
        "ora": "15:00",
        "luogo": null,
@@ -61010,18 +59926,6 @@
        "iscrizioni_dal": "2027-03-02",
        "iscrizioni_al": "2027-04-01",
        "docenti": "PETTINARI RICCARDO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-04-02",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-23",
-       "iscrizioni_al": "2027-04-01",
-       "docenti": "PETTINARI CLAUDIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -61051,18 +59955,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-05-07",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-23",
-       "iscrizioni_al": "2027-05-06",
-       "docenti": "PETTINARI CLAUDIO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-06-04",
        "ora": "15:00",
        "luogo": null,
@@ -61070,18 +59962,6 @@
        "iscrizioni_dal": "2027-05-04",
        "iscrizioni_al": "2027-06-03",
        "docenti": "PETTINARI RICCARDO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-06-04",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-23",
-       "iscrizioni_al": "2027-06-03",
-       "docenti": "PETTINARI CLAUDIO",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -62042,18 +60922,6 @@
       {
        "tipo": "appello",
        "data": "2026-10-09",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-19",
-       "iscrizioni_al": "2026-10-02",
-       "docenti": "TORREGIANI ELISABETTA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-09",
        "ora": "11:00",
        "luogo": null,
        "modalita": "scritto",
@@ -62072,18 +60940,6 @@
        "iscrizioni_dal": "2026-11-01",
        "iscrizioni_al": "2026-11-08",
        "docenti": "TIECCO MATTEO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-13",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-10-16",
-       "iscrizioni_al": "2026-11-06",
-       "docenti": "TORREGIANI ELISABETTA",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -62113,18 +60969,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-11",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-11-20",
-       "iscrizioni_al": "2026-12-04",
-       "docenti": "TORREGIANI ELISABETTA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-15",
        "ora": "09:00",
        "luogo": null,
@@ -62132,18 +60976,6 @@
        "iscrizioni_dal": "2027-01-01",
        "iscrizioni_al": "2027-01-10",
        "docenti": "TIECCO MATTEO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-15",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-12-18",
-       "iscrizioni_al": "2027-01-08",
-       "docenti": "TORREGIANI ELISABETTA",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -62185,18 +61017,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-12",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-01-22",
-       "iscrizioni_al": "2027-02-05",
-       "docenti": "TORREGIANI ELISABETTA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-03-12",
        "ora": "09:00",
        "luogo": null,
@@ -62204,18 +61024,6 @@
        "iscrizioni_dal": "2027-03-01",
        "iscrizioni_al": "2027-03-08",
        "docenti": "TIECCO MATTEO",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-12",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2027-02-19",
-       "iscrizioni_al": "2027-03-05",
-       "docenti": "TORREGIANI ELISABETTA",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -65296,18 +64104,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-11-03",
-       "ora": "16:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-11",
-       "iscrizioni_al": "2026-11-02",
-       "docenti": "RODOLFO MASERA SIMONE",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-12-16",
        "ora": "11:00",
        "luogo": null,
@@ -65315,18 +64111,6 @@
        "iscrizioni_dal": "2026-11-23",
        "iscrizioni_al": "2026-12-15",
        "docenti": "SPUNTARELLI SARA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-16",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-11-16",
-       "iscrizioni_al": "2026-12-15",
-       "docenti": "RODOLFO MASERA SIMONE",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -65344,18 +64128,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-02-03",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-01-03",
-       "iscrizioni_al": "2027-02-02",
-       "docenti": "RODOLFO MASERA SIMONE",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-03-10",
        "ora": "11:00",
        "luogo": null,
@@ -65363,18 +64135,6 @@
        "iscrizioni_dal": "2027-02-20",
        "iscrizioni_al": "2027-03-09",
        "docenti": "SPUNTARELLI SARA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-03-10",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-02-10",
-       "iscrizioni_al": "2027-03-09",
-       "docenti": "RODOLFO MASERA SIMONE",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -65392,18 +64152,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-04-14",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-03-14",
-       "iscrizioni_al": "2027-04-13",
-       "docenti": "RODOLFO MASERA SIMONE",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-05-20",
        "ora": "11:00",
        "luogo": null,
@@ -65411,18 +64159,6 @@
        "iscrizioni_dal": "2027-04-27",
        "iscrizioni_al": "2027-05-17",
        "docenti": "SPUNTARELLI SARA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-05-20",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-05-01",
-       "iscrizioni_al": "2027-05-19",
-       "docenti": "RODOLFO MASERA SIMONE",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -65440,18 +64176,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-06-30",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-06-01",
-       "iscrizioni_al": "2027-06-29",
-       "docenti": "RODOLFO MASERA SIMONE",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-07-16",
        "ora": "11:00",
        "luogo": null,
@@ -65459,18 +64183,6 @@
        "iscrizioni_dal": "2027-06-23",
        "iscrizioni_al": "2027-07-13",
        "docenti": "SPUNTARELLI SARA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-07-16",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-07-01",
-       "iscrizioni_al": "2027-07-15",
-       "docenti": "RODOLFO MASERA SIMONE",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -65488,18 +64200,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-10-06",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-09-08",
-       "iscrizioni_al": "2027-10-05",
-       "docenti": "RODOLFO MASERA SIMONE",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-11-03",
        "ora": "10:00",
        "luogo": null,
@@ -65507,18 +64207,6 @@
        "iscrizioni_dal": "2027-10-11",
        "iscrizioni_al": "2027-10-31",
        "docenti": "SPUNTARELLI SARA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-11-03",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-10-20",
-       "iscrizioni_al": "2027-11-02",
-       "docenti": "RODOLFO MASERA SIMONE",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -65536,18 +64224,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2027-12-16",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2027-12-01",
-       "iscrizioni_al": "2027-12-15",
-       "docenti": "RODOLFO MASERA SIMONE",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2028-02-02",
        "ora": "10:00",
        "luogo": null,
@@ -65555,18 +64231,6 @@
        "iscrizioni_dal": "2028-01-10",
        "iscrizioni_al": "2028-01-30",
        "docenti": "SPUNTARELLI SARA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2028-02-02",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2028-01-12",
-       "iscrizioni_al": "2028-02-01",
-       "docenti": "RODOLFO MASERA SIMONE",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -65584,18 +64248,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2028-03-08",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2028-02-09",
-       "iscrizioni_al": "2028-03-07",
-       "docenti": "RODOLFO MASERA SIMONE",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2028-04-05",
        "ora": "11:00",
        "luogo": null,
@@ -65603,18 +64255,6 @@
        "iscrizioni_dal": "2028-03-12",
        "iscrizioni_al": "2028-04-02",
        "docenti": "SPUNTARELLI SARA",
-       "note": null,
-       "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2028-04-05",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2028-03-15",
-       "iscrizioni_al": "2028-04-04",
-       "docenti": "RODOLFO MASERA SIMONE",
        "note": null,
        "fonte": "https://unicam.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }

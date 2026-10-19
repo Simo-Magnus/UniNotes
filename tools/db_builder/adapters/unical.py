@@ -14,6 +14,7 @@ I corsi si associano a quelli di database/corsi/unical.json per classe e nome.
 from __future__ import annotations
 
 import concurrent.futures as cf
+from collections import Counter
 import json
 import pathlib
 import re
@@ -43,6 +44,26 @@ def _periodo(sem: list | str | None) -> str | None:
         if t.startswith(k):
             return v
     return t
+
+
+def _cfu_attivita(a: dict):
+    """CFU di un'attività del piano. Gli insegnamenti integrati (e quelli a canali) arrivano senza
+    `StudyActivityECTS`: i CFU stanno nei moduli (`AfSubModules`). Gli stessi codice e nome con
+    partizioni diverse (A-L / M-Z, canali) sono lo stesso insegnamento in più copie: si conta una volta;
+    i moduli distinti si sommano."""
+    cfu = a.get("StudyActivityECTS")
+    if isinstance(cfu, (int, float)):
+        return int(cfu) if float(cfu).is_integer() else cfu
+    gruppi: dict[tuple, float] = {}
+    for m in a.get("AfSubModules") or []:
+        v = m.get("StudyActivityCreditValue")
+        if isinstance(v, (int, float)):
+            k = (m.get("StudyActivityCod"), _norm(m.get("StudyActivityName")))
+            gruppi[k] = max(gruppi.get(k, 0), v)
+    if not gruppi:
+        return None
+    tot = sum(gruppi.values())
+    return int(tot) if float(tot).is_integer() else tot
 
 
 def fetch_ateneo(uid: str = "unical", anno: int | None = None, max_cds: int | None = None, syllabus: bool = True,
@@ -76,6 +97,7 @@ def fetch_ateneo(uid: str = "unical", anno: int | None = None, max_cds: int | No
         both = [x for x in cand if (x.get("CourseClassCod") or "").replace(" R", "").strip() in cl]
         return (both or cand or [None])[0]
 
+    classi_db = Counter((x.get("classe") or "").replace(" R", "").strip() for x in corsi)
     abbinati = []
     for corso in corsi:
         x = trova(corso, per_anno[anno])
@@ -88,18 +110,46 @@ def fetch_ateneo(uid: str = "unical", anno: int | None = None, max_cds: int | No
     def build(coppia) -> dict | None:
         corso, attuale = coppia
         durata = corso.get("durata_anni") or attuale.get("CdSDuration") or 3
+        classe_att = (attuale.get("CourseClassCod") or "").replace(" R", "").strip()
         righe: dict[str, dict] = {}
         curricula = set()
+        def piani_di(reg: dict) -> list[dict]:
+            piani, url = [], f"{API}/cds/{reg['RegDidId']}/studyplans-activities/?lang=it"
+            while url:  # i piani sono paginati: la seconda pagina ha altri piani/curricula
+                r = c.get(url)
+                if not r:
+                    break
+                d = json.loads(r.text)
+                piani += d.get("results") or []
+                url = d.get("next")
+                if url and url.startswith("//"):
+                    url = "https:" + url
+            return piani
+
+        def regolamento(coorte: int) -> dict | None:
+            lista_c = per_anno.get(coorte, [])
+            # stesso codice; se l'ordinamento è cambiato, stesso nome e classe; se il corso è stato
+            # rinominato, l'unico corso di quella classe (e unico anche tra quelli del database)
+            reg = next((x for x in lista_c if x.get("CdSCod") == attuale["CdSCod"]), None) or trova(corso, lista_c)
+            if reg or classi_db.get(classe_att, 0) != 1:
+                return reg
+            cand = [x for x in lista_c if (x.get("CourseClassCod") or "").replace(" R", "").strip() == classe_att]
+            return cand[0] if len(cand) == 1 else None
+
         for k in range(1, durata + 1):
-            coorte = anno - k + 1
-            # stesso codice; se l'ordinamento è cambiato, stesso nome e classe
-            reg = next((x for x in per_anno.get(coorte, []) if x.get("CdSCod") == attuale["CdSCod"]), None) or                 trova(corso, per_anno.get(coorte, []))
-            if not reg:
+            # regolamento della coorte A-k+1; se non c'è (corso nuovo o non in elenco), quello
+            # della coorte più vecchia successiva che ha attività nell'anno k (la fonte resta quella usata)
+            piani = reg = None
+            for coorte in range(anno - k + 1, anno + 1):
+                reg = regolamento(coorte)
+                if not reg:
+                    continue
+                piani = piani_di(reg)
+                if any((t.get("StudyActivities") or {}).get(str(k)) for p in piani for t in p.get("PlanTabs") or []):
+                    break
+                piani = None
+            if not piani:
                 continue
-            r = c.get(f"{API}/cds/{reg['RegDidId']}/studyplans-activities/?lang=it")
-            if not r:
-                continue
-            piani = json.loads(r.text).get("results") or []
             tabs = [t for p in piani for t in p.get("PlanTabs") or []]
             for tab in tabs:
                 nome_piano = (tab.get("StudyPlanName") or "").strip()
@@ -109,11 +159,11 @@ def fetch_ateneo(uid: str = "unical", anno: int | None = None, max_cds: int | No
                     key = f"{k}:{a.get('StudyActivityCod')}"
                     item = righe.get(key)
                     if not item:
-                        cfu = a.get("StudyActivityECTS")
+                        cfu = _cfu_attivita(a)
                         item = righe[key] = {
                             "codice": a.get("StudyActivityCod"), "nome": _titolo(a.get("StudyActivityName") or ""),
                             "anno": k, "periodo": _periodo(a.get("StudyActivitySemester")),
-                            "cfu": int(cfu) if isinstance(cfu, float) and cfu.is_integer() else cfu,
+                            "cfu": cfu,
                             "ssd": ", ".join(a.get("StudyActivitySSD") or []) or None,
                             "obbligatorio": a.get("StudyActivityCompulsory"), "curriculum": None, "docenti": [],
                             "url": f"{SITO}/activities/{a['StudyActivityID']}/" if a.get("StudyActivityID") else None,

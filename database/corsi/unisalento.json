@@ -3407,7 +3407,7 @@
       {
        "tipo": "appello",
        "data": "2026-11-10",
-       "ora": "23:00",
+       "ora": null,
        "luogo": null,
        "modalita": "orale",
        "iscrizioni_dal": "2026-09-15",
@@ -3583,18 +3583,6 @@
        "iscrizioni_dal": "2026-10-04",
        "iscrizioni_al": "2026-11-08",
        "docenti": "BARBAGALLO SALVATORE MINECCIA FRANCESCO PATISSO GIUSEPPE",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-04",
-       "iscrizioni_al": "2026-11-08",
-       "docenti": "BARBAGALLO SALVATORE",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -4823,16 +4811,16 @@
        "citazione": "Invito alla Biologia (Cellula - Genetica - Evoluzione - Animali - Piante) - Ed. Zanichelli. ISBN 9788836230242 ISBN 9788836230242"
       },
       {
-       "titolo": "Invito alla Biologia (Cellula - Genetica - Evoluzione - Animali - Piante) - Ed. Zanichelli.",
+       "titolo": "Invito alla Biologia (Cellula - Genetica - Evoluzione - Animali - Piante) - Ed. Zanichelli. ISBN 9788836230242",
        "autori": null,
        "editore": null,
        "anno": null,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788836230242",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Invito alla Biologia (Cellula - Genetica - Evoluzione - Animali - Piante) - Ed. Zanichelli."
+       "citazione": "Invito alla Biologia (Cellula - Genetica - Evoluzione - Animali - Piante) - Ed. Zanichelli. ISBN 9788836230242"
       }
      ],
      "esami": [
@@ -11133,18 +11121,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-10-29",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-24",
-       "iscrizioni_al": "2026-10-24",
-       "docenti": "MASTROLEO GIOVANNI",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-11-03",
        "ora": "09:00",
        "luogo": null,
@@ -11164,18 +11140,6 @@
        "iscrizioni_dal": "2026-10-02",
        "iscrizioni_al": "2026-11-01",
        "docenti": "MASTROLEO GIOVANNI CHIAROLLA MARIA CIURLIA PIERANGELO",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-04",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-02",
-       "iscrizioni_al": "2026-11-01",
-       "docenti": "MASTROLEO GIOVANNI",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -11211,18 +11175,6 @@
        "iscrizioni_dal": "2026-07-21",
        "iscrizioni_al": "2026-10-26",
        "docenti": "MASSARI STEFANIA DE LEO FEDERICA RUBERTI MARCELLO",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-28",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-07-21",
-       "iscrizioni_al": "2026-10-26",
-       "docenti": "MASSARI STEFANIA RUBERTI MARCELLO",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -11337,18 +11289,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-10-30",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-11",
-       "iscrizioni_al": "2026-10-25",
-       "docenti": "ADAMO STEFANO DE MATTEIS CLARISSA FASIELLO ROBERTA IMPERIALE FRANCESCA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-11-03",
        "ora": "12:00",
        "luogo": null,
@@ -11368,30 +11308,6 @@
        "iscrizioni_dal": "2026-10-01",
        "iscrizioni_al": "2026-11-03",
        "docenti": "COSTA ANTONIO",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-05",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-11",
-       "iscrizioni_al": "2026-10-31",
-       "docenti": "ADAMO STEFANO DE MATTEIS CLARISSA FASIELLO ROBERTA IMPERIALE FRANCESCA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-05",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-11",
-       "iscrizioni_al": "2026-10-31",
-       "docenti": "FASIELLO ROBERTA ADAMO STEFANO DE MATTEIS CLARISSA IMPERIALE FRANCESCA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -11467,30 +11383,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-10-30",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-10-09",
-       "iscrizioni_al": "2026-10-26",
-       "docenti": "PALMA MONICA CAPPELLO CLAUDIA DE IACO SANDRA DISTEFANO VERONICA GIUNGATO GIUSEPPINA MAGGIO SABRINA POSA DONATO",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-30",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-10-09",
-       "iscrizioni_al": "2026-10-26",
-       "docenti": "PALMA MONICA CAPPELLO CLAUDIA DE IACO SANDRA GIUNGATO GIUSEPPINA MAGGIO SABRINA POSA DONATO",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-11-05",
        "ora": "09:00",
        "luogo": null,
@@ -11498,18 +11390,6 @@
        "iscrizioni_dal": "2026-10-26",
        "iscrizioni_al": "2026-11-04",
        "docenti": "POSA DONATO CAPPELLO CLAUDIA DE IACO SANDRA GIUNGATO GIUSEPPINA MAGGIO SABRINA PALMA MONICA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-05",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-09",
-       "iscrizioni_al": "2026-11-04",
-       "docenti": "PALMA MONICA CAPPELLO CLAUDIA DE IACO SANDRA GIUNGATO GIUSEPPINA MAGGIO SABRINA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -11692,18 +11572,6 @@
       {
        "tipo": "appello",
        "data": "2026-10-30",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-10-05",
-       "iscrizioni_al": "2026-10-25",
-       "docenti": "ROMANO LUIGI",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-30",
        "ora": "14:00",
        "luogo": null,
        "modalita": "scritto",
@@ -11806,18 +11674,6 @@
        "iscrizioni_dal": "2026-09-11",
        "iscrizioni_al": "2026-10-25",
        "docenti": "ADAMO STEFANO DE MATTEIS CLARISSA FASIELLO ROBERTA IMPERIALE FRANCESCA MARCHETTI SIMONA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-30",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-11",
-       "iscrizioni_al": "2026-10-25",
-       "docenti": "FASIELLO ROBERTA ADAMO STEFANO DE MATTEIS CLARISSA IMPERIALE FRANCESCA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -12062,18 +11918,6 @@
        "docenti": "CARDARELLI MARIA CECILIA LUCHENA SERENELLA SABINA TULLIO PAOLO",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-03",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-01",
-       "iscrizioni_al": "2026-10-29",
-       "docenti": "LUCHENA SERENELLA SABINA CARDARELLI MARIA CECILIA POSITANO GIUSEPPE",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://www.bbcc.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/corso/LB05R/lb05r",
@@ -12282,18 +12126,6 @@
        "iscrizioni_dal": "2026-10-03",
        "iscrizioni_al": "2026-10-28",
        "docenti": "ANZILLI LUCA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-03",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-10-03",
-       "iscrizioni_al": "2026-10-28",
-       "docenti": "ANZILLI LUCA DURANTE FABRIZIO ROMANO LUIGI",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -12820,18 +12652,6 @@
       {
        "tipo": "appello",
        "data": "2026-10-30",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-10-05",
-       "iscrizioni_al": "2026-10-25",
-       "docenti": "ROMANO LUIGI",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-30",
        "ora": "14:00",
        "luogo": null,
        "modalita": "scritto",
@@ -12912,18 +12732,6 @@
        "iscrizioni_dal": "2026-09-11",
        "iscrizioni_al": "2026-10-25",
        "docenti": "ADAMO STEFANO DE MATTEIS CLARISSA FASIELLO ROBERTA IMPERIALE FRANCESCA MARCHETTI SIMONA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-30",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-11",
-       "iscrizioni_al": "2026-10-25",
-       "docenti": "FASIELLO ROBERTA ADAMO STEFANO DE MATTEIS CLARISSA IMPERIALE FRANCESCA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -14450,18 +14258,6 @@
        "iscrizioni_dal": "2026-10-04",
        "iscrizioni_al": "2026-11-08",
        "docenti": "BARBAGALLO SALVATORE MINECCIA FRANCESCO PATISSO GIUSEPPE",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-04",
-       "iscrizioni_al": "2026-11-08",
-       "docenti": "BARBAGALLO SALVATORE",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -16133,18 +15929,6 @@
        "iscrizioni_dal": "2026-10-04",
        "iscrizioni_al": "2026-11-08",
        "docenti": "BARBAGALLO SALVATORE MINECCIA FRANCESCO PATISSO GIUSEPPE",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-04",
-       "iscrizioni_al": "2026-11-08",
-       "docenti": "BARBAGALLO SALVATORE",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -22629,7 +22413,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dalla scheda ufficiale dell'insegnamento (https://medicinasperimentale.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/insegnamento/227879/pediatria-e-puericultura)",
-       "citazione": "De Rosa M., Guerra C.C., Martelli A., Manuale di infermieristica pediatrica. Con focus sul ruolo dell'infermiere nei diversi contesti, Monduzzi Editore, 2024. ISBN:9788879477635 ISBN:9788879477635 ISBN:9788879477635"
+       "citazione": "De Rosa M., Guerra C.C., Martelli A., Manuale di infermieristica pediatrica. Con focus sul ruolo dell'infermiere nei diversi contesti, Monduzzi Editore, 2024. ISBN:9788879477635 ISBN:9788879477635 ISBN:9788879477635 ISBN:9788879477635"
       }
      ],
      "esami": [
@@ -24941,7 +24725,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dalla scheda ufficiale dell'insegnamento (https://medicinasperimentale.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/insegnamento/227879/pediatria-e-puericultura)",
-       "citazione": "De Rosa M., Guerra C.C., Martelli A., Manuale di infermieristica pediatrica. Con focus sul ruolo dell'infermiere nei diversi contesti, Monduzzi Editore, 2024. ISBN:9788879477635 ISBN:9788879477635 ISBN:9788879477635"
+       "citazione": "De Rosa M., Guerra C.C., Martelli A., Manuale di infermieristica pediatrica. Con focus sul ruolo dell'infermiere nei diversi contesti, Monduzzi Editore, 2024. ISBN:9788879477635 ISBN:9788879477635 ISBN:9788879477635 ISBN:9788879477635"
       }
      ],
      "esami": [
@@ -27494,18 +27278,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-11-04",
-       "ora": "08:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-10-05",
-       "iscrizioni_al": "2026-10-31",
-       "docenti": "COLANGELO GIANPIERO",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-11-06",
        "ora": "08:00",
        "luogo": null,
@@ -27578,18 +27350,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-11-02",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-10-03",
-       "iscrizioni_al": "2026-10-29",
-       "docenti": "FRANZ SILVIO",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-11-03",
        "ora": "14:00",
        "luogo": null,
@@ -27597,18 +27357,6 @@
        "iscrizioni_dal": "2026-10-04",
        "iscrizioni_al": "2026-10-30",
        "docenti": "VITOLO RAFFAELE",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-03",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-04",
-       "iscrizioni_al": "2026-10-30",
-       "docenti": "FRANZ SILVIO",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -35103,18 +34851,6 @@
        "docenti": "DALL'OCO SONDRA MUCI MARIA DOMENICA PICCOLO MARTINA RUGGIO LUCA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-15",
-       "iscrizioni_al": "2026-11-09",
-       "docenti": "DALL'OCO SONDRA RUGGIO LUCA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://www.bbcc.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/corso/LB11R/lb11r",
@@ -36071,18 +35807,6 @@
        "iscrizioni_dal": "2026-09-10",
        "iscrizioni_al": "2026-11-07",
        "docenti": "SILVESTRELLI FRANCESCA MASTRONUZZI GIOVANNI",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-01",
-       "iscrizioni_al": "2026-11-08",
-       "docenti": "SILVESTRELLI FRANCESCA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -37483,18 +37207,6 @@
        "docenti": "DISANTO GIULIA ANDREINA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-27",
-       "iscrizioni_al": "2026-11-04",
-       "docenti": "TATEO GIOVANNI",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://www.bbcc.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/corso/LB38R/lb38r",
@@ -38183,18 +37895,6 @@
        "iscrizioni_dal": "2026-08-08",
        "iscrizioni_al": "2026-11-08",
        "docenti": "LABBATE SILVIO CAROPPO ELISABETTA DE MARCO VITTORIO",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-08-08",
-       "iscrizioni_al": "2026-11-08",
-       "docenti": "DE MARCO VITTORIO",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -43454,18 +43154,6 @@
        "docenti": "DISANTO GIULIA ANDREINA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-27",
-       "iscrizioni_al": "2026-11-04",
-       "docenti": "TATEO GIOVANNI",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://www.bbcc.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/corso/LB19R/lb19r",
@@ -45129,18 +44817,6 @@
        "iscrizioni_dal": "2026-09-16",
        "iscrizioni_al": "2026-11-03",
        "docenti": "IAIA PIETRO LUIGI",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-04",
-       "iscrizioni_al": "2026-11-05",
-       "docenti": "PROVENZANO MARIAROSARIA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -47545,18 +47221,6 @@
        "docenti": "LEVANTE ANNALISA INGUSCI EMANUELA LECCISO FLAVIA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-16",
-       "iscrizioni_al": "2026-11-03",
-       "docenti": "LECCISO FLAVIA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://www.bbcc.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/corso/LB58R/lb58r",
@@ -47694,18 +47358,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-10-30",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-10-09",
-       "iscrizioni_al": "2026-10-26",
-       "docenti": "PALMA MONICA CAPPELLO CLAUDIA DE IACO SANDRA GIUNGATO GIUSEPPINA MAGGIO SABRINA POSA DONATO",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-11-05",
        "ora": "09:00",
        "luogo": null,
@@ -47774,30 +47426,6 @@
        "iscrizioni_dal": "2026-09-14",
        "iscrizioni_al": "2026-11-02",
        "docenti": "TURI MARCO ANGELELLI PAOLA MARINACI TIZIANA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-14",
-       "iscrizioni_al": "2026-11-02",
-       "docenti": "TURI MARCO ANGELELLI PAOLA IAIA MARIKA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-14",
-       "iscrizioni_al": "2026-11-02",
-       "docenti": "TURI MARCO",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -50570,7 +50198,7 @@
       {
        "tipo": "appello",
        "data": "2026-11-10",
-       "ora": "23:00",
+       "ora": null,
        "luogo": null,
        "modalita": "orale",
        "iscrizioni_dal": "2026-09-15",
@@ -55814,18 +55442,6 @@
       {
        "tipo": "appello",
        "data": "2026-11-10",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-08-08",
-       "iscrizioni_al": "2026-11-08",
-       "docenti": "DE MARCO VITTORIO",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
        "ora": "09:00",
        "luogo": null,
        "modalita": "orale",
@@ -56406,18 +56022,6 @@
        "iscrizioni_dal": "2026-08-08",
        "iscrizioni_al": "2026-11-08",
        "docenti": "LABBATE SILVIO CAROPPO ELISABETTA DE MARCO VITTORIO",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-08-08",
-       "iscrizioni_al": "2026-11-08",
-       "docenti": "DE MARCO VITTORIO",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -57311,18 +56915,6 @@
        "iscrizioni_dal": "2026-09-18",
        "iscrizioni_al": "2026-11-09",
        "docenti": "DE NARDIS FABIO LONGO MARIANO PREITE GIANPASQUALE",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-01",
-       "iscrizioni_al": "2026-11-08",
-       "docenti": "DE NARDIS FABIO",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -59846,18 +59438,6 @@
        "iscrizioni_dal": "2026-10-09",
        "iscrizioni_al": "2026-10-26",
        "docenti": "PALMA MONICA CAPPELLO CLAUDIA DE IACO SANDRA DISTEFANO VERONICA GIUNGATO GIUSEPPINA MAGGIO SABRINA POSA DONATO",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-30",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-10-09",
-       "iscrizioni_al": "2026-10-26",
-       "docenti": "PALMA MONICA CAPPELLO CLAUDIA DE IACO SANDRA GIUNGATO GIUSEPPINA MAGGIO SABRINA POSA DONATO",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -89553,18 +89133,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-04",
-       "iscrizioni_al": "2026-11-05",
-       "docenti": "PROVENZANO MARIAROSARIA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-11-11",
        "ora": "09:00",
        "luogo": null,
@@ -91686,18 +91254,6 @@
        "iscrizioni_dal": "2026-09-15",
        "iscrizioni_al": "2026-11-09",
        "docenti": "DALL'OCO SONDRA MUCI MARIA DOMENICA PICCOLO MARTINA RUGGIO LUCA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-15",
-       "iscrizioni_al": "2026-11-09",
-       "docenti": "DALL'OCO SONDRA RUGGIO LUCA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -97667,18 +97223,6 @@
        "docenti": "INGUSCI EMANUELA LECCISO FLAVIA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-09",
-       "ora": "08:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-17",
-       "iscrizioni_al": "2026-11-05",
-       "docenti": "INGUSCI EMANUELA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://www.bbcc.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/corso/LM84R/lm84r",
@@ -98357,18 +97901,6 @@
        "docenti": "VENULEO CLAUDIA GELO OMAR CARLO GIOACCHINO MANNARINI MINI MARINACI TIZIANA SALVATORE SERGIO SERIO ANGELO VINCENZO",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-16",
-       "iscrizioni_al": "2026-09-17",
-       "docenti": "VENULEO CLAUDIA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://www.bbcc.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/corso/LM84R/lm84r",
@@ -98429,18 +97961,6 @@
        "iscrizioni_dal": "2026-09-04",
        "iscrizioni_al": "2026-11-07",
        "docenti": "ROCHIRA ALESSIA INGUSCI EMANUELA MANNARINI MINI",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-09",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-04",
-       "iscrizioni_al": "2026-11-07",
-       "docenti": "ROCHIRA ALESSIA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -99518,7 +99038,7 @@
        "citazione": "D.L. Hartmann (1994) Global Physical Climatology ISBN-13: 978-0123285300"
       },
       {
-       "titolo": "Sozzi et al., 2025. Teoria, misure e modelli della turbolenza e della dispersione nello strato limite atmosferico. ARPA Lazio – 2025 (https://www.arpalazio.it/web/guest/pubblicazioni) ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305",
+       "titolo": "Sozzi et al., 2025. Teoria, misure e modelli della turbolenza e della dispersione nello strato limite atmosferico. ARPA Lazio – 2025 (https://www.arpalazio.it/web/guest/pubblicazioni) ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305",
        "autori": null,
        "editore": null,
        "anno": 2025,
@@ -99527,7 +99047,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dalla scheda ufficiale dell'insegnamento (https://www.bbcc.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/insegnamento/272522/micrometeorologia)",
-       "citazione": "Sozzi et al., 2025. Teoria, misure e modelli della turbolenza e della dispersione nello strato limite atmosferico. ARPA Lazio – 2025 (https://www.arpalazio.it/web/guest/pubblicazioni) ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305"
+       "citazione": "Sozzi et al., 2025. Teoria, misure e modelli della turbolenza e della dispersione nello strato limite atmosferico. ARPA Lazio – 2025 (https://www.arpalazio.it/web/guest/pubblicazioni) ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305 ISBN-10: 0123285305"
       }
      ],
      "esami": [
@@ -108143,18 +107663,6 @@
        "docenti": "CARDUCCI MICHELE ISONI ALESSANDRO LORUBBIO VINCENZO",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-09",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-17",
-       "iscrizioni_al": "2026-11-06",
-       "docenti": "CARDUCCI MICHELE",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://www.bbcc.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/corso/LM72R/lm72r",
@@ -113903,18 +113411,6 @@
        "docenti": "VERGARI UGHETTA PREITE GIANPASQUALE TARANTINO MARIA LUCIA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-30",
-       "iscrizioni_al": "2026-11-08",
-       "docenti": "VERGARI UGHETTA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://www.bbcc.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/corso/LM59R/lm59r",
@@ -114724,18 +114220,6 @@
        "iscrizioni_dal": "2026-09-16",
        "iscrizioni_al": "2026-11-03",
        "docenti": "IAIA PIETRO LUIGI",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-04",
-       "iscrizioni_al": "2026-11-05",
-       "docenti": "PROVENZANO MARIAROSARIA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -118625,18 +118109,6 @@
        "docenti": "LAMBERTI FRANCESCA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-06",
-       "ora": "15:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-09",
-       "iscrizioni_al": "2026-10-02",
-       "docenti": "D'ALESSIO RAFFAELE",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://www.bbcc.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/corso/LMG2R/lmg2r",
@@ -121601,18 +121073,6 @@
        "docenti": "BARBAGALLO SALVATORE MINECCIA FRANCESCO PATISSO GIUSEPPE",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-04",
-       "iscrizioni_al": "2026-11-08",
-       "docenti": "BARBAGALLO SALVATORE",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://www.bbcc.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/corso/LM63/lm63",
@@ -122404,18 +121864,6 @@
        "docenti": "SPONZIELLO MARCO EPIFANI FEDERICA MIGGIANO PATRIZIA NOCCO SARA POLLICE FABIO QUARTA COSIMO ALESSANDRO RINELLA ANTONELLA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-09",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-10",
-       "iscrizioni_al": "2026-11-04",
-       "docenti": "RINELLA ANTONELLA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
      ],
      "fonte": "https://www.bbcc.unisalento.it/offerta-formativa/percorsi-di-studio/-/dettaglio/corso/LM63/lm63",
@@ -122711,18 +122159,6 @@
        "iscrizioni_dal": "2026-10-15",
        "iscrizioni_al": "2026-10-31",
        "docenti": "LEO ANTONIO",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-11",
-       "ora": "08:15",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-15",
-       "iscrizioni_al": "2026-10-31",
-       "docenti": "LEO ANTONIO DI NUNNO NUNZIO SCARINCI ALESSIA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -123466,18 +122902,6 @@
        "iscrizioni_dal": "2026-10-01",
        "iscrizioni_al": "2026-11-03",
        "docenti": "LEVANTE ANNALISA",
-       "note": null,
-       "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-10",
-       "ora": "08:30",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-09-16",
-       "iscrizioni_al": "2026-11-03",
-       "docenti": "LECCISO FLAVIA",
        "note": null,
        "fonte": "https://unisalento.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }

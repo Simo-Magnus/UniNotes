@@ -484,6 +484,7 @@ def main() -> None:
                     i["stato_esami"] = "completo"
             c["insegnamenti"] = merge_insegnamenti([], c.get("insegnamenti") or [])
             c["stato"] = stato_corso(c)
+        pulizia.durata_per_tipo(corsi)  # durata coerente con il tipo (LM 2 anni, ciclo unico 5 o 6)
         pulizia.pulisci_corsi(corsi)  # normalizzazioni sicure (periodi, testi, docenti, libri, esami)
         pulizia.rivedi_varianti(corsi)  # varianti già nel file che non sono una traduzione: di nuovo insegnamenti
         pulizia.varianti_lingua(corsi)  # versioni in inglese degli insegnamenti: varianti della versione italiana

@@ -101,7 +101,7 @@
       {
        "tipo": "appello",
        "data": "2026-11-05",
-       "ora": "00:00",
+       "ora": null,
        "luogo": null,
        "modalita": null,
        "iscrizioni_dal": "2026-08-28",
@@ -480,18 +480,6 @@
        "iscrizioni_dal": "2026-10-22",
        "iscrizioni_al": "2026-11-11",
        "docenti": "CUOJATI FRANCESCA VICENTINI ALESSANDRA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-16",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-22",
-       "iscrizioni_al": "2026-11-11",
-       "docenti": "CUOJATI FRANCESCA RUSSO DANIEL VICENTINI ALESSANDRA",
        "note": null,
        "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -14178,18 +14166,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-14",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-19",
-       "iscrizioni_al": "2026-12-09",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "12:00",
        "luogo": null,
@@ -14197,18 +14173,6 @@
        "iscrizioni_dal": "2026-12-18",
        "iscrizioni_al": "2027-01-07",
        "docenti": "ASADIDEHZIRI VAHID MARCHINI GRAZIA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-12",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-12-18",
-       "iscrizioni_al": "2027-01-07",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
        "note": null,
        "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -14331,7 +14295,7 @@
       {
        "tipo": "appello",
        "data": "2026-12-16",
-       "ora": "00:00",
+       "ora": null,
        "luogo": null,
        "modalita": null,
        "iscrizioni_dal": "2026-11-21",
@@ -19780,18 +19744,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-14",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-19",
-       "iscrizioni_al": "2026-12-09",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "12:00",
        "luogo": null,
@@ -19799,18 +19751,6 @@
        "iscrizioni_dal": "2026-12-18",
        "iscrizioni_al": "2027-01-07",
        "docenti": "ASADIDEHZIRI VAHID MARCHINI GRAZIA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-12",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-12-18",
-       "iscrizioni_al": "2027-01-07",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
        "note": null,
        "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -22839,18 +22779,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-14",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-19",
-       "iscrizioni_al": "2026-12-09",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "12:00",
        "luogo": null,
@@ -22858,18 +22786,6 @@
        "iscrizioni_dal": "2026-12-18",
        "iscrizioni_al": "2027-01-07",
        "docenti": "ASADIDEHZIRI VAHID MARCHINI GRAZIA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-12",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-12-18",
-       "iscrizioni_al": "2027-01-07",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
        "note": null,
        "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -42601,7 +42517,7 @@
       {
        "tipo": "appello",
        "data": "2026-11-05",
-       "ora": "00:00",
+       "ora": null,
        "luogo": null,
        "modalita": null,
        "iscrizioni_dal": "2026-08-28",
@@ -54589,18 +54505,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-14",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-19",
-       "iscrizioni_al": "2026-12-09",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "12:00",
        "luogo": null,
@@ -54608,18 +54512,6 @@
        "iscrizioni_dal": "2026-12-18",
        "iscrizioni_al": "2027-01-07",
        "docenti": "ASADIDEHZIRI VAHID MARCHINI GRAZIA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-12",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-12-18",
-       "iscrizioni_al": "2027-01-07",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
        "note": null,
        "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -55712,7 +55604,7 @@
       {
        "tipo": "appello",
        "data": "2026-11-05",
-       "ora": "00:00",
+       "ora": null,
        "luogo": null,
        "modalita": null,
        "iscrizioni_dal": "2026-08-28",
@@ -62652,7 +62544,7 @@
       {
        "tipo": "appello",
        "data": "2026-11-05",
-       "ora": "00:00",
+       "ora": null,
        "luogo": null,
        "modalita": null,
        "iscrizioni_dal": "2026-08-28",
@@ -64325,18 +64217,6 @@
        "iscrizioni_dal": "2026-10-22",
        "iscrizioni_al": "2026-11-11",
        "docenti": "CUOJATI FRANCESCA VICENTINI ALESSANDRA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-16",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-22",
-       "iscrizioni_al": "2026-11-11",
-       "docenti": "CUOJATI FRANCESCA RUSSO DANIEL VICENTINI ALESSANDRA",
        "note": null,
        "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -66721,7 +66601,7 @@
       {
        "tipo": "appello",
        "data": "2026-11-05",
-       "ora": "00:00",
+       "ora": null,
        "luogo": null,
        "modalita": null,
        "iscrizioni_dal": "2026-08-28",
@@ -67343,18 +67223,6 @@
        "iscrizioni_dal": "2026-09-24",
        "iscrizioni_al": "2026-10-14",
        "docenti": "BIAVASCHI PAOLA CALANDRINO FABIO CERMESONI DANIELA COLOMBO FRANCESCO EDOARDO MARIA CORRADI ERICA FASOLO NICOLETTA JARED MARTINO LONGO GIUSEPPE MARANTONIO LUCREZIA MAYURI BIANCA MILONE SILVIA PAROLISI LOREDANA PULITANO' FRANCESCA RE DAVIDE ROLANDI ANNA TONDO FEDERICA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-19",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-24",
-       "iscrizioni_al": "2026-10-14",
-       "docenti": "PULITANO' FRANCESCA BIAVASCHI PAOLA CALANDRINO FABIO CERMESONI DANIELA COLOMBO FRANCESCO EDOARDO MARIA CORRADI ERICA FASOLO NICOLETTA JARED MARTINO LONGO GIUSEPPE MARANTONIO LUCREZIA MAYURI BIANCA MILONE SILVIA PAROLISI LOREDANA RE DAVIDE ROLANDI ANNA TONDO FEDERICA",
        "note": null,
        "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       }
@@ -86900,7 +86768,7 @@
       {
        "tipo": "appello",
        "data": "2026-11-05",
-       "ora": "00:00",
+       "ora": null,
        "luogo": null,
        "modalita": null,
        "iscrizioni_dal": "2026-08-28",
@@ -94930,18 +94798,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-14",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-19",
-       "iscrizioni_al": "2026-12-09",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "12:00",
        "luogo": null,
@@ -94949,18 +94805,6 @@
        "iscrizioni_dal": "2026-12-18",
        "iscrizioni_al": "2027-01-07",
        "docenti": "ASADIDEHZIRI VAHID MARCHINI GRAZIA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-12",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-12-18",
-       "iscrizioni_al": "2027-01-07",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
        "note": null,
        "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -97043,18 +96887,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-14",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-19",
-       "iscrizioni_al": "2026-12-09",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "12:00",
        "luogo": null,
@@ -97062,18 +96894,6 @@
        "iscrizioni_dal": "2026-12-18",
        "iscrizioni_al": "2027-01-07",
        "docenti": "ASADIDEHZIRI VAHID MARCHINI GRAZIA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-12",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-12-18",
-       "iscrizioni_al": "2027-01-07",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
        "note": null,
        "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -99475,18 +99295,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-12-14",
-       "ora": "11:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-19",
-       "iscrizioni_al": "2026-12-09",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2027-01-12",
        "ora": "12:00",
        "luogo": null,
@@ -99494,18 +99302,6 @@
        "iscrizioni_dal": "2026-12-18",
        "iscrizioni_al": "2027-01-07",
        "docenti": "ASADIDEHZIRI VAHID MARCHINI GRAZIA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2027-01-12",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-12-18",
-       "iscrizioni_al": "2027-01-07",
-       "docenti": "ASADIDEHZIRI VAHID D'ALESSANDRO ASSUNTA",
        "note": null,
        "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -106653,18 +106449,6 @@
        "iscrizioni_dal": "2026-10-22",
        "iscrizioni_al": "2026-11-11",
        "docenti": "BERINI FRANCESCA DELFINA GARIBOLDI MARZIA BRUNA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-16",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-22",
-       "iscrizioni_al": "2026-11-11",
-       "docenti": "GARIBOLDI MARZIA BRUNA BERINI FRANCESCA DELFINA",
        "note": null,
        "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
       },
@@ -123285,7 +123069,7 @@
       {
        "tipo": "appello",
        "data": "2027-01-25",
-       "ora": "00:00",
+       "ora": null,
        "luogo": null,
        "modalita": null,
        "iscrizioni_dal": "2026-12-24",
@@ -136399,18 +136183,6 @@
       },
       {
        "tipo": "appello",
-       "data": "2026-10-05",
-       "ora": "11:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-10",
-       "iscrizioni_al": "2026-09-30",
-       "docenti": "GRASSO GIORGIO MASPERO LORENZO MOLFETTA ANDREA PANZERI LINO STEVANATO ALICE TIBERI GIULIA FRANCESCA MARINA",
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
        "data": "2026-11-03",
        "ora": "09:00",
        "luogo": null,
@@ -141954,176 +141726,6 @@
      ]
     },
     {
-     "codice": "GIU0694",
-     "nome": "Inglese Giuridico",
-     "anno": 1,
-     "periodo": "2",
-     "periodo_inizio": "27/02/2027 00:00:00",
-     "periodo_fine": "25/05/2027 00:00:00",
-     "cfu": 4,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": true,
-     "curriculum": "GENERALE, COMUNE VA",
-     "docenti": [
-      "Bogni Roberta"
-     ],
-     "url": "https://uninsubria.coursecatalogue.cineca.it/insegnamenti/2026/25437/2026/9999?coorte=2026",
-     "libri": [
-      {
-       "titolo": "Elements of legal English contract law : a guide to English contract language comprehension and application to drafting and translation with case references / Massimo A. De Francesco",
-       "autori": null,
-       "editore": "Cacucci",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": "9788866119432",
-       "lingua": null,
-       "tipo": null,
-       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
-       "citazione": "Elements of legal English contract law : a guide to English contract language comprehension and application to drafting and translation with case references / Massimo A. De Francesco, Cacucci, 2020",
-       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
-      },
-      {
-       "titolo": "Dizionario esplicativo di inglese giuridico : inglese-italiano, italiano-inglese / Giovanni Villa ; prefazione di Pietro Rescigno",
-       "autori": null,
-       "editore": "Giuffrè",
-       "anno": 2015,
-       "edizione": null,
-       "isbn": "9788814201448",
-       "lingua": null,
-       "tipo": null,
-       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
-       "citazione": "Dizionario esplicativo di inglese giuridico : inglese-italiano, italiano-inglese / Giovanni Villa ; prefazione di Pietro Rescigno, Giuffrè, 2015",
-       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
-      },
-      {
-       "titolo": "The legal English grammar guide / Michael Davies",
-       "autori": "Davies Michael",
-       "editore": "Legal English UK",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": "9798641630045",
-       "lingua": null,
-       "tipo": null,
-       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
-       "citazione": "Davies Michael, The legal English grammar guide / Michael Davies, Legal English UK, 2020",
-       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
-      },
-      {
-       "titolo": "Dizionario di inglese legale applicato : inglese-italiano, italiano-inglese / Serena De Palma ; con la collaborazione di Arianna Grasso e Jane Schorah",
-       "autori": "De Palma, Serena",
-       "editore": "Filodiritto",
-       "anno": 2012,
-       "edizione": null,
-       "isbn": "9788895922140",
-       "lingua": null,
-       "tipo": null,
-       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
-       "citazione": "De Palma, Serena, Dizionario di inglese legale applicato : inglese-italiano, italiano-inglese / Serena De Palma ; con la collaborazione di Arianna Grasso e Jane Schorah, Filodiritto, 2012",
-       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
-      },
-      {
-       "titolo": "Legal English / Sofia Parastatidou, Jacopo D’Andria Ursoleo, Kate Gralton",
-       "autori": "Sofia Parastatidou",
-       "editore": "Pearson",
-       "anno": 2021,
-       "edizione": null,
-       "isbn": "9788891907028",
-       "lingua": null,
-       "tipo": null,
-       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
-       "citazione": "Sofia Parastatidou, Legal English / Sofia Parastatidou, Jacopo D’Andria Ursoleo, Kate Gralton, Pearson, 2021",
-       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
-      },
-      {
-       "titolo": "English for law : theory and practice",
-       "autori": "Michael S. Boyd",
-       "editore": "Neldiritto",
-       "anno": 2021,
-       "edizione": "2. ed",
-       "isbn": "9788832709452",
-       "lingua": null,
-       "tipo": null,
-       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
-       "citazione": "Michael S. Boyd, English for law : theory and practice, Neldiritto, 2021",
-       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
-      },
-      {
-       "titolo": "Legal english",
-       "autori": "a cura di Maria Gigliola di Renzo Villata; con la collaborazione di Rossana Buzzi, Giuseppe Cadel, Arianna Grasso",
-       "editore": "Wolters Kluwer",
-       "anno": 2025,
-       "edizione": "4. ed. rivista e ampliata",
-       "isbn": "9788813389154",
-       "lingua": null,
-       "tipo": null,
-       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
-       "citazione": "a cura di Maria Gigliola di Renzo Villata; con la collaborazione di Rossana Buzzi, Giuseppe Cadel, Arianna Grasso, Legal english, Wolters Kluwer, 2025",
-       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
-      },
-      {
-       "titolo": "Compendio di inglese giuridico",
-       "autori": "Michael S. Boyd,",
-       "editore": "Neldiritto",
-       "anno": 2025,
-       "edizione": "3. ed",
-       "isbn": "9791254707975",
-       "lingua": null,
-       "tipo": null,
-       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
-       "citazione": "Michael S. Boyd,, Compendio di inglese giuridico, Neldiritto, 2025",
-       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
-      },
-      {
-       "titolo": "Listenings for professional legal English : intermediate-level listening exercises for students of legal English",
-       "autori": "Charles J. Hewetson",
-       "editore": "Global Legal English Ltd",
-       "anno": 2013,
-       "edizione": null,
-       "isbn": "9780957358959",
-       "lingua": null,
-       "tipo": null,
-       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
-       "citazione": "Charles J. Hewetson, Listenings for professional legal English : intermediate-level listening exercises for students of legal English, Global Legal English Ltd, 2013",
-       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-10-09",
-       "ora": "08:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-14",
-       "iscrizioni_al": "2026-10-04",
-       "docenti": null,
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/ListaAppelliOfferta.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-10-09",
-       "ora": "12:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-09-14",
-       "iscrizioni_al": "2026-10-04",
-       "docenti": null,
-       "note": null,
-       "fonte": "https://uninsubria.esse3.cineca.it/ListaAppelliOfferta.do"
-      }
-     ],
-     "fonte": "https://uninsubria.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-13",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "uninsubria-lmg-01-giurisprudenza-replica-varese-giu0694",
-     "stato_esami": "completo",
-     "codici_alternativi": [
-      "GIU0458"
-     ]
-    },
-    {
      "codice": "GIU0692",
      "nome": "Istituzioni di Diritto Romano",
      "anno": 1,
@@ -142507,6 +142109,176 @@
      "stato_esami": "completo",
      "codici_alternativi": [
       "GIU0592"
+     ]
+    },
+    {
+     "codice": "GIU0694",
+     "nome": "Inglese Giuridico",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "27/02/2027 00:00:00",
+     "periodo_fine": "25/05/2027 00:00:00",
+     "cfu": 4,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": "GENERALE, COMUNE VA",
+     "docenti": [
+      "Bogni Roberta"
+     ],
+     "url": "https://uninsubria.coursecatalogue.cineca.it/insegnamenti/2026/25437/2026/9999?coorte=2026",
+     "libri": [
+      {
+       "titolo": "Elements of legal English contract law : a guide to English contract language comprehension and application to drafting and translation with case references / Massimo A. De Francesco",
+       "autori": null,
+       "editore": "Cacucci",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": "9788866119432",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
+       "citazione": "Elements of legal English contract law : a guide to English contract language comprehension and application to drafting and translation with case references / Massimo A. De Francesco, Cacucci, 2020",
+       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
+      },
+      {
+       "titolo": "Dizionario esplicativo di inglese giuridico : inglese-italiano, italiano-inglese / Giovanni Villa ; prefazione di Pietro Rescigno",
+       "autori": null,
+       "editore": "Giuffrè",
+       "anno": 2015,
+       "edizione": null,
+       "isbn": "9788814201448",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
+       "citazione": "Dizionario esplicativo di inglese giuridico : inglese-italiano, italiano-inglese / Giovanni Villa ; prefazione di Pietro Rescigno, Giuffrè, 2015",
+       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
+      },
+      {
+       "titolo": "The legal English grammar guide / Michael Davies",
+       "autori": "Davies Michael",
+       "editore": "Legal English UK",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": "9798641630045",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
+       "citazione": "Davies Michael, The legal English grammar guide / Michael Davies, Legal English UK, 2020",
+       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
+      },
+      {
+       "titolo": "Dizionario di inglese legale applicato : inglese-italiano, italiano-inglese / Serena De Palma ; con la collaborazione di Arianna Grasso e Jane Schorah",
+       "autori": "De Palma, Serena",
+       "editore": "Filodiritto",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": "9788895922140",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
+       "citazione": "De Palma, Serena, Dizionario di inglese legale applicato : inglese-italiano, italiano-inglese / Serena De Palma ; con la collaborazione di Arianna Grasso e Jane Schorah, Filodiritto, 2012",
+       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
+      },
+      {
+       "titolo": "Legal English / Sofia Parastatidou, Jacopo D’Andria Ursoleo, Kate Gralton",
+       "autori": "Sofia Parastatidou",
+       "editore": "Pearson",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": "9788891907028",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
+       "citazione": "Sofia Parastatidou, Legal English / Sofia Parastatidou, Jacopo D’Andria Ursoleo, Kate Gralton, Pearson, 2021",
+       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
+      },
+      {
+       "titolo": "English for law : theory and practice",
+       "autori": "Michael S. Boyd",
+       "editore": "Neldiritto",
+       "anno": 2021,
+       "edizione": "2. ed",
+       "isbn": "9788832709452",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
+       "citazione": "Michael S. Boyd, English for law : theory and practice, Neldiritto, 2021",
+       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
+      },
+      {
+       "titolo": "Legal english",
+       "autori": "a cura di Maria Gigliola di Renzo Villata; con la collaborazione di Rossana Buzzi, Giuseppe Cadel, Arianna Grasso",
+       "editore": "Wolters Kluwer",
+       "anno": 2025,
+       "edizione": "4. ed. rivista e ampliata",
+       "isbn": "9788813389154",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
+       "citazione": "a cura di Maria Gigliola di Renzo Villata; con la collaborazione di Rossana Buzzi, Giuseppe Cadel, Arianna Grasso, Legal english, Wolters Kluwer, 2025",
+       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
+      },
+      {
+       "titolo": "Compendio di inglese giuridico",
+       "autori": "Michael S. Boyd,",
+       "editore": "Neldiritto",
+       "anno": 2025,
+       "edizione": "3. ed",
+       "isbn": "9791254707975",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
+       "citazione": "Michael S. Boyd,, Compendio di inglese giuridico, Neldiritto, 2025",
+       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
+      },
+      {
+       "titolo": "Listenings for professional legal English : intermediate-level listening exercises for students of legal English",
+       "autori": "Charles J. Hewetson",
+       "editore": "Global Legal English Ltd",
+       "anno": 2013,
+       "edizione": null,
+       "isbn": "9780957358959",
+       "lingua": null,
+       "tipo": null,
+       "note": "Dalla bibliografia Leganto dell'a.a. 2025/26 dello stesso insegnamento: quella del 2026/27 non è ancora pubblicata",
+       "citazione": "Charles J. Hewetson, Listenings for professional legal English : intermediate-level listening exercises for students of legal English, Global Legal English Ltd, 2013",
+       "fonte": "https://uninsubria.alma.exlibrisgroup.com/leganto/public/39INS_INST/lists?courseCode=GIU0694"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-09",
+       "ora": "08:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-14",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://uninsubria.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-10-09",
+       "ora": "12:00",
+       "luogo": null,
+       "modalita": null,
+       "iscrizioni_dal": "2026-09-14",
+       "iscrizioni_al": "2026-10-04",
+       "docenti": null,
+       "note": null,
+       "fonte": "https://uninsubria.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://uninsubria.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-13",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "uninsubria-lmg-01-giurisprudenza-replica-varese-giu0694",
+     "stato_esami": "completo",
+     "codici_alternativi": [
+      "GIU0458"
      ]
     },
     {
@@ -142948,7 +142720,7 @@
      "cfu": 6,
      "ssd": "IUS/20",
      "obbligatorio": false,
-     "curriculum": "COMUNE, COMUNE VA, LINGUISTICO",
+     "curriculum": "COMUNE, COMUNE VA",
      "docenti": [
       "Reale Mariacristina"
      ],
