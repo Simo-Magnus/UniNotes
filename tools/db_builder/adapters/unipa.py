@@ -624,7 +624,7 @@ def fetch_ateneo(uid: str = "unipa", anno: int | None = None, max_cds: int | Non
             firewall["n"] = 0
             d = leggi_scheda_pdf(r.content)
             for it in jobs[pid]:
-                it["periodo"] = it["periodo"] or d["periodo"]
+                it["periodo"] = d["periodo"] or it["periodo"]  # la scheda di trasparenza prevale sul CSV dei dati aperti
                 it["libri"] = d["libri"]
                 it["stato_libri"] = "completo" if d["libri"] else "da_aggiungere"
                 it["url_sito"] = SCHEDA + pid

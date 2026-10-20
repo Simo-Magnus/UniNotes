@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -8,7 +9,14 @@ import 'package:university_notes/core/database/app_database.dart';
 import 'package:university_notes/core/services/app_services.dart';
 import 'package:university_notes/core/services/whisper_service.dart';
 import 'package:university_notes/core/theme/app_theme.dart';
+import 'package:university_notes/features/cloud/google_drive_service.dart';
+import 'package:university_notes/features/cloud/graph_client.dart';
+import 'package:university_notes/features/cloud/onedrive_service.dart';
+import 'package:university_notes/features/links/google_drive_card.dart';
 import 'package:university_notes/features/links/links_screen.dart';
+import 'package:university_notes/features/links/onedrive_card.dart';
+import 'package:university_notes/features/notes/notes_store.dart';
+import 'package:university_notes/repositories/settings_repository.dart';
 import 'package:university_notes/features/links/microsoft_consent_sheet.dart';
 import 'package:university_notes/features/settings/settings_screen.dart';
 
@@ -172,6 +180,113 @@ void main() {
     await tester.runAsync(() async {
       await s.database.close();
       await tmp.delete(recursive: true);
+    });
+  });
+
+  group('Scollega', () {
+    Future<(AppServices, Directory)> connected(GraphTransport google) async {
+      final db = await AppDatabase.openInMemory();
+      final tmp = await Directory.systemTemp.createTemp('links_signout_');
+      final settings = SettingsRepository(db);
+      final notes = NotesStore(settings, root: () async => tmp);
+      final secrets = MemoryCloudSecrets()
+        ..values['onedrive.refreshToken'] = 'r1'
+        ..values['gdrive.refreshToken'] = 'r2';
+      await settings.set('onedrive_account', 'Studente · s@outlook.it');
+      await settings.set('gdrive_account', 'Studente · s@gmail.com');
+      final s = AppServices(
+        db,
+        onedrive: OneDriveService(
+          settings,
+          notes,
+          secrets: secrets,
+          stateDir: () async => tmp,
+        ),
+        googleDrive: GoogleDriveService(
+          settings,
+          notes,
+          secrets: secrets,
+          transport: google,
+          stateDir: () async => tmp,
+          builtInClientId: 'client.apps.googleusercontent.com',
+          builtInClientSecret: '',
+        ),
+      );
+      return (s, tmp);
+    }
+
+    Future<void> scollega(WidgetTester tester) async {
+      final button = find.text('Scollega');
+      await tester.ensureVisible(button);
+      await tester.tap(button);
+      await _settle(tester, 20);
+    }
+
+    testWidgets('OneDrive: il dialogo dice dove togliere l\'accesso', (
+      tester,
+    ) async {
+      final (s, tmp) = (await tester.runAsync(
+        () => connected(
+          (m, u, {headers = const {}, body}) async =>
+              GraphResponse(200, Uint8List(0)),
+        ),
+      ))!;
+      await _pump(
+        tester,
+        const Scaffold(body: SingleChildScrollView(child: OneDriveCard())),
+        s,
+        const Size(1000, 3000),
+      );
+      await scollega(tester);
+      expect(
+        find.textContaining('account.live.com/consent/Manage'),
+        findsOneWidget,
+      );
+      expect(find.textContaining('myapps.microsoft.com'), findsOneWidget);
+      await tester.tap(find.text('Conferma'));
+      await _settle(tester, 40);
+      expect(await tester.runAsync(s.onedrive.connected), isFalse);
+      expect(find.text('Accedi con Microsoft'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      await tester.runAsync(() async {
+        await s.database.close();
+        await tmp.delete(recursive: true);
+      });
+    });
+
+    testWidgets('Google Drive: revoca non riuscita, pagina dell\'account', (
+      tester,
+    ) async {
+      final (s, tmp) = (await tester.runAsync(
+        () => connected(
+          (m, u, {headers = const {}, body}) async =>
+              throw GraphException(0, 'Google non raggiungibile (offline).'),
+        ),
+      ))!;
+      await _pump(
+        tester,
+        const Scaffold(body: SingleChildScrollView(child: GoogleDriveCard())),
+        s,
+        const Size(1000, 3000),
+      );
+      await scollega(tester);
+      // la pagina dell'account solo se la revoca non riesce
+      expect(find.textContaining('myaccount.google.com'), findsNothing);
+      await tester.tap(find.text('Conferma'));
+      await _settle(tester, 40);
+      expect(find.text('Google Drive scollegato'), findsOneWidget);
+      expect(
+        find.textContaining('https://myaccount.google.com/permissions'),
+        findsOneWidget,
+      );
+      await tester.tap(find.text('Chiudi'));
+      await _settle(tester, 20);
+      expect(await tester.runAsync(s.googleDrive.connected), isFalse);
+      expect(tester.takeException(), isNull);
+      await tester.runAsync(() async {
+        await s.database.close();
+        await tmp.delete(recursive: true);
+      });
     });
   });
 }

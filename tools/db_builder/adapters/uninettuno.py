@@ -34,6 +34,7 @@ import json
 import os
 import pathlib
 import re
+import threading
 import time
 import unicodedata
 
@@ -62,11 +63,23 @@ class Sito(Client):
     nient'altro."""
 
     PAUSE = (20, 60, 120, 240)
+    # con UN_INTERVALLO=<secondi> le richieste vere partono a ritmo costante, una per intervallo (anche tra
+    # thread diversi), poco sotto il limite del WAF: meno risposte di sfida e meno pagine abbandonate
+    _ritmo = threading.Lock()
+    _ultima = 0.0
 
     def _get(self, url: str):
-        for pausa in (0,) + self.PAUSE:
+        intervallo = float(os.environ.get("UN_INTERVALLO") or 0)
+        pause = (0,) + (self.PAUSE if not intervallo else (0,) * 5)
+        for pausa in pause:
             if pausa:
                 time.sleep(pausa)
+            if intervallo:
+                with Sito._ritmo:
+                    attesa = intervallo - (time.time() - Sito._ultima)
+                    if attesa > 0:
+                        time.sleep(attesa)
+                    Sito._ultima = time.time()
             r = super()._get(url)
             if r is None:
                 return None

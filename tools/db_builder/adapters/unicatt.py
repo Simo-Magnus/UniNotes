@@ -323,12 +323,16 @@ def _pagina_alternativa(c: Client, corso: dict, cache: dict) -> str | None:
 
 
 def fetch_ateneo(uid: str = "unicatt", anno: int | None = None, max_cds: int | None = None, syllabus: bool = True,
-                 corsi: list[dict] | None = None, log=print, api: bool = True) -> dict:
-    """Restituisce un contributo nel formato di database/contrib (vedi build_db.py)."""
+                 corsi: list[dict] | None = None, log=print, api: bool = True, solo: set[str] | None = None) -> dict:
+    """Restituisce un contributo nel formato di database/contrib (vedi build_db.py).
+    `solo`: id dei soli corsi da leggere (per rieseguire un correttivo; gli altri servono solo a riconoscere i CDL)."""
     anno = anno or (time.localtime().tm_year if time.localtime().tm_mon >= 9 else time.localtime().tm_year - 1)
     if corsi is None:
         corsi = json.loads((ROOT / "database" / "corsi" / f"{uid}.json").read_text(encoding="utf-8"))["corsi"]
     tutti = list(corsi)
+    elenco_completo = tutti
+    if solo:
+        corsi = tutti = [c for c in corsi if c["id"] in solo]
     if max_cds:
         corsi = corsi[:max_cds]
     log(f"[{uid}] {len(corsi)} corsi su www.unicatt.it")
@@ -458,7 +462,7 @@ def fetch_ateneo(uid: str = "unicatt", anno: int | None = None, max_cds: int | N
     log(f"[{uid}] piani letti: {len(out)} corsi, {sum(len(x['insegnamenti']) for x in out)} insegnamenti")
 
     if api:
-        _api_campus(uid, anno, tutti, out, links, cache, log)
+        _api_campus(uid, anno, tutti, out, links, cache, log, elenco_completo)
 
     jobs: dict[str, list[dict]] = {}
     for corso in out:
@@ -664,6 +668,20 @@ def _corsi_uguali(corso: dict, voci: list[tuple[int, dict]]) -> list[tuple[int, 
         None, base, _ascii(_nome_corso(e.get("descrizione")))).ratio() >= 0.9]
 
 
+def _senza_cdl_italiani(corso: dict, voci_corso: list[tuple[int, dict]], italiani: list[dict],
+                        voci: list[tuple[int, dict]]) -> list[tuple[int, dict]]:
+    """Dai CDL di un corso in inglese toglie quelli di un corso italiano della stessa sede: i CDL italiani hanno
+    spesso il nome inglese uguale a quello del corso inglese («MEDICINA E CHIRURGIA» è «MEDICINE AND SURGERY») e
+    `_corsi_uguali` toglie le parentesi dal nome («ECONOMIA E GESTIONE AZIENDALE (TAUGHT IN ITALIAN)», «(CORSI
+    TARDO-POMERIDIANO-SERALI)», «(SERVICE MANAGEMENT)» sono il corso italiano), ma sono altri corsi di laurea, con
+    altri insegnamenti, e il piano del corso in inglese non li comprende. Resta il CDL che ha per nome quello del
+    corso. Se nessun corso italiano rivendica il CDL (Physics: il CDL 2024 si chiamava «FISICA») resta."""
+    k = _scheletro(_nome_corso(corso["nome"]))
+    italiani_cdl = {e["codiceCDL"] for m in italiani for _, e in _corsi_uguali(m, voci)}
+    return [(a, e) for a, e in voci_corso
+            if e["codiceCDL"] not in italiani_cdl or k == _scheletro(_nome_corso(e.get("descrizione")))]
+
+
 def _piano_incompleto(corso: dict, durata: int) -> bool:
     """Il piano pubblicato sul sito richiede (righe obbligatorie più CFU dei gruppi a scelta) meno dei 60 CFU per
     anno del corso: mancano le attività a scelta dello studente, che il sito non elenca."""
@@ -696,7 +714,8 @@ def _attivita_a_scelta(corso: dict, ps_voci: list[dict], anno: int, durata: int,
     return out
 
 
-def _api_campus(uid: str, anno: int, tutti: list[dict], out: list[dict], links: dict, cache, log) -> None:
+def _api_campus(uid: str, anno: int, tutti: list[dict], out: list[dict], links: dict, cache, log,
+                elenco_completo: list[dict] | None = None) -> None:
     """Codici, docenti, programmi mancanti, piani senza pagina e appelli dall'API dei campus (vedi docstring)."""
     api = Api((cache / "unicatt_api") if cache else None, log=log)
     oggi = time.strftime("%Y-%m-%d")
@@ -708,6 +727,9 @@ def _api_campus(uid: str, anno: int, tutti: list[dict], out: list[dict], links: 
         return elenchi[(sede, a)]
 
     gia = {c["id"] for c in out}
+    completo = elenco_completo or tutti
+    lingue = {m["id"]: m.get("lingua") for m in completo}  # (i corsi letti dal sito non portano la lingua)
+    italiani = [m for m in completo if m.get("lingua") != "en"]
     for meta in tutti:  # corsi senza piano sul sito: si riempiono dall'API (se la trova)
         if meta["id"] not in gia:
             out.append({"id": meta["id"], "nome": meta["nome"], "classe": meta.get("classe"),
@@ -722,7 +744,10 @@ def _api_campus(uid: str, anno: int, tutti: list[dict], out: list[dict], links: 
         per_sede: dict[str, list[tuple[int, dict]]] = {}
         for sede in sedi or SEDI:
             voci = [(a, e) for a in (anno, anno - 1, anno - 2) for e in cdl_di(sede, a)]
-            for a, e in _corsi_uguali(corso, voci):
+            trovati_cdl = _corsi_uguali(corso, voci)
+            if lingue.get(corso["id"]) == "en":
+                trovati_cdl = _senza_cdl_italiani(corso, trovati_cdl, [m for m in italiani if m["id"] != corso["id"]], voci)
+            for a, e in trovati_cdl:
                 per_sede.setdefault(sede, []).append((a, e))
         if len(per_sede) > 1:
             stat["corsi_ambigui"].append(corso["id"])

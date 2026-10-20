@@ -45,14 +45,14 @@ def _scrivi(path: pathlib.Path, data) -> bytes:
         path.parent.mkdir(parents=True, exist_ok=True)
         # su Windows un file appena letto da un altro processo (antivirus, indicizzazione,
         # git) può rifiutare per un attimo la scrittura (OSError 22/13): si riprova
-        for prova in range(5):
+        for prova in range(10):  # fino a ~30 s: a volte il blocco dura qualche secondo
             try:
                 path.write_bytes(testo)
                 break
             except OSError:
-                if prova == 4:
+                if prova == 9:
                     raise
-                time.sleep(0.5 * (prova + 1))
+                time.sleep(0.6 * (prova + 1))
     return testo
 
 

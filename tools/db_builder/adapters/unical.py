@@ -34,8 +34,8 @@ def _norm(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", s).strip()
 
 
-def _periodo(sem: list | str | None) -> str | None:
-    t = (" ".join(sem) if isinstance(sem, list) else (sem or "")).lower()
+def _periodo_singolo(t: str | None) -> str | None:
+    t = (t or "").strip().lower()
     if not t:
         return None
     if "annual" in t:
@@ -44,6 +44,28 @@ def _periodo(sem: list | str | None) -> str | None:
         if t.startswith(k):
             return v
     return t
+
+
+def _periodo(sem: list | str | None, moduli: list[dict] | None = None) -> str | None:
+    """Periodo di un'attività del piano. `StudyActivitySemester` è una lista con i semestri dei moduli
+    (`AfSubModules`): con un solo valore vale quello; con più valori, se i moduli sono distinti (codice o nome
+    diversi) e ciascuno ha un solo semestre, i moduli sono in semestri diversi: annuale; se lo stesso
+    modulo compare in due semestri (due edizioni a scelta, «Primo» e «Secondo Semestre» per lo stesso codice)
+    il semestre non è determinato: None (non si sceglie il primo della lista)."""
+    voci = [str(x) for x in sem if x] if isinstance(sem, list) else ([str(sem)] if sem else [])
+    valori = {_periodo_singolo(x) for x in voci}
+    if len(valori) <= 1:
+        return next(iter(valori), None)
+    per_modulo: dict[tuple, set] = {}
+    for m in moduli or []:
+        s = m.get("StudyActivitySemester")
+        for x in (s if isinstance(s, list) else [s]):
+            if x:
+                per_modulo.setdefault((m.get("StudyActivityCod"), _norm(m.get("StudyActivityName") or "")), set()).add(
+                    _periodo_singolo(x))
+    if not per_modulo or any(len(v) > 1 for v in per_modulo.values()):
+        return None
+    return "annuale" if len(set().union(*per_modulo.values())) > 1 else None
 
 
 def _cfu_attivita(a: dict):
@@ -162,7 +184,7 @@ def fetch_ateneo(uid: str = "unical", anno: int | None = None, max_cds: int | No
                         cfu = _cfu_attivita(a)
                         item = righe[key] = {
                             "codice": a.get("StudyActivityCod"), "nome": _titolo(a.get("StudyActivityName") or ""),
-                            "anno": k, "periodo": _periodo(a.get("StudyActivitySemester")),
+                            "anno": k, "periodo": _periodo(a.get("StudyActivitySemester"), a.get("AfSubModules")),
                             "cfu": cfu,
                             "ssd": ", ".join(a.get("StudyActivitySSD") or []) or None,
                             "obbligatorio": a.get("StudyActivityCompulsory"), "curriculum": None, "docenti": [],

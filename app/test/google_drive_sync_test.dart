@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
@@ -109,6 +111,67 @@ void main() {
     );
     expect(drive.files.length, 2);
   });
+
+  test('prima sincronizzazione: stessa dimensione, contenuto confrontato con '
+      'l\'MD5 di Drive (diverso = conflitto)', () async {
+    final pc = device('PC');
+    final phone = device('telefono');
+    await write(pc, 'a.md', 'abc');
+    await write(pc, 'b.md', 'xyz');
+    await pc.run();
+    // sul telefono gli stessi file copiati a mano, uno con contenuto diverso
+    await write(phone, 'a.md', 'abd');
+    await write(phone, 'b.md', 'xyz');
+    final r = await phone.run();
+    expect(r.errors, isEmpty);
+    expect(r.conflicts, 1);
+    expect(r.uploaded + r.downloaded, 0);
+    expect(await f(phone, 'a.md').readAsString(), 'abc');
+    expect(
+      await f(
+        phone,
+        'a (conflitto telefono 2026-10-04 15.30).md',
+      ).readAsString(),
+      'abd',
+    );
+    expect(await f(phone, 'b.md').readAsString(), 'xyz');
+    expect(drive.files.length, 3);
+    expect((await phone.run()).changed, isFalse);
+  });
+
+  test(
+    'scaricamento non riuscito: il file buono resta, niente «.part»',
+    () async {
+      final pc = device('PC');
+      var fail = false;
+      final phone = GoogleDriveSync(
+        drive: GoogleDriveClient(
+          () async => 'token',
+          transport: (m, u, {headers = const {}, body}) async =>
+              fail && u.queryParameters['alt'] == 'media'
+              ? GraphResponse(500, Uint8List.fromList(utf8.encode('{}')))
+              : drive.call(m, u, headers: headers, body: body),
+        ),
+        localRoot: Directory(p.join(tmp.path, 'telefono', 'Corsi')),
+        remoteFolder: 'UniNotes/Corsi',
+        stateFile: File(p.join(tmp.path, 'telefono', 'state.json')),
+        deviceName: 'telefono',
+      );
+      await write(pc, 'a.md', 'uno');
+      await pc.run();
+      await phone.run();
+      await write(pc, 'a.md', 'due!');
+      await pc.run();
+      fail = true;
+      final r = await phone.run();
+      expect(r.errors.single, contains('a.md'));
+      expect(await f(phone, 'a.md').readAsString(), 'uno');
+      expect(await File('${f(phone, 'a.md').path}.part').exists(), isFalse);
+      fail = false;
+      expect((await phone.run()).downloaded, 1);
+      expect(await f(phone, 'a.md').readAsString(), 'due!');
+    },
+  );
 
   test('controllo leggero con le modifiche di Drive', () async {
     final pc = device('PC');

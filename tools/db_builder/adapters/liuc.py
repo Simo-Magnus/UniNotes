@@ -25,6 +25,8 @@ Piani e syllabus: `https://liuc.coursecatalogue.cineca.it` (API pubblica, coorti
 - stesso codice obbligatorio in un percorso e a scelta in un altro: due righe (build_db le tiene separate se i curricula
   sono disgiunti), altrimenti una sola, obbligatoria;
 - alternative omonime nello stesso anno e curriculum: con CFU diversi il nome porta i CFU, altrimenti il codice;
+- lingua dell'attività (`lingua`: «it»/«en», da `lingua_cod`) e gruppi in cui è a scelta (`gruppo_scelta`): con questi
+  `pulizia.varianti_lingua_scelta` unisce la versione italiana e quella inglese dello stesso esame offerte nello stesso gruppo;
 - libri: quelli già raccolti per lo stesso codice nel database non si rileggono; gli altri dal syllabus (testi, testi liberi,
   Leganto, scheda di un'altra coorte dello stesso insegnamento).
 
@@ -260,12 +262,13 @@ def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, 
 
         insegnamenti: dict[str, dict] = {}
         stati: dict[str, dict[str | None, bool]] = {}  # (anno:codice:cfu) → {curriculum o None se comune: obbligatorio}
+        gruppi_sc: dict[str, set] = {}  # (anno:codice:cfu) → gruppi del piano in cui è a scelta
         curricula_tutti: set[str] = set()
         piano_anni: dict[str, dict] = {}
         tutti_anno: dict[int, set] = {}
         sconosciuti: set[str] = set()
 
-        def aggiungi(k, y, att, obbl, cur_set):
+        def aggiungi(k, y, att, obbl, cur_set, gs=None):
             cfu = att.get("crediti") or 0
             if cfu <= 0:  # contenitore di moduli o attività senza crediti: i CFU sono nei moduli
                 return
@@ -274,6 +277,8 @@ def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, 
             st = stati.setdefault(key, {})
             for cn in (cur_set or (None,)):
                 st[cn] = st.get(cn, False) or obbl
+            if gs and not obbl:  # gruppo del piano in cui l'attività è a scelta
+                gruppi_sc.setdefault(key, set()).add(gs)
             if key in insegnamenti:
                 return
             docenti = [cc._nome(t.get("des")) for t in att.get("docenti") or [] if t.get("des")]
@@ -288,6 +293,8 @@ def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, 
                        f"/{att.get('ordinamento_aa')}/{att.get('corso_percorso_id')}?coorte={y}",
                 "libri": [], "esami": [], "fonte": base, "verificato_il": oggi,
             }
+            if cc.lingua_attivita(att):  # lingua dell'attività: «it»/«en»
+                item["lingua"] = cc.lingua_attivita(att)
             insegnamenti[key] = item
             if syllabus:
                 padre = padre_di.get(ad)
@@ -335,7 +342,7 @@ def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, 
                             continue
                         for att in g.get("attivita") or []:
                             obbl = False if cn == POOL else _obbligatorio(cod0, g, att)
-                            aggiungi(k, y, att, obbl, None if cn == POOL else {cn})
+                            aggiungi(k, y, att, obbl, None if cn == POOL else {cn}, cc.gruppo_scelta(g, att, p, a.get("anno")))
         # crediti a scelta dello studente (regola «S» senza elenco), nell'ultimo anno del corso
         if durata in regole:
             k = durata
@@ -363,6 +370,8 @@ def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, 
             for v, cur_set in sorted(per_valore.items(), reverse=True):
                 riga = dict(item)
                 riga["obbligatorio"] = v
+                if not v and gruppi_sc.get(key):
+                    riga["gruppo_scelta"] = ",".join(sorted(gruppi_sc[key]))
                 riga["curriculum"] = None if (not tutti or (cur_set == tutti and len(per_valore) == 1)) \
                     else ", ".join(sorted(cur_set))
                 riga["_orig"] = item

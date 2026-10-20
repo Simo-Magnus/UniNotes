@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unipr",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-20",
+ "aggiornato_il": "2026-10-21",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "http://cdl-sa.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1007678",
@@ -4856,7 +4856,7 @@
    "url": "http://cdl-bas.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1006516",
@@ -9094,7 +9094,7 @@
    "url": "http://cdl-bio.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "14785",
@@ -9123,7 +9123,7 @@
        "citazione": "Titolo: Chimica di Base"
       },
       {
-       "titolo": "Maurizio Bruschi Stechiometria e laboratorio di chimica generale. Eserciziario 2/Ed. Pearson, 2018 ISBN: 9788836231843 ISBN: 9788836231843",
+       "titolo": "Maurizio Bruschi Stechiometria e laboratorio di chimica generale. Eserciziario 2/Ed. Pearson, 2018 ISBN: 9788836231843",
        "autori": null,
        "editore": null,
        "anno": 2018,
@@ -9132,19 +9132,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Maurizio Bruschi Stechiometria e laboratorio di chimica generale. Eserciziario 2/Ed. Pearson, 2018 ISBN: 9788836231843 ISBN: 9788836231843"
-      },
-      {
-       "titolo": "Maurizio Bruschi Stechiometria e laboratorio di chimica generale. Eserciziario 2/Ed. Pearson, 2018",
-       "autori": null,
-       "editore": null,
-       "anno": 2018,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Maurizio Bruschi Stechiometria e laboratorio di chimica generale. Eserciziario 2/Ed. Pearson, 2018"
+       "citazione": "Maurizio Bruschi Stechiometria e laboratorio di chimica generale. Eserciziario 2/Ed. Pearson, 2018 ISBN: 9788836231843"
       }
      ],
      "esami": [
@@ -12799,7 +12787,7 @@
    "url": "https://corsi.unipr.it/it/cdl-biotech",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1000871",
@@ -13846,7 +13834,7 @@
        "citazione": "Paperback ISBN:9780521530880 ISBN-10: 0534151620 ISBN-10: 1464117802 ISBN-10: 0534151620 ISBN-10: 1464117802"
       },
       {
-       "titolo": "Paperback ISBN:9780521530880",
+       "titolo": "Paperback ISBN:9780521530880 ISBN-10: 0534151620 ISBN-10: 1464117802",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -13855,7 +13843,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Paperback ISBN:9780521530880"
+       "citazione": "Paperback ISBN:9780521530880 ISBN-10: 0534151620 ISBN-10: 1464117802"
       }
      ],
      "esami": [],
@@ -16734,7 +16722,7 @@
    "url": "https://corsi.unipr.it/cdl-chim",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1006049",
@@ -20441,7 +20429,7 @@
    "url": "https://corsi.unipr.it/it/cdl-clsm",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1012343",
@@ -28542,7 +28530,7 @@
    "url": "http://cdl-cmcic.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1014022",
@@ -30366,7 +30354,7 @@
    "url": "https://corsi.unipr.it/cdl-dh",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1010504",
@@ -31614,7 +31602,7 @@
    "url": "https://corsi.unipr.it/cdl-dssa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1009596",
@@ -32969,19 +32957,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "D. K. Lieu, S. Sorby. “Visualization, modeling and graphics for Engineering Design”, Delmar Cengage Learning 2009. EAN: 9788825174144 EAN: 9788825174144"
-      },
-      {
-       "titolo": "Visualization, modeling and graphics for Engineering Design",
-       "autori": "D. K. Lieu, S. Sorby",
-       "editore": "Delmar Cengage Learning 2009",
-       "anno": 2009,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "D. K. Lieu, S. Sorby. “Visualization, modeling and graphics for Engineering Design”, Delmar Cengage Learning 2009."
+       "citazione": "D. K. Lieu, S. Sorby. “Visualization, modeling and graphics for Engineering Design”, Delmar Cengage Learning 2009. EAN: 9788825174144"
       }
      ],
      "esami": [
@@ -36106,7 +36082,7 @@
    "url": "https://corsi.unipr.it/cdl-em",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "13461",
@@ -39712,7 +39688,7 @@
    "url": "https://corsi.unipr.it/it/cdl-emfas",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "13461",
@@ -40908,7 +40884,7 @@
        "citazione": "Paperback ISBN:9780521530880 ISBN-10: 0534151620 ISBN-10: 1464117802 ISBN-10: 0534151620 ISBN-10: 1464117802"
       },
       {
-       "titolo": "Paperback ISBN:9780521530880",
+       "titolo": "Paperback ISBN:9780521530880 ISBN-10: 0534151620 ISBN-10: 1464117802",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -40917,7 +40893,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Paperback ISBN:9780521530880"
+       "citazione": "Paperback ISBN:9780521530880 ISBN-10: 0534151620 ISBN-10: 1464117802"
       }
      ],
      "esami": [],
@@ -42250,7 +42226,7 @@
    "url": "https://corsi.unipr.it/it/cdl-ep",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1011327",
@@ -44446,7 +44422,7 @@
    "url": "https://corsi.unipr.it/it/cdl-fis",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1014067",
@@ -49307,7 +49283,7 @@
    "url": "http://cdl-fisio.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "08614",
@@ -51644,7 +51620,7 @@
    "url": "http://cdl-fisio.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "08614",
@@ -53981,7 +53957,7 @@
    "url": "https://corsi.unipr.it/en/scheda/cdl-globals",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1012664",
@@ -54853,7 +54829,7 @@
    "url": "https://corsi.unipr.it/it/cdl-infe",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "PR1005048",
@@ -56786,7 +56762,7 @@
    "url": "https://corsi.unipr.it/it/cdl-infe",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "AZ1005048",
@@ -60055,7 +60031,7 @@
    "url": "https://corsi.unipr.it/it/cdl-infe",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "PC1005048",
@@ -62015,7 +61991,7 @@
    "url": "http://cdl-info.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "00013",
@@ -67742,7 +67718,7 @@
    "url": "https://corsi.unipr.it/it/cdl-ica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1001152",
@@ -73651,7 +73627,7 @@
    "url": "https://corsi.unipr.it/it/cdl-intinf",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "00013",
@@ -80096,7 +80072,7 @@
    "url": "https://corsi.unipr.it/cdl-igpad",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1013925",
@@ -81825,7 +81801,7 @@
    "url": "https://corsi.unipr.it/it/cdl-ig",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01979",
@@ -85244,7 +85220,7 @@
    "url": "https://corsi.unipr.it/it/cdl-iiet",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "00013",
@@ -94756,7 +94732,7 @@
    "url": "https://corsi.unipr.it/it/cdl-im",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1001152",
@@ -99516,7 +99492,7 @@
    "url": "https://corsi.unipr.it/it/scheda/cdl-Inlist",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1011373",
@@ -101695,7 +101671,7 @@
    "url": "http://cdl-lett.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1013438",
@@ -110142,7 +110118,7 @@
    "url": "http://cdl-logop.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "08250",
@@ -111685,7 +111661,7 @@
    "url": "https://corsi.unipr.it/it/cdl-mate",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1014067",
@@ -118086,7 +118062,7 @@
    "url": "http://cdl-oao.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1004818",
@@ -119764,7 +119740,7 @@
    "url": "https://corsi.unipr.it/it/cdl-oste",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1014132",
@@ -121960,7 +121936,7 @@
    "url": "https://cdl-sm.unipr.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1014001",
@@ -124320,7 +124296,7 @@
    "url": "https://corsi.unipr.it/cdl-sca/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1001927",
@@ -127519,7 +127495,7 @@
    "url": "http://cdl-sepf.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1012343",
@@ -131424,7 +131400,7 @@
    "url": "https://corsi.unipr.it/it/cdl-sna",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "00088",
@@ -135417,7 +135393,7 @@
    "url": "https://corsi.unipr.it/it/cdl-stp",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1012126",
@@ -137665,7 +137641,7 @@
    "url": "https://corsi.unipr.it/it/cdl-sta",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1001772",
@@ -144738,7 +144714,7 @@
    "url": "https://corsi.unipr.it/it/cdl-sg",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1008463",
@@ -150435,7 +150411,7 @@
    "url": "https://corsi.unipr.it/it/cdl-geol",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "14785",
@@ -153579,7 +153555,7 @@
    "url": "https://corsi.unipr.it/it/cdl-smss",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "12375",
@@ -155525,7 +155501,7 @@
    "url": "https://corsi.unipr.it/it/cdl-spri",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01961",
@@ -161589,7 +161565,7 @@
    "url": "https://corsi.unipr.it/it/cdl-ss",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1008740",
@@ -167725,7 +167701,7 @@
    "url": "http://cdl-sf.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1000693",
@@ -174976,7 +174952,7 @@
    "url": "http://cdl-ta.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "15508",
@@ -176585,7 +176561,7 @@
    "url": "http://cdl-tpall.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1006978",
@@ -178923,7 +178899,7 @@
    "url": "http://cdl-tlb.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "08252",
@@ -181630,7 +181606,7 @@
    "url": "http://cdl-trmir.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "15459",
@@ -183820,7 +183796,7 @@
    "url": "https://corsi.unipr.it/it/cdl-tnpee",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1011916",
@@ -185876,7 +185852,7 @@
    "url": "https://corsi.unipr.it/en/cdlm-amshp",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1012766",
@@ -189048,7 +189024,7 @@
    "url": "http://cdlm-ada.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1014224",
@@ -190524,7 +190500,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-arch",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1010419",
@@ -195250,7 +195226,7 @@
    "url": "http://cdlm-bgmi.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1007200",
@@ -196896,7 +196872,7 @@
    "url": "http://cdlm-bmvf.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1000187",
@@ -199324,7 +199300,7 @@
    "url": "http://cdlm-chim.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1004471",
@@ -201382,7 +201358,7 @@
    "url": "http://cdlm-ci.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1006004",
@@ -202628,7 +202604,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-ce",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1006063",
@@ -206187,7 +206163,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-dsm",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1012635",
@@ -207093,7 +207069,7 @@
    "url": "http://cdlm-ecn.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1001337",
@@ -209880,7 +209856,7 @@
    "url": "https://corsi.unipr.it/cdlm-emsfs",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1008826",
@@ -210973,7 +210949,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-eeiv",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1010685",
@@ -212558,7 +212534,7 @@
    "url": "https://corsi.unipr.it/en/cdlm-eefrm",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1013047",
@@ -213910,7 +213886,7 @@
    "url": "https://corsi.unipr.it/cdlm-filo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1008569",
@@ -219270,7 +219246,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-fmimi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1014354",
@@ -220179,7 +220155,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-fis",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1013104",
@@ -223930,7 +223906,7 @@
    "url": "https://corsi.unipr.it/en/cdlm-fsafrm",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1013311",
@@ -227268,7 +227244,7 @@
    "url": "https://corsi.unipr.it/en/cdlm-fsm",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1012202",
@@ -228438,7 +228414,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-gce",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1008772",
@@ -231062,7 +231038,7 @@
    "url": "https://corsi.unipr.it/en/cdlm-gfl",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1012156",
@@ -234976,7 +234952,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-gpri",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1013366",
@@ -238817,7 +238793,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-ic",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1006848",
@@ -244183,7 +244159,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-ie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1004650",
@@ -247627,7 +247603,7 @@
    "url": "https://corsi.unipr.it/cdlm-ig",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "07520",
@@ -249185,7 +249161,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-ii",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1010750",
@@ -255967,7 +255943,7 @@
    "url": "http://cdlm-im.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1010419",
@@ -258166,7 +258142,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-ioda",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1009006",
@@ -260147,7 +260123,7 @@
    "url": "https://corsi.unipr.it/cdlm-ibd",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1014175",
@@ -261167,7 +261143,7 @@
    "url": "https://cdlm-lscssn.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1009861",
@@ -262888,7 +262864,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-lcm",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1006944",
@@ -266952,7 +266928,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-mate",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1014108",
@@ -272547,7 +272523,7 @@
    "url": "https://corsi.unipr.it/cdlm-pais/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1012918",
@@ -274514,7 +274490,7 @@
    "url": "http://cdlm-pcse.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1011704",
@@ -277292,7 +277268,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-pgss",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1012374",
@@ -280194,7 +280170,7 @@
    "url": "http://cdlm-pics.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1007880",
@@ -284029,7 +284005,7 @@
    "url": "http://cdlm-pnc.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1005267",
@@ -286050,7 +286026,7 @@
    "url": "http://cdlm-bab.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1008497",
@@ -288351,7 +288327,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-bm",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "13558",
@@ -289929,7 +289905,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-snu",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1012998",
@@ -293832,7 +293808,7 @@
    "url": "http://cdlm-stampa.unipr.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1009150",
@@ -295896,7 +295872,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-sta",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1008519",
@@ -300196,7 +300172,7 @@
    "url": "http://corsi.unipr.it/it/cdlm-star",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "08823",
@@ -302801,7 +302777,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-stg",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1012937",
@@ -305135,7 +305111,7 @@
    "url": "https://corsi.unipr.it/cdlm-siopi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "19759",
@@ -306193,7 +306169,7 @@
    "url": "https://cdlm-info.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1009070",
@@ -308279,7 +308255,7 @@
    "url": "https://corsi.unipr.it/cdlm-stmsos",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1013838",
@@ -309625,7 +309601,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-scas",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1010042",
@@ -314152,7 +314128,7 @@
    "url": "http://cdlm-tcm.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1010898",
@@ -315529,7 +315505,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-ctf",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1004520",
@@ -320168,7 +320144,7 @@
        "citazione": "P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna,"
       },
       {
-       "titolo": "P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna,",
+       "titolo": "P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna,",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -320177,7 +320153,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna,"
+       "citazione": "P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica Biologica, vol.1 e 2, Zanichelli, Bologna, P. W. Atkins, J. De Paula, Chimica Fisica, quarta edizione italiana, Zanichelli, Bologna, P. W. Atkins, R.S. Friedman, Meccanica Quantistica Molecolare, Zanichelli, Bologna,"
       }
      ],
      "esami": [
@@ -326020,7 +325996,7 @@
    "url": "http://cdlm-farma.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "08612",
@@ -336337,7 +336313,7 @@
    "url": "https://corsi.unipr.it/it/cdlm-giur",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1006890",
@@ -349192,7 +349168,7 @@
    "url": "http://cdlm-mc.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1011000",
@@ -353479,7 +353455,7 @@
    "url": "https://corsi.unipr.it/cdlm-mv/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1011000",
@@ -357449,7 +357425,7 @@
    "url": "https://corsi.unipr.it/en/cdlm-ms",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1009790",
@@ -359965,7 +359941,7 @@
    "url": "http://cdlm-opd.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1011000",
@@ -362976,7 +362952,7 @@
    "url": "https://cdl-cit.unipr.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1012496",
@@ -366241,7 +366217,7 @@
    "url": "https://corsi.unipr.it/it/cdl-quam/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1010420",
@@ -371800,7 +371776,7 @@
    "url": "https://corsi.unipr.it/cdl-tegic",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1006129",

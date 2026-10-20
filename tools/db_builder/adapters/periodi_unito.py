@@ -51,6 +51,9 @@ def normalizza(t: str) -> str | None:
     m = re.fullmatch(r"(i|ii|1|2)\s*°?\s*semestre", t)
     if m:
         return "1" if m.group(1) in ("i", "1") else "2"
+    m = re.fullmatch(r"(primo|secondo|terzo|quarto|quinto|sesto) periodo", t)
+    if m:  # cicli dei corsi a distanza (Giurisprudenza e simili): l'app li mostra come «1° periodo» …
+        return f"{ORDINALE[m.group(1)]}° periodo"
     return None
 
 
@@ -226,3 +229,83 @@ def fetch_periodi(uid: str = "unito", log=print) -> dict[str, dict]:
     out.update(da_piani(resto, _piani(anno, log)))
     log(f"[{uid}] piani del catalogo: {len(out) - n0} in più; totale {len(out)} su {len(mancanti)}")
     return out
+
+
+# --- insegnamenti «annuale» nel database ------------------------------------------------------------------
+# Il Course Catalogue Cineca di UniTO dà a molti insegnamenti «Annualità Singola» (A1), con le date dell'anno
+# intero: un segnaposto, non il semestre. La pagina Campusnet dell'insegnamento (`url_sito`) ha invece il
+# campo «Periodo» preciso, e quando c'è vale più del catalogo.
+#
+# Il risultato va in un file a parte, `unito_semestri_campusnet.json`, e non in `unito_periodi.json`: build_db applica i
+# contributi in ordine alfabetico e `unito_piani.json` (che ha il campo `periodo`, anche vuoto, per ogni voce) viene
+# dopo `unito_periodi.json` e ne cancella il periodo; questo nome viene dopo tutti i contributi di UniTO.
+FILE_SEMESTRI = "unito_semestri_campusnet.json"
+
+CAMPUSNET = re.compile(r"https?://[^/]*unito\.it/do/corsi\.pl/Show\?_id=\w+", re.I)
+
+
+class _Lettore:
+    """Legge le schede Campusnet una volta sola: (semestre, pagine dei moduli se manca il campo «Periodo»)."""
+
+    def __init__(self, client: Client):
+        self.c = client
+        self.lette: dict[str, tuple[str | None, str | None, list[str]]] = {}
+
+    def pagina(self, u: str) -> tuple[str | None, str | None, list[str]]:
+        """(semestre, anno accademico della scheda, moduli se la scheda non ha il campo «Periodo»)."""
+        if u not in self.lette:
+            try:
+                r = self.c.get(u)
+                if not r:
+                    self.lette[u] = (None, None, [])
+                else:
+                    aa = ANNO_ACC.search(r.text)
+                    self.lette[u] = (leggi_periodo(r.text), aa.group(1) if aa else None,
+                                     [] if PERIODO.search(r.text) else moduli(r.text, u))
+            except Exception:  # noqa: BLE001
+                self.lette[u] = (None, None, [])
+        return self.lette[u]
+
+    def risolvi(self, u: str) -> tuple[str, str] | None:
+        """(semestre, pagina che lo dice): la scheda, o i moduli del corso integrato se tutti concordano."""
+        p = self.pagina(u)[0]
+        if p:
+            return p, u
+        mods = self.pagina(u)[2]
+        vals = [(self.pagina(v)[0], v) for v in mods]
+        if mods and all(x for x, _ in vals) and len({x for x, _ in vals}) == 1:
+            return vals[0]
+        return None
+
+
+def fetch_annuali(uid: str = "unito", log=print) -> dict[str, dict]:
+    """Per gli insegnamenti «annuale» del database con la scheda Campusnet (`url_sito`): il periodo che dice la
+    scheda, con la scheda come fonte. «Annuale»/«Annualità singola»/«Da definire»/campo assente: la scheda non
+    dice un semestre diverso e l'insegnamento resta com'è (qui non compare). Come `fetch_periodi`, non si
+    deduce nulla: solo ciò che la scheda scrive. Ritorna {id: {"periodo": "1"|"2"|"annuale", "fonte": url}}."""
+    db = periodi.carica(uid)
+    lettore = _Lettore(Client(rate=2.0))
+    voci = [i for c in db["corsi"] if not c.get("piano_da") for i in c.get("insegnamenti") or []
+            if i.get("periodo") == "annuale" and CAMPUSNET.match(i.get("url_sito") or "")]
+    log(f"[{uid}] {len(voci)} insegnamenti annuali con scheda Campusnet")
+
+    def una(i: dict) -> tuple[str, tuple[str, str] | None]:
+        return i["id"], lettore.risolvi(_assoluto(i["url_sito"], i["url_sito"]))
+
+    out: dict[str, dict] = {}
+    with cf.ThreadPoolExecutor(8) as ex:  # la rete resta a 2 richieste/s (Client)
+        for n, (iid, r) in enumerate(ex.map(una, voci), 1):
+            if r:
+                out[iid] = {"periodo": r[0], "fonte": r[1]}
+            if n % 100 == 0:
+                log(f"[{uid}] {n}/{len(voci)} schede, {len(out)} con periodo (richieste {lettore.c.requests})")
+    log(f"[{uid}] richieste {lettore.c.requests}; periodo letto per {len(out)} insegnamenti su {len(voci)}")
+    return out
+
+
+if __name__ == "__main__":
+    ris = fetch_annuali()
+    # «annuale» confermato: nessuna modifica; «N° periodo» = ciclo dei corsi a distanza
+    semestri = {k: v for k, v in ris.items() if v["periodo"] in ("1", "2") or v["periodo"].endswith("° periodo")}
+    print(f"semestre dalla scheda per {len(semestri)} insegnamenti annuali; "
+          f"scritti/scartati {periodi.scrivi('unito', semestri, nome_file=FILE_SEMESTRI)}")

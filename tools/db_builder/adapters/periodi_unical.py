@@ -71,7 +71,7 @@ def fetch_periodi(uid: str = "unical", anno: int = 2026, log=print) -> dict:
                     for tab in p.get("PlanTabs") or []:
                         for acts in (tab.get("StudyActivities") or {}).values():
                             for a in acts:
-                                s = _periodo(a.get("StudyActivitySemester"))
+                                s = _periodo(a.get("StudyActivitySemester"), a.get("AfSubModules"))
                                 if s in ("1", "2", "annuale"):
                                     sem[a.get("StudyActivityCod")].append((coorte, s, f"{API}/cds/{reg['RegDidId']}/studyplans-activities/"))
         for m in manc:

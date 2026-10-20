@@ -14,6 +14,7 @@ import '../../core/theme/app_theme.dart';
 import '../../models/book.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
+import '../cloud/cloud_drive_service.dart';
 import '../study/course_catalog.dart';
 import '../../core/feedback/motion.dart';
 
@@ -231,7 +232,8 @@ class _BookFormState extends State<BookForm> {
     }
     if (stored != null && mounted) {
       final clouds = context.read<AppServices>().clouds;
-      await clouds.first.setBookInCloud(stored, _onOneDrive);
+      // lista comune dei libri solo locali, casella «Libri» su ogni servizio
+      await CloudDriveService.setBookInCloudFor(clouds, stored, _onOneDrive);
       final connected = [
         for (final c in clouds)
           if (await c.connected()) c,

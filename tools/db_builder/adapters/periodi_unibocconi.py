@@ -4,7 +4,8 @@ La scheda dell'insegnamento (`didattica.unibocconi.eu/ts/tsn_anteprima.php?cod_i
 è già nel database come `url`) ha in testa una riga per ogni corso di studio (sigla) in cui l'insegnamento è
 offerto: «WBB (6 credits - II sem. - OP | IUS/12) - BAI (…)». Il semestre è quello della riga della sigla del
 corso dell'insegnamento (la sigla si ricava da `ric_cdl` con l'elenco dei corsi di `ts/index.php`).
-Se la riga della sigla non c'è o il semestre non è «I sem.»/«II sem.»/«I/II sem.», nessun periodo.
+Se la riga della sigla non c'è o il semestre non è «I sem.»/«II sem.», nessun periodo; «I/II sem.» (classi parallele
+nei due semestri) non è annuale: vale il semestre delle classi solo se sono tutte nello stesso.
 """
 from __future__ import annotations
 
@@ -13,7 +14,7 @@ import re
 
 from . import periodi
 from .unibo import Client, _testo
-from .unibocconi import SEM, TS
+from .unibocconi import SEM, TS, semestre_classi
 
 
 def _siglie(c: Client, fine: int) -> dict[str, str]:
@@ -33,6 +34,8 @@ def semestre_scheda(s: str, sigla: str) -> str | None:
         m = re.search(rf"(?<![\w-]){re.escape(sigla)}\s*\(([^)]*)\)", intest)
         if m:
             sm = re.search(r"(?:^|\s-\s)\s*(I/II|II|I)\s+sem\.(?=\s*(?:-|\||$))", m.group(1))
+            if sm and sm.group(1) == "I/II":
+                return semestre_classi(s)  # classi parallele in entrambi i semestri: nessun periodo
             return SEM.get(sm.group(1) + " sem.") if sm else None
     return None
 

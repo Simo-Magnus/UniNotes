@@ -104,6 +104,32 @@ def leggi_anno(s: str) -> list[dict]:
     return out
 
 
+def erogato_per_codice(schede: list[tuple[int, str, dict]]) -> dict[str, dict]:
+    """Card dell'elenco erogato (anno di corso, pagina, card di `leggi_anno`) -> dati per codice dell'insegnamento.
+
+    Lo stesso codice ha più card: quella del corso («Lingua Russa 1», 12 CFU, «II Semestre») e quelle delle
+    esercitazioni («Lingua Russa - E1», «- Practice», 0 su 12 CFU, spesso «Annuale»). Pagina, periodo, anno e nome
+    dell'insegnamento sono quelli delle card con CFU (le prime in elenco non sono sempre quelle del corso: il periodo
+    delle esercitazioni dava «annuale» a ~90 insegnamenti di lingue); i docenti delle esercitazioni si aggiungono
+    (insegnano lo stesso corso). Se tutte le card del codice sono a 0 CFU (OFA, precorsi) si usano quelle."""
+    con_cfu = {x["codice"] for _, _, x in schede if x["cfu"] != 0}
+    erogato: dict[str, dict] = {}
+    for k, url, x in sorted(schede, key=lambda t: t[2]["cfu"] == 0 and t[2]["codice"] in con_cfu):
+        e = erogato.setdefault(x["codice"], {"ids": [], "docenti": set(), "periodo": None, "anni": set(),
+                                             "nomi": set(), "fonte": url, "cfu": 0})
+        e["docenti"] |= set(x["docenti"])
+        if x["cfu"] == 0 and x["codice"] in con_cfu:
+            continue  # esercitazione: né pagina, né periodo, né anno, né nome
+        e["cfu"] = max(e["cfu"], x["cfu_totale"] or 0)
+        if x["id"] not in e["ids"]:
+            e["ids"].append(x["id"])
+        if not e["periodo"] and x["periodo"]:
+            e["periodo"], e["fonte"] = x["periodo"], url
+        e["anni"].add(k)
+        e["nomi"].add(x["nome"])
+    return erogato
+
+
 def libri_programma(s: str) -> list[dict]:
     m = re.search(r'<h4 class="[^"]*card-title">\s*(?:Testi di riferimento|Referral texts|Textbooks)\s*</h4>.*?'
                   r'<div class="card-body">(.*?)</div>', s, re.S)
@@ -436,7 +462,7 @@ def fetch_ateneo(uid: str = "unive", anno: int | None = None, max_cds: int | Non
             return None
         durata = corso.get("durata_anni") or 3
         # --- elenco erogato: docenti, periodo, pagine degli insegnamenti, anno in cui sono erogati
-        erogato: dict[str, dict] = {}
+        schede: list[tuple[int, str, dict]] = []
         pid = m.group(1) if m else None
         for k in range(1, durata + 1) if pid else []:
             url = f"{BASE}/data/it/{pid}/insegnamenti-e-orari/{k}"
@@ -444,17 +470,9 @@ def fetch_ateneo(uid: str = "unive", anno: int | None = None, max_cds: int | Non
             if not ra:
                 continue
             for x in leggi_anno(ra.text):
-                if not x["codice"]:
-                    continue
-                e = erogato.setdefault(x["codice"], {"ids": [], "docenti": set(), "periodo": None, "anni": set(),
-                                                     "nomi": set(), "fonte": url, "cfu": 0})
-                e["cfu"] = max(e["cfu"], x["cfu_totale"] or 0)
-                if x["id"] not in e["ids"]:
-                    e["ids"].append(x["id"])
-                e["docenti"] |= set(x["docenti"])
-                e["periodo"] = e["periodo"] or x["periodo"]
-                e["anni"].add(k)
-                e["nomi"].add(x["nome"])
+                if x["codice"]:
+                    schede.append((k, url, x))
+        erogato = erogato_per_codice(schede)
         # --- piano di studio per coorte
         pagine = []
         if mp:

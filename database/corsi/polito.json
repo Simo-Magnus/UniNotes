@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "polito",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-20",
+ "aggiornato_il": "2026-10-21",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,8 +21,64 @@
    "url": "https://www.polito.it/corsi/80-458",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIWG",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIWG&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=80&p_cds=458",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-17-architettura-07lkiwg",
+     "stato_esami": "da_aggiungere",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "02MCCWG",
+       "nome": "English Language 1st level",
+       "docenti": [
+        "di lingua"
+       ],
+       "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=02MCCWG&p_a_acc=2027&p_lang=",
+       "periodo": "1"
+      }
+     ]
+    },
     {
      "codice": "01XDSWG",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -1831,62 +1887,6 @@
        ],
        "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=01PUBWG&p_a_acc=2027&p_lang=",
        "periodo": "annuale"
-      }
-     ]
-    },
-    {
-     "codice": "07LKIWG",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIWG&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=80&p_cds=458",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-17-architettura-07lkiwg",
-     "stato_esami": "da_aggiungere",
-     "varianti": [
-      {
-       "lingua": "en",
-       "codice": "02MCCWG",
-       "nome": "English Language 1st level",
-       "docenti": [
-        "di lingua"
-       ],
-       "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=02MCCWG&p_a_acc=2027&p_lang=",
-       "periodo": "1"
       }
      ]
     },
@@ -16968,7 +16968,7 @@
    "url": "https://www.polito.it/corsi/32-465",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01XDSWN",
@@ -23932,8 +23932,52 @@
    "url": "https://www.polito.it/corsi/81-471",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIWT",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Design per il prodotto, Design per la comunicazione, Grow Your Talents",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIWT&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=81&p_cds=471",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-4-design-e-comunicazione-07lkiwt",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSWT",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -25422,50 +25466,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-4-design-e-comunicazione-01xcpwt",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIWT",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Design per il prodotto, Design per la comunicazione, Grow Your Talents",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIWT&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=81&p_cds=471",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-4-design-e-comunicazione-07lkiwt",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -36675,7 +36675,7 @@
    "url": "https://www.polito.it/corsi/37-474",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01XDSWW",
@@ -42556,8 +42556,52 @@
    "url": "https://www.polito.it/corsi/32-477",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIWZ",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Orientamento EASA PART 66, Orientamento generalista, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIWZ&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=477",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-9-ingegneria-aerospaziale-07lkiwz",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSWZ",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -43881,50 +43925,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-9-ingegneria-aerospaziale-01xcpwz",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIWZ",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Orientamento EASA PART 66, Orientamento generalista, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIWZ&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=477",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-9-ingegneria-aerospaziale-07lkiwz",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -51302,8 +51302,52 @@
    "url": "https://www.polito.it/corsi/32-479",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIXB",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXB&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=479",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-9-ingegneria-biomedica-07lkixb",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSXB",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -52747,50 +52791,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-9-ingegneria-biomedica-01xcpxb",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIXB",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXB&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=479",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-9-ingegneria-biomedica-07lkixb",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -58977,8 +58977,52 @@
    "url": "https://www.polito.it/corsi/32-481",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIXD",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXD&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=481",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-9-ingegneria-chimica-e-alimentare-07lkixd",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSXD",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -60350,50 +60394,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-9-ingegneria-chimica-e-alimentare-01xcpxd",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIXD",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXD&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=481",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-9-ingegneria-chimica-e-alimentare-07lkixd",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -65627,8 +65627,52 @@
    "url": "https://www.polito.it/corsi/32-483",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIXF",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXF&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=483",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-7-ingegneria-civile-07lkixf",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSXF",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -66987,50 +67031,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-7-ingegneria-civile-01xcpxf",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIXF",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXF&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=483",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-7-ingegneria-civile-07lkixf",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -74355,8 +74355,52 @@
    "url": "https://www.polito.it/corsi/32-485",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "06LKIXH",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=06LKIXH&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=485",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-9-ingegneria-dei-materiali-06lkixh",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSXH",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -75870,50 +75914,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-9-ingegneria-dei-materiali-01xcpxh",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "06LKIXH",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=06LKIXH&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=485",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-9-ingegneria-dei-materiali-06lkixh",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -81969,8 +81969,52 @@
    "url": "https://www.polito.it/corsi/37-487",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIXJ",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXJ&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=37&p_cds=487",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-8-ingegneria-del-cinema-e-dei-media-digitali-07lkixj",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSXJ",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -83293,50 +83337,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-8-ingegneria-del-cinema-e-dei-media-digitali-01xcpxj",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIXJ",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXJ&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=37&p_cds=487",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-8-ingegneria-del-cinema-e-dei-media-digitali-07lkixj",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -88786,8 +88786,61 @@
    "url": "https://www.polito.it/corsi/32-545",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIXP",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXP&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=545",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-9-ingegneria-dell-autoveicolo-07lkixp",
+     "stato_esami": "da_aggiungere",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "02MCCXP",
+       "nome": "English Language 1st level",
+       "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=02MCCXP&p_a_acc=2027&p_lang=",
+       "periodo": "annuale"
+      }
+     ]
+    },
     {
      "codice": "01XDSXP",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -90282,59 +90335,6 @@
      "stato_libri": "da_aggiungere",
      "id": "polito-l-9-ingegneria-dell-autoveicolo-01xcpxp",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIXP",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXP&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=545",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-9-ingegneria-dell-autoveicolo-07lkixp",
-     "stato_esami": "da_aggiungere",
-     "varianti": [
-      {
-       "lingua": "en",
-       "codice": "02MCCXP",
-       "nome": "English Language 1st level",
-       "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=02MCCXP&p_a_acc=2027&p_lang=",
-       "periodo": "annuale"
-      }
-     ]
     },
     {
      "codice": "22ACIXP",
@@ -95592,8 +95592,52 @@
    "url": "https://www.polito.it/corsi/32-542",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIXM",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "UIC - Barcellona",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXM&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=542",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-9-ingegneria-della-produzione-industriale-07lkixm",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "16ACFXM",
      "nome": "Analisi matematica I",
@@ -96104,50 +96148,6 @@
      "stato_libri": "completo",
      "id": "polito-l-9-ingegneria-della-produzione-industriale-02oqkxm",
      "stato_esami": "completo"
-    },
-    {
-     "codice": "07LKIXM",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "UIC - Barcellona",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXM&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=542",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-9-ingegneria-della-produzione-industriale-07lkixm",
-     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "01QYXXM",
@@ -96665,8 +96665,52 @@
    "url": "https://www.polito.it/corsi/32-547",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIXR",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXR&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=547",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-23-ingegneria-edile-07lkixr",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSXR",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -98121,50 +98165,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-23-ingegneria-edile-01xcpxr",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIXR",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXR&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=547",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-23-ingegneria-edile-07lkixr",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -105189,8 +105189,52 @@
    "url": "https://www.polito.it/corsi/32-549",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIXT",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXT&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=549",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-9-ingegneria-elettrica-07lkixt",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSXT",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -106537,50 +106581,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-9-ingegneria-elettrica-01xcpxt",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIXT",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXT&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=549",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-9-ingegneria-elettrica-07lkixt",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -111980,8 +111980,52 @@
    "url": "https://www.polito.it/corsi/37-551",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIXV",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Orientamento \"Information technology engineering\" - Shanghai, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXV&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=37&p_cds=551",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-8-ingegneria-elettronica-07lkixv",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSXV",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -113352,50 +113396,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-8-ingegneria-elettronica-01xcpxv",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIXV",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Orientamento \"Information technology engineering\" - Shanghai, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXV&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=37&p_cds=551",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-8-ingegneria-elettronica-07lkixv",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -119993,8 +119993,52 @@
    "url": "https://www.polito.it/corsi/32-553",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "06LKIXX",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=06LKIXX&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=553",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-9-ingegneria-energetica-06lkixx",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSXX",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -121391,50 +121435,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-9-ingegneria-energetica-01xcpxx",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "06LKIXX",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=06LKIXX&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=553",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-9-ingegneria-energetica-06lkixx",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -128674,8 +128674,52 @@
    "url": "https://www.polito.it/corsi/37-555",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIXZ",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXZ&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=37&p_cds=555",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-8-ingegneria-fisica-07lkixz",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSXZ",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -130011,50 +130055,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-8-ingegneria-fisica-01xcpxz",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIXZ",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIXZ&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=37&p_cds=555",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-8-ingegneria-fisica-07lkixz",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -137422,8 +137422,52 @@
    "url": "https://www.polito.it/corsi/38-556",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIYA",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Ingegneria dell'Informazione, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIYA&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=38&p_cds=556",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-8-l-9-ingegneria-gestionale-07lkiya",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSYA",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -138759,50 +138803,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-8-l-9-ingegneria-gestionale-01xcpya",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIYA",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Ingegneria dell'Informazione, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIYA&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=38&p_cds=556",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-8-l-9-ingegneria-gestionale-07lkiya",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -145230,8 +145230,64 @@
    "url": "https://www.polito.it/corsi/37-560",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIYE",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Orientamento \"Information technology engineering\" - Shanghai, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIYE&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=37&p_cds=560",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-8-ingegneria-informatica-07lkiye",
+     "stato_esami": "da_aggiungere",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "02MCCYE",
+       "nome": "English Language 1st level",
+       "docenti": [
+        "di lingua"
+       ],
+       "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=02MCCYE&p_a_acc=2027&p_lang=",
+       "periodo": "1"
+      }
+     ]
+    },
     {
      "codice": "01XDSYE",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -146724,62 +146780,6 @@
      "stato_libri": "da_aggiungere",
      "id": "polito-l-8-ingegneria-informatica-01xcpye",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIYE",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Orientamento \"Information technology engineering\" - Shanghai, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIYE&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=37&p_cds=560",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-8-ingegneria-informatica-07lkiye",
-     "stato_esami": "da_aggiungere",
-     "varianti": [
-      {
-       "lingua": "en",
-       "codice": "02MCCYE",
-       "nome": "English Language 1st level",
-       "docenti": [
-        "di lingua"
-       ],
-       "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=02MCCYE&p_a_acc=2027&p_lang=",
-       "periodo": "1"
-      }
-     ]
     },
     {
      "codice": "03AAXYE",
@@ -153595,8 +153595,64 @@
    "url": "https://www.polito.it/corsi/32-564",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIYI",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIYI&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=564",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-9-ingegneria-meccanica-07lkiyi",
+     "stato_esami": "da_aggiungere",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "02MCCYI",
+       "nome": "English Language 1st level",
+       "docenti": [
+        "di lingua"
+       ],
+       "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=02MCCYI&p_a_acc=2027&p_lang=",
+       "periodo": "1"
+      }
+     ]
+    },
     {
      "codice": "01XDSYI",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -155092,62 +155148,6 @@
      "stato_libri": "da_aggiungere",
      "id": "polito-l-9-ingegneria-meccanica-01xcpyi",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIYI",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIYI&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=564",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-9-ingegneria-meccanica-07lkiyi",
-     "stato_esami": "da_aggiungere",
-     "varianti": [
-      {
-       "lingua": "en",
-       "codice": "02MCCYI",
-       "nome": "English Language 1st level",
-       "docenti": [
-        "di lingua"
-       ],
-       "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=02MCCYI&p_a_acc=2027&p_lang=",
-       "periodo": "1"
-      }
-     ]
     },
     {
      "codice": "22ACIYI",
@@ -162495,8 +162495,52 @@
    "url": "https://www.polito.it/corsi/32-568",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIYM",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIYM&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=568",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-7-ingegneria-per-l-ambiente-e-il-territorio-07lkiym",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSYM",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -163867,50 +163911,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-7-ingegneria-per-l-ambiente-e-il-territorio-01xcpym",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIYM",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIYM&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=568",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-7-ingegneria-per-l-ambiente-e-il-territorio-07lkiym",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -170279,8 +170279,52 @@
    "url": "https://www.polito.it/corsi/32-570",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIYO",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIYO&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=570",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-35-matematica-per-l-ingegneria-07lkiyo",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSYO",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -171627,50 +171671,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-35-matematica-per-l-ingegneria-01xcpyo",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIYO",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso, Primo anno sede di Mondovì",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIYO&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=32&p_cds=570",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-35-matematica-per-l-ingegneria-07lkiyo",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -177192,8 +177192,52 @@
    "url": "https://www.polito.it/corsi/82-574",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "07LKIYS",
+     "nome": "Lingua inglese I livello",
+     "anno": 1,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "L-LIN/12 (ANGL-01/C)",
+     "obbligatorio": true,
+     "curriculum": "Grow Your Talents, Percorso",
+     "docenti": [],
+     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIYS&p_a_acc=2027&p_lang=",
+     "libri": [
+      {
+       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780521179560",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
+      },
+      {
+       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=82&p_cds=574",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "polito-l-21-pianificazione-territoriale-urbanistica-e-paesaggistico-ambi-07lkiys",
+     "stato_esami": "da_aggiungere"
+    },
     {
      "codice": "01XDSYS",
      "nome": "3D Bioprinting for Health: Engineering meets Biology - GYT",
@@ -178422,50 +178466,6 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "polito-l-21-pianificazione-territoriale-urbanistica-e-paesaggistico-ambi-01xcpys",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "07LKIYS",
-     "nome": "Lingua inglese I livello",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 3,
-     "ssd": "L-LIN/12 (ANGL-01/C)",
-     "obbligatorio": true,
-     "curriculum": "Grow Your Talents, Percorso",
-     "docenti": [],
-     "url": "https://didattica.polito.it/pls/portal30/sviluppo.guide.visualizza?p_cod_ins=07LKIYS&p_a_acc=2027&p_lang=",
-     "libri": [
-      {
-       "titolo": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780521179560",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Pre-Intermediate: Complete IELTS Bands 4 – 5 (Student’s book with answers & CD ROM) Cambridge University Press ISBN 978 0 521 179560"
-      },
-      {
-       "titolo": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Intermediate: IELTS Trainer Six Practice Tests with answers Cambridge University Press"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_coorte=2027&p_sdu=82&p_cds=574",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "polito-l-21-pianificazione-territoriale-urbanistica-e-paesaggistico-ambi-07lkiys",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -186975,7 +186975,7 @@
    "url": "https://www.polito.it/corsi/81-5",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01VONWI",
@@ -196145,7 +196145,7 @@
    "url": "https://www.polito.it/corsi/81-461",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "02JGXWJ",
@@ -197906,7 +197906,7 @@
    "url": "https://www.polito.it/corsi/82-4",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01VNDWK",
@@ -203307,7 +203307,7 @@
    "url": "https://www.polito.it/corsi/82-6",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01VNLWL",
@@ -212445,7 +212445,7 @@
    "url": "https://www.polito.it/corsi/32-464",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "03OFGWM",
@@ -214735,7 +214735,7 @@
    "url": "https://www.polito.it/corsi/37-467",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "03NRWWP",
@@ -216191,7 +216191,7 @@
    "url": "https://www.polito.it/corsi/32-468",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "02GYZWQ",
@@ -219506,7 +219506,7 @@
    "url": "https://www.polito.it/corsi/37-470",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "02TWYWS",
@@ -220349,18 +220349,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Understanding machine learning: From theory to algorithms. Shalev-Shwartz, Shai, and Shai Ben-David. Cambridge University Press, 2014."
-      },
-      {
-       "titolo": "Publisher: The MIT Press ISBN: 9780262018029 ISBN: 9780262018029",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9780262018029",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Publisher: The MIT Press ISBN: 9780262018029 ISBN: 9780262018029"
       },
       {
        "titolo": "Publisher: The MIT Press ISBN: 9780262018029",
@@ -222254,7 +222242,7 @@
    "url": "https://www.polito.it/corsi/81-4",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01WYJWU",
@@ -224257,7 +224245,7 @@
    "url": "https://www.polito.it/corsi/81-83",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01WYHWV",
@@ -226614,7 +226602,7 @@
    "url": "https://www.polito.it/corsi/32-475",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01RWHWX",
@@ -228231,7 +228219,7 @@
    "url": "https://www.polito.it/corsi/37-476",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01TUWWY",
@@ -229827,7 +229815,7 @@
    "url": "https://www.polito.it/corsi/32-478",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01WYKXA",
@@ -235241,7 +235229,7 @@
    "url": "https://www.polito.it/corsi/32-480",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01WNOXC",
@@ -239089,7 +239077,7 @@
    "url": "https://www.polito.it/corsi/32-482",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01SLQXE",
@@ -243526,7 +243514,7 @@
    "url": "https://www.polito.it/corsi/32-484",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01WJIXG",
@@ -249932,7 +249920,7 @@
    "url": "https://www.polito.it/corsi/32-932",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "03RIGXI",
@@ -252484,7 +252472,7 @@
    "url": "https://www.polito.it/corsi/37-488",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01WYKXK",
@@ -254782,7 +254770,7 @@
    "url": "https://www.polito.it/corsi/32-544",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "06PAUXO",
@@ -255726,7 +255714,7 @@
    "url": "https://www.polito.it/corsi/32-548",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01UUNXS",
@@ -258869,7 +258857,7 @@
    "url": "https://www.polito.it/corsi/32-550",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "03OIIXU",
@@ -263965,7 +263953,7 @@
    "url": "https://www.polito.it/corsi/37-552",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "02LSEXW",
@@ -267908,7 +267896,7 @@
    "url": "https://www.polito.it/corsi/32-554",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01TVMXY",
@@ -276953,7 +276941,7 @@
    "url": "https://www.polito.it/corsi/38-558",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01PEBYC",
@@ -280331,7 +280319,7 @@
    "url": "https://www.polito.it/corsi/37-562",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01GYZYG",
@@ -290599,7 +290587,7 @@
    "url": "https://www.polito.it/corsi/32-563",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "02GYZYH",
@@ -295635,7 +295623,7 @@
    "url": "https://www.polito.it/corsi/32-565",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "03FOEYJ",
@@ -299713,7 +299701,7 @@
    "url": "https://www.polito.it/corsi/32-569",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01UCHYN",
@@ -304764,7 +304752,7 @@
    "url": "https://www.polito.it/corsi/37-571",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01PCZYP",
@@ -308301,7 +308289,7 @@
    "url": "https://www.polito.it/corsi/37-572",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01QYDYQ",
@@ -310092,7 +310080,7 @@
    "url": "https://www.polito.it/corsi/37-573",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01TPTYR",
@@ -312509,7 +312497,7 @@
    "url": "https://www.polito.it/didattica/corsi-di-laurea-magistrale/pianificazione-urbanistica-e-territoriale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "05JPBYT",
@@ -316520,7 +316508,7 @@
    "url": "https://www.polito.it/corsi/32-576",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01UDRYU",
@@ -317965,7 +317953,7 @@
    "url": "https://www.polito.it/corsi/38-577",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "02ELJYV",

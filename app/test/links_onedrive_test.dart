@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
@@ -304,6 +305,60 @@ void main() {
         );
       },
     );
+
+    test(
+      'accesso a metà: se account o cartella non riescono non resta collegato',
+      () async {
+        var failMe = true;
+        final od = OneDriveService(
+          settings,
+          NotesStore(settings, root: () async => dir('appunti')),
+          secrets: secrets,
+          transport: (method, url, {headers = const {}, body}) async =>
+              failMe && url.path == '/v1.0/me'
+              ? GraphResponse(
+                  503,
+                  Uint8List.fromList(
+                    utf8.encode('{"error":{"message":"Servizio occupato"}}'),
+                  ),
+                )
+              : drive.call(method, url, headers: headers, body: body),
+          oauthFactory: (_, _) => _FakeOAuth(),
+          stateDir: () async => dir('stato'),
+          builtInClientId: '11111111-2222-3333-4444-555555555555',
+          deviceName: 'PC',
+        );
+        await expectLater(
+          od.signIn(),
+          throwsA(
+            isA<GraphException>().having(
+              (e) => e.message,
+              'm',
+              contains('Servizio occupato'),
+            ),
+          ),
+        );
+        expect(await od.connected(), isFalse);
+        expect(await od.account(), isNull);
+        expect(secrets.values, isEmpty);
+        expect(od.tokens, isNull);
+        // al nuovo tentativo riesce
+        failMe = false;
+        await od.signIn();
+        expect(await od.connected(), isTrue);
+        expect(await od.account(), 'Studente Prova · studente@example.com');
+      },
+    );
+
+    test('Scollega: nessuna revoca presso Microsoft, solo in locale', () async {
+      final od = service(builtIn: '11111111-2222-3333-4444-555555555555');
+      await od.signIn();
+      final before = drive.requests;
+      expect(await od.signOut(), isTrue);
+      expect(drive.requests, before);
+      expect(await od.connected(), isFalse);
+      expect(await od.account(), isNull);
+    });
 
     test('controlli automatici con /delta: solo se qualcosa cambia', () async {
       final od = service(builtIn: '11111111-2222-3333-4444-555555555555');

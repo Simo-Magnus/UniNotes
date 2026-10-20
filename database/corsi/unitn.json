@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unitn",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-20",
+ "aggiornato_il": "2026-10-21",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://corsi.unitn.it/it/amministrazione-aziendale-e-diritto",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "120127",
@@ -52,7 +52,7 @@
        "citazione": "BUSINESS PARTNER B1+; COURSEBOOK e EBOOK WITH MYENGLISHLAB e DIGITAL RESOURCES (PEARSON, circa 35 euro)."
       },
       {
-       "titolo": "Risorse opzionali per l’auto-apprendimento: Dizionario monolingue, cartaceo o digitale, (ad esempio) Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale, autoapprendimento: Business Grammar Builder, Paul Emmerson (Macmillan 2002) o a scelta (cartaceo/digitale). ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974",
+       "titolo": "Risorse opzionali per l’auto-apprendimento: Dizionario monolingue, cartaceo o digitale, (ad esempio) Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale, autoapprendimento: Business Grammar Builder, Paul Emmerson (Macmillan 2002) o a scelta (cartaceo/digitale). ISBN 9781292392974",
        "autori": null,
        "editore": null,
        "anno": 2002,
@@ -61,7 +61,7 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "Risorse opzionali per l’auto-apprendimento: Dizionario monolingue, cartaceo o digitale, (ad esempio) Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale, autoapprendimento: Business Grammar Builder, Paul Emmerson (Macmillan 2002) o a scelta (cartaceo/digitale). ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974"
+       "citazione": "Risorse opzionali per l’auto-apprendimento: Dizionario monolingue, cartaceo o digitale, (ad esempio) Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale, autoapprendimento: Business Grammar Builder, Paul Emmerson (Macmillan 2002) o a scelta (cartaceo/digitale). ISBN 9781292392974"
       }
      ],
      "esami": [],
@@ -2295,7 +2295,7 @@
    "url": "https://corsi.unitn.it/it/beni-culturali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "130838",
@@ -10665,7 +10665,7 @@
    "url": "https://corsi.unitn.it/it/economia-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "120127",
@@ -10696,7 +10696,7 @@
        "citazione": "BUSINESS PARTNER B1+; COURSEBOOK e EBOOK WITH MYENGLISHLAB e DIGITAL RESOURCES (PEARSON, circa 35 euro)."
       },
       {
-       "titolo": "Risorse opzionali per l’auto-apprendimento: Dizionario monolingue, cartaceo o digitale, (ad esempio) Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale, autoapprendimento: Business Grammar Builder, Paul Emmerson (Macmillan 2002) o a scelta (cartaceo/digitale). ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974",
+       "titolo": "Risorse opzionali per l’auto-apprendimento: Dizionario monolingue, cartaceo o digitale, (ad esempio) Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale, autoapprendimento: Business Grammar Builder, Paul Emmerson (Macmillan 2002) o a scelta (cartaceo/digitale). ISBN 9781292392974",
        "autori": null,
        "editore": null,
        "anno": 2002,
@@ -10705,7 +10705,7 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "Risorse opzionali per l’auto-apprendimento: Dizionario monolingue, cartaceo o digitale, (ad esempio) Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale, autoapprendimento: Business Grammar Builder, Paul Emmerson (Macmillan 2002) o a scelta (cartaceo/digitale). ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974"
+       "citazione": "Risorse opzionali per l’auto-apprendimento: Dizionario monolingue, cartaceo o digitale, (ad esempio) Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale, autoapprendimento: Business Grammar Builder, Paul Emmerson (Macmillan 2002) o a scelta (cartaceo/digitale). ISBN 9781292392974"
       }
      ],
      "esami": [],
@@ -12087,6 +12087,131 @@
      "modalita_esame": "orale",
      "id": "unitn-l-33-l-18-economia-e-management-120109",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "120430",
+     "nome": "Academic writing",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": "16/09/2026",
+     "periodo_fine": "10/12/2026",
+     "cfu": 6,
+     "ssd": "NN",
+     "obbligatorio": true,
+     "curriculum": "Economics and Management",
+     "docenti": [
+      "Millward Matthew James",
+      "Somers Sean Edward"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50490_648233_94945/2011/50490?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Academic Writing for International Students of Business and Economics",
+       "autori": "Bailey, S",
+       "editore": "Routledge",
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
+       "citazione": "Bailey, S., \"Academic Writing for International Students of Business and Economics\", Third Edition, Routledge, 2020"
+      },
+      {
+       "titolo": "English for Academic Research: Writing Exercises",
+       "autori": "Wallwork A",
+       "editore": "Springer",
+       "anno": 2013,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
+       "citazione": "Wallwork A., \"English for Academic Research: Writing Exercises\", Springer, 2013"
+      },
+      {
+       "titolo": "Academic Writing for Graduate Students",
+       "autori": "Swales J. M. & Feak C. B",
+       "editore": "The University of Michigan Press",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
+       "citazione": "Swales J. M. & Feak C. B., \"Academic Writing for Graduate Students\", Third Edition, The University of Michigan Press, 2012"
+      },
+      {
+       "titolo": "Cambridge Academic English",
+       "autori": "Hewings M",
+       "editore": "\"Cambridge Academic English\"",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
+       "citazione": "Hewings M., \"Cambridge Academic English\", Upper Intermediate, Cambridge University Press, 2012"
+      },
+      {
+       "titolo": "Oxford EAP",
+       "autori": "de Chazal E. & McCarter S",
+       "editore": "\"Oxford EAP\"",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
+       "citazione": "de Chazal E. & McCarter S., \"Oxford EAP\", Upper Intermediate, Oxford University Press, 2012"
+      },
+      {
+       "titolo": "Writing Academic English",
+       "autori": "Oshima A. & Hogue A",
+       "editore": "Pearson Education",
+       "anno": 2006,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
+       "citazione": "Oshima A. & Hogue A., \"Writing Academic English\", Fourth Edition, Pearson Education, Inc., 2006"
+      },
+      {
+       "titolo": "English for Academic Study: Extended Writing & Research Skills",
+       "autori": "McCormack J. & Slaght J",
+       "editore": null,
+       "anno": 2005,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
+       "citazione": "McCormack J. & Slaght J., \"English for Academic Study: Extended Writing & Research Skills\", Garnet, 2005"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "prova_in_itinere",
+       "data": "2026-10-14",
+       "ora": "13:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-09-29",
+       "iscrizioni_al": "2026-10-10",
+       "docenti": "MILLWARD MATTHEW JAMES",
+       "note": null,
+       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unitn-l-33-l-18-economia-e-management-120430",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC120430_N0_MILLW_LEZ",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 16/09/2026, ultima 10/12/2026, tutte nel 1° semestre; 52 ore pubblicate"
     },
     {
      "codice": "120449",
@@ -14400,130 +14525,6 @@
      "modalita_esame": "orale",
      "id": "unitn-l-33-l-18-economia-e-management-120091",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "120430",
-     "nome": "Academic writing",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "16/09/2026",
-     "periodo_fine": "26/05/2027",
-     "cfu": 6,
-     "ssd": "NN",
-     "obbligatorio": true,
-     "curriculum": "Economics and Management",
-     "docenti": [
-      "Millward Matthew James",
-      "Somers Sean Edward"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50490_648233_94945/2011/50490?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Academic Writing for International Students of Business and Economics",
-       "autori": "Bailey, S",
-       "editore": "Routledge",
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "Bailey, S., \"Academic Writing for International Students of Business and Economics\", Third Edition, Routledge, 2020"
-      },
-      {
-       "titolo": "English for Academic Research: Writing Exercises",
-       "autori": "Wallwork A",
-       "editore": "Springer",
-       "anno": 2013,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "Wallwork A., \"English for Academic Research: Writing Exercises\", Springer, 2013"
-      },
-      {
-       "titolo": "Academic Writing for Graduate Students",
-       "autori": "Swales J. M. & Feak C. B",
-       "editore": "The University of Michigan Press",
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "Swales J. M. & Feak C. B., \"Academic Writing for Graduate Students\", Third Edition, The University of Michigan Press, 2012"
-      },
-      {
-       "titolo": "Cambridge Academic English",
-       "autori": "Hewings M",
-       "editore": "\"Cambridge Academic English\"",
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "Hewings M., \"Cambridge Academic English\", Upper Intermediate, Cambridge University Press, 2012"
-      },
-      {
-       "titolo": "Oxford EAP",
-       "autori": "de Chazal E. & McCarter S",
-       "editore": "\"Oxford EAP\"",
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "de Chazal E. & McCarter S., \"Oxford EAP\", Upper Intermediate, Oxford University Press, 2012"
-      },
-      {
-       "titolo": "Writing Academic English",
-       "autori": "Oshima A. & Hogue A",
-       "editore": "Pearson Education",
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "Oshima A. & Hogue A., \"Writing Academic English\", Fourth Edition, Pearson Education, Inc., 2006"
-      },
-      {
-       "titolo": "English for Academic Study: Extended Writing & Research Skills",
-       "autori": "McCormack J. & Slaght J",
-       "editore": null,
-       "anno": 2005,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "McCormack J. & Slaght J., \"English for Academic Study: Extended Writing & Research Skills\", Garnet, 2005"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "prova_in_itinere",
-       "data": "2026-10-14",
-       "ora": "13:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-09-29",
-       "iscrizioni_al": "2026-10-10",
-       "docenti": "MILLWARD MATTHEW JAMES",
-       "note": null,
-       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unitn-l-33-l-18-economia-e-management-120430",
-     "stato_esami": "completo",
-     "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50490_648233_94945/2011/50490?coorte=2024"
     }
    ],
    "curricula": [
@@ -14558,7 +14559,7 @@
    "url": "https://corsi.unitn.it/it/educazione-professionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "156001",
@@ -16377,7 +16378,7 @@
    "url": "https://corsi.unitn.it/it/filosofia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "130838",
@@ -24712,7 +24713,7 @@
    "url": "https://corsi.unitn.it/it/fisica-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "145432",
@@ -24963,6 +24964,30 @@
      "modalita_esame": "scritto e orale separati",
      "id": "unitn-l-30-fisica-145433",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "145194",
+     "nome": "Ulteriori conoscenze linguistiche (inglese b2)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "05/10/2026",
+     "periodo_fine": "14/12/2026",
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51309_658181_89316/2026/51310?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-l-30-fisica-145194",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC145194_B2b",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 05/10/2026, ultima 14/12/2026, tutte nel 1° semestre; 80 ore pubblicate"
     },
     {
      "codice": "145000",
@@ -25243,28 +25268,6 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unitn-l-30-fisica-146050",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "145194",
-     "nome": "Ulteriori conoscenze linguistiche (inglese b2)",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "09/06/2027",
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51309_658181_89316/2026/51310?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-l-30-fisica-145194",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -27347,7 +27350,7 @@
    "url": "https://corsi.unitn.it/it/gestione-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "120000",
@@ -27588,7 +27591,7 @@
        "citazione": "BUSINESS PARTNER B1+; COURSEBOOK e EBOOK WITH MYENGLISHLAB e DIGITAL RESOURCES (PEARSON, circa 35 euro)."
       },
       {
-       "titolo": "Risorse opzionali per l’auto-apprendimento: Dizionario monolingue, cartaceo o digitale, (ad esempio) Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale, autoapprendimento: Business Grammar Builder, Paul Emmerson (Macmillan 2002) o a scelta (cartaceo/digitale). ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974",
+       "titolo": "Risorse opzionali per l’auto-apprendimento: Dizionario monolingue, cartaceo o digitale, (ad esempio) Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale, autoapprendimento: Business Grammar Builder, Paul Emmerson (Macmillan 2002) o a scelta (cartaceo/digitale). ISBN 9781292392974",
        "autori": null,
        "editore": null,
        "anno": 2002,
@@ -27597,7 +27600,7 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "Risorse opzionali per l’auto-apprendimento: Dizionario monolingue, cartaceo o digitale, (ad esempio) Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale, autoapprendimento: Business Grammar Builder, Paul Emmerson (Macmillan 2002) o a scelta (cartaceo/digitale). ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974 ISBN 9781292392974"
+       "citazione": "Risorse opzionali per l’auto-apprendimento: Dizionario monolingue, cartaceo o digitale, (ad esempio) Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale, autoapprendimento: Business Grammar Builder, Paul Emmerson (Macmillan 2002) o a scelta (cartaceo/digitale). ISBN 9781292392974"
       }
      ],
      "esami": [],
@@ -30372,7 +30375,7 @@
    "url": "https://corsi.unitn.it/it/informatica-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "145403",
@@ -31022,6 +31025,30 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "145326",
+     "nome": "Inglese livello C1",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "06/10/2026",
+     "periodo_fine": "11/12/2026",
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": false,
+     "curriculum": "Computer Science",
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51249_655503_90647/2026/51250?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-l-31-informatica-145326",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC145326_DISI",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 06/10/2026, ultima 11/12/2026, tutte nel 1° semestre; 36 ore pubblicate"
+    },
+    {
      "codice": "146162",
      "nome": "Programmazione 1",
      "anno": 1,
@@ -31084,6 +31111,30 @@
      "modalita_esame": "orale",
      "id": "unitn-l-31-informatica-146162",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "145641",
+     "nome": "Technical English",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "09/10/2026",
+     "periodo_fine": "11/12/2026",
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": false,
+     "curriculum": "Computer Science",
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51249_655500_92845/2026/51250?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-l-31-informatica-145641",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC145641_CLA_1",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 09/10/2026, ultima 11/12/2026, tutte nel 1° semestre; 27 ore pubblicate"
     },
     {
      "codice": "145409",
@@ -31310,7 +31361,7 @@
        "citazione": "Maurizio Gabbrielli e Simone Martini, \"Linguaggi di programmazione - Principi e paradigmi 2/ed\""
       },
       {
-       "titolo": "Jeffrey D. Ullman. Elements of ML programming, ML97 edition. Prentice-Hall ISBN: 9788838665738 ISBN: 9788838665738",
+       "titolo": "Jeffrey D. Ullman. Elements of ML programming, ML97 edition. Prentice-Hall ISBN: 9788838665738",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -31319,19 +31370,19 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal syllabus 2024/25 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "Jeffrey D. Ullman. Elements of ML programming, ML97 edition. Prentice-Hall ISBN: 9788838665738 ISBN: 9788838665738"
+       "citazione": "Jeffrey D. Ullman. Elements of ML programming, ML97 edition. Prentice-Hall ISBN: 9788838665738"
       },
       {
-       "titolo": "Jeffrey D. Ullman. Elements of ML programming, ML97 edition. Prentice-Hall ISBN: 9788838665738",
+       "titolo": "Jeffrey D. Ullman. Elements of ML programming, ML97 edition. Prentice-Hall",
        "autori": null,
        "editore": "ML97 edition. Prentice-Hall",
        "anno": null,
        "edizione": null,
-       "isbn": "9788838665738",
+       "isbn": null,
        "lingua": null,
        "tipo": null,
        "note": "Dal syllabus 2024/25 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "Jeffrey D. Ullman. Elements of ML programming, ML97 edition. Prentice-Hall ISBN: 9788838665738"
+       "citazione": "Jeffrey D. Ullman. Elements of ML programming, ML97 edition. Prentice-Hall"
       }
      ],
      "esami": [],
@@ -31621,28 +31672,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "145326",
-     "nome": "Inglese livello C1",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "10/09/2026",
-     "periodo_fine": "09/06/2027",
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": false,
-     "curriculum": "Computer Science",
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51249_655503_90647/2026/51250?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-l-31-informatica-145326",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "140189",
      "nome": "Prova di conoscenza lingua italiana (A1)",
      "anno": 1,
@@ -31699,28 +31728,6 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unitn-l-31-informatica-140189",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "145641",
-     "nome": "Technical English",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "10/09/2026",
-     "periodo_fine": "09/06/2027",
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": false,
-     "curriculum": "Computer Science",
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51249_655500_92845/2026/51250?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-l-31-informatica-145641",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -32702,19 +32709,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Mazzoldi, P., Nigro, M., & Voci, C. (2008). Elementi di fisica : elettromagnetismo, onde (2. ed.). EdiSES. EAN: 9788879594189 ISBN: 8879594184 EAN: 9788879594783 ISBN: 8879594788 EAN: 9788879594189 ISBN: 8879594184 EAN: 9788879594783 ISBN: 8879594788 EAN: 9788879594189 ISBN: 8879594184 EAN: 9788879594783 ISBN: 8879594788 EAN: 9788879594189 ISBN: 8879594184 EAN: 9788879594783 ISBN: 8879594788"
-      },
-      {
-       "titolo": "Elementi di fisica : elettromagnetismo, onde (2. ed.)",
-       "autori": "Mazzoldi, P., Nigro, M., & Voci, C.",
-       "editore": "EdiSES",
-       "anno": 2008,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Mazzoldi, P., Nigro, M., & Voci, C. (2008). Elementi di fisica : elettromagnetismo, onde (2. ed.). EdiSES."
+       "citazione": "Mazzoldi, P., Nigro, M., & Voci, C. (2008). Elementi di fisica : elettromagnetismo, onde (2. ed.). EdiSES. EAN: 9788879594189 ISBN: 8879594184 EAN: 9788879594783 ISBN: 8879594788 EAN: 9788879594189 ISBN: 8879594184 EAN: 9788879594783 ISBN: 8879594788 EAN: 9788879594189 ISBN: 8879594184 EAN: 9788879594783 ISBN: 8879594788 EAN: 9788879594189 ISBN: 8879594184 EAN: 9788879594783 ISBN: 8879594788 EAN: 9788879594189 ISBN: 8879594184 EAN: 9788879594783 ISBN: 8879594788"
       }
      ],
      "esami": [],
@@ -34170,7 +34165,7 @@
    "url": "http://corsi.unitn.it/it/ingegneria-civile-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "140710",
@@ -34542,6 +34537,30 @@
      "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51300_657021_97469/2026/51300?coorte=2026"
     },
     {
+     "codice": "140182",
+     "nome": "Lingua straniera - Inglese (B2)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "09/10/2026",
+     "periodo_fine": "11/12/2026",
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51300_657027_89203/2026/51300?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-l-7-ingegneria-civile-140182",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC0352G_140182_DADEF",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 09/10/2026, ultima 11/12/2026, tutte nel 1° semestre; 18 ore pubblicate"
+    },
+    {
      "codice": "140756",
      "nome": "Analisi matematica 2",
      "anno": 1,
@@ -34713,29 +34732,6 @@
      "modalita_esame": "orale",
      "id": "unitn-l-7-ingegneria-civile-140463",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "140182",
-     "nome": "Lingua straniera - Inglese (B2)",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "",
-     "periodo_fine": "",
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51300_657027_89203/2026/51300?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-l-7-ingegneria-civile-140182",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2024/50348_645792_89203/2020/50348?coorte=2024"
     },
     {
      "codice": "140588",
@@ -36691,7 +36687,7 @@
    "url": "https://corsi.unitn.it/it/ingegneria-industriale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "146171",
@@ -36939,6 +36935,30 @@
      "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51302_657759_94962/2026/51303?coorte=2026"
     },
     {
+     "codice": "140422",
+     "nome": "Prova di conoscenza lingua inglese (B2)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "07/10/2026",
+     "periodo_fine": "16/12/2026",
+     "cfu": 3,
+     "ssd": "NN",
+     "obbligatorio": true,
+     "curriculum": "Gestionale, Materiali per l'industria sostenibile, Robotica e meccatronica",
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51302_657757_90451/2026/51305?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-l-9-ingegneria-industriale-140422",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC140422_CLA",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 07/10/2026, ultima 16/12/2026, tutte nel 1° semestre; 27 ore pubblicate"
+    },
+    {
      "codice": "145969",
      "nome": "Analisi matematica 2",
      "anno": 1,
@@ -37113,28 +37133,6 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unitn-l-9-ingegneria-industriale-140462",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "140422",
-     "nome": "Prova di conoscenza lingua inglese (B2)",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "10/09/2026",
-     "periodo_fine": "09/06/2027",
-     "cfu": 3,
-     "ssd": "NN",
-     "obbligatorio": true,
-     "curriculum": "Gestionale, Materiali per l'industria sostenibile, Robotica e meccatronica",
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51302_657757_90451/2026/51305?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-l-9-ingegneria-industriale-140422",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -39709,7 +39707,7 @@
    "url": "https://corsi.unitn.it/it/ingegneria-informatica-delle-comunicazioni-ed-elettronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "145403",
@@ -40289,6 +40287,30 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "145326",
+     "nome": "Inglese livello C1",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "06/10/2026",
+     "periodo_fine": "11/12/2026",
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": false,
+     "curriculum": "Computer, Communications and Electronic Engineering",
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51319_657270_90647/2026/51320?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-l-8-ingegneria-informatica-delle-comunicazioni-ed-elettronica-145326",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC145326_DISI",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 06/10/2026, ultima 11/12/2026, tutte nel 1° semestre; 36 ore pubblicate"
+    },
+    {
      "codice": "145935",
      "nome": "Programmazione 1",
      "anno": 1,
@@ -40363,6 +40385,30 @@
      "modalita_esame": "orale",
      "id": "unitn-l-8-ingegneria-informatica-delle-comunicazioni-ed-elettronica-145935",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "145641",
+     "nome": "Technical English",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "09/10/2026",
+     "periodo_fine": "11/12/2026",
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": false,
+     "curriculum": "Computer, Communications and Electronic Engineering",
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51319_657268_92845/2026/51320?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-l-8-ingegneria-informatica-delle-comunicazioni-ed-elettronica-145641",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC145641_CLA_1",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 09/10/2026, ultima 11/12/2026, tutte nel 1° semestre; 27 ore pubblicate"
     },
     {
      "codice": "140017",
@@ -40795,28 +40841,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "145326",
-     "nome": "Inglese livello C1",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "10/09/2026",
-     "periodo_fine": "09/06/2027",
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": false,
-     "curriculum": "Computer, Communications and Electronic Engineering",
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51319_657270_90647/2026/51320?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-l-8-ingegneria-informatica-delle-comunicazioni-ed-elettronica-145326",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "140189",
      "nome": "Prova di conoscenza lingua italiana (A1)",
      "anno": 1,
@@ -40873,28 +40897,6 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unitn-l-8-ingegneria-informatica-delle-comunicazioni-ed-elettronica-140189",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "145641",
-     "nome": "Technical English",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "10/09/2026",
-     "periodo_fine": "09/06/2027",
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": false,
-     "curriculum": "Computer, Communications and Electronic Engineering",
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51319_657268_92845/2026/51320?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-l-8-ingegneria-informatica-delle-comunicazioni-ed-elettronica-145641",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -43590,7 +43592,7 @@
    "url": "http://corsi.unitn.it/it/ingegneria-lambiente-e-il-territorio-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "140710",
@@ -44042,6 +44044,30 @@
      "modalita_esame": "orale",
      "id": "unitn-l-7-ingegneria-per-l-ambiente-e-il-territorio-140443",
      "stato_esami": "completo"
+    },
+    {
+     "codice": "140185",
+     "nome": "Lingua straniera - Inglese (B2)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "09/10/2026",
+     "periodo_fine": "11/12/2026",
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51167_657058_89208/2026/51167?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-l-7-ingegneria-per-l-ambiente-e-il-territorio-140185",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC0353G_140185_DADEF",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 09/10/2026, ultima 11/12/2026, tutte nel 1° semestre; 18 ore pubblicate"
     },
     {
      "codice": "140748",
@@ -44507,29 +44533,6 @@
      "modalita_esame": "orale",
      "id": "unitn-l-7-ingegneria-per-l-ambiente-e-il-territorio-140584",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "140185",
-     "nome": "Lingua straniera - Inglese (B2)",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "",
-     "periodo_fine": "",
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51167_657058_89208/2026/51167?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-l-7-ingegneria-per-l-ambiente-e-il-territorio-140185",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2024/50349_645822_89208/2019/50349?coorte=2024"
     },
     {
      "codice": "140259",
@@ -46771,7 +46774,7 @@
    "url": "https://corsi.unitn.it/it/interfacce-e-tecnologie-della-comunicazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "153033",
@@ -48374,7 +48377,7 @@
    "url": "https://corsi.unitn.it/it/lettere-e-storia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "130838",
@@ -48458,6 +48461,46 @@
      "modalita_esame": "orale",
      "id": "unitn-l-10-lettere-e-storia-130419",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "130759",
+     "nome": "Avviamento al latino universitario",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "23/09/2026",
+     "periodo_fine": "02/12/2026",
+     "cfu": 6,
+     "ssd": "LATI-01/A",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Ceschi Giovanni",
+      "La Barbera Sandro"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51179_655784_96912/2026/51179?coorte=2026",
+     "libri": [
+      {
+       "titolo": "A. Traina, Propedeutica al latino universitario (in Italian, ask instructor for titles in English)",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A. Traina, Propedeutica al latino universitario (in Italian, ask instructor for titles in English)"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unitn-l-10-lettere-e-storia-130759",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=ECLET_130759_130759-2_DADE",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 23/09/2026, ultima 02/12/2026, tutte nel 1° semestre; 60 ore pubblicate"
     },
     {
      "codice": "130107",
@@ -48690,6 +48733,58 @@
      "modalita_esame": "scritto",
      "id": "unitn-l-10-lettere-e-storia-130096",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "130769",
+     "nome": "Letteratura e mito nella Grecia antica",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "17/09/2026",
+     "periodo_fine": "14/12/2026",
+     "cfu": 6,
+     "ssd": "HELL-01/B",
+     "obbligatorio": true,
+     "curriculum": "Carriera: Lettere classiche",
+     "docenti": [
+      "Abbate Albina",
+      "Ieranò Giorgio"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51179_651082_96918/2026/51179?coorte=2026",
+     "libri": [
+      {
+       "titolo": "Giorgio Ieranò, Gli eroi della guerra di Troia, Universale economica Feltrinelli, varie edizioni",
+       "autori": null,
+       "editore": "Universale economica Feltrinelli",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Giorgio Ieranò, Gli eroi della guerra di Troia, Universale economica Feltrinelli, varie edizioni"
+      },
+      {
+       "titolo": "A. Ercolani, Omero. Introduzione allo studio dell'epica greca arcaica, Carocci editore 2016 (NB: chi frequenterà le esercitazioni di greco del secondo semestre non dovrà portare all'esame il volume di Ercolani).",
+       "autori": null,
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A. Ercolani, Omero. Introduzione allo studio dell'epica greca arcaica, Carocci editore 2016 (NB: chi frequenterà le esercitazioni di greco del secondo semestre non dovrà portare all'esame il volume di Ercolani)."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unitn-l-10-lettere-e-storia-130769",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=ECLET_130769_130769-1_IERA",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 17/09/2026, ultima 14/12/2026, tutte nel 1° semestre; 62 ore pubblicate"
     },
     {
      "codice": "130099",
@@ -50253,94 +50348,6 @@
      "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51179_651083_96915/2026/51179?coorte=2026"
     },
     {
-     "codice": "130759",
-     "nome": "Avviamento al latino universitario",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "01/06/2027",
-     "cfu": 6,
-     "ssd": "LATI-01/A",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Ceschi Giovanni",
-      "La Barbera Sandro"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51179_655784_96912/2026/51179?coorte=2026",
-     "libri": [
-      {
-       "titolo": "A. Traina, Propedeutica al latino universitario (in Italian, ask instructor for titles in English)",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "A. Traina, Propedeutica al latino universitario (in Italian, ask instructor for titles in English)"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unitn-l-10-lettere-e-storia-130759",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "130769",
-     "nome": "Letteratura e mito nella Grecia antica",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "01/06/2027",
-     "cfu": 6,
-     "ssd": "HELL-01/B",
-     "obbligatorio": true,
-     "curriculum": "Carriera: Lettere classiche",
-     "docenti": [
-      "Abbate Albina",
-      "Ieranò Giorgio"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51179_651082_96918/2026/51179?coorte=2026",
-     "libri": [
-      {
-       "titolo": "Giorgio Ieranò, Gli eroi della guerra di Troia, Universale economica Feltrinelli, varie edizioni",
-       "autori": null,
-       "editore": "Universale economica Feltrinelli",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Giorgio Ieranò, Gli eroi della guerra di Troia, Universale economica Feltrinelli, varie edizioni"
-      },
-      {
-       "titolo": "A. Ercolani, Omero. Introduzione allo studio dell'epica greca arcaica, Carocci editore 2016 (NB: chi frequenterà le esercitazioni di greco del secondo semestre non dovrà portare all'esame il volume di Ercolani).",
-       "autori": null,
-       "editore": null,
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "A. Ercolani, Omero. Introduzione allo studio dell'epica greca arcaica, Carocci editore 2016 (NB: chi frequenterà le esercitazioni di greco del secondo semestre non dovrà portare all'esame il volume di Ercolani)."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unitn-l-10-lettere-e-storia-130769",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "130533",
      "nome": "An introduction to Italian culture",
      "anno": 1,
@@ -51418,6 +51425,58 @@
      "modalita_esame": "scritto",
      "id": "unitn-l-10-lettere-e-storia-130096-a2",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "130769",
+     "nome": "Letteratura e mito nella Grecia antica",
+     "anno": 2,
+     "periodo": "1",
+     "periodo_inizio": "17/09/2026",
+     "periodo_fine": "14/12/2026",
+     "cfu": 6,
+     "ssd": "L-FIL-LET/02",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Abbate Albina",
+      "Ieranò Giorgio"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50817_651082_96918/2025/50817?coorte=2025",
+     "libri": [
+      {
+       "titolo": "Giorgio Ieranò, Gli eroi della guerra di Troia, Universale economica Feltrinelli, varie edizioni",
+       "autori": null,
+       "editore": "Universale economica Feltrinelli",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Giorgio Ieranò, Gli eroi della guerra di Troia, Universale economica Feltrinelli, varie edizioni"
+      },
+      {
+       "titolo": "A. Ercolani, Omero. Introduzione allo studio dell'epica greca arcaica, Carocci editore 2016 (NB: chi frequenterà le esercitazioni di greco del secondo semestre non dovrà portare all'esame il volume di Ercolani).",
+       "autori": null,
+       "editore": null,
+       "anno": 2016,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A. Ercolani, Omero. Introduzione allo studio dell'epica greca arcaica, Carocci editore 2016 (NB: chi frequenterà le esercitazioni di greco del secondo semestre non dovrà portare all'esame il volume di Ercolani)."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unitn-l-10-lettere-e-storia-130769-a2",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=ECLET_130769_130769-1_IERA",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 17/09/2026, ultima 14/12/2026, tutte nel 1° semestre; 62 ore pubblicate"
     },
     {
      "codice": "130111",
@@ -54015,56 +54074,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "130769",
-     "nome": "Letteratura e mito nella Grecia antica",
-     "anno": 2,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "01/06/2027",
-     "cfu": 6,
-     "ssd": "L-FIL-LET/02",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Abbate Albina",
-      "Ieranò Giorgio"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50817_651082_96918/2025/50817?coorte=2025",
-     "libri": [
-      {
-       "titolo": "Giorgio Ieranò, Gli eroi della guerra di Troia, Universale economica Feltrinelli, varie edizioni",
-       "autori": null,
-       "editore": "Universale economica Feltrinelli",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Giorgio Ieranò, Gli eroi della guerra di Troia, Universale economica Feltrinelli, varie edizioni"
-      },
-      {
-       "titolo": "A. Ercolani, Omero. Introduzione allo studio dell'epica greca arcaica, Carocci editore 2016 (NB: chi frequenterà le esercitazioni di greco del secondo semestre non dovrà portare all'esame il volume di Ercolani).",
-       "autori": null,
-       "editore": null,
-       "anno": 2016,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "A. Ercolani, Omero. Introduzione allo studio dell'epica greca arcaica, Carocci editore 2016 (NB: chi frequenterà le esercitazioni di greco del secondo semestre non dovrà portare all'esame il volume di Ercolani)."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unitn-l-10-lettere-e-storia-130769-a2",
-     "stato_esami": "da_aggiungere"
-    },
-    {
      "codice": "130097",
      "nome": "Letteratura greca I",
      "anno": 2,
@@ -55958,7 +55967,7 @@
    "url": "https://corsi.unitn.it/it/lingue-moderne",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "130838",
@@ -61267,7 +61276,7 @@
    "url": "https://corsi.unitn.it/it/matematica-laurea",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "146272",
@@ -64839,7 +64848,7 @@
    "url": "https://corsi.unitn.it/it/scienze-e-tecniche-di-psicologia-cognitiva",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "150035",
@@ -71588,7 +71597,7 @@
    "url": "https://corsi.unitn.it/it/scienze-e-tecnologie-biomolecolari",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "146384",
@@ -73673,7 +73682,7 @@
    "url": "https://corsi.unitn.it/it/scienze-motorie-sport-e-benessere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "151102",
@@ -76056,7 +76065,7 @@
    "url": "https://corsi.unitn.it/it/servizio-sociale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "135205",
@@ -77659,7 +77668,7 @@
    "url": "https://corsi.unitn.it/it/sociologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "135205",
@@ -83718,7 +83727,7 @@
    "url": "https://corsi.unitn.it/en/comparative-european-and-international-legal-studies",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "26180",
@@ -86798,7 +86807,7 @@
    "url": "https://corsi.unitn.it/it/studi-internazionali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "135205",
@@ -90112,7 +90121,7 @@
    "url": "https://corsi.unitn.it/it/tecniche-della-prevenzione-nellambiente-e-nei-luoghi-di-lavoro",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "103009",
@@ -90854,7 +90863,7 @@
    "url": "https://corsi.unitn.it/it/tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "102008",
@@ -91517,7 +91526,7 @@
    "url": "https://corsi.unitn.it/it/tecniche-di-radiologia-medica-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "101009",
@@ -92180,7 +92189,7 @@
    "url": "https://corsi.unitn.it/it/viticoltura-ed-enologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "170003",
@@ -93934,7 +93943,7 @@
    "url": "https://corsi.unitn.it/en/agrifood-innovation-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "173006",
@@ -94803,7 +94812,7 @@
    "url": "https://corsi.unitn.it/en/artificial-intelligence-systems",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "146437",
@@ -97465,7 +97474,7 @@
    "url": "https://corsi.unitn.it/it/bioengineering-personalized-medicine",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "146251",
@@ -98579,7 +98588,7 @@
    "url": "https://corsi.unitn.it/it/biotecnologie-cellulari-e-molecolari",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "146326",
@@ -100075,7 +100084,7 @@
    "url": "https://corsi.unitn.it/en/cognitive-science",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "154122",
@@ -103163,7 +103172,7 @@
    "url": "https://corsi.unitn.it/it/informatica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "146155",
@@ -108007,7 +108016,7 @@
    "url": "https://corsi.unitn.it/it/culture-e-beni-musicali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "130838",
@@ -110341,7 +110350,7 @@
    "url": "https://corsi.unitn.it/en/data-science",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "135205",
@@ -111177,6 +111186,33 @@
      "id": "unitn-lm-data-data-science-145685",
      "stato_esami": "completo",
      "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51206_656728_93493/2026/51206?coorte=2026"
+    },
+    {
+     "codice": "136083",
+     "nome": "Seminar: Developing academic texts and presentations (for Master's degrees in Data Science and Sociology and Social Research)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "05/10/2026",
+     "periodo_fine": "02/12/2026",
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Millward Matthew James",
+      "Rebek Cristina Felicia"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51205_656725_96682/2026/51207?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-lm-data-data-science-136083",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC136083_DADE",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 05/10/2026, ultima 02/12/2026, tutte nel 1° semestre; 72 ore pubblicate"
     },
     {
      "codice": "136067",
@@ -112344,32 +112380,6 @@
      "modalita_esame": "orale",
      "id": "unitn-lm-data-data-science-155024",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "136083",
-     "nome": "Seminar: Developing academic texts and presentations (for Master's degrees in Data Science and Sociology and Social Research)",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "29/05/2027",
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Millward Matthew James",
-      "Rebek Cristina Felicia"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51205_656725_96682/2026/51207?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-lm-data-data-science-136083",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51205_656725_96682/2026/51206?coorte=2026"
     },
     {
      "codice": "135205",
@@ -113726,7 +113736,7 @@
    "url": "https://corsi.unitn.it/en/behavioural-and-applied-economics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121492",
@@ -115369,7 +115379,7 @@
    "url": "https://corsi.unitn.it/it/economia-e-legislazione-dimpresa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121500",
@@ -117215,7 +117225,7 @@
      "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50806_650070_95056/2025/50806?coorte=2025",
      "libri": [
       {
-       "titolo": "Presentazioni PowerPoint e materiale elaborati dal docente (MOODLE). A scelta un dizionario monolingue cartaceo o digitale es. Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale (facoltativo): Business Grammar Builder, Paul Emmerson (Macmillian 2002) ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974",
+       "titolo": "Presentazioni PowerPoint e materiale elaborati dal docente (MOODLE). A scelta un dizionario monolingue cartaceo o digitale es. Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale (facoltativo): Business Grammar Builder, Paul Emmerson (Macmillian 2002) ISBN: 9781292392974",
        "autori": null,
        "editore": null,
        "anno": 2002,
@@ -117224,7 +117234,7 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "Presentazioni PowerPoint e materiale elaborati dal docente (MOODLE). A scelta un dizionario monolingue cartaceo o digitale es. Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale (facoltativo): Business Grammar Builder, Paul Emmerson (Macmillian 2002) ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974"
+       "citazione": "Presentazioni PowerPoint e materiale elaborati dal docente (MOODLE). A scelta un dizionario monolingue cartaceo o digitale es. Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale (facoltativo): Business Grammar Builder, Paul Emmerson (Macmillian 2002) ISBN: 9781292392974"
       }
      ],
      "esami": [],
@@ -119430,7 +119440,7 @@
    "url": "https://corsi.unitn.it/en/european-and-international-studies",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "155362",
@@ -121864,7 +121874,7 @@
    "url": "https://corsi.unitn.it/it/filologia-e-critica-letteraria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "130838",
@@ -126115,7 +126125,7 @@
    "url": "https://corsi.unitn.it/it/filosofia-e-linguaggi-della-modernita",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "130838",
@@ -132126,7 +132136,7 @@
    "url": "https://corsi.unitn.it/it/finanza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121410",
@@ -134898,7 +134908,7 @@
    "url": "https://corsi.unitn.it/it/global-affairs-geopolitics-and-sustainability",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "135072",
@@ -135902,6 +135912,33 @@
      "modalita_esame": "orale",
      "id": "unitn-lm-62-global-affairs-geopolitics-and-sustainability-136133",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "136084",
+     "nome": "Seminar: Developing academic texts and presentations (for Master's degrees in Global and Local Studies; Global affairs: geopolitics and sustainability; Organisation, Society and Technology; Methodology, Organisation and Evaluation of Social Services)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "06/10/2026",
+     "periodo_fine": "04/12/2026",
+     "cfu": 3,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Dana Kiah Michael",
+      "Rebek Cristina Felicia"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51192_656669_96683/2026/51192?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-lm-62-global-affairs-geopolitics-and-sustainability-136084",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC06D1_136084_DADE",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 06/10/2026, ultima 04/12/2026, tutte nel 1° semestre; 72 ore pubblicate"
     },
     {
      "codice": "136120",
@@ -136984,32 +137021,6 @@
      "modalita_esame": "orale",
      "id": "unitn-lm-62-global-affairs-geopolitics-and-sustainability-136119",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "136084",
-     "nome": "Seminar: Developing academic texts and presentations (for Master's degrees in Global and Local Studies; Global affairs: geopolitics and sustainability; Organisation, Society and Technology; Methodology, Organisation and Evaluation of Social Services)",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "29/05/2027",
-     "cfu": 3,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Dana Kiah Michael",
-      "Rebek Cristina Felicia"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51192_656669_96683/2026/51192?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-lm-62-global-affairs-geopolitics-and-sustainability-136084",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51192_656669_96683/2026/51192?coorte=2026"
     },
     {
      "codice": "135205",
@@ -138778,7 +138789,7 @@
    "url": "https://corsi.unitn.it/en/global-law-making",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "127003",
@@ -139984,7 +139995,7 @@
    "url": "https://corsi.unitn.it/en/human-computer-interaction",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "155026",
@@ -141994,7 +142005,7 @@
    "url": "https://corsi.unitn.it/en/information-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "146224",
@@ -144181,7 +144192,7 @@
    "url": "https://corsi.unitn.it/it/ingegneria-civile-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "140687",
@@ -152116,7 +152127,7 @@
    "url": "https://corsi.unitn.it/it/ingegneria-lambiente-e-il-territorio-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "140150",
@@ -155458,7 +155469,7 @@
    "url": "https://corsi.unitn.it/en/innovation-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121319",
@@ -159540,7 +159551,7 @@
    "url": "https://corsi.unitn.it/it/mechatronics-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "146439",
@@ -161093,7 +161104,7 @@
    "url": "https://corsi.unitn.it/en/international-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121319",
@@ -162732,7 +162743,7 @@
    "url": "https://corsi.unitn.it/it/letterature-euroamericane-traduzione-e-critica-letteraria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "130838",
@@ -170212,7 +170223,7 @@
    "url": "https://corsi.unitn.it/it/lingue-moderne-nel-turismo-e-nella-cooperazione-internazionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "130838",
@@ -173564,8 +173575,48 @@
    "url": "https://corsi.unitn.it/en/european-master-business-studies",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "121218",
+     "nome": "European and international commercial law",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "23/09/2026",
+     "periodo_fine": "27/11/2026",
+     "cfu": 6,
+     "ssd": "GIUR-02/A",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Malberti Corrado",
+      "Papadopoulos Thomas"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51278_656400_90441/2026/51278?coorte=2026",
+     "libri": [
+      {
+       "titolo": "Adriaan Dorresteijen, et al., European Corporate Law, Kluwer, 3a e/o 4a edizione (consigliato)",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "Adriaan Dorresteijen, et al., European Corporate Law, Kluwer, 3a e/o 4a edizione (consigliato)"
+      }
+     ],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unitn-lm-77-management-121218",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC121218_N0_MALBE_LEZ",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 23/09/2026, ultima 27/11/2026, tutte nel 1° semestre; 34 ore pubblicate"
+    },
     {
      "codice": "121219",
      "nome": "Information system",
@@ -173762,44 +173813,6 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unitn-lm-77-management-121222",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "121218",
-     "nome": "European and international commercial law",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "11/09/2026",
-     "periodo_fine": "31/05/2027",
-     "cfu": 6,
-     "ssd": "GIUR-02/A",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Malberti Corrado",
-      "Papadopoulos Thomas"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51278_656400_90441/2026/51278?coorte=2026",
-     "libri": [
-      {
-       "titolo": "Adriaan Dorresteijen, et al., European Corporate Law, Kluwer, 3a e/o 4a edizione (consigliato)",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "consigliato",
-       "note": null,
-       "citazione": "Adriaan Dorresteijen, et al., European Corporate Law, Kluwer, 3a e/o 4a edizione (consigliato)"
-      }
-     ],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unitn-lm-77-management-121218",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -174097,7 +174110,7 @@
    "url": "https://corsi.unitn.it/it/management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121341",
@@ -174863,7 +174876,7 @@
      "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51280_656479_95056/2026/51283?coorte=2026",
      "libri": [
       {
-       "titolo": "Presentazioni PowerPoint e materiale elaborati dal docente (MOODLE). A scelta un dizionario monolingue cartaceo o digitale es. Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale (facoltativo): Business Grammar Builder, Paul Emmerson (Macmillian 2002) ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974",
+       "titolo": "Presentazioni PowerPoint e materiale elaborati dal docente (MOODLE). A scelta un dizionario monolingue cartaceo o digitale es. Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale (facoltativo): Business Grammar Builder, Paul Emmerson (Macmillian 2002) ISBN: 9781292392974",
        "autori": null,
        "editore": null,
        "anno": 2002,
@@ -174872,7 +174885,7 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51280_656479_95056/2026/51283?coorte=2026)",
-       "citazione": "Presentazioni PowerPoint e materiale elaborati dal docente (MOODLE). A scelta un dizionario monolingue cartaceo o digitale es. Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale (facoltativo): Business Grammar Builder, Paul Emmerson (Macmillian 2002) ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974"
+       "citazione": "Presentazioni PowerPoint e materiale elaborati dal docente (MOODLE). A scelta un dizionario monolingue cartaceo o digitale es. Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale (facoltativo): Business Grammar Builder, Paul Emmerson (Macmillian 2002) ISBN: 9781292392974"
       }
      ],
      "esami": [],
@@ -177414,7 +177427,7 @@
    "url": "https://corsi.unitn.it/it/management-and-industrial-systems-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "146006",
@@ -179479,7 +179492,7 @@
    "url": "https://corsi.unitn.it/it/management-della-sostenibilita-e-del-turismo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121327",
@@ -179804,7 +179817,7 @@
        "citazione": "WITH MYENGLISHLAB & DIGITAL RESOURCES (PEARSON) ISBN: 9781292392974"
       },
       {
-       "titolo": "Presentazioni PowerPoint e materiale elaborati dal docente (MOODLE). A scelta un dizionario monolingue cartaceo o digitale es. Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale (facoltativo): Business Grammar Builder, Paul Emmerson (Macmillian 2002). ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974",
+       "titolo": "Presentazioni PowerPoint e materiale elaborati dal docente (MOODLE). A scelta un dizionario monolingue cartaceo o digitale es. Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale (facoltativo): Business Grammar Builder, Paul Emmerson (Macmillian 2002). ISBN: 9781292392974",
        "autori": null,
        "editore": null,
        "anno": 2002,
@@ -179813,7 +179826,7 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://unitn.coursecatalogue.cineca.it/insegnamenti/2025/50805_650085_95056/2025/50805?coorte=2025)",
-       "citazione": "Presentazioni PowerPoint e materiale elaborati dal docente (MOODLE). A scelta un dizionario monolingue cartaceo o digitale es. Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale (facoltativo): Business Grammar Builder, Paul Emmerson (Macmillian 2002). ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974 ISBN: 9781292392974"
+       "citazione": "Presentazioni PowerPoint e materiale elaborati dal docente (MOODLE). A scelta un dizionario monolingue cartaceo o digitale es. Oxford Business English Dictionary (OUP). Testo di approfondimento grammaticale (facoltativo): Business Grammar Builder, Paul Emmerson (Macmillian 2002). ISBN: 9781292392974"
       }
      ],
      "esami": [],
@@ -182019,7 +182032,7 @@
    "url": "https://corsi.unitn.it/it/matematica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -185250,6 +185263,30 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "145328",
+     "nome": "Ulteriori conoscenze linguistiche (inglese C1)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "06/10/2026",
+     "periodo_fine": "11/12/2026",
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": true,
+     "curriculum": "Advanced Mathematics, Cryptography, Mathematics and Informatics Education, Mathematics and Statistics for Life and Social Sciences",
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51314_653691_90653/2026/51316?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-lm-40-matematica-145328",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC145328_CLA",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 06/10/2026, ultima 11/12/2026, tutte nel 1° semestre; 38 ore pubblicate"
+    },
+    {
      "codice": "145855",
      "nome": "Actuarial Mathematics for Life Insurance",
      "anno": 1,
@@ -187654,28 +187691,6 @@
      "modalita_esame": "orale",
      "id": "unitn-lm-40-matematica-145668",
      "stato_esami": "completo"
-    },
-    {
-     "codice": "145328",
-     "nome": "Ulteriori conoscenze linguistiche (inglese C1)",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "10/09/2026",
-     "periodo_fine": "09/06/2027",
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": true,
-     "curriculum": "Advanced Mathematics, Cryptography, Mathematics and Informatics Education, Mathematics and Statistics for Life and Social Sciences",
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51314_653691_90653/2026/51316?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-lm-40-matematica-145328",
-     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "146318",
@@ -191232,7 +191247,7 @@
    "url": "https://corsi.unitn.it/it/materials-engineering",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "146019",
@@ -193050,7 +193065,7 @@
    "url": "https://corsi.unitn.it/en/environmental-meteorology-and-climate-physics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "140732",
@@ -195103,7 +195118,7 @@
    "url": "https://corsi.unitn.it/it/metodologia-organizzazione-e-valutazione-dei-servizi-sociali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "135205",
@@ -196321,6 +196336,33 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "136084",
+     "nome": "Seminar: Developing academic texts and presentations (for Master's degrees in Global and Local Studies; Global affairs: geopolitics and sustainability; Organisation, Society and Technology; Methodology, Organisation and Evaluation of Social Services)",
+     "anno": 2,
+     "periodo": "1",
+     "periodo_inizio": "06/10/2026",
+     "periodo_fine": "04/12/2026",
+     "cfu": 3,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Dana Kiah Michael",
+      "Rebek Cristina Felicia"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50766_651568_96683/2025/50766?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-lm-87-metodologia-organizzazione-e-valutazione-dei-servizi-sociali-136084",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC06D1_136084_DADE",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 06/10/2026, ultima 04/12/2026, tutte nel 1° semestre; 72 ore pubblicate"
+    },
+    {
      "codice": "135259",
      "nome": "Competenze linguistiche - Francese (B1)",
      "anno": 2,
@@ -196424,32 +196466,6 @@
      "id": "unitn-lm-87-metodologia-organizzazione-e-valutazione-dei-servizi-sociali-135251",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2025/50226_641658_90780/2015/50227?coorte=2023"
-    },
-    {
-     "codice": "136084",
-     "nome": "Seminar: Developing academic texts and presentations (for Master's degrees in Global and Local Studies; Global affairs: geopolitics and sustainability; Organisation, Society and Technology; Methodology, Organisation and Evaluation of Social Services)",
-     "anno": 2,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "29/05/2027",
-     "cfu": 3,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Dana Kiah Michael",
-      "Rebek Cristina Felicia"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50766_651568_96683/2025/50766?coorte=2025",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-lm-87-metodologia-organizzazione-e-valutazione-dei-servizi-sociali-136084",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50766_651568_96683/2025/50766?coorte=2025"
     }
    ],
    "ammissione": {
@@ -196480,7 +196496,7 @@
    "url": "https://corsi.unitn.it/it/organizzazione-societa-e-tecnologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "135072",
@@ -196831,6 +196847,33 @@
      "modalita_esame": "orale",
      "id": "unitn-lm-88-organizzazione-societa-e-tecnologia-135847",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "136084",
+     "nome": "Seminar: Developing academic texts and presentations (for Master's degrees in Global and Local Studies; Global affairs: geopolitics and sustainability; Organisation, Society and Technology; Methodology, Organisation and Evaluation of Social Services)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "06/10/2026",
+     "periodo_fine": "04/12/2026",
+     "cfu": 3,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Dana Kiah Michael",
+      "Rebek Cristina Felicia"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51230_649806_96683/2026/51230?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-lm-88-organizzazione-societa-e-tecnologia-136084",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC06D1_136084_DADE",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 06/10/2026, ultima 04/12/2026, tutte nel 1° semestre; 72 ore pubblicate"
     },
     {
      "codice": "135845",
@@ -197776,32 +197819,6 @@
      "modalita_esame": "orale",
      "id": "unitn-lm-88-organizzazione-societa-e-tecnologia-135846",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "136084",
-     "nome": "Seminar: Developing academic texts and presentations (for Master's degrees in Global and Local Studies; Global affairs: geopolitics and sustainability; Organisation, Society and Technology; Methodology, Organisation and Evaluation of Social Services)",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "29/05/2027",
-     "cfu": 3,
-     "ssd": "NN",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Dana Kiah Michael",
-      "Rebek Cristina Felicia"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51230_649806_96683/2026/51230?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-lm-88-organizzazione-societa-e-tecnologia-136084",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51230_649806_96683/2026/51230?coorte=2026"
     },
     {
      "codice": "135205",
@@ -199142,7 +199159,7 @@
    "url": "https://corsi.unitn.it/it/fisica-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "146268",
@@ -199923,6 +199940,30 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "145852",
+     "nome": "Scientific Writing and Presentations in English (B2a)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "09/10/2026",
+     "periodo_fine": "18/12/2026",
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51327_658308_94303/2026/51327?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-lm-17-physics-145852",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC145852_0527H_0538H_Corso_1",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 09/10/2026, ultima 18/12/2026, tutte nel 1° semestre; 38 ore pubblicate"
+    },
+    {
      "codice": "145653",
      "nome": "Solid state physics I",
      "anno": 1,
@@ -200067,6 +200108,30 @@
      "modalita_esame": "orale",
      "id": "unitn-lm-17-physics-145177",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "145328",
+     "nome": "Ulteriori conoscenze linguistiche (inglese C1)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "06/10/2026",
+     "periodo_fine": "11/12/2026",
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51327_658302_90653/2026/51327?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-lm-17-physics-145328",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC145328_CLA",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 06/10/2026, ultima 11/12/2026, tutte nel 1° semestre; 38 ore pubblicate"
     },
     {
      "codice": "140571",
@@ -201866,50 +201931,6 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unitn-lm-17-physics-140189",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "145852",
-     "nome": "Scientific Writing and Presentations in English (B2a)",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "09/06/2027",
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51327_658308_94303/2026/51327?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-lm-17-physics-145852",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "145328",
-     "nome": "Ulteriori conoscenze linguistiche (inglese C1)",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "09/06/2027",
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51327_658302_90653/2026/51327?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-lm-17-physics-145328",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -204460,7 +204481,7 @@
    "url": "https://corsi.unitn.it/it/psicologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "152097",
@@ -208846,7 +208867,7 @@
    "url": "https://corsi.unitn.it/en/quantitative-and-computational-biology",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "146466",
@@ -214553,7 +214574,7 @@
    "url": "https://corsi.unitn.it/en/security-intelligence-and-strategic-studies",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "180000",
@@ -216182,7 +216203,7 @@
    "url": "https://corsi.unitn.it/en/sociology-and-social-research",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "135205",
@@ -216811,6 +216832,82 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "135216",
+     "nome": "Qualitative methods lab",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "24/09/2026",
+     "periodo_fine": "17/12/2026",
+     "cfu": 3,
+     "ssd": "NN",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Bassetti Chiara",
+      "Yapo Stefania"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51191_656633_90802/2026/51191?coorte=2026",
+     "libri": [
+      {
+       "titolo": "Using Software in Qualitative Research: A Step-by-Step Guide",
+       "autori": "Silver, C. & Lewins, A.",
+       "editore": "Sage",
+       "anno": 2014,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
+       "citazione": "Silver, C. & Lewins, A. (2014) Using Software in Qualitative Research: A Step-by-Step Guide, 2nd ed., London, Sage. [Cap. 1 in particolare]"
+      },
+      {
+       "titolo": "Interviews and inference: Making sense of interview data in qualitative research",
+       "autori": "Tavory, I. (2020)",
+       "editore": null,
+       "anno": 2020,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
+       "citazione": "Tavory, I. (2020). \"Interviews and inference: Making sense of interview data in qualitative research\". Qualitative Sociology, 43(4), 449-465."
+      },
+      {
+       "titolo": "Theory construction in qualitative research: From grounded theory to abductive analysis",
+       "autori": "Timmermans, S., & Tavory, I. (2012)",
+       "editore": null,
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
+       "citazione": "Timmermans, S., & Tavory, I. (2012). \"Theory construction in qualitative research: From grounded theory to abductive analysis\". Sociological theory, 30(3), 167-186."
+      },
+      {
+       "titolo": "Abduction as the type of inference that characterizes the development of a grounded theory",
+       "autori": "Richardson, R. & Kramer, E.H. (2006)",
+       "editore": null,
+       "anno": 2006,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
+       "citazione": "Richardson, R. & Kramer, E.H. (2006), \"Abduction as the type of inference that characterizes the development of a grounded theory\", Qualitative Research, 6, 4, pp. 497-513."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unitn-lm-88-sociology-and-social-research-sociologia-e-ricerca-sociale-135216",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC135216_YAP",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 24/09/2026, ultima 17/12/2026, tutte nel 1° semestre; 26 ore pubblicate"
+    },
+    {
      "codice": "135309",
      "nome": "Quantitative methods",
      "anno": 1,
@@ -216958,6 +217055,62 @@
      "modalita_esame": "orale",
      "id": "unitn-lm-88-sociology-and-social-research-sociologia-e-ricerca-sociale-135279",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "135931",
+     "nome": "Research design lab",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "14/09/2026",
+     "periodo_fine": "01/12/2026",
+     "cfu": 3,
+     "ssd": "NN",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Caniglia Beatrice",
+      "Michelin Irene",
+      "Scherer Stefani",
+      "Sestrem Jardel"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51191_656639_95902/2026/51191?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-lm-88-sociology-and-social-research-sociologia-e-ricerca-sociale-135931",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC135931_DADE1",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 14/09/2026, ultima 01/12/2026, tutte nel 1° semestre; 48 ore pubblicate"
+    },
+    {
+     "codice": "136083",
+     "nome": "Seminar: Developing academic texts and presentations (for Master's degrees in Data Science and Sociology and Social Research)",
+     "anno": 1,
+     "periodo": "1",
+     "periodo_inizio": "05/10/2026",
+     "periodo_fine": "02/12/2026",
+     "cfu": 3,
+     "ssd": "ANGL-01/C",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Millward Matthew James",
+      "Rebek Cristina Felicia"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51191_650268_96682/2026/51191?coorte=2026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-lm-88-sociology-and-social-research-sociologia-e-ricerca-sociale-136083",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC136083_DADE",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 05/10/2026, ultima 02/12/2026, tutte nel 1° semestre; 72 ore pubblicate"
     },
     {
      "codice": "135852",
@@ -218062,135 +218215,6 @@
      "stato_esami": "da_aggiungere"
     },
     {
-     "codice": "135216",
-     "nome": "Qualitative methods lab",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "29/05/2027",
-     "cfu": 3,
-     "ssd": "NN",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Bassetti Chiara",
-      "Yapo Stefania"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51191_656633_90802/2026/51191?coorte=2026",
-     "libri": [
-      {
-       "titolo": "Using Software in Qualitative Research: A Step-by-Step Guide",
-       "autori": "Silver, C. & Lewins, A.",
-       "editore": "Sage",
-       "anno": 2014,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "Silver, C. & Lewins, A. (2014) Using Software in Qualitative Research: A Step-by-Step Guide, 2nd ed., London, Sage. [Cap. 1 in particolare]"
-      },
-      {
-       "titolo": "Interviews and inference: Making sense of interview data in qualitative research",
-       "autori": "Tavory, I. (2020)",
-       "editore": null,
-       "anno": 2020,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "Tavory, I. (2020). \"Interviews and inference: Making sense of interview data in qualitative research\". Qualitative Sociology, 43(4), 449-465."
-      },
-      {
-       "titolo": "Theory construction in qualitative research: From grounded theory to abductive analysis",
-       "autori": "Timmermans, S., & Tavory, I. (2012)",
-       "editore": null,
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "Timmermans, S., & Tavory, I. (2012). \"Theory construction in qualitative research: From grounded theory to abductive analysis\". Sociological theory, 30(3), 167-186."
-      },
-      {
-       "titolo": "Abduction as the type of inference that characterizes the development of a grounded theory",
-       "autori": "Richardson, R. & Kramer, E.H. (2006)",
-       "editore": null,
-       "anno": 2006,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "Richardson, R. & Kramer, E.H. (2006), \"Abduction as the type of inference that characterizes the development of a grounded theory\", Qualitative Research, 6, 4, pp. 497-513."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unitn-lm-88-sociology-and-social-research-sociologia-e-ricerca-sociale-135216",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51191_656633_90802/2026/51191?coorte=2026"
-    },
-    {
-     "codice": "135931",
-     "nome": "Research design lab",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "29/05/2027",
-     "cfu": 3,
-     "ssd": "NN",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Caniglia Beatrice",
-      "Michelin Irene",
-      "Scherer Stefani",
-      "Sestrem Jardel"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51191_656639_95902/2026/51191?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-lm-88-sociology-and-social-research-sociologia-e-ricerca-sociale-135931",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51191_656639_95902/2026/51191?coorte=2026"
-    },
-    {
-     "codice": "136083",
-     "nome": "Seminar: Developing academic texts and presentations (for Master's degrees in Data Science and Sociology and Social Research)",
-     "anno": 1,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "29/05/2027",
-     "cfu": 3,
-     "ssd": "ANGL-01/C",
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [
-      "Millward Matthew James",
-      "Rebek Cristina Felicia"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51191_650268_96682/2026/51191?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-lm-88-sociology-and-social-research-sociologia-e-ricerca-sociale-136083",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/51191_650268_96682/2026/51191?coorte=2026"
-    },
-    {
      "codice": "135205",
      "nome": "Attività a scelta libera",
      "anno": 2,
@@ -219069,7 +219093,7 @@
    "url": "https://corsi.unitn.it/it/storia-dellarte-e-studi-museali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "130838",
@@ -223037,7 +223061,7 @@
    "url": "https://corsi.unitn.it/en/international-security-studies",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "160095",
@@ -225841,7 +225865,7 @@
    "url": "https://corsi.unitn.it/it/giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "26180",
@@ -230419,6 +230443,88 @@
      "modalita_esame": "orale"
     },
     {
+     "codice": "25519",
+     "nome": "Diritto del lavoro",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": "14/09/2026",
+     "periodo_fine": "27/11/2026",
+     "cfu": 12,
+     "ssd": "IUS/07",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Brun Stefania",
+      "Cristofolini Chiara",
+      "Guarini Giovanni",
+      "Matarese Martino",
+      "Nicolussi Principe Anna",
+      "Nogler Luca",
+      "Salomone Riccardo"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50371_646435_86606/2021/50371?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Diritto del lavoro",
+       "autori": "O. Mazzotta",
+       "editore": "Giuffrè",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
+       "citazione": "O. Mazzotta, Diritto del lavoro, Giuffrè, Milano, ultima edizione."
+      },
+      {
+       "titolo": "G. Giugni, Diritto sindacale, Cacucci, Bari, ultima edizione, pp. 13-104, 131-229",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
+       "citazione": "G. Giugni, Diritto sindacale, Cacucci, Bari, ultima edizione, pp. 13-104, 131-229"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "10:15",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-17",
+       "docenti": "NOGLER LUCA BRUN STEFANIA",
+       "note": null,
+       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-19",
+       "ora": "14:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-17",
+       "docenti": "NOGLER LUCA BRUN STEFANIA",
+       "note": null,
+       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "id": "unitn-lmg-01-giurisprudenza-25519",
+     "stato_libri": "completo",
+     "stato_esami": "completo",
+     "modalita_esame": "orale",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC25519_BRUN",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 14/09/2026, ultima 27/11/2026, tutte nel 1° semestre; 170 ore pubblicate"
+    },
+    {
      "codice": "25218",
      "nome": "Diritto del lavoro pubblico",
      "anno": 3,
@@ -234545,87 +234651,6 @@
      "modalita_esame": "orale"
     },
     {
-     "codice": "25519",
-     "nome": "Diritto del lavoro",
-     "anno": 3,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "21/05/2027",
-     "cfu": 12,
-     "ssd": "IUS/07",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Brun Stefania",
-      "Cristofolini Chiara",
-      "Guarini Giovanni",
-      "Matarese Martino",
-      "Nicolussi Principe Anna",
-      "Nogler Luca",
-      "Salomone Riccardo"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50371_646435_86606/2021/50371?coorte=2024",
-     "libri": [
-      {
-       "titolo": "Diritto del lavoro",
-       "autori": "O. Mazzotta",
-       "editore": "Giuffrè",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "O. Mazzotta, Diritto del lavoro, Giuffrè, Milano, ultima edizione."
-      },
-      {
-       "titolo": "G. Giugni, Diritto sindacale, Cacucci, Bari, ultima edizione, pp. 13-104, 131-229",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "G. Giugni, Diritto sindacale, Cacucci, Bari, ultima edizione, pp. 13-104, 131-229"
-      }
-     ],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-19",
-       "ora": "10:15",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-26",
-       "iscrizioni_al": "2026-11-17",
-       "docenti": "NOGLER LUCA BRUN STEFANIA",
-       "note": null,
-       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-19",
-       "ora": "14:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-26",
-       "iscrizioni_al": "2026-11-17",
-       "docenti": "NOGLER LUCA BRUN STEFANIA",
-       "note": null,
-       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "id": "unitn-lmg-01-giurisprudenza-25519",
-     "stato_libri": "completo",
-     "stato_esami": "completo",
-     "modalita_esame": "orale",
-     "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50371_646435_86606/2021/50371?coorte=2024"
-    },
-    {
      "codice": "25818",
      "nome": "Diritto commerciale avanzato",
      "anno": 4,
@@ -234676,6 +234701,112 @@
      "id": "unitn-lmg-01-giurisprudenza-25818",
      "stato_esami": "completo",
      "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50329_642269_89829/2021/50329?coorte=2023"
+    },
+    {
+     "codice": "25522",
+     "nome": "Diritto processuale civile",
+     "anno": 4,
+     "periodo": "1",
+     "periodo_inizio": "14/09/2026",
+     "periodo_fine": "09/12/2026",
+     "cfu": 14,
+     "ssd": "IUS/15",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Baccaglini Laura",
+      "Dalla Bontà Silvana",
+      "Riondato Laura",
+      "Silvestri Kevin"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50329_642272_86609/2021/50329?coorte=2023",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "09:30",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-01",
+       "docenti": "BACCAGLINI LAURA",
+       "note": null,
+       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-16",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-14",
+       "docenti": "DALLA BONTÀ SILVANA",
+       "note": null,
+       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-lmg-01-giurisprudenza-25522",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC25522_BACCA",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 14/09/2026, ultima 09/12/2026, tutte nel 1° semestre; 154 ore pubblicate"
+    },
+    {
+     "codice": "25523",
+     "nome": "Procedura penale",
+     "anno": 4,
+     "periodo": "1",
+     "periodo_inizio": "22/09/2026",
+     "periodo_fine": "04/12/2026",
+     "cfu": 14,
+     "ssd": "IUS/16",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Busetto Marcello Luigi",
+      "Di Paolo Gabriella"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50329_642270_86610/2021/50329?coorte=2023",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-04",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "DI PAOLO GABRIELLA",
+       "note": null,
+       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2026-11-13",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-26",
+       "iscrizioni_al": "2026-11-11",
+       "docenti": "BUSETTO MARCELLO LUIGI",
+       "note": null,
+       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+      }
+     ],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unitn-lmg-01-giurisprudenza-25523",
+     "stato_esami": "completo",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC25523_BUSET",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 22/09/2026, ultima 04/12/2026, tutte nel 1° semestre; 116 ore pubblicate"
     },
     {
      "codice": "25931",
@@ -234792,110 +234923,6 @@
      "id": "unitn-lmg-01-giurisprudenza-25932",
      "stato_esami": "completo",
      "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50329_642273_91304/2021/50329?coorte=2023"
-    },
-    {
-     "codice": "25522",
-     "nome": "Diritto processuale civile",
-     "anno": 4,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "21/05/2027",
-     "cfu": 14,
-     "ssd": "IUS/15",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Baccaglini Laura",
-      "Dalla Bontà Silvana",
-      "Riondato Laura",
-      "Silvestri Kevin"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50329_642272_86609/2021/50329?coorte=2023",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-03",
-       "ora": "09:30",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-10-26",
-       "iscrizioni_al": "2026-11-01",
-       "docenti": "BACCAGLINI LAURA",
-       "note": null,
-       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-16",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "scritto",
-       "iscrizioni_dal": "2026-10-26",
-       "iscrizioni_al": "2026-11-14",
-       "docenti": "DALLA BONTÀ SILVANA",
-       "note": null,
-       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-lmg-01-giurisprudenza-25522",
-     "stato_esami": "completo",
-     "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50329_642272_86609/2021/50329?coorte=2023"
-    },
-    {
-     "codice": "25523",
-     "nome": "Procedura penale",
-     "anno": 4,
-     "periodo": "annuale",
-     "periodo_inizio": "14/09/2026",
-     "periodo_fine": "21/05/2027",
-     "cfu": 14,
-     "ssd": "IUS/16",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Busetto Marcello Luigi",
-      "Di Paolo Gabriella"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50329_642270_86610/2021/50329?coorte=2023",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-04",
-       "ora": "15:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-26",
-       "iscrizioni_al": "2026-11-02",
-       "docenti": "DI PAOLO GABRIELLA",
-       "note": null,
-       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-11-13",
-       "ora": "09:00",
-       "luogo": null,
-       "modalita": "orale",
-       "iscrizioni_dal": "2026-10-26",
-       "iscrizioni_al": "2026-11-11",
-       "docenti": "BUSETTO MARCELLO LUIGI",
-       "note": null,
-       "fonte": "https://unitn.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "unitn-lmg-01-giurisprudenza-25523",
-     "stato_esami": "completo",
-     "periodo_fonte": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50329_642270_86610/2021/50329?coorte=2023"
     },
     {
      "codice": "25531",
@@ -235247,7 +235274,7 @@
    "url": "https://corsi.unitn.it/it/ingegneria-edile-architettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "140710",
@@ -238720,6 +238747,118 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "140385",
+     "nome": "Tecnica delle costruzioni con Laboratorio Progettuale",
+     "anno": 4,
+     "periodo": "1",
+     "periodo_inizio": "14/09/2026",
+     "periodo_fine": "22/12/2026",
+     "cfu": 12,
+     "ssd": "ICAR/09",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Broccardo Marco",
+      "Sartori Gianluca"
+     ],
+     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50218_640948_89598/2010/50218?coorte=2023",
+     "libri": [
+      {
+       "titolo": "Aurelio Ghersi Il cemento armato. Flaccovio editore, Palermo, 2010.",
+       "autori": null,
+       "editore": "Aurelio Ghersi Il cemento armato. Flaccovio editore",
+       "anno": 2010,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Aurelio Ghersi Il cemento armato. Flaccovio editore, Palermo, 2010."
+      },
+      {
+       "titolo": "Cosenza, Manfredi, Pecce Strutture in cemento armato Basi della progettazione. Hoepli, Milano, 2008.",
+       "autori": null,
+       "editore": null,
+       "anno": 2008,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Cosenza, Manfredi, Pecce Strutture in cemento armato Basi della progettazione. Hoepli, Milano, 2008."
+      },
+      {
+       "titolo": "Vincenzo Nunziata Teoria e pratica delle strutture in cemento armato, Flaccovio Editore, Palermo, 2012.",
+       "autori": null,
+       "editore": "Flaccovio Editore",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Vincenzo Nunziata Teoria e pratica delle strutture in cemento armato, Flaccovio Editore, Palermo, 2012."
+      },
+      {
+       "titolo": "Angotti, Guiglia, Orlando, Marro Progetto delle strutture in calcestruzzo armato. Hoepli, Milano, 2011.",
+       "autori": null,
+       "editore": null,
+       "anno": 2011,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Angotti, Guiglia, Orlando, Marro Progetto delle strutture in calcestruzzo armato. Hoepli, Milano, 2011."
+      },
+      {
+       "titolo": "Migliacci, Mola, Progetto agli stati limite delle strutture in cemento armato vol.2, CEA, Milano, 1985",
+       "autori": null,
+       "editore": null,
+       "anno": 1985,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Migliacci, Mola, Progetto agli stati limite delle strutture in cemento armato vol.2, CEA, Milano, 1985"
+      },
+      {
+       "titolo": "Bernuzzi C. - Progetto e verifica delle strutture in acciaio, 2a Edizione, Hoepli, 2018.",
+       "autori": null,
+       "editore": "Hoepli",
+       "anno": 2018,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Bernuzzi C. - Progetto e verifica delle strutture in acciaio, 2a Edizione, Hoepli, 2018."
+      },
+      {
+       "titolo": "Ballio G. e Mazzolani F.M. Strutture in acciaio, Hoepli, 1987.",
+       "autori": null,
+       "editore": "Hoepli",
+       "anno": 1987,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Ballio G. e Mazzolani F.M. Strutture in acciaio, Hoepli, 1987."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://unitn.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unitn-lm-4-c-u-ingegneria-edile-architettura-140385",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://easyacademy.unitn.it/AgendaStudentiUnitn/index.php?view=easycourse&_lang=it&include=attivita&anno=2026&attivita[]=EC0336F_140385_BROCC",
+     "periodo_nota": "Orario delle lezioni pubblico (EasyCourse, a.a. 2026/27, letto il 20/10/2026): prima lezione 14/09/2026, ultima 22/12/2026, tutte nel 1° semestre; 117 ore pubblicate"
+    },
+    {
      "codice": "140523",
      "nome": "Composizione architettonica 3 con Laboratorio progettuale",
      "anno": 4,
@@ -238923,116 +239062,6 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unitn-lm-4-c-u-ingegneria-edile-architettura-140388",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "140385",
-     "nome": "Tecnica delle costruzioni con Laboratorio Progettuale",
-     "anno": 4,
-     "periodo": "annuale",
-     "periodo_inizio": "16/09/2026",
-     "periodo_fine": "06/06/2027",
-     "cfu": 12,
-     "ssd": "ICAR/09",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Broccardo Marco",
-      "Sartori Gianluca"
-     ],
-     "url": "https://unitn.coursecatalogue.cineca.it/insegnamenti/2026/50218_640948_89598/2010/50218?coorte=2023",
-     "libri": [
-      {
-       "titolo": "Aurelio Ghersi Il cemento armato. Flaccovio editore, Palermo, 2010.",
-       "autori": null,
-       "editore": "Aurelio Ghersi Il cemento armato. Flaccovio editore",
-       "anno": 2010,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Aurelio Ghersi Il cemento armato. Flaccovio editore, Palermo, 2010."
-      },
-      {
-       "titolo": "Cosenza, Manfredi, Pecce Strutture in cemento armato Basi della progettazione. Hoepli, Milano, 2008.",
-       "autori": null,
-       "editore": null,
-       "anno": 2008,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Cosenza, Manfredi, Pecce Strutture in cemento armato Basi della progettazione. Hoepli, Milano, 2008."
-      },
-      {
-       "titolo": "Vincenzo Nunziata Teoria e pratica delle strutture in cemento armato, Flaccovio Editore, Palermo, 2012.",
-       "autori": null,
-       "editore": "Flaccovio Editore",
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Vincenzo Nunziata Teoria e pratica delle strutture in cemento armato, Flaccovio Editore, Palermo, 2012."
-      },
-      {
-       "titolo": "Angotti, Guiglia, Orlando, Marro Progetto delle strutture in calcestruzzo armato. Hoepli, Milano, 2011.",
-       "autori": null,
-       "editore": null,
-       "anno": 2011,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Angotti, Guiglia, Orlando, Marro Progetto delle strutture in calcestruzzo armato. Hoepli, Milano, 2011."
-      },
-      {
-       "titolo": "Migliacci, Mola, Progetto agli stati limite delle strutture in cemento armato vol.2, CEA, Milano, 1985",
-       "autori": null,
-       "editore": null,
-       "anno": 1985,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Migliacci, Mola, Progetto agli stati limite delle strutture in cemento armato vol.2, CEA, Milano, 1985"
-      },
-      {
-       "titolo": "Bernuzzi C. - Progetto e verifica delle strutture in acciaio, 2a Edizione, Hoepli, 2018.",
-       "autori": null,
-       "editore": "Hoepli",
-       "anno": 2018,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Bernuzzi C. - Progetto e verifica delle strutture in acciaio, 2a Edizione, Hoepli, 2018."
-      },
-      {
-       "titolo": "Ballio G. e Mazzolani F.M. Strutture in acciaio, Hoepli, 1987.",
-       "autori": null,
-       "editore": "Hoepli",
-       "anno": 1987,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Ballio G. e Mazzolani F.M. Strutture in acciaio, Hoepli, 1987."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://unitn.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "modalita_esame": "orale",
-     "id": "unitn-lm-4-c-u-ingegneria-edile-architettura-140385",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -240083,7 +240112,7 @@
    "url": "https://corsi.unitn.it/it/medicina-e-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "110092",
@@ -240446,7 +240475,7 @@
        "citazione": "Ebook ISBN: 9788808538109 ISBN: 978-88-299-3067-8 ISBN: 978-88-299-2813-2 ISBN: 978-8833190495 ISBN: 978-88-299-2835-4 ISBN: 9788821434662 ISBN: 9788879476867 ISBN 9788870513899 ISBN: 9788879477253 ISBN: 9788808183200 ISBN: 9788821434662 ISBN: 9788879476867"
       },
       {
-       "titolo": "Ebook ISBN: 9788808538109 ISBN: 978-88-299-3067-8 ISBN: 978-88-299-2813-2 ISBN 9788870513899 ISBN: 9788879477253 ISBN: 978-8833190495 ISBN: 9788808183200 ISBN: 978-88-299-2835-4 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867",
+       "titolo": "Ebook ISBN: 9788808538109 ISBN: 978-88-299-3067-8 ISBN: 978-88-299-2813-2 ISBN 9788870513899 ISBN: 9788879477253 ISBN: 978-8833190495 ISBN: 9788808183200 ISBN: 978-88-299-2835-4 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -240455,7 +240484,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal syllabus 2025/26 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "Ebook ISBN: 9788808538109 ISBN: 978-88-299-3067-8 ISBN: 978-88-299-2813-2 ISBN 9788870513899 ISBN: 9788879477253 ISBN: 978-8833190495 ISBN: 9788808183200 ISBN: 978-88-299-2835-4 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867"
+       "citazione": "Ebook ISBN: 9788808538109 ISBN: 978-88-299-3067-8 ISBN: 978-88-299-2813-2 ISBN 9788870513899 ISBN: 9788879477253 ISBN: 978-8833190495 ISBN: 9788808183200 ISBN: 978-88-299-2835-4 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867 ISBN: 9788821434662 ISBN: 9788879476867"
       }
      ],
      "esami": [],
@@ -241758,7 +241787,7 @@
        "citazione": "C. Jarvis : Esame obiettivo e valutazione clinica. Piccin Editore, Padova, 2021."
       },
       {
-       "titolo": "Fradà/Fradà: Semeiotica medica nell' adulto e nell' anziano - Metodologia clinica ed esplorazione morfofunzionale. Editore: Piccin, VI Edizione, 2018. ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352",
+       "titolo": "Fradà/Fradà: Semeiotica medica nell' adulto e nell' anziano - Metodologia clinica ed esplorazione morfofunzionale. Editore: Piccin, VI Edizione, 2018. ISBN:9788879477352",
        "autori": null,
        "editore": null,
        "anno": 2018,
@@ -241767,7 +241796,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal syllabus 2023/24 (quello 2026/27 non ha ancora i testi)",
-       "citazione": "Fradà/Fradà: Semeiotica medica nell' adulto e nell' anziano - Metodologia clinica ed esplorazione morfofunzionale. Editore: Piccin, VI Edizione, 2018. ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352 ISBN:9788879477352"
+       "citazione": "Fradà/Fradà: Semeiotica medica nell' adulto e nell' anziano - Metodologia clinica ed esplorazione morfofunzionale. Editore: Piccin, VI Edizione, 2018. ISBN:9788879477352"
       }
      ],
      "esami": [],

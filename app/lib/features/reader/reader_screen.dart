@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 
+import '../../core/reminders/notification_plan.dart' show AppRoutes;
 import '../../core/services/app_services.dart';
 import '../../core/services/external_launcher.dart';
 import '../../core/theme/app_tokens.dart';
@@ -290,9 +291,37 @@ class ReaderScreenState extends State<ReaderScreen> {
     }
   }
 
-  void _openOneNote() =>
-      Navigator.of(context)
+  /// Blocchi appunti di OneNote dall'account Microsoft collegato; senza
+  /// OneDrive collegato un avviso con «Collega» (Collegamenti → OneDrive)
+  /// invece di una schermata vuota con l'errore.
+  Future<void> _openOneNote() async {
+    final s = context.read<AppServices>();
+    if (await s.onedrive.connected()) {
+      if (!mounted) return;
+      await Navigator.of(context)
           .push(MaterialPageRoute<void>(builder: (_) => const OneNoteScreen()));
+      return;
+    }
+    if (!mounted) return;
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          content: const Text(
+            'Per aprire OneNote collega l\'account Microsoft in '
+            'Collegamenti → OneDrive.',
+          ),
+          action: SnackBarAction(
+            label: 'Collega',
+            onPressed: () {
+              if (!mounted) return;
+              Navigator.of(context).popUntil((r) => r.isFirst);
+              s.openRoute.call(AppRoutes.links);
+            },
+          ),
+        ),
+      );
+  }
 
   /// Collegamento di un documento che non è una pagina web: nota di
   /// Obsidian ("note:nome"), etichetta ("tag:#nome", la si cerca) o file

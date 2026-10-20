@@ -5,8 +5,9 @@
 Senza rifare la raccolta né la build: per ogni `database/corsi/<ateneo>.json`
 esegue `pulizia.rivedi_varianti` (le varianti in inglese già presenti si
 ricontrollano: quelle che non sono la traduzione dell'insegnamento tornano
-insegnamenti a sé), `pulizia.varianti_lingua` e `pulizia.varianti_lingua_gemelli`
-(versioni in inglese → varianti della versione italiana), `pulizia.unisci_omonimi`
+insegnamenti a sé), `pulizia.varianti_lingua`, `pulizia.varianti_lingua_gemelli` e
+`pulizia.varianti_lingua_scelta` (versioni in inglese → varianti della versione italiana),
+`pulizia.unisci_omonimi`
 (stesso insegnamento ripetuto per canale/sede/curriculum → uno solo),
 `pulizia.segna_a_scelta` (segnaposto «a scelta» → a scelta) e
 `pulizia.scomponi_citazioni` (libri con tutta la citazione nel titolo → autori,
@@ -123,6 +124,7 @@ def main() -> int:
         r = pulizia.rivedi_varianti(corsi, originali(uid), esiti)
         v = pulizia.varianti_lingua(corsi, esiti)
         v += pulizia.varianti_lingua_gemelli(corsi, esiti)
+        v += pulizia.varianti_lingua_scelta(corsi, esiti)
         u = pulizia.unisci_omonimi(corsi)
         sc = pulizia.segna_a_scelta(corsi)
         lb = pulizia.scomponi_citazioni(corsi)

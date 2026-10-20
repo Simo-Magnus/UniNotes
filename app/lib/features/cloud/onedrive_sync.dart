@@ -14,6 +14,11 @@ export 'folder_sync.dart';
 /// sincronizzazione si salva il `deltaLink` della cartella (Microsoft Graph
 /// `/delta`): [needsSync] chiede a OneDrive solo cosa è cambiato da allora
 /// e confronta i file locali con lo stato salvato.
+///
+/// Alla prima sincronizzazione un file presente da entrambe le parti con la
+/// stessa dimensione si considera uguale: OneDrive dà come impronta del
+/// contenuto il `quickXorHash`, che l'app non calcola (nessun
+/// [FolderSync.sameContent]).
 class OneDriveSync extends FolderSync {
   OneDriveSync({
     required this.graph,
@@ -269,14 +274,21 @@ class OneDriveSync extends FolderSync {
   Future<SyncedFile> download(String rel, RemoteFile r) async {
     final target = localFile(rel);
     await target.parent.create(recursive: true);
-    final res = r.downloadUrl != null
-        ? await graph.request('GET', r.downloadUrl!, auth: false)
-        : await graph.request('GET', 'me/drive/items/${r.id}/content');
-    if (!res.ok) {
-      throw GraphException(res.status, 'Download non riuscito: $rel');
-    }
+    // a pezzi in «nome.part» accanto al file (ignorato dalla
+    // sincronizzazione), poi rinominato: un file a metà non sostituisce
+    // quello buono
     final part = File('${target.path}.part');
-    await part.writeAsBytes(res.body, flush: true);
+    try {
+      final res = r.downloadUrl != null
+          ? await graph.download(r.downloadUrl!, part, auth: false)
+          : await graph.download('me/drive/items/${r.id}/content', part);
+      if (!res.ok) {
+        throw GraphException(res.status, 'Download non riuscito: $rel');
+      }
+    } catch (_) {
+      if (await part.exists()) await part.delete();
+      rethrow;
+    }
     if (await target.exists()) await target.delete();
     await part.rename(target.path);
     final st = await target.stat();

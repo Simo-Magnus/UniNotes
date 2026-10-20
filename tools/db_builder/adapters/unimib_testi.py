@@ -96,6 +96,11 @@ def _da_frase(p: str) -> str | None:
     if re.match(r"(?i)^(?:le |il |i |gli |la |lo |sarà|verr|non |tutt|inoltre|per |durante|slide|materiale|dispens|appunti|"
                 r"articol|i docenti|casa editrice)", p) and not _isbn(p):
         return None
+    # frasi in inglese sul materiale che nominano «book» senza citarne uno («Other resources from books…»)
+    if re.match(r"(?i)^(?:the |other |all |on the |information |in addition|reading |class |it will |online |"
+                r"scientific |specialized |teacher|non-attending|different |notebooks |disponibile |pur non )", p) \
+            and not (_isbn(p) or m is not None or titolo_di_autore or virg):
+        return None
     if re.search(r"(?i)\b(?:bando|docente per l'anno)\b", p):
         return None
     return p

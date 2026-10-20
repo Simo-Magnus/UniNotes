@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unikore",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-20",
+ "aggiornato_il": "2026-10-21",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://uke.it/didattica/corsi/economia-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -1074,7 +1074,7 @@
    "url": "https://uke.it/didattica/corsi/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -1691,7 +1691,7 @@
    "url": "https://uke.it/didattica/corsi/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -2224,7 +2224,7 @@
    "url": "https://uke.it/didattica/corsi/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -3435,7 +3435,7 @@
    "url": "https://uke.it/didattica/corsi/ingegneria-aerospaziale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -3897,7 +3897,7 @@
      "codice": null,
      "nome": "Fisica Tecnica ed Energetica",
      "anno": 2,
-     "periodo": "annuale",
+     "periodo": "2",
      "cfu": 9,
      "ssd": "IIND-07/A",
      "obbligatorio": true,
@@ -3938,7 +3938,8 @@
      "verificato_il": "2026-10-20",
      "id": "unikore-l-9-ingegneria-aerospaziale-fisica-tecnica-ed-energetica",
      "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria aerospaziale/2026-2027/II anno/FISICA TECNICA ED ENERGETICA.pdf"
     },
     {
      "codice": null,
@@ -4299,7 +4300,7 @@
    "url": "https://uke.it/didattica/corsi/ingegneria-biomedica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -5248,7 +5249,7 @@
    "url": "https://uke.it/didattica/corsi/ingegneria-dei-rischi-ambientali-e-delle-infrastrutture",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -5906,6 +5907,78 @@
     },
     {
      "codice": null,
+     "nome": "Geotecnica",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 9,
+     "ssd": "CEAR-05/A",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Francesco Castelli",
+      "Valentina Lentini"
+     ],
+     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria civile e ambientale/2026-2027/II anno/GEOTECNICA.pdf",
+     "libri": [
+      {
+       "titolo": "Geotecnica",
+       "autori": "Lancellotta R",
+       "editore": "Ed. Zanichelli",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Lancellotta R. “Geotecnica”, Ed. Zanichelli, III Edizione, 2012."
+      },
+      {
+       "titolo": "Meccanica dei terreni",
+       "autori": "Lambe T.W. e Whitman R.V",
+       "editore": "Edizioni Flaccovio",
+       "anno": 1997,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Lambe T.W. e Whitman R.V. “Meccanica dei terreni”, Edizioni Flaccovio, 1997."
+      },
+      {
+       "titolo": "Fondamenti di Geotecnica",
+       "autori": "Berardi R.",
+       "editore": "CittàStudi",
+       "anno": 2017,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Berardi R., Fondamenti di Geotecnica, Ed. CittàStudi, III edizione, 2017."
+      },
+      {
+       "titolo": "Geotecnica",
+       "autori": "Atkinson J",
+       "editore": "Edizioni Mc-Graw-Hill Italia",
+       "anno": 1973,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Atkinson J. “Geotecnica”, Edizioni Mc-Graw-Hill Italia, 1973."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/ingegneria-civile-e-ambientale",
+     "verificato_il": "2026-10-20",
+     "id": "unikore-l-7-ingegneria-civile-e-ambientale-geotecnica",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria civile e ambientale/2026-2027/II anno/GEOTECNICA.pdf"
+    },
+    {
+     "codice": null,
      "nome": "Idraulica",
      "anno": 2,
      "periodo": "2",
@@ -6019,77 +6092,6 @@
      "stato_libri": "completo",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria civile e ambientale/2026-2027/II anno/ARCHITETTURA TECNICA ED ESTIMO.pdf"
-    },
-    {
-     "codice": null,
-     "nome": "Geotecnica",
-     "anno": 2,
-     "periodo": "annuale",
-     "cfu": 9,
-     "ssd": "CEAR-05/A",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Francesco Castelli",
-      "Valentina Lentini"
-     ],
-     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria civile e ambientale/2026-2027/II anno/GEOTECNICA.pdf",
-     "libri": [
-      {
-       "titolo": "Geotecnica",
-       "autori": "Lancellotta R",
-       "editore": "Ed. Zanichelli",
-       "anno": 2012,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Lancellotta R. “Geotecnica”, Ed. Zanichelli, III Edizione, 2012."
-      },
-      {
-       "titolo": "Meccanica dei terreni",
-       "autori": "Lambe T.W. e Whitman R.V",
-       "editore": "Edizioni Flaccovio",
-       "anno": 1997,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Lambe T.W. e Whitman R.V. “Meccanica dei terreni”, Edizioni Flaccovio, 1997."
-      },
-      {
-       "titolo": "Fondamenti di Geotecnica",
-       "autori": "Berardi R.",
-       "editore": "CittàStudi",
-       "anno": 2017,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Berardi R., Fondamenti di Geotecnica, Ed. CittàStudi, III edizione, 2017."
-      },
-      {
-       "titolo": "Geotecnica",
-       "autori": "Atkinson J",
-       "editore": "Edizioni Mc-Graw-Hill Italia",
-       "anno": 1973,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Atkinson J. “Geotecnica”, Edizioni Mc-Graw-Hill Italia, 1973."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://uke.it/didattica/corsi/ingegneria-civile-e-ambientale",
-     "verificato_il": "2026-10-20",
-     "id": "unikore-l-7-ingegneria-civile-e-ambientale-geotecnica",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere"
     },
     {
      "codice": null,
@@ -6281,7 +6283,7 @@
    "url": "https://uke.it/didattica/corsi/ingegneria-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -7182,7 +7184,7 @@
    "url": "https://uke.it/didattica/corsi/lettere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -8238,7 +8240,7 @@
    "url": "https://uke.it/didattica/corsi/lingue-e-culture-moderne",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -10474,7 +10476,7 @@
    "url": "https://uke.it/didattica/corsi/logopedia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -10657,18 +10659,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735."
-      },
-      {
-       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9783031249600",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499"
       },
       {
        "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499",
@@ -11770,7 +11760,7 @@
    "url": "https://uke.it/didattica/corsi/ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -12344,7 +12334,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-delle-attivita-motorie-e-sportive",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -13070,7 +13060,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-e-tecniche-psicologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -14212,7 +14202,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-politiche-e-delle-relazioni-internazionali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -15220,7 +15210,7 @@
    "url": "https://uke.it/didattica/corsi/servizio-sociale-e-scienze-criminologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -16179,7 +16169,7 @@
    "url": "https://uke.it/didattica/corsi/tecniche-di-fisiopatologia-cardiocircolatoria-e-perfusione-cardiovascolare",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -16362,18 +16352,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735."
-      },
-      {
-       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9783031249600",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499"
       },
       {
        "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024ISBN:9783031249600, 3031249607 ISBN:9788836232499",
@@ -16832,7 +16810,7 @@
    "url": "https://uke.it/didattica/corsi/tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -17834,7 +17812,7 @@
    "url": "https://uke.it/didattica/corsi/tecniche-di-radiologia-medica-per-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -18019,18 +17997,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Gulletta E. Casa Editrice PICCIN. ISBN: 8829929735."
-      },
-      {
-       "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024 ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499",
-       "autori": null,
-       "editore": null,
-       "anno": 2024,
-       "edizione": null,
-       "isbn": "9783031249600",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024 ISBN:9783031249600, 3031249607 ISBN:9788836232499 ISBN:9788836232499"
       },
       {
        "titolo": "Clinical and Laboratory Medicine Textbook. Ciaccio M. Springer, 2024 ISBN:9783031249600, 3031249607 ISBN:9788836232499",
@@ -18840,7 +18806,7 @@
    "url": "https://uke.it/didattica/corsi/economia-e-direzione-delle-imprese",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -20125,7 +20091,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-sociali-per-lo-sviluppo-sostenibile",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -20974,7 +20940,7 @@
    "url": "https://uke.it/didattica/corsi/gestione-e-protezione-delle-risorse-territoriali-e-ambientali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -21747,13 +21713,13 @@
    "url": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
      "nome": "Dinamica dei sistemi aerospaziali",
      "anno": 1,
-     "periodo": "annuale",
+     "periodo": "1",
      "cfu": 9,
      "ssd": "IIND-01/E",
      "obbligatorio": true,
@@ -21805,47 +21771,14 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "completo",
      "id": "unikore-lm-20-ingegneria-aerospaziale-dinamica-dei-sistemi-aerospaziali",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Dinamica del volo atmosferico e orbitale",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 9,
-     "ssd": "IIND-01/C",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Antonio Esposito"
-     ],
-     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria aerospaziale magistrale/2026-2027/I anno/DINAMICA DEL VOLO ATMOSFERICO E ORBITALE.pdf",
-     "libri": [
-      {
-       "titolo": "Dynamics, Controls Design, and Autonomous Systems: Dynamics, Controls Design, and Autonomous Systems\" (2015) John Wiley & Sons, Inc.",
-       "autori": null,
-       "editore": "and Autonomous Systems\" (2015) John Wiley & Sons",
-       "anno": 2015,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Dynamics, Controls Design, and Autonomous Systems: Dynamics, Controls Design, and Autonomous Systems\" (2015) John Wiley & Sons, Inc."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "unikore-lm-20-ingegneria-aerospaziale-dinamica-del-volo-atmosferico-e-orbitale",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria aerospaziale magistrale/2026-2027/I anno/DINAMICA DEI SISTEMI AEROSPAZIALI.pdf"
     },
     {
      "codice": null,
      "nome": "Gasdinamica",
      "anno": 1,
-     "periodo": "annuale",
+     "periodo": "1",
      "cfu": 9,
      "ssd": "IIND-07/B",
      "obbligatorio": true,
@@ -21873,13 +21806,14 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "completo",
      "id": "unikore-lm-20-ingegneria-aerospaziale-gasdinamica",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria aerospaziale magistrale/2026-2027/I anno/GASDINAMICA.pdf"
     },
     {
      "codice": null,
      "nome": "Metodi Numerici",
      "anno": 1,
-     "periodo": "annuale",
+     "periodo": "1",
      "cfu": 6,
      "ssd": "MATH-03/A",
      "obbligatorio": true,
@@ -21931,13 +21865,49 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "completo",
      "id": "unikore-lm-20-ingegneria-aerospaziale-metodi-numerici",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria aerospaziale magistrale/2026-2027/I anno/METODI NUMERICI.pdf"
+    },
+    {
+     "codice": null,
+     "nome": "Dinamica del volo atmosferico e orbitale",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": 9,
+     "ssd": "IIND-01/C",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Antonio Esposito"
+     ],
+     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria aerospaziale magistrale/2026-2027/I anno/DINAMICA DEL VOLO ATMOSFERICO E ORBITALE.pdf",
+     "libri": [
+      {
+       "titolo": "Dynamics, Controls Design, and Autonomous Systems: Dynamics, Controls Design, and Autonomous Systems\" (2015) John Wiley & Sons, Inc.",
+       "autori": null,
+       "editore": "and Autonomous Systems\" (2015) John Wiley & Sons",
+       "anno": 2015,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Dynamics, Controls Design, and Autonomous Systems: Dynamics, Controls Design, and Autonomous Systems\" (2015) John Wiley & Sons, Inc."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "unikore-lm-20-ingegneria-aerospaziale-dinamica-del-volo-atmosferico-e-orbitale",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria aerospaziale magistrale/2026-2027/I anno/DINAMICA DEL VOLO ATMOSFERICO E ORBITALE.pdf"
     },
     {
      "codice": null,
      "nome": "Metodi di Progettazione per l’Ingegneria Industriale",
      "anno": 1,
-     "periodo": "annuale",
+     "periodo": "2",
      "cfu": 6,
      "ssd": "IIND-03/B",
      "obbligatorio": true,
@@ -21989,7 +21959,55 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "completo",
      "id": "unikore-lm-20-ingegneria-aerospaziale-metodi-di-progettazione-per-lingegneria",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria aerospaziale magistrale/2026-2027/I anno/METODI DI PROGETTAZIONE PER L’INGEGNERIA INDUSTRIALE.pdf"
+    },
+    {
+     "codice": null,
+     "nome": "Strutture aerospaziali avanzate",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": 9,
+     "ssd": "IIND-01/D",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Giuseppe Catalanotti"
+     ],
+     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria aerospaziale magistrale/2026-2027/I anno/STRUTTURE AEROSPAZIALI AVANZATE.pdf",
+     "libri": [
+      {
+       "titolo": "Elsevier. — riferimento per le strutture aeronautiche (piastre, buckling, travi a campo di tensione).",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Elsevier. — riferimento per le strutture aeronautiche (piastre, buckling, travi a campo di tensione)."
+      },
+      {
+       "titolo": "A First Course in Finite Elements",
+       "autori": "Fish, J., Belytschko, T.",
+       "editore": "John Wiley & Sons",
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Fish, J., Belytschko, T. (2007). A First Course in Finite Elements. John Wiley & Sons."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "id": "unikore-lm-20-ingegneria-aerospaziale-strutture-aerospaziali-avanzate",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria aerospaziale magistrale/2026-2027/I anno/STRUTTURE AEROSPAZIALI AVANZATE.pdf"
     },
     {
      "codice": null,
@@ -22039,74 +22057,9 @@
     },
     {
      "codice": null,
-     "nome": "Strutture aerospaziali avanzate",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 9,
-     "ssd": "IIND-01/D",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Giuseppe Catalanotti"
-     ],
-     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria aerospaziale magistrale/2026-2027/I anno/STRUTTURE AEROSPAZIALI AVANZATE.pdf",
-     "libri": [
-      {
-       "titolo": "Elsevier. — riferimento per le strutture aeronautiche (piastre, buckling, travi a campo di tensione).",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Elsevier. — riferimento per le strutture aeronautiche (piastre, buckling, travi a campo di tensione)."
-      },
-      {
-       "titolo": "A First Course in Finite Elements",
-       "autori": "Fish, J., Belytschko, T.",
-       "editore": "John Wiley & Sons",
-       "anno": 2007,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Fish, J., Belytschko, T. (2007). A First Course in Finite Elements. John Wiley & Sons."
-      }
-     ],
-     "esami": [],
-     "fonte": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "completo",
-     "id": "unikore-lm-20-ingegneria-aerospaziale-strutture-aerospaziali-avanzate",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Materia a Scelta",
-     "anno": 2,
-     "periodo": "annuale",
-     "cfu": 18,
-     "ssd": null,
-     "obbligatorio": false,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
-     "verificato_il": "2026-10-20",
-     "id": "unikore-lm-20-ingegneria-aerospaziale-materia-a-scelta",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
      "nome": "Missioni Spaziali",
      "anno": 2,
-     "periodo": "annuale",
+     "periodo": "1",
      "cfu": 9,
      "ssd": "IIND-01/C",
      "obbligatorio": true,
@@ -22158,32 +22111,14 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "completo",
      "id": "unikore-lm-20-ingegneria-aerospaziale-missioni-spaziali",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": null,
-     "nome": "Prova Finale",
-     "anno": 2,
-     "periodo": "annuale",
-     "cfu": 21,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [],
-     "url": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
-     "verificato_il": "2026-10-20",
-     "id": "unikore-lm-20-ingegneria-aerospaziale-prova-finale",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria aerospaziale magistrale/2026-2027/II anno/MISSIONI SPAZIALI.pdf"
     },
     {
      "codice": null,
      "nome": "Sistemi Spaziali",
      "anno": 2,
-     "periodo": "annuale",
+     "periodo": "1",
      "cfu": 9,
      "ssd": "IIND-01/E",
      "obbligatorio": true,
@@ -22233,6 +22168,45 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "completo",
      "id": "unikore-lm-20-ingegneria-aerospaziale-sistemi-spaziali",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Ingegneria aerospaziale magistrale/2026-2027/II anno/SISTEMI SPAZIALI.pdf"
+    },
+    {
+     "codice": null,
+     "nome": "Materia a Scelta",
+     "anno": 2,
+     "periodo": "annuale",
+     "cfu": 18,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
+     "verificato_il": "2026-10-20",
+     "id": "unikore-lm-20-ingegneria-aerospaziale-materia-a-scelta",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Prova Finale",
+     "anno": 2,
+     "periodo": "annuale",
+     "cfu": 21,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://uke.it/didattica/corsi/ingegneria-aerospaziale-magistrale",
+     "verificato_il": "2026-10-20",
+     "id": "unikore-lm-20-ingegneria-aerospaziale-prova-finale",
+     "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -22273,7 +22247,7 @@
    "url": "https://uke.it/didattica/corsi/ingegneria-dellintelligenza-artificiale-e-della-sicurezza-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -22774,7 +22748,7 @@
    "url": "https://uke.it/didattica/corsi/lingue-per-la-comunicazione-e-i-servizi-culturali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -23959,7 +23933,7 @@
    "url": "https://uke.it/didattica/corsi/psicologia-clinica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -24879,7 +24853,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-e-tecniche-delle-attivita-motorie-preventive-e-adattate",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -25503,7 +25477,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-infermieristiche-e-ostetriche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "nome": "Discipline relazionali, psicosociali e culturali C.I.",
@@ -26112,40 +26086,9 @@
      "curriculum": null
     },
     {
-     "nome": "Tirocinio formativo di Management",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 5,
-     "ssd": "MEDS-24/C",
-     "obbligatorio": true,
-     "docenti": [],
-     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Scienze Infermieristiche e ostetriche/2025-2026/I anno/TIROCINIO FORMATIVO DI MANAGEMENT.pdf",
-     "fonte": "https://uke.it/didattica/corsi/scienze-infermieristiche-e-ostetriche",
-     "libri": [
-      {
-       "titolo": "Management infermieristico e sviluppo organizzativo",
-       "autori": "Rocco, G., & Stievano, A.",
-       "editore": "Edra",
-       "anno": 2022,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Rocco, G., & Stievano, A. (2022). Management infermieristico e sviluppo organizzativo. Edra."
-      }
-     ],
-     "esami": [],
-     "verificato_il": "2026-10-20",
-     "id": "unikore-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-tirocinio-formativo-di-management",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
-     "curriculum": null
-    },
-    {
      "nome": "Tirocinio formativo di Ricerca",
      "anno": 1,
-     "periodo": "annuale",
+     "periodo": "2",
      "cfu": 7,
      "ssd": "MEDS-24/C",
      "obbligatorio": true,
@@ -26185,7 +26128,131 @@
      "id": "unikore-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-tirocinio-formativo-di-ricerca",
      "stato_libri": "completo",
      "stato_esami": "da_aggiungere",
+     "curriculum": null,
+     "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Scienze Infermieristiche e ostetriche/2025-2026/I anno/TIROCINIO FORMATIVO DI RICERCA.pdf"
+    },
+    {
+     "nome": "Tirocinio formativo di Management",
+     "anno": 1,
+     "periodo": "annuale",
+     "cfu": 5,
+     "ssd": "MEDS-24/C",
+     "obbligatorio": true,
+     "docenti": [],
+     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Scienze Infermieristiche e ostetriche/2025-2026/I anno/TIROCINIO FORMATIVO DI MANAGEMENT.pdf",
+     "fonte": "https://uke.it/didattica/corsi/scienze-infermieristiche-e-ostetriche",
+     "libri": [
+      {
+       "titolo": "Management infermieristico e sviluppo organizzativo",
+       "autori": "Rocco, G., & Stievano, A.",
+       "editore": "Edra",
+       "anno": 2022,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Rocco, G., & Stievano, A. (2022). Management infermieristico e sviluppo organizzativo. Edra."
+      }
+     ],
+     "esami": [],
+     "verificato_il": "2026-10-20",
+     "id": "unikore-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-tirocinio-formativo-di-management",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere",
      "curriculum": null
+    },
+    {
+     "nome": "Tirocinio formativo di Formazione",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 5,
+     "ssd": "MEDS-24/C",
+     "obbligatorio": true,
+     "docenti": [
+      "Ippolito Notarnicola"
+     ],
+     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Scienze Infermieristiche e ostetriche - Profilo infermieristico/2026-2027/II anno/TIROCINIO FORMATIVO DI FORMAZIONE.pdf",
+     "fonte": "https://uke.it/didattica/corsi/scienze-infermieristiche-e-ostetriche",
+     "libri": [
+      {
+       "titolo": "La dirigenza infermieristica. Manuale per la formazione dell’infermiere dirigente e del caposala (2ª ed.)",
+       "autori": "Calamandrei, C., & Orlandi, C.",
+       "editore": "McGraw-Hill",
+       "anno": 2002,
+       "edizione": null,
+       "isbn": "9788838616129",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Calamandrei, C., & Orlandi, C. (2002). La dirigenza infermieristica. Manuale per la formazione dell’infermiere dirigente e del caposala (2ª ed.). McGraw-Hill. ISBN 978-88-386-1612-9."
+      },
+      {
+       "titolo": "Theory and application (12th ed.). Wolters Kluwer. ISBN 978-1-9752-6300-3.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9781975263003",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Theory and application (12th ed.). Wolters Kluwer. ISBN 978-1-9752-6300-3."
+      }
+     ],
+     "esami": [],
+     "verificato_il": "2026-10-20",
+     "id": "unikore-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-tirocinio-formativo-di-formazione",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere",
+     "curriculum": null,
+     "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Scienze Infermieristiche e ostetriche - Profilo infermieristico/2026-2027/II anno/TIROCINIO FORMATIVO DI FORMAZIONE.pdf"
+    },
+    {
+     "nome": "Tirocinio formativo di Ricerca",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 13,
+     "ssd": "MEDS-24/C",
+     "obbligatorio": true,
+     "docenti": [
+      "Ippolito Notarnicola"
+     ],
+     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Scienze Infermieristiche e ostetriche/2025-2026/I anno/TIROCINIO FORMATIVO DI RICERCA.pdf",
+     "fonte": "https://uke.it/didattica/corsi/scienze-infermieristiche-e-ostetriche",
+     "libri": [
+      {
+       "titolo": "Alvaro, Ambrosi, Chiar. Editore: McGraw-Hill. ISBN: 9788838694936 2. La Revisione della Letteratura Scientifica Biomedica: Metodologie e Strumenti",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Alvaro, Ambrosi, Chiar. Editore: McGraw-Hill. ISBN: 9788838694936 2. La Revisione della Letteratura Scientifica Biomedica: Metodologie e Strumenti"
+      },
+      {
+       "titolo": "Ercole Vellone, Michela Piredda. iEditore; ISBN: 9788894735758",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788894735758",
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Ercole Vellone, Michela Piredda. iEditore; ISBN: 9788894735758"
+      }
+     ],
+     "esami": [],
+     "verificato_il": "2026-10-20",
+     "id": "unikore-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-tirocinio-formativo-di-ricerca-a2",
+     "stato_libri": "completo",
+     "stato_esami": "da_aggiungere",
+     "curriculum": null,
+     "periodo_fonte": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Scienze Infermieristiche e ostetriche/2025-2026/I anno/TIROCINIO FORMATIVO DI RICERCA.pdf"
     },
     {
      "nome": "Lingua inglese",
@@ -26294,96 +26361,6 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "curriculum": null
-    },
-    {
-     "nome": "Tirocinio formativo di Formazione",
-     "anno": 2,
-     "periodo": "annuale",
-     "cfu": 5,
-     "ssd": "MEDS-24/C",
-     "obbligatorio": true,
-     "docenti": [
-      "Ippolito Notarnicola"
-     ],
-     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Scienze Infermieristiche e ostetriche - Profilo infermieristico/2026-2027/II anno/TIROCINIO FORMATIVO DI FORMAZIONE.pdf",
-     "fonte": "https://uke.it/didattica/corsi/scienze-infermieristiche-e-ostetriche",
-     "libri": [
-      {
-       "titolo": "La dirigenza infermieristica. Manuale per la formazione dell’infermiere dirigente e del caposala (2ª ed.)",
-       "autori": "Calamandrei, C., & Orlandi, C.",
-       "editore": "McGraw-Hill",
-       "anno": 2002,
-       "edizione": null,
-       "isbn": "9788838616129",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Calamandrei, C., & Orlandi, C. (2002). La dirigenza infermieristica. Manuale per la formazione dell’infermiere dirigente e del caposala (2ª ed.). McGraw-Hill. ISBN 978-88-386-1612-9."
-      },
-      {
-       "titolo": "Theory and application (12th ed.). Wolters Kluwer. ISBN 978-1-9752-6300-3.",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9781975263003",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Theory and application (12th ed.). Wolters Kluwer. ISBN 978-1-9752-6300-3."
-      }
-     ],
-     "esami": [],
-     "verificato_il": "2026-10-20",
-     "id": "unikore-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-tirocinio-formativo-di-formazione",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
-     "curriculum": null
-    },
-    {
-     "nome": "Tirocinio formativo di Ricerca",
-     "anno": 2,
-     "periodo": "annuale",
-     "cfu": 13,
-     "ssd": "MEDS-24/C",
-     "obbligatorio": true,
-     "docenti": [
-      "Ippolito Notarnicola"
-     ],
-     "url": "https://uke-transparency-docs.s3.eu-west-1.amazonaws.com/Scienze Infermieristiche e ostetriche/2025-2026/I anno/TIROCINIO FORMATIVO DI RICERCA.pdf",
-     "fonte": "https://uke.it/didattica/corsi/scienze-infermieristiche-e-ostetriche",
-     "libri": [
-      {
-       "titolo": "Alvaro, Ambrosi, Chiar. Editore: McGraw-Hill. ISBN: 9788838694936 2. La Revisione della Letteratura Scientifica Biomedica: Metodologie e Strumenti",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Alvaro, Ambrosi, Chiar. Editore: McGraw-Hill. ISBN: 9788838694936 2. La Revisione della Letteratura Scientifica Biomedica: Metodologie e Strumenti"
-      },
-      {
-       "titolo": "Ercole Vellone, Michela Piredda. iEditore; ISBN: 9788894735758",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788894735758",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Ercole Vellone, Michela Piredda. iEditore; ISBN: 9788894735758"
-      }
-     ],
-     "esami": [],
-     "verificato_il": "2026-10-20",
-     "id": "unikore-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic-tirocinio-formativo-di-ricerca-a2",
-     "stato_libri": "completo",
-     "stato_esami": "da_aggiungere",
-     "curriculum": null
     }
    ],
    "url_catalogo": "https://uke.it/didattica/corsi/scienze-infermieristiche-e-ostetriche"
@@ -26404,7 +26381,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-pedagogiche-per-la-consulenza-e-la-progettazione-educativa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -26902,7 +26879,7 @@
    "url": "https://uke.it/didattica/corsi/architettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -28566,7 +28543,7 @@
    "url": "https://uke.it/didattica/corsi/giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -30191,7 +30168,7 @@
    "url": "https://uke.it/didattica/corsi/medicina-e-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -32221,18 +32198,6 @@
        "citazione": "Ginecologia e Ostetricia. Zanoio, Barcellona, Zacchè, Netter. ISBN: 8821432475"
       },
       {
-       "titolo": "Hoffmann - Casey – AAVV. ISBN: 9788829927548 ISBN: 882144869X ISBN: 882144869X",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788829927548",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Hoffmann - Casey – AAVV. ISBN: 9788829927548 ISBN: 882144869X ISBN: 882144869X"
-      },
-      {
        "titolo": "Hoffmann - Casey – AAVV. ISBN: 9788829927548 ISBN: 882144869X",
        "autori": null,
        "editore": null,
@@ -32535,7 +32500,7 @@
    "url": "https://uke.it/didattica/corsi/medicina-e-chirurgia-sede-di-ragusa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -33769,7 +33734,7 @@
    "url": "https://uke.it/didattica/corsi/medicina-e-chirurgia-sede-di-siracusa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -34975,7 +34940,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -37108,7 +37073,7 @@
    "url": "https://uke.it/didattica/corsi/scienze-della-formazione-primaria-sede-di-siracusa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -38453,7 +38418,7 @@
    "url": "https://uke.it/didattica/corsi/tecnologie-per-l-energia-e-l-ambiente",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,

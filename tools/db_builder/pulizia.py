@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import datetime as dt
 import html
+import json
 import re
 import unicodedata
 
@@ -106,6 +107,37 @@ def _semestre_da_date(inizio, fine, con_ora: bool = False) -> str | None:
     return "1" if meta.month in (8, 9, 10, 11, 12, 1) else "2"
 
 
+def _semestre_dichiarato(p, inizio, fine) -> str | None:
+    """Semestre scritto nel periodo quando le date coprono più di un semestre: il testo
+    («Primo Semestre», «2 SEMESTRE …») vale sempre; il codice "1"/"2", che in alcuni atenei è un
+    ciclo, vale se correggendo di un anno la data di inizio o di fine il periodo torna un
+    semestre (si usano quelle date), oppure se le date non dicono altro."""
+    if p is None:
+        return None
+    t = str(p).strip()
+    if re.fullmatch(r"[1-6]° periodo", t):  # ciclo dichiarato dalla scheda (UniTo, corsi a distanza)
+        return t
+    if t in ("1", "2"):
+        a, b = _data(inizio), _data(fine)
+        if a and b:
+            try:
+                prove = ((a.replace(year=a.year + 1), b), (a, b.replace(year=b.year - 1)))
+            except ValueError:  # 29 febbraio
+                prove = ()
+            for a2, b2 in prove:
+                if a2 < b2 and (b2 - a2).days <= 180:
+                    meta = a2 + (b2 - a2) / 2
+                    return "1" if meta.month in (8, 9, 10, 11, 12, 1) else "2"
+        return t
+    if ANNUALE.search(t) or re.search(r"(?i)\b(primo|i|1)\b.{0,4}\be\b.{0,4}\b(secondo|ii|2)\b", t):  # «I e II semestre»
+        return None
+    if SEM1.search(t) or re.search(r"(?i)\bprimo\s+semestre\b|\bi\s+semestre\b", t):
+        return "1"
+    if SEM2.search(t) or re.search(r"(?i)\bsecondo\s+semestre\b|\bii\s+semestre\b", t):
+        return "2"
+    return None
+
+
 def periodo(p, inizio=None, fine=None):
     """"1" | "2" | "annuale" (il semestre, come lo usa l'app) o None.
 
@@ -117,6 +149,13 @@ def periodo(p, inizio=None, fine=None):
     if p is None and not (inizio and fine):
         return None
     da_date = _semestre_da_date(inizio, fine)
+    if da_date == "annuale":
+        # date di un anno intero accanto a un semestre dichiarato: refuso nell'anno della legenda
+        # (UniBo «2: 22/02/2026 - 04/06/2027»), segnaposto del catalogo (Cineca «Annualità singola»
+        # 21/09-22/05) o calendario lungo (UniVR «2 SEMESTRE PROFESSIONI SANITARIE dal 07/01 al 30/09»)
+        esplicito = _semestre_dichiarato(p, inizio, fine)
+        if esplicito:
+            return esplicito
     if da_date:
         return da_date
     if p is None or p in ("1", "2", "3", "4", "annuale"):
@@ -172,6 +211,16 @@ def docenti(lst):
 # righe che non sono libri (segnaposto, indirizzi web, materiali del docente, frasi di obiettivi),
 # caratteri invisibili e "non obbligatorio" registrato come obbligatorio.
 INVISIBILI = re.compile("[\u200b\u200e\u200f\u202a-\u202e\u2060\ufeff]")
+CONTROLLO = re.compile("[\x00-\x08\x0b\x0c\x0e-\x1f]")
+
+
+def testo_spostato(s: str) -> str:
+    """Testo copiato da un PDF con il font \u00abspostato\u00bb (spazio = 0x03, \u00abQHOOD\u00bb = \u00abnella\u00bb, \u00ab\u00b6\u00bb =
+    apostrofo): ogni carattere torna leggibile aggiungendo 29 al codice. Solo se il testo \u00e8 fatto
+    quasi tutto cos\u00ec (almeno tre \u00abspazi\u00bb 0x03 e un decimo di caratteri di controllo)."""
+    if s.count("\x03") < 3 or sum(1 for ch in s if ord(ch) < 32) * 10 < len(s):
+        return s
+    return "".join(chr(ord(ch) + 29) if ord(ch) < 32 or 33 <= ord(ch) <= 93 else ch for ch in s).replace("\u00b6", "\u2019")
 PUNTI_ELENCO = re.compile("\\s*[\uf0a7\uf0b7\uf0d8\uf0fc\uf076\uf0a8]\\s*")
 ENUMERATORE_P = re.compile(r"(?<=[.;,)\w])\s+(?=\d{1,2}\)\s+[A-ZÀ-Ý“\"'‘«])")
 ENUMERATORE_N = re.compile(r"(?<=[.;,)\w])\s+(?=\d{1,2}\.\s+[A-ZÀ-Ý“\"'‘«])")
@@ -294,10 +343,25 @@ def _chiusura_orfana(cit: str) -> bool:
     return False
 
 
+ISBN_RIPETUTO = re.compile(r"((?:\s|^)(?:ISBN|EAN)(?:-1[03])?[\s:]*[\dXx][\dXx -]{8,16}[\dXx])(?:\1)+")
+
+
 def rifinisci_libri(lst: list[dict]) -> list[dict]:
     """Spezza i libri incollati, unisce le citazioni spezzate, toglie cio' che non e' un libro."""
     pezzi: list[dict] = []
     for lb in lst or []:
+        if any(isinstance(lb.get(k), str) and CONTROLLO.search(lb[k]) for k in ("titolo", "citazione", "note")):
+            # testo dei PDF con il font spostato o caratteri di controllo rimasti (« Einführungs\x02buch »)
+            lb = dict(lb)
+            for k in ("titolo", "citazione", "note"):
+                if isinstance(lb.get(k), str):
+                    lb[k] = CONTROLLO.sub("", testo_spostato(lb[k]))
+        if any(isinstance(lb.get(k), str) and ISBN_RIPETUTO.search(lb[k]) for k in ("titolo", "citazione")):
+            # «… ISBN: X ISBN: X ISBN: X»: la riga dell'ISBN unita più volte da ricostruzioni precedenti
+            lb = dict(lb)
+            for k in ("titolo", "citazione"):
+                if isinstance(lb.get(k), str):
+                    lb[k] = ISBN_RIPETUTO.sub(r"\1", lb[k])
         cit = INVISIBILI.sub("", _cit(lb))
         if not cit:
             continue
@@ -324,6 +388,8 @@ def rifinisci_libri(lst: list[dict]) -> list[dict]:
             # riga con il solo codice ISBN/EAN: appartiene al libro che la precede (anche se già scomposto)
             nuovo = dict(prec)
             pc = _cit(prec)
+            if cit in pc:  # già unita in una ricostruzione precedente (il contributo la ripropone a ogni giro)
+                continue
             nuovo["citazione"] = pc + " " + cit
             if nuovo.get("titolo") == pc:
                 nuovo["titolo"] = nuovo["citazione"]
@@ -779,7 +845,8 @@ def _con_frasi(it: str, en: str) -> str:
     return it
 
 
-def _punteggio(pi: list[str], pe: list[str]) -> float:
+def _corrispondenze(pi: list[str], pe: list[str]) -> tuple[set[int], set[int]]:
+    """(parole italiane abbinate, parole inglesi abbinate), per posizione."""
     usate, presi = set(), set()
     for k, p in enumerate(pi):
         forme = [_norm_parola(f) for f in (p, *_TRADUZIONI_N.get(_norm_parola(p), ()))]
@@ -788,6 +855,24 @@ def _punteggio(pi: list[str], pe: list[str]) -> float:
                 usate.add(j)
                 presi.add(k)
                 break
+    return presi, usate
+
+
+def _inglese_coperto(it_nome: str | None, en_nome: str | None) -> bool:
+    """Ogni parola del nome inglese (salvo «Introduction», «Advanced»…) corrisponde a una del nome
+    italiano: la versione inglese non aggiunge un argomento («International Institutional Law» non è
+    «Diritto internazionale umanitario», «Latin American Studies» non è «Antropologia dell'America
+    latina»)."""
+    it, en = _nome_base(it_nome).lower(), _nome_base(en_nome).lower()
+    pe = _parole_trad(en)
+    if not pe:
+        return False
+    _, usate = _corrispondenze(_parole_trad(_con_frasi(it, en)), pe)
+    return all(j in usate or q in _OPZ_EN for j, q in enumerate(pe))
+
+
+def _punteggio(pi: list[str], pe: list[str]) -> float:
+    presi, usate = _corrispondenze(pi, pe)
     n_it = sum(1 for k, p in enumerate(pi) if k in presi or p not in _OPZ_IT)
     n_en = sum(1 for j, q in enumerate(pe) if j in usate or q not in _OPZ_EN)
     if not n_it or not n_en:
@@ -824,11 +909,21 @@ def _abbinamento(it: dict, en: dict, minimo: float = 0.6) -> tuple[float, str]:
     lo stesso semestre sono prove in più, un semestre diverso chiede una traduzione
     quasi letterale. Tra gli insegnamenti a scelta la traduzione deve essere evidente."""
     ni, ne = it.get("nome") or "", en.get("nome") or ""
+    # lingua dell'attività dalla fonte (`lingua`, UniTO/UniBG/LIUC: «Private Law» è in inglese anche se
+    # il nome sembra italiano): vale al posto della lingua dedotta dal nome. Le varianti hanno sempre
+    # «lingua: en», quindi conta la versione italiana: senza il campo (gli altri atenei) nulla cambia.
+    esplicita = it.get("lingua") == "it" and en.get("lingua") == "en"
     if _norm_nome(_nome_base(ni)) == _norm_nome(_nome_base(ne)):
-        return 0.0, "stesso nome (non è una traduzione)"
-    if _lingua_nome(ne) == "it":
+        if not esplicita:
+            return 0.0, "stesso nome (non è una traduzione)"
+        # stesso titolo in italiano e in inglese secondo la fonte (LIUC: «Asset Management» e
+        # «Asset Management [Eng.]»): lo stesso insegnamento nelle due lingue
+        docenti = bool(set(it.get("docenti") or []) & set(en.get("docenti") or []))
+        stesso_periodo = it.get("periodo") is not None and it.get("periodo") == en.get("periodo")
+        return 1.0 + 0.05 * docenti + 0.02 * stesso_periodo, "ok"
+    if not esplicita and _lingua_nome(ne) == "it":
         return 0.0, "il nome della versione inglese è italiano"
-    if _lingua_nome(ni) == "en" and "/" not in ni:
+    if not esplicita and _lingua_nome(ni) == "en" and "/" not in ni:
         return 0.0, "il nome della versione italiana è inglese"
     s = _somiglianza_traduzione(ni, ne)
     docenti = bool(set(it.get("docenti") or []) & set(en.get("docenti") or []))
@@ -853,6 +948,18 @@ def _variante_da(en: dict) -> dict:
 
 def _aggiungi_variante(it: dict, en: dict) -> None:
     variante = _variante_da(en)
+    # la stessa variante già nel database (build precedente): la riga inglese torna dal contributo
+    # senza i libri e gli appelli raccolti prima, che restano (come `merge_insegnamenti` per le righe)
+    for v in it.get("varianti") or []:
+        if v.get("codice") == variante.get("codice") and v.get("lingua") == "en":
+            for k in ("libri", "esami"):
+                viste = {json.dumps(x, sort_keys=True) for x in variante.get(k) or []}
+                altri = [x for x in v.get(k) or [] if json.dumps(x, sort_keys=True) not in viste]
+                if altri:
+                    variante[k] = (variante.get(k) or []) + altri
+            for k, x in v.items():
+                if variante.get(k) in (None, [], "") and x not in (None, [], ""):
+                    variante[k] = x
     vv = [v for v in it.get("varianti") or [] if v.get("codice") != variante.get("codice")]
     it["varianti"] = vv + [variante]
     if "l-lin/12" in _ssd_base(en.get("ssd")):
@@ -905,9 +1012,11 @@ def varianti_lingua(corsi: list[dict], esiti: list | None = None) -> int:
         cur = c.get("curricula") or []
         # versione inglese: di un percorso in lingua inglese (anche se in comune con altri
         # percorsi) e con un nome inglese; versione italiana: non solo del percorso inglese
+        # (con la lingua dell'attività dalla fonte, `lingua`, un'attività in italiano non è la
+        # versione inglese e viceversa; senza il campo vale solo il nome)
         inglesi = [i for i in ins if i.get("ssd") and _INGLESE.search(i.get("curriculum") or "")
-                   and _lingua_nome(i.get("nome")) != "it"]
-        italiani = [i for i in ins if not _solo_inglese(i.get("curriculum"), cur)]
+                   and _lingua_nome(i.get("nome")) != "it" and i.get("lingua") != "it"]
+        italiani = [i for i in ins if not _solo_inglese(i.get("curriculum"), cur) and i.get("lingua") != "en"]
         coppie = []
         for en in inglesi:
             for it in italiani:
@@ -951,10 +1060,12 @@ def varianti_lingua_gemelli(corsi: list[dict], esiti: list | None = None) -> int
         coppie = []
         for g in gruppi.values():
             for a in g:
-                if _lingua_nome(a.get("nome")) != "it":
+                # lingua dal nome e, se la fonte la dà (`lingua`), anche dall'attività
+                if _lingua_nome(a.get("nome")) != "it" or a.get("lingua") == "en":
                     continue
                 for b in g:
-                    if b is a or _lingua_nome(b.get("nome")) != "en" or _altro_en(a, b.get("codice")):
+                    if (b is a or _lingua_nome(b.get("nome")) != "en" or b.get("lingua") == "it"
+                            or _altro_en(a, b.get("codice"))):
                         continue
                     pa, pb = set(percorsi(a.get("curriculum"))), set(percorsi(b.get("curriculum")))
                     if pa and pb and not (pa & pb):
@@ -971,6 +1082,61 @@ def varianti_lingua_gemelli(corsi: list[dict], esiti: list | None = None) -> int
             n += 1
             if esiti is not None:
                 esiti.append(("nuova", c.get("id"), a, _variante_da(b), s, "stesso piano (gemelli)"))
+        if togli:
+            c["insegnamenti"] = [i for i in ins if id(i) not in togli]
+    return n
+
+
+def _gruppi_scelta(i: dict) -> set[str]:
+    """Gruppi di scelta del piano dichiarati dalla fonte (`gruppo_scelta`, separati da virgola)."""
+    return {g.strip() for g in str(i.get("gruppo_scelta") or "").split(",") if g.strip()}
+
+
+def varianti_lingua_scelta(corsi: list[dict], esiti: list | None = None) -> int:
+    """Versione italiana e inglese dello stesso esame offerte come alternative nello stesso
+    gruppo di scelta del piano (UniTO, Economia: «I ANNO - UN ESAME A SCELTA FRA (12 CFU)» con
+    «Microeconomia» ECO0002 e «Microeconomics» SEM0158): lo studente ne sostiene una, quindi la
+    versione inglese diventa una variante di quella italiana (come in `varianti_lingua_gemelli`),
+    che resta a scelta nel suo gruppo.
+
+    Solo con i segnali espliciti della fonte, riportati dagli adattatori che li hanno (UniTO,
+    UniBG, LIUC): lingua dell'attività (`lingua`: «it» e «en») e gruppo di scelta (`gruppo_scelta`,
+    almeno un gruppo in comune). Inoltre: tutte e due a scelta, stesso anno e stessi CFU, stesso
+    settore se lo hanno entrambe, nomi che sono la traduzione l'uno dell'altro con la soglia
+    degli insegnamenti a scelta di `_abbinamento` (la stessa con cui `rivedi_varianti` ricontrolla
+    le varianti alla build successiva) e nessuna parola del nome inglese senza corrispondente
+    italiano (`_inglese_coperto`). Le righe senza questi campi (gli altri atenei) non cambiano.
+    Restituisce le varianti create."""
+    n = 0
+    for c in corsi:
+        ins = c.get("insegnamenti") or []
+        cand = [i for i in ins if i.get("obbligatorio") is False and i.get("lingua") in ("it", "en")
+                and _gruppi_scelta(i)]
+        if not cand:
+            continue
+        coppie = []
+        for a in cand:
+            if a["lingua"] != "it":
+                continue
+            ga = _gruppi_scelta(a)
+            for b in cand:
+                if (b["lingua"] != "en" or a.get("anno") != b.get("anno") or a.get("cfu") != b.get("cfu")
+                        or not (ga & _gruppi_scelta(b)) or a.get("codice") == b.get("codice")
+                        or _altro_en(a, b.get("codice"))):
+                    continue
+                if a.get("ssd") and b.get("ssd") and _ssd_base(a["ssd"]) != _ssd_base(b["ssd"]):
+                    continue
+                s, _ = _abbinamento(a, b)
+                if s and _inglese_coperto(a.get("nome"), b.get("nome")):
+                    coppie.append((s, a, b))
+        togli = set()
+        for s, a, b in _scegli(coppie):
+            _aggiungi_variante(a, b)
+            a["curriculum"] = _unisci_percorsi(a.get("curriculum"), b.get("curriculum"))
+            togli.add(id(b))
+            n += 1
+            if esiti is not None:
+                esiti.append(("nuova", c.get("id"), a, _variante_da(b), s, "stesso gruppo di scelta (lingua dalla fonte)"))
         if togli:
             c["insegnamenti"] = [i for i in ins if id(i) not in togli]
     return n

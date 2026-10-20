@@ -15,7 +15,11 @@ comune (`cineca_catalogue`) UniTO richiede:
   non tutti allo stesso;
 - blocchi con una sola attività: nei piani a blocchi («PRIMO ANNO - LETTERATURA LATINA (12 CFU)») un
   blocco con una sola attività che vale i CFU richiesti è un insegnamento obbligatorio, anche se il
-  catalogo non lo chiama così.
+  catalogo non lo chiama così;
+- versioni italiana e inglese dello stesso esame come alternative di un gruppo («I ANNO - UN ESAME A SCELTA
+  FRA (12 CFU)»: «Microeconomia» ECO0002 / «Microeconomics» SEM0158): ogni insegnamento riporta la lingua
+  dell'attività (`lingua`, da `lingua_cod`) e i gruppi di scelta in cui compare (`gruppo_scelta`), con cui
+  `pulizia.varianti_lingua_scelta` fa della versione inglese una variante di quella italiana.
 
 Con la variabile d'ambiente UN_HTTP_CACHE (una cartella) le risposte del catalogo restano su disco.
 Richieste al catalogo: al massimo 6 al secondo.
@@ -167,7 +171,7 @@ def fetch_ateneo(uid: str = "unito", anno: int = 2026, max_cds: int | None = Non
     doc = cineca_catalogue.fetch_ateneo(uid, BASE, anno, max_cds=max_cds, syllabus=syllabus, log=log,
                                         client=ClientCache(), coorte_per_nome=True,
                                         obbligatorio_gruppo=_blocco_obbligatorio,
-                                        id_corso=_scelta_id_corso(_corsi_database()))
+                                        id_corso=_scelta_id_corso(_corsi_database()), lingua_gruppi=True)
     doc["corsi"] = _solo_scuole_nel_database(doc["corsi"], _corsi_database(), log)
     doc["descrizione"] = f"Generato da {BASE} (Course Catalogue Cineca, adapters/unito.py)"
     return doc

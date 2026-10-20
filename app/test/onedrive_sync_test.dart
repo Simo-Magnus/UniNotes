@@ -123,6 +123,118 @@ void main() {
     },
   );
 
+  test(
+    'scaricamento non riuscito: il file buono resta, niente «.part»',
+    () async {
+      final pc = device('PC');
+      var fail = false;
+      final phone = OneDriveSync(
+        graph: GraphClient(
+          () async => 'token',
+          transport: (m, u, {headers = const {}, body}) async =>
+              fail && u.host == 'dl.example'
+              ? GraphResponse(500, Uint8List.fromList(utf8.encode('{}')))
+              : drive.call(m, u, headers: headers, body: body),
+        ),
+        localRoot: Directory(p.join(tmp.path, 'telefono', 'Corsi')),
+        remoteFolder: 'Appunti università',
+        stateFile: File(p.join(tmp.path, 'telefono', 'state.json')),
+        deviceName: 'telefono',
+      );
+      await write(pc, lesson, 'v1');
+      await pc.run();
+      await phone.run();
+      await write(pc, lesson, 'versione 2');
+      await pc.run();
+      fail = true;
+      final r = await phone.run();
+      expect(r.errors.single, contains('Lezione.md'));
+      expect(await f(phone, lesson).readAsString(), 'v1');
+      expect(await File('${f(phone, lesson).path}.part').exists(), isFalse);
+      fail = false;
+      expect((await phone.run()).downloaded, 1);
+      expect(await f(phone, lesson).readAsString(), 'versione 2');
+    },
+  );
+
+  test(
+    'ioDownload: il corpo va sul file a pezzi; gli errori non lo toccano',
+    () async {
+      final server = await HttpServer.bind(InternetAddress.loopbackIPv4, 0);
+      addTearDown(() => server.close(force: true));
+      server.listen((req) async {
+        if (req.uri.path == '/ok') {
+          for (var i = 0; i < 3; i++) {
+            req.response.add(List.filled(1000, 65 + i));
+            await req.response.flush();
+          }
+        } else {
+          req.response
+            ..statusCode = 403
+            ..write('{"error":{"message":"Accesso negato"}}');
+        }
+        await req.response.close();
+      });
+      final base = 'http://127.0.0.1:${server.port}';
+      final ok = File(p.join(tmp.path, 'ok.bin'));
+      final r = await ioDownload(Uri.parse('$base/ok'), ok);
+      expect(r.status, 200);
+      expect(r.body, isEmpty);
+      final bytes = await ok.readAsBytes();
+      expect(bytes.length, 3000);
+      expect(bytes.last, 67);
+      final err = File(p.join(tmp.path, 'err.bin'));
+      final e = await ioDownload(Uri.parse('$base/no'), err);
+      expect(e.status, 403);
+      expect(e.text, contains('Accesso negato'));
+      expect(await err.exists(), isFalse);
+      // tramite GraphClient: errore leggibile
+      await expectLater(
+        GraphClient(() async => 't').download('$base/no', err, auth: false),
+        throwsA(isA<GraphException>().having((x) => x.status, 'status', 403)),
+      );
+    },
+  );
+
+  test('senza rete: il messaggio nomina il servizio giusto', () async {
+    expect(
+      networkServiceName(Uri.parse('https://graph.microsoft.com/v1.0/me')),
+      'Microsoft',
+    );
+    expect(
+      networkServiceName(Uri.parse('https://contoso.sharepoint.com/f')),
+      'Microsoft',
+    );
+    expect(
+      networkServiceName(Uri.parse('https://www.googleapis.com/drive/v3/')),
+      'Google',
+    );
+    expect(
+      networkServiceName(Uri.parse('https://oauth2.googleapis.com/revoke')),
+      'Google',
+    );
+    expect(networkServiceName(Uri.parse('https://example.com')), 'Il servizio');
+    // porta chiusa: errore di rete (stato 0)
+    final s = await ServerSocket.bind(InternetAddress.loopbackIPv4, 0);
+    final port = s.port;
+    await s.close();
+    await expectLater(
+      ioTransport('GET', Uri.parse('http://127.0.0.1:$port/')),
+      throwsA(
+        isA<GraphException>()
+            .having((e) => e.status, 'status', 0)
+            .having(
+              (e) => e.message,
+              'm',
+              startsWith(
+                'Il servizio non '
+                'raggiungibile',
+              ),
+            ),
+      ),
+    );
+  });
+
   test('file grandi: sessione di caricamento a blocchi', () async {
     final pc = device('PC');
     final big = f(pc, 'PoliTo - Chimica/Registrazioni/lezione.flac');

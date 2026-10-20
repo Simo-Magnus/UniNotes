@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "liuc",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-20",
+ "aggiornato_il": "2026-10-21",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.liuc.it/corsi-di-studio/laurea-triennale/economia-aziendale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A86014",
@@ -1203,7 +1203,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a95359",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A01019",
@@ -1253,7 +1254,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01019",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A95325",
@@ -1303,7 +1305,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a95325",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A95328",
@@ -1365,7 +1368,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a95328",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A78611",
@@ -1404,7 +1408,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78611",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A20040",
@@ -1469,7 +1474,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a20040",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A01014",
@@ -1507,7 +1513,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01014",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A78612",
@@ -1573,7 +1580,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78612",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A95326",
@@ -1623,7 +1631,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a95326",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A86055",
@@ -1688,7 +1697,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a86055",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A95329",
@@ -1764,7 +1774,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a95329",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A01016",
@@ -1790,7 +1801,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01016",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en"
     },
     {
      "codice": "A95322",
@@ -1830,7 +1842,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a95322",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A01018",
@@ -1881,7 +1894,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01018",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A01017",
@@ -1932,7 +1946,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01017",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A78608",
@@ -1970,7 +1985,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78608",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A20011",
@@ -2008,7 +2024,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a20011",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A95323",
@@ -2046,7 +2063,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a95323",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A22222",
@@ -2097,7 +2115,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a22222",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A95324",
@@ -2149,7 +2168,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a95324",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A95327",
@@ -2187,7 +2207,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a95327",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A24444",
@@ -2227,7 +2248,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a24444",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A78613",
@@ -2266,7 +2288,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78613",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A01009",
@@ -2304,7 +2327,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01009",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A56111",
@@ -2342,7 +2366,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a56111",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:2:F:4,9999:2:F:4,9999:2:F:5"
     },
     {
      "codice": "A56221",
@@ -2380,7 +2405,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a56221",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:2:F:4,9999:2:F:4,9999:2:F:5"
     },
     {
      "codice": "A56331",
@@ -2418,7 +2444,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a56331",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:2:F:4,9999:2:F:4,9999:2:F:5"
     },
     {
      "codice": "A84381",
@@ -2469,7 +2496,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a84381",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A78631",
@@ -2520,7 +2548,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78631",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A83152",
@@ -2582,7 +2611,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a83152",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A83152",
@@ -2644,7 +2674,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a83152-scelta",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en",
+     "gruppo_scelta": "9999:3:F:5"
     },
     {
      "codice": "A01025",
@@ -2695,7 +2727,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01025",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A84301",
@@ -2748,7 +2781,9 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a84301",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it",
+     "gruppo_scelta": "9999:3:F:5"
     },
     {
      "codice": "A01006",
@@ -2786,7 +2821,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01006",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it",
+     "gruppo_scelta": "9999:3:F:5"
     },
     {
      "codice": "A83501",
@@ -2824,7 +2861,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a83501",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A88751",
@@ -2875,7 +2913,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a88751",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A15004",
@@ -2915,7 +2954,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a15004",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A78618",
@@ -2965,57 +3005,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78618",
-     "stato_esami": "completo"
-    },
-    {
-     "codice": "A78618",
-     "nome": "Financial Investment & Pricing",
-     "anno": 3,
-     "periodo": "1",
-     "periodo_inizio": "14/09/2026 00:00:00",
-     "periodo_fine": "11/12/2026 00:00:00",
-     "cfu": 6,
-     "ssd": "SECS-P/11",
-     "obbligatorio": false,
-     "curriculum": "Accounting and Finance",
-     "docenti": [
-      "Armanini Massimo",
-      "Zanetti Alberto"
-     ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3237/2024/9999?coorte=2024",
-     "libri": [],
-     "esami": [
-      {
-       "tipo": "appello",
-       "data": "2026-11-03",
-       "ora": "10:00",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-10-13",
-       "iscrizioni_al": "2026-10-30",
-       "docenti": null,
-       "note": null,
-       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      },
-      {
-       "tipo": "appello",
-       "data": "2026-12-15",
-       "ora": "14:30",
-       "luogo": null,
-       "modalita": null,
-       "iscrizioni_dal": "2026-11-24",
-       "iscrizioni_al": "2026-12-11",
-       "docenti": null,
-       "note": null,
-       "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
-      }
-     ],
-     "fonte": "https://liuc.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "liuc-l-18-economia-e-management-a78618-scelta",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A01001",
@@ -3064,7 +3055,49 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01001",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it",
+     "gruppo_scelta": "9999:3:F:7",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "A78618",
+       "nome": "Financial Investment & Pricing",
+       "docenti": [
+        "Armanini Massimo",
+        "Zanetti Alberto"
+       ],
+       "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3237/2024/9999?coorte=2024",
+       "periodo": "1",
+       "esami": [
+        {
+         "tipo": "appello",
+         "data": "2026-11-03",
+         "ora": "10:00",
+         "luogo": null,
+         "modalita": null,
+         "iscrizioni_dal": "2026-10-13",
+         "iscrizioni_al": "2026-10-30",
+         "docenti": null,
+         "note": null,
+         "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+        },
+        {
+         "tipo": "appello",
+         "data": "2026-12-15",
+         "ora": "14:30",
+         "luogo": null,
+         "modalita": null,
+         "iscrizioni_dal": "2026-11-24",
+         "iscrizioni_al": "2026-12-11",
+         "docenti": null,
+         "note": null,
+         "fonte": "https://liuc.esse3.cineca.it/Guide/PaginaListaAppelli.do"
+        }
+       ],
+       "modalita_esame": "orale"
+      }
+     ]
     },
     {
      "codice": "A01040",
@@ -3120,7 +3153,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01040",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A78616",
@@ -3183,7 +3217,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78616",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A15000",
@@ -3221,7 +3256,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a15000",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A01012",
@@ -3260,7 +3296,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01012",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A01024",
@@ -3312,7 +3349,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01024",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A01015",
@@ -3350,7 +3388,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01015",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A78627",
@@ -3388,7 +3427,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78627",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A86099",
@@ -3438,7 +3478,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a86099",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A86099",
@@ -3488,7 +3529,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a86099-scelta",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en",
+     "gruppo_scelta": "9999:3:F:5"
     },
     {
      "codice": "A78629",
@@ -3526,7 +3569,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78629",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A01004",
@@ -3564,7 +3608,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01004",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A15007",
@@ -3589,7 +3634,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a15007",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en"
     },
     {
      "codice": "A84395",
@@ -3640,7 +3686,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a84395",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A01023",
@@ -3680,7 +3727,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01023",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en"
     },
     {
      "codice": "A15002",
@@ -3719,7 +3767,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a15002",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A78639",
@@ -3758,7 +3807,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78639",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it",
+     "gruppo_scelta": "9999:3:F:7,9999:3:F:8"
     },
     {
      "codice": "A01021",
@@ -3784,7 +3835,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01021",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en"
     },
     {
      "codice": "A78619",
@@ -3822,7 +3874,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78619",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A78617",
@@ -3860,7 +3913,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78617",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A01026",
@@ -3910,7 +3964,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01026",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en"
     },
     {
      "codice": "A01020",
@@ -3938,7 +3993,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01020",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "A15003",
@@ -3977,7 +4033,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a15003",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A01002",
@@ -3999,7 +4056,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01002",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it",
+     "gruppo_scelta": "10000:3:F:11,10000:3:F:8,10001:3:F:11,10001:3:F:9,9999:3:F:7,9999:3:F:8"
     },
     {
      "codice": "A90060",
@@ -4021,7 +4080,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a90060",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it",
+     "gruppo_scelta": "10000:3:F:11,10000:3:F:8,10001:3:F:11,10001:3:F:9,9999:3:F:7,9999:3:F:8"
     },
     {
      "codice": "A78605",
@@ -4073,7 +4134,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78605",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A78605",
@@ -4125,7 +4187,9 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78605-scelta",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en",
+     "gruppo_scelta": "9999:3:F:5"
     },
     {
      "codice": "A78626",
@@ -4163,7 +4227,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a78626",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A01022",
@@ -4263,7 +4328,9 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01011",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it",
+     "gruppo_scelta": "9999:3:F:7,9999:3:F:8"
     },
     {
      "codice": "A88700",
@@ -4301,7 +4368,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a88700",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A55705",
@@ -4364,7 +4432,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a55705",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A55705",
@@ -4427,7 +4496,9 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a55705-scelta",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en",
+     "gruppo_scelta": "9999:3:F:5"
     },
     {
      "codice": "A01010",
@@ -4465,7 +4536,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a01010",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A56111",
@@ -4500,7 +4572,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a56111-a3",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10001:3:F:5"
     },
     {
      "codice": "A56221",
@@ -4535,7 +4608,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a56221-a3",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10001:3:F:5"
     },
     {
      "codice": "A56331",
@@ -4570,7 +4644,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a56331-a3",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10001:3:F:5"
     },
     {
      "codice": "A90066",
@@ -4592,7 +4667,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-18-economia-e-management-a90066",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it",
+     "gruppo_scelta": "10000:3:F:11,10000:3:F:8,10001:3:F:11,10001:3:F:9,9999:3:F:7,9999:3:F:8"
     }
    ],
    "curricula": [
@@ -4641,7 +4718,7 @@
    "url": "https://www.liuc.it/corsi-di-studio/laurea-triennale/ingegneria-gestionale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "IL0001",
@@ -4688,7 +4765,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-il0001",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10002:1:F:3"
     },
     {
      "codice": "N91453",
@@ -4733,7 +4811,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91453-scelta",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "gruppo_scelta": "10002:1:F:3"
     },
     {
      "codice": "N91543",
@@ -4854,7 +4933,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91554",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2027/5430/2025/10003?coorte=2025"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2027/5430/2025/10003?coorte=2025",
+     "gruppo_scelta": "10002:1:F:2"
     },
     {
      "codice": "N91555",
@@ -4890,7 +4970,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91555",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2027/5431/2025/10003?coorte=2025"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2027/5431/2025/10003?coorte=2025",
+     "gruppo_scelta": "10002:1:F:2"
     },
     {
      "codice": "N70020",
@@ -4951,7 +5032,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n70020",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/3319/2025/10001?coorte=2025"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/3319/2025/10001?coorte=2025",
+     "gruppo_scelta": "10000:1:F:3,10001:1:F:3"
     },
     {
      "codice": "N91611",
@@ -5047,7 +5129,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91334",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/4769/2025/10001?coorte=2025"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/4769/2025/10001?coorte=2025",
+     "gruppo_scelta": "10000:1:F:3,10001:1:F:3"
     },
     {
      "codice": "N91483",
@@ -5083,7 +5166,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91483",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5076/2023/10001?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5076/2023/10001?coorte=2024",
+     "gruppo_scelta": "10000:1:F:3,10001:1:F:3"
     },
     {
      "codice": "A20030",
@@ -5119,7 +5203,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-a20030",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3732/2026/10002?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3732/2026/10002?coorte=2026",
+     "gruppo_scelta": "10002:1:F:2"
     },
     {
      "codice": "N91484",
@@ -5155,7 +5240,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91484",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5077/2023/10001?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5077/2023/10001?coorte=2024",
+     "gruppo_scelta": "10000:1:F:3,10001:1:F:3"
     },
     {
      "codice": "A95324",
@@ -5204,7 +5290,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-a95324",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3780/2026/10002?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3780/2026/10002?coorte=2026",
+     "gruppo_scelta": "10002:1:F:2"
     },
     {
      "codice": "N91622",
@@ -5627,7 +5714,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n56111",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/4949/2025/10001?coorte=2025"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/4949/2025/10001?coorte=2025",
+     "gruppo_scelta": "10000:1:F:3,10001:1:F:3,10002:1:F:2"
     },
     {
      "codice": "N56221",
@@ -5663,7 +5751,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n56221",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/4950/2025/10001?coorte=2025"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/4950/2025/10001?coorte=2025",
+     "gruppo_scelta": "10000:1:F:3,10001:1:F:3,10002:1:F:2"
     },
     {
      "codice": "N56331",
@@ -5699,7 +5788,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n56331",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/4951/2025/10001?coorte=2025"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/4951/2025/10001?coorte=2025",
+     "gruppo_scelta": "10000:1:F:3,10001:1:F:3,10002:1:F:2"
     },
     {
      "codice": "N91483",
@@ -5734,7 +5824,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91483-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:2:F:4,10001:2:F:4"
     },
     {
      "codice": "N91484",
@@ -5769,7 +5860,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91484-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:2:F:4,10001:2:F:4"
     },
     {
      "codice": "N70020",
@@ -5829,7 +5921,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n70020-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:2:F:4,10001:2:F:4"
     },
     {
      "codice": "N91334",
@@ -5876,7 +5969,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91334-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:2:F:4,10001:2:F:4"
     },
     {
      "codice": "N56111",
@@ -5911,7 +6005,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n56111-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:2:F:4,10001:2:F:4"
     },
     {
      "codice": "N56221",
@@ -5946,7 +6041,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n56221-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:2:F:4,10001:2:F:4"
     },
     {
      "codice": "N56331",
@@ -5981,7 +6077,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n56331-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:2:F:4,10001:2:F:4"
     },
     {
      "codice": "N91550",
@@ -6032,7 +6129,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91550",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "N91547",
@@ -6072,7 +6170,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91547",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "N91549",
@@ -6147,7 +6246,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91549",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "N91548",
@@ -6197,7 +6297,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91548",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N91546",
@@ -6259,7 +6360,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91546",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N91563",
@@ -6285,7 +6387,9 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91563",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5801/2023/10001?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5801/2023/10001?coorte=2024",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:4,10001:2:F:4"
     },
     {
      "codice": "N90401",
@@ -6349,7 +6453,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n90401",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "N90302",
@@ -6437,7 +6542,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n90302",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N91545",
@@ -6462,7 +6568,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91545",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en"
     },
     {
      "codice": "N91564",
@@ -6488,7 +6595,9 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91564",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5802/2023/10001?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5802/2023/10001?coorte=2024",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:4,10001:2:F:4"
     },
     {
      "codice": "N91551",
@@ -6513,7 +6622,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91551",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en"
     },
     {
      "codice": "N70051",
@@ -6564,7 +6674,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n70051",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N13058",
@@ -6615,7 +6726,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n13058",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N91447",
@@ -6653,7 +6765,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91447",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N90308",
@@ -6704,7 +6817,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n90308",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "N91448",
@@ -6743,7 +6857,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91448",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en"
     },
     {
      "codice": "N91565",
@@ -6770,7 +6885,9 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91565",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5803/2023/10001?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5803/2023/10001?coorte=2024",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:4,10001:2:F:4"
     },
     {
      "codice": "N70087",
@@ -6821,7 +6938,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n70087",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N13314",
@@ -6859,7 +6977,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n13314",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N91483",
@@ -6894,7 +7013,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91483-a3",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:3:F:6,10001:3:F:6"
     },
     {
      "codice": "N91564",
@@ -6916,7 +7036,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91564-a3",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "gruppo_scelta": "10000:3:F:6,10001:3:F:6"
     },
     {
      "codice": "N91484",
@@ -6951,7 +7072,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91484-a3",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:3:F:6,10001:3:F:6"
     },
     {
      "codice": "N91563",
@@ -6973,7 +7095,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91563-a3",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "gruppo_scelta": "10000:3:F:6,10001:3:F:6"
     },
     {
      "codice": "N91565",
@@ -6995,7 +7118,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91565-a3",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "gruppo_scelta": "10000:3:F:6,10001:3:F:6"
     },
     {
      "codice": "N90392",
@@ -7039,7 +7163,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n90391",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "gruppo_scelta": "10000:3:F:6,10001:3:F:6"
     },
     {
      "codice": "N90387",
@@ -7087,7 +7212,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n90387",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/4340/2026/10002?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/4340/2026/10002?coorte=2024",
+     "gruppo_scelta": "10000:3:F:4"
     },
     {
      "codice": "N91536",
@@ -7220,7 +7346,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91501",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5095/2023/10001?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5095/2023/10001?coorte=2024",
+     "gruppo_scelta": "10000:3:F:6,10001:3:F:6"
     },
     {
      "codice": "N90305",
@@ -7304,7 +7431,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91492",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5085/2023/10000?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5085/2023/10000?coorte=2024",
+     "gruppo_scelta": "10000:3:F:4"
     },
     {
      "codice": "N91489",
@@ -7388,7 +7516,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91493",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/5086/2026/10002?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/5086/2026/10002?coorte=2024",
+     "gruppo_scelta": "10000:3:F:4"
     },
     {
      "codice": "N91534",
@@ -7470,7 +7599,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91486",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5079/2023/10001?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5079/2023/10001?coorte=2024",
+     "gruppo_scelta": "10000:3:F:5,10001:3:F:5"
     },
     {
      "codice": "N91537",
@@ -7519,7 +7649,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91537",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5284/2023/10001?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5284/2023/10001?coorte=2024",
+     "gruppo_scelta": "10000:3:F:5,10001:3:F:5"
     },
     {
      "codice": "N91445",
@@ -7604,7 +7735,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91446",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4906/2023/10000?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4906/2023/10000?coorte=2024",
+     "gruppo_scelta": "10000:3:F:4"
     },
     {
      "codice": "N91535",
@@ -7650,7 +7782,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91553",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/5429/2026/10002?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/5429/2026/10002?coorte=2024",
+     "gruppo_scelta": "10000:3:F:4"
     },
     {
      "codice": "N91491",
@@ -7699,7 +7832,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91491",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/5084/2026/10002?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2028/5084/2026/10002?coorte=2024",
+     "gruppo_scelta": "10000:3:F:4"
     },
     {
      "codice": "N91505",
@@ -7735,7 +7869,8 @@
      "modalita_esame": "orale",
      "id": "liuc-l-9-ingegneria-gestionale-n91505",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5252/2023/10001?coorte=2024"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5252/2023/10001?coorte=2024",
+     "gruppo_scelta": "10000:3:F:5,10001:3:F:5"
     },
     {
      "codice": "N91488",
@@ -7807,7 +7942,7 @@
    "url": "https://www.liuc.it/corsi-di-studio/laurea-magistrale/economia-aziendale-e-management/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A05103",
@@ -7852,7 +7987,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05103-scelta",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05091",
@@ -7887,7 +8023,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05091",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05092",
@@ -7922,7 +8060,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05092",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05022",
@@ -7947,7 +8086,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05022",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it",
+     "gruppo_scelta": "10000:1:F:2"
     },
     {
      "codice": "A05000",
@@ -8013,7 +8154,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05000",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A83321",
@@ -8055,7 +8197,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a83321",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05013",
@@ -8093,7 +8236,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05013",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "A05101",
@@ -8129,7 +8273,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05101",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5829/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5829/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05003",
@@ -8181,7 +8326,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05003",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05028",
@@ -8219,7 +8365,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05028",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A05060",
@@ -8242,7 +8389,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05060",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5643/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5643/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A00045",
@@ -8280,7 +8428,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00045",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05024",
@@ -8403,7 +8552,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05024",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A85334",
@@ -8442,7 +8592,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a85334",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A00063",
@@ -8478,7 +8629,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00063",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5203/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5203/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A93118",
@@ -8517,7 +8669,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a93118",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A84346",
@@ -8565,7 +8718,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a84346",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4709/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4709/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05070",
@@ -8601,7 +8755,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05070",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5767/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5767/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A84256",
@@ -8636,7 +8791,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a84256",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05023",
@@ -8688,7 +8844,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05023",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A83033",
@@ -8752,7 +8909,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a83033",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A05088",
@@ -8788,7 +8946,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05088",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5785/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5785/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A86071",
@@ -8826,7 +8985,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a86071",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A00056",
@@ -8862,7 +9022,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00056",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5194/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5194/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05014",
@@ -8912,7 +9073,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05014",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05001",
@@ -8977,7 +9139,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05001",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05027",
@@ -9042,7 +9205,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05027",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A05007",
@@ -9080,7 +9244,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05007",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N92018",
@@ -9364,7 +9529,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-n92018",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A05054",
@@ -9387,7 +9553,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05054",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5602/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5602/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05050",
@@ -9426,7 +9593,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05050",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it",
+     "gruppo_scelta": "10000:1:F:2"
     },
     {
      "codice": "N91309",
@@ -9476,7 +9645,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-n91309",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A05064",
@@ -9512,7 +9682,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05064",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5647/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5647/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05081",
@@ -9551,7 +9722,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05081",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A05078",
@@ -9574,7 +9746,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05078",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5775/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5775/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05038",
@@ -9610,7 +9783,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05038",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5586/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5586/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A83032",
@@ -9673,7 +9847,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a83032",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A83042",
@@ -9736,7 +9911,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a83042",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A00035",
@@ -9759,7 +9935,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00035",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5066/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5066/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05097",
@@ -9782,7 +9959,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05097",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5821/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5821/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05067",
@@ -9818,7 +9996,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05067",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5650/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5650/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05087",
@@ -9841,7 +10020,9 @@
      "verificato_il": "2026-10-17",
      "stato_libri": "da_aggiungere",
      "id": "liuc-lm-77-economia-management-e-governance-a05087",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05058",
@@ -9877,7 +10058,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05058",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5641/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5641/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05086",
@@ -9913,7 +10095,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05086",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5783/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5783/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05008",
@@ -9939,32 +10122,23 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05008",
-     "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "A05009",
-     "nome": "Asset Management [Eng.]",
-     "anno": 1,
-     "periodo": "2",
-     "periodo_inizio": "22/02/2027 00:00:00",
-     "periodo_fine": "28/05/2027 00:00:00",
-     "cfu": 6,
-     "ssd": "ECON-09/B",
-     "obbligatorio": false,
-     "curriculum": "Banche e Finanza",
-     "docenti": [
-      "Esposito Marcello",
-      "Lazzari Valter"
-     ],
-     "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5557/2026/10001?coorte=2026",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://liuc.coursecatalogue.cineca.it",
-     "verificato_il": "2026-10-20",
-     "stato_libri": "da_aggiungere",
-     "modalita_esame": "orale",
-     "id": "liuc-lm-77-economia-management-e-governance-a05009",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it",
+     "gruppo_scelta": "10001:1:F:2",
+     "varianti": [
+      {
+       "lingua": "en",
+       "codice": "A05009",
+       "nome": "Asset Management [Eng.]",
+       "docenti": [
+        "Esposito Marcello",
+        "Lazzari Valter"
+       ],
+       "url": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5557/2026/10001?coorte=2026",
+       "periodo": "2",
+       "modalita_esame": "orale"
+      }
+     ]
     },
     {
      "codice": "A00012",
@@ -9987,7 +10161,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00012",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4958/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4958/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A00019",
@@ -10036,7 +10211,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00019",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5013/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5013/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05098",
@@ -10072,7 +10248,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05098",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5822/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5822/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05100",
@@ -10108,7 +10285,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05100",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5825/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5825/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05093",
@@ -10131,7 +10309,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05093",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5790/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5790/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05019",
@@ -10156,7 +10335,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05019",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "A86039",
@@ -10194,7 +10374,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a86039",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A05006",
@@ -10222,7 +10403,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05006",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "A05004",
@@ -10265,7 +10447,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05004",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05061",
@@ -10301,7 +10484,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05061",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5644/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5644/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05011",
@@ -10339,7 +10523,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05011",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05082",
@@ -10366,7 +10551,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05082",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en"
     },
     {
      "codice": "A40555",
@@ -10407,7 +10593,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a40555",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05048",
@@ -10445,7 +10632,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05048",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "A05026",
@@ -10484,7 +10672,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05026",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A00046",
@@ -10533,7 +10722,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00046",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5145/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5145/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05055",
@@ -10581,7 +10771,8 @@
      "stato_libri": "completo",
      "id": "liuc-lm-77-economia-management-e-governance-a05055",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5638/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5638/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05052",
@@ -10607,7 +10798,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05052",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "A05047",
@@ -10630,7 +10822,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05047",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5595/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5595/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05016",
@@ -10668,7 +10861,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05016",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05015",
@@ -10693,7 +10887,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05015",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "A05018",
@@ -10731,7 +10926,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05018",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05105",
@@ -10839,7 +11035,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05105",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5833/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5833/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05102",
@@ -10862,7 +11059,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05102",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5830/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5830/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A00020",
@@ -10898,7 +11096,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00020",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5021/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5021/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A00052",
@@ -10946,7 +11145,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00052",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5169/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5169/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05005",
@@ -10987,7 +11187,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05005",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A78609",
@@ -11039,7 +11240,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a78609",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A93123",
@@ -11078,7 +11280,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a93123",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A99002",
@@ -11114,7 +11317,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a99002",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4707/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4707/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05010",
@@ -11153,7 +11357,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05010",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A83067",
@@ -11189,7 +11394,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a83067",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4781/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/4781/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05017",
@@ -11228,7 +11434,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05017",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "A05089",
@@ -11251,7 +11458,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05089",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5786/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5786/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05025",
@@ -11274,7 +11482,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05025",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5573/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5573/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A14903",
@@ -11314,7 +11523,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a14903",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A22119",
@@ -11350,7 +11560,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a22119",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3740/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/3740/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05012",
@@ -11377,7 +11588,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05012",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "N90312",
@@ -11416,7 +11628,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-n90312",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A05090",
@@ -11439,7 +11652,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05090",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5787/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5787/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05085",
@@ -11475,7 +11689,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05085",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5782/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5782/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05020",
@@ -11513,7 +11728,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05020",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05104",
@@ -11537,7 +11753,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05104",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A14904",
@@ -11576,7 +11794,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a14904",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A14911",
@@ -11603,7 +11822,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a14911",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en"
     },
     {
      "codice": "A05029",
@@ -11642,7 +11862,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05029",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A05030",
@@ -11668,7 +11889,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05030",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en"
     },
     {
      "codice": "A05053",
@@ -11706,7 +11928,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05053",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05094",
@@ -11742,7 +11965,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05094",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5791/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5791/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A05031",
@@ -11767,7 +11991,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05031",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en"
     },
     {
      "codice": "A00039",
@@ -11803,7 +12028,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00039",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5070/2026/10008?coorte=2026"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2026/5070/2026/10008?coorte=2026",
+     "gruppo_scelta": "10008:1:F:1"
     },
     {
      "codice": "A00068",
@@ -11931,7 +12157,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a83421",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05043",
@@ -12005,7 +12232,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05043",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A05041",
@@ -12043,7 +12271,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05041",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A05002",
@@ -12094,7 +12323,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05002",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A00030",
@@ -12145,7 +12375,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00030",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A00055",
@@ -12196,7 +12427,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00055",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A83041",
@@ -12234,7 +12466,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a83041",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A05049",
@@ -12272,7 +12505,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05049",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A93109",
@@ -12336,7 +12570,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a93109",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A05051",
@@ -12387,7 +12622,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05051",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05035",
@@ -12412,7 +12648,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05035",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "A84256",
@@ -12447,7 +12684,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a84256-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05036",
@@ -12473,7 +12711,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05036",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "A05032",
@@ -12512,7 +12751,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05032",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A00053",
@@ -12563,7 +12803,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00053",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A14905",
@@ -12613,7 +12854,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a14905",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "A00073",
@@ -12641,7 +12883,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00073",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "A05021",
@@ -12692,7 +12935,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05021",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05040",
@@ -12755,7 +12999,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05040",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05039",
@@ -12806,7 +13051,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05039",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A00065",
@@ -12868,7 +13114,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00065",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:8,10001:2:F:4,10002:2:F:3,10003:2:F:3"
     },
     {
      "codice": "A05042",
@@ -12893,7 +13141,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05042",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en"
     },
     {
      "codice": "A05037",
@@ -12918,7 +13167,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05037",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "A84384",
@@ -12968,7 +13218,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a84384",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "A05046",
@@ -12990,7 +13241,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05046",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en",
+     "gruppo_scelta": "10004:2:F:7,10005:2:F:7"
     },
     {
      "codice": "A05045",
@@ -13012,7 +13265,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05045",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en",
+     "gruppo_scelta": "10004:2:F:7,10005:2:F:7"
     },
     {
      "codice": "A99125",
@@ -13037,7 +13292,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a99125",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en",
+     "gruppo_scelta": "10004:2:F:7"
     },
     {
      "codice": "A00058",
@@ -13075,7 +13332,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a00058",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en",
+     "gruppo_scelta": "10004:2:F:3,10005:2:F:3"
     },
     {
      "codice": "A05034",
@@ -13100,7 +13359,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05034",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en",
+     "gruppo_scelta": "10000:2:F:8,10001:2:F:4,10002:2:F:3,10003:2:F:3"
     },
     {
      "codice": "A90077",
@@ -13122,7 +13383,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a90077",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:8,10002:2:F:7,10003:2:F:7,10004:2:F:7,10005:2:F:7"
     },
     {
      "codice": "A99121",
@@ -13144,7 +13407,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a99121",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:8,10002:2:F:7,10003:2:F:7"
     },
     {
      "codice": "A99122",
@@ -13166,7 +13431,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a99122",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:8,10002:2:F:7,10003:2:F:7"
     },
     {
      "codice": "A05044",
@@ -13188,7 +13455,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a05044",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en",
+     "gruppo_scelta": "10004:2:F:7,10005:2:F:7"
     },
     {
      "codice": "A99124",
@@ -13210,7 +13479,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a99124",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:8,10002:2:F:7,10003:2:F:7"
     },
     {
      "codice": "A84452",
@@ -13235,7 +13506,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-a84452",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "IL1100",
@@ -13272,7 +13544,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-77-economia-management-e-governance-il1100",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10004:2:F:3,10005:2:F:3"
     }
    ],
    "curricula": [
@@ -13312,7 +13585,7 @@
    "url": "https://www.liuc.it/corsi-di-studio/laurea-magistrale/ingegneria-gestionale-laurea-magistrale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "N91514",
@@ -13347,7 +13620,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91514",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:1:F:7,10001:1:F:7,10002:1:F:7,10003:1:F:6"
     },
     {
      "codice": "N92004",
@@ -13407,7 +13681,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n92004",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:1:F:7,10001:1:F:7,10002:1:F:7,10003:1:F:6"
     },
     {
      "codice": "N91525",
@@ -13454,7 +13729,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91525",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:1:F:7,10001:1:F:7,10002:1:F:7,10003:1:F:6"
     },
     {
      "codice": "N91472",
@@ -13489,7 +13765,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91472",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:1:F:7,10001:1:F:7,10002:1:F:7,10003:1:F:6"
     },
     {
      "codice": "N90315",
@@ -13546,7 +13823,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91515",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "gruppo_scelta": "10000:1:F:7,10001:1:F:7,10002:1:F:7,10003:1:F:6"
     },
     {
      "codice": "N91523",
@@ -13615,7 +13893,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91513",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:1:F:7,10001:1:F:7,10002:1:F:7,10003:1:F:6"
     },
     {
      "codice": "N92006",
@@ -13663,7 +13942,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n92006",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:1:F:7,10001:1:F:7,10002:1:F:7,10003:1:F:6"
     },
     {
      "codice": "N91326",
@@ -13698,7 +13978,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91326",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:1:F:7,10001:1:F:7,10002:1:F:7,10003:1:F:6"
     },
     {
      "codice": "N92005",
@@ -13733,7 +14014,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n92005",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:1:F:7,10001:1:F:7,10002:1:F:7,10003:1:F:6"
     },
     {
      "codice": "N92013",
@@ -14176,7 +14458,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91527",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5274/2023/10000?coorte=2025"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5274/2023/10000?coorte=2025",
+     "gruppo_scelta": "10000:1:F:7,10001:1:F:7,10002:1:F:7,10003:1:F:6"
     },
     {
      "codice": "N91508",
@@ -14284,7 +14567,8 @@
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91518",
      "stato_esami": "completo",
-     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5139/2023/10000?coorte=2025"
+     "periodo_fonte": "https://liuc.coursecatalogue.cineca.it/insegnamenti/2025/5139/2023/10000?coorte=2025",
+     "gruppo_scelta": "10000:1:F:7,10001:1:F:7,10002:1:F:7,10003:1:F:6"
     },
     {
      "codice": "N90321",
@@ -14535,7 +14819,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91527-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:7,10002:2:F:7,10003:2:F:6,10004:2:F:6"
     },
     {
      "codice": "N91518",
@@ -14570,7 +14855,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91518-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:7,10002:2:F:7,10003:2:F:6,10004:2:F:6"
     },
     {
      "codice": "N92004",
@@ -14630,7 +14916,9 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n92004-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:7,10002:2:F:7,10003:2:F:6,10004:2:F:6"
     },
     {
      "codice": "N91525",
@@ -14677,7 +14965,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91525-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:7,10002:2:F:7,10003:2:F:6,10004:2:F:6"
     },
     {
      "codice": "N91509",
@@ -14702,7 +14992,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91509",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "N92008",
@@ -14727,7 +15018,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n92008",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "N90508",
@@ -14765,7 +15057,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n90508",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N91472",
@@ -14800,7 +15093,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91472-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:7,10002:2:F:7,10003:2:F:6,10004:2:F:6"
     },
     {
      "codice": "N90315",
@@ -14838,7 +15133,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n90315-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N91471",
@@ -14998,7 +15294,8 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91471",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "N91510",
@@ -15036,7 +15333,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91510",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N91540",
@@ -15062,7 +15360,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91540",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "N92006",
@@ -15110,7 +15409,9 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n92006-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:7,10002:2:F:7,10003:2:F:6,10004:2:F:6"
     },
     {
      "codice": "N91539",
@@ -15149,7 +15450,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91539",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N91326",
@@ -15184,7 +15486,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91326-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:7,10002:2:F:7,10003:2:F:6,10004:2:F:6"
     },
     {
      "codice": "N91469",
@@ -15246,7 +15550,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91469",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "N91528",
@@ -15285,7 +15590,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91528",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N91315",
@@ -15335,7 +15641,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91315",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "N91470",
@@ -15385,7 +15692,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91470",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "N91538",
@@ -15423,7 +15731,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91538",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N92007",
@@ -15449,7 +15758,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n92007",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it"
     },
     {
      "codice": "N91514",
@@ -15484,7 +15794,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91514-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:7,10002:2:F:7,10003:2:F:6,10004:2:F:6"
     },
     {
      "codice": "N91524",
@@ -15522,7 +15834,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91524",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N90507",
@@ -15562,7 +15875,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n90507",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N91515",
@@ -15587,7 +15901,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91515-a2",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "en",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:7,10002:2:F:7,10003:2:F:6,10004:2:F:6"
     },
     {
      "codice": "N91523",
@@ -15624,7 +15940,8 @@
      "verificato_il": "2026-10-20",
      "stato_libri": "da_aggiungere",
      "id": "liuc-lm-31-ingegneria-gestionale-n91523-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it"
     },
     {
      "codice": "N91459",
@@ -15664,7 +15981,8 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91459",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en"
     },
     {
      "codice": "N91513",
@@ -15699,7 +16017,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91513-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:7,10002:2:F:7,10003:2:F:6,10004:2:F:6"
     },
     {
      "codice": "N91532",
@@ -15721,7 +16041,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91532",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:4,10001:2:F:4,10002:2:F:4,10003:2:F:3,10004:2:F:3"
     },
     {
      "codice": "N91531",
@@ -15743,7 +16065,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n91531",
-     "stato_esami": "da_aggiungere"
+     "stato_esami": "da_aggiungere",
+     "lingua": "it",
+     "gruppo_scelta": "10000:2:F:4,10001:2:F:4,10002:2:F:4,10003:2:F:3,10004:2:F:3"
     },
     {
      "codice": "N92005",
@@ -15778,7 +16102,9 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "liuc-lm-31-ingegneria-gestionale-n92005-a2",
-     "stato_esami": "completo"
+     "stato_esami": "completo",
+     "lingua": "en",
+     "gruppo_scelta": "10000:2:F:7,10001:2:F:7,10002:2:F:7,10003:2:F:6,10004:2:F:6"
     }
    ],
    "curricula": [

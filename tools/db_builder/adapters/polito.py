@@ -68,7 +68,9 @@ def _riga(tr: str) -> dict | None:
     return {
         "codice": _testo(td[1]) or None, "nome": nome,
         "ssd": "; ".join(_testo(x).strip(" ;") for x in re.split(r"<br\s*/?>", td[2]) if _testo(x)) or None,
-        "periodo": per if per in ("1", "2", "3") else ("annuale" if per in ("1,2", "1; 2") else per or None),
+        # «1,2»: a cavallo dei due periodi didattici (annuale); «1; 2»: offerto nell'uno o nell'altro a scelta
+        # (es. «Lingua inglese I livello»): il periodo non è determinato
+        "periodo": per if per in ("1", "2", "3") else ("annuale" if per == "1,2" else None if per == "1; 2" else per or None),
         "cfu": int(cfu) if cfu is not None and cfu.is_integer() else cfu,
         "docenti": sorted({_testo(d) for d in docenti if _testo(d)}),
         "url": BASE + html.unescape(link.group(1)) if link else None,

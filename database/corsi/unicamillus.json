@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unicamillus",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-20",
+ "aggiornato_il": "2026-10-21",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://unicamillus.org/corsi/triennale/fisioterapia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "92417",
@@ -1074,6 +1074,18 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "Titolo: Compendio di Chirurgia per le professioni sanitarie ISBN 9781496349576"
+      },
+      {
+       "titolo": "Compendio di Chirurgia per le professioni sanitarie",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "Titolo: Compendio di Chirurgia per le professioni sanitarie"
       }
      ],
      "url": "https://unicamillus-public.gomp.it/PublicData?uid=75bb211f-e5fa-46aa-b963-96bf11161d6c&mode=CourseDetail&iso=ita&academicYear=2026",
@@ -1424,7 +1436,7 @@
    "url": "http://www.unicamillus.org",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "92265",
@@ -2020,7 +2032,7 @@
    "url": "https://unicamillus.org/corsi/triennale/infermieristica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "90194",
@@ -3958,7 +3970,7 @@
    "url": "https://unicamillus.org/corsi/triennale/ostetricia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "90349",
@@ -5472,7 +5484,7 @@
    "url": "https://unicamillus.org/corsi/triennale/tecniche-di-radiologia-medica-per-immagini-e-radioterapia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "90172",
@@ -6723,7 +6735,7 @@
    "url": "https://www.unicamillus.org/it/corso-di-laurea-in-scienze-della-nutrizione-umana/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "90675",
@@ -7100,7 +7112,7 @@
    "url": "https://www.unicamillus.org/it/corsi-di-laurea-magistrale-in-medicina-e-chirurgia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "92525",
@@ -9180,7 +9192,7 @@
    "url": "https://www.unicamillus.org/it/corso-di-laurea-magistrale-in-medicina-e-chirurgia-venezia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "92513",
@@ -10298,7 +10310,7 @@
    "url": "https://unicamillus.org/corsi/magistrale/medicina-e-chirurgia-roma-italiano/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "92514",
@@ -11452,7 +11464,7 @@
    "url": "https://unicamillus.org/corsi/magistrale/medicina-e-chirurgia-cefalu/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "92522",
@@ -12537,7 +12549,7 @@
    "url": "http://www.unicamillus.org/it/corso-di-laurea-magistrale-in-odontoiatria-e-protesi-dentaria/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -13911,7 +13923,7 @@
    "url": "http://www.unicamillus.org/it/corso-di-laurea-magistrale-in-odontoiatria-e-protesi-dentaria/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,

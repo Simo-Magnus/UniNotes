@@ -58,16 +58,17 @@ def _normalizza(p, inizio=None, fine=None) -> str | None:
     if p is None and not (inizio and fine):
         return None
     r = pulizia.periodo(str(p).strip() if p is not None else None, inizio, fine)
-    return r if r in VALIDI else None
+    return r if r in VALIDI or re.fullmatch(r"[1-6]° periodo", r or "") else None  # «2° periodo»: ciclo dichiarato
 
 
-def scrivi(uid: str, risultati: dict[str, dict], unisci: bool = True) -> tuple[int, int]:
-    """Scrive database/contrib/auto/<uid>_periodi.json. Con `unisci` mantiene i risultati già nel file.
-    Ritorna (voci scritte, id sconosciuti scartati)."""
+def scrivi(uid: str, risultati: dict[str, dict], unisci: bool = True, nome_file: str | None = None) -> tuple[int, int]:
+    """Scrive database/contrib/auto/<uid>_periodi.json (o `nome_file`: i contributi si applicano in ordine alfabetico,
+    un file che deve vincere su <uid>_piani.json ecc. ha un nome che viene dopo). Con `unisci` mantiene i risultati
+    già nel file. Ritorna (voci scritte, id sconosciuti scartati)."""
     db = carica(uid)
     esistenti = {i["id"]: c["id"] for c in db["corsi"] for i in c.get("insegnamenti") or []}
     nomi = {i["id"]: i.get("nome") for c in db["corsi"] for i in c.get("insegnamenti") or []}  # build_db vuole il nome
-    out_path = DB / "contrib" / "auto" / f"{uid}_periodi.json"
+    out_path = DB / "contrib" / "auto" / (nome_file or f"{uid}_periodi.json")
     tutti: dict[str, dict] = {}
     if unisci and out_path.exists():
         old = json.loads(out_path.read_text(encoding="utf-8"))

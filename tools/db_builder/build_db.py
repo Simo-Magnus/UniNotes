@@ -416,7 +416,9 @@ def main() -> None:
     contrib = defaultdict(list)  # (uid, corso_id|id_universitaly) -> insegnamenti
     contrib_corsi = defaultdict(list)
     appelli: dict[str, dict[str, list]] = defaultdict(lambda: defaultdict(list))
-    for p in sorted((DB / "contrib").rglob("*.json")):
+    # gli overlay dei periodi (`<uid>_periodi.json`) per ultimi: un contributo completo che viene dopo
+    # in ordine alfabetico (`<uid>_piani.json`) riscrive il periodo anche quando non lo conosce
+    for p in sorted((DB / "contrib").rglob("*.json"), key=lambda p: (p.stem.endswith("_periodi"), str(p))):
         data = load_json(p, {})
         for corso in data.get("corsi", []):
             contrib_corsi[data["universita_id"]].append(corso)
@@ -536,6 +538,7 @@ def main() -> None:
         pulizia.rivedi_varianti(corsi)  # varianti già nel file che non sono una traduzione: di nuovo insegnamenti
         pulizia.varianti_lingua(corsi)  # versioni in inglese degli insegnamenti: varianti della versione italiana
         pulizia.varianti_lingua_gemelli(corsi)  # stesso insegnamento in italiano e inglese nello stesso piano
+        pulizia.varianti_lingua_scelta(corsi)  # italiano e inglese nello stesso gruppo di scelta (lingua e gruppo dalla fonte)
         esistenti = {i.get("id") for oc in old["corsi"] for i in oc.get("insegnamenti") or []}
         pulizia.unisci_omonimi(corsi, esistenti)  # stesso insegnamento per più canali/sedi: uno solo (id già esistenti prima)
         pulizia.segna_a_scelta(corsi)  # segnaposto «a scelta» (es. «Esame a scelta 1»): a scelta

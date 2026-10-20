@@ -221,13 +221,34 @@ abstract class CloudDriveService extends ChangeNotifier {
   static bool isAppFolder(String base) =>
       base == defaultFolder || base == legacyFolder;
 
-  Future<void> signOut() async {
+  /// «Scollega»: toglie l'accesso salvato su questo dispositivo e poi, dove
+  /// il servizio lo permette ([revoke]), anche presso il servizio. false = la
+  /// revoca presso il servizio non è riuscita (senza rete, errore): il
+  /// collegamento sul dispositivo è tolto comunque, senza aspettarla.
+  Future<bool> signOut() async {
     stopAutoSync();
+    String? refresh;
+    try {
+      refresh = await secrets.read(refreshKey);
+    } catch (_) {}
     await secrets.delete(refreshKey);
     await settings.set(accountKey, null);
     tokens = null;
     notifyListeners();
+    if (refresh == null || refresh.isEmpty) return true;
+    try {
+      return await revoke(refresh).timeout(const Duration(seconds: 10));
+    } catch (_) {
+      return false;
+    }
   }
+
+  /// Revoca del refresh token presso il servizio (true = revocato o niente
+  /// da revocare). Predefinito: nessuna revoca. Microsoft non revoca un
+  /// singolo token di un'app pubblica (`revokeSignInSessions` chiuderebbe
+  /// tutte le sessioni dell'utente, su ogni app): la scheda OneDrive dice
+  /// dove togliere l'accesso dall'account.
+  Future<bool> revoke(String refreshToken) async => true;
 
   Future<String> accessToken() async {
     final t = tokens;
@@ -258,6 +279,45 @@ abstract class CloudDriveService extends ChangeNotifier {
       await secrets.write(refreshKey, n.refreshToken!);
     }
     return n.accessToken;
+  }
+
+  /// Impostazioni scritte durante l'accesso: tornano come prima se
+  /// l'accesso non si completa ([completeSignIn]).
+  List<String> get signInKeys => [accountKey];
+
+  /// Accesso atomico: salva [t] ([storeTokens]) e poi esegue [then] (nome
+  /// dell'account, cartella dell'app). Se [then] non riesce si torna allo
+  /// stato di prima (refresh token e [signInKeys], di solito nessun
+  /// collegamento) e l'errore arriva allo studente: l'app non resta
+  /// «collegata» con un collegamento a metà.
+  Future<void> completeSignIn(
+    OAuthTokens t,
+    Future<void> Function() then,
+  ) async {
+    String? prevRefresh;
+    try {
+      prevRefresh = await secrets.read(refreshKey);
+    } catch (_) {}
+    final prevSettings = {for (final k in signInKeys) k: await settings.get(k)};
+    final prevTokens = tokens;
+    final prevExpired = authExpired;
+    await storeTokens(t);
+    try {
+      await then();
+    } catch (_) {
+      try {
+        prevRefresh == null
+            ? await secrets.delete(refreshKey)
+            : await secrets.write(refreshKey, prevRefresh);
+        for (final e in prevSettings.entries) {
+          await settings.set(e.key, e.value);
+        }
+      } catch (_) {}
+      tokens = prevTokens;
+      authExpired = prevExpired;
+      notifyListeners();
+      rethrow;
+    }
   }
 
   /// Dopo l'accesso: refresh token nel portachiavi.
@@ -321,9 +381,23 @@ abstract class CloudDriveService extends ChangeNotifier {
       if (x.trim().isNotEmpty) x.trim(),
   };
 
+  /// «Salva nel cloud» di un libro per tutti i [services] (OneDrive e
+  /// Google Drive): la lista dei libri solo locali è comune
+  /// ([booksLocalOnlyKey]), la casella «Libri» si riattiva su ognuno.
+  static Future<void> setBookInCloudFor(
+    Iterable<CloudDriveService> services,
+    String storedFile,
+    bool inCloud,
+  ) async {
+    for (final s in services) {
+      await s.setBookInCloud(storedFile, inCloud);
+    }
+  }
+
   /// «Salva nel cloud» di un libro: [inCloud] false lo tiene solo su questo
   /// dispositivo; true lo rimette nella sincronizzazione (e attiva la
-  /// casella «Libri» se era spenta).
+  /// casella «Libri» di questo servizio se era spenta; per tutti i servizi
+  /// vedi [setBookInCloudFor]).
   Future<void> setBookInCloud(String storedFile, bool inCloud) async {
     final set = await booksLocalOnly();
     inCloud ? set.remove(storedFile) : set.add(storedFile);

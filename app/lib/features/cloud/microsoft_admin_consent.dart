@@ -175,7 +175,8 @@ class MicrosoftAdminConsent {
   }
 
   /// Tenant per riprovare con un account personale: «common» se quello
-  /// scelto in Avanzate ammette solo account di lavoro o scuola.
+  /// dell'impostazione `onedrive_tenant` ammette solo account di lavoro o
+  /// scuola.
   static String tenantForPersonal(String tenant) {
     final t = MicrosoftOAuth.normalizeTenant(tenant);
     return t == 'common' || t == 'consumers' ? t : MicrosoftOAuth.defaultTenant;

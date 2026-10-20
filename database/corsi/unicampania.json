@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unicampania",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-20",
+ "aggiornato_il": "2026-10-21",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.medicinasperimentale.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-assistenza-sanitaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -1124,7 +1124,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/biotecnologie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A4605",
@@ -3095,7 +3095,7 @@
    "url": "http://www.letterebeniculturali.unicampania.it/didattica/offerta-formativa/corsi-di-laurea-triennale/conservazione-dei-beni-culturali.html",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A422739",
@@ -10188,7 +10188,7 @@
    "url": "http://www.matfis.unicampania.it/didattica/corsi-di-studio/data-analytics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A422435",
@@ -13787,7 +13787,7 @@
    "url": "http://www.architettura.unicampania.it/didattica/corsi-di-studio/design-e-comunicazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -16817,7 +16817,7 @@
    "url": "http://www.architettura.unicampania.it/didattica/corsi-di-studio/design-per-la-moda",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A03112",
@@ -19025,7 +19025,7 @@
    "url": "https://www.economia.unicampania.it/didattica/corsi-di-studio/economia-aziendale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A070811",
@@ -23011,7 +23011,7 @@
    "url": "https://www.economia.unicampania.it/didattica/corsi-di-studio/economia-e-commercio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -25918,7 +25918,7 @@
    "url": "http://www.matfis.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-fisica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A3501",
@@ -27755,7 +27755,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A6508",
@@ -28948,7 +28948,7 @@
        "citazione": "Cardiologia per le lauree triennali e magistrali - Idelson Grnocchi"
       },
       {
-       "titolo": "Harrison. Principi di medicina interna, Editore CEA, 2021. I testi per approfondimenti specifici saranno consigliati durante le lezioni. ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948",
+       "titolo": "Harrison. Principi di medicina interna, Editore CEA, 2021. I testi per approfondimenti specifici saranno consigliati durante le lezioni. ISBN 9788829929948",
        "autori": null,
        "editore": null,
        "anno": 2021,
@@ -28957,7 +28957,19 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
-       "citazione": "Harrison. Principi di medicina interna, Editore CEA, 2021. I testi per approfondimenti specifici saranno consigliati durante le lezioni. ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948 ISBN 9788829929948"
+       "citazione": "Harrison. Principi di medicina interna, Editore CEA, 2021. I testi per approfondimenti specifici saranno consigliati durante le lezioni. ISBN 9788829929948"
+      },
+      {
+       "titolo": "Harrison. Principi di medicina interna, Editore CEA, 2021. I testi per approfondimenti specifici saranno consigliati durante le lezioni.",
+       "autori": null,
+       "editore": "Editore CEA",
+       "anno": 2021,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
+       "citazione": "Harrison. Principi di medicina interna, Editore CEA, 2021. I testi per approfondimenti specifici saranno consigliati durante le lezioni."
       }
      ],
      "esami": [
@@ -29507,7 +29519,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A6508",
@@ -30460,6 +30472,18 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://www.dipmdsmco.unicampania.it/dipartimento/docenti?MATRICOLA=701275&COD_UNITA=A6516B&CFU=1.00&COD_ATTIVITA=A6516&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=MED/11); quello 2026/27 non indica i testi",
        "citazione": "Cardiologia per le lauree triennali e magistrali - Idelson Grnocchi ISBN 9788829929948"
+      },
+      {
+       "titolo": "Cardiologia per le lauree triennali e magistrali - Idelson Grnocchi",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://www.dipmdsmco.unicampania.it/dipartimento/docenti?MATRICOLA=701275&COD_UNITA=A6516B&CFU=1.00&COD_ATTIVITA=A6516&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=MED/11); quello 2026/27 non indica i testi",
+       "citazione": "Cardiologia per le lauree triennali e magistrali - Idelson Grnocchi"
       }
      ],
      "stato_libri": "completo",
@@ -30854,7 +30878,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/fisioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A6508",
@@ -31807,6 +31831,18 @@
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://www.dipmdsmco.unicampania.it/dipartimento/docenti?MATRICOLA=701275&COD_UNITA=A6516B&CFU=1.00&COD_ATTIVITA=A6516&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=MED/11); quello 2026/27 non indica i testi",
        "citazione": "Cardiologia per le lauree triennali e magistrali - Idelson Grnocchi ISBN 9788829929948"
+      },
+      {
+       "titolo": "Cardiologia per le lauree triennali e magistrali - Idelson Grnocchi",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2025/26 dello stesso insegnamento (https://www.dipmdsmco.unicampania.it/dipartimento/docenti?MATRICOLA=701275&COD_UNITA=A6516B&CFU=1.00&COD_ATTIVITA=A6516&CODICE_PARTIZIONE=N0&AA_OFFERTA=2025&SETTORE=MED/11); quello 2026/27 non indica i testi",
+       "citazione": "Cardiologia per le lauree triennali e magistrali - Idelson Grnocchi"
       }
      ],
      "stato_libri": "completo",
@@ -32201,7 +32237,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/igiene-dentale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A8405",
@@ -33613,7 +33649,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A5011",
@@ -35936,7 +35972,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A5011",
@@ -37965,7 +38001,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A5011",
@@ -39994,7 +40030,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A5011",
@@ -42023,7 +42059,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A5011",
@@ -44052,7 +44088,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A5011",
@@ -46081,7 +46117,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A5011",
@@ -48110,7 +48146,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/infermieristica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A5011",
@@ -50139,7 +50175,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/ingegneria-aerospaziale-meccanica-energetica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A14004",
@@ -55982,7 +56018,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/ingegneria-biomedica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A13111",
@@ -58555,7 +58591,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/257",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A425623",
@@ -63454,7 +63490,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/ingegneria-elettronica-e-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A13050",
@@ -67324,7 +67360,7 @@
    "url": "https://www.ingegneria.unicampania.it/didattica/corsi-di-studio/ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A14004",
@@ -70452,7 +70488,7 @@
    "url": "https://www.letterebeniculturali.unicampania.it/didattica/corsi-di-studio/lettere",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A422968",
@@ -76158,7 +76194,7 @@
    "url": "http://www.salutementaleefisica.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-logopedia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A7108",
@@ -80137,7 +80173,7 @@
    "url": "http://www.salutementaleefisica.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-logopedia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A7108",
@@ -81188,7 +81224,7 @@
    "url": "http://www.matfis.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-matematica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -83633,7 +83669,7 @@
    "url": "http://www.scienzemedichetraslazionali.unicampania.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A422399",
@@ -84697,7 +84733,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/ortottica-e-assistenza-oftalmologica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A421323",
@@ -86121,7 +86157,7 @@
    "url": "http://www.dipdbc.unicampania.it/didattica/corsi-di-studio/ostetricia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A6107",
@@ -87516,7 +87552,7 @@
    "url": "https://www.distabif.unicampania.it/didattica/corsi-di-studio/scienze-agrarie-e-forestali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A423249",
@@ -89439,7 +89475,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/scienze-ambientali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "76049",
@@ -90931,7 +90967,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/scienze-biologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A3664",
@@ -92846,7 +92882,7 @@
    "url": "http://www.giurisprudenza.unicampania.it/didattica/corsi-di-studio/scienze-dei-servizi-giuridici",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A422016",
@@ -95281,7 +95317,7 @@
    "url": "https://www.scienzepolitiche.unicampania.it/didattica/corsi-di-studio/scienze-del-turismo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A424881",
@@ -98987,7 +99023,7 @@
    "url": "http://www.architettura.unicampania.it/didattica/corsi-di-studio/scienze-e-tecniche-dell-edilizia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -101079,7 +101115,7 @@
    "url": "http://www.psicologia.unicampania.it/didattica/corsi-di-studio/scienze-e-tecniche-psicologiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A2995",
@@ -104475,7 +104511,7 @@
    "url": "https://www.scienzepolitiche.unicampania.it/didattica/corsi-di-studio/scienze-politiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "B40G01",
@@ -108022,7 +108058,7 @@
    "url": "http://www.salutementaleefisica.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecnica-della-riabilitazione-psichiatrica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A7308",
@@ -111035,18 +111071,6 @@
        "citazione": "Anatomia radiologica di Netter - Weber - Vilensky - Carmichael - Netter - Lee - Ed.: Edra Masson"
       },
       {
-       "titolo": "Tecniche di tomografia computerizzata e risonanza magnetica ( TC - RM ). Autore: Cei - La Fianza - Baluce, Ed.: Seu - ISBN: 9788865150160 ISBN: 9788821439742 ISBN: 9788821439742",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788865150160",
-       "lingua": null,
-       "tipo": null,
-       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
-       "citazione": "Tecniche di tomografia computerizzata e risonanza magnetica ( TC - RM ). Autore: Cei - La Fianza - Baluce, Ed.: Seu - ISBN: 9788865150160 ISBN: 9788821439742 ISBN: 9788821439742"
-      },
-      {
        "titolo": "Tecniche di tomografia computerizzata e risonanza magnetica ( TC - RM ). Autore: Cei - La Fianza - Baluce, Ed.: Seu - ISBN: 9788865150160 ISBN: 9788821439742",
        "autori": null,
        "editore": null,
@@ -111057,6 +111081,18 @@
        "tipo": null,
        "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
        "citazione": "Tecniche di tomografia computerizzata e risonanza magnetica ( TC - RM ). Autore: Cei - La Fianza - Baluce, Ed.: Seu - ISBN: 9788865150160 ISBN: 9788821439742"
+      },
+      {
+       "titolo": "Tecniche di tomografia computerizzata e risonanza magnetica ( TC - RM ). Autore: Cei - La Fianza - Baluce, Ed.: Seu - ISBN: 9788865150160",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788865150160",
+       "lingua": null,
+       "tipo": null,
+       "note": "dal programma dell'a.a. 2025/26 (quello 2026/27 non indica i testi)",
+       "citazione": "Tecniche di tomografia computerizzata e risonanza magnetica ( TC - RM ). Autore: Cei - La Fianza - Baluce, Ed.: Seu - ISBN: 9788865150160"
       }
      ],
      "esami": [
@@ -111429,7 +111465,7 @@
    "url": "http://www.medicinasperimentale.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-della-prevenzione-nell-ambiente-e-nei-luoghi-di-lavoro",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -112638,7 +112674,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A422832",
@@ -114160,7 +114196,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A422832",
@@ -115304,7 +115340,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-laboratorio-biomedico",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A422832",
@@ -116448,7 +116484,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-radiologia-medica-per-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A7904",
@@ -117332,7 +117368,7 @@
        "citazione": "Trattato di RM cranio e rachide - G. Dal Pozzo, Ed.Edra Masson, ISBN: 9788821442100"
       },
       {
-       "titolo": "Neuroradiologia - C. Colosimo, Ed. Edra Masson, ISBN: 9788821429095 ISBN: 9788821439742 ISBN: 9788821439742",
+       "titolo": "Neuroradiologia - C. Colosimo, Ed. Edra Masson, ISBN: 9788821429095 ISBN: 9788821439742",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -117341,19 +117377,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Neuroradiologia - C. Colosimo, Ed. Edra Masson, ISBN: 9788821429095 ISBN: 9788821439742 ISBN: 9788821439742"
-      },
-      {
-       "titolo": "Neuroradiologia - C. Colosimo, Ed. Edra Masson, ISBN: 9788821429095",
-       "autori": null,
-       "editore": "Ed. Edra Masson",
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788821429095",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Neuroradiologia - C. Colosimo, Ed. Edra Masson, ISBN: 9788821429095"
+       "citazione": "Neuroradiologia - C. Colosimo, Ed. Edra Masson, ISBN: 9788821429095 ISBN: 9788821439742"
       }
      ],
      "esami": [
@@ -117971,7 +117995,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-radiologia-medica-per-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A7904",
@@ -119138,7 +119162,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-radiologia-medica-per-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A7904",
@@ -120305,7 +120329,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-tecniche-di-radiologia-medica-per-immagini-e-radioterapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A7904",
@@ -121472,7 +121496,7 @@
    "url": "http://www.salutementaleefisica.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-in-terapia-della-neuro-e-psicomotricita-dell-eta-evolutiva",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A7410",
@@ -124618,7 +124642,7 @@
    "url": "https://www.letterebeniculturali.unicampania.it/didattica/corsi-di-studio/magistrale-in-archeologia-e-storia-dell-arte",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A422963",
@@ -128136,7 +128160,7 @@
    "url": "https://www.architettura.unicampania.it/didattica/corsi-di-studio/magistrale-in-architettura-rigenerazione-dell-ambiente-costruito-in-lingua-inglese",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A424392",
@@ -129437,7 +129461,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/magistrale-in-biologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A425640",
@@ -131079,7 +131103,7 @@
    "url": "https://www.matfis.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-in-data-science",
    "stato": "completo",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A423688",
@@ -132496,7 +132520,7 @@
    "url": "http://www.architettura.unicampania.it/didattica/corsi-di-studio/magistrale-in-design-per-l-innovazione",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -134550,7 +134574,7 @@
    "url": "https://www.giurisprudenza.unicampania.it/cds-diritto-della-sicurezza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A424328",
@@ -135511,7 +135535,7 @@
    "url": "http://www.economia.unicampania.it/didattica/corsi-di-studio/magistrale-in-economia-e-management",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A425917",
@@ -139030,7 +139054,7 @@
    "url": "https://www.economia.unicampania.it/didattica/corsi-di-studio/magistrale-in-economia-finanza-e-mercati",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A424448",
@@ -142060,7 +142084,7 @@
    "url": "http://www.letterebeniculturali.unicampania.it/didattica/corsi-di-studio/magistrale-in-filologia-classica-e-moderna",
    "stato": "completo",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A2804",
@@ -144394,7 +144418,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-aerospaziale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A15016",
@@ -146158,7 +146182,7 @@
    "url": "https://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-biomedica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -146896,7 +146920,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/259",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A424148",
@@ -153504,7 +153528,7 @@
      "url": "https://www.ingegneria.unicampania.it/dipartimento/docenti?COD_ATTIVITA=A421422&AA_OFFERTA=2026",
      "libri": [
       {
-       "titolo": "Testi di riferimentoL. Bellia, P. Mazzei, F. Minichiello, D. Palma, Aria umida. Climatizzazione ed involucro edilizio, Liguori Editore, 2006, ISBN: 9788820738426 ISBN: 9788820738426 ISBN: 9788820738426",
+       "titolo": "Testi di riferimentoL. Bellia, P. Mazzei, F. Minichiello, D. Palma, Aria umida. Climatizzazione ed involucro edilizio, Liguori Editore, 2006, ISBN: 9788820738426",
        "autori": null,
        "editore": null,
        "anno": 2006,
@@ -153513,7 +153537,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Testi di riferimentoL. Bellia, P. Mazzei, F. Minichiello, D. Palma, Aria umida. Climatizzazione ed involucro edilizio, Liguori Editore, 2006, ISBN: 9788820738426 ISBN: 9788820738426 ISBN: 9788820738426"
+       "citazione": "Testi di riferimentoL. Bellia, P. Mazzei, F. Minichiello, D. Palma, Aria umida. Climatizzazione ed involucro edilizio, Liguori Editore, 2006, ISBN: 9788820738426"
       },
       {
        "titolo": "Testi di riferimentoL. Bellia, P. Mazzei, F. Minichiello, D. Palma, Aria umida. Climatizzazione ed involucro edilizio, Liguori Editore, 2006,",
@@ -153526,18 +153550,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Testi di riferimentoL. Bellia, P. Mazzei, F. Minichiello, D. Palma, Aria umida. Climatizzazione ed involucro edilizio, Liguori Editore, 2006,"
-      },
-      {
-       "titolo": "Aria umida. Climatizzazione ed involucro edilizio",
-       "autori": "L. Bellia, P. Mazzei, F. Minichiello, D. Palma",
-       "editore": "Liguori Editore",
-       "anno": 2006,
-       "edizione": null,
-       "isbn": "9788820738426",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "L. Bellia, P. Mazzei, F. Minichiello, D. Palma, Aria umida. Climatizzazione ed involucro edilizio, Liguori Editore, 2006, ISBN: 9788820738426"
       }
      ],
      "esami": [
@@ -153723,7 +153735,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-elettronica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A17017",
@@ -155568,7 +155580,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-gestionale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A424856",
@@ -157409,7 +157421,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A423396",
@@ -158773,7 +158785,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-meccanica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A19003",
@@ -161517,7 +161529,7 @@
    "url": "http://www.ingegneria.unicampania.it/didattica/corsi-di-studio/magistrale-in-ingegneria-per-l-energia-e-l-ambiente",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A423391",
@@ -165403,7 +165415,7 @@
    "url": "http://www.matfis.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-in-matematica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A422255",
@@ -169166,7 +169178,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/magistrale-in-lingua-inglese-molecular-biotechnology",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -170053,7 +170065,7 @@
    "url": "https://www.matfis.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-in-physics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A424480",
@@ -171094,7 +171106,7 @@
    "url": "https://www.scienzepolitiche.unicampania.it/didattica/corsi-di-studio/magistrale-in-progettazione-e-gestione-dei-sistemi-turistici",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A42C105",
@@ -174019,7 +174031,7 @@
    "url": "https://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-applicata",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A424453",
@@ -176826,7 +176838,7 @@
    "url": "http://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-clinica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A425885",
@@ -178620,7 +178632,7 @@
    "url": "http://www.psicologia.unicampania.it/didattica/corsi-di-studio/magistrale-in-psicologia-dei-processi-cognitivi",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A423331",
@@ -181011,7 +181023,7 @@
    "url": "https://www.scienzepolitiche.unicampania.it/didattica/corsi-di-studio/magistrale-in-relazioni-ed-organizzazioni-internazionali",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -184221,7 +184233,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/magistrale-in-scienze-degli-alimenti-e-della-nutrizione-umana",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A9401",
@@ -185628,7 +185640,7 @@
    "url": "https://www.scienzepolitiche.unicampania.it/didattica/corsi-di-studio/magistrale-in-scienza-della-politica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -187590,7 +187602,7 @@
    "url": "https://www.scienzepolitiche.unicampania.it/didattica/corsi-di-studio/magistrale-in-scienze-e-tecniche-delle-amministrazioni-pubbliche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -189597,7 +189609,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/magistrale-in-scienze-e-tecnologie-per-l-ambiente-e-territorio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A425688",
@@ -190583,7 +190595,7 @@
    "url": "http://www.medicinasperimentale.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-in-scienze-infermieristiche-e-ostetriche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -191091,7 +191103,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/scienze-riabilitative-delle-professioni-sanitarie",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A425174",
@@ -191742,7 +191754,7 @@
    "url": "http://www.architettura.unicampania.it/didattica/corsi-di-studio/architettura",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A423737",
@@ -196852,7 +196864,7 @@
    "url": "http://www.distabif.unicampania.it/didattica/corsi-di-studio/magistrale-a-ciclo-unico-in-farmacia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A422709",
@@ -199126,7 +199138,7 @@
    "url": "https://www.giurisprudenza.unicampania.it/cds-giurisprudenza-online",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A424285",
@@ -200676,7 +200688,7 @@
    "url": "http://www.giurisprudenza.unicampania.it/didattica/corsi-di-studio/magistrale-a-ciclo-unico-in-giurisprudenza",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A425484",
@@ -202557,7 +202569,7 @@
    "url": "http://www.damss.unicampania.it/didattica/cds/corsi-di-studio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -204733,6 +204745,18 @@
        "tipo": null,
        "note": "dal programma dell'a.a. 2024/25 (scheda collegata dal piano dell'ateneo)",
        "citazione": "ISBN Number: 9780323482554 EAN: 9788879477604 ISBN: 8879477609"
+      },
+      {
+       "titolo": "ISBN Number: 9780323482554",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": "9780323482554",
+       "lingua": null,
+       "tipo": null,
+       "note": "dal programma dell'a.a. 2024/25 (scheda collegata dal piano dell'ateneo)",
+       "citazione": "ISBN Number: 9780323482554"
       }
      ],
      "esami": [
@@ -205236,7 +205260,7 @@
    "url": "http://www.medicinasperimentale.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-a-ciclo-unico-in-medicina-e-chirurgia-sede-di-napoli",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A422709",
@@ -208495,7 +208519,7 @@
    "url": "http://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-a-ciclo-unico-in-medicina-e-chirurgia-in-lingua-inglese-medicine-and-surgery-in-english",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A425562",
@@ -211216,7 +211240,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/medicina-e-chirurgia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A425840",
@@ -211845,7 +211869,7 @@
    "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/magistrale-in-odontoiatria-e-protesi-dentaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A425700",
@@ -214095,7 +214119,7 @@
    "url": "https://www.letterebeniculturali.unicampania.it/didattica/corsi-di-studio/magistrale-a-ciclo-unico-in-scienze-della-formazione-primaria",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "A424912",

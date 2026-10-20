@@ -61,6 +61,12 @@ class GoogleOAuth extends LoopbackOAuth {
   final OAuthRedirectMode mode;
   final WebAuthenticator _webAuth;
 
+  /// Revoca di un token (alla disconnessione, [GoogleDriveService.revoke]).
+  static final revokeEndpoint = Uri.https('oauth2.googleapis.com', '/revoke');
+
+  /// Pagina dell'account dove togliere l'accesso a mano.
+  static const permissionsPage = 'https://myaccount.google.com/permissions';
+
   /// Solo i file creati dall'app o scelti dallo studente (non `drive`, che è
   /// uno scope con restrizioni).
   static const defaultScope = 'https://www.googleapis.com/auth/drive.file';

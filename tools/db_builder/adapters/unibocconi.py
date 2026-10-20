@@ -48,7 +48,20 @@ ROOT = pathlib.Path(__file__).resolve().parents[3]
 TS = "https://didattica.unibocconi.eu/ts/"
 GUIDA = "https://didattica.unibocconi.eu/tsg/"
 ESAMI = "https://didattica.unibocconi.eu/esami/esami_calendario.php?IdPag=106&esame="
-SEM = {"I sem.": "1", "II sem.": "2", "I/II sem.": "annuale"}
+# «I/II sem.» NON è annuale: sulle schede vuol dire che le classi parallele sono in entrambi i semestri («Classes: 31 (I sem.) -
+# 32 (II sem.)»). Resta senza periodo, a meno che tutte le classi siano nello stesso semestre (`semestre_classi`).
+SEM = {"I sem.": "1", "II sem.": "2"}
+PARALLELE = "I/II sem."
+
+
+def semestre_classi(s: str) -> str | None:
+    """Semestre dalla riga «Classes: 31 (I sem.) - 32 (II sem.)» della scheda: solo se tutte le classi sono nello stesso
+    semestre; se sono in entrambi (o la riga non c'è) nessun periodo."""
+    m = re.search(r"Classes?\s*:\s*((?:[\w.]+\s*\((?:I|II)\s+sem\.\)\s*-?\s*)+)", _testo(s))
+    if not m:
+        return None
+    sem = set(re.findall(r"\((I|II)\s+sem\.\)", m.group(1)))
+    return SEM.get(sem.pop() + " sem.") if len(sem) == 1 else None
 
 # corso del database (prefisso dell'id) → sigle dell'erogato (la prima è quella del corso), volume della guida e
 # programma nella guida: ("sigla", "BIEF") = capitolo con «(BIEF)» nel titolo, ("titolo", regex) = capitolo con quel
@@ -104,7 +117,7 @@ def leggi_elenco(s: str) -> list[dict]:
         nome, cfu, sem = (m.group(1), m.group(2), m.group(3)) if m else (label, None, "")
         v = float(cfu.replace(",", ".")) if cfu else None
         out.append({"codice": cod, "nome": nome.strip(), "cfu": int(v) if v is not None and v.is_integer() else v,
-                    "periodo": SEM.get(sem.strip())})
+                    "periodo": SEM.get(sem.strip()), "parallele": sem.strip() == PARALLELE})
     return out
 
 
@@ -391,9 +404,24 @@ def fetch_ateneo(uid: str = "unibocconi", anno: int | None = None, max_cds: int 
                 trovati += k
                 if n % 100 == 0:
                     log(f"[{uid}]   schede {n}/{len(nuovi)}")
+    # «I/II sem.» nell'elenco: il semestre si legge dalle classi della scheda (solo se sono tutte nello stesso semestre)
+    da_classi = {i["url"] for i in items if i.pop("_classi", False) and i.get("url")} if syllabus else set()
+    sem_classi: dict[str, str | None] = {}
+    for u in sorted(da_classi):
+        r = c.get(u)
+        sem_classi[u] = semestre_classi(r.text) if r else None
+    for i in items:
+        if i.get("url") in sem_classi and sem_classi[i["url"]]:
+            i["periodo"] = sem_classi[i["url"]]
+            i["periodo_fonte"] = i["url"]
+    log(f"[{uid}] «I/II sem.»: {len(da_classi)} schede lette, semestre dalle classi per "
+        f"{sum(1 for u in sem_classi.values() if u)}")
+    for x in out:
+        x["insegnamenti"].sort(key=lambda r: (r["anno"], str(r["periodo"] or ""), r["nome"]))
     for i in items:
         i.pop("_sigla", None)
         i.pop("_riusato", None)
+        i.pop("_classi", None)
     log(f"[{uid}] libri nuovi: {trovati}, richieste: {c.requests}")
     return {"universita_id": uid, "descrizione": "Generato da didattica.unibocconi.eu (Guide to the University e "
                                                  "insegnamenti erogati; adapters/unibocconi.py)",
@@ -456,6 +484,7 @@ def _righe(corso, voci, scelte, ero, programmi, sigle, per_nome, riusa, it, vol,
         obb = _obbligatorio(v)
         cp = int(cp) if float(cp).is_integer() else cp
         periodo = (er[1]["periodo"] if er and er[1]["periodo"] else None) or v.get("periodo")
+        classi = bool(er and er[1].get("parallele") and not periodo)  # «I/II sem.»: il semestre dipende dalle classi
         sigla = er[0] if er else None
         scheda = (f"{TS}tsn_anteprima.php?cod_ins={cod}&anno={fine}&ric_cdl={programmi[sigla]['cdl']}&IdPag=8229"
                   if sigla else None)
@@ -470,6 +499,8 @@ def _righe(corso, voci, scelte, ero, programmi, sigle, per_nome, riusa, it, vol,
              "libri": [], "esami": [], "fonte": vol["url"], "verificato_il": oggi}
         if nota:
             r["nota"] = nota
+        if classi and sigla:
+            r["_classi"] = True
         if cod:
             old = riusa.get(cod)
             if old:

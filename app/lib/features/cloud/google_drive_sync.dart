@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math' as math;
 
+import 'package:crypto/crypto.dart';
 import 'package:path/path.dart' as p;
 
 import 'folder_sync.dart';
@@ -364,13 +365,16 @@ class GoogleDriveSync extends FolderSync {
   Future<SyncedFile> download(String rel, RemoteFile r) async {
     final target = localFile(rel);
     await target.parent.create(recursive: true);
-    final res = await drive.request(
-      'GET',
-      drive.url('files/${r.id}', {'alt': 'media'}),
-      accept: const {},
-    );
+    // a pezzi in «nome.part» accanto al file (ignorato dalla
+    // sincronizzazione), poi rinominato: un file a metà non sostituisce
+    // quello buono
     final part = File('${target.path}.part');
-    await part.writeAsBytes(res.body, flush: true);
+    try {
+      await drive.download(drive.url('files/${r.id}', {'alt': 'media'}), part);
+    } catch (_) {
+      if (await part.exists()) await part.delete();
+      rethrow;
+    }
     if (await target.exists()) await target.delete();
     await part.rename(target.path);
     final st = await target.stat();
@@ -380,6 +384,16 @@ class GoogleDriveSync extends FolderSync {
       ctag: r.ctag,
       remoteId: r.id,
     );
+  }
+
+  /// Prima sincronizzazione: Drive dà l'MD5 del contenuto (`md5Checksum`,
+  /// qui [RemoteFile.ctag]), confrontato con quello del file locale letto a
+  /// pezzi.
+  @override
+  Future<bool?> sameContent(LocalFile l, RemoteFile r) async {
+    if (r.ctag.isEmpty) return null;
+    final local = await md5.bind(l.file.openRead()).first;
+    return local.toString() == r.ctag.toLowerCase();
   }
 
   /// Nel cestino di Google Drive (recuperabile per 30 giorni).

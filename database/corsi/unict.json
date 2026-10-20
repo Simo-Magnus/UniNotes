@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unict",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-20",
+ "aggiornato_il": "2026-10-21",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "http://www.disum.unict.it/corsi/l-1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "71799",
@@ -5626,6 +5626,18 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "mso-font-signature:-536870145 1791491579 134217746 0 131231 0;}p.MsoNormal, li.MsoNormal, div.MsoNormal"
+      },
+      {
+       "titolo": "casa della madre, ETS, pp.",
+       "autori": null,
+       "editore": "ETS",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "casa della madre, ETS, pp."
       }
      ],
      "esami": [],
@@ -5891,18 +5903,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "all’Impressionismo), pp. mso-font-signature:-536870145 1791491579 134217746 0 131231 0;}@font-face"
-      },
-      {
-       "titolo": "all’Impressionismo), pp.",
-       "autori": null,
-       "editore": "all’Impressionismo)",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "all’Impressionismo), pp."
       }
      ],
      "url": "https://www.disum.unict.it/corsi/l-1/insegnamenti?seuid=7C3B5F94-4B65-469C-B351-5D54EAA74BF6",
@@ -5956,7 +5956,7 @@
    "url": "http://www.biometec.unict.it/corsi/l-2",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1016007",
@@ -9969,7 +9969,7 @@
    "url": "http://www.dsc.unict.it/corsi/l-27",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1007686",
@@ -14925,7 +14925,7 @@
    "url": "https://www.dsc.unict.it/it/corsi/l-27-sost",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9794177",
@@ -17741,7 +17741,7 @@
    "url": "http://www.medclin.unict.it/corsi/lsnt3-dietistica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1013279",
@@ -20255,7 +20255,7 @@
    "url": "http://www.dei.unict.it/corsi/l-33",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9798807",
@@ -21132,6 +21132,18 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "ROSEN, C.A. BOLLINO, W. MORGAN, Microeconomia, McGrawHill Italia, edizione - EDIZIONE CUSTOM o successiva), Pearson editore, Milano."
+      },
+      {
+       "titolo": "ROSEN, C.A. BOLLINO, W. MORGAN, Microeconomia, McGrawHill Italia,",
+       "autori": null,
+       "editore": "McGrawHill Italia",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "ROSEN, C.A. BOLLINO, W. MORGAN, Microeconomia, McGrawHill Italia,"
       }
      ],
      "esami": [],
@@ -22412,7 +22424,7 @@
    "url": "http://www.dei.unict.it/corsi/l-18",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1014502",
@@ -25323,7 +25335,7 @@
    "url": "http://www.disum.unict.it/corsi/l-5",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1006416",
@@ -28445,7 +28457,7 @@
        "citazione": "Alteri L., Busso S., Piazza G., Raffini L. (2025,"
       },
       {
-       "titolo": "conflitti. Milano, McGraw-Hill: cap. 1 (par. 1.1, 1.2, 1.3, 1.4), pp. 1-22; cap. Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2,",
+       "titolo": "conflitti. Milano, McGraw-Hill: cap. 1 (par. 1.1, 1.2, 1.3, 1.4), pp. 1-22; cap. Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2,",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -28454,7 +28466,7 @@
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "conflitti. Milano, McGraw-Hill: cap. 1 (par. 1.1, 1.2, 1.3, 1.4), pp. 1-22; cap. Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2,"
+       "citazione": "conflitti. Milano, McGraw-Hill: cap. 1 (par. 1.1, 1.2, 1.3, 1.4), pp. 1-22; cap. Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2, Milano, McGraw-Hill: cap. 1, par. 1.1, pp. 1-8; cap. 5, par. 5.1, 5.2.4, 5.4.2,"
       }
      ],
      "esami": [
@@ -28807,7 +28819,7 @@
    "url": "http://www.dfa.unict.it/corsi/L-30",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "B2388",
@@ -33025,7 +33037,7 @@
    "url": "http://www.biometec.unict.it/corsi/lsnt2-ft",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1004160",
@@ -34430,7 +34442,7 @@
    "url": "https://www.di3a.unict.it/corsi/l-25-gsp",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9798405",
@@ -36827,7 +36839,7 @@
    "url": "http://www.gfingrassia.unict.it/corsi/lsnt1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1007108",
@@ -38822,7 +38834,7 @@
    "url": "http://www.gfingrassia.unict.it/corsi/lsnt1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1007108",
@@ -40417,7 +40429,7 @@
    "url": "http://web.dmi.unict.it/corsi/l-31",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9795526",
@@ -43440,7 +43452,7 @@
    "url": "http://www.dicar.unict.it/corsi/l-7-cag",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1000998",
@@ -47851,7 +47863,7 @@
    "url": "http://www.dieei.unict.it/corsi/l-8-ele",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9794279",
@@ -50143,7 +50155,7 @@
    "url": "https://www.dieei.unict.it/corsi/l-9-R",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9798435",
@@ -52561,7 +52573,7 @@
    "url": "http://www.dieei.unict.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1000998",
@@ -55776,7 +55788,7 @@
    "url": "https://www.dieei.unict.it/ing.informatica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9794279",
@@ -57375,7 +57387,7 @@
    "url": "https://www.dicar.unict.it/it/corsi/l-9/presentazione-del-corso",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9798475",
@@ -59825,7 +59837,7 @@
    "url": "http://www.disum.unict.it/corsi/l-10",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1015770",
@@ -67651,7 +67663,7 @@
    "url": "http://www.disum.unict.it/corsi/l-11",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9796976",
@@ -77433,7 +77445,7 @@
    "url": "http://www.gfingrassia.unict.it/corsi/lsnt2",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9800599",
@@ -78962,7 +78974,7 @@
    "url": "http://www.dei.unict.it/corsi/l-18-rg",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9796533",
@@ -81315,7 +81327,7 @@
    "url": "http://web.dmi.unict.it/corsi/l-35",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9800642",
@@ -83124,7 +83136,7 @@
    "url": "http://www.disum.unict.it/corsi/l-12",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1016185",
@@ -90595,7 +90607,7 @@
    "url": "http://www.biometec.unict.it/corsi/lsnt2-ortottica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1003885",
@@ -91708,7 +91720,7 @@
    "url": "http://www.chirmed.unict.it/it/corsi/lsnt1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -93422,7 +93434,7 @@
    "url": "http://www.dipbiogeo.unict.it/corsi/l-32",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9796768",
@@ -96167,7 +96179,7 @@
    "url": "http://www.dipbiogeo.unict.it/corsi/l-13",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "72429",
@@ -98626,18 +98638,6 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "II - Ferraguti e Castellacci – EVOLUZIONE. MODELLI E PROCESSI - Pearson"
-      },
-      {
-       "titolo": "III. slide del corso, mappe concettuali e dispense di",
-       "autori": null,
-       "editore": "mappe concettuali e dispense di",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "III. slide del corso, mappe concettuali e dispense di"
       }
      ],
      "esami": [],
@@ -99100,7 +99100,7 @@
    "url": "http://www.disfor.unict.it/corsi/l-15-st",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9800382",
@@ -103182,7 +103182,7 @@
    "url": "http://www.dsps.unict.it/corsi/l-16",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "72425",
@@ -105678,7 +105678,7 @@
    "url": "http://www.disfor.unict.it/corsi/l-19",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9794181",
@@ -113156,7 +113156,7 @@
    "url": "http://www.disum.unict.it/corsi/l-20",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1002682",
@@ -118956,7 +118956,7 @@
    "url": "http://www.disfor.unict.it/corsi/l-24",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1001136",
@@ -122475,7 +122475,7 @@
    "url": "http://www.di3a.unict.it/corsi/l-25",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1001441",
@@ -125153,6 +125153,18 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "Materiale didattico, dispense e vegetale. Edises Università, Napoli prima edizione"
+      },
+      {
+       "titolo": "Materiale didattico, dispense e",
+       "autori": null,
+       "editore": "dispense e",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "Materiale didattico, dispense e"
       }
      ],
      "esami": [],
@@ -125397,7 +125409,7 @@
    "url": "http://www.di3a.unict.it/corsi/l-26",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799194",
@@ -127511,7 +127523,7 @@
    "url": "http://www.dsf.unict.it/corsi/l-29_sfa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9797769",
@@ -129955,16 +129967,16 @@
        "citazione": "Maugini E., Maleci Bini L., Mariotti Lippi M. - Manuale di Botanica Farmaceutica IX Ed. – PICCIN 2014 ISBN: 9788836232574. ISBN: 9788836232574."
       },
       {
-       "titolo": "Maugini E., Maleci Bini L., Mariotti Lippi M. - Manuale di Botanica Farmaceutica IX Ed. – PICCIN 2014",
+       "titolo": "Maugini E., Maleci Bini L., Mariotti Lippi M. - Manuale di Botanica Farmaceutica IX Ed. – PICCIN 2014 ISBN: 9788836232574.",
        "autori": null,
        "editore": null,
        "anno": 2014,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788836232574",
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "Maugini E., Maleci Bini L., Mariotti Lippi M. - Manuale di Botanica Farmaceutica IX Ed. – PICCIN 2014"
+       "citazione": "Maugini E., Maleci Bini L., Mariotti Lippi M. - Manuale di Botanica Farmaceutica IX Ed. – PICCIN 2014 ISBN: 9788836232574."
       }
      ],
      "esami": [],
@@ -130329,7 +130341,7 @@
    "url": "http://www.dipbiogeo.unict.it/corsi/l-34",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799282",
@@ -132512,7 +132524,7 @@
    "url": "http://www.biometec.unict.it/corsi/l-22",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9798649",
@@ -135216,7 +135228,7 @@
    "url": "http://www.biometec.unict.it/corsi/l-22",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9798649",
@@ -137962,7 +137974,7 @@
    "url": "https://www.lex.unict.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9800144",
@@ -138427,7 +138439,7 @@
    "url": "https://www.dsps.unict.it/corsi/l-39-l-40",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1016585",
@@ -143413,7 +143425,7 @@
    "url": "http://www.di3a.unict.it/corsi/l-21",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9795475",
@@ -148875,7 +148887,7 @@
    "url": "http://www.dsps.unict.it/corsi/l-36",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1001095",
@@ -152070,7 +152082,7 @@
    "url": "http://www.medclin.unict.it/corsi/lsnt2",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9797278",
@@ -153735,7 +153747,7 @@
    "url": "http://www.gfingrassia.unict.it/corsi/lsnt3-audio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1007448",
@@ -154894,7 +154906,7 @@
    "url": "https://www.medclin.unict.it/corsi/lsnt4",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9796602",
@@ -156250,7 +156262,7 @@
    "url": "http://www.chirmed.unict.it/it/corsi/lsnt3",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1007796",
@@ -157409,7 +157421,7 @@
    "url": "http://www.gfingrassia.unict.it/corsi/lsnt3-labbio",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1004832",
@@ -158710,7 +158722,7 @@
    "url": "http://www.medclin.unict.it/corsi/lsnt3-radiologia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1004316",
@@ -159386,6 +159398,18 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "R. Passariello – Radiologia Elementi di tecnologia (IV edizione) – Idelson-Gnocchi ISBN: 9788879597999. ISBN: 978-88-6315-094-0"
+      },
+      {
+       "titolo": "R. Passariello – Radiologia Elementi di tecnologia (IV edizione) – Idelson-Gnocchi",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "R. Passariello – Radiologia Elementi di tecnologia (IV edizione) – Idelson-Gnocchi"
       }
      ],
      "esami": [],
@@ -159934,7 +159958,7 @@
    "url": "http://www.biometec.unict.it/corsi/lsnt2-terapia",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1015949",
@@ -161247,7 +161271,7 @@
    "url": "http://www.di3a.unict.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799159",
@@ -162666,7 +162690,7 @@
    "url": "https://www.di3a.unict.it/corsi/lm-69-eng",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9798514",
@@ -164212,7 +164236,7 @@
    "url": "http://www.disum.unict.it/corsi/lm-2",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1003414",
@@ -166596,7 +166620,7 @@
    "url": "http://www.dieei.unict.it/corsi/lm-25",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1002692",
@@ -167909,7 +167933,7 @@
    "url": "http://www.dipbiogeo.unict.it/corsi/lm-6-ambientale",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1000398",
@@ -169687,7 +169711,7 @@
    "url": "https://www.dsbga.unict.it/it/corsi/lm-6-bsa",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1015002",
@@ -172505,7 +172529,7 @@
    "url": "https://www.di3a.unict.it/corsi/lm-7",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1001498",
@@ -173698,7 +173722,7 @@
    "url": "http://www.biometec.unict.it/corsi/lm-9",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9796189",
@@ -175277,7 +175301,7 @@
    "url": "http://www.dicar.unict.it/corsi/lm-22",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9794493",
@@ -177050,7 +177074,7 @@
    "url": "http://www.dieei.unict.it/corsi/lm-27",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9800424",
@@ -179044,7 +179068,7 @@
    "url": "http://www.disum.unict.it/corsi/lm-65",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1002280",
@@ -181352,7 +181376,7 @@
    "url": "https://www.dicar.unict.it/it/corsi/lm-26/presentazione-del-corso",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9798462",
@@ -182641,7 +182665,7 @@
    "url": "https://public.smartedu.unict.it/PublicData?uid=ab1ebbc4-4ac4-4f9d-aa12-85f49f9f50ec&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9793954",
@@ -184164,7 +184188,7 @@
    "url": "http://www.dei.unict.it/corsi/lm-77-dir",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9796123",
@@ -187435,7 +187459,7 @@
    "url": "https://www.dei.unict.it/corsi/lm-56-epp",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9797622",
@@ -189369,7 +189393,7 @@
    "url": "http://www.dieei.unict.it/corsi/lm-28",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9797609",
@@ -190848,7 +190872,7 @@
    "url": "http://www.dieei.unict.it/corsi/lm-29",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1004163",
@@ -192902,7 +192926,7 @@
    "url": "http://www.disum.unict.it/corsi/lm-15",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1015648",
@@ -195553,7 +195577,7 @@
    "url": "http://www.disum.unict.it/corsi/lm-14",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9800555",
@@ -201929,7 +201953,7 @@
    "url": "http://www.dei.unict.it/corsi/lm-77-fin",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9797622",
@@ -203056,7 +203080,7 @@
    "url": "https://public.smartedu.unict.it/PublicData?uid=6ba6a40a-f2da-40fd-ac63-2b89620d2686&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9800140",
@@ -203622,7 +203646,7 @@
    "url": "https://public.smartedu.unict.it/PublicData?uid=9e64ed1d-f99c-4271-a617-444f12a90f01&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799474",
@@ -206223,7 +206247,7 @@
    "url": "http://www.di3a.unict.it/corsi/lm-75",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799140",
@@ -207373,7 +207397,7 @@
    "url": "http://www.dsps.unict.it/courses/lm-62",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799603",
@@ -210835,7 +210859,7 @@
    "url": "http://web.dmi.unict.it/corsi/lm-18",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "72368",
@@ -214820,7 +214844,7 @@
    "url": "http://www.dicar.unict.it/corsi/lm-23-tra",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9797777",
@@ -217611,7 +217635,7 @@
    "url": "http://www.dicar.unict.it/corsi/lm-23-geo",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9797842",
@@ -219659,7 +219683,7 @@
    "url": "http://www.dicar.unict.it/corsi/lm-31",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1008060",
@@ -221082,7 +221106,7 @@
    "url": "http://www.dieei.unict.it/corsi/lm-32",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9800401",
@@ -222844,7 +222868,7 @@
    "url": "http://www.dicar.unict.it/corsi/lm-33",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -224859,7 +224883,7 @@
    "url": "http://www.dicar.unict.it/corsi/lm-35",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1001706",
@@ -227504,7 +227528,7 @@
    "url": "http://www.disum.unict.it/corsi/lm-37",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9797386",
@@ -237507,7 +237531,7 @@
    "url": "http://www.disum.unict.it/corsi/lm-38",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9800549",
@@ -239930,7 +239954,7 @@
    "url": "http://www.dsps.unict.it/corsi/lm-63",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799129",
@@ -241271,7 +241295,7 @@
    "url": "http://web.dmi.unict.it/corsi/lm-40",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1016277",
@@ -246048,7 +246072,7 @@
    "url": "http://www.dfa.unict.it/corsi/LM-17",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9800298",
@@ -254434,7 +254458,7 @@
    "url": "https://www.dsps.unict.it/corsi/lm-87",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9800342",
@@ -256051,7 +256075,7 @@
    "url": "https://www.disfor.unict.it/corsi/lm-49-r",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9798546",
@@ -257759,7 +257783,7 @@
    "url": "http://www.disfor.unict.it/corsi/lm-51",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9797469",
@@ -259597,7 +259621,7 @@
    "url": "http://www.dsps.unict.it/corsi/lm-52",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799344",
@@ -260820,7 +260844,7 @@
    "url": "https://www.dsc.unict.it/corsi/lm-54-sc",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9794329",
@@ -266051,7 +266075,7 @@
    "url": "https://www.disum.unict.it/corsi/lm-43",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9800555",
@@ -267134,7 +267158,7 @@
    "url": "https://www.biometec.unict.it/corsi/lm-61",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9796545",
@@ -268299,7 +268323,7 @@
    "url": "http://www.biometec.unict.it/corsi/lm-67",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799509",
@@ -269333,7 +269357,7 @@
    "url": "http://www.di3a.unict.it/corsi/lm-69",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1001471",
@@ -271167,7 +271191,7 @@
    "url": "http://www.di3a.unict.it/corsi/lm-70",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799183",
@@ -272380,7 +272404,7 @@
    "url": "http://www.disum.unict.it/corsi/lm-78",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9797375",
@@ -274216,7 +274240,7 @@
    "url": "http://www.medclin.unict.it/corsi/lmsnt1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9800661",
@@ -274854,7 +274878,7 @@
    "url": "https://www.disum.unict.it/corsi/lm-39",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -278320,18 +278344,6 @@
        "tipo": null,
        "note": null,
        "citazione": "C.M., Hoepli Arabo, Italiano-Arabo, 2nd edition. Edinburgh: Edinburgh University Press / Georgetown University Press, 2020, CAP. 3, pp. 97-157 (Studium)"
-      },
-      {
-       "titolo": "C.M., Hoepli Arabo, Italiano-Arabo,",
-       "autori": null,
-       "editore": "Hoepli Arabo",
-       "anno": null,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "C.M., Hoepli Arabo, Italiano-Arabo,"
       }
      ],
      "esami": [],
@@ -278603,7 +278615,7 @@
    "url": "http://www.disfor.unict.it/corsi/lm-85",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9798819",
@@ -280923,7 +280935,7 @@
    "url": "http://www.gfingrassia.unict.it/corsi/lmsnt2",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9794160",
@@ -281388,7 +281400,7 @@
        "citazione": "CAPITOLO 5- Intelligenza artificialeed etica nel mondo del lavoro - Patrik Pluchino, Valeria Orso, Alice Bettelli, Luciano Gamberini"
       },
       {
-       "titolo": "CAPITOLO 7 - Carriere sostenibili: un modello integrato per il benessere individuale, aziendale e sociale. Angela Russo, Andrea Zammitti, Giuseppe Santisi ISBN 9788832854855 ISBN 9788832854855 ISBN 9788832854855 ISBN 9788832854855 ISBN 9788832854855 ISBN 9788832854855 ISBN 9788832854855 ISBN9788832854855 ISBN9788832854855 ISBN9788832854855 ISBN9788832854855 ISBN9788832854855 ISBN9788832854855",
+       "titolo": "CAPITOLO 7 - Carriere sostenibili: un modello integrato per il benessere individuale, aziendale e sociale. Angela Russo, Andrea Zammitti, Giuseppe Santisi ISBN 9788832854855 ISBN9788832854855",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -281397,7 +281409,7 @@
        "lingua": null,
        "tipo": "obbligatorio",
        "note": "Dalla scheda dell'a.a. 2025/26 dello stesso insegnamento, stesso codice (https://public.smartedu.unict.it/PublicData?uid=31b2efe4-fd5e-4b12-8bae-a5a1e2e7be01&mode=CourseDetail&iso=ita&academicYear=2025)",
-       "citazione": "CAPITOLO 7 - Carriere sostenibili: un modello integrato per il benessere individuale, aziendale e sociale. Angela Russo, Andrea Zammitti, Giuseppe Santisi ISBN 9788832854855 ISBN 9788832854855 ISBN 9788832854855 ISBN 9788832854855 ISBN 9788832854855 ISBN 9788832854855 ISBN 9788832854855 ISBN9788832854855 ISBN9788832854855 ISBN9788832854855 ISBN9788832854855 ISBN9788832854855 ISBN9788832854855"
+       "citazione": "CAPITOLO 7 - Carriere sostenibili: un modello integrato per il benessere individuale, aziendale e sociale. Angela Russo, Andrea Zammitti, Giuseppe Santisi ISBN 9788832854855 ISBN9788832854855"
       }
      ],
      "esami": [],
@@ -281813,7 +281825,7 @@
    "url": "http://www.dsps.unict.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799144",
@@ -283423,7 +283435,7 @@
    "url": "http://www.disum.unict.it/corsi/lm-89",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -284426,6 +284438,18 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "T. Bella, La cattedrale medievale di Jaca Book, Milano 2006 (e successive ristampe), 450 pagine."
+      },
+      {
+       "titolo": "T. Bella, La cattedrale medievale di",
+       "autori": null,
+       "editore": "La cattedrale medievale di",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "T. Bella, La cattedrale medievale di"
       }
      ],
      "esami": [],
@@ -285830,7 +285854,7 @@
    "url": "http://www.dsps.unict.it/corsi/lm-84",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1015453",
@@ -288403,7 +288427,7 @@
    "url": "https://www.architettura.unict.it/corsi/lm-4",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "1001721",
@@ -295578,7 +295602,7 @@
    "url": "http://www.dsf.unict.it/corsi/lm-13_ctf",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9797645",
@@ -298410,7 +298434,7 @@
    "url": "http://www.dsf.unict.it/corsi/lm-13",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9797707",
@@ -301475,7 +301499,7 @@
    "url": "http://www.lex.unict.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9796432",
@@ -315331,7 +315355,7 @@
    "url": "http://www.dicar.unict.it/corsi/lmcu-4",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9798932",
@@ -321804,7 +321828,7 @@
    "url": "http://www.chirmed.unict.it/it/corsi/lm-41",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799823",
@@ -326587,7 +326611,7 @@
    "url": "https://www.chirmed.unict.it/corsi/lm-41-eng",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799668",
@@ -327536,7 +327560,7 @@
      ],
      "libri": [
       {
-       "titolo": "Fakhrou, A., Avincola, G., Farruggio, G., Verduzzo, I., & Caponnetto, P. (2024). Virtual Reality as an Innovative Tool for Eating Disorders Psychological Treatment. Health psychology research, 12, 123286. https://doi.org/10.52965/001c.123286 ISBN9788832854855 ISBN9788832854855 ISBN9788832854855 ISBN9788832854855",
+       "titolo": "Fakhrou, A., Avincola, G., Farruggio, G., Verduzzo, I., & Caponnetto, P. (2024). Virtual Reality as an Innovative Tool for Eating Disorders Psychological Treatment. Health psychology research, 12, 123286. https://doi.org/10.52965/001c.123286 ISBN9788832854855",
        "autori": null,
        "editore": null,
        "anno": 2024,
@@ -327545,7 +327569,7 @@
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "Fakhrou, A., Avincola, G., Farruggio, G., Verduzzo, I., & Caponnetto, P. (2024). Virtual Reality as an Innovative Tool for Eating Disorders Psychological Treatment. Health psychology research, 12, 123286. https://doi.org/10.52965/001c.123286 ISBN9788832854855 ISBN9788832854855 ISBN9788832854855 ISBN9788832854855"
+       "citazione": "Fakhrou, A., Avincola, G., Farruggio, G., Verduzzo, I., & Caponnetto, P. (2024). Virtual Reality as an Innovative Tool for Eating Disorders Psychological Treatment. Health psychology research, 12, 123286. https://doi.org/10.52965/001c.123286 ISBN9788832854855"
       }
      ],
      "url": "https://public.smartedu.unict.it/PublicData?uid=7f6b3a7d-dab4-4723-b25d-aad7a9947f56&mode=CourseDetail&iso=ita&academicYear=2025",
@@ -327575,18 +327599,6 @@
      ],
      "url": "https://public.smartedu.unict.it/PublicData?uid=7f6b3a7d-dab4-4723-b25d-aad7a9947f56&mode=CourseDetail&iso=ita&academicYear=2025",
      "libri": [
-      {
-       "titolo": "Malattie dell'apparato respiratorio - Pneumologia e chirurgia toracica",
-       "autori": null,
-       "editore": null,
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788855320542",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "Titolo: Malattie dell'apparato respiratorio - Pneumologia e chirurgia toracica ISBN: 9788855320542 ISBN: 9788855320542"
-      },
       {
        "titolo": "Malattie dell'apparato respiratorio - Pneumologia e chirurgia toracica",
        "autori": null,
@@ -328129,7 +328141,7 @@
    "url": "http://www.chirmed.unict.it/it/corsi/lm-46",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9799897",
@@ -330489,7 +330501,7 @@
    "url": "https://www.disfor.unict.it/corsi/lm-85-bis",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "9798589",

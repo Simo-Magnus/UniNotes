@@ -16,6 +16,16 @@ file eliminati su Drive vanno nel cestino di Drive (recuperabili per 30 giorni);
 quelli eliminati altrove finiscono sul dispositivo nella cartella nascosta
 `.cestino-googledrive`.
 
+Alla prima sincronizzazione un file presente sia sul dispositivo sia su Drive
+con la stessa dimensione si confronta con l'MD5 di Drive (`md5Checksum`): se il
+contenuto è diverso si tengono entrambe le versioni, come per un conflitto. I
+download si scrivono a pezzi in `nome.part` e sostituiscono il file solo alla
+fine. Se dopo l'accesso non riescono la lettura dell'account o la creazione
+della cartella, l'accesso non resta salvato. «Scollega» revoca anche il token
+presso Google (`https://oauth2.googleapis.com/revoke`); senza rete o con un
+errore l'app si scollega comunque sul dispositivo e indica
+<https://myaccount.google.com/permissions> per togliere l'accesso a mano.
+
 ### Scope `drive.file`: niente verifica a pagamento
 
 L'app chiede solo lo scope **`https://www.googleapis.com/auth/drive.file`**. Con

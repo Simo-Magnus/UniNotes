@@ -1,6 +1,14 @@
 import 'dart:convert';
+import 'dart:io';
 
-import 'graph_client.dart' show GraphResponse, GraphTransport, ioTransport;
+import 'graph_client.dart'
+    show
+        GraphDownload,
+        GraphResponse,
+        GraphTransport,
+        bufferedDownload,
+        ioDownload,
+        ioTransport;
 import 'onedrive_folders.dart';
 
 export 'graph_client.dart' show GraphResponse, GraphTransport;
@@ -20,11 +28,18 @@ class DriveException implements Exception {
 /// non si importano; per Google una cartella creata da un'altra
 /// registrazione dell'app (un altro progetto Google Cloud) non esiste.
 class GoogleDriveClient {
-  GoogleDriveClient(this._token, {GraphTransport? transport})
-    : _send = transport ?? ioTransport;
+  GoogleDriveClient(
+    this._token, {
+    GraphTransport? transport,
+    GraphDownload? download,
+  }) : _send = transport ?? ioTransport,
+       _download =
+           download ??
+           (transport == null ? ioDownload : bufferedDownload(transport));
 
   final Future<String> Function() _token;
   final GraphTransport _send;
+  final GraphDownload _download;
 
   static final base = Uri.https('www.googleapis.com', '/drive/v3/');
   static final uploadBase = Uri.https(
@@ -54,20 +69,27 @@ class GoogleDriveClient {
   }) async {
     final h = {'Authorization': 'Bearer ${await _token()}', ...headers};
     final r = await _send(method, url, headers: h, body: body);
-    if (!r.ok && !accept.contains(r.status)) {
-      String msg;
-      try {
-        final err = r.json['error'];
-        msg = err is Map ? '${err['message'] ?? err['code']}' : r.text;
-      } catch (_) {
-        msg = r.text;
-      }
-      throw DriveException(
-        r.status,
-        'Google Drive ($method ${url.path}): $msg',
-      );
-    }
+    if (!r.ok && !accept.contains(r.status)) _fail(r, method, url);
     return r;
+  }
+
+  Never _fail(GraphResponse r, String method, Uri url) {
+    String msg;
+    try {
+      final err = r.json['error'];
+      msg = err is Map ? '${err['message'] ?? err['code']}' : r.text;
+    } catch (_) {
+      msg = r.text;
+    }
+    throw DriveException(r.status, 'Google Drive ($method ${url.path}): $msg');
+  }
+
+  /// Contenuto di un file scritto in [to] a pezzi ([GraphDownload]), senza
+  /// tenerlo tutto in memoria; ogni stato non 2xx è un errore.
+  Future<void> download(Uri url, File to) async {
+    final h = {'Authorization': 'Bearer ${await _token()}'};
+    final r = await _download(url, to, headers: h);
+    if (!r.ok) _fail(r, 'GET', url);
   }
 
   Future<Map<String, Object?>?> getJson(

@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unitus",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-20",
+ "aggiornato_il": "2026-10-21",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/biotecnologie/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "16173",
@@ -1817,7 +1817,7 @@
    "url": "https://www.unitus.it/it/dipartimento/l20",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121683",
@@ -6449,7 +6449,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/design/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "119907",
@@ -7990,7 +7990,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deim-economia/economia-aziendale-econ-deim/articolo/economia-aziendale-deim",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "",
@@ -12057,7 +12057,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deim-economia/economia-aziendale-econ-deim/articolo/economia-aziendale-deim",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -14263,7 +14263,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/ingegneria-industriale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "119631",
@@ -16943,7 +16943,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-umanistiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "16455",
@@ -24855,7 +24855,7 @@
    "url": "http://www.unitus.it/it/dipartimento/distu/corsi-di-laurea-triennale1/articolo/presentazione-del-corso-l11",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -37455,7 +37455,7 @@
    "url": "http://www.unitus.it/it/dipartimento/dibaf/presentazione6/articolo/presentazione5",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "118486",
@@ -39013,7 +39013,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-agrarie-ambientali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -41994,7 +41994,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-biologiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "17547",
@@ -43571,7 +43571,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-biologiche-ambientali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "118387",
@@ -44210,18 +44210,6 @@
      ],
      "libri": [
       {
-       "titolo": "Piccin Nuova Libraria ISBN:978-88-299-3057-9 ISBN: 8808920690 ISBN: 8808920690",
-       "autori": null,
-       "editore": "Piccin Nuova Libraria ISBN:978-88-299-3057-9",
-       "anno": null,
-       "edizione": null,
-       "isbn": "9788829930579",
-       "lingua": null,
-       "tipo": "obbligatorio",
-       "note": null,
-       "citazione": "Piccin Nuova Libraria ISBN:978-88-299-3057-9 ISBN: 8808920690 ISBN: 8808920690"
-      },
-      {
        "titolo": "Piccin Nuova Libraria ISBN:978-88-299-3057-9 ISBN: 8808920690",
        "autori": null,
        "editore": "Piccin Nuova Libraria ISBN:978-88-299-3057-9",
@@ -44232,6 +44220,18 @@
        "tipo": "obbligatorio",
        "note": null,
        "citazione": "Piccin Nuova Libraria ISBN:978-88-299-3057-9 ISBN: 8808920690"
+      },
+      {
+       "titolo": "Piccin Nuova Libraria ISBN:978-88-299-3057-9",
+       "autori": null,
+       "editore": "Piccin Nuova Libraria ISBN:978-88-299-3057-9",
+       "anno": null,
+       "edizione": null,
+       "isbn": "9788829930579",
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "Piccin Nuova Libraria ISBN:978-88-299-3057-9"
       }
      ],
      "url": "https://unitus-public.gomp.it/PublicData?uid=dbf855bf-b478-4e21-95d0-542252f5fe1a&mode=CourseDetail&iso=ita&academicYear=2026",
@@ -44841,7 +44841,7 @@
    "url": "https://www.unitus.it/it/dipartimento/l1/presentazione-del-corso-l-1/articolo/presentazione-l-1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "18066",
@@ -49412,7 +49412,7 @@
        "citazione": "Alessandra Caravale (a cura di) 2016 - Scavare documentare conservare. Viaggio nella ricerca archeologica del CNR, CNR Edizioni."
       },
       {
-       "titolo": "Carolina Megale, Stefano Monti 2021 - Manuale di management per l'archeologia. Processi e procedure per l'archeologia nella società contemporanea, Mac-Graw Hill. ISBN: 9788878145801 ISBN: 9788878145801",
+       "titolo": "Carolina Megale, Stefano Monti 2021 - Manuale di management per l'archeologia. Processi e procedure per l'archeologia nella società contemporanea, Mac-Graw Hill. ISBN: 9788878145801",
        "autori": null,
        "editore": null,
        "anno": 2021,
@@ -49421,7 +49421,7 @@
        "lingua": null,
        "tipo": "consigliato",
        "note": null,
-       "citazione": "Carolina Megale, Stefano Monti 2021 - Manuale di management per l'archeologia. Processi e procedure per l'archeologia nella società contemporanea, Mac-Graw Hill. ISBN: 9788878145801 ISBN: 9788878145801"
+       "citazione": "Carolina Megale, Stefano Monti 2021 - Manuale di management per l'archeologia. Processi e procedure per l'archeologia nella società contemporanea, Mac-Graw Hill. ISBN: 9788878145801"
       },
       {
        "titolo": "M. Cordaro, Per una filologia dei materiali costitutivi delle opere d’arte e dei materiali di restauro come fondamento della valutazione storica ed estetica, in Fragmenta Picta. Affreschi e mosaici staccati del Medioevo romano, catalogo della mostra, Roma 1989, pp. 33-36",
@@ -49590,6 +49590,18 @@
        "tipo": "consigliato",
        "note": null,
        "citazione": "G. Vasari, Le vite dei più eccellenti pitturi, scultori et architettori, Firenze 1568, ed cons., Einaudi, Torino, 1995 ISBN: 9788878145801"
+      },
+      {
+       "titolo": "Le vite dei più eccellenti pitturi, scultori et architettori, Firenze 1568, ed cons",
+       "autori": "G. Vasari",
+       "editore": "Einaudi",
+       "anno": 1995,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "consigliato",
+       "note": null,
+       "citazione": "G. Vasari, Le vite dei più eccellenti pitturi, scultori et architettori, Firenze 1568, ed cons., Einaudi, Torino, 1995"
       }
      ],
      "url": "https://unitus-public.gomp.it/PublicData?uid=17f735e4-9103-49df-8618-d60a63621d91&mode=CourseDetail&iso=ita&academicYear=2026",
@@ -51257,7 +51269,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-dell-educazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121755",
@@ -53976,7 +53988,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-della-montagna/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "120760",
@@ -54228,7 +54240,7 @@
      "url": "https://unitus-public.gomp.it/PublicData?uid=33565121-17f6-40bd-99d0-e38fcb8b89ea&mode=CourseDetail&iso=ita&academicYear=2026",
      "libri": [
       {
-       "titolo": "Testo principale: Russell PJ.: Genetica - Un approccio molecolare, Pearson editore (o testi similari, preferibilmente dello stesso autore) ISBN 9788891905574 ISBN 9788891905574 ISBN 9788891905574 ISBN 9788891905574 ISBN 9788891905574 ISBN 9788891905574",
+       "titolo": "Testo principale: Russell PJ.: Genetica - Un approccio molecolare, Pearson editore (o testi similari, preferibilmente dello stesso autore) ISBN 9788891905574",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -54237,7 +54249,19 @@
        "lingua": null,
        "tipo": "obbligatorio",
        "note": null,
-       "citazione": "Testo principale: Russell PJ.: Genetica - Un approccio molecolare, Pearson editore (o testi similari, preferibilmente dello stesso autore) ISBN 9788891905574 ISBN 9788891905574 ISBN 9788891905574 ISBN 9788891905574 ISBN 9788891905574 ISBN 9788891905574"
+       "citazione": "Testo principale: Russell PJ.: Genetica - Un approccio molecolare, Pearson editore (o testi similari, preferibilmente dello stesso autore) ISBN 9788891905574"
+      },
+      {
+       "titolo": "Testo principale: Russell PJ.: Genetica - Un approccio molecolare, Pearson editore (o testi similari, preferibilmente dello stesso autore)",
+       "autori": null,
+       "editore": "Pearson editore (o testi similari",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": "obbligatorio",
+       "note": null,
+       "citazione": "Testo principale: Russell PJ.: Genetica - Un approccio molecolare, Pearson editore (o testi similari, preferibilmente dello stesso autore)"
       }
      ],
      "esami": [],
@@ -55283,7 +55307,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/scienze-forestali-ambientali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "119491",
@@ -56978,7 +57002,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deb/scienze-naturali-e-ambientali-l-32/articolo/presentazione-del-corso-sna",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "120397",
@@ -58463,7 +58487,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deim-scienze-politiche",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -63809,7 +63833,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-triennale/sport-benessere-attivita-motoria-in-ambiente-naturale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "119446",
@@ -65301,7 +65325,7 @@
    "url": "http://www.unitus.it/it/dipartimento/dibaf/presentazione2/articolo/presentazione4",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "118932",
@@ -67496,7 +67520,7 @@
    "url": "http://www.unitus.it/it/dipartimento/distu/archeologia-e-storia-dellarte-tutela-e-valorizzazione-lm2lm89/articolo/presentazione-del-corso-lm2lm89",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121699",
@@ -69714,7 +69738,7 @@
    "url": "https://unitus-public.gomp.it/PublicData?uid=8af86e14-701b-4466-a152-2c82e67194dd&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "120715",
@@ -71559,7 +71583,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-magistrale/biologia-sperimentale-bioinformatica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "120844",
@@ -72176,7 +72200,7 @@
    "url": "http://www.unitus.it/it/dipartimento/dibaf/biotecnologie-industriali-per-la-salute-e-il-benessere/articolo/presentazione33",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "18434",
@@ -72792,7 +72816,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deim-economia/economia-circolare-econ-deim/articolo/economia-circolare-econ-deim1",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121436",
@@ -74395,7 +74419,7 @@
    "url": "http://www.unitus.it/it/dipartimento/dafne/conservazione-e-restauro-dellambiente-forestale-e-difesa-del-suolo/articolo/presentazione12",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "120747",
@@ -75206,7 +75230,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deim-economia/amm-finanza-controllo-econ-deim/articolo/amm-fin-contr-econ-deim",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -76788,7 +76812,7 @@
    "url": "https://www.unitus.it/it/dipartimento/lm14/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "14581",
@@ -83287,7 +83311,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-magistrale/forestry-environmental-sciences/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121579",
@@ -84944,7 +84968,7 @@
    "url": "https://www.unitus.it/it/dipartimento/lm91/presentazione-del-corso/articolo/presentazione-lm-91",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121522",
@@ -85844,7 +85868,7 @@
    "url": "http://www.unitus.it/it/dipartimento/distu/lingue-e-culture-per-la-comunicazione-internazionale-lm37/articolo/presentazione-del-corso-lm37",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "13019",
@@ -93640,7 +93664,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-magistrale/marine-biology-and-ecology/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "120870",
@@ -94506,7 +94530,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deim-ingegneria/ingegneria-meccanica-ing/articolo/ingegneria-meccanica-deim",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "119551",
@@ -96746,7 +96770,7 @@
    "url": "http://www.unitus.it/it/dipartimento/dafne/plant-biotechnology-for-food-and-global-health/articolo/presentazione58",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "119765",
@@ -97791,7 +97815,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-magistrale/science-and-technologies-for-agriculture-and-mountain-areas/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "120798",
@@ -98724,7 +98748,7 @@
    "url": "http://www.unitus.it/it/dipartimento/dafne/scienze-agrarie-e-ambientali1/articolo/presentazione11",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "14939",
@@ -101442,7 +101466,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-magistrale/scienze-politica-sicurezza-internazionale-comunicazione-pubblica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "17847",
@@ -104154,7 +104178,7 @@
    "url": "http://www.unitus.it/it/dipartimento/deb/scienze-dellalimentazione-e-della-nutrizione-umana/articolo/presentazione-del-corso2",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "119486",
@@ -104846,7 +104870,7 @@
    "url": "https://unitus-public.gomp.it/PublicData?uid=717600c5-dd26-4176-bd59-2faffff7fce1&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -105171,7 +105195,7 @@
    "url": "https://unitus-public.gomp.it/PublicData?uid=66c8cae2-aac3-470e-bb88-88a1eb0d6c93&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121461",
@@ -105620,7 +105644,7 @@
    "url": "http://www.unitus.it/it/dipartimento/distu/corso-di-laurea-magistrale-in-security-and-human-rights-lm-90-/articolo/presentazione-corso",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121184",
@@ -108223,7 +108247,7 @@
    "url": "https://www.unitus.it/corsi/corsi-di-laurea-magistrale-a-ciclo-unico/conservazione-e-restauro-dei-beni-culturali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "17960",
@@ -113576,7 +113600,7 @@
    "url": "http://www.unitus.it/it/dipartimento/distu/giurisprudenza-lmg01/articolo/presentazione-del-corso-lmg01",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "121623",
@@ -116008,7 +116032,7 @@
    "url": "https://unitus-public.gomp.it/PublicData?uid=b777f130-9fcd-4c6d-8b46-7306763532fb&mode=CourseDetail&iso=ita&academicYear=2026",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "120046",

@@ -150,7 +150,7 @@ def _ssd_nome(testo: str) -> tuple[str | None, str]:
         ssd = None
     # note fuori dal link: «[ove non già sostenuto alla triennale]» resta come nota tra parentesi, mentre
     # «– video lezione introduttiva» descrive il materiale (l'esame è «Matematica I»)
-    testo = re.sub(r"\[([^\]]*)\]", r"()", testo)
+    testo = re.sub(r"\[([^\]]*)\]", r"(\1)", testo)
     testo = re.sub(r"\s*[–-]\s*video lezione introduttiva\s*$", "", testo, flags=re.I)
     return ssd, testo
 

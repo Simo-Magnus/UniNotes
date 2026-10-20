@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unipa",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-20",
+ "aggiornato_il": "2026-10-21",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unipa.it/dipartimenti/architettura/cds/architetturaeprogettonelcostruito2242",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "02600",
@@ -216,7 +216,7 @@
      "id": "unipa-l-23-architettura-e-progetto-nel-costruito-04872",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=233733"
     },
     {
      "codice": "00916",
@@ -578,7 +578,7 @@
    "url": "https://www.unipa.it/dipartimenti/promise/cds/assistenzasanitaria2176",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "15186",
@@ -1441,7 +1441,7 @@
    "url": "http://www.unipa.it/dipartimenti/cultureesocieta/cds/beniculturaliconoscenzagestionevalorizzazione2194",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04300",
@@ -2649,7 +2649,7 @@
    "url": "https://www.unipa.it/dipartimenti/stebicef/cds/biotecnologie2356",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20692",
@@ -3369,7 +3369,7 @@
    "url": "https://www.unipa.it/dipartimenti/stebicef/cds/chimica2357",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20692",
@@ -3520,7 +3520,7 @@
      "id": "unipa-l-27-chimica-00133",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=225982"
     },
     {
      "codice": "15248",
@@ -3542,7 +3542,7 @@
      "id": "unipa-l-27-chimica-15248",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=225950"
     },
     {
      "codice": "16159",
@@ -4039,7 +4039,7 @@
    "url": "https://www.unipa.it/dipartimenti/di.gi./cds/consulentegiuridicodimpresa2441",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "10474",
@@ -4750,7 +4750,7 @@
    "url": "https://www.unipa.it/dipartimenti/architettura/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22696",
@@ -5501,7 +5501,7 @@
    "url": "http://www.unipa.it/dipartimenti/promise/cds/dietistica2209",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04731",
@@ -6524,7 +6524,7 @@
    "url": "https://www.unipa.it/dipartimenti/di.gi./cds/dirittoperlinnovazionedellapubblicaamministrazione2498",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25218",
@@ -6980,7 +6980,7 @@
    "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/disciplinedelleartidellamusicaedellospettacolo2424",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25686",
@@ -7289,6 +7289,33 @@
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
+     "codice": "03089",
+     "nome": "Estetica e Teoria dei Linguaggi - Estetica",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "M-FIL/04",
+     "obbligatorio": true,
+     "curriculum": "MUSICA, SPETTACOLO, ARTE",
+     "docenti": [
+      "Salvatore Tedesco"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/disciplinedelleartidellamusicaedellospettacolo2424/?template=responsive&pagina=insegnamento&idInsegnamento=201988&idDocente=158813&idCattedra=198071",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/disciplinedelleartidellamusicaedellospettacolo2424/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Estetica e Teoria dei Linguaggi",
+     "codice_ci": "18383",
+     "id": "unipa-l-3-discipline-delle-arti-della-musica-e-dello-spettacolo-03089",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "codici_alternativi": [
+      "23712"
+     ]
+    },
+    {
      "codice": "24589",
      "nome": "Etnografia Audiovisuale",
      "anno": 2,
@@ -7331,6 +7358,33 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "13155",
+     "nome": "Teoria dei Linguaggi",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "M-FIL/05",
+     "obbligatorio": true,
+     "curriculum": "MUSICA, SPETTACOLO, ARTE",
+     "docenti": [
+      "Francesca Piazza"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/disciplinedelleartidellamusicaedellospettacolo2424/?template=responsive&pagina=insegnamento&idInsegnamento=201805&idDocente=162471&idCattedra=197873",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/disciplinedelleartidellamusicaedellospettacolo2424/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Estetica e Teoria dei Linguaggi",
+     "codice_ci": "18383",
+     "id": "unipa-l-3-discipline-delle-arti-della-musica-e-dello-spettacolo-13155",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "codici_alternativi": [
+      "23713"
+     ]
+    },
+    {
      "codice": "14184",
      "nome": "Tirocinio Formativo e di Orientamento",
      "anno": 2,
@@ -7348,33 +7402,6 @@
      "id": "unipa-l-3-discipline-delle-arti-della-musica-e-dello-spettacolo-14184",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
-    },
-    {
-     "codice": "03089",
-     "nome": "Estetica e Teoria dei Linguaggi - Estetica",
-     "anno": 2,
-     "periodo": "1",
-     "cfu": 6,
-     "ssd": "M-FIL/04",
-     "obbligatorio": true,
-     "curriculum": "MUSICA, SPETTACOLO, ARTE",
-     "docenti": [
-      "Salvatore Tedesco"
-     ],
-     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/disciplinedelleartidellamusicaedellospettacolo2424/?template=responsive&pagina=insegnamento&idInsegnamento=201988&idDocente=158813&idCattedra=198071",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/disciplinedelleartidellamusicaedellospettacolo2424/?pagina=insegnamenti#manifesto-2025-2026",
-     "verificato_il": "2026-10-20",
-     "modulo_di": "Estetica e Teoria dei Linguaggi",
-     "codice_ci": "18383",
-     "id": "unipa-l-3-discipline-delle-arti-della-musica-e-dello-spettacolo-03089",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
-     "codici_alternativi": [
-      "23712"
-     ]
     },
     {
      "codice": "08873",
@@ -7485,33 +7512,6 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
-    },
-    {
-     "codice": "13155",
-     "nome": "Teoria dei Linguaggi",
-     "anno": 2,
-     "periodo": "1",
-     "cfu": 6,
-     "ssd": "M-FIL/05",
-     "obbligatorio": true,
-     "curriculum": "MUSICA, SPETTACOLO, ARTE",
-     "docenti": [
-      "Francesca Piazza"
-     ],
-     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/disciplinedelleartidellamusicaedellospettacolo2424/?template=responsive&pagina=insegnamento&idInsegnamento=201805&idDocente=162471&idCattedra=197873",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/disciplinedelleartidellamusicaedellospettacolo2424/?pagina=insegnamenti#manifesto-2025-2026",
-     "verificato_il": "2026-10-20",
-     "modulo_di": "Estetica e Teoria dei Linguaggi",
-     "codice_ci": "18383",
-     "id": "unipa-l-3-discipline-delle-arti-della-musica-e-dello-spettacolo-13155",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
-     "codici_alternativi": [
-      "23713"
-     ]
     },
     {
      "codice": "18389",
@@ -8038,7 +8038,7 @@
    "url": "https://www.unipa.it/dipartimenti/seas/cds/economiaeamministrazioneaziendale2348",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "14116",
@@ -8602,7 +8602,7 @@
    "url": "https://www.unipa.it/dipartimenti/seas/cds/economiaeamministrazioneaziendalesedeag2349",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "14116",
@@ -8807,7 +8807,7 @@
      "id": "unipa-l-18-economia-e-amministrazione-aziendale-replica-sede-agrigento-20620",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=223436"
     },
     {
      "codice": "02549",
@@ -9214,7 +9214,7 @@
    "url": "https://www.unipa.it/dipartimenti/seas/cds/economiaecooperazioneinternazionaleperlosvilupposostenibile2503",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25306",
@@ -10394,7 +10394,7 @@
    "url": "https://www.unipa.it/dipartimenti/seas/cds/economiaefinanza2504",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25966",
@@ -11508,7 +11508,7 @@
    "url": "https://www.unipa.it/dipartimenti/promise/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "14874",
@@ -12497,7 +12497,7 @@
    "url": "https://www.unipa.it/dipartimenti/stebicef/cds/farmaceuticaenutraceuticaanimale2458",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01587",
@@ -13154,7 +13154,7 @@
    "url": "http://www.unipa.it/dipartimenti/bi.n.d./cds/fisioterapia2170",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04731",
@@ -14046,7 +14046,7 @@
    "url": "https://www.unipa.it/dipartimenti/me.pre.c.c./cds/igienedentale2208",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "18982",
@@ -14893,7 +14893,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25356",
@@ -15117,7 +15117,7 @@
    "url": "http://www.unipa.it/dipartimenti/promise/cds/infermieristica2172",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25845",
@@ -16361,7 +16361,7 @@
    "url": "http://www.unipa.it/dipartimenti/promise/cds/infermieristica2172",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25845",
@@ -17605,7 +17605,7 @@
    "url": "http://www.unipa.it/dipartimenti/promise/cds/infermieristica2172",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25845",
@@ -18849,7 +18849,7 @@
    "url": "http://www.unipa.it/dipartimenti/promise/cds/infermieristica2172",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25845",
@@ -20093,7 +20093,7 @@
    "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/informatica2086",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20692",
@@ -20730,7 +20730,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2322",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25201",
@@ -21421,7 +21421,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaambientaleperlosvilupposostenibile2429",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "13712",
@@ -22367,7 +22367,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriabiomedica2435",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25201",
@@ -23172,6 +23172,58 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "19354",
+     "nome": "Elaborazione di Dati e Segnali Biomedici",
+     "anno": 3,
+     "periodo": "1",
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": "BIOMATERIALI PER LA MEDICINA, BIOMECCANICA, TECNOLOGIE BIOMEDICHE PER L'INFORMAZIONE, TECNOLOGIE APPLICATE ALLA MEDICINA",
+     "docenti": [
+      "Riccardo Pernice",
+      "Yuri Antonacci"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriabiomedica2435/?template=responsive&pagina=insegnamento&idInsegnamento=190206&idDocente=37132&idCattedra=186041",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriabiomedica2435/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-9-ingegneria-biomedica-19354",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "codici_alternativi": [
+      "22400"
+     ]
+    },
+    {
+     "codice": "03472",
+     "nome": "Fondamenti di Elettronica",
+     "anno": 3,
+     "periodo": "1",
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": true,
+     "curriculum": "BIOMATERIALI PER LA MEDICINA, BIOMECCANICA, TECNOLOGIE BIOMEDICHE PER L'INFORMAZIONE, TECNOLOGIE APPLICATE ALLA MEDICINA",
+     "docenti": [
+      "Patrizia Livreri",
+      "Salvatore Stivala"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriabiomedica2435/?template=responsive&pagina=insegnamento&idInsegnamento=190196&idDocente=68753&idCattedra=186031",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriabiomedica2435/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-9-ingegneria-biomedica-03472",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "codici_alternativi": [
+      "21263"
+     ]
+    },
+    {
      "codice": "21191",
      "nome": "Processi Manifatturieri Innovativi",
      "anno": 3,
@@ -23278,58 +23330,6 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
-    },
-    {
-     "codice": "19354",
-     "nome": "Elaborazione di Dati e Segnali Biomedici",
-     "anno": 3,
-     "periodo": "1",
-     "cfu": 9,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": "BIOMATERIALI PER LA MEDICINA, BIOMECCANICA, TECNOLOGIE BIOMEDICHE PER L'INFORMAZIONE, TECNOLOGIE APPLICATE ALLA MEDICINA",
-     "docenti": [
-      "Riccardo Pernice",
-      "Yuri Antonacci"
-     ],
-     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriabiomedica2435/?template=responsive&pagina=insegnamento&idInsegnamento=190206&idDocente=37132&idCattedra=186041",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriabiomedica2435/?pagina=insegnamenti#manifesto-2024-2025",
-     "verificato_il": "2026-10-20",
-     "id": "unipa-l-9-ingegneria-biomedica-19354",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
-     "codici_alternativi": [
-      "22400"
-     ]
-    },
-    {
-     "codice": "03472",
-     "nome": "Fondamenti di Elettronica",
-     "anno": 3,
-     "periodo": "1",
-     "cfu": 9,
-     "ssd": null,
-     "obbligatorio": true,
-     "curriculum": "BIOMATERIALI PER LA MEDICINA, BIOMECCANICA, TECNOLOGIE BIOMEDICHE PER L'INFORMAZIONE, TECNOLOGIE APPLICATE ALLA MEDICINA",
-     "docenti": [
-      "Patrizia Livreri",
-      "Salvatore Stivala"
-     ],
-     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriabiomedica2435/?template=responsive&pagina=insegnamento&idInsegnamento=190196&idDocente=68753&idCattedra=186031",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriabiomedica2435/?pagina=insegnamenti#manifesto-2024-2025",
-     "verificato_il": "2026-10-20",
-     "id": "unipa-l-9-ingegneria-biomedica-03472",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
-     "codici_alternativi": [
-      "21263"
-     ]
     },
     {
      "codice": "83435",
@@ -23756,7 +23756,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriachimicaebiochimica2436",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25201",
@@ -24424,7 +24424,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriacivile2430",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "13712",
@@ -25092,7 +25092,7 @@
      "id": "unipa-l-7-ingegneria-civile-17613",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=190957"
     }
    ],
    "url_catalogo": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriacivile2430/"
@@ -25113,7 +25113,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriadellautomazioneedeisistemi2431",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25201",
@@ -25783,7 +25783,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriadellinnovazioneperleimpresedigitali2433",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25201",
@@ -26487,7 +26487,7 @@
      "id": "unipa-l-8-ingegneria-dell-innovazione-per-le-imprese-digitali-18105",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=185534"
     }
    ],
    "url_catalogo": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriadellinnovazioneperleimpresedigitali2433/"
@@ -26508,7 +26508,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriadelletecnologieperilmare2439",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25201",
@@ -27312,7 +27312,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaedileinnovazioneerecuperodelcostruito2450",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "13712",
@@ -28157,7 +28157,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20564",
@@ -28768,7 +28768,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaelettronica2432",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25806",
@@ -29769,7 +29769,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20564",
@@ -30494,7 +30494,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriagestionale2346",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25201",
@@ -31166,7 +31166,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriainformatica2344",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25201",
@@ -31366,7 +31366,7 @@
      "id": "unipa-l-8-ingegneria-informatica-19109",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=219865"
     },
     {
      "codice": "03295",
@@ -31389,7 +31389,7 @@
      "id": "unipa-l-8-ingegneria-informatica-03295",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=219866"
     },
     {
      "codice": "01175",
@@ -31823,7 +31823,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2347",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25201",
@@ -32638,7 +32638,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriarobotica2434",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25201",
@@ -32874,6 +32874,28 @@
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
+     "codice": "03295",
+     "nome": "Fisica I",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": 9,
+     "ssd": "FIS/03",
+     "obbligatorio": true,
+     "curriculum": null,
+     "docenti": [
+      "Manuela Mallamaci"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriarobotica2434/?template=responsive&pagina=insegnamento&idInsegnamento=222659&idDocente=26177258&idCattedra=220655",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriarobotica2434/?pagina=insegnamenti#manifesto-2026-2027",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-8-ingegneria-robotica-03295",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=222659"
+    },
+    {
      "codice": "14465",
      "nome": "Fondamenti di Programmazione",
      "anno": 1,
@@ -32915,28 +32937,6 @@
      "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriarobotica2434/?pagina=insegnamenti#manifesto-2026-2027",
      "verificato_il": "2026-10-20",
      "id": "unipa-l-8-ingegneria-robotica-22839",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
-    },
-    {
-     "codice": "03295",
-     "nome": "Fisica I",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 9,
-     "ssd": "FIS/03",
-     "obbligatorio": true,
-     "curriculum": null,
-     "docenti": [
-      "Manuela Mallamaci"
-     ],
-     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriarobotica2434/?template=responsive&pagina=insegnamento&idInsegnamento=222659&idDocente=26177258&idCattedra=220655",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriarobotica2434/?pagina=insegnamenti#manifesto-2026-2027",
-     "verificato_il": "2026-10-20",
-     "id": "unipa-l-8-ingegneria-robotica-03295",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
@@ -33340,7 +33340,7 @@
    "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/intelligenzaartificiale2291",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01169",
@@ -34001,8 +34001,35 @@
    "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/cds/lettere2440",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "21457",
+     "nome": "Istituzioni di Lingua e Civiltà Latina",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "L-FIL-LET/04",
+     "obbligatorio": true,
+     "curriculum": "CLASSICO, MODERNO, STUDI ITALIANI",
+     "docenti": [
+      "Luciano Landolfi",
+      "Rosa Marchese",
+      "Edoardo Galfrè"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?template=responsive&pagina=insegnamento&idInsegnamento=222121&idDocente=160084&idCattedra=220137",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?pagina=insegnamenti#manifesto-2026-2027",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-10-lettere-21457",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "codici_alternativi": [
+      "22693"
+     ]
+    },
     {
      "codice": "25688",
      "nome": "Istituzioni di Lingua e Letteratura Greca",
@@ -34023,6 +34050,33 @@
      "id": "unipa-l-10-lettere-25688",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "04438",
+     "nome": "Letteratura Italiana",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": 12,
+     "ssd": "L-FIL-LET/10",
+     "obbligatorio": true,
+     "curriculum": "CLASSICO, MODERNO, STUDI ITALIANI",
+     "docenti": [
+      "Ignazio Castiglia",
+      "Matteo Di Gesu'",
+      "Chiara Natoli"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?template=responsive&pagina=insegnamento&idInsegnamento=221928&idDocente=152104&idCattedra=219928",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?pagina=insegnamenti#manifesto-2026-2027",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-10-lettere-04438",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "codici_alternativi": [
+      "15000"
+     ]
     },
     {
      "codice": "04770",
@@ -34091,33 +34145,6 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
-    },
-    {
-     "codice": "04438",
-     "nome": "Letteratura Italiana",
-     "anno": 1,
-     "periodo": "1",
-     "cfu": 12,
-     "ssd": "L-FIL-LET/10",
-     "obbligatorio": true,
-     "curriculum": "CLASSICO, MODERNO, STUDI ITALIANI",
-     "docenti": [
-      "Ignazio Castiglia",
-      "Matteo Di Gesu'",
-      "Chiara Natoli"
-     ],
-     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?template=responsive&pagina=insegnamento&idInsegnamento=221928&idDocente=152104&idCattedra=219928",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?pagina=insegnamenti#manifesto-2026-2027",
-     "verificato_il": "2026-10-20",
-     "id": "unipa-l-10-lettere-04438",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
-     "codici_alternativi": [
-      "15000"
-     ]
     },
     {
      "codice": "04698",
@@ -34300,33 +34327,6 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
-    },
-    {
-     "codice": "21457",
-     "nome": "Istituzioni di Lingua e Civiltà Latina",
-     "anno": 1,
-     "periodo": "2",
-     "cfu": 6,
-     "ssd": "L-FIL-LET/04",
-     "obbligatorio": true,
-     "curriculum": "CLASSICO, MODERNO, STUDI ITALIANI",
-     "docenti": [
-      "Luciano Landolfi",
-      "Rosa Marchese",
-      "Edoardo Galfrè"
-     ],
-     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?template=responsive&pagina=insegnamento&idInsegnamento=222121&idDocente=160084&idCattedra=220137",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?pagina=insegnamenti#manifesto-2026-2027",
-     "verificato_il": "2026-10-20",
-     "id": "unipa-l-10-lettere-21457",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
-     "codici_alternativi": [
-      "22693"
-     ]
     },
     {
      "codice": "20758",
@@ -35440,7 +35440,7 @@
    "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/cds/lingueeletteraturestudiinterculturali2364",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "13351",
@@ -36530,7 +36530,7 @@
    "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lingueetraduzioneperiserviziculturaliedelterritorio2345",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "13351",
@@ -37012,7 +37012,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/logopedia2173",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04731",
@@ -37896,7 +37896,7 @@
    "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2471",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "13751",
@@ -38609,7 +38609,7 @@
    "url": "https://www.unipa.it/dipartimenti/promise/cds/nursing2233",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20335",
@@ -39537,7 +39537,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/ortotticaedassistenzaoftalmologica2175",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04731",
@@ -40386,7 +40386,7 @@
    "url": "https://www.unipa.it/dipartimenti/promise/cds/ostetricia2171",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04731",
@@ -41169,7 +41169,7 @@
    "url": "https://www.unipa.it/dipartimenti/promise/cds/ostetriciasedetp2426",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04731",
@@ -41681,7 +41681,7 @@
    "url": "https://www.unipa.it/dipartimenti/difc/cds/otticaeoptometria2358",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20238",
@@ -42332,7 +42332,7 @@
    "url": "http://portale.unipa.it/dipartimenti/stebicef/cds/scienzebiologiche2108",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20692",
@@ -43260,7 +43260,7 @@
    "url": "https://www.unipa.it/dipartimenti/sc.psicol.pedag.edellaformazione/cds/scienzedelleducazione2445",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04677",
@@ -44513,7 +44513,7 @@
    "url": "https://www.unipa.it/dipartimenti/sc.psicol.pedag.edellaformazione/cds/scienzedelleducazionesedeag2446",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04677",
@@ -45161,7 +45161,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25933",
@@ -45478,7 +45478,7 @@
      "id": "unipa-l-20-scienze-della-comunicazione-23441",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=229496"
     },
     {
      "codice": "23439",
@@ -45502,7 +45502,7 @@
      "id": "unipa-l-20-scienze-della-comunicazione-23439",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=229798"
     },
     {
      "codice": "23438",
@@ -45526,7 +45526,7 @@
      "id": "unipa-l-20-scienze-della-comunicazione-23438",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=229796"
     },
     {
      "codice": "23065",
@@ -45548,7 +45548,7 @@
      "id": "unipa-l-20-scienze-della-comunicazione-23065",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=229900"
     },
     {
      "codice": "23057",
@@ -45570,7 +45570,7 @@
      "id": "unipa-l-20-scienze-della-comunicazione-23057",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=229903"
     },
     {
      "codice": "24130",
@@ -45594,7 +45594,7 @@
      "id": "unipa-l-20-scienze-della-comunicazione-24130",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=229471"
     },
     {
      "codice": "24131",
@@ -45618,7 +45618,7 @@
      "id": "unipa-l-20-scienze-della-comunicazione-24131",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=229802"
     },
     {
      "codice": "24128",
@@ -45642,7 +45642,7 @@
      "id": "unipa-l-20-scienze-della-comunicazione-24128",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=231750"
     },
     {
      "codice": "24129",
@@ -45666,7 +45666,7 @@
      "id": "unipa-l-20-scienze-della-comunicazione-24129",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=229898"
     },
     {
      "codice": "02549",
@@ -46863,7 +46863,7 @@
      "id": "unipa-l-20-scienze-della-comunicazione-17958",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=208719"
     },
     {
      "codice": "23058",
@@ -46885,7 +46885,7 @@
      "id": "unipa-l-20-scienze-della-comunicazione-23058",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=212822"
     },
     {
      "codice": "01399",
@@ -47846,7 +47846,7 @@
    "url": "http://portale.unipa.it/dipartimenti/distem/cds/scienzedellanaturaedellambiente2180",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01933",
@@ -48686,7 +48686,7 @@
    "url": "https://www.unipa.it/dipartimenti/dems/cds/scienzedelleamministrazioniconsulenzadellavoroeinnovazionesociale2444",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25492",
@@ -48865,7 +48865,7 @@
      "id": "unipa-l-16-scienze-delle-amministrazioni-consulenza-del-lavoro-e-innova-22793",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=219744"
     },
     {
      "codice": "06715",
@@ -48887,7 +48887,7 @@
      "id": "unipa-l-16-scienze-delle-amministrazioni-consulenza-del-lavoro-e-innova-06715",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=219777"
     },
     {
      "codice": "06755",
@@ -48909,7 +48909,32 @@
      "id": "unipa-l-16-scienze-delle-amministrazioni-consulenza-del-lavoro-e-innova-06755",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=219772"
+    },
+    {
+     "codice": "00294",
+     "nome": "Economia Aziendale",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 9,
+     "ssd": "SECS-P/07",
+     "obbligatorio": true,
+     "curriculum": "CONSULENZA DEL LAVORO E GESTIONE DELLE RISORSE UMANE, GESTIONE E ORGANIZZAZIONE DELLE AMMINISTRAZIONI PUBBLICHE E PRIVATE",
+     "docenti": [
+      "Giovanni Scire'"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/dems/cds/scienzedelleamministrazioniconsulenzadellavoroeinnovazionesociale2444/?template=responsive&pagina=insegnamento&idInsegnamento=198423&idDocente=6187&idCattedra=194761",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/dems/cds/scienzedelleamministrazioniconsulenzadellavoroeinnovazionesociale2444/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-16-scienze-delle-amministrazioni-consulenza-del-lavoro-e-innova-00294",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "codici_alternativi": [
+      "22916"
+     ]
     },
     {
      "codice": "15093",
@@ -49115,31 +49140,6 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
-    },
-    {
-     "codice": "00294",
-     "nome": "Economia Aziendale",
-     "anno": 2,
-     "periodo": "2",
-     "cfu": 9,
-     "ssd": "SECS-P/07",
-     "obbligatorio": true,
-     "curriculum": "CONSULENZA DEL LAVORO E GESTIONE DELLE RISORSE UMANE, GESTIONE E ORGANIZZAZIONE DELLE AMMINISTRAZIONI PUBBLICHE E PRIVATE",
-     "docenti": [
-      "Giovanni Scire'"
-     ],
-     "url": "https://www.unipa.it/dipartimenti/dems/cds/scienzedelleamministrazioniconsulenzadellavoroeinnovazionesociale2444/?template=responsive&pagina=insegnamento&idInsegnamento=198423&idDocente=6187&idCattedra=194761",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/dems/cds/scienzedelleamministrazioniconsulenzadellavoroeinnovazionesociale2444/?pagina=insegnamenti#manifesto-2025-2026",
-     "verificato_il": "2026-10-20",
-     "id": "unipa-l-16-scienze-delle-amministrazioni-consulenza-del-lavoro-e-innova-00294",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
-     "codici_alternativi": [
-      "22916"
-     ]
     },
     {
      "codice": "04820",
@@ -49449,7 +49449,7 @@
    "url": "https://www.unipa.it/dipartimenti/sc.psicol.pedag.edellaformazione/cds/scienzedelleattivitamotorieesportive2118",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "14591",
@@ -51306,7 +51306,7 @@
    "url": "https://www.unipa.it/dipartimenti/sc.psicol.pedag.edellaformazione/cds/scienzedelleattivitamotorieesportive2118",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "14591",
@@ -53155,7 +53155,7 @@
    "url": "https://www.unipa.it/dipartimenti/sc.psicol.pedag.edellaformazione/cds/scienzedelleattivitamotorieesportive2118",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "14591",
@@ -55004,7 +55004,7 @@
    "url": "http://portale.unipa.it/dipartimenti/dipsicologia/cds/scienzeetecnichepsicologiche2121",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "17358",
@@ -55790,7 +55790,7 @@
    "url": "http://portale.unipa.it/dipartimenti/dipsicologia/cds/scienzeetecnichepsicologiche2121",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01340",
@@ -56568,7 +56568,7 @@
    "url": "https://www.unipa.it/dipartimenti/saaf/cds/scienzeetecnologieagrarie2453",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25778",
@@ -57649,7 +57649,7 @@
    "url": "https://www.unipa.it/dipartimenti/saaf/cds/scienzeetecnologieagrarie2453",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25778",
@@ -58702,7 +58702,7 @@
    "url": "http://www.unipa.it/dipartimenti/saaf/cds/scienzeetecnologieagroalimentari2147/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "18520",
@@ -59451,7 +59451,7 @@
    "url": "https://www.unipa.it/dipartimenti/saaf/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25221",
@@ -59638,7 +59638,7 @@
    "url": "https://www.unipa.it/dipartimenti/difc/cds/scienzefisiche2459",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20692",
@@ -60729,7 +60729,7 @@
    "url": "https://www.unipa.it/dipartimenti/saaf/str/u.o.didatticaeinternazionalizzazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01708",
@@ -61327,7 +61327,7 @@
    "url": "https://www.unipa.it/dipartimenti/saaf/cds/scienzegastronomiche2300",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22830",
@@ -62119,7 +62119,7 @@
    "url": "https://www.unipa.it/dipartimenti/saaf/cds/scienzegastronomiche2300",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22830",
@@ -62907,7 +62907,7 @@
    "url": "https://www.unipa.it/dipartimenti/distem/cds/scienzegeologiche2470",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "14574",
@@ -63526,7 +63526,7 @@
    "url": "https://www.unipa.it/dipartimenti/dems/cds/scienzepoliticheedellerelazioniinternazionali2465",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "26008",
@@ -64132,6 +64132,28 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "19890",
+     "nome": "Antropologia Giuridica",
+     "anno": 3,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "IUS/21",
+     "obbligatorio": false,
+     "curriculum": "SCIENZE POLITICHE",
+     "docenti": [
+      "Salvatore Mancuso"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/dems/cds/scienzepoliticheedellerelazioniinternazionali2465/?template=responsive&pagina=insegnamento&idInsegnamento=184376&idDocente=3848855&idCattedra=180461",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/dems/cds/scienzepoliticheedellerelazioniinternazionali2465/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-36-scienze-politiche-e-delle-relazioni-internazionali-19890",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=184376"
+    },
+    {
      "codice": "23154",
      "nome": "Diritto Europeo e Cittadinanza",
      "anno": 3,
@@ -64456,28 +64478,6 @@
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
-     "codice": "19890",
-     "nome": "Antropologia Giuridica",
-     "anno": 3,
-     "periodo": "annuale",
-     "cfu": 6,
-     "ssd": "IUS/21",
-     "obbligatorio": false,
-     "curriculum": "SCIENZE POLITICHE",
-     "docenti": [
-      "Salvatore Mancuso"
-     ],
-     "url": "https://www.unipa.it/dipartimenti/dems/cds/scienzepoliticheedellerelazioniinternazionali2465/?template=responsive&pagina=insegnamento&idInsegnamento=184376&idDocente=3848855&idCattedra=180461",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/dems/cds/scienzepoliticheedellerelazioniinternazionali2465/?pagina=insegnamenti#manifesto-2024-2025",
-     "verificato_il": "2026-10-20",
-     "id": "unipa-l-36-scienze-politiche-e-delle-relazioni-internazionali-19890",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
-    },
-    {
      "codice": "23159",
      "nome": "Sociologia Economica e Statistica Sociale C.I.",
      "anno": 3,
@@ -64544,7 +64544,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/serviziosociale2359",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04203",
@@ -65277,7 +65277,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/serviziosocialesedeag2360",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "14116",
@@ -65936,7 +65936,7 @@
    "url": "https://www.unipa.it/dipartimenti/distem/cds/biodiversitaeinnovazionetecnologica2295",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "18476",
@@ -66783,7 +66783,7 @@
    "url": "http://statistica.unipa.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "17358",
@@ -67433,7 +67433,7 @@
    "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/studifilosoficiestorici2428",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20692",
@@ -68411,7 +68411,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/studiglobalistoriapoliticheculture2249",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20141",
@@ -69370,7 +69370,7 @@
    "url": "http://www.unipa.it/dipartimenti/bi.n.d./cds/tecnicadellariabilitazionepsichiatrica2168",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04731",
@@ -70211,7 +70211,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/tecnicheaudioprotesiche2237",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01286",
@@ -71077,7 +71077,7 @@
    "url": "http://www.unipa.it/dipartimenti/promise/cds/tecnichedellaprevenzionenellambienteeneiluoghidilavoro2169",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04731",
@@ -71879,7 +71879,7 @@
    "url": "https://www.unipa.it/dipartimenti/me.pre.c.c./?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25463",
@@ -72255,7 +72255,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/tecnichedilaboratoriobiomedico2166",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "17668",
@@ -73121,7 +73121,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/tecnichedilaboratoriobiomedico2166",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "17668",
@@ -73987,7 +73987,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/tecnichedineurofisiopatologia2267",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "07558",
@@ -75213,7 +75213,7 @@
      "id": "unipa-l-snt3-tecniche-di-neurofisiopatologia-abilitante-alla-professione-20173",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=189722"
     }
    ],
    "url_catalogo": "https://www.unipa.it/dipartimenti/bi.n.d./cds/tecnichedineurofisiopatologia2267/"
@@ -75234,7 +75234,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/tecnichediradiologiamedicaperimmaginieradioterapia2165",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04731",
@@ -76069,7 +76069,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/tecnichediradiologiamedicaperimmaginieradioterapiasedetp2302",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04731",
@@ -76888,7 +76888,7 @@
    "url": "https://www.unipa.it/dipartimenti/me.pre.c.c./?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01238",
@@ -77292,7 +77292,7 @@
    "url": "https://www.unipa.it/dipartimenti/stebicef",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "16172",
@@ -77703,7 +77703,7 @@
    "url": "https://www.unipa.it/dipartimenti/seas/cds/turismoterritorieimprese2442",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22518",
@@ -78386,7 +78386,7 @@
    "url": "https://www.unipa.it/dipartimenti/seas/cds/turismoterritorieimpresesedetp2443",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "02549",
@@ -78628,7 +78628,7 @@
      "id": "unipa-l-15-turismo-territori-e-imprese-replica-sede-trapani-11254",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=226442"
     },
     {
      "codice": "11261",
@@ -79083,7 +79083,7 @@
    "url": "https://www.unipa.it/dipartimenti/architettura/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25201",
@@ -79897,7 +79897,7 @@
    "url": "https://www.unipa.it/dipartimenti/saaf/cds/viticolturaedenologia2455",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "04163",
@@ -80831,7 +80831,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/archeologia2372",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "21113",
@@ -81525,7 +81525,7 @@
    "url": "https://www.unipa.it/dipartimenti/architettura/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25670",
@@ -81913,7 +81913,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/automationandsystemsengineering2332",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "21508",
@@ -82348,7 +82348,7 @@
    "url": "http://www.unipa.it/dipartimenti/distem/cds/biologiamarina2105",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "16177",
@@ -82714,7 +82714,7 @@
    "url": "http://www.unipa.it/dipartimenti/stebicef/cds/biologiamolecolareedellasalute2195",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25743",
@@ -83380,7 +83380,7 @@
    "url": "https://www.unipa.it/dipartimenti/stebicef/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25684",
@@ -83753,7 +83753,7 @@
    "url": "https://www.unipa.it/dipartimenti/stebicef/cds/biotecnologieindustrialibiomolecolari2376",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25947",
@@ -84108,7 +84108,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/biotecnologiemedicheemedicinamolecolare2377",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "26034",
@@ -84603,7 +84603,7 @@
    "url": "https://www.unipa.it/dipartimenti/difc/cds/chimica2395",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "16503",
@@ -85254,7 +85254,7 @@
    "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/computerscienceandartificialintelligence2323/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "17393",
@@ -85584,7 +85584,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionedelpatrimonioculturale2215",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25935",
@@ -86086,7 +86086,7 @@
      "id": "unipa-lm-92-comunicazione-del-patrimonio-culturale-23071",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=232770"
     },
     {
      "codice": "23020",
@@ -86110,7 +86110,7 @@
      "id": "unipa-lm-92-comunicazione-del-patrimonio-culturale-23020",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=232742"
     },
     {
      "codice": "23016",
@@ -86134,7 +86134,7 @@
      "id": "unipa-lm-92-comunicazione-del-patrimonio-culturale-23016",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=232518"
     },
     {
      "codice": "24854",
@@ -86308,6 +86308,50 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "24824",
+     "nome": "Cultura del Libro",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 5,
+     "ssd": "L-LIN/18",
+     "obbligatorio": false,
+     "curriculum": "COMUNICAZIONE DEL PATRIMONIO CULTURALE",
+     "docenti": [],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionedelpatrimonioculturale2215/?template=responsive&pagina=insegnamento&idInsegnamento=211914&idDocente=&idCattedra=207689",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionedelpatrimonioculturale2215/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Laboratorio di Editoria",
+     "codice_ci": "24823",
+     "id": "unipa-lm-92-comunicazione-del-patrimonio-culturale-24824",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=211914"
+    },
+    {
+     "codice": "24825",
+     "nome": "Laboratorio di Editoria - Editing",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 5,
+     "ssd": "L-LIN/18",
+     "obbligatorio": false,
+     "curriculum": "COMUNICAZIONE DEL PATRIMONIO CULTURALE",
+     "docenti": [],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionedelpatrimonioculturale2215/?template=responsive&pagina=insegnamento&idInsegnamento=211915&idDocente=&idCattedra=207690",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionedelpatrimonioculturale2215/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Laboratorio di Editoria",
+     "codice_ci": "24823",
+     "id": "unipa-lm-92-comunicazione-del-patrimonio-culturale-24825",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=211915"
+    },
+    {
      "codice": "05917",
      "nome": "Prova Finale",
      "anno": 2,
@@ -86350,50 +86394,6 @@
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
-     "codice": "24824",
-     "nome": "Cultura del Libro",
-     "anno": 2,
-     "periodo": "annuale",
-     "cfu": 5,
-     "ssd": "L-LIN/18",
-     "obbligatorio": false,
-     "curriculum": "COMUNICAZIONE DEL PATRIMONIO CULTURALE",
-     "docenti": [],
-     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionedelpatrimonioculturale2215/?template=responsive&pagina=insegnamento&idInsegnamento=211914&idDocente=&idCattedra=207689",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionedelpatrimonioculturale2215/?pagina=insegnamenti#manifesto-2025-2026",
-     "verificato_il": "2026-10-20",
-     "modulo_di": "Laboratorio di Editoria",
-     "codice_ci": "24823",
-     "id": "unipa-lm-92-comunicazione-del-patrimonio-culturale-24824",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
-    },
-    {
-     "codice": "24825",
-     "nome": "Laboratorio di Editoria - Editing",
-     "anno": 2,
-     "periodo": "annuale",
-     "cfu": 5,
-     "ssd": "L-LIN/18",
-     "obbligatorio": false,
-     "curriculum": "COMUNICAZIONE DEL PATRIMONIO CULTURALE",
-     "docenti": [],
-     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionedelpatrimonioculturale2215/?template=responsive&pagina=insegnamento&idInsegnamento=211915&idDocente=&idCattedra=207690",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionedelpatrimonioculturale2215/?pagina=insegnamenti#manifesto-2025-2026",
-     "verificato_il": "2026-10-20",
-     "modulo_di": "Laboratorio di Editoria",
-     "codice_ci": "24823",
-     "id": "unipa-lm-92-comunicazione-del-patrimonio-culturale-24825",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
-    },
-    {
      "codice": "23018",
      "nome": "Laboratorio di Exhibit Design",
      "anno": 2,
@@ -86411,7 +86411,7 @@
      "id": "unipa-lm-92-comunicazione-del-patrimonio-culturale-23018",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=211993"
     }
    ],
    "curricula": [
@@ -86437,7 +86437,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazioneperlenogastronomia2289",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25927",
@@ -87235,7 +87235,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionepubblicadimpresaepubblicita2231",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25935",
@@ -87673,7 +87673,7 @@
      "id": "unipa-lm-59-comunicazione-pubblica-d-impresa-e-pubblicita-24157",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=230302"
     },
     {
      "codice": "24956",
@@ -87695,7 +87695,7 @@
      "id": "unipa-lm-59-comunicazione-pubblica-d-impresa-e-pubblicita-24956",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=230303"
     },
     {
      "codice": "23020",
@@ -87719,7 +87719,7 @@
      "id": "unipa-lm-59-comunicazione-pubblica-d-impresa-e-pubblicita-23020",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=230300"
     },
     {
      "codice": "23016",
@@ -87743,7 +87743,7 @@
      "id": "unipa-lm-59-comunicazione-pubblica-d-impresa-e-pubblicita-23016",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=230315"
     },
     {
      "codice": "24157",
@@ -87979,7 +87979,7 @@
      "id": "unipa-lm-59-comunicazione-pubblica-d-impresa-e-pubblicita-23018",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=209086"
     },
     {
      "codice": "23032",
@@ -88001,7 +88001,7 @@
      "id": "unipa-lm-59-comunicazione-pubblica-d-impresa-e-pubblicita-23032",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=209068"
     }
    ],
    "url_catalogo": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionepubblicadimpresaepubblicita2231/"
@@ -88022,7 +88022,7 @@
    "url": "https://www.unipa.it/dipartimenti/distem/cds/conservazioneevalorizzazionedeisisteminaturali2398",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22473",
@@ -88498,7 +88498,7 @@
    "url": "https://www.unipa.it/dipartimenti/architettura/cds/designsostenibilitaculturadigitaleperilterritorio2378",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "24406",
@@ -88938,7 +88938,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/developmentandmigrationstudies2506",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22629",
@@ -89446,7 +89446,7 @@
    "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/digitalhumanitiesperlindustriaculturale2299",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22786",
@@ -89956,7 +89956,7 @@
    "url": "https://www.unipa.it/dipartimenti/seas/cds/economiaemanagementdelleimpreseartigianeedellepmi2502",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25274",
@@ -90182,7 +90182,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/educazionealpatrimonioarcheologicoedartistico2314",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25905",
@@ -90643,7 +90643,7 @@
    "url": "https://www.unipa.it/ateneo/corsiteledidattica/electronics-and-telecommunication-engineering/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20520",
@@ -91227,7 +91227,7 @@
    "url": "http://www.unipa.it/electronics",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "21740",
@@ -92232,7 +92232,7 @@
    "url": "https://www.unipa.it/dipartimenti/distem/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "23980",
@@ -92612,7 +92612,7 @@
    "url": "https://www.unipa.it/dipartimenti/difc/cds/fisica2379",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "26028",
@@ -93656,7 +93656,7 @@
    "url": "https://www.unipa.it/dipartimenti/distem/cds/georischiegeorisorse2229/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25857",
@@ -94548,7 +94548,7 @@
    "url": "http://www.unipa.it/dipartimenti/saaf/cds/imprenditorialitaequalitaperilsistemaagroalimentare2150/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "07935",
@@ -95060,7 +95060,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2380",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25638",
@@ -95959,7 +95959,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriabiomedica2381",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20270",
@@ -96991,7 +96991,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriachimica2382",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "21896",
@@ -97865,7 +97865,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriacivile2383",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01122",
@@ -99030,7 +99030,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriadeisistemiedilizi2027",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "21622",
@@ -99541,7 +99541,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22276",
@@ -100118,7 +100118,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaetecnologieinnovativeperlambiente2387",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25902",
@@ -101094,7 +101094,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaenergeticaenucleare2386",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "18021",
@@ -102090,7 +102090,7 @@
    "url": "http://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriainformatica2035",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "03994",
@@ -102545,8 +102545,60 @@
    "url": "http://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2036",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
+    {
+     "codice": "24488",
+     "nome": "Gestione della Manutenzione",
+     "anno": 1,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "ING-IND/17",
+     "obbligatorio": true,
+     "curriculum": "ADVANCED MANUFACTURING, GREEN DESIGN AND SUSTAINABLE MANUFACTURING, SMART INDUSTRY",
+     "docenti": [
+      "Concetta Manuela La Fata"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2036/?template=responsive&pagina=insegnamento&idInsegnamento=226728&idDocente=156487&idCattedra=224487",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2036/?pagina=insegnamenti#manifesto-2026-2027",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Controllo di Qualita' e Manutenzione",
+     "codice_ci": "21248",
+     "id": "unipa-lm-33-ingegneria-meccanica-24488",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "codici_alternativi": [
+      "24627"
+     ]
+    },
+    {
+     "codice": "23196",
+     "nome": "Tecnologia Meccanica II",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": 9,
+     "ssd": "ING-IND/16",
+     "obbligatorio": true,
+     "curriculum": "ADVANCED MANUFACTURING, ADVANCED MECHANICAL DESIGN, SMART INDUSTRY, GREEN DESIGN AND SUSTAINABLE MANUFACTURING",
+     "docenti": [
+      "Giuseppe Ingarao"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2036/?template=responsive&pagina=insegnamento&idInsegnamento=226712&idDocente=151512&idCattedra=224478",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2036/?pagina=insegnamenti#manifesto-2026-2027",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-33-ingegneria-meccanica-23196",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "codici_alternativi": [
+      "24625"
+     ]
+    },
     {
      "codice": "22341",
      "nome": "Additive Manufacturing",
@@ -102863,31 +102915,6 @@
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
-     "codice": "23196",
-     "nome": "Tecnologia Meccanica II",
-     "anno": 1,
-     "periodo": "1",
-     "cfu": 9,
-     "ssd": "ING-IND/16",
-     "obbligatorio": true,
-     "curriculum": "ADVANCED MANUFACTURING, ADVANCED MECHANICAL DESIGN, SMART INDUSTRY, GREEN DESIGN AND SUSTAINABLE MANUFACTURING",
-     "docenti": [
-      "Giuseppe Ingarao"
-     ],
-     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2036/?template=responsive&pagina=insegnamento&idInsegnamento=226712&idDocente=151512&idCattedra=224478",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2036/?pagina=insegnamenti#manifesto-2026-2027",
-     "verificato_il": "2026-10-20",
-     "id": "unipa-lm-33-ingegneria-meccanica-23196",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
-     "codici_alternativi": [
-      "24625"
-     ]
-    },
-    {
      "codice": "23148",
      "nome": "Termotecnica e Regolazioni Termofluidodinamiche",
      "anno": 1,
@@ -102972,33 +102999,6 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
-    },
-    {
-     "codice": "24488",
-     "nome": "Gestione della Manutenzione",
-     "anno": 1,
-     "periodo": "2",
-     "cfu": 6,
-     "ssd": "ING-IND/17",
-     "obbligatorio": true,
-     "curriculum": "ADVANCED MANUFACTURING, GREEN DESIGN AND SUSTAINABLE MANUFACTURING, SMART INDUSTRY",
-     "docenti": [
-      "Concetta Manuela La Fata"
-     ],
-     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2036/?template=responsive&pagina=insegnamento&idInsegnamento=226728&idDocente=156487&idCattedra=224487",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2036/?pagina=insegnamenti#manifesto-2026-2027",
-     "verificato_il": "2026-10-20",
-     "modulo_di": "Controllo di Qualita' e Manutenzione",
-     "codice_ci": "21248",
-     "id": "unipa-lm-33-ingegneria-meccanica-24488",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
-     "codici_alternativi": [
-      "24627"
-     ]
     },
     {
      "codice": "03723",
@@ -103616,7 +103616,7 @@
    "url": "https://www.unipa.it/dipartimenti/dems/cds/internationalrelationspoliticstradefullyonline2341/en/index.html",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "18285",
@@ -104083,7 +104083,7 @@
    "url": "https://www.unipa.it/dipartimenti/dems/cds/internationalrelationsrelazioniinternazionali2342/en/index.html",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20652",
@@ -104735,7 +104735,7 @@
    "url": "http://www.unipa.it/dipartimenti/scienzeumanistiche/cds/italianistica2206",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20700",
@@ -105274,7 +105274,7 @@
    "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lingueeletteratureinterculturalitaedidattica2214",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20530",
@@ -106151,7 +106151,7 @@
    "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/linguemoderneetraduzioneperlerelazioniinternazionali2388",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "02529",
@@ -107126,7 +107126,7 @@
    "url": "https://www.unipa.it/dipartimenti/dems/cds/managementdellosportedelleattivitamotorie2391",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "19380",
@@ -107896,7 +107896,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineeringcorsoonline2256/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "11034",
@@ -108529,7 +108529,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "21678",
@@ -110128,7 +110128,7 @@
    "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "26054",
@@ -110987,7 +110987,7 @@
    "url": "https://www.unipa.it/dipartimenti/saaf/cds/mediterraneanfoodscienceandtechnology2238",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20220",
@@ -111434,7 +111434,7 @@
    "url": "https://www.unipa.it/dipartimenti/di.gi./cds/migrationrightsintegration2337",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "26052",
@@ -112413,7 +112413,7 @@
    "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/musicologiaescienzedellospettacolo2414",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20691",
@@ -112896,7 +112896,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/neuroscience2331",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22710",
@@ -113467,7 +113467,7 @@
    "url": "https://www.unipa.it/dipartimenti/sc.psicol.pedag.edellaformazione/cds/psicologiaclinica2392",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "23259",
@@ -114177,7 +114177,7 @@
    "url": "https://www.unipa.it/dipartimenti/sc.psicol.pedag.edellaformazione/cds/psicologiadelciclodivita2393",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "19721",
@@ -114598,7 +114598,7 @@
    "url": "http://portale.unipa.it/dipartimenti/dipsicologia/cds/psicologiasocialedellavoroedelleorganizzazioni2050",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "18698",
@@ -115037,7 +115037,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/religionieculture2250",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25881",
@@ -115877,7 +115877,7 @@
    "url": "https://www.unipa.it/dipartimenti/stebicef/cds/scienzedellalimentazioneenutrizioneumana2245",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "32105",
@@ -116276,7 +116276,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellantichita2057",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25899",
@@ -117008,7 +117008,7 @@
    "url": "https://www.unipa.it/dipartimenti/sc.psicol.pedag.edellaformazione/cds/scienzedelleducazionedegliadultiedellaformazionecontinua2396",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "24374",
@@ -117756,7 +117756,7 @@
    "url": "https://www.unipa.it/dipartimenti/dems/cds/scienzedelleamministrazioniedelleorganizzazionicomplesse2343",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "24720",
@@ -118766,7 +118766,7 @@
    "url": "https://www.unipa.it/dipartimenti/saaf/cds/scienzedelleproduzioniedelletecnologieagrarie2401",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25795",
@@ -119717,7 +119717,7 @@
    "url": "https://www.unipa.it/dipartimenti/promise/cds/scienzedelleprofessionisanitariedellaprevenzione2282",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "07558",
@@ -120339,7 +120339,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/scienzedelleprofessionisanitarietecnichediagnostiche2155",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22351",
@@ -121129,7 +121129,7 @@
    "url": "http://www.unipa.it/dipartimenti/dipsicologia/cds/scienzeetecnichedelleattivitamotoriepreventiveeadattateedelleattivitasportive2144",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "03986",
@@ -122007,7 +122007,7 @@
    "url": "http://www.unipa.it/dipartimenti/dipsicologia/cds/scienzeetecnichedelleattivitamotoriepreventiveeadattateedelleattivitasportive2144",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "14101",
@@ -122871,7 +122871,7 @@
    "url": "https://www.unipa.it/dipartimenti/saaf/cds/scienzeetecnologieagroingegneristicheeforestali2260",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "21741",
@@ -123709,7 +123709,7 @@
    "url": "http://portale.unipa.it/dipartimenti/seas/cds/scienzeeconomicheefinanziarie2063/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22034",
@@ -125222,7 +125222,7 @@
    "url": "https://www.unipa.it/dipartimenti/seas/cds/scienzeeconomicoaziendali2064",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22697",
@@ -126747,7 +126747,7 @@
    "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/scienzefilosoficheestoriche2406",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20691",
@@ -127701,7 +127701,7 @@
    "url": "https://www.unipa.it/dipartimenti/promise/cds/scienzeinfermieristicheeostetriche2153",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "26070",
@@ -128377,7 +128377,7 @@
    "url": "https://www.unipa.it/dipartimenti/sc.psicol.pedag.edellaformazione/cds/scienzepedagogiche2408",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25992",
@@ -129712,7 +129712,7 @@
    "url": "https://www.unipa.it/dipartimenti/sc.psicol.pedag.edellaformazione/cds/scienzepedagogicheperlacomunicazioneinclusivamediatadallalis2317",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "11099",
@@ -130154,7 +130154,7 @@
    "url": "http://www.unipa.it/dipartimenti/bi.n.d./cds/scienzeriabilitativedelleprofessionisanitarie2174",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "07558",
@@ -130824,7 +130824,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/serviziosocialediseguaglianzeevulnerabilitasociale2251",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25880",
@@ -131395,7 +131395,7 @@
    "url": "https://www.unipa.it/dipartimenti/architettura/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25236",
@@ -131884,7 +131884,7 @@
    "url": "https://www.unipa.it/dipartimenti/seas/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22216",
@@ -133129,7 +133129,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/storiadellarte2410",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20694",
@@ -133596,7 +133596,7 @@
    "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/studistoriciantropologiciegeografici2325",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25892",
@@ -134224,7 +134224,7 @@
    "url": "http://surpave.eu",
    "stato": "da_aggiungere",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": []
   },
   {
@@ -134243,7 +134243,7 @@
    "url": "http://www.unipa.it/dipartimenti/seas/cds/tourismsystemsandhospitalitymanagement2205",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25790",
@@ -134742,7 +134742,7 @@
    "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/transnationalgermanstudies2335",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "20073",
@@ -135167,7 +135167,7 @@
    "url": "http://portale.unipa.it/dipartimenti/diarchitettura/cds/architettura2005",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25661",
@@ -135278,6 +135278,31 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "14735",
+     "nome": "Laboratorio di Disegno e Rilievo Dell'architettura",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": 8,
+     "ssd": "ICAR/17",
+     "obbligatorio": true,
+     "curriculum": "PROFILO: PAESAGGIO E AMBIENTE, PROFILO: PROGETTAZIONE ARCHITETTONICA E URBANA, PROFILO: RESTAURO E RECUPERO DEL PATRIMONIO",
+     "docenti": [
+      "Francesco Maggio",
+      "Gianmarco Girgenti",
+      "Manuela Milone",
+      "Sonia Mollica"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/diarchitettura/cds/architettura2005/?template=responsive&pagina=insegnamento&idInsegnamento=225585&idDocente=162130&idCattedra=223667",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/diarchitettura/cds/architettura2005/?pagina=insegnamenti#manifesto-2026-2027",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-4-c-u-architettura-14735",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=225585"
+    },
+    {
      "codice": "16106",
      "nome": "Tecnologia Dell'architettura",
      "anno": 1,
@@ -135296,31 +135321,6 @@
      "fonte": "https://www.unipa.it/dipartimenti/diarchitettura/cds/architettura2005/?pagina=insegnamenti#manifesto-2026-2027",
      "verificato_il": "2026-10-20",
      "id": "unipa-lm-4-c-u-architettura-16106",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
-    },
-    {
-     "codice": "14735",
-     "nome": "Laboratorio di Disegno e Rilievo Dell'architettura",
-     "anno": 1,
-     "periodo": "annuale",
-     "cfu": 8,
-     "ssd": "ICAR/17",
-     "obbligatorio": true,
-     "curriculum": "PROFILO: PAESAGGIO E AMBIENTE, PROFILO: PROGETTAZIONE ARCHITETTONICA E URBANA, PROFILO: RESTAURO E RECUPERO DEL PATRIMONIO",
-     "docenti": [
-      "Francesco Maggio",
-      "Gianmarco Girgenti",
-      "Manuela Milone",
-      "Sonia Mollica"
-     ],
-     "url": "https://www.unipa.it/dipartimenti/diarchitettura/cds/architettura2005/?template=responsive&pagina=insegnamento&idInsegnamento=225585&idDocente=162130&idCattedra=223667",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/diarchitettura/cds/architettura2005/?pagina=insegnamenti#manifesto-2026-2027",
-     "verificato_il": "2026-10-20",
-     "id": "unipa-lm-4-c-u-architettura-14735",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
@@ -135554,6 +135554,33 @@
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
+     "codice": "14082",
+     "nome": "Storia Dell'architettura Contemporanea",
+     "anno": 3,
+     "periodo": "1",
+     "cfu": 8,
+     "ssd": "ICAR/18",
+     "obbligatorio": false,
+     "curriculum": "ARCHITETTURA",
+     "docenti": [
+      "Emanuela Garofalo"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/diarchitettura/cds/architettura2005/?template=responsive&pagina=insegnamento&idInsegnamento=183502&idDocente=158892&idCattedra=179587",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/diarchitettura/cds/architettura2005/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Storia Dell'architettura Contemporanea e Storia Dell'arte Moderna e Contemporanea",
+     "codice_ci": "13232",
+     "id": "unipa-lm-4-c-u-architettura-14082",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "codici_alternativi": [
+      "17717"
+     ]
+    },
+    {
      "codice": "19122",
      "nome": "Geografia Urbana e Territoriale",
      "anno": 3,
@@ -135672,33 +135699,6 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
-    },
-    {
-     "codice": "14082",
-     "nome": "Storia Dell'architettura Contemporanea",
-     "anno": 3,
-     "periodo": "1",
-     "cfu": 8,
-     "ssd": "ICAR/18",
-     "obbligatorio": false,
-     "curriculum": "ARCHITETTURA",
-     "docenti": [
-      "Emanuela Garofalo"
-     ],
-     "url": "https://www.unipa.it/dipartimenti/diarchitettura/cds/architettura2005/?template=responsive&pagina=insegnamento&idInsegnamento=183502&idDocente=158892&idCattedra=179587",
-     "libri": [],
-     "esami": [],
-     "fonte": "https://www.unipa.it/dipartimenti/diarchitettura/cds/architettura2005/?pagina=insegnamenti#manifesto-2024-2025",
-     "verificato_il": "2026-10-20",
-     "modulo_di": "Storia Dell'architettura Contemporanea e Storia Dell'arte Moderna e Contemporanea",
-     "codice_ci": "13232",
-     "id": "unipa-lm-4-c-u-architettura-14082",
-     "stato_libri": "da_aggiungere",
-     "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
-     "codici_alternativi": [
-      "17717"
-     ]
     },
     {
      "codice": "11173",
@@ -136191,7 +136191,7 @@
      "id": "unipa-lm-4-c-u-architettura-19937",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=159094"
     }
    ],
    "curricula": [
@@ -136218,7 +136218,7 @@
    "url": "https://www.unipa.it/dipartimenti/ingegneria/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01239",
@@ -136405,7 +136405,7 @@
    "url": "http://portale.unipa.it/dipartimenti/stebicef/cds/chimicaetecnologiafarmaceutiche2013",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01115",
@@ -137207,7 +137207,7 @@
    "url": "https://www.unipa.it/dipartimenti/difc/cds/conservazioneerestaurodeibeniculturali2217",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "22640",
@@ -138238,7 +138238,7 @@
    "url": "http://portale.unipa.it/dipartimenti/stebicef/cds/farmacia2018",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01286",
@@ -139088,7 +139088,7 @@
    "url": "http://portale.unipa.it/dipartimenti/stebicef/cds/farmacia2018",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01286",
@@ -139931,7 +139931,7 @@
    "url": "http://www.unipa.it/dipartimenti/di.gi./cds/giurisprudenza470",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25456",
@@ -140184,7 +140184,7 @@
      "id": "unipa-lmg-01-giurisprudenza-02432",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=224359"
     },
     {
      "codice": "04035",
@@ -140206,7 +140206,7 @@
      "id": "unipa-lmg-01-giurisprudenza-04035",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=224440"
     },
     {
      "codice": "15464",
@@ -140410,7 +140410,7 @@
      "id": "unipa-lmg-01-giurisprudenza-02443",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=196604"
     },
     {
      "codice": "23297",
@@ -140698,7 +140698,7 @@
      "id": "unipa-lmg-01-giurisprudenza-18747",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=184737"
     },
     {
      "codice": "19283",
@@ -140722,7 +140722,7 @@
      "id": "unipa-lmg-01-giurisprudenza-19283",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=184647"
     },
     {
      "codice": "02396",
@@ -141027,7 +141027,7 @@
      "id": "unipa-lmg-01-giurisprudenza-02547",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=171376"
     },
     {
      "codice": "08841",
@@ -142489,7 +142489,7 @@
    "url": "http://www.unipa.it/dipartimenti/di.gi./cds/giurisprudenza470",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "02432",
@@ -143237,7 +143237,7 @@
      "id": "unipa-lmg-01-giurisprudenza-replica-sede-trapani-18747",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=184737"
     },
     {
      "codice": "19283",
@@ -143261,7 +143261,7 @@
      "id": "unipa-lmg-01-giurisprudenza-replica-sede-trapani-19283",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=184647"
     },
     {
      "codice": "02396",
@@ -143566,7 +143566,7 @@
      "id": "unipa-lmg-01-giurisprudenza-replica-sede-trapani-02547",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=171376"
     },
     {
      "codice": "08841",
@@ -145028,7 +145028,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/medicinaechirurgia2041",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01284",
@@ -147321,7 +147321,7 @@
      "id": "unipa-lm-41-medicina-e-chirurgia-21320",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=153837"
     }
    ],
    "curricula": [
@@ -147346,7 +147346,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/medicinaechirurgiamedit2367",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "26114",
@@ -149181,7 +149181,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/medicinaechirurgia2041",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "01284",
@@ -151469,7 +151469,7 @@
      "id": "unipa-lm-41-medicina-e-chirurgia-replica-sede-caltanissetta-21320",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=153837"
     }
    ],
    "curricula": [
@@ -151494,7 +151494,7 @@
    "url": "https://www.unipa.it/dipartimenti/bi.n.d./cds/medicinaechirurgiameditsedecl2368",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "26114",
@@ -152981,7 +152981,7 @@
    "url": "https://www.unipa.it/dipartimenti/saaf/?pagina=cds",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25259",
@@ -153604,7 +153604,7 @@
    "url": "https://www.unipa.it/dipartimenti/me.pre.c.c./cds/odontoiatriaeprotesidentaria2369",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25081",
@@ -155521,7 +155521,7 @@
    "url": "https://www.unipa.it/dipartimenti/sc.psicol.pedag.edellaformazione/cds/scienzedellaformazioneprimaria2183/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "23135",
@@ -155692,7 +155692,7 @@
      "id": "unipa-lm-85-bis-scienze-della-formazione-primaria-16006",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=234653"
     },
     {
      "codice": "03206",
@@ -156108,7 +156108,7 @@
      "id": "unipa-lm-85-bis-scienze-della-formazione-primaria-16021",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=183220"
     },
     {
      "codice": "16031",
@@ -156503,7 +156503,7 @@
    "url": "https://www.unipa.it/dipartimenti/sc.psicol.pedag.edellaformazione/cds/scienzedellaformazioneprimaria2183/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "23135",
@@ -156674,7 +156674,7 @@
      "id": "unipa-lm-85-bis-scienze-della-formazione-primaria-replica-sede-agrigento-16006",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=234653"
     },
     {
      "codice": "03206",
@@ -157090,7 +157090,7 @@
      "id": "unipa-lm-85-bis-scienze-della-formazione-primaria-replica-sede-agrigento-16021",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=183220"
     },
     {
      "codice": "16031",
@@ -157485,7 +157485,7 @@
    "url": "https://www.unipa.it/dipartimenti/sc.psicol.pedag.edellaformazione/cds/scienzedellaformazioneprimaria2183/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "23135",
@@ -157656,7 +157656,7 @@
      "id": "unipa-lm-85-bis-scienze-della-formazione-primaria-replica-sede-trapani-16006",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=234653"
     },
     {
      "codice": "03206",
@@ -158072,7 +158072,7 @@
      "id": "unipa-lm-85-bis-scienze-della-formazione-primaria-replica-sede-trapani-16021",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
-     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+     "periodo_fonte": "https://offertaformativa.unipa.it/offweb/schedaTrasparenza?lingua=ITA&oidCurrInsegnamento=183220"
     },
     {
      "codice": "16031",
@@ -158467,7 +158467,7 @@
    "url": "https://www.unipa.it/dipartimenti/architettura/cds/tecnologiedigitaliperlarchitettura2276",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "25201",

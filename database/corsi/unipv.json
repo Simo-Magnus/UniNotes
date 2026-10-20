@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unipv",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-20",
+ "aggiornato_il": "2026-10-21",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://claeg.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "511158",
@@ -1552,7 +1552,7 @@
    "url": "https://matematica.unipv.it/laurea-triennale-ia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "509483",
@@ -5528,7 +5528,7 @@
    "url": "http://bioingegneria.unipv.eu/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500115",
@@ -6004,18 +6004,6 @@
        "citazione": "Titolo: Fondamenti di chimica generale"
       },
       {
-       "titolo": "Anna Belfiore et al., FISIOLOGIA UMANA-FONDAMENTI, EDIERMES 2018 ISBN:9788808275417 ISBN:9788808275417",
-       "autori": null,
-       "editore": null,
-       "anno": 2018,
-       "edizione": null,
-       "isbn": "9788808275417",
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Anna Belfiore et al., FISIOLOGIA UMANA-FONDAMENTI, EDIERMES 2018 ISBN:9788808275417 ISBN:9788808275417"
-      },
-      {
        "titolo": "Anna Belfiore et al., FISIOLOGIA UMANA-FONDAMENTI, EDIERMES 2018 ISBN:9788808275417",
        "autori": null,
        "editore": null,
@@ -6026,6 +6014,18 @@
        "tipo": null,
        "note": null,
        "citazione": "Anna Belfiore et al., FISIOLOGIA UMANA-FONDAMENTI, EDIERMES 2018 ISBN:9788808275417"
+      },
+      {
+       "titolo": "Anna Belfiore et al., FISIOLOGIA UMANA-FONDAMENTI, EDIERMES 2018",
+       "autori": null,
+       "editore": null,
+       "anno": 2018,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Anna Belfiore et al., FISIOLOGIA UMANA-FONDAMENTI, EDIERMES 2018"
       }
      ],
      "esami": [
@@ -8793,7 +8793,7 @@
    "url": "https://biotecnologie.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500795",
@@ -14717,7 +14717,7 @@
    "url": "https://chimicalt.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500172",
@@ -18589,7 +18589,7 @@
    "url": "https://cim.cdl.unipv.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "502790",
@@ -21061,7 +21061,7 @@
    "url": "https://dietistica.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503458",
@@ -27102,7 +27102,7 @@
    "url": "http://clec.cdl.unipv.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "511158",
@@ -29202,7 +29202,7 @@
    "url": "https://filosofia.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500049",
@@ -39549,7 +39549,7 @@
    "url": "https://fisica.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500205",
@@ -42115,7 +42115,7 @@
    "url": "https://fisioterapia.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503480",
@@ -45236,7 +45236,7 @@
        "citazione": "Softcover ISBN 978-3-319-84069-7"
       },
       {
-       "titolo": "eBook ISBN 978-3-319-49022-9 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358",
+       "titolo": "eBook ISBN 978-3-319-49022-9 ISBN 9780953342358",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -45245,7 +45245,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "eBook ISBN 978-3-319-49022-9 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358 ISBN 9780953342358"
+       "citazione": "eBook ISBN 978-3-319-49022-9 ISBN 9780953342358"
       }
      ],
      "esami": [
@@ -48655,7 +48655,7 @@
    "url": "https://igienedentale.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503457",
@@ -58719,7 +58719,7 @@
    "url": "https://infermieristica.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503594",
@@ -65451,7 +65451,7 @@
    "url": "https://infermieristica.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503402",
@@ -72153,7 +72153,7 @@
    "url": "https://infermieristica.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503402",
@@ -78855,7 +78855,7 @@
    "url": "https://infermieristica.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503402",
@@ -85556,7 +85556,7 @@
    "url": "https://civamb.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500130",
@@ -89677,7 +89677,7 @@
    "url": "http://iei.unipv.eu/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500115",
@@ -93394,7 +93394,7 @@
    "url": "http://industriale.unipv.eu/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500115",
@@ -98130,7 +98130,7 @@
    "url": "https://lettere.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "501045",
@@ -111535,7 +111535,7 @@
    "url": "https://lingue.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "501096",
@@ -123063,7 +123063,7 @@
    "url": "https://logopedia.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503480",
@@ -129604,7 +129604,7 @@
    "url": "http://clam.cdl.unipv.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "511158",
@@ -131375,7 +131375,7 @@
    "url": "http://matematica.unipv.it/it/laurea-triennale-matematica",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500205",
@@ -133572,7 +133572,7 @@
    "url": "https://musicologiatriennale.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "501283",
@@ -140021,7 +140021,7 @@
    "url": "https://ostetricia.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503594",
@@ -145745,7 +145745,7 @@
    "url": "https://scienzebiologiche.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500172",
@@ -153801,7 +153801,7 @@
    "url": "https://scienzegiuridiche.cdl.unipv.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "10509",
@@ -161907,7 +161907,7 @@
    "url": "https://stp.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "507832",
@@ -165563,7 +165563,7 @@
    "url": "https://geologia.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "508653",
@@ -167924,7 +167924,7 @@
    "url": "https://prevenzionesicurezza.cdl.unipv.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "10509",
@@ -172201,7 +172201,7 @@
    "url": "https://scienzegiuridicheinnovazione.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "501664",
@@ -173922,7 +173922,7 @@
    "url": "https://scienzeletterariebeniculturali.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503305",
@@ -182099,7 +182099,7 @@
    "url": "https://scienzemotorie.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "508952",
@@ -185958,7 +185958,7 @@
    "url": "https://scienzemotorie.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "508952",
@@ -189814,7 +189814,7 @@
    "url": "https://natura.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500308",
@@ -193758,7 +193758,7 @@
    "url": "https://sp.cdl.unipv.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500734",
@@ -203185,7 +203185,7 @@
    "url": "https://socialsciences.cdl.unipv.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "511133",
@@ -206996,7 +206996,7 @@
    "url": "https://terp.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "506404",
@@ -212527,7 +212527,7 @@
    "url": "https://tepall.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "505055",
@@ -217164,7 +217164,7 @@
    "url": "https://fisiopatcircolatoria.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503457",
@@ -223785,7 +223785,7 @@
    "url": "https://tecnichelaboratoriobiomedico.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503480",
@@ -229094,7 +229094,7 @@
    "url": "https://neurofisio.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503457",
@@ -234823,7 +234823,7 @@
    "url": "https://tecnicheradiologia.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503458",
@@ -240938,7 +240938,7 @@
    "url": "https://tnpee.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503480",
@@ -244670,7 +244670,7 @@
        "citazione": "Vitale Mc, Caprioglio C. “ LASER IN DENTISTRY” Edizioni Martina 2010"
       },
       {
-       "titolo": "“TRAUMATIC DENTAL INJURIES: A MANUAL”. John Wiley & Sons, Apr 16, 2013; ISBN : 978-1-4051-9061-9 ISBN: 9788875720636 ISBN: 9788875720636",
+       "titolo": "“TRAUMATIC DENTAL INJURIES: A MANUAL”. John Wiley & Sons, Apr 16, 2013; ISBN : 978-1-4051-9061-9 ISBN: 9788875720636",
        "autori": null,
        "editore": null,
        "anno": 2013,
@@ -244679,7 +244679,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "“TRAUMATIC DENTAL INJURIES: A MANUAL”. John Wiley & Sons, Apr 16, 2013; ISBN : 978-1-4051-9061-9 ISBN: 9788875720636 ISBN: 9788875720636"
+       "citazione": "“TRAUMATIC DENTAL INJURIES: A MANUAL”. John Wiley & Sons, Apr 16, 2013; ISBN : 978-1-4051-9061-9 ISBN: 9788875720636"
       },
       {
        "titolo": "TRAUMATIC DENTAL INJURIES: A MANUAL",
@@ -244691,7 +244691,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "“TRAUMATIC DENTAL INJURIES: A MANUAL”. John Wiley & Sons, Apr 16, 2013; ISBN : 978-1-4051-9061-9 ISBN: 9788875720636"
+       "citazione": "“TRAUMATIC DENTAL INJURIES: A MANUAL”. John Wiley & Sons, Apr 16, 2013; ISBN : 978-1-4051-9061-9"
       }
      ],
      "esami": [
@@ -247244,7 +247244,7 @@
    "url": "https://agrifood.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "509986",
@@ -249294,7 +249294,7 @@
    "url": "https://antichitaclassicheorientali.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510127",
@@ -254612,7 +254612,7 @@
    "url": "http://lmbioing.unipv.eu/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "512148",
@@ -258437,7 +258437,7 @@
    "url": "https://biologiasperimentaleapplicata.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "504297",
@@ -265550,7 +265550,7 @@
    "url": "https://biotecnologieavanzate.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "509040",
@@ -268729,7 +268729,7 @@
    "url": "https://chimicalm.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "502156",
@@ -273281,7 +273281,7 @@
    "url": "https://civrisk.cdl.unipv.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "508171",
@@ -275895,7 +275895,7 @@
    "url": "http://mpce.unipv.eu/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "511766",
@@ -280035,7 +280035,7 @@
    "url": "https://cod.cdl.unipv.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "508815",
@@ -282401,7 +282401,7 @@
    "url": "https://biodiversitadidattica.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510416",
@@ -292464,7 +292464,7 @@
    "url": "https://prisma.cdl.unipv.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510023",
@@ -294430,7 +294430,7 @@
    "url": "http://megi.cdl.unipv.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "506394",
@@ -296036,7 +296036,7 @@
    "url": "http://meli.cdl.unipv.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "508730",
@@ -297655,7 +297655,7 @@
    "url": "https://medip.cdl.unipv.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "506394",
@@ -298933,7 +298933,7 @@
    "url": "http://mpei.unipv.eu/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "502156",
@@ -303159,7 +303159,7 @@
    "url": "http://mpee.unipv.eu/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510810",
@@ -306775,7 +306775,7 @@
    "url": "https://portale.unipv.it/it/didattica/corsi-di-laurea/corsi-di-laurea-magistrale/european-languages-cultures-and-societies-contact",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "502790",
@@ -309040,7 +309040,7 @@
    "url": "https://filologiamoderna.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "501516",
@@ -311643,7 +311643,7 @@
    "url": "https://filosofia-lm.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500210",
@@ -320771,7 +320771,7 @@
    "url": "http://finance.cdl.unipv.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "508647",
@@ -322000,7 +322000,7 @@
    "url": "https://geoscienzesostenibili.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "511438",
@@ -325410,7 +325410,7 @@
    "url": "https://gate.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "511759",
@@ -327038,7 +327038,7 @@
    "url": "http://mpiae.unipv.eu/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510799",
@@ -329032,7 +329032,7 @@
    "url": "https://industrialnanobiotecforpharma.cdl.unipv.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510032",
@@ -330648,7 +330648,7 @@
    "url": "https://ingciv.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "511793",
@@ -335257,7 +335257,7 @@
    "url": "https://ingcm.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "508175",
@@ -337454,7 +337454,7 @@
    "url": "https://iat.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "512126",
@@ -343211,7 +343211,7 @@
    "url": "http://mibe.cdl.unipv.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510196",
@@ -346098,7 +346098,7 @@
    "url": "https://lifeline.cdl.unipv.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "509879",
@@ -347565,7 +347565,7 @@
    "url": "https://lingueletteraturecomunicazioneinterculturale.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -353685,7 +353685,7 @@
    "url": "https://linguisticapavia.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510140",
@@ -370663,7 +370663,7 @@
    "url": "https://matematica.unipv.it/laurea-magistrale-in-matematica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "502236",
@@ -379525,7 +379525,7 @@
    "url": "https://medicalpharmaceuticalbiotechnologies.cdl.unipv.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "509941",
@@ -383556,7 +383556,7 @@
    "url": "https://storiadellartecremona.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "511526",
@@ -386858,7 +386858,7 @@
    "url": "https://molecularbiologyandgenetics.cdl.unipv.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510350",
@@ -391164,7 +391164,7 @@
    "url": "https://musicologiamagistrale.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "506608",
@@ -406353,7 +406353,7 @@
    "url": "https://neurobiologia.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510334",
@@ -409793,7 +409793,7 @@
    "url": "https://psicologia.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "501068",
@@ -414849,7 +414849,7 @@
    "url": "https://psychology.cdl.unipv.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "508574",
@@ -418810,7 +418810,7 @@
    "url": "https://scienzeattivitamotorie.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503064",
@@ -420292,7 +420292,7 @@
    "url": "https://scienzedellosport.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "503064",
@@ -421980,7 +421980,7 @@
    "url": "https://scienzefisiche.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510799",
@@ -436407,7 +436407,7 @@
    "url": "https://scienzeinfermieristicheostetriche.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500404",
@@ -438580,7 +438580,7 @@
    "url": "https://artivisiveperformative-lm.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -441112,7 +441112,7 @@
    "url": "https://beniculturalipavia.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": null,
@@ -444043,7 +444043,7 @@
    "url": "https://storia.cdl.unipv.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "501150",
@@ -453493,7 +453493,7 @@
    "url": "https://saa.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "504372",
@@ -457083,7 +457083,7 @@
    "url": "https://seri.cdl.unipv.it/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "509109",
@@ -460839,7 +460839,7 @@
    "url": "https://ancientmediterraneanworld.cdl.unipv.it/en",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "508791",
@@ -463706,7 +463706,7 @@
    "url": "https://wpir.cdl.unipv.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "502815",
@@ -471843,7 +471843,7 @@
    "url": "https://ctf.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510657",
@@ -476226,7 +476226,7 @@
    "url": "https://restauro.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "507728",
@@ -476755,7 +476755,7 @@
      "url": "https://unipv.coursecatalogue.cineca.it/insegnamenti/2026/8525/2026/9999?coorte=2026",
      "libri": [
       {
-       "titolo": "DIZIONARI ON-LINE: Merriam-Webster, Collins, Oxford Dictionaries. ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022",
+       "titolo": "DIZIONARI ON-LINE: Merriam-Webster, Collins, Oxford Dictionaries. ISBN: 9781292125022",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -476764,7 +476764,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2023/24 dello stesso insegnamento (https://unipv.coursecatalogue.cineca.it/insegnamenti/2023/8525/2016/9999?coorte=2023)",
-       "citazione": "DIZIONARI ON-LINE: Merriam-Webster, Collins, Oxford Dictionaries. ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022 ISBN: 9781292125022"
+       "citazione": "DIZIONARI ON-LINE: Merriam-Webster, Collins, Oxford Dictionaries. ISBN: 9781292125022"
       }
      ],
      "esami": [
@@ -479018,7 +479018,7 @@
    "url": "https://farmacia.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510546",
@@ -485054,7 +485054,7 @@
    "url": "https://giurisprudenza.cdl.unipv.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "10509",
@@ -495158,7 +495158,7 @@
    "url": "https://iea.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "500118",
@@ -499632,7 +499632,7 @@
    "url": "https://medchirgolgi.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "511926",
@@ -506067,7 +506067,7 @@
        "citazione": "Vitale Mc, Caprioglio C. “ LASER IN DENTISTRY” Edizioni Martina 2010"
       },
       {
-       "titolo": "“TRAUMATIC DENTAL INJURIES: A MANUAL”. John Wiley & Sons, Apr 16, 2013; ISBN : 978-1-4051-9061-9 ISBN: 9788875720636 ISBN: 9788875720636",
+       "titolo": "“TRAUMATIC DENTAL INJURIES: A MANUAL”. John Wiley & Sons, Apr 16, 2013; ISBN : 978-1-4051-9061-9 ISBN: 9788875720636",
        "autori": null,
        "editore": null,
        "anno": 2013,
@@ -506076,7 +506076,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "“TRAUMATIC DENTAL INJURIES: A MANUAL”. John Wiley & Sons, Apr 16, 2013; ISBN : 978-1-4051-9061-9 ISBN: 9788875720636 ISBN: 9788875720636"
+       "citazione": "“TRAUMATIC DENTAL INJURIES: A MANUAL”. John Wiley & Sons, Apr 16, 2013; ISBN : 978-1-4051-9061-9 ISBN: 9788875720636"
       },
       {
        "titolo": "TRAUMATIC DENTAL INJURIES: A MANUAL",
@@ -506088,7 +506088,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "“TRAUMATIC DENTAL INJURIES: A MANUAL”. John Wiley & Sons, Apr 16, 2013; ISBN : 978-1-4051-9061-9 ISBN: 9788875720636"
+       "citazione": "“TRAUMATIC DENTAL INJURIES: A MANUAL”. John Wiley & Sons, Apr 16, 2013; ISBN : 978-1-4051-9061-9"
       }
      ],
      "esami": [
@@ -507313,7 +507313,7 @@
    "url": "https://medicineandsurgeryharvey.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "506492",
@@ -517212,7 +517212,7 @@
    "url": "https://odontoprotesi.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "511926",
@@ -521067,18 +521067,6 @@
        "tipo": null,
        "note": null,
        "citazione": "Petrin P. et al.: Chirurgia Generale. Ad uso degli studenti del Corso di Laurea in Odontoiatria e Protesi Dentaria. Piccin Ed., Padova, 2007. ISBN: 9788874668540 ISBN:9788829934904 ISBN:9788829932443 ISBN: 9788874668540 ISBN:9788829934904 ISBN:9788829932443 ISBN: 9788874668540 ISBN:9788829934904 ISBN:9788829932443 ISBN: 9788874668540 ISBN:9788829934904 ISBN:9788829932443 ISBN: 9788874668540 ISBN:9788829934904 ISBN:9788829932443 ISBN: 9788874668540 ISBN:9788829934904 ISBN:9788829932443 ISBN: 9788874668540 ISBN:9788829934904 ISBN:9788829932443"
-      },
-      {
-       "titolo": "Chirurgia Generale. Ad uso degli studenti del Corso di Laurea in Odontoiatria e Protesi Dentaria",
-       "autori": "Petrin P. et al.",
-       "editore": "Piccin Ed",
-       "anno": 2007,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Petrin P. et al.: Chirurgia Generale. Ad uso degli studenti del Corso di Laurea in Odontoiatria e Protesi Dentaria. Piccin Ed., Padova, 2007."
       }
      ],
      "esami": [
@@ -523169,7 +523157,7 @@
    "url": "https://tedcat.cdl.unipv.it/it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-20",
+   "verificato_il": "2026-10-21",
    "insegnamenti": [
     {
      "codice": "510034",

@@ -52,13 +52,17 @@ class OneDriveService extends CloudDriveService {
         openBrowser: (u) async => (await ExternalLauncher.openUrl('$u')).ok,
       );
 
-  /// ID scelto in Avanzate, altrimenti quello incluso nell'app.
+  /// ID applicazione dell'impostazione `onedrive_client_id` se presente,
+  /// altrimenti quello incluso nell'app. L'app non ha un'interfaccia per
+  /// cambiarlo (né il tenant): le due impostazioni si leggono se ci sono
+  /// (es. scritte da una versione precedente); [setTenant] lo usa solo
+  /// [signInPersonal], [setClientId] solo i test.
   Future<String> clientId() async {
     final custom = (await settings.get(SettingKeys.onedriveClientId))?.trim();
     return (custom == null || custom.isEmpty) ? builtInClientId : custom;
   }
 
-  /// ID scritto a mano in Avanzate (vuoto = quello dell'app).
+  /// ID dell'impostazione `onedrive_client_id` (vuoto = quello dell'app).
   Future<String> customClientId() async =>
       (await settings.get(SettingKeys.onedriveClientId))?.trim() ?? '';
   Future<void> setClientId(String v) =>
@@ -66,7 +70,8 @@ class OneDriveService extends CloudDriveService {
 
   bool get hasBuiltInClientId => builtInClientId.trim().isNotEmpty;
 
-  /// Tipo di account (tenant): common, consumers, organizations o un ID.
+  /// Tipo di account (tenant) dell'impostazione `onedrive_tenant`: common
+  /// (predefinito), consumers, organizations o un ID.
   Future<String> tenant() async => MicrosoftOAuth.normalizeTenant(
     await settings.get(SettingKeys.onedriveTenant),
   );
@@ -86,8 +91,9 @@ class OneDriveService extends CloudDriveService {
       settings.set(adminConsentKey, v ? '1' : null);
 
   /// «Usa un account Microsoft personale»: di nuovo la pagina di Microsoft
-  /// con la scelta dell'account (`prompt=select_account`); se in Avanzate è
-  /// scelto un tenant solo per account universitari si torna a «common».
+  /// con la scelta dell'account (`prompt=select_account`); se l'impostazione
+  /// `onedrive_tenant` ammette solo account universitari si torna a
+  /// «common».
   Future<void> signInPersonal() async {
     final t = await tenant();
     final personal = MicrosoftAdminConsent.tenantForPersonal(t);
@@ -117,17 +123,21 @@ class OneDriveService extends CloudDriveService {
         'es. 1a2b3c4d-…), non l\'ID oggetto né il segreto.',
       );
     }
-    await storeTokens(await _oauthFactory(id, await tenant()).signIn());
-    final me = await graph().getJson('me', {
-      r'$select': 'displayName,userPrincipalName,mail',
+    final t = await _oauthFactory(id, await tenant()).signIn();
+    // nome dell'account e cartella subito; se non riescono l'accesso non
+    // resta salvato a metà
+    await completeSignIn(t, () async {
+      final me = await graph().getJson('me', {
+        r'$select': 'displayName,userPrincipalName,mail',
+      });
+      await OneDriveSync.ensureFolder(graph(), await folder());
+      await setAccount(
+        [
+          me?['displayName'],
+          me?['mail'] ?? me?['userPrincipalName'],
+        ].whereType<String>().join(' · '),
+      );
     });
-    await setAccount(
-      [
-        me?['displayName'],
-        me?['mail'] ?? me?['userPrincipalName'],
-      ].whereType<String>().join(' · '),
-    );
-    await OneDriveSync.ensureFolder(graph(), await folder()); // subito
   }
 
   @override

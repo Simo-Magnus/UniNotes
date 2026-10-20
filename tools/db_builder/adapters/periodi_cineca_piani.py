@@ -32,7 +32,9 @@ def _g(s: str) -> tuple:
     return int(a), int(m), int(d)
 
 
-def _voci(parti: list[dict]) -> list[tuple[str, str, str]]:
+def _voci(parti: list[dict], tipo: str = "f") -> list[tuple]:
+    """[(testo, inizio, fine, tipo, crediti, curriculum)]: `tipo` è "a" (l'attività stessa), "m" (un modulo, che
+    si frequenta insieme agli altri) o "f" (una frazione: edizione, canale, curriculum alternativi)."""
     out = []
     for x in parti:
         t = (x.get("periodo_didattico_it") or "").strip()
@@ -40,33 +42,113 @@ def _voci(parti: list[dict]) -> list[tuple[str, str, str]]:
         if t.lower() in ("undefined", "non definito", "-", "--"):
             t = ""
         if t or (_DATA.match(a) and _DATA.match(b)):
-            out.append((t, a if _DATA.match(a) else "", b if _DATA.match(b) else ""))
+            try:
+                cr = float(str(x.get("crediti")).replace(",", "."))
+            except ValueError:
+                cr = None
+            out.append((t, a if _DATA.match(a) else "", b if _DATA.match(b) else "", tipo, cr,
+                        "curriculum" in (x.get("des_it") or "").lower()))
     return out
 
 
-def _periodi_attivita(att: dict) -> list[tuple[str, str, str]]:
-    """[(testo, inizio, fine)] dal primo livello e dalle frazioni dell'attività; solo se mancano, dai moduli
-    del syllabus (corso integrato: il periodo sta nei moduli)."""
-    out = _voci([att] + list(att.get("frazioni") or []))
+def _periodi_attivita(att: dict) -> list[tuple]:
+    """Le voci del primo livello e delle frazioni dell'attività; solo se mancano, dei moduli del syllabus
+    (corso integrato: il periodo sta nei moduli)."""
+    out = _voci([att], "a") + _voci(list(att.get("frazioni") or []), "f")
     if not out:
         for mod in att.get("moduli") or []:
             if isinstance(mod, dict):
-                out += _voci([mod] + list(mod.get("frazioni") or []))
+                # il periodo del modulo vale più delle sue frazioni (edizioni, canali, turni: una può cadere
+                # in un altro semestre senza che il modulo cambi); senza periodo proprio contano le frazioni
+                proprio = _voci([mod], "m")
+                out += proprio or _voci(list(mod.get("frazioni") or []), "f")
     return out
 
 
-def riassumi(ps: list[tuple[str, str, str]]) -> dict | None:
-    """Un periodo solo: le date (le più ampie, se le frazioni sono più d'una) oppure il testo se è uno solo."""
-    date = [(a, b) for _, a, b in ps if a and b]
+def _sem(t: str, a: str, b: str) -> str | None:
+    """Semestre di una frazione ("1" | "2" | "annuale") con le stesse regole del database; None se non si legge."""
+    s = pulizia.periodo(t or None, a or None, b or None)
+    return s if s in ("1", "2", "annuale") else None
+
+
+def riassumi(ps: list[tuple], dal: tuple[int, int, int] | None = None) -> dict | None:
+    """Un periodo solo per l'attività, dalle sue voci (testo, inizio, fine[, tipo, crediti, curriculum]).
+
+    - tutte le voci dicono lo stesso semestre: quel semestre, con le date più ampie;
+    - un componente a 0 crediti (il «lettorato» annuale di una lingua) non decide il periodo: si ignora se
+      accanto ce ne sono con crediti;
+    - una frazione semestrale accanto a frazioni «annuali» (edizioni alternative: «Università di Pisa» in un
+      semestre, «Accademia Navale» in ciclo annuale unico): il semestre; non vale se le frazioni sono
+      curricula alternativi (resta l'insieme) né se a essere annuale è un modulo con crediti;
+    - voci in semestri diversi (S1 + S2) o tutte annuali: l'insieme, con le date più ampie (annuale);
+    - `dal` (anno, mese, giorno): se tutte le date finiscono prima di quel giorno sono di un anno accademico
+      passato e non si copiano: resta il semestre che se ne ricava."""
+    ps = [tuple(p) + ("f", None, False)[len(p) - 3:] if len(p) < 6 else tuple(p) for p in ps]
+    sems = [_sem(*p[:3]) for p in ps]
+    if any(p[4] for p in ps):  # componenti a 0 crediti: contano solo se non c'è altro
+        tieni = [k for k, p in enumerate(ps) if p[4] is None or p[4] > 0]
+        ps, sems = [ps[k] for k in tieni], [sems[k] for k in tieni]
+    valori = {s for s in sems if s}
+    semestrali = valori - {"annuale"}
+    if len(semestrali) == 1 and "annuale" in valori:
+        annuali = [p for p, x in zip(ps, sems) if x == "annuale"]
+        edizioni = all(p[3] == "f" for p in annuali) and not any(p[5] for p in ps)
+        if edizioni:  # le frazioni annuali accanto alla semestrale sono edizioni alternative: si tiene il semestre
+            s = next(iter(semestrali))
+            ps = [p for p, x in zip(ps, sems) if x == s]
+            sems = [s] * len(ps)
+            valori = {s}
+    date = [(p[1], p[2]) for p in ps if p[1] and p[2]]
+    unico = next(iter(valori)) if len(valori) == 1 and next(iter(valori)) in ("1", "2") else None
+    if date and dal and valori and _g(max((x[1] for x in date), key=_g)) < dal:
+        # tutte le date sono di un anno accademico passato: non si copiano, resta il semestre (o l'annuale)
+        return {"periodo": unico or "annuale"}
     if date:
         a = min((x[0] for x in date), key=_g)
         b = max((x[1] for x in date), key=_g)
-        testi = {t for t, _, _ in ps if t}
-        return {"periodo_inizio": a, "periodo_fine": b, "periodo": testi.pop() if len(testi) == 1 else None}
-    testi = {t for t, _, _ in ps if t}
+        testi = {p[0] for p in ps if p[0]}
+        # il semestre dichiarato si scrive esplicito: le date unite possono essere più lunghe (calendari
+        # lunghi delle professioni sanitarie) e pulizia.periodo non deve perderlo
+        return {"periodo_inizio": a, "periodo_fine": b,
+                "periodo": unico or (testi.pop() if len(testi) == 1 else None)}
+    if unico:
+        return {"periodo": unico}
+    testi = {p[0] for p in ps if p[0]}
     if len(testi) == 1:
         return {"periodo": testi.pop()}
     return None
+
+
+def _syllabus(client, e: dict):
+    """Il syllabus (stessa scheda) di una voce dell'indice; None se non ha il codice del corso."""
+    if not e.get("corso_cod"):
+        return None
+    return client.get("/insegnamento", {k: v for k, v in {
+        "anno": e["aa"], "insegnamento": e["cod"], "ordinamento_aa": e["ord"], "af_percorso": e["perc"],
+        "corso_cod": e.get("corso_cod"), "corso_aa": e["y"], "schema_id": e.get("schema")}.items() if v not in (None, "")})
+
+
+def _con_dettagli(client, voce: dict) -> list[tuple]:
+    """Voci semestrali e «annuali» insieme nello stesso piano: il piano non dice i crediti dei moduli né il nome
+    delle frazioni, il syllabus sì. Un modulo annuale a 0 crediti (il «lettorato» di una lingua) non decide il
+    periodo dell'insegnamento, uno con crediti sì; frazioni di curricula diversi sono alternative. Si rileggono
+    le voci dal syllabus (stesse voci, con crediti e nome) se sono tante quante quelle del piano."""
+    sy = _syllabus(client, voce)
+    if not isinstance(sy, dict):
+        return voce["periodi"]
+    nuove = []
+    for mod in sy.get("moduli") or []:
+        if isinstance(mod, dict):
+            nuove += _voci([mod], "m") or _voci(list(mod.get("frazioni") or []), "f")
+    if not nuove:
+        nuove = _voci(list(sy.get("frazioni") or []), "f")
+    piano = [p for p in voce["periodi"] if p[3] != "a"]
+    return [p for p in voce["periodi"] if p[3] == "a"] + nuove if nuove and len(nuove) == len(piano) else voce["periodi"]
+
+
+def _misto(ps: list[tuple]) -> bool:
+    sems = {_sem(*p[:3]) for p in ps}
+    return "annuale" in sems and bool(sems - {"annuale", None})
 
 
 def indice_piani(client, anni: range, log=print, cache_indice: pathlib.Path | None = None) -> list[dict]:
@@ -91,11 +173,14 @@ def indice_piani(client, anni: range, log=print, cache_indice: pathlib.Path | No
                     gruppi = a.get("insegnamenti") or ([{"attivita": a["attivita"]}] if a.get("attivita") else [])
                     for g in gruppi:
                         for att in g.get("attivita") or []:
-                            out.append({"y": y, "cds": x["cdsCod"], "chiave": chiave, "ad": att.get("adCod") or att.get("cod"),
-                                        "cod": att.get("cod"), "aa": str(att.get("aa")), "ord": att.get("ordinamento_aa"),
-                                        "perc": att.get("corso_percorso_id"), "perc_cod": att.get("corso_percorso_cod"),
-                                        "corso_cod": att.get("corso_cod"), "schema": att.get("schemaId"),
-                                        "periodi": _periodi_attivita(att)})
+                            voce = {"y": y, "cds": x["cdsCod"], "chiave": chiave, "ad": att.get("adCod") or att.get("cod"),
+                                    "cod": att.get("cod"), "aa": str(att.get("aa")), "ord": att.get("ordinamento_aa"),
+                                    "perc": att.get("corso_percorso_id"), "perc_cod": att.get("corso_percorso_cod"),
+                                    "corso_cod": att.get("corso_cod"), "schema": att.get("schemaId"),
+                                    "periodi": _periodi_attivita(att)}
+                            if _misto(voce["periodi"]):
+                                voce["periodi"] = _con_dettagli(client, voce)
+                            out.append(voce)
     if cache_indice:
         cache_indice.write_text(json.dumps(out, ensure_ascii=False), encoding="utf-8")
     return out
@@ -136,10 +221,7 @@ def fetch_periodi(uid: str, client, base: str, anno: int = 2026, log=print, cach
             scelto, via = proprio, "propria scheda"
         else:
             # il syllabus (stessa scheda) a volte riporta il periodo anche quando il piano no
-            sy = client.get("/insegnamento", {k: v for k, v in {
-                "anno": proprio["aa"], "insegnamento": proprio["cod"], "ordinamento_aa": proprio["ord"],
-                "af_percorso": proprio["perc"], "corso_cod": proprio.get("corso_cod"), "corso_aa": proprio["y"],
-                "schema_id": proprio.get("schema")}.items() if v not in (None, "")}) if proprio.get("corso_cod") else None
+            sy = _syllabus(client, proprio)
             ps = _periodi_attivita(sy) if isinstance(sy, dict) else []
             if ps:
                 scelto, via = {**proprio, "periodi": ps}, "syllabus"
@@ -167,7 +249,7 @@ def fetch_periodi(uid: str, client, base: str, anno: int = 2026, log=print, cach
         if not scelto:
             stat["nessun_periodo"] += 1
             continue
-        r = riassumi([tuple(p) for p in scelto["periodi"]])
+        r = riassumi([tuple(p) for p in scelto["periodi"]], dal=(anno - 1, 8, 1))  # date di a.a. più vecchi del precedente: no
         if not r:
             stat["periodo_non_interpretabile"] += 1
             continue

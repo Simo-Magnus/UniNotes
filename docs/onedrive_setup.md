@@ -107,6 +107,12 @@ Chi pubblica un fork con un'altra registrazione può sostituire l'ID:
 flutter build windows --dart-define=MS_CLIENT_ID=<id-applicazione>
 ```
 
+L'app non ha un'interfaccia per cambiare ID applicazione o tenant. Legge però
+le impostazioni `onedrive_client_id` (ID al posto di quello della build) e
+`onedrive_tenant` (`common` se mancano), se presenti nel database: per esempio
+scritte da una versione precedente. «Usa un account Microsoft personale» riporta
+`onedrive_tenant` a `common` se ammette solo account universitari.
+
 ## 5. Cosa fa l'app su OneDrive
 
 Nella cartella scelta (predefinita `UniNotes`, selezionabile con il
@@ -134,6 +140,22 @@ OneDrive» (lo stesso per Google Drive) al posto dell'errore tecnico; l'ultima
 sincronizzazione riuscita resta indicata e si riprova da sola quando torna la
 rete, o con «Sincronizza ora».
 
+I file scaricati si scrivono a pezzi in `nome.part` accanto alla destinazione
+(senza tenerli interi in memoria) e solo alla fine prendono il posto di quello
+vecchio: un download interrotto non rovina il file buono. Alla prima
+sincronizzazione un file presente sia sul dispositivo sia su OneDrive con la
+stessa dimensione si considera uguale (l'impronta di OneDrive, `quickXorHash`,
+non è calcolata dall'app).
+
+L'accesso è atomico: se dopo l'accesso con Microsoft non riescono la lettura
+dell'account o la creazione della cartella, l'app toglie il token appena salvato
+e mostra l'errore, invece di restare «collegata» a metà. «Scollega» toglie il
+token dal dispositivo; Microsoft non permette a un'app pubblica di revocare il
+proprio accesso (`revokeSignInSessions` chiuderebbe tutte le sessioni
+dell'utente), quindi il dialogo indica dove toglierlo dall'account:
+<https://account.live.com/consent/Manage> per gli account personali,
+<https://myapps.microsoft.com> per quelli universitari.
+
 ## 6. Account universitari e consenso dell'amministratore
 
 L'editore dell'app **non è verificato** (la verifica richiede un ente legale e
@@ -153,8 +175,8 @@ generico compare la scheda «Il tuo ateneo deve approvare UniNotes» con due
 azioni.
 
 - **Usa un account Microsoft personale**: rifà l'accesso con
-  `prompt=select_account` (se in Avanzate è scelto un tenant solo per account
-  universitari, torna a `common`). È gratuito con 5 GB di OneDrive, ma i file
+  `prompt=select_account` (se l'impostazione `onedrive_tenant` ammette solo
+  account universitari, torna a `common`). È gratuito con 5 GB di OneDrive, ma i file
   e i blocchi OneNote dell'account universitario non sono visibili.
 - **Chiedi all'ateneo di approvare UniNotes**: un testo pronto per il servizio
   informatico, con «Copia» e «Condividi». Contiene l'ID applicazione, i

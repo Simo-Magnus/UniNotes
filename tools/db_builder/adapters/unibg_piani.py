@@ -14,6 +14,9 @@
   nell'etichetta;
 - gruppi senza attività elencate: voce a scelta con i CFU dell'etichetta o, se manca, dalle note del gruppo;
 - attività a 0 CFU (OFA, test, prove) non sono insegnamenti del piano;
+- lingua dell'attività (`lingua`: «it»/«en», da `lingua_cod`) e gruppi di scelta in cui è a scelta (`gruppo_scelta`): con questi
+  `pulizia.varianti_lingua_scelta` unisce la versione italiana e quella inglese dello stesso esame offerte nello stesso gruppo
+  («Scelta di un insegnamento tra»: «Economia del lavoro» / «Labour Economics»);
 - percorsi: il flag `comune` del catalogo non è affidabile (i quattro curricula di Diritto per l'impresa lo hanno tutti): un percorso
   vale per tutti i curricula se «comune» è nel nome o se copre meno anni degli altri; lo stesso percorso nelle coorti si riconosce
   per nome, per codice senza anno e «R», o per gli insegnamenti in comune (almeno il 40%);
@@ -589,6 +592,8 @@ def fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, c
                                            f"/{att.get('ordinamento_aa')}/{att.get('corso_percorso_id')}?coorte={scelta}",
                                     "libri": [], "esami": [], "fonte": base, "verificato_il": oggi,
                                 }
+                                if cc.lingua_attivita(att):  # lingua dell'attività: «it»/«en»
+                                    item["lingua"] = cc.lingua_attivita(att)
                                 insegnamenti[key] = item
                                 if syllabus:
                                     syllabus_jobs.setdefault((str(att.get("aa")), str(att.get("cod"))), {
@@ -604,6 +609,10 @@ def fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, c
                                     })["items"].append(item)
                                     item["_job"] = syllabus_jobs[(str(att.get("aa")), str(att.get("cod")))]
                             _segna(item, "*" if comune else pcur, bool(obbl))
+                            if not obbl:  # gruppo di scelta del piano («Scelta di un insegnamento tra»)
+                                gs = cc.gruppo_scelta(g, att, p, a.get("anno"))
+                                if gs:
+                                    item.setdefault("_gruppi_scelta", set()).add(gs)
                             if not comune and pcur:
                                 percorsi_nomi.add(pcur)
         for (cds_c, anno_c), regole in CORREZIONI.items():
@@ -623,6 +632,7 @@ def fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, c
                 del insegnamenti[key]
         ins = []
         for i in insegnamenti.values():
+            cc.chiudi_gruppi(i)
             ins += _espandi(i)
         # stesso nome nello stesso anno con codici e CFU diversi (alternative omonime): il nome porta i CFU
         per_nome: dict[tuple, list] = {}

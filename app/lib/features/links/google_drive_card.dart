@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../core/services/app_services.dart';
 import '../cloud/google_drive_service.dart';
+import '../cloud/google_oauth.dart' show GoogleOAuth;
 import '../cloud/incoming_files_host.dart' show importFromDrive;
 import 'cloud_drive_card.dart';
 import 'links_widgets.dart';
@@ -39,6 +40,9 @@ class GoogleDriveCard extends StatelessWidget {
           'sulla finestra sul computer.',
       extra: (context, connected) =>
           _DriveExtras(service: gd, connected: connected),
+      // alla disconnessione l'accesso si revoca presso Google; se non
+      // riesce, la pagina dell'account dove toglierlo
+      revokeHelpUrl: GoogleOAuth.permissionsPage,
       onChanged: onChanged,
     );
   }

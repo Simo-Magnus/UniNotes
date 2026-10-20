@@ -9,6 +9,14 @@ import '../study/study_widgets.dart' show promptText;
 import 'cloud_drive_card.dart';
 import 'microsoft_consent_sheet.dart';
 
+/// Nel dialogo di «Scollega»: dove togliere l'accesso di UniNotes
+/// dall'account Microsoft.
+const kOneDriveRevokeNote =
+    'L\'accesso di UniNotes al tuo account Microsoft resta finché non lo '
+    'togli tu: per un account personale su '
+    'https://account.live.com/consent/Manage, per un account universitario '
+    'su https://myapps.microsoft.com.';
+
 /// OneDrive: accesso, cartella dell'app, cosa sincronizzare e stato.
 class OneDriveCard extends StatelessWidget {
   const OneDriveCard({super.key, this.primary = false, this.onChanged});
@@ -51,6 +59,9 @@ class OneDriveCard extends StatelessWidget {
         retry: od.signInPersonal,
         remembered: od.adminConsentNeeded,
       ),
+      // Microsoft non permette a un'app pubblica di revocare il proprio
+      // accesso: si toglie dall'account
+      signOutNote: kOneDriveRevokeNote,
       primary: primary,
       onChanged: onChanged,
     );

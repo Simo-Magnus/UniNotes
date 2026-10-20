@@ -8,8 +8,8 @@ import 'graph_client.dart' show GraphException;
 
 /// L'errore viene dalla rete (nessuna connessione, servizio non
 /// raggiungibile, tempo scaduto, connessione caduta), non dal file o
-/// dall'account: [ioTransport] lo trasforma in [GraphException] con stato 0
-/// (anche per Google Drive).
+/// dall'account: [ioTransport] e [ioDownload] lo trasformano in
+/// [GraphException] con stato 0 (anche per Google Drive).
 bool isNetworkError(Object e) =>
     e is SocketException ||
     e is TimeoutException ||
@@ -205,6 +205,11 @@ abstract class FolderSync {
   /// Elimina il file sul servizio (nel suo cestino).
   Future<void> deleteRemote(RemoteFile r);
 
+  /// Prima sincronizzazione con il file da entrambe le parti e la stessa
+  /// dimensione: true/false se il servizio permette di confrontare il
+  /// contenuto, null se non si sa (allora vale la sola dimensione).
+  Future<bool?> sameContent(LocalFile l, RemoteFile r) async => null;
+
   /// Dati propri del servizio salvati con lo stato (es. `deltaLink`).
   Map<String, Object?> extraState() => const {};
   void readExtraState(Map<Object?, Object?> m) {}
@@ -339,9 +344,13 @@ abstract class FolderSync {
       final remoteChanged = r != null && (prev == null || r.ctag != prev.ctag);
       try {
         if (l != null && r != null) {
-          if (prev == null && l.size == r.size) {
+          if (prev == null &&
+              l.size == r.size &&
+              await sameContent(l, r) != false) {
             // Prima sincronizzazione: stesso file già presente da entrambe le
-            // parti (es. copiato a mano). Si considera allineato.
+            // parti (es. copiato a mano). Si considera allineato. Con
+            // contenuto diverso ([sameContent]) è un conflitto (sotto):
+            // senza stato precedente vale «cambiato da entrambe le parti».
             state[rel] = SyncedFile(
               size: l.size,
               mtime: l.mtime,

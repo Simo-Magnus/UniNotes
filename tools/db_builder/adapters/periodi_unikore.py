@@ -7,6 +7,10 @@ dell'insegnamento nel database) ha invece la riga «Periodo di svolgimento <valo
 è quella la fonte. Insegnamenti senza scheda PDF (il sito non ne dà il link) o con PDF scansionato (senza testo)
 restano senza periodo.
 
+Il PDF prevale anche sul valore predefinito dell'API: gli insegnamenti che il database ha già come «annuale»
+(`ALL_YEAR`) e che hanno la scheda PDF si rileggono, e se la scheda dice «Primo» o «Secondo semestre» quel semestre
+sostituisce «annuale» (se dice «Tutto l'anno»/«Annuale» non cambia nulla e non si scrive niente).
+
 Le schede si salvano su disco in `$UN_HTTP_CACHE/unikore_pdf` (se la variabile è impostata). Al massimo 1,6 richieste
 al secondo.
 """
@@ -56,8 +60,26 @@ def periodo_pdf(data: bytes) -> tuple[str | None, str]:
     return (c, "") if c else (None, f"periodo non interpretabile: «{m.group(1).strip()}»")
 
 
+def annuali_con_pdf(uid: str) -> list[dict]:
+    """Insegnamenti con periodo «annuale» (valore predefinito `ALL_YEAR` dell'API) che hanno la scheda PDF."""
+    out = []
+    for c in periodi.carica(uid)["corsi"]:
+        if c.get("piano_da"):
+            continue
+        for i in c.get("insegnamenti") or []:
+            if i.get("periodo") == "annuale" and (i.get("url") or "").lower().endswith(".pdf"):
+                out.append({"corso": c["id"], "corso_nome": c["nome"], "id": i["id"], "codice": i.get("codice"),
+                            "nome": i.get("nome"), "anno": i.get("anno"), "url": i.get("url"),
+                            "url_sito": i.get("url_sito"), "docenti": i.get("docenti") or []})
+    return out
+
+
 def fetch_periodi(uid: str = "unikore", log=print) -> dict:
     manc = periodi.mancanti(uid)
+    ids = {m["id"] for m in manc}
+    gia_annuali = [m for m in annuali_con_pdf(uid) if m["id"] not in ids]
+    manc = manc + gia_annuali
+    gia = {m["id"] for m in gia_annuali}
     cache = os.environ.get("UN_HTTP_CACHE")
     cache = pathlib.Path(cache) / "unikore_pdf" if cache else None
     if cache:
@@ -91,11 +113,18 @@ def fetch_periodi(uid: str = "unikore", log=print) -> dict:
             if f:
                 f.write_bytes(data)
         c, motivo = periodo_pdf(data)
+        if m["id"] in gia:  # già «annuale» dall'API: la scheda cambia il valore solo se dice un semestre
+            if c in ("1", "2"):
+                out[m["id"]] = {"periodo": c, "fonte": u}
+            elif c is None:
+                LACUNE[m["id"]] = f"annuale dall'API, la scheda non lo smentisce ({motivo})"
+            continue
         if c:
             out[m["id"]] = {"periodo": c, "fonte": u}
         else:
             LACUNE[m["id"]] = motivo
-    log(f"[{uid}] trovati {len(out)} su {len(manc)} ({n_pdf} con scheda PDF)")
+    log(f"[{uid}] trovati {len(out)} su {len(manc)} ({n_pdf} con scheda PDF; "
+        f"{sum(1 for i in out if i in gia)} annuali dell'API corretti dalla scheda su {len(gia)})")
     d = os.environ.get("SEMESTRI_LACUNE")
     if d:
         import json

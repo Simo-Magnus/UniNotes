@@ -56,8 +56,7 @@ ID_CORSI = {
     "11485": ["uniba-lmg-01-giurisprudenza-1635005"],
     "11450": ["uniba-lm-41-medicina-e-chirurgia-1635021"],
     "11658": ["uniba-lm-41-medicina-e-chirurgia-replica-taranto"],
-    "11455": ["uniba-lm-41-medicine-and-surgery-medicina-e-chirurgia-in-lingua-inglese",
-              "uniba-lm-41-medicina-e-chirurgia"],
+    "11455": ["uniba-lm-41-medicina-e-chirurgia"],  # corso inglese (lingua eng); il vecchio id del catalogo è in corsi_sostituiti
 }
 # corsi di Universitaly senza un corso omonimo nel catalogo
 ID_UNIVERSITALY = {

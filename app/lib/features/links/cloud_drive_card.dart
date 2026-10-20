@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/services/external_launcher.dart';
 import '../../core/services/power.dart';
 import '../../widgets/common.dart';
 import '../cloud/cloud_drive_service.dart';
@@ -74,6 +75,8 @@ class CloudDriveCard extends StatefulWidget {
     this.note,
     this.extra,
     this.signInHelp,
+    this.signOutNote,
+    this.revokeHelpUrl,
     this.primary = false,
     this.onChanged,
   });
@@ -101,6 +104,14 @@ class CloudDriveCard extends StatefulWidget {
 
   /// Scheda al posto dell'errore per gli accessi bloccati (vedi [SignInHelp]).
   final SignInHelp? signInHelp;
+
+  /// Riga in più nel dialogo di «Scollega» (OneDrive: dove togliere
+  /// l'accesso dall'account, perché l'app non può revocarlo).
+  final String? signOutNote;
+
+  /// Pagina dell'account dove togliere l'accesso a mano, proposta solo se
+  /// la revoca alla disconnessione non riesce (Google).
+  final String? revokeHelpUrl;
   final bool primary;
   final VoidCallback? onChanged;
 
@@ -181,6 +192,35 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
         );
       }
     }
+  }
+
+  /// Scollegato sul dispositivo, ma la revoca presso il servizio non è
+  /// riuscita (senza rete, errore): la pagina dove togliere l'accesso.
+  Future<void> _revokeFailed(String url) async {
+    final open = await showDialog<bool>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: Text('${_sv.serviceName} scollegato'),
+        content: Text(
+          'Su questo dispositivo l\'accesso è tolto, ma non è stato possibile '
+          'revocarlo anche presso ${_sv.serviceName} (serve la connessione). '
+          'Puoi toglierlo dal tuo account: $url',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(c, false),
+            child: const Text('Chiudi'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(c, true),
+            child: const Text('Apri la pagina'),
+          ),
+        ],
+      ),
+    );
+    if (open != true) return;
+    final r = await ExternalLauncher.openUrl(url);
+    if (mounted) showLaunchResult(context, r);
   }
 
   Future<void> _pickFolder(String current) async {
@@ -288,14 +328,19 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
               label: 'Scollega',
               icon: Icons.logout,
               onPressed: () async {
+                final note = widget.signOutNote;
                 if (await confirmDialog(
                   context,
                   'Scollegare $name?',
                   'I file restano su questo dispositivo e su $name; smettono '
-                      'solo di sincronizzarsi.',
+                      'solo di sincronizzarsi.${note == null ? '' : '\n\n$note'}',
                 )) {
-                  await _sv.signOut();
+                  final revoked = await _sv.signOut();
                   _reload();
+                  final url = widget.revokeHelpUrl;
+                  if (!revoked && url != null && context.mounted) {
+                    await _revokeFailed(url);
+                  }
                 }
               },
             ),

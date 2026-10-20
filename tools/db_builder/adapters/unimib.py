@@ -29,6 +29,7 @@ import unicodedata
 
 from .unibo import Client, _testo
 from .unimib_piani import integra as integra_piano
+from .periodi_unimib import leggi as riga_periodo
 from .unimib_testi import libri_unimib, periodo
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
@@ -87,9 +88,17 @@ def campi_syllabus(s: str) -> dict[str, str]:
 def leggi_syllabus(s: str) -> dict:
     campi = campi_syllabus(s)
     per = _testo(campi.get("periodo_erogazioneit") or campi.get("periodoit") or campi.get("periodo_erogazioneen") or campi.get("periodoen") or "")
+    # la riga «Periodo/Term» della scheda riassuntiva («Secondo Semestre», «First semester») ha la precedenza sul testo
+    # libero «Periodo di erogazione» (che a volte dice «Annuale» per un insegnamento del 2° semestre). «Annualità
+    # Singola»/«Annual» non precisa il semestre: vale solo se il testo libero non dice nulla
+    riga = riga_periodo(s)
+    da_riga = periodo(riga["periodo"]) if riga else None
+    if da_riga == "annuale":
+        da_riga = None
+    riga_annuale = bool(riga) and periodo(riga["periodo"]) == "annuale"
     staff = re.search(r'<ul class="summary-content teachers">(.*?)</ul>', s, re.S)
     docenti = re.findall(r'<div class="contact-name">(.*?)</div>', staff.group(1)) if staff else []
-    return {"periodo": periodo(per), "libri": libri_unimib(campi),
+    return {"periodo": da_riga or periodo(per) or ("annuale" if riga_annuale else None), "libri": libri_unimib(campi),
             "docenti": sorted({_testo(d) for d in docenti if _testo(d)})}
 
 

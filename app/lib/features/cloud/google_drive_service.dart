@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart' as p;
@@ -9,6 +10,7 @@ import 'drive_picker.dart';
 import 'google_drive_client.dart';
 import 'google_drive_sync.dart';
 import 'google_oauth.dart';
+import 'graph_client.dart' show ioTransport;
 import 'incoming_files.dart';
 import 'microsoft_oauth.dart' show OAuthRedirectMode;
 
@@ -112,24 +114,53 @@ class GoogleDriveService extends CloudDriveService {
         'docs/google_drive_setup.md).',
       );
     }
-    await storeTokens(await _oauthFactory(clientId, clientSecret).signIn());
-    if (await notice() == DriveNotice.reconnect) {
-      await settings.set(noticeKey, null);
-    }
-    await setAccount(await drive().accountLabel());
-    // Cartella UniNotes subito. Se non si trova (prima volta, o creata da
-    // una registrazione precedente dell'app, che con drive.file non si
-    // vede) se ne crea una nuova, senza errori, e si spiega una volta come
-    // recuperare i file vecchi.
-    final d = drive();
-    final base = await folder();
-    if (await d.folderPath(base, create: false) == null) {
-      await d.folderPath(base);
-      if (await settings.get(noticeShownKey) != '1') {
+    final t = await _oauthFactory(clientId, clientSecret).signIn();
+    // account e cartella subito; se non riescono l'accesso non resta
+    // salvato a metà ([completeSignIn])
+    await completeSignIn(t, () async {
+      final who = await drive().accountLabel();
+      // Cartella UniNotes subito. Se non si trova (prima volta, o creata da
+      // una registrazione precedente dell'app, che con drive.file non si
+      // vede) se ne crea una nuova, senza errori, e si spiega una volta
+      // come recuperare i file vecchi.
+      final d = drive();
+      final base = await folder();
+      var created = false;
+      if (await d.folderPath(base, create: false) == null) {
+        await d.folderPath(base);
+        created = true;
+      }
+      if (await notice() == DriveNotice.reconnect) {
+        await settings.set(noticeKey, null);
+      }
+      if (created && await settings.get(noticeShownKey) != '1') {
         await settings.set(noticeKey, DriveNotice.newFolder.name);
       }
-    }
+      await setAccount(who);
+    });
     notifyListeners();
+  }
+
+  @override
+  List<String> get signInKeys => [
+    ...super.signInKeys,
+    grantedScopeKey,
+    noticeKey,
+  ];
+
+  /// Revoca del refresh token presso Google (`oauth2.googleapis.com/revoke`):
+  /// l'app sparisce anche da myaccount.google.com/permissions. Un token già
+  /// non valido (`invalid_token`) per Google non dà più accesso: vale come
+  /// revocato.
+  @override
+  Future<bool> revoke(String refreshToken) async {
+    final r = await (transport ?? ioTransport)(
+      'POST',
+      GoogleOAuth.revokeEndpoint,
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: utf8.encode(Uri(queryParameters: {'token': refreshToken}).query),
+    );
+    return r.ok || (r.status == 400 && r.text.contains('invalid_token'));
   }
 
   String get noticeShownKey => '${noticeKey}_shown';

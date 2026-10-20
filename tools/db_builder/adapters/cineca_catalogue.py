@@ -137,6 +137,49 @@ def _testi_syllabus(sy: dict) -> tuple[list[dict], str | None, list[str]]:
     return estrai_libri(*testi), modalita, list(dict.fromkeys(legati))
 
 
+_LINGUE = {"ita": "it", "eng": "en"}
+
+
+def lingua_attivita(att: dict) -> str | None:
+    """«it» / «en» dalla lingua dell'attività (`lingua_cod` «ita»/«eng», anche delle frazioni e dei
+    moduli quando l'attività non la indica); None se manca, è un'altra lingua o non è una sola
+    (frazioni in italiano e in inglese)."""
+    codici: set[str] = set()
+
+    def raccogli(x: dict) -> None:
+        c = str(x.get("lingua_cod") or "").strip().lower()
+        if c:
+            codici.add(c)
+        for y in list(x.get("frazioni") or []) + list(x.get("moduli") or []):
+            if isinstance(y, dict):
+                raccogli(y)
+
+    raccogli(att)
+    return _LINGUE.get(codici.pop()) if len(codici) == 1 else None
+
+
+def gruppo_scelta(g: dict, att: dict, percorso: dict, anno) -> str | None:
+    """Identificativo del gruppo del piano tra le cui attività lo studente sceglie («UN ESAME A
+    SCELTA FRA (12 CFU)»): la regola del catalogo (`regola.id`, una per gruppo e percorso), se manca
+    percorso, anno e posizione del gruppo. None per un gruppo con una sola attività. Chi lo chiama
+    lo usa solo per le attività che nel gruppo non sono obbligatorie."""
+    if len(g.get("attivita") or []) < 2:
+        return None
+    rid = (att.get("regola") or {}).get("id")
+    if rid:
+        return str(rid)
+    pid = percorso.get("pdsId") or percorso.get("pdsCod") or percorso.get("des_it") or ""
+    return f"{pid}:{anno}:{g.get('cod')}:{g.get('ordine')}"
+
+
+def chiudi_gruppi(item: dict) -> None:
+    """`_gruppi_scelta` (insieme raccolto percorso per percorso) → `gruppo_scelta`, gli
+    identificativi separati da virgola (stesso gruppo se ne hanno uno in comune)."""
+    g = item.pop("_gruppi_scelta", None)
+    if g:
+        item["gruppo_scelta"] = ",".join(sorted(g))
+
+
 def _chiave_cds(x: dict) -> tuple:
     """Nome, sede e tipo di un corso: per ritrovarlo in una coorte in cui ha un altro codice."""
     nome = re.sub(r"[^a-z0-9]+", " ", (x.get("des_it") or "").lower()).strip()
@@ -163,7 +206,7 @@ def _percorsi_sede(percorsi: list[dict], cur: dict) -> list[dict]:
 def fetch_ateneo(uid: str, base: str, anno: int, durata_max: int = 6, max_cds: int | None = None,
                  syllabus: bool = True, log=print, client: Client | None = None,
                  coorte_per_nome: bool = False, libri_extra=None, obbligatorio_gruppo=None,
-                 id_corso=None) -> dict:
+                 id_corso=None, lingua_gruppi: bool = False) -> dict:
     """Restituisce un contributo nel formato di database/contrib (vedi build_db.py).
 
     `coorte_per_nome` (UniPD): se il corso non c'è con lo stesso codice in una coorte
@@ -174,7 +217,11 @@ def fetch_ateneo(uid: str, base: str, anno: int, durata_max: int = 6, max_cds: i
     `libri_extra(syllabus)`: se l'estrazione comune non trova libri, quella propria dell'ateneo.
     `obbligatorio_gruppo(gruppo)`: se restituisce True le attività del gruppo (non «Obbligatori») sono
     obbligatorie (per esempio un blocco con una sola attività e i CFU richiesti uguali ai suoi).
-    `id_corso(corso)`: id del corso del database a cui associare il piano (più sedi con lo stesso nome)."""
+    `id_corso(corso)`: id del corso del database a cui associare il piano (più sedi con lo stesso nome).
+    `lingua_gruppi` (UniTO): ogni insegnamento riporta la lingua dell'attività (`lingua`: «it»/«en», da
+    `lingua_cod`) e i gruppi di scelta del piano in cui è a scelta (`gruppo_scelta`): servono a
+    `pulizia.varianti_lingua_scelta` per unire la versione italiana e quella inglese dello stesso
+    esame offerte come alternative nello stesso gruppo («UN ESAME A SCELTA FRA»)."""
     c = client or Client(base)
     coorti: dict[int, dict[str, dict]] = {}
     for y in range(anno - durata_max + 1, anno + 1):
@@ -267,6 +314,8 @@ def fetch_ateneo(uid: str, base: str, anno: int, durata_max: int = 6, max_cds: i
                                     "libri": [], "esami": [],
                                     "fonte": base, "verificato_il": time.strftime("%Y-%m-%d"),
                                 }
+                                if lingua_gruppi and lingua_attivita(att):
+                                    item["lingua"] = lingua_attivita(att)
                                 insegnamenti[key] = item
                                 if syllabus:
                                     syllabus_jobs.setdefault((str(att.get("aa")), str(att.get("cod"))), {
@@ -276,12 +325,17 @@ def fetch_ateneo(uid: str, base: str, anno: int, durata_max: int = 6, max_cds: i
                                                    "corso_cod": att.get("corso_cod"), "corso_aa": y,
                                                    "schema_id": att.get("schemaId")},
                                         "items": []})["items"].append(item)
+                            if lingua_gruppi and not (obbl or att.get("tipo_ins_cod") == "OBB"):
+                                gs = gruppo_scelta(g, att, p, anno_a)
+                                if gs:
+                                    item.setdefault("_gruppi_scelta", set()).add(gs)
                             if n_percorsi > 1 and pnome:
                                 item["_percorsi"].add(pnome)
                                 percorsi_nomi.add(pnome)
         ins = list(insegnamenti.values())
         for i in ins:
             ps = i.pop("_percorsi")
+            chiudi_gruppi(i)
             if percorsi_nomi and ps and ps != percorsi_nomi:
                 i["curriculum"] = ", ".join(sorted(ps))
         return {

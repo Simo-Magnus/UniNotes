@@ -5,8 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
+import 'package:provider/provider.dart';
 import 'package:university_notes/core/database/app_database.dart';
+import 'package:university_notes/core/reminders/notification_plan.dart'
+    show AppRoutes;
+import 'package:university_notes/core/services/app_services.dart';
 import 'package:university_notes/core/theme/app_theme.dart';
+import 'package:university_notes/features/cloud/onedrive_service.dart';
+import 'package:university_notes/features/cloud/onenote_screen.dart';
+import 'package:university_notes/features/notes/notes_store.dart';
 import 'package:university_notes/features/reader/reader_screen.dart';
 import 'package:university_notes/features/reader/reader_store.dart';
 import 'package:university_notes/features/reader/views/document_view.dart';
@@ -343,5 +350,44 @@ void main() {
     await _key(t, LogicalKeyboardKey.f3);
     await _key(t, LogicalKeyboardKey.keyF, control: true);
     expect(opened, 2);
+  });
+
+  testWidgets('OneNote senza OneDrive collegato: avviso con «Collega»', (
+    t,
+  ) async {
+    db = (await t.runAsync(AppDatabase.openInMemory))!;
+    final settings = SettingsRepository(db);
+    store = ReaderStore(settings);
+    final s = AppServices(
+      db,
+      onedrive: OneDriveService(
+        settings,
+        NotesStore(settings, root: () async => tmp),
+        secrets: MemoryCloudSecrets(),
+        stateDir: () async => tmp,
+      ),
+    );
+    final path = await write(t, 'Analisi.one', buildOneNote());
+    t.view.physicalSize = const Size(1000, 800);
+    t.view.devicePixelRatio = 1;
+    addTearDown(t.view.reset);
+    await t.pumpWidget(
+      Provider<AppServices>.value(
+        value: s,
+        child: MaterialApp(
+          theme: AppTheme.dark(),
+          home: ReaderScreen(path: path, store: store),
+        ),
+      ),
+    );
+    await _settle(t);
+    await t.tap(find.widgetWithText(TextButton, 'OneNote'));
+    await _settle(t, 4);
+    expect(find.byType(OneNoteScreen), findsNothing);
+    expect(find.textContaining('Collegamenti → OneDrive'), findsOneWidget);
+    await t.tap(find.text('Collega'));
+    await _settle(t, 4);
+    expect(s.openRoute.pending, AppRoutes.links);
+    await t.runAsync(db.close);
   });
 }

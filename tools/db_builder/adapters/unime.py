@@ -228,16 +228,47 @@ def _e_comune(pnome: str) -> bool:
     return bool(_COMUNE.search(pnome)) and not _CLASSE.search(pnome)
 
 
+LINGUE_PERCORSO = {"ita": "Percorso in lingua italiana", "eng": "Percorso in lingua inglese"}
+
+
+def _lingua_percorso(p: dict) -> str | None:
+    """Lingua di un percorso dalle attività (`lingua_cod`): quella, tra italiano e inglese, con più attività
+    (le lingue straniere insegnate in un percorso italiano non contano); None se pari o senza indicazioni."""
+    n = {"ita": 0, "eng": 0}
+    for a in p.get("anni") or []:
+        gruppi = a.get("insegnamenti") or ([{"attivita": a["attivita"]}] if a.get("attivita") else [])
+        for g in gruppi:
+            for att in g.get("attivita") or []:
+                if att.get("lingua_cod") in n:
+                    n[att["lingua_cod"]] += 1
+    if n["ita"] == n["eng"]:
+        return None
+    return "ita" if n["ita"] > n["eng"] else "eng"
+
+
+def _percorsi_nomi(det: dict, sede: str) -> list[tuple[dict, str]]:
+    """(percorso, nome) dei percorsi validi del piano di una coorte. Due o più percorsi «comuni» con `pdsCod` diversi
+    che hanno lingua diversa (Scienze politiche e delle relazioni internazionali: «PIANO STATUTARIO COMUNE» 100 in
+    italiano e 200 in inglese) non sono comuni a tutti: sono il percorso in italiano e quello in inglese, due
+    curricula (altrimenti i due piani si fondono e ogni insegnamento compare nelle due lingue)."""
+    ok = [(p, (p.get("des_it") or p.get("pdsDes") or "").strip()) for p in det.get("percorsi") or []]
+    ok = [(p, n) for p, n in ok if _percorso_ok(n, sede)]
+    comuni = [p for p, n in ok if _e_comune(n)]
+    if len(comuni) >= 2 and len({str(p.get("pdsCod")) for p in comuni}) == len(comuni):
+        lingue = [_lingua_percorso(p) for p in comuni]
+        if None not in lingue and len(set(lingue)) == len(lingue):
+            etichette = {id(p): LINGUE_PERCORSO[lg] for p, lg in zip(comuni, lingue)}
+            return [(p, etichette.get(id(p), n)) for p, n in ok]
+    return ok
+
+
 def _voci_anno(det: dict, durata: int, sede: str) -> list:
     """Voci del piano di una coorte: (anno 1..durata, percorso, gruppo, attività o None).
 
     Le sezioni senza anno (`anno` 0 o non numerico: crediti non legati a un anno) vanno all'ultimo anno.
     Un gruppo senza attività elencate dà una voce con attività None."""
     out = []
-    for p in det.get("percorsi") or []:
-        pnome = (p.get("des_it") or p.get("pdsDes") or "").strip()
-        if not _percorso_ok(pnome, sede):
-            continue
+    for p, pnome in _percorsi_nomi(det, sede):
         for a in p.get("anni") or []:
             anno = a.get("anno")
             k = int(anno) if str(anno).isdigit() and int(anno) >= 1 else durata
@@ -299,7 +330,7 @@ def _coorte_anno(cohorts: dict, voci: dict, k: int, anno: int) -> int | None:
 
 
 def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, client=None,
-                 coorte_unica: int | None = None) -> dict:
+                 coorte_unica: int | None = None, solo: set[str] | None = None) -> dict:
     base = BASE
     c = client or ClientCache(BASE)
     coorti: dict[int, list[dict]] = {}
@@ -308,6 +339,8 @@ def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, 
         cc._walk_cds(c.get("/corsi", {"anno": y, "minimal": "true"}) or [], cds)
         coorti[y] = [x for x in cds if str(x.get("aa")) == str(y) and x.get("tipo_corso_cod") in TIPI]
     attuali = coorti[anno][:max_cds] if max_cds else coorti[anno]
+    if solo:  # solo questi corsi (campo `cod` del catalogo), per rieseguire un correttivo senza rileggere tutto
+        attuali = [x for x in coorti[anno] if x["cod"] in solo]
     log(f"[{uid}] {len(attuali)} corsi di studio nella coorte {anno}")
 
     dettagli: dict[tuple[int, str], dict | None] = {}
@@ -355,10 +388,9 @@ def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, 
         # nome dei curricula: quello della coorte più recente che ha lo stesso curriculum
         nomi_percorso: dict[str, str] = {}
         for y in sorted(cohorts):
-            for p in cohorts[y][1].get("percorsi") or []:
-                pn = (p.get("des_it") or p.get("pdsDes") or "").strip()
-                if _percorso_ok(pn, sede) and not _e_comune(pn):
-                    nomi_percorso[_chiave_percorso(pn)] = re.sub(r"\s+", " ", _PREFISSO.sub("", pn)).strip(": ")
+            for _, pn in _percorsi_nomi(cohorts[y][1], sede):
+                if not _e_comune(pn):
+                    nomi_percorso[_chiave_percorso(pn)] = pn if pn in LINGUE_PERCORSO.values() else                         re.sub(r"\s+", " ", _PREFISSO.sub("", pn)).strip(": ")
         # CFU di un'attività a scelta che in un piano ha 0 CFU («fra 0.5 e 12 CFU»): quelli della stessa attività
         # in un'altra coorte o un altro anno del corso
         cfu_noti: dict[str, float] = {}
@@ -382,8 +414,7 @@ def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, 
             if scelta is None:
                 continue
             x, d = cohorts[scelta]
-            validi = [(p.get("des_it") or p.get("pdsDes") or "").strip() for p in d.get("percorsi") or []]
-            validi = [p for p in validi if _percorso_ok(p, sede)]
+            validi = [n for _, n in _percorsi_nomi(d, sede)]
             curricula = {nomi_percorso.get(_chiave_percorso(p), p) for p in validi if not _e_comune(p)}
             if len(curricula) < 2:  # un solo percorso oltre al comune: non è un curriculum
                 curricula = set()
@@ -576,9 +607,10 @@ def _fetch_piani(uid: str, anno: int, max_cds: int | None, syllabus: bool, log, 
 
 
 def fetch_ateneo(uid: str = "unime", anno: int = 2026, max_cds: int | None = None, syllabus: bool = True,
-                 log=print, client=None, coorte_unica: int | None = None) -> dict:
-    """`coorte_unica`: solo per i controlli, legge tutti gli anni dal piano di una sola coorte."""
-    doc = _fetch_piani(uid, anno, max_cds, syllabus, log, client, coorte_unica)
+                 log=print, client=None, coorte_unica: int | None = None, solo: set[str] | None = None) -> dict:
+    """`coorte_unica`: solo per i controlli, legge tutti gli anni dal piano di una sola coorte.
+    `solo`: codici (`cod`) dei soli corsi del catalogo da leggere."""
+    doc = _fetch_piani(uid, anno, max_cds, syllabus, log, client, coorte_unica, solo)
     corsi = []
     for c in doc["corsi"]:
         cod = str(c.get("url") or "").rsplit("/", 1)[-1]
