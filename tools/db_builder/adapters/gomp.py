@@ -31,17 +31,39 @@ HOSTS["uniroma2"] = "https://uniroma2public.gomp.it"  # Tor Vergata: host senza 
 # Atenei il cui piano di ogni anno di corso è quello della coorte che lo segue (a.a. - k + 1): ogni coorte ha
 # il suo regolamento (uid diverso, stesso `code` del corso) e solo il 1° anno è quello dell'a.a. corrente.
 # Il piano si ricostruisce anno per anno, con i gruppi a scelta espansi negli insegnamenti che li compongono.
-ANNI_PER_COORTE = {"uniroma3", "unitus"}
+ANNI_PER_COORTE = {"uniroma3", "unitus", "unicas"}
 # Corso GOMP il cui regolamento corrente è nuovo (code diverso) mentre le coorti precedenti stanno sotto un altro corso
 # dello stesso ateneo: {ateneo: {code corrente: (code delle coorti precedenti, parte del nome dei percorsi da tenere)}}.
 # (UniTus: la sede di Civitavecchia di Economia aziendale ha il suo regolamento solo dal 2026/27; gli anni 2 e 3 sono
 # i percorsi «sede Civitavecchia» del corso «sedi di Viterbo e Civitavecchia».)
-CORSI_COORTI_ALIAS = {"unitus": {"418": ("292", "civitavecchia")}}
+CORSI_COORTI_ALIAS = {"unitus": {"418": ("292", "civitavecchia")},
+                      # UniCas: il riordino L-8 ha dato a «Ingegneria dell'Informazione» un codice nuovo; le coorti
+                      # precedenti (2° e 3° anno) stanno nel corso «Ingegneria Informatica e delle Telecomunicazioni»
+                      "unicas": {"7078^GEN^060019": ("7120", "")}}
+# Abbinamento esplicito dei corsi del database ai corsi GOMP (codici), per i nomi che non coincidono: un omonimo di
+# un'altra classe, il corso con la sede nel nome, o più corsi GOMP (uno per classe) fusi in un solo corso del database,
+# che diventano percorsi con il nome della classe: {ateneo: {id corso del database: [codici GOMP]}}.
+ABBINAMENTI_GOMP = {"unicas": {
+    "unicas-l-9-ingegneria-gestionale": ["7098^GEN^060038"],
+    "unicas-lm-33-mechanical-engineering": ["7094^GEN^060019"],
+    "unicas-lm-35-lm-23-ingegneria-civile-per-l-ambiente-e-il-territorio": ["7002_23^GEN^060019", "7002_35^GEN^060019"],
+    "unicas-lm-37-lm-38-lingue-e-letterature-moderne-per-i-servizi-interculturali-la": ["7006^COP^060019",
+                                                                                      "7006_38^COP^060019"],
+}}
 # Atenei in cui insegnamenti con codici diversi e lo stesso nome nello stesso anno sono attività distinte (stesse
 # etichette con CFU diversi, alternative di un gruppo): il nome le distingue e non sembrano doppioni.
-NOMI_DISTINTI_PER_CODICE = {"unitus"}
+NOMI_DISTINTI_PER_CODICE = {"unitus", "unicas"}
 _LIBERA = re.compile(r"(?i)^\s*(a scelta\b|attivit[aà] (formative )?a scelta|insegnament[oi] a scelta|esam[ei] a scelta|"
                      r"crediti (liberi|a scelta)|corso a scelta|materia a scelta)")
+# Etichette di crediti liberi in più (attività fisse del piano, non gruppi) per ateneo: «Elective classes», «Gruppo a scelta
+# libera …», «15 CFU a scelta dello studente»: non sono insegnamenti obbligatori né hanno un codice proprio.
+# Atenei (tra quelli per coorte) i cui regolamenti per a.a. sono l'erogato di quell'a.a. (gli anni insegnati allora; i
+# corsi nuovi hanno solo gli anni già attivati): l'anno k è nel regolamento dell'a.a. corrente, se manca nel più recente
+# precedente che lo ha. (UniCas: es. «Economics with data science», regolamento 2023 con il solo 1° anno, 2024 con 1-2.)
+ANNI_EROGATO = {"unicas", "uniroma3", "unitus"}
+# Atenei con nomi di percorso che contengono virgole («Narrazione, traduzione e nuove tecnologie»): la virgola diventa « - ».
+PERCORSI_SENZA_VIRGOLE = {"unicas"}
+LIBERA_EXTRA = {"unicas": re.compile(r"(?i)^\s*(\d+\s*cfu\s+a scelta\b|gruppo a scelta libera\b|elective classes\b)")}
 
 
 def _norm(s: str) -> str:
@@ -117,7 +139,7 @@ def _cfu_attivita(a: dict) -> float:
     return float(sum(c.get("credits") or 0 for c in a.get("credits") or []))
 
 
-def _righe_anno(dati: dict, k: int) -> tuple[list[dict], set[str]]:
+def _righe_anno(dati: dict, k: int, libera_extra=None, senza_virgole: bool = False) -> tuple[list[dict], set[str]]:
     """Righe dell'anno `k` del regolamento (tutti i curricula) e nomi dei curricula del regolamento.
 
     Un gruppo (`linkedGroup`) elenca nelle sue unità gli insegnamenti tra cui scegliere e i CFU da acquisire:
@@ -125,10 +147,15 @@ def _righe_anno(dati: dict, k: int) -> tuple[list[dict], set[str]]:
     altrimenti a scelta. Un gruppo senza insegnamenti ("A scelta dello studente", "Tirocinio") resta una voce
     senza codice a scelta. Le righe hanno `_c` (curricula) e `_pc` (curricula del regolamento)."""
     curr_list = dati.get("curricula") or []
-    nomi_curr = {_ita(cu.get("name")) for cu in curr_list if len(curr_list) > 1 and _ita(cu.get("name"))}
+    def nome_percorso(cu: dict) -> str:
+        # una virgola nel nome di un percorso lo farebbe leggere come due percorsi (pulizia.percorsi)
+        n = _ita(cu.get("name"))
+        return re.sub(r"\s*,\s*", " - ", n) if senza_virgole else n
+
+    nomi_curr = {nome_percorso(cu) for cu in curr_list if len(curr_list) > 1 and nome_percorso(cu)}
     righe: dict[str, dict] = {}
     for cu in curr_list:
-        nome_c = _ita(cu.get("name")) if len(curr_list) > 1 else None
+        nome_c = nome_percorso(cu) if len(curr_list) > 1 else None
         for y in cu.get("years") or []:
             if y.get("number") != k:
                 continue
@@ -155,7 +182,7 @@ def _righe_anno(dati: dict, k: int) -> tuple[list[dict], set[str]]:
                 x = _attivita(a)
                 if not x["nome"]:
                     continue
-                libera = bool(_LIBERA.search(x["nome"]))
+                libera = bool(_LIBERA.search(x["nome"]) or (libera_extra and libera_extra.search(x["nome"])))
                 codice = None if libera or not x["codice"] else x["codice"]
                 key = f"{k}:{codice}" if codice else f"{k}:#{_norm(x['nome'])}:{x['cfu']}"
                 item = righe.get(key)
@@ -237,7 +264,14 @@ def fetch_gomp(uid: str, anno: int | None = None, max_cds: int | None = None, sy
             if n:
                 per_nome.setdefault(n, []).append(g)
     abbinati = []
+    forzati = ABBINAMENTI_GOMP.get(uid, {})
+    per_codice = {g.get("code"): g for g in gomp}
     for corso in corsi:
+        if corso["id"] in forzati:
+            gl = [per_codice[c] for c in forzati[corso["id"]] if c in per_codice]
+            if gl:
+                abbinati.append((corso, gl[0] if len(gl) == 1 else gl))
+            continue
         cand = per_nome.get(_norm(corso["nome"])) or per_nome.get(_norm(corso.get("nome_en") or "")) or []
         cl = {x.strip() for x in (corso.get("classe") or "").split("/")}
         both = [g for g in cand if {re.sub(r"\s+R$", "", x) for x in g.get("classes") or []} & cl] or cand
@@ -281,7 +315,18 @@ def fetch_gomp(uid: str, anno: int | None = None, max_cds: int | None = None, sy
         durata = corso.get("durata_anni") or g.get("years") or 3
         piani: dict[int, tuple[str, dict] | None] = {}
 
-        def piano(a: int):
+        def piano(a: int, corso_alias: bool = False):
+            """Regolamento dell'a.a. `a`; con `corso_alias` quello (dello stesso a.a.) del corso GOMP che precede
+            il corso `g` nel riordino (vedi CORSI_COORTI_ALIAS)."""
+            if corso_alias:
+                alias = CORSI_COORTI_ALIAS.get(uid, {}).get(g.get("code"))
+                c = next((x for x in (gomp if a == anno else coorte_elenco.get(a, []))
+                          if alias and x.get("code") == alias[0]), None)
+                dati = api.corso(c["uid"], a) if c else None
+                if dati:
+                    dati = {**dati, "curricula": [cu for cu in dati.get("curricula") or []
+                                                  if alias[1] in _ita(cu.get("name")).lower()]}
+                return (c["uid"], dati) if dati else None
             if a not in piani:
                 c = coorte_corso(g, a)
                 dati = api.corso(c["uid"], a) if c else None
@@ -298,13 +343,21 @@ def fetch_gomp(uid: str, anno: int | None = None, max_cds: int | None = None, sy
             # piano dell'anno k: coorte (anno - k + 1); se non c'è o non ha quell'anno, la coorte più vicina
             # (a parità la più recente) che lo ha
             cohorts = sorted(range(anno - durata + 1, anno + 1), key=lambda a: (abs(a - (anno - k + 1)), -a))
-            for a in cohorts:
+            tentativi = [(a, False) for a in cohorts]
+            if uid in ANNI_EROGATO:
+                # i regolamenti per a.a. sono l'erogato di quell'a.a. (gli anni insegnati allora, non il piano della
+                # coorte): l'anno k è nel regolamento dell'a.a. corrente (o del corso che precede nel riordino); se
+                # non c'è, nel più recente precedente che lo ha
+                tentativi = []
+                for a in range(anno, anno - durata, -1):
+                    tentativi += [(a, False)] + ([(a, True)] if g.get("code") in CORSI_COORTI_ALIAS.get(uid, {}) else [])
+            for a, al in tentativi:
                 if a != anno and a not in coorte_elenco:
                     continue
-                p = piano(a)
+                p = piano(a, al)
                 if not p:
                     continue
-                rk, nomi = _righe_anno(p[1], k)
+                rk, nomi = _righe_anno(p[1], k, LIBERA_EXTRA.get(uid), uid in PERCORSI_SENZA_VIRGOLE)
                 if not rk:
                     continue
                 fonte = f"{base}/PublicData?uid={p[0]}&mode=CourseDetail&iso=ita&academicYear={a}"
@@ -319,6 +372,22 @@ def fetch_gomp(uid: str, anno: int | None = None, max_cds: int | None = None, sy
                 curricula |= nomi
                 righe += rk
                 break
+        if uid in ANNI_EROGATO and syllabus:
+            # testi mancanti nel regolamento corrente: quelli dello stesso insegnamento (stesso codice) nei
+            # regolamenti degli a.a. precedenti dello stesso corso (il più recente che li ha)
+            altri: dict[str, list[dict]] = {}
+            for a in range(anno, anno - durata, -1):
+                if a != anno and a not in coorte_elenco:
+                    continue
+                for al in (False, True) if g.get("code") in CORSI_COORTI_ALIAS.get(uid, {}) else (False,):
+                    p = piano(a, al)
+                    for k in range(1, durata + 1) if p else ():
+                        for i in _righe_anno(p[1], k)[0]:
+                            if i["codice"] and i["libri"]:
+                                altri.setdefault(i["codice"], i["libri"])
+            for i in righe:
+                if not i["libri"] and i["codice"] in altri:
+                    i["libri"], i["stato_libri"] = altri[i["codice"]], "completo"
         _nomi_distinti(righe)
         if uid in NOMI_DISTINTI_PER_CODICE:
             _nomi_distinti_codici(righe)
@@ -328,8 +397,29 @@ def fetch_gomp(uid: str, anno: int | None = None, max_cds: int | None = None, sy
                 "url": fonte0, "curricula": sorted(curricula) or None, "fonte": fonte0, "verificato_il": oggi,
                 "insegnamenti": righe}
 
+    def build_classi(corso: dict, gl: list[dict]) -> dict | None:
+        """Più corsi GOMP (uno per classe) fusi in un solo corso del database: ogni corso GOMP è un percorso,
+        col nome della classe (es. «LM-23 - Ingegneria Civile»)."""
+        parti, righe, curricula = [], [], set()
+        for g in gl:
+            r = build_coorti(corso, g)
+            m = re.search(r"(LM|L)[- ]?(\d+)\s*-\s*(.+)$", _ita(g.get("name")))
+            etichetta = f"{m.group(1)}-{m.group(2)} - {m.group(3).strip()}" if m else _ita(g.get("name"))
+            if not r:
+                continue
+            for i in r["insegnamenti"]:
+                i["curriculum"] = f"{etichetta}: {i['curriculum']}" if i.get("curriculum") else etichetta
+            parti.append(r)
+            righe += r["insegnamenti"]
+            curricula.add(etichetta)
+        if not parti:
+            return None
+        return {**parti[0], "curricula": sorted(curricula), "insegnamenti": righe}
+
     def build(coppia) -> dict | None:
         corso, g = coppia
+        if isinstance(g, list):
+            return build_classi(corso, g)
         if uid in ANNI_PER_COORTE:
             return build_coorti(corso, g)
         attuale = api.corso(g["uid"], anno)

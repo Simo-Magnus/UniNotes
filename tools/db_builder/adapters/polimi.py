@@ -114,34 +114,117 @@ def associa(opzioni: list[dict], corsi: list[dict]) -> dict[str, list[dict]]:
     return out
 
 
+def _riga(celle: list[tuple[str, str]]) -> dict | None:
+    """Una riga di tabella del manifesto: codice, SSD, nome, lingua, sede, tipo, periodo, CFU e (solo nelle tabelle
+    degli anni, sulla prima riga di un insieme) CFU del gruppo con il suo rowspan."""
+    # la cella del nome ha colspan; prima ci sono codice, uno o due SSD, la cella dell'orario (e a volte una cella
+    # vuota con rowspan per i gruppi di moduli); dopo, a volte il numero di sezioni, poi lingua, sede, tipo,
+    # periodo, CFU e, sulla prima riga di un insieme, i CFU del gruppo (cella con `nowrap`): si contano da destra
+    kn = next((j for j, (attr, _) in enumerate(celle) if "colspan" in attr.lower() and j > 0), None)
+    if kn is None:
+        return None
+    ha_g = "nowrap" in celle[-1][0].lower() and len(celle) - 1 > kn + 5
+    ic = len(celle) - (2 if ha_g else 1)  # indice della cella dei CFU
+    if ic - 4 <= kn:
+        return None
+    td = [x for _, x in celle]
+    ssd = " ".join(_testo(x) for (attr, x) in celle[1:kn] if "orario_td" not in attr and _testo(x))
+    link = re.search(r'href="([^"]*EVN_DETTAGLIO_RIGA_MANIFESTO[^"]*)"', td[kn])
+    # «10.0 [1.0 ▪]»: tra parentesi quadre i CFU erogati con didattica innovativa, non sono altri crediti
+    cfu_t = _testo(re.sub(r"<div.*?</div>", " ", td[ic], flags=re.S)).replace(",", ".")
+    cfu = float(cfu_t) if re.fullmatch(r"\d+(\.\d+)?", cfu_t) else None
+    cfu_g = rs = None
+    if ha_g:
+        gt = _testo(td[-1]).replace(",", ".")
+        mg = re.match(r"(\d+(?:\.\d+)?)(\s*\(Grp\.\s*Opz\.\))?$", gt)  # «4.0 (Grp. Opz.)»: gruppo opzionale
+        cfu_g = float(mg.group(1)) if mg else None
+        m = re.search(r'rowspan="?(\d+)', celle[-1][0], re.I)
+        rs = int(m.group(1)) if m else 1
+    per = _testo(td[ic - 1]).lower()
+    m = re.match(r"(\d)\D*sem", per)
+    ref = re.search(r'href="#idGruppo(\d+)"', td[kn])
+    cod = _testo(td[0])
+    num = lambda v: int(v) if v is not None and float(v).is_integer() else v  # noqa: E731
+    return {
+        "codice": None if not cod or set(cod) <= {"-"} else cod, "ssd": ssd or None,
+        # le note del manifesto ("Insegnamento a numero chiuso", …) sono in un div a parte
+        "nome": _titolo(_testo(re.sub(r'<div class="cls_note".*?</div>', " ", td[kn], flags=re.S))),
+        "sede": _testo(td[ic - 3]) or None, "tipo": _testo(td[ic - 2]) or None,
+        "periodo": m.group(1) if m else ("annuale" if "ann" in per else (_testo(td[ic - 1]) or None)),
+        "cfu": num(cfu), "url": BASE + html.unescape(link.group(1)) if link else None,
+        "_gruppo_ref": ref.group(1) if ref else None, "_cfu_gruppo": num(cfu_g), "_rowspan": rs,
+        "_in_gruppo": bool(link) and "idGruppo=" in link.group(1),
+    }
+
+
 def leggi_manifesto(s: str) -> list[dict]:
-    """Righe del manifesto di un piano (tutti gli anni presenti)."""
+    """Righe del manifesto di un piano (tutti gli anni presenti).
+
+    Ogni tabella d'anno ha insiemi di righe con i «CFU Gruppo» (cella con rowspan sulla prima riga): se i CFU del
+    gruppo bastano per tutte le righe sono da sostenere per intero, altrimenti sono alternative (a scelta). Le righe
+    «Insegnamenti a scelta dal Gruppo X» rimandano a una tabella «Insegnamenti del Gruppo X» in fondo alla pagina
+    (dopo tutti gli anni): i suoi insegnamenti sono alternative dell'anno che li richiama, e i CFU da acquisire
+    nell'insieme sono quelli del gruppo. Campi `_…`: per i controlli, non vanno nel database."""
+    toks = list(re.finditer(r'<a name="idGruppo(\d+)"></a>|<TD class="TitleInfoCard">(.*?)</TD>', s, re.S | re.I))
+    anno = None
+    tabelle_gruppo: dict[str, list[dict]] = {}
+    anni: list[tuple[int, list[dict]]] = []
+    for n, m in enumerate(toks):
+        corpo = s[m.end(): toks[n + 1].start() if n + 1 < len(toks) else len(s)]
+        if m.group(1):  # ancora di un gruppo: la tabella è dopo il titolo successivo
+            continue
+        titolo = _testo(m.group(2))
+        am = re.match(r"(\d)\s*o\s*Anno$", titolo)
+        righe = [r for r in (_riga(re.findall(r"<TD([^>]*)>(.*?)</TD>", tr, re.S | re.I))
+                             for tr in re.findall(r"<tr>(.*?)</tr>", corpo, re.S | re.I)) if r]
+        if am:
+            anni.append((int(am.group(1)), righe))
+        elif n and toks[n - 1].group(1):
+            tabelle_gruppo[toks[n - 1].group(1)] = righe
     out = []
-    parti = re.split(r'<TD class="TitleInfoCard">\s*(\d)<sup><small>o</small></sup>\s*Anno\s*</TD>', s)
-    for anno, corpo in zip(parti[1::2], parti[2::2]):
-        for tr in re.findall(r"<tr>(.*?)</tr>", corpo, re.S | re.I):
-            celle = re.findall(r"<TD([^>]*)>(.*?)</TD>", tr, re.S | re.I)
-            # la cella del nome ha colspan; prima ci sono codice, uno o due SSD e la cella dell'orario,
-            # dopo lingua, sede, tipo, periodo, CFU, CFU del gruppo
-            k = next((j for j, (attr, _) in enumerate(celle) if "colspan" in attr.lower() and j > 0), None)
-            if k is None or len(celle) < k + 6:
-                continue
-            td = [x for _, x in celle]
-            ssd = " ".join(_testo(x) for (attr, x) in celle[1:k] if "orario_td" not in attr and _testo(x))
-            link = re.search(r'href="([^"]*EVN_DETTAGLIO_RIGA_MANIFESTO[^"]*)"', td[k])
-            cfu_t = _testo(td[k + 5]).replace(",", ".")
-            cfu = float(cfu_t) if re.fullmatch(r"\d+(\.\d+)?", cfu_t) else None
-            per = _testo(td[k + 4]).lower()
-            m = re.match(r"(\d)\D*sem", per)
-            out.append({
-                "anno": int(anno), "codice": _testo(td[0]) or None, "ssd": ssd or None,
-                # le note del manifesto ("Insegnamento a numero chiuso", …) sono in un div a parte
-                "nome": _titolo(_testo(re.sub(r'<div class="cls_note".*?</div>', " ", td[k], flags=re.S))), "sede": _testo(td[k + 2]) or None, "tipo": _testo(td[k + 3]) or None,
-                "periodo": m.group(1) if m else ("annuale" if "ann" in per else (_testo(td[k + 4]) or None)),
-                "cfu": int(cfu) if cfu is not None and cfu.is_integer() else cfu,
-                "url": BASE + html.unescape(link.group(1)) if link else None,
-                "obbligatorio": bool(link) and "idGruppo=" not in link.group(1),
-            })
+    visti_g: dict[tuple, int] = {}
+    for anno, righe in anni:
+        i = 0
+        while i < len(righe):
+            r = righe[i]
+            n = r["_rowspan"] or 1
+            insieme = righe[i:i + n] if r["_cfu_gruppo"] is not None else [r]
+            i += len(insieme)
+            g = r["_cfu_gruppo"]
+            intest = [x for x in insieme if x["_gruppo_ref"]]
+            normali = []
+            for x in insieme:  # lo stesso insegnamento su due righe (sedi o semestri) vale una volta
+                if not x["_gruppo_ref"] and not (x["codice"] and any(y["codice"] == x["codice"] for y in normali)):
+                    normali.append(x)
+            somma = sum(x["cfu"] or 0 for x in normali)
+            if intest:
+                # gruppi a scelta: una riga con i CFU da acquisire (le intestazioni dell'insieme hanno i CFU in comune)
+                # e gli insegnamenti dei gruppi come alternative
+                nomi = [re.sub(r"^Insegnamenti a scelta dal\s+", "", x["nome"]) for x in intest]
+                nomi = [re.sub(r"(?i)^(gruppo)\s+", "", x) for x in nomi]
+                # un solo gruppo: il suo nome; più gruppi in comune (elenchi lunghi, diversi da piano a piano): nome
+                # generico con i CFU, così lo stesso insieme di scelte di più piani è una sola voce
+                if len(nomi) == 1:
+                    nome = "Insegnamenti a scelta dal Gruppo " + nomi[0]
+                else:
+                    nome = "Insegnamenti a scelta dai gruppi del piano" + (f" ({g:g} CFU)" if g is not None else "")
+                    visti_g[(anno, nome)] = visti_g.get((anno, nome), 0) + 1
+                    if visti_g[(anno, nome)] > 1:
+                        nome += f" n.{visti_g[(anno, nome)]}"
+                # una sola voce con i CFU dichiarati dal manifesto (anche oltre 30)
+                out.append(dict(intest[0], anno=anno, codice=None, ssd=None, obbligatorio=False, cfu=g, nome=nome,
+                                _gruppo_ref=None, _g=g))
+                for x in intest:
+                    for mem in tabelle_gruppo.get(x["_gruppo_ref"], []):
+                        out.append(dict(mem, anno=anno, obbligatorio=False, _in_gruppo=True, _g=None))
+            fissi = not intest and (g is None or g + 0.01 >= somma)
+            primo = not intest  # il primo insegnamento dell'insieme porta i CFU da acquisire (`_g`)
+            for x in normali:
+                cfu = x["cfu"]
+                if cfu is None and len(insieme) == 1 and g is not None:
+                    cfu = g
+                out.append(dict(x, anno=anno, cfu=cfu, obbligatorio=fissi, _g=None if fissi or not primo else g))
+                primo = False
     return out
 
 
@@ -181,8 +264,9 @@ def leggi_bibliografia(s: str) -> list[dict]:
 
 
 def fetch_ateneo(uid: str = "polimi", anno: int | None = None, max_cds: int | None = None, syllabus: bool = True,
-                 corsi: list[dict] | None = None, log=print) -> dict:
-    """Restituisce un contributo nel formato di database/contrib (vedi build_db.py)."""
+                 corsi: list[dict] | None = None, log=print, diag: dict | None = None) -> dict:
+    """Restituisce un contributo nel formato di database/contrib (vedi build_db.py).
+    `diag` (facoltativo) raccoglie {corso: {anno: {piano: [CFU obbligatori, CFU delle scelte, righe]}}}."""
     anno = anno or (time.localtime().tm_year if time.localtime().tm_mon >= 9 else time.localtime().tm_year - 1)
     if corsi is None:
         corsi = json.loads((ROOT / "database" / "corsi" / f"{uid}.json").read_text(encoding="utf-8"))["corsi"]
@@ -201,6 +285,7 @@ def fetch_ateneo(uid: str = "polimi", anno: int | None = None, max_cds: int | No
     # repliche senza un corso proprio nel manifesto (es. "Ingegneria Informatica REPLICA CREMONA"): sono
     # i piani di studio (indirizzi) del corso principale erogati nella sede della replica
     sede_replica: dict[str, str] = {}
+    repliche_di: dict[str, set] = {}  # corso principale -> sedi delle sue repliche senza un corso proprio nel manifesto
     for x in corsi:
         m = re.match(r"(?i)(.*?)\s+replica\s+(\w+)$", x.get("nome") or "")
         if not m or x["id"] in mappa or SEDI.get(m.group(2).lower()) is None:
@@ -210,6 +295,7 @@ def fetch_ateneo(uid: str = "polimi", anno: int | None = None, max_cds: int | No
         if len(princ) == 1:
             mappa[x["id"]] = mappa[princ[0]["id"]]
             sede_replica[x["id"]] = SEDI[m.group(2).lower()]
+            repliche_di.setdefault(princ[0]["id"], set()).add(SEDI[m.group(2).lower()])
     ids = sorted(mappa)[:max_cds] if max_cds else sorted(mappa)
     log(f"[{uid}] {len(opzioni)} corsi nel manifesto, {len(ids)} associati al database")
 
@@ -223,28 +309,56 @@ def fetch_ateneo(uid: str = "polimi", anno: int | None = None, max_cds: int | No
         durata = corso.get("durata_anni") or 3
         righe: dict[str, dict] = {}
         curricula = set()
+        visti_o = set()
         for o in mappa[cid]:
+            if o["codice"] in visti_o:  # lo stesso corso compare nei menu di più scuole
+                continue
+            visti_o.add(o["codice"])
             r0 = _get_valid(c, url_piano(o, None), 'name="k_corso_la"')
             if not r0:
                 continue
             m = re.search(r'<select[^>]*name="k_indir"[^>]*>(.*?)</select>', r0.text, re.S | re.I)
             indirizzi = re.findall(r'<option value="([^"]+)"[^>]*>(.*?)</option>', m.group(1), re.S) if m else []
+            piani = []
             for ind, ind_nome in indirizzi or [(None, None)]:
                 rp = r0 if len(indirizzi) <= 1 else _get_valid(c, url_piano(o, ind), 'name="k_corso_la"')
                 if not rp:
                     continue
                 curr = re.sub(r"^\w+\s*-\s*", "", _testo(ind_nome)) if ind_nome and len(indirizzi) > 1 else None
                 piano = leggi_manifesto(rp.text)
-                if cid in sede_replica:
-                    # solo i piani il cui 1° anno si svolge nella sede della replica
-                    sedi1 = [x["sede"] for x in piano if x["anno"] == 1 and x.get("sede") in set(SEDI.values()) | {"MI", "BV"}]
-                    if not sedi1 or sedi1.count(sede_replica[cid]) * 2 <= len(sedi1):
+                if ind != "***" and (cid in sede_replica or repliche_di.get(cid)):
+                    # la replica ha solo i piani il cui primo anno presente si svolge nella sua sede; il corso
+                    # principale non ha quelli delle sue repliche (sedi diverse non si mescolano)
+                    sedi1 = [x["sede"] for x in piano if x.get("sede") in set(SEDI.values()) | {"MI", "BV"}
+                             and x["anno"] == min((y["anno"] for y in piano), default=0)]
+                    maggiore = max(set(sedi1), key=sedi1.count) if sedi1 else None
+                    if cid in sede_replica and (not sedi1 or sedi1.count(sede_replica[cid]) * 2 <= len(sedi1)):
                         continue
+                    if cid not in sede_replica and maggiore in repliche_di.get(cid, set()):
+                        continue
+                if ind == "***":  # «Non diversificato»: insegnamenti comuni a tutti i piani
+                    curr = None
+                piani.append((curr, rp, piano, ind == "***"))
+            # un anno che ha insegnamenti in un solo piano (gli altri dicono «Nessun insegnamento per il N° anno»,
+            # es. i primi anni di un corso con indirizzi solo al 3°) vale per tutti i piani
+            piani_anno: dict[int, int] = {}
+            for _, _, piano, comune_p in piani:
+                for a_ in {x["anno"] for x in piano}:
+                    piani_anno[a_] = piani_anno.get(a_, 0) + 1
+            for curr, rp, piano, comune_p in piani:
                 for x in piano:
                     if not 1 <= x["anno"] <= durata:
                         continue
                     if curr:
                         curricula.add(curr)
+                    if diag is not None:  # CFU dichiarati dalla fonte per anno e piano (controlli)
+                        d = diag.setdefault(cid, {}).setdefault(x["anno"], {}).setdefault(
+                            f"{o['codice']}|{curr or ('***' if comune_p else '')}", [0, 0, 0])
+                        if x["obbligatorio"]:
+                            d[0] += x["cfu"] or 0
+                        d[1] += x.get("_g") or 0
+                        d[2] += 1
+                    comune = comune_p or (len(piani) > 1 and piani_anno.get(x["anno"]) == 1)
                     key = f"{x['anno']}:{x['codice'] or x['nome']}"
                     item = righe.get(key)
                     if not item:
@@ -255,7 +369,7 @@ def fetch_ateneo(uid: str = "polimi", anno: int | None = None, max_cds: int | No
                             "verificato_il": oggi, "_curr": set(),
                         }
                     item["obbligatorio"] = item["obbligatorio"] and x["obbligatorio"]
-                    item["_curr"].add(curr)
+                    item["_curr"].add(None if comune else curr)
         tutti = set().union(*(i["_curr"] for i in righe.values())) if righe else set()
         for i in righe.values():
             cs = i.pop("_curr")
@@ -263,6 +377,15 @@ def fetch_ateneo(uid: str = "polimi", anno: int | None = None, max_cds: int | No
                 i["curriculum"] = ", ".join(sorted(cs))
         if not righe:
             return None
+        # alternative omonime con codici e CFU diversi (es. «Tirocinio» da 5 e da 10 CFU): il nome dice quanti
+        omonimi: dict[tuple, list[dict]] = {}
+        for i in righe.values():
+            omonimi.setdefault((i["anno"], _norm(i["nome"])), []).append(i)
+        for g in omonimi.values():
+            if len({x["codice"] for x in g}) > 1 and len({x["cfu"] for x in g}) > 1:
+                for x in g:
+                    if x["cfu"] is not None:
+                        x["nome"] = f"{x['nome']} ({x['cfu']:g} CFU)"
         return {"id": cid, "nome": corso["nome"], "classe": corso.get("classe"), "durata_anni": durata,
                 "url": url_piano(mappa[cid][0], None), "curricula": sorted(curricula) or None,
                 "fonte": MAN, "verificato_il": oggi, "insegnamenti": list(righe.values())}
@@ -276,11 +399,43 @@ def fetch_ateneo(uid: str = "polimi", anno: int | None = None, max_cds: int | No
 
     with cf.ThreadPoolExecutor(4) as ex:
         out = [r for r in ex.map(build_safe, ids) if r]
+    # docenti, libri e pagine già raccolti (stesso codice) si riusano: si rileggono solo gli insegnamenti nuovi
+    riuso: dict[str, dict] = {}
+    for p in (ROOT / "database" / "contrib" / "auto" / f"{uid}.json", ROOT / "database" / "corsi" / f"{uid}.json"):
+        try:
+            vecchio = json.loads(p.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        for vc in vecchio.get("corsi") or []:
+            for vi in vc.get("insegnamenti") or []:
+                cod = vi.get("codice")
+                if not cod or not (vi.get("libri") or vi.get("docenti") or vi.get("url_sito")):
+                    continue
+                r = riuso.setdefault(cod, {"libri": [], "docenti": [], "url": None, "url_sito": None})
+                if vi.get("libri") and not r["libri"]:
+                    r["libri"] = vi["libri"]
+                for k in ("docenti",):
+                    r[k] = r[k] or vi.get(k) or []
+                for k in ("url", "url_sito"):
+                    r[k] = r[k] or vi.get(k)
+    riusati = 0
     jobs: dict[str, list[dict]] = {}
     for corso in out:
         for i in corso["insegnamenti"]:
-            if i.get("url"):
+            r = riuso.get(i.get("codice") or "") if syllabus else None
+            if r:
+                i["docenti"] = list(r["docenti"])
+                i["libri"] = [dict(x) for x in r["libri"]]
+                i["stato_libri"] = "completo" if i["libri"] else "da_aggiungere"
+                i["_riusato"] = True
+                if r["url"]:
+                    i["url"] = r["url"]
+                if r["url_sito"]:
+                    i["url_sito"] = r["url_sito"]
+                riusati += 1
+            elif i.get("url"):
                 jobs.setdefault(i["url"], []).append(i)
+    log(f"[{uid}] insegnamenti con docenti e libri già raccolti: {riusati}")
     log(f"[{uid}] piani letti: {len(out)} corsi, {sum(len(x['insegnamenti']) for x in out)} insegnamenti; "
         f"insegnamenti distinti da leggere: {len(jobs) if syllabus else 0}")
 
@@ -320,6 +475,9 @@ def fetch_ateneo(uid: str = "polimi", anno: int | None = None, max_cds: int | No
     log(f"[{uid}] libri trovati: {trovati}; richieste: {c.requests}")
     if syllabus:
         libri_anno_precedente(out, anno, log=log, c=c)
+    for corso in out:
+        for i in corso["insegnamenti"]:
+            i.pop("_riusato", None)
     return {"universita_id": uid, "descrizione": "Generato dal Manifesto degli studi pubblico (adapters/polimi.py)",
             "generato_il": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "corsi": out, "canali": []}
 
@@ -339,7 +497,7 @@ def libri_anno_precedente(corsi: list[dict], anno: int, log=print, c: Client | N
     per_cod: dict[str, list[dict]] = {}
     for corso in corsi:
         for i in corso.get("insegnamenti") or []:
-            if not i.get("libri") and i.get("codice") and not _NON_LIBRI.search(i.get("nome") or ""):
+            if not i.get("libri") and i.get("codice") and not i.get("_riusato") and not _NON_LIBRI.search(i.get("nome") or ""):
                 per_cod.setdefault(i["codice"], []).append(i)
     log(f"[polimi] libri a.a. {prec}/{prec + 1 - 2000}: {len(per_cod)} codici da cercare")
     nota = (f"Dal programma dell'a.a. {prec}/{(prec + 1) % 100:02d}: la scheda {anno}/{(anno + 1) % 100:02d} "

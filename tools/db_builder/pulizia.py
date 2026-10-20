@@ -1134,12 +1134,15 @@ def segna_a_scelta(corsi: list[dict]) -> int:
     return n
 
 
-def unisci_omonimi(corsi: list[dict]) -> int:
+def unisci_omonimi(corsi: list[dict], esistenti: set[str] | None = None) -> int:
     """Stesso insegnamento ripetuto nel piano dello stesso corso (un codice per
     canale, sede o curriculum: es. PoliTO «Analisi matematica I» a Torino e a
     Mondovì): diventa un solo insegnamento con tutti i docenti, i libri (senza
     doppioni) e gli appelli; gli altri codici restano in `codici_alternativi`.
-    Si uniscono solo insegnamenti con lo stesso nome, anno e CFU.
+    Si uniscono solo insegnamenti con lo stesso nome, anno e CFU, e non quelli
+    obbligatori in un percorso e a scelta in un altro (`_per_obbligo`).
+    `esistenti`: id già nel database; tra gli uniti tiene l'id uno di questi, così una riga
+    nuova (es. la stessa scelta in un altro anno, `-a<anno>`) non toglie l'id a una che c'era.
     Restituisce il numero di insegnamenti uniti."""
     n = 0
     for c in corsi:
@@ -1153,44 +1156,64 @@ def unisci_omonimi(corsi: list[dict]) -> int:
             if k in visti:
                 continue
             visti.add(k)
-            g = gruppi[k]
-            if len(g) == 1:
-                nuovi.append(i)
-                continue
-            g = sorted(g, key=lambda x: (_sede_secondaria(x), -len(x.get("docenti") or []), x.get("codice") or ""))
-            base = g[0]
-            for altro in g[1:]:
-                n += 1
-                for d in altro.get("docenti") or []:
-                    if d not in (base.get("docenti") or []):
-                        base.setdefault("docenti", []).append(d)
-                chiavi = {(_norm_nome(l.get("titolo")), _norm_nome(l.get("autori"))) for l in base.get("libri") or []}
-                for l in altro.get("libri") or []:
-                    kk = (_norm_nome(l.get("titolo")), _norm_nome(l.get("autori")))
-                    if kk not in chiavi:
-                        chiavi.add(kk)
-                        base.setdefault("libri", []).append(l)
-                viste = {(e.get("data"), e.get("ora"), e.get("tipo")) for e in base.get("esami") or []}
-                for e in altro.get("esami") or []:
-                    ke = (e.get("data"), e.get("ora"), e.get("tipo"))
-                    if ke not in viste:
-                        viste.add(ke)
-                        base.setdefault("esami", []).append(e)
-                base["curriculum"] = _unisci_percorsi(base.get("curriculum"), altro.get("curriculum"))
-                if altro.get("codice") and altro.get("codice") != base.get("codice"):
-                    alt = base.setdefault("codici_alternativi", [])
-                    if altro["codice"] not in alt:
-                        alt.append(altro["codice"])
-                for v in altro.get("varianti") or []:
-                    vv = base.setdefault("varianti", [])
-                    if all(x.get("codice") != v.get("codice") for x in vv):
-                        vv.append(v)
-            if base.get("libri"):
-                base["stato_libri"] = "completo"
-            if base.get("esami"):
-                base["esami"].sort(key=lambda e: e.get("data") or "")
-            nuovi.append(base)
+            for g in _per_obbligo(gruppi[k]):
+                n += _unisci_gruppo(g, nuovi, esistenti)
         c["insegnamenti"] = nuovi
+    return n
+
+
+def _per_obbligo(g: list[dict]) -> list[list[dict]]:
+    """Obbligatorio in alcuni percorsi e a scelta in altri (percorsi tutti indicati e
+    disgiunti): due insegnamenti, uno per obbligatorietà (vedi build_db._stessa_riga)."""
+    obb = [i for i in g if i.get("obbligatorio") is not False]
+    sce = [i for i in g if i.get("obbligatorio") is False]
+    if obb and sce and all(i.get("curriculum") for i in g):
+        if not {p for i in obb for p in percorsi(i["curriculum"])} & {p for i in sce for p in percorsi(i["curriculum"])}:
+            return [obb, sce]
+    return [g]
+
+
+def _unisci_gruppo(g: list[dict], nuovi: list[dict], esistenti: set[str] | None = None) -> int:
+    """Un gruppo di `unisci_omonimi`: il primo tiene l'id e prende docenti, libri, appelli,
+    percorsi e codici degli altri; finisce in `nuovi`. Restituisce gli insegnamenti uniti."""
+    if len(g) == 1:
+        nuovi.append(g[0])
+        return 0
+    n = 0
+    g = sorted(g, key=lambda x: (esistenti is not None and x.get("id") not in esistenti, _sede_secondaria(x),
+                                 -len(x.get("docenti") or []), x.get("codice") or ""))
+    base = g[0]
+    for altro in g[1:]:
+        n += 1
+        for d in altro.get("docenti") or []:
+            if d not in (base.get("docenti") or []):
+                base.setdefault("docenti", []).append(d)
+        chiavi = {(_norm_nome(l.get("titolo")), _norm_nome(l.get("autori"))) for l in base.get("libri") or []}
+        for l in altro.get("libri") or []:
+            kk = (_norm_nome(l.get("titolo")), _norm_nome(l.get("autori")))
+            if kk not in chiavi:
+                chiavi.add(kk)
+                base.setdefault("libri", []).append(l)
+        viste = {(e.get("data"), e.get("ora"), e.get("tipo")) for e in base.get("esami") or []}
+        for e in altro.get("esami") or []:
+            ke = (e.get("data"), e.get("ora"), e.get("tipo"))
+            if ke not in viste:
+                viste.add(ke)
+                base.setdefault("esami", []).append(e)
+        base["curriculum"] = _unisci_percorsi(base.get("curriculum"), altro.get("curriculum"))
+        if altro.get("codice") and altro.get("codice") != base.get("codice"):
+            alt = base.setdefault("codici_alternativi", [])
+            if altro["codice"] not in alt:
+                alt.append(altro["codice"])
+        for v in altro.get("varianti") or []:
+            vv = base.setdefault("varianti", [])
+            if all(x.get("codice") != v.get("codice") for x in vv):
+                vv.append(v)
+    if base.get("libri"):
+        base["stato_libri"] = "completo"
+    if base.get("esami"):
+        base["esami"].sort(key=lambda e: e.get("data") or "")
+    nuovi.append(base)
     return n
 
 # Durata legale per tipo di corso (DM 270/2004): magistrale 2 anni, ciclo unico 5 anni,

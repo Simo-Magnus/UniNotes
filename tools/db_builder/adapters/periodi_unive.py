@@ -57,8 +57,11 @@ def fetch_periodi(uid: str = "unive", log=print) -> dict[str, dict]:
     for c in db["corsi"]:
         for i in c.get("insegnamenti") or []:
             m = re.search(r"/data/insegnamento/(\d+)", i.get("url") or "")
-            if m and LISTA.match(i.get("fonte") or ""):
-                per_ins[i["id"]] = (m.group(1), i["fonte"])
+            # dall'adattatore con il piano di studio per coorte `fonte` è la pagina della coorte e la pagina dell'elenco
+            # erogato (dove c'è il periodo) è in `periodo_fonte`
+            fonte = i.get("periodo_fonte") or i.get("fonte") or ""
+            if m and LISTA.match(fonte):
+                per_ins[i["id"]] = (m.group(1), fonte)
     pagine = sorted({p for _, p in per_ins.values()})
     log(f"[{uid}] {len(pagine)} pagine di elenco, {len(per_ins)} insegnamenti")
     mappa: dict[tuple[str, str], str] = {}

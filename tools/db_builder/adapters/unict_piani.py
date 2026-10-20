@@ -6,10 +6,13 @@ regolamento di ogni corso è invece pubblico nell'API GOMP (la stessa di `period
 (a.a. di immatricolazione) dà i curricula, gli anni, i semestri e le attività con CFU e settore; i gruppi
 (`linkedGroup`) elencano gli insegnamenti tra cui scegliere e i CFU da acquisire.
 
-Come per gli altri atenei GOMP con regolamenti per coorte (vedi `gomp.ANNI_PER_COORTE`), il piano dell'anno `k` è quello
-del regolamento della coorte che nell'a.a. corrente frequenta l'anno `k` (a.a. - k + 1), cercato per codice del corso e,
-se il codice è cambiato con il riordino, per nome e classe; se quella coorte non esiste o non ha l'anno, si prende la
-coorte più vicina che lo ha (a parità la più recente) e l'anno è segnalato come dedotto.
+I regolamenti dell'API sono l'erogato dell'a.a. (come per Roma Tre, Tuscia e UniCas, vedi `gomp.ANNI_EROGATO`): un
+corso nuovo ha nel primo regolamento il solo anno 1, poi 1-2, poi 1-3 (es. Ingegneria gestionale L-9: 2024 solo anno 1,
+2025 anni 1-2, 2026 anni 1-3), un corso ad esaurimento ha solo gli ultimi anni (es. Finanza aziendale LM-77: 2026 solo
+anno 2). Il piano dell'anno `k` è quindi quello del regolamento dell'a.a. corrente, cercato per codice del corso e, se il
+codice è cambiato con il riordino, per nome e classe; se non ha l'anno `k`, quello del più recente degli a.a. precedenti
+che lo ha, e l'anno è segnalato come dedotto. (Prima si prendeva il regolamento della coorte che frequenta l'anno `k`,
+a.a. - k + 1: mescolava due piani diversi nello stesso anno e dava anni mancanti ai corsi che crescono di un anno.)
 
 `integra()` parte dal contributo dei siti dei dipartimenti (docenti, link ai syllabus, libri, appelli) e lo riporta sul
 piano del regolamento: le righe del piano tengono i dati della riga del dipartimento con lo stesso codice (o,
@@ -228,10 +231,14 @@ def piano_corso(corso: dict, g: Gomp) -> dict | None:
     curricula: set[str] = set()
     fonti: dict[int, tuple[int, str, bool, float]] = {}
     for k in range(1, durata + 1):
-        coorti = sorted(range(anno - durata + 1, anno + 1), key=lambda a: (abs(a - (anno - k + 1)), -a))
-        for a in coorti:
+        # regolamenti = erogato: l'anno k è nel regolamento dell'a.a. corrente, se manca nel più recente precedente che lo ha
+        for a in range(anno, anno - durata, -1):
             gc = base if a == anno else g.abbina(corso, a, base.get("code"))
             if not gc:
+                continue
+            if gc["code"] != base["code"] and _norm(gc["ita"]) != _norm(corso["nome"]):
+                # (negli a.a. precedenti, un corso trovato solo per il nome inglese e con un altro codice è un altro
+                # corso: es. «Medicine and Surgery» in inglese e «Medicina e chirurgia» L98 hanno lo stesso nome inglese)
                 continue
             dati = g.piano(gc["uid"], a)
             if not dati:
@@ -247,7 +254,7 @@ def piano_corso(corso: dict, g: Gomp) -> dict | None:
                 i.update({"url": fonte, "esami": [], "fonte": fonte})
             curricula |= nomi
             righe += rk
-            fonti[k] = (a, fonte, a == anno - k + 1, cfu_dichiarati(dati, k))
+            fonti[k] = (a, fonte, a == anno, cfu_dichiarati(dati, k))
             break
     if not righe:
         return None

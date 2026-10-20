@@ -24,6 +24,7 @@ import gzip
 import hashlib
 import json
 import pathlib
+import html
 import re
 import sys
 import unicodedata
@@ -141,7 +142,8 @@ def corso_da_universitaly(c: dict, uid: str) -> dict:
     return {
         "id": None,  # assegnato dopo, gestendo i doppioni
         "id_universitaly": str(c["id"]),
-        "nome": re.sub(r"\s+", " ", (c.get("nomeCorso") or "")).strip(),
+        # Universitaly a volte lascia entità HTML e caratteri invisibili nel nome («nutraceutici&#8203;»)
+        "nome": re.sub(r"\s+", " ", re.sub(r"[\u200b-\u200d\ufeff]", "", html.unescape(c.get("nomeCorso") or ""))).strip(),
         "nome_en": (c.get("nomeCorsoEn") or "").strip() or None,
         "tipo": tipo_corso(c),
         "classe": classe + (f" / {inter.strip()}" if inter else "") if classe else None,
@@ -261,13 +263,34 @@ def _unisci_stesso_anno(base: dict, altro: dict) -> None:
             base[k] = v
 
 
+def _a_scelta(i: dict) -> bool:
+    return i.get("obbligatorio") is False  # (come controllo_cfu e l'app: senza indicazione è obbligatorio)
+
+
+def _stessa_riga(a: dict, b: dict) -> bool:
+    """Due righe con lo stesso codice nello stesso anno sono un solo insegnamento, salvo
+    quando è obbligatorio in un percorso e a scelta in un altro (percorsi indicati e
+    disgiunti, es. UniCAS «Complementi di costruzione di strade» obbligatorio in LM-23 e a
+    scelta in LM-35): un solo `obbligatorio` non vale per entrambi, quindi una riga per
+    ciascuno con i suoi percorsi (l'app filtra le righe per percorso)."""
+    if _a_scelta(a) == _a_scelta(b):
+        return True
+    pa, pb = set(pulizia.percorsi(a.get("curriculum"))), set(pulizia.percorsi(b.get("curriculum")))
+    return not pa or not pb or bool(pa & pb)
+
+
 def assegna_id(corso_id: str, items: list[dict]) -> list[dict]:
     """id degli insegnamenti di un contributo: `<corso>-<slug del codice o del nome>`.
     Lo stesso codice ripetuto nel piano è un solo insegnamento se è nello stesso anno
     (righe di percorsi diversi: i percorsi si uniscono) e insegnamenti diversi se è in
     anni diversi (es. PoliTO, «Fondamenti di biologia, anatomia e fisiologia» al 1° anno
     a Torino e al 2° per chi fa il primo anno a Mondovì): l'anno più basso tiene l'id,
-    gli altri hanno `-a<anno>`. Prima l'ultima riga sovrascriveva le altre."""
+    gli altri hanno `-a<anno>`. Prima l'ultima riga sovrascriveva le altre.
+    Vale anche per gli insegnamenti a scelta offerti in più anni (es. «Diritto tributario»
+    a scelta al 1°, 2° e 3° anno): prima restavano solo nel primo anno e gli anni successivi
+    sembravano più poveri; ora compaiono in ogni anno in cui la fonte li elenca.
+    Nello stesso anno, obbligatorio in un percorso e a scelta in un altro (vedi
+    `_stessa_riga`): la prima riga della fonte tiene l'id, l'altra ha `-obbl` o `-scelta`."""
     out: list[dict] = []
     gruppi: dict[str, dict] = {}
     for i in items:
@@ -276,36 +299,57 @@ def assegna_id(corso_id: str, items: list[dict]) -> list[dict]:
             out.append(i)
             continue
         base = f"{corso_id}-{slug(i.get('codice') or i['nome'], 40)}"
-        per_anno = gruppi.setdefault(base, {})
-        prima = per_anno.get(i.get("anno"))
+        righe = gruppi.setdefault(base, {}).setdefault(i.get("anno"), [])
+        prima = next((r for r in righe if _a_scelta(r) == _a_scelta(i)), None) or \
+            next((r for r in righe if _stessa_riga(r, i)), None)
         if prima:
             _unisci_stesso_anno(prima, i)
         else:
-            per_anno[i.get("anno")] = i
+            righe.append(i)
     for base, per_anno in gruppi.items():
         anni = sorted(per_anno, key=lambda a: (not isinstance(a, int), a if isinstance(a, int) else 0))
         tenuti: list[dict] = []
         for a in anni:
-            i = per_anno[a]
-            # stesso insegnamento a scelta offerto in più anni (o anno non indicato): uno solo,
-            # nel primo anno in cui si può seguire
-            dove = next((t for t in tenuti if not isinstance(a, int) or _stessa_scelta(t, i)), None)
-            if dove:
-                _unisci_stesso_anno(dove, i)
+            if not isinstance(a, int) and tenuti:
+                # anno non indicato: è lo stesso insegnamento di un anno del piano
+                for i in per_anno[a]:
+                    _unisci_stesso_anno(tenuti[0], i)
                 continue
-            i["id"] = base if not tenuti else f"{base}-a{a if isinstance(a, int) else 'x'}"
-            tenuti.append(i)
+            id_anno = base if not tenuti else f"{base}-a{a if isinstance(a, int) else 'x'}"
+            for k, i in enumerate(per_anno[a]):
+                i["id"] = id_anno if not k else f"{id_anno}-{'scelta' if _a_scelta(i) else 'obbl'}"
+                tenuti.append(i)
         out.extend(tenuti)
     return out
 
 
-def _stessa_scelta(a: dict, b: dict) -> bool:
-    """Lo stesso codice in due anni è la stessa scelta (non due insegnamenti) se non è
-    obbligatorio in nessuno dei due e vale per gli stessi percorsi (o per tutti)."""
-    if a.get("obbligatorio") or b.get("obbligatorio"):
-        return False
-    pa, pb = set(pulizia.percorsi(a.get("curriculum"))), set(pulizia.percorsi(b.get("curriculum")))
-    return not pa or not pb or bool(pa & pb)
+_COPIA = re.compile(r"(-a(\d+|x))?(-(scelta|obbl))?$")
+
+
+def libri_delle_copie(c: dict) -> int:
+    """Le righe che `assegna_id` crea per lo stesso codice (stessa scelta in un altro anno,
+    `-a<anno>`, o riga per i percorsi con l'altro `obbligatorio`, `-obbl`/`-scelta`) sono lo
+    stesso insegnamento della fonte: senza libri propri prendono quelli della riga del
+    codice (i programmi raccolti per id arrivano solo su quella). Non per gli obbligatori
+    in anni diversi (es. PoliTO a Mondovì), che restano insegnamenti distinti.
+    Restituisce il numero di righe completate."""
+    per_id = {i["id"]: i for i in c.get("insegnamenti") or []}
+    n = 0
+    for i in per_id.values():
+        if i.get("libri") or i.get("stato_libri") == "nessun_libro" or not i.get("codice"):
+            continue
+        m = _COPIA.search(i["id"])
+        cand = [i["id"][:m.start(3)] if m.group(3) and m.group(1) else None, i["id"][:m.start()]]
+        for b in (per_id.get(x) for x in cand if x and x != i["id"]):
+            if not b or b.get("codice") != i.get("codice") or not b.get("libri"):
+                continue
+            if b.get("anno") != i.get("anno") and not (_a_scelta(b) and _a_scelta(i)):
+                continue
+            i["libri"] = json.loads(json.dumps(b["libri"]))
+            i["stato_libri"] = b.get("stato_libri") or "completo"
+            n += 1
+            break
+    return n
 
 
 # Dove stanno nel piano: li decide il contributo (anche quando li toglie, es. un
@@ -447,6 +491,8 @@ def main() -> None:
                 target["ammissione"] = cc["ammissione"]
             ins = assegna_id(target["id"], cc.get("insegnamenti", []))
             target["insegnamenti"] = merge_insegnamenti(target.get("insegnamenti") or [], ins)
+        for c in corsi:
+            libri_delle_copie(c)  # stessa scelta in più anni: i libri della riga del codice
         app = appelli.get(uid, {})
         oggi = date.today().isoformat()
         # insegnamenti senza codice Esse3 (siti che non lo pubblicano): appelli per nome, solo se
@@ -490,7 +536,8 @@ def main() -> None:
         pulizia.rivedi_varianti(corsi)  # varianti già nel file che non sono una traduzione: di nuovo insegnamenti
         pulizia.varianti_lingua(corsi)  # versioni in inglese degli insegnamenti: varianti della versione italiana
         pulizia.varianti_lingua_gemelli(corsi)  # stesso insegnamento in italiano e inglese nello stesso piano
-        pulizia.unisci_omonimi(corsi)  # stesso insegnamento per più canali/sedi: uno solo
+        esistenti = {i.get("id") for oc in old["corsi"] for i in oc.get("insegnamenti") or []}
+        pulizia.unisci_omonimi(corsi, esistenti)  # stesso insegnamento per più canali/sedi: uno solo (id già esistenti prima)
         pulizia.segna_a_scelta(corsi)  # segnaposto «a scelta» (es. «Esame a scelta 1»): a scelta
         pulizia.repliche(corsi)  # repliche di sede vuote: struttura del piano del corso principale
         for c in corsi:

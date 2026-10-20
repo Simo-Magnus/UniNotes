@@ -4,12 +4,10 @@ Piani e syllabus: `https://uninsubria.coursecatalogue.cineca.it` (Course Catalog
 Rispetto all'adattatore comune (`cineca_catalogue`) all'Insubria serve:
 
 - ritmo: al massimo 2 richieste al secondo (il client comune ne fa 8);
-- durata: l'elenco minimale non ha `durataAnni` (senza correzione tutti i corsi risultavano di 3 anni e
-  Medicina, Odontoiatria, Farmacia, Giurisprudenza e le magistrali perdevano gli anni successivi): si legge
-  da `durata_it` («5 anni») della scheda del corso;
-- coorti: i codici dei corsi cambiano da una coorte all'altra (F011 → F11R), per cui il piano del 2° anno in poi
-  si cerca nella coorte giusta anche per nome; se la coorte non ha pubblicato alcun piano per anno (solo «altre
-  attività») si usa quello della coorte attuale, come già fa l'adattatore comune quando la coorte manca;
+- piani: li legge `uninsubria_piani` (piano per coorte A-k+1 per l'anno k, codici riordinati F011 → F11R, anni senza
+  coorte dalla più vicina, gruppi «OO»/«F»/«W»/«S»/«G» con i CFU delle etichette, contenitori degli insegnamenti integrati
+  e attività a 0 CFU tolti, percorsi «comune» e part-time, un corso per ogni sede dell'Infermieristica). La durata viene
+  dalla scheda del corso («5 anni»: l'elenco minimale non ha `durataAnni`);
 - corsi: solo lauree e lauree magistrali (anche a ciclo unico): il «Semestre filtro» non è un corso di studio;
   sei corsi del catalogo (sedi e repliche) hanno un nome diverso da quello di Universitaly, `ID_UNIVERSITALY` li lega;
 - libri: i syllabus rimandano alla bibliografia su Leganto (`uninsubria.alma.exlibrisgroup.com`, liste pubbliche).
@@ -38,7 +36,7 @@ import urllib.parse
 
 import requests
 
-from . import cineca_catalogue, leganto, unifi_testi
+from . import cineca_catalogue, leganto, uninsubria_piani, unifi_testi
 from .testi import YEAR, _isbn
 
 BASE = "https://uninsubria.coursecatalogue.cineca.it"
@@ -46,8 +44,6 @@ ESSE3 = "https://uninsubria.esse3.cineca.it"
 LEGANTO = "https://uninsubria.alma.exlibrisgroup.com/leganto"
 PUBBLICO = LEGANTO + "/public/39INS_INST/lists?courseCode={}"
 ROOT = pathlib.Path(__file__).resolve().parents[3]
-TIPI = {"L2", "LM", "LM5", "LM6"}
-DURATA_TIPO = {"L2": 3, "LM": 2, "LM5": 5, "LM6": 6}
 RATE = 2.0  # richieste al secondo (catalogo)
 GAP_LEGANTO = 0.5  # secondi tra due richieste a Leganto
 ANNO_MIN = 2022  # liste più vecchie non si usano
@@ -76,14 +72,6 @@ def _cartella(nome: str) -> pathlib.Path | None:
     return p
 
 
-def _ha_attivita_per_anno(d: dict | None) -> bool:
-    for p in (d or {}).get("percorsi") or []:
-        for a in p.get("anni") or []:
-            if str(a.get("anno")).isdigit() and (a.get("attivita") or any(g.get("attivita") for g in a.get("insegnamenti") or [])):
-                return True
-    return False
-
-
 def _valida(path: str, r) -> bool:
     """Controllo del contenuto prima di metterlo in cache."""
     if path == "/corsi":
@@ -101,7 +89,6 @@ class ClientCache(cineca_catalogue.Client):
         super().__init__(base, rate)
         self.dir = _cartella("uninsubria_cc")
         self.anno = anno
-        self.elenco: dict[int, list[dict]] = {}  # coorte → corsi del catalogo (filtrati per tipo)
         self.af: dict[tuple[str, str], str] = {}  # (aa, cod della scheda) → afId (il courseCode di Leganto)
 
     def _get(self, path: str, params: dict | None = None):
@@ -127,58 +114,6 @@ class ClientCache(cineca_catalogue.Client):
                 for v in x:
                     cammina(v)
         cammina((d or {}).get("percorsi"))
-
-    def get(self, path: str, params: dict | None = None):
-        r = self._get(path, params)
-        if path == "/corsi":
-            elenco: list[dict] = []
-            cineca_catalogue._walk_cds(r or [], elenco)
-            out = []
-            for x in elenco:
-                if x.get("tipo_corso_cod") not in TIPI:
-                    continue
-                x = dict(x)
-                if not x.get("durataAnni"):
-                    x["durataAnni"] = self._durata(x, (params or {}).get("anno"))
-                out.append(x)
-            self.elenco[int((params or {}).get("anno") or 0)] = out
-            return out
-        m = re.fullmatch(r"/corso/(\d+)/(\w+)", path)
-        if m:
-            d = r[0] if isinstance(r, list) and r else r
-            self._note_af(d if isinstance(d, dict) else None)
-            y, cod = int(m.group(1)), m.group(2)
-            if isinstance(d, dict) and y < self.anno and not _ha_attivita_per_anno(d):
-                # la coorte non ha pubblicato un piano per anno: si usa quello della coorte attuale
-                sost = self._piano_attuale(y, cod)
-                if sost is not None:
-                    return sost
-        return r
-
-    def _piano_attuale(self, y: int, cod: str):
-        x = next((v for v in self.elenco.get(y, []) if str(v.get("cod")) == cod), None)
-        if not x:
-            return None
-        att = self.elenco.get(self.anno, [])
-        c = next((v for v in att if v.get("cdsCod") == x.get("cdsCod")), None) or next(
-            (v for v in att if cineca_catalogue._chiave_cds(v) == cineca_catalogue._chiave_cds(x)), None)
-        if not c or str(c.get("cod")) == cod:
-            return None
-        d = self._get(f"/corso/{self.anno}/{c['cod']}")
-        dd = d[0] if isinstance(d, list) and d else d
-        self._note_af(dd if isinstance(dd, dict) else None)
-        return d if _ha_attivita_per_anno(dd) else None
-
-    def _durata(self, x: dict, anno) -> int:
-        d = self._get(f"/corso/{anno}/{x['cod']}")
-        if isinstance(d, list):
-            d = d[0] if d else None
-        m = re.match(r"\s*(\d+)", (d or {}).get("durata_it") or "")
-        if m and 1 <= int(m.group(1)) <= 6:
-            return int(m.group(1))
-        anni = [int(a["anno"]) for p in (d or {}).get("percorsi") or [] for a in p.get("anni") or []
-                if str(a.get("anno")).isdigit()]
-        return max(anni) if anni else DURATA_TIPO.get(x.get("tipo_corso_cod"), 3)
 
 
 # --- libri: testi del syllabus e liste Leganto -----------------------------------------------
@@ -457,33 +392,28 @@ def _codici_item(i: dict) -> list[str]:
     return list(dict.fromkeys(x for x in (cod, base) if x))
 
 
+def _libri_database() -> dict[str, dict]:
+    """Libri, modalità d'esame, SSD e sito già nel database per codice dell'insegnamento (nessuna nuova richiesta)."""
+    p = ROOT / "database" / "corsi" / "uninsubria.json"
+    try:
+        doc = json.loads(p.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    out: dict[str, dict] = {}
+    for corso in doc.get("corsi") or []:
+        for i in corso.get("insegnamenti") or []:
+            cod = i.get("codice")
+            if cod and i.get("stato_libri") and (i.get("libri") or cod not in out):
+                out[cod] = {k: i.get(k) for k in ("libri", "stato_libri", "modalita_esame", "ssd", "url_sito")}
+                out[cod]["libri"] = out[cod]["libri"] or []
+    return out
+
+
 def fetch_ateneo(uid: str = "uninsubria", anno: int = 2026, max_cds: int | None = None, syllabus: bool = True,
                  log=print) -> dict:
     c = ClientCache(anno=anno)
-    cineca_catalogue._testi_syllabus = _testi_syllabus
-    try:
-        doc = cineca_catalogue.fetch_ateneo(uid, BASE, anno, max_cds=max_cds, syllabus=syllabus, log=log,
-                                            client=c, coorte_per_nome=True)
-    finally:
-        cineca_catalogue._testi_syllabus = _testi_originale
-    for cc in doc["corsi"]:
-        if cc.get("codice_ateneo") in ID_UNIVERSITALY:
-            cc["id_universitaly"] = ID_UNIVERSITALY[cc["codice_ateneo"]]
-    for cc in doc["corsi"]:  # Infermieristica: nelle coorti 2024-25 un solo corso con un percorso per sede
-        cur = cc.get("curricula") or []
-        con_sede = [x for x in cur if re.search(r"(?i)\bsede\b", x)]
-        sede = _norm(re.sub(r"\(.*?\)", " ", cc.get("sede") or ""))
-        if len(con_sede) >= 2 and sede:
-            def sue(x: str) -> bool:
-                return not re.search(r"(?i)\bsede\b", x) or sede in _norm(x)
-
-            cc["insegnamenti"] = [i for i in cc["insegnamenti"]
-                                  if not i.get("curriculum") or any(sue(p.strip()) for p in i["curriculum"].split(", "))]
-            cc["curricula"] = [x for x in cur if sue(x)]
-            for i in cc["insegnamenti"]:
-                if i.get("curriculum"):
-                    parti = [p.strip() for p in i["curriculum"].split(", ") if sue(p.strip())]
-                    i["curriculum"] = ", ".join(parti) or None
+    doc = uninsubria_piani.fetch_piani(uid, anno, c, BASE, _testi_syllabus, _libri_database() if syllabus else {},
+                                       max_cds=max_cds, syllabus=syllabus, log=log, id_universitaly=ID_UNIVERSITALY)
     for cc in doc["corsi"]:
         for i in cc["insegnamenti"]:
             if re.match(r"(?i)\s*non disponibile", i.get("periodo") or ""):
@@ -495,6 +425,11 @@ def fetch_ateneo(uid: str = "uninsubria", anno: int = 2026, max_cds: int | None 
     n_ins = n_lib = n_att = n_old = 0
     t0 = time.time()
     for k, (cc, i) in enumerate(tutti, 1):
+        if i.pop("_noto", False):  # libri già nel database per questo codice: non si rileggono
+            if i.get("libri"):
+                n_ins += 1
+                n_lib += len(i["libri"])
+            continue
         testo = [b for b in i.get("libri") or [] if b.get("_testo")]
         link = [b["_leganto"] for b in i.get("libri") or [] if b.get("_leganto")]
         m = re.search(r"/insegnamenti/(\d+)/(\d+)/", i.get("url") or "")

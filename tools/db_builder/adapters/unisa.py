@@ -1,18 +1,20 @@
 """Università degli Studi di Salerno: insegnamenti, libri e appelli.
 
-Piani e syllabus: `https://unisa.coursecatalogue.cineca.it` (Course Catalogue Cineca, API pubblica).
-Rispetto all'adattatore comune (`cineca_catalogue`) UniSA richiede:
+Piani e syllabus: `https://unisa.coursecatalogue.cineca.it` (Course Catalogue Cineca, API pubblica). Il piano per coorte, i
+gruppi di scelta con i CFU delle etichette, i percorsi e le attività a 0 CFU sono in `unisa_piani.py` (vedi la sua
+documentazione). Qui restano le regole proprie di UniSA:
 
-- coorti: con il riordino del 2025 i codici dei corsi sono cambiati (02121 → SE121): senza cercare il
-  corso per nome nelle coorti precedenti (`coorte_per_nome`) il piano del 2° e 3° anno sarebbe quello
-  futuro della coorte attuale (insegnamenti del 2027/28, senza syllabus);
-- durata: l'elenco minimale non ha `durataAnni` (medicina, farmacia, giurisprudenza… avevano solo 3
-  anni): si legge dal piano della coorte attuale (anno più alto);
-- corsi: solo lauree, lauree magistrali (anche a ciclo unico) e la scuola di specializzazione che il
-  database già conosce; master, dottorati e corsi di perfezionamento non sono corsi di studio;
-- nomi: il catalogo chiama «Infermieristica (abilitante alla Prof. Sanit. …)» i corsi che Universitaly
-  chiama «… alla professione sanitaria di …» (e «Ingegneria alimentare» il «Food Engineering»): si
-  scrive l'`id` del corso già presente, perché il piano finisca lì e non in un doppione.
+- coorti: con il riordino del 2025 i codici dei corsi sono cambiati (02121 → SE121): il corso si cerca per nome nelle coorti
+  precedenti (e sei corsi rinominati per `PREDECESSORI`), altrimenti il piano del 2° e 3° anno sarebbe quello futuro della
+  coorte attuale (insegnamenti del 2027/28, senza syllabus);
+- durata: l'elenco minimale non ha `durataAnni` (medicina, farmacia, giurisprudenza… avevano solo 3 anni): si legge dal piano;
+- corsi: solo lauree, lauree magistrali (anche a ciclo unico) e la scuola di specializzazione che il database già conosce;
+  master, dottorati e corsi di perfezionamento non sono corsi di studio;
+- nomi: il catalogo chiama «Infermieristica (abilitante alla Prof. Sanit. …)» i corsi che Universitaly chiama «… alla
+  professione sanitaria di …» (e «Ingegneria alimentare» il «Food Engineering»): si scrive l'`id` del corso già presente,
+  perché il piano finisca lì e non in un doppione;
+- libri: già nel database per codice (o per nome dello stesso corso se il codice è cambiato) non si rileggono; gli altri dal
+  syllabus (testi liberi, mutuazione, programma dell'a.a. precedente).
 
 Con la variabile d'ambiente UN_HTTP_CACHE (una cartella) le risposte del catalogo restano su disco.
 """
@@ -26,7 +28,7 @@ import re
 import time
 import unicodedata
 
-from . import cineca_catalogue, unisa_testi
+from . import cineca_catalogue, unisa_piani, unisa_testi
 
 BASE = "https://unisa.coursecatalogue.cineca.it"
 ROOT = pathlib.Path(__file__).resolve().parents[3]
@@ -158,6 +160,28 @@ def _testi_syllabus(sy: dict):
     return [b for b in libri if not unisa_testi.e_prosa(b.get("citazione"))], modalita, legati
 
 
+def _libri_database() -> tuple[dict[str, dict], dict[tuple[str, str], dict]]:
+    """Libri, modalità d'esame, SSD e sito già nel database: per codice dell'insegnamento e, per gli insegnamenti che hanno
+    cambiato codice da una coorte all'altra, per corso (codice del corso di studio) e nome (nessuna nuova richiesta)."""
+    p = ROOT / "database" / "corsi" / "unisa.json"
+    try:
+        doc = json.loads(p.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}, {}
+    per_codice: dict[str, dict] = {}
+    per_nome: dict[tuple[str, str], dict] = {}
+    for corso in doc.get("corsi") or []:
+        for i in corso.get("insegnamenti") or []:
+            if not i.get("libri"):
+                continue
+            dati = {k: i.get(k) for k in ("libri", "modalita_esame", "ssd", "url_sito")}
+            if i.get("codice") and i["codice"] not in per_codice:
+                per_codice[i["codice"]] = dati
+            if corso.get("codice_ateneo"):
+                per_nome.setdefault((corso["codice_ateneo"], _norm(i.get("nome"))), dati)
+    return per_codice, per_nome
+
+
 def fetch_ateneo(uid: str = "unisa", anno: int = 2026, max_cds: int | None = None, syllabus: bool = True,
                  log=print) -> dict:
     c = ClientCache()
@@ -195,12 +219,22 @@ def fetch_ateneo(uid: str = "unisa", anno: int = 2026, max_cds: int | None = Non
                                            f"riporta la bibliografia")
         return []
 
-    cineca_catalogue._testi_syllabus = _testi_syllabus
-    try:
-        doc = cineca_catalogue.fetch_ateneo(uid, BASE, anno, max_cds=max_cds, syllabus=syllabus, log=log,
-                                            client=c, coorte_per_nome=True, libri_extra=libri_extra)
-    finally:
-        cineca_catalogue._testi_syllabus = _testi_originale
+    per_codice, per_nome = _libri_database()
+    doc = unisa_piani.fetch_piani(uid, anno, max_cds, syllabus, log, c, libri_noti=per_codice,
+                                  testi_syllabus=_testi_syllabus, libri_extra=libri_extra,
+                                  testo_libero=unisa_testi.libri_unisa)
+    ripresi = 0
+    for corso in doc["corsi"]:  # lo stesso insegnamento con un altro codice in un'altra coorte: i libri già raccolti
+        for i in corso["insegnamenti"]:
+            noto = per_nome.get((corso.get("codice_ateneo"), _norm(i["nome"])))
+            if noto and not i.get("libri"):
+                i["libri"] = noto["libri"]
+                i["stato_libri"] = "completo"
+                for k_ in ("modalita_esame", "ssd", "url_sito"):
+                    if noto.get(k_) and not i.get(k_):
+                        i[k_] = noto[k_]
+                ripresi += 1
+    log(f"[{uid}] libri ripresi per nome dello stesso corso: {ripresi}")
     log(f"[{uid}] corsi con id del database: {associa(doc['corsi'], log)}/{len(doc['corsi'])}")
     return doc
 

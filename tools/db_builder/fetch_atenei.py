@@ -116,6 +116,24 @@ APPELLI["unilink"] = lambda uid, corsi: unilink.appelli_moduli(corsi, fetch_appe
 from adapters import unibas  # noqa: E402
 SITI["unibas"] = unibas.fetch_ateneo  # catalogo Cineca: durata dal piano, anno di corso dall'a.a. di erogazione, voci del piano ufficiale che il catalogo non ha
 CATALOGO_IN_SITI.add("unibas")
+from adapters import univaq  # noqa: E402
+SITI["univaq"] = univaq.fetch_ateneo  # catalogo Cineca: durata dal piano, piani per coorte (codici e nomi cambiati con il riordino), crediti dei gruppi a scelta dalle etichette, una sede per corso di Universitaly
+CATALOGO_IN_SITI.add("univaq")
+from adapters import unife  # noqa: E402
+SITI["unife"] = unife.fetch_ateneo  # catalogo Cineca: durata dal piano, piani per coorte (codici cambiati con i riordini), gruppi OO/F/W/S del piano con CFU dalle etichette, una sede per corso di Universitaly
+CATALOGO_IN_SITI.add("unife")
+from adapters import uniud  # noqa: E402
+SITI["uniud"] = uniud.fetch_ateneo  # catalogo Cineca: piani per coorte (codici cambiati con il riordino), uno schema per curriculum, gruppi OO/F/G/W/S del piano con i CFU della libera scelta da etichette e note, stesso codice con CFU diversi tra i curricula
+CATALOGO_IN_SITI.add("uniud")
+from adapters import unimol  # noqa: E402
+SITI["unimol"] = unimol.fetch_ateneo  # catalogo Cineca: durata dal piano, piani per coorte (codici con la «R» del riordino e tre corsi con altro nome e codice), gruppi OO/F/G/S con CFU dalle etichette, attività a 0 CFU tolte, un corso per ogni corso di Universitaly
+CATALOGO_IN_SITI.add("unimol")
+from adapters import unicz  # noqa: E402
+SITI["unicz"] = unicz.fetch_ateneo  # catalogo Cineca: piani per coorte (2025/2026 senza anni: coorte più vicina con ≥30 CFU obbligatori), gruppi OO/F/W/S con CFU dalle etichette, corsi e anni mancanti dall'elenco degli insegnamenti erogati dei siti delle Scuole/Dipartimento
+CATALOGO_IN_SITI.add("unicz")
+from adapters import unimc  # noqa: E402
+SITI["unimc"] = unimc.fetch_ateneo  # catalogo Cineca: durata dal piano (FI = 1 anno), piani per coorte (codici con la «R» del riordino, percorsi per codice o per insegnamenti in comune), gruppi OO/F/G/W/S con CFU dalle etichette e dalle note, scelte senza anno nell'ultimo anno
+CATALOGO_IN_SITI.add("unimc")
 # Integrazioni: dati che il catalogo non ha (es. i libri di UniTO dalle pagine Campusnet),
 # letti a partire dagli insegnamenti già nel database e uniti dopo il catalogo
 INTEGRAZIONI = {"unito": unito_campusnet.fetch_ateneo}

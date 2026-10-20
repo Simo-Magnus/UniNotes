@@ -1,19 +1,20 @@
 """Tor Vergata (uniroma2): piani di studio di tutti gli anni e testi dall'API pubblica GOMP.
 
-L'API pubblica `uniroma2public.gomp.it/CourseAPI` espone, per ogni regolamento (a.a. di coorte),
-tutti gli anni di corso con le attività, i docenti e i programmi dei docenti (testi adottati
-`books`, bibliografia `bibliography`, modalità d'esame). Il regolamento 2026 contiene anche gli
-anni 2 e 3 (e fino al 6°) della coorte 2026, ma per l'a.a. 2026/27 un insegnamento del
-k-esimo anno è quello della coorte 2026-k+1: per l'anno k si usa quindi il regolamento
-dello stesso corso (`code` del corso, stabile fra gli anni) dell'a.a. 2026-k+1. Se quel
-regolamento non esiste (corso nuovo, o regolamento 2026 non ancora pubblicato) si ripiega sul
-regolamento più vicino successivo e poi su quelli precedenti: l'URL dell'insegnamento
-(`academicYear=`) dice sempre da quale regolamento viene.
+L'API pubblica `uniroma2public.gomp.it/CourseAPI` espone, per ogni regolamento (a.a.), tutti gli
+anni di corso con le attività, i docenti e i programmi dei docenti (testi adottati `books`,
+bibliografia `bibliography`, modalità d'esame).
+
+Il regolamento di un a.a. elenca gli anni di corso insegnati in quell'a.a. (quello del 2025 di un corso
+nato nel 2025 ha solo il 1° anno; quello di un corso chiuso nel 2025 ha solo il 2° e il 3°: l'anno 1 manca),
+non il piano di una coorte: per l'a.a. 2026/27 l'anno k è quindi quello del regolamento 2026 (dopo un
+riordino il 2° anno del 2025 è ancora il piano della coorte vecchia). Se il regolamento 2026 non c'è, o
+non ha quell'anno (corso già chiuso o regolamento non ancora pubblicato) si ripiega sul più recente fra
+i precedenti che lo ha: l'URL dell'insegnamento (`academicYear=`) dice sempre da quale regolamento viene.
 
 Differenze da `gomp.py` (condiviso con altri atenei): tutti gli anni, i figli dei gruppi
-«a scelta» sono insegnamenti veri, moduli e canali (figli di un'attività con codice) sono
-uniti all'insegnamento padre, al massimo 2 richieste al secondo, cache su disco
-(variabile UN_HTTP_CACHE, cartella «uniroma2_gomp»).
+«a scelta» sono insegnamenti veri (obbligatori se i CFU del gruppo bastano per tutti), moduli e canali
+(figli di un'attività con codice) sono uniti all'insegnamento padre, al massimo 2 richieste al secondo,
+cache su disco (variabile UN_HTTP_CACHE, cartella «uniroma2_gomp»).
 """
 from __future__ import annotations
 
@@ -206,7 +207,8 @@ def _attivita(a: dict) -> dict:
     prof = _professori(a)
     docenti = sorted({" ".join(w.capitalize() for w in f"{p.get('lastName', '')} {p.get('name', '')}".split())
                       for p in prof if (p.get("lastName") or "").strip()})
-    return {"codice": (a.get("code") or "").strip() or None, "nome": _ripara(re.sub(r"(?<=\s)i$", "I", _titolo(_ita(a.get("name"))))),
+    codice = (a.get("code") or "").strip()
+    return {"codice": codice if re.search(r"[A-Za-z0-9]", codice) else None, "nome": _ripara(re.sub(r"(?<=\s)i$", "I", _titolo(_ita(a.get("name"))))),
             "cfu": (int(cfu) if float(cfu).is_integer() else cfu) if cfu else None, "ssd": ssd, "docenti": docenti,
             "libri": _libri(prof), "modalita": _modalita(prof)}
 
@@ -221,6 +223,56 @@ def _espandi(a: dict, a_scelta: bool):
         yield a, a_scelta
 
 
+def _cfu_att(a: dict) -> float:
+    """CFU dell'attività: i suoi, o la somma dei moduli se non ne ha (un gruppo senza CFU propri ne ha 0)."""
+    cfu = sum(c.get("credits") or 0 for c in a.get("credits") or [])
+    if not cfu and a.get("children") and not (a.get("type") == "group" or a.get("linkedGroup")):
+        cfu = sum(c.get("credits") or 0 for f in a["children"] for c in f.get("credits") or [])
+    return float(cfu)
+
+
+def _gruppo_intero(g: dict) -> bool:
+    """I CFU del gruppo bastano per tutti i suoi insegnamenti: nessuna scelta, sono tutti da sostenere."""
+    if g["cfu"] <= 0:
+        return False
+    visti: dict[str, float] = {}
+    for f, _ in g["figli"].values():
+        visti[(f.get("code") or "").strip() or _norm(_ita(f.get("name")))] = _cfu_att(f)
+    return bool(visti) and sum(visti.values()) <= g["cfu"] + 1e-9 and all(visti.values())
+
+
+def _voci_anno(y: dict):
+    """Attività dell'anno di un percorso: (attività, unità, a_scelta). Un gruppo (`linkedGroup`) elenca nelle
+    sue unità gli insegnamenti tra cui scegliere e i CFU da acquisire: si espande negli insegnamenti, tutti
+    obbligatori se i CFU del gruppo bastano per tutti, altrimenti a scelta; un gruppo senza insegnamenti
+    («A scelta dello studente», «Tirocini») resta una voce a scelta."""
+    gruppi: dict[str, dict] = {}
+    voci: list[tuple[dict, dict, bool]] = []
+    for u in y.get("units") or []:
+        for att in u.get("activities") or []:
+            if att.get("type") == "group" or att.get("linkedGroup"):
+                g = gruppi.setdefault(att.get("linkedGroup") or att.get("uid") or _ita(att.get("name")),
+                                      {"a": att, "u": u, "cfu": 0.0, "figli": {}})
+                g["cfu"] = max(g["cfu"], _cfu_att(att))
+                for f in att.get("children") or []:
+                    g["figli"].setdefault((f.get("code") or "").strip() or _norm(_ita(f.get("name"))), (f, u))
+            elif not (att.get("code") or "").strip() and att.get("children"):
+                for f, sc in _espandi(att, False):
+                    voci.append((f, u, sc))
+            else:
+                voci.append((att, u, False))
+    for g in gruppi.values():
+        if not g["figli"]:
+            if g["cfu"] > 0 and _ita(g["a"].get("name")):
+                voci.append((g["a"], g["u"], True))
+            continue
+        intero = _gruppo_intero(g)
+        for f, u in g["figli"].values():
+            for a, sc in _espandi(f, False):  # (figli che sono a loro volta gruppi o contenitori)
+                voci.append((a, u, not intero or sc))
+    return voci
+
+
 def _righe(dati: dict, k: int, fonte: str, oggi: str) -> dict[str, dict]:
     righe: dict[str, dict] = {}
     curr_list = dati.get("curricula") or []
@@ -229,27 +281,27 @@ def _righe(dati: dict, k: int, fonte: str, oggi: str) -> dict[str, dict]:
         for y in cu.get("years") or []:
             if y.get("number") != k:
                 continue
-            for u in y.get("units") or []:
+            for a, u, a_scelta in _voci_anno(y):
+                x = _attivita(a)
+                if not x["nome"]:
+                    continue
                 annuale = (u.get("length") or 6) >= 12
-                for att in u.get("activities") or []:
-                    for a, a_scelta in _espandi(att, False):
-                        x = _attivita(a)
-                        if not x["nome"]:
-                            continue
-                        key = x["codice"] or x["nome"]
-                        item = righe.get(key)
-                        if not item:
-                            item = righe[key] = {
-                                "codice": x["codice"], "nome": x["nome"], "anno": k,
-                                "periodo": "annuale" if annuale else (str(u.get("number")) if u.get("number") else None),
-                                "cfu": x["cfu"], "ssd": x["ssd"], "obbligatorio": not a_scelta, "curriculum": None,
-                                "docenti": x["docenti"], "url": fonte, "libri": x["libri"], "esami": [],
-                                "fonte": fonte, "verificato_il": oggi, "_c": set(),
-                                "stato_libri": "completo" if x["libri"] else "da_aggiungere",
-                            }
-                            if x["modalita"]:
-                                item["modalita_esame"] = x["modalita"]
-                        item["_c"].add(nome_c)
+                key = x["codice"] or f"#{x['nome']}:{x['cfu']}"
+                item = righe.get(key)
+                if not item:
+                    item = righe[key] = {
+                        "codice": x["codice"], "nome": x["nome"], "anno": k,
+                        "periodo": "annuale" if annuale else (str(u.get("number")) if u.get("number") else None),
+                        "cfu": x["cfu"], "ssd": x["ssd"], "obbligatorio": not a_scelta, "curriculum": None,
+                        "docenti": x["docenti"], "url": fonte, "libri": x["libri"], "esami": [],
+                        "fonte": fonte, "verificato_il": oggi, "_c": set(),
+                        "stato_libri": "completo" if x["libri"] else "da_aggiungere",
+                    }
+                    if x["modalita"]:
+                        item["modalita_esame"] = x["modalita"]
+                elif not a_scelta:
+                    item["obbligatorio"] = True
+                item["_c"].add(nome_c)
     return righe
 
 
@@ -289,6 +341,50 @@ def trova_codici(corsi_db: list[dict], per_anno: dict[int, list[dict]]) -> dict[
     return out
 
 
+def _distingui_omonimi(righe: list[dict]) -> None:
+    """Insegnamenti diversi (codici diversi) con lo stesso nome nello stesso anno e nello stesso percorso: sulla
+    fonte sono alternative distinte (es. «Storia greca» da 12 e da 6 CFU nello stesso gruppo a scelta) e
+    build_db/pulizia le scambierebbero per doppioni; si distinguono con i CFU (o con un numero)."""
+    gruppi: dict[tuple, list[dict]] = {}
+    for i in righe:
+        gruppi.setdefault((i["anno"], _norm(i["nome"])), []).append(i)
+    for voci in gruppi.values():
+        if len(voci) < 2:
+            continue
+
+        def percorsi(i: dict) -> set:
+            return set((i["curriculum"] or "").split(", ")) if i["curriculum"] else {None}
+
+        def insieme(i: dict, altro: dict) -> bool:
+            a, b = percorsi(i), percorsi(altro)
+            return None in a or None in b or bool(a & b)
+
+        coesistono = [i for i in voci if any(insieme(i, j) for j in voci if j is not i)]
+        if len(coesistono) < 2:
+            continue
+        cfus = [i["cfu"] for i in coesistono]
+        for n, i in enumerate(sorted(coesistono, key=lambda i: (i["cfu"] or 0, i["codice"] or "")), 1):
+            if len(set(cfus)) == len(cfus) and i["cfu"]:
+                i["nome"] = f"{i['nome']} ({i['cfu']:g} CFU)"
+            else:
+                i["nome"] = f"{i['nome']} {n}"
+
+
+def _sede_gemelli(corso: dict, corsi_db: list[dict]) -> str | None:
+    """Universitaly non dà la sede e due corsi con lo stesso nome e la stessa classe (es. Ingegneria Gestionale
+    in presenza e «prevalentemente a distanza», Medicine and Surgery e la sua versione interateneo) sembrano
+    doppioni: la sede di quello che si distingue per modalità o per interateneo dice com'è erogato."""
+    gemelli = [c for c in corsi_db if c["id"] != corso["id"] and c["nome"].strip().lower() == corso["nome"].strip().lower()
+               and c.get("classe") == corso.get("classe")]
+    if not gemelli:
+        return None
+    if re.search(r"(?i)a distanza", corso.get("erogazione") or ""):
+        return "A distanza"
+    if corso.get("interateneo"):
+        return "Interateneo"
+    return None
+
+
 def fetch_ateneo(uid: str, anno: int = 2026, max_cds: int | None = None, syllabus: bool = True, log=print) -> dict:
     """Contributo nel formato di database/contrib (vedi build_db.py)."""
     corsi_db = json.loads((ROOT / "database" / "corsi" / f"{uid}.json").read_text(encoding="utf-8"))["corsi"]
@@ -319,9 +415,8 @@ def fetch_ateneo(uid: str, anno: int = 2026, max_cds: int | None = None, syllabu
         righe: dict[str, dict] = {}
         curricula = set()
         for k in range(1, durata + 1):
-            y = anno - k + 1
-            candidati = [a for a in range(y, anno + 1)] + [a for a in range(y - 1, 2019, -1)]
-            for a in candidati:
+            # l'anno k è quello del regolamento più recente che lo ha (vedi la descrizione del modulo)
+            for a in range(anno, 2019, -1):
                 if cod not in uid_gomp.get(a, {}):
                     continue
                 dati = dettaglio(cod, a)
@@ -343,6 +438,7 @@ def fetch_ateneo(uid: str, anno: int = 2026, max_cds: int | None = None, syllabu
             continue
         fonte_c = next(iter(righe.values()))["fonte"]
         out.append({"id": corso["id"], "nome": corso["nome"], "classe": corso.get("classe"), "durata_anni": durata,
+                    "sede": _sede_gemelli(corso, corsi_db),
                     "url": fonte_c, "curricula": sorted(curricula) or None, "fonte": fonte_c, "verificato_il": oggi,
                     "insegnamenti": list(righe.values())})
         if n % 10 == 0:
@@ -358,6 +454,8 @@ def fetch_ateneo(uid: str, anno: int = 2026, max_cds: int | None = None, syllabu
         uniroma2_appelli.aggiungi_appelli(out, log)
     except Exception as e:  # noqa: BLE001 - gli appelli sono un di più: senza, restano i piani
         log(f"[{uid}] ERRORE appelli DidatticaWeb: {e!r}")
+    for x in out:
+        _distingui_omonimi(x["insegnamenti"])
     libri = sum(len(i["libri"]) for x in out for i in x["insegnamenti"])
     log(f"[{uid}] {len(out)} corsi, {sum(len(x['insegnamenti']) for x in out)} insegnamenti, libri: {libri}; "
         f"richieste: {api.requests}")

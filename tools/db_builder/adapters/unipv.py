@@ -1,9 +1,12 @@
 """Università di Pavia: Course Catalogue Cineca con le correzioni che servono a UniPV.
 
 - Con il nuovo ordinamento molti corsi hanno cambiato codice (es. Lettere: 05413 nella coorte
-  2024, 05434 dalla 2025): il piano del 2° e 3° anno si cerca nella coorte giusta per nome, sede
-  e tipo (`coorte_per_nome`), invece di prendere il piano futuro della coorte che si iscrive ora
-  (per il quale i syllabus non esistono ancora).
+  2024, 05434 dalla 2025): il piano del 2° e 3° anno si cerca nella coorte giusta per codice (con
+  gli alias di `ALIAS_CDS`), nome, sede e tipo, invece di prendere il piano futuro della coorte che
+  si iscrive ora (per il quale i syllabus non esistono ancora).
+- I piani si leggono in `unipv_piani` (gruppi «Scegli un insegnamento», «Scegli 12 crediti (12 CFU)»,
+  «12 CFU a libera scelta…», percorsi, coorte più vicina se quella degli iscritti non ha il piano
+  o è incompleto, attività a 0 CFU e «sovrannumerari» scartati, omonimi di ordinamenti diversi uniti).
 - Il catalogo elenca anche corsi interateneo con sede in altri atenei (Bicocca, Statale di Milano,
   Cagliari, Bergamo): non si associano a nessun corso del database e si scartano.
 - Le sedi (Infermieristica a Pavia, Città di Pavia, Maugeri e Vigevano; Scienze motorie a Pavia e
@@ -20,7 +23,7 @@ import os
 import pathlib
 import re
 
-from . import cineca_catalogue
+from . import cineca_catalogue, unipv_piani
 from .unipd import TIPI as _TIPI, _norm
 from .unipv_testi import libri_unipv
 
@@ -206,9 +209,9 @@ def libri_anno_precedente(doc: dict, c, anno: int, log=print) -> int:
 
 
 def fetch_ateneo(uid: str = "unipv", anno: int = 2026, max_cds: int | None = None, syllabus: bool = True,
-                 log=print) -> dict:
-    doc = cineca_catalogue.fetch_ateneo(uid, BASE, anno, max_cds=max_cds, syllabus=syllabus, log=log,
-                                        client=ClientCache(BASE), coorte_per_nome=True, libri_extra=libri_unipv)
+                 log=print, riusa_libri: bool = True) -> dict:
+    doc = unipv_piani.fetch_piani(uid, BASE, ClientCache(BASE), anno, max_cds=max_cds, syllabus=syllabus, log=log,
+                                  riusa=unipv_piani.vecchi_libri() if riusa_libri else None)
     libri_anno_precedente(doc, ClientCache(BASE), anno, log)
     doc["corsi"] = associa(doc["corsi"], _corsi_db(), log)
     log(f"[{uid}] corsi associati al database: {len(doc['corsi'])}")

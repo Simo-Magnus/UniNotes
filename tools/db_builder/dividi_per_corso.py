@@ -57,8 +57,9 @@ def _scrivi(path: pathlib.Path, data) -> bytes:
 
 
 def _base(ins_id: str) -> str:
-    """Stesso codice in un altro anno del piano (`<id>-a2`): i moduli sono quelli del codice."""
-    return re.sub(r"-a(\d+|x)$", "", ins_id)
+    """Stesso codice in un altro anno del piano (`<id>-a2`) o con l'altra obbligatorietà in
+    altri percorsi (`<id>-scelta`, `<id>-a2-obbl`): i moduli sono quelli del codice."""
+    return re.sub(r"(-a(\d+|x))?(-(scelta|obbl))?$", "", ins_id)
 
 
 def dividi(uid: str) -> dict | None:
