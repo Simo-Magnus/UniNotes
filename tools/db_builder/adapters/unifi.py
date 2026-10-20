@@ -6,6 +6,17 @@
   (i cui insegnamenti avrebbero il syllabus del 2027/28, ancora inesistente).
 - I testi dei syllabus sono spesso in forma libera: si usa l'estrazione propria di UniFI
   (`unifi_testi.libri_unifi`) e, in mancanza, quella di UniPD (`unipd.libri_liberi`).
+- «Sostenimento / Superamento Verifica Conoscenze in Ingresso» (codici OFA…, 0 CFU): sono la prova di
+  ingresso, non insegnamenti; il requisito sta già in `ammissione` (test e OFA del corso). Non si portano nel piano.
+- Insegnamenti integrati: il catalogo elenca il contenitore a 0 CFU (es. «Analisi dei medicinali I») e,
+  accanto, i suoi moduli con i CFU (`adFiglie`; nel piano ci sono i moduli offerti, non sempre tutti). Il contenitore non ha CFU, docenti né programma propri
+  (gli appelli del contenitore sono gli stessi dei moduli): si toglie, i CFU restano nei moduli, così l'anno
+  non conta i CFU due volte e non ha un insegnamento a 0 CFU.
+- Lo stesso insegnamento offerto con più pesi in CFU (Storia dell'arte contemporanea da 6 e da 12 CFU,
+  Tirocinio da 3, 6, 9 e 12 CFU) ha un codice per ogni peso: nello stesso anno il nome porta i CFU
+  («Tirocinio (6 CFU)») invece di sembrare un doppione.
+- Il catalogo non elenca i crediti «a scelta dello studente» né le altre attività senza esame: i piani di molti corsi
+  restano sotto i CFU del titolo (es. 168 su 180). Non si inventano: gli anni coinvolti sono nei verificati.
 
 Con la variabile d'ambiente UN_HTTP_CACHE le risposte del catalogo restano su disco.
 """
@@ -51,6 +62,24 @@ def associa(corsi: list[dict], log=print) -> int:
     return n
 
 
+# codice dell'insegnamento integrato → {codice del modulo: CFU}, dai piani letti (campo `adFiglie`)
+FIGLIE: dict[str, dict[str, float]] = {}
+_VERIFICA_INGRESSO = re.compile(r"(?i)verifica\s+(?:delle\s+)?conoscenze\s+in\s+ingresso")
+
+
+def _registra_figlie(piano) -> None:
+    """Ricorda, per ogni insegnamento integrato del piano, i suoi moduli e i loro CFU."""
+    if isinstance(piano, list):
+        piano = piano[0] if piano else None
+    for p in (piano or {}).get("percorsi") or []:
+        for a in p.get("anni") or []:
+            for g in a.get("insegnamenti") or []:
+                for att in g.get("attivita") or []:
+                    figlie = {f.get("adCod"): f.get("crediti") for f in att.get("adFiglie") or [] if f.get("adCod")}
+                    if figlie and att.get("adCod"):
+                        FIGLIE[att["adCod"]] = figlie
+
+
 class ClientCache(cineca_catalogue.Client):
     def __init__(self, base: str, rate: float = 6.0):
         super().__init__(base, rate)
@@ -60,6 +89,12 @@ class ClientCache(cineca_catalogue.Client):
             self.dir.mkdir(parents=True, exist_ok=True)
 
     def get(self, path: str, params: dict | None = None):
+        r = self._get(path, params)
+        if path.startswith("/corso/"):
+            _registra_figlie(r)
+        return r
+
+    def _get(self, path: str, params: dict | None = None):
         if not self.dir:
             return super().get(path, params)
         key = hashlib.sha1((path + json.dumps(params or {}, sort_keys=True, default=str)).encode()).hexdigest()
@@ -92,6 +127,37 @@ def libri_extra(sy: dict) -> list[dict]:
     return unifi_testi.libri_unifi(sy) or unipd.libri_liberi(sy)
 
 
+def _nome_chiave(s: str) -> str:
+    return re.sub(r"\W+", " ", (s or "").lower()).strip()
+
+
+def correggi_piano(corso: dict) -> dict:
+    """Toglie la prova d'ingresso a 0 CFU e i contenitori degli integrati; distingue per CFU gli
+    insegnamenti omonimi dello stesso anno (vedi la descrizione del modulo)."""
+    ins = corso.get("insegnamenti") or []
+    codici = {i.get("codice") for i in ins}
+    tenuti = []
+    for i in ins:
+        if not i.get("cfu"):
+            if _VERIFICA_INGRESSO.search(i.get("nome") or ""):
+                continue
+            moduli = FIGLIE.get(i.get("codice"))
+            if moduli and any(m in codici for m in moduli):
+                continue
+        tenuti.append(i)
+    gruppi: dict[tuple, list[dict]] = {}
+    for i in tenuti:
+        gruppi.setdefault((i.get("anno"), _nome_chiave(i.get("nome")), i.get("curriculum")), []).append(i)
+    for g in gruppi.values():
+        if len({x.get("codice") for x in g}) > 1 and len({x.get("cfu") for x in g}) == len(g):
+            for x in g:
+                if isinstance(x.get("cfu"), (int, float)):
+                    cfu = f"{x['cfu']:g}"
+                    x["nome"] = f"{x['nome']} ({cfu} CFU)"
+    corso["insegnamenti"] = tenuti
+    return corso
+
+
 def fetch_ateneo(uid: str = "unifi", anno: int = 2026, max_cds: int | None = None, syllabus: bool = True,
                  log=print) -> dict:
     cineca_catalogue._testi_syllabus = _testi_syllabus
@@ -101,5 +167,6 @@ def fetch_ateneo(uid: str = "unifi", anno: int = 2026, max_cds: int | None = Non
                                             libri_extra=libri_extra)
     finally:
         cineca_catalogue._testi_syllabus = _testi_originale
+    doc["corsi"] = [correggi_piano(c) for c in doc["corsi"]]
     log(f"[{uid}] corsi con id del database: {associa(doc['corsi'], log)}")
     return doc

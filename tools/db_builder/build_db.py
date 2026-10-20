@@ -437,7 +437,8 @@ def main() -> None:
                 target.update(id_universitaly=None, stato="da_aggiungere", fonte=cc.get("fonte"),
                               verificato_il=cc.get("verificato_il"), insegnamenti=[])
                 corsi.append(target)
-            for k in ("curricula", "url", "codice_ateneo"):
+            # sede: Universitaly a volte non la dà e due corsi omonimi (es. Pisa e Livorno) sembrerebbero doppioni
+            for k in ("curricula", "url", "codice_ateneo", "sede"):
                 if cc.get(k) and not target.get(k):
                     target[k] = cc[k]
             if cc.get("url"):

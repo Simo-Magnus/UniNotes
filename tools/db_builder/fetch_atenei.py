@@ -106,6 +106,16 @@ CATALOGO_IN_SITI.add("unisi")
 from adapters import unime  # noqa: E402
 SITI["unime"] = unime.fetch_ateneo  # catalogo Cineca: durata dal piano, coorti per codice e nome, CFU fissi/liberi dalle etichette dei gruppi, id dei corsi gemelli
 CATALOGO_IN_SITI.add("unime")
+from adapters import univpm  # noqa: E402
+SITI["univpm"] = univpm.fetch_ateneo  # catalogo Cineca: piani «altreAttivita» con l'anno da annoCorso, codici riordinati, sedi come percorsi
+CATALOGO_IN_SITI.add("univpm")
+from adapters import unilink  # noqa: E402
+SITI["unilink"] = unilink.fetch_ateneo  # catalogo Cineca: durata dal piano, piani per coorte (percorsi «Coorte …»), integrati con i moduli, una sede per corso di Universitaly
+CATALOGO_IN_SITI.add("unilink")
+APPELLI["unilink"] = lambda uid, corsi: unilink.appelli_moduli(corsi, fetch_appelli(uid, PLAT[uid]["esse3"]))  # bacheca Esse3, più gli appelli dei moduli degli integrati
+from adapters import unibas  # noqa: E402
+SITI["unibas"] = unibas.fetch_ateneo  # catalogo Cineca: durata dal piano, anno di corso dall'a.a. di erogazione, voci del piano ufficiale che il catalogo non ha
+CATALOGO_IN_SITI.add("unibas")
 # Integrazioni: dati che il catalogo non ha (es. i libri di UniTO dalle pagine Campusnet),
 # letti a partire dagli insegnamenti già nel database e uniti dopo il catalogo
 INTEGRAZIONI = {"unito": unito_campusnet.fetch_ateneo}

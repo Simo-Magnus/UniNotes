@@ -31,7 +31,15 @@ HOSTS["uniroma2"] = "https://uniroma2public.gomp.it"  # Tor Vergata: host senza 
 # Atenei il cui piano di ogni anno di corso è quello della coorte che lo segue (a.a. - k + 1): ogni coorte ha
 # il suo regolamento (uid diverso, stesso `code` del corso) e solo il 1° anno è quello dell'a.a. corrente.
 # Il piano si ricostruisce anno per anno, con i gruppi a scelta espansi negli insegnamenti che li compongono.
-ANNI_PER_COORTE = {"uniroma3"}
+ANNI_PER_COORTE = {"uniroma3", "unitus"}
+# Corso GOMP il cui regolamento corrente è nuovo (code diverso) mentre le coorti precedenti stanno sotto un altro corso
+# dello stesso ateneo: {ateneo: {code corrente: (code delle coorti precedenti, parte del nome dei percorsi da tenere)}}.
+# (UniTus: la sede di Civitavecchia di Economia aziendale ha il suo regolamento solo dal 2026/27; gli anni 2 e 3 sono
+# i percorsi «sede Civitavecchia» del corso «sedi di Viterbo e Civitavecchia».)
+CORSI_COORTI_ALIAS = {"unitus": {"418": ("292", "civitavecchia")}}
+# Atenei in cui insegnamenti con codici diversi e lo stesso nome nello stesso anno sono attività distinte (stesse
+# etichette con CFU diversi, alternative di un gruppo): il nome le distingue e non sembrano doppioni.
+NOMI_DISTINTI_PER_CODICE = {"unitus"}
 _LIBERA = re.compile(r"(?i)^\s*(a scelta\b|attivit[aà] (formative )?a scelta|insegnament[oi] a scelta|esam[ei] a scelta|"
                      r"crediti (liberi|a scelta)|corso a scelta|materia a scelta)")
 
@@ -192,6 +200,24 @@ def _nomi_distinti(righe: list[dict]) -> None:
                     i["nome"] = f"{i['nome']} {n}"
 
 
+def _nomi_distinti_codici(righe: list[dict]) -> None:
+    """Insegnamenti con codici diversi, stesso anno e stesso nome (es. «Further Training Activities» da 12 o da 8 CFU,
+    alternative di uno stesso gruppo): restano distinti e il nome indica i CFU (o il codice se i CFU sono uguali)."""
+    per_nome: dict[tuple, list[dict]] = {}
+    for i in righe:
+        if i["codice"]:
+            per_nome.setdefault((i["anno"], _norm(i["nome"])), []).append(i)
+    for voci in per_nome.values():
+        if len({i["codice"] for i in voci}) < 2:
+            continue
+        cfu = {i["cfu"] for i in voci}
+        for i in voci:
+            if len(cfu) == len(voci) and i["cfu"]:
+                i["nome"] = f"{i['nome']} ({i['cfu']:g} CFU)"
+            else:
+                i["nome"] = f"{i['nome']} (cod. {i['codice']})"
+
+
 def fetch_gomp(uid: str, anno: int | None = None, max_cds: int | None = None, syllabus: bool = True,
                corsi: list[dict] | None = None, log=print) -> dict:
     """Restituisce un contributo nel formato di database/contrib (vedi build_db.py)."""
@@ -238,6 +264,11 @@ def fetch_gomp(uid: str, anno: int | None = None, max_cds: int | None = None, sy
         for c in elenco_a:
             if c.get("code") == g.get("code"):
                 return c
+        alias = CORSI_COORTI_ALIAS.get(uid, {}).get(g.get("code"))
+        if alias:
+            for c in elenco_a:
+                if c.get("code") == alias[0]:
+                    return c
         nomi = {_norm(t.get("text") or "") for t in g.get("name") or [] if t.get("text")}
         cl = {re.sub(r"\s+R$", "", x) for x in g.get("classes") or []}
         for c in elenco_a:
@@ -254,6 +285,10 @@ def fetch_gomp(uid: str, anno: int | None = None, max_cds: int | None = None, sy
             if a not in piani:
                 c = coorte_corso(g, a)
                 dati = api.corso(c["uid"], a) if c else None
+                alias = CORSI_COORTI_ALIAS.get(uid, {}).get(g.get("code"))
+                if dati and alias and c.get("code") == alias[0]:  # solo i percorsi della sede di questo corso
+                    dati = {**dati, "curricula": [cu for cu in dati.get("curricula") or []
+                                                  if alias[1] in _ita(cu.get("name")).lower()]}
                 piani[a] = (c["uid"], dati) if dati else None
             return piani[a]
 
@@ -285,6 +320,8 @@ def fetch_gomp(uid: str, anno: int | None = None, max_cds: int | None = None, sy
                 righe += rk
                 break
         _nomi_distinti(righe)
+        if uid in NOMI_DISTINTI_PER_CODICE:
+            _nomi_distinti_codici(righe)
         if not righe:
             return None
         return {"id": corso["id"], "nome": corso["nome"], "classe": corso.get("classe"), "durata_anni": durata,

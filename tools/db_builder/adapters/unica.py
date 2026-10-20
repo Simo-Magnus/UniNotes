@@ -16,10 +16,23 @@ Rispetto all'adattatore comune (`cineca_catalogue`) UniCa richiede:
 - i libri sono nei testi liberi dei syllabus: estrazione di UniSS (`uniss_testi`) che scarta prosa e frammenti;
   se il syllabus 2026/27 non ha la bibliografia si usa quello dell'a.a. precedente (o dell'insegnamento da cui
   è mutuato), indicandolo nella nota;
+- gruppi senza attività elencate ma con i CFU nell'etichetta («ATTIVITA' A SCELTA DELLO STUDENTE (12 CFU)»,
+  «ALTRE ATTIVITA' (2 CFU)», «TIROCINIO (4 CFU)», «Discipline a scelta studente 2 anno (7 CFU)»): sono crediti
+  che il piano richiede senza un esame preciso e diventano voci del piano (a scelta oppure obbligatorie) con
+  quei CFU; senza di esse gli anni risultavano di 50-58 CFU. Le sezioni «anno 0» senza anno vanno all'ultimo anno;
+- gruppi con CFU fissi nell'etichetta uguali alla somma delle loro attività («(12 CFU)» con due moduli da 6): si
+  sostengono tutte, non sono una scelta;
+- attività con 0 CFU: il «Corso integrato» che fa da contenitore ai moduli (elencati a parte con i loro CFU: gli
+  appelli e i libri sono dei moduli), le prove pratiche valutative e i test non sono insegnamenti e non si
+  registrano;
+- opzioni di un gruppo a scelta segnate «obbligatorie» dal catalogo: se i CFU dell'etichetta sono meno della somma
+  delle opzioni se ne sceglie una parte, quindi sono a scelta;
 - ogni corso porta l'`id` del corso già nel database (stessa denominazione e tipo), così il piano non finisce in
   un doppione.
 
-Con la variabile d'ambiente UN_HTTP_CACHE (una cartella) le risposte del catalogo restano su disco.
+Con la variabile d'ambiente UN_HTTP_CACHE (una cartella) le risposte del catalogo restano su disco; con
+UNICA_PRECEDENTE (un file `contrib/auto/unica.json` di una raccolta precedente) i syllabus già letti (stesso url
+dell'insegnamento) non si rileggono: restano i loro libri e il loro programma.
 Richieste al catalogo: al massimo 2 al secondo.
 """
 from __future__ import annotations
@@ -53,6 +66,13 @@ FORZA_ID = {
 def _norm(s: str | None) -> str:
     s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
     s = re.sub(r"\(.*?\)", " ", s)
+    return re.sub(r"[^a-z0-9]+", " ", s).strip()
+
+
+def _nome_piano(s: str | None) -> str:
+    """Nome dell'attività per riconoscere lo stesso insegnamento con due codici («INGLESE-LIVELLO B1» e «INGLESE LIVELLO
+    B1»): le parentesi restano, perché «Storia medievale 1» e «Storia medievale 1 (mod.A)» sono attività diverse."""
+    s = unicodedata.normalize("NFKD", _pulisci_nome(s)).encode("ascii", "ignore").decode().lower()
     return re.sub(r"[^a-z0-9]+", " ", s).strip()
 
 
@@ -102,14 +122,17 @@ def _e_comune(p: dict, nome: str) -> bool:
 
 
 def _attivita(det: dict):
-    """(nome del percorso, è comune, anno indicato dal piano, attività) di tutti i percorsi del corso."""
+    """(nome del percorso, è comune, anno indicato dal piano, attività, gruppo) di tutti i percorsi del corso;
+    un gruppo senza attività dà una voce con attività None (i suoi CFU stanno nell'etichetta)."""
     for p in det.get("percorsi") or []:
         nome = (p.get("des_it") or p.get("pdsDes") or "").strip()
         for a in p.get("anni") or []:
             gruppi = a.get("insegnamenti") or ([{"attivita": a["attivita"]}] if a.get("attivita") else [])
             for g in gruppi:
+                if not g.get("attivita"):
+                    yield nome, _e_comune(p, nome), a.get("anno"), None, g
                 for att in g.get("attivita") or []:
-                    yield nome, _e_comune(p, nome), a.get("anno"), att
+                    yield nome, _e_comune(p, nome), a.get("anno"), att, g
 
 
 def _pulisci_nome(s: str | None) -> str:
@@ -118,9 +141,121 @@ def _pulisci_nome(s: str | None) -> str:
     return cineca_catalogue._titolo(s)
 
 
+_ETICHETTA_CFU = re.compile(r"\(\s*(?:fra\s+([\d.,]+)\s+e\s+)?([\d.,]+)\s*CFU\s*\)", re.I)
+_SCELTA = re.compile(r"(?i)scelt|opzional|alternativ|libera|liberi|student choice|a scelta")
+
+
+def _titolo_etichetta(s: str) -> str:
+    """«ATTIVITA' A SCELTA DELLO STUDENTE» → «Attività a scelta dello studente» (sigle e SSD restano maiuscoli,
+    «AF» iniziale è «Attività formative»)."""
+    s = re.sub(r"\s+", " ", s).strip(" -–:/")
+    if not s.isupper():
+        s = re.sub(r"(?i)\battivita'", lambda m: "Attività" if m.group(0)[0].isupper() else "attività", s)
+        return s[:1].upper() + s[1:]
+    out = []
+    for i, w in enumerate(s.lower().split()):
+        if w == "attivita'":
+            w = "attività"
+        if i == 0 and w == "af":
+            w = "attività formative"
+        if re.fullmatch(r"[ivx]+|l-?\d+", w) or re.fullmatch(r"[(]?[a-z]{1,4}-[a-z]{2,4}/\d+[)]?", w):
+            out.append(w.upper())
+        elif "-" in w:
+            out.append("-".join(x[:1].upper() + x[1:] for x in w.split("-")))
+        else:
+            out.append(w[:1].upper() + w[1:] if i == 0 else w)
+    return " ".join(out)
+
+
+def _voce_etichetta(g: dict):
+    """Gruppo del piano senza attività elencate ma con i CFU nell'etichetta: crediti richiesti dal piano senza un
+    esame preciso. → (nome, cfu, obbligatorio) oppure None."""
+    label = g.get("label_it") or ""
+    m = _ETICHETTA_CFU.search(label)
+    if not m:
+        return None
+    try:
+        cfu = float(m.group(2).replace(",", "."))
+    except ValueError:
+        return None
+    if cfu <= 0:
+        return None
+    cfu = int(cfu) if cfu == int(cfu) else cfu
+    nome = _titolo_etichetta(_ETICHETTA_CFU.sub(" ", label))
+    if len(nome) < 3:
+        return None
+    return nome, cfu, not _SCELTA.search(label)
+
+
+def _per_intero(g: dict) -> bool:
+    """Gruppo con CFU fissi nell'etichetta uguali alla somma delle sue attività: si sostengono tutte."""
+    m = _ETICHETTA_CFU.search(g.get("label_it") or "")
+    if not m or m.group(1) is not None:
+        return False
+    try:
+        richiesti = float(m.group(2).replace(",", "."))
+    except ValueError:
+        return False
+    tot = sum(float(a.get("crediti") or 0) for a in g.get("attivita") or [])
+    return bool(g.get("attivita")) and tot > 0 and abs(tot - richiesti) < 1e-6
+
+
+def _a_scelta(g: dict) -> bool:
+    """Gruppo che non è «Obbligatori», «in alternativa» o con CFU fissi nell'etichetta minori della somma delle sue
+    attività: se ne sceglie una parte, anche se il catalogo segna «obbligatoria» qualcuna delle opzioni."""
+    m = _ETICHETTA_CFU.search(g.get("label_it") or "")
+    if g.get("cod") != "OO" and len(g.get("attivita") or []) > 1 and re.search(r"(?i)\balternativ", g.get("label_it") or ""):
+        return True  # «ATTIVITÀ FORMATIVA OBBLIGATORIA IN ALTERNATIVA»: se ne sostiene una
+    if g.get("cod") == "OO" or not m or m.group(1) is not None:
+        return False
+    try:
+        richiesti = float(m.group(2).replace(",", "."))
+    except ValueError:
+        return False
+    tot = sum(float(a.get("crediti") or 0) for a in g.get("attivita") or [])
+    return tot > richiesti + 1e-6
+
+
+def _nomi_etichette(ins: list[dict]) -> None:
+    """Le voci ricavate dalle etichette non hanno codice e build_db le distingue per nome: lo stesso nome in anni
+    diversi porta l'anno («A scelta dello studente (3° anno)»), nello stesso anno con CFU diversi porta i CFU."""
+    voci = [i for i in ins if i.get("_etichetta")]
+    anni: dict[str, set] = {}
+    cfu: dict[tuple, set] = {}
+    for i in voci:
+        anni.setdefault(_norm(i["nome"]), set()).add(i["anno"])
+        cfu.setdefault((_norm(i["nome"]), i["anno"]), set()).add(i["cfu"])
+    for i in voci:
+        i.pop("_etichetta")
+        if len(cfu[(_norm(i["nome"]), i["anno"])]) > 1:
+            i["nome"] = f"{i['nome']} ({i['cfu']:g} CFU)"
+        if len(anni[_norm(i["nome"].split(" (")[0])]) > 1:
+            i["nome"] = f"{i['nome']} ({i['anno']}° anno)"
+
+
+def _omonimi(ins: list[dict]) -> None:
+    """Due attività con lo stesso nome nello stesso anno e codici e CFU diversi («Preparazione Tesi» da 24 e da 6 CFU)
+    sono attività distinte del piano, non un doppione: il nome porta i CFU."""
+    gruppi: dict[tuple, list[dict]] = {}
+    for i in ins:
+        gruppi.setdefault((i["anno"], _norm(i["nome"]), i.get("curriculum")), []).append(i)
+    for g in gruppi.values():
+        if len({i["codice"] for i in g}) > 1 and len({i["cfu"] for i in g}) > 1:
+            for i in g:
+                if i.get("cfu"):
+                    i["nome"] = f"{i['nome']} ({i['cfu']:g} CFU)"
+
+
 def fetch_ateneo(uid: str = "unica", anno: int = 2026, max_cds: int | None = None, syllabus: bool = True,
                  log=print) -> dict:
     c = ClientCache()
+    precedente: dict[str, dict] = {}  # url dell'insegnamento -> insegnamento di una raccolta precedente (UNICA_PRECEDENTE)
+    if os.environ.get("UNICA_PRECEDENTE") and pathlib.Path(os.environ["UNICA_PRECEDENTE"]).exists():
+        for cs_ in json.loads(pathlib.Path(os.environ["UNICA_PRECEDENTE"]).read_text(encoding="utf-8")).get("corsi", []):
+            for i_ in cs_.get("insegnamenti") or []:
+                if i_.get("url") and i_.get("stato_libri"):
+                    precedente[i_["url"]] = i_
+        log(f"[{uid}] syllabus già letti nella raccolta precedente: {len(precedente)}")
     fmt = lambda a: f"{a}/{(a + 1) % 100:02d}"  # noqa: E731
     oggi = time.strftime("%Y-%m-%d")
 
@@ -163,7 +298,9 @@ def fetch_ateneo(uid: str = "unica", anno: int = 2026, max_cds: int | None = Non
     gruppo_di = {cds: k for k, cods in gruppi.items() for cds in cods}
     indice_nome: dict[tuple, dict[int, list[dict]]] = {}  # (corso, nome) -> aa -> parametri (codice cambiato)
     for (cds, y), o in offerte.items():
-        for _, _, _, att in _attivita(o["det"]):
+        for _, _, _, att, _ in _attivita(o["det"]):
+            if att is None:
+                continue
             try:
                 aa_att = int(att["aa"])
             except (KeyError, TypeError, ValueError):
@@ -186,6 +323,7 @@ def fetch_ateneo(uid: str = "unica", anno: int = 2026, max_cds: int | None = Non
         durata = _durata(det, x.get("tipo_corso_cod"))
         coorti_group = sorted({y for ys in coorti.values() for y in ys})
         insegnamenti: dict[str, dict] = {}
+        contenitori: dict[str, set[str]] = {}
         percorsi_nomi: set[str] = set()
         amm = None
 
@@ -196,16 +334,81 @@ def fetch_ateneo(uid: str = "unica", anno: int = 2026, max_cds: int | None = Non
                 amm = ammissione.da_catalogo(o["det"], f"{BASE}/corsi/{anno}/{o['x'].get('cod')}")
             n_perc = len([p for p in o["det"].get("percorsi") or []
                           if not _e_comune(p, (p.get("des_it") or p.get("pdsDes") or "").strip())])
-            for pnome, comune, anno_a, att in _attivita(o["det"]):
+            # le sezioni «altreAttivita» e «anno 0» elencano le attività di tutti gli anni accademici, anche quelle che il
+            # piano ha già in un anno numerato (stesso codice o stesso nome, es. due codici dell'inglese B1) e che
+            # ripetono per ogni a.a. in cui sono erogate: valgono solo quelle che il piano numerato non ha, e una
+            # volta sola (nel primo a.a. della coorte in cui sono erogate)
+            in_piano: set[str] = set()
+            primo_aa: dict[str, int] = {}
+            for _, _, n_, a_, _ in _attivita(o["det"]):
+                if a_ is None:
+                    continue
+                if str(n_).isdigit() and int(n_) > 0:
+                    in_piano.add(str(a_.get("adCod")))
+                    in_piano.add(_nome_piano(a_.get("des_it")))
+            for _, _, n_, a_, _ in _attivita(o["det"]):
+                if a_ is None or (str(n_).isdigit() and int(n_) > 0):
+                    continue
+                try:
+                    aa_ = int(a_.get("aa"))
+                except (TypeError, ValueError):
+                    continue
+                if aa_ >= y:
+                    primo_aa[str(a_.get("adCod"))] = min(aa_, primo_aa.get(str(a_.get("adCod")), aa_))
+            for pnome, comune, anno_a, att, grp in _attivita(o["det"]):
+                if att is None:  # gruppo senza attività: i CFU stanno nell'etichetta
+                    voce = _voce_etichetta(grp)
+                    if not voce:
+                        continue
+                    # le sezioni senza anno («anno 0») sono dell'ultimo anno del corso
+                    if str(anno_a).isdigit() and int(anno_a) > 0:
+                        if int(anno_a) != k:
+                            continue
+                    elif k != durata:
+                        continue
+                    nome_v, cfu_v, obbl_v = voce
+                    key = f"{k}:#{_norm(nome_v)}:{cfu_v}"
+                    item = insegnamenti.get(key)
+                    if not item:
+                        item = {
+                            "codice": None, "nome": nome_v, "anno": k, "periodo": None, "cfu": cfu_v, "ssd": None,
+                            "obbligatorio": obbl_v, "curriculum": None, "_percorsi": set(), "_comune": False,
+                            "docenti": [], "libri": [], "esami": [], "_etichetta": True,
+                            "url": f"{BASE}/corsi/{y}/{o['x'].get('cod')}",
+                            "fonte": BASE, "verificato_il": oggi,
+                            "note": "Crediti che il piano richiede senza un esame preciso (etichetta del gruppo nel "
+                                    "catalogo)",
+                        }
+                        if nota_anno:
+                            item["_nota_anno"] = nota_anno
+                        insegnamenti[key] = item
+                    if comune:
+                        item["_comune"] = True
+                    elif n_perc > 1 and pnome:
+                        pnome = cineca_catalogue._titolo(pnome)
+                        item["_percorsi"].add(pnome)
+                        percorsi_nomi.add(pnome)
+                    continue
                 if str(anno_a).isdigit() and int(anno_a) > 0:
                     if int(anno_a) != k:
                         continue
                 else:  # «altreAttivita» o anno 0: l'anno di corso è quello in cui l'attività è erogata
+                    if str(att.get("adCod")) in in_piano or _nome_piano(att.get("des_it")) in in_piano:
+                        continue
                     try:
-                        if int(att.get("aa")) != y + k - 1:
+                        if int(att.get("aa")) != y + k - 1 or int(att.get("aa")) != primo_aa.get(str(att.get("adCod"))):
                             continue
                     except (TypeError, ValueError):
                         continue
+                if not (att.get("crediti") or 0):
+                    # 0 CFU: il contenitore di un corso integrato (i CFU sono nei moduli, elencati a parte), una prova
+                    # pratica valutativa o un test: non sono insegnamenti con crediti
+                    moduli = [f.get("adCod") for f in att.get("adFiglie") or []] + [
+                        z.get("adCod") for z in grp.get("attivita") or []
+                        if (z.get("adPadre") or {}).get("adCod") == att.get("adCod")]
+                    if moduli:  # l'appello dell'integrato vale per i suoi moduli
+                        contenitori.setdefault(str(att.get("adCod")), set()).update(m for m in moduli if m)
+                    continue
                 ad = att.get("adCod") or att.get("cod")
                 key = f"{k}:{ad}"
                 item = insegnamenti.get(key)
@@ -217,7 +420,7 @@ def fetch_ateneo(uid: str = "unica", anno: int = 2026, max_cds: int | None = Non
                         "periodo_inizio": att.get("data_inizio_periodo_didattico"),
                         "periodo_fine": att.get("data_fine_periodo_didattico"),
                         "cfu": att.get("crediti"), "ssd": None,
-                        "obbligatorio": att.get("tipo_ins_cod") == "OBB",
+                        "obbligatorio": (att.get("tipo_ins_cod") == "OBB" and not _a_scelta(grp)) or _per_intero(grp),
                         "curriculum": None, "_percorsi": set(), "_comune": False,
                         "docenti": sorted(set(docenti)),
                         "url": f"{BASE}/insegnamenti/{att.get('aa')}/{att.get('cod')}"
@@ -239,6 +442,7 @@ def fetch_ateneo(uid: str = "unica", anno: int = 2026, max_cds: int | None = Non
                     item["_percorsi"].add(pnome)
                     percorsi_nomi.add(pnome)
 
+        voci_sole: dict[int, dict[str, dict]] = {}
         for k in range(1, durata + 1):
             y = anno - k + 1
             # coorte giusta; se il catalogo non la ha, o non vi pubblica le attività di quest'anno di corso,
@@ -253,17 +457,29 @@ def fetch_ateneo(uid: str = "unica", anno: int = 2026, max_cds: int | None = Non
                     nota = (f"Piano della coorte {yy}: insegnamento erogato nell'a.a. {fmt(yy + k - 1)}"
                             if yy + k - 1 > anno else
                             f"Piano della coorte {yy}: il catalogo non ha la coorte {y}")
+                prima = set(insegnamenti)
                 for cds in codici:
                     if yy in coorti[cds]:
                         aggiungi(cds, yy, k, nota)
-                if any(i["anno"] == k for i in insegnamenti.values()):
+                nuove = {kk: v for kk, v in insegnamenti.items() if kk not in prima}
+                if any(i["anno"] == k and not i.get("_etichetta") for i in insegnamenti.values()):
                     break
+                # una coorte con soli gruppi a scelta senza attività non basta: si cerca il piano di un'altra
+                # coorte (le voci delle etichette si tengono solo se nessuna ha le attività)
+                for kk in nuove:
+                    if nuove[kk].get("_etichetta"):
+                        voci_sole.setdefault(k, {}).setdefault(kk, insegnamenti.pop(kk))
+            else:
+                for kk, v in voci_sole.get(k, {}).items():
+                    insegnamenti.setdefault(kk, v)
         ins = list(insegnamenti.values())
+        _nomi_etichette(ins)
         for i in ins:
             ps = i.pop("_percorsi")
             comune = i.pop("_comune")
             if percorsi_nomi and ps and not comune and ps != percorsi_nomi:
                 i["curriculum"] = ", ".join(sorted(ps))
+        _omonimi(ins)
         corsi_out.append({
             "nome": cineca_catalogue._titolo(x.get("des_it") or ""),
             "classe": cineca_catalogue._classe(det.get("classe_cod") or x.get("classe_cod")),
@@ -272,6 +488,7 @@ def fetch_ateneo(uid: str = "unica", anno: int = 2026, max_cds: int | None = Non
             "codice_ateneo": x.get("cdsCod"), "codici_catalogo": sorted(codici),
             "url": f"{BASE}/corsi/{recente[1]}/{x.get('cod')}",
             "curricula": sorted(percorsi_nomi) or None, "ammissione": amm,
+            "contenitori": {k: sorted(v) for k, v in sorted(contenitori.items())} or None,
             "fonte": BASE, "verificato_il": oggi, "insegnamenti": ins,
         })
     log(f"[{uid}] piani letti: {len(corsi_out)} corsi, {sum(len(x['insegnamenti']) for x in corsi_out)} "
@@ -318,6 +535,10 @@ def fetch_ateneo(uid: str = "unica", anno: int = 2026, max_cds: int | None = Non
 
     def lavora(job: dict):
         try:
+            prec = next((precedente[i["url"]] for i in job["items"] if i.get("url") in precedente), None)
+            if prec is not None:  # syllabus già letto in una raccolta precedente: stessi libri e stesso programma
+                return job, (prec.get("libri") or [], {"tipoEsaDes_it": prec.get("modalita_esame"), "ssd": prec.get("ssd"),
+                                                       "urlSitoWeb": prec.get("url_sito")})
             return job, cerca_libri(job)
         except Exception as e:  # noqa: BLE001 - un syllabus illeggibile non ferma gli altri
             log(f"[{uid}]   syllabus {job['ad']} saltato: {e!r}")
@@ -516,6 +737,22 @@ def associa_appelli(appelli: dict[str, list[dict]], origine: dict[str, set[str]]
     return out
 
 
+def appelli_contenitori(out: dict[str, list[dict]], corsi: list[dict], log=print) -> int:
+    """Gli appelli di un corso integrato (codice del contenitore, senza CFU) sono quelli dei suoi moduli: si
+    aggiungono ai moduli che non li hanno già. Restituisce il numero di moduli che li ricevono."""
+    n = 0
+    for c in corsi:
+        for cont, moduli in (c.get("contenitori") or {}).items():
+            for m in moduli:
+                viste = {(e["data"], e["ora"], e["tipo"]) for e in out.get(m, [])}
+                nuovi = [e for e in out.get(cont, []) if (e["data"], e["ora"], e["tipo"]) not in viste]
+                if nuovi:
+                    out.setdefault(m, []).extend(nuovi)
+                    n += 1
+    log(f"[unica] appelli degli integrati attribuiti ai moduli: {n}")
+    return n
+
+
 def fetch_appelli(uid: str, corsi: list[dict], log=print) -> dict[str, list[dict]]:
     """Appelli dell'a.a. in corso: bacheca dell'offerta per corso di studio, più quella per dipartimento
     (attività che non stanno in nessun corso di studio dell'offerta)."""
@@ -534,5 +771,6 @@ def fetch_appelli(uid: str, corsi: list[dict], log=print) -> dict[str, list[dict
             if (e["data"], e["ora"], e["tipo"]) not in viste:
                 viste.add((e["data"], e["ora"], e["tipo"]))
                 v.append(e)
+    appelli_contenitori(out, corsi, log=log)
     log(f"[{uid}] appelli: {sum(len(v) for v in out.values())} date per {len(out)} insegnamenti")
     return out

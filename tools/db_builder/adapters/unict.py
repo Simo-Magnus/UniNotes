@@ -9,7 +9,11 @@ dipartimento (`www.<dip>.unict.it/corsi/<classe>`), con:
 - syllabus → "Testi di riferimento".
 
 Le righe dello stesso insegnamento (canali e moduli) diventano un solo insegnamento con
-tutti i docenti e tutti i testi. L'elenco non dice CFU, periodo e obbligatorietà: restano null.
+tutti i docenti e tutti i testi. L'elenco non dice CFU, periodo e obbligatorietà: il piano di studi
+(anni, CFU, periodo, obbligatorietà, gruppi a scelta) viene dal regolamento GOMP, vedi `unict_piani.py`,
+che sostituisce le righe dei dipartimenti con il piano di ogni coorte tenendo docenti, link e libri. Gli
+insegnamenti del piano senza testi nella scheda dell'a.a. corrente prendono quelli delle schede dei cinque anni
+accademici precedenti dello stesso corso (stesso codice), con la scheda usata nella nota di ogni libro.
 I corsi sono quelli già presenti in database/corsi/unict.json (da Universitaly), con il
 loro `id`: build_db.py li associa senza ambiguità.
 """
@@ -18,10 +22,12 @@ from __future__ import annotations
 import concurrent.futures as cf
 import html
 import json
+import os
 import pathlib
 import re
 import time
 
+from . import unict_piani
 from .testi import estrai_libri
 from .unibo import Client, _testo, _titolo
 
@@ -55,7 +61,8 @@ def leggi_programmi(s: str) -> list[dict]:
         codice, nome = (n.group(1), n.group(2)) if n else (None, t)
         nome = re.sub(r"\s+[A-Za-z]{1,2}\s*-\s*[A-Za-z]{1,2}$", "", nome)  # canale per iniziali: "A - E"
         out.append({
-            "anno": anno, "codice": codice, "nome": _titolo(nome),
+            "anno": anno, "codice": codice,
+            "nome": re.sub(r"\s[iI]$", " I", _titolo(nome)),  # «Analisi matematica I»
             "modulo": _titolo(_testo(td[i_mod])) if i_mod is not None and i_mod < len(td) and _testo(td[i_mod])
             else None,
             "docenti": [_titolo(_testo(x)) for x in re.split(r"<br\s*/?>|,|</a>", td[i_doc]) if _testo(x)]
@@ -76,11 +83,76 @@ def libri_syllabus(s: str) -> list[dict]:
     return estrai_libri(t)
 
 
+# Anni accademici precedenti del sito dei dipartimenti (`/programmi?aa=<id>`): id e etichetta
+AA_PRECEDENTI = ((126, "2025/26"), (125, "2024/25"), (124, "2023/24"), (123, "2022/23"), (122, "2021/22"))
+
+
+def libri_anni_precedenti(out: list[dict], siti: dict[str, str], c: Client, log=print) -> int:
+    """Libri degli insegnamenti del piano che nell'a.a. corrente non hanno una scheda con testi: si cerca lo stesso codice
+    nella didattica erogata dei cinque anni accademici precedenti dello stesso corso e si prende la scheda più recente
+    con testi. Ogni libro dice da quale scheda viene (`note`). Restituisce gli insegnamenti completati."""
+    trovati = 0
+    for x in out:
+        sito = siti.get(x["id"])
+        manca = {str(i["codice"]) for i in x["insegnamenti"] if i.get("codice") and not i.get("libri")}
+        if not sito or not manca:
+            continue
+        for aa, etichetta in AA_PRECEDENTI:
+            if not manca:
+                break
+            r = c.get(f"{sito}/programmi?aa={aa}")
+            if not r:
+                continue
+            base = re.match(r"https?://[^/]+", r.url).group(0)
+            urls: dict[str, list[str]] = {}
+            for y in leggi_programmi(r.text):
+                if y["codice"] in manca and y["url"]:
+                    u = y["url"] if y["url"].startswith("http") else base + y["url"]
+                    urls.setdefault(y["codice"], [])
+                    if u not in urls[y["codice"]]:
+                        urls[y["codice"]].append(u)
+            for cod, lista in urls.items():
+                libri, viste = [], set()
+                for u in lista:
+                    try:
+                        rr = c.get(u)
+                        for lb in libri_syllabus(rr.text) if rr else []:
+                            k = re.sub(r"\W+", "", lb["citazione"].lower())[:120]
+                            if k not in viste:
+                                viste.add(k)
+                                libri.append({**lb, "note": lb.get("note") or
+                                              f"Dalla scheda dell'a.a. {etichetta} dello stesso insegnamento, stesso codice ({u})"})
+                    except Exception:  # noqa: BLE001 - una scheda illeggibile non ferma le altre
+                        continue
+                if not libri:
+                    continue
+                manca.discard(cod)
+                for i in x["insegnamenti"]:
+                    if str(i.get("codice")) == cod and not i.get("libri"):
+                        i["libri"] = [dict(lb) for lb in libri]
+                        i["stato_libri"] = "completo"
+                        trovati += 1
+    log(f"[unict] libri da schede di anni precedenti: {trovati} insegnamenti; richieste {c.requests}")
+    return trovati
+
+
+def _precedenti(percorso: str | None) -> dict[tuple, dict]:
+    """Insegnamenti di una raccolta precedente (contributo json), per (corso, anno, codice o nome): i loro libri si
+    riusano senza rileggere i syllabus (`UNICT_RIUSA=<file>` o `riusa=`)."""
+    if not percorso:
+        return {}
+    d = json.loads(pathlib.Path(percorso).read_text(encoding="utf-8"))
+    return {(c["id"], i.get("anno"), str(i.get("codice") or i["nome"])): i
+            for c in d.get("corsi", []) for i in c.get("insegnamenti", []) if i.get("libri")}
+
+
 def fetch_ateneo(uid: str = "unict", anno: int | None = None, max_cds: int | None = None, syllabus: bool = True,
-                 corsi: list[dict] | None = None, log=print) -> dict:
+                 corsi: list[dict] | None = None, log=print, riusa: str | None = None, piani: bool = True) -> dict:
     """Restituisce un contributo nel formato di database/contrib (vedi build_db.py)."""
+    precedenti = _precedenti(riusa or os.environ.get("UNICT_RIUSA"))
     if corsi is None:
         corsi = json.loads((ROOT / "database" / "corsi" / f"{uid}.json").read_text(encoding="utf-8"))["corsi"]
+    tutti = corsi
     corsi = [c for c in corsi if _sito(c.get("url"))]
     if max_cds:
         corsi = corsi[:max_cds]
@@ -124,6 +196,15 @@ def fetch_ateneo(uid: str = "unict", anno: int | None = None, max_cds: int | Non
 
     with cf.ThreadPoolExecutor(4) as ex:
         out = [r for r in ex.map(build_safe, corsi) if r]
+    riusati = 0
+    for x in out:
+        for i in x["insegnamenti"]:
+            prec = precedenti.get((x["id"], i["anno"], str(i["codice"] or i["nome"])))
+            if prec:  # libri già raccolti: non si rileggono i syllabus di questa riga
+                i["_syl"], i["libri"] = [], [lb for lb in prec["libri"]]
+                riusati += 1
+    if riusati:
+        log(f"[{uid}] libri riusati da una raccolta precedente per {riusati} insegnamenti")
     urls = sorted({u for x in out for i in x["insegnamenti"] for u in i["_syl"]})
     log(f"[{uid}] piani letti: {len(out)} corsi, {sum(len(x['insegnamenti']) for x in out)} insegnamenti; "
         f"syllabus da leggere: {len(urls) if syllabus else 0}")
@@ -155,5 +236,9 @@ def fetch_ateneo(uid: str = "unict", anno: int | None = None, max_cds: int | Non
                 i["stato_libri"] = "completo" if i["libri"] else "da_aggiungere"
             trovati += len(i["libri"])
     log(f"[{uid}] libri trovati: {trovati}; richieste: {c.requests}")
+    if piani and not max_cds:  # piano di studi dal regolamento GOMP (CFU, attività senza docente, gruppi a scelta)
+        unict_piani.integra(out, tutti, unict_piani.Gomp(anno or unict_piani.anno_corrente(), log), log)
+        if syllabus:
+            libri_anni_precedenti(out, {k["id"]: _sito(k["url"]) for k in tutti if _sito(k.get("url"))}, c, log)
     return {"universita_id": uid, "descrizione": "Generato dai siti dei dipartimenti *.unict.it (adapters/unict.py)",
             "generato_il": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "corsi": out, "canali": []}

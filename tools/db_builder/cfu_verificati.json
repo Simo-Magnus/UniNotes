@@ -1587,6 +1587,60 @@
    "nota": "Piano ufficiale: obbligatori e gruppi a scelta da completare (ognuno con i propri CFU) danno 62-62 CFU nell'anno; nel database i gruppi a scelta sono insegnamenti non obbligatori"
   }
  },
+ "unica-l-18-economia-aziendale-management": {
+  "3": {
+   "fonte": "https://unica.coursecatalogue.cineca.it/corsi/2026/11254",
+   "nota": "Piano della coorte 2026: obbligatori più gruppi a scelta dichiarati nel catalogo (CFU nelle etichette, anche «fra a e b CFU» o un'attività in alternativa) vanno da 60 a 63 CFU, quindi 60 CFU è raggiungibile; molte scelte, quindi obbligatori sotto 40"
+  }
+ },
+ "unica-l-20-scienze-della-comunicazione": {
+  "3": {
+   "fonte": "https://unica.coursecatalogue.cineca.it/corsi/2024/10544",
+   "nota": "Piano della coorte 2024: insegnamenti obbligatori e gruppi a scelta dichiarati nel catalogo (CFU nelle etichette dei gruppi) sommano esattamente 60 CFU per ogni percorso; molte scelte, quindi obbligatori sotto 40"
+  }
+ },
+ "unica-lm-18-informatica": {
+  "2": {
+   "fonte": "https://unica.coursecatalogue.cineca.it/corsi/2025/11198",
+   "nota": "Piano della coorte 2025: insegnamenti obbligatori e gruppi a scelta dichiarati nel catalogo (CFU nelle etichette dei gruppi) sommano esattamente 60 CFU per ogni percorso; molte scelte, quindi obbligatori sotto 40"
+  }
+ },
+ "unica-lm-29-ingegneria-elettronica": {
+  "1": {
+   "fonte": "https://unica.coursecatalogue.cineca.it/corsi/2026/11210",
+   "nota": "Piano della coorte 2026: obbligatori più gruppi a scelta dichiarati nel catalogo (CFU nelle etichette, anche «fra a e b CFU» o un'attività in alternativa) vanno da 38 a 72 CFU, quindi 60 CFU è raggiungibile; molte scelte, quindi obbligatori sotto 40"
+  },
+  "2": {
+   "fonte": "https://unica.coursecatalogue.cineca.it/corsi/2025/11210",
+   "nota": "Piano della coorte 2025: obbligatori più gruppi a scelta dichiarati nel catalogo (CFU nelle etichette, anche «fra a e b CFU» o un'attività in alternativa) vanno da 32 a 84 CFU, quindi 60 CFU è raggiungibile; molte scelte, quindi obbligatori sotto 40"
+  }
+ },
+ "unica-lm-33-ingegneria-meccanica": {
+  "1": {
+   "fonte": "https://unica.coursecatalogue.cineca.it/corsi/2026/11213",
+   "nota": "Piano della coorte 2026: obbligatori più gruppi a scelta dichiarati nel catalogo (CFU nelle etichette, anche «fra a e b CFU» o un'attività in alternativa) vanno da 47 a 75 CFU, quindi 60 CFU è raggiungibile; molte scelte, quindi obbligatori sotto 40"
+  },
+  "2": {
+   "fonte": "https://unica.coursecatalogue.cineca.it/corsi/2025/11213",
+   "nota": "Piano della coorte 2025: obbligatori più gruppi a scelta dichiarati nel catalogo (CFU nelle etichette, anche «fra a e b CFU» o un'attività in alternativa) vanno da 47 a 75 CFU, quindi 60 CFU è raggiungibile; molte scelte, quindi obbligatori sotto 40"
+  }
+ },
+ "unica-lm-78-filosofia-e-forme-del-sapere": {
+  "2": {
+   "fonte": "https://unica.coursecatalogue.cineca.it/corsi/2025/11161",
+   "nota": "Piano della coorte 2025: insegnamenti obbligatori e gruppi a scelta dichiarati nel catalogo (CFU nelle etichette dei gruppi) sommano esattamente 60 CFU per ogni percorso; molte scelte, quindi obbligatori sotto 40"
+  }
+ },
+ "unica-lm-94-traduzione-specialistica-e-interpretazione-di-conferenza": {
+  "1": {
+   "fonte": "https://unica.coursecatalogue.cineca.it/corsi/2026/11173",
+   "nota": "Piano della coorte 2026: insegnamenti obbligatori e gruppi a scelta dichiarati nel catalogo (CFU nelle etichette dei gruppi) sommano esattamente 60 CFU per ogni percorso; molte scelte, quindi obbligatori sotto 40"
+  },
+  "2": {
+   "fonte": "https://unica.coursecatalogue.cineca.it/corsi/2025/11173",
+   "nota": "Piano della coorte 2025: insegnamenti obbligatori e gruppi a scelta dichiarati nel catalogo (CFU nelle etichette dei gruppi) sommano esattamente 60 CFU per ogni percorso; molte scelte, quindi obbligatori sotto 40"
+  }
+ },
  "unical-l-11-lingue-e-culture-moderne": {
   "1": {
    "fonte": "https://storage.portale.unical.it/api/ricerca/cds/83377/studyplans-activities/?lang=it",
@@ -2331,6 +2385,836 @@
   "1": {
    "fonte": "https://www.unicatt.it/corsi/magistrale/european-studies-in-investor-relations-financial-communication-milano/study-plan-2026-27/curriculum.html",
    "nota": "Verifica automatica sul piano ufficiale della coorte 2026-27: obbligatori fissi 39 CFU + 12 CFU dei 2 gruppi a scelta (CFU indicati nel titolo di ogni gruppo) = 51 CFU (percorso «Curriculum - A.Y. 2026/2027»). L'anno richiede meno di 60 CFU ma il corso nel complesso richiede 120 CFU su 120 (diversa distribuzione tra gli anni)."
+  }
+ },
+ "unict-l-10-lettere": {
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=59d8849b-87ee-4bd7-b79d-2ec92ad9c3fb&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "regolamento della coorte 2024: attività obbligatorie 36 CFU, gruppi a scelta 18 CFU, crediti liberi 6 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-11-lingue-e-culture-europee-euroamericane-ed-orientali": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=703b9aca-a61c-41f0-865c-ec6be0913769&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 33 CFU, gruppi a scelta 27 CFU, crediti liberi 0 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=cc2738f0-69bd-4430-9a1c-e22b3158140b&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 18 CFU, gruppi a scelta 42 CFU, crediti liberi 0 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=65017fee-75c8-4a74-84b0-3d3d63aa43cf&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "regolamento della coorte 2024: attività obbligatorie 3 CFU, gruppi a scelta 45 CFU, crediti liberi 12 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-12-mediazione-linguistica-e-interculturale": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=b47d7390-20fc-41eb-8232-4cb18b9576b0&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 12 CFU, gruppi a scelta 39 CFU, crediti liberi 9 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=5ddf7d34-7b46-4c95-9155-3a899f4687a3&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 15 CFU, gruppi a scelta 36 CFU, crediti liberi 9 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=427c0da8-16ae-4a07-8781-eaa0b1b1d711&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "regolamento della coorte 2024: attività obbligatorie 9 CFU, gruppi a scelta 51 CFU, crediti liberi 0 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-15-scienze-del-turismo": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=a435a627-0b33-4dcb-9e09-cb7a80c1f12b&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 35 CFU, gruppi a scelta 20 CFU, crediti liberi 6 CFU, totale 61 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=09366a5b-4dd9-4536-8c07-7b225f854a4b&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 19 CFU, gruppi a scelta 36 CFU, crediti liberi 0 CFU, totale 55 CFU (il regolamento della coorte vale 180 CFU su 180). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-18-economia-aziendale": {
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=301fe341-f735-4eb5-8598-8e131b77b363&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "regolamento della coorte 2024: attività obbligatorie 15 CFU, gruppi a scelta 33 CFU, crediti liberi 15 CFU, totale 63 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-18-management-delle-imprese-per-leconomia-sostenibile": {
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=f36a8800-6dc6-4383-836b-9560dc190fed&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "regolamento della coorte 2024: attività obbligatorie 12 CFU, gruppi a scelta 30 CFU, crediti liberi 18 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-19-scienze-dell-educazione-e-della-formazione": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=45118039-4392-4a8a-a2c4-04fbcdeb4911&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 38 CFU, gruppi a scelta 13 CFU, crediti liberi 12 CFU, totale 63 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=47172f70-47d9-4b43-ae20-e7d344feb957&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "regolamento della coorte 2024: attività obbligatorie 36 CFU, gruppi a scelta 25 CFU, crediti liberi 0 CFU, totale 61 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-22-scienze-motorie": {
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=cd67acc1-0156-4ac3-8ab3-128e7826ab5a&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "regolamento della coorte 2024: attività obbligatorie 32 CFU, gruppi a scelta 23 CFU, crediti liberi 6 CFU, totale 61 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-22-scienze-motorie-replica-ragusa": {
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=872b333b-49db-4ea6-a3bf-c6a6f940187e&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 32 CFU, gruppi a scelta 20 CFU, crediti liberi 6 CFU, totale 58 CFU (il regolamento della coorte vale 180 CFU su 180); anno dedotto dal piano della coorte 2026, non da quella che lo frequenta nel 2026/27. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-25-gestione-dei-sistemi-produttivi-agrari-mediterranei": {
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=80eb9b3f-130a-488c-9c79-bbcb25502fca&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 36 CFU, gruppi a scelta 3 CFU, crediti liberi 12 CFU, totale 51 CFU (il regolamento della coorte vale 180 CFU su 180); anno dedotto dal piano della coorte 2026, non da quella che lo frequenta nel 2026/27. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-26-scienze-e-tecnologie-alimentari": {
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=6304ef5f-68ec-4225-95da-77b3d2240a3a&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "regolamento della coorte 2024: attività obbligatorie 38 CFU, gruppi a scelta 5 CFU, crediti liberi 12 CFU, totale 55 CFU (il regolamento della coorte vale 180 CFU su 180). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-33-economia": {
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=eb296cbd-3455-4f5f-989f-831d1bc8d5ae&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "regolamento della coorte 2024: attività obbligatorie 27 CFU, gruppi a scelta 27 CFU, crediti liberi 6 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-5-filosofia": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=4a5206ed-9370-460b-8461-4dd62a055eef&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 27 CFU, gruppi a scelta 24 CFU, crediti liberi 9 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=26ad2e73-f82d-4878-81b3-ed5e2e475948&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "regolamento della coorte 2024: attività obbligatorie 36 CFU, gruppi a scelta 18 CFU, crediti liberi 6 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-9-ingegneria-industriale": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=9c49b1d7-3a8e-45aa-bd6b-3d5b3247e00e&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 55 CFU, gruppi a scelta 0 CFU, crediti liberi 0 CFU, totale 55 CFU (il regolamento della coorte vale 185 CFU su 180). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=245cb7ea-5b41-40d6-95fa-cadc1b59d7e9&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "regolamento della coorte 2024: attività obbligatorie 59 CFU, gruppi a scelta 0 CFU, crediti liberi 0 CFU, totale 59 CFU (il regolamento della coorte vale 180 CFU su 180). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-9-ingegneria-per-la-transizione-ecologica": {
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=c262437c-69bc-4c69-8b75-8c79020b4227&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 33 CFU, gruppi a scelta 15 CFU, crediti liberi 0 CFU, totale 48 CFU (il regolamento della coorte vale 180 CFU su 180); anno dedotto dal piano della coorte 2026, non da quella che lo frequenta nel 2026/27. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-l-snt1-ostetricia-abilitante-alla-professione-sanitaria-di-ostetric": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=3153f775-ced7-4ec6-a896-3a4a11e2b10c&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 55 CFU, gruppi a scelta 0 CFU, crediti liberi 2 CFU, totale 57 CFU (il regolamento della coorte vale 180 CFU su 180). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-14-filologia-moderna": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=6dd6c33f-868c-414f-bfb4-606db1d27014&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 6 CFU, gruppi a scelta 36 CFU, crediti liberi 18 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-15-filologia-classica": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=b77d09d8-b533-4722-826f-a882f43a0940&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 36 CFU, gruppi a scelta 24 CFU, crediti liberi 0 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=c9a4cd88-7e45-4391-b5aa-dd4a29dcfa0c&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 18 CFU, gruppi a scelta 24 CFU, crediti liberi 18 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-2-archeologia": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=b34d5a0a-b28f-4634-8389-4f27b6d3623c&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 36 CFU, gruppi a scelta 24 CFU, crediti liberi 0 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=5d96dc27-64d3-43fc-84c2-90a0d14e1745&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 15 CFU, gruppi a scelta 33 CFU, crediti liberi 12 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-25-automation-engineering-and-control-of-complex-systems": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=26cd478b-4bb0-4ead-8c12-17f0523f89d4&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 36 CFU, gruppi a scelta 18 CFU, crediti liberi 0 CFU, totale 54 CFU (il regolamento della coorte vale 120 CFU su 120). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-27-communications-engineering": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=95c89c4b-686e-408e-9419-86920b17ff27&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 36 CFU, gruppi a scelta 24 CFU, crediti liberi 0 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-29-electronic-engineering": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=39c5c9b8-add5-4215-ac74-f945e9dbcbf0&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 35 CFU, gruppi a scelta 27 CFU, crediti liberi 0 CFU, totale 62 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-37-lingue-e-letterature-comparate": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=2a06611c-c93c-453e-9f39-249d511bb652&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 18 CFU, gruppi a scelta 36 CFU, crediti liberi 6 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=94a506a1-b945-47d0-9142-e381a9ef26bf&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 3 CFU, gruppi a scelta 51 CFU, crediti liberi 6 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-38-lingue-per-la-cooperazione-internazionale": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=f5babded-d711-4fd9-8e65-6af4ef6fe632&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 33 CFU, gruppi a scelta 21 CFU, crediti liberi 6 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=d74786ae-aa64-4e02-be90-46da841814aa&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 30 CFU, gruppi a scelta 21 CFU, crediti liberi 9 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-39-scienze-linguistiche-per-l-intercultura-e-la-formazione": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=1ec121d4-0313-4eff-bb3e-3cbb28fddbb1&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 0 CFU, gruppi a scelta 54 CFU, crediti liberi 6 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-4-c-u-architettura": {
+  "4": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=1ac91e45-748b-4397-a638-0d36a1591e86&mode=CourseDetail&iso=ita&academicYear=2023",
+   "nota": "regolamento della coorte 2023: attività obbligatorie 38 CFU, gruppi a scelta 18 CFU, crediti liberi 12 CFU, totale 68 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-4-c-u-ingegneria-edile-architettura": {
+  "5": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=d6c8f67e-f1e2-458f-a2c8-7b501a39fd11&mode=CourseDetail&iso=ita&academicYear=2022",
+   "nota": "regolamento della coorte 2022: attività obbligatorie 33 CFU, gruppi a scelta 27 CFU, crediti liberi 8 CFU, totale 68 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-40-matematica": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=8190bbeb-37b1-41a4-ab13-529b873b688e&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 3 CFU, gruppi a scelta 45 CFU, crediti liberi 12 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-43-scienze-del-testo-per-le-professioni-digitali": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=3a433d8f-4478-4e41-9eba-b4dd732a444e&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 33 CFU, gruppi a scelta 24 CFU, crediti liberi 6 CFU, totale 63 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=b0643e2c-b67c-4d25-b9ab-e4a5987c991a&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 24 CFU, gruppi a scelta 27 CFU, crediti liberi 6 CFU, totale 57 CFU (il regolamento della coorte vale 120 CFU su 120). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-46-odontoiatria-e-protesi-dentaria": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=b25fc3f1-4305-47ec-80a8-3631874909ae&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 54 CFU, gruppi a scelta 0 CFU, crediti liberi 0 CFU, totale 54 CFU (il regolamento della coorte vale 360 CFU su 360). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-49-progettazione-del-turismo-sostenibile-culturale-e-naturalist": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=a40a79b0-5161-4036-b4a7-8c94099adf07&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 10 CFU, gruppi a scelta 36 CFU, crediti liberi 9 CFU, totale 55 CFU (il regolamento della coorte vale 120 CFU su 120). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-51-psicologia": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=fd02b396-c8c9-422a-af2e-56992ac49550&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 38 CFU, gruppi a scelta 16 CFU, crediti liberi 6 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-54-scienze-chimiche": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=d2f2f10e-f437-473b-b1dc-5392f6858740&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 20 CFU, gruppi a scelta 40 CFU, crediti liberi 6 CFU, totale 66 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-56-economia-e-politiche-pubbliche": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=35de0ef6-dfc6-476d-9205-848c1fd25d82&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 34 CFU, gruppi a scelta 18 CFU, crediti liberi 9 CFU, totale 61 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-6-biologia-ambientale": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=26d3991e-e4f3-4c37-9b71-1aac30bdfbc4&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 15 CFU, gruppi a scelta 42 CFU, crediti liberi 0 CFU, totale 57 CFU (il regolamento della coorte vale 120 CFU su 120). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-65-comunicazione-della-cultura-e-dello-spettacolo": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=29c28712-e053-4b64-af65-cc859d2d3c36&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 12 CFU, gruppi a scelta 36 CFU, crediti liberi 12 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-67-scienze-e-tecniche-delle-attivita-motorie-preventive-e-adatt": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=1eda1062-962a-4600-b000-0a403e9ae3c7&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 57 CFU, gruppi a scelta 0 CFU, crediti liberi 0 CFU, totale 57 CFU (il regolamento della coorte vale 120 CFU su 120). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-69-agricultural-science-and-technology": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=c96acba7-0405-436d-acd7-fc8d0940a6d4&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 37 CFU, gruppi a scelta 22 CFU, crediti liberi 0 CFU, totale 59 CFU (il regolamento della coorte vale 120 CFU su 120). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-69-scienze-e-tecnologie-agrarie": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=f3390811-325a-4b30-90f1-77db3db1165c&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 25 CFU, gruppi a scelta 22 CFU, crediti liberi 12 CFU, totale 59 CFU (il regolamento della coorte vale 127 CFU su 120). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-70-scienze-e-tecnologie-alimentari": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=c05e7008-b06b-4312-9799-8ba4c1fdbfac&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 20 CFU, gruppi a scelta 26 CFU, crediti liberi 12 CFU, totale 58 CFU (il regolamento della coorte vale 126 CFU su 120). Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-74-lm-79-geologia-e-geofisica": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=05813b80-92ad-4290-a72c-2499291f3671&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 21 CFU, gruppi a scelta 36 CFU, crediti liberi 6 CFU, totale 63 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-78-scienze-filosofiche": {
+  "1": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=134119c4-5565-4aed-af21-9d6be5d58fcf&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "regolamento della coorte 2026: attività obbligatorie 24 CFU, gruppi a scelta 30 CFU, crediti liberi 6 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  },
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=f75afb7f-9243-42c9-8fc0-dcb09da34e9c&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 27 CFU, gruppi a scelta 27 CFU, crediti liberi 6 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-85-scienze-pedagogiche-e-progettazione-educativa": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=770afde9-a481-462f-8a4a-0bdb42e47b19&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 28 CFU, gruppi a scelta 20 CFU, crediti liberi 12 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-89-storia-dell-arte-e-beni-culturali": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=e8f8c48f-d340-4b82-b994-5e91365f27a0&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 27 CFU, gruppi a scelta 27 CFU, crediti liberi 6 CFU, totale 60 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lm-9-biotecnologie-mediche": {
+  "2": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=ce36eb91-15cc-42a3-a3ec-98cd52339f87&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 39 CFU, gruppi a scelta 12 CFU, crediti liberi 12 CFU, totale 63 CFU. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unict-lmg-01-giurisprudenza": {
+  "3": {
+   "fonte": "https://public.smartedu.unict.it/PublicData?uid=9d47d86e-64bd-4a09-97bd-316ce35ac34f&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "regolamento della coorte 2025: attività obbligatorie 39 CFU, gruppi a scelta 22 CFU, crediti liberi 0 CFU, totale 61 CFU; anno dedotto dal piano della coorte 2025, non da quella che lo frequenta nel 2026/27. Verifica automatica confrontando il database con l'API pubblica GOMP (public.smartedu.unict.it)"
+  }
+ },
+ "unifi-l-1-storia-e-tutela-dei-beni-archeologici-artistici-archivistici": {
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/448",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno (percorso «BENI ARTISTICI») elenca 30 CFU obbligatori e 75 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo). Il catalogo elenca per questo anno 30 CFU obbligatori e 81 a scelta; le scelte offerte anche in un altro anno compaiono nel database solo nel primo anno in cui sono offerte."
+  }
+ },
+ "unifi-l-10-lettere": {
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/605",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno (percorso «LETTERE ANTICHE») elenca 30 CFU obbligatori e 96 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo). Il catalogo elenca per questo anno 30 CFU obbligatori e 132 a scelta; le scelte offerte anche in un altro anno compaiono nel database solo nel primo anno in cui sono offerte."
+  }
+ },
+ "unifi-l-18-sustainable-business-for-societal-challenges": {
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/1440",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno elenca 33 CFU obbligatori e 36 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-l-19-scienze-dell-educazione-e-della-formazione": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4664",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 30 CFU obbligatori e 69 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo). Il catalogo elenca per questo anno 30 CFU obbligatori e 90 a scelta; le scelte offerte anche in un altro anno compaiono nel database solo nel primo anno in cui sono offerte."
+  },
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/737",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno elenca 6 CFU obbligatori e 90 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-l-2-biotecnologie-applicate-alle-scienze-della-salute-umana": {
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/6476",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno elenca 33 CFU obbligatori e 81 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-l-20-scienze-umanistiche-per-la-comunicazione": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4665",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 30 CFU obbligatori e 72 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/590",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno elenca 24 CFU obbligatori e 102 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-l-3-discipline-delle-arti-della-musica-e-dello-spettacolo": {
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/452",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno elenca 27 CFU obbligatori e 63 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo). Il catalogo elenca per questo anno 27 CFU obbligatori e 72 a scelta; le scelte offerte anche in un altro anno compaiono nel database solo nel primo anno in cui sono offerte."
+  }
+ },
+ "unifi-l-30-ottica-e-optometria": {
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/486",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno elenca 36 CFU obbligatori e 18 a scelta (in tutto 54). Il corso intero ne elenca 180 su 180: sulla fonte i CFU sono distribuiti tra gli anni in modo diverso da 60 per anno; per i gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio» il catalogo non indica quanti CFU scegliere."
+  }
+ },
+ "unifi-l-33-economia-e-commercio": {
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/490",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno (percorso «ECONOMIA E DIRITTO») elenca 24 CFU obbligatori e 54 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-l-37-sviluppo-sostenibile-cooperazione-e-gestione-dei-conflitti": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4077",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «CONFLITTI E PACE») elenca 39 CFU obbligatori e 63 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/1417",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno (percorso «ECONOMIA DELLO SVILUPPO») elenca 36 CFU obbligatori e 18 a scelta (in tutto 54). Il corso intero ne elenca 216 su 180: sulla fonte i CFU sono distribuiti tra gli anni in modo diverso da 60 per anno; per i gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio» il catalogo non indica quanti CFU scegliere."
+  }
+ },
+ "unifi-l-4-design-tessile-e-moda": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/5265",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 27 CFU obbligatori e 54 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/1439",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno elenca 39 CFU obbligatori e 70 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-l-4-product-interior-communication-and-eco-social-design": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4071",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 6 CFU obbligatori e 126 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/2039",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno elenca 15 CFU obbligatori e 138 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-l-42-storia": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4667",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 18 CFU obbligatori e 120 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/497",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno elenca 6 CFU obbligatori e 162 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-l-5-filosofia": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4668",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 18 CFU obbligatori e 162 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/454",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno elenca 18 CFU obbligatori e 114 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-l-8-ingegneria-informatica": {
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/458",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno (percorso «TECNICO APPLICATIVO») elenca 24 CFU obbligatori e 69 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo). Il catalogo elenca per questo anno 24 CFU obbligatori e 99 a scelta; le scelte offerte anche in un altro anno compaiono nel database solo nel primo anno in cui sono offerte."
+  }
+ },
+ "unifi-l-8-l-9-ingegneria-biomedica": {
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/1317",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno elenca 27 CFU obbligatori e 66 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-l-sc-mat-scienza-dei-materiali": {
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/2443",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno elenca 39 CFU obbligatori e 36 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-12-design-per-l-innovazione-sostenibile": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4072",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 18 CFU obbligatori e 60 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4072",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 33 CFU obbligatori e 55 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-12-design-sistema-moda": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4073",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 30 CFU obbligatori e 42 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-14-filologia-moderna": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4670",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno (percorso «LETTERARIO») elenca 24 CFU obbligatori e 186 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4670",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «INTERNAZIONALE IN STUDI SUL RINASCIMENTO EUROPEO») elenca 30 CFU obbligatori e 93 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-16-finance-and-risk-management-finanza-e-gestione-del-rischio": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4079",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 33 CFU obbligatori e 84 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-17-physical-and-astrophysical-sciences": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/5281",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «ASTROPHYSICS») elenca 36 CFU obbligatori e 12 a scelta (in tutto 48). Il corso intero ne elenca 459 su 120: sulla fonte i CFU sono distribuiti tra gli anni in modo diverso da 60 per anno; per i gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio» il catalogo non indica quanti CFU scegliere."
+  }
+ },
+ "unifi-lm-18-software-science-and-technology": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4474",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 18 CFU obbligatori e 90 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-2-archeologia": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4672",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «ARCHEOLOGIA PREISTORICA») elenca 36 CFU obbligatori e 36 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-25-robotics-automation-and-electrical-engineering": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4283",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno (percorso «ELECTRICAL ENGINEERING») elenca 21 CFU obbligatori e 144 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-29-ingegneria-dei-sistemi-elettronici": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4284",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno (percorso «SISTEMI ELETTRONICI AD ALTA FREQUENZA») elenca 33 CFU obbligatori e 42 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-30-ingegneria-energetica": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/5275",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno (percorso «ENERGIA») elenca 24 CFU obbligatori e 111 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/5275",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «ENERGIA») elenca 33 CFU obbligatori e 60 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-32-ingegneria-informatica": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4286",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno (percorso «MULTIMEDIA SYSTEMS») elenca 24 CFU obbligatori e 150 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4286",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «ADVANCED COMPUTING») elenca 18 CFU obbligatori e 69 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-32-intelligenza-artificiale": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4287",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 33 CFU obbligatori e 102 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4287",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 30 CFU obbligatori e 84 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo). Il catalogo elenca per questo anno 30 CFU obbligatori e 90 a scelta; le scelte offerte anche in un altro anno compaiono nel database solo nel primo anno in cui sono offerte."
+  }
+ },
+ "unifi-lm-33-ingegneria-meccanica": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/5276",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno (percorso «MODELLI PER L'INGEGNERIA INDUSTRIALE») elenca 36 CFU obbligatori e 48 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-36-lingue-e-civilta-dell-asia-e-dell-africa": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4673",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 0 CFU obbligatori e 210 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4673",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 24 CFU obbligatori e 102 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo). Il catalogo elenca per questo anno 24 CFU obbligatori e 126 a scelta; le scelte offerte anche in un altro anno compaiono nel database solo nel primo anno in cui sono offerte."
+  }
+ },
+ "unifi-lm-40-matematica": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4475",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno (percorso «GENERALE») elenca 36 CFU obbligatori e 153 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4475",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «APPLICATIVO») elenca 36 CFU obbligatori e 6 a scelta (in tutto 42). Il corso intero ne elenca 231 su 120: sulla fonte i CFU sono distribuiti tra gli anni in modo diverso da 60 per anno; per i gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio» il catalogo non indica quanti CFU scegliere."
+  }
+ },
+ "unifi-lm-49-design-of-sustainable-tourism-systems-progettazione-dei-sist": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/5269",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 39 CFU obbligatori e 51 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/5269",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 24 CFU obbligatori e 78 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-5-scienze-archivistiche-e-biblioteconomiche": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4674",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 6 CFU obbligatori e 114 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4674",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 24 CFU obbligatori e 60 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-50-dirigenza-scolastica-e-pedagogia-per-l-inclusione": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/7276",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 36 CFU obbligatori e 42 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4675",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 36 CFU obbligatori e 36 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-51-psicologia-del-ciclo-di-vita-e-dei-contesti": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4089",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «PSICOLOGIA DEL LAVORO E DELLE ORGANIZZAZIONI») elenca 28 CFU obbligatori e 70 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-52-lm-90-relazioni-internazionali-e-studi-europei": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/5466",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 0 CFU obbligatori e 129 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/5466",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 6 CFU obbligatori e 204 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-54-advanced-chemical-sciences-technologies": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/6276",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 36 CFU obbligatori e 51 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-54-scienze-chimiche": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4476",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno (percorso «CHIMICA DELLE MOLECOLE BIOLOGICHE») elenca 36 CFU obbligatori e 36 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-56-economia-istituzioni-sostenibilita-economics-institutions-su": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/5270",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno (percorso «IMPRESE E ISTITUZIONI») elenca 27 CFU obbligatori e 66 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/5270",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «ENVIRONMENT AND TERRITORY») elenca 39 CFU obbligatori e 30 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-56-economics-and-development-economia-politica-e-sviluppo-econo": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/5271",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «ECONOMICS») elenca 33 CFU obbligatori e 75 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-59-strategie-di-comunicazione-nella-societa-digitale": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/5467",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 33 CFU obbligatori e 30 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo). Il catalogo elenca per questo anno 33 CFU obbligatori e 72 a scelta; le scelte offerte anche in un altro anno compaiono nel database solo nel primo anno in cui sono offerte."
+  }
+ },
+ "unifi-lm-6-biologia-dell-ambiente-e-del-comportamento": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4479",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «del COMPORTAMENTO») elenca 30 CFU obbligatori e 60 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-6-biologia-molecolare-e-applicata": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4478",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «Biosanitario e della Nutrizione») elenca 30 CFU obbligatori e 78 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-62-politica-istituzioni-e-mercato": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4264",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno (percorso «ISTITUZIONI E MERCATI») elenca 36 CFU obbligatori e 54 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4264",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «ISTITUZIONI E POLITICA») elenca 18 CFU obbligatori e 99 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-64-intermediazione-culturale-e-religiosa": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4676",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 36 CFU obbligatori e 78 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4676",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 18 CFU obbligatori e 90 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-74-scienze-e-tecnologie-geologiche": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4481",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno (percorso «DINAMICA DEI SISTEMI VULCANICI») elenca 36 CFU obbligatori e 60 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-78-scienze-filosofiche": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4677",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno (percorso «FILOSOFIA: TESTO E INTERPRETAZIONE») elenca 0 CFU obbligatori e 234 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-80-geography-spatial-management-heritage-for-international-coop": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/5474",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 36 CFU obbligatori e 30 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/5474",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 36 CFU obbligatori e 24 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-82-statistica-e-data-science": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4081",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «SCIENZE STATISTICHE») elenca 29 CFU obbligatori e 109 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-84-scienze-storiche": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4678",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 0 CFU obbligatori e 192 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4678",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 36 CFU obbligatori e 162 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-87-disegno-e-gestione-degli-interventi-sociali": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4265",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 36 CFU obbligatori e 35 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-88-sociologia-e-sfide-globali": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4266",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 27 CFU obbligatori e 75 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-89-storia-dell-arte": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4679",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 6 CFU obbligatori e 168 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4679",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 30 CFU obbligatori e 48 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-9-biotecnologie-mediche-e-farmaceutiche": {
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4273",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno (percorso «BIOTECNOLOGIE INFORMATICHE E BIGDATA IN BIOMEDICINA») elenca 39 CFU obbligatori e 52 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo). Il catalogo elenca per questo anno 39 CFU obbligatori e 82 a scelta; le scelte offerte anche in un altro anno compaiono nel database solo nel primo anno in cui sono offerte."
+  }
+ },
+ "unifi-lm-92-pratiche-linguaggi-e-culture-della-comunicazione": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4680",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 24 CFU obbligatori e 78 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lm-data-data-science-calcolo-scientifico-intelligenza-artificiale": {
+  "1": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2026/4473",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2026): il 1° anno elenca 24 CFU obbligatori e 96 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  },
+  "2": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2025/4473",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2025): il 2° anno elenca 30 CFU obbligatori e 84 CFU in gruppi «Opzionali, secondo le regole di scelta del proprio piano di studio»: il piano di quest'anno è in gran parte a scelta sulla fonte (il catalogo non indica quanti CFU scegliere per gruppo)."
+  }
+ },
+ "unifi-lmg-01-giurisprudenza-italiana-e-tedesca": {
+  "3": {
+   "fonte": "https://unifi.coursecatalogue.cineca.it/corsi/2024/717",
+   "nota": "Verifica automatica sul catalogo ufficiale (API del Course Catalogue, coorte 2024): il 3° anno elenca 30 CFU obbligatori; l'anno ha lo stesso totale in tutte le coorti dal 2021 a oggi e il corso intero elenca 300 CFU su 300. Il piano è così sulla fonte (il catalogo non spiega la distribuzione)."
+  }
+ },
+ "unilink-l-ds-scienze-della-difesa-e-della-sicurezza": {
+  "2": {
+   "fonte": "https://unilink.coursecatalogue.cineca.it/corsi/2026/10443",
+   "nota": "catalogo, piano della coorte 2025 (gli iscritti al 2° anno nel 2026/27): 36 CFU obbligatori + gruppo a scelta da 12 CFU dichiarato (le 10 alternative da 6 CFU sono solo le opzioni) = 48 CFU; anni della coorte 60+48+72 = 180 CFU"
+  }
+ },
+ "unilink-l-ds-scienze-della-difesa-e-della-sicurezza-replica-roma": {
+  "2": {
+   "fonte": "https://unilink.coursecatalogue.cineca.it/corsi/2026/10443",
+   "nota": "catalogo, piano della coorte 2025 (gli iscritti al 2° anno nel 2026/27): 36 CFU obbligatori + gruppo a scelta da 12 CFU dichiarato (le 10 alternative da 6 CFU sono solo le opzioni) = 48 CFU; anni della coorte 60+48+72 = 180 CFU"
+  }
+ },
+ "unilink-lm-41-medicina-e-chirurgia": {
+  "1": {
+   "fonte": "https://unilink.coursecatalogue.cineca.it/corsi/2026/10512",
+   "nota": "catalogo, piano della coorte 2026 (gli iscritti al 1° anno nel 2026/27): 58 CFU nell'anno (obbligatori 58); anni della coorte 58+55+58+62+64+63 = 360 CFU (distribuzione diversa tra gli anni, totale della coorte giusto)"
+  },
+  "2": {
+   "fonte": "https://unilink.coursecatalogue.cineca.it/corsi/2025/10512",
+   "nota": "catalogo, piano della coorte 2025 (gli iscritti al 2° anno nel 2026/27): 55 CFU nell'anno (obbligatori 54); anni della coorte 58+55+58+62+64+63 = 360 CFU (distribuzione diversa tra gli anni, totale della coorte giusto)"
+  },
+  "5": {
+   "fonte": "https://unilink.coursecatalogue.cineca.it/corsi/2023/10111",
+   "nota": "catalogo, piano della coorte 2022 (gli iscritti al 5° anno nel 2026/27): 40 CFU nell'anno (obbligatori 38); anni della coorte 63+57+62+66+40+73 = 361 CFU (distribuzione diversa tra gli anni, totale della coorte giusto)"
+  }
+ },
+ "unilink-lm-46-odontoiatria": {
+  "5": {
+   "fonte": "https://unilink.coursecatalogue.cineca.it/corsi/2024/10232",
+   "nota": "catalogo, piano della coorte 2024 (la coorte 2022 degli iscritti al 5° anno non ha un piano nel catalogo: la più vicina): 36 CFU nell'anno (obbligatori 34); anni della coorte 62+58+61+86+36+57 = 360 CFU (distribuzione diversa tra gli anni, totale della coorte giusto)"
+  }
+ },
+ "unilink-lm-46-odontoiatria-replica-macerata": {
+  "5": {
+   "fonte": "https://unilink.coursecatalogue.cineca.it/corsi/2025/10465",
+   "nota": "catalogo, piano della coorte 2025 (la coorte 2022 degli iscritti al 5° anno non ha un piano nel catalogo: la più vicina): 36 CFU nell'anno (obbligatori 34); anni della coorte 62+58+61+86+36+57 = 360 CFU (distribuzione diversa tra gli anni, totale della coorte giusto)"
+  }
+ },
+ "unilink-lm-46-odontoiatria-replica-pescara": {
+  "5": {
+   "fonte": "https://unilink.coursecatalogue.cineca.it/corsi/2026/10614",
+   "nota": "catalogo, piano della coorte 2026 (la coorte 2022 degli iscritti al 5° anno non ha un piano nel catalogo: la più vicina): 36 CFU nell'anno (obbligatori 36); anni della coorte 62+58+61+86+36+57 = 360 CFU (distribuzione diversa tra gli anni, totale della coorte giusto)"
+  }
+ },
+ "unilink-lm-46-odontoiatria-replica-roma": {
+  "5": {
+   "fonte": "https://unilink.coursecatalogue.cineca.it/corsi/2025/10502",
+   "nota": "catalogo, piano della coorte 2025 (la coorte 2022 degli iscritti al 5° anno non ha un piano nel catalogo: la più vicina): 36 CFU nell'anno (obbligatori 34); anni della coorte 62+58+61+86+36+57 = 360 CFU (distribuzione diversa tra gli anni, totale della coorte giusto)"
   }
  },
  "unime-l-11-l-12-lingue-letterature-straniere-e-tecniche-della-mediazione-lin": {
@@ -3963,6 +4847,434 @@
    "nota": "verifica automatica sul piano ufficiale (piano DAM02, a.a. 2026-2027, dati del portale dei corsi di studio): obbligatori 30 CFU + gruppi e crediti a scelta 30 CFU = 60 CFU; il database ha gli insegnamenti dei gruppi a scelta (obbligatori 30, tra cui scegliere 165 CFU di insegnamenti)"
   }
  },
+ "unipi-l-1-scienze-dei-beni-culturali": {
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10449",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 30 CFU di attività da sostenere e gruppi a scelta che richiedono altri 30 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 182 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-10-informatica-umanistica": {
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10456",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 30 CFU di attività da sostenere e gruppi a scelta che richiedono altri 30 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 182 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-10-lettere": {
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10454",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 18 CFU di attività da sostenere e gruppi a scelta che richiedono altri 42 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 182 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-11-lingue-letterature-e-comunicazione-interculturale": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11453",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 11 CFU di attività da sostenere e gruppi a scelta che richiedono altri 54 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 65 CFU (a seconda del percorso: da 62 a 65 CFU); il piano della coorte somma 185 CFU su 180 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11453",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 15 CFU di attività da sostenere e gruppi a scelta che richiedono altri 45 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: da 57 a 60 CFU); il piano della coorte somma 197 CFU su 180 del corso. La somma delle etichette supera i CFU del corso perché alcuni gruppi sono comuni a più anni, alternativi tra loro o facoltativi."
+  },
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/11447",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 14 CFU di attività da sostenere e gruppi a scelta che richiedono altri 51 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 65 CFU (a seconda del percorso: da 62 a 65 CFU); il piano della coorte somma 185 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-13-scienze-biologiche": {
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10460",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 30 CFU di attività da sostenere e gruppi a scelta che richiedono altri 27 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 57 CFU; il piano della coorte somma 183 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-14-diritto-dell-impresa-del-lavoro-e-delle-pubbliche-amministra": {
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10508",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 24 CFU di attività da sostenere e gruppi a scelta che richiedono altri 42 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 66 CFU (a seconda del percorso: 66 CFU); il piano della coorte somma 180 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-15-scienze-del-turismo": {
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10509",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 36 CFU di attività da sostenere e gruppi a scelta che richiedono altri 24 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 180 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-18-banca-finanza-e-mercati-finanziari": {
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10445",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 39 CFU di attività da sostenere e gruppi a scelta che richiedono altri 21 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 182 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-25-scienze-agrarie": {
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10424",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 34 CFU di attività da sostenere e gruppi a scelta che richiedono altri 24 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 58 CFU (a seconda del percorso: 58 CFU); il piano della coorte somma 180 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-3-l-20-discipline-dello-spettacolo-e-della-comunicazione": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11463",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 8 CFU di attività da sostenere e gruppi a scelta che richiedono altri 54 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 62 CFU (a seconda del percorso: 62 CFU); il piano della coorte somma 182 CFU su 180 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11463",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 0 CFU di attività da sostenere e gruppi a scelta che richiedono altri 60 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 182 CFU su 180 del corso."
+  },
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10550",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 12 CFU di attività da sostenere e gruppi a scelta che richiedono altri 48 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 182 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-30-fisica": {
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10441",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 33 CFU di attività da sostenere e gruppi a scelta che richiedono altri 30 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 63 CFU; il piano della coorte somma 177 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-31-informatica": {
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10298",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 30 CFU di attività da sostenere e gruppi a scelta che richiedono altri 27 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 57 CFU; il piano della coorte somma 182 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-36-scienze-politiche": {
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10977",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 38 CFU di attività da sostenere e gruppi a scelta che richiedono altri 24 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 62 CFU (a seconda del percorso: da 53 a 62 CFU); il piano della coorte somma 182 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-37-scienze-per-la-pace-cooperazione-internazionale-e-trasformaz": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11473",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 33 CFU di attività da sostenere e gruppi a scelta che richiedono altri 27 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 182 CFU su 180 del corso."
+  },
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10588",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 26 CFU di attività da sostenere e gruppi a scelta che richiedono altri 42 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 68 CFU; il piano della coorte somma 179 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-39-scienze-del-servizio-sociale": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11552",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 39 CFU di attività da sostenere e gruppi a scelta che richiedono altri 21 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 180 CFU su 180 del corso."
+  }
+ },
+ "unipi-l-42-storia": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11474",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 38 CFU di attività da sostenere e gruppi a scelta che richiedono altri 24 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 62 CFU (a seconda del percorso: 62 CFU); il piano della coorte somma 188 CFU su 180 del corso. La somma delle etichette supera i CFU del corso perché alcuni gruppi sono comuni a più anni, alternativi tra loro o facoltativi."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11474",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 30 CFU di attività da sostenere e gruppi a scelta che richiedono altri 30 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 200 CFU su 180 del corso. La somma delle etichette supera i CFU del corso perché alcuni gruppi sono comuni a più anni, alternativi tra loro o facoltativi."
+  },
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10450",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 17 CFU di attività da sostenere e gruppi a scelta che richiedono altri 63 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 80 CFU (a seconda del percorso: da 63 a 80 CFU); il piano della coorte somma 212 CFU su 180 del corso. La somma delle etichette supera i CFU del corso perché alcuni gruppi sono comuni a più anni, alternativi tra loro o facoltativi."
+  }
+ },
+ "unipi-l-5-filosofia": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11472",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 28 CFU di attività da sostenere e gruppi a scelta che richiedono altri 34 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 62 CFU; il piano della coorte somma 188 CFU su 180 del corso. La somma delle etichette supera i CFU del corso perché alcuni gruppi sono comuni a più anni, alternativi tra loro o facoltativi."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11472",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 0 CFU di attività da sostenere e gruppi a scelta che richiedono altri 60 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 182 CFU su 180 del corso."
+  },
+  "3": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2024/10451",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2024 (Course Catalogue Cineca, API pubblica): l'anno 3 elenca 6 CFU di attività da sostenere e gruppi a scelta che richiedono altri 54 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 182 CFU su 180 del corso."
+  }
+ },
+ "unipi-lm-14-italianistica": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/10972",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 30 CFU di attività da sostenere e gruppi a scelta che richiedono altri 33 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 63 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/10972",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 39 CFU di attività da sostenere e gruppi a scelta che richiedono altri 18 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 57 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-15-filologia-e-storia-dell-antichita": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/10514",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 0 CFU di attività da sostenere e gruppi a scelta che richiedono altri 69 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 69 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/10514",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 21 CFU di attività da sostenere e gruppi a scelta che richiedono altri 30 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 51 CFU; il piano della coorte somma 120 CFU su 120 del corso. L'anno elenca meno di 54 CFU: gli altri CFU del corso sono in altri anni o nelle sezioni senza anno del piano."
+  }
+ },
+ "unipi-lm-18-lm-data-data-science-and-business-informatics": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11357",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 33 CFU di attività da sostenere e gruppi a scelta che richiedono altri 24 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 57 CFU; il piano della coorte somma 123 CFU su 120 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11357",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 39 CFU di attività da sostenere e gruppi a scelta che richiedono altri 27 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 66 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-2-archeologia": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11545",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 24 CFU di attività da sostenere e gruppi a scelta che richiedono altri 36 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-2-studi-orientali-ed-egittologici": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11565",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 0 CFU di attività da sostenere e gruppi a scelta che richiedono altri 60 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11565",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 30 CFU di attività da sostenere e gruppi a scelta che richiedono altri 30 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-23-lm-24-ingegneria-strutturale-e-edile": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11538",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 33 CFU di attività da sostenere e gruppi a scelta che richiedono altri 27 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: da 57 a 60 CFU); il piano della coorte somma 123 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-27-communications-engineering": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11562",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 24 CFU di attività da sostenere e gruppi a scelta che richiedono altri 36 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-37-lingue-letterature-e-filologie-euro-americane": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11513",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 0 CFU di attività da sostenere e gruppi a scelta che richiedono altri 57 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 57 CFU (a seconda del percorso: 57 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11513",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 21 CFU di attività da sostenere e gruppi a scelta che richiedono altri 42 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 63 CFU (a seconda del percorso: 63 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-39-linguistica-e-traduzione": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/10974",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 33 CFU di attività da sostenere e gruppi a scelta che richiedono altri 27 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/10974",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 27 CFU di attività da sostenere e gruppi a scelta che richiedono altri 33 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-40-matematica": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11514",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 38 CFU di attività da sostenere e gruppi a scelta che richiedono altri 30 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 68 CFU (a seconda del percorso: 68 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-41-medicina-e-chirurgia": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11505",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 33 CFU di attività da sostenere e gruppi a scelta che richiedono altri 18 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 51 CFU; il piano della coorte somma 408 CFU su 360 del corso. La somma delle etichette supera i CFU del corso perché alcuni gruppi sono comuni a più anni, alternativi tra loro o facoltativi. L'anno elenca meno di 54 CFU: gli altri CFU del corso sono in altri anni o nelle sezioni senza anno del piano."
+  }
+ },
+ "unipi-lm-43-informatica-umanistica": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11512",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 15 CFU di attività da sostenere e gruppi a scelta che richiedono altri 48 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 63 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11512",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 27 CFU di attività da sostenere e gruppi a scelta che richiedono altri 30 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 57 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-52-unione-europea-processi-globali-e-sostenibilita-dello-svilup": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11560",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 24 CFU di attività da sostenere e gruppi a scelta che richiedono altri 36 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-53-materials-and-nanotechnology": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11421",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 36 CFU di attività da sostenere e gruppi a scelta che richiedono altri 24 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-56-economics": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11486",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 39 CFU di attività da sostenere e gruppi a scelta che richiedono altri 21 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-6-biologia-applicata-alla-biomedicina": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11461",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 15 CFU di attività da sostenere e gruppi a scelta che richiedono altri 48 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 63 CFU; il piano della coorte somma 121 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-6-biologia-marina": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11462",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 15 CFU di attività da sostenere e gruppi a scelta che richiedono altri 54 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 69 CFU; il piano della coorte somma 121 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-6-biologia-molecolare-e-cellulare": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11464",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 9 CFU di attività da sostenere e gruppi a scelta che richiedono altri 54 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 63 CFU; il piano della coorte somma 121 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-6-neuroscience": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11467",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 12 CFU di attività da sostenere e gruppi a scelta che richiedono altri 48 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 121 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-60-lm-6-conservazione-ed-evoluzione": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11543",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 18 CFU di attività da sostenere e gruppi a scelta che richiedono altri 43 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 61 CFU; il piano della coorte somma 130 CFU su 120 del corso. La somma delle etichette supera i CFU del corso perché alcuni gruppi sono comuni a più anni, alternativi tra loro o facoltativi."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11543",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 3 CFU di attività da sostenere e gruppi a scelta che richiedono altri 57 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 121 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-67-scienze-e-tecniche-delle-attivita-motorie-preventive-e-adatt": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11511",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 33 CFU di attività da sostenere e gruppi a scelta che richiedono altri 24 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 57 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-69-progettazione-e-gestione-del-verde-urbano-e-del-paesaggio": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11544",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 33 CFU di attività da sostenere e gruppi a scelta che richiedono altri 31 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 64 CFU; il piano della coorte somma 120 CFU su 120 del corso. Anno dedotto dalla coorte 2026: il piano pubblicato per la coorte 2025, che segue questo anno, è incompleto (somma meno dei CFU del corso) e la coorte 2026 è la più vicina con il piano completo."
+  }
+ },
+ "unipi-lm-7-biotecnologie-vegetali-e-microbiche": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11542",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 30 CFU di attività da sostenere e gruppi a scelta che richiedono altri 27 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 57 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11542",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 18 CFU di attività da sostenere e gruppi a scelta che richiedono altri 45 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 63 CFU; il piano della coorte somma 120 CFU su 120 del corso. Anno dedotto dalla coorte 2026: il piano pubblicato per la coorte 2025, che segue questo anno, è incompleto (somma meno dei CFU del corso) e la coorte 2026 è la più vicina con il piano completo."
+  }
+ },
+ "unipi-lm-71-chimica-industriale": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11471",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 30 CFU di attività da sostenere e gruppi a scelta che richiedono altri 27 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 57 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-74-scienze-e-tecnologie-geologiche": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11495",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 0 CFU di attività da sostenere e gruppi a scelta che richiedono altri 54 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 54 CFU (a seconda del percorso: 54 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-75-scienze-dell-ambiente-e-del-clima": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11563",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 18 CFU di attività da sostenere e gruppi a scelta che richiedono altri 36 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 54 CFU (a seconda del percorso: 54 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11563",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 36 CFU di attività da sostenere e gruppi a scelta che richiedono altri 30 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 66 CFU (a seconda del percorso: 66 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-77-consulenza-professionale-alle-aziende": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11485",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 36 CFU di attività da sostenere e gruppi a scelta che richiedono altri 12 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 48 CFU; il piano della coorte somma 120 CFU su 120 del corso. L'anno elenca meno di 54 CFU: gli altri CFU del corso sono in altri anni o nelle sezioni senza anno del piano."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11485",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 36 CFU di attività da sostenere e gruppi a scelta che richiedono altri 24 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-77-digital-intelligence-and-change-management": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11454",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 33 CFU di attività da sostenere e gruppi a scelta che richiedono altri 30 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 63 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11454",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 39 CFU di attività da sostenere e gruppi a scelta che richiedono altri 18 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 57 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-77-marketing-e-ricerche-di-mercato": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11488",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 27 CFU di attività da sostenere e gruppi a scelta che richiedono altri 36 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 63 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-77-strategia-management-e-controllo": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11489",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 18 CFU di attività da sostenere e gruppi a scelta che richiedono altri 42 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU (a seconda del percorso: 60 CFU); il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-78-filosofia-e-forme-del-sapere": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11475",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 0 CFU di attività da sostenere e gruppi a scelta che richiedono altri 60 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11475",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 24 CFU di attività da sostenere e gruppi a scelta che richiedono altri 36 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-8-biotecnologie-molecolari": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11466",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 9 CFU di attività da sostenere e gruppi a scelta che richiedono altri 57 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 66 CFU; il piano della coorte somma 121 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-84-storia-e-civilta": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11478",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 0 CFU di attività da sostenere e gruppi a scelta che richiedono altri 54 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 54 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11478",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 24 CFU di attività da sostenere e gruppi a scelta che richiedono altri 36 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-89-storia-dell-arte": {
+  "1": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2026/11477",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2026 (Course Catalogue Cineca, API pubblica): l'anno 1 elenca 0 CFU di attività da sostenere e gruppi a scelta che richiedono altri 60 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  },
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11477",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 23 CFU di attività da sostenere e gruppi a scelta che richiedono altri 37 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-92-comunicazione-media-tecnologie": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11444",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 36 CFU di attività da sostenere e gruppi a scelta che richiedono altri 24 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 60 CFU; il piano della coorte somma 120 CFU su 120 del corso."
+  }
+ },
+ "unipi-lm-sc-giur-diritto-dell-innovazione-per-l-impresa-e-le-istituzioni": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11539",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 39 CFU di attività da sostenere e gruppi a scelta che richiedono altri 27 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 66 CFU (a seconda del percorso: da 60 a 66 CFU); il piano della coorte somma 126 CFU su 120 del corso."
+  }
+ },
+ "unipi-lmg-01-giurisprudenza-1634621": {
+  "2": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2025/11458",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2025 (Course Catalogue Cineca, API pubblica): l'anno 2 elenca 34 CFU di attività da sostenere e gruppi a scelta che richiedono altri 30 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 64 CFU; il piano della coorte somma 310 CFU su 300 del corso. La somma delle etichette supera i CFU del corso perché alcuni gruppi sono comuni a più anni, alternativi tra loro o facoltativi."
+  },
+  "4": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2023/10217",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2023 (Course Catalogue Cineca, API pubblica): l'anno 4 elenca 6 CFU di attività da sostenere e gruppi a scelta che richiedono altri 53 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 59 CFU; il piano della coorte somma 300 CFU su 300 del corso."
+  },
+  "5": {
+   "fonte": "https://unipi.coursecatalogue.cineca.it/corsi/2022/10217",
+   "nota": "Verifica automatica sul piano ufficiale della coorte 2022 (Course Catalogue Cineca, API pubblica): l'anno 5 elenca 33 CFU di attività da sostenere e gruppi a scelta che richiedono altri 25 CFU (ogni gruppo ha i propri CFU nell'etichetta), in tutto 58 CFU; il piano della coorte somma 300 CFU su 300 del corso."
+  }
+ },
  "uniroma1-l-10-classics": {
   "3": {
    "fonte": "https://corsidilaurea.uniroma1.it/it/timeview/2024/32359/study-plan",
@@ -5047,6 +6359,22 @@
   "2": {
    "fonte": "https://uniroma3-public.gomp.it/PublicData?uid=900d9e62-16d2-445a-a06b-117780c8e1f8&mode=CourseDetail&iso=ita&academicYear=2026",
    "nota": "corso LM-Data attivato nel 2026/27: nell'API pubblica GOMP non esiste la coorte 2025/26 e il regolamento 2026/27 pubblica solo il 1° anno, quindi il 2° anno non è nella fonte"
+  }
+ },
+ "unisalento-lm-2-archeologia": {
+  "1": {
+   "fonte": "https://www.bbcc.unisalento.it/documents/3869715/3897476/Regolamento+didattico+ARCHEOLOGIA+%28LM-2%29+2026_27.pdf/228b1a6d-fd77-7d89-9ba1-e78f5575b0af",
+   "nota": "Regolamento didattico, piano coorte 2026, I anno: totale dichiarato 63 CFU (1+3+1+1+1 esami a scelta tra gruppi, laboratori 2 CFU a scelta, esami fissi e attività); II anno 57 CFU, totale corso 120. Il portale elenca in modo piatto le alternative."
+  },
+  "2": {
+   "fonte": "https://www.bbcc.unisalento.it/documents/3869715/3897476/Regolamento+didattico+ARCHEOLOGIA+%28LM-2%29+2025_26.pdf/bb4aff6b-e1e1-3248-276a-e26a8301b914",
+   "nota": "Regolamento didattico, piano coorte 2025, II anno: 60 CFU = due esami a scelta tra otto (12) + tirocini 2 + scavi 2 + laboratorio 2 + a scelta dello studente 12 + prova finale 30."
+  }
+ },
+ "unisalento-lm-65-scienze-dello-spettacolo-e-della-produzione-audiovisiva": {
+  "2": {
+   "fonte": "https://www.bbcc.unisalento.it/documents/3869715/3897476/Regolamento+didattico+SSPA+%28LM-+65%29+2025_26.pdf/7e6848d6-25f2-b417-c1d3-ea56a62cdf46",
+   "nota": "Regolamento didattico, piano coorte 2025, II anno: 48 CFU dichiarati (obbligatori 33 + un esame da 9 a scelta tra quattro + un insegnamento da 6 a scelta tra due), I anno 72, totale corso 120."
   }
  },
  "unisi-l-1-patrimonio-culturale-territorio-turismo-sostenibile": {
@@ -6419,6 +7747,400 @@
   "3": {
    "fonte": "https://unito.coursecatalogue.cineca.it/corsi/2024/16004",
    "nota": "Piano della coorte 2024: all'anno sono assegnati 58 CFU (58 obbligatori, 0 a scelta) e tutte le attività elencate dalla fonte sono nel database; i CFU mancanti per arrivare a 60 sono a scelta libera o altre attività che il piano non assegna a un anno («anno 0»)."
+  }
+ },
+ "unitus-l-10-lettere-moderne": {
+  "3": {
+   "fonte": "https://unitus-public.gomp.it/PublicData?uid=6c21efb4-2472-4582-a195-2190abee53ea&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "Terzo anno da 56 CFU dichiarati dal regolamento della coorte 2024 (ex Scienze umanistiche, entrambi i percorsi): la coorte somma 66+58+56=180 CFU; molti gruppi 'una materia a scelta tra'"
+  }
+ },
+ "unitus-l-11-lingue-e-culture-moderne": {
+  "1": {
+   "fonte": "https://unitus-public.gomp.it/PublicData?uid=8178b131-03c6-42ed-b52b-5942980188f0&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "Primo anno 'Curriculum unico' con gruppi a scelta (prima e seconda lingua, letterature, esami di base, altre attività, esami a scelta) che dichiarano 88 CFU sul regolamento 2026: pochi obbligatori ma i gruppi coprono i 60 CFU"
+  }
+ },
+ "unitus-l-20-comunicazione-tecnologie-e-culture-digitali": {
+  "3": {
+   "fonte": "https://unitus-public.gomp.it/PublicData?uid=3b337a03-c85c-413d-abae-3fd67c01c1e1&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "Terzo anno da 54 CFU dichiarati dal regolamento della coorte 2024 (che lo frequenta); la stessa coorte somma 62+64+54=180 CFU: diversa distribuzione tra gli anni, i due gruppi 'una materia a scelta tra' valgono 8 CFU ciascuno"
+  }
+ },
+ "unitus-l-21-progettazione-del-paesaggio-e-del-territorio": {
+  "3": {
+   "fonte": "https://unitus-public.gomp.it/PublicData?uid=21841e64-3148-46d0-944e-3d1294a98707&mode=CourseDetail&iso=ita&academicYear=2024",
+   "nota": "Terzo anno da 52 CFU dichiarati dal regolamento della coorte 2024 (52 anche in tutte le altre coorti); la coorte somma 63+65+52=180 CFU: diversa distribuzione tra gli anni"
+  }
+ },
+ "unitus-lm-37-lingue-e-culture-per-la-comunicazione-internazionale": {
+  "1": {
+   "fonte": "https://unitus-public.gomp.it/PublicData?uid=35e71a56-0ee7-426d-8ff0-055cbcc8fc7e&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "Primo anno da 48 CFU dichiarati dal regolamento 2026 (percorsi Letterature e civiltà e Lingua e cultura italiana); la coorte somma 48+72=120 CFU: diversa distribuzione tra gli anni, molti gruppi a scelta"
+  },
+  "2": {
+   "fonte": "https://unitus-public.gomp.it/PublicData?uid=01ac3972-a325-4b04-a346-3315fa975067&mode=CourseDetail&iso=ita&academicYear=2025",
+   "nota": "Secondo anno da 72 CFU dichiarati dal regolamento 2025 (opzioni A e B, 48+72=120 CFU di coorte): gruppi a scelta che superano i 60 CFU"
+  }
+ },
+ "unitus-lm-91-informazione-digitale": {
+  "1": {
+   "fonte": "https://unitus-public.gomp.it/PublicData?uid=db5a7722-30b1-4aba-bc07-b643ec497e1f&mode=CourseDetail&iso=ita&academicYear=2026",
+   "nota": "Primo anno da 44 CFU dichiarati dal regolamento 2026; la stessa coorte somma 44+76=120 CFU: diversa distribuzione tra gli anni"
+  }
+ },
+ "univpm-l-33-economia-e-commercio": {
+  "3": {
+   "fonte": "https://univpm.coursecatalogue.cineca.it/corsi/2024/406",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 20/10/2026: l'anno 3 è quello del piano della coorte 2024 (https://univpm.coursecatalogue.cineca.it/corsi/2024/406); le attività dell'anno sono 36 per 3 CFU obbligatori e 273 CFU a scelta. Il resto dell'anno è in 9 gruppi a scelta o a CFU fissi del piano (es. «18 CREDITI A SCELTA VINCOLATA TERZO ANNO (18 CFU)»; «9 CREDITI A SCELTA VINCOLATA TERZO ANNO (9 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano. Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "univpm-l-33-l-18-digital-economics-and-business": {
+  "3": {
+   "fonte": "https://univpm.coursecatalogue.cineca.it/corsi/2024/1175",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 20/10/2026: l'anno 3 è quello del piano della coorte 2024 (https://univpm.coursecatalogue.cineca.it/corsi/2024/1175); le attività dell'anno sono 20 per 27 CFU obbligatori e 108 CFU a scelta. Il resto dell'anno è in 9 gruppi a scelta o a CFU fissi del piano (es. «6 OPTIONAL CORE CREDITS THIRD YEAR (6 CFU)»; «9 OPTIONAL CORE CREDITS SECOND YEAR (9 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano. Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "univpm-l-8-ingegneria-biomedica": {
+  "3": {
+   "fonte": "https://univpm.coursecatalogue.cineca.it/corsi/2024/176",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 20/10/2026: l'anno 3 è quello del piano della coorte 2024 (https://univpm.coursecatalogue.cineca.it/corsi/2024/176); le attività dell'anno sono 20 per 39 CFU obbligatori e 84 CFU a scelta. Il resto dell'anno è in 4 gruppi a scelta o a CFU fissi del piano (es. «SCELTA VINCOLATA TERZO ANNO (6 CFU)»; «- scelta vincolata terzo anno (6 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano. Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "univpm-l-8-ingegneria-dellinformazione-per-videogame-e-realta-virtuale": {
+  "3": {
+   "fonte": "https://univpm.coursecatalogue.cineca.it/corsi/2024/1375",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 20/10/2026: l'anno 3 è quello del piano della coorte 2024 (https://univpm.coursecatalogue.cineca.it/corsi/2024/1375); le attività dell'anno sono 20 per 33 CFU obbligatori e 135 CFU a scelta. Il resto dell'anno è in 4 gruppi a scelta o a CFU fissi del piano (es. «SCELTA VINCOLATA TERZO ANNO (9 CFU)»; «- AF non opzionate (fra 1 e 9 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano. Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "univpm-l-8-ingegneria-informatica-e-dell-automazione": {
+  "3": {
+   "fonte": "https://univpm.coursecatalogue.cineca.it/corsi/2024/177",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 20/10/2026: l'anno 3 è quello del piano della coorte 2024 (https://univpm.coursecatalogue.cineca.it/corsi/2024/177); le attività dell'anno sono 15 per 24 CFU obbligatori e 99 CFU a scelta. Il resto dell'anno è in 4 gruppi a scelta o a CFU fissi del piano (es. «SCELTA VINCOLATA TERZO ANNO (I) (9 CFU)»; «SCELTA VINCOLATA TERZO ANNO (II) (18 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano. Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "univpm-l-9-l-8-ingegneria-gestionale": {
+  "3": {
+   "fonte": "https://univpm.coursecatalogue.cineca.it/corsi/2024/178",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 20/10/2026: l'anno 3 è quello del piano della coorte 2024 (https://univpm.coursecatalogue.cineca.it/corsi/2024/178); le attività dell'anno sono 19 per 27 CFU obbligatori e 111 CFU a scelta. Il resto dell'anno è in 6 gruppi a scelta o a CFU fissi del piano (es. «SCELTA VINCOLATA CURRICULUM L-8 TERZO ANNO (I) (9 CFU)»; «SCELTA VINCOLATA CURRICULUM L-8 TERZO ANNO (II) (9 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano. Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "univpm-lm-32-ingegneria-informatica-e-dell-automazione": {
+  "1": {
+   "fonte": "https://univpm.coursecatalogue.cineca.it/corsi/2026/5792",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 20/10/2026: l'anno 1 è quello del piano della coorte 2026 (https://univpm.coursecatalogue.cineca.it/corsi/2026/5792); le attività dell'anno sono 17 per 21 CFU obbligatori e 120 CFU a scelta. Il resto dell'anno è in 4 gruppi a scelta o a CFU fissi del piano (es. «LINGUA STRANIERA LIVELLO AVANZATO (3 CFU)»; «SCELTA VINCOLATA ANNO 1 (27 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano. Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  },
+  "2": {
+   "fonte": "https://univpm.coursecatalogue.cineca.it/corsi/2025/5792",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 20/10/2026: l'anno 2 è quello del piano della coorte 2025 (https://univpm.coursecatalogue.cineca.it/corsi/2025/5792); le attività dell'anno sono 12 per 24 CFU obbligatori e 81 CFU a scelta. Il resto dell'anno è in 2 gruppi a scelta o a CFU fissi del piano (es. «SCELTA VINCOLATA (I) ANNO 2 (9 CFU)»; «SCELTA VINCOLATA (II) (27 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano. Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "univpm-lm-4-c-u-ingegneria-edile-architettura": {
+  "5": {
+   "fonte": "https://univpm.coursecatalogue.cineca.it/corsi/2022/181",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 20/10/2026: l'anno 5 è quello del piano della coorte 2022 (https://univpm.coursecatalogue.cineca.it/corsi/2022/181); le attività dell'anno sono 13 per 27 CFU obbligatori e 78 CFU a scelta. Il resto dell'anno è in 3 gruppi a scelta o a CFU fissi del piano (es. «SCELTA VINCOLATA QUINTO ANNO (I) (6 CFU)»; «SCELTA VINCOLATA QUINTO ANNO (II) (9 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano. Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "univpm-lm-77-economia-e-management": {
+  "1": {
+   "fonte": "https://univpm.coursecatalogue.cineca.it/corsi/2026/6194",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 20/10/2026: l'anno 1 è quello del piano della coorte 2026 (https://univpm.coursecatalogue.cineca.it/corsi/2026/6194); le attività dell'anno sono 23 per 30 CFU obbligatori e 138 CFU a scelta. Il resto dell'anno è in 3 gruppi a scelta o a CFU fissi del piano (es. «6 CREDITI A SCELTA VINCOLATA PRIMO ANNO (6 CFU)»; «12 CREDITI A SCELTA VINCOLATA PRIMO ANNO (12 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano. Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "univpm-lm-77-management-pubblico-e-dei-sistemi-socio-sanitari": {
+  "1": {
+   "fonte": "https://univpm.coursecatalogue.cineca.it/corsi/2026/6193",
+   "nota": "Verifica automatica sul Course Catalogue (API pubblica) il 20/10/2026: l'anno 1 è quello del piano della coorte 2026 (https://univpm.coursecatalogue.cineca.it/corsi/2026/6193); le attività dell'anno sono 11 per 39 CFU obbligatori e 36 CFU a scelta. Il resto dell'anno è in 3 gruppi a scelta o a CFU fissi del piano (es. «9 CREDITI A SCELTA VINCOLATA PRIMO ANNO (9 CFU)»; «6 CREDITI A SCELTA VINCOLATA PRIMO ANNO (6 CFU)»), dai quali lo studente sceglie gli insegnamenti: il catalogo ne elenca più di quanti ne servano. Lettura automatica del catalogo, non verifica manuale sulla guida dello studente."
+  }
+ },
+ "univr-l-1-beni-culturali": {
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1316&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026 (percorso Archeologico): insegnamenti fissi 6 CFU + crediti a scelta e insegnamenti da scegliere 54 CFU = 60 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "3": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1316&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026 (percorso Archeologico): insegnamenti fissi 15 CFU + crediti a scelta e insegnamenti da scegliere 48 CFU = 63 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Anno dedotto: per questo anno la coorte attiva nel 2026/27 non ha una pagina del piano sul portale, si usa il piano della coorte più vicina (2025/2026). Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-l-11-lingue-e-letterature-per-l-editoria-e-i-media-digitali": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1324&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027 (percorso Digital humanities): insegnamenti fissi 18 CFU + crediti a scelta e insegnamenti da scegliere 48 CFU = 66 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1324&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026 (percorso Digital humanities): insegnamenti fissi 24 CFU + crediti a scelta e insegnamenti da scegliere 54 CFU = 78 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "3": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=904&menu=studiare&tab=Insegnamenti&aa=2024/2025&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2024/2025 (percorso Editoria): insegnamenti fissi 24 CFU + crediti a scelta e insegnamenti da scegliere 42 CFU = 66 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-l-11-lingue-e-letterature-straniere": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1323&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027 (percorso Artistico): insegnamenti fissi 12 CFU + crediti a scelta e insegnamenti da scegliere 54 CFU = 66 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1323&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026 (percorso Artistico): insegnamenti fissi 18 CFU + crediti a scelta e insegnamenti da scegliere 42 CFU = 60 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "3": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1323&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026 (percorso Artistico): insegnamenti fissi 9 CFU + crediti a scelta e insegnamenti da scegliere 60 CFU = 69 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Anno dedotto: per questo anno la coorte attiva nel 2026/27 non ha una pagina del piano sul portale, si usa il piano della coorte più vicina (2025/2026). Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-l-12-lingue-e-culture-per-il-turismo-e-il-commercio-internazional": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1322&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027 (percorso Commercio internazionale): insegnamenti fissi 30 CFU + crediti a scelta e insegnamenti da scegliere 42 CFU = 72 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1322&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026 (percorso Commercio internazionale): insegnamenti fissi 24 CFU + crediti a scelta e insegnamenti da scegliere 36 CFU = 60 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "3": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1322&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026 (percorso Commercio internazionale): insegnamenti fissi 33 CFU + crediti a scelta e insegnamenti da scegliere 30 CFU = 63 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Anno dedotto: per questo anno la coorte attiva nel 2026/27 non ha una pagina del piano sul portale, si usa il piano della coorte più vicina (2025/2026). Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-l-14-servizi-giuridici-per-imprese-amministrazioni-e-no-profit": {
+  "3": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1000&menu=studiare&tab=Insegnamenti&aa=2024/2025&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2024/2025: insegnamenti fissi 36 CFU + crediti a scelta e insegnamenti da scegliere 30 CFU = 66 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-l-18-economia-aziendale-e-management": {
+  "3": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=950&menu=studiare&tab=Insegnamenti&aa=2024/2025&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2024/2025: insegnamenti fissi 36 CFU + crediti a scelta e insegnamenti da scegliere 33 CFU = 69 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-l-2-biotecnologie": {
+  "3": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1345&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 24 CFU + crediti a scelta e insegnamenti da scegliere 36 CFU = 60 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Anno dedotto: per questo anno la coorte attiva nel 2026/27 non ha una pagina del piano sul portale, si usa il piano della coorte più vicina (2025/2026). Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-l-20-scienze-della-comunicazione": {
+  "3": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1317&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 36 CFU + crediti a scelta e insegnamenti da scegliere 24 CFU = 60 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Anno dedotto: per questo anno la coorte attiva nel 2026/27 non ha una pagina del piano sul portale, si usa il piano della coorte più vicina (2025/2026). Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-l-24-scienze-psicologiche-per-la-formazione": {
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1330&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 34 CFU + crediti a scelta e insegnamenti da scegliere 33 CFU = 67 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-l-29-scienze-nutraceutiche-e-della-salute-alimentare": {
+  "3": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1045&menu=studiare&tab=Insegnamenti&aa=2024/2025&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2024/2025: insegnamenti fissi 35 CFU + crediti a scelta e insegnamenti da scegliere 27 CFU = 62 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-l-31-bioinformatica": {
+  "3": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=419&menu=studiare&tab=Insegnamenti&aa=2024/2025&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2024/2025: insegnamenti fissi 36 CFU + crediti a scelta e insegnamenti da scegliere 24 CFU = 60 CFU in questo anno; il piano completo della coorte vale 180 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-l-5-filosofia": {
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1327&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 12 CFU + crediti a scelta e insegnamenti da scegliere 66 CFU = 78 CFU in questo anno; il piano completo della coorte vale 192 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "3": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1327&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 6 CFU + crediti a scelta e insegnamenti da scegliere 42 CFU = 48 CFU in questo anno; il piano completo della coorte vale 192 CFU (corso di 3 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Anno dedotto: per questo anno la coorte attiva nel 2026/27 non ha una pagina del piano sul portale, si usa il piano della coorte più vicina (2025/2026). Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-18-artificial-intelligence": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1355&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027: insegnamenti fissi 36 CFU + crediti a scelta e insegnamenti da scegliere 54 CFU = 90 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-18-lm-32-ingegneria-e-scienze-informatiche": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1351&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027 (percorso Percorso comune (LM-18)): insegnamenti fissi 30 CFU + crediti a scelta e insegnamenti da scegliere 66 CFU = 96 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1351&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026 (percorso Percorso comune (LM-18)): insegnamenti fissi 30 CFU + crediti a scelta e insegnamenti da scegliere 42 CFU = 72 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-19-editoria-e-giornalismo": {
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1320&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 30 CFU + crediti a scelta e insegnamenti da scegliere 30 CFU = 60 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-32-computer-engineering-for-intelligent-systems": {
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1291&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026 (percorso Healthcare systems): insegnamenti fissi 30 CFU + crediti a scelta e insegnamenti da scegliere 54 CFU = 84 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-37-languages-literatures-and-digital-culture": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1326&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027 (percorso Languages and literature): insegnamenti fissi 36 CFU + crediti a scelta e insegnamenti da scegliere 46 CFU = 82 CFU in questo anno; il piano completo della coorte vale 142 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1326&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026 (percorso Languages and literatures): insegnamenti fissi 24 CFU + crediti a scelta e insegnamenti da scegliere 42 CFU = 66 CFU in questo anno; il piano completo della coorte vale 142 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-38-languages-for-global-business-trade-and-tourism": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1429&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027 (percorso Strategic event management and tourism): insegnamenti fissi 39 CFU + crediti a scelta e insegnamenti da scegliere 24 CFU = 63 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-39-linguistics": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1318&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027: insegnamenti fissi 36 CFU + crediti a scelta e insegnamenti da scegliere 39 CFU = 75 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1318&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 36 CFU + crediti a scelta e insegnamenti da scegliere 27 CFU = 63 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-41-medicina-e-chirurgia-ad-indirizzo-tecnologico": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1181&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027: insegnamenti fissi 52 CFU + crediti a scelta e insegnamenti da scegliere 2 CFU = 54 CFU in questo anno; il piano completo della coorte vale 360 CFU (corso di 6 anni). L'anno vale davvero meno di 60 CFU nel piano ufficiale (le attività sono distribuite sugli anni del corso: il piano completo arriva al totale); il database unisce gli anni di coorti diverse (ogni anno è quello della coorte che nel 2026/27 lo frequenta), quindi il totale del database può restare sotto quello del piano. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1181&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 47 CFU + crediti a scelta e insegnamenti da scegliere 2 CFU = 49 CFU in questo anno; il piano completo della coorte vale 360 CFU (corso di 6 anni). L'anno vale davvero meno di 60 CFU nel piano ufficiale (le attività sono distribuite sugli anni del corso: il piano completo arriva al totale); il database unisce gli anni di coorti diverse (ogni anno è quello della coorte che nel 2026/27 lo frequenta), quindi il totale del database può restare sotto quello del piano. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "3": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1181&menu=studiare&tab=Insegnamenti&aa=2024/2025&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2024/2025: insegnamenti fissi 46 CFU + crediti a scelta e insegnamenti da scegliere 1 CFU = 47 CFU in questo anno; il piano completo della coorte vale 360 CFU (corso di 6 anni). L'anno vale davvero meno di 60 CFU nel piano ufficiale (le attività sono distribuite sugli anni del corso: il piano completo arriva al totale); il database unisce gli anni di coorti diverse (ogni anno è quello della coorte che nel 2026/27 lo frequenta), quindi il totale del database può restare sotto quello del piano. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-49-promozione-e-gestione-del-patrimonio-territoriale-e-delle-de": {
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1186&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026 (percorso Comunità creative): insegnamenti fissi 33 CFU + crediti a scelta e insegnamenti da scegliere 45 CFU = 78 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-56-economics-and-data-analysis": {
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1307&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 27 CFU + crediti a scelta e insegnamenti da scegliere 42 CFU = 69 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-56-international-economics-and-business": {
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1308&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 27 CFU + crediti a scelta e insegnamenti da scegliere 33 CFU = 60 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-6-biology-for-translational-research-and-precision-medicine": {
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1337&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 37 CFU + crediti a scelta e insegnamenti da scegliere 20 CFU = 57 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-62-governance-dell-emergenza": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1312&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027: insegnamenti fissi 15 CFU + crediti a scelta e insegnamenti da scegliere 54 CFU = 69 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1312&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 30 CFU + crediti a scelta e insegnamenti da scegliere 51 CFU = 81 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-77-governance-e-amministrazione-d-impresa": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1309&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027: insegnamenti fissi 24 CFU + crediti a scelta e insegnamenti da scegliere 45 CFU = 69 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1309&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 31 CFU + crediti a scelta e insegnamenti da scegliere 45 CFU = 76 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-77-management-e-strategia-d-impresa": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1306&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027: insegnamenti fissi 19 CFU + crediti a scelta e insegnamenti da scegliere 42 CFU = 61 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1306&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 32 CFU + crediti a scelta e insegnamenti da scegliere 36 CFU = 68 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-78-scienze-filosofiche": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1332&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027: insegnamenti fissi 18 CFU + crediti a scelta e insegnamenti da scegliere 66 CFU = 84 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-8-biotecnologie-per-le-biorisorse-e-lo-sviluppo-ecosostenibile": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1354&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027: insegnamenti fissi 0 CFU + crediti a scelta e insegnamenti da scegliere 60 CFU = 60 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-84-scienze-storiche": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1430&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027 (percorso Antichità e medioevo): insegnamenti fissi 36 CFU + crediti a scelta e insegnamenti da scegliere 36 CFU = 72 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-89-storia-delle-arti": {
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1321&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026 (percorso Arte): insegnamenti fissi 36 CFU + crediti a scelta e insegnamenti da scegliere 36 CFU = 72 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-9-molecular-and-medical-biotechnology": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1292&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027: insegnamenti fissi 12 CFU + crediti a scelta e insegnamenti da scegliere 54 CFU = 66 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-data-data-science": {
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1175&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 27 CFU + crediti a scelta e insegnamenti da scegliere 54 CFU = 81 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-sc-giur-diritto-per-le-tecnologie-e-l-innovazione-sostenibile": {
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1313&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026 (percorso Imprese - enti e patrimonio culturale): insegnamenti fissi 21 CFU + crediti a scelta e insegnamenti da scegliere 45 CFU = 66 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-sc-giur-scienze-giuridiche-e-criminologiche-per-la-sicurezza-e-l-int": {
+  "2": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1361&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 33 CFU + crediti a scelta e insegnamenti da scegliere 36 CFU = 69 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lm-snt3-scienze-delle-professioni-sanitarie-tecniche-assistenziali": {
+  "1": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1043&menu=studiare&tab=Insegnamenti&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2026/2027: insegnamenti fissi 39 CFU + crediti a scelta e insegnamenti da scegliere 6 CFU = 45 CFU in questo anno; il piano completo della coorte vale 120 CFU (corso di 2 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  }
+ },
+ "univr-lmg-01-giurisprudenza": {
+  "4": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1314&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 36 CFU + crediti a scelta e insegnamenti da scegliere 12 CFU = 48 CFU in questo anno; il piano completo della coorte vale 300 CFU (corso di 5 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Anno dedotto: per questo anno la coorte attiva nel 2026/27 non ha una pagina del piano sul portale, si usa il piano della coorte più vicina (2025/2026). Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
+  },
+  "5": {
+   "fonte": "https://www.corsi.univr.it/?ent=cs&id=1314&menu=studiare&tab=Insegnamenti&aa=2025/2026&lang=it",
+   "nota": "Verifica automatica sul piano didattico ufficiale della coorte 2025/2026: insegnamenti fissi 24 CFU + crediti a scelta e insegnamenti da scegliere 48 CFU = 72 CFU in questo anno; il piano completo della coorte vale 300 CFU (corso di 5 anni). Il controllo conta anche tutti i membri dei blocchi «N insegnamenti a scelta» (lingue, letterature, insegnamenti opzionali): i CFU fissi sono pochi perché il resto si sceglie. Anno dedotto: per questo anno la coorte attiva nel 2026/27 non ha una pagina del piano sul portale, si usa il piano della coorte più vicina (2025/2026). Le attività «Tra gli anni» sono messe nell'anno in cui l'insegnamento è erogato o nell'ultimo anno dell'intervallo."
   }
  }
 }
