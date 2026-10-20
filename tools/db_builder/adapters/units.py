@@ -3,6 +3,8 @@
 Piani e syllabus: `https://units.coursecatalogue.cineca.it` (Course Catalogue Cineca, API pubblica).
 Rispetto all'adattatore comune (`cineca_catalogue`) UniTS richiede:
 
+- piani: il piano per coorte (gruppi OO/F/W/S con i CFU delle etichette, attività a 0 CFU e «altreAttivita» fuori dal
+  piano, un anno per riga) è in `units_piani.py`; qui restano libri, syllabus e appelli;
 - ritmo: al massimo 2 richieste al secondo (il client comune ne fa 8);
 - durata: l'elenco minimale non ha `durataAnni` (le magistrali a ciclo unico avevano solo 3 anni e
   le magistrali biennali il solo 2° anno): si legge dal piano della coorte attuale (anno più alto)
@@ -26,7 +28,7 @@ import pathlib
 import re
 import unicodedata
 
-from . import cineca_catalogue, units_testi
+from . import cineca_catalogue, units_piani, units_testi
 from .testi import YEAR, _isbn
 from .unifi_testi import _AUTORE_INIZIO, _PROSA, _editore
 
@@ -152,6 +154,21 @@ def _testo_vuoto(sy: dict) -> bool:
     return True
 
 
+def _libri_database() -> dict[str, dict]:
+    """Libri, modalità d'esame, SSD e sito già nel database, per codice dell'insegnamento (nessuna nuova richiesta)."""
+    p = ROOT / "database" / "corsi" / "units.json"
+    try:
+        doc = json.loads(p.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    per_codice: dict[str, dict] = {}
+    for corso in doc.get("corsi") or []:
+        for i in corso.get("insegnamenti") or []:
+            if i.get("libri") and i.get("codice") and i["codice"] not in per_codice:
+                per_codice[i["codice"]] = {k: i.get(k) for k in ("libri", "modalita_esame", "ssd", "url_sito")}
+    return per_codice
+
+
 def fetch_ateneo(uid: str = "units", anno: int = 2026, max_cds: int | None = None, syllabus: bool = True,
                  log=print) -> dict:
     c = ClientCache()
@@ -196,8 +213,8 @@ def fetch_ateneo(uid: str = "units", anno: int = 2026, max_cds: int | None = Non
             return []
         return anni_precedenti(sy.get("adCod"), aa, f"la scheda {fmt(aa)} non riporta la bibliografia")
 
-    doc = cineca_catalogue.fetch_ateneo(uid, BASE, anno, max_cds=max_cds, syllabus=syllabus, log=log,
-                                        client=c, coorte_per_nome=True, libri_extra=libri_extra)
+    doc = units_piani.fetch_piani(uid, anno, max_cds, syllabus, log, c, libri_noti=_libri_database(),
+                                  libri_extra=libri_extra, testo_libero=units_testi.libri_units)
     corsi = []
     for cc in doc["corsi"]:
         if cc.get("codice_ateneo") in ESCLUSI:

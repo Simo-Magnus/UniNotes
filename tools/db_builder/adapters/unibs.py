@@ -8,8 +8,8 @@ Rispetto all'adattatore comune (`cineca_catalogue`) UniBS richiede:
 - libri: oltre a `testi_it` (testo libero), la bibliografia della biblioteca di ateneo in
   `testi_biblio_it` (`<li>Titolo / Autori. - ed. - Città : Editore, anno.</li>`) e i riferimenti con
   l'editore indicato che il riconoscimento comune scarta; un insegnamento mutuato (`mutuaDa`) usa il
-  programma dell'insegnamento da cui è mutuato; un insegnamento integrato senza programma proprio,
-  quelli dei suoi moduli; se il programma dell'a.a. non è pubblicato (o il syllabus manca, 404),
+  programma dell'insegnamento da cui è mutuato; nel piano un corso integrato ha 0 CFU e non è un insegnamento a sé (restano i
+  suoi moduli, che senza un programma proprio usano quello dell'integrato); se il programma dell'a.a. non è pubblicato (o il syllabus manca, 404),
   l'ultimo programma pubblicato dello stesso insegnamento (stesso corso, a.a. precedenti) o dello
   stesso codice in un altro corso (repliche di sede); ogni libro così ottenuto lo dice in `note`;
 - nomi: le professioni sanitarie hanno nel catalogo «Corso di Laurea in X», in Universitaly
@@ -36,6 +36,7 @@ import time
 import requests
 
 from . import cineca_catalogue as cc
+from . import unibs_piani
 from .esse3_appelli import HEADERS, _parse
 from .testi import _libero, estrai_libri
 
@@ -43,8 +44,6 @@ BASE = "https://unibs.coursecatalogue.cineca.it"
 
 # (corso, codice AD) → motivo per cui non si sono trovati libri (per il rapporto sulle lacune)
 MOTIVI: dict[str, str] = {}
-# codice AD di un insegnamento integrato → codici AD dei suoi moduli (il programma sta nei moduli)
-MODULI: dict[str, set[str]] = {}
 
 # nome nel catalogo («Corso di Laurea in …», senza il prefisso) → nome in Universitaly
 NOMI_UNIVERSITALY = {
@@ -301,9 +300,6 @@ def fetch_ateneo(uid: str, anno: int, max_cds: int | None = None, syllabus: bool
                    for t in sy.get("testiTotali") or [])
 
     def libri_extra(sy: dict) -> list[dict]:
-        for f in sy.get("adFiglie") or []:
-            if f.get("adCod"):
-                MODULI.setdefault(str(sy.get("adCod")), set()).add(str(f["adCod"]))
         libri = libri_da_biblio(sy) or libri_liberi(sy)
         if libri:
             return libri
@@ -355,25 +351,8 @@ def fetch_ateneo(uid: str, anno: int, max_cds: int | None = None, syllabus: bool
         MOTIVI[chiave] = "programma non pubblicato (né quest'anno né negli anni precedenti)"
         return []
 
-    doc = cc.fetch_ateneo(uid, BASE, anno, max_cds=max_cds, syllabus=syllabus, log=log, client=client,
-                          libri_extra=libri_extra)
-    for c in doc["corsi"]:
-        # insegnamenti integrati senza programma proprio: i libri dei moduli
-        per_codice = {i["codice"]: i for i in c["insegnamenti"] if i.get("codice")}
-        for i in c["insegnamenti"]:
-            if i.get("libri") or str(i.get("codice")) not in MODULI:
-                continue
-            viste = set()
-            for mod in sorted(MODULI[str(i["codice"])]):
-                f = per_codice.get(mod)
-                for lb in (f or {}).get("libri") or []:
-                    k = re.sub(r"\W+", "", lb["citazione"].lower())[:120]
-                    if k not in viste:
-                        viste.add(k)
-                        nota = f"Dal programma del modulo «{f['nome']}» dell'insegnamento integrato"
-                        i["libri"].append(dict(lb, note=f"{nota}; {lb['note']}" if lb.get("note") else nota))
-            if i["libri"]:
-                i["stato_libri"] = "completo"
+    # piani per coorte, durata dal piano, gruppi del piano e corsi integrati: adapters/unibs_piani.py
+    doc = unibs_piani.fetch_piani(uid, anno, max_cds, syllabus, log, client, libri_extra=libri_extra, libri_sy=_libri_sy)
     for c in doc["corsi"]:
         for i in c["insegnamenti"]:  # frasi generiche («possono fare riferimento ai testi di …, pubblicati da …»)
             giusti = [lb for lb in i.get("libri") or []
@@ -462,7 +441,8 @@ def associa_appelli(appelli: dict[str, list[dict]], origine: dict[str, set[str]]
                     log=print) -> dict[str, list[dict]]:
     """Gli appelli il cui codice AD non è quello del catalogo (codici diversi tra Esse3 e Course
     Catalogue) si attribuiscono all'insegnamento omonimo dello stesso corso di studio (stesso codice
-    corso, stesso nome); il resto lo associa build_db per nome e docenti."""
+    corso, stesso nome); il resto lo associa build_db per nome e docenti. Gli appelli di un corso integrato
+    (nel piano 0 CFU, non è un insegnamento) vanno a tutti i suoi moduli."""
     codici = {i.get("codice") for c in corsi for i in c.get("insegnamenti") or []}
     per_corso: dict[str, dict[str, set[str]]] = {}
     for c in corsi:
@@ -486,6 +466,22 @@ def associa_appelli(appelli: dict[str, list[dict]], origine: dict[str, set[str]]
                 out.setdefault(cod, []).extend(nuovi)
                 n += 1
     log(f"[unibs] appelli riassegnati per nome e corso: {n} insegnamenti")
+    # corso integrato (0 CFU, non è un insegnamento a sé nel piano): l'appello è del suo esame unico e vale per i suoi moduli
+    figli: dict[str, set[str]] = {}
+    for c in corsi:
+        for padre, mod in (c.get("integrati") or {}).items():
+            figli.setdefault(padre, set()).update(mod)
+    m = 0
+    for padre, mod in figli.items():
+        for cod in mod:
+            if cod == padre:
+                continue
+            viste = {(x["data"], x["ora"], x["tipo"]) for x in out.get(cod, [])}
+            nuovi = [x for x in appelli.get(padre, []) if (x["data"], x["ora"], x["tipo"]) not in viste]
+            if nuovi:
+                out.setdefault(cod, []).extend(nuovi)
+                m += 1
+    log(f"[unibs] appelli dei corsi integrati riportati sui moduli: {m} moduli")
     return out
 
 

@@ -42,6 +42,7 @@ import re
 import time
 import urllib.parse
 
+from . import unicampania_piani as piani
 from .testi import estrai_libri
 from .unibo import Client, _testo, _titolo
 from .unipg_testi import libri_unipg
@@ -290,6 +291,8 @@ def leggi_piano_tabella(s: str) -> list[dict]:
         if not nome or nome.startswith("*") or re.match(r"(?i)in alternativa", nome):
             continue
         mcfu = re.match(r"(\d+(?:[.,]\d+)?)", testi[2])
+        if not mcfu and re.match(r"(?i)(?:insegnamenti a scelta|altre attivit)", nome):
+            continue  # riga di intestazione di un gruppo («INSEGNAMENTI A SCELTA», «ALTRE ATTIVITA'»), senza CFU
         mat = re.findall(r"MATRICOLA=(\d+)", html.unescape(e.group("r")))
         sem = None
         if len(testi) >= 5:
@@ -455,10 +458,10 @@ _ATT_SCELTA = (r"(?:a\s+scelta\s+(?:dello|dallo)\s+studente|attivit[àa]\s+(?:fo
                r"(?:esami?|insegnamenti?|crediti|cfu)\s+a\s+scelta(?:\s+(?:dallo|dello)\s+studente)?|"
                r"(?:free|student'?s?)\s+choice(?:\s+(?:courses?|credits|activit\w+))?|elective\s+(?:courses?|activit\w+)|"
                r"attivit[àa]\s+didattiche\s+a\s+scelta(?:\s+dello\s+studente)?)")
-_ATT_FINALE = r"(?:prova\s+finale|tesi(?:\s+di\s+laurea)?|elaborato\s+finale|final\s+(?:exam|thesis|test|examination)|thesis|dissertation)"
+_ATT_FINALE = r"(?:prova\s+finale|preparazione\s+(?:della\s+)?tesi(?:\s+di\s+laurea)?|tesi(?:\s+di\s+laurea)?|elaborato\s+finale|final\s+(?:exam|thesis|test|examination)|thesis|dissertation)"
 _ATT_TIROCINIO = r"(?:tirocini?o?\w*(?:\s+(?:formativo|pratico|professionalizzante|curriculare)\w*)?|stage|internship)"
 _ATT_ALTRE = (r"(?:competenze\s+linguistiche|altre\s+attivit[àa](?:\s+formative)?|ulteriori\s+conoscenze\s+linguistiche|abilit[àa]\s+informatiche(?:\s+e\s+telematiche)?|"
-              r"ulteriori\s+attivit[àa]\s+formative|attivit[àa]\s+seminariali|laboratori(?:o)?\s+(?:professionalizzant\w+|didattic\w+)|"
+              r"ulteriori\s+attivit[àa]\s+formative|attivit[àa]['’]?\s+seminariali|laboratori(?:o)?\s+(?:professionalizzant\w+|didattic\w+)|laboratori\s+ssd|"
               r"other\s+(?:learning\s+)?activit\w+)")
 ATTIVITA_SENZA_SCHEDA = re.compile(
     rf"^\W*(?P<nome>{_ATT_SCELTA}|{_ATT_FINALE}|{_ATT_TIROCINIO}|{_ATT_ALTRE})\W*(?P<resto>.*)$", re.I)
@@ -830,10 +833,17 @@ CORSI: dict[str, dict] = {
     "unicampania-l-32-scienze-ambientali": {"manifesto": _DISTABIF + "L-32_Manifesto_degli_studi_2026-2027.pdf"},
     "unicampania-l-13-scienze-biologiche": {"manifesto": _DISTABIF + "L-13_Manifesto_degli_studi_2026_2027.pdf"},
     "unicampania-lm-6-biologia": {"manifesto": _DISTABIF + "LM-6_Manifesto_degli_studi_2026_2027.pdf", "tail_unici": True},
-    "unicampania-lm-9-molecular": {"manifesto": _DISTABIF + "LM-9_Course_Catalogue_a.a_2026-2027.pdf"},
+    # Molecular biotechnology: 2° anno del catalogo 2026/27 (coorte 2025/26, 64 CFU): un corso senza scheda, tirocinio e tesi
+    "unicampania-lm-9-molecular": {"manifesto": _DISTABIF + "LM-9_Course_Catalogue_a.a_2026-2027.pdf", "piani": [{
+        "tipo": "tabella", "url": _DISTABIF + "LM-9_Course_Catalogue_a.a_2026-2027.pdf",
+        "righe": [(2, None, "Design and synthesis of bioactive compounds", 8), (2, None, "Internship/Stage", 2),
+                  (2, None, "Master thesis", 20)]}]},
     "unicampania-lm-61-scienze-degli-alimenti": {"manifesto": _DISTABIF + "LM-61_Manifesto_degli_studi_2026-2027.pdf"},
     "unicampania-lm-75-scienze-e-tecnologie": {"manifesto": _DISTABIF + "LM-75_Manifesto_degli_studi_2026-2027.pdf"},
-    "unicampania-lm-13-farmacia": {"manifesto": _DISTABIF + "LM-13_Manifesto_2026_2027.pdf"},
+    # Farmacia: Biologia è un esame annuale (6 CFU al 1° semestre + 8 al 2°) e Lingua inglese vale 6 CFU (manifesto 2026/27: 1° anno 56 CFU)
+    "unicampania-lm-13-farmacia": {"manifesto": _DISTABIF + "LM-13_Manifesto_2026_2027.pdf", "piani": [{
+        "tipo": "tabella", "url": _DISTABIF + "LM-13_Manifesto_2026_2027.pdf",
+        "righe": [(1, "A422709", "Biologia", 14), (1, "A4808", "Lingua inglese", 6)]}]},
     # Fisica: manifesto 2026/27 (2° anno 58 CFU, 3° anno 66 CFU): lingua inglese, attività a scelta, tesi e tirocinio senza scheda
     "unicampania-l-30-fisica": {
         "extra_fonte": "https://www.matfis.unicampania.it/images/id1439_Manifesto_degli_studi_2026-2027_Fisica_100626.pdf",
@@ -847,29 +857,206 @@ CORSI: dict[str, dict] = {
                   (2, "Tirocinio formativo e di orientamento", 3, False), (2, "Tirocinio aziendale", 3, False),
                   (2, "Prova finale", 6, False)]},
     # professioni sanitarie: piano di studio con tirocinio, attività a scelta (ADE), laboratori e prova finale, che non hanno scheda
+    # (i piani senza codici danno il CFU di ogni corso integrato nella programmazione didattica 2026/27: `piani` tipo «nomi»)
     "unicampania-l-snt4-assistenza-sanitaria": {
-        "manifesto": "https://www.medicinasperimentale.unicampania.it/images/AS_Piano_di_Studio_2026_2027.pdf"},
+        "manifesto": "https://www.medicinasperimentale.unicampania.it/images/AS_Piano_di_Studio_2026_2027.pdf",
+        "piani": [{"tipo": "nomi", "url": "https://www.medicinasperimentale.unicampania.it/images/AS__programmazione_Didattica_2026-2027.pdf",
+                   # il nome è spezzato dal CFU in una riga del PDF; il piano di studio dà 6 CFU
+                   "cfu_nomi": {"Prevenzione delle Malattie Cronico - Degenerative": 6}}]},
     "unicampania-l-snt4-tecniche-della-prevenzione": {
-        "manifesto": "https://www.medicinasperimentale.unicampania.it/images/TPS_Piano_di_Studio_2026_2027.pdf"},
+        "manifesto": "https://www.medicinasperimentale.unicampania.it/images/TPS_Piano_di_Studio_2026_2027.pdf",
+        "manifesto_salta": ["Laboratori professionalizzanti"],  # i laboratori del piano sono «Laboratorio 1» (2° anno) e «Laboratorio 2» (3°)
+        "piani": [
+            {"tipo": "nomi", "url": "https://www.medicinasperimentale.unicampania.it/images/TPALL_Programmazione_Didattica_2026-2027.pdf"},
+            # «Inglese scientifico» (2 CFU nel 1° e 2° semestre del 1° anno) è nel piano degli studi e non ha scheda
+            {"tipo": "tabella", "url": "https://www.medicinasperimentale.unicampania.it/images/TPS_Piano_di_Studio_2026_2027.pdf",
+             "righe": [(1, None, "Inglese scientifico - 1° semestre", 2), (1, None, "Inglese scientifico - 2° semestre", 2)]}]},
+    # Fisioterapia: programmazione 2025/26 (sede di Napoli, le stesse attività delle altre sedi)
+    "unicampania-l-snt2-fisioterapia": {"piani": [{
+        "tipo": "codici", "url": "http://www.dipmdsmco.unicampania.it/images/Programmazione_Fisioterapia_2025_26.pdf",
+        "prefisso": r"A65\d\d", "fine": "Sede esterna di formazione", "nomi": {"A6503": "Psicologia e Sociologia", "A6507": "Lingua Inglese", "A6531": "Preparazione Esame Finale"}}]},
     "unicampania-lm-32-ingegneria-informatica": {"righe_da_pdf": True},
-    "unicampania-l-35-matematica": {"tutte": True},  # un PDF per curriculum
+    # Matematica L-35: "Didattica programmata" 2026/27 (modello di piano): 1° anno 52, 2° 65, 3° 54 + 9 CFU a scelta; gli elenchi in PDF
+    # non collegano alcuni insegnamenti (Algebra 2, Meccanica razionale, Geometria 3, che nel U-GOV 2026 hanno la scheda) e mettono
+    # «Basi di dati» al 1° anno mentre è un insegnamento del 3° anno
+    "unicampania-l-35-matematica": {"tutte": True, "piani": [{
+        "tipo": "tabella", "url": "https://www.matfis.unicampania.it/images/Piano_di_studi_Matematica_triennale.pdf",
+        "righe": [(1, "A3414", "Ulteriori conoscenze linguistiche", 2), (1, None, "Lingua inglese", 3),
+                  (1, None, "Attività autonomamente scelte dallo studente", 3, True),
+                  (2, "A3413", "Algebra 2", 8), (2, "A3411", "Meccanica razionale", 12),
+                  (3, "A3417", "Geometria 3", 8), (3, "A3425", "Basi di dati e sistemi informativi", 8), (3, None, "Prova finale", 4)]}]},
     # piani senza link alle schede: i codici delle attività si leggono dal testo
-    "unicampania-l-snt1-infermieristica": {"prefisso": r"A50\d\d"},
-    "unicampania-l-snt2-ortottica": {"prefisso": r"A76\d\d"},
-    "unicampania-l-snt3-igiene-dentale": {"prefisso": r"A84\d\d", "manifesto":
-        "https://www.dipmdsmco.unicampania.it/images/ORDINAMENTO_-_Piano_di_Studi_Corso_di_Studi_in_IGIENE_DENTALE_-_Cod._Reg._A84-19-25_-_a.a._2025-26.pdf"},
-    "unicampania-lm-46-odontoiatria": {"prefisso": r"A42\d{4}"},
+    # Infermieristica: stampa U-GOV «Offerta didattica - Dettaglio» (tutte le attività con i CFU, senza l'anno)
+    "unicampania-l-snt1-infermieristica": {"prefisso": r"A50\d\d", "piani": [{
+        "tipo": "ugov", "url": "https://www.scienzemedichetraslazionali.unicampania.it/avvisi/Piano_di_Studio_Inf_2026pdf.pdf"}]},
+    "unicampania-l-snt2-ortottica": {"prefisso": r"A76\d\d", "piani": [{
+        "tipo": "codici", "url": "https://www.dipmdsmco.unicampania.it/images/Programmazione_Didattica_Corso_di_Studi_in_ORTOTTICA_a.a._2025.26_FT_1_1.pdf",
+        "prefisso": r"A76\d\d|A42\d{4}",
+        # le unità di Strabismo e di Chirurgia oculare sono scritte sotto un altro integrato o senza il codice dell'integrato
+        "unita_di": {"A424092": "A7617", "A424142": "A7617", "A7629B": "A7629", "A7629C": "A7629"}, "anni": {"A7632": 3},
+        "nomi": {"A7603": "La dimensione psicologica e sociale della persona", "A7617": "Strabismo e trattamento ortottico",
+                 "A421504": "Ipovisione e riabilitazione visiva", "A7632": "Preparazione tesi", "A421323": "A scelta dello studente",
+                 "A421324": "A scelta dello studente", "A421326": "A scelta dello studente"}}]},
+    "unicampania-l-snt3-igiene-dentale": {"prefisso": r"A84\d\d", "piani": [{
+        "tipo": "codici", "url": "https://www.dipmdsmco.unicampania.it/images/ORDINAMENTO_-_Piano_di_Studi_Corso_di_Studi_in_IGIENE_DENTALE_-_Cod._Reg._A84-19-25_-_a.a._2025-26.pdf",
+        "prefisso": r"A84\d\d|A4\d{5}", "unita_di": {"A423739": "A8412", "A425515": "A8404"},
+        "cfu_unita": {"A8418A": 3}}]},  # A8418A: 1 CFU caratterizzante + 2 CFU affini (seconda riga della stessa unità, senza codice)
+    # Odontoiatria: programmazione 2026/27 (ogni anno è quello della coorte che lo frequenta). Totali dei corsi integrati («(N CFU tot)»):
+    # 3°, 4°, 5° e 6° anno sommano 60 CFU; il 1° anno (52 CFU) e il 2° non sono completi nel documento
+    "unicampania-lm-46-odontoiatria": {"prefisso": r"A42\d{4}", "piani": [{
+        "tipo": "tabella",
+        "url": "https://www.dipmdsmco.unicampania.it/images/1.all.2_Programmazione_Didattica_Corso_di_Studi_in_ODONTO_a.a._2026.27_26.03.26_08.05.26_-_MOD15.06.e.9.7_1.pdf",
+        "righe": [(1, "A425693", "Scienze comportamentali e metodologia scientifica", 8, None, True), (1, "A425700", "ADE 1° anno", 2, True),
+                  (3, "A2214", "Scienze mediche I", 13), (3, "A2215", "Anatomia patologica", 5), (3, "A2216", "Farmacologia", 6),
+                  (3, "A2217", "Diagnostica per immagini e radioterapia", 6), (3, "A424793", "ADE 3° anno", 2, True),
+                  (4, "A2219", "Gnatologia", 4), (4, "A2220", "Scienze mediche II", 15), (4, "A2221", "Neurologia e psichiatria", 4),
+                  (4, "A2222", "Medicina legale", 4), (4, "A2223", "Discipline odontostomatologiche I", 28),
+                  (5, "A2224", "Odontoiatria restaurativa", 10), (5, "A2225", "Parodontologia", 6),
+                  (5, "A2226", "Patologia e terapia oro-maxillo-facciale", 10), (5, "A2227", "Protesi dentaria", 6),
+                  (5, "A2228", "Ortodonzia", 8), (5, "A2229", "Odontoiatria pediatrica", 6), (5, "A2230", "Implantologia", 12),
+                  (5, "ADO5", "ADO 5° anno", 2, True),
+                  (6, "A2231", "Discipline odontostomatologiche II", 23), (6, "A2232", "Discipline odontostomatologiche III", 22),
+                  (6, "A421313", "ADE 6° anno", 2, True), (6, None, "Tesi", 10)]}]},
     # pagine dei corsi che Universitaly non collega (o collega alla home del dipartimento)
     "unicampania-lm-snt2-scienze-riabilitative": {"url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/"
-                                                         "scienze-riabilitative-delle-professioni-sanitarie"},
+                                                         "scienze-riabilitative-delle-professioni-sanitarie", "piani": [{
+        # programmazione 2025/26: ogni integrato ha il codice nell'intestazione e le sue unità sulle righe sotto (CFU = somma delle unità)
+        "tipo": "tabella", "url": "http://www.dipmdsmco.unicampania.it/images/Prog_25_B85.pdf",
+        "righe": [(1, "A425160", "Informatica e Lingua Inglese", 6), (1, "A425189", "Metodologia della Ricerca I", 7),
+                  (1, "A425193", "ADE - Attività Didattica Elettiva", 5), (1, "A425194", "Laboratorio Professionale", 3),
+                  (1, "A425204", "Tirocinio I anno", 18),
+                  (2, "A425207", "Scienze Umane", 5), (2, "A425212", "Metodologie Innovative in ambito riabilitativo", 8),
+                  (2, "A425218", "Metodologie del lavoro in team", 7), (2, "A425221", "Scienze della prevenzione e servizi sanitari", 8),
+                  (2, "A425227", "Metodologia della Ricerca II", 2), (2, "A425234", "Ricerca Clinica in Riabilitazione II", 5),
+                  (2, "A425237", "Scienze Tecniche Mediche Applicate", 1), (2, "A425239", "ADE a scelta dello studente", 1, True),
+                  (2, "A425240", "Tirocinio II anno", 18), (2, "A425243", "Prova finale", 5)]}]},
+    # Psicologia clinico-dinamica: piano di studio della coorte 2025 (2° anno nel 2026/27): antropologia, prova finale (14) e tirocinio
+    # pratico valutativo (14) sono nel piano e non hanno scheda; 8 CFU a scelta tra tre attività (non obbligatorie)
+    "unicampania-lm-51-psicologia-clinico-dinamica": {"piani": [{
+        "tipo": "tabella", "url": "https://www.psicologia.unicampania.it/images/didattica/piano_di_studio/A30/PIANO_DI_STUDI_V30.pdf",
+        "righe": [(2, "A424435", "Antropologia della complessità", 6), (2, "A424437", "Prova finale", 14),
+                  (2, "A424689", "Tirocinio pratico valutativo in Psicologia clinico-dinamica", 14),
+                  (2, "A425068", "Laboratorio modelli di misura", 2, True), (2, "A425067", "Laboratorio modelli di psicoterapia", 2, True),
+                  (2, "A425069", "Sociologia della devianza e del crimine", 6, True)]}]},
     # Medicina e chirurgia (Caserta): l'elenco 2025/26 collega schede con AA_OFFERTA anche degli anni precedenti
-    "unicampania-lm-41-medicina-e-chirurgia": {"aa_indietro": 3},
+    # il piano di studio di ogni anno è quello della coorte che lo frequenta nel 2026/27 (immatricolati 2026 → 1° anno … 2021 → 6°)
+    "unicampania-lm-41-medicina-e-chirurgia": {"aa_indietro": 3, "piani": [{"tipo": "coorti", "specs": [
+        (1, "https://www.damss.unicampania.it/images/didattica/manifesto/PIANO_DI_STUDIO_2026_con_semestre_filtro.pdf", "2026/2027"),
+        (2, "https://www.damss.unicampania.it/images/didattica/manifesto/PIANO_DI_STUDIO_2025_con_semestre_filtro.pdf", "2026/2027"),
+        (3, "https://www.damss.unicampania.it/images/didattica/manifesto/PIANO_DI_STUDIO_2024_-_LAUREA_ABILITANTE.pdf", "2026/2027"),
+        (4, "https://www.damss.unicampania.it/images/didattica/manifesto/PIANO_DI_STUDIO_2023_-_LAUREA_ABILITANTE.pdf", "2026/2027"),
+        (5, "https://www.damss.unicampania.it/images/didattica/manifesto/PIANO_DI_STUDIO_2022_-_LAUREA_ABILITANTE.pdf", "2026/2027"),
+        (6, "https://www.damss.unicampania.it/images/didattica/manifesto/PIANO_DI_STUDIO_CdLMMC-CE_2021.pdf", "2026/2027")]}]},
     # Nursing usa le stesse attività di Infermieristica (la pagina U-GOV porta il nome del corso in italiano)
-    "unicampania-l-snt1-nursing": {"prefisso": r"A42\d{4}", "senza_verifica": True, "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/nursing-infermieristica-in-lingua-inglese"},
-    "unicampania-l-snt2-logopedia": {"prefisso": r"A71\d\d"},
-    "unicampania-l-snt2-terapia-della-neuro": {"prefisso": r"A74\d\d"},
-    "unicampania-l-snt2-tecnica-della-riabilitazione": {"prefisso": r"A73\d\d"},
-    "unicampania-l-snt1-ostetricia": {"prefisso": r"A\d{4}"},
+    # Nursing: la programmazione 2026/27 elenca le sole attività con lezioni (senza tirocinio, tesi e attività a scelta): i CFU
+    # sono la somma delle righe di ogni integrato (codice «COD AF») e il nome è quello dell'integrato, non di un solo modulo
+    "unicampania-l-snt1-nursing": {"prefisso": r"A42\d{4}", "senza_verifica": True, "url": "http://www.scienzemedichetraslazionali.unicampania.it/didattica/corsi-di-studio/nursing-infermieristica-in-lingua-inglese", "piani": [{
+        "tipo": "tabella", "url": "https://www.scienzemedichetraslazionali.unicampania.it/avvisi/planning_26-27.pdf",
+        "righe": [(1, "A422395", "Biomedical sciences", 5, None, True), (1, "A422396", "Anatomy-physiology", 7, None, True),
+                  (1, "A422397", "Nursing 1", 6, None, True), (1, "A422398", "Human sciences", 7, None, True),
+                  (1, "A422399", "Italian 1", 2, None, True), (1, "A422400", "Physiopathology sciences", 6, None, True),
+                  (2, "A422402", "Preventive care", 5, None, True), (2, "A422403", "Pharmacology and pathology 1", 4, None, True),
+                  (2, "A422406", "General and specialistic surgery", 4, None, True), (2, "A422407", "Nursing 2", 6, None, True),
+                  (2, "A422409", "Italian 2", 2, None, True), (2, "A422410", "Internistic medicine", 6, None, True),
+                  (2, "A422412", "Oncologic diseases", 5, None, True),
+                  (3, "A422411", "Nursing 3", 6, None, True), (3, "A422417", "Disability disorders", 4, None, True),
+                  (3, "A422418", "Emergency", 6, None, True), (3, "A422422", "Gynaecology and pediatrics", 4, None, True),
+                  (3, "A422423", "Epidemiologics", 9, None, True)]}]},
+    "unicampania-l-snt2-logopedia": {"prefisso": r"A71\d\d", "piani": [{
+        "tipo": "codici", "prefisso": r"A71\d\d|A42\d{4}",
+        "url": "https://www.salutementaleefisica.unicampania.it/avvisi/A.A._20262027/Corsi_di_Laurea/Logopedia/Insegnamento_/Insegnamento_LOGO_NAPOLI_26_27.pdf",
+        "nomi": {"A422036": "Chirurgia generale, otorinolaringoiatria, audiologia I e radioterapia",
+                 "A423979": "Malattie dell'apparato respiratorio, gastroenterologia, medicina interna e anatomia patologica"}}]},
+    "unicampania-l-snt2-terapia-della-neuro": {"prefisso": r"A74\d\d", "piani": [{
+        "tipo": "codici", "prefisso": r"A74\d\d|A42\d{4}",
+        "url": "https://www.salutementaleefisica.unicampania.it/avvisi/A.A._20262027/Corsi_di_Laurea/TNPEE/Insegnamento/Insegnamenti_TNPEE_26_27.pdf",
+        "nomi": {"A421635": "Psicologia e sviluppo neuropsicomotorio"}}]},
+    "unicampania-l-snt2-tecnica-della-riabilitazione": {"prefisso": r"A73\d\d", "piani": [{
+        "tipo": "codici", "prefisso": r"A73\d\d|A42\d{4}", "head": "parole",
+        "url": "https://www.salutementaleefisica.unicampania.it/avvisi/Insegnamento_TRP_2025_2026_1_2.pdf"}]},
+    "unicampania-l-snt1-ostetricia": {"prefisso": r"A\d{4}", "piani": [{
+        "tipo": "codici", "prefisso": r"A61\d\d", "alias": {"A61121": "A6121"},  # il piano scrive «A61121» il laboratorio A6121
+        "url": "https://www.dipdbc.unicampania.it/images/piani_studio/Piano_Ostetricia.pdf"},
+        # due laboratori professionali nello stesso anno (A6121 2 CFU, A6125 1 CFU): nomi distinti
+        {"tipo": "tabella", "url": "https://www.dipdbc.unicampania.it/images/piani_studio/Piano_Ostetricia.pdf",
+         "righe": [(3, "A6121", "Laboratorio professionale - parte 1", 2, None, True), (3, "A6125", "Laboratorio professionale - parte 2", 1, None, True)]}]},
+    # Scienze infermieristiche e ostetriche: programmazione didattica 2026/27 (CFU dei corsi integrati A.1…D.2; i codici delle righe già
+    # lette sono quelli degli integrati, il cui nome nel database è quello di un solo modulo)
+    # Matematica LM-40: 2° anno del manifesto 2026/27 (coorte 2025-26): un insegnamento di Tabella 1 (TAF B) e due di Tabella 3 o 4 (TAF C),
+    # ulteriori conoscenze linguistiche 2, abilità informatiche e telematiche 2, attività a scelta 8, prova finale 24 (= 60 CFU). Gli
+    # insegnamenti opzionali sono quelli già letti per il 1° anno («Coorti 2025-2026, 2026-2027»)
+    "unicampania-lm-40-matematica": {"piani": [{
+        "tipo": "tabella", "url": "https://www.matfis.unicampania.it/images/All2_Manifesto_A37_MAT_LM_26-27_corr_1.pdf",
+        "righe": [(2, None, "Ulteriori conoscenze linguistiche", 2), (2, None, "Abilità informatiche e telematiche", 2),
+                  (2, None, "Attività autonomamente scelte dallo studente", 8, True), (2, None, "Prova finale", 24),
+                  # Tabella 1 (TAF B, formazione teorica avanzata)
+                  (2, "A3426", "Teoria degli Insiemi", 8, True, False, "copia"), (2, "A422255", "Algebra Commutativa", 8, True, False, "copia"),
+                  (2, "A3729", "Teoria di Galois", 8, True, False, "copia"), (2, "A422253", "Teoria dei Gruppi", 8, True, False, "copia"),
+                  (2, "A423386", "Geometria Combinatoria e Applicazioni", 8, True, False, "copia"),
+                  (2, "A423033", "Analisi Matematica Avanzata", 8, True, False, "copia"),
+                  # Tabelle 3 e 4 (TAF C)
+                  (2, "A3717", "Laboratorio di Fisica Moderna", 8, True, False, "copia"),
+                  (2, "A423385", "Elementi di Relativita' e Fisica Quantistica", 8, True, False, "copia"),
+                  (2, "A423586", "Analisi dei Dati Multidimensionali", 8, True, False, "copia"), (2, "A425083", "Finanza Matematica", 8, True, False, "copia"),
+                  (2, "A425082", "Elaborazione dei Segnali e Applicazioni Biomediche", 8, True, False, "copia"),
+                  (2, "A425081", "Sviluppo e Verifica del Software", 8, True, False, "copia"),
+                  (2, "A424450", "Theory of quantum computation", 8, True, False, "copia"),
+                  (2, "A422260", "Didattica della Matematica", 8, True, False, "copia"), (2, "A425093", "Numerical Optimization", 8, True, False, "copia"),
+                  (2, None, "Machine Learning & Artificial Intelligence (mutuato dal CdL in Data Science)", 8, True),
+                  (2, None, "Applicazioni della Meccanica dei Fluidi", 8, True),
+                  # Tabella 2 (TAF B, formazione modellistico applicativa): anche questi valgono per il TAF C della Tabella 4
+                  (2, "A425561", "Processi Stocastici", 8, True, False, "copia"), (2, "A422276", "Equazioni di Navier-stokes", 8, True, False, "copia"),
+                  (2, "A3722", "Equazioni Differenziali della Fisica Matematica", 8, True, False, "copia"),
+                  (2, "A422755", "Meccanica Superiore", 8, True, False, "copia"),
+                  (2, "A426009", "Metodi Numerici per il Machine Learning", 8, True, False, "copia")]}]},
+    "unicampania-lm-snt1-scienze-infermieristiche-e-ostetriche": {"piani": [{
+        "tipo": "tabella", "url": "https://www.medicinasperimentale.unicampania.it/images/CDLM_SIO_Programmazione_Didattica_2026-2027.pdf",
+        "righe": [(1, "A426014", "Management sanitario e programmazione dei servizi", 7),
+                  (1, "A426025", "Responsabilità etiche e giuridiche", 5, None, True),
+                  (1, "A426031", "Direzione e sviluppo dei team infermieristici ai diversi livelli di complessità organizzativa", 7, None, True),
+                  (1, None, "Inglese", 2),
+                  (1, "A426037", "Gestione dei flussi informativi in ambito sanitario", 4, None, True),
+                  (1, "A426042", "Prevenzione ed educazione sanitaria", 5, None, True),
+                  (1, "A426048", "Management oncologico", 6, None, True),
+                  (1, None, "ADE 1° anno", 2, True), (1, None, "Attività di laboratorio 1° anno", 2), (1, None, "Esame di tirocinio 1° anno", 20),
+                  (2, "A8511", "Sviluppo e ricerca delle scienze infermieristiche e ostetriche", 6, None, True),
+                  (2, "A8512", "Sviluppo e formazione delle scienze infermieristiche e ostetriche", 7, None, True),
+                  (2, "A8513", "Management e ricerca in area medica", 7, None, True),
+                  (2, "A8514", "Management e ricerca in area chirurgica", 6, None, True),
+                  (2, None, "ADE 2° anno", 4, True), (2, None, "Attività di laboratorio 2° anno", 3), (2, None, "Esame di tirocinio 2° anno", 20),
+                  (2, None, "Elaborazione tesi", 7)]}]},
+    # Scienze della formazione primaria: piano degli studi 2026/27 (lo stesso piano vale per tutte le coorti: il documento
+    # 2025/26 riporta gli stessi codici); gli anni 4° e 5° non hanno ancora le schede, gli integrati hanno nel database il
+    # codice U-GOV dell'integrato (prima unità - 1) e il CFU complessivo di insegnamento + laboratorio
+    "unicampania-lm-85-bis-scienze-della-formazione-primaria": {"piani": [{
+        "tipo": "tabella", "url": "https://www.letterebeniculturali.unicampania.it/images/didattica/pianidistudio/2026-2027/SFP_Piano_Studi_2026-2027.pdf",
+        "righe": [
+            (1, "A424922", "Pedagogia generale e laboratorio", 9), (1, "A424937", "Didattica generale e tecnologie didattiche e laboratorio", 12),
+            (1, "A424929", "Psicologia dello sviluppo e laboratorio", 9), (1, "A424938", "Storia antica", 4),
+            (1, "A424912", "Antropologia culturale", 8), (1, "A424932", "Metodologia della ricerca educativa e didattica e laboratorio", 13),
+            (1, "A424933", "Laboratorio di lingua inglese I", 2),
+            (2, "A424913", "Pedagogia interculturale", 8), (2, "A424955", "Fondamenti di matematica", 8),
+            (2, "A424946", "Pedagogia speciale e laboratorio", 12), (2, "A424949", "Letteratura italiana e laboratorio", 7, None, True),
+            (2, "A424914", "Storia moderna", 6), (2, "A424952", "Geografia politico-economica e laboratorio", 9),
+            (2, "A424958", "Laboratorio di lingua inglese II", 2), (2, "A424959", "Tirocinio I", 6),
+            (3, "A424960", "Linguistica italiana e laboratorio", 13, None, True), (3, "A424966", "Didattica della matematica e laboratorio", 14),
+            (3, "A424915", "Letteratura italiana contemporanea", 6), (3, "A424963", "Educazione musicale e laboratorio", 9),
+            (3, "A424916", "Storia della scuola", 8), (3, "A424969", "Legislazione scolastica", 4),
+            (3, "A424970", "Laboratorio di lingua inglese III", 2), (3, "A424971", "Lingua inglese (prova di idoneità B2)", 2),
+            (3, "A424972", "Tirocinio II", 6),
+            (4, "A424917", "Storia contemporanea", 6), (4, "A424979", "Elementi e didattica di fisica e laboratorio", 9),
+            (4, "A424977", "Pedagogia e didattica speciale e laboratorio", 10), (4, "A424974", "Metodi e didattica dell'attività motoria e laboratorio", 9),
+            (4, "A424918", "Psicologia dell'educazione", 8), (4, "A424919", "Fondamenti di chimica", 4),
+            (4, None, "Laboratorio di didattica della lingua inglese I", 2), (4, "A424984", "Tirocinio III", 6),
+            # attività a scelta libera (8 CFU) al 4° anno: gli insegnamenti attivati nel 2026/27
+            (4, "A424999", "Matematica e linguaggi", 8, True), (4, "A425000", "Metodologia e didattica della storia", 8, True),
+            (4, "A425001", "Geografia storica e umana", 8, True), (4, "A425985", "Educazione al patrimonio", 8, True),
+            (5, "A424986", "Letteratura per l'infanzia e laboratorio", 9), (5, "A424942", "Elementi di biologia e laboratorio", 13),
+            (5, None, "Psicologia clinica", 8), (5, "A424990", "Laboratorio di tecnologie didattiche", 3),
+            (5, "A424989", "Laboratorio di didattica della lingua inglese II", 2), (5, "A424991", "Tirocinio IV", 6),
+            (5, "A424992", "Prova finale", 9),
+            # un insegnamento opzionale (9 CFU con il laboratorio) a scelta tra due al 5° anno
+            (5, "A424994", "Educazione all'immagine e laboratorio (opzionale)", 9, True), (5, "A424997", "Storia dell'arte contemporanea e laboratorio (opzionale)", 9, True)]}]},
     # Giurisprudenza: piano in tabella; le schede si trovano dalle pagine dei docenti della riga
     "unicampania-lmg-01-giurisprudenza": {
         "url": "https://www.giurisprudenza.unicampania.it/cds-giurisprudenza-online",
@@ -886,18 +1073,57 @@ CORSI: dict[str, dict] = {
     "unicampania-lm-sc-giur-diritto-della-sicurezza": {
         "fonti": [("https://www.giurisprudenza.unicampania.it/studiare-cds-diritto-della-sicurezza/insegnamenti", "tabella")]},
     # Medicina e chirurgia interateneo (Vanvitelli-Parthenope): programmazione 2026/27 in PDF, senza link alle schede
+    # (corso iniziato nel 2025/26: nel 2026/27 sono attivi il 1° anno, coorte 2026, e il 2°, coorte 2025; dal 3° anno la
+    #  programmazione ha «Anno Offerta 2027-28» e seguenti, quindi gli anni 3°-6° non hanno ancora attività erogate)
     "unicampania-lm-41-medicina-e-chirurgia-1634408": {
-        "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/medicina-e-chirurgia", "prefisso": r"A42\d{4}"},
+        "url": "http://www.dipmdsmco.unicampania.it/didattica/corsi-di-studio/medicina-e-chirurgia", "prefisso": r"A42\d{4}", "piani": [{
+        "tipo": "tabella", "url": "https://www.dipmdsmco.unicampania.it/images/2._all.2_PROGRAMMAZIONE_DIDATTICA_Corso_di_Studi_in_MEDICINA_a.a._2026-27__31.03.26_04.05.26_-_modifiche_10.06.26.pdf",
+        "righe": [(1, "A425834", "Fisica", 6, None, True), (1, "A425266", "Chimica e propedeutica biochimica", 6, None, True),
+                  (1, "A425835", "Biologia", 6, None, True), (1, "A425840", "Anatomia umana", 8, None, True),
+                  (1, "A425273", "Istologia ed embriologia medica", 8, None, True),
+                  (1, "A425277", "Basi metodologiche in medicina e bioetica", 17, None, True),
+                  (2, "A425841", "Anatomia umana", 7, None, True), (2, "A425294", "Biochimica e biologia molecolare", 13, None, True),
+                  (2, "A425297", "Fisiologia medica - 1° semestre", 7, None, True), (2, "A425298", "Fisiologia medica - 2° semestre", 7, None, True),
+                  (2, "A425839", "Microbiologia, immunologia e immunopatologia", 11, None, True),
+                  (2, "A425302", "Patologia generale, fisiopatologia e genetica medica", 7, None, True),
+                  (2, "A425306", "ADE 2° anno", 2, True)]}]},
     # un articolo per ogni corso integrato
     "unicampania-lm-41-medicina-e-chirurgia-1634406": {"fonti": [(
         "https://www.medicinasperimentale.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-a-ciclo-unico-in-"
         "medicina-e-chirurgia-sede-di-napoli/10-didattica/1696-insegnamenti-a-a-2026-2027-corso-di-laurea-magistrale-a-ciclo-"
         "unico-in-medicina-e-chirurgia-sede-di-napoli", "articoli")]},
     # il piano 2025/26 (con i codici delle attività) è l'ultimo pubblicato in PDF; le pagine dei corsi integrati sono del 2026/27
+    # (CFU e attività senza scheda trascritti dal piano didattico 2025/26: integrati con unità senza codice dell'integrato
+    #  e righe su più celle; ogni anno somma 60 CFU)
     "unicampania-l-snt3-tecniche-di-laboratorio-biomedico": {"prefisso": r"A77\d\d", "fonti": [(
-        "http://www.medicinadiprecisione.unicampania.it/images/Piano_di_Studi_TLB_a.a._25-26.pdf", "pdf")]},
+        "http://www.medicinadiprecisione.unicampania.it/images/Piano_di_Studi_TLB_a.a._25-26.pdf", "pdf")], "piani": [{
+        "tipo": "tabella", "url": "http://www.medicinadiprecisione.unicampania.it/images/Piano_di_Studi_TLB_a.a._25-26.pdf",
+        "righe": [(1, "A422815", "Fondamenti preliminari alla pratica professionale", 4),  # Sicurezza in laboratorio 2 + Organizzazione 2
+                  (1, "A422832", "Attività formative professionalizzanti - Tirocinio", 23),
+                  (2, "A7711", "Anatomia patologica e metodologie diagnostiche", 6),  # 2 + 1 (affine) + 3
+                  (2, "A422821", "Attività formative professionalizzanti - Tirocinio", 26),
+                  (3, "A7712", "Metodologie per la pratica professionale e bioetica", 6),  # 2 + 2 + 2
+                  (3, "A7716", "Immunoematologia e medicina trasfusionale", 10),  # 3 + 2 + 1 + 4
+                  (3, "A421481", "Attività a scelta dello studente", 6, True),
+                  (3, "A422829", "Attività formative professionalizzanti - Stage", 3),
+                  (3, "A422830", "Attività formative professionalizzanti - Tirocinio", 15),
+                  (3, "A7721", "Prova finale (tesi di laurea)", 6)]}]},
     "unicampania-l-snt3-tecniche-di-radiologia-medica": {"prefisso": r"A79\d\d", "fonti": [(
-        "http://www.medicinadiprecisione.unicampania.it/images/Piano_di_Studi_a.a_25.26.pdf", "pdf")]},
+        "http://www.medicinadiprecisione.unicampania.it/images/Piano_di_Studi_a.a_25.26.pdf", "pdf")], "piani": [{
+        "tipo": "tabella", "url": "http://www.medicinadiprecisione.unicampania.it/images/Piano_di_Studi_a.a_25.26.pdf",
+        # CFU di ogni integrato = somma delle sue unità (colonna «CORSO INTEGRATO»); attività senza scheda dal piano
+        "righe": [(1, "A424502", "Fondamenti di Radiologia Tradizionale", 8), (1, "A7907", "Fondamenti di Anatomia e Anatomia Radiologica", 6),
+                  (1, "A7901B", "Lingua inglese", 3), (1, "A7904", "Attività a scelta I", 2, True),
+                  (1, "A424506", "Laboratorio professionalizzante I", 1), (1, "A7910", "Tirocinio teorico-pratico I", 19),
+                  (2, "A7917", "Apparecchiature e Tecniche TC", 8), (2, "A7918", "Apparecchiature e Tecniche RM", 8),
+                  (2, "A7913", "Trattamento e Trasmissione delle Immagini Digitalizzate", 8),
+                  (2, "A7912", "Apparecchiature e Tecniche di Neuroradiologia e Nozioni di Ultrasonologia", 4),
+                  (2, "A424512", "Laboratorio professionalizzante II", 1), (2, "A7908", "Attività a scelta II", 2, True),
+                  (2, "A7922", "Tirocinio teorico-pratico II", 25),
+                  (3, "A7923", "Apparecchiature e Tecniche Angiografiche", 3), (3, "A7924", "Apparecchiature e Tecniche di Medicina Nucleare", 7),
+                  (3, "A7925", "Apparecchiature e Tecniche di Radioterapia", 4), (3, "A424515", "Management nei servizi sanitari", 5),
+                  (3, "A7914", "Attività a scelta III", 2, True), (3, "A424517", "Laboratorio professionalizzante III", 1),
+                  (3, "A7933", "Tirocinio teorico-pratico III", 28), (3, "A7934", "Esame finale", 6)]}]},
     "unicampania-lm-41-medicina-e-chirurgia-1634407": {"fonti": [(
         "https://www.medicinadiprecisione.unicampania.it/didattica/corsi-di-studio/corso-di-laurea-magistrale-a-ciclo-unico-in-"
         "medicina-e-chirurgia-in-lingua-inglese-medicine-and-surgery-in-english/10-didattica/1523-teaching-plan-2026-2027",
@@ -983,6 +1209,8 @@ def _aggiungi_attivita(x: dict, cfg: dict, c: "_Scarica", oggi: str, log=print) 
         viste: dict[tuple, int] = {}
         gia: set = set()
         for a in leggi_attivita_manifesto(testo, durata):
+            if _norm_nome(a["nome"]) in {_norm_nome(n) for n in cfg.get("manifesto_salta") or []}:
+                continue  # attività già nel piano per anno (un laboratorio per anno invece del totale del corso)
             chiave = (a["anno"], _norm_nome(a["nome"]))
             if cfg.get("tail_unici") and (chiave, a["cfu"]) in gia:
                 continue
@@ -998,6 +1226,68 @@ def _aggiungi_attivita(x: dict, cfg: dict, c: "_Scarica", oggi: str, log=print) 
                 "cfu": int(a["cfu"]) if float(a["cfu"]).is_integer() else a["cfu"], "ssd": None,
                 "obbligatorio": False if scelta else True, "curriculum": curr, "docenti": [], "url": url, "libri": [],
                 "esami": [], "fonte": url, "verificato_il": oggi, "stato_libri": "da_aggiungere"})
+
+
+# corsi il cui piano ufficiale è fisso (tutti gli esami obbligatori, con le attività a scelta indicate): obbligatorio esplicito
+_PIANO_OBBLIGATORIO = ("unicampania-l-snt", "unicampania-lm-snt", "unicampania-lm-85-bis", "unicampania-lm-46",
+                       "unicampania-lm-41-medicina-e-chirurgia")
+
+
+def _applica_piani(x: dict, cfg: dict, c: "_Scarica", oggi: str, log=print) -> None:
+    """Piani di studio ufficiali delle professioni sanitarie (`CORSI[...]["piani"]`, vedi `unicampania_piani`): i CFU degli
+    integrati e le attività senza scheda (tirocinio, attività a scelta, laboratori, seminari, prova finale). Alla fine si
+    scrive nel log la somma dei CFU di ogni anno, per controllare il piano con i 60 CFU annuali."""
+    for p in cfg.get("piani") or []:
+        tipo, url = p["tipo"], p.get("url") or p.get("fonte")
+        if tipo == "tabella":
+            res = piani.applica_tabella(x, p["righe"], url, oggi, log)
+        elif tipo == "coorti":  # un documento per coorte: (anno, url, a.a. erogato)
+            specs = [(a, u, _testo_documento(c, u), er) for a, u, er in p["specs"]]
+            res = piani.applica_coorti(x, [q for q in specs if q[2]], oggi, log)
+            url = p["specs"][0][1]
+        else:
+            testo = _testo_documento(c, url)
+            if not testo:
+                log(f"[unicampania]   {x['id'][:50]}: piano {url} non letto")
+                continue
+            if tipo == "codici":
+                recs = piani.leggi_codici(testo, p["prefisso"], p.get("alias"), p.get("head", "caps"), p.get("fine"))
+                for k, v in (p.get("cfu_unita") or {}).items():
+                    if k in recs:
+                        recs[k]["cfu"] = v
+                res = piani.applica_codici(x, recs, p, url, oggi, log)
+            elif tipo == "ugov":
+                res = piani.applica_ugov(x, piani.leggi_ugov(testo), p, url, oggi, log)
+            elif tipo == "nomi":
+                res = piani.applica_nomi(x, testo, url, p, log)
+            else:
+                continue
+        somme: dict = {}
+        for i in x["insegnamenti"]:
+            if isinstance(i.get("cfu"), (int, float)):
+                somme[i["anno"]] = somme.get(i["anno"], 0) + i["cfu"]
+        log(f"[unicampania]   {x['id'][11:60]}: piano {tipo} {res}; CFU per anno {dict(sorted(somme.items(), key=lambda q: str(q[0])))}")
+    if cfg.get("piani") and x["id"].startswith(_PIANO_OBBLIGATORIO):
+        for i in x["insegnamenti"]:  # il piano ufficiale elenca gli esami obbligatori; le attività a scelta sono già `False`
+            if i.get("obbligatorio") is None:
+                i["obbligatorio"] = True
+
+
+def _distingui_omonimi(x: dict) -> None:
+    """Due attività con lo stesso nome nello stesso anno e codici diversi (la «Lingua francese» da 9 CFU e quella da 6 CFU
+    dei due ordinamenti del corso) sono insegnamenti distinti della fonte: il nome dice quale (CFU, o il codice se i CFU
+    sono uguali). build_db le unirebbe per nome."""
+    gruppi: dict[tuple, list[dict]] = {}
+    for i in x["insegnamenti"]:
+        gruppi.setdefault((i.get("anno"), _norm_nome(i["nome"]), i.get("curriculum")), []).append(i)
+    for righe in gruppi.values():
+        codici = {r.get("codice") for r in righe if r.get("codice")}
+        if len(righe) < 2 or len(codici) < 2:
+            continue
+        cfu = [r.get("cfu") for r in righe]
+        for r in righe:
+            if r.get("codice"):
+                r["nome"] += f" ({r['cfu']:g} CFU)" if len(set(cfu)) == len(cfu) and isinstance(r.get("cfu"), (int, float)) else f" ({r['codice']})"
 
 
 def _cfg(cid: str) -> dict:
@@ -1109,7 +1399,10 @@ def fetch_ateneo(uid: str = "unicampania", anno: int | None = None, max_cds: int
                         "verificato_il": oggi, "_unita": {}, "_schede": set(), "_ci": False, "_aa": v.get("aa"),
                         "_host": host, "_cfu_tab": v.get("cfu_tab"),
                     }
-                nome = _titolo(v["integrato"] or v["nome"]) if (v["integrato"] or v["nome"]) else None
+                nome_v = v["integrato"] or v["nome"]
+                if nome_v and not _NOME_VERO.search(nome_v):  # «5», «6»: il testo del link è il CFU; il nome lo dà la scheda
+                    nome_v = None
+                nome = _titolo(nome_v) if nome_v else None
                 if nome and (not item["nome"] or (not v["cod_unita"] and not v["integrato"])):
                     item["nome"] = nome  # il nome del corso integrato (link senza unità) vale più di quello di un modulo
                 item["periodo"] = item["periodo"] or v["periodo"]
@@ -1341,7 +1634,7 @@ def fetch_ateneo(uid: str = "unicampania", anno: int | None = None, max_cds: int
                             f"dal programma dell'a.a. {prec}/{str(anno)[2:]} (quello {anno}/{str(anno + 1)[2:]} non indica i testi)"
                         libri.append(lb)
         tot = sum(i["_unita"].values())
-        if not tot and i.get("_cfu_tab"):
+        if i.get("_cfu_tab") and float(i["_cfu_tab"]) > tot:  # la scheda collegata è di un solo modulo: vale il CFU del piano
             tot = float(i["_cfu_tab"])
         i["cfu"] = (int(tot) if float(tot).is_integer() else tot) or None
         i["docenti"] = sorted(docenti)
@@ -1378,6 +1671,11 @@ def fetch_ateneo(uid: str = "unicampania", anno: int | None = None, max_cds: int
             _aggiungi_attivita(x, _cfg(x["id"]), c, oggi, log)
         except Exception as e:  # noqa: BLE001
             log(f"[{uid}]   attività senza scheda di {x['id']} non lette: {e!r}")
+        try:
+            _applica_piani(x, _cfg(x["id"]), c, oggi, log)
+        except Exception as e:  # noqa: BLE001
+            log(f"[{uid}]   piano di studio di {x['id']} non letto: {e!r}")
+        _distingui_omonimi(x)
     out = [x for x in out if x["insegnamenti"]]
     log(f"[{uid}] libri trovati: {trovati}; richieste: {c.requests}")
     return {"universita_id": uid, "descrizione": "Generato dai siti dei dipartimenti *.unicampania.it "

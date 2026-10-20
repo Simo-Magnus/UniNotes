@@ -61,7 +61,7 @@ def _forte(p: str) -> bool:
 
 
 _FRASI = re.compile(r"(?<=[a-z0-9\)\]])\.\s+(?=[A-ZÈÀÌÒÙ“\"«–\-])|;\s+|\s+[–—]\s+(?=[A-Z])|\s+(?=(?:In alternativa|Libri? di|Testi? (?:di|consigliat|adottat)))")
-_LEAD = re.compile(r"(?i)^[^:“\"«]{0,160}?(?:è|sono|testi?|libri?|bibliografia|riferimento|consigliat\w+|adottat\w+|obbligatori\w+|suggerit\w+|manuale|manuali)\s*:\s*")
+_LEAD = re.compile(r"(?i)^[^:“\"«]{0,160}?\b(?:è|sono|testi?|libri?|bibliografia|riferimento|consigliat\w+|adottat\w+|obbligatori\w+|suggerit\w+|manuale|manuali)\s*:\s*")
 _QUOTE = re.compile(r"[“\"«]")
 
 
@@ -86,17 +86,17 @@ def _da_frase(p: str) -> str | None:
     if re.match(r"^(?:[A-ZÀ-Ý][a-zà-ÿ]+:\s|Vol\.|\(|\d)", p) or p.count("(") > p.count(")") + 1:
         return None  # coda di una citazione spezzata («Milano: Casa Editrice …», «Vol.1, Plenum Press»)
     m = _EDITORI_CIT.search(p)
-    gen = re.search(r"(?i)(?:editoriale|publishers?|publishing|books?|verlag)", p)
+    gen = re.search(r"(?i)\b(?:editoriale|publishers?|publishing|books?|verlag)\b", p)
     titolo_di_autore = re.fullmatch(r"[A-ZÀ-Ý][^,;:]{5,100}\s+(?:di|by)\s+(?:[A-Z]\.\s?){1,3}[A-Z][\w'’-]+"
                                     r"(?:\s+(?:e|and|&)\s+(?:[A-Z]\.\s?){0,3}[A-Z][\w'’-]+)*", p)
     forte = (gen is not None and gen.start() >= 12) or bool(titolo_di_autore) or (m is not None and m.start() >= 12) or (_isbn(p) is not None and len(p.split()) >= 4)
-    virg = bool(re.search(r"[“\"«][^”\"»]{6,}[”\"»]", p)) and bool(re.search(r"[A-Z]\.|di\s+[A-Z]|by\s+[A-Z]", p))
+    virg = bool(re.search(r"[“\"«][^”\"»]{6,}[”\"»]", p)) and bool(re.search(r"\b[A-Z]\.|\bdi\s+[A-Z]|\bby\s+[A-Z]", p))
     if not (forte or virg) or len(p.split()) < 4:
         return None
     if re.match(r"(?i)^(?:le |il |i |gli |la |lo |sarà|verr|non |tutt|inoltre|per |durante|slide|materiale|dispens|appunti|"
                 r"articol|i docenti|casa editrice)", p) and not _isbn(p):
         return None
-    if re.search(r"(?i)(?:bando|docente per l'anno)", p):
+    if re.search(r"(?i)\b(?:bando|docente per l'anno)\b", p):
         return None
     return p
 

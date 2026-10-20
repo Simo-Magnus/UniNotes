@@ -277,6 +277,12 @@
    "motivo": "corso ad esaurimento sostituito dal nuovo ordinamento",
    "dal": "2026-10-20"
   },
+  "unimol-lm-snt1-scienze-infermieristiche-ed-ostetriche": {
+   "nuovo": "unimol-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+   "universita_id": "unimol",
+   "motivo": "doppione unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
   "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-771": {
    "nuovo": "uniud-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
    "universita_id": "uniud",
@@ -289,10 +295,232 @@
    "motivo": "doppione unito al corso Universitaly",
    "dal": "2026-10-20"
   },
-  "unimol-lm-snt1-scienze-infermieristiche-ed-ostetriche": {
-   "nuovo": "unimol-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
-   "universita_id": "unimol",
+  "poliba-lm-24-ingegneria-dei-sistemi-edilizi-d-m-270-04": {
+   "nuovo": "poliba-lm-24-ingegneria-dei-sistemi-edilizi",
+   "universita_id": "poliba",
+   "motivo": "doppione unito al corso Universitaly (stesso corso del catalogo con il nome «(d.m. 270/04)»)",
+   "dal": "2026-10-20"
+  },
+  "poliba-lm-28-ingegneria-elettrica-d-m-270-04": {
+   "nuovo": "poliba-lm-28-ingegneria-elettrica",
+   "universita_id": "poliba",
+   "motivo": "doppione unito al corso Universitaly (stesso corso del catalogo con il nome «(d.m. 270/04)»)",
+   "dal": "2026-10-20"
+  },
+  "poliba-lm-31-ingegneria-gestionale-d-m-270-04": {
+   "nuovo": "poliba-lm-31-ingegneria-gestionale",
+   "universita_id": "poliba",
+   "motivo": "doppione unito al corso Universitaly (stesso corso del catalogo con il nome «(d.m. 270/04)»)",
+   "dal": "2026-10-20"
+  },
+  "poliba-lm-32-ingegneria-informatica-d-m-270-04": {
+   "nuovo": "poliba-lm-32-computer-science-engineering",
+   "universita_id": "poliba",
+   "motivo": "doppione unito al corso Universitaly (stesso corso del catalogo con il nome «(d.m. 270/04)»)",
+   "dal": "2026-10-20"
+  },
+  "poliba-lm-33-ingegneria-meccanica-d-m-270-04": {
+   "nuovo": "poliba-lm-33-ingegneria-meccanica",
+   "universita_id": "poliba",
+   "motivo": "doppione unito al corso Universitaly (stesso corso del catalogo con il nome «(d.m. 270/04)»)",
+   "dal": "2026-10-20"
+  },
+  "unicampus-l-9-corso-di-laurea-in-ingegneria-industriale": {
+   "nuovo": "unicampus-l-9-ingegneria-industriale",
+   "universita_id": "unicampus",
+   "motivo": "vecchio ordinamento (INPL01, coorti fino al 2024) dello stesso corso di Ingegneria industriale: le coorti precedenti sono nel piano del corso Universitaly (catena INPL04 > INPL01)",
+   "dal": "2026-10-20"
+  },
+  "unicampus-lm-snt1-scienze-infermieristiche-ed-ostetriche": {
+   "nuovo": "unicampus-lm-snt1-scienze-infermieristiche-e-ostetriche-profilo-infermieristic",
+   "universita_id": "unicampus",
+   "motivo": "vecchio nome (MCLM06, coorte 2024) del corso Scienze infermieristiche e ostetriche - profilo infermieristico (MCLM12)",
+   "dal": "2026-10-20"
+  },
+  "uniecampus-l-33-economia-dm-1648-23": {
+   "nuovo": "uniecampus-l-33-economia",
+   "universita_id": "uniecampus",
+   "motivo": "corso del catalogo (DM 1648/23, DM 1649/23) unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniecampus-lm-23-ingegneria-civile-dm-1649-23": {
+   "nuovo": "uniecampus-lm-23-ingegneria-civile",
+   "universita_id": "uniecampus",
+   "motivo": "corso del catalogo (DM 1648/23, DM 1649/23) unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniecampus-lm-33-ingegneria-industriale-dm-1649-23": {
+   "nuovo": "uniecampus-lm-33-ingegneria-industriale",
+   "universita_id": "uniecampus",
+   "motivo": "corso del catalogo (DM 1648/23, DM 1649/23) unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniecampus-lm-32-ingegneria-informatica-e-dell-automazione-dm-1649-23": {
+   "nuovo": "uniecampus-lm-32-ingegneria-informatica-e-dell-automazione",
+   "universita_id": "uniecampus",
+   "motivo": "corso del catalogo (DM 1648/23, DM 1649/23) unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniecampus-lm-14-letteratura-lingua-e-cultura-italiana-dm-1649-23": {
+   "nuovo": "uniecampus-lm-14-letteratura-lingua-e-cultura-italiana",
+   "universita_id": "uniecampus",
+   "motivo": "corso del catalogo (DM 1648/23, DM 1649/23) unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniecampus-lm-37-lingue-e-letterature-moderne-e-traduzione-interculturale-dm": {
+   "nuovo": "uniecampus-lm-37-lingue-e-letterature-moderne-e-traduzione-interculturale",
+   "universita_id": "uniecampus",
+   "motivo": "corso del catalogo (DM 1648/23, DM 1649/23) unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniecampus-lm-51-psicologia-dm-1649-23": {
+   "nuovo": "uniecampus-lm-51-psicologia",
+   "universita_id": "uniecampus",
+   "motivo": "corso del catalogo (DM 1648/23, DM 1649/23) unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniecampus-lm-56-scienze-dell-economia-dm-1649-23": {
+   "nuovo": "uniecampus-lm-56-scienze-dell-economia",
+   "universita_id": "uniecampus",
+   "motivo": "corso del catalogo (DM 1648/23, DM 1649/23) unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniecampus-lm-67-scienze-dell-esercizio-fisico-per-il-benessere-e-la-salute-d": {
+   "nuovo": "uniecampus-lm-67-scienze-dell-esercizio-fisico-per-il-benessere-e-la-salute",
+   "universita_id": "uniecampus",
+   "motivo": "corso del catalogo (DM 1648/23, DM 1649/23) unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniecampus-lm-61-scienze-della-nutrizione-umana-dm-1649-23": {
+   "nuovo": "uniecampus-lm-61-scienze-della-nutrizione-umana",
+   "universita_id": "uniecampus",
+   "motivo": "corso del catalogo (DM 1648/23, DM 1649/23) unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniecampus-lm-85-scienze-pedagogiche-dm-1649-23": {
+   "nuovo": "uniecampus-lm-85-scienze-pedagogiche",
+   "universita_id": "uniecampus",
+   "motivo": "corso del catalogo (DM 1648/23, DM 1649/23) unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniecampus-lmg-01-giurisprudenza-dm-1649-23": {
+   "nuovo": "uniecampus-lmg-01-giurisprudenza",
+   "universita_id": "uniecampus",
+   "motivo": "corso del catalogo (DM 1648/23, DM 1649/23) unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "luiss-lm-62-government-and-public-affairs": {
+   "nuovo": "luiss-lm-62-government-public-affairs",
+   "universita_id": "luiss",
+   "motivo": "corso del catalogo Cineca (LM26GPA) unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "lumsa-lm-77-management-finance-and-data-analytics": {
+   "nuovo": "lumsa-lm-77-management-finance-and-data-analitycs",
+   "universita_id": "lumsa",
    "motivo": "doppione unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "unint-l-18-economia-internazionale-e-management-digitale": {
+   "nuovo": "unint-l-18-green-management-e-sostenibilita",
+   "universita_id": "unint",
+   "motivo": "corso del catalogo con l'ordinamento cessato nel 2023 (05FDE): il corso L-18 attivo è Green management e sostenibilità; il piano di studi del vecchio id era una fusione dei due corsi",
+   "dal": "2026-10-20"
+  },
+  "iuav-lm-89-curatela-delle-arti-e-del-patrimonio-in-prospettiva-intercul": {
+   "nuovo": "iuav-lm-89-curating-arts-and-heritage-in-intercultural-perspectives",
+   "universita_id": "iuav",
+   "motivo": "doppione unito al corso Universitaly (stesso corso: «Curatela delle Arti…» nel catalogo, titolo inglese su Universitaly)",
+   "dal": "2026-10-20"
+  },
+  "iuav-lm-4-c-u-architettura-n42": {
+   "nuovo": "iuav-lm-4-c-u-architettura",
+   "universita_id": "iuav",
+   "motivo": "doppione unito al corso Universitaly (N40, N41, N42 sono le coorti 2024, 2025, 2026 dello stesso ciclo unico)",
+   "dal": "2026-10-20"
+  },
+  "unite-lmg-01-giurisprudenza-sede-avezzano": {
+   "nuovo": "unite-lmg-01-giurisprudenza-replica-avezzano",
+   "universita_id": "unite",
+   "motivo": "doppione unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniroma4-lm-67-corso-di-laurea-magistrale-in-attivita-fisica-e-salute": {
+   "nuovo": "uniroma4-lm-67-health-and-physical-activity",
+   "universita_id": "uniroma4",
+   "motivo": "doppione unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniroma4-lm-47-corso-di-laurea-magistrale-in-management-dello-sport": {
+   "nuovo": "uniroma4-lm-47-management-dello-sport",
+   "universita_id": "uniroma4",
+   "motivo": "doppione unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "uniroma4-lm-68-corso-di-laurea-magistrale-in-scienza-e-tecnica-dello-sport": {
+   "nuovo": "uniroma4-lm-68-scienza-e-tecnica-dello-sport",
+   "universita_id": "uniroma4",
+   "motivo": "doppione unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "liuc-l-9-ingegneria-gestionale-classe-l-9-r": {
+   "nuovo": "liuc-l-9-ingegneria-gestionale",
+   "universita_id": "liuc",
+   "motivo": "doppione unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "liuc-lm-77-economia-management-e-governance-classe-lm-77-r": {
+   "nuovo": "liuc-lm-77-economia-management-e-governance",
+   "universita_id": "liuc",
+   "motivo": "doppione unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "liuc-lm-31-ingegneria-gestionale-classe-lm-31": {
+   "nuovo": "liuc-lm-31-ingegneria-gestionale",
+   "universita_id": "liuc",
+   "motivo": "doppione unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "unisannio-l-32-scienze-naturali-geologiche-e-ambientali": {
+   "nuovo": "unisannio-l-34-scienze-geologiche",
+   "universita_id": "unisannio",
+   "motivo": "corso a doppia classe L-32/L-34 senza immatricolazioni dal 2025: il piano L-34 della coorte 2024 è il terzo anno di Scienze geologiche",
+   "dal": "2026-10-20"
+  },
+  "unitelma-lm-sc-gi-scienze-giuridiche": {
+   "nuovo": "unitelma-lm-sc-giur-scienze-giuridiche",
+   "universita_id": "unitelma",
+   "motivo": "doppione unito al corso Universitaly (Scienze giuridiche LM/SC-GI nel catalogo, LM/SC-GIUR in Universitaly)",
+   "dal": "2026-10-20"
+  },
+  "unisr-l-snt1-corso-di-laurea-in-infermieristica": {
+   "nuovo": "unisr-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf",
+   "universita_id": "unisr",
+   "motivo": "doppione del catalogo unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "unisr-l-snt1-corso-di-laurea-in-infermieristica-2": {
+   "nuovo": "unisr-l-snt1-infermieristica-abilitante-alla-professione-sanitaria-di-inf-1627929",
+   "universita_id": "unisr",
+   "motivo": "doppione del catalogo unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "unisr-lm-51-corso-di-laurea-magistrale-in-psicologia-cognitiva-nella-com": {
+   "nuovo": "unisr-lm-51-cognitive-psychology-in-health-communication",
+   "universita_id": "unisr",
+   "motivo": "doppione del catalogo unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "unisr-lm-41-corso-di-laurea-magistrale-in-medicina-e-chirurgia-2": {
+   "nuovo": "unisr-lm-41-medicina-e-chirurgia-replica-1",
+   "universita_id": "unisr",
+   "motivo": "doppione del catalogo unito al corso Universitaly",
+   "dal": "2026-10-20"
+  },
+  "unisr-lm-41-corso-di-laurea-magistrale-in-medicina-e-chirurgia-3": {
+   "nuovo": "unisr-lm-41-medicina-e-chirurgia-replica-2",
+   "universita_id": "unisr",
+   "motivo": "doppione del catalogo unito al corso Universitaly",
    "dal": "2026-10-20"
   }
  }

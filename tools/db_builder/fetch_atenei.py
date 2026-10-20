@@ -69,7 +69,7 @@ SITI = {"unibo": unibo.fetch_ateneo, "unimi": unimi.fetch_ateneo, "unige": unige
 CATALOGO_IN_SITI = {"unibg", "unipd", "unifi", "unipi", "unibs", "uniba", "unitn", "unipv"}
 SITI["unimore"] = unimore.fetch_ateneo  # catalogo Cineca con coorti per nome, libri dai testi liberi e appelli per corso
 CATALOGO_IN_SITI.add("unimore")
-SITI["unisa"] = unisa.fetch_ateneo  # catalogo Cineca con coorti per nome, durata dal piano, libri dai testi liberi
+SITI["unisa"] = unisa.fetch_ateneo  # catalogo Cineca: piani per coorte (codici cambiati con il riordino, sei corsi rinominati, piani di più coorti nello stesso elenco), gruppi OO/F/W/S con CFU dalle etichette, attività a 0 CFU tolte o con i CFU di un'altra coorte, libri dai testi liberi
 CATALOGO_IN_SITI.add("unisa")
 APPELLI["unisa"] = unisa.fetch_appelli  # bacheca Esse3 per corso di studio e per dipartimento
 SITI["units"] = units.fetch_ateneo  # catalogo Cineca a 2 req/s, coorti per nome, libri dai testi liberi e dall'a.a. precedente
@@ -134,6 +134,78 @@ CATALOGO_IN_SITI.add("unicz")
 from adapters import unimc  # noqa: E402
 SITI["unimc"] = unimc.fetch_ateneo  # catalogo Cineca: durata dal piano (FI = 1 anno), piani per coorte (codici con la «R» del riordino, percorsi per codice o per insegnamenti in comune), gruppi OO/F/G/W/S con CFU dalle etichette e dalle note, scelte senza anno nell'ultimo anno
 CATALOGO_IN_SITI.add("unimc")
+from adapters import poliba  # noqa: E402
+SITI["poliba"] = poliba.fetch_ateneo  # catalogo Cineca: piani per coorte (codici «-R» del riordino), gruppi OO/F/G/W/S con CFU dalle etichette, anni 0 e «1° e 2° anno» riassegnati, corso e replica di Taranto con i propri percorsi
+CATALOGO_IN_SITI.add("poliba")
+from adapters import uniparthenope  # noqa: E402
+SITI["uniparthenope"] = uniparthenope.fetch_ateneo  # catalogo Cineca: piani per coorte (codici «R» del riordino = «0»), gruppi OO/F/G/S con CFU dalle etichette, percorsi senza nome come «Percorso <codice>», corsi omonimi di sedi diverse (Napoli, Nola, Caivano) ognuno con il proprio id, stesso codice con CFU diversi tra i percorsi
+CATALOGO_IN_SITI.add("uniparthenope")
+from adapters import unifg  # noqa: E402
+SITI["unifg"] = unifg.fetch_ateneo  # catalogo Cineca: piani per coorte (codici cambiati con il riordino, tipo e sede dei corsi omonimi), gruppi OO/F/W/S con CFU dalle etichette «fra A e B CFU», regole di scelta libera senza elenco come voce a scelta, percorsi doppi uniti, repliche di sede dell'Infermieristica con id Universitaly espliciti
+CATALOGO_IN_SITI.add("unifg")
+from adapters import unicampus  # noqa: E402
+SITI["unicampus"] = unicampus.fetch_ateneo  # catalogo Cineca: un corso per ogni corso di Universitaly (catene di codici del riordino: INPL04>INPL01, MCLM08>MCLM01, ...), piani per coorte con ripiego sulla più vicina, gruppi OO/F/W con scelte riconosciute, ADE e tirocini opzionali nell'anno di erogazione, attività a 0 CFU e «altreAttivita» (erogato) escluse
+CATALOGO_IN_SITI.add("unicampus")
+from adapters import unicamillus  # noqa: E402
+SITI["unicamillus"] = unicamillus.fetch_ateneo  # GOMP: regolamenti per a.a. = erogato (l'anno k dal più recente che lo ha), anni non ancora insegnati dal piano 2026/27 del regolamento didattico (PDF), un corso per ogni id Universitaly (Medicina Roma in inglese, Venezia, Roma in italiano, Cefalù; Odontoiatria Roma e Venezia-Mestre) con la sede, crediti liberi a scelta, righe omonime dello stesso anno distinte
+from adapters import unior  # noqa: E402
+SITI["unior"] = unior.fetch_ateneo  # catalogo Cineca: piani per coorte (codici «R» del riordino 2025, percorsi cambiati tra le coorti), gruppi OO/F/W/S con CFU dalle etichette, anno «altreAttivita» nell'ultimo anno, esame a scelta libera e insegnamenti del piano senza doppioni, id Universitaly espliciti
+CATALOGO_IN_SITI.add("unior")
+from adapters import unifortunato  # noqa: E402
+SITI["unifortunato"] = unifortunato.fetch_ateneo  # GOMP: ogni anno dal regolamento 2026 (il 1° anno solo era letto prima), DEI-09 e PSI-08 dal regolamento 2026 non più nell'elenco, percorsi vuoti, attività a 0 CFU e gruppi extracurriculari esclusi, gruppi a scelta espansi, libri dai regolamenti precedenti
+from adapters import unicam  # noqa: E402
+SITI["unicam"] = unicam.fetch_ateneo  # catalogo Cineca: un corso per ogni corso di Universitaly (catene di codici: L-CHI > L-CHIR, LM-FAR > LM-FARA > LM-FARAR), piani per coorte con ripiego sulla più vicina, durata dal piano (cicli unici di 5 anni), gruppi OO/F/G/W con stage e scelte come attività a scelta, curricula veri anche col flag «comune» del catalogo (Bioscienze e Biotecnologia), attività a 0 CFU (OFA) escluse
+CATALOGO_IN_SITI.add("unicam")
+from adapters import uniecampus  # noqa: E402
+SITI["uniecampus"] = uniecampus.fetch_ateneo  # catalogo Cineca: piani per coorte (codici dei riordini DM 1648/23 e 1649/23 ritrovati per nome), gruppi OO/F con CFU dalle etichette, solo L2/LM/LM5, un corso per ogni corso di Universitaly (id espliciti, niente «(DM …)» nel nome), attività a 0 CFU tolte, libri dai testi liberi
+CATALOGO_IN_SITI.add("uniecampus")
+from adapters import luiss  # noqa: E402
+SITI["luiss"] = luiss.fetch_ateneo  # catalogo Cineca: un corso per ogni corso di Universitaly (catene di codici per codice ministeriale: L25xx > L21xx, LM26FIN > LM25W > LM19W, ...), piano della coorte di ogni anno, percorsi «N anno <curriculum>» senza prefisso e suffisso «da orientamento», ACE Program come percorso alternativo, tipo di insegnamento OBB/OPZ del catalogo, attività a 0 CFU escluse, segnaposto «***CORE/ELECTIVE ABROAD***» distinti per codice
+CATALOGO_IN_SITI.add("luiss")
+from adapters import unint  # noqa: E402
+SITI["unint"] = unint.fetch_ateneo  # piani di studio dalle pagine dei corsi di unint.eu (il catalogo Cineca ha solo un elenco di attività senza anno), insegnamenti abbinati per nome alle attività del catalogo (codice, docenti, periodo, libri), alternative «oppure»/«a scelta tra»/lingue come scelte, curricula per indirizzo, L-18 dal regolamento 2025/26, un corso per ogni corso di Universitaly (id espliciti)
+CATALOGO_IN_SITI.add("unint")
+from adapters import lumsa  # noqa: E402
+SITI["lumsa"] = lumsa.fetch_ateneo  # catalogo Cineca: un corso per ogni corso di Universitaly (catene di codici del riordino 2025: R403/02 > L18, 400/15 > LMG01R, ...), piani per coorte con ripiego sulla più vicina, piano della sede (Roma/Palermo/Taranto), percorsi riconosciuti tra i codici, gruppi OO/F/W con CFU dalle etichette, attività a 0 CFU tolte, «altreAttivita» a scelta nell'anno in cui sono offerte
+CATALOGO_IN_SITI.add("lumsa")
+from adapters import unirc  # noqa: E402
+SITI["unirc"] = unirc.fetch_ateneo  # catalogo Cineca: un corso per ogni corso di Universitaly (catene di codici dei riordini: 87.L < 86.L, L7-R < 57.L < 56.L, 010MR < 010M, ...), piano della coorte di ogni anno, durata dal piano (cicli unici di 5 anni), gruppi OO/F/G/W/S con CFU dalle etichette, regole di scelta libera con i CFU dei regolamenti, attività a 0 CFU tolte
+CATALOGO_IN_SITI.add("unirc")
+from adapters import iuav  # noqa: E402
+SITI["iuav"] = iuav.fetch_ateneo  # catalogo Cineca: un corso per ogni corso di Universitaly (ogni coorte ha un codice proprio: B07 > B08 > B09, N40 > N41 > N42, ...), piano della coorte di ogni anno (prima si usava per tutti gli anni quello del 2026), ciclo unico di Architettura e Curatela delle Arti senza il secondo corso del catalogo, prova finale (e tirocinio) nell'ultimo anno, curricula per codice del percorso, tipo OBB/OPZ del catalogo, attività a 0 CFU tolte, libri già raccolti per codice
+CATALOGO_IN_SITI.add("iuav")
+from adapters import iul  # noqa: E402
+SITI["iul"] = iul.fetch_ateneo  # piani di studio dai PDF per coorte di iuline.it (il regolamento GOMP ripartisce i gruppi AFFINI su più anni e ha curricula nuovi con il solo 1° anno), anno k dalla coorte a.a. - k + 1 con totali di ogni anno controllati, righe a scelta, codice/docenti/periodo/libri dalle attività GOMP con lo stesso nome (2026, 2025, 2024)
+from adapters import iulm  # noqa: E402
+SITI["iulm"] = iulm.fetch_ateneo  # catalogo Cineca: un corso per ogni corso di Universitaly (catene di codici del riordino 2025: 59 > 361, 64 > 360, 68 > 368, ...), durata dal tipo (L 3, LM 2), piano della coorte di ogni anno (A-k+1), percorsi del catalogo ricondotti ai curricula, contenitori di moduli a 0 CFU tolti, crediti a scelta/stage/field project/prova finale dalla pagina «Piano di studi» del corso
+CATALOGO_IN_SITI.add("iulm")
+from adapters import uniroma4  # noqa: E402
+SITI["uniroma4"] = uniroma4.fetch_ateneo  # catalogo Cineca + pagine AFS di uniroma4.it: un corso per ogni corso di Universitaly (id espliciti, catene di codici dei riordini L22R > L22, LM67I-R > LM67INT, ...), piano della coorte di ogni anno (3° anno di Scienze motorie e sportive dall'ordinamento 2014), AFS e internati elettivi con gli anni di corso dalle pagine ufficiali (nel catalogo sono un gruppo senza anno), Health and Physical Activity senza AFS, curricula Gestione e organizzazione dello sport di alto livello / Scienze motorie e sportive, Management / Giuridico-Gestionale, libri già raccolti per codice
+CATALOGO_IN_SITI.add("uniroma4")
+from adapters import unite  # noqa: E402
+SITI["unite"] = unite.fetch_ateneo  # catalogo Cineca: un corso per ogni corso di Universitaly (catene di codici del riordino 2025: 65 > 99, 46 > 108, 86 > 118, 84 > 92 > 113, ...), piano della coorte di ogni anno, durata dal piano (Medicina veterinaria e Giurisprudenza di 5 anni), sede Avezzano = replica di Giurisprudenza, gruppi OO/F/W con CFU dalle etichette, OFA a 0 CFU tolti (ofa nei requisiti), nomi dei percorsi ripuliti, prova finale di Scienze politiche dalla pagina ufficiale
+CATALOGO_IN_SITI.add("unite")
+from adapters import liuc  # noqa: E402
+SITI["liuc"] = liuc.fetch_ateneo  # catalogo Cineca: un corso per ogni corso di Universitaly (catene di codici L18C > L18B > L18A, L09B > L09A, LM77C > LM77B > LM77A), piano della coorte di ogni anno, durata dalla tabella, contenitori a 0 CFU e consigliati senza crediti tolti, percorsi con il nome della coorte più recente e senza virgole, gruppi «F» a scelta salvo quelli obbligatori del piano ufficiale, crediti a scelta (regola «S») nell'ultimo anno, elenco «X SUA» degli insegnamenti a scelta di LM-77
+CATALOGO_IN_SITI.add("liuc")
+from adapters import unisannio  # noqa: E402
+SITI["unisannio"] = unisannio.fetch_ateneo  # catalogo Cineca: un corso per ogni corso di Universitaly (catene di codici del riordino 2025: 172 > 101, 261 > 201, 865 > 802, 388 > 302, 904 > 905, ...), piano della coorte di ogni anno (prima le attività di tutte le coorti si sommavano: anni da 138 e 219 CFU), Scienze geologiche = piano L-34 di «Scienze naturali, geologiche e ambientali», gruppi OO/F/W/S con le scelte dalle note («DEVI SCEGLIERE N»), crediti a scelta dei gruppi senza elenco, percorsi per codice, OFA e attività a 0 CFU tolti
+CATALOGO_IN_SITI.add("unisannio")
+from adapters import unitelma  # noqa: E402
+SITI["unitelma"] = unitelma.fetch_ateneo  # catalogo Cineca: un corso per ogni corso di Universitaly (id espliciti; Scienze giuridiche LM/SC-GI = LM/SC-GIUR), lauree e ciclo unico dalla sola coorte 2025 disponibile (anni 1-3 e 4-5 di Giurisprudenza), magistrali nuove dalla coorte 2026, durata dal piano, gruppi OO/F/W (S senza elenco non è una voce), curricula ripuliti (niente virgole nei nomi), alternative omonime distinte da CFU e codice, nomi in maiuscolo con apostrofi e accenti corretti, libri già raccolti per codice
+CATALOGO_IN_SITI.add("unitelma")
+from adapters import unistrapg  # noqa: E402
+SITI["unistrapg"] = unistrapg.fetch_ateneo  # piano di studi dalle pagine dei corsi di unistrapg.it (tabella per anno e curriculum con il totale di 60 CFU; il catalogo Cineca ha solo le 3 magistrali con anni e CFU incompleti), codice/docenti/semestre dai programmi degli insegnamenti, insegnamenti erogati non in tabella con anno e CFU dalla scheda, id Universitaly espliciti, docenti/periodo/libri del catalogo per le magistrali
+CATALOGO_IN_SITI.add("unistrapg")
+from adapters import univda  # noqa: E402
+SITI["univda"] = univda.fetch_ateneo  # catalogo Cineca: un corso per ogni corso di Universitaly (catene di codici del riordino 2025: C06 > C07, E02 > E03, D03 > D05, F02 > F03, G01 > G02), piano della coorte di ogni anno (con ripiego sulla più vicina completa: 4° anno 2023 e 3° anno 2024 di Scienze della formazione primaria incompleti nel catalogo), durata dalla tabella (Scienze della formazione primaria 5 anni, prima erano letti solo i primi 3), piani «proposto» e «altreAttivita» (doppi diplomi, vecchi piani, moduli S_, esercitazioni e precorsi a 0 CFU) non letti, curricula senza «Piano di studi … Curriculum», segnaposto OPZIONALI e stage a scelta, libri già raccolti per codice
+CATALOGO_IN_SITI.add("univda")
+from adapters import unisg  # noqa: E402
+SITI["unisg"] = unisg.fetch_ateneo  # catalogo Cineca: un corso per ogni corso di Universitaly (id espliciti), piano della coorte di ogni anno (Scienze e Culture Gastronomiche: LSG18R coorti 2026 e 2025, LSG18 coorte 2024; prima il piano si mescolava tra tre ordinamenti), contenitori degli insegnamenti integrati a 0 CFU tolti (i moduli hanno i CFU), attività a 0 CFU senza moduli tolte, corso a scelta del 3° anno di Food Tech dalle altre attività, nomi in maiuscolo corretti, libri già raccolti per codice
+CATALOGO_IN_SITI.add("unisg")
+from adapters import unisr  # noqa: E402
+SITI["unisr"] = unisr.fetch_ateneo  # piano della coorte di ogni anno dai PDF «Piano degli studi» di www.unisr.it (il catalogo non ha l'anno di corso; Esse3: sezioni per sede/canale/curriculum, Filosofia: gruppi a scelta), codici, docenti e libri ripresi dal catalogo (o dal database se è in manutenzione) per nome, doppioni del catalogo (Infermieristica 2, Medicina 2 e 3, Psicologia cognitiva) sui corsi di Universitaly, corsi elettivi del catalogo a scelta
+CATALOGO_IN_SITI.add("unisr")
 # Integrazioni: dati che il catalogo non ha (es. i libri di UniTO dalle pagine Campusnet),
 # letti a partire dagli insegnamenti già nel database e uniti dopo il catalogo
 INTEGRAZIONI = {"unito": unito_campusnet.fetch_ateneo}

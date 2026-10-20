@@ -2214,7 +2214,7 @@
      "cfu": 6,
      "ssd": "L-FIL-LET/04",
      "obbligatorio": true,
-     "curriculum": "STORICO - ARCHEOLOGICO, PATRIMONIO E TURISMO CULTURALE",
+     "curriculum": "STORICO - ARCHEOLOGICO",
      "docenti": [
       "Maurizio Massimo Bianco"
      ],
@@ -2232,6 +2232,28 @@
      "codici_alternativi": [
       "23580"
      ]
+    },
+    {
+     "codice": "23580",
+     "nome": "Storia e Testi della Letteratura Latina",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "L-FIL-LET/04",
+     "obbligatorio": false,
+     "curriculum": "PATRIMONIO E TURISMO CULTURALE",
+     "docenti": [
+      "Maurizio Massimo Bianco"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/beniculturaliconoscenzagestionevalorizzazione2194/?template=responsive&pagina=insegnamento&idInsegnamento=206573&idDocente=156514&idCattedra=202454",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/beniculturaliconoscenzagestionevalorizzazione2194/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-1-beni-culturali-conoscenza-gestione-valorizzazione-23580",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
      "codice": "18558",
@@ -2262,7 +2284,7 @@
      "cfu": 6,
      "ssd": "L-OR/06",
      "obbligatorio": true,
-     "curriculum": "STORICO - ARCHEOLOGICO, PATRIMONIO E TURISMO CULTURALE",
+     "curriculum": "STORICO - ARCHEOLOGICO",
      "docenti": [
       "Paola Sconzo"
      ],
@@ -2278,6 +2300,27 @@
      "codici_alternativi": [
       "17176"
      ]
+    },
+    {
+     "codice": "17176",
+     "nome": "Archeologia Fenicio-punica",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "L-OR/06",
+     "obbligatorio": false,
+     "curriculum": "PATRIMONIO E TURISMO CULTURALE",
+     "docenti": [
+      "Paola Sconzo"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/beniculturaliconoscenzagestionevalorizzazione2194/?template=responsive&pagina=insegnamento&idInsegnamento=181769&idDocente=21859363&idCattedra=177769",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/beniculturaliconoscenzagestionevalorizzazione2194/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-1-beni-culturali-conoscenza-gestione-valorizzazione-17176",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "04133",
@@ -2330,7 +2373,7 @@
      "cfu": 6,
      "ssd": "L-ANT/01",
      "obbligatorio": true,
-     "curriculum": "STORICO - ARCHEOLOGICO, PATRIMONIO E TURISMO CULTURALE",
+     "curriculum": "STORICO - ARCHEOLOGICO",
      "docenti": [
       "Massimo Cultraro"
      ],
@@ -2346,6 +2389,27 @@
      "codici_alternativi": [
       "23581"
      ]
+    },
+    {
+     "codice": "23581",
+     "nome": "Preistoria e Protostoria",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "L-ANT/01",
+     "obbligatorio": false,
+     "curriculum": "PATRIMONIO E TURISMO CULTURALE",
+     "docenti": [
+      "Massimo Cultraro"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/beniculturaliconoscenzagestionevalorizzazione2194/?template=responsive&pagina=insegnamento&idInsegnamento=181768&idDocente=150915&idCattedra=177768",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/beniculturaliconoscenzagestionevalorizzazione2194/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-1-beni-culturali-conoscenza-gestione-valorizzazione-23581",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "14184",
@@ -10770,7 +10834,7 @@
      "cfu": 8,
      "ssd": "SECS-S/06",
      "obbligatorio": true,
-     "curriculum": "ECONOMICO-FINANZIARIO, ECONOMICS, ECONOMICO-APPLICATO",
+     "curriculum": "ECONOMICO-FINANZIARIO, ECONOMICS",
      "docenti": [
       "Davide Provenzano"
      ],
@@ -10786,6 +10850,27 @@
      "codici_alternativi": [
       "24762"
      ]
+    },
+    {
+     "codice": "24762",
+     "nome": "Matematica Finanziaria",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 8,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "ECONOMICO-APPLICATO",
+     "docenti": [
+      "Davide Provenzano"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/seas/cds/economiaefinanza2504/?template=responsive&pagina=insegnamento&idInsegnamento=203953&idDocente=99925&idCattedra=199669",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/seas/cds/economiaefinanza2504/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-33-economia-e-finanza-24762",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "22604",
@@ -21167,6 +21252,69 @@
      "modulo_di": "Elementi Costruttivi e Misure Meccaniche",
      "codice_ci": "23753",
      "id": "unipa-l-9-ingegneria-aerospaziale-23755",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23751",
+     "nome": "Laboratorio di Cfd",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Vincenzo Gulizzi"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2322/?template=responsive&pagina=insegnamento&idInsegnamento=188760&idDocente=45359&idCattedra=187268",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2322/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-9-ingegneria-aerospaziale-23751-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23750",
+     "nome": "Laboratorio di Costruzioni e Strutture Aerospaziali",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Alberto Milazzo"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2322/?template=responsive&pagina=insegnamento&idInsegnamento=187996&idDocente=159346&idCattedra=187267",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2322/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-9-ingegneria-aerospaziale-23750-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23752",
+     "nome": "Laboratorio di Matlab e Python per L'ingegneria Aerospaziale",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Ivano Benedetti"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2322/?template=responsive&pagina=insegnamento&idInsegnamento=188700&idDocente=162721&idCattedra=187269",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2322/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-9-ingegneria-aerospaziale-23752-a3",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -32138,6 +32286,69 @@
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
+     "codice": "14509",
+     "nome": "Attivita' di Laboratorio Formula Sae",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Antonino Cirello"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2347/?template=responsive&pagina=insegnamento&idInsegnamento=190998&idDocente=153026&idCattedra=186679",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2347/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-9-ingegneria-meccanica-14509-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "14507",
+     "nome": "Attivita' di Laboratorio di Cad",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Antonio Mancuso"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2347/?template=responsive&pagina=insegnamento&idInsegnamento=190997&idDocente=160140&idCattedra=186678",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2347/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-9-ingegneria-meccanica-14507-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "14506",
+     "nome": "Attivita' di Laboratorio di Elaborazione delle Immagini in Meccanica",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Giovanni Petrucci"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2347/?template=responsive&pagina=insegnamento&idInsegnamento=190996&idDocente=153850&idCattedra=186677",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2347/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-9-ingegneria-meccanica-14506-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "02227",
      "nome": "Costruzione di Macchine",
      "anno": 3,
@@ -32155,6 +32366,48 @@
      "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2347/?pagina=insegnamenti#manifesto-2024-2025",
      "verificato_il": "2026-10-20",
      "id": "unipa-l-9-ingegneria-meccanica-02227",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "22147",
+     "nome": "Esercizio della Professione di Ingegnere",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Antonio Barcellona"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2347/?template=responsive&pagina=insegnamento&idInsegnamento=190979&idDocente=158504&idCattedra=186662",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2347/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-9-ingegneria-meccanica-22147-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23902",
+     "nome": "Ingegneria Forense",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Antonio Barcellona"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2347/?template=responsive&pagina=insegnamento&idInsegnamento=190978&idDocente=158504&idCattedra=186661",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2347/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-9-ingegneria-meccanica-23902-a3",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -34423,7 +34676,7 @@
      "cfu": 12,
      "ssd": "M-STO/01",
      "obbligatorio": false,
-     "curriculum": "MODERNO, CLASSICO",
+     "curriculum": "MODERNO",
      "docenti": [
       "Ennio Mineo"
      ],
@@ -34559,7 +34812,7 @@
      "cfu": 12,
      "ssd": "M-STO/04",
      "obbligatorio": false,
-     "curriculum": "MODERNO, CLASSICO",
+     "curriculum": "MODERNO",
      "docenti": [
       "Matteo Di Figlia"
      ],
@@ -34603,7 +34856,7 @@
      "cfu": 12,
      "ssd": "M-STO/02",
      "obbligatorio": false,
-     "curriculum": "MODERNO, CLASSICO",
+     "curriculum": "MODERNO",
      "docenti": [
       "Valentina Favaro'"
      ],
@@ -34789,6 +35042,69 @@
      "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?pagina=insegnamenti#manifesto-2024-2025",
      "verificato_il": "2026-10-20",
      "id": "unipa-l-10-lettere-10696-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "06715",
+     "nome": "Storia Contemporanea",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 12,
+     "ssd": "M-STO/04",
+     "obbligatorio": false,
+     "curriculum": "CLASSICO, MODERNO",
+     "docenti": [
+      "Matteo Di Figlia"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?template=responsive&pagina=insegnamento&idInsegnamento=183570&idDocente=151388&idCattedra=179692",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-10-lettere-06715-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "07068",
+     "nome": "Storia Medievale",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 12,
+     "ssd": "M-STO/01",
+     "obbligatorio": false,
+     "curriculum": "CLASSICO, MODERNO",
+     "docenti": [
+      "Ennio Mineo"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?template=responsive&pagina=insegnamento&idInsegnamento=183623&idDocente=158176&idCattedra=179747",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-10-lettere-07068-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "07079",
+     "nome": "Storia Moderna",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 12,
+     "ssd": "M-STO/02",
+     "obbligatorio": false,
+     "curriculum": "CLASSICO, MODERNO",
+     "docenti": [
+      "Valentina Favaro'"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?template=responsive&pagina=insegnamento&idInsegnamento=183624&idDocente=155531&idCattedra=179748",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/lettere2440/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-10-lettere-07079-a3",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -45266,8 +45582,7 @@
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
-      "Alessandra Dino",
-      "Marina Turco"
+      "Alessandra Dino"
      ],
      "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=229471&idDocente=&idCattedra=227172",
      "libri": [],
@@ -45403,7 +45718,7 @@
      "cfu": 6,
      "ssd": "SPS/01",
      "obbligatorio": false,
-     "curriculum": "INFORMAZIONE E SOCIAL MEDIA, COMUNICAZIONE PUBBLICA, CULTURA VISUALE, EDITORIA E PROGETTAZIONE CULTURALE",
+     "curriculum": "INFORMAZIONE E SOCIAL MEDIA",
      "docenti": [
       "Giulia Sajeva"
      ],
@@ -45424,7 +45739,7 @@
      "cfu": 6,
      "ssd": "M-GGR/01",
      "obbligatorio": false,
-     "curriculum": "INFORMAZIONE E SOCIAL MEDIA, COMUNICAZIONE PUBBLICA, EDITORIA E PROGETTAZIONE CULTURALE",
+     "curriculum": "INFORMAZIONE E SOCIAL MEDIA",
      "docenti": [
       "Matteo Meschiari"
      ],
@@ -45434,6 +45749,115 @@
      "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2025-2026",
      "verificato_il": "2026-10-20",
      "id": "unipa-l-20-scienze-della-comunicazione-08893",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23441",
+     "nome": "Laboratorio di Fotografia",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 10,
+     "ssd": "SPS/08",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Anna Fici"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=208704&idDocente=160774&idCattedra=204564",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-23441-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23439",
+     "nome": "Laboratorio di Linguistica - Modulo di Linguistica Computazionale",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 5,
+     "ssd": "L-LIN/01",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Ignazio Mauro Mirto"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=208754&idDocente=157718&idCattedra=204616",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Laboratorio di Linguistica",
+     "codice_ci": "23440",
+     "id": "unipa-l-20-scienze-della-comunicazione-23439-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23438",
+     "nome": "Laboratorio di Linguistica - Modulo di Morfologia Lessicale",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 5,
+     "ssd": "L-LIN/01",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Luisa Brucale"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=208478&idDocente=162025&idCattedra=204339",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Laboratorio di Linguistica",
+     "codice_ci": "23440",
+     "id": "unipa-l-20-scienze-della-comunicazione-23438-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23065",
+     "nome": "Laboratorio di Sceneggiatura",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 10,
+     "ssd": "L-FIL-LET/14",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Lorenzo Marchese"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=208544&idDocente=21264865&idCattedra=204406",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-23065-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23057",
+     "nome": "Laboratorio di Tecnologie Informatiche per il Web",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 10,
+     "ssd": "ING-INF/05",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Roberto Pirrone"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=208762&idDocente=157730&idCattedra=204624",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-23057-a2",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -45501,6 +45925,52 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "24130",
+     "nome": "Metodo, Tecnica ed Esercizio Dell'intervista Giornalistica",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 5,
+     "ssd": "SPS/12",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Marina Turco"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=208761&idDocente=85029&idCattedra=204623",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Laboratorio di Sociologia Qualitativa",
+     "codice_ci": "23064",
+     "id": "unipa-l-20-scienze-della-comunicazione-24130-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "24131",
+     "nome": "Scrittura Creativa",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 5,
+     "ssd": "M-GGR/01",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Matteo Meschiari"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=208543&idDocente=156345&idCattedra=204405",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Laboratorio di Scrittura",
+     "codice_ci": "04264",
+     "id": "unipa-l-20-scienze-della-comunicazione-24131-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "06522",
      "nome": "Sociolinguistica",
      "anno": 2,
@@ -45508,7 +45978,7 @@
      "cfu": 6,
      "ssd": "L-FIL-LET/12",
      "obbligatorio": false,
-     "curriculum": "INFORMAZIONE E SOCIAL MEDIA, MARKETING E PUBBLICITÀ, EDITORIA E PROGETTAZIONE CULTURALE",
+     "curriculum": "INFORMAZIONE E SOCIAL MEDIA, MARKETING E PUBBLICITÀ",
      "docenti": [
       "Giuseppe Paternostro"
      ],
@@ -45585,6 +46055,29 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "24128",
+     "nome": "Tecniche delle Interviste Qualitative, Logiche Combinatorie e Storie di Vita",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 5,
+     "ssd": "SPS/12",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Alessandra Dino"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=214589&idDocente=157233&idCattedra=210271",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Laboratorio di Sociologia Qualitativa",
+     "codice_ci": "23064",
+     "id": "unipa-l-20-scienze-della-comunicazione-24128-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "13521",
      "nome": "Teoria della Traduzione",
      "anno": 2,
@@ -45602,6 +46095,29 @@
      "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2025-2026",
      "verificato_il": "2026-10-20",
      "id": "unipa-l-20-scienze-della-comunicazione-13521",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "24129",
+     "nome": "Testo e Comunicazione",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 5,
+     "ssd": "M-FIL/05",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Matteo Meschiari"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=208705&idDocente=156345&idCattedra=204565",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Laboratorio di Scrittura",
+     "codice_ci": "04264",
+     "id": "unipa-l-20-scienze-della-comunicazione-24129-a2",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -46435,6 +46951,90 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "20959",
+     "nome": "Etica Digitale",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "M-FIL/06",
+     "obbligatorio": false,
+     "curriculum": "INFORMAZIONE E SOCIAL MEDIA",
+     "docenti": [
+      "Santi Di Bella"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=192734&idDocente=153239&idCattedra=188583",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-20959-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23589",
+     "nome": "Fondamenti di Cultura Visuale",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "L-ART/06",
+     "obbligatorio": false,
+     "curriculum": "MARKETING E PUBBLICITÀ",
+     "docenti": [
+      "Michele Cometa"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=182098&idDocente=159571&idCattedra=178140",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-23589-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "21426",
+     "nome": "Gender Studies",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "SPS/01",
+     "obbligatorio": false,
+     "curriculum": "COMUNICAZIONE PUBBLICA, CULTURA VISUALE, EDITORIA E PROGETTAZIONE CULTURALE, INFORMAZIONE E SOCIAL MEDIA",
+     "docenti": [
+      "Giulia Sajeva"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=181921&idDocente=32989&idCattedra=177953",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-21426-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "08893",
+     "nome": "Geografia Culturale",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "M-GGR/01",
+     "obbligatorio": false,
+     "curriculum": "COMUNICAZIONE PUBBLICA, EDITORIA E PROGETTAZIONE CULTURALE, INFORMAZIONE E SOCIAL MEDIA",
+     "docenti": [
+      "Matteo Meschiari"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=181989&idDocente=156345&idCattedra=178027",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-08893-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "23470",
      "nome": "Giornalismo e Letteratura",
      "anno": 3,
@@ -46473,6 +47073,153 @@
      "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
      "verificato_il": "2026-10-20",
      "id": "unipa-l-20-scienze-della-comunicazione-24163-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "13374",
+     "nome": "Lingua e Cultura Albanese",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "L-LIN/18",
+     "obbligatorio": false,
+     "curriculum": "EDITORIA E PROGETTAZIONE CULTURALE",
+     "docenti": [
+      "Gezim Gurga"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=181998&idDocente=160162&idCattedra=178036",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-13374-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "15272",
+     "nome": "Lingua e Cultura Albanese - Corso Avanzato",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "L-LIN/18",
+     "obbligatorio": false,
+     "curriculum": "EDITORIA E PROGETTAZIONE CULTURALE",
+     "docenti": [
+      "Matteo Mandala'"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=182035&idDocente=161272&idCattedra=178076",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-15272-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "04547",
+     "nome": "Lingua e Cultura Araba",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "L-OR/12",
+     "obbligatorio": false,
+     "curriculum": "EDITORIA E PROGETTAZIONE CULTURALE",
+     "docenti": [
+      "Patrizia Spallino"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=181988&idDocente=152324&idCattedra=178026",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-04547-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "15266",
+     "nome": "Lingua e Cultura Araba - Corso Avanzato",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "L-OR/10",
+     "obbligatorio": false,
+     "curriculum": "EDITORIA E PROGETTAZIONE CULTURALE",
+     "docenti": [
+      "Patrizia Spallino"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=181997&idDocente=152324&idCattedra=178035",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-15266-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "09369",
+     "nome": "Lingua e Cultura Ebraica",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "L-OR/08",
+     "obbligatorio": false,
+     "curriculum": "EDITORIA E PROGETTAZIONE CULTURALE",
+     "docenti": [
+      "Luciana Pepi"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=181995&idDocente=162222&idCattedra=178033",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-09369-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "13359",
+     "nome": "Lingua e Cultura Tedesca",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "L-LIN/13",
+     "obbligatorio": false,
+     "curriculum": "EDITORIA E PROGETTAZIONE CULTURALE",
+     "docenti": [
+      "Francesca Tucci"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=182033&idDocente=153200&idCattedra=178074",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-13359-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "15264",
+     "nome": "Lingua e Cultura Tedesca - Corso Avanzato",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": "L-LIN/13",
+     "obbligatorio": false,
+     "curriculum": "EDITORIA E PROGETTAZIONE CULTURALE",
+     "docenti": [
+      "Francesca Tucci"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=181999&idDocente=153200&idCattedra=178037",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-15264-a3",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -46557,6 +47304,27 @@
      "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
      "verificato_il": "2026-10-20",
      "id": "unipa-l-20-scienze-della-comunicazione-19066",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "06522",
+     "nome": "Sociolinguistica",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "L-FIL-LET/12",
+     "obbligatorio": false,
+     "curriculum": "EDITORIA E PROGETTAZIONE CULTURALE, INFORMAZIONE E SOCIAL MEDIA, MARKETING E PUBBLICITÀ",
+     "docenti": [
+      "Giuseppe Paternostro"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?template=responsive&pagina=insegnamento&idInsegnamento=182045&idDocente=156769&idCattedra=178086",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellacomunicazione2287/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-20-scienze-della-comunicazione-06522-a3",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -66910,7 +67678,7 @@
      "cfu": 6,
      "ssd": "SPS/01",
      "obbligatorio": false,
-     "curriculum": null,
+     "curriculum": "STUDI FILOSOFICI",
      "docenti": [
       "Antonino Palumbo"
      ],
@@ -67205,6 +67973,27 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
+     "codice": "07807",
+     "nome": "Filosofia Politica",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "SPS/01",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Antonino Palumbo"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/studifilosoficiestorici2428/?template=responsive&pagina=insegnamento&idInsegnamento=183696&idDocente=152238&idCattedra=179802",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/studifilosoficiestorici2428/?pagina=insegnamenti#manifesto-2024-2025",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-5-studi-filosofici-e-storici-07807-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "23724",
@@ -67817,6 +68606,27 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
+     "codice": "24143",
+     "nome": "Teorie della Storia Globale",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "M-FIL/06",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Santi Di Bella"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/studiglobalistoriapoliticheculture2249/?template=responsive&pagina=insegnamento&idInsegnamento=206833&idDocente=153239&idCattedra=202710",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/studiglobalistoriapoliticheculture2249/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-l-42-studi-globali-storia-politiche-culture-24143-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "24139",
@@ -86063,6 +86873,132 @@
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
+     "codice": "09975",
+     "nome": "Alimentazione e Salute",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "MED/49",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Cristiana Randazzo"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazioneperlenogastronomia2289/?template=responsive&pagina=insegnamento&idInsegnamento=215100&idDocente=41475&idCattedra=210773",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazioneperlenogastronomia2289/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-gastr-lm-92-comunicazione-per-lenogastronomia-09975-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23068",
+     "nome": "Analisi Sensoriale e Produzione Vinicola",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "AGR/16",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Nicola Francesca"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazioneperlenogastronomia2289/?template=responsive&pagina=insegnamento&idInsegnamento=215105&idDocente=79730&idCattedra=210777",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazioneperlenogastronomia2289/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-gastr-lm-92-comunicazione-per-lenogastronomia-23068-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "24852",
+     "nome": "Brand Strategy",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Dario Mangano"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazioneperlenogastronomia2289/?template=responsive&pagina=insegnamento&idInsegnamento=215102&idDocente=162023&idCattedra=210775",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazioneperlenogastronomia2289/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-gastr-lm-92-comunicazione-per-lenogastronomia-24852-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23027",
+     "nome": "Design e Packaging Alimentare",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "M-FIL/05",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Ilaria Ventura Bordenca"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazioneperlenogastronomia2289/?template=responsive&pagina=insegnamento&idInsegnamento=215131&idDocente=155142&idCattedra=210799",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazioneperlenogastronomia2289/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-gastr-lm-92-comunicazione-per-lenogastronomia-23027-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "24854",
+     "nome": "Economia e Management Dell'impresa Culturale",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Roberto Rossi"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazioneperlenogastronomia2289/?template=responsive&pagina=insegnamento&idInsegnamento=215097&idDocente=29457873&idCattedra=210770",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazioneperlenogastronomia2289/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-gastr-lm-92-comunicazione-per-lenogastronomia-24854-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23063",
+     "nome": "Semiotica degli Spazi di Consumo",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "M-FIL/05",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Alice Giannitrapani"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazioneperlenogastronomia2289/?template=responsive&pagina=insegnamento&idInsegnamento=215127&idDocente=156883&idCattedra=210796",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazioneperlenogastronomia2289/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-gastr-lm-92-comunicazione-per-lenogastronomia-23063-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "16852",
      "nome": "Altre Conoscenze Utili per L'inserimento nel Mondo del Lavoro 2",
      "anno": 2,
@@ -86808,6 +87744,94 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
+     "codice": "24157",
+     "nome": "Laboratorio di Comunicazione Politica",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 10,
+     "ssd": "SPS/11",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Marilena Macaluso"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionepubblicadimpresaepubblicita2231/?template=responsive&pagina=insegnamento&idInsegnamento=209069&idDocente=156340&idCattedra=204933",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionepubblicadimpresaepubblicita2231/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-59-comunicazione-pubblica-d-impresa-e-pubblicita-24157-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "24956",
+     "nome": "Laboratorio di Teorie e Tecniche del Sondaggio D'opinione e delle Ricerche di Mercato",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 10,
+     "ssd": "SECS-S/05",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Antonino Mario Oliveri"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionepubblicadimpresaepubblicita2231/?template=responsive&pagina=insegnamento&idInsegnamento=209070&idDocente=162638&idCattedra=204934",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionepubblicadimpresaepubblicita2231/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-59-comunicazione-pubblica-d-impresa-e-pubblicita-24956-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23020",
+     "nome": "Progettazione Comunicativa",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 5,
+     "ssd": "M-FIL/05",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Ilaria Ventura Bordenca"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionepubblicadimpresaepubblicita2231/?template=responsive&pagina=insegnamento&idInsegnamento=209067&idDocente=155142&idCattedra=204931",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionepubblicadimpresaepubblicita2231/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Laboratorio di Creazione di Una Campagna di Comunicazione",
+     "codice_ci": "23019",
+     "id": "unipa-lm-59-comunicazione-pubblica-d-impresa-e-pubblicita-23020-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "23016",
+     "nome": "Teoria e Tecniche del Linguaggio Audiovisivo",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 5,
+     "ssd": "M-FIL/05",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Dario Mangano"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionepubblicadimpresaepubblicita2231/?template=responsive&pagina=insegnamento&idInsegnamento=209082&idDocente=162023&idCattedra=204942",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/comunicazionepubblicadimpresaepubblicita2231/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Laboratorio di Creazione di Una Campagna di Comunicazione",
+     "codice_ci": "23019",
+     "id": "unipa-lm-59-comunicazione-pubblica-d-impresa-e-pubblicita-23016-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "16852",
@@ -92023,6 +93047,27 @@
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
+     "codice": "22020",
+     "nome": "High Energies Astrophysics With Laboratory",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "FIS/05",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Rosario Iaria"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/difc/cds/fisica2379/?template=responsive&pagina=insegnamento&idInsegnamento=210953&idDocente=152460&idCattedra=206726",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/difc/cds/fisica2379/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-17-fisica-22020-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "01171",
      "nome": "Algebra Non Commutativa",
      "anno": 2,
@@ -94410,6 +95455,126 @@
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
+     "codice": "11034",
+     "nome": "Altre Attivita' Formative 1 Cfu",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 1,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2380/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "id": "unipa-lm-20-ingegneria-aerospaziale-11034-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "11035",
+     "nome": "Altre Attivita' Formative 2 Cfu",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 2,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2380/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "id": "unipa-lm-20-ingegneria-aerospaziale-11035-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "11036",
+     "nome": "Altre Attivita' Formative 3 Cfu",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2380/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "id": "unipa-lm-20-ingegneria-aerospaziale-11036-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "11037",
+     "nome": "Altre Attivita' Formative 4 Cfu",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 4,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2380/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "id": "unipa-lm-20-ingegneria-aerospaziale-11037-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "11038",
+     "nome": "Altre Attivita' Formative 5 Cfu",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 5,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2380/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "id": "unipa-lm-20-ingegneria-aerospaziale-11038-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "11039",
+     "nome": "Altre Attivita' Formative 6 Cfu",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2380/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "id": "unipa-lm-20-ingegneria-aerospaziale-11039-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "01258",
      "nome": "Analisi Sperimentale delle Tensioni",
      "anno": 2,
@@ -94518,6 +95683,106 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
+     "codice": "21167",
+     "nome": "Stage 2 Cfu",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 2,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2380/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "id": "unipa-lm-20-ingegneria-aerospaziale-21167-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "11033",
+     "nome": "Stage 3 Cfu",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2380/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "id": "unipa-lm-20-ingegneria-aerospaziale-11033-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "15458",
+     "nome": "Stage 4 Cfu",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 4,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2380/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "id": "unipa-lm-20-ingegneria-aerospaziale-15458-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "11351",
+     "nome": "Stage 5 Cfu",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 5,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2380/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "id": "unipa-lm-20-ingegneria-aerospaziale-11351-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "11028",
+     "nome": "Stage 6 Cfu",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriaaerospaziale2380/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv",
+     "id": "unipa-lm-20-ingegneria-aerospaziale-11028-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "01746",
@@ -101505,6 +102770,30 @@
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
+     "codice": "24626",
+     "nome": "Sustainable Manufacturing",
+     "anno": 1,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "ING-IND/16",
+     "obbligatorio": true,
+     "curriculum": "GREEN DESIGN AND SUSTAINABLE MANUFACTURING",
+     "docenti": [
+      "Giuseppe Ingarao"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2036/?template=responsive&pagina=insegnamento&idInsegnamento=226953&idDocente=151512&idCattedra=224697",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriameccanica2036/?pagina=insegnamenti#manifesto-2026-2027",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Tecnologia Meccanica II & Sustainable Manufacturing",
+     "codice_ci": "24624",
+     "id": "unipa-lm-33-ingegneria-meccanica-24626",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
      "codice": "21668",
      "nome": "Sustainable Manufacturing",
      "anno": 1,
@@ -101512,7 +102801,7 @@
      "cfu": 6,
      "ssd": "ING-IND/16",
      "obbligatorio": false,
-     "curriculum": "ADVANCED MANUFACTURING, GREEN DESIGN AND SUSTAINABLE MANUFACTURING",
+     "curriculum": "ADVANCED MANUFACTURING",
      "docenti": [
       "Giuseppe Ingarao"
      ],
@@ -107512,7 +108801,7 @@
      "cfu": 6,
      "ssd": "MAT/09",
      "obbligatorio": true,
-     "curriculum": "DATA ANALYTICS FOR BUSINESS, DIGITAL TRANSFORMATION, INNOVATION AND ENTREPRENEURSHIP, SUSTAINABILITY AND SOCIAL IMPACT",
+     "curriculum": "DATA ANALYTICS FOR BUSINESS",
      "docenti": [
       "Simona Mancini"
      ],
@@ -107530,6 +108819,28 @@
      "codici_alternativi": [
       "23217"
      ]
+    },
+    {
+     "codice": "23217",
+     "nome": "Business Analytics",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "MAT/09",
+     "obbligatorio": false,
+     "curriculum": "DIGITAL TRANSFORMATION, INNOVATION AND ENTREPRENEURSHIP, SUSTAINABILITY AND SOCIAL IMPACT",
+     "docenti": [
+      "Simona Mancini"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?template=responsive&pagina=insegnamento&idInsegnamento=204402&idDocente=22912971&idCattedra=200094",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-31-management-engineering-1630905-23217",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
      "codice": "19378",
@@ -107583,7 +108894,7 @@
      "cfu": 6,
      "ssd": "ING-IND/35",
      "obbligatorio": true,
-     "curriculum": "DIGITAL TRANSFORMATION, DATA ANALYTICS FOR BUSINESS, INNOVATION AND ENTREPRENEURSHIP, SUSTAINABILITY AND SOCIAL IMPACT",
+     "curriculum": "DIGITAL TRANSFORMATION",
      "docenti": [
       "Paolo Roma"
      ],
@@ -107601,6 +108912,28 @@
      "codici_alternativi": [
       "22389"
      ]
+    },
+    {
+     "codice": "22389",
+     "nome": "Digital Marketing",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "ING-IND/35",
+     "obbligatorio": false,
+     "curriculum": "DATA ANALYTICS FOR BUSINESS, INNOVATION AND ENTREPRENEURSHIP, SUSTAINABILITY AND SOCIAL IMPACT",
+     "docenti": [
+      "Paolo Roma"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?template=responsive&pagina=insegnamento&idInsegnamento=204592&idDocente=151582&idCattedra=200320",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-31-management-engineering-1630905-22389",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
      "codice": "22347",
@@ -107713,6 +109046,30 @@
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
+     "codice": "22320",
+     "nome": "Product/process Innovation",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "ING-IND/16",
+     "obbligatorio": true,
+     "curriculum": "INNOVATION AND ENTREPRENEURSHIP",
+     "docenti": [
+      "Fabrizio Micari"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?template=responsive&pagina=insegnamento&idInsegnamento=204371&idDocente=153753&idCattedra=200065",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Innovation and Entrepreneurship",
+     "codice_ci": "22247",
+     "id": "unipa-lm-31-management-engineering-1630905-22320",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
      "codice": "21675",
      "nome": "Product/process Innovation",
      "anno": 2,
@@ -107720,7 +109077,7 @@
      "cfu": 6,
      "ssd": "ING-IND/16",
      "obbligatorio": false,
-     "curriculum": "DATA ANALYTICS FOR BUSINESS, DIGITAL TRANSFORMATION, SUSTAINABILITY AND SOCIAL IMPACT, INNOVATION AND ENTREPRENEURSHIP",
+     "curriculum": "DATA ANALYTICS FOR BUSINESS, DIGITAL TRANSFORMATION, SUSTAINABILITY AND SOCIAL IMPACT",
      "docenti": [
       "Fabrizio Micari"
      ],
@@ -107745,7 +109102,7 @@
      "cfu": 6,
      "ssd": "ING-IND/17",
      "obbligatorio": true,
-     "curriculum": "SUSTAINABILITY AND SOCIAL IMPACT, DATA ANALYTICS FOR BUSINESS, DIGITAL TRANSFORMATION, INNOVATION AND ENTREPRENEURSHIP",
+     "curriculum": "SUSTAINABILITY AND SOCIAL IMPACT",
      "docenti": [
       "Giuseppe Aiello"
      ],
@@ -107763,6 +109120,28 @@
      "codici_alternativi": [
       "24189"
      ]
+    },
+    {
+     "codice": "24189",
+     "nome": "Reverse Logistics and Smart Waste Management",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "ING-IND/17",
+     "obbligatorio": false,
+     "curriculum": "DATA ANALYTICS FOR BUSINESS, DIGITAL TRANSFORMATION, INNOVATION AND ENTREPRENEURSHIP",
+     "docenti": [
+      "Giuseppe Aiello"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?template=responsive&pagina=insegnamento&idInsegnamento=204409&idDocente=160769&idCattedra=200101",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-31-management-engineering-1630905-24189",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
      "codice": "15506",
@@ -107787,6 +109166,30 @@
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
+     "codice": "22392",
+     "nome": "Service Quality Data-driven Management",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "ING-IND/16",
+     "obbligatorio": true,
+     "curriculum": "DATA ANALYTICS FOR BUSINESS",
+     "docenti": [
+      "Toni Lupo"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?template=responsive&pagina=insegnamento&idInsegnamento=204269&idDocente=153036&idCattedra=199979",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Data Analytics for Business",
+     "codice_ci": "22420",
+     "id": "unipa-lm-31-management-engineering-1630905-22392",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
      "codice": "22196",
      "nome": "Service Quality Data-driven Management",
      "anno": 2,
@@ -107794,7 +109197,7 @@
      "cfu": 6,
      "ssd": "ING-IND/16",
      "obbligatorio": false,
-     "curriculum": "DIGITAL TRANSFORMATION, INNOVATION AND ENTREPRENEURSHIP, SUSTAINABILITY AND SOCIAL IMPACT, DATA ANALYTICS FOR BUSINESS",
+     "curriculum": "DIGITAL TRANSFORMATION, INNOVATION AND ENTREPRENEURSHIP, SUSTAINABILITY AND SOCIAL IMPACT",
      "docenti": [
       "Toni Lupo"
      ],
@@ -107881,7 +109284,7 @@
      "cfu": 6,
      "ssd": "ING-IND/17",
      "obbligatorio": true,
-     "curriculum": "DIGITAL TRANSFORMATION, DATA ANALYTICS FOR BUSINESS, INNOVATION AND ENTREPRENEURSHIP, SUSTAINABILITY AND SOCIAL IMPACT",
+     "curriculum": "DIGITAL TRANSFORMATION",
      "docenti": [
       "Giuseppe Aiello"
      ],
@@ -107901,6 +109304,52 @@
      ]
     },
     {
+     "codice": "22390",
+     "nome": "Supply Chain Management 4.0",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "ING-IND/17",
+     "obbligatorio": false,
+     "curriculum": "DATA ANALYTICS FOR BUSINESS, INNOVATION AND ENTREPRENEURSHIP, SUSTAINABILITY AND SOCIAL IMPACT",
+     "docenti": [
+      "Giuseppe Aiello"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?template=responsive&pagina=insegnamento&idInsegnamento=204369&idDocente=160769&idCattedra=200063",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-31-management-engineering-1630905-22390",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
+     "codice": "22322",
+     "nome": "Sustainable Manufacturing",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "ING-IND/16",
+     "obbligatorio": true,
+     "curriculum": "SUSTAINABILITY AND SOCIAL IMPACT",
+     "docenti": [
+      "Giuseppe Ingarao"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?template=responsive&pagina=insegnamento&idInsegnamento=204565&idDocente=151512&idCattedra=200293",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Sustainability and Social Impact",
+     "codice_ci": "22246",
+     "id": "unipa-lm-31-management-engineering-1630905-22322",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
      "codice": "21668",
      "nome": "Sustainable Manufacturing",
      "anno": 2,
@@ -107908,7 +109357,7 @@
      "cfu": 6,
      "ssd": "ING-IND/16",
      "obbligatorio": false,
-     "curriculum": "DATA ANALYTICS FOR BUSINESS, DIGITAL TRANSFORMATION, INNOVATION AND ENTREPRENEURSHIP, SUSTAINABILITY AND SOCIAL IMPACT",
+     "curriculum": "DATA ANALYTICS FOR BUSINESS, DIGITAL TRANSFORMATION, INNOVATION AND ENTREPRENEURSHIP",
      "docenti": [
       "Giuseppe Ingarao"
      ],
@@ -107926,6 +109375,30 @@
      ]
     },
     {
+     "codice": "22386",
+     "nome": "Tech Entrepreneurship",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "ING-IND/35",
+     "obbligatorio": true,
+     "curriculum": "INNOVATION AND ENTREPRENEURSHIP",
+     "docenti": [
+      "Giovanni Perrone"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?template=responsive&pagina=insegnamento&idInsegnamento=204370&idDocente=158503&idCattedra=200064",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Innovation and Entrepreneurship",
+     "codice_ci": "22247",
+     "id": "unipa-lm-31-management-engineering-1630905-22386",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
      "codice": "22342",
      "nome": "Tech Entrepreneurship",
      "anno": 2,
@@ -107933,7 +109406,7 @@
      "cfu": 6,
      "ssd": "ING-IND/35",
      "obbligatorio": false,
-     "curriculum": "DATA ANALYTICS FOR BUSINESS, DIGITAL TRANSFORMATION, SUSTAINABILITY AND SOCIAL IMPACT, INNOVATION AND ENTREPRENEURSHIP",
+     "curriculum": "DATA ANALYTICS FOR BUSINESS, DIGITAL TRANSFORMATION, SUSTAINABILITY AND SOCIAL IMPACT",
      "docenti": [
       "Giovanni Perrone"
      ],
@@ -107951,6 +109424,30 @@
      ]
     },
     {
+     "codice": "22391",
+     "nome": "Advanced Project Management for Business",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "ING-IND/17",
+     "obbligatorio": true,
+     "curriculum": "DATA ANALYTICS FOR BUSINESS",
+     "docenti": [
+      "Cinzia Muriana"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?template=responsive&pagina=insegnamento&idInsegnamento=204292&idDocente=20811&idCattedra=199996",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Data Analytics for Business",
+     "codice_ci": "22420",
+     "id": "unipa-lm-31-management-engineering-1630905-22391",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
      "codice": "22339",
      "nome": "Advanced Project Management for Business",
      "anno": 2,
@@ -107958,7 +109455,7 @@
      "cfu": 6,
      "ssd": "ING-IND/17",
      "obbligatorio": false,
-     "curriculum": "DIGITAL TRANSFORMATION, INNOVATION AND ENTREPRENEURSHIP, SUSTAINABILITY AND SOCIAL IMPACT, DATA ANALYTICS FOR BUSINESS",
+     "curriculum": "DIGITAL TRANSFORMATION, INNOVATION AND ENTREPRENEURSHIP, SUSTAINABILITY AND SOCIAL IMPACT",
      "docenti": [
       "Cinzia Muriana"
      ],
@@ -108445,7 +109942,7 @@
      "cfu": 6,
      "ssd": "ING-IND/16",
      "obbligatorio": true,
-     "curriculum": "DIGITAL TRANSFORMATION, DATA ANALYTICS FOR BUSINESS, INNOVATION AND ENTREPRENEURSHIP, SUSTAINABILITY AND SOCIAL IMPACT",
+     "curriculum": "DIGITAL TRANSFORMATION",
      "docenti": [
       "Umberto La Commare"
      ],
@@ -108465,6 +109962,52 @@
      ]
     },
     {
+     "codice": "22388",
+     "nome": "Smart Factory",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "ING-IND/16",
+     "obbligatorio": false,
+     "curriculum": "DATA ANALYTICS FOR BUSINESS, INNOVATION AND ENTREPRENEURSHIP, SUSTAINABILITY AND SOCIAL IMPACT",
+     "docenti": [
+      "Umberto La Commare"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?template=responsive&pagina=insegnamento&idInsegnamento=204397&idDocente=159012&idCattedra=200089",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-31-management-engineering-1630905-22388",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
+     "codice": "22387",
+     "nome": "Strategic Management and Open Innovation",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "ING-IND/35",
+     "obbligatorio": true,
+     "curriculum": "INNOVATION AND ENTREPRENEURSHIP",
+     "docenti": [
+      "Mariangela Piazza"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?template=responsive&pagina=insegnamento&idInsegnamento=204372&idDocente=15295&idCattedra=200066",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Innovation and Entrepreneurship",
+     "codice_ci": "22247",
+     "id": "unipa-lm-31-management-engineering-1630905-22387",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
      "codice": "22197",
      "nome": "Strategic Management and Open Innovation",
      "anno": 2,
@@ -108472,7 +110015,7 @@
      "cfu": 6,
      "ssd": "ING-IND/35",
      "obbligatorio": false,
-     "curriculum": "DATA ANALYTICS FOR BUSINESS, DIGITAL TRANSFORMATION, SUSTAINABILITY AND SOCIAL IMPACT, INNOVATION AND ENTREPRENEURSHIP",
+     "curriculum": "DATA ANALYTICS FOR BUSINESS, DIGITAL TRANSFORMATION, SUSTAINABILITY AND SOCIAL IMPACT",
      "docenti": [
       "Mariangela Piazza"
      ],
@@ -108497,7 +110040,7 @@
      "cfu": 6,
      "ssd": "ING-IND/35",
      "obbligatorio": true,
-     "curriculum": "SUSTAINABILITY AND SOCIAL IMPACT, DATA ANALYTICS FOR BUSINESS, DIGITAL TRANSFORMATION, INNOVATION AND ENTREPRENEURSHIP",
+     "curriculum": "SUSTAINABILITY AND SOCIAL IMPACT",
      "docenti": [
       "Erica Mazzola"
      ],
@@ -108515,6 +110058,28 @@
      "codici_alternativi": [
       "24188"
      ]
+    },
+    {
+     "codice": "24188",
+     "nome": "Sustainability Management",
+     "anno": 2,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "ING-IND/35",
+     "obbligatorio": false,
+     "curriculum": "DATA ANALYTICS FOR BUSINESS, DIGITAL TRANSFORMATION, INNOVATION AND ENTREPRENEURSHIP",
+     "docenti": [
+      "Erica Mazzola"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?template=responsive&pagina=insegnamento&idInsegnamento=204310&idDocente=7182&idCattedra=200014",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/ingegneria/cds/managementengineering2255/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-31-management-engineering-1630905-24188",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere",
+     "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
     },
     {
      "codice": "22430",
@@ -108937,8 +110502,7 @@
      "obbligatorio": false,
      "curriculum": null,
      "docenti": [
-      "Maria Carmela Lombardo",
-      "Gaetana Gambino"
+      "Maria Carmela Lombardo"
      ],
      "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?template=responsive&pagina=insegnamento&idInsegnamento=223799&idDocente=160454&idCattedra=221439",
      "libri": [],
@@ -109015,6 +110579,266 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
+     "codice": "01171",
+     "nome": "Algebra Non Commutativa",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "MAT/02",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Fabrizio Martino"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?template=responsive&pagina=insegnamento&idInsegnamento=209745&idDocente=137092&idCattedra=205620",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-40-matematica-01171-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "24079",
+     "nome": "Calcolo Numerico Modulo 1",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "MAT/05",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Barbara Brandolini"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?template=responsive&pagina=insegnamento&idInsegnamento=209750&idDocente=17266740&idCattedra=205865",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Calcolo Numerico",
+     "codice_ci": "01746",
+     "id": "unipa-lm-40-matematica-24079-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "24080",
+     "nome": "Calcolo Numerico Modulo 2",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "MAT/08",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Elena Toscano"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?template=responsive&pagina=insegnamento&idInsegnamento=209734&idDocente=162503&idCattedra=205611",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Calcolo Numerico",
+     "codice_ci": "01746",
+     "id": "unipa-lm-40-matematica-24080-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "24765",
+     "nome": "Complements of Mathematical Analysis",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "MAT/05",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Francesco Tulone"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?template=responsive&pagina=insegnamento&idInsegnamento=209749&idDocente=158062&idCattedra=205864",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-40-matematica-24765-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "22453",
+     "nome": "Data Encryption and Codes",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "MAT/03",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Giovanni Falcone"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?template=responsive&pagina=insegnamento&idInsegnamento=209735&idDocente=157471&idCattedra=205612",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-40-matematica-22453-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "24254",
+     "nome": "Fisica Matematica",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "MAT/07",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Gaetana Gambino"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?template=responsive&pagina=insegnamento&idInsegnamento=209976&idDocente=152764&idCattedra=205871",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-40-matematica-24254-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "17205",
+     "nome": "Geometria Algebrica",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "MAT/03",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Luca Ugaglia"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?template=responsive&pagina=insegnamento&idInsegnamento=209740&idDocente=153199&idCattedra=205617",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-40-matematica-17205-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "24767",
+     "nome": "Mathematical Methods and Models for Applications",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "MAT/07",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Vincenzo Sciacca"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?template=responsive&pagina=insegnamento&idInsegnamento=209737&idDocente=158586&idCattedra=205614",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-40-matematica-24767-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "19863",
+     "nome": "Metodologie per L'insegnamento in Didattica della Matematica",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "MAT/04",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Benedetto Di Paola"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?template=responsive&pagina=insegnamento&idInsegnamento=210737&idDocente=156560&idCattedra=206407",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Didattica e Metodologia D'insegnamento della Matematica",
+     "codice_ci": "19862",
+     "id": "unipa-lm-40-matematica-19863-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "19861",
+     "nome": "Metodologie per L'insegnamento in Storia della Matematica",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 3,
+     "ssd": "MAT/04",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Cinzia Cerroni"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?template=responsive&pagina=insegnamento&idInsegnamento=210535&idDocente=158613&idCattedra=206525",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "modulo_di": "Didattica e Metodologia D'insegnamento della Matematica",
+     "codice_ci": "19862",
+     "id": "unipa-lm-40-matematica-19861-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "24072",
+     "nome": "Teoria delle Rappresentazioni",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "MAT/02",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Daniela La Mattina"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?template=responsive&pagina=insegnamento&idInsegnamento=209748&idDocente=152768&idCattedra=205863",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-40-matematica-24072-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "24766",
+     "nome": "Uncertain Reasoning and Probablity",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": "MAT/06",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Giuseppe Sanfilippo"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?template=responsive&pagina=insegnamento&idInsegnamento=209747&idDocente=163222&idCattedra=205862",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/matematicaeinformatica/cds/matematica2389/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-40-matematica-24766-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "13351",
@@ -114887,6 +116711,27 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
+     "codice": "24841",
+     "nome": "Interpretazione ed Edizione dei Testi Poetici Greci e Latini",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Carlo Martino Lucarini"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellantichita2057/?template=responsive&pagina=insegnamento&idInsegnamento=209130&idDocente=163497&idCattedra=204987",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/cultureesocieta/cds/scienzedellantichita2057/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-15-scienze-dell-antichita-24841-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "20696",
@@ -125464,6 +127309,48 @@
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere",
      "periodo_fonte": "https://dati.unipa.it/dataset/offerta-formativa-2025-2026.csv"
+    },
+    {
+     "codice": "19093",
+     "nome": "Filosofia del Linguaggio e della Mente",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "FILOSOFIA",
+     "docenti": [
+      "Marco Carapezza"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/scienzefilosoficheestoriche2406/?template=responsive&pagina=insegnamento&idInsegnamento=199479&idDocente=159441&idCattedra=195687",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/scienzefilosoficheestoriche2406/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-78-scienze-filosofiche-e-storiche-19093-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "24410",
+     "nome": "Filosofia della Scienza (livello Avanzato)",
+     "anno": 2,
+     "periodo": null,
+     "cfu": 9,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Gaetano Licata"
+     ],
+     "url": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/scienzefilosoficheestoriche2406/?template=responsive&pagina=insegnamento&idInsegnamento=199474&idDocente=146130&idCattedra=195683",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unipa.it/dipartimenti/scienzeumanistiche/cds/scienzefilosoficheestoriche2406/?pagina=insegnamenti#manifesto-2025-2026",
+     "verificato_il": "2026-10-20",
+     "id": "unipa-lm-78-scienze-filosofiche-e-storiche-24410-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "24108",

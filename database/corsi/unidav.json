@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unidav",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-19",
+ "aggiornato_il": "2026-10-20",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": null,
@@ -1130,6 +1130,25 @@
     },
     {
      "codice": null,
+     "nome": "opzionale con",
+     "anno": 2,
+     "periodo": null,
+     "cfu": null,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [],
+     "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-opzionale-con-a2",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
      "nome": "Didattica dell’arte",
      "anno": 3,
      "periodo": null,
@@ -1736,6 +1755,25 @@
      "stato_libri": "da_aggiungere",
      "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-tirocinio-esterno",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "opzionale con",
+     "anno": 3,
+     "periodo": null,
+     "cfu": null,
+     "ssd": null,
+     "obbligatorio": null,
+     "curriculum": "Educatore nei servizi per l’infanzia",
+     "docenti": [],
+     "url": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unidav.it/index.php/scienze-delleducazione-e-della-formazione/",
+     "verificato_il": "2026-10-10",
+     "stato_libri": "da_aggiungere",
+     "id": "unidav-l-19-scienze-dell-educazione-e-della-formazione-opzionale-con-a3",
+     "stato_esami": "da_aggiungere"
     }
    ],
    "curricula": [
@@ -1760,7 +1798,7 @@
    "url": "http://www.unidav.it",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "nome": "Abilità informatiche",
@@ -2310,6 +2348,23 @@
      "id": "unidav-lm-56-scienze-dell-economia-lm-56-economia-e-gestione-delle-aziende-sanita",
      "stato_libri": "da_aggiungere",
      "stato_esami": "completo"
+    },
+    {
+     "nome": "Esame a scelta",
+     "anno": 2,
+     "cfu": 6,
+     "ssd": null,
+     "periodo": null,
+     "obbligatorio": false,
+     "docenti": [],
+     "url": "https://www.unidav.it/index.php/aq/syllabus-scienze-delleconomia/",
+     "fonte": "https://www.unidav.it/index.php/aq/syllabus-scienze-delleconomia/",
+     "libri": [],
+     "esami": [],
+     "verificato_il": "2026-10-17",
+     "id": "unidav-lm-56-scienze-dell-economia-lm-56-esame-a-scelta-a2",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "nome": "Prova finale",

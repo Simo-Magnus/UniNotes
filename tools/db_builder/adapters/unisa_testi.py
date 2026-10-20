@@ -120,7 +120,7 @@ def libri_unisa(sy: dict) -> list[dict]:
     return libri
 
 
-_SEGNO_LIBRO = re.compile(r"(?i)(?:19|20)\d\d|isbn|(?:" + "|".join(re.escape(e) for e in EDITORI if len(e) > 3) + r")")
+_SEGNO_LIBRO = re.compile(r"(?i)(?:19|20)\d\d|isbn|\b(?:" + "|".join(re.escape(e) for e in EDITORI if len(e) > 3) + r")")
 
 
 def e_prosa(cit: str) -> bool:

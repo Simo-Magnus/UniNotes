@@ -1,18 +1,25 @@
 """Università degli Studi di Sassari: insegnamenti per anno di corso, libri e appelli.
 
 Piani e syllabus: `https://uniss.coursecatalogue.cineca.it` (Course Catalogue Cineca, API pubblica).
-Il catalogo di Sassari non divide il piano per anno: tutte le attività stanno sotto «altreAttivita» e l'anno
-di corso si ricava dall'anno accademico in cui l'attività è erogata (`aa`) e dalla coorte dell'offerta:
-l'attività con `aa` = 2026 nell'offerta della coorte 2024 è del 3° anno (2026 - 2024 + 1). Perciò, per
-ogni corso e ogni anno k, si legge l'offerta della coorte 2026 - k + 1 e se ne prendono le attività di
-quest'anno accademico. Inoltre:
+Il catalogo di Sassari non divide il piano per anno: tutte le attività stanno sotto «altreAttivita», ognuna con l'a.a. di
+erogazione (`aa`), e l'offerta di una coorte elenca le attività di tutte le coorti in corso dell'ordinamento (per
+Fisioterapia l'a.a. 2026 elenca il 2° e il 3° anno insieme). L'anno di corso k di un'attività si ricava dagli a.a. in cui è
+erogata: la coorte più recente dell'ordinamento la segue nell'a.a. cL + k - 1, quindi k = ultimo a.a. di erogazione - cL + 1
+(per percorso; i percorsi «Sede di …» seguono il percorso comune). Eccezioni: se il nome dice l'anno («Tirocinio III anno») vale
+il nome; la «Prova finale» è dell'ultimo anno. Per l'anno k si leggono le attività erogate nell'a.a. corrente della coorte
+2026 - k + 1 (l'ordinamento in vigore per quella coorte). Inoltre:
 
+- attività a 0 CFU (precorsi, OFA, corsi zero, integrazioni di livello di lingua) non sono insegnamenti del piano e si tolgono;
+- attività omonime dello stesso anno e curriculum con codici diversi: con CFU diversi il nome porta i CFU, con gli stessi CFU
+  (e non canali X/Y della stessa disciplina) porta il codice, perché build_db unisce le omonime con stessi anno e CFU;
+- libri già raccolti per lo stesso codice nel database non si rileggono (il syllabus si legge solo per i codici nuovi);
 - un corso del database è una catena di corsi del catalogo con lo stesso nome e la stessa sede (il codice
   del corso cambia con ogni nuovo ordinamento: 1158 → A187 per Giurisprudenza): per ogni coorte vale solo
   il codice il cui ordinamento era in vigore (`ordinamento_aa` ≤ coorte ≤ `ordinamento_aa_cess`);
   l'offerta delle coorti dopo la cessazione contiene solo gli anni residui di coorti più vecchie;
 - per gli anni senza una coorte attiva (primo anno di un corso nuovo: il 2° e il 3° anno sono già nel piano
-  della coorte 2026 ma erogati dal 2027/28) si legge il piano della coorte più recente, indicando l'anno;
+  della coorte 2026 ma erogati dal 2027/28; ordinamenti chiusi) si legge il piano della coorte con piano più vicina a quella
+  degli iscritti, indicando l'anno e la coorte;
   i corsi senza nessuna coorte attiva (ordinamenti estinti) mantengono il piano dell'ultima coorte;
 - il catalogo pubblica il programma di molti insegnamenti con libri in forma libera (`uniss_testi`) e,
   quando quello 2026/27 non c'è ancora, si usa il programma dell'a.a. precedente, con una nota;
@@ -86,6 +93,24 @@ def _e_comune(p: dict, nome: str) -> bool:
     return bool(p.get("comune")) or nome.upper().startswith("PERCORSO COMUNE")
 
 
+_ROMANI = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6}
+
+
+def _anno_nel_nome(nome: str) -> int | None:
+    """Anno di corso scritto nel nome dell'attività («Tirocinio III Anno», «Attività a scelta II anno - II sem.»)."""
+    m = re.search(r"(?i)\b(VI|IV|V|III|II|I)\s*[°^]?\s*anno\b", nome) or re.search(r"(?i)\b([1-6])\s*[°^]\s*anno\b", nome)
+    if not m:
+        return None
+    g = m.group(1).upper()
+    return _ROMANI.get(g) or int(g)
+
+
+def _cfu_zero(att: dict) -> bool:
+    """Attività a 0 CFU (precorsi, OFA, corsi zero, integrazioni di livello di lingua): non sono insegnamenti del piano."""
+    c = att.get("crediti")
+    return isinstance(c, (int, float)) and c == 0
+
+
 def _attivita(det: dict):
     """(nome del percorso, è comune, attività) di tutti i percorsi del corso."""
     for p in det.get("percorsi") or []:
@@ -126,7 +151,11 @@ def fetch_ateneo(uid: str = "uniss", anno: int = 2026, max_cds: int | None = Non
         if not o:
             return False
         d = o["det"]
-        return int(d.get("ordinamento_aa") or 0) <= y <= int(d.get("ordinamento_aa_cess") or 9999)
+        if not int(d.get("ordinamento_aa") or 0) <= y <= int(d.get("ordinamento_aa_cess") or 9999):
+            return False
+        # la coorte c'è solo se l'offerta ha attività erogate nell'a.a. di immatricolazione (A232, Infermieristica di Nuoro,
+        # ha un'offerta dal 2025 anche nell'elenco delle coorti 2022-2024)
+        return any(str(att.get("aa")) == str(y) for _, _, att in _attivita(d))
 
     # --- catene di codici = corsi -----------------------------------------------------------------
     corsi_cat: dict[str, dict] = {}  # cdsCod -> riga dell'offerta più recente
@@ -162,6 +191,42 @@ def fetch_ateneo(uid: str = "uniss", anno: int = 2026, max_cds: int | None = Non
             if p not in v:
                 v.append(p)
 
+    # --- anno di corso di ogni attività, per ordinamento --------------------------------------------
+    # Le offerte del catalogo non sono piani di una coorte: l'offerta di una coorte elenca tutte le attività dell'ordinamento
+    # erogate in ogni a.a. da quella coorte in poi, di tutte le coorti in corso (per l'ordinamento 2019-2025 di Fisioterapia
+    # l'a.a. 2026 elenca il 2° e il 3° anno insieme). L'anno di corso di un'attività si ricava dagli a.a. in cui è erogata:
+    # la coorte più recente dell'ordinamento (cL) la segue nell'a.a. cL + k - 1, quindi l'ultimo a.a. di erogazione è
+    # cL + k - 1 e k = ultimo a.a. - cL + 1.
+    ord_att: dict[tuple, dict] = {}  # (cdsCod, ordinamento_aa) -> {(percorso, adCod): {"aa": {aa: (att, y)}, ...}}
+    ord_ult: dict[tuple, int] = {}  # (cdsCod, ordinamento_aa) -> coorte più recente dell'ordinamento
+    perc_ult: dict[tuple, int] = {}  # (cdsCod, ordinamento_aa, percorso) -> coorte più recente in cui il percorso c'è
+    for (cds, y), o in sorted(offerte.items(), key=lambda t: t[0][1]):
+        d = o["det"]
+        ok = (cds, int(d.get("ordinamento_aa") or 0))
+        ord_ult[ok] = max(ord_ult.get(ok, 0), min(y, int(d.get("ordinamento_aa_cess") or 9999)))
+        reg = ord_att.setdefault(ok, {})
+        ult_y = min(y, int(d.get("ordinamento_aa_cess") or 9999))
+        for p_ in d.get("percorsi") or []:
+            pk = ok + ((p_.get("des_it") or p_.get("pdsDes") or "").strip(),)
+            perc_ult[pk] = max(perc_ult.get(pk, 0), ult_y)
+        for pnome, comune, att in _attivita(d):
+            try:
+                aa_ = int(att["aa"])
+            except (KeyError, TypeError, ValueError):
+                continue
+            r = reg.setdefault((pnome, str(att.get("adCod") or att.get("cod"))), {"aa": {}, "comune": comune})
+            r["aa"][aa_] = (att, y)  # (la vista più recente che la contiene)
+
+    def anno_di_corso(ok: tuple, r: dict, durata: int, pnome: str = "") -> int | None:
+        nome_ = next(iter(r["aa"].values()))[0].get("des_it") or ""
+        k = _anno_nel_nome(nome_)  # «Tirocinio III anno»: l'anno lo dice il nome (l'a.a. può mancare per qualche coorte)
+        if not k and _norm(nome_) == "prova finale":  # la prova finale è dell'ultimo anno (il catalogo la elenca solo in un a.a.)
+            k = durata
+        if k:
+            return k if k <= durata else None
+        k = max(r["aa"]) - perc_ult.get(ok + (pnome,), ord_ult[ok]) + 1
+        return k if 1 <= k <= durata else None
+
     for chiave, codici in sorted(gruppi.items(), key=lambda t: t[1]):
         if max_cds and len(corsi_out) >= max_cds:
             break
@@ -175,16 +240,28 @@ def fetch_ateneo(uid: str = "uniss", anno: int = 2026, max_cds: int | None = Non
         amm = None
 
         def aggiungi(cds: str, y: int, k: int, aa_cercato: int, nota_anno: str | None):
+            """Attività dell'ordinamento della coorte y che sono del k-esimo anno e erogate nell'a.a. aa_cercato."""
             nonlocal amm
             o = offerte[(cds, y)]
+            ok = (cds, int(o["det"].get("ordinamento_aa") or 0))
             if amm is None and y == anno:
                 amm = ammissione.da_catalogo(o["det"], f"{BASE}/corsi/{anno}/{o['x'].get('cod')}")
             n_perc = len([p for p in o["det"].get("percorsi") or []
                           if not _e_comune(p, (p.get("des_it") or p.get("pdsDes") or "").strip())])
-            for pnome, comune, att in _attivita(o["det"]):
-                if str(att.get("aa")) != str(aa_cercato):
+            for (pnome, ad), r in ord_att[ok].items():
+                if aa_cercato not in r["aa"]:
                     continue
-                ad = att.get("adCod") or att.get("cod")
+                rk, pk = r, pnome
+                if "sede" in pnome.lower():  # i percorsi «Sede di Olbia / Sassari» finiscono prima del comune: vale l'anno del comune
+                    rc = next(((p2, r2) for (p2, a2), r2 in ord_att[ok].items() if a2 == ad and r2["comune"]), None)
+                    if rc:
+                        pk, rk = rc
+                if anno_di_corso(ok, rk, durata, pk) != k:
+                    continue
+                att, y_vista = r["aa"][aa_cercato]
+                comune = r["comune"]
+                if _cfu_zero(att):
+                    continue
                 key = f"{k}:{ad}"
                 item = insegnamenti.get(key)
                 if not item:
@@ -199,7 +276,7 @@ def fetch_ateneo(uid: str = "uniss", anno: int = 2026, max_cds: int | None = Non
                         "curriculum": None, "_percorsi": set(), "_comune": False,
                         "docenti": sorted(set(docenti)),
                         "url": f"{BASE}/insegnamenti/{att.get('aa')}/{att.get('cod')}"
-                               f"/{att.get('ordinamento_aa')}/{att.get('corso_percorso_id')}?coorte={y}",
+                               f"/{att.get('ordinamento_aa')}/{att.get('corso_percorso_id')}?coorte={y_vista}",
                         "libri": [], "esami": [],
                         "fonte": BASE, "verificato_il": oggi,
                     }
@@ -208,7 +285,7 @@ def fetch_ateneo(uid: str = "uniss", anno: int = 2026, max_cds: int | None = Non
                     insegnamenti[key] = item
                     if syllabus:
                         syllabus_jobs.setdefault((str(att.get("aa")), str(att.get("cod"))), {
-                            "params": parametri(att, y), "items": [], "ad": str(ad)})["items"].append(item)
+                            "params": parametri(att, y_vista), "items": [], "ad": str(ad)})["items"].append(item)
                 if comune:
                     item["_comune"] = True
                 elif n_perc > 1 and pnome:
@@ -226,13 +303,14 @@ def fetch_ateneo(uid: str = "uniss", anno: int = 2026, max_cds: int | None = Non
             if not coorti_valide:
                 continue
             # nessuna coorte attiva per quest'anno: piano della coorte più recente (anno futuro o ultimo erogato)
-            yf = max(coorti_valide)
+            yf = min(coorti_valide, key=lambda c_: (abs(c_ - y), -c_))  # la coorte con piano più vicina a quella degli iscritti
             cds_f = [cds for cds in codici if valida(cds, yf)]
             aa_f = yf + k - 1
             if yf == anno or aa_f > anno:  # coorte nuova: il suo anno k sarà erogato nel futuro
                 nota = f"Piano della coorte {yf}: insegnamento erogato dal {fmt(aa_f)}"
             else:
-                nota = f"Piano dell'ultima coorte attiva ({yf}): ordinamento senza iscritti al {k}° anno"
+                nota = (f"Piano dell'ultima coorte attiva ({yf}): ordinamento senza iscritti al {k}° anno" if yf == max(coorti_valide)
+                        else f"Piano della coorte {yf}, la più vicina agli iscritti al {k}° anno (nel catalogo non c'è la coorte {y})")
             for cds in cds_f:
                 aggiungi(cds, yf, k, aa_f, nota)
         if not insegnamenti:  # ordinamento estinto senza coorti: piano dell'ultima offerta nota
@@ -241,13 +319,15 @@ def fetch_ateneo(uid: str = "uniss", anno: int = 2026, max_cds: int | None = Non
             cds_l = [cds for cds in codici if (cds, yl) in offerte] if yl else []
             for k in range(1, durata + 1):
                 for cds in cds_l:
-                    aggiungi(cds, yl, k, yl + k - 1, f"Piano della coorte {yl}: ordinamento senza iscritti")
+                    ok_ = (cds, int(offerte[(cds, yl)]["det"].get("ordinamento_aa") or 0))
+                    aggiungi(cds, yl, k, ord_ult[ok_] + k - 1, f"Piano della coorte {ord_ult[ok_]}: ordinamento senza iscritti")
         ins = list(insegnamenti.values())
         for i in ins:
             ps = i.pop("_percorsi")
             comune = i.pop("_comune")
             if percorsi_nomi and ps and not comune and ps != percorsi_nomi:
                 i["curriculum"] = ", ".join(sorted(ps))
+        _distingui(ins)
         corsi_out.append({
             "nome": cineca_catalogue._titolo(x.get("des_it") or ""),
             "classe": cineca_catalogue._classe(det.get("classe_cod") or x.get("classe_cod")),
@@ -299,7 +379,20 @@ def fetch_ateneo(uid: str = "uniss", anno: int = 2026, max_cds: int | None = Non
         return [], sy
 
     trovati = 0
+    noti = _libri_database()
+    riusati = 0
     for n, job in enumerate(syllabus_jobs.values(), 1):
+        noto = noti.get(job["ad"])
+        if noto:  # libri già raccolti per questo codice nel database: non si rileggono
+            riusati += 1
+            trovati += len(noto["libri"])
+            for it in job["items"]:
+                it["libri"] = json.loads(json.dumps(noto["libri"]))
+                it["stato_libri"] = "completo"
+                for k_ in ("modalita_esame", "ssd", "url_sito"):
+                    if noto.get(k_):
+                        it[k_] = noto[k_]
+            continue
         try:
             libri, sy = cerca_libri(job)
         except Exception as e:  # noqa: BLE001 - un syllabus illeggibile non ferma gli altri
@@ -323,7 +416,7 @@ def fetch_ateneo(uid: str = "uniss", anno: int = 2026, max_cds: int | None = Non
             nota = i.pop("_nota_anno", None)
             if nota:
                 i["note"] = nota
-    log(f"[{uid}] libri trovati: {trovati}; richieste: {c.requests}")
+    log(f"[{uid}] libri trovati: {trovati} (già nel database per {riusati} insegnamenti); richieste: {c.requests}")
     doc = {"universita_id": uid, "descrizione": f"Generato da {BASE} (Course Catalogue Cineca)",
            "generato_il": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "corsi": corsi_out, "canali": []}
     log(f"[{uid}] corsi con id del database: {associa(doc['corsi'], log)}/{len(doc['corsi'])}")
@@ -332,6 +425,53 @@ def fetch_ateneo(uid: str = "uniss", anno: int = 2026, max_cds: int | None = Non
     for cs in doc["corsi"]:
         _id_unici(cs)
     return doc
+
+
+def _libri_database() -> dict[str, dict]:
+    """Libri, modalità d'esame, SSD e sito già nel database per codice dell'insegnamento (nessuna nuova richiesta)."""
+    p = ROOT / "database" / "corsi" / "uniss.json"
+    try:
+        doc = json.loads(p.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    out: dict[str, dict] = {}
+    for corso in doc.get("corsi") or []:
+        for i in corso.get("insegnamenti") or []:
+            cod = i.get("codice")
+            if cod and i.get("libri") and cod not in out:
+                out[cod] = {k: i.get(k) for k in ("libri", "modalita_esame", "ssd", "url_sito")}
+    return out
+
+
+def _canali(codici: list[str]) -> bool:
+    """Codici che differiscono per una sola lettera (40X04002 / 40Y04002): canali della stessa disciplina."""
+    def una_lettera(c: str) -> bool:
+        diff = [(a, b) for a, b in zip(c, codici[0]) if a != b]
+        return len(c) == len(codici[0]) and len(diff) <= 1 and all(a.isalpha() and b.isalpha() for a, b in diff)
+    return all(una_lettera(c) for c in codici)
+
+
+def _distingui(ins: list[dict]) -> None:
+    """Attività omonime dello stesso anno e curriculum con codici diversi: sono insegnamenti diversi del catalogo (build_db
+    unisce quelli con lo stesso nome, anno e CFU). Con CFU diversi il nome porta i CFU; con gli stessi CFU i canali della
+    stessa disciplina (codici che differiscono per una lettera, 40X04002 / 40Y04002: lasciati, si uniscono) o le attività distinte (il nome porta
+    il codice)."""
+    gruppi: dict[tuple, list[dict]] = {}
+    for i in ins:
+        gruppi.setdefault((_norm(i["nome"]), i.get("anno"), i.get("curriculum")), []).append(i)
+    for g in gruppi.values():
+        if len({i["codice"] for i in g}) < 2:
+            continue
+        cfu = {i.get("cfu") for i in g}
+        if len(cfu) > 1:
+            for i in g:
+                if i.get("cfu") is not None:
+                    i["nome"] = f"{i['nome']} ({i['cfu']:g} CFU)"
+            continue
+        if _canali(sorted(i["codice"] for i in g)):
+            continue
+        for i in g:
+            i["nome"] = f"{i['nome']} ({i['codice']})"
 
 
 def _slug(s: str, maxlen: int = 40) -> str:
@@ -376,6 +516,24 @@ def associa(corsi: list[dict], log=print) -> int:
             log(f"[uniss]   corso del catalogo senza corso unico nel database: {cc['nome']} {cc['codici_catalogo']} "
                 f"({len(cand)} candidati)")
     return n
+
+
+def main(argv: list[str]) -> int:
+    """Esecuzione locale: scrive `database/contrib/auto/uniss.json` tenendo gli appelli già presenti.
+
+        (da tools/db_builder) python -m adapters.uniss [--senza-syllabus]
+    """
+    doc = fetch_ateneo(syllabus="--senza-syllabus" not in argv)
+    out = ROOT / "database" / "contrib" / "auto" / "uniss.json"
+    try:
+        vecchio = json.loads(out.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        vecchio = {}
+    doc["appelli"] = vecchio.get("appelli") or {}
+    doc["canali"] = vecchio.get("canali") or []
+    out.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"[uniss] {len(doc['corsi'])} corsi scritti in {out} ({time.strftime('%H:%M:%S')})")
+    return 0
 
 
 # --- appelli ---------------------------------------------------------------------------------
@@ -515,3 +673,8 @@ def fetch_appelli(uid: str, corsi: list[dict], log=print) -> dict[str, list[dict
                 v.append(e)
     log(f"[{uid}] appelli: {sum(len(v) for v in out.values())} date per {len(out)} insegnamenti")
     return out
+
+
+if __name__ == "__main__":
+    import sys
+    sys.exit(main(sys.argv[1:]))

@@ -21,6 +21,7 @@ import json
 import pathlib
 import re
 import time
+import unicodedata
 
 from .testi import estrai_libri
 from .unibo import Client, _testo
@@ -46,47 +47,92 @@ def fratelli(s: str, sdu: str, cds: str) -> list[str]:
             if v.startswith(f"{sdu}_") and v != f"{sdu}_{cds}" and re.sub(r"\s*DM\s*\d+/\d+\s*$", "", t).strip().lower() == base]
 
 
+_INT_ANNO = re.compile(r"(\d)\s*°\s*anno\s+(\d{4}/\d{4})")
+_P_INTEST = '<p style="font-weight: bold;font-size:14px;padding:10px;"'
+_SEGNAPOSTO = re.compile(r"(?i)a scelta da tabella|crediti liberi|free ects")
+
+
+def _riga(tr: str) -> dict | None:
+    td = re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S)
+    if len(td) < 7:
+        return None
+    link = re.search(r'href="([^"]*sviluppo\.guide\.visualizza[^"]*)"', td[3])
+    # negli insegnamenti integrati dopo il nome c'è l'elenco dei moduli (<p><ul>…)
+    nome = _testo(re.split(r"<p\b|<ul\b", td[3], maxsplit=1)[0])
+    if not nome:
+        return None
+    cfu_t = _testo(td[5]).replace(",", ".")
+    cfu = float(cfu_t) if re.fullmatch(r"\d+(\.\d+)?", cfu_t) else None
+    docenti = re.findall(r'class="policorpolink" target="_new">(.*?)</a>', td[6], re.S)
+    per = _testo(td[0])
+    return {
+        "codice": _testo(td[1]) or None, "nome": nome,
+        "ssd": "; ".join(_testo(x).strip(" ;") for x in re.split(r"<br\s*/?>", td[2]) if _testo(x)) or None,
+        "periodo": per if per in ("1", "2", "3") else ("annuale" if per in ("1,2", "1; 2") else per or None),
+        "cfu": int(cfu) if cfu is not None and cfu.is_integer() else cfu,
+        "docenti": sorted({_testo(d) for d in docenti if _testo(d)}),
+        "url": BASE + html.unescape(link.group(1)) if link else None,
+    }
+
+
 def leggi_piano(s: str, aa: str) -> list[dict]:
-    """Righe della sezione dell'a.a. `aa` ("2026/2027") di ogni percorso, con le tabelle a scelta."""
+    """Righe della sezione dell'a.a. `aa` ("2026/2027") di ogni percorso, con le tabelle a scelta.
+
+    Il piano di un percorso ha una tabella per ogni anno («N° anno AAAA/AAAA») e, dopo gli anni, le tabelle
+    degli insegnamenti tra cui scegliere (titolo libero: «Insegnamento a scelta da Tabella C», «Elective
+    courses», «Thesis», …). Le tabelle non dicono a quale anno appartengono: le richiama, nell'anno, una riga
+    senza guida col loro stesso nome (e i CFU da acquisire, a volte anche un codice). Quella riga è il gruppo
+    (`gruppo: True`, a scelta, con i CFU dichiarati) e gli insegnamenti della tabella sono le alternative
+    dello stesso anno (`obbligatorio: False`). Una tabella che nessuna riga dell'anno richiama non è di
+    quell'anno."""
     out = []
     percorsi = re.split(r'<a name="\d+"\s*class="accordion-toggle"[^>]*>(.*?)</a>', s, flags=re.S)
     for nome_percorso, corpo in zip(percorsi[1::2], percorsi[2::2]):
         percorso = _testo(nome_percorso)
-        pezzi = re.split(r'(<p style="font-weight: bold;font-size:14px;padding:10px;"[^>]*>.*?</p>)', corpo, flags=re.S)
-        anno, attivo, gruppo = None, False, None
-        for p in pezzi:
-            if p.startswith("<p style=\"font-weight: bold;font-size:14px;padding:10px;\""):
-                t = _testo(p)
-                m = re.match(r"(\d)\s*°\s*anno\s+(\d{4}/\d{4})", t)
-                if m:
-                    anno, attivo, gruppo = int(m.group(1)), m.group(2) == aa, None
-                else:
-                    gruppo = t  # tabella degli insegnamenti a scelta
+        sezioni: list[tuple[str, list[dict]]] = []
+        for p in re.split(r'(' + re.escape(_P_INTEST) + r'[^>]*>.*?</p>)', corpo, flags=re.S):
+            if p.startswith(_P_INTEST):
+                sezioni.append((_testo(p), []))
+            elif sezioni:
+                sezioni[-1][1].extend(r for r in (_riga(tr) for tr in re.findall(r"<tr>(.*?)</tr>", p, re.S)) if r)
+        tabelle = {}
+        for titolo, righe in sezioni:
+            if not _INT_ANNO.match(titolo):
+                tabelle.setdefault(titolo.lower(), righe)
+        for titolo, righe in sezioni:
+            m = _INT_ANNO.match(titolo)
+            if not m or m.group(2) != aa:
                 continue
-            if not attivo:
-                continue
-            for tr in re.findall(r"<tr>(.*?)</tr>", p, re.S):
-                td = re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S)
-                if len(td) < 7:
+            anno = int(m.group(1))
+            usate: set[str] = set()
+
+            def espandi(tab_righe: list[dict], nome_gruppo: str, livello: int) -> None:
+                # le righe di una tabella possono richiamare altre tabelle (es. «Challenge» dentro «Elective
+                # courses»): anche quelle sono alternative dello stesso anno
+                for x in tab_righe:
+                    annidata = tabelle.get(x["nome"].lower()) if not x["url"] else None
+                    if annidata is not None:
+                        out.append(dict(x, anno=anno, obbligatorio=False, percorso=percorso, gruppo=True,
+                                        annidato=True, da_gruppo=nome_gruppo))
+                        if x["nome"].lower() not in usate and livello < 4:
+                            usate.add(x["nome"].lower())
+                            espandi(annidata, x["nome"], livello + 1)
+                    else:
+                        out.append(dict(x, anno=anno, obbligatorio=False, percorso=percorso, gruppo=False,
+                                        annidato=False, da_gruppo=nome_gruppo))
+
+            for r in righe:
+                tab = tabelle.get(r["nome"].lower()) if not r["url"] else None
+                segnaposto = tab is not None or (not r["url"] and _SEGNAPOSTO.search(r["nome"]))
+                if not segnaposto:
+                    out.append(dict(r, anno=anno, obbligatorio=True, percorso=percorso, gruppo=False, annidato=False,
+                                    da_gruppo=None))
                     continue
-                link = re.search(r'href="([^"]*sviluppo\.guide\.visualizza[^"]*)"', td[3])
-                # negli insegnamenti integrati dopo il nome c'è l'elenco dei moduli (<p><ul>…)
-                nome = _testo(re.split(r"<p\b|<ul\b", td[3], maxsplit=1)[0])
-                if not nome or re.search(r"(?i)a scelta da tabella|crediti liberi", nome) and not link:
-                    continue  # la riga segnaposto; gli insegnamenti sono nella tabella a scelta
-                cfu_t = _testo(td[5]).replace(",", ".")
-                cfu = float(cfu_t) if re.fullmatch(r"\d+(\.\d+)?", cfu_t) else None
-                docenti = re.findall(r'class="policorpolink" target="_new">(.*?)</a>', td[6], re.S)
-                per = _testo(td[0])
-                out.append({
-                    "anno": anno, "codice": _testo(td[1]) or None, "nome": nome,
-                    "ssd": "; ".join(_testo(x).strip(" ;") for x in re.split(r"<br\s*/?>", td[2]) if _testo(x)) or None,
-                    "periodo": per if per in ("1", "2", "3") else ("annuale" if per in ("1,2", "1; 2") else per or None),
-                    "cfu": int(cfu) if cfu is not None and cfu.is_integer() else cfu,
-                    "docenti": sorted({_testo(d) for d in docenti if _testo(d)}),
-                    "url": BASE + html.unescape(link.group(1)) if link else None,
-                    "obbligatorio": gruppo is None, "percorso": percorso,
-                })
+                out.append(dict(r, anno=anno, obbligatorio=False, percorso=percorso, gruppo=True, annidato=False,
+                                da_gruppo=None))
+                if tab is not None and r["nome"].lower() not in usate:
+                    usate.add(r["nome"].lower())
+                    espandi(tab, r["nome"], 1)
     return out
 
 
@@ -213,9 +259,83 @@ def libri_guida(s: str) -> list[dict]:
     return []
 
 
+def _fmt(x) -> str:
+    return f"{x:g}" if isinstance(x, (int, float)) else "?"
+
+
+def nomi_distinti(righe: list[dict]) -> list[dict]:
+    """Righe omonime dello stesso anno che sono voci diverse della fonte (codici diversi, o un gruppo a scelta
+    con il nome dei suoi insegnamenti): non si uniscono, si distinguono nel nome. Il gruppo (es. «Thesis»)
+    diventa «… (gruppo a scelta, N CFU)»; voci omonime con CFU diversi «… (N CFU)»; con gli stessi CFU e codici
+    diversi «… (codice)». Lo stesso codice su più righe (obbligatorio in un percorso e a scelta in un altro)
+    resta con lo stesso nome: è un solo insegnamento."""
+    def entita(rows):
+        e: dict[tuple, list[dict]] = {}
+        for i in rows:
+            e.setdefault((i["codice"], i["_g"], i["cfu"] if i["_g"] else None), []).append(i)
+        return e
+
+    def per_nome(rows):
+        out: dict[str, dict[tuple, list[dict]]] = {}
+        for k, v in entita(rows).items():
+            out.setdefault(v[0]["nome"], {})[k] = v
+        return out
+
+    per: dict[tuple, list[dict]] = {}
+    for i in righe:
+        per.setdefault((i["anno"], re.sub(r"\W+", " ", i["nome"].lower()).strip()), []).append(i)
+    for gruppo in per.values():
+        ent = entita(gruppo)
+        if len(ent) < 2:
+            continue
+        if any(not k[1] for k in ent):
+            for k, v in ent.items():
+                if k[1]:
+                    for i in v:
+                        i["nome"] = f"{i['nome']} (gruppo a scelta, {_fmt(i['cfu'])} CFU)"
+        for nome, e in per_nome(gruppo).items():
+            if len(e) > 1:
+                for k, v in e.items():
+                    for i in v:
+                        if f"{_fmt(i['cfu'])} CFU)" not in i["nome"]:
+                            i["nome"] = f"{i['nome']} ({_fmt(i['cfu'])} CFU)"
+        for nome, e in per_nome(gruppo).items():
+            if len(e) > 1:
+                for k, v in e.items():
+                    for i in v:
+                        if i["codice"]:
+                            i["nome"] = f"{i['nome']} ({i['codice']})"
+    return righe
+
+
+def _slug(s: str) -> str:
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+
+
+def id_senza_codice(corso_id: str, ins: list[dict]) -> list[dict]:
+    """Le righe senza codice (gruppi a scelta) hanno un id esplicito dal nome intero: lo slug di build_db si
+    ferma a 40 caratteri e «Insegnamento caratterizzante di orientamento 1/2/3» diventerebbe una voce sola.
+    Lo stesso nome in anni diversi: `-a<anno>`, come per i codici."""
+    usati = {f"{corso_id}-{_slug(i['codice'])[:40]}" for i in ins if i["codice"]}
+    for i in sorted(ins, key=lambda i: i["anno"]):
+        if i["codice"]:
+            continue
+        base = f"{corso_id}-{_slug(i['nome'])[:80]}".strip("-")
+        cand = base if base not in usati else f"{base}-a{i['anno']}"
+        n = 2
+        while cand in usati:
+            cand = f"{base}-a{i['anno']}-{n}"
+            n += 1
+        usati.add(cand)
+        i["id"] = cand
+    return ins
+
+
 def fetch_ateneo(uid: str = "polito", anno: int | None = None, max_cds: int | None = None, syllabus: bool = True,
-                 corsi: list[dict] | None = None, log=print) -> dict:
-    """Restituisce un contributo nel formato di database/contrib (vedi build_db.py)."""
+                 corsi: list[dict] | None = None, log=print, diag: dict | None = None) -> dict:
+    """Restituisce un contributo nel formato di database/contrib (vedi build_db.py).
+    `diag` (facoltativo) raccoglie per corso le righe con i campi `_g` (gruppo a scelta) e `_a` (annidato)."""
     anno = anno or (time.localtime().tm_year if time.localtime().tm_mon >= 9 else time.localtime().tm_year - 1)
     aa = f"{anno}/{anno + 1}"
     if corsi is None:
@@ -237,35 +357,50 @@ def fetch_ateneo(uid: str = "polito", anno: int | None = None, max_cds: int | No
     def build(corso: dict) -> dict | None:
         sdu, cds = corso.get("_codici") or _codici(corso["url"])
         durata = corso.get("durata_anni") or 3
-        righe: dict[str, dict] = {}
+        # il corso può avere più codici (vecchio e nuovo ordinamento, stesso nome nel menu): si cercano
+        # prima di leggere i piani, perché la coorte più recente può essere solo sul codice nuovo
+        cand = [cds]
+        for k in range(1, durata + 1):
+            r = c.get(PIANO.format(c=anno + 2 - k, sdu=sdu, cds=cds))
+            if r:
+                cand += fratelli(r.text, sdu, cds)
+                break
+        righe: dict[tuple, dict] = {}
         percorsi = set()
         fonte = None
-        altri: list[str] | None = None
         for k in range(1, durata + 1):
-            coorte = anno + 1 - k + 1  # p_coorte = anno di fine dell'a.a. di immatricolazione
-            trovate = []
-            for cod in [cds] + (altri or []):
-                r = c.get(PIANO.format(c=coorte, sdu=sdu, cds=cod))
-                if not r:
-                    continue
-                if altri is None:
-                    altri = fratelli(r.text, sdu, cds)
-                trovate = [x for x in leggi_piano(r.text, aa) if x["anno"] == k]
+            coorte = anno + 2 - k  # p_coorte = anno di fine dell'a.a. di immatricolazione
+            trovate, url_piano = [], None
+            # senza coorte attiva in quell'anno (corso nuovo: nessuno è ancora al k-esimo anno) vale il piano
+            # ufficiale della coorte successiva più vicina, che ha la sezione di quell'anno (per l'a.a. di
+            # quella coorte: la stessa pagina del Portale, altro p_coorte)
+            for delta in (0, 1, 2):
+                aa_k = f"{anno + delta}/{anno + delta + 1}"
+                for cod in cand:
+                    url_piano = PIANO.format(c=coorte + delta, sdu=sdu, cds=cod)
+                    r = c.get(url_piano)
+                    if not r:
+                        continue
+                    trovate = [x for x in leggi_piano(r.text, aa_k) if x["anno"] == k]
+                    if trovate:
+                        fonte = fonte or url_piano
+                        break
                 if trovate:
-                    fonte = fonte or r.url
                     break
             for x in trovate:
+                if x["cfu"] == 0 and not x["gruppo"]:
+                    continue  # attività a 0 CFU (es. sessioni estive senza crediti): non sono insegnamenti del piano
                 percorsi.add(x["percorso"])
-                key = f"{k}:{x['codice'] or x['nome']}"
+                # un gruppo con CFU diversi da un percorso all'altro è una riga per ogni valore
+                key = (k, x["codice"] or x["nome"].lower(), x["obbligatorio"], x["cfu"] if x["gruppo"] else None)
                 item = righe.get(key)
                 if not item:
                     item = righe[key] = {
                         "codice": x["codice"], "nome": x["nome"], "anno": k, "periodo": x["periodo"], "cfu": x["cfu"],
                         "ssd": x["ssd"], "obbligatorio": x["obbligatorio"], "curriculum": None,
                         "docenti": x["docenti"], "url": x["url"], "libri": [], "esami": [],
-                        "fonte": PIANO.format(c=coorte, sdu=sdu, cds=cds), "verificato_il": oggi, "_p": set(),
+                        "fonte": url_piano, "verificato_il": oggi, "_p": set(), "_g": x["gruppo"], "_a": x["annidato"],
                     }
-                item["obbligatorio"] = item["obbligatorio"] or x["obbligatorio"]
                 item["_p"].add(x["percorso"])
         nomi_p = sorted(p for p in percorsi if p and p.lower() != "percorso")
         for i in righe.values():
@@ -274,9 +409,16 @@ def fetch_ateneo(uid: str = "polito", anno: int | None = None, max_cds: int | No
                 i["curriculum"] = ", ".join(sorted(ps))
         if not righe:
             return None
+        ins = id_senza_codice(corso["id"], nomi_distinti(list(righe.values())))
+        if diag is not None:  # per i controlli: quali righe sono gruppi a scelta (e quali annidati in un altro gruppo)
+            diag[corso["id"]] = [{k: i.get(k) for k in ("anno", "nome", "codice", "cfu", "obbligatorio", "curriculum",
+                                                         "_g", "_a", "fonte", "id")} for i in ins]
+        for i in ins:
+            i.pop("_g", None)
+            i.pop("_a", None)
         return {"id": corso["id"], "nome": corso["nome"], "classe": corso.get("classe"), "durata_anni": durata,
                 "url": corso["url"], "curricula": nomi_p if len(percorsi) > 1 else None,
-                "fonte": fonte, "verificato_il": oggi, "insegnamenti": list(righe.values())}
+                "fonte": fonte, "verificato_il": oggi, "insegnamenti": ins}
 
     def build_safe(corso: dict) -> dict | None:
         try:

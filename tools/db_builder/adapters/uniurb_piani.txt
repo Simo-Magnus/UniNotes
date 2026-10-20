@@ -1,0 +1,1254 @@
+# Piani di studio ufficiali di Urbino, a.a. 2026/27: trascrizione dei PDF «Piano degli studi» dei corsi
+# (https://www.uniurb.it/it/off/bandi/piano-degli-studi_<id del corso>.pdf). Letti da adapters/uniurb.py.
+#
+# Sintassi (una riga per voce):
+#   @corso <id del corso nel database>      inizio di un corso
+#   @pdf <url>                              PDF del piano (fonte)
+#   @modo piano|integra                     piano: le righe del PDF sostituiscono l'elenco del portale;
+#                                           integra: si tengono le righe del portale e si aggiungono quelle
+#                                           del PDF solo per gli anni indicati con @anni (es. anno non ancora erogato)
+#   @anni 3                                 anni del PDF da aggiungere in modo «integra»
+#   @curriculum <nome>                      percorso delle righe seguenti («*» = comune a tutti)
+#   @alias <riga del piano> = <inizio nome portale> ; …   righe del portale (moduli) che corrispondono a una riga
+#                                           del piano con un altro nome (per libri, docenti e scheda)
+#   @scelte 2 3                             anni in cui le righe del portale non nominate dal piano sono i corsi a
+#                                           scelta offerti (a scelta, accanto ai crediti liberi del piano)
+#   @anno <n>                               anno di corso delle righe seguenti
+#   Nome | SSD | CFU [| semestre]           insegnamento obbligatorio (semestre I, II, I-II)
+#   > <cfu> | testo                         gruppo «un esame a scelta tra…» da <cfu> CFU; i membri sono le righe «- »
+#   - Nome | SSD | CFU                      alternativa del gruppo (a scelta; senza CFU prende quelli del gruppo)
+#   = Nome | CFU                            crediti a scelta dello studente (a scelta)
+#   @totale <cfu>                           totale CFU dell'anno stampato nel PDF (controllo)
+# I CFU «6+3» del PDF (parte teorica + laboratorio) sono scritti come somma: 9. «A / B 12» (due insegnamenti con i
+# CFU di uno solo) è un esame in moduli: due righe obbligatorie con i CFU dei moduli (dal portale; a metà se mancano).
+# Nei nomi dei percorsi la virgola diventa « - » (il database separa i percorsi con le virgole).
+
+@corso uniurb-l-2-biotecnologie
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757507.pdf
+@scelte 2
+@curriculum *
+@anno 1
+Chimica generale ed inorganica | CHEM-03/A | 8
+Matematica | MATH-05/A | 8
+Chimica organica | CHEM-05/A | 8
+Microbiologia generale | BIOS-15/A | 8
+Biologia cellulare e genetica | BIOS-10/A | 8
+Laboratorio di Biotecnologie I | CHEM-01/A | 8
+Lingua Inglese - Livello B1 | ANGL-01/C | 4
+Seminari | | 1
+@anno 2
+Biochimica | BIOS-07/A | 8
+Chimica analitica | CHEM-01/A | 6
+Biologia molecolare | BIOS-08/A | 8
+Elaborazione statistica dei dati sperimentali | MATH-03/B | 6
+Fisica | PHYS-01/A | 6
+Elementi di economia aziendale | ECON-06/A | 6
+Laboratorio di Biotecnologie II | BIOS-08/A | 8
+= Corsi a scelta dello studente | 12
+Seminari | | 1
+Tirocinio formativo | | 5
+@anno 3
+Biochimica clinica e biologia molecolare clinica | BIOS-09/A | 8
+Igiene generale e applicata | MEDS-24/B | 8
+Laboratorio di Biotecnologie III | BIOS-07/A | 8
+Biotecnologie diagnostiche e terapeutiche | BIOS-10/A | 6
+Genetica medica e farmacogenomica | MEDS-01/A | 8
+Patologia generale e Immunologia | MEDS-26/A | 8
+Elementi di apprendimento automatico | IINF-05/A | 3
+Seminari | | 1
+Tirocinio formativo | | 5
+Prova finale | | 6
+
+@corso uniurb-l-27-chimica-con-elementi-di-intelligenza-artificiale
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757506.pdf
+@alias Chimica Inorganica con Laboratorio = Chimica Inorganica ; Laboratorio di Chimica Inorganica
+@curriculum *
+@anno 1
+@totale 61
+Chimica Generale | CHEM-03/A | 9
+Matematica 1 | MATH-03/A | 9
+Programmazione, Algoritmi e Strutture Dati | INFO-01/A | 9
+Chimica Analitica 1 con Laboratorio | CHEM-01/A | 6
+Chimica dell'Ambiente | CHEM-01/B | 6
+Chimica Inorganica con Laboratorio | CHEM-03/A | 9
+Fisica 1 | PHYS-01/A | 9
+Lingua Inglese B1 | ANGL-01/C | 4
+@anno 2
+@totale 57
+Chimica Fisica 1 | CHEM-02/A | 9
+Chimica Analitica 2 con Laboratorio | CHEM-01/A | 6
+Matematica 2 | MATH-03/A | 6
+Probabilità e Statistica Matematica | MATH-03/B | 6
+Chimica Organica 1 | CHEM-05/A | 9
+Strutturistica Chimica | CHEM-03/A | 6
+Fisica 2 | PHYS-01/A | 6
+Intelligenza Artificiale e Machine Learning | IINF-05/A | 9
+@anno 3
+@totale 62
+Chimica Organica 2 con Laboratorio | CHEM-05/A | 9
+Intelligenza Artificiale Applicata alla Chimica | CHEM-07/A | 9
+Chimica Fisica 2 con Laboratorio | CHEM-02/A | 9
+Fotochimica e Chimica Supramolecolare | CHEM-03/A | 6
+= Insegnamenti a Scelta | 12
+Seminari, Tirocini e Stage | | 12
+Prova Finale | | 5
+
+@corso uniurb-l-31-l-8-ingegneria-informatica-e-scienze-computazionali
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757496.pdf
+@curriculum *
+@anno 1
+Programmazione Procedurale | INFO-01/A | 9 | I
+Reti Logiche | IINF-05/A | 6 | I
+Logica, Algebra e Geometria | MATH-02/A | 9 | I
+Algoritmi e Strutture Dati | INFO-01/A | 9 | II
+Architettura degli Elaboratori | IINF-05/A | 6 | II
+Analisi Matematica 1 | MATH-03/A | 9 | II
+Lingua Inglese B1 | ANGL-01/C | 4 | II
+> 0 | Insegnamenti opzionali (MOOC), oltre ai CFU del piano
+- Pensiero Computazionale | IINF-05/A | 6 | I
+- Intelligenza Artificiale | IINF-05/A | 6 | II
+@anno 2
+Sistemi Operativi | IINF-05/A | 12 | I-II
+Programmazione e Modellazione a Oggetti | IINF-05/A | 9 | I
+Analisi Matematica 2 | MATH-03/A | 6 | I
+Probabilità e Statistica Matematica | MATH-03/B | 6 | I
+Ingegneria e Architettura del Software | INFO-01/A | 6 | II
+Fisica Generale | PHYS-01/A | 6 | II
+> 6 | Un insegnamento a scelta tra
+- Elaborazione Numerica dei Segnali | IINF-01/A | 6 | II
+- Sistemi per l'Internet of Things | IINF-01/A | 6 | II
+@anno 3
+Basi di Dati | IINF-05/A | 12 | I-II
+Linguaggi di Programmazione e Verifica del Software | INFO-01/A | 9 | I
+Reti di Calcolatori | IINF-03/A | 9 | I-II
+Programmazione Logica e Funzionale | INFO-01/A | 6 | II
+> 12 | Due insegnamenti a scelta tra
+- Tecnologie Web | IINF-05/A | 6 | I
+- Geomatica | GEOS-02/B | 6 | II
+- Fisica e Quantum Computing | PHYS-01/A | 6 | I
+- Simulazione Numerica | PHYS-01/A | 6 | II
+- Internet Studies | GSPS-06/A | 6 | I
+- Sociologia della Comunicazione e dei Media Digitali | GSPS-06/A | 6 | II
+- Informatica Giuridica | GIUR-17/A | 6 | I
+- Analisi delle Reti Sociali | GSPS-05/A | 6 | II
+= Insegnamenti a Scelta | 12
+Seminari, Tirocini e Stage | | 12
+Prova Finale | | 5
+
+@corso uniurb-l-34-geologia-per-la-sostenibilita-ambientale
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757519.pdf
+@alias Geologia Applicata e Idrogeologia = Geologia Applicata ; Idrogeologia per L'ambiente
+@alias Geologia Stratigrafica, Sedimentologica e Strutturale con Esercitazioni = Modulo: Sedimentologia ; Modulo: Stratigrafia ; Modulo: Strutturale
+@curriculum *
+@anno 1
+Cartografia e Geographic Information System | IINF-05/A | 8
+Chimica generale e inorganica | CHEM-03/A | 8
+Fisica | PHYS-01/A | 8
+Introduzione alle Scienze della Terra e Campo Geologico | GEOS-02/A, GEOS-02/B, GEOS-03/A, GEOS-01/B | 12
+Lingua inglese | ANGL-01/C | 5
+Matematica con elementi di statistica | MATH-03/A | 12
+Paleontologia | GEOS-02/A | 8
+@anno 2
+Fisica terrestre | GEOS-04/A | 6
+Geologia Applicata e Idrogeologia | GEOS-03/B | 10
+Geologia Stratigrafica, Sedimentologica e Strutturale con Esercitazioni | GEOS-02/A, GEOS-02/B, GEOS-02/C | 15
+Geomorfologia e Remote Sensing | GEOS-03/A | 10
+Mineralogia e Litologia | GEOS-01/B | 10
+Petrologia e Vulcanologia | GEOS-01/B | 8
+@curriculum Geotecnologie per la Gestione Territoriale Sostenibile
+@anno 3
+Diritto dell'ambiente e del territorio | GIUR-06/A | 4
+Geochimica per l'Ambiente | GEOS-01/C | 6
+Geofisica Marina ed esplorazione oceanografica | GEOS-04/A | 6
+Georisorse e transizione ecologica | GEOS-01/D | 6
+Geotecnica | CEAR-05/A | 6
+Laboratorio di geotecnologie | GEOS-03/B | 6
+Rilevamento Geologico | GEOS-02/B | 6
+= Corsi a libera scelta | 12
+Tirocini e stage | | 5
+Prova finale | | 3
+@curriculum Geologia Ambientale
+@anno 3
+Diritto dell'ambiente e del territorio | GIUR-06/A | 4
+Ecologia | BIOS-05/A | 6
+Geochimica per l'Ambiente | GEOS-01/C | 6
+Laboratorio di Geologia Ambientale | GEOS-03/B | 6
+Rilevamento Geologico | GEOS-02/B | 6
+Rischio climatico | CHEM-01/B | 6
+Valutazione d'impatto ambientale | GEOS-03/A | 6
+= Corsi a libera scelta | 12
+Tirocini e altre attività | | 5
+Prova finale | | 3
+
+@corso uniurb-l-29-scienza-della-nutrizione
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757517.pdf
+@scelte 2
+@curriculum *
+@anno 1
+@totale 60
+Abilità Informatiche | INFO-01/A | 3
+Biologia cellulare e Anatomia umana - Modulo di Biologia cellulare | BIOS-10/A | 6
+Biologia cellulare e Anatomia umana - Modulo di Anatomia umana | BIOS-12/A | 6
+Biologia e fisiologia vegetale | BIOS-02/A | 6
+Chimica generale ed inorganica - Modulo A | CHEM-03/A | 6
+Chimica generale ed inorganica - Modulo B | CHEM-03/A | 2
+Microbiologia generale e Igiene generale - Modulo di Microbiologia generale | BIOS-15/A | 4
+Microbiologia generale e Igiene generale - Modulo di Igiene generale | MEDS-24/B | 5
+Statistica medica con elementi di matematica | MEDS-24/A | 6
+Chimica organica | CHEM-05/A | 6
+Fisica | PHYS-01/A | 6
+Lingua Inglese - Livello B1 | ANGL-01/C | 4
+@anno 2
+Biologia molecolare | BIOS-08/A | 6
+Chimica degli alimenti | CHEM-07/B | 6
+Biochimica | BIOS-07/A | 8
+Chimica analitica con laboratorio | CHEM-01/A | 8
+Botanica farmaceutica delle piante alimentari | BIOS-01/D | 6
+Elementi di farmacologia e farmacognosia | BIOS-11/A | 6
+Microbiologia alimentare applicata | BIOS-15/A | 6
+= Attività a scelta dello studente | 12
+Tirocinio (Scienza della Nutrizione) | | 5
+@anno 3
+Tecnologia e legislazione dei prodotti alimentari | CHEM-08/A | 6
+Chimica e formulazione dei prodotti nutraceutici | CHEM-07/A | 6
+Fisiologia | BIOS-06/A | 6
+Preparazione estrattiva | CHEM-07/A | 6
+Controllo di qualità dei prodotti dietetici e alimentari | CHEM-07/A | 8
+Principi di biochimica della nutrizione | BIOS-07/A | 4
+Scienza dell'alimentazione | BIOS-07/A | 6
+Tossicologia | BIOS-11/A | 6
+Igiene degli alimenti | MEDS-24/B | 5
+Prova finale | | 4
+
+@corso uniurb-l-13-scienze-biologiche
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757510.pdf
+@curriculum *
+@anno 1
+Matematica con elementi di statistica | MATH-03/A | 12
+Chimica generale ed inorganica | CHEM-03/A | 8
+Chimica organica | CHEM-05/A | 6
+Fisica | PHYS-01/A | 8
+Biologia animale con laboratorio | BIOS-03/A | 8
+Citologia ed istologia - Modulo di citologia e microscopia con laboratorio | BIOS-13/A | 7
+Citologia ed istologia - Modulo di istologia e anatomia microscopica con laboratorio | BIOS-13/A | 7
+Lingua inglese - Livello B1 | ANGL-01/C | 5
+@curriculum Naturalistico-ambientale
+@anno 2
+Biochimica con laboratorio | BIOS-07/A | 8
+Biologia molecolare | BIOS-08/A | 6
+Ecologia | BIOS-05/A | 8
+Microbiologia ambientale con laboratorio | BIOS-15/A | 7
+Biologia vegetale con laboratorio | BIOS-01/A | 8
+Genetica | BIOS-14/A | 8
+Applicazioni di ecologia | BIOS-05/A | 6
+> 6 | Corsi a scelta dello studente
+- Biologia cellulare con laboratorio | BIOS-10/A | 6
+- Nozioni di citometria con laboratorio | BIOS-12/A | 6
+- Protisti e animali parassiti dell'uomo | BIOS-03/A | 6
+Tirocini | | 3
+@anno 3
+Chimica analitica | CHEM-01/A | 6
+Biologia marina con laboratorio | BIOS-05/A | 7
+Evoluzione biologica e anatomia e biologia dei vertebrati - Modulo di evoluzione biologica | BIOS-03/A | 6
+Evoluzione biologica e anatomia e biologia dei vertebrati - Modulo di anatomia e biologia dei vertebrati | BIOS-03/A | 6
+Fisiologia animale | BIOS-06/A | 8
+Igiene generale | MEDS-24/B | 6
+Fisiologia vegetale con laboratorio | BIOS-02/A | 7
+> 6 | Corsi a scelta dello studente
+- Biologia cellulare con laboratorio | BIOS-10/A | 6
+- Nozioni di citometria con laboratorio | BIOS-12/A | 6
+- Protisti e animali parassiti dell'uomo | BIOS-03/A | 6
+Tirocini | | 3
+Prova finale | | 4
+@curriculum Sanitario-molecolare
+@anno 2
+Biochimica con laboratorio | BIOS-07/A | 8
+Biologia molecolare | BIOS-08/A | 6
+Microbiologia e virologia - Modulo di microbiologia con laboratorio | BIOS-15/A | 7
+Microbiologia e virologia - Modulo di virologia con laboratorio | BIOS-15/A | 7
+Anatomia umana | BIOS-12/A | 6
+Biologia dello sviluppo | BIOS-03/A | 6
+Genetica | BIOS-14/A | 8
+> 6 | Corsi a scelta dello studente
+- Biologia cellulare con laboratorio | BIOS-10/A | 6
+- Nozioni di citometria con laboratorio | BIOS-12/A | 6
+- Protisti e animali parassiti dell'uomo | BIOS-03/A | 6
+Tirocini | | 3
+@anno 3
+Chimica analitica | CHEM-01/A | 6
+Fisiologia umana | BIOS-06/A | 8
+Metodologie biochimiche | BIOS-07/A | 8
+Biochimica clinica con laboratorio | BIOS-09/A | 7
+Igiene generale | MEDS-24/B | 6
+Patologia generale e terminologia medica | MEDS-02/A | 8
+Ematologia ed immunologia di laboratorio | MEDS-09/B | 6
+> 6 | Corsi a scelta dello studente
+- Biologia cellulare con laboratorio | BIOS-10/A | 6
+- Nozioni di citometria con laboratorio | BIOS-12/A | 6
+- Protisti e animali parassiti dell'uomo | BIOS-03/A | 6
+Tirocini | | 3
+Prova finale | | 4
+
+@corso uniurb-l-19-scienze-dell-educazione
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757513.pdf
+@alias Laboratorio di Abilità informatiche = Abilità Informatiche
+@alias Corso di scrittura (Ulteriori conoscenze linguistiche) = Corso di Scrittura
+@alias Laboratorio di Formazione professionale (educatore socio-pedagogico) = Laboratorio di Formazione Professionale per L'educatore Socio
+@curriculum Educatore professionale socio-pedagogico e culturale
+@anno 1
+Storia della pedagogia | PAED-01/B | 5
+Storia della filosofia | PHIL-05/A | 5
+Storia della filosofia del Rinascimento | PHIL-05/A | 5
+Psicologia della formazione e dell'orientamento | PSIC-02/A | 5
+Filosofia teoretica | PHIL-01/A | 5
+Storia della filosofia politica | PHIL-05/A | 5
+Pedagogia speciale | PAED-02/A | 5
+Didattica speciale | PAED-02/A | 5
+Corso di scrittura (Ulteriori conoscenze linguistiche) | | 4
+> 10 | Due esami a scelta
+- Pedagogia del gioco e delle attività sociali | PAED-01/A | 5
+- Pedagogia dell'infanzia e dell'adolescenza | PAED-01/A | 5
+- Didattica dei contesti extrascolastici | PAED-02/A | 5
+- Psicologia dell'educazione e disabilità | PSIC-02/A | 5
+- Lingua inglese (livello A2) | ANGL-01/C | 5
+- Educazione ambientale e sostenibilità | BIOS-05/A | 5
+Laboratorio di Formazione professionale (educatore socio-pedagogico) | PAED-01/A | 2
+Laboratorio di Abilità informatiche | | 4
+@anno 2
+Pedagogia generale | PAED-01/A | 10
+Storia della filosofia moderna | PHIL-05/A | 5
+Psicopedagogia | PAED-01/A | 5
+Didattica generale | PAED-02/A | 10
+Disabilità e attività motoria | PAED-02/A | 5
+Didattica speciale per l'inclusione | PAED-02/A | 5
+> 5 | Un esame a scelta
+- Pedagogia del gioco e delle attività sociali | PAED-01/A | 5
+- Pedagogia dell'infanzia e dell'adolescenza | PAED-01/A | 5
+- Didattica dei contesti extrascolastici | PAED-02/A | 5
+- Psicologia dell'educazione e disabilità | PSIC-02/A | 5
+- Lingua inglese (livello A2) | ANGL-01/C | 5
+- Educazione ambientale e sostenibilità | BIOS-05/A | 5
+Laboratorio di Prevenzione e cura educativa del disagio sociale | PAED-02/A | 3
+Laboratorio di Progettazione e valutazione educativa | PAED-02/B | 3
+Tirocinio (225 ore) | | 9
+@anno 3
+Filosofia e società | PHIL-05/A | 5
+Filosofia dell'educazione | PAED-01/A | 5
+Metodologia della ricerca pedagogica | PAED-01/A | 5
+Pedagogia interculturale | PAED-01/A | 5
+Valutazione degli interventi educativi | PAED-02/B | 5
+Didattica dei saperi | PAED-02/A | 5
+Storia sociale | HIST-03/A | 5
+Progettazione degli interventi educativi | PAED-01/A | 5
+Progettazione educativa per l'inclusione | PAED-02/A | 5
+Lingua inglese (livello B1) | ANGL-01/C | 5
+Tirocinio: Project work (50 ore) | | 2
+Prova finale | | 8
+@curriculum Educatore dei servizi educativi per l'infanzia
+@anno 1
+Storia della pedagogia | PAED-01/B | 5
+Storia della filosofia | PHIL-05/A | 5
+Psicologia dello sviluppo dell'infanzia | PSIC-02/A | 5
+Psicologia cognitiva dell'infanzia | PSIC-01/A | 5
+Progettazione e bisogni educativi dell'infanzia | PAED-01/A | 5
+Pedagogia speciale | PAED-02/A | 5
+Didattica speciale | PAED-02/A | 5
+Igiene e educazione alla salute dell'infanzia | MEDS-24/B | 5
+Neuropsichiatria infantile | MEDS-20/B | 5
+Corso di scrittura (Ulteriori conoscenze linguistiche) | | 4
+> 5 | Un esame a scelta
+- Pedagogia del gioco e delle attività sociali | PAED-01/A | 5
+- Pedagogia dell'infanzia e dell'adolescenza | PAED-01/A | 5
+- Didattica dei contesti extrascolastici | PAED-02/A | 5
+- Psicologia dell'educazione e disabilità | PSIC-02/A | 5
+- Lingua inglese (livello A2) | ANGL-01/C | 5
+- Educazione ambientale e sostenibilità | BIOS-05/A | 5
+Laboratorio di Formazione professionale (educatore dell'infanzia) | PAED-01/A | 2
+Laboratorio di Abilità informatiche | | 4
+@anno 2
+Pedagogia generale | PAED-01/A | 10
+Sociologia generale | GSPS-05/A | 5
+Bioetica | PHIL-03/A | 5
+Linguaggi e mediatori didattici per l'infanzia | PAED-02/A | 5
+Letteratura per l'infanzia | PAED-01/B | 5
+Pedagogia del gioco | PAED-01/A | 5
+Didattica generale | PAED-02/A | 10
+Laboratorio di Didattica e metodologia del gioco | PAED-02/A | 3
+Laboratorio di Metodologie per il lavoro collaborativo in équipe | PAED-02/B | 3
+Tirocinio presso i servizi educativi per l'infanzia (225 ore) | | 9
+@anno 3
+Storia sociale | HIST-03/A | 5
+Psicopedagogia della comunicazione | PAED-01/A | 5
+Psicopedagogia | PAED-01/A | 5
+Valutazione dei servizi per l'infanzia | PAED-02/B | 5
+Didattica nei servizi educativi per l'infanzia | PAED-02/A | 5
+Organizzazione e gestione dei servizi | ECON-07/A | 5
+Sociologia dell'infanzia | GSPS-06/A | 5
+Lingua inglese (livello B1) | ANGL-01/C | 5
+> 10 | Due esami a scelta
+- Pedagogia del gioco e delle attività sociali | PAED-01/A | 5
+- Pedagogia dell'infanzia e dell'adolescenza | PAED-01/A | 5
+- Didattica dei contesti extrascolastici | PAED-02/A | 5
+- Psicologia dell'educazione e disabilità | PSIC-02/A | 5
+- Lingua inglese (livello A2) | ANGL-01/C | 5
+- Educazione ambientale e sostenibilità | BIOS-05/A | 5
+Tirocinio: Project work (50 ore) | | 2
+Prova finale | | 8
+
+@corso uniurb-l-14-scienze-giuridiche-per-il-lavoro-e-per-la-pubblica-amministr
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757511.pdf
+@scelte 1
+@curriculum *
+@anno 1
+@totale 60
+Diritto costituzionale | GIUR-05/A | 9
+Istituzioni di diritto privato | GIUR-01/A | 9
+Introduzione storica al diritto | GIUR-15/A | 9
+Storia del diritto moderno e contemporaneo | GIUR-16/A | 6
+Istituzioni di diritto europeo | GIUR-10/A | 9
+Informatica giuridica | GIUR-17/A | 9
+= Scelta libera | 6
+> 3 | Un esame di lingua a scelta tra
+- Lingua francese comprensiva del linguaggio giuridico | | 3
+- Lingua inglese comprensiva del linguaggio giuridico | | 3
+- Lingua spagnola comprensiva del linguaggio giuridico | | 3
+@curriculum Consulenza e sicurezza del lavoro
+@anno 2
+@totale 60
+Istituzioni di diritto amministrativo | GIUR-06/A | 9
+Istituzioni di diritto penale | GIUR-14/A | 9
+Diritto sindacale e del lavoro | GIUR-04/A | 9
+Cybersicurezza e diritti | GIUR-17/A | 6
+Istituzioni di diritto commerciale | GIUR-02/A | 6
+Diritto tributario | GIUR-08/A | 9
+Economia e regolamentazione dei mercati | ECON-03/A | 6
+Attività laboratoriali | | 6
+@anno 3
+@totale 60
+Diritto sindacale e del lavoro progredito | GIUR-04/A | 9
+Diritto della salute e della sicurezza sul lavoro | GIUR-04/A | 9
+Diritto dei sistemi di gestione integrati e sostenibili | GIUR-04/A | 6
+> 6 | Un esame a scelta tra
+- Diritto della previdenza sociale | GIUR-04/A | 6
+- Diritto penale del lavoro | GIUR-14/A | 6
+> 6 | Un esame a scelta tra
+- Economia del lavoro e del welfare | ECON-03/A | 6
+- Economia aziendale | ECON-06/A | 6
+- Medicina del lavoro | MEDS-25/B | 6
+> 6 | Un esame a scelta tra
+- Elementi di diritto processuale penale | GIUR-13/A | 6
+- Elementi di diritto processuale del lavoro | GIUR-12/A | 6
+= Scelta libera | 6
+Attività laboratoriali | | 6
+Prova finale | | 6
+@curriculum Ordinamento e gestione delle PA
+@anno 2
+@totale 60
+Istituzioni di diritto amministrativo | GIUR-06/A | 9
+Istituzioni di diritto penale | GIUR-14/A | 9
+Diritto sindacale e del lavoro | GIUR-04/A | 9
+Cybersicurezza e diritti | GIUR-17/A | 6
+Istituzioni di diritto commerciale | GIUR-02/A | 6
+Diritto degli enti locali | GIUR-06/A | 9
+Economia e regolamentazione dei mercati | ECON-03/A | 6
+Attività laboratoriali | | 6
+@anno 3
+@totale 60
+Diritto delle pubbliche amministrazioni | GIUR-06/A | 9
+Diritto dell'ambiente e del territorio | GIUR-06/A | 9
+Economia e bilancio delle pubbliche amministrazioni | ECON-03/A | 6
+> 6 | Un esame a scelta tra
+- Criminologia e gestione del territorio | GIUR-14/A | 6
+- Diritto penale della pubblica amministrazione | GIUR-14/A | 6
+> 6 | Un esame a scelta tra
+- Diritto regionale | GIUR-05/A | 6
+- Diritto pubblico comparato | GIUR-11/B | 6
+- Tutela e protezione dei dati personali | GIUR-05/A | 6
+> 6 | Un esame a scelta tra
+- Diritto interculturale, religioni e pubblica amministrazione | GIUR-07/A | 6
+- Food Law e amministrazioni pubbliche | GIUR-03/B | 6
+= Scelta libera | 6
+Attività laboratoriali | | 6
+Prova finale | | 6
+
+@corso uniurb-lm-6-biologia-della-nutrizione
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757537.pdf
+@curriculum *
+@anno 1
+Biochimica medica | BIOS-07/A | 6 | I
+Igiene della nutrizione e legislazione professionale | MEDS-24/B | 6 | I
+Genetica ed epigenetica della nutrizione | MEDS-26/A | 6 | I
+Inglese scientifico livello B2 | ANGL-01/C | 5 | I
+Fisiologia della nutrizione | BIOS-06/A | 6 | II
+Meccanismi molecolari delle malattie metaboliche | BIOS-07/A | 6 | II
+Botanica degli alimenti funzionali e nutraceutici | BIOS-01/D | 6 | II
+Oligoelementi in nutrizione umana | CHEM-03/A | 6 | II
+> 6 | Attività a scelta dello studente/studentessa
+- Biochimica clinica della nutrizione | BIOS-09/A | 6 | II
+- Nutrizione e alimentazione degli animali da compagnia | BIOS-03/A | 6 | II
+@anno 2
+Endocrinologia | MEDS-08/A | 6 | I
+Scienze tecniche dietetiche applicate e laboratorio di dietetica applicata | MEDS-08/C | 10 | I-II
+Laboratorio di valutazione antropometrica | MEDS-08/C | 4 | I
+Microbiota e salute | MEDS-03/A | 6 | I
+Stages e Tirocini | | 4 | I
+Statistica per le scienze biomediche | MEDS-24/A | 5 | II
+Biochimica della nutrizione | BIOS-07/A | 6 | II
+> 6 | Attività a scelta dello studente/studentessa
+- Biochimica clinica della nutrizione | BIOS-09/A | 6 | II
+- Nutrizione e alimentazione degli animali da compagnia | BIOS-03/A | 6 | II
+Prova finale (preparazione e discussione) | | 20
+
+@corso uniurb-lm-9-biotecnologie-mediche-per-la-diagnostica-e-la-terapia
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757548.pdf
+@scelte 1
+@alias Citometria applicata e diagnostica con laboratorio = Citometria Applicata con Laboratorio ; Citometria Diagnostica con Laboratorio
+@curriculum Biotecnologie per la diagnostica molecolare
+@anno 1
+Bioinformatica | BIOS-08/A | 8
+Proteomica e Metabolomica | BIOS-07/A | 8
+Tecnologie e modelli di studio per la diagnostica e la terapia | BIOS-10/A | 8
+Genetica medica applicata | MEDS-01/A | 6
+Igiene applicata alla diagnostica | MEDS-24/B | 6
+Good Laboratory Practice - Good Manufacturing Practice | BIOS-10/A | 6
+Inglese scientifico - Livello B2 | ANGL-01/C | 5
+= Attività a scelta dello studente/della studentessa | 6
+Tirocini | | 4
+@anno 2
+Biochimica clinica e automazione nel laboratorio diagnostico | BIOS-09/A | 6
+Diagnostica virologica e microbiologica | MEDS-03/A | 8
+Patologia molecolare e di laboratorio | MEDS-26/A | 6
+Laboratorio di analisi dell'espressione genica | BIOS-07/A | 8
+Citometria applicata e diagnostica con laboratorio | BIOS-13/A | 6
+= Attività a scelta dello studente/della studentessa | 6
+Altre conoscenze utili per l'inserimento nel mondo del lavoro | | 3
+Preparazione della prova finale | | 15
+Discussione della prova finale | | 5
+@curriculum Biotecnologie per le terapie innovative
+@anno 1
+Biochimica medica | BIOS-07/A | 8
+Bioinformatica | BIOS-08/A | 8
+Tecnologie e modelli di studio per la diagnostica e la terapia | BIOS-10/A | 8
+Biotecnologie della riproduzione assistita | MEDS-21/A | 6
+Farmacologia clinica | BIOS-11/A | 6
+Good Laboratory Practice - Good Manufacturing Practice | BIOS-10/A | 6
+Inglese scientifico - Livello B2 | ANGL-01/C | 5
+= Attività a scelta dello studente/della studentessa | 6
+Tirocini | | 4
+@anno 2
+Basi molecolari delle malattie e target terapeutici | MEDS-26/A | 6
+Strategie biotecnologiche per lo sviluppo di vaccini | MEDS-03/A | 8
+Terapie geniche e cellulari | BIOS-08/A | 6
+Farmaci biologici | BIOS-07/A | 8
+Drug Delivery Systems | CHEM-08/A | 6
+= Attività a scelta dello studente/della studentessa | 6
+Altre conoscenze utili per l'inserimento nel mondo del lavoro | | 3
+Preparazione della prova finale | | 15
+Discussione della prova finale | | 5
+
+@corso uniurb-lm-76-economics-and-management-of-cultural-resources-and-territori
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757531.pdf
+@curriculum Cultural Resources and Tourism
+@anno 1
+@totale 60
+Cultural heritage management | ECON-07/A | 6
+Project management of cultural events and organization | ECON-07/A | 6
+Business plan and budgeting for culture and environment | ECON-06/A | 6
+Accounting and fundraising | ECON-06/A | 6
+Environmental law | GIUR-06/A | 6
+Quantitative models for a sustainable economy and tourism | STAT-04/A | 6
+History of modern art | ARTE-01/B | 6
+History of architecture | CEAR-11/A | 6
+Environmental certification and tourism quality | ECON-10/A | 6
+Public goods, environment and culture | ECON-03/A | 6
+@anno 2
+Entrepreneurship of creative industries | ECON-06/A | 6
+Destination management | ECON-07/A | 6
+Cultural economics | ECON-02/A | 6
+> 6 | Un insegnamento in opzione fra i 4 seguenti
+- Sociology of environment and territory | GSPS-08/B | 6
+- Landscape conservation and design | CEAR-11/B | 6
+- Regional and territory economics | ECON-04/A | 6
+- Economics of biodiversity | AGR-01/A | 6
+= A scelta dello studente | 8
+Laboratories or workshops (4 x 2 CFU) | | 8
+Prova finale | | 20
+@curriculum Sustainability and Territories
+@anno 1
+@totale 60
+Cultural heritage management | ECON-07/A | 6
+Business plan and budgeting for culture and environment | ECON-06/A | 6
+Environmental law | GIUR-06/A | 6
+Quantitative models for a sustainable economy and tourism | STAT-04/A | 6
+Geographical and quantitative methods | STAT-04/A | 6
+History of architecture | CEAR-11/A | 6
+Environmental certification and tourism quality | ECON-10/A | 6
+Economics of sustainable development | ECON-01/A | 12
+Public goods, environment and culture | ECON-03/A | 6
+@anno 2
+Regional and territory economics | ECON-04/A | 6
+Economics of biodiversity | AGR-01/A | 6
+> 6 | Un insegnamento in opzione fra i 2 seguenti
+- Destination management | ECON-07/A | 6
+- Entrepreneurship of creative industries | ECON-06/A | 6
+> 6 | Un insegnamento in opzione fra i 3 seguenti
+- Sociology of environment and territory | GSPS-08/B | 6
+- Landscape conservation and design | CEAR-11/B | 6
+- Cultural economics | ECON-02/A | 6
+= A scelta dello studente | 8
+Laboratories or workshops (4 x 2 CFU) | | 8
+Prova finale | | 20
+
+@corso uniurb-lm-78-filosofia-dell-informazione
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757544.pdf
+@curriculum Filosofia della Scienza e della Tecnologia
+@anno 1
+Logica e Filosofia della Scienza | PHIL-02/A | 12 | I-II
+Storia dei Modelli Cognitivi e Intelligenza Artificiale | PHIL-05/A | 12 | I-II
+Storia della Scienza e della Tecnica | PHIL-02/B | 12 | I-II
+Lingua Inglese B2 | ANGL-01/C | 4 | I
+Concetti e Principi della Fisica | PHYS-01/A | 6 | II
+> 6 | Un insegnamento a scelta tra
+- Principi di Analisi Matematica | MATH-03/A | 6 | I
+- Analisi delle Reti Sociali | GSPS-05/A | 6 | II
+> 6 | Un insegnamento a scelta tra
+- Ecologia | BIOS-05/A | 6 | II
+- Etica della Tecnologia e dell'Ambiente | PHIL-03/A | 6 | II
+- Storia Medievale | HIST-01/A | 6 | II
+- Storia Moderna | HIST-02/A | 6 | II
+= Insegnamenti a Scelta | 6
+@anno 2
+Informatica e Pensiero Computazionale | INFO-01/A | 6 | I
+Logica e Computazione | PHIL-02/A | 6 | II
+> 6 | Un insegnamento a scelta tra
+- Storia della Strumentazione Scientifica | PHYS-06/B | 6 | I
+- Fondamenti della Meccanica Quantistica | PHYS-06/B | 6 | II
+> 12 | Due insegnamenti a scelta tra (6+6)
+- Relatività e Meccanica Quantistica | PHYS-01/A | 6 | II
+- Chimica per la Tecnologia e l'Ambiente | CHEM-01/B | 6 | II
+- Analisi delle Reti Sociali Digitali | GSPS-06/A | 6 | II
+- Etica della Comunicazione Digitale | GSPS-06/A | 6 | II
+- Storia Greca | STAN-01/A | 6 | II
+- Storia Romana | STAN-01/B | 6 | II
+- Storia Contemporanea | HIST-03/A | 6 | I
+= Insegnamenti a Scelta | 6
+Seminari, Tirocini e Stage | | 2
+Prova Finale | | 18
+@curriculum Filosofia e Storia per la Didattica
+@anno 1
+Logica e Filosofia della Scienza | PHIL-02/A | 12 | I-II
+Storia dei Modelli Cognitivi e Intelligenza Artificiale | PHIL-05/A | 12 | I-II
+Storia della Scienza e della Tecnica | PHIL-02/B | 12 | I-II
+Lingua Inglese B2 | ANGL-01/C | 4 | I
+Didattica della Filosofia | PHIL-01/A | 6 | I
+Temi Attuali di Filosofia della Religione | PHIL-03/A | 6 | II
+> 6 | Un insegnamento a scelta tra
+- Etica della Tecnologia e dell'Ambiente | PHIL-03/A | 6 | II
+- Storia Medievale | HIST-01/A | 6 | II
+- Storia Moderna | HIST-02/A | 6 | II
+= Insegnamenti a Scelta | 6
+@anno 2
+Informatica e Pensiero Computazionale | INFO-01/A | 6 | I
+Estetica | PHIL-04/A | 6 | I
+Storia della Filosofia e della Scienza Antiche | PHIL-05/A | 6 | II
+> 12 | Due insegnamenti a scelta tra (6+6)
+- Storia del Pensiero Filosofico | PHIL-05/A | 6 | I
+- Filosofia Politica | GSPS-01/A | 6 | II
+- Storia Greca | STAN-01/A | 6 | II
+- Storia Romana | STAN-01/B | 6 | II
+- Storia Contemporanea | HIST-03/A | 6 | I
+= Insegnamenti a Scelta | 6
+Seminari, Tirocini e Stage | | 2
+Prova Finale | | 18
+
+@corso uniurb-lm-74-geologia-ambientale-e-gestione-del-territorio
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757541.pdf
+@scelte 2
+@alias Geofisica applicata e Microzonazione sismica = Geofisica Applicata ; Microzonazione Sismica
+@alias Idrogeologia Applicata e Geotermia = Idrogeologia Applicata ; Geotermia
+@alias Climatologia e Chimica dell'Atmosfera = Climatologia ; Chimica Dell'atmosfera
+@alias Caratterizzazione e Recupero di siti Contaminati = Caratterizzazione e Recupero di Siti Contaminati
+@curriculum Geotecnologie Territorio e Ambiente
+@anno 1
+Geofisica applicata e Microzonazione sismica | GEOS-04/A | 12
+Geologia Applicata e Legislazione del Territorio | GEOS-03/B | 12
+Geologia dei Terremoti | GEOS-02/C | 6
+Geomorfologia Applicata e Applicazioni di GIS | GEOS-03/A | 6
+Idrogeologia Applicata e Geotermia | GEOS-03/B, GEOS-01/C | 12
+Inglese Scientifico | ANGL-01/C | 4
+Modelli Geofisici e Ambientali | GEOS-04/A | 6
+Rilevamento Geologico Digitale | GEOS-02/B | 6
+@anno 2
+Geostatistica e analisi dei dati geologici | GEOS-02/B | 6
+Indicatori Geochimici per il monitoraggio ambientale | GEOS-01/C | 6
+Mitigazione del rischio idraulico e idrogeologico | CEAR-01/A | 6
+= Insegnamenti opzionali | 12
+Tirocini e stage | | 4
+Preparazione Prova Finale | | 21
+Discussione Prova Finale | | 1
+@curriculum Sistema Terra, Clima e Ambiente
+@anno 1
+Caratterizzazione e Recupero di siti Contaminati | CHEM-01/A, CEAR-02/A | 12
+Climatologia e Chimica dell'Atmosfera | PHYS-05/B, CHEM-01/B | 12
+Geologia Applicata e Legislazione del Territorio | GEOS-03/B | 12
+Geomorfologia Applicata e Applicazioni di GIS | GEOS-03/A | 6
+Inglese Scientifico | ANGL-01/C | 4
+Micropaleontologia Applicata e Biomonitoraggio | GEOS-02/A | 6
+Modelli Geofisici e Ambientali | GEOS-04/A | 6
+Variabilità Climatica e Impatti | GEOS-02/A | 6
+@anno 2
+Economia dell'Ambiente e del Territorio | ECON-02/A | 6
+Indicatori Geochimici per il monitoraggio ambientale | GEOS-01/C | 6
+Recupero di Risorse dai rifiuti | CEAR-02/A | 6
+= Insegnamento a libera scelta | 12
+Tirocini | | 4
+Preparazione Prova Finale | | 21
+Discussione Prova Finale | | 1
+
+@corso uniurb-lm-18-informatica-e-innovazione-digitale
+@pdf https://informatica.uniurb.it/magistrale/wp-content/uploads/2026/07/4.1.b-LM-18-Piano-degli-studi.pdf
+@curriculum Intelligenza Artificiale
+@anno 1
+Programmazione di Dispositivi Mobili e Interfacce Utente | IINF-05/A | 6 | I
+Machine Learning | IINF-05/A | 9 | I
+Lingua Inglese B2 | ANGL-01/C | 4 | I
+Sicurezza Informatica | INFO-01/A | 9 | II
+Sistemi Distribuiti e Decentralizzati | INFO-01/A | 9 | II
+Metodi Numerici per l'Algebra Lineare e l'Analisi Funzionale | MATH-05/A | 9 | II
+Principi di Intelligenza Artificiale | IINF-05/A | 6 | II
+= Insegnamenti a Scelta | 6
+@anno 2
+Applicazioni Distribuite e Cloud Computing | INFO-01/A | 9 | I
+Elaborazione dei Dati Sperimentali | PHYS-01/A | 9 | I
+Programmazione per l'Internet of Things | IINF-05/A | 6 | II
+Deep Learning - Architetture Neurali di Base | IINF-05/A | 3 | II
+Deep Learning - Intelligenza Artificiale Generativa e Basata su Grafi | IINF-05/A | 3 | II
+= Insegnamenti a Scelta | 6
+Tirocini e Stage | | 8
+Prova Finale | | 18
+@curriculum Analisi Sociologica delle Tecnologie Digitali
+@anno 1
+Programmazione di Dispositivi Mobili e Interfacce Utente | IINF-05/A | 6 | I
+Machine Learning | IINF-05/A | 9 | I
+Lingua Inglese B2 | ANGL-01/C | 4 | I
+Sicurezza Informatica | INFO-01/A | 9 | II
+Sistemi Distribuiti e Decentralizzati | INFO-01/A | 9 | II
+Metodi Numerici per l'Algebra Lineare e l'Analisi Funzionale | MATH-05/A | 9 | II
+Analisi delle Reti Sociali Digitali | GSPS-06/A | 6 | II
+= Insegnamenti a Scelta | 6
+@anno 2
+Applicazioni Distribuite e Cloud Computing | INFO-01/A | 9 | I
+Elaborazione dei Dati Sperimentali | PHYS-01/A | 9 | I
+Programmazione per l'Internet of Things | IINF-05/A | 6 | II
+Etica della Comunicazione Digitale | GSPS-06/A | 6 | II
+= Insegnamenti a Scelta | 6
+Tirocini e Stage | | 8
+Prova Finale | | 18
+
+@corso uniurb-lm-38-modern-languages-for-cooperation-and-international-organizat
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757497.pdf
+@modo integra
+@anni 2
+@curriculum *
+@anno 2
+@totale 62
+Language of choice 2nd year (French, Spanish, English, German, Chinese, Russian) | FRAN-01/B, SPAN-01/C, ANGL-01/C, GERM-01/C, SLAV-01/A, ASIA-01/F | 10
+Language Management and Technologies for Cooperation, International Organizations and Businesses | GLOT-01/A | 8
+International Business Management and Marketing | ECON-07/A | 8
+Digital and Social Media Strategies in a Global Context | ECON-07/A | 8
+International Institutional Law for Cooperation, Organizations and Businesses | GIUR-09/A | 8
+Traineeship | | 6
+Dissertation | | 14
+
+@corso uniurb-lm-85-pedagogia
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757545.pdf
+@curriculum Progettazione educativa
+@anno 1
+Pedagogia speciale corso avanzato | PAED-02/A | 6
+Metodologia della ricerca pedagogica corso avanzato | PAED-01/A | 6
+Storia della pedagogia corso avanzato | PAED-01/B | 6
+Pedagogia generale corso avanzato | PAED-02/A | 12
+Storia della filosofia corso avanzato | PHIL-05/A | 6
+Filosofia politica | GSPS-01/A | 12
+> 6 | Un esame a scelta fra
+- Estetica II | PHIL-04/A | 6
+- Metodologia delle scienze umane | GSPS-05/A | 6
+- Filosofia delle scienze sociali | GSPS-01/A | 6
+Ulteriori abilità informatiche (Laboratorio) | | 2
+Tirocinio (100 ore) | | 4
+@anno 2
+Progettazione dei contesti educativi | PAED-02/A | 6
+Valutazione della progettazione educativa | PAED-02/B | 6
+Psicologia del linguaggio, della memoria e dell'apprendimento | PSIC-01/A | 6
+Teoria e metodi di programmazione e valutazione scolastica | PSIC-02/A | 6
+Filosofia teoretica corso avanzato | PHIL-01/A | 6
+Sociologia dell'educazione corso avanzato | GSPS-06/A | 6
+> 6 | Un esame a scelta fra
+- Organizzazione dei servizi educativi | GSPS-08/A | 6
+- Processi psicologici nei contesti educativi | PSIC-01/A | 6
+- Storia contemporanea | HIST-03/A | 6
+Ulteriori conoscenze linguistiche (Lingua inglese B2) | | 6
+Laboratorio di Progettazione educativa | PAED-02/A | 2
+Laboratorio di Valutazione degli interventi educativi | PAED-02/B | 2
+Prova finale: Attività preparatoria | | 6
+Prova finale: Discussione della dissertazione | | 2
+@curriculum Scienze umane
+@anno 1
+Pedagogia speciale corso avanzato | PAED-02/A | 6
+Storia della pedagogia corso avanzato | PAED-01/B | 6
+> 12 | Un esame a scelta fra
+- Storia romana II | STAN-01/B | 12
+- Filosofia politica | GSPS-01/A | 12
+Storia della filosofia contemporanea corso avanzato | PHIL-05/A | 6
+Storia della filosofia moderna corso avanzato | PHIL-05/A | 6
+Didattica dei saperi corso avanzato | PAED-02/A | 6
+Filosofia dell'educazione corso avanzato | PAED-01/A | 6
+> 6 | Un esame a scelta fra
+- Estetica II | PHIL-04/A | 6
+- Metodologia delle scienze umane | GSPS-05/A | 6
+- Filosofia delle scienze sociali | GSPS-01/A | 6
+Ulteriori abilità informatiche (Laboratorio) | | 2
+Tirocinio (100 ore) | | 4
+@anno 2
+Pedagogia generale corso avanzato | PAED-01/A | 12
+> 12 | Dodici CFU a scelta dello studente fra
+- Storia medievale | HIST-01/A | 6
+- Didattica della storia | HIST-01/A | 6
+- Didattica della filosofia | PHIL-01/A | 6
+- Storia della filosofia della scienza | PHIL-05/A | 6
+Teoria e metodi di programmazione e valutazione scolastica | PSIC-02/A | 6
+Valutazione della progettazione educativa | PAED-02/B | 6
+> 6 | Un esame a scelta fra
+- Organizzazione dei servizi educativi | GSPS-08/A | 6
+- Processi psicologici nei contesti educativi | PSIC-01/A | 6
+- Storia contemporanea | HIST-03/A | 6
+Ulteriori conoscenze linguistiche (Lingua inglese B2) | | 6
+Laboratorio di Valutazione formativa | PAED-02/B | 2
+Laboratorio di Didattica dei saperi | PAED-02/A | 2
+Prova finale: Attività preparatoria | | 6
+Prova finale: Discussione della dissertazione | | 2
+
+@corso uniurb-lm-51-psicologia-clinica
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757535.pdf
+@alias Laboratorio: Casi clinici (Tirocinio Pratico-Valutativo) = Tpv - Casi Clinici
+@alias Laboratorio: Casi peritali (Tirocinio Pratico-Valutativo) = Tpv - Casi Peritali
+@alias Laboratorio: Comunicazione e relazione nel lavoro d'equipe in ambito socio-sanitario (Tirocinio Pratico-Valutativo) = Tpv - Comunicazione e Relazione
+@alias Laboratorio: L'approccio "evidence-based" alla professione (Tirocinio Pratico-Valutativo) = Tpv - L'approccio
+@curriculum Clinico
+@anno 1
+Psicologia giuridica e penitenziaria | PSIC-03/A | 6
+Principi e tecniche in psicoterapia | PSIC-04/A | 6
+Strumenti e metodi di valutazione neuropsicologica in ambito clinico e forense | PSIC-01/C | 6
+Psicologia dell'intervento clinico nei contesti socio-sanitari e di comunità | PSIC-04/B | 6
+Neurofisiologia dei processi psichici | BIOS-06/A | 6
+Psicopatologia interculturale | MEDS-11/A | 6
+> 12 | Due esami a scelta fra
+- Psicofisiologia delle emozioni e dello stress | PSIC-01/B | 6
+- Psicologia clinica dell'invecchiamento | PSIC-04/B | 6
+- Psicologia del lavoro nelle organizzazioni dei servizi sociali | PSIC-04/B | 6
+- Neuropsicologia clinica dell'adulto e dello sviluppo | PSIC-04/B | 6
+- Psicologia delle emergenze e del trauma | PSIC-03/B | 6
+Abilità di inglese scientifico | | 6
+Laboratorio: Casi clinici (Tirocinio Pratico-Valutativo) | | 2
+Laboratorio: Comunicazione e relazione nel lavoro d'equipe in ambito socio-sanitario (Tirocinio Pratico-Valutativo) | | 2
+Laboratorio: L'approccio "evidence-based" alla professione (Tirocinio Pratico-Valutativo) | | 2
+@anno 2
+Psicopatologia clinica | PSIC-04/B | 6
+Psicopatologia dinamica e dello sviluppo | PSIC-04/A | 6
+Intervento psicologico sui gruppi | PSIC-04/A | 6
+Psicologia delle dipendenze e di comunità | PSIC-04/A | 6
+Psicodiagnostica dinamico-clinica e del trauma | PSIC-04/B | 6
+Deontologia professionale e orientamento alla professione | | 2
+Tirocinio Pratico-Valutativo in Enti esterni | | 14
+Prova Pratico-Valutativa | | 4
+Prova finale: Attività preparatoria | | 9
+Prova finale: Discussione della dissertazione | | 1
+@curriculum Giuridico-sociale
+@anno 1
+Psicologia giuridica e penitenziaria | PSIC-03/A | 6
+Psicologia delle emergenze e del trauma | PSIC-04/A | 6
+Strumenti e metodi di valutazione neuropsicologica in ambito clinico e forense | PSIC-01/C | 6
+Psicologia dell'intervento clinico nei contesti socio-sanitari e di comunità | PSIC-04/B | 6
+Psicopatologia interculturale | MED/25 | 6
+Sociologia dell'inclusione e dell'esclusione sociale | SPS/12 | 6
+> 12 | Due esami a scelta fra
+- Elementi di giustizia penale | GIUR-13/A | 6
+- Psicologia clinica dell'invecchiamento | PSIC-04/B | 6
+- Neuropsicologia clinica dell'adulto e dello sviluppo | PSIC-04/B | 6
+- Principi e tecniche in psicoterapia | PSIC-04/A | 6
+- Psicologia del lavoro nelle organizzazioni dei servizi sociali | PSIC-03/B | 6
+Abilità di inglese scientifico | | 6
+Laboratorio: Casi peritali (Tirocinio Pratico-Valutativo) | | 2
+Laboratorio: Comunicazione e relazione nel lavoro d'equipe in ambito socio-sanitario (Tirocinio Pratico-Valutativo) | | 2
+Laboratorio: L'approccio "evidence-based" alla professione (Tirocinio Pratico-Valutativo) | | 2
+@anno 2
+Psicopatologia clinica | PSIC-04/B | 6
+Psicologia della devianza e criminologia | PSIC-03/A | 6
+Psicologia delle dipendenze e di comunità | PSIC-04/A | 6
+Metodi di prevenzione e intervento in ambito giuridico e sociale | PSIC-03/A | 6
+Assessment in ambito forense | PSIC-03/A | 6
+Deontologia professionale e orientamento alla professione | | 2
+Tirocinio Pratico-Valutativo in Enti esterni | | 14
+Prova Pratico-Valutativa | | 4
+Prova finale: Attività preparatoria | | 9
+Prova finale: Discussione della dissertazione | | 1
+
+@corso uniurb-lm-13-chimica-e-tecnologia-farmaceutiche
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757524.pdf
+@scelte 3 4
+@alias Laboratorio PESF = Laboratorio di Preparazioni Estrattive e Sintesi
+@curriculum *
+@anno 1
+Biologia farmaceutica | BIOS-01/D | 6
+Chimica generale ed inorganica | CHEM-03/A | 9
+Idoneità lingua inglese - B2 | ANGL-01/C | 6
+Abilità informatiche | INFO-01/A | 2
+Anatomia umana con elementi di biologia cellulare | BIOS-12/A | 9
+Fisica con elementi di matematica | PHYS-01/A | 12
+Chimica analitica con laboratorio | CHEM-01/A, CHEM-07/A | 8
+Fondamenti di Chimica organica e di Chimica fisica | CHEM-05/A, CHEM-02/A | 9
+@anno 2
+Biochimica | BIOS-07/A | 9
+Chimica organica I | CHEM-05/A | 9
+Fisiologia generale | BIOS-06/A | 9
+Microbiologia | BIOS-15/A | 6
+Analisi farmaceutica quantitativa con laboratorio | CHEM-07/A | 8
+Biochimica applicata | BIOS-07/A | 6
+Chimica organica II | CHEM-05/A | 6
+Patologia generale | MEDS-02/A | 6
+@anno 3
+Analisi farmaceutica qualitativa con laboratorio | CHEM-07/A | 8
+Farmacologia e farmacognosia | BIOS-11/A | 6
+Preformulazione, fisica farmaceutica e biofarmaceutica | CHEM-08/A | 9
+Progettazione e sviluppo del farmaco | CHEM-07/A | 6
+Chimica farmaceutica e tossicologica I | CHEM-07/A | 9
+Farmacoterapia I | BIOS-11/A | 9
+Laboratorio PESF | CHEM-07/A | 8
+= Attività a scelta dello studente/della studentessa | 6
+@anno 4
+Chimica farmaceutica e tossicologica II | CHEM-07/A | 9
+Tossicologia | BIOS-11/A | 8
+Farmacoterapia II | BIOS-11/A | 9
+Produzione industriale dei medicinali e affari regolatori | CHEM-08/A | 6
+Tecnologia e normativa farmaceutica con laboratorio di formulazione dei medicinali | CHEM-08/A | 9
+= Attività a scelta dello studente/della studentessa | 6
+> 12 | Due insegnamenti tra
+- Modellistica molecolare per lo sviluppo dei farmaci | CHEM-07/A | 6
+- Metodi fisici per lo sviluppo e la caratterizzazione dei farmaci | CHEM-07/A | 6
+- Tecnologie farmaceutiche avanzate | CHEM-08/A | 6
+- Chimica e tecnologie nutraceutiche alimentari | CHEM-08/A, CHEM-07/B | 6
+- Strategie e metodi avanzati per la sintesi di principi attivi farmaceutici | CHEM-05/A | 6
+- Aspetti sintetici nella preparazione e nella funzionalizzazione di biomolecole di interesse farmaceutico | CHEM-05/A | 6
+@anno 5
+Tirocinio pratico-valutativo | | 30
+Prova pratica valutativa / Prova finale: attività preparatoria | | 27
+Prova finale: dissertazione | | 3
+
+@corso uniurb-lmr-02-conservazione-e-restauro-dei-beni-culturali-abilitante-ai-se
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757527.pdf
+@scelte 4
+@alias Laboratorio 1 - Opere lignee = Laboratorio 1 - Sezione
+@alias Laboratorio 2 - Opere su tela = Laboratorio 2 - Sezione
+@alias Laboratorio 3 - Opere lignee e tele = Laboratorio 3 - Sezione
+@alias Laboratorio 4 - Opere lignee, tele e polimaterici = Laboratorio 4 - Sezione
+@alias Laboratorio 5 - Opere lignee, tele e polimaterici = Laboratorio 5 - Laboratorio Tesi
+@curriculum *
+@anno 1
+@totale 64
+Chimica generale e inorganica | CHEM-03/A | 8
+Informatica | INFO-01/A | 6
+Storia dell'arte medievale | ARTE-01/A | 6
+Teoria e tecnica del restauro 1 | CEAR-11/B | 6
+Archeologia e storia dell'arte greca e romana | ARCH-01/D | 6
+Disegno 1 | CEAR-10/A | 6
+Petrografia per i beni culturali | GEOS-01/D | 6
+Laboratorio 1 - Opere lignee | | 20
+@anno 2
+@totale 65
+Storia dell'arte italiana ed europea | ARTE-01/B | 6
+Storia dell'arte marchigiana | ARTE-01/B | 6
+Chimica organica | CHEM-05/A | 6
+Disegno 2 | CEAR-10/A | 6
+Iconografia e iconologia | ARTE-01/B | 6
+Fisica per i beni culturali | PHYS-06/A | 6
+Lingua straniera | | 4
+Laboratorio 2 - Opere su tela | | 20
+Laboratorio di fotografia | | 5
+@anno 3
+@totale 61
+Applicazioni Chimiche e Mineralogiche per il Restauro | CHEM-01/B, GEOS-01/D | 9
+Biochimica per i beni culturali | BIOS-07/A | 6
+Legislazione dei beni culturali | GIUR-06/A | 6
+Microbiologia applicata ai beni culturali | BIOS-15/A | 6
+Storia dell'arte contemporanea | ARTE-01/C | 8
+Teoria e tecnica del restauro 2 | CEAR-11/B | 6
+Laboratorio 3 - Opere lignee e tele | | 20
+@anno 4
+@totale 62
+Economia e gestione delle imprese | ECON-07/A | 6
+Museologia e Museografia | ARTE-01/D | 6
+Chimica analitica per i beni culturali | CHEM-01/A | 6
+Sistemi di rappresentazione per la conservazione dei beni culturali | CEAR-10/A | 6
+Scienza e tecnologia dei materiali | CHEM-04/A | 6
+= Insegnamenti a scelta dello studente | 12
+Laboratorio 4 - Opere lignee, tele e polimaterici | | 20
+@anno 5
+@totale 48
+Storia della critica d'arte | ARTE-01/D | 6
+Storia dell'architettura | CEAR-11/A | 6
+Storia del pensiero scientifico | PHIL-02/B | 6
+Laboratorio 5 - Opere lignee, tele e polimaterici | | 15
+Prova finale | | 15
+
+@corso uniurb-lm-13-farmacia
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757523.pdf
+@scelte 4 5
+@alias Tossicologia, farmacovigilanza e farmacoepidemiologia = Tossicologia ; Farmacovigilanza e Farmacoepidemiologia
+@alias Tecnologia e normativa dei prodotti cosmetici e dei dispositivi medici = Tecnologia e Normativa dei Prodotti Cosmetici
+@curriculum *
+@anno 1
+Biologia animale con elementi di biochimica | BIOS-10/A, BIOS-07/A | 6
+Statistica medica con elementi di matematica | MEDS-24/A | 6
+Idoneità lingua inglese - B2 | ANGL-01/C | 6
+Abilità informatiche | IINF-05/A | 3
+Altre conoscenze utili per l'inserimento nel mondo del lavoro 1 | | 3
+Anatomia umana | BIOS-12/A | 9
+Chimica generale ed inorganica | CHEM-03/A | 9
+Biologia vegetale e botanica farmaceutica | BIOS-01/D | 6
+Chimica analitica | CHEM-01/A | 6
+Fisica | PHYS-01/A | 6
+@anno 2
+Analisi dei farmaci quantitativa con laboratorio | CHEM-07/A | 9
+Chimica organica | CHEM-05/A | 9
+Microbiologia generale e applicata | BIOS-15/A | 9
+Biochimica generale e molecolare | BIOS-07/A | 9
+Chimica degli alimenti e prodotti nutraceutici | CHEM-07/B, CHEM-07/A | 9
+Fisiologia umana | BIOS-06/A | 9
+Igiene e profilassi delle malattie infettive | MEDS-24/B | 6
+@anno 3
+Analisi dei farmaci qualitativa con laboratorio | CHEM-07/A | 9
+Farmacologia generale e farmacognosia | BIOS-11/A | 9
+Patologia generale con elementi di fisiopatologia e terminologia medica | MED-02/A | 9
+Analisi biochimico-cliniche | BIOS-09/A | 6
+Chimica farmaceutica e tossicologica I | CHEM-07/A | 9
+Farmacoterapia I | BIOS-11/A | 9
+Normativa farmaceutica, deontologia e gestione della farmacia | CHEM-08/A, ECON-07/A | 9
+@anno 4
+Chimica farmaceutica e tossicologica II | CHEM-07/A | 9
+Scienza dell'alimentazione | BIOS-07/A | 6
+Tecnologia farmaceutica e laboratorio di preparazioni galeniche | CHEM-08/A | 9
+Altre conoscenze utili per l'inserimento nel mondo del lavoro 2 | | 3
+Farmacoterapia II | BIOS-11/A | 9
+Farmaci biotecnologici | CHEM-07/A, BIOS-11/A | 6
+Tecnologia e normativa dei prodotti cosmetici e dei dispositivi medici | CHEM-08/A | 9
+= Attività a scelta dello studente | 6
+@anno 5
+Tossicologia, farmacovigilanza e farmacoepidemiologia | BIOS-11/A | 12
+= Attività a scelta dello studente | 6
+Tirocinio pratico-valutativo | | 30
+Prova pratica valutativa / Prova finale: attività preparatoria | | 12
+Prova finale: dissertazione | | 3
+
+@corso uniurb-lmg-01-giurisprudenza
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757526.pdf
+@curriculum *
+@anno 1
+Diritto costituzionale | GIUR-05/A | 12
+Diritto privato 1 | GIUR-01/A | 12
+Diritto dell'unione europea | GIUR-10/A | 9
+Filosofia del diritto | GIUR-17/A | 9
+Istituzioni di diritto romano | GIUR-15/A | 9
+Storia del diritto medievale e moderno | GIUR-16/A | 9
+Lingua straniera | | 3
+@anno 2
+Diritto privato 2 | GIUR-01/A | 9
+Economia politica | ECON-01/A | 9
+Diritto internazionale | GIUR-09/A | 9
+Diritto commerciale (I e II modulo) | GIUR-02/A | 15
+Diritto del lavoro | GIUR-04/A | 12
+> 9 | Un esame a scelta fra
+- Diritto privato comparato | GIUR-11/A | 9
+- Diritto pubblico comparato | GIUR-11/B | 9
+@anno 3
+Diritto civile | GIUR-01/A | 6
+Diritto processuale civile (I e II modulo) | GIUR-12/A | 15
+Diritto amministrativo | GIUR-06/A | 9
+Diritto penale 1 | GIUR-14/A | 12
+Fondamenti romanistici del diritto europeo | GIUR-15/A | 10
+> 9 | Un esame a scelta fra
+- Sociologia del diritto | GIUR-17/A | 9
+- Informatica giuridica | GIUR-17/A | 9
+@anno 4
+Diritto penale 2 | GIUR-14/A | 9
+Diritto processuale penale (I e II modulo) | GIUR-13/A | 15
+Tutela dei diritti fondamentali | GIUR-05/A | 9
+Diritto processuale amministrativo | GIUR-06/A | 9
+> 9 | Un esame a scelta fra
+- Diritto tributario | GIUR-08/A | 9
+- Scienza delle finanze | ECON-03/A | 9
+= Scelta libera | 9
+Attività laboratoriali (2+2) | | 4
+@anno 5
+= Scelta libera | 6
+Prova finale | | 13
+@curriculum Innovazione tecnologica, sostenibilità e ambiente
+@anno 5
+> 30 | Affini integrativi (due da 9 CFU e due da 6 CFU)
+- Economia dell'ambiente | ECON-03/A | 9
+- Diritto della sostenibilità agro-alimentare | GIUR-03/B | 9
+- Diritto pubblico comparato dell'ambiente | GIUR-11/B | 9
+- Etica e diritto nella trasformazione digitale | GIUR-17/A | 9
+- Diritto civile della società digitale | GIUR-01/A | 6
+- Diritto comparato e nuove tecnologie | GIUR-11/B | 6
+- Diritto dell'ambiente e del territorio | GIUR-06/A | 6
+- Diritto della concorrenza e dell'innovazione | GIUR-02/A | 6
+- Diritto penale dell'ambiente | GIUR-14/A | 6
+- Tutela e protezione dei dati personali | GIUR-05/A | 6
+@curriculum Giurista delle Amministrazioni pubbliche
+@anno 5
+> 30 | Affini integrativi (due da 9 CFU e due da 6 CFU)
+- Contabilità di Stato e degli enti pubblici | GIUR-06/A | 9
+- Diritto dell'amministrazione digitale | GIUR-06/A | 9
+- Diritto regionale | GIUR-05/A | 9
+- Amministrazione della sicurezza pubblica | GIUR-06/A | 6
+- Criminologia | GIUR-14/A | 6
+- Diritto del lavoro pubblico | GIUR-04/A | 6
+- Diritto penale della pubblica amministrazione | GIUR-14/A | 6
+- Economia e bilancio delle pubbliche amministrazioni | ECON-03/A | 6
+- Sistemi giuridici comparati | GIUR-11/B | 6
+- Tutela e protezione dei dati personali | GIUR-05/A | 6
+@curriculum Professioni giuridiche
+@anno 5
+> 30 | Affini integrativi (due da 9 CFU e due da 6 CFU)
+- Diritto ecclesiastico e del multiculturalismo | GIUR-07/A | 9
+- Diritto pubblico dell'economia | GIUR-05/A | 9
+- Ordinamento giudiziario e deontologia forense | GIUR-13/A | 9
+- Storia del diritto romano | GIUR-15/A | 9
+- Tecniche di ricerca giuridica | GIUR-01/A | 9
+- Argomentazione giuridica e retorica forense | GIUR-15/A | 6
+- Diritto costituzionale europeo | GIUR-05/A | 6
+- Diritto delle procedure concorsuali e della crisi d'impresa | GIUR-12/A | 6
+- Diritto di famiglia | GIUR-01/A | 6
+- Diritto penale commerciale | GIUR-14/A | 6
+- Diritto penitenziario | GIUR-13/A | 6
+- Diritto sammarinese | GIUR-16/A | 6
+- Giustizia costituzionale | GIUR-05/A | 6
+
+@corso uniurb-lm-85-bis-scienze-della-formazione-primaria
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757525.pdf
+@curriculum *
+@anno 1
+Pedagogia speciale | PAED-02/A | 8
+Disegno | CEAR-10/A | 8
+Didattica generale | PAED-02/A | 6
+Psicologia dell'educazione e disabilità | PSIC-02/A | 8
+Ecologia | BIOS-05/A | 6
+Didattica delle scienze naturali | BIOS-05/A | 6
+Letteratura italiana I | ITAL-01/A | 6
+Linguistica italiana I e Didattica della lingua | LIFI-01/A | 6
+Laboratorio di Disegno | CEAR-10/A | 1
+Laboratorio di Disabilità | PSIC-02/A | 1
+Laboratorio di Ecologia | BIOS-05/A | 1
+Laboratorio Letterario | ITAL-01/A | 1
+Laboratorio di Inglese | | 2
+@anno 2
+Pedagogia generale | PAED-01/A | 8
+Fondamenti e Didattica della fisica | PHYS-06/B | 8
+Storia dell'educazione | PAED-01/B | 8
+Pedagogia del curricolo | PAED-01/A | 8
+Igiene | MEDS-24/B | 4
+Elementi di chimica e Didattica della chimica | CHEM-03/A | 4
+Pedagogia sperimentale | PAED-02/B | 6
+Laboratorio di Fisica | PHYS-06/B | 1
+Laboratorio di Pedagogia del curricolo | PAED-01/A | 1
+Laboratorio di Pedagogia sperimentale | PAED-02/B | 1
+Laboratorio di Didattica generale | PAED-02/A | 2
+Laboratorio di Inglese | | 2
+Tirocinio (2° anno) | | 7
+@anno 3
+Tecnologie didattiche | PAED-02/A | 6
+Teoria, tecnica e didattica dell'attività motoria | MEDF-01/A | 8
+Docimologia | PAED-02/B | 6
+Geografia e Didattica della geografia | GEOG-01/A | 8
+Letteratura per l'infanzia | PAED-01/B | 8
+Laboratorio di Tecnologie didattiche | PAED-02/A | 3
+Laboratorio di Attività motoria | MEDF-01/A | 1
+Laboratorio di Geografia | GEOG-01/A | 1
+Laboratorio di Letteratura per l'infanzia | PAED-01/B | 1
+Laboratorio di Pedagogia speciale | PAED-02/A | 2
+Laboratorio di Inglese | | 2
+= A libera scelta | 8
+Tirocinio (3° anno) | | 6
+@anno 4
+Storia contemporanea | HIST-03/A | 8
+Didattica della storia | HIST-03/A | 8
+Didattica speciale | PAED-02/A | 8
+Psicologia scolastica | PSIC-02/A | 8
+Sociologia dell'educazione | GSPS-06/A | 8
+Logica matematica | MATH-01/B | 8
+Laboratorio di Matematica | MATH-01/B | 1
+Laboratorio di Inglese | | 2
+Idoneità Lingua inglese livello B2 | | 2
+Tirocinio (4° anno) | | 7
+@anno 5
+Matematica | MATH-01/B | 6
+Didattica della matematica | MATH-01/B | 6
+Letteratura italiana II | ITAL-01/A | 6
+Linguistica italiana II | LIFI-01/A | 6
+Musica e Didattica della musica | PEMM-01/C | 8
+Psicologia clinica | PSIC-04/B | 8
+Laboratorio di Matematica | MATH-01/B | 1
+Laboratorio di Linguistica | LIFI-01/A | 1
+Laboratorio di Musica | PEMM-01/C | 1
+Laboratorio di Didattica speciale | PAED-02/A | 2
+Laboratorio di Inglese | | 2
+Tirocinio (5° anno) | | 4
+Prova finale: Attività preparatoria | | 6
+Prova finale: Discussione della dissertazione | | 3
+
+@corso uniurb-l-11-lingue-moderne-applicate
+@pdf https://www.uniurb.it/it/off/bandi/piano-degli-studi_1757509.pdf
+@modo integra
+@anni 3
+@curriculum Lingue e letterature
+@anno 3
+@totale 60
+Lingua A III (francese, inglese, russo, spagnolo, tedesco) | FRAN-01/B, ANGL-01/C, SLAV-01/A, SPAN-01/C, GERM-01/C | 10
+Lingua B III (francese, inglese, russo, spagnolo, tedesco) | FRAN-01/B, ANGL-01/C, SLAV-01/A, SPAN-01/C, GERM-01/C | 10
+Didattica delle lingue | GLOT-01/B | 8
+Letteratura della Lingua A III (Nord-Americana, francese, inglese, russa, spagnola, tedesca) | ANGL-01/B, FRAN-01/A, ANGL-01/A, SLAV-01/A, SPAN-01/A, GERM-01/B | 8
+> 8 | Un insegnamento a scelta tra
+- Letteratura della Lingua B III | ANGL-01/B, FRAN-01/A, ANGL-01/A, SLAV-01/A, SPAN-01/A, GERM-01/B | 8
+- Storia della cultura della Lingua A o B (anglo-americana, francese, inglese, russa, spagnola, tedesca) | ANGL-01/B, FRAN-01/A, ANGL-01/A, SLAV-01/A, SPAN-01/A, GERM-01/B | 8
+= Scelta libera | 8
+Tirocinio (Lingue moderne applicate) | | 5
+Prova finale | | 3
+@curriculum Lingue per l'impresa
+@anno 3
+@totale 60
+Lingua A III (cinese, francese, inglese, russo, spagnolo, tedesco) | ASIA-01/F, FRAN-01/B, ANGL-01/C, SLAV-01/A, SPAN-01/C, GERM-01/C | 10
+Lingua B III (cinese, francese, inglese, russo, spagnolo, tedesco) | ASIA-01/F, FRAN-01/B, ANGL-01/C, SLAV-01/A, SPAN-01/C, GERM-01/C | 10
+Comunicazione interculturale | GLOT-01/B | 8
+> 8 | Un insegnamento a scelta tra
+- Economia politica | ECON-01/A | 8
+- Sociologia dei processi culturali e comunicativi | GSPS-06/A | 8
+- Economia aziendale | ECON-06/A | 8
+> 8 | Un insegnamento a scelta tra
+- Strategie di internazionalizzazione | ECON-07/A | 8
+- Brand management | ECON-07/A | 8
+= Scelta libera | 8
+Tirocinio (Lingue moderne applicate) | | 5
+Prova finale | | 3
+@curriculum Lingue per il turismo
+@anno 3
+@totale 60
+Lingua A III (cinese, francese, inglese, russo, spagnolo, tedesco) | ASIA-01/F, FRAN-01/B, ANGL-01/C, SLAV-01/A, SPAN-01/C, GERM-01/C | 10
+Lingua B III (cinese, francese, inglese, russo, spagnolo, tedesco) | ASIA-01/F, FRAN-01/B, ANGL-01/C, SLAV-01/A, SPAN-01/C, GERM-01/C | 10
+> 8 | Un insegnamento a scelta tra
+- Brand destination management | ECON-07/A | 8
+- Storia dell'arte moderna | ARTE-01/B | 8
+Web e social media per il turismo | ECON-07/A | 8
+Comunicazione interculturale | GLOT-01/B | 8
+= Scelta libera | 8
+Tirocinio (Lingue moderne applicate) | | 5
+Prova finale | | 3

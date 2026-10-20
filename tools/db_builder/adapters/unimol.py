@@ -203,8 +203,8 @@ ALIAS_PERCORSI = {
 
 
 def _nome_percorso(nome: str) -> str:
-    n = re.sub(r"(?i)[\s,-]*coorte\s*\d{4}(?:[/-]\d{2,4})?", "", nome)
-    n = re.sub(r"Inegneria", "Ingegneria", n)  # refuso del catalogo
+    n = re.sub(r"(?i)[\s,-]*\bcoorte\s*\d{4}(?:[/-]\d{2,4})?", "", nome)
+    n = re.sub(r"\bInegneria\b", "Ingegneria", n)  # refuso del catalogo
     n = re.sub(r"(?i)^\s*(?:STAF[_ ]|schema di piano\s+)", "", n).replace("_", " ")
     n = re.sub(r"\s+", " ", n).strip(" -:,")
     if n.isupper():

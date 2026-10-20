@@ -2,7 +2,7 @@
  "schema": 1,
  "universita_id": "unical",
  "anno_accademico": "2026/27",
- "aggiornato_il": "2026-10-19",
+ "aggiornato_il": "2026-10-20",
  "fonte": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi",
  "corsi": [
   {
@@ -21,7 +21,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/biologia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27005253",
@@ -1400,7 +1400,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/chimica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27005002",
@@ -2593,7 +2593,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/comunicazione-e-dams",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008307",
@@ -4511,7 +4511,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/economia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27001079",
@@ -6396,7 +6396,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/economia-aziendale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27003003",
@@ -9212,7 +9212,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/filosofia-e-storia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27009088",
@@ -11277,7 +11277,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/fisica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27000001",
@@ -13046,7 +13046,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/fisioterapia-abilitante-alla-professione-di-fisioterapista/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27009941",
@@ -14013,7 +14013,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/infermieristica-abilitante-alla-professione-sanitaria-di-infermiere/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008935",
@@ -15950,18 +15950,6 @@
        "tipo": null,
        "note": null,
        "citazione": "88 916 1142 0 ISBN: 9788809903326"
-      },
-      {
-       "titolo": "Giusti GD, Benetton M. La cura del corpo in terapia intensiva. Maggioli editore 2013",
-       "autori": null,
-       "editore": null,
-       "anno": 2013,
-       "edizione": null,
-       "isbn": null,
-       "lingua": null,
-       "tipo": null,
-       "note": null,
-       "citazione": "Giusti GD, Benetton M. La cura del corpo in terapia intensiva. Maggioli editore 2013"
       }
      ],
      "esami": [],
@@ -16009,7 +15997,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/informatica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27002208",
@@ -17709,7 +17697,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/informazione-scientifica-del-farmaco-e-delle-tecnologie-per-la-salute/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27005042",
@@ -18780,7 +18768,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-biomedica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "28000023",
@@ -20185,7 +20173,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-chimica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "28000002",
@@ -22150,7 +22138,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-civile/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "28000002",
@@ -24428,7 +24416,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-elettronica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "28000002",
@@ -25923,7 +25911,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-gestionale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "28000002",
@@ -27641,7 +27629,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-informatica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "28000023",
@@ -30393,7 +30381,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-meccanica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "28000002",
@@ -32297,7 +32285,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-per-lambiente-e-la-sicurezza-del-territorio/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27000004",
@@ -34821,7 +34809,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/lettere/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27010297",
@@ -38270,7 +38258,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/lingue-e-culture-moderne/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27001189",
@@ -41594,7 +41582,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/matematica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27004076",
@@ -43184,7 +43172,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/media-e-societa-digitale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27009375",
@@ -44736,7 +44724,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/mediazione-linguistica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008649",
@@ -47047,7 +47035,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienza-della-nutrizione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008875",
@@ -48151,7 +48139,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-del-turismo-e-dei-servizi-turistici/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27010367",
@@ -49577,7 +49565,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-dellamministrazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27009375",
@@ -51417,7 +51405,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-delleducazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27010970",
@@ -52921,7 +52909,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-e-tecniche-psicologiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27007216",
@@ -53908,7 +53896,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-e-tecnologie-biologiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008264",
@@ -55393,7 +55381,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-e-tecnologie-per-le-attivita-motorie-e-sportive/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "28000002",
@@ -56341,7 +56329,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-geologiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008264",
@@ -57523,7 +57511,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-naturali-e-ambientali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008264",
@@ -59105,7 +59093,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-politiche-e-relazioni-internazionali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27009375",
@@ -61133,7 +61121,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/servizi-giuridici-per-linnovazione-digitale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008952",
@@ -62217,7 +62205,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/servizio-sociale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27010190",
@@ -63947,7 +63935,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/statistica-per-data-science/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27002284",
@@ -65847,7 +65835,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/tecnologie-del-mare-e-della-navigazione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27009733",
@@ -67364,7 +67352,7 @@
    "url": "https://corsi.unical.it/lm/artificial-intelligence-and-computer-science/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27006172",
@@ -68402,7 +68390,7 @@
    "url": "https://corsi.unical.it/lm/biodiversita-e-sistemi-naturali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27004076",
@@ -69517,7 +69505,7 @@
    "url": "https://corsi.unical.it/lm/biologia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27006228",
@@ -70623,7 +70611,7 @@
    "url": "https://corsi.unical.it/lm/chemistry/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008510",
@@ -71568,7 +71556,7 @@
    "url": "https://corsi.unical.it/lm/civil-engineering-for-infrastructural-regeneration/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008634",
@@ -73158,7 +73146,7 @@
    "url": "https://corsi.unical.it/lm/cooperazione-sviluppo-ecologia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27010143",
@@ -74445,7 +74433,7 @@
    "url": "https://corsi.unical.it/lm/data-science-per-le-strategie-aziendali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008250",
@@ -75511,7 +75499,7 @@
    "url": "https://corsi.unical.it/lm/digital-humanities/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27009089",
@@ -76771,7 +76759,7 @@
    "url": "https://corsi.unical.it/lm/economia-aziendale-e-management/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27011026",
@@ -78621,7 +78609,7 @@
    "url": "https://corsi.unical.it/lm/economia-imprese-e-sostenibilita/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27006691",
@@ -79577,7 +79565,7 @@
    "url": "https://corsi.unical.it/lm/filologia-moderna/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27001261",
@@ -80842,7 +80830,7 @@
    "url": "https://corsi.unical.it/lm/finance-and-insurance/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27006569",
@@ -81644,7 +81632,7 @@
    "url": "https://corsi.unical.it/lm/health-biotechnology/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008337",
@@ -82124,7 +82112,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-chimica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27007407",
@@ -83056,7 +83044,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-civile/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27009973",
@@ -85352,7 +85340,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-elettronica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008830",
@@ -86297,7 +86285,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-energetica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27007957",
@@ -87570,7 +87558,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-gestionale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27007390",
@@ -88935,7 +88923,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-informatica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27009553",
@@ -90861,7 +90849,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-meccanica/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27007957",
@@ -92530,7 +92518,7 @@
    "url": "https://corsi.unical.it/lm/ingegneria-per-lambiente-e-la-sicurezza-del-territorio/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27006938",
@@ -94290,7 +94278,7 @@
    "url": "https://corsi.unical.it/lm/linguaggi-della-comunicazione-e-dello-spettacolo/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27009909",
@@ -95491,7 +95479,7 @@
    "url": "https://corsi.unical.it/lm/lingue-e-letterature-moderne/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27006064",
@@ -98241,7 +98229,7 @@
    "url": "https://corsi.unical.it/lm/lingue-per-la-comunicazione-internazionale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27010977",
@@ -99972,7 +99960,7 @@
    "url": "https://corsi.unical.it/lm/mathematics/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008371",
@@ -101495,7 +101483,7 @@
    "url": "https://corsi.unical.it/lm/physics/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008463",
@@ -104557,7 +104545,7 @@
    "url": "https://corsi.unical.it/lm/progettazione-innovazione-e-gestione-delle-destinazioni-turistiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27006888",
@@ -105462,7 +105450,7 @@
    "url": "https://corsi.unical.it/lm/robotics-and-automation-engineering/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008368",
@@ -106269,7 +106257,7 @@
    "url": "https://corsi.unical.it/lm/scienza-della-nutrizione/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27010116",
@@ -107546,7 +107534,7 @@
    "url": "https://corsi.unical.it/lm/scienze-dellantichita/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27007836",
@@ -108617,7 +108605,7 @@
    "url": "https://corsi.unical.it/lm/scienze-della-politica-e-istituzioni-internazionali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27009381",
@@ -109725,7 +109713,7 @@
    "url": "https://corsi.unical.it/lm/scienze-delle-politiche-e-dei-servizi-sociali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27007268",
@@ -111103,7 +111091,7 @@
    "url": "https://corsi.unical.it/lm/scienze-delle-pubbliche-amministrazioni/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27007580",
@@ -112294,7 +112282,7 @@
    "url": "https://corsi.unical.it/lm/scienze-filosofiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27010095",
@@ -113928,7 +113916,7 @@
    "url": "https://corsi.unical.it/lm/scienze-geologiche-per-la-gestione-dei-rischi-ambientali-e-le-georisorse/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008321",
@@ -115185,7 +115173,7 @@
    "url": "https://corsi.unical.it/lm/scienze-pedagogiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27006796",
@@ -116602,7 +116590,7 @@
    "url": "https://corsi.unical.it/lm/scienze-storiche-e-del-patrimonio-culturale/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008111",
@@ -118411,7 +118399,7 @@
    "url": "https://corsi.unical.it/lm/scritture-immagini-media-digitali/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27009975",
@@ -119369,7 +119357,7 @@
    "url": "https://corsi.unical.it/lm/telecommunication-engineering-smart-sensing-computing-and-networking/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27008411",
@@ -120088,7 +120076,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/chimica-e-tecnologia-farmaceutiche/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27005004",
@@ -121949,7 +121937,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/conservazione-e-restauro-dei-beni-culturali-abilitante-ai-sensi-del-dlgs-n422004/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27006565",
@@ -123761,7 +123749,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/farmacia/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27005004",
@@ -125628,7 +125616,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/giurisprudenza/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "50901626",
@@ -128491,7 +128479,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/ingegneria-edile-architettura/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27002284",
@@ -131830,7 +131818,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/medicina-e-chirurgia-td/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27007233",
@@ -133296,7 +133284,7 @@
    "url": "https://corsi.unical.it/lt-lmcu/scienze-della-formazione-primaria/",
    "stato": "parziale",
    "fonte": "https://www.universitaly.it/cerca-corsi",
-   "verificato_il": "2026-10-19",
+   "verificato_il": "2026-10-20",
    "insegnamenti": [
     {
      "codice": "27001079",

@@ -35655,6 +35655,66 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "FT0409",
+     "nome": "Filosofia della Scienza",
+     "anno": 3,
+     "periodo": "2",
+     "cfu": 6,
+     "ssd": "M-FIL/02",
+     "obbligatorio": false,
+     "curriculum": "Filosofia, Filosofia e storia",
+     "docenti": [
+      "Montuschi Eleonora"
+     ],
+     "url": "https://www.unive.it/data/insegnamento/724202",
+     "libri": [
+      {
+       "titolo": "Filosofia della scienza",
+       "autori": "J. Ladyman",
+       "editore": "Carocci",
+       "anno": 2007,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "J. Ladyman, Filosofia della scienza, Carocci, 2007"
+      },
+      {
+       "titolo": "Il primo libro di filosofia della scienza",
+       "autori": "S. Okasha",
+       "editore": "Einaudi",
+       "anno": 2006,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "S. Okasha, Il primo libro di filosofia della scienza, Einaudi, 2006"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-02-03",
+       "ora": "14:00",
+       "luogo": "Aula 1C, Polo didattico San Basilio (Magazzino 5)",
+       "modalita": "scritto",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "MONTUSCHI ELEONORA",
+       "note": null,
+       "fonte": "https://orari.unive.it/AgendaWebUnive/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
+     "fonte": "https://www.unive.it/data/it/9351/filosofia-ftr2-2525",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://www.unive.it/data/it/9321/insegnamenti-e-orari/1",
+     "stato_libri": "completo",
+     "id": "unive-l-5-filosofia-ft0409-a3",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "FT0514",
      "nome": "History of Science",
      "anno": 3,
@@ -122506,6 +122566,26 @@
      "id": "unive-lm-77-amministrazione-finanza-e-controllo-em4069",
      "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/10114/insegnamenti-e-orari/2"
+    },
+    {
+     "codice": "EMM000",
+     "nome": "Microcredenziali",
+     "anno": 2,
+     "periodo": "annuale",
+     "cfu": 3,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://www.unive.it/data/insegnamento/796805",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unive.it/data/it/10130/amministrazione-finanza-e-controllo-emr4-2525",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://www.unive.it/data/it/10114/insegnamenti-e-orari/1",
+     "stato_libri": "da_aggiungere",
+     "id": "unive-lm-77-amministrazione-finanza-e-controllo-emm000-a2",
+     "stato_esami": "da_aggiungere"
     }
    ],
    "url_catalogo": "https://www.unive.it/web/it/10143/home"
@@ -132649,6 +132729,53 @@
      "stato_libri": "da_aggiungere",
      "id": "unive-lm-8-biotecnologie-per-l-ambiente-e-lo-sviluppo-sostenibile-cm0682",
      "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "CM0645",
+     "nome": "Bioprocessi per la Produzione di Intermedi Metabolici e Biocarburanti",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "ING-IND/25",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Gottardo Marco"
+     ],
+     "url": "https://www.unive.it/data/insegnamento/717040",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-29",
+       "ora": "14:00",
+       "luogo": "Aula Epsilon 3, Campus scientifico via Torino (edificio Epsilon)",
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GOTTARDO MARCO",
+       "note": null,
+       "fonte": "https://orari.unive.it/AgendaWebUnive/index.php?view=easytest&include=et_cdl&_lang=it"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-18",
+       "ora": "14:00",
+       "luogo": "Aula Epsilon 3, Campus scientifico via Torino (edificio Epsilon)",
+       "modalita": "orale",
+       "iscrizioni_dal": null,
+       "iscrizioni_al": null,
+       "docenti": "GOTTARDO MARCO",
+       "note": null,
+       "fonte": "https://orari.unive.it/AgendaWebUnive/index.php?view=easytest&include=et_cdl&_lang=it"
+      }
+     ],
+     "fonte": "https://www.unive.it/data/it/10924/biotecnologie-per-lambiente-e-lo-sviluppo-sostenibile-cmr10-2525",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://www.unive.it/data/it/10910/insegnamenti-e-orari/1",
+     "stato_libri": "da_aggiungere",
+     "id": "unive-lm-8-biotecnologie-per-l-ambiente-e-lo-sviluppo-sostenibile-cm0645-a2",
+     "stato_esami": "completo"
     },
     {
      "codice": "CM0557",
@@ -160537,6 +160664,28 @@
      "id": "unive-lm-1-environmental-humanities-lmh060",
      "stato_esami": "completo",
      "periodo_fonte": "https://www.unive.it/data/it/10246/insegnamenti-e-orari/2"
+    },
+    {
+     "codice": "LMH110",
+     "nome": "Humans, the Natural Environment and the Animal Other in Scandinavian Literature",
+     "anno": 2,
+     "periodo": "1",
+     "cfu": 6,
+     "ssd": "L-LIN/15",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [
+      "Culeddu Sara"
+     ],
+     "url": "https://www.unive.it/data/insegnamento/742429",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://www.unive.it/data/it/10260/environmental-humanities-lmr10-2525",
+     "verificato_il": "2026-10-20",
+     "periodo_fonte": "https://www.unive.it/data/it/10246/insegnamenti-e-orari/1",
+     "stato_libri": "da_aggiungere",
+     "id": "unive-lm-1-environmental-humanities-lmh110-a2",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "LMH270",
@@ -262831,7 +262980,7 @@
        "citazione": "A grammar of Italian Sign Language. 2020. Chiara Branchini, Lara Mantovan (ed.). Edizioni Ca' Foscari. Scaricabile gratuitamente a questo link:"
       },
       {
-       "titolo": "https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/",
+       "titolo": "https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -262840,7 +262989,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/"
+       "citazione": "https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-645-9/ https://edizionicafoscari.unive.it/it/edizioni4/libri/978-88-6969-474-5/"
       }
      ],
      "esami": [

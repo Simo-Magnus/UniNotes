@@ -1,9 +1,8 @@
 """Università di Bergamo: Course Catalogue Cineca + bibliografie Leganto per codice d'insegnamento.
 
-- Il catalogo non indica la durata dei corsi (`durataAnni` assente nell'elenco): senza correzioni
-  tutti i corsi risultavano di 3 anni (Giurisprudenza e Scienze della formazione primaria senza
-  4° e 5° anno). Con `coorte_per_nome` la durata si legge dal piano e il piano delle coorti
-  precedenti si cerca per nome quando il corso ha cambiato codice con il nuovo ordinamento.
+- I piani di studio si leggono con `unibg_piani` (piano della coorte di ogni anno di corso, codici del
+  riordino, gruppi OO/F/W con i CFU dalle etichette e dalle note, attività a 0 CFU tolte, durata dal piano);
+  il catalogo non indica la durata nell'elenco dei corsi.
 - I syllabus non contengono i testi: rimandano alla bibliografia su Leganto
   (`readings.unibg.it`, liste pubbliche), il cui `courseCode` è il codice dell'insegnamento
   (per i moduli «93212-MOD1» il codice senza il suffisso). Ogni codice ha una lista per a.a.
@@ -25,7 +24,7 @@ import urllib.parse
 
 import requests
 
-from . import cineca_catalogue, leganto, unibg_appelli, unifi, unifi_testi
+from . import cineca_catalogue, leganto, unibg_appelli, unibg_piani, unifi, unifi_testi
 from .testi import YEAR, _isbn
 
 BASE = "https://unibg.coursecatalogue.cineca.it"
@@ -33,7 +32,8 @@ PUBBLICO = "https://readings.unibg.it/leganto/public/39BRG_INST/lists?courseCode
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 ANNO_MIN = 2022  # liste più vecchie non si usano
 # codice del corso nel catalogo -> id Universitaly dello stesso corso (altrimenti ne nascerebbe un doppione)
-STESSO_CORSO_UNIVERSITALY = {"65GDF-R": "1632620", "103-R": "1626925"}  # GdF; Management per l'innovazione di business (apostrofo tipografico)
+STESSO_CORSO_UNIVERSITALY = {"65GDF-R": "1632620", "103-R": "1626925",  # GdF; Management per l'innovazione di business (apostrofo tipografico)
+                             "37-270-EN": "1632083"}  # Management Engineering: senza id build_db lo scambia per Ingegneria gestionale (stessa classe LM-31)
 
 
 class ClientCache(unifi.ClientCache):
@@ -192,6 +192,22 @@ def _alias_corsi(anno: int, log=print) -> dict[str, str]:
             for cod2, x2 in m.items():
                 if cineca_catalogue._chiave_cds(x2) == k:
                     out.setdefault(cod2, cod)
+    # codici cambiati con il riordino («86-270» → «86-R») o corso passato da una sede all'altra (Scienze politiche): per
+    # codice senza «270» e «R» (stesso tipo), poi per nome e tipo se univoci
+    base = {unibg_piani._cod_base(cod) + "|" + (x.get("tipo_corso_cod") or ""): cod for cod, x in coorti[anno].items()}
+    nomi: dict[tuple, list[str]] = {}
+    for cod, x in coorti[anno].items():
+        nomi.setdefault((_norm(x.get("des_it")), x.get("tipo_corso_cod")), []).append(cod)
+    for m in coorti.values():
+        for cod2, x2 in m.items():
+            if cod2 in out:
+                continue
+            cod = base.get(unibg_piani._cod_base(cod2) + "|" + (x2.get("tipo_corso_cod") or ""))
+            if not cod:
+                cand = nomi.get((_norm(x2.get("des_it")), x2.get("tipo_corso_cod")), [])
+                cod = cand[0] if len(cand) == 1 else None
+            if cod:
+                out[cod2] = cod
     return out
 
 
@@ -205,12 +221,14 @@ def integra_appelli(doc: dict, anno: int, log=print) -> dict[str, list[dict]]:
     alias = _alias_corsi(anno, log)
     corsi = {c.get("codice_ateneo"): c for c in doc["corsi"]}
     oggi = time.strftime("%Y-%m-%d")
-    n_nome = n_nuovi = 0
+    n_nome = n_nuovi = n_senza = 0
     for cn, attivita in per.items():
         cur = corsi.get(alias.get(cn))
         if not cur:
             continue
         ins = cur["insegnamenti"]
+        altre = cur.get("_altre") or {}
+        altre_nome = {_norm(v["nome"]): v for v in altre.values()}
         per_codice = {i["codice"]: i for i in ins}
         per_nome: dict[str, list[dict]] = {}
         for i in ins:
@@ -228,36 +246,67 @@ def integra_appelli(doc: dict, anno: int, log=print) -> dict[str, list[dict]]:
                     i["esami"] += [e for e in esami if (e.get("data"), e.get("ora"), e.get("tipo")) not in viste]
                 n_nome += 1
                 continue
-            nuovo = {"codice": cod, "nome": cineca_catalogue._titolo(titolo), "anno": None, "periodo": None,
-                     "periodo_inizio": "", "periodo_fine": "", "cfu": None, "ssd": None, "obbligatorio": False,
+            # un'attività che non è nel piano della coorte degli iscritti ma sta nel piano di un'altra coorte del corso
+            # (scelta di coorti precedenti, corsi ancora attivi per i fuori corso): anno e CFU di quel piano; altrimenti non
+            # si può collocare (senza anno e CFU) e non è un insegnamento del piano
+            info = altre.get(cod) or altre_nome.get(_norm(titolo))
+            if not info:
+                n_senza += 1
+                continue
+            nuovo = {"codice": cod, "nome": info["nome"] or cineca_catalogue._titolo(titolo), "anno": info["anno"],
+                     "periodo": None, "periodo_inizio": "", "periodo_fine": "", "cfu": info["cfu"], "ssd": None,
+                     "obbligatorio": False,
                      "curriculum": None, "docenti": [], "url": unibg_appelli.URL, "libri": [], "esami": esami,
                      "stato_libri": "da_aggiungere", "fonte": unibg_appelli.URL, "verificato_il": oggi}
             ins.append(nuovo)
             per_codice[cod] = nuovo
             per_nome.setdefault(_norm(titolo), []).append(nuovo)
             n_nuovi += 1
-    log(f"[unibg] appelli: {n_nome} attività abbinate per nome, {n_nuovi} insegnamenti aggiunti dalla bacheca")
+    log(f"[unibg] appelli: {n_nome} attività abbinate per nome, {n_nuovi} insegnamenti aggiunti dalla bacheca "
+        f"(anno e CFU da un'altra coorte del corso), {n_senza} non nel piano di nessuna coorte (non aggiunte)")
     return appelli
+
+
+def _libri_database() -> dict[str, dict]:
+    """Libri, modalità d'esame, SSD e sito già nel database per codice dell'insegnamento (nessuna nuova richiesta)."""
+    try:
+        doc = json.loads((ROOT / "database" / "corsi" / "unibg.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    out: dict[str, dict] = {}
+    for corso in doc.get("corsi") or []:
+        for i in corso.get("insegnamenti") or []:
+            cod = i.get("codice")
+            if cod and i.get("libri") and cod not in out:
+                out[cod] = {k: i.get(k) for k in ("libri", "modalita_esame", "ssd", "url_sito")}
+    return out
 
 
 def fetch_ateneo(uid: str = "unibg", anno: int = 2026, max_cds: int | None = None, syllabus: bool = True,
                  log=print) -> dict:
-    cineca_catalogue._testi_syllabus = _testi_syllabus
-    try:
-        doc = cineca_catalogue.fetch_ateneo(uid, BASE, anno, max_cds=max_cds, syllabus=syllabus, log=log,
-                                            client=ClientCache(BASE), coorte_per_nome=True, libri_extra=libri_extra)
-    finally:
-        cineca_catalogue._testi_syllabus = _testi_originale
+    doc = unibg_piani.fetch_piani(uid, anno, max_cds, syllabus, log, ClientCache(BASE), _libri_database(),
+                                  testi_syllabus=_testi_syllabus, libri_extra=libri_extra)
     for c in doc["corsi"]:  # lo stesso corso: «riservato agli Allievi della Guardia di Finanza» (lm-giugdf.unibg.it)
         if c.get("codice_ateneo") in STESSO_CORSO_UNIVERSITALY:
             c["id_universitaly"] = STESSO_CORSO_UNIVERSITALY[c["codice_ateneo"]]
+        if c.get("codice_ateneo") == "65GDF-R":
+            # Universitaly ha due corsi «GIURISPRUDENZA» con la stessa classe e senza sede (1632105 e 1632620): la sede, che build_db
+            # copia dal contributo, li distingue come nel titolo del catalogo
+            c["sede"] = f'{c.get("sede") or "BERGAMO"} - riservato agli Allievi della Guardia di Finanza'
     appelli = integra_appelli(doc, anno, log)  # prima dei libri: anche gli insegnamenti aggiunti cercano la lista Leganto
+    for c in doc["corsi"]:
+        c.pop("_altre", None)
+    doc["appelli"] = appelli
     if syllabus:
         n_ins = n_lib = 0
         cache: dict[str, list[dict]] = {}
         t0 = time.time()
         tutti = [i for c in doc["corsi"] for i in c["insegnamenti"]]
         for k, i in enumerate(tutti, 1):
+            if i.pop("_noto", False):  # libri già nel database per questo codice
+                n_ins += 1
+                n_lib += len(i.get("libri") or [])
+                continue
             testo = [b for b in i.get("libri") or [] if b.get("_testo")]
             link = [b["_leganto"] for b in i.get("libri") or [] if b.get("_leganto")]
             leg: list[dict] = []
@@ -282,4 +331,9 @@ def fetch_ateneo(uid: str = "unibg", anno: int = 2026, max_cds: int | None = Non
             if k % 500 == 0:
                 log(f"[{uid}] Leganto {k}/{len(tutti)} insegnamenti ({time.time() - t0:.0f}s): {n_ins} con libri")
         log(f"[{uid}] Leganto: {n_ins} insegnamenti con libri ({n_lib} libri)")
+    for c in doc["corsi"]:
+        for i in c["insegnamenti"]:
+            i.pop("_noto", None)
+            i["libri"] = [{k: v for k, v in b.items() if not k.startswith("_")} for b in i.get("libri") or []
+                          if not b.get("_leganto")]
     return doc

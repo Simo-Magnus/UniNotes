@@ -14807,16 +14807,16 @@
        "citazione": "CHIMICA, VII edizione - J. C. Kotz, P. M. Treichel, J. R. Townsend, D. A. Treichel - EdiSES Universitaria ISBN 9788879477857 ISBN 9788879477857"
       },
       {
-       "titolo": "CHIMICA, VII edizione - J. C. Kotz, P. M. Treichel, J. R. Townsend, D. A. Treichel - EdiSES Universitaria",
+       "titolo": "CHIMICA, VII edizione - J. C. Kotz, P. M. Treichel, J. R. Townsend, D. A. Treichel - EdiSES Universitaria ISBN 9788879477857",
        "autori": null,
        "editore": "D. A. Treichel - EdiSES Universitaria",
        "anno": null,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788879477857",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "CHIMICA, VII edizione - J. C. Kotz, P. M. Treichel, J. R. Townsend, D. A. Treichel - EdiSES Universitaria"
+       "citazione": "CHIMICA, VII edizione - J. C. Kotz, P. M. Treichel, J. R. Townsend, D. A. Treichel - EdiSES Universitaria ISBN 9788879477857"
       }
      ],
      "esami": [
@@ -39232,6 +39232,26 @@
      "verificato_il": "2026-10-20",
      "note": "Crediti che il piano richiede senza un esame preciso (etichetta del gruppo nel catalogo)",
      "id": "unica-l-18-economia-e-gestione-aziendale-attivita-formative-a-scelta-dello-studen",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": null,
+     "nome": "Attività formative a scelta studente Unica-Bielefeld - 3° anno",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": "Internazionale Unica-Bielefeld",
+     "docenti": [],
+     "libri": [],
+     "esami": [],
+     "url": "https://unica.coursecatalogue.cineca.it/corsi/2024/10513",
+     "fonte": "https://unica.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "note": "Crediti che il piano richiede senza un esame preciso (etichetta del gruppo nel catalogo)",
+     "id": "unica-l-18-economia-e-gestione-aziendale-attivita-formative-a-scelta-studente-uni-a3",
      "stato_libri": "da_aggiungere",
      "stato_esami": "da_aggiungere"
     },
@@ -70108,16 +70128,16 @@
        "citazione": "James S.Walker, Fondamenti di Fisica, ed.Pearson ISBN-10: 8808182983 ISBN-10: 8808182983"
       },
       {
-       "titolo": "James S.Walker, Fondamenti di Fisica, ed.Pearson",
+       "titolo": "James S.Walker, Fondamenti di Fisica, ed.Pearson ISBN-10: 8808182983",
        "autori": null,
        "editore": "ed.Pearson",
        "anno": null,
        "edizione": null,
-       "isbn": null,
+       "isbn": "8808182983",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "James S.Walker, Fondamenti di Fisica, ed.Pearson"
+       "citazione": "James S.Walker, Fondamenti di Fisica, ed.Pearson ISBN-10: 8808182983"
       }
      ],
      "esami": [
@@ -71306,6 +71326,26 @@
      "modalita_esame": "orale",
      "id": "unica-l-31-informatica-60-61-123",
      "stato_esami": "completo"
+    },
+    {
+     "codice": null,
+     "nome": "Attività formative a scelta dello studente (3° anno)",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "libri": [],
+     "esami": [],
+     "url": "https://unica.coursecatalogue.cineca.it/corsi/2024/10563",
+     "fonte": "https://unica.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "note": "Crediti che il piano richiede senza un esame preciso (etichetta del gruppo nel catalogo)",
+     "id": "unica-l-31-informatica-attivita-formative-a-scelta-dello-studen-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
     },
     {
      "codice": "60/61/204",
@@ -87228,6 +87268,68 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "IN/0031",
+     "nome": "Basi di Dati",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "28/02/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "ING-INF/05",
+     "obbligatorio": true,
+     "curriculum": "Curriculum Informatica",
+     "docenti": [
+      "Giacinto Giorgio"
+     ],
+     "url": "https://unica.coursecatalogue.cineca.it/insegnamenti/2026/18691/2022/2?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Basi di Dati 6/ed",
+       "autori": "Atzeni, Ceri et al",
+       "editore": "McGraw Hill",
+       "anno": 2023,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Atzeni, Ceri et al., \"Basi di Dati 6/ed\", McGraw Hill, 2023"
+      },
+      {
+       "titolo": "Addison-Wesley Professional 2012",
+       "autori": null,
+       "editore": "Addison-Wesley Professional 2012",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Addison-Wesley Professional 2012"
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-05",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-16",
+       "iscrizioni_al": "2026-11-03",
+       "docenti": "GIACINTO GIORGIO REGANO LEONARDO",
+       "note": null,
+       "fonte": "https://unica.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unica.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unica-l-8-ingegneria-elettronica-informatica-e-delle-telecomunicazioni-in-0031",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "IA/0471",
      "nome": "Basi di Dati",
      "anno": 3,
@@ -87237,7 +87339,7 @@
      "cfu": 6,
      "ssd": "ING-INF/05",
      "obbligatorio": false,
-     "curriculum": "Curriculum Elettronica, Curriculum Internet, Curriculum Informatica",
+     "curriculum": "Curriculum Elettronica, Curriculum Internet",
      "docenti": [
       "Giacinto Giorgio"
      ],
@@ -88414,6 +88516,68 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "IN/0028",
+     "nome": "Linguaggi di Programmazione Orientati Agli Oggetti",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "ING-INF/05",
+     "obbligatorio": true,
+     "curriculum": "Curriculum Informatica",
+     "docenti": [
+      "Demontis Ambra"
+     ],
+     "url": "https://unica.coursecatalogue.cineca.it/insegnamenti/2026/18946/2022/2?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Python 3 Object-Oriented Programming: Build robust and maintainable software with object-oriented design patterns in Python 3.8",
+       "autori": "D. Phillips",
+       "editore": "Packt",
+       "anno": 2018,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "D. Phillips, Python 3 Object-Oriented Programming: Build robust and maintainable software with object-oriented design patterns in Python 3.8, Packt, 2018 (III edizione)."
+      },
+      {
+       "titolo": "J. Krogh, MySQL Connector/Python Revealed: SQL and NoSQL Data Storage Using MySQL for Python Programmers, Apress, 2018.",
+       "autori": null,
+       "editore": "Apress",
+       "anno": 2018,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "J. Krogh, MySQL Connector/Python Revealed: SQL and NoSQL Data Storage Using MySQL for Python Programmers, Apress, 2018."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-03",
+       "ora": "15:00",
+       "luogo": null,
+       "modalita": "scritto",
+       "iscrizioni_dal": "2026-10-14",
+       "iscrizioni_al": "2026-11-02",
+       "docenti": "DEMONTIS AMBRA PINTOR MAURA SOTGIU ANGELO",
+       "note": null,
+       "fonte": "https://unica.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unica.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unica-l-8-ingegneria-elettronica-informatica-e-delle-telecomunicazioni-in-0028",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "IA/0472",
      "nome": "Linguaggi di Programmazione Orientati Agli Oggetti",
      "anno": 3,
@@ -88423,7 +88587,7 @@
      "cfu": 6,
      "ssd": "ING-INF/05",
      "obbligatorio": false,
-     "curriculum": "Curriculum Elettronica, Curriculum Internet, Curriculum Informatica",
+     "curriculum": "Curriculum Elettronica, Curriculum Internet",
      "docenti": [
       "Demontis Ambra"
      ],
@@ -88524,7 +88688,7 @@
      "cfu": 7,
      "ssd": "ING-INF/05",
      "obbligatorio": true,
-     "curriculum": "Curriculum Informatica, Curriculum Elettronica, Curriculum Internet",
+     "curriculum": "Curriculum Informatica",
      "docenti": [
       "Pintor Maura"
      ],
@@ -88553,6 +88717,43 @@
      "codici_alternativi": [
       "IA/0473"
      ]
+    },
+    {
+     "codice": "IA/0473",
+     "nome": "Programmazione Web",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
+     "cfu": 7,
+     "ssd": "ING-INF/05",
+     "obbligatorio": false,
+     "curriculum": "Curriculum Elettronica, Curriculum Internet",
+     "docenti": [
+      "Pintor Maura"
+     ],
+     "url": "https://unica.coursecatalogue.cineca.it/insegnamenti/2026/22474/2022/1?coorte=2024",
+     "libri": [],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-07",
+       "ora": "11:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-17",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "PINTOR MAURA DEMONTIS AMBRA SOTGIU ANGELO",
+       "note": null,
+       "fonte": "https://unica.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unica.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unica-l-8-ingegneria-elettronica-informatica-e-delle-telecomunicazioni-ia-0473",
+     "stato_esami": "completo"
     },
     {
      "codice": "IA/0302",
@@ -88626,7 +88827,7 @@
      "cfu": 6,
      "ssd": "ING-INF/03",
      "obbligatorio": true,
-     "curriculum": "Curriculum Internet, Curriculum Elettronica, Curriculum Informatica",
+     "curriculum": "Curriculum Internet",
      "docenti": [
       "Murroni Maurizio"
      ],
@@ -88704,6 +88905,92 @@
      "codici_alternativi": [
       "IA/0474"
      ]
+    },
+    {
+     "codice": "IA/0474",
+     "nome": "Xg Mobile Networks",
+     "anno": 3,
+     "periodo": "2",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "ING-INF/03",
+     "obbligatorio": false,
+     "curriculum": "Curriculum Elettronica, Curriculum Informatica",
+     "docenti": [
+      "Murroni Maurizio"
+     ],
+     "url": "https://unica.coursecatalogue.cineca.it/insegnamenti/2026/22475/2022/1?coorte=2024",
+     "libri": [
+      {
+       "titolo": "Communication Systems",
+       "autori": "A.B.Carlson",
+       "editore": "McGraw-Hill",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "A.B.Carlson, Communication Systems, McGraw-Hill."
+      },
+      {
+       "titolo": "BERNHARD H. WALKE, Mobile Radio Networks, John Wiley and Sons.",
+       "autori": null,
+       "editore": "John Wiley and Sons",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "BERNHARD H. WALKE, Mobile Radio Networks, John Wiley and Sons."
+      },
+      {
+       "titolo": "S. HOLMA, A. TOSKALA, WCDMA for UMTS, John Wiley and Sons.",
+       "autori": null,
+       "editore": "John Wiley and Sons",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "S. HOLMA, A. TOSKALA, WCDMA for UMTS, John Wiley and Sons."
+      },
+      {
+       "titolo": "R. STEELE, L. HANZO, Mobile Radio Communications, John Wiley and Sons.",
+       "autori": null,
+       "editore": "John Wiley and Sons",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "R. STEELE, L. HANZO, Mobile Radio Communications, John Wiley and Sons."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-12",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-22",
+       "iscrizioni_al": "2026-10-11",
+       "docenti": "MURRONI MAURIZIO FLORIS ALESSANDRO MARCELLO FRANCESCA",
+       "note": null,
+       "fonte": "https://unica.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unica.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unica-l-8-ingegneria-elettronica-informatica-e-delle-telecomunicazioni-ia-0474",
+     "stato_esami": "completo"
     }
    ],
    "curricula": [
@@ -114189,16 +114476,16 @@
        "citazione": "Academias de la lengua española, Diccionario de americanismos, Penguin Random House, 2015 ISBN 9788496942028 ISBN 9788496942028"
       },
       {
-       "titolo": "Academias de la lengua española, Diccionario de americanismos, Penguin Random House, 2015",
+       "titolo": "Academias de la lengua española, Diccionario de americanismos, Penguin Random House, 2015 ISBN 9788496942028",
        "autori": null,
        "editore": null,
        "anno": 2015,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788496942028",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Academias de la lengua española, Diccionario de americanismos, Penguin Random House, 2015"
+       "citazione": "Academias de la lengua española, Diccionario de americanismos, Penguin Random House, 2015 ISBN 9788496942028"
       }
      ],
      "esami": [
@@ -117099,16 +117386,16 @@
        "citazione": "Bosque Ignacio, REDES Diccionario combinatorio del español contemporáneo, Hoepli ISBN 9788484437260 ISBN 9788496942028 ISBN 9788484437260 ISBN 9788496942028"
       },
       {
-       "titolo": "Bosque Ignacio, REDES Diccionario combinatorio del español contemporáneo, Hoepli",
+       "titolo": "Bosque Ignacio, REDES Diccionario combinatorio del español contemporáneo, Hoepli ISBN 9788484437260 ISBN 9788496942028",
        "autori": null,
        "editore": "Hoepli",
        "anno": null,
        "edizione": null,
-       "isbn": null,
+       "isbn": "9788484437260",
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "Bosque Ignacio, REDES Diccionario combinatorio del español contemporáneo, Hoepli"
+       "citazione": "Bosque Ignacio, REDES Diccionario combinatorio del español contemporáneo, Hoepli ISBN 9788484437260 ISBN 9788496942028"
       }
      ],
      "esami": [
@@ -142560,6 +142847,26 @@
      "stato_esami": "completo"
     },
     {
+     "codice": null,
+     "nome": "Attività formative a scelta dello studente (3° anno)",
+     "anno": 3,
+     "periodo": null,
+     "cfu": 6,
+     "ssd": null,
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "libri": [],
+     "esami": [],
+     "url": "https://unica.coursecatalogue.cineca.it/corsi/2024/10566",
+     "fonte": "https://unica.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "note": "Crediti che il piano richiede senza un esame preciso (etichetta del gruppo nel catalogo)",
+     "id": "unica-l-35-matematica-attivita-formative-a-scelta-dello-studen-a3",
+     "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "SC/0122",
      "nome": "Meccanica dei Sistemi Continui",
      "anno": 3,
@@ -151210,7 +151517,7 @@
      "cfu": 6,
      "ssd": "IUS/15",
      "obbligatorio": true,
-     "curriculum": "Indirizzo: Consulente del Lavoro - Coorte 2024, Indirizzo: Operatore Giuridico delle Amministrazioni Pubbliche - Coorte 2024",
+     "curriculum": "Indirizzo: Consulente del Lavoro - Coorte 2024",
      "docenti": [
       "Montaldo Fabrizio"
      ],
@@ -151348,6 +151655,56 @@
      "codici_alternativi": [
       "GI/0042"
      ]
+    },
+    {
+     "codice": "GI/0042",
+     "nome": "Diritto Processuale Civile e del Lavoro",
+     "anno": 3,
+     "periodo": "1",
+     "periodo_inizio": "28/09/2026 00:00:00",
+     "periodo_fine": "28/02/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "IUS/15",
+     "obbligatorio": false,
+     "curriculum": "Indirizzo: Operatore Giuridico delle Amministrazioni Pubbliche - Coorte 2024",
+     "docenti": [
+      "Montaldo Fabrizio"
+     ],
+     "url": "https://unica.coursecatalogue.cineca.it/insegnamenti/2026/20431/2022/3?coorte=2024",
+     "libri": [
+      {
+       "titolo": "G. VERDE, Diritto processuale civile. Vol. I e II, Zanichelli, ult. ed.",
+       "autori": null,
+       "editore": "Zanichelli",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "G. VERDE, Diritto processuale civile. Vol. I e II, Zanichelli, ult. ed."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-11-12",
+       "ora": "16:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-10-09",
+       "iscrizioni_al": "2026-11-08",
+       "docenti": "MONTALDO FABRIZIO IZZO SILVIA",
+       "note": null,
+       "fonte": "https://unica.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unica.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unica-l-14-scienze-dei-servizi-giuridici-gi-0042",
+     "stato_esami": "completo"
     },
     {
      "codice": "139L",
@@ -239927,7 +240284,7 @@
        "citazione": "ISBN 978-3-031-14367-0 ISBN 978-3-031-14368-7 (eBook) ISBN: 9781107034266 ISBN: 9781107034266"
       },
       {
-       "titolo": "ISBN 978-3-031-14367-0 ISBN 978-3-031-14368-7 (eBook)",
+       "titolo": "ISBN 978-3-031-14367-0 ISBN 978-3-031-14368-7 (eBook) ISBN: 9781107034266",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -239936,7 +240293,7 @@
        "lingua": null,
        "tipo": null,
        "note": null,
-       "citazione": "ISBN 978-3-031-14367-0 ISBN 978-3-031-14368-7 (eBook)"
+       "citazione": "ISBN 978-3-031-14367-0 ISBN 978-3-031-14368-7 (eBook) ISBN: 9781107034266"
       }
      ],
      "esami": [
@@ -299096,6 +299453,140 @@
      "stato_esami": "completo"
     },
     {
+     "codice": "SM/0177",
+     "nome": "Relativita'",
+     "anno": 1,
+     "periodo": "2",
+     "periodo_inizio": "01/03/2027 00:00:00",
+     "periodo_fine": "30/09/2027 00:00:00",
+     "cfu": 9,
+     "ssd": "MATH-04/A",
+     "obbligatorio": true,
+     "curriculum": "Curriculum MATEMATICA PER LA DIDATTICA E LA DIVULGAZIONE",
+     "docenti": [
+      "Rosati Giacomo"
+     ],
+     "url": "https://unica.coursecatalogue.cineca.it/insegnamenti/2026/20818/2026/2?coorte=2026",
+     "libri": [
+      {
+       "titolo": "F. Borghero e F. Demontis, Relatività per Principianti, UnicaPress.",
+       "autori": null,
+       "editore": "UnicaPress",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "F. Borghero e F. Demontis, Relatività per Principianti, UnicaPress."
+      },
+      {
+       "titolo": "Manuale di Relatività Ristretta",
+       "autori": "M. Gasperini",
+       "editore": "Springer",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "M. Gasperini, Manuale di Relatività Ristretta, Springer."
+      },
+      {
+       "titolo": "Sapecetime and Geometry, An Introduction to General Relativity",
+       "autori": "S. Carroll",
+       "editore": "Cambridge University Press",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "S. Carroll, Sapecetime and Geometry, An Introduction to General Relativity, Cambridge University Press."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2027-01-20",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-12-21",
+       "iscrizioni_al": "2027-01-15",
+       "docenti": "MIGNEMI SALVATORE ROSATI GIACOMO",
+       "note": null,
+       "fonte": "https://unica.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-02-19",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-01-20",
+       "iscrizioni_al": "2027-02-14",
+       "docenti": "MIGNEMI SALVATORE ROSATI GIACOMO",
+       "note": null,
+       "fonte": "https://unica.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-06-18",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-05-19",
+       "iscrizioni_al": "2027-06-13",
+       "docenti": "ROSATI GIACOMO MIGNEMI SALVATORE",
+       "note": null,
+       "fonte": "https://unica.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-02",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-02",
+       "iscrizioni_al": "2027-06-27",
+       "docenti": "ROSATI GIACOMO MIGNEMI SALVATORE",
+       "note": null,
+       "fonte": "https://unica.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-07-20",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-06-20",
+       "iscrizioni_al": "2027-07-15",
+       "docenti": "ROSATI GIACOMO MIGNEMI SALVATORE",
+       "note": null,
+       "fonte": "https://unica.esse3.cineca.it/ListaAppelliOfferta.do"
+      },
+      {
+       "tipo": "appello",
+       "data": "2027-09-17",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2027-08-18",
+       "iscrizioni_al": "2027-09-12",
+       "docenti": "ROSATI GIACOMO MIGNEMI SALVATORE",
+       "note": null,
+       "fonte": "https://unica.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unica.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unica-lm-40-matematica-sm-0177",
+     "stato_esami": "completo"
+    },
+    {
      "codice": "SC/0143",
      "nome": "Relativita'",
      "anno": 1,
@@ -299105,7 +299596,7 @@
      "cfu": 9,
      "ssd": "MATH-04/A",
      "obbligatorio": false,
-     "curriculum": "Curriculum MATEMATICA PURA, Curriculum MATEMATICA PER LA DIDATTICA E LA DIVULGAZIONE",
+     "curriculum": "Curriculum MATEMATICA PURA",
      "docenti": [
       "Rosati Giacomo"
      ],
@@ -313641,7 +314132,7 @@
        "citazione": "● Una vuelta por la cultura hispana, Bologna, Zanichelli (secciones relativas a Hispanoamérica). ISBN 9788808157553.n"
       },
       {
-       "titolo": "● Autores: Rosario Alonso, Alejandro Castañeda, Pablo Martínez, Lourdes Miquel, Jenaro Ortega, José Plácido Ruiz Campillo. Gramática básica del estudiante de español (A1-B1) ISBN: 9788484437260 Editorial Difusión ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797",
+       "titolo": "● Autores: Rosario Alonso, Alejandro Castañeda, Pablo Martínez, Lourdes Miquel, Jenaro Ortega, José Plácido Ruiz Campillo. Gramática básica del estudiante de español (A1-B1) ISBN: 9788484437260 Editorial Difusión ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797",
        "autori": null,
        "editore": null,
        "anno": null,
@@ -313650,7 +314141,7 @@
        "lingua": null,
        "tipo": null,
        "note": "Dal programma dell'a.a. 2025/26: la scheda 2026/27 non riporta la bibliografia",
-       "citazione": "● Autores: Rosario Alonso, Alejandro Castañeda, Pablo Martínez, Lourdes Miquel, Jenaro Ortega, José Plácido Ruiz Campillo. Gramática básica del estudiante de español (A1-B1) ISBN: 9788484437260 Editorial Difusión ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797"
+       "citazione": "● Autores: Rosario Alonso, Alejandro Castañeda, Pablo Martínez, Lourdes Miquel, Jenaro Ortega, José Plácido Ruiz Campillo. Gramática básica del estudiante de español (A1-B1) ISBN: 9788484437260 Editorial Difusión ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797 ISBN: 9788416347797"
       }
      ],
      "esami": [

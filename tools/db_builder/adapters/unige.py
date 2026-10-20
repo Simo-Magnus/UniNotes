@@ -1,17 +1,24 @@
-"""Insegnamenti, docenti e libri dell'Università di Genova da corsi.unige.it.
+"""Piani di studio, docenti e libri dell'Università di Genova da corsi.unige.it e dal Manifesto degli studi.
 
 UniGe non usa il Course Catalogue Cineca. Per ogni corso di studio:
 
-- `corsi.unige.it/corsi/<codice>/insegnamenti` → tabella "Codice, Insegnamento,
-  Docenti, SSD" degli insegnamenti erogati nell'a.a.; gli anni delle coorti
-  precedenti stanno sotto il codice del vecchio ordinamento, collegato dalla stessa
-  pagina ("…nei precedenti anni accademici…: <a href='/corsi/<vecchio>/insegnamenti'>").
-- scheda `corsi.unige.it/off.f/<a.a.>/ins/<id>` → "N cfu anno K <corso>" per ogni
-  corso che lo usa, periodo, "Questo insegnamento è un modulo di", "TESTI/BIBLIOGRAFIA".
+- Manifesto degli studi `servizionline.unige.it/unige/stampa_manifesto/MF/<a.a.>/<codice>.html` (adapters/unige_piani.py):
+  il piano di ogni anno e coorte attiva, per curriculum e sede, con insegnamenti obbligatori (e moduli), gruppi di scelta
+  («18 CFU da acquisirsi dal 2° al 3° anno») e attività a scelta dello studente. Le coorti precedenti a un riordino stanno nel
+  manifesto del codice del vecchio ordinamento, collegato dalla pagina degli insegnamenti («…nei precedenti anni
+  accademici…»), anche a catena. Gli anni che nessun manifesto ha (corsi nuovi del 2025/2026) vengono dalla
+  Programmazione didattica `PD/<a.a.>/<codice>.html` della coorte 2026/2027 (il `fonte` di ogni riga lo dice);
+- `corsi.unige.it/corsi/<codice>/insegnamenti` → tabella "Codice, Insegnamento, Docenti, SSD" degli insegnamenti
+  erogati nell'a.a.: i docenti di ogni codice;
+- scheda `corsi.unige.it/off.f/<a.a.>/ins/<id>` → periodo, lingua, "Questo insegnamento è un modulo di",
+  "TESTI/BIBLIOGRAFIA".
 
-L'elenco non dice se un insegnamento è obbligatorio o a scelta: `obbligatorio` resta null.
-I corsi sono quelli già presenti in database/corsi/unige.json (da Universitaly), con il
-loro `id`: build_db.py li associa senza ambiguità.
+I CFU di un insegnamento integrato non si contano due volte: restano i moduli (`modulo_di`) se le loro quote fanno il
+totale del contenitore, altrimenti il solo contenitore. Per i corsi senza manifesto resta l'elenco degli insegnamenti
+erogati (`obbligatorio` null, senza curricula).
+
+I corsi sono quelli già presenti in database/corsi/unige.json (da Universitaly), con il loro `id`: build_db.py li
+associa senza ambiguità. Le repliche di sede («… REPLICA sede CHIAVARI») prendono il piano della loro sede.
 """
 from __future__ import annotations
 
@@ -21,6 +28,7 @@ import pathlib
 import re
 import time
 
+from . import unige_piani as P
 from .testi import estrai_libri
 from .unibo import Client, _testo, _titolo
 
@@ -163,6 +171,59 @@ def leggi_scheda(s: str) -> dict:
     }
 
 
+def _catena(c, cod: str, max_livelli: int = 3) -> tuple[list[str], dict[str, list[dict]]]:
+    """Codice del corso e dei vecchi ordinamenti collegati a catena, con le righe dell'elenco degli insegnamenti di ognuno."""
+    codici, liste = [cod], {}
+    for _ in range(max_livelli + 1):
+        r = c.get(f"{BASE}/corsi/{codici[-1]}/insegnamenti")
+        righe, vecchio = leggi_elenco(r.text) if r else ([], None)
+        liste[codici[-1]] = righe
+        if not vecchio or vecchio in codici or len(codici) > max_livelli:
+            break
+        codici.append(vecchio)
+    return codici, liste
+
+
+def _periodo_mf(t: str | None) -> str | None:
+    if not t:
+        return None
+    if re.search(r"(?i)annuale", t):
+        return "annuale"
+    m = re.match(r"(\d)\s*°?\s*(semestre|trimestre|quadrimestre)", t.strip(), re.I)
+    return m.group(1) if m else None
+
+
+def _slug(s: str) -> str:
+    import unicodedata
+    t = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", t).strip("-")
+
+
+def _righe_anno(v: dict, sedi: set[str]) -> list[dict]:
+    """Righe di un anno (tutti i curricula): unisce lo stesso insegnamento di curricula diversi. I crediti liberi di un
+    gruppo che vale per più anni («12 CFU dal 1° al 3° anno», riga senza CFU) restano a scelta con gli N CFU del gruppo."""
+    out: dict[tuple, dict] = {}
+    for b in v["blocchi"]:
+        cur = P._chiave_curricula(b["curricula"], sedi)
+        for r in b["righe"]:
+            r = dict(r)
+            if r["cfu"] is None and r.get("libera"):
+                r["cfu"] = r["n_cfu"]
+                r["_libera"] = True
+            if r["cfu"] in (None, 0):  # prove, OFA e attività senza crediti
+                continue
+            key = (r["codice"] or P.nome_pulito(r["nome"]), r["cfu"], r["obbligatorio"], r["modulo_di"])
+            if key in out:
+                if cur and out[key]["_cur"] is not None and cur not in out[key]["_cur"]:
+                    out[key]["_cur"].append(cur)
+                elif not cur:
+                    out[key]["_cur"] = None
+                continue
+            r["_cur"] = [cur] if cur else None
+            out[key] = r
+    return list(out.values())
+
+
 def fetch_ateneo(uid: str = "unige", anno: int | None = None, max_cds: int | None = None, syllabus: bool = True,
                  corsi: list[dict] | None = None, log=print) -> dict:
     """Restituisce un contributo nel formato di database/contrib (vedi build_db.py)."""
@@ -176,7 +237,10 @@ def fetch_ateneo(uid: str = "unige", anno: int | None = None, max_cds: int | Non
     log(f"[{uid}] {len(corsi)} corsi con pagina su corsi.unige.it")
     c = Client()
     oggi = time.strftime("%Y-%m-%d")
+    aa = anno or 2026
     schede: dict[str, dict | None] = {}
+    testi: dict[str, str | None] = {}
+    catene: dict[str, tuple] = {}
 
     def scheda(url: str) -> dict | None:
         if url not in schede:
@@ -184,7 +248,19 @@ def fetch_ateneo(uid: str = "unige", anno: int | None = None, max_cds: int | Non
             schede[url] = leggi_scheda(r.text) if r else None
         return schede[url]
 
-    def build(corso: dict) -> dict | None:
+    def testo(url: str) -> str | None:
+        if url not in testi:
+            r = c.get(url)
+            testi[url] = r.text if r else None
+        return testi[url]
+
+    def catena(cod: str) -> tuple:
+        if cod not in catene:
+            catene[cod] = _catena(c, cod)
+        return catene[cod]
+
+    def build_erogato(corso: dict) -> dict | None:
+        """Corsi senza manifesto: gli insegnamenti erogati nell'a.a. (anno e CFU dalle schede)."""
         cod = _codice(corso["url"])
         codici, righe, fonte = {cod}, [], f"{BASE}/corsi/{cod}/insegnamenti"
         r = c.get(fonte)
@@ -218,29 +294,117 @@ def fetch_ateneo(uid: str = "unige", anno: int | None = None, max_cds: int | Non
                     if sc.get("modulo_di"):
                         item["modulo_di"] = sc["modulo_di"]
                 out[key] = item
-        # insegnamenti integrati senza testi propri ("si rimanda alle schede dei singoli moduli"):
-        # i testi dei loro moduli dello stesso corso, con il nome del modulo in nota
-        for item in out.values():
-            if item["libri"]:
-                continue
-            for mod in out.values():
-                if mod is not item and mod.get("modulo_di") and mod["libri"] and \
-                        mod["modulo_di"].lower() == item["nome"].lower() and mod["anno"] == item["anno"]:
-                    item["libri"] += [dict(b, note="; ".join(x for x in (f"modulo {mod['nome']}", b.get("note")) if x))
-                                      for b in mod["libri"]]
-            if item["libri"] and item.get("stato_libri"):
-                item["stato_libri"] = "completo"
         if not out:
             return None
         return {"id": corso["id"], "nome": corso["nome"], "classe": corso.get("classe"),
                 "durata_anni": corso.get("durata_anni"), "url": f"{BASE}/corsi/{cod}",
                 "fonte": fonte, "verificato_il": oggi, "insegnamenti": list(out.values())}
 
+    def build(corso: dict) -> dict | None:
+        cod = _codice(corso["url"])
+        codici, liste = catena(cod)
+        durata = corso.get("durata_anni") or 3
+        sede = P.sede_del_corso(corso.get("nome"))
+        piano = P.piano_corso(codici, durata, sede, lambda x: testo(P.url_mf(x, aa)), lambda x: testo(P.url_pd(x, aa)), aa)
+        if not piano:
+            return build_erogato(corso)
+        per_codice = {}
+        for lista in liste.values():
+            for x in lista:
+                per_codice.setdefault(x["codice"], x)
+        out: list[dict] = []
+        for k in sorted(piano):
+            v = piano[k]
+            for r in _righe_anno(v, v["sedi"]):
+                cod_r = r["codice"]
+                el = per_codice.get(cod_r) or {}
+                sc = None
+                if syllabus:
+                    for sid in r["schede"] or []:
+                        s1 = scheda(f"{BASE}/off.f/{aa}/ins/{sid}")
+                        if s1 and (sc is None or (not sc["libri"] and s1["libri"])):
+                            sc = s1
+                        if sc and sc["libri"]:
+                            break
+                item = {
+                    "codice": cod_r, "nome": P.nome_pulito(r["nome"]), "anno": k,
+                    "periodo": (sc or {}).get("periodo") or _periodo_mf(r["periodo"]),
+                    "cfu": r["cfu"], "ssd": r["ssd"] or el.get("ssd"), "obbligatorio": r["obbligatorio"],
+                    "curriculum": ", ".join(r["_cur"]) if r["_cur"] else None,
+                    "docenti": sorted({d.title() if d.isupper() else d for d in el.get("docenti") or []}),
+                    "url": f"{BASE}/off.f/{aa}/ins/{r['scheda']}" if r["scheda"] else None,
+                    "libri": (sc or {}).get("libri", []), "esami": [],
+                    "fonte": v["fonte"], "verificato_il": oggi,
+                }
+                if syllabus and r["scheda"]:
+                    item["stato_libri"] = "completo" if item["libri"] else "da_aggiungere"
+                if r["modulo_di"]:
+                    item["modulo_di"] = P.nome_pulito(r["modulo_di"])
+                    item["_padre"] = r.get("padre_codice")
+                if r.get("_libera"):
+                    item["_libera"] = (r["gruppo"], r["spread"])
+                if v["da_pd"]:
+                    item["nota"] = (f"Programmazione didattica della coorte {v['coorte']}/{v['coorte'] + 1}: "
+                                    "anno senza coorte attiva nel manifesto")
+                out.append(item)
+        # crediti liberi di un gruppo che vale per più anni («12 CFU dal 1° al 3° anno»): una voce sola, nel primo anno in cui compare
+        primi: dict[tuple, int] = {}
+        for it in out:
+            if it.get("_libera") and it["_libera"][1]:
+                kk = (it["nome"], it["cfu"], it["curriculum"], it["_libera"])
+                primi[kk] = min(primi.get(kk, 99), it["anno"])
+        out = [it for it in out if not (it.get("_libera") and it["_libera"][1]
+                                        and it["anno"] != primi[(it["nome"], it["cfu"], it["curriculum"], it["_libera"])])]
+        # voci senza codice (crediti liberi): id proprio, altrimenti build_db le fonderebbe (stesso nome, CFU diversi)
+        for n, it in enumerate([x for x in out if not x["codice"]], 1):
+            it["id"] = (f"{corso['id']}-{_slug(it['nome'])[:24]}-{str(it['cfu']).replace('.', '_')}cfu-a{it['anno']}"
+                        + (f"-{_slug(it['curriculum'])[:20]}" if it["curriculum"] else "") + f"-{n}")
+        for it in out:
+            it.pop("_libera", None)
+        # stesso codice nello stesso anno con CFU o obbligatorietà diversi tra curricula: build_db li fonderebbe
+        visti: dict[tuple, int] = {}
+        for it in out:
+            if not it["codice"]:
+                continue
+            key = (it["anno"], it["codice"])
+            visti[key] = visti.get(key, 0) + 1
+            if visti[key] > 1:
+                it["id"] = f"{corso['id']}-{_slug(it['codice'])[:30]}-{str(it['cfu']).replace('.', '_')}cfu-a{it['anno']}"
+                if it["obbligatorio"] is False:
+                    it["id"] += "-scelta"
+        for it in out:
+            it.pop("_padre", None)
+        # insegnamenti omonimi (stesso anno e curriculum) con codici diversi: il nome dice di quale integrato sono moduli;
+        # se restano uguali li distinguono i CFU (se diversi) o un numero
+        def omonimi() -> list[list[dict]]:
+            g: dict[tuple, list[dict]] = {}
+            for it in out:
+                g.setdefault((it["anno"], re.sub(r"\W+", " ", it["nome"].lower()).strip(), it["curriculum"]), []).append(it)
+            return [x for x in g.values() if len({y["codice"] for y in x}) > 1]
+
+        for g in omonimi():
+            for x in g:
+                if x.get("modulo_di") and x["modulo_di"].lower() != x["nome"].lower():
+                    x["nome"] = f"{x['nome']} ({x['modulo_di']})"
+        for g in omonimi():
+            g.sort(key=lambda y: str(y["codice"]))
+            if len({y["cfu"] for y in g}) == len(g):
+                for y in g:
+                    y["nome"] = f"{y['nome']} ({y['cfu']:g} CFU)"
+            else:
+                for n, y in enumerate(g, 1):
+                    y["nome"] = f"{y['nome']} ({n})"
+        return {"id": corso["id"], "nome": corso["nome"], "classe": corso.get("classe"),
+                "durata_anni": durata, "url": f"{BASE}/corsi/{cod}",
+                "fonte": piano[min(piano)]["fonte"], "verificato_il": oggi, "insegnamenti": out,
+                **({"sede": P.NOME_SEDE.get(sede, sede)} if sede else {})}
+
     def build_safe(corso: dict) -> dict | None:
         try:
             return build(corso)
         except Exception as e:  # noqa: BLE001 - si salta solo quel corso
-            log(f"[{uid}]   corso {corso.get('id')} saltato: {e!r}")
+            import traceback
+            log(f"[{uid}]   corso {corso.get('id')} saltato: {e!r} {traceback.format_exc()[-300:]}")
             return None
 
     out = []
@@ -253,5 +417,5 @@ def fetch_ateneo(uid: str = "unige", anno: int | None = None, max_cds: int | Non
     libri = sum(len(i["libri"]) for x in out for i in x["insegnamenti"])
     log(f"[{uid}] {len(out)} corsi, {sum(len(x['insegnamenti']) for x in out)} insegnamenti, libri: {libri}; "
         f"richieste: {c.requests}")
-    return {"universita_id": uid, "descrizione": "Generato da corsi.unige.it (adapters/unige.py)",
+    return {"universita_id": uid, "descrizione": "Generato da corsi.unige.it e dal Manifesto degli studi (adapters/unige.py)",
             "generato_il": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "corsi": out, "canali": []}

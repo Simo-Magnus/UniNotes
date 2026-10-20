@@ -1305,6 +1305,10 @@
      "stato_esami": "da_aggiungere"
     }
    ],
+   "curricula": [
+    "Innovazione sostenibile",
+    "Sicurezza digitale"
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -1314,10 +1318,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10464",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Innovazione sostenibile",
-    "Sicurezza digitale"
-   ],
    "codice_ateneo": "425R",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10464"
   },
@@ -7664,6 +7664,10 @@
      ]
     }
    ],
+   "curricula": [
+    "Informatica - Curriculum \"Computer science\"",
+    "Informatica - Curriculum \"Software technologies\""
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -7673,10 +7677,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10438",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Informatica - Curriculum \"Computer science\"",
-    "Informatica - Curriculum \"Software technologies\""
-   ],
    "codice_ateneo": "411R",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10438"
   },
@@ -9525,6 +9525,10 @@
      "stato_esami": "da_aggiungere"
     }
    ],
+   "curricula": [
+    "Ingegneria medica curriculum biomedico",
+    "Ingegneria medica curriculum strutture sanitarie"
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -9534,10 +9538,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10462",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Ingegneria medica curriculum biomedico",
-    "Ingegneria medica curriculum strutture sanitarie"
-   ],
    "codice_ateneo": "421R",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10462"
   },
@@ -13265,6 +13265,10 @@
      "stato_esami": "completo"
     }
    ],
+   "curricula": [
+    "Curriculum Archeologico-artistico",
+    "Curriculum Storico-linguistico-letterario"
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -13274,10 +13278,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10461",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Curriculum Archeologico-artistico",
-    "Curriculum Storico-linguistico-letterario"
-   ],
    "codice_ateneo": "415R",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10461"
   },
@@ -16025,6 +16025,10 @@
      "stato_esami": "completo"
     }
    ],
+   "curricula": [
+    "Scienze Turistiche - ET",
+    "Scienze Turistiche - TSL"
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -16034,10 +16038,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10441",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Scienze Turistiche - ET",
-    "Scienze Turistiche - TSL"
-   ],
    "codice_ateneo": "429",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10441"
   },
@@ -21339,6 +21339,11 @@
      "stato_esami": "completo"
     }
    ],
+   "curricula": [
+    "Produzioni animali",
+    "Produzioni vegetali",
+    "Scienze forestali"
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -21348,11 +21353,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10440",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Produzioni animali",
-    "Produzioni vegetali",
-    "Scienze forestali"
-   ],
    "codice_ateneo": "420R",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10440"
   },
@@ -25623,6 +25623,10 @@
      "stato_esami": "completo"
     }
    ],
+   "curricula": [
+    "Scienze dell'amministrazione e dell'organizzazione",
+    "Scienze politiche e delle relazioni internazionali"
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -25632,10 +25636,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10456",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Scienze dell'amministrazione e dell'organizzazione",
-    "Scienze politiche e delle relazioni internazionali"
-   ],
    "codice_ateneo": "431",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10456"
   },
@@ -31369,6 +31369,55 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "1412R025",
+     "nome": "Laboratorio di Fitogeografia",
+     "anno": 2,
+     "periodo": "1",
+     "periodo_inizio": "01/10/2026 00:00:00",
+     "periodo_fine": "29/01/2027 00:00:00",
+     "cfu": 6,
+     "ssd": "BIOS-01/C",
+     "obbligatorio": false,
+     "curriculum": "Indirizzo A",
+     "docenti": [
+      "Di Marzio Piera"
+     ],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2026/31313006/2025/9999?coorte=2025",
+     "libri": [
+      {
+       "titolo": "Guida allo studio della flora e della vegetazione",
+       "autori": "Ubaldi D.",
+       "editore": "CLUEB",
+       "anno": 2012,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unimol.coursecatalogue.cineca.it/insegnamenti/2026/31313006/2025/9999?coorte=2025)",
+       "citazione": "Ubaldi D., Guida allo studio della flora e della vegetazione, CLUEB, Bologna, 2012."
+      },
+      {
+       "titolo": "Ulteriore materiale fornito a lezione (dispense, articoli su riviste scientifiche ecc.).",
+       "autori": null,
+       "editore": "Ulteriore materiale fornito a lezione (dispense",
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": "Dal programma dell'a.a. 2026/27 (altra coorte) dello stesso insegnamento (https://unimol.coursecatalogue.cineca.it/insegnamenti/2026/31313006/2025/9999?coorte=2025)",
+       "citazione": "Ulteriore materiale fornito a lezione (dispense, articoli su riviste scientifiche ecc.)."
+      }
+     ],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unimol-lm-6-biologia-1412r025-a2",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": "1412R020",
      "nome": "Macromolecole Biologiche",
      "anno": 2,
@@ -31563,6 +31612,10 @@
      "stato_esami": "da_aggiungere"
     }
    ],
+   "curricula": [
+    "Indirizzo A",
+    "Indirizzo B"
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -31572,10 +31625,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10435",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Indirizzo A",
-    "Indirizzo B"
-   ],
    "codice_ateneo": "1412R",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10435"
   },
@@ -32251,6 +32300,10 @@
      "stato_esami": "da_aggiungere"
     }
    ],
+   "curricula": [
+    "Indirizzo Biomedico",
+    "Indirizzo Strutture sanitarie"
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -32260,10 +32313,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10453",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Indirizzo Biomedico",
-    "Indirizzo Strutture sanitarie"
-   ],
    "codice_ateneo": "1424R",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10453"
   },
@@ -34089,6 +34138,10 @@
      "stato_esami": "da_aggiungere"
     }
    ],
+   "curricula": [
+    "Politico istituzionale",
+    "Relazioni internazionali e comunicazione politica"
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -34098,10 +34151,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10445",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Politico istituzionale",
-    "Relazioni internazionali e comunicazione politica"
-   ],
    "codice_ateneo": "1432",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10445"
   },
@@ -35766,6 +35815,10 @@
      "stato_esami": "completo"
     }
    ],
+   "curricula": [
+    "Curriculum Archeologico-artistico",
+    "Curriculum Filologico-Letterario"
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -35775,10 +35828,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10449",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Curriculum Archeologico-artistico",
-    "Curriculum Filologico-Letterario"
-   ],
    "codice_ateneo": "1418R",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10449"
   },
@@ -37800,6 +37849,10 @@
      "stato_esami": "completo"
     }
    ],
+   "curricula": [
+    "Consulenza d'azienda",
+    "Management e imprenditorialità (Management and entrepreneurship)"
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -37809,10 +37862,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10455",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Consulenza d'azienda",
-    "Management e imprenditorialità (Management and entrepreneurship)"
-   ],
    "codice_ateneo": "1427R",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10455"
   },
@@ -40093,6 +40142,10 @@
      "stato_esami": "da_aggiungere"
     }
    ],
+   "curricula": [
+    "Indirizzo Contesti educativi",
+    "Indirizzo Contesti giuridico forensi"
+   ],
    "ammissione": {
     "accesso": "programmato",
     "requisiti": "Titolo di Scuola Superiore",
@@ -40102,10 +40155,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10496",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Indirizzo Contesti educativi",
-    "Indirizzo Contesti giuridico forensi"
-   ],
    "codice_ateneo": "1437",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10496"
   },
@@ -47865,6 +47914,10 @@
      ]
     }
    ],
+   "curricula": [
+    "Sicurezza dei Sistemi Software - Curriculum \"Advanced methods and techniques\"",
+    "Sicurezza dei Sistemi Software - Curriculum \"Digital policy and governance\""
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -47874,10 +47927,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10450",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Sicurezza dei Sistemi Software - Curriculum \"Advanced methods and techniques\"",
-    "Sicurezza dei Sistemi Software - Curriculum \"Digital policy and governance\""
-   ],
    "codice_ateneo": "1421R",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10450"
   },
@@ -49673,6 +49722,468 @@
      "stato_esami": "da_aggiungere"
     },
     {
+     "codice": "1430036",
+     "nome": "Comparazione Giuridica e Uniformazione del Diritto",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/02",
+     "obbligatorio": false,
+     "curriculum": "Diritto e internazionalizzazione",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312875/2025/10002?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430036-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430030",
+     "nome": "Diritto Agrario e delle Risorse Territoriali ed Energetiche",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/03",
+     "obbligatorio": false,
+     "curriculum": "Pubblica amministrazione per la tutela dell’ambiente, del territorio e delle risorse energetiche",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312869/2025/10000?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430030-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430031",
+     "nome": "Diritto Bancario",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/05",
+     "obbligatorio": false,
+     "curriculum": "Diritto, economia e impresa",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312870/2025/10001?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430031-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430039",
+     "nome": "Diritto Commerciale Dell'unione Europea",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/04",
+     "obbligatorio": false,
+     "curriculum": "Diritto e internazionalizzazione",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312878/2025/10002?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430039-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430025",
+     "nome": "Diritto Dell'ambiente e Dell'energia",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/20",
+     "obbligatorio": false,
+     "curriculum": "Pubblica amministrazione per la tutela dell’ambiente, del territorio e delle risorse energetiche",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312864/2025/10000?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430025-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430047",
+     "nome": "Diritto Dell'esecuzione Civile",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/15",
+     "obbligatorio": false,
+     "curriculum": "Forense",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312886/2025/10004?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430047-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430048",
+     "nome": "Diritto Dell'esecuzione Penale",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/16",
+     "obbligatorio": false,
+     "curriculum": "Forense",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312887/2025/10004?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430048-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430043",
+     "nome": "Diritto Dell'immigrazione",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/09",
+     "obbligatorio": false,
+     "curriculum": "Società e diritto",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312882/2025/10003?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430043-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430034",
+     "nome": "Diritto Penale Dell'economia",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/17",
+     "obbligatorio": false,
+     "curriculum": "Diritto, economia e impresa",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312873/2025/10001?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430034-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430050",
+     "nome": "Diritto Penale del Lavoro",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/17",
+     "obbligatorio": false,
+     "curriculum": "Forense",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312889/2025/10004?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430050-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430037",
+     "nome": "Diritto Privato Europeo",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/02",
+     "obbligatorio": false,
+     "curriculum": "Diritto e internazionalizzazione",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312876/2025/10002?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430037-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430038",
+     "nome": "Diritto Processule Dell'unione Europea",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/14",
+     "obbligatorio": false,
+     "curriculum": "Diritto e internazionalizzazione",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312877/2025/10002?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430038-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430032",
+     "nome": "Diritto Sindacale",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/07",
+     "obbligatorio": false,
+     "curriculum": "Diritto, economia e impresa",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312871/2025/10001?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430032-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430042",
+     "nome": "Diritto dei Consumatori",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/01",
+     "obbligatorio": false,
+     "curriculum": "Società e diritto",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312881/2025/10003?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430042-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430029",
+     "nome": "Diritto dei Contratti Pubblici",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/10",
+     "obbligatorio": false,
+     "curriculum": "Pubblica amministrazione per la tutela dell’ambiente, del territorio e delle risorse energetiche",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312868/2025/10000?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430029-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430045",
+     "nome": "Diritto dei Trasporti",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/06",
+     "obbligatorio": false,
+     "curriculum": "Forense",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312884/2025/10004?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430045-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430027",
+     "nome": "Diritto del Mercato e dei Servizi Pubblici",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/09",
+     "obbligatorio": false,
+     "curriculum": "Pubblica amministrazione per la tutela dell’ambiente, del territorio e delle risorse energetiche",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312866/2025/10000?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430027-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430026",
+     "nome": "Diritto del Territorio ed del Paesaggio",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/10",
+     "obbligatorio": false,
+     "curriculum": "Pubblica amministrazione per la tutela dell’ambiente, del territorio e delle risorse energetiche",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312865/2025/10000?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430026-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430033",
+     "nome": "Diritto della Crisi e Dell'insolvenza",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/04",
+     "obbligatorio": false,
+     "curriculum": "Diritto, economia e impresa",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312872/2025/10001?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430033-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430028",
+     "nome": "Diritto delle Autonomie",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/08",
+     "obbligatorio": false,
+     "curriculum": "Pubblica amministrazione per la tutela dell’ambiente, del territorio e delle risorse energetiche",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312867/2025/10000?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430028-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430040",
+     "nome": "Diritto di Famiglia",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/01",
+     "obbligatorio": false,
+     "curriculum": "Società e diritto",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312879/2025/10003?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430040-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
      "codice": null,
      "nome": "Esame a scelta (5° anno)",
      "anno": 5,
@@ -49689,6 +50200,94 @@
      "verificato_il": "2026-10-20",
      "id": "unimol-lmg-01-giurisprudenza-esame-a-scelta-5-anno",
      "stato_libri": "da_aggiungere",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430044",
+     "nome": "Giustizia Costituzionale",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/08",
+     "obbligatorio": false,
+     "curriculum": "Forense",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312883/2025/10004?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430044-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430035",
+     "nome": "International Trade Law",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/02",
+     "obbligatorio": false,
+     "curriculum": "Diritto e internazionalizzazione",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312874/2025/10002?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430035-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430049",
+     "nome": "Procedura Penale Europea",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/16",
+     "obbligatorio": false,
+     "curriculum": "Forense",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312888/2025/10004?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430049-a5",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430046",
+     "nome": "Processo del Lavoro",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "IUS/07",
+     "obbligatorio": false,
+     "curriculum": "Forense",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312885/2025/10004?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430046-a5",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -49711,6 +50310,28 @@
      "stato_libri": "da_aggiungere",
      "modalita_esame": "orale",
      "id": "unimol-lmg-01-giurisprudenza-1430052",
+     "stato_esami": "da_aggiungere"
+    },
+    {
+     "codice": "1430041",
+     "nome": "Sociologia Giuridica e della Devianza",
+     "anno": 5,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 6,
+     "ssd": "SPS/12",
+     "obbligatorio": false,
+     "curriculum": "Società e diritto",
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2029/31312880/2025/10003?coorte=2025",
+     "libri": [],
+     "esami": [],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "da_aggiungere",
+     "modalita_esame": "orale",
+     "id": "unimol-lmg-01-giurisprudenza-1430041-a5",
      "stato_esami": "da_aggiungere"
     },
     {
@@ -49812,6 +50433,13 @@
      "stato_esami": "completo"
     }
    ],
+   "curricula": [
+    "Diritto e internazionalizzazione",
+    "Diritto, economia e impresa",
+    "Forense",
+    "Pubblica amministrazione per la tutela dell’ambiente, del territorio e delle risorse energetiche",
+    "Società e diritto"
+   ],
    "ammissione": {
     "accesso": "libero",
     "requisiti": "Titolo di Scuola Superiore",
@@ -49821,13 +50449,6 @@
     "fonte": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10443",
     "verificato_il": "2026-10-20"
    },
-   "curricula": [
-    "Diritto e internazionalizzazione",
-    "Diritto, economia e impresa",
-    "Forense",
-    "Pubblica amministrazione per la tutela dell’ambiente, del territorio e delle risorse energetiche",
-    "Società e diritto"
-   ],
    "codice_ateneo": "1430",
    "url_catalogo": "https://unimol.coursecatalogue.cineca.it/corsi/2026/10443"
   },
@@ -52597,6 +53218,102 @@
      "stato_libri": "completo",
      "modalita_esame": "orale",
      "id": "unimol-lm-41-medicina-e-chirurgia-1455323",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "1455312",
+     "nome": "Tpves Area Chirurgica",
+     "anno": 6,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 5,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2026/31310359/2017/9999?coorte=2021",
+     "libri": [
+      {
+       "titolo": "Contattare i docenti di riferimento.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Contattare i docenti di riferimento."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-20",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "KOMICI KLARA DELL'OMO ROBERTO",
+       "note": null,
+       "fonte": "https://unimol.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unimol-lm-41-medicina-e-chirurgia-1455312-a6",
+     "stato_esami": "completo"
+    },
+    {
+     "codice": "1455311",
+     "nome": "Tpves Area Medica",
+     "anno": 6,
+     "periodo": null,
+     "periodo_inizio": null,
+     "periodo_fine": null,
+     "cfu": 5,
+     "ssd": "NN",
+     "obbligatorio": false,
+     "curriculum": null,
+     "docenti": [],
+     "url": "https://unimol.coursecatalogue.cineca.it/insegnamenti/2026/31310358/2017/9999?coorte=2021",
+     "libri": [
+      {
+       "titolo": "Contattare i docenti di riferimento.",
+       "autori": null,
+       "editore": null,
+       "anno": null,
+       "edizione": null,
+       "isbn": null,
+       "lingua": null,
+       "tipo": null,
+       "note": null,
+       "citazione": "Contattare i docenti di riferimento."
+      }
+     ],
+     "esami": [
+      {
+       "tipo": "appello",
+       "data": "2026-10-05",
+       "ora": "09:00",
+       "luogo": null,
+       "modalita": "orale",
+       "iscrizioni_dal": "2026-09-20",
+       "iscrizioni_al": "2026-09-30",
+       "docenti": "KOMICI KLARA DELL'OMO ROBERTO",
+       "note": null,
+       "fonte": "https://unimol.esse3.cineca.it/ListaAppelliOfferta.do"
+      }
+     ],
+     "fonte": "https://unimol.coursecatalogue.cineca.it",
+     "verificato_il": "2026-10-20",
+     "stato_libri": "completo",
+     "modalita_esame": "orale",
+     "id": "unimol-lm-41-medicina-e-chirurgia-1455311-a6",
      "stato_esami": "completo"
     },
     {

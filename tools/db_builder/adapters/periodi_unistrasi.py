@@ -26,7 +26,7 @@ SOGLIA_X = 455  # le X del I semestre sono a x~390-420, quelle del II a x~495-50
 
 
 def _n(t: str) -> str:
-    t = re.sub(r"\(\s*\d+\s*cfu\s*\)|\(\s*tace\s*\)|traduzione lingua|cfu totali", lambda m: "traduzione" if "traduzione" in m.group(0) else "", t or "", flags=re.I)
+    t = re.sub(r"\(\s*\d+\s*cfu\s*\)|\(\s*tace\s*\)|\btraduzione lingua\b|\bcfu totali\b", lambda m: "traduzione" if "traduzione" in m.group(0) else "", t or "", flags=re.I)
     t = unicodedata.normalize("NFKD", t or "").encode("ascii", "ignore").decode().lower()
     return re.sub(r"[^a-z0-9]+", "", t)
 

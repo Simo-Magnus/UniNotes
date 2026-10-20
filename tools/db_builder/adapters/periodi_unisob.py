@@ -63,8 +63,12 @@ def fetch_periodi(uid: str = "unisob", log=print) -> dict:
         n = _norm(corso["nome"])
         punti = sorted(((difflib.SequenceMatcher(None, n, _norm(o[2])).ratio(), o) for o in opzioni), reverse=True)
         if not (punti and punti[0][0] >= 0.75 and (len(punti) == 1 or punti[0][0] - punti[1][0] > 0.05)):
-            log(f"[{uid}] corso senza abbinamento nel LePrE: {corso['nome']}")
-            continue
+            # «Conservazione e restauro dei beni culturali (abilitante …)» = «Conservazione e Restauro dei Beni Culturali»
+            pref = [o for o in opzioni if len(_norm(o[2])) >= 20 and n.startswith(_norm(o[2]))]
+            if len(pref) != 1:
+                log(f"[{uid}] corso senza abbinamento nel LePrE: {corso['nome']}")
+                continue
+            punti = [(1.0, pref[0])]
         d, v, nome = punti[0][1]
         base = BASE.format(d)
         pagina = _scarica(c, base + "lezioni.asp?vr=1&mod=el", {"R1": v, "R3": "0", "R4": "0", "R5": "1", "R2": "1"})

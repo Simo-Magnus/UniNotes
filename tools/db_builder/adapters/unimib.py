@@ -28,6 +28,7 @@ import time
 import unicodedata
 
 from .unibo import Client, _testo
+from .unimib_piani import integra as integra_piano
 from .unimib_testi import libri_unimib, periodo
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
@@ -92,6 +93,13 @@ def leggi_syllabus(s: str) -> dict:
             "docenti": sorted({_testo(d) for d in docenti if _testo(d)})}
 
 
+def _cfu_testo(s: str) -> int | None:
+    """CFU dichiarati nel testo libero della scheda quando l'elenco Moodle non li ha
+    («…garantiscono l'acquisizione di 2CFU»: corsi di livellamento di Scienze statistiche ed economiche)."""
+    m = re.search(r"acquisizione di\s*(\d+)\s*CFU", _testo(s))
+    return int(m.group(1)) if m else None
+
+
 def _tipo(titolo: str) -> str | None:
     t = titolo.lower()
     if "ciclo unico" in t:
@@ -107,7 +115,7 @@ def _ad_norm(titolo: str) -> str:
     """Titolo dell'attività nel calendario esami senza i suffissi del gestionale:
     «FISICA II - I MODULO -  Modulo di corso integrato - T1», «DIRITTO PENALE A-L», «LINGUA ARABA II - Integrato»."""
     t = re.sub(r"\([^)]*\)", "", (titolo or "").replace(" ", " "))
-    t = re.split(r"\s+-\s+(?=(?:[IVX]+\s+)?(?:modulo|integrato|tu|t\d|turno|frontale|lab))", t, flags=re.I)[0]
+    t = re.split(r"\s+-\s+(?=(?:[IVX]+\s+)?(?:modulo|integrato|tu\b|t\d|turno|frontale|lab))", t, flags=re.I)[0]
     t = re.sub(r"\s+(?:[A-Z]-[A-Z]|T\d|TU\w*)$", "", t.strip())
     return _norm(t)
 
@@ -216,6 +224,8 @@ def piano_categoria(c: Client, cat: dict, anno: int, log=print) -> list[dict]:
                 k = int(m.group(1))
                 ry = c.get(f"{BASE}/course/index.php?categoryid={y_cat}&perpage=1000")
                 for x in corsi_moodle(ry.text) if ry else []:
+                    if x["cfu"] == 0:  # corsi di orientamento e simili a 0 CFU (la scheda dice «CFU 0»): non sono insegnamenti del piano
+                        continue
                     ad = re.match(r"\d{4}-\d-(\w+)$", x["codice"] or "")
                     righe.append({"anno": k, "nome": x["nome"], "codice": ad.group(1) if ad else x["codice"],
                                   "cfu": x["cfu"], "url": x["url"],
@@ -240,16 +250,33 @@ def fetch_ateneo(uid: str = "unimib", anno: int | None = None, max_cds: int | No
 
     def build(coppia) -> dict | None:
         corso, categorie = coppia
-        righe: dict[tuple[int, str], dict] = {}
+        righe: dict[tuple[int, str, str | None], dict] = {}
+        nomi_visti: set[tuple[int, str]] = set()  # (anno, nome) già letti da una categoria precedente
         for cat in categorie:  # prima la categoria senza sede, poi Monza, poi le altre sedi
+            nomi_cat: set[tuple[int, str]] = set()
             for x in piano_categoria(c, cat, anno, log):
-                key = (x["anno"], _norm(x["nome"]))
+                # lo stesso insegnamento in più categorie (sede, nome vecchio) si tiene una volta sola; in una stessa
+                # categoria due corsi con lo stesso nome e codici diversi (es. «Strategic Management» da 11 e da 14 CFU) restano due
+                if (x["anno"], _norm(x["nome"])) in nomi_visti:
+                    continue
+                nomi_cat.add((x["anno"], _norm(x["nome"])))
+                key = (x["anno"], _norm(x["nome"]), x["codice"])
                 righe.setdefault(key, {
                     "codice": x["codice"], "nome": x["nome"], "anno": x["anno"],
                     "periodo": None, "cfu": x["cfu"], "ssd": None, "obbligatorio": None,
                     "curriculum": None, "docenti": [], "url": x["url"], "libri": [], "esami": [],
                     "fonte": x["fonte"], "verificato_il": oggi,
                 })
+            nomi_visti |= nomi_cat
+        # lo stesso corso Moodle (stesso codice) elencato in più anni del piano è un'offerta a scelta (corsi elettivi,
+        # tirocini e seminari offerti in due anni consecutivi): non è obbligatorio in nessuno dei due
+        anni_codice: dict[str, set[int]] = {}
+        for (a, _n, cod), r in righe.items():
+            if cod:
+                anni_codice.setdefault(cod, set()).add(a)
+        for (a, _n, cod), r in righe.items():
+            if cod and len(anni_codice[cod]) > 1:
+                r["obbligatorio"] = False
         if not righe:
             return None
         return {"id": corso["id"], "nome": corso["nome"], "classe": corso.get("classe"),
@@ -284,6 +311,7 @@ def fetch_ateneo(uid: str = "unimib", anno: int | None = None, max_cds: int | No
             if not r:
                 return 0
             sy = leggi_syllabus(r.text)
+            cfu_t = _cfu_testo(r.text)
             if not sy["libri"]:
                 # insegnamento integrato: il syllabus rinvia a quelli dei moduli (corsi Moodle elencati nella
                 # stessa pagina, con codice «<insegnamento>-<modulo>»); i loro testi valgono per l'insegnamento
@@ -296,6 +324,8 @@ def fetch_ateneo(uid: str = "unimib", anno: int | None = None, max_cds: int | No
                                 b["note"] = f"Dal syllabus del modulo «{nome_m}»"
                                 sy["libri"].append(b)
             for it in jobs[url]:
+                if it.get("cfu") is None and cfu_t:
+                    it["cfu"] = cfu_t
                 it["periodo"] = sy["periodo"]
                 it["docenti"] = sy["docenti"]
                 it["libri"] = sy["libri"]
@@ -312,6 +342,20 @@ def fetch_ateneo(uid: str = "unimib", anno: int | None = None, max_cds: int | No
                 if n % 500 == 0:
                     log(f"[{uid}]   syllabus {n}/{len(jobs)}")
     log(f"[{uid}] libri trovati: {trovati}; richieste: {c.requests}")
+    for corso in out:
+        if syllabus:  # scheda vuota senza CFU, docenti, periodo né testi: attività senza crediti (es. «Laboratorio Orientarsi»)
+            corso["insegnamenti"] = [i for i in corso["insegnamenti"] if not (
+                i["cfu"] is None and not i["libri"] and not i["docenti"] and not i["periodo"])]
+        # due corsi con lo stesso nome e CFU diversi nello stesso anno sono alternative distinte (es. «Strategic Management»
+        # da 11 e da 14 CFU, «Industrial Organization» da 9 e da 6): il nome dice quale
+        per_nome: dict[tuple[int, str], list[dict]] = {}
+        for i in corso["insegnamenti"]:
+            per_nome.setdefault((i["anno"], _norm(i["nome"])), []).append(i)
+        for gruppo in per_nome.values():
+            if len(gruppo) > 1 and len({i["cfu"] for i in gruppo}) == len(gruppo) and all(i["cfu"] is not None for i in gruppo):
+                for i in gruppo:
+                    i["nome"] = f"{i['nome']} ({i['cfu']:g} CFU)"
+        integra_piano(corso, oggi, log)  # voci del piano didattico che Moodle non ha (lingua, scelta, tesi, 2° anno delle LM)
     if appelli:
         try:
             n = attacca_appelli(out, cds, anno, log)

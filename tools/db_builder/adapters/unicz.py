@@ -103,7 +103,7 @@ def _nk(s: str | None) -> str:
     scelta» e i CFU nel nome, che cambiano da una scheda all'altra dello stesso insegnamento."""
     n = _nn(s)
     n = re.sub(r"^c i ", "", n)
-    n = re.sub(r"(?:materia )?a scelta|\d+ cfu", " ", n)
+    n = re.sub(r"\b(?:materia )?a scelta\b|\b\d+ cfu\b", " ", n)
     return re.sub(r"\s+", " ", n).strip()
 
 

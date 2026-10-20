@@ -8,6 +8,12 @@
   STATUTARIO</option>`, la classe e il profilo) e per ciascuno una tabella
   (`v-show="selectedPianoDiStudi === '677'"`) con anno, insegnamento (link al programma),
   SSD ("SECS-P/01 (ECON-01/A)": tra parentesi il settore nuovo) e CFU;
+- Mercatorum (`_fetch_mercatorum`): un piano per curriculum (Statutario, Profilo …, coppie di lingue), ogni riga
+  della tabella è una riga del corso: le righe omonime dello stesso anno («Insegnamento a scelta affine» due
+  volte) restano distinte (numero o «(N CFU)» nel nome), la stessa riga in più piani è una riga sola con i
+  curricula; ogni piano somma 180 CFU (120 le magistrali), non sempre 60 per anno. Docenti e libri già raccolti
+  si riusano, si scaricano solo i programmi mai provati. Pegaso e San Raffaele Roma usano `fetch_ateneo` e le
+  funzioni di lettura qui sotto, rimaste identiche;
 - programma (`/programma/<codice>`, PDF) → "DOCENTE" e, in "MATERIALE DIDATTICO UTILIZZATO",
   il testo di riferimento suggerito dal docente (facoltativo, quindi consigliato).
 """
@@ -144,12 +150,212 @@ def leggi_programma(data: bytes) -> dict:
     return {"docenti": docenti, "libri": libri}
 
 
+_ACCENTI = {"a": "à", "e": "è", "i": "ì", "o": "ò", "u": "ù"}
+_PICCOLE = {"e", "di", "del", "della", "dei", "delle", "degli", "per", "in", "con", "da", "a", "al", "alla", "il",
+            "la", "lo", "le", "gli", "i", "ed", "nel", "nella", "sul", "tra", "dell", "dello", "nei", "ai", "alle", "o"}
+_SIGLE = {"rcs", "p.a."}
+# la classe «L-GASTR» sulla pagina del corso è «L/GASTR» per Universitaly
+CLASSE_MERCATORUM = re.compile(r"\b(L(?:M)?(?:-|/)[\w/-]*\d[\w]*|LMG/01|L[-/]GASTR)\b")
+
+
+def _classe(s: str) -> str:
+    return s.replace("L-GASTR", "L/GASTR")
+
+
+def _nome(s: str) -> str:
+    """Nome di un insegnamento: senza barre inverse, accento al posto dell'apostrofo finale
+    (`Abilita'` -> `Abilità`), spazi singoli."""
+    s = s.replace("\\", "")
+    s = re.sub(r"([A-Za-z]*[aeiou])'(?=\s|$|[,.;:)])",
+               lambda m: m.group(1)[:-1] + _ACCENTI[m.group(1)[-1].lower()], s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def _maiuscole(s: str) -> str:
+    """Etichetta in maiuscolo -> iniziali maiuscole, con le parole piccole in minuscolo e le sigle (RCS, P.A.)."""
+    out = []
+    for k, w in enumerate(s.lower().split()):
+        sub = re.match(r"(\w+')(\w.*)", w)  # «l'investigazione»: l'articolo resta minuscolo
+        if w in _SIGLE:
+            out.append(w.upper())
+        elif sub and sub.group(1) != w:
+            out.append(sub.group(1) + sub.group(2)[:1].upper() + sub.group(2)[1:])
+        elif k and w in _PICCOLE:
+            out.append(w)
+        else:
+            out.append("/".join("-".join(y[:1].upper() + y[1:] for y in x.split("-")) for x in w.split("/")))
+    return " ".join(out)
+
+
+def etichetta_piano(lab: str) -> str:
+    """«L-20 - PROFILO COMUNICAZIONE E SOCIAL MEDIA PER LA P.A.» -> «Profilo Comunicazione e Social Media per la
+    P.A.»; «L-12 - CINESE/FRANCESE» -> «Cinese/Francese». Le virgole dentro un nome (percorsi() separa i
+    percorsi sulle virgole) sono trattini."""
+    lab = re.sub(r"\s+", " ", lab.replace("\\", "")).strip()
+    resto = re.sub(r"^\s*L(?:M)?[-/]?[\w/]*\s+-\s*", "", lab)
+    resto = resto.replace(", ", " - ")
+    if resto.isupper():
+        resto = _maiuscole(resto)
+    return _nome(resto)
+
+
+def _righe_corso(piani: dict[str, list[dict]], url: str, oggi: str) -> list[dict]:
+    """Righe del corso: una per (anno, nome, CFU, codice, n-esima occorrenza nel piano); curriculum = i piani in
+    cui compare. Le righe omonime dello stesso anno («Insegnamento a scelta affine» due volte) restano distinte."""
+    righe: dict[tuple, dict] = {}
+    for k, voci in piani.items():
+        visti: dict[tuple, int] = {}
+        for v in voci:
+            nome = _nome(v["nome"])
+            base = (v["anno"], _norm(nome), v["cfu"], v["url"])
+            visti[base] = visti.get(base, 0) + 1
+            key = base + (visti[base],)
+            item = righe.get(key)
+            if not item:
+                item = righe[key] = {
+                    "codice": v["url"].rsplit("/", 1)[-1] if v["url"] else None, "nome": _titolo(nome),
+                    "anno": v["anno"], "periodo": None, "cfu": v["cfu"], "ssd": v["ssd"],
+                    "obbligatorio": False if re.search(r"(?i)a scelta", nome) else None,
+                    "curriculum": None, "docenti": [], "url": v["url"] or url, "libri": [], "esami": [],
+                    "fonte": url, "verificato_il": oggi, "stato_libri": "da_aggiungere", "_p": set(), "_n": key,
+                }
+            item["_p"].add(k)
+    # righe omonime nello stesso anno senza codice: nomi distinti (build_db fonde i nomi uguali)
+    per_nome: dict[tuple, list[dict]] = {}
+    for i in righe.values():
+        per_nome.setdefault((i["anno"], _norm(i["nome"])), []).append(i)
+    for gruppo in per_nome.values():
+        if len(gruppo) < 2:
+            continue
+        gruppo.sort(key=lambda i: (i["cfu"] or 0, i["_n"][4], sorted(i["_p"])))
+        cfu_diversi = len({i["cfu"] for i in gruppo}) > 1
+        per_cfu: dict = {}
+        for i in gruppo:
+            per_cfu.setdefault(i["cfu"], []).append(i)
+        for cfu, stesse in per_cfu.items():
+            for n, i in enumerate(stesse, 1):
+                if i["codice"]:
+                    continue  # l'id viene dal codice
+                suff = f" {n}" if len(stesse) > 1 else ""
+                if cfu_diversi and isinstance(cfu, (int, float)):
+                    suff += f" ({cfu:g} CFU)"
+                i["nome"] += suff
+    return list(righe.values())
+
+
+def _vecchi(uid: str) -> tuple[dict[str, dict], set[str]]:
+    """Docenti e libri già raccolti, per url della scheda, e gli url già provati (contributi precedenti)."""
+    dati: dict[str, dict] = {}
+    provati: set[str] = set()
+    d = ROOT / "database" / "contrib" / "auto"
+    for nome in (f"{uid}.json", f"{uid}_piani.json"):
+        try:
+            doc = json.loads((d / nome).read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        for c in doc.get("corsi") or []:
+            for i in c.get("insegnamenti") or []:
+                if not i.get("url"):
+                    continue
+                if nome == f"{uid}.json":
+                    provati.add(i["url"])
+                if i.get("libri") or i.get("docenti"):
+                    dati.setdefault(i["url"], {"docenti": i.get("docenti") or [], "libri": i.get("libri") or []})
+    return dati, provati
+
+
+def _fetch_mercatorum(uid: str, corsi: list[dict], syllabus: bool, log, max_cds: int | None) -> dict:
+    """Piani di studio di www.unimercatorum.it: un piano per curriculum (Statutario, Profilo …, coppie di
+    lingue), ogni riga della tabella come riga del corso. Docenti e libri già raccolti si riusano; si
+    scaricano solo i programmi mai provati."""
+    c = Client(rate=4.0)
+    oggi = time.strftime("%Y-%m-%d")
+    r = c.get(BASE + "/corsi-di-laurea")
+    pagine = sorted({h.split("#")[0] for h in re.findall(rf'href="({ELENCO})', r.text if r else "")})
+    sito = []
+    for u in pagine:
+        rc = c.get(u)
+        if not rc:
+            continue
+        titolo, piani = leggi_corso(rc.text)
+        classi = {_classe(m.group(1)) for k in list(piani) + [titolo or ""] for m in CLASSE_MERCATORUM.finditer(k)}
+        if piani:
+            sito.append({"url": u, "titolo": titolo, "piani": piani, "classi": classi})
+    abbinati = []
+    for corso in corsi:
+        cand = [x for x in sito if corso.get("classe") in x["classi"]]
+        if len(cand) > 1:
+            cand = [x for x in cand if _norm(corso["nome"]) in _norm(x["titolo"] or "")
+                    or _norm(x["titolo"] or "") in _norm(corso["nome"])] or \
+                   [x for x in cand if (corso["tipo"] == "LM") == ("magistrale" in x["url"])]
+        if len(cand) == 1:
+            abbinati.append((corso, cand[0]))
+    if max_cds:
+        abbinati = abbinati[:max_cds]
+    log(f"[{uid}] {len(sito)} corsi sul sito, {len(abbinati)} associati (su {len(corsi)})")
+    out = []
+    for corso, x in abbinati:
+        etichette = {k: etichetta_piano(k) for k in x["piani"]}
+        righe = _righe_corso(x["piani"], x["url"], oggi)
+        for i in righe:
+            ps = i.pop("_p")
+            i.pop("_n")
+            if len(etichette) > 1 and ps != set(etichette):
+                i["curriculum"] = ", ".join(sorted(etichette[p] for p in ps))
+        out.append({"id": corso["id"], "nome": corso["nome"], "classe": corso.get("classe"),
+                    "durata_anni": corso.get("durata_anni"), "url": x["url"],
+                    "curricula": sorted(etichette.values()) if len(etichette) > 1 else None,
+                    "fonte": x["url"], "verificato_il": oggi, "insegnamenti": righe})
+    jobs: dict[str, list[dict]] = {}
+    for x in out:
+        for i in x["insegnamenti"]:
+            if re.search(r"/(?:programma|insegnamenti)/", i["url"] or ""):
+                jobs.setdefault(i["url"], []).append(i)
+    vecchi, provati = _vecchi(uid)
+    nuovi = {u for u in jobs if u not in provati}
+    log(f"[{uid}] {sum(len(x['insegnamenti']) for x in out)} insegnamenti; programmi: {len(jobs)} "
+        f"(già raccolti {sum(1 for u in jobs if u in vecchi)}, da scaricare {len(nuovi) if syllabus else 0})")
+
+    def programma(u: str) -> int:
+        d = {"docenti": [], "libri": []}
+        if syllabus and u in nuovi:
+            try:
+                with c.lock:
+                    c.requests += 1
+                rp = c.s.get(u, timeout=90)
+                if rp.content[:5] == b"%PDF-":
+                    d = leggi_programma(rp.content)
+                elif rp.ok and "html" in rp.headers.get("content-type", ""):
+                    d = leggi_insegnamento(rp.text)
+            except Exception:  # noqa: BLE001
+                d = {"docenti": [], "libri": []}
+        old = vecchi.get(u) or {}
+        if not d["libri"]:
+            d["libri"] = old.get("libri") or []
+        if not d["docenti"]:
+            d["docenti"] = old.get("docenti") or []
+        for i in jobs[u]:
+            i["docenti"] = d["docenti"]
+            i["libri"] = d["libri"]
+            i["stato_libri"] = "completo" if d["libri"] else "da_aggiungere"
+        return len(d["libri"])
+
+    with cf.ThreadPoolExecutor(4) as ex:
+        trovati = sum(ex.map(programma, list(jobs)))
+    log(f"[{uid}] libri: {trovati}; richieste: {c.requests}")
+    return {"universita_id": uid, "descrizione": "Generato da www.unimercatorum.it, piani di studio e programmi "
+                                                 "(adapters/unimercatorum.py)",
+            "generato_il": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "corsi": out, "canali": []}
+
+
 def fetch_ateneo(uid: str = "unimercatorum", anno: int | None = None, max_cds: int | None = None,
                  syllabus: bool = True, corsi: list[dict] | None = None, log=print, base: str = BASE,
                  elenco: str = ELENCO, pagina_elenco: str = "/corsi-di-laurea") -> dict:
     """Restituisce un contributo nel formato di database/contrib (vedi build_db.py)."""
     if corsi is None:
         corsi = json.loads((ROOT / "database" / "corsi" / f"{uid}.json").read_text(encoding="utf-8"))["corsi"]
+    if uid == "unimercatorum" and base == BASE:  # Mercatorum: un piano per curriculum (Pegaso resta com'era)
+        return _fetch_mercatorum(uid, corsi, syllabus, log, max_cds)
     c = Client(rate=4.0)
     oggi = time.strftime("%Y-%m-%d")
     r = c.get(base + pagina_elenco)

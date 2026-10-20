@@ -30,7 +30,7 @@ import re
 import time
 import unicodedata
 
-from . import cineca_catalogue, unich_testi
+from . import cineca_catalogue, unich_piani, unich_testi
 
 BASE = "https://unich.coursecatalogue.cineca.it"
 ESSE3 = "https://unich.esse3.cineca.it"
@@ -162,6 +162,22 @@ def _testi_syllabus(sy: dict):
     return mio or [b for b in libri if not unich_testi.e_prosa(b.get("citazione"))], modalita, legati
 
 
+def _libri_database() -> dict[str, dict]:
+    """Libri, modalità d'esame, SSD e sito già nel database per codice dell'insegnamento (nessuna nuova richiesta)."""
+    p = ROOT / "database" / "corsi" / "unich.json"
+    try:
+        doc = json.loads(p.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    out: dict[str, dict] = {}
+    for corso in doc.get("corsi") or []:
+        for i in corso.get("insegnamenti") or []:
+            cod = i.get("codice")
+            if cod and i.get("libri") and cod not in out:
+                out[cod] = {k: i.get(k) for k in ("libri", "modalita_esame", "ssd", "url_sito")}
+    return out
+
+
 def fetch_ateneo(uid: str = "unich", anno: int = 2026, max_cds: int | None = None, syllabus: bool = True,
                  log=print) -> dict:
     c = ClientCache()
@@ -207,12 +223,56 @@ def fetch_ateneo(uid: str = "unich", anno: int = 2026, max_cds: int | None = Non
                                            f"riporta la bibliografia")
         return []
 
-    cineca_catalogue._testi_syllabus = _testi_syllabus
-    try:
-        doc = cineca_catalogue.fetch_ateneo(uid, BASE, anno, max_cds=max_cds, syllabus=syllabus, log=log,
-                                            client=c, coorte_per_nome=True, libri_extra=libri_extra)
-    finally:
-        cineca_catalogue._testi_syllabus = _testi_originale
+    libri_noti = _libri_database()
+    corsi, jobs = unich_piani.fetch_piani(uid, anno, c, BASE, TIPI, log=log, max_cds=max_cds, con_syllabus=syllabus)
+
+    def do_syllabus(job: dict) -> int:
+        try:
+            return _do_syllabus(job)
+        except Exception:  # noqa: BLE001 - un syllabus illeggibile non ferma gli altri
+            return 0
+
+    def _do_syllabus(job: dict) -> int:
+        noto = libri_noti.get(job.get("codice"))
+        if noto and noto.get("libri"):  # libri già raccolti per questo codice: non si rileggono
+            for it in job["items"]:
+                it["libri"] = noto["libri"]
+                it["stato_libri"] = "completo"
+                for k_ in ("modalita_esame", "ssd", "url_sito"):
+                    if noto.get(k_):
+                        it[k_] = noto[k_]
+            return len(noto["libri"])
+        sy = c.get("/insegnamento", {k: v for k, v in job["params"].items() if v not in (None, "")})
+        if not isinstance(sy, dict):
+            return 0
+        libri, modalita, legati = _testi_syllabus(sy)
+        if not libri:  # estrazione propria dell'ateneo per i testi in forma libera
+            libri = libri_extra(sy)
+        if not libri:  # la bibliografia è su Leganto
+            for u in legati:
+                libri += cineca_catalogue.leganto.libri(u)
+        ssd = sy.get("ssd")
+        for it in job["items"]:
+            it["libri"] = libri
+            it["stato_libri"] = "completo" if libri else "da_aggiungere"
+            if modalita:
+                it["modalita_esame"] = modalita
+            if ssd:
+                it["ssd"] = ssd
+            if sy.get("urlSitoWeb"):
+                it["url_sito"] = sy["urlSitoWeb"].strip()
+        return len(libri)
+
+    trovati = 0
+    import concurrent.futures as cf
+    with cf.ThreadPoolExecutor(8) as ex:
+        for i, n in enumerate(ex.map(do_syllabus, jobs.values()), 1):
+            trovati += n
+            if i % 500 == 0:
+                log(f"[{uid}]   syllabus {i}/{len(jobs)}")
+    log(f"[{uid}] libri trovati: {trovati}; richieste: {c.requests}")
+    doc = {"universita_id": uid, "descrizione": f"Generato da {BASE} (Course Catalogue Cineca, adapters/unich_piani.py)",
+           "generato_il": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "corsi": corsi, "canali": []}
     log(f"[{uid}] corsi con id del database: {associa(doc['corsi'], log)}/{len(doc['corsi'])}")
     return doc
 
@@ -359,3 +419,30 @@ def fetch_appelli(uid: str, corsi: list[dict], log=print) -> dict[str, list[dict
                 v.append(e)
     log(f"[{uid}] appelli: {sum(len(v) for v in out.values())} date per {len(out)} insegnamenti")
     return out
+
+
+def main(argv: list[str]) -> int:
+    """Esecuzione locale: scrive `database/contrib/auto/unich.json` (o il file di `--out`) tenendo gli appelli già presenti.
+
+        python tools/db_builder/adapters/unich.py [--senza-syllabus] [--out file.json]
+    """
+    import sys as _s
+    doc = fetch_ateneo(syllabus="--senza-syllabus" not in argv)
+    out = pathlib.Path(argv[argv.index("--out") + 1]) if "--out" in argv else ROOT / "database" / "contrib" / "auto" / "unich.json"
+    vecchio_p = ROOT / "database" / "contrib" / "auto" / "unich.json"
+    try:
+        vecchio = json.loads(vecchio_p.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        vecchio = {}
+    doc["appelli"] = vecchio.get("appelli") or {}
+    doc["canali"] = vecchio.get("canali") or []
+    out.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"[unich] {len(doc['corsi'])} corsi scritti in {out} ({time.strftime('%H:%M:%S')})")
+    return 0
+
+
+if __name__ == "__main__":
+    import sys as _sys
+    if __package__ in (None, ""):
+        _sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+    _sys.exit(main(_sys.argv[1:]))
