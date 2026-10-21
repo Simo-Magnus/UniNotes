@@ -374,13 +374,14 @@ def riquadro_logo() -> tuple[float, float, float, float]:
 
 @lru_cache(maxsize=1)
 def centro_u() -> tuple[float, float]:
-    """Centro (unità dell'SVG) del riquadro della U: è il punto che va al
-    centro di ogni icona e anteprima. La U deve stare esattamente al centro;
-    il cappello sporge in alto a sinistra (nell'SVG approvato la U era 22
-    unità a destra e 35 in basso rispetto al centro del quadrato)."""
+    """Punto (unità dell'SVG) che va al centro di ogni icona e anteprima: in
+    orizzontale il centro della U (il cappello sporge a sinistra), in
+    verticale il centro di tutto il logo, cappello compreso (centrando la
+    sola U il logo risultava spostato in alto)."""
     p = [pt for c in _forma("lettera").contorni for pt in c]
-    xs, ys = [x for x, _ in p], [y for _, y in p]
-    return (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
+    xs = [x for x, _ in p]
+    _, y0, _, y1 = riquadro_logo()
+    return (min(xs) + max(xs)) / 2, (y0 + y1) / 2
 
 
 def raggio_da(centro: tuple[float, float]) -> float:
