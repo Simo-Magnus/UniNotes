@@ -119,10 +119,10 @@ class LocalNotificationPlatform implements NotificationPlatform {
       Platform.isWindows;
 
   /// Icona piccola (bianca, monocromatica; tools/genera_icona.py) e
-  /// azzurro dell'app: un azzurro medio, leggibile (nome dell'app e icona
-  /// colorati dal sistema) sia sulla tendina chiara sia su quella scura.
+  /// blu del logo (#0F72F2): leggibile (nome dell'app e icona colorati dal
+  /// sistema) sia sulla tendina chiara sia su quella scura.
   static const _icon = 'ic_stat_uninotes';
-  static const _accent = Color(0xFF0284C7);
+  static const _accent = Color(0xFF0F72F2);
 
   /// App non pacchettizzata su Windows: nome e identità fissi (il GUID
   /// registra l'attivazione al tocco anche ad app chiusa).

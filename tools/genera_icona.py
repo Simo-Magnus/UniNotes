@@ -489,6 +489,77 @@ def _ico(img: Image.Image, path: Path) -> None:
     imgs[-1].save(path, sizes=[(s, s) for s in sizes], append_images=imgs[:-1])
 
 
+# Immagini dell'installatore (Inno Setup, stile «modern»): dimensioni per
+# ogni scala dello schermo dalla documentazione di WizardImageFile e
+# WizardSmallImageFile.
+INSTALLER_GRANDE = {100: (164, 314), 125: (192, 386), 150: (246, 459), 175: (273, 556),
+                    200: (328, 604), 225: (355, 689), 250: (410, 797)}
+INSTALLER_PICCOLA = {100: (55, 55), 125: (64, 68), 150: (83, 80), 175: (92, 97),
+                     200: (110, 106), 225: (119, 123), 250: (138, 140)}
+
+
+def immagini_installer() -> None:
+    """Riquadro a sinistra delle pagine di benvenuto e di fine (fondo dal
+    blu notte al blu del logo con la tessera al centro) e icona in alto a
+    destra delle altre pagine (logo su bianco, come l'intestazione)."""
+    cartella = APP / "windows/installer/immagini"
+    cartella.mkdir(parents=True, exist_ok=True)
+    piccola = tessera(piccola=True)
+    x0, y0, x1, y1 = riquadro_logo()
+    logo = disegna(S, ALTEZZA_PICCOLE * leggi_logo()[0] / (y1 - y0), ((x0 + x1) / 2, (y0 + y1) / 2))
+    for scala, (w, h) in INSTALLER_GRANDE.items():
+        fondo = Image.new("RGB", (w, h))
+        d = ImageDraw.Draw(fondo)
+        alto, basso = (0x0E, 0x3A, 0x7F), (0x17, 0x84, 0xFB)
+        for y in range(h):
+            t = y / max(1, h - 1)
+            d.line([(0, y), (w, y)], fill=tuple(round(a + (b - a) * t) for a, b in zip(alto, basso)))
+        lato = round(w * 0.62)
+        t_img = piccola.resize((lato, lato), Image.LANCZOS)
+        fondo.paste(t_img, ((w - lato) // 2, round(h * 0.36) - lato // 2), t_img)
+        fondo.save(cartella / f"grande_{scala}.bmp")
+    for scala, (w, h) in INSTALLER_PICCOLA.items():
+        lato = min(w, h)
+        img = Image.new("RGB", (w, h), BIANCO)
+        l_img = logo.resize((lato, lato), Image.LANCZOS)
+        img.paste(l_img, ((w - lato) // 2, (h - lato) // 2), l_img)
+        img.save(cartella / f"piccola_{scala}.bmp")
+
+
+def immagini_avvio() -> None:
+    """Logo delle schermate di avvio (tessera bianca: il fondo dell'avvio è
+    scuro), icona «template» della barra dei menu di macOS (sagoma nera che
+    il sistema colora) e icone del sito per la Home di iPhone e per
+    l'anteprima dei link."""
+    piccola = tessera(piccola=True)
+    # iOS: LaunchScreen.storyboard mostra LaunchImage al centro (84 pt)
+    ios = APP / "ios/Runner/Assets.xcassets/LaunchImage.imageset"
+    for nome, px in (("LaunchImage.png", 84), ("LaunchImage@2x.png", 168), ("LaunchImage@3x.png", 252)):
+        _salva(piccola, ios / nome, px)
+    # Android prima della 12 (dalla 12 il sistema usa l'icona): 96 dp
+    res = APP / "android/app/src/main/res"
+    for k, f in DENS.items():
+        _salva(piccola, res / f"drawable-{k}/avvio_logo.png", round(96 * f))
+    # barra dei menu di macOS: 18 pt a 2x, solo la forma
+    nera = Image.new("RGBA", (S, S), (0, 0, 0, 255))
+    x0, y0, x1, y1 = riquadro_logo()
+    nera.putalpha(sagoma(S, ALTEZZA_PICCOLE * leggi_logo()[0] / (y1 - y0), ((x0 + x1) / 2, (y0 + y1) / 2)))
+    _salva(nera, APP / "assets/tray/app_icon_template.png", 36)
+    # sito: icona della Home di iPhone (quadrato pieno, iOS lo arrotonda)
+    _salva(icona_piena(), SITO / "apple-touch-icon.png", 180, rgb=True)
+    # sito: anteprima dei link condivisi (1200x630), fondo dal blu notte al blu
+    w, h = 1200, 630
+    ant = Image.new("RGB", (w, h))
+    d = ImageDraw.Draw(ant)
+    for y in range(h):
+        t = y / (h - 1)
+        d.line([(0, y), (w, y)], fill=tuple(round(a + (b - a) * t) for a, b in zip((0x0E, 0x3A, 0x7F), (0x17, 0x84, 0xFB))))
+    lato = 360
+    t_img = piccola.resize((lato, lato), Image.LANCZOS)
+    ant.paste(t_img, ((w - lato) // 2, (h - lato) // 2), t_img)
+    ant.save(SITO / "anteprima.png", optimize=True)
+
+
 def main() -> None:
     ufficiale = tessera()  # come l'SVG approvato: icone grandi e anteprime
     piccola = tessera(piccola=True)  # icone di 16-64 px
@@ -535,6 +606,8 @@ def main() -> None:
     _ico(piccola, APP / "windows/runner/resources/app_icon.ico")
     _ico(piccola, APP / "assets/tray/app_icon.ico")
     _salva(piccola, APP / "assets/tray/app_icon.png", 64)
+    immagini_installer()
+    immagini_avvio()
     icone_notifica()
     print("icone scritte")
 

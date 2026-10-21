@@ -228,11 +228,11 @@ class AndroidRecordingNotification implements BackgroundControls {
       serviceTypes: [ForegroundServiceTypes.microphone],
       notificationTitle: 'Registrazione in corso',
       notificationText: '$course · ${_clock(elapsed)}',
-      // icona monocromatica dell'app e azzurro delle notifiche (vedi
+      // icona monocromatica dell'app e blu del logo delle notifiche (vedi
       // AndroidManifest.xml e LocalNotificationPlatform)
       notificationIcon: const NotificationIcon(
         metaDataName: 'io.github.simomagnus.universitynotes.NOTIFICATION_ICON',
-        backgroundColor: Color(0xFF0284C7),
+        backgroundColor: Color(0xFF0F72F2),
       ),
       notificationButtons: _buttons(paused),
       callback: recordingServiceCallback,

@@ -82,7 +82,15 @@ void main() {
     tmp = await Directory.systemTemp.createTemp('un_rec_');
   });
   tearDown(() async {
-    if (await tmp.exists()) await tmp.delete(recursive: true);
+    // su Linux un lavoro in background appena chiuso (download del modello,
+    // file di sessione) può scrivere ancora per un attimo: si riprova
+    for (var i = 0; i < 10 && await tmp.exists(); i++) {
+      try {
+        await tmp.delete(recursive: true);
+      } on FileSystemException {
+        await Future<void>.delayed(const Duration(milliseconds: 200));
+      }
+    }
   });
 
   group('WAV', () {

@@ -129,10 +129,15 @@ class DesktopWindow with WindowListener, TrayListener {
       await _setMenu();
       return;
     }
+    // macOS: sagoma «template» che il sistema colora come le altre icone
+    // della barra dei menu (chiara o scura)
     await trayManager.setIcon(
       Platform.isWindows
           ? 'assets/tray/app_icon.ico'
+          : Platform.isMacOS
+          ? 'assets/tray/app_icon_template.png'
           : 'assets/tray/app_icon.png',
+      isTemplate: Platform.isMacOS,
     );
     _inTray = true;
     await _setMenu();

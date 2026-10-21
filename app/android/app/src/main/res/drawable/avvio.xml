@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Avvio prima di Android 12: fondo dell'app con il logo al centro
+     (avvio_logo, tools/genera_icona.py). Dalla 12 il sistema usa l'icona. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/app_background" />
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/avvio_logo" />
+    </item>
+</layer-list>

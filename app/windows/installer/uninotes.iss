@@ -58,6 +58,10 @@ UninstallDisplayName=UniNotes
 Compression=lzma2/max
 SolidCompression=yes
 WizardStyle=modern
+; Immagini con il logo (tools/genera_icona.py), una per ogni scala dello
+; schermo: riquadro a sinistra di benvenuto e fine, icona in alto a destra.
+WizardImageFile=immagini\grande_100.bmp,immagini\grande_125.bmp,immagini\grande_150.bmp,immagini\grande_175.bmp,immagini\grande_200.bmp,immagini\grande_225.bmp,immagini\grande_250.bmp
+WizardSmallImageFile=immagini\piccola_100.bmp,immagini\piccola_125.bmp,immagini\piccola_150.bmp,immagini\piccola_175.bmp,immagini\piccola_200.bmp,immagini\piccola_225.bmp,immagini\piccola_250.bmp
 ; Un'app UniNotes aperta si chiude prima di sostituirne i file.
 CloseApplications=yes
 RestartApplications=no
