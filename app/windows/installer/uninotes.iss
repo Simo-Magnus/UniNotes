@@ -18,7 +18,9 @@
 ;   file del programma. Quando invece è l'app a lanciarlo, dopo la pulizia,
 ;   lo fa in modalità silenziosa e lascia un segno nella cartella del
 ;   programma: `--disinstalla` lo trova e si chiude subito, senza ripetere
-;   le domande (vedi lib/core/services/app_uninstall.dart).
+;   le domande (vedi lib/core/services/app_uninstall.dart). Prima chiude
+;   UniNotes se è aperto ([Code]) e alla fine toglie tutta la cartella del
+;   programma, anche i file creati dopo l'installazione.
 
 #ifndef AppVersion
   #define AppVersion "0.0.0"
@@ -69,6 +71,10 @@ WizardSmallImageFile=immagini\piccola_100.bmp,immagini\piccola_125.bmp,immagini\
 ; Un'app UniNotes aperta si chiude prima di sostituirne i file.
 CloseApplications=yes
 RestartApplications=no
+; La cartella del programma si toglie tutta con la disinstallazione: se ne
+; resta una da una versione vecchia, la nuova installazione la riusa senza
+; l'avviso «la cartella esiste già».
+DirExistsWarning=no
 
 [Languages]
 Name: "italian"; MessagesFile: "compiler:Languages\Italian.isl"
@@ -99,6 +105,11 @@ Filename: "{app}\uninotes.exe"; Parameters: "--disinstalla"; Flags: waituntilter
 ; Segno «pulizia già fatta» scritto dall'app prima di avviare la
 ; disinstallazione.
 Type: files; Name: "{app}\.pulizia_fatta"
+; Tutto quello che resta nella cartella del programma (file creati dopo
+; l'installazione, modelli scaricati come ripiego): la cartella sparisce. I
+; dati dello studente non sono qui (AppData\Roaming) e li gestisce la
+; schermata «Disinstalla UniNotes».
+Type: filesandordirs; Name: "{app}"
 
 [Registry]
 ; Registrazione delle notifiche di Windows scritta dall'app al primo avvio
@@ -112,3 +123,34 @@ Root: HKCU; Subkey: "Software\Classes\uninotes"; ValueType: string; ValueName: "
 Root: HKCU; Subkey: "Software\Classes\uninotes"; ValueType: string; ValueName: "URL Protocol"; ValueData: ""
 Root: HKCU; Subkey: "Software\Classes\uninotes\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: """{app}\uninotes.exe"",0"
 Root: HKCU; Subkey: "Software\Classes\uninotes\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\uninotes.exe"" ""%1"""
+
+[Code]
+// UniNotes aperto (anche solo nell'area di notifica) blocca uninotes.exe e
+// le sue librerie: il disinstallatore non riuscirebbe a toglierli e l'app
+// resterebbe. Si chiude prima di iniziare e di nuovo prima di cancellare i
+// file (la schermata «Disinstalla UniNotes» a quel punto è già chiusa).
+procedure ChiudiUniNotes();
+var
+  Codice: Integer;
+begin
+  Exec(ExpandConstant('{sys}\taskkill.exe'), '/F /T /IM uninotes.exe', '',
+    SW_HIDE, ewWaitUntilTerminated, Codice);
+end;
+
+function InitializeUninstall(): Boolean;
+begin
+  ChiudiUniNotes();
+  Result := True;
+end;
+
+procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
+begin
+  if CurUninstallStep = usUninstall then
+    ChiudiUniNotes();
+  if CurUninstallStep = usPostUninstall then
+  begin
+    ChiudiUniNotes();
+    // ultimo controllo: se qualcosa è rimasto, la cartella si toglie qui
+    DelTree(ExpandConstant('{app}'), True, True, True);
+  end;
+end;
