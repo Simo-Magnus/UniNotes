@@ -26,8 +26,8 @@ class WeeklyStudyCard extends StatelessWidget {
     return DashboardCard(
       icon: Icons.timer_outlined,
       title: 'Studio della settimana',
-      actionLabel: 'Studio',
-      onAction: () => AppShell.goTo(context, 'Studio'),
+      section: 'Studio',
+      onTap: () => AppShell.goTo(context, 'Studio'),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
         child: Column(

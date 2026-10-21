@@ -46,7 +46,10 @@ nel calendario: *Impostazioni → Privacy e informazioni → Disinstalla UniNote
   mostrato in tutte le sezioni), «Inizia» (quanto hai studiato oggi rispetto all'obiettivo,
   Sessione Studio con cronometro o timer, Registra lezione), prossime prove con lo stato (da
   prenotare, prenotato), studio della settimana, ultime registrazioni con le trascrizioni
-  fatte, moduli e argomenti, libri (scaricati, da procurare, riprendi la lettura).
+  fatte, moduli e argomenti di una suddivisione alla volta (semestre, annuale…: si apre
+  su quella dell'ultimo argomento cambiato negli ultimi 30 giorni, se ancora in corso,
+  altrimenti sul semestre in corso). Si tocca una card per aprirne la sezione; si tocca
+  il riquadro di oggi per cambiare l'obiettivo giornaliero.
 - **Impostazioni**: il mio percorso con *Cambia corso*, *Aggiorna database* e *Indirizzo
   del database* (senza connessione l'app la chiede, con *Riprova*), calendario, esclusioni, Focus e Non disturbare, aspetto, suoni, notifiche,
   *Esporta/importa dati* (.json), privacy e informazioni con le licenze open source.
@@ -54,8 +57,10 @@ nel calendario: *Impostazioni → Privacy e informazioni → Disinstalla UniNote
   background su iOS), trascrizione con **Whisper** (locale) o **Gemini**, riassunti, appunti.
 - **Studio**: moduli e argomenti per materia, cronometro, sessioni e statistiche.
 - **Libri**: i libri del piano didattico arrivano dal database; accanto al titolo il
-  cerchio con la spunta (*tieni*) o con la X (*rimuovi*); puoi aggiungere libri extra a
-  ogni insegnamento. Lettore interno.
+  cerchio con la spunta verde (*salva*: il libro diventa *Salvato*) o con la X (*rimuovi*);
+  dal menu di ogni insegnamento *Elimina libri non salvati* toglie quelli senza spunta
+  (vanno in *Libri rimossi*, ripristinabili; nessun file eliminato); puoi aggiungere libri
+  extra a ogni insegnamento. Lettore interno.
 - **Esami**: un esame per insegnamento con CFU e date d'appello se pubblicate, prove in
   itinere, voti, medie ponderate e base di laurea. Lo stato si cambia toccando l'icona
   della prova (da prenotare → prenotato → sostenuto → superato o non superato); il

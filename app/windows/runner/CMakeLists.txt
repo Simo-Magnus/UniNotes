@@ -10,6 +10,7 @@ add_executable(${BINARY_NAME} WIN32
   "audio_transcoder.cpp"
   "focus_session.cpp"
   "live_speech.cpp"
+  "spell_check.cpp"
   "flutter_window.cpp"
   "main.cpp"
   "utils.cpp"

@@ -17,6 +17,7 @@ import '../../study/study_stats.dart' show formatMinutes;
 import '../lecture_recorder.dart';
 import '../course_notes_screen.dart';
 import '../notes_screen.dart' show openRecorder;
+import 'better_transcription.dart';
 import 'overlay_logic.dart';
 import 'recording_meta.dart';
 import 'recording_save.dart';
@@ -185,6 +186,10 @@ class _RecordingOverlayHostState extends State<RecordingOverlayHost>
     final course = courseId == null
         ? null
         : (await _s.courses.mapById())[courseId];
+    // modello scaricato più accurato: si propone di trascrivere di nuovo
+    if (course != null) {
+      unawaited(offerBetterTranscription(_s, course, saved));
+    }
     final nav = _nav;
     if (nav == null || !nav.mounted) return;
     // «Apri» porta alla pagina del corso, alla card delle registrazioni
@@ -587,10 +592,12 @@ const String kDontAskDeleteRecordingKey = 'dont_ask_delete_recording';
 /// registrazione?»): Annulla ed Elimina, più la casella «Non chiedere
 /// più». Con la casella spuntata le eliminazioni successive vanno subito in
 /// «Eliminati di recente» (recuperabili per 30 giorni). [name] è il nome
-/// della registrazione, se c'è.
+/// della registrazione, se c'è; con [inProgress] è quella in corso (si
+/// ferma e va negli eliminati con la trascrizione fin lì).
 Future<bool> confirmDeleteRecording(
   BuildContext context, {
   String? name,
+  bool inProgress = false,
 }) async {
   final settings = context.read<AppServices>().settings;
   try {
@@ -613,9 +620,14 @@ Future<bool> confirmDeleteRecording(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '${name == null ? 'La registrazione' : '«$name»'} va in '
-                '«Eliminati di recente»: per 30 giorni puoi ancora recuperarla '
-                '(trascrizioni e riassunti restano), poi viene cancellata.',
+                inProgress
+                    ? 'La registrazione si ferma e va in «Eliminati di '
+                          'recente» con la trascrizione fin qui: per 30 giorni '
+                          'puoi ancora recuperarla, poi viene cancellata.'
+                    : '${name == null ? 'La registrazione' : '«$name»'} va in '
+                          '«Eliminati di recente»: per 30 giorni puoi ancora '
+                          'recuperarla (trascrizioni e riassunti restano), poi '
+                          'viene cancellata.',
               ),
               const SizedBox(height: 8),
               CheckboxListTile(

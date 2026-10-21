@@ -11,6 +11,7 @@ import '../../widgets/common.dart';
 import '../exams/exam_detail.dart';
 import 'course_detail_sections.dart';
 import 'course_form.dart';
+import 'course_rename.dart';
 import 'course_resources_sections.dart';
 import 'course_ui.dart';
 
@@ -205,7 +206,24 @@ class _CourseHeader extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(course.name, style: theme.textTheme.headlineSmall),
+                    // toccando il nome lo si cambia (vale in tutta l'app)
+                    Tooltip(
+                      message: 'Cambia il nome',
+                      child: InkWell(
+                        key: const Key('course-detail-name'),
+                        borderRadius: BorderRadius.circular(4),
+                        onTap: () => renameCourseDialog(context, course),
+                        child: Text(
+                          course.name,
+                          style: theme.textTheme.headlineSmall,
+                        ),
+                      ),
+                    ),
+                    if (course.hasCustomName)
+                      Text(
+                        'Nome originale: ${course.officialName}',
+                        style: theme.textTheme.bodySmall,
+                      ),
                     const SizedBox(height: 4),
                     Text(
                       [

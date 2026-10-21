@@ -342,9 +342,8 @@ void main() {
     test('scelta del motore: modello dal vivo incluso o scaricato', () async {
       final bundle = Directory(p.join(tmp.path, 'data', 'whisper'))
         ..createSync(recursive: true);
-      File(
-        p.join(bundle.path, kLiveWhisperModel.fileName),
-      ).writeAsBytesSync([1]);
+      File(p.join(bundle.path, kLiveWhisperModel.fileName))
+          .writeAsBytesSync([1]);
       final used = <String>[];
       final w = service(bundled: bundle, used: used);
       final e = (await w.liveEngine())!;
@@ -357,9 +356,8 @@ void main() {
       // non incluso ma già scaricato
       final models = Directory(p.join(tmp.path, 'whisper', 'models'))
         ..createSync(recursive: true);
-      File(
-        p.join(models.path, kLiveWhisperModel.fileName),
-      ).writeAsBytesSync([1]);
+      File(p.join(models.path, kLiveWhisperModel.fileName))
+          .writeAsBytesSync([1]);
       expect((await service().liveModelFile())!.path, startsWith(models.path));
       // il modello dal vivo non compare fra quelli dell'utente
       expect((await service().status()).models, isEmpty);
@@ -367,9 +365,8 @@ void main() {
 
     test('finestre di 2 s: testo provvisorio, poi definitivo', () async {
       final bundle = Directory(p.join(tmp.path, 'b'))..createSync();
-      File(
-        p.join(bundle.path, kLiveWhisperModel.fileName),
-      ).writeAsBytesSync([1]);
+      File(p.join(bundle.path, kLiveWhisperModel.fileName))
+          .writeAsBytesSync([1]);
       final live = LiveTranscriber(service(bundled: bundle));
       final wav = File(p.join(tmp.path, 'rec.wav'));
       // 2 s di «parlato» (tono) seguiti da una pausa di 2 s

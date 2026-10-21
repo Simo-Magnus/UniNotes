@@ -70,16 +70,15 @@ void main() {
   }
 
   /// Pulsanti del dialogo aperto (mai più di due).
-  int dialogButtons() =>
-      find
-          .descendant(
-            of: find.byType(AlertDialog),
-            matching: find.byWidgetPredicate(
-              (w) => w is TextButton || w is FilledButton,
-            ),
-          )
-          .evaluate()
-          .length;
+  int dialogButtons() => find
+      .descendant(
+        of: find.byType(AlertDialog),
+        matching: find.byWidgetPredicate(
+          (w) => w is TextButton || w is FilledButton,
+        ),
+      )
+      .evaluate()
+      .length;
 
   testWidgets('Elimina tutto → conferma → disinstallazione', (tester) async {
     await start(tester, EraseFlowMode.uninstall);
@@ -105,7 +104,10 @@ void main() {
     await start(tester, EraseFlowMode.uninstall);
     await tester.tap(find.text('Scegli cosa eliminare'));
     await tester.pumpAndSettle();
-    expect(find.byType(CheckboxListTile), findsNWidgets(EraseItem.values.length));
+    expect(
+      find.byType(CheckboxListTile),
+      findsNWidgets(EraseItem.values.length),
+    );
     expect(dialogButtons(), 2);
     // OneNote non ha niente da eliminare: spenta
     final onenote = tester.widget<CheckboxListTile>(
@@ -118,7 +120,10 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text('Elimina e disinstalla'));
     await tester.pumpAndSettle();
-    expect(find.textContaining('Modelli di Whisper (150,0 MB)'), findsOneWidget);
+    expect(
+      find.textContaining('Modelli di Whisper (150,0 MB)'),
+      findsOneWidget,
+    );
     await tester.tap(find.text('Elimina e disinstalla'));
     await tester.pumpAndSettle();
     expect(eraser.erased, {EraseItem.whisper});

@@ -76,7 +76,11 @@ class CalendarRepository {
           EventType.studyPlan => CalendarEntryKind.studyPlan,
           EventType.deadline => CalendarEntryKind.deadline,
         },
-        title: e.title,
+        // le lezioni del database hanno nel titolo il nome ufficiale: se lo
+        // studente ha rinominato l'insegnamento si vede il suo nome
+        title: course != null && course.hasCustomName
+            ? e.title.replaceAll(course.officialName, course.name)
+            : e.title,
         start: e.start,
         end: e.effectiveEnd,
         allDay: e.allDay,

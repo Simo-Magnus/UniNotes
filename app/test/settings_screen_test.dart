@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:university_notes/core/database/app_database.dart';
+import 'package:university_notes/core/theme/app_theme.dart';
 import 'package:university_notes/core/services/app_services.dart';
+import 'package:university_notes/features/settings/sections/privacy_section.dart';
 import 'package:university_notes/features/settings/sections/profile_section.dart';
 import 'package:university_notes/features/settings/sections/questions_reset.dart';
 import 'package:university_notes/features/settings/settings_screen.dart';
@@ -204,4 +206,71 @@ void main() {
     );
     await tester.runAsync(() => s.database.close());
   });
+
+  for (final (label, theme) in [
+    ('scuro', AppTheme.dark()),
+    ('chiaro', AppTheme.light()),
+  ]) {
+    testWidgets('«Privacy e informazioni»: collegamenti allineati ($label)', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(400, 1600);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.reset);
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: theme,
+          home: const Scaffold(
+            body: SingleChildScrollView(child: PrivacySection()),
+          ),
+        ),
+      );
+      const keys = [
+        'link-project',
+        'link-privacy',
+        'link-terms',
+        'link-licenses',
+        'erase-all',
+        'uninstall-app',
+      ];
+      final rects = [for (final k in keys) tester.getRect(find.byKey(Key(k)))];
+      for (final (i, r) in rects.indexed) {
+        // righe alte almeno 48 dp, tutte della stessa larghezza e allineate
+        expect(r.height, greaterThanOrEqualTo(48), reason: keys[i]);
+        expect(r.left, closeTo(rects.first.left, 0.5), reason: keys[i]);
+        expect(r.width, closeTo(rects.first.width, 0.5), reason: keys[i]);
+      }
+      // icona e testo partono dallo stesso punto in ogni riga
+      double iconLeft(String k) => tester
+          .getTopLeft(
+            find
+                .descendant(of: find.byKey(Key(k)), matching: find.byType(Icon))
+                .first,
+          )
+          .dx;
+      for (final k in keys) {
+        expect(iconLeft(k), closeTo(iconLeft(keys.first), 0.5), reason: k);
+      }
+      expect(
+        tester.getTopLeft(find.text('Informativa privacy')).dx,
+        closeTo(tester.getTopLeft(find.text('Disinstalla UniNotes')).dx, 0.5),
+      );
+      // a destra «apre fuori» per i siti, la freccia per le pagine dell'app
+      expect(
+        find.descendant(
+          of: find.byKey(const Key('link-privacy')),
+          matching: find.byIcon(Icons.open_in_new),
+        ),
+        findsOneWidget,
+      );
+      expect(
+        find.descendant(
+          of: find.byKey(const Key('link-licenses')),
+          matching: find.byIcon(Icons.chevron_right),
+        ),
+        findsOneWidget,
+      );
+      expect(tester.takeException(), isNull);
+    });
+  }
 }

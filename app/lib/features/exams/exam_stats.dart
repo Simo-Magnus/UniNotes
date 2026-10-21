@@ -71,14 +71,68 @@ class ExamsData {
   bool get isEmpty => exams.isEmpty;
 }
 
-Future<ExamsData> loadExamsData(AppServices s) async => ExamsData(
-  exams: await s.exams.all(),
-  courses: await s.courses.mapById(),
-  universities: await s.courses.universitiesById(),
-  degrees: await s.courses.degrees(),
-  examWindows: await s.calendar.eventsOfType(EventType.examWindow),
-  scope: s.scope,
-);
+Future<ExamsData> loadExamsData(AppServices s) async {
+  // un solo esame finale per insegnamento (anche dopo «Aggiorna database»):
+  // le due pagine leggono la stessa prova e mostrano lo stesso stato
+  await s.exams.mergeDuplicateFinals();
+  return ExamsData(
+    exams: await s.exams.all(),
+    courses: await s.courses.mapById(),
+    universities: await s.courses.universitiesById(),
+    degrees: await s.courses.degrees(),
+    examWindows: await s.calendar.eventsOfType(EventType.examWindow),
+    scope: s.scope,
+  );
+}
+
+/// Prova «da sostenere»: da prenotare o prenotata, oppure esame finale non
+/// superato (resta da sostenere, con il suo stato, e si riprenota).
+bool isToTake(Exam e) =>
+    e.status.isPending ||
+    (e.kind == ExamKind.finalExam && e.status == ExamStatus.failed);
+
+/// Prove della lista «Da sostenere»: da prenotare e prenotate, più l'esame
+/// finale non superato di un insegnamento che non ha un altro esame finale
+/// più avanti (superato, in attesa dell'esito o di nuovo da sostenere); se
+/// ce n'è più d'uno non superato, solo l'ultimo. [all]: tutte le prove (anche
+/// fuori dall'anno scelto), per sapere com'è messo l'insegnamento.
+List<Exam> toTakeExams(Iterable<Exam> exams, {Iterable<Exam>? all}) {
+  final every = (all ?? exams).toList();
+  final settled = <int>{
+    for (final e in every)
+      if (e.kind == ExamKind.finalExam &&
+          (e.status.isPending ||
+              e.status == ExamStatus.passed ||
+              e.status == ExamStatus.taken))
+        e.courseId,
+  };
+  // ultimo esame finale non superato di ogni insegnamento
+  final lastFailed = <int, Exam>{};
+  for (final e in every) {
+    if (e.kind != ExamKind.finalExam || e.status != ExamStatus.failed) continue;
+    final cur = lastFailed[e.courseId];
+    if (cur == null || _isLater(e, cur)) lastFailed[e.courseId] = e;
+  }
+  bool shown(Exam e) {
+    if (e.status.isPending) return true;
+    if (!isToTake(e) || settled.contains(e.courseId)) return false;
+    final last = lastFailed[e.courseId];
+    return identical(last, e) || (e.id != null && last?.id == e.id);
+  }
+
+  return [
+    for (final e in exams)
+      if (shown(e)) e,
+  ];
+}
+
+bool _isLater(Exam a, Exam b) {
+  final da = a.dateTime, db = b.dateTime;
+  if (da != null && db != null && da != db) return da.isAfter(db);
+  if (da != null && db == null) return true;
+  if (da == null && db != null) return false;
+  return (a.id ?? 0) > (b.id ?? 0);
+}
 
 /// Stati considerati "sostenuti" (con o senza esito).
 const Set<ExamStatus> kTakenStatuses = {

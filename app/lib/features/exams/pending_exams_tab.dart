@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/enums.dart';
-import '../../core/catalog/contribute.dart';
-import '../../core/services/external_launcher.dart';
+import '../../core/theme/app_tokens.dart';
 import '../../models/exam.dart';
 import '../../widgets/common.dart';
 import '../academic/year_widgets.dart';
@@ -56,8 +55,11 @@ class KindFilterBar extends StatelessWidget {
 }
 
 /// Tab "Da sostenere": prove da prenotare o prenotate divise per semestre
-/// dell'insegnamento, in ordine cronologico (a scelta per ultimi). Niente
-/// card delle sessioni d'esame: data e appelli si indicano su ogni prova.
+/// dell'insegnamento, in ordine cronologico (a scelta per ultimi), con gli
+/// esami finali non superati (stato «Non superato», si riprenotano
+/// dall'icona). Niente card delle sessioni d'esame né «Segnala date
+/// d'esame»: data e appelli dipendono dal canale e dal docente, si indicano
+/// su ogni prova.
 class PendingExamsTab extends StatefulWidget {
   const PendingExamsTab({
     super.key,
@@ -81,7 +83,7 @@ class _PendingExamsTabState extends State<PendingExamsTab> {
   Widget build(BuildContext context) {
     final data = widget.data;
     final pending = sortByDate(
-      data.scopedExams.where((e) => e.status.isPending && _filter.matches(e)),
+      toTakeExams(data.scopedExams, all: data.exams).where(_filter.matches),
       data.courses,
     );
     final booked = pending.where((e) => e.status == ExamStatus.booked).length;
@@ -115,12 +117,6 @@ class _PendingExamsTabState extends State<PendingExamsTab> {
                 icon: Icons.event_available_outlined,
                 color: const Color(0xFF1E88E5),
               ),
-              if (data.profile != null)
-                TextButton.icon(
-                  onPressed: () => _report(context),
-                  icon: const Icon(Icons.flag_outlined, size: 18),
-                  label: const Text('Segnala date d\'esame'),
-                ),
             ],
           ),
         ),
@@ -170,17 +166,6 @@ class _PendingExamsTabState extends State<PendingExamsTab> {
     if (w == null) return null;
     return 'Prossimo appello: ${formatDate(w.start)}';
   }
-
-  Future<void> _report(BuildContext context) async {
-    final data = widget.data;
-    final url = contributionIssueUrl(
-      kind: ContributionKind.examDates,
-      profile: data.profile,
-      year: data.scope.year,
-    );
-    final r = await ExternalLauncher.openUrl(url.toString());
-    if (context.mounted) showLaunchResult(context, r);
-  }
 }
 
 /// Contatore con icona e colore propri (da sostenere, prenotati).
@@ -201,7 +186,10 @@ class _CountChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = Theme.of(context).brightness == Brightness.dark;
-    final fg = dark ? Color.lerp(color, Colors.white, 0.45)! : color;
+    // tema chiaro: tinta scurita quanto basta per il contrasto AA
+    final fg = dark
+        ? Color.lerp(color, Colors.white, 0.45)!
+        : readableOn(color, Brightness.light);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(

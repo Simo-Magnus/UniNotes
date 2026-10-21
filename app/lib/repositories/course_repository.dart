@@ -28,9 +28,31 @@ class CourseRepository {
       'courses',
       where: universityId == null ? null : 'university_id = ?',
       whereArgs: universityId == null ? null : [universityId],
-      orderBy: 'university_id, year, semester, name',
+      orderBy:
+          'university_id, year, semester, COALESCE(custom_name, name) '
+          'COLLATE NOCASE',
     );
     return rows.map(Course.fromMap).toList();
+  }
+
+  /// Nome scelto dallo studente per l'insegnamento [id]: vuoto o uguale a
+  /// quello ufficiale lo toglie (torna il nome ufficiale). Solo la colonna
+  /// `custom_name`: il nome ufficiale resta quello del database dei corsi.
+  Future<void> setCustomName(int id, String? name) async {
+    final rows = await _db.db.query(
+      'courses',
+      columns: ['name'],
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+    if (rows.isEmpty) return;
+    final clean = cleanCourseName(name);
+    await _db.db.update(
+      'courses',
+      {'custom_name': clean == rows.first['name'] ? null : clean},
+      where: 'id = ?',
+      whereArgs: [id],
+    );
   }
 
   Future<Course?> byId(int id) async {

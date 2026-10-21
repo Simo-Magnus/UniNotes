@@ -48,7 +48,9 @@ solo la versione giusta.
    comunque*.
 2. Segui l'installazione: non servono permessi di amministratore. UniNotes si
    installa per il tuo utente in `%LOCALAPPDATA%\Programs\UniNotes`, con il
-   collegamento nel menu Start e, se lo spunti, sul desktop.
+   collegamento nel menu Start e, se lo spunti, sul desktop. Nell'ultima pagina la
+   casella *Avvia UniNotes* (già spuntata) apre l'app quando premi *Fine*: toglila se
+   non vuoi aprirla subito.
 3. **Aggiornamenti**: scarica il nuovo `UniNotes_setup.exe` e installalo sopra la
    versione precedente; i dati restano.
 4. Se manca una DLL (`MSVCP140.dll`, `VCRUNTIME140.dll`), installa il

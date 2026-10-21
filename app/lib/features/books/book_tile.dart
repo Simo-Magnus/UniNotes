@@ -12,7 +12,8 @@ enum BookAction {
   removeFromApp,
   delete,
 
-  /// Libro del catalogo: cerchio con la spunta (entra tra i miei libri).
+  /// Libro del catalogo: cerchio con la spunta verde, «Salva» (il libro
+  /// diventa «Salvato» e «Elimina libri non salvati» non lo tocca).
   keep,
 
   /// Libro del catalogo: cerchio con la X (nascosto, ripristinabile).
@@ -97,8 +98,8 @@ class BookTile extends StatelessWidget {
     );
     return ListTile(
       leading: Icon(Icons.menu_book_outlined, color: scheme.primary),
-      // accanto al titolo i cerchi «tieni» (spunta) e «rimuovi» (X) per i
-      // libri proposti dal catalogo
+      // accanto al titolo i cerchi «salva» (spunta verde) e «rimuovi» (X)
+      // per i libri proposti dal catalogo
       title: choose
           ? Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,7 +109,8 @@ class BookTile extends StatelessWidget {
                 _ChoiceCircle(
                   key: ValueKey('keep-${book.id}'),
                   icon: Icons.check,
-                  tooltip: 'Tieni',
+                  tooltip: 'Salva',
+                  semantics: 'Salva «${book.title}»',
                   color: const Color(0xFF2E7D32),
                   onTap: () => onAction(BookAction.keep),
                 ),
@@ -117,6 +119,7 @@ class BookTile extends StatelessWidget {
                   key: ValueKey('remove-${book.id}'),
                   icon: Icons.close,
                   tooltip: 'Rimuovi',
+                  semantics: 'Rimuovi «${book.title}»',
                   color: const Color(0xFFC62828),
                   onTap: () => onAction(BookAction.remove),
                 ),
@@ -206,6 +209,7 @@ class BookTile extends StatelessWidget {
   }
 
   /// Etichette del libro, con colori distinti e leggibili (chiaro e scuro):
+  /// - «Salvato» verde per i libri del catalogo salvati con la spunta;
   /// - «Obbligatorio» rosso; quando il libro è già scaricato il rosso si
   ///   attenua e «Scaricato» diventa verde acceso (non c'è più nulla da fare);
   /// - «Da procurare» solo per gli obbligatori senza file;
@@ -218,6 +222,13 @@ class BookTile extends StatelessWidget {
     final procure =
         book.required == true && (toProcure ?? needsProcurement(book));
     return [
+      if (isSaved(book))
+        _Badge(
+          'Salvato',
+          green.withValues(alpha: dark ? 0.30 : 0.14),
+          dark ? const Color(0xFFB9F6CA) : const Color(0xFF1B5E20),
+          icon: Icons.bookmark_added_outlined,
+        ),
       if (book.required == true)
         downloaded
             ? _Badge(
@@ -278,17 +289,20 @@ class BookTile extends StatelessWidget {
   }
 }
 
-/// Cerchio con la spunta («tieni») o la X («rimuovi») accanto al titolo.
+/// Cerchio con la spunta («salva») o la X («rimuovi») accanto al titolo.
+/// [semantics]: cosa fa, con il titolo del libro (lettori di schermo).
 class _ChoiceCircle extends StatelessWidget {
   const _ChoiceCircle({
     super.key,
     required this.icon,
     required this.tooltip,
+    required this.semantics,
     required this.color,
     required this.onTap,
   });
   final IconData icon;
   final String tooltip;
+  final String semantics;
   final Color color;
   final VoidCallback onTap;
 
@@ -298,21 +312,26 @@ class _ChoiceCircle extends StatelessWidget {
     // area di tocco di 40 px attorno a un cerchio di 30
     return Tooltip(
       message: tooltip,
-      child: InkResponse(
-        onTap: onTap,
-        radius: 22,
-        child: SizedBox.square(
-          dimension: 40,
-          child: Center(
-            child: Container(
-              width: 30,
-              height: 30,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: color.withValues(alpha: 0.12),
-                border: Border.all(color: fg, width: 1.5),
+      excludeFromSemantics: true,
+      child: Semantics(
+        button: true,
+        label: semantics,
+        child: InkResponse(
+          onTap: onTap,
+          radius: 22,
+          child: SizedBox.square(
+            dimension: 40,
+            child: Center(
+              child: Container(
+                width: 30,
+                height: 30,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: color.withValues(alpha: 0.12),
+                  border: Border.all(color: fg, width: 1.5),
+                ),
+                child: Icon(icon, size: 18, color: fg),
               ),
-              child: Icon(icon, size: 18, color: fg),
             ),
           ),
         ),

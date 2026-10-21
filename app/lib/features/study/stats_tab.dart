@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 
 import '../../core/constants/enums.dart';
 import '../../core/theme/app_theme.dart';
+import '../../core/theme/app_tokens.dart';
 import '../../models/study.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
@@ -140,7 +141,16 @@ class _StatsTabState extends State<StatsTab> {
         title: 'Per attività',
         rows: [
           for (final e in sortedByMinutes(minutesByActivity(inRange)))
-            _Row(e.key.label, e.value, _activityColor(e.key)),
+            _Row(
+              e.key.label,
+              e.value,
+              // colori Material leggibili anche sul bianco del tema chiaro
+              readableOn(
+                _activityColor(e.key),
+                Theme.of(context).brightness,
+                minRatio: 3,
+              ),
+            ),
         ],
       ),
     ];

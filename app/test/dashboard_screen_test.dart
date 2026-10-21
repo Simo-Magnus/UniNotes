@@ -189,7 +189,24 @@ void main() {
         findsOneWidget,
       );
       expect(find.text('Obiettivo raggiunto (1 h)'), findsOneWidget);
-      expect(find.byKey(const Key('home-goal-edit')), findsOneWidget);
+      // niente pulsante «Obiettivo»: si tocca il riquadro di oggi
+      expect(find.text('Obiettivo'), findsNothing);
+      expect(
+        find.descendant(
+          of: find.byKey(const Key('home-today')),
+          matching: find.byKey(const Key('home-goal-edit')),
+        ),
+        findsOneWidget,
+      );
+      // niente più scritte blu con il nome della sezione nelle card: si
+      // tocca la card intera
+      for (final section in ['Esami', 'Studio', 'Registra', 'Libri']) {
+        expect(
+          find.widgetWithText(TextButton, section),
+          findsNothing,
+          reason: section,
+        );
+      }
       // niente «Cambia corso» nella Home (è nelle Impostazioni) né selettore
       // dell'anno nella barra in alto
       expect(find.text('Cambia corso'), findsNothing);
@@ -204,7 +221,10 @@ void main() {
       expect(find.text('Prossime prove'), findsOneWidget);
       expect(find.text('Prima prova in itinere'), findsOneWidget);
       expect(find.text('Da prenotare'), findsOneWidget);
-      expect(find.text('Lezioni 1-8'), findsOneWidget);
+      // niente «Materiali da studiare» nelle prossime prove
+      expect(find.text('Materiali da studiare'), findsNothing);
+      expect(find.text('Lezioni 1-8'), findsNothing);
+      expect(find.text('Argomenti: Limiti e derivate'), findsOneWidget);
       await tester.scrollUntilVisible(
         find.text('Moduli e argomenti'),
         300,
@@ -212,12 +232,15 @@ void main() {
       );
       expect(find.text('50%'), findsOneWidget);
       expect(find.text('1/2 argomenti completati'), findsOneWidget);
-      await tester.scrollUntilVisible(
-        find.textContaining('Nessun libro per i tuoi insegnamenti'),
-        300,
-        scrollable: find.byType(Scrollable).first,
-      );
+      // una sola suddivisione (qui senza semestre): niente menu
+      expect(find.text('Semestre non indicato'), findsOneWidget);
+      expect(find.byKey(const Key('progress-group')), findsNothing);
       expect(find.text('Ultime registrazioni'), findsOneWidget);
+      // niente card dei Libri
+      expect(
+        find.textContaining('Nessun libro per i tuoi insegnamenti'),
+        findsNothing,
+      );
       // l'obiettivo di oggi è nel riquadro «Inizia», non in una card a parte
       expect(find.text('Obiettivo di oggi'), findsNothing);
       // niente card dei gruppi degli studenti

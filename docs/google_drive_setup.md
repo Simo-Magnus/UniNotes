@@ -9,7 +9,9 @@ questa versione dell'app» e il pulsante di accesso è disattivato.
 ## Cosa fa l'app con Google Drive
 
 Le stesse cose di OneDrive: nella cartella scelta (predefinita `UniNotes`)
-tiene `Corsi/` (registrazioni, trascrizioni, riassunti, appunti), `Libri/`,
+tiene `Dati/` (dati dell'app uniti fra i dispositivi, gli stessi file e le
+stesse regole di OneDrive: `docs/sincronizzazione_dati.md`), `Corsi/`
+(registrazioni, trascrizioni, riassunti, appunti), `Libri/`,
 `Materiali/`, `Allegati/` e `Backup/`, con sincronizzazione bidirezionale
 all'avvio, ogni N minuti, al ritorno nell'app e quando torna la connessione. I
 file eliminati su Drive vanno nel cestino di Drive (recuperabili per 30 giorni);

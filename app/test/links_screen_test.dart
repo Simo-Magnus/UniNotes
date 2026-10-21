@@ -81,16 +81,20 @@ void main() {
   ) async {
     final (s, tmp) = (await tester.runAsync(_services))!;
     await _pump(tester, const LinksScreen(), s, const Size(1300, 6000));
-    for (final title in [
-      'Gemini',
-      'Whisper',
-      'AI di riferimento',
-      'OneDrive',
-      'Google Drive',
-    ]) {
-      // «Gemini» è anche tra le AI di riferimento
-      expect(find.text(title), findsWidgets, reason: title);
-    }
+    // card in quest'ordine: OneDrive, Google Drive, Whisper, AI di
+    // riferimento; niente più card «Gemini» (resta tra le AI)
+    final order = [
+      for (final title in [
+        'OneDrive',
+        'Google Drive',
+        'Whisper',
+        'AI di riferimento',
+      ])
+        tester.getTopLeft(find.text(title).first).dy,
+    ];
+    expect([...order]..sort(), order);
+    expect(find.text('Apri Gemini'), findsNothing);
+    expect(find.widgetWithText(ChoiceChip, 'Gemini'), findsOneWidget);
     // Niente più community, Claude Desktop né chiavi API di Gemini.
     expect(find.text('Gruppi e canali del corso'), findsNothing);
     expect(find.textContaining('Claude Desktop'), findsNothing);
@@ -107,8 +111,16 @@ void main() {
     expect(find.text('Consigliato per questo dispositivo'), findsOneWidget);
     expect(find.text('Scarica'), findsWidgets);
     expect(find.text('Pagina ufficiale del modello'), findsWidgets);
-    // Gemini con l'account universitario: passi guidati.
-    expect(find.text('Apri Gemini'), findsOneWidget);
+    // stato chiaro di ogni collegamento
+    expect(
+      find.textContaining('Non collegato. Accedi per avere file e dati'),
+      findsOneWidget,
+    );
+    // build senza ID client Google (test)
+    expect(
+      find.textContaining('Google Drive non è disponibile in questa versione'),
+      findsOneWidget,
+    );
     // Le AI di riferimento.
     for (final ai in [
       'ChatGPT',

@@ -14,6 +14,7 @@ import '../../core/services/loopback_oauth.dart';
 import '../../core/services/power.dart';
 import '../../repositories/settings_repository.dart';
 import '../notes/notes_store.dart';
+import 'data_sync.dart';
 import 'folder_sync.dart';
 
 /// Segreti degli account cloud (refresh token), nel portachiavi.
@@ -48,11 +49,14 @@ class MemoryCloudSecrets implements CloudSecrets {
 
 /// Cosa si sincronizza (caselle in Collegamenti → OneDrive / Google Drive).
 enum SyncScope {
+  /// Dati dell'app (database): sessioni di Studio, moduli e argomenti,
+  /// esami, voti, insegnamenti… uniti fra i dispositivi ([DataSync]).
+  data('Dati dell\'app: Studio, esami, voti, insegnamenti', 'Dati'),
   recordings('Registrazioni delle lezioni', 'Corsi'),
   notes('Trascrizioni, riassunti e appunti', 'Corsi'),
   books('Libri e materiali copiati nell\'app', 'Libri'),
   attachments('Allegati di Studio', 'Allegati'),
-  backup('Backup del database (dati dell\'app)', 'Backup');
+  backup('Backup del database (copia per dispositivo)', 'Backup');
 
   const SyncScope(this.label, this.remoteDir);
   final String label;
@@ -60,14 +64,26 @@ enum SyncScope {
   /// Sottocartella nella cartella cloud dell'app.
   final String remoteDir;
 
+  /// Segno della casella «Dati» tolta a mano (chi aveva già scelto le
+  /// caselle prima che esistesse la trova accesa).
+  static const _noData = '-data';
+
   static Set<SyncScope> parse(String? v) {
     if (v == null) return SyncScope.values.toSet();
+    final names = {for (final s in v.split(',')) s.trim()};
     return {
-      for (final s in v.split(','))
-        for (final x in values)
-          if (x.name == s.trim()) x,
+      for (final x in values)
+        if (names.contains(x.name) ||
+            (x == SyncScope.data && !names.contains(_noData)))
+          x,
     };
   }
+
+  static String encode(Set<SyncScope> s) => [
+    for (final x in values)
+      if (s.contains(x)) x.name,
+    if (!s.contains(SyncScope.data)) _noData,
+  ].join(',');
 }
 
 /// Cartelle locali delle parti sincronizzate oltre agli appunti (libri,
@@ -80,7 +96,11 @@ class SyncSources {
     this.backupJson,
     this.changeCounter,
     this.recordingInProgress,
+    this.data,
   });
+
+  /// Unione dei dati dell'app con gli altri dispositivi (casella «Dati»).
+  final DataSync? data;
   final Future<Directory> Function()? books;
   final Future<Directory> Function()? materials;
   final Future<Directory> Function()? attachments;
@@ -201,6 +221,7 @@ abstract class CloudDriveService extends ChangeNotifier {
 
   /// Sottocartelle che l'app crea nella sua cartella sul servizio.
   static const appSubfolders = [
+    'Dati',
     'Corsi',
     'Libri',
     'Materiali',
@@ -373,7 +394,7 @@ abstract class CloudDriveService extends ChangeNotifier {
   Future<Set<SyncScope>> scopes() async =>
       SyncScope.parse(await settings.get(scopesKey));
   Future<void> setScopes(Set<SyncScope> s) =>
-      settings.set(scopesKey, s.map((e) => e.name).join(','));
+      settings.set(scopesKey, SyncScope.encode(s));
 
   /// File dei libri (nomi nella cartella Libri dell'app) da non caricare.
   Future<Set<String>> booksLocalOnly() async => {
@@ -570,6 +591,51 @@ abstract class CloudDriveService extends ChangeNotifier {
     _backupChanges = changes;
   }
 
+  /// Copia locale della cartella `Dati` (registri dei dati di ogni
+  /// dispositivo, [DataSync]).
+  Future<Directory> dataDir() async {
+    final d = Directory(p.join((await stateDir()).path, '${prefix}_dati'));
+    await d.create(recursive: true);
+    return d;
+  }
+
+  /// Dati dell'app: si scaricano i registri nuovi degli altri dispositivi,
+  /// si uniscono al database e, se il registro di questo dispositivo è
+  /// cambiato, si carica. Senza novità (né qui né sul servizio) non si fa
+  /// nulla.
+  Future<void> _syncData(
+    SyncReport total,
+    Directory state, {
+    required bool force,
+  }) async {
+    final data = sources.data!;
+    final target = SyncTarget(
+      'dati',
+      await dataDir(),
+      '${await folder()}/Dati',
+      include: (rel) => !rel.contains('/') && rel.endsWith(DataSync.extension),
+    );
+    final remote = force || await engine(target, state).needsSync();
+    if (remote) {
+      progress = 'Dati dell\'app: novità dagli altri dispositivi…';
+      notifyListeners();
+      total.add(await engine(target, state).run());
+    }
+    if (!remote && await data.hasBase() && !await data.hasLocalChanges()) {
+      return;
+    }
+    progress = 'Dati dell\'app: unione con gli altri dispositivi…';
+    notifyListeners();
+    final r = await data.mergeFolder(
+      target.local,
+      ownName: DataSync.ownFileName(deviceName, await installId()),
+      device: deviceName,
+      installId: await installId(),
+    );
+    total.dataChanges += r.applied;
+    if (r.ownChanged) total.add(await engine(target, state).run());
+  }
+
   /// Sincronizza. Con [force] = false prima chiede al servizio le sole
   /// novità e salta le parti senza modifiche. [auto]: controllo automatico
   /// (avvio, timer, ritorno nell'app).
@@ -582,6 +648,9 @@ abstract class CloudDriveService extends ChangeNotifier {
     try {
       final total = SyncReport();
       final state = await stateDir();
+      if (sources.data != null && (await scopes()).contains(SyncScope.data)) {
+        await _syncData(total, state, force: force);
+      }
       if (sources.backupJson != null &&
           (await scopes()).contains(SyncScope.backup)) {
         await _writeBackup();

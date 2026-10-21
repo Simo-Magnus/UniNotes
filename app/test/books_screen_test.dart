@@ -5,6 +5,7 @@ import 'package:university_notes/core/constants/enums.dart';
 import 'package:university_notes/core/database/app_database.dart';
 import 'package:university_notes/core/services/app_services.dart';
 import 'package:university_notes/features/books/book_tile.dart';
+import 'package:university_notes/features/books/unsaved_books_dialog.dart';
 import 'package:university_notes/features/books/books_screen.dart';
 import 'package:university_notes/models/book.dart';
 import 'package:university_notes/models/course.dart';
@@ -140,5 +141,140 @@ void main() {
     // sotto il titolo e allineato a sinistra con lui
     expect(icon.dy, greaterThan(title.dy));
     expect(icon.dx, closeTo(title.dx, 0.5));
+  });
+
+  testWidgets('spunta verde = «Salvato»; «Elimina libri non salvati»', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(1400, 1400);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    final s = (await tester.runAsync(() async {
+      final s = AppServices(await AppDatabase.openInMemory());
+      final c = await s.courses.insert(const Course(name: 'Analisi I'));
+      Future<int> add(Book b) => s.books.insert(b);
+      final ids = <String, int>{
+        // proposti dal catalogo, senza scelta
+        'nuovo': await add(
+          Book(externalId: 'b1', courseId: c, title: 'Esercizi proposti'),
+        ),
+        'secondo': await add(
+          Book(externalId: 'b2', courseId: c, title: 'Altro proposto'),
+        ),
+        'obbligatorio': await add(
+          Book(
+            externalId: 'b3',
+            courseId: c,
+            title: 'Testo obbligatorio',
+            required: true,
+          ),
+        ),
+        'con file': await add(
+          Book(
+            externalId: 'b4',
+            courseId: c,
+            title: 'Proposto con file',
+            storedFile: 'proposto.pdf',
+          ),
+        ),
+        'salvato': await add(
+          Book(
+            externalId: 'b5',
+            courseId: c,
+            title: 'Già salvato',
+            catalogChoice: CatalogChoice.kept,
+          ),
+        ),
+        // aggiunto dallo studente
+        'mio': await add(Book(courseId: c, title: 'Mio libro')),
+      };
+      return (s, ids);
+    }))!;
+    final (services, ids) = s;
+    addTearDown(() => tester.runAsync(services.database.close));
+    await tester.pumpWidget(
+      Provider.value(
+        value: services,
+        child: const MaterialApp(home: BooksScreen()),
+      ),
+    );
+    await _settle(tester);
+
+    // «Salvato» sul libro tenuto con la spunta
+    expect(find.text('Salvato'), findsOneWidget);
+    // la spunta verde salva il libro
+    await tester.tap(find.byKey(ValueKey('keep-${ids['secondo']}')));
+    await _settle(tester);
+    expect(find.text('Libro salvato.'), findsOneWidget);
+    expect(find.text('Salvato'), findsNWidgets(2));
+
+    // menu dell'insegnamento → «Elimina libri non salvati» con conferma
+    final course = (await tester.runAsync(services.courses.all))!.single;
+    await tester.tap(find.byKey(ValueKey('course-books-menu-${course.id}')));
+    await tester.pumpAndSettle();
+    expect(find.text('1 libro senza spunta verde'), findsOneWidget);
+    await tester.tap(find.text('Elimina libri non salvati'));
+    // la conferma legge prima «Non chiedere più» (database)
+    await _settle(tester);
+    await tester.pumpAndSettle();
+    expect(find.text('Elimina libri non salvati?'), findsOneWidget);
+    await tester.tap(find.byKey(const Key('unsaved-books-dont-ask')));
+    await tester.pump();
+    await tester.tap(find.byKey(const Key('unsaved-books-confirm')));
+    await _settle(tester);
+
+    final after = {
+      for (final b in (await tester.runAsync(services.books.all))!) b.id: b,
+    };
+    // solo il proposto senza spunta e senza file finisce in «Libri rimossi»
+    expect(after[ids['nuovo']]!.isRemoved, isTrue);
+    for (final k in ['secondo', 'obbligatorio', 'con file', 'salvato', 'mio']) {
+      expect(after[ids[k]]!.isRemoved, isFalse, reason: k);
+    }
+    expect(after[ids['con file']]!.storedFile, 'proposto.pdf');
+    expect(find.text('Esercizi proposti'), findsNothing);
+    expect(find.text('Libri rimossi (1)'), findsOneWidget);
+    // «Non chiedere più» salvato (si ripristina dalle Impostazioni)
+    expect(
+      await tester.runAsync(
+        () => services.settings.get(kDontAskDeleteUnsavedBooksKey),
+      ),
+      '1',
+    );
+    // niente più libri non salvati: niente menu
+    expect(
+      find.byKey(ValueKey('course-books-menu-${course.id}')),
+      findsNothing,
+    );
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('«Modifica libro»: «Salva» solo in fondo', (tester) async {
+    final services = (await tester.runAsync(_seed))!;
+    addTearDown(() => tester.runAsync(services.database.close));
+    tester.view.physicalSize = const Size(420, 900);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    await tester.pumpWidget(
+      Provider.value(
+        value: services,
+        child: const MaterialApp(home: BooksScreen()),
+      ),
+    );
+    await _settle(tester);
+    // toccando la scheda (non il titolo, che apre il libro) si modifica
+    await tester.tap(find.text('Obbligatorio'));
+    await tester.pumpAndSettle();
+    expect(find.text('Modifica libro'), findsOneWidget);
+    expect(
+      find.descendant(of: find.byType(AppBar), matching: find.text('Salva')),
+      findsNothing,
+    );
+    expect(find.byKey(const Key('book-save')), findsOneWidget);
+    final save = tester.getRect(
+      find.byKey(const Key('book-save'), skipOffstage: false),
+    );
+    final notes = tester.getRect(find.text('Note', skipOffstage: false).first);
+    expect(save.top, greaterThan(notes.top));
   });
 }

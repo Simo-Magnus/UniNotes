@@ -104,7 +104,7 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('Libri: Tieni / Rimuovi, libri da aggiungere, anni', (
+  testWidgets('Libri: Salva / Rimuovi, libri da aggiungere, anni', (
     tester,
   ) async {
     final s = (await tester.runAsync(planServices))!;
@@ -119,8 +119,8 @@ void main() {
     expect(find.text('Segnala i libri'), findsOneWidget);
     // cerchi «tieni» (spunta) e «rimuovi» (X) accanto al titolo, solo sui
     // libri consigliati, non sugli obbligatori
-    expect(find.byTooltip('Tieni'), findsOneWidget);
-    expect(find.text('Tieni'), findsNothing);
+    expect(find.byTooltip('Salva'), findsOneWidget);
+    expect(find.text('Salva'), findsNothing);
 
     final books = (await tester.runAsync(s.books.all))!;
     final suggested = books.singleWhere(
@@ -204,7 +204,8 @@ void main() {
     expect(find.textContaining('Prossimo appello'), findsOneWidget);
     expect(find.textContaining('Data da aggiungere'), findsWidgets);
     expect(find.text('Da aggiungere'), findsOneWidget);
-    expect(find.text('Segnala date d\'esame'), findsOneWidget);
+    // le date dipendono dal canale e dal docente: niente «Segnala date d'esame»
+    expect(find.text('Segnala date d\'esame'), findsNothing);
     expect(find.text('Algoritmi e programmazione'), findsNothing);
     expect(tester.takeException(), isNull);
   });

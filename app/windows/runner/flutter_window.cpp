@@ -31,6 +31,8 @@ bool FlutterWindow::OnCreate() {
       flutter_controller_->engine()->messenger());
   speech_channel_ = std::make_unique<LiveSpeechChannel>(
       flutter_controller_->engine()->messenger(), GetHandle());
+  spell_channel_ = std::make_unique<SpellCheckChannel>(
+      flutter_controller_->engine()->messenger());
   SetChildContent(flutter_controller_->view()->GetNativeWindow());
 
   flutter_controller_->engine()->SetNextFrameCallback([&]() {
@@ -49,6 +51,7 @@ void FlutterWindow::OnDestroy() {
   audio_channel_ = nullptr;
   focus_channel_ = nullptr;
   speech_channel_ = nullptr;
+  spell_channel_ = nullptr;
   if (flutter_controller_) {
     flutter_controller_ = nullptr;
   }

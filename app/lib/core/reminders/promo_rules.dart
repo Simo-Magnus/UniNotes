@@ -79,7 +79,7 @@ class PromoState {
   /// Giorni diversi in cui l'app è stata aperta (uso effettivo).
   final int useDays;
 
-  /// Recensione già chiesta, fatta o «Non chiedermelo più».
+  /// Recensione già chiesta, fatta o «Non chiedere più».
   final bool reviewClosed;
 
   /// Richiesta di recensione già pianificata (se nel futuro si tiene).
@@ -215,7 +215,7 @@ PlannedNotification reviewNotification(DateTime at, ReviewDestination dest) =>
       actions: const [
         (NotificationActions.review, 'Recensisci'),
         (NotificationActions.later, 'Più tardi'),
-        (NotificationActions.never, 'Non chiedermelo più'),
+        (NotificationActions.never, 'Non chiedere più'),
       ],
     );
 
@@ -232,6 +232,6 @@ PlannedNotification donationNotification(DateTime at) => PlannedNotification(
   actions: const [
     (NotificationActions.donate, 'Dona'),
     (NotificationActions.later, 'Più tardi'),
-    (NotificationActions.never, 'Non chiedermelo più'),
+    (NotificationActions.never, 'Non chiedere più'),
   ],
 );

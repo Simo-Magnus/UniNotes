@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/enums.dart';
+import '../../core/theme/app_tokens.dart';
 import 'course_catalog.dart';
 import '../../core/constants/text_limits.dart';
 
@@ -67,7 +68,12 @@ class ProgressRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pct = (value * 100).round();
-    final color = this.color ?? colorFor(value);
+    // barra visibile anche sul bianco del tema chiaro (3:1, elemento grafico)
+    final color = readableOn(
+      this.color ?? colorFor(value),
+      Theme.of(context).brightness,
+      minRatio: 3,
+    );
     return Row(
       children: [
         if (label != null) ...[
@@ -98,13 +104,14 @@ class ProgressRow extends StatelessWidget {
 
 /// Colore e icona per lo stato di un argomento.
 extension TopicStatusStyle on TopicStatus {
-  Color color(ColorScheme scheme) => switch (this) {
+  /// Pallini e icone: almeno 3:1 sulle card in entrambi i temi.
+  Color color(ColorScheme scheme) => readableOn(switch (this) {
     TopicStatus.notStarted => scheme.outline,
     TopicStatus.inProgress => Colors.blue,
     TopicStatus.partial => const Color(0xFF818CF8),
     TopicStatus.completed => Colors.green,
     TopicStatus.toReview => Colors.purple,
-  };
+  }, scheme.brightness, minRatio: 3);
 
   IconData get icon => switch (this) {
     TopicStatus.notStarted => Icons.radio_button_unchecked,

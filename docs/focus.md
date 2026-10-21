@@ -111,7 +111,8 @@ Windows, «mai» su iOS/macOS). Nella schermata di Studio non c'è più la card
 Sessioni Studio mostra l'**obiettivo di oggi** (anello con la percentuale,
 minuti fatti, quanto manca) e la **serie** di giorni consecutivi con
 l'obiettivo raggiunto (e il record). L'obiettivo (30 minuti – 4 ore,
-predefinito 1 ora) si cambia con «Cambia» (cursore, Annulla/Salva). Contano **tutte** le sessioni di
+predefinito 1 ora) si cambia con «Cambia» (cursore, Annulla/Salva) o, dalla
+Home, toccando il riquadro di oggi in «Inizia». Contano **tutte** le sessioni di
 studio del giorno (Focus, cronometro, aggiunte a mano). Se oggi l'obiettivo
 non è ancora raggiunto la serie resta quella fino a ieri; un giorno senza
 obiettivo la interrompe.

@@ -10,6 +10,7 @@ import '../../models/course.dart';
 import '../../models/university.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
+import 'course_rename.dart';
 import 'course_ui.dart';
 import '../../core/constants/text_limits.dart';
 
@@ -179,6 +180,18 @@ class _CourseFormPageState extends State<CourseFormPage> {
     });
   }
 
+  /// Nome ufficiale dell'insegnamento (nella lingua scelta), null per uno
+  /// nuovo o aggiunto a mano.
+  String? _officialName() {
+    final c = _c;
+    if (c == null || !hasOfficialName(c)) return null;
+    final lang = _language;
+    if (lang != null && _english != _initialEnglish) {
+      return lang.apply(c, english: _english).officialName;
+    }
+    return c.officialName;
+  }
+
   @override
   void dispose() {
     for (final c in [
@@ -224,12 +237,23 @@ class _CourseFormPageState extends State<CourseFormPage> {
     final form = _formKey.currentState;
     if (form == null || !form.validate()) return;
     final old = _c;
+    // versione in inglese scelta ora: nome, codice e docenti ufficiali di
+    // quella versione
+    final lang = _language;
+    final applied = (old != null && lang != null && _english != _initialEnglish)
+        ? lang.apply(old, english: _english)
+        : null;
+    // il nome scritto è quello dello studente: il nome ufficiale (database
+    // dei corsi) resta accanto, così «Aggiorna database» non lo cancella
+    final typed = cleanCourseName(_name.text)!;
+    final official = _officialName();
     final course = Course(
       id: old?.id,
       externalId: old?.externalId,
       universityId: _universityId,
       degreeId: _degreeId,
-      name: _name.text.trim(),
+      name: official ?? typed,
+      customName: official == null || typed == official ? null : typed,
       code: _text(_code),
       teacher: _text(_teacher),
       year: int.tryParse(_year.text.trim()),
@@ -263,29 +287,25 @@ class _CourseFormPageState extends State<CourseFormPage> {
     setState(() => _saving = true);
     final services = context.read<AppServices>();
     try {
+      // dati del catalogo cambiati a mano (il nome no: ha la sua colonna; il
+      // cambio di lingua nemmeno)
+      final base = applied ?? old;
       final changed =
           old != null &&
-          (old.name != course.name ||
-              old.code != course.code ||
-              old.teacher != course.teacher ||
+          base != null &&
+          (base.code != course.code ||
+              (base.teacher ?? '') != (course.teacher ?? '') ||
               old.year != course.year ||
               old.semester != course.semester ||
               old.cfu != course.cfu ||
               old.examMode != course.examMode);
-      // il cambio di lingua non conta come modifica a mano
-      final languageOnly =
-          _language != null &&
-          _english != _initialEnglish &&
-          course.name == _language!.apply(old!, english: _english).name;
-      final toSave =
-          (old != null && (old.userEdited || (changed && !languageOnly)))
+      final toSave = (old != null && (old.userEdited || changed))
           ? course.withUserEdited()
           : course;
       final id = await services.courses.save(toSave);
       if (old != null && old.name != toSave.name) {
         await services.notes.renameCourse(old, toSave);
       }
-      final lang = _language;
       if (lang != null && _english != _initialEnglish) {
         await lang.replaceBooks(services, course, english: _english);
       }
@@ -376,13 +396,13 @@ class _CourseFormPageState extends State<CourseFormPage> {
         ),
         gap,
       ],
-      TextFormField(
+      // il nome cambiato vale in tutta l'app; quello ufficiale resta accanto
+      CourseNameField(
         controller: _name,
-        inputFormatters: TextLimits.max(TextLimits.courseName),
-        decoration: const InputDecoration(labelText: 'Nome del corso *'),
-        textCapitalization: TextCapitalization.sentences,
+        officialName: _officialName(),
+        label: 'Nome dell\'insegnamento *',
         validator: (v) =>
-            (v == null || v.trim().isEmpty) ? 'Inserisci il nome' : null,
+            cleanCourseName(v) == null ? 'Inserisci il nome' : null,
       ),
       gap,
       Row(

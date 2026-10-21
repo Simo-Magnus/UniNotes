@@ -143,8 +143,16 @@ void main() {
     onedrive.put('UniNotes/Corsi/Analisi/Appunti/a.md', 'a');
     onedrive.put('UniNotes/Backup/Backup PC.json', '{}');
     onedrive.put('Personale/tesi.docx', 'mia');
-    final root = gdrive.add('root', 'UniNotes', 'application/vnd.google-apps.folder');
-    final corsi = gdrive.add(root.id, 'Corsi', 'application/vnd.google-apps.folder');
+    final root = gdrive.add(
+      'root',
+      'UniNotes',
+      'application/vnd.google-apps.folder',
+    );
+    final corsi = gdrive.add(
+      root.id,
+      'Corsi',
+      'application/vnd.google-apps.folder',
+    );
     gdrive.add(corsi.id, 'a.md', 'text/markdown', [97]);
     gdrive.add('root', 'Mio.pdf', 'application/pdf', [1]);
 
@@ -175,9 +183,8 @@ void main() {
   });
 
   Future<bool> exists(String rel) async =>
-      FileSystemEntity.type(p.join(tmp.path, rel)).then(
-        (t) => t != FileSystemEntityType.notFound,
-      );
+      FileSystemEntity.type(p.join(tmp.path, rel))
+          .then((t) => t != FileSystemEntityType.notFound);
 
   test('elenco: dimensioni, servizi collegati, OneNote spento', () async {
     expect(calendar.events, hasLength(1));
@@ -251,28 +258,33 @@ void main() {
     await db.close();
   });
 
-  test('database senza profilo: corsi ed esami via, impostazioni restano', () async {
-    await eraser().run({EraseItem.database});
-    final db = await AppDatabase.open(path: dbPath);
-    final again = AppServices(db);
-    expect(await again.courses.all(), isEmpty);
-    expect(await again.settings.get(NotificationKeys.consent), '1');
-    await db.close();
-  });
+  test(
+    'database senza profilo: corsi ed esami via, impostazioni restano',
+    () async {
+      await eraser().run({EraseItem.database});
+      final db = await AppDatabase.open(path: dbPath);
+      final again = AppServices(db);
+      expect(await again.courses.all(), isEmpty);
+      expect(await again.settings.get(NotificationKeys.consent), '1');
+      await db.close();
+    },
+  );
 
-  test('cartella cloud scelta a mano: si tolgono solo le sottocartelle dell\'app',
-      () async {
-    onedrive.put('Università/Corsi/x.md', 'x');
-    onedrive.put('Università/mio.txt', 'mio');
-    await s.onedrive.setFolder('Università');
-    expect(await s.onedrive.deleteRemoteAppData(), 1);
-    expect(onedrive.files, contains('Università/mio.txt'));
-    expect(onedrive.files.containsKey('Università/Corsi/x.md'), isFalse);
-    // vuota ma non è la cartella dell'app: resta
-    onedrive.files.remove('Università/mio.txt');
-    expect(await s.onedrive.deleteRemoteAppData(), 0);
-    expect(onedrive.folders, contains('Università'));
-  });
+  test(
+    'cartella cloud scelta a mano: si tolgono solo le sottocartelle dell\'app',
+    () async {
+      onedrive.put('Università/Corsi/x.md', 'x');
+      onedrive.put('Università/mio.txt', 'mio');
+      await s.onedrive.setFolder('Università');
+      expect(await s.onedrive.deleteRemoteAppData(), 1);
+      expect(onedrive.files, contains('Università/mio.txt'));
+      expect(onedrive.files.containsKey('Università/Corsi/x.md'), isFalse);
+      // vuota ma non è la cartella dell'app: resta
+      onedrive.files.remove('Università/mio.txt');
+      expect(await s.onedrive.deleteRemoteAppData(), 0);
+      expect(onedrive.folders, contains('Università'));
+    },
+  );
 
   test('voci per i dati rimasti da un\'installazione precedente', () {
     expect(

@@ -149,9 +149,39 @@ e si aprono ancorati sotto la voce che li ha aperti.
 
 ## 8. Tema chiaro
 
-`prototype-light` riprende lo stesso impianto con i valori invertiti: fondo azzurro chiarissimo con le
-stesse luci attenuate, card bianche traslucide, filo di luce sostituito da un bordo sottile, ombre più
-corte e più chiare. Arancione e azzurro restano gli stessi, con i testi scuri.
+Riprogettato il 21/10/2026 («mattina limpida», `AppTokens.light` e `AppTheme.light` nell'app): stesso
+impianto del tema scuro, con una gerarchia netta tra fondo, card e card interne invece del bianco su
+bianco del primo prototipo.
+
+- **Fondo:** nebbia azzurra `#F0F5FB` `#EBF1F8` `#E6EDF6` `#E8EFF7` `#EEF3F9` con tre luci di cielo
+  (`#7DD3FC` al 20% in alto a sinistra, `#93C5FD` al 12% a destra, `#7DD3FC` al 10% in basso); mai
+  l'arancione.
+- **Card di vetro:** bianco quasi pieno (dal 100% al 97%, l'ultima fermata appena azzurra `#FAFCFF`),
+  bordo `#DAE3ED`, doppia ombra morbida (contatto `0 1 2` blu notte al 6%, profondità `0 10 28 −12`
+  al 10%), filo di luce azzurro `#38BDF8` al 55% sul bordo alto (come nel tema scuro), faretto quasi
+  spento.
+- **Card interne:** velo azzurro `#0369A1` al 5% con bordo `#0369A1` al 14% (niente grigi).
+- **Testi:** principale `#0F172A`, secondario `#334155`, attenuato `#52627A` (almeno 5,3:1 anche sul
+  fondo più scuro).
+- **Azzurro:** `#0369A1` (link, valori, primario; bianco sopra), `#086190` (icone ed etichette),
+  `#0284C7` solo per anelli e grafici; voce attiva della barra `#E0F2FE`→`#CDE9FB` con testo `#075985`.
+- **Arancione:** pulsanti con la stessa sfumatura del tema scuro e testo `#1A0B00`, ombra calda
+  arancione invece che nera; come testo o icona `#B93F0B` (`orangeInk`).
+- **Stati:** errore `#B91C1C` (contenitore `#FDE8E8`), esito positivo `#047857`, avviso `#A35208`;
+  disattivato grigio-azzurro al 18% con testo attenuato; selezionato su `#E0F2FE`; interruttore spento
+  su `#E6ECF3` con contorno `#718198`.
+- **Campi:** fondo `#F8FAFD`, bordo `#BCC9D8`, a fuoco `#0369A1`.
+- **Finestre e card dal basso:** bianco e `#FAFCFE`, velo blu notte `#0F172A` al 35–40% invece del
+  nero; avvisi in basso e suggerimenti su `#1E293B` con testo `#F1F5F9`.
+- **Grafici (serie):** `#0284C7` `#4F46E5` `#0D9488` `#9333EA` `#B45309` `#DB2777` `#64748B`, tutti
+  almeno 3:1 sulle card (nel tema scuro le versioni chiare `#38BDF8` `#818CF8` `#2DD4BF` `#C084FC`
+  `#FBBF24` `#F472B6` `#94A3B8`).
+- **Colori fissi nelle schermate** (stati degli argomenti, attività, contatori): passano da
+  `readableOn(colore, luminosità, minRatio: 3 o 4,5)`, che li scurisce sul chiaro e li schiarisce sullo
+  scuro quanto basta.
+
+Il contrasto delle coppie principali dei due temi (anche ad alto contrasto) è verificato da
+`app/test/theme_contrast_test.dart`.
 
 ## 9. Struttura dei file
 

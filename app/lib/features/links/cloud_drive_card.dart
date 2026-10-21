@@ -4,7 +4,7 @@ import '../../core/services/external_launcher.dart';
 import '../../core/services/power.dart';
 import '../../widgets/common.dart';
 import '../cloud/cloud_drive_service.dart';
-import '../settings/widgets/async_action_button.dart' show showErrorDialog;
+import 'link_status.dart';
 import 'links_widgets.dart';
 
 /// Aiuto quando l'accesso al servizio non riesce per un motivo che lo
@@ -159,38 +159,98 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
     super.dispose();
   }
 
-  /// Accesso; se l'errore ha una scheda dedicata ([SignInHelp]) la mostra
-  /// al posto del dialogo d'errore e, se lo studente lo chiede, riprova.
+  /// Accesso nel browser in corso (stato «collegamento in corso»).
+  bool _connecting = false;
+
+  /// Accesso. Riuscito: messaggio di successo, card aggiornata e prima
+  /// sincronizzazione. Non riuscito: se l'errore ha una scheda dedicata
+  /// ([SignInHelp], ateneo che blocca l'account) la mostra, altrimenti un
+  /// dialogo con la causa e «Riprova» (vedi [describeSignInError]).
   Future<void> _signIn(Future<void> Function() attempt) async {
+    setState(() => _connecting = true);
     try {
       await attempt();
     } catch (e) {
-      final help = widget.signInHelp;
-      if (help == null || !help.matches(e) || !mounted) rethrow;
-      final retry = await help.show(context, error: e, connected: false);
+      if (mounted) setState(() => _connecting = false);
       _reload();
-      if (retry && mounted) return _signIn(help.retry);
+      if (!mounted) return;
+      final help = widget.signInHelp;
+      if (help != null && help.matches(e)) {
+        final retry = await help.show(context, error: e, connected: false);
+        _reload();
+        if (retry && mounted) return _signIn(help.retry);
+        return;
+      }
+      final failure = describeSignInError(e, _sv.serviceName);
+      if (await _failureDialog(failure) && mounted) return _signIn(attempt);
       return;
     }
+    if (mounted) setState(() => _connecting = false);
     _reload();
-    await _sv.sync();
+    final who = await _sv.account();
+    if (mounted) showSnack(context, signInSuccessMessage(_sv.serviceName, who));
+    final r = await _sv.sync();
     _sv.startAutoSync();
+    if (mounted && r != null && r.dataChanges > 0) {
+      showSnack(
+        context,
+        '${_sv.serviceName}: ${r.dataChanges} dati arrivati dagli altri '
+        'dispositivi.',
+      );
+    }
+  }
+
+  /// Dialogo «Collegamento non riuscito» con causa e azione; true =
+  /// «Riprova».
+  Future<bool> _failureDialog(LinkFailure f) async {
+    final r = await showDialog<bool>(
+      context: context,
+      builder: (c) => AlertDialog(
+        icon: Icon(
+          f.phase == LinkPhase.offline ? Icons.wifi_off : Icons.error_outline,
+        ),
+        title: Text('Collegamento a ${_sv.serviceName} non riuscito'),
+        content: SelectableText(f.message),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(c, false),
+            child: const Text('Chiudi'),
+          ),
+          if (f.retry)
+            FilledButton(
+              onPressed: () => Navigator.pop(c, true),
+              child: const Text('Riprova'),
+            ),
+        ],
+      ),
+    );
+    return r == true;
   }
 
   Future<void> _openHelp(bool connected) async {
     final help = widget.signInHelp!;
     final retry = await help.show(context, connected: connected);
     if (!retry || !mounted) return;
-    try {
-      await _signIn(help.retry);
-    } catch (e) {
-      if (mounted) {
-        await showErrorDialog(
-          context,
-          'Accesso a ${_sv.serviceName} non riuscito',
-          e,
-        );
-      }
+    await _signIn(help.retry);
+  }
+
+  /// «Sincronizza ora»: esito in un messaggio (riuscita, senza rete,
+  /// errore con la causa).
+  Future<void> _syncNow() async {
+    final name = _sv.serviceName;
+    final r = await _sv.sync();
+    if (!mounted) return;
+    if (r != null) {
+      showSnack(context, '$name: $r');
+    } else if (_sv.lastError != null) {
+      showSnack(
+        context,
+        syncFailureMessage(
+          name,
+          _sv.lastError,
+          offline: _sv.lastError == _sv.offlineMessage,
+        ),
+      );
     }
   }
 
@@ -259,28 +319,30 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
 
   List<Widget> _content(BuildContext context, _CloudState d) {
     final name = _sv.serviceName;
+    final status = cloudStatus(
+      service: name,
+      available: widget.missingId == null,
+      connected: d.connected,
+      connecting: _connecting,
+      syncing: _sv.syncing,
+      progress: _sv.progress,
+      expired: _sv.authExpired,
+      adminConsent: d.helpRemembered,
+      account: d.account ?? widget.connectedFallback,
+      lastLabel: d.last,
+      lastError: _sv.lastError,
+      offlineMessage: _sv.offlineMessage,
+    );
     return [
       StatusLine(
-        d.connected ? (d.account ?? widget.connectedFallback) : 'Non collegato',
-        ok: d.connected,
+        key: const Key('cloud-status'),
+        status.message,
+        ok: status.ok || status.phase == LinkPhase.syncing,
+        error: status.isError,
       ),
-      if (d.connected) ...[
+      if (_sv.syncing || _connecting) ...[
         const SizedBox(height: 6),
-        StatusLine(
-          _sv.syncing
-              ? (_sv.progress ?? 'Sincronizzazione…')
-              : (d.last == null ? 'Mai sincronizzato' : 'Ultima: ${d.last}'),
-          ok: _sv.syncing || (d.last != null && !d.last!.startsWith('Errore')),
-          error: d.last?.startsWith('Errore') ?? false,
-        ),
-        if (_sv.syncing) ...[
-          const SizedBox(height: 6),
-          const LinearProgressIndicator(),
-        ],
-      ],
-      if (_sv.lastError != null) ...[
-        const SizedBox(height: 6),
-        StatusLine(_sv.lastError, error: true),
+        const LinearProgressIndicator(),
       ],
       const SizedBox(height: 8),
       ListTile(
@@ -312,18 +374,23 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
                   : () => _signIn(_sv.signIn),
             )
           else ...[
-            LinkButton(
-              label: 'Sincronizza ora',
-              icon: Icons.sync,
-              primary: widget.primary,
-              errorTitle: 'Sincronizzazione non riuscita',
-              onPressed: () async {
-                final r = await _sv.sync();
-                if (context.mounted && r != null) {
-                  showSnack(context, '$name: $r');
-                }
-              },
-            ),
+            if (_sv.authExpired)
+              // collegamento interrotto: sincronizzare non servirebbe
+              LinkButton(
+                label: 'Accedi di nuovo',
+                icon: Icons.login,
+                primary: true,
+                errorTitle: 'Accesso a $name non riuscito',
+                onPressed: () => _signIn(_sv.signIn),
+              )
+            else
+              LinkButton(
+                label: 'Sincronizza ora',
+                icon: Icons.sync,
+                primary: widget.primary,
+                errorTitle: 'Sincronizzazione non riuscita',
+                onPressed: _syncNow,
+              ),
             LinkButton(
               label: 'Scollega',
               icon: Icons.logout,

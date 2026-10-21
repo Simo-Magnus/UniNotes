@@ -21,8 +21,8 @@ class RecordingsCard extends StatelessWidget {
     return DashboardCard(
       icon: Icons.graphic_eq,
       title: 'Ultime registrazioni',
-      actionLabel: 'Registra',
-      onAction: () => AppShell.goTo(context, 'Registra'),
+      section: 'Registra',
+      onTap: () => AppShell.goTo(context, 'Registra'),
       child: items.isEmpty
           ? const CardEmptyMessage(
               icon: Icons.mic_none_outlined,

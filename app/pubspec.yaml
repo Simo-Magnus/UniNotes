@@ -115,6 +115,9 @@ flutter:
     - assets/fonts/
     - assets/licenses/
     - assets/tray/
+    # Grafiche delle notifiche (logo dell'app e dei tipi, immagini larghe)
+    # per Windows, iOS e macOS; tool/genera_grafiche_notifiche.py.
+    - assets/notifiche/
     # Suoni brevi dell'app, sintetizzati da tool/genera_suoni.py.
     - assets/suoni/
     # Modello Whisper integrato (ggml-base-q5_1.bin, 57 MiB), scaricato prima

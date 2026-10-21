@@ -10,6 +10,16 @@ bool isDownloaded(Book b) => isInApp(b) || (b.filePath ?? '').trim().isNotEmpty;
 /// Il file del libro è stato copiato dentro l'app.
 bool isInApp(Book b) => (b.storedFile ?? '').isNotEmpty;
 
+/// Libro «Salvato»: proposto dal catalogo e tenuto con la spunta verde.
+bool isSaved(Book b) => b.catalogChoice == CatalogChoice.kept;
+
+/// Libro proposto dal catalogo e non salvato, che «Elimina libri non
+/// salvati» toglie: ha ancora i cerchi spunta/X (non obbligatorio, nessuna
+/// scelta fatta) e nessun file. Restano sempre i libri obbligatori, quelli
+/// con un file (nell'app o sul dispositivo) e quelli aggiunti dallo studente.
+bool isUnsaved(Book b) =>
+    b.awaitingChoice && b.required != true && !isDownloaded(b);
+
 /// Avanzamento di lettura ("p. 45/300"), se il libro è stato aperto.
 String? readingProgress(Book b) {
   final page = b.lastPage;

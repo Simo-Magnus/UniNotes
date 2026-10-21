@@ -6,13 +6,14 @@ import '../../../core/theme/app_tokens.dart';
 import '../../../models/exam.dart';
 import '../../exams/exam_detail.dart';
 import '../../../utils/dates.dart';
-import '../../../widgets/study_material_tile.dart';
 import '../dashboard_data.dart';
 import 'dashboard_card.dart';
 
 /// Prossime prove (esami, prove in itinere, esoneri) con lo stato
-/// semplificato («Da prenotare», «Prenotato»), il conto alla rovescia e i
-/// materiali da studiare. Toccando una prova si apre il suo dettaglio.
+/// semplificato («Da prenotare», «Prenotato»), il conto alla rovescia e gli
+/// argomenti (i materiali da studiare sono nel dettaglio della prova).
+/// Toccando una prova si apre il suo dettaglio; toccando il resto della card
+/// si apre Esami.
 class UpcomingExamsCard extends StatelessWidget {
   const UpcomingExamsCard({super.key, required this.data});
 
@@ -24,8 +25,8 @@ class UpcomingExamsCard extends StatelessWidget {
     return DashboardCard(
       icon: Icons.assignment_outlined,
       title: 'Prossime prove',
-      actionLabel: 'Esami',
-      onAction: () => AppShell.goTo(context, 'Esami'),
+      section: 'Esami',
+      onTap: () => AppShell.goTo(context, 'Esami'),
       child: exams.isEmpty
           ? const CardEmptyMessage(
               icon: Icons.celebration_outlined,
@@ -50,8 +51,6 @@ class _ExamItem extends StatelessWidget {
 
   final Exam exam;
   final DashboardData data;
-
-  static const int _maxMaterials = 3;
 
   @override
   Widget build(BuildContext context) {
@@ -169,25 +168,7 @@ class _ExamItem extends StatelessWidget {
                   ),
               ],
             ),
-            if (x.studyMaterials.isNotEmpty) ...[
-              const SizedBox(height: 6),
-              Text(
-                'Materiali da studiare',
-                style: theme.textTheme.labelMedium?.copyWith(
-                  color: theme.colorScheme.primary,
-                ),
-              ),
-              for (final m in x.studyMaterials.take(_maxMaterials))
-                StudyMaterialTile(m),
-              if (x.studyMaterials.length > _maxMaterials)
-                Padding(
-                  padding: const EdgeInsets.only(left: 16),
-                  child: Text(
-                    '… e altri ${x.studyMaterials.length - _maxMaterials}',
-                    style: theme.textTheme.bodySmall,
-                  ),
-                ),
-            ] else if (x.topics != null) ...[
+            if (x.topics != null) ...[
               const SizedBox(height: 6),
               Text(
                 'Argomenti: ${x.topics}',

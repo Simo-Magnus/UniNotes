@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/build_flags.dart';
+import '../../../core/feedback/feedback_service.dart';
 import '../../../core/services/external_launcher.dart';
+import '../../../core/theme/app_tokens.dart';
 import '../../../widgets/common.dart';
+import '../../../widgets/glass.dart';
 import '../app_info.dart';
 import '../erase_all.dart';
 import '../widgets/settings_card.dart';
@@ -25,7 +28,9 @@ const kLicensesIntro =
     'github.com/Simo-Magnus/UniNotes.\n'
     'Qui sotto le licenze delle librerie usate dall\'app.';
 
-/// "Privacy e informazioni".
+/// "Privacy e informazioni": cosa fa l'app con i dati, la versione e due
+/// elenchi allineati: i collegamenti (sito, informativa, termini, licenze,
+/// sostegno) e, a parte, le azioni che cancellano i dati.
 class PrivacySection extends StatelessWidget {
   const PrivacySection({super.key});
 
@@ -52,7 +57,7 @@ class PrivacySection extends StatelessWidget {
           'L\'app funziona interamente sul dispositivo: la rete serve '
           'esclusivamente per scaricare il database pubblico dei corsi e i '
           'modelli Whisper, sincronizzare OneDrive o Google Drive e aprire '
-          'Gemini o la tua AI di riferimento.',
+          'la tua AI di riferimento o Gemini («Trascrivi con Gemini»).',
         ),
         point(
           Icons.analytics_outlined,
@@ -70,7 +75,7 @@ class PrivacySection extends StatelessWidget {
             'lo desideri puoi sostenere il progetto con una donazione libera a '
             'piacere con il pulsante «Sostieni il progetto».',
           ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 4),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 4),
           child: Text.rich(
@@ -92,67 +97,179 @@ class PrivacySection extends StatelessWidget {
             ),
           ),
         ),
-        Wrap(
-          spacing: 8,
-          children: [
-            TextButton.icon(
-              onPressed: () => _open(context, kProjectUrl),
-              icon: const Icon(Icons.public),
-              label: const Text('Sito del progetto'),
+        const SizedBox(height: 8),
+        // collegamenti e pagine: elenco allineato, una riga per voce
+        _LinkList(
+          rows: [
+            _LinkRow(
+              key: const Key('link-project'),
+              icon: Icons.public,
+              label: 'Sito del progetto',
+              external: true,
+              onTap: () => _open(context, kProjectUrl),
             ),
-            TextButton.icon(
-              onPressed: () => _open(context, kPrivacyUrl),
-              icon: const Icon(Icons.policy_outlined),
-              label: const Text('Informativa privacy'),
+            _LinkRow(
+              key: const Key('link-privacy'),
+              icon: Icons.policy_outlined,
+              label: 'Informativa privacy',
+              external: true,
+              onTap: () => _open(context, kPrivacyUrl),
             ),
-            TextButton.icon(
-              onPressed: () => _open(context, kTermsUrl),
-              icon: const Icon(Icons.description_outlined),
-              label: const Text('Termini d\'uso'),
+            _LinkRow(
+              key: const Key('link-terms'),
+              icon: Icons.description_outlined,
+              label: "Termini d'uso",
+              external: true,
+              onTap: () => _open(context, kTermsUrl),
             ),
-            TextButton.icon(
-              onPressed: () => showLicensePage(
+            _LinkRow(
+              key: const Key('link-licenses'),
+              icon: Icons.gavel_outlined,
+              label: 'Licenze',
+              onTap: () => showLicensePage(
                 context: context,
                 applicationName: kAppName,
                 applicationVersion: kAppVersion,
                 applicationLegalese: kLicensesIntro,
               ),
-              icon: const Icon(Icons.gavel_outlined),
-              label: const Text('Licenze'),
-            ),
-            TextButton.icon(
-              key: const Key('erase-all'),
-              onPressed: () => eraseAllData(context),
-              icon: Icon(
-                Icons.delete_forever_outlined,
-                color: theme.colorScheme.error,
-              ),
-              label: Text(
-                'Elimina tutti i dati',
-                style: TextStyle(color: theme.colorScheme.error),
-              ),
-            ),
-            TextButton.icon(
-              key: const Key('uninstall-app'),
-              onPressed: () => uninstallApp(context),
-              icon: Icon(
-                Icons.delete_sweep_outlined,
-                color: theme.colorScheme.error,
-              ),
-              label: Text(
-                'Disinstalla UniNotes',
-                style: TextStyle(color: theme.colorScheme.error),
-              ),
             ),
             if (kShowDonationLink)
-              TextButton.icon(
-                onPressed: () => _open(context, kDonationUrl),
-                icon: const Icon(Icons.favorite_outline),
-                label: const Text('Sostieni il progetto'),
+              _LinkRow(
+                key: const Key('link-donation'),
+                icon: Icons.favorite_outline,
+                label: 'Sostieni il progetto',
+                external: true,
+                onTap: () => _open(context, kDonationUrl),
               ),
           ],
         ),
+        const SizedBox(height: 12),
+        // azioni che cancellano dati: a parte, in rosso (con conferma)
+        _LinkList(
+          rows: [
+            _LinkRow(
+              key: const Key('erase-all'),
+              icon: Icons.delete_forever_outlined,
+              label: 'Elimina tutti i dati',
+              destructive: true,
+              onTap: () => eraseAllData(context),
+            ),
+            _LinkRow(
+              key: const Key('uninstall-app'),
+              icon: Icons.delete_sweep_outlined,
+              label: 'Disinstalla UniNotes',
+              destructive: true,
+              onTap: () => uninstallApp(context),
+            ),
+          ],
+        ),
       ],
+    );
+  }
+}
+
+/// Riquadro interno con righe separate da una linea sottile che parte dal
+/// testo (non dall'icona), come gli elenchi di sistema.
+class _LinkList extends StatelessWidget {
+  const _LinkList({required this.rows});
+
+  final List<Widget> rows;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.tokens;
+    return GlassCard(
+      inner: true,
+      margin: EdgeInsets.zero,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          for (final (i, r) in rows.indexed) ...[
+            if (i > 0)
+              Divider(
+                height: 1,
+                thickness: 1,
+                indent: _LinkRow.textInset,
+                color: t.innerBorder,
+              ),
+            r,
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+/// Riga di «Privacy e informazioni»: icona a sinistra, testo, a destra
+/// l'icona «apre fuori dall'app» ([external]) o la freccia (pagina o azione
+/// dell'app). Alta almeno 48 dp; colori del tema (chiaro e scuro), rossi
+/// per le azioni che cancellano dati ([destructive]).
+class _LinkRow extends StatelessWidget {
+  const _LinkRow({
+    super.key,
+    required this.icon,
+    required this.label,
+    required this.onTap,
+    this.external = false,
+    this.destructive = false,
+  });
+
+  /// Inizio del testo (e delle linee di separazione) dal bordo sinistro.
+  static const double textInset = 12 + 22 + 16;
+
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+  final bool external;
+  final bool destructive;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.tokens;
+    final scheme = Theme.of(context).colorScheme;
+    final fg = destructive ? scheme.error : t.textPrimary;
+    return Semantics(
+      button: !external,
+      link: external,
+      label: external ? '$label (si apre nel browser)' : label,
+      excludeSemantics: true,
+      child: InkWell(
+        onTap: () {
+          AppFeedback.of(context).tap();
+          onTap();
+        },
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: 48),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+            child: Row(
+              children: [
+                Icon(
+                  icon,
+                  size: 22,
+                  color: destructive ? scheme.error : scheme.primary,
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Text(
+                    label,
+                    style: Theme.of(context).textTheme.bodyLarge
+                        ?.copyWith(color: fg, fontWeight: FontWeight.w500),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Icon(
+                  external ? Icons.open_in_new : Icons.chevron_right,
+                  size: external ? 18 : 22,
+                  color: destructive
+                      ? scheme.error.withValues(alpha: 0.8)
+                      : t.textMuted,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

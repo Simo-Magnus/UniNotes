@@ -49,20 +49,24 @@ enum LiveEngine {
 
 /// Trascrizione dal vivo durante la registrazione.
 ///
-/// 1. **Riconoscimento del sistema** (recorder/system_speech.dart), come Memo
-///    Vocali o la digitazione vocale di Google Docs: riceve l'audio della
-///    registrazione man mano ([onPcm]); il testo provvisorio ([partial]) si
-///    aggiorna mentre si parla e diventa un segmento quando il sistema lo
-///    stabilizza.
-/// 2. **Whisper** (ripiego, dove il sistema non offre nulla o il
-///    riconoscitore si ferma), sempre offline: con il modello dal vivo
-///    (piccolo, incluso nell'installatore di Windows o scaricato da solo la
-///    prima volta) ogni ~2 s ritrascrive dal WAV di lavoro il tratto non
-///    ancora definitivo ([LiveWindowPlanner]): il testo provvisorio si
-///    aggiorna come quello del sistema. Senza modello dal vivo usa quello
-///    scelto dall'utente a pezzi da ~10 s. Una trascrizione alla volta,
-///    fuori dal thread dell'interfaccia; i tratti saltati si recuperano
-///    alla fine ([recover]).
+/// 1. **Whisper** con il modello integrato (base q5_1, incluso nell'app o
+///    scaricato da solo la prima volta), sempre offline: ogni ~2 s
+///    ritrascrive dal WAV di lavoro il tratto non ancora definitivo
+///    ([LiveWindowPlanner]): il testo provvisorio ([partial]) si aggiorna
+///    mentre si parla. È il motore del testo istantaneo dell'app, qualunque
+///    altra cosa sia collegata: i modelli scaricati più accurati sono
+///    troppo lenti per stare al passo e si usano dopo il salvataggio
+///    («Trascrivi di nuovo con…», recorder/better_transcription.dart). Solo
+///    se il modello integrato non può girare (PC senza AVX2, build senza il
+///    modello e download non riuscito) si usa quello scaricato
+///    dall'utente a pezzi da ~10 s. Una trascrizione alla volta, fuori dal
+///    thread dell'interfaccia; i tratti saltati si recuperano alla fine
+///    ([recover]).
+/// 2. **Riconoscimento del sistema** (recorder/system_speech.dart): solo se
+///    si passa [speech] (oggi nessuno lo fa: il registratore usa sempre
+///    Whisper, perché su Windows con «Riconoscimento vocale online» il testo
+///    istantaneo non arrivava). Resta per i test e per un eventuale ritorno;
+///    riceve l'audio della registrazione man mano ([onPcm]).
 ///
 /// Non blocca mai la registrazione: ogni errore ferma solo la trascrizione
 /// (o fa passare dal sistema a Whisper).
@@ -190,12 +194,38 @@ class LiveTranscriber extends ChangeNotifier {
   /// Correzione del segmento [index] (testo vuoto = frase tolta).
   void editSegment(int index, String text) {
     if (index < 0 || index >= merger.segments.length) return;
-    final key = merger.segments[index].start.inMilliseconds;
+    replaceSegments([merger.segments[index].start.inMilliseconds], text);
+  }
+
+  /// Modifica dal campo di testo della trascrizione (come in un editor): i
+  /// segmenti che iniziano a [startsMs] diventano uno solo con [text]
+  /// (inizio del primo, fine dell'ultimo); testo vuoto = tolti. Gli altri
+  /// segmenti tengono testo e tempi.
+  void replaceSegments(List<int> startsMs, String text) {
+    final idx = <int>[
+      for (final k in startsMs)
+        if (merger.segments.indexWhere((s) => s.start.inMilliseconds == k)
+            case final i when i >= 0)
+          i,
+    ]..sort();
+    if (idx.isEmpty) return;
+    final first = idx.first;
+    final lastEnd = merger.segments[idx.last].end;
+    // dal fondo, così l'indice del primo non cambia
+    for (final i in idx.skip(1).toList().reversed) {
+      _edits.remove(merger.segments[i].start.inMilliseconds);
+      merger.segments.removeAt(i);
+    }
+    final seg = merger.segments[first];
+    final key = seg.start.inMilliseconds;
     final t = text.trim();
     if (t.isEmpty) {
-      merger.segments.removeAt(index);
+      merger.segments.removeAt(first);
       _edits.remove(key);
     } else {
+      if (lastEnd > seg.end) {
+        merger.segments[first] = seg.copyWith(end: lastEnd);
+      }
       _edits[key] = t;
     }
     onSegments?.call();

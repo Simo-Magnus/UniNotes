@@ -9,6 +9,7 @@ import '../../models/exam.dart';
 import '../../models/university.dart';
 import '../../widgets/common.dart';
 import '../../widgets/math_text.dart';
+import '../courses/course_rename.dart';
 import '../courses/course_ui.dart';
 import 'exam_form.dart';
 import 'exam_materials.dart';
@@ -289,35 +290,22 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
     await _save(_withText(cfu: n, clearCfu: n == null));
   }
 
-  /// Voto (esame finale: 18-30 e lode) o punteggio (prova in itinere o
-  /// esonero): inserirlo segna la prova come superata, toglierlo («—») la
-  /// riporta in attesa di esito.
+  /// Voto (esame finale: 18-30 e lode, idoneità, «Non superato») o
+  /// punteggio (prova in itinere o esonero, oppure «Non superata»): il voto
+  /// segna la prova come superata, «Non superato» la lascia tra quelle da
+  /// sostenere, nessun voto la riporta in attesa di esito.
   Future<void> _editGrade() async {
-    final r = await showDialog<({int? grade, bool laude})>(
+    final r = await showDialog<ExamOutcome>(
       context: context,
       builder: (c) => GradeDialog(
         midterm: _midterm,
+        status: exam.status,
         grade: exam.grade,
         laude: exam.laude,
-        allowEmpty: exam.grade != null,
       ),
     );
     if (r == null || !mounted) return;
-    await _save(
-      r.grade == null
-          ? exam.copyWith(
-              clearGrade: true,
-              laude: false,
-              status: exam.status == ExamStatus.passed
-                  ? ExamStatus.taken
-                  : exam.status,
-            )
-          : exam.copyWith(
-              grade: r.grade,
-              laude: r.laude,
-              status: ExamStatus.passed,
-            ),
-    );
+    await _save(withOutcome(exam, r));
   }
 
   Future<void> _saveTopics() async {
@@ -423,8 +411,31 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
                       ),
                     ),
                     const SizedBox(height: 4),
-                    // solo il nome dell'insegnamento
-                    Text(course?.name ?? 'Corso sconosciuto'),
+                    // solo il nome dell'insegnamento: toccandolo lo si
+                    // cambia, in tutta l'app
+                    if (course == null)
+                      const Text('Corso sconosciuto')
+                    else
+                      Tooltip(
+                        message: 'Cambia il nome dell\'insegnamento',
+                        child: InkWell(
+                          key: const Key('detail-course-name'),
+                          borderRadius: BorderRadius.circular(4),
+                          onTap: () => renameCourseDialog(context, course!),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Flexible(child: Text(course!.name)),
+                              const SizedBox(width: 4),
+                              Icon(
+                                Icons.edit_outlined,
+                                size: 14,
+                                color: theme.colorScheme.outline,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                   ],
                 ),
               ),
@@ -498,8 +509,12 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
           InfoRow.text(
             icon: Icons.grade_outlined,
             label: _midterm ? 'Punteggio' : 'Voto',
-            value: grade == null
-                ? (_midterm ? 'Nessun punteggio' : 'Nessun voto')
+            value: exam.status == ExamStatus.failed
+                ? (_midterm ? 'Non superata' : 'Non superato')
+                : grade == null
+                ? (exam.status == ExamStatus.passed && !_midterm
+                      ? 'Idoneità (senza voto)'
+                      : (_midterm ? 'Nessun punteggio' : 'Nessun voto'))
                 : (_midterm
                       ? '$grade punti'
                       : '$grade${exam.laude ? '' : '/30'}'),

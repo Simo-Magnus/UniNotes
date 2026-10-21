@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/academic/electives.dart';
+import '../../core/academic/plan_scope.dart';
 import '../../core/constants/enums.dart';
 import '../../core/feedback/feedback_service.dart';
 import '../../core/services/app_services.dart';
@@ -11,6 +12,8 @@ import '../../core/reminders/system_calendar.dart';
 import '../../core/services/calendar_export.dart';
 import '../../models/course.dart';
 import '../../models/exam.dart';
+import '../../repositories/exam_repository.dart';
+import '../../utils/exclusion_filter.dart';
 import '../../widgets/common.dart';
 import '../../widgets/reminders_prompt.dart';
 import 'exam_ui.dart';
@@ -39,7 +42,16 @@ Future<bool> openExamForm(
   return saved ?? false;
 }
 
-/// Chiede conferma ed elimina l'esame. Restituisce true se eliminato.
+/// Impostazione «Non chiedere più» della conferma di eliminazione di una
+/// prova (le chiavi `dont_ask_` si ripristinano tutte da Impostazioni →
+/// «Ripristina le domande»).
+const String kDontAskDeleteExamKey = 'dont_ask_delete_exam';
+
+/// Chiede conferma ed elimina l'esame: «Annulla» ed «Elimina», più la
+/// casella «Non chiedere più». Con la casella spuntata le eliminazioni
+/// successive non chiedono più, tranne quella dell'esame finale di un
+/// insegnamento a scelta, che toglie l'insegnamento dal piano. Restituisce
+/// true se eliminato.
 Future<bool> deleteExamWithConfirm(BuildContext context, Exam exam) async {
   final what = exam.kind == ExamKind.midterm
       ? 'la prova in itinere o l\'esonero'
@@ -48,16 +60,28 @@ Future<bool> deleteExamWithConfirm(BuildContext context, Exam exam) async {
   final course = await services.courses.byId(exam.courseId);
   final elective =
       exam.kind == ExamKind.finalExam && course?.mandatory == false;
+  var skip = false;
+  if (!elective) {
+    try {
+      skip = await services.settings.get(kDontAskDeleteExamKey) == '1';
+    } catch (_) {
+      // impostazioni non leggibili: si chiede
+    }
+  }
   if (!context.mounted) return false;
-  final ok = await confirmDialog(
-    context,
-    'Elimina',
-    'Vuoi eliminare $what "${exam.title ?? exam.kind.label}"?'
+  final ok =
+      skip ||
+      await _confirmDeleteExam(
+        context,
+        services,
+        'Vuoi eliminare $what «${exam.title ?? exam.kind.label}»'
+        '${course == null ? '' : ' di «${course.name}»'}? Voto, data, '
+        'argomenti e materiali della prova si perdono.'
         '${elective ? '\n\n«${course!.name}» è un insegnamento a scelta: '
                   'senza esame sparisce anche da Registra, Studio, Libri '
                   'e Home (i dati restano; lo riprendi aggiungendo di nuovo '
                   'l\'esame).' : ''}',
-  );
+      );
   if (!ok || !context.mounted || exam.id == null) return false;
   await services.exams.delete(exam.id!);
   final dropped = await dropElectiveWithoutExam(services, exam.courseId);
@@ -70,6 +94,111 @@ Future<bool> deleteExamWithConfirm(BuildContext context, Exam exam) async {
   }
   return true;
 }
+
+/// Dialogo «Eliminare la prova?» con la casella «Non chiedere più».
+Future<bool> _confirmDeleteExam(
+  BuildContext context,
+  AppServices services,
+  String message,
+) async {
+  var dontAsk = false;
+  final ok = await showDialog<bool>(
+    context: context,
+    builder: (c) {
+      final scheme = Theme.of(c).colorScheme;
+      return StatefulBuilder(
+        builder: (c, setLocal) => AlertDialog(
+          icon: Icon(Icons.delete_outline, color: scheme.error),
+          title: const Text('Eliminare la prova?'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(message),
+              const SizedBox(height: 8),
+              CheckboxListTile(
+                key: const Key('exam-delete-dont-ask'),
+                contentPadding: EdgeInsets.zero,
+                controlAffinity: ListTileControlAffinity.leading,
+                dense: true,
+                value: dontAsk,
+                onChanged: (v) => setLocal(() => dontAsk = v ?? false),
+                title: const Text('Non chiedere più'),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(c, false),
+              child: const Text('Annulla'),
+            ),
+            FilledButton(
+              key: const Key('exam-delete-confirm'),
+              style: FilledButton.styleFrom(
+                backgroundColor: scheme.error,
+                foregroundColor: scheme.onError,
+              ),
+              onPressed: () => Navigator.pop(c, true),
+              child: const Text('Elimina'),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+  if (ok == true && dontAsk) {
+    try {
+      await services.settings.set(kDontAskDeleteExamKey, '1');
+    } catch (_) {}
+  }
+  return ok ?? false;
+}
+
+/// Insegnamenti proposti nel menù «Corso» di una prova nuova: quelli del
+/// corso di laurea nell'anno che lo studente frequenta (non quelli degli anni
+/// successivi), più quelli degli anni passati con l'esame ancora da superare;
+/// senza quelli esclusi in Impostazioni → Esclusioni (OFA, inglese,
+/// facoltativi), riconosciuti dal nome ufficiale. Senza percorso tutti.
+bool offeredInExamForm(
+  Course c, {
+  required PlanScope scope,
+  required ExclusionFilter exclusions,
+  required bool passed,
+}) {
+  if (!scope.inDegree(c)) return false;
+  if (exclusions.isExcluded([c.officialName])) return false;
+  final current = scope.profile?.currentYear;
+  final y = c.year;
+  if (current == null || y == null) return true;
+  if (y == current) return true;
+  return y < current && !passed;
+}
+
+/// Esame finale nuovo [typed] salvato sull'esame finale già presente
+/// [existing] dello stesso insegnamento: stato, voto e lode sono quelli
+/// scelti ora; gli altri campi lasciati vuoti tengono il valore di prima (id
+/// del database dei corsi, argomenti, materiali…).
+Exam mergeIntoExistingFinal(Exam existing, Exam typed) => Exam(
+  id: existing.id,
+  externalId: existing.externalId,
+  courseId: existing.courseId,
+  kind: ExamKind.finalExam,
+  title: typed.title ?? existing.title,
+  date: typed.date ?? existing.date,
+  time: typed.date != null ? typed.time : existing.time,
+  location: typed.location ?? existing.location,
+  examType: typed.examType ?? existing.examType,
+  status: typed.status,
+  grade: typed.grade,
+  laude: typed.laude,
+  cfu: typed.cfu ?? existing.cfu,
+  topics: typed.topics ?? existing.topics,
+  studyMaterials: typed.studyMaterials.isEmpty
+      ? existing.studyMaterials
+      : typed.studyMaterials,
+  notes: typed.notes ?? existing.notes,
+  source: existing.source,
+);
 
 class ExamFormPage extends StatefulWidget {
   const ExamFormPage({
@@ -90,17 +219,48 @@ class ExamFormPage extends StatefulWidget {
 class _ExamFormPageState extends State<ExamFormPage> {
   final _formKey = GlobalKey<FormState>();
 
-  /// Insegnamenti del corso di laurea attuale (archiviati compresi, così
-  /// un insegnamento a scelta rimosso si può riprendere aggiungendo l'esame).
+  /// Insegnamenti del menù «Corso» (vedi [offeredInExamForm]; archiviati
+  /// compresi, così un insegnamento a scelta rimosso si può riprendere
+  /// aggiungendo l'esame). Quello della prova e quello da cui si è aperto il
+  /// modulo ci sono sempre. Insieme si legge l'esame finale di ogni
+  /// insegnamento, che una prova nuova aggiorna invece di farne un doppione.
   late final Future<List<Course>> _courses = () async {
     final s = context.read<AppServices>();
     final scope = s.scope;
-    final all = await s.courses.all();
+    final exclusions = ExclusionFilter(await s.settings.exclusionPatterns());
+    final finals = <int, List<Exam>>{};
+    for (final e in await s.exams.all()) {
+      if (e.kind == ExamKind.finalExam) {
+        finals.putIfAbsent(e.courseId, () => []).add(e);
+      }
+    }
+    _finalByCourse = {
+      for (final f in finals.entries) f.key: primaryFinal(f.value)!,
+    };
+    final keep = {widget.exam?.courseId, widget.initialCourseId};
     return [
-      for (final c in all)
-        if (scope.inDegree(c) || c.id == widget.exam?.courseId) c,
+      for (final c in await s.courses.all())
+        if (keep.contains(c.id) ||
+            offeredInExamForm(
+              c,
+              scope: scope,
+              exclusions: exclusions,
+              passed: _finalByCourse[c.id]?.status == ExamStatus.passed,
+            ))
+          c,
     ];
   }();
+
+  /// Esame finale di ogni insegnamento (id → esame).
+  Map<int, Exam> _finalByCourse = const {};
+
+  /// Esame finale già presente dell'insegnamento scelto, se si sta creando un
+  /// esame finale: salvando si aggiorna quello (un esame, uno stato).
+  Exam? get _existingFinal {
+    final id = _courseId;
+    if (!_isNew || _kind != ExamKind.finalExam || id == null) return null;
+    return _finalByCourse[id];
+  }
 
   late final _title = TextEditingController(text: widget.exam?.title);
   late final _location = TextEditingController(text: widget.exam?.location);
@@ -147,6 +307,11 @@ class _ExamFormPageState extends State<ExamFormPage> {
   late int? _grade =
       widget.exam?.grade ?? (widget.exam?.laude == true ? 30 : null);
   late bool _laude = widget.exam?.laude ?? false;
+
+  /// Punteggio della prova in itinere o dell'esonero.
+  late final _points = TextEditingController(
+    text: _status == ExamStatus.passed ? (_grade?.toString() ?? '') : '',
+  );
   late List<String> _materials = [...?widget.exam?.studyMaterials];
   bool _saving = false;
 
@@ -199,7 +364,7 @@ class _ExamFormPageState extends State<ExamFormPage> {
 
   @override
   void dispose() {
-    for (final c in [_title, _location, _cfu, _topics, _notes]) {
+    for (final c in [_title, _location, _cfu, _topics, _notes, _points]) {
       c.dispose();
     }
     super.dispose();
@@ -240,6 +405,7 @@ class _ExamFormPageState extends State<ExamFormPage> {
       if (s != ExamStatus.passed) {
         _grade = null;
         _laude = false;
+        _points.clear();
       }
     });
   }
@@ -260,6 +426,9 @@ class _ExamFormPageState extends State<ExamFormPage> {
       return;
     }
     final old = widget.exam;
+    // esame finale nuovo di un insegnamento che ne ha già uno: si aggiorna
+    // quello, così l'esame resta uno con un solo stato
+    final existing = _existingFinal;
     final services = context.read<AppServices>();
     var courseId = _courseId!;
     final extra = _extra;
@@ -281,7 +450,7 @@ class _ExamFormPageState extends State<ExamFormPage> {
       _courseId = courseId;
       _extra = null;
     }
-    final exam = Exam(
+    final typed = Exam(
       id: old?.id,
       externalId: old?.externalId,
       courseId: courseId,
@@ -302,6 +471,9 @@ class _ExamFormPageState extends State<ExamFormPage> {
       notes: _nullIfEmpty(_notes.text),
       source: old?.source,
     );
+    final exam = existing == null
+        ? typed
+        : mergeIntoExistingFinal(existing, typed);
     setState(() => _saving = true);
     final int id;
     try {
@@ -338,8 +510,9 @@ class _ExamFormPageState extends State<ExamFormPage> {
     services.revision.bump();
     // esame appena superato: il traguardo ha il suo suono; gli altri
     // salvataggi una conferma discreta
+    final before = old ?? existing;
     final passedNow =
-        exam.status == ExamStatus.passed && old?.status != ExamStatus.passed;
+        exam.status == ExamStatus.passed && before?.status != ExamStatus.passed;
     unawaited(
       services.feedback.play(
         passedNow ? FeedbackEvent.complete : FeedbackEvent.confirm,
@@ -351,7 +524,11 @@ class _ExamFormPageState extends State<ExamFormPage> {
       await offerExamReminders(context, services);
       if (mounted) await offerExamCalendar(context, services);
     }
-    if (mounted) Navigator.pop(context, true);
+    if (!mounted) return;
+    if (existing != null) {
+      showSnack(context, 'Aggiornato l\'esame finale già presente');
+    }
+    Navigator.pop(context, true);
   }
 
   @override
@@ -464,6 +641,30 @@ class _ExamFormPageState extends State<ExamFormPage> {
         },
         validator: (v) => v == null ? 'Scegli il corso' : null,
       ),
+      if (_existingFinal case final e?)
+        Padding(
+          key: const Key('existing-final'),
+          padding: const EdgeInsets.only(top: 8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.info_outline,
+                size: 18,
+                color: Theme.of(context).colorScheme.primary,
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  'L\'insegnamento ha già il suo esame finale '
+                  '(«${e.status.label}»): salvando lo aggiorni, senza '
+                  'crearne un altro.',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ),
+            ],
+          ),
+        ),
       gap,
       TextFormField(
         controller: _title,
@@ -529,6 +730,8 @@ class _ExamFormPageState extends State<ExamFormPage> {
       ),
       gap,
       DropdownButtonFormField<ExamStatus>(
+        // si aggiorna anche quando lo stato cambia dal voto
+        key: ValueKey('exam-status-$_status'),
         style: Theme.of(context).textTheme.bodyLarge,
         initialValue: _status,
         decoration: const InputDecoration(labelText: 'Stato'),
@@ -616,29 +819,41 @@ class _ExamFormPageState extends State<ExamFormPage> {
     ];
   }
 
+  /// Voto o punteggio: scriverlo segna la prova come superata. Esame finale:
+  /// nel menù anche «Non superato», «Idoneità (senza voto)» e nessun voto (in
+  /// attesa dell'esito), che cambiano lo stato qui sopra.
   Widget _gradeFields() {
-    final enabled = _status == ExamStatus.passed;
     if (_kind == ExamKind.midterm) {
+      final failed = _status == ExamStatus.failed;
       return TextFormField(
-        key: ValueKey('points-$_status'),
-        enabled: enabled,
-        initialValue: _grade?.toString() ?? '',
+        key: const Key('exam-points'),
+        controller: _points,
+        enabled: !failed,
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
           labelText: 'Punteggio',
-          helperText: enabled ? null : 'Disponibile solo con stato "Superato"',
+          helperText: failed
+              ? 'Prova non superata'
+              : 'Con il punteggio la prova risulta superata',
         ),
-        onChanged: (v) => setState(() => _grade = int.tryParse(v.trim())),
-        validator: (_) => enabled
+        onChanged: (v) => setState(() {
+          _grade = int.tryParse(v.trim());
+          if (_grade != null) {
+            _status = ExamStatus.passed;
+          } else if (_status == ExamStatus.passed) {
+            _status = ExamStatus.taken;
+          }
+        }),
+        validator: (_) => _status == ExamStatus.passed
             ? validateExamGrade(_status, _grade, false, midterm: true)
             : null,
       );
     }
+    final code = outcomeCode(_status, _grade, laude: _laude);
     return InputDecorator(
       decoration: InputDecoration(
         labelText: 'Voto',
-        helperText: enabled ? null : 'Disponibile solo con stato "Superato"',
-        errorText: enabled ? validateExamGrade(_status, _grade, _laude) : null,
+        errorText: validateExamGrade(_status, _grade, _laude),
       ),
       child: Row(
         children: [
@@ -647,23 +862,31 @@ class _ExamFormPageState extends State<ExamFormPage> {
             child: ButtonTheme.fromButtonThemeData(
               data: ButtonTheme.of(context).copyWith(alignedDropdown: false),
               child: DropdownButton<int>(
+                key: const Key('exam-grade'),
                 style: Theme.of(context).textTheme.bodyLarge,
-                value: _grade != null && _grade! >= 18 && _grade! <= 30
-                    ? _grade
-                    : null,
+                value: code,
                 isExpanded: true,
-                hint: const Text('—'),
                 underline: const SizedBox.shrink(),
                 items: [
-                  for (var g = 18; g <= 30; g++)
-                    DropdownMenuItem(value: g, child: Text('$g/30')),
+                  for (final c in kOutcomeCodes)
+                    DropdownMenuItem(
+                      value: c,
+                      child: Text(
+                        outcomeLabel(c, _status),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
                 ],
-                onChanged: enabled
-                    ? (v) => setState(() {
-                        _grade = v;
-                        if (v != 30) _laude = false;
-                      })
-                    : null,
+                onChanged: (v) => setState(() {
+                  final o = outcomeOf(
+                    v ?? kOutcomeNone,
+                    current: _status,
+                    laude: v == 30 && _laude,
+                  );
+                  _status = o.status;
+                  _grade = o.grade;
+                  _laude = o.laude;
+                }),
               ),
             ),
           ),
@@ -671,9 +894,7 @@ class _ExamFormPageState extends State<ExamFormPage> {
           const Text('Lode'),
           Switch(
             value: _laude,
-            onChanged: enabled && _grade == 30
-                ? (v) => setState(() => _laude = v)
-                : null,
+            onChanged: code == 30 ? (v) => setState(() => _laude = v) : null,
           ),
         ],
       ),

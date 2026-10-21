@@ -6,6 +6,7 @@ import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 
 import '../../core/services/app_services.dart';
+import '../../core/theme/app_tokens.dart';
 import '../../models/attachment.dart';
 import '../../models/course.dart';
 import '../../widgets/common.dart';
@@ -393,14 +394,14 @@ class _KindDialogState extends State<_KindDialog> {
                 for (final k in kAttachmentKindOrder)
                   FilterChip(
                     key: ValueKey('kind-${k.key}'),
-                    avatar: Icon(k.icon, size: 18, color: k.color),
+                    avatar: Icon(k.icon, size: 18, color: k.colorOn(context)),
                     label: Text(k.label),
                     selected: _kinds.contains(k),
                     showCheckmark: false,
-                    selectedColor: k.color.withValues(alpha: 0.22),
+                    selectedColor: k.colorOn(context).withValues(alpha: 0.22),
                     side: BorderSide(
                       color: _kinds.contains(k)
-                          ? k.color
+                          ? k.colorOn(context)
                           : theme.colorScheme.outlineVariant,
                     ),
                     onSelected: (v) =>
@@ -526,6 +527,14 @@ extension AttachmentKindStyle on AttachmentKind {
     AttachmentKind.exercises => const Color(0xFFF57C00),
     AttachmentKind.review => const Color(0xFF8E24AA),
   };
+
+  /// Colore per il tema in uso: nel tema chiaro scurito quanto basta per
+  /// 3:1 come icona (l'arancione degli esercizi sul bianco non ci arriva);
+  /// nel tema scuro invariato.
+  Color colorOn(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.light
+      ? readableOn(color, Brightness.light, minRatio: 3)
+      : color;
 }
 
 /// Segna o toglie un tipo (teoria, esercizi, ripasso) su un allegato.
@@ -603,13 +612,13 @@ class AttachmentTile extends StatelessWidget {
                         child: Container(
                           padding: const EdgeInsets.all(3),
                           decoration: BoxDecoration(
-                            color: k.color.withValues(alpha: 0.16),
+                            color: k.colorOn(context).withValues(alpha: 0.16),
                             borderRadius: BorderRadius.circular(6),
                           ),
                           child: Icon(
                             k.icon,
                             size: 16,
-                            color: k.color,
+                            color: k.colorOn(context),
                             semanticLabel: k.label,
                           ),
                         ),
@@ -631,7 +640,7 @@ class AttachmentTile extends StatelessWidget {
                           checked: a.kinds.contains(k),
                           child: Row(
                             children: [
-                              Icon(k.icon, size: 18, color: k.color),
+                              Icon(k.icon, size: 18, color: k.colorOn(context)),
                               const SizedBox(width: 8),
                               Text(k.label),
                             ],

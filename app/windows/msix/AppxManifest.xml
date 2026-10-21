@@ -64,6 +64,14 @@
         <desktop:Extension Category="windows.toastNotificationActivation">
           <desktop:ToastNotificationActivation ToastActivatorCLSID="5d3f2b7e-91c4-4a8e-b6f1-0c7a2e9d4b13" />
         </desktop:Extension>
+        <!-- Schema uninotes:// : dopo l'accesso a OneDrive o Google Drive
+             nel browser la pagina riporta nell'app (la seconda copia avviata
+             dallo schema porta in primo piano la prima, windows/runner/main.cpp). -->
+        <uap:Extension Category="windows.protocol">
+          <uap:Protocol Name="uninotes">
+            <uap:DisplayName>UniNotes</uap:DisplayName>
+          </uap:Protocol>
+        </uap:Extension>
         <com:Extension Category="windows.comServer">
           <com:ComServer>
             <com:ExeServer Executable="uninotes.exe" Arguments="-ToastActivated" DisplayName="UniNotes">

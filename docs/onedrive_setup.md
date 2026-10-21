@@ -120,6 +120,8 @@ navigatore delle cartelle) crea:
 
 ```
 UniNotes/
+  Dati/         <dispositivo> <codice>.json.gz (dati dell'app uniti fra i
+                dispositivi: vedi docs/sincronizzazione_dati.md)
   Corsi/<Ateneo - Corso>/Registrazioni | Trascrizioni | Riassunti | Appunti | AI
   Libri/        libri copiati nell'app
   Materiali/    materiale didattico copiato nell'app

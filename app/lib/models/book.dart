@@ -189,7 +189,7 @@ class Book {
 
 /// Scelta dello studente su un libro proposto dal catalogo.
 enum CatalogChoice {
-  kept('kept', 'Tenuto'),
+  kept('kept', 'Salvato'),
   removed('removed', 'Rimosso');
 
   const CatalogChoice(this.key, this.label);

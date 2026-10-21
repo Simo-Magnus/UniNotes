@@ -15,7 +15,8 @@ const String kStudyCourseOrderKey = 'study_course_order';
 /// criterio dell'esclusione «OFA e obblighi formativi»).
 final RegExp _ofa = RegExp(r'\bOFA\b|obblighi formativi', caseSensitive: false);
 
-bool isOfaCourse(Course c) => _ofa.hasMatch(c.name);
+/// Dal nome ufficiale: un OFA rinominato dallo studente resta un OFA.
+bool isOfaCourse(Course c) => _ofa.hasMatch(c.officialName);
 
 /// Gruppo dell'elenco degli insegnamenti di Studio.
 class StudyCourseGroup {

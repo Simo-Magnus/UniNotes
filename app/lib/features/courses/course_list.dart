@@ -30,6 +30,7 @@ class CoursesData {
   /// nell'anno scelto (quelli senza anno compaiono sempre); gli archiviati
   /// restano, nascosti dal filtro di stato finché non si sceglie di vederli.
   static Future<CoursesData> load(AppServices s) async {
+    await s.exams.mergeDuplicateFinals();
     await syncCourseStatuses(s);
     final passed = await s.exams.byStatus([ExamStatus.passed]);
     final scope = s.scope;
@@ -74,6 +75,8 @@ class CourseFilter {
     if (q.isEmpty) return true;
     return [
       c.name,
+      // anche con il nome ufficiale, se lo studente l'ha cambiato
+      if (c.hasCustomName) c.officialName,
       c.code,
       c.teacher,
       c.description,

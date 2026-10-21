@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/enums.dart';
+import '../../core/theme/app_tokens.dart';
 import '../../models/course.dart';
 import '../../models/exam.dart';
 import '../../models/study.dart';
@@ -408,11 +409,16 @@ class CourseProgressSection extends StatelessWidget {
     );
   }
 
-  Color _topicColor(BuildContext context, TopicStatus s) => switch (s) {
-    TopicStatus.notStarted => Theme.of(context).colorScheme.outline,
-    TopicStatus.inProgress => Colors.blue.shade700,
-    TopicStatus.partial => const Color(0xFF818CF8),
-    TopicStatus.completed => Colors.green.shade700,
-    TopicStatus.toReview => Colors.purple.shade400,
-  };
+  // icone di stato: almeno 3:1 sulle card in entrambi i temi
+  Color _topicColor(BuildContext context, TopicStatus s) => readableOn(
+    switch (s) {
+      TopicStatus.notStarted => Theme.of(context).colorScheme.outline,
+      TopicStatus.inProgress => Colors.blue.shade700,
+      TopicStatus.partial => const Color(0xFF818CF8),
+      TopicStatus.completed => Colors.green.shade700,
+      TopicStatus.toReview => Colors.purple.shade400,
+    },
+    Theme.of(context).brightness,
+    minRatio: 3,
+  );
 }

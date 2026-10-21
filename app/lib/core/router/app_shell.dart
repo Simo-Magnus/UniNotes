@@ -325,14 +325,7 @@ class GlassNavBar extends StatelessWidget {
             stops: const [0, 0.55, 1],
           ),
           border: Border.all(color: t.navBorder),
-          boxShadow: const [
-            BoxShadow(
-              color: Color(0xF2000000),
-              offset: Offset(0, 18),
-              blurRadius: 34,
-              spreadRadius: -12,
-            ),
-          ],
+          boxShadow: t.floatShadows,
         ),
         padding: const EdgeInsets.all(5),
         child: Row(

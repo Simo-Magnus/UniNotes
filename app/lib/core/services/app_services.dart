@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' show ThemeMode, ValueNotifier;
 
+import '../../features/cloud/data_sync.dart';
 import '../../features/cloud/google_drive_service.dart';
 import '../../features/cloud/onedrive_service.dart';
 import '../../features/notes/background_jobs.dart';
@@ -141,10 +142,26 @@ class AppServices {
     attachments: attachmentsLibrary.directory,
     backupJson: () => BackupService(database).exportJson(),
     recordingInProgress: () => recorder.active ? recorder.path : null,
+    data: dataSync,
     changeCounter: () async =>
         ((await database.db.rawQuery('SELECT total_changes() AS n')).first['n']
                 as num)
             .toInt(),
+  );
+
+  /// Dati dell'app uniti fra i dispositivi collegati allo stesso OneDrive o
+  /// Google Drive (sessioni di Studio sommate, argomenti, esami, voti…).
+  /// Dopo un'unione che porta novità le schermate si aggiornano.
+  late final DataSync dataSync = DataSync(
+    database,
+    notesRoot: () async => (await notes.root()).path,
+    onApplied: () async {
+      try {
+        final p = await profiles.load();
+        if (p != null) profile.value = p;
+      } catch (_) {}
+      revision.bump();
+    },
   );
 
   /// Whisper locale (modelli, programma, trascrizione).

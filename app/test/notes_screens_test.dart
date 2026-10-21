@@ -8,8 +8,11 @@ import 'package:provider/provider.dart';
 import 'package:university_notes/core/database/app_database.dart';
 import 'package:university_notes/core/services/app_services.dart';
 import 'package:university_notes/core/services/book_library.dart';
+import 'package:university_notes/core/theme/app_theme.dart';
+import 'package:university_notes/core/theme/app_tokens.dart';
 import 'package:university_notes/features/notes/course_notes_screen.dart';
 import 'package:university_notes/features/notes/notes_screen.dart';
+import 'package:university_notes/features/notes/recently_deleted_screen.dart';
 import 'package:university_notes/features/notes/notes_store.dart';
 import 'package:university_notes/models/course.dart';
 import 'package:university_notes/repositories/settings_repository.dart';
@@ -121,10 +124,14 @@ void main() {
     expect(find.text('2026-10-05 08-30 Lezione'), findsNWidgets(2));
     expect(find.text("Domande d'esame"), findsOneWidget);
     expect(find.text('Studia con la tua AI di riferimento'), findsOneWidget);
-    expect(find.text('Nessun appunto personale.'), findsOneWidget);
+    // card rinominate
+    expect(find.text('Riassunti lezioni e Appunti'), findsOneWidget);
+    expect(find.text('Note'), findsOneWidget);
+    expect(find.text('Nessuna nota.'), findsOneWidget);
     // Whisper fatta → «Vedi trascrizione»; Gemini ancora da fare.
     expect(find.text('Trascrivi con Whisper'), findsNothing);
     expect(find.text('Vedi trascrizione'), findsOneWidget);
+    expect(find.textContaining('con modello'), findsNothing);
     expect(find.text('Trascrivi con Gemini'), findsOneWidget);
     // Niente «Incolla …»; il cestino è un'icona sulla card.
     expect(find.textContaining('Incolla'), findsNothing);
@@ -150,6 +157,17 @@ void main() {
     await _settle(t);
     await _settle(t);
     expect(find.text('Nessun file contiene questo testo.'), findsOneWidget);
+  });
+
+  test('«Svuota» leggibile: colori di errore del tema, contrasto AA', () {
+    for (final theme in [AppTheme.light(), AppTheme.dark()]) {
+      final style = emptyTrashButtonStyle(theme);
+      final bg = style.backgroundColor!.resolve({})!;
+      final fg = style.foregroundColor!.resolve({})!;
+      expect(bg, theme.colorScheme.errorContainer);
+      expect(fg, theme.colorScheme.onErrorContainer);
+      expect(contrastRatio(fg, bg), greaterThanOrEqualTo(4.5));
+    }
   });
 
   test('rinomina: la lezione insieme a trascrizione e riassunto', () async {

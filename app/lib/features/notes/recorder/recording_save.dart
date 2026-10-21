@@ -22,8 +22,7 @@ import 'wav.dart';
 ///    WAV, mai perdere la registrazione;
 /// 2. segnalibri, forma d'onda e segmenti della trascrizione dal vivo vanno
 ///    nel file `.json` accanto all'audio (RecordingMeta);
-/// 3. la trascrizione dal vivo (riconoscimento vocale del sistema o Whisper a
-///    pezzi) diventa la trascrizione della registrazione
+/// 3. la trascrizione dal vivo (Whisper con il modello integrato) diventa la trascrizione della registrazione
 ///    (`Trascrizioni/<nome>.md`, stesso formato delle altre);
 /// 4. i pezzi che Whisper non ha fatto in tempo a trascrivere si recuperano
 ///    in background (operazione «Completo la trascrizione»), poi il WAV di

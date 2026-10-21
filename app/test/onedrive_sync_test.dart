@@ -282,8 +282,10 @@ void main() {
     drive.addFolder('Appunti università/PoliTo - Analisi matematica I');
     r = await pc.run();
     expect(r.deletedLocal, 1);
-    expect(await f(pc, 'PoliTo - Analisi matematica I/foto.jpg').exists(),
-        isFalse);
+    expect(
+      await f(pc, 'PoliTo - Analisi matematica I/foto.jpg').exists(),
+      isFalse,
+    );
 
     // OneDrive for Business (niente /delta sulle cartelle): si rilegge tutto
     drive.deltaUnsupported = true;

@@ -3,10 +3,13 @@ import 'dart:io';
 import 'dart:ui' show Color, DartPluginRegistrant;
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/timezone.dart' as tz;
 
+import '../constants/build_flags.dart';
 import 'notification_plan.dart';
 
 /// Tocco su una notifica o su uno dei suoi pulsanti.
@@ -67,8 +70,8 @@ abstract class NotificationPlatform {
 /// processo in background, la legge l'app all'avvio).
 const String _queueKey = 'uninotes_notification_queue';
 
-/// Pulsanti premuti senza aprire l'app («Più tardi», «Non chiedermelo
-/// più», «Non ricordarmelo per questa prova»): girano in un isolate in
+/// Pulsanti premuti senza aprire l'app («Più tardi», «Non chiedere più»,
+/// «Non ricordarmelo per questa prova»): girano in un isolate in
 /// background, che li mette in coda per l'app.
 @pragma('vm:entry-point')
 Future<void> notificationTapBackground(NotificationResponse r) async {
@@ -94,9 +97,19 @@ const Set<String> _uiActions = {
 
 /// flutter_local_notifications su Android, iOS, macOS e Windows.
 class LocalNotificationPlatform implements NotificationPlatform {
-  LocalNotificationPlatform([FlutterLocalNotificationsPlugin? plugin])
-    : _plugin = plugin ?? FlutterLocalNotificationsPlugin();
+  LocalNotificationPlatform([
+    FlutterLocalNotificationsPlugin? plugin,
+    this.donationsAllowed = kShowDonationLink,
+  ]) : _plugin = plugin ?? FlutterLocalNotificationsPlugin();
   final FlutterLocalNotificationsPlugin _plugin;
+
+  /// Build con le donazioni consentite (`DONATIONS=link`): altrimenti il
+  /// canale, la categoria e la notifica del sostegno non esistono.
+  final bool donationsAllowed;
+
+  /// La notifica [n] esiste in questa build?
+  bool allows(PlannedNotification n) =>
+      n.type != NotificationType.donation || donationsAllowed;
   bool _ready = false;
 
   static bool get supported =>
@@ -106,9 +119,10 @@ class LocalNotificationPlatform implements NotificationPlatform {
       Platform.isWindows;
 
   /// Icona piccola (bianca, monocromatica; tools/genera_icona.py) e
-  /// azzurro dell'app.
+  /// azzurro dell'app: un azzurro medio, leggibile (nome dell'app e icona
+  /// colorati dal sistema) sia sulla tendina chiara sia su quella scura.
   static const _icon = 'ic_stat_uninotes';
-  static const _accent = Color(0xFF38BDF8);
+  static const _accent = Color(0xFF0284C7);
 
   /// App non pacchettizzata su Windows: nome e identità fissi (il GUID
   /// registra l'attivazione al tocco anche ad app chiusa).
@@ -116,8 +130,15 @@ class LocalNotificationPlatform implements NotificationPlatform {
 
   static String _category(NotificationType t) => 'uninotes_${t.channelId}';
 
-  static List<DarwinNotificationCategory> _categories() => [
-    for (final t in NotificationType.values)
+  /// Categorie di iOS e macOS (pulsanti di ogni tipo): quella del sostegno,
+  /// con «Dona», solo nelle build che consentono le donazioni.
+  @visibleForTesting
+  static List<DarwinNotificationCategory> categoriesFor({
+    required bool donationsAllowed,
+  }) => [
+    for (final t in NotificationType.available(
+      donationsAllowed: donationsAllowed,
+    ))
       DarwinNotificationCategory(
         _category(t),
         actions: [
@@ -142,12 +163,12 @@ class LocalNotificationPlatform implements NotificationPlatform {
     NotificationType.review => const [
       (NotificationActions.review, 'Recensisci'),
       (NotificationActions.later, 'Più tardi'),
-      (NotificationActions.never, 'Non chiedermelo più'),
+      (NotificationActions.never, 'Non chiedere più'),
     ],
     NotificationType.donation => const [
       (NotificationActions.donate, 'Dona'),
       (NotificationActions.later, 'Più tardi'),
-      (NotificationActions.never, 'Non chiedermelo più'),
+      (NotificationActions.never, 'Non chiedere più'),
     ],
     _ => const [],
   };
@@ -160,7 +181,9 @@ class LocalNotificationPlatform implements NotificationPlatform {
       requestAlertPermission: false,
       requestSoundPermission: false,
       requestBadgePermission: false,
-      notificationCategories: _categories(),
+      notificationCategories: categoriesFor(
+        donationsAllowed: donationsAllowed,
+      ),
     );
     await _plugin.initialize(
       settings: InitializationSettings(
@@ -168,10 +191,13 @@ class LocalNotificationPlatform implements NotificationPlatform {
         iOS: darwin,
         macOS: darwin,
         linux: const LinuxInitializationSettings(defaultActionName: 'Apri'),
-        windows: const WindowsInitializationSettings(
+        // logo dell'app nei toast (senza, Windows mostra un'icona vuota
+        // per le app non pacchettizzate)
+        windows: WindowsInitializationSettings(
           appName: 'UniNotes',
           appUserModelId: 'io.github.simomagnus.universitynotes',
           guid: _windowsGuid,
+          iconPath: _windowsArt('uninotes.png'),
         ),
       ),
       onDidReceiveNotificationResponse: (r) {
@@ -185,12 +211,29 @@ class LocalNotificationPlatform implements NotificationPlatform {
           AndroidFlutterLocalNotificationsPlugin
         >();
     if (android != null) {
-      for (final t in NotificationType.values) {
+      // canali raggruppati per sezione nelle impostazioni del sistema
+      for (final MapEntry(key: id, value: (name, description))
+          in kNotificationGroups.entries) {
+        await android.createNotificationChannelGroup(
+          AndroidNotificationChannelGroup(id, name, description: description),
+        );
+      }
+      // niente canale «Sostieni il progetto» dove le donazioni non sono
+      // consentite (se c'era da una versione precedente, si toglie)
+      if (!donationsAllowed) {
+        await android.deleteNotificationChannel(
+          channelId: NotificationType.donation.channelId,
+        );
+      }
+      for (final t in NotificationType.available(
+        donationsAllowed: donationsAllowed,
+      )) {
         await android.createNotificationChannel(
           AndroidNotificationChannel(
             t.channelId,
             t.channelName,
             description: t.description,
+            groupId: t.groupId,
             importance: _importance(t),
             // avvisi di inizio e fine pausa e di fine sessione: passano
             // anche con il Non disturbare della sessione Focus (serve
@@ -298,9 +341,89 @@ class LocalNotificationPlatform implements NotificationPlatform {
     return Platform.isWindows;
   }
 
-  NotificationDetails _details(PlannedNotification n) {
+  /// Grafica di Windows accanto all'eseguibile (data/flutter_assets, anche
+  /// nelle build di debug e nel pacchetto MSIX): percorso assoluto, così
+  /// funziona anche quando l'app parte da un toast con un'altra cartella di
+  /// lavoro. Null se il file manca (il toast esce senza immagine).
+  static String? _windowsArt(String name) {
+    if (!Platform.isWindows) return null;
+    try {
+      final dir = File(Platform.resolvedExecutable).parent.path;
+      final f = File('$dir\\data\\flutter_assets\\assets\\notifiche\\$name');
+      return f.existsSync() ? f.path : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// Copia per iOS e macOS dell'immagine larga [name] da allegare: il
+  /// sistema sposta il file allegato nel suo archivio, quindi serve una
+  /// copia per ogni notifica. Null se non riesce (notifica senza allegato).
+  static Future<String?> _darwinArt(String name, int id) async {
+    if (!(Platform.isIOS || Platform.isMacOS)) return null;
+    try {
+      final data = await rootBundle.load('assets/notifiche/$name');
+      final dir = Directory(
+        '${(await getTemporaryDirectory()).path}/notifiche',
+      );
+      await dir.create(recursive: true);
+      final f = File('${dir.path}/${id}_$name');
+      await f.writeAsBytes(data.buffer.asUint8List(), flush: true);
+      return f.path;
+    } catch (e) {
+      debugPrint('Immagine della notifica non preparata: $e');
+      return null;
+    }
+  }
+
+  Future<NotificationDetails> _details(PlannedNotification n) async {
+    final t = n.type;
+    return detailsFor(
+      n,
+      windowsLogo: _windowsArt('${t.artwork}.png'),
+      windowsHero: t.hasHero ? _windowsArt('hero_${t.artwork}.png') : null,
+      darwinAttachment: t.hasHero
+          ? await _darwinArt('hero_${t.artwork}.png', n.id)
+          : null,
+    );
+  }
+
+  /// Aspetto della notifica [n] su ogni piattaforma (funzione pura, test in
+  /// test/notification_design_test.dart):
+  /// - Android: icona piccola monocromatica, azzurro dell'app, icona grande
+  ///   del tipo, sezione accanto al nome dell'app, testo esteso (le prove:
+  ///   una riga per data e luogo), pulsanti;
+  /// - iOS e macOS: sezione come sottotitolo, notifiche impilate per
+  ///   sezione, immagine larga allegata per le notifiche rare;
+  /// - Windows: logo del tipo al posto di quello dell'app, immagine larga
+  ///   per le notifiche rare, intestazione della sezione nel Centro
+  ///   notifiche, pulsanti.
+  @visibleForTesting
+  static NotificationDetails detailsFor(
+    PlannedNotification n, {
+    String? windowsLogo,
+    String? windowsHero,
+    String? darwinAttachment,
+  }) {
     final t = n.type;
     final countdown = n.countdownTo;
+    final section = t.section;
+    // le prove: «martedì 20 gennaio alle 9:00 · Aula 5» diventa un elenco
+    final lines = t == NotificationType.exam
+        ? n.body.split(' · ').where((l) => l.trim().isNotEmpty).toList()
+        : const <String>[];
+    final StyleInformation style = lines.length > 1
+        ? InboxStyleInformation(
+            lines,
+            contentTitle: n.title,
+            summaryText: section,
+          )
+        : BigTextStyleInformation(
+            n.body,
+            contentTitle: n.title,
+            summaryText: section,
+          );
+    final threadId = 'uninotes_${t.groupId}';
     return NotificationDetails(
       android: AndroidNotificationDetails(
         t.channelId,
@@ -308,6 +431,9 @@ class LocalNotificationPlatform implements NotificationPlatform {
         channelDescription: t.description,
         icon: _icon,
         color: _accent,
+        largeIcon: DrawableResourceAndroidBitmap('ic_notif_${t.artwork}'),
+        subText: section,
+        ticker: n.title,
         importance: _importance(t),
         channelBypassDnd: _bypassDnd(t),
         priority: t.promotional || n.ongoing
@@ -315,7 +441,7 @@ class LocalNotificationPlatform implements NotificationPlatform {
             : (t == NotificationType.focusAlert
                   ? Priority.high
                   : Priority.defaultPriority),
-        styleInformation: BigTextStyleInformation(n.body),
+        styleInformation: style,
         category: t == NotificationType.exam || t == NotificationType.session
             ? AndroidNotificationCategory.reminder
             : (t == NotificationType.focusAlert
@@ -346,8 +472,12 @@ class LocalNotificationPlatform implements NotificationPlatform {
       ),
       iOS: DarwinNotificationDetails(
         categoryIdentifier: _category(t),
-        threadIdentifier: t.channelId,
+        threadIdentifier: threadId,
+        subtitle: section,
         presentSound: n.silent ? false : null,
+        attachments: darwinAttachment == null
+            ? null
+            : [DarwinNotificationAttachment(darwinAttachment)],
         // la fine della sessione arriva anche con la Full immersion attiva
         // (se l'utente lo permette nelle impostazioni del sistema)
         interruptionLevel: t == NotificationType.focusAlert
@@ -356,11 +486,44 @@ class LocalNotificationPlatform implements NotificationPlatform {
       ),
       macOS: DarwinNotificationDetails(
         categoryIdentifier: _category(t),
-        threadIdentifier: t.channelId,
+        threadIdentifier: threadId,
+        subtitle: section,
         presentSound: n.silent ? false : null,
+        attachments: darwinAttachment == null
+            ? null
+            : [DarwinNotificationAttachment(darwinAttachment)],
       ),
       windows: WindowsNotificationDetails(
         audio: n.silent ? WindowsNotificationAudio.silent() : null,
+        // prove, sessioni, esiti e avvisi Focus restano più a lungo
+        duration: switch (t) {
+          NotificationType.exam ||
+          NotificationType.session ||
+          NotificationType.outcome ||
+          NotificationType.focusAlert => WindowsNotificationDuration.long,
+          _ => null,
+        },
+        header: section == null
+            ? null
+            : WindowsHeader(
+                id: threadId,
+                title: section,
+                arguments: 'sezione:$section',
+              ),
+        images: [
+          if (windowsLogo != null)
+            WindowsImage(
+              Uri.file(windowsLogo, windows: true),
+              altText: section ?? 'UniNotes',
+              placement: WindowsImagePlacement.appLogoOverride,
+            ),
+          if (windowsHero != null)
+            WindowsImage(
+              Uri.file(windowsHero, windows: true),
+              altText: n.title,
+              placement: WindowsImagePlacement.hero,
+            ),
+        ],
         actions: [
           for (final (id, title) in n.actions)
             WindowsAction(
@@ -372,27 +535,35 @@ class LocalNotificationPlatform implements NotificationPlatform {
     );
   }
 
+  // Ultimo controllo: una notifica che non esiste in questa build (il
+  // sostegno senza DONATIONS=link) non si pianifica né si mostra.
   @override
-  Future<void> schedule(PlannedNotification n) => _plugin.zonedSchedule(
-    id: n.id,
-    title: n.title,
-    body: n.body,
-    payload: n.payload,
-    // istante locale convertito in UTC: nessun bisogno del fuso del sistema
-    scheduledDate: tz.TZDateTime.from(n.at, tz.UTC),
-    notificationDetails: _details(n),
-    // niente SCHEDULE_EXACT_ALARM: qualche minuto di ritardo va bene
-    androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-  );
+  Future<void> schedule(PlannedNotification n) async {
+    if (!allows(n)) return;
+    await _plugin.zonedSchedule(
+      id: n.id,
+      title: n.title,
+      body: n.body,
+      payload: n.payload,
+      // istante locale convertito in UTC: nessun bisogno del fuso del sistema
+      scheduledDate: tz.TZDateTime.from(n.at, tz.UTC),
+      notificationDetails: await _details(n),
+      // niente SCHEDULE_EXACT_ALARM: qualche minuto di ritardo va bene
+      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+    );
+  }
 
   @override
-  Future<void> show(PlannedNotification n) => _plugin.show(
-    id: n.id,
-    title: n.title,
-    body: n.body,
-    payload: n.payload,
-    notificationDetails: _details(n),
-  );
+  Future<void> show(PlannedNotification n) async {
+    if (!allows(n)) return;
+    await _plugin.show(
+      id: n.id,
+      title: n.title,
+      body: n.body,
+      payload: n.payload,
+      notificationDetails: await _details(n),
+    );
+  }
 
   @override
   Future<void> cancel(int id) => _plugin.cancel(id: id);

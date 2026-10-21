@@ -23,7 +23,8 @@ import 'recording_player_screen.dart';
 import '../../core/constants/text_limits.dart';
 
 /// Appunti di un corso: registrazioni (con le loro trascrizioni) →
-/// riassunti, appunti personali e «Studia con la tua AI di riferimento».
+/// «Riassunti lezioni e Appunti», «Note» e «Studia con la tua AI di
+/// riferimento».
 /// Ctrl+F (o la lente) cerca nei nomi e nel testo dei file, trascrizioni
 /// comprese.
 ///
@@ -32,9 +33,9 @@ import '../../core/constants/text_limits.dart';
 /// il cestino la elimina; sotto, sulla stessa riga, «Trascrivi con Whisper»
 /// e «Trascrivi con Gemini», che diventano «Vedi trascrizione» (azzurro per
 /// Whisper, viola per Gemini) quando la trascrizione c'è. Sotto «Trascrivi
-/// con Whisper» c'è il modello che si userà, sotto «Vedi trascrizione» quello
-/// usato; tenendo premuto (o dal menu ⋮) si sceglie un altro modello o si
-/// trascrive di nuovo.
+/// con Whisper» c'è il modello che si userà («Vedi trascrizione» non ha più
+/// la riga del modello); tenendo premuto (o dal menu ⋮) si sceglie un altro
+/// modello o si trascrive di nuovo.
 class CourseNotesScreen extends StatefulWidget {
   const CourseNotesScreen({super.key, required this.course, this.justSaved});
   final Course course;
@@ -280,7 +281,7 @@ class _CourseNotesScreenState extends State<CourseNotesScreen> {
         if (hits != null) section(NoteFolder.transcripts, 'Nessun risultato.'),
         section(
           NoteFolder.summaries,
-          'Allega qui i riassunti delle lezioni',
+          'Allega qui i riassunti delle lezioni e i tuoi appunti',
           action: TextButton.icon(
             onPressed: () => attachSummaries(context, course),
             icon: const Icon(Icons.attach_file, size: 18),
@@ -289,7 +290,7 @@ class _CourseNotesScreenState extends State<CourseNotesScreen> {
         ),
         section(
           NoteFolder.notes,
-          'Nessun appunto personale.',
+          'Nessuna nota.',
           action: TextButton.icon(
             onPressed: () => openNoteEditor(context, course),
             icon: const Icon(Icons.add, size: 18),
@@ -837,8 +838,8 @@ class _RecordingTile extends StatelessWidget {
 
 /// «Trascrivi con Whisper/Gemini» o, se la trascrizione c'è, «Vedi
 /// trascrizione», con il colore di chi la fa (Whisper azzurro, Gemini viola).
-/// Per Whisper la seconda riga dice il modello: quello che si userà o quello
-/// con cui è stata fatta la trascrizione.
+/// Per «Trascrivi con Whisper» la seconda riga dice il modello che si userà;
+/// «Vedi trascrizione» resta su una riga sola.
 class TranscriptButton extends StatelessWidget {
   const TranscriptButton({
     super.key,
@@ -883,7 +884,9 @@ class TranscriptButton extends StatelessWidget {
             : MaterialTapTargetSize.shrinkWrap,
       ),
       icon: Icon(done ? Icons.article_outlined : icon, size: 18),
-      label: m == null
+      // fatta la trascrizione solo «Vedi trascrizione» (il modello si legge
+      // nella registrazione: «Trascrizione con Whisper · small»)
+      label: m == null || done
           ? Text(
               label,
               textAlign: TextAlign.center,
@@ -892,16 +895,15 @@ class TranscriptButton extends StatelessWidget {
                   : null,
             )
           : Semantics(
-              label: done
-                  ? 'Vedi la trascrizione di ${kind.label}, fatta con $m'
-                  : '$label, modello $m. Tieni premuto per sceglierne un altro',
+              label:
+                  '$label, modello $m. Tieni premuto per sceglierne un altro',
               excludeSemantics: true,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(label, textAlign: TextAlign.center),
                   Text(
-                    done ? 'con $m' : m,
+                    m,
                     textAlign: TextAlign.center,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,

@@ -7,7 +7,8 @@ class Course {
     this.externalId,
     this.universityId,
     this.degreeId,
-    required this.name,
+    required String name,
+    this.customName,
     this.code,
     this.teacher,
     this.year,
@@ -33,7 +34,23 @@ class Course {
     this.curriculum,
     this.userEdited = false,
     this.examLanguage,
-  });
+  }) : officialName = name;
+
+  /// Nome ufficiale dal database dei corsi (colonna `name`): «Aggiorna
+  /// database» lo riscrive; il parametro `name` del costruttore è questo.
+  final String officialName;
+
+  /// Nome scelto dallo studente (colonna `custom_name`), null = quello
+  /// ufficiale. È un dato solo dell'insegnamento: ogni sezione lo legge da
+  /// qui tramite [name], non ne tiene copie.
+  final String? customName;
+
+  /// Nome mostrato in tutta l'app: quello scelto dallo studente o, se non
+  /// l'ha cambiato, quello ufficiale.
+  String get name => customName ?? officialName;
+
+  /// Lo studente ha dato all'insegnamento un nome suo.
+  bool get hasCustomName => customName != null && customName != officialName;
 
   /// Modificato dallo studente: «Aggiorna database» non riscrive i campi
   /// del catalogo (nome, codice, docenti, anno, semestre, CFU).
@@ -47,7 +64,6 @@ class Course {
   final String? externalId;
   final String? universityId;
   final String? degreeId;
-  final String name;
   final String? code;
   final String? teacher;
   final int? year;
@@ -103,6 +119,7 @@ class Course {
     universityId: asString(m['university_id']),
     degreeId: asString(m['degree_id']),
     name: m['name'] as String,
+    customName: cleanCourseName(asString(m['custom_name'])),
     code: asString(m['code']),
     teacher: asString(m['teacher']),
     year: asInt(m['year']),
@@ -135,7 +152,8 @@ class Course {
     'external_id': externalId,
     'university_id': universityId,
     'degree_id': degreeId,
-    'name': name,
+    'name': officialName,
+    'custom_name': hasCustomName ? customName : null,
     'code': code,
     'teacher': teacher,
     'year': year,
@@ -170,7 +188,8 @@ class Course {
     externalId: externalId,
     universityId: universityId,
     degreeId: degreeId,
-    name: name,
+    name: officialName,
+    customName: customName,
     code: code,
     teacher: teacher,
     year: year,
@@ -198,8 +217,13 @@ class Course {
     examLanguage: examLanguage,
   );
 
+  /// [name] cambia il nome ufficiale (versione in inglese, catalogo); il nome
+  /// scelto dallo studente si cambia con [customName] o si toglie con
+  /// [clearCustomName].
   Course copyWith({
     String? name,
+    String? customName,
+    bool clearCustomName = false,
     String? code,
     String? teacher,
     int? year,
@@ -217,7 +241,10 @@ class Course {
     externalId: externalId,
     universityId: universityId ?? this.universityId,
     degreeId: degreeId ?? this.degreeId,
-    name: name ?? this.name,
+    name: name ?? officialName,
+    customName: clearCustomName
+        ? null
+        : cleanCourseName(customName) ?? this.customName,
     code: code ?? this.code,
     teacher: teacher ?? this.teacher,
     year: year ?? this.year,
@@ -244,4 +271,10 @@ class Course {
     userEdited: userEdited,
     examLanguage: examLanguage,
   );
+}
+
+/// Nome dell'insegnamento ripulito (spazi in più); null se vuoto.
+String? cleanCourseName(String? s) {
+  final t = s?.trim().replaceAll(RegExp(r'\s+'), ' ');
+  return (t == null || t.isEmpty) ? null : t;
 }

@@ -90,6 +90,59 @@ String? validateExamGrade(
   return null;
 }
 
+/// Esito di una prova: stato, voto e lode insieme (menù «Voto»).
+typedef ExamOutcome = ({ExamStatus status, int? grade, bool laude});
+
+/// Voci del menù «Voto» dell'esame finale oltre ai voti 18-30: nessun voto
+/// (in attesa dell'esito, o ancora da sostenere), «Non superato» e
+/// «Idoneità (senza voto)».
+const int kOutcomeNone = -1;
+const int kOutcomeFailed = -2;
+const int kOutcomePass = 0;
+
+/// Voce del menù «Voto» per stato e voto attuali.
+int outcomeCode(ExamStatus status, int? grade, {bool laude = false}) {
+  if (status == ExamStatus.failed) return kOutcomeFailed;
+  if (status != ExamStatus.passed) return kOutcomeNone;
+  if (laude) return 30;
+  if (grade == null) return kOutcomePass;
+  return (grade >= 18 && grade <= 30) ? grade : kOutcomePass;
+}
+
+/// Esito della voce [code] del menù «Voto». «Nessun voto» lascia una prova
+/// ancora da sostenere com'è e mette le altre in attesa dell'esito.
+ExamOutcome outcomeOf(
+  int code, {
+  required ExamStatus current,
+  bool laude = false,
+}) => switch (code) {
+  kOutcomeFailed => (status: ExamStatus.failed, grade: null, laude: false),
+  kOutcomePass => (status: ExamStatus.passed, grade: null, laude: false),
+  kOutcomeNone => (
+    status: current.isPending ? current : ExamStatus.taken,
+    grade: null,
+    laude: false,
+  ),
+  _ => (status: ExamStatus.passed, grade: code, laude: code == 30 && laude),
+};
+
+/// Etichetta della voce [code] del menù «Voto» ([current] = stato attuale).
+String outcomeLabel(int code, ExamStatus current) => switch (code) {
+  kOutcomeFailed => 'Non superato',
+  kOutcomePass => 'Idoneità (senza voto)',
+  kOutcomeNone =>
+    current.isPending ? 'Nessun voto' : 'In attesa dell\'esito',
+  _ => '$code/30',
+};
+
+/// Voci del menù «Voto» dell'esame finale, nell'ordine.
+final List<int> kOutcomeCodes = [
+  kOutcomeNone,
+  kOutcomeFailed,
+  kOutcomePass,
+  for (var g = 18; g <= 30; g++) g,
+];
+
 Color examStatusColor(BuildContext context, ExamStatus s) {
   final scheme = Theme.of(context).colorScheme;
   return switch (s) {

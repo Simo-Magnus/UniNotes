@@ -4,14 +4,15 @@ import 'package:provider/provider.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_tokens.dart';
 import 'ai_reference_card.dart';
-import 'gemini_card.dart';
 import 'google_drive_card.dart';
 import 'onedrive_card.dart';
 import 'whisper_card.dart';
 
-/// Collegamenti: tutto ciò che collega l'app a servizi esterni —
-/// trascrizione (Whisper, Gemini), AI di riferimento, OneDrive e Google
-/// Drive. Il resto dell'app funziona senza internet.
+/// Collegamenti: tutto ciò che collega l'app a servizi esterni, in
+/// quest'ordine: OneDrive, Google Drive (file e dati su tutti i
+/// dispositivi), Whisper (trascrizione) e AI di riferimento. Il resto
+/// dell'app funziona senza internet. Stati e messaggi di ogni collegamento:
+/// `docs/collegamenti_stati.md`.
 class LinksScreen extends StatefulWidget {
   const LinksScreen({super.key});
 
@@ -42,19 +43,19 @@ class _LinksScreenState extends State<LinksScreen> {
   @override
   Widget build(BuildContext context) {
     final cards = <Widget>[
-      const _SectionLabel('Trascrizione delle registrazioni'),
-      const GeminiCard(),
-      const WhisperCard(),
-      const _SectionLabel('Studio con l\'AI'),
-      const AiReferenceCard(),
       const _SectionLabel('Sincronizzazione'),
       const _SectionNote(
-        'Google Drive: l\'app vede i file che salva lei e quelli che importi. '
-        'OneDrive: vede tutto quello che metti nella cartella UniNotes, anche '
-        'dal sito.',
+        'File e dati dell\'app (Studio, esami, voti) su tutti i tuoi '
+        'dispositivi. Google Drive: l\'app vede i file che salva lei e quelli '
+        'che importi. OneDrive: vede tutto quello che metti nella cartella '
+        'UniNotes, anche dal sito.',
       ),
       OneDriveCard(primary: _onedrivePrimary, onChanged: _updatePrimary),
       GoogleDriveCard(onChanged: _updatePrimary),
+      const _SectionLabel('Trascrizione delle registrazioni'),
+      const WhisperCard(),
+      const _SectionLabel('Studio con l\'AI'),
+      const AiReferenceCard(),
     ];
     return Scaffold(
       appBar: AppBar(title: const Text('Collegamenti')),

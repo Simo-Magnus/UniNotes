@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:share_plus/share_plus.dart';
+import 'package:share_plus/share_plus.dart' show ShareParams;
 
 import '../../core/theme/app_tokens.dart';
 import '../../widgets/common.dart';
+import '../../widgets/share_files.dart' show systemShare;
 import '../cloud/microsoft_admin_consent.dart';
 
 /// Link della scheda OneDrive (e del calendario Outlook) che riapre la
@@ -186,21 +187,13 @@ Future<void> showAdminRequestSheet(
 
 /// Menu di condivisione del sistema; se non c'è, il testo va negli appunti.
 Future<void> _share(BuildContext context, String text) async {
-  final box = context.findRenderObject() as RenderBox?;
-  final origin = box != null && box.hasSize
-      ? box.localToGlobal(Offset.zero) & box.size
-      : null;
-  try {
-    final r = await SharePlus.instance.share(
-      ShareParams(
-        text: text,
-        subject: MicrosoftAdminConsent.requestSubject,
-        sharePositionOrigin: origin,
-      ),
-    );
-    if (r.status != ShareResultStatus.unavailable) return;
-  } catch (_) {
-    // ripiego qui sotto
+  // su Windows la finestra «Condividi» si apre anche se share_plus risponde
+  // «non disponibile» (widgets/share_files.dart)
+  if (await systemShare(
+    context,
+    ShareParams(text: text, subject: MicrosoftAdminConsent.requestSubject),
+  )) {
+    return;
   }
   await Clipboard.setData(ClipboardData(text: text));
   if (context.mounted) {

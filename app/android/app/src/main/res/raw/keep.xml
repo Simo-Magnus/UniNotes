@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Risorse usate solo per nome (icona delle notifiche, letta da
-     flutter_local_notifications) o dai widget: non vanno tolte dalla
-     riduzione delle risorse delle build di rilascio. -->
+<!-- Risorse usate solo per nome (icona piccola e icone grandi delle
+     notifiche, lette da flutter_local_notifications e dalla notifica della
+     registrazione) o dai widget: non vanno tolte dalla riduzione delle
+     risorse delle build di rilascio. -->
 <resources xmlns:tools="http://schemas.android.com/tools"
-    tools:keep="@drawable/ic_stat_uninotes,@drawable/ic_widget_*,@drawable/widget_*,@layout/widget_*,@xml/widget_*" />
+    tools:keep="@drawable/ic_stat_uninotes,@drawable/ic_notif_*,@drawable/ic_widget_*,@drawable/widget_*,@layout/widget_*,@xml/widget_*" />

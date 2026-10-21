@@ -481,25 +481,26 @@ class _BookFormState extends State<BookForm> {
         ],
       ),
       _text(_notes, 'Note', maxLines: 5),
+      // «Salva» solo qui, in fondo a tutti i campi (non più nella barra)
+      Padding(
+        padding: const EdgeInsets.only(top: 12),
+        child: FilledButton.icon(
+          key: const Key('book-save'),
+          onPressed: _saving ? null : _save,
+          icon: _saving
+              ? const SizedBox.square(
+                  dimension: 18,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                )
+              : const Icon(Icons.save),
+          label: const Text('Salva'),
+        ),
+      ),
     ];
 
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.book == null ? 'Nuovo libro' : 'Modifica libro'),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8),
-            child: FilledButton(
-              onPressed: _saving ? null : _save,
-              child: _saving
-                  ? const SizedBox.square(
-                      dimension: 18,
-                      child: CircularProgressIndicator(strokeWidth: 2),
-                    )
-                  : const Text('Salva'),
-            ),
-          ),
-        ],
       ),
       body: Form(
         key: _formKey,

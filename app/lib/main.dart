@@ -13,6 +13,7 @@ import 'core/catalog/course_replacements.dart';
 import 'core/catalog/path_setup.dart';
 import 'core/database/app_database.dart';
 import 'core/router/app_shell.dart';
+import 'core/services/app_return.dart';
 import 'core/services/app_services.dart';
 import 'core/services/app_uninstall.dart';
 import 'core/services/install_check.dart';
@@ -108,6 +109,9 @@ Future<void> main(List<String> args) async {
     } catch (e) {
       debugPrint('Gestione della finestra non disponibile: $e');
     }
+    // dopo l'accesso nel browser (OneDrive, Google Drive) l'app torna in
+    // primo piano; Windows: schema uninotes:// per l'utente
+    unawaited(AppReturn.init().catchError((Object _) {}));
   }
   // chiave API di Gemini e Antigravity tolti dall'app: valori salvati via
   unawaited(services.removeLegacyGemini().catchError((Object _) {}));

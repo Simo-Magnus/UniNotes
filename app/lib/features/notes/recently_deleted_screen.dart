@@ -159,16 +159,15 @@ class _RecentlyDeletedScreenState extends State<RecentlyDeletedScreen> {
             ),
           )
         else ...[
-          // «Svuota» grande, sopra l'elemento eliminato per ultimo
+          // «Svuota» grande, sopra l'elemento eliminato per ultimo: colori
+          // di errore del tema (fondo errorContainer, testo
+          // onErrorContainer: contrasto AA in tema chiaro e scuro; prima il
+          // testo rosso sul fondo tonale azzurro non si leggeva)
           Padding(
             padding: const EdgeInsets.fromLTRB(4, 4, 4, 8),
-            child: FilledButton.tonalIcon(
+            child: FilledButton.icon(
               key: const Key('trash-empty'),
-              style: FilledButton.styleFrom(
-                minimumSize: const Size.fromHeight(52),
-                foregroundColor: theme.colorScheme.error,
-                textStyle: theme.textTheme.titleMedium,
-              ),
+              style: emptyTrashButtonStyle(theme),
               onPressed: () => _empty(items),
               icon: const Icon(Icons.delete_sweep_outlined),
               label: Text(
@@ -223,4 +222,22 @@ class _RecentlyDeletedScreenState extends State<RecentlyDeletedScreen> {
     1 => 'resta 1 giorno',
     _ => 'restano $days giorni',
   };
+}
+
+/// Stile di «Svuota»: pulsante pieno come gli altri dell'app, con i colori
+/// di errore del tema (fondo [ColorScheme.errorContainer], testo e icona
+/// [ColorScheme.onErrorContainer]) e un bordo sottile [ColorScheme.error]
+/// che lo distingue dal fondo della pagina.
+ButtonStyle emptyTrashButtonStyle(ThemeData theme) {
+  final scheme = theme.colorScheme;
+  return FilledButton.styleFrom(
+    minimumSize: const Size.fromHeight(52),
+    backgroundColor: scheme.errorContainer,
+    foregroundColor: scheme.onErrorContainer,
+    iconColor: scheme.onErrorContainer,
+    side: BorderSide(color: scheme.error.withValues(alpha: 0.5)),
+    textStyle: theme.textTheme.titleMedium?.copyWith(
+      fontWeight: FontWeight.w600,
+    ),
+  );
 }

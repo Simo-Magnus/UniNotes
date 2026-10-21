@@ -98,7 +98,10 @@ void main() {
       ),
       allOf(contains('20/01/2027'), contains('tra 10 giorni')),
     );
-    expect(AiTask.flashcards.description, 'Domande e risposte brevi da ripassare');
+    expect(
+      AiTask.flashcards.description,
+      'Domande e risposte brevi da ripassare',
+    );
     expect(manualTranscriptionPrompt('Fisica'), contains('[hh:mm:ss]'));
     expect(
       manualTranscriptionPrompt('Fisica', notebook: true),

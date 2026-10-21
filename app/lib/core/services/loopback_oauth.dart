@@ -34,6 +34,64 @@ bool isExpiredGrant(String error) {
           .hasMatch(e);
 }
 
+/// Schema con cui il browser riapre l'app dopo un accesso (registrato
+/// dall'app: Windows al primo avvio e dall'installatore, macOS e iOS
+/// nell'Info.plist, Microsoft Store nel manifest).
+const kAppReturnUrl = 'uninotes://auth';
+
+/// Chiamata quando il browser torna sul server locale: porta la finestra
+/// dell'app in primo piano (impostata all'avvio su PC e Mac, vedi
+/// `app_return.dart`; null nei test).
+Future<void> Function()? onBrowserReturn;
+
+/// Porta l'app in primo piano con [onBrowserReturn] (errori ignorati).
+Future<void> bringAppToFront() async {
+  try {
+    await onBrowserReturn?.call();
+  } catch (_) {
+    // finestra non disponibile: l'esito si vede comunque tornando all'app
+  }
+}
+
+/// Pagina che il browser mostra dopo l'accesso o la scelta dei file: apre
+/// subito l'app con [kAppReturnUrl] (il browser può chiedere conferma:
+/// «Apri UniNotes»), prova a chiudere la scheda e, se il browser non lo
+/// permette, resta una pagina minima con il pulsante «Apri UniNotes».
+/// L'esito (riuscito o no, con la causa) lo mostra l'app.
+String returnToAppPage({
+  required bool ok,
+  required String title,
+  String? detail,
+}) {
+  const esc = HtmlEscape();
+  final link = '$kAppReturnUrl?esito=${ok ? 'ok' : 'errore'}';
+  return '<!doctype html><html lang="it"><head><meta charset="utf-8">'
+      '<meta name="viewport" content="width=device-width,initial-scale=1">'
+      '<title>UniNotes</title><style>'
+      ':root{color-scheme:light dark}'
+      'body{margin:0;min-height:100vh;display:flex;align-items:center;'
+      'justify-content:center;font-family:"IBM Plex Sans",system-ui,'
+      'sans-serif;background:#0b1220;color:#e6edf7}'
+      '@media (prefers-color-scheme:light){body{background:#f4f7fb;'
+      'color:#0b1a2e}}'
+      'main{max-width:420px;padding:32px 24px;text-align:center}'
+      'h1{font-size:22px;margin:0 0 12px}p{margin:0 0 20px;opacity:.8;'
+      'line-height:1.45}'
+      'a{display:inline-block;padding:12px 22px;border-radius:12px;'
+      'background:#ff8a3d;color:#1a0d00;font-weight:600;'
+      'text-decoration:none}'
+      '</style></head><body><main>'
+      '<h1>${esc.convert(title)}</h1>'
+      '${detail == null || detail.isEmpty ? '' : '<p>${esc.convert(detail)}</p>'}'
+      '<p>${ok ? 'Fatto: UniNotes mostra l\'esito.' : 'UniNotes mostra cosa fare.'}'
+      ' Se il browser chiede di aprire UniNotes, scegli «Apri».</p>'
+      '<a id="app" href="$link">Apri UniNotes</a>'
+      '</main><script>'
+      'setTimeout(function(){location.href="$link"},150);'
+      'setTimeout(function(){window.close()},1500);'
+      '</script></body></html>';
+}
+
 class OAuthException implements Exception {
   OAuthException(this.message);
   final String message;
@@ -214,14 +272,19 @@ class LoopbackOAuth {
               q['error_description'] ?? q['error'] ?? 'risposta non valida',
             );
       req.response.headers.contentType = ContentType.html;
+      req.response.headers.set('Cache-Control', 'no-store');
       req.response.write(
-        '<!doctype html><meta charset="utf-8"><title>UniNotes</title>'
-        '<body style="font-family:sans-serif;padding:40px;max-width:720px">'
-        '<h2>${ok ? 'Accesso completato' : 'Accesso non riuscito'}</h2>'
-        '${ok ? '' : '<p>${const HtmlEscape().convert(why)}</p>'}'
-        '<p>Puoi chiudere questa finestra e tornare all\'app.</p></body>',
+        returnToAppPage(
+          ok: ok,
+          title: ok
+              ? 'Torna a UniNotes'
+              : 'Accesso con $providerName non riuscito',
+          detail: ok ? null : why,
+        ),
       );
       await req.response.close();
+      // l'app torna in primo piano (PC e Mac) e mostra l'esito
+      unawaited(bringAppToFront());
       if (!ok) {
         throw OAuthException('Accesso con $providerName non riuscito: $why');
       }

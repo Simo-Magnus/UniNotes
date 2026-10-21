@@ -189,6 +189,11 @@ void main() {
     expect(find.byKey(const ValueKey('status-taken')), findsOneWidget);
     expect(find.byKey(const ValueKey('status-planned')), findsOneWidget);
     await tester.tap(find.byKey(const ValueKey('status-taken')));
+    await tester.pumpAndSettle();
+    // «Sostenuto» chiede subito l'esito: in attesa, «Non superato» o il voto
+    expect(find.text('Esito'), findsOneWidget);
+    expect(find.text('In attesa dell\'esito'), findsOneWidget);
+    await tester.tap(find.byKey(const Key('grade-save')));
     for (var i = 0; i < 5; i++) {
       await tester.runAsync(
         () => Future<void>.delayed(const Duration(milliseconds: 50)),

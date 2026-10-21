@@ -6,6 +6,7 @@ import '../../../core/services/app_services.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/display_prefs.dart';
 import '../../../repositories/settings_repository.dart';
+import '../../notes/spell_check.dart' show SpellCheckLanguagesNote;
 import '../widgets/settings_card.dart';
 import 'questions_reset.dart';
 
@@ -144,6 +145,8 @@ class AppearanceSection extends StatelessWidget {
         ),
         // scelte «Non chiedere più» di tutta l'app
         const ResetQuestionsTile(),
+        // lingua del controllo ortografico mancante nel sistema (PC e Mac)
+        const SpellCheckLanguagesNote(),
       ],
     );
   }

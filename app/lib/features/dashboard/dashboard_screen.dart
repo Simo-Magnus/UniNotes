@@ -7,7 +7,6 @@ import '../../widgets/common.dart';
 import '../../utils/dates.dart';
 import '../academic/year_widgets.dart';
 import 'dashboard_data.dart';
-import 'widgets/books_card.dart';
 import 'widgets/course_progress_card.dart';
 import 'widgets/nudge_card.dart';
 import 'widgets/quick_start_card.dart';
@@ -19,7 +18,9 @@ import 'widgets/weekly_study_card.dart';
 /// In alto il corso, l'anno (toccandolo si cambia) e la data; poi «Inizia»
 /// (studio di oggi con l'obiettivo, Sessione Studio, Registra lezione), le
 /// prossime prove con lo stato, lo studio della settimana, le ultime
-/// registrazioni con le trascrizioni, moduli e argomenti, i libri.
+/// registrazioni con le trascrizioni, moduli e argomenti di una suddivisione
+/// (semestre). Toccando una card si apre la sua sezione (niente più card
+/// dei Libri: i libri sono nella loro sezione).
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -64,7 +65,6 @@ class _OneColumn extends StatelessWidget {
         WeeklyStudyCard(data: data),
         RecordingsCard(data: data),
         CourseProgressCard(data: data),
-        BooksCard(data: data),
       ],
     );
   }
@@ -98,7 +98,6 @@ class _TwoColumns extends StatelessWidget {
                       children: [
                         UpcomingExamsCard(data: data),
                         RecordingsCard(data: data),
-                        BooksCard(data: data),
                       ],
                     ),
                   ),

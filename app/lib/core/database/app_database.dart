@@ -7,6 +7,7 @@ import 'package:sqflite/sqflite.dart' as sqflite;
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 import 'schema.dart';
+import 'sync_schema.dart';
 
 /// Accesso al database SQLite locale.
 ///
@@ -51,6 +52,8 @@ class AppDatabase {
         onConfigure: _onConfigure,
         onCreate: _onCreate,
         onUpgrade: _onUpgrade,
+        // metadati della sincronizzazione tra dispositivi (sync_schema.dart)
+        onOpen: SyncSchema.ensure,
       ),
     );
     return AppDatabase._(db);
@@ -70,6 +73,7 @@ class AppDatabase {
         onConfigure: _onConfigure,
         onCreate: _onCreate,
         onUpgrade: _onUpgrade,
+        onOpen: SyncSchema.ensure,
       ),
     );
     return AppDatabase._(db);
@@ -93,6 +97,7 @@ class AppDatabase {
       ...kMigrationV9,
       ...kMigrationV10,
       ...kMigrationV11,
+      ...kMigrationV12,
     ]) {
       batch.execute(stmt);
     }
@@ -152,6 +157,11 @@ class AppDatabase {
     }
     if (from < 11) {
       for (final stmt in kMigrationV11) {
+        await db.execute(stmt);
+      }
+    }
+    if (from < 12) {
+      for (final stmt in kMigrationV12) {
         await db.execute(stmt);
       }
     }

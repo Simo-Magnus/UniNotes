@@ -10,6 +10,7 @@ import '../../repositories/settings_repository.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart' show kMissing;
 import '../notes/background_jobs.dart';
+import 'link_status.dart' show whisperDownloadDone, whisperDownloadFailed;
 import 'links_widgets.dart';
 
 /// Nome del lavoro in background che scarica [m].
@@ -110,7 +111,20 @@ class _WhisperCardState extends State<WhisperCard> {
       // nessun predefinito impostato: resta «Automatico» (il più accurato
       // scaricato), così un modello migliore si usa appena arriva
       return null;
-    }, onFinished: (_) => _reload());
+    }, onFinished: (job) => _finished(job, m.id));
+  }
+
+  /// Fine di un download: card aggiornata e messaggio con l'esito (causa e
+  /// cosa fare se non è riuscito).
+  void _finished(BackgroundJob job, String what) {
+    _reload();
+    if (!mounted) return;
+    showSnack(
+      context,
+      job.state == JobState.done
+          ? whisperDownloadDone(what)
+          : whisperDownloadFailed(what, job.error),
+    );
   }
 
   void _installFfmpeg() {
@@ -120,7 +134,7 @@ class _WhisperCardState extends State<WhisperCard> {
         report(p.phase, p.fraction);
       }
       return null;
-    }, onFinished: (_) => _reload());
+    }, onFinished: (job) => _finished(job, 'ffmpeg'));
   }
 
   Future<void> _delete(WhisperModelInfo m) async {
@@ -199,8 +213,9 @@ class _WhisperCardState extends State<WhisperCard> {
       ),
       NoteText(
         builtIn
-            ? 'Il modello integrato trascrive anche dal vivo mentre registri, '
-                  'quando il riconoscimento vocale del sistema non c\'è.'
+            ? 'Il modello integrato fa il testo istantaneo mentre registri. '
+                  'Con un modello scaricato più accurato, a fine registrazione '
+                  'l\'app propone di trascrivere di nuovo la lezione.'
             : 'Con un modello scaricato il registratore mostra anche la '
                   'trascrizione dal vivo mentre registri.',
         icon: Icons.subtitles_outlined,
@@ -265,7 +280,7 @@ class _WhisperCardState extends State<WhisperCard> {
                     report(p.phase, p.fraction);
                   }
                   return null;
-                }, onFinished: (_) => _reload());
+                }, onFinished: (job) => _finished(job, 'whisper.cpp'));
               },
             ),
           ],

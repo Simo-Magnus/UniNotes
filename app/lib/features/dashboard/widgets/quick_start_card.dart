@@ -19,7 +19,8 @@ import '../dashboard_data.dart';
 /// giorno, a un tocco dalla Home.
 /// - Oggi: anello con l'avanzamento verso l'obiettivo giornaliero, minuti di
 ///   studio di oggi (tutte le sessioni salvate: cronometro, timer e
-///   aggiunte a mano), quanto manca e la serie; «Obiettivo» lo cambia;
+///   aggiunte a mano), quanto manca e la serie; toccandolo si cambia
+///   l'obiettivo giornaliero;
 /// - Sessione Studio: cronometro o timer (Studio → Sessioni Studio); con una
 ///   sessione in corso mostra il tempo e la riapre;
 /// - Registra lezione: registrazione con la trascrizione istantanea; con
@@ -56,12 +57,6 @@ class QuickStartCard extends StatelessWidget {
               title: 'Inizia',
               icon: Icons.bolt_outlined,
               padding: const EdgeInsets.fromLTRB(4, 8, 0, 4),
-              trailing: TextButton.icon(
-                key: const Key('home-goal-edit'),
-                onPressed: () => editDailyGoal(context),
-                icon: const Icon(Icons.flag_outlined, size: 18),
-                label: const Text('Obiettivo'),
-              ),
             ),
             ListenableBuilder(
               listenable: Listenable.merge([s.focus, s.recorder, sw]),
@@ -154,82 +149,95 @@ class _TodayTile extends StatelessWidget {
           final goal = formatMinutes(stats.goal);
           final reached = stats.today >= stats.goal;
           return Semantics(
+            button: true,
             label:
                 'Studio di oggi: ${formatMinutes(stats.today)}. '
                 'Obiettivo $goal. ${stats.caption}',
+            hint: "Tocca per cambiare l'obiettivo giornaliero",
             excludeSemantics: true,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(10, 10, 12, 10),
-              child: Row(
-                children: [
-                  // l'anello cresce con i caratteri grandi; la percentuale
-                  // dentro cresce fino a 1,3× (il valore intero è nel testo
-                  // accanto e nella semantica)
-                  MediaQuery.withClampedTextScaling(
-                    maxScaleFactor: 1.3,
-                    child: ProgressRing(
-                      size: MediaQuery.textScalerOf(context)
-                          .scale(56)
-                          .clamp(56.0, 96.0),
-                      value: stats.progress,
-                      label: '${(stats.progress * 100).round()}%',
+            onTap: () => _editGoal(context),
+            child: InkWell(
+              key: const Key('home-goal-edit'),
+              onTap: () => _editGoal(context),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(10, 10, 12, 10),
+                child: Row(
+                  children: [
+                    // l'anello cresce con i caratteri grandi; la percentuale
+                    // dentro cresce fino a 1,3× (il valore intero è nel testo
+                    // accanto e nella semantica)
+                    MediaQuery.withClampedTextScaling(
+                      maxScaleFactor: 1.3,
+                      child: ProgressRing(
+                        size: MediaQuery.textScalerOf(context)
+                            .scale(56)
+                            .clamp(56.0, 96.0),
+                        value: stats.progress,
+                        label: '${(stats.progress * 100).round()}%',
+                      ),
                     ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        AnimatedCount(
-                          value: stats.today,
-                          format: (v) => 'Oggi ${formatMinutes(v)}',
-                          style: theme.textTheme.titleSmall?.copyWith(
-                            fontWeight: FontWeight.w700,
-                            color: t.textPrimary,
-                          ),
-                        ),
-                        const SizedBox(height: 2),
-                        Text(
-                          reached
-                              ? '${stats.caption} ($goal)'
-                              : '${stats.caption} · obiettivo $goal',
-                          style: theme.textTheme.bodySmall?.copyWith(
-                            color: reached ? t.cyanSoft : t.textMuted,
-                          ),
-                        ),
-                        if (stats.streak > 0)
-                          Padding(
-                            padding: const EdgeInsets.only(top: 2),
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.local_fire_department_outlined,
-                                  size: 14,
-                                  color: t.cyanSoft,
-                                ),
-                                const SizedBox(width: 4),
-                                Flexible(
-                                  child: Text(
-                                    'Serie: ${stats.streakText}',
-                                    style: theme.textTheme.bodySmall?.copyWith(
-                                      color: t.textMuted,
-                                    ),
-                                  ),
-                                ),
-                              ],
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          AnimatedCount(
+                            value: stats.today,
+                            format: (v) => 'Oggi ${formatMinutes(v)}',
+                            style: theme.textTheme.titleSmall?.copyWith(
+                              fontWeight: FontWeight.w700,
+                              color: t.textPrimary,
                             ),
                           ),
-                      ],
+                          const SizedBox(height: 2),
+                          Text(
+                            reached
+                                ? '${stats.caption} ($goal)'
+                                : '${stats.caption} · obiettivo $goal',
+                            style: theme.textTheme.bodySmall?.copyWith(
+                              color: reached ? t.cyanSoft : t.textMuted,
+                            ),
+                          ),
+                          if (stats.streak > 0)
+                            Padding(
+                              padding: const EdgeInsets.only(top: 2),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.local_fire_department_outlined,
+                                    size: 14,
+                                    color: t.cyanSoft,
+                                  ),
+                                  const SizedBox(width: 4),
+                                  Flexible(
+                                    child: Text(
+                                      'Serie: ${stats.streakText}',
+                                      style: theme.textTheme.bodySmall
+                                          ?.copyWith(color: t.textMuted),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                    // si tocca per cambiare l'obiettivo (prima «Obiettivo»)
+                    Icon(Icons.edit_outlined, size: 18, color: t.textMuted),
+                  ],
+                ),
               ),
             ),
           );
         },
       ),
     );
+  }
+
+  void _editGoal(BuildContext context) {
+    AppFeedback.of(context).tap();
+    editDailyGoal(context);
   }
 }
 

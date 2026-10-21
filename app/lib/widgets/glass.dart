@@ -429,23 +429,35 @@ class _GlowFabState extends State<GlowFab> with WidgetsBindingObserver {
   }
 
   Widget _fab(BuildContext context, AppTokens t) {
+    final dark = Theme.of(context).brightness == Brightness.dark;
     return DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(32),
-        boxShadow: [
-          BoxShadow(
-            color: t.orangeGradient[1].withValues(alpha: 0.55),
-            offset: const Offset(0, 14),
-            blurRadius: 30,
-            spreadRadius: -8,
-          ),
-          BoxShadow(
-            color: Theme.of(context).brightness == Brightness.dark
-                ? const Color(0xA6030A16)
-                : const Color(0x33FFFFFF),
-            spreadRadius: 6,
-          ),
-        ],
+        // tema chiaro: alone più corto e niente anello (sul fondo chiaro
+        // sembrava una seconda pillola sotto il pulsante)
+        boxShadow: dark
+            ? [
+                BoxShadow(
+                  color: t.orangeGradient[1].withValues(alpha: 0.55),
+                  offset: const Offset(0, 14),
+                  blurRadius: 30,
+                  spreadRadius: -8,
+                ),
+                const BoxShadow(color: Color(0xA6030A16), spreadRadius: 6),
+              ]
+            : [
+                BoxShadow(
+                  color: t.orangeGradient[2].withValues(alpha: 0.38),
+                  offset: const Offset(0, 8),
+                  blurRadius: 20,
+                  spreadRadius: -6,
+                ),
+                const BoxShadow(
+                  color: Color(0x140F172A),
+                  offset: Offset(0, 2),
+                  blurRadius: 4,
+                ),
+              ],
       ),
       child: DecoratedBox(
         decoration: BoxDecoration(

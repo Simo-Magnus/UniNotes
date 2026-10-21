@@ -13,16 +13,23 @@ il percorso ne mostra più d'uno), ognuno solo con il suo nome
 Codice: `app/lib/features/notes/` (`lecture_recorder.dart`,
 `recorder_screen.dart`, `recording_player_screen.dart`,
 `recently_deleted_screen.dart`, `transcript_search_screen.dart`,
-`recycle_bin.dart`, `course_notes_screen.dart`, `lesson_transcripts.dart`)
-e `app/lib/features/notes/recorder/` (WAV, trascrizione dal vivo con
-`system_speech.dart` e `live_transcriber.dart`, salvataggio, riquadro sopra
-le schermate, controlli in background). Riconoscimento vocale del sistema:
+`recycle_bin.dart`, `course_notes_screen.dart`, `lesson_transcripts.dart`,
+`spell_check.dart`) e `app/lib/features/notes/recorder/` (WAV, trascrizione
+dal vivo con `live_transcriber.dart`, modifica del testo con
+`live_transcript_editor.dart`, proposta di una trascrizione più accurata con
+`better_transcription.dart`, salvataggio, riquadro sopra le schermate,
+controlli in background). Riconoscimento vocale del sistema (oggi non usato
+per il testo istantaneo, vedi sotto): `system_speech.dart`,
 `app/android/.../LiveSpeech.kt`, `app/ios/Runner/LiveSpeech.swift` (uguale in
-`app/macos/Runner/`), `app/windows/runner/live_speech.cpp`. Conversioni
+`app/macos/Runner/`), `app/windows/runner/live_speech.cpp`. Controllo
+ortografico: `app/windows/runner/spell_check.cpp`, `UniNotesSpellCheck` in
+`app/macos/Runner/MainFlutterWindow.swift`. Conversioni
 audio: `app/lib/core/services/audio_codec.dart` e, su Windows,
 `app/windows/runner/audio_transcoder.cpp`. Test:
-`app/test/recorder_logic_test.dart`, `app/test/recorder_speech_test.dart` e
-`app/test/recording_overlay_test.dart`; formule a voce
+`app/test/recorder_logic_test.dart`, `app/test/recorder_speech_test.dart`,
+`app/test/recording_overlay_test.dart`, `app/test/live_transcript_edit_test.dart`,
+`app/test/better_transcription_test.dart`, `app/test/spell_check_test.dart` e
+`app/test/share_files_test.dart`; formule a voce
 `app/lib/features/notes/spoken_math.dart` (`app/test/spoken_math_test.dart`);
 scelta e consiglio dei modelli Whisper `app/lib/features/links/whisper_device.dart`
 e `app/lib/core/services/whisper_service.dart` (`app/test/whisper_choice_test.dart`).
@@ -37,18 +44,26 @@ e `app/lib/core/services/whisper_service.dart` (`app/test/whisper_choice_test.da
   usciti dal registratore). I segnalibri compaiono sotto i pulsanti (tocco →
   nota o rimozione).
 - **Trascrizione**: la card mostra il parlato trascritto **istantaneamente**,
-  come Memo Vocali o la digitazione vocale di Google Docs: il testo
-  provvisorio (più chiaro) si aggiorna mentre si parla e diventa definitivo
-  a ogni frase. Vedi [Trascrizione dal vivo](#trascrizione-dal-vivo). Dove
-  il sistema non offre il riconoscimento trascrive Whisper sul dispositivo
-  con un modello piccolo (incluso nell'installatore di Windows), con un paio
-  di secondi di ritardo, e la card spiega perché e come attivare il
-  riconoscimento del sistema (su Windows: «Riconoscimento vocale online»,
-  con il pulsante per le impostazioni). La registrazione funziona sempre,
-  anche senza testo.
+  come Memo Vocali: il testo provvisorio (più chiaro) si aggiorna mentre si
+  parla e diventa definitivo a ogni frase. Lo fa **sempre Whisper con il
+  modello integrato**, sul dispositivo e senza internet, con un paio di
+  secondi di ritardo, qualunque altra cosa sia collegata (riconoscimento
+  vocale di Windows, modelli Whisper scaricati). Vedi [Trascrizione dal
+  vivo](#trascrizione-dal-vivo). La registrazione funziona sempre, anche
+  senza testo.
+- **Modifica del testo**: come nel Blocco note, vedi [Modificare il testo
+  mentre si registra](#modificare-il-testo-mentre-si-registra).
+- **Elimina** (sotto i pulsanti, in rosso): ferma la registrazione e la
+  sposta, con la trascrizione fin lì, in **«Eliminati di recente»**, dove si
+  recupera per 30 giorni. Prima chiede «Eliminare la registrazione?» con
+  Annulla, Elimina e la casella «Non chiedere più» (la stessa conferma del
+  cestino della pagina del corso, impostazione `dont_ask_delete_recording`,
+  si ripristina da Impostazioni → «Ripristina le domande»).
 - **Salva**: ferma, salva e porta alla **pagina del corso**, alla card
   «Registrazioni delle lezioni» (la registrazione nuova è evidenziata), non
-  al lettore.
+  al lettore. Se è stato scaricato un modello Whisper più accurato compare
+  la proposta di trascrivere di nuovo (vedi [Dopo il salvataggio: una
+  trascrizione più accurata](#dopo-il-salvataggio-una-trascrizione-più-accurata)).
 
 ### Uscire durante la registrazione
 
@@ -142,54 +157,127 @@ si lascia dov'è e si decide più tardi.
 
 ## Trascrizione dal vivo
 
-Come Memo Vocali e la digitazione vocale di Google Docs, il testo compare
-mentre si parla grazie al **riconoscimento vocale in streaming del sistema**;
-dove il sistema non lo offre c'è **Whisper sul dispositivo a finestre di
-2 s** (vedi sotto), offline e con un paio di secondi di ritardo. Lingua:
-quella dell'insegnamento se nota (es. inglese per gli insegnamenti in
-inglese), altrimenti l'italiano. Il riconoscitore riceve **l'audio della
-registrazione** e non apre il microfono per conto suo (tranne su Windows,
-dove il microfono è condiviso): la registrazione non viene mai interrotta né
-bloccata da un suo errore.
+Il testo istantaneo lo fa **sempre Whisper con il modello integrato**
+(`ggml-base-q5_1.bin`, vedi sotto), a finestre di 2 s: offline, uguale su
+ogni sistema, con un paio di secondi di ritardo. Lingua: quella
+dell'insegnamento se nota (es. inglese per gli insegnamenti in inglese),
+altrimenti l'italiano. Whisper legge l'audio dal WAV di lavoro e non apre il
+microfono: la registrazione non viene mai interrotta né bloccata da un suo
+errore.
 
-| Sistema | Motore | Note |
+Prima, dove c'era, si usava il riconoscimento vocale in streaming del
+sistema (Windows con «Riconoscimento vocale online», Android 13+, iOS e
+macOS). Su Windows, con «Riconoscimento vocale online» attivo, il testo
+istantaneo non arrivava: dal 21/10/2026 il registratore non lo usa più su
+nessun sistema (`LectureRecorder` non passa più il riconoscitore a
+`LiveTranscriber`), così il comportamento è lo stesso ovunque e non dipende
+da impostazioni del sistema né da servizi in rete. Il codice del
+riconoscitore (`system_speech.dart` e i file nativi `LiveSpeech`) resta,
+spento, con i suoi test.
+
+### Che cosa succede con ogni combinazione
+
+| Situazione | Testo istantaneo durante la registrazione | Dopo «Salva» |
 |---|---|---|
-| iOS / macOS 26+ | `SpeechAnalyzer` + `SpeechTranscriber` | sul dispositivo, il sistema scarica il modello della lingua la prima volta |
-| iOS / macOS precedenti | `SFSpeechRecognizer` con `SFSpeechAudioBufferRecognitionRequest` | sul dispositivo quando la lingua lo permette (`supportsOnDeviceRecognition`), altrimenti in rete; una richiesta si chiude in una pausa dopo ~30 s (al massimo 55 s, limite di un minuto del servizio in rete) e se ne apre subito un'altra |
-| Android 13+ | `SpeechRecognizer` con risultati parziali, `createOnDeviceSpeechRecognizer` dove c'è | l'audio arriva da una pipe (`EXTRA_AUDIO_SOURCE`, PCM 16 bit mono 16 kHz) con sessione segmentata; se il riconoscitore sul dispositivo non ha la lingua si passa a quello normale |
-| Android 12 e precedenti | — | non si può passare l'audio al riconoscitore: aprirebbe il microfono in concorrenza con la registrazione (su molti telefoni la zittirebbe). Si usa Whisper |
-| Windows 10/11 | `Windows.Media.SpeechRecognition`, dettatura continua | ascolta il microfono predefinito in modalità condivisa; serve «Riconoscimento vocale online» e la lingua fra quelle della dettatura, altrimenti Whisper (vedi sotto) |
-| Linux | — | Whisper |
+| Solo il modello integrato (nessun modello scaricato) | Whisper integrato | niente da proporre: la trascrizione è quella dal vivo; «Trascrivi con Whisper» resta disponibile |
+| Modello integrato + un modello scaricato più accurato (small, medium, large, turbo…) | Whisper integrato (i modelli grandi sono troppo lenti per le finestre di 2 s) | riquadro «Trascrivere di nuovo con small?» con il tempo stimato, «Non ora» e «Trascrivi», casella «Fallo sempre in automatico» |
+| Come sopra, con «Fallo sempre in automatico» già scelto | Whisper integrato | la trascrizione con il modello scaricato parte da sola, con l'avviso del tempo stimato |
+| Modello scaricato meno accurato dell'integrato (tiny) | Whisper integrato | niente da proporre |
+| «Riconoscimento vocale online» di Windows attivo | Whisper integrato (l'opzione di Windows non conta più) | come sopra, secondo i modelli scaricati |
+| PC senza AVX2 (prima del 2013: whisper.cpp dell'app non gira) con un modello scaricato e `whisper-cli` | il modello scaricato a pezzi da ~10 s (testo con più ritardo) | niente da proporre se è già il modello migliore |
+| Build senza il modello integrato | lo scarica da solo la prima volta (sul telefono solo con Wi‑Fi), con la barra nella card; l'audio di quei secondi si trascrive dopo il salvataggio | come sopra |
+| Nessun modello utilizzabile | nessun testo, la card spiega come averlo; la registrazione va avanti | «Trascrivi con Whisper» o Gemini dalla pagina del corso |
 
-Permessi: iOS e macOS chiedono il permesso del riconoscimento vocale la prima
-volta (`NSSpeechRecognitionUsageDescription` nell'Info.plist, oltre a
-`NSMicrophoneUsageDescription`); su Android basta il microfono. Il testo
-provvisorio e quello definitivo arrivano sul canale
-`io.github.simomagnus.universitynotes/speech` (`partial`, `result`); un
-errore definitivo (`error` con `fatal`) fa passare a Whisper dal punto in
-cui si è, senza perdere il testo già riconosciuto. I tempi dei segmenti sono
-quelli della registrazione (inizio ~1 s prima del primo testo provvisorio,
-fine all'arrivo del testo definitivo). Alla fine («Salva») si attende al
-massimo 2 s l'ultimo testo, poi quello ancora provvisorio diventa definitivo.
+I tempi dei segmenti sono quelli della registrazione. Alla fine («Salva») il
+tratto ancora provvisorio e quelli saltati si completano in background
+(«Completo la trascrizione», visibile nella card della registrazione).
 
-Su **macOS** il riconoscitore è `LiveSpeech.swift` (registrato in
-`MainFlutterWindow.swift`, nel target Runner): il permesso «Riconoscimento
-vocale» si chiede alla prima registrazione, insieme al microfono. Se è
-negato l'avvio risponde `denied` e se Siri e Dettatura sono disattivate
-(errore `kLSRErrorDomain` 201) si passa subito a Whisper con l'errore
-`dictation`, invece di riprovare cinque volte: in tutti e due i casi la card
-lo spiega con il pulsante che apre Impostazioni di Sistema.
+### Dopo il salvataggio: una trascrizione più accurata
 
-### Correggere il testo mentre si registra
+Se il modello che userebbe «Trascrivi con Whisper» (il predefinito o il più
+accurato scaricato che il dispositivo regge, vedi [Quale modello Whisper si
+usa](#quale-modello-whisper-si-usa)) è più accurato del modello integrato e
+non è quello che ha fatto il testo dal vivo, dopo «Salva» (dal registratore,
+dal riquadro sopra le schermate o dal menu dell'icona del PC) compare il
+riquadro **«Trascrivere di nuovo con small?»** (`better_transcription.dart`):
 
-Un tocco su una frase già scritta la apre in un campo di testo sul posto:
-si corregge mentre la registrazione e la trascrizione continuano (le frasi
-nuove arrivano sotto). **Invio**, il segno di spunta o un tocco fuori
-salvano, **Esc** annulla; una frase svuotata si toglie. Le correzioni
-(`LiveTranscriber.editSegment`) finiscono nella trascrizione salvata e nei
-dati della registrazione; il testo originale resta in memoria per unire
-bene le finestre successive di Whisper (le parole ripetute nella
-sovrapposizione si riconoscono ancora).
+- il testo spiega che il testo dal vivo è del modello integrato, veloce ma
+  meno preciso, e dà il **tempo stimato** («circa 6 minuti», in background);
+- due pulsanti: **Non ora** e **Trascrivi**; toccando fuori è come «Non ora»
+  (la trascrizione si può sempre fare dopo con «Trascrivi di nuovo con…»);
+- la casella **«Fallo sempre in automatico»**: spuntata, con «Trascrivi», le
+  volte successive la trascrizione parte da sola con un avviso. È
+  l'impostazione `dont_ask_better_transcription` e si annulla da
+  Impostazioni → «Ripristina le domande».
+
+La trascrizione con il modello scaricato aspetta che finisca «Completo la
+trascrizione» (così non scrivono in due la stessa trascrizione); quella dal
+vivo va in «Eliminati di recente».
+
+**Stima del tempo**: secondi di lavoro per secondo di audio su un PC con 8
+core (tiny 0,03, base 0,06, small 0,2, medium 0,55, large-v3-turbo 0,45,
+large 1,1; i quantizzati un po' meno), più lenta con meno core e 2,5 volte
+sul telefono, più il caricamento del modello. Dopo la prima trascrizione con
+un modello si usa la velocità **misurata su quel dispositivo** (media con le
+precedenti, impostazione `whisper_speed_<modello>`), quindi la stima migliora
+con l'uso.
+
+### Modificare il testo mentre si registra
+
+Il testo della card si modifica **come nel Blocco note o in Google Docs**: un
+tocco (o un clic) in un punto qualsiasi del testo mette lì il cursore e si
+scrive, cancella, seleziona (anche con la pressione lunga su una parola),
+copia e incolla direttamente nel testo, mentre la registrazione e la
+trascrizione continuano: le frasi nuove arrivano in fondo (il cursore resta
+dov'è), quella provvisoria compare sotto, più chiara. Esc o un tocco fuori
+tornano alla lettura. Le modifiche si salvano da sole a ogni tasto (nel file
+della sessione dopo 2 s, nella trascrizione e nei dati della registrazione
+al salvataggio).
+
+Due modalità con passaggio immediato (`live_transcript_editor.dart`):
+**lettura**, con le formule `$…$` disegnate, e **modifica**, con il testo
+semplice (le formule in LaTeX). Il cursore va nel punto toccato anche con le
+formule (la posizione nel testo disegnato si converte in quella del testo
+LaTeX); senza formule le due modalità hanno lo stesso aspetto.
+
+Le frasi tengono i loro tempi (testo sincronizzato nel lettore): una
+modifica dentro una frase cambia solo quella; una modifica che ne tocca più
+d'una (es. cancellare lo spazio fra due frasi, incollare sopra una selezione)
+le unisce in una sola, dall'inizio della prima alla fine dell'ultima; una
+frase svuotata si toglie (`TranscriptEditBuffer`,
+`LiveTranscriber.replaceSegments`). Il testo originale resta in memoria per
+unire bene le finestre successive di Whisper.
+
+### Controllo ortografico
+
+Nel campo di modifica della trascrizione e nell'editor delle note (anche di
+riassunti e trascrizioni) le parole errate hanno la classica **linea
+ondulata rossa**, con il **correttore del sistema operativo**, come nel
+Blocco note: nessun dizionario incluso nell'app (`spell_check.dart`).
+
+| Sistema | Correttore | Suggerimenti |
+|---|---|---|
+| Windows | `ISpellChecker` di Windows (`spellcheck.h`, `windows/runner/spell_check.cpp`) | tasto destro sulla parola: suggerimenti in cima al menu, poi Taglia, Copia, Incolla |
+| macOS | `NSSpellChecker` (`UniNotesSpellCheck` in `MainFlutterWindow.swift`) | tasto destro sulla parola |
+| Android | correttore del sistema (della tastiera), con `DefaultSpellCheckService` di Flutter | tocco sulla parola sottolineata |
+| iOS | `UITextChecker`, con `DefaultSpellCheckService` | tocco sulla parola sottolineata |
+| Linux | nessuno | — |
+
+Su PC e Mac si controllano **italiano e inglese insieme**: una parola è
+errata solo se non è in nessuna delle due lingue installate, così le
+citazioni in inglese di una lezione in italiano non si sottolineano; la
+lingua dell'insegnamento viene prima e dà i suggerimenti. Sul telefono il
+sistema controlla una lingua alla volta: quella dell'insegnamento. Se una
+lingua non è installata nel sistema, per quella lingua non si sottolinea
+nulla e Impostazioni → Aspetto lo dice con un avviso discreto («Per il
+controllo ortografico in italiano installa la lingua italiana in Windows»).
+Le formule (`$…$`, `\(…\)`…) e gli indirizzi web non si controllano.
+
+Il testo si controlla una riga alla volta, con i risultati delle righe già
+viste in memoria: a ogni tasto si ricontrolla solo la riga cambiata, anche in
+una trascrizione di un'ora. Il campo di Flutter controlla il testo solo
+quando cambia: per sottolineare subito il testo che c'è già, il controllo si
+attiva un fotogramma dopo l'apertura del campo.
 
 ### Formule (LaTeX)
 
@@ -222,39 +310,19 @@ convertono più. Senza l'opzione il testo resta com'è.
 
 ### Windows: «Riconoscimento vocale online»
 
-La dettatura libera di Windows (`SpeechRecognizer` senza grammatica) funziona
-solo con **Impostazioni → Privacy e sicurezza → Voce → «Riconoscimento vocale
-online»** attivo: con l'opzione spenta l'avvio fallisce
-(`SPERR_SPEECH_PRIVACY_POLICY_NOT_ACCEPTED`), anche se i riconoscitori
-offline della lingua sono installati (es. `MS-1040-110-WINMO-DNN` per
-l'italiano: servono solo ai comandi con una grammatica). A ogni registrazione
-il runner (`live_speech.cpp`, metodo `support`) controlla:
+Non serve più: il testo istantaneo è sempre di Whisper (vedi sopra) e la
+card non chiede più di attivare l'opzione. Per la cronaca: la dettatura
+libera di Windows (`SpeechRecognizer` senza grammatica) funziona solo con
+Impostazioni → Privacy e sicurezza → Voce → «Riconoscimento vocale online»
+attivo (`HKCU\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy`,
+`HasAccepted` = 1), l'audio passa dai servizi Microsoft e il riconoscitore
+apre il microfono per conto suo; con l'opzione attiva il testo istantaneo non
+arrivava, e per questo si è passati a Whisper ovunque.
 
-- l'opzione della privacy, nel registro:
-  `HKCU\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy`,
-  valore `HasAccepted` = 1 (la chiave non c'è finché l'opzione non è mai
-  stata attivata);
-- la lingua fra `SpeechRecognizer.SupportedTopicLanguages` (`languageOk`).
+### Il modello integrato (offline)
 
-Se manca qualcosa la card «Trascrizione» lo dice mentre Whisper trascrive:
-
-- **privacy**: «Per il testo istantaneo attiva «Riconoscimento vocale online»
-  in Windows», con il pulsante **Apri impostazioni**
-  (`ms-settings:privacy-speech`) e la nota: con questa opzione l'audio passa
-  dai servizi Microsoft; finché è spenta il testo arriva da Whisper, sul PC e
-  senza internet; vale dalla prossima registrazione;
-- **lingua**: come aggiungerla (Impostazioni → Ora e lingua → Lingua e area
-  geografica → Aggiungi una lingua, con «Riconoscimento vocale»), con il
-  pulsante per `ms-settings:regionlanguage`.
-
-Alla registrazione successiva, se l'opzione è attiva, si usa il
-riconoscitore di Windows.
-
-### Ripiego con Whisper (offline)
-
-Dove il sistema non offre nulla (Windows senza l'opzione, Linux, Android
-12 e precedenti, permesso negato) trascrive Whisper sul dispositivo con un
-**modello integrato**: `ggml-base-q5_1.bin` (base multilingue quantizzato
+Il testo istantaneo lo fa Whisper sul dispositivo con un **modello
+integrato**: `ggml-base-q5_1.bin` (base multilingue quantizzato
 q5_1, 57 MiB, `kBuiltInWhisperModel`), sempre con whisper.cpp dentro l'app
 (`whisper_ggml`, anche su Windows: niente `whisper-cli` da scaricare). Lo
 stesso modello è il ripiego sempre disponibile di «Trascrivi con Whisper»
@@ -381,13 +449,13 @@ Card **«Registrazioni delle lezioni»** (la card «Trascrizioni» non c'è più
   copia», «Condividi» e «Allega a modulo/argomento di Studio»;
 - sulla stessa riga **«Trascrivi con Whisper»** e **«Trascrivi con
   Gemini»**: fatta la trascrizione la casella diventa **«Vedi
-  trascrizione»**, azzurra per Whisper e viola per Gemini, e apre la
+  trascrizione»** (una riga sola: prima c'era anche «con modello
+  integrato»), azzurra per Whisper e viola per Gemini, e apre la
   registrazione con quella trascrizione («Trascrizione con Whisper · small»
-  o «con Gemini»). Sotto «Trascrivi con Whisper» c'è il modello che si
-  userà (es. «small», «modello integrato»), sotto «Vedi trascrizione» quello
-  con cui è stata fatta («con small»). Il testo dal vivo del sistema non
-  occupa la casella di Whisper: si legge nella registrazione e Whisper
-  resta disponibile;
+  o «con Gemini»: il modello si legge lì). Sotto «Trascrivi con Whisper» c'è
+  il modello che si userà (es. «small», «modello integrato»). Il testo dal
+  vivo del vecchio riconoscimento del sistema non occupa la casella di
+  Whisper: si legge nella registrazione e Whisper resta disponibile;
 - **tenendo premuto** «Trascrivi con Whisper», o dal menu ⋮ («Trascrivi con
   un altro modello…», «Trascrivi di nuovo con…», anche nel menu del
   lettore) si sceglie il modello per quella sola trascrizione; rifacendola,
@@ -397,6 +465,25 @@ Card **«Registrazioni delle lezioni»** (la card «Trascrizioni» non c'è più
   provare (scaricare un modello, un modello più piccolo, Gemini…);
 - operazioni in corso (Whisper, Gemini, «Completo la trascrizione», taglio)
   con la barra di avanzamento nella card.
+
+Sotto le registrazioni: **«Riassunti lezioni e Appunti»** (prima «Riassunti
+delle lezioni»: si allegano riassunti e appunti, Markdown, PDF, Word…) e
+**«Note»** (prima «Appunti personali»: le note scritte nell'app, «Nuovo» apre
+l'editor «Nuova nota», con il controllo ortografico).
+
+**Condividi su Windows**: il tasto apre la finestra «Condividi» di Windows
+(share_plus con `DataTransferManager`). Non serve pubblicare l'app né un
+pacchetto MSIX: la finestra funziona anche per l'app installata con
+UniNotes_setup.exe, da Windows 10 1809. Prima non funzionava perché il
+plugin risponde sempre «non disponibile», anche quando la finestra si apre:
+l'app lo prendeva per un errore, copiava il file negli appunti e apriva
+Esplora file, e la finestra «Condividi» (che si chiude appena perde il
+focus) spariva subito. Ora su Windows (`widgets/share_files.dart`,
+`systemShare`) la risposta vale come finestra aperta; l'app chiama
+direttamente il canale nativo del plugin mandando sempre testo, titolo
+(obbligatorio per Windows) e file, perché il plugin ricordava i campi della
+condivisione precedente; i percorsi sono assoluti con «\». Su Windows prima
+della 1809 i file vanno ancora negli appunti con la cartella aperta.
 
 **Trascrivi con Gemini** (con l'account dello studente, senza chiave API:
 la chiave API e Antigravity sono stati tolti dall'app e i valori salvati si
@@ -494,7 +581,10 @@ Eliminati di recente** si ripristinano (con « (ripristinato)» se nel
 frattempo è comparso un file con lo stesso nome; l'avviso ha **Annulla**,
 che rimette l'elemento negli eliminati con la data di prima) o si
 cancellano per sempre. **Svuota** è un pulsante grande sopra l'elemento
-eliminato per ultimo. Le cartelle che iniziano con «.» non si sincronizzano: su OneDrive e
+eliminato per ultimo, pieno come gli altri, con i colori di errore del tema
+(fondo `errorContainer`, testo e icona `onErrorContainer`, bordo sottile
+`error`): contrasto almeno 4,5:1 in tema chiaro e scuro (prima il testo
+rosso sul fondo tonale non si leggeva). Le cartelle che iniziano con «.» non si sincronizzano: su OneDrive e
 Google Drive il file eliminato va nel cestino del servizio, come prima.
 
 ## Accessibilità

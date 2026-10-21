@@ -6,6 +6,7 @@ import 'package:sqflite/sqflite.dart';
 import '../../utils/parse.dart';
 import '../database/app_database.dart';
 import '../database/schema.dart';
+import '../database/sync_schema.dart';
 
 class BackupException implements Exception {
   BackupException(this.message);
@@ -200,6 +201,7 @@ class BackupService {
     final restored = <String, int>{};
 
     await _db.db.transaction((txn) async {
+      final tombstones = await txn.query(SyncSchema.tombstones);
       final keep = {...deviceLocalSettings, ...protectedSettings};
       final localSettings = await txn.query(
         'app_settings',
@@ -244,6 +246,13 @@ class BackupService {
         parsed.tables[_placesKey] ?? const [],
       );
       await _restoreColors(txn, parsed.root[_colorsKey]);
+      // Le righe tolte per fare posto al backup non sono eliminazioni dello
+      // studente: con la sincronizzazione attiva il ripristino si unisce ai
+      // dati degli altri dispositivi, non li cancella.
+      await txn.delete(SyncSchema.tombstones);
+      for (final t in tombstones) {
+        await txn.insert(SyncSchema.tombstones, t);
+      }
     });
     return restored;
   }

@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_web_auth_2/flutter_web_auth_2.dart';
@@ -176,12 +175,10 @@ class DrivePicker {
           ? 'Importazione non riuscita'
           : (r.cancelled ? 'Nessun file scelto' : 'File scelti');
       req.response.write(
-        '<!doctype html><meta charset="utf-8"><title>UniNotes</title>'
-        '<body style="font-family:sans-serif;padding:40px;max-width:720px">'
-        '<h2>${const HtmlEscape().convert(title)}</h2>'
-        '<p>Puoi chiudere questa finestra e tornare all\'app.</p></body>',
+        returnToAppPage(ok: r.error == null, title: title, detail: r.error),
       );
       await req.response.close();
+      unawaited(bringAppToFront());
       return r;
     }
     return const PickerResult(cancelled: true);

@@ -76,7 +76,11 @@ Name: "{autoprograms}\UniNotes"; Filename: "{app}\uninotes.exe"
 Name: "{autodesktop}\UniNotes"; Filename: "{app}\uninotes.exe"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\uninotes.exe"; Description: "{cm:LaunchProgram,UniNotes}"; Flags: nowait postinstall skipifsilent
+; Ultima pagina dell'installazione: casella «Avvia UniNotes» (selezionata;
+; chi non vuole aprire l'app subito la toglie prima di «Fine»). Non c'è
+; nelle installazioni silenziose (/SILENT, /VERYSILENT): lì l'app non parte
+; da sola. Testo scritto qui, senza dipendere dalla traduzione di Inno Setup.
+Filename: "{app}\uninotes.exe"; Description: "Avvia UniNotes"; Flags: nowait postinstall skipifsilent
 
 [UninstallRun]
 ; Schermata «Disinstalla UniNotes» dell'app (si chiude da sola se la
@@ -93,3 +97,10 @@ Type: files; Name: "{app}\.pulizia_fatta"
 ; (flutter_local_notifications): si toglie con il programma.
 Root: HKCU; Subkey: "Software\Classes\AppUserModelId\io.github.simomagnus.universitynotes"; Flags: uninsdeletekey dontcreatekey
 Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\PushNotifications\Backup\io.github.simomagnus.universitynotes"; Flags: uninsdeletekey dontcreatekey
+; Schema uninotes:// : dopo l'accesso a OneDrive o Google Drive nel browser
+; la pagina riporta nell'app (lib/core/services/app_return.dart, che lo
+; registra anche al primo avvio se manca).
+Root: HKCU; Subkey: "Software\Classes\uninotes"; ValueType: string; ValueName: ""; ValueData: "URL:UniNotes"; Flags: uninsdeletekey
+Root: HKCU; Subkey: "Software\Classes\uninotes"; ValueType: string; ValueName: "URL Protocol"; ValueData: ""
+Root: HKCU; Subkey: "Software\Classes\uninotes\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: """{app}\uninotes.exe"",0"
+Root: HKCU; Subkey: "Software\Classes\uninotes\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\uninotes.exe"" ""%1"""

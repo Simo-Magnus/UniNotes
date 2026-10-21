@@ -460,10 +460,13 @@ class DataEraser {
     if (!await dir.exists()) return;
     await for (final e in dir.list(followLinks: false)) {
       final name = p.basename(e.path);
-      final sync = e is File && RegExp(r'^\w+_sync_.*\.json').hasMatch(name);
+      final sync =
+          (e is File && RegExp(r'^\w+_sync_.*\.json').hasMatch(name)) ||
+          // copie locali dei registri dei dati (OneDrive, Google Drive)
+          (e is Directory && RegExp(r'^\w+_dati$').hasMatch(name));
       if (sync) {
         try {
-          await e.delete();
+          await e.delete(recursive: true);
         } catch (_) {}
       }
     }

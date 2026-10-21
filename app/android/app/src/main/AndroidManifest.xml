@@ -35,6 +35,12 @@
         android:fullBackupContent="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:icon="@mipmap/ic_launcher">
+        <!-- Icona piccola monocromatica della notifica «Registrazione in
+             corso» (flutter_foreground_task la legge da qui; senza, la barra
+             di stato mostra un quadrato bianco al posto del logo). -->
+        <meta-data
+            android:name="io.github.simomagnus.universitynotes.NOTIFICATION_ICON"
+            android:resource="@drawable/ic_stat_uninotes" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

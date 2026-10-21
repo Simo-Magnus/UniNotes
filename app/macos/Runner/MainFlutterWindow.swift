@@ -16,6 +16,8 @@ class MainFlutterWindow: NSWindow {
   private var liveSpeech: LiveSpeech?
   /// Prove nel calendario del Mac (UniNotesCalendar, sotto).
   private var calendar: UniNotesCalendar?
+  /// Controllo ortografico dei campi di testo (UniNotesSpellCheck, sotto).
+  private var spellCheck: UniNotesSpellCheck?
 
   override func awakeFromNib() {
     let flutterViewController = FlutterViewController()
@@ -92,6 +94,7 @@ class MainFlutterWindow: NSWindow {
     uninstallChannel = uninstall
     liveSpeech = LiveSpeech(messenger: flutterViewController.engine.binaryMessenger)
     calendar = UniNotesCalendar(messenger: flutterViewController.engine.binaryMessenger)
+    spellCheck = UniNotesSpellCheck(messenger: flutterViewController.engine.binaryMessenger)
 
     super.awakeFromNib()
   }
@@ -104,7 +107,9 @@ class MainFlutterWindow: NSWindow {
 ///   `takeRoute`);
 /// - `uninotes://focus/ok|errore|annullato`: Comandi torna nell'app dopo il
 ///   comando «UniNotes Focus» (x-callback-url) e Flutter riceve l'esito con
-///   `shortcutResult` (lib/features/study/focus/focus_system.dart).
+///   `shortcutResult` (lib/features/study/focus/focus_system.dart);
+/// - `uninotes://auth`: ritorno dall'accesso a OneDrive o Google Drive nel
+///   browser (lib/core/services/app_return.dart).
 final class AppLinks {
   static let shared = AppLinks()
 
@@ -127,6 +132,12 @@ final class AppLinks {
       return true
     case "focus":
       focusChannel?.invokeMethod("shortcutResult", arguments: path)
+      return true
+    case "auth":
+      // ritorno dall'accesso nel browser (OneDrive, Google Drive): basta
+      // riportare l'app in primo piano, l'esito lo mostra Flutter
+      NSApp.activate(ignoringOtherApps: true)
+      NSApp.windows.first?.makeKeyAndOrderFront(nil)
       return true
     default:
       return false
@@ -429,5 +440,83 @@ final class UniNotesCalendar: NSObject {
     if !left.isEmpty { return false }
     try store.removeCalendar(cal, commit: true)
     return true
+  }
+}
+
+/// Controllo ortografico di macOS (NSSpellChecker) per i campi di testo
+/// dell'app: trascrizione dal vivo, note e appunti
+/// (lib/features/notes/spell_check.dart). Canale
+/// `io.github.simomagnus.universitynotes/spellcheck`:
+/// - `languages` → {it: Bool, en: Bool} lingue con il dizionario nel Mac;
+/// - `check` {texts: [String], languages: ["it", "en"]} → per ogni testo
+///   [[inizio, fine, [suggerimenti]]] (indici UTF-16, come le stringhe di
+///   Dart e NSString). Una parola è errata solo se nessuna delle lingue
+///   installate la riconosce; i suggerimenti arrivano dalla prima lingua.
+final class UniNotesSpellCheck: NSObject {
+  static let channelName = "io.github.simomagnus.universitynotes/spellcheck"
+  private let channel: FlutterMethodChannel
+
+  init(messenger: FlutterBinaryMessenger) {
+    channel = FlutterMethodChannel(
+      name: UniNotesSpellCheck.channelName, binaryMessenger: messenger)
+    super.init()
+    channel.setMethodCallHandler { [weak self] call, result in
+      guard let self = self else {
+        result(nil)
+        return
+      }
+      self.handle(call, result: result)
+    }
+  }
+
+  /// Codice della lingua fra quelle del Mac («it», «it_IT», «en», «en_GB»…).
+  private func language(_ code: String) -> String? {
+    let all = NSSpellChecker.shared.availableLanguages
+    if all.contains(code) { return code }
+    return all.first(where: { $0.hasPrefix(code + "_") || $0.hasPrefix(code + "-") })
+  }
+
+  private func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+    let args = call.arguments as? [String: Any] ?? [:]
+    switch call.method {
+    case "languages":
+      result(["it": language("it") != nil, "en": language("en") != nil])
+    case "check":
+      let langs = (args["languages"] as? [String] ?? []).compactMap { language($0) }
+      let texts = args["texts"] as? [String] ?? []
+      result(texts.map { check($0, langs) })
+    default:
+      result(FlutterMethodNotImplemented)
+    }
+  }
+
+  private func check(_ text: String, _ langs: [String]) -> [[Any]] {
+    guard let first = langs.first, !text.isEmpty else { return [] }
+    let checker = NSSpellChecker.shared
+    let ns = text as NSString
+    var out: [[Any]] = []
+    var start = 0
+    while start < ns.length {
+      let r = checker.checkSpelling(
+        of: text, startingAt: start, language: first, wrap: false,
+        inSpellDocumentWithTag: 0, wordCount: nil)
+      if r.location == NSNotFound || r.length == 0 || r.location < start { break }
+      start = r.location + r.length
+      let word = ns.substring(with: r)
+      let known = langs.dropFirst().contains { lang in
+        checker.checkSpelling(
+          of: word, startingAt: 0, language: lang, wrap: false,
+          inSpellDocumentWithTag: 0, wordCount: nil
+        ).location == NSNotFound
+      }
+      if known { continue }
+      var guesses: [String] = []
+      for lang in langs where guesses.isEmpty {
+        guesses = checker.guesses(
+          forWordRange: r, in: text, language: lang, inSpellDocumentWithTag: 0) ?? []
+      }
+      out.append([r.location, r.location + r.length, Array(guesses.prefix(5))])
+    }
+    return out
   }
 }

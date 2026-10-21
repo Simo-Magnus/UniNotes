@@ -15,18 +15,18 @@ Codice: `app/lib/core/reminders/` (logica pura in `agenda.dart`,
 
 ## Tipi di notifica
 
-| Tipo (canale Android) | Quando | Testo | Azioni | Come si disattiva | «Non chiedermelo più» |
+| Tipo (canale Android) | Quando | Testo | Azioni | Come si disattiva | «Non chiedere più» |
 |---|---|---|---|---|---|
 | **Prove in arrivo** (`prove`) | Esami, prove in itinere, esoneri ancora da sostenere del corso attuale: 7 giorni prima e il giorno prima alle 9:00; se la prova ha l'orario, l'avviso del giorno prima arriva 24 ore prima. Anticipi scelti in Impostazioni → Notifiche (1, 2, 3, 7, 14 giorni). | «Esame domani: Analisi I» · «martedì 12 gennaio alle 9:30 · Aula 1» | Tocco → scheda della prova | Interruttore «Prove in arrivo» | No |
 | **Inizio sessione d'esame** (`sessioni`) | Il giorno prima dell'inizio di ogni sessione del corso (dal database `database/sessioni`), alle 9:00 | «Domani inizia la sessione d'esame» · «Sessione invernale, fino al 20 febbraio» | Tocco → Esami | Interruttore «Inizio sessione d'esame» | No |
-| **Com'è andata?** (`esiti`) | Il giorno dopo una prova senza esito registrato, alle 18:00; una sola volta per prova (registrando l'esito prima, non arriva) | «Com'è andata?» · «Ieri avevi l'esame di Analisi I. Registra l'esito quando lo sai.» | «Registra l'esito» (apre la scheda), «Non ricordarmelo per questa prova» | Interruttore «Com'è andata?» | Solo per la singola prova |
-| **Collegamento interrotto** (`collegamenti`) | Quando OneDrive, Google Drive o il calendario Outlook falliscono per accesso scaduto o revocato (`invalid_grant`, AADSTS700082…); al massimo una ogni 3 giorni per servizio | «OneDrive non è più collegato» · «L'accesso è scaduto o è stato revocato. Ricollegati da Collegamenti…» | Tocco → Collegamenti (o Impostazioni per il calendario) | Interruttore «Collegamento interrotto» | No |
+| **Esito delle prove** (`esiti`) | Il giorno dopo una prova senza esito registrato, alle 18:00; una sola volta per prova (registrando l'esito prima, non arriva) | «Com'è andata?» · «Ieri avevi l'esame di Analisi I. Registra l'esito quando lo sai.» | «Registra l'esito» (apre la scheda), «Non ricordarmelo per questa prova» | Interruttore «Com'è andata?» | Solo per la singola prova |
+| **Collegamenti interrotti** (`collegamenti`) | Quando OneDrive, Google Drive o il calendario Outlook falliscono per accesso scaduto o revocato (`invalid_grant`, AADSTS700082…); al massimo una ogni 3 giorni per servizio | «OneDrive non è più collegato» · «L'accesso è scaduto o è stato revocato. Ricollegati da Collegamenti…» | Tocco → Collegamenti (o Impostazioni per il calendario) | Interruttore «Collegamento interrotto» | No |
 | **Registratore delle lezioni** (`registratore`) | Sul PC, quando chiudi la finestra durante una registrazione (l'app resta nell'area di notifica) o salvi dal menu dell'icona | «UniNotes continua a registrare» · «La registrazione di Analisi I va avanti: trovi UniNotes nell'area di notifica.» | Tocco → registratore | Conseguenza diretta di un tuo gesto: non dipende dagli interruttori | No |
 | **Registrazione lezione** (`registrazione_lezione`, Android) | Per tutta la registrazione (servizio in primo piano) | «Registrazione in corso» · «Analisi I · 00:12:34» (tempo aggiornato ogni secondo; «Registrazione in pausa» col tempo fermo) | «Pausa»/«Riprendi», «Salva»; tocco → registratore | Sparisce quando salvi; senza non si può registrare a schermo spento | No |
 | **Sessione Focus in corso** (`focus`, Android) | Per tutta la sessione Focus, silenziosa e fissa | «Focus: Analisi I · Limiti» · «Pausa alle 10:30» con il conto alla rovescia del sistema («Focus in pausa» col tempo fermo) | Tocco → sessione Focus | Sparisce a fine sessione | No |
-| **Fine della sessione Focus e delle pause** (`focus_avvisi`) | Solo con l'app in background: inizio pausa, fine pausa, fine sessione | «È il momento di una pausa» · «5 minuti, poi si riparte.» | Tocco → sessione Focus | Conseguenza diretta della sessione avviata: non dipende dagli interruttori | No |
-| **Recensione** (`recensione`, promozionale) | Una sola richiesta, dopo almeno 14 giorni dall'installazione e 5 giorni di uso effettivo, alle 18:00; mai entro 2 giorni da una prova, mai durante una registrazione | «Ti trovi bene con UniNotes?» · invito a una recensione (store) o a una stella o un commento (GitHub) | «Recensisci», «Più tardi» (dopo 30 giorni, al massimo 2 volte), «Non chiedermelo più» | Interruttore «Richiesta di recensione» | Sì |
-| **Sostieni il progetto** (`sostegno`, promozionale) | Solo nelle build con `--dart-define=DONATIONS=link` (APK e versioni del sito per Windows e macOS, Microsoft Store). Dopo 30 giorni dall'installazione e 5 d'uso, poi al massimo ogni 6 mesi; mai nello stesso mese della richiesta di recensione, mai entro 7 giorni da una prova, mai durante una registrazione | «Sostieni UniNotes, se vuoi» · «UniNotes è gratuita e resta completa per tutti. Se ti è utile, una donazione aiuta a mantenerla. È del tutto facoltativo.» | «Dona», «Più tardi» (dopo 30 giorni), «Non chiedermelo più» | Interruttore «Sostieni il progetto» (attivo di default solo in quelle build) | Sì |
+| **Pause e fine della sessione Focus** (`focus_avvisi`) | Solo con l'app in background: inizio pausa, fine pausa, fine sessione | «È il momento di una pausa» · «5 minuti, poi si riparte.» | Tocco → sessione Focus | Conseguenza diretta della sessione avviata: non dipende dagli interruttori | No |
+| **Recensione** (`recensione`, promozionale) | Una sola richiesta, dopo almeno 14 giorni dall'installazione e 5 giorni di uso effettivo, alle 18:00; mai entro 2 giorni da una prova, mai durante una registrazione | «Ti trovi bene con UniNotes?» · invito a una recensione (store) o a una stella o un commento (GitHub) | «Recensisci», «Più tardi» (dopo 30 giorni, al massimo 2 volte), «Non chiedere più» | Interruttore «Richiesta di recensione» | Sì |
+| **Sostieni il progetto** (`sostegno`, promozionale) | Solo nelle build con `--dart-define=DONATIONS=link` (APK e versioni del sito per Windows e macOS, Microsoft Store). Dopo 30 giorni dall'installazione e 5 d'uso, poi al massimo ogni 6 mesi; mai nello stesso mese della richiesta di recensione, mai entro 7 giorni da una prova, mai durante una registrazione | «Sostieni UniNotes, se vuoi» · «UniNotes è gratuita e resta completa per tutti. Se ti è utile, una donazione aiuta a mantenerla. È del tutto facoltativo.» | «Dona», «Più tardi» (dopo 30 giorni), «Non chiedere più» | Interruttore «Sostieni il progetto» (attivo di default solo in quelle build) | Sì |
 
 «Prova una notifica» (Impostazioni → Notifiche) ne mostra subito una d'esempio.
 
@@ -44,7 +44,7 @@ aggiunta in Xcode: vedi [widget.md](widget.md) e
 | Microsoft Store (`STORE=microsoft` e `MSSTORE_ID`) | `ms-windows-store://review/?ProductId=…` |
 | GitHub (APK, Windows, macOS con `DONATIONS=link`) | `https://github.com/Simo-Magnus/UniNotes` (stella o commento) |
 
-Lo stato «già chiesta / non chiedermelo più» è condiviso con l'invito nella
+Lo stato «già chiesta / non chiedere più» è condiviso con l'invito nella
 Home (`core/services/nudges.dart`): chi ha già risposto in un posto non viene
 richiesto nell'altro.
 
@@ -199,15 +199,51 @@ dal pacchetto sono invariate (verificato in compilazione e nei test).
   senza leggere il fuso del sistema.
 - iOS tiene al massimo 64 notifiche in attesa: l'app ne pianifica al
   massimo 60, le più vicine.
-- I pulsanti «Più tardi», «Non chiedermelo più» e «Non ricordarmelo per
+- I pulsanti «Più tardi», «Non chiedere più» e «Non ricordarmelo per
   questa prova» funzionano senza aprire l'app (Android, iOS): un isolate in
   background li mette in coda e l'app li applica al successivo avvio o
   ritorno. Una richiesta di recensione o sostegno passata senza risposta
   conta come mostrata.
 - Icona piccola Android: `drawable-*/ic_stat_uninotes.png`, sagoma bianca del
   logo (`python tools/genera_icona.py --notifiche`), colore d'accento
-  azzurro `#38BDF8`; `res/raw/keep.xml` la protegge dalla riduzione delle
-  risorse.
+  azzurro `#0284C7` (leggibile sulla tendina chiara e su quella scura);
+  `res/raw/keep.xml` la protegge dalla riduzione delle risorse. La usa anche
+  la notifica «Registrazione in corso» (meta-dato
+  `io.github.simomagnus.universitynotes.NOTIFICATION_ICON` nel manifest).
+
+## Aspetto per piattaforma
+
+Ogni tipo ha una grafica nello stile dell'icona dell'app (fondo blu notte,
+simbolo azzurro, punto arancione), generata da
+`python app/tool/genera_grafiche_notifiche.py`: calendario per le prove,
+tocco per le sessioni, spunta per gli esiti, catena spezzata per i
+collegamenti, microfono, cronometro e sveglia per Focus, stella e cuore
+per recensione e sostegno. Le notifiche sono raggruppate per sezione
+dell'app: **Esami** (prove, sessioni, esiti), **Studio** (Focus),
+**Registra**, **Collegamenti**, più **UniNotes** per le promozionali.
+Il codice è in `LocalNotificationPlatform.detailsFor` (test in
+`app/test/notification_design_test.dart`).
+
+- **Android**: icona piccola monocromatica e azzurro dell'app; icona
+  grande del tipo a destra (`res/drawable-nodpi/ic_notif_<canale>.png`);
+  la sezione accanto al nome dell'app; testo esteso (le prove: elenco con
+  una riga per data e ora e una per il luogo); pulsanti. Nelle impostazioni
+  del sistema i canali sono divisi nei gruppi Esami, Studio, Registra,
+  Collegamenti e UniNotes. Il raggruppamento nella tendina lo fa il sistema
+  (da 4 notifiche dell'app in su): una notifica di riepilogo per le
+  notifiche pianificate richiederebbe codice al momento della consegna.
+- **iOS e macOS**: la sezione come sottotitolo, notifiche impilate per
+  sezione (`threadIdentifier` `uninotes_esami`, …); per inizio sessione,
+  recensione e sostegno l'immagine larga è allegata (miniatura a destra,
+  intera aprendo la notifica). Pulsanti dalle categorie registrate
+  all'avvio.
+- **Windows**: logo dell'app registrato per i toast (`assets/notifiche/
+  uninotes.png`, prima Windows mostrava un'icona vuota), logo del tipo al
+  posto di quello dell'app nel toast, immagine larga in cima per inizio
+  sessione, recensione e sostegno (`hero_<canale>.png`), intestazione della
+  sezione nel Centro notifiche (un clic apre la sezione), toast lunghi per
+  prove, sessioni, esiti e avvisi Focus, pulsanti.
+- **Linux**: le notifiche non sono attive (nessuna versione per Linux).
 
 ## Note legali e regole degli store
 
@@ -215,7 +251,7 @@ dal pacchetto sono invariate (verificato in compilazione e nei test).
   diretto senza il consenso esplicito dell'utente, con la possibilità di
   disattivarle nell'app. Recensione e sostegno sono quindi trattate come
   promozionali: il dialogo di consenso le nomina, hanno un interruttore
-  ciascuna e «Non chiedermelo più»; sull'App Store il sostegno non esiste
+  ciascuna e «Non chiedere più»; sull'App Store il sostegno non esiste
   proprio (vedi sotto).
 - **Apple 3.1.1 e Google Play (Payments)**: nelle app distribuite dagli store
   non si possono indirizzare gli utenti a pagamenti esterni per sostenere
@@ -226,7 +262,7 @@ dal pacchetto sono invariate (verificato in compilazione e nei test).
 - **UE/Italia**: una richiesta di donazione volontaria, chiara e non
   ingannevole a sostegno di un progetto gratuito è lecita; il testo dice che
   è facoltativa e che l'app resta gratuita e completa, senza scadenze finte,
-  sensi di colpa o funzioni bloccate. Nessun dark pattern: «Non chiedermelo
+  sensi di colpa o funzioni bloccate. Nessun dark pattern: «Non chiedere
   più» è sempre visibile e vale per sempre.
 
 ## Privacy

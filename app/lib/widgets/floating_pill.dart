@@ -66,14 +66,17 @@ class FloatingPill extends StatelessWidget {
             colors: background(context),
           ),
           border: Border.all(color: t.navBorder),
-          boxShadow: const [
-            BoxShadow(
-              color: Color(0x99000000),
-              offset: Offset(0, 10),
-              blurRadius: 24,
-              spreadRadius: -6,
-            ),
-          ],
+          // tema chiaro: l'ombra leggera degli elementi flottanti
+          boxShadow: theme.brightness == Brightness.dark
+              ? const [
+                  BoxShadow(
+                    color: Color(0x99000000),
+                    offset: Offset(0, 10),
+                    blurRadius: 24,
+                    spreadRadius: -6,
+                  ),
+                ]
+              : t.floatShadows,
         ),
         child: Row(
           children: [

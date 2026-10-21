@@ -135,21 +135,21 @@ class FakeGoogleDrive {
         'changes': [
           for (final id in changes.skip(from))
             if (_visible(id))
-            {
-              'fileId': id,
-              'file': {
-                'parents': [?items[id]?.parent],
+              {
+                'fileId': id,
+                'file': {
+                  'parents': [?items[id]?.parent],
+                },
               },
-            },
         ],
       });
     }
     if (path == '/drive/v3/files' && method == 'GET') {
       final query = q['q']!;
       final parent = RegExp(r"'([^']+)' in parents").firstMatch(query)![1]!;
-      final name = RegExp(
-        r"name = '((?:[^'\\]|\\.)*)'",
-      ).firstMatch(query)?.group(1);
+      final name = RegExp(r"name = '((?:[^'\\]|\\.)*)'")
+          .firstMatch(query)
+          ?.group(1);
       final onlyFolders = query.contains('mimeType =');
       final out = [
         for (final it in items.values)
@@ -175,7 +175,9 @@ class FakeGoogleDrive {
     if (copy != null && method == 'POST') {
       final src = items[copy[1]];
       if (src == null || !_visible(src.id)) {
-        return _json({'error': {'message': 'File not found'}}, 404);
+        return _json({
+          'error': {'message': 'File not found'},
+        }, 404);
       }
       final m = jsonDecode(utf8.decode(body!)) as Map;
       final it = _byApp(
@@ -189,7 +191,9 @@ class FakeGoogleDrive {
     final id = path.split('/').last;
     final it = items[id];
     if (it == null || !_visible(id)) {
-      return _json({'error': {'message': 'File not found'}}, 404);
+      return _json({
+        'error': {'message': 'File not found'},
+      }, 404);
     }
     if (method == 'GET' && q['alt'] == 'media') {
       return GraphResponse(200, Uint8List.fromList(it.bytes));
@@ -207,7 +211,9 @@ class FakeGoogleDrive {
       changes.add(it.id);
       return _json({'id': it.id});
     }
-    return _json({'error': {'message': 'unsupported $method $path'}}, 400);
+    return _json({
+      'error': {'message': 'unsupported $method $path'},
+    }, 400);
   }
 
   GraphResponse _done(FakeItem it) {

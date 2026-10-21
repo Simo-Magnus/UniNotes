@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'package:sqflite/sqflite.dart' show ConflictAlgorithm;
+
 import '../core/database/app_database.dart';
 import '../models/attachment.dart';
 import '../models/study.dart';
@@ -47,8 +51,55 @@ class StudyRepository {
 
   Future<int> insertTopic(Topic t) =>
       _db.db.insert('topics', t.toMap()..remove('id'));
-  Future<void> updateTopic(Topic t) =>
-      _db.db.update('topics', t.toMap(), where: 'id = ?', whereArgs: [t.id]);
+
+  /// Impostazione con l'ultimo cambio di stato di un argomento (insegnamento
+  /// e momento, JSON): la Home apre «Moduli e argomenti» sulla suddivisione
+  /// (semestre, annuale…) di quell'insegnamento.
+  static const lastTopicChangeKey = 'last_topic_status_change';
+
+  /// Salva l'argomento; se ne cambia lo stato (qualunque cambio, non solo
+  /// «Completato») annota insegnamento e momento in [lastTopicChangeKey].
+  Future<void> updateTopic(Topic t) async {
+    final before = await _db.db.rawQuery(
+      'SELECT t.status, m.course_id FROM topics t '
+      'JOIN modules m ON m.id = t.module_id WHERE t.id = ?',
+      [t.id],
+    );
+    await _db.db.update(
+      'topics',
+      t.toMap(),
+      where: 'id = ?',
+      whereArgs: [t.id],
+    );
+    if (before.isEmpty || before.first['status'] == t.status.key) return;
+    await _db.db.insert('app_settings', {
+      'key': lastTopicChangeKey,
+      'value': jsonEncode({
+        'course_id': asInt(before.first['course_id']),
+        'at': DateTime.now().toIso8601String(),
+      }),
+    }, conflictAlgorithm: ConflictAlgorithm.replace);
+  }
+
+  /// Ultimo cambio di stato di un argomento (vedi [updateTopic]), se c'è.
+  Future<({int courseId, DateTime at})?> lastTopicChange() async {
+    final rows = await _db.db.query(
+      'app_settings',
+      where: 'key = ?',
+      whereArgs: [lastTopicChangeKey],
+    );
+    if (rows.isEmpty) return null;
+    try {
+      final m = jsonDecode(rows.first['value'] as String) as Map;
+      final id = asInt(m['course_id']);
+      final at = DateTime.tryParse('${m['at']}');
+      if (id == null || at == null) return null;
+      return (courseId: id, at: at);
+    } catch (_) {
+      return null;
+    }
+  }
+
   Future<void> deleteTopic(int id) =>
       _db.db.delete('topics', where: 'id = ?', whereArgs: [id]);
 

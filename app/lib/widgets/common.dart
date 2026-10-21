@@ -20,19 +20,21 @@ class EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).colorScheme.outline;
+    final scheme = Theme.of(context).colorScheme;
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(32),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(icon, size: 56, color: color),
+            Icon(icon, size: 56, color: scheme.outline),
             const SizedBox(height: 12),
+            // testo: colore secondario dello schema (il contorno non
+            // arriva a 4,5:1 sul fondo del tema chiaro)
             Text(
               message,
               textAlign: TextAlign.center,
-              style: TextStyle(color: color),
+              style: TextStyle(color: scheme.onSurfaceVariant),
             ),
             if (action != null) ...[const SizedBox(height: 16), action!],
           ],

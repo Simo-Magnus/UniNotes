@@ -8,15 +8,15 @@ import '../../core/academic/student_profile.dart';
 import '../../core/constants/enums.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/university_palette.dart';
-import '../../models/book.dart';
 import '../../models/course.dart';
 import '../../models/exam.dart';
 import '../../models/study.dart';
 import '../../utils/dates.dart';
 import '../../utils/grade_math.dart';
-import '../books/book_filters.dart';
 import '../notes/lesson_transcripts.dart';
 import '../notes/notes_store.dart';
+import '../study/course_groups.dart';
+import 'progress_groups.dart';
 
 /// Progresso di studio di un corso (media degli stati degli argomenti dei
 /// moduli).
@@ -52,17 +52,6 @@ class RecentRecording {
   final LessonTranscripts transcripts;
 }
 
-/// Libri dei corsi mostrati: quanti sono scaricati, quanti obbligatori
-/// vanno ancora procurati e l'ultimo aperto (per riprendere la lettura).
-class BooksSummary {
-  const BooksSummary({this.downloaded = 0, this.toProcure = 0, this.lastRead});
-  final int downloaded;
-  final int toProcure;
-  final Book? lastRead;
-
-  bool get isEmpty => downloaded == 0 && toProcure == 0 && lastRead == null;
-}
-
 /// Tutto ciò che serve alla Home, caricato in una volta.
 class DashboardData {
   const DashboardData({
@@ -70,10 +59,10 @@ class DashboardData {
     required this.exams,
     required this.weekSessions,
     required this.courses,
-    required this.progress,
     required this.palette,
+    this.progressGroups = const [],
+    this.lastTopicChange,
     this.recordings = const [],
-    this.books = const BooksSummary(),
     this.profile,
     this.year,
   });
@@ -88,12 +77,18 @@ class DashboardData {
   final List<Exam> exams;
   final List<StudySession> weekSessions;
   final Map<int, Course> courses;
-  final List<CourseProgressInfo> progress;
   final UniversityPalette palette;
+
+  /// «Moduli e argomenti»: suddivisioni (semestri, annuale…) con gli
+  /// insegnamenti che hanno argomenti, nell'ordine di Studio.
+  final List<ProgressGroup> progressGroups;
+
+  /// Ultimo cambio di stato di un argomento (vedi
+  /// StudyRepository.lastTopicChange).
+  final ({int courseId, DateTime at})? lastTopicChange;
 
   /// Ultime lezioni registrate (le più recenti per prime).
   final List<RecentRecording> recordings;
-  final BooksSummary books;
 
   DateTime get weekStart => startOfWeek(now);
 
@@ -150,23 +145,37 @@ class DashboardData {
         if (c.id != null && scope.includes(c)) c,
     ];
 
-    final progress = <CourseProgressInfo>[];
-    for (final c in shown) {
-      if (c.status != CourseStatus.active) continue;
-      final topics = await s.study.topicsOfCourse(c.id!);
-      if (topics.isEmpty) continue;
-      progress.add(
-        CourseProgressInfo(
-          course: c,
-          progress: courseProgress(topics.map((t) => t.status)),
-          topics: topics.length,
-          completed: topics
-              .where((t) => t.status == TopicStatus.completed)
-              .length,
-          toReview: topics
-              .where((t) => t.status == TopicStatus.toReview)
-              .length,
-        ),
+    // Moduli e argomenti: insegnamenti non superati né archiviati, divisi
+    // come in Studio (semestre, annuale, OFA) e nello stesso ordine
+    final studied = applyCourseOrder([
+      for (final c in shown)
+        if (c.status != CourseStatus.completed &&
+            c.status != CourseStatus.archived)
+          c,
+    ], await loadStudyCourseOrder(s));
+    final progressGroups = <ProgressGroup>[];
+    for (final g in groupStudyCourses(studied)) {
+      final items = <CourseProgressInfo>[];
+      for (final c in g.courses) {
+        final topics = await s.study.topicsOfCourse(c.id!);
+        if (topics.isEmpty) continue;
+        items.add(
+          CourseProgressInfo(
+            course: c,
+            progress: courseProgress(topics.map((t) => t.status)),
+            topics: topics.length,
+            completed: topics
+                .where((t) => t.status == TopicStatus.completed)
+                .length,
+            toReview: topics
+                .where((t) => t.status == TopicStatus.toReview)
+                .length,
+          ),
+        );
+      }
+      if (items.isEmpty) continue;
+      progressGroups.add(
+        ProgressGroup(label: g.label, courses: g.courses, items: items),
       );
     }
 
@@ -175,10 +184,10 @@ class DashboardData {
       exams: exams,
       weekSessions: weekSessions,
       courses: courses,
-      progress: progress,
       palette: palette,
+      progressGroups: progressGroups,
+      lastTopicChange: await s.study.lastTopicChange(),
       recordings: await _recordings(s, shown),
-      books: await _books(s, scope),
       profile: scope.profile,
       year: scope.year,
     );
@@ -231,37 +240,6 @@ class DashboardData {
       // cartella degli appunti non disponibile (es. nei test)
       return const [];
     }
-  }
-
-  /// Libri dei corsi del percorso (tutti gli anni dell'anno scelto).
-  static Future<BooksSummary> _books(AppServices s, PlanScope scope) async {
-    final courses = {
-      for (final c in await s.courses.all())
-        if (c.id != null) c.id!: c,
-    };
-    final books = [
-      for (final b in await s.books.all())
-        if (!b.isRemoved &&
-            (b.courseId == null ||
-                courses[b.courseId] == null ||
-                scope.includes(courses[b.courseId]!)))
-          b,
-    ];
-    if (books.isEmpty) return const BooksSummary();
-    final covered = coursesWithRequiredCovered(books);
-    Book? last;
-    for (final b in books) {
-      final at = b.lastOpenedAt;
-      if (at == null || !isDownloaded(b)) continue;
-      if (last == null || at.isAfter(last.lastOpenedAt!)) last = b;
-    }
-    return BooksSummary(
-      downloaded: books.where(isDownloaded).length,
-      toProcure: books
-          .where((b) => BookAvailability.toProcure.matches(b, covered: covered))
-          .length,
-      lastRead: last,
-    );
   }
 }
 

@@ -372,8 +372,8 @@ const List<WhisperModelInfo> kWhisperModels = [
 ];
 
 /// **Modello integrato** nell'app: base multilingue quantizzato q5_1
-/// (57 MiB, `ggml-base-q5_1.bin`). Serve al testo istantaneo durante la
-/// registrazione (quando il riconoscimento vocale del sistema non c'è) ed è
+/// (57 MiB, `ggml-base-q5_1.bin`). Fa sempre il testo istantaneo durante la
+/// registrazione ed è
 /// il ripiego sempre disponibile di «Trascrivi con Whisper» quando l'utente
 /// non ha scaricato modelli (o il programma whisper.cpp manca). Non compare
 /// nella tabella dei download.

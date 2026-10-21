@@ -37,17 +37,19 @@ class AppTheme {
       brightness: b,
       primary: t.cyan,
       onPrimary: dark ? const Color(0xFF021222) : Colors.white,
+      // Tema chiaro: contenitori azzurro cielo pallido con testo blu notte,
+      // superfici bianche e grigio-azzurre (mai grigi neutri).
       primaryContainer: dark
           ? const Color(0xFF0C3550)
-          : const Color(0xFFD7EEFB),
+          : const Color(0xFFDDF0FC),
       onPrimaryContainer: dark
           ? const Color(0xFFDCF0FF)
-          : const Color(0xFF07344F),
+          : const Color(0xFF0B3654),
       secondary: t.cyanSoft,
       onSecondary: dark ? const Color(0xFF021222) : Colors.white,
       secondaryContainer: dark
           ? const Color(0xFF12304A)
-          : const Color(0xFFE2F1FB),
+          : const Color(0xFFE6F2FB),
       onSecondaryContainer: dark
           ? const Color(0xFFDCF0FF)
           : const Color(0xFF0B3A57),
@@ -55,46 +57,49 @@ class AppTheme {
       onTertiary: Colors.white,
       tertiaryContainer: dark
           ? const Color(0xFF242A5C)
-          : const Color(0xFFE6E8FD),
+          : const Color(0xFFE8E8FD),
       onTertiaryContainer: dark
           ? const Color(0xFFE0E3FF)
           : const Color(0xFF1E1B4B),
-      error: dark ? const Color(0xFFF87171) : const Color(0xFFC62828),
+      error: dark
+          ? (hc ? const Color(0xFFFCA5A5) : const Color(0xFFF87171))
+          : const Color(0xFFB91C1C),
       onError: dark ? const Color(0xFF2A0606) : Colors.white,
-      errorContainer: dark ? const Color(0xFF4A1414) : const Color(0xFFFDE2E2),
+      errorContainer: dark ? const Color(0xFF4A1414) : const Color(0xFFFDE8E8),
       onErrorContainer: dark
           ? const Color(0xFFFFDADA)
-          : const Color(0xFF5C0B0B),
-      surface: dark ? const Color(0xFF0A1628) : const Color(0xFFF7FAFE),
+          : const Color(0xFF7F1D1D),
+      surface: dark ? const Color(0xFF0A1628) : const Color(0xFFF8FAFD),
       onSurface: t.textPrimary,
       onSurfaceVariant: hc
           ? t.textSecondary
-          : (dark ? const Color(0xFFA9BED6) : const Color(0xFF4A5F78)),
+          : (dark ? const Color(0xFFA9BED6) : const Color(0xFF475569)),
       surfaceContainerLowest: dark ? const Color(0xFF050D1A) : Colors.white,
       surfaceContainerLow: dark
           ? const Color(0xFF0B1729)
-          : const Color(0xFFF3F7FC),
+          : const Color(0xFFF4F7FB),
       surfaceContainer: dark
           ? const Color(0xFF0F1D31)
-          : const Color(0xFFEDF3FA),
+          : const Color(0xFFEEF3F9),
       surfaceContainerHigh: dark
           ? const Color(0xFF132339)
-          : const Color(0xFFE6EEF7),
+          : const Color(0xFFE7EEF6),
       surfaceContainerHighest: dark
           ? const Color(0xFF182A42)
-          : const Color(0xFFDFE9F4),
+          : const Color(0xFFDFE8F2),
+      // contorni dei controlli: almeno 3:1 sul bianco nel tema chiaro
       outline: hc
           ? t.textMuted
-          : (dark ? const Color(0xFF6F86A0) : const Color(0xFF6A7F98)),
+          : (dark ? const Color(0xFF6F86A0) : const Color(0xFF718198)),
       outlineVariant: hc
           ? (dark ? const Color(0xFF52688A) : const Color(0xFF7A8CA3))
-          : (dark ? const Color(0xFF1E3045) : const Color(0xFFD3DEEA)),
-      shadow: Colors.black,
-      scrim: Colors.black,
-      inverseSurface: dark ? const Color(0xFFE6EEF7) : const Color(0xFF0F1D31),
+          : (dark ? const Color(0xFF1E3045) : const Color(0xFFD6DFEA)),
+      shadow: dark ? Colors.black : const Color(0xFF0F172A),
+      scrim: dark ? Colors.black : const Color(0xFF0F172A),
+      inverseSurface: dark ? const Color(0xFFE6EEF7) : const Color(0xFF1E293B),
       onInverseSurface: dark
           ? const Color(0xFF0B1726)
-          : const Color(0xFFF3F7FB),
+          : const Color(0xFFF1F5F9),
       inversePrimary: dark ? const Color(0xFF0369A1) : const Color(0xFF7DD3FC),
       surfaceTint: Colors.transparent,
     );
@@ -132,11 +137,39 @@ class AppTheme {
     );
 
     final secondaryBorder = hc
-        ? (dark ? const Color(0x99FFFFFF) : const Color(0x990F2A4D))
-        : (dark ? const Color(0x24FFFFFF) : const Color(0x260F2A4D));
+        ? (dark ? const Color(0x99FFFFFF) : const Color(0xFF64748B))
+        : (dark ? const Color(0x24FFFFFF) : const Color(0xFFC9D5E2));
     final secondaryFill = dark
         ? const [Color(0x1AFFFFFF), Color(0x08FFFFFF)]
-        : const [Color(0xFFFFFFFF), Color(0xFFF2F6FB)];
+        : const [Color(0xFFFFFFFF), Color(0xFFF5F8FC)];
+    // Ombre dei pulsanti: nel tema chiaro calde e leggere (un'ombra nera
+    // sotto l'arancione sporca il bianco), nel tema scuro quelle di Design 3.
+    final orangeShadow = dark
+        ? const [
+            BoxShadow(
+              color: Color(0xBF000000),
+              offset: Offset(0, 6),
+              blurRadius: 14,
+              spreadRadius: -8,
+            ),
+          ]
+        : const [
+            BoxShadow(
+              color: Color(0x66E86F08),
+              offset: Offset(0, 6),
+              blurRadius: 14,
+              spreadRadius: -6,
+            ),
+          ];
+    final glassShadow = dark
+        ? null
+        : const [
+            BoxShadow(
+              color: Color(0x0D0F172A),
+              offset: Offset(0, 1),
+              blurRadius: 2,
+            ),
+          ];
     const buttonShape = RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(AppScale.radiusButton)),
     );
@@ -161,16 +194,7 @@ class AppTheme {
                   stops: const [0, 0.52, 1],
                 ),
           color: disabled ? t.textMuted.withValues(alpha: 0.18) : null,
-          boxShadow: disabled
-              ? null
-              : const [
-                  BoxShadow(
-                    color: Color(0xBF000000),
-                    offset: Offset(0, 6),
-                    blurRadius: 14,
-                    spreadRadius: -8,
-                  ),
-                ],
+          boxShadow: disabled ? null : orangeShadow,
         ),
         // Rilievo: luce in alto e ombra in basso (bordo uniforme con raggio).
         child: DecoratedBox(
@@ -208,16 +232,19 @@ class AppTheme {
           colors: secondaryFill,
         ),
         border: Border.all(color: secondaryBorder),
+        boxShadow: states.contains(WidgetState.disabled) ? null : glassShadow,
       ),
       child: child,
     );
 
+    // Campi: nel tema chiaro fondo appena velato e bordo che si vede sulla
+    // card bianca (prima era quasi invisibile).
     final fieldFill = hc
         ? (dark ? const Color(0x1FFFFFFF) : Colors.white)
-        : (dark ? const Color(0x0DFFFFFF) : const Color(0xCCFFFFFF));
+        : (dark ? const Color(0x0DFFFFFF) : const Color(0xFFF8FAFD));
     final fieldBorder = hc
-        ? (dark ? const Color(0x99A0CDFF) : const Color(0x990F2A4D))
-        : (dark ? const Color(0x24A0CDFF) : const Color(0x260F2A4D));
+        ? (dark ? const Color(0x99A0CDFF) : const Color(0xFF64748B))
+        : (dark ? const Color(0x24A0CDFF) : const Color(0xFFBCC9D8));
     OutlineInputBorder field(Color c, [double w = 1]) => OutlineInputBorder(
       borderRadius: BorderRadius.circular(AppScale.radiusButton),
       borderSide: BorderSide(color: c, width: w),
@@ -353,9 +380,7 @@ class AppTheme {
         ),
       ),
       chipTheme: ChipThemeData(
-        backgroundColor: dark
-            ? const Color(0x0FFFFFFF)
-            : const Color(0xCCFFFFFF),
+        backgroundColor: dark ? const Color(0x0FFFFFFF) : Colors.white,
         selectedColor: t.navActive.first,
         side: BorderSide(color: secondaryBorder),
         labelStyle: s(13, FontWeight.w500, color: t.textSecondary),
@@ -393,7 +418,10 @@ class AppTheme {
         surfaceTintColor: Colors.transparent,
         elevation: 16,
         shadowColor: Colors.black.withValues(alpha: dark ? 0.9 : 0.25),
-        barrierColor: Colors.black.withValues(alpha: dark ? 0.6 : 0.35),
+        // tema chiaro: velo blu notte invece del nero (meno «sporco»)
+        barrierColor: dark
+            ? Colors.black.withValues(alpha: 0.6)
+            : const Color(0x590F172A),
         shape: GlassBorder(
           tokens: t,
           dark: dark,
@@ -413,10 +441,10 @@ class AppTheme {
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: dark
             ? const Color(0xFF0C1A2E)
-            : const Color(0xFFF8FBFF),
+            : const Color(0xFFFAFCFE),
         modalBackgroundColor: dark
             ? const Color(0xFF0C1A2E)
-            : const Color(0xFFF8FBFF),
+            : const Color(0xFFFAFCFE),
         surfaceTintColor: Colors.transparent,
         shape: GlassBorder(
           tokens: t,
@@ -428,8 +456,12 @@ class AppTheme {
         dragHandleSize: const Size(44, 5),
         elevation: 12,
         modalElevation: 12,
-        shadowColor: Colors.black.withValues(alpha: 0.5),
-        modalBarrierColor: Colors.black.withValues(alpha: dark ? 0.6 : 0.4),
+        shadowColor: dark
+            ? Colors.black.withValues(alpha: 0.5)
+            : const Color(0x4D0F172A),
+        modalBarrierColor: dark
+            ? Colors.black.withValues(alpha: 0.6)
+            : const Color(0x660F172A),
         constraints: const BoxConstraints(maxWidth: 680),
         clipBehavior: Clip.antiAlias,
       ),
@@ -450,7 +482,7 @@ class AppTheme {
         behavior: SnackBarBehavior.floating,
         backgroundColor: dark
             ? const Color(0xFF132339)
-            : const Color(0xFF0F1D31),
+            : const Color(0xFF1E293B),
         contentTextStyle: s(
           13,
           FontWeight.w500,
@@ -473,7 +505,15 @@ class AppTheme {
         trackColor: WidgetStateProperty.resolveWith(
           (s) => s.contains(WidgetState.selected)
               ? t.cyan
-              : t.textPrimary.withValues(alpha: 0.12),
+              : (dark
+                    ? t.textPrimary.withValues(alpha: 0.12)
+                    : const Color(0xFFE6ECF3)),
+        ),
+        // tema chiaro: contorno ardesia leggero invece del bordo scuro
+        trackOutlineColor: WidgetStateProperty.resolveWith(
+          (s) => s.contains(WidgetState.selected)
+              ? Colors.transparent
+              : (dark ? null : scheme.outline),
         ),
       ),
       checkboxTheme: CheckboxThemeData(
@@ -509,7 +549,7 @@ class AppTheme {
       ),
       tooltipTheme: TooltipThemeData(
         decoration: BoxDecoration(
-          color: dark ? const Color(0xFF182A42) : const Color(0xFF0F1D31),
+          color: dark ? const Color(0xFF182A42) : const Color(0xFF1E293B),
           borderRadius: BorderRadius.circular(AppScale.radiusSmall),
         ),
         textStyle: s(11, FontWeight.w500, color: const Color(0xFFF3F7FB)),

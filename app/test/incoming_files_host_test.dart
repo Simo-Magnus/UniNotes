@@ -94,7 +94,10 @@ void main() {
       expect(await shared.exists(), isFalse);
     });
     // nessun servizio collegato: lo dice il messaggio
-    expect(find.textContaining('Collega Google Drive o OneDrive'), findsOneWidget);
+    expect(
+      find.textContaining('Collega Google Drive o OneDrive'),
+      findsOneWidget,
+    );
     await tester.runAsync(() async {
       await s.database.close();
       await tmp.delete(recursive: true);

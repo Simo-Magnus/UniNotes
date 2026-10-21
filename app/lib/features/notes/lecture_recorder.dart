@@ -31,8 +31,8 @@ enum RecorderPhase { idle, recording, paused }
 /// Registratore delle lezioni, come Memo Vocali: audio PCM 16 kHz mono dal
 /// microfono (`record`, flusso PCM su Android, iOS, macOS e Windows)
 /// scritto man mano in un WAV di lavoro (niente audio perso se l'app si
-/// chiude), forma d'onda, segnalibri e trascrizione dal vivo (riconoscimento
-/// vocale del sistema in streaming, altrimenti Whisper a pezzi).
+/// chiude), forma d'onda, segnalibri e trascrizione dal vivo (sempre Whisper
+/// con il modello integrato, a finestre di ~2 s).
 /// Al salvataggio (recorder/recording_save.dart) il WAV diventa un `.m4a`.
 ///
 /// Con l'app in background la registrazione continua: servizio in primo
@@ -44,17 +44,21 @@ class LectureRecorder extends ChangeNotifier {
     Future<Directory> Function()? workDir,
     this._whisper,
     BackgroundControls Function()? controls,
-    SystemSpeech? speech,
+    this._speech,
   }) : _factory = recorder ?? AudioRecorder.new,
        _workDir = workDir ?? _defaultWorkDir,
-       _controlsFactory = controls ?? BackgroundControls.forPlatform,
-       _speech = speech ?? SystemSpeech();
+       _controlsFactory = controls ?? BackgroundControls.forPlatform;
 
   final AudioRecorder Function() _factory;
   final Future<Directory> Function() _workDir;
   final WhisperService? _whisper;
   final BackgroundControls Function() _controlsFactory;
-  final SystemSpeech _speech;
+
+  /// Riconoscimento vocale del sistema per il testo istantaneo: null (il
+  /// predefinito) = sempre Whisper con il modello integrato. Su Windows con
+  /// «Riconoscimento vocale online» il testo istantaneo del sistema non
+  /// arrivava; Whisper funziona uguale ovunque e offline.
+  final SystemSpeech? _speech;
 
   // il registratore del sistema si crea al primo uso (nei test non serve)
   AudioRecorder? _rec;

@@ -1,3 +1,4 @@
+import '../constants/build_flags.dart';
 import 'agenda.dart';
 import 'notification_prefs.dart';
 
@@ -12,12 +13,12 @@ enum NotificationType {
   ),
   outcome(
     'esiti',
-    'Com\'è andata?',
+    'Esito delle prove',
     'Il giorno dopo una prova, per registrare voto o esito',
   ),
   link(
     'collegamenti',
-    'Collegamento interrotto',
+    'Collegamenti interrotti',
     'OneDrive, Google Drive o calendario da ricollegare',
   ),
   recording(
@@ -33,10 +34,14 @@ enum NotificationType {
   ),
   focusAlert(
     'focus_avvisi',
-    'Fine della sessione Focus e delle pause',
-    'Avviso con suono quando finiscono la sessione o una pausa',
+    'Pause e fine della sessione Focus',
+    'Avviso con suono quando inizia o finisce una pausa e a fine sessione',
   ),
-  review('recensione', 'Richiesta di recensione', 'Una sola richiesta'),
+  review(
+    'recensione',
+    'Richiesta di recensione',
+    'Al massimo una richiesta, solo se l\'app ti è utile',
+  ),
   donation(
     'sostegno',
     'Sostieni il progetto',
@@ -50,6 +55,41 @@ enum NotificationType {
 
   /// Recensione e sostegno: notifiche promozionali (consenso, disattivabili).
   bool get promotional => this == review || this == donation;
+
+  /// Tipi che esistono in questa build: il sostegno (canale, pulsante
+  /// «Dona», grafiche) solo dove le donazioni sono consentite
+  /// (`--dart-define=DONATIONS=link`, vedi build_flags.dart).
+  static List<NotificationType> available({
+    bool donationsAllowed = kShowDonationLink,
+  }) => [
+    for (final t in values)
+      if (t != donation || donationsAllowed) t,
+  ];
+
+  /// Sezione dell'app a cui appartiene la notifica: raggruppa le notifiche
+  /// (gruppi di canali su Android, pile su iOS e macOS, intestazione nel
+  /// Centro notifiche di Windows) e compare accanto al nome dell'app
+  /// (Android) o come sottotitolo (iOS, macOS). Null per le promozionali.
+  String? get section => switch (this) {
+    exam || session || outcome => 'Esami',
+    focus || focusAlert => 'Studio',
+    recording => 'Registra',
+    link => 'Collegamenti',
+    review || donation => null,
+  };
+
+  /// Gruppo dei canali Android (Impostazioni del sistema → Notifiche).
+  String get groupId => section?.toLowerCase() ?? 'uninotes';
+
+  /// Grafica del tipo (stesso nome per l'icona grande di Android,
+  /// `res/drawable-nodpi/ic_notif_<canale>.png`, e per le immagini dei
+  /// toast di Windows, `assets/notifiche/<canale>.png`; vedi
+  /// tool/genera_grafiche_notifiche.py).
+  String get artwork => channelId;
+
+  /// Immagine larga (`assets/notifiche/hero_<canale>.png`) per le notifiche
+  /// rare: inizio della sessione d'esame, recensione, sostegno.
+  bool get hasHero => this == session || this == review || this == donation;
 
   /// Avvisi che arrivano anche durante una sessione Focus: prove, sessioni
   /// d'esame, registratore e la sessione stessa. Gli altri («Com'è
@@ -71,6 +111,16 @@ class NotificationActions {
   static const recordOutcome = 'registra_esito';
   static const skipExam = 'non_per_questa_prova';
 }
+
+/// Gruppi dei canali Android (Impostazioni del sistema → Notifiche →
+/// UniNotes): id ([NotificationType.groupId]) → (nome, descrizione).
+const Map<String, (String, String)> kNotificationGroups = {
+  'esami': ('Esami', 'Prove in arrivo, sessioni d\'esame ed esiti'),
+  'studio': ('Studio', 'Sessione Focus e pause'),
+  'registra': ('Registra', 'Registrazione delle lezioni'),
+  'collegamenti': ('Collegamenti', 'OneDrive, Google Drive e calendario'),
+  'uninotes': ('UniNotes', 'Recensione e sostegno al progetto, facoltativi'),
+};
 
 /// Una notifica da pianificare.
 class PlannedNotification {
@@ -187,6 +237,7 @@ List<PlannedNotification> planNotifications({
   PlannedNotification? review,
   PlannedNotification? donation,
   DateTime? quietUntil,
+  bool donationsAllowed = kShowDonationLink,
 }) {
   if (!prefs.consent) return const [];
   final out = <PlannedNotification>[];
@@ -266,7 +317,9 @@ List<PlannedNotification> planNotifications({
   }
 
   if (review != null && prefs.review) add(review);
-  if (donation != null && prefs.donation) add(donation);
+  // l'invito a donare esiste solo nelle build che lo consentono
+  // (`--dart-define=DONATIONS=link`), qualunque cosa dicano le preferenze
+  if (donation != null && prefs.donation && donationsAllowed) add(donation);
 
   out.sort((a, b) => a.at.compareTo(b.at));
   return out.length > kMaxScheduled ? out.sublist(0, kMaxScheduled) : out;

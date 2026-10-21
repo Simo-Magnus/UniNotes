@@ -9,6 +9,7 @@
 #include "audio_transcoder.h"
 #include "focus_session.h"
 #include "live_speech.h"
+#include "spell_check.h"
 #include "win32_window.h"
 
 // A window that does nothing but host a Flutter view.
@@ -40,6 +41,9 @@ class FlutterWindow : public Win32Window {
 
   // Trascrizione istantanea delle lezioni (riconoscimento vocale).
   std::unique_ptr<LiveSpeechChannel> speech_channel_;
+
+  // Controllo ortografico di Windows nei campi di testo (ISpellChecker).
+  std::unique_ptr<SpellCheckChannel> spell_channel_;
 };
 
 #endif  // RUNNER_FLUTTER_WINDOW_H_

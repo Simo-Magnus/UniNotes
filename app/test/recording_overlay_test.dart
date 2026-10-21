@@ -12,7 +12,9 @@ import 'package:university_notes/core/services/app_services.dart';
 import 'package:university_notes/features/notes/lecture_recorder.dart';
 import 'package:university_notes/features/notes/notes_store.dart';
 import 'package:university_notes/features/notes/recorder/background_controls.dart';
+import 'package:university_notes/features/notes/recorder/recording_meta.dart';
 import 'package:university_notes/features/notes/recorder/recording_overlay.dart';
+import 'package:university_notes/features/notes/recorder_screen.dart';
 import 'package:university_notes/features/notes/recycle_bin.dart';
 import 'package:university_notes/repositories/settings_repository.dart';
 
@@ -195,6 +197,102 @@ void main() {
         await t.runAsync(() => s.settings.get(kDontAskDeleteRecordingKey)),
         '1',
       );
+      await t.pump(const Duration(seconds: 5));
+    },
+  );
+
+  testWidgets(
+    'registratore: «Elimina» ferma la registrazione e la sposta, con la '
+    'trascrizione fin lì, in «Eliminati di recente»',
+    (t) async {
+      t.view.physicalSize = const Size(420, 1200);
+      t.view.devicePixelRatio = 1;
+      addTearDown(t.view.reset);
+      late Directory tmp;
+      late AppServices s;
+      final fake = _FakeRecorder();
+      await t.runAsync(() async {
+        tmp = await Directory.systemTemp.createTemp('un_recdel_');
+        final db = await AppDatabase.openInMemory();
+        final store = NotesStore(
+          SettingsRepository(db),
+          root: () async => Directory(p.join(tmp.path, 'Appunti')),
+        );
+        s = AppServices(
+          db,
+          notes: store,
+          recorder: LectureRecorder(
+            recorder: () => fake,
+            workDir: () async => Directory(p.join(tmp.path, 'lavoro')),
+            controls: () => const NoBackgroundControls(),
+          ),
+        );
+        await s.recorder.start(
+          p.join(tmp.path, 'Appunti', 'Fisica', 'Registrazioni', 'Lezione.m4a'),
+          course: 'Fisica',
+        );
+        fake.pcm.add(Uint8List(32000));
+        await Future<void>.delayed(const Duration(milliseconds: 20));
+        s.recorder.live!.restore([
+          const TranscriptSegment(
+            Duration.zero,
+            Duration(seconds: 1),
+            'Buongiorno a tutti.',
+          ),
+        ]);
+      });
+      addTearDown(() async {
+        await t.runAsync(() async {
+          await s.database.close();
+          if (await tmp.exists()) await tmp.delete(recursive: true);
+        });
+      });
+      await t.pumpWidget(
+        Provider<AppServices>.value(
+          value: s,
+          child: MaterialApp(
+            navigatorKey: appNavigatorKey,
+            home: const RecorderScreen(),
+          ),
+        ),
+      );
+      for (var i = 0; i < 20; i++) {
+        await t.runAsync(
+          () => Future<void>.delayed(const Duration(milliseconds: 20)),
+        );
+        await t.pump(const Duration(milliseconds: 50));
+        if (find.byKey(const Key('recorder-delete')).evaluate().isNotEmpty) {
+          break;
+        }
+      }
+      await t.tap(find.byKey(const Key('recorder-delete')));
+      for (var i = 0; i < 20; i++) {
+        await t.runAsync(
+          () => Future<void>.delayed(const Duration(milliseconds: 20)),
+        );
+        await t.pump(const Duration(milliseconds: 50));
+        if (find.text('Eliminare la registrazione?').evaluate().isNotEmpty) {
+          break;
+        }
+      }
+      expect(find.text('Eliminare la registrazione?'), findsOneWidget);
+      expect(find.textContaining('si ferma'), findsOneWidget);
+      expect(find.text('Non chiedere più'), findsOneWidget);
+      await t.tap(find.byKey(const Key('recording-delete-confirm')));
+      var trashed = const <TrashEntry>[];
+      for (var i = 0; i < 100 && trashed.isEmpty; i++) {
+        await t.runAsync(
+          () => Future<void>.delayed(const Duration(milliseconds: 50)),
+        );
+        await t.pump();
+        if (!s.recorder.active && !s.recorder.saving) {
+          trashed = (await t.runAsync(s.trash.list))!;
+        }
+      }
+      expect(s.recorder.active, isFalse);
+      expect(trashed.single.title, 'Lezione');
+      expect(trashed.single.isAudio, isTrue);
+      expect(find.text('Pronto a registrare'), findsOneWidget);
       await t.pump(const Duration(seconds: 5));
     },
   );

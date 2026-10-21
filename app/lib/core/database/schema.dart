@@ -6,7 +6,7 @@
 /// luoghi pubblici stanno in place_personal, separate da places.
 library;
 
-const int kSchemaVersion = 11;
+const int kSchemaVersion = 12;
 
 /// Tabelle con dati personali, in ordine di dipendenza (usato da backup).
 const List<String> kPersonalTables = [
@@ -416,6 +416,14 @@ const List<String> kMigrationV10 = [
 const List<String> kMigrationV11 = [
   'ALTER TABLE exams ADD COLUMN imported_topics TEXT',
   'ALTER TABLE exams ADD COLUMN imported_study_materials TEXT',
+];
+
+/// v12: nome dell'insegnamento scelto dallo studente (`courses.custom_name`,
+/// null = quello ufficiale in `name`). «Aggiorna database» riscrive solo
+/// `name`: il nome personalizzato resta e si usa in tutta l'app; il nome
+/// ufficiale si ripristina togliendo quello personalizzato.
+const List<String> kMigrationV12 = [
+  'ALTER TABLE courses ADD COLUMN custom_name TEXT',
 ];
 
 /// Categorie di luogo predefinite (dato pubblico, aggiornabile).

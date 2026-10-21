@@ -13,8 +13,11 @@ typedef StatusStep = ({ExamStatus status, String label, String hint});
 
 /// I due passi più probabili dallo stato attuale (nei riquadri al massimo due
 /// scelte): avanti lungo la vita della prova oppure un passo indietro.
-/// Tutti gli stati restano raggiungibili:
-/// da prenotare → prenotato → sostenuto → superato / non superato → annullato.
+/// «Sostenuto» chiede subito l'esito (voto, «Non superato» o in attesa), così
+/// «Non superato» si raggiunge da «Da prenotare» e da «Prenotato»; una prova
+/// non superata si riprenota. Tutti gli stati restano raggiungibili:
+/// da prenotare → prenotato → sostenuto → superato / non superato →
+/// riprenotato o annullato.
 List<StatusStep> nextExamStatuses(ExamStatus s) => switch (s) {
   ExamStatus.planned => const [
     (
@@ -25,14 +28,14 @@ List<StatusStep> nextExamStatuses(ExamStatus s) => switch (s) {
     (
       status: ExamStatus.taken,
       label: 'Sostenuto',
-      hint: 'Fatto, in attesa dell\'esito',
+      hint: 'Poi l\'esito: voto, non superato o in attesa',
     ),
   ],
   ExamStatus.booked => const [
     (
       status: ExamStatus.taken,
       label: 'Sostenuto',
-      hint: 'Fatto, in attesa dell\'esito',
+      hint: 'Poi l\'esito: voto, non superato o in attesa',
     ),
     (
       status: ExamStatus.planned,
@@ -45,7 +48,7 @@ List<StatusStep> nextExamStatuses(ExamStatus s) => switch (s) {
     (
       status: ExamStatus.failed,
       label: 'Non superato',
-      hint: 'Potrai riprovarlo a un altro appello',
+      hint: 'Resta tra le prove da sostenere: potrai riprenotarlo',
     ),
   ],
   ExamStatus.passed => const [
@@ -57,7 +60,11 @@ List<StatusStep> nextExamStatuses(ExamStatus s) => switch (s) {
     (status: ExamStatus.failed, label: 'Non superato', hint: 'Togli il voto'),
   ],
   ExamStatus.failed => const [
-    (status: ExamStatus.passed, label: 'Superato', hint: 'Inserisci il voto'),
+    (
+      status: ExamStatus.booked,
+      label: 'Riprenota',
+      hint: 'Ti sei iscritto a un nuovo appello',
+    ),
     (
       status: ExamStatus.cancelled,
       label: 'Annullato',
@@ -73,13 +80,43 @@ List<StatusStep> nextExamStatuses(ExamStatus s) => switch (s) {
     (
       status: ExamStatus.taken,
       label: 'Sostenuto',
-      hint: 'In attesa dell\'esito',
+      hint: 'Poi l\'esito: voto, non superato o in attesa',
     ),
   ],
 };
 
-/// Cambia lo stato di una prova dall'icona laterale: due scelte, poi il voto
-/// se diventa «Superato». Restituisce true se la prova è stata aggiornata.
+/// Prova con lo stato [to] scelto dall'icona: senza voto; una prova non
+/// superata che si riprenota perde la data dell'appello già passato.
+Exam withStatus(Exam exam, ExamStatus to, {DateTime? now}) {
+  final n = now ?? DateTime.now();
+  final today = DateTime(n.year, n.month, n.day);
+  final oldDate = exam.date;
+  final retake =
+      exam.status == ExamStatus.failed &&
+      to.isPending &&
+      oldDate != null &&
+      oldDate.isBefore(today);
+  return exam.copyWith(
+    status: to,
+    clearGrade: true,
+    laude: false,
+    clearDate: retake,
+  );
+}
+
+/// Prova con l'esito [o] (stato, voto e lode).
+Exam withOutcome(Exam exam, ExamOutcome o) => exam.copyWith(
+  status: o.status,
+  grade: o.grade,
+  clearGrade: o.grade == null,
+  laude: o.laude,
+);
+
+/// Cambia lo stato di una prova dall'icona laterale: due scelte; con
+/// «Sostenuto» o «Superato» si sceglie poi l'esito nel menù del voto.
+/// Restituisce true se la prova è stata aggiornata. Lo stato è uno solo,
+/// salvato sulla prova: «Da sostenere», «Sostenuti», dettaglio e Home lo
+/// rileggono dal database.
 Future<bool> changeExamStatus(BuildContext context, Exam exam) async {
   final steps = nextExamStatuses(exam.status);
   final chosen = await showModalBottomSheet<ExamStatus>(
@@ -117,62 +154,72 @@ Future<bool> changeExamStatus(BuildContext context, Exam exam) async {
     ),
   );
   if (chosen == null || !context.mounted) return false;
-  var next = exam.copyWith(status: chosen, clearGrade: true, laude: false);
-  if (chosen == ExamStatus.passed) {
-    final midterm = exam.kind == ExamKind.midterm;
-    final r = await showDialog<({int? grade, bool laude})>(
+  var next = withStatus(exam, chosen);
+  if (chosen == ExamStatus.passed || chosen == ExamStatus.taken) {
+    // l'esito: voto, idoneità, «Non superato» o in attesa
+    final r = await showDialog<ExamOutcome>(
       context: context,
       builder: (_) => GradeDialog(
-        midterm: midterm,
-        grade: exam.grade,
-        laude: exam.laude,
-        // esame finale senza voto = idoneità
-        allowEmpty: !midterm,
+        midterm: exam.kind == ExamKind.midterm,
+        status: ExamStatus.taken,
+        grade: chosen == ExamStatus.passed ? exam.grade : null,
+        laude: chosen == ExamStatus.passed && exam.laude,
+        title: chosen == ExamStatus.taken ? 'Esito' : null,
       ),
     );
     if (r == null || !context.mounted) return false;
-    next = exam.copyWith(
-      status: ExamStatus.passed,
-      grade: r.grade,
-      clearGrade: r.grade == null,
-      laude: r.laude,
-    );
+    next = withOutcome(next, r);
   }
   final s = context.read<AppServices>();
   await s.exams.update(next);
   s.revision.bump();
   // voto registrato ora: traguardo, con suono e vibrazione
-  chosen == ExamStatus.passed ? s.feedback.complete() : s.feedback.toggle();
+  next.status == ExamStatus.passed
+      ? s.feedback.complete()
+      : s.feedback.toggle();
   return true;
 }
 
-/// Voto dell'esame finale (18-30, lode con 30) o punteggio libero della
-/// prova in itinere/esonero. Solo «Annulla» e «Salva»: scegliendo «—» (o
-/// lasciando vuoto il punteggio) il voto si toglie, se [allowEmpty].
+/// Esito e voto. Esame finale: un menù con «In attesa dell'esito» (o
+/// «Nessun voto» per una prova ancora da sostenere), «Non superato»,
+/// «Idoneità (senza voto)» e i voti 18-30 (lode con 30). Prova in itinere o
+/// esonero: punteggio libero e la casella «Non superata». Solo «Annulla» e
+/// «Salva»; restituisce l'esito scelto.
 class GradeDialog extends StatefulWidget {
   const GradeDialog({
     super.key,
     required this.midterm,
+    required this.status,
     this.grade,
     this.laude = false,
-    this.allowEmpty = false,
+    this.title,
   });
   final bool midterm;
+
+  /// Stato attuale della prova (decide che cosa vuol dire «nessun voto»).
+  final ExamStatus status;
   final int? grade;
   final bool laude;
 
-  /// «Salva» anche senza voto (togliere il voto, oppure idoneità).
-  final bool allowEmpty;
+  /// Titolo del dialogo (predefinito «Voto» o «Punteggio»).
+  final String? title;
 
   @override
   State<GradeDialog> createState() => _GradeDialogState();
 }
 
 class _GradeDialogState extends State<GradeDialog> {
-  late int? _grade = widget.grade;
+  late int _code = outcomeCode(
+    widget.status,
+    widget.grade,
+    laude: widget.laude,
+  );
   late bool _laude = widget.laude;
+  late bool _failed = widget.status == ExamStatus.failed;
   late final _points = TextEditingController(
-    text: widget.grade?.toString() ?? '',
+    text: widget.status == ExamStatus.passed
+        ? (widget.grade?.toString() ?? '')
+        : '',
   );
 
   @override
@@ -181,89 +228,107 @@ class _GradeDialogState extends State<GradeDialog> {
     super.dispose();
   }
 
-  bool get _valid => _grade == null
-      ? widget.allowEmpty
-      : validateExamGrade(
-              ExamStatus.passed,
-              _grade,
-              _laude,
-              midterm: widget.midterm,
-            ) ==
-            null;
+  int? get _pointsValue => int.tryParse(_points.text.trim());
+
+  bool get _valid {
+    if (!widget.midterm || _failed) return true;
+    final t = _points.text.trim();
+    if (t.isEmpty) return true;
+    final v = _pointsValue;
+    return v != null &&
+        validateExamGrade(ExamStatus.passed, v, false, midterm: true) == null;
+  }
+
+  ExamOutcome _result() {
+    if (!widget.midterm) {
+      return outcomeOf(_code, current: widget.status, laude: _laude);
+    }
+    if (_failed) return outcomeOf(kOutcomeFailed, current: widget.status);
+    final v = _pointsValue;
+    if (v == null) return outcomeOf(kOutcomeNone, current: widget.status);
+    return (status: ExamStatus.passed, grade: v, laude: false);
+  }
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(widget.midterm ? 'Punteggio' : 'Voto'),
-      content: widget.midterm
-          ? TextField(
-              controller: _points,
-              autofocus: true,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(labelText: 'Punti'),
-              onChanged: (v) => setState(() => _grade = int.tryParse(v.trim())),
-            )
-          : Row(
-              children: [
-                Expanded(
-                  // Pulsante senza InputDecoration: niente rientro del tema (alignedDropdown).
-                  child: ButtonTheme.fromButtonThemeData(
-                    data: ButtonTheme.of(context)
-                        .copyWith(alignedDropdown: false),
-                    child: DropdownButton<int?>(
-                      key: const Key('grade-dropdown'),
-                      style: Theme.of(context).textTheme.bodyLarge,
-                      value: _grade != null && _grade! >= 18 && _grade! <= 30
-                          ? _grade
-                          : null,
-                      isExpanded: true,
-                      items: [
-                        DropdownMenuItem<int?>(
-                          value: null,
-                          child: Text(
-                            widget.allowEmpty && widget.grade == null
-                                ? 'Senza voto (idoneità)'
-                                : '—',
-                          ),
-                        ),
-                        for (var g = 18; g <= 30; g++)
-                          DropdownMenuItem<int?>(
-                            value: g,
-                            child: Text('$g/30'),
-                          ),
-                      ],
-                      onChanged: (v) => setState(() {
-                        _grade = v;
-                        if (v != 30) _laude = false;
-                      }),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                const Text('Lode'),
-                Switch(
-                  value: _laude,
-                  onChanged: _grade == 30
-                      ? (v) => setState(() => _laude = v)
-                      : null,
-                ),
-              ],
-            ),
+      title: Text(widget.title ?? (widget.midterm ? 'Punteggio' : 'Voto')),
+      content: widget.midterm ? _midtermFields() : _finalFields(),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
           child: const Text('Annulla'),
         ),
         FilledButton(
-          onPressed: _valid
-              ? () => Navigator.pop(context, (
-                  grade: _grade,
-                  laude: _grade == 30 && _laude,
-                ))
-              : null,
+          key: const Key('grade-save'),
+          onPressed: _valid ? () => Navigator.pop(context, _result()) : null,
           child: const Text('Salva'),
         ),
       ],
     );
   }
+
+  Widget _midtermFields() => Column(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      TextField(
+        key: const Key('grade-points'),
+        controller: _points,
+        autofocus: !_failed,
+        enabled: !_failed,
+        keyboardType: TextInputType.number,
+        decoration: const InputDecoration(
+          labelText: 'Punti',
+          helperText: 'Vuoto = nessun punteggio',
+        ),
+        onChanged: (_) => setState(() {}),
+      ),
+      CheckboxListTile(
+        key: const Key('grade-failed'),
+        contentPadding: EdgeInsets.zero,
+        controlAffinity: ListTileControlAffinity.leading,
+        value: _failed,
+        onChanged: (v) => setState(() => _failed = v ?? false),
+        title: const Text('Non superata'),
+      ),
+    ],
+  );
+
+  Widget _finalFields() => Row(
+    children: [
+      Expanded(
+        // Pulsante senza InputDecoration: niente rientro del tema (alignedDropdown).
+        child: ButtonTheme.fromButtonThemeData(
+          data: ButtonTheme.of(context).copyWith(alignedDropdown: false),
+          child: DropdownButton<int>(
+            key: const Key('grade-dropdown'),
+            style: Theme.of(context).textTheme.bodyLarge,
+            value: _code,
+            isExpanded: true,
+            items: [
+              for (final code in kOutcomeCodes)
+                DropdownMenuItem<int>(
+                  key: ValueKey('grade-$code'),
+                  value: code,
+                  child: Text(
+                    outcomeLabel(code, widget.status),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+            ],
+            onChanged: (v) => setState(() {
+              _code = v ?? kOutcomeNone;
+              if (_code != 30) _laude = false;
+            }),
+          ),
+        ),
+      ),
+      const SizedBox(width: 12),
+      const Text('Lode'),
+      Switch(
+        value: _laude,
+        onChanged: _code == 30 ? (v) => setState(() => _laude = v) : null,
+      ),
+    ],
+  );
 }

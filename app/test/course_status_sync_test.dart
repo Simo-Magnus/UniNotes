@@ -92,77 +92,84 @@ void main() {
     await db.close();
   });
 
-  test('cambio di corso di laurea: i dati del corso precedente restano nascosti', () async {
-    final db = await AppDatabase.openInMemory();
-    final s = AppServices(db);
-    await db.db.insert('universities', {
-      'id': 'polito',
-      'name': 'PoliTo',
-      'short_name': 'PoliTo',
-      'color': 1,
-    });
-    await db.db.insert('universities', {
-      'id': 'unito',
-      'name': 'UniTo',
-      'short_name': 'UniTo',
-      'color': 2,
-    });
-    final old = await s.courses.insert(
-      const Course(
-        name: 'Chimica',
+  test(
+    'cambio di corso di laurea: i dati del corso precedente restano nascosti',
+    () async {
+      final db = await AppDatabase.openInMemory();
+      final s = AppServices(db);
+      await db.db.insert('universities', {
+        'id': 'polito',
+        'name': 'PoliTo',
+        'short_name': 'PoliTo',
+        'color': 1,
+      });
+      await db.db.insert('universities', {
+        'id': 'unito',
+        'name': 'UniTo',
+        'short_name': 'UniTo',
+        'color': 2,
+      });
+      final old = await s.courses.insert(
+        const Course(
+          name: 'Chimica',
+          universityId: 'polito',
+          degreeId: 'polito-l-8',
+        ),
+      );
+      await s.exams.insert(Exam(courseId: old, status: ExamStatus.planned));
+      final manual = await s.courses.insert(const Course(name: 'a mano'));
+      final keep = await s.courses.insert(
+        const Course(
+          name: 'Psicometria',
+          universityId: 'unito',
+          degreeId: 'unito-l-24',
+        ),
+      );
+      const previous = StudentProfile(
         universityId: 'polito',
+        universityName: 'Politecnico di Torino',
         degreeId: 'polito-l-8',
-      ),
-    );
-    await s.exams.insert(Exam(courseId: old, status: ExamStatus.planned));
-    final manual = await s.courses.insert(const Course(name: 'a mano'));
-    final keep = await s.courses.insert(
-      const Course(
-        name: 'Psicometria',
+        degreeName: 'Ingegneria informatica',
+        degreeType: 'L',
+        durationYears: 3,
+        currentYear: 1,
+        referenceAa: AcademicYear(2026),
+      );
+      const profile = StudentProfile(
         universityId: 'unito',
+        universityName: 'Università di Torino',
         degreeId: 'unito-l-24',
-      ),
-    );
-    const previous = StudentProfile(
-      universityId: 'polito',
-      universityName: 'Politecnico di Torino',
-      degreeId: 'polito-l-8',
-      degreeName: 'Ingegneria informatica',
-      degreeType: 'L',
-      durationYears: 3,
-      currentYear: 1,
-      referenceAa: AcademicYear(2026),
-    );
-    const profile = StudentProfile(
-      universityId: 'unito',
-      universityName: 'Università di Torino',
-      degreeId: 'unito-l-24',
-      degreeName: 'Scienze e tecniche psicologiche',
-      degreeType: 'L',
-      durationYears: 3,
-      currentYear: 1,
-      referenceAa: AcademicYear(2026),
-    );
-    final hidden = await PathSetupService(s).hideOtherPaths(previous, profile);
-    expect(hidden, 2);
-    // niente si elimina: esami e atenei restano
-    final all = await s.courses.all();
-    expect(all, hasLength(3));
-    expect(await s.exams.all(), hasLength(1));
-    expect(await db.db.query('universities'), hasLength(2));
-    // l'insegnamento a mano passa al corso precedente
-    expect(
-      all.firstWhere((c) => c.id == manual).degreeId,
-      'polito-l-8',
-    );
-    // si vede solo il nuovo corso di laurea; tornando indietro, il vecchio
-    const scope = PlanScope(profile: profile);
-    expect([for (final c in all) if (scope.inPath(c)) c.id], [keep]);
-    const back = PlanScope(profile: previous);
-    expect(
-      [for (final c in all) if (back.inPath(c)) c.id],
-      unorderedEquals([old, manual]),
-    );
-    await db.close();
-  });
+        degreeName: 'Scienze e tecniche psicologiche',
+        degreeType: 'L',
+        durationYears: 3,
+        currentYear: 1,
+        referenceAa: AcademicYear(2026),
+      );
+      final hidden = await PathSetupService(s)
+          .hideOtherPaths(previous, profile);
+      expect(hidden, 2);
+      // niente si elimina: esami e atenei restano
+      final all = await s.courses.all();
+      expect(all, hasLength(3));
+      expect(await s.exams.all(), hasLength(1));
+      expect(await db.db.query('universities'), hasLength(2));
+      // l'insegnamento a mano passa al corso precedente
+      expect(all.firstWhere((c) => c.id == manual).degreeId, 'polito-l-8');
+      // si vede solo il nuovo corso di laurea; tornando indietro, il vecchio
+      const scope = PlanScope(profile: profile);
+      expect(
+        [
+          for (final c in all)
+            if (scope.inPath(c)) c.id,
+        ],
+        [keep],
+      );
+      const back = PlanScope(profile: previous);
+      expect([
+        for (final c in all)
+          if (back.inPath(c)) c.id,
+      ], unorderedEquals([old, manual]));
+      await db.close();
+    },
+  );
 }

@@ -22,6 +22,7 @@ import 'book_filters.dart';
 import 'book_form.dart';
 import 'book_opener.dart';
 import 'book_tile.dart';
+import 'unsaved_books_dialog.dart';
 
 class _BooksData {
   const _BooksData(this.catalog, this.books, this.profile, this.year);
@@ -149,7 +150,39 @@ class _BooksScreenState extends State<BooksScreen> {
       showSnack(context, 'Libro rimosso: lo ritrovi in "Libri rimossi".');
     } else if (b.isRemoved) {
       showSnack(context, 'Libro ripristinato.');
+    } else if (choice == CatalogChoice.kept) {
+      showSnack(context, 'Libro salvato.');
     }
+  }
+
+  /// «Elimina libri non salvati» di un insegnamento: toglie i libri proposti
+  /// a cui non è stata messa la spunta verde ([isUnsaved]), come la X di
+  /// ognuno: finiscono in «Libri rimossi» (ripristinabili) e restano tolti
+  /// anche dopo gli aggiornamenti del database. Nessun file viene toccato:
+  /// i libri con un file, gli obbligatori e quelli aggiunti a mano restano.
+  Future<void> _deleteUnsaved(Course c, List<Book> unsaved) async {
+    if (unsaved.isEmpty) return;
+    final ok = await confirmDeleteUnsavedBooks(
+      context,
+      course: c.name,
+      count: unsaved.length,
+    );
+    if (!ok || !mounted) return;
+    final s = context.read<AppServices>();
+    for (final b in unsaved) {
+      await s.books.update(
+        b.withChoice(catalogChoice: () => CatalogChoice.removed),
+      );
+    }
+    s.revision.bump();
+    if (!mounted) return;
+    showSnack(
+      context,
+      unsaved.length == 1
+          ? 'Libro non salvato eliminato: lo ritrovi in "Libri rimossi".'
+          : '${unsaved.length} libri non salvati eliminati: li ritrovi in '
+                '"Libri rimossi".',
+    );
   }
 
   Future<void> _report(Course c) async {
@@ -178,9 +211,7 @@ class _BooksScreenState extends State<BooksScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Libri'),
-      ),
+      appBar: AppBar(title: const Text('Libri')),
       floatingActionButton: GlowFab(
         onPressed: () => _edit(),
         icon: const Icon(Icons.add),
@@ -236,12 +267,19 @@ class _BooksScreenState extends State<BooksScreen> {
     for (final c in ordered) {
       final list = groups[c.id];
       if (list == null && !showAll) continue;
+      // libri non salvati dell'insegnamento (anche fuori dai filtri)
+      final unsaved = [
+        for (final b in visible)
+          if (b.courseId == c.id && isUnsaved(b)) b,
+      ];
       sections.add(
         _GroupHeader(
           catalog,
           c.id,
           list?.length ?? 0,
           onAdd: () => _edit(null, c.id),
+          unsaved: unsaved.length,
+          onDeleteUnsaved: () => _deleteUnsaved(c, unsaved),
         ),
       );
       sections.add(
@@ -338,12 +376,24 @@ class _BooksScreenState extends State<BooksScreen> {
   );
 }
 
+/// Intestazione di un insegnamento: nome, numero di libri, «Aggiungi libro
+/// extra» e, se ci sono libri proposti non salvati ([unsaved]), il menu con
+/// «Elimina libri non salvati».
 class _GroupHeader extends StatelessWidget {
-  const _GroupHeader(this.catalog, this.courseId, this.count, {this.onAdd});
+  const _GroupHeader(
+    this.catalog,
+    this.courseId,
+    this.count, {
+    this.onAdd,
+    this.unsaved = 0,
+    this.onDeleteUnsaved,
+  });
   final CourseCatalog catalog;
   final int? courseId;
   final int count;
   final VoidCallback? onAdd;
+  final int unsaved;
+  final VoidCallback? onDeleteUnsaved;
 
   @override
   Widget build(BuildContext context) {
@@ -368,6 +418,28 @@ class _GroupHeader extends StatelessWidget {
               tooltip: 'Aggiungi libro extra',
               icon: const Icon(Icons.add),
               onPressed: onAdd,
+            ),
+          if (unsaved > 0 && onDeleteUnsaved != null)
+            PopupMenuButton<String>(
+              key: ValueKey('course-books-menu-$courseId'),
+              tooltip: 'Altre azioni',
+              onSelected: (_) => onDeleteUnsaved!(),
+              itemBuilder: (_) => [
+                PopupMenuItem<String>(
+                  key: ValueKey('delete-unsaved-$courseId'),
+                  value: 'delete-unsaved',
+                  child: ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    leading: const Icon(Icons.delete_sweep_outlined),
+                    title: const Text('Elimina libri non salvati'),
+                    subtitle: Text(
+                      unsaved == 1
+                          ? '1 libro senza spunta verde'
+                          : '$unsaved libri senza spunta verde',
+                    ),
+                  ),
+                ),
+              ],
             ),
         ],
       ),

@@ -34,6 +34,11 @@ class AppTokens extends ThemeExtension<AppTokens> {
     required this.tintNotes,
     required this.tintExams,
     required this.tintBooks,
+    required this.success,
+    required this.warning,
+    required this.orangeInk,
+    required this.floatShadows,
+    required this.chart,
   });
 
   /// Base lineare del fondo (dall'alto in basso).
@@ -80,6 +85,24 @@ class AppTokens extends ThemeExtension<AppTokens> {
   final Color tintNotes;
   final Color tintExams;
   final Color tintBooks;
+
+  /// Stati leggibili come testo o icona sulle card (WCAG AA 4,5:1): esito
+  /// positivo (superato, completato, collegato) e avviso (in scadenza, da
+  /// controllare). L'errore è `ColorScheme.error`.
+  final Color success;
+  final Color warning;
+
+  /// Arancione usato come testo o icona (l'arancione pieno dei pulsanti
+  /// sul fondo chiaro non è leggibile come testo).
+  final Color orangeInk;
+
+  /// Ombra degli elementi che galleggiano sul contenuto (barra di
+  /// navigazione, riquadri flottanti).
+  final List<BoxShadow> floatShadows;
+
+  /// Serie dei grafici (categorie): tonalità distinte tra loro e leggibili
+  /// sul fondo delle card (almeno 3:1, elementi grafici WCAG).
+  final List<Color> chart;
 
   static const dark = AppTokens(
     background: [
@@ -134,61 +157,119 @@ class AppTokens extends ThemeExtension<AppTokens> {
     tintNotes: Color(0xFFC084FC),
     tintExams: Color(0xFFC084FC),
     tintBooks: Color(0xFF34D399),
-  );
-
-  static const light = AppTokens(
-    background: [
-      Color(0xFFF4F9FF),
-      Color(0xFFEFF6FE),
-      Color(0xFFEAF3FD),
-      Color(0xFFEDF5FE),
-      Color(0xFFF5F9FE),
-    ],
-    lights: [
-      BackgroundLight(Alignment(0, -0.44), Size(0.72, 0.30), Color(0x1A38A0FF)),
-      BackgroundLight(Alignment(0, 0.36), Size(0.72, 0.30), Color(0x1438A0FF)),
-      BackgroundLight(
-        Alignment(-0.6, -0.88),
-        Size(0.56, 0.24),
-        Color(0x142563EB),
+    success: Color(0xFF34D399),
+    warning: Color(0xFFFBBF24),
+    orangeInk: Color(0xFFFFB064),
+    floatShadows: [
+      BoxShadow(
+        color: Color(0xF2000000),
+        offset: Offset(0, 18),
+        blurRadius: 34,
+        spreadRadius: -12,
       ),
     ],
-    vignette: Color(0x00000000),
-    cardGradient: [
-      Color(0xD9FFFFFF),
-      Color(0xC7FFFFFF),
-      Color(0xBFFFFFFF),
-      Color(0xB8F6FAFF),
+    chart: [
+      Color(0xFF38BDF8), // azzurro
+      Color(0xFF818CF8), // indaco
+      Color(0xFF2DD4BF), // verde acqua
+      Color(0xFFC084FC), // viola
+      Color(0xFFFBBF24), // ambra
+      Color(0xFFF472B6), // rosa
+      Color(0xFF94A3B8), // grigio ardesia
     ],
-    cardBorder: Color(0x1A0F2A4D),
+  );
+
+  /// Tema chiaro «mattina limpida» (riprogettato il 21/10/2026): fondo
+  /// nebbia azzurra con luci di cielo, card bianche nette con bordo sottile
+  /// e doppia ombra morbida (contatto + profondità), filo di luce azzurro in
+  /// alto come nel tema scuro, card interne velate d'azzurro invece che di
+  /// grigio. Testi ardesia-blu con contrasto AA anche sul fondo più scuro.
+  static const light = AppTokens(
+    background: [
+      Color(0xFFF0F5FB),
+      Color(0xFFEBF1F8),
+      Color(0xFFE6EDF6),
+      Color(0xFFE8EFF7),
+      Color(0xFFEEF3F9),
+    ],
+    lights: [
+      // cielo in alto a sinistra, riflesso a destra, luce bassa al centro:
+      // solo azzurri (mai l'arancione nel fondo)
+      BackgroundLight(
+        Alignment(-0.7, -0.92),
+        Size(0.75, 0.30),
+        Color(0x337DD3FC),
+      ),
+      BackgroundLight(Alignment(0.85, -0.25), Size(0.6, 0.28), Color(0x1F93C5FD)),
+      BackgroundLight(Alignment(0, 0.62), Size(0.8, 0.32), Color(0x1A7DD3FC)),
+    ],
+    vignette: Color(0x00000000),
+    // vetro chiaro: bianco quasi pieno che lascia appena passare il cielo
+    cardGradient: [
+      Color(0xFFFFFFFF),
+      Color(0xFCFFFFFF),
+      Color(0xFAFEFFFF),
+      Color(0xF7FAFCFF),
+    ],
+    cardBorder: Color(0xFFDAE3ED),
     cardShadows: [
       BoxShadow(
-        color: Color(0x1F0B2545),
-        offset: Offset(0, 6),
-        blurRadius: 16,
+        color: Color(0x0F0F172A),
+        offset: Offset(0, 1),
+        blurRadius: 2,
+      ),
+      BoxShadow(
+        color: Color(0x1A1E3A5F),
+        offset: Offset(0, 10),
+        blurRadius: 28,
+        spreadRadius: -12,
+      ),
+    ],
+    lightThread: Color(0x8C38BDF8),
+    spotlight: Color(0x0D38BDF8),
+    innerCard: Color(0x0D0369A1),
+    innerBorder: Color(0x240369A1),
+    textPrimary: Color(0xFF0F172A),
+    textSecondary: Color(0xFF334155),
+    textMuted: Color(0xFF52627A),
+    cyan: Color(0xFF0369A1),
+    cyanBright: Color(0xFF0284C7),
+    cyanSoft: Color(0xFF086190),
+    orangeGradient: [Color(0xFFFFB064), Color(0xFFFF8A1F), Color(0xFFE86F08)],
+    onOrange: Color(0xFF1A0B00),
+    navGradient: [Color(0xFAFFFFFF), Color(0xF5FFFFFF), Color(0xF2F6F9FD)],
+    navBorder: Color(0xFFD6E0EB),
+    navActive: [Color(0xFFE0F2FE), Color(0xFFCDE9FB)],
+    navActiveText: Color(0xFF075985),
+    tintStudy: Color(0xFF4F46E5),
+    tintNotes: Color(0xFF7E22CE),
+    tintExams: Color(0xFF7E22CE),
+    tintBooks: Color(0xFF047857),
+    success: Color(0xFF047857),
+    warning: Color(0xFFA35208),
+    orangeInk: Color(0xFFB93F0B),
+    floatShadows: [
+      BoxShadow(
+        color: Color(0x140F172A),
+        offset: Offset(0, 2),
+        blurRadius: 6,
+      ),
+      BoxShadow(
+        color: Color(0x241E3A5F),
+        offset: Offset(0, 8),
+        blurRadius: 24,
         spreadRadius: -8,
       ),
     ],
-    lightThread: null,
-    spotlight: Color(0x1238BDF8),
-    innerCard: Color(0x0A0B2545),
-    innerBorder: Color(0x140B2545),
-    textPrimary: Color(0xFF0B1726),
-    textSecondary: Color(0xFF34475E),
-    textMuted: Color(0xFF5B708A),
-    cyan: Color(0xFF0369A1),
-    cyanBright: Color(0xFF0284C7),
-    cyanSoft: Color(0xFF0277BD),
-    orangeGradient: [Color(0xFFFFB064), Color(0xFFFF8A1F), Color(0xFFE86F08)],
-    onOrange: Color(0xFF1A0B00),
-    navGradient: [Color(0xF2FFFFFF), Color(0xE6FFFFFF), Color(0xE0F3F8FE)],
-    navBorder: Color(0x1A0F2A4D),
-    navActive: [Color(0x330EA5E9), Color(0x140284C7)],
-    navActiveText: Color(0xFF075985),
-    tintStudy: Color(0xFF4F46E5),
-    tintNotes: Color(0xFF9333EA),
-    tintExams: Color(0xFF9333EA),
-    tintBooks: Color(0xFF059669),
+    chart: [
+      Color(0xFF0284C7), // azzurro
+      Color(0xFF4F46E5), // indaco
+      Color(0xFF0D9488), // verde acqua
+      Color(0xFF9333EA), // viola
+      Color(0xFFB45309), // ambra
+      Color(0xFFDB2777), // rosa
+      Color(0xFF64748B), // grigio ardesia
+    ],
   );
 
   /// Alto contrasto (Impostazioni → Aspetto): testi più chiari (o più scuri
@@ -214,15 +295,15 @@ class AppTokens extends ThemeExtension<AppTokens> {
               Color(0xFFFDFEFF),
               Color(0xFFF8FBFF),
             ],
-      cardBorder: dark ? const Color(0x80A0CDFF) : const Color(0x800F2A4D),
+      cardBorder: dark ? const Color(0x80A0CDFF) : const Color(0xFF7B8CA3),
       cardShadows: cardShadows,
       lightThread: lightThread,
-      spotlight: dark ? const Color(0x1438BDF8) : const Color(0x0A38BDF8),
-      innerCard: dark ? const Color(0x1FFFFFFF) : const Color(0x140B2545),
-      innerBorder: dark ? const Color(0x66FFFFFF) : const Color(0x660B2545),
-      textPrimary: dark ? const Color(0xFFFFFFFF) : const Color(0xFF02070F),
-      textSecondary: dark ? const Color(0xFFE8F1FB) : const Color(0xFF15212F),
-      textMuted: dark ? const Color(0xFFC6D6E8) : const Color(0xFF2B3B4E),
+      spotlight: dark ? const Color(0x1438BDF8) : const Color(0x0038BDF8),
+      innerCard: dark ? const Color(0x1FFFFFFF) : const Color(0x140369A1),
+      innerBorder: dark ? const Color(0x66FFFFFF) : const Color(0xFF8A9BB1),
+      textPrimary: dark ? const Color(0xFFFFFFFF) : const Color(0xFF020617),
+      textSecondary: dark ? const Color(0xFFE8F1FB) : const Color(0xFF1E293B),
+      textMuted: dark ? const Color(0xFFC6D6E8) : const Color(0xFF334155),
       cyan: dark ? const Color(0xFF7DD3FC) : const Color(0xFF075985),
       cyanBright: dark ? const Color(0xFFA5F3FC) : const Color(0xFF0369A1),
       cyanSoft: dark ? const Color(0xFFBAE6FD) : const Color(0xFF0C4A6E),
@@ -231,15 +312,20 @@ class AppTokens extends ThemeExtension<AppTokens> {
       navGradient: dark
           ? const [Color(0xF0142236), Color(0xF00E1A2C), Color(0xF00A1322)]
           : const [Color(0xFFFFFFFF), Color(0xFFFFFFFF), Color(0xFFF6F9FD)],
-      navBorder: dark ? const Color(0x99FFFFFF) : const Color(0x800F2A4D),
+      navBorder: dark ? const Color(0x99FFFFFF) : const Color(0xFF7B8CA3),
       navActive: dark
           ? const [Color(0x7338BDF8), Color(0x4D0E74BE)]
-          : const [Color(0x590EA5E9), Color(0x330284C7)],
+          : const [Color(0xFFBAE6FD), Color(0xFFA5DAF8)],
       navActiveText: dark ? const Color(0xFFFFFFFF) : const Color(0xFF062F4A),
       tintStudy: dark ? const Color(0xFFA5B4FC) : const Color(0xFF3730A3),
       tintNotes: dark ? const Color(0xFFD8B4FE) : const Color(0xFF6B21A8),
       tintExams: dark ? const Color(0xFFD8B4FE) : const Color(0xFF6B21A8),
       tintBooks: dark ? const Color(0xFF6EE7B7) : const Color(0xFF047857),
+      success: dark ? const Color(0xFF6EE7B7) : const Color(0xFF065F46),
+      warning: dark ? const Color(0xFFFCD34D) : const Color(0xFF854D0E),
+      orangeInk: dark ? const Color(0xFFFFC58F) : const Color(0xFF9A3412),
+      floatShadows: floatShadows,
+      chart: chart,
     );
   }
 
@@ -277,12 +363,16 @@ extension TokensContext on BuildContext {
 
 /// Colore dei calendari leggibile sul fondo: schiarito nel tema scuro (i
 /// colori delle università sono scelti per fondi chiari).
-Color readableOn(Color c, Brightness b) {
-  // Fondo di riferimento: le card dei due temi (vetro su sfondo).
+///
+/// [minRatio] 4,5 per i testi; 3 basta per pallini, barre e icone che non
+/// sono testo (contrasto degli elementi grafici WCAG).
+Color readableOn(Color c, Brightness b, {double minRatio = 4.5}) {
+  // Fondo di riferimento: le card dei due temi (vetro su sfondo); nel tema
+  // chiaro la card interna velata d'azzurro, la più scura delle due.
   final surface = b == Brightness.dark
       ? const Color(0xFF182335)
-      : const Color(0xFFFCFDFF);
-  return ensureContrast(c, surface, b);
+      : const Color(0xFFF3F8FC);
+  return ensureContrast(c, surface, b, minRatio: minRatio);
 }
 
 /// Rapporto di contrasto WCAG tra due colori (1…21).

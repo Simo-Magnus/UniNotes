@@ -163,7 +163,10 @@ void main() {
           greaterThan(contrastRatio(base.textMuted, card)),
         );
         // bordi più marcati, card meno trasparenti
-        expect(hc.cardBorder.a, greaterThan(base.cardBorder.a));
+        // (il bordo del tema chiaro è opaco: si confronta il contrasto)
+        double border(AppTokens t) =>
+            contrastRatio(Color.alphaBlend(t.cardBorder, card), card);
+        expect(border(hc), greaterThan(border(base)));
         expect(hc.cardGradient.first.a, greaterThanOrEqualTo(0.9));
         // l'arancione dell'azione resta quello di Design 3
         expect(hc.orangeGradient, base.orangeGradient);

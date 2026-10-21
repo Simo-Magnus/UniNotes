@@ -35,24 +35,30 @@ void main() {
   tearDown(() => tmp.delete(recursive: true));
 
   group('primo avvio dopo l\'installazione', () {
-    test('nuova installazione: via le credenziali rimaste, una volta', () async {
-      final st = await check('2026.9.0').run();
-      expect(st.fresh, isTrue);
-      expect(st.needsAnswer, isFalse);
-      expect(wiped, 1);
-      dbExists = true; // l'app ha creato il database
-      final again = await check('2026.9.0').run();
-      expect(again.fresh, isFalse);
-      expect(wiped, 1);
-    });
+    test(
+      'nuova installazione: via le credenziali rimaste, una volta',
+      () async {
+        final st = await check('2026.9.0').run();
+        expect(st.fresh, isTrue);
+        expect(st.needsAnswer, isFalse);
+        expect(wiped, 1);
+        dbExists = true; // l'app ha creato il database
+        final again = await check('2026.9.0').run();
+        expect(again.fresh, isFalse);
+        expect(wiped, 1);
+      },
+    );
 
-    test('aggiornamento da una versione senza segno: nessuna pulizia', () async {
-      dbExists = true;
-      final st = await check('2026.9.0').run();
-      expect(st.fresh, isFalse);
-      expect(st.needsAnswer, isFalse);
-      expect(wiped, 0);
-    });
+    test(
+      'aggiornamento da una versione senza segno: nessuna pulizia',
+      () async {
+        dbExists = true;
+        final st = await check('2026.9.0').run();
+        expect(st.fresh, isFalse);
+        expect(st.needsAnswer, isFalse);
+        expect(wiped, 0);
+      },
+    );
 
     test('reinstallazione con i dati rimasti (Mac, PC): si chiede', () async {
       identity = 'mac:1:100';
@@ -108,11 +114,7 @@ void main() {
       expect(corsi.existsSync(), isFalse);
       expect(
         File(
-          p.join(
-            '${corsi.path}${LocalData.ignoredSuffix}',
-            'Analisi',
-            'a.md',
-          ),
+          p.join('${corsi.path}${LocalData.ignoredSuffix}', 'Analisi', 'a.md'),
         ).existsSync(),
         isTrue,
       );
@@ -151,7 +153,10 @@ Destinazione: LegacyGeneric:target=altro_VGhpcyBpcyB0aGUgcHJlZml4IGZv_x
   });
 
   group('domande all\'avvio', () {
-    Future<void> pump(WidgetTester tester, Future<void> Function(BuildContext) run) async {
+    Future<void> pump(
+      WidgetTester tester,
+      Future<void> Function(BuildContext) run,
+    ) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Builder(
@@ -166,7 +171,9 @@ Destinazione: LegacyGeneric:target=altro_VGhpcyBpcyB0aGUgcHJlZml4IGZv_x
       await tester.pumpAndSettle();
     }
 
-    testWidgets('dati rimasti: «Elimina» pulisce e ricontrolla', (tester) async {
+    testWidgets('dati rimasti: «Elimina» pulisce e ricontrolla', (
+      tester,
+    ) async {
       var erased = false;
       var answeredKeys = <String>[];
       await pump(
@@ -179,10 +186,7 @@ Destinazione: LegacyGeneric:target=altro_VGhpcyBpcyB0aGUgcHJlZml4IGZv_x
           answered: (k) async => answeredKeys.add(k),
         ),
       );
-      expect(
-        find.textContaining('li usi o li elimini?'),
-        findsOneWidget,
-      );
+      expect(find.textContaining('li usi o li elimini?'), findsOneWidget);
       expect(find.byType(TextButton), findsNWidgets(2)); // «via» + «Elimina»
       expect(find.byType(FilledButton), findsOneWidget);
       await tester.tap(find.text('Elimina'));
@@ -198,7 +202,9 @@ Destinazione: LegacyGeneric:target=altro_VGhpcyBpcyB0aGUgcHJlZml4IGZv_x
         tester,
         (c) => askInstallQuestions(
           c,
-          InstallStatus(sharedNotes: [Directory('C:/Documenti/UniNotes/Corsi')]),
+          InstallStatus(
+            sharedNotes: [Directory('C:/Documenti/UniNotes/Corsi')],
+          ),
           eraseLeftover: () async {},
           recheck: () async => const InstallStatus(),
           setAside: (d) async {

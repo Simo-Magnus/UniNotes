@@ -1,52 +1,66 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/feedback/feedback_service.dart';
 import '../../../widgets/glass.dart';
 
-/// Card della Home con intestazione (icona, titolo, azione opzionale).
+/// Card della Home con intestazione (icona, titolo, widget opzionale).
+/// Con [onTap] la card intera porta alla sua sezione ([section], es.
+/// «Esami»): niente più pulsante con il nome della sezione nell'intestazione;
+/// al tocco c'è l'increspatura della card e la vibrazione/suono del tocco.
+/// Gli elementi toccabili dentro la card (una prova, una registrazione, il
+/// selettore della suddivisione) restano loro: il tocco va a loro.
 class DashboardCard extends StatelessWidget {
   const DashboardCard({
     super.key,
     required this.icon,
     required this.title,
     required this.child,
-    this.actionLabel,
-    this.onAction,
+    this.onTap,
+    this.section,
     this.trailing,
   });
 
   final IconData icon;
   final String title;
   final Widget child;
-  final String? actionLabel;
-  final VoidCallback? onAction;
 
-  /// Widget extra nell'intestazione (es. un totale).
+  /// Apre la sezione della card.
+  final VoidCallback? onTap;
+
+  /// Nome della sezione aperta da [onTap] (per i lettori di schermo).
+  final String? section;
+
+  /// Widget extra nell'intestazione (es. un selettore).
   final Widget? trailing;
 
   @override
   Widget build(BuildContext context) {
+    final content = Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          CardHeader(title: title, icon: icon, trailing: trailing),
+          child,
+        ],
+      ),
+    );
+    final tap = onTap;
     return GlassCard(
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            CardHeader(
-              title: title,
-              icon: icon,
-              trailing: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ?trailing,
-                  if (actionLabel != null && onAction != null)
-                    TextButton(onPressed: onAction, child: Text(actionLabel!)),
-                ],
+      child: tap == null
+          ? content
+          : Semantics(
+              container: true,
+              button: true,
+              hint: section == null ? null : 'Apri la sezione $section',
+              child: InkWell(
+                onTap: () {
+                  AppFeedback.of(context).tap();
+                  tap();
+                },
+                child: content,
               ),
             ),
-            child,
-          ],
-        ),
-      ),
     );
   }
 }

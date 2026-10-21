@@ -10,6 +10,7 @@ import 'lesson_transcripts.dart';
 import 'markdown_view.dart';
 import 'notes_actions.dart';
 import 'notes_store.dart';
+import 'spell_check.dart';
 import '../../core/constants/text_limits.dart';
 
 Future<void> openNote(
@@ -132,7 +133,9 @@ class _NoteViewerScreenState extends State<NoteViewerScreen> {
   }
 }
 
-/// Editor semplice in Markdown (nuovo appunto o modifica).
+/// Editor semplice in Markdown (nuova nota o modifica di una nota, di un
+/// riassunto o di una trascrizione), con il controllo ortografico del
+/// sistema (spell_check.dart) nella lingua dell'insegnamento.
 class NoteEditorScreen extends StatefulWidget {
   const NoteEditorScreen({super.key, required this.course, this.note});
   final Course course;
@@ -142,7 +145,8 @@ class NoteEditorScreen extends StatefulWidget {
   State<NoteEditorScreen> createState() => _NoteEditorScreenState();
 }
 
-class _NoteEditorScreenState extends State<NoteEditorScreen> {
+class _NoteEditorScreenState extends State<NoteEditorScreen>
+    with DeferredSpellCheck {
   final _title = TextEditingController();
   final _body = TextEditingController();
   bool _loaded = false;
@@ -153,8 +157,9 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
     final n = widget.note;
     if (n == null) {
       _title.text = NotesStore.lessonBaseName(DateTime.now())
-          .replaceFirst('Lezione', 'Appunti');
+          .replaceFirst('Lezione', 'Nota');
       _loaded = true;
+      enableSpellCheck();
     } else {
       _title.text = n.name;
       n.file.readAsString().then((t) {
@@ -163,9 +168,13 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
           _body.text = stripTranscriptTimes(t);
           _loaded = true;
         });
+        enableSpellCheck();
       });
     }
   }
+
+  @override
+  String get spellLanguage => spellLanguageOf(widget.course.examLanguage);
 
   @override
   void dispose() {
@@ -193,7 +202,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
     if (messenger != null && messenger.mounted) {
       showSuccessSnack(
         messenger.context,
-        'Appunto salvato.',
+        widget.note == null ? 'Nota salvata.' : 'Modifiche salvate.',
         messenger: messenger,
       );
     }
@@ -214,7 +223,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.note == null ? 'Nuovo appunto' : 'Modifica'),
+        title: Text(widget.note == null ? 'Nuova nota' : 'Modifica'),
         actions: [
           IconButton(
             tooltip: 'Inserisci formula',
@@ -250,7 +259,10 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
                       controller: _body,
                       expands: true,
                       maxLines: null,
+                      keyboardType: TextInputType.multiline,
                       textAlignVertical: TextAlignVertical.top,
+                      spellCheckConfiguration: spellCheck,
+                      contextMenuBuilder: spellCheckContextMenu,
                       decoration: const InputDecoration(
                         hintText:
                             'Scrivi in Markdown: # titolo, **grassetto**, '

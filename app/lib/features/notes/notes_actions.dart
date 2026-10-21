@@ -22,6 +22,7 @@ import 'background_jobs.dart';
 import 'lesson_transcripts.dart';
 import 'markdown_view.dart';
 import 'notes_store.dart';
+import 'recorder/better_transcription.dart' show recordWhisperSpeed;
 import 'recorder/recording_meta.dart';
 import 'recorder/recording_overlay.dart' show confirmDeleteRecording;
 import '../links/link_settings.dart';
@@ -43,12 +44,20 @@ String _date(NoteFile f) => f.name;
 /// [WhisperService.pickModel]). Il modello usato si scrive nella
 /// trascrizione e nei dati della registrazione. Con [again] la trascrizione
 /// di prima va in «Eliminati di recente».
+///
+/// Se sulla registrazione c'è già un'operazione in corso (es. «Completo la
+/// trascrizione» subito dopo il salvataggio) Whisper parte quando finisce,
+/// così non scrivono la trascrizione in due. La velocità della
+/// trascrizione si ricorda per stimare il tempo delle prossime
+/// (recorder/better_transcription.dart). [startedMessage] sostituisce
+/// l'avviso «Trascrizione avviata…».
 void transcribeWithWhisper(
   BuildContext context,
   Course course,
   NoteFile rec, {
   String? model,
   bool again = false,
+  String? startedMessage,
 }) {
   final s = context.read<AppServices>();
   final cancel = CancelToken();
@@ -56,6 +65,7 @@ void transcribeWithWhisper(
   for (final j in s.jobs.failedOn(rec.file.path, kind: JobKind.whisper)) {
     s.jobs.dismiss(j);
   }
+  final before = s.jobs.runningOn(rec.file.path);
   s.jobs.start(
     'Trascrizione Whisper · ${rec.name}',
     courseId: course.id,
@@ -63,6 +73,13 @@ void transcribeWithWhisper(
     kind: JobKind.whisper,
     onCancel: cancel.cancel,
     (report) async {
+      if (before != null) {
+        report('In attesa: ${before.title}', null);
+        await before.done;
+        if (cancel.isCancelled) {
+          throw WhisperException('Trascrizione annullata.');
+        }
+      }
       final chosen = await s.whisper.resolveModel(requested: model);
       if (chosen == null) {
         final st = await s.whisper.status();
@@ -80,6 +97,7 @@ void transcribeWithWhisper(
           throw WhisperException('Trascrizione annullata.');
         }
       }
+      final took = Stopwatch()..start();
       final result = await s.whisper.transcribeWith(
         rec.file,
         model: chosen.id,
@@ -89,8 +107,20 @@ void transcribeWithWhisper(
           pr.fraction,
         ),
       );
+      took.stop();
       final segs = result.segments;
       final used = result.model.id;
+      try {
+        final audio = (await RecordingMeta.load(rec.file.path)).duration;
+        if (audio != null) {
+          await recordWhisperSpeed(
+            s.settings,
+            used,
+            took: took.elapsed,
+            audio: audio,
+          );
+        }
+      } catch (_) {}
       if (segs.isEmpty) {
         throw WhisperException('Nessun parlato riconosciuto nell\'audio.');
       }
@@ -146,7 +176,10 @@ void transcribeWithWhisper(
       if (j.state == JobState.failed && j.cancelled) s.jobs.dismiss(j);
     },
   );
-  showSnack(context, 'Trascrizione avviata: puoi continuare a usare l\'app.');
+  showSnack(
+    context,
+    startedMessage ?? 'Trascrizione avviata: puoi continuare a usare l\'app.',
+  );
 }
 
 /// «Trascrivi con…» / «Trascrivi di nuovo con…»: sceglie il modello per

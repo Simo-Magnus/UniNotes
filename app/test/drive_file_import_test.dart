@@ -183,8 +183,10 @@ void main() {
     ]);
     var r = await gd.sync();
     expect(r!.downloaded, 0);
-    expect(File(p.join(dir('materiali').path, 'dispense.pdf')).existsSync(),
-        isFalse);
+    expect(
+      File(p.join(dir('materiali').path, 'dispense.pdf')).existsSync(),
+      isFalse,
+    );
 
     // scelto nel Picker: è già dentro UniNotes, nessuna copia
     drive.grant(site.id);
@@ -204,7 +206,11 @@ void main() {
     final gd = service();
     await gd.signIn();
     final a = drive.add('root', 'Esercizi.pdf', 'application/pdf', [1, 2]);
-    final b = drive.add('root', 'Appunti', 'application/vnd.google-apps.document');
+    final b = drive.add(
+      'root',
+      'Appunti',
+      'application/vnd.google-apps.document',
+    );
     final hidden = drive.add('root', 'Altro.pdf', 'application/pdf', [9]);
     drive.grant(a.id);
     drive.grant(b.id);
@@ -216,10 +222,17 @@ void main() {
     final dest = IncomingDestination.course(const Course(name: 'Analisi I'));
     expect(await gd.copyIntoApp(plan.outside, dest), 1);
     expect(await gd.copyIntoApp(plan.outside, dest), 1);
-    expect(drive.files, containsPair('UniNotes/Materiali/Analisi I/Esercizi.pdf',
-        utf8.decode([1, 2])));
-    expect(drive.files.keys,
-        contains('UniNotes/Materiali/Analisi I/Esercizi (2).pdf'));
+    expect(
+      drive.files,
+      containsPair(
+        'UniNotes/Materiali/Analisi I/Esercizi.pdf',
+        utf8.decode([1, 2]),
+      ),
+    );
+    expect(
+      drive.files.keys,
+      contains('UniNotes/Materiali/Analisi I/Esercizi (2).pdf'),
+    );
     // l'originale resta dov'era
     expect(drive.files.keys, contains('Esercizi.pdf'));
 
@@ -242,10 +255,17 @@ void main() {
       );
       expect(r.ids, ['abc_1-X', '9zz']);
       expect(r.cancelled, isFalse);
-      expect(PickerResult.parse(back({'state': 'altro', 'ids': 'a'}), 's1').error,
-          isNotNull);
-      expect(PickerResult.parse(back({'state': 's1', 'cancel': '1'}), 's1')
-          .cancelled, isTrue);
+      expect(
+        PickerResult.parse(back({'state': 'altro', 'ids': 'a'}), 's1').error,
+        isNotNull,
+      );
+      expect(
+        PickerResult.parse(
+          back({'state': 's1', 'cancel': '1'}),
+          's1',
+        ).cancelled,
+        isTrue,
+      );
       expect(PickerResult.parse(back({'state': 's1'}), 's1').cancelled, isTrue);
       r = PickerResult.parse(back({'state': 's1', 'error': 'no'}), 's1');
       expect(r.error, 'no');
@@ -285,8 +305,7 @@ void main() {
       );
     });
 
-    test('PC: ritorno sul server locale, richieste estranee ignorate',
-        () async {
+    test('PC: ritorno sul server locale, richieste estranee ignorate', () async {
       final server = await HttpServer.bind(InternetAddress.loopbackIPv4, 0);
       addTearDown(() => server.close(force: true));
       final result = DrivePicker.waitForReturn(server, 'giusto');
@@ -331,8 +350,11 @@ void main() {
   group('file condivisi con l\'app', () {
     test('elenco dal codice nativo', () {
       final list = IncomingFiles.parse([
-        {'path': '/cache/condivisi/1_0_Esame.pdf', 'name': 'Esame.pdf',
-            'temporary': true},
+        {
+          'path': '/cache/condivisi/1_0_Esame.pdf',
+          'name': 'Esame.pdf',
+          'temporary': true,
+        },
         {'path': '/cache/condivisi/1_0_Esame.pdf', 'name': 'doppione'},
         'file:///tmp/foto%20lavagna.jpg',
         {'path': ''},
@@ -412,11 +434,14 @@ void main() {
       expect(unsorted, ['Da ordinare/slide.pdf']);
 
       final tmpFile = File(p.join(cache.path, 'x.pdf'))..writeAsStringSync('');
-      await IncomingFiles.discard([IncomingFile(tmpFile.path, 'x.pdf',
-          temporary: true)]);
+      await IncomingFiles.discard([
+        IncomingFile(tmpFile.path, 'x.pdf', temporary: true),
+      ]);
       expect(tmpFile.existsSync(), isFalse);
-      expect(IncomingFiles.uniqueAmong({'a.pdf', 'a (2).pdf'}, 'a.pdf'),
-          'a (3).pdf');
+      expect(
+        IncomingFiles.uniqueAmong({'a.pdf', 'a (2).pdf'}, 'a.pdf'),
+        'a (3).pdf',
+      );
     });
 
     test('i file salvati arrivano su Google Drive', () async {
@@ -431,8 +456,10 @@ void main() {
       );
       final r = await gd.sync();
       expect(r!.uploaded, 1);
-      expect(drive.files, containsPair('UniNotes/Materiali/Da ordinare/lab.pdf',
-          'lab'));
+      expect(
+        drive.files,
+        containsPair('UniNotes/Materiali/Da ordinare/lab.pdf', 'lab'),
+      );
     });
   });
 }

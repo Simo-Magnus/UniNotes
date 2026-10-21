@@ -238,8 +238,14 @@ void main() {
     final path = await write(t, 'largo.csv', utf8.encode('$header\n$row\n'));
     await open(t, path, size: const Size(600, 800));
     expect(t.takeException(), isNull);
-    expect(find.textContaining('Colonna numero 0', findRichText: true), findsOneWidget);
-    await t.drag(find.textContaining('valore 1', findRichText: true).first, const Offset(-400, 0));
+    expect(
+      find.textContaining('Colonna numero 0', findRichText: true),
+      findsOneWidget,
+    );
+    await t.drag(
+      find.textContaining('valore 1', findRichText: true).first,
+      const Offset(-400, 0),
+    );
     await t.pump();
     expect(t.takeException(), isNull);
     await t.runAsync(db.close);

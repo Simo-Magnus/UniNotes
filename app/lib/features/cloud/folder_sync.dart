@@ -76,10 +76,19 @@ class SyncReport {
   int deletedRemote = 0;
   int deletedLocal = 0;
   int conflicts = 0;
+
+  /// Righe dei dati dell'app aggiornate dagli altri dispositivi (DataSync).
+  int dataChanges = 0;
   final List<String> errors = [];
 
   bool get changed =>
-      uploaded + downloaded + deletedRemote + deletedLocal + conflicts > 0;
+      uploaded +
+          downloaded +
+          deletedRemote +
+          deletedLocal +
+          conflicts +
+          dataChanges >
+      0;
 
   /// Somma l'esito di un'altra cartella sincronizzata.
   void add(SyncReport o) {
@@ -88,6 +97,7 @@ class SyncReport {
     deletedRemote += o.deletedRemote;
     deletedLocal += o.deletedLocal;
     conflicts += o.conflicts;
+    dataChanges += o.dataChanges;
     errors.addAll(o.errors);
   }
 
@@ -99,6 +109,10 @@ class SyncReport {
       if (deletedRemote + deletedLocal > 0)
         '${deletedRemote + deletedLocal} eliminati',
       if (conflicts > 0) '$conflicts conflitti (tenute entrambe le versioni)',
+      if (dataChanges > 0)
+        dataChanges == 1
+            ? '1 dato aggiornato dagli altri dispositivi'
+            : '$dataChanges dati aggiornati dagli altri dispositivi',
     ];
     final base = parts.isEmpty ? 'Tutto già sincronizzato' : parts.join(', ');
     return errors.isEmpty ? base : '$base · ${errors.length} errori';

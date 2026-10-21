@@ -10,8 +10,8 @@ import '../../repositories/settings_repository.dart';
 enum NoteFolder {
   recordings('Registrazioni', 'Registrazioni delle lezioni'),
   transcripts('Trascrizioni', 'Trascrizioni'),
-  summaries('Riassunti', 'Riassunti delle lezioni'),
-  notes('Appunti', 'Appunti personali'),
+  summaries('Riassunti', 'Riassunti lezioni e Appunti'),
+  notes('Appunti', 'Note'),
   ai('AI', 'Risposte della tua AI di riferimento');
 
   const NoteFolder(this.dirName, this.label);

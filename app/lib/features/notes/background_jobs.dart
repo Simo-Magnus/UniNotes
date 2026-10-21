@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 
 enum JobState { running, done, failed }
@@ -33,6 +35,11 @@ class BackgroundJob {
   /// Annulla l'operazione (null = non annullabile).
   final void Function()? onCancel;
   bool cancelled = false;
+
+  final Completer<void> _done = Completer<void>();
+
+  /// Si completa quando l'operazione finisce (riuscita o no).
+  Future<void> get done => _done.future;
 
   void cancel() {
     if (state != JobState.running || onCancel == null) return;
@@ -108,6 +115,7 @@ class BackgroundJobs extends ChangeNotifier {
           ..error = job.cancelled ? 'Annullato.' : e.toString();
       }
       notifyListeners();
+      job._done.complete();
       onFinished?.call(job);
     }();
     return job;

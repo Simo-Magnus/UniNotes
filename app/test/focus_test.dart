@@ -478,7 +478,9 @@ void main() {
       await tester.pumpWidget(
         Provider<AppServices>.value(
           value: s,
-          child: MaterialApp(home: Scaffold(body: ListView(children: [w]))),
+          child: MaterialApp(
+            home: Scaffold(body: ListView(children: [w])),
+          ),
         ),
       );
       await tester.runAsync(
@@ -502,7 +504,10 @@ void main() {
 
     // iOS/macOS: il comando da creare
     await pump(
-      const FocusQuietSection(key: Key('apple'), kind: FocusSystemKind.appleFocus),
+      const FocusQuietSection(
+        key: Key('apple'),
+        kind: FocusSystemKind.appleFocus,
+      ),
     );
     expect(find.textContaining(kAppleFocusShortcut), findsWidgets);
 

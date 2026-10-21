@@ -1,11 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/feedback/feedback_service.dart';
 import '../../core/reminders/notification_plan.dart' show AppRoutes;
@@ -14,31 +11,37 @@ import '../../core/theme/app_tokens.dart';
 import '../../models/course.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
-import '../../widgets/math_text.dart';
 import '../links/whisper_models.dart' show kLiveWhisperModel;
 import '../study/course_catalog.dart';
 import '../study/study_widgets.dart' show promptText;
 import 'lecture_recorder.dart';
-import 'markdown_lite.dart' show parseMathOnly;
 import 'notes_screen.dart';
 import 'course_notes_screen.dart';
+import 'recorder/better_transcription.dart';
 import 'recorder/live_transcriber.dart';
+import 'recorder/live_transcript_editor.dart';
 import 'recorder/recording_meta.dart';
-import 'recorder/recording_overlay.dart' show appNavigatorKey;
+import 'recorder/recording_overlay.dart'
+    show appNavigatorKey, confirmDeleteRecording;
 import 'recorder/recording_save.dart';
-import 'recorder/system_speech.dart';
 import 'recorder/waveform.dart';
+import 'spell_check.dart' show spellLanguageOf;
+
+export 'recorder/live_transcript_editor.dart'
+    show EditableLiveTranscript, TranscriptEdit;
 
 /// Registratore delle lezioni, come Memo Vocali: scegli il corso e
 /// registra. Durante la registrazione: tempo, forma d'onda, pausa e
 /// ripresa (pulsante grande), «Segna» (segnalibro al tempo attuale, con
 /// nota facoltativa) e la card «Trascrizione» con il parlato trascritto in
-/// tempo reale (riconoscimento vocale del sistema, altrimenti Whisper).
+/// tempo reale (sempre Whisper con il modello integrato) ed «Elimina» (la
+/// registrazione in corso va in «Eliminati di recente», con conferma).
 /// «Salva» ferma e salva (Appunti → corso → Registrazioni) e porta alla
 /// pagina del corso, alla card «Registrazioni delle lezioni».
 ///
-/// Nella card «Trascrizione» un tocco su una frase la corregge mentre la
-/// registrazione continua; «Formule (LaTeX)» scrive in LaTeX le formule
+/// Nella card «Trascrizione» il testo si modifica come nel Blocco note (un
+/// tocco mette il cursore in quel punto) mentre la registrazione continua,
+/// con il controllo ortografico del sistema; «Formule (LaTeX)» scrive in LaTeX le formule
 /// dette a voce («due terzi» → ⅔, «integrale da 2 a pi greco» → ∫ da 2 a
 /// π) e la scelta resta per le registrazioni successive.
 ///
@@ -145,6 +148,9 @@ class _RecorderScreenState extends State<RecorderScreen> {
       showSnack(context, 'Registrazione salvata.');
       return;
     }
+    // modello scaricato più accurato: si propone di trascrivere di nuovo
+    // (il riquadro arriva sopra la pagina del corso)
+    unawaited(offerBetterTranscription(_s, course, f));
     if (widget.fromCourse == course.id) {
       // la pagina del corso è sotto: ci si torna
       Navigator.of(context).pop(f.path);
@@ -155,6 +161,26 @@ class _RecorderScreenState extends State<RecorderScreen> {
         builder: (_) => CourseNotesScreen(course: course, justSaved: f!.path),
       ),
     );
+  }
+
+  /// «Elimina»: dopo la conferma (con «Non chiedere più») ferma la
+  /// registrazione e la sposta in «Eliminati di recente», con la
+  /// trascrizione fin lì: per 30 giorni si può recuperare.
+  Future<void> _delete() async {
+    if (_busy || _rec.saving || !_rec.active) return;
+    if (!await confirmDeleteRecording(context, inProgress: true)) return;
+    if (!_rec.active) return;
+    if (mounted) setState(() => _busy = true);
+    try {
+      await discardRecording(_s);
+      if (mounted) {
+        showSnack(context, 'Registrazione spostata in «Eliminati di recente».');
+      }
+    } catch (e) {
+      if (mounted) showSnack(context, 'Eliminazione non riuscita: $e');
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
   }
 
   Future<void> _togglePause() async {
@@ -367,6 +393,24 @@ class _RecorderScreenState extends State<RecorderScreen> {
                             ),
                           ],
                         ),
+                        // «Elimina» la registrazione in corso (va in
+                        // «Eliminati di recente», recuperabile)
+                        if (active)
+                          Padding(
+                            padding: const EdgeInsets.only(top: 12),
+                            child: Center(
+                              child: TextButton.icon(
+                                key: const Key('recorder-delete'),
+                                style: TextButton.styleFrom(
+                                  foregroundColor: theme.colorScheme.error,
+                                  minimumSize: const Size(48, 48),
+                                ),
+                                onPressed: !_busy && !saving ? _delete : null,
+                                icon: const Icon(Icons.delete_outline),
+                                label: const Text('Elimina'),
+                              ),
+                            ),
+                          ),
                         if (_rec.bookmarks.isNotEmpty) ...[
                           const SizedBox(height: 20),
                           Wrap(
@@ -523,8 +567,9 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
               segments: segs,
               partial: partial,
               style: style,
+              language: spellLanguageOf(live?.locale),
               onEditing: (v) => _editing = v,
-              onEdit: (i, t) => live?.editSegment(i, t),
+              onEdit: (e) => live?.replaceSegments(e.keys, e.text),
             ),
           ),
         ),
@@ -543,19 +588,6 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
         _ => 'In ascolto…',
       }, style: muted);
     }
-    // perché non c'è il riconoscitore del sistema e come attivarlo (es.
-    // «Riconoscimento vocale online» su Windows), anche mentre trascrive
-    // Whisper
-    final notice = live == null || system
-        ? null
-        : speechNotice(
-            live.systemUnavailable,
-            windows: Platform.isWindows,
-            mac: Platform.isMacOS,
-            languageMissing: live.systemLanguageMissing,
-            locale: live.locale,
-            whisper: live.engine == LiveEngine.whisper,
-          );
     return GlassCard(
       margin: EdgeInsets.zero,
       child: Padding(
@@ -583,7 +615,9 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
                         ? (live!.onDevice
                               ? 'dal vivo · sul dispositivo'
                               : 'dal vivo')
-                        : 'dal vivo · Whisper',
+                        : (live!.quick || live.modelId == null
+                              ? 'dal vivo · Whisper integrato'
+                              : 'dal vivo · Whisper ${live.modelId}'),
                     style: theme.textTheme.labelSmall?.copyWith(
                       color: context.tokens.cyanSoft,
                     ),
@@ -612,7 +646,7 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 6),
                 child: Text(
-                  'Tocca una frase per correggerla: la registrazione continua.',
+                  'Tocca il testo per modificarlo: la registrazione continua.',
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,
                   ),
@@ -635,201 +669,9 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
                 ),
               ),
             ],
-            if (notice != null) ...[
-              const SizedBox(height: 10),
-              SystemSpeechNotice(notice: notice),
-            ],
           ],
         ),
       ),
-    );
-  }
-}
-
-/// Testo dal vivo correggibile: le frasi definitive (un tocco → si
-/// correggono sul posto, Invio o un tocco fuori salvano, Esc annulla; una
-/// frase svuotata si toglie), poi quella provvisoria, più chiara. Le formule
-/// (`$…$`) si disegnano. Il testo nuovo continua ad arrivare mentre si
-/// corregge.
-class EditableLiveTranscript extends StatefulWidget {
-  const EditableLiveTranscript({
-    super.key,
-    required this.segments,
-    required this.partial,
-    required this.onEdit,
-    this.style,
-    this.onEditing,
-  });
-
-  final List<TranscriptSegment> segments;
-  final String partial;
-  final TextStyle? style;
-
-  /// Correzione del segmento (indice, testo nuovo).
-  final void Function(int index, String text) onEdit;
-
-  /// Inizio (true) e fine (false) di una correzione.
-  final ValueChanged<bool>? onEditing;
-
-  @override
-  State<EditableLiveTranscript> createState() => _EditableLiveTranscriptState();
-}
-
-class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
-  /// Inizio del segmento che si sta correggendo (stabile anche se arrivano
-  /// frasi nuove).
-  Duration? _editing;
-  final _controller = TextEditingController();
-  final _focus = FocusNode();
-  final _taps = <TapGestureRecognizer>[];
-
-  @override
-  void initState() {
-    super.initState();
-    _focus.addListener(() {
-      if (!_focus.hasFocus && _editing != null) _commit();
-    });
-  }
-
-  @override
-  void dispose() {
-    for (final t in _taps) {
-      t.dispose();
-    }
-    _controller.dispose();
-    _focus.dispose();
-    super.dispose();
-  }
-
-  void _start(int i) {
-    final seg = widget.segments[i];
-    setState(() {
-      _editing = seg.start;
-      _controller.text = seg.text;
-      _controller.selection = TextSelection.collapsed(offset: seg.text.length);
-    });
-    widget.onEditing?.call(true);
-    WidgetsBinding.instance.addPostFrameCallback((_) => _focus.requestFocus());
-  }
-
-  int get _index => widget.segments.indexWhere((s) => s.start == _editing);
-
-  void _commit() {
-    final i = _index;
-    final text = _controller.text;
-    if (i >= 0 && text.trim() != widget.segments[i].text) {
-      widget.onEdit(i, text);
-    }
-    _stop();
-  }
-
-  void _stop() {
-    if (_editing == null) return;
-    setState(() => _editing = null);
-    widget.onEditing?.call(false);
-  }
-
-  TapGestureRecognizer _tap(int k, VoidCallback onTap) {
-    while (_taps.length <= k) {
-      _taps.add(TapGestureRecognizer());
-    }
-    return _taps[k]..onTap = onTap;
-  }
-
-  /// Frasi [from]–[to] come testo continuo (un tocco su una frase la
-  /// corregge).
-  InlineSpan _run(int from, int to) {
-    final children = <InlineSpan>[];
-    for (var i = from; i < to; i++) {
-      final text = widget.segments[i].text;
-      final tap = _tap(i, () => _start(i));
-      if (i > from) children.add(const TextSpan(text: ' '));
-      if (!mayContainMath(text)) {
-        children.add(TextSpan(text: text, recognizer: tap));
-        continue;
-      }
-      for (final part in parseMathOnly(text)) {
-        children.add(
-          part.math
-              ? WidgetSpan(
-                  alignment: PlaceholderAlignment.middle,
-                  child: GestureDetector(
-                    onTap: () => _start(i),
-                    child: MathFormula(
-                      part.text,
-                      display: part.display,
-                      style: widget.style,
-                      source: part.source,
-                    ),
-                  ),
-                )
-              : TextSpan(text: part.text, recognizer: tap),
-        );
-      }
-    }
-    return TextSpan(children: children);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final segs = widget.segments;
-    final partial = widget.partial.isEmpty
-        ? null
-        : TextSpan(
-            text: '${segs.isEmpty ? '' : ' '}${widget.partial}',
-            style: TextStyle(color: theme.colorScheme.onSurfaceVariant),
-          );
-    final i = _editing == null ? -1 : _index;
-    if (i < 0) {
-      if (_editing != null) {
-        // la frase non c'è più (recuperata o tolta): fine della correzione
-        WidgetsBinding.instance.addPostFrameCallback((_) => _stop());
-      }
-      return Semantics(
-        hint: 'Tocca una frase per correggerla',
-        child: Text.rich(
-          TextSpan(
-            style: widget.style,
-            children: [_run(0, segs.length), ?partial],
-          ),
-        ),
-      );
-    }
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        if (i > 0) Text.rich(_run(0, i), style: widget.style),
-        CallbackShortcuts(
-          bindings: {const SingleActivator(LogicalKeyboardKey.escape): _stop},
-          child: TextField(
-            key: const Key('live-edit'),
-            controller: _controller,
-            focusNode: _focus,
-            style: widget.style,
-            minLines: 1,
-            maxLines: 6,
-            textInputAction: TextInputAction.done,
-            onSubmitted: (_) => _commit(),
-            decoration: InputDecoration(
-              isDense: true,
-              hintText: 'Frase vuota: verrà tolta',
-              suffixIcon: IconButton(
-                tooltip: 'Salva la correzione',
-                icon: const Icon(Icons.check_rounded),
-                onPressed: _commit,
-              ),
-            ),
-          ),
-        ),
-        if (i + 1 < segs.length || partial != null)
-          Text.rich(
-            TextSpan(
-              style: widget.style,
-              children: [_run(i + 1, segs.length), ?partial],
-            ),
-          ),
-      ],
     );
   }
 }
@@ -862,73 +704,6 @@ class _DownloadProgress extends StatelessWidget {
           'trascrive dopo il salvataggio.',
           style: theme.textTheme.bodySmall?.copyWith(
             color: theme.colorScheme.onSurfaceVariant,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-/// Avviso sul riconoscitore del sistema: cosa fare, nota sulla privacy e
-/// pulsante per le impostazioni (es. `ms-settings:privacy-speech`).
-class SystemSpeechNotice extends StatelessWidget {
-  const SystemSpeechNotice({super.key, required this.notice});
-  final SpeechNotice notice;
-
-  Future<void> _open(BuildContext context) async {
-    final uri = notice.settings;
-    if (uri == null) return;
-    final messenger = ScaffoldMessenger.maybeOf(context);
-    var ok = false;
-    try {
-      ok = await launchUrl(uri);
-    } catch (_) {}
-    if (!ok) {
-      messenger?.showSnackBar(
-        const SnackBar(
-          content: Text('Impostazioni non aperte: aprile dal menu Start.'),
-        ),
-      );
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final muted = theme.colorScheme.onSurfaceVariant;
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 2),
-          child: Icon(Icons.info_outline, size: 18, color: muted),
-        ),
-        const SizedBox(width: 8),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(notice.text, style: theme.textTheme.bodyMedium),
-              if (notice.note != null) ...[
-                const SizedBox(height: 4),
-                Text(
-                  notice.note!,
-                  style: theme.textTheme.bodySmall?.copyWith(color: muted),
-                ),
-              ],
-              if (notice.action != null && notice.settings != null)
-                Padding(
-                  padding: const EdgeInsets.only(top: 4),
-                  child: TextButton.icon(
-                    style: TextButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                    ),
-                    onPressed: () => _open(context),
-                    icon: const Icon(Icons.settings_outlined, size: 18),
-                    label: Text(notice.action!),
-                  ),
-                ),
-            ],
           ),
         ),
       ],
