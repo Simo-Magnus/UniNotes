@@ -51,6 +51,13 @@ NOME_SCELTA = "A scelta dello studente"
 SCELTA = re.compile(r"(?i)\bscelta\b")  # «Insegnamenti a libera scelta», «Esami a scelta dello studente»
 
 
+def _href(s: str) -> str:
+    """Indirizzo di un link: decodifica le entità ma non la «&» nuda dei parametri. html.unescape da sola
+    trasforma «&degree=239» in «°ree=239» (entità «&deg» senza punto e virgola): il link del programma
+    finiva sulla pagina generica e i libri non si trovavano mai."""
+    return html.unescape(re.sub(r"&(?!(?:amp|quot|apos|lt|gt|#\d+|#x[0-9a-fA-F]+);)", "&amp;", s))
+
+
 def _norm(s: str) -> str:
     s = unicodedata.normalize("NFKD", (s or "").replace("’", "'")).encode("ascii", "ignore").decode().lower()
     return re.sub(r"[^a-z0-9]+", " ", s).strip()
@@ -138,7 +145,7 @@ def leggi_piano(s: str) -> tuple[str | None, str | None, list[dict], dict[int, i
             testo = _testo(nome.group(1)) if nome else _testo(mm.group(1)).split(" - ")[0]
             riga = {"anno": k, "nome": EDIZIONE.sub("", re.sub(r"\s+", " ", testo)).strip(),
                     "ssd": ssd.group(1) if ssd else None, "cfu": int(v) if v is not None and v.is_integer() else v,
-                    "url": html.unescape(link.group(1)) if link else None,
+                    "url": _href(link.group(1)) if link else None,
                     "docenti": list(dict.fromkeys(x for x in docenti if x))}
             # «Laboratori 4 CFU» è seguito dai laboratori tra cui scegliere, senza CFU: sono alternative del gruppo
             if riga["cfu"] is None and contenitore is not None:
@@ -197,7 +204,7 @@ def fetch_ateneo(uid: str = "uninettuno", anno: int | None = None, max_cds: int 
     r = c.get(f"{BASE}/it/offertaformativa.aspx")
     trovate = re.findall(r'href="(/it/[^"]+\.aspx\?[^"]*degree=\d+[^"]*)"', r.text if r else "")
     da_leggere: dict[tuple[str, str, str], str] = {}
-    for h in sorted({html.unescape(x) for x in trovate}):
+    for h in sorted({_href(x) for x in trovate}):
         if _chiave_pagina(h)[1] not in NON_LAUREE:
             da_leggere.setdefault(_chiave_pagina(h), h)
     piani: dict[str, list[tuple[str, str | None, list[dict], dict[int, int]]]] = {}
@@ -216,7 +223,7 @@ def fetch_ateneo(uid: str = "uninettuno", anno: int | None = None, max_cds: int 
         if corso and voci:
             piani.setdefault(_norm(corso), []).append((BASE + p, indirizzo, voci, scelta))
         # la pagina di un corso rimanda ai piani dei suoi indirizzi (e al «Piano studi» del corso)
-        for h in sorted({html.unescape(x).rstrip("&") for x in re.findall(
+        for h in sorted({_href(x).rstrip("&") for x in re.findall(
                 r'href="(/it/[^"]+\.aspx\?[^"]*degree=\d+[^"]*mode=cs[^"]*)"', rp.text, re.I)}):
             k = _chiave_pagina(h)
             if k not in visti and k[1] not in NON_LAUREE and k not in dict(coda):

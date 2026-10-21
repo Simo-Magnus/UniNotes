@@ -135,7 +135,20 @@
   details li { margin: 4px 0; }
   code { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10); border-radius: 6px; padding: 1px 6px; font-size: 13px; overflow-wrap: anywhere; }
   .nota { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
-  footer { position: relative; z-index: 1; color: var(--muted); font-size: 13px; margin-top: 32px; text-align: center; }
+  footer {
+    position: relative; z-index: 1; color: var(--muted); font-size: 13px; margin-top: 32px; text-align: center;
+    border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; display: grid; gap: 16px; justify-items: center;
+  }
+  footer a { color: var(--text2); }
+  footer a:hover { color: var(--text); }
+  .piede-intro { margin: 0; line-height: 1.6; }
+  .piede-link { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; }
+  .piede-link a { min-height: 32px; display: inline-flex; align-items: center; }
+  .piede-contatti { margin: 0; display: grid; gap: 8px; }
+  .piede-contatti div { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 8px; }
+  .piede-contatti dt { font-weight: 600; color: var(--text2); }
+  .piede-contatti dt::after { content: ":"; }
+  .piede-contatti dd { margin: 0; overflow-wrap: anywhere; }
 
   @media (max-width: 520px) {
     main { padding-top: 32px; }
@@ -235,21 +248,24 @@
         <li>Con un Apple ID gratuito l'app va reinstallata ogni 7 giorni.</li>
       </ol>
     </details>
-    <details id="guida-disinstalla">
-      <summary>Disinstallare</summary>
-      <ol>
-        <li>Il modo completo è dall'app: <b>Impostazioni → Privacy e informazioni → Disinstalla UniNotes</b>. Scegli <b>Elimina tutto</b> o cosa eliminare (anche le cartelle UniNotes su OneDrive e Google Drive e gli eventi nel calendario), poi l'app avvia la disinstallazione.</li>
-        <li>Windows: anche da <b>Impostazioni → App → App installate</b>, che apre la stessa schermata. Con la versione del Microsoft Store (quando disponibile) l'app, dopo la pulizia, apre <b>App installate</b>: lì scegli <b>Disinstalla</b> e Windows elimina anche i dati rimasti sul PC.</li>
-        <li>macOS: trascinare l'app nel Cestino non elimina i suoi dati; usa prima <b>Disinstalla UniNotes</b>.</li>
-        <li>iPhone e iPad: dopo la pulizia tieni premuta l'icona → <b>Rimuovi app</b>.</li>
-      </ol>
-    </details>
   </section>
 
   <footer>
-    UniNotes è gratuita e senza pubblicità. Codice e licenza su <a href="https://github.com/Simo-Magnus/UniNotes">GitHub</a>.
-    <br><a href="privacy.html">Informativa sulla privacy</a> · <a href="termini.html">Termini di utilizzo</a> · <a href="sostieni.html">Sostieni il progetto</a> · <a href="amministratori.html">Per gli amministratori IT</a>
-    <br>Assistenza: <a href="mailto:uninotes-supporto@googlegroups.com">uninotes-supporto@googlegroups.com</a> · Stampa: <a href="mailto:uninotes-stampa.stir677@passinbox.com">uninotes-stampa.stir677@passinbox.com</a> · Aziende ed enti: <a href="mailto:uninotes-partner.stem084@passinbox.com">uninotes-partner.stem084@passinbox.com</a>
+    <p class="piede-intro">
+      UniNotes è gratuita e senza pubblicità.<br>
+      Codice e licenza su <a href="https://github.com/Simo-Magnus/UniNotes">GitHub</a>.
+    </p>
+    <nav class="piede-link" aria-label="Pagine del sito">
+      <a href="privacy.html">Informativa sulla privacy</a>
+      <a href="termini.html">Termini di utilizzo</a>
+      <a href="sostieni.html">Sostieni il progetto</a>
+      <a href="amministratori.html">Per gli amministratori IT</a>
+    </nav>
+    <dl class="piede-contatti">
+      <div><dt>Assistenza</dt><dd><a href="mailto:uninotes-supporto@googlegroups.com">uninotes-supporto@googlegroups.com</a></dd></div>
+      <div><dt>Stampa</dt><dd><a href="mailto:uninotes-stampa.stir677@passinbox.com">uninotes-stampa.stir677@passinbox.com</a></dd></div>
+      <div><dt>Aziende ed enti</dt><dd><a href="mailto:uninotes-partner.stem084@passinbox.com">uninotes-partner.stem084@passinbox.com</a></dd></div>
+    </dl>
   </footer>
 </main>
 <script>
