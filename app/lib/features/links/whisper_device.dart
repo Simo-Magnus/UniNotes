@@ -167,6 +167,34 @@ Future<int?> totalRam() async {
   return null;
 }
 
+/// RAM libera adesso in byte (`MemAvailable` su Android e Linux,
+/// `os_proc_available_memory` su iOS); null se non si sa.
+Future<int?> availableRam() async {
+  try {
+    if (Platform.isAndroid || Platform.isLinux) {
+      return parseMemAvailable(await File('/proc/meminfo').readAsString());
+    }
+    if (Platform.isIOS) {
+      final f = DynamicLibrary.process()
+          .lookupFunction<Size Function(), int Function()>(
+            'os_proc_available_memory',
+          );
+      final v = f();
+      return v > 0 ? v : null;
+    }
+  } catch (_) {}
+  return null;
+}
+
+/// `MemAvailable` di `/proc/meminfo` in byte.
+int? parseMemAvailable(String meminfo) {
+  final m = RegExp(
+    r'^MemAvailable:\s+(\d+)\s*kB',
+    multiLine: true,
+  ).firstMatch(meminfo);
+  return m == null ? null : int.parse(m.group(1)!) * 1024;
+}
+
 /// `MemTotal` di `/proc/meminfo` in byte.
 int? parseMemInfo(String meminfo) {
   final m = RegExp(

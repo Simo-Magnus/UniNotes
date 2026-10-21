@@ -1,17 +1,18 @@
-"""Scarica il modello Whisper integrato nell'app (asset delle build Android,
-iOS, macOS e Linux).
+"""Scarica il modello Whisper integrato nell'app (asset delle build Android
+e iOS).
 
     python tool/prepara_modello_whisper.py
 
-Da lanciare una volta prima di `flutter build apk|appbundle|ios|macos|linux`
+Da lanciare una volta prima di `flutter build apk|appbundle|ios`
 (e nella CI prima delle build): mette `ggml-base-q5_1.bin` (57 MiB, base
 multilingue quantizzato q5_1 di whisper.cpp, licenza MIT) in
 `app/assets/whisper/`, controllando lo SHA-1 pubblicato. Il file non è nel
 repository (.gitignore). Senza il file la build funziona lo stesso: l'app
 scarica il modello la prima volta che serve.
 
-Windows non usa questo asset: windows/CMakeLists.txt scarica lo stesso file
-durante la build e lo installa in data/whisper/ accanto a uninotes.exe.
+PC e Mac (Windows, macOS, Linux) non usano questo asset (in pubspec.yaml ha
+`platforms: [android, ios]`): il loro testo dal vivo è di Parakeet, che
+l'app scarica alla prima registrazione.
 """
 import hashlib
 import pathlib

@@ -109,10 +109,11 @@ Future<bool> removeTranscriptTimes(File md, {String? audioPath}) async {
 
 /// Modello di Whisper scritto nell'intestazione della trascrizione
 /// («… · trascritta con Whisper small», «trascrizione dal vivo con Whisper
-/// base-q5_1»); null se non c'è.
+/// base-q5_1»; «con Parakeet» dà [kParakeetId]); null se non c'è.
 String? whisperModelInHead(String head) {
   final m = RegExp(r'con Whisper ([A-Za-z0-9.-]+(?:_\d[A-Za-z0-9.-]*)*)')
       .firstMatch(head);
+  if (m == null && head.contains('con Parakeet')) return kParakeetId;
   return m?.group(1);
 }
 

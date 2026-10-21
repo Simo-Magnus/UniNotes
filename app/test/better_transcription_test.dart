@@ -19,6 +19,23 @@ void main() {
     expect(betterThanLive(null, null), isNull);
   });
 
+  test('PC: dopo il testo di Parakeet si propone solo un modello più '
+      'accurato di Parakeet', () {
+    expect(betterThanLive(whisperModelById('small'), kParakeetId), isNull);
+    expect(betterThanLive(kParakeetModel, kParakeetId), isNull);
+    expect(
+      betterThanLive(whisperModelById('large-v3-turbo'), kParakeetId)?.id,
+      'large-v3-turbo',
+    );
+    // stima: Parakeet è veloce (un'ora in pochi minuti)
+    final t = estimateWhisperTime(
+      kParakeetModel,
+      const Duration(hours: 1),
+      device: const DeviceProfile(platform: WhisperPlatform.pc, cores: 8),
+    );
+    expect(t.inMinutes, inInclusiveRange(2, 8));
+  });
+
   test('tempo stimato: modello, core, telefono e velocità misurata', () {
     final turbo = whisperModelById('large-v3-turbo-q5_0')!;
     final small = whisperModelById('small')!;

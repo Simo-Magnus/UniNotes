@@ -18,8 +18,13 @@ Codice: `app/lib/features/notes/` (`lecture_recorder.dart`,
 dal vivo con `live_transcriber.dart`, modifica del testo con
 `live_transcript_editor.dart`, proposta di una trascrizione più accurata con
 `better_transcription.dart`, salvataggio, riquadro sopra le schermate,
-controlli in background). Riconoscimento vocale del sistema (oggi non usato
-per il testo istantaneo, vedi sotto): `system_speech.dart`,
+controlli in background, `vad_segmenter.dart` e `second_pass.dart`, vocabolario
+del corso `course_vocabulary.dart`). Parakeet: `app/lib/core/services/parakeet_service.dart`,
+`parakeet_engine.dart`, `whisper_prompt.dart` e `app/lib/features/links/parakeet_model.dart`
+(test `parakeet_live_test.dart`, `parakeet_service_test.dart`,
+`second_pass_test.dart`, `whisper_prompt_test.dart` e, con il modello vero,
+`parakeet_real_test.dart`). Riconoscimento vocale del sistema (testo
+istantaneo sul telefono, vedi sotto): `system_speech.dart`,
 `app/android/.../LiveSpeech.kt`, `app/ios/Runner/LiveSpeech.swift` (uguale in
 `app/macos/Runner/`), `app/windows/runner/live_speech.cpp`. Controllo
 ortografico: `app/windows/runner/spell_check.cpp`, `UniNotesSpellCheck` in
@@ -45,10 +50,11 @@ e `app/lib/core/services/whisper_service.dart` (`app/test/whisper_choice_test.da
   nota o rimozione).
 - **Trascrizione**: la card mostra il parlato trascritto **istantaneamente**,
   come Memo Vocali: il testo provvisorio (più chiaro) si aggiorna mentre si
-  parla e diventa definitivo a ogni frase. Lo fa **sempre Whisper con il
-  modello integrato**, sul dispositivo e senza internet, con un paio di
-  secondi di ritardo, qualunque altra cosa sia collegata (riconoscimento
-  vocale di Windows, modelli Whisper scaricati). Vedi [Trascrizione dal
+  parla e diventa definitivo a ogni frase. Su **PC e Mac** lo fa
+  **Parakeet** (NVIDIA, offline, frasi guidate dalle pause); sul
+  **telefono** il **riconoscitore del sistema** (Google/Apple sul
+  dispositivo) con Whisper integrato come ripiego e, dove il telefono
+  regge, la seconda passata con small. Vedi [Trascrizione dal
   vivo](#trascrizione-dal-vivo). La registrazione funziona sempre, anche
   senza testo.
 - **Modifica del testo**: come nel Blocco note, vedi [Modificare il testo
@@ -157,52 +163,204 @@ si lascia dov'è e si decide più tardi.
 
 ## Trascrizione dal vivo
 
-Il testo istantaneo lo fa **sempre Whisper con il modello integrato**
-(`ggml-base-q5_1.bin`, vedi sotto), a finestre di 2 s: offline, uguale su
-ogni sistema, con un paio di secondi di ritardo. Lingua: quella
-dell'insegnamento se nota (es. inglese per gli insegnamenti in inglese),
-altrimenti l'italiano. Whisper legge l'audio dal WAV di lavoro e non apre il
-microfono: la registrazione non viene mai interrotta né bloccata da un suo
-errore.
+Chi fa il testo istantaneo dipende dal sistema. La scelta è in **un punto
+solo**, `liveEngineOrder` in `app/lib/features/notes/recorder/live_transcriber.dart`
+(ogni motore che non può partire passa al successivo), fissata da un test
+(`app/test/parakeet_live_test.dart`, «scelta del motore per piattaforma», e
+`app/test/recorder_logic_test.dart`, «motore dal vivo per piattaforma»):
 
-Prima, dove c'era, si usava il riconoscimento vocale in streaming del
-sistema (Windows con «Riconoscimento vocale online», Android 13+, iOS e
-macOS). Su Windows, con «Riconoscimento vocale online» attivo, il testo
-istantaneo non arrivava: dal 21/10/2026 il registratore non lo usa più su
-nessun sistema (`LectureRecorder` non passa più il riconoscitore a
-`LiveTranscriber`), così il comportamento è lo stesso ovunque e non dipende
-da impostazioni del sistema né da servizi in rete. Il codice del
-riconoscitore (`system_speech.dart` e i file nativi `LiveSpeech`) resta,
-spento, con i suoi test.
+| Sistema | 1° motore | Ripiego | In più |
+|---|---|---|---|
+| **Windows, macOS, Linux** | **Parakeet** (NVIDIA Parakeet TDT 0.6B v3 con sherpa-onnx) | il modello Whisper scaricato dall'utente, a pezzi da ~10 s; altrimenti nessun testo | — |
+| **Android, iOS** | **riconoscitore del sistema** (Google/Apple, sul dispositivo dove c'è) | Whisper base q5_1 integrato, se il riconoscitore manca, non ha la lingua o si ferma | seconda passata con small q5_1 dove il telefono regge |
+
+Lingua: quella dell'insegnamento se nota (es. inglese per gli insegnamenti
+in inglese), altrimenti l'italiano. Nessun motore apre il microfono per
+conto suo: ricevono l'audio della registrazione (o lo leggono dal WAV di
+lavoro), e un loro errore non ferma mai la registrazione.
+
+### Perché sul telefono era peggiorata (21/10/2026)
+
+Fino alla build f029f732 (19/10) sul telefono il testo dal vivo veniva dal
+riconoscitore del sistema (`SystemSpeech`, Google/Apple sul dispositivo) e,
+prima ancora (a51efa8d), dal modello scaricato dall'utente a pezzi da
+~10 s. Con bea7d53f (21/10) `LectureRecorder` non creava più
+`SystemSpeech()` per nessun sistema (la modifica serviva a Windows, dove con
+«Riconoscimento vocale online» il testo non arrivava): sul telefono il
+testo dal vivo è passato a Whisper base q5_1 con finestre da 2 s senza
+contesto, molto meno preciso, e il testo salvato era quello. Audio,
+whisper_ggml (2.7.1) e impostazioni del microfono non erano cambiati. Ora
+`LectureRecorder` passa di nuovo `SystemSpeech()` su Android e iOS (solo
+lì), con lo stesso codice nativo di allora (`LiveSpeech.kt`, `LiveSpeech.swift`:
+riavvio del riconoscitore dopo le pause, Android 13+ con l'audio da una
+pipe, `it-IT`, riconoscimento sul dispositivo dove c'è, permessi invariati);
+la card torna a spiegare perché il riconoscitore non trascrive (lingua,
+permesso) mentre lavora Whisper. Su PC e Mac il riconoscitore del sistema
+resta spento.
 
 ### Che cosa succede con ogni combinazione
 
 | Situazione | Testo istantaneo durante la registrazione | Dopo «Salva» |
 |---|---|---|
-| Solo il modello integrato (nessun modello scaricato) | Whisper integrato | niente da proporre: la trascrizione è quella dal vivo; «Trascrivi con Whisper» resta disponibile |
-| Modello integrato + un modello scaricato più accurato (small, medium, large, turbo…) | Whisper integrato (i modelli grandi sono troppo lenti per le finestre di 2 s) | riquadro «Trascrivere di nuovo con small?» con il tempo stimato, «Non ora» e «Trascrivi», casella «Fallo sempre in automatico» |
-| Come sopra, con «Fallo sempre in automatico» già scelto | Whisper integrato | la trascrizione con il modello scaricato parte da sola, con l'avviso del tempo stimato |
-| Modello scaricato meno accurato dell'integrato (tiny) | Whisper integrato | niente da proporre |
-| «Riconoscimento vocale online» di Windows attivo | Whisper integrato (l'opzione di Windows non conta più) | come sopra, secondo i modelli scaricati |
-| PC senza AVX2 (prima del 2013: whisper.cpp dell'app non gira) con un modello scaricato e `whisper-cli` | il modello scaricato a pezzi da ~10 s (testo con più ritardo) | niente da proporre se è già il modello migliore |
-| Build senza il modello integrato | lo scarica da solo la prima volta (sul telefono solo con Wi‑Fi), con la barra nella card; l'audio di quei secondi si trascrive dopo il salvataggio | come sopra |
-| Nessun modello utilizzabile | nessun testo, la card spiega come averlo; la registrazione va avanti | «Trascrivi con Whisper» o Gemini dalla pagina del corso |
+| PC/Mac, Parakeet scaricato | Parakeet | niente da proporre, salvo un modello Whisper scaricato più accurato (large): riquadro «Trascrivere di nuovo con …?» |
+| PC/Mac, prima registrazione (Parakeet da scaricare, 639 MiB) | barra «Scarico Parakeet…» con «Annulla»; la registrazione va, l'audio si tiene | «Completo la trascrizione» aspetta la fine del download e trascrive tutto con Parakeet |
+| PC/Mac, download annullato o non riuscito | il modello Whisper scaricato a pezzi, altrimenti nessun testo (la card spiega come averlo) | «Trascrivi con…» Parakeet (riprende il download dalla card) o Whisper |
+| PC/Mac con meno di 4 GB di RAM | il modello Whisper scaricato a pezzi, altrimenti nessun testo; la card dice perché | «Trascrivi con Whisper» o Gemini |
+| PC/Mac, Parakeet si ferma a metà (errore) | si continua con il modello Whisper scaricato dal punto in cui il testo era definitivo, altrimenti «Trascrizione dal vivo interrotta» | i tratti mancanti si recuperano |
+| Telefono con il riconoscitore del sistema | riconoscitore del sistema (+ small in seconda passata dove regge) | riquadro se c'è un modello scaricato più accurato |
+| Telefono senza riconoscitore (Android < 13, lingua mancante) o che si ferma | Whisper integrato (+ small dove regge) | come sopra |
+| Nessun motore | nessun testo, la registrazione va avanti | «Trascrivi con…» o Gemini dalla pagina del corso |
 
 I tempi dei segmenti sono quelli della registrazione. Alla fine («Salva») il
 tratto ancora provvisorio e quelli saltati si completano in background
 («Completo la trascrizione», visibile nella card della registrazione).
 
+### Parakeet su PC e Mac
+
+**Modello**: NVIDIA Parakeet TDT 0.6B v3 (600 M parametri, 25 lingue
+europee compreso l'italiano, punteggiatura e maiuscole; licenza
+CC-BY-4.0, attribuzione a NVIDIA nella pagina delle licenze e nella card
+Collegamenti → Whisper), nella versione ONNX int8 di sherpa-onnx (pacchetto
+`sherpa_onnx` 1.13.8, Apache-2.0, ONNX Runtime incluso: ~22 MB di DLL su
+Windows). Codice: `core/services/parakeet_service.dart` (download, motore
+condiviso), `core/services/parakeet_engine.dart` (isolate con sherpa-onnx),
+`features/notes/recorder/vad_segmenter.dart` (logica pura, testata con VAD e
+decodificatore finti), `features/links/parakeet_model.dart` (file, pesi,
+impronte).
+
+**Consegna**: non è nell'installatore. I quattro file (`encoder.int8.onnx`
+652 MB, `decoder.int8.onnx`, `joiner.int8.onnx`, `tokens.txt`: 670 MB,
+639 MiB) si scaricano uno per uno da Hugging Face
+(`csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8`, gli stessi file
+dell'archivio `.tar.bz2` ufficiale delle release di sherpa-onnx, così non
+serve decomprimere un bz2) alla prima registrazione o con «Scarica» nella
+card Collegamenti → Whisper: avanzamento, ripresa (`.part` e `Range`),
+spazio libero controllato prima di iniziare (con 200 MB di margine),
+SHA-256 pubblicato da Hugging Face verificato a fine file, annullabile; un
+solo download alla volta, condiviso fra card e registratore. Cartella:
+`<supporto dell'app>/parakeet/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/`.
+Il **Silero VAD** (`silero_vad.onnx`, 643 KB, MIT) è un asset delle build
+desktop (`assets/vad/`, `platforms: [windows, macos, linux]`) e si copia lì
+al primo uso. Su Windows `onnxruntime.dll` dell'app si carica per primo:
+Windows 11 ne ha uno suo in System32 (versione 1.17, troppo vecchia) che
+altrimenti farebbe chiudere l'app.
+
+**Dal vivo con il VAD** (`VadLiveSegmenter`): l'audio della registrazione
+(mono 16 kHz) va man mano all'isolate di Parakeet, sempre una richiesta alla
+volta con tutto l'audio arrivato nel frattempo (`PcmBacklog`). Il VAD
+(Silero: pausa di 0,5 s per chiudere una frase, parlato minimo 0,25 s,
+taglio forzato oltre 18 s di parlato continuo) decide dove sono le frasi:
+mentre si parla, ogni ~1 s di audio nuovo si decodifica la frase in corso
+(testo provvisorio); alla pausa la frase si decodifica una volta con tutto
+il suo audio (più 0,3 s prima, per non tagliare la prima parola) e diventa
+definitiva, divisa in frasi alla punteggiatura con i tempi dei token. I
+silenzi non producono testo e non costano calcolo. Due thread di ONNX
+Runtime, in un isolate a parte: non rubano tempo alla registrazione. Se il
+PC resta indietro di oltre 30 s si tiene l'audio più recente e il tratto
+saltato si recupera dopo il salvataggio. Le correzioni dell'utente, le
+formule e il salvataggio dei segmenti funzionano come prima.
+
+**Vocabolario del corso (hotwords)**: sherpa-onnx accetta gli hotwords per
+i transducer NeMo solo con `modified_beam_search` e un `bpe.vocab`, che per
+questo modello non è pubblicato. Provato il 21/10/2026 con un `bpe.vocab`
+ricavato da `tokens.txt` e parole delle frasi di prova («Stanley»,
+«Paesi», «Massiccio del Vinson», punteggio fino a 4): il testo non cambia
+(solo una maiuscola), mentre la decodifica è un po' più lenta. Quindi
+Parakeet usa `greedy_search`, senza vocabolario; il vocabolario del corso
+resta per Whisper.
+
+**Misure** (21/10/2026, questo PC: portatile Intel Core Ultra 5 226V,
+8 core, 16 GB, con altre build in corso; script in Dart con sherpa-onnx
+1.13.8 e la prova `app/test/parakeet_real_test.dart` con l'isolate vero
+dell'app):
+
+- frasi vere in italiano (17 frasi di FLEURS dev, 230 s, voci diverse):
+  **WER 4,7%** contando anche i numeri scritti in cifre o in lettere
+  («due»/«2»); 230 s trascritti in 10,5 s con 2 thread (**fattore 0,046**,
+  ~22 volte più veloce del tempo reale);
+- dal vivo (le stesse frasi in un file da 255 s con 1,5 s di silenzio fra
+  una e l'altra, a pezzi da 100 ms come la registrazione): decodifica di
+  una frase confermata (5–14 s di audio) **0,28 s di mediana**, massimo
+  0,6–0,9 s; testo provvisorio in 0,19 s di mediana; testo definitivo
+  **0,8 s dopo la fine della frase** (di cui 0,5 s sono la pausa che il VAD
+  aspetta); lavoro totale, provvisori compresi, 0,18–0,23 s per secondo di
+  audio. 4 thread non vanno più veloce (0,26 per secondo), 1 thread
+  0,23;
+- memoria: 0,97 GB dopo il caricamento (~2 s); decodificare 4 minuti in un
+  colpo solo arriva a 3,2 GB e peggiora il testo, per questo anche la
+  trascrizione dopo il salvataggio va a frasi con il VAD (blocchi da 30 s);
+- voce sintetica di Windows (Elsa): Parakeet la riconosce male (parole
+  storpiate, a tratti in spagnolo), al contrario delle voci vere: per le
+  prove servono registrazioni vere, non la sintesi vocale.
+
+### Dopo il salvataggio su PC e Mac
+
+Parakeet è fra i motori di «Trascrivi con…» / «Trascrivi di nuovo con…»
+(etichetta «Parakeet», sottotitolo «NVIDIA, veloce, 639 MiB»), insieme ai
+modelli Whisper scaricati; i modelli Whisper scaricabili restano. Con
+«Automatico» si usa il più accurato che il dispositivo regge
+(`kWhisperAccuracy`: large-v3 … large-v1, **Parakeet**, medium, small,
+base): senza modelli Whisper scaricati (o con solo small, base, tiny) è
+Parakeet. Un'ora di lezione in ~4 minuti (stima 0,06 s per secondo). La
+trascrizione si salva come «trascritta con Parakeet».
+
+### Telefono: Whisper migliorato e seconda passata
+
+Il modello integrato del telefono (`ggml-base-q5_1.bin`, solo negli asset
+Android e iOS) ora usa sempre:
+
+- **Silero VAD di whisper.cpp** (`assets/vad/ggml-silero-v5.1.2.bin`,
+  885 KB, SHA-256 controllato alla copia): i silenzi della finestra non
+  vanno al modello, niente frasi inventate;
+- **`suppressNonSpeechTokens`**: niente «[Musica]», «[BLANK_AUDIO]»;
+- **vocabolario del corso** come `initialPrompt` (`buildWhisperPrompt` in
+  `core/services/whisper_prompt.dart`): «Lezione di <insegnamento>:
+  <modulo in corso>, <suoi argomenti>, <altri moduli>, <altri argomenti>.»,
+  al massimo ~200 token (whisper.cpp ne usa 224), tagliando dalla fine a
+  voci intere; si leggono solo i moduli e gli argomenti dello studente.
+  Solo vocabolario e mai l'ultima frase confermata: le finestre da 2 s si
+  sovrappongono e con la frase precedente nel prompt Whisper tende a
+  ripeterla (per questo resta `noContext: true`); le righe che ripetono il
+  prompt si scartano (`isPromptEcho`).
+
+Le stesse opzioni valgono per «Trascrivi con Whisper» dopo il salvataggio
+(whisper_ggml) e, su PC e Mac, per i modelli Whisper scaricati con
+`whisper-cli` (`--prompt`, `--suppress-nst`, `--vad --vad-model`).
+
+**Seconda passata con small** (`second_pass.dart`): con small q5_1
+(181 MiB, nella tabella dei modelli; si scarica da solo con il Wi‑Fi se la
+seconda passata è accesa e il telefono è adatto), mentre si registra i
+tratti già confermati del testo istantaneo (del riconoscitore del sistema o
+di Whisper) si ritrascrivono in blocchi da ~30 s, in background (2 thread,
+small non resta in memoria fra un blocco e l'altro perché whisper.cpp tiene
+un modello solo, quello del testo istantaneo) e sostituiscono il testo,
+salvo le frasi corrette a mano. Condizioni:
+
+- telefono con almeno 6 GB di RAM e 6 core e almeno 700 MB liberi;
+- **prova al primo uso**: il primo blocco misura la velocità
+  (impostazione `whisper_second_pass_rtf`); oltre 0,5 s di lavoro per
+  secondo di audio la seconda passata resta spenta su quel telefono;
+- si **sospende** se resta indietro di oltre 90 s, se due blocchi di fila
+  sono molto più lenti della prova (il telefono si scalda e rallenta) o con
+  la batteria sotto il 20% senza caricabatterie (riprende con il
+  caricabatterie); la card «Trascrizione» dice perché;
+- interruttore «Seconda passata con small mentre registri» in Collegamenti
+  → Whisper (impostazione `whisper_second_pass`, accesa di predefinito dove
+  il telefono regge).
+
 ### Dopo il salvataggio: una trascrizione più accurata
 
-Se il modello che userebbe «Trascrivi con Whisper» (il predefinito o il più
+Se il modello che userebbe «Trascrivi con…» (il predefinito o il più
 accurato scaricato che il dispositivo regge, vedi [Quale modello Whisper si
-usa](#quale-modello-whisper-si-usa)) è più accurato del modello integrato e
-non è quello che ha fatto il testo dal vivo, dopo «Salva» (dal registratore,
-dal riquadro sopra le schermate o dal menu dell'icona del PC) compare il
-riquadro **«Trascrivere di nuovo con small?»** (`better_transcription.dart`):
+usa](#quale-modello-whisper-si-usa)) è più accurato del motore che ha fatto
+il testo dal vivo (Parakeet su PC e Mac, il modello integrato sul
+telefono), dopo «Salva» (dal registratore, dal riquadro sopra le schermate
+o dal menu dell'icona del PC) compare il riquadro **«Trascrivere di nuovo
+con small?»** (`better_transcription.dart`):
 
-- il testo spiega che il testo dal vivo è del modello integrato, veloce ma
-  meno preciso, e dà il **tempo stimato** («circa 6 minuti», in background);
+- il testo spiega chi ha fatto il testo dal vivo («di Parakeet», «del
+  modello integrato»), veloce ma meno preciso, e dà il **tempo stimato**
+  («circa 6 minuti», in background);
 - due pulsanti: **Non ora** e **Trascrivi**; toccando fuori è come «Non ora»
   (la trascrizione si può sempre fare dopo con «Trascrivi di nuovo con…»);
 - la casella **«Fallo sempre in automatico»**: spuntata, con «Trascrivi», le
@@ -216,11 +374,11 @@ vivo va in «Eliminati di recente».
 
 **Stima del tempo**: secondi di lavoro per secondo di audio su un PC con 8
 core (tiny 0,03, base 0,06, small 0,2, medium 0,55, large-v3-turbo 0,45,
-large 1,1; i quantizzati un po' meno), più lenta con meno core e 2,5 volte
-sul telefono, più il caricamento del modello. Dopo la prima trascrizione con
-un modello si usa la velocità **misurata su quel dispositivo** (media con le
-precedenti, impostazione `whisper_speed_<modello>`), quindi la stima migliora
-con l'uso.
+large 1,1, Parakeet 0,06; i quantizzati un po' meno), più lenta con meno
+core e 2,5 volte sul telefono, più il caricamento del modello. Dopo la
+prima trascrizione con un modello si usa la velocità **misurata su quel
+dispositivo** (media con le precedenti, impostazione
+`whisper_speed_<modello>`), quindi la stima migliora con l'uso.
 
 ### Modificare il testo mentre si registra
 
@@ -343,58 +501,38 @@ convertono più. Senza l'opzione il testo resta com'è.
 
 ### Windows: «Riconoscimento vocale online»
 
-Non serve più: il testo istantaneo è sempre di Whisper (vedi sopra) e la
-card non chiede più di attivare l'opzione. Per la cronaca: la dettatura
-libera di Windows (`SpeechRecognizer` senza grammatica) funziona solo con
-Impostazioni → Privacy e sicurezza → Voce → «Riconoscimento vocale online»
-attivo (`HKCU\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy`,
+Non serve: su PC il testo istantaneo è di Parakeet. Per la cronaca: la
+dettatura libera di Windows (`SpeechRecognizer` senza grammatica) funziona
+solo con Impostazioni → Privacy e sicurezza → Voce → «Riconoscimento vocale
+online» attivo (`HKCU\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy`,
 `HasAccepted` = 1), l'audio passa dai servizi Microsoft e il riconoscitore
 apre il microfono per conto suo; con l'opzione attiva il testo istantaneo non
-arrivava, e per questo si è passati a Whisper ovunque.
+arrivava, e per questo su PC e Mac il riconoscitore del sistema non si usa.
 
-### Il modello integrato (offline)
+### Il modello Whisper integrato (telefono)
 
-Il testo istantaneo lo fa Whisper sul dispositivo con un **modello
-integrato**: `ggml-base-q5_1.bin` (base multilingue quantizzato
-q5_1, 57 MiB, `kBuiltInWhisperModel`), sempre con whisper.cpp dentro l'app
-(`whisper_ggml`, anche su Windows: niente `whisper-cli` da scaricare). Lo
-stesso modello è il ripiego sempre disponibile di «Trascrivi con Whisper»
-(vedi [Quale modello Whisper si usa](#quale-modello-whisper-si-usa)).
+Sul telefono il ripiego del testo istantaneo è Whisper con un **modello
+integrato**: `ggml-base-q5_1.bin` (base multilingue quantizzato q5_1,
+57 MiB, `kBuiltInWhisperModel`), con whisper.cpp dentro l'app
+(`whisper_ggml`). Lo stesso modello è il ripiego sempre disponibile di
+«Trascrivi con Whisper» sul telefono.
 
-Ogni build lo include:
+Come arriva: asset dell'app `assets/whisper/` (in `pubspec.yaml` con
+`platforms: [android, ios]`, quindi **non entra nei pacchetti di Windows,
+macOS e Linux**: con Flutter 3.47 gli asset si filtrano per piattaforma
+con la chiave `platforms`). Il file non è nel repository (`.gitignore`):
+prima delle build Android e iOS si scarica con `python
+tool/prepara_modello_whisper.py` (controlla lo SHA-1; nella CI è un passo
+del workflow, tolto da quello di macOS). Alla prima apertura l'app lo copia
+nella cartella dei modelli (`whisper/models/`, 4 s dopo l'avvio, in
+background; la copia si verifica con lo SHA-1 e si rinomina solo a fine
+scrittura). In una build senza il modello si scarica da solo con il Wi‑Fi
+alla prima registrazione che ne ha bisogno.
 
-- **Windows**: nell'installatore e nello zip (`app/windows/CMakeLists.txt`
-  lo scarica una volta da Hugging Face durante la build, controlla lo SHA-1
-  e lo copia in `data/whisper/` accanto a uninotes.exe). Funziona subito.
-- **Android, iOS, macOS, Linux**: asset dell'app `assets/whisper/` (in
-  `pubspec.yaml` con `platforms: [android, ios, macos, linux]`, così su
-  Windows non è doppio). Il file non è nel repository (`.gitignore`): prima
-  della build si scarica con `python tool/prepara_modello_whisper.py`
-  (controlla lo SHA-1). Alla prima apertura l'app lo copia nella cartella
-  dei modelli (`whisper/models/`, 4 s dopo l'avvio, in background; la copia
-  si verifica con lo SHA-1 e si rinomina solo a fine scrittura).
-- **Build senza il modello** (script non lanciato, build di Windows senza
-  internet): alla prima registrazione che ne ha bisogno l'app lo scarica
-  da sola, con la barra nella card; sul telefono solo con Wi‑Fi. L'audio
-  registrato durante il download si trascrive dopo il salvataggio.
-
-Verifica (19/10/2026, Windows): `whisper_ggml.dll` dell'app carica
-`ggml-base-q5_1.bin` e trascrive un audio di prova in italiano («Buongiorno
-a tutti. Oggi parliamo di integrali e calcoliamo l'integrale da 0 a 1 di x
-al quadrato.») in 3,5 s compreso il caricamento, con il PC occupato da
-altre build.
-
-**Peso sugli store** (il modello si comprime pochissimo): +~55 MB su ogni
-build. Google Play accetta AAB fino a 200 MB di download compresso
-(UniNotes con media_kit, ffmpeg e pdfium resta sotto, ma va controllato
-sull'AAB vero: se si supera, il modello va spostato in un *asset pack*
-install-time di Play Asset Delivery, che richiede una modifica nativa);
-App Store: sopra i 200 MB iOS chiede conferma per scaricare con i dati
-mobili (non è un rifiuto); Microsoft Store e Mac App Store non hanno
-problemi di dimensione.
-- PC con CPU senza AVX2 (prima del 2013): whisper.cpp dell'app non si usa
-  (`IsProcessorFeaturePresent`), resta il modello scaricato dall'utente con
-  `whisper-cli`.
+**Dal 21/10/2026 non c'è più su PC e Mac**: `app/windows/CMakeLists.txt` non
+lo scarica più durante la build e l'installatore non lo mette in
+`data/whisper/`; una copia rimasta nella cartella dei modelli di un Mac non
+si usa (`WhisperService.builtInSupported` è vero solo sul telefono).
 
 **Finestre corte** (`LiveWindowPlanner` in `recorder/live_transcript.dart`):
 ogni ~2 s di audio nuovo si ritrascrive dal WAV di lavoro il tratto non
@@ -404,46 +542,29 @@ ogni passo; diventa **definitivo** quando la finestra finisce in una pausa
 (ultimo mezzo secondo ~10 dB più basso del resto, `endsInPause`) o quando
 arriva a 6 s: in quel caso l'ultima frase, forse tagliata a metà parola,
 resta provvisoria e si ritrascrive nella finestra dopo. Le parole ripetute
-nella sovrapposizione si tolgono unendo il testo (`TranscriptMerger`).
+nella sovrapposizione si tolgono unendo il testo (`TranscriptMerger`). Con il
+VAD di whisper.cpp i silenzi dentro la finestra non arrivano al modello.
 
 Il lavoro non blocca mai la registrazione: una finestra alla volta, in un
 isolate separato, con il modello tenuto in memoria. Se Whisper è lento il
 passo si allunga (fino a 5 s); se resta comunque indietro di oltre 18 s il
 tratto vecchio si salta (il testo resta al passo col parlato) e si recupera
-dopo il salvataggio (operazione «Completo la trascrizione», visibile nella
-card della registrazione), insieme all'ultimo tratto ancora provvisorio. Le
+dopo il salvataggio, insieme all'ultimo tratto ancora provvisorio. Le
 finestre silenziose non vanno a Whisper e le frasi che Whisper inventa sul
 silenzio («Sottotitoli creati dalla comunità Amara.org»…) si scartano.
 
-Senza modello dal vivo (download non riuscito, telefono con i dati mobili)
-si usa il modello scaricato dall'utente come prima: pezzi da ~10 s (9 s
-nuovi + 1 s di sovrapposizione), ognuno definitivo appena trascritto
-(`LiveWindowPlanner.slow`).
+Senza modello dal vivo (download non riuscito, telefono con i dati mobili;
+su PC e Mac quando Parakeet non può girare) si usa il modello scaricato
+dall'utente: pezzi da ~10 s (9 s nuovi + 1 s di sovrapposizione), ognuno
+definitivo appena trascritto (`LiveWindowPlanner.slow`).
 
-**Scelta del modello e latenza** (misurata su un portatile Intel Core
-Ultra 5 226V, 8 core, senza altri lavori in corso, con un audio di prova in
-italiano di 58 s sintetizzato con la voce Elsa di Windows, simulando la
-registrazione in tempo reale con il `LiveWindowPlanner` dell'app e
-`whisper_ggml.dll`, 4 thread):
-
-| Modello | Whisper per finestra (mediana) | Testo provvisorio: ritardo medio / peggiore (90°) | Qualità in italiano |
-|---|---|---|---|
-| tiny q5_1 (31 MiB) | 0,38 s | 1,4 s / 2,5 s | troppi errori («avariabili», «legga una full», frasi inventate) |
-| **base q5_1 (57 MiB)** | **0,77 s** | **1,8 s / 2,9 s** | buona («possiamo separare le variabili e integrare entrambi i membri») |
-| small q5_1 (181 MiB) | solo l'encoder 2,5–6 s | oltre 5 s | — |
-
-«Peggiore» è il ritardo della prima parola di ogni tratto nuovo (passo di
-2 s più il tempo di Whisper); il testo definitivo arriva in mediana 1,8 s
-dopo la fine della frase; il modello si carica in 0,9 s. Base è il modello
-più leggero con un italiano leggibile e sta sotto i 3 s. Con il PC già
-occupato al 100% (in una prima misura UniNotes trascriveva in parallelo
-un'altra registrazione con il vecchio ripiego, `whisper-cli` e
-large-v3-turbo) base impiegava 0,9–2,3 s per finestra e il ritardo medio
-saliva a 1,9–3,5 s: il passo che si allunga da solo tiene comunque il testo
-al passo con il parlato.
-
-Peso: il modello aggiunge ~52 MiB a UniNotes_setup.exe (LZMA2 lo comprime
-poco: 59,7 MB → 54,8 MB) e ~54 MiB a UniNotes-windows.zip (56,7 MB).
+**Misure di allora** (19/10/2026, portatile Intel Core Ultra 5 226V, audio
+di prova di 58 s sintetizzato con la voce Elsa di Windows, `whisper_ggml.dll`,
+4 thread): tiny q5_1 0,38 s per finestra (troppi errori), **base q5_1
+0,77 s** (testo provvisorio in media 1,8 s dopo, peggiore 2,9 s), small
+q5_1 solo l'encoder 2,5–6 s (non sta al passo con finestre da 2 s, e sul
+telefono è ~3 volte più lento di base: per questo small fa la seconda
+passata a blocchi da 30 s e non il testo istantaneo).
 
 ## Salvataggio e formati
 
@@ -543,12 +664,14 @@ Con più modelli scaricati (Collegamenti → Whisper):
 3. se è «Automatico» (il valore iniziale; scaricare un modello non lo
    cambia più), il **più accurato fra quelli scaricati che il dispositivo
    regge**: ordine di accuratezza in italiano `kWhisperAccuracy` (large-v3,
-   large-v3-turbo, … small, base, modello integrato, tiny) e RAM necessaria
-   al massimo il 60% di quella del PC/Mac o il 40% di quella del telefono
-   (`deviceCanRun`); se nessuno regge, il più accurato comunque;
+   large-v3-turbo, … large-v1, Parakeet, medium, small, small q5_1, base,
+   modello integrato, tiny) e RAM necessaria al massimo il 60% di quella del
+   PC/Mac o il 40% di quella del telefono (`deviceCanRun`); se nessuno
+   regge, il più accurato comunque;
 4. senza modelli scaricati, o se il programma whisper.cpp manca (Windows
-   senza `whisper-cli`), il **modello integrato**, che gira sempre con
-   whisper.cpp dentro l'app.
+   senza `whisper-cli`): su PC e Mac **Parakeet** (se scaricato), sul
+   telefono il **modello integrato**, che gira sempre con whisper.cpp
+   dentro l'app.
 
 Perché così: il predefinito lascia allo studente il controllo; l'automatico
 evita che un modello scaricato per prova (o più vecchio) resti in uso

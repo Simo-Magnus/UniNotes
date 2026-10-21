@@ -10,6 +10,8 @@ import 'package:university_notes/features/notes/recorder/live_transcriber.dart';
 import 'package:university_notes/features/notes/recorder/recording_meta.dart';
 import 'package:university_notes/repositories/settings_repository.dart';
 
+import 'support/fake_parakeet.dart';
+
 const _gb = 1000 * 1000 * 1000;
 
 /// Motore finto: registra il modello usato.
@@ -23,6 +25,7 @@ class _FakeEngine implements WhisperEngine {
     File model, {
     void Function(WhisperProgress)? onProgress,
     CancelToken? cancel,
+    WhisperOptions options = WhisperOptions.none,
   }) async {
     models.add(p.basename(model.path));
     return const [WhisperSegment(Duration.zero, 'Buongiorno')];
@@ -160,18 +163,14 @@ void main() {
     );
 
     test(
-      'senza modelli scaricati: il modello integrato (anche su Windows)',
+      'senza modelli scaricati: il modello integrato sul telefono',
       () async {
         final bundle = Directory(p.join(tmp.path, 'data', 'whisper'))
           ..createSync(recursive: true);
         File(p.join(bundle.path, kBuiltInWhisperModel.fileName))
             .writeAsBytesSync([1]);
         final engine = _FakeEngine();
-        final w = service(
-          host: WhisperHost.windows,
-          bundled: bundle,
-          engine: engine,
-        );
+        final w = service(bundled: bundle, engine: engine);
         final audio = File(p.join(tmp.path, 'lezione.m4a'))
           ..writeAsStringSync('a');
         expect((await w.availableModels()).map((m) => m.id), ['base-q5_1']);
@@ -179,11 +178,59 @@ void main() {
         final r = await w.transcribeWith(audio);
         expect(r.model.id, 'base-q5_1');
         expect(r.segments.single.text, 'Buongiorno');
-        // whisper.cpp dentro l'app, anche se su Windows manca whisper-cli
         expect(engine.models.single, 'ggml-base-q5_1.bin');
         expect(whisperModelLabel('base-q5_1'), 'modello integrato');
       },
     );
+
+    test('PC: niente modello integrato, Parakeet è il ripiego', () async {
+      final bundle = Directory(p.join(tmp.path, 'data', 'whisper'))
+        ..createSync(recursive: true);
+      File(p.join(bundle.path, kBuiltInWhisperModel.fileName))
+          .writeAsBytesSync([1]);
+      final pk = FakeParakeet(tmp, isInstalled: false);
+      final w = WhisperService(
+        settings: SettingsRepository(db),
+        baseDir: () async => tmp,
+        host: WhisperHost.windows,
+        bundledModels: () => bundle,
+        parakeet: pk,
+        deviceProbe: () async => const DeviceProfile(
+          platform: WhisperPlatform.pc,
+          ramBytes: 16 * _gb,
+        ),
+      );
+      final audio = File(p.join(tmp.path, 'lezione.m4a'))
+        ..writeAsStringSync('a');
+      // il modello base q5_1 non c'è più su PC e Mac
+      expect(await w.builtInModelFile(), isNull);
+      expect(await w.availableModels(), isEmpty);
+      await expectLater(
+        w.transcribeWith(audio),
+        throwsA(
+          isA<WhisperException>().having(
+            (e) => e.message,
+            'm',
+            contains('Parakeet'),
+          ),
+        ),
+      );
+      pk.isInstalled = true;
+      expect((await w.availableModels()).map((m) => m.id), [kParakeetId]);
+      final r = await w.transcribeWith(audio);
+      expect(r.model.id, kParakeetId);
+      expect(r.segments.single.text, 'Buongiorno da Parakeet');
+      expect(pk.transcribed.single, audio.path);
+      expect(whisperModelLabel(kParakeetId), 'Parakeet');
+      expect(transcriptionEngineLabel(kParakeetId), 'Parakeet');
+      expect(transcriptionEngineLabel('small'), 'Whisper small');
+      // un modello Whisper large scaricato resta la prima scelta
+      expect((await w.pickModel({kParakeetId, 'large-v3'}))!.id, 'large-v3');
+      expect(
+        (await w.pickModel({kParakeetId, 'small', 'medium'}))!.id,
+        kParakeetId,
+      );
+    });
 
     test('modelli scaricati e integrato: dal più accurato', () async {
       final bundle = Directory(p.join(tmp.path, 'b'))..createSync();

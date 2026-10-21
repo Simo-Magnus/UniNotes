@@ -33,6 +33,19 @@ class Power {
     }
   }
 
+  static Future<int?> Function()? debugBatteryLevel;
+
+  /// Carica della batteria in percentuale (null = senza batteria o non si
+  /// sa).
+  static Future<int?> batteryLevel() async {
+    if (debugBatteryLevel != null) return debugBatteryLevel!();
+    try {
+      return await _battery.batteryLevel;
+    } catch (_) {
+      return null;
+    }
+  }
+
   /// Connessi con Wi‑Fi o cavo (non con i dati mobili).
   static Future<bool> onWifi() async {
     if (debugOnWifi != null) return debugOnWifi!();

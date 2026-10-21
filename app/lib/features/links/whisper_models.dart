@@ -23,6 +23,10 @@
 /// Per aggiornare: aggiungere/modificare una riga di [kWhisperModels].
 library;
 
+import 'parakeet_model.dart';
+
+export 'parakeet_model.dart';
+
 /// Dove ha senso usare il modello.
 enum WhisperPlatform {
   pc('PC'),
@@ -48,6 +52,7 @@ class WhisperModelInfo {
     required this.minHardware,
     required this.platforms,
     this.sha1,
+    this.sha256,
     this.quantized = false,
     this.repo = defaultRepo,
     this.note,
@@ -89,6 +94,9 @@ class WhisperModelInfo {
 
   /// SHA-1 pubblicato da whisper.cpp (null = non verificabile).
   final String? sha1;
+
+  /// SHA-256 pubblicato da Hugging Face (file LFS), se manca lo SHA-1.
+  final String? sha256;
   final bool quantized;
 
   /// Repository Hugging Face che contiene il file.
@@ -112,6 +120,7 @@ class WhisperModelInfo {
   /// scaricare resta quello ggml di whisper.cpp ([downloadUrl]): i pesi
   /// pubblicati da OpenAI sono in formato PyTorch, che whisper.cpp non legge.
   Uri get officialPageUrl {
+    if (id == kParakeetId) return Uri.parse(kParakeetPage);
     if (id.startsWith('distil-')) {
       return Uri.parse('https://huggingface.co/distil-whisper/$id');
     }
@@ -120,8 +129,12 @@ class WhisperModelInfo {
     return Uri.parse('https://huggingface.co/openai/whisper-$name');
   }
 
-  String get languages =>
-      multilingual ? 'Multilingue (99 lingue)' : 'Solo inglese';
+  String get languages => id == kParakeetId
+      ? '25 lingue europee'
+      : (multilingual ? 'Multilingue (99 lingue)' : 'Solo inglese');
+
+  /// Parakeet (NVIDIA, sherpa-onnx) e non un modello Whisper.
+  bool get isParakeet => id == kParakeetId;
 
   bool runsOn(WhisperPlatform p) => platforms.contains(p);
 
@@ -185,6 +198,27 @@ const List<WhisperModelInfo> kWhisperModels = [
     minHardware: 'Telefono di fascia alta (6 GB RAM); PC con 8 GB RAM',
     platforms: _all,
     sha1: '55356645c2b361a969dfd0ef2c5a50d530afd8d5',
+  ),
+  // small quantizzato: la seconda passata del registratore sul telefono
+  // (kSecondPassModel). Peso e SHA-256 dalla API di Hugging Face.
+  WhisperModelInfo(
+    id: 'small-q5_1',
+    params: '244 M',
+    disk: '181 MiB',
+    approxBytes: 190085487,
+    ram: '~0,5 GB (stima)',
+    gpu: 'Non serve',
+    speed: '~4× (più veloce su CPU)',
+    italian: 'Discreta (quasi come small)',
+    multilingual: true,
+    italianOk: true,
+    minHardware: 'Telefono con 6 GB di RAM; PC con 4 GB RAM',
+    platforms: _all,
+    sha256: 'ae85e4a935d7a567bd102fe55afc16bb595bdb618e11b2fc7591bc08120411bb',
+    quantized: true,
+    note:
+        'Sul telefono ritrascrive in background, mentre registri, il testo '
+        'del modello integrato (seconda passata).',
   ),
   WhisperModelInfo(
     id: 'medium',
@@ -371,22 +405,19 @@ const List<WhisperModelInfo> kWhisperModels = [
   ),
 ];
 
-/// **Modello integrato** nell'app: base multilingue quantizzato q5_1
-/// (57 MiB, `ggml-base-q5_1.bin`). Fa sempre il testo istantaneo durante la
-/// registrazione ed è
-/// il ripiego sempre disponibile di «Trascrivi con Whisper» quando l'utente
-/// non ha scaricato modelli (o il programma whisper.cpp manca). Non compare
-/// nella tabella dei download.
+/// **Modello integrato** nell'app **sul telefono** (Android, iOS): base
+/// multilingue quantizzato q5_1 (57 MiB, `ggml-base-q5_1.bin`). Fa il testo
+/// istantaneo durante la registrazione ed è il ripiego sempre disponibile di
+/// «Trascrivi con Whisper» quando l'utente non ha scaricato modelli. Non
+/// compare nella tabella dei download. Su PC e Mac dal 21/10/2026 non c'è
+/// più: il testo istantaneo lo fa Parakeet ([kParakeetModel]).
 ///
-/// Come arriva sul dispositivo:
-/// - **Windows**: nell'installatore e nello zip (windows/CMakeLists.txt lo
-///   scarica durante la build, controlla lo SHA-1 e lo copia in
-///   `data/whisper/` accanto a uninotes.exe);
-/// - **Android, iOS, macOS, Linux**: asset dell'app
-///   (`assets/whisper/ggml-base-q5_1.bin`, scaricato prima della build da
-///   `tool/prepara_modello_whisper.py`), copiato alla prima apertura nella
-///   cartella dei modelli;
-/// - build senza il modello: si scarica da solo la prima volta che serve.
+/// Come arriva sul telefono: asset dell'app
+/// (`assets/whisper/ggml-base-q5_1.bin`, in `pubspec.yaml` solo per
+/// Android e iOS, scaricato prima della build da
+/// `tool/prepara_modello_whisper.py`), copiato alla prima apertura nella
+/// cartella dei modelli; in una build senza il modello si scarica da solo
+/// (con il Wi‑Fi) la prima volta che serve.
 ///
 /// Perché base q5_1 (misure in docs/registratore.md): tiny q5_1 (31 MiB) è
 /// due volte più veloce ma in italiano sbaglia troppe parole; small q5_1
@@ -418,12 +449,31 @@ const kLiveWhisperModel = WhisperModelInfo(
 const kBuiltInWhisperModel = kLiveWhisperModel;
 
 /// Nome breve da mostrare (es. sul pulsante «Trascrivi con Whisper»).
-String whisperModelLabel(String id) =>
-    id == kBuiltInWhisperModel.id ? 'modello integrato' : id;
+String whisperModelLabel(String id) => switch (id) {
+  _ when id == kBuiltInWhisperModel.id => 'modello integrato',
+  kParakeetId => 'Parakeet',
+  _ => id,
+};
 
-/// Modelli dal più accurato in italiano al meno accurato (WER indicativi
+/// Nome del motore con il modello, per le trascrizioni salvate («Whisper
+/// small», «Parakeet»).
+String transcriptionEngineLabel(String id) =>
+    id == kParakeetId ? 'Parakeet' : 'Whisper $id';
+
+/// Modello Whisper della seconda passata sul telefono.
+const kSecondPassModel = 'small-q5_1';
+
+/// Seconda passata: al massimo 0,5 s di lavoro per secondo di audio (un
+/// blocco da 30 s in 15 s), così il telefono resta avanti anche con il
+/// testo istantaneo che lavora insieme.
+const kSecondPassMaxRtf = 0.5;
+
+/// Motori dal più accurato in italiano al meno accurato (WER indicativi
 /// della tabella): a parità di famiglia la versione non quantizzata viene
-/// prima, i distillati inglesi non ci sono.
+/// prima, i distillati inglesi non ci sono. Parakeet (WER ~5% misurato su
+/// frasi vere, molto più veloce di medium su CPU) sta fra large e medium:
+/// con «Automatico» un large scaricato resta la prima scelta, Parakeet
+/// prende il posto dei modelli più piccoli.
 const kWhisperAccuracy = [
   'large-v3',
   'large-v3-turbo',
@@ -434,10 +484,12 @@ const kWhisperAccuracy = [
   'large-v3-turbo-q5_0',
   'large-v2-q5_0',
   'large-v1',
+  kParakeetId,
   'medium',
   'medium-q8_0',
   'medium-q5_0',
   'small',
+  'small-q5_1',
   'base',
   'base-q5_1',
   'tiny',
@@ -461,6 +513,7 @@ WhisperModelInfo? whisperModelById(String? id) {
     if (m.id == id) return m;
   }
   if (id == kBuiltInWhisperModel.id) return kBuiltInWhisperModel;
+  if (id == kParakeetId) return kParakeetModel;
   return null;
 }
 

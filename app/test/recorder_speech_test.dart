@@ -7,6 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:university_notes/core/database/app_database.dart';
 import 'package:university_notes/core/services/app_services.dart';
+import 'package:university_notes/core/services/power.dart';
 import 'package:university_notes/core/services/whisper_service.dart';
 import 'package:university_notes/features/cloud/cloud_drive_service.dart'
     show MemoryCloudSecrets;
@@ -328,11 +329,15 @@ void main() {
       List<String>? used,
     }) => WhisperService(
       baseDir: () async => tmp,
-      host: WhisperHost.windows,
+      // il modello integrato c'è solo sul telefono (su PC e Mac Parakeet)
+      host: WhisperHost.android,
       freeSpace: (_) async => null,
       bundledModels: () => bundled,
+      // build senza l'asset del modello: c'è solo se lo mette il test
+      builtInAsset: false,
       cpuSupportsPlugin: () => cpu,
-      modelUrl: modelUrl == null ? null : (_) => modelUrl,
+      // nessun download vero (anche small della seconda passata)
+      modelUrl: (_) => modelUrl ?? Uri.parse('http://127.0.0.1:9/modello'),
       livePlugin: (model, id) {
         used?.add(p.basename(model.path));
         return _FakeLive(id);
@@ -393,6 +398,8 @@ void main() {
     });
 
     test('download del modello non riuscito: la registrazione va', () async {
+      Power.debugOnWifi = () async => true;
+      addTearDown(() => Power.debugOnWifi = null);
       final live = LiveTranscriber(
         service(modelUrl: Uri.parse('http://127.0.0.1:9/modello')),
       );

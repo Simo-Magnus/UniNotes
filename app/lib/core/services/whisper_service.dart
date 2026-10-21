@@ -13,11 +13,16 @@ import '../../features/links/whisper_models.dart';
 import '../../repositories/settings_repository.dart';
 import 'audio_codec.dart';
 import 'file_downloader.dart';
+import 'parakeet_service.dart';
+import 'power.dart';
 import 'whisper_plugin_engine.dart';
+import 'whisper_prompt.dart';
 
 export '../../features/links/whisper_device.dart';
 export '../../features/links/whisper_models.dart';
 export 'file_downloader.dart' show CancelToken, DownloadCancelled;
+export 'parakeet_service.dart' show ParakeetService;
+export 'whisper_prompt.dart';
 
 class WhisperException implements Exception {
   WhisperException(this.message);
@@ -39,6 +44,29 @@ enum WhisperEngineKind {
   plugin,
 }
 
+/// Opzioni di whisper.cpp per una trascrizione: vocabolario del corso
+/// ([prompt], `initial_prompt`), rilevatore di voce Silero ([vad]: niente
+/// testo nei silenzi) e soppressione dei token non verbali («[Musica]»,
+/// «[BLANK_AUDIO]»), sempre attiva.
+class WhisperOptions {
+  const WhisperOptions({this.prompt, this.vad});
+  final String? prompt;
+  final File? vad;
+
+  static const none = WhisperOptions();
+
+  /// Argomenti di `whisper-cli` (v1.9: `--prompt`, `--suppress-nst`,
+  /// `--vad`, `--vad-model`).
+  List<String> get cliArgs => [
+    '--suppress-nst',
+    if (prompt != null && prompt!.trim().isNotEmpty) ...[
+      '--prompt',
+      prompt!.trim(),
+    ],
+    if (vad != null) ...['--vad', '--vad-model', vad!.path],
+  ];
+}
+
 /// Motore di trascrizione: audio + file del modello → segmenti.
 abstract class WhisperEngine {
   String get name;
@@ -47,6 +75,7 @@ abstract class WhisperEngine {
     File model, {
     void Function(WhisperProgress)? onProgress,
     CancelToken? cancel,
+    WhisperOptions options = WhisperOptions.none,
   });
 }
 
@@ -103,6 +132,9 @@ abstract class LiveWhisper {
   /// Modello dal vivo ([kLiveWhisperModel]): abbastanza veloce per
   /// ritrascrivere ogni ~2 s il tratto in corso.
   bool get quick => modelId == kLiveWhisperModel.id;
+
+  /// Vocabolario del corso e VAD (impostati da chi avvia il testo dal vivo).
+  WhisperOptions options = WhisperOptions.none;
   Future<List<WhisperSegment>> transcribeWav(File wav16k);
   Future<void> close();
 }
@@ -121,6 +153,9 @@ abstract class LiveWhisper {
 /// - **Linux** (sviluppo): `whisper-cli` nel PATH o nella cartella dell'app.
 ///
 /// I modelli ggml si scaricano da Hugging Face (tabella [kWhisperModels]).
+/// Su PC e Mac c'è anche **Parakeet** ([parakeet]): fa il testo istantaneo
+/// e, scaricato, compare fra i motori di «Trascrivi con…» (id
+/// [kParakeetId]); il modello Whisper integrato resta solo sul telefono.
 class WhisperService {
   WhisperService({
     this._settings,
@@ -142,7 +177,9 @@ class WhisperService {
     Future<ByteData> Function(String key)? assetLoader,
     this._builtInAsset,
     this._deviceProbe,
-  }) : _bundledModels = bundledModels ?? _defaultBundledModels,
+    ParakeetService? parakeet,
+  }) : _parakeetOverride = parakeet,
+       _bundledModels = bundledModels ?? _defaultBundledModels,
        _assetLoader = assetLoader ?? rootBundle.load,
        _baseDir = baseDir ?? getApplicationSupportDirectory,
        _downloader = FileDownloader(
@@ -191,17 +228,37 @@ class WhisperService {
   final Future<ByteData> Function(String key) _assetLoader;
   final bool? _builtInAsset;
   final Future<DeviceProfile> Function()? _deviceProbe;
+  final ParakeetService? _parakeetOverride;
 
-  static Directory? _defaultBundledModels() {
-    if (!Platform.isWindows) return null;
-    try {
-      return Directory(
-        p.join(p.dirname(Platform.resolvedExecutable), 'data', 'whisper'),
+  /// Parakeet (PC e Mac): testo istantaneo e «Trascrivi con Parakeet».
+  late final ParakeetService parakeet =
+      _parakeetOverride ??
+      ParakeetService(
+        baseDir: _baseDir,
+        host: host,
+        downloader: _downloader,
+        assetLoader: _assetLoader,
+        device: deviceProfile,
+        toWav: wavFor,
       );
+
+  /// Parakeet si può usare adesso: PC o Mac, modello scaricato, RAM
+  /// sufficiente.
+  Future<bool> parakeetReady() async {
+    try {
+      final pk = parakeet;
+      return pk.platformSupported &&
+          await pk.installed() &&
+          await pk.unavailableReason() == null;
     } catch (_) {
-      return null;
+      return false;
     }
   }
+
+  /// Cartella di modelli inclusi accanto all'eseguibile (`data/whisper/`):
+  /// non la crea più nessuna build (il modello integrato è solo sul
+  /// telefono), resta per i test.
+  static Directory? _defaultBundledModels() => null;
 
   Future<bool> _decodeNative(File input, File wav) async {
     try {
@@ -215,6 +272,34 @@ class WhisperService {
       // conversione nativa non disponibile: si prova ffmpeg
     }
     return false;
+  }
+
+  /// [audio] in WAV 16 kHz mono dentro [tmp] (strumenti del sistema, poi
+  /// ffmpeg se c'è); null se non si riesce. Per Parakeet.
+  Future<File?> wavFor(File audio, Directory tmp) async {
+    final wav = File(p.join(tmp.path, 'audio.wav'));
+    if (await _decodeNative(audio, wav) && await wav.exists()) return wav;
+    final ff = await ffmpeg();
+    if (ff == null) return null;
+    try {
+      final r = await processRunner(ff, [
+        '-nostdin',
+        '-y',
+        '-hide_banner',
+        '-loglevel',
+        'error',
+        '-i',
+        audio.path,
+        '-ar',
+        '16000',
+        '-ac',
+        '1',
+        wav.path,
+      ]);
+      return r.exitCode == 0 && await wav.exists() ? wav : null;
+    } catch (_) {
+      return null;
+    }
   }
 
   /// Impostazione: percorso di un `whisper-cli` scelto a mano.
@@ -344,6 +429,7 @@ class WhisperService {
     CancelToken? cancel,
     int? expectedBytes,
     String? sha1,
+    String? sha256,
   }) async* {
     try {
       await for (final d in _downloader.download(
@@ -352,6 +438,7 @@ class WhisperService {
         cancel: cancel,
         expectedBytes: expectedBytes,
         sha1: sha1,
+        sha256: sha256,
       )) {
         yield WhisperProgress('$label (${d.label})', d.fraction);
       }
@@ -460,6 +547,7 @@ class WhisperService {
         cancel: cancel,
         expectedBytes: m.approxBytes,
         sha1: m.sha1,
+        sha256: m.sha256,
       );
     }
     yield const WhisperProgress('Pronto', 1);
@@ -576,14 +664,17 @@ class WhisperService {
   static int _byAccuracy(WhisperModelInfo a, WhisperModelInfo b) =>
       whisperAccuracyRank(a.id).compareTo(whisperAccuracyRank(b.id));
 
-  /// Modelli con cui si può trascrivere adesso: quelli scaricati (se il
-  /// motore c'è) e il modello integrato, dal più accurato.
+  /// Motori con cui si può trascrivere adesso: i modelli scaricati (se il
+  /// programma c'è), Parakeet su PC e Mac (se scaricato) e il modello
+  /// integrato sul telefono, dal più accurato.
   Future<List<WhisperModelInfo>> availableModels({WhisperStatus? known}) async {
     final st = known ?? await status();
     final builtIn = await builtInModelFile() != null;
+    final pk = await parakeetReady();
     return [
       if (st.engineReady)
         for (final id in st.models) ?whisperModelById(id),
+      if (pk) kParakeetModel,
       if (builtIn) kBuiltInWhisperModel,
     ]..sort(_byAccuracy);
   }
@@ -652,22 +743,27 @@ class WhisperService {
     }
   }();
 
-  /// Percorso dell'asset con il modello integrato (Android, iOS, macOS,
-  /// Linux; su Windows è in `data/whisper/`).
+  /// Percorso dell'asset con il modello integrato (solo Android e iOS).
   static const builtInAssetKey = 'assets/whisper/ggml-base-q5_1.bin';
 
-  /// L'app ha il modello integrato come asset (vedi `pubspec.yaml`: tutte le
-  /// piattaforme tranne Windows, che lo installa accanto all'eseguibile).
-  bool get _hasBuiltInAsset => _builtInAsset ?? host != WhisperHost.windows;
+  /// Il modello integrato c'è (telefono; vedi `pubspec.yaml`, asset con
+  /// `platforms: [android, ios]`). Su PC e Mac il testo istantaneo è di
+  /// Parakeet.
+  bool get builtInSupported => isPhone;
+
+  /// La build include l'asset (sostituibile nei test: false = build senza
+  /// il modello, che si scarica quando serve).
+  bool get _hasBuiltInAsset => _builtInAsset ?? true;
 
   Future<File?>? _copying;
   bool _assetMissing = false;
 
-  /// Il modello integrato: accanto all'eseguibile (Windows), già copiato o
-  /// scaricato nella cartella dei modelli, oppure copiato adesso dall'asset
-  /// dell'app (la prima volta). null se questa build non lo include e non
-  /// è ancora stato scaricato.
+  /// Il modello integrato (telefono): già copiato o scaricato nella
+  /// cartella dei modelli, oppure copiato adesso dall'asset dell'app (la
+  /// prima volta). null su PC e Mac e se la build non lo include e non è
+  /// ancora stato scaricato.
   Future<File?> builtInModelFile() async {
+    if (!builtInSupported) return null;
     final bundled = _bundledModels();
     if (bundled != null) {
       final f = File(p.join(bundled.path, kBuiltInWhisperModel.fileName));
@@ -710,7 +806,7 @@ class WhisperService {
     }
   }
 
-  /// Il modello dal vivo (= il modello integrato); null se manca.
+  /// Il modello dal vivo (= il modello integrato, telefono); null se manca.
   Future<File?> liveModelFile() async =>
       liveModelSupported ? builtInModelFile() : null;
 
@@ -720,26 +816,145 @@ class WhisperService {
       downloadModel(kLiveWhisperModel, cancel: cancel);
 
   /// Whisper per la trascrizione dal vivo: il modello dal vivo con
-  /// whisper.cpp dentro l'app (niente da installare); senza, il modello
-  /// scaricato dall'utente più adatto. null se non c'è nessun modello.
-  Future<LiveWhisper?> liveEngine() async {
+  /// whisper.cpp dentro l'app (telefono); senza (PC e Mac, dove il primo
+  /// motore è Parakeet), il modello scaricato dall'utente più adatto. null
+  /// se non c'è nessun modello. [options]: vocabolario del corso e VAD.
+  Future<LiveWhisper?> liveEngine({
+    WhisperOptions options = WhisperOptions.none,
+  }) async {
+    LiveWhisper? e;
     if (liveModelSupported) {
       final quick = await liveModelFile();
       if (quick != null) {
-        return (_livePlugin ?? PluginLiveWhisper.new)(
-          quick,
-          kLiveWhisperModel.id,
-        );
+        e = (_livePlugin ?? PluginLiveWhisper.new)(quick, kLiveWhisperModel.id);
       }
     }
-    final st = await status();
-    final m = pickLiveModel(st.models);
-    if (!st.engineReady || m == null) return null;
-    final model = await modelFile(m);
-    if (st.engine == WhisperEngineKind.plugin) {
-      return (_livePlugin ?? PluginLiveWhisper.new)(model, m.id);
+    if (e == null) {
+      final st = await status();
+      final m = pickLiveModel(st.models);
+      if (!st.engineReady || m == null) return null;
+      final model = await modelFile(m);
+      e = st.engine == WhisperEngineKind.plugin
+          ? (_livePlugin ?? PluginLiveWhisper.new)(model, m.id)
+          : _CliLiveWhisper(this, st.cli!, model, m.id);
     }
-    return _CliLiveWhisper(this, st.cli!, model, m.id);
+    return e..options = options;
+  }
+
+  // ---------------------------------------------------- VAD di whisper.cpp
+
+  Future<File?>? _vadCopy;
+
+  /// Silero VAD in formato ggml per whisper.cpp (asset dell'app, copiato
+  /// nella cartella di Whisper al primo uso): niente testo nei silenzi.
+  /// null se l'asset manca.
+  Future<File?> whisperVadModel() => _vadCopy ??= () async {
+    try {
+      final target = File(
+        p.join((await _dir('vad')).path, 'ggml-silero-v5.1.2.bin'),
+      );
+      if (await target.exists() && await target.length() == kWhisperVadBytes) {
+        return target;
+      }
+      final data = await _assetLoader(kWhisperVadAsset);
+      final tmp = File('${target.path}.copia');
+      await tmp.writeAsBytes(
+        data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes),
+        flush: true,
+      );
+      if (await FileDownloader.sha256Of(tmp) != kWhisperVadSha256) {
+        await tmp.delete();
+        return null;
+      }
+      if (await target.exists()) await target.delete();
+      await tmp.rename(target.path);
+      return target;
+    } catch (_) {
+      return null;
+    }
+  }();
+
+  /// Opzioni di whisper.cpp con il vocabolario del corso [prompt] (vedi
+  /// `buildWhisperPrompt`) e il VAD, se c'è.
+  Future<WhisperOptions> optionsFor(String? prompt) async =>
+      WhisperOptions(prompt: prompt, vad: await whisperVadModel());
+
+  // ----------------------------------------- seconda passata (telefono)
+
+  /// Impostazione «Seconda passata con small» ('0' = spenta; predefinita
+  /// accesa dove il telefono regge).
+  static const secondPassKey = 'whisper_second_pass';
+
+  /// Prova del primo uso: secondi di lavoro per secondo di audio di small
+  /// q5_1 su questo telefono.
+  static const secondPassProbeKey = 'whisper_second_pass_rtf';
+
+  Future<bool> secondPassEnabled() async =>
+      (await _settings?.get(secondPassKey)) != '0';
+
+  Future<void> setSecondPass(bool on) async =>
+      _settings?.set(secondPassKey, on ? '1' : '0');
+
+  /// Velocità misurata alla prima seconda passata (null = mai provata).
+  Future<double?> secondPassProbe() async =>
+      double.tryParse((await _settings?.get(secondPassProbeKey)) ?? '');
+
+  Future<void> recordSecondPassProbe(double rtf) async =>
+      _settings?.set(secondPassProbeKey, rtf.toStringAsFixed(3));
+
+  /// Il telefono regge la seconda passata: almeno 6 GB di RAM e 6 core,
+  /// abbastanza memoria libera adesso e, se già misurata, velocità con
+  /// margine (vedi `SecondPassGovernor`).
+  Future<String?> secondPassUnfit() async {
+    if (!isPhone) return 'Solo sul telefono.';
+    final d = await deviceProfile();
+    final ram = d.ramBytes;
+    if (ram != null && ram < 6e9 * 0.85 || d.cores < 6) {
+      return 'Il telefono non ha abbastanza memoria o processori.';
+    }
+    final free = await availableRam();
+    if (free != null && free < 700 << 20) {
+      return 'Poca memoria libera adesso.';
+    }
+    final probe = await secondPassProbe();
+    if (probe != null && probe > kSecondPassMaxRtf) {
+      return 'Il telefono è troppo lento per small mentre registra.';
+    }
+    return null;
+  }
+
+  /// small q5_1 per la seconda passata (telefono, impostazione accesa,
+  /// modello scaricato, telefono adatto); null altrimenti. Il modello non
+  /// resta in memoria fra un blocco e l'altro: whisper.cpp ne tiene uno
+  /// solo e quello è il modello del testo istantaneo.
+  Future<LiveWhisper?> secondPassEngine({
+    WhisperOptions options = WhisperOptions.none,
+  }) async {
+    if (!isPhone || !await secondPassEnabled()) return null;
+    if (await secondPassUnfit() != null) return null;
+    final m = whisperModelById(kSecondPassModel)!;
+    final f = await modelFile(m);
+    if (!await f.exists()) return null;
+    final e = (_livePlugin ?? PluginLiveWhisper.new)(f, m.id);
+    if (e is PluginLiveWhisper) {
+      e
+        ..keepLoaded = false
+        ..threads = 2;
+    }
+    return e..options = options;
+  }
+
+  /// Scarica small q5_1 per la seconda passata se manca (solo con Wi‑Fi,
+  /// impostazione accesa, telefono adatto). Non lancia errori.
+  Future<void> ensureSecondPassModel({CancelToken? cancel}) async {
+    try {
+      if (!isPhone || !await secondPassEnabled()) return;
+      if (await secondPassUnfit() != null) return;
+      final m = whisperModelById(kSecondPassModel)!;
+      if (await (await modelFile(m)).exists()) return;
+      if (!await Power.onWifi()) return;
+      await downloadModel(m, cancel: cancel).drain<void>();
+    } catch (_) {}
   }
 
   // ------------------------------------------------------------ trascrizione
@@ -750,38 +965,58 @@ class WhisperService {
     String? model,
     void Function(WhisperProgress)? onProgress,
     CancelToken? cancel,
+    String? prompt,
   }) async => (await transcribeWith(
     audio,
     model: model,
     onProgress: onProgress,
     cancel: cancel,
+    prompt: prompt,
   )).segments;
 
   /// Trascrive [audio] con [model] (null = scelta automatica, vedi
-  /// [pickModel]). Se nessun modello scaricato si può usare (nessun
-  /// download, programma whisper.cpp mancante) si usa il modello integrato.
+  /// [pickModel]). Se nessun modello Whisper scaricato si può usare
+  /// (nessun download, programma whisper.cpp mancante) si usa Parakeet su
+  /// PC e Mac o il modello integrato sul telefono. [prompt]: vocabolario
+  /// del corso per Whisper (`buildWhisperPrompt`); con Whisper anche il VAD
+  /// e la soppressione dei token non verbali.
   Future<WhisperResult> transcribeWith(
     File audio, {
     String? model,
     void Function(WhisperProgress)? onProgress,
     CancelToken? cancel,
+    String? prompt,
   }) async {
     final st = await status();
     final builtIn = liveModelSupported ? await builtInModelFile() : null;
+    final pk = await parakeetReady();
     final usable = {
       if (st.engineReady) ...st.models,
+      if (pk) kParakeetId,
       if (builtIn != null) kBuiltInWhisperModel.id,
     };
     final m = await pickModel(usable, requested: model);
     if (m == null) {
       throw WhisperException(
-        'Whisper non è pronto: scarica un modello da Collegamenti → '
-        'Trascrizione → Whisper.',
+        isPhone
+            ? 'Whisper non è pronto: scarica un modello da Collegamenti → '
+                  'Trascrizione → Whisper.'
+            : 'Nessun motore di trascrizione: scarica Parakeet o un modello '
+                  'Whisper da Collegamenti → Whisper.',
       );
     }
     if (!await audio.exists()) {
       throw WhisperException('File audio non trovato: ${audio.path}');
     }
+    if (m.id == kParakeetId) {
+      final segs = await parakeet.transcribeFile(
+        audio,
+        onProgress: onProgress,
+        cancel: cancel,
+      );
+      return WhisperResult(segs, m);
+    }
+    final options = await optionsFor(prompt);
     // il modello integrato gira sempre con whisper.cpp dentro l'app
     final usesPlugin =
         st.engine == WhisperEngineKind.plugin ||
@@ -795,6 +1030,7 @@ class WhisperService {
             modelPath,
             onProgress: onProgress,
             cancel: cancel,
+            options: options,
           )
         : await _transcribeCli(
             st.cli!,
@@ -802,8 +1038,12 @@ class WhisperService {
             audio,
             onProgress: onProgress,
             cancel: cancel,
+            options: options,
           );
-    return WhisperResult(segs, m);
+    return WhisperResult([
+      for (final s in segs)
+        if (!isPromptEcho(s.text, options.prompt)) s,
+    ], m);
   }
 
   Future<List<WhisperSegment>> _transcribeCli(
@@ -812,6 +1052,7 @@ class WhisperService {
     File audio, {
     void Function(WhisperProgress)? onProgress,
     CancelToken? cancel,
+    WhisperOptions options = WhisperOptions.none,
   }) async {
     final out = await Directory.systemTemp.createTemp('whisper_');
     final ext = p.extension(audio.path).toLowerCase();
@@ -828,6 +1069,7 @@ class WhisperService {
           out,
           onProgress: onProgress,
           cancel: cancel,
+          options: options,
         );
       }
       final ff = await ffmpeg();
@@ -870,6 +1112,7 @@ class WhisperService {
       out,
       onProgress: onProgress,
       cancel: cancel,
+      options: options,
     );
   }
 
@@ -880,6 +1123,7 @@ class WhisperService {
     Directory out, {
     void Function(WhisperProgress)? onProgress,
     CancelToken? cancel,
+    WhisperOptions options = WhisperOptions.none,
   }) async {
     final outBase = p.join(out.path, 'trascrizione');
     final threads = (Platform.numberOfProcessors - 1).clamp(1, 16);
@@ -896,6 +1140,7 @@ class WhisperService {
       '-oj',
       '-of',
       outBase,
+      ...options.cliArgs,
     ];
     onProgress?.call(const WhisperProgress('Avvio Whisper…', 0));
     final Process proc;
@@ -1041,12 +1286,16 @@ class _CliLiveWhisper extends LiveWhisper {
         '-oj',
         '-of',
         base,
+        ...options.cliArgs,
       ]);
       final json = File('$base.json');
       if (r.exitCode != 0 || !await json.exists()) {
         throw WhisperException('Whisper si è fermato (codice ${r.exitCode})');
       }
-      return WhisperService.parseSegments(await json.readAsString());
+      return [
+        for (final s in WhisperService.parseSegments(await json.readAsString()))
+          if (!isPromptEcho(s.text, options.prompt)) s,
+      ];
     } finally {
       try {
         await out.delete(recursive: true);

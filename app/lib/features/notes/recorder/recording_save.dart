@@ -22,11 +22,13 @@ import 'wav.dart';
 ///    WAV, mai perdere la registrazione;
 /// 2. segnalibri, forma d'onda e segmenti della trascrizione dal vivo vanno
 ///    nel file `.json` accanto all'audio (RecordingMeta);
-/// 3. la trascrizione dal vivo (Whisper con il modello integrato) diventa la trascrizione della registrazione
+/// 3. la trascrizione dal vivo (Parakeet su PC e Mac, Whisper con il
+///    modello integrato sul telefono) diventa la trascrizione della registrazione
 ///    (`Trascrizioni/<nome>.md`, stesso formato delle altre);
-/// 4. i pezzi che Whisper non ha fatto in tempo a trascrivere si recuperano
-///    in background (operazione «Completo la trascrizione»), poi il WAV di
-///    lavoro si cancella.
+/// 4. i pezzi che il motore non ha fatto in tempo a trascrivere (anche
+///    tutta la registrazione, se Parakeet si stava ancora scaricando) si
+///    recuperano in background (operazione «Completo la trascrizione»), poi
+///    il WAV di lavoro si cancella.
 
 /// Nome libero nella cartella (nessun file della lezione con quel nome).
 Future<String> uniqueLessonName(Directory dir, String base) async {

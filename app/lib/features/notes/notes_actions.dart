@@ -23,6 +23,7 @@ import 'lesson_transcripts.dart';
 import 'markdown_view.dart';
 import 'notes_store.dart';
 import 'recorder/better_transcription.dart' show recordWhisperSpeed;
+import 'recorder/course_vocabulary.dart';
 import 'recorder/recording_meta.dart';
 import 'recorder/recording_overlay.dart' show confirmDeleteRecording;
 import '../links/link_settings.dart';
@@ -67,7 +68,8 @@ void transcribeWithWhisper(
   }
   final before = s.jobs.runningOn(rec.file.path);
   s.jobs.start(
-    'Trascrizione Whisper · ${rec.name}',
+    '${model == kParakeetId ? 'Trascrizione Parakeet' : 'Trascrizione Whisper'}'
+    ' · ${rec.name}',
     courseId: course.id,
     target: rec.file.path,
     kind: JobKind.whisper,
@@ -84,11 +86,20 @@ void transcribeWithWhisper(
       if (chosen == null) {
         final st = await s.whisper.status();
         throw WhisperException(
-          st.engineReady
-              ? 'Nessun modello Whisper scaricato.'
-              : 'Whisper non è installato.',
+          s.whisper.isPhone
+              ? (st.engineReady
+                    ? 'Nessun modello Whisper scaricato.'
+                    : 'Whisper non è installato.')
+              : 'Nessun motore di trascrizione: scarica Parakeet o un '
+                    'modello Whisper da Collegamenti → Whisper.',
         );
       }
+      // vocabolario del corso per Whisper (nome, moduli, argomenti)
+      final prompt = chosen.isParakeet
+          ? null
+          : buildWhisperPrompt(
+              await loadCourseVocabulary(s.study, course.id, course.name),
+            );
       if (await Power.whisperOnlyCharging(s.settings) &&
           !await Power.charging()) {
         report('In attesa del caricabatterie…', null);
@@ -102,6 +113,7 @@ void transcribeWithWhisper(
         rec.file,
         model: chosen.id,
         cancel: cancel,
+        prompt: prompt,
         onProgress: (pr) => report(
           '${pr.phase} · ${whisperModelLabel(chosen.id)}',
           pr.fraction,
@@ -127,7 +139,8 @@ void transcribeWithWhisper(
       final md = segmentsToMarkdown(
         segs,
         title: 'Trascrizione – ${_date(rec)}',
-        subtitle: '${course.name} · trascritta con Whisper $used',
+        subtitle:
+            '${course.name} · trascritta con ${transcriptionEngineLabel(used)}',
       );
       if (again) {
         // la trascrizione di prima resta recuperabile per 30 giorni
@@ -163,7 +176,7 @@ void transcribeWithWhisper(
                 segs[i].text,
               ),
           ]
-          ..transcriptSource = 'Whisper $used';
+          ..transcriptSource = transcriptionEngineLabel(used);
         await meta.save(rec.file.path);
       } catch (_) {
         // la trascrizione Markdown basta
@@ -201,7 +214,10 @@ Future<void> chooseWhisperModelAndTranscribe(
   if (models.isEmpty) {
     showSnack(
       context,
-      'Nessun modello Whisper: scaricane uno da Collegamenti → Whisper.',
+      s.whisper.isPhone
+          ? 'Nessun modello Whisper: scaricane uno da Collegamenti → Whisper.'
+          : 'Nessun motore: scarica Parakeet o un modello Whisper da '
+                'Collegamenti → Whisper.',
     );
     return;
   }
@@ -234,6 +250,8 @@ Future<void> chooseWhisperModelAndTranscribe(
                   [
                     if (m.id == kBuiltInWhisperModel.id)
                       'base q5_1, ${m.disk}'
+                    else if (m.isParakeet)
+                      'NVIDIA, veloce, ${m.disk}'
                     else
                       '${m.disk} · RAM ${m.ram}',
                     if (m.id == auto?.id) 'usato di solito',

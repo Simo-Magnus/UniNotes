@@ -52,6 +52,20 @@ Future<void> main(List<String> args) async {
     );
     yield LicenseEntryWithLineBreaks(const ['koni_rar'], notice);
   });
+  // Modelli per la trascrizione (non sono pacchetti): Parakeet di NVIDIA
+  // (CC-BY-4.0, l'attribuzione è obbligatoria) e Silero VAD (MIT).
+  LicenseRegistry.addLicense(() async* {
+    final parakeet = await rootBundle.loadString(
+      'assets/licenses/parakeet_NOTICE.txt',
+    );
+    yield LicenseEntryWithLineBreaks(const [
+      'Parakeet TDT 0.6B v3 (NVIDIA)',
+    ], parakeet);
+    final silero = await rootBundle.loadString(
+      'assets/licenses/silero_vad_LICENSE.txt',
+    );
+    yield LicenseEntryWithLineBreaks(const ['Silero VAD'], silero);
+  });
   // Caratteri IBM Plex inclusi negli asset (non sono un pacchetto: la loro
   // licenza non compare da sola nella pagina delle licenze).
   LicenseRegistry.addLicense(() async* {

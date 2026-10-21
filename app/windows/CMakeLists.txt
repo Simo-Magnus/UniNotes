@@ -114,47 +114,7 @@ set(CMAKE_INSTALL_SYSTEM_RUNTIME_COMPONENT Runtime)
 set(CMAKE_INSTALL_UCRT_LIBRARIES FALSE)
 include(InstallRequiredSystemLibraries)
 
-# Modello Whisper per il testo dal vivo (ggml base q5_1, 57 MiB): serve
-# quando il riconoscimento vocale di Windows non è attivo (vedi
-# docs/registratore.md). Si scarica una volta da Hugging Face nella cartella
-# di build, si controlla lo SHA-1 e si copia in data/whisper/ accanto a
-# uninotes.exe: lo prendono sia UniNotes_setup.exe sia lo zip, che
-# impacchettano la cartella Release. Se il download non riesce (build senza
-# internet) la build continua e l'app scarica il modello da sola alla prima
-# registrazione. -DUNINOTES_LIVE_MODEL=OFF per non includerlo.
-option(UNINOTES_LIVE_MODEL "Include il modello Whisper per il testo dal vivo" ON)
-if(UNINOTES_LIVE_MODEL)
-  set(LIVE_MODEL_NAME "ggml-base-q5_1.bin")
-  set(LIVE_MODEL_SHA1 "a3733eda680ef76256db5fc5dd9de8629e62c5e7")
-  set(LIVE_MODEL_URL
-    "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/${LIVE_MODEL_NAME}")
-  set(LIVE_MODEL_FILE "${CMAKE_BINARY_DIR}/whisper_live/${LIVE_MODEL_NAME}")
-  if(EXISTS "${LIVE_MODEL_FILE}")
-    file(SHA1 "${LIVE_MODEL_FILE}" LIVE_MODEL_HAVE)
-    if(NOT LIVE_MODEL_HAVE STREQUAL LIVE_MODEL_SHA1)
-      file(REMOVE "${LIVE_MODEL_FILE}")
-    endif()
-  endif()
-  if(NOT EXISTS "${LIVE_MODEL_FILE}")
-    message(STATUS "Scarico il modello Whisper dal vivo (${LIVE_MODEL_NAME})")
-    file(DOWNLOAD "${LIVE_MODEL_URL}" "${LIVE_MODEL_FILE}.part"
-      STATUS LIVE_MODEL_STATUS TLS_VERIFY ON TIMEOUT 600)
-    list(GET LIVE_MODEL_STATUS 0 LIVE_MODEL_CODE)
-    if(LIVE_MODEL_CODE EQUAL 0)
-      file(SHA1 "${LIVE_MODEL_FILE}.part" LIVE_MODEL_HAVE)
-    else()
-      set(LIVE_MODEL_HAVE "")
-    endif()
-    if(LIVE_MODEL_HAVE STREQUAL LIVE_MODEL_SHA1)
-      file(RENAME "${LIVE_MODEL_FILE}.part" "${LIVE_MODEL_FILE}")
-    else()
-      file(REMOVE "${LIVE_MODEL_FILE}.part")
-      message(WARNING "Modello Whisper dal vivo non scaricato "
-        "(${LIVE_MODEL_STATUS}): l'app lo scaricherà alla prima registrazione.")
-    endif()
-  endif()
-  if(EXISTS "${LIVE_MODEL_FILE}")
-    install(FILES "${LIVE_MODEL_FILE}"
-      DESTINATION "${INSTALL_BUNDLE_DATA_DIR}/whisper" COMPONENT Runtime)
-  endif()
-endif()
+# Testo dal vivo: dal 21/10/2026 su Windows lo fa Parakeet (sherpa-onnx, le
+# cui DLL arrivano con il plugin sherpa_onnx_windows), scaricato dall'app
+# alla prima registrazione: il modello Whisper base q5_1 non si scarica più
+# durante la build e non è più in data/whisper/ (vedi docs/registratore.md).

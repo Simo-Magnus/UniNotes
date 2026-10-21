@@ -1,0 +1,15 @@
+Parakeet TDT 0.6B v3
+Copyright (c) NVIDIA Corporation.
+
+Modello: nvidia/parakeet-tdt-0.6b-v3 (https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3)
+Licenza: Creative Commons Attribution 4.0 International (CC-BY-4.0),
+https://creativecommons.org/licenses/by/4.0/
+
+UniNotes usa la versione convertita in ONNX e quantizzata int8 da sherpa-onnx
+(k2-fsa, https://github.com/k2-fsa/sherpa-onnx; file da
+https://huggingface.co/csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8),
+senza altre modifiche. Il modello non è incluso nell'app: si scarica da
+Hugging Face al primo uso su PC e Mac.
+
+NVIDIA non sostiene né approva UniNotes. Il modello è fornito "così com'è",
+senza garanzie.

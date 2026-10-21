@@ -187,10 +187,16 @@ class _WhisperCardState extends State<WhisperCard> {
         if (st.models.contains(m.id)) m,
     ];
     final builtIn = d.available.any((m) => m.id == kBuiltInWhisperModel.id);
+    final parakeet = d.available.any((m) => m.isParakeet);
     final used = d.selected == null
         ? kMissing
         : whisperModelLabel(d.selected!.id);
     return [
+      // PC e Mac: Parakeet fa il testo istantaneo (e trascrive dopo)
+      if (!_w.isPhone) ...[
+        _ParakeetSection(onChanged: _reload),
+        const SizedBox(height: 12),
+      ],
       StatusLine(_engineText(st), ok: st.engineReady),
       const SizedBox(height: 6),
       StatusLine(
@@ -198,10 +204,13 @@ class _WhisperCardState extends State<WhisperCard> {
             ? (builtIn
                   ? 'Nessun modello scaricato: «Trascrivi con Whisper» usa il '
                         'modello integrato (base, ${kBuiltInWhisperModel.disk}).'
-                  : 'Nessun modello scaricato.')
+                  : (parakeet
+                        ? 'Nessun modello Whisper scaricato: «Trascrivi con…» '
+                              'usa Parakeet.'
+                        : 'Nessun modello scaricato.'))
             : 'Le trascrizioni usano: $used'
                   '${d.defaultId == null ? ' (automatico)' : ''}',
-        ok: installed.isNotEmpty || builtIn,
+        ok: installed.isNotEmpty || builtIn || parakeet,
       ),
       // consiglio in base al dispositivo
       NoteText(
@@ -212,12 +221,13 @@ class _WhisperCardState extends State<WhisperCard> {
         icon: Icons.recommend_outlined,
       ),
       NoteText(
-        builtIn
+        _w.isPhone
             ? 'Il modello integrato fa il testo istantaneo mentre registri. '
                   'Con un modello scaricato più accurato, a fine registrazione '
                   'l\'app propone di trascrivere di nuovo la lezione.'
-            : 'Con un modello scaricato il registratore mostra anche la '
-                  'trascrizione dal vivo mentre registri.',
+            : 'Un modello Whisper large scaricato è più accurato di '
+                  'Parakeet: a fine registrazione l\'app propone di trascrivere '
+                  'di nuovo la lezione con quello.',
         icon: Icons.subtitles_outlined,
       ),
       if (_w.isPhone)
@@ -317,6 +327,11 @@ class _WhisperCardState extends State<WhisperCard> {
         ],
       ),
       _ChargingOnlySwitch(settings: _s.settings, phone: _w.isPhone),
+      if (_w.isPhone)
+        _SecondPassSwitch(
+          whisper: _w,
+          downloaded: st.models.contains(kSecondPassModel),
+        ),
       // Sul telefono non c'è nulla di avanzato: niente sezione vuota.
       if (_advanced(context, d) case final adv when adv.isNotEmpty)
         AdvancedSection(children: adv),
@@ -673,4 +688,211 @@ class _ChargingOnlySwitchState extends State<_ChargingOnlySwitch> {
             if (mounted) setState(() => _on = v);
           },
   );
+}
+
+/// Nome del lavoro in background che scarica Parakeet.
+const kParakeetDownloadTitle = 'Download Parakeet';
+
+/// PC e Mac: Parakeet, il motore del testo istantaneo (e il ripiego di
+/// «Trascrivi con…»): peso, licenza, pagina ufficiale, download con
+/// «Annulla» e «Riprendi», «Elimina».
+class _ParakeetSection extends StatefulWidget {
+  const _ParakeetSection({required this.onChanged});
+  final VoidCallback onChanged;
+
+  @override
+  State<_ParakeetSection> createState() => _ParakeetSectionState();
+}
+
+class _ParakeetSectionState extends State<_ParakeetSection> {
+  late final AppServices _s = context.read<AppServices>();
+  late Future<({bool installed, int partial, String? reason})> _future =
+      _load();
+
+  Future<({bool installed, int partial, String? reason})> _load() async {
+    final pk = _s.whisper.parakeet;
+    return (
+      installed: await pk.installed(),
+      partial: await pk.downloadedBytes(),
+      reason: await pk.unavailableReason(),
+    );
+  }
+
+  void _reload() {
+    if (!mounted) return;
+    setState(() => _future = _load());
+    widget.onChanged();
+  }
+
+  void _download() {
+    final cancel = CancelToken();
+    _s.jobs.start(
+      kParakeetDownloadTitle,
+      onCancel: cancel.cancel,
+      (report) async {
+        await for (final p in _s.whisper.parakeet.download(cancel: cancel)) {
+          report(p.phase, p.fraction);
+        }
+        return null;
+      },
+      onFinished: (job) {
+        _reload();
+        if (!mounted) return;
+        showSnack(
+          context,
+          job.state == JobState.done
+              ? 'Parakeet scaricato: il testo istantaneo è pronto.'
+              : whisperDownloadFailed('Parakeet', job.error),
+        );
+      },
+    );
+  }
+
+  Future<void> _delete() async {
+    if (!await confirmDialog(
+      context,
+      'Eliminare Parakeet?',
+      'I file del modello (${kParakeetModel.disk}) vengono cancellati: senza '
+          'Parakeet il registratore non mostra il testo istantaneo (salvo un '
+          'modello Whisper scaricato). Potrai riscaricarlo.',
+    )) {
+      return;
+    }
+    await _s.whisper.parakeet.delete();
+    if (await _s.whisper.selectedModelId() == kParakeetId) {
+      await _s.whisper.setSelectedModel(null);
+    }
+    _reload();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.tokens;
+    return FutureBuilder(
+      future: _future,
+      builder: (context, snap) {
+        final d = snap.data;
+        final job = _s.jobs.runningTitled(kParakeetDownloadTitle);
+        return Column(
+          key: const Key('parakeet-section'),
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              'Testo istantaneo: Parakeet',
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+            const SizedBox(height: 4),
+            NoteText(
+              'NVIDIA Parakeet TDT 0.6B v3 · ${kParakeetModel.disk} · RAM '
+              '${kParakeetModel.ram} · 25 lingue europee, italiano compreso, '
+              'con punteggiatura e maiuscole. Trascrive mentre registri, '
+              'offline, e ripulisce i silenzi; dopo il salvataggio è il '
+              'ripiego di «Trascrivi con…».',
+              icon: Icons.bolt_outlined,
+            ),
+            if (d != null)
+              StatusLine(
+                d.reason ??
+                    (d.installed
+                        ? 'Parakeet scaricato: pronto.'
+                        : 'Non ancora scaricato: si scarica da solo alla prima '
+                              'registrazione (o adesso, qui sotto).'),
+                ok: d.reason == null && d.installed,
+                error: d.reason != null,
+              ),
+            if (job != null)
+              _JobProgress(job: job)
+            else if (d != null && d.reason == null)
+              Wrap(
+                spacing: 4,
+                runSpacing: 4,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: [
+                  if (d.installed)
+                    OutlinedButton.icon(
+                      onPressed: _delete,
+                      icon: const Icon(Icons.delete_outline, size: 18),
+                      label: const Text('Elimina'),
+                    )
+                  else
+                    OutlinedButton.icon(
+                      key: const Key('parakeet-download'),
+                      onPressed: _download,
+                      icon: const Icon(Icons.download_outlined, size: 18),
+                      label: Text(d.partial > 0 ? 'Riprendi' : 'Scarica'),
+                    ),
+                  const LinkText('Pagina ufficiale del modello', kParakeetPage),
+                ],
+              ),
+            Text(
+              'Licenza CC-BY-4.0: modello di NVIDIA (nvidia/parakeet-tdt-0.6b-v3), '
+              'convertito per sherpa-onnx da k2-fsa.',
+              style: TextStyle(fontSize: 11, color: t.textMuted),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+/// Telefono: «Seconda passata con small mentre registri» (accesa di
+/// predefinito: parte solo dove il telefono regge, vedi
+/// `WhisperService.secondPassUnfit`).
+class _SecondPassSwitch extends StatefulWidget {
+  const _SecondPassSwitch({required this.whisper, required this.downloaded});
+  final WhisperService whisper;
+  final bool downloaded;
+
+  @override
+  State<_SecondPassSwitch> createState() => _SecondPassSwitchState();
+}
+
+class _SecondPassSwitchState extends State<_SecondPassSwitch> {
+  bool? _on;
+  String? _unfit;
+
+  @override
+  void initState() {
+    super.initState();
+    () async {
+      final on = await widget.whisper.secondPassEnabled();
+      final unfit = await widget.whisper.secondPassUnfit();
+      if (mounted) {
+        setState(() {
+          _on = on;
+          _unfit = unfit;
+        });
+      }
+    }();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final small = whisperModelById(kSecondPassModel)!;
+    final sub = _unfit != null
+        ? '$_unfit Resta il testo del modello integrato.'
+        : (widget.downloaded
+              ? 'Mentre registri, il testo già confermato si ritrascrive a '
+                    'blocchi di 30 s con small, più preciso (le frasi che hai '
+                    'corretto restano). Si sospende se il telefono resta '
+                    'indietro, si scalda o ha meno del 20% di batteria.'
+              : 'Mentre registri, il testo già confermato si ritrascrive con '
+                    'small, più preciso. small q5_1 (${small.disk}) si '
+                    'scarica da solo con il Wi‑Fi alla prossima registrazione.');
+    return SwitchListTile(
+      key: const Key('whisper-second-pass'),
+      contentPadding: EdgeInsets.zero,
+      dense: true,
+      title: const Text('Seconda passata con small mentre registri'),
+      subtitle: Text(sub),
+      value: (_on ?? true) && _unfit == null,
+      onChanged: _on == null || _unfit != null
+          ? null
+          : (v) async {
+              await widget.whisper.setSecondPass(v);
+              if (mounted) setState(() => _on = v);
+            },
+    );
+  }
 }

@@ -78,7 +78,7 @@ jobs:
       - name: Elenco degli atenei e dei corsi nell'app (i dati dell'ateneo si scaricano)
         shell: bash
         run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
-      - name: Modello Whisper integrato (asset delle build Android, iOS e macOS, 57 MiB, non nel repository)
+      - name: Modello Whisper integrato (asset delle build Android e iOS, 57 MiB, non nel repository)
         shell: bash
         run: python3 tool/prepara_modello_whisper.py || python tool/prepara_modello_whisper.py
       - name: Licenze Android SDK e NDK (richiesto da whisper_ggml)
@@ -270,9 +270,8 @@ jobs:
       - name: Elenco degli atenei e dei corsi nell'app (i dati dell'ateneo si scaricano)
         shell: bash
         run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
-      - name: Modello Whisper integrato (asset delle build Android, iOS e macOS, 57 MiB, non nel repository)
-        shell: bash
-        run: python3 tool/prepara_modello_whisper.py || python tool/prepara_modello_whisper.py
+      # niente modello Whisper integrato: su Mac il testo dal vivo è di
+      # Parakeet, scaricato dall'app (l'asset è solo per Android e iOS)
       - run: flutter build macos --release --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
       # Firma con il certificato «Developer ID Application» e notarizzazione
       # di Apple: richiedono l'account Apple Developer. Senza i secret questi
@@ -348,7 +347,7 @@ jobs:
       - name: Elenco degli atenei e dei corsi nell'app (i dati dell'ateneo si scaricano)
         shell: bash
         run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
-      - name: Modello Whisper integrato (asset delle build Android, iOS e macOS, 57 MiB, non nel repository)
+      - name: Modello Whisper integrato (asset delle build Android e iOS, 57 MiB, non nel repository)
         shell: bash
         run: python3 tool/prepara_modello_whisper.py || python tool/prepara_modello_whisper.py
       - run: flutter build ios --release --no-codesign --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_IOS_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_IOS }} --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}

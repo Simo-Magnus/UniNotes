@@ -9,6 +9,8 @@ import 'package:path/path.dart' as p;
 import 'package:record/record.dart';
 import 'package:university_notes/core/database/app_database.dart';
 import 'package:university_notes/core/services/app_services.dart';
+import 'package:university_notes/core/services/power.dart';
+import 'package:university_notes/core/services/whisper_service.dart';
 import 'package:university_notes/features/notes/lecture_recorder.dart';
 import 'package:university_notes/features/notes/notes_store.dart';
 import 'package:university_notes/features/notes/recorder/background_controls.dart';
@@ -680,6 +682,50 @@ void main() {
     await s.delete();
     expect(wav.existsSync(), isFalse);
     expect(await RecordingSession.orphans(tmp), isEmpty);
+  });
+
+  test('motore dal vivo per piattaforma: il telefono usa il riconoscitore del '
+      'sistema, il PC no', () async {
+    Power.debugOnWifi = () async => false;
+    addTearDown(() => Power.debugOnWifi = null);
+    Future<LectureRecorder> started(WhisperHost host) async {
+      final rec = LectureRecorder(
+        recorder: _FakeRecorder.new,
+        workDir: () async => Directory(p.join(tmp.path, 'lavoro_$host')),
+        controls: () => const NoBackgroundControls(),
+        whisper: WhisperService(
+          baseDir: () async => Directory(p.join(tmp.path, 'w_$host')),
+          host: host,
+          builtInAsset: false,
+          freeSpace: (_) async => null,
+          modelUrl: (_) => Uri.parse('http://127.0.0.1:9/m'),
+        ),
+      );
+      await rec.start(
+        p.join(tmp.path, 'Appunti', 'Analisi', 'Registrazioni', 'L.m4a'),
+        course: 'Analisi',
+      );
+      return rec;
+    }
+
+    for (final host in [WhisperHost.android, WhisperHost.ios]) {
+      final rec = await started(host);
+      expect(rec.live!.speech, isNotNull, reason: '$host');
+      final take = await rec.stop();
+      await take?.live?.close();
+      // il file di lavoro (WAV) va tolto prima della cartella temporanea
+      await take?.session.delete();
+      rec.dispose();
+    }
+    for (final host in [WhisperHost.windows, WhisperHost.macos]) {
+      final rec = await started(host);
+      expect(rec.live!.speech, isNull, reason: '$host');
+      final take = await rec.stop();
+      await take?.live?.close();
+      // il file di lavoro (WAV) va tolto prima della cartella temporanea
+      await take?.session.delete();
+      rec.dispose();
+    }
   });
 
   test(

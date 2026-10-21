@@ -88,12 +88,12 @@ New-Item -ItemType Directory -Force -Path $pacchetto, $risorse | Out-Null
 Copy-Item -Path (Join-Path $Release '*') -Destination $pacchetto -Recurse
 Copy-Item -Path (Join-Path $qui 'Assets') -Destination $pacchetto -Recurse
 
-# modello Whisper per il testo dal vivo (windows/CMakeLists.txt)
-$modello = Join-Path $pacchetto 'data\whisper\ggml-base-q5_1.bin'
-if (Test-Path $modello) {
-  Write-Output ("Modello dal vivo incluso: data\whisper\ggml-base-q5_1.bin ({0:N0} MB)" -f ((Get-Item $modello).Length / 1MB))
-} else {
-  Avviso 'Modello Whisper dal vivo assente in data\whisper: l''app lo scarichera'' alla prima registrazione.'
+# testo dal vivo: Parakeet con sherpa-onnx (le DLL del plugin accanto
+# all'eseguibile; il modello lo scarica l'app alla prima registrazione)
+foreach ($dll in 'sherpa-onnx-c-api.dll', 'onnxruntime.dll') {
+  if (-not (Test-Path (Join-Path $pacchetto $dll))) {
+    Avviso "Manca $dll accanto a uninotes.exe: il testo dal vivo con Parakeet non funzionera'."
+  }
 }
 
 # --- manifest -----------------------------------------------------------------

@@ -35,6 +35,7 @@ class WhisperPluginEngine implements WhisperEngine {
     File model, {
     void Function(WhisperProgress)? onProgress,
     CancelToken? cancel,
+    WhisperOptions options = WhisperOptions.none,
   }) async {
     final tmp = await Directory.systemTemp.createTemp('whisper_chunks_');
     try {
@@ -71,6 +72,9 @@ class WhisperPluginEngine implements WhisperEngine {
               threads: threads,
               isNoTimestamps: false,
               keepModelLoaded: i < parts.length - 1,
+              initialPrompt: options.prompt,
+              suppressNonSpeechTokens: true,
+              vadModelPath: options.vad?.path,
             ),
             modelPath: model.path,
             onProgress: report,
@@ -78,7 +82,7 @@ class WhisperPluginEngine implements WhisperEngine {
           for (final s
               in res.segments ?? const <wg.WhisperTranscribeSegment>[]) {
             final text = s.text.trim();
-            if (text.isEmpty) continue;
+            if (text.isEmpty || isPromptEcho(text, options.prompt)) continue;
             out.add(
               WhisperSegment(offset + s.fromTs, text, end: offset + s.toTs),
             );
@@ -186,12 +190,24 @@ class WhisperPluginEngine implements WhisperEngine {
 /// Su Windows e Linux whisper_ggml prova a convertire l'audio con un
 /// `ffmpeg` nel PATH; se non c'è usa il file così com'è, che qui è già un
 /// WAV mono a 16 kHz.
+///
+/// Con le [options]: vocabolario del corso come `initialPrompt`, Silero VAD
+/// di whisper.cpp (i silenzi della finestra non vanno al modello: niente
+/// frasi inventate) e soppressione dei token non verbali.
 class PluginLiveWhisper extends LiveWhisper {
   PluginLiveWhisper(this._model, this.modelId);
   final File _model;
   @override
   final String modelId;
   final _whisper = const wg.Whisper(model: wg.WhisperModel.base);
+
+  /// Modello tenuto in memoria fra un pezzo e l'altro (whisper.cpp ne tiene
+  /// uno solo: la seconda passata con small non lo tiene, così il modello
+  /// del testo istantaneo resta caricato).
+  bool keepLoaded = true;
+
+  /// Thread di calcolo (meno per la seconda passata).
+  int? threads;
 
   @override
   Future<List<WhisperSegment>> transcribeWav(File wav16k) async {
@@ -200,21 +216,28 @@ class PluginLiveWhisper extends LiveWhisper {
         transcribeRequest: wg.TranscribeRequest(
           audio: wav16k.path,
           language: 'it',
-          threads: math.max(
-            1,
-            math.min(Platform.numberOfProcessors ~/ 2, quick ? 4 : 3),
-          ),
+          threads:
+              threads ??
+              math.max(
+                1,
+                math.min(Platform.numberOfProcessors ~/ 2, quick ? 4 : 3),
+              ),
           isNoTimestamps: false,
           // ogni finestra si trascrive da sola: il testo della precedente
           // non deve condizionarla (si ripeterebbe)
           noContext: true,
-          keepModelLoaded: true,
+          keepModelLoaded: keepLoaded,
+          initialPrompt: options.prompt,
+          suppressNonSpeechTokens: true,
+          vadModelPath: options.vad?.path,
+          // poco margine intorno al parlato: le finestre sono corte
+          vadSpeechPadMs: options.vad == null ? null : 100,
         ),
         modelPath: _model.path,
       );
       return [
         for (final s in res.segments ?? const <wg.WhisperTranscribeSegment>[])
-          if (s.text.trim().isNotEmpty)
+          if (s.text.trim().isNotEmpty && !isPromptEcho(s.text, options.prompt))
             WhisperSegment(s.fromTs, s.text.trim(), end: s.toTs),
       ];
     } finally {
@@ -228,6 +251,9 @@ class PluginLiveWhisper extends LiveWhisper {
 
   @override
   Future<void> close() async {
+    // senza modello in memoria non c'è niente da liberare (e il modello
+    // tenuto da whisper.cpp è quello di un altro, il testo istantaneo)
+    if (!keepLoaded) return;
     try {
       await _whisper.releaseModel();
     } catch (_) {

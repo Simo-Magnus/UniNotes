@@ -11,19 +11,20 @@ import '../../core/theme/app_tokens.dart';
 import '../../models/course.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
-import '../links/whisper_models.dart' show kLiveWhisperModel;
 import '../study/course_catalog.dart';
 import '../study/study_widgets.dart' show promptText;
 import 'lecture_recorder.dart';
 import 'notes_screen.dart';
 import 'course_notes_screen.dart';
 import 'recorder/better_transcription.dart';
+import 'recorder/course_vocabulary.dart';
 import 'recorder/live_transcriber.dart';
 import 'recorder/live_transcript_editor.dart';
 import 'recorder/recording_meta.dart';
 import 'recorder/recording_overlay.dart'
     show appNavigatorKey, confirmDeleteRecording;
 import 'recorder/recording_save.dart';
+import 'recorder/system_speech.dart' show speechNotice;
 import 'recorder/waveform.dart';
 import 'spell_check.dart' show spellLanguageOf;
 
@@ -34,7 +35,8 @@ export 'recorder/live_transcript_editor.dart'
 /// registra. Durante la registrazione: tempo, forma d'onda, pausa e
 /// ripresa (pulsante grande), «Segna» (segnalibro al tempo attuale, con
 /// nota facoltativa) e la card «Trascrizione» con il parlato trascritto in
-/// tempo reale (sempre Whisper con il modello integrato) ed «Elimina» (la
+/// tempo reale (Parakeet su PC e Mac, Whisper con il modello integrato sul
+/// telefono) ed «Elimina» (la
 /// registrazione in corso va in «Eliminati di recente», con conferma).
 /// «Salva» ferma e salva (Appunti → corso → Registrazioni) e porta alla
 /// pagina del corso, alla card «Registrazioni delle lezioni».
@@ -118,6 +120,7 @@ class _RecorderScreenState extends State<RecorderScreen> {
         course: c.name,
         courseId: c.id,
         language: c.examLanguage,
+        vocabulary: await loadCourseVocabulary(_s.study, c.id, c.name),
       );
       _rec.live?.formulas = _formulas;
     } on RecorderException catch (e) {
@@ -551,7 +554,6 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
       color: theme.colorScheme.onSurfaceVariant,
     );
     final state = live?.state ?? LiveState.off;
-    final system = live?.engine == LiveEngine.system;
     Widget body;
     if (segs.isNotEmpty || partial.isNotEmpty) {
       // testo stabilizzato, poi quello provvisorio (più chiaro) che si
@@ -575,7 +577,11 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
         ),
       );
     } else if (live != null && live.downloading) {
-      body = _DownloadProgress(fraction: live.downloadProgress);
+      body = _DownloadProgress(
+        fraction: live.downloadProgress,
+        what: live.downloadWhat,
+        onCancel: live.cancelDownload,
+      );
     } else {
       body = Text(switch (state) {
         LiveState.off when !widget.recording =>
@@ -588,6 +594,14 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
         _ => 'In ascolto…',
       }, style: muted);
     }
+    final notice = live == null || live.engine == LiveEngine.system
+        ? null
+        : speechNotice(
+            live.systemUnavailable,
+            languageMissing: live.systemLanguageMissing,
+            locale: live.locale,
+            whisper: live.engine == LiveEngine.whisper,
+          );
     return GlassCard(
       margin: EdgeInsets.zero,
       child: Padding(
@@ -611,13 +625,19 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
                 ),
                 if (state == LiveState.running || state == LiveState.lagging)
                   Text(
-                    system
-                        ? (live!.onDevice
-                              ? 'dal vivo · sul dispositivo'
-                              : 'dal vivo')
-                        : (live!.quick || live.modelId == null
-                              ? 'dal vivo · Whisper integrato'
-                              : 'dal vivo · Whisper ${live.modelId}'),
+                    switch (live!.engine) {
+                      LiveEngine.system =>
+                        (live.onDevice
+                                ? 'dal vivo · sul dispositivo'
+                                : 'dal vivo') +
+                            (live.secondPassActive ? ' + small' : ''),
+                      LiveEngine.parakeet => 'dal vivo · Parakeet',
+                      _ when live.quick || live.modelId == null =>
+                        live.secondPassActive
+                            ? 'dal vivo · Whisper integrato + small'
+                            : 'dal vivo · Whisper integrato',
+                      _ => 'dal vivo · Whisper ${live.modelId}',
+                    },
                     style: theme.textTheme.labelSmall?.copyWith(
                       color: context.tokens.cyanSoft,
                     ),
@@ -655,6 +675,7 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
             if (state == LiveState.unavailable)
               _SetupHint(
                 downloadFailed: live?.downloadError != null,
+                reason: live?.parakeetUnavailable,
                 onOpen: () => openWhisperLinks(context),
               )
             else
@@ -662,8 +683,45 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
             if (state == LiveState.lagging) ...[
               const SizedBox(height: 8),
               Text(
-                'Whisper è un po\' indietro: i pezzi saltati si completano '
-                'dopo il salvataggio.',
+                '${live?.engine == LiveEngine.parakeet ? 'Parakeet' : 'Whisper'} '
+                'è un po\' indietro: i pezzi saltati si completano dopo il '
+                'salvataggio.',
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+              ),
+            ],
+            // telefono: perché il riconoscitore del sistema non trascrive
+            // (lingua, permesso…), anche mentre trascrive Whisper
+            if (notice case final n?) ...[
+              const SizedBox(height: 10),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 2),
+                    child: Icon(
+                      Icons.info_outline,
+                      size: 18,
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      [n.text, ?n.note].join(' '),
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+            if (live?.secondPassNote case final note?) ...[
+              const SizedBox(height: 8),
+              Text(
+                note,
                 style: theme.textTheme.bodySmall?.copyWith(
                   color: theme.colorScheme.onSurfaceVariant,
                 ),
@@ -676,11 +734,14 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
   }
 }
 
-/// Download del modello per il testo dal vivo (solo la prima volta, dove
-/// non è incluso nell'app).
+/// Download del modello per il testo dal vivo (solo la prima volta: Parakeet
+/// su PC e Mac, il modello integrato in una build del telefono che non lo
+/// include), con «Annulla».
 class _DownloadProgress extends StatelessWidget {
-  const _DownloadProgress({this.fraction});
+  const _DownloadProgress({this.fraction, required this.what, this.onCancel});
   final double? fraction;
+  final String what;
+  final VoidCallback? onCancel;
 
   @override
   Widget build(BuildContext context) {
@@ -690,8 +751,7 @@ class _DownloadProgress extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          'Scarico il modello per il testo dal vivo '
-          '(${kLiveWhisperModel.disk}, una volta sola)…$pct',
+          'Scarico $what per il testo dal vivo, una volta sola…$pct',
           style: theme.textTheme.bodyMedium?.copyWith(
             color: theme.colorScheme.onSurfaceVariant,
           ),
@@ -700,22 +760,38 @@ class _DownloadProgress extends StatelessWidget {
         LinearProgressIndicator(value: fraction),
         const SizedBox(height: 6),
         Text(
-          'La registrazione è già partita: il parlato di questi secondi si '
+          'La registrazione è già partita: il parlato di questi minuti si '
           'trascrive dopo il salvataggio.',
           style: theme.textTheme.bodySmall?.copyWith(
             color: theme.colorScheme.onSurfaceVariant,
           ),
         ),
+        if (onCancel != null)
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              key: const Key('live-download-cancel'),
+              onPressed: onCancel,
+              child: const Text('Annulla'),
+            ),
+          ),
       ],
     );
   }
 }
 
-/// Né il sistema né Whisper trascrivono: come avere il testo dal vivo.
+/// Nessun motore trascrive: perché e come avere il testo dal vivo.
 class _SetupHint extends StatelessWidget {
-  const _SetupHint({required this.onOpen, this.downloadFailed = false});
+  const _SetupHint({
+    required this.onOpen,
+    this.downloadFailed = false,
+    this.reason,
+  });
   final VoidCallback onOpen;
   final bool downloadFailed;
+
+  /// Perché Parakeet non si usa (PC e Mac).
+  final String? reason;
 
   @override
   Widget build(BuildContext context) {
@@ -728,7 +804,13 @@ class _SetupHint extends StatelessWidget {
               ? 'Il modello per il testo dal vivo non si è scaricato (serve '
                     'internet la prima volta): si riprova alla prossima '
                     'registrazione. La registrazione continua.'
-              : 'Per il testo dal vivo scarica un modello Whisper.',
+              : (reason != null
+                    ? '$reason Per il testo dal vivo scarica un modello '
+                          'Whisper; la registrazione continua.'
+                    : (Platform.isAndroid || Platform.isIOS
+                          ? 'Per il testo dal vivo scarica un modello Whisper.'
+                          : 'Per il testo dal vivo scarica Parakeet (o un '
+                                'modello Whisper).')),
           style: theme.textTheme.bodyMedium?.copyWith(
             color: theme.colorScheme.onSurfaceVariant,
           ),

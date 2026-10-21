@@ -18,6 +18,7 @@ class _FakeEngine implements WhisperEngine {
     File model, {
     void Function(WhisperProgress)? onProgress,
     CancelToken? cancel,
+    WhisperOptions options = WhisperOptions.none,
   }) async {
     calls.add((p.basename(audio.path), p.basename(model.path)));
     onProgress?.call(

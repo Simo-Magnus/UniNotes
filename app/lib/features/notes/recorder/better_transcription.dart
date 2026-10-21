@@ -15,9 +15,10 @@ import 'recording_meta.dart';
 import 'recording_overlay.dart' show appNavigatorKey;
 
 /// Dopo il salvataggio di una registrazione: se l'utente ha scaricato un
-/// modello Whisper più accurato di quello integrato (che fa il testo
-/// istantaneo ma non sta al passo con i modelli grandi), si propone di
-/// trascrivere di nuovo la lezione con quello, con il tempo stimato.
+/// modello Whisper più accurato del motore che ha fatto il testo
+/// istantaneo (Parakeet su PC e Mac, il modello integrato sul telefono),
+/// si propone di trascrivere di nuovo la lezione con quello, con il tempo
+/// stimato.
 ///
 /// Riquadro con due pulsanti, «Non ora» e «Trascrivi», e la casella «Fallo
 /// sempre in automatico»: spuntata (con «Trascrivi») le volte successive la
@@ -47,6 +48,8 @@ double baseWhisperFactor(String id) {
     'medium' => 0.55,
     'large-v3-turbo' => 0.45,
     'large-v1' || 'large-v2' || 'large-v3' => 1.1,
+    // misurato: 0,046 con 2 thread su un portatile a 8 core (VAD compreso)
+    kParakeetId => 0.06,
     _ => 0.6,
   };
   // i quantizzati sono un po' più veloci sulla CPU
@@ -124,10 +127,12 @@ Future<void> recordWhisperSpeed(
 WhisperModelInfo? betterThanLive(WhisperModelInfo? best, String? liveModel) {
   if (best == null || best.id == kBuiltInWhisperModel.id) return null;
   if (best.id == liveModel) return null;
-  if (whisperAccuracyRank(best.id) >=
-      whisperAccuracyRank(kBuiltInWhisperModel.id)) {
-    return null;
-  }
+  // si confronta con il motore del testo dal vivo (Parakeet su PC e Mac),
+  // se si sa, altrimenti con il modello integrato
+  final ref = whisperModelById(liveModel) == null
+      ? kBuiltInWhisperModel.id
+      : liveModel!;
+  if (whisperAccuracyRank(best.id) >= whisperAccuracyRank(ref)) return null;
   return best;
 }
 
@@ -141,10 +146,8 @@ Future<void> offerBetterTranscription(
   File saved,
 ) async {
   try {
-    final best = betterThanLive(
-      await s.whisper.resolveModel(),
-      await _liveModelOf(saved),
-    );
+    final live = await _liveModelOf(saved);
+    final best = betterThanLive(await s.whisper.resolveModel(), live);
     if (best == null) return;
     final meta = await RecordingMeta.load(saved.path);
     final audio =
@@ -192,6 +195,7 @@ Future<void> offerBetterTranscription(
       model: label,
       eta: eta,
       again: again,
+      liveBy: live == kParakeetId ? 'di Parakeet' : 'del modello integrato',
     );
     if (choice == null || !choice.transcribe || !nav.mounted) return;
     if (choice.always) {
@@ -210,6 +214,7 @@ Future<void> offerBetterTranscription(
 Future<String?> _liveModelOf(File saved) async {
   try {
     final src = (await RecordingMeta.load(saved.path)).transcriptSource ?? '';
+    if (src.contains('Parakeet')) return kParakeetId;
     return RegExp(r'Whisper (\S+)').firstMatch(src)?.group(1);
   } catch (_) {
     return null;
@@ -224,6 +229,7 @@ Future<({bool transcribe, bool always})?> showBetterTranscriptionDialog(
   required String model,
   required Duration eta,
   bool again = true,
+  String liveBy = 'del modello integrato',
 }) {
   var always = false;
   return showDialog<({bool transcribe, bool always})>(
@@ -242,9 +248,9 @@ Future<({bool transcribe, bool always})?> showBetterTranscriptionDialog(
           children: [
             Text(
               again
-                  ? 'Il testo dal vivo è del modello integrato, veloce ma meno '
-                        'preciso. Con $model, che hai scaricato, la trascrizione '
-                        'è più accurata.'
+                  ? 'Il testo dal vivo è $liveBy, veloce ma meno preciso. '
+                        'Con $model, che hai scaricato, la trascrizione è più '
+                        'accurata.'
                   : 'Con $model, che hai scaricato, la lezione viene '
                         'trascritta in modo accurato.',
             ),

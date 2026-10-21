@@ -31,8 +31,9 @@ enum RecorderPhase { idle, recording, paused }
 /// Registratore delle lezioni, come Memo Vocali: audio PCM 16 kHz mono dal
 /// microfono (`record`, flusso PCM su Android, iOS, macOS e Windows)
 /// scritto man mano in un WAV di lavoro (niente audio perso se l'app si
-/// chiude), forma d'onda, segnalibri e trascrizione dal vivo (sempre Whisper
-/// con il modello integrato, a finestre di ~2 s).
+/// chiude), forma d'onda, segnalibri e trascrizione dal vivo (Parakeet su
+/// PC e Mac, Whisper con il modello integrato sul telefono; vedi
+/// recorder/live_transcriber.dart).
 /// Al salvataggio (recorder/recording_save.dart) il WAV diventa un `.m4a`.
 ///
 /// Con l'app in background la registrazione continua: servizio in primo
@@ -54,10 +55,10 @@ class LectureRecorder extends ChangeNotifier {
   final WhisperService? _whisper;
   final BackgroundControls Function() _controlsFactory;
 
-  /// Riconoscimento vocale del sistema per il testo istantaneo: null (il
-  /// predefinito) = sempre Whisper con il modello integrato. Su Windows con
-  /// «Riconoscimento vocale online» il testo istantaneo del sistema non
-  /// arrivava; Whisper funziona uguale ovunque e offline.
+  /// Riconoscimento vocale del sistema per il testo istantaneo (test): null
+  /// (il predefinito) = lo crea il registratore solo se [liveEngineOrder]
+  /// lo prevede per questa piattaforma. Su Windows con «Riconoscimento
+  /// vocale online» il testo istantaneo del sistema non arrivava.
   final SystemSpeech? _speech;
 
   // il registratore del sistema si crea al primo uso (nei test non serve)
@@ -198,6 +199,7 @@ class LectureRecorder extends ChangeNotifier {
     required String course,
     int? courseId,
     String? language,
+    List<String> vocabulary = const [],
   }) async {
     if (active || saving) {
       throw RecorderException('Una registrazione è già in corso.');
@@ -304,10 +306,18 @@ class LectureRecorder extends ChangeNotifier {
       },
     );
     _state = audio.onStateChanged().listen(_onState, onError: (_) {});
+    // riconoscitore del sistema solo se la scelta per piattaforma lo
+    // prevede (liveEngineOrder, oggi su nessun sistema)
+    final phone = _whisper?.isPhone ?? (Platform.isAndroid || Platform.isIOS);
     final lt = LiveTranscriber(
       _whisper,
-      speech: _speech,
+      speech:
+          _speech ??
+          (liveEngineOrder(phone: phone).contains(LiveEngine.system)
+              ? SystemSpeech()
+              : null),
       locale: speechLocaleFor(language),
+      vocabulary: vocabulary,
     )..onSegments = _saveSessionSoon;
     live = lt;
     unawaited(

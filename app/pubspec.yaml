@@ -61,6 +61,9 @@ dependencies:
   flutter_web_auth_2: ^5.1.0
   connectivity_plus: ^7.2.0
   whisper_ggml: ^2.7.1
+  # Testo dal vivo su desktop: NVIDIA Parakeet TDT 0.6B v3 con Silero VAD
+  # (sherpa-onnx di k2-fsa, licenza Apache-2.0; ONNX Runtime incluso).
+  sherpa_onnx: ^1.13.8
   ffmpeg_kit_flutter_new_min: ^2.1.0
   # Lettore universale: formati Office/ODF/EPUB (xml, html), SVG, immagini,
   # audio/video, trascinamento dei file su desktop, liste con salto all'elemento.
@@ -120,11 +123,17 @@ flutter:
     - assets/notifiche/
     # Suoni brevi dell'app, sintetizzati da tool/genera_suoni.py.
     - assets/suoni/
-    # Modello Whisper integrato (ggml-base-q5_1.bin, 57 MiB), scaricato prima
-    # della build da tool/prepara_modello_whisper.py (non è nel repository).
-    # Windows lo installa accanto all'eseguibile (windows/CMakeLists.txt).
+    # Modello Whisper integrato (ggml-base-q5_1.bin, 57 MiB), solo per il
+    # telefono: scaricato prima della build da tool/prepara_modello_whisper.py
+    # (non è nel repository). Su PC e Mac il testo istantaneo è di Parakeet,
+    # che si scarica nell'app: l'asset non entra nei pacchetti desktop.
     - path: assets/whisper/
-      platforms: [android, ios, macos, linux]
+      platforms: [android, ios]
+    # Silero VAD (MIT): per whisper.cpp in formato ggml (tutte le build) e
+    # per Parakeet/sherpa-onnx in ONNX (solo desktop). ~1,5 MB in tutto.
+    - path: assets/vad/ggml-silero-v5.1.2.bin
+    - path: assets/vad/silero_vad.onnx
+      platforms: [windows, macos, linux]
 
   # IBM Plex (licenza SIL OFL, assets/fonts/OFL.txt): interfaccia ed export PDF.
   fonts:

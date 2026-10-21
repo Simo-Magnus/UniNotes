@@ -23,7 +23,9 @@ const kLicensesIntro =
     'non è un servizio ufficiale degli atenei.\n'
     'Caratteri: IBM Plex (SIL Open Font License 1.1).\n'
     'Trascrizione locale: whisper.cpp (MIT) con i modelli Whisper di OpenAI '
-    '(MIT), scaricati a parte.\n'
+    '(MIT), scaricati a parte; su PC e Mac sherpa-onnx (Apache-2.0) con '
+    'Parakeet TDT 0.6B v3 di NVIDIA (CC-BY-4.0, scaricato a parte) e Silero '
+    'VAD (MIT).\n'
     'Termini d\'uso e informativa privacy: TERMINI.md e PRIVACY.md su '
     'github.com/Simo-Magnus/UniNotes.\n'
     'Qui sotto le licenze delle librerie usate dall\'app.';

@@ -82,13 +82,15 @@ class FileDownloader {
 
   /// Scarica [url] in [target] (prima in `<target>.part`, poi rinominato).
   /// [expectedBytes] serve al controllo dello spazio prima di iniziare;
-  /// [sha1] (esadecimale) verifica il file completo.
+  /// [sha1] o [sha256] (esadecimali) verificano il file completo (lo
+  /// SHA-256 è quello che Hugging Face pubblica per i file grandi).
   Stream<DownloadProgress> download(
     Uri url,
     File target, {
     CancelToken? cancel,
     int? expectedBytes,
     String? sha1,
+    String? sha256,
   }) async* {
     final part = File('${target.path}.part');
     await target.parent.create(recursive: true);
@@ -175,6 +177,16 @@ class FileDownloader {
           );
         }
       }
+      if (sha256 != null && sha256.isNotEmpty) {
+        final digest = await sha256Of(part);
+        if (digest.toLowerCase() != sha256.toLowerCase()) {
+          await part.delete();
+          throw DownloadException(
+            'Il file scaricato è danneggiato (impronta SHA-256 diversa): '
+            'riprova il download.',
+          );
+        }
+      }
       if (await target.exists()) await target.delete();
       await part.rename(target.path);
     } on DownloadCancelled {
@@ -194,6 +206,11 @@ class FileDownloader {
     }
   }
 
+  /// Errore se nella cartella [dir] non ci sono [needed] byte liberi (più
+  /// il margine): per più file da scaricare insieme.
+  Future<void> checkSpace(Directory dir, int needed) =>
+      _checkSpace(dir, needed);
+
   Future<void> _checkSpace(Directory dir, int needed) async {
     if (needed <= 0) return;
     int? free;
@@ -212,6 +229,9 @@ class FileDownloader {
 
   static Future<String> sha1Of(File f) async =>
       (await sha1.bind(f.openRead()).first).toString();
+
+  static Future<String> sha256Of(File f) async =>
+      (await sha256.bind(f.openRead()).first).toString();
 
   /// Spazio libero sul disco di [dir] (null = non determinabile).
   static Future<int?> defaultFreeSpace(Directory dir) async {
