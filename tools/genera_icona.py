@@ -10,7 +10,7 @@ rimpicciolisce: niente browser né librerie SVG.
 
 Scrive tutte le versioni usate dalle piattaforme:
 - Android: icona adattiva di Android 8+ (primo piano trasparente nella zona
-  sicura con il baricentro del logo al centro, fondo bianco; usata anche
+  sicura con la U al centro, fondo bianco; usata anche
   dallo splash di Android 12+), icona monocromatica per le icone a tema di
   Android 13 e, per Android 7, mipmap-*/ic_launcher.png (tessera bianca
   arrotondata) e ic_launcher_round.png con la stessa composizione
@@ -21,7 +21,7 @@ Scrive tutte le versioni usate dalle piattaforme:
   ombra leggera, come il modello di Apple)
 - Windows: runner/resources/app_icon.ico e icona dell'area di notifica
   (assets/tray), con il logo più grande nella tessera per restare leggibile
-  a 16 px (centrato sul baricentro: la U al centro, il cappello sporge)
+  a 16 px (la U al centro, il cappello sporge)
 - docs/icona.png (anteprima 1024), sito/icona.png e sito/favicon.png
 
 Le icone del pacchetto MSIX (app/windows/msix/genera_icone.py) e le grafiche
@@ -53,11 +53,11 @@ NS = "{http://www.w3.org/2000/svg}"
 BIANCO = (255, 255, 255)
 RAGGIO = 0.225  # angoli delle tessere arrotondate, rispetto al lato
 # icone piccole (16-64 px: Windows, area di notifica, favicon): logo più
-# grande e centrato (baricentro) nella tessera; il punto più lontano dal
+# grande e con la U al centro della tessera; il punto più lontano dal
 # centro resta entro metà di questa frazione del lato
 ALTEZZA_PICCOLE = 0.84
 # icona adattiva di Android: raggio, sul lato di 108 dp, del cerchio attorno
-# al baricentro che contiene tutto il logo (zona sicura: cerchio di 66 dp,
+# al centro della U che contiene tutto il logo (zona sicura: cerchio di 66 dp,
 # raggio 33; 2 dp di margine perché nessuna maschera tocchi il cappello)
 RAGGIO_ADATTIVA = 31 / 108
 # icone monocromatiche: distacco tra la fascia del cappello e la U (unità
@@ -373,26 +373,14 @@ def riquadro_logo() -> tuple[float, float, float, float]:
 
 
 @lru_cache(maxsize=1)
-def baricentro_logo() -> tuple[float, float]:
-    """Baricentro (unità dell'SVG) del logo a colori, pesato con la
-    copertura dei pixel: il centro ottico. Il logo non è simmetrico (il
-    cappello, leggero, sporge a sinistra della U, che porta quasi tutto il
-    peso): centrando il riquadro o il cerchio minimo la U finiva a destra
-    e in basso (fino a 4 dp su 72 nell'icona adattiva); centrando il
-    baricentro la U sta al centro e il cappello sporge, come nel logo
-    approvato (il suo baricentro è a meno di 1 unità su 100 dal centro)."""
-    lato = 1254
-    alpha = disegna(lato).getchannel("A")
-    w = alpha.width
-    sx = sy = n = 0
-    for i, v in enumerate(alpha.getdata()):
-        if v:
-            y, x = divmod(i, w)
-            sx += (x + 0.5) * v
-            sy += (y + 0.5) * v
-            n += v
-    k = leggi_logo()[0] / lato
-    return sx / n * k, sy / n * k
+def centro_u() -> tuple[float, float]:
+    """Centro (unità dell'SVG) del riquadro della U: è il punto che va al
+    centro di ogni icona e anteprima. La U deve stare esattamente al centro;
+    il cappello sporge in alto a sinistra (nell'SVG approvato la U era 22
+    unità a destra e 35 in basso rispetto al centro del quadrato)."""
+    p = [pt for c in _forma("lettera").contorni for pt in c]
+    xs, ys = [x for x, _ in p], [y for _, y in p]
+    return (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
 
 
 def raggio_da(centro: tuple[float, float]) -> float:
@@ -402,17 +390,17 @@ def raggio_da(centro: tuple[float, float]) -> float:
 
 
 def posizione_adattiva() -> tuple[tuple[float, float], float]:
-    """Centro e zoom del logo nell'icona adattiva di Android: baricentro al
-    centro, tutto il logo nel cerchio di RAGGIO_ADATTIVA (zona sicura)."""
-    c = baricentro_logo()
+    """Centro e zoom del logo nell'icona adattiva di Android: U al centro,
+    tutto il logo nel cerchio di RAGGIO_ADATTIVA (zona sicura)."""
+    c = centro_u()
     return c, RAGGIO_ADATTIVA * leggi_logo()[0] / raggio_da(c)
 
 
 def posizione_piccole() -> tuple[tuple[float, float], float]:
-    """Centro e zoom del logo nelle tessere piccole: baricentro al centro,
-    il punto più lontano in orizzontale o in verticale a ALTEZZA_PICCOLE / 2
-    del lato dal centro."""
-    cx, cy = baricentro_logo()
+    """Centro e zoom del logo nelle tessere piccole: U al centro, il punto
+    più lontano in orizzontale o in verticale a ALTEZZA_PICCOLE / 2 del lato
+    dal centro."""
+    cx, cy = centro_u()
     x0, y0, x1, y1 = riquadro_logo()
     semi = max(cx - x0, x1 - cx, cy - y0, y1 - cy)
     return (cx, cy), ALTEZZA_PICCOLE / 2 * leggi_logo()[0] / semi
@@ -431,9 +419,9 @@ def _arrotonda(img: Image.Image, raggio: float = RAGGIO, margine: float = 0.0) -
 
 def tessera(lato: int = S, piccola: bool = False) -> Image.Image:
     """Il logo su un quadrato bianco con gli angoli arrotondati (fondo
-    trasparente fuori). Come nell'SVG approvato o, per le icone [piccola],
-    più grande e centrato sul baricentro (posizione_piccole)."""
-    zoom, centro = 1.0, None
+    trasparente fuori). Grande come nell'SVG approvato o, per le icone
+    [piccola], più grande (posizione_piccole); sempre con la U al centro."""
+    zoom, centro = 1.0, centro_u()
     if piccola:
         centro, zoom = posizione_piccole()
     base = Image.new("RGBA", (lato, lato), BIANCO + (255,))
@@ -441,8 +429,10 @@ def tessera(lato: int = S, piccola: bool = False) -> Image.Image:
 
 
 def icona_piena() -> Image.Image:
-    """Quadrato bianco pieno come nell'SVG (iOS lo arrotonda da sé)."""
-    return disegna(S, senza=())
+    """Quadrato bianco pieno con il logo grande come nell'SVG e la U al
+    centro (iOS lo arrotonda da sé)."""
+    base = Image.new("RGBA", (S, S), BIANCO + (255,))
+    return Image.alpha_composite(base, disegna(S, 1.0, centro_u()))
 
 
 def icona_mac() -> Image.Image:
