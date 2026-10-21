@@ -12,4 +12,8 @@
     <color name="widget_record_top">#FFFFB064</color>
     <color name="widget_record_bottom">#FFE86F08</color>
     <color name="widget_on_record">#FF1A0B00</color>
+    <!-- Pulsanti della notifica della registrazione (RecordingNotification.kt) -->
+    <color name="notifica_pulsante_fondo">#2E38BDF8</color>
+    <color name="notifica_pulsante_premuto">#5238BDF8</color>
+    <color name="notifica_pulsante_testo">#FF7DD3FC</color>
 </resources>

@@ -9,9 +9,11 @@ disegna con Pillow a 4096 px campionando le curve in poligoni fitti, poi
 rimpicciolisce: niente browser né librerie SVG.
 
 Scrive tutte le versioni usate dalle piattaforme:
-- Android: mipmap-*/ic_launcher.png (tessera bianca arrotondata), icona
-  adattiva di Android 8+ (primo piano trasparente nella zona sicura, fondo
-  bianco) e icona monocromatica per le icone a tema di Android 13
+- Android: icona adattiva di Android 8+ (primo piano trasparente nella zona
+  sicura con il baricentro del logo al centro, fondo bianco; usata anche
+  dallo splash di Android 12+), icona monocromatica per le icone a tema di
+  Android 13 e, per Android 7, mipmap-*/ic_launcher.png (tessera bianca
+  arrotondata) e ic_launcher_round.png con la stessa composizione
 - Android: drawable-*/ic_stat_uninotes.png, icona piccola delle notifiche
   (sagoma bianca della U e del cappello, su fondo trasparente)
 - iOS: Assets.xcassets/AppIcon.appiconset (quadrato bianco, senza trasparenza)
@@ -19,7 +21,7 @@ Scrive tutte le versioni usate dalle piattaforme:
   ombra leggera, come il modello di Apple)
 - Windows: runner/resources/app_icon.ico e icona dell'area di notifica
   (assets/tray), con il logo più grande nella tessera per restare leggibile
-  a 16 px
+  a 16 px (centrato sul baricentro: la U al centro, il cappello sporge)
 - docs/icona.png (anteprima 1024), sito/icona.png e sito/favicon.png
 
 Le icone del pacchetto MSIX (app/windows/msix/genera_icone.py) e le grafiche
@@ -51,11 +53,13 @@ NS = "{http://www.w3.org/2000/svg}"
 BIANCO = (255, 255, 255)
 RAGGIO = 0.225  # angoli delle tessere arrotondate, rispetto al lato
 # icone piccole (16-64 px: Windows, area di notifica, favicon): logo più
-# grande e centrato nella tessera, alto questa frazione del lato
+# grande e centrato (baricentro) nella tessera; il punto più lontano dal
+# centro resta entro metà di questa frazione del lato
 ALTEZZA_PICCOLE = 0.84
-# icona adattiva di Android: raggio del cerchio che contiene il logo, sul
-# lato di 108 dp (zona sicura: cerchio di 66 dp, raggio 33)
-RAGGIO_ADATTIVA = 32 / 108
+# icona adattiva di Android: raggio, sul lato di 108 dp, del cerchio attorno
+# al baricentro che contiene tutto il logo (zona sicura: cerchio di 66 dp,
+# raggio 33; 2 dp di margine perché nessuna maschera tocchi il cappello)
+RAGGIO_ADATTIVA = 31 / 108
 # icone monocromatiche: distacco tra la fascia del cappello e la U (unità
 # dell'SVG), così nella sagoma la curva della U resta visibile
 STACCO = 20
@@ -369,33 +373,49 @@ def riquadro_logo() -> tuple[float, float, float, float]:
 
 
 @lru_cache(maxsize=1)
-def cerchio_logo() -> tuple[float, float, float]:
-    """Centro e raggio (unità dell'SVG) del cerchio più piccolo che contiene
-    il logo: serve a centrarlo nelle maschere rotonde (icona adattiva)."""
-    punti = _punti_logo()
+def baricentro_logo() -> tuple[float, float]:
+    """Baricentro (unità dell'SVG) del logo a colori, pesato con la
+    copertura dei pixel: il centro ottico. Il logo non è simmetrico (il
+    cappello, leggero, sporge a sinistra della U, che porta quasi tutto il
+    peso): centrando il riquadro o il cerchio minimo la U finiva a destra
+    e in basso (fino a 4 dp su 72 nell'icona adattiva); centrando il
+    baricentro la U sta al centro e il cappello sporge, come nel logo
+    approvato (il suo baricentro è a meno di 1 unità su 100 dal centro)."""
+    lato = 1254
+    alpha = disegna(lato).getchannel("A")
+    w = alpha.width
+    sx = sy = n = 0
+    for i, v in enumerate(alpha.getdata()):
+        if v:
+            y, x = divmod(i, w)
+            sx += (x + 0.5) * v
+            sy += (y + 0.5) * v
+            n += v
+    k = leggi_logo()[0] / lato
+    return sx / n * k, sy / n * k
 
-    def raggio(cx, cy):
-        return max(math.hypot(x - cx, y - cy) + r for x, y, r in punti)
 
-    cx = (min(p[0] for p in punti) + max(p[0] for p in punti)) / 2
-    cy = (min(p[1] for p in punti) + max(p[1] for p in punti)) / 2
-    best = raggio(cx, cy)
-    passo = 32.0
-    while passo > 0.25:  # discesa a passi che si dimezzano (funzione convessa)
-        meglio = False
-        for ddx, ddy in ((1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (1, -1), (-1, 1), (-1, -1)):
-            r = raggio(cx + ddx * passo, cy + ddy * passo)
-            if r < best:
-                cx, cy, best, meglio = cx + ddx * passo, cy + ddy * passo, r, True
-        if not meglio:
-            passo /= 2
-    return cx, cy, best
+def raggio_da(centro: tuple[float, float]) -> float:
+    """Distanza (unità dell'SVG) del punto del logo più lontano da [centro]."""
+    cx, cy = centro
+    return max(math.hypot(x - cx, y - cy) + r for x, y, r in _punti_logo())
 
 
 def posizione_adattiva() -> tuple[tuple[float, float], float]:
-    """Centro e zoom del logo nell'icona adattiva di Android."""
-    cx, cy, r = cerchio_logo()
-    return (cx, cy), RAGGIO_ADATTIVA * leggi_logo()[0] / r
+    """Centro e zoom del logo nell'icona adattiva di Android: baricentro al
+    centro, tutto il logo nel cerchio di RAGGIO_ADATTIVA (zona sicura)."""
+    c = baricentro_logo()
+    return c, RAGGIO_ADATTIVA * leggi_logo()[0] / raggio_da(c)
+
+
+def posizione_piccole() -> tuple[tuple[float, float], float]:
+    """Centro e zoom del logo nelle tessere piccole: baricentro al centro,
+    il punto più lontano in orizzontale o in verticale a ALTEZZA_PICCOLE / 2
+    del lato dal centro."""
+    cx, cy = baricentro_logo()
+    x0, y0, x1, y1 = riquadro_logo()
+    semi = max(cx - x0, x1 - cx, cy - y0, y1 - cy)
+    return (cx, cy), ALTEZZA_PICCOLE / 2 * leggi_logo()[0] / semi
 
 
 def _arrotonda(img: Image.Image, raggio: float = RAGGIO, margine: float = 0.0) -> Image.Image:
@@ -412,12 +432,10 @@ def _arrotonda(img: Image.Image, raggio: float = RAGGIO, margine: float = 0.0) -
 def tessera(lato: int = S, piccola: bool = False) -> Image.Image:
     """Il logo su un quadrato bianco con gli angoli arrotondati (fondo
     trasparente fuori). Come nell'SVG approvato o, per le icone [piccola],
-    centrato e alto ALTEZZA_PICCOLE del lato."""
+    più grande e centrato sul baricentro (posizione_piccole)."""
     zoom, centro = 1.0, None
     if piccola:
-        x0, y0, x1, y1 = riquadro_logo()
-        zoom = ALTEZZA_PICCOLE * leggi_logo()[0] / (y1 - y0)
-        centro = ((x0 + x1) / 2, (y0 + y1) / 2)
+        centro, zoom = posizione_piccole()
     base = Image.new("RGBA", (lato, lato), BIANCO + (255,))
     return _arrotonda(Image.alpha_composite(base, disegna(lato, zoom, centro)))
 
@@ -505,8 +523,8 @@ def immagini_installer() -> None:
     cartella = APP / "windows/installer/immagini"
     cartella.mkdir(parents=True, exist_ok=True)
     piccola = tessera(piccola=True)
-    x0, y0, x1, y1 = riquadro_logo()
-    logo = disegna(S, ALTEZZA_PICCOLE * leggi_logo()[0] / (y1 - y0), ((x0 + x1) / 2, (y0 + y1) / 2))
+    centro, zoom = posizione_piccole()
+    logo = disegna(S, zoom, centro)
     for scala, (w, h) in INSTALLER_GRANDE.items():
         fondo = Image.new("RGB", (w, h))
         d = ImageDraw.Draw(fondo)
@@ -567,27 +585,40 @@ def main() -> None:
     _salva(ufficiale, SITO / "icona.png", 256)
     _salva(piccola, SITO / "favicon.png", 64)
 
-    # Android: icona classica, adattiva (fondo bianco + logo nella zona
-    # sicura) e monocromatica (icone a tema di Android 13)
+    # Android: icona adattiva (fondo bianco + logo nella zona sicura),
+    # monocromatica (icone a tema di Android 13) e, per Android 7 (minSdk
+    # 24), icona classica e rotonda con la stessa composizione: la parte
+    # visibile dell'adattiva (72 dp su 108) in una tessera o in un cerchio
     res = APP / "android/app/src/main/res"
     centro, zoom = posizione_adattiva()
     fg = disegna(S, zoom, centro)
     mono = _bianca(sagoma(S, zoom, centro))
     bgc = Image.new("RGB", (S, S), BIANCO)
+    m = round(S * 18 / 108)
+    vista = Image.alpha_composite(Image.new("RGBA", (S, S), BIANCO + (255,)), fg)
+    vista = vista.crop((m, m, S - m, S - m)).resize((S, S), Image.LANCZOS)
+    classica = _arrotonda(vista)
+    tonda = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    disco = Image.new("L", (S, S), 0)
+    bordo = round(S / 48)  # 1 dp di margine su 48
+    ImageDraw.Draw(disco).ellipse((bordo, bordo, S - bordo - 1, S - bordo - 1), fill=255)
+    tonda.paste(vista, (0, 0), disco)
     for k, f in DENS.items():
-        _salva(ufficiale, res / f"mipmap-{k}/ic_launcher.png", round(48 * f))
+        _salva(classica, res / f"mipmap-{k}/ic_launcher.png", round(48 * f))
+        _salva(tonda, res / f"mipmap-{k}/ic_launcher_round.png", round(48 * f))
         _salva(fg, res / f"mipmap-{k}/ic_launcher_foreground.png", round(108 * f))
         _salva(bgc, res / f"mipmap-{k}/ic_launcher_background.png", round(108 * f))
         _salva(mono, res / f"mipmap-{k}/ic_launcher_monochrome.png", round(108 * f))
     anydpi = res / "mipmap-anydpi-v26"
     anydpi.mkdir(exist_ok=True)
-    (anydpi / "ic_launcher.xml").write_text(
-        '<?xml version="1.0" encoding="utf-8"?>\n'
-        '<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">\n'
-        '    <background android:drawable="@mipmap/ic_launcher_background"/>\n'
-        '    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>\n'
-        '    <monochrome android:drawable="@mipmap/ic_launcher_monochrome"/>\n'
-        '</adaptive-icon>\n', encoding="utf-8", newline="\n")
+    for nome in ("ic_launcher.xml", "ic_launcher_round.xml"):
+        (anydpi / nome).write_text(
+            '<?xml version="1.0" encoding="utf-8"?>\n'
+            '<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">\n'
+            '    <background android:drawable="@mipmap/ic_launcher_background"/>\n'
+            '    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>\n'
+            '    <monochrome android:drawable="@mipmap/ic_launcher_monochrome"/>\n'
+            '</adaptive-icon>\n', encoding="utf-8", newline="\n")
 
     # iOS: dimensioni dal Contents.json, senza trasparenza
     piena = icona_piena()

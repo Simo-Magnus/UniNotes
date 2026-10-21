@@ -21,8 +21,12 @@ va sul Mac App Store.
 | Piattaforma | File da scaricare | Requisiti |
 |---|---|---|
 | Android | `UniNotes-android.apk` (quasi tutti i telefoni, 64 bit); `UniNotes-android-32bit.apk` per i telefoni vecchi a 32 bit; `UniNotes-android-x86_64.apk` per Chromebook ed emulatori | Android 7.0 o successivo |
-| Windows | `UniNotes_setup.exe` (oppure `UniNotes-windows.zip`); Microsoft Store quando disponibile | Windows 10/11 a 64 bit |
-| macOS | `UniNotes.dmg` (oppure `UniNotes-macos.zip`) | macOS 12 o successivo (Intel o Apple Silicon) |
+| Windows | `UniNotes_setup.exe` (~0,5 GB; oppure `UniNotes-windows.zip`, ~0,57 GB); Microsoft Store quando disponibile | Windows 10/11 a 64 bit, ~0,9 GB liberi, 4 GB di RAM per il testo istantaneo |
+| macOS | `UniNotes.dmg` (~0,6 GB; oppure `UniNotes-macos.zip`) | macOS 12 o successivo (Intel o Apple Silicon), ~0,9 GB liberi |
+
+Le versioni per Windows e macOS pesano di più perché includono Parakeet, il modello di
+NVIDIA (licenza CC BY 4.0) che scrive il testo istantaneo mentre registri, senza
+internet e senza download alla prima registrazione.
 | iPhone / iPad | `UniNotes-ios-non-firmata.ipa` | iOS 15.6 o successivo; va firmato (vedi sotto) |
 
 ## Android
@@ -81,9 +85,12 @@ nell'app e poi elimina la cartella.
 3. **Aggiornamenti**: apri il nuovo `UniNotes.dmg` e trascina UniNotes in
    *Applicazioni* sostituendo la versione precedente; i dati restano.
 4. Al primo uso del registratore macOS chiede il permesso per il microfono: consentilo.
-5. Whisper su Mac: scegli e scarica il modello in *Collegamenti → Whisper*; funziona con
-   whisper.cpp incluso nell'app. Per le lezioni di ore conviene installare anche
-   `brew install whisper-cpp` (Homebrew): l'app lo trova da sola.
+5. Il testo istantaneo mentre registri funziona subito: lo fa Parakeet (NVIDIA, licenza
+   CC BY 4.0), già incluso nell'app, senza scaricare niente. Per trascrivere ancora più
+   accuratamente dopo la registrazione puoi scaricare un modello Whisper in
+   *Collegamenti → Whisper*; funziona con whisper.cpp incluso nell'app. Per le lezioni
+   di ore conviene installare anche `brew install whisper-cpp` (Homebrew): l'app lo
+   trova da sola.
 
 In alternativa al DMG c'è `UniNotes-macos.zip`: si estrae da solo, poi si sposta
 **UniNotes.app** in *Applicazioni*.

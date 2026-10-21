@@ -89,11 +89,22 @@ Copy-Item -Path (Join-Path $Release '*') -Destination $pacchetto -Recurse
 Copy-Item -Path (Join-Path $qui 'Assets') -Destination $pacchetto -Recurse
 
 # testo dal vivo: Parakeet con sherpa-onnx (le DLL del plugin accanto
-# all'eseguibile; il modello lo scarica l'app alla prima registrazione)
+# all'eseguibile) e il modello incluso in data\parakeet (windows/CMakeLists.txt,
+# con Silero VAD e i testi delle licenze richiesti dalla CC BY 4.0)
 foreach ($dll in 'sherpa-onnx-c-api.dll', 'onnxruntime.dll') {
   if (-not (Test-Path (Join-Path $pacchetto $dll))) {
     Avviso "Manca $dll accanto a uninotes.exe: il testo dal vivo con Parakeet non funzionera'."
   }
+}
+$parakeet = Join-Path $pacchetto 'data\parakeet'
+$mancanti = @('encoder.int8.onnx', 'decoder.int8.onnx', 'joiner.int8.onnx', 'tokens.txt',
+  'silero_vad.onnx', 'LICENSE.txt', 'NOTICE.txt') |
+  Where-Object { -not (Test-Path (Join-Path $parakeet $_)) }
+if ($mancanti) {
+  Avviso ("Parakeet non incluso (mancano in data\parakeet: " + ($mancanti -join ', ') + "): l'app lo scarichera' alla prima registrazione.")
+} else {
+  $mb = (Get-ChildItem $parakeet | Measure-Object -Property Length -Sum).Sum / 1MB
+  Write-Output ("Parakeet incluso: data\parakeet ({0:N0} MB)" -f $mb)
 }
 
 # --- manifest -----------------------------------------------------------------

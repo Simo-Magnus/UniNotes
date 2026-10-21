@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -43,17 +44,69 @@ class TranscriptEdit {
   String toString() => 'TranscriptEdit($keys, «$text»)';
 }
 
+/// Un cambiamento del testo fatto da [TranscriptEditBuffer.sync]: da [at]
+/// [removed] caratteri sostituiti da [inserted] caratteri. [map] porta una
+/// posizione del testo di prima (cursore, selezione, parola in composizione
+/// della tastiera) in quello di dopo.
+class TranscriptChange {
+  const TranscriptChange(
+    this.at,
+    this.removed,
+    this.inserted, {
+    this.end = false,
+  });
+  final int at;
+  final int removed;
+  final int inserted;
+
+  /// Inserimento in fondo al testo: il cursore che era in fondo resta prima
+  /// del testo nuovo (si sta scrivendo lì); a metà invece lo segue.
+  final bool end;
+
+  int map(int offset) {
+    if (offset < at) return offset;
+    if (removed == 0) {
+      return offset > at || !end ? offset + inserted : offset;
+    }
+    if (offset >= at + removed) return offset + inserted - removed;
+    // dentro il tratto cambiato: alla stessa distanza dall'inizio, se c'è
+    return at + math.min(offset - at, inserted);
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      other is TranscriptChange &&
+      other.at == at &&
+      other.removed == removed &&
+      other.inserted == inserted &&
+      other.end == end;
+
+  @override
+  int get hashCode => Object.hash(at, removed, inserted, end);
+
+  @override
+  String toString() =>
+      'TranscriptChange($at, -$removed, +$inserted'
+      '${end ? ', in fondo' : ''})';
+}
+
 /// Il testo della trascrizione come in un editor (Blocco note): le frasi una
 /// dopo l'altra separate da uno spazio, con la posizione di ognuna. Una
 /// modifica qualsiasi (scrivere, cancellare, incollare, sostituire una
 /// selezione) si riporta sulle frasi toccate ([apply]): se tocca più frasi
 /// diventano una sola (con l'inizio della prima e la fine dell'ultima),
-/// quelle non toccate tengono i loro tempi. Le frasi nuove che arrivano
-/// mentre si scrive si inseriscono al loro posto ([sync]).
+/// quelle non toccate tengono i loro tempi.
+///
+/// Mentre si scrive la trascrizione va avanti ([sync]): le frasi nuove si
+/// inseriscono al loro posto e quelle cambiate dal programma (seconda
+/// passata con un modello migliore, «Formule» attivate o tolte) si
+/// aggiornano o spariscono nel testo; le frasi modificate qui ([owned])
+/// restano come le ha scritte lo studente.
 class TranscriptEditBuffer {
   TranscriptEditBuffer(List<TranscriptSegment> segments) {
     final b = StringBuffer();
     for (final s in segments) {
+      if (s.text.isEmpty) continue;
       if (b.isNotEmpty) b.write(' ');
       final start = b.length;
       b.write(s.text);
@@ -64,6 +117,10 @@ class TranscriptEditBuffer {
 
   String text = '';
   final List<TranscriptPiece> pieces = [];
+
+  /// Frasi (chiavi) modificate in questo campo: il loro testo è quello
+  /// scritto qui, anche negli spazi in fondo che la trascrizione toglie.
+  final Set<int> owned = {};
 
   /// Testo nuovo [next] scritto dall'utente: aggiorna le posizioni e
   /// restituisce la modifica da fare ai segmenti (null se niente cambia).
@@ -115,38 +172,87 @@ class TranscriptEditBuffer {
         ..start += delta
         ..end += delta;
     }
-    if (merged.trim().isEmpty) pieces.removeAt(first);
+    owned
+      ..removeAll(keys)
+      ..add(head.key);
+    if (merged.trim().isEmpty) {
+      pieces.removeAt(first);
+      owned.remove(head.key);
+    }
     return TranscriptEdit(keys, merged);
   }
 
-  /// Frasi di [segments] che il testo non ha ancora (arrivate mentre si
-  /// scrive): si inseriscono al loro posto. Restituisce gli inserimenti
-  /// (posizione, lunghezza, in fondo al testo) per spostare il cursore.
-  List<(int, int, bool)> sync(List<TranscriptSegment> segments) {
+  /// Sostituisce [start, end) con [insert] e sposta le frasi che seguono.
+  TranscriptChange _replace(
+    int start,
+    int end,
+    String insert, {
+    bool atEnd = false,
+  }) {
+    text = text.replaceRange(start, end, insert);
+    final delta = insert.length - (end - start);
+    for (final x in pieces) {
+      if (x.start >= end && !(x.start == end && start == end && atEnd)) {
+        x
+          ..start += delta
+          ..end += delta;
+      }
+    }
+    return TranscriptChange(start, end - start, insert.length, end: atEnd);
+  }
+
+  /// Allinea il testo alle frasi attuali [segments] (arrivate o cambiate
+  /// mentre si scrive) e restituisce i cambiamenti, nell'ordine, per
+  /// spostare cursore e selezione ([TranscriptChange.map]).
+  List<TranscriptChange> sync(List<TranscriptSegment> segments) {
+    final out = <TranscriptChange>[];
+    final now = <int, String>{
+      for (final s in segments) s.start.inMilliseconds: s.text,
+    };
+    // frasi tolte o riscritte dal programma (dal fondo: le posizioni delle
+    // frasi prima non cambiano)
+    for (var i = pieces.length - 1; i >= 0; i--) {
+      final x = pieces[i];
+      if (owned.contains(x.key)) continue;
+      final t = now[x.key];
+      if (t != null && t.isNotEmpty) {
+        if (t != text.substring(x.start, x.end)) {
+          final start = x.start, end = x.end;
+          // la frase stessa non si sposta: cambia la sua fine
+          pieces.removeAt(i);
+          out.add(_replace(start, end, t));
+          pieces.insert(i, TranscriptPiece(x.key, start, start + t.length));
+        }
+        continue;
+      }
+      // tolta: con uno spazio vicino
+      var start = x.start, end = x.end;
+      if (start > 0 && text.codeUnitAt(start - 1) == 0x20) {
+        start--;
+      } else if (end < text.length && text.codeUnitAt(end) == 0x20) {
+        end++;
+      }
+      pieces.removeAt(i);
+      out.add(_replace(start, end, ''));
+    }
+    // frasi nuove, al loro posto
     final known = {for (final x in pieces) x.key};
-    final out = <(int, int, bool)>[];
     for (final seg in segments) {
       final key = seg.start.inMilliseconds;
       if (known.contains(key) || seg.text.isEmpty) continue;
       known.add(key);
       final j = pieces.indexWhere((x) => x.key > key);
-      final int at;
-      final String insert;
+      final TranscriptChange change;
       final int pieceStart;
       if (j < 0) {
-        at = text.length;
-        insert = text.isEmpty ? seg.text : ' ${seg.text}';
+        final at = text.length;
+        final insert = text.isEmpty ? seg.text : ' ${seg.text}';
         pieceStart = at + insert.length - seg.text.length;
+        change = _replace(at, at, insert, atEnd: true);
       } else {
-        at = pieces[j].start;
-        insert = '${seg.text} ';
+        final at = pieces[j].start;
         pieceStart = at;
-      }
-      text = text.replaceRange(at, at, insert);
-      for (var i = j < 0 ? pieces.length : j; i < pieces.length; i++) {
-        pieces[i]
-          ..start += insert.length
-          ..end += insert.length;
+        change = _replace(at, at, '${seg.text} ');
       }
       final piece = TranscriptPiece(
         key,
@@ -158,7 +264,7 @@ class TranscriptEditBuffer {
       } else {
         pieces.insert(j, piece);
       }
-      out.add((at, insert.length, j < 0));
+      out.add(change);
     }
     return out;
   }
@@ -178,22 +284,35 @@ class _Anchor {
 /// note, Google Docs): un tocco (o un clic) in un punto qualsiasi del testo
 /// mette lì il cursore e si scrive, cancella, seleziona, copia e incolla
 /// direttamente nel testo, mentre la registrazione e la trascrizione
-/// continuano (le frasi nuove arrivano in fondo, quella provvisoria sotto,
-/// più chiara). Le modifiche si salvano da sole a ogni tasto ([onEdit]).
+/// continuano. Le modifiche si salvano da sole a ogni tasto ([onEdit]).
+/// Stesso comportamento su telefono, PC e Mac.
 ///
-/// Due modalità con passaggio immediato: **lettura** con le formule
-/// (`$…$`) disegnate e **modifica** con il testo semplice (le formule in
-/// LaTeX). Il tocco passa alla modifica con il cursore nel punto toccato;
-/// Esc o un tocco fuori tornano alla lettura. Senza formule le due modalità
-/// hanno lo stesso aspetto.
+/// Due modalità con passaggio immediato e senza cambi di aspetto: nessun
+/// riquadro, solo il cursore (e sul telefono la tastiera) nel punto
+/// toccato:
+/// - **lettura**: le formule (`$…$`) disegnate;
+/// - **modifica** (il campo ha il fuoco): le formule in LaTeX, da
+///   correggere come il resto. Esc, un tocco fuori o la perdita del fuoco
+///   tornano alla lettura (formule di nuovo disegnate). Senza formule le
+///   due modalità hanno lo stesso aspetto.
+///
+/// Durante la modifica la trascrizione va avanti nello stesso campo
+/// ([TranscriptEditBuffer.sync]): le frasi confermate arrivano in fondo (o
+/// al loro posto) e sono subito modificabili, quelle riscritte dal
+/// programma (seconda passata, «Formule») si aggiornano; cursore,
+/// selezione e parola in composizione della tastiera restano dove sono e
+/// le frasi già corrette dallo studente non vengono mai sovrascritte. Il
+/// testo provvisorio (ancora in corso) resta sotto, più chiaro, e diventa
+/// modificabile appena confermato.
 ///
 /// Controllo ortografico del sistema ([spellCheckService]): parole errate
 /// con la linea ondulata rossa e suggerimenti nel menu (tasto destro sul
-/// PC, tocco sulla parola sul telefono). La linea rossa c'è anche in
-/// lettura, senza entrare nella modifica ([ReadingSpellChecker]): le frasi
-/// stabilizzate si controllano in modo asincrono, un attimo dopo l'ultima
-/// novità e una sola volta per testo; il testo provvisorio e le formule non
-/// si controllano.
+/// PC, tocco sulla parola sul telefono), sempre visibile. In lettura
+/// ([ReadingSpellChecker]) le frasi stabilizzate si controllano in modo
+/// asincrono, un attimo dopo l'ultima novità e una sola volta per testo;
+/// in modifica ([SentenceSpellCheck]) si riusano quei risultati e si
+/// controllano solo le frasi nuove o cambiate. Il testo provvisorio e le
+/// formule non si controllano.
 class EditableLiveTranscript extends StatefulWidget {
   const EditableLiveTranscript({
     super.key,
@@ -262,30 +381,74 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
     _checker.language = widget.language;
     final buffer = _buffer;
     if (buffer == null) return;
-    // frasi nuove mentre si scrive: al loro posto, il cursore resta dov'è
-    final inserted = buffer.sync(widget.segments);
-    if (inserted.isEmpty) return;
-    var sel = _controller.selection;
-    for (final (at, len, end) in inserted) {
-      // in fondo il cursore resta prima del testo nuovo, in mezzo lo segue
-      int move(int o) => o > at || (o == at && !end) ? o + len : o;
-      if (sel.isValid) {
-        sel = sel.copyWith(
-          baseOffset: move(sel.baseOffset),
-          extentOffset: move(sel.extentOffset),
-        );
+    // frasi nuove o cambiate mentre si scrive: al loro posto, nello stesso
+    // campo; cursore, selezione e parola in composizione della tastiera
+    // restano dove sono (la tastiera del telefono non perde la parola)
+    final changes = buffer.sync(widget.segments);
+    if (changes.isEmpty) return;
+    int map(int o) {
+      for (final c in changes) {
+        o = c.map(o);
       }
+      return o.clamp(0, buffer.text.length);
     }
+
+    final before = _controller.value;
+    final sel = before.selection;
+    final comp = before.composing;
+    final composing = comp.isValid && !comp.isCollapsed
+        ? TextRange(start: map(comp.start), end: map(comp.end))
+        : TextRange.empty;
     _controller.value = TextEditingValue(
       text: buffer.text,
       selection: sel.isValid
-          ? sel
+          ? sel.copyWith(
+              baseOffset: map(sel.baseOffset),
+              extentOffset: map(sel.extentOffset),
+            )
           : TextSelection.collapsed(offset: buffer.text.length),
+      composing: composing.isCollapsed ? TextRange.empty : composing,
+    );
+    _refreshSpellSoon();
+  }
+
+  /// Il campo controlla l'ortografia solo quando scrive l'utente: dopo le
+  /// frasi arrivate dalla trascrizione si chiede di nuovo il controllo
+  /// (configurazione nuova, stesso correttore e stessa memoria: si
+  /// controllano solo le frasi nuove), poco dopo l'ultima novità.
+  Timer? _spellRefresh;
+  void _refreshSpellSoon() {
+    if (_spellService == null) return;
+    _spellRefresh?.cancel();
+    _spellRefresh = Timer(const Duration(milliseconds: 600), () {
+      if (mounted && _editing) setState(() => _spell = _editSpell());
+    });
+  }
+
+  SpellCheckService? get _spellService =>
+      widget.spellService ?? spellCheckService(widget.language);
+
+  /// Errori già trovati per frase nel campo di modifica (oltre a quelli
+  /// della lettura, che si riusano: entrando nella modifica la linea rossa
+  /// resta dov'era).
+  final Map<String, List<SuggestionSpan>> _editErrors = {};
+
+  SpellCheckConfiguration _editSpell() {
+    final service = _spellService;
+    return spellCheckFor(
+      service == null
+          ? null
+          : SentenceSpellCheck(
+              service,
+              known: _checker.known,
+              cache: _editErrors,
+            ),
     );
   }
 
   @override
   void dispose() {
+    _spellRefresh?.cancel();
     _checker.dispose();
     _controller.dispose();
     _focus.dispose();
@@ -320,8 +483,7 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
       _focus.requestFocus();
       // controllo ortografico dopo l'apertura: il testo che c'è già si
       // sottolinea subito
-      final next = spellCheckFor(spellCheckService(widget.language));
-      if (next != _spell) setState(() => _spell = next);
+      setState(() => _spell = _editSpell());
     });
   }
 
@@ -361,6 +523,7 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
 
   void _stop() {
     if (!_editing) return;
+    _spellRefresh?.cancel();
     setState(() {
       _buffer = null;
       _spell = const SpellCheckConfiguration.disabled();
@@ -374,7 +537,11 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
     final children = <InlineSpan>[];
     final anchors = <_Anchor>[];
     var shown = 0, raw = 0;
-    final segs = widget.segments;
+    // come nel campo di modifica (TranscriptEditBuffer): frasi vuote saltate
+    final segs = [
+      for (final s in widget.segments)
+        if (s.text.isNotEmpty) s,
+    ];
     for (var i = 0; i < segs.length; i++) {
       final text = segs[i].text;
       if (i > 0) {
@@ -448,6 +615,18 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
     return TextSpan(children: children);
   }
 
+  static const _noFrame = InputDecoration(
+    isCollapsed: true,
+    contentPadding: EdgeInsets.zero,
+    filled: false,
+    border: InputBorder.none,
+    enabledBorder: InputBorder.none,
+    focusedBorder: InputBorder.none,
+    disabledBorder: InputBorder.none,
+    errorBorder: InputBorder.none,
+    focusedErrorBorder: InputBorder.none,
+  );
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -492,7 +671,10 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
             maxLines: null,
             keyboardType: TextInputType.multiline,
             textCapitalization: TextCapitalization.sentences,
-            decoration: const InputDecoration.collapsed(hintText: null),
+            // nessun riquadro: il tema dei campi ha bordo e fondo (anche
+            // con la decorazione «collapsed» il bordo del tema compariva
+            // attorno al testo), qui il testo resta com'era in lettura
+            decoration: _noFrame,
             spellCheckConfiguration: _spell,
             contextMenuBuilder: spellCheckContextMenu,
             onChanged: _changed,

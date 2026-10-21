@@ -202,9 +202,9 @@ resta spento.
 
 | Situazione | Testo istantaneo durante la registrazione | Dopo «Salva» |
 |---|---|---|
-| PC/Mac, Parakeet scaricato | Parakeet | niente da proporre, salvo un modello Whisper scaricato più accurato (large): riquadro «Trascrivere di nuovo con …?» |
-| PC/Mac, prima registrazione (Parakeet da scaricare, 639 MiB) | barra «Scarico Parakeet…» con «Annulla»; la registrazione va, l'audio si tiene | «Completo la trascrizione» aspetta la fine del download e trascrive tutto con Parakeet |
-| PC/Mac, download annullato o non riuscito | il modello Whisper scaricato a pezzi, altrimenti nessun testo (la card spiega come averlo) | «Trascrivi con…» Parakeet (riprende il download dalla card) o Whisper |
+| PC/Mac (Parakeet incluso nell'app) | Parakeet, subito | niente da proporre, salvo un modello Whisper scaricato più accurato (large): riquadro «Trascrivere di nuovo con …?» |
+| PC/Mac, build senza il modello incluso (fatta a mano): prima registrazione | barra «Scarico Parakeet…» con «Annulla»; la registrazione va, l'audio si tiene | «Completo la trascrizione» aspetta la fine del download e trascrive tutto con Parakeet |
+| PC/Mac senza modello incluso, download annullato o non riuscito | il modello Whisper scaricato a pezzi, altrimenti nessun testo (la card spiega come averlo) | «Trascrivi con…» Parakeet (riprende il download dalla card) o Whisper |
 | PC/Mac con meno di 4 GB di RAM | il modello Whisper scaricato a pezzi, altrimenti nessun testo; la card dice perché | «Trascrivi con Whisper» o Gemini |
 | PC/Mac, Parakeet si ferma a metà (errore) | si continua con il modello Whisper scaricato dal punto in cui il testo era definitivo, altrimenti «Trascrizione dal vivo interrotta» | i tratti mancanti si recuperano |
 | Telefono con il riconoscitore del sistema | riconoscitore del sistema (+ small in seconda passata dove regge) | riquadro se c'è un modello scaricato più accurato |
@@ -219,8 +219,7 @@ tratto ancora provvisorio e quelli saltati si completano in background
 
 **Modello**: NVIDIA Parakeet TDT 0.6B v3 (600 M parametri, 25 lingue
 europee compreso l'italiano, punteggiatura e maiuscole; licenza
-CC-BY-4.0, attribuzione a NVIDIA nella pagina delle licenze e nella card
-Collegamenti → Whisper), nella versione ONNX int8 di sherpa-onnx (pacchetto
+CC BY 4.0, vedi sotto), nella versione ONNX int8 di sherpa-onnx (pacchetto
 `sherpa_onnx` 1.13.8, Apache-2.0, ONNX Runtime incluso: ~22 MB di DLL su
 Windows). Codice: `core/services/parakeet_service.dart` (download, motore
 condiviso), `core/services/parakeet_engine.dart` (isolate con sherpa-onnx),
@@ -228,22 +227,81 @@ condiviso), `core/services/parakeet_engine.dart` (isolate con sherpa-onnx),
 decodificatore finti), `features/links/parakeet_model.dart` (file, pesi,
 impronte).
 
-**Consegna**: non è nell'installatore. I quattro file (`encoder.int8.onnx`
+**Consegna: incluso nell'app desktop.** I quattro file (`encoder.int8.onnx`
 652 MB, `decoder.int8.onnx`, `joiner.int8.onnx`, `tokens.txt`: 670 MB,
-639 MiB) si scaricano uno per uno da Hugging Face
-(`csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8`, gli stessi file
-dell'archivio `.tar.bz2` ufficiale delle release di sherpa-onnx, così non
-serve decomprimere un bz2) alla prima registrazione o con «Scarica» nella
+639 MiB; gli stessi dell'archivio `.tar.bz2` ufficiale delle release di
+sherpa-onnx, presi uno per uno da Hugging Face,
+`csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8`) sono **dentro
+l'installazione**, e l'app li legge da lì senza copiarli
+(`ParakeetService.bundledModelDir`): alla prima registrazione Parakeet parte
+subito, senza download né barra.
+
+| Build | Dove sta il modello | Come ci arriva |
+|---|---|---|
+| Windows (UniNotes_setup.exe, zip, MSIX) | `data\parakeet\` accanto a `uninotes.exe` | `app/windows/CMakeLists.txt` lo scarica durante `flutter build windows` nella cache `app/build/parakeet/` (SHA-256 di ogni file; un `<file>.sha256` accanto evita di rileggerlo a ogni build) e lo installa con Silero VAD e le licenze; installatore, zip e MSIX impacchettano la cartella Release (`crea_msix.ps1` controlla che ci sia) |
+| macOS (UniNotes.app, .dmg, .zip) | `UniNotes.app/Contents/Resources/parakeet/` | il workflow, dopo `flutter build macos` e prima della firma: `python3 tool/prepara_modello_parakeet.py --installa …/Contents/Resources/parakeet` |
+| Linux | `data/parakeet/` accanto all'eseguibile | nessuna build Linux nel repository: l'app lo cerca lì; altrimenti lo scarica |
+
+La cache `app/build/parakeet/` non è nel repository (`build/` è in
+`.gitignore`); nel workflow la conserva `actions/cache` (chiave
+`parakeet-tdt-0.6b-v3-int8-acfc2b44`, ~670 MB per sistema), così Hugging Face
+si contatta solo la prima volta. `-DUNINOTES_PARAKEET=OFF` (CMake) fa una
+build senza modello.
+
+**Ripiego**: se i file inclusi mancano o hanno la dimensione sbagliata
+(build fatte a mano senza modello, download non riuscito durante la build)
+l'app li scarica come prima, alla prima registrazione o con «Scarica» nella
 card Collegamenti → Whisper: avanzamento, ripresa (`.part` e `Range`),
 spazio libero controllato prima di iniziare (con 200 MB di margine),
-SHA-256 pubblicato da Hugging Face verificato a fine file, annullabile; un
-solo download alla volta, condiviso fra card e registratore. Cartella:
-`<supporto dell'app>/parakeet/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/`.
-Il **Silero VAD** (`silero_vad.onnx`, 643 KB, MIT) è un asset delle build
-desktop (`assets/vad/`, `platforms: [windows, macos, linux]`) e si copia lì
-al primo uso. Su Windows `onnxruntime.dll` dell'app si carica per primo:
-Windows 11 ne ha uno suo in System32 (versione 1.17, troppo vecchia) che
-altrimenti farebbe chiudere l'app.
+SHA-256 verificato a fine file, annullabile, un solo download alla volta,
+in `<supporto dell'app>/parakeet/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/`.
+La card dice «Parakeet incluso nell'app» (senza «Scarica» né «Elimina») o
+«Parakeet scaricato» / «Non ancora scaricato».
+Il **Silero VAD** (`silero_vad.onnx`, 643 KB, MIT) è accanto al modello
+incluso e, per il ripiego, è anche un asset delle build desktop
+(`assets/vad/`, `platforms: [windows, macos, linux]`). Su Windows
+`onnxruntime.dll` dell'app si carica per primo: Windows 11 ne ha uno suo in
+System32 (versione 1.17, troppo vecchia) che altrimenti farebbe chiudere
+l'app. Il VAD di sherpa-onnx riceve l'audio a pezzi di 0,1 s: con blocchi
+da 30 s (trascrizione di un file) non chiudeva le frasi alle pause e perdeva
+l'inizio.
+
+**Pesi** (21/10/2026; il modello int8 si comprime poco):
+
+| Pacchetto | Senza Parakeet | Con Parakeet |
+|---|---|---|
+| cartella Release di Windows | ~153 MB | 825 MB (misurato) |
+| UniNotes-windows.zip (Deflate) | ~90 MB | **564 MB** (misurato) |
+| UniNotes_setup.exe (LZMA2 max, solido) | ~60 MB | **~500 MB** (stima: l'encoder con LZMA2 al massimo passa da 652 a 428 MB) |
+| UniNotes.msix (Deflate) | ~90 MB | **~570 MB** (stima) |
+| UniNotes.dmg / UniNotes-macos.zip | ~100 MB | **~580 MB** (stima: l'encoder con Deflate 465 MB) |
+| spazio occupato dopo l'installazione | | ~0,85 GB (Windows), ~0,8 GB (Mac) |
+
+Tutti sotto il limite di 2 GB per file delle release di GitHub (e degli
+artefatti); Microsoft Store e notarizzazione Apple accettano queste
+dimensioni. Tempi del workflow: la prima volta ~1 minuto per scaricare il
+modello, poi il ripristino della cache (~20–40 s); l'installatore Inno Setup
+impiega qualche minuto in più per comprimere (LZMA2 con 4 thread,
+`LZMANumBlockThreads=4`); macOS: la firma e la notarizzazione caricano
+~0,6 GB in più.
+
+**Licenza del modello incluso (CC BY 4.0)** e dove è rispettata:
+
+| Obbligo | Dove |
+|---|---|
+| Attribuzione all'autore (NVIDIA) e nome dell'opera («NVIDIA Parakeet TDT 0.6B v3») | `NOTICE.txt` accanto al modello; pagina Licenze dell'app (`assets/licenses/parakeet_NOTICE.txt`); introduzione della pagina Licenze (`kLicensesIntro`); card Collegamenti → Whisper (`kParakeetAttribution`); README («Componenti di terze parti»); TERMINI.md / sito (termini) |
+| Link all'opera (huggingface.co/nvidia/parakeet-tdt-0.6b-v3) | stessi posti; pulsante «Pagina ufficiale del modello» nella card |
+| Link o testo della licenza | testo completo `LICENSE.txt` (legalcode CC BY 4.0) accanto al modello e nella pagina Licenze (`assets/licenses/CC-BY-4.0.txt`); link nella card («Licenza CC BY 4.0»), README, termini |
+| Indicazione delle modifiche | «modificato: convertito in ONNX e quantizzato int8 da k2-fsa/sherpa-onnx» in NOTICE, pagina Licenze, card, README, termini |
+| Nessuna approvazione implicita | «UniNotes non è affiliata a NVIDIA né approvata da NVIDIA» negli stessi posti |
+| Nessuna restrizione aggiuntiva | NOTICE e README: la licenza PolyForm di UniNotes vale solo per il codice dell'app, il modello resta CC BY 4.0; nessuna misura tecnica sui file (sono file normali nella cartella dell'app) |
+| Esclusione di garanzia | NOTICE (sezione 5 della licenza), termini, pagina Licenze |
+
+Le altre licenze dei componenti redistribuiti sono nella stessa cartella e
+nella pagina Licenze: Silero VAD (MIT, `silero_vad_LICENSE.txt`), ONNX
+Runtime (MIT, `onnxruntime_LICENSE.txt`), sherpa-onnx (Apache-2.0,
+`sherpa-onnx_LICENSE.txt` su Windows; nella pagina Licenze arriva dal
+pacchetto `sherpa_onnx`).
 
 **Dal vivo con il VAD** (`VadLiveSegmenter`): l'audio della registrazione
 (mono 16 kHz) va man mano all'isolate di Parakeet, sempre una richiesta alla

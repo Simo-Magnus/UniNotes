@@ -1,15 +1,33 @@
-Parakeet TDT 0.6B v3
-Copyright (c) NVIDIA Corporation.
+NVIDIA Parakeet TDT 0.6B v3
+Autore: NVIDIA Corporation.
 
-Modello: nvidia/parakeet-tdt-0.6b-v3 (https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3)
-Licenza: Creative Commons Attribution 4.0 International (CC-BY-4.0),
+Opera originale: «parakeet-tdt-0.6b-v3» di NVIDIA,
+https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3
+
+Licenza: Creative Commons Attribution 4.0 International (CC BY 4.0),
 https://creativecommons.org/licenses/by/4.0/
+(testo completo: https://creativecommons.org/licenses/by/4.0/legalcode;
+copia in LICENSE.txt accanto al modello e nella pagina Licenze dell'app).
 
-UniNotes usa la versione convertita in ONNX e quantizzata int8 da sherpa-onnx
-(k2-fsa, https://github.com/k2-fsa/sherpa-onnx; file da
-https://huggingface.co/csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8),
-senza altre modifiche. Il modello non è incluso nell'app: si scarica da
-Hugging Face al primo uso su PC e Mac.
+Modifiche: UniNotes include una versione MODIFICATA del modello, non i pesi
+originali: convertita in formato ONNX e quantizzata int8 da k2-fsa/sherpa-onnx
+(https://github.com/k2-fsa/sherpa-onnx; file da
+https://huggingface.co/csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8:
+encoder.int8.onnx, decoder.int8.onnx, joiner.int8.onnx, tokens.txt). UniNotes
+non ha cambiato altro: usa questi file così come sono pubblicati.
 
-NVIDIA non sostiene né approva UniNotes. Il modello è fornito "così com'è",
-senza garanzie.
+Su PC e Mac il modello è incluso nell'app (Windows: cartella data\parakeet
+accanto a uninotes.exe; macOS: UniNotes.app/Contents/Resources/parakeet).
+
+UniNotes non è affiliata a NVIDIA, né sponsorizzata o approvata da NVIDIA.
+I nomi NVIDIA e Parakeet servono solo a indicare l'autore e l'opera.
+
+Nessuna restrizione aggiuntiva: UniNotes non aggiunge condizioni né misure
+tecnologiche che limitino quanto la licenza CC BY 4.0 permette a chi riceve
+il modello.
+
+Esclusione di garanzia (sezione 5 della licenza): il modello è fornito «così
+com'è» e «come disponibile», senza garanzie di alcun tipo, espresse o
+implicite, comprese garanzie di commerciabilità, idoneità a uno scopo,
+assenza di violazioni, assenza di difetti o di errori; nei limiti consentiti
+dalla legge l'autore non è responsabile di danni derivanti dal suo uso.

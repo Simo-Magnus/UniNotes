@@ -56,7 +56,9 @@ nel calendario: *Impostazioni → Privacy e informazioni → Disinstalla UniNote
   del database* (senza connessione l'app la chiede, con *Riprova*), calendario, esclusioni, Focus e Non disturbare, aspetto, suoni, notifiche,
   *Esporta/importa dati* (.json), privacy e informazioni con le licenze open source.
 - **Registra**: registrazione delle lezioni anche di più ore (schermo spento su Android, in
-  background su iOS), trascrizione con **Whisper** (locale) o **Gemini**, riassunti, appunti.
+  background su iOS), testo istantaneo con **Parakeet** (incluso su Windows e Mac) o con
+  il riconoscimento vocale del telefono, trascrizione con **Whisper** (locale) o
+  **Gemini**, riassunti, appunti.
 - **Studio**: moduli e argomenti per materia, cronometro, sessioni e statistiche.
 - **Libri**: i libri del piano didattico arrivano dal database; accanto al titolo il
   cerchio con la spunta verde (*salva*: il libro diventa *Salvato*) o con la X (*rimuovi*);
@@ -129,6 +131,31 @@ condizione di citare l'autore originale (Simo-Magnus) e la fonte
 del file LICENSE. UniNotes non può essere venduto né usato a scopo commerciale, in
 nessuna forma. I dati del database provengono da fonti
 pubbliche, indicate per ogni elemento.
+
+### Componenti di terze parti
+
+La licenza PolyForm vale solo per il codice di UniNotes: i componenti di terzi
+restano con le loro licenze, elencate nell'app (Impostazioni → Privacy e
+informazioni → «Licenze»). In particolare le build per **Windows e macOS**
+includono, per il testo istantaneo:
+
+- **NVIDIA Parakeet TDT 0.6B v3** di NVIDIA
+  (<https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3>), con licenza
+  [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+  **Modificato**: il file incluso è la conversione in ONNX quantizzata int8 fatta
+  da [k2-fsa/sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx)
+  ([csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8](https://huggingface.co/csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8)),
+  non i pesi originali. Il testo della licenza (`LICENSE.txt`) e l'avviso con
+  attribuzione e modifiche (`NOTICE.txt`) sono accanto ai file del modello
+  (`data/parakeet/` su Windows, `UniNotes.app/Contents/Resources/parakeet/` su
+  Mac) e in [`app/assets/licenses/`](app/assets/licenses). UniNotes non è
+  affiliata a NVIDIA né approvata da NVIDIA; il modello è fornito «così com'è»,
+  senza garanzie, e la PolyForm non ne limita l'uso: chi lo riceve può usarlo
+  secondo la CC BY 4.0;
+- **sherpa-onnx** (Apache-2.0), **ONNX Runtime** (MIT) e **Silero VAD** (MIT).
+
+Su Android e iOS sono inclusi whisper.cpp (MIT) e il modello Whisper base di
+OpenAI (MIT).
 
 Usando l'app accetti i [Termini e condizioni d'uso](TERMINI.md); come vengono trattati i
 dati è spiegato nell'[Informativa sulla privacy](PRIVACY.md).

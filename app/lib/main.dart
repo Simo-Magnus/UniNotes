@@ -52,19 +52,26 @@ Future<void> main(List<String> args) async {
     );
     yield LicenseEntryWithLineBreaks(const ['koni_rar'], notice);
   });
-  // Modelli per la trascrizione (non sono pacchetti): Parakeet di NVIDIA
-  // (CC-BY-4.0, l'attribuzione è obbligatoria) e Silero VAD (MIT).
+  // Modelli e librerie per la trascrizione inclusi nell'app (non sono
+  // pacchetti Dart): Parakeet di NVIDIA (CC BY 4.0: attribuzione, modifiche,
+  // testo della licenza), Silero VAD (MIT) e ONNX Runtime (MIT, la DLL che
+  // arriva con sherpa-onnx, la cui licenza Apache-2.0 compare da sola).
   LicenseRegistry.addLicense(() async* {
-    final parakeet = await rootBundle.loadString(
-      'assets/licenses/parakeet_NOTICE.txt',
+    const parakeet = ['NVIDIA Parakeet TDT 0.6B v3'];
+    yield LicenseEntryWithLineBreaks(
+      parakeet,
+      await rootBundle.loadString('assets/licenses/parakeet_NOTICE.txt'),
+    );
+    yield LicenseEntryWithLineBreaks(
+      parakeet,
+      await rootBundle.loadString('assets/licenses/CC-BY-4.0.txt'),
     );
     yield LicenseEntryWithLineBreaks(const [
-      'Parakeet TDT 0.6B v3 (NVIDIA)',
-    ], parakeet);
-    final silero = await rootBundle.loadString(
-      'assets/licenses/silero_vad_LICENSE.txt',
-    );
-    yield LicenseEntryWithLineBreaks(const ['Silero VAD'], silero);
+      'Silero VAD',
+    ], await rootBundle.loadString('assets/licenses/silero_vad_LICENSE.txt'));
+    yield LicenseEntryWithLineBreaks(const [
+      'ONNX Runtime',
+    ], await rootBundle.loadString('assets/licenses/onnxruntime_LICENSE.txt'));
   });
   // Caratteri IBM Plex inclusi negli asset (non sono un pacchetto: la loro
   // licenza non compare da sola nella pagina delle licenze).

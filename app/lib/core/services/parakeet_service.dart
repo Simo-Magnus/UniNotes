@@ -16,13 +16,20 @@ export '../../features/links/parakeet_model.dart';
 /// NVIDIA Parakeet TDT 0.6B v3 su PC e Mac (Windows, macOS, Linux): il testo
 /// istantaneo del registratore e il ripiego di «Trascrivi con…».
 ///
-/// - **Consegna**: i quattro file ONNX int8 (639 MiB) si scaricano da
-///   Hugging Face alla prima registrazione o dalla card dei collegamenti,
-///   uno per uno, con ripresa (`.part`), spazio libero controllato prima di
-///   iniziare, SHA-256 verificato e annullamento ([download]); un solo
-///   download alla volta, condiviso fra card e registratore.
-/// - **Silero VAD** (643 KB): asset delle build desktop, copiato nella
-///   cartella del modello al primo uso ([vadModel]).
+/// - **Consegna**: i quattro file ONNX int8 (639 MiB) sono **inclusi nelle
+///   build desktop** ([bundledModelDir]): su Windows (e Linux) in
+///   `data/parakeet/` accanto all'eseguibile (windows/CMakeLists.txt li
+///   scarica durante la build e li installa lì: installatore, zip e MSIX),
+///   su macOS in `UniNotes.app/Contents/Resources/parakeet/` (copiati dal
+///   workflow prima della firma, tool/prepara_modello_parakeet.py). Si
+///   leggono da lì, senza copiarli. Solo se mancano o sono incompleti
+///   (build fatte a mano senza modello) si scaricano da Hugging Face alla
+///   prima registrazione o dalla card dei collegamenti, uno per uno, con
+///   ripresa (`.part`), spazio libero controllato prima di iniziare,
+///   SHA-256 verificato e annullamento ([download]); un solo download alla
+///   volta, condiviso fra card e registratore.
+/// - **Silero VAD** (643 KB): incluso accanto al modello; altrimenti asset
+///   delle build desktop, copiato nella cartella del download ([vadModel]).
 /// - **Motore**: un isolate con sherpa-onnx ([ParakeetWorker]) e il
 ///   modello in memoria finché qualcuno lo usa ([liveEngine],
 ///   [transcribeFile]).
@@ -37,7 +44,9 @@ class ParakeetService {
     Uri Function(ParakeetFile f)? fileUrl,
     this._toWav,
     this.files = kParakeetFiles,
-  }) : _downloader = downloader ?? FileDownloader(),
+    Directory? Function()? bundledDir,
+  }) : _bundledDir = bundledDir ?? defaultBundledDir,
+       _downloader = downloader ?? FileDownloader(),
        _workerFactory =
            workerFactory ?? ((paths) => ParakeetWorker.start(paths)),
        _fileUrl = fileUrl ?? parakeetFileUrl;
@@ -60,7 +69,45 @@ class ParakeetService {
       host == WhisperHost.macos ||
       host == WhisperHost.linux;
 
-  Future<Directory> modelDir() async {
+  final Directory? Function() _bundledDir;
+
+  /// Cartella del modello incluso nella build: `data/parakeet/` accanto
+  /// all'eseguibile (Windows, Linux), `Contents/Resources/parakeet/` nel
+  /// bundle (macOS). null se non si sa.
+  static Directory? defaultBundledDir() {
+    try {
+      final exe = p.dirname(Platform.resolvedExecutable);
+      if (Platform.isMacOS) {
+        return Directory(
+          p.normalize(p.join(exe, '..', 'Resources', 'parakeet')),
+        );
+      }
+      if (Platform.isWindows || Platform.isLinux) {
+        return Directory(p.join(exe, 'data', 'parakeet'));
+      }
+    } catch (_) {}
+    return null;
+  }
+
+  Future<Directory?>? _bundled;
+
+  /// Il modello incluso nell'app, se c'è tutto (file con la dimensione
+  /// giusta: lo SHA-256 si controlla durante la build). Letto una volta.
+  Future<Directory?> bundledModelDir() => _bundled ??= () async {
+    if (!platformSupported) return null;
+    final d = _bundledDir();
+    if (d == null) return null;
+    for (final f in files) {
+      if (!await _complete(f, d)) return null;
+    }
+    return d;
+  }();
+
+  /// Il modello è quello incluso nell'app (niente da scaricare né eliminare).
+  Future<bool> isBundled() async => await bundledModelDir() != null;
+
+  /// Cartella del modello scaricato dall'app (ripiego).
+  Future<Directory> downloadDir() async {
     final d = Directory(
       p.join((await _baseDir()).path, 'parakeet', kParakeetDir),
     );
@@ -68,11 +115,16 @@ class ParakeetService {
     return d;
   }
 
-  Future<File> _file(ParakeetFile f) async =>
-      File(p.join((await modelDir()).path, f.name));
+  /// Cartella da cui si legge il modello: quello incluso, altrimenti quello
+  /// scaricato.
+  Future<Directory> modelDir() async =>
+      await bundledModelDir() ?? await downloadDir();
 
-  Future<bool> _complete(ParakeetFile f) async {
-    final file = await _file(f);
+  Future<File> _file(ParakeetFile f) async =>
+      File(p.join((await downloadDir()).path, f.name));
+
+  Future<bool> _complete(ParakeetFile f, [Directory? dir]) async {
+    final file = dir == null ? await _file(f) : File(p.join(dir.path, f.name));
     try {
       return await file.exists() && await file.length() == f.bytes;
     } catch (_) {
@@ -80,10 +132,11 @@ class ParakeetService {
     }
   }
 
-  /// Tutti i file del modello ci sono (con la dimensione giusta: lo SHA-256
-  /// si controlla a fine download).
+  /// Il modello c'è: incluso nell'app o scaricato (file con la dimensione
+  /// giusta: lo SHA-256 si controlla a fine download).
   Future<bool> installed() async {
     if (!platformSupported) return false;
+    if (await isBundled()) return true;
     for (final f in files) {
       if (!await _complete(f)) return false;
     }
@@ -142,7 +195,12 @@ class ParakeetService {
     void Function(WhisperProgress) report,
     CancelToken cancel,
   ) async {
-    final dir = await modelDir();
+    // modello incluso nell'app: niente da scaricare
+    if (await isBundled()) {
+      report(const WhisperProgress('Pronto', 1));
+      return;
+    }
+    final dir = await downloadDir();
     var missing = 0;
     var done = 0;
     for (final f in files) {
@@ -181,10 +239,11 @@ class ParakeetService {
       'Scarico Parakeet (${DownloadProgress.mb(got)} di '
       '${DownloadProgress.mb(total)})';
 
-  /// Elimina il modello (si potrà riscaricare).
+  /// Elimina il modello scaricato (si potrà riscaricare); quello incluso
+  /// nell'app non si tocca.
   Future<void> delete() async {
     _running?.cancel();
-    final d = await modelDir();
+    final d = await downloadDir();
     for (final f in files) {
       for (final path in [
         p.join(d.path, f.name),
@@ -202,14 +261,22 @@ class ParakeetService {
 
   Future<File?>? _vad;
 
-  /// Silero VAD (asset dell'app) nella cartella del modello.
+  /// Silero VAD: quello incluso accanto al modello, altrimenti l'asset
+  /// dell'app copiato nella cartella del download.
   Future<File?> vadModel() => _vad ??= _copyVad().then((f) {
     if (f == null) _vad = null;
     return f;
   });
 
   Future<File?> _copyVad() async {
-    final target = File(p.join((await modelDir()).path, 'silero_vad.onnx'));
+    final inc = await bundledModelDir();
+    if (inc != null) {
+      final f = File(p.join(inc.path, 'silero_vad.onnx'));
+      try {
+        if (await f.exists() && await f.length() == kSileroVadBytes) return f;
+      } catch (_) {}
+    }
+    final target = File(p.join((await downloadDir()).path, 'silero_vad.onnx'));
     try {
       if (await target.exists() && await target.length() == kSileroVadBytes) {
         return target;

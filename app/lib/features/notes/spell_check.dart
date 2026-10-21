@@ -260,9 +260,8 @@ List<TextSpan> misspelledSpans(
       : style.merge(TextField.materialMisspelledTextStyle);
   final out = <TextSpan>[];
   var at = from;
-  final sorted = [
-    ...spans,
-  ]..sort((a, b) => a.range.start.compareTo(b.range.start));
+  final sorted = [...spans]
+    ..sort((a, b) => a.range.start.compareTo(b.range.start));
   for (final s in sorted) {
     // l'errore si limita al tratto e a quello che non è già stato disegnato
     final a = math.max(s.range.start - offset, at);
@@ -334,6 +333,10 @@ class ReadingSpellChecker extends ChangeNotifier {
 
   /// Errori già noti di [text] (nelle posizioni di [text]); se non ci sono
   /// ancora li chiede e intanto dà nessun errore.
+  /// Errori di [text] se già controllato (null altrimenti), senza metterlo
+  /// in coda.
+  List<SuggestionSpan>? known(String text) => _cache[text];
+
   List<SuggestionSpan> errorsOf(String text) {
     final known = _cache[text];
     if (known != null) return known;
@@ -403,6 +406,80 @@ class ReadingSpellChecker extends ChangeNotifier {
     _disposed = true;
     _timer?.cancel();
     super.dispose();
+  }
+}
+
+/// Controllo ortografico di un campo con un testo lungo che cresce (la
+/// trascrizione dal vivo in modifica): il testo si divide in frasi e si
+/// chiedono a [inner] solo quelle mai viste. Gli errori già noti vengono da
+/// [known] (es. [ReadingSpellChecker.known], quelli della lettura) o da
+/// [cache], che resta fra un controllo e l'altro: a ogni tasto o frase nuova
+/// si controlla solo la frase cambiata, anche dopo un'ora di lezione.
+///
+/// Un'istanza nuova con la stessa [cache] fa ripartire il controllo del
+/// campo (la configurazione cambia) senza ricontrollare nulla.
+class SentenceSpellCheck extends SpellCheckService {
+  SentenceSpellCheck(this.inner, {this.known, required this.cache});
+
+  final SpellCheckService inner;
+  final List<SuggestionSpan>? Function(String sentence)? known;
+  final Map<String, List<SuggestionSpan>> cache;
+  static const _maxCache = 4000;
+
+  /// Frasi di [text] con la loro posizione: si divide dopo `.`, `!`, `?`,
+  /// `…` seguiti da uno spazio e agli a capo, mai dentro una formula `$…$`.
+  static List<(int, String)> sentences(String text) {
+    final out = <(int, String)>[];
+    var start = 0;
+    var dollars = 0;
+    void cut(int end) {
+      final s = text.substring(start, end);
+      if (s.trim().isNotEmpty) out.add((start, s));
+    }
+
+    for (var i = 0; i < text.length; i++) {
+      final c = text.codeUnitAt(i);
+      if (c == 0x24) dollars++; // $
+      final boundary =
+          dollars.isEven &&
+          (c == 0x0A ||
+              (c == 0x20 && i > start && '.!?…'.contains(text[i - 1])));
+      if (boundary) {
+        cut(i);
+        start = i + 1;
+        dollars = 0;
+      }
+    }
+    if (start < text.length) cut(text.length);
+    return out;
+  }
+
+  @override
+  Future<List<SuggestionSpan>?> fetchSpellCheckSuggestions(
+    Locale locale,
+    String text,
+  ) async {
+    final out = <SuggestionSpan>[];
+    for (final (at, s) in sentences(text)) {
+      var spans = known?.call(s) ?? cache[s];
+      if (spans == null) {
+        final found = await inner.fetchSpellCheckSuggestions(locale, s);
+        // un controllo più recente ha preso il posto di questo
+        if (found == null) return null;
+        spans = filterSpellCheckSpans(s, found);
+        if (cache.length >= _maxCache) cache.clear();
+        cache[s] = spans;
+      }
+      for (final x in spans) {
+        out.add(
+          SuggestionSpan(
+            TextRange(start: x.range.start + at, end: x.range.end + at),
+            x.suggestions,
+          ),
+        );
+      }
+    }
+    return out;
   }
 }
 

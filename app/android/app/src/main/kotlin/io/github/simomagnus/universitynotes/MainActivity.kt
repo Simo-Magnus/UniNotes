@@ -30,12 +30,16 @@ import io.github.simomagnus.universitynotes.widgets.WidgetSupport
  * Quinto canale: file arrivati con «Condividi → UniNotes» (IncomingShare.kt):
  * - `take`: file in attesa, una volta sola;
  * - verso Flutter, `available`: sono arrivati file con l'app aperta.
+ *
+ * Sesto canale: notifica della registrazione con i pulsanti sempre
+ * visibili (RecordingNotification.kt): `show`; verso Flutter, `command`.
  */
 class MainActivity : FlutterActivity() {
     private var channel: MethodChannel? = null
     private var focusChannel: MethodChannel? = null
     private var uninstallChannel: MethodChannel? = null
     private var incomingChannel: MethodChannel? = null
+    private var recordingChannel: MethodChannel? = null
     private var liveSpeech: LiveSpeech? = null
     private var pendingRoute: String? = null
 
@@ -107,6 +111,16 @@ class MainActivity : FlutterActivity() {
             }
             IncomingShare.onAvailable = { ch.invokeMethod("available", null) }
         }
+        // Notifica della registrazione (vedi RecordingNotification.kt).
+        recordingChannel = MethodChannel(
+            flutterEngine.dartExecutor.binaryMessenger,
+            RecordingNotification.CHANNEL,
+        ).also { ch ->
+            ch.setMethodCallHandler { call, result ->
+                RecordingNotification.handle(applicationContext, call, result)
+            }
+            RecordingNotification.onCommand = { ch.invokeMethod("command", it) }
+        }
         // Disinstallazione dall'app.
         uninstallChannel = MethodChannel(
             flutterEngine.dartExecutor.binaryMessenger,
@@ -174,6 +188,9 @@ class MainActivity : FlutterActivity() {
         incomingChannel?.setMethodCallHandler(null)
         incomingChannel = null
         IncomingShare.onAvailable = null
+        recordingChannel?.setMethodCallHandler(null)
+        recordingChannel = null
+        RecordingNotification.onCommand = null
         liveSpeech?.dispose()
         liveSpeech = null
         super.cleanUpFlutterEngine(flutterEngine)

@@ -341,6 +341,24 @@ void main() {
       },
     );
 
+    test(
+      'modello incluso nell\'app: subito Parakeet, nessun download',
+      () async {
+        final pk = FakeParakeet(
+          tmp,
+          isInstalled: false,
+          engine: FakeVadEngine(),
+        )..bundled = true;
+        final live = LiveTranscriber(service(pk));
+        await live.begin(await wav(1), sampleRate: 16000, channels: 1);
+        expect(pk.downloadStarted, isFalse);
+        expect(live.downloading, isFalse);
+        expect(live.engine, LiveEngine.parakeet);
+        expect(live.state, LiveState.running);
+        await live.close();
+      },
+    );
+
     test('download annullato: niente Parakeet, la registrazione va', () async {
       final pk = FakeParakeet(tmp, isInstalled: false);
       final live = LiveTranscriber(service(pk));

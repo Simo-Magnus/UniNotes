@@ -1,6 +1,6 @@
 # Termini e condizioni d'uso di UniNotes
 
-Ultimo aggiornamento: 18 ottobre 2026
+Ultimo aggiornamento: 21 ottobre 2026
 
 Questi termini regolano l'uso di UniNotes, l'app per studenti universitari disponibile per Windows, macOS, Android e iOS. Sono scritti per essere letti da chi usa l'app, non solo da chi si occupa di diritto: dove una regola ha un motivo pratico, il motivo è spiegato.
 
@@ -105,7 +105,7 @@ Lo stesso vale per le statistiche di studio, che dipendono da quello che registr
 Alcune funzioni usano servizi forniti da altre aziende:
 
 - **GitHub** (GitHub, Inc.), da cui l'app scarica il database e, su Windows, il programma whisper.cpp e il convertitore ffmpeg, e dove si aprono le segnalazioni;
-- **Hugging Face**, da cui l'app scarica i modelli Whisper;
+- **Hugging Face**, da cui l'app scarica i modelli Whisper (e, solo se mancano dall'app, i file di Parakeet);
 - **Microsoft**, per OneDrive, OneNote e, su Windows, il calendario Outlook e il riconoscimento vocale online;
 - **Google**, per Google Drive, Gemini e NotebookLM;
 - **Apple**, **Google** e **Microsoft** anche per il riconoscimento vocale del sistema che scrive il testo dal vivo durante la registrazione, quando non lavora sul dispositivo;
@@ -119,7 +119,7 @@ Scaricare modelli, programmi e file sincronizzati può consumare molto traffico.
 
 ## 12. Trascrizioni e intelligenza artificiale
 
-L'app non genera testi con l'intelligenza artificiale sui server dello sviluppatore, perché non ne ha. Le trascrizioni si ottengono così: durante la registrazione, il testo dal vivo del riconoscimento vocale del sistema (o di Whisper, dove il sistema non lo offre); dopo, con Whisper, un modello di riconoscimento vocale che gira sul tuo dispositivo, oppure con un assistente esterno che usi con il tuo account.
+L'app non genera testi con l'intelligenza artificiale sui server dello sviluppatore, perché non ne ha. Le trascrizioni si ottengono così: durante la registrazione, il testo dal vivo di Parakeet su Windows e Mac o del riconoscimento vocale del sistema sul telefono (o di Whisper, dove il sistema non lo offre); dopo, con Parakeet o Whisper, modelli di riconoscimento vocale che girano sul tuo dispositivo, oppure con un assistente esterno che usi con il tuo account.
 
 In entrambi i casi il risultato può essere sbagliato. Capita spesso con nomi propri, termini tecnici, formule, sigle, audio disturbato o più persone che parlano insieme. Gli assistenti AI possono anche omettere parti, inventare contenuti plausibili ma falsi o riassumere in modo impreciso. Controlla sempre trascrizioni e riassunti confrontandoli con la lezione, con i libri e con il materiale del docente prima di studiarli o di usarli in un esame.
 
@@ -143,7 +143,9 @@ I pagamenti sono gestiti dalle piattaforme indicate nella pagina «Sostieni», c
 
 Il codice dell'app è protetto dal diritto d'autore ed è concesso in uso alle condizioni della licenza dell'articolo 4. Il nome «UniNotes» identifica il progetto: le versioni modificate possono essere distribuite nel rispetto della licenza, ma non devono far credere di essere la versione originale o di essere approvate dallo sviluppatore.
 
-L'app include componenti di terzi con licenze proprie, elencate in Impostazioni → Privacy e informazioni → «Licenze»: tra gli altri i caratteri IBM Plex (SIL Open Font License 1.1) e whisper.cpp (licenza MIT). I modelli Whisper sono distribuiti da OpenAI con licenza MIT e si scaricano a parte.
+L'app include componenti di terzi con licenze proprie, elencate in Impostazioni → Privacy e informazioni → «Licenze»: tra gli altri i caratteri IBM Plex (SIL Open Font License 1.1), whisper.cpp (licenza MIT), sherpa-onnx (Apache-2.0), ONNX Runtime (MIT) e Silero VAD (MIT). I modelli Whisper sono distribuiti da OpenAI con licenza MIT e si scaricano a parte.
+
+Su Windows e Mac l'app include il modello NVIDIA Parakeet TDT 0.6B v3 di NVIDIA (<https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3>), distribuito con licenza Creative Commons Attribution 4.0 International (CC BY 4.0, <https://creativecommons.org/licenses/by/4.0/>). Il modello incluso è modificato: convertito in formato ONNX e quantizzato int8 da k2-fsa/sherpa-onnx. Il testo della licenza e l'avviso con l'attribuzione sono nella pagina «Licenze» dell'app e accanto ai file del modello (`LICENSE.txt` e `NOTICE.txt`). UniNotes non è affiliata a NVIDIA né approvata da NVIDIA; il modello è fornito così com'è, senza garanzie, come previsto dalla licenza, che non viene limitata in alcun modo.
 
 Il database è pubblicato insieme al codice nel repository del progetto. I dati che contiene sono in gran parte dati di fatto ripresi da fonti pubbliche, ciascuna citata; il loro uso resta soggetto ai diritti dei rispettivi titolari.
 
@@ -161,7 +163,7 @@ Nei limiti consentiti dalla legge, lo sviluppatore non risponde dei danni deriva
 
 1. la perdita o il danneggiamento di registrazioni, appunti, voti o altri dati;
 2. appelli mancati, scadenze non rispettate o decisioni prese sulla base di dati del database, medie o calcoli dell'app;
-3. errori nelle trascrizioni e nei riassunti, prodotti da Whisper, dal riconoscimento vocale del sistema o da assistenti esterni;
+3. errori nelle trascrizioni e nei riassunti, prodotti da Parakeet, da Whisper, dal riconoscimento vocale del sistema o da assistenti esterni;
 4. malfunzionamenti, interruzioni, modifiche o costi dei servizi di terzi;
 5. file eliminati o sovrascritti dalla sincronizzazione con OneDrive o Google Drive;
 6. l'uso illecito dell'app da parte tua o di altri, comprese registrazioni fatte senza consenso e la diffusione di contenuti protetti.

@@ -4,8 +4,9 @@
 /// Fonti (consultate il 21/10/2026):
 /// - modello: https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3 (600 M
 ///   parametri, 25 lingue europee compreso l'italiano, punteggiatura e
-///   maiuscole, licenza CC-BY-4.0: va citata NVIDIA, vedi
-///   [kParakeetAttribution]);
+///   maiuscole, licenza CC BY 4.0: attribuzione, indicazione delle
+///   modifiche, link alla licenza, nessuna approvazione di NVIDIA, vedi
+///   [kParakeetAttribution] e assets/licenses/parakeet_NOTICE.txt);
 /// - file ONNX int8 per sherpa-onnx (stessi file dell'archivio ufficiale
 ///   `sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8.tar.bz2` delle release di
 ///   k2-fsa/sherpa-onnx, qui scaricati uno per uno per non dover
@@ -14,6 +15,10 @@
 ///   un file LFS, l'impronta è quella calcolata sul file scaricato);
 /// - Silero VAD (MIT): https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/silero_vad.onnx,
 ///   incluso negli asset delle build desktop.
+///
+/// Il modello è incluso nelle build desktop (ParakeetService.bundledModelDir,
+/// windows/CMakeLists.txt, tool/prepara_modello_parakeet.py): i file qui
+/// sotto si scaricano dall'app solo se mancano.
 library;
 
 import 'whisper_models.dart';
@@ -42,9 +47,14 @@ const kParakeetPage = 'https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3';
 /// Attribuzione richiesta dalla licenza CC-BY-4.0 (pagina delle licenze e
 /// card dei collegamenti).
 const kParakeetAttribution =
-    'Parakeet TDT 0.6B v3 di NVIDIA (nvidia/parakeet-tdt-0.6b-v3), licenza '
-    'CC-BY-4.0 (creativecommons.org/licenses/by/4.0), convertito in ONNX '
-    'int8 da sherpa-onnx (k2-fsa) senza altre modifiche.';
+    '«NVIDIA Parakeet TDT 0.6B v3» di NVIDIA '
+    '(huggingface.co/nvidia/parakeet-tdt-0.6b-v3), licenza CC BY 4.0 '
+    '(creativecommons.org/licenses/by/4.0). Modificato: convertito in ONNX e '
+    'quantizzato int8 da k2-fsa/sherpa-onnx. UniNotes non è affiliata a NVIDIA '
+    'né approvata da NVIDIA; il modello è fornito «così com’è», senza garanzie.';
+
+/// Pagina della licenza CC BY 4.0.
+const kCcBy4Page = 'https://creativecommons.org/licenses/by/4.0/';
 
 /// I quattro file, dal più piccolo (la ripresa di un download interrotto
 /// riparte dal file a metà).

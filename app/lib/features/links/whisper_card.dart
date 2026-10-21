@@ -706,13 +706,15 @@ class _ParakeetSection extends StatefulWidget {
 
 class _ParakeetSectionState extends State<_ParakeetSection> {
   late final AppServices _s = context.read<AppServices>();
-  late Future<({bool installed, int partial, String? reason})> _future =
-      _load();
+  late Future<({bool installed, bool bundled, int partial, String? reason})>
+  _future = _load();
 
-  Future<({bool installed, int partial, String? reason})> _load() async {
+  Future<({bool installed, bool bundled, int partial, String? reason})>
+  _load() async {
     final pk = _s.whisper.parakeet;
     return (
       installed: await pk.installed(),
+      bundled: await pk.isBundled(),
       partial: await pk.downloadedBytes(),
       reason: await pk.unavailableReason(),
     );
@@ -793,7 +795,10 @@ class _ParakeetSectionState extends State<_ParakeetSection> {
             if (d != null)
               StatusLine(
                 d.reason ??
-                    (d.installed
+                    (d.bundled
+                        ? "Parakeet incluso nell'app: pronto, niente da "
+                              'scaricare.'
+                        : d.installed
                         ? 'Parakeet scaricato: pronto.'
                         : 'Non ancora scaricato: si scarica da solo alla prima '
                               'registrazione (o adesso, qui sotto).'),
@@ -808,7 +813,10 @@ class _ParakeetSectionState extends State<_ParakeetSection> {
                 runSpacing: 4,
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
-                  if (d.installed)
+                  // il modello incluso nell'app non si scarica né si elimina
+                  if (d.bundled)
+                    const SizedBox.shrink()
+                  else if (d.installed)
                     OutlinedButton.icon(
                       onPressed: _delete,
                       icon: const Icon(Icons.delete_outline, size: 18),
@@ -825,10 +833,10 @@ class _ParakeetSectionState extends State<_ParakeetSection> {
                 ],
               ),
             Text(
-              'Licenza CC-BY-4.0: modello di NVIDIA (nvidia/parakeet-tdt-0.6b-v3), '
-              'convertito per sherpa-onnx da k2-fsa.',
+              kParakeetAttribution,
               style: TextStyle(fontSize: 11, color: t.textMuted),
             ),
+            const LinkText('Licenza CC BY 4.0', kCcBy4Page),
           ],
         );
       },

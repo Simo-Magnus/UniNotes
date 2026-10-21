@@ -24,8 +24,15 @@ class FakeParakeet extends ParakeetService {
   Completer<void>? _download;
   final transcribed = <String>[];
 
+  /// Il modello è quello incluso nell'app (build desktop).
+  bool bundled = false;
+
   @override
-  Future<bool> installed() async => platformSupported && isInstalled;
+  Future<bool> installed() async =>
+      platformSupported && (isInstalled || bundled);
+
+  @override
+  Future<bool> isBundled() async => platformSupported && bundled;
 
   @override
   Future<String?> unavailableReason() async =>

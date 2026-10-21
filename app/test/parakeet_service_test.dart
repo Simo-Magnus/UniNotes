@@ -110,6 +110,49 @@ void main() {
       expect(pk.downloading, isFalse);
     });
 
+    test('modello incluso nell\'app: si usa da lì, niente download', () async {
+      final inc = Directory(p.join(tmp.path, 'app', 'data', 'parakeet'))
+        ..createSync(recursive: true);
+      final files = [file('tokens.txt'), file('encoder.int8.onnx')];
+      for (final f in files) {
+        File(p.join(inc.path, f.name)).writeAsBytesSync(bodies[f.name]!);
+      }
+      final vad = File(
+        p.join(Directory.current.path, 'assets', 'vad', 'silero_vad.onnx'),
+      );
+      vad.copySync(p.join(inc.path, 'silero_vad.onnx'));
+      ParakeetService make(Directory? d) => ParakeetService(
+        baseDir: () async => tmp,
+        host: WhisperHost.windows,
+        downloader: FileDownloader(freeSpace: (_) async => null),
+        fileUrl: (f) => Uri.parse('http://127.0.0.1:${server.port}/${f.name}'),
+        files: files,
+        bundledDir: () => d,
+      );
+      final pk = make(inc);
+      expect(await pk.isBundled(), isTrue);
+      expect(await pk.installed(), isTrue);
+      expect((await pk.modelDir()).path, inc.path);
+      expect((await pk.vadModel())!.path, p.join(inc.path, 'silero_vad.onnx'));
+      // «scarica» non scarica niente, «elimina» non tocca il modello incluso
+      expect((await pk.download().toList()).last.fraction, 1);
+      expect(hits, isEmpty);
+      await pk.delete();
+      expect(File(p.join(inc.path, 'encoder.int8.onnx')).existsSync(), isTrue);
+
+      // modello incluso incompleto (build a mano): ripiego sul download
+      File(p.join(inc.path, 'tokens.txt')).writeAsStringSync('rotto');
+      final broken = make(inc);
+      expect(await broken.isBundled(), isFalse);
+      expect(await broken.installed(), isFalse);
+      await broken.download().toList();
+      expect(hits, contains('tokens.txt'));
+      expect(await broken.installed(), isTrue);
+      expect((await broken.modelDir()).path, isNot(inc.path));
+      // nessuna cartella inclusa (telefono, build senza modello)
+      expect(await make(null).isBundled(), isFalse);
+    });
+
     test('Silero VAD copiato dall\'asset solo se integro', () async {
       final ok = File(
         p.join(Directory.current.path, 'assets', 'vad', 'silero_vad.onnx'),

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Notifica «Registrazione in corso» (RecordingNotification.kt): titolo,
+     cronometro e corso a sinistra, «Pausa»/«Riprendi» e «Salva» a destra,
+     visibili anche con la notifica compressa e a schermo bloccato. I colori
+     del testo vengono dagli stili delle notifiche del sistema (chiaro e
+     scuro), quelli dei pulsanti da values/ e values-night/. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/notifica_titolo"
+            style="@android:style/TextAppearance.Material.Notification.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Chronometer
+                android:id="@+id/notifica_tempo"
+                style="@android:style/TextAppearance.Material.Notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFeatureSettings="tnum"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/notifica_separatore"
+                style="@android:style/TextAppearance.Material.Notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" · " />
+
+            <TextView
+                android:id="@+id/notifica_corso"
+                style="@android:style/TextAppearance.Material.Notification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/notifica_principale"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/notifica_pulsante"
+        android:gravity="center"
+        android:maxLines="1"
+        android:minWidth="64dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/notifica_pulsante_testo"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/notifica_salva"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginStart="6dp"
+        android:background="@drawable/notifica_pulsante"
+        android:gravity="center"
+        android:maxLines="1"
+        android:minWidth="64dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/notifica_pulsante_testo"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+</LinearLayout>

@@ -135,6 +135,18 @@ jobs:
       - name: Elenco degli atenei e dei corsi nell'app (i dati dell'ateneo si scaricano)
         shell: bash
         run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
+      # Parakeet (NVIDIA, CC BY 4.0) incluso nell'app desktop: 670 MB scaricati
+      # una volta da Hugging Face con lo SHA-256 controllato, poi presi dalla
+      # cache (mai nel repository). Su Windows li installa CMake in
+      # data/parakeet accanto a uninotes.exe.
+      - name: Cache del modello Parakeet
+        uses: actions/cache@v4
+        with:
+          path: app/build/parakeet
+          key: parakeet-tdt-0.6b-v3-int8-acfc2b44
+      - name: Modello Parakeet (incluso nell'app, 670 MB, non nel repository)
+        shell: bash
+        run: python3 tool/prepara_modello_parakeet.py || python tool/prepara_modello_parakeet.py
       - run: flutter build windows --release --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
       # Firma facoltativa del programma (certificato di firma del codice .pfx
       # in base64 nei secret): senza, il passo non parte e SmartScreen avvisa
@@ -223,6 +235,20 @@ jobs:
       # Link alle donazioni ammesso (policy 10.8.2: donazioni volontarie con
       # un servizio di pagamento esterno, da dichiarare in Partner Center).
       # MSSTORE_ID (facoltativo): ID dello Store per «Lascia una recensione».
+      # Parakeet (NVIDIA, CC BY 4.0) incluso nell'app desktop: 670 MB scaricati
+      # una volta da Hugging Face con lo SHA-256 controllato, poi presi dalla
+      # cache (mai nel repository). Su Windows li installa CMake in
+      # data/parakeet accanto a uninotes.exe.
+      - name: Cache del modello Parakeet
+        if: env.HAS_MSSTORE_IDENTITY == 'true'
+        uses: actions/cache@v4
+        with:
+          path: app/build/parakeet
+          key: parakeet-tdt-0.6b-v3-int8-acfc2b44
+      - name: Modello Parakeet (incluso nell'app, 670 MB, non nel repository)
+        if: env.HAS_MSSTORE_IDENTITY == 'true'
+        shell: bash
+        run: python3 tool/prepara_modello_parakeet.py || python tool/prepara_modello_parakeet.py
       - name: Build Windows per lo Store
         if: env.HAS_MSSTORE_IDENTITY == 'true'
         run: flutter build windows --release --dart-define=STORE=microsoft --dart-define=MSSTORE_ID=${{ secrets.MSSTORE_ID }} --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
@@ -270,9 +296,24 @@ jobs:
       - name: Elenco degli atenei e dei corsi nell'app (i dati dell'ateneo si scaricano)
         shell: bash
         run: python3 ../tools/db_builder/sync_assets.py || python ../tools/db_builder/sync_assets.py
+      # Parakeet (NVIDIA, CC BY 4.0) incluso nell'app desktop: 670 MB scaricati
+      # una volta da Hugging Face con lo SHA-256 controllato, poi presi dalla
+      # cache (mai nel repository). Sul Mac vanno in
+      # UniNotes.app/Contents/Resources/parakeet, prima della firma.
+      - name: Cache del modello Parakeet
+        uses: actions/cache@v4
+        with:
+          path: app/build/parakeet
+          key: parakeet-tdt-0.6b-v3-int8-acfc2b44
+      - name: Modello Parakeet (incluso nell'app, 670 MB, non nel repository)
+        shell: bash
+        run: python3 tool/prepara_modello_parakeet.py || python tool/prepara_modello_parakeet.py
       # niente modello Whisper integrato: su Mac il testo dal vivo è di
-      # Parakeet, scaricato dall'app (l'asset è solo per Android e iOS)
+      # Parakeet (l'asset di Whisper è solo per Android e iOS)
       - run: flutter build macos --release --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+      - name: Parakeet dentro UniNotes.app (modello, Silero VAD e licenze)
+        shell: bash
+        run: python3 tool/prepara_modello_parakeet.py --installa build/macos/Build/Products/Release/UniNotes.app/Contents/Resources/parakeet
       # Firma con il certificato «Developer ID Application» e notarizzazione
       # di Apple: richiedono l'account Apple Developer. Senza i secret questi
       # passi non partono e la build resta non firmata.

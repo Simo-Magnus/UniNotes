@@ -281,8 +281,17 @@ class _SherpaVad implements SpeechVad {
         bufferSizeInSeconds: 60,
       );
 
+  /// A pezzi di 0,1 s: con blocchi grandi (30 s della trascrizione di un
+  /// file) il VAD di sherpa-onnx non chiude le frasi alle pause e perde
+  /// l'inizio (misurato il 21/10/2026).
   @override
-  void accept(Float32List samples) => _v.acceptWaveform(samples);
+  void accept(Float32List samples) {
+    const step = 1600;
+    for (var i = 0; i < samples.length; i += step) {
+      final end = i + step < samples.length ? i + step : samples.length;
+      _v.acceptWaveform(Float32List.sublistView(samples, i, end));
+    }
+  }
 
   @override
   bool get speaking => _v.isDetected();

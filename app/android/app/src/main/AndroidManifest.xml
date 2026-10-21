@@ -34,10 +34,12 @@
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round">
         <!-- Icona piccola monocromatica della notifica «Registrazione in
-             corso» (flutter_foreground_task la legge da qui; senza, la barra
-             di stato mostra un quadrato bianco al posto del logo). -->
+             corso» (flutter_foreground_task la legge da qui per la sua
+             notifica, poi sostituita da RecordingNotification.kt; senza, la
+             barra di stato mostra un quadrato bianco al posto del logo). -->
         <meta-data
             android:name="io.github.simomagnus.universitynotes.NOTIFICATION_ICON"
             android:resource="@drawable/ic_stat_uninotes" />
@@ -197,6 +199,11 @@
              prima anche ad app chiusa (FocusDnd.kt). -->
         <receiver
             android:name=".FocusDndReceiver"
+            android:exported="false" />
+        <!-- Pulsanti «Pausa»/«Riprendi» e «Salva» della notifica della
+             registrazione (RecordingNotification.kt). -->
+        <receiver
+            android:name=".RecordingCommandReceiver"
             android:exported="false" />
         <!-- Widget della schermata Home (dati scritti dall'app in
              FlutterSharedPreferences, vedi lib/core/reminders/home_widgets.dart). -->

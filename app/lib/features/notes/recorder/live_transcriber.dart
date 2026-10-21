@@ -79,7 +79,8 @@ List<LiveEngine> liveEngineOrder({required bool phone}) => phone
 ///    ~1 s si decodifica la frase in corso (testo provvisorio, [partial]);
 ///    a una pausa (o dopo ~18 s di parlato continuo) diventa definitiva; i
 ///    silenzi non producono testo ([VadLiveSegmenter]). Il modello (639
-///    MiB) si scarica alla prima registrazione, con la barra nella card:
+///    MiB) è incluso nell'app e si usa subito; solo se manca (build fatta
+///    a mano) si scarica alla prima registrazione, con la barra nella card:
 ///    intanto si registra e quei tratti si trascrivono con Parakeet dopo il
 ///    salvataggio ([recover]). Se Parakeet non può girare (RAM, file
 ///    mancante, errore) si usa il modello Whisper scaricato dall'utente a

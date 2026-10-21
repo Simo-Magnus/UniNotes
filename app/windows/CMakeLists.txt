@@ -114,7 +114,96 @@ set(CMAKE_INSTALL_SYSTEM_RUNTIME_COMPONENT Runtime)
 set(CMAKE_INSTALL_UCRT_LIBRARIES FALSE)
 include(InstallRequiredSystemLibraries)
 
-# Testo dal vivo: dal 21/10/2026 su Windows lo fa Parakeet (sherpa-onnx, le
-# cui DLL arrivano con il plugin sherpa_onnx_windows), scaricato dall'app
-# alla prima registrazione: il modello Whisper base q5_1 non si scarica più
-# durante la build e non è più in data/whisper/ (vedi docs/registratore.md).
+# Testo dal vivo: su Windows lo fa Parakeet (NVIDIA Parakeet TDT 0.6B v3,
+# CC BY 4.0, nella conversione ONNX int8 di sherpa-onnx; le DLL arrivano con
+# il plugin sherpa_onnx_windows). Il modello è INCLUSO nell'app: si scarica
+# una volta da Hugging Face nella cache app/build/parakeet/ (fuori dal
+# repository; la CI la conserva con actions/cache e la può riempire prima
+# con tool/prepara_modello_parakeet.py), si controlla lo SHA-256 di ogni
+# file e si installa in data/parakeet/ accanto a uninotes.exe insieme a
+# Silero VAD e ai testi delle licenze (CC BY 4.0, avviso con attribuzione
+# e modifiche, MIT, Apache-2.0): lo prendono UniNotes_setup.exe, lo zip e
+# l'MSIX, che impacchettano la cartella Release. Se il download non riesce
+# (build senza internet) la build continua e l'app scarica il modello da
+# sola alla prima registrazione. -DUNINOTES_PARAKEET=OFF per non includerlo.
+# Il modello Whisper base q5_1 non c'è più su Windows.
+option(UNINOTES_PARAKEET "Include il modello Parakeet nell'app" ON)
+if(UNINOTES_PARAKEET)
+  set(PARAKEET_REPO
+    "https://huggingface.co/csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/resolve/main")
+  set(PARAKEET_CACHE
+    "${CMAKE_CURRENT_SOURCE_DIR}/../build/parakeet/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8")
+  # nome, SHA-256 (gli stessi di lib/features/links/parakeet_model.dart)
+  set(PARAKEET_FILES
+    "tokens.txt|d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+    "joiner.int8.onnx|3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3"
+    "decoder.int8.onnx|179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e"
+    "encoder.int8.onnx|acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247")
+  set(PARAKEET_OK TRUE)
+  foreach(entry IN LISTS PARAKEET_FILES)
+    string(REPLACE "|" ";" parts "${entry}")
+    list(GET parts 0 name)
+    list(GET parts 1 sha)
+    set(target "${PARAKEET_CACHE}/${name}")
+    # file già controllato (segno accanto con la stessa impronta): non si
+    # rilegge ogni volta lo SHA-256 dei 650 MB dell'encoder
+    set(stamp "${target}.sha256")
+    set(have "")
+    if(EXISTS "${target}" AND EXISTS "${stamp}")
+      file(READ "${stamp}" have)
+      string(STRIP "${have}" have)
+    endif()
+    if(NOT have STREQUAL sha)
+      if(EXISTS "${target}")
+        file(SHA256 "${target}" have)
+      endif()
+      if(NOT have STREQUAL sha)
+        message(STATUS "Scarico Parakeet: ${name}")
+        file(DOWNLOAD "${PARAKEET_REPO}/${name}" "${target}.part"
+          STATUS dl_status TLS_VERIFY ON TIMEOUT 1800)
+        list(GET dl_status 0 dl_code)
+        set(have "")
+        if(dl_code EQUAL 0)
+          file(SHA256 "${target}.part" have)
+        endif()
+        if(have STREQUAL sha)
+          file(RENAME "${target}.part" "${target}")
+        else()
+          file(REMOVE "${target}.part")
+          message(WARNING "Parakeet: ${name} non scaricato (${dl_status}): "
+            "l'app scaricherà il modello alla prima registrazione.")
+          set(PARAKEET_OK FALSE)
+        endif()
+      endif()
+      if(have STREQUAL sha)
+        file(WRITE "${stamp}" "${sha}")
+      endif()
+    endif()
+  endforeach()
+  if(PARAKEET_OK)
+    foreach(entry IN LISTS PARAKEET_FILES)
+      string(REPLACE "|" ";" parts "${entry}")
+      list(GET parts 0 name)
+      install(FILES "${PARAKEET_CACHE}/${name}"
+        DESTINATION "${INSTALL_BUNDLE_DATA_DIR}/parakeet" COMPONENT Runtime)
+    endforeach()
+    set(LIC "${CMAKE_CURRENT_SOURCE_DIR}/../assets/licenses")
+    install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/../assets/vad/silero_vad.onnx"
+      DESTINATION "${INSTALL_BUNDLE_DATA_DIR}/parakeet" COMPONENT Runtime)
+    install(FILES "${LIC}/CC-BY-4.0.txt"
+      DESTINATION "${INSTALL_BUNDLE_DATA_DIR}/parakeet" RENAME "LICENSE.txt"
+      COMPONENT Runtime)
+    install(FILES "${LIC}/parakeet_NOTICE.txt"
+      DESTINATION "${INSTALL_BUNDLE_DATA_DIR}/parakeet" RENAME "NOTICE.txt"
+      COMPONENT Runtime)
+    install(FILES "${LIC}/silero_vad_LICENSE.txt" "${LIC}/onnxruntime_LICENSE.txt"
+      DESTINATION "${INSTALL_BUNDLE_DATA_DIR}/parakeet" COMPONENT Runtime)
+    set(SHERPA_LICENSE
+      "${CMAKE_CURRENT_SOURCE_DIR}/flutter/ephemeral/.plugin_symlinks/sherpa_onnx_windows/LICENSE")
+    if(EXISTS "${SHERPA_LICENSE}")
+      install(FILES "${SHERPA_LICENSE}"
+        DESTINATION "${INSTALL_BUNDLE_DATA_DIR}/parakeet"
+        RENAME "sherpa-onnx_LICENSE.txt" COMPONENT Runtime)
+    endif()
+  endif()
+endif()

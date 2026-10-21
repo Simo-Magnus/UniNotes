@@ -57,6 +57,10 @@ UninstallDisplayIcon={app}\uninotes.exe
 UninstallDisplayName=UniNotes
 Compression=lzma2/max
 SolidCompression=yes
+; Il modello Parakeet incluso (data\parakeet, 670 MB) si comprime poco
+; (~430 MB): più thread per non allungare troppo la build.
+LZMAUseSeparateProcess=yes
+LZMANumBlockThreads=4
 WizardStyle=modern
 ; Immagini con il logo (tools/genera_icona.py), una per ogni scala dello
 ; schermo: riquadro a sinistra di benvenuto e fine, icona in alto a destra.
