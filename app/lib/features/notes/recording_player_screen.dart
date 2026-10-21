@@ -34,6 +34,8 @@ import 'recorder/recording_save.dart' show writeTranscriptFor;
 import 'recorder/wav.dart';
 import 'recorder/waveform.dart';
 import 'recycle_bin.dart' show moveFile;
+import 'spell_check.dart'
+    show ReadingSpellChecker, misspelledSpans, spellLanguageOf;
 
 /// Una registrazione, come in Memo Vocali: forma d'onda che scorre sotto la
 /// linea di lettura (trascinabile, fluida a ogni fotogramma), indietro e
@@ -176,6 +178,15 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
   final _list = ListController();
   int _current = -1;
 
+  /// Linea rossa sulle parole errate della trascrizione, come nella modifica.
+  late final ReadingSpellChecker _spell = ReadingSpellChecker(
+    language: spellLanguageOf(widget.course.examLanguage),
+  )..addListener(_spellChanged);
+
+  void _spellChanged() {
+    if (mounted) setState(() {});
+  }
+
   bool _searchOpen = false;
   final _query = TextEditingController();
   final _queryFocus = FocusNode();
@@ -222,6 +233,7 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
     _scrub.dispose();
     _scroll.dispose();
     _list.dispose();
+    _spell.dispose();
     _query.dispose();
     _queryFocus.dispose();
     super.dispose();
@@ -1271,7 +1283,12 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
       final plain = _plainText ?? '';
       return SingleChildScrollView(
         padding: const EdgeInsets.all(16),
-        child: SelectableText(plain, style: theme.textTheme.bodyLarge),
+        child: SelectableText.rich(
+          TextSpan(
+            style: theme.textTheme.bodyLarge,
+            children: misspelledSpans(plain, _spell.errorsOf(plain)),
+          ),
+        ),
       );
     }
     final q = _searchOpen ? _query.text.trim() : '';
@@ -1311,7 +1328,10 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
               // punto dell'audio; le formule ($…$) si disegnano
               child: q.isEmpty && mayContainMath(s.text)
                   ? MathText(s.text, style: style)
-                  : Text.rich(_highlight(s.text, q, theme), style: style),
+                  : Text.rich(
+                      _highlight(s.text, q, theme, _spell.errorsOf(s.text)),
+                      style: style,
+                    ),
             ),
           ),
         );
@@ -1319,8 +1339,17 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
     );
   }
 
-  TextSpan _highlight(String text, String q, ThemeData theme) {
-    if (q.isEmpty) return TextSpan(text: text);
+  /// Frase con i risultati della ricerca evidenziati e le parole errate
+  /// ([errors], nelle posizioni di [text]) con la linea ondulata rossa.
+  TextSpan _highlight(
+    String text,
+    String q,
+    ThemeData theme,
+    List<SuggestionSpan> errors,
+  ) {
+    if (q.isEmpty) {
+      return TextSpan(children: misspelledSpans(text, errors));
+    }
     final lower = text.toLowerCase();
     final needle = q.toLowerCase();
     final spans = <TextSpan>[];
@@ -1328,20 +1357,25 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
     while (true) {
       final i = lower.indexOf(needle, from);
       if (i < 0) break;
-      if (i > from) spans.add(TextSpan(text: text.substring(from, i)));
-      spans.add(
-        TextSpan(
-          text: text.substring(i, i + needle.length),
+      if (i > from) {
+        spans.addAll(misspelledSpans(text, errors, start: from, end: i));
+      }
+      spans.addAll(
+        misspelledSpans(
+          text,
+          errors,
           style: TextStyle(
             backgroundColor: context.tokens.orangeGradient.first.withValues(
               alpha: 0.35,
             ),
           ),
+          start: i,
+          end: i + needle.length,
         ),
       );
       from = i + needle.length;
     }
-    spans.add(TextSpan(text: text.substring(from)));
+    spans.addAll(misspelledSpans(text, errors, start: from));
     return TextSpan(children: spans);
   }
 }

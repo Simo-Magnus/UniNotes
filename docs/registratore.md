@@ -279,6 +279,39 @@ una trascrizione di un'ora. Il campo di Flutter controlla il testo solo
 quando cambia: per sottolineare subito il testo che c'è già, il controllo si
 attiva un fotogramma dopo l'apertura del campo.
 
+**Linea rossa anche in lettura.** Le parole errate si segnano con la stessa
+linea ondulata rossa anche senza entrare nella modifica: nella card
+«Trascrizione» mentre si registra (`EditableLiveTranscript`, modalità
+lettura), nel lettore delle registrazioni (`recording_player_screen.dart`,
+frasi della trascrizione e testo semplice) e nella lettura di trascrizioni,
+riassunti e appunti (`MarkdownLiteView`, non nelle risposte dell'AI).
+L'aspetto è identico a quello della modifica
+(`TextField.materialMisspelledTextStyle`) e il passaggio alla modifica con il
+cursore nel punto toccato non cambia (la linea divide il testo in tratti ma
+non cambia né le posizioni dei caratteri né quello che leggono i lettori di
+schermo). Il lavoro è in `spell_check.dart`:
+
+- `ReadingSpellChecker` chiede gli errori allo stesso servizio
+  (`spellCheckService(lingua)`) un testo alla volta (una frase della
+  trascrizione, un blocco di Markdown), in modo asincrono, un testo dopo
+  l'altro e dopo un breve ritardo (500 ms) dall'ultimo testo nuovo; il
+  risultato resta in memoria per testo, quindi lo stesso testo non si richiede
+  due volte e durante la registrazione (una frase nuova ogni ~2 s) si
+  controllano solo le frasi nuove o cambiate. Finché il risultato non c'è il
+  testo si vede com'è; dove il correttore non c'è (`spellCheckSupported`
+  falso, Linux) o se il controllo fallisce, nessun errore e nessun avviso. Un
+  controllo superato da uno più recente (restituisce `null`) si riprova una
+  volta.
+- `misspelledSpans(testo, errori, {style, start, end, offset})` trasforma
+  testo + errori in `TextSpan` con le parole errate sottolineate; `start`/`end`
+  e `offset` permettono di disegnare un tratto di un testo più grande (la
+  parte di una frase prima o dopo una formula) con gli errori calcolati sul
+  testo intero.
+- Il testo provvisorio (ancora in corso) e le formule (`$…$`, parti math) non
+  si controllano; nei Markdown anche il codice, e il controllo di un blocco
+  vede una formula o il codice in linea come uno spazio (una parola in parte
+  in grassetto resta una parola).
+
 ### Formule (LaTeX)
 
 Il filtro **«Formule (LaTeX)»** nella card «Trascrizione» (la scelta resta

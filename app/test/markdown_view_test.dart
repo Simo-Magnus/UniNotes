@@ -21,6 +21,64 @@ void main() {
     expect(find.text('1.'), findsOneWidget);
   });
 
+  testWidgets('lettura: linea rossa sulle parole errate, non nel codice', (
+    t,
+  ) async {
+    final service = _FakeSpell();
+    const text =
+        '# Titolo ciaoo\n\nUna **ciaoo** a tutti e ciaoo con ==ciaoo==.\n\n'
+        '```\nciaoo nel codice\n```\n\nUsa `ciaoo` qui.';
+    Future<List<TextSpan>> wavySpans() async {
+      final out = <TextSpan>[];
+      for (final w in t.widgetList<RichText>(find.byType(RichText))) {
+        w.text.visitChildren((s) {
+          if (s is TextSpan &&
+              s.style?.decoration == TextDecoration.underline &&
+              s.style?.decorationStyle == TextDecorationStyle.wavy) {
+            out.add(s);
+          }
+          return true;
+        });
+      }
+      return out;
+    }
+
+    Widget app({String? language}) => MaterialApp(
+      home: Scaffold(
+        body: MarkdownLiteView(
+          text,
+          spellLanguage: language,
+          spellService: service,
+        ),
+      ),
+    );
+    // senza lingua il testo non si controlla
+    await t.pumpWidget(app());
+    await t.pump(const Duration(seconds: 1));
+    expect(service.calls, isEmpty);
+    expect(await wavySpans(), isEmpty);
+
+    await t.pumpWidget(app(language: 'it'));
+    expect(await wavySpans(), isEmpty);
+    await t.pump(const Duration(seconds: 1));
+    await t.pump();
+    // un controllo per blocco di testo (titolo, paragrafo, riga con il codice
+    // in linea); il blocco di codice no
+    expect(service.calls, [
+      'Titolo ciaoo',
+      'Una ciaoo a tutti e ciaoo con ciaoo.',
+      'Usa       qui.',
+    ]);
+    final wavy = await wavySpans();
+    // titolo, grassetto, parola nel paragrafo, evidenziato
+    expect(wavy.map((s) => s.text), ['ciaoo', 'ciaoo', 'ciaoo', 'ciaoo']);
+    expect(wavy[1].style?.fontWeight, FontWeight.w700);
+    expect(
+      find.textContaining('nel codice', findRichText: true),
+      findsOneWidget,
+    );
+  });
+
   testWidgets('PDF con caratteri accentati e simboli', (t) async {
     final bytes = (await t.runAsync(
       () => markdownToPdf(
@@ -32,6 +90,23 @@ void main() {
     expect(String.fromCharCodes(bytes.take(5)), '%PDF-');
     expect(bytes.length, greaterThan(5000));
   });
+}
+
+/// Servizio del controllo ortografico finto: «ciaoo» è errato.
+class _FakeSpell extends SpellCheckService {
+  final calls = <String>[];
+
+  @override
+  Future<List<SuggestionSpan>?> fetchSpellCheckSuggestions(
+    Locale locale,
+    String text,
+  ) async {
+    calls.add(text);
+    return [
+      for (final m in RegExp('ciaoo').allMatches(text))
+        SuggestionSpan(TextRange(start: m.start, end: m.end), const ['ciao']),
+    ];
+  }
 }
 
 void searchTests() {

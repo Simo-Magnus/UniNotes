@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart'
+    show SpellCheckService, SuggestionSpan, rootBundle;
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
@@ -7,6 +8,7 @@ import '../../widgets/find_bar.dart';
 import '../../widgets/math_text.dart';
 import '../reader/reader_text.dart';
 import 'markdown_lite.dart';
+import 'spell_check.dart';
 
 /// Colore dell'evidenziatore (concetti chiave): giallo da evidenziatore,
 /// distinto dall'arancione delle azioni.
@@ -27,7 +29,13 @@ List<int> findOccurrences(String text, String query) => findFolded(text, query);
 /// testo selezionabile e copiabile. Con [query] evidenzia i risultati della
 /// ricerca; quello di indice [activeMatch] riceve [activeKey] (per portarlo
 /// in vista).
-class MarkdownLiteView extends StatelessWidget {
+///
+/// Con [spellLanguage] ('it' o 'en') le parole errate hanno la linea
+/// ondulata rossa del controllo ortografico anche in lettura
+/// ([ReadingSpellChecker], un blocco di testo alla volta; formule e codice
+/// non si controllano); senza, il testo non si controlla (es. risposte
+/// dell'AI).
+class MarkdownLiteView extends StatefulWidget {
   const MarkdownLiteView(
     this.text, {
     super.key,
@@ -36,6 +44,8 @@ class MarkdownLiteView extends StatelessWidget {
     this.activeMatch,
     this.activeKey,
     this.scrollController,
+    this.spellLanguage,
+    this.spellService,
   });
   final String text;
   final EdgeInsets? padding;
@@ -43,6 +53,14 @@ class MarkdownLiteView extends StatelessWidget {
   final int? activeMatch;
   final GlobalKey? activeKey;
   final ScrollController? scrollController;
+
+  /// Lingua principale del controllo ortografico in lettura (null = nessun
+  /// controllo).
+  final String? spellLanguage;
+
+  /// Servizio del controllo ortografico al posto di quello del sistema (per
+  /// i test).
+  final SpellCheckService? spellService;
 
   /// Testi cercabili nell'ordine di visualizzazione (stesso conteggio di
   /// build). Le formule sono disegni, non testo: non si cercano.
@@ -65,75 +83,182 @@ class MarkdownLiteView extends StatelessWidget {
             .fold(0, (n, t) => n + findOccurrences(t, query).length);
 
   @override
+  State<MarkdownLiteView> createState() => _MarkdownLiteViewState();
+}
+
+class _MarkdownLiteViewState extends State<MarkdownLiteView> {
+  /// Controllo ortografico in lettura (null = nessun controllo).
+  ReadingSpellChecker? _checker;
+
+  @override
+  void initState() {
+    super.initState();
+    _syncChecker();
+  }
+
+  @override
+  void didUpdateWidget(MarkdownLiteView old) {
+    super.didUpdateWidget(old);
+    if (old.spellService != widget.spellService) {
+      _checker?.dispose();
+      _checker = null;
+    }
+    _syncChecker();
+  }
+
+  void _syncChecker() {
+    final language = widget.spellLanguage;
+    if (language == null) {
+      _checker?.dispose();
+      _checker = null;
+    } else if (_checker == null) {
+      _checker = ReadingSpellChecker(
+        language: language,
+        service: widget.spellService,
+      )..addListener(_spellChanged);
+    } else {
+      _checker!.language = language;
+    }
+  }
+
+  void _spellChanged() {
+    if (mounted) setState(() {});
+  }
+
+  @override
+  void dispose() {
+    _checker?.dispose();
+    super.dispose();
+  }
+
+  /// Il testo di un blocco per il controllo ortografico: i tratti di testo
+  /// uno dopo l'altro (così una parola in parte in grassetto resta una
+  /// parola) con uno spazio al posto di formule e di codice. [starts] dà
+  /// dove comincia ogni tratto.
+  (String, List<int>) _blockText(List<MdSpan> list) {
+    final b = StringBuffer();
+    final starts = <int>[];
+    for (final s in list) {
+      starts.add(b.length);
+      b.write(s.math || s.code ? ' ' * (s.math ? 1 : s.text.length) : s.text);
+    }
+    return (b.toString(), starts);
+  }
+
+  @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final t = theme.textTheme;
-    final blocks = parseMarkdown(text);
-    final q = query ?? '';
+    final blocks = parseMarkdown(widget.text);
+    final q = widget.query ?? '';
+    final activeMatch = widget.activeMatch;
     var counter = 0;
     var activeHere = false;
 
-    // Spezza un testo nei risultati della ricerca (evidenziati).
-    List<InlineSpan> split(String text, TextStyle? style) {
+    // Spezza un testo nei risultati della ricerca (evidenziati) e nelle
+    // parole errate ([errors] sono nelle posizioni di un testo più grande
+    // in cui [text] comincia a [offset]).
+    List<InlineSpan> split(
+      String text,
+      TextStyle? style, {
+      List<SuggestionSpan> errors = const [],
+      int offset = 0,
+    }) {
       final hits = findOccurrences(text, q);
-      if (hits.isEmpty) return [TextSpan(text: text, style: style)];
+      if (hits.isEmpty) {
+        return errors.isEmpty
+            ? [TextSpan(text: text, style: style)]
+            : misspelledSpans(text, errors, style: style, offset: offset);
+      }
       final out = <InlineSpan>[];
       var i = 0;
       for (final j in hits) {
         if (j > i) {
-          out.add(TextSpan(text: text.substring(i, j), style: style));
+          out.addAll(
+            misspelledSpans(
+              text,
+              errors,
+              style: style,
+              start: i,
+              end: j,
+              offset: offset,
+            ),
+          );
         }
         final active = counter == activeMatch;
         if (active) activeHere = true;
-        out.add(
-          TextSpan(
-            text: text.substring(j, j + q.length),
+        out.addAll(
+          misspelledSpans(
+            text,
+            errors,
             style: (style ?? const TextStyle()).copyWith(
               backgroundColor: active
                   ? findActiveColor(theme.brightness)
                   : findMatchColor(theme.brightness),
             ),
+            start: j,
+            end: j + q.length,
+            offset: offset,
           ),
         );
         counter++;
         i = j + q.length;
       }
       if (i < text.length) {
-        out.add(TextSpan(text: text.substring(i), style: style));
+        out.addAll(
+          misspelledSpans(
+            text,
+            errors,
+            style: style,
+            start: i,
+            offset: offset,
+          ),
+        );
       }
       return out;
     }
 
-    TextSpan spans(List<MdSpan> list, TextStyle base) => TextSpan(
-      style: base,
-      children: [
-        for (final s in list)
-          if (s.math)
-            mathSpan(
-              s,
-              base.copyWith(
-                fontWeight: s.bold ? FontWeight.w700 : null,
-                backgroundColor: s.highlight
-                    ? highlightColor(theme.brightness)
-                    : null,
+    TextSpan spans(List<MdSpan> list, TextStyle base) {
+      final checker = _checker;
+      final (block, starts) = checker == null
+          ? ('', const <int>[])
+          : _blockText(list);
+      final errors = checker == null
+          ? const <SuggestionSpan>[]
+          : checker.errorsOf(block);
+      return TextSpan(
+        style: base,
+        children: [
+          for (final (i, s) in list.indexed)
+            if (s.math)
+              mathSpan(
+                s,
+                base.copyWith(
+                  fontWeight: s.bold ? FontWeight.w700 : null,
+                  backgroundColor: s.highlight
+                      ? highlightColor(theme.brightness)
+                      : null,
+                ),
+              )
+            else
+              ...split(
+                s.text,
+                TextStyle(
+                  fontWeight: s.bold ? FontWeight.w700 : null,
+                  fontStyle: s.italic ? FontStyle.italic : null,
+                  fontFamily: s.code ? 'IBMPlexMono' : null,
+                  backgroundColor: s.highlight
+                      ? highlightColor(theme.brightness)
+                      : (s.code
+                            ? theme.colorScheme.surfaceContainerHighest
+                            : null),
+                ),
+                errors: s.code ? const [] : errors,
+                offset: i < starts.length ? starts[i] : 0,
               ),
-            )
-          else
-            ...split(
-              s.text,
-              TextStyle(
-                fontWeight: s.bold ? FontWeight.w700 : null,
-                fontStyle: s.italic ? FontStyle.italic : null,
-                fontFamily: s.code ? 'IBMPlexMono' : null,
-                backgroundColor: s.highlight
-                    ? highlightColor(theme.brightness)
-                    : (s.code
-                          ? theme.colorScheme.surfaceContainerHighest
-                          : null),
-              ),
-            ),
-      ],
-    );
+        ],
+      );
+    }
 
     final body = t.bodyLarge!.copyWith(height: 1.55);
     final children = <Widget>[];
@@ -210,8 +335,8 @@ class MarkdownLiteView extends StatelessWidget {
           );
       }
       children.add(
-        activeHere && activeKey != null
-            ? KeyedSubtree(key: activeKey, child: w)
+        activeHere && widget.activeKey != null
+            ? KeyedSubtree(key: widget.activeKey, child: w)
             : w,
       );
     }
@@ -219,8 +344,8 @@ class MarkdownLiteView extends StatelessWidget {
     // poterlo portare in vista anche se è lontano.
     return SelectionArea(
       child: SingleChildScrollView(
-        controller: scrollController,
-        padding: padding ?? const EdgeInsets.fromLTRB(20, 12, 20, 40),
+        controller: widget.scrollController,
+        padding: widget.padding ?? const EdgeInsets.fromLTRB(20, 12, 20, 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: children,
@@ -238,9 +363,19 @@ class SearchableMarkdownView extends StatefulWidget {
     super.key,
     this.padding,
     this.initialQuery,
+    this.spellLanguage,
+    this.spellService,
   });
   final String text;
   final EdgeInsets? padding;
+
+  /// Lingua principale del controllo ortografico in lettura (null = nessun
+  /// controllo), vedi [MarkdownLiteView].
+  final String? spellLanguage;
+
+  /// Servizio del controllo ortografico al posto di quello del sistema (per
+  /// i test).
+  final SpellCheckService? spellService;
 
   /// Ricerca già aperta con questo testo (es. arrivando da una ricerca
   /// nell'elenco dei file).
@@ -346,6 +481,8 @@ class SearchableMarkdownViewState extends State<SearchableMarkdownView> {
               query: q,
               activeMatch: _current,
               activeKey: _activeKey,
+              spellLanguage: widget.spellLanguage,
+              spellService: widget.spellService,
             ),
           ),
         ],

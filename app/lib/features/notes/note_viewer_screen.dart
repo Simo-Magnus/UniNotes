@@ -124,6 +124,11 @@ class _NoteViewerScreenState extends State<NoteViewerScreen> {
                 snap.data!,
                 key: _view,
                 initialQuery: widget.query,
+                // linea rossa sulle parole errate anche in lettura (non
+                // nelle risposte dell'AI: non sono testi dell'utente)
+                spellLanguage: widget.note.folder == NoteFolder.ai
+                    ? null
+                    : spellLanguageOf(widget.course.examLanguage),
               ),
             ),
           );

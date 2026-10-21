@@ -178,4 +178,110 @@ void main() {
     expect(find.byKey(const Key('live-edit')), findsNothing);
     expect(find.byType(Math), findsOneWidget);
   });
+
+  testWidgets('in lettura le parole errate hanno la linea ondulata rossa, '
+      'senza entrare nella modifica', (t) async {
+    final service = _FakeSpell();
+    var segs = [
+      _seg(0, 2, 'Prima ciaoo frase.'),
+      _seg(2, 4, r'Vale $\frac{2}{3}$ e ciaoo.'),
+    ];
+    late StateSetter update;
+    final edits = <TranscriptEdit>[];
+    await t.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: StatefulBuilder(
+            builder: (context, set) {
+              update = set;
+              return EditableLiveTranscript(
+                segments: segs,
+                partial: 'ciaoo provvisorio',
+                spellService: service,
+                onEdit: edits.add,
+              );
+            },
+          ),
+        ),
+      ),
+    );
+    final reading = find.byWidgetPredicate(
+      (w) => w is RichText && w.text.toPlainText().contains('Prima'),
+    );
+    List<String> wavy() {
+      final out = <String>[];
+      t.widget<RichText>(reading).text.visitChildren((s) {
+        if (s is TextSpan &&
+            s.style?.decoration == TextDecoration.underline &&
+            s.style?.decorationStyle == TextDecorationStyle.wavy) {
+          out.add(s.text ?? '');
+        }
+        return true;
+      });
+      return out;
+    }
+
+    // all'inizio il testo si vede com'è, il controllo parte dopo un attimo
+    expect(wavy(), isEmpty);
+    expect(service.calls, isEmpty);
+    await t.pump(const Duration(milliseconds: 700));
+    await t.pump();
+    // le frasi (non il provvisorio) sono state controllate una volta
+    expect(service.calls, [
+      'Prima ciaoo frase.',
+      r'Vale $\frac{2}{3}$ e ciaoo.',
+    ]);
+    expect(wavy(), ['ciaoo', 'ciaoo']);
+    expect(find.byKey(const Key('live-edit')), findsNothing);
+    // il testo (e quindi quello dei lettori di schermo) non cambia
+    final plain = t.widget<RichText>(reading).text.toPlainText(
+      includePlaceholders: false,
+    );
+    expect(plain, 'Prima ciaoo frase. Vale  e ciaoo. ciaoo provvisorio');
+    expect(find.byType(Math), findsOneWidget);
+
+    // ridisegnando il testo non si richiede nulla; una frase nuova sì, da sola
+    update(() => segs = [...segs, _seg(4, 6, 'Terza ciaoo.')]);
+    await t.pump();
+    await t.pump(const Duration(milliseconds: 100));
+    expect(service.calls, hasLength(2));
+    await t.pump(const Duration(milliseconds: 700));
+    await t.pump();
+    expect(service.calls.last, 'Terza ciaoo.');
+    expect(service.calls, hasLength(3));
+    expect(wavy(), ['ciaoo', 'ciaoo', 'ciaoo']);
+
+    // il tocco mette ancora il cursore nel punto toccato (posizione 8 dentro
+    // «Prima ciaoo frase.»: fra «ci» e «aoo»)
+    final rp = t.renderObject<RenderParagraph>(reading);
+    final caret = rp.getOffsetForCaret(
+      const TextPosition(offset: 8),
+      Rect.zero,
+    );
+    await t.tapAt(rp.localToGlobal(caret + const Offset(1, 6)));
+    await t.pump();
+    await t.pump();
+    final editable = t.widget<EditableText>(find.byType(EditableText));
+    expect(
+      editable.controller.selection,
+      const TextSelection.collapsed(offset: 8),
+    );
+  });
+}
+
+/// Servizio del controllo ortografico finto: «ciaoo» è errato.
+class _FakeSpell extends SpellCheckService {
+  final calls = <String>[];
+
+  @override
+  Future<List<SuggestionSpan>?> fetchSpellCheckSuggestions(
+    Locale locale,
+    String text,
+  ) async {
+    calls.add(text);
+    return [
+      for (final m in RegExp('ciaoo').allMatches(text))
+        SuggestionSpan(TextRange(start: m.start, end: m.end), const ['ciao']),
+    ];
+  }
 }

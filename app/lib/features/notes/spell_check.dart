@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,9 @@ import 'package:flutter/services.dart';
 /// in inglese di una lezione in italiano non si sottolineano). Se una lingua
 /// non è installata nel sistema quella lingua semplicemente non conta e le
 /// Impostazioni lo dicono ([SpellCheckLanguagesNote]).
+///
+/// Le parole errate si segnano anche nel testo in sola lettura
+/// ([ReadingSpellChecker] e [misspelledSpans]).
 ///
 /// Le formule (`$…$`, `$$…$$`, `\(…\)`, `\[…\]`) e gli indirizzi web non si
 /// controllano. Il testo si controlla una riga alla volta, con i risultati
@@ -223,6 +227,182 @@ mixin DeferredSpellCheck<T extends StatefulWidget> on State<T> {
       final next = spellCheckFor(spellCheckService(spellLanguage));
       if (next != _spell) setState(() => _spell = next);
     });
+  }
+}
+
+/// [text] da [start] a [end] (di tutto il testo se non indicati) come
+/// `TextSpan` con le parole errate di [spans] sottolineate dalla stessa linea
+/// ondulata rossa dei campi di testo ([TextField.materialMisspelledTextStyle]),
+/// per mostrare gli errori anche nel testo in sola lettura.
+///
+/// Gli intervalli di [spans] sono nelle posizioni di un testo più grande di
+/// cui [text] comincia alla posizione [offset] (il carattere `i` di [text] è
+/// la posizione `offset + i`): così un tratto di testo (una frase, un pezzo
+/// di riga) si disegna con gli errori calcolati sul testo intero. Il testo
+/// non cambia (solo lo stile e la divisione in tratti): i lettori di schermo
+/// leggono le stesse parole e le posizioni dei caratteri restano quelle.
+/// [style] è lo stile del testo corretto; quello delle parole errate lo
+/// completa con la linea. Senza errori nel tratto restituisce un solo
+/// `TextSpan`; con un tratto vuoto, nessuno.
+List<TextSpan> misspelledSpans(
+  String text,
+  List<SuggestionSpan> spans, {
+  TextStyle? style,
+  int start = 0,
+  int? end,
+  int offset = 0,
+}) {
+  final to = (end ?? text.length).clamp(0, text.length);
+  final from = start.clamp(0, to);
+  if (from >= to) return const [];
+  final bad = style == null
+      ? TextField.materialMisspelledTextStyle
+      : style.merge(TextField.materialMisspelledTextStyle);
+  final out = <TextSpan>[];
+  var at = from;
+  final sorted = [
+    ...spans,
+  ]..sort((a, b) => a.range.start.compareTo(b.range.start));
+  for (final s in sorted) {
+    // l'errore si limita al tratto e a quello che non è già stato disegnato
+    final a = math.max(s.range.start - offset, at);
+    final b = math.min(s.range.end - offset, to);
+    if (b <= a) continue;
+    if (a > at) out.add(TextSpan(text: text.substring(at, a), style: style));
+    out.add(TextSpan(text: text.substring(a, b), style: bad));
+    at = b;
+  }
+  if (at < to) out.add(TextSpan(text: text.substring(at, to), style: style));
+  return out;
+}
+
+/// Controllo ortografico del testo in sola lettura (trascrizione dal vivo
+/// fuori dalla modifica, trascrizioni, riassunti e note aperti): chiede gli
+/// errori al servizio del sistema ([spellCheckService]) senza che serva
+/// entrare nel campo di modifica, e li dà a [misspelledSpans].
+///
+/// - Si controlla un testo alla volta (una frase, un blocco di Markdown) e il
+///   risultato resta in memoria per testo: lo stesso testo non si richiede
+///   due volte, durante la registrazione si controllano solo le frasi nuove
+///   o cambiate.
+/// - I controlli partono in modo asincrono, un testo dopo l'altro, dopo un
+///   breve ritardo ([delay]) dall'ultimo testo nuovo; quando ci sono novità
+///   chi ascolta ([addListener]) ridisegna il testo. Finché il risultato non
+///   c'è, [errorsOf] dà nessun errore e il testo si vede com'è.
+/// - Dove il correttore non c'è ([enabled] falso) o se fallisce, nessun
+///   errore e nessun avviso.
+/// - Le formule e gli indirizzi web non si controllano (lo fa il servizio).
+///
+/// [errorsOf] si chiama dal `build`: non cambia nulla di visibile, mette il
+/// testo in coda. Il testo provvisorio (ancora in corso) non va passato.
+class ReadingSpellChecker extends ChangeNotifier {
+  ReadingSpellChecker({
+    this._language = 'it',
+    SpellCheckService? service,
+    this.delay = const Duration(milliseconds: 500),
+  }) : _injected = service;
+
+  /// Attesa dall'ultimo testo nuovo prima di chiedere gli errori.
+  final Duration delay;
+  final SpellCheckService? _injected;
+  String _language;
+
+  final Map<String, List<SuggestionSpan>> _cache = {};
+  final Set<String> _queue = {};
+  final Map<String, int> _failures = {};
+  String? _busy;
+  Timer? _timer;
+  bool _running = false;
+  bool _disposed = false;
+  static const _maxCache = 4000;
+  static const _maxFailures = 2;
+
+  SpellCheckService? get _service => _injected ?? spellCheckService(_language);
+
+  /// C'è un correttore su questo sistema.
+  bool get enabled => _service != null;
+
+  /// Lingua principale ('it' o 'en'); cambiandola si ricomincia da capo.
+  String get language => _language;
+  set language(String value) {
+    if (value == _language) return;
+    _language = value;
+    _cache.clear();
+    _queue.clear();
+    _failures.clear();
+  }
+
+  /// Errori già noti di [text] (nelle posizioni di [text]); se non ci sono
+  /// ancora li chiede e intanto dà nessun errore.
+  List<SuggestionSpan> errorsOf(String text) {
+    final known = _cache[text];
+    if (known != null) return known;
+    if (_disposed || text.trim().isEmpty || !enabled) return const [];
+    if (text != _busy && _queue.add(text)) _schedule();
+    return const [];
+  }
+
+  void _schedule() {
+    _timer?.cancel();
+    _timer = Timer(delay, () => unawaited(_flush()));
+  }
+
+  Future<void> _flush() async {
+    if (_running || _disposed) return;
+    _running = true;
+    final service = _service;
+    final locale = _language == 'en'
+        ? const Locale('en', 'US')
+        : const Locale('it', 'IT');
+    final retry = <String>[];
+    var done = 0;
+    try {
+      while (service != null && _queue.isNotEmpty && !_disposed) {
+        final text = _queue.first;
+        _queue.remove(text);
+        _busy = text;
+        List<SuggestionSpan>? found;
+        var failed = false;
+        try {
+          found = await service.fetchSpellCheckSuggestions(locale, text);
+        } catch (e) {
+          debugPrint('Controllo ortografico: $e');
+          failed = true;
+        }
+        _busy = null;
+        if (_disposed) return;
+        if (found == null && !failed) {
+          // un controllo più recente ha preso il posto di questo: un altro
+          // tentativo, poi si lascia il testo com'è
+          final n = (_failures[text] ?? 0) + 1;
+          _failures[text] = n;
+          if (n < _maxFailures) {
+            retry.add(text);
+            continue;
+          }
+        }
+        if (_cache.length >= _maxCache) _cache.clear();
+        _cache[text] = found == null
+            ? const []
+            : filterSpellCheckSpans(text, found);
+        // ogni tanto ridisegna: un testo lungo si sottolinea a pezzi
+        if (++done % 25 == 0) notifyListeners();
+      }
+    } finally {
+      _running = false;
+      _busy = null;
+    }
+    if (_disposed) return;
+    _queue.addAll(retry);
+    if (_queue.isNotEmpty) _schedule();
+    if (done > 0) notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    _disposed = true;
+    _timer?.cancel();
+    super.dispose();
   }
 }
 

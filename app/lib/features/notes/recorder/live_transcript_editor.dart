@@ -189,7 +189,11 @@ class _Anchor {
 ///
 /// Controllo ortografico del sistema ([spellCheckService]): parole errate
 /// con la linea ondulata rossa e suggerimenti nel menu (tasto destro sul
-/// PC, tocco sulla parola sul telefono).
+/// PC, tocco sulla parola sul telefono). La linea rossa c'è anche in
+/// lettura, senza entrare nella modifica ([ReadingSpellChecker]): le frasi
+/// stabilizzate si controllano in modo asincrono, un attimo dopo l'ultima
+/// novità e una sola volta per testo; il testo provvisorio e le formule non
+/// si controllano.
 class EditableLiveTranscript extends StatefulWidget {
   const EditableLiveTranscript({
     super.key,
@@ -199,6 +203,7 @@ class EditableLiveTranscript extends StatefulWidget {
     this.style,
     this.onEditing,
     this.language = 'it',
+    this.spellService,
   });
 
   final List<TranscriptSegment> segments;
@@ -207,6 +212,10 @@ class EditableLiveTranscript extends StatefulWidget {
 
   /// Lingua principale del controllo ortografico ('it' o 'en').
   final String language;
+
+  /// Servizio del controllo ortografico in lettura al posto di quello del
+  /// sistema (per i test).
+  final SpellCheckService? spellService;
 
   /// Modifica delle frasi (vedi [TranscriptEdit]).
   final void Function(TranscriptEdit edit) onEdit;
@@ -227,7 +236,17 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
   int _rawLength = 0;
   SpellCheckConfiguration _spell = const SpellCheckConfiguration.disabled();
 
+  /// Errori delle frasi per la linea rossa in lettura.
+  late final ReadingSpellChecker _checker = ReadingSpellChecker(
+    language: widget.language,
+    service: widget.spellService,
+  )..addListener(_spellChanged);
+
   bool get _editing => _buffer != null;
+
+  void _spellChanged() {
+    if (mounted && !_editing) setState(() {});
+  }
 
   @override
   void initState() {
@@ -240,6 +259,7 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
   @override
   void didUpdateWidget(EditableLiveTranscript old) {
     super.didUpdateWidget(old);
+    _checker.language = widget.language;
     final buffer = _buffer;
     if (buffer == null) return;
     // frasi nuove mentre si scrive: al loro posto, il cursore resta dov'è
@@ -266,6 +286,7 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
 
   @override
   void dispose() {
+    _checker.dispose();
     _controller.dispose();
     _focus.dispose();
     super.dispose();
@@ -362,8 +383,12 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
         shown++;
         raw++;
       }
+      // errori della frase (nelle posizioni del suo testo); le parti con le
+      // formule li usano a tratti. Il testo disegnato è lo stesso, solo
+      // diviso in tratti: le posizioni restano quelle.
+      final errors = _checker.errorsOf(text);
       if (!mayContainMath(text)) {
-        children.add(TextSpan(text: text));
+        children.addAll(misspelledSpans(text, errors));
         anchors.add(_Anchor(shown, text.length, raw, text.length));
         shown += text.length;
         raw += text.length;
@@ -374,9 +399,18 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
       for (var k = 0; k < parts.length; k++) {
         final part = parts[k];
         if (!part.math) {
-          var at = text.indexOf(part.text, q);
-          if (at < 0) at = q;
-          children.add(TextSpan(text: part.text));
+          final found = text.indexOf(part.text, q);
+          final at = found < 0 ? q : found;
+          children.addAll(
+            found < 0
+                ? [TextSpan(text: part.text)]
+                : misspelledSpans(
+                    text,
+                    errors,
+                    start: at,
+                    end: at + part.text.length,
+                  ),
+          );
           anchors.add(
             _Anchor(shown, part.text.length, raw + at, part.text.length),
           );
