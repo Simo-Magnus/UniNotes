@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1254 1254" width="4096" height="4096">
+  <!-- Logo di UniNotes: «U» blu con il tocco di laurea blu notte sull'asta
+       sinistra, fondo bianco. Unica fonte di tutte le icone: le genera
+       tools/genera_icona.py (gli id servono allo script). -->
+  <defs>
+    <linearGradient id="blu" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1784FB"/>
+      <stop offset="1" stop-color="#0F72F2"/>
+    </linearGradient>
+    <linearGradient id="ombra" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#0A54DA"/>
+      <stop offset="1" stop-color="#1A66D3"/>
+    </linearGradient>
+    <clipPath id="u">
+      <path id="forma-u" d="M567,455 C535,425 497,417 470,419 C425,422 385,450 354,485 L354,718 A295.5,295.5 0 0 0 945,718 L945,415 A103.5,103.5 0 0 0 738,415 L738,728 A85.5,85.5 0 0 1 567,728 Z"/>
+    </clipPath>
+  </defs>
+  <rect id="sfondo" width="1254" height="1254" fill="#FFFFFF"/>
+  <!-- fascia del cappello, dietro la U -->
+  <path id="fascia" d="M354,387 L428,411 L567,349 L567,500 L354,520 Z" fill="#0E3A7F"/>
+  <!-- U -->
+  <path id="lettera" d="M567,455 C535,425 497,417 470,419 C425,422 385,450 354,485 L354,718 A295.5,295.5 0 0 0 945,718 L945,415 A103.5,103.5 0 0 0 738,415 L738,728 A85.5,85.5 0 0 1 567,728 Z" fill="url(#blu)"/>
+  <!-- parte in ombra in basso a destra -->
+  <path id="ombreggiatura" clip-path="url(#u)" d="M470,953 C690,918 880,850 945,690 L1254,690 L1254,1254 L0,1254 L0,953 Z" fill="url(#ombra)"/>
+  <!-- tavola del cappello -->
+  <path id="tavola" d="M246,327 L440,239 L644,285 L428,383 Z" fill="#0E3A7F" stroke="#0E3A7F" stroke-width="16" stroke-linejoin="round"/>
+  <!-- cordino e nappa -->
+  <rect id="cordino" x="284" y="335" width="20" height="105" fill="#0E3A7F"/>
+  <path id="nappa" d="M271,455 Q271,432 293,432 Q315,432 316,455 L325,517 Q327,535 309,535 L279,535 Q261,535 263,517 Z" fill="#0E3A7F"/>
+</svg>

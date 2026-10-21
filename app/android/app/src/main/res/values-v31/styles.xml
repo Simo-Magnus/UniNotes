@@ -3,6 +3,9 @@
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
         <item name="android:windowBackground">@color/app_background</item>
         <item name="android:windowSplashScreenBackground">@color/app_background</item>
+        <!-- disco bianco dietro il logo (come il fondo dell'icona): il
+             cappello blu notte resta visibile sul fondo scuro -->
+        <item name="android:windowSplashScreenIconBackgroundColor">@android:color/white</item>
     </style>
     <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
         <item name="android:windowBackground">@color/app_background</item>

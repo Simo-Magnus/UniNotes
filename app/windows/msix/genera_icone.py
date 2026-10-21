@@ -1,40 +1,41 @@
 """Icone del pacchetto MSIX (Microsoft Store) dal logo dell'app.
 
-Sorgente: l'icona 1024x1024 di iOS (stesso disegno di UniNotes_logo.png e di
-app_icon.ico). Le icone quadrate hanno gli angoli arrotondati come
-app_icon.ico e lo sfondo trasparente; il riquadro largo ha il logo al centro.
+Sorgente: il logo vettoriale docs/logo.svg, disegnato da tools/genera_icona.py
+come app_icon.ico (tessera bianca con gli angoli arrotondati e il logo grande,
+leggibile anche a 16 px) su sfondo trasparente; i riquadri del menu Start
+hanno la tessera al centro con un margine attorno.
 
 Uso (dalla cartella app):  python windows/msix/genera_icone.py
 Richiede Pillow. Le icone finiscono in windows/msix/Assets/ e vanno
 rigenerate solo se cambia il logo.
 """
 
+import sys
+from functools import lru_cache
 from pathlib import Path
 
-from PIL import Image, ImageDraw
+from PIL import Image
 
 QUI = Path(__file__).resolve().parent
-LOGO = QUI.parents[1] / "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png"
+sys.path.insert(0, str(QUI.parents[2] / "tools"))
+from genera_icona import tessera  # noqa: E402
+
 USCITA = QUI / "Assets"
 
 SCALE = (100, 125, 150, 200, 400)
 # icona piccola (barra delle applicazioni, menu Start, Esplora file)
 TARGETSIZE = (16, 24, 32, 48, 256)
-# raggio degli angoli rispetto al lato, come app_icon.ico
-RAGGIO = 0.18
+
+
+@lru_cache(maxsize=1)
+def _grande() -> Image.Image:
+    """Tessera col logo disegnata a 4096 px, poi rimpicciolita."""
+    return tessera(piccola=True)
 
 
 def icona(lato: int) -> Image.Image:
     """Logo quadrato di [lato] pixel con gli angoli arrotondati."""
-    base = Image.open(LOGO).convert("RGBA")
-    grande = lato * 4  # maschera disegnata più grande: bordi più lisci
-    maschera = Image.new("L", (grande, grande), 0)
-    ImageDraw.Draw(maschera).rounded_rectangle(
-        (0, 0, grande - 1, grande - 1), radius=round(grande * RAGGIO), fill=255
-    )
-    out = base.resize((lato, lato), Image.LANCZOS)
-    out.putalpha(maschera.resize((lato, lato), Image.LANCZOS))
-    return out
+    return _grande().resize((lato, lato), Image.LANCZOS)
 
 
 def su_tela(w: int, h: int, lato: int) -> Image.Image:

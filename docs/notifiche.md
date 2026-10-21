@@ -206,7 +206,8 @@ dal pacchetto sono invariate (verificato in compilazione e nei test).
   ritorno. Una richiesta di recensione o sostegno passata senza risposta
   conta come mostrata.
 - Icona piccola Android: `drawable-*/ic_stat_uninotes.png`, sagoma bianca del
-  logo (`python tools/genera_icona.py --notifiche`), colore d'accento
+  logo, la U con il tocco di laurea (`python tools/genera_icona.py
+  --notifiche`, dal logo vettoriale `docs/logo.svg`), colore d'accento
   azzurro `#0284C7` (leggibile sulla tendina chiara e su quella scura);
   `res/raw/keep.xml` la protegge dalla riduzione delle risorse. La usa anche
   la notifica «Registrazione in corso» (meta-dato
@@ -214,8 +215,10 @@ dal pacchetto sono invariate (verificato in compilazione e nei test).
 
 ## Aspetto per piattaforma
 
-Ogni tipo ha una grafica nello stile dell'icona dell'app (fondo blu notte,
-simbolo azzurro, punto arancione), generata da
+Ogni tipo ha una grafica con i colori del logo (quadrato blu con la zona in
+ombra in basso a destra come nella «U», simbolo bianco del tipo); il logo
+dell'app, su una tessera bianca, è il logo dei toast di Windows e sta a
+sinistra nelle immagini larghe (fondo dal blu notte al blu). Le genera
 `python app/tool/genera_grafiche_notifiche.py`: calendario per le prove,
 tocco per le sessioni, spunta per gli esiti, catena spezzata per i
 collegamenti, microfono, cronometro e sveglia per Focus, stella e cuore
