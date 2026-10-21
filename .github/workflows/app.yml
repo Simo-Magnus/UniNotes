@@ -305,7 +305,19 @@ jobs:
           rm -rf "$STAGE" && mkdir -p "$STAGE"
           ditto build/macos/Build/Products/Release/UniNotes.app "$STAGE/UniNotes.app"
           ln -s /Applications "$STAGE/Applicazioni"
-          hdiutil create -volname "UniNotes" -srcfolder "$STAGE" -ov -format UDZO UniNotes.dmg
+          # icona del disco: quella dell'app (AppIcon.icns nel pacchetto). Se
+          # un passo non riesce si crea il disco senza icona, come prima.
+          if cp "$STAGE/UniNotes.app/Contents/Resources/AppIcon.icns" "$STAGE/.VolumeIcon.icns" \
+            && hdiutil create -volname "UniNotes" -srcfolder "$STAGE" -ov -format UDRW "$RUNNER_TEMP/rw.dmg" \
+            && MNT=$(hdiutil attach -readwrite -noverify -noautoopen "$RUNNER_TEMP/rw.dmg" | awk -F'\t' '/\/Volumes\//{print $NF}') \
+            && [ -n "$MNT" ]; then
+            xcrun SetFile -a C "$MNT" || SetFile -a C "$MNT" || echo "icona del disco non impostata"
+            hdiutil detach "$MNT"
+            hdiutil convert "$RUNNER_TEMP/rw.dmg" -format UDZO -o UniNotes.dmg -ov
+          else
+            rm -f "$STAGE/.VolumeIcon.icns"
+            hdiutil create -volname "UniNotes" -srcfolder "$STAGE" -ov -format UDZO UniNotes.dmg
+          fi
       - name: Firma e notarizzazione di UniNotes.dmg (solo con i secret)
         if: env.HAS_MACOS_CERT == 'true' && env.HAS_APPLE_NOTARY == 'true'
         env:

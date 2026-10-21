@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/icona.png" alt="Logo di UniNotes" width="128" height="128"></p>
+
 # UniNotes
 
 App gratuita per gli studenti universitari italiani: **registra le lezioni, trascrivile,
