@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart' show AppLifecycleListener;
 
 import '../../features/cloud/cloud_drive_service.dart';
+import '../../features/exams/previous_years.dart';
 import '../../models/exam.dart';
 import '../catalog/catalog_models.dart';
 import '../constants/build_flags.dart';
@@ -410,6 +411,9 @@ class RemindersService extends ChangeNotifier {
       outcomeDone: await _idSet(NotificationKeys.outcomeDone),
       review: reviewAt == null ? null : reviewNotification(reviewAt, dest!),
       donation: donationAt == null ? null : donationNotification(donationAt),
+      previousYears: prefs.consent && prefs.previousYears
+          ? await _previousYears(t)
+          : const [],
       quietUntil: quietUntil,
     );
 
@@ -450,6 +454,24 @@ class RemindersService extends ChangeNotifier {
     }
     await _setDateMap(NotificationKeys.outcomeScheduled, outcomeAt);
     return plan;
+  }
+
+  /// Promemoria degli esami degli anni precedenti ancora da completare (3 e
+  /// 14 giorni dopo l'onboarding o il cambio di corso, vedi
+  /// [PreviousYearsPrompt]); nessuno se non c'è nulla da completare.
+  Future<List<PlannedNotification>> _previousYears(DateTime now) async {
+    try {
+      final d = await loadPreviousYears(_s);
+      if (d == null || d.toComplete == 0) return const [];
+      return previousYearsReminders(
+        since: await PreviousYearsPrompt.since(_s.settings, now: now),
+        count: d.toComplete,
+        startYear: d.startYear,
+        days: PreviousYearsPrompt.reminderDays,
+      );
+    } catch (_) {
+      return const [];
+    }
   }
 
   // ------------------------------------------------------------ azioni

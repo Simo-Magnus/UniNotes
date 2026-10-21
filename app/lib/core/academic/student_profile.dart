@@ -19,7 +19,19 @@ class StudentProfile {
     this.manual = false,
     this.catalogVersion,
     this.curriculum,
+    this.startYear,
   });
+
+  /// Anno di partenza: l'anno di corso indicato quando lo studente ha
+  /// iniziato a usare l'app (onboarding o cambio di corso). Gli esami degli
+  /// anni prima, se lo studente non li ha compilati, sono «Da completare»
+  /// (non arretrati). Null = non ancora salvato (vedi [trackedFrom]).
+  final int? startYear;
+
+  /// Primo anno del piano seguito nell'app: l'anno di partenza (1 se non
+  /// salvato), mai oltre l'anno frequentato.
+  int get trackedFrom =>
+      (startYear ?? 1).clamp(1, currentYear < 1 ? 1 : currentYear);
 
   /// Percorso seguito (curriculum, orientamento) nei corsi che ne hanno
   /// più d'uno; null = il percorso principale del corso.
@@ -86,6 +98,7 @@ class StudentProfile {
     manual: asBool(m['manual']) ?? false,
     catalogVersion: asString(m['catalog_version']),
     curriculum: asString(m['curriculum']),
+    startYear: asInt(m['start_year']),
   );
 
   Map<String, Object?> toMap() => {
@@ -105,6 +118,7 @@ class StudentProfile {
     'manual': manual ? 1 : 0,
     'catalog_version': catalogVersion,
     'curriculum': curriculum,
+    'start_year': startYear,
   };
 
   StudentProfile copyWith({
@@ -118,6 +132,7 @@ class StudentProfile {
     AcademicYear? referenceAa,
     String? Function()? catalogVersion,
     String? Function()? curriculum,
+    int? Function()? startYear,
   }) => StudentProfile(
     universityId: universityId,
     universityName: universityName,
@@ -136,6 +151,7 @@ class StudentProfile {
         ? this.catalogVersion
         : catalogVersion(),
     curriculum: curriculum == null ? this.curriculum : curriculum(),
+    startYear: startYear == null ? this.startYear : startYear(),
   );
 }
 
@@ -188,6 +204,26 @@ class PlanYear {
 /// completati (schermata dei voti), i successivi sono "futuri".
 PlanYearStatus initialPlanYearStatus(int k, int current) =>
     k > current ? PlanYearStatus.futuro : PlanYearStatus.inCorso;
+
+/// Anno di partenza ricavato per un profilo salvato prima che l'app lo
+/// ricordasse: l'anno frequentato meno gli anni accademici passati dalla
+/// creazione del profilo ([createdAt], `profile.created_at`), almeno 1. Senza
+/// data di creazione l'anno frequentato. Nel dubbio l'anno è più basso
+/// (più esami restano arretrati, come prima), mai più alto.
+int deriveStartYear(StudentProfile p, {DateTime? createdAt}) {
+  final current = p.currentYear < 1 ? 1 : p.currentYear;
+  if (createdAt == null) return current;
+  final passed = p.referenceAa.difference(AcademicYear.of(createdAt));
+  return (current - (passed < 0 ? 0 : passed)).clamp(1, current);
+}
+
+/// Anni prima dell'anno di partenza [start] a parole: «del 1° anno», «del
+/// 1° e del 2° anno», «dal 1° al 3° anno».
+String previousYearsLabel(int start) => switch (start) {
+  <= 2 => 'del 1° anno',
+  3 => 'del 1° e del 2° anno',
+  _ => 'dal 1° al ${start - 1}° anno',
+};
 
 /// Anni del piano (1..durata, più l'anno frequentato se fuori corso oltre).
 List<int> planYearsOf(StudentProfile p) => [

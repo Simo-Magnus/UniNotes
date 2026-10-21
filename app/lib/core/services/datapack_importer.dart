@@ -4,6 +4,7 @@ import 'package:sqflite/sqflite.dart';
 
 import '../../utils/exclusion_filter.dart';
 import '../../utils/parse.dart';
+import '../constants/enums.dart';
 import '../database/app_database.dart';
 import '../theme/university_colors.dart';
 
@@ -441,6 +442,41 @@ class DataPackImporter {
     }
   }
 
+  /// Stato di una prova nuova del database dei corsi: «Da prenotare», ma
+  /// «Da completare» per gli insegnamenti degli anni prima dell'anno di
+  /// partenza del profilo (`profile.start_year`): lo studente è arrivato
+  /// nell'app dopo, non sono arretrati finché non lo dice lui.
+  Future<String> _newExamStatus(
+    Transaction txn,
+    int courseId,
+    int? start,
+  ) async {
+    if (start == null || start <= 1) return ExamStatus.planned.key;
+    final rows = await txn.query(
+      'courses',
+      columns: ['year'],
+      where: 'id = ?',
+      whereArgs: [courseId],
+    );
+    final year = rows.isEmpty ? null : asInt(rows.first['year']);
+    return year != null && year < start
+        ? ExamStatus.toComplete.key
+        : ExamStatus.planned.key;
+  }
+
+  Future<int?> _startYear(Transaction txn) async {
+    try {
+      final rows = await txn.query(
+        'profile',
+        columns: ['start_year'],
+        where: 'id = 1',
+      );
+      return rows.isEmpty ? null : asInt(rows.first['start_year']);
+    } catch (_) {
+      return null;
+    }
+  }
+
   Future<void> _exams(
     Transaction txn,
     List<Map<String, Object?>> items,
@@ -448,6 +484,7 @@ class DataPackImporter {
     ExclusionFilter filter,
     ImportReport report,
   ) async {
+    final start = await _startYear(txn);
     for (final x in items) {
       final ext = asString(x['externalId']);
       final courseExt = asString(x['courseExternalId']);
@@ -548,7 +585,7 @@ class DataPackImporter {
         await txn.insert('exams', {
           ...data,
           'external_id': ext,
-          'status': 'planned',
+          'status': await _newExamStatus(txn, courseId, start),
           'notes': asString(x['notes']),
         });
       }

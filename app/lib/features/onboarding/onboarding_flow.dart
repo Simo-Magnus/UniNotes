@@ -19,6 +19,7 @@ import '../../widgets/catalog_download.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
 import '../exams/exam_form.dart' show kCalendarOfferedKey;
+import '../exams/previous_years.dart' show PreviousYearsPrompt;
 import '../links/ai_assistants.dart';
 import '../links/link_settings.dart';
 import '../settings/logic/exclusion_cleanup.dart';
@@ -1082,6 +1083,12 @@ class _SummaryStepState extends State<_SummaryStep> {
     try {
       final r = await PathSetupService(_s)
           .apply(widget.selection.withPercorso(_percorso), remote: remote);
+      // nuovo percorso: se l'anno di partenza è oltre il 1°, il riquadro
+      // «Completa gli esami degli anni precedenti» torna subito nella Home e
+      // i promemoria ripartono
+      try {
+        await PreviousYearsPrompt.restart(_s.settings);
+      } catch (_) {}
       _set(() {
         _result = r;
         _fase = _Fase.fatto;

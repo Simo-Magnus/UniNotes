@@ -4,6 +4,7 @@ import '../core/academic/academic_year.dart';
 import '../core/academic/student_profile.dart';
 import '../core/database/app_database.dart';
 import '../utils/parse.dart';
+import 'exam_repository.dart';
 
 /// Profilo dello studente e stato degli anni del piano.
 class ProfileRepository {
@@ -17,12 +18,17 @@ class ProfileRepository {
 
   /// Salva il profilo e riallinea gli anni del piano: anni accademici
   /// ricalcolati, stati "completato" già segnati conservati.
+  /// Un profilo senza anno di partenza ([StudentProfile.startYear] null, es.
+  /// dal passaggio al nuovo anno accademico) tiene quello già salvato.
   Future<void> save(StudentProfile p, {DateTime? now}) async {
     final stamp = isoLocal(now ?? DateTime.now());
     await _db.db.transaction((txn) async {
       final existing = await txn.query('profile', where: 'id = 1');
       await txn.insert('profile', {
         ...p.toMap(),
+        'start_year':
+            p.startYear ??
+            (existing.isEmpty ? null : asInt(existing.first['start_year'])),
         'created_at': existing.isEmpty
             ? stamp
             : existing.first['created_at'] ?? stamp,
@@ -32,10 +38,51 @@ class ProfileRepository {
     });
   }
 
-  /// Nuovo percorso (onboarding da capo): gli stati degli anni ripartono.
+  /// Nuovo percorso (onboarding da capo o cambio di corso): gli stati degli
+  /// anni ripartono e l'anno scelto diventa l'anno di partenza. Gli esami
+  /// degli anni prima mai compilati diventano «Da completare» (sullo stesso
+  /// corso di laurea solo quelli degli anni che prima erano seguiti
+  /// nell'app: le scelte già fatte negli Anni precedenti restano); quelli
+  /// «Da completare» dall'anno di partenza in poi tornano «Da prenotare».
   Future<void> replace(StudentProfile p) async {
+    final old = await load();
+    final start = p.startYear ?? p.currentYear;
     await _db.db.delete('plan_years');
-    await save(p);
+    await save(p.copyWith(startYear: () => start));
+    final exams = ExamRepository(_db);
+    await exams.restoreFromStartYear(start, degreeId: p.degreeId);
+    await exams.markToComplete(
+      below: start,
+      from: old?.degreeId == p.degreeId ? old?.startYear : null,
+      degreeId: p.degreeId,
+    );
+  }
+
+  /// Anno di partenza del profilo [p] letto dal database: se manca (profilo
+  /// di una versione precedente) si ricava da quando il profilo è stato
+  /// creato ([deriveStartYear]), si salva e gli esami degli anni prima mai
+  /// compilati diventano «Da completare» (una volta sola: poi l'anno c'è).
+  /// A ogni avvio gli esami «Da completare» dall'anno di partenza in poi (es.
+  /// arrivati dalla sincronizzazione con un altro anno) tornano «Da
+  /// prenotare». Restituisce il profilo con l'anno.
+  Future<StudentProfile> ensureStartYear(StudentProfile p) async {
+    final exams = ExamRepository(_db);
+    if (p.startYear != null) {
+      await exams.restoreFromStartYear(p.trackedFrom, degreeId: p.degreeId);
+      return p;
+    }
+    final rows = await _db.db.query(
+      'profile',
+      columns: ['created_at'],
+      where: 'id = 1',
+    );
+    final created = rows.isEmpty
+        ? null
+        : DateTime.tryParse(asString(rows.first['created_at']) ?? '');
+    final start = deriveStartYear(p, createdAt: created);
+    await _db.db.update('profile', {'start_year': start}, where: 'id = 1');
+    await exams.markToComplete(below: start, degreeId: p.degreeId);
+    return p.copyWith(startYear: () => start);
   }
 
   Future<void> _syncPlanYears(DatabaseExecutor ex, StudentProfile p) async {

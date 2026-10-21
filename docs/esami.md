@@ -15,6 +15,7 @@ nome degli insegnamenti. Codice in `app/lib/features/exams/`,
 | Superato | `passed` | Sostenuti, medie, CFU |
 | Non superato | `failed` | Sostenuti e, per l'esame finale, anche Da sostenere |
 | Annullato | `cancelled` | Sostenuti |
+| Da completare | `to_complete` | Solo in Esami → Anni precedenti (vedi sotto) |
 
 - Toccando l'icona di una prova si scelgono **due** passi
   (`nextExamStatuses` in `exam_status.dart`). «Sostenuto» apre subito il menù
@@ -56,11 +57,96 @@ insegnamento aveva **due esami finali**: quello creato dal database dei corsi
 
 ## Nuova prova: menù «Corso»
 
-Solo gli insegnamenti dell'anno che lo studente frequenta e quelli degli anni
-passati con l'esame non ancora superato, mai quelli degli anni successivi;
-senza quelli esclusi in Impostazioni → Esclusioni (OFA, inglese, facoltativi,
-riconosciuti dal nome ufficiale). Ogni voce mostra solo il nome
-dell'insegnamento (`offeredInExamForm` in `exam_form.dart`).
+Solo gli insegnamenti dell'anno che lo studente frequenta e gli arretrati
+degli anni passati con l'esame non ancora superato (dall'anno di partenza in
+poi, e degli anni prima solo quelli segnati «Da sostenere»: mai quelli «Da
+completare»), mai quelli degli anni successivi; senza quelli esclusi in
+Impostazioni → Esclusioni (OFA, inglese, facoltativi, riconosciuti dal nome
+ufficiale). Ogni voce mostra solo il nome dell'insegnamento
+(`offeredInExamForm` in `exam_form.dart`).
+
+## Anni precedenti
+
+Chi inizia a usare UniNotes al 2°, 3° anno o dopo non ha compilato gli esami
+degli anni prima. Codice: `features/exams/previous_years.dart` (dati, azioni,
+promemoria) e `previous_years_screen.dart` (pagina e riquadro), Home in
+`features/dashboard/widgets/previous_years_card.dart`; test in
+`test/previous_years_test.dart`.
+
+- **Anno di partenza** (`profile.start_year`, schema v13,
+  `StudentProfile.startYear`): l'anno di corso scelto nell'onboarding o nel
+  cambio di corso (`ProfileRepository.replace`). Il passaggio al nuovo anno
+  accademico non lo cambia. Sta nella tabella `profile`, quindi va nel backup
+  e si sincronizza tra i dispositivi come il resto del percorso.
+- **Da completare** (`to_complete`): gli esami (finali e prove in itinere)
+  degli insegnamenti degli anni prima dell'anno di partenza che lo studente
+  non ha mai toccato. Non sono arretrati: non compaiono in «Da sostenere», nel
+  menù «Corso», nella Home (prossime prove), nei promemoria, nel calendario;
+  non contano in medie, CFU, «Non superati» e statistiche. In Insegnamenti
+  l'insegnamento ha lo stato «Da completare». Gli arretrati si contano
+  dall'anno di partenza in avanti, più quelli degli anni prima che lo
+  studente segna «Da sostenere» (o «Non superato»).
+- Chi li crea: l'import del database dei corsi crea gli esami nuovi degli
+  anni prima dell'anno di partenza già «Da completare»
+  (`DataPackImporter._newExamStatus`); il cambio di corso segna quelli mai
+  toccati (`ExamRepository.markToComplete`: da prenotare, senza voto, note,
+  argomenti e materiali come li ha messi l'import). Sullo stesso corso di
+  laurea si segnano solo gli anni che prima erano seguiti nell'app, così le
+  scelte già fatte restano; scendendo di anno gli esami «Da completare»
+  dall'anno di partenza in poi tornano «Da prenotare»
+  (`restoreFromStartYear`, anche a ogni avvio).
+- **Migrazione** (profili di una versione precedente, `start_year` vuoto): al
+  primo avvio `ProfileRepository.ensureStartYear` ricava l'anno di partenza
+  (anno frequentato meno gli anni accademici passati dalla creazione del
+  profilo, almeno 1: nel dubbio più basso, quindi più arretrati come prima),
+  lo salva e segna «Da completare» gli esami mai toccati degli anni prima. Una
+  volta sola: poi l'anno c'è.
+- **Esami → Da sostenere**: in cima il riquadro «Anni precedenti» («3 esami
+  del 1° e del 2° anno da completare», pulsante «Completa»); quando non
+  resta nulla diventa il riepilogo «Anni precedenti completati · 12
+  sostenuti · 2 da sostenere» con «Modifica». Non c'è se l'anno di partenza
+  è il 1°. Scelto il riquadro (e non una quarta scheda) perché è un compito
+  da fare una volta: una scheda fissa resterebbe vuota per sempre.
+- **Pagina Anni precedenti**: spiegazione con il contatore «N da
+  completare», poi gli anni («1° anno · 2024/25»), ognuno con gli
+  insegnamenti obbligatori e, sotto «A scelta», quelli a scelta. Ogni riga:
+  solo il nome dell'insegnamento, lo stato a parole e due scelte
+  («Sostenuto», «Da sostenere»). «Sostenuto» apre il menù dell'esito
+  (parte da «Idoneità (senza voto)»: il voto 18-30 e la lode sono
+  facoltativi; ci sono anche «Non superato» e «In attesa dell'esito»);
+  toccandolo di nuovo si cambia l'esito. «Da sostenere» lo rende un
+  arretrato (tornano anche le sue prove in itinere); toccandolo di nuovo
+  torna «Da completare». Toccando la riga di un esame già scelto si apre il
+  dettaglio della prova. Per ogni anno con obbligatori da completare
+  «Segna tutti come sostenuti» (superati senza voto; i voti si aggiungono
+  dopo) con la conferma «Annulla» / «Segna tutti» e la casella «Non chiedere
+  più» (`dont_ask_mark_all_taken`, si ripristina da Impostazioni →
+  «Ripristina le domande»). Gli insegnamenti a scelta non contano tra quelli
+  da completare e «Segna tutti» non li tocca: chi non li ha scelti li lascia
+  così. Non compaiono gli insegnamenti esclusi (Esclusioni), quelli a scelta
+  tolti dal piano e gli archiviati.
+- **Come si chiede** (`PreviousYearsPrompt`, impostazioni del dispositivo):
+  - Home: riquadro «Completa gli esami degli anni precedenti» subito dopo
+    l'onboarding o il cambio di corso, finché ci sono obbligatori da
+    completare. Due pulsanti: «Completa» (apre la pagina) e «Più tardi» (lo
+    nasconde per 7 giorni, `previous_years_later`).
+  - Notifica «Esami degli anni precedenti» (canale `anni_precedenti`,
+    sezione Esami): alle 18 di 3 giorni dopo l'onboarding o il cambio di
+    corso (`previous_years_since`; per chi aggiorna l'app, dal primo avvio) e
+    una sola ripetizione dopo 14 giorni; nessuna se non resta nulla da
+    completare. Tocco → Esami → Anni precedenti. Interruttore in Impostazioni
+    → Notifiche (`notif_previous_years`).
+  - Scelta: il riquadro nella Home è il modo principale (si vede subito, non
+    blocca nulla, si rimanda); la notifica serve a chi non riapre l'app nei
+    primi giorni, con al massimo due avvisi per non essere insistente; la
+    pagina resta in Esami per completare con calma.
+
+Limiti noti: gli insegnamenti che il database dei corsi toglie (cambio di
+piano) con un esame «Da completare» si archiviano invece di sparire (lo
+stato conta come dato dello studente in `retireStaleCourses`); le prove in
+itinere del database spostate di data restano nascoste se «Da completare».
+Su un dispositivo con una versione precedente dell'app «Da completare» si
+legge come «Da prenotare».
 
 ## Eliminare una prova
 

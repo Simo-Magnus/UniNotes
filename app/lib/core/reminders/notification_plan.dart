@@ -1,3 +1,4 @@
+import '../academic/student_profile.dart' show previousYearsLabel;
 import '../constants/build_flags.dart';
 import 'agenda.dart';
 import 'notification_prefs.dart';
@@ -46,6 +47,12 @@ enum NotificationType {
     'sostegno',
     'Sostieni il progetto',
     'Invito facoltativo a sostenere UniNotes',
+  ),
+  previousYears(
+    'anni_precedenti',
+    'Esami degli anni precedenti',
+    'Promemoria per indicare gli esami sostenuti prima di usare l\'app (al '
+        'massimo due)',
   );
 
   const NotificationType(this.channelId, this.channelName, this.description);
@@ -71,7 +78,7 @@ enum NotificationType {
   /// Centro notifiche di Windows) e compare accanto al nome dell'app
   /// (Android) o come sottotitolo (iOS, macOS). Null per le promozionali.
   String? get section => switch (this) {
-    exam || session || outcome => 'Esami',
+    exam || session || outcome || previousYears => 'Esami',
     focus || focusAlert => 'Studio',
     recording => 'Registra',
     link => 'Collegamenti',
@@ -115,7 +122,10 @@ class NotificationActions {
 /// Gruppi dei canali Android (Impostazioni del sistema → Notifiche →
 /// UniNotes): id ([NotificationType.groupId]) → (nome, descrizione).
 const Map<String, (String, String)> kNotificationGroups = {
-  'esami': ('Esami', 'Prove in arrivo, sessioni d\'esame ed esiti'),
+  'esami': (
+    'Esami',
+    'Prove in arrivo, sessioni d\'esame, esiti e anni precedenti',
+  ),
   'studio': ('Studio', 'Sessione Focus e pause'),
   'registra': ('Registra', 'Registrazione delle lezioni'),
   'collegamenti': ('Collegamenti', 'OneDrive, Google Drive e calendario'),
@@ -236,6 +246,7 @@ List<PlannedNotification> planNotifications({
   Set<int> outcomeDone = const {},
   PlannedNotification? review,
   PlannedNotification? donation,
+  List<PlannedNotification> previousYears = const [],
   DateTime? quietUntil,
   bool donationsAllowed = kShowDonationLink,
 }) {
@@ -316,6 +327,8 @@ List<PlannedNotification> planNotifications({
     }
   }
 
+  if (prefs.previousYears) previousYears.forEach(add);
+
   if (review != null && prefs.review) add(review);
   // l'invito a donare esiste solo nelle build che lo consentono
   // (`--dart-define=DONATIONS=link`), qualunque cosa dicano le preferenze
@@ -323,6 +336,37 @@ List<PlannedNotification> planNotifications({
 
   out.sort((a, b) => a.at.compareTo(b.at));
   return out.length > kMaxScheduled ? out.sublist(0, kMaxScheduled) : out;
+}
+
+/// Promemoria «Completa gli esami degli anni precedenti»: [count] esami
+/// obbligatori degli anni prima dell'anno di partenza [startYear] sono
+/// ancora «Da completare». Due sole notifiche, alle 18:00 di [days] giorni
+/// dopo [since] (onboarding o cambio di corso): una dopo 3 giorni e l'unica
+/// ripetizione dopo 14. Nessuna se non resta nulla da completare; quelle già
+/// passate non si ripianificano.
+List<PlannedNotification> previousYearsReminders({
+  required DateTime since,
+  required int count,
+  required int startYear,
+  List<int> days = const [3, 14],
+}) {
+  if (count <= 0 || startYear <= 1) return const [];
+  final years = previousYearsLabel(startYear);
+  return [
+    for (final d in days)
+      PlannedNotification(
+        id: notificationId(NotificationType.previousYears, 'giorno-$d'),
+        type: NotificationType.previousYears,
+        at: DateTime(since.year, since.month, since.day + d, 18),
+        title: 'Completa gli esami degli anni precedenti',
+        body: count == 1
+            ? 'Un esame $years è ancora da completare: indica se l\'hai '
+                  'già sostenuto.'
+            : '$count esami $years sono ancora da completare: indica quali '
+                  'hai già sostenuto.',
+        payload: AppRoutes.previousYears,
+      ),
+  ];
 }
 
 /// «Non disturbare» della sessione Focus: fino a [quietUntil] (fine della
@@ -345,6 +389,9 @@ class AppRoutes {
   static const focus = 'focus';
   static const review = 'recensione';
   static const donate = 'sostegno';
+
+  /// Esami → Anni precedenti.
+  static const previousYears = 'anni_precedenti';
 
   /// Id della prova di un payload `prova:<id>` (null se non lo è).
   static int? examId(String route) => route.startsWith('prova:')

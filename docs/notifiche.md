@@ -20,6 +20,7 @@ Codice: `app/lib/core/reminders/` (logica pura in `agenda.dart`,
 | **Prove in arrivo** (`prove`) | Esami, prove in itinere, esoneri ancora da sostenere del corso attuale: 7 giorni prima e il giorno prima alle 9:00; se la prova ha l'orario, l'avviso del giorno prima arriva 24 ore prima. Anticipi scelti in Impostazioni → Notifiche (1, 2, 3, 7, 14 giorni). | «Esame domani: Analisi I» · «martedì 12 gennaio alle 9:30 · Aula 1» | Tocco → scheda della prova | Interruttore «Prove in arrivo» | No |
 | **Inizio sessione d'esame** (`sessioni`) | Il giorno prima dell'inizio di ogni sessione del corso (dal database `database/sessioni`), alle 9:00 | «Domani inizia la sessione d'esame» · «Sessione invernale, fino al 20 febbraio» | Tocco → Esami | Interruttore «Inizio sessione d'esame» | No |
 | **Esito delle prove** (`esiti`) | Il giorno dopo una prova senza esito registrato, alle 18:00; una sola volta per prova (registrando l'esito prima, non arriva) | «Com'è andata?» · «Ieri avevi l'esame di Analisi I. Registra l'esito quando lo sai.» | «Registra l'esito» (apre la scheda), «Non ricordarmelo per questa prova» | Interruttore «Com'è andata?» | Solo per la singola prova |
+| **Esami degli anni precedenti** (`anni_precedenti`) | Solo per chi ha iniziato a usare l'app dopo il 1° anno e ha ancora esami obbligatori «Da completare» (vedi [esami.md](esami.md#anni-precedenti)): alle 18:00 di 3 giorni dopo l'onboarding o il cambio di corso, e una sola ripetizione dopo 14 giorni | «Completa gli esami degli anni precedenti» · «3 esami del 1° e del 2° anno sono ancora da completare: indica quali hai già sostenuto.» | Tocco → Esami → Anni precedenti | Interruttore «Esami degli anni precedenti» | No (al massimo due, poi basta) |
 | **Collegamenti interrotti** (`collegamenti`) | Quando OneDrive, Google Drive o il calendario Outlook falliscono per accesso scaduto o revocato (`invalid_grant`, AADSTS700082…); al massimo una ogni 3 giorni per servizio | «OneDrive non è più collegato» · «L'accesso è scaduto o è stato revocato. Ricollegati da Collegamenti…» | Tocco → Collegamenti (o Impostazioni per il calendario) | Interruttore «Collegamento interrotto» | No |
 | **Registratore delle lezioni** (`registratore`) | Sul PC, quando chiudi la finestra durante una registrazione (l'app resta nell'area di notifica) o salvi dal menu dell'icona | «UniNotes continua a registrare» · «La registrazione di Analisi I va avanti: trovi UniNotes nell'area di notifica.» | Tocco → registratore | Conseguenza diretta di un tuo gesto: non dipende dagli interruttori | No |
 | **Registrazione lezione** (`registrazione_lezione`, Android) | Per tutta la registrazione (servizio in primo piano) | «Registrazione in corso» · «Analisi I · 00:12:34» (tempo aggiornato ogni secondo; «Registrazione in pausa» col tempo fermo) | «Pausa»/«Riprendi», «Salva»; tocco → registratore | Sparisce quando salvi; senza non si può registrare a schermo spento | No |
@@ -71,7 +72,7 @@ Mentre una sessione Focus è in corso (Studio → Sessioni Studio → Timer, ved
 
 - gli avvisi **urgenti** (`NotificationType.urgent`: prove in arrivo,
   inizio sessione d'esame, registratore, Focus) restano dove sono;
-- quelli **non urgenti** («Com'è andata?», collegamento interrotto,
+- quelli **non urgenti** («Com'è andata?», anni precedenti, collegamento interrotto,
   recensione, sostegno) che cadrebbero prima della fine prevista si spostano
   a un minuto dopo la fine (`quietAware` in `notification_plan.dart`; per
   «Collegamento interrotto» l'avviso si pianifica invece di comparire
@@ -218,8 +219,9 @@ simbolo azzurro, punto arancione), generata da
 `python app/tool/genera_grafiche_notifiche.py`: calendario per le prove,
 tocco per le sessioni, spunta per gli esiti, catena spezzata per i
 collegamenti, microfono, cronometro e sveglia per Focus, stella e cuore
-per recensione e sostegno. Le notifiche sono raggruppate per sezione
-dell'app: **Esami** (prove, sessioni, esiti), **Studio** (Focus),
+per recensione e sostegno, rotolo con la piuma per gli anni precedenti. Le
+notifiche sono raggruppate per sezione dell'app: **Esami** (prove,
+sessioni, esiti, anni precedenti), **Studio** (Focus),
 **Registra**, **Collegamenti**, più **UniNotes** per le promozionali.
 Il codice è in `LocalNotificationPlatform.detailsFor` (test in
 `app/test/notification_design_test.dart`).

@@ -169,6 +169,14 @@ class _NotificationsSectionState extends State<NotificationsSection> {
                       p.outcome,
                     ),
                     toggle(
+                      NotificationKeys.previousYears,
+                      'Esami degli anni precedenti',
+                      'Se hai iniziato a usare l\'app dopo il 1° anno: al '
+                          'massimo due promemoria per indicare gli esami già '
+                          'sostenuti.',
+                      p.previousYears,
+                    ),
+                    toggle(
                       NotificationKeys.links,
                       'Collegamento interrotto',
                       'Se OneDrive, Google Drive o il calendario chiedono di '

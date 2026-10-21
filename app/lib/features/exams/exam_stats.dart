@@ -8,6 +8,7 @@ import '../../models/exam.dart';
 import '../../models/university.dart';
 import '../../utils/grade_math.dart';
 import '../courses/course_ui.dart';
+import 'previous_years.dart';
 
 /// Dati caricati una volta per la schermata Esami.
 class ExamsData {
@@ -18,7 +19,12 @@ class ExamsData {
     required this.degrees,
     this.examWindows = const [],
     this.scope = PlanScope.all,
+    this.previous,
   });
+
+  /// Esami degli anni prima dell'anno di partenza (riquadro «Anni
+  /// precedenti» in Da sostenere); null senza profilo.
+  final PreviousYearsData? previous;
 
   /// Percorso e anno scelti (selettore nella barra).
   final PlanScope scope;
@@ -75,7 +81,14 @@ Future<ExamsData> loadExamsData(AppServices s) async {
   // un solo esame finale per insegnamento (anche dopo «Aggiorna database»):
   // le due pagine leggono la stessa prova e mostrano lo stesso stato
   await s.exams.mergeDuplicateFinals();
+  PreviousYearsData? previous;
+  try {
+    previous = await loadPreviousYears(s);
+  } catch (_) {
+    previous = null;
+  }
   return ExamsData(
+    previous: previous,
     exams: await s.exams.all(),
     courses: await s.courses.mapById(),
     universities: await s.courses.universitiesById(),

@@ -156,14 +156,18 @@ Future<bool> _confirmDeleteExam(
 
 /// Insegnamenti proposti nel menù «Corso» di una prova nuova: quelli del
 /// corso di laurea nell'anno che lo studente frequenta (non quelli degli anni
-/// successivi), più quelli degli anni passati con l'esame ancora da superare;
-/// senza quelli esclusi in Impostazioni → Esclusioni (OFA, inglese,
-/// facoltativi), riconosciuti dal nome ufficiale. Senza percorso tutti.
+/// successivi), più gli arretrati degli anni passati con l'esame ancora da
+/// superare: dall'anno di partenza in poi, e degli anni prima solo quelli
+/// che lo studente ha segnato «Da sostenere» (non quelli «Da completare»,
+/// [toComplete]); senza quelli esclusi in Impostazioni → Esclusioni (OFA,
+/// inglese, facoltativi), riconosciuti dal nome ufficiale. Senza percorso
+/// tutti.
 bool offeredInExamForm(
   Course c, {
   required PlanScope scope,
   required ExclusionFilter exclusions,
   required bool passed,
+  bool toComplete = false,
 }) {
   if (!scope.inDegree(c)) return false;
   if (exclusions.isExcluded([c.officialName])) return false;
@@ -171,7 +175,7 @@ bool offeredInExamForm(
   final y = c.year;
   if (current == null || y == null) return true;
   if (y == current) return true;
-  return y < current && !passed;
+  return y < current && !passed && !toComplete;
 }
 
 /// Esame finale nuovo [typed] salvato sull'esame finale già presente
@@ -246,6 +250,7 @@ class _ExamFormPageState extends State<ExamFormPage> {
               scope: scope,
               exclusions: exclusions,
               passed: _finalByCourse[c.id]?.status == ExamStatus.passed,
+              toComplete: _finalByCourse[c.id]?.status.isToComplete ?? false,
             ))
           c,
     ];
@@ -507,10 +512,23 @@ class _ExamFormPageState extends State<ExamFormPage> {
     } catch (e) {
       if (mounted) showSnack(context, 'Esame salvato, ma: $e');
     }
+    final before = old ?? existing;
+    // esame degli anni precedenti diventato da sostenere: tornano anche le
+    // sue prove in itinere
+    if ((before?.status.isToComplete ?? false) &&
+        exam.kind == ExamKind.finalExam &&
+        exam.status.isPending) {
+      try {
+        await services.exams.moveMidterms(
+          exam.courseId,
+          ExamStatus.toComplete,
+          ExamStatus.planned,
+        );
+      } catch (_) {}
+    }
     services.revision.bump();
     // esame appena superato: il traguardo ha il suo suono; gli altri
     // salvataggi una conferma discreta
-    final before = old ?? existing;
     final passedNow =
         exam.status == ExamStatus.passed && before?.status != ExamStatus.passed;
     unawaited(
@@ -736,21 +754,23 @@ class _ExamFormPageState extends State<ExamFormPage> {
         initialValue: _status,
         decoration: const InputDecoration(labelText: 'Stato'),
         items: [
+          // «Da completare» solo per l'esame che lo è già (anni precedenti)
           for (final s in ExamStatus.values)
-            DropdownMenuItem(
-              value: s,
-              child: Row(
-                children: [
-                  Icon(
-                    examStatusIcon(s),
-                    size: 18,
-                    color: examStatusColor(context, s),
-                  ),
-                  const SizedBox(width: 8),
-                  Text(s.label),
-                ],
+            if (!s.isToComplete || widget.exam?.status == s)
+              DropdownMenuItem(
+                value: s,
+                child: Row(
+                  children: [
+                    Icon(
+                      examStatusIcon(s),
+                      size: 18,
+                      color: examStatusColor(context, s),
+                    ),
+                    const SizedBox(width: 8),
+                    Text(s.label),
+                  ],
+                ),
               ),
-            ),
         ],
         onChanged: (v) => _setStatus(v ?? ExamStatus.planned),
       ),

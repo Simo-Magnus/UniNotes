@@ -1,4 +1,6 @@
 import '../../models/course.dart';
+import '../../models/exam.dart';
+import '../../repositories/exam_repository.dart';
 import '../constants/enums.dart';
 import '../services/app_services.dart';
 
@@ -16,15 +18,19 @@ String currentSemester(DateTime now) =>
 ///   **Da sostenere** (lezioni già finite: anni o semestri precedenti, o
 ///   fuori corso), **Non ancora iniziato** (anni o semestri successivi).
 /// Senza anno nel piano l'insegnamento resta «In corso».
+/// **Da completare** se l'esame finale è «Da completare» ([toComplete]: anno
+/// prima dell'anno di partenza, non ancora compilato dallo studente).
 CourseStatus deriveCourseStatus(
   Course c, {
   required bool passed,
   required int? currentYear,
   required bool fuoriCorso,
   required DateTime now,
+  bool toComplete = false,
 }) {
   if (c.status == CourseStatus.archived) return CourseStatus.archived;
   if (passed) return CourseStatus.completed;
+  if (toComplete) return CourseStatus.toComplete;
   final y = c.year;
   if (y == null || currentYear == null) return CourseStatus.active;
   if (fuoriCorso) {
@@ -44,9 +50,20 @@ CourseStatus deriveCourseStatus(
 /// schermate (nessun `revision.bump`). Restituisce quanti sono cambiati.
 Future<int> syncCourseStatuses(AppServices s, {DateTime? now}) async {
   final profile = await s.profiles.load();
+  final finals = <int, List<Exam>>{};
+  for (final e in await s.exams.all()) {
+    if (e.kind == ExamKind.finalExam) {
+      finals.putIfAbsent(e.courseId, () => []).add(e);
+    }
+  }
   final passed = {
-    for (final e in await s.exams.byStatus([ExamStatus.passed]))
-      if (e.kind == ExamKind.finalExam) e.courseId,
+    for (final f in finals.entries)
+      if (f.value.any((e) => e.status == ExamStatus.passed)) f.key,
+  };
+  // esame principale «Da completare» (anni prima dell'anno di partenza)
+  final toComplete = {
+    for (final f in finals.entries)
+      if (primaryFinal(f.value)?.status.isToComplete ?? false) f.key,
   };
   final t = now ?? DateTime.now();
   var changed = 0;
@@ -54,6 +71,7 @@ Future<int> syncCourseStatuses(AppServices s, {DateTime? now}) async {
     final next = deriveCourseStatus(
       c,
       passed: c.id != null && passed.contains(c.id),
+      toComplete: c.id != null && toComplete.contains(c.id),
       currentYear: profile?.currentYear,
       fuoriCorso: profile?.fuoriCorso ?? false,
       now: t,

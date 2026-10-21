@@ -152,6 +152,8 @@ Color examStatusColor(BuildContext context, ExamStatus s) {
     ExamStatus.passed => const Color(0xFF2E7D32),
     ExamStatus.failed => const Color(0xFFC62828),
     ExamStatus.cancelled => scheme.outline,
+    // da completare: tinta tenue, non è ancora un esame da sostenere
+    ExamStatus.toComplete => const Color(0xFF8D99AE),
   };
 }
 
@@ -166,6 +168,7 @@ IconData examStatusIcon(ExamStatus s) => switch (s) {
   ExamStatus.passed => Icons.check_circle,
   ExamStatus.failed => Icons.cancel,
   ExamStatus.cancelled => Icons.block,
+  ExamStatus.toComplete => Icons.help_outline_rounded,
 };
 
 class ExamStatusChip extends StatelessWidget {

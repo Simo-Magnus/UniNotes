@@ -109,8 +109,9 @@ class CourseCatalog {
       CourseStatus.active => 0,
       CourseStatus.toTake => 1,
       CourseStatus.upcoming => 2,
-      CourseStatus.completed => 3,
-      CourseStatus.archived => 4,
+      CourseStatus.toComplete => 3,
+      CourseStatus.completed => 4,
+      CourseStatus.archived => 5,
     };
     final copy = [...list];
     copy.sort((a, b) {

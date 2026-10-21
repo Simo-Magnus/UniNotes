@@ -4,7 +4,9 @@ Con OneDrive o Google Drive collegati (Collegamenti), oltre ai file
 (registrazioni, appunti, libri, allegati) si sincronizzano anche i **dati
 dell'app**: sessioni di Studio, moduli e argomenti con il loro stato, esami e
 prove, voti, insegnamenti (anche quelli aggiunti a mano), libri e materiali
-(stato, pagina di lettura), eventi, note sui luoghi, percorso dello studente,
+(stato, pagina di lettura), eventi, note sui luoghi, percorso dello studente
+(con l'anno di partenza, `profile.start_year`: gli esami «Da completare»
+degli anni precedenti sono uno stato degli esami e viaggiano con loro),
 stato degli anni del piano e alcune scelte di studio. Casella «Dati dell'app:
 Studio, esami, voti, insegnamenti» in ogni servizio (accesa di serie, anche
 per chi aveva già scelto le altre caselle).

@@ -10,6 +10,7 @@ import '../../features/courses/courses_screen.dart';
 import '../../features/dashboard/dashboard_screen.dart';
 import '../../features/exams/exam_detail.dart';
 import '../../features/exams/exams_screen.dart';
+import '../../features/exams/previous_years_screen.dart' show openPreviousYears;
 import '../../features/links/links_screen.dart';
 import '../../features/notes/notes_screen.dart';
 import '../../features/notes/recorder/overlay_logic.dart';
@@ -152,6 +153,12 @@ class _AppShellState extends State<AppShell> {
         if (mounted && _services.focus.active && !_services.focus.screenVisible) {
           openFocusScreen(context);
         }
+      });
+    } else if (route == AppRoutes.previousYears) {
+      // promemoria degli esami degli anni precedenti: Esami → Anni precedenti
+      _select(byLabel('Esami'));
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) openPreviousYears(context);
       });
     } else if (route == AppRoutes.record) {
       _select(byLabel('Registra'));

@@ -32,7 +32,15 @@ void main() {
               if (seen.add(n.status)) n.status,
         ];
       }
-      expect(seen, ExamStatus.values.toSet());
+      // tranne «Da completare»: solo per gli esami degli anni prima
+      // dell'anno di partenza mai compilati, non si sceglie
+      expect(seen, ExamStatus.values.toSet()..remove(ExamStatus.toComplete));
+      // da «Da completare»: «Sostenuto» (superato, voto facoltativo) o «Da
+      // sostenere» (arretrato)
+      expect(nextExamStatuses(ExamStatus.toComplete).map((n) => n.status), [
+        ExamStatus.passed,
+        ExamStatus.planned,
+      ]);
     });
   });
 

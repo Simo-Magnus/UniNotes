@@ -104,9 +104,18 @@ class AppServices {
       PlanScope(profile: profile.value, year: selectedYear.value);
 
   /// Legge il profilo dal database e riporta il selettore all'anno
-  /// frequentato.
+  /// frequentato. L'anno di partenza mancante (profilo di una versione
+  /// precedente) si ricava e si salva: gli esami degli anni prima mai
+  /// compilati diventano «Da completare» ([ProfileRepository.ensureStartYear]).
   Future<StudentProfile?> loadProfile() async {
-    final p = await profiles.load();
+    var p = await profiles.load();
+    if (p != null) {
+      try {
+        p = await profiles.ensureStartYear(p);
+      } catch (_) {
+        // si riprova al prossimo avvio
+      }
+    }
     profile.value = p;
     selectedYear.value = p?.currentYear;
     return p;

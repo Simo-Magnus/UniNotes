@@ -11,6 +11,7 @@ import 'package:university_notes/features/academic/year_grades_screen.dart';
 import 'package:university_notes/features/books/books_screen.dart';
 import 'package:university_notes/features/dashboard/dashboard_screen.dart';
 import 'package:university_notes/features/exams/exams_screen.dart';
+import 'package:university_notes/features/exams/previous_years.dart';
 import 'package:university_notes/main.dart';
 import 'package:university_notes/models/book.dart';
 
@@ -199,6 +200,20 @@ void main() {
     await _pump(tester, const ExamsScreen(), services: s);
     expect(find.text('Anno da completare'), findsOneWidget);
     expect(find.text('Segna come completato'), findsOneWidget);
+    // iniziato al 2° anno: gli esami del 1° sono «Da completare», non
+    // arretrati; il riquadro «Anni precedenti» porta a compilarli
+    expect(find.byKey(const Key('previous-years-banner')), findsOneWidget);
+    expect(find.textContaining('del 1° anno da completare'), findsOneWidget);
+    expect(find.text('Analisi matematica I'), findsNothing);
+    // segnati «Da sostenere» diventano arretrati
+    await tester.runAsync(() async {
+      final d = (await loadPreviousYears(s))!;
+      for (final c in d.years.first.courses) {
+        await setPreviousToTake(s, c);
+      }
+    });
+    await _settle(tester);
+    expect(find.text('Anni precedenti completati'), findsOneWidget);
     expect(find.text('Analisi matematica I'), findsWidgets);
     expect(find.text('Fisica I'), findsOneWidget);
     expect(find.textContaining('Prossimo appello'), findsOneWidget);

@@ -72,7 +72,8 @@ class ExamRepository {
   /// potevano essercene due: quello creato dal database dei corsi («Da
   /// prenotare») e quello aggiunto a mano con «Nuova prova», così «Da
   /// sostenere» e «Sostenuti» mostravano lo stesso esame con stati diversi.
-  /// Qui gli esami finali ancora da sostenere (da prenotare o prenotati) di un
+  /// Qui gli esami finali ancora da sostenere (da prenotare o prenotati, o
+  /// «Da completare» degli anni precedenti) di un
   /// insegnamento che ne ha più d'uno confluiscono in quello principale
   /// ([primaryFinal]): i campi vuoti si riempiono (id del database, argomenti,
   /// materiali, data…), poi il doppione si cancella. Restano le prove già
@@ -102,7 +103,7 @@ class ExamRepository {
       for (final r in group) {
         if (r['id'] == primary.id) continue;
         final status = ExamStatus.fromKey(r['status'] as String?);
-        if (!status.isPending) continue;
+        if (!status.isPending && !status.isToComplete) continue;
         // un appello prenotato a mano, con la sua data, è un tentativo vero
         // (per esempio per migliorare il voto): resta
         if (r['external_id'] == null && r['date'] != null) continue;
@@ -180,6 +181,60 @@ class ExamRepository {
     'source',
   ];
 
+  /// Prove mai toccate dallo studente: create dal database dei corsi, ancora
+  /// «Da prenotare», senza voto e con note, argomenti e materiali come li ha
+  /// messi l'import (data e luogo possono venire dal database).
+  static const _untouched =
+      "status = 'planned' AND grade IS NULL AND laude = 0 "
+      'AND external_id IS NOT NULL '
+      'AND (notes IS NULL OR notes = imported_notes) '
+      'AND (topics IS NULL OR topics = imported_topics) '
+      'AND (study_materials IS NULL OR '
+      'study_materials = imported_study_materials)';
+
+  /// Anno di partenza [below] (vedi `StudentProfile.startYear`): le prove mai
+  /// toccate degli insegnamenti degli anni prima (dall'anno [from], se c'è)
+  /// del corso di laurea [degreeId] diventano «Da completare»: lo studente
+  /// non le ha compilate perché è arrivato nell'app dopo, non sono
+  /// arretrati. Restituisce quante.
+  Future<int> markToComplete({
+    required int below,
+    int? from,
+    String? degreeId,
+  }) async {
+    if (below <= 1 || (from != null && from >= below)) return 0;
+    return _db.db.rawUpdate(
+      "UPDATE exams SET status = 'to_complete' WHERE $_untouched AND "
+      'course_id IN (SELECT id FROM courses WHERE year IS NOT NULL AND '
+      'year < ?${from == null ? '' : ' AND year >= ?'}'
+      '${degreeId == null ? '' : ' AND degree_id = ?'})',
+      [below, ?from, ?degreeId],
+    );
+  }
+
+  /// Le prove «Da completare» dall'anno di partenza [start] in poi (o di
+  /// insegnamenti senza anno) tornano «Da prenotare»: lì la compilazione
+  /// parte dall'app. Restituisce quante.
+  Future<int> restoreFromStartYear(int start, {String? degreeId}) =>
+      _db.db.rawUpdate(
+        "UPDATE exams SET status = 'planned' WHERE status = 'to_complete' "
+        'AND course_id IN (SELECT id FROM courses WHERE (year IS NULL OR '
+        'year >= ?)${degreeId == null ? '' : ' AND (degree_id = ? OR '
+                  'degree_id IS NULL)'})',
+        [start, ?degreeId],
+      );
+
+  /// Prove in itinere ed esoneri dell'insegnamento [courseId] con lo stato
+  /// [from] passano a [to] (es. l'esame di un anno precedente segnato «Da
+  /// sostenere»: anche le sue prove tornano visibili).
+  Future<int> moveMidterms(int courseId, ExamStatus from, ExamStatus to) =>
+      _db.db.update(
+        'exams',
+        {'status': to.key},
+        where: "course_id = ? AND kind = 'midterm' AND status = ?",
+        whereArgs: [courseId, from.key],
+      );
+
   /// Esami/prove con uno degli stati indicati, in ordine di data.
   Future<List<Exam>> byStatus(Iterable<ExamStatus> statuses) async {
     final keys = statuses.map((s) => s.key).toList();
@@ -199,7 +254,8 @@ class ExamRepository {
 /// stesso insegnamento): quello che dice com'è messo l'esame. In ordine:
 /// superato, in attesa dell'esito, prenotato, da prenotare con una data o
 /// aggiunto a mano (un nuovo tentativo), non superato, da prenotare come
-/// l'ha creato il database dei corsi, annullato; a parità quello con la data
+/// l'ha creato il database dei corsi, da completare (anni prima dell'anno
+/// di partenza), annullato; a parità quello con la data
 /// più recente, poi l'ultimo aggiunto.
 Exam? primaryFinal(Iterable<Exam> finals) {
   Exam? best;
@@ -216,6 +272,7 @@ int _rank(Exam e) => switch (e.status) {
   ExamStatus.planned when e.date != null || e.externalId == null => 25,
   ExamStatus.failed => 30,
   ExamStatus.planned => 40,
+  ExamStatus.toComplete => 45,
   ExamStatus.cancelled => 50,
 };
 

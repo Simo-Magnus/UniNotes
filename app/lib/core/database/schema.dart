@@ -6,7 +6,7 @@
 /// luoghi pubblici stanno in place_personal, separate da places.
 library;
 
-const int kSchemaVersion = 12;
+const int kSchemaVersion = 13;
 
 /// Tabelle con dati personali, in ordine di dipendenza (usato da backup).
 const List<String> kPersonalTables = [
@@ -424,6 +424,15 @@ const List<String> kMigrationV11 = [
 /// ufficiale si ripristina togliendo quello personalizzato.
 const List<String> kMigrationV12 = [
   'ALTER TABLE courses ADD COLUMN custom_name TEXT',
+];
+
+/// v13: anno di partenza del percorso (`profile.start_year`): l'anno di corso
+/// indicato quando lo studente ha iniziato a usare l'app (onboarding o cambio
+/// di corso). Gli esami degli anni prima, mai compilati, sono «Da
+/// completare» e non arretrati. Null nei profili esistenti: lo ricava
+/// l'app al primo avvio ([ProfileRepository.ensureStartYear]).
+const List<String> kMigrationV13 = [
+  'ALTER TABLE profile ADD COLUMN start_year INTEGER',
 ];
 
 /// Categorie di luogo predefinite (dato pubblico, aggiornabile).

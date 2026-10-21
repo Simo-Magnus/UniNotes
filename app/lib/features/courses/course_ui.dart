@@ -102,6 +102,8 @@ IconData courseStatusIcon(CourseStatus s) {
       return Icons.play_circle_outline;
     case CourseStatus.toTake:
       return Icons.pending_actions_outlined;
+    case CourseStatus.toComplete:
+      return Icons.help_outline_rounded;
     case CourseStatus.upcoming:
       return Icons.schedule_outlined;
     case CourseStatus.completed:
@@ -121,6 +123,7 @@ class CourseStatusChip extends StatelessWidget {
     final color = switch (status) {
       CourseStatus.active => const Color(0xFF1E88E5),
       CourseStatus.toTake => const Color(0xFFF57C00),
+      CourseStatus.toComplete => const Color(0xFF8D99AE),
       CourseStatus.upcoming => const Color(0xFF7E57C2),
       CourseStatus.completed => const Color(0xFF2E7D32),
       CourseStatus.archived => scheme.outline,

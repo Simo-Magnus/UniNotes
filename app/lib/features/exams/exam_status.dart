@@ -83,6 +83,19 @@ List<StatusStep> nextExamStatuses(ExamStatus s) => switch (s) {
       hint: 'Poi l\'esito: voto, non superato o in attesa',
     ),
   ],
+  // esame di un anno prima dell'anno di partenza, mai compilato
+  ExamStatus.toComplete => const [
+    (
+      status: ExamStatus.passed,
+      label: 'Sostenuto',
+      hint: 'Poi il voto, facoltativo',
+    ),
+    (
+      status: ExamStatus.planned,
+      label: 'Da sostenere',
+      hint: 'Diventa un esame arretrato da sostenere',
+    ),
+  ],
 };
 
 /// Prova con lo stato [to] scelto dall'icona: senza voto; una prova non
@@ -157,11 +170,14 @@ Future<bool> changeExamStatus(BuildContext context, Exam exam) async {
   var next = withStatus(exam, chosen);
   if (chosen == ExamStatus.passed || chosen == ExamStatus.taken) {
     // l'esito: voto, idoneità, «Non superato» o in attesa
+    // un esame degli anni precedenti segnato «Sostenuto» è già superato:
+    // il menù parte da «Idoneità (senza voto)» e il voto è facoltativo
+    final previous = exam.status.isToComplete;
     final r = await showDialog<ExamOutcome>(
       context: context,
       builder: (_) => GradeDialog(
         midterm: exam.kind == ExamKind.midterm,
-        status: ExamStatus.taken,
+        status: previous ? ExamStatus.passed : ExamStatus.taken,
         grade: chosen == ExamStatus.passed ? exam.grade : null,
         laude: chosen == ExamStatus.passed && exam.laude,
         title: chosen == ExamStatus.taken ? 'Esito' : null,
@@ -172,6 +188,16 @@ Future<bool> changeExamStatus(BuildContext context, Exam exam) async {
   }
   final s = context.read<AppServices>();
   await s.exams.update(next);
+  if (exam.status.isToComplete &&
+      next.kind == ExamKind.finalExam &&
+      next.status.isPending) {
+    // arretrato da sostenere: tornano anche le sue prove in itinere
+    await s.exams.moveMidterms(
+      next.courseId,
+      ExamStatus.toComplete,
+      ExamStatus.planned,
+    );
+  }
   s.revision.bump();
   // voto registrato ora: traguardo, con suono e vibrazione
   next.status == ExamStatus.passed

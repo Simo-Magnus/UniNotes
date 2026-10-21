@@ -20,6 +20,9 @@ class NotificationKeys {
   static const review = 'notif_review';
   static const donation = 'notif_donation';
 
+  /// «Esami degli anni precedenti» (due promemoria al massimo).
+  static const previousYears = 'notif_previous_years';
+
   /// Prove per cui non chiedere «Com'è andata?» (id separati da virgola):
   /// già chiesto una volta o «Non ricordarmelo per questa prova».
   static const outcomeDone = 'notif_outcome_done';
@@ -65,6 +68,7 @@ class NotificationPrefs {
     this.links = true,
     this.review = true,
     this.donation = kShowDonationLink,
+    this.previousYears = true,
   });
 
   /// L'utente ha attivato le notifiche nell'app.
@@ -78,6 +82,9 @@ class NotificationPrefs {
 
   /// Attiva di default solo nelle build con il link alle donazioni.
   final bool donation;
+
+  /// Promemoria degli esami degli anni precedenti da completare.
+  final bool previousYears;
 
   static Future<NotificationPrefs> load(SettingsRepository s) async {
     Future<bool> flag(String k, bool def) async {
@@ -95,6 +102,7 @@ class NotificationPrefs {
       review: await flag(NotificationKeys.review, true),
       donation:
           kShowDonationLink && await flag(NotificationKeys.donation, true),
+      previousYears: await flag(NotificationKeys.previousYears, true),
     );
   }
 

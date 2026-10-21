@@ -98,6 +98,7 @@ class AppDatabase {
       ...kMigrationV10,
       ...kMigrationV11,
       ...kMigrationV12,
+      ...kMigrationV13,
     ]) {
       batch.execute(stmt);
     }
@@ -162,6 +163,11 @@ class AppDatabase {
     }
     if (from < 12) {
       for (final stmt in kMigrationV12) {
+        await db.execute(stmt);
+      }
+    }
+    if (from < 13) {
+      for (final stmt in kMigrationV13) {
         await db.execute(stmt);
       }
     }

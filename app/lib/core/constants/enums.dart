@@ -19,11 +19,33 @@ T enumFromKey<T extends KeyedEnum>(List<T> values, String? key, T fallback) {
 /// (core/academic/course_status_sync.dart) da anno e semestre del piano,
 /// anno che frequenti e data di oggi, ed esami superati.
 enum CourseStatus with KeyedEnum {
-  active('active', 'In corso', 'Lezioni in questo semestre dell\'anno che frequenti'),
-  toTake('to_take', 'Da sostenere', 'Lezioni finite, esame non ancora superato'),
-  upcoming('upcoming', 'Non ancora iniziato', 'Lezioni in un semestre o anno successivo'),
+  active(
+    'active',
+    'In corso',
+    'Lezioni in questo semestre dell\'anno che frequenti',
+  ),
+  toTake(
+    'to_take',
+    'Da sostenere',
+    'Lezioni finite, esame non ancora superato',
+  ),
+  toComplete(
+    'to_complete',
+    'Da completare',
+    'Anno prima che usassi l\'app: indica in Esami → Anni precedenti se '
+        'l\'hai già sostenuto',
+  ),
+  upcoming(
+    'upcoming',
+    'Non ancora iniziato',
+    'Lezioni in un semestre o anno successivo',
+  ),
   completed('completed', 'Superato', 'Esame finale superato'),
-  archived('archived', 'Archiviato', 'Nascosto da elenchi e medie (scelto da te)');
+  archived(
+    'archived',
+    'Archiviato',
+    'Nascosto da elenchi e medie (scelto da te)',
+  );
 
   const CourseStatus(this.key, this.label, this.description);
   @override
@@ -78,7 +100,14 @@ enum ExamStatus with KeyedEnum {
   taken('taken', 'Sostenuto'),
   passed('passed', 'Superato'),
   failed('failed', 'Non superato'),
-  cancelled('cancelled', 'Annullato');
+  cancelled('cancelled', 'Annullato'),
+
+  /// Esame di un anno prima dell'anno di partenza (l'anno di corso indicato
+  /// quando lo studente ha iniziato a usare l'app) mai compilato: non è un
+  /// arretrato, non è tra le prove da sostenere, non conta in medie, CFU e
+  /// statistiche finché lo studente non dice se l'ha sostenuto (Esami →
+  /// Anni precedenti).
+  toComplete('to_complete', 'Da completare');
 
   const ExamStatus(this.key, this.label);
   @override
@@ -90,6 +119,9 @@ enum ExamStatus with KeyedEnum {
       enumFromKey(values, k, ExamStatus.planned);
 
   bool get isPending => this == planned || this == booked;
+
+  /// Esame degli anni precedenti ancora da compilare (vedi [toComplete]).
+  bool get isToComplete => this == toComplete;
 }
 
 enum TopicStatus with KeyedEnum {

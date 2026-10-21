@@ -8,6 +8,7 @@ import '../academic/year_widgets.dart';
 import 'exam_stats.dart';
 import 'exam_tile.dart';
 import 'exam_ui.dart';
+import 'previous_years_screen.dart';
 
 /// Filtro per tipo di prova comune alle liste. Nessun filtro scelto (null)
 /// = tutte le prove: non c'è l'opzione «Tutti».
@@ -57,7 +58,9 @@ class KindFilterBar extends StatelessWidget {
 /// Tab "Da sostenere": prove da prenotare o prenotate divise per semestre
 /// dell'insegnamento, in ordine cronologico (a scelta per ultimi), con gli
 /// esami finali non superati (stato «Non superato», si riprenotano
-/// dall'icona). Niente card delle sessioni d'esame né «Segnala date
+/// dall'icona). Gli esami «Da completare» degli anni prima dell'anno di
+/// partenza non ci sono: il riquadro «Anni precedenti» in cima porta alla
+/// pagina dove si compilano. Niente card delle sessioni d'esame né «Segnala date
 /// d'esame»: data e appelli dipendono dal canale e dal docente, si indicano
 /// su ogni prova.
 class PendingExamsTab extends StatefulWidget {
@@ -122,6 +125,8 @@ class _PendingExamsTabState extends State<PendingExamsTab> {
         ),
       ),
       const YearStatusBanner(),
+      // esami degli anni prima dell'anno di partenza da completare
+      PreviousYearsBanner(data: data.previous),
     ];
 
     if (pending.isEmpty) {

@@ -55,6 +55,7 @@ SIMBOLI = {
     "focus_avvisi": 0xF553,  # alarm_rounded
     "recensione": 0xF01D4,  # star_rounded
     "sostegno": 0xF738,  # favorite_rounded
+    "anni_precedenti": 0xF7EE,  # history_edu_rounded
 }
 
 # immagini larghe solo per le notifiche rare (inizio della sessione

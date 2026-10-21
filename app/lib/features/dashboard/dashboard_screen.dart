@@ -9,6 +9,7 @@ import '../academic/year_widgets.dart';
 import 'dashboard_data.dart';
 import 'widgets/course_progress_card.dart';
 import 'widgets/nudge_card.dart';
+import 'widgets/previous_years_card.dart';
 import 'widgets/quick_start_card.dart';
 import 'widgets/recordings_card.dart';
 import 'widgets/upcoming_exams_card.dart';
@@ -59,6 +60,7 @@ class _OneColumn extends StatelessWidget {
       children: [
         _PathHeader(data: data),
         const YearStatusBanner(),
+        const PreviousYearsHomeCard(),
         const NudgeCard(),
         QuickStartCard(data: data),
         UpcomingExamsCard(data: data),
@@ -88,6 +90,7 @@ class _TwoColumns extends StatelessWidget {
             children: [
               _PathHeader(data: data),
               const YearStatusBanner(),
+              const PreviousYearsHomeCard(),
               const NudgeCard(),
               QuickStartCard(data: data),
               Row(

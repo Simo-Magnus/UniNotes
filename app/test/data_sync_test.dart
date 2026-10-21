@@ -559,5 +559,49 @@ void main() {
       expect((await a.q('SELECT COUNT(*) AS n FROM topics')).first['n'], 2);
       await a.db.close();
     });
+
+    test(
+      'anno di partenza ed esami «Da completare» degli anni precedenti',
+      () async {
+        final a = await _Device.create('A', tmp);
+        final b = await _Device.create('B', tmp);
+        await _catalog(a);
+        await _catalog(b);
+        await _syncAll([a, b]);
+        // onboarding al 3° anno su A: anno di partenza ed esame da completare
+        await a.insert('profile', {
+          'id': 1,
+          'university_id': 'polito',
+          'university_name': 'PoliTo',
+          'degree_id': 'polito-l8',
+          'degree_name': 'Ingegneria Informatica',
+          'degree_type': 'L',
+          'duration_years': 3,
+          'current_year': 3,
+          'reference_aa': '2026/27',
+          'start_year': 3,
+        });
+        await a.db.db.update('exams', {'status': 'to_complete'});
+        await _syncAll([a, b]);
+        expect(
+          (await b.q('SELECT start_year FROM profile')).single['start_year'],
+          3,
+        );
+        expect(
+          (await b.q('SELECT status FROM exams')).single['status'],
+          'to_complete',
+        );
+        // su B lo studente lo segna «Da sostenere»: arriva anche su A
+        await _later();
+        await b.db.db.update('exams', {'status': 'planned'});
+        await _syncAll([a, b]);
+        expect(
+          (await a.q('SELECT status FROM exams')).single['status'],
+          'planned',
+        );
+        await a.db.close();
+        await b.db.close();
+      },
+    );
   });
 }
