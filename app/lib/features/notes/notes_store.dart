@@ -197,9 +197,29 @@ class NotesStore {
   }
 
   /// Numero di file per corso (per l'elenco dei corsi).
+  ///
+  /// Solo i nomi, senza leggere data e dimensione di ogni file: l'elenco dei
+  /// corsi lo chiede per ognuno, e con registrazioni a centinaia la lettura
+  /// dei dettagli rendeva lenta la schermata. Stessi file che mostra [list].
   Future<int> count(Course c) async {
-    final all = await list(c);
-    return all.values.fold<int>(0, (a, l) => a + l.length);
+    final base = (await root()).path;
+    await _migrateLegacy(p.join(base, folderName(c)));
+    var n = 0;
+    for (final f in NoteFolder.values) {
+      final dir = Directory(p.join(base, folderName(c), f.dirName));
+      if (!await dir.exists()) continue;
+      await for (final e in dir.list()) {
+        if (e is! File) continue;
+        final name = p.basename(e.path);
+        if (name.startsWith('.') || name.endsWith('.part')) continue;
+        if (f == NoteFolder.recordings &&
+            p.extension(name).toLowerCase() == '.json') {
+          continue;
+        }
+        n++;
+      }
+    }
+    return n;
   }
 
   /// Nome base di una nuova lezione: "2026-10-05 08-30 Lezione".

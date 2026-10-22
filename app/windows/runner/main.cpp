@@ -94,6 +94,14 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
   Win32Window::Point origin(10, 10);
   Win32Window::Size size(1280, 800);
   if (!window.Create(L"UniNotes", origin, size)) {
+    // motore di Flutter non creato (file dell'app mancanti o danneggiati,
+    // es. data\app.so o flutter_assets): un avviso invece di chiudersi
+    // senza dire nulla
+    ::MessageBoxW(nullptr,
+                  L"UniNotes non si è avviato: alcuni file dell'app "
+                  L"mancano o sono danneggiati. Reinstalla UniNotes.",
+                  L"UniNotes", MB_OK | MB_ICONERROR);
+    if (single_instance != nullptr) ::CloseHandle(single_instance);
     return EXIT_FAILURE;
   }
   window.SetQuitOnClose(true);

@@ -477,9 +477,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     OnboardingStep.aspetto => _AppearanceStep(
       onNext: () => _go(OnboardingStep.tipo),
     ),
-    OnboardingStep.ai => _AiStep(
-      onNext: () => _nextTail(OnboardingStep.ai),
-    ),
+    OnboardingStep.ai => _AiStep(onNext: () => _nextTail(OnboardingStep.ai)),
     OnboardingStep.notifiche => _NotificationsStep(
       onNext: () => _nextTail(OnboardingStep.notifiche),
     ),
@@ -591,6 +589,7 @@ class _Progress extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
+            flex: 2,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(4),
               child: LinearProgressIndicator(
@@ -602,9 +601,14 @@ class _Progress extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 12),
-          Text(
-            'Passo $position di $total',
-            style: TextStyle(fontSize: 11, color: t.textMuted),
+          // flessibile: con caratteri grandi cede spazio invece di uscire
+          Flexible(
+            child: Text(
+              'Passo $position di $total',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 11, color: t.textMuted),
+            ),
           ),
         ],
       ),

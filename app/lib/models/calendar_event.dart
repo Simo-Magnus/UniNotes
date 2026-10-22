@@ -44,7 +44,17 @@ class CalendarEvent {
   DateTime get effectiveEnd =>
       end ??
       (allDay
-          ? start.add(const Duration(days: 1))
+          // il giorno dopo alla stessa ora (non 24 ore: nel giorno del
+          // cambio dell'ora legale l'evento finiva all'1:00 del giorno dopo
+          // e compariva anche lì)
+          ? DateTime(
+              start.year,
+              start.month,
+              start.day + 1,
+              start.hour,
+              start.minute,
+              start.second,
+            )
           : start.add(const Duration(hours: 1)));
 
   factory CalendarEvent.fromMap(Map<String, Object?> m) => CalendarEvent(

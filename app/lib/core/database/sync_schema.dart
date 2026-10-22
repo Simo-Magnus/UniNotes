@@ -252,7 +252,9 @@ abstract final class SyncSchema {
       var cols = await columnsOf(txn, s.table);
       if (cols.isEmpty) continue; // tabella assente (versione precedente)
       if (!cols.contains('sync_mtime')) {
-        await txn.execute('ALTER TABLE ${s.table} ADD COLUMN sync_mtime INTEGER');
+        await txn.execute(
+          'ALTER TABLE ${s.table} ADD COLUMN sync_mtime INTEGER',
+        );
       }
       if (s.hasSyncId && !cols.contains('sync_id')) {
         await txn.execute('ALTER TABLE ${s.table} ADD COLUMN sync_id TEXT');
@@ -307,7 +309,8 @@ abstract final class SyncSchema {
       await ex.execute(
         'CREATE TRIGGER sync_upd_$t AFTER UPDATE ON $t '
         'WHEN NEW.sync_mtime IS OLD.sync_mtime AND ($changed) BEGIN '
-        'UPDATE $t SET sync_mtime = $nowSql WHERE rowid = NEW.rowid; END',
+        'UPDATE $t SET sync_mtime = ${afterSql('OLD')} '
+        'WHERE rowid = NEW.rowid; END',
       );
     }
     if (!s.syncDeletes) return;
@@ -318,9 +321,18 @@ abstract final class SyncSchema {
       'CREATE TRIGGER sync_del_$t AFTER DELETE ON $t '
       'WHEN ${s.idOf('OLD')} IS NOT NULL$only BEGIN '
       'INSERT OR REPLACE INTO $tombstones (tbl, sync_id, deleted_at) '
-      "VALUES ('$t', ${s.idOf('OLD')}, $nowSql); END",
+      "VALUES ('$t', ${s.idOf('OLD')}, ${afterSql('OLD')}); END",
     );
   }
+
+  /// Orario di una modifica o eliminazione della riga [alias]: adesso, ma
+  /// sempre dopo l'orario che la riga ha già. Un dispositivo con l'orologio
+  /// avanti scrive orari nel futuro; senza questo, una modifica fatta dopo
+  /// su un dispositivo con l'ora giusta avrebbe un orario più vecchio e
+  /// l'unione la annullerebbe (e un'eliminazione farebbe tornare la riga),
+  /// finché l'ora vera non raggiunge quella sbagliata.
+  static String afterSql(String alias) =>
+      'MAX($nowSql, COALESCE(ABS($alias.sync_mtime), 0) + 1)';
 
   /// Identificativi doppi sullo stesso dispositivo (es. due moduli con lo
   /// stesso nome nello stesso insegnamento): dal secondo in poi si aggiunge

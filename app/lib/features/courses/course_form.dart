@@ -250,6 +250,10 @@ class _CourseFormPageState extends State<CourseFormPage> {
   }
 
   Future<void> _save() async {
+    // doppio tocco su «Salva» prima che il pulsante si spenga: un corso
+    // nuovo si creerebbe due volte e la seconda chiusura toglierebbe anche
+    // la pagina sotto
+    if (_saving) return;
     // dati non ancora caricati (o errore): niente da salvare
     final form = _formKey.currentState;
     if (form == null || !form.validate()) return;
@@ -334,6 +338,59 @@ class _CourseFormPageState extends State<CourseFormPage> {
         showSnack(context, 'Errore nel salvataggio: $e');
       }
     }
+  }
+
+  /// «Difficoltà»: etichetta, cursore, valore e «Non indicata» su una riga;
+  /// con poco spazio o caratteri grandi il cursore va sotto, su una riga sua.
+  Widget _difficultyRow(BuildContext context) {
+    final slider = Slider(
+      value: _difficulty ?? 0,
+      min: 0,
+      max: 5,
+      divisions: 10,
+      label: _difficulty == null ? 'Non indicata' : formatNumber(_difficulty),
+      onChanged: (v) => setState(() => _difficulty = v),
+    );
+    final value = Text(
+      _difficulty == null ? '—' : '${formatNumber(_difficulty)}/5',
+    );
+    final clear = IconButton(
+      tooltip: 'Non indicata',
+      onPressed: _difficulty == null
+          ? null
+          : () => setState(() => _difficulty = null),
+      icon: const Icon(Icons.clear),
+    );
+    return LayoutBuilder(
+      builder: (context, c) {
+        final narrow = c.maxWidth < MediaQuery.textScalerOf(context).scale(340);
+        if (!narrow) {
+          return Row(
+            children: [
+              const Text('Difficoltà'),
+              Expanded(child: slider),
+              value,
+              clear,
+            ],
+          );
+        }
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              children: [
+                const Expanded(
+                  child: Text('Difficoltà', overflow: TextOverflow.ellipsis),
+                ),
+                value,
+                clear,
+              ],
+            ),
+            slider,
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -562,35 +619,11 @@ class _CourseFormPageState extends State<CourseFormPage> {
               validator: (v) => _validateNumber(v, max: 2000),
             ),
             gap,
-            Row(
-              children: [
-                const Text('Difficoltà'),
-                Expanded(
-                  child: Slider(
-                    value: _difficulty ?? 0,
-                    min: 0,
-                    max: 5,
-                    divisions: 10,
-                    label: _difficulty == null
-                        ? 'Non indicata'
-                        : formatNumber(_difficulty),
-                    onChanged: (v) => setState(() => _difficulty = v),
-                  ),
-                ),
-                Text(
-                  _difficulty == null ? '—' : '${formatNumber(_difficulty)}/5',
-                ),
-                IconButton(
-                  tooltip: 'Non indicata',
-                  onPressed: _difficulty == null
-                      ? null
-                      : () => setState(() => _difficulty = null),
-                  icon: const Icon(Icons.clear),
-                ),
-              ],
-            ),
+            _difficultyRow(context),
             gap,
             DropdownButtonFormField<String>(
+              // a tutta larghezza: la voce scelta più lunga non esce dal campo
+              isExpanded: true,
               style: Theme.of(context).textTheme.bodyLarge,
               initialValue: kExamModes.containsKey(_examMode)
                   ? _examMode
@@ -602,7 +635,10 @@ class _CourseFormPageState extends State<CourseFormPage> {
                   child: Text('Non indicata'),
                 ),
                 for (final e in kExamModes.entries)
-                  DropdownMenuItem(value: e.key, child: Text(e.value)),
+                  DropdownMenuItem(
+                    value: e.key,
+                    child: Text(e.value, overflow: TextOverflow.ellipsis),
+                  ),
               ],
               onChanged: (v) => setState(() => _examMode = v),
             ),

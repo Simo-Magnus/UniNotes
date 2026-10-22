@@ -21,8 +21,10 @@ class EmptyState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    // scorre: con caratteri grandi e poco spazio (schede basse, finestra
+    // stretta) il messaggio non esce dallo schermo
     return Center(
-      child: Padding(
+      child: SingleChildScrollView(
         padding: const EdgeInsets.all(32),
         child: Column(
           mainAxisSize: MainAxisSize.min,

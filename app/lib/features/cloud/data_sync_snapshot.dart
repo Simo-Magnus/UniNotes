@@ -55,20 +55,23 @@ class SyncEntry {
       for (final e in v.entries) {
         final x = e.value;
         // solo valori semplici (un file modificato a mano non entra nel
-        // database con oggetti o liste)
-        if (x == null || x is num || x is String) values['${e.key}'] = x;
+        // database con oggetti o liste); un numero infinito («1e999») non
+        // si può riscrivere in JSON: l'unione fallirebbe a ogni sincronizzazione
+        if (x == null || x is String || (x is num && x.isFinite)) {
+          values['${e.key}'] = x;
+        }
       }
     }
     final times = <String, int>{};
     final t = j['t'];
     if (t is num) {
       for (final c in values.keys) {
-        times[c] = t.toInt();
+        times[c] = t.isFinite ? t.toInt() : 0;
       }
     } else if (t is Map) {
       for (final c in values.keys) {
         final x = t[c];
-        times[c] = x is num ? x.toInt() : 0;
+        times[c] = x is num && x.isFinite ? x.toInt() : 0;
       }
     } else {
       for (final c in values.keys) {
@@ -79,7 +82,7 @@ class SyncEntry {
     return SyncEntry(
       values: values,
       times: times,
-      deleted: d is num ? d.toInt() : null,
+      deleted: d is num && d.isFinite ? d.toInt() : null,
     );
   }
 }

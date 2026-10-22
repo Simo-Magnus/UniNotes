@@ -26,6 +26,9 @@ class _AsyncActionButtonState extends State<AsyncActionButton> {
   bool _busy = false;
 
   Future<void> _run() async {
+    // due tocchi nello stesso fotogramma (prima che il pulsante si spenga)
+    // farebbero partire l'operazione due volte
+    if (_busy) return;
     setState(() => _busy = true);
     try {
       await widget.onPressed!();

@@ -26,7 +26,10 @@ class CourseDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final valid = value != null && catalog.byId.containsKey(value);
+    // il valore deve essere tra le voci mostrate: un insegnamento nascosto
+    // dal filtro (altro anno o percorso) c'è in byId ma non nell'elenco, e
+    // un menù con un valore che non ha tra le voci si rompe
+    final valid = value != null && catalog.courses.any((c) => c.id == value);
     return DropdownButtonFormField<int?>(
       key: ValueKey('course-$value'),
       style: Theme.of(context).textTheme.bodyLarge,

@@ -245,7 +245,9 @@ class CardHeader extends StatelessWidget {
                 color: t.textPrimary.withValues(alpha: 0.18),
               ),
             ),
-          ?trailing,
+          // se il pulsante a destra è largo (caratteri grandi) cede
+          // spazio invece di uscire dalla card
+          if (trailing != null) Flexible(flex: 2, child: trailing!),
         ],
       ),
     );
@@ -278,7 +280,8 @@ class ProgressRing extends StatelessWidget {
       dimension: size,
       child: CustomPaint(
         painter: RingPainter(
-          value: value.clamp(0, 1).toDouble(),
+          // NaN (0/0 a monte) disegnerebbe un arco senza misura: anello vuoto
+          value: value.isNaN ? 0 : value.clamp(0, 1).toDouble(),
           track: t.textPrimary.withValues(alpha: 0.09),
           colors: [const Color(0xFF0EA5E9), t.cyanBright],
         ),
@@ -311,11 +314,7 @@ class ProgressRing extends StatelessWidget {
 /// Anello di Design 3 (§7.2) su viewBox 104: raggio 44, spessore 9,
 /// partenza in alto; usato anche dal timer grande della sessione Focus.
 class RingPainter extends CustomPainter {
-  RingPainter({
-    required this.value,
-    required this.track,
-    required this.colors,
-  });
+  RingPainter({required this.value, required this.track, required this.colors});
   final double value;
   final Color track;
   final List<Color> colors;

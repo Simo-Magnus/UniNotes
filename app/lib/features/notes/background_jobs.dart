@@ -102,7 +102,10 @@ class BackgroundJobs extends ChangeNotifier {
         job.result = await body((phase, fraction) {
           job
             ..phase = phase
-            ..fraction = fraction;
+            // mai NaN o fuori 0–1: la barra di avanzamento non regge
+            ..fraction = fraction == null || !fraction.isFinite
+                ? null
+                : fraction.clamp(0.0, 1.0).toDouble();
           notifyListeners();
         });
         job

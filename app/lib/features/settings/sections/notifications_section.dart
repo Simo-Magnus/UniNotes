@@ -57,6 +57,9 @@ class _NotificationsSectionState extends State<NotificationsSection> {
   }
 
   Future<void> _consent(bool on) async {
+    // doppio tocco prima che l'interruttore si spenga: una sola richiesta
+    // del permesso
+    if (_busy) return;
     setState(() => _busy = true);
     try {
       if (on) {

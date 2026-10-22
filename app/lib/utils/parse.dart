@@ -4,7 +4,9 @@ import 'dart:ui' show Color;
 int? asInt(Object? v) {
   if (v == null) return null;
   if (v is int) return v;
-  if (v is num) return v.toInt();
+  // infinito e NaN (un «1e999» in un JSON di un'altra versione, un REAL
+  // rovinato nel database): toInt() lancerebbe un errore, il valore non c'è
+  if (v is num) return v.isFinite ? v.toInt() : null;
   if (v is bool) return v ? 1 : 0;
   return int.tryParse(v.toString());
 }
@@ -37,6 +39,9 @@ DateTime? asDateTime(Object? v) {
 
 /// ISO 8601 locale senza fuso (formato usato in tutto il DB).
 String isoLocal(DateTime d) {
+  // un istante UTC (es. «…Z» in un data pack) si scrive nell'ora locale:
+  // con i suoi campi UTC l'evento si sposterebbe di una o due ore
+  if (d.isUtc) d = d.toLocal();
   String two(int n) => n.toString().padLeft(2, '0');
   return '${d.year.toString().padLeft(4, '0')}-${two(d.month)}-${two(d.day)}'
       'T${two(d.hour)}:${two(d.minute)}:${two(d.second)}';

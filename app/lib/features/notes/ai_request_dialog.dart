@@ -254,9 +254,12 @@ class _AiRequestDialogState extends State<_AiRequestDialog> {
     if (!isCapturedResponse(clip, prompt: widget.prompt, before: _clipAtOpen)) {
       return;
     }
+    // riquadro già in chiusura («Chiudi», Indietro: resta sullo schermo per
+    // l'animazione): niente salvataggio e soprattutto niente seconda
+    // chiusura, che toglierebbe la pagina sotto
+    if (!mounted || !(ModalRoute.isCurrentOf(context) ?? false)) return;
     _capturing = true;
     _poll?.cancel();
-    if (!mounted) return;
     final messenger = ScaffoldMessenger.maybeOf(context);
     Navigator.pop(context);
     try {

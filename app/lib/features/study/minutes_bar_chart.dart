@@ -28,7 +28,9 @@ class MinutesBarChart extends StatelessWidget {
     // Tacche "tonde" (0,5 / 1 / 2 / 5 / 10 … ore) e un margine sopra la barra
     // più alta: l'ultima etichetta non finisce attaccata al titolo.
     final step = _niceStep(maxH <= 0 ? 1.0 : maxH / 4);
-    final top = maxH <= 0 ? step * 2 : (maxH / step).ceil() * step + step * 0.25;
+    final top = maxH <= 0
+        ? step * 2
+        : (maxH / step).ceil() * step + step * 0.25;
     final small = theme.textTheme.labelSmall;
     final labelEvery = totals.length > 10 ? 2 : 1;
     return SizedBox(
@@ -55,7 +57,8 @@ class MinutesBarChart extends StatelessWidget {
                 interval: step,
                 getTitlesWidget: (v, meta) {
                   // niente etichetta sul bordo superiore (non è una tacca)
-                  if (v == meta.max && (v / step - (v / step).round()).abs() > 1e-6) {
+                  if (v == meta.max &&
+                      (v / step - (v / step).round()).abs() > 1e-6) {
                     return const SizedBox.shrink();
                   }
                   return SideTitleWidget(
@@ -131,6 +134,13 @@ class MinutesBarChart extends StatelessWidget {
     for (final s in const [0.25, 0.5, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0, 100.0]) {
       if (raw <= s) return s;
     }
-    return 200;
+    // oltre le 100 ore per tacca (durate fuori scala nei dati importati) il
+    // passo cresce di dieci in dieci: le tacche restano poche invece di
+    // migliaia
+    var s = 200.0;
+    while (raw > s && s < 1e15) {
+      s *= 10;
+    }
+    return s;
   }
 }

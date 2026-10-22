@@ -779,6 +779,8 @@ class _ExamFormPageState extends State<ExamFormPage> {
       ),
       gap,
       DropdownButtonFormField<String>(
+        // a tutta larghezza: la voce scelta più lunga non esce dal campo
+        isExpanded: true,
         style: Theme.of(context).textTheme.bodyLarge,
         initialValue: kExamTypes.containsKey(_examType) ? _examType : null,
         decoration: const InputDecoration(labelText: 'Tipo di prova'),
@@ -788,7 +790,10 @@ class _ExamFormPageState extends State<ExamFormPage> {
             child: Text('Non indicato'),
           ),
           for (final e in kExamTypes.entries)
-            DropdownMenuItem(value: e.key, child: Text(e.value)),
+            DropdownMenuItem(
+              value: e.key,
+              child: Text(e.value, overflow: TextOverflow.ellipsis),
+            ),
         ],
         onChanged: (v) => setState(() => _examType = v),
       ),
@@ -796,6 +801,7 @@ class _ExamFormPageState extends State<ExamFormPage> {
       DropdownButtonFormField<ExamStatus>(
         // si aggiorna anche quando lo stato cambia dal voto
         key: ValueKey('exam-status-$_status'),
+        isExpanded: true,
         style: Theme.of(context).textTheme.bodyLarge,
         initialValue: _status,
         decoration: const InputDecoration(labelText: 'Stato'),
@@ -813,7 +819,9 @@ class _ExamFormPageState extends State<ExamFormPage> {
                       color: examStatusColor(context, s),
                     ),
                     const SizedBox(width: 8),
-                    Text(s.label),
+                    Flexible(
+                      child: Text(s.label, overflow: TextOverflow.ellipsis),
+                    ),
                   ],
                 ),
               ),

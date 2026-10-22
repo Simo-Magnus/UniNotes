@@ -1,3 +1,4 @@
+import '../../utils/dates.dart' show daysBetween;
 import '../constants/build_flags.dart';
 import 'notification_plan.dart';
 
@@ -167,10 +168,9 @@ DateTime plusDays(DateTime d, int days) =>
 DateTime _max(List<DateTime> v) => v.reduce((a, b) => a.isAfter(b) ? a : b);
 
 bool _near(DateTime d, List<DateTime> days, int within) {
-  final day = DateTime(d.year, d.month, d.day);
   for (final e in days) {
-    final x = DateTime(e.year, e.month, e.day);
-    if (day.difference(x).inDays.abs() <= within) return true;
+    // giorni di calendario (non blocchi di 24 ore: ora legale)
+    if (daysBetween(e, d).abs() <= within) return true;
   }
   return false;
 }

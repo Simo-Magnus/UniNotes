@@ -8,7 +8,19 @@ class ExclusionFilter {
 
   final List<RegExp> _regexes;
 
+  /// Gruppo con un quantificatore dentro e un altro fuori, come `(a+)+` o
+  /// `(.*)*`: le espressioni regolari di Dart tornano indietro provando ogni
+  /// combinazione e su un titolo di 30 caratteri l'app si blocca per ore. Un
+  /// filtro così (scritto a mano nelle versioni con i filtri avanzati,
+  /// sincronizzato o ripristinato da un backup) si usa come testo semplice.
+  static final _nestedQuantifier = RegExp(
+    r'\((?:[^()\\]|\\.)*[+*](?:[^()\\]|\\.)*\)(?:[+*]|\{\d+,\d*\})',
+  );
+
   static RegExp _compile(String p) {
+    if (_nestedQuantifier.hasMatch(p)) {
+      return RegExp(RegExp.escape(p), caseSensitive: false);
+    }
     try {
       return RegExp(p, caseSensitive: false);
     } on FormatException {

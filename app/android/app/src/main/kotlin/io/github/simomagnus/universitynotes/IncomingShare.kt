@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -46,35 +45,14 @@ object IncomingShare {
     }
 
     /**
-     * Uri condivisi dall'intent (EXTRA_STREAM, poi ClipData). Le versioni
-     * con il tipo di getParcelableExtra solo da Android 14: su Android 13
-     * possono lanciare un'eccezione con certi extra (difetto del sistema,
-     * evitato anche da IntentCompat di AndroidX) e la condivisione andrebbe
-     * persa.
+     * Uri condivisi dall'intent (EXTRA_STREAM, poi ClipData).
      */
     private fun urisOf(intent: Intent): List<Uri> {
         val out = mutableListOf<Uri>()
         when (intent.action) {
-            Intent.ACTION_SEND -> {
-                val uri: Uri? = if (Build.VERSION.SDK_INT >= 34) {
-                    intent.getParcelableExtra(Intent.EXTRA_STREAM, Uri::class.java)
-                } else {
-                    @Suppress("DEPRECATION")
-                    intent.getParcelableExtra(Intent.EXTRA_STREAM)
-                }
-                if (uri != null) out.add(uri)
-            }
+            Intent.ACTION_SEND, Intent.ACTION_SEND_MULTIPLE -> out.addAll(streamsOf(intent))
             // «Apri con → UniNotes» da un file manager o da un'altra app
             Intent.ACTION_VIEW -> intent.data?.let(out::add)
-            Intent.ACTION_SEND_MULTIPLE -> {
-                val list: List<Uri>? = if (Build.VERSION.SDK_INT >= 34) {
-                    intent.getParcelableArrayListExtra(Intent.EXTRA_STREAM, Uri::class.java)
-                } else {
-                    @Suppress("DEPRECATION")
-                    intent.getParcelableArrayListExtra(Intent.EXTRA_STREAM)
-                }
-                if (list != null) out.addAll(list)
-            }
         }
         if (out.isEmpty()) {
             val clip = intent.clipData
@@ -83,6 +61,54 @@ object IncomingShare {
             }
         }
         return out.distinct()
+    }
+
+    /**
+     * EXTRA_STREAM come elenco di Uri. Letto senza tipo e filtrato: alcune
+     * app mettono lì un percorso come testo (o un elenco di testi) e con
+     * getParcelableExtra la ClassCastException faceva perdere tutta la
+     * condivisione, anche il ClipData; le versioni con il tipo (Android 13)
+     * possono lanciare un'eccezione con certi extra (difetto del sistema).
+     */
+    private fun streamsOf(intent: Intent): List<Uri> = try {
+        @Suppress("DEPRECATION")
+        when (val v = intent.extras?.get(Intent.EXTRA_STREAM)) {
+            is Uri -> listOf(v)
+            is Collection<*> -> v.filterIsInstance<Uri>()
+            is Array<*> -> v.filterIsInstance<Uri>()
+            else -> emptyList()
+        }
+    } catch (e: Exception) {
+        // extra illeggibile (BadParcelableException…): resta il ClipData
+        emptyList()
+    }
+
+    /**
+     * Nome entro il limite dei file system (255 byte, con il prefisso
+     * aggiunto in [collect]): un DISPLAY_NAME più lungo (lo decide l'altra
+     * app) faceva fallire la copia e il file andava perso. Si accorcia il
+     * nome tenendo l'estensione.
+     */
+    fun shortName(name: String, maxBytes: Int = 200): String {
+        if (name.toByteArray(Charsets.UTF_8).size <= maxBytes) return name
+        val dot = name.lastIndexOf('.')
+        val ext = if (dot > 0 && name.length - dot <= 16) name.substring(dot) else ""
+        val base = if (ext.isEmpty()) name else name.substring(0, dot)
+        val budget = maxBytes - ext.toByteArray(Charsets.UTF_8).size
+        val out = StringBuilder()
+        var used = 0
+        var i = 0
+        while (i < base.length) {
+            val cp = base.codePointAt(i)
+            val piece = String(Character.toChars(cp))
+            val bytes = piece.toByteArray(Charsets.UTF_8).size
+            if (used + bytes > budget) break
+            out.append(piece)
+            used += bytes
+            i += Character.charCount(cp)
+        }
+        val cut = out.toString().trim()
+        return (if (cut.isEmpty()) "File condiviso" else cut) + ext
     }
 
     /** Nome leggibile del file (DISPLAY_NAME, con estensione dal tipo). */
@@ -103,11 +129,18 @@ object IncomingShare {
             .trim()
         if (n.isEmpty() || n == "." || n == "..") n = "File condiviso ${index + 1}"
         if (!n.contains('.')) {
-            val ext = context.contentResolver.getType(uri)
-                ?.let { MimeTypeMap.getSingleton().getExtensionFromMimeType(it) }
+            // il fornitore dell'altra app può lanciare un'eccezione anche
+            // qui (permesso scaduto, Uri sconosciuto): il file si copia lo
+            // stesso, senza estensione, invece di perdere la condivisione
+            val ext = try {
+                context.contentResolver.getType(uri)
+                    ?.let { MimeTypeMap.getSingleton().getExtensionFromMimeType(it) }
+            } catch (e: Exception) {
+                null
+            }
             if (ext != null) n = "$n.$ext"
         }
-        return n
+        return shortName(n)
     }
 
     /**

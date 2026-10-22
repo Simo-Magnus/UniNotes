@@ -42,6 +42,23 @@ class NotificationTap {
       'act:$action|$payload';
 
   Map<String, String?> toJson() => {'payload': payload, 'action': action};
+
+  /// Tocchi dalla coda scritta a app chiusa (una stringa JSON per tocco).
+  /// Una voce illeggibile (scritta a metà, di un'altra versione) si salta:
+  /// non fa perdere le altre né lancia un errore all'avvio.
+  static List<NotificationTap> parseQueue(Iterable<String> entries) {
+    final out = <NotificationTap>[];
+    for (final s in entries) {
+      try {
+        if (jsonDecode(s) case {'payload': final String p, 'action': final a}) {
+          out.add(NotificationTap(p, a is String ? a : null));
+        }
+      } on FormatException {
+        // voce rovinata
+      }
+    }
+    return out;
+  }
 }
 
 /// Notifiche del sistema (nei test: finte). Tutto è pianificato in anticipo
@@ -326,11 +343,7 @@ class LocalNotificationPlatform implements NotificationPlatform {
     final list = prefs.getStringList(_queueKey) ?? const [];
     if (list.isEmpty) return const [];
     await prefs.remove(_queueKey);
-    return [
-      for (final s in list)
-        if (jsonDecode(s) case {'payload': final String p, 'action': final a})
-          NotificationTap(p, a is String ? a : null),
-    ];
+    return NotificationTap.parseQueue(list);
   }
 
   @override

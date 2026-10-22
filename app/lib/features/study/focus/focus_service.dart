@@ -126,7 +126,7 @@ class FocusService extends ChangeNotifier {
   /// non da salvare): il riepilogo lo dice invece di tacere.
   String? saveError;
 
-  bool _loaded = false;
+  Future<void>? _loading;
   bool _inBackground = false;
   final Set<int> _alertIds = {};
 
@@ -172,9 +172,11 @@ class FocusService extends ChangeNotifier {
 
   // ------------------------------------------------------------ dati
 
-  Future<void> load() async {
-    if (_loaded) return;
-    _loaded = true;
+  /// Impostazioni e sessione rimasta aperta da una chiusura dell'app (una
+  /// volta; chi arriva mentre si legge aspetta la stessa lettura).
+  Future<void> load() => _loading ??= _load();
+
+  Future<void> _load() async {
     final st = _s.settings;
     try {
       settings = FocusSettings.fromJson(
@@ -251,6 +253,11 @@ class FocusService extends ChangeNotifier {
     FocusLink to, {
     bool systemDnd = false,
   }) async {
+    // prima la sessione rimasta aperta da una chiusura dell'app (all'avvio
+    // si legge dopo i promemoria, anche qualche secondo dopo): una sessione
+    // nuova avviata prima la sovrascriverebbe sul disco e la lettura
+    // arrivata dopo rimetterebbe il cronometro di quella vecchia
+    await load();
     if (timer.active) return;
     settings = s;
     link = to;

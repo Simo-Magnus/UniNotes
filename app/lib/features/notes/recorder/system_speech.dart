@@ -30,10 +30,18 @@ import 'package:flutter/services.dart';
 /// Dal sistema arrivano (metodi invocati su questo canale, con `session`):
 /// `partial` {text}, `result` {text}, `error` {message, fatal} ed `ended`.
 class SystemSpeech {
-  SystemSpeech({MethodChannel? channel})
+  SystemSpeech({MethodChannel? channel, this.startTimeout = kStartTimeout})
     : _channel = channel ?? const MethodChannel(channelName);
 
   static const channelName = 'io.github.simomagnus.universitynotes/speech';
+
+  /// Attesa massima della risposta a `start`. Il lato nativo può non
+  /// rispondere per molto (iOS 26: modello della lingua scaricato al primo
+  /// uso, senza rete anche per sempre; Windows: dettatura che non finisce
+  /// di prepararsi): senza limite il testo dal vivo restava «in avvio» per
+  /// tutta la lezione, senza mai passare a Whisper.
+  static const kStartTimeout = Duration(seconds: 45);
+  final Duration startTimeout;
 
   final MethodChannel _channel;
   final _events = StreamController<SpeechEvent>.broadcast();
@@ -108,14 +116,24 @@ class SystemSpeech {
     _session++;
     _pending.clear();
     lastStartError = null;
+    final session = _session;
     try {
-      final r = await _channel.invokeMethod<Object?>('start', {
-        'locale': locale,
-        'sampleRate': sampleRate,
-        'session': _session,
-      });
+      final r = await _channel
+          .invokeMethod<Object?>('start', {
+            'locale': locale,
+            'sampleRate': sampleRate,
+            'session': session,
+          })
+          .timeout(startTimeout);
       if (r is String) lastStartError = r;
       return r == true;
+    } on TimeoutException {
+      // nessuna risposta: la sessione si chiude (gli eventi che arrivassero
+      // dopo hanno il numero vecchio e si scartano) e si passa a Whisper
+      debugPrint('Riconoscimento vocale: nessuna risposta all\'avvio.');
+      if (_session == session) _session++;
+      unawaited(_quiet('stop'));
+      return false;
     } catch (e) {
       debugPrint('Riconoscimento vocale non avviato: $e');
       return false;

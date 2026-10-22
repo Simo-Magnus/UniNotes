@@ -52,6 +52,12 @@ entrare in UniNotes ci sono tre strade:
 Nei casi 2 e 3 l'app chiede in quale insegnamento salvare (o «Da ordinare»),
 copia il file in Materiali e lo carica nella cartella UniNotes.
 
+Nel caso 2 un nome di file troppo lungo per il file system (oltre ~200 byte)
+si accorcia tenendo l'estensione, invece di far fallire la copia; su Android
+anche un'app che manda un tipo sbagliato in `EXTRA_STREAM` (es. un percorso
+come testo) o un fornitore che lancia un'eccezione sul tipo del file non fa
+più perdere tutta la condivisione (`IncomingShare.kt`, `AppDelegate.swift`).
+
 `drive.file` è uno scope **non sensibile**: non serve la verifica degli scope con
 restrizioni né la valutazione di sicurezza annuale (CASA) a pagamento, e non c'è
 il limite di 100 utenti. Resta la normale verifica del brand (nome, logo,

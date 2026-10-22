@@ -75,6 +75,8 @@ class _InkViewState extends State<InkView> {
   }
 
   void _jump(int page) {
+    // .xopp senza pagine: clamp(0, -1) lancerebbe un errore
+    if (widget.doc.pages.isEmpty) return;
     if (!_list.isAttached || !_scroll.hasClients) return;
     _list.jumpToItem(
       index: page.clamp(0, widget.doc.pages.length - 1),

@@ -49,6 +49,24 @@ class StudyRepository {
     return rows.map(Topic.fromMap).toList();
   }
 
+  /// Argomenti di tutti gli insegnamenti, raggruppati per insegnamento e
+  /// nello stesso ordine di [topicsOfCourse], con una sola lettura (la Home
+  /// non fa una domanda al database per ogni insegnamento).
+  Future<Map<int, List<Topic>>> topicsByCourse() async {
+    final rows = await _db.db.rawQuery(
+      'SELECT t.*, m.course_id AS course_of_module FROM topics t '
+      'JOIN modules m ON m.id = t.module_id '
+      'ORDER BY m.sort, m.id, t.sort, t.id',
+    );
+    final out = <int, List<Topic>>{};
+    for (final r in rows) {
+      final course = asInt(r['course_of_module']);
+      if (course == null) continue;
+      (out[course] ??= []).add(Topic.fromMap(r));
+    }
+    return out;
+  }
+
   Future<int> insertTopic(Topic t) =>
       _db.db.insert('topics', t.toMap()..remove('id'));
 

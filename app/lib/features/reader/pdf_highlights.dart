@@ -9,6 +9,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdfrx/pdfrx.dart';
 
 import '../../core/services/portable_path.dart';
+import '../notes/safe_files.dart';
 
 /// Colori dell'evidenziatore: distinti tra loro e leggibili sotto il testo
 /// nero (si disegnano in trasparenza).
@@ -63,8 +64,11 @@ class PdfHighlight {
 /// Evidenziazioni di un PDF, salvate nell'app (il file PDF non viene mai
 /// modificato): una per documento, in base al percorso.
 class PdfHighlights extends ChangeNotifier {
-  PdfHighlights(this.path);
+  /// [file]: file delle evidenziazioni al posto di quello nella cartella
+  /// dell'app (nei test).
+  PdfHighlights(this.path, {File? file}) : _fileOverride = file;
   final String path;
+  final File? _fileOverride;
   final List<PdfHighlight> items = [];
 
   /// File delle evidenziazioni: per i PDF dentro l'app il nome viene dal
@@ -72,6 +76,7 @@ class PdfHighlights extends ChangeNotifier {
   /// sincronizza con OneDrive e Google Drive); quello delle versioni
   /// precedenti (dal percorso assoluto) si rinomina alla prima apertura.
   Future<File> _file() async {
+    if (_fileOverride != null) return _fileOverride;
     final dir = Directory(
       p.join((await getApplicationSupportDirectory()).path, 'evidenziazioni'),
     );
@@ -93,7 +98,20 @@ class PdfHighlights extends ChangeNotifier {
     try {
       final f = await _file();
       if (!await f.exists()) return;
-      final list = jsonDecode(await f.readAsString()) as List;
+      final Object? decoded;
+      try {
+        decoded = jsonDecode(await f.readAsString());
+      } on FormatException {
+        // testo non valido (scritto a metà, altra versione): si tiene una
+        // copia, il prossimo salvataggio non la cancella
+        await _keepDamaged(f);
+        return;
+      }
+      if (decoded is! List) {
+        await _keepDamaged(f);
+        return;
+      }
+      final list = decoded;
       // Una voce rovinata (file sincronizzato da un'altra versione, scritto a
       // metà) si salta: non deve far perdere le altre al prossimo salvataggio.
       final loaded = <PdfHighlight>[];
@@ -111,9 +129,26 @@ class PdfHighlights extends ChangeNotifier {
     }
   }
 
+  /// File illeggibile: ne resta una copia `<nome>.danneggiato` (una sola;
+  /// non si sincronizza) prima che il primo salvataggio lo sovrascriva con la
+  /// lista nuova. Il file originale non si sposta: sparendo, la
+  /// sincronizzazione lo toglierebbe anche dagli altri dispositivi.
+  Future<void> _keepDamaged(File f) async {
+    try {
+      await f.copy('${f.path}.danneggiato');
+    } catch (_) {
+      // copia non riuscita: l'app continua senza evidenziazioni
+    }
+  }
+
   Future<void> _save() async {
     final f = await _file();
-    await f.writeAsString(jsonEncode([for (final h in items) h.toJson()]));
+    // scrittura sicura: un'interruzione non lascia il file a metà (e quindi
+    // illeggibile al prossimo avvio, con tutte le evidenziazioni perse)
+    await writeStringAtomic(
+      f,
+      jsonEncode([for (final h in items) h.toJson()]),
+    );
     notifyListeners();
   }
 

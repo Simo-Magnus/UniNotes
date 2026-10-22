@@ -79,6 +79,9 @@ class _LinkButtonState extends State<LinkButton> {
   bool _busy = false;
 
   Future<void> _run() async {
+    // due tocchi nello stesso fotogramma (prima che il pulsante si spenga):
+    // un solo accesso, una sola sincronizzazione
+    if (_busy) return;
     setState(() {
       _busy = true;
     });

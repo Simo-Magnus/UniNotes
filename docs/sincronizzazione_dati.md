@@ -92,6 +92,13 @@ con l'elenco attuale delle colonne, nessun dato viene toccato) aggiunge
   (eliminazioni a cascata comprese; non per profilo e anni del piano, e per le
   impostazioni solo quelle sincronizzate).
 
+**Orologi diversi.** L'orario di una modifica o di un'eliminazione è
+«adesso», ma sempre almeno un millisecondo dopo quello che la riga ha già
+(`SyncSchema.afterSql`): se un dispositivo con l'orologio avanti ha scritto
+un orario nel futuro, una modifica fatta dopo su un altro dispositivo vince
+comunque e un'eliminazione non fa tornare la riga (test in
+`test/crash_r2_tempo_test.dart`).
+
 Le righe già presenti all'aggiornamento dell'app prendono `sync_mtime =
 adesso` (dati veri del dispositivo). Nessun repository deve ricordarsi della
 sincronizzazione.
@@ -193,6 +200,13 @@ un lavoro periodico del JobScheduler (`BackgroundSync.kt`, al massimo ogni
 15 minuti, solo con la rete, anche ad app chiusa: motore Flutter senza
 interfaccia su `backgroundSyncMain`), iPhone con l'aggiornamento in
 background di iOS (`BGAppRefreshTask`, quando lo decide il sistema).
+
+**Numeri fuori scala nel registro.** Un valore, un orario o un'eliminazione
+infiniti (`1e999`, di un'altra versione o rovinati) non si possono riscrivere
+in JSON: prima l'unione falliva a ogni sincronizzazione (o il registro
+dell'altro dispositivo veniva ignorato per intero). Ora quel valore si salta
+(colonna assente) e l'orario vale 0; il resto della riga si applica
+(`SyncEntry.fromJson`, test in `test/crash_r2_dati_test.dart`).
 
 **Robustezza (22/10/2026).** Una sola sincronizzazione per servizio alla
 volta, anche con richieste quasi insieme (avvio, timer, «Sincronizza ora»,

@@ -129,15 +129,23 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
     super.dispose();
   }
 
-  Future<void> _save(Exam next, {bool quiet = false}) async {
+  /// false se non si è salvato (lo si dice: prima la modifica spariva
+  /// senza avviso, es. con il disco pieno).
+  Future<bool> _save(Exam next, {bool quiet = false}) async {
     final s = context.read<AppServices>();
-    await s.exams.update(next);
+    try {
+      await s.exams.update(next);
+    } catch (e) {
+      if (mounted) showSnack(context, 'Modifica non salvata: $e');
+      return false;
+    }
     s.revision.bump();
-    if (quiet) return;
+    if (quiet) return true;
     // voto registrato ora: traguardo, con suono e vibrazione
     final passedNow =
         next.status == ExamStatus.passed && exam.status != ExamStatus.passed;
     passedNow ? s.feedback.complete() : s.feedback.toggle();
+    return true;
   }
 
   /// Testo libero (titolo, luogo, note, CFU): "" = tolto, null = annullato.
@@ -326,7 +334,7 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
       for (final m in list)
         if (looksLikePath(m) && !exam.studyMaterials.contains(m)) m,
     ];
-    await _save(exam.copyWith(studyMaterials: list), quiet: true);
+    if (!await _save(exam.copyWith(studyMaterials: list), quiet: true)) return;
     if (added.isEmpty) return;
     try {
       await shareExamMaterials(s, courseId: exam.courseId, added: added);

@@ -111,9 +111,17 @@ class WhisperStatus {
 
 /// Avanzamento di download o trascrizione (0–1, null = indeterminato).
 class WhisperProgress {
-  const WhisperProgress(this.phase, this.fraction);
+  const WhisperProgress(this.phase, this._fraction);
   final String phase;
-  final double? fraction;
+  final double? _fraction;
+
+  /// Sempre tra 0 e 1, oppure null: un valore non numerico o infinito
+  /// (divisione per zero a monte) è «indeterminato», non un NaN che arriva
+  /// alle barre e a `floor()`.
+  double? get fraction {
+    final v = _fraction;
+    return v == null || !v.isFinite ? null : v.clamp(0.0, 1.0).toDouble();
+  }
 }
 
 /// Segmento della trascrizione con l'istante d'inizio (e di fine, se il
@@ -1269,7 +1277,9 @@ class WhisperService {
             ),
             '${s['text']}'.trim(),
             end: switch (offsets(s)?['to']) {
-              final num to => Duration(milliseconds: to.toInt()),
+              final num to when to.isFinite => Duration(
+                milliseconds: to.toInt(),
+              ),
               _ => null,
             },
           ),

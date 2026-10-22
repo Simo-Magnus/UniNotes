@@ -12,6 +12,7 @@ import 'package:provider/provider.dart';
 import 'core/catalog/course_replacements.dart';
 import 'core/catalog/path_setup.dart';
 import 'core/database/app_database.dart';
+import 'core/router/app_link_guard.dart';
 import 'core/router/app_shell.dart';
 import 'core/router/error_screens.dart';
 import 'core/services/app_return.dart';
@@ -47,6 +48,9 @@ Future<void> main(List<String> args) async {
   // errori non gestiti nel registro locale, schermata comprensibile al posto
   // di quella rossa/grigia (core/router/error_screens.dart)
   installGlobalErrorHandlers();
+  // collegamenti uninotes://… (widget, Comandi): gestiti dal lato nativo, non
+  // sono percorsi del Navigator (core/router/app_link_guard.dart)
+  installAppLinkGuard();
   // Windows: il disinstallatore avvia l'app in modalità minima per la
   // pulizia dei dati (vedi features/settings/uninstall_mode.dart). Non nella
   // build del Microsoft Store, dove disinstalla Windows.

@@ -328,7 +328,8 @@ final class IncomingFiles: NSObject, FlutterSceneLifeCycleDelegate {
     try? fm.createDirectory(at: dir, withIntermediateDirectories: true)
     let name = url.lastPathComponent
     let stamp = Int(Date().timeIntervalSince1970 * 1000)
-    let target = dir.appendingPathComponent("\(stamp)_\(pending.count)_\(name)")
+    let target = dir.appendingPathComponent(
+      "\(stamp)_\(pending.count)_\(IncomingFiles.shortName(name))")
     // lettura coordinata: file di iCloud Drive o di altri fornitori
     var coordError: NSError?
     var copyError: Error?
@@ -345,6 +346,27 @@ final class IncomingFiles: NSObject, FlutterSceneLifeCycleDelegate {
     // copia messa dal sistema in Documents/Inbox: non serve più
     if !inPlace { try? fm.removeItem(at: url) }
     return ["path": target.path, "name": name, "temporary": true]
+  }
+
+  /// Nome entro il limite del file system (255 byte, con il prefisso
+  /// aggiunto in `copy`): con un nome già vicino al limite la copia non
+  /// riusciva e il file andava perso. Si accorcia tenendo l'estensione.
+  static func shortName(_ name: String, maxBytes: Int = 200) -> String {
+    if name.utf8.count <= maxBytes { return name }
+    var ext = (name as NSString).pathExtension
+    if ext.utf8.count > 15 { ext = "" }
+    let base = ext.isEmpty ? name : (name as NSString).deletingPathExtension
+    let budget = maxBytes - (ext.isEmpty ? 0 : ext.utf8.count + 1)
+    var cut = ""
+    var used = 0
+    for ch in base {
+      let bytes = String(ch).utf8.count
+      if used + bytes > budget { break }
+      cut.append(ch)
+      used += bytes
+    }
+    if cut.isEmpty { cut = "File condiviso" }
+    return ext.isEmpty ? cut : "\(cut).\(ext)"
   }
 }
 

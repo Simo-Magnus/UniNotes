@@ -58,9 +58,8 @@ Future<void> openStudySession(
     tabs.animateTo(kStudySessionsTab);
     return;
   }
-  await Navigator.of(context).push(
-    MaterialPageRoute<void>(builder: (_) => const StudySessionsPage()),
-  );
+  await Navigator.of(context)
+      .push(MaterialPageRoute<void>(builder: (_) => const StudySessionsPage()));
 }
 
 /// Sessioni Studio in una pagina a sé (aperta da fuori della sezione).
@@ -185,7 +184,9 @@ class _StudySessionsTabState extends State<StudySessionsTab> {
         final locked = _focus.active || _sw.isActive;
         final clock = _focus.active
             ? StudyClock.timer
-            : (_sw.isActive ? StudyClock.stopwatch : StudySessionsTab.clock.value);
+            : (_sw.isActive
+                  ? StudyClock.stopwatch
+                  : StudySessionsTab.clock.value);
         final choice = _ChoiceCard(
           catalog: widget.catalog,
           timer: _sw,
@@ -299,7 +300,9 @@ class _ChoiceCard extends StatelessWidget {
                       children: [
                         Icon(a.icon, size: 18),
                         const SizedBox(width: 8),
-                        Text(a.label),
+                        Flexible(
+                          child: Text(a.label, overflow: TextOverflow.ellipsis),
+                        ),
                       ],
                     ),
                   ),

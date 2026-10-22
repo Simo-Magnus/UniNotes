@@ -3,6 +3,10 @@ import 'package:flutter_math_fork/flutter_math.dart';
 
 import '../features/notes/markdown_lite.dart';
 
+/// Lunghezza massima (in caratteri) di una formula disegnata: oltre, il
+/// testo resta testo.
+const int kMaxFormulaChars = 3000;
+
 /// Formula LaTeX disegnata con flutter_math_fork. Con un errore di
 /// sintassi (o un comando non supportato) mostra il testo originale, senza
 /// mai interrompere la pagina.
@@ -29,6 +33,13 @@ class MathFormula extends StatelessWidget {
   Widget build(BuildContext context) {
     final base = DefaultTextStyle.of(context).style.merge(style);
     final fallback = source ?? (display ? '\$\$$tex\$\$' : '\$$tex\$');
+    // Il disegno cresce più che linearmente con la lunghezza (16 000
+    // caratteri bloccano l'interfaccia per diversi secondi, 200 000 per
+    // sempre): una «formula» così lunga è un testo incollato per errore tra
+    // due dollari, e si mostra com'è.
+    if (tex.length > kMaxFormulaChars) {
+      return Text(fallback, style: base.copyWith(fontFamily: 'IBMPlexMono'));
+    }
     return Semantics(
       label: 'Formula: $tex',
       excludeSemantics: true,

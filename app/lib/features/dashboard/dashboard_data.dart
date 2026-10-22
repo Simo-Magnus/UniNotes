@@ -154,10 +154,14 @@ class DashboardData {
           c,
     ], await loadStudyCourseOrder(s));
     final progressGroups = <ProgressGroup>[];
+    // una sola lettura per tutti gli argomenti (non una per insegnamento)
+    final topicsOf = studied.isEmpty
+        ? const <int, List<Topic>>{}
+        : await s.study.topicsByCourse();
     for (final g in groupStudyCourses(studied)) {
       final items = <CourseProgressInfo>[];
       for (final c in g.courses) {
-        final topics = await s.study.topicsOfCourse(c.id!);
+        final topics = topicsOf[c.id!] ?? const <Topic>[];
         if (topics.isEmpty) continue;
         items.add(
           CourseProgressInfo(
@@ -245,6 +249,9 @@ class DashboardData {
 
 /// "2 h 30 min", "45 min", "0 min".
 String formatMinutes(int minutes) {
+  // durata negativa (sessione importata male): con il resto della divisione
+  // uscirebbero ore e minuti sbagliati, non un valore sensato
+  if (minutes < 0) minutes = 0;
   final h = minutes ~/ 60;
   final m = minutes % 60;
   if (h == 0) return '$m min';

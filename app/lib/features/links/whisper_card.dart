@@ -101,6 +101,9 @@ class _WhisperCardState extends State<WhisperCard> {
       );
       if (!ok) return;
     }
+    // doppio tocco su «Scarica» prima che compaia l'avanzamento: due
+    // download dello stesso modello scriverebbero sullo stesso file
+    if (_s.jobs.runningTitled(whisperDownloadTitle(m)) != null) return;
     final cancel = CancelToken();
     _s.jobs.start(whisperDownloadTitle(m), onCancel: cancel.cancel, (
       report,
@@ -128,6 +131,8 @@ class _WhisperCardState extends State<WhisperCard> {
   }
 
   void _installFfmpeg() {
+    // un solo download alla volta (doppio tocco)
+    if (_s.jobs.runningTitled('Download ffmpeg') != null) return;
     final cancel = CancelToken();
     _s.jobs.start('Download ffmpeg', onCancel: cancel.cancel, (report) async {
       await for (final p in _w.installFfmpeg(cancel: cancel)) {
@@ -732,6 +737,9 @@ class _ParakeetSectionState extends State<_ParakeetSection> {
   }
 
   void _download() {
+    // un solo download alla volta (doppio tocco prima che compaia
+    // l'avanzamento: due download sugli stessi file)
+    if (_s.jobs.runningTitled(kParakeetDownloadTitle) != null) return;
     final cancel = CancelToken();
     _s.jobs.start(
       kParakeetDownloadTitle,

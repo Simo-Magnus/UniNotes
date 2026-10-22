@@ -114,7 +114,7 @@ class CalendarRepository {
     final examRows = await _db.db.query(
       'exams',
       where: 'date IS NOT NULL AND date >= ? AND date < ?',
-      whereArgs: [isoDate(from), isoDate(to.add(const Duration(days: 1)))],
+      whereArgs: [isoDate(from), isoDate(addDays(to, 1))],
     );
     for (final r in examRows) {
       final x = Exam.fromMap(r);
@@ -134,7 +134,8 @@ class CalendarRepository {
           start: dt,
           end: hasTime
               ? dt.add(const Duration(hours: 2))
-              : dt.add(const Duration(days: 1)),
+              // giorno di calendario, non 24 ore (ora legale)
+              : addDays(dt, 1),
           allDay: !hasTime,
           color: AssessmentColors.forUniversity(
             course?.universityId,
@@ -175,7 +176,7 @@ List<CalendarEntry> periodMarkers(CalendarEntry e) {
     kind: e.kind,
     title: title,
     start: day,
-    end: day.add(const Duration(days: 1)),
+    end: addDays(day, 1),
     color: e.color,
     allDay: true,
     universityId: e.universityId,

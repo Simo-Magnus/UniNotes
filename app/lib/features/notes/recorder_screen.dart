@@ -92,13 +92,29 @@ class _RecorderScreenState extends State<RecorderScreen> {
   }
 
   Future<void> _load() async {
-    final formulas = await _s.settings.get(formulasKey) == '1';
-    if (mounted) {
-      setState(() => _formulas = formulas);
-      _rec.live?.formulas = formulas;
+    try {
+      final formulas = await _s.settings.get(formulasKey) == '1';
+      if (mounted) {
+        setState(() => _formulas = formulas);
+        _rec.live?.formulas = formulas;
+      }
+    } catch (e) {
+      debugPrint('Registra: «Formule» non letto: $e');
     }
-    final catalog = await CourseCatalog.load(_s);
-    final suggested = _course ?? await NotesScreen.suggestedCourse(_s, catalog);
+    CourseCatalog catalog;
+    Course? suggested;
+    try {
+      catalog = await CourseCatalog.load(_s);
+      suggested = _course ?? await NotesScreen.suggestedCourse(_s, catalog);
+    } catch (e) {
+      // database non leggibile: prima la rotella girava per sempre e,
+      // con una registrazione in corso, i comandi non comparivano. Si
+      // mostra la schermata (comandi, insegnamento aperto) e si dice perché
+      // l'elenco è vuoto.
+      catalog = CourseCatalog(const [], const []);
+      suggested = _course;
+      if (mounted) showSnack(context, 'Insegnamenti non letti: $e');
+    }
     if (!mounted) return;
     setState(() {
       _catalog = catalog;
@@ -127,6 +143,11 @@ class _RecorderScreenState extends State<RecorderScreen> {
     } on RecorderException catch (e) {
       _s.feedback.warning();
       if (mounted) showSnack(context, e.message);
+    } catch (e) {
+      // cartella del corso non creabile (permessi, disco pieno), database
+      // non leggibile: prima il tocco su «Registra» non faceva nulla
+      _s.feedback.warning();
+      if (mounted) showSnack(context, 'Registrazione non avviata: $e');
     } finally {
       if (mounted) setState(() => _busy = false);
     }

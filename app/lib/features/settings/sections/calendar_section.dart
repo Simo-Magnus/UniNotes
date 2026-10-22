@@ -108,6 +108,8 @@ class _CalendarSectionState extends State<CalendarSection> {
   }
 
   Future<void> _toggle(bool on) async {
+    // doppio tocco prima che l'interruttore si spenga: un solo collegamento
+    if (_busy) return;
     setState(() => _busy = true);
     try {
       if (on) {
@@ -151,7 +153,7 @@ class _CalendarSectionState extends State<CalendarSection> {
 
   /// Link «Perché non riesco a collegare l'account universitario?».
   Future<void> _openBlockedHelp() async {
-    if (!await _blockedSheet() || !mounted) return;
+    if (!await _blockedSheet() || !mounted || _busy) return;
     setState(() => _busy = true);
     try {
       await _enable(chooseAccount: true);
@@ -179,11 +181,17 @@ class _CalendarSectionState extends State<CalendarSection> {
   }
 
   Future<void> _choose(String? id) async {
+    if (_busy) return;
     setState(() => _busy = true);
     try {
       final st = await _s.reminders.chooseCalendar(id);
       if (mounted && st.working) {
         showSnack(context, calendarConnectedMessage(st));
+      }
+    } catch (e) {
+      // prima l'errore non arrivava a nessuno: la scelta sembrava fatta
+      if (mounted) {
+        await showErrorDialog(context, 'Calendario non cambiato', e);
       }
     } finally {
       if (mounted) setState(() => _busy = false);

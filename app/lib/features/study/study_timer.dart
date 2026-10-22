@@ -45,7 +45,14 @@ class StudyTimer extends ChangeNotifier {
   Duration get elapsed {
     final since = _runningSince;
     if (since == null) return _accumulated;
-    return _accumulated + _clock().difference(since);
+    return _accumulated + _span(since);
+  }
+
+  /// Tempo dal riavvio [since]: mai negativo (orologio del sistema spostato
+  /// indietro mentre si studia), così il tempo già accumulato non si perde.
+  Duration _span(DateTime since) {
+    final d = _clock().difference(since);
+    return d.isNegative ? Duration.zero : d;
   }
 
   void setCourse(int? id) {
@@ -94,7 +101,7 @@ class StudyTimer extends ChangeNotifier {
   void pause() {
     final since = _runningSince;
     if (since == null) return;
-    _accumulated += _clock().difference(since);
+    _accumulated += _span(since);
     _runningSince = null;
     _stopTicker();
     notifyListeners();
@@ -107,7 +114,9 @@ class StudyTimer extends ChangeNotifier {
     final start = _startedAt;
     if (start == null) return null;
     final minutes = (elapsed.inSeconds / 60).round();
-    final end = _clock();
+    final now = _clock();
+    // orologio spostato indietro: la fine non viene prima dell'inizio
+    final end = now.isBefore(start) ? start.add(elapsed) : now;
     final session = minutes < 1
         ? null
         : StudySession(

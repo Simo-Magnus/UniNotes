@@ -4,6 +4,7 @@ import 'dart:typed_data';
 
 import 'package:path/path.dart' as p;
 
+import '../../../utils/parse.dart';
 import '../safe_files.dart';
 
 /// Dati di una registrazione salvati accanto all'audio, con lo stesso nome
@@ -35,11 +36,14 @@ class TranscriptSegment {
 
   static TranscriptSegment? fromJson(Object? j) {
     if (j is! Map) return null;
-    final s = j['s'], e = j['e'], t = j['t'];
-    if (s is! num || t is! String) return null;
+    final t = j['t'];
+    // asInt: un numero infinito («1e999») non lancia, vale come assente
+    final s = j['s'] is num ? asInt(j['s']) : null;
+    if (s == null || t is! String) return null;
+    final e = j['e'] is num ? asInt(j['e']) : null;
     return TranscriptSegment(
-      Duration(milliseconds: s.toInt()),
-      Duration(milliseconds: (e is num ? e : s).toInt()),
+      Duration(milliseconds: s),
+      Duration(milliseconds: e ?? s),
       t,
     );
   }
@@ -63,8 +67,10 @@ class Bookmark {
 
   static Bookmark? fromJson(Object? j) {
     if (j is! Map || j['ms'] is! num) return null;
+    final ms = asInt(j['ms']);
+    if (ms == null) return null;
     return Bookmark(
-      Duration(milliseconds: (j['ms'] as num).toInt()),
+      Duration(milliseconds: ms),
       j['nota'] is String ? j['nota'] as String : '',
     );
   }
@@ -131,10 +137,10 @@ class RecordingMeta {
         peaks = null;
       }
     }
+    final durationMs = j['durataMs'] is num ? asInt(j['durataMs']) : null;
+    final peakMs = j['formaOndaMs'] is num ? asInt(j['formaOndaMs']) : null;
     return RecordingMeta(
-      duration: j['durataMs'] is num
-          ? Duration(milliseconds: (j['durataMs'] as num).toInt())
-          : null,
+      duration: durationMs == null ? null : Duration(milliseconds: durationMs),
       started: DateTime.tryParse('${j['inizio'] ?? ''}'),
       course: j['corso'] is String ? j['corso'] as String : null,
       bookmarks: [
@@ -147,11 +153,7 @@ class RecordingMeta {
           ? j['trascrizione'] as String
           : null,
       peaks: peaks,
-      peakEvery: Duration(
-        milliseconds:
-            (j['formaOndaMs'] is num ? (j['formaOndaMs'] as num).toInt() : 100)
-                .clamp(10, 10000),
-      ),
+      peakEvery: Duration(milliseconds: (peakMs ?? 100).clamp(10, 10000)),
     );
   }
 

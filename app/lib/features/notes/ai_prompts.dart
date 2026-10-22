@@ -1,4 +1,5 @@
 import '../../models/course.dart';
+import '../../utils/dates.dart' show daysBetween;
 import '../links/ai_assistants.dart';
 
 /// Richieste pronte per l'AI di riferimento dello studente (ChatGPT, Claude,
@@ -104,7 +105,7 @@ enum AiTask {
           'materiale e stima il tempo di studio necessario per ciascuno.',
       if (examDate != null)
         'L\'esame è il ${_dmy(examDate)}'
-            '${today == null ? '' : ' (tra ${examDate.difference(today).inDays} giorni)'}: '
+            '${today == null ? '' : ' (tra ${daysBetween(today, examDate)} giorni)'}: '
             'proponi un piano giorno per giorno fino a quella data, con '
             'ripassi distanziati e una simulazione d\'esame finale.'
       else

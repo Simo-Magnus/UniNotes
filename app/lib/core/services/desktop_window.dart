@@ -178,7 +178,14 @@ class DesktopWindow with WindowListener, TrayListener {
   /// Uscita definitiva: la registrazione ancora in corso si salva prima.
   Future<void> _quit() async {
     await _saveRecording();
-    await _hideTray();
+    // un'icona che non si toglie (area di notifica del sistema bloccata)
+    // non deve impedire l'uscita: con la chiusura bloccata la finestra non
+    // si chiuderebbe più né con la X né con «Esci»
+    try {
+      await _hideTray();
+    } catch (e) {
+      debugPrint('Icona dell\'area di notifica non tolta: $e');
+    }
     _s.recorder.removeListener(_recorderChanged);
     _lifecycle?.dispose();
     await windowManager.setPreventClose(false);

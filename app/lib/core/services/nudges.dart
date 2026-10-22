@@ -1,5 +1,6 @@
 import '../constants/build_flags.dart';
 import '../constants/enums.dart';
+import '../../utils/dates.dart' show daysBetween;
 import 'app_services.dart';
 
 /// Inviti non invasivi mostrati nella Home (mai finestre a comparsa, mai
@@ -64,11 +65,11 @@ class Nudges {
 
   /// Una prova nei prossimi 7 giorni: niente inviti.
   Future<bool> _examSoon(DateTime t) async {
-    final today = DateTime(t.year, t.month, t.day);
     for (final e in await _s.exams.all()) {
       final d = e.date;
       if (d == null || !e.status.isPending) continue;
-      final diff = d.difference(today).inDays;
+      // giorni di calendario (non blocchi di 24 ore: ora legale)
+      final diff = daysBetween(t, d);
       if (diff >= 0 && diff <= 7) return true;
     }
     return false;

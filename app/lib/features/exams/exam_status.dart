@@ -160,33 +160,37 @@ Future<bool> changeExamStatus(BuildContext context, Exam exam) async {
     context: context,
     showDragHandle: true,
     builder: (c) => SafeArea(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(24, 0, 24, 8),
-            child: Text(
-              'Stato: ${exam.status.label}',
-              style: Theme.of(c).textTheme.titleMedium,
-            ),
-          ),
-          for (final s in steps)
-            ListTile(
-              key: ValueKey('status-${s.status.key}'),
-              leading: Icon(
-                examStatusIcon(s.status),
-                color: readableOn(
-                  examStatusColor(c, s.status),
-                  Theme.of(c).brightness,
-                ),
+      // scorre: con caratteri grandi il foglio non ha altezza per tutte le
+      // voci
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(24, 0, 24, 8),
+              child: Text(
+                'Stato: ${exam.status.label}',
+                style: Theme.of(c).textTheme.titleMedium,
               ),
-              title: Text(s.label),
-              subtitle: Text(s.hint),
-              onTap: () => Navigator.pop(c, s.status),
             ),
-          const SizedBox(height: 8),
-        ],
+            for (final s in steps)
+              ListTile(
+                key: ValueKey('status-${s.status.key}'),
+                leading: Icon(
+                  examStatusIcon(s.status),
+                  color: readableOn(
+                    examStatusColor(c, s.status),
+                    Theme.of(c).brightness,
+                  ),
+                ),
+                title: Text(s.label),
+                subtitle: Text(s.hint),
+                onTap: () => Navigator.pop(c, s.status),
+              ),
+            const SizedBox(height: 8),
+          ],
+        ),
       ),
     ),
   );

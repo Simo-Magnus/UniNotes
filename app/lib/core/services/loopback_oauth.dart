@@ -273,7 +273,15 @@ class LoopbackOAuth {
     }
 
     await for (final req in server) {
-      final q = req.uri.queryParameters;
+      final Map<String, String> q;
+      try {
+        q = req.uri.queryParameters;
+      } on FormatException {
+        // query con byte non UTF-8 (%FF…): richiesta estranea, non ferma
+        // l'accesso
+        await reject(req, HttpStatus.badRequest);
+        continue;
+      }
       if (!q.containsKey('code') && !q.containsKey('error')) {
         await reject(req, HttpStatus.notFound);
         continue;

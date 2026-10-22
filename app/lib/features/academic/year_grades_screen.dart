@@ -189,6 +189,9 @@ class _YearGradesScreenState extends State<YearGradesScreen> {
   }
 
   Future<void> _save(List<GradeEntry> entries) async {
+    // doppio tocco su «Salva» prima che il pulsante si spenga: la seconda
+    // chiusura toglierebbe anche la schermata sotto
+    if (_saving) return;
     setState(() => _saving = true);
     try {
       final r = await saveYearGrades(
@@ -381,7 +384,8 @@ class _GradeRowState extends State<_GradeRow> {
                 ),
                 if (e.kind == GradeKind.grade)
                   SizedBox(
-                    width: 120,
+                    // segue la grandezza dei caratteri
+                    width: MediaQuery.textScalerOf(context).scale(120),
                     child: DropdownButtonFormField<int?>(
                       key: Key('grade-${e.course.id}'),
                       style: Theme.of(context).textTheme.bodyLarge,

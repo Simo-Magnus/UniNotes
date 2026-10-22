@@ -62,6 +62,12 @@ class Exam {
     final parts = t.split(':');
     final h = int.tryParse(parts[0]) ?? 0;
     final m = parts.length > 1 ? int.tryParse(parts[1]) ?? 0 : 0;
+    // ora non valida (dati importati o sincronizzati: «99:99», o numeri
+    // enormi che il costruttore di DateTime rifiuta con un errore): vale
+    // come giornata intera, come nell'agenda
+    if (h < 0 || h > 23 || m < 0 || m > 59) {
+      return DateTime(date!.year, date!.month, date!.day);
+    }
     return DateTime(date!.year, date!.month, date!.day, h, m);
   }
 

@@ -74,7 +74,9 @@ class CalendarExport {
 /// l'evento già importato.
 String buildIcs(List<({Exam exam, String course})> items, {DateTime? now}) {
   String two(int v) => v.toString().padLeft(2, '0');
-  String date(DateTime d) => '${d.year}${two(d.month)}${two(d.day)}';
+  // anno sempre di 4 cifre (RFC 5545), anche per date lontane
+  String date(DateTime d) =>
+      '${d.year.toString().padLeft(4, '0')}${two(d.month)}${two(d.day)}';
   String dateTime(DateTime d) => '${date(d)}T${two(d.hour)}${two(d.minute)}00';
   String esc(String s) => s
       .replaceAll(r'\', r'\\')

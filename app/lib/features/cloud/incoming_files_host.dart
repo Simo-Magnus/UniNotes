@@ -234,6 +234,10 @@ Future<void> importFromDrive(BuildContext context, GoogleDriveService gd) async 
   // attesa visibile con «Annulla»: ogni errore (chiave rifiutata, pagina
   // chiusa, nessuna risposta in 5 minuti) ferma l'attesa con il messaggio
   final cancel = Completer<void>();
+  // il dialogo si chiude una volta sola: con «Annulla», con Indietro
+  // (Android, Esc) o qui sotto alla fine dell'attesa; chiuderlo di nuovo
+  // toglierebbe la pagina sotto (Collegamenti, l'insegnamento)
+  var open = true;
   final waiting = showDialog<void>(
     context: context,
     barrierDismissible: false,
@@ -258,6 +262,8 @@ Future<void> importFromDrive(BuildContext context, GoogleDriveService gd) async 
       actions: [
         TextButton(
           onPressed: () {
+            if (!open) return;
+            open = false;
             if (!cancel.isCompleted) cancel.complete();
             Navigator.pop(c);
           },
@@ -265,14 +271,20 @@ Future<void> importFromDrive(BuildContext context, GoogleDriveService gd) async 
         ),
       ],
     ),
-  );
+  ).whenComplete(() {
+    open = false;
+    // chiuso con Indietro: l'attesa si ferma come con «Annulla» (prima
+    // restava aperta fino al tempo massimo e poi chiudeva la pagina sotto)
+    if (!cancel.isCompleted) cancel.complete();
+  });
   final PickerResult result;
   try {
     result = await picker.pick(token, cancel: cancel.future);
   } finally {
-    if (!cancel.isCompleted) {
-      cancel.complete();
-      if (context.mounted) Navigator.of(context, rootNavigator: true).pop();
+    if (!cancel.isCompleted) cancel.complete();
+    if (open && context.mounted) {
+      open = false;
+      Navigator.of(context, rootNavigator: true).pop();
     }
     await waiting;
   }

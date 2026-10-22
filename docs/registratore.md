@@ -200,7 +200,15 @@ solo**, `liveEngineOrder` in `app/lib/features/notes/recorder/live_transcriber.d
 | Sistema | 1° motore | Ripiego | In più |
 |---|---|---|---|
 | **Windows, macOS, Linux** | **Parakeet** (NVIDIA Parakeet TDT 0.6B v3 con sherpa-onnx) | il modello Whisper scaricato dall'utente, a pezzi da ~10 s; altrimenti nessun testo | — |
-| **Android, iOS** | **riconoscitore del sistema** (Google/Apple, sul dispositivo dove c'è) | Whisper base q5_1 integrato, se il riconoscitore manca, non ha la lingua o si ferma | seconda passata con small q5_1 dove il telefono regge |
+| **Android, iOS** | **riconoscitore del sistema** (Google/Apple, sul dispositivo dove c'è) | Whisper base q5_1 integrato, se il riconoscitore manca, non ha la lingua, si ferma o non risponde all'avvio entro 45 s | seconda passata con small q5_1 dove il telefono regge |
+
+Un riconoscitore che non risponde all'avvio (iOS 26 che scarica il modello
+della lingua senza rete, dettatura di Windows che non finisce di
+prepararsi) non lascia più il testo dal vivo «in avvio» per tutta la
+lezione: dopo 45 s (`SystemSpeech.kStartTimeout`) la sessione si chiude,
+gli eventi che arrivassero dopo si scartano e si passa al motore
+successivo, che riparte dall'inizio del WAV di lavoro (test in
+`app/test/crash_r2_nativo_test.dart`).
 
 Lingua: sempre fissata, **italiano** o **inglese** per gli insegnamenti in
 inglese (lingua dell'esame del corso), mai il rilevamento automatico né

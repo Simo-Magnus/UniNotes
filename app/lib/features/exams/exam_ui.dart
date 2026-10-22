@@ -51,10 +51,10 @@ String? shortGradeLabel(Exam e) {
 /// Giorni mancanti alla data dell'esame (negativo se passata).
 int? daysUntil(Exam e, {DateTime? now}) {
   if (e.date == null) return null;
-  final n = now ?? DateTime.now();
-  final today = DateTime(n.year, n.month, n.day);
-  final d = DateTime(e.date!.year, e.date!.month, e.date!.day);
-  return d.difference(today).inDays;
+  // giorni di calendario: con il passaggio all'ora legale in mezzo (giorno
+  // di 23 ore) le mezzanotti distano un'ora in meno e «domani» diventava
+  // «oggi»
+  return daysBetween(now ?? DateTime.now(), e.date!);
 }
 
 /// Regole di validazione del voto:
