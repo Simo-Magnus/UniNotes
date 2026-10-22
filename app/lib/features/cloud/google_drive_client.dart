@@ -120,9 +120,14 @@ class GoogleDriveClient {
       "'${v.replaceAll(r'\', r'\\').replaceAll("'", r"\'")}'";
 
   /// Tutti i file che rispondono a [q] (pagine `nextPageToken`).
+  ///
+  /// Con [strict] (elenco dei file da sincronizzare) una risposta 404 o
+  /// senza `files` è un errore, non un elenco vuoto: i file mancanti
+  /// sembrerebbero «eliminati su Google Drive».
   Future<List<Map<String, Object?>>> files(
     String q, {
     String fields = 'id,name,mimeType,size,md5Checksum',
+    bool strict = false,
   }) async {
     final out = <Map<String, Object?>>[];
     String? page;
@@ -134,20 +139,36 @@ class GoogleDriveClient {
         'spaces': 'drive',
         'pageToken': ?page,
       });
-      if (r == null) break;
+      if (r == null) {
+        if (strict) {
+          throw DriveException(404, 'Google Drive: elenco non disponibile');
+        }
+        break;
+      }
+      final list = r['files'];
+      if (strict && list is! List) {
+        throw DriveException(502, 'Google Drive: risposta inattesa (elenco mancante)');
+      }
       out.addAll(
-        (r['files'] as List? ?? const []).whereType<Map>().map(
+        (list is List ? list : const []).whereType<Map>().map(
           (m) => m.cast<String, Object?>(),
         ),
       );
-      page = r['nextPageToken'] as String?;
+      final next = r['nextPageToken'];
+      page = next is String ? next : null;
     } while (page != null);
     return out;
   }
 
-  /// Contenuto (non nel cestino) della cartella [parentId].
-  Future<List<Map<String, Object?>>> children(String parentId) =>
-      files('${quote(parentId)} in parents and trashed = false');
+  /// Contenuto (non nel cestino) della cartella [parentId]; [strict] come
+  /// in [files].
+  Future<List<Map<String, Object?>>> children(
+    String parentId, {
+    bool strict = false,
+  }) => files(
+    '${quote(parentId)} in parents and trashed = false',
+    strict: strict,
+  );
 
   /// Sottocartella [name] di [parentId] (`root` = Il mio Drive), se c'è.
   Future<String?> findFolder(String parentId, String name) async {

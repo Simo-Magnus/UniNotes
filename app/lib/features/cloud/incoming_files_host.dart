@@ -374,7 +374,14 @@ class _IncomingFilesHostState extends State<IncomingFilesHost> {
       while (mounted) {
         final files = await _incoming.take();
         if (files.isEmpty || !mounted) break;
-        await saveIncomingFiles(context, files);
+        try {
+          await saveIncomingFiles(context, files);
+        } catch (e) {
+          // es. database non leggibile per l'elenco degli insegnamenti:
+          // messaggio invece di un errore perso nel canale nativo
+          await IncomingFiles.discard(files);
+          if (mounted) showSnack(context, 'File non salvati: $e');
+        }
       }
     } finally {
       _busy = false;
@@ -390,6 +397,8 @@ class _IncomingFilesHostState extends State<IncomingFilesHost> {
     _busy = true;
     try {
       await saveIncomingFiles(context, files);
+    } catch (e) {
+      if (mounted) showSnack(context, 'File non salvati: $e');
     } finally {
       _busy = false;
     }

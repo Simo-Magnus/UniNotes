@@ -94,9 +94,17 @@ class PdfHighlights extends ChangeNotifier {
       final f = await _file();
       if (!await f.exists()) return;
       final list = jsonDecode(await f.readAsString()) as List;
+      // Una voce rovinata (file sincronizzato da un'altra versione, scritto a
+      // metà) si salta: non deve far perdere le altre al prossimo salvataggio.
+      final loaded = <PdfHighlight>[];
+      for (final e in list) {
+        try {
+          loaded.add(PdfHighlight.fromJson((e as Map).cast<String, Object?>()));
+        } catch (_) {}
+      }
       items
         ..clear()
-        ..addAll(list.cast<Map<String, Object?>>().map(PdfHighlight.fromJson));
+        ..addAll(loaded);
       notifyListeners();
     } catch (_) {
       // file danneggiato: si riparte senza evidenziazioni

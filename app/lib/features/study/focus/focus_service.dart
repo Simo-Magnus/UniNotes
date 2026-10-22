@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/widgets.dart' show AppLifecycleListener;
 import 'package:intl/intl.dart';
 
@@ -71,7 +72,9 @@ class FocusLink {
       courseId: id(j['corso']),
       moduleId: id(j['modulo']),
       topicId: id(j['argomento']),
-      activity: ActivityType.fromKey(j['attivita'] as String?),
+      activity: ActivityType.fromKey(
+        j['attivita'] is String ? j['attivita'] as String : null,
+      ),
       label: j['nome'] is String ? j['nome'] as String : null,
     );
   }
@@ -119,6 +122,10 @@ class FocusService extends ChangeNotifier {
   /// Ultima sessione salvata (riepilogo nella schermata o avviso).
   final ValueNotifier<FocusResult?> completed = ValueNotifier(null);
 
+  /// Errore del salvataggio dell'ultima sessione finita (null = salvata o
+  /// non da salvare): il riepilogo lo dice invece di tacere.
+  String? saveError;
+
   bool _loaded = false;
   bool _inBackground = false;
   final Set<int> _alertIds = {};
@@ -131,7 +138,27 @@ class FocusService extends ChangeNotifier {
   set screenVisible(bool v) {
     if (v == _screenVisible) return;
     _screenVisible = v;
+    // Si cambia da initState e dispose della schermata Focus, cioè a metà
+    // della costruzione dei widget: avvisare subito le card sotto (Home,
+    // Sessioni Studio) farebbe fallire il fotogramma («setState() called
+    // during build»). Si avvisa a fotogramma finito, chiedendone un altro.
+    final binding = _binding;
+    if (binding != null &&
+        binding.schedulerPhase == SchedulerPhase.persistentCallbacks) {
+      binding
+        ..addPostFrameCallback((_) => notifyListeners())
+        ..scheduleFrame();
+      return;
+    }
     notifyListeners();
+  }
+
+  static SchedulerBinding? get _binding {
+    try {
+      return SchedulerBinding.instance;
+    } catch (_) {
+      return null; // test senza binding
+    }
   }
 
   /// Fino a quando le notifiche non urgenti dell'app aspettano (fine
@@ -257,8 +284,11 @@ class FocusService extends ChangeNotifier {
   /// minuto) come sessione di studio.
   Future<StudySession?> finish() async {
     final r = timer.stop();
-    await _cleanup();
-    if (r == null) return null;
+    if (r == null) {
+      await _cleanup();
+      return null;
+    }
+    saveError = null;
     StudySession? saved;
     if (r.focusMinutes >= 1) {
       final c = current;
@@ -273,13 +303,18 @@ class FocusService extends ChangeNotifier {
         focus: true,
         plannedMinutes: r.plannedMinutes,
       );
+      // prima si salva, poi si tolgono avvisi e silenzio del sistema (che
+      // passano dalla piattaforma e possono tardare): un'app chiusa a metà
+      // non perde il tempo
       try {
         await _s.study.insertSession(saved);
       } catch (e) {
         debugPrint('Sessione Focus non salvata: $e');
+        saveError = '$e';
         saved = null;
       }
     }
+    await _cleanup();
     completed.value = r;
     _s.revision.bump();
     return saved;

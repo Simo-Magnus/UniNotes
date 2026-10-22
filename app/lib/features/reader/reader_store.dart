@@ -22,10 +22,11 @@ class ReaderBookmark {
 
   static ReaderBookmark? fromJson(Object? j) {
     if (j is! Map) return null;
+    // anche 12.0 (dati sincronizzati da un'altra versione o piattaforma)
     final pos = j['p'];
-    if (pos is! int) return null;
+    if (pos is! num || !pos.isFinite) return null;
     return ReaderBookmark(
-      pos,
+      pos.toInt(),
       j['l']?.toString() ?? '',
       DateTime.tryParse(j['c']?.toString() ?? '') ?? DateTime(2000),
     );
@@ -99,12 +100,17 @@ class ReaderStore {
     }
     if (raw == null) return const ReaderFileState();
     try {
-      final j = jsonDecode(raw) as Map<String, dynamic>;
+      final j = jsonDecode(raw);
+      if (j is! Map) return const ReaderFileState();
+      // Un campo rovinato non deve far perdere gli altri: i segnalibri si
+      // riscrivono al primo salvataggio della posizione.
+      final pos = j['pos'];
+      final bm = j['bm'];
       return ReaderFileState(
-        position: j['pos'] as int?,
+        position: pos is num && pos.isFinite ? pos.toInt() : null,
         bookmarks: [
-          for (final b in (j['bm'] as List? ?? const []))
-            ?ReaderBookmark.fromJson(b),
+          if (bm is List)
+            for (final b in bm) ?ReaderBookmark.fromJson(b),
         ],
       );
     } catch (_) {
@@ -158,13 +164,17 @@ class ReaderStore {
     final raw = await _settings.get(recentKey);
     if (raw == null) return const [];
     try {
+      final list = jsonDecode(raw);
+      if (list is! List) return const [];
+      // voci rovinate saltate una per una (le altre restano)
       return [
-        for (final e in (jsonDecode(raw) as List).cast<Map>())
-          RecentFile(
-            e['path'].toString(),
-            e['title']?.toString() ?? p.basename(e['path'].toString()),
-            DateTime.tryParse(e['at']?.toString() ?? '') ?? DateTime(2000),
-          ),
+        for (final e in list)
+          if (e is Map && e['path'] is String && e['path'] != '')
+            RecentFile(
+              e['path'] as String,
+              e['title']?.toString() ?? p.basename(e['path'] as String),
+              DateTime.tryParse(e['at']?.toString() ?? '') ?? DateTime(2000),
+            ),
       ];
     } catch (_) {
       return const [];

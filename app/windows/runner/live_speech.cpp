@@ -413,6 +413,8 @@ void LiveSpeechChannel::Stop() {
   if (FAILED(continuous_->StopAsync(&action))) {
     stopping_ = false;
     Release();
+    // un «start» ancora in attesa riceve la risposta (non resta appeso)
+    ReplyStart(flutter::EncodableValue(false));
     Send("ended", {});
   }
 }
@@ -481,6 +483,15 @@ bool LiveSpeechChannel::HandleMessage(UINT message, WPARAM wparam,
       }
       break;
     case EventKind::kCompiled:
+      // «stop» arrivato mentre si preparava la dettatura: non si avvia più
+      // (altrimenti il microfono restava in ascolto a registrazione finita)
+      if (stopping_) {
+        stopping_ = false;
+        Release();
+        ReplyStart(flutter::EncodableValue(false));
+        Send("ended", {});
+        break;
+      }
       if (FAILED(e->hr) ||
           e->status != sr::SpeechRecognitionResultStatus_Success) {
         Release();

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,6 +12,7 @@ import 'lesson_transcripts.dart';
 import 'markdown_view.dart';
 import 'notes_actions.dart';
 import 'notes_store.dart';
+import 'safe_files.dart';
 import 'spell_check.dart';
 import '../../core/constants/text_limits.dart';
 
@@ -61,7 +64,7 @@ class _NoteViewerScreenState extends State<NoteViewerScreen> {
 
   /// Testo del file; le trascrizioni del vecchio formato senza gli orari.
   Future<String> _read() =>
-      widget.note.file.readAsString().then(stripTranscriptTimes);
+      readTextLenient(widget.note.file).then(stripTranscriptTimes);
   final _view = GlobalKey<SearchableMarkdownViewState>();
 
   @override
@@ -80,7 +83,12 @@ class _NoteViewerScreenState extends State<NoteViewerScreen> {
             icon: const Icon(Icons.edit_outlined),
             onPressed: () async {
               await openNoteEditor(context, widget.course, note: widget.note);
-              setState(() => _text = _read());
+              // il blocco non deve restituire il Future (setState lo rifiuta)
+              if (mounted) {
+                setState(() {
+                  _text = _read();
+                });
+              }
             },
           ),
           // una risposta dell'AI non si rimanda all'AI
@@ -167,14 +175,25 @@ class _NoteEditorScreenState extends State<NoteEditorScreen>
       enableSpellCheck();
     } else {
       _title.text = n.name;
-      n.file.readAsString().then((t) {
-        if (!mounted) return;
-        setState(() {
-          _body.text = stripTranscriptTimes(t);
-          _loaded = true;
-        });
-        enableSpellCheck();
-      });
+      // file non in UTF-8 si legge lo stesso; file sparito: si dice e si
+      // torna indietro (prima la rotella girava per sempre)
+      n.file
+          .readAsBytes()
+          .then((b) {
+            if (!mounted) return;
+            setState(() {
+              _body.text = stripTranscriptTimes(
+                utf8.decode(b, allowMalformed: true),
+              );
+              _loaded = true;
+            });
+            enableSpellCheck();
+          })
+          .catchError((Object e) {
+            if (!mounted) return;
+            showSnack(context, 'Impossibile aprire la nota: $e');
+            Navigator.maybePop(context);
+          });
     }
   }
 
@@ -188,18 +207,30 @@ class _NoteEditorScreenState extends State<NoteEditorScreen>
     super.dispose();
   }
 
+  bool _saving = false;
+
   Future<void> _save() async {
+    // doppio clic su «Salva»: una sola nota (e un solo ritorno indietro)
+    if (_saving) return;
+    _saving = true;
     final s = context.read<AppServices>();
     final n = widget.note;
-    if (n != null) {
-      await n.file.writeAsString(_body.text);
-    } else {
-      await s.notes.writeText(
-        widget.course,
-        NoteFolder.notes,
-        _title.text,
-        _body.text,
-      );
+    try {
+      if (n != null) {
+        await n.file.writeAsString(_body.text);
+      } else {
+        await s.notes.writeText(
+          widget.course,
+          NoteFolder.notes,
+          _title.text,
+          _body.text,
+        );
+      }
+    } catch (e) {
+      // file bloccato, disco pieno: il testo resta nel campo
+      _saving = false;
+      if (mounted) showSnack(context, 'Salvataggio non riuscito: $e');
+      return;
     }
     if (!mounted) return;
     final messenger = ScaffoldMessenger.maybeOf(context);

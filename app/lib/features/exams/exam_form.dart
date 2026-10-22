@@ -16,10 +16,12 @@ import '../../utils/exclusion_filter.dart';
 import '../../widgets/common.dart';
 import '../../widgets/reminders_prompt.dart';
 import '../../widgets/undo_snack_bar.dart';
+import '../courses/course_ui.dart';
 import 'exam_ui.dart';
 import 'study_materials_editor.dart';
 import 'exam_materials.dart';
 import '../../core/constants/text_limits.dart';
+import '../../widgets/date_pick.dart';
 
 /// Apre il modulo di creazione/modifica di un esame o di una prova in itinere.
 /// Restituisce true se è stato salvato.
@@ -344,13 +346,28 @@ class _ExamFormPageState extends State<ExamFormPage> {
   (String, double?)? _extra;
   static const _extraId = -1;
 
+  /// Insegnamento fuori piano già creato da un «Salva» non andato a buon
+  /// fine (si riusa, niente doppioni).
+  int? _extraCourseId;
+
+  /// La voce fuori piano c'è solo per gli esami finali nuovi.
+  bool get _extraAllowed =>
+      _isNew && _kind == ExamKind.finalExam && _extra != null;
+
+  /// Cambia a ogni «Annulla» del dialogo fuori piano: il menù, che ha già
+  /// mostrato la voce scelta, torna al corso di prima.
+  int _courseFieldGen = 0;
+
   @override
   void initState() {
     super.initState();
     final s = context.read<AppServices>();
-    CalendarExport(s).enabled().then((v) {
-      if (mounted && v) setState(() => _calendar = true);
-    });
+    CalendarExport(s)
+        .enabled()
+        .then((v) {
+          if (mounted && v) setState(() => _calendar = true);
+        })
+        .catchError((Object e) => debugPrint('ExamForm: calendario: $e'));
   }
 
   /// Voce «Esame a scelta (fuori piano)»: nome e CFU dell'insegnamento che
@@ -363,12 +380,16 @@ class _ExamFormPageState extends State<ExamFormPage> {
     if (!mounted) return;
     setState(() {
       if (r != null) {
+        if (r != _extra) _extraCourseId = null;
         _extra = r;
         _courseId = _extraId;
         if (r.$2 != null) {
           _cfu.text = formatCfuText(r.$2);
           _cfuPrefilled = _cfu.text;
         }
+      } else {
+        // annullato: il menù mostrava già la voce fuori piano
+        _courseFieldGen++;
       }
     });
   }
@@ -385,13 +406,13 @@ class _ExamFormPageState extends State<ExamFormPage> {
 
   Future<void> _pickDate() async {
     final now = DateTime.now();
-    final d = await showDatePicker(
+    final d = await showSafeDatePicker(
       context: context,
       initialDate: _date ?? now,
       firstDate: DateTime(now.year - 10),
       lastDate: DateTime(now.year + 5),
     );
-    if (d != null) setState(() => _date = d);
+    if (d != null && mounted) setState(() => _date = d);
   }
 
   Future<void> _pickTime() async {
@@ -399,12 +420,12 @@ class _ExamFormPageState extends State<ExamFormPage> {
     final parts = _time?.split(':');
     if (parts != null && parts.length >= 2) {
       initial = TimeOfDay(
-        hour: int.tryParse(parts[0]) ?? 9,
-        minute: int.tryParse(parts[1]) ?? 0,
+        hour: (int.tryParse(parts[0]) ?? 9).clamp(0, 23),
+        minute: (int.tryParse(parts[1]) ?? 0).clamp(0, 59),
       );
     }
     final t = await showTimePicker(context: context, initialTime: initial);
-    if (t != null) {
+    if (t != null && mounted) {
       setState(
         () => _time =
             '${t.hour.toString().padLeft(2, '0')}:${t.minute.toString().padLeft(2, '0')}',
@@ -443,25 +464,36 @@ class _ExamFormPageState extends State<ExamFormPage> {
     // quello, così l'esame resta uno con un solo stato
     final existing = _existingFinal;
     final services = context.read<AppServices>();
-    var courseId = _courseId!;
+    var courseId = _courseId;
     final extra = _extra;
+    // il menù ha già controllato il corso: qui solo per sicurezza
+    if (courseId == null || (courseId == _extraId && !_extraAllowed)) return;
+    if (_saving) return;
+    setState(() => _saving = true);
     if (courseId == _extraId && extra != null) {
       // esame a scelta fuori piano: prima l'insegnamento (anno scelto,
-      // percorso dello studente)
-      final profile = services.profile.value;
-      courseId = await services.courses.insert(
-        Course(
-          name: extra.$1,
-          cfu: extra.$2,
-          year: services.selectedYear.value,
-          universityId: profile?.universityId,
-          degreeId: profile?.degreeId,
-          mandatory: false,
-        ),
-      );
+      // percorso dello studente); se il salvataggio dell'esame non riesce,
+      // un nuovo «Salva» riusa quello già creato invece di farne un altro
+      try {
+        final profile = services.profile.value;
+        courseId = _extraCourseId ??= await services.courses.insert(
+          Course(
+            name: extra.$1,
+            cfu: extra.$2,
+            year: services.selectedYear.value,
+            universityId: profile?.universityId,
+            degreeId: profile?.degreeId,
+            mandatory: false,
+          ),
+        );
+      } catch (e) {
+        if (mounted) {
+          setState(() => _saving = false);
+          showSnack(context, 'Errore nel salvataggio: $e');
+        }
+        return;
+      }
       if (!mounted) return;
-      _courseId = courseId;
-      _extra = null;
     }
     final typed = Exam(
       id: old?.id,
@@ -487,7 +519,6 @@ class _ExamFormPageState extends State<ExamFormPage> {
     final exam = existing == null
         ? typed
         : mergeIntoExistingFinal(existing, typed);
-    setState(() => _saving = true);
     final int id;
     try {
       id = await services.exams.save(exam);
@@ -575,6 +606,13 @@ class _ExamFormPageState extends State<ExamFormPage> {
       body: FutureBuilder<List<Course>>(
         future: _courses,
         builder: (context, snap) {
+          if (snap.hasError) {
+            // senza questo la rotellina girerebbe per sempre
+            return EmptyState(
+              icon: Icons.error_outline,
+              message: 'Insegnamenti non leggibili: ${snap.error}',
+            );
+          }
           if (!snap.hasData) {
             return const Center(child: CircularProgressIndicator());
           }
@@ -607,7 +645,7 @@ class _ExamFormPageState extends State<ExamFormPage> {
     const gap = SizedBox(height: 16);
     final validCourse =
         courses.any((c) => c.id == _courseId) ||
-            (_courseId == _extraId && _extra != null)
+            (_courseId == _extraId && _extraAllowed)
         ? _courseId
         : null;
     // Telefono: etichette brevi e senza icone, così stanno su una riga.
@@ -634,7 +672,7 @@ class _ExamFormPageState extends State<ExamFormPage> {
       ),
       gap,
       DropdownButtonFormField<int>(
-        key: ValueKey('course-$validCourse-${_extra?.$1}'),
+        key: ValueKey('course-$validCourse-${_extra?.$1}-$_courseFieldGen'),
         style: Theme.of(context).textTheme.bodyLarge,
         initialValue: validCourse,
         isExpanded: true,
@@ -792,9 +830,7 @@ class _ExamFormPageState extends State<ExamFormPage> {
           decoration: const InputDecoration(labelText: 'CFU'),
           validator: (v) {
             if (v == null || v.trim().isEmpty) return null;
-            final n = double.tryParse(v.trim().replaceAll(',', '.'));
-            if (n == null || n < 0 || n > 60) return 'Valore CFU non valido';
-            return null;
+            return parseCfu(v) == null ? 'Valore CFU non valido' : null;
           },
         ),
       ],
@@ -1033,13 +1069,19 @@ class _ExtraExamDialogState extends State<_ExtraExamDialog> {
     super.dispose();
   }
 
+  /// CFU non validi («Infinity», «1e999», negativi…): si dice e si resta.
+  String? _cfuError;
+
   void _ok() {
     final name = _name.text.trim();
     if (name.isEmpty) return;
-    Navigator.pop(context, (
-      name,
-      double.tryParse(_cfu.text.trim().replaceAll(',', '.')),
-    ));
+    final text = _cfu.text.trim();
+    final cfu = parseCfu(text);
+    if (text.isNotEmpty && cfu == null) {
+      setState(() => _cfuError = 'Valore CFU non valido');
+      return;
+    }
+    Navigator.pop(context, (name, cfu));
   }
 
   @override
@@ -1063,7 +1105,15 @@ class _ExtraExamDialogState extends State<_ExtraExamDialog> {
           TextField(
             controller: _cfu,
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
-            decoration: const InputDecoration(labelText: 'CFU'),
+            maxLength: 5,
+            decoration: InputDecoration(
+              labelText: 'CFU',
+              counterText: '',
+              errorText: _cfuError,
+            ),
+            onChanged: (_) {
+              if (_cfuError != null) setState(() => _cfuError = null);
+            },
           ),
         ],
       ),

@@ -8,6 +8,7 @@ import 'study_widgets.dart';
 import 'topic_dropdown.dart';
 import '../../utils/dates.dart';
 import '../../core/constants/text_limits.dart';
+import '../../widgets/date_pick.dart';
 
 /// Inserimento/modifica manuale di una sessione di studio.
 Future<StudySession?> showSessionDialog(
@@ -80,13 +81,13 @@ class _SessionDialogState extends State<_SessionDialog> {
   }
 
   Future<void> _pickDay() async {
-    final d = await showDatePicker(
+    final d = await showSafeDatePicker(
       context: context,
       initialDate: _day,
       firstDate: DateTime(2000),
       lastDate: DateTime(2100),
     );
-    if (d != null) setState(() => _day = d);
+    if (d != null && mounted) setState(() => _day = d);
   }
 
   Future<void> _pickTime(bool start) async {
@@ -94,7 +95,7 @@ class _SessionDialogState extends State<_SessionDialog> {
       context: context,
       initialTime: start ? _start : _end,
     );
-    if (t == null) return;
+    if (t == null || !mounted) return;
     setState(() {
       start ? _start = t : _end = t;
       _timesChanged = true;

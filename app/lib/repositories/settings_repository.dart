@@ -82,8 +82,13 @@ class SettingsRepository {
       where: 'key = ?',
       whereArgs: [key],
     );
-    return rows.isEmpty ? null : rows.first['value'] as String?;
+    return rows.isEmpty ? null : _text(rows.first['value']);
   }
+
+  /// Valore come testo anche se arriva come numero (sincronizzazione o
+  /// backup di un'altra versione dell'app).
+  static String? _text(Object? v) =>
+      v == null || v is String ? v as String? : '$v';
 
   Future<void> set(String key, String? value) => _db.db.insert('app_settings', {
     'key': key,
@@ -102,7 +107,10 @@ class SettingsRepository {
 
   Future<Map<String, String?>> allSettings() async {
     final rows = await _db.db.query('app_settings');
-    return {for (final r in rows) r['key'] as String: r['value'] as String?};
+    return {
+      for (final r in rows)
+        if (r['key'] != null) '${r['key']}': _text(r['value']),
+    };
   }
 
   Future<List<String>> exclusionPatterns() async {

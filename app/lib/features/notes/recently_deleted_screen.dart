@@ -25,9 +25,17 @@ class _RecentlyDeletedScreenState extends State<RecentlyDeletedScreen> {
   late final AppServices _s = context.read<AppServices>();
   late Future<List<TrashEntry>> _items = _s.trash.list();
 
-  void _reload() => setState(() => _items = _s.trash.list());
+  /// Dopo un'operazione (anche a schermata già chiusa: niente setState).
+  void _reload() {
+    if (!mounted) return;
+    setState(() => _items = _s.trash.list());
+  }
+
+  /// Elementi in lavorazione (doppio tocco su «Ripristina»).
+  final Set<String> _busy = {};
 
   Future<void> _restore(TrashEntry e) async {
+    if (!_busy.add(e.id)) return;
     final messenger = ScaffoldMessenger.maybeOf(context);
     try {
       final files = await _s.trash.restore(e);
@@ -51,6 +59,8 @@ class _RecentlyDeletedScreenState extends State<RecentlyDeletedScreen> {
       }
     } catch (err) {
       if (mounted) showSnack(context, 'Ripristino non riuscito: $err');
+    } finally {
+      _busy.remove(e.id);
     }
     _reload();
   }
@@ -73,7 +83,11 @@ class _RecentlyDeletedScreenState extends State<RecentlyDeletedScreen> {
     )) {
       return;
     }
-    await _s.trash.deleteForever(e);
+    try {
+      await _s.trash.deleteForever(e);
+    } catch (err) {
+      if (mounted) showSnack(context, 'Eliminazione non riuscita: $err');
+    }
     _reload();
   }
 
@@ -84,8 +98,16 @@ class _RecentlyDeletedScreenState extends State<RecentlyDeletedScreen> {
     )) {
       return;
     }
+    var failed = 0;
     for (final e in all) {
-      await _s.trash.deleteForever(e);
+      try {
+        await _s.trash.deleteForever(e);
+      } catch (_) {
+        failed++;
+      }
+    }
+    if (failed > 0 && mounted) {
+      showSnack(context, 'Alcuni file non si sono potuti cancellare.');
     }
     _reload();
   }
@@ -128,7 +150,19 @@ class _RecentlyDeletedScreenState extends State<RecentlyDeletedScreen> {
           appBar: AppBar(title: const Text('Eliminati di recente')),
           body: snap.connectionState != ConnectionState.done
               ? const Center(child: CircularProgressIndicator())
-              : _list(context, items),
+              : (snap.hasError
+                    // cestino illeggibile: si dice, non «nessun file»
+                    ? Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(24),
+                          child: Text(
+                            'Impossibile leggere «Eliminati di recente»: '
+                            '${snap.error}',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      )
+                    : _list(context, items)),
         );
       },
     );

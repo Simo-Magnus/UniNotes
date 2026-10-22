@@ -8,6 +8,15 @@ library;
 
 import 'dart:typed_data';
 
+/// Numero decimale letto da un file, solo se finito: `double.tryParse`
+/// accetta anche «NaN» e «Infinity» (e «1e999» diventa infinito), valori
+/// che rompono l'impaginazione e il disegno delle pagine.
+double? parseFinite(String? s) {
+  if (s == null) return null;
+  final v = double.tryParse(s.trim());
+  return v != null && v.isFinite ? v : null;
+}
+
 enum RStyle { body, h1, h2, h3, h4, quote, code, caption, list }
 
 /// Un tratto di testo con la stessa formattazione.
@@ -426,12 +435,34 @@ class RDoc {
 class RParaBuilder {
   final _spans = <RSpan>[];
 
-  bool get isEmpty => _spans.every((s) => s.text.trim().isEmpty);
-  String get text => _spans.map((s) => s.text).join();
+  /// Ultimo tratto ancora aperto: i pezzi con la stessa formattazione si
+  /// accumulano qui. Prima si univano con `testo + pezzo`, che con centinaia
+  /// di migliaia di pezzi piccoli (un RTF con una riga per carattere)
+  /// copiava gigabyte di testo e bloccava l'app.
+  RSpan? _open;
+  final _buf = StringBuffer();
+
+  void _close() {
+    final o = _open;
+    if (o == null) return;
+    _spans.add(o.withText(_buf.toString()));
+    _buf.clear();
+    _open = null;
+  }
+
+  bool get isEmpty {
+    _close();
+    return _spans.every((s) => s.text.trim().isEmpty);
+  }
+
+  String get text {
+    _close();
+    return _spans.map((s) => s.text).join();
+  }
 
   void add(RSpan s) {
     if (s.text.isEmpty) return;
-    final last = _spans.isEmpty ? null : _spans.last;
+    final last = _open;
     if (last != null &&
         last.bold == s.bold &&
         last.italic == s.italic &&
@@ -440,9 +471,11 @@ class RParaBuilder {
         last.mono == s.mono &&
         last.link == s.link &&
         last.seconds == s.seconds) {
-      _spans[_spans.length - 1] = last.withText(last.text + s.text);
+      _buf.write(s.text);
     } else {
-      _spans.add(s);
+      _close();
+      _open = s;
+      _buf.write(s.text);
     }
   }
 
@@ -450,6 +483,7 @@ class RParaBuilder {
 
   /// Paragrafo con gli spazi in eccesso ai bordi tolti.
   RPara build({RStyle style = RStyle.body, int level = 0, String? marker}) {
+    _close();
     final spans = List<RSpan>.of(_spans);
     _spans.clear();
     if (spans.isNotEmpty) {
@@ -460,5 +494,9 @@ class RParaBuilder {
     return RPara(spans, style: style, level: level, marker: marker);
   }
 
-  void clear() => _spans.clear();
+  void clear() {
+    _spans.clear();
+    _buf.clear();
+    _open = null;
+  }
 }

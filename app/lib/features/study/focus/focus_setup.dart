@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import '../../../core/feedback/feedback_service.dart';
 import '../../../core/feedback/motion.dart';
 import '../../../core/services/app_services.dart';
+import '../../../widgets/common.dart';
 import 'focus_plan.dart';
 import 'focus_screen.dart';
 import 'focus_service.dart';
@@ -45,17 +46,26 @@ class _FocusTimerSetupState extends State<FocusTimerSetup> {
   }
 
   Future<void> _start() async {
+    // bloccato subito: un doppio tocco durante le letture o il dialogo del
+    // silenzio aprirebbe due schermate Focus
     if (_starting) return;
-    final focus = _s.focus;
-    final link = await widget.link();
-    if (!mounted) return;
-    final quiet = await prepareSystemQuiet(context, focus);
-    if (quiet == null || !mounted) return;
     setState(() => _starting = true);
-    await focus.askNotificationPermissionOnce();
-    await focus.start(_settings, link, systemDnd: quiet);
-    if (!mounted) return;
-    setState(() => _starting = false);
+    final focus = _s.focus;
+    var open = false;
+    try {
+      final link = await widget.link();
+      if (!mounted) return;
+      final quiet = await prepareSystemQuiet(context, focus);
+      if (quiet == null || !mounted) return;
+      await focus.askNotificationPermissionOnce();
+      await focus.start(_settings, link, systemDnd: quiet);
+      open = mounted;
+    } catch (e) {
+      if (mounted) showSnack(context, 'Sessione non avviata: $e');
+    } finally {
+      if (mounted) setState(() => _starting = false);
+    }
+    if (!open || !mounted) return;
     await Navigator.of(
       context,
     ).push(MaterialPageRoute<void>(builder: (_) => const FocusScreen()));

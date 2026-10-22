@@ -272,7 +272,7 @@ List<List<String>> postScriptPages(String src) {
         continue;
     }
     // Nome (operatore o procedura).
-    final n = double.tryParse(tok);
+    final n = parseFinite(tok);
     if (n != null) {
       nums.add(n);
       if (nums.length > 6) nums.removeAt(0);

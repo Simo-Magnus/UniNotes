@@ -614,7 +614,10 @@ class CatalogService {
     try {
       return (await _leggi(f, tipo, filtro), null);
     } catch (e) {
-      if (e is FormatException || e is CatalogFormatException) {
+      // contenuto illeggibile (non JSON, testo non UTF-8, valori di tipo
+      // inatteso): non un errore del disco (permessi, file in uso)
+      final contenuto = e is! FileSystemException || e.osError == null;
+      if (contenuto) {
         await _eliminaSilenzioso(f);
         _tentati.remove(rel);
         _recenti.clear();

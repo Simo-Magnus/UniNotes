@@ -104,7 +104,10 @@ class WhisperPluginEngine implements WhisperEngine {
     } catch (e) {
       throw WhisperException('Whisper non è riuscito a trascrivere: $e');
     } finally {
-      if (await tmp.exists()) await tmp.delete(recursive: true);
+      // un pezzo ancora bloccato non deve nascondere il risultato
+      try {
+        if (await tmp.exists()) await tmp.delete(recursive: true);
+      } catch (_) {}
     }
   }
 

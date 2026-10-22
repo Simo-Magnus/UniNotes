@@ -45,12 +45,18 @@ object IncomingShare {
         return out
     }
 
-    /** Uri condivisi dall'intent (EXTRA_STREAM, poi ClipData). */
+    /**
+     * Uri condivisi dall'intent (EXTRA_STREAM, poi ClipData). Le versioni
+     * con il tipo di getParcelableExtra solo da Android 14: su Android 13
+     * possono lanciare un'eccezione con certi extra (difetto del sistema,
+     * evitato anche da IntentCompat di AndroidX) e la condivisione andrebbe
+     * persa.
+     */
     private fun urisOf(intent: Intent): List<Uri> {
         val out = mutableListOf<Uri>()
         when (intent.action) {
             Intent.ACTION_SEND -> {
-                val uri: Uri? = if (Build.VERSION.SDK_INT >= 33) {
+                val uri: Uri? = if (Build.VERSION.SDK_INT >= 34) {
                     intent.getParcelableExtra(Intent.EXTRA_STREAM, Uri::class.java)
                 } else {
                     @Suppress("DEPRECATION")
@@ -61,7 +67,7 @@ object IncomingShare {
             // «Apri con → UniNotes» da un file manager o da un'altra app
             Intent.ACTION_VIEW -> intent.data?.let(out::add)
             Intent.ACTION_SEND_MULTIPLE -> {
-                val list: List<Uri>? = if (Build.VERSION.SDK_INT >= 33) {
+                val list: List<Uri>? = if (Build.VERSION.SDK_INT >= 34) {
                     intent.getParcelableArrayListExtra(Intent.EXTRA_STREAM, Uri::class.java)
                 } else {
                     @Suppress("DEPRECATION")

@@ -62,26 +62,54 @@ GraphException _offline(Uri url, SocketException e) => GraphException(
   '${networkServiceName(url)} non raggiungibile (${e.message}).',
 );
 
+/// Connessione sicura non riuscita (rete con pagina di accesso, es. Wi‑Fi
+/// dell'ateneo o di un bar, oppure connessione caduta durante la
+/// negoziazione): come la rete assente, la sincronizzazione si ferma e
+/// riprova dopo, invece di fallire file per file.
+GraphException _tlsOffline(Uri url, TlsException e) => GraphException(
+  0,
+  '${networkServiceName(url)} non raggiungibile (connessione sicura non '
+  'riuscita: ${e.message}).',
+);
+
+/// Attesa massima senza dati dal servizio (risposta, pezzo di un file): una
+/// connessione caduta senza errore (telefono che cambia rete, Wi‑Fi che si
+/// spegne) non lascia la sincronizzazione appesa per sempre. Nei test si
+/// accorcia.
+Duration networkIdleTimeout = const Duration(seconds: 60);
+
+/// Tempo in più per inviare [bytes] (blocchi dei caricamenti) anche con una
+/// rete lenta (almeno 32 KB al secondo).
+Duration _sendTime(int bytes) => Duration(milliseconds: bytes ~/ 32);
+
 Future<GraphResponse> ioTransport(
   String method,
   Uri url, {
   Map<String, String> headers = const {},
   List<int>? body,
 }) async {
+  final idle = networkIdleTimeout;
   final client = HttpClient()..connectionTimeout = const Duration(seconds: 30);
   try {
-    final req = await client.openUrl(method, url);
+    final req = await client.openUrl(method, url).timeout(idle);
     headers.forEach(req.headers.set);
     if (body != null) {
       req.contentLength = body.length;
       req.add(body);
     }
-    final res = await req.close();
-    return GraphResponse(res.statusCode, await _readAll(res), _headers(res));
+    final res = await req.close().timeout(idle + _sendTime(body?.length ?? 0));
+    return GraphResponse(
+      res.statusCode,
+      await _readAll(res.timeout(idle)),
+      _headers(res),
+    );
   } on SocketException catch (e) {
     throw _offline(url, e);
+  } on TlsException catch (e) {
+    throw _tlsOffline(url, e);
   } finally {
-    client.close();
+    // anche una richiesta rimasta a metà (tempo scaduto) si chiude subito
+    client.close(force: true);
   }
 }
 
@@ -115,18 +143,21 @@ Future<GraphResponse> ioDownload(
   File to, {
   Map<String, String> headers = const {},
 }) async {
+  final idle = networkIdleTimeout;
   final client = HttpClient()..connectionTimeout = const Duration(seconds: 30);
   try {
-    final req = await client.getUrl(url);
+    final req = await client.getUrl(url).timeout(idle);
     headers.forEach(req.headers.set);
-    final res = await req.close();
+    final res = await req.close().timeout(idle);
     final h = _headers(res);
     if (res.statusCode < 200 || res.statusCode >= 300) {
-      return GraphResponse(res.statusCode, await _readAll(res), h);
+      return GraphResponse(res.statusCode, await _readAll(res.timeout(idle)), h);
     }
     final sink = to.openWrite();
     try {
-      await sink.addStream(res);
+      // un file grande può metterci molto: conta solo l'attesa fra un
+      // pezzo e l'altro
+      await sink.addStream(res.timeout(idle));
     } catch (_) {
       await sink.close().catchError((_) => null);
       rethrow;
@@ -135,8 +166,10 @@ Future<GraphResponse> ioDownload(
     return GraphResponse(res.statusCode, Uint8List(0), h);
   } on SocketException catch (e) {
     throw _offline(url, e);
+  } on TlsException catch (e) {
+    throw _tlsOffline(url, e);
   } finally {
-    client.close();
+    client.close(force: true);
   }
 }
 
@@ -228,22 +261,41 @@ class GraphClient {
   }
 
   /// Tutte le pagine di una collezione (`value` + `@odata.nextLink`).
+  ///
+  /// Con [strict] (elenco dei file da sincronizzare) una cartella sparita
+  /// (404) o una pagina senza `value` sono errori, non un elenco vuoto:
+  /// altrimenti i file mancanti sembrerebbero «eliminati su OneDrive» e
+  /// finirebbero nel cestino del dispositivo.
   Future<List<Map<String, Object?>>> list(
     String path, [
     Map<String, String>? query,
+    bool strict = false,
   ]) async {
     final out = <Map<String, Object?>>[];
     String? next = path;
     var q = query;
     while (next != null) {
       final page = await getJson(next, q);
-      if (page == null) break;
+      if (page == null) {
+        if (strict) {
+          throw GraphException(404, 'Microsoft Graph: cartella non trovata ($path)');
+        }
+        break;
+      }
+      final value = page['value'];
+      if (strict && value is! List) {
+        throw GraphException(
+          502,
+          'Microsoft Graph: risposta inattesa per $path (elenco mancante)',
+        );
+      }
       out.addAll(
-        (page['value'] as List? ?? const []).whereType<Map>().map(
+        (value is List ? value : const []).whereType<Map>().map(
           (m) => m.cast<String, Object?>(),
         ),
       );
-      next = page['@odata.nextLink'] as String?;
+      final link = page['@odata.nextLink'];
+      next = link is String ? link : null;
       q = null;
     }
     return out;

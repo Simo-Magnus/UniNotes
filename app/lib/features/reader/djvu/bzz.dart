@@ -13,6 +13,9 @@ Uint8List bzzDecode(Uint8List data, [int start = 0, int? end]) {
   final ctx = Uint8List(300);
   final out = BytesBuilder(copy: false);
   while (true) {
+    // Dati finiti senza il blocco di fine: oltre la fine i bit valgono 1 e
+    // la dimensione letta sarebbe la massima (16 MB) per ogni blocco.
+    if (zp.exhausted) throw const FormatException('Dati BZZ troncati');
     final block = _decodeBlock(zp, ctx);
     if (block == null) break;
     out.add(block);
@@ -53,6 +56,9 @@ Uint8List? _decodeBlock(ZpDecoder zp, Uint8List ctx) {
   var marker = -1;
   final data = Uint8List(size);
   for (var i = 0; i < size; i++) {
+    if (i & 0xFFF == 0 && zp.exhausted) {
+      throw const FormatException('Dati BZZ troncati');
+    }
     final c = mtfno <= 1 ? mtfno : 2;
     if (zp.decode(ctx, c) != 0) {
       mtfno = 0;

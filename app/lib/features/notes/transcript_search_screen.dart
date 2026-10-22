@@ -12,6 +12,7 @@ import '../study/course_catalog.dart';
 import 'note_viewer_screen.dart';
 import 'notes_store.dart';
 import 'recording_player_screen.dart';
+import 'safe_files.dart';
 
 /// Frammento del testo intorno alla prima occorrenza di [query] (null se
 /// non c'è): «…poco prima **query** poco dopo…».
@@ -83,7 +84,7 @@ class _TranscriptSearchScreenState extends State<TranscriptSearchScreen> {
         if (t.extension != '.md') continue;
         String text;
         try {
-          text = transcriptBody(await t.file.readAsString());
+          text = transcriptBody(await readTextLenient(t.file));
         } on FileSystemException {
           continue;
         }

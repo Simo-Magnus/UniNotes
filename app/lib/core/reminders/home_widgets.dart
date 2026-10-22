@@ -27,6 +27,14 @@ Map<String, Object?> widgetPayload(List<AgendaItem> agenda, DateTime now) {
     1 => 'Domani',
     _ => 'Tra $n giorni',
   };
+  // giorni di calendario, non blocchi di 24 ore: con il cambio dell'ora
+  // legale fra oggi e la prova (giornata di 23 ore) «Tra 2 giorni» non
+  // diventa «Domani»
+  int daysTo(DateTime d) => DateTime.utc(
+    d.year,
+    d.month,
+    d.day,
+  ).difference(DateTime.utc(today.year, today.month, today.day)).inDays;
   return {
     'version': 1,
     'updated': now.toIso8601String(),
@@ -43,8 +51,8 @@ Map<String, Object?> widgetPayload(List<AgendaItem> agenda, DateTime now) {
               '${e.date.month.toString().padLeft(2, '0')}-'
               '${e.date.day.toString().padLeft(2, '0')}',
           'time': e.time,
-          'days': e.date.difference(today).inDays,
-          'daysLabel': days(e.date.difference(today).inDays),
+          'days': daysTo(e.date),
+          'daysLabel': days(daysTo(e.date)),
           'route': AppRoutes.exam(e.examId!),
         },
     ],

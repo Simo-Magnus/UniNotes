@@ -4,6 +4,7 @@ import 'dart:typed_data';
 
 import 'package:path/path.dart' as p;
 
+import '../safe_files.dart';
 import 'live_transcriber.dart';
 import 'live_transcript.dart';
 import 'recording_meta.dart';
@@ -75,23 +76,18 @@ class RecordingSession {
       sampleRate: j['frequenza'] is int ? j['frequenza'] as int : 16000,
       channels: j['canali'] is int ? j['canali'] as int : 1,
       bookmarks: [
-        for (final b in (j['segnalibri'] as List? ?? const []))
-          ?Bookmark.fromJson(b),
+        for (final b in jsonList(j['segnalibri'])) ?Bookmark.fromJson(b),
       ],
       segments: [
-        for (final s in (j['segmenti'] as List? ?? const []))
-          ?TranscriptSegment.fromJson(s),
+        for (final s in jsonList(j['segmenti'])) ?TranscriptSegment.fromJson(s),
       ],
       savedAs: j['salvataCome'] is String ? j['salvataCome'] as String : null,
     );
   }
 
-  Future<void> save() async {
-    final tmp = File('${file.path}.part');
-    await tmp.writeAsString(jsonEncode(toJson()));
-    if (await file.exists()) await file.delete();
-    await tmp.rename(file.path);
-  }
+  /// Scrittura sicura, una alla volta (timer, pausa, segnalibri e stop
+  /// possono salvare insieme).
+  Future<void> save() => writeStringAtomic(file, jsonEncode(toJson()));
 
   /// Cancella WAV e dati di lavoro.
   Future<void> delete() async {
@@ -109,12 +105,28 @@ class RecordingSession {
   }) async {
     if (!await dir.exists()) return const [];
     final out = <RecordingSession>[];
-    await for (final e in dir.list()) {
-      if (e is! File || p.extension(e.path) != '.json') continue;
-      final wav = File(p.setExtension(e.path, '.wav'));
+    final entries = [
+      await for (final e in dir.list())
+        if (e is File) e,
+    ];
+    final names = {for (final e in entries) p.basename(e.path)};
+    for (final e in entries) {
+      final name = p.basename(e.path);
+      File data;
+      if (name.endsWith('.json')) {
+        data = e;
+      } else if (name.endsWith('.json.part') &&
+          !names.contains(name.substring(0, name.length - 5))) {
+        // l'app si è chiusa mentre salvava i dati: c'è solo la copia nuova
+        data = e;
+      } else {
+        continue;
+      }
+      final base = name.substring(0, name.indexOf('.json'));
+      final wav = File(p.join(dir.path, '$base.wav'));
       if (except != null && p.equals(wav.path, except)) continue;
       try {
-        final s = fromJson(wav, jsonDecode(await e.readAsString()));
+        final s = fromJson(wav, jsonDecode(await data.readAsString()));
         if (s != null) out.add(s);
       } catch (_) {
         // dati illeggibili: il WAV resta dov'è

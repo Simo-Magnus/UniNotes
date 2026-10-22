@@ -125,7 +125,23 @@ class ZpDecoder {
   int _bits = 0;
   int _nbits = 0;
 
-  int _byte() => _pos < _end ? _data[_pos++] : 0xFF;
+  int _byte() {
+    if (_pos < _end) return _data[_pos++];
+    _overrun++;
+    return 0xFF;
+  }
+
+  int _overrun = 0;
+
+  /// Byte chiesti oltre la fine dei dati. Un flusso valido ne chiede al più
+  /// un paio; molti di più vogliono dire dati troncati o rovinati, e i
+  /// decodificatori si fermano invece di girare a vuoto sui bit a 1.
+  int get overrun => _overrun;
+
+  /// Soglia oltre la quale [overrun] indica dati finiti.
+  static const exhaustedAfter = 64;
+
+  bool get exhausted => _overrun > exhaustedAfter;
 
   int _bit() {
     if (_nbits == 0) {

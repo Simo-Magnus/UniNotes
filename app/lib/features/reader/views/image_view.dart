@@ -7,6 +7,29 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../reader_controller.dart';
 import 'reader_surface.dart';
 
+/// Lato massimo di un'immagine decodificata nel lettore: una foto o una
+/// scansione da 20000×20000 pixel occuperebbe 1,6 GB in memoria e il
+/// sistema chiuderebbe l'app. Le immagini più piccole restano come sono.
+const kReaderMaxImageSide = 4096;
+
+/// [provider] ridotta (proporzioni mantenute) a [maxSide] pixel di lato.
+ImageProvider limitedImage(
+  ImageProvider provider, {
+  int maxSide = kReaderMaxImageSide,
+}) => ResizeImage(
+  provider,
+  width: maxSide,
+  height: maxSide,
+  policy: ResizeImagePolicy.fit,
+  allowUpscaling: false,
+);
+
+/// Immagine di un documento (byte) ridotta come [limitedImage].
+ImageProvider limitedMemoryImage(
+  Uint8List bytes, {
+  int maxSide = kReaderMaxImageSide,
+}) => limitedImage(MemoryImage(bytes), maxSide: maxSide);
+
 /// Immagine con zoom (pizzico, rotellina, Ctrl +/−/0) e trascinamento.
 /// File (PNG, JPEG, GIF, WebP, BMP, HEIC dove il sistema lo decodifica),
 /// byte già convertiti (TIFF) o SVG.
@@ -65,6 +88,9 @@ class _ImageViewState extends State<ImageView> {
       ..multiply(_t.value);
   }
 
+  static ImageProvider _limited(ImageProvider provider) =>
+      limitedImage(provider);
+
   Widget _error(BuildContext context) =>
       widget.onUnsupported?.call(context) ??
       Center(
@@ -88,14 +114,14 @@ class _ImageViewState extends State<ImageView> {
         errorBuilder: (c, _, _) => _error(c),
       );
     } else if (widget.bytes != null) {
-      image = Image.memory(
-        widget.bytes!,
+      image = Image(
+        image: _limited(MemoryImage(widget.bytes!)),
         fit: BoxFit.contain,
         errorBuilder: (c, _, _) => _error(c),
       );
     } else {
-      image = Image.file(
-        File(widget.path!),
+      image = Image(
+        image: _limited(FileImage(File(widget.path!))),
         fit: BoxFit.contain,
         errorBuilder: (c, _, _) => _error(c),
       );

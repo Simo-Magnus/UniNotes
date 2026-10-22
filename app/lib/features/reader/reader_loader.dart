@@ -121,6 +121,66 @@ class InfoContent extends ReaderContent {
 /// Sopra questa dimensione i documenti si analizzano in un isolate.
 const _isolateThreshold = 384 * 1024;
 
+/// File più grandi di così non si caricano in memoria per l'anteprima (un
+/// telefono chiuderebbe l'app per mancanza di memoria): si propone di
+/// aprirli con un'altra app. I PDF e i file audio/video non contano, perché
+/// i loro lettori leggono dal disco un pezzo alla volta. Impostabile nei test.
+int readerMaxBytes = (Platform.isAndroid || Platform.isIOS ? 200 : 600) *
+    1024 *
+    1024;
+
+/// Tempo massimo di un'analisi in un isolate: un file costruito male non
+/// deve tenere il lettore sulla rotella per sempre. Impostabile nei test.
+Duration readerParseTimeout = const Duration(minutes: 2);
+
+/// File troppo grande per l'anteprima (vedi [readerMaxBytes]).
+class ReaderFileTooLargeException implements Exception {
+  const ReaderFileTooLargeException(this.bytes);
+  final int bytes;
+  @override
+  String toString() => 'File troppo grande ($bytes byte)';
+}
+
+/// Analisi interrotta dopo [readerParseTimeout].
+class ReaderTimeoutException implements Exception {
+  const ReaderTimeoutException();
+  @override
+  String toString() => 'Analisi del file interrotta: troppo lenta';
+}
+
+/// Byte di [f], se non supera [readerMaxBytes].
+Future<Uint8List> _readAll(File f) async {
+  final len = await f.length();
+  if (len > readerMaxBytes) throw ReaderFileTooLargeException(len);
+  return f.readAsBytes();
+}
+
+String _megabytes(int bytes) {
+  final mb = bytes / (1024 * 1024);
+  return mb >= 10 ? mb.round().toString() : mb.toStringAsFixed(1);
+}
+
+/// Messaggio per un errore di lettura del file (permessi, file sparito,
+/// file in uso).
+String fileErrorMessage(FileSystemException e) {
+  final code = e.osError?.errorCode;
+  final win = Platform.isWindows;
+  // Windows: 2/3 non trovato, 5 accesso negato, 32/33 file in uso da un
+  // altro programma. POSIX: 2 ENOENT, 1 EPERM, 13 EACCES, 16 EBUSY.
+  if (code == 2 || (win && code == 3)) {
+    return 'Il file non esiste più su questo dispositivo.';
+  }
+  if (win ? code == 5 : (code == 1 || code == 13)) {
+    return 'L\'app non ha il permesso di leggere questo file. Aprilo con '
+        'un\'altra app o copialo in una cartella accessibile.';
+  }
+  if (win ? (code == 32 || code == 33) : code == 16) {
+    return 'Il file è in uso da un altro programma: chiudilo e riprova, '
+        'oppure aprilo con un\'altra app.';
+  }
+  return 'Impossibile leggere il file: ${e.osError?.message ?? e.message}.';
+}
+
 /// Cartella dei file temporanei del lettore (PDF estratti, file di
 /// archivi). Impostabile nei test.
 Future<Directory> Function() readerTempDir = () async =>
@@ -155,15 +215,47 @@ Future<Uint8List> _head(File f) async {
 Future<(ReaderFormat, ReaderContent)> loadReaderContent(String path) async {
   final file = File(path);
   if (!await file.exists()) {
+    // una cartella trascinata nella sezione File
+    if (await Directory(path).exists()) {
+      return (
+        unknownFormat(''),
+        const InfoContent('È una cartella: apri uno dei file che contiene.'),
+      );
+    }
     return (
       unknownFormat(readerExtension(path)),
       const InfoContent('Il file non esiste più su questo dispositivo.'),
     );
   }
-  final head = await _head(file);
+  // Anche i primi byte possono non leggersi (permesso negato, file
+  // cancellato o spostato nel frattempo, unità di rete scollegata).
+  Uint8List head;
+  try {
+    head = await _head(file);
+  } on FileSystemException catch (e) {
+    return (detectFormat(path), InfoContent(fileErrorMessage(e)));
+  }
   final format = detectFormat(path, head);
   try {
     return (format, await _load(file, format, head));
+  } on ReaderFileTooLargeException catch (e) {
+    return (
+      format,
+      InfoContent(
+        'Il file è troppo grande per l\'anteprima nell\'app '
+        '(${_megabytes(e.bytes)} MB): aprilo con un\'altra app.',
+      ),
+    );
+  } on ReaderTimeoutException {
+    return (
+      format,
+      const InfoContent(
+        'Il file richiede troppo tempo per essere letto (forse è danneggiato '
+        'o costruito in modo insolito): aprilo con un\'altra app.',
+      ),
+    );
+  } on FileSystemException catch (e) {
+    return (format, InfoContent(fileErrorMessage(e)));
   } on EncryptedDocumentException {
     return (
       format,
@@ -189,11 +281,27 @@ Future<(ReaderFormat, ReaderContent)> loadReaderContent(String path) async {
       InfoContent('${e.message} Aprilo con un\'app per Windows Ink.'),
     );
   } catch (e) {
-    return (
-      format,
-      InfoContent('Impossibile leggere il file come ${format.label}: $e'),
-    );
+    return (format, InfoContent(unreadableMessage(format, e)));
   }
+}
+
+/// Messaggio per un file che il lettore non riesce ad analizzare: in
+/// italiano, con il dettaglio tecnico solo quando dice qualcosa di utile.
+String unreadableMessage(ReaderFormat format, Object e) {
+  final base =
+      'Impossibile leggere il file come ${format.label}: forse è danneggiato, '
+      'incompleto o in una variante non supportata. Prova ad aprirlo con '
+      'un\'altra app.';
+  // Gli errori del parser (FormatException con un testo) spiegano cosa
+  // manca; quelli interni (RangeError, TypeError, ...) no.
+  if (e is FormatException && e.message.trim().isNotEmpty) {
+    return '$base\n(${e.message.trim()})';
+  }
+  if (e is OutOfMemoryError || e is StackOverflowError) {
+    return 'Il file è troppo complesso per l\'anteprima nell\'app: aprilo '
+        'con un\'altra app.';
+  }
+  return base;
 }
 
 /// Spiegazione per un e-book protetto (l'app non toglie le protezioni).
@@ -273,7 +381,7 @@ Future<ReaderContent> _load(
       }
       return PdfContent(file.path);
     case ReaderViewer.djvu:
-      final bytes = await file.readAsBytes();
+      final bytes = await _readAll(file);
       return _run(() => djvuContent(bytes), bytes.length);
     case ReaderViewer.media:
       final t = await findTranscript(file.path);
@@ -286,11 +394,16 @@ Future<ReaderContent> _load(
     case ReaderViewer.image:
       return _image(file, ext);
     case ReaderViewer.archive:
-      final bytes = await file.readAsBytes();
-      final archive = await ReaderArchive.open(bytes);
+      final bytes = await _readAll(file);
+      // Elenco delle voci in un isolate per gli archivi grandi (un indice
+      // rovinato non deve bloccare l'interfaccia).
+      final entries = await _run(() async {
+        final archive = await ReaderArchive.open(bytes);
+        return [for (final i in archive.items) ArchiveEntry(i.name, i.size)];
+      }, bytes.length);
       final onepkg = ext == '.onepkg';
       return ArchiveContent(
-        [for (final i in archive.items) ArchiveEntry(i.name, i.size)],
+        entries,
         actions: onepkg ? const {ReaderAction.oneNote} : const {},
         notice: onepkg
             ? 'Pacchetto OneNote: tocca una sezione (.one) per leggerne testo '
@@ -298,8 +411,8 @@ Future<ReaderContent> _load(
             : null,
       );
     case ReaderViewer.container:
-      final bytes = await file.readAsBytes();
-      final preview = containerPreview(bytes);
+      final bytes = await _readAll(file);
+      final preview = await _run(() => containerPreview(bytes), bytes.length);
       final pdf = preview.pdf;
       final what = switch (ext) {
         '.pages' ||
@@ -330,7 +443,7 @@ Future<ReaderContent> _load(
         'Aprilo con l\'app ${format.label} o esportalo in PDF.',
       );
     case ReaderViewer.ink:
-      final bytes = await file.readAsBytes();
+      final bytes = await _readAll(file);
       final doc = await _run(
         () => switch (ext) {
           '.excalidraw' => parseExcalidraw(bytes),
@@ -341,14 +454,17 @@ Future<ReaderContent> _load(
       );
       return InkContent(doc);
     case ReaderViewer.outline:
-      final bytes = await file.readAsBytes();
+      final bytes = await _readAll(file);
       return OutlineContent(
-        ext == '.opml' ? parseOpml(bytes) : parseMindMap(bytes),
+        await _run(
+          () => ext == '.opml' ? parseOpml(bytes) : parseMindMap(bytes),
+          bytes.length,
+        ),
       );
     case ReaderViewer.info:
       return InfoContent(_infoMessage(format));
     case ReaderViewer.document:
-      final bytes = await file.readAsBytes();
+      final bytes = await _readAll(file);
       // Fumetti: .cbr e .cbz si riconoscono dal contenuto (spesso un .cbz
       // è in realtà un RAR e viceversa).
       if ((ext == '.cbr' || ext == '.cbz') && isRar(bytes)) {
@@ -377,25 +493,111 @@ Future<ReaderContent> _load(
 }
 
 Future<T> _run<T>(FutureOr<T> Function() f, int size) =>
-    size > _isolateThreshold ? Isolate.run(f) : Future.sync(f);
+    size > _isolateThreshold ? runIsolated(f) : Future.sync(f);
+
+/// Come [Isolate.run], ma con un tempo massimo ([readerParseTimeout] o
+/// [timeout]): allo scadere l'isolate si ferma (niente calcoli e memoria
+/// che restano occupati in sottofondo) e si lancia
+/// [ReaderTimeoutException]. Un isolate che muore senza risultato (es.
+/// memoria finita) diventa un [RemoteError]. Le eccezioni del calcolo
+/// arrivano con il loro tipo, come con [Isolate.run].
+Future<T> runIsolated<T>(FutureOr<T> Function() f, {Duration? timeout}) async {
+  final port = RawReceivePort();
+  final done = Completer<T>();
+  port.handler = (Object? response) {
+    if (done.isCompleted) return;
+    if (response is List && response.length == 1) {
+      done.complete(response[0] as T);
+    } else if (response is List && response.length == 2) {
+      final error = response[0], stack = response[1];
+      if (stack is StackTrace && error != null) {
+        done.completeError(error, stack);
+      } else {
+        final e = RemoteError('$error', '$stack');
+        done.completeError(e, e.stackTrace);
+      }
+    } else {
+      final e = RemoteError('Analisi terminata senza risultato', '');
+      done.completeError(e, StackTrace.empty);
+    }
+  };
+  final Isolate isolate;
+  try {
+    isolate = await Isolate.spawn<(SendPort, FutureOr<T> Function())>(
+      _isolateMain,
+      (port.sendPort, f),
+      onError: port.sendPort,
+      onExit: port.sendPort,
+      errorsAreFatal: true,
+      debugName: 'lettore',
+    );
+  } catch (_) {
+    port.close();
+    rethrow;
+  }
+  final timer = Timer(timeout ?? readerParseTimeout, () {
+    if (!done.isCompleted) done.completeError(const ReaderTimeoutException());
+  });
+  try {
+    return await done.future;
+  } finally {
+    timer.cancel();
+    port.close();
+    isolate.kill(priority: Isolate.immediate);
+  }
+}
+
+Future<void> _isolateMain<T>((SendPort, FutureOr<T> Function()) msg) async {
+  final (port, f) = msg;
+  final T result;
+  try {
+    result = await f();
+  } catch (e, s) {
+    // Se l'errore non si può inviare diventa un errore non gestito
+    // dell'isolate, che arriva come RemoteError (onError).
+    Isolate.exit(port, List<Object?>.of([e, s]));
+  }
+  Isolate.exit(port, List<Object?>.filled(1, result));
+}
 
 String _infoMessage(ReaderFormat f) =>
     'Questo tipo di file (${f.label}) non si può mostrare nell\'app.';
 
 Future<ReaderContent> _image(File file, String ext) async {
   if (ext == '.svg') {
-    return ImageContent(bytes: await file.readAsBytes(), svg: true);
+    return ImageContent(bytes: await _readAll(file), svg: true);
   }
   if (const {'.tif', '.tiff', '.tga', '.ico'}.contains(ext)) {
-    final bytes = await file.readAsBytes();
-    final png = await _run(() {
-      final image = img.decodeImage(bytes);
-      return image == null ? null : img.encodePng(image);
-    }, bytes.length);
+    final bytes = await _readAll(file);
+    final png = await _run(() => _toPng(bytes), bytes.length);
     if (png == null) throw const FormatException('immagine non decodificabile');
     return ImageContent(bytes: png);
   }
   return ImageContent(path: file.path);
+}
+
+/// Lato massimo delle immagini convertite (TIFF, TGA, ICO): come per le
+/// altre immagini, oltre si riduce (memoria del telefono).
+const _maxImageSide = 4096;
+
+/// TIFF/TGA/ICO → PNG. Le dimensioni si leggono prima di decodificare: un
+/// TIFF di 30000×30000 pixel chiederebbe gigabyte di memoria.
+Uint8List? _toPng(Uint8List bytes) {
+  final decoder = img.findDecoderForData(bytes);
+  final info = decoder?.startDecode(bytes);
+  if (info != null && info.width * info.height > 80 * 1000 * 1000) {
+    throw FormatException(
+      'immagine troppo grande (${info.width}×${info.height} pixel)',
+    );
+  }
+  var image = img.decodeImage(bytes);
+  if (image == null) return null;
+  if (image.width > _maxImageSide || image.height > _maxImageSide) {
+    image = image.width >= image.height
+        ? img.copyResize(image, width: _maxImageSide)
+        : img.copyResize(image, height: _maxImageSide);
+  }
+  return img.encodePng(image);
 }
 
 const _embedExt = {'.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp'};
@@ -417,11 +619,22 @@ EmbedResolver noteEmbeds(String notePath) {
       // assoluti o di rete come «\\server\x.png»)
       if (!p.isWithin(dir, p.normalize(c))) continue;
       final f = File(c);
-      if (f.existsSync()) return f.readAsBytesSync();
+      if (f.existsSync()) return _readEmbed(f);
     }
     final found = findNear(dir, p.basename(clean));
-    return found == null ? null : File(found).readAsBytesSync();
+    return found == null ? null : _readEmbed(File(found));
   };
+}
+
+/// Immagine incorporata, o null se non si legge (permesso negato, file
+/// sparito) o è enorme: la nota si mostra comunque.
+Uint8List? _readEmbed(File f) {
+  try {
+    if (f.lengthSync() > 50 * 1024 * 1024) return null;
+    return f.readAsBytesSync();
+  } on FileSystemException {
+    return null;
+  }
 }
 
 /// File di nome [name] in [dir] o nelle sottocartelle (fino a [depth]
@@ -531,8 +744,15 @@ Future<(String, RDoc)?> findTranscript(String audioPath) async {
   for (final d in dirs) {
     for (final ext in exts) {
       final f = File(p.join(d.path, '$base$ext'));
-      if (!await f.exists()) continue;
-      final text = decodeText(await f.readAsBytes());
+      final String text;
+      try {
+        // una trascrizione illeggibile o enorme non deve impedire di
+        // ascoltare la registrazione
+        if (!await f.exists() || await f.length() > 32 * 1024 * 1024) continue;
+        text = decodeText(await f.readAsBytes());
+      } on FileSystemException {
+        continue;
+      }
       if (ext == '.srt' || ext == '.vtt') return (f.path, subtitlesDoc(text));
       final timed = parseTimedLines(text);
       if (timed.length >= 3) return (f.path, cuesDoc(timed));
@@ -551,7 +771,24 @@ const _linkedExt = {'.md', '.markdown', '.html', '.htm', '.csv', '.txt'};
 /// tutto con le cartelle, così i collegamenti tra le pagine e le immagini
 /// funzionano.
 Future<String> extractArchiveEntry(String archivePath, String entry) async {
-  final bytes = await File(archivePath).readAsBytes();
+  final bytes = await _readAll(File(archivePath));
+  // La cartella si risolve qui: nell'isolate le variabili globali (anche
+  // [readerTempDir] impostato nei test) ripartono dai valori iniziali.
+  final temp = (await readerTempDir()).path;
+  // Decompressione in un isolate per gli archivi grandi: la schermata non
+  // si blocca e un archivio costruito male si ferma dopo il tempo massimo.
+  return _run(
+    () => _extract(archivePath, bytes, entry, temp),
+    bytes.length,
+  );
+}
+
+Future<String> _extract(
+  String archivePath,
+  Uint8List bytes,
+  String entry,
+  String temp,
+) async {
   final archive = await ReaderArchive.open(bytes);
   if (archive is ZipArchive &&
       _linkedExt.contains(p.extension(entry).toLowerCase())) {
@@ -560,28 +797,75 @@ Future<String> extractArchiveEntry(String archivePath, String entry) async {
     if (items.length <= 5000 && total <= 200 * 1024 * 1024) {
       final root = Directory(
         p.join(
-          (await readerTempDir()).path,
+          temp,
           '${archivePath.hashCode.toUnsigned(32).toRadixString(16)}_'
           '${bytes.length}_x',
         ),
       );
       String? out;
       for (final i in items) {
-        final rel = p.normalize(i.name.replaceAll('\\', '/'));
+        final rel = p.normalize(
+          i.name.replaceAll('\\', '/').split('/').map(safeFileName).join('/'),
+        );
         if (rel.startsWith('..') || p.isAbsolute(rel)) continue;
         final f = File(p.join(root.path, rel));
-        final data = await archive.read(i.name);
-        if (data == null) continue;
-        if (!await f.exists() || await f.length() != data.length) {
-          await f.parent.create(recursive: true);
-          await f.writeAsBytes(data, flush: true);
+        // niente uscite dalla cartella («C:x», «\\server\x», «..»)
+        if (!p.isWithin(root.path, f.path)) continue;
+        try {
+          final data = await archive.read(i.name);
+          if (data == null) continue;
+          if (!await f.exists() || await f.length() != data.length) {
+            await f.parent.create(recursive: true);
+            await f.writeAsBytes(data, flush: true);
+          }
+          if (i.name == entry) out = f.path;
+        } on FileSystemException {
+          // voce che non si può scrivere (un file e una cartella con lo
+          // stesso nome, percorso troppo lungo): si salta
+        } on FormatException {
+          // voce rovinata, protetta o troppo grande: le altre restano
         }
-        if (i.name == entry) out = f.path;
       }
       if (out != null) return out;
     }
   }
   final data = await archive.read(entry);
   if (data == null) throw FileSystemException('Voce non trovata', entry);
-  return _writeTemp('$archivePath|$entry', p.basename(entry), data);
+  final dir = Directory(
+    p.join(
+      temp,
+      '${'$archivePath|$entry'.hashCode.toUnsigned(32).toRadixString(16)}_'
+      '${data.length}',
+    ),
+  );
+  await dir.create(recursive: true);
+  final f = File(p.join(dir.path, safeFileName(p.basename(entry))));
+  if (!await f.exists() || await f.length() != data.length) {
+    await f.writeAsBytes(data, flush: true);
+  }
+  return f.path;
+}
+
+/// Nome di file valido sul sistema (Windows rifiuta `<>:"|?*`, i caratteri
+/// di controllo, i punti e gli spazi finali e i nomi riservati come CON o
+/// NUL; gli altri solo il carattere nullo) e non più lungo di 120
+/// caratteri, mantenendo l'estensione. Altrove i nomi restano uguali, così
+/// i collegamenti tra le pagine di un'esportazione funzionano.
+String safeFileName(String name, {bool? windows}) {
+  final win = windows ?? Platform.isWindows;
+  if (name == '.' || name == '..') return name;
+  var n = name.replaceAll(win ? RegExp(r'[<>:"|?*\x00-\x1F]') : '\x00', '_');
+  if (win) {
+    n = n.replaceAll(RegExp(r'[. ]+$'), '');
+    final stem = p.basenameWithoutExtension(n).toUpperCase();
+    if (RegExp(r'^(CON|PRN|AUX|NUL|COM\d|LPT\d)$').hasMatch(stem)) n = '_$n';
+  }
+  if (n.isEmpty) return '_';
+  if (n.length > 120) {
+    final ext = p.extension(n);
+    n = ext.length < 20
+        ? '${n.substring(0, 120 - ext.length)}$ext'
+        : n.substring(0, 120);
+  }
+  return n;
 }

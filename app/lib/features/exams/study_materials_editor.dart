@@ -52,7 +52,7 @@ class _StudyMaterialsEditorState extends State<StudyMaterialsEditor> {
         dialogTitle: 'Scegli i materiali da studiare',
       );
       final paths = files.map((f) => f.path).whereType<String>().toList();
-      if (paths.isEmpty) return;
+      if (paths.isEmpty || !mounted) return;
       widget.onChanged([
         ...widget.items,
         ...paths.where((p) => !widget.items.contains(p)),

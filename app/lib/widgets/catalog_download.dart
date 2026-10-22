@@ -232,7 +232,14 @@ void mostraServeConnessione(
         ),
         action: onRetry == null
             ? null
-            : SnackBarAction(label: 'Riprova', onPressed: onRetry),
+            : SnackBarAction(
+                label: 'Riprova',
+                // la barra resta anche cambiando pagina: «Riprova» non deve
+                // usare il contesto di una pagina già chiusa
+                onPressed: () {
+                  if (context.mounted) onRetry();
+                },
+              ),
       ),
     );
 }

@@ -56,10 +56,20 @@ class _PdfViewState extends State<PdfView> {
     final sel = params.textSelectionDelegate;
     if (!sel.hasSelectedText) return;
     Future<void> run(Future<void> Function(List<PdfPageTextRange>) f) async {
-      final ranges = await sel.getSelectedTextRanges();
-      params.dismissContextMenu();
-      await f(ranges);
-      await sel.clearTextSelection();
+      try {
+        final ranges = await sel.getSelectedTextRanges();
+        params.dismissContextMenu();
+        await f(ranges);
+        await sel.clearTextSelection();
+      } catch (e) {
+        // disco pieno, cartella non scrivibile, selezione non più valida
+        if (!mounted) return;
+        ScaffoldMessenger.maybeOf(context)?.showSnackBar(
+          const SnackBar(
+            content: Text('Impossibile salvare l\'evidenziazione.'),
+          ),
+        );
+      }
     }
 
     for (final (name, color) in kHighlightColors) {
@@ -138,7 +148,8 @@ class _PdfViewState extends State<PdfView> {
   }
 
   Future<void> _goTo(int page) async {
-    if (!_pdf.isReady) return;
+    // PDF senza pagine: clamp(1, 0) lancerebbe un errore
+    if (!_pdf.isReady || _pdf.pageCount < 1) return;
     await _pdf.goToPage(pageNumber: page.clamp(1, _pdf.pageCount));
   }
 

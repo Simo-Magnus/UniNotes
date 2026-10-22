@@ -83,7 +83,31 @@ class ParakeetWorker {
     }
     final w = ParakeetWorker._(m, isolate, replies);
     replies.listen(w._onReply);
+    // l'isolate si ferma (errore non gestito, memoria esaurita): le richieste
+    // in corso falliscono invece di restare in attesa per sempre (il testo
+    // dal vivo passerebbe a Whisper solo dopo un errore)
+    final exit = w._exit = RawReceivePort((Object? m) => w._died(m));
+    isolate
+      ..addOnExitListener(exit.sendPort, response: 'uscita')
+      ..addErrorListener(exit.sendPort);
     return w;
+  }
+
+  RawReceivePort? _exit;
+
+  void _died(Object? m) {
+    if (_closed) return;
+    final why = m is List && m.isNotEmpty ? ': ${m.first}' : '.';
+    _closed = true;
+    _exit?.close();
+    _replies.close();
+    _isolate.kill(priority: Isolate.immediate);
+    for (final c in _pending.values) {
+      if (!c.isCompleted) {
+        c.completeError(ParakeetException('Parakeet si è fermato$why'));
+      }
+    }
+    _pending.clear();
   }
 
   void _onReply(Object? m) {
@@ -132,6 +156,7 @@ class ParakeetWorker {
       await _call('dispose', const []).timeout(const Duration(seconds: 5));
     } catch (_) {}
     _closed = true;
+    _exit?.close();
     _replies.close();
     _isolate.kill();
     for (final c in _pending.values) {

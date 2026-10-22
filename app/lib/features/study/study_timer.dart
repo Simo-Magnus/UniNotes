@@ -124,6 +124,18 @@ class StudyTimer extends ChangeNotifier {
     return session;
   }
 
+  /// Rimette nel cronometro (in pausa) una sessione che [stop] aveva tolto
+  /// ma che non si è potuta salvare: il tempo non va perso e «Salva» si
+  /// può riprovare.
+  void putBack(StudySession session) {
+    _startedAt = session.start;
+    _runningSince = null;
+    _accumulated = Duration(minutes: session.durationMinutes);
+    notes = session.notes ?? '';
+    _stopTicker();
+    notifyListeners();
+  }
+
   /// Scarta la sessione in corso.
   void reset() {
     _startedAt = null;

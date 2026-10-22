@@ -14,6 +14,7 @@ bool isNetworkError(Object e) =>
     e is SocketException ||
     e is TimeoutException ||
     e is HttpException ||
+    e is TlsException ||
     (e is GraphException && e.status == 0);
 
 /// Stato di un file all'ultima sincronizzazione riuscita.
@@ -391,14 +392,36 @@ abstract class FolderSync {
     await f.rename(dest.path);
   }
 
-  String conflictName(String rel) {
+  /// «nome (conflitto dispositivo data).ext»; [copy] > 1 per un secondo
+  /// conflitto dello stesso file nello stesso minuto («… 2)»).
+  String conflictName(String rel, [int copy = 1]) {
     final ext = p.posix.extension(rel);
     final base = rel.substring(0, rel.length - ext.length);
     final d = clock();
     String two(int v) => v.toString().padLeft(2, '0');
     final stamp =
         '${d.year}-${two(d.month)}-${two(d.day)} ${two(d.hour)}.${two(d.minute)}';
-    return '$base (conflitto $deviceName $stamp)$ext';
+    final n = copy > 1 ? ' $copy' : '';
+    return '$base (conflitto $deviceName $stamp$n)$ext';
+  }
+
+  /// Nome della copia di conflitto di [rel] che non c'è ancora né qui né
+  /// sul servizio: la copia di un conflitto precedente non si sovrascrive.
+  Future<String> _freeConflictName(
+    String rel,
+    Map<String, LocalFile> local,
+    Map<String, RemoteFile> remote,
+  ) async {
+    var copy = 1;
+    while (true) {
+      final name = conflictName(rel, copy);
+      if (!local.containsKey(name) &&
+          !remote.containsKey(name) &&
+          !await localFile(name).exists()) {
+        return name;
+      }
+      copy++;
+    }
   }
 
   // ------------------------------------------------------------- sync
@@ -493,7 +516,7 @@ abstract class FolderSync {
             );
           } else if (localChanged && remoteChanged) {
             onProgress?.call('Conflitto: $rel');
-            final renamed = conflictName(rel);
+            final renamed = await _freeConflictName(rel, local, remote);
             final moved = localFile(renamed);
             await l.file.rename(moved.path);
             state[renamed] = await upload(renamed, moved);

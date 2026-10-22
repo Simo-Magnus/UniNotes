@@ -66,7 +66,11 @@ Future<List<File>> listFilesDeep(
   for (final d in dirs) {
     if (!await d.exists()) continue;
     try {
-      await for (final e in d.list(recursive: true, followLinks: false)) {
+      // le sottocartelle illeggibili si saltano senza fermare l'elenco
+      await for (final e
+          in d
+              .list(recursive: true, followLinks: false)
+              .handleError((Object _) {})) {
         if (e is! File) continue;
         final rel = p.relative(e.path, from: d.path);
         if (p.split(rel).any((part) => part.startsWith('.')) ||
@@ -470,13 +474,20 @@ class _FolderBrowserScreenState extends State<FolderBrowserScreen> {
 
   Future<List<FileSystemEntity>> _list() async {
     if (!await widget.dir.exists()) return const [];
-    final all = await widget.dir
-        .list()
-        .where(
-          (e) =>
-              !p.basename(e.path).startsWith('.') && !e.path.endsWith('.part'),
-        )
-        .toList();
+    // Cartella o voci senza permesso di lettura (scheda SD, cartelle di
+    // sistema): si mostrano le voci leggibili invece di una rotella infinita.
+    final all = <FileSystemEntity>[];
+    try {
+      await for (final e in widget.dir.list().handleError((Object _) {})) {
+        // i collegamenti rotti arrivano come Link: non si aprono
+        if (e is! File && e is! Directory) continue;
+        final name = p.basename(e.path);
+        if (name.startsWith('.') || e.path.endsWith('.part')) continue;
+        all.add(e);
+      }
+    } on FileSystemException {
+      // elenco interrotto: restano le voci già lette
+    }
     all.sort((a, b) {
       final da = a is Directory ? 0 : 1;
       final db = b is Directory ? 0 : 1;

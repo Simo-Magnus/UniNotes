@@ -356,6 +356,9 @@ class DataSync {
       }
       return v;
     }
+    // infinito (SQLite lo conserva) non si scrive in JSON: senza questo
+    // controllo l'unione fallirebbe a ogni sincronizzazione
+    if (v is double && !v.isFinite) return const _Skip();
     if (v == null || v is num || v is String) return v;
     return const _Skip();
   }

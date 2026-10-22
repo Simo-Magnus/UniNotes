@@ -350,7 +350,24 @@ class _CourseRow extends StatelessWidget {
     };
   }
 
+  /// Insegnamenti con una scelta in corso di salvataggio: un doppio tocco
+  /// (o due dialoghi del voto aperti uno sopra l'altro) creerebbe due esami
+  /// finali per lo stesso insegnamento.
+  static final Set<int?> _saving = {};
+
   Future<void> _choose(BuildContext context, PreviousChoice? to) async {
+    final id = entry.course.id;
+    if (!_saving.add(id)) return;
+    try {
+      await _apply(context, to);
+    } catch (e) {
+      if (context.mounted) showSnack(context, 'Scelta non salvata: $e');
+    } finally {
+      _saving.remove(id);
+    }
+  }
+
+  Future<void> _apply(BuildContext context, PreviousChoice? to) async {
     final s = context.read<AppServices>();
     final e = entry.exam;
     switch (to) {

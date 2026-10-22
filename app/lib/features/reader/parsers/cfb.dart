@@ -17,17 +17,29 @@ class Cfb {
     if (_sectorSize != 512 && _sectorSize != 4096) {
       throw const FormatException('Dimensione dei settori non valida');
     }
+    // Il mini-stream ha sempre settori da 64 byte; un valore rovinato (0 o
+    // enorme) bloccherebbe la lettura dei flussi piccoli.
+    if (_miniSize != 64) _miniSize = 64;
+    // Settori FAT al massimo quanti ne contiene il file: con un conteggio
+    // rovinato e una catena DIFAT circolare l'elenco crescerebbe senza fine.
+    final maxFat = _b.length ~/ _sectorSize + 1;
 
     // Settori della FAT: 109 nell'intestazione, gli altri nella catena DIFAT.
     final fatSectors = <int>[];
     for (var i = 0; i < 109 && fatSectors.length < fatCount; i++) {
+      if (fatSectors.length >= maxFat) break;
       final s = _d.getUint32(0x4C + i * 4, Endian.little);
       if (s < _maxReg) fatSectors.add(s);
     }
     final per = _sectorSize ~/ 4;
+    final difatSeen = <int>{};
     for (
       var n = 0;
-      n < difatCount && difatSector < _maxReg && fatSectors.length < fatCount;
+      n < difatCount &&
+          difatSector < _maxReg &&
+          fatSectors.length < fatCount &&
+          fatSectors.length < maxFat &&
+          difatSeen.add(difatSector);
       n++
     ) {
       final off = _offset(difatSector);
@@ -81,7 +93,7 @@ class Cfb {
   final Uint8List _b;
   final ByteData _d;
   late final int _sectorSize;
-  late final int _miniSize;
+  late int _miniSize;
   late final int _miniCutoff;
   late final Uint32List _fat;
   late final Uint32List _miniFat;

@@ -233,11 +233,17 @@ class _BookFormState extends State<BookForm> {
     if (stored != null && mounted) {
       final clouds = context.read<AppServices>().clouds;
       // lista comune dei libri solo locali, casella «Libri» su ogni servizio
-      await CloudDriveService.setBookInCloudFor(clouds, stored, _onOneDrive);
-      final connected = [
-        for (final c in clouds)
-          if (await c.connected()) c,
-      ];
+      // un errore del cloud (preferenze o token illeggibili) non deve
+      // lasciare il modulo bloccato su «Salvataggio…»: il file è già
+      // nell'app e il libro si salva comunque
+      var connected = <CloudDriveService>[];
+      try {
+        await CloudDriveService.setBookInCloudFor(clouds, stored, _onOneDrive);
+        connected = [
+          for (final c in clouds)
+            if (await c.connected()) c,
+        ];
+      } catch (_) {}
       if (!mounted) return;
       if (_onOneDrive && connected.isNotEmpty) {
         for (final c in connected) {

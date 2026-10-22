@@ -1,3 +1,5 @@
+import 'dart:io' show FileSystemException;
+
 import 'package:flutter/foundation.dart' show defaultTargetPlatform;
 import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
@@ -20,6 +22,7 @@ import 'notes_actions.dart';
 import 'notes_screen.dart';
 import 'notes_store.dart';
 import 'recording_player_screen.dart';
+import 'safe_files.dart';
 import '../../core/constants/text_limits.dart';
 
 /// Appunti di un corso: registrazioni (con le loro trascrizioni) →
@@ -131,7 +134,12 @@ class _CourseNotesScreenState extends State<CourseNotesScreen> {
           if (cached != null && cached.$1 == f.modified) {
             text = cached.$2;
           } else {
-            text = await f.file.readAsString();
+            try {
+              text = await readTextLenient(f.file);
+            } on FileSystemException {
+              // file sparito o bloccato: cerca solo nel nome
+              text = '';
+            }
             _texts[f.file.path] = (f.modified, text);
           }
           final i = text.toLowerCase().indexOf(q);

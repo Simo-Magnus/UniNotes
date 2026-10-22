@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io' show RawZLibFilter;
 import 'dart:typed_data';
 
 import 'package:archive/archive.dart';
@@ -43,11 +44,42 @@ class Zip {
   bool has(String name) => _byLower.containsKey(_norm(name).toLowerCase());
 
   Uint8List? bytes(String name) {
+    String decoded;
+    try {
+      decoded = Uri.decodeFull(name);
+    } on ArgumentError {
+      // «%» non seguito da due cifre esadecimali (nomi o collegamenti rovinati)
+      decoded = name;
+    }
     final f =
-        _byLower[_norm(Uri.decodeFull(name)).toLowerCase()] ??
+        _byLower[_norm(decoded).toLowerCase()] ??
         _byLower[_norm(name).toLowerCase()];
-    return f?.readBytes();
+    return f == null ? null : readEntry(f);
   }
+
+  /// Dimensione massima di una voce decompressa: un documento vero non ha
+  /// parti così grandi, una «zip bomb» (pochi KB che diventano GB) sì.
+  static int maxEntryBytes = 512 * 1024 * 1024;
+
+  /// Contenuto di [f] senza superare [maxEntryBytes], anche quando la
+  /// dimensione dichiarata nell'indice è falsa: il deflate si decomprime a
+  /// pezzi e ci si ferma al limite.
+  static Uint8List readEntry(ArchiveFile f) {
+    if (f.size > maxEntryBytes) throw _tooBig(f.name);
+    final raw = f.rawContent;
+    if (raw is ZipFile && raw.compressionMethod == CompressionType.deflate) {
+      return inflateRaw(
+        raw.getStream(decompress: false).toUint8List(),
+        limit: maxEntryBytes,
+        name: f.name,
+      );
+    }
+    final data = f.readBytes() ?? Uint8List(0);
+    if (data.length > maxEntryBytes) throw _tooBig(f.name);
+    return data;
+  }
+
+  static FormatException _tooBig(String name) => _tooBigError(name);
 
   String? text(String name) {
     final b = bytes(name);
@@ -133,4 +165,35 @@ Map<String, ({String target, String type, bool external})> readRels(
     );
   }
   return out;
+}
+
+FormatException _tooBigError(String name) =>
+    FormatException('voce dell\'archivio troppo grande: $name');
+
+/// Deflate «grezzo» (senza intestazione zlib) decompresso a pezzi, fermandosi
+/// oltre [limit] byte (FormatException): niente gigabyte in memoria da pochi
+/// KB di dati costruiti apposta. Dati troncati: quanto decompresso finora.
+Uint8List inflateRaw(List<int> data, {required int limit, String name = ''}) {
+  final filter = RawZLibFilter.inflateFilter(raw: true);
+  final out = BytesBuilder(copy: false);
+  void drain({bool end = false}) {
+    while (true) {
+      final part = filter.processed(end: end);
+      if (part == null) return;
+      out.add(part);
+      if (out.length > limit) throw _tooBigError(name);
+    }
+  }
+
+  const chunk = 256 * 1024;
+  for (var o = 0; o < data.length; o += chunk) {
+    filter.process(data, o, o + chunk < data.length ? o + chunk : data.length);
+    drain();
+  }
+  try {
+    drain(end: true);
+  } on FormatException {
+    // fine del flusso mancante (file troncato)
+  }
+  return out.takeBytes();
 }

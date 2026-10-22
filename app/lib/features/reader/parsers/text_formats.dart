@@ -115,6 +115,9 @@ RDoc jsonDoc(String text) {
     return codeDoc(const JsonEncoder.withIndent('  ').convert(v));
   } on FormatException {
     return codeDoc(text);
+  } on StackOverflowError {
+    // decine di migliaia di livelli annidati: il JSON si mostra com'è
+    return codeDoc(text);
   }
 }
 

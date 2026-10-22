@@ -13,10 +13,12 @@ import 'core/catalog/course_replacements.dart';
 import 'core/catalog/path_setup.dart';
 import 'core/database/app_database.dart';
 import 'core/router/app_shell.dart';
+import 'core/router/error_screens.dart';
 import 'core/services/app_return.dart';
 import 'core/services/app_services.dart';
 import 'core/services/app_uninstall.dart';
 import 'core/services/background_sync.dart';
+import 'core/services/error_log.dart';
 import 'core/services/portable_path.dart';
 import 'core/services/install_check.dart';
 import 'core/services/temp_files.dart';
@@ -42,6 +44,9 @@ Future<void> backgroundSyncMain() => runBackgroundSync();
 
 Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
+  // errori non gestiti nel registro locale, schermata comprensibile al posto
+  // di quella rossa/grigia (core/router/error_screens.dart)
+  installGlobalErrorHandlers();
   // Windows: il disinstallatore avvia l'app in modalità minima per la
   // pulizia dei dati (vedi features/settings/uninstall_mode.dart). Non nella
   // build del Microsoft Store, dove disinstalla Windows.
@@ -88,6 +93,28 @@ Future<void> main(List<String> args) async {
   });
   Intl.defaultLocale = 'it_IT';
   await initializeDateFormatting('it_IT');
+  await _launch();
+}
+
+/// Apre i dati e avvia l'app. Se i dati non si aprono (database non
+/// apribile, disco pieno…) si mostra cosa è successo con «Riprova» invece
+/// di una finestra vuota o della chiusura dell'app.
+Future<void> _launch() async {
+  final AppServices services;
+  try {
+    services = await _openServices();
+  } catch (e, st) {
+    debugPrint('Avvio non riuscito: $e');
+    await ErrorLog.record(e, st, context: 'Avvio dell\'app');
+    runApp(StartupErrorApp(error: e, onRetry: _launch));
+    return;
+  }
+  runApp(UniversityNotesApp(services: services));
+  _afterStart(services);
+}
+
+/// Database, servizi e preferenze lette prima della prima schermata.
+Future<AppServices> _openServices() async {
   // Primo avvio dopo una (re)installazione: via le credenziali rimaste nel
   // portachiavi; i dati di un'installazione precedente non si rileggono
   // senza chiedere (usa / elimina, oppure usa / ignora per gli appunti in
@@ -107,9 +134,13 @@ Future<void> main(List<String> args) async {
   // lettore ed evidenziazioni sincronizzate)
   await initPortableBase();
   final services = AppServices(db);
-  services.themeMode.value = parseThemeMode(
-    await services.settings.get(SettingKeys.themeMode),
-  );
+  try {
+    services.themeMode.value = parseThemeMode(
+      await services.settings.get(SettingKeys.themeMode),
+    );
+  } catch (e) {
+    debugPrint('Tema non letto: $e');
+  }
   // Aspetto (contrasto, caratteri, animazioni) e suoni/vibrazioni.
   try {
     services.display.value = DisplayPrefs.parse(
@@ -117,9 +148,13 @@ Future<void> main(List<String> args) async {
       textSize: await services.settings.get(DisplayKeys.textSize),
       reduceMotion: await services.settings.get(DisplayKeys.reduceMotion),
     );
-    await services.feedback.load(services.settings);
   } catch (e) {
     debugPrint('Preferenze dell\'aspetto non lette: $e');
+  }
+  try {
+    await services.feedback.load(services.settings);
+  } catch (e) {
+    debugPrint('Preferenze di suoni e vibrazioni non lette: $e');
   }
   // Inviti non invasivi (recensione, sostegno): conta le aperture.
   try {
@@ -146,22 +181,60 @@ Future<void> main(List<String> args) async {
   }
   // chiave API di Gemini e Antigravity tolti dall'app: valori salvati via
   unawaited(services.removeLegacyGemini().catchError((Object _) {}));
-  runApp(UniversityNotesApp(services: services));
+  return services;
+}
+
+/// Servizi avviati dopo la prima schermata: un errore di uno non ferma gli
+/// altri (e finisce nel registro locale).
+void _afterStart(AppServices services) {
+  void step(String what, void Function() run) {
+    try {
+      run();
+    } catch (e, st) {
+      debugPrint('$what: $e');
+      unawaited(ErrorLog.record(e, st, context: what));
+    }
+  }
+
+  // database danneggiato messo da parte all'apertura: lo si dice una volta
+  final aside = AppDatabase.recoveredCopy;
+  if (aside != null) {
+    AppDatabase.recoveredCopy = null;
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => unawaited(
+        showDatabaseRecoveredNotice(
+          aside,
+          recoveredRows: AppDatabase.recoveredRows,
+        ),
+      ),
+    );
+  }
   // copie temporanee di appunti e file estratti: non restano sul disco
   unawaited(clearTempFiles());
   // OneDrive e Google Drive: sincronizzazione all'avvio e ogni 10 minuti.
   // Telefono: anche con l'app in background (JobScheduler, iOS background
   // fetch; vedi core/services/background_sync.dart).
-  BackgroundSync.attach(services);
+  step('Sincronizzazione in background', () => BackgroundSync.attach(services));
   for (final c in services.clouds) {
-    c.startAutoSync();
+    step('Sincronizzazione automatica', c.startAutoSync);
   }
   // Calendario di sistema, notifiche pianificate e widget della Home
   // (nessuna richiesta di permessi all'avvio); poi la sessione Focus
   // rimasta aperta da una chiusura dell'app, che riprende o si salva.
-  unawaited(
-    services.reminders.start().whenComplete(() => services.focus.load()),
-  );
+  step('Promemoria e sessione Focus', () {
+    unawaited(
+      services.reminders
+          .start()
+          .catchError((Object e, StackTrace st) {
+            unawaited(ErrorLog.record(e, st, context: 'Promemoria'));
+          })
+          .whenComplete(
+            () => services.focus.load().catchError((Object e, StackTrace st) {
+              unawaited(ErrorLog.record(e, st, context: 'Sessione Focus'));
+            }),
+          ),
+    );
+  });
 }
 
 class UniversityNotesApp extends StatelessWidget {
@@ -268,12 +341,33 @@ class _NewYearGateState extends State<_NewYearGate> {
       // passa al nuovo id prima di tutto il resto
       await PathSetupService(_services).migrateReplacedCourses();
       if (!mounted) return;
-      await _showCourseNotice();
+      await _guard('Avviso del corso aggiornato', _showCourseNotice);
       if (!mounted) return;
-      final answer = await checkNewAcademicYear(context);
       // Il passaggio d'anno aggiorna già il database.
-      if (answer == null && mounted) await checkCatalogUpdate(context);
+      Object? answer;
+      final asked = await _guard('Nuovo anno accademico', () async {
+        answer = await checkNewAcademicYear(context);
+      });
+      if (asked && answer == null && mounted) {
+        await _guard(
+          'Aggiornamento del database',
+          () => checkCatalogUpdate(context),
+        );
+      }
     });
+  }
+
+  /// Un controllo dell'avvio che non riesce (rete, catalogo, database) non
+  /// ferma gli altri: finisce nel registro. false = non riuscito.
+  Future<bool> _guard(String what, Future<void> Function() run) async {
+    try {
+      await run();
+      return true;
+    } catch (e, st) {
+      debugPrint('$what: $e');
+      await ErrorLog.record(e, st, context: what);
+      return false;
+    }
   }
 
   @override

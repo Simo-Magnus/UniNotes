@@ -195,15 +195,29 @@ class OutlineViewState extends State<OutlineView> {
                     ),
                   ),
                 ),
-                TextButton.icon(
-                  onPressed: () => expandAll(true),
-                  icon: const Icon(Icons.unfold_more, size: 18),
-                  label: const Text('Espandi tutto'),
-                ),
-                TextButton.icon(
-                  onPressed: () => expandAll(false),
-                  icon: const Icon(Icons.unfold_less, size: 18),
-                  label: const Text('Comprimi'),
+                // sui telefoni stretti (o con il testo ingrandito) i due
+                // pulsanti si rimpiccioliscono invece di uscire dalla riga
+                Flexible(
+                  flex: 3,
+                  child: FittedBox(
+                    alignment: Alignment.centerRight,
+                    fit: BoxFit.scaleDown,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        TextButton.icon(
+                          onPressed: () => expandAll(true),
+                          icon: const Icon(Icons.unfold_more, size: 18),
+                          label: const Text('Espandi tutto'),
+                        ),
+                        TextButton.icon(
+                          onPressed: () => expandAll(false),
+                          icon: const Icon(Icons.unfold_less, size: 18),
+                          label: const Text('Comprimi'),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -221,7 +235,9 @@ class OutlineViewState extends State<OutlineView> {
                   final open = !_collapsed.contains(i);
                   final hl = hits.contains(i);
                   return Padding(
-                    padding: EdgeInsets.only(left: 22.0 * n.level),
+                    // rientro fino al 12° livello: oltre il testo uscirebbe
+                    // dallo schermo del telefono
+                    padding: EdgeInsets.only(left: 22.0 * n.level.clamp(0, 12)),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

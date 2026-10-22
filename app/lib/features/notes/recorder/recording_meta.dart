@@ -4,6 +4,8 @@ import 'dart:typed_data';
 
 import 'package:path/path.dart' as p;
 
+import '../safe_files.dart';
+
 /// Dati di una registrazione salvati accanto all'audio, con lo stesso nome
 /// ed estensione `.json` (`Registrazioni/2026-10-05 08-30 Lezione.json`):
 /// segnalibri, segmenti della trascrizione con i tempi, forma d'onda e
@@ -136,12 +138,10 @@ class RecordingMeta {
       started: DateTime.tryParse('${j['inizio'] ?? ''}'),
       course: j['corso'] is String ? j['corso'] as String : null,
       bookmarks: [
-        for (final b in (j['segnalibri'] as List? ?? const []))
-          ?Bookmark.fromJson(b),
+        for (final b in jsonList(j['segnalibri'])) ?Bookmark.fromJson(b),
       ]..sort((a, b) => a.at.compareTo(b.at)),
       segments: [
-        for (final s in (j['segmenti'] as List? ?? const []))
-          ?TranscriptSegment.fromJson(s),
+        for (final s in jsonList(j['segmenti'])) ?TranscriptSegment.fromJson(s),
       ]..sort((a, b) => a.start.compareTo(b.start)),
       transcriptSource: j['trascrizione'] is String
           ? j['trascrizione'] as String
@@ -169,13 +169,9 @@ class RecordingMeta {
   }
 
   /// Scrittura sicura (file temporaneo poi rinominato).
-  Future<void> save(String audioPath) async {
-    final f = sidecarOf(audioPath);
-    final tmp = File('${f.path}.part');
-    await tmp.writeAsString(jsonEncode(toJson()));
-    if (await f.exists()) await f.delete();
-    await tmp.rename(f.path);
-  }
+  /// Due salvataggi dello stesso file si fanno uno alla volta.
+  Future<void> save(String audioPath) =>
+      writeStringAtomic(sidecarOf(audioPath), jsonEncode(toJson()));
 }
 
 /// «1:05:09» o «05:09».
@@ -192,15 +188,16 @@ final _stamp = RegExp(r'^\[(\d{1,2}):(\d{2}):(\d{2})\]\s*(.*)$');
 /// con `[hh:mm:ss]`): la fine di ognuno è l'inizio del successivo (l'ultimo
 /// finisce a [total], se nota). Vuoto se il testo non ha i tempi.
 List<TranscriptSegment> segmentsFromMarkdown(String md, {Duration? total}) {
-  final starts = <(Duration, String)>[];
+  // righe del paragrafo raccolte e unite alla fine (unirle una alla volta
+  // copiava tutto il paragrafo a ogni riga: lento con file importati enormi)
+  final parts = <(Duration, List<String>)>[];
   for (final raw in const LineSplitter().convert(md)) {
     final m = _stamp.firstMatch(raw.trim());
     if (m == null) {
       // righe che continuano il paragrafo precedente
       final t = raw.trim();
-      if (starts.isNotEmpty && t.isNotEmpty && !t.startsWith('#')) {
-        final last = starts.removeLast();
-        starts.add((last.$1, '${last.$2} $t'.trim()));
+      if (parts.isNotEmpty && t.isNotEmpty && !t.startsWith('#')) {
+        parts.last.$2.add(t);
       }
       continue;
     }
@@ -209,8 +206,11 @@ List<TranscriptSegment> segmentsFromMarkdown(String md, {Duration? total}) {
       minutes: int.parse(m.group(2)!),
       seconds: int.parse(m.group(3)!),
     );
-    starts.add((at, m.group(4)!.trim()));
+    parts.add((at, [m.group(4)!.trim()]));
   }
+  final starts = [
+    for (final (at, lines) in parts) (at, lines.join(' ').trim()),
+  ];
   return [
     for (var i = 0; i < starts.length; i++)
       if (starts[i].$2.isNotEmpty)

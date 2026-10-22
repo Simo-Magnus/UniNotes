@@ -262,13 +262,15 @@ class ProfileSection extends StatelessWidget {
     final cal = CalendarExport(s);
     // file .ics solo dove il calendario di sistema non si collega (macOS) e
     // se lo studente l'ha scelto; altrove le nuove prove ci vanno da sole
-    final ics = !s.reminders.calendar.supported && await cal.enabled();
-    final before = {
-      if (ics)
-        for (final e in await cal.pendingWithDate()) e.id,
-    };
     final AggiornamentoDatabase agg;
+    var ics = false;
+    var before = <int?>{};
     try {
+      ics = !s.reminders.calendar.supported && await cal.enabled();
+      before = {
+        if (ics)
+          for (final e in await cal.pendingWithDate()) e.id,
+      };
       agg = await aggiornaDatabase(s);
     } catch (e) {
       if (context.mounted) {

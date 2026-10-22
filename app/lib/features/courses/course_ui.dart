@@ -72,13 +72,23 @@ String examModeLabel(String? m) => m == null ? '—' : (kExamModes[m] ?? m);
 
 /// Formatta un numero senza decimali inutili (6.0 → "6", 7.5 → "7,5").
 String formatNumber(num? v, {int decimals = 1}) {
-  if (v == null) return '—';
+  // NaN o infinito (dati importati o vecchi): toInt() lancerebbe in build
+  if (v == null || !v.isFinite) return '—';
   if (v == v.roundToDouble()) return v.toInt().toString();
   return v.toStringAsFixed(decimals).replaceAll('.', ',');
 }
 
-String formatCfu(double? cfu) =>
-    cfu == null ? 'CFU n.d.' : '${formatNumber(cfu)} CFU';
+/// CFU scritti dall'utente: numero finito tra 0 e 60 (virgola o punto),
+/// altrimenti null. «NaN», «Infinity» e «1e999» non passano.
+double? parseCfu(String? text) {
+  final n = double.tryParse((text ?? '').trim().replaceAll(',', '.'));
+  if (n == null || !n.isFinite || n < 0 || n > 60) return null;
+  return n;
+}
+
+String formatCfu(double? cfu) => cfu == null || !cfu.isFinite
+    ? 'CFU n.d.'
+    : '${formatNumber(cfu)} CFU';
 
 /// Semestre ordinabile: 1, 2, annuale, altro.
 int semesterOrder(String? s) {

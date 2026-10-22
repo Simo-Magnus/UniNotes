@@ -389,6 +389,12 @@ DjvuBitmap renderDjvuPage(DjvuPageData data, {int reduction = 1}) {
     chunks.addAll(IffChunk.parse(inc, 0).children);
   }
   final (w, h, _, rot) = _info(form.child('INFO'));
+  // Pagina vuota o enorme (INFO rovinato): niente bitmap da 0 pixel o da
+  // svariati GB.
+  final rw = (w + r - 1) ~/ r, rh = (h + r - 1) ~/ r;
+  if (w <= 0 || h <= 0 || rw * rh > 64 * 1024 * 1024) {
+    throw FormatException('DjVu: pagina di ${w}x$h pixel non disegnabile');
+  }
   IffChunk? first(String id) {
     for (final c in chunks) {
       if (c.id == id) return c;

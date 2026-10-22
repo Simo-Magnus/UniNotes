@@ -153,7 +153,11 @@ class _CourseFormPageState extends State<CourseFormPage> {
   late String? _semester = _c?.semester;
   late int? _color = _c?.color;
   late CourseStatus _status = _c?.status ?? CourseStatus.active;
-  late double? _difficulty = _c?.difficulty;
+  // difficoltà importata fuori da 0–5 (o NaN): lo Slider fallirebbe
+  late double? _difficulty = switch (_c?.difficulty) {
+    final d? when d.isFinite => d.clamp(0, 5).toDouble(),
+    _ => null,
+  };
   late String? _examMode = _c?.examMode;
   bool _saving = false;
 
@@ -238,7 +242,7 @@ class _CourseFormPageState extends State<CourseFormPage> {
     final n = integer
         ? int.tryParse(v.trim())?.toDouble()
         : double.tryParse(v.trim().replaceAll(',', '.'));
-    if (n == null) return 'Numero non valido';
+    if (n == null || !n.isFinite) return 'Numero non valido';
     if (n < min || n > max) {
       return 'Valore tra ${formatNumber(min)} e ${formatNumber(max)}';
     }

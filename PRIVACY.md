@@ -39,6 +39,8 @@ Quasi tutto quello che l'app gestisce rimane sul dispositivo su cui lo hai inser
 
 L'app tiene anche due contatori locali, la data del primo avvio e il numero di aperture, che usa solo per decidere quando mostrare nella Home l'invito a lasciare una recensione o a sostenere il progetto. Restano nel database dell'app come tutto il resto.
 
+Se qualcosa va storto, l'app lo annota in un registro degli errori, il file `errori.log` nella propria cartella di supporto (con la copia precedente `errori.log.1`, al massimo circa 1 MB in tutto): data e ora, il tipo di errore, il suo messaggio e il punto del codice in cui è avvenuto. Il messaggio può contenere il percorso o il nome di un file che stavi aprendo. Il registro non viene mai inviato a nessuno: serve a te, o a chi ti aiuta se decidi di mandarlo tu. Se il database dell'app risulta danneggiato, l'app non lo cancella: lo rinomina in `university_manager.db.danneggiato-<data>` accanto al nuovo, recupera quello che riesce a leggere e te lo segnala. «Elimina tutti i dati» cancella anche il registro e queste copie.
+
 ### Dove si trovano i file
 
 Su **Windows** il database, i libri, i materiali, gli allegati, i modelli Whisper e la copia locale del database dei corsi stanno nella cartella dei dati dell'app del tuo profilo utente (`%APPDATA%\UniNotes`). Registrazioni e appunti stanno in `Documenti\UniNotes\Corsi`; chi usava già la versione precedente dell'app con la cartella `Documenti\University Notes\Corsi` continua a usare quella.

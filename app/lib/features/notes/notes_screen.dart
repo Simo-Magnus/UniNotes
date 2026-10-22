@@ -53,8 +53,18 @@ class NotesScreen extends StatelessWidget {
       counts,
       await suggestedCourse(s, catalog),
       await s.onedrive.connected(),
-      (await s.trash.list()).length,
+      await _trashCount(s),
     );
+  }
+
+  /// Elementi in «Eliminati di recente» (0 se il cestino non si legge: un
+  /// errore lì non deve rompere tutta la schermata Registra).
+  static Future<int> _trashCount(AppServices s) async {
+    try {
+      return (await s.trash.list()).length;
+    } catch (_) {
+      return 0;
+    }
   }
 
   /// Lezione in corso adesso, altrimenti la prossima di oggi.
@@ -291,7 +301,13 @@ class _CloudSyncButton extends StatelessWidget {
                 : () async {
                     final lines = <String>[];
                     for (final c in on) {
-                      final r = await c.sync();
+                      Object? r;
+                      try {
+                        r = await c.sync();
+                      } catch (e) {
+                        // un servizio che fallisce non ferma gli altri
+                        r = 'non riuscita ($e)';
+                      }
                       lines.add(
                         '${c.serviceName}: '
                         '${r ?? c.lastError ?? 'non sincronizzato'}',

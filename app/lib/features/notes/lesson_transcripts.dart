@@ -8,6 +8,7 @@ import '../../core/theme/app_tokens.dart';
 import '../links/whisper_models.dart';
 import 'notes_store.dart';
 import 'recorder/recording_meta.dart';
+import 'safe_files.dart';
 
 /// Le trascrizioni di una lezione e come si riconoscono.
 ///
@@ -83,6 +84,25 @@ Future<bool> removeTranscriptTimes(File md, {String? audioPath}) async {
   if (p.basenameWithoutExtension(md.path).endsWith(NotesStore.geminiSuffix)) {
     return false;
   }
+  // due caricamenti della schermata insieme: un solo lavoro per file (il
+  // secondo leggeva il file troncato dal primo e lo riscriveva vuoto)
+  final running = _cleaning[md.path];
+  if (running != null) {
+    await running;
+    return false;
+  }
+  final job = _removeTimes(md, audioPath: audioPath);
+  _cleaning[md.path] = job;
+  try {
+    return await job;
+  } finally {
+    _cleaning.remove(md.path);
+  }
+}
+
+final Map<String, Future<bool>> _cleaning = {};
+
+Future<bool> _removeTimes(File md, {String? audioPath}) async {
   try {
     final modified = await md.lastModified();
     if (_cleaned[md.path] == modified) return false;
@@ -91,7 +111,14 @@ Future<bool> removeTranscriptTimes(File md, {String? audioPath}) async {
       _cleaned[md.path] = modified;
       return false;
     }
-    final text = await md.readAsString();
+    final String text;
+    try {
+      text = await md.readAsString();
+    } on FormatException {
+      // non è in UTF-8: non è una trascrizione dell'app da riscrivere
+      _cleaned[md.path] = modified;
+      return false;
+    }
     if (audioPath != null && await File(audioPath).exists()) {
       final meta = await RecordingMeta.load(audioPath);
       if (meta.segments.isEmpty) {
@@ -99,7 +126,8 @@ Future<bool> removeTranscriptTimes(File md, {String? audioPath}) async {
         if (meta.segments.isNotEmpty) await meta.save(audioPath);
       }
     }
-    await md.writeAsString(stripTranscriptTimes(text));
+    // scrittura sicura: un'interruzione non lascia la trascrizione vuota
+    await writeStringAtomic(md, stripTranscriptTimes(text));
     _cleaned[md.path] = await md.lastModified();
     return true;
   } on FileSystemException {

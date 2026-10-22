@@ -3,6 +3,8 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
+import 'safe_files.dart';
+
 /// Elemento di «Eliminati di recente».
 class TrashEntry {
   TrashEntry({
@@ -51,7 +53,7 @@ class TrashEntry {
       course: j['corso'] is String ? j['corso'] as String : null,
       deletedAt: at,
       files: [
-        for (final f in (j['file'] as List? ?? const []))
+        for (final f in jsonList(j['file']))
           if (f is Map && f['nome'] is String && f['origine'] is String)
             (f['nome'] as String, f['origine'] as String),
       ],
@@ -110,7 +112,7 @@ class RecycleBin {
     }
     final folder = Directory(p.join(base.path, id));
     await folder.create(recursive: true);
-    final moved = <(String, String)>[];
+    final planned = <(File, String, String)>[];
     final used = <String>{};
     for (final f in existing) {
       var name = p.basename(f.path);
@@ -118,8 +120,8 @@ class RecycleBin {
         name =
             '${p.basenameWithoutExtension(f.path)} ($i)${p.extension(f.path)}';
       }
-      await moveFile(f, p.join(folder.path, name));
-      moved.add((
+      planned.add((
+        f,
         name,
         originDir == null ? f.path : p.join(originDir, p.basename(f.path)),
       ));
@@ -129,10 +131,37 @@ class RecycleBin {
       title: title,
       course: course,
       deletedAt: now,
-      files: moved,
+      files: [for (final (_, name, origin) in planned) (name, origin)],
     );
-    await File(p.join(folder.path, 'info.json'))
-        .writeAsString(jsonEncode(entry.toJson()));
+    // prima i dati dell'elemento (scritti in modo sicuro), poi i file: se
+    // l'app si chiude a metà l'elemento si vede ed è ripristinabile (i file
+    // non ancora spostati sono rimasti al loro posto)
+    final moved = <(File, String)>[];
+    try {
+      await writeStringAtomic(
+        File(p.join(folder.path, 'info.json')),
+        jsonEncode(entry.toJson()),
+      );
+      for (final (f, name, _) in planned) {
+        final dest = p.join(folder.path, name);
+        await moveFile(f, dest);
+        moved.add((f, dest));
+      }
+    } catch (_) {
+      // file bloccato, disco pieno: si rimette a posto ciò che si è già
+      // spostato (nessun file sparisce senza comparire nel cestino)
+      var stuck = 0;
+      for (final (f, dest) in moved.reversed) {
+        try {
+          await moveFile(File(dest), f.path);
+        } catch (_) {
+          stuck++;
+        }
+      }
+      // un file rimasto nel cestino resta visibile lì (con i suoi dati)
+      if (stuck == 0) await _deleteDir(folder);
+      rethrow;
+    }
     return entry;
   }
 
@@ -172,9 +201,12 @@ class RecycleBin {
       final s = i == 1
           ? ''
           : (i == 2 ? ' (ripristinato)' : ' (ripristinato $i)');
+      // solo i file ancora nel cestino (dopo un ripristino interrotto quelli
+      // già rimessi a posto non sono un conflitto)
       final clash = await Future.wait([
-        for (final (_, origin) in e.files)
-          File(_withSuffix(origin, s)).exists(),
+        for (final (name, origin) in e.files)
+          if (File(p.join(folder.path, name)).existsSync())
+            File(_withSuffix(origin, s)).exists(),
       ]);
       if (!clash.contains(true)) {
         suffix = s;
@@ -203,8 +235,10 @@ class RecycleBin {
       final name = _trashNameOf(e, f.path) ?? p.basename(f.path);
       await moveFile(f, p.join(folder.path, name));
     }
-    await File(p.join(folder.path, 'info.json'))
-        .writeAsString(jsonEncode(e.toJson()));
+    await writeStringAtomic(
+      File(p.join(folder.path, 'info.json')),
+      jsonEncode(e.toJson()),
+    );
   }
 
   /// Nome nel cestino del file ripristinato in [path] (anche con il
@@ -241,23 +275,29 @@ class RecycleBin {
     if (!await base.exists()) return 0;
     final now = _now();
     var n = 0;
-    await for (final e in base.list()) {
-      if (e is! Directory) continue;
-      DateTime? at;
-      final info = File(p.join(e.path, 'info.json'));
-      try {
-        if (await info.exists()) {
-          at = TrashEntry.fromJson(
-            p.basename(e.path),
-            jsonDecode(await info.readAsString()),
-          )?.deletedAt;
+    try {
+      await for (final e in base.list()) {
+        if (e is! Directory) continue;
+        DateTime? at;
+        final info = File(p.join(e.path, 'info.json'));
+        try {
+          if (await info.exists()) {
+            at = TrashEntry.fromJson(
+              p.basename(e.path),
+              jsonDecode(await info.readAsString()),
+            )?.deletedAt;
+          }
+          at ??= (await e.stat()).modified;
+        } catch (_) {
+          continue;
         }
-      } catch (_) {}
-      at ??= (await e.stat()).modified;
-      if (expired(at, now)) {
-        await _deleteDir(e);
-        n++;
+        if (expired(at, now)) {
+          await _deleteDir(e);
+          n++;
+        }
       }
+    } on FileSystemException {
+      // cartella del cestino illeggibile: si riprova alla prossima pulizia
     }
     return n;
   }
@@ -271,13 +311,34 @@ class RecycleBin {
   }
 }
 
-/// Sposta [f] in [dest] anche fra unità diverse (copia ed elimina).
+/// Sposta [f] in [dest] anche fra unità diverse (copia ed elimina). Con la
+/// copia: prima in `<dest>.part`, poi rinominata; se la copia o la
+/// cancellazione dell'originale non riescono (disco pieno, file in uso) si
+/// toglie la copia e l'originale resta com'era (mai un file a metà al posto
+/// giusto, mai due copie).
 Future<File> moveFile(File f, String dest) async {
   try {
     return await f.rename(dest);
   } on FileSystemException {
-    final out = await f.copy(dest);
-    await f.delete();
+    final part = File('$dest.part');
+    final File out;
+    try {
+      await f.copy(part.path);
+      out = await part.rename(dest);
+    } catch (_) {
+      try {
+        if (await part.exists()) await part.delete();
+      } catch (_) {}
+      rethrow;
+    }
+    try {
+      await f.delete();
+    } catch (_) {
+      try {
+        await out.delete();
+      } catch (_) {}
+      rethrow;
+    }
     return out;
   }
 }

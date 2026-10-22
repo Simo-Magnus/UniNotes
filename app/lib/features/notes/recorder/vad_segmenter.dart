@@ -363,7 +363,10 @@ List<TranscriptSegment> splitSentences(
   return out;
 }
 
-Duration _secs(double s) => Duration(microseconds: (s * 1e6).round());
+/// Tempi del decodificatore (FFI): NaN o infiniti valgono 0 invece di far
+/// fallire la frase.
+Duration _secs(double s) =>
+    s.isFinite ? Duration(microseconds: (s * 1e6).round()) : Duration.zero;
 
 final _blank = RegExp(r'\s+');
 

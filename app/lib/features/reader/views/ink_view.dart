@@ -7,6 +7,7 @@ import '../../notes/markdown_view.dart' show findActiveColor, findMatchColor;
 import '../parsers/ink.dart';
 import '../reader_controller.dart';
 import '../reader_text.dart';
+import 'image_view.dart';
 import 'pinch.dart';
 
 /// Appunti a mano (Xournal++, Excalidraw): pagine con tratti, forme,
@@ -234,8 +235,8 @@ class _InkPageView extends StatelessWidget {
                 top: img.top * f,
                 width: math.max(1, (img.right - img.left) * f),
                 height: math.max(1, (img.bottom - img.top) * f),
-                child: Image.memory(
-                  img.bytes,
+                child: Image(
+                  image: limitedMemoryImage(img.bytes),
                   fit: BoxFit.fill,
                   errorBuilder: (_, _, _) => const SizedBox(),
                 ),
@@ -365,6 +366,8 @@ class _InkPainter extends CustomPainter {
           canvas.drawLine(Offset(x, 0), Offset(x, page.height), line);
         }
       case 'dotted':
+        // pagina enorme (file rovinato): niente milioni di punti a ogni disegno
+        if (page.width * page.height > 4e7) return;
         final dot = Paint()..color = const Color(0x803A7BD5);
         for (var y = 14.17; y < page.height; y += 14.17) {
           for (var x = 14.17; x < page.width; x += 14.17) {

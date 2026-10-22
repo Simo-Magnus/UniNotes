@@ -93,12 +93,19 @@ Future<File> finishTake(AppServices s, RecordingTake take) async {
   File out;
   final compressed =
       await take.session.wav.exists() &&
-      await AudioCodec.instance.compress(session.wav, m4a);
+      await AudioCodec.instance.compress(session.wav, m4a) &&
+      await _plausibleM4a(m4a, take.duration);
   if (compressed) {
     out = m4a;
   } else {
     out = await moveFile(session.wav, p.join(dir.path, '$base.wav'));
   }
+  // l'audio è al suo posto: da qui un errore (dati, trascrizione) non deve
+  // far salvare di nuovo la registrazione al prossimo avvio (doppione)
+  session.savedAs = out.path;
+  try {
+    await session.save();
+  } catch (_) {}
   final live = take.live;
   final segments = [...?live?.segments];
   if (segments.isEmpty) segments.addAll(session.segments);
@@ -121,10 +128,6 @@ Future<File> finishTake(AppServices s, RecordingTake take) async {
       source: liveSource,
     );
   }
-  session.savedAs = out.path;
-  try {
-    await session.save();
-  } catch (_) {}
   s.revision.bump();
 
   final pending = take.pending;
@@ -177,6 +180,19 @@ Future<File> finishTake(AppServices s, RecordingTake take) async {
     await _cleanup(session, compressed);
   }
   return out;
+}
+
+/// Il `.m4a` compresso ha una dimensione credibile per [duration] (a 48
+/// kbit/s ~6 KB al secondo): uno molto più piccolo (codificatore fermato a
+/// metà, disco pieno) non deve far cancellare il WAV, l'unica copia intera.
+/// In quel caso si tiene il WAV.
+Future<bool> _plausibleM4a(File m4a, Duration duration) async {
+  try {
+    final seconds = duration.inMilliseconds / 1000;
+    if (seconds < 10 || await m4a.length() >= seconds * 1500) return true;
+    await m4a.delete();
+  } catch (_) {}
+  return false;
 }
 
 /// File di lavoro da togliere dopo il salvataggio: tutto se la
@@ -232,8 +248,9 @@ Future<TrashEntry?> trashSession(
   }
   TrashEntry? entry;
   final tmpDir = await Directory.systemTemp.createTemp('uninotes_cestino_');
+  File? moved;
   try {
-    final wav = await moveFile(
+    final wav = moved = await moveFile(
       session.wav,
       p.join(tmpDir.path, '${session.baseName}.wav'),
     );
@@ -253,9 +270,23 @@ Future<TrashEntry?> trashSession(
       course: session.course,
       originDir: session.targetDir,
     );
+  } catch (_) {
+    // il cestino non è raggiungibile (disco pieno, cartella degli appunti
+    // assente): l'audio torna nel WAV di lavoro, che resta da recuperare,
+    // invece di sparire con la cartella temporanea
+    final m = moved;
+    if (m != null && await m.exists()) {
+      try {
+        await moveFile(m, session.wav.path);
+      } catch (_) {}
+    }
+    rethrow;
   } finally {
     try {
-      await tmpDir.delete(recursive: true);
+      // con l'audio ancora qui (non rimesso a posto) la cartella resta
+      if (!(moved != null && await moved.exists())) {
+        await tmpDir.delete(recursive: true);
+      }
     } catch (_) {}
   }
   await session.delete();
@@ -265,8 +296,29 @@ Future<TrashEntry?> trashSession(
 
 /// Recupera una registrazione rimasta dopo una chiusura improvvisa.
 Future<File?> recoverSession(AppServices s, RecordingSession session) async {
-  if (session.savedAs != null) {
-    // già salvata: restavano solo i file di lavoro
+  final saved = session.savedAs;
+  if (saved != null) {
+    // già salvata: restavano solo i file di lavoro. Se i dati accanto
+    // all'audio non si erano scritti (app chiusa, disco pieno) si rifanno
+    // da quelli della sessione: segnalibri e testo dal vivo non si perdono
+    try {
+      if (await File(saved).exists() &&
+          !await RecordingMeta.sidecarOf(saved).exists() &&
+          (session.bookmarks.isNotEmpty || session.segments.isNotEmpty)) {
+        await RecordingMeta(
+          started: session.started,
+          course: session.course,
+          bookmarks: [...session.bookmarks],
+          segments: [...session.segments],
+          transcriptSource: session.segments.isEmpty
+              ? null
+              : 'trascrizione dal vivo',
+        ).save(saved);
+      }
+    } catch (e) {
+      debugPrint('Dati della registrazione non ripristinati: $e');
+      return null;
+    }
     await session.delete();
     return null;
   }

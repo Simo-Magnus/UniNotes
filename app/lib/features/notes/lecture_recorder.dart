@@ -11,6 +11,7 @@ import 'package:record/record.dart';
 import '../../core/services/whisper_service.dart';
 import 'recorder/background_controls.dart';
 import 'recorder/live_transcriber.dart';
+import 'recorder/live_transcript.dart' show LiveChunk;
 import 'recorder/recording_meta.dart';
 import 'recorder/recording_session.dart';
 import 'recorder/system_speech.dart';
@@ -201,9 +202,39 @@ class LectureRecorder extends ChangeNotifier {
     String? language,
     List<String> vocabulary = const [],
   }) async {
-    if (active || saving) {
+    // doppio tocco su «Registra» (schermata, riquadro, widget): una sola
+    // registrazione, l'altra chiamata riceve l'errore
+    if (active || saving || _startingNow) {
       throw RecorderException('Una registrazione è già in corso.');
     }
+    _startingNow = true;
+    try {
+      await _start(
+        outputPath,
+        course: course,
+        courseId: courseId,
+        language: language,
+        vocabulary: vocabulary,
+      );
+    } on RecorderException {
+      rethrow;
+    } catch (e) {
+      // disco pieno o cartella non scrivibile, canale del sistema assente…
+      throw RecorderException('Impossibile avviare la registrazione: $e');
+    } finally {
+      _startingNow = false;
+    }
+  }
+
+  bool _startingNow = false;
+
+  Future<void> _start(
+    String outputPath, {
+    required String course,
+    int? courseId,
+    String? language,
+    List<String> vocabulary = const [],
+  }) async {
     final AudioRecorder audio;
     try {
       audio = _audio;
@@ -237,30 +268,49 @@ class LectureRecorder extends ChangeNotifier {
       sampleRate: 16000,
       channels: 1,
     );
-    await s.save();
+    try {
+      await s.save();
+    } catch (e) {
+      // disco pieno: niente registrazione (non si saprebbe recuperarla)
+      await writer.close();
+      await s.delete();
+      throw RecorderException('Impossibile avviare la registrazione: $e');
+    }
 
-    final bgError = await _bg.start(
-      course: course,
-      elapsed: Duration.zero,
-      paused: false,
-    );
+    final String? bgError;
+    try {
+      bgError = await _bg.start(
+        course: course,
+        elapsed: Duration.zero,
+        paused: false,
+      );
+    } catch (e) {
+      await writer.close();
+      await s.delete();
+      throw RecorderException('Impossibile avviare la registrazione: $e');
+    }
     if (bgError != null) {
       await writer.close();
       await s.delete();
       throw RecorderException(bgError);
     }
-    await audio.setOnConfigChanged((c) {
-      // formato scelto dal sistema (prima dei dati)
-      writer.setFormat(c.sampleRate, c.numChannels);
-      s
-        ..sampleRate = c.sampleRate
-        ..channels = c.numChannels;
-      _binner = LevelBinner(sampleRate: c.sampleRate, channels: c.numChannels);
-      live?.setFormat(c.sampleRate, c.numChannels);
-      unawaited(s.save());
-    });
     final Stream<Uint8List> stream;
     try {
+      await audio.setOnConfigChanged((c) {
+        // formato scelto dal sistema (prima dei dati); 0 Hz o nessun canale
+        // (microfono scollegato mentre parte) non sono un formato
+        if (c.sampleRate <= 0 || c.numChannels <= 0) return;
+        writer.setFormat(c.sampleRate, c.numChannels);
+        s
+          ..sampleRate = c.sampleRate
+          ..channels = c.numChannels;
+        _binner = LevelBinner(
+          sampleRate: c.sampleRate,
+          channels: c.numChannels,
+        );
+        live?.setFormat(c.sampleRate, c.numChannels);
+        unawaited(s.save().catchError((Object _) {}));
+      });
       stream = await audio.startStream(
         const RecordConfig(
           encoder: AudioEncoder.pcm16bits,
@@ -279,7 +329,10 @@ class LectureRecorder extends ChangeNotifier {
         ),
       );
     } catch (e) {
-      await _bg.stop();
+      // microfono occupato da un'altra app o assente
+      try {
+        await _bg.stop();
+      } catch (_) {}
       await writer.close();
       await s.delete();
       throw RecorderException('Impossibile avviare la registrazione: $e');
@@ -304,6 +357,10 @@ class LectureRecorder extends ChangeNotifier {
       onError: (Object e) {
         debugPrint('Flusso del microfono: $e');
       },
+      // il sistema ha chiuso il microfono (preso da un'altra app, dispositivo
+      // scollegato): la registrazione va in pausa con il motivo, invece di
+      // sembrare in corso senza audio
+      onDone: _onStreamDone,
     );
     _state = audio.onStateChanged().listen(_onState, onError: (_) {});
     // riconoscitore del sistema solo se la scelta per piattaforma lo
@@ -321,11 +378,16 @@ class LectureRecorder extends ChangeNotifier {
     )..onSegments = _saveSessionSoon;
     live = lt;
     unawaited(
-      lt.begin(
-        wavFile,
-        sampleRate: writer.sampleRate,
-        channels: writer.channels,
-      ),
+      lt
+          .begin(
+            wavFile,
+            sampleRate: writer.sampleRate,
+            channels: writer.channels,
+          )
+          .catchError((Object e) {
+            // il testo dal vivo non parte: la registrazione continua
+            debugPrint('Trascrizione dal vivo: $e');
+          }),
     );
     _listenLifecycle();
     _startTicker();
@@ -365,10 +427,32 @@ class LectureRecorder extends ChangeNotifier {
     }
   }
 
+  /// Flusso del microfono finito mentre si registra (non per [stop]).
+  void _onStreamDone() {
+    _pcm = null;
+    if (_stopping || !active) return;
+    writeError ??=
+        'Il microfono si è fermato (forse lo usa un\'altra app o è stato '
+        'scollegato).';
+    if (phase == RecorderPhase.recording) {
+      phase = RecorderPhase.paused;
+      level = 0;
+      live?.pause();
+      unawaited(_afterPauseChange());
+    }
+    notifyListeners();
+  }
+
+  /// Intestazione del WAV, dati della sessione e notifica dopo una pausa:
+  /// mai un errore (con il disco pieno la pausa arriva proprio da lì).
   Future<void> _afterPauseChange() async {
-    await _writer?.updateHeader();
-    await session?.save();
-    await _bg.update(elapsed: elapsed, paused: paused);
+    try {
+      await _writer?.updateHeader();
+      await session?.save();
+      await _bg.update(elapsed: elapsed, paused: paused);
+    } catch (e) {
+      debugPrint('Pausa: dati non aggiornati: $e');
+    }
   }
 
   Future<void> pause() async {
@@ -388,11 +472,25 @@ class LectureRecorder extends ChangeNotifier {
   Future<void> resume() async {
     if (phase != RecorderPhase.paused) return;
     if (writeError != null) return;
-    await _audio.resume();
+    try {
+      await _audio.resume();
+    } catch (e) {
+      // dopo una telefonata (iOS) o con il microfono preso da un'altra app
+      // il sistema può non ripartire: resta in pausa, l'audio fin qui è
+      // salvo e si può salvare
+      debugPrint('Ripresa non riuscita: $e');
+      writeError =
+          'La registrazione non è ripartita (microfono non disponibile).';
+      notifyListeners();
+      return;
+    }
+    if (phase != RecorderPhase.paused) return;
     phase = RecorderPhase.recording;
     live?.resume();
     notifyListeners();
-    await _bg.update(elapsed: elapsed, paused: false);
+    try {
+      await _bg.update(elapsed: elapsed, paused: false);
+    } catch (_) {}
   }
 
   Future<void> togglePause() => paused ? resume() : pause();
@@ -459,36 +557,79 @@ class LectureRecorder extends ChangeNotifier {
 
   /// Ferma la registrazione e restituisce l'audio da salvare (WAV di lavoro
   /// con intestazione aggiornata, segnalibri, trascrizione).
-  Future<RecordingTake?> stop() async {
-    if (!active) return null;
+  ///
+  /// Due chiamate insieme (doppio tocco su «Salva», comando dalla notifica)
+  /// ricevono la stessa registrazione: una sola si salva. Un errore di
+  /// scrittura qui (disco pieno) non blocca il registratore: il WAV di
+  /// lavoro resta e la registrazione si salva lo stesso.
+  Future<RecordingTake?> stop() {
+    final running = _stoppingFuture;
+    if (running != null) return running;
+    if (!active) return Future.value(null);
+    final f = _stoppingFuture = _stop();
+    return f.whenComplete(() => _stoppingFuture = null);
+  }
+
+  Future<RecordingTake?>? _stoppingFuture;
+  bool _stopping = false;
+
+  Future<RecordingTake?> _stop() async {
+    final w = _writer;
+    final s = session;
+    if (w == null || s == null) return null;
+    _stopping = true;
+    try {
+      return await _stopTake(w, s);
+    } finally {
+      _stopping = false;
+    }
+  }
+
+  Future<RecordingTake?> _stopTake(WavWriter w, RecordingSession s) async {
     try {
       await _audio.stop();
     } catch (e) {
       debugPrint('Arresto del microfono: $e');
     }
-    await _pcm?.cancel();
+    try {
+      await _pcm?.cancel();
+    } catch (_) {}
     _pcm = null;
-    await _state?.cancel();
+    try {
+      await _state?.cancel();
+    } catch (_) {}
     _state = null;
     _ticker?.cancel();
     _ticker = null;
     _sessionSave?.cancel();
-    final w = _writer!;
     await w.close();
-    final s = session!;
     final lt = live;
     final duration = w.duration;
     // ultimo testo del riconoscitore del sistema (mai bloccante)
     try {
       await lt?.flush();
     } catch (_) {}
-    final pending = lt?.finish(duration) ?? const [];
+    var pending = const <LiveChunk>[];
+    try {
+      pending = lt?.finish(duration) ?? const [];
+    } catch (e) {
+      debugPrint('Fine della trascrizione dal vivo: $e');
+    }
     s.bookmarks
       ..clear()
       ..addAll(bookmarks);
     s.segments = [...?lt?.segments];
-    await s.save();
-    await _bg.stop();
+    try {
+      await s.save();
+    } catch (e) {
+      // disco pieno: i dati restano in memoria e vanno nel salvataggio
+      debugPrint('Dati della registrazione non scritti: $e');
+    }
+    try {
+      await _bg.stop();
+    } catch (e) {
+      debugPrint('Notifica della registrazione: $e');
+    }
     final take = RecordingTake(
       session: s,
       duration: duration,

@@ -5,6 +5,7 @@ import 'dart:typed_data';
 import 'package:archive/archive.dart';
 import 'package:xml/xml.dart';
 
+import '../reader_document.dart' show parseFinite;
 import 'zip_util.dart' show XmlLocal;
 
 /// Appunti a mano libera: Xournal++ (.xopp, XML compresso con gzip) ed
@@ -36,17 +37,25 @@ class InkStroke {
 
 enum InkShapeKind { rectangle, ellipse, diamond }
 
+/// Coordinata finita (i file rovinati possono dare NaN o infinito, che
+/// romperebbero l'impaginazione della pagina).
+double _finite(double v, [double fallback = 0]) =>
+    v.isFinite ? v.clamp(-1e7, 1e7).toDouble() : fallback;
+
 class InkShape {
   InkShape(
     this.kind,
-    this.x,
-    this.y,
-    this.w,
-    this.h, {
+    double x,
+    double y,
+    double w,
+    double h, {
     required this.stroke,
     this.fill,
     this.width = 1,
-  });
+  }) : x = _finite(x),
+       y = _finite(y),
+       w = _finite(w),
+       h = _finite(h);
   final InkShapeKind kind;
   final double x;
   final double y;
@@ -59,13 +68,17 @@ class InkShape {
 
 class InkText {
   InkText(
-    this.x,
-    this.y,
+    double x,
+    double y,
     this.text, {
-    this.size = 12,
+    double size = 12,
     this.color = 0xFF000000,
-    this.width,
-  });
+    double? width,
+  }) : x = _finite(x),
+       y = _finite(y),
+       // corpo del testo valido per Flutter (> 0, finito, non enorme)
+       size = size.isFinite && size > 0 ? math.min(size, 2000) : 12,
+       width = width == null || !width.isFinite ? null : width.abs();
   final double x;
   final double y;
   final String text;
@@ -77,7 +90,11 @@ class InkText {
 }
 
 class InkImage {
-  InkImage(this.left, this.top, this.right, this.bottom, this.bytes);
+  InkImage(double left, double top, double right, double bottom, this.bytes)
+    : left = _finite(left),
+      top = _finite(top),
+      right = _finite(right),
+      bottom = _finite(bottom);
   final double left;
   final double top;
   final double right;
@@ -86,7 +103,20 @@ class InkImage {
 }
 
 class InkPage {
-  InkPage(this.width, this.height, {this.background = 0xFFFFFFFF, this.ruling});
+  /// Le dimensioni restano tra 1 e 100000 punti: con 0, negative, NaN o
+  /// miliardi (file rovinati) la pagina non si impagina o la rigatura
+  /// chiederebbe miliardi di linee.
+  InkPage(
+    double width,
+    double height, {
+    this.background = 0xFFFFFFFF,
+    this.ruling,
+  }) : width = _dim(width, 595),
+       height = _dim(height, 842);
+
+  static double _dim(double v, double fallback) =>
+      v.isFinite && v > 0 ? v.clamp(1, 100000).toDouble() : fallback;
+
   final double width;
   final double height;
   final int background;
@@ -149,8 +179,8 @@ InkDoc parseXopp(Uint8List bytes) {
     final type = bg?.attr('type');
     if (type == 'pdf') pdfBackground = true;
     final page = InkPage(
-      double.tryParse(p.attr('width') ?? '') ?? 595,
-      double.tryParse(p.attr('height') ?? '') ?? 842,
+      parseFinite(p.attr('width') ?? '') ?? 595,
+      parseFinite(p.attr('height') ?? '') ?? 842,
       background: type == 'solid'
           ? xoppColor(bg?.attr('color'), fallback: 0xFFFFFFFF)
           : 0xFFFFFFFF,
@@ -163,13 +193,13 @@ InkDoc parseXopp(Uint8List bytes) {
             final nums = e.innerText
                 .trim()
                 .split(RegExp(r'\s+'))
-                .map(double.tryParse)
+                .map(parseFinite)
                 .whereType<double>()
                 .toList();
             final ws = (e.attr('width') ?? '1')
                 .trim()
                 .split(RegExp(r'\s+'))
-                .map(double.tryParse)
+                .map(parseFinite)
                 .whereType<double>()
                 .toList();
             if (nums.length < 2) continue;
@@ -185,10 +215,10 @@ InkDoc parseXopp(Uint8List bytes) {
           case 'text':
             page.texts.add(
               InkText(
-                double.tryParse(e.attr('x') ?? '') ?? 0,
-                double.tryParse(e.attr('y') ?? '') ?? 0,
+                parseFinite(e.attr('x') ?? '') ?? 0,
+                parseFinite(e.attr('y') ?? '') ?? 0,
                 e.innerText,
-                size: double.tryParse(e.attr('size') ?? '') ?? 12,
+                size: parseFinite(e.attr('size') ?? '') ?? 12,
                 color: xoppColor(e.attr('color')),
               ),
             );
@@ -196,10 +226,10 @@ InkDoc parseXopp(Uint8List bytes) {
             try {
               page.images.add(
                 InkImage(
-                  double.parse(e.attr('left') ?? '0'),
-                  double.parse(e.attr('top') ?? '0'),
-                  double.parse(e.attr('right') ?? '0'),
-                  double.parse(e.attr('bottom') ?? '0'),
+                  parseFinite(e.attr('left')) ?? 0,
+                  parseFinite(e.attr('top')) ?? 0,
+                  parseFinite(e.attr('right')) ?? 0,
+                  parseFinite(e.attr('bottom')) ?? 0,
                   base64Decode(e.innerText.replaceAll(RegExp(r'\s'), '')),
                 ),
               );
@@ -209,8 +239,8 @@ InkDoc parseXopp(Uint8List bytes) {
             if (t != null) {
               page.texts.add(
                 InkText(
-                  double.tryParse(e.attr('left') ?? '') ?? 0,
-                  double.tryParse(e.attr('top') ?? '') ?? 0,
+                  parseFinite(e.attr('left') ?? '') ?? 0,
+                  parseFinite(e.attr('top') ?? '') ?? 0,
                   t,
                 ),
               );

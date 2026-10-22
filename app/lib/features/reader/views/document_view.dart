@@ -73,6 +73,7 @@ class DocumentViewState extends State<DocumentView> {
 
   late List<_Item> _items;
   late List<int> _blockStart;
+  late List<List<int>> _itemOfBlock;
   late List<double> _tableWidths;
   List<List<String>?> _folded = const [];
 
@@ -123,6 +124,7 @@ class DocumentViewState extends State<DocumentView> {
     final doc = widget.doc;
     final items = <_Item>[];
     final starts = <int>[];
+    final itemOfBlock = <List<int>>[];
     final headers = doc.sections.length > 1;
     final labelled = <int>{};
     for (var s = 0; s < doc.sections.length; s++) {
@@ -137,17 +139,32 @@ class DocumentViewState extends State<DocumentView> {
         );
       }
       starts.add(items.length);
+      final itemOf = <int>[];
       for (final b in sec.blocks) {
+        itemOf.add(items.length);
+        // Un paragrafo enorme (riga di un CSV o di un JSON minimizzato,
+        // documento senza a capo) si divide in pezzi: impaginare milioni di
+        // caratteri in un solo testo bloccherebbe l'app per secondi o minuti.
+        if (b is RPara && b.text.length > _maxParaChars) {
+          for (final piece in _splitPara(b)) {
+            items.add(_Item(piece, s));
+          }
+          continue;
+        }
         items.add(_Item(b, s));
         if (b is RTableRow && b.label != null) labelled.add(b.table);
       }
+      itemOfBlock.add(itemOf);
     }
     _items = items;
     _blockStart = starts;
+    _itemOfBlock = itemOfBlock;
     _folded = List.filled(items.length, null);
     _tableWidths = [
       for (var t = 0; t < doc.tables.length; t++)
-        doc.tables[t].columns.fold(0.0, (w, c) => w + _colWidth(c, 1)) +
+        doc.tables[t].columns
+                .take(_maxColumns)
+                .fold(0.0, (w, c) => w + _colWidth(c, 1)) +
             (labelled.contains(t) ? 44 : 0),
     ];
   }
@@ -171,7 +188,7 @@ class DocumentViewState extends State<DocumentView> {
                 e.title,
                 e.block == 0
                     ? _sectionTop(e.section)
-                    : _blockStart[e.section] + e.block,
+                    : _itemFor(e.section, e.block),
                 level: e.level,
               ),
         ]
@@ -185,6 +202,72 @@ class DocumentViewState extends State<DocumentView> {
   void _toggleFit() {
     setState(() => _fit = !_fit);
     _c.update(() => _c.fitWidth = _fit);
+  }
+
+  /// Elemento della vista del blocco [block] della sezione [section] (i
+  /// paragrafi enormi diventano più elementi).
+  int _itemFor(int section, int block) {
+    final list = _itemOfBlock[section];
+    if (block >= 0 && block < list.length) return list[block];
+    return _blockStart[section] + block;
+  }
+
+  /// Colonne mostrate di una tabella: un CSV rovinato o costruito apposta
+  /// con decine di migliaia di colonne bloccherebbe il disegno delle righe.
+  static const _maxColumns = 1000;
+
+  /// Testo mostrato di una cella: al massimo 2000 caratteri (una cella di
+  /// megabyte in una colonna stretta diventerebbe decine di migliaia di
+  /// righe da impaginare). La ricerca usa il testo intero.
+  static String _cellText(String t) =>
+      t.length > 2000 ? '${t.substring(0, 2000)}…' : t;
+
+  /// Caratteri massimi di un elemento della vista (vedi [_splitPara]).
+  static const _maxParaChars = 6000;
+
+  /// [para] in pezzi di circa [_maxParaChars] caratteri, tagliati a uno
+  /// spazio o a un a capo quando possibile; la formattazione dei tratti
+  /// resta, il segno dell'elenco solo sul primo pezzo.
+  static List<RPara> _splitPara(RPara para) {
+    final out = <RPara>[];
+    var cur = <RSpan>[];
+    var len = 0;
+    void push() {
+      if (cur.isEmpty) return;
+      out.add(
+        RPara(
+          cur,
+          style: para.style,
+          level: para.level,
+          marker: out.isEmpty ? para.marker : null,
+        ),
+      );
+      cur = <RSpan>[];
+      len = 0;
+    }
+
+    for (final span in para.spans) {
+      var t = span.text;
+      while (len + t.length > _maxParaChars) {
+        final room = _maxParaChars - len;
+        var cut = room;
+        final ws = t.lastIndexOf(RegExp(r'[\s,;]'), room);
+        if (ws > room ~/ 2) cut = ws + 1;
+        if (cut <= 0) {
+          push();
+          continue;
+        }
+        cur.add(span.withText(t.substring(0, cut)));
+        t = t.substring(cut);
+        push();
+      }
+      if (t.isNotEmpty) {
+        cur.add(span.withText(t));
+        len += t.length;
+      }
+    }
+    push();
+    return out;
   }
 
   /// Primo elemento della sezione (l'intestazione, se c'è).
@@ -539,8 +622,9 @@ class DocumentViewState extends State<DocumentView> {
                 ),
                 child: ConstrainedBox(
                   constraints: BoxConstraints(maxHeight: 1100 * s),
-                  child: Image.memory(
-                    block.bytes,
+                  child: Image(
+                    // decodificata al più a 2048 px (memoria del telefono)
+                    image: limitedMemoryImage(block.bytes, maxSide: 2048),
                     fit: BoxFit.contain,
                     gaplessPlayback: true,
                     errorBuilder: (_, _, _) => Container(
@@ -804,7 +888,11 @@ class DocumentViewState extends State<DocumentView> {
                   ),
                 ),
               ),
-            for (var c = 0; c < math.max(r.cells.length, cols.length); c++)
+            for (
+              var c = 0;
+              c < math.min(math.max(r.cells.length, cols.length), _maxColumns);
+              c++
+            )
               Container(
                 width: _colWidth(c < cols.length ? cols[c] : 6, s),
                 padding: EdgeInsets.symmetric(
@@ -818,7 +906,7 @@ class DocumentViewState extends State<DocumentView> {
                         key: _activeIn(i, c) ? _activeKey : null,
                         TextSpan(
                           children: _spans(
-                            [RSpan(r.cells[c])],
+                            [RSpan(_cellText(r.cells[c]))],
                             style,
                             _hits(i, c),
                             '$i.$c',

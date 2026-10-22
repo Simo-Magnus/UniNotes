@@ -136,8 +136,10 @@ class ReaderScreenState extends State<ReaderScreen> {
     final store = _store;
     final results = await Future.wait<Object>([
       loadReaderContent(widget.path),
+      // posizione e segnalibri illeggibili (preferenze rovinate): il file
+      // si apre lo stesso, dall'inizio
       if (store != null)
-        store.load(widget.path)
+        store.load(widget.path).catchError((_) => const ReaderFileState())
       else
         Future.value(const ReaderFileState()),
     ]);
@@ -327,10 +329,17 @@ class ReaderScreenState extends State<ReaderScreen> {
     for (final b in _bookmarks) {
       if (b.position == pos) replaced = b;
     }
-    final list = await store.addBookmark(
-      widget.path,
-      ReaderBookmark(pos, label, DateTime.now()),
-    );
+    final List<ReaderBookmark> list;
+    try {
+      list = await store.addBookmark(
+        widget.path,
+        ReaderBookmark(pos, label, DateTime.now()),
+      );
+    } catch (_) {
+      // database non scrivibile (disco pieno): avviso invece di un errore
+      if (mounted) showSnack(context, 'Impossibile salvare il segnalibro.');
+      return;
+    }
     if (!mounted) return;
     setState(() => _bookmarks = list);
     showUndoSnackBar(
@@ -347,7 +356,13 @@ class ReaderScreenState extends State<ReaderScreen> {
   Future<void> _removeBookmark(ReaderBookmark b) async {
     final store = _store;
     if (store == null) return;
-    final list = await store.removeBookmark(widget.path, b.position);
+    final List<ReaderBookmark> list;
+    try {
+      list = await store.removeBookmark(widget.path, b.position);
+    } catch (_) {
+      if (mounted) showSnack(context, 'Impossibile eliminare il segnalibro.');
+      return;
+    }
     if (!mounted) return;
     setState(() => _bookmarks = list);
     showUndoSnackBar(
@@ -372,7 +387,16 @@ class ReaderScreenState extends State<ReaderScreen> {
       final out = await extractArchiveEntry(widget.path, e.name);
       if (mounted) await openInReader(context, out, title: p.basename(e.name));
     } catch (err) {
-      if (mounted) showSnack(context, 'Impossibile aprire ${e.name}: $err');
+      if (!mounted) return;
+      final why = switch (err) {
+        FormatException(:final message) when message.trim().isNotEmpty =>
+          ' ($message)',
+        FileSystemException e => ': ${fileErrorMessage(e)}',
+        ReaderFileTooLargeException() => ': l\'archivio è troppo grande.',
+        ReaderTimeoutException() => ': l\'estrazione richiede troppo tempo.',
+        _ => ': la voce è danneggiata o in un formato non supportato.',
+      };
+      showSnack(context, 'Impossibile aprire ${e.name}$why');
     }
   }
 
@@ -620,11 +644,18 @@ class ReaderScreenState extends State<ReaderScreen> {
       builder: (context, snap) {
         final l = snap.data;
         if (snap.hasError) {
+          // errore imprevisto: messaggio con «Apri con…» e «Condividi»,
+          // come per i file che il lettore non mostra
           return Scaffold(
             appBar: AppBar(title: Text(_title)),
-            body: EmptyState(
-              icon: Icons.error_outline,
-              message: 'Impossibile aprire il file: ${snap.error}',
+            body: FileInfoView(
+              path: widget.path,
+              format: detectFormat(widget.path),
+              message:
+                  'Impossibile aprire il file nell\'app: prova con un\'altra '
+                  'app.',
+              onOpenExternal: _openDefault,
+              onShare: _share,
             ),
           );
         }

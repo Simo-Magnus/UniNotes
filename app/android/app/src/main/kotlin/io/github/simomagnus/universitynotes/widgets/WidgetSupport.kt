@@ -33,14 +33,15 @@ object WidgetSupport {
         intent?.getStringExtra(EXTRA_ROUTE)?.takeIf { it.isNotBlank() }
 
     /** Dati JSON dei widget (null se l'app non li ha ancora scritti). */
-    fun data(context: Context): JSONObject? {
+    fun data(context: Context): JSONObject? = try {
+        // anche la lettura dentro il try: un valore di altro tipo (versioni
+        // vecchie, preferenze rovinate) lancerebbe ClassCastException in
+        // onUpdate e chiuderebbe l'app
         val raw = context.getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE)
-            .getString(DATA_KEY, null) ?: return null
-        return try {
-            JSONObject(raw)
-        } catch (e: Exception) {
-            null
-        }
+            .getString(DATA_KEY, null)
+        if (raw == null) null else JSONObject(raw)
+    } catch (e: Exception) {
+        null
     }
 
     /** Apre l'app sulla schermata [route]; [requestCode] distingue i tocchi. */

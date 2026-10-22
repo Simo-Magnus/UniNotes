@@ -1211,11 +1211,11 @@ class WhisperService {
     // forEach crea subito il Future: nessuna corsa con la fine del processo.
     final readers = Future.wait([
       proc.stderr
-          .transform(utf8.decoder)
+          .transform(const Utf8Decoder(allowMalformed: true))
           .transform(const LineSplitter())
           .forEach(onLine),
       proc.stdout
-          .transform(utf8.decoder)
+          .transform(const Utf8Decoder(allowMalformed: true))
           .transform(const LineSplitter())
           .forEach(onLine),
     ]);
@@ -1233,11 +1233,17 @@ class WhisperService {
           '${tail.isEmpty ? '' : ': ${tail.last.trim()}'}',
         );
       }
-      return parseSegments(await json.readAsString());
+      return parseSegments(await _readOutput(json));
     } finally {
       await out.delete(recursive: true);
     }
   }
+
+  /// Testo dell'output di whisper-cli: whisper.cpp a volte divide un
+  /// carattere accentato fra due token e il JSON non è UTF-8 valido (la
+  /// lettura normale falliva e la trascrizione di ore andava persa).
+  static Future<String> _readOutput(File json) async =>
+      utf8.decode(await json.readAsBytes(), allowMalformed: true);
 
   /// Legge l'output `-oj` di whisper-cli.
   static List<WhisperSegment> parseSegments(String json) {
@@ -1249,16 +1255,20 @@ class WhisperService {
     }
     final list = d is Map ? d['transcription'] : null;
     if (list is! List) return const [];
+    Map<Object?, Object?>? offsets(Map<Object?, Object?> s) =>
+        s['offsets'] is Map ? s['offsets'] as Map<Object?, Object?> : null;
     return [
       for (final s in list.whereType<Map<Object?, Object?>>())
         if ('${s['text'] ?? ''}'.trim().isNotEmpty)
           WhisperSegment(
             Duration(
-              milliseconds:
-                  ((s['offsets'] as Map?)?['from'] as num?)?.toInt() ?? 0,
+              milliseconds: switch (offsets(s)?['from']) {
+                final num from when from.isFinite => from.toInt(),
+                _ => 0,
+              },
             ),
             '${s['text']}'.trim(),
-            end: switch ((s['offsets'] as Map?)?['to']) {
+            end: switch (offsets(s)?['to']) {
               final num to => Duration(milliseconds: to.toInt()),
               _ => null,
             },
@@ -1332,7 +1342,9 @@ class _CliLiveWhisper extends LiveWhisper {
         throw WhisperException('Whisper si è fermato (codice ${r.exitCode})');
       }
       return [
-        for (final s in WhisperService.parseSegments(await json.readAsString()))
+        for (final s in WhisperService.parseSegments(
+          await WhisperService._readOutput(json),
+        ))
           if (!isPromptEcho(s.text, options.prompt)) s,
       ];
     } finally {

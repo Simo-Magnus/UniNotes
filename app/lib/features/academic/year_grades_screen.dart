@@ -11,6 +11,7 @@ import '../../models/course.dart';
 import '../../models/exam.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
+import '../courses/course_ui.dart';
 
 /// Insegnamenti del percorso con anno [year] (quelli senza anno esclusi).
 Future<List<Course>> yearCourses(AppServices s, int year) async {
@@ -59,11 +60,25 @@ class GradeEntry {
   bool get isPassed => kind == GradeKind.pass ? passed : isValidGrade(grade);
 
   /// Esame da salvare, oppure null se non c'è nulla da cambiare.
+  /// Voto fuori dalla scala 18–30 già salvato (per esempio una prova in
+  /// itinere diventata esame finale, o dati importati): resta com'è finché
+  /// lo studente non sceglie un voto.
+  int? get outOfScaleGrade {
+    final g = exam?.status == ExamStatus.passed ? exam?.grade : null;
+    return g != null && !isValidGrade(g) ? g : null;
+  }
+
   Exam? toExam() {
     final base = exam ?? Exam(courseId: course.id!, kind: ExamKind.finalExam);
     // CFU: si salvano sull'esame solo se diversi da quelli del corso (o se
     // l'esame li aveva già), così restano quelli del catalogo.
     final cfuChanged = cfu != null && (cfu != course.cfu || base.cfu != null);
+    // voto fuori scala non toccato: nessun cambio (non si perde l'esito)
+    if (kind == GradeKind.grade &&
+        outOfScaleGrade != null &&
+        grade == outOfScaleGrade) {
+      return cfuChanged && cfu != base.cfu ? base.copyWith(cfu: cfu) : null;
+    }
     if (!isPassed) {
       if (exam == null && !cfuChanged) return null;
       if (base.status != ExamStatus.passed && !cfuChanged) return null;
@@ -192,6 +207,9 @@ class _YearGradesScreenState extends State<YearGradesScreen> {
             : 'Completato in parte: ${r.missingSummary.toLowerCase()}.',
       );
       Navigator.of(context).pop(r);
+    } catch (e) {
+      // gli esami già scritti restano: un nuovo «Salva» completa il resto
+      if (mounted) showSnack(context, 'Salvataggio non riuscito: $e');
     } finally {
       if (mounted) setState(() => _saving = false);
     }
@@ -214,7 +232,12 @@ class _YearGradesScreenState extends State<YearGradesScreen> {
                       : 'Voti del ${planYearLabel(widget.year)}'),
             ),
           ),
-          body: entries == null
+          body: snap.hasError
+              ? EmptyState(
+                  icon: Icons.error_outline,
+                  message: 'Voti non leggibili: ${snap.error}',
+                )
+              : entries == null
               ? const Center(child: CircularProgressIndicator())
               : _body(context, entries, aa),
           bottomNavigationBar: entries == null || entries.isEmpty
@@ -289,8 +312,14 @@ class _GradeRowState extends State<_GradeRow> {
     text: widget.entry.cfu == null ? '' : _fmt(widget.entry.cfu!),
   );
 
-  static String _fmt(double v) =>
-      v == v.roundToDouble() ? v.toInt().toString() : '$v'.replaceAll('.', ',');
+  static String _fmt(double v) => !v.isFinite
+      ? ''
+      : v == v.roundToDouble()
+      ? v.toInt().toString()
+      : '$v'.replaceAll('.', ',');
+
+  /// CFU scritti non validi (fuori 0–60, «Infinity»…): non si salvano.
+  String? _cfuError;
 
   @override
   void dispose() {
@@ -361,6 +390,10 @@ class _GradeRowState extends State<_GradeRow> {
                       decoration: const InputDecoration(labelText: 'Voto'),
                       items: [
                         const DropdownMenuItem(value: null, child: Text('- -')),
+                        // voto già salvato fuori scala: una voce sua, se no
+                        // il menù non ha il valore iniziale (errore)
+                        if (e.outOfScaleGrade case final g?)
+                          DropdownMenuItem(value: g, child: Text('$g')),
                         for (var g = 18; g <= 30; g++)
                           DropdownMenuItem(value: g, child: Text('$g')),
                       ],
@@ -390,12 +423,19 @@ class _GradeRowState extends State<_GradeRow> {
                     keyboardType: const TextInputType.numberWithOptions(
                       decimal: true,
                     ),
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       labelText: 'CFU',
                       isDense: true,
+                      errorText: _cfuError,
                     ),
-                    onChanged: (v) =>
-                        e.cfu = double.tryParse(v.trim().replaceAll(',', '.')),
+                    onChanged: (v) {
+                      final n = parseCfu(v);
+                      e.cfu = n;
+                      final err = v.trim().isNotEmpty && n == null
+                          ? 'Non valido'
+                          : null;
+                      if (err != _cfuError) setState(() => _cfuError = err);
+                    },
                   ),
                 ),
               ],

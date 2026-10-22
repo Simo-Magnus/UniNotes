@@ -277,9 +277,13 @@ class _IsfReader {
     while (true) {
       final c = byte();
       v |= (c & 0x7F) << shift;
+      // oltre i 62 bit il valore diventerebbe negativo: con una lunghezza
+      // negativa la lettura tornerebbe indietro e girerebbe per sempre
+      if (v < 0 || shift > 56) {
+        throw const FormatException('ISF: intero non valido');
+      }
       if (c & 0x80 == 0) return v;
       shift += 7;
-      if (shift > 63) throw const FormatException('ISF: intero non valido');
     }
   }
 
@@ -436,6 +440,12 @@ InkDoc parseIsf(Uint8List bytes) {
         final n = r.mbuint();
         final sEnd = r.pos + n;
         final count = r.mbuint();
+        // ogni punto occupa almeno un bit (anche nel codice di Huffman):
+        // un conteggio più grande dei dati è un file rovinato, e chiederebbe
+        // liste di miliardi di elementi
+        if (count > (math.min(sEnd, bytes.length) - r.pos) * 8 + 64) {
+          throw const FormatException('ISF: numero di punti non valido');
+        }
         final xs = noX ? List<int>.filled(count, 0) : r.packets(count);
         final ys = noY ? List<int>.filled(count, 0) : r.packets(count);
         r.pos = sEnd;

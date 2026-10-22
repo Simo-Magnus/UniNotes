@@ -8,6 +8,8 @@
 /// `\(…\)` (vedi [parseInline] per il `$` usato come valuta).
 library;
 
+import 'dart:typed_data';
+
 enum MdBlockType {
   heading,
   paragraph,
@@ -213,7 +215,12 @@ bool _isDigit(String c) => c.codeUnitAt(0) >= 0x30 && c.codeUnitAt(0) <= 0x39;
 /// - serve un `$` di chiusura non preceduto da uno spazio e non seguito da
 ///   una cifra (`$5 e $6` non è una formula).
 /// Restituisce l'indice del `$` di chiusura o -1.
-int _inlineDollarEnd(String text, int i) {
+///
+/// [dead]: posizioni già percorse da una ricerca senza chiusura (la ricerca
+/// da lì in poi va uguale, quindi fallisce di nuovo). Con molti `$` senza
+/// chiusura in un testo lungo ogni `$` rileggeva tutto il resto (tempo
+/// quadratico: un paragrafo di 1 MB bloccava l'app).
+int _inlineDollarEnd(String text, int i, [Uint8List? dead]) {
   final n = text.length;
   if (i + 1 >= n) return -1;
   final next = text[i + 1];
@@ -225,7 +232,11 @@ int _inlineDollarEnd(String text, int i) {
     }
     if (j >= n || _isSpace(text[j]) || '!?;:)'.contains(text[j])) return -1;
   }
-  for (var j = i + 2; j < n; j++) {
+  final from = i + 2;
+  var j = from;
+  for (; j < n; j++) {
+    if (dead != null && dead[j] == 1) break;
+    dead?[j] = 2; // percorsa da questa ricerca
     if (text[j] == '\\') {
       j++; // \$ dentro la formula
       continue;
@@ -233,7 +244,18 @@ int _inlineDollarEnd(String text, int i) {
     if (text[j] != r'$') continue;
     if (_isSpace(text[j - 1])) continue;
     if (j + 1 < n && _isDigit(text[j + 1])) continue;
+    // trovata: le posizioni percorse tornano libere
+    if (dead != null) {
+      for (var k = from; k <= j && k < n; k++) {
+        if (dead[k] == 2) dead[k] = 0;
+      }
+    }
     return j;
+  }
+  if (dead != null) {
+    for (var k = from; k < j && k < n; k++) {
+      if (dead[k] == 2) dead[k] = 1;
+    }
   }
   return -1;
 }
@@ -270,11 +292,26 @@ List<MdSpan> parseInline(String text, {bool formatting = true}) {
     );
   }
 
+  // Ricerche in avanti senza risultato: da una posizione più avanti
+  // fallirebbero di nuovo (i cresce sempre), quindi non si ripetono. Con
+  // molti segni senza chiusura in un paragrafo lungo ogni segno rileggeva
+  // tutto il resto (tempo quadratico, app bloccata con 1 MB di testo).
+  final missing = <String>{};
+  int find(String pattern, int from) {
+    if (missing.contains(pattern)) return -1;
+    final r = text.indexOf(pattern, from);
+    if (r < 0) missing.add(pattern);
+    return r;
+  }
+
+  Uint8List? dead;
   var i = 0;
   while (i < text.length) {
-    final rest = text.substring(i);
-    if (formatting && rest.startsWith('`')) {
-      final end = text.indexOf('`', i + 1);
+    // confronti sul posto (text.startsWith(x, i)): una copia del resto del
+    // testo a ogni carattere era quadratica
+    bool at(String s) => text.startsWith(s, i);
+    if (formatting && at('`')) {
+      final end = find('`', i + 1);
       if (end > i) {
         emit();
         out.add(
@@ -290,15 +327,15 @@ List<MdSpan> parseInline(String text, {bool formatting = true}) {
       }
     }
     // \$ = dollaro scritto (mai una formula)
-    if (rest.startsWith(r'\$')) {
+    if (at(r'\$')) {
       buf.write(r'$');
       i += 2;
       continue;
     }
     // \( … \) formula in linea, \[ … \] formula «a sé» nella riga
-    if (rest.startsWith(r'\(') || rest.startsWith(r'\[')) {
-      final display = rest.startsWith(r'\[');
-      final end = text.indexOf(display ? r'\]' : r'\)', i + 2);
+    if (at(r'\(') || at(r'\[')) {
+      final display = at(r'\[');
+      final end = find(display ? r'\]' : r'\)', i + 2);
       if (end > i + 2 && text.substring(i + 2, end).trim().isNotEmpty) {
         formula(text.substring(i + 2, end).trim(), display: display);
         i = end + 2;
@@ -306,8 +343,8 @@ List<MdSpan> parseInline(String text, {bool formatting = true}) {
       }
     }
     // $$ … $$ dentro una riga di testo: formula in stile «a sé»
-    if (rest.startsWith(r'$$')) {
-      final end = text.indexOf(r'$$', i + 2);
+    if (at(r'$$')) {
+      final end = find(r'$$', i + 2);
       if (end > i + 2 && text.substring(i + 2, end).trim().isNotEmpty) {
         formula(text.substring(i + 2, end).trim(), display: true);
         i = end + 2;
@@ -318,8 +355,8 @@ List<MdSpan> parseInline(String text, {bool formatting = true}) {
       i += 2;
       continue;
     }
-    if (rest.startsWith(r'$')) {
-      final end = _inlineDollarEnd(text, i);
+    if (at(r'$')) {
+      final end = _inlineDollarEnd(text, i, dead ??= Uint8List(text.length));
       if (end > i) {
         formula(text.substring(i + 1, end));
         i = end + 1;
@@ -331,17 +368,17 @@ List<MdSpan> parseInline(String text, {bool formatting = true}) {
       i++;
       continue;
     }
-    if (rest.startsWith('**') || rest.startsWith('__')) {
-      final marker = rest.substring(0, 2);
-      if (bold || text.indexOf(marker, i + 2) > i) {
+    if (at('**') || at('__')) {
+      final marker = text.substring(i, i + 2);
+      if (bold || find(marker, i + 2) > i) {
         emit();
         bold = !bold;
         i += 2;
         continue;
       }
     }
-    if (rest.startsWith('==')) {
-      if (highlight || text.indexOf('==', i + 2) > i) {
+    if (at('==')) {
+      if (highlight || find('==', i + 2) > i) {
         emit();
         highlight = !highlight;
         i += 2;
@@ -360,7 +397,7 @@ List<MdSpan> parseInline(String text, {bool formatting = true}) {
           next.trim().isNotEmpty &&
           (ch == '*' || prev.trim().isEmpty || '([{"\''.contains(prev));
       final closing = italic && prev.trim().isNotEmpty;
-      if ((opening && text.indexOf(ch, i + 1) > i) || closing) {
+      if ((opening && find(ch, i + 1) > i) || closing) {
         emit();
         italic = !italic;
         i++;

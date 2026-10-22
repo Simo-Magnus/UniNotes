@@ -257,8 +257,22 @@ class _AiRequestDialogState extends State<_AiRequestDialog> {
     _capturing = true;
     _poll?.cancel();
     if (!mounted) return;
+    final messenger = ScaffoldMessenger.maybeOf(context);
     Navigator.pop(context);
-    await capture(clip!.trim());
+    try {
+      await capture(clip!.trim());
+    } catch (e) {
+      // file non scrivibile: la risposta resta negli appunti del sistema,
+      // lo si dice (il riquadro è già chiuso)
+      messenger?.showSnackBar(
+        SnackBar(
+          content: Text(
+            'Risposta non salvata: $e. È ancora negli appunti: incollala in '
+            'una nota.',
+          ),
+        ),
+      );
+    }
   }
 
   static String _size(File f) {

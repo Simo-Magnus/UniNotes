@@ -187,7 +187,11 @@ class _AiStep extends StatelessWidget {
             title: a.label,
             subtitle: _detail(a),
             onTap: () async {
-              await s.settings.setReferenceAi(a);
+              try {
+                await s.settings.setReferenceAi(a);
+              } catch (e) {
+                debugPrint('Onboarding: AI di riferimento: $e');
+              }
               onNext();
             },
           ),
@@ -221,8 +225,15 @@ class _NotificationsStepState extends State<_NotificationsStep> {
   bool _busy = false;
 
   Future<void> _enable() async {
+    if (_busy) return;
     setState(() => _busy = true);
-    final ok = await _s.reminders.enableNotifications();
+    var ok = false;
+    try {
+      ok = await _s.reminders.enableNotifications();
+    } catch (e) {
+      // senza questo i due pulsanti resterebbero spenti per sempre
+      debugPrint('Onboarding: notifiche: $e');
+    }
     if (!mounted) return;
     setState(() => _busy = false);
     if (!ok) {
@@ -236,7 +247,15 @@ class _NotificationsStepState extends State<_NotificationsStep> {
   }
 
   Future<void> _later() async {
-    await _s.settings.set(NotificationKeys.asked, '1');
+    if (_busy) return;
+    setState(() => _busy = true);
+    try {
+      await _s.settings.set(NotificationKeys.asked, '1');
+    } catch (e) {
+      debugPrint('Onboarding: notifiche: $e');
+    }
+    if (!mounted) return;
+    setState(() => _busy = false);
     widget.onNext();
   }
 
@@ -322,8 +341,14 @@ class _CalendarStepState extends State<_CalendarStep> {
   bool _busy = false;
 
   Future<void> _answer(bool yes) async {
+    if (_busy) return;
     setState(() => _busy = true);
-    await _s.settings.set(kCalendarOfferedKey, '1');
+    try {
+      await _s.settings.set(kCalendarOfferedKey, '1');
+    } catch (e) {
+      // solo il «già chiesto»: si va avanti lo stesso
+      debugPrint('Onboarding: calendario: $e');
+    }
     if (yes) {
       try {
         await _s.reminders.enableCalendar();
@@ -407,17 +432,21 @@ class _ExclusionsStepState extends State<_ExclusionsStep> {
   @override
   void initState() {
     super.initState();
-    _s.settings.exclusionPatterns().then((patterns) {
-      if (!mounted) return;
-      setState(() {
-        for (final g in kExclusionPresets) {
-          if (g.patterns.every(patterns.contains)) _hidden.add(g.id);
-        }
-      });
-    });
+    _s.settings
+        .exclusionPatterns()
+        .then((patterns) {
+          if (!mounted) return;
+          setState(() {
+            for (final g in kExclusionPresets) {
+              if (g.patterns.every(patterns.contains)) _hidden.add(g.id);
+            }
+          });
+        })
+        .catchError((Object e) => debugPrint('Onboarding: esclusioni: $e'));
   }
 
   Future<void> _done() async {
+    if (_busy) return;
     setState(() => _busy = true);
     try {
       await applyExclusionPresets(_s, _hidden);

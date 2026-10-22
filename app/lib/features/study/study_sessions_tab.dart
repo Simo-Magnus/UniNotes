@@ -639,7 +639,14 @@ class _StopwatchPanel extends StatelessWidget {
       return;
     }
     final s = context.read<AppServices>();
-    await s.study.insertSession(session);
+    try {
+      await s.study.insertSession(session);
+    } catch (e) {
+      // il tempo torna nel cronometro: si può riprovare
+      timer.putBack(session);
+      if (context.mounted) showSnack(context, 'Sessione non salvata: $e');
+      return;
+    }
     s.revision.bump();
     if (context.mounted) {
       showSuccessSnack(

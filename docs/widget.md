@@ -53,6 +53,10 @@ Codice nativo, nessun pacchetto:
   colori chiari in `values/colors.xml` e scuri in `values-night/colors.xml`.
 - Aggiornamento: a ogni modifica nell'app e, per i giorni mancanti, ogni 12
   ore (`updatePeriodMillis`).
+- Dati non validi: `WidgetSupport.data` legge le preferenze dentro il
+  try (un valore di altro tipo darebbe `ClassCastException` in `onUpdate`) e
+  i testi delle prove sono limitati a 200 caratteri (le RemoteViews passano
+  per il Binder).
 
 ## iOS e macOS (WidgetKit)
 

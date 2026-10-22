@@ -667,7 +667,7 @@ RDoc parseXlsx(Uint8List bytes) {
             case 'str' || 'e':
               text = v ?? '';
             default:
-              final d = double.tryParse(v ?? '');
+              final d = parseFinite(v ?? '');
               if (d == null) {
                 text = v ?? '';
               } else if (dateStyles.contains(style)) {

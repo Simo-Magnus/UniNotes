@@ -22,7 +22,7 @@ class CalendarRepository {
       whereArgs: [isoLocal(to), isoLocal(from)],
       orderBy: 'start_at',
     );
-    return rows.map(CalendarEvent.fromMap).toList();
+    return _events(rows);
   }
 
   Future<List<CalendarEvent>> eventsOfType(EventType type) async {
@@ -32,8 +32,16 @@ class CalendarRepository {
       whereArgs: [type.key],
       orderBy: 'start_at',
     );
-    return rows.map(CalendarEvent.fromMap).toList();
+    return _events(rows);
   }
+
+  /// Eventi delle righe [rows]; una riga con l'inizio non leggibile (es.
+  /// arrivata da un'altra versione dell'app o da un file modificato a mano)
+  /// si salta invece di rompere tutto il calendario.
+  static List<CalendarEvent> _events(List<Map<String, Object?>> rows) => [
+    for (final r in rows)
+      if (asDateTime(r['start_at']) != null) CalendarEvent.fromMap(r),
+  ];
 
   Future<int> insertEvent(CalendarEvent e) =>
       _db.db.insert('events', e.toMap()..remove('id'));
@@ -55,7 +63,7 @@ class CalendarRepository {
     };
     final courses = {
       for (final r in await _db.db.query('courses'))
-        asInt(r['id'])!: Course.fromMap(r),
+        ?asInt(r['id']): Course.fromMap(r),
     };
 
     Color colorFor(String? uniId, int? courseId) {
@@ -110,7 +118,9 @@ class CalendarRepository {
     );
     for (final r in examRows) {
       final x = Exam.fromMap(r);
-      final dt = x.dateTime!;
+      // data non leggibile: la prova resta in Esami, non nel calendario
+      final dt = x.dateTime;
+      if (dt == null) continue;
       if (dt.isBefore(from) && x.time != null) continue;
       if (!dt.isBefore(to)) continue;
       final course = courses[x.courseId];

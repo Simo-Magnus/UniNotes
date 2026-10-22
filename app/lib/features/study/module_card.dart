@@ -83,7 +83,12 @@ class _ModuleCardState extends State<ModuleCard> {
 
   Future<void> _write(Future<void> Function(AppServices s) op) async {
     final s = context.read<AppServices>();
-    await op(s);
+    try {
+      await op(s);
+    } catch (e) {
+      // la lista si ricarica comunque: mostra quello che c'è davvero
+      if (mounted) showSnack(context, 'Modifica non salvata: $e');
+    }
     s.revision.bump();
   }
 

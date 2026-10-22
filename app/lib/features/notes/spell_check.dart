@@ -483,6 +483,22 @@ class SentenceSpellCheck extends SpellCheckService {
   }
 }
 
+/// Posizione di [word] in [text] più vicina a [near] (-1 se non c'è più).
+int nearestOccurrence(String text, String word, int near) {
+  if (word.isEmpty) return -1;
+  if (near >= 0 &&
+      near + word.length <= text.length &&
+      text.startsWith(word, near)) {
+    return near;
+  }
+  var best = -1;
+  for (var i = text.indexOf(word); i >= 0; i = text.indexOf(word, i + 1)) {
+    if (best < 0 || (i - near).abs() < (best - near).abs()) best = i;
+    if (i > near) break;
+  }
+  return best;
+}
+
 /// Menu contestuale dei campi con il controllo ortografico: sul PC e sul
 /// Mac (tasto destro su una parola sottolineata) prima i suggerimenti,
 /// poi Taglia, Copia, Incolla, Seleziona tutto. Sul telefono i suggerimenti
@@ -503,16 +519,23 @@ Widget spellCheckContextMenu(BuildContext context, EditableTextState state) {
           ContextMenuButtonItem(
             label: s,
             onPressed: () {
+              // il testo attuale, non quello di quando si è aperto il menu:
+              // nella trascrizione dal vivo intanto arrivano frasi nuove
+              // (riscrivere il testo di allora le cancellava)
+              final word = value.text.substring(
+                span.range.start,
+                span.range.end,
+              );
+              final now = state.textEditingValue.text;
+              final at = nearestOccurrence(now, word, span.range.start);
+              if (at < 0) {
+                state.hideToolbar();
+                return;
+              }
               state.userUpdateTextEditingValue(
                 TextEditingValue(
-                  text: value.text.replaceRange(
-                    span.range.start,
-                    span.range.end,
-                    s,
-                  ),
-                  selection: TextSelection.collapsed(
-                    offset: span.range.start + s.length,
-                  ),
+                  text: now.replaceRange(at, at + word.length, s),
+                  selection: TextSelection.collapsed(offset: at + s.length),
                 ),
                 SelectionChangedCause.toolbar,
               );

@@ -12,12 +12,14 @@ import '../../../core/services/app_services.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../widgets/floating_pill.dart';
+import '../../../models/course.dart';
 import '../../../widgets/undo_snack_bar.dart';
 import '../../study/focus/focus_pill.dart';
 import '../../study/study_stats.dart' show formatMinutes;
 import '../lecture_recorder.dart';
 import '../course_notes_screen.dart';
 import '../notes_screen.dart' show openRecorder;
+import '../recycle_bin.dart' show TrashEntry;
 import 'better_transcription.dart';
 import 'overlay_logic.dart';
 import 'recording_meta.dart';
@@ -184,9 +186,14 @@ class _RecordingOverlayHostState extends State<RecordingOverlayHost>
     }
     if (f == null) return;
     final saved = f;
-    final course = courseId == null
-        ? null
-        : (await _s.courses.mapById())[courseId];
+    Course? found;
+    try {
+      found = courseId == null ? null : (await _s.courses.mapById())[courseId];
+    } catch (_) {
+      // la registrazione è salvata: solo niente «Apri»
+      found = null;
+    }
+    final course = found;
     // modello scaricato più accurato: si propone di trascrivere di nuovo
     if (course != null) {
       unawaited(offerBetterTranscription(_s, course, saved));
@@ -233,7 +240,14 @@ class _RecordingOverlayHostState extends State<RecordingOverlayHost>
       case RecordingCloseChoice.save:
         await _save();
       case RecordingCloseChoice.delete:
-        final entry = await discardRecording(_s);
+        final TrashEntry? discarded;
+        try {
+          discarded = await discardRecording(_s);
+        } catch (e) {
+          _snack('Eliminazione non riuscita: $e');
+          break;
+        }
+        final entry = discarded;
         if (entry == null || !nav.mounted) {
           _snack('Registrazione spostata in «Eliminati di recente».');
           break;
@@ -263,64 +277,87 @@ class _RecordingOverlayHostState extends State<RecordingOverlayHost>
     }
     for (final session in list) {
       if (!mounted) return;
-      if (session.savedAs != null) {
-        // già salvata: restavano solo i file di lavoro
-        await recoverSession(_s, session);
-        continue;
+      // una registrazione illeggibile o bloccata non ferma le altre
+      try {
+        if (!await _offerOrphan(session)) return;
+      } catch (e) {
+        debugPrint('Registrazione da recuperare: $e');
       }
-      final info = await readWavInfo(session.wav);
-      if (info == null || info.dataLength == 0) {
-        await session.delete();
-        continue;
+    }
+  }
+
+  /// Propone di salvare [session]; false = non si può più chiedere
+  /// (schermata chiusa).
+  Future<bool> _offerOrphan(RecordingSession session) async {
+    if (session.savedAs != null) {
+      // già salvata: restavano solo i file di lavoro
+      await recoverSession(_s, session);
+      return true;
+    }
+    final info = await readWavInfo(session.wav);
+    if (info == null || info.dataLength == 0) {
+      // intestazione non leggibile ma audio presente: il file resta
+      // (meglio un file in più che una lezione persa)
+      if (info == null &&
+          await session.wav.exists() &&
+          await session.wav.length() > 44) {
+        return true;
       }
-      final nav = _nav;
-      if (nav == null || !nav.mounted) return;
-      final when = DateFormat(
-        "d MMMM 'alle' HH:mm",
-        'it_IT',
-      ).format(session.started);
-      // due pulsanti; chiudendo il dialogo si decide più tardi
-      final choice = await showDialog<RecordingCloseChoice>(
-        context: nav,
-        builder: (c) => AlertDialog(
-          title: const Text('Registrazione da recuperare'),
-          content: Text(
-            'UniNotes si è chiusa durante la registrazione di '
-            '${session.course.isEmpty ? 'una lezione' : '«${session.course}»'} '
-            '(iniziata il $when, ${clockLabel(info.duration)}). L\'audio è al '
-            'sicuro: vuoi salvarla? (Tocca fuori per decidere più tardi.)',
-          ),
-          actions: [
-            TextButton(
-              style: TextButton.styleFrom(
-                foregroundColor: Theme.of(c).colorScheme.error,
-              ),
-              onPressed: () => Navigator.pop(c, RecordingCloseChoice.delete),
-              child: const Text('Elimina'),
-            ),
-            FilledButton(
-              onPressed: () => Navigator.pop(c, RecordingCloseChoice.save),
-              child: const Text('Salva'),
-            ),
-          ],
+      await session.delete();
+      return true;
+    }
+    final nav = _nav;
+    if (nav == null || !nav.mounted) return false;
+    final when = DateFormat(
+      "d MMMM 'alle' HH:mm",
+      'it_IT',
+    ).format(session.started);
+    // due pulsanti; chiudendo il dialogo si decide più tardi
+    final choice = await showDialog<RecordingCloseChoice>(
+      context: nav,
+      builder: (c) => AlertDialog(
+        title: const Text('Registrazione da recuperare'),
+        content: Text(
+          'UniNotes si è chiusa durante la registrazione di '
+          '${session.course.isEmpty ? 'una lezione' : '«${session.course}»'} '
+          '(iniziata il $when, ${clockLabel(info.duration)}). L\'audio è al '
+          'sicuro: vuoi salvarla? (Tocca fuori per decidere più tardi.)',
         ),
-      );
-      if (choice == RecordingCloseChoice.save) {
+        actions: [
+          TextButton(
+            style: TextButton.styleFrom(
+              foregroundColor: Theme.of(c).colorScheme.error,
+            ),
+            onPressed: () => Navigator.pop(c, RecordingCloseChoice.delete),
+            child: const Text('Elimina'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(c, RecordingCloseChoice.save),
+            child: const Text('Salva'),
+          ),
+        ],
+      ),
+    );
+    if (choice == RecordingCloseChoice.save) {
+      try {
+        await recoverSession(_s, session);
+        _snack('Registrazione recuperata e salvata.');
+      } catch (e) {
+        _snack('Recupero non riuscito: $e');
+      }
+    } else if (choice == RecordingCloseChoice.delete) {
+      final nav2 = _nav;
+      if (nav2 == null || !nav2.mounted) return false;
+      if (await confirmDeleteRecording(nav2)) {
         try {
-          await recoverSession(_s, session);
-          _snack('Registrazione recuperata e salvata.');
-        } catch (e) {
-          _snack('Recupero non riuscito: $e');
-        }
-      } else if (choice == RecordingCloseChoice.delete) {
-        final nav2 = _nav;
-        if (nav2 == null || !nav2.mounted) return;
-        if (await confirmDeleteRecording(nav2)) {
           await trashSession(_s, session, duration: info.duration);
           _snack('Registrazione spostata in «Eliminati di recente».');
+        } catch (e) {
+          _snack('Eliminazione non riuscita: $e');
         }
       }
     }
+    return true;
   }
 
   /// Sessione Focus finita mentre si era in un'altra schermata: avviso con

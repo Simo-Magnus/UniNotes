@@ -89,8 +89,11 @@ class StudentProfile {
     degreeName: m['degree_name'] as String,
     degreeType: asString(m['degree_type']) ?? 'altro',
     classCode: asString(m['class_code']),
-    durationYears: asInt(m['duration_years']) ?? 3,
-    currentYear: asInt(m['current_year']) ?? 1,
+    // valori fuori intervallo (es. arrivati da un'altra versione dell'app):
+    // dentro limiti ragionevoli, così anni del piano e selettori restano
+    // validi (nessun piano di migliaia di anni)
+    durationYears: _inRange(asInt(m['duration_years']), 3, max: 10),
+    currentYear: _inRange(asInt(m['current_year']), 1, max: 30),
     fuoriCorso: asBool(m['fuori_corso']) ?? false,
     referenceAa:
         AcademicYear.tryParse(asString(m['reference_aa'])) ??
@@ -198,6 +201,9 @@ class PlanYear {
     'status': status.key,
   };
 }
+
+int _inRange(int? v, int fallback, {required int max}) =>
+    v == null || v < 1 ? fallback : (v > max ? max : v);
 
 /// Stato iniziale dell'anno [k] quando lo studente frequenta [current]:
 /// gli anni passati restano "in corso" finché non vengono segnati come

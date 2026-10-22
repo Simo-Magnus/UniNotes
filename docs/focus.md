@@ -153,3 +153,14 @@ JSON), `focus_goal.dart` (minuti per giorno, serie, record),
 `notification_plan.dart` (`quietAware`, `NotificationType.urgent`): tutti
 coperti da `test/focus_test.dart`, compreso il salvataggio della sessione nel
 database e il riquadro sopra le schermate.
+
+Robustezza (`test/crash_ui_test.dart`): a fine sessione il tempo si salva
+prima di togliere avvisi e silenzio del sistema; se il salvataggio non
+riesce il riepilogo lo dice (`FocusService.saveError`). `screenVisible`
+avvisa le card sotto (Home, Sessioni Studio) a fotogramma finito, perché
+cambia in `initState`/`dispose` della schermata. «Avvia il timer» si blocca
+al primo tocco (niente due schermate Focus). La striscia dei tratti si
+restringe per stare nella riga anche con 4 ore e pause ogni 20 minuti. Lo
+stato salvato con valori di altro tipo vale zero invece di interrompere il
+ripristino. Cronometro: se «Salva» non riesce, il tempo torna nel cronometro
+(`StudyTimer.putBack`).

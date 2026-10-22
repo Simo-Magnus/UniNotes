@@ -233,19 +233,27 @@ class DrivePicker {
   ) async {
     await for (final req in server) {
       if (req.uri.path != '/picker' || req.uri.queryParameters['state'] != state) {
-        req.response.statusCode = HttpStatus.notFound;
-        await req.response.close();
+        // richiesta estranea (favicon…): se il browser ha già chiuso la
+        // connessione l'errore non ferma l'attesa
+        try {
+          req.response.statusCode = HttpStatus.notFound;
+          await req.response.close();
+        } catch (_) {}
         continue;
       }
       final r = PickerResult.parse(req.uri, state);
-      req.response.headers.contentType = ContentType.html;
       final title = r.error != null
           ? 'Importazione non riuscita'
           : (r.cancelled ? 'Nessun file scelto' : 'File scelti');
-      req.response.write(
-        returnToAppPage(ok: r.error == null, title: title, detail: r.error),
-      );
-      await req.response.close();
+      try {
+        req.response.headers.contentType = ContentType.html;
+        req.response.write(
+          returnToAppPage(ok: r.error == null, title: title, detail: r.error),
+        );
+        await req.response.close();
+      } catch (_) {
+        // scheda già chiusa: gli id scelti sono comunque arrivati
+      }
       unawaited(bringAppToFront());
       return r;
     }

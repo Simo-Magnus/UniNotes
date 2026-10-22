@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:archive/archive.dart' as zlib show Inflate;
 import 'package:koni_archive_core/koni_archive_core.dart' as koni;
 import 'package:koni_rar/koni_rar.dart';
 import 'package:path/path.dart' as p;
@@ -88,9 +87,17 @@ class RarArchive implements ReaderArchive {
       if (e.isEncrypted) {
         throw const FormatException('voce dell\'archivio protetta da password');
       }
+      // stesso limite delle voci ZIP (dimensione dichiarata o reale)
+      final limit = Zip.maxEntryBytes;
+      if (e.uncompressedSize > limit) {
+        throw FormatException('voce dell\'archivio troppo grande: $name');
+      }
       final out = BytesBuilder(copy: false);
       await for (final chunk in _reader.openRead(e)) {
         out.add(chunk);
+        if (out.length > limit) {
+          throw FormatException('voce dell\'archivio troppo grande: $name');
+        }
       }
       return out.takeBytes();
     }
@@ -214,6 +221,9 @@ class CabArchive implements ReaderArchive {
           throw const FormatException('blocco MSZIP senza "CK"');
         }
         block = _inflateWithHistory(Uint8List.sublistView(data, 2), window);
+        if (out.length + block.length > Zip.maxEntryBytes) {
+          throw const FormatException('cartella CAB troppo grande');
+        }
         if (ucb > 0 && block.length > ucb) {
           block = Uint8List.sublistView(block, 0, ucb);
         }
@@ -233,7 +243,10 @@ class CabArchive implements ReaderArchive {
   /// Deflate con una storia iniziale: la si mette davanti come blocco non
   /// compresso, così i riferimenti all'indietro la trovano.
   static Uint8List _inflateWithHistory(Uint8List deflate, Uint8List history) {
-    if (history.isEmpty) return zlib.Inflate(deflate).getBytes();
+    // Un blocco MSZIP ha al più 32 KB di dati: il limite ferma i blocchi
+    // costruiti per decomprimersi in gigabyte.
+    const limit = 64 * 1024;
+    if (history.isEmpty) return inflateRaw(deflate, limit: limit);
     final n = history.length;
     final prefix = Uint8List(5 + n);
     prefix[0] = 0; // non finale, non compresso
@@ -245,8 +258,8 @@ class CabArchive implements ReaderArchive {
     final all = Uint8List(prefix.length + deflate.length)
       ..setAll(0, prefix)
       ..setAll(prefix.length, deflate);
-    final out = zlib.Inflate(all).getBytes();
-    return Uint8List.sublistView(out, n);
+    final out = inflateRaw(all, limit: n + limit);
+    return Uint8List.sublistView(out, n.clamp(0, out.length));
   }
 
   @override

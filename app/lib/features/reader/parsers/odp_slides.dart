@@ -84,7 +84,7 @@ class OdpSlides {
     if (v == null) return null;
     final m = RegExp(r'^\s*(-?[\d.]+)\s*([a-z%]*)').firstMatch(v);
     if (m == null) return null;
-    final n = double.tryParse(m.group(1)!);
+    final n = parseFinite(m.group(1)!);
     if (n == null) return null;
     return switch (m.group(2)) {
       'in' => n * 72,
@@ -102,7 +102,7 @@ class OdpSlides {
     if (rgb == null) return null;
     var a = 255;
     final o = RegExp(r'([\d.]+)%').firstMatch(opacity ?? '');
-    if (o != null) a = (double.parse(o.group(1)!) / 100 * 255).round().clamp(0, 255);
+    if (o != null) a = ((parseFinite(o.group(1)) ?? 100) / 100 * 255).round().clamp(0, 255);
     return (a << 24) | rgb;
   }
 
@@ -238,7 +238,7 @@ class OdpSlides {
     if (t != null) {
       final r = RegExp(r'rotate\s*\(\s*(-?[\d.eE+-]+)\s*\)').firstMatch(t);
       final tr = RegExp(r'translate\s*\(\s*([^\s)]+)\s+([^\s)]+)\s*\)').firstMatch(t);
-      final a = r == null ? 0.0 : double.tryParse(r.group(1)!) ?? 0;
+      final a = r == null ? 0.0 : parseFinite(r.group(1)!) ?? 0;
       if (tr != null) {
         final tx = length(tr.group(1)) ?? 0, ty = length(tr.group(2)) ?? 0;
         // centro della forma ruotata, poi angolo della forma non ruotata
@@ -454,7 +454,7 @@ class OdpSlides {
     final vb = (geo.attr('viewBox') ?? '0 0 21600 21600')
         .trim()
         .split(RegExp(r'\s+'))
-        .map(double.tryParse)
+        .map(parseFinite)
         .toList();
     if (d == null || vb.length != 4 || vb.contains(null)) return null;
     final vx = vb[0]!, vy = vb[1]!, vw = vb[2]!, vh = vb[3]!;
@@ -505,7 +505,10 @@ class OdpSlides {
       } else if (t.startsWith('?') || t.startsWith(r'$')) {
         return null;
       } else {
-        nums.add(double.parse(t));
+        // numero non valido («1.2.3», «1e999»): percorso non disegnabile
+        final v = parseFinite(t);
+        if (v == null) return null;
+        nums.add(v);
       }
     }
     flush();
@@ -649,7 +652,7 @@ class OdpSlides {
     final lineHeight = pp('line-height');
     var spacing = 1.0;
     final pct = RegExp(r'([\d.]+)%').firstMatch(lineHeight ?? '');
-    if (pct != null) spacing = double.parse(pct.group(1)!) / 100;
+    if (pct != null) spacing = (parseFinite(pct.group(1)) ?? 100) / 100;
     return RSlidePara(
       runs,
       align: switch (pp('text-align')) {

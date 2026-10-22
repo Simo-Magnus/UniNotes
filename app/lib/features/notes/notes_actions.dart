@@ -28,6 +28,8 @@ import 'recorder/course_vocabulary.dart';
 import 'recorder/recording_meta.dart';
 import 'recorder/recording_overlay.dart' show confirmDeleteRecording;
 import 'recorder/speech_language.dart';
+import 'recycle_bin.dart' show TrashEntry;
+import 'safe_files.dart';
 import '../links/link_settings.dart';
 
 /// Sul PC Whisper usa `whisper-cli`; sul telefono il motore incluso.
@@ -403,7 +405,7 @@ Future<void> _saveCaptured(
 ) async {
   final dir = await s.notes.courseDir(course, folder);
   final target = File(p.join(dir.path, '${NotesStore.safeName(name)}.md'));
-  final before = await target.exists() ? await target.readAsString() : null;
+  final before = await target.exists() ? await readTextLenient(target) : null;
   await s.notes.writeText(course, folder, name, text);
   s.revision.bump();
   // «Annulla»: il file torna com'era (o sparisce, se era nuovo)
@@ -435,22 +437,36 @@ Future<void> attachSummaries(BuildContext context, Course course) async {
     return;
   }
   if (picked.isEmpty) return;
-  final dir = await s.notes.courseDir(course, NoteFolder.summaries);
   var n = 0;
-  for (final f in picked) {
-    final src = f.path;
-    if (src == null) continue;
-    var dest = p.join(dir.path, p.basename(src));
-    for (var i = 2; await File(dest).exists(); i++) {
-      dest = p.join(
-        dir.path,
-        '${p.basenameWithoutExtension(src)} ($i)${p.extension(src)}',
-      );
+  Object? error;
+  try {
+    final dir = await s.notes.courseDir(course, NoteFolder.summaries);
+    for (final f in picked) {
+      final src = f.path;
+      if (src == null) continue;
+      var dest = p.join(dir.path, p.basename(src));
+      for (var i = 2; await File(dest).exists(); i++) {
+        dest = p.join(
+          dir.path,
+          '${p.basenameWithoutExtension(src)} ($i)${p.extension(src)}',
+        );
+      }
+      try {
+        await File(src).copy(dest);
+        n++;
+      } on FileSystemException catch (e) {
+        // file sparito o bloccato, disco pieno: si allegano gli altri
+        error ??= e;
+      }
     }
-    await File(src).copy(dest);
-    n++;
+  } on FileSystemException catch (e) {
+    error ??= e;
   }
   s.revision.bump();
+  if (error != null && context.mounted) {
+    showSnack(context, 'Alcuni file non sono stati allegati: $error');
+    if (n == 0) return;
+  }
   if (context.mounted && n > 0) {
     showSnack(
       context,
@@ -543,7 +559,7 @@ Future<void> exportPdf(
   try {
     // trascrizioni del vecchio formato: senza gli orari delle frasi
     final bytes = await markdownToPdf(
-      stripTranscriptTimes(await note.file.readAsString()),
+      stripTranscriptTimes(await readTextLenient(note.file)),
       title: note.name,
       subtitle: subtitle,
     );
@@ -635,6 +651,9 @@ Future<String?> renameNote(
   }
 }
 
+/// File che si stanno spostando in «Eliminati di recente».
+final Set<String> _trashing = {};
+
 /// «Elimina»: il file (per una registrazione anche i suoi dati) va in
 /// «Eliminati di recente» per 30 giorni; l'avviso permette di annullare.
 Future<bool> trashNote(BuildContext context, Course course, NoteFile f) async {
@@ -651,21 +670,34 @@ Future<bool> trashNote(BuildContext context, Course course, NoteFile f) async {
           'Il file va in «Eliminati di recente» per 30 giorni.',
         );
   if (!ok || !context.mounted) return false;
+  // doppio tocco su «Elimina» mentre il primo sposta ancora il file (copia
+  // fra unità diverse): un solo spostamento
+  if (!_trashing.add(f.file.path)) return false;
   final messenger = ScaffoldMessenger.maybeOf(context);
-  final entry = await s.trash.trash(
-    [f.file, if (f.isAudio) RecordingMeta.sidecarOf(f.file.path)],
-    title: f.name,
-    course: course.name,
-  );
+  final TrashEntry? entry;
+  try {
+    entry = await s.trash.trash(
+      [f.file, if (f.isAudio) RecordingMeta.sidecarOf(f.file.path)],
+      title: f.name,
+      course: course.name,
+    );
+  } catch (e) {
+    // file in uso, disco pieno: il file resta al suo posto
+    if (context.mounted) showSnack(context, 'Eliminazione non riuscita: $e');
+    return false;
+  } finally {
+    _trashing.remove(f.file.path);
+  }
   s.revision.bump();
-  if (entry != null && messenger != null && context.mounted) {
+  final done = entry;
+  if (done != null && messenger != null && context.mounted) {
     showUndoSnackBar(
       context,
       'Spostato in «Eliminati di recente».',
       messenger: messenger,
       undoneMessage: '«${f.name}» ripristinato.',
       onUndo: () async {
-        await s.trash.restore(entry);
+        await s.trash.restore(done);
         s.revision.bump();
       },
     );

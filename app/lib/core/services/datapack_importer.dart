@@ -103,7 +103,7 @@ class DataPackImporter {
         packSource,
         replace: asBool(pack['replaceEventsOfSameSource']) ?? false,
         removeSources: [
-          for (final v in (pack['removeEventsOfSources'] as List? ?? const []))
+          for (final v in _values(pack['removeEventsOfSources']))
             if (asString(v) != null) asString(v)!,
         ],
       );
@@ -111,7 +111,7 @@ class DataPackImporter {
       await _books(txn, _list(pack['books']), courseIds, filter, report);
       // Libri non più necessari (es. sostituiti da un'altra edizione): si
       // tolgono solo se l'utente non li ha segnati come posseduti.
-      for (final v in (pack['removeBooks'] as List? ?? const [])) {
+      for (final v in _values(pack['removeBooks'])) {
         final ext = asString(v);
         if (ext == null) continue;
         await txn.delete(
@@ -142,6 +142,9 @@ class DataPackImporter {
 
   static List<Map<String, Object?>> _list(Object? v) =>
       v is List ? v.whereType<Map<String, Object?>>().toList() : const [];
+
+  /// Elenco di valori (un campo di altro tipo in un file malformato = vuoto).
+  static List<Object?> _values(Object? v) => v is List ? v : const [];
 
   Future<int?> _idByExternal(
     Transaction txn,
@@ -344,10 +347,8 @@ class DataPackImporter {
       whereArgs: [_retiredSourcesKey],
     );
     final retired = <String>{
-      if (retiredRows.isNotEmpty && retiredRows.first['value'] != null)
-        ...(jsonDecode(retiredRows.first['value'] as String) as List).map(
-          (e) => e.toString(),
-        ),
+      if (retiredRows.isNotEmpty)
+        for (final v in _retiredSources(retiredRows.first['value'])) '$v',
     };
     for (final e in items) {
       final ext = asString(e['externalId']);
@@ -439,6 +440,17 @@ class DataPackImporter {
           report.eventsRemoved++;
         }
       }
+    }
+  }
+
+  /// Fonti sostituite salvate (JSON); un valore illeggibile vale come
+  /// nessuna, invece di bloccare l'aggiornamento del database.
+  static List<Object?> _retiredSources(Object? raw) {
+    if (raw is! String) return const [];
+    try {
+      return _values(jsonDecode(raw));
+    } on FormatException {
+      return const [];
     }
   }
 

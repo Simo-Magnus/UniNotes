@@ -60,7 +60,15 @@ class _PatternList extends StatelessWidget {
     if (!context.mounted) return;
     final s = context.read<AppServices>();
     // reimport del piano (anche dalla copia salvata, senza connessione)
-    final r = await PathSetupService(s).refresh();
+    final PlanImportResult r;
+    try {
+      r = await PathSetupService(s).refresh();
+    } catch (e) {
+      // esclusione già tolta; il piano si potrà reimportare da Profilo
+      s.revision.bump();
+      if (context.mounted) showSnack(context, 'Piano non reimportato: $e');
+      return;
+    }
     s.revision.bump();
     if (!context.mounted) return;
     if (r.imported) {

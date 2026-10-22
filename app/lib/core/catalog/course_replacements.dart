@@ -217,7 +217,11 @@ class CourseReplacements {
       degreeName: info.nome,
       degreeType: info.tipo.key,
       classCode: () => info.classe ?? p.classCode,
-      durationYears: info.durataAnni,
+      // una durata fuori intervallo nel catalogo non si usa
+      durationYears: switch (info.durataAnni) {
+        final d? when d >= 1 && d <= 10 => d,
+        _ => null,
+      },
       curriculum: () => curriculum,
     );
     await _s.profiles.save(updated);

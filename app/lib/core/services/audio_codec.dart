@@ -39,9 +39,11 @@ class AudioCodec {
 
   /// WAV → `.m4a` AAC mono (~48 kbit/s).
   Future<bool> compress(File wav, File m4a) async {
-    if (await m4a.exists()) await m4a.delete();
     var ok = false;
     try {
+      // file vecchio bloccato (Windows): la compressione non riesce e si
+      // tiene il WAV, senza eccezioni
+      if (await m4a.exists()) await m4a.delete();
       if (Platform.isWindows) {
         ok =
             await channel.invokeMethod<bool>('toM4a', {
@@ -96,9 +98,9 @@ class AudioCodec {
   /// Qualsiasi audio leggibile dal sistema (.m4a, .flac, .wav, .mp3…) →
   /// WAV PCM 16 bit mono a [sampleRate] Hz (16000 per Whisper).
   Future<bool> toWav(File input, File wav, {int sampleRate = 16000}) async {
-    if (await wav.exists()) await wav.delete();
     var ok = false;
     try {
+      if (await wav.exists()) await wav.delete();
       if (Platform.isWindows) {
         ok =
             await channel.invokeMethod<bool>('toWav', {

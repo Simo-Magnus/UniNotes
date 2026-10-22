@@ -47,6 +47,20 @@ Future<bool> attachBookFile(BuildContext context, Book book) async {
 /// - solo percorso esterno a un file esistente: lo copia prima nell'app;
 /// - cartella o percorso mancante: lo apre con il sistema (o lo segnala).
 Future<void> openBook(BuildContext context, Book book) async {
+  try {
+    await _openBook(context, book);
+  } on FileSystemException catch (e) {
+    // cartella dei libri non accessibile, file sparito durante la copia
+    if (context.mounted) {
+      showSnack(
+        context,
+        'Impossibile aprire "${book.title}": ${e.osError?.message ?? e.message}.',
+      );
+    }
+  }
+}
+
+Future<void> _openBook(BuildContext context, Book book) async {
   final s = context.read<AppServices>();
   var b = book;
   var file = await s.library.fileOf(b);

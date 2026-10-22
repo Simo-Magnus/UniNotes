@@ -8,6 +8,7 @@ import '../../models/study.dart';
 import '../study/attachments.dart';
 import 'lesson_transcripts.dart';
 import 'notes_store.dart';
+import 'safe_files.dart';
 
 /// Oltre questo numero di appunti di testo si allegano riuniti in un solo
 /// file (molte chat accettano al massimo 10-20 allegati per messaggio).
@@ -71,9 +72,16 @@ Future<List<File>> collectAiFiles(
       }
     }
     for (final n in texts) {
+      final String body;
+      try {
+        body = await readTextLenient(n.file);
+      } on FileSystemException {
+        // file sparito o bloccato nel frattempo: si manda il resto
+        continue;
+      }
       md.writeln(
         '\n---\n\n## ${n.folder.dirName} – ${n.name}\n\n'
-        '${stripTranscriptTimes(await n.file.readAsString())}',
+        '${stripTranscriptTimes(body)}',
       );
     }
     final bundle = File(

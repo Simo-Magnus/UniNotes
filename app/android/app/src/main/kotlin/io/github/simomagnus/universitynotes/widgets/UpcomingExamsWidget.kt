@@ -66,7 +66,9 @@ class UpcomingExamsWidget : AppWidgetProvider() {
                 }
                 shown++
                 views.setViewVisibility(row.row, View.VISIBLE)
-                views.setTextViewText(row.title, exam.optString("title"))
+                // testi limitati: RemoteViews passa per il Binder (oltre ~1 MB
+                // TransactionTooLargeException), e il widget ne mostra due righe
+                views.setTextViewText(row.title, exam.optString("title").take(200))
                 val time: String? = if (exam.isNull("time")) {
                     null
                 } else {
@@ -76,7 +78,7 @@ class UpcomingExamsWidget : AppWidgetProvider() {
                     exam.optString("kind").takeIf { it.isNotEmpty() },
                     exam.optString("date") + (time?.let { " alle $it" } ?: ""),
                 ).joinToString(" · ")
-                views.setTextViewText(row.whenText, whenText)
+                views.setTextViewText(row.whenText, whenText.take(200))
                 views.setTextViewText(row.days, WidgetSupport.daysLabel(days))
                 val route = exam.optString("route").takeIf { it.isNotEmpty() }
                     ?: listRoute

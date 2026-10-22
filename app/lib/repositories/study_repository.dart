@@ -206,7 +206,12 @@ class StudyRepository {
       whereArgs: args.isEmpty ? null : args,
       orderBy: 'start_at DESC',
     );
-    return rows.map(StudySession.fromMap).toList();
+    // una sessione con l'inizio non leggibile (es. da un'altra versione
+    // dell'app) si salta invece di rompere Studio e le statistiche
+    return [
+      for (final r in rows)
+        if (asDateTime(r['start_at']) != null) StudySession.fromMap(r),
+    ];
   }
 
   Future<int> insertSession(StudySession s) =>

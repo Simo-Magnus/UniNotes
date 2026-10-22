@@ -190,11 +190,20 @@ class GoogleDriveSync extends FolderSync {
     final rootId = root!;
     _dirs[''] = rootId;
     Future<void> walk(String id, String prefix) async {
-      for (final it in await drive.children(id)) {
-        final name = it['name'] as String? ?? '';
-        final mime = it['mimeType'] as String? ?? '';
+      // elenco completo o errore: mai un elenco vuoto per una risposta
+      // inattesa (i file sembrerebbero eliminati e si toglierebbero qui)
+      for (final it in await drive.children(id, strict: true)) {
+        final name = it['name'];
+        final fid = it['id'];
+        if (name is! String || name.isEmpty || fid is! String) {
+          throw DriveException(
+            502,
+            'Google Drive: elemento senza nome o id in $remoteFolder',
+          );
+        }
+        final m = it['mimeType'];
+        final mime = m is String ? m : '';
         final rel = prefix.isEmpty ? name : '$prefix/$name';
-        final fid = it['id'] as String;
         if (mime == GoogleDriveClient.folderMime) {
           _dirs[rel] = fid;
           await walk(fid, rel);
@@ -202,10 +211,11 @@ class GoogleDriveSync extends FolderSync {
           // Documenti Google (senza file da scaricare) esclusi; con due file
           // dello stesso nome vale il primo.
           _files[rel] = fid;
+          final md5 = it['md5Checksum'];
           out[rel] = RemoteFile(
             id: fid,
             size: int.tryParse('${it['size'] ?? ''}') ?? 0,
-            ctag: it['md5Checksum'] as String? ?? '',
+            ctag: md5 is String ? md5 : '',
           );
         }
       }
@@ -251,6 +261,9 @@ class GoogleDriveSync extends FolderSync {
               .replace(queryParameters: {'uploadType': 'media', ..._fields}),
           headers: {'Content-Type': 'application/octet-stream'},
           body: bytes,
+          // 404: il file è stato tolto da Drive dopo l'elenco; è un errore
+          // (la volta dopo si ricarica come file nuovo), non un successo
+          accept: const {},
         );
         item = r.json;
       } else {
@@ -286,16 +299,23 @@ class GoogleDriveSync extends FolderSync {
     } else {
       item = await _resumable(rel, f, size, existing);
     }
-    final id = item['id'] as String?;
-    if (id != null) {
-      _files[rel] = id;
-      _mine.add(id);
+    final id = item['id'];
+    // senza l'id del file caricato lo stato direbbe «sincronizzato» per un
+    // file che su Drive non c'è (e la volta dopo verrebbe tolto da qui)
+    if (id is! String) {
+      throw DriveException(
+        502,
+        'Google Drive non ha confermato il caricamento: $rel',
+      );
     }
+    _files[rel] = id;
+    _mine.add(id);
     final st = await f.stat();
+    final md5 = item['md5Checksum'];
     return SyncedFile(
       size: st.size,
       mtime: st.modified.millisecondsSinceEpoch,
-      ctag: item['md5Checksum'] as String? ?? '',
+      ctag: md5 is String ? md5 : '',
       remoteId: id,
     );
   }

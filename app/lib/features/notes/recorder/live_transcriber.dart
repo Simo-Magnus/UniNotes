@@ -285,7 +285,10 @@ class LiveTranscriber extends ChangeNotifier {
     if (!_formulas) return raw;
     final hit = _latex[raw];
     if (hit != null) return hit;
-    if (_latex.length > 400) _latex.clear();
+    // il limite cresce con la lezione: con più di 400 frasi (oltre un'ora)
+    // la memoria si svuotava a ogni disegno e tutte le frasi si
+    // riconvertivano dieci volte al secondo (interfaccia bloccata)
+    if (_latex.length > 400 + merger.segments.length * 2) _latex.clear();
     return _latex[raw] = spokenMathToLatex(raw);
   }
 
@@ -318,12 +321,14 @@ class LiveTranscriber extends ChangeNotifier {
   /// (inizio del primo, fine dell'ultimo); testo vuoto = tolti. Gli altri
   /// segmenti tengono testo e tempi.
   void replaceSegments(List<int> startsMs, String text) {
-    final idx = <int>[
+    // indici distinti: la stessa chiave due volte (o due frasi con lo stesso
+    // inizio) non deve togliere due volte la stessa frase
+    final idx = <int>{
       for (final k in startsMs)
         if (merger.segments.indexWhere((s) => s.start.inMilliseconds == k)
             case final i when i >= 0)
           i,
-    ]..sort();
+    }.toList()..sort();
     if (idx.isEmpty) return;
     final first = idx.first;
     final lastEnd = merger.segments[idx.last].end;
@@ -803,7 +808,13 @@ class LiveTranscriber extends ChangeNotifier {
       pl.startAt(from);
       pl.skipTo(_recorded);
       state = LiveState.running;
-      _tmp ??= await Directory.systemTemp.createTemp('uninotes_live_');
+      try {
+        _tmp ??= await Directory.systemTemp.createTemp('uninotes_live_');
+      } catch (e) {
+        // disco pieno: si riprova al primo pezzo (_run), dove un errore
+        // ferma solo il testo dal vivo
+        debugPrint('Cartella temporanea del testo dal vivo: $e');
+      }
       if (eng.quick && w != null && w.isPhone && !_finished) {
         unawaited(_beginSecondPass(w, options));
       }
@@ -1039,6 +1050,7 @@ class LiveTranscriber extends ChangeNotifier {
 
   /// Il formato del WAV è cambiato prima dei dati (scelta del sistema).
   void setFormat(int sampleRate, int channels) {
+    if (sampleRate <= 0 || channels <= 0) return;
     _sampleRate = sampleRate;
     _channels = channels;
   }
@@ -1402,7 +1414,9 @@ class LiveTranscriber extends ChangeNotifier {
     _pkDownload?.cancel();
     final sub = _sub;
     _sub = null;
-    await sub?.cancel();
+    try {
+      await sub?.cancel();
+    } catch (_) {}
     if (engine == LiveEngine.system) {
       final ended = _ended;
       if (ended == null) unawaited(speech?.stop());

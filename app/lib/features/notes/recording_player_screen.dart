@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart' show ValueListenable;
@@ -246,7 +247,32 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
 
   // ------------------------------------------------------------ dati
 
+  /// Dati della registrazione letti dal file (fino ad allora i segnalibri in
+  /// memoria sono solo quelli aggiunti adesso, vedi [_saveMeta]).
+  bool _metaLoaded = false;
+
   Future<void> _load() async {
+    try {
+      await _loadData();
+    } catch (e) {
+      // trascrizione illeggibile, cartella non raggiungibile: la
+      // registrazione resta ascoltabile con quello che si è letto
+      debugPrint('Dati della registrazione: $e');
+      if (!_metaLoaded) {
+        final meta = await RecordingMeta.load(_file.path);
+        if (!mounted) return;
+        setState(() {
+          _meta = meta;
+          _metaLoaded = true;
+          if (meta.peaks != null && meta.peaks!.isNotEmpty) {
+            _peaks = meta.peaks!;
+          }
+        });
+      }
+    }
+  }
+
+  Future<void> _loadData() async {
     if (!await _file.exists()) return;
     final meta = await RecordingMeta.load(_file.path);
     final dir = await _s.notes.courseDir(widget.course, NoteFolder.transcripts);
@@ -276,7 +302,19 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
     final (segs, plain) = await _segmentsOf(kind, meta, transcripts);
     if (!mounted) return;
     setState(() {
+      // segnalibri aggiunti mentre si caricava: restano
+      final added = _metaLoaded
+          ? const <Bookmark>[]
+          : [
+              for (final b in _meta.bookmarks)
+                if (!meta.bookmarks.any((x) => x.at == b.at)) b,
+            ];
       _meta = meta;
+      if (added.isNotEmpty) {
+        _meta.bookmarks = [..._meta.bookmarks, ...added]
+          ..sort((a, b) => a.at.compareTo(b.at));
+      }
+      _metaLoaded = true;
       _transcripts = transcripts;
       _kind = kind;
       _segs = segs;
@@ -305,7 +343,8 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
         ? t.gemini
         : (t.whisper ?? t.systemLive);
     if (file == null) return (const <TranscriptSegment>[], null);
-    final md = await file.readAsString();
+    // file non in UTF-8 (Blocco note, altre app): si legge lo stesso
+    final md = utf8.decode(await file.readAsBytes(), allowMalformed: true);
     final segs = segmentsFromMarkdown(md, total: meta.duration);
     if (segs.isNotEmpty) return (segs, null);
     final plain = md
@@ -474,10 +513,26 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
 
   // ------------------------------------------------------- segnalibri
 
+  /// Segnalibri nel file accanto all'audio. Prima che i dati siano letti
+  /// ([_metaLoaded]) quelli in memoria si aggiungono a quelli salvati
+  /// (prima li sostituivano: «Segna» appena aperta la registrazione
+  /// cancellava i segnalibri della lezione). Un errore (file in uso, disco
+  /// pieno) si dice, non chiude niente.
   Future<void> _saveMeta() async {
-    final m = await RecordingMeta.load(_file.path);
-    m.bookmarks = [..._meta.bookmarks]..sort((a, b) => a.at.compareTo(b.at));
-    await m.save(_file.path);
+    try {
+      final m = await RecordingMeta.load(_file.path);
+      m.bookmarks = _metaLoaded
+          ? [..._meta.bookmarks]
+          : [
+              ...m.bookmarks,
+              for (final b in _meta.bookmarks)
+                if (!m.bookmarks.any((x) => x.at == b.at)) b,
+            ];
+      m.bookmarks.sort((a, b) => a.at.compareTo(b.at));
+      await m.save(_file.path);
+    } catch (e) {
+      if (mounted) showSnack(context, 'Segnalibri non salvati: $e');
+    }
   }
 
   Future<void> _addBookmark() async {
@@ -551,7 +606,7 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
         label: 'Nota (facoltativa)',
         initial: b.note,
       );
-      if (note == null) return;
+      if (note == null || !mounted) return;
       setState(() {
         _meta.bookmarks = [
           for (final x in _meta.bookmarks)
@@ -625,17 +680,30 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
   }
 
   /// Un tocco sul nome: rinomina (anche trascrizioni e riassunto).
+  bool _renaming = false;
+
   Future<void> _rename() async {
-    await _closePlayer();
-    if (!mounted) return;
-    final n = await renameNote(context, widget.course, _note);
-    if (n != null) {
-      _file = File(
-        p.join(p.dirname(_file.path), '$n${p.extension(_file.path)}'),
-      );
+    // doppio tocco sul titolo: un solo «Rinomina» (due lettori aperti
+    // tenevano il file bloccato su Windows)
+    if (_renaming) return;
+    _renaming = true;
+    try {
+      await _closePlayer();
+      if (!mounted) return;
+      final n = await renameNote(context, widget.course, _note);
+      if (n != null) {
+        _file = File(
+          p.join(p.dirname(_file.path), '$n${p.extension(_file.path)}'),
+        );
+      }
+      // schermata chiusa durante il riquadro: nessun lettore da riaprire
+      if (!mounted) return;
+      await _initPlayer();
+      if (!mounted) return;
+      await _load();
+    } finally {
+      _renaming = false;
     }
-    await _initPlayer();
-    await _load();
   }
 
   Future<void> _delete() async {
@@ -1476,7 +1544,8 @@ class _TrimSheetState extends State<TrimSheet> {
   Future<void> _toggle() async {
     if (_listening) {
       await widget.player?.pause();
-      setState(() => _listening = false);
+      // foglio chiuso nel frattempo
+      if (mounted) setState(() => _listening = false);
       return;
     }
     await _play(_d(_range.start));

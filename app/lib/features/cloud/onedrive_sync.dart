@@ -162,25 +162,47 @@ class OneDriveSync extends FolderSync {
       remoteRootCreated = true;
       return out;
     }
-    _folderId = root['id'] as String?;
+    final rootId = root['id'];
+    if (rootId is! String) {
+      throw GraphException(
+        502,
+        'Microsoft Graph: risposta inattesa per la cartella $remoteFolder',
+      );
+    }
+    _folderId = rootId;
     Future<void> walk(String id, String prefix) async {
-      for (final it in await graph.list('me/drive/items/$id/children')) {
-        final name = it['name'] as String? ?? '';
+      // elenco completo o errore (cartella sparita a metà, risposta senza
+      // elenco): mai un elenco vuoto che farebbe «eliminare» i file qui
+      for (final it in await graph.list(
+        'me/drive/items/$id/children',
+        null,
+        true,
+      )) {
+        final name = it['name'];
+        final itemId = it['id'];
+        if (name is! String || name.isEmpty || itemId is! String) {
+          throw GraphException(
+            502,
+            'Microsoft Graph: elemento senza nome o id in $remoteFolder',
+          );
+        }
         final rel = prefix.isEmpty ? name : '$prefix/$name';
         if (it['folder'] != null) {
-          await walk(it['id'] as String, rel);
+          await walk(itemId, rel);
         } else if (it['file'] != null) {
+          final url = it['@microsoft.graph.downloadUrl'];
+          final ctag = it['cTag'] ?? it['eTag'];
           out[rel] = RemoteFile(
-            id: it['id'] as String,
+            id: itemId,
             size: (it['size'] as num?)?.toInt() ?? 0,
-            ctag: it['cTag'] as String? ?? it['eTag'] as String? ?? '',
-            downloadUrl: it['@microsoft.graph.downloadUrl'] as String?,
+            ctag: ctag is String ? ctag : '',
+            downloadUrl: url is String ? url : null,
           );
         }
       }
     }
 
-    await walk(root['id'] as String, '');
+    await walk(rootId, '');
     return out;
   }
 
@@ -227,6 +249,10 @@ class OneDriveSync extends FolderSync {
         headers: {'Content-Type': 'application/octet-stream'},
         body: await f.readAsBytes(),
       );
+      // 404 (non è un errore per GraphClient.request): file non caricato
+      if (!r.ok) {
+        throw GraphException(r.status, 'Caricamento non riuscito: $rel');
+      }
       item = r.json;
     } else {
       final session = await graph.sendJson(
@@ -236,7 +262,10 @@ class OneDriveSync extends FolderSync {
           'item': {'@microsoft.graph.conflictBehavior': 'replace'},
         },
       );
-      final uploadUrl = session['uploadUrl'] as String;
+      final uploadUrl = session['uploadUrl'];
+      if (uploadUrl is! String) {
+        throw GraphException(502, 'OneDrive non ha aperto il caricamento: $rel');
+      }
       final raf = await f.open();
       try {
         var offset = 0;
@@ -252,6 +281,10 @@ class OneDriveSync extends FolderSync {
             headers: {'Content-Range': 'bytes $offset-${offset + n - 1}/$size'},
             body: chunk,
           );
+          // sessione scaduta o annullata (404): il file non c'è
+          if (!r.ok) {
+            throw GraphException(r.status, 'Caricamento interrotto: $rel');
+          }
           offset += n;
           if (r.status == 200 || r.status == 201) item = r.json;
         }
@@ -260,8 +293,14 @@ class OneDriveSync extends FolderSync {
       }
     }
     final st = await f.stat();
-    final itemId = item['id'] as String?;
-    if (itemId != null) _mine.add(itemId);
+    final id = item['id'];
+    // senza l'id del file caricato lo stato direbbe «sincronizzato» per un
+    // file che su OneDrive non c'è (e la volta dopo verrebbe tolto da qui)
+    if (id is! String) {
+      throw GraphException(502, 'OneDrive non ha confermato il caricamento: $rel');
+    }
+    final itemId = id;
+    _mine.add(itemId);
     return SyncedFile(
       size: st.size,
       mtime: st.modified.millisecondsSinceEpoch,

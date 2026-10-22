@@ -76,6 +76,24 @@ Impostazioni → Esclusioni (OFA, inglese, facoltativi, riconosciuti dal nome
 ufficiale). Ogni voce mostra solo il nome dell'insegnamento
 (`offeredInExamForm` in `exam_form.dart`).
 
+Dati fuori scala (importati, sincronizzati o di versioni vecchie) non devono
+rompere le schermate (`test/crash_ui_test.dart`):
+
+- CFU: `parseCfu` (`course_ui.dart`) accetta solo numeri finiti tra 0 e 60
+  (no «Infinity», «1e999», «NaN», negativi), nel modulo, nel dettaglio, in
+  «Esame a scelta (fuori piano)» e nei voti dell'anno; `formatNumber` e
+  `formatCfu` mostrano «—»/«CFU n.d.» per un valore non finito già salvato.
+- «Esame a scelta (fuori piano)» annullato: il menù torna al corso di prima;
+  passando a «Prova in itinere» la voce fuori piano non vale più; un
+  «Salva» non riuscito riusa l'insegnamento già creato (niente doppioni).
+- Voti dell'anno: un voto finale salvato fuori da 18–30 ha la sua voce nel
+  menù e resta com'è finché lo studente non sceglie un voto.
+- Date: `showSafeDatePicker` (`widgets/date_pick.dart`) allarga l'intervallo
+  del selettore fino alla data salvata (1900, 2300…); l'ora salvata strana
+  («99:99») si porta dentro il quadrante.
+- Difficoltà fuori 0–5 nel modulo dell'insegnamento: riportata nell'intervallo
+  dello Slider.
+
 ## Anni precedenti
 
 Chi inizia a usare UniNotes al 2°, 3° anno o dopo non ha compilato gli esami

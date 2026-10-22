@@ -16,6 +16,7 @@ import 'exam_materials.dart';
 import 'exam_status.dart';
 import 'exam_ui.dart';
 import 'study_materials_editor.dart';
+import '../../widgets/date_pick.dart';
 
 class _ExamDetailData {
   const _ExamDetailData(this.exam, this.course, this.universities);
@@ -173,7 +174,7 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
   /// Data e ora direttamente dalla card.
   Future<void> _editWhen() async {
     final now = DateTime.now();
-    final d = await showDatePicker(
+    final d = await showSafeDatePicker(
       context: context,
       initialDate: exam.date ?? now,
       firstDate: DateTime(now.year - 10),
@@ -184,10 +185,12 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
     final t = await showTimePicker(
       context: context,
       initialTime: TimeOfDay(
-        hour: int.tryParse(parts?.first ?? '') ?? 9,
+        // ora salvata strana («99:99» da dati importati): dentro il quadrante
+        hour: (int.tryParse(parts?.first ?? '') ?? 9).clamp(0, 23),
         minute:
-            int.tryParse(parts != null && parts.length > 1 ? parts[1] : '') ??
-            0,
+            (int.tryParse(parts != null && parts.length > 1 ? parts[1] : '') ??
+                    0)
+                .clamp(0, 59),
       ),
     );
     if (!mounted) return;
@@ -282,8 +285,8 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
       keyboard: const TextInputType.numberWithOptions(decimal: true),
     );
     if (v == null || !mounted) return;
-    final n = double.tryParse(v.replaceAll(',', '.'));
-    if (v.isNotEmpty && (n == null || n < 0 || n > 60)) {
+    final n = parseCfu(v);
+    if (v.trim().isNotEmpty && n == null) {
       showSnack(context, 'Valore CFU non valido');
       return;
     }

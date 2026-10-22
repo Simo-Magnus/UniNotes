@@ -34,7 +34,7 @@ class WavInfo {
   int get blockAlign => channels * bitsPerSample ~/ 8;
   int get byteRate => sampleRate * blockAlign;
 
-  Duration get duration => byteRate == 0
+  Duration get duration => byteRate <= 0
       ? Duration.zero
       : Duration(microseconds: dataLength * 1000000 ~/ byteRate);
 
@@ -53,6 +53,15 @@ class WavInfo {
   );
 }
 
+/// Dimensione massima dei dati di un WAV: i campi dell'intestazione sono a
+/// 32 bit (circa 4 GB, ~37 ore a 16 kHz mono).
+const int kWavMaxData = 0xFFFFFFFF - 36;
+
+/// [v] nei 32 bit di un campo dell'intestazione: oltre il limite resta il
+/// massimo (0xFFFFFFFF = «fino alla fine del file», vedi [parseWavHeader])
+/// invece di ricominciare da zero e far sembrare il file cortissimo.
+int _u32(int v) => v < 0 ? 0 : (v > 0xFFFFFFFF ? 0xFFFFFFFF : v);
+
 /// Intestazione standard di 44 byte (PCM, little endian).
 Uint8List wavHeader({
   required int sampleRate,
@@ -69,18 +78,19 @@ Uint8List wavHeader({
 
   final blockAlign = channels * bitsPerSample ~/ 8;
   tag(0, 'RIFF');
-  b.setUint32(4, 36 + dataLength, Endian.little);
+  final data = dataLength > kWavMaxData ? 0xFFFFFFFF : _u32(dataLength);
+  b.setUint32(4, data == 0xFFFFFFFF ? 0xFFFFFFFF : 36 + data, Endian.little);
   tag(8, 'WAVE');
   tag(12, 'fmt ');
   b.setUint32(16, 16, Endian.little);
   b.setUint16(20, 1, Endian.little); // PCM
   b.setUint16(22, channels, Endian.little);
-  b.setUint32(24, sampleRate, Endian.little);
-  b.setUint32(28, sampleRate * blockAlign, Endian.little);
+  b.setUint32(24, _u32(sampleRate), Endian.little);
+  b.setUint32(28, _u32(sampleRate * blockAlign), Endian.little);
   b.setUint16(32, blockAlign, Endian.little);
   b.setUint16(34, bitsPerSample, Endian.little);
   tag(36, 'data');
-  b.setUint32(40, dataLength, Endian.little);
+  b.setUint32(40, data, Endian.little);
   return b.buffer.asUint8List();
 }
 
@@ -108,7 +118,11 @@ WavInfo? parseWavHeader(Uint8List head, {int? fileLength}) {
       rate = b.getUint32(body + 4, Endian.little);
       bits = b.getUint16(body + 14, Endian.little);
     } else if (id == 'data') {
-      if (rate == null || channels == null || bits != 16 || channels == 0) {
+      if (rate == null ||
+          channels == null ||
+          bits != 16 ||
+          channels == 0 ||
+          rate == 0) {
         return null;
       }
       final info = WavInfo(
@@ -154,10 +168,13 @@ Future<WavInfo?> repairWav(File f) async {
   try {
     final end = info.dataOffset + info.dataLength;
     if (await raf.length() != end) await raf.truncate(end);
-    final riff = ByteData(4)..setUint32(0, end - 8, Endian.little);
+    final big = info.dataLength > kWavMaxData;
+    final riff = ByteData(4)
+      ..setUint32(0, big ? 0xFFFFFFFF : _u32(end - 8), Endian.little);
     await raf.setPosition(4);
     await raf.writeFrom(riff.buffer.asUint8List());
-    final data = ByteData(4)..setUint32(0, info.dataLength, Endian.little);
+    final data = ByteData(4)
+      ..setUint32(0, big ? 0xFFFFFFFF : info.dataLength, Endian.little);
     await raf.setPosition(info.dataOffset - 4);
     await raf.writeFrom(data.buffer.asUint8List());
   } finally {
@@ -202,11 +219,17 @@ class WavWriter {
 
   int get dataBytes => _bytes;
   int get _blockAlign => channels * 2;
-  Duration get duration =>
-      Duration(microseconds: _bytes * 1000000 ~/ (sampleRate * _blockAlign));
+  Duration get duration {
+    final rate = sampleRate * _blockAlign;
+    return rate <= 0
+        ? Duration.zero
+        : Duration(microseconds: _bytes * 1000000 ~/ rate);
+  }
 
-  /// Formato effettivo scelto dal sistema (prima dei dati).
+  /// Formato effettivo scelto dal sistema (prima dei dati). Valori non
+  /// validi (0 Hz, nessun canale) si ignorano: resta il formato chiesto.
   void setFormat(int rate, int ch) {
+    if (rate <= 0 || ch <= 0) return;
     sampleRate = rate;
     channels = ch;
   }
@@ -225,6 +248,13 @@ class WavWriter {
       data = Uint8List.sublistView(data, 0, data.length - 1);
     }
     if (data.isEmpty) return;
+    if (_bytes + data.length > kWavMaxData) {
+      // oltre i 4 GB l'intestazione del WAV non può più descrivere i dati:
+      // ci si ferma qui (il registratore va in pausa e l'audio fin qui si
+      // salva)
+      error ??= const WavLimitReached();
+      return;
+    }
     _bytes += data.length;
     _sinceHeader += data.length;
     final copy = Uint8List.fromList(data);
@@ -278,6 +308,15 @@ class WavWriter {
       await _raf.close();
     } catch (_) {}
   }
+}
+
+/// Il WAV di lavoro ha raggiunto il limite di 4 GB del formato.
+class WavLimitReached implements Exception {
+  const WavLimitReached();
+  @override
+  String toString() =>
+      'la registrazione ha raggiunto la lunghezza massima di un file WAV '
+      '(4 GB).';
 }
 
 /// Campioni a 16 bit di [bytes] (little endian).
@@ -343,6 +382,7 @@ class LevelBinner {
 /// a [rate] Hz con [channels] canali: media dei canali e interpolazione
 /// lineare.
 Int16List toMono16k(Int16List samples, int rate, int channels) {
+  if (rate <= 0 || channels <= 0) return Int16List(0);
   final frames = samples.length ~/ channels;
   final mono = Float64List(frames);
   for (var f = 0; f < frames; f++) {

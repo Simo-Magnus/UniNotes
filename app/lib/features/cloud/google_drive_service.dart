@@ -243,10 +243,12 @@ class GoogleDriveService extends CloudDriveService {
   Future<SyncReport?> sync({bool force = true, bool auto = false}) async {
     try {
       await migrateLegacyAccess();
-    } catch (e) {
-      // senza rete: la sincronizzazione mostra il messaggio che chiede la
-      // connessione ([CloudDriveService.offlineMessage])
-      if (!isNetworkError(e)) rethrow;
+    } catch (_) {
+      // senza rete, portachiavi o database non disponibili: la
+      // sincronizzazione qui sotto riprova l'accesso e mostra lei la causa
+      // (con il messaggio che chiede la connessione se manca la rete). Un
+      // errore lanciato da qui arriverebbe ai controlli automatici, che non
+      // lo aspettano.
     }
     return super.sync(force: force, auto: auto);
   }

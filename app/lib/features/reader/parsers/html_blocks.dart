@@ -8,6 +8,58 @@ import '../reader_document.dart';
 /// Immagine di un `src` (relativo al documento), se disponibile.
 typedef ImageResolver = Uint8List? Function(String src);
 
+/// Livelli di annidamento oltre i quali una pagina si mostra come testo.
+const kHtmlMaxNesting = 1000;
+
+const _voidTags = {
+  'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', //
+  'meta', 'param', 'source', 'track', 'wbr',
+};
+
+/// Annidamento massimo stimato dei tag di [s] (scansione lineare, senza
+/// costruire l'albero).
+int htmlNesting(String s) {
+  var depth = 0, max = 0;
+  var i = s.indexOf('<');
+  while (i >= 0 && i + 1 < s.length) {
+    final c = s.codeUnitAt(i + 1);
+    final close = s.indexOf('>', i + 1);
+    if (close < 0) break;
+    if (c == 0x2F) {
+      // </tag>
+      if (depth > 0) depth--;
+    } else if ((c | 0x20) >= 0x61 && (c | 0x20) <= 0x7A) {
+      var j = i + 1;
+      while (j < close) {
+        final k = s.codeUnitAt(j) | 0x20;
+        if (!((k >= 0x61 && k <= 0x7A) || (k >= 0x30 && k <= 0x39))) break;
+        j++;
+      }
+      final name = s.substring(i + 1, j).toLowerCase();
+      final selfClosing = s.codeUnitAt(close - 1) == 0x2F;
+      if (!selfClosing && !_voidTags.contains(name)) {
+        depth++;
+        if (depth > max) max = depth;
+      }
+    }
+    i = s.indexOf('<', close + 1);
+  }
+  return max;
+}
+
+/// Come `html.parse`, ma una pagina con migliaia di elementi annidati (file
+/// rovinato o costruito apposta) diventa solo testo: il parser HTML impiega
+/// un tempo quadratico con l'annidamento (minuti per 30000 livelli) e le
+/// visite ricorsive dell'albero finirebbero lo stack.
+dom.Document parseHtmlSafe(String source) {
+  if (htmlNesting(source) <= kHtmlMaxNesting) return html.parse(source);
+  final text = source
+      .replaceAll(RegExp(r'<[^>]*>'), ' ')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;');
+  return html.parse('<html><body><p>$text</p></body></html>');
+}
+
 /// HTML/XHTML → blocchi del lettore. Serve a pagine web, capitoli EPUB,
 /// note Evernote (ENML), MOBI e celle Markdown dei notebook.
 class HtmlBlocks {
@@ -28,7 +80,7 @@ class HtmlBlocks {
       HtmlBlocks(images: images).convert(source);
 
   List<RBlock> convert(String source) {
-    final doc = html.parse(source);
+    final doc = parseHtmlSafe(source);
     final body = doc.body ?? doc.documentElement;
     if (body != null) _walk(body, const _Fmt());
     _flush();
@@ -36,7 +88,7 @@ class HtmlBlocks {
   }
 
   static String _title(String source) =>
-      html.parse(source).querySelector('title')?.text.trim() ?? '';
+      parseHtmlSafe(source).querySelector('title')?.text.trim() ?? '';
 
   /// Titolo della pagina (`<title>`), vuoto se manca.
   static String titleOf(String source) => _title(source);
@@ -49,7 +101,23 @@ class HtmlBlocks {
     _out.add(_para.build(style: style, level: level, marker: marker));
   }
 
+  /// Profondità corrente e massima dell'albero: una pagina con decine di
+  /// migliaia di elementi annidati (file rovinati o costruiti apposta)
+  /// finirebbe lo stack; oltre il limite gli elementi più interni si saltano.
+  int _depth = 0;
+  static const _maxDepth = 300;
+
   void _walk(dom.Node node, _Fmt f, {int listLevel = 0}) {
+    if (_depth >= _maxDepth) return;
+    _depth++;
+    try {
+      _walkNode(node, f, listLevel: listLevel);
+    } finally {
+      _depth--;
+    }
+  }
+
+  void _walkNode(dom.Node node, _Fmt f, {int listLevel = 0}) {
     if (node is dom.Text) {
       var t = node.text;
       if (!f.pre) t = t.replaceAll(RegExp(r'\s+'), ' ');

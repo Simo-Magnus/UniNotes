@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:html/dom.dart' as dom;
-import 'package:html/parser.dart' as html;
 import 'package:path/path.dart' as p;
 import 'package:xml/xml.dart';
 
@@ -149,7 +148,7 @@ RDoc parseEpub(Uint8List bytes) {
   if (nav != null) {
     final src = zip.text(nav.href);
     if (src != null) {
-      final doc = html.parse(src);
+      final doc = parseHtmlSafe(src);
       final navEl =
           doc.querySelectorAll('nav').where((n) {
             final t = n.attributes['epub:type'] ?? n.attributes['type'] ?? '';
@@ -595,8 +594,8 @@ RDoc parseXps(Uint8List bytes) {
       final t = g.attr('UnicodeString');
       if (t == null || t.trim().isEmpty) continue;
       glyphs.add((
-        x: double.tryParse(g.attr('OriginX') ?? '') ?? 0,
-        y: double.tryParse(g.attr('OriginY') ?? '') ?? 0,
+        x: parseFinite(g.attr('OriginX') ?? '') ?? 0,
+        y: parseFinite(g.attr('OriginY') ?? '') ?? 0,
         text: t.startsWith('{}') ? t.substring(2) : t,
       ));
     }

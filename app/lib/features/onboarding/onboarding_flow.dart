@@ -221,7 +221,12 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     );
   }
 
-  void _go(OnboardingStep next) => setState(() => _history.add(next));
+  /// Un doppio tocco sulla stessa scelta non mette due volte lo stesso
+  /// passo (servirebbero due «Indietro»).
+  void _go(OnboardingStep next) {
+    if (_history.last == next) return;
+    setState(() => _history.add(next));
+  }
 
   bool get _canGoBack => _history.length > 1;
 
@@ -255,8 +260,11 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     );
   }
 
-  /// Passo successivo dopo l'import, o l'app.
-  void _nextTail() {
+  /// Passo successivo dopo l'import, o l'app, partendo da [from]: un
+  /// secondo tocco arrivato quando il passo è già cambiato non salta il
+  /// passo nuovo (né chiude l'onboarding prima del tempo).
+  void _nextTail(OnboardingStep from) {
+    if (!mounted || _step != from) return;
     final i = _tail.indexOf(_step);
     if (i >= 0 && i + 1 < _tail.length) {
       _go(_tail[i + 1]);
@@ -265,9 +273,22 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     }
   }
 
+  /// Una volta sola: un doppio tocco su «Vai all'app» chiuderebbe anche la
+  /// pagina sotto (Impostazioni, in «Cambia corso»).
+  bool _finishing = false;
+
   Future<void> _finish() async {
-    await _s.loadProfile();
+    if (_finishing) return;
+    _finishing = true;
+    try {
+      await _s.loadProfile();
+    } catch (e) {
+      // il piano è già salvato: si entra comunque, il profilo si rilegge
+      // al prossimo avvio
+      debugPrint('Onboarding: profilo non riletto: $e');
+    }
     _s.revision.bump();
+    if (!mounted) return;
     widget.onFinished?.call();
   }
 
@@ -456,9 +477,15 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     OnboardingStep.aspetto => _AppearanceStep(
       onNext: () => _go(OnboardingStep.tipo),
     ),
-    OnboardingStep.ai => _AiStep(onNext: _nextTail),
-    OnboardingStep.notifiche => _NotificationsStep(onNext: _nextTail),
-    OnboardingStep.calendario => _CalendarStep(onNext: _nextTail),
+    OnboardingStep.ai => _AiStep(
+      onNext: () => _nextTail(OnboardingStep.ai),
+    ),
+    OnboardingStep.notifiche => _NotificationsStep(
+      onNext: () => _nextTail(OnboardingStep.notifiche),
+    ),
+    OnboardingStep.calendario => _CalendarStep(
+      onNext: () => _nextTail(OnboardingStep.calendario),
+    ),
     _ => _ExclusionsStep(onDone: _finish),
   };
 

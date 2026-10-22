@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:crypto/crypto.dart';
-import 'package:html/parser.dart' as html;
 import 'package:path/path.dart' as p;
 import 'package:xml/xml.dart';
 
@@ -47,13 +46,18 @@ class OutlineDoc {
 }
 
 String _htmlText(String source) =>
-    html.parse(source).body?.text.replaceAll(RegExp(r'[ \t]+'), ' ').trim() ??
+    parseHtmlSafe(source).body?.text.replaceAll(RegExp(r'[ \t]+'), ' ').trim() ??
     '';
+
+/// Livelli massimi di una scaletta: oltre (file rovinati o costruiti
+/// apposta con migliaia di livelli) la ricorsione finirebbe lo stack e la
+/// vista rientrerebbe il testo fuori dallo schermo.
+const kOutlineMaxDepth = 64;
 
 /// Mappa mentale FreeMind / Freeplane (.mm).
 OutlineDoc parseMindMap(Uint8List bytes) {
   final doc = XmlDocument.parse(decodeText(bytes));
-  OutlineNode node(XmlElement e) {
+  OutlineNode node(XmlElement e, [int depth = 0]) {
     var text = e.attr('TEXT') ?? '';
     String? note;
     for (final rc in e.kids('richcontent')) {
@@ -69,7 +73,10 @@ OutlineDoc parseMindMap(Uint8List bytes) {
       text,
       note: note,
       link: e.attr('LINK'),
-      children: [for (final c in e.kids('node')) node(c)],
+      children: [
+        if (depth < kOutlineMaxDepth)
+          for (final c in e.kids('node')) node(c, depth + 1),
+      ],
     );
   }
 
@@ -80,11 +87,14 @@ OutlineDoc parseMindMap(Uint8List bytes) {
 /// Scaletta OPML (.opml): elenchi annidati di `outline`.
 OutlineDoc parseOpml(Uint8List bytes) {
   final doc = XmlDocument.parse(decodeText(bytes));
-  OutlineNode node(XmlElement e) => OutlineNode(
+  OutlineNode node(XmlElement e, [int depth = 0]) => OutlineNode(
     e.attr('text') ?? e.attr('title') ?? '',
     note: e.attr('_note'),
     link: e.attr('url') ?? e.attr('htmlUrl') ?? e.attr('xmlUrl'),
-    children: [for (final c in e.kids('outline')) node(c)],
+    children: [
+      if (depth < kOutlineMaxDepth)
+        for (final c in e.kids('outline')) node(c, depth + 1),
+    ],
   );
   final body = doc.rootElement.kid('body');
   final title =
@@ -237,10 +247,10 @@ ContainerPreview containerPreview(Uint8List bytes) {
       .where((n) => n.toLowerCase().endsWith('.pdf'))
       .toList();
   if (pdfs.isNotEmpty) {
-    pdfs.sort(
-      (a, b) =>
-          (zip.bytes(b)?.length ?? 0).compareTo(zip.bytes(a)?.length ?? 0),
-    );
+    // dimensioni lette una volta sola (prima ogni confronto decomprimeva
+    // di nuovo i due PDF)
+    final size = {for (final n in pdfs) n: zip.bytes(n)?.length ?? 0};
+    pdfs.sort((a, b) => size[b]!.compareTo(size[a]!));
     return ContainerPreview(
       pdf: zip.bytes(pdfs.first),
       pdfName: pdfs.first,

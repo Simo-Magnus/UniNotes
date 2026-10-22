@@ -151,3 +151,10 @@ Focus e Non disturbare** (`focus/focus_quiet_section.dart`).
 Test: `app/test/study_screen_test.dart`, `app/test/study_reorder_test.dart`,
 `app/test/study_timer_test.dart`, `app/test/focus_test.dart`,
 `app/test/study_sessions_stats_focus_test.dart`.
+
+Gruppi degli insegnamenti (`course_groups.dart`): semestri scritti in modo
+diverso ma con la stessa etichetta («1» e «1° semestre» da dati importati)
+finiscono in un gruppo solo, così negli elenchi non ci sono chiavi doppie e
+il selettore della Home li raggiunge tutti. Dati limite (vuoti, enormi, fuori
+scala, caratteri ×3, 320 px, finestra ridimensionata a metà animazione):
+`app/test/crash_ui_test.dart`.

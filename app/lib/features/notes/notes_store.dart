@@ -5,6 +5,7 @@ import 'package:path_provider/path_provider.dart';
 
 import '../../models/course.dart';
 import '../../repositories/settings_repository.dart';
+import 'safe_files.dart';
 
 /// Sottocartelle degli appunti di un corso.
 enum NoteFolder {
@@ -230,7 +231,9 @@ class NotesStore {
   ) async {
     final dir = await courseDir(c, folder);
     final f = File(p.join(dir.path, '${safeName(name)}.md'));
-    await f.writeAsString(text);
+    // scrittura sicura: disco pieno o interruzione non lasciano il file
+    // vuoto o a metà
+    await writeStringAtomic(f, text);
     return f;
   }
 
@@ -303,10 +306,34 @@ class NotesStore {
         }
       }
     }
-    final done = <String, String>{};
+    // nessun file di arrivo già presente (es. «<nuovo> (Gemini).md»
+    // rimasto da prima): la rinomina lo sostituirebbe senza dirlo
     for (final m in moves.entries) {
-      await m.key.rename(m.value);
-      done[m.key.path] = m.value;
+      // (cambio solo di maiuscole: è lo stesso file sui dischi che non le
+      // distinguono)
+      if (m.key.path.toLowerCase() != m.value.toLowerCase() &&
+          await File(m.value).exists()) {
+        throw FileSystemException(
+          'Esiste già un file chiamato "${p.basename(m.value)}"',
+          m.value,
+        );
+      }
+    }
+    final done = <String, String>{};
+    try {
+      for (final m in moves.entries) {
+        await m.key.rename(m.value);
+        done[m.key.path] = m.value;
+      }
+    } catch (_) {
+      // un file in uso (lettore, Whisper): si rimettono i nomi di prima,
+      // la lezione non resta rinominata a metà
+      for (final d in done.entries.toList().reversed) {
+        try {
+          await File(d.value).rename(d.key);
+        } catch (_) {}
+      }
+      rethrow;
     }
     return done;
   }

@@ -35,7 +35,11 @@ class _CoursesScreenState extends State<CoursesScreen> {
   void initState() {
     super.initState();
     // filtro salvato dalle versioni precedenti: non serve più
-    context.read<AppServices>().settings.set('courses_status_filter', null);
+    context
+        .read<AppServices>()
+        .settings
+        .set('courses_status_filter', null)
+        .catchError((Object e) => debugPrint('Filtro vecchio: $e'));
   }
 
   @override

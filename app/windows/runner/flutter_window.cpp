@@ -128,7 +128,10 @@ FlutterWindow::MessageHandler(HWND hwnd, UINT const message,
 
   switch (message) {
     case WM_FONTCHANGE:
-      flutter_controller_->engine()->ReloadSystemFonts();
+      // dopo OnDestroy (finestra in chiusura) il motore non c'è più
+      if (flutter_controller_ && flutter_controller_->engine()) {
+        flutter_controller_->engine()->ReloadSystemFonts();
+      }
       break;
     case WM_SIZE: {
       // Riaprendo la finestra dalla barra delle applicazioni (ripristinata o

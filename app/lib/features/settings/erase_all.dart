@@ -61,6 +61,36 @@ Future<void> runEraseFlow(
   VoidCallback quit = _exitApp,
   bool? windowsStore,
 }) async {
+  // un doppio tocco su «Elimina tutti i dati» aprirebbe due giri di dialoghi
+  // (e due eliminazioni una sopra l'altra)
+  // (per navigatore: una pagina nuova riparte da capo)
+  final Object owner = Navigator.maybeOf(context) ?? context;
+  if (_eraseRunning[owner] == true) return;
+  _eraseRunning[owner] = true;
+  try {
+    await _runEraseFlow(
+      context,
+      mode: mode,
+      eraser: eraser,
+      uninstall: uninstall,
+      quit: quit,
+      windowsStore: windowsStore,
+    );
+  } finally {
+    _eraseRunning[owner] = null;
+  }
+}
+
+final _eraseRunning = Expando<bool>('eliminazione in corso');
+
+Future<void> _runEraseFlow(
+  BuildContext context, {
+  required EraseFlowMode mode,
+  required DataEraser eraser,
+  required Future<UninstallResult> Function() uninstall,
+  required VoidCallback quit,
+  bool? windowsStore,
+}) async {
   final store = windowsStore ?? (Platform.isWindows && kMicrosoftStoreBuild);
   final windows = mode == EraseFlowMode.windowsUninstaller;
   final options = await eraser.options();
@@ -135,7 +165,24 @@ Future<void> runEraseFlow(
     if (windows) quit();
     return;
   }
-  final report = await runEraseWithProgress(context, eraser, items);
+  final EraseReport report;
+  try {
+    report = await runEraseWithProgress(context, eraser, items);
+  } catch (e) {
+    // errore a metà (cartella non leggibile…): il database può essere già
+    // chiuso, quindi l'app non può restare aperta come se nulla fosse
+    if (!context.mounted) {
+      quit();
+      return;
+    }
+    await _finalDialog(context, 'Eliminazione interrotta', [
+      'Non tutto si è potuto eliminare: $e',
+      Platform.isIOS
+          ? 'Chiudi l\'app, riaprila e riprova.'
+          : 'L\'app ora si chiude: riaprila e riprova.',
+    ], quit);
+    return;
+  }
   if (!context.mounted) return;
   final problems = eraseProblems(report);
 

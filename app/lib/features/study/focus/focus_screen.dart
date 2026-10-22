@@ -447,17 +447,28 @@ class _PlanStrip extends StatelessWidget {
         height: 10,
         child: LayoutBuilder(
           builder: (context, c) {
-            final gap = 4.0;
-            final usable = c.maxWidth - gap * (plan.length - 1);
+            // tanti tratti (4 ore, pause ogni 20 minuti) su un telefono
+            // stretto: spazi e larghezze minime si riducono per stare nella
+            // riga invece di sforarla
+            final max = c.maxWidth.isFinite ? c.maxWidth : 0.0;
+            final n = plan.length;
+            final gap = n > 1 ? math.min(4.0, max * 0.25 / (n - 1)) : 0.0;
+            final usable = math.max(0.0, max - gap * (n - 1));
+            final widths = [
+              for (final seg in plan)
+                math.max(
+                  seg.phase == FocusPhase.rest ? 10.0 : 16.0,
+                  usable * seg.length.inSeconds / total,
+                ),
+            ];
+            final sum = widths.fold(0.0, (a, b) => a + b);
+            final k = sum > usable && sum > 0 ? usable / sum * 0.999 : 1.0;
             return Row(
               children: [
                 for (var i = 0; i < plan.length; i++) ...[
                   if (i > 0) SizedBox(width: gap),
                   SizedBox(
-                    width: math.max(
-                      plan[i].phase == FocusPhase.rest ? 10.0 : 16.0,
-                      usable * plan[i].length.inSeconds / total,
-                    ),
+                    width: widths[i] * k,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: LinearProgressIndicator(
@@ -682,6 +693,17 @@ class _Completed extends StatelessWidget {
                 format: (v) => '${formatMinutes(v)} di concentrazione',
                 style: theme.textTheme.titleMedium,
               ),
+              if (result.focusMinutes >= 1 && focus.saveError != null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: Text(
+                    'La sessione non è stata salvata: ${focus.saveError}',
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: theme.colorScheme.error,
+                    ),
+                  ),
+                ),
               if (result.focusMinutes < 1)
                 Padding(
                   padding: const EdgeInsets.only(top: 8),

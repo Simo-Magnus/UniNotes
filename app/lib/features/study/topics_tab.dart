@@ -110,7 +110,9 @@ Future<int?> pickCourse(
           onSelect: (id) => Navigator.pop(c, id),
           onReordered: (ids) {
             changed = true;
-            saveStudyCourseOrder(s, ids);
+            saveStudyCourseOrder(s, ids).catchError(
+              (Object e) => debugPrint('Ordine degli insegnamenti: $e'),
+            );
           },
         ),
       ),
@@ -198,7 +200,10 @@ class _CoursePickerListState extends State<CoursePickerList> {
             ),
           ),
           SliverReorderableList(
-            key: ValueKey('course-group-${_groups[gi].label}'),
+            // con l'indice: due semestri scritti in modo diverso
+            // («1» e «1° semestre» dai dati importati) hanno la stessa
+            // etichetta, e due chiavi uguali romperebbero l'elenco
+            key: ValueKey('course-group-$gi-${_groups[gi].label}'),
             autoScrollerVelocityScalar: kReorderAutoScrollVelocity,
             itemCount: _groups[gi].courses.length,
             onReorderStart: (_) => AppFeedback.of(context).tap(),

@@ -310,7 +310,11 @@ class AndroidRecordingNotification implements BackgroundControls {
       notificationButtons: c.buttons,
       callback: recordingServiceCallback,
     );
-    if (r is ServiceRequestFailure) {
+    // servizio rimasto acceso dalla registrazione di prima (fermata senza
+    // che il sistema lo chiudesse): si riusa, invece di non poter più
+    // registrare finché non si chiude l'app
+    if (r is ServiceRequestFailure &&
+        r.error is! ServiceAlreadyStartedException) {
       FlutterForegroundTask.removeTaskDataCallback(_onData);
       return 'Impossibile mantenere attiva la registrazione a schermo spento: '
           '${r.error}';

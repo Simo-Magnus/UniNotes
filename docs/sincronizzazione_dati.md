@@ -194,6 +194,23 @@ un lavoro periodico del JobScheduler (`BackgroundSync.kt`, al massimo ogni
 interfaccia su `backgroundSyncMain`), iPhone con l'aggiornamento in
 background di iOS (`BGAppRefreshTask`, quando lo decide il sistema).
 
+**Robustezza (22/10/2026).** Una sola sincronizzazione per servizio alla
+volta, anche con richieste quasi insieme (avvio, timer, «Sincronizza ora»,
+lavoro in background). Su Android il motore senza interfaccia ha anche i
+canali del calendario e dei widget, non chiude il database (la connessione
+di sqflite è una sola per processo, condivisa con l'app se nel frattempo si
+apre) e si spegne solo quando Dart ha finito (al massimo dopo 30 minuti);
+finché lavora, l'app aperta salta le sue sincronizzazioni (`busy`). Ogni
+richiesta di rete si ferma dopo 60 secondi senza dati (connessione caduta
+senza errore) e una connessione sicura non riuscita (Wi‑Fi con pagina di
+accesso) vale come rete assente. Un elenco dei file incompleto o inatteso
+(cartella sparita a metà, risposta senza `value`/`files`) ferma la
+sincronizzazione invece di far sembrare «eliminati altrove» i file del
+dispositivo; un caricamento non confermato dal servizio (404, nessun id) non
+risulta sincronizzato e si riprova. Un secondo conflitto dello stesso file
+nello stesso minuto crea «(conflitto … 2)» invece di sovrascrivere la copia
+precedente.
+
 **Documenti vuoti.** Un PDF, un libro, un documento Office, un'immagine o un
 audio di 0 byte è un file rovinato (copia interrotta, file del fornitore del
 telefono non scaricato): non si carica mai, non crea conflitti (vince la

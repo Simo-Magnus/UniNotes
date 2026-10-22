@@ -8,6 +8,7 @@ import '../../../core/database/app_database.dart';
 import '../../../core/database/schema.dart';
 import '../../../core/services/app_services.dart';
 import '../../../core/services/book_library.dart';
+import '../../../core/services/error_log.dart';
 import '../../../core/services/local_data.dart';
 import '../../../core/services/temp_files.dart';
 import '../../cloud/onedrive_service.dart';
@@ -453,6 +454,23 @@ class DataEraser {
         if (await f.exists()) await f.delete();
       } catch (_) {}
     }
+    // copie danneggiate messe da parte all'avvio e registro locale degli
+    // errori (AppDatabase.open, ErrorLog): anche loro sono dati dell'app
+    try {
+      final dir = await _supportDir();
+      if (!await dir.exists()) return;
+      await for (final e in dir.list(followLinks: false)) {
+        final name = p.basename(e.path);
+        if (e is File &&
+            (name.startsWith('${AppDatabase.fileName}.danneggiato-') ||
+                name == ErrorLog.fileName ||
+                name == '${ErrorLog.fileName}.1')) {
+          try {
+            await e.delete();
+          } catch (_) {}
+        }
+      }
+    } catch (_) {}
   }
 
   Future<void> _deleteSyncState() async {

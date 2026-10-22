@@ -145,8 +145,13 @@ class _WhisperCardState extends State<WhisperCard> {
     )) {
       return;
     }
-    await _w.deleteModel(m);
-    if (await _w.selectedModelId() == m.id) await _w.setSelectedModel(null);
+    try {
+      await _w.deleteModel(m);
+      if (await _w.selectedModelId() == m.id) await _w.setSelectedModel(null);
+    } catch (e) {
+      // es. su Windows il file è in uso da una trascrizione in corso
+      if (mounted) showSnack(context, 'Modello non eliminato: $e');
+    }
     _reload();
   }
 
@@ -760,9 +765,14 @@ class _ParakeetSectionState extends State<_ParakeetSection> {
     )) {
       return;
     }
-    await _s.whisper.parakeet.delete();
-    if (await _s.whisper.selectedModelId() == kParakeetId) {
-      await _s.whisper.setSelectedModel(null);
+    try {
+      await _s.whisper.parakeet.delete();
+      if (await _s.whisper.selectedModelId() == kParakeetId) {
+        await _s.whisper.setSelectedModel(null);
+      }
+    } catch (e) {
+      // es. su Windows il modello è in uso dal testo istantaneo
+      if (mounted) showSnack(context, 'Parakeet non eliminato: $e');
     }
     _reload();
   }

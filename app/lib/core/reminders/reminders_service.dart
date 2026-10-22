@@ -223,13 +223,16 @@ class RemindersService extends ChangeNotifier {
 
   Future<void> _refresh(DateTime now) async {
     final AgendaData data;
+    final NotificationPrefs prefs;
     try {
       data = await loadAgenda(now);
+      prefs = await NotificationPrefs.load(_s.settings);
     } catch (e) {
+      // database non leggibile: si riprova al prossimo aggiornamento (un
+      // errore qui arriverebbe ai timer e ai listener, che non lo aspettano)
       debugPrint('Promemoria non aggiornati: $e');
       return;
     }
-    final prefs = await NotificationPrefs.load(_s.settings);
     var status = CalendarStatus.off;
     try {
       status = await calendar.sync(
@@ -239,11 +242,11 @@ class RemindersService extends ChangeNotifier {
         now: now,
       );
     } on CalendarAccessException catch (e) {
-      status = await calendar.status();
+      status = await _calendarStatus();
       if (e.expired) await linkBroken('calendario', now: now);
     } catch (e) {
       debugPrint('Calendario non aggiornato: $e');
-      status = await calendar.status();
+      status = await _calendarStatus();
     }
     try {
       await reschedule(data, status, now: now);
@@ -254,6 +257,16 @@ class RemindersService extends ChangeNotifier {
       await widgets.update(widgetPayload(data.agenda, now));
     } catch (_) {}
     notifyListeners();
+  }
+
+  /// Stato del calendario dopo un errore (spento se non si legge: le
+  /// notifiche le manda l'app).
+  Future<CalendarStatus> _calendarStatus() async {
+    try {
+      return await calendar.status();
+    } catch (_) {
+      return CalendarStatus.off;
+    }
   }
 
   /// Prove (e sessioni) del corso attuale.
@@ -433,6 +446,17 @@ class RemindersService extends ChangeNotifier {
       quietUntil: quietUntil,
     );
 
+    // senza [start] (motore senza interfaccia della sincronizzazione in
+    // background) le notifiche non sono ancora pronte: si preparano qui,
+    // altrimenti le vecchie si cancellerebbero e le nuove non partirebbero
+    if (!_started) {
+      try {
+        await platform.init(_onTap);
+      } catch (e) {
+        debugPrint('Notifiche non disponibili: $e');
+        return const [];
+      }
+    }
     // cancella le notifiche ancora future pianificate l'ultima volta (non
     // quelle già mostrate) e pianifica le nuove
     final old = await _dateMap(NotificationKeys.scheduled);
@@ -637,13 +661,21 @@ class RemindersService extends ChangeNotifier {
   Future<void> linkBroken(String service, {DateTime? now}) async {
     final t = now ?? DateTime.now();
     if (!notificationsSupported) return;
-    final prefs = await NotificationPrefs.load(_s.settings);
-    if (!prefs.consent || !prefs.links) return;
-    final key =
-        '${NotificationKeys.linkWarnedPrefix}'
-        '${service.toLowerCase().replaceAll(' ', '_')}';
-    final last = await _date(key);
-    if (last != null && t.difference(last) < const Duration(days: 3)) return;
+    final String key;
+    try {
+      final prefs = await NotificationPrefs.load(_s.settings);
+      if (!prefs.consent || !prefs.links) return;
+      key =
+          '${NotificationKeys.linkWarnedPrefix}'
+          '${service.toLowerCase().replaceAll(' ', '_')}';
+      final last = await _date(key);
+      if (last != null && t.difference(last) < const Duration(days: 3)) return;
+    } catch (e) {
+      // impostazioni non leggibili (chiamata anche dai listener dei servizi
+      // cloud, che non aspettano errori): niente avviso questa volta
+      debugPrint('Avviso non mostrato: $e');
+      return;
+    }
     final n = linkBrokenNotification(service, t);
     final quiet = _quietUntil;
     try {

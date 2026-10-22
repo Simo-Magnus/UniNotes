@@ -10,6 +10,8 @@ import 'dart:typed_data';
 import 'zp_decoder.dart';
 
 /// Primo coefficiente e numero di gruppi (bucket) di ogni banda (tab. 2).
+const _maxPixels = 50 * 1000 * 1000;
+
 const _bandFirst = [0, 1, 2, 3, 4, 8, 12, 16, 32, 48];
 const _bandCount = [1, 1, 1, 1, 4, 4, 4, 16, 16, 16];
 
@@ -102,6 +104,12 @@ class Iw44Image {
       _delay = data[pos + 6] & 0x7F;
       _chromaHalf = data[pos + 6] & 0x80 == 0;
       pos += 7;
+      // Limite di memoria: i coefficienti occupano 2 byte per pixel e per
+      // componente, e il piano ricostruito altri 4 (50 Mpixel bastano per
+      // una pagina A3 a 600 dpi).
+      if (width == 0 || height == 0 || width * height > _maxPixels) {
+        throw FormatException('IW44: dimensioni non valide ${width}x$height');
+      }
       _blocksW = (width + 31) >> 5;
       final blocks = _blocksW * ((height + 31) >> 5);
       _comps = [for (var i = 0; i < (color ? 3 : 1); i++) _Component(blocks)];
@@ -114,6 +122,9 @@ class Iw44Image {
     final zp = ZpDecoder(data, pos, stop);
     final blocks = _comps.first.coeffs.length >> 10;
     for (var s = 0; s < slices; s++) {
+      // Blocco troncato o rovinato: le fette restanti sarebbero solo bit a
+      // 1 (lente da decodificare e senza dati utili).
+      if (zp.exhausted) break;
       final chroma = color && _delay == 0;
       for (var c = 0; c < (chroma ? 3 : 1); c++) {
         final comp = _comps[c];

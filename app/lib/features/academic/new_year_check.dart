@@ -79,6 +79,8 @@ Future<NewYearAnswer?> checkNewAcademicYear(
 /// il messaggio che la chiede, con «Riprova». Con [silenzioso] l'esito
 /// riuscito non si mostra se non ha importato nulla.
 Future<void> _aggiorna(BuildContext context, {bool silenzioso = false}) async {
+  // «Riprova»/«Aggiorna» di una SnackBar toccati quando la pagina non c'è più
+  if (!context.mounted) return;
   final s = context.read<AppServices>();
   final AggiornamentoDatabase agg;
   try {

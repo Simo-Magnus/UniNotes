@@ -23,14 +23,20 @@ class _NudgeCardState extends State<NudgeCard> {
   @override
   void initState() {
     super.initState();
-    _n.current().then((k) async {
-      if (k == null || !mounted) return;
-      await _n.shown(k);
-      if (mounted) setState(() => _kind = k);
-    });
+    _n
+        .current()
+        .then((k) async {
+          if (k == null || !mounted) return;
+          await _n.shown(k);
+          if (mounted) setState(() => _kind = k);
+        })
+        .catchError((Object e) => debugPrint('NudgeCard: $e'));
   }
 
-  void _close() => setState(() => _kind = null);
+  // la card può essere già stata tolta (Home ricaricata) dopo le attese
+  void _close() {
+    if (mounted) setState(() => _kind = null);
+  }
 
   @override
   Widget build(BuildContext context) {

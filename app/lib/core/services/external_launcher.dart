@@ -139,10 +139,17 @@ class ExternalLauncher {
   static Future<LaunchResult> openWith(String path) async {
     final unsafe = unsafePathReason(path);
     if (unsafe != null) return LaunchResult.error(unsafe);
-    if (!await File(path).exists()) return openPath(path);
-    final target = platform() == TargetPlatform.windows
-        ? MsixPaths.forOtherApps(path)
-        : path;
+    final String target;
+    try {
+      if (!await File(path).exists()) return await openPath(path);
+      target = platform() == TargetPlatform.windows
+          ? MsixPaths.forOtherApps(path)
+          : path;
+    } catch (e) {
+      // percorso non valido per il sistema (caratteri non ammessi, troppo
+      // lungo): esito leggibile invece di un'eccezione
+      return LaunchResult.error('Impossibile aprire il file: $e');
+    }
     try {
       final r = await openWithChannel.invokeMethod<String>('openWith', {
         'path': target,

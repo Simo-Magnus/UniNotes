@@ -127,7 +127,8 @@ RDoc parseRtf(Uint8List bytes) {
         if (closing.pict == 'png' || closing.pict == 'jpeg') {
           final data = Uint8List(hex.length ~/ 2);
           for (var k = 0; k + 1 < hex.length; k += 2) {
-            data[k ~/ 2] = int.parse(hex.substring(k, k + 2), radix: 16);
+            data[k ~/ 2] =
+                int.tryParse(hex.substring(k, k + 2), radix: 16) ?? 0;
           }
           endPara();
           blocks.add(RImage(data));

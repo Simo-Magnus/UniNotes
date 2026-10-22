@@ -40,7 +40,21 @@ abstract final class BackgroundSync {
       return null;
     });
     CloudDriveService.onScheduleChanged = () => unawaited(schedule(s));
+    // Android: il lavoro avviato ad app chiusa può essere ancora a metà
+    // quando l'app si apre; finché non ha finito l'app non sincronizza
+    // (stessi file di stato, stesso database)
+    if (Platform.isAndroid) CloudDriveService.busyElsewhere = headlessBusy;
     unawaited(schedule(s));
+  }
+
+  /// Il motore senza interfaccia di Android sta ancora sincronizzando.
+  static Future<bool> headlessBusy() async {
+    try {
+      return await channel.invokeMethod<bool>('busy') ?? false;
+    } catch (_) {
+      // versione nativa senza `busy`: nessun lavoro da aspettare
+      return false;
+    }
   }
 
   /// Ogni quanti minuti: il più breve tra i servizi collegati (null =
@@ -95,12 +109,17 @@ abstract final class BackgroundSync {
 /// chiusa (vedi `backgroundSyncMain` in lib/main.dart): apre il database,
 /// sincronizza, aggiorna calendario e notifiche e lo dice al sistema
 /// (`done`).
+///
+/// Il database NON si chiude alla fine: sqflite su Android tiene una sola
+/// connessione per file in tutto il processo, condivisa con l'app se nel
+/// frattempo è stata aperta; chiuderla qui chiuderebbe anche quella
+/// dell'app (ogni lettura e scrittura fallirebbe fino al riavvio). Resta
+/// aperta finché vive il processo, come quella dell'app.
 Future<void> runBackgroundSync() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  DartPluginRegistrant.ensureInitialized();
-  AppDatabase? db;
   try {
-    db = await AppDatabase.open();
+    WidgetsFlutterBinding.ensureInitialized();
+    DartPluginRegistrant.ensureInitialized();
+    final db = await AppDatabase.open();
     await initPortableBase();
     final s = AppServices(db);
     await s.loadProfile();
@@ -108,9 +127,6 @@ Future<void> runBackgroundSync() async {
   } catch (e) {
     debugPrint('Sincronizzazione in background non riuscita: $e');
   } finally {
-    try {
-      await db?.close();
-    } catch (_) {}
     try {
       await BackgroundSync.channel.invokeMethod<void>('done');
     } catch (_) {}

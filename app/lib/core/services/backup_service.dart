@@ -7,6 +7,7 @@ import '../../utils/parse.dart';
 import '../database/app_database.dart';
 import '../database/schema.dart';
 import '../database/sync_schema.dart';
+import 'error_log.dart' show isDiskFullError;
 
 class BackupException implements Exception {
   BackupException(this.message);
@@ -103,6 +104,11 @@ class BackupService {
         throw BackupException('Il file non è un database di UniNotes.');
       }
       return jsonEncode(await _mapFrom(other));
+    } on DatabaseException {
+      // file non SQLite o danneggiato (l'errore arriva alla prima lettura)
+      throw BackupException(
+        'Il file non è un database di UniNotes o è danneggiato.',
+      );
     } finally {
       await other.close();
     }
@@ -198,6 +204,25 @@ class BackupService {
   /// e i colori delle università). Restituisce le righe ripristinate per tabella.
   Future<Map<String, int>> importJson(String json) async {
     final parsed = _parse(json);
+    try {
+      return await _importParsed(parsed);
+    } on DatabaseException catch (e) {
+      // righe incompatibili (es. un file modificato a mano o di una versione
+      // molto diversa): la transazione è annullata, i dati restano com'erano
+      if (isDiskFullError(e)) {
+        throw BackupException(
+          'Spazio esaurito sul dispositivo: libera spazio e riprova. I tuoi '
+          'dati non sono stati modificati.',
+        );
+      }
+      throw BackupException(
+        'Il file contiene dati non compatibili con questa versione dell\'app '
+        '($e). I tuoi dati non sono stati modificati.',
+      );
+    }
+  }
+
+  Future<Map<String, int>> _importParsed(_ParsedBackup parsed) async {
     final restored = <String, int>{};
 
     await _db.db.transaction((txn) async {
@@ -268,7 +293,13 @@ class BackupService {
     if (!deviceLocalSettings.contains(key)) return true;
     if (localSettings.any((s) => s['key'] == key)) return false;
     final value = asString(row['value']);
-    return value != null && await File(value).exists();
+    if (value == null) return false;
+    try {
+      return await File(value).exists();
+    } catch (_) {
+      // percorso non valido su questo sistema (backup di un'altra piattaforma)
+      return false;
+    }
   }
 
   Future<int> _restoreUserPlaces(

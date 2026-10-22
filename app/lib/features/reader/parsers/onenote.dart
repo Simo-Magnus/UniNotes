@@ -162,8 +162,29 @@ RDoc parseOneNote(Uint8List b, {String title = ''}) {
     );
   }
   final items = <_Item>[];
+  // Intervalli già usati (dati di file e immagini), aggiunti in ordine
+  // crescente da ciascuno dei due passaggi: ricerca binaria invece di
+  // scorrerli tutti per ogni byte (sezioni di centinaia di MB con migliaia
+  // di immagini).
   final covered = <(int, int)>[];
-  bool inside(int o) => covered.any((r) => o >= r.$1 && o < r.$2);
+  final coveredImages = <(int, int)>[];
+  bool within(List<(int, int)> list, int o) {
+    var lo = 0, hi = list.length - 1;
+    while (lo <= hi) {
+      final mid = (lo + hi) >> 1;
+      final r = list[mid];
+      if (o < r.$1) {
+        hi = mid - 1;
+      } else if (o >= r.$2) {
+        lo = mid + 1;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  bool inside(int o) => within(covered, o) || within(coveredImages, o);
   final d = ByteData.sublistView(b);
   var attachments = 0;
   // Oggetti FileDataStoreObject: GUID, lunghezza (8), 12 byte, dati.
@@ -195,7 +216,7 @@ RDoc parseOneNote(Uint8List b, {String title = ''}) {
     }
     if (end > i + 64) {
       items.add(_Item(i, image: Uint8List.fromList(b.sublist(i, end))));
-      covered.add((i, end));
+      coveredImages.add((i, end));
       i = end - 1;
     }
   }

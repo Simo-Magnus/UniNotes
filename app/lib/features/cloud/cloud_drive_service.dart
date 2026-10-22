@@ -568,6 +568,22 @@ abstract class CloudDriveService extends ChangeNotifier {
   /// si ripianifica (BackgroundSync, telefono).
   static void Function()? onScheduleChanged;
 
+  /// Una sincronizzazione sta già girando fuori da questo motore (Android:
+  /// il lavoro in background avviato ad app chiusa, che continua se nel
+  /// frattempo l'app si apre): allora questa aspetta il giro successivo,
+  /// così i due non lavorano insieme sugli stessi file. Null = nessuno.
+  static Future<bool> Function()? busyElsewhere;
+
+  static Future<bool> _busyElsewhere() async {
+    final f = busyElsewhere;
+    if (f == null) return false;
+    try {
+      return await f();
+    } catch (_) {
+      return false;
+    }
+  }
+
   /// Nome/indirizzo dell'account collegato (null = non collegato).
   Future<String?> account() => settings.get(accountKey);
   Future<bool> connected() async {
@@ -769,8 +785,22 @@ abstract class CloudDriveService extends ChangeNotifier {
   /// novità e salta le parti senza modifiche. [auto]: controllo automatico
   /// (avvio, timer, ritorno nell'app).
   Future<SyncReport?> sync({bool force = true, bool auto = false}) async {
-    if (_syncing || !await connected()) return null;
+    // il segno va messo prima di ogni attesa: due richieste quasi insieme
+    // (avvio, timer, «Sincronizza ora», ritorno nell'app, lavoro in
+    // background) altrimenti passano entrambe e lavorano sugli stessi file
+    // di stato
+    if (_syncing) return null;
     _syncing = true;
+    var ready = false;
+    try {
+      ready = await connected() && !await _busyElsewhere();
+    } catch (_) {
+      // portachiavi non leggibile: come non collegato
+    }
+    if (!ready) {
+      _syncing = false;
+      return null;
+    }
     lastError = null;
     progress = 'Sincronizzazione con $serviceName…';
     notifyListeners();
@@ -826,7 +856,11 @@ abstract class CloudDriveService extends ChangeNotifier {
         return null;
       }
       lastError = '$e';
-      await settings.set(lastResultKey, 'Errore: $e');
+      try {
+        await settings.set(lastResultKey, 'Errore: $e');
+      } catch (_) {
+        // database non scrivibile: l'errore resta comunque in lastError
+      }
       return null;
     } finally {
       _syncing = false;

@@ -161,6 +161,34 @@ ripara il WAV e lo salva come le altre registrazioni, **Elimina** (con
 conferma) lo sposta in «Eliminati di recente»; toccando fuori dal dialogo lo
 si lascia dov'è e si decide più tardi.
 
+Casi difficili (controllati il 22/10/2026, test in
+`test/recorder_crash_test.dart`):
+
+- **microfono occupato o negato** all'avvio: messaggio chiaro, nessun file di
+  lavoro; un doppio tocco su «Registra» avvia una sola registrazione;
+- **il sistema chiude il microfono** durante la registrazione (altra app,
+  dispositivo scollegato) o **non riparte dopo una pausa** (telefonata su
+  iOS): la registrazione va in pausa con il motivo sotto il tempo e si salva
+  con «Salva» (l'audio fin lì resta);
+- **disco pieno**: pausa con il motivo; fermare e salvare funzionano lo
+  stesso (i dati in memoria vanno nel salvataggio);
+- **oltre 4 GB** (il limite del formato WAV, ~37 ore a 16 kHz mono)
+  l'intestazione resta al massimo invece di ricominciare da zero (prima un
+  recupero avrebbe tagliato il file) e la registrazione si ferma lì;
+- doppio «Salva» (schermata, riquadro, notifica): una sola registrazione;
+- i dati di lavoro (`.json`), quelli accanto all'audio e `info.json` del
+  cestino si scrivono in `<file>.part` e poi si rinominano sopra il file, uno
+  alla volta (`lib/features/notes/safe_files.dart`); se l'app si chiude
+  proprio lì il recupero usa la copia `.part`;
+- l'audio salvato si segna subito nei dati di lavoro: un errore dopo
+  (trascrizione, dati) non produce un doppione al riavvio, e i segnalibri
+  non scritti si rifanno da quelli della sessione;
+- un `.m4a` molto più piccolo del previsto (codificatore fermato a metà) non
+  fa cancellare il WAV: si tiene il WAV;
+- «Elimina» con il cestino irraggiungibile lascia l'audio nel WAV di
+  lavoro; lo spostamento nel cestino rimette a posto i file già spostati se
+  uno non si sposta (copia in `.part` fra unità diverse, mai un file a metà).
+
 ## Trascrizione dal vivo
 
 Chi fa il testo istantaneo dipende dal sistema. La scelta è in **un punto

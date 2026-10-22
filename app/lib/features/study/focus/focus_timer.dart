@@ -249,14 +249,15 @@ class FocusTimer extends ChangeNotifier {
     if (j is! Map) return false;
     final start = DateTime.tryParse('${j['inizio'] ?? ''}');
     if (start == null) return false;
+    // valori scritti da altre versioni o rovinati: zero invece di un
+    // errore a metà (sessione ripresa solo in parte)
+    int ms(Object? v) => v is num && v.isFinite && v > 0 ? v.toInt() : 0;
     final s = FocusSettings.fromJson(j['impostazioni']);
     _settings = s;
     _plan = buildFocusPlan(s);
     _startedAt = start;
-    _accumulated = Duration(
-      milliseconds: (j['accumulatoMs'] as num?)?.toInt() ?? 0,
-    );
-    _skipped = Duration(milliseconds: (j['saltatoMs'] as num?)?.toInt() ?? 0);
+    _accumulated = Duration(milliseconds: ms(j['accumulatoMs']));
+    _skipped = Duration(milliseconds: ms(j['saltatoMs']));
     _runningSince = DateTime.tryParse('${j['daQuando'] ?? ''}');
     _lastIndex = position.index;
     _finishedSent = false;

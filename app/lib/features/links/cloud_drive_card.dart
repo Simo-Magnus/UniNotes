@@ -268,6 +268,11 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
           offline: _sv.lastError == _sv.offlineMessage,
         ),
       );
+    } else if (await _sv.connected() && mounted) {
+      // un'altra sincronizzazione è in corso (anche quella in background
+      // del telefono): questa non è partita
+      showSnack(context, '$name: sincronizzazione già in corso, riprova tra '
+          'poco.');
     }
   }
 

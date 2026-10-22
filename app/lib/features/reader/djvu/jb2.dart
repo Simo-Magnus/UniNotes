@@ -225,11 +225,25 @@ class _Jb2Decoder {
     return negative ? -cutoff - 1 : cutoff;
   }
 
+  /// Pixel di forme già decodificati: con dati rovinati le dimensioni
+  /// (fino a 262142 per lato) e il numero dei record non hanno freni.
+  int _pixels = 0;
+  static const _maxSide = 16384;
+  static const _maxPixels = 256 * 1024 * 1024;
+
+  Jb2Shape _shape(int w, int h) {
+    _pixels += w * h;
+    if (w > _maxSide || h > _maxSide || _pixels > _maxPixels) {
+      throw const FormatException('JB2: forme troppo grandi');
+    }
+    return Jb2Shape(w, h);
+  }
+
   Jb2Shape direct(int w, int h) {
-    final s = Jb2Shape(w, h);
+    final s = _shape(w, h);
     final b = s.bits;
     final ctx = _direct;
-    for (var y = 0; y < h; y++) {
+    for (var y = 0; y < h && !zp.exhausted; y++) {
       final r0 = s.at(0, y), r1 = s.at(0, y - 1), r2 = s.at(0, y - 2);
       var a = (b[r2 - 1] << 2) | (b[r2] << 1) | b[r2 + 1];
       var m =
@@ -251,14 +265,14 @@ class _Jb2Decoder {
   }
 
   Jb2Shape refine(int w, int h, Jb2Shape ref) {
-    final s = Jb2Shape(w, h);
+    final s = _shape(w, h);
     final b = s.bits;
     final ctx = _refine;
     // Allineamento dei centri: colonna centrale a sinistra, riga centrale
     // in basso quando sono pari.
     final dx = ((ref.width - 1) >> 1) - ((w - 1) >> 1);
     final dy = (ref.height >> 1) - (h >> 1);
-    for (var y = 0; y < h; y++) {
+    for (var y = 0; y < h && !zp.exhausted; y++) {
       final r0 = s.at(0, y), r1 = s.at(0, y - 1);
       final my = y + dy;
       var a = (b[r1 - 1] << 2) | (b[r1] << 1) | b[r1 + 1];
@@ -340,6 +354,9 @@ class _Jb2Decoder {
     var started = false;
     loop:
     while (true) {
+      // Dati finiti senza il record di fine (file troncato o rovinato): si
+      // tiene quanto già decodificato invece di girare sui bit a 1.
+      if (zp.exhausted) break;
       final type = number(0, 11, _recordType);
       switch (type) {
         case 0:

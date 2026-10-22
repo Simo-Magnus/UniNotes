@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../reader_document.dart';
+import 'image_view.dart';
 
 /// Tratti di un testo della diapositiva: [index] è la posizione del testo
 /// in [RSlide.texts] (per evidenziare la ricerca), [styles] lo stile di
@@ -63,8 +64,8 @@ class SlideCanvas extends StatelessWidget {
     final children = <Widget>[
       if (slide.backgroundImage != null)
         Positioned.fill(
-          child: Image.memory(
-            slide.backgroundImage!,
+          child: Image(
+            image: limitedMemoryImage(slide.backgroundImage!),
             fit: BoxFit.cover,
             gaplessPlayback: true,
             errorBuilder: (_, _, _) => const SizedBox.shrink(),
@@ -160,8 +161,8 @@ class SlideCanvas extends StatelessWidget {
           top: -t * ih,
           width: iw,
           height: ih,
-          child: Image.memory(
-            s.image!,
+          child: Image(
+            image: limitedMemoryImage(s.image!),
             fit: BoxFit.fill,
             gaplessPlayback: true,
             errorBuilder: (_, _, _) => const SizedBox.shrink(),

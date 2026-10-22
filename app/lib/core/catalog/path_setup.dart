@@ -58,8 +58,12 @@ class PathSelection {
   String get degreeId =>
       corso?.id ?? CatalogIds.manualDegree(ateneo.id, degreeName);
 
-  int get duration =>
-      corso?.durataAnni ?? manualDuration ?? tipo.durataTipica ?? 3;
+  /// Durata in anni (da 1 a 10: una durata sbagliata nel catalogo, 0 o
+  /// enorme, non rompe il calcolo degli anni del piano).
+  int get duration {
+    final d = corso?.durataAnni ?? manualDuration ?? tipo.durataTipica ?? 3;
+    return d >= 1 && d <= 10 ? d : (tipo.durataTipica ?? 3);
+  }
 
   StudentProfile toProfile(DateTime now) => StudentProfile(
     universityId: ateneo.id,
@@ -280,6 +284,9 @@ class PathSetupService {
   /// (voti, esami prenotati o sostenuti, sessioni di studio, moduli, libri
   /// posseduti) si archiviano invece di eliminarli. Restituisce quanti.
   Future<int> retireStaleCourses(String ateneoId, CorsoDettaglio corso) async {
+    // un file del corso senza insegnamenti (malformato o in preparazione)
+    // non toglie tutto il piano dello studente
+    if (corso.insegnamenti.isEmpty) return 0;
     final db = _s.database.db;
     final valid = {
       for (final i in corso.insegnamenti) CatalogIds.course(ateneoId, i.id),

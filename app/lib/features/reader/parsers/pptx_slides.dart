@@ -81,13 +81,13 @@ class _Xfrm {
     final off = xfrm.kid('off');
     final ext = xfrm.kid('ext');
     if (off == null || ext == null) return null;
-    double n(XmlElement e, String a) => double.tryParse(e.attr(a) ?? '') ?? 0;
+    double n(XmlElement e, String a) => parseFinite(e.attr(a) ?? '') ?? 0;
     return _Xfrm(
       n(off, 'x'),
       n(off, 'y'),
       n(ext, 'cx'),
       n(ext, 'cy'),
-      (double.tryParse(xfrm.attr('rot') ?? '') ?? 0) / 60000,
+      (parseFinite(xfrm.attr('rot') ?? '') ?? 0) / 60000,
       xfrm.attr('flipH') == '1',
       xfrm.attr('flipV') == '1',
     );
@@ -102,8 +102,8 @@ class PptxSlides {
   PptxSlides(this.zip, String presentationPart) {
     final pres = zip.xml(presentationPart);
     final sz = pres?.rootElement.kid('sldSz');
-    width = (double.tryParse(sz?.attr('cx') ?? '') ?? 9144000) / _emu;
-    height = (double.tryParse(sz?.attr('cy') ?? '') ?? 6858000) / _emu;
+    width = (parseFinite(sz?.attr('cx') ?? '') ?? 9144000) / _emu;
+    height = (parseFinite(sz?.attr('cy') ?? '') ?? 6858000) / _emu;
     _defaultText = pres?.rootElement.kid('defaultTextStyle');
   }
 
@@ -231,7 +231,7 @@ class PptxSlides {
           base = _preset[c.attr('val')];
         case 'scrgbClr':
           int ch(String a) =>
-              ((double.tryParse(c.attr(a) ?? '') ?? 0) / 100000 * 255)
+              ((parseFinite(c.attr(a) ?? '') ?? 0) / 100000 * 255)
                   .round()
                   .clamp(0, 255);
           base = 0xFF000000 | (ch('r') << 16) | (ch('g') << 8) | ch('b');
@@ -289,7 +289,7 @@ class PptxSlides {
     double? lumMod;
     double? lumOff;
     for (final m in c.childElements) {
-      final v = (double.tryParse(m.attr('val') ?? '') ?? 100000) / 100000;
+      final v = (parseFinite(m.attr('val') ?? '') ?? 100000) / 100000;
       switch (m.local) {
         case 'lumMod':
           lumMod = v;
@@ -562,7 +562,7 @@ class PptxSlides {
     var inner = tx;
     if (xfrm != null) {
       double n(String k, String a) =>
-          double.tryParse(xfrm.kid(k)?.attr(a) ?? '') ?? 0;
+          parseFinite(xfrm.kid(k)?.attr(a) ?? '') ?? 0;
       final cx = n('ext', 'cx'), cy = n('ext', 'cy');
       final chx = n('chExt', 'cx'), chy = n('chExt', 'cy');
       final sx = chx == 0 ? 1.0 : cx / chx;
@@ -650,7 +650,7 @@ class PptxSlides {
         (int.tryParse(lnRef.attr('idx') ?? '') ?? 0) > 0) {
       line = color(lnRef);
     }
-    final w = double.tryParse(ln?.attr('w') ?? '');
+    final w = parseFinite(ln?.attr('w') ?? '');
     if (w != null) lineWidth = math.max(w / _emu, 0.25);
     if (geometry == 'line' && line == null && lnFill?.none != true) {
       line = color(lnRef) ?? 0xFF000000;
@@ -717,15 +717,15 @@ class PptxSlides {
   List<List<RPathCmd>>? _customPath(XmlElement cust, _Xfrm xfrm) {
     final out = <List<RPathCmd>>[];
     for (final path in cust.kid('pathLst')?.kids('path') ?? <XmlElement>[]) {
-      final pw = double.tryParse(path.attr('w') ?? '') ?? xfrm.w;
-      final ph = double.tryParse(path.attr('h') ?? '') ?? xfrm.h;
+      final pw = parseFinite(path.attr('w') ?? '') ?? xfrm.w;
+      final ph = parseFinite(path.attr('h') ?? '') ?? xfrm.h;
       if (pw <= 0 || ph <= 0) continue;
       final cmds = <RPathCmd>[];
       List<double>? pts(XmlElement e) {
         final out = <double>[];
         for (final pt in e.kids('pt')) {
-          final x = double.tryParse(pt.attr('x') ?? '');
-          final y = double.tryParse(pt.attr('y') ?? '');
+          final x = parseFinite(pt.attr('x') ?? '');
+          final y = parseFinite(pt.attr('y') ?? '');
           if (x == null || y == null) return null;
           out
             ..add(x / pw)
@@ -778,7 +778,7 @@ class PptxSlides {
   List<double> _insets(List<XmlElement?> bodies) {
     double pick(String a, double def) {
       for (final b in bodies) {
-        final v = double.tryParse(b?.attr(a) ?? '');
+        final v = parseFinite(b?.attr(a) ?? '');
         if (v != null) return v / _emu;
       }
       return def;
@@ -830,9 +830,9 @@ class PptxSlides {
   }) {
     final autofit = bodyPr?.kid('normAutofit');
     final fontScale =
-        (double.tryParse(autofit?.attr('fontScale') ?? '') ?? 100000) / 100000;
+        (parseFinite(autofit?.attr('fontScale') ?? '') ?? 100000) / 100000;
     final lnReduction =
-        (double.tryParse(autofit?.attr('lnSpcReduction') ?? '') ?? 0) / 100000;
+        (parseFinite(autofit?.attr('lnSpcReduction') ?? '') ?? 0) / 100000;
     final out = <RSlidePara>[];
     final counters = List.filled(10, 0);
     for (final p in txBody.kids('p')) {
@@ -860,7 +860,7 @@ class PptxSlides {
       int? defColor;
       for (final s in sources) {
         final d = s?.kid('defRPr');
-        defSize ??= double.tryParse(d?.attr('sz') ?? '');
+        defSize ??= parseFinite(d?.attr('sz') ?? '');
         defColor ??= color(d?.kid('solidFill'));
       }
       final baseSize = (defSize ?? 1800) / 100;
@@ -869,7 +869,7 @@ class PptxSlides {
       void addRun(XmlElement r, String text, {bool italic = false}) {
         final rpr = r.kid('rPr');
         final size =
-            (double.tryParse(rpr?.attr('sz') ?? '') ?? baseSize * 100) / 100;
+            (parseFinite(rpr?.attr('sz') ?? '') ?? baseSize * 100) / 100;
         final u = rpr?.attr('u');
         final b = rpr?.attr('b');
         final i = rpr?.attr('i');
@@ -939,18 +939,18 @@ class PptxSlides {
         bulletColor = color(child('buClr')) ??
             (runs.isEmpty ? baseColor : runs.first.color);
       }
-      final marL = (double.tryParse(attr('marL') ?? '') ?? 0) / _emu;
-      final indent = (double.tryParse(attr('indent') ?? '') ?? 0) / _emu;
+      final marL = (parseFinite(attr('marL') ?? '') ?? 0) / _emu;
+      final indent = (parseFinite(attr('indent') ?? '') ?? 0) / _emu;
       final spcBef = child('spcBef');
       var before = 0.0;
-      final pts = double.tryParse(spcBef?.kid('spcPts')?.attr('val') ?? '');
-      final pct = double.tryParse(spcBef?.kid('spcPct')?.attr('val') ?? '');
+      final pts = parseFinite(spcBef?.kid('spcPts')?.attr('val') ?? '');
+      final pct = parseFinite(spcBef?.kid('spcPct')?.attr('val') ?? '');
       if (pts != null) before = pts / 100;
       if (pct != null) before = pct / 100000 * baseSize;
       final lnSpc = child('lnSpc');
       var spacing = 1.0;
-      final lp = double.tryParse(lnSpc?.kid('spcPct')?.attr('val') ?? '');
-      final lpts = double.tryParse(lnSpc?.kid('spcPts')?.attr('val') ?? '');
+      final lp = parseFinite(lnSpc?.kid('spcPct')?.attr('val') ?? '');
+      final lpts = parseFinite(lnSpc?.kid('spcPts')?.attr('val') ?? '');
       if (lp != null) spacing = lp / 100000;
       if (lpts != null) spacing = lpts / 100 / (baseSize * 1.2);
       spacing = math.max(0.5, spacing - lnReduction);
@@ -1047,7 +1047,7 @@ class PptxSlides {
     }
     final src = blipFill?.kid('srcRect');
     double c(String a) =>
-        ((double.tryParse(src?.attr(a) ?? '') ?? 0) / 100000).clamp(-1.0, 0.95);
+        ((parseFinite(src?.attr(a) ?? '') ?? 0) / 100000).clamp(-1.0, 0.95);
     final spPr = pic.kid('spPr');
     final lnFill = _fill(spPr?.kid('ln'), part);
     return RShape(
@@ -1063,7 +1063,7 @@ class PptxSlides {
       crop: [c('l'), c('t'), c('r'), c('b')],
       line: lnFill == null || lnFill.none ? null : lnFill.color,
       lineWidth: math.max(
-        (double.tryParse(spPr?.kid('ln')?.attr('w') ?? '') ?? 9525) / _emu,
+        (parseFinite(spPr?.kid('ln')?.attr('w') ?? '') ?? 9525) / _emu,
         0.25,
       ),
       label: data == null ? 'Immagine' : null,
@@ -1149,7 +1149,7 @@ class PptxSlides {
   ) {
     final cols = [
       for (final c in tbl.kid('tblGrid')?.kids('gridCol') ?? <XmlElement>[])
-        (double.tryParse(c.attr('w') ?? '') ?? 0) / _emu,
+        (parseFinite(c.attr('w') ?? '') ?? 0) / _emu,
     ];
     final pr = tbl.kid('tblPr');
     final styled = pr?.kid('tableStyleId') != null;
@@ -1167,7 +1167,7 @@ class PptxSlides {
     final text = _schemeColor('tx1') ?? 0xFF000000;
     var r = 0;
     for (final tr in tbl.kids('tr')) {
-      rows.add((double.tryParse(tr.attr('h') ?? '') ?? 0) / _emu);
+      rows.add((parseFinite(tr.attr('h') ?? '') ?? 0) / _emu);
       final header = styled && firstRow && r == 0;
       final band = styled && bandRow && !(firstRow && r == 0);
       final dataRow = firstRow ? r - 1 : r;

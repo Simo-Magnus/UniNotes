@@ -62,9 +62,25 @@ List<StudyCourseGroup> groupStudyCourses(List<Course> courses) {
       final s = ka.$2.compareTo(kb.$2);
       return s != 0 ? s : a.compareTo(b);
     });
+  // Semestri scritti in modo diverso con la stessa etichetta («1» e
+  // «1° semestre» da dati importati, o un semestre chiamato «OFA»): un
+  // gruppo solo, se no due gruppi con lo stesso nome (chiavi doppie negli
+  // elenchi, il secondo irraggiungibile dal selettore della Home).
+  final position = Map<Course, int>.identity();
+  for (var i = 0; i < courses.length; i++) {
+    position[courses[i]] = i;
+  }
+  final merged = <String, List<Course>>{};
+  for (final k in ordered) {
+    merged.putIfAbsent(keys[k]!.$3, () => []).addAll(byKey[k]!);
+  }
+  if (ofa.isNotEmpty) merged.putIfAbsent('OFA', () => []).addAll(ofa);
   return [
-    for (final k in ordered) StudyCourseGroup(keys[k]!.$3, byKey[k]!),
-    if (ofa.isNotEmpty) StudyCourseGroup('OFA', ofa),
+    for (final e in merged.entries)
+      StudyCourseGroup(
+        e.key,
+        e.value..sort((a, b) => position[a]!.compareTo(position[b]!)),
+      ),
   ];
 }
 

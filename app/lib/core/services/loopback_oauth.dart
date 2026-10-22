@@ -263,18 +263,25 @@ class LoopbackOAuth {
   });
 
   Future<String> _waitForCode(Stream<HttpRequest> server, String state) async {
+    // risposta a una richiesta estranea: se il browser ha già chiuso la
+    // connessione (favicon, precaricamento) l'errore non ferma l'accesso
+    Future<void> reject(HttpRequest req, int status) async {
+      try {
+        req.response.statusCode = status;
+        await req.response.close();
+      } catch (_) {}
+    }
+
     await for (final req in server) {
       final q = req.uri.queryParameters;
       if (!q.containsKey('code') && !q.containsKey('error')) {
-        req.response.statusCode = HttpStatus.notFound;
-        await req.response.close();
+        await reject(req, HttpStatus.notFound);
         continue;
       }
       if (q['state'] != state) {
         // richiesta estranea (altra scheda, altro programma): si ignora e si
         // continua ad aspettare il ritorno giusto
-        req.response.statusCode = HttpStatus.badRequest;
-        await req.response.close();
+        await reject(req, HttpStatus.badRequest);
         continue;
       }
       final ok = q['code'] != null;
@@ -283,18 +290,23 @@ class LoopbackOAuth {
           : _explain(
               q['error_description'] ?? q['error'] ?? 'risposta non valida',
             );
-      req.response.headers.contentType = ContentType.html;
-      req.response.headers.set('Cache-Control', 'no-store');
-      req.response.write(
-        returnToAppPage(
-          ok: ok,
-          title: ok
-              ? 'Torna a UniNotes'
-              : 'Accesso con $providerName non riuscito',
-          detail: ok ? null : why,
-        ),
-      );
-      await req.response.close();
+      try {
+        req.response.headers.contentType = ContentType.html;
+        req.response.headers.set('Cache-Control', 'no-store');
+        req.response.write(
+          returnToAppPage(
+            ok: ok,
+            title: ok
+                ? 'Torna a UniNotes'
+                : 'Accesso con $providerName non riuscito',
+            detail: ok ? null : why,
+          ),
+        );
+        await req.response.close();
+      } catch (_) {
+        // scheda chiusa subito dal browser: la pagina non arriva, ma il
+        // codice è già qui e l'accesso continua
+      }
       // l'app torna in primo piano (PC e Mac) e mostra l'esito
       unawaited(bringAppToFront());
       if (!ok) {
@@ -346,24 +358,34 @@ class LoopbackOAuth {
           .transform(utf8.decoder)
           .join()
           .timeout(const Duration(seconds: 30));
+      // risposta qualsiasi (pagina HTML di un proxy, JSON non oggetto,
+      // campi di un tipo inatteso): errore leggibile, mai un'eccezione di tipo
       Map<String, Object?> json;
       try {
-        json = (jsonDecode(body) as Map).cast<String, Object?>();
+        final v = jsonDecode(body);
+        json = v is Map ? v.cast<String, Object?>() : const {};
       } on FormatException {
         json = const {};
       }
-      if (res.statusCode != 200 || json['access_token'] == null) {
+      final access = json['access_token'];
+      if (res.statusCode != 200 || access is! String || access.isEmpty) {
         final err = json['error_description'] ?? json['error'] ?? body;
         throw OAuthException(
           '$providerName ha rifiutato l\'accesso: ${_explain('$err')}',
         );
       }
+      final expires = json['expires_in'];
+      final refresh = json['refresh_token'];
       return OAuthTokens(
-        accessToken: json['access_token'] as String,
+        accessToken: access,
         expiresAt: DateTime.now().add(
-          Duration(seconds: (json['expires_in'] as num?)?.toInt() ?? 3600),
+          Duration(
+            seconds: expires is num
+                ? expires.toInt()
+                : int.tryParse('${expires ?? ''}') ?? 3600,
+          ),
         ),
-        refreshToken: json['refresh_token'] as String?,
+        refreshToken: refresh is String && refresh.isNotEmpty ? refresh : null,
       );
     } on SocketException catch (e) {
       throw OAuthException('$providerName non raggiungibile (${e.message}).');

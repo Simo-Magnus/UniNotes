@@ -20,6 +20,7 @@ import java.io.OutputStream
 import java.util.ArrayDeque
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import java.util.concurrent.RejectedExecutionException
 
 /**
  * Trascrizione istantanea durante la registrazione delle lezioni (canale
@@ -172,7 +173,7 @@ class LiveSpeech(private val context: Context, private val channel: MethodChanne
         closeQuietly(readEnd)
         readEnd = pipe[0]
         val write = ParcelFileDescriptor.AutoCloseOutputStream(pipe[1])
-        io.execute {
+        runIo {
             synchronized(lock) {
                 closeQuietly(out)
                 out = write
@@ -227,7 +228,7 @@ class LiveSpeech(private val context: Context, private val channel: MethodChanne
     /** Audio della registrazione (PCM 16 bit mono): nella pipe, mai bloccando. */
     private fun feed(bytes: ByteArray) {
         if (!running) return
-        io.execute {
+        runIo {
             synchronized(lock) {
                 if (out == null || !writeOut(bytes)) queue(bytes)
             }
@@ -264,7 +265,7 @@ class LiveSpeech(private val context: Context, private val channel: MethodChanne
         }
         running = false
         stopping = true
-        io.execute {
+        runIo {
             synchronized(lock) {
                 closeQuietly(out)
                 out = null
@@ -297,7 +298,7 @@ class LiveSpeech(private val context: Context, private val channel: MethodChanne
         recognizer = null
         closeQuietly(readEnd)
         readEnd = null
-        io.execute {
+        runIo {
             synchronized(lock) {
                 closeQuietly(out)
                 out = null
@@ -425,7 +426,9 @@ class LiveSpeech(private val context: Context, private val channel: MethodChanne
             sessionEnded()
         }
 
-        // sessione segmentata (Android 13+)
+        // sessione segmentata (Android 13+); parametro non nullo come
+        // nell'SDK (@NonNull): con «Bundle?» Kotlin non lo riconosce come
+        // override e la compilazione fallisce
         override fun onSegmentResults(segmentResults: Bundle) {
             emitFinal(segmentResults)
         }
@@ -436,8 +439,23 @@ class LiveSpeech(private val context: Context, private val channel: MethodChanne
     }
 
     fun dispose() {
+        // niente più «fine» ritardata dopo la chiusura del motore: chiamava
+        // destroyNow() con l'esecutore già spento (RejectedExecutionException
+        // sul thread principale, l'app si chiudeva)
+        main.removeCallbacksAndMessages(null)
+        stopping = false
         destroyNow()
         io.shutdown()
+    }
+
+    /** Lavoro sul thread [io]; dopo [dispose] non si fa più niente. */
+    private fun runIo(block: () -> Unit) {
+        if (io.isShutdown) return
+        try {
+            io.execute(block)
+        } catch (e: RejectedExecutionException) {
+            // esecutore già chiuso
+        }
     }
 
     private fun closeQuietly(c: java.io.Closeable?) {

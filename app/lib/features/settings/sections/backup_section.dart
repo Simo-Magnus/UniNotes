@@ -34,9 +34,17 @@ Future<void> restoreBackupJson(BuildContext context, String json) async {
         'Consiglio: esporta prima i dati attuali.',
   );
   if (!ok || !context.mounted) return;
+  final services = context.read<AppServices>();
   final restored = await service.importJson(json);
+  // percorso del backup (anche di un altro dispositivo o di nessuno): le
+  // schermate non restano su quello di prima
+  try {
+    await services.loadProfile();
+  } catch (_) {
+    // profilo non leggibile: si rilegge al prossimo avvio
+  }
+  services.revision.bump();
   if (!context.mounted) return;
-  context.read<AppServices>().revision.bump();
   final total = restored.values.fold(0, (a, b) => a + b);
   showSnack(context, 'Dati ripristinati ($total elementi).');
 }
